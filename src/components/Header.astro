@@ -1,0 +1,148 @@
+---
+const currentPath = Astro.url.pathname;
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/things-to-do', label: 'Things to Do' },
+  { href: '/eat-and-drink', label: 'Eat & Drink' },
+  { href: '/shopping', label: 'Shopping' },
+  { href: '/activities', label: 'Activities' },
+];
+---
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <span class="logo-icon">&#9968;</span>
+      <span class="logo-text">BanffBound</span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class:list={['nav-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+  }
+
+  .site-header.scrolled {
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    background: var(--color-bg-alt);
+    color: var(--color-primary);
+  }
+
+  .nav-link.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-dark);
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--color-white);
+      flex-direction: column;
+      padding: 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .main-nav.open { display: flex; }
+    .nav-link { width: 100%; padding: 0.75rem 1rem; }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header');
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  toggle?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+  });
+</script>

@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const shops = [
+  {
+    name: 'Banff Indian Trading Post',
+    description: 'A legendary Banff destination since 1947. Browse authentic Indigenous art, hand-carved sculptures, moccasins, dream catchers, and one of Western Canada\'s largest collections of Indigenous crafts.',
+    image: 'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?w=600&q=80',
+    type: 'Indigenous Art & Gifts',
+    location: 'Birch Avenue',
+  },
+  {
+    name: 'Monod Sports',
+    description: 'Family-owned since 1949, Monod\'s is Banff\'s premier outdoor gear shop. Expert staff, top-tier ski and hiking equipment, and a deep knowledge of the local backcountry.',
+    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80',
+    type: 'Outdoor Gear',
+    location: 'Banff Avenue',
+  },
+  {
+    name: 'The Spirit of Christmas',
+    description: 'A year-round Christmas wonderland filled with ornaments, decorations, and holiday magic. Features handcrafted items from around the world and locally made pieces.',
+    image: 'https://images.unsplash.com/photo-1512389142860-9c449e58a814?w=600&q=80',
+    type: 'Specialty',
+    location: 'Banff Avenue',
+  },
+  {
+    name: 'Rocks & Gems Canada',
+    description: 'A stunning collection of minerals, fossils, gemstones, and crystal specimens from the Canadian Rockies and around the world. Unique jewellery and geological treasures.',
+    image: 'https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=600&q=80',
+    type: 'Specialty',
+    location: 'Banff Avenue',
+  },
+  {
+    name: 'Wilsons Mountain Sports',
+    description: 'Banff\'s go-to for outdoor apparel, camping gear, and sportswear from top brands. Knowledgeable staff can help outfit you for any Rocky Mountain adventure.',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80',
+    type: 'Outdoor Gear',
+    location: 'Banff Avenue',
+  },
+  {
+    name: 'Banff Candy Store',
+    description: 'An irresistible candy shop packed with fudge made on-site, saltwater taffy, chocolate bark, and nostalgic sweets. Watch them make fudge through the window.',
+    image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=600&q=80',
+    type: 'Sweets & Treats',
+    location: 'Banff Avenue',
+  },
+  {
+    name: 'Lupo Italian Kitchen Market',
+    description: 'Part Italian deli, part market. Imported cheeses, cured meats, olive oils, and artisan pantry goods. Perfect for picnic supplies before a day in the park.',
+    image: 'https://images.unsplash.com/photo-1543168256-418811576931?w=600&q=80',
+    type: 'Food Market',
+    location: 'Bear Street',
+  },
+  {
+    name: 'Snowtips-Bactrax',
+    description: 'Outdoor gear rental and retail. Great place to rent bikes, canoes, snowshoes, and camping equipment if you don\'t want to pack everything from home.',
+    image: 'https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&q=80',
+    type: 'Gear Rental & Sales',
+    location: 'Bear Street',
+  },
+  {
+    name: 'Canada House Gallery',
+    description: 'Fine art gallery showcasing Canadian landscape painters and sculptors. Original works and limited editions capturing the beauty of the Canadian Rockies and wilderness.',
+    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80',
+    type: 'Art Gallery',
+    location: 'Bear Street',
+  },
+];
+
+const shoppingAreas = [
+  {
+    name: 'Banff Avenue',
+    description: 'The main drag through town, lined with shops, restaurants, and galleries. From outdoor gear to souvenirs, this is where most of the shopping action happens.',
+  },
+  {
+    name: 'Bear Street',
+    description: 'A more relaxed alternative to Banff Ave. Home to specialty food shops, art galleries, and unique boutiques with a local, artisan feel.',
+  },
+  {
+    name: 'Cascade Shops',
+    description: 'An indoor shopping mall at the north end of town with a mix of retail stores, a food court, and essentials you might need for your trip.',
+  },
+];
+---
+
+<BaseLayout title="Shopping" description="Discover the best shops in Banff - from outdoor gear and Indigenous art to specialty boutiques and souvenir shops.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80"
+      alt="Shopping storefront"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Shop Local</span>
+      <h1>Shopping in Banff</h1>
+      <p>From world-class outdoor gear shops to unique artisan boutiques, Banff's shopping scene has something for every visitor.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Neighbourhoods</span>
+        <h2>Where to Shop</h2>
+      </div>
+      <div class="grid grid-3">
+        {shoppingAreas.map(area => (
+          <div class="area-card">
+            <h3>{area.name}</h3>
+            <p>{area.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Featured Shops</span>
+        <h2>Best Shops in Banff</h2>
+        <p>Our hand-picked selection of the best shops in town, from beloved local institutions to must-visit specialty stores.</p>
+      </div>
+      <div class="grid grid-3">
+        {shops.map(item => (
+          <div class="card">
+            <img src={item.image} alt={item.name} class="card-image" />
+            <div class="card-body">
+              <span class="tag">{item.type}</span>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div class="card-meta">
+                <span>&#128205; {item.location}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .area-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+  }
+
+  .area-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .area-card h3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .area-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+</style>

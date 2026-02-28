@@ -1,0 +1,107 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="/" class="logo">
+          <span class="logo-icon">&#9968;</span>
+          <span class="logo-text">BanffBound</span>
+        </a>
+        <p>Your ultimate guide to exploring Banff, Alberta. Discover the best things to do, places to eat, and adventures that await in the Canadian Rockies.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="/things-to-do">Things to Do</a>
+        <a href="/eat-and-drink">Eat & Drink</a>
+        <a href="/shopping">Shopping</a>
+        <a href="/activities">Activities</a>
+      </div>
+      <div class="footer-links">
+        <h4>Plan Your Trip</h4>
+        <a href="/things-to-do">Sightseeing</a>
+        <a href="/activities">Winter Sports</a>
+        <a href="/activities">Summer Adventures</a>
+        <a href="/eat-and-drink">Local Cuisine</a>
+      </div>
+      <div class="footer-links">
+        <h4>Info</h4>
+        <a href="https://www.pc.gc.ca/en/pn-np/ab/banff" target="_blank" rel="noopener">Parks Canada</a>
+        <a href="https://www.banfflakelouise.com" target="_blank" rel="noopener">Banff & Lake Louise Tourism</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {year} BanffBound. All rights reserved.</p>
+      <p class="footer-tagline">Made with love for the Canadian Rockies.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-dark);
+    color: rgba(255,255,255,0.7);
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-about .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+  }
+
+  .footer-about .logo-icon { font-size: 1.6rem; }
+
+  .footer-about p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .footer-links h4 {
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links a {
+    display: block;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover { color: var(--color-accent); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+  }
+
+  .footer-tagline { color: var(--color-accent); }
+
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>

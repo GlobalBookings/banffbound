@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const winterActivities = [
+  {
+    name: 'Skiing & Snowboarding',
+    description: 'Three world-class resorts within Banff National Park: Sunshine Village, Lake Louise Ski Resort, and Mt. Norquay. Over 8,000 acres of terrain, champagne powder, and runs for every ability level.',
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    season: 'November - May',
+    difficulty: 'All Levels',
+  },
+  {
+    name: 'Ice Skating at Lake Louise',
+    description: 'Glide across the naturally frozen surface of Lake Louise with the iconic Chateau and Victoria Glacier as your backdrop. Skate rentals available on-site. A truly magical winter experience.',
+    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80',
+    season: 'December - March',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'Johnston Canyon Ice Walk',
+    description: 'Strap on ice cleats and explore the frozen waterfalls of Johnston Canyon. Guided tours take you past stunning frozen pillars and along icy catwalks for a thrilling winter hiking experience.',
+    image: 'https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=600&q=80',
+    season: 'December - March',
+    difficulty: 'Moderate',
+  },
+  {
+    name: 'Dog Sledding',
+    description: 'Mush through snow-covered wilderness with a team of eager huskies. Several outfitters offer half-day and full-day tours through the backcountry surrounding Banff and Canmore.',
+    image: 'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=600&q=80',
+    season: 'December - March',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'Snowshoeing',
+    description: 'Explore peaceful winter trails through snow-laden forests. Popular routes include the Sundance Canyon trail and the Spray River loop. Rental equipment available in town.',
+    image: 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=600&q=80',
+    season: 'November - April',
+    difficulty: 'Easy - Moderate',
+  },
+  {
+    name: 'Northern Lights Viewing',
+    description: 'On clear dark nights, the aurora borealis occasionally dances above the Rockies. Best viewing spots include Vermilion Lakes, Lake Minnewanka, and Two Jack Lake.',
+    image: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80',
+    season: 'October - March',
+    difficulty: 'Easy',
+  },
+];
+
+const summerActivities = [
+  {
+    name: 'Hiking',
+    description: 'Over 1,600 km of maintained trails ranging from easy lakeside strolls to challenging alpine scrambles. Top picks include Sentinel Pass, Plain of Six Glaciers, Cory Pass, and Sunshine Meadows.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    season: 'June - October',
+    difficulty: 'All Levels',
+  },
+  {
+    name: 'Canoeing & Kayaking',
+    description: 'Paddle the turquoise waters of the Bow River, Lake Louise, Moraine Lake, or Two Jack Lake. Canoe rentals available at most major lakes. An iconic Banff experience.',
+    image: 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=600&q=80',
+    season: 'June - September',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'Mountain Biking',
+    description: 'Ride through stunning mountain scenery on trails ranging from gentle paths along the Bow River to technical singletrack in the backcountry. Bike rentals and guided tours available.',
+    image: 'https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=600&q=80',
+    season: 'May - October',
+    difficulty: 'All Levels',
+  },
+  {
+    name: 'White Water Rafting',
+    description: 'Ride the rapids of the Kicking Horse River for class III-IV thrills, or float the gentle Bow River for a family-friendly scenic adventure. Several outfitters run daily trips.',
+    image: 'https://images.unsplash.com/photo-1530866495561-507c83b13228?w=600&q=80',
+    season: 'June - September',
+    difficulty: 'Moderate - Hard',
+  },
+  {
+    name: 'Wildlife Viewing',
+    description: 'Banff is home to grizzly and black bears, elk, bighorn sheep, mountain goats, wolves, and more. Join a guided wildlife safari or keep your eyes peeled on the Bow Valley Parkway.',
+    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=600&q=80',
+    season: 'Year-round',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'Via Ferrata at Mt. Norquay',
+    description: 'A thrilling climbing experience using iron rungs, ladders, and suspension bridges bolted into the cliff face. Guided tours take you to stunning viewpoints with panoramic valley views.',
+    image: 'https://images.unsplash.com/photo-1522163182402-834f871fd851?w=600&q=80',
+    season: 'June - October',
+    difficulty: 'Moderate - Hard',
+  },
+];
+---
+
+<BaseLayout title="Activities" description="Explore the best outdoor activities in Banff - skiing, hiking, canoeing, wildlife tours, and more year-round adventures.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
+      alt="Mountain adventure landscape"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Adventure Awaits</span>
+      <h1>Activities in Banff</h1>
+      <p>From powdery ski runs to pristine alpine lakes, Banff delivers world-class outdoor adventures in every season.</p>
+    </div>
+  </section>
+
+  <!-- Winter -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#10052; Winter</span>
+        <h2>Winter Adventures</h2>
+        <p>When the snow falls, Banff transforms into a winter wonderland with endless ways to embrace the cold.</p>
+      </div>
+      <div class="grid grid-3">
+        {winterActivities.map(item => (
+          <div class="card">
+            <img src={item.image} alt={item.name} class="card-image" />
+            <div class="card-body">
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div class="card-meta">
+                <span>&#128197; {item.season}</span>
+                <span class="tag">{item.difficulty}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Summer -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#9728; Summer</span>
+        <h2>Summer Adventures</h2>
+        <p>Long sunny days, wildflower meadows, and turquoise lakes make summer in Banff an outdoor paradise.</p>
+      </div>
+      <div class="grid grid-3">
+        {summerActivities.map(item => (
+          <div class="card">
+            <img src={item.image} alt={item.name} class="card-image" />
+            <div class="card-body">
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div class="card-meta">
+                <span>&#128197; {item.season}</span>
+                <span class="tag">{item.difficulty}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>&#127760; Seasonal Planning Guide</h3>
+        <p><strong>Winter (Nov-Apr):</strong> Ski season, frozen waterfalls, northern lights, hot springs. Dress in layers and pack thermals.</p>
+        <p><strong>Spring (May-Jun):</strong> Shoulder season with fewer crowds. Some trails may still have snow. Waterfalls peak from snowmelt.</p>
+        <p><strong>Summer (Jul-Aug):</strong> Peak season. Book accommodations and shuttles early. Trails are clear, lakes are stunning, wildlife is active.</p>
+        <p><strong>Fall (Sep-Oct):</strong> Golden larch season in late September. Fewer crowds, cooler weather, and beautiful fall colours in the valleys.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

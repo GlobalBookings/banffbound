@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const categories = [
+  {
+    title: 'Things to Do',
+    description: 'From scenic gondola rides to serene lake walks, discover unforgettable experiences in the heart of the Rockies.',
+    href: '/things-to-do',
+    icon: '&#128507;',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
+  },
+  {
+    title: 'Eat & Drink',
+    description: 'Savor world-class dining, cozy mountain cafes, craft breweries, and everything in between.',
+    href: '/eat-and-drink',
+    icon: '&#127860;',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80',
+  },
+  {
+    title: 'Shopping',
+    description: 'Browse unique local boutiques, outdoor gear shops, Indigenous art, and handcrafted souvenirs.',
+    href: '/shopping',
+    icon: '&#128717;',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80',
+  },
+  {
+    title: 'Activities',
+    description: 'Hit the slopes, paddle pristine lakes, hike alpine trails, and chase wildlife year-round.',
+    href: '/activities',
+    icon: '&#9968;',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+  },
+];
+
+const highlights = [
+  { stat: '6,641 km\u00B2', label: 'National Park Area' },
+  { stat: '1,885m', label: 'Town Elevation' },
+  { stat: '3+', label: 'World-Class Ski Resorts' },
+  { stat: '1,600 km', label: 'of Hiking Trails' },
+];
+---
+
+<BaseLayout title="Home" description="BanffBound - Your complete guide to Banff, Alberta. Everything to do, eat, drink, shop, and experience in the Canadian Rockies.">
+  <!-- Hero -->
+  <section class="hero">
+    <img
+      src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
+      alt="Banff National Park mountain landscape"
+      class="hero-bg"
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="badge">Welcome to the Rockies</span>
+      <h1>Discover Banff</h1>
+      <p>Your ultimate guide to the crown jewel of the Canadian Rockies. Plan your perfect mountain escape with our curated recommendations for dining, adventure, shopping, and more.</p>
+      <div class="hero-buttons">
+        <a href="/things-to-do" class="btn btn-accent">Start Exploring</a>
+        <a href="/activities" class="btn btn-outline" style="border-color: white; color: white;">View Activities</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        {highlights.map(h => (
+          <div class="stat-item">
+            <span class="stat-number">{h.stat}</span>
+            <span class="stat-label">{h.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Explore Banff</span>
+        <h2>Everything You Need to Know</h2>
+        <p>Whether you're chasing powder, craving mountain cuisine, or looking for the perfect souvenir, we've got you covered.</p>
+      </div>
+      <div class="grid grid-2">
+        {categories.map(cat => (
+          <a href={cat.href} class="category-card card">
+            <img src={cat.image} alt={cat.title} class="card-image" />
+            <div class="card-body">
+              <span class="category-icon" set:html={cat.icon}></span>
+              <h3>{cat.title}</h3>
+              <p>{cat.description}</p>
+              <span class="card-link">Explore &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-content">
+          <span class="badge">Plan Ahead</span>
+          <h2>Ready for Your Banff Adventure?</h2>
+          <p>Banff National Park requires a valid Parks Canada pass. Purchase yours before you arrive and skip the line at the gate.</p>
+          <a href="https://www.pc.gc.ca/en/pn-np/ab/banff" target="_blank" rel="noopener" class="btn btn-primary">Get Your Park Pass &rarr;</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80"
+          alt="Scenic Banff landscape"
+          class="cta-image"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26,58,42,0.4) 0%, rgba(26,26,26,0.6) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 1.5rem;
+  }
+
+  .hero-content h1 {
+    color: var(--color-white);
+    font-size: clamp(3rem, 7vw, 5rem);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .stats-bar {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 2.5rem 0;
+    margin-top: -2px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  .category-card {
+    display: block;
+  }
+
+  .category-card .card-image {
+    height: 240px;
+  }
+
+  .category-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: gap 0.2s ease;
+  }
+
+  .cta-section {
+    padding: 2rem 0 4rem;
+  }
+
+  .cta-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--color-primary);
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: var(--color-white);
+  }
+
+  .cta-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cta-content h2 {
+    color: var(--color-white);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .cta-content p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .cta-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 300px;
+  }
+
+  @media (max-width: 768px) {
+    .hero { height: 80vh; min-height: 500px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-card { grid-template-columns: 1fr; }
+    .cta-image { max-height: 250px; }
+  }
+</style>

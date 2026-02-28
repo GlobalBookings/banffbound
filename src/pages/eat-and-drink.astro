@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const restaurants = [
+  {
+    name: 'The Bison Restaurant',
+    description: 'Farm-to-table dining featuring regional Rocky Mountain cuisine. Known for their bison short ribs, elk carpaccio, and an impressive wine list. Rustic-elegant atmosphere with stunning Bear Street views.',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80',
+    type: 'Fine Dining',
+    price: '$$$',
+    cuisine: 'Canadian',
+  },
+  {
+    name: 'Park Distillery',
+    description: 'Craft spirits distilled with glacial water from the Canadian Rockies. Their campfire-cooked meals, smoked meats, and house-made cocktails make this a Banff essential. Try the s\'mores for dessert.',
+    image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80',
+    type: 'Restaurant & Bar',
+    price: '$$',
+    cuisine: 'Canadian',
+  },
+  {
+    name: 'Grizzly House',
+    description: 'A Banff institution since 1967. Famous for fondue and exotic game meats including rattlesnake, alligator, and ostrich. The retro-kitsch decor and table-side phones add to the unique experience.',
+    image: 'https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80',
+    type: 'Restaurant',
+    price: '$$$',
+    cuisine: 'Fondue & Game',
+  },
+  {
+    name: 'Block Kitchen + Bar',
+    description: 'Modern comfort food with a creative twist. Great burgers, bowls, and shareables in a hip downtown setting. Their weekend brunch is wildly popular with locals and visitors alike.',
+    image: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80',
+    type: 'Casual Dining',
+    price: '$$',
+    cuisine: 'Modern Canadian',
+  },
+  {
+    name: 'Juniper Bistro',
+    description: 'Perched above the town with panoramic mountain views from the patio. Seasonal menus highlight Alberta beef, wild game, and locally foraged ingredients. Perfect for a special occasion.',
+    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80',
+    type: 'Fine Dining',
+    price: '$$$',
+    cuisine: 'Contemporary',
+  },
+  {
+    name: 'Wild Flour Bakery',
+    description: 'Artisan bakery beloved by locals for their sourdough, croissants, and hearty breakfast sandwiches. Grab a coffee and a pastry before heading out on the trails.',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80',
+    type: 'Bakery & Cafe',
+    price: '$',
+    cuisine: 'Bakery',
+  },
+  {
+    name: 'Banff Ave Brewing Co.',
+    description: 'Banff\'s own craft brewery serving house-brewed beers alongside pub favourites. Their Head Smashed IPA and Reverb Dark Lager are local legends. Great apres-ski spot.',
+    image: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&q=80',
+    type: 'Brewery & Pub',
+    price: '$$',
+    cuisine: 'Pub Food',
+  },
+  {
+    name: 'The Eddie Burger + Bar',
+    description: 'Gourmet burgers in a funky, no-frills basement joint. Creative toppings, spiked milkshakes, and a laid-back vibe make it a fan favourite. The elk burger is a must-try.',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80',
+    type: 'Casual',
+    price: '$$',
+    cuisine: 'Burgers',
+  },
+  {
+    name: 'Tooloulou\'s',
+    description: 'Cajun and Creole flavours meet the Rocky Mountains. Po\' boys, jambalaya, and gumbo served with genuine Southern hospitality. A unique departure from typical mountain fare.',
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80',
+    type: 'Restaurant',
+    price: '$$',
+    cuisine: 'Cajun-Creole',
+  },
+];
+
+const drinks = [
+  {
+    name: 'High Rollers',
+    description: 'Bowling alley meets cocktail lounge. Roll a few frames while sipping craft cocktails in this retro-cool Banff hangout.',
+    type: 'Bar & Entertainment',
+  },
+  {
+    name: 'The Rose & Crown',
+    description: 'Banff\'s beloved British pub with a rooftop patio overlooking the town. Live music, cold pints, and a lively atmosphere year-round.',
+    type: 'Pub',
+  },
+  {
+    name: 'Whitebark Cafe',
+    description: 'Specialty coffee roasted in-house. A bright, modern space perfect for a caffeine boost before exploring the park.',
+    type: 'Coffee Shop',
+  },
+  {
+    name: 'Three Bears Brewery',
+    description: 'Small-batch craft beer brewed in the heart of Banff. Rotating taps and a cozy taproom make it a great afternoon stop.',
+    type: 'Brewery',
+  },
+];
+---
+
+<BaseLayout title="Eat & Drink" description="The best restaurants, cafes, bars, and breweries in Banff. From fine dining to cozy mountain pubs.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
+      alt="Fine dining table setting"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Dine & Sip</span>
+      <h1>Eat & Drink in Banff</h1>
+      <p>From elevated Rocky Mountain cuisine to cozy craft breweries, Banff's food and drink scene punches well above its weight.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Restaurants</span>
+        <h2>Where to Eat</h2>
+        <p>Banff's dining scene is a delicious mix of fine dining, creative casual eateries, and beloved local institutions.</p>
+      </div>
+      <div class="grid grid-3">
+        {restaurants.map(item => (
+          <div class="card">
+            <img src={item.image} alt={item.name} class="card-image" />
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag">{item.type}</span>
+                <span class="tag">{item.price}</span>
+              </div>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div class="card-meta">
+                <span>{item.cuisine}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Bars & Cafes</span>
+        <h2>Where to Drink</h2>
+        <p>Whether you need a craft cocktail after a day on the slopes or a perfect espresso before a morning hike.</p>
+      </div>
+      <div class="grid grid-2">
+        {drinks.map(item => (
+          <div class="drink-card">
+            <span class="tag">{item.type}</span>
+            <h3>{item.name}</h3>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .card-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .drink-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+  }
+
+  .drink-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .drink-card h3 {
+    margin: 0.75rem 0 0.5rem;
+  }
+
+  .drink-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+</style>
