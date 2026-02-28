@@ -1,0 +1,281 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const monthlyData = [
+  { month: 'January', avgHigh: '-5°C', avgLow: '-15°C', precip: '25 mm', snowfall: '24 cm', sunshine: '4 hrs/day', sunrise: '8:40 AM', sunset: '5:00 PM' },
+  { month: 'February', avgHigh: '-2°C', avgLow: '-13°C', precip: '19 mm', snowfall: '18 cm', sunshine: '5 hrs/day', sunrise: '8:05 AM', sunset: '5:45 PM' },
+  { month: 'March', avgHigh: '3°C', avgLow: '-9°C', precip: '22 mm', snowfall: '21 cm', sunshine: '6 hrs/day', sunrise: '7:15 AM', sunset: '6:30 PM' },
+  { month: 'April', avgHigh: '8°C', avgLow: '-3°C', precip: '30 mm', snowfall: '18 cm', sunshine: '7 hrs/day', sunrise: '7:10 AM', sunset: '8:20 PM' },
+  { month: 'May', avgHigh: '14°C', avgLow: '2°C', precip: '50 mm', snowfall: '8 cm', sunshine: '8 hrs/day', sunrise: '6:15 AM', sunset: '9:05 PM' },
+  { month: 'June', avgHigh: '19°C', avgLow: '6°C', precip: '60 mm', snowfall: '0 cm', sunshine: '9 hrs/day', sunrise: '5:40 AM', sunset: '9:40 PM' },
+  { month: 'July', avgHigh: '22°C', avgLow: '8°C', precip: '50 mm', snowfall: '0 cm', sunshine: '10 hrs/day', sunrise: '5:55 AM', sunset: '9:35 PM' },
+  { month: 'August', avgHigh: '22°C', avgLow: '7°C', precip: '45 mm', snowfall: '0 cm', sunshine: '9 hrs/day', sunrise: '6:35 AM', sunset: '9:00 PM' },
+  { month: 'September', avgHigh: '16°C', avgLow: '3°C', precip: '35 mm', snowfall: '3 cm', sunshine: '7 hrs/day', sunrise: '7:20 AM', sunset: '8:00 PM' },
+  { month: 'October', avgHigh: '9°C', avgLow: '-2°C', precip: '25 mm', snowfall: '14 cm', sunshine: '6 hrs/day', sunrise: '8:05 AM', sunset: '7:00 PM' },
+  { month: 'November', avgHigh: '0°C', avgLow: '-10°C', precip: '20 mm', snowfall: '20 cm', sunshine: '4 hrs/day', sunrise: '8:00 AM', sunset: '5:10 PM' },
+  { month: 'December', avgHigh: '-5°C', avgLow: '-15°C', precip: '25 mm', snowfall: '25 cm', sunshine: '3 hrs/day', sunrise: '8:35 AM', sunset: '4:45 PM' },
+];
+
+const seasonalGuide = [
+  {
+    season: 'Winter (December - February)',
+    icon: '❄️',
+    description: 'Cold and snowy with average temperatures between -20°C and -5°C. The ski season is in full swing, and the landscape is a winter wonderland. Days are short but the dry mountain air feels less biting than coastal cold.',
+    bestFor: 'Skiing, snowboarding, ice skating, ice walks, dog sledding, northern lights, hot springs',
+    packing: 'Heavy insulated jacket, thermal base layers, insulated waterproof boots, thick gloves, toque/beanie, neck gaiter, hand warmers, ski goggles',
+  },
+  {
+    season: 'Spring (March - May)',
+    icon: '🌸',
+    description: 'A transitional season with highly variable weather. March can be very wintry; May brings warmer days but cool nights. Snow lingers on trails above 1,800 m. Waterfalls peak with snowmelt. Fewer crowds and good deals on accommodation.',
+    bestFor: 'Waterfall viewing, wildlife emergence (bears), shoulder-season deals, early biking on paved trails',
+    packing: 'Layered clothing, waterproof jacket, warm fleece, waterproof hiking boots, sunscreen, sunglasses',
+  },
+  {
+    season: 'Summer (June - August)',
+    icon: '☀️',
+    description: 'Warm and sunny with the longest days of the year. Temperatures range from 6°C to 22°C. This is peak hiking season with all trails open and alpine wildflowers blooming. Afternoon thunderstorms are common. Book everything well in advance.',
+    bestFor: 'Hiking, canoeing, biking, wildlife viewing, camping, scenic drives, paddling, via ferrata',
+    packing: 'Light layers, rain jacket, sun hat, sunscreen (SPF 50+), hiking boots, bug spray, water bottle, bear spray',
+  },
+  {
+    season: 'Fall (September - November)',
+    icon: '🍂',
+    description: 'Crisp, cool days with stunning fall colours. Larch trees turn brilliant gold in late September, drawing photographers to Larch Valley and surrounding areas. First snowfalls typically arrive in October. A magical shoulder season with fewer visitors.',
+    bestFor: 'Larch season hikes, elk rut viewing, photography, fall colours, fewer crowds, wildlife viewing',
+    packing: 'Warm layers, insulated jacket, gloves, toque, rain gear, sturdy boots, camera with telephoto lens',
+  },
+];
+---
+
+<BaseLayout title="Banff Weather Guide" description="Month-by-month weather data for Banff — temperatures, precipitation, snowfall, best time to visit, what to pack, sunrise/sunset times, and altitude tips.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1600&q=80"
+      alt="Mountain weather and sky in Banff National Park"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Plan Smart</span>
+      <h1>Banff Weather Guide</h1>
+      <p>Month-by-month climate data, seasonal packing lists, and the best time to visit for every type of adventure.</p>
+    </div>
+  </section>
+
+  <!-- Monthly Climate Data -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Climate Data</span>
+        <h2>Monthly Weather Overview</h2>
+        <p>Average temperatures, precipitation, and daylight hours for the town of Banff (elevation 1,383 m). Higher elevations will be colder.</p>
+      </div>
+      <div class="table-wrapper">
+        <table class="weather-table">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Avg High</th>
+              <th>Avg Low</th>
+              <th>Precip</th>
+              <th>Snowfall</th>
+              <th>Sunshine</th>
+              <th>Sunrise</th>
+              <th>Sunset</th>
+            </tr>
+          </thead>
+          <tbody>
+            {monthlyData.map(m => (
+              <tr>
+                <td><strong>{m.month}</strong></td>
+                <td>{m.avgHigh}</td>
+                <td>{m.avgLow}</td>
+                <td>{m.precip}</td>
+                <td>{m.snowfall}</td>
+                <td>{m.sunshine}</td>
+                <td>{m.sunrise}</td>
+                <td>{m.sunset}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonal Guide -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Seasonal Guide</span>
+        <h2>Best Time to Visit</h2>
+        <p>Each season in Banff offers a completely different experience. Here's what to expect and what to pack.</p>
+      </div>
+      <div class="grid grid-2">
+        {seasonalGuide.map(s => (
+          <div class="card">
+            <div class="card-body">
+              <h3>{s.icon} {s.season}</h3>
+              <p>{s.description}</p>
+              <p style="margin-top: 0.75rem;"><strong>Best For:</strong> {s.bestFor}</p>
+              <p style="margin-top: 0.5rem;"><strong>What to Pack:</strong> {s.packing}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Altitude & Current Conditions -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Be Prepared</span>
+        <h2>Important Weather Considerations</h2>
+        <p>Mountain weather is different from what most visitors are used to. These tips will help you stay safe and comfortable.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>🏔️ Altitude Awareness</h3>
+            <p>Banff town sits at 1,383 m, with many hikes reaching 2,500 m+. At altitude, you'll experience:<br/><br/>
+            <strong>Dehydration:</strong> Drink 50% more water than usual.<br/>
+            <strong>Sunburn:</strong> UV intensity increases 10-12% per 1,000 m. SPF 50+ is essential.<br/>
+            <strong>Mild Altitude Sickness:</strong> Some visitors experience headaches, shortness of breath, or fatigue. Take it easy on day one and stay hydrated.<br/>
+            <strong>Temperature Drops:</strong> Expect -6°C per 1,000 m elevation gain. A 22°C valley day can mean 6°C at a summit.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>⛈️ Mountain Storms</h3>
+            <p>Afternoon thunderstorms are common in summer, especially July and August. Lightning is a serious hazard at high elevations.<br/><br/>
+            <strong>Start Early:</strong> Begin hikes at dawn to be below treeline by early afternoon.<br/>
+            <strong>Watch the Sky:</strong> Cumulus clouds building by mid-morning signal possible afternoon storms.<br/>
+            <strong>Seek Shelter:</strong> If caught in a storm, avoid ridges, summits, and lone trees. Descend immediately.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🌡️ Temperature Swings</h3>
+            <p>Mountain weather can change drastically in hours. A sunny 20°C morning can become a 5°C rainstorm by afternoon.<br/><br/>
+            <strong>Layer System:</strong> Base layer (moisture-wicking), mid layer (insulating fleece), outer layer (waterproof shell).<br/>
+            <strong>Chinook Winds:</strong> In winter, warm Chinook winds can raise temperatures by 20°C+ in hours, turning a -15°C day into a 5°C day.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>📡 Current Conditions</h3>
+            <p>Check conditions before heading out:<br/><br/>
+            <strong>Environment Canada:</strong> Official weather forecasts for Banff National Park.<br/>
+            <strong>Parks Canada:</strong> Trail conditions, closures, and avalanche bulletins.<br/>
+            <strong>Banff Webcams:</strong> Live camera feeds from town, ski resorts, and mountain summits.<br/>
+            <strong>Avalanche Canada:</strong> Winter backcountry avalanche forecasts for the Rockies.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>❄️ Winter Driving</h3>
+            <p>Winter tires (or chains) are mandatory on most BC highways and highly recommended in Alberta from October to April.<br/><br/>
+            <strong>The Trans-Canada:</strong> Well-maintained but can close during heavy storms.<br/>
+            <strong>Icefields Parkway:</strong> Open year-round but can be treacherous in winter. Check highway conditions before departing.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>☀️ Daylight Hours</h3>
+            <p>Daylight varies dramatically by season:<br/><br/>
+            <strong>Summer Solstice (June 21):</strong> ~16.5 hours of daylight. Sunrise ~5:35 AM, sunset ~9:45 PM.<br/>
+            <strong>Winter Solstice (Dec 21):</strong> ~8 hours of daylight. Sunrise ~8:40 AM, sunset ~4:40 PM.<br/>
+            <strong>Planning Tip:</strong> Long summer days are perfect for ambitious hikes. In winter, plan activities for the short daylight window.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>🌤️ Quick Weather Tips</h3>
+        <p><strong>Best Overall Weather:</strong> July and August have the warmest, most stable weather, but also the biggest crowds.</p>
+        <p><strong>Hidden Gem Months:</strong> September offers crisp days, fewer crowds, golden larches, and clear skies. June has long days and wildflowers.</p>
+        <p><strong>Expect Snow Anytime:</strong> Snow can fall at higher elevations in any month of the year, including July and August.</p>
+        <p><strong>Dress in Layers:</strong> This is the single most important piece of weather advice for Banff. The three-layer system works year-round.</p>
+        <p><strong>Protect Your Skin:</strong> The combination of altitude, dry air, and reflected snow/water means intense UV exposure. Wear sunscreen, lip balm with SPF, and sunglasses.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .table-wrapper {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+
+  .weather-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    font-size: 0.9rem;
+  }
+
+  .weather-table th,
+  .weather-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-bg-alt);
+  }
+
+  .weather-table th {
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .weather-table tbody tr:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .weather-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .weather-table {
+      font-size: 0.8rem;
+    }
+
+    .weather-table th,
+    .weather-table td {
+      padding: 0.5rem 0.6rem;
+    }
+  }
+</style>

@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const animals = [
+  {
+    name: 'Elk (Wapiti)',
+    description: 'The most commonly seen large mammal in Banff. Elk roam freely through the town of Banff, especially in fall during the rutting season. Males sport impressive antlers and can be heard bugling in September and October. Keep at least 30 metres distance — bull elk are aggressive during rut.',
+    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=600&q=80',
+    bestSeason: 'Year-round (rut: Sep-Oct)',
+    bestLocations: 'Banff townsite, Cascade Meadows, Bow Valley Parkway',
+    photoTip: 'Use a telephoto lens (200mm+). Early morning light is magical. Never approach for a closer shot.',
+  },
+  {
+    name: 'Grizzly Bear',
+    description: 'Banff is home to an estimated 65 grizzly bears. These powerful omnivores emerge from hibernation in April and can be spotted feeding on berries, roots, and occasionally along streams during salmon season. Grizzlies have a distinctive shoulder hump and dish-shaped face.',
+    image: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=600&q=80',
+    bestSeason: 'May - October',
+    bestLocations: 'Bow Valley Parkway, Lake Louise area, Icefields Parkway',
+    photoTip: 'Keep 100 m minimum distance. Use a long telephoto (300mm+). Never leave your vehicle if a bear is near.',
+  },
+  {
+    name: 'Black Bear',
+    description: 'Smaller and more common than grizzlies, black bears are found throughout the park\'s forested areas. Despite their name, they can be brown, cinnamon, or blonde. They\'re excellent tree climbers and often spotted near berry patches in late summer.',
+    image: 'https://images.unsplash.com/photo-1525382455947-f319bc05fb35?w=600&q=80',
+    bestSeason: 'May - October',
+    bestLocations: 'Bow Valley Parkway, Vermilion Lakes Road, forest edges',
+    photoTip: 'Keep 100 m minimum distance. Black bears can be curious — never feed or approach them.',
+  },
+  {
+    name: 'Bighorn Sheep',
+    description: 'Rocky Mountain bighorn sheep are a symbol of the Canadian Rockies. Males sport massive curling horns that they smash together during dramatic head-butting battles in the fall rut. They\'re often seen on rocky slopes and near mineral licks along roadways.',
+    image: 'https://images.unsplash.com/photo-1474511320723-9a56873571b7?w=600&q=80',
+    bestSeason: 'Year-round (rut: Nov-Dec)',
+    bestLocations: 'Mt. Norquay road, Lake Minnewanka road, Icefields Parkway',
+    photoTip: 'They often come close to roads for mineral licks. Stay in your vehicle and shoot through the window.',
+  },
+  {
+    name: 'Mountain Goat',
+    description: 'These sure-footed climbers inhabit the highest, most rugged terrain in the park. With their shaggy white coats and black horns, mountain goats are perfectly adapted to life on steep cliffs where few predators can follow.',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80',
+    bestSeason: 'June - September',
+    bestLocations: 'Parker Ridge, Plain of Six Glaciers, high alpine areas',
+    photoTip: 'Bring a powerful telephoto — they\'re usually distant. Patience and a good vantage point are key.',
+  },
+  {
+    name: 'Moose',
+    description: 'The largest member of the deer family, moose are solitary and elusive. They prefer marshy areas, willow thickets, and quiet waterways. A bull moose can stand over 2 metres tall at the shoulder and weigh up to 700 kg.',
+    image: 'https://images.unsplash.com/photo-1507666405895-422eee7d517f?w=600&q=80',
+    bestSeason: 'May - October',
+    bestLocations: 'Vermilion Lakes, Waterfowl Lakes, marshy meadows',
+    photoTip: 'Early morning at wetlands offers the best chances. Keep 30 m distance — moose are unpredictable.',
+  },
+  {
+    name: 'Wolves',
+    description: 'The Bow Valley wolf pack has been studied for decades. Wolves are rarely seen but occasionally spotted along the Bow Valley Parkway at dawn or dusk. Their haunting howls echo through the valleys on quiet winter nights.',
+    image: 'https://images.unsplash.com/photo-1474511320723-9a56873571b7?w=600&q=80',
+    bestSeason: 'Year-round (best: winter)',
+    bestLocations: 'Bow Valley Parkway (dawn/dusk), remote valleys',
+    photoTip: 'Sightings are rare — always have your camera ready. Long telephoto essential. Never follow or chase wolves.',
+  },
+  {
+    name: 'Bald Eagles & Golden Eagles',
+    description: 'Both bald and golden eagles soar above Banff\'s valleys. Bald eagles are often seen near water, hunting fish, while golden eagles patrol the alpine ridges. The Abraham Lake area east of the park is famous for eagle concentrations in winter.',
+    image: 'https://images.unsplash.com/photo-1611689342806-0863700ce8e4?w=600&q=80',
+    bestSeason: 'Year-round',
+    bestLocations: 'Vermilion Lakes, Bow River, Lake Minnewanka, alpine ridges',
+    photoTip: 'Scan the skies and dead trees near water. A 400mm+ lens is ideal for birds of prey.',
+  },
+];
+---
+
+<BaseLayout title="Wildlife in Banff" description="Guide to wildlife viewing in Banff National Park — elk, bears, mountain goats, bighorn sheep, moose, wolves, eagles. Best locations, seasons, safety rules, and photography tips.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=1600&q=80"
+      alt="Wildlife in Banff National Park"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Wild Encounters</span>
+      <h1>Wildlife in Banff</h1>
+      <p>Home to grizzly bears, elk, wolves, and over 260 bird species, Banff National Park is one of North America's premier wildlife destinations.</p>
+    </div>
+  </section>
+
+  <!-- Animals Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Iconic Species</span>
+        <h2>Banff's Wildlife</h2>
+        <p>From the towering moose to the soaring eagle, discover the incredible animals that call the Canadian Rockies home.</p>
+      </div>
+      <div class="grid grid-2">
+        {animals.map(animal => (
+          <div class="card">
+            <img src={animal.image} alt={animal.name} class="card-image" />
+            <div class="card-body">
+              <h3>{animal.name}</h3>
+              <p>{animal.description}</p>
+              <div class="card-meta">
+                <span>📅 {animal.bestSeason}</span>
+              </div>
+              <div class="card-meta">
+                <span>📍 {animal.bestLocations}</span>
+              </div>
+              <div class="card-meta">
+                <span>📸 {animal.photoTip}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety Rules -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">⚠️ Safety First</span>
+        <h2>Wildlife Safety Rules</h2>
+        <p>Parks Canada regulations exist to protect both you and the animals. Violations can result in fines up to $25,000.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>📏 Keep Your Distance</h3>
+            <p><strong>Bears &amp; cougars:</strong> 100 metres minimum.<br/><strong>Elk, moose, sheep, goats:</strong> 30 metres minimum.<br/>Use binoculars or a telephoto lens — never approach wildlife for a photo or selfie.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🚫 Never Feed Wildlife</h3>
+            <p>Feeding wildlife is illegal in national parks. Human food habituates animals to people, which often leads to the animal being relocated or euthanized. A fed bear is a dead bear.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🐻 Bear Spray</h3>
+            <p>Carry bear spray when hiking and know how to use it. It should be in a hip holster for quick access, not buried in your backpack. Bear spray is effective at stopping 98% of bear charges.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🚗 Driving Safely</h3>
+            <p>Wildlife-vehicle collisions are a serious issue. Obey speed limits (especially on the Bow Valley Parkway) and watch for animals on or near the road, particularly at dawn and dusk.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🏕️ Food Storage</h3>
+            <p>Store all food, coolers, and scented items in bear-proof containers or your vehicle trunk. Never leave food unattended at campsites or picnic areas.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🐕 Dogs on Leash</h3>
+            <p>Dogs must be on leash at all times in the national park. Off-leash dogs can trigger predatory behaviour in wildlife and disturb sensitive species.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book a Wildlife Safari</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Join expert naturalist guides who know where and when to find Banff's wildlife. Guided safaris dramatically increase your chances of memorable sightings.</p>
+      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=wildlife" class="btn btn-accent" target="_blank" rel="noopener">Browse Wildlife Tours on GetYourGuide →</a>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>📸 Wildlife Photography Tips</h3>
+        <p><strong>Golden Hours:</strong> The best wildlife photography happens in the first and last hour of daylight when animals are most active and the light is warmest.</p>
+        <p><strong>Telephoto Lens:</strong> A 200-400mm lens is essential. Wildlife must be photographed from a safe distance — zoom in, don't walk in.</p>
+        <p><strong>Patience Pays Off:</strong> Find a known wildlife corridor, set up quietly, and wait. Rushing through the park rarely yields the best sightings.</p>
+        <p><strong>Know the Seasons:</strong> Fall elk rut (September), spring bear emergence (April-May), and winter wolf activity offer the most dramatic wildlife moments.</p>
+        <p><strong>Respect the Wildlife:</strong> If an animal changes its behaviour because of your presence, you are too close. Back away slowly.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

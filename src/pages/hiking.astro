@@ -1,0 +1,299 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const easyHikes = [
+  {
+    name: 'Johnston Canyon – Lower Falls',
+    description: 'One of Banff\'s most popular trails, this well-maintained catwalk trail follows Johnston Creek through a limestone canyon to a stunning lower waterfall. Accessible year-round with ice cleats in winter.',
+    image: 'https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=600&q=80',
+    distance: '2.4 km return',
+    elevation: '30 m',
+    time: '1 hour',
+    season: 'Year-round',
+  },
+  {
+    name: 'Tunnel Mountain',
+    description: 'The easiest summit hike in Banff, offering panoramic views of the Bow Valley, Mount Rundle, and Cascade Mountain. A well-graded switchback trail through montane forest, perfect for families and beginners.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    distance: '4.3 km return',
+    elevation: '260 m',
+    time: '1.5-2 hours',
+    season: 'April - November',
+  },
+  {
+    name: 'Bow River / Hoodoos Trail',
+    description: 'A flat riverside walk from Bow Falls to the famous Banff Hoodoos — tall, thin rock pillars formed by erosion. Great for an easy afternoon stroll with unique geological formations and river views.',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',
+    distance: '9.4 km return',
+    elevation: '60 m',
+    time: '2-3 hours',
+    season: 'April - November',
+  },
+  {
+    name: 'Fenland Trail',
+    description: 'A peaceful loop through a montane wetland ecosystem just minutes from downtown Banff. Excellent for birdwatching and wildlife spotting, with interpretive signs explaining the local ecology.',
+    image: 'https://images.unsplash.com/photo-1511497584788-876760111969?w=600&q=80',
+    distance: '2.1 km loop',
+    elevation: 'Flat',
+    time: '30-45 min',
+    season: 'Year-round',
+  },
+  {
+    name: 'Lake Louise Lakeshore Trail',
+    description: 'A flat, paved trail along the turquoise shores of Lake Louise with views of Victoria Glacier. One of the most photographed walks in the Canadian Rockies, suitable for all ages and abilities.',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
+    distance: '4 km return',
+    elevation: 'Flat',
+    time: '1 hour',
+    season: 'May - October',
+  },
+];
+
+const moderateHikes = [
+  {
+    name: 'Johnston Canyon – Upper Falls & Ink Pots',
+    description: 'Continue past the Lower Falls to the dramatic Upper Falls and on to the Ink Pots — vivid mineral springs in an alpine meadow. A rewarding longer day hike through the full canyon system.',
+    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=600&q=80',
+    distance: '11.6 km return',
+    elevation: '435 m',
+    time: '4-5 hours',
+    season: 'June - October',
+  },
+  {
+    name: 'Lake Agnes Tea House',
+    description: 'A classic Banff hike ascending from Lake Louise through subalpine forest to a stunning alpine lake and a rustic tea house (open summer only). The trail offers multiple viewpoints and a unique reward at the top.',
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',
+    distance: '7.2 km return',
+    elevation: '400 m',
+    time: '3-4 hours',
+    season: 'June - October',
+  },
+  {
+    name: 'Sulphur Mountain via Trail',
+    description: 'Hike to the top of Sulphur Mountain for 360-degree views instead of taking the gondola. A steady climb through forest opens to a boardwalk summit with viewing platforms and the cosmic ray station.',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+    distance: '11 km return',
+    elevation: '655 m',
+    time: '4-5 hours',
+    season: 'June - October',
+  },
+  {
+    name: 'Sunshine Meadows',
+    description: 'Take the shuttle to Sunshine Village ski resort and hike through spectacular alpine meadows bursting with wildflowers in July and August. Multiple loops offer views of Rock Isle, Grizzly, and Larix Lakes.',
+    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80',
+    distance: '7-12 km (varies)',
+    elevation: '200-400 m',
+    time: '3-5 hours',
+    season: 'July - September',
+  },
+  {
+    name: 'C-Level Cirque',
+    description: 'A rewarding hike to a dramatic glacial cirque beneath Cascade Mountain. The trail passes old coal mine ruins from the early 1900s before opening to a stunning amphitheatre of towering cliffs.',
+    image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=600&q=80',
+    distance: '8.4 km return',
+    elevation: '455 m',
+    time: '3-4 hours',
+    season: 'June - October',
+  },
+];
+
+const challengingHikes = [
+  {
+    name: 'Plain of Six Glaciers',
+    description: 'From Lake Louise, hike along the lakeshore and up through a glacial moraine to a tea house perched below six massive glaciers. Dramatic views of the Victoria Glacier, avalanche paths, and towering peaks.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    distance: '13.8 km return',
+    elevation: '587 m',
+    time: '5-6 hours',
+    season: 'July - September',
+  },
+  {
+    name: 'Sentinel Pass',
+    description: 'One of the highest points reachable by maintained trail in the Canadian Rockies at 2,611 m. Ascend through Larch Valley\'s golden larches (September) to a dramatic mountain pass between towering peaks.',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+    distance: '11.6 km return',
+    elevation: '725 m',
+    time: '5-7 hours',
+    season: 'July - October',
+  },
+  {
+    name: 'Cory Pass Loop',
+    description: 'A strenuous loop with scrambling sections offering some of the most dramatic scenery in Banff. Traverse a rugged pass with views of Mount Louis\' sheer limestone walls before descending through Edith Pass.',
+    image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=600&q=80',
+    distance: '13 km loop',
+    elevation: '915 m',
+    time: '6-8 hours',
+    season: 'July - September',
+  },
+  {
+    name: 'Mount Temple Scramble',
+    description: 'The highest peak in the Lake Louise area at 3,544 m. A long, demanding scramble requiring route-finding skills and comfort with exposed terrain. Only for experienced scramblers in good conditions.',
+    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80',
+    distance: '15 km return',
+    elevation: '1,500 m',
+    time: '8-12 hours',
+    season: 'July - September',
+  },
+  {
+    name: 'Ha Ling Peak',
+    description: 'A popular summit near Canmore offering spectacular panoramic views of the entire Bow Valley. Steep switchbacks lead to a rocky summit ridge with views stretching from Banff to the prairies.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    distance: '6 km return',
+    elevation: '740 m',
+    time: '3-5 hours',
+    season: 'June - October',
+  },
+];
+---
+
+<BaseLayout title="Hiking in Banff" description="Complete guide to hiking in Banff National Park — 15+ trails organized by difficulty, with distances, elevation, time, and seasonal advice.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
+      alt="Hiking trail in the Canadian Rockies near Banff"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">1,600+ km of Trails</span>
+      <h1>Hiking in Banff</h1>
+      <p>From gentle lakeside strolls to epic alpine scrambles, Banff National Park has over 1,600 km of maintained trails for every ability.</p>
+    </div>
+  </section>
+
+  <!-- Easy Hikes -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">🟢 Easy</span>
+        <h2>Easy Hikes</h2>
+        <p>Family-friendly trails with gentle grades, well-maintained surfaces, and stunning scenery accessible to all fitness levels.</p>
+      </div>
+      <div class="grid grid-3">
+        {easyHikes.map(hike => (
+          <div class="card">
+            <img src={hike.image} alt={hike.name} class="card-image" />
+            <div class="card-body">
+              <h3>{hike.name}</h3>
+              <p>{hike.description}</p>
+              <div class="card-meta">
+                <span>📏 {hike.distance}</span>
+                <span>⬆️ {hike.elevation}</span>
+              </div>
+              <div class="card-meta">
+                <span>⏱️ {hike.time}</span>
+                <span class="tag">{hike.season}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Moderate Hikes -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">🟡 Moderate</span>
+        <h2>Moderate Hikes</h2>
+        <p>Rewarding trails with more elevation gain and longer distances. Good fitness recommended. Often lead to tea houses, alpine lakes, or viewpoints.</p>
+      </div>
+      <div class="grid grid-3">
+        {moderateHikes.map(hike => (
+          <div class="card">
+            <img src={hike.image} alt={hike.name} class="card-image" />
+            <div class="card-body">
+              <h3>{hike.name}</h3>
+              <p>{hike.description}</p>
+              <div class="card-meta">
+                <span>📏 {hike.distance}</span>
+                <span>⬆️ {hike.elevation}</span>
+              </div>
+              <div class="card-meta">
+                <span>⏱️ {hike.time}</span>
+                <span class="tag">{hike.season}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenging Hikes -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">🔴 Challenging</span>
+        <h2>Challenging Hikes &amp; Scrambles</h2>
+        <p>Epic alpine adventures for experienced hikers. Expect steep terrain, exposure, and unforgettable summit views.</p>
+      </div>
+      <div class="grid grid-3">
+        {challengingHikes.map(hike => (
+          <div class="card">
+            <img src={hike.image} alt={hike.name} class="card-image" />
+            <div class="card-body">
+              <h3>{hike.name}</h3>
+              <p>{hike.description}</p>
+              <div class="card-meta">
+                <span>📏 {hike.distance}</span>
+                <span>⬆️ {hike.elevation}</span>
+              </div>
+              <div class="card-meta">
+                <span>⏱️ {hike.time}</span>
+                <span class="tag">{hike.season}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book a Guided Hiking Tour</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Explore Banff's best trails with certified mountain guides who know the terrain, the wildlife, and the hidden viewpoints.</p>
+      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=hiking" class="btn btn-accent" target="_blank" rel="noopener">Browse Hiking Tours on GetYourGuide →</a>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>🐻 Hiking Safety in Bear Country</h3>
+        <p><strong>Carry Bear Spray:</strong> Always carry bear spray in an accessible holster (not in your pack). Know how to use it before you hit the trail.</p>
+        <p><strong>Make Noise:</strong> Talk, clap, or sing on the trail, especially around blind corners and near streams where bears can't hear you approaching.</p>
+        <p><strong>Hike in Groups:</strong> Groups of four or more are statistically much safer. Never hike alone in remote areas.</p>
+        <p><strong>Trail Closures:</strong> Check Parks Canada's website for current trail conditions and closures due to bear activity.</p>
+        <p><strong>What to Pack:</strong> Carry the 10 essentials — water, food, rain jacket, extra layers, sunscreen, first aid kit, headlamp, map, fire starter, and a whistle.</p>
+        <p><strong>Start Early:</strong> Begin your hike early in the morning to avoid afternoon thunderstorms and to finish before dark.</p>
+        <p><strong>Stay on Trail:</strong> Leaving marked trails damages fragile alpine vegetation that can take decades to recover.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

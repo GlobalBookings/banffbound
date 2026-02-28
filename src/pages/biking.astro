@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const trails = [
+  {
+    name: 'Legacy Trail',
+    description: 'A paved 26 km multi-use pathway connecting Banff to Canmore with stunning Bow Valley views. Perfect for road cycling and e-biking, this fully paved trail offers gentle grades and jaw-dropping mountain panoramas the entire way.',
+    image: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=600&q=80',
+    distance: '26 km one way',
+    difficulty: 'Easy',
+    surface: 'Paved',
+  },
+  {
+    name: 'Sundance Trail',
+    description: 'A scenic out-and-back trail following the Bow River south from the town of Banff to Sundance Canyon. Wide, well-maintained gravel path suitable for beginners and families with beautiful riverside scenery.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80',
+    distance: '7.4 km return',
+    difficulty: 'Easy',
+    surface: 'Gravel',
+  },
+  {
+    name: 'Goat Creek Trail',
+    description: 'A popular point-to-point trail running from the Smith-Dorrien Road near Canmore to the Banff Springs Hotel. Mostly downhill when ridden east, featuring forest singletrack and incredible Spray Valley views.',
+    image: 'https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=600&q=80',
+    distance: '19 km one way',
+    difficulty: 'Moderate',
+    surface: 'Singletrack / Gravel',
+  },
+  {
+    name: 'Spray River Loop',
+    description: 'A scenic loop trail that follows the Spray River past the Banff Springs Golf Course and through dense forest. Well-suited for intermediate riders looking for a half-day adventure close to town.',
+    image: 'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=600&q=80',
+    distance: '12 km loop',
+    difficulty: 'Moderate',
+    surface: 'Gravel / Singletrack',
+  },
+  {
+    name: 'Tunnel Mountain Trail',
+    description: 'A short but rewarding ride to one of Banff\'s most accessible viewpoints. The trail winds through montane forest before opening up to panoramic views of the Bow Valley, Mount Rundle, and Cascade Mountain.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    distance: '4.3 km return',
+    difficulty: 'Easy - Moderate',
+    surface: 'Gravel',
+  },
+  {
+    name: 'Rundle Riverside Trail',
+    description: 'A beautiful riverside trail that follows the Bow River from Banff to Canmore along a quieter route than the Legacy Trail. Gravel surface with some technical sections through forest and along riverbanks.',
+    image: 'https://images.unsplash.com/photo-1571188654248-7a89213915f7?w=600&q=80',
+    distance: '15 km one way',
+    difficulty: 'Moderate',
+    surface: 'Gravel / Dirt',
+  },
+];
+
+const bikingTypes = [
+  {
+    name: 'Road Cycling',
+    description: 'The Bow Valley Parkway (1A Highway) and the Legacy Trail offer world-class road cycling with long, smooth pavement and epic mountain scenery. Road cyclists will find well-maintained shoulders and dedicated cycling infrastructure throughout the park.',
+    icon: '🚴',
+  },
+  {
+    name: 'Mountain Biking',
+    description: 'From flowy cross-country trails to technical singletrack, Banff has terrain for every mountain biker. The Canmore Nordic Centre and trails around the Bow Valley offer dedicated mountain biking networks.',
+    icon: '🏔️',
+  },
+  {
+    name: 'E-Biking',
+    description: 'Electric bikes are permitted on most paved trails and roadways in Banff National Park. The Legacy Trail is especially popular for e-bikers, making the Banff-Canmore route accessible to all fitness levels.',
+    icon: '⚡',
+  },
+  {
+    name: 'Fat Biking (Winter)',
+    description: 'When the snow falls, fat bikes with oversized tires take over groomed trails. Popular winter routes include the Spray River Loop and trails around the Canmore Nordic Centre. A unique way to explore the winter landscape.',
+    icon: '❄️',
+  },
+];
+---
+
+<BaseLayout title="Biking in Banff" description="Discover the best biking trails in Banff National Park — mountain biking, road cycling, e-biking, and fat biking. Trail guides, bike rentals, and guided tours.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=1600&q=80"
+      alt="Cycling through the Canadian Rockies near Banff"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Two Wheels, Endless Views</span>
+      <h1>Biking in Banff</h1>
+      <p>From paved valley pathways to rugged alpine singletrack, explore the Canadian Rockies on two wheels year-round.</p>
+    </div>
+  </section>
+
+  <!-- Biking Types -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Choose Your Ride</span>
+        <h2>Types of Biking in Banff</h2>
+        <p>Whether you prefer smooth pavement or rugged trails, Banff has world-class cycling for every style and season.</p>
+      </div>
+      <div class="grid grid-2">
+        {bikingTypes.map(type => (
+          <div class="card">
+            <div class="card-body">
+              <h3>{type.icon} {type.name}</h3>
+              <p>{type.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Trails -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Top Trails</span>
+        <h2>Best Biking Trails</h2>
+        <p>Our favourite trails around Banff National Park, from beginner-friendly paths to intermediate adventures.</p>
+      </div>
+      <div class="grid grid-3">
+        {trails.map(trail => (
+          <div class="card">
+            <img src={trail.image} alt={trail.name} class="card-image" />
+            <div class="card-body">
+              <h3>{trail.name}</h3>
+              <p>{trail.description}</p>
+              <div class="card-meta">
+                <span>📏 {trail.distance}</span>
+                <span class="tag">{trail.difficulty}</span>
+              </div>
+              <div class="card-meta">
+                <span>🛤️ {trail.surface}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Rentals & Guided Tours -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Gear Up</span>
+        <h2>Bike Rentals &amp; Guided Tours</h2>
+        <p>Don't have your own bike? Several shops in Banff and Canmore offer quality rentals and expert-led tours.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>🏪 Rental Shops</h3>
+            <p>Multiple bike shops in downtown Banff offer road bikes, mountain bikes, e-bikes, and fat bikes for rent. Most include helmets, locks, and trail maps. Half-day and full-day rentals available from around $40-$80 CAD.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🗺️ Guided Tours</h3>
+            <p>Local guides know the best trails, the hidden viewpoints, and the safest routes. Guided cycling tours range from easy Legacy Trail rides to full-day backcountry mountain bike adventures.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>📅 Seasonal Info</h3>
+            <p><strong>Summer (Jun-Sep):</strong> Peak biking season with all trails open and long daylight hours.<br/><strong>Fall (Oct):</strong> Cooler temps, golden larches, fewer crowds.<br/><strong>Winter (Dec-Mar):</strong> Fat biking on groomed trails.<br/><strong>Spring (Apr-May):</strong> Trails may be muddy; paved routes open early.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book a Biking Tour in Banff</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Explore the Rockies with expert local guides. From scenic e-bike rides to thrilling mountain bike descents, find the perfect tour for your adventure.</p>
+      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=bike" class="btn btn-accent" target="_blank" rel="noopener">Browse Bike Tours on GetYourGuide →</a>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>🚲 Biking Tips for Banff</h3>
+        <p><strong>Helmet Required:</strong> Alberta law requires helmets for cyclists under 18, but we recommend helmets for all riders on mountain trails.</p>
+        <p><strong>Wildlife Awareness:</strong> Make noise on trails to avoid surprising bears and other wildlife. Carry bear spray and know how to use it.</p>
+        <p><strong>Trail Etiquette:</strong> Yield to hikers and horses. Stay on designated trails to protect fragile alpine ecosystems.</p>
+        <p><strong>E-bike Rules:</strong> E-bikes are allowed on paved trails and roads but are prohibited on most singletrack trails in the national park.</p>
+        <p><strong>Water & Sunscreen:</strong> The mountain sun is intense at altitude. Carry plenty of water and apply sunscreen frequently.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

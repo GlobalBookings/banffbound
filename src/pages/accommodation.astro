@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const accommodationTypes = [
+  {
+    name: 'Luxury Hotels',
+    description: 'Banff is home to several iconic luxury properties, including the Fairmont Banff Springs ("Castle in the Rockies"), the Fairmont Chateau Lake Louise, and the Rimrock Resort Hotel. These properties offer world-class dining, full-service spas, and breathtaking mountain views. Expect to pay $400-$1,200+ CAD per night in peak season.',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80',
+    priceRange: '$400 - $1,200+ / night',
+    bestFor: 'Special occasions, couples, luxury seekers',
+  },
+  {
+    name: 'Mid-Range Hotels',
+    description: 'Comfortable hotels along Banff Avenue and in the surrounding area offer clean rooms, good amenities, and convenient access to downtown restaurants and shops. Properties like the Moose Hotel & Suites, Banff Ptarmigan Inn, and the Fox Hotel feature pools, hot tubs, and on-site dining.',
+    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80',
+    priceRange: '$200 - $400 / night',
+    bestFor: 'Families, couples, comfort seekers',
+  },
+  {
+    name: 'Budget Hotels & Hostels',
+    description: 'HI Banff Alpine Centre is one of Canada\'s best hostels, with private rooms and dorms, a kitchen, and a fireplace lounge. Budget hotels on the outskirts of town and in Canmore offer significant savings while keeping you close to the action.',
+    image: 'https://images.unsplash.com/photo-1520277739336-7bf67edfa768?w=600&q=80',
+    priceRange: '$40 - $200 / night',
+    bestFor: 'Solo travellers, backpackers, budget-conscious',
+  },
+  {
+    name: 'Cabins & Vacation Rentals',
+    description: 'Rustic log cabins and modern vacation rentals offer a uniquely Canadian mountain experience. From cozy one-bedroom cabins near the Bow River to luxury chalets with hot tubs and mountain views, there\'s something for every group size and budget.',
+    image: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=600&q=80',
+    priceRange: '$150 - $800 / night',
+    bestFor: 'Groups, families, romantic getaways',
+  },
+  {
+    name: 'Backcountry Lodges',
+    description: 'For a truly remote experience, backcountry lodges like Skoki Lodge, Shadow Lake Lodge, and Sundance Lodge offer overnight wilderness stays accessible only by hiking, skiing, or horseback. Meals are included, and the solitude is unmatched.',
+    image: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=600&q=80',
+    priceRange: '$250 - $500 / night (meals included)',
+    bestFor: 'Adventurers, hikers, backcountry enthusiasts',
+  },
+  {
+    name: 'Camping & RV Parks',
+    description: 'Banff National Park has 13 campgrounds with over 2,400 sites. Tunnel Mountain (3 campgrounds), Two Jack Lake, and Lake Louise are the most popular. Frontcountry sites have fire pits and picnic tables; some offer full RV hookups. Book well ahead for summer.',
+    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80',
+    priceRange: '$16 - $40 / night',
+    bestFor: 'Nature lovers, families, RV travellers',
+  },
+];
+
+const areas = [
+  {
+    name: 'Downtown Banff',
+    description: 'Walking distance to restaurants, shops, and nightlife. Most convenient location but also the most expensive. Perfect if you want to experience the vibrant town atmosphere without a car.',
+    highlights: 'Restaurants, shopping, nightlife, transit hub',
+  },
+  {
+    name: 'Tunnel Mountain',
+    description: 'Just 5 minutes from downtown by car or bus, Tunnel Mountain offers a quieter setting with stunning views. Home to three Parks Canada campgrounds and several hotel properties surrounded by forest.',
+    highlights: 'Campgrounds, forest trails, quieter atmosphere',
+  },
+  {
+    name: 'Lake Louise Village',
+    description: 'A small cluster of hotels and services near Lake Louise ski resort and the famous lake itself. Quieter and more remote than Banff town, with quick access to some of the park\'s best hiking.',
+    highlights: 'Lake access, skiing, hiking trailheads',
+  },
+  {
+    name: 'Canmore',
+    description: 'Just outside the park boundary (25 min from Banff), Canmore offers significantly lower prices with a charming mountain-town vibe. Great restaurants, local shops, and the Canmore Nordic Centre.',
+    highlights: 'Lower prices, local vibe, Nordic Centre',
+  },
+];
+---
+
+<BaseLayout title="Accommodation in Banff" description="Complete guide to accommodation in Banff — hotels, hostels, cabins, B&Bs, backcountry lodges, camping and RV parks. Areas, prices, and booking tips.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80"
+      alt="Mountain hotel accommodation in Banff"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Where to Stay</span>
+      <h1>Accommodation in Banff</h1>
+      <p>From iconic castle hotels to cozy backcountry lodges, find the perfect place to rest after your Rocky Mountain adventures.</p>
+    </div>
+  </section>
+
+  <!-- Accommodation Types -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Every Budget</span>
+        <h2>Types of Accommodation</h2>
+        <p>Banff offers accommodation for every budget and travel style, from $16/night campgrounds to $1,200/night luxury suites.</p>
+      </div>
+      <div class="grid grid-3">
+        {accommodationTypes.map(type => (
+          <div class="card">
+            <img src={type.image} alt={type.name} class="card-image" />
+            <div class="card-body">
+              <h3>{type.name}</h3>
+              <p>{type.description}</p>
+              <div class="card-meta">
+                <span>💰 {type.priceRange}</span>
+              </div>
+              <div class="card-meta">
+                <span class="tag">{type.bestFor}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Neighbourhoods</span>
+        <h2>Where to Stay</h2>
+        <p>Each area around Banff has a different character and price point. Choose based on your priorities.</p>
+      </div>
+      <div class="grid grid-2">
+        {areas.map(area => (
+          <div class="card">
+            <div class="card-body">
+              <h3>📍 {area.name}</h3>
+              <p>{area.description}</p>
+              <div class="card-meta">
+                <span class="tag">{area.highlights}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Tips -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Pro Tips</span>
+        <h2>Booking Tips &amp; Advice</h2>
+        <p>Smart strategies for getting the best value on accommodation in Banff National Park.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>📅 Peak Season</h3>
+            <p>July and August are peak season. Book 3-6 months ahead for the best selection and rates. December-March is ski season peak — book early for slope-side properties.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>💡 Shoulder Season Savings</h3>
+            <p>May-June and October-November offer significantly lower rates and fewer crowds. Many properties offer 30-50% discounts during shoulder seasons.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🏕️ Camping Reservations</h3>
+            <p>Parks Canada campgrounds open for booking in January for the summer season. Popular sites like Two Jack Lakeside sell out within hours. Set a reminder and book the moment reservations open.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expedia CTA -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Search Hotels in Banff</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Compare prices from hundreds of properties in Banff, Lake Louise, and Canmore. Find your perfect mountain retreat.</p>
+      <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" class="btn btn-accent" target="_blank" rel="noopener">Search Hotels on Expedia →</a>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>🏨 Accommodation Quick Tips</h3>
+        <p><strong>Free Cancellation:</strong> Book refundable rates when possible — Banff weather can be unpredictable and plans change.</p>
+        <p><strong>Parking:</strong> Many downtown hotels charge $15-$40/night for parking. Check before booking, especially if you have a vehicle.</p>
+        <p><strong>Free Transit:</strong> Roam Transit connects Banff, Canmore, and Lake Louise. Staying outside downtown is viable with good bus service.</p>
+        <p><strong>Kitchen Access:</strong> Dining in Banff is expensive. A room with a kitchenette can save significant money on meals.</p>
+        <p><strong>Hot Tubs:</strong> After a long day of hiking or skiing, a hotel hot tub under the stars is a game-changer. Many Banff hotels have them.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

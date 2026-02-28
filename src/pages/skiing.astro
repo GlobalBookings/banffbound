@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const resorts = [
+  {
+    name: 'Sunshine Village',
+    description: 'Perched on the Continental Divide at 2,160 m base elevation, Sunshine Village receives an average of 9 metres of natural snowfall annually — more than any other Canadian resort. With 3,358 acres of skiable terrain across three mountains, it offers the longest non-glacial ski season in Canada (November to late May). The resort features wide-open bowls, steep chutes, and perfectly groomed cruisers.',
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    vertical: '1,070 m',
+    runs: '137 runs',
+    bestFor: 'Powder, long season, alpine bowls',
+    terrain: '20% Beginner · 55% Intermediate · 25% Advanced',
+  },
+  {
+    name: 'Lake Louise Ski Resort',
+    description: 'Canada\'s largest ski area in the Canadian Rockies, Lake Louise offers 4,200 acres of skiable terrain with stunning views of the surrounding peaks and Victoria Glacier. Known for its consistent snow conditions, friendly atmosphere, and incredible back bowls. The resort regularly hosts World Cup alpine skiing events and offers terrain from gentle groomers to extreme chutes.',
+    image: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=600&q=80',
+    vertical: '991 m',
+    runs: '164 runs',
+    bestFor: 'Variety, back bowls, World Cup terrain',
+    terrain: '25% Beginner · 45% Intermediate · 30% Advanced',
+  },
+  {
+    name: 'Mt. Norquay',
+    description: 'Banff\'s original ski hill since 1926, just 6 minutes from downtown. Mt. Norquay is a local favourite with a charming retro vibe, night skiing, and some of the steepest lift-accessed terrain in the Rockies. It\'s perfect for a half-day session and offers the Via Ferrata climbing experience in summer. The tubing park is a hit with families.',
+    image: 'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=600&q=80',
+    vertical: '503 m',
+    runs: '60 runs',
+    bestFor: 'Night skiing, steep terrain, family tubing',
+    terrain: '28% Beginner · 36% Intermediate · 36% Advanced',
+  },
+];
+
+const xcTrails = [
+  {
+    name: 'Canmore Nordic Centre',
+    description: 'A world-class cross-country skiing facility built for the 1988 Winter Olympics. Over 65 km of groomed trails for classic and skate skiing through beautiful Bow Valley forest.',
+    distance: '65 km',
+    difficulty: 'All Levels',
+  },
+  {
+    name: 'Lake Louise Trails',
+    description: 'Scenic cross-country trails along the Bow River and through meadows near the village of Lake Louise. Groomed regularly with stunning mountain views.',
+    distance: '30 km',
+    difficulty: 'Easy - Moderate',
+  },
+  {
+    name: 'Spray River Loop',
+    description: 'A popular cross-country loop from the Banff Springs Hotel along the Spray River. Well-groomed and scenic, passing through quiet forest and along the riverbank.',
+    distance: '12 km',
+    difficulty: 'Moderate',
+  },
+  {
+    name: 'Pipestone Trails',
+    description: 'Groomed trails near Lake Louise offering a quieter alternative to the main Nordic centre. Beautiful forest setting with good wildlife-viewing opportunities.',
+    distance: '20 km',
+    difficulty: 'Easy - Moderate',
+  },
+];
+---
+
+<BaseLayout title="Skiing in Banff" description="Guide to skiing in Banff National Park — the Big 3 resorts (Sunshine Village, Lake Louise, Mt Norquay), SkiBig3 passes, cross-country skiing, and more.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1600&q=80"
+      alt="Skiing in the Canadian Rockies at Banff"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Champagne Powder</span>
+      <h1>Skiing in Banff</h1>
+      <p>Three world-class resorts, over 8,000 acres of terrain, and the driest, lightest powder in the Canadian Rockies.</p>
+    </div>
+  </section>
+
+  <!-- The Big 3 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">The Big 3</span>
+        <h2>Banff's Ski Resorts</h2>
+        <p>Three unique mountains, one incredible park pass. Each resort offers a distinct character and terrain profile.</p>
+      </div>
+      <div class="grid grid-3">
+        {resorts.map(resort => (
+          <div class="card">
+            <img src={resort.image} alt={resort.name} class="card-image" />
+            <div class="card-body">
+              <h3>{resort.name}</h3>
+              <p>{resort.description}</p>
+              <div class="card-meta">
+                <span>📐 Vertical: {resort.vertical}</span>
+              </div>
+              <div class="card-meta">
+                <span>🎿 {resort.runs}</span>
+              </div>
+              <div class="card-meta">
+                <span>⛷️ {resort.terrain}</span>
+              </div>
+              <div class="card-meta">
+                <span class="tag">{resort.bestFor}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SkiBig3 Pass -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Save Money</span>
+        <h2>SkiBig3 Pass &amp; Pricing Tips</h2>
+        <p>Smart ways to make the most of your ski trip without breaking the bank.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>🎫 SkiBig3 Lift Pass</h3>
+            <p>The SkiBig3 pass gives you access to all three resorts on a single ticket. Available in 3-day, 5-day, and season options. Multi-day passes offer significant savings over buying individual day tickets.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>💰 Pricing Tips</h3>
+            <p><strong>Book online in advance</strong> for up to 20% off window rates. Midweek skiing (Tuesday-Thursday) is less crowded and sometimes discounted. Early-season (November) and late-season (April-May) offer the best value.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🎿 Gear Rental</h3>
+            <p>Multiple rental shops in Banff and at each resort offer ski and snowboard packages. Book online ahead of time for better selection and pricing. Demo packages let you try premium equipment for a small surcharge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-Country Skiing -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Nordic Skiing</span>
+        <h2>Cross-Country Skiing Trails</h2>
+        <p>Banff and the Bow Valley offer over 100 km of groomed Nordic trails for classic and skate skiing.</p>
+      </div>
+      <div class="grid grid-2">
+        {xcTrails.map(trail => (
+          <div class="card">
+            <div class="card-body">
+              <h3>{trail.name}</h3>
+              <p>{trail.description}</p>
+              <div class="card-meta">
+                <span>📏 {trail.distance}</span>
+                <span class="tag">{trail.difficulty}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book Ski Experiences in Banff</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">From beginner lessons to backcountry powder tours, find the perfect ski experience for your Banff trip.</p>
+      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=ski" class="btn btn-accent" target="_blank" rel="noopener">Browse Ski Experiences on GetYourGuide →</a>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>⛷️ Ski Trip Planning Tips</h3>
+        <p><strong>Season Dates:</strong> Ski season typically runs November through May. Sunshine Village has the longest season, often open until late May.</p>
+        <p><strong>Shuttle Service:</strong> Free Roam Transit buses connect Banff to all three resorts. No car needed!</p>
+        <p><strong>Altitude Awareness:</strong> Sunshine Village base is over 2,100 m. Drink plenty of water and take it easy on your first day to acclimatize.</p>
+        <p><strong>Avalanche Safety:</strong> If venturing into the backcountry, carry a beacon, probe, and shovel, and have proper avalanche training.</p>
+        <p><strong>Layering is Key:</strong> Temperatures can vary dramatically. Wear moisture-wicking base layers, an insulating mid layer, and a waterproof shell.</p>
+        <p><strong>Parks Pass:</strong> You need a valid Parks Canada pass to drive through the national park to reach Sunshine Village and Lake Louise.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

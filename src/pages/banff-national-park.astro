@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const parkHighlights = [
+  {
+    name: 'Lake Louise',
+    description: 'The jewel of the Canadian Rockies, Lake Louise is a turquoise glacial lake set beneath the Victoria Glacier. Visit for hiking, canoeing, skiing, and the iconic view from the Fairmont Chateau. The colour comes from rock flour — fine glacial sediment suspended in the meltwater.',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
+  },
+  {
+    name: 'Moraine Lake',
+    description: 'Often called the most beautiful lake in the world, Moraine Lake sits in the Valley of the Ten Peaks. Its impossibly blue water has graced Canadian currency and countless postcards. Access via shuttle is required in peak season to manage the overwhelming demand.',
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',
+  },
+  {
+    name: 'Bow Valley Parkway (1A)',
+    description: 'This scenic alternative to the Trans-Canada Highway winds through dense forest and past stunning viewpoints. It\'s the best road for wildlife viewing, with frequent elk, deer, and bear sightings. Stop at Johnston Canyon and Castle Mountain along the way.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+  },
+  {
+    name: 'Icefields Parkway',
+    description: 'The 232 km highway from Lake Louise to Jasper is one of the world\'s most scenic drives. Pass towering glaciers, turquoise lakes, thundering waterfalls, and some of the most dramatic mountain scenery anywhere. Stop at Peyto Lake, the Columbia Icefield, and Athabasca Falls.',
+    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80',
+  },
+  {
+    name: 'Lake Minnewanka',
+    description: 'Banff\'s largest lake stretches 21 km through a dramatic mountain valley. Popular for boat tours, fishing, hiking, and scuba diving to explore the underwater ghost town of Minnewanka Landing, flooded when the dam was built in 1941.',
+    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80',
+  },
+  {
+    name: 'Banff Upper Hot Springs',
+    description: 'Soak in naturally heated mineral water at 37-40°C while gazing at Rundle Mountain. These hot springs have attracted visitors since the 1880s and remain one of Banff\'s most popular attractions year-round.',
+    image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80',
+  },
+];
+
+const ecosystems = [
+  {
+    name: 'Montane',
+    elevation: 'Below 1,500 m',
+    description: 'The lowest and warmest zone, found in valley bottoms. Features Douglas fir, aspen groves, and lush meadows. Home to the highest concentration of wildlife including elk, deer, and bears.',
+  },
+  {
+    name: 'Subalpine',
+    elevation: '1,500 - 2,200 m',
+    description: 'Dense forests of Engelmann spruce and subalpine fir dominate. This zone covers the largest area of the park and features heavy snowfall, avalanche paths, and wildflower meadows.',
+  },
+  {
+    name: 'Alpine',
+    elevation: 'Above 2,200 m',
+    description: 'Above the treeline, this harsh environment of rock, ice, and tundra supports hardy lichens, mosses, and small wildflowers. Mountain goats, pikas, and marmots thrive here.',
+  },
+];
+---
+
+<BaseLayout title="Banff National Park" description="Complete guide to Banff National Park — Canada's first national park, UNESCO World Heritage Site. Park passes, regulations, how to get there, and must-see highlights.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
+      alt="Banff National Park panoramic mountain view"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Est. 1885</span>
+      <h1>Banff National Park</h1>
+      <p>Canada's first national park, a UNESCO World Heritage Site, and home to some of the most spectacular mountain scenery on Earth.</p>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">The Park</span>
+        <h2>About Banff National Park</h2>
+        <p>Established in 1885, Banff is Canada's oldest national park and part of the Canadian Rocky Mountain Parks UNESCO World Heritage Site.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>📊 Park Facts</h3>
+            <p><strong>Established:</strong> 1885 (Canada's first national park)<br/>
+            <strong>Area:</strong> 6,641 km² (2,564 sq mi)<br/>
+            <strong>Elevation:</strong> 1,350 m - 3,612 m<br/>
+            <strong>Visitors:</strong> ~4 million annually<br/>
+            <strong>Trails:</strong> 1,600+ km of maintained trails<br/>
+            <strong>UNESCO:</strong> World Heritage Site since 1984</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🌍 Geography &amp; Climate</h3>
+            <p>Banff National Park spans the eastern slopes of the Canadian Rockies along the Continental Divide. The park features dramatic peaks, glaciers, turquoise lakes, hot springs, dense forests, and alpine meadows. The climate is continental with cold winters (-10 to -20°C) and warm summers (15 to 25°C).</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🏛️ UNESCO Heritage</h3>
+            <p>Since 1984, Banff has been part of the Canadian Rocky Mountain Parks UNESCO World Heritage Site, recognized for its outstanding natural beauty, significant geological features, and exceptional mountain ecosystems spanning four national parks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystems -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Ecosystems</span>
+        <h2>Life Zones of the Park</h2>
+        <p>Banff spans three distinct ecological zones, each with unique plants, animals, and landscapes.</p>
+      </div>
+      <div class="grid grid-3">
+        {ecosystems.map(eco => (
+          <div class="card">
+            <div class="card-body">
+              <h3>🌿 {eco.name}</h3>
+              <p><strong>Elevation:</strong> {eco.elevation}</p>
+              <p>{eco.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Must-See</span>
+        <h2>Park Highlights</h2>
+        <p>The essential sights and experiences that make Banff National Park a world-class destination.</p>
+      </div>
+      <div class="grid grid-3">
+        {parkHighlights.map(spot => (
+          <div class="card">
+            <img src={spot.image} alt={spot.name} class="card-image" />
+            <div class="card-body">
+              <h3>{spot.name}</h3>
+              <p>{spot.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Practical Info -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Plan Your Visit</span>
+        <h2>Practical Information</h2>
+        <p>Everything you need to know before visiting Banff National Park.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>🎫 Park Passes &amp; Fees</h3>
+            <p><strong>Daily Pass:</strong> $10.50 CAD/adult, $9.00/senior, free for youth (17 &amp; under)<br/>
+            <strong>Discovery Pass:</strong> $72.25/adult for unlimited access to all national parks for a full year.<br/>
+            Purchase online or at park entry gates. Passes are required for all vehicles stopping in the park.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🚗 Getting Here</h3>
+            <p><strong>From Calgary Airport:</strong> 1.5 hours west on the Trans-Canada Highway (Hwy 1).<br/>
+            <strong>Brewster Express:</strong> Shuttle service from Calgary Airport to Banff.<br/>
+            <strong>Driving:</strong> From Vancouver (9 hrs), Edmonton (4.5 hrs).<br/>
+            <strong>No Banff Airport:</strong> The nearest airports are Calgary (YYC) and Edmonton (YEG).</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🏛️ Visitor Centres</h3>
+            <p><strong>Banff Visitor Centre:</strong> 224 Banff Avenue — maps, trail conditions, park passes, and expert advice.<br/>
+            <strong>Lake Louise Visitor Centre:</strong> Next to the Samson Mall — trail reports and backcountry permits.<br/>
+            Both open daily with seasonal hours.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>📋 Park Regulations</h3>
+            <p>No drones allowed without a permit. No feeding wildlife. No removing plants, rocks, or artifacts. Dogs must be on leash at all times. Campfires only in designated fire pits. All garbage must be stored in bear-proof containers.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>🚌 Getting Around</h3>
+            <p><strong>Roam Transit:</strong> Public buses connect Banff, Canmore, Lake Louise, and Johnston Canyon. Free with some hotel stays.<br/>
+            <strong>Parks Canada Shuttles:</strong> Required for Moraine Lake and Lake Louise in summer (must pre-book).<br/>
+            <strong>Car:</strong> Most flexible option but parking can be challenging in summer.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>📱 Cell Service &amp; WiFi</h3>
+            <p>Good cell service in Banff and Lake Louise villages. Spotty to no service on most hiking trails, the Icefields Parkway, and backcountry areas. Download offline maps before heading out. Most hotels and restaurants have WiFi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book Park Tours &amp; Experiences</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">From guided sightseeing tours to backcountry adventures, explore all that Banff National Park has to offer with expert guides.</p>
+      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" class="btn btn-accent" target="_blank" rel="noopener">Browse Park Tours on GetYourGuide →</a>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>🏔️ First-Time Visitor Tips</h3>
+        <p><strong>Allow Enough Time:</strong> Most visitors wish they had more time. Plan at least 3-5 days to see the highlights, a week or more to explore in depth.</p>
+        <p><strong>Book Early:</strong> Accommodation, campgrounds, and shuttle reservations fill up months in advance for July-August. Start planning in January.</p>
+        <p><strong>Layer Up:</strong> Mountain weather changes rapidly. Bring layers even in summer — temperatures can drop 15°C between valley floor and summit.</p>
+        <p><strong>Gas &amp; Supplies:</strong> Fill up on gas in Canmore or Banff. There are limited services between Banff and Jasper on the Icefields Parkway.</p>
+        <p><strong>Respect the Environment:</strong> Practice Leave No Trace principles. Take only photos, leave only footprints. This pristine wilderness depends on responsible visitors.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

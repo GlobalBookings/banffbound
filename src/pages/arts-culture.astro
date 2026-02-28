@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const museums = [
+  {
+    name: 'Whyte Museum of the Canadian Rockies',
+    description: 'Founded in 1968, the Whyte Museum houses an extensive collection of art, photography, and artifacts documenting the history and culture of the Canadian Rockies. Rotating exhibitions feature works by mountain artists, historic climbing photography, and Indigenous cultural pieces. The museum also offers heritage home tours and archival research access.',
+    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80',
+    location: '111 Bear Street, Banff',
+    hours: 'Daily 10am - 5pm',
+  },
+  {
+    name: 'Cave and Basin National Historic Site',
+    description: 'The birthplace of Canada\'s national park system. In 1883, three railway workers discovered hot springs flowing from this cave, leading to the creation of Banff National Park in 1885. Today, the restored site features interactive exhibits, the original cave and thermal pools, boardwalk trails through unique wetlands, and the story of the endangered Banff Springs snail.',
+    image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80',
+    location: '311 Cave Avenue, Banff',
+    hours: 'Daily 10am - 5pm (seasonal)',
+  },
+  {
+    name: 'Banff Park Museum National Historic Site',
+    description: 'Western Canada\'s oldest natural history museum, housed in a beautiful 1903 log building on Banff Avenue. The museum features taxidermy specimens of Rocky Mountain wildlife displayed in classic Victorian-era cabinets. It offers a fascinating glimpse into early 20th-century approaches to natural history and the park\'s founding era.',
+    image: 'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=600&q=80',
+    location: '91 Banff Avenue, Banff',
+    hours: 'Wed - Sun 11am - 5pm',
+  },
+];
+
+const culturalExperiences = [
+  {
+    name: 'Banff Centre for Arts and Creativity',
+    description: 'One of the world\'s most inspiring creative institutions, perched on Tunnel Mountain overlooking the Bow Valley. The Banff Centre hosts year-round programs in music, visual arts, literary arts, Indigenous leadership, and mountain culture. Public events include concerts, exhibitions, film screenings, and the world-renowned Banff Mountain Film and Book Festival each fall.',
+    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&q=80',
+    highlight: 'Banff Mountain Film Festival (November)',
+  },
+  {
+    name: 'Indigenous Heritage & First Nations',
+    description: 'The Banff area has been home to Indigenous peoples for over 10,000 years. The Stoney Nakoda, Blackfoot, Ktunaxa, and Tsuut\'ina Nations have deep connections to this land. Visitors can learn about Indigenous heritage through guided experiences, cultural presentations at the Buffalo Nations Luxton Museum, and interpretive programs offered by Parks Canada and local Indigenous-led tour operators.',
+    image: 'https://images.unsplash.com/photo-1559827291-bce2b1b6eba0?w=600&q=80',
+    highlight: 'Indigenous-led cultural tours available',
+  },
+  {
+    name: 'Galleries & Studios',
+    description: 'Downtown Banff is home to several fine art galleries showcasing work by local and Canadian artists. The Canada House Gallery, the Carter-Ryan Gallery, and the Banff Heritage Passport program offer opportunities to explore mountain-inspired art, sculpture, and photography. Many galleries feature live artist demonstrations.',
+    image: 'https://images.unsplash.com/photo-1531243269054-5ebf6f34081e?w=600&q=80',
+    highlight: 'Bear Street gallery district',
+  },
+  {
+    name: 'Performing Arts & Film',
+    description: 'The Banff Centre\'s Eric Chicken Theatre and other venues host live performances year-round, including concerts, theatre productions, and dance. The Lux Cinema in downtown Banff screens current films, and the Banff Mountain Film Festival tours internationally after its November premiere.',
+    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&q=80',
+    highlight: 'Live music, theatre, and film year-round',
+  },
+];
+
+const festivals = [
+  {
+    name: 'Banff Mountain Film & Book Festival',
+    description: 'Held each November at the Banff Centre, this world-renowned festival celebrates mountain culture through films, books, photography, and speakers from around the globe. It\'s the largest and most prestigious mountain festival in the world.',
+    date: 'Late October - Early November',
+  },
+  {
+    name: 'SnowDays Festival',
+    description: 'A winter celebration featuring ice carving competitions, live ice music performances, a snow play zone for kids, and the International Ice Magic Festival at Lake Louise with stunning ice sculptures.',
+    date: 'January',
+  },
+  {
+    name: 'Canada Day Celebrations',
+    description: 'Banff celebrates Canada Day (July 1st) with parades, live music, Indigenous cultural presentations, fireworks, and community events throughout the townsite.',
+    date: 'July 1',
+  },
+  {
+    name: 'Banff Centre Mountain Market',
+    description: 'A summer farmers\' and artisan market held at the Banff Centre featuring local food producers, artists, crafters, and live entertainment with stunning mountain views.',
+    date: 'Wednesdays in Summer',
+  },
+];
+---
+
+<BaseLayout title="Arts & Culture in Banff" description="Discover Banff's vibrant arts and culture scene — museums, galleries, Indigenous heritage, the Banff Centre, performing arts, and cultural festivals.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1600&q=80"
+      alt="Arts and culture in Banff"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Mountain Culture</span>
+      <h1>Arts &amp; Culture in Banff</h1>
+      <p>Beyond the peaks and trails, Banff is a vibrant cultural hub with world-class museums, Indigenous heritage, and a thriving arts scene.</p>
+    </div>
+  </section>
+
+  <!-- Museums -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Museums</span>
+        <h2>Museums &amp; Historic Sites</h2>
+        <p>Explore Banff's rich history through its museums and national historic sites, from Indigenous heritage to mountain exploration.</p>
+      </div>
+      <div class="grid grid-3">
+        {museums.map(museum => (
+          <div class="card">
+            <img src={museum.image} alt={museum.name} class="card-image" />
+            <div class="card-body">
+              <h3>{museum.name}</h3>
+              <p>{museum.description}</p>
+              <div class="card-meta">
+                <span>📍 {museum.location}</span>
+              </div>
+              <div class="card-meta">
+                <span>🕐 {museum.hours}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cultural Experiences -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Experiences</span>
+        <h2>Cultural Experiences</h2>
+        <p>Immerse yourself in Banff's creative spirit through world-class institutions, Indigenous knowledge, and local artistry.</p>
+      </div>
+      <div class="grid grid-2">
+        {culturalExperiences.map(exp => (
+          <div class="card">
+            <img src={exp.image} alt={exp.name} class="card-image" />
+            <div class="card-body">
+              <h3>{exp.name}</h3>
+              <p>{exp.description}</p>
+              <div class="card-meta">
+                <span class="tag">{exp.highlight}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Festivals -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Events</span>
+        <h2>Festivals &amp; Events</h2>
+        <p>Banff hosts cultural events throughout the year, from internationally acclaimed film festivals to local artisan markets.</p>
+      </div>
+      <div class="grid grid-2">
+        {festivals.map(fest => (
+          <div class="card">
+            <div class="card-body">
+              <h3>🎭 {fest.name}</h3>
+              <p>{fest.description}</p>
+              <div class="card-meta">
+                <span>📅 {fest.date}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book Cultural Tours in Banff</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Explore Indigenous heritage, historic landmarks, and Banff's creative scene with knowledgeable local guides.</p>
+      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=culture" class="btn btn-accent" target="_blank" rel="noopener">Browse Cultural Tours on GetYourGuide →</a>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>🎨 Culture Tips for Visitors</h3>
+        <p><strong>Heritage Passport:</strong> Purchase a Banff Heritage Passport for discounted entry to multiple museums and historic sites.</p>
+        <p><strong>Banff Centre Events:</strong> Check the Banff Centre's online calendar before your visit — many concerts and exhibitions are free or low-cost.</p>
+        <p><strong>Respect Indigenous Heritage:</strong> The land you're visiting is the traditional territory of many Indigenous peoples. Engage with cultural programs respectfully and support Indigenous-led businesses and tours.</p>
+        <p><strong>Rainy Day Plan:</strong> Banff's museums and galleries make excellent rainy-day alternatives to outdoor activities.</p>
+        <p><strong>Film Festival:</strong> The Banff Mountain Film Festival (November) sells out quickly. Book tickets as soon as they go on sale.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

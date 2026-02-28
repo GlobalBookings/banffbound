@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const canoeingSpots = [
+  {
+    name: 'Lake Louise',
+    description: 'Perhaps the most iconic canoeing spot in the world. Paddle across impossibly turquoise waters with Victoria Glacier towering above you. Canoe rentals are available at the Fairmont Chateau Lake Louise boathouse. Go early morning for calm water, fewer crowds, and the best light.',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
+    difficulty: 'Easy',
+    season: 'June - September',
+    rental: 'On-site rental available',
+  },
+  {
+    name: 'Moraine Lake',
+    description: 'Set in the Valley of the Ten Peaks, Moraine Lake\'s vivid blue water is a paddler\'s dream. Canoe rentals are available at the lodge. The lake is smaller and more sheltered than Lake Louise, making it ideal for a peaceful morning paddle surrounded by towering peaks.',
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',
+    difficulty: 'Easy',
+    season: 'June - September',
+    rental: 'On-site rental available',
+  },
+  {
+    name: 'Emerald Lake',
+    description: 'Located in nearby Yoho National Park, Emerald Lake lives up to its name with vivid green-blue water surrounded by dense forest. The calm, sheltered lake is perfect for leisurely canoeing with mountain reflections. Canoes available at Emerald Lake Lodge.',
+    image: 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=600&q=80',
+    difficulty: 'Easy',
+    season: 'June - September',
+    rental: 'On-site rental available',
+  },
+  {
+    name: 'Bow River',
+    description: 'A gentle float through the heart of Banff offers unique town-to-wilderness perspectives. Launch from the Bow River canoe dock and paddle downstream past the Bow Falls area. Watch for ospreys, eagles, and elk along the riverbanks. Multiple outfitters offer canoe and kayak rentals.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80',
+    difficulty: 'Easy - Moderate',
+    season: 'June - September',
+    rental: 'Town rental shops',
+  },
+  {
+    name: 'Vermilion Lakes',
+    description: 'Three shallow lakes just west of Banff townsite offering spectacular sunset views of Mount Rundle. The calm water and marshy shoreline make this a favourite for photographers and birdwatchers. Bring your own canoe or rent from town — there are no on-site rentals.',
+    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80',
+    difficulty: 'Easy',
+    season: 'May - September',
+    rental: 'Bring your own or rent in town',
+  },
+];
+
+const raftingTrips = [
+  {
+    name: 'Kicking Horse River — White Water',
+    description: 'The most thrilling rafting in the Canadian Rockies. The Kicking Horse River in nearby Golden, BC offers Class III-IV rapids through a stunning canyon. Full-day and half-day trips are available with professional guides and all equipment provided. A must-do for adrenaline seekers.',
+    image: 'https://images.unsplash.com/photo-1530866495561-507c83b13228?w=600&q=80',
+    difficulty: 'Class III-IV (Advanced)',
+    season: 'June - September',
+    duration: '4-6 hours',
+  },
+  {
+    name: 'Bow River — Scenic Float',
+    description: 'A gentle family-friendly float trip on the Bow River offers stunning mountain scenery without the white water intensity. Perfect for families with young children, these relaxed trips float past towering peaks, wildlife habitat, and riverside meadows.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80',
+    difficulty: 'Class I-II (Beginner)',
+    season: 'June - September',
+    duration: '2-3 hours',
+  },
+  {
+    name: 'Kananaskis River — Moderate Rapids',
+    description: 'A middle-ground option with Class II-III rapids that offers excitement without being too intense. Located about an hour south of Banff, the Kananaskis River trips are popular for groups and first-time rafters who want a taste of white water.',
+    image: 'https://images.unsplash.com/photo-1530866495561-507c83b13228?w=600&q=80',
+    difficulty: 'Class II-III (Intermediate)',
+    season: 'June - August',
+    duration: '3-4 hours',
+  },
+];
+
+const supSpots = [
+  {
+    name: 'Two Jack Lake',
+    description: 'A calm, clear lake just 12 km from Banff with stunning views of Mount Rundle. Ideal for stand-up paddleboarding with relatively warm water and gentle conditions. Bring your own board or rent from town.',
+  },
+  {
+    name: 'Johnson Lake',
+    description: 'A small, sheltered lake near Lake Minnewanka that warms up nicely in summer. Perfect for beginners learning to SUP with calm water and a scenic mountain backdrop.',
+  },
+  {
+    name: 'Vermilion Lakes',
+    description: 'Shallow, calm water and spectacular sunset views make the Vermilion Lakes a top SUP destination. Early morning sessions offer mirror-like reflections of the surrounding peaks.',
+  },
+];
+---
+
+<BaseLayout title="Paddling in Banff" description="Complete guide to paddling in Banff — canoeing, kayaking, white water rafting, and stand-up paddleboarding. Best lakes, rivers, outfitters, and tours.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=1600&q=80"
+      alt="Canoeing on turquoise lake in the Canadian Rockies"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">On the Water</span>
+      <h1>Paddling in Banff</h1>
+      <p>Canoe turquoise alpine lakes, raft wild rivers, and paddleboard beneath towering Rocky Mountain peaks.</p>
+    </div>
+  </section>
+
+  <!-- Canoeing -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">🛶 Canoeing</span>
+        <h2>Best Canoeing Spots</h2>
+        <p>Banff's turquoise glacial lakes are among the most beautiful paddling destinations on Earth.</p>
+      </div>
+      <div class="grid grid-3">
+        {canoeingSpots.map(spot => (
+          <div class="card">
+            <img src={spot.image} alt={spot.name} class="card-image" />
+            <div class="card-body">
+              <h3>{spot.name}</h3>
+              <p>{spot.description}</p>
+              <div class="card-meta">
+                <span>📅 {spot.season}</span>
+                <span class="tag">{spot.difficulty}</span>
+              </div>
+              <div class="card-meta">
+                <span>🛶 {spot.rental}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Rafting -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">🌊 Rafting</span>
+        <h2>White Water Rafting</h2>
+        <p>From gentle family floats to heart-pounding Class IV rapids, the rivers near Banff deliver world-class rafting.</p>
+      </div>
+      <div class="grid grid-3">
+        {raftingTrips.map(trip => (
+          <div class="card">
+            <img src={trip.image} alt={trip.name} class="card-image" />
+            <div class="card-body">
+              <h3>{trip.name}</h3>
+              <p>{trip.description}</p>
+              <div class="card-meta">
+                <span>⏱️ {trip.duration}</span>
+                <span class="tag">{trip.difficulty}</span>
+              </div>
+              <div class="card-meta">
+                <span>📅 {trip.season}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SUP -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">🏄 SUP</span>
+        <h2>Stand-Up Paddleboarding</h2>
+        <p>SUP has exploded in popularity in the Rockies. These calm lakes are perfect for getting on the water.</p>
+      </div>
+      <div class="grid grid-3">
+        {supSpots.map(spot => (
+          <div class="card">
+            <div class="card-body">
+              <h3>{spot.name}</h3>
+              <p>{spot.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book a Paddling Tour</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">From guided canoe tours on Lake Louise to thrilling white water rafting adventures, book your perfect water experience.</p>
+      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=paddle" class="btn btn-accent" target="_blank" rel="noopener">Browse Paddling Tours on GetYourGuide →</a>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>🛶 Paddling Safety Tips</h3>
+        <p><strong>Cold Water Warning:</strong> Glacial lakes are extremely cold (4-12°C even in summer). Wear a PFD at all times and don't venture far from shore unless experienced.</p>
+        <p><strong>Weather Changes Fast:</strong> Mountain weather can shift quickly. Watch for afternoon winds and thunderstorms. Paddle early in the day for the calmest conditions.</p>
+        <p><strong>River Currents:</strong> Even the gentle Bow River has currents. Know your skill level and choose appropriate sections. Never paddle alone on moving water.</p>
+        <p><strong>Rental Bookings:</strong> Popular spots like Lake Louise and Moraine Lake can have long waits for canoe rentals. Arrive early or book guided tours in advance.</p>
+        <p><strong>Leave No Trace:</strong> Pack out all garbage and respect shoreline vegetation. Stay off nesting areas and keep noise levels low to protect wildlife.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>
