@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const EXPEDIA_CAMREF = '1101l3MtWX';
+
+const hotelCategories = [
+  {
+    title: 'Luxury & Resort',
+    description: 'World-class resorts with spa facilities, fine dining, and breathtaking mountain views.',
+    icon: '&#127775;',
+    priceRange: '$$$+',
+    searchUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&sort=RECOMMENDED&star=50&camref=${EXPEDIA_CAMREF}`,
+    hotels: [
+      {
+        name: 'Fairmont Banff Springs',
+        description: 'The iconic "Castle in the Rockies." A National Historic Site with world-class spa, golf, and multiple restaurants. The most legendary hotel in the Canadian Rockies.',
+        price: '$$$+',
+        highlight: 'Iconic Landmark',
+      },
+      {
+        name: 'Rimrock Resort Hotel',
+        description: 'Perched on Sulphur Mountain with stunning valley views. Award-winning dining at Eden Restaurant, full spa, and a serene atmosphere above the bustle of town.',
+        price: '$$$',
+        highlight: 'Mountain Views',
+      },
+      {
+        name: 'Fairmont Chateau Lake Louise',
+        description: 'Overlooking the turquoise waters of Lake Louise and Victoria Glacier. Canoeing, hiking, and skiing right at your doorstep.',
+        price: '$$$+',
+        highlight: 'Lakefront',
+      },
+    ],
+  },
+  {
+    title: 'Mid-Range & Boutique',
+    description: 'Comfortable, well-located hotels with character and solid amenities.',
+    icon: '&#127968;',
+    priceRange: '$$',
+    searchUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&sort=RECOMMENDED&star=30,40&camref=${EXPEDIA_CAMREF}`,
+    hotels: [
+      {
+        name: 'Moose Hotel & Suites',
+        description: 'Modern mountain lodge on Banff Avenue with rooftop hot pools, kitchenette suites, and an excellent central location.',
+        price: '$$',
+        highlight: 'Rooftop Hot Pools',
+      },
+      {
+        name: 'Mount Royal Hotel',
+        description: 'Historic boutique hotel right on Banff Avenue. Recently renovated with stylish rooms, on-site dining, and a prime downtown location.',
+        price: '$$',
+        highlight: 'Downtown Location',
+      },
+      {
+        name: 'The Juniper Hotel',
+        description: 'Retro-modern boutique hotel perched above town with panoramic views. Home to the excellent Juniper Bistro restaurant.',
+        price: '$$',
+        highlight: 'Panoramic Views',
+      },
+    ],
+  },
+  {
+    title: 'Budget-Friendly',
+    description: 'Great value options for travellers who want to spend more on experiences than accommodation.',
+    icon: '&#128176;',
+    priceRange: '$',
+    searchUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&sort=PRICE_LOW_TO_HIGH&camref=${EXPEDIA_CAMREF}`,
+    hotels: [
+      {
+        name: 'Banff Aspen Lodge',
+        description: 'Clean, comfortable, and well-priced. Outdoor hot tub, free parking, and a short walk to downtown. Great base for budget-conscious adventurers.',
+        price: '$',
+        highlight: 'Great Value',
+      },
+      {
+        name: 'HI Banff Alpine Centre',
+        description: 'Hostel-style accommodation on Tunnel Mountain. Private and dorm rooms available. Kitchen, lounge, and a social vibe perfect for solo travellers.',
+        price: '$',
+        highlight: 'Social Hostel',
+      },
+      {
+        name: 'Tunnel Mountain Resort',
+        description: 'Condo-style suites with full kitchens, perfect for families and groups. Indoor pool, hot tub, and surrounded by nature on Tunnel Mountain.',
+        price: '$-$$',
+        highlight: 'Family Friendly',
+      },
+    ],
+  },
+];
+
+const travelTips = [
+  { title: 'Book Early for Summer', text: 'July and August fill up months in advance. Book 3-6 months ahead for the best selection and prices.' },
+  { title: 'Shoulder Season Savings', text: 'Visit in May-June or October for significantly lower rates and fewer crowds. The scenery is still spectacular.' },
+  { title: 'Ski & Stay Packages', text: 'Winter packages bundling lift tickets with accommodation can save 20-30% compared to booking separately.' },
+  { title: 'Location Matters', text: 'Downtown Banff Avenue hotels are walkable to restaurants and shops. Tunnel Mountain properties are quieter but may need a car.' },
+];
+---
+
+<BaseLayout title="Hotels & Accommodation" description="Find the perfect place to stay in Banff. From luxury resorts to budget hostels, with Expedia integration for real-time booking.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600&q=80"
+      alt="Banff mountain resort"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Stay in Banff</span>
+      <h1>Hotels & Accommodation</h1>
+      <p>Find your perfect mountain retreat. From iconic luxury resorts to cozy budget-friendly stays.</p>
+    </div>
+  </section>
+
+  <!-- Expedia Search Widget -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-card">
+        <h2>Search Hotels in Banff</h2>
+        <p>Compare prices across hundreds of hotels, lodges, and vacation rentals.</p>
+        <div class="expedia-widget-wrap" id="expedia-widget">
+          <script
+            is:inline
+            src={`https://www.expedia.ca/marketing/v2/widget/search?lob=HOTELS&des=Banff%2C+Alberta%2C+Canada&camref=${EXPEDIA_CAMREF}&creativeref=1011l87781`}>
+          </script>
+          <noscript>
+            <a href={`https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${EXPEDIA_CAMREF}`}
+               class="btn btn-primary" target="_blank" rel="noopener">
+              Search Banff Hotels on Expedia &rarr;
+            </a>
+          </noscript>
+        </div>
+        <div class="search-fallback">
+          <a href={`https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${EXPEDIA_CAMREF}`}
+             class="btn btn-primary" target="_blank" rel="noopener">
+            Search All Banff Hotels on Expedia &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hotel Categories -->
+  {hotelCategories.map(category => (
+    <section class="section hotel-section">
+      <div class="container">
+        <div class="category-header">
+          <div>
+            <span class="category-icon" set:html={category.icon}></span>
+            <h2>{category.title}</h2>
+            <p>{category.description}</p>
+          </div>
+          <a href={category.searchUrl} target="_blank" rel="noopener" class="btn btn-outline">
+            Browse {category.priceRange} Hotels &rarr;
+          </a>
+        </div>
+        <div class="grid grid-3">
+          {category.hotels.map(hotel => (
+            <div class="hotel-card">
+              <div class="hotel-highlight">
+                <span class="tag">{hotel.highlight}</span>
+                <span class="hotel-price">{hotel.price}</span>
+              </div>
+              <h3>{hotel.name}</h3>
+              <p>{hotel.description}</p>
+              <a href={`https://www.expedia.ca/Hotel-Search?destination=${encodeURIComponent(hotel.name + ' Banff')}&camref=${EXPEDIA_CAMREF}`}
+                 target="_blank" rel="noopener" class="check-link">
+                Check Prices &rarr;
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Travel Tips -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Pro Tips</span>
+        <h2>Booking Tips</h2>
+      </div>
+      <div class="grid grid-2">
+        {travelTips.map(tip => (
+          <div class="tip-item">
+            <h3>{tip.title}</h3>
+            <p>{tip.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="section">
+    <div class="container" style="text-align: center;">
+      <h2>Ready to Book?</h2>
+      <p style="color: var(--color-text-light); max-width: 500px; margin: 1rem auto 2rem;">Compare hundreds of Banff hotels, read reviews, and book with free cancellation on most properties.</p>
+      <a href={`https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${EXPEDIA_CAMREF}`}
+         target="_blank" rel="noopener" class="btn btn-accent">
+        Find Your Perfect Hotel &rarr;
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .search-section {
+    margin-top: -3rem;
+    position: relative;
+    z-index: 10;
+    padding: 0 0 2rem;
+  }
+
+  .search-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+  }
+
+  .search-card h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .search-card > p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .expedia-widget-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 60px;
+  }
+
+  .search-fallback {
+    margin-top: 1rem;
+  }
+
+  .category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    gap: 2rem;
+  }
+
+  .category-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .category-header h2 { margin-bottom: 0.25rem; }
+  .category-header p { color: var(--color-text-light); }
+
+  .hotel-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+  }
+
+  .hotel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hotel-highlight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .hotel-price {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+  }
+
+  .hotel-card h3 { margin-bottom: 0.5rem; }
+
+  .hotel-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  .check-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .check-link:hover { color: var(--color-primary); }
+
+  .hotel-section:nth-child(even) {
+    background: var(--color-bg-alt);
+  }
+
+  .tip-item {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .tip-item h3 { margin-bottom: 0.5rem; }
+  .tip-item p { color: var(--color-text-light); font-size: 0.95rem; }
+
+  @media (max-width: 768px) {
+    .category-header { flex-direction: column; }
+    .search-section { margin-top: -2rem; }
+    .search-card { padding: 1.5rem; }
+  }
+</style>

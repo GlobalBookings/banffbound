@@ -1,5 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Parser from 'rss-parser';
+
+const parser = new Parser({
+  customFields: {
+    item: [
+      ['calendarEvent:EventDates', 'eventDates'],
+    ],
+  },
+});
+
+let upcomingEvents: any[] = [];
+try {
+  const feed = await parser.parseURL('https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25');
+  upcomingEvents = (feed.items || []).slice(0, 3).map(item => {
+    const desc = (item.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    const parts = desc.split('Description:');
+    const clean = parts.length > 1 ? parts[1].trim() : desc;
+    return {
+      title: item.title || '',
+      link: item.link || '',
+      dates: item.eventDates?.trim() || '',
+      description: clean.slice(0, 150) + (clean.length > 150 ? '...' : ''),
+    };
+  });
+} catch (e) {
+  // Events fetch failed silently
+}
 
 const categories = [
   {
@@ -29,6 +56,20 @@ const categories = [
     href: '/activities',
     icon: '&#9968;',
     image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+  },
+  {
+    title: 'Tours & Adventures',
+    description: 'Book guided tours, day trips, wildlife safaris, and unique experiences with top-rated local operators.',
+    href: '/tours',
+    icon: '&#127760;',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+  },
+  {
+    title: 'Hotels & Stays',
+    description: 'Find your perfect mountain retreat. Compare prices from luxury resorts to budget-friendly lodges.',
+    href: '/hotels',
+    icon: '&#127968;',
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',
   },
 ];
 
@@ -94,6 +135,51 @@ const highlights = [
             </div>
           </a>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  {upcomingEvents.length > 0 && (
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">What's Happening</span>
+          <h2>Upcoming Events</h2>
+          <p>Don't miss what's happening in Banff right now.</p>
+        </div>
+        <div class="grid grid-3">
+          {upcomingEvents.map(event => (
+            <a href={event.link} target="_blank" rel="noopener" class="event-preview card">
+              <div class="card-body">
+                <span class="event-dates">&#128197; {event.dates}</span>
+                <h3>{event.title}</h3>
+                <p>{event.description}</p>
+                <span class="card-link">Learn More &rarr;</span>
+              </div>
+            </a>
+          ))}
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="/events" class="btn btn-outline">View All Events &rarr;</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Book Tours CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="tours-cta">
+        <div class="tours-cta-content">
+          <span class="badge">Book Now</span>
+          <h2>Book Tours & Find Hotels</h2>
+          <p>Browse guided adventures from top-rated local operators or find the perfect place to stay in Banff.</p>
+          <div class="hero-buttons" style="justify-content: flex-start;">
+            <a href="/tours" class="btn btn-accent">Browse Tours &rarr;</a>
+            <a href="/hotels" class="btn btn-outline">Find Hotels &rarr;</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -262,10 +348,41 @@ const highlights = [
     min-height: 300px;
   }
 
+  .event-preview {
+    display: block;
+  }
+
+  .event-dates {
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .tours-cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    border-radius: var(--radius);
+    padding: 3rem;
+    color: var(--color-white);
+  }
+
+  .tours-cta h2 {
+    color: var(--color-white);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .tours-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+  }
+
   @media (max-width: 768px) {
     .hero { height: 80vh; min-height: 500px; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .cta-card { grid-template-columns: 1fr; }
     .cta-image { max-height: 250px; }
+    .tours-cta { padding: 2rem; }
   }
 </style>

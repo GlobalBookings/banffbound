@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Parser from 'rss-parser';
+
+const parser = new Parser({
+  customFields: {
+    item: [
+      ['calendarEvent:EventDates', 'eventDates'],
+      ['calendarEvent:EventTimes', 'eventTimes'],
+      ['calendarEvent:Location', 'eventLocation'],
+    ],
+  },
+});
+
+let events: any[] = [];
+let news: any[] = [];
+
+try {
+  const eventsFeed = await parser.parseURL('https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25');
+  events = (eventsFeed.items || []).slice(0, 12).map(item => {
+    const desc = (item.description || '')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const descParts = desc.split('Description:');
+    const cleanDesc = descParts.length > 1 ? descParts[1].trim() : desc;
+    return {
+      title: item.title || '',
+      link: item.link || '',
+      dates: item.eventDates?.trim() || '',
+      times: item.eventTimes?.trim() || '',
+      location: item.eventLocation?.trim() || 'Banff, AB',
+      description: cleanDesc.slice(0, 250) + (cleanDesc.length > 250 ? '...' : ''),
+      image: item.enclosure?.url || '',
+    };
+  });
+} catch (e) {
+  console.error('Failed to fetch events RSS:', e);
+}
+
+try {
+  const newsFeed = await parser.parseURL('https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml');
+  news = (newsFeed.items || []).slice(0, 8).map(item => ({
+    title: item.title || '',
+    link: item.link || '',
+    date: item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' }) : '',
+    description: (item.contentSnippet || item.description || '').slice(0, 200) + '...',
+    image: item.enclosure?.url || '',
+  }));
+} catch (e) {
+  console.error('Failed to fetch news RSS:', e);
+}
+
+const buildDate = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+---
+
+<BaseLayout title="News & Events" description="Stay up to date with the latest news, events, and happenings in Banff, Alberta.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
+      alt="Banff townsite"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Stay Updated</span>
+      <h1>Banff News & Events</h1>
+      <p>What's happening in Banff right now -- festivals, community events, seasonal happenings, and local news.</p>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">What's On</span>
+        <h2>Upcoming Events</h2>
+        <p>Live events and happenings from the Town of Banff events calendar.</p>
+      </div>
+
+      {events.length > 0 ? (
+        <div class="grid grid-3">
+          {events.map(event => (
+            <a href={event.link} target="_blank" rel="noopener" class="event-card card">
+              {event.image && <img src={event.image} alt={event.title} class="card-image" />}
+              <div class="card-body">
+                <h3>{event.title}</h3>
+                {event.dates && (
+                  <div class="event-meta">
+                    <span class="event-date">&#128197; {event.dates}</span>
+                    {event.times && <span class="event-time">&#9202; {event.times}</span>}
+                  </div>
+                )}
+                {event.location && <span class="event-location">&#128205; {event.location}</span>}
+                <p>{event.description}</p>
+                <span class="card-link">View Details &rarr;</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>No upcoming events at the moment. Check back soon or visit <a href="https://banff.ca/Calendar.aspx" target="_blank" rel="noopener">banff.ca</a> for the full calendar.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Latest News</span>
+        <h2>Banff News</h2>
+        <p>Recent updates and announcements from the Town of Banff.</p>
+      </div>
+
+      {news.length > 0 ? (
+        <div class="grid grid-2">
+          {news.map(item => (
+            <a href={item.link} target="_blank" rel="noopener" class="news-card">
+              <div class="news-content">
+                <span class="news-date">{item.date}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <span class="card-link">Read More &rarr;</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>No recent news available. Visit <a href="https://banff.ca" target="_blank" rel="noopener">banff.ca</a> for the latest.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sources-note">
+        <p>&#128340; Last updated: {buildDate}. Events and news sourced from <a href="https://banff.ca" target="_blank" rel="noopener">banff.ca</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .event-card {
+    display: block;
+  }
+
+  .event-card .card-image {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0.75rem 0 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .event-location {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .news-card {
+    display: block;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+  }
+
+  .news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .news-content {
+    padding: 1.5rem;
+  }
+
+  .news-date {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .news-content h3 {
+    margin: 0.5rem 0;
+  }
+
+  .news-content p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--color-text-light);
+  }
+
+  .empty-state a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .sources-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+
+  .sources-note a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+</style>

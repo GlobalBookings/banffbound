@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const GYG_PARTNER_ID = 'QW960HO';
+
+const featuredTours = [
+  {
+    name: 'Athabasca Glacier & Columbia Icefield Day Trip',
+    description: 'Full-day guided tour along the Icefields Parkway with glaciers, waterfalls, and emerald lakes. Includes packed lunch and expert commentary.',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+    duration: '11 hours',
+    rating: '4.8',
+    price: 'From $145 CAD',
+    gygUrl: `https://www.getyourguide.com/banff-l284/athabasca-glacier-columbia-icefield-day-trip-t113074/?partner_id=${GYG_PARTNER_ID}`,
+    type: 'Day Trip',
+  },
+  {
+    name: 'Emerald Lake & Takakkaw Falls Tour',
+    description: 'Small group tour to Yoho National Park featuring Emerald Lake, Takakkaw Falls, and the Natural Bridge. Optional canoeing available.',
+    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=600&q=80',
+    duration: '10 hours',
+    rating: '4.9',
+    price: 'From $135 CAD',
+    gygUrl: `https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}`,
+    type: 'Day Trip',
+  },
+  {
+    name: 'Sunset & Stars Walking Tour',
+    description: 'Evening guided hike through Banff with sunset views and stargazing. Guides carry bear spray and provide headlamps and lanterns.',
+    image: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80',
+    duration: '2 hours',
+    rating: '4.9',
+    price: 'From $65 CAD',
+    gygUrl: `https://www.getyourguide.com/banff-l284/banff-sunset-and-stargazing-evening-walking-tour-t441813/?partner_id=${GYG_PARTNER_ID}`,
+    type: 'Evening',
+  },
+  {
+    name: 'Wildlife Safari & Scenic Drive',
+    description: 'Guided wildlife viewing tour through Banff National Park. Spot elk, bighorn sheep, bears, and more with an expert naturalist guide.',
+    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=600&q=80',
+    duration: '3-4 hours',
+    rating: '4.7',
+    price: 'From $85 CAD',
+    gygUrl: `https://www.getyourguide.com/banff-l284/safaris-wildlife-activities-tc40/?partner_id=${GYG_PARTNER_ID}`,
+    type: 'Wildlife',
+  },
+  {
+    name: 'Lake Louise & Moraine Lake Tour',
+    description: 'Visit two of the most stunning lakes in the Canadian Rockies. Includes photo stops, scenic viewpoints, and local history from your guide.',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
+    duration: '8 hours',
+    rating: '4.8',
+    price: 'From $120 CAD',
+    gygUrl: `https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}`,
+    type: 'Day Trip',
+  },
+  {
+    name: 'Banff Gondola Experience',
+    description: 'Skip-the-line gondola ride to the summit of Sulphur Mountain. Panoramic views, boardwalk, and the chance to dine at Sky Bistro.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    duration: '2-3 hours',
+    rating: '4.7',
+    price: 'From $75 CAD',
+    gygUrl: `https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}`,
+    type: 'Sightseeing',
+  },
+];
+
+const categories = [
+  { label: 'All Tours', icon: '&#127760;', url: `https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}` },
+  { label: 'Day Trips', icon: '&#128652;', url: `https://www.getyourguide.com/banff-l284/day-trips-tc1/?partner_id=${GYG_PARTNER_ID}` },
+  { label: 'Wildlife & Nature', icon: '&#128059;', url: `https://www.getyourguide.com/banff-l284/safaris-wildlife-activities-tc40/?partner_id=${GYG_PARTNER_ID}` },
+  { label: 'Winter Sports', icon: '&#9924;', url: `https://www.getyourguide.com/banff-l284/winter-sports-tc26/?partner_id=${GYG_PARTNER_ID}` },
+  { label: 'Water Activities', icon: '&#128675;', url: `https://www.getyourguide.com/banff-l284/water-activities-tc8/?partner_id=${GYG_PARTNER_ID}` },
+  { label: 'Food & Drink', icon: '&#127860;', url: `https://www.getyourguide.com/banff-l284/food-drink-tc36/?partner_id=${GYG_PARTNER_ID}` },
+];
+---
+
+<BaseLayout title="Tours & Adventures" description="Book the best tours and guided adventures in Banff. Day trips, wildlife safaris, gondola rides, and more.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
+      alt="Mountain adventure"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Book Adventures</span>
+      <h1>Tours & Adventures</h1>
+      <p>Curated tours and guided experiences in Banff National Park. Book with free cancellation and skip-the-line access.</p>
+    </div>
+  </section>
+
+  <!-- Category Quick Links -->
+  <section class="categories-bar">
+    <div class="container">
+      <div class="categories-grid">
+        {categories.map(cat => (
+          <a href={cat.url} target="_blank" rel="noopener" class="category-pill">
+            <span set:html={cat.icon}></span>
+            <span>{cat.label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Tours -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Top Rated</span>
+        <h2>Featured Tours</h2>
+        <p>Hand-picked tours and experiences from local guides and top-rated operators.</p>
+      </div>
+      <div class="grid grid-3">
+        {featuredTours.map(tour => (
+          <a href={tour.gygUrl} target="_blank" rel="noopener" class="tour-card card">
+            <div class="tour-image-wrap">
+              <img src={tour.image} alt={tour.name} class="card-image" />
+              <span class="tour-type-badge">{tour.type}</span>
+            </div>
+            <div class="card-body">
+              <div class="tour-rating">
+                <span class="stars">&#9733; {tour.rating}</span>
+              </div>
+              <h3>{tour.name}</h3>
+              <p>{tour.description}</p>
+              <div class="tour-footer">
+                <div class="tour-meta">
+                  <span>&#9202; {tour.duration}</span>
+                </div>
+                <span class="tour-price">{tour.price}</span>
+              </div>
+              <span class="book-btn">Check Availability &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GetYourGuide Widget -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">More Adventures</span>
+        <h2>Explore All Banff Activities</h2>
+        <p>Browse hundreds of tours, activities, and experiences available in Banff.</p>
+      </div>
+      <div class="widget-container">
+        <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame"
+             data-gyg-location-id="284"
+             data-gyg-locale-code="en-US"
+             data-gyg-widget="activities"
+             data-gyg-number-of-items="9"
+             data-gyg-partner-id={GYG_PARTNER_ID}>
+        </div>
+      </div>
+      <div class="widget-cta">
+        <a href={`https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}`}
+           target="_blank" rel="noopener" class="btn btn-primary">
+          View All Banff Tours on GetYourGuide &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="https://widget.getyourguide.com/dist/pa.umd.min.js" data-gyg-partner-id="QW960HO"></script>
+
+<style>
+  .categories-bar {
+    background: var(--color-primary);
+    padding: 1.25rem 0;
+  }
+
+  .categories-grid {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .categories-grid::-webkit-scrollbar { display: none; }
+
+  .category-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(255,255,255,0.12);
+    color: var(--color-white);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .category-pill:hover {
+    background: var(--color-accent);
+    color: var(--color-dark);
+  }
+
+  .tour-card { display: block; }
+
+  .tour-image-wrap {
+    position: relative;
+  }
+
+  .tour-image-wrap .card-image {
+    height: 200px;
+  }
+
+  .tour-type-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+  }
+
+  .tour-rating {
+    margin-bottom: 0.5rem;
+  }
+
+  .stars {
+    color: #f59e0b;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .tour-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .tour-meta {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+
+  .tour-price {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+  }
+
+  .book-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-white);
+    background: var(--color-accent);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tour-card:hover .book-btn {
+    background: var(--color-primary);
+  }
+
+  .widget-container {
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 400px;
+  }
+
+  .widget-cta {
+    text-align: center;
+    margin-top: 2rem;
+  }
+</style>
