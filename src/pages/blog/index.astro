@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { blogPosts, categories } from '../../data/blogPosts';
+---
+
+<BaseLayout title="Banff Travel Guide & Blog" description="Expert travel guides, tips, and itineraries for Banff National Park. Plan your perfect trip to the Canadian Rockies.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
+      alt="Banff National Park"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Travel Guides</span>
+      <h1>Banff Travel Guide & Blog</h1>
+      <p>Expert guides, detailed itineraries, and insider tips to help you plan the perfect trip to the Canadian Rockies.</p>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <section class="categories-bar">
+    <div class="container">
+      <div class="categories-scroll">
+        <a href="#all" class="filter-pill active" data-category="all">All Guides</a>
+        {categories.map(cat => (
+          <a href={`#${cat.toLowerCase()}`} class="filter-pill" data-category={cat}>{cat}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Posts Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3" id="posts-grid">
+        {blogPosts.map(post => (
+          <a href={`/blog/${post.slug}`} class="post-card card" data-category={post.category}>
+            <img src={post.image} alt={post.title} class="card-image" />
+            <div class="card-body">
+              <div class="post-meta-top">
+                <span class="tag">{post.category}</span>
+                <span class="post-read-time">{post.readTime}</span>
+              </div>
+              <h3>{post.title}</h3>
+              <p>{post.description}</p>
+              <div class="card-meta">
+                <span>{new Date(post.date).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('.post-card');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      e.preventDefault();
+      const category = (e.currentTarget as HTMLElement).dataset.category;
+
+      pills.forEach(p => p.classList.remove('active'));
+      (e.currentTarget as HTMLElement).classList.add('active');
+
+      cards.forEach(card => {
+        const el = card as HTMLElement;
+        if (category === 'all' || el.dataset.category === category) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .categories-bar {
+    background: var(--color-white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 1rem 0;
+    position: sticky;
+    top: 72px;
+    z-index: 100;
+  }
+
+  .categories-scroll {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .categories-scroll::-webkit-scrollbar { display: none; }
+
+  .filter-pill {
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    background: var(--color-bg-alt);
+    color: var(--color-text);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .filter-pill:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .filter-pill.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .post-card { display: block; }
+  .post-card .card-image { height: 200px; }
+
+  .post-meta-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-read-time {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+</style>

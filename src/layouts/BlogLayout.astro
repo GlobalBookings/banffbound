@@ -1,0 +1,157 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+  category: string;
+  image: string;
+  readTime: string;
+}
+
+const { title, description, date, category, image, readTime } = Astro.props;
+const formattedDate = new Date(date).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout title={title} description={description} image={image}>
+  <article class="blog-article">
+    <div class="article-hero">
+      <img src={image} alt={title} class="article-hero-img" />
+      <div class="article-hero-overlay"></div>
+      <div class="article-hero-content">
+        <span class="badge">{category}</span>
+        <h1>{title}</h1>
+        <div class="article-meta">
+          <span>{formattedDate}</span>
+          <span>&middot;</span>
+          <span>{readTime}</span>
+        </div>
+      </div>
+    </div>
+    <div class="article-body container">
+      <slot />
+      <div class="article-footer">
+        <a href="/blog" class="btn btn-outline">&larr; Back to All Guides</a>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .article-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .article-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
+  }
+
+  .article-hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--color-white);
+    padding: 3rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .article-hero-content h1 {
+    color: var(--color-white);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0.5rem 0;
+    max-width: 800px;
+  }
+
+  .article-meta {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .article-body {
+    max-width: 800px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .article-body :global(h2) {
+    margin: 2.5rem 0 1rem;
+    font-size: 1.8rem;
+  }
+
+  .article-body :global(h3) {
+    margin: 2rem 0 0.75rem;
+    font-size: 1.3rem;
+  }
+
+  .article-body :global(p) {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  .article-body :global(ul), .article-body :global(ol) {
+    margin: 1rem 0 1.5rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .article-body :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-body :global(strong) {
+    color: var(--color-dark);
+  }
+
+  .article-body :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-body :global(blockquote) {
+    border-left: 4px solid var(--color-accent);
+    background: var(--color-bg-alt);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1.5rem 0;
+    font-style: italic;
+  }
+
+  .article-body :global(.tip-box) {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .article-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  @media (max-width: 768px) {
+    .article-hero { min-height: 300px; }
+    .article-hero-content { padding: 1.5rem; }
+  }
+</style>

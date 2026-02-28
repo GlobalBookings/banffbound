@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Parser from 'rss-parser';
+import { blogPosts } from '../data/blogPosts';
+
+const featuredPosts = blogPosts.slice(0, 4);
 
 const parser = new Parser({
   customFields: {
@@ -184,6 +187,32 @@ const highlights = [
     </div>
   </section>
 
+  <!-- Featured Guides -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Travel Guides</span>
+        <h2>Plan Your Trip</h2>
+        <p>Expert guides and insider tips to help you make the most of your Banff adventure.</p>
+      </div>
+      <div class="grid grid-4">
+        {featuredPosts.map(post => (
+          <a href={`/blog/${post.slug}`} class="guide-card card">
+            <img src={post.image} alt={post.title} class="card-image guide-image" />
+            <div class="card-body">
+              <span class="tag">{post.category}</span>
+              <h3 class="guide-title">{post.title}</h3>
+              <span class="card-link">{post.readTime} &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="/blog" class="btn btn-outline">View All Guides &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
@@ -359,6 +388,10 @@ const highlights = [
     display: block;
     margin-bottom: 0.5rem;
   }
+
+  .guide-card { display: block; }
+  .guide-image { height: 160px; }
+  .guide-title { font-size: 1rem; line-height: 1.4; }
 
   .tours-cta {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);

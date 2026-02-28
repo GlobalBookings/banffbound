@@ -1,0 +1,776 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+export function getStaticPaths() {
+  return blogPosts.map(post => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+
+const content: Record<string, string> = {
+  'best-time-to-visit-banff': `
+<p>Banff National Park is stunning year-round, but each season offers a completely different experience. Knowing the best time to visit Banff depends on what you want to do, your budget, and how you feel about crowds.</p>
+
+<h2>Summer (June to August)</h2>
+<p><strong>Best for:</strong> hiking, canoeing, scenic drives, wildlife viewing, and long daylight hours.</p>
+<p>Summer is peak season in Banff and for good reason. The weather is warm (15-25°C), trails are clear of snow, and the lakes reach their peak turquoise colour by mid-July. This is when Moraine Lake and Lake Louise are at their most stunning.</p>
+<p>The downside? Crowds. Expect packed parking lots, sold-out accommodations, and mandatory shuttle reservations for popular destinations like Moraine Lake. Book everything 3-6 months in advance.</p>
+<div class="tip-box"><strong>Pro Tip:</strong> Start your days before 7am to beat the crowds at major attractions. Sunrise at Moraine Lake with no one around is worth the early alarm.</div>
+
+<h2>Fall (September to October)</h2>
+<p><strong>Best for:</strong> larch season, photography, fewer crowds, and fall colours.</p>
+<p>Late September brings larch season -- when alpine larch trees turn brilliant gold against the evergreen forests and blue mountain lakes. It's one of the most magical times to visit. The Larch Valley hike above Moraine Lake is the top destination for this phenomenon.</p>
+<p>Shoulder season pricing kicks in, making accommodation 20-40% cheaper than summer. However, some facilities and shuttle services wind down by mid-October.</p>
+
+<h2>Winter (November to March)</h2>
+<p><strong>Best for:</strong> skiing, snowboarding, ice walks, frozen waterfalls, hot springs, and northern lights.</p>
+<p>Banff transforms into a winter wonderland with three world-class ski resorts. January and February offer the best powder conditions, though temperatures can drop to -20°C or colder. The frozen waterfalls at Johnston Canyon and ice skating on Lake Louise are quintessential winter experiences.</p>
+<p>Winter accommodation prices are lower than summer (except holiday weeks), and the town has a cozy, magical atmosphere with far fewer tourists.</p>
+
+<h2>Spring (April to May)</h2>
+<p><strong>Best for:</strong> budget travel, waterfalls at peak flow, and the transition from winter to summer.</p>
+<p>Spring is the quiet shoulder season. Many hiking trails are still snow-covered until late May or June, but lower-elevation trails open up and waterfalls are thundering from snowmelt. It's the cheapest time to visit with the fewest crowds.</p>
+<p>Be aware that Moraine Lake Road typically doesn't open until late May or early June, and some facilities may still be closed.</p>
+
+<h2>Month-by-Month Quick Reference</h2>
+<ul>
+<li><strong>January-February:</strong> Best skiing, frozen waterfalls, SnowDays festival, cold but magical</li>
+<li><strong>March:</strong> Spring skiing begins, warmer days, still snowy</li>
+<li><strong>April-May:</strong> Shoulder season, waterfalls peak, trails gradually opening</li>
+<li><strong>June:</strong> Summer begins, trails opening, wildflowers starting, lakes still thawing</li>
+<li><strong>July-August:</strong> Peak season, best weather, busiest crowds, all trails open</li>
+<li><strong>September:</strong> Larch season, quieter, cooler mornings, stunning photography</li>
+<li><strong>October:</strong> Late fall, snow begins, many facilities closing</li>
+<li><strong>November-December:</strong> Ski season opens, holiday festivities, winter activities begin</li>
+</ul>
+`,
+
+  'how-to-get-to-banff': `
+<p>Banff is located 130 km (80 miles) west of Calgary, Alberta, nestled deep in the Canadian Rockies. Despite its remote mountain setting, getting to Banff is straightforward with several excellent transportation options.</p>
+
+<h2>Flying into Calgary (YYC)</h2>
+<p>Calgary International Airport (YYC) is the closest major airport to Banff, with direct flights from cities across North America, Europe, and Asia. From the airport, Banff is approximately a 90-minute drive west along the Trans-Canada Highway (Highway 1).</p>
+<p>Major airlines serving Calgary include Air Canada, WestJet, United, American Airlines, Delta, British Airways, KLM, and Lufthansa.</p>
+
+<h2>Renting a Car</h2>
+<p>The most flexible option. Car rental counters are located in the Calgary airport terminal. The drive to Banff along Highway 1 is scenic and straightforward -- you'll start seeing mountains within 45 minutes of leaving Calgary.</p>
+<p>Having a car gives you freedom to explore the Icefields Parkway, Lake Louise, Moraine Lake, and remote trailheads on your own schedule. Parking in Banff town is manageable outside of peak summer weekends.</p>
+<div class="tip-box"><strong>Winter Driving:</strong> From November to April, winter tires or chains are legally required on Highway 1 through the mountain parks. Most rental companies offer winter-equipped vehicles.</div>
+
+<h2>Airport Shuttles</h2>
+<p>Several shuttle companies run scheduled transfers between Calgary Airport and Banff:</p>
+<ul>
+<li><strong>Banff Airporter:</strong> The most established service. Multiple daily departures, approximately $70-80 CAD one way. Book online in advance.</li>
+<li><strong>Brewster Express:</strong> Similar pricing and schedule, with stops in Canmore and Lake Louise as well.</li>
+<li><strong>On-It Transit:</strong> Seasonal budget bus service (summer only) for approximately $10 CAD. Limited schedule.</li>
+</ul>
+
+<h2>From Vancouver</h2>
+<p>Banff is approximately 850 km (530 miles) east of Vancouver. You can drive it in about 9-10 hours via the Trans-Canada Highway through spectacular mountain scenery, or fly from Vancouver to Calgary (1 hour 15 minutes) and transfer to Banff.</p>
+
+<h2>From Edmonton</h2>
+<p>Edmonton is about 400 km (250 miles) northeast of Banff, roughly a 4-hour drive via Highway 11 (David Thompson Highway) or Highway 2 south to Calgary and then west. Several bus services also run this route.</p>
+
+<h2>Getting Around Banff</h2>
+<p>Once in Banff, the town itself is very walkable. For getting to Lake Louise, Moraine Lake, and other park destinations:</p>
+<ul>
+<li><strong>Roam Transit:</strong> Local buses connecting Banff town, Tunnel Mountain, Sulphur Mountain, Lake Minnewanka, Canmore, and Lake Louise.</li>
+<li><strong>Parks Canada Shuttles:</strong> Mandatory shuttle for Moraine Lake access during summer. Reservations required.</li>
+<li><strong>Rental bikes and e-bikes:</strong> Available from several shops in town for exploring the Legacy Trail and local paths.</li>
+</ul>
+`,
+
+  '3-day-banff-itinerary': `
+<p>Three days in Banff is enough to hit the major highlights and leave you desperate to come back for more. This itinerary balances iconic sights with enough time to actually enjoy them without rushing.</p>
+
+<h2>Day 1: Banff Town & Sulphur Mountain</h2>
+<h3>Morning</h3>
+<p>Start with breakfast at <strong>Wild Flour Bakery</strong> -- grab a sourdough croissant and coffee. Then walk to <strong>Bow Falls</strong>, a beautiful cascade just minutes from Banff Avenue. Continue along the Bow River trail toward <strong>Surprise Corner Viewpoint</strong> for the classic view of the Fairmont Banff Springs Hotel framed by mountains.</p>
+
+<h3>Midday</h3>
+<p>Head to the <strong>Banff Gondola</strong> for the 8-minute ride to the summit of Sulphur Mountain (2,281m). Walk the boardwalk to Sanson's Peak for 360-degree panoramic views of six mountain ranges. Budget 2-3 hours here.</p>
+
+<h3>Afternoon</h3>
+<p>Soak in the <strong>Banff Upper Hot Springs</strong> at the base of Sulphur Mountain. The naturally heated mineral pools (37-40°C) are perfect for tired legs. Then explore <strong>Banff Avenue</strong> -- browse the shops, grab a treat from the Banff Candy Store, and walk through Central Park.</p>
+
+<h3>Evening</h3>
+<p>Dinner at <strong>Park Distillery</strong> for campfire-cooked meals and craft cocktails made with glacial water. End the night at <strong>Rose & Crown</strong> rooftop for a drink with mountain views.</p>
+
+<h2>Day 2: Lake Louise & Moraine Lake</h2>
+<h3>Early Morning</h3>
+<p>Leave Banff by 6:30am to reach <strong>Lake Louise</strong> early. Walk the lakeshore trail and take in the iconic view of Victoria Glacier reflected in turquoise water. For more adventure, hike to the <strong>Lake Agnes Tea House</strong> (3.4 km one way, moderate) for tea and scones at a backcountry teahouse at 2,135m elevation.</p>
+
+<h3>Midday</h3>
+<p>Take the Parks Canada shuttle to <strong>Moraine Lake</strong> (reservation required). Climb the short Rockpile Trail for the famous Valley of the Ten Peaks viewpoint -- the image that once graced the Canadian $20 bill. Rent a canoe on the lake for an unforgettable paddle.</p>
+
+<h3>Afternoon</h3>
+<p>Drive back toward Banff, stopping at <strong>Vermilion Lakes</strong> for a peaceful walk and wildlife spotting. Elk, ospreys, and bald eagles are commonly seen here.</p>
+
+<h3>Evening</h3>
+<p>Dinner at <strong>The Bison Restaurant</strong> on Bear Street -- their Rocky Mountain cuisine featuring bison, elk, and Alberta beef is outstanding.</p>
+
+<h2>Day 3: Johnston Canyon & Minnewanka</h2>
+<h3>Morning</h3>
+<p>Drive to <strong>Johnston Canyon</strong> early (before 9am to avoid crowds). Walk the catwalks bolted to the canyon walls to the <strong>Lower Falls</strong> (1.1 km) and <strong>Upper Falls</strong> (2.7 km). The trail is well-maintained and suitable for all fitness levels.</p>
+
+<h3>Midday</h3>
+<p>Head to <strong>Lake Minnewanka</strong>, the largest lake in Banff National Park. Take a scenic boat cruise (1.5 hours) or walk along the lakeside trail. Stop at nearby <strong>Two Jack Lake</strong> for a quieter, equally beautiful experience.</p>
+
+<h3>Afternoon</h3>
+<p>Visit the <strong>Cave and Basin National Historic Site</strong> -- the birthplace of Canada's national park system. Learn about the hot springs discovery in 1883 that started it all.</p>
+
+<h3>Evening</h3>
+<p>Farewell dinner at <strong>Grizzly House</strong> for their legendary fondue, or <strong>Juniper Bistro</strong> for panoramic mountain views as the sun sets over the valley.</p>
+
+<div class="tip-box"><strong>Budget Tip:</strong> Buy a Parks Canada Discovery Pass ($145.25/adult) if you're spending 7+ days in national parks per year. Otherwise, a daily pass ($11/adult) or family/group pass ($22.40) covers your entry.</div>
+`,
+
+  '7-day-banff-itinerary': `
+<p>A full week in Banff lets you go beyond the highlights and truly experience the depth of the Canadian Rockies. This itinerary covers the essentials and takes you to places most visitors never reach.</p>
+
+<h2>Day 1: Arrival & Banff Town Exploration</h2>
+<p>Arrive in Banff and settle into your accommodation. Spend the afternoon walking <strong>Banff Avenue</strong>, browsing shops, and getting oriented. Visit <strong>Bow Falls</strong> and the <strong>Cascade of Time Garden</strong>. Watch the sunset from <strong>Surprise Corner Viewpoint</strong> with the Fairmont Banff Springs in the foreground. Dinner at <strong>Block Kitchen + Bar</strong>.</p>
+
+<h2>Day 2: Sulphur Mountain & Hot Springs</h2>
+<p>Ride the <strong>Banff Gondola</strong> up Sulphur Mountain (or hike the 5.5 km trail for a challenge). Walk the summit boardwalk to Sanson's Peak. In the afternoon, soak in <strong>Banff Upper Hot Springs</strong>, then visit the <strong>Cave and Basin National Historic Site</strong>. Evening at <strong>Park Distillery</strong>.</p>
+
+<h2>Day 3: Lake Louise Deep Dive</h2>
+<p>Full day at Lake Louise. Start with the lakeshore walk, then hike to <strong>Lake Agnes Tea House</strong> (3.4 km). If you're feeling strong, continue to the <strong>Big Beehive</strong> for incredible aerial views of Lake Louise. In the afternoon, explore the <strong>Plain of Six Glaciers</strong> trail for dramatic glacier views and another teahouse. Dinner at the <strong>Chateau Lake Louise</strong>.</p>
+
+<h2>Day 4: Moraine Lake & Valley of the Ten Peaks</h2>
+<p>Take the shuttle to <strong>Moraine Lake</strong> at first light. Climb the Rockpile Trail, then tackle the <strong>Sentinel Pass</strong> hike (5.8 km one way) -- the highest point reachable by maintained trail in the Canadian Rockies at 2,611m. The views of the Valley of the Ten Peaks from above are life-changing. Canoe on the lake in the afternoon. Quiet evening at <strong>Vermilion Lakes</strong> for sunset.</p>
+
+<h2>Day 5: Icefields Parkway Day Trip</h2>
+<p>Drive the <strong>Icefields Parkway</strong> (Highway 93N) -- considered one of the most beautiful drives in the world. Key stops: <strong>Bow Lake</strong>, <strong>Peyto Lake</strong> (the famous wolf-head-shaped lake), <strong>Mistaya Canyon</strong>, <strong>Columbia Icefield</strong> and the Glacier Skywalk. If time allows, walk on the <strong>Athabasca Glacier</strong>. Return to Banff via the same route.</p>
+
+<h2>Day 6: Johnston Canyon & Lake Minnewanka</h2>
+<p>Morning at <strong>Johnston Canyon</strong> (arrive before 8am). Walk to the Upper Falls, then continue to the <strong>Ink Pots</strong> -- five cold-water springs bubbling up through vivid green and blue pools (additional 3 km past Upper Falls). Afternoon at <strong>Lake Minnewanka</strong> for a boat cruise and visit <strong>Two Jack Lake</strong>. Evening wildlife drive along the <strong>Bow Valley Parkway</strong> -- one of the best spots to see elk, deer, and bears.</p>
+
+<h2>Day 7: Hidden Gems & Farewell</h2>
+<p>Spend your final morning hiking <strong>Tunnel Mountain</strong> (2.3 km, easy) for a panoramic goodbye view of the valley. Visit <strong>Banff Indian Trading Post</strong> for authentic Indigenous art souvenirs. Grab brunch at <strong>Wild Flour Bakery</strong>. If time allows, bike the <strong>Legacy Trail</strong> to Canmore (26 km, paved, stunning scenery) and shuttle back. Farewell dinner at <strong>The Bison Restaurant</strong>.</p>
+`,
+
+  'best-hikes-in-banff': `
+<p>With over 1,600 km of maintained trails, Banff National Park is a hiker's paradise. Here are 15 of the best hikes sorted by difficulty, from easy lakeside strolls to challenging alpine adventures.</p>
+
+<h2>Easy Hikes</h2>
+
+<h3>1. Johnston Canyon to Lower Falls (1.1 km one way)</h3>
+<p>The most popular hike in Banff, and for good reason. Walk along catwalks bolted to the canyon walls above the rushing creek to reach the stunning Lower Falls. Mostly paved and accessible, this is perfect for all ages and fitness levels.</p>
+
+<h3>2. Bow Falls Trail (0.5 km)</h3>
+<p>A short, easy walk from downtown Banff to one of the most photogenic waterfalls in the park. Combine it with the Bow River trail for a longer riverside stroll.</p>
+
+<h3>3. Lake Louise Lakeshore (2 km one way)</h3>
+<p>A flat, paved path along the shore of Lake Louise with stunning views of Victoria Glacier. Wheelchair accessible and stroller-friendly for most of the route.</p>
+
+<h3>4. Tunnel Mountain (2.3 km one way)</h3>
+<p>The shortest and easiest summit hike near Banff town. Switchbacks lead to 360-degree views of the Bow Valley, Mount Rundle, and the town below. Popular at sunrise and sunset.</p>
+
+<h2>Moderate Hikes</h2>
+
+<h3>5. Lake Agnes Tea House (3.4 km one way)</h3>
+<p>Climb 400m in elevation from Lake Louise to a historic backcountry teahouse perched beside Lake Agnes. Enjoy fresh tea and scones with a mountain backdrop. One of the most rewarding moderate hikes in the Rockies.</p>
+
+<h3>6. Johnston Canyon to Ink Pots (5.8 km one way)</h3>
+<p>Continue past the Upper Falls to reach five cold mineral springs bubbling through vivid blue-green pools in an alpine meadow. Quieter than the canyon section and absolutely worth the extra effort.</p>
+
+<h3>7. Sunshine Meadows (varies)</h3>
+<p>Access via the Sunshine Village gondola in summer. Several interconnected trails wind through alpine meadows carpeted in wildflowers (mid-July to August), with views of the Continental Divide. Easy to moderate once you're up top.</p>
+
+<h3>8. Plain of Six Glaciers (5.3 km one way)</h3>
+<p>From the far end of Lake Louise, this trail leads through glacier-carved terrain to a teahouse with views of six glaciers. The final approach through the moraine offers dramatic scenery.</p>
+
+<h2>Challenging Hikes</h2>
+
+<h3>9. Sentinel Pass (5.8 km one way from Moraine Lake)</h3>
+<p>The highest point reachable by maintained trail in the Canadian Rockies (2,611m). Steep switchbacks lead through Larch Valley (stunning in September) to a narrow pass between towering peaks. Extraordinary views in every direction.</p>
+
+<h3>10. Cory Pass (5.8 km one way)</h3>
+<p>A strenuous loop with 915m of elevation gain offering one of the best views in the park. The trail passes through a dramatic narrow canyon before reaching the pass overlooking Mount Louis.</p>
+
+<h3>11. Cascade Amphitheatre (7.7 km one way)</h3>
+<p>A rewarding climb to a massive natural amphitheatre carved into the side of Cascade Mountain. Wildflowers in summer, golden larches in fall. Relatively few crowds for such a spectacular payoff.</p>
+
+<h3>12. Mount Temple Scramble (via Sentinel Pass)</h3>
+<p>For experienced scramblers only. Mount Temple (3,544m) is the highest peak in the Lake Louise area. A full-day commitment with technical sections. Start before dawn and bring proper gear.</p>
+
+<h2>Multi-Day & Backcountry</h2>
+
+<h3>13. Skoki Loop (32 km loop, 2-3 days)</h3>
+<p>A classic backcountry loop near Lake Louise passing through alpine meadows, past pristine lakes, and to the historic Skoki Lodge. One of the finest multi-day hikes in the Rockies.</p>
+
+<h3>14. Egypt Lake via Healy Pass (12.4 km one way)</h3>
+<p>A spectacular backcountry route over Healy Pass with views of the Massive Range, descending to the Egypt Lake area with its cluster of alpine lakes. Campground and shelter available.</p>
+
+<h3>15. Sawback Trail (74 km, 4-5 days)</h3>
+<p>A serious backcountry traverse connecting Banff to Lake Louise through the Sawback Range. Remote, challenging, and spectacularly beautiful. For experienced backpackers only.</p>
+
+<div class="tip-box"><strong>Safety:</strong> Always carry bear spray and know how to use it. Check trail conditions at the Banff Visitor Centre before heading out. Register for backcountry permits if staying overnight. Tell someone your plans.</div>
+`,
+
+  'lake-louise-complete-guide': `
+<p>Lake Louise is the jewel of the Canadian Rockies -- a turquoise glacial lake framed by towering peaks and Victoria Glacier. Here's everything you need to know to plan a perfect visit.</p>
+
+<h2>Getting There</h2>
+<p>Lake Louise is 57 km (35 minutes) northwest of Banff town along the Trans-Canada Highway. You can drive, take Roam Transit Route 8X (seasonal), or join a guided tour. Parking fills up by 8-9am in summer, so arrive early or use transit.</p>
+
+<h2>Best Time to Visit</h2>
+<p>The lake is accessible year-round, but the experience changes dramatically with the seasons. Summer (late June to September) offers the iconic turquoise water, canoeing, and hiking. Winter (December to March) brings ice skating on the frozen lake beneath the Chateau and incredible ice sculptures during the Ice Magic festival.</p>
+<p>The lake reaches its most vivid turquoise colour in July and August when glacial melt carries fine rock flour into the water.</p>
+
+<h2>Top Things to Do at Lake Louise</h2>
+<h3>Walk the Lakeshore</h3>
+<p>The 2 km flat path along the lake is the most popular activity. It's paved, accessible, and offers changing perspectives of the glacier and surrounding peaks.</p>
+
+<h3>Canoe on the Lake</h3>
+<p>Canoe rentals are available at the boathouse from June to September (approximately $135/hour for a two-person canoe). Paddling on the turquoise water with the glacier ahead is a bucket-list experience.</p>
+
+<h3>Hike to Lake Agnes Tea House</h3>
+<p>A 3.4 km moderate hike climbing 400m to a historic teahouse at 2,135m elevation. Fresh tea, baked goods, and stunning views of Lake Agnes. Budget 3-4 hours round trip.</p>
+
+<h3>Hike the Plain of Six Glaciers</h3>
+<p>A 5.3 km trail from the far end of Lake Louise leading to views of six glaciers and another backcountry teahouse. More challenging than Lake Agnes but less crowded.</p>
+
+<h3>Winter Activities</h3>
+<p>Ice skate on the frozen lake (skate rentals available), cross-country ski on groomed trails, or snowshoe through the surrounding forest. The Fairmont Chateau Lake Louise maintains the rink and provides warming areas.</p>
+
+<h2>Dining</h2>
+<p>The Fairmont Chateau Lake Louise has several restaurants ranging from casual to fine dining. For a unique experience, try the <strong>Afternoon Tea</strong> in the Lakeview Lounge. For budget options, pack a lunch -- there are limited alternatives beyond the Chateau.</p>
+
+<h2>Practical Tips</h2>
+<ul>
+<li>Arrive before 8am in summer or after 4pm to avoid the worst crowds</li>
+<li>The public parking lot is free but fills quickly. Overflow parking on the highway requires a shuttle</li>
+<li>Bring layers -- the lakeside is noticeably cooler than Banff town</li>
+<li>Restrooms are available at the Chateau and the trailhead area</li>
+<li>A Parks Canada pass is required to enter Banff National Park</li>
+</ul>
+`,
+
+  'moraine-lake-guide': `
+<p>Moraine Lake might be the most photographed lake in all of Canada. Its vivid blue water, the Valley of the Ten Peaks backdrop, and the dramatic rocky shoreline make it one of those places that genuinely lives up to the hype.</p>
+
+<h2>How to Visit Moraine Lake in 2026</h2>
+<p>Private vehicles are no longer permitted to drive to Moraine Lake during peak season (approximately June to mid-October). You must take the <strong>Parks Canada shuttle</strong> from the Lake Louise Park & Ride. Shuttle reservations open in spring and sell out quickly.</p>
+<p>Book your shuttle at <a href="https://reservation.pc.gc.ca" target="_blank" rel="noopener">reservation.pc.gc.ca</a> as soon as reservations open (typically April). Morning slots are the most popular.</p>
+
+<h2>Best Time to Visit</h2>
+<p>Moraine Lake Road typically opens in late May or early June, depending on snow conditions, and closes in mid-October. The lake is at its most vivid turquoise in July and August. For larch season, visit in late September when the alpine larch trees above the lake turn brilliant gold.</p>
+
+<h2>Top Things to Do</h2>
+<h3>The Rockpile Trail</h3>
+<p>The short, easy climb up the rockpile at the lake's outlet gives you the famous viewpoint -- the one that was on the Canadian $20 bill. It takes about 15 minutes and is not to be missed.</p>
+
+<h3>Canoe on the Lake</h3>
+<p>Rent a canoe at the dock (approximately $135/hour) and paddle out onto the impossibly blue water. Early morning, before the wind picks up, is the best time.</p>
+
+<h3>Hike to Sentinel Pass</h3>
+<p>The trail from Moraine Lake climbs through Larch Valley to Sentinel Pass (2,611m), the highest maintained-trail point in the Canadian Rockies. The 11.6 km round trip is strenuous but incredibly rewarding.</p>
+
+<h3>Consolation Lakes</h3>
+<p>A moderate 3 km (one way) hike from Moraine Lake to a pair of alpine lakes beneath massive rock walls. Much quieter than the Larch Valley trail.</p>
+
+<h2>Photography Tips</h2>
+<ul>
+<li>The classic Rockpile viewpoint faces west -- morning light illuminates the peaks beautifully</li>
+<li>Arrive on the first shuttle for the softest light and fewest people</li>
+<li>Bring a polarizing filter to cut glare and enhance the water colour</li>
+<li>The canoe dock area offers great reflections on calm mornings</li>
+</ul>
+
+<div class="tip-box"><strong>Important:</strong> Check the Parks Canada website for current road and shuttle status before your visit. Conditions can change quickly in the mountains.</div>
+`,
+
+  'banff-in-winter': `
+<p>Winter in Banff is pure magic. Snow-covered peaks, frozen waterfalls, world-class skiing, and a fraction of the summer crowds. If you're prepared for the cold, a winter trip to Banff might be even more memorable than summer.</p>
+
+<h2>Skiing & Snowboarding</h2>
+<p>Banff is home to three world-class ski resorts, collectively known as the <strong>SkiBig3</strong>:</p>
+<ul>
+<li><strong>Sunshine Village:</strong> Highest base elevation, longest season (November to late May), and the most natural snow. Over 3,300 acres of terrain.</li>
+<li><strong>Lake Louise Ski Resort:</strong> The largest resort with 4,200 acres, stunning scenery, and terrain for all levels. Famous for its back bowls.</li>
+<li><strong>Mt. Norquay:</strong> The closest to town (6 minutes), smallest of the three, but excellent for families and night skiing. Home to the Via Ferrata in summer.</li>
+</ul>
+<p>A SkiBig3 lift ticket gives you access to all three resorts. Multi-day passes offer significant savings.</p>
+
+<h2>Johnston Canyon Ice Walk</h2>
+<p>One of the most popular winter activities. Strap on ice cleats and walk along the frozen canyon to see the Lower and Upper Falls transformed into massive ice pillars. Guided tours are recommended as the trail can be icy and slippery.</p>
+
+<h2>Ice Skating</h2>
+<p>Skate on the frozen surface of <strong>Lake Louise</strong> with the Chateau and Victoria Glacier as your backdrop -- one of the most scenic skating experiences in the world. Rentals are available on-site. <strong>Vermilion Lakes</strong> and <strong>Two Jack Lake</strong> also freeze for skating in good conditions.</p>
+
+<h2>Banff Upper Hot Springs</h2>
+<p>There's nothing quite like soaking in naturally heated mineral pools (37-40°C) while snow falls around you and mountains tower overhead. Open year-round, but winter is when it's most atmospheric.</p>
+
+<h2>Dog Sledding</h2>
+<p>Mush through snowy wilderness with a team of Alaskan huskies. Several operators near Canmore and Lake Louise offer half-day and full-day tours through the backcountry.</p>
+
+<h2>Northern Lights</h2>
+<p>Banff's dark skies and northern latitude make it possible to see the aurora borealis on clear winter nights. Best viewing spots include Vermilion Lakes, Lake Minnewanka, and Two Jack Lake. Download an aurora forecast app and be ready to head out when activity spikes.</p>
+
+<h2>What to Pack for Winter</h2>
+<ul>
+<li>Thermal base layers (merino wool recommended)</li>
+<li>Insulated waterproof jacket and pants</li>
+<li>Warm hat, gloves, and neck gaiter/balaclava</li>
+<li>Insulated, waterproof winter boots with good grip</li>
+<li>Hand and toe warmers</li>
+<li>Sunglasses and sunscreen (the sun reflects intensely off snow)</li>
+</ul>
+
+<div class="tip-box"><strong>Temperature Warning:</strong> January and February temperatures can drop to -20°C to -30°C. Wind chill can make it feel even colder. Layer up, limit exposed skin, and take breaks indoors.</div>
+`,
+
+  'banff-in-summer': `
+<p>Summer in Banff is peak season for a reason. Long daylight hours (sunrise before 6am, sunset after 10pm in June), warm temperatures, fully accessible trails, and turquoise lakes at their most vibrant. Here's everything you need to plan the perfect summer trip.</p>
+
+<h2>Weather & What to Expect</h2>
+<p>Summer temperatures range from 15-25°C (59-77°F) during the day, dropping to 5-10°C at night. Afternoon thunderstorms are common in July and August, so always carry a rain layer. The UV is intense at elevation -- sunscreen is essential.</p>
+
+<h2>Top Summer Activities</h2>
+<h3>Hiking</h3>
+<p>All trails are typically snow-free by late June. The most popular hikes include Johnston Canyon, Lake Agnes Tea House, Sentinel Pass, and the Plain of Six Glaciers. Start early (before 7am) to beat crowds and afternoon storms.</p>
+
+<h3>Canoeing & Kayaking</h3>
+<p>Paddle the turquoise waters of Lake Louise, Moraine Lake, Emerald Lake, or the Bow River. Rental facilities operate at most major lakes from June to September.</p>
+
+<h3>Scenic Drives</h3>
+<p>The <strong>Icefields Parkway</strong> (Banff to Jasper) is widely considered one of the most beautiful drives in the world. The <strong>Bow Valley Parkway</strong> is a slower, more intimate alternative to Highway 1 with excellent wildlife viewing.</p>
+
+<h3>White Water Rafting</h3>
+<p>Ride the rapids on the Kicking Horse River (class III-IV) for thrills, or float the gentle Bow River for a family-friendly scenic experience. Multiple outfitters run daily trips.</p>
+
+<h3>Wildlife Viewing</h3>
+<p>Summer is prime time for wildlife. Elk graze on the edges of town, bears are active in alpine meadows, and bighorn sheep frequent the roadsides. Dawn and dusk are the best times for sightings.</p>
+
+<h2>Beating the Summer Crowds</h2>
+<ul>
+<li>Arrive at popular trailheads and lakes before 8am</li>
+<li>Visit mid-week instead of weekends</li>
+<li>Book Moraine Lake shuttle reservations as soon as they open (usually April)</li>
+<li>Explore lesser-known spots like Two Jack Lake, Herbert Lake, and Cascade Amphitheatre</li>
+<li>Consider visiting in early June or September for shoulder season benefits</li>
+</ul>
+
+<h2>Summer Festivals & Events</h2>
+<p>Banff comes alive with events in summer: the <strong>Banff Centre Mountain Film and Book Festival</strong>, <strong>Canada Day celebrations</strong>, weekly <strong>farmers markets</strong>, and various outdoor concerts and art events throughout July and August.</p>
+`,
+
+  'banff-on-a-budget': `
+<p>Banff has a reputation for being expensive, and it can be -- but it doesn't have to be. With smart planning, you can experience the best of the Canadian Rockies without emptying your wallet.</p>
+
+<h2>Affordable Accommodation</h2>
+<ul>
+<li><strong>HI Banff Alpine Centre:</strong> Dorm beds from $45-65/night. Private rooms available. Kitchen, lounge, and a social atmosphere.</li>
+<li><strong>Canmore:</strong> Stay in nearby Canmore (20 minutes from Banff) where hotels and Airbnbs are 30-50% cheaper than Banff town.</li>
+<li><strong>Camping:</strong> Parks Canada campgrounds in Banff start from $28-39/night. Tunnel Mountain, Two Jack, and Johnston Canyon are popular options. Book early at reservation.pc.gc.ca.</li>
+<li><strong>Shoulder season:</strong> Visit in May-June or October for rates 20-40% lower than peak summer.</li>
+</ul>
+
+<h2>Free & Cheap Activities</h2>
+<p>The best things in Banff are free -- you just need a park pass ($11/day for adults, $22.40 for a family/group).</p>
+<ul>
+<li>Hike any of the hundreds of trails in the park</li>
+<li>Walk the shores of Lake Louise and Moraine Lake</li>
+<li>Drive the Bow Valley Parkway for wildlife viewing</li>
+<li>Watch sunset at Vermilion Lakes or Two Jack Lake</li>
+<li>Explore downtown Banff Avenue and its shops</li>
+<li>Visit Bow Falls and Surprise Corner Viewpoint</li>
+<li>Bike the Legacy Trail between Banff and Canmore (26 km, paved)</li>
+<li>Stargaze at one of the Dark Sky Preserves</li>
+</ul>
+
+<h2>Budget Eating Tips</h2>
+<ul>
+<li>Buy groceries at <strong>IGA</strong> or <strong>Safeway in Canmore</strong> (cheaper than Banff) and cook at your hostel/campsite</li>
+<li>Pack trail lunches -- sandwiches, fruit, and trail mix fuel a full day of hiking</li>
+<li><strong>Tooloulou's</strong> and <strong>Eddie Burger</strong> offer filling meals under $20</li>
+<li>Look for lunch specials at Banff Avenue restaurants</li>
+<li>Fill your water bottle from the tap -- Banff's water is excellent</li>
+</ul>
+
+<h2>Money-Saving Transport</h2>
+<ul>
+<li><strong>On-It Transit:</strong> Budget bus from Calgary to Banff (summer only, ~$10)</li>
+<li><strong>Roam Transit:</strong> Local buses are affordable ($2-5 per ride, day passes available)</li>
+<li>Carpool or share fuel costs if renting a vehicle</li>
+<li>Bring bikes or rent locally for getting around town and nearby trails</li>
+</ul>
+
+<div class="tip-box"><strong>Budget Breakdown:</strong> A budget traveller can do Banff for approximately $80-120 CAD per day (hostel/camping, self-catering, free activities). Mid-range is $200-350/day. Luxury is $500+/day.</div>
+`,
+
+  'where-to-stay-in-banff': `
+<p>Choosing where to stay in Banff depends on your budget, travel style, and what you want to be close to. Here's a breakdown of the best areas and accommodation options.</p>
+
+<h2>Downtown Banff (Banff Avenue)</h2>
+<p><strong>Best for:</strong> walkability, restaurants, nightlife, and convenience.</p>
+<p>Staying on or near Banff Avenue puts you within walking distance of dozens of restaurants, shops, and bars. You won't need a car for town activities, and Roam Transit connects you to nearby attractions.</p>
+<ul>
+<li><strong>Luxury:</strong> Fairmont Banff Springs ($$$+) -- the iconic Castle in the Rockies</li>
+<li><strong>Mid-Range:</strong> Moose Hotel & Suites ($$) -- rooftop hot pools, modern rooms</li>
+<li><strong>Mid-Range:</strong> Mount Royal Hotel ($$) -- historic, central, recently renovated</li>
+<li><strong>Budget:</strong> HI Banff Alpine Centre ($) -- dorm and private rooms on Tunnel Mountain</li>
+</ul>
+
+<h2>Tunnel Mountain</h2>
+<p><strong>Best for:</strong> nature lovers, families, and campers.</p>
+<p>A 10-minute drive (or bus ride) from downtown, Tunnel Mountain offers a quieter, more natural setting surrounded by forest. This is where you'll find most of Banff's camping and condo-style accommodation.</p>
+<ul>
+<li><strong>Tunnel Mountain Resort:</strong> Condo-style suites with kitchens, pool, hot tub ($-$$)</li>
+<li><strong>Hidden Ridge Resort:</strong> Spacious suites with fireplaces and mountain views ($$)</li>
+<li><strong>Tunnel Mountain Campgrounds:</strong> Parks Canada sites from $28/night</li>
+</ul>
+
+<h2>Lake Louise</h2>
+<p><strong>Best for:</strong> early access to Lake Louise and Moraine Lake, ski-in/ski-out, and a quieter atmosphere.</p>
+<p>Staying at Lake Louise means you're right at the lake for sunrise before the crowds arrive. It's also ideal for skiing at Lake Louise Ski Resort.</p>
+<ul>
+<li><strong>Fairmont Chateau Lake Louise:</strong> Iconic luxury lakefront ($$$+)</li>
+<li><strong>Lake Louise Inn:</strong> Comfortable, well-priced lodge-style rooms ($$)</li>
+<li><strong>HI Lake Louise Alpine Centre:</strong> Budget hostel with great location ($)</li>
+</ul>
+
+<h2>Canmore</h2>
+<p><strong>Best for:</strong> budget travellers who don't mind a 20-minute drive to Banff.</p>
+<p>Canmore sits just outside the park gates and offers significantly lower accommodation prices, more grocery options, and a charming downtown of its own. It's a popular base for locals and savvy travellers.</p>
+
+<h2>Booking Tips</h2>
+<ul>
+<li>Book 3-6 months ahead for summer stays (July-August sell out earliest)</li>
+<li>Shoulder seasons (May-June, September-October) offer 20-40% lower rates</li>
+<li>Ski & stay packages in winter can save 20-30%</li>
+<li>Check cancellation policies -- mountain weather can change plans</li>
+</ul>
+`,
+
+  'banff-food-guide': `
+<p>Banff's food scene is far more impressive than you'd expect from a small mountain town. From farm-to-table fine dining to hearty pub grub and artisan bakeries, here's where to eat and drink in Banff.</p>
+
+<h2>Fine Dining</h2>
+<h3>The Bison Restaurant</h3>
+<p>The crown jewel of Banff dining. Regional Rocky Mountain cuisine with locally sourced ingredients -- bison short ribs, elk carpaccio, Alberta beef, and an excellent wine list. The rustic-elegant Bear Street setting is perfect for a special night out. Reservations strongly recommended.</p>
+
+<h3>Juniper Bistro</h3>
+<p>Perched above town with panoramic mountain views from the patio. Seasonal menus spotlight Alberta ingredients -- wild game, foraged mushrooms, and house-made charcuterie. The sunset views are worth the drive alone.</p>
+
+<h3>Eden at the Rimrock</h3>
+<p>AAA Four Diamond restaurant inside the Rimrock Resort Hotel. Classic French technique with Canadian ingredients. A multi-course tasting menu with wine pairings is the way to go. Dress code applies.</p>
+
+<h2>Casual Dining</h2>
+<h3>Park Distillery</h3>
+<p>Craft spirits distilled with glacial water, campfire-cooked meals over wood and charcoal, and an unforgettable atmosphere. The smoked brisket and s'mores are legendary. Great cocktails too.</p>
+
+<h3>Block Kitchen + Bar</h3>
+<p>Modern comfort food with creative twists. Excellent burgers, grain bowls, and shareables. Their weekend brunch is one of the best in town.</p>
+
+<h3>Grizzly House</h3>
+<p>A Banff institution since 1967. Famous for fondue and exotic game meats -- rattlesnake, alligator, ostrich, and more conventional options. The retro decor and table-side phones add to the quirky charm.</p>
+
+<h2>Budget Eats</h2>
+<h3>The Eddie Burger + Bar</h3>
+<p>Gourmet burgers in a funky basement joint. Creative toppings, spiked milkshakes, and a no-frills vibe. The elk burger is a must-try. Most items under $20.</p>
+
+<h3>Tooloulou's</h3>
+<p>Cajun and Creole flavours meet the Rockies. Po' boys, jambalaya, gumbo -- all served with genuine Southern hospitality and mountain portions.</p>
+
+<h2>Bakeries & Cafes</h2>
+<h3>Wild Flour Bakery</h3>
+<p>Beloved by locals for their sourdough, croissants, and hearty breakfast sandwiches. Arrive early -- popular items sell out. The perfect fuel stop before a day on the trails.</p>
+
+<h3>Whitebark Cafe</h3>
+<p>Specialty coffee roasted in-house in a bright, modern space. Excellent espresso drinks and pastries.</p>
+
+<h2>Breweries & Bars</h2>
+<h3>Banff Ave Brewing Co.</h3>
+<p>Banff's original craft brewery. House-brewed beers (try the Head Smashed IPA) alongside solid pub food. The rooftop patio is a great apres-ski spot.</p>
+
+<h3>The Rose & Crown</h3>
+<p>British-style pub with a rooftop patio, live music, and a lively atmosphere. A Banff institution for decades.</p>
+
+<h3>High Rollers</h3>
+<p>Bowling alley meets cocktail lounge. Roll a few frames while sipping craft cocktails -- a fun rainy-day or evening activity.</p>
+`,
+
+  'icefields-parkway-guide': `
+<p>The Icefields Parkway (Highway 93 North) is a 232 km road connecting Lake Louise to Jasper through the heart of the Canadian Rockies. It's regularly called one of the most scenic drives in the world, and it earns that title at every turn.</p>
+
+<h2>Planning Your Drive</h2>
+<p>The drive takes about 3 hours without stops, but you'll want a full day to properly enjoy it. Start from Lake Louise and drive north toward Jasper, or do it as a long day trip from Banff (returning the same way).</p>
+<p>Gas up before you leave -- there's only one gas station on the entire route (Saskatchewan River Crossing, roughly the midpoint). Cell service is nonexistent for most of the drive.</p>
+
+<h2>Must-Stop Viewpoints (South to North)</h2>
+
+<h3>1. Herbert Lake</h3>
+<p>Just 3 km from the Highway 1 junction. A calm lake with perfect mountain reflections, especially in early morning. Easy roadside stop.</p>
+
+<h3>2. Bow Lake</h3>
+<p>A stunning turquoise lake beneath Bow Glacier at km 36. Walk to the lakeshore for incredible reflections. The historic Num-Ti-Jah Lodge sits at its edge.</p>
+
+<h3>3. Peyto Lake Viewpoint</h3>
+<p>The most famous stop on the Parkway. A short walk from the parking area leads to a viewpoint overlooking a wolf-head-shaped lake in an impossible shade of blue. Arrive early -- the parking lot fills fast in summer.</p>
+
+<h3>4. Mistaya Canyon</h3>
+<p>A short 0.5 km walk to a narrow canyon where the Mistaya River has carved dramatic potholes and channels through the limestone. Easy and impressive.</p>
+
+<h3>5. Saskatchewan River Crossing</h3>
+<p>The only services on the route -- gas, food, and restrooms. Fill up here.</p>
+
+<h3>6. Columbia Icefield & Glacier Skywalk</h3>
+<p>The highlight of the drive. The Columbia Icefield is the largest icefield in the Canadian Rockies. You can walk to the toe of the Athabasca Glacier (free), take an Ice Explorer bus onto the glacier, or walk the glass-floored Glacier Skywalk suspended 280m above the valley.</p>
+
+<h3>7. Tangle Falls</h3>
+<p>A roadside waterfall that cascades right next to the highway. Easy photo stop with no hiking required.</p>
+
+<h3>8. Sunwapta Falls</h3>
+<p>A powerful waterfall where the Sunwapta River plunges through a narrow gorge. Short walk from the parking area.</p>
+
+<h2>Tips for the Drive</h2>
+<ul>
+<li>Fill your gas tank before starting</li>
+<li>Bring food and water -- services are minimal</li>
+<li>Watch for wildlife on the road, especially at dawn and dusk</li>
+<li>Check road conditions before departing (the road can close in winter due to avalanche risk)</li>
+<li>A Parks Canada pass covers the entire route</li>
+</ul>
+`,
+
+  'banff-wildlife-guide': `
+<p>Banff National Park is home to an extraordinary diversity of wildlife. From grizzly bears to tiny pikas, knowing where to look and how to stay safe enhances every visit.</p>
+
+<h2>Common Wildlife in Banff</h2>
+
+<h3>Elk</h3>
+<p>The most frequently seen large animal in Banff. Elk often graze on the grassy areas around town, especially near the Banff Springs Golf Course and along the Bow River. They may appear calm but can be aggressive, particularly during the fall rut (September-October). Maintain at least 30 metres distance.</p>
+
+<h3>Bighorn Sheep</h3>
+<p>Often spotted along roadsides, especially on the highway near Lake Minnewanka and on the Icefields Parkway. They're accustomed to vehicles but should never be approached or fed.</p>
+
+<h3>Black Bears</h3>
+<p>Present throughout the park, though they tend to avoid heavily trafficked areas. Berry-rich areas in late summer are good spots. If you see one, stay at least 100 metres away and never approach.</p>
+
+<h3>Grizzly Bears</h3>
+<p>Less common than black bears but present in more remote areas. Grizzlies are larger, have a distinctive shoulder hump, and should be given even more space. Carry bear spray on all hikes.</p>
+
+<h3>Mountain Goats</h3>
+<p>Found at higher elevations. The Icefields Parkway, Sulphur Mountain summit, and Lake Louise area are good spots. Their white coats stand out against dark rock faces.</p>
+
+<h3>Wolves & Coyotes</h3>
+<p>Wolves are present but rarely seen. Coyotes are more common, sometimes spotted near roadsides and meadows at dawn and dusk.</p>
+
+<h2>Best Wildlife Viewing Spots</h2>
+<ul>
+<li><strong>Bow Valley Parkway:</strong> The single best road for wildlife in the park. Drive slowly (60 km/h speed limit) at dawn or dusk.</li>
+<li><strong>Vermilion Lakes:</strong> Elk, ospreys, bald eagles, and occasionally bears.</li>
+<li><strong>Lake Minnewanka:</strong> Bighorn sheep, deer, and bears along the lakeshore.</li>
+<li><strong>Icefields Parkway:</strong> Mountain goats, bears, and bighorn sheep along the roadside.</li>
+<li><strong>Fenland Trail:</strong> A short, easy loop near Banff town that's excellent for birdwatching and the occasional elk sighting.</li>
+</ul>
+
+<h2>Wildlife Safety Rules</h2>
+<ul>
+<li>Maintain 100m distance from bears, wolves, and cougars; 30m from all other wildlife</li>
+<li>Carry bear spray on every hike and know how to use it</li>
+<li>Make noise on trails (talking, clapping) to alert bears of your presence</li>
+<li>Never feed wildlife -- it's illegal and endangers both animals and people</li>
+<li>Store food in bear-proof containers or your vehicle trunk</li>
+<li>If you see a bear on or near a trail, stop, stay calm, back away slowly, and report the sighting</li>
+</ul>
+`,
+
+  'banff-park-pass-guide': `
+<p>Everyone entering Banff National Park needs a valid Parks Canada pass. Here's everything you need to know about types, pricing, and where to buy.</p>
+
+<h2>Do You Need a Pass?</h2>
+<p>Yes. A Parks Canada entry pass is required for everyone visiting Banff National Park, whether you're driving through, hiking, or just stopping for lunch in town. The pass covers entry to the park only -- activities, parking, and camping are separate fees.</p>
+
+<h2>Pass Types & Pricing (2026)</h2>
+<h3>Daily Pass</h3>
+<ul>
+<li>Adult (18-64): $11.00</li>
+<li>Senior (65+): $9.50</li>
+<li>Youth (17 and under): Free</li>
+<li>Family/Group (up to 7 people in one vehicle): $22.40</li>
+</ul>
+
+<h3>Discovery Pass (Annual)</h3>
+<ul>
+<li>Adult: $75.25</li>
+<li>Senior: $64.75</li>
+<li>Family/Group: $145.25</li>
+</ul>
+<p>The Discovery Pass covers unlimited entry to all Parks Canada locations across the country for a full year. It pays for itself in about 7 days of Banff visits.</p>
+
+<h3>Canada Strong Pass (2025-2026 Special)</h3>
+<p>Parks Canada has been offering promotional passes in recent years. Check the Parks Canada website for any current promotional offers that may provide free or discounted entry.</p>
+
+<h2>Where to Buy</h2>
+<ul>
+<li><strong>Online:</strong> Purchase at <a href="https://www.pc.gc.ca" target="_blank" rel="noopener">pc.gc.ca</a> before your trip</li>
+<li><strong>Park Gates:</strong> Buy at the east gate on Highway 1 when entering from Calgary (expect lineups in summer)</li>
+<li><strong>Banff Visitor Centre:</strong> 224 Banff Avenue, downtown Banff</li>
+<li><strong>Lake Louise Visitor Centre:</strong> In the Samson Mall</li>
+</ul>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Buy your pass online before you arrive to skip the line at the park gate. In summer, the east gate lineup can add 30+ minutes to your drive.</div>
+
+<h2>Common Questions</h2>
+<p><strong>Is the pass per person or per vehicle?</strong> The Family/Group pass covers everyone in one vehicle (up to 7 people). Individual passes are per person.</p>
+<p><strong>Does it cover Jasper too?</strong> The Discovery Pass covers all Parks Canada sites. A daily Banff pass covers Banff only.</p>
+<p><strong>Do I need a pass to drive through on Highway 1?</strong> Technically yes, though enforcement focuses on people who stop and use park facilities.</p>
+`,
+
+  'banff-skiing-guide': `
+<p>With three world-class resorts collectively known as <strong>SkiBig3</strong>, Banff offers some of the best skiing in North America. Here's your complete guide to hitting the slopes.</p>
+
+<h2>The Three Resorts Compared</h2>
+
+<h3>Sunshine Village</h3>
+<ul>
+<li><strong>Terrain:</strong> 3,358 acres across three mountains</li>
+<li><strong>Vertical:</strong> 1,070m</li>
+<li><strong>Season:</strong> November to late May (longest in Canada)</li>
+<li><strong>Best for:</strong> advanced skiers, powder chasers, and those who want the longest season</li>
+<li><strong>Highlights:</strong> Highest base elevation (2,160m), most natural snowfall, Delirium Dive (experts only), and straddles the Continental Divide</li>
+</ul>
+
+<h3>Lake Louise Ski Resort</h3>
+<ul>
+<li><strong>Terrain:</strong> 4,200 acres -- the largest in the Canadian Rockies</li>
+<li><strong>Vertical:</strong> 1,000m</li>
+<li><strong>Season:</strong> November to early May</li>
+<li><strong>Best for:</strong> all levels, families, and those wanting variety</li>
+<li><strong>Highlights:</strong> Stunning scenery, famous back bowls for experts, excellent grooming for intermediates, and a friendly village base</li>
+</ul>
+
+<h3>Mt. Norquay</h3>
+<ul>
+<li><strong>Terrain:</strong> 190 acres</li>
+<li><strong>Vertical:</strong> 503m</li>
+<li><strong>Season:</strong> November to April</li>
+<li><strong>Best for:</strong> families, beginners, night skiing, and quick sessions</li>
+<li><strong>Highlights:</strong> Just 6 minutes from Banff town, affordable, night skiing on Fridays and Saturdays, and excellent for learning</li>
+</ul>
+
+<h2>Lift Tickets & Passes</h2>
+<p>A <strong>SkiBig3 pass</strong> gives you access to all three resorts on a single ticket. Multi-day passes (3+ days) offer the best value and let you experience each mountain. Single-day tickets at individual resorts range from $80-170 CAD depending on the resort and date.</p>
+
+<h2>Ski & Stay Packages</h2>
+<p>Many Banff hotels offer ski & stay packages bundling accommodation with lift tickets at 20-30% savings compared to booking separately. Check the SkiBig3 website for current deals.</p>
+
+<h2>Gear Rental</h2>
+<p>Rent from shops in Banff town (<strong>Monod Sports</strong>, <strong>Ski Hub</strong>, <strong>Snowtips-Bactrax</strong>) rather than at the resort to save money. Most offer multi-day discounts.</p>
+
+<h2>Snow Conditions</h2>
+<p>Banff's resorts receive 750-900 cm of snowfall annually. The best powder typically falls in January and February. Sunshine Village's high elevation and Continental Divide position give it the most consistent conditions.</p>
+
+<div class="tip-box"><strong>First Timer?</strong> Start at Mt. Norquay for a relaxed, affordable introduction. Their beginner packages include a lift ticket, rental, and group lesson at excellent value.</div>
+`,
+
+  'banff-with-kids': `
+<p>Banff is an incredible destination for families. The combination of easy nature access, wildlife, and family-friendly activities makes it a place kids will remember forever.</p>
+
+<h2>Easy Hikes for Kids</h2>
+<ul>
+<li><strong>Fenland Trail (2 km loop):</strong> Flat, shaded forest walk near Banff town. Great for spotting birds and small wildlife.</li>
+<li><strong>Bow Falls Trail (0.5 km):</strong> Short walk to a beautiful waterfall from downtown Banff.</li>
+<li><strong>Lake Louise Lakeshore (2 km one way):</strong> Flat, paved, stroller-friendly with incredible views.</li>
+<li><strong>Johnston Canyon to Lower Falls (1.1 km):</strong> Exciting catwalks over the canyon. Kids love the adventure of walking on the cliff-side platforms.</li>
+<li><strong>Tunnel Mountain (2.3 km):</strong> Manageable for older kids (6+). The reward of summit views makes the effort worthwhile.</li>
+</ul>
+
+<h2>Must-Do Family Activities</h2>
+<h3>Banff Gondola</h3>
+<p>The 8-minute ride up Sulphur Mountain is thrilling for kids, and the summit boardwalk and interpretive centre keep them engaged. Look for ground squirrels at the top.</p>
+
+<h3>Lake Minnewanka Boat Cruise</h3>
+<p>A scenic 1.5-hour cruise with commentary about the lake's history and wildlife. Kids enjoy watching for deer and bears along the shoreline.</p>
+
+<h3>Cave and Basin National Historic Site</h3>
+<p>Interactive exhibits about the discovery of hot springs and the birth of Canada's park system. The Discovery Walk outside is a hit with curious kids.</p>
+
+<h3>Banff Upper Hot Springs</h3>
+<p>Warm mineral pools that kids love. Bring swimsuits and towels. The mountain views from the pool are a bonus for parents.</p>
+
+<h2>Rainy Day Options</h2>
+<ul>
+<li><strong>Whyte Museum of the Canadian Rockies:</strong> Art, history, and mountain culture</li>
+<li><strong>High Rollers:</strong> Family-friendly bowling and arcade during daytime hours</li>
+<li><strong>Banff Public Library:</strong> Cozy reading space with children's section</li>
+</ul>
+
+<h2>Where to Eat with Kids</h2>
+<ul>
+<li><strong>Old Spaghetti Factory:</strong> Kid-friendly Italian with a fun atmosphere</li>
+<li><strong>Eddie Burger + Bar:</strong> Gourmet burgers and milkshakes kids love (family-friendly during the day)</li>
+<li><strong>Banff Candy Store:</strong> Watch fudge being made and stock up on treats</li>
+<li><strong>Picnic:</strong> Pack a lunch from IGA and eat at Cascade Ponds or Central Park</li>
+</ul>
+
+<h2>Family Accommodation Tips</h2>
+<p>Look for properties with kitchens to save on dining costs. <strong>Tunnel Mountain Resort</strong> (condo-style suites with full kitchens, pool, and hot tub) and <strong>Hidden Ridge Resort</strong> are excellent family choices. Camping at Tunnel Mountain campground is a memorable and affordable option.</p>
+`,
+
+  'banff-photography-spots': `
+<p>Banff National Park is one of the most photogenic places on Earth. Here are the 12 best photography locations, with tips on timing and composition.</p>
+
+<h2>1. Moraine Lake Rockpile</h2>
+<p>The classic Valley of the Ten Peaks viewpoint. Best at sunrise when warm light hits the peaks and the water is glassy calm. The angle from the top of the rockpile includes the iconic foreground rocks.</p>
+
+<h2>2. Lake Louise at Sunrise</h2>
+<p>Arrive before 7am for mirror reflections of Victoria Glacier. The best spot is the shoreline near the canoe dock. Morning light paints the glacier in warm tones.</p>
+
+<h2>3. Peyto Lake Viewpoint</h2>
+<p>The famous wolf-head-shaped turquoise lake viewed from above on the Icefields Parkway. Midday light works well here since the viewpoint faces north. A wide-angle lens is essential.</p>
+
+<h2>4. Vermilion Lakes at Sunset</h2>
+<p>Three lakes just minutes from Banff town offering spectacular sunset photography. Mount Rundle reflects beautifully in the calm water. The best shots are from the second lake.</p>
+
+<h2>5. Two Jack Lake</h2>
+<p>An underrated spot perfect for Milky Way photography on clear nights. The lakeside campsite with a canoe or picnic table makes a great foreground subject against Mount Rundle.</p>
+
+<h2>6. Surprise Corner</h2>
+<p>The classic viewpoint of the Fairmont Banff Springs Hotel framed by the Bow River, Bow Falls, and mountain peaks. Morning light is best. A short walk from downtown.</p>
+
+<h2>7. Bow Lake (Icefields Parkway)</h2>
+<p>Crystal-clear turquoise water reflecting Crowfoot Mountain and Bow Glacier. The rocky shoreline provides natural leading lines. Best in morning light.</p>
+
+<h2>8. Johnston Canyon Frozen Falls (Winter)</h2>
+<p>Massive blue ice pillars and formations in winter. Long exposure photography of the frozen falls is dramatic. Bring a tripod and ice cleats.</p>
+
+<h2>9. Larch Valley (September)</h2>
+<p>When the alpine larch trees turn gold in late September, the contrast against blue sky and turquoise lakes is extraordinary. The hike starts from Moraine Lake.</p>
+
+<h2>10. Banff Gondola Summit</h2>
+<p>Panoramic views of the Bow Valley from 2,281m. Sunrise or sunset are best, though the gondola operating hours may limit options. The summit boardwalk offers multiple angles.</p>
+
+<h2>11. Castle Mountain from the Bow Valley Parkway</h2>
+<p>The dramatic flat-topped Castle Mountain is one of the most distinctive peaks in the Rockies. There are several pulloffs along Highway 1A with clear views. Sunset light is spectacular.</p>
+
+<h2>12. Athabasca Glacier (Icefields Parkway)</h2>
+<p>The massive glacier descending from the Columbia Icefield. Wide-angle shots from the toe of the glacier trail emphasize the scale. Overcast days can work well for even lighting on ice.</p>
+
+<h2>General Photography Tips</h2>
+<ul>
+<li>Bring a polarizing filter for water and sky shots</li>
+<li>Shoot during golden hour (first/last hour of sunlight) for warmth and drama</li>
+<li>Use a tripod for sunrise, sunset, night sky, and waterfall shots</li>
+<li>Carry extra batteries -- cold temperatures drain them quickly</li>
+<li>Check weather forecasts but don't shy away from clouds -- dramatic skies make dramatic photos</li>
+</ul>
+`,
+};
+---
+
+<BlogLayout
+  title={post.title}
+  description={post.description}
+  date={post.date}
+  category={post.category}
+  image={post.image}
+  readTime={post.readTime}
+>
+  <Fragment set:html={content[post.slug] || '<p>Content coming soon.</p>'} />
+</BlogLayout>
