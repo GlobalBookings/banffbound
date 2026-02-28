@@ -1,0 +1,285 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lakes = [
+  {
+    name: 'Lake Louise',
+    description: 'The jewel of the Canadian Rockies. A turquoise glacial lake framed by Victoria Glacier and towering peaks. Walk the lakeshore, canoe the impossibly blue water, hike to tea houses, or skate on the frozen surface in winter.',
+    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=600&q=80',
+    howToGetThere: '57 km northwest of Banff via Trans-Canada Highway (40 min). Roam Transit Route 8X runs seasonally. Parking fills by 8-9am in summer.',
+    activities: 'Canoeing, lakeshore walk, Lake Agnes Tea House hike, Plain of Six Glaciers hike, ice skating (winter)',
+    bestTime: 'July-August for turquoise water; December-March for ice skating',
+    shuttleInfo: 'Roam Transit Route 8X from Banff. Overflow parking with shuttle in peak summer.',
+  },
+  {
+    name: 'Moraine Lake',
+    description: 'Arguably the most photographed lake in Canada. Its vivid blue water set against the Valley of the Ten Peaks is iconic — the image once graced the Canadian $20 bill. The short Rockpile Trail provides the famous viewpoint.',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
+    howToGetThere: '15 km from Lake Louise village. Private vehicles banned in peak season — Parks Canada shuttle required from Lake Louise Park & Ride.',
+    activities: 'Rockpile Trail viewpoint, canoeing, Sentinel Pass hike, Consolation Lakes hike, Larch Valley (September)',
+    bestTime: 'July-August for colour; late September for larch season',
+    shuttleInfo: 'Mandatory Parks Canada shuttle (reservations required, book at reservation.pc.gc.ca in April).',
+  },
+  {
+    name: 'Lake Minnewanka',
+    description: 'The largest lake in Banff National Park, stretching 21 km through the mountains. Popular for boat cruises, fishing, and shoreline walks. Beneath the surface lies the submerged ghost town of Minnewanka Landing.',
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',
+    howToGetThere: '15-minute drive from Banff town via Lake Minnewanka Road. Roam Transit Route 6 runs seasonally.',
+    activities: 'Scenic boat cruise, fishing (permit required), lakeside hiking, scuba diving to the ghost town, picnicking',
+    bestTime: 'June-September for boat cruises and hiking; year-round for scenic drives',
+    shuttleInfo: 'Roam Transit Route 6 from Banff (seasonal).',
+  },
+  {
+    name: 'Two Jack Lake',
+    description: 'A smaller, quieter neighbour of Lake Minnewanka with crystal-clear water and dramatic mountain reflections. The lakeside campsite and picnic area are among the most scenic in the park. A favourite for astrophotography.',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=80',
+    howToGetThere: '12-minute drive from Banff town on the Lake Minnewanka Loop road.',
+    activities: 'Swimming (cold!), picnicking, photography, canoeing, camping, stargazing',
+    bestTime: 'July-August for swimming; year-round for photography',
+    shuttleInfo: 'Roam Transit Route 6 (seasonal). Ample parking most of the time.',
+  },
+  {
+    name: 'Peyto Lake',
+    description: 'The famous wolf-head-shaped turquoise lake viewed from a high viewpoint along the Icefields Parkway. The colour is most vivid in summer when glacial rock flour fills the water. One of the most photographed spots in the Rockies.',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+    howToGetThere: '70 km north of Lake Louise on the Icefields Parkway (Highway 93N). Short walk from the Bow Summit parking lot.',
+    activities: 'Viewpoint photography, Bow Summit interpretive trail, picnicking',
+    bestTime: 'July-August for the most vivid turquoise colour',
+    shuttleInfo: 'No shuttle — drive or join a guided Icefields Parkway tour.',
+  },
+  {
+    name: 'Bow Lake',
+    description: 'A stunning turquoise lake at the foot of Bow Glacier, located right alongside the Icefields Parkway. The historic Num-Ti-Jah Lodge sits on its shore. Incredible mountain reflections on calm mornings.',
+    image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80',
+    howToGetThere: '36 km north of Lake Louise on the Icefields Parkway. Large parking area right at the lakeshore.',
+    activities: 'Lakeshore walks, Bow Glacier Falls hike (4.5 km one way), photography, picnicking',
+    bestTime: 'July-August for best colour and weather',
+    shuttleInfo: 'No shuttle — drive or join a guided tour.',
+  },
+  {
+    name: 'Emerald Lake',
+    description: 'Located in Yoho National Park just across the border from Banff, Emerald Lake lives up to its name with stunning green-blue water surrounded by forest and mountains. A peaceful escape from the busier Banff lakes.',
+    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80',
+    howToGetThere: 'About 85 km from Banff town via Trans-Canada Highway. Turn off at Field, BC and drive 11 km south.',
+    activities: 'Canoeing, 5.2 km lakeshore loop walk, cross-country skiing (winter), dining at Emerald Lake Lodge',
+    bestTime: 'July-August for colour; winter for snow-covered serenity',
+    shuttleInfo: 'No shuttle — drive only. Parking can fill on summer weekends.',
+  },
+  {
+    name: 'Vermilion Lakes',
+    description: 'Three shallow lakes just minutes from downtown Banff offering the most accessible sunset photography in the park. Mount Rundle reflects beautifully in the calm water. Excellent for wildlife — elk, ospreys, and bald eagles frequent the area.',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=80',
+    howToGetThere: '5-minute drive from Banff town centre, or a 20-minute walk/bike ride via the Vermilion Lakes Road.',
+    activities: 'Sunset photography, wildlife viewing, birdwatching, canoeing, cycling the access road',
+    bestTime: 'Year-round; sunset any season is spectacular',
+    shuttleInfo: 'No shuttle needed — easily accessible by foot or bike from town.',
+  },
+  {
+    name: 'Herbert Lake',
+    description: 'A small, tranquil lake just 3 km from the start of the Icefields Parkway. Its calm surface creates perfect mirror reflections of the surrounding peaks. An easy roadside stop that most visitors drive right past.',
+    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=600&q=80',
+    howToGetThere: '3 km north of the Icefields Parkway junction from Highway 1. Roadside parking area.',
+    activities: 'Photography, peaceful walks, picnicking, reflection photography at dawn',
+    bestTime: 'Early morning for glass-like reflections; July-September for best weather',
+    shuttleInfo: 'No shuttle — roadside access with ample parking.',
+  },
+];
+---
+
+<BaseLayout title="Lakes" description="Explore the stunning turquoise lakes of Banff National Park — Lake Louise, Moraine Lake, Peyto Lake, Lake Minnewanka, and more.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80"
+      alt="Turquoise mountain lake surrounded by peaks"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Turquoise Waters</span>
+      <h1>Lakes of Banff</h1>
+      <p>From the world-famous turquoise waters of Lake Louise and Moraine Lake to hidden gems off the beaten path, Banff's lakes are unforgettable.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#128166; Must-Visit Lakes</span>
+        <h2>Iconic & Hidden Lakes</h2>
+        <p>Banff National Park is home to some of the most beautiful lakes on Earth. Here's your guide to visiting each one.</p>
+      </div>
+      <div class="lakes-list">
+        {lakes.map((lake, index) => (
+          <div class={`lake-card ${index % 2 === 1 ? 'lake-card-reverse' : ''}`}>
+            <img src={lake.image} alt={lake.name} class="lake-card-image" />
+            <div class="lake-card-body">
+              <h3>{lake.name}</h3>
+              <p class="lake-description">{lake.description}</p>
+              <div class="lake-details">
+                <div class="lake-detail">
+                  <strong>&#128205; Getting There:</strong> {lake.howToGetThere}
+                </div>
+                <div class="lake-detail">
+                  <strong>&#127938; Activities:</strong> {lake.activities}
+                </div>
+                <div class="lake-detail">
+                  <strong>&#128197; Best Time:</strong> {lake.bestTime}
+                </div>
+                <div class="lake-detail">
+                  <strong>&#128652; Shuttle:</strong> {lake.shuttleInfo}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#127760; Lake Tours</span>
+        <h2>Guided Lake Experiences</h2>
+        <p>Skip the logistics and join a guided tour for the easiest way to experience Banff's most beautiful lakes.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>Lake Louise & Moraine Lake Tour</h3>
+            <p>Full-day guided tour visiting both iconic lakes with hotel pickup, expert commentary, and ample time to explore each lake.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Lake Minnewanka Cruise</h3>
+            <p>Scenic 1.5-hour boat cruise on the largest lake in Banff. Hear about the submerged ghost town and spot wildlife along the shore.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Emerald Lake & Yoho Tour</h3>
+            <p>Day trip to Emerald Lake and the highlights of Yoho National Park, including Natural Bridge and Takakkaw Falls.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>&#128161; Lake Visiting Tips</h3>
+        <p><strong>Why are the lakes turquoise?</strong> Glaciers grind rock into fine "rock flour" that washes into the lakes. Sunlight reflecting off these suspended particles creates the vivid turquoise colour, most intense in July-August.</p>
+        <p><strong>Arrive early:</strong> Popular lakes like Louise and Moraine fill their parking by 8-9am in summer. Start early or take transit/shuttles.</p>
+        <p><strong>Bring layers:</strong> Lakeside temperatures are noticeably cooler than town. Expect wind, especially in the afternoon.</p>
+        <p><strong>Pack out trash:</strong> Help keep these pristine lakes clean. Pack out everything you bring in.</p>
+        <p><strong>Respect wildlife:</strong> Bears, elk, and other animals frequent lakeshores. Maintain safe distances at all times.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lakes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .lake-card {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 2rem;
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .lake-card-reverse {
+    direction: rtl;
+  }
+
+  .lake-card-reverse > * {
+    direction: ltr;
+  }
+
+  .lake-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 300px;
+  }
+
+  .lake-card-body {
+    padding: 2rem;
+  }
+
+  .lake-card-body h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+    font-size: 1.4rem;
+  }
+
+  .lake-description {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .lake-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .lake-detail {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  .lake-detail strong {
+    color: var(--color-text);
+  }
+
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .lake-card,
+    .lake-card-reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+
+    .lake-card-image {
+      min-height: 200px;
+    }
+
+    .lake-card-body {
+      padding: 1.5rem;
+    }
+  }
+</style>

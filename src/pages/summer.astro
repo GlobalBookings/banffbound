@@ -1,0 +1,234 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const summerActivities = [
+  {
+    name: 'Hiking',
+    description: 'Over 1,600 km of maintained trails ranging from easy lakeside strolls to challenging alpine scrambles. Top picks include Sentinel Pass, Plain of Six Glaciers, Lake Agnes Tea House, Cory Pass, and Sunshine Meadows. Trails are typically snow-free by late June.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    season: 'June - October',
+    difficulty: 'All Levels',
+  },
+  {
+    name: 'Mountain Biking',
+    description: 'Ride through stunning mountain scenery on trails ranging from the paved Legacy Trail (Banff to Canmore, 26 km) to technical singletrack in the backcountry. Bike rentals and guided tours are available from several shops in Banff town.',
+    image: 'https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=600&q=80',
+    season: 'May - October',
+    difficulty: 'All Levels',
+  },
+  {
+    name: 'Canoeing & Kayaking',
+    description: 'Paddle the turquoise waters of Lake Louise, Moraine Lake, Emerald Lake, Two Jack Lake, or the Bow River. Canoe rentals operate at most major lakes from June to September. An iconic and unforgettable Banff experience.',
+    image: 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=600&q=80',
+    season: 'June - September',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'White Water Rafting',
+    description: 'Ride the rapids of the Kicking Horse River for class III-IV thrills, or float the gentle Bow River for a family-friendly scenic adventure. Several outfitters run daily trips with all gear provided.',
+    image: 'https://images.unsplash.com/photo-1530866495561-507c83b13228?w=600&q=80',
+    season: 'June - September',
+    difficulty: 'Moderate - Hard',
+  },
+  {
+    name: 'Via Ferrata at Mt. Norquay',
+    description: 'A thrilling climbing experience using iron rungs, ladders, and suspension bridges bolted into the cliff face at Mt. Norquay. Guided tours take you to stunning viewpoints with panoramic valley views. No climbing experience needed — just a head for heights.',
+    image: 'https://images.unsplash.com/photo-1522163182402-834f871fd851?w=600&q=80',
+    season: 'June - October',
+    difficulty: 'Moderate - Hard',
+  },
+  {
+    name: 'Wildlife Viewing',
+    description: 'Summer is prime time for wildlife. Elk graze near town, bears are active in alpine meadows, and bighorn sheep frequent roadsides. The Bow Valley Parkway at dawn and dusk is the best road for sightings. Join a guided safari for expert spotting.',
+    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=600&q=80',
+    season: 'Year-round (best June - September)',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'Camping',
+    description: 'Sleep under the stars at Parks Canada campgrounds throughout the park. Tunnel Mountain, Two Jack Lake, and Johnston Canyon are popular front-country options. Backcountry camping permits let you explore remote alpine areas.',
+    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80',
+    season: 'May - October',
+    difficulty: 'All Levels',
+  },
+  {
+    name: 'Fishing',
+    description: 'Cast a line in some of the most pristine waters in the Rockies. Lake Minnewanka, the Bow River, and Johnson Lake offer excellent fishing for trout and whitefish. A national park fishing permit is required and available at visitor centres.',
+    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80',
+    season: 'June - September',
+    difficulty: 'Easy - Moderate',
+  },
+];
+---
+
+<BaseLayout title="Summer Guide" description="Your complete guide to summer in Banff — hiking, biking, canoeing, rafting, via ferrata, wildlife, camping, and more.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80"
+      alt="Lush green mountains and turquoise lake in summer"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">&#9728; Summer Paradise</span>
+      <h1>Summer in Banff</h1>
+      <p>Long sunny days, wildflower meadows, turquoise lakes, and endless outdoor adventures — summer in Banff is an outdoor paradise.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#9728; Activities</span>
+        <h2>Summer Adventures</h2>
+        <p>With daylight stretching past 10pm and trails clear of snow, summer unlocks Banff's full potential for outdoor exploration.</p>
+      </div>
+      <div class="grid grid-3">
+        {summerActivities.map(item => (
+          <div class="card">
+            <img src={item.image} alt={item.name} class="card-image" />
+            <div class="card-body">
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div class="card-meta">
+                <span>&#128197; {item.season}</span>
+                <span class="tag">{item.difficulty}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#127760; Book Summer Activities</span>
+        <h2>Guided Summer Experiences</h2>
+        <p>Let local experts lead you to Banff's best summer adventures.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>Guided Hiking Tours</h3>
+            <p>Expert-led hikes to Banff's best trails with wildlife spotting, photography tips, and interpretive commentary. All levels available.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Rafting & Water Adventures</h3>
+            <p>White water rafting on the Kicking Horse River, scenic Bow River floats, and guided canoeing tours on turquoise mountain lakes.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Summer Hotels & Lodges</h3>
+            <p>Book summer accommodation early — peak season hotels sell out fast. Find the best rates and last-minute deals.</p>
+            <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Find Hotels on Expedia &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#127774; Seasonal Calendar</span>
+        <h2>Summer Month-by-Month</h2>
+      </div>
+      <div class="month-grid">
+        <div class="month-card">
+          <h3>June</h3>
+          <p>Trails are opening, wildflowers are starting, and the lakes are still thawing. Fewer crowds than July-August. Some high-elevation trails may have snow. Moraine Lake Road typically opens late May-early June.</p>
+        </div>
+        <div class="month-card">
+          <h3>July</h3>
+          <p>Peak season begins. All trails are clear, lakes reach maximum turquoise colour, and wildflower meadows are in full bloom. Book everything in advance. Start hiking before 7am to beat crowds.</p>
+        </div>
+        <div class="month-card">
+          <h3>August</h3>
+          <p>Warmest month with the longest days. Crowds remain high but begin to thin by late August. Afternoon thunderstorms are common — carry rain gear. Wildlife is active at higher elevations.</p>
+        </div>
+        <div class="month-card">
+          <h3>September</h3>
+          <p>The golden month. Larch trees turn brilliant gold in late September — Larch Valley above Moraine Lake is the top destination. Cooler mornings, fewer crowds, and shoulder-season pricing begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>&#128161; Summer Survival Guide</h3>
+        <p><strong>Beat the crowds:</strong> Arrive at popular trailheads and lakes before 8am. Visit mid-week instead of weekends. Book Moraine Lake shuttles as soon as they open (usually April).</p>
+        <p><strong>Be bear aware:</strong> Carry bear spray on every hike and make noise on trails. Store food in bear-proof containers or your vehicle trunk. Never approach wildlife.</p>
+        <p><strong>Layer up:</strong> Even in summer, temperatures vary widely. Morning starts can be 5°C while afternoons reach 25°C. Bring a rain layer for afternoon thunderstorms.</p>
+        <p><strong>Sun protection:</strong> UV is intense at elevation. Wear sunscreen, sunglasses, and a hat even on cloudy days.</p>
+        <p><strong>Book early:</strong> Peak summer accommodation sells out months in advance. Reserve campgrounds, shuttles, and popular activities 3-6 months ahead.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .month-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .month-card {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+
+  .month-card h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .month-card p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .month-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .month-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

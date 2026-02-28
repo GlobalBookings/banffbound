@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const hotSprings = [
+  {
+    name: 'Banff Upper Hot Springs',
+    description: 'The iconic Banff hot springs experience. Soak in naturally heated mineral water (37-40°C) in an outdoor pool perched on the slopes of Sulphur Mountain with panoramic mountain views. Open year-round, the winter experience — soaking in steaming water while snow falls around you — is truly magical.',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80',
+    details: 'Open daily year-round. Adults $9.25, children 3-17 $8.05. Swimsuit and towel rentals available. Located at the base of the Banff Gondola.',
+  },
+  {
+    name: 'Kananaskis Nordic Spa',
+    description: 'A world-class Nordic-inspired hydrotherapy spa set in the wilderness of Kananaskis Country, about 1 hour from Banff. Features a circuit of hot pools, cold plunge pools, steam rooms, saunas, and relaxation lounges. The outdoor pools overlook a pristine river valley and mountain peaks.',
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=600&q=80',
+    details: 'Located at Pomeroy Kananaskis Mountain Lodge. Half-day pass from $90. Advance booking required. Minimum age 18. About 1 hour drive from Banff.',
+  },
+  {
+    name: 'Fairmont Banff Springs Willow Stream Spa',
+    description: 'A luxury spa inside the iconic Castle in the Rockies. Features an indoor mineral pool, waterfall, steam rooms, aromatherapy inhalation room, and an extensive menu of massages, facials, and body treatments. The ultimate indulgence in Banff.',
+    image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80',
+    details: 'Open to hotel guests and day visitors. Spa access from $75/day. Treatments from $180. Advance booking strongly recommended.',
+  },
+];
+
+const wellnessActivities = [
+  {
+    name: 'Forest Bathing (Shinrin-Yoku)',
+    description: 'Immerse yourself in the healing power of nature with a guided forest bathing experience in the ancient forests of Banff. This Japanese-inspired practice involves slow, mindful walks through the forest, engaging all senses to reduce stress, lower cortisol levels, and restore a sense of calm.',
+    image: 'https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=600&q=80',
+    season: 'May - October',
+  },
+  {
+    name: 'Mountain Yoga',
+    description: 'Practice yoga surrounded by the Canadian Rockies. Several studios and retreat centres in Banff offer drop-in classes, outdoor mountain yoga sessions, and multi-day wellness retreats. Find your flow with mountain peaks as your backdrop.',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80',
+    season: 'Year-round (indoor); June - September (outdoor)',
+  },
+  {
+    name: 'Meditation & Mindfulness',
+    description: 'The mountain environment is a natural setting for meditation and mindfulness practice. Join guided meditation sessions at local wellness centres, or find your own peaceful spot at Vermilion Lakes, along the Bow River, or on a quiet alpine trail.',
+    image: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=600&q=80',
+    season: 'Year-round',
+  },
+  {
+    name: 'Scenic Wellness Walks',
+    description: 'Gentle walks through Banff\'s most peaceful landscapes offer natural stress relief. The Fenland Trail (2 km loop), Bow River path, and Vermilion Lakes road are all flat, accessible routes perfect for a mindful stroll amid nature.',
+    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80',
+    season: 'Year-round',
+  },
+];
+---
+
+<BaseLayout title="Wellness & Relaxation" description="Discover wellness experiences in Banff — hot springs, spas, yoga, forest bathing, and relaxation in the heart of the Canadian Rockies.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600&q=80"
+      alt="Relaxing spa experience in mountain setting"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Relax & Restore</span>
+      <h1>Wellness in Banff</h1>
+      <p>From natural hot springs to luxury spas and forest bathing, Banff offers the perfect backdrop for rest, relaxation, and renewal.</p>
+    </div>
+  </section>
+
+  <!-- Hot Springs & Spas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#9832; Hot Springs & Spas</span>
+        <h2>Soak, Steam & Rejuvenate</h2>
+        <p>Banff's natural hot springs are the reason the national park exists. Discover mineral pools, Nordic spas, and luxury wellness centres.</p>
+      </div>
+      <div class="wellness-list">
+        {hotSprings.map(item => (
+          <div class="wellness-card">
+            <img src={item.image} alt={item.name} class="wellness-card-image" />
+            <div class="wellness-card-body">
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <p class="wellness-details"><strong>Details:</strong> {item.details}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Wellness Activities -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#127807; Mind & Body</span>
+        <h2>Wellness Activities</h2>
+        <p>Go beyond the spa and embrace holistic wellness in Banff's natural mountain environment.</p>
+      </div>
+      <div class="grid grid-2">
+        {wellnessActivities.map(item => (
+          <div class="card">
+            <img src={item.image} alt={item.name} class="card-image" />
+            <div class="card-body">
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div class="card-meta">
+                <span>&#128197; {item.season}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#127760; Book Experiences</span>
+        <h2>Wellness Tours & Packages</h2>
+        <p>Treat yourself to guided wellness experiences in the Canadian Rockies.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>Hot Springs & Spa Tours</h3>
+            <p>Guided experiences combining Banff's hot springs with scenic tours and wellness activities. Hotel pickup included.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Browse on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Wellness Retreats</h3>
+            <p>Multi-day wellness retreats combining yoga, meditation, spa treatments, and nature immersion in the Rockies.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Browse on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Stay Near the Springs</h3>
+            <p>Book a hotel close to Banff's best wellness spots for easy access to hot springs and spa treatments.</p>
+            <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Find Hotels on Expedia &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>&#128161; Wellness Tips</h3>
+        <p><strong>Book ahead:</strong> The Kananaskis Nordic Spa and Fairmont Willow Stream Spa fill up quickly, especially on weekends and holidays. Book at least 1-2 weeks in advance.</p>
+        <p><strong>Best time for hot springs:</strong> Visit the Banff Upper Hot Springs at opening (10am) or in the evening for fewer crowds. Winter evenings, when steam rises against a starry sky, are unforgettable.</p>
+        <p><strong>Hydrate:</strong> The mountain air at 1,400m+ elevation is dry. Drink plenty of water before and after any spa or hot spring visit.</p>
+        <p><strong>Cave and Basin:</strong> While you can't soak in the original Cave and Basin hot springs (now a historic site), the boardwalk and interpretive centre tell the fascinating story of how these springs led to the creation of Canada's first national park in 1885.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .wellness-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .wellness-card {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .wellness-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 260px;
+  }
+
+  .wellness-card-body {
+    padding: 2rem 2rem 2rem 0;
+  }
+
+  .wellness-card-body h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .wellness-card-body > p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .wellness-details {
+    font-size: 0.95rem;
+    background: var(--color-bg-alt);
+    padding: 0.75rem 1rem;
+    border-radius: calc(var(--radius) / 2);
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .wellness-card {
+      grid-template-columns: 1fr;
+    }
+
+    .wellness-card-image {
+      min-height: 200px;
+    }
+
+    .wellness-card-body {
+      padding: 1.5rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

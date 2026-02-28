@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const winterActivities = [
+  {
+    name: 'Skiing & Snowboarding',
+    description: 'Three world-class resorts — Sunshine Village, Lake Louise Ski Resort, and Mt. Norquay — offer over 8,000 acres of terrain, champagne powder, and runs for every ability. The SkiBig3 pass gets you on all three mountains.',
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    season: 'November - May',
+    difficulty: 'All Levels',
+  },
+  {
+    name: 'Ice Skating',
+    description: 'Skate on the frozen surface of Lake Louise with the Chateau and Victoria Glacier as your backdrop — one of the most scenic skating experiences in the world. Rentals available on-site. Vermilion Lakes and Two Jack Lake also freeze for skating in good conditions.',
+    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80',
+    season: 'December - March',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'Johnston Canyon Ice Walk',
+    description: 'Strap on ice cleats and walk along frozen catwalks to see the Lower and Upper Falls transformed into massive blue ice pillars. Guided tours are recommended for safety. One of Banff\'s most popular winter experiences.',
+    image: 'https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=600&q=80',
+    season: 'December - March',
+    difficulty: 'Moderate',
+  },
+  {
+    name: 'Dog Sledding',
+    description: 'Mush through snow-covered wilderness with a team of eager Alaskan huskies. Half-day and full-day tours depart from outfitters near Canmore and Lake Louise, taking you deep into the snowy backcountry.',
+    image: 'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=600&q=80',
+    season: 'December - March',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'Snowshoeing',
+    description: 'Explore peaceful winter trails through snow-laden forests. Popular routes include Sundance Canyon, Spray River Loop, and the trails around Lake Louise. Rental snowshoes are available from shops in town.',
+    image: 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=600&q=80',
+    season: 'November - April',
+    difficulty: 'Easy - Moderate',
+  },
+  {
+    name: 'Northern Lights',
+    description: 'Banff\'s dark skies and northern latitude make it possible to see the aurora borealis on clear winter nights. Best viewing spots include Vermilion Lakes, Lake Minnewanka, and Two Jack Lake. Use an aurora forecast app and be ready for cold waits.',
+    image: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80',
+    season: 'October - March',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'Snow Tubing',
+    description: 'A fun, family-friendly alternative to skiing. Mt. Norquay operates a dedicated tubing park with groomed lanes and a conveyor lift back to the top. No experience needed — just hang on and enjoy the ride down.',
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    season: 'December - March',
+    difficulty: 'Easy',
+  },
+  {
+    name: 'Cross-Country Skiing',
+    description: 'Glide through quiet forests and along frozen rivers on groomed Nordic ski trails. The Banff trail system offers routes for classic and skate skiing. The Canmore Nordic Centre, built for the 1988 Olympics, is world-class.',
+    image: 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=600&q=80',
+    season: 'November - April',
+    difficulty: 'Easy - Moderate',
+  },
+  {
+    name: 'Banff Upper Hot Springs',
+    description: 'There\'s nothing like soaking in naturally heated mineral pools (37-40°C) while snow falls around you and mountain peaks tower overhead. Open year-round, but winter is when the hot springs experience is most magical.',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80',
+    season: 'Year-round',
+    difficulty: 'Easy',
+  },
+];
+---
+
+<BaseLayout title="Winter Guide" description="Your complete guide to winter in Banff — skiing, snowboarding, ice skating, dog sledding, snowshoeing, northern lights, and more.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1600&q=80"
+      alt="Snow-covered mountains in Banff winter"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">&#10052; Winter Wonderland</span>
+      <h1>Winter in Banff</h1>
+      <p>Snow-covered peaks, frozen waterfalls, world-class skiing, and a fraction of the summer crowds. Winter in Banff is pure magic.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#10052; Activities</span>
+        <h2>Winter Adventures</h2>
+        <p>From champagne powder on world-class slopes to mushing huskies through the backcountry, Banff delivers unforgettable winter experiences.</p>
+      </div>
+      <div class="grid grid-3">
+        {winterActivities.map(item => (
+          <div class="card">
+            <img src={item.image} alt={item.name} class="card-image" />
+            <div class="card-body">
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div class="card-meta">
+                <span>&#128197; {item.season}</span>
+                <span class="tag">{item.difficulty}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#127760; Book Winter Activities</span>
+        <h2>Guided Winter Experiences</h2>
+        <p>Let experts lead you to the best winter experiences in the Rockies.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>Ice Walk & Canyon Tours</h3>
+            <p>Guided Johnston Canyon ice walk with ice cleats provided. Expert guides share the geology and history of the frozen canyon.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Dog Sledding Adventures</h3>
+            <p>Half-day and full-day dog sledding tours through the snowy wilderness with experienced mushers and friendly huskies.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Winter Hotels & Lodges</h3>
+            <p>Book a cozy mountain lodge or hotel for your winter getaway with ski & stay packages and hot tub access.</p>
+            <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Find Hotels on Expedia &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>&#128161; Winter Survival Guide</h3>
+        <p><strong>Dress in layers:</strong> Temperatures can drop to -20°C to -30°C in January and February. Wear thermal base layers (merino wool), an insulating mid-layer, and a waterproof outer shell.</p>
+        <p><strong>Protect extremities:</strong> Insulated waterproof boots, thick gloves/mittens, a warm hat, and a neck gaiter or balaclava are essential. Hand and toe warmers are a lifesaver.</p>
+        <p><strong>Winter driving:</strong> Winter tires or chains are legally required November-April on mountain highways. Drive slowly and check 511 Alberta for road conditions.</p>
+        <p><strong>Shorter days:</strong> December has only about 8 hours of daylight. Plan outdoor activities for midday and save indoor activities for morning and evening.</p>
+        <p><strong>Budget perk:</strong> Winter accommodation (outside holiday weeks) is 20-40% cheaper than summer. Fewer crowds mean more relaxed experiences everywhere.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+</style>

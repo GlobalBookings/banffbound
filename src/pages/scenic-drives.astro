@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const drives = [
+  {
+    name: 'Icefields Parkway (Highway 93N)',
+    description: 'Widely considered one of the most scenic drives in the world, the Icefields Parkway stretches 232 km from Lake Louise to Jasper through the heart of the Canadian Rockies. Expect glaciers, turquoise lakes, towering peaks, and waterfalls around every bend.',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+    distance: '232 km one way',
+    time: '3 hours (without stops) / Full day recommended',
+    bestStops: 'Bow Lake, Peyto Lake, Mistaya Canyon, Columbia Icefield, Sunwapta Falls, Athabasca Falls',
+    season: 'Year-round (winter closures possible due to avalanches)',
+  },
+  {
+    name: 'Bow Valley Parkway (Highway 1A)',
+    description: 'A slower, more intimate alternative to Highway 1, the Bow Valley Parkway winds 51 km between Banff and Lake Louise through dense forest and along the Bow River. It is one of the best roads in the park for wildlife sightings — elk, deer, bears, and wolves are regularly spotted here.',
+    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=600&q=80',
+    distance: '51 km one way',
+    time: '1 hour (without stops) / 2-3 hours recommended',
+    bestStops: 'Johnston Canyon, Castle Mountain Viewpoint, Moose Meadows, Castle Junction, Muleshoe Picnic Area',
+    season: 'Year-round (seasonal closures for wildlife protection Mar-Jun evenings)',
+  },
+  {
+    name: 'Lake Minnewanka Loop',
+    description: 'A scenic 24 km loop drive from Banff town past three beautiful lakes. The route takes you along the shore of Lake Minnewanka — the largest lake in the park — past Two Jack Lake, and through Johnson Lake. Perfect for a leisurely morning or afternoon drive.',
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',
+    distance: '24 km loop',
+    time: '30 minutes (without stops) / 2-3 hours recommended',
+    bestStops: 'Lake Minnewanka shoreline, Two Jack Lake, Johnson Lake, bankhead historical site',
+    season: 'Year-round',
+  },
+  {
+    name: 'Tunnel Mountain Drive',
+    description: 'A short, scenic drive that loops around Tunnel Mountain with beautiful views of the Bow Valley, Mount Rundle, and the Banff townsite. Popular with photographers at sunrise and sunset. The drive connects to several easy hiking trailheads and viewpoints.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    distance: '9 km loop',
+    time: '15 minutes (without stops) / 1 hour recommended',
+    bestStops: 'Tunnel Mountain Viewpoint, Hoodoos Viewpoint, Surprise Corner, Bow River Trailhead',
+    season: 'Year-round',
+  },
+];
+---
+
+<BaseLayout title="Scenic Drives" description="Discover the most breathtaking scenic drives in Banff National Park — Icefields Parkway, Bow Valley Parkway, Lake Minnewanka Loop, and more.">
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
+      alt="Scenic mountain highway through the Canadian Rockies"
+      class="page-hero-bg"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Open Road</span>
+      <h1>Scenic Drives in Banff</h1>
+      <p>From the world-famous Icefields Parkway to hidden loop roads, Banff's drives reveal jaw-dropping mountain scenery at every turn.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#128663; Road Trips</span>
+        <h2>Top Scenic Drives</h2>
+        <p>Each drive offers a unique perspective on the Canadian Rockies — from sweeping glacier views to intimate wildlife encounters along forested parkways.</p>
+      </div>
+      <div class="drives-list">
+        {drives.map(drive => (
+          <div class="drive-card">
+            <img src={drive.image} alt={drive.name} class="drive-card-image" />
+            <div class="drive-card-body">
+              <h3>{drive.name}</h3>
+              <p>{drive.description}</p>
+              <div class="drive-details">
+                <div class="drive-detail">
+                  <strong>&#128207; Distance:</strong> {drive.distance}
+                </div>
+                <div class="drive-detail">
+                  <strong>&#9200; Drive Time:</strong> {drive.time}
+                </div>
+                <div class="drive-detail">
+                  <strong>&#11088; Best Stops:</strong> {drive.bestStops}
+                </div>
+                <div class="drive-detail">
+                  <strong>&#128197; Season:</strong> {drive.season}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">&#127760; Guided Tours</span>
+        <h2>Prefer a Guided Drive?</h2>
+        <p>Let an expert handle the driving while you soak in the scenery and learn about the park's geology, history, and wildlife.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>Icefields Parkway Tour</h3>
+            <p>Full-day guided tour along the Icefields Parkway with stops at Peyto Lake, Columbia Icefield, and more. Includes commentary and hotel pickup.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Wildlife & Scenic Drive Safari</h3>
+            <p>Evening or dawn wildlife safari along the Bow Valley Parkway and Lake Minnewanka Loop. Expert guide helps spot bears, elk, and more.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Lake Louise & Moraine Lake Tour</h3>
+            <p>Guided day trip to Lake Louise and Moraine Lake, including stops at scenic viewpoints along the way. Skip the parking hassle.</p>
+            <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="btn" style="margin-top: 1rem; display: inline-block;">Book on GetYourGuide &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tip-section">
+    <div class="container">
+      <div class="tip-card">
+        <h3>&#128161; Scenic Drive Tips</h3>
+        <p><strong>Fuel up:</strong> Fill your tank before heading out. Gas stations are scarce — the Icefields Parkway has only one mid-route stop at Saskatchewan River Crossing.</p>
+        <p><strong>Start early:</strong> Morning light is best for photography, and popular viewpoint parking lots (like Peyto Lake) fill fast by midday in summer.</p>
+        <p><strong>Wildlife caution:</strong> Animals frequently cross roads — drive slowly, especially at dawn and dusk. Pull fully off the road if you stop for wildlife.</p>
+        <p><strong>Cell service:</strong> Coverage is nonexistent on much of the Icefields Parkway. Download offline maps and tell someone your plans.</p>
+        <p><strong>Winter driving:</strong> Winter tires are legally required November-April. Check road conditions at 511 Alberta before departure.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .drives-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .drive-card {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .drive-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 280px;
+  }
+
+  .drive-card-body {
+    padding: 2rem 2rem 2rem 0;
+  }
+
+  .drive-card-body h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .drive-card-body > p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .drive-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .drive-detail {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  .drive-detail strong {
+    color: var(--color-text);
+  }
+
+  .tip-section {
+    padding: 0 0 4rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 1rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .drive-card {
+      grid-template-columns: 1fr;
+    }
+
+    .drive-card-image {
+      min-height: 200px;
+    }
+
+    .drive-card-body {
+      padding: 1.5rem;
+    }
+  }
+</style>
