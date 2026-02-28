@@ -61,18 +61,18 @@ const categories = [
     image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
   },
   {
+    title: 'Iconic Lakes',
+    description: 'Lake Louise, Moraine Lake, Peyto Lake, and more. Explore the turquoise jewels of the Canadian Rockies.',
+    href: '/lakes',
+    icon: '&#128167;',
+    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=600&q=80',
+  },
+  {
     title: 'Tours & Adventures',
     description: 'Book guided tours, day trips, wildlife safaris, and unique experiences with top-rated local operators.',
     href: '/tours',
     icon: '&#127760;',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
-  },
-  {
-    title: 'Hotels & Stays',
-    description: 'Find your perfect mountain retreat. Compare prices from luxury resorts to budget-friendly lodges.',
-    href: '/hotels',
-    icon: '&#127968;',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',
   },
 ];
 
@@ -85,22 +85,28 @@ const highlights = [
 ---
 
 <BaseLayout title="Home" description="BanffBound - Your complete guide to Banff, Alberta. Everything to do, eat, drink, shop, and experience in the Canadian Rockies.">
-  <!-- Hero -->
-  <section class="hero">
-    <img
-      src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
-      alt="Banff National Park mountain landscape"
-      class="hero-bg"
-    />
+  <!-- Hero Slideshow -->
+  <section class="hero" id="hero">
+    <div class="hero-slides">
+      <img src="https://images.unsplash.com/photo-1561134643-668f9057cce4?w=1800&q=80" alt="Mount Rundle reflected in Vermilion Lakes at sunrise" class="hero-slide active" />
+      <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1800&q=80" alt="Moraine Lake and the Valley of the Ten Peaks" class="hero-slide" />
+      <img src="https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=1800&q=80" alt="Lake Louise turquoise waters with Victoria Glacier" class="hero-slide" />
+      <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1800&q=80" alt="Snow-capped peaks in Banff National Park" class="hero-slide" />
+      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=80" alt="Peyto Lake aerial turquoise view" class="hero-slide" />
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="badge">Welcome to the Rockies</span>
-      <h1>Discover Banff</h1>
-      <p>Your ultimate guide to the crown jewel of the Canadian Rockies. Plan your perfect mountain escape with our curated recommendations for dining, adventure, shopping, and more.</p>
+      <p class="hero-eyebrow">Named Best Place to Travel 2026 by National Geographic</p>
+      <h1>Your Guide to<br/><span class="hero-accent">Banff National Park</span></h1>
+      <p class="hero-sub">Plan your perfect escape to the Canadian Rockies. Iconic lakes, world-class skiing, mountain dining, and adventures that stay with you forever.</p>
       <div class="hero-buttons">
-        <a href="/things-to-do" class="btn btn-accent">Start Exploring</a>
-        <a href="/activities" class="btn btn-outline" style="border-color: white; color: white;">View Activities</a>
+        <a href="/trip-builder" class="btn btn-accent">Build Your Trip</a>
+        <a href="/things-to-do" class="btn btn-outline" style="border-color: white; color: white;">Explore Banff</a>
       </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
     </div>
   </section>
 
@@ -236,8 +242,8 @@ const highlights = [
 <style>
   .hero {
     position: relative;
-    height: 90vh;
-    min-height: 600px;
+    height: 100vh;
+    min-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,38 +252,78 @@ const highlights = [
     overflow: hidden;
   }
 
-  .hero-bg {
+  .hero-slides {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-slide {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    transform: scale(1.05);
+    animation: heroZoom 8s ease-in-out infinite alternate;
+  }
+
+  .hero-slide.active {
+    opacity: 1;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
   }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(26,58,42,0.4) 0%, rgba(26,26,26,0.6) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(26,58,42,0.5) 50%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
+    max-width: 800px;
     padding: 0 1.5rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    opacity: 1 !important;
   }
 
   .hero-content h1 {
     color: var(--color-white);
-    font-size: clamp(3rem, 7vw, 5rem);
-    margin: 0.5rem 0 1rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin: 0 0 1.25rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.3);
   }
 
-  .hero-content p {
+  .hero-accent {
+    color: var(--color-accent);
+  }
+
+  .hero-sub {
     font-size: 1.15rem;
     opacity: 0.9;
-    margin-bottom: 2rem;
-    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-buttons {
@@ -285,6 +331,36 @@ const highlights = [
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    transform: rotate(45deg);
+    animation: scrollBounce 2s ease infinite;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(6px); }
   }
 
   .stats-bar {
@@ -412,10 +488,21 @@ const highlights = [
   }
 
   @media (max-width: 768px) {
-    .hero { height: 80vh; min-height: 500px; }
+    .hero { height: 85vh; min-height: 550px; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .cta-card { grid-template-columns: 1fr; }
     .cta-image { max-height: 250px; }
     .tours-cta { padding: 2rem; }
+    .hero-scroll-hint { display: none; }
   }
 </style>
+
+<script>
+  const slides = document.querySelectorAll('.hero-slide');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+</script>
