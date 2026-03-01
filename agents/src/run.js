@@ -6,10 +6,11 @@ const agent = process.argv[2];
 
 if (!agent) {
   console.log('Usage: node src/run.js <agent-name>');
-  console.log('  ppc-review      — Run PPC Review audit');
-  console.log('  keyword-miner   — Run Keyword Miner');
-  console.log('  campaign-builder — Deploy PPC campaigns from strategy');
-  console.log('  test            — Verify configuration');
+  console.log('  ppc-review         — Run PPC Review audit');
+  console.log('  keyword-miner      — Run Keyword Miner');
+  console.log('  campaign-builder   — Deploy PPC campaigns from strategy');
+  console.log('  content-publisher  — Generate blog posts from content gaps');
+  console.log('  test               — Verify configuration');
   process.exit(1);
 }
 
@@ -50,6 +51,7 @@ const agents = {
   'ppc-review': () => import('./agents/ppc-review.js'),
   'keyword-miner': () => import('./agents/keyword-miner.js'),
   'campaign-builder': () => import('./agents/campaign-builder.js'),
+  'content-publisher': () => import('./agents/content-publisher.js'),
 };
 
 const loader = agents[agent];

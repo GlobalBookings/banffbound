@@ -1,0 +1,362 @@
+import { google } from 'googleapis';
+import Anthropic from '@anthropic-ai/sdk';
+import { getOAuth2Client } from '../core/google-auth.js';
+import { createLogger } from '../core/logger.js';
+import { sendSlack, slackHeader, slackSection, slackDivider } from '../core/slack.js';
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
+import { fileURLToPath } from 'url';
+
+const log = createLogger('content-publisher');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const WORK_DIR = path.join(__dirname, '..', '..', 'data', 'repo-checkout');
+const SITE_URL = process.env.SEARCH_CONSOLE_SITE_URL || process.env.SITE_URL;
+const POSTS_PER_RUN = 3;
+const GH_TOKEN = process.env.GITHUB_TOKEN;
+const GH_REPO = process.env.GITHUB_REPO || 'GlobalBookings/banffbound';
+
+function getRepoPaths() {
+  return {
+    root: WORK_DIR,
+    blogData: path.join(WORK_DIR, 'src', 'data', 'blogPosts.ts'),
+    blogPage: path.join(WORK_DIR, 'src', 'pages', 'blog', '[slug].astro'),
+  };
+}
+
+const EXPEDIA_LINK = 'https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX';
+const GYG_LINK = 'https://www.getyourguide.com/banff-l284/?partner_id=QW960HO';
+
+const CATEGORIES = ['Planning', 'Itineraries', 'Hiking', 'Guides', 'Seasonal', 'Tips', 'Accommodation', 'Food & Drink'];
+
+// ── Clone or pull the repo ─────────────────────────────────
+function ensureRepoCheckout() {
+  if (!GH_TOKEN) throw new Error('GITHUB_TOKEN not set');
+
+  const repoUrl = `https://x-access-token:${GH_TOKEN}@github.com/${GH_REPO}.git`;
+
+  if (fs.existsSync(path.join(WORK_DIR, '.git'))) {
+    log.info('Pulling latest from main...');
+    execSync('git fetch origin main && git reset --hard origin/main', { cwd: WORK_DIR, stdio: 'pipe' });
+  } else {
+    log.info('Cloning repo...');
+    fs.mkdirSync(WORK_DIR, { recursive: true });
+    execSync(`git clone --depth 1 ${repoUrl} "${WORK_DIR}"`, { stdio: 'pipe' });
+  }
+
+  // Configure git identity
+  execSync('git config user.email "agent@banffbound.com"', { cwd: WORK_DIR, stdio: 'pipe' });
+  execSync('git config user.name "BanffBound Agent"', { cwd: WORK_DIR, stdio: 'pipe' });
+}
+
+// ── Get existing blog slugs ───────────────────────────────
+function getExistingSlugs() {
+  const { blogData } = getRepoPaths();
+  const content = fs.readFileSync(blogData, 'utf8');
+  const slugs = [...content.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]);
+  return new Set(slugs);
+}
+
+// ── Find content gaps from Search Console ─────────────────
+async function findContentGaps() {
+  const auth = getOAuth2Client();
+  const searchconsole = google.searchconsole({ version: 'v1', auth });
+
+  const endDate = new Date().toISOString().split('T')[0];
+  const startDate = new Date(Date.now() - 28 * 86400000).toISOString().split('T')[0];
+
+  const res = await searchconsole.searchanalytics.query({
+    siteUrl: SITE_URL,
+    requestBody: {
+      startDate,
+      endDate,
+      dimensions: ['query'],
+      rowLimit: 500,
+      type: 'web',
+    },
+  });
+
+  const rows = res.data.rows || [];
+  const existingSlugs = getExistingSlugs();
+
+  // Find queries where we have impressions but poor rankings (position > 15)
+  // or queries that don't match any existing slug
+  const gaps = [];
+
+  for (const row of rows) {
+    const query = row.keys[0].toLowerCase();
+
+    // Skip very short or branded queries
+    if (query.length < 8) continue;
+    if (query.includes('banffbound')) continue;
+
+    // Check if we already have a blog post roughly matching this query
+    const querySlug = query.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const alreadyCovered = [...existingSlugs].some(slug => {
+      const slugWords = slug.split('-');
+      const queryWords = querySlug.split('-');
+      const overlap = queryWords.filter(w => slugWords.includes(w) && w.length > 3);
+      return overlap.length >= 2;
+    });
+
+    if (!alreadyCovered && row.impressions >= 2) {
+      gaps.push({
+        query,
+        impressions: row.impressions,
+        clicks: row.clicks,
+        position: row.position,
+      });
+    }
+  }
+
+  // Sort by impressions (highest demand first)
+  gaps.sort((a, b) => b.impressions - a.impressions);
+
+  log.info(`Found ${gaps.length} content gaps from ${rows.length} queries`);
+  return gaps;
+}
+
+// ── Generate a blog post via Claude ───────────────────────
+async function generatePost(topic, relatedQueries) {
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  const slug = topic.query
+    .replace(/[^a-z0-9\s]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .slice(0, 60);
+
+  const queryContext = relatedQueries
+    .map(q => `"${q.query}" (${q.impressions} impressions, position ${q.position.toFixed(0)})`)
+    .join('\n');
+
+  const prompt = `Write a comprehensive, SEO-optimized blog post for a Banff, Canada travel guide website called BanffBound.
+
+TARGET KEYWORD: "${topic.query}"
+
+RELATED SEARCHES TO NATURALLY INCORPORATE:
+${queryContext}
+
+REQUIREMENTS:
+1. Write 1200-1800 words of genuinely helpful, accurate content about Banff National Park
+2. Use HTML formatting: <h2>, <h3>, <p>, <ul>/<li>, <strong>, <em>
+3. Start with an engaging intro paragraph (no <h1>, the page template adds it)
+4. Include 4-6 <h2> sections with detailed, practical information
+5. Include a <div class="tip-box"><strong>Pro Tip:</strong> ...</div> somewhere in the article
+6. End with a closing paragraph that includes these EXACT affiliate links:
+   - Expedia: <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>
+   - GetYourGuide: <a href="${GYG_LINK}" target="_blank" rel="noopener sponsored">GetYourGuide</a>
+7. All information must be accurate for Banff, Alberta, Canada (NOT Banff, Scotland)
+8. Include practical details: prices in CAD, distances in km, specific trail names, real restaurant names, etc.
+9. Mention Parks Canada where relevant
+10. Write in a friendly, authoritative tone -- like a local sharing insider knowledge
+
+CRITICAL: Return ONLY the HTML content, no markdown, no code fences, no preamble. Start with <p> and end with </p>.`;
+
+  const response = await anthropic.messages.create({
+    model: 'claude-sonnet-4-20250514',
+    max_tokens: 4000,
+    messages: [{ role: 'user', content: prompt }],
+  });
+
+  const html = response.content[0].text.trim();
+
+  // Pick the best category based on the query
+  let category = 'Guides';
+  const q = topic.query.toLowerCase();
+  if (q.includes('hik') || q.includes('trail') || q.includes('walk')) category = 'Hiking';
+  else if (q.includes('hotel') || q.includes('stay') || q.includes('lodge') || q.includes('hostel')) category = 'Accommodation';
+  else if (q.includes('itinerar') || q.includes('day')) category = 'Itineraries';
+  else if (q.includes('winter') || q.includes('summer') || q.includes('spring') || q.includes('fall') || q.includes('ski')) category = 'Seasonal';
+  else if (q.includes('eat') || q.includes('food') || q.includes('restaurant') || q.includes('drink')) category = 'Food & Drink';
+  else if (q.includes('tip') || q.includes('how') || q.includes('what') || q.includes('cost') || q.includes('budget')) category = 'Tips';
+  else if (q.includes('plan') || q.includes('pack') || q.includes('get to') || q.includes('drive')) category = 'Planning';
+
+  // Generate a proper title from the query
+  const titlePrompt = `Generate a click-worthy blog title for a Banff travel guide article about "${topic.query}". 
+Return ONLY the title text, nothing else. Make it 50-65 characters, include "Banff" if not already present.`;
+
+  const titleResponse = await anthropic.messages.create({
+    model: 'claude-sonnet-4-20250514',
+    max_tokens: 100,
+    messages: [{ role: 'user', content: titlePrompt }],
+  });
+
+  const title = titleResponse.content[0].text.trim().replace(/^["']|["']$/g, '');
+
+  // Generate meta description
+  const descPrompt = `Write a 150-160 character meta description for a Banff travel guide article titled "${title}". 
+Return ONLY the description text.`;
+
+  const descResponse = await anthropic.messages.create({
+    model: 'claude-sonnet-4-20250514',
+    max_tokens: 100,
+    messages: [{ role: 'user', content: descPrompt }],
+  });
+
+  const description = descResponse.content[0].text.trim().replace(/^["']|["']$/g, '');
+
+  // Estimate read time from word count
+  const wordCount = html.replace(/<[^>]*>/g, '').split(/\s+/).length;
+  const readTime = `${Math.max(5, Math.ceil(wordCount / 200))} min read`;
+
+  return {
+    slug,
+    title,
+    description,
+    date: new Date().toISOString().split('T')[0],
+    category,
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime,
+    html,
+  };
+}
+
+// ── Write posts to codebase ───────────────────────────────
+function writePostsToCodebase(posts) {
+  const { blogData, blogPage } = getRepoPaths();
+
+  // 1. Add metadata to blogPosts.ts
+  let blogDataContent = fs.readFileSync(blogData, 'utf8');
+
+  for (const post of posts) {
+    const entry = `  {
+    slug: '${post.slug}',
+    title: '${post.title.replace(/'/g, "\\'")}',
+    description: '${post.description.replace(/'/g, "\\'")}',
+    date: '${post.date}',
+    category: '${post.category}',
+    image: '${post.image}',
+    readTime: '${post.readTime}',
+  },`;
+
+    blogDataContent = blogDataContent.replace(
+      'export const blogPosts: BlogPost[] = [',
+      `export const blogPosts: BlogPost[] = [\n${entry}`
+    );
+  }
+
+  fs.writeFileSync(blogData, blogDataContent);
+  log.info(`Added ${posts.length} entries to blogPosts.ts`);
+
+  // 2. Add HTML content to [slug].astro
+  let slugPageContent = fs.readFileSync(blogPage, 'utf8');
+
+  for (const post of posts) {
+    const contentEntry = `\n  '${post.slug}': \`\n${post.html.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\n\`,`;
+
+    slugPageContent = slugPageContent.replace(
+      'const content: Record<string, string> = {',
+      `const content: Record<string, string> = {${contentEntry}`
+    );
+  }
+
+  fs.writeFileSync(blogPage, slugPageContent);
+  log.info(`Added ${posts.length} content blocks to [slug].astro`);
+}
+
+// ── Git commit and push ───────────────────────────────────
+function gitCommitAndPush(posts) {
+  const { root } = getRepoPaths();
+  const titles = posts.map(p => p.title).join(', ');
+  const message = `Auto-publish ${posts.length} blog posts: ${titles.slice(0, 200)}`;
+
+  try {
+    execSync('git add src/data/blogPosts.ts "src/pages/blog/[slug].astro"', { cwd: root, stdio: 'pipe' });
+    execSync(`git commit -m "${message.replace(/"/g, '\\"')}"`, { cwd: root, stdio: 'pipe' });
+    execSync('git push origin main', { cwd: root, stdio: 'pipe' });
+    log.info('Pushed to GitHub -- site rebuild triggered');
+    return true;
+  } catch (err) {
+    log.error(`Git push failed: ${err.message}`);
+    return false;
+  }
+}
+
+// ── Main ──────────────────────────────────────────────────
+export async function run() {
+  log.info('Content Auto-Publisher starting...');
+
+  // 0. Clone/pull latest repo
+  ensureRepoCheckout();
+
+  // 1. Find content gaps
+  const gaps = await findContentGaps();
+
+  if (gaps.length === 0) {
+    log.info('No content gaps found -- skipping');
+    await sendSlack(
+      [slackSection(':white_check_mark: Content Publisher: no gaps found today. All queries covered.')],
+      'Content Publisher'
+    );
+    return { published: 0 };
+  }
+
+  log.info(`Top gaps: ${gaps.slice(0, 10).map(g => `"${g.query}" (${g.impressions} impr)`).join(', ')}`);
+
+  // 2. Generate posts for top gaps
+  const postsToWrite = [];
+  const existingSlugs = getExistingSlugs();
+
+  for (const gap of gaps.slice(0, POSTS_PER_RUN * 2)) {
+    if (postsToWrite.length >= POSTS_PER_RUN) break;
+
+    // Find related queries to give Claude more context
+    const related = gaps.filter(g =>
+      g !== gap && g.query.split(' ').some(w => gap.query.includes(w) && w.length > 3)
+    ).slice(0, 3);
+
+    try {
+      const post = await generatePost(gap, [gap, ...related]);
+
+      // Double-check slug doesn't already exist
+      if (existingSlugs.has(post.slug)) {
+        log.warn(`Slug "${post.slug}" already exists, skipping`);
+        continue;
+      }
+
+      postsToWrite.push(post);
+      existingSlugs.add(post.slug);
+      log.info(`Generated: "${post.title}" (${post.readTime})`);
+    } catch (err) {
+      log.error(`Failed to generate post for "${gap.query}": ${err.message}`);
+    }
+  }
+
+  if (postsToWrite.length === 0) {
+    log.info('No posts generated -- skipping');
+    return { published: 0 };
+  }
+
+  // 3. Write to codebase
+  writePostsToCodebase(postsToWrite);
+
+  // 4. Git commit and push
+  const pushed = gitCommitAndPush(postsToWrite);
+
+  // 5. Slack report
+  const blocks = [
+    slackHeader(`Content Publisher -- ${postsToWrite.length} Posts Published`),
+    slackDivider(),
+  ];
+
+  for (const post of postsToWrite) {
+    blocks.push(slackSection(
+      `*${post.title}*\n` +
+      `/${post.slug} | ${post.category} | ${post.readTime}\n` +
+      `_Target: "${post.description.slice(0, 80)}..."_`
+    ));
+  }
+
+  blocks.push(slackDivider());
+  blocks.push(slackSection(
+    pushed
+      ? ':rocket: Pushed to GitHub -- site rebuild triggered automatically.'
+      : ':warning: Posts written locally but git push failed. Manual push needed.'
+  ));
+
+  await sendSlack(blocks, `Published ${postsToWrite.length} blog posts`);
+
+  log.info(`Content Publisher complete: ${postsToWrite.length} posts published`);
+  return { published: postsToWrite.length };
+}

@@ -44,7 +44,10 @@ curl -s -X POST \
         {\"key\": \"SLACK_WEBHOOK_URL\", \"value\": \"$SLACK_WEBHOOK_URL\", \"type\": \"SECRET\"},
         {\"key\": \"SITE_URL\", \"value\": \"https://banffbound.com\"},
         {\"key\": \"SITEMAP_URL\", \"value\": \"https://banffbound.com/sitemap-index.xml\"},
-        {\"key\": \"APPROVAL_PORT\", \"value\": \"3100\"}
+        {\"key\": \"APPROVAL_PORT\", \"value\": \"3100\"},
+        {\"key\": \"ANTHROPIC_API_KEY\", \"value\": \"$ANTHROPIC_API_KEY\", \"type\": \"SECRET\"},
+        {\"key\": \"GITHUB_TOKEN\", \"value\": \"$GITHUB_TOKEN\", \"type\": \"SECRET\"},
+        {\"key\": \"GITHUB_REPO\", \"value\": \"GlobalBookings/banffbound\"}
       ]
     }]
   }

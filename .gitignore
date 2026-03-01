@@ -19,7 +19,7 @@ pnpm-debug.log*
 .env.production
 
 # agent runtime data
-agents/data/pending/
+agents/data/
 
 # macOS-specific files
 .DS_Store

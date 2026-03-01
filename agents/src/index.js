@@ -5,6 +5,7 @@ import { sendSlack, slackHeader, slackSection } from './core/slack.js';
 import { startApprovalServer } from './core/approval.js';
 import { run as runPPC } from './agents/ppc-review.js';
 import { run as runKeywords } from './agents/keyword-miner.js';
+import { run as runContent } from './agents/content-publisher.js';
 
 const log = createLogger('main');
 
@@ -14,8 +15,9 @@ log.info('BanffBound Agent System starting...');
 startApprovalServer();
 
 // ── Schedule agents (Mountain Time = America/Edmonton) ────
-schedule('PPC Review',    '0 8 * * *',  runPPC);       // 8:00 AM daily
-schedule('Keyword Miner', '0 10 * * *', runKeywords);   // 10:00 AM daily
+schedule('PPC Review',        '0 8 * * *',  runPPC);       // 8:00 AM daily
+schedule('Keyword Miner',    '0 10 * * *', runKeywords);   // 10:00 AM daily
+schedule('Content Publisher', '0 12 * * *', runContent);    // 12:00 PM daily
 
 // ── Startup notification ──────────────────────────────────
 const jobs = listJobs();

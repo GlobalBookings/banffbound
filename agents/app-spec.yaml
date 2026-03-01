@@ -42,3 +42,9 @@ services:
         value: https://banffbound.com/sitemap-index.xml
       - key: APPROVAL_PORT
         value: "3100"
+      - key: ANTHROPIC_API_KEY
+        type: SECRET
+      - key: GITHUB_TOKEN
+        type: SECRET
+      - key: GITHUB_REPO
+        value: GlobalBookings/banffbound
