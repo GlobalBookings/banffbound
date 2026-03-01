@@ -1,0 +1,918 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Weather & Webcams" description="Current weather conditions, live webcams, and snow forecasts for Banff, Lake Louise, and the Big 3 ski resorts.">
+
+  <div class="page-hero" style="min-height: 320px; height: 35vh;">
+    <img src="https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1400&q=80" alt="Snowy Banff mountains" class="page-hero-bg" />
+    <div class="page-hero-content">
+      <span class="badge">Live Conditions</span>
+      <h1>Weather & Webcams</h1>
+      <p>Current conditions, live webcams, and snow forecasts for Banff National Park</p>
+    </div>
+  </div>
+
+  <!-- Weather Section -->
+  <section class="section weather-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Weather Forecast</h2>
+        <p>Current conditions and forecast for Banff and Lake Louise</p>
+      </div>
+
+      <div class="weather-tabs">
+        <button class="weather-tab active" data-tab="banff">Banff</button>
+        <button class="weather-tab" data-tab="lake-louise">Lake Louise</button>
+      </div>
+
+      <div class="weather-grid" id="weather-banff">
+        <div class="weather-card weather-card--current" id="banff-current">
+          <div class="weather-card__label">Current Conditions</div>
+          <div class="weather-card__loading">Loading weather data...</div>
+        </div>
+        <div class="weather-card" id="banff-day1">
+          <div class="weather-card__label">Today</div>
+          <div class="weather-card__loading">Loading...</div>
+        </div>
+        <div class="weather-card" id="banff-day2">
+          <div class="weather-card__label">Tomorrow</div>
+          <div class="weather-card__loading">Loading...</div>
+        </div>
+        <div class="weather-card" id="banff-day3">
+          <div class="weather-card__label">Day After</div>
+          <div class="weather-card__loading">Loading...</div>
+        </div>
+      </div>
+
+      <div class="weather-grid" id="weather-lake-louise" style="display:none;">
+        <div class="weather-card weather-card--current" id="ll-current">
+          <div class="weather-card__label">Current Conditions</div>
+          <div class="weather-card__loading">Loading weather data...</div>
+        </div>
+        <div class="weather-card" id="ll-day1">
+          <div class="weather-card__label">Today</div>
+          <div class="weather-card__loading">Loading...</div>
+        </div>
+        <div class="weather-card" id="ll-day2">
+          <div class="weather-card__label">Tomorrow</div>
+          <div class="weather-card__loading">Loading...</div>
+        </div>
+        <div class="weather-card" id="ll-day3">
+          <div class="weather-card__label">Day After</div>
+          <div class="weather-card__loading">Loading...</div>
+        </div>
+      </div>
+
+      <p class="weather-source">Source: <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap.org</a> &bull; <a href="https://weather.gc.ca/" target="_blank" rel="noopener">weather.gc.ca</a></p>
+    </div>
+  </section>
+
+  <!-- Webcams Section -->
+  <section class="section webcams-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Live Webcams</h2>
+        <p>See what's happening right now across Banff National Park</p>
+      </div>
+
+      <div class="webcam-filters">
+        <button class="webcam-filter active" data-filter="all">All Webcams</button>
+        <button class="webcam-filter" data-filter="banff">Banff</button>
+        <button class="webcam-filter" data-filter="lake-louise">Lake Louise</button>
+        <button class="webcam-filter" data-filter="ski">Ski Resorts</button>
+      </div>
+
+      <div class="webcam-grid">
+        <a href="https://fairmont.roundshot.com/banff-springs/" target="_blank" rel="noopener" class="webcam-card" data-category="banff">
+          <div class="webcam-card__image-wrap">
+            <img src="https://backend.roundshot.com/cams/62f95aea9ec778a684f083064a9cafdc/medium" alt="Fairmont Banff Springs webcam" loading="lazy" />
+            <span class="webcam-card__live">LIVE</span>
+          </div>
+          <div class="webcam-card__info">
+            <h3>Fairmont Banff Springs</h3>
+            <p>Overlooking the Bow Valley</p>
+          </div>
+        </a>
+
+        <a href="https://fairmont.roundshot.com/lake-louise/" target="_blank" rel="noopener" class="webcam-card" data-category="lake-louise">
+          <div class="webcam-card__image-wrap">
+            <img src="https://backend.roundshot.com/cams/f444fb7210e0ab809aef47fdfe8a75c5/medium" alt="Fairmont Chateau Lake Louise webcam" loading="lazy" />
+            <span class="webcam-card__live">LIVE</span>
+          </div>
+          <div class="webcam-card__info">
+            <h3>Fairmont Chateau Lake Louise</h3>
+            <p>Lake Louise & Victoria Glacier</p>
+          </div>
+        </a>
+
+        <a href="https://banffnorquay.com/winter-2/conditions/webcam/" target="_blank" rel="noopener" class="webcam-card" data-category="ski">
+          <div class="webcam-card__image-wrap">
+            <img src="https://banffnorquay.com/webcam-images/winter/BanffCam/banffcam.jpg" alt="Mt. Norquay webcam" loading="lazy" />
+            <span class="webcam-card__live">LIVE</span>
+          </div>
+          <div class="webcam-card__info">
+            <h3>Mt. Norquay Ski Resort</h3>
+            <p>5 min from Banff townsite</p>
+          </div>
+        </a>
+
+        <a href="https://www.skilouise.com/mountain-cam/" target="_blank" rel="noopener" class="webcam-card" data-category="ski">
+          <div class="webcam-card__image-wrap">
+            <img src="https://cams.skilouise.com/cam2wc.jpg" alt="Lake Louise Ski Resort webcam" loading="lazy" />
+            <span class="webcam-card__live">LIVE</span>
+          </div>
+          <div class="webcam-card__info">
+            <h3>Lake Louise Ski Resort</h3>
+            <p>Mountain conditions cam</p>
+          </div>
+        </a>
+
+        <a href="https://www.skibanff.com/conditions" target="_blank" rel="noopener" class="webcam-card" data-category="ski">
+          <div class="webcam-card__image-wrap">
+            <img src="https://banfflakelouise.bynder.com/m/459f4acd972915d2/1000x1200_jpg-2016_SunshineVillage_Winter_Reuben-Krabb.jpg" alt="Sunshine Village" loading="lazy" />
+            <span class="webcam-card__live">LIVE</span>
+          </div>
+          <div class="webcam-card__info">
+            <h3>Sunshine Village</h3>
+            <p>Canada's highest base elevation</p>
+          </div>
+        </a>
+
+        <a href="https://www.banffcentre.ca/webcam/" target="_blank" rel="noopener" class="webcam-card" data-category="banff">
+          <div class="webcam-card__image-wrap">
+            <img src="https://i.ytimg.com/vi/HghxOQ12dy4/hqdefault_live.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMaOjfYGn8Fs0fD0c9umGxhd2p4w" alt="Banff Centre webcam" loading="lazy" />
+            <span class="webcam-card__live">LIVE</span>
+          </div>
+          <div class="webcam-card__info">
+            <h3>The Banff Centre</h3>
+            <p>Tunnel Mountain views</p>
+          </div>
+        </a>
+
+        <a href="https://www.banffjaspercollection.com/attractions/banff-gondola/webcam/" target="_blank" rel="noopener" class="webcam-card" data-category="banff">
+          <div class="webcam-card__image-wrap">
+            <img src="https://www.banffjaspercollection.com/Brewster/media/Images/Attractions/Banff-Gondola/Gallery/1MBN-Gondola-Banff-Townsite-View.jpg" alt="Banff Gondola webcam" loading="lazy" />
+            <span class="webcam-card__live">LIVE</span>
+          </div>
+          <div class="webcam-card__info">
+            <h3>Banff Gondola</h3>
+            <p>Sulphur Mountain summit</p>
+          </div>
+        </a>
+
+        <a href="https://crmr.com/resorts/emerald-lake/lodge-cam/" target="_blank" rel="noopener" class="webcam-card" data-category="lake-louise">
+          <div class="webcam-card__image-wrap">
+            <img src="https://emeraldlakelodge.com/crmr-emerald-lake-lodge-cam.jpg" alt="Emerald Lake Lodge webcam" loading="lazy" />
+            <span class="webcam-card__live">LIVE</span>
+          </div>
+          <div class="webcam-card__info">
+            <h3>Emerald Lake Lodge</h3>
+            <p>Yoho National Park</p>
+          </div>
+        </a>
+
+        <a href="https://www.banfftours.com/banff-webcam/" target="_blank" rel="noopener" class="webcam-card" data-category="banff">
+          <div class="webcam-card__image-wrap">
+            <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=70" alt="Discover Banff Tours webcam" loading="lazy" />
+            <span class="webcam-card__live">LIVE</span>
+          </div>
+          <div class="webcam-card__info">
+            <h3>Discover Banff Tours</h3>
+            <p>Downtown Banff Avenue</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Snow Report Section -->
+  <section class="section snow-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Snow Report & Forecast</h2>
+        <p>6-day snow forecasts for Banff's Big 3 ski resorts, powered by Snow-Forecast.com</p>
+      </div>
+
+      <div class="snow-resorts">
+        <!-- Lake Louise -->
+        <div class="snow-resort-card">
+          <div class="snow-resort-header">
+            <div class="snow-resort-info">
+              <h3>Lake Louise Ski Resort</h3>
+              <div class="snow-resort-meta">
+                <span class="snow-resort-elevation">Elevation: 1,645m - 2,637m</span>
+                <span class="snow-resort-runs">145 Runs</span>
+              </div>
+            </div>
+            <div class="snow-resort-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/><polyline points="16 16 12 12 8 16"/></svg>
+              <span>SkiBig3</span>
+            </div>
+          </div>
+          <div class="snow-forecast-embed">
+            <iframe
+              src="https://www.snow-forecast.com/resorts/Lake-Louise/6day/mid"
+              title="Lake Louise 6-day snow forecast"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+            ></iframe>
+            <div class="snow-forecast-overlay">
+              <a href="https://www.snow-forecast.com/resorts/Lake-Louise/6day/mid" target="_blank" rel="noopener" class="btn btn-primary">
+                View Full Lake Louise Forecast
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <div class="snow-quick-stats">
+                <div class="snow-stat">
+                  <span class="snow-stat__value">185cm</span>
+                  <span class="snow-stat__label">Top Depth</span>
+                </div>
+                <div class="snow-stat">
+                  <span class="snow-stat__value">104cm</span>
+                  <span class="snow-stat__label">Base Depth</span>
+                </div>
+                <div class="snow-stat">
+                  <span class="snow-stat__value">145</span>
+                  <span class="snow-stat__label">Runs</span>
+                </div>
+                <div class="snow-stat">
+                  <span class="snow-stat__value">4,200</span>
+                  <span class="snow-stat__label">Skiable Acres</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="snow-resort-links">
+            <a href="https://www.snow-forecast.com/resorts/Lake-Louise/6day/mid" target="_blank" rel="noopener">6-Day Forecast</a>
+            <a href="https://www.snow-forecast.com/resorts/Lake-Louise/snow-report" target="_blank" rel="noopener">Snow Report</a>
+            <a href="https://www.snow-forecast.com/resorts/Lake-Louise/webcams/latest" target="_blank" rel="noopener">Webcams</a>
+            <a href="https://www.skilouise.com/" target="_blank" rel="noopener">Official Site</a>
+          </div>
+        </div>
+
+        <!-- Sunshine Village -->
+        <div class="snow-resort-card">
+          <div class="snow-resort-header">
+            <div class="snow-resort-info">
+              <h3>Sunshine Village</h3>
+              <div class="snow-resort-meta">
+                <span class="snow-resort-elevation">Elevation: 1,658m - 2,730m</span>
+                <span class="snow-resort-runs">137 Runs</span>
+              </div>
+            </div>
+            <div class="snow-resort-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/><polyline points="16 16 12 12 8 16"/></svg>
+              <span>SkiBig3</span>
+            </div>
+          </div>
+          <div class="snow-forecast-embed">
+            <iframe
+              src="https://www.snow-forecast.com/resorts/Sunshine/6day/mid"
+              title="Sunshine Village 6-day snow forecast"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+            ></iframe>
+            <div class="snow-forecast-overlay">
+              <a href="https://www.snow-forecast.com/resorts/Sunshine/6day/mid" target="_blank" rel="noopener" class="btn btn-primary">
+                View Full Sunshine Forecast
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <div class="snow-quick-stats">
+                <div class="snow-stat">
+                  <span class="snow-stat__value">203cm</span>
+                  <span class="snow-stat__label">Top Depth</span>
+                </div>
+                <div class="snow-stat">
+                  <span class="snow-stat__value">76cm</span>
+                  <span class="snow-stat__label">Base Depth</span>
+                </div>
+                <div class="snow-stat">
+                  <span class="snow-stat__value">137</span>
+                  <span class="snow-stat__label">Runs</span>
+                </div>
+                <div class="snow-stat">
+                  <span class="snow-stat__value">3,358</span>
+                  <span class="snow-stat__label">Skiable Acres</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="snow-resort-links">
+            <a href="https://www.snow-forecast.com/resorts/Sunshine/6day/mid" target="_blank" rel="noopener">6-Day Forecast</a>
+            <a href="https://www.snow-forecast.com/resorts/Sunshine/snow-report" target="_blank" rel="noopener">Snow Report</a>
+            <a href="https://www.snow-forecast.com/resorts/Sunshine/webcams/latest" target="_blank" rel="noopener">Webcams</a>
+            <a href="https://www.skibanff.com/" target="_blank" rel="noopener">Official Site</a>
+          </div>
+        </div>
+
+        <!-- Mt. Norquay -->
+        <div class="snow-resort-card">
+          <div class="snow-resort-header">
+            <div class="snow-resort-info">
+              <h3>Mt. Norquay</h3>
+              <div class="snow-resort-meta">
+                <span class="snow-resort-elevation">Elevation: 1,539m - 2,042m</span>
+                <span class="snow-resort-runs">60 Runs</span>
+              </div>
+            </div>
+            <div class="snow-resort-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/><polyline points="16 16 12 12 8 16"/></svg>
+              <span>SkiBig3</span>
+            </div>
+          </div>
+          <div class="snow-forecast-embed">
+            <iframe
+              src="https://www.snow-forecast.com/resorts/Banff-Norquay/6day/mid"
+              title="Mt. Norquay 6-day snow forecast"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+            ></iframe>
+            <div class="snow-forecast-overlay">
+              <a href="https://www.snow-forecast.com/resorts/Banff-Norquay/6day/mid" target="_blank" rel="noopener" class="btn btn-primary">
+                View Full Norquay Forecast
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <div class="snow-quick-stats">
+                <div class="snow-stat">
+                  <span class="snow-stat__value">81cm</span>
+                  <span class="snow-stat__label">Top Depth</span>
+                </div>
+                <div class="snow-stat">
+                  <span class="snow-stat__value">71cm</span>
+                  <span class="snow-stat__label">Base Depth</span>
+                </div>
+                <div class="snow-stat">
+                  <span class="snow-stat__value">60</span>
+                  <span class="snow-stat__label">Runs</span>
+                </div>
+                <div class="snow-stat">
+                  <span class="snow-stat__value">190</span>
+                  <span class="snow-stat__label">Skiable Acres</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="snow-resort-links">
+            <a href="https://www.snow-forecast.com/resorts/Banff-Norquay/6day/mid" target="_blank" rel="noopener">6-Day Forecast</a>
+            <a href="https://www.snow-forecast.com/resorts/Banff-Norquay/snow-report" target="_blank" rel="noopener">Snow Report</a>
+            <a href="https://www.snow-forecast.com/resorts/Banff-Norquay/webcams/latest" target="_blank" rel="noopener">Webcams</a>
+            <a href="https://banffnorquay.com/" target="_blank" rel="noopener">Official Site</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="weather-source">Snow data: <a href="https://www.snow-forecast.com/" target="_blank" rel="noopener">Snow-Forecast.com</a> &bull; Resort info: <a href="https://skibig3.com/" target="_blank" rel="noopener">SkiBig3.com</a></p>
+    </div>
+  </section>
+
+  <!-- Stay Informed Section -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Stay Informed</h2>
+        <p>Helpful resources for planning your trip</p>
+      </div>
+      <div class="info-grid">
+        <a href="https://511.alberta.ca/" target="_blank" rel="noopener" class="info-card">
+          <div class="info-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>511 Alberta</h3>
+          <p>Road conditions, closures, and highway cameras for Alberta</p>
+        </a>
+        <a href="https://drivebc.ca/" target="_blank" rel="noopener" class="info-card">
+          <div class="info-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>DriveBC</h3>
+          <p>Road conditions and travel advisories for British Columbia</p>
+        </a>
+        <a href="https://weather.gc.ca/" target="_blank" rel="noopener" class="info-card">
+          <div class="info-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+          </div>
+          <h3>Weather.gc.ca</h3>
+          <p>Official weather alerts, air quality statements, and forecasts</p>
+        </a>
+        <a href="https://www.alberta.ca/wildfire-status" target="_blank" rel="noopener" class="info-card">
+          <div class="info-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c.5 2 2 4 3 5s3 3 3 6-2.5 6-6 6-6-3-6-6c0-2 1.5-4 3-5.5C10 6 10.5 4 11 2z"/></svg>
+          </div>
+          <h3>Wildfire Status</h3>
+          <p>Wildfire status updates, fire bans, and advisories for Alberta</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Weather Section */
+  .weather-tabs {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .weather-tab {
+    padding: 0.6rem 2rem;
+    border: 2px solid var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .weather-tab.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .weather-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .weather-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .weather-card--current {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .weather-card__label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+  }
+
+  .weather-card__temp {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .weather-card__temp-sub {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+  }
+
+  .weather-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .weather-card__desc {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .weather-card__range {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .weather-card__feels {
+    font-size: 0.82rem;
+    opacity: 0.7;
+    margin-top: 0.25rem;
+  }
+
+  .weather-card__loading {
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+
+  .weather-source {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-top: 1rem;
+  }
+
+  .weather-source a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  /* Webcams */
+  .webcams-section {
+    background: var(--color-bg-alt);
+  }
+
+  .webcam-filters {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .webcam-filter {
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: var(--color-white);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .webcam-filter.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
+
+  .webcam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .webcam-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .webcam-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .webcam-card__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+
+  .webcam-card__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .webcam-card__live {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #e53e3e;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    animation: pulse-live 2s infinite;
+  }
+
+  @keyframes pulse-live {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .webcam-card__info {
+    padding: 1rem 1.25rem;
+  }
+
+  .webcam-card__info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .webcam-card__info p {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+  }
+
+  /* Snow Section */
+  .snow-resorts {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .snow-resort-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .snow-resort-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .snow-resort-header h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .snow-resort-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+  }
+
+  .snow-resort-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--color-bg-alt);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .snow-forecast-embed {
+    position: relative;
+    width: 100%;
+    background: #f5f5f5;
+    min-height: 200px;
+  }
+
+  .snow-forecast-embed iframe {
+    display: none;
+  }
+
+  .snow-forecast-overlay {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .snow-quick-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .snow-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .snow-stat__value {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .snow-stat__label {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    margin-top: 0.15rem;
+  }
+
+  .snow-resort-links {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    flex-wrap: wrap;
+  }
+
+  .snow-resort-links a {
+    padding: 0.4rem 1rem;
+    background: var(--color-bg-alt);
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .snow-resort-links a:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  /* Info Grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .info-card__icon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-bg-alt);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .info-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .weather-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .snow-quick-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .webcam-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .weather-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const OWM_API = 'https://api.openweathermap.org/data/2.5';
+
+  const locations = {
+    banff: { lat: 51.1784, lon: -115.5708, name: 'Banff' },
+    'lake-louise': { lat: 51.4254, lon: -116.1773, name: 'Lake Louise' },
+  };
+
+  const weatherIcons: Record<string, string> = {
+    '01d': '☀️', '01n': '🌙',
+    '02d': '⛅', '02n': '☁️',
+    '03d': '☁️', '03n': '☁️',
+    '04d': '☁️', '04n': '☁️',
+    '09d': '🌧️', '09n': '🌧️',
+    '10d': '🌦️', '10n': '🌧️',
+    '11d': '⛈️', '11n': '⛈️',
+    '13d': '❄️', '13n': '❄️',
+    '50d': '🌫️', '50n': '🌫️',
+  };
+
+  function getIcon(code: string) {
+    return weatherIcons[code] || '☁️';
+  }
+
+  function renderCurrent(data: any, prefix: string) {
+    const el = document.getElementById(`${prefix}-current`);
+    if (!el) return;
+    const temp = Math.round(data.main.temp);
+    const feels = Math.round(data.main.feels_like);
+    const icon = getIcon(data.weather[0].icon);
+    const desc = data.weather[0].description;
+    el.innerHTML = `
+      <div class="weather-card__label">Current Conditions</div>
+      <div class="weather-card__icon">${icon}</div>
+      <div class="weather-card__temp">${temp}°C</div>
+      <div class="weather-card__temp-sub">${Math.round(temp * 9/5 + 32)}°F</div>
+      <div class="weather-card__desc">${desc.charAt(0).toUpperCase() + desc.slice(1)}</div>
+      <div class="weather-card__feels">Feels like ${feels}°C</div>
+    `;
+  }
+
+  function renderForecast(days: any[], prefix: string) {
+    const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    days.slice(0, 3).forEach((d: any, i: number) => {
+      const el = document.getElementById(`${prefix}-day${i+1}`);
+      if (!el) return;
+      const hi = Math.round(d.temp.max);
+      const lo = Math.round(d.temp.min);
+      const icon = getIcon(d.weather[0].icon);
+      const desc = d.weather[0].description;
+      const date = new Date(d.dt * 1000);
+      const label = i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : dayNames[date.getDay()];
+      el.innerHTML = `
+        <div class="weather-card__label">${label}</div>
+        <div class="weather-card__icon">${icon}</div>
+        <div class="weather-card__range">${hi}°/${lo}°C</div>
+        <div class="weather-card__temp-sub">${Math.round(hi*9/5+32)}°/${Math.round(lo*9/5+32)}°F</div>
+        <div class="weather-card__desc">${desc.charAt(0).toUpperCase() + desc.slice(1)}</div>
+        <div class="weather-card__feels">Feels like ${Math.round(d.feels_like.day)}°C</div>
+      `;
+    });
+  }
+
+  async function loadWeather(location: string) {
+    const loc = locations[location as keyof typeof locations];
+    if (!loc) return;
+    const prefix = location === 'lake-louise' ? 'll' : 'banff';
+    try {
+      const [currentRes, forecastRes] = await Promise.all([
+        fetch(`${OWM_API}/weather?lat=${loc.lat}&lon=${loc.lon}&units=metric&appid=284dc0b6175ecfc1e7f81e385a4efbf8`),
+        fetch(`${OWM_API}/onecall?lat=${loc.lat}&lon=${loc.lon}&units=metric&exclude=minutely,hourly,alerts&appid=284dc0b6175ecfc1e7f81e385a4efbf8`),
+      ]);
+      if (currentRes.ok) {
+        const currentData = await currentRes.json();
+        renderCurrent(currentData, prefix);
+      }
+      if (forecastRes.ok) {
+        const forecastData = await forecastRes.json();
+        renderForecast(forecastData.daily, prefix);
+      }
+    } catch {
+      const el = document.getElementById(`${prefix}-current`);
+      if (el) {
+        el.innerHTML = `
+          <div class="weather-card__label">Current Conditions</div>
+          <div class="weather-card__icon">🌤️</div>
+          <div class="weather-card__desc">Weather data temporarily unavailable</div>
+          <div class="weather-card__feels"><a href="https://weather.gc.ca/city/pages/ab-49_metric_e.html" target="_blank" rel="noopener" style="color: var(--color-accent); text-decoration: underline;">View on weather.gc.ca</a></div>
+        `;
+      }
+    }
+  }
+
+  loadWeather('banff');
+  loadWeather('lake-louise');
+
+  // Weather tabs
+  document.querySelectorAll('.weather-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.weather-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = (tab as HTMLElement).dataset.tab;
+      document.getElementById('weather-banff')!.style.display = target === 'banff' ? 'grid' : 'none';
+      document.getElementById('weather-lake-louise')!.style.display = target === 'lake-louise' ? 'grid' : 'none';
+    });
+  });
+
+  // Webcam filters
+  document.querySelectorAll('.webcam-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.webcam-filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = (btn as HTMLElement).dataset.filter;
+      document.querySelectorAll('.webcam-card').forEach(card => {
+        const cat = (card as HTMLElement).dataset.category;
+        (card as HTMLElement).style.display = (filter === 'all' || cat === filter) ? 'block' : 'none';
+      });
+    });
+  });
+</script>
