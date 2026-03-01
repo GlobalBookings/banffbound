@@ -5,110 +5,268 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 const restaurants = [
   {
     name: 'The Bison Restaurant',
-    description: 'Farm-to-table dining featuring regional Rocky Mountain cuisine. Known for their bison short ribs, elk carpaccio, and an impressive wine list. Rustic-elegant atmosphere with stunning Bear Street views.',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80',
+    description: 'Farm-to-table dining featuring regional Rocky Mountain cuisine with seasonal menus showcasing the very best Alberta has to offer. Known for bison short ribs, elk carpaccio, escargot in a bone, and scallops with crispy spatzle. Rustic-elegant atmosphere with Bear Street views and a summer patio built to soak in the mountains.',
+    image: 'https://images.squarespace-cdn.com/content/v1/5c5c616477b903db9a5f3ee2/1763762583000-NZZWLCVZMX6SJIP6MJ6P/BISON-Web-Homepage-2025.jpg?format=1200w',
     type: 'Fine Dining',
     price: '$$$',
-    cuisine: 'Canadian',
+    cuisine: 'Canadian Farm-to-Table',
+    address: '211 Bear St, Banff',
+    phone: '(403) 762-5550',
+    hours: 'Daily 11am - 10pm',
+    website: 'https://www.thebison.ca/',
+    menuUrl: 'https://www.thebison.ca/menu',
+    reserveUrl: 'https://www.thebison.ca/book-a-table',
+    highlights: ['Seasonal menus', 'Summer patio', 'OpenTable reservations', 'Private dining available'],
   },
   {
     name: 'Park Distillery',
-    description: 'Craft spirits distilled with glacial water from the Canadian Rockies. Their campfire-cooked meals, smoked meats, and house-made cocktails make this a Banff essential. Try the s\'mores for dessert.',
-    image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80',
-    type: 'Restaurant & Bar',
+    description: 'A working distillery and restaurant in downtown Banff crafting glacier water spirits in-house. Campfire-inspired cuisine featuring wood-fired, spit-roasted, and smoky-savoury dishes made with locally sourced ingredients. Award-winning Alpine Dry Gin, Maple Rye, and Bird\'s Eye Chili Vodka brewed on site. Try the s\'mores for dessert.',
+    image: 'https://cdn.shopify.com/s/files/1/0571/3562/8441/files/PARK-logo_350x.png?v=1622824830',
+    type: 'Restaurant & Distillery',
     price: '$$',
-    cuisine: 'Canadian',
+    cuisine: 'Campfire-Inspired Canadian',
+    address: '219 Banff Ave, Banff',
+    phone: '(403) 762-5114',
+    hours: 'Daily 11am - 11pm',
+    website: 'https://parkdistillery.com/',
+    menuUrl: 'https://parkdistillery.com/pages/menu',
+    reserveUrl: 'https://parkdistillery.com/pages/book-a-table',
+    highlights: ['In-house craft distillery', 'Distillery tours available', 'Blend your own gin experience', 'Takeout available'],
   },
   {
     name: 'Grizzly House',
-    description: 'A Banff institution since 1967. Famous for fondue and exotic game meats including rattlesnake, alligator, and ostrich. The retro-kitsch decor and table-side phones add to the unique experience.',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80',
-    type: 'Restaurant',
+    description: 'A Banff landmark since 1967 and one of the town\'s most iconic dining experiences. Famous for fondue and exotic game meats including rattlesnake, alligator, and ostrich cooked at your table. The retro-kitsch decor and vintage table-side phones add to the unforgettable atmosphere. Reservations highly recommended.',
+    image: 'https://banffgrizzlyhouse.com/wp-content/uploads/2013/06/grizzly_photo_front_updated_300.jpg',
+    type: 'Iconic Restaurant',
     price: '$$$',
-    cuisine: 'Fondue & Game',
+    cuisine: 'Fondue & Exotic Game',
+    address: '207 Banff Ave, Banff',
+    phone: '(403) 762-4055',
+    hours: 'Sun-Thu 11:30am-9pm, Fri-Sat 11:30am-9:30pm (Closed Tue)',
+    website: 'https://www.banffgrizzlyhouse.com/',
+    menuUrl: 'https://www.banffgrizzlyhouse.com/dinner-menu/',
+    reserveUrl: null,
+    highlights: ['Banff institution since 1967', 'Fondue cooked at your table', 'Exotic game meats', 'Retro-kitsch atmosphere'],
   },
   {
     name: 'Block Kitchen + Bar',
-    description: 'Modern comfort food with a creative twist. Great burgers, bowls, and shareables in a hip downtown setting. Their weekend brunch is wildly popular with locals and visitors alike.',
-    image: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80',
+    description: 'A vibrant and dynamic restaurant offering a fresh global menu and creative cocktails in an urban-rustic setting. Chef Stephane Prevost brings Izakaya influences, a love for curries, and Ocean-Wise certified sustainable seafood. Warm birdcage and bare-bulb decor creates a playful vibe perfect for small plates or a full meal.',
+    image: 'https://images.squarespace-cdn.com/content/v1/57fc3945e58c620da35e2f15/1567516251889-UQ7WWK4FQW4QAQBYYY2L/3209951B-50EA-4946-B209-121D7A7B0555.jpg?format=1200w',
     type: 'Casual Dining',
     price: '$$',
-    cuisine: 'Modern Canadian',
+    cuisine: 'Global Fusion',
+    address: '201 Banff Ave (Corner of Caribou St)',
+    phone: '(403) 985-2887',
+    hours: 'Daily 11:30am - 11pm',
+    website: 'https://www.banffblock.com/',
+    menuUrl: 'https://www.banffblock.com/menu',
+    reserveUrl: null,
+    highlights: ['Ocean-Wise sustainable seafood', 'Izakaya-inspired small plates', 'Creative cocktail menu', 'Intimate & convivial space'],
   },
   {
     name: 'Juniper Bistro',
-    description: 'Perched above the town with panoramic mountain views from the patio. Seasonal menus highlight Alberta beef, wild game, and locally foraged ingredients. Perfect for a special occasion.',
-    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80',
+    description: 'Perched above town at The Juniper Hotel with panoramic mountain views from one of the best patios in the Bow Valley. Chef Sergio crafts exquisite plant-rich dishes with sustainably sourced proteins and seasonal ingredients. The Five-Course Tasting Experience showcases local Bow Valley flavours blended with Latin American influences. Free parking and EV charging.',
+    image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80',
     type: 'Fine Dining',
     price: '$$$',
-    cuisine: 'Contemporary',
+    cuisine: 'Contemporary Canadian',
+    address: '1 Juniper Way, Banff',
+    phone: '(403) 763-6219',
+    hours: 'Daily for breakfast & dinner',
+    website: 'https://thejuniper.com/dine/',
+    menuUrl: 'https://thejuniper.com/dine/',
+    reserveUrl: 'https://www.opentable.ca/juniper-bistro-the-juniper-hotel',
+    highlights: ['Panoramic mountain view patio', 'Five-Course Tasting Experience', 'Plant-rich seasonal menus', 'Free parking & EV charging'],
   },
   {
     name: 'Wild Flour Bakery',
-    description: 'Artisan bakery beloved by locals for their sourdough, croissants, and hearty breakfast sandwiches. Grab a coffee and a pastry before heading out on the trails.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80',
+    description: 'Beloved artisan bakery on Bear Street known for sourdough, croissants, and hearty breakfast sandwiches made with free-range eggs. Lunch features Chicken Banh Mi on house-made milk buns, honey grilled cheese with black pepper gouda, and Turkey Croissants. Bread baked fresh daily including Natural Sourdough, Cranberry Walnut, and GF Multigrain. Vegan and gluten-free options available.',
+    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=600&q=80',
     type: 'Bakery & Cafe',
     price: '$',
-    cuisine: 'Bakery',
+    cuisine: 'Artisan Bakery',
+    address: '211 Bear St #101, Banff',
+    phone: '(403) 760-5074',
+    hours: 'Fri-Sun 7am - 5pm',
+    website: 'https://www.wildflourbakery.ca/',
+    menuUrl: 'https://www.wildflourbakery.ca/menu',
+    reserveUrl: null,
+    highlights: ['Fresh-baked bread daily', 'Free-range eggs', 'Vegan & gluten-free options', 'Locally sourced ingredients'],
   },
   {
-    name: 'Banff Ave Brewing Co.',
-    description: 'Banff\'s own craft brewery serving house-brewed beers alongside pub favourites. Their Head Smashed IPA and Reverb Dark Lager are local legends. Great apres-ski spot.',
-    image: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&q=80',
-    type: 'Brewery & Pub',
-    price: '$$',
-    cuisine: 'Pub Food',
-  },
-  {
-    name: 'The Eddie Burger + Bar',
-    description: 'Gourmet burgers in a funky, no-frills basement joint. Creative toppings, spiked milkshakes, and a laid-back vibe make it a fan favourite. The elk burger is a must-try.',
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80',
+    name: 'Eddie Burger + Bar',
+    description: 'Gourmet burgers made with housemade Alberta beef in a funky basement joint that\'s become a Banff institution. Creative toppings, spiked milkshakes, and the infamous Trash Can cocktail. Daily specials include $8 Double Caesars on Mondays, 75-cent wings on Tuesdays, and all-day Happy Hour on Thursdays. The elk burger is a must-try.',
+    image: 'https://images.squarespace-cdn.com/content/v1/611ace78c07719160be1bd99/d49e7ca7-24ab-4ebd-9fa0-de20af5e9b7e/Asset+5.jpg?format=1200w',
     type: 'Casual',
     price: '$$',
-    cuisine: 'Burgers',
+    cuisine: 'Gourmet Burgers',
+    address: '137 Banff Ave (Lower Level), Banff',
+    phone: '(403) 762-2230',
+    hours: 'Daily 11:30am - late',
+    website: 'https://eddieburgerbar.ca/',
+    menuUrl: 'https://eddieburgerbar.ca/',
+    reserveUrl: 'https://www.eddieburgerbar.ca/reserve',
+    highlights: ['Housemade Alberta beef burgers', 'Daily drink specials', 'Spiked milkshakes', 'OpenTable reservations'],
   },
   {
     name: 'Tooloulou\'s',
-    description: 'Cajun and Creole flavours meet the Rocky Mountains. Po\' boys, jambalaya, and gumbo served with genuine Southern hospitality. A unique departure from typical mountain fare.',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80',
+    description: 'Cajun and Creole flavours meet the Canadian Rockies in this intimate 50-seat downtown gem. Owner-operated since 2012, serving homemade comfort food from scratch including Shrimp & Grits, Boudin Balls, Seafood Skillet, and jambalaya. Over 100 hot sauces available from their Hot Shotz shelf. Breakfast, lunch, and dinner with gluten-friendly options.',
+    image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80',
     type: 'Restaurant',
     price: '$$',
-    cuisine: 'Cajun-Creole',
+    cuisine: 'Cajun-Creole Fusion',
+    address: '204 Caribou St, Banff',
+    phone: '(403) 762-2633',
+    hours: 'Daily 8am - 9pm (Fri-Sat until 9:30pm)',
+    website: 'https://tooloulous.com/',
+    menuUrl: 'https://tooloulous.com/menuitem/',
+    reserveUrl: 'https://www.opentable.ca/r/tooloulous-banff',
+    highlights: ['100+ hot sauces', 'Locally owned since 2012', 'Gluten-friendly options', 'Breakfast, lunch & dinner'],
+  },
+  {
+    name: 'Banff Ave Brewing Co.',
+    description: 'Banff\'s favourite brewpub since 2010 with house-brewed craft beers and all your pub favourites. The Pub upstairs is casual and lively; the street-level Taproom offers a fresh experience watching the Banff "wildlife" stroll by. Part of the Bear Hill Brewing family alongside Jasper Brewing Co. and Campio Brewing. Great apres-ski spot.',
+    image: 'https://banffavebrewingco.ca/wp-content/uploads/2025/05/Home-Page-Venues-Pub.jpg',
+    type: 'Brewery & Pub',
+    price: '$$',
+    cuisine: 'Craft Beer & Pub Food',
+    address: '110 Banff Ave, 2nd Floor, Banff',
+    phone: '(403) 762-1003',
+    hours: 'Mon-Wed 12pm-12am, Thu-Fri 12pm-1am, Sat 11:30am-1am, Sun 11:30am-12am',
+    website: 'https://banffavebrewingco.ca/',
+    menuUrl: 'https://banffavebrewingco.ca/order/',
+    reserveUrl: 'https://banffavebrewingco.ca/reserve/',
+    highlights: ['House-brewed craft beers', 'The Pub + The Taproom', 'Beer merch shop', 'Live events'],
+  },
+  {
+    name: 'Nourish Bistro',
+    description: 'Banff\'s premiere vegetarian and vegan restaurant serving innovative plant-based cuisine since 2006. Creative menu featuring gyoza, tempura broccoli, beetroot bruschetta, and globally inspired mains made with fresh local and organic ingredients. Eco-bar with craft cocktails, rotating unique beers, and carefully selected organic wines.',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80',
+    type: 'Vegetarian Fine Dining',
+    price: '$$',
+    cuisine: 'Vegetarian & Vegan',
+    address: '211 Bear St #110, Banff',
+    phone: '(403) 760-3933',
+    hours: 'Weekdays 12pm-9pm, Weekends 10am-10pm',
+    website: 'https://www.nourishbistro.com/',
+    menuUrl: 'https://www.nourishbistro.com/',
+    reserveUrl: 'https://www.opentable.ca/r/nourish-bistro-banff',
+    highlights: ['100% vegetarian & vegan', 'Organic wines & craft cocktails', 'Gluten-free options', 'Weekend brunch'],
+  },
+  {
+    name: 'Magpie & Stump',
+    description: 'Downtown Banff\'s go-to for authentic Mexican food and tequila with over 60 tequilas behind the bar. Tacos are $6 each or $18 for three, with proteins including suadero beef, carnitas pork, tinga chicken, and vegetarian options. The rooftop patio "El Patio" is legendary in summer. Taco Tuesday offers $3.50 tacos and drink specials.',
+    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80',
+    type: 'Restaurant & Bar',
+    price: '$$',
+    cuisine: 'Mexican',
+    address: '203 Caribou St, Banff',
+    phone: '(403) 762-4067',
+    hours: 'Tue-Sun 12pm - 12am',
+    website: 'https://www.magpieandstump.ca/',
+    menuUrl: 'https://www.magpieandstump.ca/menu',
+    reserveUrl: 'https://www.opentable.ca/r/magpie-and-stump-mexican-restaurant-and-bar-banff',
+    highlights: ['60+ tequilas', 'Taco Tuesday $3.50 tacos', 'Rooftop patio "El Patio"', 'Late night until midnight'],
+  },
+  {
+    name: 'Coyotes Southwestern Grill',
+    description: 'Award-winning Southwestern cuisine voted #1 Best Breakfast and Best Lunch in the 2024 Rocky Mountain Outlook Reader\'s Choice Awards. Serving breakfast, lunch, and dinner daily with dishes like Huevos Rancheros, Southwestern Steak and Eggs, and hearty Tex-Mex favourites. Fresh, local ingredients with bold flavours.',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80',
+    type: 'Restaurant',
+    price: '$$',
+    cuisine: 'Southwestern',
+    address: '206 Caribou St, Banff',
+    phone: '(403) 762-3963',
+    hours: 'Daily 8am - late',
+    website: 'https://coyotesbanff.com/',
+    menuUrl: 'https://coyotesbanff.com/',
+    reserveUrl: null,
+    highlights: ['#1 Best Breakfast in Banff', '#1 Best Lunch Menu', 'Open from 8am daily', 'Southwestern & Tex-Mex'],
+  },
+  {
+    name: 'Bear Street Tavern',
+    description: 'Signature pizzas, sandwiches, and cast iron specialties on Banff\'s beloved Bear Street. A cozy tavern atmosphere with a dog-friendly courtyard patio, selection of craft beers and cocktails, perfect for casual group dinners or a relaxed afternoon.',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80',
+    type: 'Tavern',
+    price: '$$',
+    cuisine: 'Pizza & Pub',
+    address: '211 Bear St, Banff',
+    phone: '(403) 762-2021',
+    hours: 'Daily 11:30am - late',
+    website: 'https://bearstreettavern.ca/',
+    menuUrl: 'https://bearstreettavern.ca/',
+    reserveUrl: null,
+    highlights: ['Signature brick-oven pizzas', 'Dog-friendly courtyard patio', 'Craft beer selection', 'Cast iron specialties'],
   },
 ];
 
 const drinks = [
   {
-    name: 'High Rollers',
-    description: 'Bowling alley meets cocktail lounge. Roll a few frames while sipping craft cocktails in this retro-cool Banff hangout.',
+    name: 'High Rollers Bowling & Pizza',
+    description: 'Six ten-pin bowling lanes, three pool tables, over 48 craft beers on tap, and brick-oven pizza in downtown Banff. Weekly specials include 75-cent wings on Tuesdays, all-day happy hour Wednesdays, and half-off pizza with $5 margaritas on Thursdays. Live music and late-night DJ parties.',
     type: 'Bar & Entertainment',
+    address: '110 Banff Ave, Banff',
+    phone: '(403) 762-2695',
+    hours: 'Daily 3pm - 2am (Weekends from noon)',
+    website: 'https://www.highrollersbanff.com/',
+    menuUrl: 'https://www.highrollersbanff.com/menu',
+    image: 'https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?w=600&q=80',
   },
   {
     name: 'The Rose & Crown',
-    description: 'Banff\'s beloved British pub with a rooftop patio overlooking the town. Live music, cold pints, and a lively atmosphere year-round.',
+    description: 'Banff\'s oldest pub since 1985, welcoming over 250,000 guests each year. Classic pub fare with a mountain twist, rooftop patio with stunning views, and live music every night. Daily specials include $15 fish and chips, $3 Taco Tuesdays, and comedy nights. Open 1pm to 2am daily.',
     type: 'Pub',
+    address: '202 Banff Ave, Banff',
+    phone: '(403) 762-2121',
+    hours: 'Daily 1pm - 2am',
+    website: 'https://roseandcrown.ca/',
+    menuUrl: 'https://roseandcrown.ca/menu/',
+    image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80',
   },
   {
     name: 'Whitebark Cafe',
-    description: 'Specialty coffee roasted in-house. A bright, modern space perfect for a caffeine boost before exploring the park.',
+    description: 'Independent specialty coffee house at the Banff Aspen Lodge, voted "Best of the Bow: Coffee" multiple times. Serving Moja fair-trade organic espresso, Banff Tea Company loose leaf teas, and fresh homemade goods daily. Heated patio terrace with mountain views. Committed to sustainability with compostable takeout.',
     type: 'Coffee Shop',
+    address: '401 Banff Ave, Banff',
+    phone: '(403) 760-7298',
+    hours: 'Daily 6:30am - 6pm',
+    website: 'https://whitebarkcafe.com/',
+    menuUrl: 'https://whitebarkcafe.com/food',
+    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80',
   },
   {
-    name: 'Three Bears Brewery',
-    description: 'Small-batch craft beer brewed in the heart of Banff. Rotating taps and a cozy taproom make it a great afternoon stop.',
-    type: 'Brewery',
+    name: 'Three Bears Brewery & Restaurant',
+    description: 'Craft brewery set in a forest-themed space on Bear Street with a stargazing retractable roof, beer garden, and multiple patios. Over 80 house-brewed beers on rotation including the flagship Wishing Tree IPA. Happy Hour daily 3-5pm with beer specials. Dog-friendly patio and live music on select nights.',
+    type: 'Brewery & Restaurant',
+    address: '205 Bear St, Banff',
+    phone: '(403) 985-8038',
+    hours: 'Daily 11am - 10:30pm',
+    website: 'https://threebearsbanff.com/',
+    menuUrl: 'https://threebearsbanff.com/',
+    image: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&q=80',
+  },
+  {
+    name: 'Elk & Oarsman',
+    description: 'Iconic rooftop sports bar with 360-degree views of the Rocky Mountains. Fifteen draft beers, a diverse pub menu, and the best spot in town to watch live sports. Timber and river rock decor with a wood-burning fireplace create a cozy mountain atmosphere.',
+    type: 'Sports Bar & Pub',
+    address: '119 Banff Ave, Banff',
+    phone: '(403) 762-4616',
+    hours: 'Daily 11am - 11pm',
+    website: 'https://elkandoarsman.com/',
+    menuUrl: 'https://elkandoarsman.com/',
+    image: 'https://images.unsplash.com/photo-1575037614876-c38a4c44f5b8?w=600&q=80',
   },
 ];
 ---
 
-<BaseLayout title="Eat & Drink" description="The best restaurants, cafes, bars, and breweries in Banff. From fine dining to cozy mountain pubs.">
+<BaseLayout title="Eat & Drink in Banff - Restaurants, Bars & Cafes" description="The best restaurants, cafes, bars, and breweries in Banff. From farm-to-table fine dining to cozy mountain pubs, craft breweries, and artisan bakeries.">
   <div class="container">
     <Breadcrumbs items={[{ label: 'Eat & Drink' }]} />
   </div>
   <section class="page-hero">
     <img
-      src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
-      alt="Fine dining table setting"
+      src="https://images.squarespace-cdn.com/content/v1/5c5c616477b903db9a5f3ee2/47e6ae83-11e3-4842-baad-2c7fed7be6e6/BISON-NOV-25.jpg?format=2500w"
+      alt="Dining at The Bison Restaurant in Banff"
       class="page-hero-bg"
       loading="eager"
       fetchpriority="high"
@@ -116,7 +274,7 @@ const drinks = [
     <div class="page-hero-content">
       <span class="badge">Dine & Sip</span>
       <h1>Eat & Drink in Banff</h1>
-      <p>From elevated Rocky Mountain cuisine to cozy craft breweries, Banff's food and drink scene punches well above its weight.</p>
+      <p>From elevated Rocky Mountain cuisine to cozy craft breweries, Banff's food and drink scene punches well above its weight for a town of 8,000.</p>
     </div>
   </section>
 
@@ -125,21 +283,47 @@ const drinks = [
       <div class="section-header">
         <span class="badge">Restaurants</span>
         <h2>Where to Eat</h2>
-        <p>Banff's dining scene is a delicious mix of fine dining, creative casual eateries, and beloved local institutions.</p>
+        <p>Banff's dining scene is a delicious mix of fine dining, creative global kitchens, beloved local institutions, and award-winning casual eateries.</p>
       </div>
-      <div class="grid grid-3">
+      <div class="restaurant-list">
         {restaurants.map(item => (
-          <div class="card">
-            <img src={item.image} alt={item.name} class="card-image" loading="lazy" />
-            <div class="card-body">
+          <div class="restaurant-card">
+            <div class="restaurant-image-wrap">
+              <img src={item.image} alt={item.name} class="restaurant-image" loading="lazy" />
+              <div class="restaurant-price">{item.price}</div>
+            </div>
+            <div class="restaurant-body">
               <div class="card-tags">
                 <span class="tag">{item.type}</span>
-                <span class="tag">{item.price}</span>
+                <span class="tag">{item.cuisine}</span>
               </div>
               <h3>{item.name}</h3>
-              <p>{item.description}</p>
-              <div class="card-meta">
-                <span>{item.cuisine}</span>
+              <p class="restaurant-desc">{item.description}</p>
+              <div class="restaurant-highlights">
+                {item.highlights.map(h => (
+                  <span class="highlight-chip">{h}</span>
+                ))}
+              </div>
+              <div class="restaurant-details">
+                <div class="detail-row">
+                  <span class="detail-icon">&#128205;</span>
+                  <span>{item.address}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">&#128222;</span>
+                  <span>{item.phone}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">&#128336;</span>
+                  <span>{item.hours}</span>
+                </div>
+              </div>
+              <div class="restaurant-actions">
+                <a href={item.website} target="_blank" rel="noopener" class="btn btn-sm">Website</a>
+                <a href={item.menuUrl} target="_blank" rel="noopener" class="btn btn-sm btn-outline">Menu</a>
+                {item.reserveUrl && (
+                  <a href={item.reserveUrl} target="_blank" rel="noopener" class="btn btn-sm btn-gold">Reserve</a>
+                )}
               </div>
             </div>
           </div>
@@ -151,49 +335,295 @@ const drinks = [
   <section class="section" style="background: var(--color-bg-alt);">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Bars & Cafes</span>
+        <span class="badge">Bars, Breweries & Cafes</span>
         <h2>Where to Drink</h2>
-        <p>Whether you need a craft cocktail after a day on the slopes or a perfect espresso before a morning hike.</p>
+        <p>Whether you need a craft cocktail after a day on the slopes, a perfect espresso before a morning hike, or a rooftop pint with mountain views.</p>
       </div>
-      <div class="grid grid-2">
+      <div class="drink-list">
         {drinks.map(item => (
-          <div class="drink-card">
-            <span class="tag">{item.type}</span>
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
+          <div class="drink-card-full">
+            <div class="drink-image-wrap">
+              <img src={item.image} alt={item.name} class="drink-image" loading="lazy" />
+            </div>
+            <div class="drink-body">
+              <span class="tag">{item.type}</span>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div class="restaurant-details">
+                <div class="detail-row">
+                  <span class="detail-icon">&#128205;</span>
+                  <span>{item.address}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">&#128222;</span>
+                  <span>{item.phone}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">&#128336;</span>
+                  <span>{item.hours}</span>
+                </div>
+              </div>
+              <div class="restaurant-actions">
+                <a href={item.website} target="_blank" rel="noopener" class="btn btn-sm">Website</a>
+                <a href={item.menuUrl} target="_blank" rel="noopener" class="btn btn-sm btn-outline">Menu</a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
-</BaseLayout>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Tip</span>
+        <h2>Dining Tips for Banff</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="tip-card">
+          <h3>Reserve Ahead</h3>
+          <p>Banff's best restaurants fill up fast, especially on weekends and during ski season. Book via OpenTable or call ahead for fine dining spots like The Bison, Juniper Bistro, and Park Distillery.</p>
+        </div>
+        <div class="tip-card">
+          <h3>Bear Street is the Heart</h3>
+          <p>Bear Street is Banff's foodie hub. Within two blocks you'll find Wild Flour Bakery, Nourish Bistro, Three Bears Brewery, Bear Street Tavern, and The Bison -- all walkable.</p>
+        </div>
+        <div class="tip-card">
+          <h3>Happy Hour Culture</h3>
+          <p>Nearly every bar offers daily happy hour specials. High Rollers does all-day happy hour Wednesdays, Three Bears runs 3-5pm daily, and Eddie Burger has all-day specials on Thursdays.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <style>
   .card-tags {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 0.75rem;
+    flex-wrap: wrap;
   }
 
-  .drink-card {
+  .restaurant-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .restaurant-card {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 2rem;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+
+  .restaurant-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .restaurant-image-wrap {
+    position: relative;
+    height: 100%;
+    min-height: 280px;
+  }
+
+  .restaurant-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .restaurant-price {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .restaurant-body {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+  }
+
+  .restaurant-desc {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .restaurant-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .highlight-chip {
+    background: var(--color-bg-alt);
+    color: var(--color-text);
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--color-border, #e2e8f0);
+  }
+
+  .restaurant-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+  }
+
+  .detail-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .detail-icon {
+    font-size: 1rem;
+    width: 1.2rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .restaurant-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn-gold {
+    background: var(--color-accent);
+    color: var(--color-text);
+  }
+
+  .btn-gold:hover {
+    background: #c8991c;
+    color: white;
+  }
+
+  .drink-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .drink-card-full {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+
+  .drink-card-full:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .drink-image-wrap {
+    height: 100%;
+    min-height: 220px;
+  }
+
+  .drink-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .drink-body {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+  }
+
+  .drink-body h3 {
+    margin: 0.75rem 0 0.5rem;
+  }
+
+  .drink-body p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .tip-card {
     background: var(--color-white);
     border-radius: var(--radius);
     padding: 2rem;
     box-shadow: var(--shadow);
-    transition: all var(--transition);
+    border-top: 4px solid var(--color-accent);
   }
 
-  .drink-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+  .tip-card h3 {
+    margin-bottom: 0.75rem;
   }
 
-  .drink-card h3 {
-    margin: 0.75rem 0 0.5rem;
-  }
-
-  .drink-card p {
+  .tip-card p {
     color: var(--color-text-light);
     font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .restaurant-card {
+      grid-template-columns: 1fr;
+    }
+
+    .restaurant-image-wrap {
+      min-height: 200px;
+      max-height: 220px;
+    }
+
+    .restaurant-body {
+      padding: 1.25rem;
+    }
+
+    .drink-card-full {
+      grid-template-columns: 1fr;
+    }
+
+    .drink-image-wrap {
+      min-height: 180px;
+      max-height: 200px;
+    }
+
+    .drink-body {
+      padding: 1.25rem;
+    }
   }
 </style>
+</BaseLayout>
