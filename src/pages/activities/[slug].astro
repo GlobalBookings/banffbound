@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { activities } from '../../data/activities';
+
+export function getStaticPaths() {
+  return activities
+    .filter(a => !a.isExternal)
+    .map(a => ({
+      params: { slug: a.slug },
+      props: { activity: a },
+    }));
+}
+
+const { activity } = Astro.props;
+---
+
+<BaseLayout title={activity.name + ' in Banff'} description={activity.description}>
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: activity.name }]} />
+  </div>
+  <section class="page-hero">
+    <img
+      src={activity.image.replace('w=600', 'w=1600')}
+      alt={activity.name + ' in Banff National Park'}
+      class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="page-hero-content">
+      <span class="badge">{activity.tagline}</span>
+      <h1>{activity.name}</h1>
+      <p>{activity.description}</p>
+      <div class="hero-meta">
+        <span class="tag">📅 {activity.season}</span>
+        <span class="tag">⛰️ {activity.difficulty}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where to Do It -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">📍 Locations</span>
+        <h2>Where to {activity.name.includes('Viewing') || activity.name.includes('Lights') ? 'Experience' : 'Do'} It</h2>
+        <p>The best spots in and around Banff National Park for {activity.name.toLowerCase()}.</p>
+      </div>
+      <div class="grid grid-2">
+        {activity.locations.map(loc => (
+          <div class="card">
+            <div class="card-body">
+              <h3>📍 {loc.name}</h3>
+              <p>{loc.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">💡 Tips</span>
+        <h2>Tips &amp; What to Know</h2>
+        <p>Essential advice for making the most of your {activity.name.toLowerCase()} experience in Banff.</p>
+      </div>
+      <div class="tips-grid">
+        {activity.tips.map((tip, i) => (
+          <div class="tip-card">
+            <span class="tip-number">{i + 1}</span>
+            <p>{tip}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GetYourGuide Widget -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">🎟️ Book Tours</span>
+        <h2>Book {activity.name} Tours &amp; Experiences</h2>
+        <p>Browse top-rated tours and activities from trusted local operators.</p>
+      </div>
+      <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" data-gyg-locale-code="en-US" data-gyg-widget="activities" data-gyg-number-of-items="6" data-gyg-partner-id="QW960HO" data-gyg-q={activity.gygSearch}><span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/banff-l284/">GetYourGuide</a></span></div>
+      <script is:inline src="https://widget.getyourguide.com/dist/pa.umd.min.js" data-gyg-partner-id="QW960HO"></script>
+    </div>
+  </section>
+
+  <!-- Expedia CTA -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book Your Banff Stay</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Plan the perfect trip — find great deals on hotels and lodges near Banff National Park.</p>
+      <a href="https://www.expedia.com/Banff-Hotels.d602125.Travel-Guide-Hotels?camref=1101l3MtWX" class="btn btn-accent" target="_blank" rel="noopener">Browse Banff Hotels on Expedia →</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta .tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    backdrop-filter: blur(4px);
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .tip-number {
+    background: var(--color-accent);
+    color: var(--color-white);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+  }
+</style>
