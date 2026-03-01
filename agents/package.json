@@ -1,0 +1,19 @@
+{
+  "name": "banffbound-agents",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "ppc": "node src/run.js ppc-review",
+    "keywords": "node src/run.js keyword-miner",
+    "test": "node src/run.js test"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "google-ads-api": "^23.0.0",
+    "googleapis": "^144.0.0",
+    "node-cron": "^3.0.3"
+  }
+}

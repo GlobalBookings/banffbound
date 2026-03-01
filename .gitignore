@@ -5,6 +5,7 @@ dist/
 
 # dependencies
 node_modules/
+agents/node_modules/
 
 # logs
 npm-debug.log*
@@ -16,6 +17,9 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+
+# agent runtime data
+agents/data/pending/
 
 # macOS-specific files
 .DS_Store

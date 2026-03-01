@@ -1,0 +1,44 @@
+# DigitalOcean App Platform spec for BanffBound Agents
+# Deploy: doctl apps create --spec agents/app-spec.yaml
+# Or paste into App Platform UI > Create App > Edit Spec
+name: banffbound-agents
+region: tor1
+
+services:
+  - name: agents
+    dockerfile_path: agents/Dockerfile
+    source_dir: /
+    github:
+      repo: GlobalBookings/banffbound
+      branch: main
+      deploy_on_push: true
+    http_port: 3100
+    instance_count: 1
+    instance_size_slug: apps-s-1vcpu-0.5gb  # ~$5/month
+    routes:
+      - path: /
+    health_check:
+      http_path: /health
+    envs:
+      - key: GOOGLE_CLIENT_ID
+        type: SECRET
+      - key: GOOGLE_CLIENT_SECRET
+        type: SECRET
+      - key: GOOGLE_REFRESH_TOKEN
+        type: SECRET
+      - key: GOOGLE_ADS_CUSTOMER_ID
+        type: SECRET
+      - key: GOOGLE_ADS_DEVELOPER_TOKEN
+        type: SECRET
+      - key: GOOGLE_ADS_LOGIN_CUSTOMER_ID
+        type: SECRET
+      - key: SEARCH_CONSOLE_SITE_URL
+        value: https://banffbound.com
+      - key: SLACK_WEBHOOK_URL
+        type: SECRET
+      - key: SITE_URL
+        value: https://banffbound.com
+      - key: SITEMAP_URL
+        value: https://banffbound.com/sitemap-index.xml
+      - key: APPROVAL_PORT
+        value: "3100"
