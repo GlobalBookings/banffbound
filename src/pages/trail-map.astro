@@ -1,0 +1,441 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { trails } from '../data/trails';
+
+const trailData = JSON.stringify(trails.map(t => ({
+  id: t.id,
+  name: t.name,
+  description: t.description,
+  difficulty: t.difficulty,
+  distance: t.distance,
+  elevationGain: t.elevationGain,
+  time: t.time,
+  season: t.season,
+  type: t.type,
+  lat: t.lat,
+  lng: t.lng,
+  image: t.image,
+  highlights: t.highlights,
+})));
+
+const difficulties = ['easy', 'moderate', 'challenging'];
+const types = [...new Set(trails.map(t => t.type))].sort();
+const seasons = [...new Set(trails.map(t => t.season))].sort();
+---
+
+<BaseLayout title="Interactive Trail Map — Banff Hiking Guide" description="Explore Banff's best hiking trails on an interactive map. Filter by difficulty, type, and season. Find your perfect mountain adventure.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Trail Map' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="Mountain hiking trail in Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Explore Trails</span>
+      <h1>Interactive Trail Map</h1>
+      <p>Discover {trails.length} trails, viewpoints, and alpine lakes across Banff National Park. Filter, search, and plan your next adventure.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar" id="filters">
+        <div class="filter-group search-group">
+          <input type="text" id="search-input" placeholder="Search trails..." class="search-input" />
+        </div>
+        <div class="filter-group">
+          <select id="difficulty-filter">
+            <option value="all">All Difficulties</option>
+            {difficulties.map(d => <option value={d}>{d.charAt(0).toUpperCase() + d.slice(1)}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
+          <select id="type-filter">
+            <option value="all">All Types</option>
+            {types.map(t => <option value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
+          <select id="season-filter">
+            <option value="all">All Seasons</option>
+            {seasons.map(s => <option value={s}>{s}</option>)}
+          </select>
+        </div>
+        <button id="clear-filters" class="clear-btn" style="display:none;">Clear</button>
+        <span class="result-count" id="result-count">{trails.length} trails</span>
+      </div>
+
+      <div class="view-toggle">
+        <button id="grid-view-btn" class="view-btn active">Grid</button>
+        <button id="map-view-btn" class="view-btn">Map</button>
+      </div>
+
+      <div id="map-container" class="map-container" style="display:none;">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <div id="trail-map" style="height: 550px; border-radius: var(--radius); overflow: hidden;"></div>
+      </div>
+
+      <div class="trail-grid" id="trail-grid">
+        {trails.map(trail => (
+          <div class="trail-card"
+               data-id={trail.id}
+               data-difficulty={trail.difficulty}
+               data-type={trail.type}
+               data-season={trail.season}
+               data-name={trail.name.toLowerCase()}>
+            <img src={trail.image} alt={trail.name} class="trail-card-img" loading="lazy" />
+            <div class="trail-card-body">
+              <div class="trail-card-top">
+                <span class={`difficulty-badge difficulty-${trail.difficulty}`}>{trail.difficulty}</span>
+                <span class="type-badge">{trail.type}</span>
+              </div>
+              <h3>{trail.name}</h3>
+              <p class="trail-desc">{trail.description.slice(0, 120)}...</p>
+              <div class="trail-stats">
+                <span>📏 {trail.distance}</span>
+                <span>⬆️ {trail.elevationGain}</span>
+                <span>⏱️ {trail.time}</span>
+              </div>
+              <div class="trail-card-footer">
+                <span class="trail-season">📅 {trail.season}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ trailData }}>
+  const allTrails = JSON.parse(trailData);
+  const searchInput = document.getElementById('search-input');
+  const difficultyFilter = document.getElementById('difficulty-filter');
+  const typeFilter = document.getElementById('type-filter');
+  const seasonFilter = document.getElementById('season-filter');
+  const clearBtn = document.getElementById('clear-filters');
+  const cards = document.querySelectorAll('.trail-card');
+  const countEl = document.getElementById('result-count');
+  const gridViewBtn = document.getElementById('grid-view-btn');
+  const mapViewBtn = document.getElementById('map-view-btn');
+  const mapContainer = document.getElementById('map-container');
+  const trailGrid = document.getElementById('trail-grid');
+
+  let map = null;
+  let markers = [];
+  let leafletLoaded = false;
+
+  function getVisibleIds() {
+    const search = searchInput.value.toLowerCase().trim();
+    const difficulty = difficultyFilter.value;
+    const type = typeFilter.value;
+    const season = seasonFilter.value;
+    const visibleIds = new Set();
+    let visible = 0;
+
+    cards.forEach(card => {
+      const matchSearch = !search || card.dataset.name.includes(search);
+      const matchDifficulty = difficulty === 'all' || card.dataset.difficulty === difficulty;
+      const matchType = type === 'all' || card.dataset.type === type;
+      const matchSeason = season === 'all' || card.dataset.season === season;
+      const show = matchSearch && matchDifficulty && matchType && matchSeason;
+      card.style.display = show ? '' : 'none';
+      if (show) {
+        visible++;
+        visibleIds.add(card.dataset.id);
+      }
+    });
+
+    countEl.textContent = `${visible} trail${visible !== 1 ? 's' : ''}`;
+    clearBtn.style.display = (search || difficulty !== 'all' || type !== 'all' || season !== 'all') ? '' : 'none';
+    return visibleIds;
+  }
+
+  function applyFilters() {
+    const visibleIds = getVisibleIds();
+    if (map && leafletLoaded) updateMapMarkers(visibleIds);
+  }
+
+  function clearAll() {
+    searchInput.value = '';
+    difficultyFilter.value = 'all';
+    typeFilter.value = 'all';
+    seasonFilter.value = 'all';
+    applyFilters();
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  difficultyFilter.addEventListener('change', applyFilters);
+  typeFilter.addEventListener('change', applyFilters);
+  seasonFilter.addEventListener('change', applyFilters);
+  clearBtn.addEventListener('click', clearAll);
+
+  gridViewBtn.addEventListener('click', () => {
+    gridViewBtn.classList.add('active');
+    mapViewBtn.classList.remove('active');
+    trailGrid.style.display = '';
+    mapContainer.style.display = 'none';
+  });
+
+  mapViewBtn.addEventListener('click', () => {
+    mapViewBtn.classList.add('active');
+    gridViewBtn.classList.remove('active');
+    trailGrid.style.display = 'none';
+    mapContainer.style.display = '';
+    if (!leafletLoaded) loadMap();
+  });
+
+  function loadMap() {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = () => {
+      leafletLoaded = true;
+      initMap();
+    };
+    document.head.appendChild(script);
+  }
+
+  function getDifficultyColor(d) {
+    if (d === 'easy') return '#22c55e';
+    if (d === 'moderate') return '#f59e0b';
+    return '#ef4444';
+  }
+
+  function initMap() {
+    map = L.map('trail-map').setView([51.1784, -115.5708], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+      maxZoom: 18,
+    }).addTo(map);
+
+    allTrails.forEach(t => {
+      if (!t.lat || !t.lng) return;
+      const color = getDifficultyColor(t.difficulty);
+      const icon = L.divIcon({
+        className: 'trail-marker',
+        html: `<div style="width:14px;height:14px;border-radius:50%;background:${color};border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3);"></div>`,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+      });
+      const marker = L.marker([t.lat, t.lng], { icon }).addTo(map);
+      marker.bindPopup(`
+        <div style="min-width:200px;">
+          <strong style="font-size:0.9rem;">${t.name}</strong><br/>
+          <span style="font-size:0.8rem;color:#666;">${t.type} · ${t.difficulty} · ${t.distance}</span><br/>
+          <span style="font-size:0.8rem;color:#888;">⬆️ ${t.elevationGain} · ⏱️ ${t.time}</span><br/>
+          <a href="/hiking" style="font-size:0.8rem;color:#c8a96e;font-weight:600;">View Details →</a>
+        </div>
+      `);
+      marker._trailId = t.id;
+      markers.push(marker);
+    });
+
+    updateMapMarkers(new Set(allTrails.map(t => t.id)));
+  }
+
+  function updateMapMarkers(visibleIds) {
+    markers.forEach(m => {
+      if (visibleIds.has(m._trailId)) {
+        m.addTo(map);
+      } else {
+        m.remove();
+      }
+    });
+  }
+</script>
+
+<style>
+  .filter-bar {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .search-group { flex: 1; min-width: 180px; }
+
+  .search-input {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: var(--color-white, #fff);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-input:focus { border-color: var(--color-primary); }
+  .search-input::placeholder { color: #aaa; }
+
+  .filter-group select {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: var(--color-white, #fff);
+    cursor: pointer;
+  }
+
+  .clear-btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    background: none;
+    cursor: pointer;
+    color: var(--color-text-light);
+  }
+
+  .clear-btn:hover { background: var(--color-bg-alt); }
+
+  .result-count {
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    white-space: nowrap;
+  }
+
+  .view-toggle {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .view-btn {
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: var(--color-white, #fff);
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-text-light);
+    transition: all 0.2s;
+  }
+
+  .view-btn:first-child { border-radius: 6px 0 0 6px; }
+  .view-btn:last-child { border-radius: 0 6px 6px 0; border-left: none; }
+
+  .view-btn.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+
+  .map-container {
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .trail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .trail-card {
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trail-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .trail-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .trail-card-body {
+    padding: 1rem 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trail-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .difficulty-badge {
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .difficulty-easy { background: #dcfce7; color: #166534; }
+  .difficulty-moderate { background: #fef3c7; color: #92400e; }
+  .difficulty-challenging { background: #fee2e2; color: #991b1b; }
+
+  .type-badge {
+    font-size: 0.72rem;
+    color: var(--color-text-light);
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+
+  .trail-card-body h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .trail-desc {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .trail-stats {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    flex-wrap: wrap;
+  }
+
+  .trail-card-footer {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .trail-season {
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+  }
+
+  @media (max-width: 1024px) {
+    .trail-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .filter-bar { flex-direction: column; align-items: stretch; }
+    .result-count { margin-left: 0; }
+    .trail-grid { grid-template-columns: 1fr; }
+    .search-group { min-width: auto; }
+  }
+</style>

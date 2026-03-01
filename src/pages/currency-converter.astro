@@ -1,0 +1,433 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Currency Converter for Banff" description="Convert currencies for your Banff trip. Live exchange rates for CAD, USD, EUR, GBP, AUD, and JPY with typical local costs.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Currency Converter' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1600&q=80" alt="Canadian currency and travel planning" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Travel Tool</span>
+      <h1>Currency Converter</h1>
+      <p>Live exchange rates and typical costs to help you budget for your Banff adventure.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="converter-card" id="converter">
+        <div class="converter-row">
+          <div class="converter-input-group">
+            <label for="amount-input">Amount</label>
+            <input type="number" id="amount-input" value="100" min="0" step="any" />
+          </div>
+          <div class="converter-input-group">
+            <label for="from-currency">From</label>
+            <select id="from-currency">
+              <option value="CAD">🇨🇦 CAD</option>
+              <option value="USD">🇺🇸 USD</option>
+              <option value="EUR">🇪🇺 EUR</option>
+              <option value="GBP">🇬🇧 GBP</option>
+              <option value="AUD">🇦🇺 AUD</option>
+              <option value="JPY">🇯🇵 JPY</option>
+            </select>
+          </div>
+          <button class="swap-btn" id="swap-btn" title="Swap currencies">⇄</button>
+          <div class="converter-input-group">
+            <label for="to-currency">To</label>
+            <select id="to-currency">
+              <option value="USD">🇺🇸 USD</option>
+              <option value="CAD" selected>🇨🇦 CAD</option>
+              <option value="EUR">🇪🇺 EUR</option>
+              <option value="GBP">🇬🇧 GBP</option>
+              <option value="AUD">🇦🇺 AUD</option>
+              <option value="JPY">🇯🇵 JPY</option>
+            </select>
+          </div>
+        </div>
+        <div class="result-display" id="result-display">
+          <span class="result-loading" id="result-loading">Loading rates...</span>
+          <div class="result-value" id="result-value" style="display:none;">
+            <span class="result-amount" id="result-amount"></span>
+            <span class="result-rate" id="result-rate"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Quick Reference</span>
+        <h2>Common Conversions from CAD</h2>
+        <p>Approximate values based on current exchange rates.</p>
+      </div>
+      <div class="table-wrapper">
+        <table class="reference-table" id="reference-table">
+          <thead>
+            <tr>
+              <th>CAD</th>
+              <th>🇺🇸 USD</th>
+              <th>🇪🇺 EUR</th>
+              <th>🇬🇧 GBP</th>
+            </tr>
+          </thead>
+          <tbody id="reference-body">
+            <tr><td colspan="4" style="text-align:center;color:var(--color-text-light);">Loading rates...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Budget Guide</span>
+        <h2>Typical Costs in Banff</h2>
+        <p>What things cost in Banff National Park — prices in Canadian dollars (CAD).</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="cost-card">
+          <span class="cost-icon">🏔️</span>
+          <h3>Park Pass</h3>
+          <p class="cost-price">$10.50 / day</p>
+          <p class="cost-note">Per adult. Family/group passes and annual passes also available from Parks Canada.</p>
+        </div>
+        <div class="cost-card">
+          <span class="cost-icon">☕</span>
+          <h3>Coffee</h3>
+          <p class="cost-price">$5 – $7</p>
+          <p class="cost-note">Latte or specialty coffee from local cafés like Wild Flour or Whitebark.</p>
+        </div>
+        <div class="cost-card">
+          <span class="cost-icon">🍺</span>
+          <h3>Beer</h3>
+          <p class="cost-price">$8 – $10</p>
+          <p class="cost-note">Pint of craft beer at a pub or brewery. Happy hour specials sometimes available.</p>
+        </div>
+        <div class="cost-card">
+          <span class="cost-icon">🍽️</span>
+          <h3>Dinner for Two</h3>
+          <p class="cost-price">$80 – $150</p>
+          <p class="cost-note">Mid-range restaurant with drinks. Fine dining can be $200+.</p>
+        </div>
+        <div class="cost-card">
+          <span class="cost-icon">🏨</span>
+          <h3>Hotel Room</h3>
+          <p class="cost-price">$150 – $500 / night</p>
+          <p class="cost-note">Budget to mid-range. Luxury resorts like Fairmont start at $500+.</p>
+        </div>
+        <div class="cost-card">
+          <span class="cost-icon">⛷️</span>
+          <h3>Ski Pass</h3>
+          <p class="cost-price">$130 – $180 / day</p>
+          <p class="cost-note">Single day adult lift ticket. Multi-day and Tri-Area passes offer savings.</p>
+        </div>
+        <div class="cost-card">
+          <span class="cost-icon">🚡</span>
+          <h3>Gondola Ride</h3>
+          <p class="cost-price">$70 – $80</p>
+          <p class="cost-note">Banff Gondola adult ticket. Discounts for booking online in advance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container" style="text-align: center; max-width: 600px;">
+      <p class="disclaimer">⚠️ Rates are approximate and updated daily from <a href="https://www.exchangerate-api.com/" target="_blank" rel="noopener">ExchangeRate-API</a>. Check with your bank for exact exchange rates. Foreign transaction fees may apply.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const CACHE_KEY = 'banffbound_exchange_rates';
+  const CACHE_DURATION = 3600000; // 1 hour
+  const API_URL = 'https://api.exchangerate-api.com/v4/latest/CAD';
+
+  const currencies = ['CAD', 'USD', 'EUR', 'GBP', 'AUD', 'JPY'];
+  const symbols = { CAD: 'C$', USD: '$', EUR: '€', GBP: '£', AUD: 'A$', JPY: '¥' };
+
+  let rates = null;
+
+  async function fetchRates() {
+    try {
+      const cached = sessionStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const data = JSON.parse(cached);
+        if (Date.now() - data.timestamp < CACHE_DURATION) {
+          return data.rates;
+        }
+      }
+    } catch {}
+
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error('Failed to fetch rates');
+    const data = await res.json();
+
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify({
+      rates: data.rates,
+      timestamp: Date.now(),
+    }));
+
+    return data.rates;
+  }
+
+  function convert(amount, from, to) {
+    if (!rates) return 0;
+    if (from === to) return amount;
+    // rates are based on CAD
+    const inCAD = from === 'CAD' ? amount : amount / rates[from];
+    return to === 'CAD' ? inCAD : inCAD * rates[to];
+  }
+
+  function formatCurrency(amount, currency) {
+    const decimals = currency === 'JPY' ? 0 : 2;
+    return `${symbols[currency]}${amount.toFixed(decimals)}`;
+  }
+
+  function updateConversion() {
+    if (!rates) return;
+    const amount = parseFloat(document.getElementById('amount-input').value) || 0;
+    const from = document.getElementById('from-currency').value;
+    const to = document.getElementById('to-currency').value;
+
+    const result = convert(amount, from, to);
+    document.getElementById('result-amount').textContent = formatCurrency(result, to);
+
+    const rateVal = convert(1, from, to);
+    document.getElementById('result-rate').textContent = `1 ${from} = ${formatCurrency(rateVal, to)} ${to}`;
+  }
+
+  function updateReferenceTable() {
+    if (!rates) return;
+    const amounts = [50, 100, 200, 500, 1000];
+    const body = document.getElementById('reference-body');
+
+    body.innerHTML = amounts.map(amt => {
+      const usd = convert(amt, 'CAD', 'USD');
+      const eur = convert(amt, 'CAD', 'EUR');
+      const gbp = convert(amt, 'CAD', 'GBP');
+      return `<tr>
+        <td><strong>C$${amt}</strong></td>
+        <td>${formatCurrency(usd, 'USD')}</td>
+        <td>${formatCurrency(eur, 'EUR')}</td>
+        <td>${formatCurrency(gbp, 'GBP')}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // Event listeners
+  document.getElementById('amount-input').addEventListener('input', updateConversion);
+  document.getElementById('from-currency').addEventListener('change', updateConversion);
+  document.getElementById('to-currency').addEventListener('change', updateConversion);
+
+  document.getElementById('swap-btn').addEventListener('click', () => {
+    const from = document.getElementById('from-currency');
+    const to = document.getElementById('to-currency');
+    const temp = from.value;
+    from.value = to.value;
+    to.value = temp;
+    updateConversion();
+  });
+
+  // Init
+  fetchRates().then(r => {
+    rates = r;
+    document.getElementById('result-loading').style.display = 'none';
+    document.getElementById('result-value').style.display = '';
+    updateConversion();
+    updateReferenceTable();
+  }).catch(() => {
+    document.getElementById('result-loading').textContent = 'Unable to load exchange rates. Please try again later.';
+  });
+</script>
+
+<style>
+  .converter-card {
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .converter-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .converter-input-group {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .converter-input-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--color-text-light);
+  }
+
+  .converter-input-group input,
+  .converter-input-group select {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--color-white, #fff);
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+
+  .converter-input-group input:focus,
+  .converter-input-group select:focus {
+    border-color: var(--color-primary);
+  }
+
+  .swap-btn {
+    background: var(--color-bg-alt);
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .swap-btn:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+
+  .result-display {
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+  }
+
+  .result-loading {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+  }
+
+  .result-amount {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+  }
+
+  .result-rate {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-top: 0.3rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .reference-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .reference-table th {
+    background: var(--color-primary);
+    color: white;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .reference-table td {
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .reference-table tr:last-child td { border-bottom: none; }
+  .reference-table tr:hover td { background: var(--color-bg-alt); }
+
+  .cost-card {
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: all var(--transition);
+  }
+
+  .cost-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cost-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .cost-card h3 { margin-bottom: 0.25rem; }
+
+  .cost-price {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.3rem;
+  }
+
+  .cost-note {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  .disclaimer {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+
+  .disclaimer a {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .converter-row { flex-direction: column; align-items: stretch; }
+    .swap-btn { align-self: center; }
+    .converter-card { padding: 1.25rem; }
+    .result-amount { font-size: 2rem; }
+  }
+</style>

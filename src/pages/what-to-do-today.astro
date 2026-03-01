@@ -1,0 +1,363 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
+---
+
+<BaseLayout title="What to Do Today in Banff" description="Get personalized activity suggestions based on today's weather in Banff. Real-time recommendations for every season and condition.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'What to Do Today' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Banff National Park scenic view" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Today's Pick</span>
+      <h1>What to Do Today</h1>
+      <p>Personalized activity suggestions based on current weather conditions in Banff.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="weather-display" id="weather-display">
+        <div class="weather-loading" id="weather-loading">
+          <div class="spinner"></div>
+          <p>Checking current weather in Banff...</p>
+        </div>
+        <div class="weather-current" id="weather-current" style="display:none;">
+          <img id="weather-icon" src="" alt="Weather icon" width="80" height="80" />
+          <div class="weather-info">
+            <span class="weather-temp" id="weather-temp"></span>
+            <span class="weather-desc" id="weather-desc"></span>
+            <span class="weather-detail" id="weather-detail"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top: 2rem;">
+        <span class="badge" id="suggestions-badge">Recommended</span>
+        <h2 id="suggestions-title">Activities for You</h2>
+        <p id="suggestions-subtitle">Based on current conditions in Banff</p>
+      </div>
+
+      <div class="suggestions-grid" id="suggestions-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Always Great</span>
+        <h2>No Matter the Weather</h2>
+        <p>These Banff favourites are perfect any time of year.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="yearround-card">
+          <span class="yearround-icon">♨️</span>
+          <h3>Banff Upper Hot Springs</h3>
+          <p>Soak in naturally heated mineral water at 38°C with mountain views. Open year-round, magical in winter with steam rising into cold air.</p>
+          <a href="/wellness" class="card-link">Learn More →</a>
+        </div>
+        <div class="yearround-card">
+          <span class="yearround-icon">🏛️</span>
+          <h3>Cave and Basin</h3>
+          <p>Visit the birthplace of Canada's national park system. Explore the cave, boardwalks, and exhibits telling the story of the hot springs discovery.</p>
+          <a href="/things-to-do" class="card-link">Learn More →</a>
+        </div>
+        <div class="yearround-card">
+          <span class="yearround-icon">🛍️</span>
+          <h3>Banff Avenue Shopping</h3>
+          <p>Browse unique mountain boutiques, outdoor gear shops, art galleries, and souvenir stores along Banff's charming main street.</p>
+          <a href="/shopping" class="card-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ OWM_KEY_SSR }}>
+  const OWM_KEY = OWM_KEY_SSR;
+  const LAT = 51.1784;
+  const LON = -115.5708;
+
+  const activities = {
+    winter: [
+      { emoji: '⛷️', name: 'Skiing & Snowboarding', desc: 'Hit the slopes at Sunshine Village, Lake Louise, or Mt. Norquay. World-class powder and stunning alpine scenery.', link: '/skiing', page: 'Skiing Guide' },
+      { emoji: '⛸️', name: 'Ice Skating', desc: 'Glide across frozen lakes and outdoor rinks. Vermilion Lakes and Lake Louise offer unforgettable natural skating.', link: '/winter', page: 'Winter Activities' },
+      { emoji: '🥾', name: 'Snowshoeing', desc: 'Explore peaceful snowy trails through quiet forests. Rentals available in town — no experience needed.', link: '/winter', page: 'Winter Activities' },
+      { emoji: '♨️', name: 'Hot Springs Soak', desc: 'Warm up in the Banff Upper Hot Springs with mountain panoramas. Extra magical when steam rises into cold mountain air.', link: '/wellness', page: 'Wellness' },
+      { emoji: '🐕', name: 'Dog Sledding', desc: 'Experience the thrill of mushing through snowy wilderness with a team of enthusiastic huskies.', link: '/tours', page: 'Tours' },
+    ],
+    summer: [
+      { emoji: '🥾', name: 'Hiking', desc: 'Hundreds of trails from easy lakeside walks to challenging alpine scrambles. The mountains are calling.', link: '/hiking', page: 'Hiking Guide' },
+      { emoji: '🛶', name: 'Canoeing', desc: 'Paddle across turquoise glacial lakes. Rent a canoe at Lake Louise, Moraine Lake, or the Bow River.', link: '/paddling', page: 'Paddling' },
+      { emoji: '🚴', name: 'Mountain Biking', desc: 'Cruise the Legacy Trail to Canmore or tackle mountain bike trails around Tunnel Mountain.', link: '/biking', page: 'Biking' },
+      { emoji: '🦌', name: 'Wildlife Tours', desc: 'Spot bears, elk, mountain goats, and more on a guided wildlife safari through the park.', link: '/wildlife', page: 'Wildlife' },
+      { emoji: '🚗', name: 'Scenic Drives', desc: 'Drive the Icefields Parkway, Bow Valley Parkway, or Minnewanka Loop for jaw-dropping scenery.', link: '/scenic-drives', page: 'Scenic Drives' },
+    ],
+    shoulder: [
+      { emoji: '🥾', name: 'Moderate Hiking', desc: 'Enjoy cooler temperatures on classic trails with fewer crowds. Perfect conditions for valley walks.', link: '/hiking', page: 'Hiking Guide' },
+      { emoji: '🚡', name: 'Banff Gondola', desc: 'Ride to the summit of Sulphur Mountain for 360° panoramic views and the mountaintop boardwalk.', link: '/things-to-do', page: 'Things to Do' },
+      { emoji: '♨️', name: 'Hot Springs Visit', desc: 'The shoulder season is ideal for a relaxing soak without the peak-season crowds.', link: '/wellness', page: 'Wellness' },
+      { emoji: '📷', name: 'Photography', desc: 'Fall colours, spring waterfalls, and dramatic light make shoulder season a photographer\'s dream.', link: '/things-to-do', page: 'Things to Do' },
+      { emoji: '🦌', name: 'Wildlife Watching', desc: 'Spring brings baby animals and bear activity. Fall features the elk rut — antlers clashing at dusk.', link: '/wildlife', page: 'Wildlife' },
+    ],
+    indoor: [
+      { emoji: '🏛️', name: 'Museums & History', desc: 'Explore the Banff Park Museum, Whyte Museum, and Cave and Basin National Historic Site.', link: '/arts-culture', page: 'Arts & Culture' },
+      { emoji: '💆', name: 'Spa Day', desc: 'Treat yourself to a world-class spa experience at Fairmont Banff Springs or Kananaskis Nordic Spa.', link: '/wellness', page: 'Wellness' },
+      { emoji: '🛍️', name: 'Shopping', desc: 'Browse Banff Avenue\'s unique shops — from outdoor gear to Indigenous art and local souvenirs.', link: '/shopping', page: 'Shopping' },
+      { emoji: '🍺', name: 'Brewery Tour', desc: 'Sample craft beer at Banff Ave Brewing Co. or Three Bears Brewery. Warm up with local flavour.', link: '/eat-and-drink', page: 'Eat & Drink' },
+    ],
+  };
+
+  function getMonthSeason(month) {
+    if (month >= 5 && month <= 8) return 'summer';
+    if (month >= 10 || month <= 2) return 'winter';
+    return 'shoulder';
+  }
+
+  function getSuggestions(temp, weatherMain, month) {
+    const season = getMonthSeason(month);
+    let primary = [];
+    let reason = '';
+
+    const isRainy = ['Rain', 'Drizzle', 'Thunderstorm'].includes(weatherMain);
+    const isSnowy = weatherMain === 'Snow';
+
+    if (isRainy) {
+      primary = [...activities.indoor, ...activities[season].slice(0, 2)];
+      reason = 'the rainy conditions';
+    } else if (isSnowy && season !== 'winter') {
+      primary = [...activities.indoor.slice(0, 2), ...activities.winter.slice(0, 3)];
+      reason = 'the unexpected snowfall';
+    } else if (temp < 0 || season === 'winter') {
+      primary = activities.winter;
+      reason = `the ${temp}°C winter conditions`;
+    } else if (temp > 10 && season === 'summer') {
+      primary = activities.summer;
+      reason = `the beautiful ${temp}°C weather`;
+    } else {
+      primary = activities.shoulder;
+      reason = `the mild ${temp}°C conditions`;
+    }
+
+    return { suggestions: primary, reason };
+  }
+
+  function renderSuggestions(suggestions, reason) {
+    const grid = document.getElementById('suggestions-grid');
+    const title = document.getElementById('suggestions-title');
+    const subtitle = document.getElementById('suggestions-subtitle');
+
+    title.textContent = 'Recommended for Today';
+    subtitle.textContent = `Curated suggestions based on ${reason}`;
+
+    grid.innerHTML = suggestions.map(s => `
+      <div class="suggestion-card">
+        <span class="suggestion-emoji">${s.emoji}</span>
+        <h3>${s.name}</h3>
+        <p>${s.desc}</p>
+        <p class="suggestion-reason">Perfect because of ${reason}.</p>
+        <a href="${s.link}" class="card-link">Explore ${s.page} →</a>
+      </div>
+    `).join('');
+  }
+
+  async function loadWeather() {
+    const loading = document.getElementById('weather-loading');
+    const current = document.getElementById('weather-current');
+    const month = new Date().getMonth();
+
+    try {
+      if (!OWM_KEY) throw new Error('No API key');
+      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&units=metric&appid=${OWM_KEY}`);
+      if (!res.ok) throw new Error('API error');
+      const data = await res.json();
+
+      const temp = Math.round(data.main.temp);
+      const desc = data.weather[0].description;
+      const icon = data.weather[0].icon;
+      const weatherMain = data.weather[0].main;
+      const feelsLike = Math.round(data.main.feels_like);
+      const humidity = data.main.humidity;
+
+      document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+      document.getElementById('weather-icon').alt = desc;
+      document.getElementById('weather-temp').textContent = `${temp}°C`;
+      document.getElementById('weather-desc').textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
+      document.getElementById('weather-detail').textContent = `Feels like ${feelsLike}°C · Humidity ${humidity}%`;
+
+      loading.style.display = 'none';
+      current.style.display = 'flex';
+
+      const { suggestions, reason } = getSuggestions(temp, weatherMain, month);
+      renderSuggestions(suggestions, reason);
+    } catch {
+      loading.style.display = 'none';
+      current.innerHTML = '<p class="weather-fallback">Weather data unavailable — showing seasonal suggestions.</p>';
+      current.style.display = 'flex';
+
+      const season = getMonthSeason(month);
+      const fallback = activities[season];
+      renderSuggestions(fallback, `the current ${['winter','winter','winter','spring','spring','summer','summer','summer','fall','fall','winter','winter'][month]} season`);
+    }
+  }
+
+  loadWeather();
+</script>
+
+<style>
+  .weather-display {
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+
+  .weather-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(0,0,0,0.1);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .weather-current {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .weather-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .weather-temp {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .weather-desc {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-top: 0.25rem;
+  }
+
+  .weather-detail {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-top: 0.15rem;
+  }
+
+  .weather-fallback {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  .suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .suggestion-card {
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+  }
+
+  .suggestion-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .suggestion-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .suggestion-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .suggestion-card p {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  .suggestion-reason {
+    font-style: italic;
+    font-size: 0.82rem !important;
+    color: var(--color-accent) !important;
+    margin-top: 0.5rem;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+
+  .card-link:hover { color: var(--color-primary); }
+
+  .yearround-card {
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+  }
+
+  .yearround-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .yearround-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .yearround-card h3 { margin-bottom: 0.4rem; }
+
+  .yearround-card p {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .suggestions-grid { grid-template-columns: 1fr; }
+    .weather-current { flex-direction: column; text-align: center; }
+    .weather-info { text-align: center; }
+  }
+</style>

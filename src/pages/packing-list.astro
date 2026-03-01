@@ -1,0 +1,618 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const AFFILIATE_TAG = 'banffbound-20';
+---
+
+<BaseLayout title="Banff Packing List Generator" description="Generate a personalized packing checklist for your Banff trip. Seasonal recommendations, activity-specific gear, and Amazon links for essential items.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Packing List' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1600&q=80" alt="Packing for a mountain adventure" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Plan Smart</span>
+      <h1>Packing List Generator</h1>
+      <p>Get a personalized checklist based on your travel month and planned activities. Never forget essential gear again.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="generator-card" id="generator">
+        <div class="step">
+          <h3>Step 1: When are you visiting?</h3>
+          <select id="month-select">
+            <option value="">Select month...</option>
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+          </select>
+        </div>
+        <div class="step">
+          <h3>Step 2: What activities are you planning?</h3>
+          <div class="activity-grid">
+            <label class="activity-check"><input type="checkbox" value="hiking" /> 🥾 Hiking</label>
+            <label class="activity-check"><input type="checkbox" value="skiing" /> ⛷️ Skiing / Snowboarding</label>
+            <label class="activity-check"><input type="checkbox" value="skating" /> ⛸️ Ice Skating</label>
+            <label class="activity-check"><input type="checkbox" value="snowshoeing" /> 🥾 Snowshoeing</label>
+            <label class="activity-check"><input type="checkbox" value="paddling" /> 🛶 Canoeing / Kayaking</label>
+            <label class="activity-check"><input type="checkbox" value="camping" /> ⛺ Camping</label>
+            <label class="activity-check"><input type="checkbox" value="photography" /> 📷 Photography</label>
+            <label class="activity-check"><input type="checkbox" value="dining" /> 🍽️ Dining Out</label>
+            <label class="activity-check"><input type="checkbox" value="hotsprings" /> ♨️ Hot Springs</label>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="generate-btn">Generate My Packing List</button>
+      </div>
+
+      <div id="packing-result" style="display:none;">
+        <div class="result-header">
+          <div>
+            <h2 id="list-title">Your Packing List</h2>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <span class="progress-text" id="progress-text">0 of 0 items packed</span>
+          </div>
+          <div class="result-actions">
+            <button class="btn btn-outline" id="print-btn">🖨️ Print</button>
+            <button class="btn btn-outline" id="reset-btn">🔄 Reset</button>
+          </div>
+        </div>
+        <div class="categories-grid" id="categories-grid"></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ AFFILIATE_TAG }}>
+  const STORAGE_KEY = 'banffbound_packing_list';
+  const TAG = AFFILIATE_TAG;
+
+  const amazonLink = (term) => `https://www.amazon.ca/s?k=${encodeURIComponent(term)}&tag=${TAG}`;
+
+  const baseItems = {
+    Clothing: [
+      { name: 'T-shirts / tops', seasons: 'all' },
+      { name: 'Underwear & socks', seasons: 'all' },
+      { name: 'Comfortable pants / jeans', seasons: 'all' },
+      { name: 'Light jacket or fleece', seasons: 'all' },
+      { name: 'Rain jacket', seasons: 'all', amazon: 'waterproof rain jacket' },
+    ],
+    Footwear: [
+      { name: 'Comfortable walking shoes', seasons: 'all' },
+    ],
+    Gear: [
+      { name: 'Daypack / backpack', seasons: 'all', amazon: 'hiking daypack' },
+      { name: 'Reusable water bottle', seasons: 'all' },
+    ],
+    Accessories: [
+      { name: 'Sunglasses', seasons: 'all', amazon: 'polarized sunglasses' },
+      { name: 'Hat / cap', seasons: 'all' },
+    ],
+    Tech: [
+      { name: 'Phone & charger', seasons: 'all' },
+      { name: 'Portable battery pack', seasons: 'all' },
+      { name: 'Camera', seasons: 'all' },
+    ],
+    Toiletries: [
+      { name: 'Toothbrush & toothpaste', seasons: 'all' },
+      { name: 'Deodorant', seasons: 'all' },
+      { name: 'Medications / prescriptions', seasons: 'all' },
+      { name: 'First aid kit basics', seasons: 'all' },
+      { name: 'Lip balm with SPF', seasons: 'all' },
+    ],
+    Documents: [
+      { name: 'ID / Passport', seasons: 'all' },
+      { name: 'Travel insurance details', seasons: 'all' },
+      { name: 'Hotel confirmation', seasons: 'all' },
+      { name: 'Parks Canada pass', seasons: 'all' },
+      { name: 'Credit cards & cash (CAD)', seasons: 'all' },
+    ],
+  };
+
+  const winterItems = {
+    Clothing: [
+      { name: 'Thermal base layers (top & bottom)', amazon: 'merino wool base layer' },
+      { name: 'Insulated down jacket', amazon: 'down jacket winter' },
+      { name: 'Insulated waterproof pants', amazon: 'insulated snow pants' },
+      { name: 'Fleece mid-layer' },
+      { name: 'Wool sweater' },
+    ],
+    Footwear: [
+      { name: 'Insulated waterproof winter boots', amazon: 'insulated winter boots' },
+      { name: 'Boot ice grippers / cleats', amazon: 'ice cleats boots' },
+    ],
+    Accessories: [
+      { name: 'Warm toque / beanie', amazon: 'merino wool beanie' },
+      { name: 'Insulated gloves', amazon: 'insulated winter gloves' },
+      { name: 'Neck gaiter / balaclava' },
+      { name: 'Hand warmers (pack of 10)', amazon: 'hand warmers' },
+      { name: 'Thick wool socks', amazon: 'merino wool socks' },
+    ],
+    Gear: [
+      { name: 'Thermos for hot drinks' },
+    ],
+  };
+
+  const summerItems = {
+    Clothing: [
+      { name: 'Hiking shorts' },
+      { name: 'Moisture-wicking shirts' },
+      { name: 'Swimsuit' },
+      { name: 'Light long-sleeve sun shirt' },
+    ],
+    Footwear: [
+      { name: 'Hiking boots', amazon: 'hiking boots waterproof' },
+      { name: 'Sandals / flip-flops' },
+    ],
+    Accessories: [
+      { name: 'Wide-brim sun hat' },
+    ],
+    Toiletries: [
+      { name: 'Sunscreen SPF 50+', amazon: 'sunscreen SPF 50 sport' },
+      { name: 'Bug spray / insect repellent', amazon: 'insect repellent spray' },
+      { name: 'After-sun lotion' },
+    ],
+    Gear: [
+      { name: 'Bear spray', amazon: 'bear spray Canada' },
+    ],
+  };
+
+  const shoulderItems = {
+    Clothing: [
+      { name: 'Warm fleece or down vest', amazon: 'down vest' },
+      { name: 'Long pants & warm layers' },
+      { name: 'Light thermal base layer', amazon: 'lightweight base layer' },
+    ],
+    Footwear: [
+      { name: 'Waterproof hiking boots', amazon: 'waterproof hiking boots' },
+    ],
+    Accessories: [
+      { name: 'Warm gloves (light)', amazon: 'lightweight hiking gloves' },
+      { name: 'Toque / beanie' },
+    ],
+    Toiletries: [
+      { name: 'Sunscreen SPF 30+', amazon: 'sunscreen SPF 30' },
+    ],
+  };
+
+  const activityItems = {
+    hiking: {
+      Gear: [
+        { name: 'Trekking poles', amazon: 'trekking poles hiking' },
+        { name: 'Trail map or AllTrails app' },
+        { name: 'Bear bell', amazon: 'bear bell hiking' },
+        { name: 'Emergency whistle' },
+        { name: 'Bear spray', amazon: 'bear spray Canada' },
+      ],
+    },
+    skiing: {
+      Gear: [
+        { name: 'Ski goggles', amazon: 'ski goggles' },
+        { name: 'Ski pass holder / lanyard' },
+        { name: 'Helmet (or rent on-mountain)' },
+      ],
+      Accessories: [
+        { name: 'Ski socks (thin wool)', amazon: 'ski socks merino' },
+        { name: 'Neck warmer / face mask' },
+      ],
+    },
+    skating: {
+      Gear: [
+        { name: 'Ice skates (or rent locally)' },
+      ],
+      Accessories: [
+        { name: 'Wrist guards (optional)' },
+      ],
+    },
+    snowshoeing: {
+      Gear: [
+        { name: 'Snowshoes (or rent locally)' },
+        { name: 'Gaiters', amazon: 'waterproof gaiters' },
+      ],
+    },
+    paddling: {
+      Clothing: [
+        { name: 'Quick-dry clothing' },
+        { name: 'Water shoes', amazon: 'water shoes' },
+      ],
+      Gear: [
+        { name: 'Dry bag for electronics', amazon: 'waterproof dry bag' },
+      ],
+    },
+    camping: {
+      Gear: [
+        { name: 'Tent', amazon: 'backpacking tent' },
+        { name: 'Sleeping bag (rated for temp)', amazon: 'sleeping bag cold weather' },
+        { name: 'Sleeping pad', amazon: 'camping sleeping pad' },
+        { name: 'Camp stove & fuel' },
+        { name: 'Headlamp', amazon: 'headlamp camping' },
+        { name: 'Bear canister / hang rope' },
+      ],
+    },
+    photography: {
+      Tech: [
+        { name: 'Tripod', amazon: 'travel tripod camera' },
+        { name: 'Lens cleaning kit', amazon: 'lens cleaning kit camera' },
+        { name: 'Extra memory cards' },
+        { name: 'Extra batteries' },
+        { name: 'Polarizing filter', amazon: 'camera polarizing filter' },
+      ],
+    },
+    dining: {
+      Clothing: [
+        { name: 'Smart casual outfit for nice restaurants' },
+      ],
+    },
+    hotsprings: {
+      Clothing: [
+        { name: 'Swimsuit' },
+      ],
+      Accessories: [
+        { name: 'Quick-dry towel', amazon: 'microfiber travel towel' },
+        { name: 'Flip-flops / sandals' },
+      ],
+    },
+  };
+
+  function getSeason(month) {
+    if ([10, 11, 0, 1, 2].includes(month)) return 'winter';
+    if ([5, 6, 7].includes(month)) return 'summer';
+    return 'shoulder';
+  }
+
+  function generateList(month, activities) {
+    const season = getSeason(month);
+    const list = {};
+
+    // Add base items
+    for (const [cat, items] of Object.entries(baseItems)) {
+      list[cat] = [...items.map(i => ({ ...i }))];
+    }
+
+    // Add seasonal items
+    const seasonalItems = season === 'winter' ? winterItems : season === 'summer' ? summerItems : shoulderItems;
+    for (const [cat, items] of Object.entries(seasonalItems)) {
+      if (!list[cat]) list[cat] = [];
+      items.forEach(item => {
+        if (!list[cat].some(i => i.name === item.name)) {
+          list[cat].push({ ...item });
+        }
+      });
+    }
+
+    // Add activity items
+    activities.forEach(act => {
+      const actItems = activityItems[act];
+      if (!actItems) return;
+      for (const [cat, items] of Object.entries(actItems)) {
+        if (!list[cat]) list[cat] = [];
+        items.forEach(item => {
+          if (!list[cat].some(i => i.name === item.name)) {
+            list[cat].push({ ...item });
+          }
+        });
+      }
+    });
+
+    return list;
+  }
+
+  function loadCheckedState() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    } catch { return {}; }
+  }
+
+  function saveCheckedState(state) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function updateProgress() {
+    const checks = document.querySelectorAll('#categories-grid input[type="checkbox"]');
+    const total = checks.length;
+    const packed = Array.from(checks).filter(c => c.checked).length;
+    const pct = total ? Math.round((packed / total) * 100) : 0;
+
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('progress-text').textContent = `${packed} of ${total} items packed`;
+  }
+
+  function renderList(list) {
+    const grid = document.getElementById('categories-grid');
+    const checkedState = loadCheckedState();
+    const categoryIcons = {
+      Clothing: '👕',
+      Footwear: '👟',
+      Gear: '🎒',
+      Accessories: '🧢',
+      Tech: '📱',
+      Toiletries: '🧴',
+      Documents: '📄',
+    };
+
+    const categoryOrder = ['Clothing', 'Footwear', 'Gear', 'Accessories', 'Tech', 'Toiletries', 'Documents'];
+
+    grid.innerHTML = categoryOrder
+      .filter(cat => list[cat] && list[cat].length)
+      .map(cat => {
+        const items = list[cat];
+        const icon = categoryIcons[cat] || '📦';
+        return `
+          <div class="category-card">
+            <h3>${icon} ${cat}</h3>
+            <ul class="item-list">
+              ${items.map((item, i) => {
+                const key = `${cat}-${i}`;
+                const checked = checkedState[key] ? 'checked' : '';
+                const shopBtn = item.amazon
+                  ? `<a href="${amazonLink(item.amazon)}" target="_blank" rel="noopener" class="shop-link">Shop</a>`
+                  : '';
+                return `<li>
+                  <label class="pack-item">
+                    <input type="checkbox" data-key="${key}" ${checked} />
+                    <span class="item-name ${checked ? 'packed' : ''}">${item.name}</span>
+                    ${shopBtn}
+                  </label>
+                </li>`;
+              }).join('')}
+            </ul>
+          </div>
+        `;
+      }).join('');
+
+    // Attach check handlers
+    grid.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const state = loadCheckedState();
+        state[cb.dataset.key] = cb.checked;
+        saveCheckedState(state);
+        cb.nextElementSibling.classList.toggle('packed', cb.checked);
+        updateProgress();
+      });
+    });
+
+    updateProgress();
+  }
+
+  // Generate button
+  document.getElementById('generate-btn').addEventListener('click', () => {
+    const monthVal = document.getElementById('month-select').value;
+    if (monthVal === '') { alert('Please select a travel month.'); return; }
+
+    const month = Number(monthVal);
+    const activities = Array.from(document.querySelectorAll('.activity-grid input:checked')).map(c => c.value);
+    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+    const list = generateList(month, activities);
+    document.getElementById('list-title').textContent = `Your ${monthNames[month]} Packing List`;
+    document.getElementById('packing-result').style.display = '';
+    renderList(list);
+
+    document.getElementById('packing-result').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Print
+  document.getElementById('print-btn').addEventListener('click', () => { window.print(); });
+
+  // Reset
+  document.getElementById('reset-btn').addEventListener('click', () => {
+    localStorage.removeItem(STORAGE_KEY);
+    document.querySelectorAll('#categories-grid input[type="checkbox"]').forEach(cb => {
+      cb.checked = false;
+      cb.nextElementSibling.classList.remove('packed');
+    });
+    updateProgress();
+  });
+</script>
+
+<style>
+  .generator-card {
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .step {
+    margin-bottom: 1.5rem;
+  }
+
+  .step h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .step select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background: var(--color-white, #fff);
+  }
+
+  .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .activity-check {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+
+  .activity-check:hover { background: var(--color-bg-alt); }
+
+  .btn {
+    padding: 0.65rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+    width: 100%;
+  }
+
+  .btn-primary:hover { opacity: 0.9; }
+
+  .btn-outline {
+    background: none;
+    border: 1px solid rgba(0,0,0,0.15);
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-outline:hover { background: var(--color-bg-alt); }
+
+  .result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 2rem 0 1.5rem;
+    gap: 1rem;
+  }
+
+  .result-header h2 { margin-bottom: 0.5rem; }
+
+  .result-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .progress-bar-wrap {
+    width: 250px;
+    height: 8px;
+    background: var(--color-bg-alt);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+  }
+
+  .progress-text {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+  }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .category-card {
+    background: var(--color-white, #fff);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+
+  .category-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .item-list li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+  }
+
+  .item-list li:last-child { border-bottom: none; }
+
+  .pack-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+
+  .item-name {
+    flex: 1;
+    transition: all 0.2s;
+  }
+
+  .item-name.packed {
+    text-decoration: line-through;
+    color: var(--color-text-light);
+    opacity: 0.6;
+  }
+
+  .shop-link {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+
+  .shop-link:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  @media print {
+    .generator-card, .result-actions, .shop-link, nav, header, footer { display: none !important; }
+    .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .generator-card { padding: 1.25rem; }
+    .result-header { flex-direction: column; }
+    .progress-bar-wrap { width: 100%; }
+    .categories-grid { grid-template-columns: 1fr; }
+    .activity-grid { grid-template-columns: 1fr; }
+  }
+</style>
