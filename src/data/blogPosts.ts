@@ -24,7 +24,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Complete guide on how to get to Banff from Calgary, Vancouver, Edmonton, and beyond. Flights, drives, shuttles, and bus options.',
     date: '2026-02-10',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -105,7 +105,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The best areas and hotels in Banff for luxury, mid-range, and budget travellers. Downtown, Tunnel Mountain, Lake Louise, and more.',
     date: '2026-01-10',
     category: 'Accommodation',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '10 min read',
   },
   {
@@ -132,7 +132,7 @@ export const blogPosts: BlogPost[] = [
     description: 'A complete guide to wildlife viewing in Banff National Park. Where to see bears, elk, bighorn sheep, and how to stay safe.',
     date: '2026-01-02',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=1200&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/30543649c0240f70/1500x915_jpg-2024_Wildlife_Wolverine_WillLambert.jpg',
     readTime: '8 min read',
   },
   {
@@ -141,7 +141,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Do you need a Parks Canada pass for Banff? How much does it cost? Where to buy? All your Banff National Park pass questions answered.',
     date: '2025-12-28',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1548587439-b1b3ed498e3b?w=1200&q=80',
     readTime: '6 min read',
   },
   {
@@ -204,7 +204,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Everything you need to know about driving the Bow Valley Parkway. Best stops, wildlife viewing, Johnston Canyon, and seasonal tips.',
     date: '2026-02-14',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=1200&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/30543649c0240f70/1500x915_jpg-2024_Wildlife_Wolverine_WillLambert.jpg',
     readTime: '10 min read',
   },
   {
@@ -231,7 +231,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Accessibility guide for Banff National Park. Wheelchair-accessible trails, facilities, accommodations, and resources for visitors with disabilities.',
     date: '2026-02-08',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -294,7 +294,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Everything you need to know about visiting Banff Upper Hot Springs. Hours, prices, what to bring, and tips for the perfect mountain soak.',
     date: '2026-02-06',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '6 min read',
   },
   {
@@ -321,7 +321,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Bring your dog to Banff! Dog-friendly trails, hotels, restaurants, and rules for visiting Banff National Park with your pet.',
     date: '2026-02-09',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=1200&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/30543649c0240f70/1500x915_jpg-2024_Wildlife_Wolverine_WillLambert.jpg',
     readTime: '8 min read',
   },
   {
@@ -348,7 +348,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Explore the Cave and Basin National Historic Site in Banff. History, exhibits, the Discovery Walk, and why this is where it all began.',
     date: '2026-02-12',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1548587439-b1b3ed498e3b?w=1200&q=80',
     readTime: '6 min read',
   },
   {
@@ -384,7 +384,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Stay safe in bear country. How to use bear spray, what to do during an encounter, and essential bear safety tips for hiking in Banff.',
     date: '2026-02-16',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=1200&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/30543649c0240f70/1500x915_jpg-2024_Wildlife_Wolverine_WillLambert.jpg',
     readTime: '7 min read',
   },
   {
@@ -429,7 +429,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Everything you need to know about visiting Banff alone. Safety tips, social activities, solo-friendly hikes, and how to make the most of a solo trip.',
     date: '2026-01-27',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=1200&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/1e85056f0193bfe9/1500x915_jpg-2022_LakeLouise_Friends_ROAMCreative.jpg',
     readTime: '8 min read',
   },
   {
@@ -465,7 +465,7 @@ export const blogPosts: BlogPost[] = [
     description: 'How to plan a group trip to Banff. Accommodation tips, group activities, transportation logistics, and budget strategies for large parties.',
     date: '2026-01-23',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -726,7 +726,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Explore Banff on horseback. Best trail rides, outfitters, what to expect, pricing, and tips for an unforgettable Rocky Mountain ride.',
     date: '2026-02-13',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=1200&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/30543649c0240f70/1500x915_jpg-2024_Wildlife_Wolverine_WillLambert.jpg',
     readTime: '7 min read',
   },
   {
@@ -798,7 +798,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Fly fishing guide for Banff National Park. Best rivers and lakes, regulations, permits, guided trips, and seasonal hatches for anglers.',
     date: '2026-02-05',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1475855581690-80accde3ae2b?w=1200&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/30543649c0240f70/1500x915_jpg-2024_Wildlife_Wolverine_WillLambert.jpg',
     readTime: '7 min read',
   },
   {
@@ -870,7 +870,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Plan a day trip to Canmore from Banff. Best hikes, restaurants, shops, and attractions in this charming mountain town just outside the park.',
     date: '2026-01-28',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -951,7 +951,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The ultimate 5-day Banff itinerary. Day-by-day plans for hiking, sightseeing, dining, and making the most of a long weekend in the Rockies.',
     date: '2025-11-30',
     category: 'Itineraries',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '10 min read',
   },
   {
@@ -960,7 +960,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Plan 4 perfect winter days in Banff. Skiing, ice walks, frozen lakes, hot springs, and cozy dining in the snowy Canadian Rockies.',
     date: '2025-11-29',
     category: 'Itineraries',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -969,7 +969,7 @@ export const blogPosts: BlogPost[] = [
     description: 'A 4-day summer itinerary for Banff. The best hikes, turquoise lakes, scenic drives, and warm-weather adventures day by day.',
     date: '2025-11-28',
     category: 'Itineraries',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -978,7 +978,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Experience Banff in fall with this 3-day larch season itinerary. Golden larches, wildlife, quiet trails, and autumn colours in the Rockies.',
     date: '2025-11-27',
     category: 'Itineraries',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -987,7 +987,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Plan a wellness weekend in Banff. Hot springs, luxury spas, yoga studios, and mountain relaxation for a rejuvenating Rocky Mountain escape.',
     date: '2025-11-26',
     category: 'Itineraries',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -996,7 +996,7 @@ export const blogPosts: BlogPost[] = [
     description: 'An adrenaline-packed weekend in Banff. White-water rafting, via ferrata climbing, caving, and the best adventure activities in the park.',
     date: '2025-11-25',
     category: 'Itineraries',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1005,7 +1005,7 @@ export const blogPosts: BlogPost[] = [
     description: 'A 3-day Banff photography itinerary. The best sunrise spots, golden hour locations, and iconic compositions for landscape photographers.',
     date: '2025-11-24',
     category: 'Itineraries',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1014,7 +1014,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Everything to do in Lake Louise. Hiking, canoeing, skiing, dining, and scenic drives at one of Canada\'s most iconic mountain destinations.',
     date: '2025-11-23',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '10 min read',
   },
   {
@@ -1023,7 +1023,7 @@ export const blogPosts: BlogPost[] = [
     description: '30 amazing winter activities in Banff. Skiing, snowshoeing, ice climbing, frozen waterfalls, hot springs, and indoor fun when it\'s cold.',
     date: '2025-11-22',
     category: 'Seasonal',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '10 min read',
   },
   {
@@ -1032,7 +1032,7 @@ export const blogPosts: BlogPost[] = [
     description: '30 summer activities in Banff National Park. Hiking, swimming, paddling, wildlife watching, scenic drives, and warm-weather adventures.',
     date: '2025-11-21',
     category: 'Seasonal',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '10 min read',
   },
   {
@@ -1041,7 +1041,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Experience luxury in Banff. Five-star hotels, fine dining, private tours, helicopter rides, and the most exclusive Rocky Mountain experiences.',
     date: '2025-11-20',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -1050,7 +1050,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Discover 15 hidden gems in Banff that most tourists miss. Secret trails, quiet viewpoints, local spots, and off-the-beaten-path adventures.',
     date: '2025-11-19',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -1059,7 +1059,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Essential tips for first-time Banff visitors. Park passes, parking, wildlife safety, weather, packing, and 20 things you need to know before you go.',
     date: '2025-11-18',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '10 min read',
   },
   {
@@ -1068,7 +1068,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Avoid these 15 common Banff mistakes. From parking blunders to wildlife encounters, learn what not to do on your Rocky Mountain trip.',
     date: '2025-11-17',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1077,7 +1077,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Banff vs Jasper — an honest comparison. Which park is better for hiking, wildlife, scenery, crowds, and budget? We help you decide.',
     date: '2025-11-16',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -1086,7 +1086,7 @@ export const blogPosts: BlogPost[] = [
     description: 'How to get from Toronto to Banff. Flights, driving routes, bus options, travel times, costs, and tips for planning your cross-Canada trip.',
     date: '2025-11-15',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1095,7 +1095,7 @@ export const blogPosts: BlogPost[] = [
     description: 'How to get from Edmonton to Banff. Driving directions, scenic stops, bus options, travel times, and tips for the 4-hour journey to the Rockies.',
     date: '2025-11-14',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1113,7 +1113,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Everything you need to know about hiking Ha Ling Peak near Canmore. Trail conditions, difficulty, timing, parking, and summit views of the Bow Valley.',
     date: '2026-01-01',
     category: 'Hiking',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1140,7 +1140,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Hike to Boom Lake in Banff National Park. A quiet backcountry lake trail with stunning glacier views, moderate difficulty, and far fewer crowds.',
     date: '2025-12-29',
     category: 'Hiking',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1167,7 +1167,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Complete guide to biking the Legacy Trail between Banff and Canmore. Distance, bike rentals, trailheads, difficulty, and tips for this scenic paved path.',
     date: '2025-12-26',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1203,7 +1203,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The best waterfalls in Banff National Park. Trail info, difficulty, best season to visit, and tips for photographing these spectacular cascades.',
     date: '2025-12-22',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -1275,7 +1275,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Mountain biking guide for Banff and the Bow Valley. Best trails, difficulty ratings, bike rentals, shuttle services, and tips for riding in the Canadian Rockies.',
     date: '2025-12-14',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1302,7 +1302,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Plan a day trip to Kananaskis Country from Banff. Best hikes, lakes, attractions, the Kananaskis Conservation Pass, and why K-Country is worth the drive.',
     date: '2025-12-11',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -1311,7 +1311,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Day trip guide to Golden, BC from Banff. Kicking Horse Mountain Resort, Columbia Wetlands, white water rafting, and the best stops along the Trans-Canada Highway.',
     date: '2025-12-10',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1320,7 +1320,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Complete guide to driving from Banff to Vancouver. Best route, must-stop towns, scenic highlights, gas stations, food stops, and tips for this epic 850km road trip.',
     date: '2025-12-09',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -1563,7 +1563,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The best picnic spots in Banff National Park — from lakeside meadows to mountain viewpoints. Includes tips on what to pack and where to find picnic tables.',
     date: '2025-10-18',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1581,7 +1581,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Planning a proposal in Banff? These are the most romantic and breathtaking spots to pop the question, from iconic lakes to secluded mountain viewpoints.',
     date: '2025-10-16',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1599,7 +1599,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Plan the perfect road trip from Calgary to Banff. Best scenic stops along the Trans-Canada Highway, including Canmore, Kananaskis, and hidden viewpoints.',
     date: '2025-10-14',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1617,7 +1617,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Guide to helicopter tours from Banff and Canmore. Routes, operators, prices, what to expect, and the best time to fly over the Canadian Rockies.',
     date: '2025-10-12',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1635,7 +1635,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Find the best yoga experiences in Banff — from downtown studios to mountaintop outdoor sessions and multi-day retreats in the Canadian Rockies.',
     date: '2025-10-10',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1653,7 +1653,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Guide to Banff\'s food and cocktail festivals. From eatBanff to craft beer events, discover the best culinary celebrations in the Canadian Rockies.',
     date: '2025-10-08',
     category: 'Food & Drink',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1671,7 +1671,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The best steakhouses in Banff serving premium Alberta beef. Reviews, price ranges, atmosphere, and tips for reserving the top steak restaurants in town.',
     date: '2025-10-06',
     category: 'Food & Drink',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1689,7 +1689,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The best restaurants in Banff for families with kids. Kid-friendly menus, high chairs, casual atmosphere, and locations that keep everyone happy.',
     date: '2025-10-04',
     category: 'Food & Drink',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1707,7 +1707,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The best takeout and grab-and-go food options in Banff. Quick bites, packed lunches for the trail, and convenient spots when you need food fast.',
     date: '2025-10-02',
     category: 'Food & Drink',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1725,7 +1725,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Guide to spring skiing in Banff. Which resorts stay open latest, snow conditions, what to wear, and why spring offers some of the best skiing of the year.',
     date: '2025-09-30',
     category: 'Seasonal',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1743,7 +1743,7 @@ export const blogPosts: BlogPost[] = [
     description: 'What are Chinook winds and how do they affect Banff? Learn about this unique weather phenomenon that can raise winter temperatures by 20°C in hours.',
     date: '2025-09-28',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1761,7 +1761,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The Fenland Trail is a flat, peaceful loop through old-growth forest just minutes from downtown Banff. Perfect for wildlife spotting, birdwatching, and a relaxing walk.',
     date: '2025-09-26',
     category: 'Hiking',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1788,7 +1788,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Should you hike Sulphur Mountain or take the Banff Gondola? Compare time, cost, difficulty, and views to decide the best way to reach the summit boardwalk.',
     date: '2025-09-23',
     category: 'Hiking',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1806,7 +1806,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Extend your Johnston Canyon hike to the Ink Pots — colourful cold-water springs in an alpine meadow. Trail details, distance, what to expect, and tips.',
     date: '2025-09-21',
     category: 'Hiking',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -1824,7 +1824,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Plan a multi-day trek from Healy Pass to Egypt Lake in Banff. Trail overview, campsite info, permit details, and what makes this one of Banff\'s best backcountry trips.',
     date: '2025-09-19',
     category: 'Hiking',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {
@@ -1842,7 +1842,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Which Banff trails stay open in winter? Discover the best winter hiking options, gear you need, safety tips, and how to enjoy snowy trails safely.',
     date: '2025-09-17',
     category: 'Seasonal',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1860,7 +1860,7 @@ export const blogPosts: BlogPost[] = [
     description: 'How to check current trail conditions in Banff before your hike. Official resources, apps, social media groups, and tips for planning around closures and hazards.',
     date: '2025-09-15',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -1878,7 +1878,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Step-by-step guide to booking campground reservations in Banff National Park. When reservations open, which campgrounds to target, and tips for securing a spot.',
     date: '2025-09-13',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1896,7 +1896,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Should you rent a car for Banff? Pros, cons, rental tips, parking challenges, and alternative transportation options for exploring Banff National Park.',
     date: '2025-09-11',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1914,7 +1914,7 @@ export const blogPosts: BlogPost[] = [
     description: 'What camera gear to bring to Banff. Recommendations for lenses, tripods, filters, and accessories to capture mountain landscapes, wildlife, and northern lights.',
     date: '2025-09-09',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1932,7 +1932,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The best pet-friendly hotels in Banff. Where to stay with your dog, pet policies, fees, nearby off-leash areas, and tips for travelling with pets in the national park.',
     date: '2025-09-07',
     category: 'Accommodation',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1950,7 +1950,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Discover Banff\'s boutique hotels — unique, design-forward properties with character and charm. Smaller hotels that offer a personal touch in the Canadian Rockies.',
     date: '2025-09-05',
     category: 'Accommodation',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1968,7 +1968,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Find ski-in ski-out accommodation near Banff\'s three ski resorts. Lodge options at Sunshine Village, Lake Louise, and Norquay plus nearby alternatives.',
     date: '2025-09-03',
     category: 'Accommodation',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -1986,7 +1986,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Why Canmore is the budget-smart base for exploring Banff. Best hotels, condos, and vacation rentals in Canmore — just 20 minutes from Banff with lower prices.',
     date: '2025-09-01',
     category: 'Accommodation',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -2013,7 +2013,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Guide to Herbert Lake on the Icefields Parkway — a glassy lake with perfect mountain reflections just minutes from Lake Louise. Best times, photography tips, and access details.',
     date: '2025-08-29',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -2031,7 +2031,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Complete guide to the Taylor Lake hike in Banff National Park. A moderate trail through subalpine forest to a quiet lake beneath the Continental Divide.',
     date: '2025-08-27',
     category: 'Hiking',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -2049,7 +2049,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Five easy walks you can do right from downtown Banff. Riverside paths, forested loops, and scenic viewpoints — all under 5 km and perfect for any fitness level.',
     date: '2025-08-25',
     category: 'Hiking',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -2067,7 +2067,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Photography workshops and guided photo tours in Banff. Learn landscape, wildlife, and night sky photography from local professionals in one of the world\'s most photogenic settings.',
     date: '2025-08-23',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -2085,7 +2085,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Where to find live music in Banff — from pub sessions and open mic nights to summer festivals and concert venues. Your guide to Banff\'s music scene.',
     date: '2025-08-21',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -2103,7 +2103,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The best souvenirs to buy in Banff — from authentic Canadian-made gifts and Indigenous art to practical mountain gear and local food products.',
     date: '2025-08-19',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -2121,7 +2121,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Guide to grocery stores in Banff — where to buy food, snacks, and trail supplies. Includes store hours, what to expect for prices, and tips for saving money.',
     date: '2025-08-17',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -2139,7 +2139,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Medical services available in Banff including the hospital, pharmacies, dental clinics, and what to do in a medical emergency in Banff National Park.',
     date: '2025-08-15',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -2157,7 +2157,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Campfire rules and fire regulations in Banff National Park. Where fires are allowed, fire bans, firewood rules, and how to have a safe campfire in the Rockies.',
     date: '2025-08-13',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -2175,7 +2175,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Boating rules and regulations in Banff National Park. Where motorized and non-motorized boats are allowed, permits needed, and lake-specific restrictions.',
     date: '2025-08-11',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -2193,7 +2193,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Guide to shuttle services in Banff National Park. How to get to Lake Louise, Moraine Lake, and other popular spots by shuttle — schedules, costs, and booking tips.',
     date: '2025-08-09',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -2211,7 +2211,7 @@ export const blogPosts: BlogPost[] = [
     description: 'A Banff travel guide tailored for Japanese visitors. Practical tips on getting there, language support, food options, cultural considerations, and must-see attractions.',
     date: '2025-08-07',
     category: 'Planning',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
   },
   {

@@ -837,27 +837,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     `;
   }
 
-  function renderForecast(days: any[], prefix: string) {
+  function groupForecastByDay(list: any[]) {
+    const days: Record<string, { temps: number[]; feels: number[]; icons: string[]; descs: string[]; dt: number }> = {};
+    list.forEach((item: any) => {
+      const date = new Date(item.dt * 1000);
+      const key = date.toISOString().split('T')[0];
+      if (!days[key]) days[key] = { temps: [], feels: [], icons: [], descs: [], dt: item.dt };
+      days[key].temps.push(item.main.temp);
+      days[key].feels.push(item.main.feels_like);
+      days[key].icons.push(item.weather[0].icon);
+      days[key].descs.push(item.weather[0].description);
+    });
+    return Object.values(days).map(d => ({
+      dt: d.dt,
+      hi: Math.round(Math.max(...d.temps)),
+      lo: Math.round(Math.min(...d.temps)),
+      feels: Math.round(d.feels[Math.floor(d.feels.length / 2)]),
+      icon: d.icons[Math.floor(d.icons.length / 2)],
+      desc: d.descs[Math.floor(d.descs.length / 2)],
+    }));
+  }
+
+  function renderForecast(list: any[], prefix: string) {
     const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    days.slice(0, 3).forEach((d: any, i: number) => {
+    const grouped = groupForecastByDay(list);
+    grouped.slice(0, 3).forEach((d, i) => {
       const el = document.getElementById(`${prefix}-day${i+1}`);
       if (!el) return;
-      const hi = Math.round(d.temp.max);
-      const lo = Math.round(d.temp.min);
-      const icon = getIcon(d.weather[0].icon);
-      const desc = d.weather[0].description;
+      const icon = getIcon(d.icon);
       const date = new Date(d.dt * 1000);
       const label = i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : dayNames[date.getDay()];
       el.innerHTML = `
         <div class="weather-card__label">${label}</div>
         <div class="weather-card__icon">${icon}</div>
-        <div class="weather-card__range">${hi}°/${lo}°C</div>
-        <div class="weather-card__temp-sub">${Math.round(hi*9/5+32)}°/${Math.round(lo*9/5+32)}°F</div>
-        <div class="weather-card__desc">${desc.charAt(0).toUpperCase() + desc.slice(1)}</div>
-        <div class="weather-card__feels">Feels like ${Math.round(d.feels_like.day)}°C</div>
+        <div class="weather-card__range">${d.hi}°/${d.lo}°C</div>
+        <div class="weather-card__temp-sub">${Math.round(d.hi*9/5+32)}°/${Math.round(d.lo*9/5+32)}°F</div>
+        <div class="weather-card__desc">${d.desc.charAt(0).toUpperCase() + d.desc.slice(1)}</div>
+        <div class="weather-card__feels">Feels like ${d.feels}°C</div>
       `;
     });
   }
+
+  const OWM_KEY = import.meta.env.PUBLIC_OWM_KEY || '';
 
   async function loadWeather(location: string) {
     const loc = locations[location as keyof typeof locations];
@@ -865,8 +886,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     const prefix = location === 'lake-louise' ? 'll' : 'banff';
     try {
       const [currentRes, forecastRes] = await Promise.all([
-        fetch(`${OWM_API}/weather?lat=${loc.lat}&lon=${loc.lon}&units=metric&appid=284dc0b6175ecfc1e7f81e385a4efbf8`),
-        fetch(`${OWM_API}/onecall?lat=${loc.lat}&lon=${loc.lon}&units=metric&exclude=minutely,hourly,alerts&appid=284dc0b6175ecfc1e7f81e385a4efbf8`),
+        fetch(`${OWM_API}/weather?lat=${loc.lat}&lon=${loc.lon}&units=metric&appid=${OWM_KEY}`),
+        fetch(`${OWM_API}/forecast?lat=${loc.lat}&lon=${loc.lon}&units=metric&appid=${OWM_KEY}`),
       ]);
       if (currentRes.ok) {
         const currentData = await currentRes.json();
@@ -874,7 +895,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
       if (forecastRes.ok) {
         const forecastData = await forecastRes.json();
-        renderForecast(forecastData.daily, prefix);
+        renderForecast(forecastData.list, prefix);
       }
     } catch {
       const el = document.getElementById(`${prefix}-current`);

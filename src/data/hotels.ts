@@ -81,7 +81,7 @@ export const hotels: Hotel[] = [
       'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://banfflakelouise.bynder.com/m/552c149b249607bb/1000x650_jpeg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
     ],
   },
@@ -164,7 +164,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$$',
     avgPrice: 'From $320/night',
     expediaUrl: expLink('Banff-Hotels-Hotel-Canoe-And-Suites.h99300514.Hotel-Information'),
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     description: 'Contemporary hotel with a warm mountain-modern aesthetic in the heart of downtown Banff. Offers complimentary tea, coffee, and Roam transit passes to every guest. The on-site restaurant serves locally-inspired cuisine, and the rooftop terrace boasts sweeping views of Cascade Mountain. A refined yet approachable property that embodies the spirit of Banff.',
     highlights: ['Complimentary Roam transit passes', 'Rooftop terrace', 'On-site restaurant', 'Free tea & coffee', 'Modern mountain design', 'Central location'],
     nearbyAttractions: ['Banff Avenue (1 min walk)', 'Cascade Mountain viewpoint (5 min walk)', 'Whyte Museum (3 min walk)'],
@@ -181,7 +181,7 @@ export const hotels: Hotel[] = [
     policies: 'Cancellation policy varies by rate type; parking available in underground garage for $30/night. Some rates include complimentary cancellation up to 48 hours before arrival.',
     address: '318 Marten St, Banff, AB',
     images: [
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
@@ -214,7 +214,7 @@ export const hotels: Hotel[] = [
     address: 'Banff Ave, Banff, AB',
     images: [
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
     ],
@@ -247,7 +247,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
     ],
   },
@@ -278,9 +278,9 @@ export const hotels: Hotel[] = [
     address: '521 Banff Ave, Banff, AB',
     images: [
       'https://banfflakelouise.bynder.com/m/636acd4a88119a6c/1000x650_jpeg-2024_Accommodation_BanffCaribouLodge.jpg',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     ],
   },
   {
@@ -343,9 +343,9 @@ export const hotels: Hotel[] = [
     address: '700 Tunnel Mountain Rd, Banff, AB T1L 1B3',
     images: [
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     ],
   },
   {
@@ -440,7 +440,7 @@ export const hotels: Hotel[] = [
       'https://banfflakelouise.bynder.com/m/3ad42a2efb789d61/1000x650_jpeg-2024_Accommodation_ElkAvenueHotel_Pursuit.jpg',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     ],
   },
   {
@@ -471,7 +471,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
     ],
   },
@@ -534,7 +534,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     ],
   },
   {
@@ -597,7 +597,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://banfflakelouise.bynder.com/m/2e05649fbc758afc/1000x650_jpeg-2024_Banff-Aspen-Lodge_Banff-Aspen-Lodge.jpg',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     ],
   },
   {
@@ -658,7 +658,7 @@ export const hotels: Hotel[] = [
     address: 'Banff Ave, Banff, AB',
     images: [
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
     ],
   },
@@ -691,7 +691,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     ],
   },
   {
@@ -721,7 +721,7 @@ export const hotels: Hotel[] = [
     address: '1 Juniper Way, Banff, AB',
     images: [
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
     ],
@@ -735,7 +735,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $220/night',
     expediaUrl: expLink('Banff-Hotels-Best-Western-Plus-Siding-29-Lodge.h6908788.Hotel-Information'),
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     description: 'Reliable Best Western hotel with a prime Banff Avenue location. Modern rooms, indoor pool, hot tub, and a complimentary hot breakfast make this a solid choice for travellers who value consistent quality, familiar branding, and good value in an expensive mountain town.',
     highlights: ['Complimentary hot breakfast', 'Indoor pool & hot tub', 'Modern rooms', 'On Banff Avenue', 'Free WiFi', 'Consistent quality'],
     nearbyAttractions: ['Downtown (3 min walk)', 'Bow River (5 min walk)', 'Cascade Gardens (5 min walk)'],
@@ -752,7 +752,7 @@ export const hotels: Hotel[] = [
     policies: 'Cancellation policies vary by rate; parking available for a nightly fee. Best Western Rewards members earn points on stays. Children stay free with existing bedding.',
     address: 'Banff Ave, Banff, AB',
     images: [
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
     ],
@@ -815,7 +815,7 @@ export const hotels: Hotel[] = [
     address: '501 Banff Ave, Banff, AB',
     images: [
       'https://banfflakelouise.bynder.com/m/76d14539123d9251/1000x650_jpeg-2025_Banff-Inn_Banff-Inn.jpg',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
     ],
   },
@@ -1020,7 +1020,7 @@ export const hotels: Hotel[] = [
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
       'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     ],
   },
   {
@@ -1054,7 +1054,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     ],
   },
   {
@@ -1066,7 +1066,7 @@ export const hotels: Hotel[] = [
     priceRange: '$',
     avgPrice: 'From $45/night',
     expediaUrl: expLink('Banff-Hotels-HI-Banff-Alpine-Centre.h7700310.Hotel-Information'),
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     description: 'Hostelling International\'s excellent Banff location on Tunnel Mountain. Dorm beds and private rooms in a modern facility with a large lounge, shared kitchen, cafe, and stunning mountain views from the deck. The best backpacker option in Banff.',
     highlights: ['Dorm beds from $45', 'Private rooms available', 'Shared kitchen', 'Cafe on-site', 'Mountain view deck', 'Communal lounge'],
     nearbyAttractions: ['Tunnel Mountain trail (2 min walk)', 'Downtown Banff (15 min walk or bus)', 'Hoodoos (10 min walk)'],
@@ -1086,7 +1086,7 @@ export const hotels: Hotel[] = [
     yearBuilt: '1990',
     lastRenovated: '2020',
     images: [
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
@@ -1124,7 +1124,7 @@ export const hotels: Hotel[] = [
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     ],
   },
   {
@@ -1157,8 +1157,8 @@ export const hotels: Hotel[] = [
     lastRenovated: '2018',
     images: [
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
     ],
   },
@@ -1192,9 +1192,9 @@ export const hotels: Hotel[] = [
     lastRenovated: '2019',
     images: [
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     ],
   },
   {
@@ -1206,7 +1206,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$$',
     avgPrice: 'From $300/night',
     expediaUrl: expLink('Castle-Junction-Hotels-Storm-Mountain-Lodge-Cabins-Dining.h12637578.Hotel-Information'),
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     description: 'Heritage log cabins built in 1922, offering a truly rustic Rocky Mountain experience. Wood-burning fireplaces, no TVs, and an acclaimed restaurant serving creative mountain cuisine. One of the most romantic stays in the Canadian Rockies.',
     highlights: ['1922 heritage cabins', 'Award-winning restaurant', 'Wood-burning fireplaces', 'No TVs — romantic escape', 'Candlelit dining', 'Historic charm'],
     nearbyAttractions: ['Castle Mountain (nearby)', 'Banff (20 min drive)', 'Lake Louise (25 min drive)'],
@@ -1226,10 +1226,10 @@ export const hotels: Hotel[] = [
     yearBuilt: '1922',
     lastRenovated: '2021',
     images: [
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
   {
@@ -1297,7 +1297,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
     ],
@@ -1435,7 +1435,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
     ],
   },
@@ -1470,7 +1470,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
     ],
   },
@@ -1505,8 +1505,8 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
   // ── Lake Louise Area ──────────────────────────────────────────────────
@@ -1554,7 +1554,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $200/night',
     expediaUrl: expLink('Lake-Louise-Hotels-Lake-Louise-Inn.h16406.Hotel-Information'),
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     description: 'The largest hotel in Lake Louise Village with 250 rooms ranging from standard to condo-style suites with full kitchens. Features an indoor pool, hot tub, and multiple dining options. Excellent base for exploring Lake Louise and the Icefields Parkway.',
     highlights: ['Indoor pool & hot tub', 'Multiple dining options', 'Suite with full kitchen', 'Free parking', 'Ski shuttle', 'Sauna'],
     nearbyAttractions: ['Lake Louise (10 min drive)', 'Moraine Lake (20 min drive)', 'Lake Louise Ski Resort (10 min drive)'],
@@ -1574,7 +1574,7 @@ export const hotels: Hotel[] = [
     yearBuilt: '1965',
     lastRenovated: '2018',
     images: [
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
     ],
@@ -1644,7 +1644,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     ],
   },
   {
@@ -1712,8 +1712,8 @@ export const hotels: Hotel[] = [
     lastRenovated: '2020',
     images: [
       'https://banfflakelouise.bynder.com/m/166ccd07ed623a35/1000x650_jpeg-2022_BakerCreek_AccommodationExternal_BasecampResorts4.jpg',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     ],
   },
   {
@@ -1725,7 +1725,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $220/night',
     expediaUrl: expLink('Lake-Louise-Hotels-Paradise-Lodge-And-Bungalows.h893466.Hotel-Information'),
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     description: 'Family-run heritage bungalow property near Lake Louise, operating since 1939. Cozy log cabins and suites nestled in a quiet forest setting with stunning mountain views. No TVs — just the sounds of nature. A true old-school Rockies experience.',
     highlights: ['Heritage bungalows since 1939', 'Forest setting', 'Mountain views', 'Family-run', 'Quiet & peaceful', 'No TVs — nature escape'],
     nearbyAttractions: ['Lake Louise (5 min drive)', 'Moraine Lake (15 min drive)', 'Lake Louise Village (5 min drive)'],
@@ -1745,9 +1745,9 @@ export const hotels: Hotel[] = [
     yearBuilt: '1930',
     lastRenovated: '2015',
     images: [
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
   {
@@ -1781,7 +1781,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
   {
@@ -1849,7 +1849,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://banfflakelouise.bynder.com/m/63f13e5b5e2ded63/1000x650_jpeg-2021_EmeraldLakeLodge_EmeraldLake_JasonDziver.jpg',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
     ],
   },
@@ -1952,8 +1952,8 @@ export const hotels: Hotel[] = [
     lastRenovated: '2017',
     images: [
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
   {
@@ -2055,7 +2055,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
   {
@@ -2101,7 +2101,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $190/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     description: 'Solid mid-range hotel on the south end of Banff Avenue with indoor pool, hot tub, and sauna. The on-site restaurant serves casual Canadian fare. Rooms are spacious and well-maintained. Good value for a Banff stay with reliable amenities.',
     highlights: ['Indoor pool & hot tub', 'Sauna', 'On-site restaurant', 'Spacious rooms', 'South Banff Avenue', 'Free parking'],
     nearbyAttractions: ['Bow Falls (8 min walk)', 'Downtown (5 min walk)', 'Banff Springs Hotel (10 min walk)'],
@@ -2121,7 +2121,7 @@ export const hotels: Hotel[] = [
     yearBuilt: '1965',
     lastRenovated: '2018',
     images: [
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
     ],
@@ -2156,7 +2156,7 @@ export const hotels: Hotel[] = [
     lastRenovated: '2019',
     images: [
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
     ],
   },
@@ -2191,7 +2191,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
   {
@@ -2237,7 +2237,7 @@ export const hotels: Hotel[] = [
     priceRange: '$',
     avgPrice: 'From $130/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     description: 'Value lodge in Harvie Heights, just outside the Banff park gates. Offers simple, clean rooms at some of the lowest rates in the area. No park pass needed to stay here, though you\'ll need one for day trips into the park. Free parking and easy highway access.',
     highlights: ['Lowest area rates', 'No park pass needed to stay', 'Free parking', 'Highway access', 'Clean rooms', 'Near park gate'],
     nearbyAttractions: ['Banff park gate (2 min drive)', 'Downtown Banff (5 min drive)', 'Canmore (10 min drive)'],
@@ -2257,7 +2257,7 @@ export const hotels: Hotel[] = [
     yearBuilt: '1975',
     lastRenovated: '2015',
     images: [
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
     ],
@@ -2271,7 +2271,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $180/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     description: 'Quaint A-frame chalets in Harvie Heights with kitchenettes, fireplaces, and mountain views. A unique and cozy accommodation style just outside Banff park gates. Perfect for couples seeking a romantic cabin getaway near Banff.',
     highlights: ['A-frame chalets', 'Kitchenettes', 'Fireplaces', 'Mountain views', 'Romantic setting', 'Free parking'],
     nearbyAttractions: ['Banff park gate (2 min drive)', 'Downtown Banff (5 min drive)', 'Canmore (10 min drive)'],
@@ -2291,8 +2291,8 @@ export const hotels: Hotel[] = [
     yearBuilt: '1970',
     lastRenovated: '2016',
     images: [
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
     ],
   },
@@ -2305,7 +2305,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$$',
     avgPrice: 'From $250/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Canmore%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     description: 'Upscale condo-style lodge in Canmore by the CLIQUE hospitality group. Spacious suites with full kitchens, in-suite laundry, and mountain views. Indoor pool, hot tub, and fitness centre. Excellent value compared to Banff, with a comfortable, home-away-from-home feel.',
     highlights: ['Full kitchen suites', 'In-suite laundry', 'Indoor pool & hot tub', 'Fitness centre', 'Mountain views', 'CLIQUE hospitality'],
     nearbyAttractions: ['Canmore downtown (5 min drive)', 'Banff (20 min drive)', 'Grassi Lakes trail (10 min drive)'],
@@ -2325,7 +2325,7 @@ export const hotels: Hotel[] = [
     yearBuilt: '2002',
     lastRenovated: '2021',
     images: [
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
       'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80',
@@ -2396,7 +2396,7 @@ export const hotels: Hotel[] = [
     priceRange: '$',
     avgPrice: 'From $120/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Canmore%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     description: 'Affordable inn in Canmore offering basic, clean rooms at some of the lowest rates in the Bow Valley corridor. Continental breakfast included. A practical, no-frills base for day trips to Banff, Lake Louise, and Kananaskis.',
     highlights: ['Continental breakfast', 'Budget-friendly', 'Clean rooms', 'Free parking', 'Highway access', 'Free WiFi'],
     nearbyAttractions: ['Canmore downtown (5 min drive)', 'Banff (20 min drive)', 'Kananaskis (25 min drive)'],
@@ -2413,7 +2413,7 @@ export const hotels: Hotel[] = [
     policies: 'Pet-friendly with deposit. Free cancellation with 48 hours notice on most rates.',
     address: 'Bow Valley Trail, Canmore, AB T1W 1P5',
     totalRooms: 45,
-    images: ['https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'],
+    images: ['https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg', 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80', 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80'],
   },
   {
     slug: 'northwinds-hotel-canmore',
@@ -2458,7 +2458,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $170/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Canmore%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     description: 'Condo-style resort in Canmore with one and two-bedroom suites featuring full kitchens, fireplaces, and balconies. Indoor pool, hot tub, and fitness centre. Feels like a home base with hotel amenities — great for families and longer stays.',
     highlights: ['Full kitchen suites', 'Fireplaces', 'Indoor pool & hot tub', 'Balconies', 'Fitness centre', 'Free parking'],
     nearbyAttractions: ['Canmore downtown (5 min drive)', 'Banff (20 min drive)', 'Ha Ling Peak (10 min drive)'],
@@ -2478,7 +2478,7 @@ export const hotels: Hotel[] = [
     yearBuilt: '1997',
     lastRenovated: '2018',
     images: [
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
     ],
@@ -2581,8 +2581,8 @@ export const hotels: Hotel[] = [
     lastRenovated: '2019',
     images: [
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
   {
@@ -2649,7 +2649,7 @@ export const hotels: Hotel[] = [
     lastRenovated: '2018',
     images: [
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
     ],
   },
@@ -2683,7 +2683,7 @@ export const hotels: Hotel[] = [
     lastRenovated: '2016',
     images: [
       'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
     ],
   },
@@ -2696,7 +2696,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $190/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Canmore%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     description: 'Condo-style resort in Canmore offering suites with full kitchens, fireplaces, and mountain views. Outdoor hot tub and BBQ areas. Great for families and groups looking for a comfortable base at Canmore prices with easy access to Banff.',
     highlights: ['Full kitchen suites', 'Fireplaces', 'Outdoor hot tub', 'BBQ areas', 'Mountain views', 'Free parking'],
     nearbyAttractions: ['Canmore downtown (5 min drive)', 'Banff (20 min drive)', 'Kananaskis (25 min drive)'],
@@ -2716,7 +2716,7 @@ export const hotels: Hotel[] = [
     yearBuilt: '2003',
     lastRenovated: '2019',
     images: [
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
     ],
@@ -2730,7 +2730,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $200/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Canmore%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
     description: 'Well-managed condo resort in Canmore with spacious one and two-bedroom suites, full kitchens, and private balconies. Indoor pool, hot tub, and fitness centre. Popular with families and returning guests who appreciate the home-like atmosphere.',
     highlights: ['Spacious suites', 'Full kitchens', 'Indoor pool & hot tub', 'Private balconies', 'Fitness centre', 'Family-friendly'],
     nearbyAttractions: ['Canmore downtown (5 min drive)', 'Banff (20 min drive)', 'Bow River trails (3 min walk)'],
@@ -2750,7 +2750,7 @@ export const hotels: Hotel[] = [
     yearBuilt: '2006',
     lastRenovated: '2020',
     images: [
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
       'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
     ],
@@ -2985,7 +2985,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
   {
@@ -3054,7 +3054,7 @@ export const hotels: Hotel[] = [
     images: [
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     ],
   },
   {
@@ -3066,7 +3066,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $180/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     description: 'Lodge near the east gate of Banff National Park offering condo-style suites with kitchenettes and fireplaces. Indoor pool, hot tub, and restaurant on-site. A quieter alternative to staying in Banff town, with easy access to both Banff and Canmore.',
     highlights: ['Condo-style suites', 'Kitchenettes & fireplaces', 'Indoor pool & hot tub', 'On-site restaurant', 'Near park east gate', 'Free parking'],
     nearbyAttractions: ['Banff east gate (5 min drive)', 'Downtown Banff (15 min drive)', 'Canmore (10 min drive)'],
@@ -3086,8 +3086,8 @@ export const hotels: Hotel[] = [
     yearBuilt: '1995',
     lastRenovated: '2018',
     images: [
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
     ],
   },
@@ -3100,7 +3100,7 @@ export const hotels: Hotel[] = [
     priceRange: '$$',
     avgPrice: 'From $180/night',
     expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Saskatchewan+Crossing%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+    image: 'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
     description: 'The only accommodation at Saskatchewan River Crossing on the Icefields Parkway, midway between Lake Louise and Jasper. Basic but essential roadside hotel with a cafeteria, gift shop, and gas station. A necessary stop on any Parkway road trip.',
     highlights: ['Only Parkway midpoint hotel', 'Cafeteria & gift shop', 'Gas station', 'Essential road trip stop', 'Mountain views', 'Seasonal (spring–fall)'],
     nearbyAttractions: ['Mistaya Canyon (10 min drive)', 'Peyto Lake (30 min drive)', 'Columbia Icefield (60 min drive)'],
@@ -3120,7 +3120,7 @@ export const hotels: Hotel[] = [
     yearBuilt: '1960',
     lastRenovated: '2014',
     images: [
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
       'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
     ],
@@ -3155,7 +3155,7 @@ export const hotels: Hotel[] = [
     lastRenovated: '2020',
     images: [
       'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/552c149b249607bb/2000x1200_jpg-2021_Banff_Accomodation_BanffSpringsHotel-4.jpg',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
     ],
   },
@@ -3189,7 +3189,7 @@ export const hotels: Hotel[] = [
     lastRenovated: '2019',
     images: [
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
       'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
     ],
   },
@@ -3223,8 +3223,8 @@ export const hotels: Hotel[] = [
     lastRenovated: '2021',
     images: [
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80',
+      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
+      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
     ],
   },
 ];
