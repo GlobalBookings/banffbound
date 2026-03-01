@@ -2,10 +2,10 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY agents/package.json agents/package-lock.json ./
 RUN npm ci --production
 
-COPY src/ ./src/
+COPY agents/src/ ./src/
 
 EXPOSE 3100
 

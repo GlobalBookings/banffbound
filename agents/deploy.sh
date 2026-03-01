@@ -21,8 +21,8 @@ curl -s -X POST \
     \"region\": \"tor1\",
     \"services\": [{
       \"name\": \"agents\",
-      \"dockerfile_path\": \"Dockerfile\",
-      \"source_dir\": \"/agents\",
+      \"dockerfile_path\": \"agents/Dockerfile\",
+      \"source_dir\": \"/\",
       \"github\": {
         \"repo\": \"GlobalBookings/banffbound\",
         \"branch\": \"main\",
