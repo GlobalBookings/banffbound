@@ -195,6 +195,30 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     applyFilters();
   }
 
+  // Read URL params and pre-set filters
+  const params = new URLSearchParams(window.location.search);
+  const paramArea = params.get('area');
+  const paramType = params.get('type');
+  const paramPrice = params.get('price');
+  const paramStars = params.get('stars');
+
+  if (paramArea) {
+    const opt = Array.from(areaFilter.options).find(o => o.value === paramArea);
+    if (opt) areaFilter.value = paramArea;
+  }
+  if (paramType) {
+    const opt = Array.from(typeFilter.options).find(o => o.value.toLowerCase() === paramType.toLowerCase());
+    if (opt) typeFilter.value = opt.value;
+  }
+  if (paramPrice) priceFilter.value = paramPrice;
+  if (paramStars) starFilter.value = paramStars;
+
+  if (paramArea || paramType || paramPrice || paramStars) {
+    applyFilters();
+    // Scroll past hero to the filters
+    document.getElementById('filters')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   searchInput.addEventListener('input', applyFilters);
   areaFilter.addEventListener('change', applyFilters);
   typeFilter.addEventListener('change', applyFilters);
