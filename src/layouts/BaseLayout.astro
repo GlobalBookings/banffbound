@@ -39,12 +39,28 @@ const canonical = canonicalUrl || Astro.url.href;
     <title>{pageTitle}</title>
 
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-2DP7J42ZW0"></script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-17246982814"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-2DP7J42ZW0');
+      gtag('config', 'AW-17246982814');
+
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.open(url, '_blank');
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17246982814/8ptcCPuTheAaEJ6lgKBA',
+          'event_callback': callback
+        });
+        return false;
+      }
     </script>
+    <script src="../scripts/tracking.js"></script>
   </head>
   <body>
     <Header />
