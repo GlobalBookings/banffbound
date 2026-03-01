@@ -3,31 +3,54 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { hotels, hotelAreas } from '../../data/hotels';
 
 const areas = [...new Set(hotels.map(h => h.area))];
+const types = [...new Set(hotels.map(h => h.type))].sort();
 const starCounts = [5, 4, 3, 2, 1];
+
+const hotelData = JSON.stringify(hotels.map(h => ({
+  slug: h.slug,
+  name: h.name,
+  stars: h.stars,
+  area: h.area,
+  type: h.type,
+  price: h.priceRange,
+  avg: h.avgPrice,
+  lat: h.lat,
+  lng: h.lng,
+  score: h.reviewScore,
+  img: h.image,
+})));
 ---
 
-<BaseLayout title="Banff Hotel Directory" description="Compare 45+ hotels in Banff, Canmore & the Bow Valley. Real descriptions, prices, highlights, and direct booking links. Find your perfect mountain stay.">
+<BaseLayout title="Banff Hotel Directory — Compare 95+ Hotels" description="Compare 95+ hotels in Banff, Canmore & the Bow Valley with interactive map. Filter by area, budget, type, and star rating. Real reviews, prices, and direct booking links.">
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80" alt="Banff hotel with mountain views" class="page-hero-bg" />
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="Canadian Rocky Mountains hotel view" class="page-hero-bg" />
     <div class="page-hero-content">
       <span class="badge">Hotel Directory</span>
       <h1>Where to Stay in Banff</h1>
-      <p>Compare {hotels.length} hotels, lodges, and inns across Banff, Canmore, and the Bow Valley. Every listing includes honest descriptions, price ranges, and direct booking links.</p>
+      <p>Compare {hotels.length} hotels, lodges, and inns across Banff, Canmore, and the Bow Valley. Every listing includes real reviews, detailed amenities, and direct booking links.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
+      <!-- Filter bar -->
       <div class="filter-bar" id="filters">
+        <div class="filter-group search-group">
+          <input type="text" id="search-input" placeholder="Search hotels..." class="search-input" />
+        </div>
         <div class="filter-group">
-          <label>Area:</label>
           <select id="area-filter">
             <option value="all">All Areas</option>
             {areas.map(a => <option value={a}>{a}</option>)}
           </select>
         </div>
         <div class="filter-group">
-          <label>Budget:</label>
+          <select id="type-filter">
+            <option value="all">All Types</option>
+            {types.map(t => <option value={t}>{t}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
           <select id="price-filter">
             <option value="all">All Prices</option>
             <option value="$">$ Budget</option>
@@ -37,18 +60,34 @@ const starCounts = [5, 4, 3, 2, 1];
           </select>
         </div>
         <div class="filter-group">
-          <label>Stars:</label>
           <select id="star-filter">
             <option value="all">All Stars</option>
-            {starCounts.map(s => <option value={String(s)}>{s}★{s < 5 ? '+' : ''}</option>)}
+            {starCounts.map(s => <option value={String(s)}>{s}★+</option>)}
           </select>
         </div>
+        <button id="clear-filters" class="clear-btn" style="display:none;">Clear</button>
         <span class="result-count" id="result-count">{hotels.length} hotels</span>
       </div>
 
+      <!-- View toggle -->
+      <div class="view-toggle">
+        <button id="grid-view-btn" class="view-btn active">Grid</button>
+        <button id="map-view-btn" class="view-btn">Map</button>
+      </div>
+
+      <!-- Interactive Map -->
+      <div id="map-container" class="map-container" style="display:none;">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <div id="hotel-map" style="height: 500px; border-radius: var(--radius); overflow: hidden;"></div>
+      </div>
+
+      <!-- Hotel grid -->
       <div class="hotel-grid" id="hotel-grid">
         {hotels.map(hotel => (
-          <a href={`/hotel-directory/${hotel.slug}`} class="hotel-card" data-area={hotel.area} data-price={hotel.priceRange} data-stars={String(hotel.stars)}>
+          <a href={`/hotel-directory/${hotel.slug}`} class="hotel-card"
+             data-area={hotel.area} data-price={hotel.priceRange}
+             data-stars={String(hotel.stars)} data-type={hotel.type}
+             data-name={hotel.name.toLowerCase()} data-slug={hotel.slug}>
             <img src={hotel.image} alt={hotel.name} class="hotel-card-img" loading="lazy" />
             <div class="hotel-card-body">
               <div class="hotel-card-top">
@@ -56,8 +95,14 @@ const starCounts = [5, 4, 3, 2, 1];
                 <span class="hotel-price">{hotel.priceRange}</span>
               </div>
               <h3>{hotel.name}</h3>
-              <p class="hotel-area">{hotel.area} &middot; {hotel.type}</p>
-              <p class="hotel-desc">{hotel.description.slice(0, 140)}...</p>
+              <p class="hotel-area">{hotel.area} · {hotel.type}</p>
+              {hotel.reviewScore && (
+                <div class="hotel-review-mini">
+                  <span class="review-badge">{hotel.reviewScore}</span>
+                  <span>{hotel.reviewLabel}</span>
+                </div>
+              )}
+              <p class="hotel-desc">{hotel.description.slice(0, 120)}...</p>
               <div class="hotel-card-footer">
                 <span class="hotel-avg">{hotel.avgPrice}</span>
                 <span class="hotel-link">View Details →</span>
@@ -72,8 +117,8 @@ const starCounts = [5, 4, 3, 2, 1];
   <section class="section" style="background: var(--color-bg-alt);">
     <div class="container">
       <div class="section-header">
-        <h2>Banff Hotel Areas</h2>
-        <p>Where you stay in Banff matters. Here's a quick guide to each area.</p>
+        <h2>Banff Hotel Areas Guide</h2>
+        <p>Where you stay in Banff matters. Here's what each area offers.</p>
       </div>
       <div class="grid grid-3">
         {hotelAreas.map(area => (
@@ -89,63 +134,168 @@ const starCounts = [5, 4, 3, 2, 1];
   </section>
 </BaseLayout>
 
-<script>
-  const areaFilter = document.getElementById('area-filter') as HTMLSelectElement;
-  const priceFilter = document.getElementById('price-filter') as HTMLSelectElement;
-  const starFilter = document.getElementById('star-filter') as HTMLSelectElement;
-  const cards = document.querySelectorAll('.hotel-card') as NodeListOf<HTMLElement>;
-  const countEl = document.getElementById('result-count')!;
+<script define:vars={{ hotelData }}>
+  const allHotels = JSON.parse(hotelData);
+  const searchInput = document.getElementById('search-input');
+  const areaFilter = document.getElementById('area-filter');
+  const typeFilter = document.getElementById('type-filter');
+  const priceFilter = document.getElementById('price-filter');
+  const starFilter = document.getElementById('star-filter');
+  const clearBtn = document.getElementById('clear-filters');
+  const cards = document.querySelectorAll('.hotel-card');
+  const countEl = document.getElementById('result-count');
+  const gridViewBtn = document.getElementById('grid-view-btn');
+  const mapViewBtn = document.getElementById('map-view-btn');
+  const mapContainer = document.getElementById('map-container');
+  const hotelGrid = document.getElementById('hotel-grid');
+
+  let map = null;
+  let markers = [];
+  let leafletLoaded = false;
 
   function applyFilters() {
+    const search = searchInput.value.toLowerCase().trim();
     const area = areaFilter.value;
+    const type = typeFilter.value;
     const price = priceFilter.value;
     const star = starFilter.value;
     let visible = 0;
+    const visibleSlugs = new Set();
 
     cards.forEach(card => {
+      const matchSearch = !search || card.dataset.name.includes(search) || card.dataset.area.toLowerCase().includes(search);
       const matchArea = area === 'all' || card.dataset.area === area;
+      const matchType = type === 'all' || card.dataset.type === type;
       const matchPrice = price === 'all' || card.dataset.price === price;
       const matchStar = star === 'all' || Number(card.dataset.stars) >= Number(star);
-      const show = matchArea && matchPrice && matchStar;
+      const show = matchSearch && matchArea && matchType && matchPrice && matchStar;
       card.style.display = show ? '' : 'none';
-      if (show) visible++;
+      if (show) {
+        visible++;
+        visibleSlugs.add(card.dataset.slug);
+      }
     });
 
     countEl.textContent = `${visible} hotel${visible !== 1 ? 's' : ''}`;
+    clearBtn.style.display = (search || area !== 'all' || type !== 'all' || price !== 'all' || star !== 'all') ? '' : 'none';
+
+    if (map && leafletLoaded) updateMapMarkers(visibleSlugs);
   }
 
+  function clearAll() {
+    searchInput.value = '';
+    areaFilter.value = 'all';
+    typeFilter.value = 'all';
+    priceFilter.value = 'all';
+    starFilter.value = 'all';
+    applyFilters();
+  }
+
+  searchInput.addEventListener('input', applyFilters);
   areaFilter.addEventListener('change', applyFilters);
+  typeFilter.addEventListener('change', applyFilters);
   priceFilter.addEventListener('change', applyFilters);
   starFilter.addEventListener('change', applyFilters);
+  clearBtn.addEventListener('click', clearAll);
+
+  // View toggle
+  gridViewBtn.addEventListener('click', () => {
+    gridViewBtn.classList.add('active');
+    mapViewBtn.classList.remove('active');
+    hotelGrid.style.display = '';
+    mapContainer.style.display = 'none';
+  });
+
+  mapViewBtn.addEventListener('click', () => {
+    mapViewBtn.classList.add('active');
+    gridViewBtn.classList.remove('active');
+    hotelGrid.style.display = 'none';
+    mapContainer.style.display = '';
+    if (!leafletLoaded) loadMap();
+  });
+
+  function loadMap() {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = () => {
+      leafletLoaded = true;
+      initMap();
+    };
+    document.head.appendChild(script);
+  }
+
+  function initMap() {
+    map = L.map('hotel-map').setView([51.22, -115.75], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+      maxZoom: 18,
+    }).addTo(map);
+
+    allHotels.forEach(h => {
+      if (!h.lat || !h.lng) return;
+      const marker = L.marker([h.lat, h.lng]).addTo(map);
+      marker.bindPopup(`
+        <div style="min-width:200px;">
+          <img src="${h.img}" alt="${h.name}" style="width:100%;height:100px;object-fit:cover;border-radius:4px;margin-bottom:6px;" />
+          <strong style="font-size:0.9rem;">${h.name}</strong><br/>
+          <span style="font-size:0.8rem;color:#666;">${'★'.repeat(h.stars)} · ${h.area} · ${h.price}</span><br/>
+          <span style="font-size:0.85rem;font-weight:600;color:#1a472a;">${h.avg}</span>
+          ${h.score ? `<span style="font-size:0.8rem;color:#888;"> · ${h.score}/10</span>` : ''}
+          <br/><a href="/hotel-directory/${h.slug}" style="font-size:0.8rem;color:#d4a843;font-weight:600;">View Details →</a>
+        </div>
+      `);
+      marker._hotelSlug = h.slug;
+      markers.push(marker);
+    });
+
+    updateMapMarkers(new Set(allHotels.map(h => h.slug)));
+  }
+
+  function updateMapMarkers(visibleSlugs) {
+    markers.forEach(m => {
+      if (visibleSlugs.has(m._hotelSlug)) {
+        m.addTo(map);
+      } else {
+        m.remove();
+      }
+    });
+  }
 </script>
 
 <style>
   .filter-bar {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding: 1rem 1.5rem;
     background: var(--color-white);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
   }
 
-  .filter-group {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .search-group { flex: 1; min-width: 180px; }
+
+  .search-input {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: var(--color-white);
+    outline: none;
+    transition: border-color 0.2s;
   }
 
-  .filter-group label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-text-light);
+  .search-input:focus {
+    border-color: var(--color-primary);
   }
+
+  .search-input::placeholder { color: #aaa; }
 
   .filter-group select {
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 0.8rem;
     border: 1px solid rgba(0,0,0,0.15);
     border-radius: 6px;
     font-size: 0.85rem;
@@ -153,17 +303,63 @@ const starCounts = [5, 4, 3, 2, 1];
     cursor: pointer;
   }
 
+  .clear-btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    background: none;
+    cursor: pointer;
+    color: var(--color-text-light);
+  }
+
+  .clear-btn:hover { background: var(--color-bg-alt); }
+
   .result-count {
     margin-left: auto;
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-primary);
+    white-space: nowrap;
+  }
+
+  .view-toggle {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .view-btn {
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: var(--color-white);
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-text-light);
+    transition: all 0.2s;
+  }
+
+  .view-btn:first-child { border-radius: 6px 0 0 6px; }
+  .view-btn:last-child { border-radius: 0 6px 6px 0; border-left: none; }
+
+  .view-btn.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+
+  .map-container {
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
   }
 
   .hotel-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
   }
 
   .hotel-card {
@@ -177,18 +373,18 @@ const starCounts = [5, 4, 3, 2, 1];
   }
 
   .hotel-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
   }
 
   .hotel-card-img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
   }
 
   .hotel-card-body {
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -197,33 +393,51 @@ const starCounts = [5, 4, 3, 2, 1];
   .hotel-card-top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
   .hotel-stars {
     color: var(--color-accent);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .hotel-price {
     font-weight: 700;
     color: var(--color-primary);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .hotel-card-body h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
   }
 
   .hotel-area {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--color-text-light);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .hotel-review-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+  }
+
+  .review-badge {
+    background: var(--color-primary);
+    color: white;
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
   }
 
   .hotel-desc {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--color-text-light);
     line-height: 1.5;
     flex: 1;
@@ -233,26 +447,27 @@ const starCounts = [5, 4, 3, 2, 1];
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
-    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+    padding-top: 0.6rem;
     border-top: 1px solid rgba(0,0,0,0.06);
   }
 
   .hotel-avg {
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-primary);
   }
 
   .hotel-link {
     color: var(--color-accent);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   @media (max-width: 768px) {
-    .filter-bar { flex-direction: column; align-items: flex-start; }
+    .filter-bar { flex-direction: column; align-items: stretch; }
     .result-count { margin-left: 0; }
     .hotel-grid { grid-template-columns: 1fr; }
+    .search-group { min-width: auto; }
   }
 </style>
