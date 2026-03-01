@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'bow-lake',
+    title: 'Banff\'s Bow Lake: The Hidden Gem You Can\'t Miss in 2024',
+    description: 'Discover Banff\'s stunning Bow Lake, a pristine alpine paradise perfect for photography, hiking, and peaceful reflection. Your complete 2024 travel guide awaits.',
+    date: '2026-03-01',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-Lw2ay2wM9H0?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'sky-bistro-banff',
+    title: 'Sky Bistro Banff: Your Guide to Dining Above the Clouds',
+    description: 'Experience fine dining 7,486 feet above sea level at Sky Bistro Banff. Discover stunning mountain views, gourmet cuisine, and unforgettable moments above the clouds.',
+    date: '2026-03-01',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'admission-ticket-to-golden-skybridge',
+    title: 'Your Ultimate Banff Golden Skybridge Ticket Guide & Tips',
+    description: 'Discover everything you need to know about Banff\'s Golden Skybridge tickets, pricing, best times to visit, and insider tips for an unforgettable experience.',
+    date: '2026-03-01',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-_MylVWUFK7I?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'sandman-banff',
     title: 'Stay Like a Local: Sandman Banff Hotel Guide & Hidden Gems',
     description: 'Discover insider tips for staying at Sandman Banff Hotel plus local secrets and hidden gems that most tourists miss in this comprehensive Banff travel guide.',
