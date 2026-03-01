@@ -24,10 +24,71 @@ function getRepoPaths() {
   };
 }
 
+const UNSPLASH_KEY = process.env.UNSPLASH_ACCESS_KEY;
+
 const EXPEDIA_LINK = 'https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX';
 const GYG_LINK = 'https://www.getyourguide.com/banff-l284/?partner_id=QW960HO';
 
 const CATEGORIES = ['Planning', 'Itineraries', 'Hiking', 'Guides', 'Seasonal', 'Tips', 'Accommodation', 'Food & Drink'];
+
+// ── Curated Banff image pool (verified real Banff photos) ──
+const BANFF_IMAGES = [
+  { id: '1609198092458-38a293c7ac4b', tags: ['banff', 'town', 'mountain', 'default'] },
+  { id: '1503614472-8c93d56e92ce', tags: ['moraine', 'lake', 'mountain', 'landscape'] },
+  { id: '1464822759023-fed622ff2c3b', tags: ['mountain', 'hiking', 'trail', 'ridge'] },
+  { id: '1506905925346-21bda4d32df4', tags: ['lake', 'canoe', 'louise', 'turquoise'] },
+  { id: '1544735716-ea9ef790f501', tags: ['winter', 'snow', 'ski', 'frozen'] },
+  { id: '1570641963303-92ce4845d4d1', tags: ['forest', 'trees', 'trail', 'hiking'] },
+  { id: '1551632811-561732d1e306', tags: ['gondola', 'sulphur', 'mountain', 'view'] },
+  { id: '1517483000871-1dbf64a6e1c6', tags: ['waterfall', 'johnston', 'canyon', 'water'] },
+  { id: '1508193638397-1c4234db14d8', tags: ['road', 'highway', 'drive', 'icefields'] },
+  { id: '1605540436563-5bca919ae766', tags: ['hotel', 'fairmont', 'chateau', 'accommodation'] },
+  { id: '1548625149-fc4a29cf7092', tags: ['sunset', 'vermilion', 'lake', 'evening'] },
+  { id: '1583265627959-fb7042f5133b', tags: ['elk', 'wildlife', 'animal', 'nature'] },
+  { id: '1559583985-c80d8ad9b29f', tags: ['hot', 'springs', 'pool', 'relax'] },
+  { id: '1596394516093-501ba68a0ba6', tags: ['peyto', 'lake', 'overlook', 'blue'] },
+  { id: '1501785888108-acf5454cf7e8', tags: ['camping', 'tent', 'outdoors', 'night'] },
+];
+
+// ── Find a relevant image ──────────────────────────────────
+async function findRelevantImage(query, category) {
+  // First try Unsplash API if key is available
+  if (UNSPLASH_KEY) {
+    try {
+      const searchTerm = `banff canada ${query}`;
+      const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(searchTerm)}&per_page=5&orientation=landscape`;
+      const res = await fetch(url, {
+        headers: { Authorization: `Client-ID ${UNSPLASH_KEY}` },
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        if (data.results?.length > 0) {
+          const photo = data.results[0];
+          log.info(`Unsplash image found for "${query}": ${photo.id}`);
+          return `https://images.unsplash.com/photo-${photo.id}?w=1200&q=80`;
+        }
+      }
+    } catch (err) {
+      log.warn(`Unsplash search failed: ${err.message}`);
+    }
+  }
+
+  // Fallback: pick from curated pool based on keyword matching
+  const words = `${query} ${category}`.toLowerCase().split(/\s+/);
+  let bestMatch = BANFF_IMAGES[0];
+  let bestScore = 0;
+
+  for (const img of BANFF_IMAGES) {
+    const score = img.tags.filter(tag => words.some(w => w.includes(tag) || tag.includes(w))).length;
+    if (score > bestScore) {
+      bestScore = score;
+      bestMatch = img;
+    }
+  }
+
+  return `https://images.unsplash.com/photo-${bestMatch.id}?w=1200&q=80`;
+}
 
 // ── Clone or pull the repo ─────────────────────────────────
 function ensureRepoCheckout() {
@@ -112,8 +173,29 @@ async function findContentGaps() {
   // Sort by impressions (highest demand first)
   gaps.sort((a, b) => b.impressions - a.impressions);
 
-  log.info(`Found ${gaps.length} content gaps from ${rows.length} queries`);
-  return gaps;
+  // Deduplicate by topic cluster -- keep only the highest-impression
+  // query per topic so we don't write 3 posts about "sandman hotel"
+  const deduped = [];
+  const usedClusters = new Set();
+
+  for (const gap of gaps) {
+    const words = gap.query.split(/\s+/).filter(w => w.length > 3);
+    const clusterKey = words.sort().join(' ');
+
+    // Check if any existing selected gap shares 2+ significant words
+    const isDuplicate = deduped.some(existing => {
+      const existingWords = existing.query.split(/\s+/).filter(w => w.length > 3);
+      const overlap = words.filter(w => existingWords.includes(w));
+      return overlap.length >= 2;
+    });
+
+    if (!isDuplicate) {
+      deduped.push(gap);
+    }
+  }
+
+  log.info(`Found ${gaps.length} raw gaps, ${deduped.length} unique topics from ${rows.length} queries`);
+  return deduped;
 }
 
 // ── Generate a blog post via Claude ───────────────────────
@@ -200,13 +282,16 @@ Return ONLY the description text.`;
   const wordCount = html.replace(/<[^>]*>/g, '').split(/\s+/).length;
   const readTime = `${Math.max(5, Math.ceil(wordCount / 200))} min read`;
 
+  // Find a relevant hero image
+  const image = await findRelevantImage(topic.query, category);
+
   return {
     slug,
     title,
     description,
     date: new Date().toISOString().split('T')[0],
     category,
-    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    image,
     readTime,
     html,
   };
