@@ -1,0 +1,573 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { trails } from '../../data/trails';
+
+export function getStaticPaths() {
+  return trails.map(trail => ({
+    params: { slug: trail.slug },
+    props: { trail },
+  }));
+}
+
+const { trail } = Astro.props;
+const nearbyTrails = trails.filter(t => t.slug !== trail.slug && t.area === trail.area).slice(0, 4);
+
+const difficultyColor = trail.difficulty === 'easy' ? '#166534' : trail.difficulty === 'moderate' ? '#92400e' : '#991b1b';
+const difficultyBg = trail.difficulty === 'easy' ? '#dcfce7' : trail.difficulty === 'moderate' ? '#fef3c7' : '#fee2e2';
+
+const safetyTips = [
+  { icon: '🐻', text: 'Carry bear spray and know how to use it. Bears are active throughout Banff National Park.' },
+  { icon: '📋', text: 'Check trail conditions on the Parks Canada website before heading out.' },
+  { icon: '👥', text: 'Tell someone your hiking plan — where you\'re going and when you expect to return.' },
+  { icon: '🧥', text: 'Bring layers. Mountain weather can change rapidly, even in summer.' },
+  { icon: '💧', text: 'Carry at least 1 litre of water per person. There are no water stations on most trails.' },
+];
+
+const trailSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  name: trail.name,
+  description: trail.description,
+  image: trail.image,
+  url: `https://banffbound.com/trails/${trail.slug}`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: trail.area,
+    addressRegion: 'Alberta',
+    addressCountry: 'CA',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: trail.lat,
+    longitude: trail.lng,
+  },
+  isAccessibleForFree: false,
+  publicAccess: true,
+  touristType: 'Hiking',
+};
+---
+
+<BaseLayout title={`${trail.name} | Banff Trail Guide`} description={`Complete guide to ${trail.name} in ${trail.area}. ${trail.distance}, ${trail.elevationGain} elevation gain, ${trail.time}. Difficulty: ${trail.difficulty}.`}>
+
+  <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Trail Map', href: '/trail-map' },
+      { label: trail.area, href: `/trail-map?area=${encodeURIComponent(trail.area)}` },
+      { label: trail.name },
+    ]} />
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(trailSchema)} />
+
+  <section class="trail-hero">
+    <img src={trail.image} alt={trail.name} class="trail-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="trail-hero-overlay">
+      <div class="container">
+        <div class="hero-tags">
+          <span class="difficulty-badge" style={`background:${difficultyBg};color:${difficultyColor};`}>{trail.difficulty}</span>
+          <span class="badge">{trail.area}</span>
+          <span class="type-tag">{trail.type}</span>
+        </div>
+        <h1>{trail.name}</h1>
+        <p class="hero-desc">{trail.description}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="container stats-bar-inner">
+      <div class="stat-item">
+        <span class="stat-icon">📏</span>
+        <span class="stat-label">Distance</span>
+        <span class="stat-value">{trail.distance}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">⬆️</span>
+        <span class="stat-label">Elevation Gain</span>
+        <span class="stat-value">{trail.elevationGain}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">⬇️</span>
+        <span class="stat-label">Elevation Loss</span>
+        <span class="stat-value">{trail.elevationLoss}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">⏱️</span>
+        <span class="stat-label">Time</span>
+        <span class="stat-value">{trail.time}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">📅</span>
+        <span class="stat-label">Season</span>
+        <span class="stat-value">{trail.season}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">🏔️</span>
+        <span class="stat-label">Difficulty</span>
+        <span class="stat-value" style={`color:${difficultyColor};`}>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="trail-layout">
+        <div class="trail-main">
+
+          <div class="content-section">
+            <h2>About This Trail</h2>
+            {trail.longDescription.split('\n\n').map(paragraph => (
+              <p class="trail-text">{paragraph}</p>
+            ))}
+          </div>
+
+          <div class="content-section">
+            <h2>Highlights</h2>
+            <div class="highlights-list">
+              {trail.highlights.map(h => (
+                <span class="highlight-chip">{h}</span>
+              ))}
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Trailhead Information</h2>
+            <div class="trailhead-info">
+              <div class="trailhead-row">
+                <span class="trailhead-icon">📍</span>
+                <div>
+                  <strong>Starting Point</strong>
+                  <p>{trail.trailhead}</p>
+                </div>
+              </div>
+              {trail.transitAccessible && (
+                <div class="trailhead-row">
+                  <span class="trailhead-icon">🚌</span>
+                  <div>
+                    <strong>Transit Accessible</strong>
+                    <p>{trail.transitRoute || 'Accessible by public transit'}</p>
+                  </div>
+                </div>
+              )}
+              {!trail.transitAccessible && (
+                <div class="trailhead-row">
+                  <span class="trailhead-icon">🚗</span>
+                  <div>
+                    <strong>Vehicle Required</strong>
+                    <p>This trail is not accessible by public transit. A personal vehicle or taxi is required.</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Trail Location</h2>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+            <div id="trail-detail-map" class="trail-map-embed"></div>
+          </div>
+
+          <div class="content-section">
+            <h2>Safety Tips</h2>
+            <div class="safety-list">
+              {safetyTips.map(tip => (
+                <div class="safety-item">
+                  <span class="safety-icon">{tip.icon}</span>
+                  <p>{tip.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="content-section">
+            <div class="cta-box">
+              <h3>Check Latest Trail Conditions</h3>
+              <p>Always check the official Parks Canada page for current conditions, closures, and advisories before heading out.</p>
+              <a href={trail.parksCanadaUrl} target="_blank" rel="noopener" class="btn btn-primary">
+                View on Parks Canada →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="trail-sidebar">
+          <div class="sidebar-card quick-facts">
+            <h3>Quick Facts</h3>
+            <div class="fact-row"><span>Distance</span><span>{trail.distance}</span></div>
+            <div class="fact-row"><span>Elevation Gain</span><span>{trail.elevationGain}</span></div>
+            <div class="fact-row"><span>Elevation Loss</span><span>{trail.elevationLoss}</span></div>
+            <div class="fact-row"><span>Time</span><span>{trail.time}</span></div>
+            <div class="fact-row"><span>Difficulty</span><span style={`color:${difficultyColor};font-weight:700;`}>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</span></div>
+            <div class="fact-row"><span>Season</span><span>{trail.season}</span></div>
+            <div class="fact-row"><span>Type</span><span style="text-transform:capitalize;">{trail.type}</span></div>
+            <div class="fact-row"><span>Area</span><span>{trail.area}</span></div>
+            <div class="fact-row"><span>Transit</span><span>{trail.transitAccessible ? 'Yes' : 'No'}</span></div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Official Info</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-light);margin-bottom:0.75rem;">Get the latest trail conditions, closures, and safety updates.</p>
+            <a href={trail.parksCanadaUrl} target="_blank" rel="noopener" class="btn btn-primary sidebar-btn">Parks Canada →</a>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Explore More Trails</h3>
+            <a href="/trail-map" class="btn btn-outline sidebar-btn">View All {trails.length} Trails →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {nearbyTrails.length > 0 && (
+    <section class="section" style="background:var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <h2>More Trails in {trail.area}</h2>
+          <p>Explore other trails and destinations nearby.</p>
+        </div>
+        <div class="grid grid-4">
+          {nearbyTrails.map(t => (
+            <a href={`/trails/${t.slug}`} class="card">
+              <img src={t.image} alt={t.name} class="card-image" style="height:160px;" loading="lazy" />
+              <div class="card-body">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.3rem;">
+                  <span class="nearby-difficulty" style={`background:${t.difficulty === 'easy' ? '#dcfce7' : t.difficulty === 'moderate' ? '#fef3c7' : '#fee2e2'};color:${t.difficulty === 'easy' ? '#166534' : t.difficulty === 'moderate' ? '#92400e' : '#991b1b'};`}>{t.difficulty}</span>
+                  <span style="font-size:0.75rem;color:var(--color-text-light);text-transform:capitalize;">{t.type}</span>
+                </div>
+                <h3 style="font-size:0.95rem;">{t.name}</h3>
+                <p style="font-size:0.8rem;color:var(--color-text-light);">📏 {t.distance} · ⬆️ {t.elevationGain} · ⏱️ {t.time}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<script define:vars={{ lat: trail.lat, lng: trail.lng, name: trail.name }}>
+  function initTrailMap() {
+    const mapEl = document.getElementById('trail-detail-map');
+    if (!mapEl || typeof L === 'undefined') return;
+    const map = L.map('trail-detail-map').setView([lat, lng], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+      maxZoom: 18,
+    }).addTo(map);
+    L.marker([lat, lng]).addTo(map).bindPopup(`<strong>${name}</strong>`).openPopup();
+  }
+
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  script.onload = initTrailMap;
+  document.head.appendChild(script);
+</script>
+
+<style>
+  .trail-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    overflow: hidden;
+  }
+
+  .trail-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .trail-hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 4rem 0 2rem;
+    color: white;
+  }
+
+  .trail-hero-overlay h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-tags {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .difficulty-badge {
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .type-tag {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.8);
+    text-transform: capitalize;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    max-width: 700px;
+    line-height: 1.6;
+  }
+
+  .stats-bar {
+    background: var(--color-primary);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 60px;
+    z-index: 50;
+  }
+
+  .stats-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    text-align: center;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .stat-icon { font-size: 1.1rem; }
+
+  .stat-label {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .stat-value {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .trail-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .content-section:last-child {
+    border-bottom: none;
+  }
+
+  .content-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .trail-text {
+    font-size: 1.02rem;
+    line-height: 1.85;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+  }
+
+  .trail-text:last-child { margin-bottom: 0; }
+
+  .highlights-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .highlight-chip {
+    background: var(--color-bg-alt);
+    color: var(--color-primary);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .trailhead-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .trailhead-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+  }
+
+  .trailhead-icon { font-size: 1.3rem; flex-shrink: 0; }
+
+  .trailhead-row strong {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .trailhead-row p {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    margin: 0;
+  }
+
+  .trail-map-embed {
+    height: 350px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .safety-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .safety-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #fef9e7;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .safety-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+  .safety-item p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .cta-box {
+    background: var(--color-primary);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+  }
+
+  .cta-box h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .cta-box p {
+    opacity: 0.85;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .cta-box .btn {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  .cta-box .btn:hover {
+    background: var(--color-accent-light);
+    color: var(--color-dark);
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .quick-facts {
+    position: sticky;
+    top: 120px;
+  }
+
+  .fact-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 0.85rem;
+  }
+
+  .fact-row:last-child { border-bottom: none; }
+  .fact-row span:first-child { color: var(--color-text-light); }
+  .fact-row span:last-child { font-weight: 600; }
+
+  .sidebar-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .nearby-difficulty {
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  @media (max-width: 768px) {
+    .trail-hero {
+      height: 40vh;
+      min-height: 300px;
+    }
+
+    .stats-bar-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .trail-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .quick-facts {
+      position: static;
+    }
+  }
+</style>

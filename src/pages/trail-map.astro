@@ -78,7 +78,7 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
 
       <div class="trail-grid" id="trail-grid">
         {trails.map(trail => (
-          <div class="trail-card"
+          <a href={`/trails/${trail.slug}`} class="trail-card"
                data-id={trail.id}
                data-difficulty={trail.difficulty}
                data-type={trail.type}
@@ -101,7 +101,7 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
                 <span class="trail-season">📅 {trail.season}</span>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -224,7 +224,7 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
           <strong style="font-size:0.9rem;">${t.name}</strong><br/>
           <span style="font-size:0.8rem;color:#666;">${t.type} · ${t.difficulty} · ${t.distance}</span><br/>
           <span style="font-size:0.8rem;color:#888;">⬆️ ${t.elevationGain} · ⏱️ ${t.time}</span><br/>
-          <a href="/hiking" style="font-size:0.8rem;color:#c8a96e;font-weight:600;">View Details →</a>
+          <a href="/trails/${t.id}" style="font-size:0.8rem;color:#c8a96e;font-weight:600;">View Details →</a>
         </div>
       `);
       marker._trailId = t.id;
