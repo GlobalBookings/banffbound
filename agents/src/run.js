@@ -10,6 +10,7 @@ if (!agent) {
   console.log('  keyword-miner      — Run Keyword Miner');
   console.log('  campaign-builder   — Deploy PPC campaigns from strategy');
   console.log('  campaign-updater   — Update existing ads with new landing pages & copy');
+  console.log('  asset-builder      — Create account-level sitelinks, callouts & snippets');
   console.log('  content-publisher  — Generate blog posts from content gaps');
   console.log('  test               — Verify configuration');
   process.exit(1);
@@ -53,6 +54,7 @@ const agents = {
   'keyword-miner': () => import('./agents/keyword-miner.js'),
   'campaign-builder': () => import('./agents/campaign-builder.js'),
   'campaign-updater': () => import('./agents/campaign-updater.js'),
+  'asset-builder': () => import('./agents/asset-builder.js'),
   'content-publisher': () => import('./agents/content-publisher.js'),
 };
 
