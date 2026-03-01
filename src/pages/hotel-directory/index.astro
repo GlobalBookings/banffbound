@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { hotels, hotelAreas } from '../../data/hotels';
+
+const areas = [...new Set(hotels.map(h => h.area))];
+const starCounts = [5, 4, 3, 2, 1];
+---
+
+<BaseLayout title="Banff Hotel Directory" description="Compare 45+ hotels in Banff, Canmore & the Bow Valley. Real descriptions, prices, highlights, and direct booking links. Find your perfect mountain stay.">
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80" alt="Banff hotel with mountain views" class="page-hero-bg" />
+    <div class="page-hero-content">
+      <span class="badge">Hotel Directory</span>
+      <h1>Where to Stay in Banff</h1>
+      <p>Compare {hotels.length} hotels, lodges, and inns across Banff, Canmore, and the Bow Valley. Every listing includes honest descriptions, price ranges, and direct booking links.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar" id="filters">
+        <div class="filter-group">
+          <label>Area:</label>
+          <select id="area-filter">
+            <option value="all">All Areas</option>
+            {areas.map(a => <option value={a}>{a}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Budget:</label>
+          <select id="price-filter">
+            <option value="all">All Prices</option>
+            <option value="$">$ Budget</option>
+            <option value="$$">$$ Mid-Range</option>
+            <option value="$$$">$$$ Upscale</option>
+            <option value="$$$$">$$$$ Luxury</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Stars:</label>
+          <select id="star-filter">
+            <option value="all">All Stars</option>
+            {starCounts.map(s => <option value={String(s)}>{s}★{s < 5 ? '+' : ''}</option>)}
+          </select>
+        </div>
+        <span class="result-count" id="result-count">{hotels.length} hotels</span>
+      </div>
+
+      <div class="hotel-grid" id="hotel-grid">
+        {hotels.map(hotel => (
+          <a href={`/hotel-directory/${hotel.slug}`} class="hotel-card" data-area={hotel.area} data-price={hotel.priceRange} data-stars={String(hotel.stars)}>
+            <img src={hotel.image} alt={hotel.name} class="hotel-card-img" loading="lazy" />
+            <div class="hotel-card-body">
+              <div class="hotel-card-top">
+                <span class="hotel-stars">{'★'.repeat(hotel.stars)}</span>
+                <span class="hotel-price">{hotel.priceRange}</span>
+              </div>
+              <h3>{hotel.name}</h3>
+              <p class="hotel-area">{hotel.area} &middot; {hotel.type}</p>
+              <p class="hotel-desc">{hotel.description.slice(0, 140)}...</p>
+              <div class="hotel-card-footer">
+                <span class="hotel-avg">{hotel.avgPrice}</span>
+                <span class="hotel-link">View Details →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Banff Hotel Areas</h2>
+        <p>Where you stay in Banff matters. Here's a quick guide to each area.</p>
+      </div>
+      <div class="grid grid-3">
+        {hotelAreas.map(area => (
+          <div class="card">
+            <div class="card-body">
+              <h3>{area.name}</h3>
+              <p>{area.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const areaFilter = document.getElementById('area-filter') as HTMLSelectElement;
+  const priceFilter = document.getElementById('price-filter') as HTMLSelectElement;
+  const starFilter = document.getElementById('star-filter') as HTMLSelectElement;
+  const cards = document.querySelectorAll('.hotel-card') as NodeListOf<HTMLElement>;
+  const countEl = document.getElementById('result-count')!;
+
+  function applyFilters() {
+    const area = areaFilter.value;
+    const price = priceFilter.value;
+    const star = starFilter.value;
+    let visible = 0;
+
+    cards.forEach(card => {
+      const matchArea = area === 'all' || card.dataset.area === area;
+      const matchPrice = price === 'all' || card.dataset.price === price;
+      const matchStar = star === 'all' || Number(card.dataset.stars) >= Number(star);
+      const show = matchArea && matchPrice && matchStar;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    countEl.textContent = `${visible} hotel${visible !== 1 ? 's' : ''}`;
+  }
+
+  areaFilter.addEventListener('change', applyFilters);
+  priceFilter.addEventListener('change', applyFilters);
+  starFilter.addEventListener('change', applyFilters);
+</script>
+
+<style>
+  .filter-bar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+  }
+
+  .filter-group select {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: var(--color-white);
+    cursor: pointer;
+  }
+
+  .result-count {
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .hotel-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hotel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hotel-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .hotel-card-body {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hotel-card-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .hotel-stars {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+  }
+
+  .hotel-price {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+  }
+
+  .hotel-card-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .hotel-area {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .hotel-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .hotel-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .hotel-avg {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+  }
+
+  .hotel-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .filter-bar { flex-direction: column; align-items: flex-start; }
+    .result-count { margin-left: 0; }
+    .hotel-grid { grid-template-columns: 1fr; }
+  }
+</style>

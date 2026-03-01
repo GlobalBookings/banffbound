@@ -42,7 +42,7 @@ export const blogPosts: BlogPost[] = [
     description: 'A comprehensive 7-day Banff itinerary including Lake Louise, Icefields Parkway, Johnston Canyon, hot springs, and hidden gems.',
     date: '2026-02-05',
     category: 'Itineraries',
-    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=80',
     readTime: '15 min read',
   },
   {
@@ -60,7 +60,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Everything you need to know about visiting Lake Louise -- best viewpoints, hiking trails, canoeing, parking, shuttles, and seasonal tips.',
     date: '2026-01-25',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=80',
     readTime: '11 min read',
   },
   {
@@ -177,7 +177,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Plan the perfect romantic trip to Banff. Couples activities, the best restaurants, luxury hotels, and unforgettable experiences for two.',
     date: '2026-02-20',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=80',
     readTime: '10 min read',
   },
   {
@@ -393,7 +393,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Wake up early for these stunning sunrise locations in Banff. Includes directions, best seasons, and photography tips for each spot.',
     date: '2026-02-17',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -456,7 +456,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Accessible activities, gentle walks, scenic drives, and comfort tips for seniors visiting Banff National Park.',
     date: '2026-01-24',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=80',
     readTime: '7 min read',
   },
   {
@@ -681,7 +681,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Everything you need to know about visiting Lake Minnewanka in Banff. Boat cruises, hiking, cycling, scuba diving, and the sunken ghost town.',
     date: '2026-02-18',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=80',
     readTime: '8 min read',
   },
   {
@@ -717,7 +717,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Guide to Vermilion Lakes near Banff town. Best photography spots, wildlife viewing tips, sunrise timing, and why this is a must-visit.',
     date: '2026-02-14',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1500581276021-a4bbcd0601af?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=80',
     readTime: '6 min read',
   },
   {

@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { hotels } from '../../data/hotels';
+
+export function getStaticPaths() {
+  return hotels.map(hotel => ({
+    params: { slug: hotel.slug },
+    props: { hotel },
+  }));
+}
+
+const { hotel } = Astro.props;
+const otherHotels = hotels.filter(h => h.slug !== hotel.slug && h.area === hotel.area).slice(0, 3);
+const GYG = 'QW960HO';
+---
+
+<BaseLayout title={`${hotel.name} - Banff Hotel Guide`} description={`${hotel.name} review and booking guide. ${hotel.avgPrice}. ${hotel.highlights.slice(0, 3).join(', ')}. Book on Expedia with our best rate finder.`}>
+  <section class="page-hero">
+    <img src={hotel.image} alt={hotel.name} class="page-hero-bg" />
+    <div class="page-hero-content">
+      <span class="badge">{hotel.area}</span>
+      <h1>{hotel.name}</h1>
+      <p class="hero-stars">{'★'.repeat(hotel.stars)} &middot; {hotel.type} &middot; {hotel.priceRange}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="hotel-layout">
+        <div class="hotel-main">
+          <div class="hotel-intro">
+            <h2>About {hotel.name}</h2>
+            <p class="hotel-description">{hotel.description}</p>
+          </div>
+
+          <div class="hotel-highlights">
+            <h2>Highlights & Amenities</h2>
+            <div class="highlights-grid">
+              {hotel.highlights.map(h => (
+                <div class="highlight-item">
+                  <span class="highlight-check">✓</span>
+                  <span>{h}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="hotel-location">
+            <h2>Location & Nearby Attractions</h2>
+            <p><strong>Area:</strong> {hotel.area}</p>
+            <ul>
+              {hotel.nearbyAttractions.map(a => <li>{a}</li>)}
+            </ul>
+          </div>
+
+          <div class="hotel-tips">
+            <h2>Tips for Staying at {hotel.name}</h2>
+            <div class="tip-box">
+              <strong>Booking Tip:</strong> Rates vary significantly by season. Summer (June-August) is peak season with the highest prices. Book 3-6 months in advance for summer stays. Shoulder season (May, September-October) offers lower rates and fewer crowds. Winter rates drop further except during ski season holidays.
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-sidebar">
+          <div class="booking-card">
+            <div class="booking-price">{hotel.avgPrice}</div>
+            <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent booking-btn">
+              Check Availability on Expedia →
+            </a>
+            <p class="booking-note">Prices vary by date. Click to see current rates.</p>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Quick Facts</h3>
+            <div class="fact-row"><span>Stars</span><span>{'★'.repeat(hotel.stars)}</span></div>
+            <div class="fact-row"><span>Type</span><span>{hotel.type}</span></div>
+            <div class="fact-row"><span>Area</span><span>{hotel.area}</span></div>
+            <div class="fact-row"><span>Price Range</span><span>{hotel.priceRange}</span></div>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Book Experiences</h3>
+            <a href={`https://www.getyourguide.com/banff-l284/?partner_id=${GYG}`} target="_blank" rel="noopener sponsored" class="btn btn-primary sidebar-btn">Browse Banff Tours →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {otherHotels.length > 0 && (
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Other Hotels in {hotel.area}</h2>
+        </div>
+        <div class="grid grid-3">
+          {otherHotels.map(h => (
+            <a href={`/hotel-directory/${h.slug}`} class="card">
+              <img src={h.image} alt={h.name} class="card-image" style="height: 180px;" loading="lazy" />
+              <div class="card-body">
+                <span class="hotel-stars" style="font-size: 0.8rem;">{'★'.repeat(h.stars)} &middot; {h.priceRange}</span>
+                <h3 style="font-size: 1rem;">{h.name}</h3>
+                <p style="font-size: 0.85rem; color: var(--color-text-light);">{h.avgPrice}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <a href="/hotel-directory" class="btn btn-outline">View All Hotels →</a>
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .hero-stars { font-size: 1.1rem; opacity: 0.9; }
+
+  .hotel-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .hotel-main h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .hotel-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .hotel-highlights { margin-bottom: 2rem; }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .highlight-check {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .hotel-location { margin-bottom: 2rem; }
+  .hotel-location ul { padding-left: 1.5rem; margin-top: 0.5rem; }
+  .hotel-location li { margin-bottom: 0.4rem; font-size: 0.95rem; }
+
+  .booking-card {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: sticky;
+    top: 90px;
+  }
+
+  .booking-price {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .booking-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .booking-note {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 0.75rem;
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-card h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+
+  .fact-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 0.9rem;
+  }
+
+  .fact-row:last-child { border-bottom: none; }
+
+  .sidebar-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .hotel-layout { grid-template-columns: 1fr; }
+    .booking-card { position: static; }
+    .highlights-grid { grid-template-columns: 1fr; }
+  }
+</style>
