@@ -1,13 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { activities, tripTemplates, hotelLink } from '../data/tripActivities';
 
 const activityMap = Object.fromEntries(activities.map(a => [a.id, a]));
 ---
 
 <BaseLayout title="Trip Builder" description="Plan your perfect Banff trip day by day. Choose a template or build your own itinerary with booking links for tours, hotels, and activities.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Trip Builder' }]} />
+  </div>
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff National Park" class="page-hero-bg" />
+    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
     <div class="page-hero-content">
       <span class="badge">Plan Your Trip</span>
       <h1>Banff Trip Builder</h1>

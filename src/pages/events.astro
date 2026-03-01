@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Parser from 'rss-parser';
 
 const parser = new Parser({
@@ -55,11 +56,16 @@ const buildDate = new Date().toLocaleDateString('en-CA', { year: 'numeric', mont
 ---
 
 <BaseLayout title="News & Events" description="Stay up to date with the latest news, events, and happenings in Banff, Alberta.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Events & News' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
       alt="Banff townsite"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Stay Updated</span>
@@ -81,7 +87,7 @@ const buildDate = new Date().toLocaleDateString('en-CA', { year: 'numeric', mont
         <div class="grid grid-3">
           {events.map(event => (
             <a href={event.link} target="_blank" rel="noopener" class="event-card card">
-              {event.image && <img src={event.image} alt={event.title} class="card-image" />}
+              {event.image && <img src={event.image} alt={event.title} class="card-image" loading="lazy" />}
               <div class="card-body">
                 <h3>{event.title}</h3>
                 {event.dates && (

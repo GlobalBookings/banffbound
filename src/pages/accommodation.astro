@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const accommodationTypes = [
   {
@@ -71,11 +72,16 @@ const areas = [
 ---
 
 <BaseLayout title="Accommodation in Banff" description="Complete guide to accommodation in Banff — hotels, hostels, cabins, B&Bs, backcountry lodges, camping and RV parks. Areas, prices, and booking tips.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Accommodation' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80"
       alt="Mountain hotel accommodation in Banff"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Where to Stay</span>
@@ -95,7 +101,7 @@ const areas = [
       <div class="grid grid-3">
         {accommodationTypes.map(type => (
           <div class="card">
-            <img src={type.image} alt={type.name} class="card-image" />
+            <img src={type.image} alt={type.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{type.name}</h3>
               <p>{type.description}</p>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { hotels, hotelAreas } from '../../data/hotels';
 
 const areas = [...new Set(hotels.map(h => h.area))];
@@ -22,8 +23,11 @@ const hotelData = JSON.stringify(hotels.map(h => ({
 ---
 
 <BaseLayout title="Banff Hotel Directory — Compare 95+ Hotels" description="Compare 95+ hotels in Banff, Canmore & the Bow Valley with interactive map. Filter by area, budget, type, and star rating. Real reviews, prices, and direct booking links.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Hotels' }]} />
+  </div>
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="Canadian Rocky Mountains hotel view" class="page-hero-bg" />
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="Canadian Rocky Mountains hotel view" class="page-hero-bg" loading="eager" fetchpriority="high" />
     <div class="page-hero-content">
       <span class="badge">Hotel Directory</span>
       <h1>Where to Stay in Banff</h1>

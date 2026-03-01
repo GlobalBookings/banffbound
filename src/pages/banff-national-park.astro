@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const parkHighlights = [
   {
@@ -54,11 +55,16 @@ const ecosystems = [
 ---
 
 <BaseLayout title="Banff National Park" description="Complete guide to Banff National Park — Canada's first national park, UNESCO World Heritage Site. Park passes, regulations, how to get there, and must-see highlights.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Banff National Park' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
       alt="Banff National Park panoramic mountain view"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Est. 1885</span>
@@ -136,7 +142,7 @@ const ecosystems = [
       <div class="grid grid-3">
         {parkHighlights.map(spot => (
           <div class="card">
-            <img src={spot.image} alt={spot.name} class="card-image" />
+            <img src={spot.image} alt={spot.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{spot.name}</h3>
               <p>{spot.description}</p>

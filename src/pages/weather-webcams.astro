@@ -1,11 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 ---
 
 <BaseLayout title="Weather & Webcams" description="Current weather conditions, live webcams, and snow forecasts for Banff, Lake Louise, and the Big 3 ski resorts.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Weather & Webcams' }]} />
+  </div>
 
   <div class="page-hero" style="min-height: 320px; height: 35vh;">
-    <img src="https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1400&q=80" alt="Snowy Banff mountains" class="page-hero-bg" />
+    <img src="https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1400&q=80" alt="Snowy Banff mountains" class="page-hero-bg" loading="eager" fetchpriority="high" />
     <div class="page-hero-content">
       <span class="badge">Live Conditions</span>
       <h1>Weather & Webcams</h1>

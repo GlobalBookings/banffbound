@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const GYG_PARTNER_ID = 'QW960HO';
 
@@ -77,11 +78,16 @@ const categories = [
 ---
 
 <BaseLayout title="Tours & Adventures" description="Book the best tours and guided adventures in Banff. Day trips, wildlife safaris, gondola rides, and more.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Tours & Adventures' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
       alt="Mountain adventure"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Book Adventures</span>
@@ -116,7 +122,7 @@ const categories = [
         {featuredTours.map(tour => (
           <a href={tour.gygUrl} target="_blank" rel="noopener" class="tour-card card">
             <div class="tour-image-wrap">
-              <img src={tour.image} alt={tour.name} class="card-image" />
+              <img src={tour.image} alt={tour.name} class="card-image" loading="lazy" />
               <span class="tour-type-badge">{tour.type}</span>
             </div>
             <div class="card-body">

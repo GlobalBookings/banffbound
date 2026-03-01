@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const museums = [
   {
@@ -77,11 +78,16 @@ const festivals = [
 ---
 
 <BaseLayout title="Arts & Culture in Banff" description="Discover Banff's vibrant arts and culture scene — museums, galleries, Indigenous heritage, the Banff Centre, performing arts, and cultural festivals.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Arts & Culture' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1600&q=80"
       alt="Arts and culture in Banff"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Mountain Culture</span>
@@ -101,7 +107,7 @@ const festivals = [
       <div class="grid grid-3">
         {museums.map(museum => (
           <div class="card">
-            <img src={museum.image} alt={museum.name} class="card-image" />
+            <img src={museum.image} alt={museum.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{museum.name}</h3>
               <p>{museum.description}</p>
@@ -129,7 +135,7 @@ const festivals = [
       <div class="grid grid-2">
         {culturalExperiences.map(exp => (
           <div class="card">
-            <img src={exp.image} alt={exp.name} class="card-image" />
+            <img src={exp.image} alt={exp.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{exp.name}</h3>
               <p>{exp.description}</p>

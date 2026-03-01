@@ -1,0 +1,86 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+const siteUrl = 'https://banffbound.com';
+const fullItems = [{ label: 'Home', href: '/' }, ...items];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: fullItems.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.label,
+    ...(item.href ? { item: `${siteUrl}${item.href}` } : {}),
+  })),
+};
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    {fullItems.map((item, i) => (
+      <li>
+        {item.href && i < fullItems.length - 1 ? (
+          <a href={item.href}>{item.label}</a>
+        ) : (
+          <span aria-current="page">{item.label}</span>
+        )}
+        {i < fullItems.length - 1 && <span class="breadcrumb-sep" aria-hidden="true">/</span>}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+<style>
+  .breadcrumbs {
+    padding: 0.75rem 0;
+    font-size: 0.82rem;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumbs a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .breadcrumbs span[aria-current] {
+    color: var(--color-text-light);
+  }
+
+  .breadcrumb-sep {
+    margin: 0 0.4rem;
+    color: var(--color-text-light);
+    opacity: 0.5;
+  }
+</style>

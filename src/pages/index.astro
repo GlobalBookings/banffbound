@@ -135,7 +135,7 @@ const highlights = [
       <div class="grid grid-2">
         {categories.map(cat => (
           <a href={cat.href} class="category-card card">
-            <img src={cat.image} alt={cat.title} class="card-image" />
+            <img src={cat.image} alt={cat.title} class="card-image" loading="lazy" />
             <div class="card-body">
               <span class="category-icon" set:html={cat.icon}></span>
               <h3>{cat.title}</h3>

@@ -1,14 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { blogPosts, categories } from '../../data/blogPosts';
 ---
 
 <BaseLayout title="Banff Travel Guide & Blog" description="Expert travel guides, tips, and itineraries for Banff National Park. Plan your perfect trip to the Canadian Rockies.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Travel Guides' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
       alt="Banff National Park"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Travel Guides</span>
@@ -35,7 +41,7 @@ import { blogPosts, categories } from '../../data/blogPosts';
       <div class="grid grid-3" id="posts-grid">
         {blogPosts.map(post => (
           <a href={`/blog/${post.slug}`} class="post-card card" data-category={post.category}>
-            <img src={post.image} alt={post.title} class="card-image" />
+            <img src={post.image} alt={post.title} class="card-image" loading="lazy" />
             <div class="card-body">
               <div class="post-meta-top">
                 <span class="tag">{post.category}</span>

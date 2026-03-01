@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { hotels } from '../../data/hotels';
 
 export function getStaticPaths() {
@@ -14,9 +15,32 @@ const otherHotels = hotels.filter(h => h.slug !== hotel.slug && h.area === hotel
 const GYG = 'QW960HO';
 const galleryImages = hotel.images?.length ? hotel.images : [hotel.image];
 const starWord = hotel.reviewScore ? (hotel.reviewScore >= 9 ? 'Exceptional' : hotel.reviewScore >= 8 ? 'Very Good' : hotel.reviewScore >= 7 ? 'Good' : 'Fair') : '';
+
+const hotelSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Hotel',
+  name: hotel.name,
+  description: hotel.description,
+  image: hotel.image,
+  address: hotel.address ? { '@type': 'PostalAddress', streetAddress: hotel.address } : undefined,
+  starRating: { '@type': 'Rating', ratingValue: hotel.stars },
+  priceRange: hotel.priceRange,
+  ...(hotel.reviewScore ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: hotel.reviewScore, bestRating: 10, reviewCount: hotel.reviewCount || 1 } } : {}),
+  ...(hotel.lat && hotel.lng ? { geo: { '@type': 'GeoCoordinates', latitude: hotel.lat, longitude: hotel.lng } } : {}),
+};
 ---
 
 <BaseLayout title={`${hotel.name} | Banff Hotel Guide`} description={`Detailed guide to ${hotel.name} in ${hotel.area}. ${hotel.avgPrice}. Real reviews, amenities, room info, check-in details, and direct booking links.`}>
+
+  <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Hotels', href: '/hotel-directory' },
+      { label: hotel.area, href: `/hotel-directory?area=${encodeURIComponent(hotel.area)}` },
+      { label: hotel.name },
+    ]} />
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(hotelSchema)} />
 
   <!-- Hero with gallery -->
   <section class="hotel-hero">

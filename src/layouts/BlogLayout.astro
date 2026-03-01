@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 interface Props {
   title: string;
@@ -8,22 +9,47 @@ interface Props {
   category: string;
   image: string;
   readTime: string;
+  slug?: string;
 }
 
-const { title, description, date, category, image, readTime } = Astro.props;
+const { title, description, date, category, image, readTime, slug } = Astro.props;
 const formattedDate = new Date(date).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+const isoDate = new Date(date).toISOString();
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image,
+  datePublished: isoDate,
+  dateModified: isoDate,
+  author: { '@type': 'Organization', name: 'BanffBound' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'BanffBound',
+    url: 'https://banffbound.com',
+  },
+};
 ---
 
-<BaseLayout title={title} description={description} image={image}>
+<BaseLayout title={title} description={description} image={image} lastUpdated={isoDate}>
+  <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Guides', href: '/blog' },
+      { label: category, href: `/blog?category=${encodeURIComponent(category)}` },
+      { label: title },
+    ]} />
+  </div>
   <article class="blog-article">
     <div class="article-hero">
-      <img src={image} alt={title} class="article-hero-img" />
+      <img src={image} alt={title} class="article-hero-img" loading="eager" fetchpriority="high" />
       <div class="article-hero-overlay"></div>
       <div class="article-hero-content">
         <span class="badge">{category}</span>
         <h1>{title}</h1>
         <div class="article-meta">
-          <span>{formattedDate}</span>
+          <time datetime={isoDate}>{formattedDate}</time>
           <span>&middot;</span>
           <span>{readTime}</span>
         </div>
@@ -32,10 +58,15 @@ const formattedDate = new Date(date).toLocaleDateString('en-CA', { year: 'numeri
     <div class="article-body container">
       <slot />
       <div class="article-footer">
+        <div class="article-updated">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Last updated: <time datetime={isoDate}>{formattedDate}</time>
+        </div>
         <a href="/blog" class="btn btn-outline">&larr; Back to All Guides</a>
       </div>
     </div>
   </article>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 </BaseLayout>
 
 <style>
@@ -148,6 +179,19 @@ const formattedDate = new Date(date).toLocaleDateString('en-CA', { year: 'numeri
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .article-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--color-text-light);
   }
 
   @media (max-width: 768px) {

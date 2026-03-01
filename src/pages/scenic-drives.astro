@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const drives = [
   {
@@ -42,11 +43,16 @@ const drives = [
 ---
 
 <BaseLayout title="Scenic Drives" description="Discover the most breathtaking scenic drives in Banff National Park — Icefields Parkway, Bow Valley Parkway, Lake Minnewanka Loop, and more.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Scenic Drives' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
       alt="Scenic mountain highway through the Canadian Rockies"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Open Road</span>

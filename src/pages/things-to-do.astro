@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const attractions = [
   {
@@ -78,11 +79,16 @@ const attractions = [
 ---
 
 <BaseLayout title="Things to Do" description="Discover the best things to do in Banff - from iconic sightseeing spots to hidden gems in the Canadian Rockies.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Things to Do' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
       alt="Banff mountain landscape"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Explore</span>
@@ -96,7 +102,7 @@ const attractions = [
       <div class="grid grid-3">
         {attractions.map(item => (
           <div class="card">
-            <img src={item.image} alt={item.name} class="card-image" />
+            <img src={item.image} alt={item.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <span class="tag">{item.type}</span>
               <h3>{item.name}</h3>

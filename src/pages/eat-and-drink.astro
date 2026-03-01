@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const restaurants = [
   {
@@ -101,11 +102,16 @@ const drinks = [
 ---
 
 <BaseLayout title="Eat & Drink" description="The best restaurants, cafes, bars, and breweries in Banff. From fine dining to cozy mountain pubs.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Eat & Drink' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
       alt="Fine dining table setting"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Dine & Sip</span>
@@ -124,7 +130,7 @@ const drinks = [
       <div class="grid grid-3">
         {restaurants.map(item => (
           <div class="card">
-            <img src={item.image} alt={item.name} class="card-image" />
+            <img src={item.image} alt={item.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <div class="card-tags">
                 <span class="tag">{item.type}</span>

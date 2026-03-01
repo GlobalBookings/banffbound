@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const animals = [
   {
@@ -70,11 +71,16 @@ const animals = [
 ---
 
 <BaseLayout title="Wildlife in Banff" description="Guide to wildlife viewing in Banff National Park — elk, bears, mountain goats, bighorn sheep, moose, wolves, eagles. Best locations, seasons, safety rules, and photography tips.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Wildlife' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://banfflakelouise.bynder.com/m/30543649c0240f70/1500x915_jpg-2024_Wildlife_Wolverine_WillLambert.jpg"
       alt="Wildlife in Banff National Park"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Wild Encounters</span>
@@ -94,7 +100,7 @@ const animals = [
       <div class="grid grid-2">
         {animals.map(animal => (
           <div class="card">
-            <img src={animal.image} alt={animal.name} class="card-image" />
+            <img src={animal.image} alt={animal.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{animal.name}</h3>
               <p>{animal.description}</p>

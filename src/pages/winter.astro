@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const winterActivities = [
   {
@@ -69,11 +70,16 @@ const winterActivities = [
 ---
 
 <BaseLayout title="Winter Guide" description="Your complete guide to winter in Banff — skiing, snowboarding, ice skating, dog sledding, snowshoeing, northern lights, and more.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Winter Guide' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1600&q=80"
       alt="Snow-covered mountains in Banff winter"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">&#10052; Winter Wonderland</span>
@@ -92,7 +98,7 @@ const winterActivities = [
       <div class="grid grid-3">
         {winterActivities.map(item => (
           <div class="card">
-            <img src={item.image} alt={item.name} class="card-image" />
+            <img src={item.image} alt={item.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{item.name}</h3>
               <p>{item.description}</p>

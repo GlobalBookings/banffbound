@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const lakes = [
   {
@@ -87,11 +88,16 @@ const lakes = [
 ---
 
 <BaseLayout title="Lakes" description="Explore the stunning turquoise lakes of Banff National Park — Lake Louise, Moraine Lake, Peyto Lake, Lake Minnewanka, and more.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Lakes' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80"
       alt="Turquoise mountain lake surrounded by peaks"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Turquoise Waters</span>

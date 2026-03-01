@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const easyHikes = [
   {
@@ -147,11 +148,16 @@ const challengingHikes = [
 ---
 
 <BaseLayout title="Hiking in Banff" description="Complete guide to hiking in Banff National Park — 15+ trails organized by difficulty, with distances, elevation, time, and seasonal advice.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Hiking' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
       alt="Hiking trail in the Canadian Rockies near Banff"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">1,600+ km of Trails</span>
@@ -171,7 +177,7 @@ const challengingHikes = [
       <div class="grid grid-3">
         {easyHikes.map(hike => (
           <div class="card">
-            <img src={hike.image} alt={hike.name} class="card-image" />
+            <img src={hike.image} alt={hike.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{hike.name}</h3>
               <p>{hike.description}</p>
@@ -201,7 +207,7 @@ const challengingHikes = [
       <div class="grid grid-3">
         {moderateHikes.map(hike => (
           <div class="card">
-            <img src={hike.image} alt={hike.name} class="card-image" />
+            <img src={hike.image} alt={hike.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{hike.name}</h3>
               <p>{hike.description}</p>
@@ -231,7 +237,7 @@ const challengingHikes = [
       <div class="grid grid-3">
         {challengingHikes.map(hike => (
           <div class="card">
-            <img src={hike.image} alt={hike.name} class="card-image" />
+            <img src={hike.image} alt={hike.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{hike.name}</h3>
               <p>{hike.description}</p>

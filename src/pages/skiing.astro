@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const resorts = [
   {
@@ -60,11 +61,16 @@ const xcTrails = [
 ---
 
 <BaseLayout title="Skiing in Banff" description="Guide to skiing in Banff National Park — the Big 3 resorts (Sunshine Village, Lake Louise, Mt Norquay), SkiBig3 passes, cross-country skiing, and more.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Skiing' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1600&q=80"
       alt="Skiing in the Canadian Rockies at Banff"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">Champagne Powder</span>
@@ -84,7 +90,7 @@ const xcTrails = [
       <div class="grid grid-3">
         {resorts.map(resort => (
           <div class="card">
-            <img src={resort.image} alt={resort.name} class="card-image" />
+            <img src={resort.image} alt={resort.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{resort.name}</h3>
               <p>{resort.description}</p>

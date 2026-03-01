@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const canoeingSpots = [
   {
@@ -88,11 +89,16 @@ const supSpots = [
 ---
 
 <BaseLayout title="Paddling in Banff" description="Complete guide to paddling in Banff — canoeing, kayaking, white water rafting, and stand-up paddleboarding. Best lakes, rivers, outfitters, and tours.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Paddling' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://banfflakelouise.bynder.com/m/1e85056f0193bfe9/1500x915_jpg-2022_LakeLouise_Friends_ROAMCreative.jpg"
       alt="Canoeing on turquoise lake in the Canadian Rockies"
       class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
     />
     <div class="page-hero-content">
       <span class="badge">On the Water</span>
@@ -112,7 +118,7 @@ const supSpots = [
       <div class="grid grid-3">
         {canoeingSpots.map(spot => (
           <div class="card">
-            <img src={spot.image} alt={spot.name} class="card-image" />
+            <img src={spot.image} alt={spot.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{spot.name}</h3>
               <p>{spot.description}</p>
@@ -141,7 +147,7 @@ const supSpots = [
       <div class="grid grid-3">
         {raftingTrips.map(trip => (
           <div class="card">
-            <img src={trip.image} alt={trip.name} class="card-image" />
+            <img src={trip.image} alt={trip.name} class="card-image" loading="lazy" />
             <div class="card-body">
               <h3>{trip.name}</h3>
               <p>{trip.description}</p>
