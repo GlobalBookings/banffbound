@@ -9,6 +9,7 @@ if (!agent) {
   console.log('  ppc-review         — Run PPC Review audit');
   console.log('  keyword-miner      — Run Keyword Miner');
   console.log('  campaign-builder   — Deploy PPC campaigns from strategy');
+  console.log('  campaign-updater   — Update existing ads with new landing pages & copy');
   console.log('  content-publisher  — Generate blog posts from content gaps');
   console.log('  test               — Verify configuration');
   process.exit(1);
@@ -51,6 +52,7 @@ const agents = {
   'ppc-review': () => import('./agents/ppc-review.js'),
   'keyword-miner': () => import('./agents/keyword-miner.js'),
   'campaign-builder': () => import('./agents/campaign-builder.js'),
+  'campaign-updater': () => import('./agents/campaign-updater.js'),
   'content-publisher': () => import('./agents/content-publisher.js'),
 };
 

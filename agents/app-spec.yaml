@@ -44,6 +44,8 @@ services:
         value: "3100"
       - key: ANTHROPIC_API_KEY
         type: SECRET
+      - key: OPENAI_API_KEY
+        type: SECRET
       - key: GITHUB_TOKEN
         type: SECRET
       - key: GITHUB_REPO
