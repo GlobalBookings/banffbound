@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'sandman-banff',
+    title: 'Stay Like a Local: Sandman Banff Hotel Guide & Hidden Gems',
+    description: 'Discover insider tips for staying at Sandman Banff Hotel plus local secrets and hidden gems that most tourists miss in this comprehensive Banff travel guide.',
+    date: '2026-03-01',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'sandman-canmore',
+    title: 'Sandman Canmore: Your Perfect Banff Gateway Hotel Guide',
+    description: 'Discover why Sandman Canmore is the ideal base for your Banff adventure. Complete hotel guide with amenities, location benefits, and insider tips.',
+    date: '2026-03-01',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'sandman-hotel-canmore',
+    title: 'Sandman Inn Canmore: Your Perfect Banff Gateway Hotel Guide',
+    description: 'Discover why Sandman Inn Canmore is the ideal base for your Banff adventure. Complete guide to amenities, location benefits, and booking tips for your stay.',
+    date: '2026-03-01',
+    category: 'Accommodation',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
     slug: 'best-time-to-visit-banff',
     title: 'Best Time to Visit Banff: A Complete Month-by-Month Guide',
     description: 'Discover the best time to visit Banff National Park. Our month-by-month guide covers weather, crowds, activities, and pricing for every season.',

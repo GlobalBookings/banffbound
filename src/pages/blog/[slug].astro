@@ -9,6 +9,272 @@ export function getStaticPaths() {
 const { post } = Astro.props;
 
 const content: Record<string, string> = {
+  'sandman-banff': `
+<p>Nestled in the heart of the Canadian Rockies, Banff National Park offers an unforgettable blend of stunning mountain vistas, world-class skiing, and cozy accommodations that make every visitor feel at home. Whether you're planning to stay at the Sandman Banff or exploring the broader Bow Valley region, this comprehensive guide will help you make the most of your Rocky Mountain adventure.</p>
+
+<h2>Where to Stay: Sandman Hotels and Beyond</h2>
+
+<p>When it comes to accommodations in the Bow Valley, the <strong>Sandman Banff</strong> properties offer excellent value for travelers seeking comfort and convenience. The Sandman Inn Banff, located on Banff Avenue, puts you right in the heart of downtown Banff, within walking distance of shops, restaurants, and the Banff Park Museum.</p>
+
+<p>For those considering nearby options, the <strong>Sandman Hotel Canmore</strong> provides an alternative base for exploring the region. Located just 20 km east of Banff townsite, Canmore offers slightly lower accommodation costs while still providing easy access to all of Banff's attractions. The <strong>Sandman Canmore</strong> location is particularly popular with families and budget-conscious travelers, offering spacious rooms and amenities like an indoor pool and fitness center.</p>
+
+<ul>
+<li>Sandman Inn Banff: Downtown location, walking distance to attractions</li>
+<li>Sandman Signature Canmore Hotel: Family-friendly amenities, mountain views</li>
+<li>Average nightly rates: CAD \$180-\$350 depending on season</li>
+<li>Both properties offer complimentary Wi-Fi and parking</li>
+</ul>
+
+<h2>Must-Visit Attractions and Activities</h2>
+
+<p>Banff National Park, established in 1885 as Canada's first national park, spans 6,641 square kilometers of pristine wilderness. <strong>Parks Canada</strong> maintains the park's extensive trail network, visitor centers, and camping facilities, ensuring world-class experiences for over 4 million annual visitors.</p>
+
+<h3>Lake Louise and Moraine Lake</h3>
+
+<p>No Banff visit is complete without seeing these iconic alpine lakes. Lake Louise, often called the "Jewel of the Rockies," offers year-round activities from canoeing in summer (canoe rentals: CAD \$120/hour) to ice skating in winter. The nearby Fairmont Chateau Lake Louise provides luxury dining and accommodation options.</p>
+
+<p>Moraine Lake, accessible via a scenic 14 km drive from Lake Louise village, is famous for its turquoise waters and the Valley of the Ten Peaks backdrop featured on the former Canadian \$20 bill. Note that Moraine Lake Road typically closes from October to May due to snow conditions.</p>
+
+<h3>Banff Gondola and Sky Bistro</h3>
+
+<p>The Banff Gondola whisks visitors 698 meters up Sulphur Mountain in just 8 minutes, offering panoramic views of six mountain ranges. At the summit, <strong>Sky Bistro Banff</strong> serves locally-inspired cuisine with what may be Canada's most spectacular dining views. The restaurant features dishes like Alberta beef tenderloin (CAD \$58) and wild Pacific salmon (CAD \$42), all while you dine 2,281 meters above sea level.</p>
+
+<ul>
+<li>Gondola tickets: Adults CAD \$64, Children (6-15) CAD \$32</li>
+<li>Sky Bistro reservations strongly recommended</li>
+<li>Summit boardwalk and interpretive trails included with gondola ticket</li>
+<li>Operating hours: 9:00 AM - 9:00 PM (summer), 10:00 AM - 5:00 PM (winter)</li>
+</ul>
+
+<h2>Hiking and Outdoor Adventures</h2>
+
+<p>Banff's trail system offers options for every fitness level, from leisurely lakeside walks to challenging alpine ascents. All trails require a valid Parks Canada pass (daily: CAD \$10.50 per adult, annual: CAD \$72.25 per adult).</p>
+
+<h3>Popular Day Hikes</h3>
+
+<p><strong>Johnston Canyon</strong> ranks as Banff's most popular trail, leading to spectacular waterfalls through a series of catwalks built into the canyon walls. The Lower Falls (2.4 km return, 1 hour) are accessible to most visitors, while the Upper Falls (5.4 km return, 2.5 hours) offer more dramatic views. In winter, this trail transforms into an ice walking wonderland.</p>
+
+<p><strong>Tunnel Mountain</strong> provides Banff's easiest summit hike at just 4.5 km return with 300 meters of elevation gain. The trail offers excellent views of the Bow Valley and makes an ideal acclimatization hike for visitors coming from sea level.</p>
+
+<p>For experienced hikers, <strong>Plain of Six Glaciers</strong> from Lake Louise (14 km return, 5-6 hours) showcases alpine meadows, glacial views, and the historic Plain of Six Glaciers Tea House, operating seasonally from June to September.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Download the Parks Canada app before your visit for offline trail maps, real-time trail conditions, and wildlife safety information. Cell service can be spotty on many trails, making offline maps essential for navigation.</div>
+
+<h3>Winter Activities</h3>
+
+<p>Banff transforms into a winter wonderland from December through March, with three world-class ski resorts within the park boundaries. <strong>Ski Big 3</strong> passes provide access to Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay, offering over 8,000 acres of skiable terrain.</p>
+
+<ul>
+<li>Lake Louise Ski Resort: 145 runs, 1,700 acres, longest season in Canada</li>
+<li>Sunshine Village: High elevation (2,100+ meters), powder snow conditions</li>
+<li>Mt. Norquay: Night skiing, closest to Banff townsite (10 minutes)</li>
+<li>Adult lift tickets: CAD \$109-\$139 depending on resort and season</li>
+</ul>
+
+<h2>Dining and Local Cuisine</h2>
+
+<p>Banff's culinary scene reflects both its mountain setting and multicultural influences. From casual pubs to fine dining establishments, the town offers options for every palate and budget.</p>
+
+<p><strong>The Maple Leaf Grille & Lounge</strong> specializes in Canadian cuisine, featuring dishes like bison tenderloin (CAD \$52) and Atlantic lobster tail (CAD \$48). Their wine list includes selections from British Columbia's Okanagan Valley.</p>
+
+<p>For a more casual experience, <strong>The Grizzly House</strong> has been serving fondue and exotic meats since 1967. This iconic restaurant features a phone system connecting tables and an eclectic atmosphere that's pure Banff nostalgia.</p>
+
+<p><strong>Park Distillery</strong> combines craft spirits with mountain cuisine, offering tours of their distillery operation along with meals featuring locally-sourced ingredients. Their signature Park Gin incorporates 14 hand-picked botanicals found in the Canadian Rockies.</p>
+
+<h2>Transportation and Getting Around</h2>
+
+<p>Calgary International Airport (YYC) serves as the primary gateway to Banff, located 145 km east of the park. Several transportation options connect the airport to Banff townsite:</p>
+
+<ul>
+<li><strong>Banff Airporter:</strong> Scheduled shuttle service (CAD \$69 one-way, 2 hours)</li>
+<li><strong>Rental cars:</strong> Most flexibility, allow exploration of remote areas</li>
+<li><strong>Private transfers:</strong> Door-to-door service (CAD \$300-400 for up to 4 passengers)</li>
+</ul>
+
+<p>Within Banff National Park, the <strong>Roam Transit</strong> system provides public transportation between Banff, Canmore, and Lake Louise during peak seasons. Daily passes cost CAD \$5 for local routes, while regional routes to Lake Louise cost CAD \$10.</p>
+
+<p>Parking in Banff townsite costs CAD \$3 per hour, with daily maximums of CAD \$15. Lake Louise and Moraine Lake parking fills early (often by 6:00 AM in summer), making early morning visits or shuttle services essential during peak season.</p>
+
+<h2>Planning Your Visit</h2>
+
+<p>Timing significantly impacts your Banff experience. Summer (June-August) offers hiking, canoeing, and wildlife viewing, but also brings crowds and higher accommodation costs. Winter (December-March) provides excellent skiing and ice activities with fewer tourists but shorter daylight hours.</p>
+
+<p>Shoulder seasons (April-May and September-November) offer the best balance of weather, smaller crowds, and moderate prices. September is particularly stunning, with golden aspen trees and crisp mountain air creating perfect hiking conditions.</p>
+
+<p><strong>Essential items to pack:</strong></p>
+<ul>
+<li>Layered clothing for variable mountain weather</li>
+<li>Waterproof jacket and pants</li>
+<li>Sturdy hiking boots</li>
+<li>Bear spray (required for backcountry hiking)</li>
+<li>Sunscreen and sunglasses (UV reflection off snow and water)</li>
+<li>Reusable water bottle</li>
+</ul>
+
+<p>Whether you choose to stay at the Sandman Banff, explore from Canmore, or book another accommodation, Banff National Park offers experiences that create lasting memories. From sunrise at Lake Louise to dinner at Sky Bistro overlooking the Bow Valley, every moment in the Canadian Rockies feels extraordinary. Start planning your perfect Banff adventure by comparing accommodation options on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and booking unforgettable experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>.</p>
+`,
+  'sandman-canmore': `
+<p>Planning your mountain getaway to the Canadian Rockies? You've probably heard about the stunning Sandman hotels in the Banff area, but there's so much more to discover in this UNESCO World Heritage Site. Whether you're staying at the Sandman Canmore or exploring other accommodations, Banff National Park offers an incredible array of adventures that will leave you breathless – and not just from the altitude! Let's dive into everything you need to know to make the most of your Rocky Mountain experience.</p>
+
+<h2>Where to Stay: Sandman Hotels and Beyond</h2>
+
+<p>The <strong>Sandman Hotel Canmore</strong> has become a popular choice for visitors seeking comfortable accommodations with easy access to Banff National Park. Located in the charming town of Canmore, just 20 kilometers east of Banff townsite, this hotel offers excellent value while keeping you close to all the action. Many travelers specifically search for "Sandman Canmore" when planning their trips, and for good reason – Canmore provides a more budget-friendly base compared to staying directly in Banff.</p>
+
+<p>While some visitors search for "Sandman Banff" or "Sandman Hotel Banff," it's important to note that the main Sandman property is actually located in Canmore. However, this location advantage means you're perfectly positioned to explore both the town of Canmore's local attractions and Banff National Park's world-famous sites.</p>
+
+<p>Room rates at hotels in the area typically range from \$150-400 CAD per night depending on the season, with peak summer months (July-August) and winter ski season (December-March) commanding premium prices. Book well in advance, especially for summer visits, as accommodations fill up quickly.</p>
+
+<h2>Must-Visit Attractions in Banff National Park</h2>
+
+<p>Banff National Park, established in 1885 as Canada's first national park, spans over 6,600 square kilometers of pristine wilderness. Here are the absolute must-see destinations during your stay:</p>
+
+<h3>Lake Louise</h3>
+<p>Often called the "Jewel of the Rockies," Lake Louise sits 57 kilometers northwest of Banff townsite. The turquoise waters, fed by glacial runoff, create one of the most photographed scenes in Canada. Visit early morning (before 9 AM) to avoid crowds and capture that perfect reflection shot. The Fairmont Chateau Lake Louise provides an elegant backdrop, though you don't need to stay there to enjoy the lake.</p>
+
+<h3>Moraine Lake</h3>
+<p>Just 14 kilometers from Lake Louise, Moraine Lake offers equally stunning views with the dramatic Valley of the Ten Peaks. The road to Moraine Lake typically opens in late May and closes by mid-October due to snow. <em>Important note:</em> Private vehicles are restricted during peak season (June-October), so you'll need to take the Parks Canada shuttle system, which costs \$8 CAD per adult.</p>
+
+<h3>Banff Townsite</h3>
+<p>The heart of the park, Banff townsite offers world-class dining, shopping, and nightlife. Stroll down Banff Avenue, visit the historic Banff Springs Hotel, and don't miss the Banff Park Museum, which showcases the area's natural history. The town sits at 1,383 meters above sea level, so take it easy your first day if you're not used to the altitude.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Purchase your Parks Canada Discovery Pass online before arriving. At \$142.40 CAD for families or \$72.25 CAD for adults annually, it pays for itself after just 7 days if you're exploring multiple national parks. Plus, you'll skip the entrance gate lines!</div>
+
+<h2>Hiking Trails for Every Skill Level</h2>
+
+<p>Banff offers over 1,600 kilometers of hiking trails, from gentle lakeside strolls to challenging alpine adventures. Here's your guide to the best options:</p>
+
+<h3>Beginner-Friendly Trails</h3>
+<ul>
+<li><strong>Bow River Loop (4.9 km):</strong> Starting from Banff townsite, this easy trail follows the Bow River with mountain views and possible wildlife sightings.</li>
+<li><strong>Johnston Canyon (2.7 km to Lower Falls):</strong> One of the park's most popular trails, featuring catwalks over the canyon and spectacular waterfalls. Arrive before 8 AM or after 6 PM to avoid crowds.</li>
+<li><strong>Lake Agnes Tea House (7.1 km):</strong> A moderate hike from Lake Louise leading to a historic tea house serving homemade treats from June to October.</li>
+</ul>
+
+<h3>Intermediate Adventures</h3>
+<ul>
+<li><strong>Tunnel Mountain (4.8 km):</strong> Despite its name, this trail doesn't go through any tunnels but offers panoramic views of Banff townsite and the Bow Valley.</li>
+<li><strong>Parker Ridge (5.1 km):</strong> Located along the Icefields Parkway, this trail provides incredible views of the Saskatchewan Glacier.</li>
+<li><strong>Sulphur Mountain (11 km):</strong> You can hike up or take the Banff Gondola (\$65 CAD for adults), but hiking up and riding down saves money while still giving you those Instagram-worthy summit views.</li>
+</ul>
+
+<h3>Advanced Challenges</h3>
+<ul>
+<li><strong>Mount Temple (15 km):</strong> Banff's most accessible 11,000+ foot peak, requiring scrambling experience and proper equipment.</li>
+<li><strong>Iceline Trail (21 km):</strong> Located in nearby Yoho National Park, this challenging day hike showcases massive waterfalls and glacier views.</li>
+</ul>
+
+<h2>Seasonal Activities and What to Expect</h2>
+
+<p>Banff transforms dramatically with each season, offering unique experiences year-round:</p>
+
+<h3>Summer (June-August)</h3>
+<p>Peak season brings warm days (15-25°C), endless daylight until nearly 10 PM, and full access to high-alpine areas. This is hiking and camping season, but expect crowds and premium prices. Book accommodations 6-12 months ahead. Most mountain huts and backcountry areas are accessible, making it perfect for multi-day adventures.</p>
+
+<h3>Fall (September-October)</h3>
+<p>Shoulder season offers cooler temperatures (5-15°C), stunning fall colors, and fewer crowds. Larch trees turn golden yellow, creating spectacular photography opportunities on trails like Larch Valley and Sentinel Pass. Some high-elevation trails may close early due to snow.</p>
+
+<h3>Winter (November-March)</h3>
+<p>Winter transforms Banff into a snow-covered wonderland perfect for skiing, snowboarding, and ice walking. Three world-class ski resorts operate nearby: Sunshine Village, Lake Louise Ski Resort, and Mount Norquay. Ice walks through Johnston Canyon and dog sledding become popular activities. Temperatures range from -10 to -25°C, so pack accordingly.</p>
+
+<h3>Spring (April-May)</h3>
+<p>Unpredictable weather marks spring, with snow possible any day but increasingly warmer temperatures. This is the quietest season for tourism, offering great deals on accommodations but limited access to high-alpine areas. Perfect for wildlife viewing as animals become more active.</p>
+
+<h2>Wildlife Viewing and Safety</h2>
+
+<p>Banff National Park is home to incredible wildlife, including grizzly bears, black bears, elk, mountain goats, bighorn sheep, and wolves. The Bow Valley Parkway between Banff and Lake Louise offers excellent wildlife viewing opportunities, especially during early morning and evening hours.</p>
+
+<p><strong>Essential Safety Guidelines:</strong></p>
+<ul>
+<li>Maintain 100 meters distance from bears and wolves, 30 meters from elk and deer</li>
+<li>Carry bear spray (\$40-50 CAD) and know how to use it</li>
+<li>Make noise while hiking to avoid surprising wildlife</li>
+<li>Never feed wild animals – it's illegal and dangerous</li>
+<li>Check Parks Canada website for current wildlife warnings and trail closures</li>
+</ul>
+
+<p>Popular wildlife viewing spots include the Fenland Trail, Vermillion Lakes, and the Icefields Parkway. Consider booking a wildlife tour with companies like Discover Banff Tours for expert guidance and better viewing opportunities.</p>
+
+<h2>Dining and Local Cuisine</h2>
+
+<p>Banff's culinary scene has evolved dramatically, now featuring everything from casual mountain fare to fine dining experiences:</p>
+
+<p><strong>Fine Dining:</strong> The Bison Restaurant offers locally-sourced Canadian cuisine with dishes ranging from \$28-48 CAD. Eden at the Rimrock Resort Hotel provides upscale dining with panoramic mountain views and an extensive wine list.</p>
+
+<p><strong>Casual Favorites:</strong> Tooloulou's serves excellent Cajun and Creole dishes (\$18-32 CAD), while The Maple Leaf offers Canadian classics like Alberta beef and wild game (\$22-42 CAD). For breakfast, Melissa's Missteak has been a local favorite since 1980, serving hearty portions perfect for fueling hiking adventures.</p>
+
+<p><strong>Quick Bites:</strong> BeaverTails pastries at various locations throughout town provide sweet treats, while Banff Ave Brewing Co. offers craft beer and pub food in a lively atmosphere. Tim Hortons locations provide familiar coffee and affordable meals for budget-conscious travelers.</p>
+
+<p>Your Banff adventure awaits, whether you're staying at the Sandman Hotel Canmore or anywhere else in this spectacular region. From world-class hiking and wildlife viewing to incredible dining and year-round activities, Banff National Park delivers experiences that will stay with you forever. Ready to book your trip? Check current hotel rates and availability on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and discover amazing tours and activities through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your Canadian Rockies getaway.</p>
+`,
+  'sandman-hotel-canmore': `
+<p>Nestled in the heart of the Canadian Rockies, Banff National Park offers an extraordinary blend of towering mountain peaks, pristine alpine lakes, and world-class hospitality. Whether you're planning to stay at the Sandman Hotel Canmore or exploring accommodation options throughout the Bow Valley, this comprehensive guide will help you make the most of your Rocky Mountain adventure. From iconic landmarks to hidden gems, we'll cover everything you need to know for an unforgettable visit to Canada's first national park.</p>
+
+<h2>Getting to Know Banff National Park and the Bow Valley</h2>
+
+<p>Banff National Park, established in 1885, spans 6,641 square kilometers of breathtaking wilderness in Alberta's Rocky Mountains. The park encompasses two main townsite destinations: the Town of Banff and the nearby Town of Canmore. While Banff sits within the national park boundaries, Canmore is strategically located just outside the park gates, offering visitors easy access to both Banff and Kananaskis Country.</p>
+
+<p>Many travelers choose to stay in Canmore, including at properties like the <strong>Sandman Hotel Canmore</strong>, for its convenient location and often more competitive pricing compared to accommodations within the park. The <strong>Sandman Canmore</strong> location provides an excellent base for exploring both Banff National Park and the surrounding Canadian Rockies, with the Town of Banff just a scenic 20-kilometer drive away.</p>
+
+<p>The drive from Calgary International Airport to the Bow Valley takes approximately 1.5 hours, with Canmore being the first mountain community you'll encounter. Parks Canada requires a valid park pass for entry into Banff National Park, which costs \$10.50 CAD per adult per day or \$21.00 CAD for a family day pass. For extended stays, consider purchasing an annual Parks Canada Discovery Pass for \$72.25 CAD per adult.</p>
+
+<h2>Must-Visit Attractions and Natural Wonders</h2>
+
+<p>Banff National Park is home to some of Canada's most photographed and visited natural attractions. <strong>Lake Louise</strong>, often called the "Jewel of the Rockies," sits 56 kilometers northwest of Banff townsite and features stunning turquoise waters reflecting the Victoria Glacier. The lake is accessible year-round, though summer months (June through September) offer the warmest weather and full access to hiking trails.</p>
+
+<p><strong>Moraine Lake</strong>, located in the Valley of the Ten Peaks, provides equally spectacular scenery and is featured on the former Canadian twenty-dollar bill. The road to Moraine Lake typically opens in late May or early June, depending on snow conditions, and closes again in October. Both lakes can be extremely crowded during peak season, so arriving before 7:00 AM or after 6:00 PM is recommended.</p>
+
+<p>Closer to town, the <strong>Banff Gondola</strong> offers panoramic views from the summit of Sulphur Mountain at 2,281 meters above sea level. Adult tickets cost \$65 CAD during peak season, with family packages and advance booking discounts available. The gondola operates year-round, though weather conditions can occasionally cause closures.</p>
+
+<p>The <strong>Banff Upper Hot Springs</strong> provide a perfect way to relax after a day of hiking or skiing. These natural thermal pools maintain temperatures between 37-40°C year-round and offer stunning mountain views. Admission is \$8.30 CAD for adults, with towel and swimsuit rentals available on-site.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Purchase your Banff Gondola and hot springs tickets online in advance to skip the lines and often save 10-15% on admission prices. Many hotels, including the Sandman Hotel Banff area properties, offer package deals that include attraction tickets.</div>
+
+<h2>Hiking Trails for Every Skill Level</h2>
+
+<p>Banff National Park offers over 1,600 kilometers of maintained hiking trails, ranging from gentle lakeside strolls to challenging multi-day backcountry adventures. For beginners, the <strong>Bow River Trail</strong> provides an easy 4.5-kilometer loop starting from downtown Banff, offering excellent views of the Bow Valley and surrounding peaks.</p>
+
+<p>The <strong>Johnston Canyon Trail</strong> ranks as one of the park's most popular hikes, leading to spectacular waterfalls through a dramatic limestone canyon. The trail to the Lower Falls covers 1.1 kilometers one-way, while the Upper Falls extend the hike to 2.7 kilometers. The steel catwalks can be icy in winter, making ice cleats essential for safe travel.</p>
+
+<p>More experienced hikers should consider the <strong>Plain of Six Glaciers Trail</strong> from Lake Louise, a 10.6-kilometer round trip that offers close-up glacier views and the opportunity to visit a historic tea house (open seasonally from June to September). The trail gains 365 meters in elevation and typically requires 4-6 hours to complete.</p>
+
+<p>For a true challenge, <strong>Mount Temple</strong> stands as one of the most accessible 3,000-meter peaks in the Canadian Rockies. This scramble requires mountaineering experience and proper equipment, but rewards climbers with unparalleled views of Lake Louise and the surrounding Continental Divide.</p>
+
+<p>Always check current trail conditions with Parks Canada visitor centers before heading out, as mountain weather can change rapidly. Carrying bear spray is mandatory in the backcountry and highly recommended on all trails.</p>
+
+<h2>Seasonal Activities and Best Times to Visit</h2>
+
+<p><strong>Summer (June-August)</strong> represents peak season in Banff, with warm temperatures averaging 22°C during the day and 7°C at night. This season offers the best hiking conditions and full access to high alpine areas. However, expect crowds at popular attractions and higher accommodation rates. Reservations at properties like the <strong>Sandman Hotel Banff</strong> area should be made well in advance.</p>
+
+<p><strong>Winter (December-March)</strong> transforms Banff into a world-class winter sports destination. <strong>Sunshine Village</strong>, <strong>Lake Louise Ski Resort</strong>, and <strong>Mount Norquay</strong> offer excellent skiing and snowboarding, with season passes starting around \$1,000 CAD. Cross-country skiing, ice walking in Johnston Canyon, and dog sledding provide alternative winter activities.</p>
+
+<p><strong>Spring (April-May)</strong> and <strong>Fall (September-November)</strong> offer fewer crowds and moderate weather, though some high-elevation trails and roads may remain closed due to snow. Fall brings stunning larch colors in late September, particularly visible on the <strong>Larch Valley</strong> and <strong>Saddleback Pass</strong> trails.</p>
+
+<p>The <strong>Banff Centre</strong> hosts various cultural events throughout the year, including the Banff Mountain Film and Book Festival in November and the Banff Summer Arts Festival from May through August.</p>
+
+<h2>Dining and Local Cuisine</h2>
+
+<p>Banff's dining scene offers everything from casual mountain fare to fine dining experiences. <strong>The Bison Restaurant</strong> on Bear Street features locally-sourced Canadian cuisine with dishes like Alberta beef and Rocky Mountain trout, with mains ranging from \$28-45 CAD. For a more casual experience, <strong>Tooloulou's</strong> serves excellent Cajun and Creole cuisine with generous portions averaging \$18-25 CAD per entrée.</p>
+
+<p><strong>Park Distillery</strong> combines locally-distilled spirits with elevated pub food, while <strong>Coyotes Southwestern Grill</strong> offers Tex-Mex favorites and an extensive tequila selection. Both restaurants typically require reservations during peak season.</p>
+
+<p>In Canmore, visitors staying at the <strong>Sandman Canmore</strong> or other local accommodations can enjoy <strong>Murrieta's Bar & Grill</strong> for upscale dining or <strong>Rocky Mountain Bagel Company</strong> for casual breakfast and lunch options. <strong>Grizzly Paw Brewing Company</strong> produces excellent craft beer and serves hearty mountain fare in a family-friendly atmosphere.</p>
+
+<p>Many restaurants offer early bird specials between 5:00-6:30 PM, providing excellent value for budget-conscious travelers. Grocery stores including <strong>Safeway</strong> and <strong>Save-On-Foods</strong> in both Banff and Canmore offer supplies for self-catering and picnic lunches.</p>
+
+<h2>Planning Your Stay: Accommodation and Transportation</h2>
+
+<p>The Bow Valley offers diverse accommodation options to suit every budget and preference. Within Banff townsite, the iconic <strong>Fairmont Banff Springs</strong> provides luxury accommodation starting around \$400 CAD per night during peak season, while the <strong>Banff Park Lodge</strong> offers more moderate pricing around \$200-300 CAD nightly.</p>
+
+<p>Canmore accommodations, including options like the <strong>Sandman Hotel Canmore</strong>, often provide better value while maintaining easy access to park attractions. The <strong>Sandman Hotel Banff</strong> properties and similar mid-range options typically range from \$150-250 CAD per night, depending on season and availability.</p>
+
+<p>For budget travelers, the <strong>HI-Banff Alpine Centre</strong> offers hostel accommodation starting around \$35 CAD per person in shared dormitories, with private rooms also available.</p>
+
+<p>Transportation within the park includes the <strong>Roam Public Transit</strong> system, which connects Banff, Canmore, and Lake Louise during summer months. A day pass costs \$5 CAD for adults and provides unlimited rides on all routes. Car rentals are available in Banff, Canmore, and Calgary, though parking at popular attractions can be extremely limited during peak season.</p>
+
+<p>The <strong>Parks Canada Shuttle</strong> service operates seasonally to Moraine Lake and provides reserved access during the busiest periods. Tickets cost \$8 CAD per adult and must be purchased in advance online.</p>
+
+<p>Whether you choose to stay at the Sandman Hotel Canmore, within Banff townsite, or anywhere else in this remarkable region, the Canadian Rockies offer experiences that will create lifelong memories. From watching sunrise paint the peaks golden to spotting wildlife along mountain trails, every moment in Banff National Park connects you with some of the world's most spectacular wilderness. For the best deals on accommodation and to compare options across the Bow Valley, check out <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>. Don't forget to book your mountain adventures and guided experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your Rocky Mountain getaway.</p>
+`,
   'best-time-to-visit-banff': `
 <p>Banff National Park is stunning year-round, but each season offers a completely different experience. Knowing the best time to visit Banff depends on what you want to do, your budget, and how you feel about crowds.</p>
 
