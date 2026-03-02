@@ -139,8 +139,11 @@ function buildProposedActions(wasteful, searchTerms) {
   }
 
   // 2. Add negative keywords from bleeding search terms
+  const minClicks = OPTIMIZATION_RULES.negativeKeywordThreshold.minClicks || 5;
   const bleedingTerms = searchTerms.filter(
-    s => s.metrics.conversions === 0 && s.metrics.cost_micros > RULES.NEG_SPEND_THRESHOLD
+    s => s.metrics.conversions === 0 &&
+         s.metrics.cost_micros > RULES.NEG_SPEND_THRESHOLD &&
+         s.metrics.clicks >= minClicks
   );
   for (const s of bleedingTerms) {
     actions.push({

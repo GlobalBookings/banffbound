@@ -745,7 +745,7 @@ export const OPTIMIZATION_RULES = {
   bidDecreaseThreshold: { cpaMultiplier: 2.0, decreasePercent: 20 },
 
   // Add as negative keyword if search term spends > $10 with 0 conversions
-  negativeKeywordThreshold: { spend: 3.00, conversions: 0 },
+  negativeKeywordThreshold: { spend: 8.00, conversions: 0, minClicks: 5 },
 
   // Scale daily budget by 20% if campaign ROAS > 5:1 for 7 consecutive days
   budgetScaleUp: { minRoas: 5.0, consecutiveDays: 7, increasePercent: 20 },
