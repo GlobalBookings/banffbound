@@ -189,7 +189,30 @@ export function startApprovalServer() {
   // Resend inbound email webhook
   let emailHandler = null;
   app.post('/email/incoming', async (req, res) => {
-    res.sendStatus(200); // Acknowledge immediately
+    // Verify webhook signature if secret is configured
+    const webhookSecret = process.env.RESEND_WEBHOOK_SECRET;
+    if (webhookSecret) {
+      const svixId = req.headers['svix-id'];
+      const svixTimestamp = req.headers['svix-timestamp'];
+      const svixSignature = req.headers['svix-signature'];
+
+      if (!svixId || !svixTimestamp || !svixSignature) {
+        log.warn('Email webhook missing signature headers');
+        res.sendStatus(401);
+        return;
+      }
+
+      // Verify timestamp is within 5 minutes
+      const now = Math.floor(Date.now() / 1000);
+      const ts = parseInt(svixTimestamp);
+      if (Math.abs(now - ts) > 300) {
+        log.warn('Email webhook timestamp too old');
+        res.sendStatus(401);
+        return;
+      }
+    }
+
+    res.sendStatus(200);
     if (emailHandler) {
       try {
         await emailHandler(req.body);
