@@ -186,7 +186,26 @@ export function startApprovalServer() {
     }
   });
 
+  // Manual trigger endpoint (for testing)
+  const triggerHandlers = {};
+  app.post('/trigger/:agent', async (req, res) => {
+    const agent = req.params.agent;
+    const handler = triggerHandlers[agent];
+    if (!handler) {
+      res.status(404).json({ error: `Unknown agent: ${agent}` });
+      return;
+    }
+    res.json({ status: 'triggered', agent });
+    try {
+      await handler();
+    } catch (err) {
+      log.error(`Triggered ${agent} failed: ${err.message}`);
+    }
+  });
+
   app.listen(PORT, () => {
     log.info(`Approval server listening on port ${PORT}`);
   });
+
+  return { registerTrigger: (name, fn) => { triggerHandlers[name] = fn; } };
 }

@@ -12,7 +12,12 @@ const log = createLogger('main');
 log.info('BanffBound Agent System starting...');
 
 // ── Start approval callback server ────────────────────────
-startApprovalServer();
+const { registerTrigger } = startApprovalServer();
+
+// Register manual triggers
+registerTrigger('ppc-review', runPPC);
+registerTrigger('keyword-miner', runKeywords);
+registerTrigger('content-publisher', runContent);
 
 // ── Schedule agents (Mountain Time = America/Edmonton) ────
 schedule('PPC Review',        '0 8 * * *',  runPPC);       // 8:00 AM GMT daily
