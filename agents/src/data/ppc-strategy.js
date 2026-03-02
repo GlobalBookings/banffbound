@@ -736,7 +736,7 @@ export const CONVERSION_ACTIONS = [
 // The PPC Review agent will use these rules to auto-optimize:
 export const OPTIMIZATION_RULES = {
   // Pause keywords that spend > $15 with zero conversions over 14 days
-  pauseWasteThreshold: { spend: 15.00, conversions: 0, days: 14 },
+  pauseWasteThreshold: { spend: 5.00, conversions: 0, days: 14 },
 
   // Increase bids by 15% for keywords with CPA < target CPA
   bidIncreaseThreshold: { cpaMultiplier: 0.8, increasePercent: 15 },
@@ -745,7 +745,7 @@ export const OPTIMIZATION_RULES = {
   bidDecreaseThreshold: { cpaMultiplier: 2.0, decreasePercent: 20 },
 
   // Add as negative keyword if search term spends > $10 with 0 conversions
-  negativeKeywordThreshold: { spend: 10.00, conversions: 0 },
+  negativeKeywordThreshold: { spend: 3.00, conversions: 0 },
 
   // Scale daily budget by 20% if campaign ROAS > 5:1 for 7 consecutive days
   budgetScaleUp: { minRoas: 5.0, consecutiveDays: 7, increasePercent: 20 },
