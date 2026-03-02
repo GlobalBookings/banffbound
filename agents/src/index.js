@@ -12,7 +12,7 @@ import { run as runReddit } from './agents/reddit-promoter.js';
 import { run as runOutreach } from './agents/blogger-outreach.js';
 import { run as runDirectories } from './agents/directory-tracker.js';
 import { run as runShareable } from './agents/shareable-content.js';
-import { run as runInbox, processIncomingEmail } from './agents/inbox-monitor.js';
+import { run as runInbox, processIncomingEmail, processPendingReplies } from './agents/inbox-monitor.js';
 
 const log = createLogger('main');
 
@@ -23,6 +23,9 @@ const { registerTrigger, registerEmailHandler } = startApprovalServer();
 
 // Register email webhook handler
 registerEmailHandler(processIncomingEmail);
+
+// Resume any pending delayed replies from before restart
+processPendingReplies();
 
 // Register manual triggers
 registerTrigger('ppc-review', runPPC);

@@ -13,9 +13,98 @@ const CONVERSATIONS_FILE = path.join(DATA_DIR, 'email-conversations.json');
 const SITE_URL = process.env.SITE_URL || 'https://banffbound.com';
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_EMAIL = process.env.OUTREACH_FROM_EMAIL || 'hello@banffbound.com';
+const REPLY_DELAY_MS = 20 * 60 * 1000 + Math.floor(Math.random() * 10 * 60 * 1000); // 20-30 min
+
+// Intents worth showing in Slack (skip spam, auto-replies, unsubscribes)
+const SLACK_WORTHY_INTENTS = ['blogger_reply', 'collaboration_request', 'guest_post_offer', 'link_exchange', 'sponsorship', 'general_enquiry'];
+const PENDING_REPLIES_FILE = path.join(DATA_DIR, 'pending-replies.json');
 
 function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+function loadPendingReplies() {
+  ensureDataDir();
+  if (fs.existsSync(PENDING_REPLIES_FILE)) return JSON.parse(fs.readFileSync(PENDING_REPLIES_FILE, 'utf8'));
+  return [];
+}
+
+function savePendingReplies(data) {
+  ensureDataDir();
+  fs.writeFileSync(PENDING_REPLIES_FILE, JSON.stringify(data, null, 2));
+}
+
+function scheduleDelayedReply(replyData) {
+  const pending = loadPendingReplies();
+  const delayMs = 20 * 60 * 1000 + Math.floor(Math.random() * 10 * 60 * 1000); // 20-30 min
+  replyData.sendAt = new Date(Date.now() + delayMs).toISOString();
+  pending.push(replyData);
+  savePendingReplies(pending);
+
+  const delayMin = Math.round(delayMs / 60000);
+  log.info(`Reply to ${replyData.to} scheduled in ${delayMin} minutes`);
+
+  // Set timer to send
+  setTimeout(async () => {
+    try {
+      await sendReply(replyData.to, replyData.subject, replyData.body, replyData.inReplyTo, replyData.references);
+      log.info(`Delayed reply sent to ${replyData.to}`);
+
+      // Update conversation history
+      const conversations = loadConversations();
+      const threadKey = replyData.to.toLowerCase();
+      if (conversations.threads[threadKey]) {
+        conversations.threads[threadKey].messages.push({
+          direction: 'outbound',
+          date: new Date().toISOString(),
+          subject: replyData.subject,
+          body: replyData.body,
+        });
+        saveConversations(conversations);
+      }
+
+      // Remove from pending
+      const currentPending = loadPendingReplies();
+      savePendingReplies(currentPending.filter(p => p.emailId !== replyData.emailId));
+    } catch (err) {
+      log.error(`Delayed reply to ${replyData.to} failed: ${err.message}`);
+    }
+  }, delayMs);
+}
+
+// ── Send any pending replies on startup ───────────────────
+export function processPendingReplies() {
+  const pending = loadPendingReplies();
+  const now = Date.now();
+
+  for (const reply of pending) {
+    const sendAt = new Date(reply.sendAt).getTime();
+    const delay = Math.max(0, sendAt - now);
+
+    if (delay === 0) {
+      // Past due, send immediately
+      sendReply(reply.to, reply.subject, reply.body, reply.inReplyTo, reply.references)
+        .then(() => {
+          log.info(`Sent overdue reply to ${reply.to}`);
+          const current = loadPendingReplies();
+          savePendingReplies(current.filter(p => p.emailId !== reply.emailId));
+        })
+        .catch(err => log.error(`Overdue reply failed: ${err.message}`));
+    } else {
+      // Schedule for remaining time
+      setTimeout(async () => {
+        try {
+          await sendReply(reply.to, reply.subject, reply.body, reply.inReplyTo, reply.references);
+          log.info(`Delayed reply sent to ${reply.to}`);
+          const current = loadPendingReplies();
+          savePendingReplies(current.filter(p => p.emailId !== reply.emailId));
+        } catch (err) {
+          log.error(`Delayed reply failed: ${err.message}`);
+        }
+      }, delay);
+      log.info(`Resuming pending reply to ${reply.to} in ${Math.round(delay / 60000)} minutes`);
+    }
+  }
 }
 
 function loadConversations() {
@@ -244,55 +333,44 @@ export async function processIncomingEmail(webhookData) {
     slackSection(`*Body preview:*\n>${body.slice(0, 500).replace(/\n/g, '\n>')}`),
   ];
 
-  // Generate and send auto-reply if appropriate
+  // Generate and schedule delayed auto-reply if appropriate
   if (classification.requires_response && classification.intent !== 'spam' && classification.intent !== 'auto_reply') {
     const reply = await generateReply(from, subject, body, classification, thread.messages.slice(0, -1));
 
     if (reply !== 'NO_REPLY') {
-      try {
-        const replyId = await sendReply(fromEmail, subject, reply, messageId, thread.references);
+      const replySubject = subject.startsWith('Re:') ? subject : `Re: ${subject}`;
 
-        thread.messages.push({
-          direction: 'outbound',
-          date: new Date().toISOString(),
-          subject: subject.startsWith('Re:') ? subject : `Re: ${subject}`,
-          body: reply,
-          emailId: replyId,
-        });
+      // Schedule reply with 20-30 min delay
+      scheduleDelayedReply({
+        to: fromEmail,
+        subject: replySubject,
+        body: reply,
+        inReplyTo: messageId,
+        references: [...thread.references],
+        emailId,
+      });
 
-        log.info(`Auto-replied to ${fromEmail} (${replyId})`);
+      slackBlocks.push(slackDivider());
+      slackBlocks.push(slackSection(
+        `:clock3: *Auto-reply scheduled (20-30 min delay):*\n${reply.slice(0, 500)}`
+      ));
 
+      if (classification.content_topic) {
         slackBlocks.push(slackDivider());
         slackBlocks.push(slackSection(
-          `:robot_face: *Auto-reply sent:*\n${reply.slice(0, 500)}`
+          `:bulb: *Content topic detected:* "${classification.content_topic}"\n` +
+          `_Consider triggering Shareable Content agent for this topic._`
         ));
-
-        // If content collaboration detected, note it
-        if (classification.content_topic) {
-          slackBlocks.push(slackDivider());
-          slackBlocks.push(slackSection(
-            `:bulb: *Content topic detected:* "${classification.content_topic}"\n` +
-            `_Consider triggering Shareable Content agent for this topic._`
-          ));
-        }
-      } catch (err) {
-        log.error(`Auto-reply failed: ${err.message}`);
-        slackBlocks.push(slackDivider());
-        slackBlocks.push(slackSection(`:x: Auto-reply failed: ${err.message}`));
       }
-    } else {
-      slackBlocks.push(slackDivider());
-      slackBlocks.push(slackSection('_No reply needed (spam/auto-reply detected)._'));
     }
-  } else if (classification.intent === 'spam') {
-    slackBlocks.push(slackDivider());
-    slackBlocks.push(slackSection(':no_entry: _Spam detected. No reply sent._'));
-  } else {
-    slackBlocks.push(slackDivider());
-    slackBlocks.push(slackSection(`*Suggested action:* ${classification.suggested_action}`));
   }
 
-  await sendSlack(slackBlocks, `Email from ${from}: ${subject}`);
+  // Only send to Slack for worthy intents (skip spam, auto-replies, unsubscribes)
+  if (SLACK_WORTHY_INTENTS.includes(classification.intent)) {
+    await sendSlack(slackBlocks, `Email from ${from}: ${subject}`);
+  } else {
+    log.info(`Skipping Slack notification for ${classification.intent} email from ${from}`);
+  }
 
   // Mark as processed
   conversations.processed.push(emailId);
