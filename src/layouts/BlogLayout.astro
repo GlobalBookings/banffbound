@@ -60,6 +60,10 @@ const articleSchema = {
     </div>
     <div class="article-body container">
       <slot />
+      <div class="gyg-widget-container">
+        <h2>Recommended Tours & Activities</h2>
+        <div data-gyg-widget="auto" data-gyg-partner-id="QW960HO" data-gyg-cmp="banffboundblog"></div>
+      </div>
       <div class="article-footer">
         <div class="article-updated">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -71,9 +75,22 @@ const articleSchema = {
   </article>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script is:inline class="eg-affiliate-banners-script" src="https://creator.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"></script>
+  <script is:inline src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="QW960HO"></script>
 </BaseLayout>
 
 <style>
+  .gyg-widget-container {
+    margin: 2.5rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .gyg-widget-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
   .expedia-leaderboard {
     text-align: center;
     padding: 1.5rem 0 0;
