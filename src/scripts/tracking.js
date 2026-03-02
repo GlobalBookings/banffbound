@@ -14,6 +14,7 @@
 
       var affiliate = null;
       if (href.indexOf('getyourguide.com') !== -1) affiliate = 'getyourguide';
+      else if (href.indexOf('vrbo.com/affiliate') !== -1 || (href.indexOf('vrbo.com') !== -1 && href.indexOf('camref') !== -1)) affiliate = 'vrbo';
       else if (href.indexOf('expedia.ca') !== -1 || href.indexOf('expedia.com') !== -1) affiliate = 'expedia';
       else if (href.indexOf('amazon.ca') !== -1 && href.indexOf('banffbound-20') !== -1) affiliate = 'amazon';
 
@@ -143,6 +144,8 @@
       var href = link.href || '';
 
       if (href.indexOf('getyourguide.com') !== -1) return;
+      if (href.indexOf('vrbo.com') !== -1 && href.indexOf('camref') !== -1) return;
+      if (href.indexOf('vrbo.com/affiliate') !== -1) return;
       if (href.indexOf('expedia.ca') !== -1 || href.indexOf('expedia.com') !== -1) return;
       if (href.indexOf('amazon.ca') !== -1 && href.indexOf('banffbound-20') !== -1) return;
 

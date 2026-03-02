@@ -1,4 +1,10 @@
-const CAMREF = '1101l3MtWX';
+const VRBO_CAMREF = '1101l3MtWL';
+const VRBO_CREATIVE = '1011l63087';
+const VRBO_ADREF = 'PZBJVX1Er0';
+
+export function vrboAffiliateUrl(vrboUrl: string): string {
+  return `https://vrbo.com/affiliate?landingPage=${encodeURIComponent(vrboUrl)}&camref=${VRBO_CAMREF}&creativeref=${VRBO_CREATIVE}&adref=${VRBO_ADREF}`;
+}
 
 export interface VacationRental {
   slug: string;

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { rentals, rentalAreas } from '../../data/rentals';
+import { rentals, rentalAreas, vrboAffiliateUrl } from '../../data/rentals';
 
 const areas = [...new Set(rentals.map(r => r.area))];
 const types = [...new Set(rentals.map(r => r.type))].sort();
@@ -20,7 +20,7 @@ const rentalData = JSON.stringify(rentals.map(r => ({
   lat: r.lat,
   lng: r.lng,
   img: r.image,
-  vrbo: r.vrboUrl,
+  vrbo: vrboAffiliateUrl(r.vrboUrl),
   premier: r.premierHost,
 })));
 ---
@@ -94,7 +94,7 @@ const rentalData = JSON.stringify(rentals.map(r => ({
       <!-- Rental grid -->
       <div class="rental-grid" id="rental-grid">
         {rentals.map(rental => (
-          <a href={rental.vrboUrl} target="_blank" rel="noopener noreferrer" class="rental-card"
+          <a href={vrboAffiliateUrl(rental.vrboUrl)} target="_blank" rel="noopener sponsored" class="rental-card"
              data-area={rental.area} data-type={rental.type}
              data-sleeps={String(rental.sleeps)} data-price={String(rental.priceFrom)}
              data-name={rental.name.toLowerCase()} data-slug={rental.slug}
@@ -298,7 +298,7 @@ const rentalData = JSON.stringify(rentals.map(r => ({
           <span style="font-size:0.85rem;font-weight:600;color:#1a472a;">From $${r.price} CAD/night</span>
           ${r.rating ? `<span style="font-size:0.8rem;color:#888;"> · ${r.rating}/10</span>` : ''}
           ${r.premier ? '<br/><span style="font-size:0.75rem;color:#d4a843;">⭐ Premier Host</span>' : ''}
-          <br/><a href="${r.vrbo}" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem;color:#d4a843;font-weight:600;">View on Vrbo →</a>
+          <br/><a href="${r.vrbo}" target="_blank" rel="noopener sponsored" style="font-size:0.8rem;color:#d4a843;font-weight:600;">View on Vrbo →</a>
         </div>
       `);
       marker._rentalSlug = r.slug;
