@@ -47,7 +47,9 @@ async function getCampaignPerformance(customer) {
            metrics.impressions, metrics.clicks, metrics.cost_micros,
            metrics.conversions, metrics.ctr, metrics.average_cpc
     FROM campaign
-    WHERE segments.date DURING LAST_7_DAYS AND campaign.status != 'REMOVED'
+    WHERE segments.date DURING LAST_7_DAYS
+      AND campaign.status != 'REMOVED'
+      AND campaign.name LIKE 'BB-%'
     ORDER BY metrics.cost_micros DESC
   `);
 }
@@ -57,11 +59,13 @@ async function getWastefulKeywords(customer) {
     SELECT ad_group.name, ad_group_criterion.resource_name,
            ad_group_criterion.keyword.text, ad_group_criterion.keyword.match_type,
            ad_group_criterion.quality_info.quality_score,
+           campaign.name,
            metrics.impressions, metrics.clicks, metrics.cost_micros,
            metrics.conversions, metrics.ctr
     FROM keyword_view
     WHERE segments.date DURING LAST_7_DAYS
       AND metrics.impressions > ${RULES.MIN_IMPRESSIONS_FOR_REVIEW}
+      AND campaign.name LIKE 'BB-%'
     ORDER BY metrics.cost_micros DESC
     LIMIT 200
   `);
@@ -106,7 +110,9 @@ async function getSearchTerms(customer) {
            metrics.impressions, metrics.clicks, metrics.cost_micros,
            metrics.conversions, metrics.ctr
     FROM search_term_view
-    WHERE segments.date DURING LAST_7_DAYS AND metrics.impressions > 10
+    WHERE segments.date DURING LAST_7_DAYS
+      AND metrics.impressions > 10
+      AND campaign.name LIKE 'BB-%'
     ORDER BY metrics.cost_micros DESC
     LIMIT 200
   `);
