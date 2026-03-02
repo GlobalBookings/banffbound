@@ -13,6 +13,7 @@ if (!agent) {
   console.log('  blogger-outreach   — Run Blogger Outreach Drafter');
   console.log('  directory-tracker  — Run Directory Submission Tracker');
   console.log('  shareable-content  — Run Shareable Content Generator');
+  console.log('  inbox-monitor      — Run Inbox Daily Summary');
   console.log('  keyword-miner      — Run Keyword Miner');
   console.log('  campaign-builder   — Deploy PPC campaigns from strategy');
   console.log('  campaign-updater   — Update existing ads with new landing pages & copy');
@@ -63,6 +64,7 @@ const agents = {
   'blogger-outreach': () => import('./agents/blogger-outreach.js'),
   'directory-tracker': () => import('./agents/directory-tracker.js'),
   'shareable-content': () => import('./agents/shareable-content.js'),
+  'inbox-monitor': () => import('./agents/inbox-monitor.js'),
   'keyword-miner': () => import('./agents/keyword-miner.js'),
   'campaign-builder': () => import('./agents/campaign-builder.js'),
   'campaign-updater': () => import('./agents/campaign-updater.js'),

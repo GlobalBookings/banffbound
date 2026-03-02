@@ -186,6 +186,21 @@ export function startApprovalServer() {
     }
   });
 
+  // Resend inbound email webhook
+  let emailHandler = null;
+  app.post('/email/incoming', async (req, res) => {
+    res.sendStatus(200); // Acknowledge immediately
+    if (emailHandler) {
+      try {
+        await emailHandler(req.body);
+      } catch (err) {
+        log.error(`Email webhook handler error: ${err.message}`);
+      }
+    } else {
+      log.warn('Email webhook received but no handler registered');
+    }
+  });
+
   // Manual trigger endpoint (for testing)
   const triggerHandlers = {};
   app.post('/trigger/:agent', async (req, res) => {
@@ -207,5 +222,8 @@ export function startApprovalServer() {
     log.info(`Approval server listening on port ${PORT}`);
   });
 
-  return { registerTrigger: (name, fn) => { triggerHandlers[name] = fn; } };
+  return {
+    registerTrigger: (name, fn) => { triggerHandlers[name] = fn; },
+    registerEmailHandler: (fn) => { emailHandler = fn; },
+  };
 }

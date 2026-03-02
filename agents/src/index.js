@@ -12,13 +12,17 @@ import { run as runReddit } from './agents/reddit-promoter.js';
 import { run as runOutreach } from './agents/blogger-outreach.js';
 import { run as runDirectories } from './agents/directory-tracker.js';
 import { run as runShareable } from './agents/shareable-content.js';
+import { run as runInbox, processIncomingEmail } from './agents/inbox-monitor.js';
 
 const log = createLogger('main');
 
 log.info('BanffBound Agent System starting...');
 
 // ── Start approval callback server ────────────────────────
-const { registerTrigger } = startApprovalServer();
+const { registerTrigger, registerEmailHandler } = startApprovalServer();
+
+// Register email webhook handler
+registerEmailHandler(processIncomingEmail);
 
 // Register manual triggers
 registerTrigger('ppc-review', runPPC);
@@ -30,6 +34,7 @@ registerTrigger('reddit-promoter', runReddit);
 registerTrigger('blogger-outreach', runOutreach);
 registerTrigger('directory-tracker', runDirectories);
 registerTrigger('shareable-content', runShareable);
+registerTrigger('inbox-monitor', runInbox);
 
 // ── Schedule agents (Mountain Time = America/Edmonton) ────
 schedule('PPC Review',        '0 8 * * *',  runPPC);       // 8:00 AM GMT daily
@@ -37,6 +42,7 @@ schedule('GA4 Briefing',     '0 9 * * *',  runGA4);        // 9:00 AM GMT daily
 schedule('Keyword Miner',    '0 10 * * *', runKeywords);   // 10:00 AM GMT daily
 schedule('Backlink Monitor', '0 10 * * 1', runBacklinks);   // 10:00 AM GMT every Monday
 schedule('Content Publisher', '0 12 * * *', runContent);    // 12:00 PM GMT daily
+schedule('Inbox Summary',    '0 18 * * *', runInbox);       // 6:00 PM GMT daily
 schedule('Reddit Promoter',  '0 14 * * 2,5', runReddit);   // 2:00 PM GMT Tue & Fri
 schedule('Blogger Outreach',  '0 11 * * 1', runOutreach);  // 11:00 AM GMT Monday
 schedule('Directory Tracker', '0 10 1 * *', runDirectories); // 10:00 AM GMT 1st of month
