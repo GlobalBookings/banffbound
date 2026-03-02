@@ -33,14 +33,14 @@ const megaMenus = {
       { href: '/summer', label: 'Summer in Banff' },
       { href: '/winter', label: 'Winter in Banff' },
       { href: '/what-to-do-today', label: 'What To Do Today' },
-      { href: '/packing-list', label: 'Packing List Generator' },
       { href: '/currency-converter', label: 'Currency Converter' },
       { href: '/trip-reports', label: 'Trip Reports' },
       { href: 'https://parks.canada.ca/pn-np/ab/banff/visit/pass', label: 'Buy Your Park Pass', external: true },
+      { href: '/packing-list', label: '🎒 Pack for Banff — Gear Checklist', cta: true },
     ],
     featured: [
       { href: '/weather-webcams', image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=80', title: 'Weather & Webcams', subtitle: 'Live conditions & cameras' },
-      { href: '/packing-list', image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=600&q=80', title: 'Packing List', subtitle: 'What to bring by month' },
+      { href: '/packing-list', image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=600&q=80', title: 'Packing List', subtitle: 'Seasonal gear with Amazon links' },
       { href: '/what-to-do-today', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80', title: 'What To Do Today', subtitle: 'Weather-based suggestions' },
     ],
   },
@@ -109,7 +109,7 @@ const directLinks = [
                 <ul>
                   {menu.links.map(link => (
                     <li>
-                      <a href={link.href} class="mega-link" {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}>
+                      <a href={link.href} class:list={['mega-link', { 'mega-link--cta': link.cta }]} {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}>
                         {link.label}
                         {link.external && <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 1h7v7M11 1L5 7"/></svg>}
                       </a>
@@ -335,6 +335,19 @@ const directLinks = [
     padding-left: 0.9rem;
   }
   .mega-link svg { opacity: 0.5; flex-shrink: 0; }
+  .mega-link--cta {
+    background: var(--color-accent);
+    color: var(--color-white) !important;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    padding: 0.55rem 0.8rem;
+  }
+  .mega-link--cta:hover {
+    background: var(--color-accent-dark, #c4882a);
+    color: var(--color-white) !important;
+    padding-left: 0.8rem;
+  }
 
   /* ── Featured Cards ──────────────────────────────── */
   .mega-featured {
