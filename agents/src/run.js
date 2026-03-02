@@ -7,6 +7,7 @@ const agent = process.argv[2];
 if (!agent) {
   console.log('Usage: node src/run.js <agent-name>');
   console.log('  ppc-review         — Run PPC Review audit');
+  console.log('  ga4-briefing       — Run GA4 Daily Briefing');
   console.log('  keyword-miner      — Run Keyword Miner');
   console.log('  campaign-builder   — Deploy PPC campaigns from strategy');
   console.log('  campaign-updater   — Update existing ads with new landing pages & copy');
@@ -51,6 +52,7 @@ if (agent === 'test') {
 
 const agents = {
   'ppc-review': () => import('./agents/ppc-review.js'),
+  'ga4-briefing': () => import('./agents/ga4-briefing.js'),
   'keyword-miner': () => import('./agents/keyword-miner.js'),
   'campaign-builder': () => import('./agents/campaign-builder.js'),
   'campaign-updater': () => import('./agents/campaign-updater.js'),

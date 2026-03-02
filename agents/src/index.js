@@ -6,6 +6,7 @@ import { startApprovalServer } from './core/approval.js';
 import { run as runPPC } from './agents/ppc-review.js';
 import { run as runKeywords } from './agents/keyword-miner.js';
 import { run as runContent } from './agents/content-publisher.js';
+import { run as runGA4 } from './agents/ga4-briefing.js';
 
 const log = createLogger('main');
 
@@ -16,11 +17,13 @@ const { registerTrigger } = startApprovalServer();
 
 // Register manual triggers
 registerTrigger('ppc-review', runPPC);
+registerTrigger('ga4-briefing', runGA4);
 registerTrigger('keyword-miner', runKeywords);
 registerTrigger('content-publisher', runContent);
 
 // ── Schedule agents (Mountain Time = America/Edmonton) ────
 schedule('PPC Review',        '0 8 * * *',  runPPC);       // 8:00 AM GMT daily
+schedule('GA4 Briefing',     '0 9 * * *',  runGA4);        // 9:00 AM GMT daily
 schedule('Keyword Miner',    '0 10 * * *', runKeywords);   // 10:00 AM GMT daily
 schedule('Content Publisher', '0 12 * * *', runContent);    // 12:00 PM GMT daily
 

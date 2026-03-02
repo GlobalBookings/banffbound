@@ -17,7 +17,8 @@ const oauth2Client = new google.auth.OAuth2(clientId, clientSecret, REDIRECT_URI
 
 const ADWORDS_SCOPE = 'https://www.googleapis.com/auth/adwords';
 const WEBMASTERS_SCOPE = 'https://www.googleapis.com/auth/webmasters.readonly';
-const scopes = [ADWORDS_SCOPE, WEBMASTERS_SCOPE];
+const ANALYTICS_SCOPE = 'https://www.googleapis.com/auth/analytics.readonly';
+const scopes = [ADWORDS_SCOPE, WEBMASTERS_SCOPE, ANALYTICS_SCOPE];
 
 const authUrl = oauth2Client.generateAuthUrl({
   access_type: 'offline',
