@@ -55,6 +55,9 @@ const articleSchema = {
         </div>
       </div>
     </div>
+    <div class="expedia-leaderboard container">
+      <div class="eg-affiliate-banners" data-program="ca-expedia" data-network="pz" data-layout="leaderboard" data-image="mountains" data-message="bye-bye-bucket-list-hello-adventure" data-camref="1101l3MtWX" data-pubref="" data-link="home"></div>
+    </div>
     <div class="article-body container">
       <slot />
       <div class="article-footer">
@@ -67,9 +70,17 @@ const articleSchema = {
     </div>
   </article>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script is:inline class="eg-affiliate-banners-script" src="https://creator.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"></script>
 </BaseLayout>
 
 <style>
+  .expedia-leaderboard {
+    text-align: center;
+    padding: 1.5rem 0 0;
+    max-width: 728px;
+    margin: 0 auto;
+  }
+
   .article-hero {
     position: relative;
     height: 50vh;
