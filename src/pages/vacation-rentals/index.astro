@@ -1,0 +1,553 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { rentals, rentalAreas } from '../../data/rentals';
+
+const areas = [...new Set(rentals.map(r => r.area))];
+const types = [...new Set(rentals.map(r => r.type))].sort();
+
+const rentalData = JSON.stringify(rentals.map(r => ({
+  slug: r.slug,
+  name: r.name,
+  type: r.type,
+  area: r.area,
+  sleeps: r.sleeps,
+  bedrooms: r.bedrooms,
+  bathrooms: r.bathrooms,
+  price: r.priceFrom,
+  rating: r.rating,
+  reviews: r.reviewCount,
+  lat: r.lat,
+  lng: r.lng,
+  img: r.image,
+  vrbo: r.vrboUrl,
+  premier: r.premierHost,
+})));
+---
+
+<BaseLayout title="Vacation Rentals Near Banff — Cabins, Chalets & Condos" description="Browse 50+ vacation rentals near Banff National Park. Cabins, chalets, condos, and houses with mountain views, hot tubs, and full kitchens. Book direct on Vrbo.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Vacation Rentals' }]} />
+  </div>
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=1600&q=80" alt="Mountain cabin near Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Rentals &amp; Cabins</span>
+      <h1>Vacation Rentals Near Banff</h1>
+      <p>Browse {rentals.length} vacation rentals — cabins, chalets, condos, and homes — in and around Banff National Park. Full kitchens, mountain views, and more space than a hotel room.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Filter bar -->
+      <div class="filter-bar" id="filters">
+        <div class="filter-group search-group">
+          <input type="text" id="search-input" placeholder="Search rentals..." class="search-input" />
+        </div>
+        <div class="filter-group">
+          <select id="area-filter">
+            <option value="all">All Areas</option>
+            {areas.map(a => <option value={a}>{a}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
+          <select id="type-filter">
+            <option value="all">All Types</option>
+            {types.map(t => <option value={t}>{t}</option>)}
+          </select>
+        </div>
+        <div class="filter-group">
+          <select id="guests-filter">
+            <option value="all">All Guests</option>
+            <option value="1-2">1–2 Guests</option>
+            <option value="3-4">3–4 Guests</option>
+            <option value="5-6">5–6 Guests</option>
+            <option value="7+">7+ Guests</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <select id="price-filter">
+            <option value="all">All Prices</option>
+            <option value="0-200">$0–$200/night</option>
+            <option value="200-400">$200–$400/night</option>
+            <option value="400-600">$400–$600/night</option>
+            <option value="600+">$600+/night</option>
+          </select>
+        </div>
+        <button id="clear-filters" class="clear-btn" style="display:none;">Clear</button>
+        <span class="result-count" id="result-count">{rentals.length} rentals</span>
+      </div>
+
+      <!-- View toggle -->
+      <div class="view-toggle">
+        <button id="grid-view-btn" class="view-btn active">Grid</button>
+        <button id="map-view-btn" class="view-btn">Map</button>
+      </div>
+
+      <!-- Interactive Map -->
+      <div id="map-container" class="map-container" style="display:none;">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <div id="rental-map" style="height: 500px; border-radius: var(--radius); overflow: hidden;"></div>
+      </div>
+
+      <!-- Rental grid -->
+      <div class="rental-grid" id="rental-grid">
+        {rentals.map(rental => (
+          <a href={rental.vrboUrl} target="_blank" rel="noopener noreferrer" class="rental-card"
+             data-area={rental.area} data-type={rental.type}
+             data-sleeps={String(rental.sleeps)} data-price={String(rental.priceFrom)}
+             data-name={rental.name.toLowerCase()} data-slug={rental.slug}
+             data-premier={String(rental.premierHost)}>
+            <div class="rental-card-img-wrap">
+              <img src={rental.image} alt={rental.name} class="rental-card-img" loading="lazy" />
+              {rental.premierHost && <span class="premier-badge">⭐ Premier Host</span>}
+              <span class="type-badge">{rental.type}</span>
+            </div>
+            <div class="rental-card-body">
+              <h3>{rental.name}</h3>
+              <p class="rental-area">{rental.area}</p>
+              <div class="rental-features">
+                <span class="rental-feature">👥 {rental.sleeps}</span>
+                {rental.bedrooms > 0 && <span class="rental-feature">🛏️ {rental.bedrooms}</span>}
+                <span class="rental-feature">🚿 {rental.bathrooms}</span>
+              </div>
+              {rental.rating > 0 && (
+                <div class="rental-review-mini">
+                  <span class="review-badge">{rental.rating}</span>
+                  <span>{rental.reviewCount} review{rental.reviewCount !== 1 ? 's' : ''}</span>
+                </div>
+              )}
+              <div class="rental-card-footer">
+                <span class="rental-price">From ${rental.priceFrom} CAD<small>/night</small></span>
+                <span class="rental-link">View on Vrbo →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Rental Areas Near Banff</h2>
+        <p>Where you stay matters — here's what each area offers for vacation rentals.</p>
+      </div>
+      <div class="grid grid-3">
+        {rentalAreas.map(area => (
+          <div class="card">
+            <div class="card-body">
+              <h3>{area.name}</h3>
+              <p>{area.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ rentalData }}>
+  const allRentals = JSON.parse(rentalData);
+  const searchInput = document.getElementById('search-input');
+  const areaFilter = document.getElementById('area-filter');
+  const typeFilter = document.getElementById('type-filter');
+  const guestsFilter = document.getElementById('guests-filter');
+  const priceFilter = document.getElementById('price-filter');
+  const clearBtn = document.getElementById('clear-filters');
+  const cards = document.querySelectorAll('.rental-card');
+  const countEl = document.getElementById('result-count');
+  const gridViewBtn = document.getElementById('grid-view-btn');
+  const mapViewBtn = document.getElementById('map-view-btn');
+  const mapContainer = document.getElementById('map-container');
+  const rentalGrid = document.getElementById('rental-grid');
+
+  let map = null;
+  let markers = [];
+  let leafletLoaded = false;
+
+  function matchGuests(sleeps, filter) {
+    if (filter === 'all') return true;
+    if (filter === '1-2') return sleeps >= 1 && sleeps <= 2;
+    if (filter === '3-4') return sleeps >= 3 && sleeps <= 4;
+    if (filter === '5-6') return sleeps >= 5 && sleeps <= 6;
+    if (filter === '7+') return sleeps >= 7;
+    return true;
+  }
+
+  function matchPrice(price, filter) {
+    if (filter === 'all') return true;
+    if (filter === '0-200') return price >= 0 && price <= 200;
+    if (filter === '200-400') return price > 200 && price <= 400;
+    if (filter === '400-600') return price > 400 && price <= 600;
+    if (filter === '600+') return price > 600;
+    return true;
+  }
+
+  function applyFilters() {
+    const search = searchInput.value.toLowerCase().trim();
+    const area = areaFilter.value;
+    const type = typeFilter.value;
+    const guests = guestsFilter.value;
+    const price = priceFilter.value;
+    let visible = 0;
+    const visibleSlugs = new Set();
+
+    cards.forEach(card => {
+      const matchSearch = !search || card.dataset.name.includes(search) || card.dataset.area.toLowerCase().includes(search);
+      const matchArea = area === 'all' || card.dataset.area === area;
+      const matchType = type === 'all' || card.dataset.type === type;
+      const matchG = matchGuests(Number(card.dataset.sleeps), guests);
+      const matchP = matchPrice(Number(card.dataset.price), price);
+      const show = matchSearch && matchArea && matchType && matchG && matchP;
+      card.style.display = show ? '' : 'none';
+      if (show) {
+        visible++;
+        visibleSlugs.add(card.dataset.slug);
+      }
+    });
+
+    countEl.textContent = `${visible} rental${visible !== 1 ? 's' : ''}`;
+    clearBtn.style.display = (search || area !== 'all' || type !== 'all' || guests !== 'all' || price !== 'all') ? '' : 'none';
+
+    if (map && leafletLoaded) updateMapMarkers(visibleSlugs);
+  }
+
+  function clearAll() {
+    searchInput.value = '';
+    areaFilter.value = 'all';
+    typeFilter.value = 'all';
+    guestsFilter.value = 'all';
+    priceFilter.value = 'all';
+    applyFilters();
+  }
+
+  // Read URL params and pre-set filters
+  const params = new URLSearchParams(window.location.search);
+  const paramArea = params.get('area');
+  const paramType = params.get('type');
+  const paramGuests = params.get('guests');
+  const paramPrice = params.get('price');
+
+  if (paramArea) {
+    const opt = Array.from(areaFilter.options).find(o => o.value === paramArea);
+    if (opt) areaFilter.value = paramArea;
+  }
+  if (paramType) {
+    const opt = Array.from(typeFilter.options).find(o => o.value.toLowerCase() === paramType.toLowerCase());
+    if (opt) typeFilter.value = opt.value;
+  }
+  if (paramGuests) guestsFilter.value = paramGuests;
+  if (paramPrice) priceFilter.value = paramPrice;
+
+  if (paramArea || paramType || paramGuests || paramPrice) {
+    applyFilters();
+    document.getElementById('filters')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  areaFilter.addEventListener('change', applyFilters);
+  typeFilter.addEventListener('change', applyFilters);
+  guestsFilter.addEventListener('change', applyFilters);
+  priceFilter.addEventListener('change', applyFilters);
+  clearBtn.addEventListener('click', clearAll);
+
+  // View toggle
+  gridViewBtn.addEventListener('click', () => {
+    gridViewBtn.classList.add('active');
+    mapViewBtn.classList.remove('active');
+    rentalGrid.style.display = '';
+    mapContainer.style.display = 'none';
+  });
+
+  mapViewBtn.addEventListener('click', () => {
+    mapViewBtn.classList.add('active');
+    gridViewBtn.classList.remove('active');
+    rentalGrid.style.display = 'none';
+    mapContainer.style.display = '';
+    if (!leafletLoaded) loadMap();
+  });
+
+  function loadMap() {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = () => {
+      leafletLoaded = true;
+      initMap();
+    };
+    document.head.appendChild(script);
+  }
+
+  function initMap() {
+    map = L.map('rental-map').setView([51.18, -115.53], 11);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+      maxZoom: 18,
+    }).addTo(map);
+
+    allRentals.forEach(r => {
+      if (!r.lat || !r.lng) return;
+      const marker = L.marker([r.lat, r.lng]).addTo(map);
+      marker.bindPopup(`
+        <div style="min-width:200px;">
+          <img src="${r.img}" alt="${r.name}" style="width:100%;height:100px;object-fit:cover;border-radius:4px;margin-bottom:6px;" />
+          <strong style="font-size:0.9rem;">${r.name}</strong><br/>
+          <span style="font-size:0.8rem;color:#666;">${r.type} · ${r.area} · 👥${r.sleeps}</span><br/>
+          <span style="font-size:0.85rem;font-weight:600;color:#1a472a;">From $${r.price} CAD/night</span>
+          ${r.rating ? `<span style="font-size:0.8rem;color:#888;"> · ${r.rating}/10</span>` : ''}
+          ${r.premier ? '<br/><span style="font-size:0.75rem;color:#d4a843;">⭐ Premier Host</span>' : ''}
+          <br/><a href="${r.vrbo}" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem;color:#d4a843;font-weight:600;">View on Vrbo →</a>
+        </div>
+      `);
+      marker._rentalSlug = r.slug;
+      markers.push(marker);
+    });
+
+    updateMapMarkers(new Set(allRentals.map(r => r.slug)));
+  }
+
+  function updateMapMarkers(visibleSlugs) {
+    markers.forEach(m => {
+      if (visibleSlugs.has(m._rentalSlug)) {
+        m.addTo(map);
+      } else {
+        m.remove();
+      }
+    });
+  }
+</script>
+
+<style>
+  .filter-bar {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .search-group { flex: 1; min-width: 180px; }
+
+  .search-input {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: var(--color-white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-input:focus {
+    border-color: var(--color-primary);
+  }
+
+  .search-input::placeholder { color: #aaa; }
+
+  .filter-group select {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: var(--color-white);
+    cursor: pointer;
+  }
+
+  .clear-btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    background: none;
+    cursor: pointer;
+    color: var(--color-text-light);
+  }
+
+  .clear-btn:hover { background: var(--color-bg-alt); }
+
+  .result-count {
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    white-space: nowrap;
+  }
+
+  .view-toggle {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .view-btn {
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: var(--color-white);
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-text-light);
+    transition: all 0.2s;
+  }
+
+  .view-btn:first-child { border-radius: 6px 0 0 6px; }
+  .view-btn:last-child { border-radius: 0 6px 6px 0; border-left: none; }
+
+  .view-btn.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+
+  .map-container {
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .rental-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .rental-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rental-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .rental-card-img-wrap {
+    position: relative;
+  }
+
+  .rental-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .premier-badge {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: rgba(26, 71, 42, 0.9);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .type-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .rental-card-body {
+    padding: 1rem 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rental-card-body h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.3;
+  }
+
+  .rental-area {
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .rental-features {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+  }
+
+  .rental-feature {
+    white-space: nowrap;
+  }
+
+  .rental-review-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+  }
+
+  .review-badge {
+    background: var(--color-primary);
+    color: white;
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .rental-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .rental-price {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+  }
+
+  .rental-price small {
+    font-weight: 400;
+    font-size: 0.72rem;
+    color: var(--color-text-light);
+  }
+
+  .rental-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .filter-bar { flex-direction: column; align-items: stretch; }
+    .result-count { margin-left: 0; }
+    .rental-grid { grid-template-columns: 1fr; }
+    .search-group { min-width: auto; }
+  }
+</style>
