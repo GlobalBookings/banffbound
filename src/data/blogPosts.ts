@@ -11,8 +11,8 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'banff-admission',
-    title: 'Banff Admission Fees 2024: Save Money on Your Mountain Trip',
-    description: 'Plan your Banff adventure without breaking the bank! Discover 2024 park fees, money-saving tips, and budget hacks for an affordable Canadian Rockies getaway.',
+    title: 'Banff Admission Fees 2026: Save Money on Your Mountain Trip',
+    description: 'Plan your Banff adventure without breaking the bank! Discover 2026 park fees, money-saving tips, and budget hacks for an affordable Canadian Rockies getaway.',
     date: '2026-03-02',
     category: 'Guides',
     image: '/images/blog/banff-admission.webp',
@@ -29,8 +29,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'banff-entry-fee',
-    title: 'Banff Entry Fee 2024: Complete Guide to Park Pass Costs',
-    description: 'Discover 2024 Banff National Park entry fees, daily and annual pass prices, group rates, and money-saving tips for your Canadian Rockies adventure.',
+    title: 'Banff Entry Fee 2026: Complete Guide to Park Pass Costs',
+    description: 'Discover 2026 Banff National Park entry fees, daily and annual pass prices, group rates, and money-saving tips for your Canadian Rockies adventure.',
     date: '2026-03-02',
     category: 'Guides',
     image: '/images/blog/banff-entry-fee.webp',
@@ -38,8 +38,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'bow-lake',
-    title: 'Banff\'s Bow Lake: The Hidden Gem You Can\'t Miss in 2024',
-    description: 'Discover Banff\'s stunning Bow Lake, a pristine alpine paradise perfect for photography, hiking, and peaceful reflection. Your complete 2024 travel guide awaits.',
+    title: 'Banff\'s Bow Lake: The Hidden Gem You Can\'t Miss in 2026',
+    description: 'Discover Banff\'s stunning Bow Lake, a pristine alpine paradise perfect for photography, hiking, and peaceful reflection. Your complete 2026 travel guide awaits.',
     date: '2026-03-01',
     category: 'Guides',
     image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&q=80',
