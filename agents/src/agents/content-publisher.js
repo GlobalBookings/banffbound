@@ -249,7 +249,14 @@ async function generatePost(topic, relatedQueries) {
     .map(q => `"${q.query}" (${q.impressions} impressions, position ${q.position.toFixed(0)})`)
     .join('\n');
 
+  const currentYear = new Date().getFullYear();
+  const currentMonth = new Date().toLocaleString('en-GB', { month: 'long' });
+  const currentDate = new Date().toISOString().split('T')[0];
+
   const prompt = `Write a comprehensive, SEO-optimized blog post for a Banff, Canada travel guide website called BanffBound.
+
+TODAY'S DATE: ${currentDate}
+CURRENT YEAR: ${currentYear}
 
 TARGET KEYWORD: "${topic.query}"
 
@@ -269,6 +276,8 @@ REQUIREMENTS:
 8. Include practical details: prices in CAD, distances in km, specific trail names, real restaurant names, etc.
 9. Mention Parks Canada where relevant
 10. Write in a friendly, authoritative tone -- like a local sharing insider knowledge
+11. CRITICAL: This is ${currentYear}. Any year references MUST say ${currentYear} or ${currentYear + 1}. NEVER reference 2024 or any past year as if it is current. If mentioning prices, seasons, or events, frame them for ${currentYear}.
+12. Where relevant, reference the current season (it is ${currentMonth} ${currentYear})
 
 CRITICAL: Return ONLY the HTML content, no markdown, no code fences, no preamble. Start with <p> and end with </p>.`;
 
@@ -278,7 +287,9 @@ CRITICAL: Return ONLY the HTML content, no markdown, no code fences, no preamble
     messages: [{ role: 'user', content: prompt }],
   });
 
-  const html = response.content[0].text.trim();
+  let html = response.content[0].text.trim();
+  // Strip markdown code fences if Claude wraps the HTML
+  html = html.replace(/^```html?\n?/i, '').replace(/\n?```$/i, '').trim();
 
   // Pick the best category based on the query
   let category = 'Guides';
@@ -293,6 +304,7 @@ CRITICAL: Return ONLY the HTML content, no markdown, no code fences, no preamble
 
   // Generate a proper title from the query
   const titlePrompt = `Generate a click-worthy blog title for a Banff travel guide article about "${topic.query}". 
+The current year is ${currentYear}. If the title benefits from a year (e.g. "Best X in Banff ${currentYear}"), include ${currentYear}. NEVER use 2024 or any past year.
 Return ONLY the title text, nothing else. Make it 50-65 characters, include "Banff" if not already present.`;
 
   const titleResponse = await anthropic.messages.create({
@@ -305,6 +317,7 @@ Return ONLY the title text, nothing else. Make it 50-65 characters, include "Ban
 
   // Generate meta description
   const descPrompt = `Write a 150-160 character meta description for a Banff travel guide article titled "${title}". 
+The current year is ${currentYear}. If helpful, reference ${currentYear}. NEVER use 2024 or past years.
 Return ONLY the description text.`;
 
   const descResponse = await anthropic.messages.create({
