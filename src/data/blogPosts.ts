@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-admission',
+    title: 'Banff Admission Fees 2024: Save Money on Your Mountain Trip',
+    description: 'Plan your Banff adventure without breaking the bank! Discover 2024 park fees, money-saving tips, and budget hacks for an affordable Canadian Rockies getaway.',
+    date: '2026-03-02',
+    category: 'Guides',
+    image: '/images/blog/banff-admission.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'banff-hilton',
+    title: 'Banff Hilton: Your Gateway to Canadian Rockies Adventure',
+    description: 'Discover luxury at Banff Hilton, your perfect base for exploring the Canadian Rockies. From hiking trails to ski slopes, adventure awaits at your doorstep.',
+    date: '2026-03-02',
+    category: 'Guides',
+    image: '/images/blog/banff-hilton.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-entry-fee',
+    title: 'Banff Entry Fee 2024: Complete Guide to Park Pass Costs',
+    description: 'Discover 2024 Banff National Park entry fees, daily and annual pass prices, group rates, and money-saving tips for your Canadian Rockies adventure.',
+    date: '2026-03-02',
+    category: 'Guides',
+    image: '/images/blog/banff-entry-fee.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'bow-lake',
     title: 'Banff\'s Bow Lake: The Hidden Gem You Can\'t Miss in 2024',
     description: 'Discover Banff\'s stunning Bow Lake, a pristine alpine paradise perfect for photography, hiking, and peaceful reflection. Your complete 2024 travel guide awaits.',
