@@ -14,7 +14,7 @@ export function schedule(name, cronExpr, fn) {
     } catch (err) {
       log.error(`${name} failed: ${err.message}`);
     }
-  }, { timezone: 'America/Edmonton' });
+  }, { timezone: 'Europe/London' });
 
   jobs.push({ name, cronExpr, task });
   log.info(`Scheduled ${name} → ${cronExpr} (Mountain Time)`);
