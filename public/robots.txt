@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://banffbound.com/sitemap-index.xml
