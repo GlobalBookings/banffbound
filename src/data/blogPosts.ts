@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'takakkaw-falls-to-banff',
+    title: 'Takakkaw Falls to Banff: Epic 2026 Road Trip Guide',
+    description: 'Discover the ultimate 2026 road trip from Takakkaw Falls to Banff! Complete guide with scenic routes, must-see stops, and insider tips for an unforgettable journey.',
+    date: '2026-03-03',
+    category: 'Seasonal',
+    image: '/images/blog/takakkaw-falls-to-banff.webp',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'kananaskis-heli-tours',
+    title: 'Soar Above Banff: Epic Kananaskis Heli Tours Guide 2026',
+    description: 'Discover breathtaking aerial views of Banff and Kananaskis with our complete 2026 helicopter tour guide. Find the best routes, prices, and booking tips.',
+    date: '2026-03-03',
+    category: 'Seasonal',
+    image: '/images/blog/kananaskis-heli-tours.webp',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'banff-bridge',
+    title: 'Banff Bridge: Your 2026 Guide to Canada\'s Most Epic Crossing',
+    description: 'Discover Banff Bridge in 2026! Complete guide to Canada\'s most spectacular crossing with stunning mountain views, photo spots, hiking trails & insider tips.',
+    date: '2026-03-03',
+    category: 'Guides',
+    image: '/images/blog/banff-bridge.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-admission',
     title: 'Banff Admission Fees 2026: Save Money on Your Mountain Trip',
     description: 'Plan your Banff adventure without breaking the bank! Discover 2026 park fees, money-saving tips, and budget hacks for an affordable Canadian Rockies getaway.',
