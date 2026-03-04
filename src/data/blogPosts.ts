@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'mt-norquay',
+    title: 'Mt Norquay Banff: Your Complete 2026 Adventure Guide',
+    description: 'Discover Mt Norquay Banff\'s best skiing, hiking & scenic chairlift rides in 2026. Complete guide with trails, tickets, dining & insider tips for your adventure.',
+    date: '2026-03-04',
+    category: 'Guides',
+    image: '/images/blog/mt-norquay.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'mount-norquay-banff',
+    title: 'Mount Norquay Banff: Your Ultimate 2026 Adventure Guide',
+    description: 'Discover Mount Norquay\'s best skiing, hiking, and sightseeing in 2026. Complete guide to Banff\'s accessible mountain adventure with trails, lifts & tips.',
+    date: '2026-03-04',
+    category: 'Guides',
+    image: '/images/blog/mount-norquay-banff.webp',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'num-ti-jah-lodge',
+    title: 'Num Ti Jah Lodge Banff: Your Ultimate 2026 Mountain Escape',
+    description: 'Discover Num Ti Jah Lodge in Banff for your 2026 mountain getaway. Experience luxury wilderness accommodation with stunning lake views and world-class hiking.',
+    date: '2026-03-04',
+    category: 'Accommodation',
+    image: '/images/blog/num-ti-jah-lodge.webp',
+    readTime: '8 min read',
+  },
+  {
     slug: 'takakkaw-falls-to-banff',
     title: 'Takakkaw Falls to Banff: Epic 2026 Road Trip Guide',
     description: 'Discover the ultimate 2026 road trip from Takakkaw Falls to Banff! Complete guide with scenic routes, must-see stops, and insider tips for an unforgettable journey.',
