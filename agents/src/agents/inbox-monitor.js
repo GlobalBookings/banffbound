@@ -10,14 +10,97 @@ const log = createLogger('inbox-monitor');
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '..', '..', 'data');
 const CONVERSATIONS_FILE = path.join(DATA_DIR, 'email-conversations.json');
+const SALES_FILE = path.join(DATA_DIR, 'affiliate-sales.json');
 const SITE_URL = process.env.SITE_URL || 'https://banffbound.com';
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_EMAIL = process.env.OUTREACH_FROM_EMAIL || 'hello@banffbound.com';
 const REPLY_DELAY_MS = 20 * 60 * 1000 + Math.floor(Math.random() * 10 * 60 * 1000); // 20-30 min
 
 // Intents worth showing in Slack (skip spam, auto-replies, unsubscribes)
-const SLACK_WORTHY_INTENTS = ['blogger_reply', 'collaboration_request', 'guest_post_offer', 'link_exchange', 'sponsorship', 'general_enquiry'];
+const SLACK_WORTHY_INTENTS = ['blogger_reply', 'collaboration_request', 'guest_post_offer', 'link_exchange', 'sponsorship', 'general_enquiry', 'affiliate_sale'];
 const PENDING_REPLIES_FILE = path.join(DATA_DIR, 'pending-replies.json');
+
+// ── Affiliate sale detection and tracking ─────────────────
+const AFFILIATE_PATTERNS = {
+  getyourguide: {
+    senders: ['noreply@getyourguide.com', 'no-reply@getyourguide.com', 'getyourguide.com'],
+    keywords: ['contributed to the new booking', 'new booking of a GetYourGuide product'],
+    commissionRate: 0.08,
+  },
+  expedia: {
+    senders: ['expedia.com', 'expediapartnercentral.com'],
+    keywords: ['commission', 'booking confirmation', 'partner booking'],
+    commissionRate: 0.05,
+  },
+  vrbo: {
+    senders: ['vrbo.com', 'homeaway.com'],
+    keywords: ['commission', 'booking confirmed', 'partner booking'],
+    commissionRate: 0.05,
+  },
+};
+
+function loadSales() {
+  ensureDataDir();
+  if (fs.existsSync(SALES_FILE)) return JSON.parse(fs.readFileSync(SALES_FILE, 'utf8'));
+  return { sales: [], totals: { count: 0, revenue: 0, commission: 0 } };
+}
+
+function saveSales(data) {
+  ensureDataDir();
+  fs.writeFileSync(SALES_FILE, JSON.stringify(data, null, 2));
+}
+
+function detectAffiliateSale(from, subject, body) {
+  const fromLower = (from || '').toLowerCase();
+  const textLower = `${subject} ${body}`.toLowerCase();
+
+  for (const [partner, config] of Object.entries(AFFILIATE_PATTERNS)) {
+    const senderMatch = config.senders.some(s => fromLower.includes(s));
+    const keywordMatch = config.keywords.some(k => textLower.includes(k.toLowerCase()));
+
+    if (senderMatch && keywordMatch) {
+      // Extract price from email body
+      const priceMatch = body.match(/(?:Price|Total|Amount|Revenue)[:\s]*\$?([\d,]+\.?\d*)\s*(CAD|USD|EUR|GBP)?/i)
+        || body.match(/([\d,]+\.?\d*)\s*(CAD|USD|EUR|GBP)/i);
+      const price = priceMatch ? parseFloat(priceMatch[1].replace(',', '')) : 0;
+      const currency = priceMatch?.[2] || 'CAD';
+
+      // Extract product name
+      const productMatch = body.match(/(?:product|tour|activity|hotel|property)[:\s]*\n?\s*(.+?)(?:\n|$)/i)
+        || body.match(/booking of.*?:\s*\n?\s*(.+?)(?:\n|$)/i);
+      const product = productMatch ? productMatch[1].trim() : subject;
+
+      // Extract date
+      const dateMatch = body.match(/(?:Date|Check.in|Arrival)[:\s]*([\d]{2,4}[-\/][\d]{2}[-\/][\d]{2,4})/i);
+      const bookingDate = dateMatch ? dateMatch[1] : null;
+
+      const commission = price > 0 ? parseFloat((price * config.commissionRate).toFixed(2)) : 0;
+
+      return {
+        partner,
+        product,
+        price,
+        currency,
+        commission,
+        commissionRate: config.commissionRate,
+        bookingDate,
+        detectedAt: new Date().toISOString(),
+      };
+    }
+  }
+  return null;
+}
+
+function recordSale(sale) {
+  const sales = loadSales();
+  sales.sales.push(sale);
+  sales.totals.count += 1;
+  sales.totals.revenue += sale.price;
+  sales.totals.commission += sale.commission;
+  saveSales(sales);
+  log.info(`Recorded ${sale.partner} sale: ${sale.product} - $${sale.price} (commission: $${sale.commission})`);
+  return sales.totals;
+}
 
 function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -273,6 +356,42 @@ export async function processIncomingEmail(webhookData) {
 
   log.info(`Processing email from ${from}: "${subject}"`);
 
+  // Check if this is an affiliate sale notification BEFORE classification
+  const sale = detectAffiliateSale(from, subject, body);
+  if (sale) {
+    const totals = recordSale(sale);
+
+    const saleBlocks = [
+      slackHeader(':money_with_wings: Affiliate Sale!'),
+      slackFields([
+        ['Partner', sale.partner.toUpperCase()],
+        ['Product', sale.product.slice(0, 50)],
+        ['Sale Price', `$${sale.price.toFixed(2)} ${sale.currency}`],
+        ['Commission', `$${sale.commission.toFixed(2)} (${(sale.commissionRate * 100).toFixed(0)}%)`],
+      ]),
+      slackDivider(),
+      slackSection(
+        `:chart_with_upwards_trend: *Running Totals:* ${totals.count} sales | ` +
+        `$${totals.revenue.toFixed(2)} revenue | $${totals.commission.toFixed(2)} commission earned`
+      ),
+    ];
+
+    if (sale.bookingDate) {
+      saleBlocks.push(slackSection(`:calendar: Booking date: ${sale.bookingDate}`));
+    }
+
+    await sendSlack(saleBlocks, `${sale.partner} Sale: $${sale.price} ${sale.currency}`);
+
+    // Mark as processed and return early -- no need to classify or reply
+    conversations.processed.push(emailId);
+    if (conversations.processed.length > 500) {
+      conversations.processed = conversations.processed.slice(-500);
+    }
+    saveConversations(conversations);
+
+    return { emailId, type: 'affiliate_sale', sale };
+  }
+
   // Classify the email
   const classification = await classifyEmail(from, subject, body);
   log.info(`Classified as: ${classification.intent} (${classification.sentiment})`);
@@ -435,8 +554,32 @@ export async function run() {
     blocks.push(slackSection(`:speech_balloon: *Active Threads Today:*\n${threadList}`));
   }
 
+  // Affiliate sales summary
+  const salesData = loadSales();
+  const todaySales = salesData.sales.filter(s => s.detectedAt?.startsWith(today));
+  if (todaySales.length > 0) {
+    const todayCommission = todaySales.reduce((sum, s) => sum + s.commission, 0);
+    const todayRevenue = todaySales.reduce((sum, s) => sum + s.price, 0);
+    blocks.push(slackDivider());
+    blocks.push(slackSection(
+      `:money_with_wings: *Affiliate Sales Today:* ${todaySales.length} sales\n` +
+      `Revenue: $${todayRevenue.toFixed(2)} | Commission: $${todayCommission.toFixed(2)}`
+    ));
+    for (const s of todaySales) {
+      blocks.push(slackSection(`• ${s.partner}: ${s.product.slice(0, 60)} — $${s.price.toFixed(2)} ($${s.commission.toFixed(2)} comm.)`));
+    }
+  }
+
+  if (salesData.totals.count > 0) {
+    blocks.push(slackDivider());
+    blocks.push(slackSection(
+      `:bar_chart: *All-Time Sales:* ${salesData.totals.count} bookings | ` +
+      `$${salesData.totals.revenue.toFixed(2)} revenue | $${salesData.totals.commission.toFixed(2)} commission`
+    ));
+  }
+
   await sendSlack(blocks, 'Daily Inbox Summary');
 
   log.info(`Inbox summary: ${todayInbound} in, ${todayOutbound} out, ${totalThreads} total threads`);
-  return { inbound: todayInbound, outbound: todayOutbound, totalThreads };
+  return { inbound: todayInbound, outbound: todayOutbound, totalThreads, todaySales: todaySales.length };
 }
