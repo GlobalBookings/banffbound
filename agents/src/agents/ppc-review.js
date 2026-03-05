@@ -4,6 +4,7 @@ import { sendSlack, slackHeader, slackSection, slackDivider, slackFields } from 
 import { requestApproval } from '../core/approval.js';
 import { fmtMoney, fmtPercent, fmtNumber } from '../utils/currency.js';
 import { OPTIMIZATION_RULES } from '../data/ppc-strategy.js';
+import { getSalesSummary } from './inbox-monitor.js';
 
 const log = createLogger('ppc-review');
 
@@ -245,6 +246,52 @@ function buildReport(overview, campaigns, wasteful, searchTerms, proposedActions
   }
 
   blocks.push(slackDivider());
+
+  // ── Affiliate Revenue & ROAS ──
+  let salesSummary;
+  try { salesSummary = getSalesSummary(7); } catch { salesSummary = null; }
+
+  if (salesSummary && salesSummary.totalSales > 0) {
+    const spendCAD = overview ? (overview.cost_micros || 0) / 1_000_000 : 0;
+    const roas = spendCAD > 0 ? (salesSummary.totalCommission / spendCAD).toFixed(2) : 'N/A';
+    const roasEmoji = roas === 'N/A' ? ':bar_chart:' : parseFloat(roas) >= 1 ? ':chart_with_upwards_trend:' : ':chart_with_downwards_trend:';
+
+    blocks.push(slackSection(`${roasEmoji} *Affiliate Revenue (7d)*`));
+    blocks.push(slackFields([
+      ['Sales', String(salesSummary.totalSales)],
+      ['Booking Revenue', `$${salesSummary.totalRevenue.toFixed(2)}`],
+      ['Commission Earned', `$${salesSummary.totalCommission.toFixed(2)}`],
+      ['ROAS (comm/spend)', `${roas}x`],
+    ]));
+
+    // Per-partner breakdown
+    for (const [partner, stats] of Object.entries(salesSummary.byPartner)) {
+      blocks.push(slackSection(
+        `• *${partner.toUpperCase()}:* ${stats.count} sales, $${stats.revenue.toFixed(2)} rev, $${stats.commission.toFixed(2)} comm`
+      ));
+    }
+
+    // Top products
+    const topProducts = Object.entries(salesSummary.byProduct)
+      .sort((a, b) => b[1].count - a[1].count)
+      .slice(0, 3);
+    if (topProducts.length > 0) {
+      const productList = topProducts.map(([name, s]) =>
+        `• ${name} (${s.count}x, $${s.revenue.toFixed(2)})`
+      ).join('\n');
+      blocks.push(slackSection(`*Top Products:*\n${productList}`));
+    }
+
+    // All-time running total
+    blocks.push(slackSection(
+      `_All-time: ${salesSummary.allTime.count} sales, $${salesSummary.allTime.commission.toFixed(2)} commission_`
+    ));
+
+    blocks.push(slackDivider());
+  } else {
+    blocks.push(slackSection(':moneybag: _No affiliate sales recorded in last 7 days_'));
+    blocks.push(slackDivider());
+  }
 
   // Campaign breakdown
   const active = campaigns.filter(c => c.campaign?.status === 2 || c.campaign?.status === 'ENABLED');

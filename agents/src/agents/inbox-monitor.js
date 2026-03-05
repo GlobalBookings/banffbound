@@ -21,23 +21,11 @@ const SLACK_WORTHY_INTENTS = ['blogger_reply', 'collaboration_request', 'guest_p
 const PENDING_REPLIES_FILE = path.join(DATA_DIR, 'pending-replies.json');
 
 // ── Affiliate sale detection and tracking ─────────────────
-const AFFILIATE_PATTERNS = {
-  getyourguide: {
-    senders: ['noreply@getyourguide.com', 'no-reply@getyourguide.com', 'getyourguide.com'],
-    keywords: ['contributed to the new booking', 'new booking of a GetYourGuide product'],
-    commissionRate: 0.08,
-  },
-  expedia: {
-    senders: ['expedia.com', 'expediapartnercentral.com'],
-    keywords: ['commission', 'booking confirmation', 'partner booking'],
-    commissionRate: 0.05,
-  },
-  vrbo: {
-    senders: ['vrbo.com', 'homeaway.com'],
-    keywords: ['commission', 'booking confirmed', 'partner booking'],
-    commissionRate: 0.05,
-  },
-};
+// Emails arrive forwarded from Gmail, so the "from" will be the
+// forwarding address (e.g. jack@globalbookings.co), NOT the original
+// sender. We detect sales by scanning the full body + subject for
+// partner-specific keywords regardless of sender.
+const GYG_COMMISSION_RATE = 0.08;
 
 function loadSales() {
   ensureDataDir();
@@ -51,55 +39,104 @@ function saveSales(data) {
 }
 
 function detectAffiliateSale(from, subject, body) {
-  const fromLower = (from || '').toLowerCase();
-  const textLower = `${subject} ${body}`.toLowerCase();
+  const text = `${subject}\n${body}`;
+  const textLower = text.toLowerCase();
 
-  for (const [partner, config] of Object.entries(AFFILIATE_PATTERNS)) {
-    const senderMatch = config.senders.some(s => fromLower.includes(s));
-    const keywordMatch = config.keywords.some(k => textLower.includes(k.toLowerCase()));
+  // ── GetYourGuide sale ──
+  // Real format: "new booking of a GetYourGuide product:\n*Banff: Banff Gondola Admission Ticket*\nPrice:* 159.60 CAD*"
+  const isGYG = textLower.includes('getyourguide') &&
+    (textLower.includes('new booking') || textLower.includes('contributed to the'));
 
-    if (senderMatch && keywordMatch) {
-      // Extract price from email body
-      const priceMatch = body.match(/(?:Price|Total|Amount|Revenue)[:\s]*\$?([\d,]+\.?\d*)\s*(CAD|USD|EUR|GBP)?/i)
-        || body.match(/([\d,]+\.?\d*)\s*(CAD|USD|EUR|GBP)/i);
-      const price = priceMatch ? parseFloat(priceMatch[1].replace(',', '')) : 0;
-      const currency = priceMatch?.[2] || 'CAD';
+  if (isGYG) {
+    // Extract product name — appears after "GetYourGuide product:" on the next line
+    // Handle both plain text and markdown-bold (*Product Name*)
+    const productMatch = body.match(/GetYourGuide product[:\s]*\n?\s*\*?([^\n*]+)\*?/i)
+      || body.match(/booking of.*?:\s*\n?\s*\*?([^\n*]+)\*?/i);
+    const product = productMatch
+      ? productMatch[1].replace(/^\*+|\*+$/g, '').trim()
+      : 'Unknown GYG Product';
 
-      // Extract product name
-      const productMatch = body.match(/(?:product|tour|activity|hotel|property)[:\s]*\n?\s*(.+?)(?:\n|$)/i)
-        || body.match(/booking of.*?:\s*\n?\s*(.+?)(?:\n|$)/i);
-      const product = productMatch ? productMatch[1].trim() : subject;
+    // Extract price — "Price:* 159.60 CAD*" or "Price: 159.60 CAD"
+    const priceMatch = body.match(/Price[:\s*]*([\d,]+\.?\d*)\s*(CAD|USD|EUR|GBP)/i);
+    const price = priceMatch ? parseFloat(priceMatch[1].replace(',', '')) : 0;
+    const currency = priceMatch?.[2] || 'CAD';
 
-      // Extract date
-      const dateMatch = body.match(/(?:Date|Check.in|Arrival)[:\s]*([\d]{2,4}[-\/][\d]{2}[-\/][\d]{2,4})/i);
-      const bookingDate = dateMatch ? dateMatch[1] : null;
+    // Extract booking date — "Date:* 07-03-2026*" or "Date: 07-03-2026"
+    const dateMatch = body.match(/Date[:\s*]*([\d]{2}-[\d]{2}-[\d]{4})/i);
+    const bookingDate = dateMatch ? dateMatch[1] : null;
 
-      const commission = price > 0 ? parseFloat((price * config.commissionRate).toFixed(2)) : 0;
+    // Extract reference number from subject or body — "R385350"
+    const refMatch = text.match(/R(\d{5,8})/);
+    const reference = refMatch ? `R${refMatch[1]}` : null;
 
-      return {
-        partner,
-        product,
-        price,
-        currency,
-        commission,
-        commissionRate: config.commissionRate,
-        bookingDate,
-        detectedAt: new Date().toISOString(),
-      };
-    }
+    const commission = price > 0 ? parseFloat((price * GYG_COMMISSION_RATE).toFixed(2)) : 0;
+
+    return {
+      partner: 'getyourguide',
+      product,
+      price,
+      currency,
+      commission,
+      commissionRate: GYG_COMMISSION_RATE,
+      bookingDate,
+      reference,
+      detectedAt: new Date().toISOString(),
+    };
   }
+
   return null;
 }
 
 function recordSale(sale) {
   const sales = loadSales();
+
+  // Deduplicate by reference number
+  if (sale.reference && sales.sales.some(s => s.reference === sale.reference)) {
+    log.info(`Duplicate sale ${sale.reference} — skipping`);
+    return sales.totals;
+  }
+
   sales.sales.push(sale);
   sales.totals.count += 1;
   sales.totals.revenue += sale.price;
   sales.totals.commission += sale.commission;
   saveSales(sales);
-  log.info(`Recorded ${sale.partner} sale: ${sale.product} - $${sale.price} (commission: $${sale.commission})`);
+  log.info(`Recorded ${sale.partner} sale: ${sale.product} — $${sale.price} ${sale.currency} (commission: $${sale.commission})`);
   return sales.totals;
+}
+
+// ── Sales analytics for PPC agent ─────────────────────────
+export function getSalesSummary(days = 7) {
+  const sales = loadSales();
+  const cutoff = new Date(Date.now() - days * 86400000).toISOString();
+  const recent = sales.sales.filter(s => s.detectedAt >= cutoff);
+
+  const byPartner = {};
+  for (const s of recent) {
+    if (!byPartner[s.partner]) byPartner[s.partner] = { count: 0, revenue: 0, commission: 0 };
+    byPartner[s.partner].count += 1;
+    byPartner[s.partner].revenue += s.price;
+    byPartner[s.partner].commission += s.commission;
+  }
+
+  const byProduct = {};
+  for (const s of recent) {
+    const key = s.product.slice(0, 60);
+    if (!byProduct[key]) byProduct[key] = { count: 0, revenue: 0, commission: 0 };
+    byProduct[key].count += 1;
+    byProduct[key].revenue += s.price;
+    byProduct[key].commission += s.commission;
+  }
+
+  return {
+    period: `${days}d`,
+    totalSales: recent.length,
+    totalRevenue: parseFloat(recent.reduce((s, r) => s + r.price, 0).toFixed(2)),
+    totalCommission: parseFloat(recent.reduce((s, r) => s + r.commission, 0).toFixed(2)),
+    byPartner,
+    byProduct,
+    allTime: sales.totals,
+  };
 }
 
 function ensureDataDir() {
