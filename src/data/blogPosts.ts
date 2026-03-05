@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-sunshine-lodging',
+    title: 'Best Banff Sunshine Village Lodging Options for 2026',
+    description: 'Discover the top lodging options near Banff Sunshine Village for 2026. From luxury ski-in/ski-out hotels to cozy mountain chalets - find your perfect stay.',
+    date: '2026-03-05',
+    category: 'Guides',
+    image: '/images/blog/banff-sunshine-lodging.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'mt-norquay',
     title: 'Mt Norquay Banff: Your Complete 2026 Adventure Guide',
     description: 'Discover Mt Norquay Banff\'s best skiing, hiking & scenic chairlift rides in 2026. Complete guide with trails, tickets, dining & insider tips for your adventure.',
