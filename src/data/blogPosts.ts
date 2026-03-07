@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'mont-norquay',
+    title: 'Mount Norquay Banff Guide: Epic Skiing & Summer Adventures 2026',
+    description: 'Discover Mount Norquay\'s world-class skiing, summer chairlift rides, and breathtaking Rockies views in our complete 2026 Banff adventure guide.',
+    date: '2026-03-07',
+    category: 'Guides',
+    image: '/images/blog/mont-norquay.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'bow-glacier-falls',
+    title: 'Bow Glacier Falls Banff: Your Epic 2026 Adventure Guide',
+    description: 'Discover Bow Glacier Falls in Banff with our complete 2026 guide! Get trail tips, best viewing spots, photography advice, and everything for your epic adventure.',
+    date: '2026-03-07',
+    category: 'Seasonal',
+    image: '/images/blog/bow-glacier-falls.webp',
+    readTime: '8 min read',
+  },
+  {
     slug: 'banff-sunshine-lodging',
     title: 'Best Banff Sunshine Village Lodging Options for 2026',
     description: 'Discover the top lodging options near Banff Sunshine Village for 2026. From luxury ski-in/ski-out hotels to cozy mountain chalets - find your perfect stay.',
