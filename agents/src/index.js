@@ -17,6 +17,7 @@ import { run as runInbox, processIncomingEmail, processPendingReplies } from './
 import { run as runRankTracker } from './agents/rank-tracker.js';
 import { run as runInternalLinker } from './agents/internal-linker.js';
 import { run as runContentRefresher } from './agents/content-refresher.js';
+import { run as runJournalistPitcher } from './agents/journalist-pitcher.js';
 
 const log = createLogger('main');
 
@@ -45,6 +46,7 @@ registerTrigger('inbox-monitor', runInbox);
 registerTrigger('rank-tracker', runRankTracker);
 registerTrigger('internal-linker', runInternalLinker);
 registerTrigger('content-refresher', runContentRefresher);
+registerTrigger('journalist-pitcher', runJournalistPitcher);
 
 // ── Schedule agents (Mountain Time = America/Edmonton) ────
 // schedule('PPC Review',     '0 8 * * *',  runPPC);       // DISABLED — PPC paused
@@ -54,12 +56,13 @@ schedule('Backlink Monitor', '0 10 * * 1', runBacklinks);   // 10:00 AM GMT ever
 schedule('Content Publisher', '0 12 * * *', runContent);    // 12:00 PM GMT daily
 schedule('Inbox Summary',    '0 18 * * *', runInbox);       // 6:00 PM GMT daily
 schedule('Reddit Promoter',  '0 14 * * 2,5', runReddit);   // 2:00 PM GMT Tue & Fri
-schedule('Blogger Outreach',  '0 11 * * 1', runOutreach);  // 11:00 AM GMT Monday
+schedule('Blogger Outreach',  '0 11 * * 1-5', runOutreach); // 11:00 AM GMT Mon-Fri (5x/week)
 schedule('Directory Tracker', '0 10 1 * *', runDirectories); // 10:00 AM GMT 1st of month
 schedule('Shareable Content', '0 12 * * 3', runShareable);  // 12:00 PM GMT Wednesday
 schedule('Rank Tracker',     '0 9 * * 1',  runRankTracker);    // 9:00 AM GMT Monday (after weekend data settles)
 schedule('Internal Linker',  '0 13 * * 4', runInternalLinker);  // 1:00 PM GMT Thursday
 schedule('Content Refresher','0 11 * * 2', runContentRefresher);// 11:00 AM GMT Tuesday
+schedule('Journalist Pitcher','0 14 * * 1,3', runJournalistPitcher);// 2:00 PM GMT Mon & Wed
 
 // ── Startup notification ──────────────────────────────────
 const jobs = listJobs();

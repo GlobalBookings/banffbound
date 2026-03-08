@@ -22,6 +22,7 @@ if (!agent) {
   console.log('  rank-tracker       — Weekly GSC ranking report (movers, drops, opportunities)');
   console.log('  internal-linker    — Find under-linked posts and add cross-links');
   console.log('  content-refresher  — Refresh aging posts losing rankings');
+  console.log('  journalist-pitcher — Pitch guest posts & resource links to publications');
   console.log('  test               — Verify configuration');
   process.exit(1);
 }
@@ -76,6 +77,7 @@ const agents = {
   'rank-tracker': () => import('./agents/rank-tracker.js'),
   'internal-linker': () => import('./agents/internal-linker.js'),
   'content-refresher': () => import('./agents/content-refresher.js'),
+  'journalist-pitcher': () => import('./agents/journalist-pitcher.js'),
 };
 
 const loader = agents[agent];

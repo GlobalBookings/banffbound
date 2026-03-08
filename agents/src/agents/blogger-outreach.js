@@ -46,6 +46,21 @@ async function findBloggers() {
     'best banff blog posts',
     'banff travel tips blogger',
     'canadian rockies road trip blog',
+    'alberta travel blog',
+    'jasper banff road trip blog',
+    'canada ski trip blog banff',
+    'banff photography blog',
+    'banff camping guide blog',
+    'moraine lake travel blog',
+    'icefields parkway blog post',
+    'canmore travel blogger',
+    'rocky mountains travel guide blog',
+    'banff family vacation blog',
+    'banff winter travel blog',
+    'best canadian rockies hikes blog',
+    'banff hotel review blog',
+    'banff food guide blog',
+    'lake louise ski blog',
   ];
 
   if (DATAFORSEO_LOGIN && DATAFORSEO_PASSWORD) {
@@ -119,6 +134,21 @@ function getCuratedBloggers() {
     { domain: 'hazelandcompany.com', url: 'https://hazelandcompany.com', title: 'Hazel & Company', description: 'Outdoor adventure travel blog' },
     { domain: 'worldofwanderlust.com', url: 'https://worldofwanderlust.com', title: 'World of Wanderlust', description: 'Global travel blog' },
     { domain: 'nomadicmatt.com', url: 'https://nomadicmatt.com', title: 'Nomadic Matt', description: 'Budget travel blog' },
+    { domain: 'adventureawaits.com', url: 'https://adventureawaits.com', title: 'Adventure Awaits', description: 'Outdoor adventure travel blog' },
+    { domain: 'hellobc.com', url: 'https://www.hellobc.com', title: 'Hello BC', description: 'British Columbia tourism with Rockies coverage' },
+    { domain: 'theplanetd.com', url: 'https://theplanetd.com', title: 'The Planet D', description: 'Canadian adventure travel blog' },
+    { domain: 'freshoffthegrid.com', url: 'https://freshoffthegrid.com', title: 'Fresh Off the Grid', description: 'Camping and outdoor cooking blog' },
+    { domain: 'bearfoottheory.com', url: 'https://bearfoottheory.com', title: 'Bearfoot Theory', description: 'Outdoor adventure & van life blog' },
+    { domain: 'dirtinmyshoes.com', url: 'https://dirtinmyshoes.com', title: 'Dirt In My Shoes', description: 'National parks hiking blog' },
+    { domain: 'ordinary-adventures.com', url: 'https://ordinary-adventures.com', title: 'Ordinary Adventures', description: 'Pacific NW and Rockies hiking' },
+    { domain: 'twowesternexplorers.com', url: 'https://twowesternexplorers.com', title: 'Two Western Explorers', description: 'Western Canada adventure blog' },
+    { domain: 'theoutbound.com', url: 'https://theoutbound.com', title: 'The Outbound', description: 'Outdoor adventure community' },
+    { domain: 'backpackingcanada.com', url: 'https://backpackingcanada.com', title: 'Backpacking Canada', description: 'Canadian budget travel blog' },
+    { domain: 'explorecanmore.ca', url: 'https://explorecanmore.ca', title: 'Explore Canmore', description: 'Canmore local travel guide' },
+    { domain: 'hikebiketravel.com', url: 'https://hikebiketravel.com', title: 'Hike Bike Travel', description: 'Canadian hiking and biking blog' },
+    { domain: 'iamaileen.com', url: 'https://iamaileen.com', title: 'I Am Aileen', description: 'Travel blog with Canadian Rockies guides' },
+    { domain: 'getcanadianexperience.com', url: 'https://getcanadianexperience.com', title: 'Canadian Experience', description: 'All-Canada travel experiences' },
+    { domain: 'myadventuresacrosstheworld.com', url: 'https://myadventuresacrosstheworld.com', title: 'Adventures Across The World', description: 'Adventure travel photography blog' },
   ];
 }
 
@@ -285,8 +315,8 @@ export async function run() {
 
   const results = [];
 
-  // Process up to 3 bloggers per run
-  for (const blogger of newBloggers.slice(0, 3)) {
+  // Process up to 5 bloggers per run
+  for (const blogger of newBloggers.slice(0, 5)) {
     try {
       // Step 1: Find their email
       log.info(`Finding email for ${blogger.domain}...`);
