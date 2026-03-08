@@ -14,6 +14,9 @@ import { run as runOutreach } from './agents/blogger-outreach.js';
 import { run as runDirectories } from './agents/directory-tracker.js';
 import { run as runShareable } from './agents/shareable-content.js';
 import { run as runInbox, processIncomingEmail, processPendingReplies } from './agents/inbox-monitor.js';
+import { run as runRankTracker } from './agents/rank-tracker.js';
+import { run as runInternalLinker } from './agents/internal-linker.js';
+import { run as runContentRefresher } from './agents/content-refresher.js';
 
 const log = createLogger('main');
 
@@ -39,6 +42,9 @@ registerTrigger('blogger-outreach', runOutreach);
 registerTrigger('directory-tracker', runDirectories);
 registerTrigger('shareable-content', runShareable);
 registerTrigger('inbox-monitor', runInbox);
+registerTrigger('rank-tracker', runRankTracker);
+registerTrigger('internal-linker', runInternalLinker);
+registerTrigger('content-refresher', runContentRefresher);
 
 // ── Schedule agents (Mountain Time = America/Edmonton) ────
 // schedule('PPC Review',     '0 8 * * *',  runPPC);       // DISABLED — PPC paused
@@ -51,6 +57,9 @@ schedule('Reddit Promoter',  '0 14 * * 2,5', runReddit);   // 2:00 PM GMT Tue & 
 schedule('Blogger Outreach',  '0 11 * * 1', runOutreach);  // 11:00 AM GMT Monday
 schedule('Directory Tracker', '0 10 1 * *', runDirectories); // 10:00 AM GMT 1st of month
 schedule('Shareable Content', '0 12 * * 3', runShareable);  // 12:00 PM GMT Wednesday
+schedule('Rank Tracker',     '0 9 * * 1',  runRankTracker);    // 9:00 AM GMT Monday (after weekend data settles)
+schedule('Internal Linker',  '0 13 * * 4', runInternalLinker);  // 1:00 PM GMT Thursday
+schedule('Content Refresher','0 11 * * 2', runContentRefresher);// 11:00 AM GMT Tuesday
 
 // ── Startup notification ──────────────────────────────────
 const jobs = listJobs();

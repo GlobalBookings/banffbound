@@ -19,6 +19,9 @@ if (!agent) {
   console.log('  campaign-updater   — Update existing ads with new landing pages & copy');
   console.log('  asset-builder      — Create account-level sitelinks, callouts & snippets');
   console.log('  content-publisher  — Generate blog posts from content gaps');
+  console.log('  rank-tracker       — Weekly GSC ranking report (movers, drops, opportunities)');
+  console.log('  internal-linker    — Find under-linked posts and add cross-links');
+  console.log('  content-refresher  — Refresh aging posts losing rankings');
   console.log('  test               — Verify configuration');
   process.exit(1);
 }
@@ -70,6 +73,9 @@ const agents = {
   'campaign-updater': () => import('./agents/campaign-updater.js'),
   'asset-builder': () => import('./agents/asset-builder.js'),
   'content-publisher': () => import('./agents/content-publisher.js'),
+  'rank-tracker': () => import('./agents/rank-tracker.js'),
+  'internal-linker': () => import('./agents/internal-linker.js'),
+  'content-refresher': () => import('./agents/content-refresher.js'),
 };
 
 const loader = agents[agent];
