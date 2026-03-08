@@ -194,10 +194,20 @@ REQUIREMENTS:
 6. Include a <div class="tip-box"><strong>Key Takeaway:</strong> ...</div> for summaries
 7. All information must be accurate for Banff, Alberta, Canada
 8. Include real prices in CAD, real distances, specific location names
-9. End with affiliate links:
+9. Include affiliate links EARLY and CONTEXTUALLY (after 1st or 2nd h2), not just at the end:
    - Expedia: <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">book accommodation on Expedia</a>
    - GetYourGuide: <a href="${GYG_LINK}" target="_blank" rel="noopener sponsored">book tours on GetYourGuide</a>
-10. CRITICAL: This is ${currentYear}. Any year references MUST say ${currentYear}. NEVER reference 2024 or any past year as current.
+   Also end with both affiliate links in the closing paragraph.
+10. Include 2-4 INTERNAL LINKS to relevant BanffBound pages where they fit naturally:
+   - Hotel directory: <a href="/hotel-directory">Compare 95+ Banff hotels</a>
+   - Tours: <a href="/tours">Browse Banff tours</a>
+   - Hiking: <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>
+   - Lake Louise: <a href="/blog/lake-louise-complete-guide">Lake Louise guide</a>
+   - Where to stay: <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a>
+   - Itinerary: <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>
+   - Restaurants: <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>
+   - Activities: <a href="/activities">Banff activities</a>
+11. CRITICAL: This is ${currentYear}. Any year references MUST say ${currentYear}. NEVER reference 2024 or any past year as current.
 
 CRITICAL: Return ONLY the HTML content. No markdown, no code fences. Start with <p> and end with </p>.`;
 

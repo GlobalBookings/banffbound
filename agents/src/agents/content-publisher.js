@@ -207,8 +207,29 @@ async function findContentGaps() {
     }
   }
 
-  // Sort by impressions (highest demand first)
-  gaps.sort((a, b) => b.impressions - a.impressions);
+  // Score each gap: booking-intent queries get priority over informational ones.
+  // Organic strategy: only write content that can generate affiliate revenue.
+  const BOOKING_SIGNALS = ['hotel', 'hotels', 'stay', 'lodge', 'lodges', 'resort', 'resorts',
+    'book', 'booking', 'tickets', 'ticket', 'tour', 'tours', 'guided', 'gondola',
+    'cruise', 'rental', 'rentals', 'cabin', 'cabins', 'chalet', 'chalets',
+    'accommodation', 'where to stay', 'best hotels', 'hostel', 'motel', 'inn',
+    'price', 'prices', 'cost', 'deals', 'cheap', 'budget', 'luxury', 'spa',
+    'admission', 'pass', 'shuttle', 'transfer'];
+  const DEPRIORITIZE_SIGNALS = ['weather', 'forecast', 'webcam', 'map', 'directions',
+    'history', 'meaning', 'population', 'wiki', 'distance', 'elevation',
+    'rules', 'regulations', 'closed', 'hours'];
+
+  for (const gap of gaps) {
+    const words = gap.query.toLowerCase();
+    let score = gap.impressions;
+    // Boost booking-intent queries 3x
+    if (BOOKING_SIGNALS.some(s => words.includes(s))) score *= 3;
+    // Penalise purely informational queries
+    if (DEPRIORITIZE_SIGNALS.some(s => words.includes(s))) score *= 0.3;
+    gap._score = score;
+  }
+
+  gaps.sort((a, b) => b._score - a._score);
 
   // Deduplicate by topic cluster -- keep only the highest-impression
   // query per topic so we don't write 3 posts about "sandman hotel"
@@ -269,15 +290,26 @@ REQUIREMENTS:
 3. Start with an engaging intro paragraph (no <h1>, the page template adds it)
 4. Include 4-6 <h2> sections with detailed, practical information
 5. Include a <div class="tip-box"><strong>Pro Tip:</strong> ...</div> somewhere in the article
-6. End with a closing paragraph that includes these EXACT affiliate links:
+6. IMPORTANT — Include affiliate links EARLY and CONTEXTUALLY, not just at the end:
+   - After the first or second <h2>, include a natural contextual CTA linking to Expedia or GetYourGuide where it fits the content (e.g. "Compare hotel rates on <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>" when discussing accommodation, or "Browse guided tours on <a href="${GYG_LINK}" target="_blank" rel="noopener sponsored">GetYourGuide</a>" when discussing activities)
+   - Also end with a closing paragraph that includes both affiliate links
    - Expedia: <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>
    - GetYourGuide: <a href="${GYG_LINK}" target="_blank" rel="noopener sponsored">GetYourGuide</a>
-7. All information must be accurate for Banff, Alberta, Canada (NOT Banff, Scotland)
-8. Include practical details: prices in CAD, distances in km, specific trail names, real restaurant names, etc.
-9. Mention Parks Canada where relevant
-10. Write in a friendly, authoritative tone -- like a local sharing insider knowledge
-11. CRITICAL: This is ${currentYear}. Any year references MUST say ${currentYear} or ${currentYear + 1}. NEVER reference 2024 or any past year as if it is current. If mentioning prices, seasons, or events, frame them for ${currentYear}.
-12. Where relevant, reference the current season (it is ${currentMonth} ${currentYear})
+7. IMPORTANT — Include INTERNAL LINKS to relevant BanffBound pages. Use 2-4 of these where they naturally fit the content:
+   - Hotel directory: <a href="/hotel-directory">Compare 95+ Banff hotels</a>
+   - Tours page: <a href="/tours">Browse Banff tours</a>
+   - Hiking guide: <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>
+   - Lake Louise guide: <a href="/blog/lake-louise-complete-guide">Lake Louise guide</a>
+   - Where to stay: <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a>
+   - 3-day itinerary: <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>
+   - Food guide: <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>
+   - Activities: <a href="/activities">Banff activities</a>
+8. All information must be accurate for Banff, Alberta, Canada (NOT Banff, Scotland)
+9. Include practical details: prices in CAD, distances in km, specific trail names, real restaurant names, etc.
+10. Mention Parks Canada where relevant
+11. Write in a friendly, authoritative tone -- like a local sharing insider knowledge
+12. CRITICAL: This is ${currentYear}. Any year references MUST say ${currentYear} or ${currentYear + 1}. NEVER reference 2024 or any past year as if it is current. If mentioning prices, seasons, or events, frame them for ${currentYear}.
+13. Where relevant, reference the current season (it is ${currentMonth} ${currentYear})
 
 CRITICAL: Return ONLY the HTML content, no markdown, no code fences, no preamble. Start with <p> and end with </p>.`;
 

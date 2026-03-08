@@ -76,6 +76,34 @@ const articleSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script is:inline class="eg-affiliate-banners-script" src="https://creator.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"></script>
   <script is:inline src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="QW960HO"></script>
+  <script is:inline>
+  (function() {
+    var body = document.querySelector('.article-body');
+    if (!body) return;
+    var h2s = body.querySelectorAll('h2');
+    if (h2s.length < 2) return;
+    // Skip the "Recommended Tours" h2 at the bottom (inside gyg-widget-container)
+    var contentH2s = [];
+    for (var i = 0; i < h2s.length; i++) {
+      if (!h2s[i].closest('.gyg-widget-container')) contentH2s.push(h2s[i]);
+    }
+    if (contentH2s.length < 2) return;
+
+    var cta = document.createElement('div');
+    cta.className = 'mid-article-cta';
+    cta.innerHTML =
+      '<div class="mid-cta-inner">' +
+        '<strong>Plan Your Banff Trip</strong>' +
+        '<p>Find hotels, tours, and activities for your Canadian Rockies adventure.</p>' +
+        '<div class="mid-cta-buttons">' +
+          '<a href="/hotel-directory" class="mid-cta-btn">Compare 95+ Hotels</a>' +
+          '<a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="mid-cta-btn mid-cta-gyg">Browse Tours</a>' +
+          '<a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored" class="mid-cta-btn mid-cta-exp">Check Hotel Deals</a>' +
+        '</div>' +
+      '</div>';
+    contentH2s[1].parentNode.insertBefore(cta, contentH2s[1]);
+  })();
+  </script>
 </BaseLayout>
 
 <style>
@@ -222,8 +250,77 @@ const articleSchema = {
     color: var(--color-text-light);
   }
 
+  .article-body :global(.mid-article-cta) {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2d6b4a 100%);
+    border-radius: var(--radius);
+    color: var(--color-white);
+  }
+
+  .article-body :global(.mid-cta-inner strong) {
+    font-size: 1.1rem;
+    color: var(--color-white);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .article-body :global(.mid-cta-inner p) {
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .article-body :global(.mid-cta-buttons) {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .article-body :global(.mid-cta-btn) {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background: rgba(255,255,255,0.15);
+    color: var(--color-white);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .article-body :global(.mid-cta-btn:hover) {
+    background: rgba(255,255,255,0.25);
+    color: var(--color-white);
+  }
+
+  .article-body :global(.mid-cta-gyg) {
+    background: var(--color-accent);
+    color: var(--color-dark);
+    border-color: var(--color-accent);
+  }
+
+  .article-body :global(.mid-cta-gyg:hover) {
+    background: #c49a3a;
+    color: var(--color-dark);
+  }
+
+  .article-body :global(.mid-cta-exp) {
+    background: var(--color-white);
+    color: var(--color-primary);
+    border-color: var(--color-white);
+  }
+
+  .article-body :global(.mid-cta-exp:hover) {
+    background: #f0f0f0;
+    color: var(--color-primary);
+  }
+
   @media (max-width: 768px) {
     .article-hero { min-height: 300px; }
     .article-hero-content { padding: 1.5rem; }
+    .article-body :global(.mid-cta-buttons) { flex-direction: column; }
   }
 </style>

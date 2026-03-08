@@ -16,6 +16,46 @@ const GYG = 'QW960HO';
 const galleryImages = hotel.images?.length ? hotel.images : [hotel.image];
 const starWord = hotel.reviewScore ? (hotel.reviewScore >= 9 ? 'Exceptional' : hotel.reviewScore >= 8 ? 'Very Good' : hotel.reviewScore >= 7 ? 'Good' : 'Fair') : '';
 
+const areaGuides: Record<string, Array<{href: string; title: string; desc: string}>> = {
+  'Downtown Banff': [
+    { href: '/blog/where-to-stay-in-banff', title: 'Where to Stay in Banff: Best Areas & Hotels', desc: 'Compare every neighbourhood and budget tier.' },
+    { href: '/blog/best-banff-restaurants-where-to-eat', title: 'Best Banff Restaurants', desc: 'Local picks for every budget.' },
+    { href: '/blog/3-day-banff-itinerary', title: '3-Day Banff Itinerary', desc: 'First-time visitor? Start here.' },
+    { href: '/blog/banff-nightlife-guide', title: 'Banff Nightlife Guide', desc: 'Best bars, pubs & entertainment.' },
+  ],
+  'Tunnel Mountain': [
+    { href: '/blog/where-to-stay-in-banff', title: 'Where to Stay in Banff: Best Areas & Hotels', desc: 'Compare every neighbourhood and budget tier.' },
+    { href: '/blog/banff-camping-guide', title: 'Camping in Banff Guide', desc: 'Complete campground guide nearby.' },
+    { href: '/blog/best-banff-hiking-trails-guide', title: 'Best Banff Hiking Trails', desc: '15 must-do hikes from your doorstep.' },
+    { href: '/blog/3-day-banff-itinerary', title: '3-Day Banff Itinerary', desc: 'First-time visitor? Start here.' },
+  ],
+  'Lake Louise': [
+    { href: '/blog/lake-louise-complete-guide', title: 'Lake Louise Complete Guide', desc: 'Everything you need to know.' },
+    { href: '/blog/moraine-lake-guide', title: 'Moraine Lake Guide', desc: 'How to visit in 2026.' },
+    { href: '/blog/lake-agnes-tea-house', title: 'Lake Agnes Tea House Hike', desc: 'Iconic hike above Lake Louise.' },
+    { href: '/blog/lake-louise-ski-resort', title: 'Lake Louise Ski Resort Guide', desc: 'Largest resort in the Rockies.' },
+  ],
+  'Canmore': [
+    { href: '/blog/where-to-stay-in-banff', title: 'Where to Stay in Banff & Canmore', desc: 'Compare areas and prices.' },
+    { href: '/blog/best-banff-hiking-trails-guide', title: 'Best Hiking Trails', desc: '15 must-do hikes in the area.' },
+    { href: '/blog/banff-craft-beer-guide', title: 'Craft Beer Guide', desc: 'Breweries and taprooms nearby.' },
+    { href: '/blog/banff-trip-cost-budget-guide', title: 'Banff Trip Cost Guide', desc: 'Budget breakdown for your trip.' },
+  ],
+  'Bow Valley': [
+    { href: '/blog/bow-valley-parkway-guide', title: 'Bow Valley Parkway Guide', desc: 'Scenic drive and wildlife.' },
+    { href: '/blog/icefields-parkway-guide', title: 'Icefields Parkway Guide', desc: 'Canada\'s most scenic road.' },
+    { href: '/blog/johnston-canyon-guide', title: 'Johnston Canyon Guide', desc: 'Nearby canyon hike.' },
+    { href: '/blog/banff-wildlife-guide', title: 'Wildlife Viewing Guide', desc: 'Where to see bears, elk & more.' },
+  ],
+  'Castle Junction': [
+    { href: '/blog/bow-valley-parkway-guide', title: 'Bow Valley Parkway Guide', desc: 'Scenic drive and wildlife.' },
+    { href: '/blog/johnston-canyon-guide', title: 'Johnston Canyon Guide', desc: 'Nearby canyon hike.' },
+    { href: '/blog/banff-wildlife-guide', title: 'Wildlife Viewing Guide', desc: 'Where to see bears, elk & more.' },
+    { href: '/blog/7-day-banff-itinerary', title: '7-Day Banff Itinerary', desc: 'Complete week in the Rockies.' },
+  ],
+};
+const relatedGuides = areaGuides[hotel.area] || areaGuides['Downtown Banff'];
+
 const hotelSchema = {
   '@context': 'https://schema.org',
   '@type': 'Hotel',
@@ -250,6 +290,27 @@ const hotelSchema = {
             <a href="/hotel-directory" class="btn btn-outline sidebar-btn">View All {hotels.length} Hotels →</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Guides for {hotel.area}</h2>
+        <p>Plan your stay with these insider guides.</p>
+      </div>
+      <div class="grid grid-4">
+        {relatedGuides.map(guide => (
+          <a href={guide.href} class="card" style="display: block;">
+            <div class="card-body">
+              <h3 style="font-size: 0.95rem; margin-bottom: 0.25rem;">{guide.title}</h3>
+              <p style="font-size: 0.82rem; color: var(--color-text-light); margin: 0;">{guide.desc}</p>
+              <span style="display: inline-block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide &rarr;</span>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
