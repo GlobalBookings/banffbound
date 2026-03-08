@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'numtijah-lodge',
+    title: 'Num-Ti-Jah Lodge Banff: Your Ultimate 2026 Mountain Escape',
+    description: 'Discover Num-Ti-Jah Lodge\'s rustic charm on Bow Lake. Your 2026 guide to luxury mountain accommodations, outdoor adventures, and breathtaking Rockies views.',
+    date: '2026-03-08',
+    category: 'Accommodation',
+    image: '/images/blog/numtijah-lodge.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'fancy-hotel-in-banff',
+    title: 'Banff\'s Most Luxurious Hotels: 2026\'s Ultimate Guide',
+    description: 'Discover Banff\'s most luxurious hotels in 2026. From mountain chalets to world-class spas, find the perfect upscale accommodation for your Canadian Rockies getaway.',
+    date: '2026-03-08',
+    category: 'Accommodation',
+    image: '/images/blog/fancy-hotel-in-banff.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'mont-norquay',
     title: 'Mount Norquay Banff Guide: Epic Skiing & Summer Adventures 2026',
     description: 'Discover Mount Norquay\'s world-class skiing, summer chairlift rides, and breathtaking Rockies views in our complete 2026 Banff adventure guide.',
