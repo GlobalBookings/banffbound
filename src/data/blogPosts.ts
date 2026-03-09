@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ski-touring-canmore',
+    title: 'Ultimate Ski Touring Guide: Canmore to Banff 2026',
+    description: 'Discover the best ski touring routes from Canmore to Banff in 2026. Expert tips, safety advice, and stunning backcountry trails in the Canadian Rockies.',
+    date: '2026-03-09',
+    category: 'Seasonal',
+    image: '/images/blog/ski-touring-canmore.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-boundary-lodge',
+    title: 'Banff Boundary Lodge: Your Ultimate 2026 Mountain Escape Guide',
+    description: 'Discover Banff Boundary Lodge\'s premier mountain accommodations, hiking trails, and seasonal activities in our comprehensive 2026 travel guide to the Rockies.',
+    date: '2026-03-09',
+    category: 'Accommodation',
+    image: '/images/blog/banff-boundary-lodge.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'numtijah-lodge',
     title: 'Num-Ti-Jah Lodge Banff: Your Ultimate 2026 Mountain Escape',
     description: 'Discover Num-Ti-Jah Lodge\'s rustic charm on Bow Lake. Your 2026 guide to luxury mountain accommodations, outdoor adventures, and breathtaking Rockies views.',
