@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'bow-summit-viewpoint',
+    title: 'Bow Summit Viewpoint Banff: 2026\'s Must-See Alpine Wonder',
+    description: 'Discover Bow Summit Viewpoint, Banff\'s highest accessible lookout in 2026. Experience breathtaking Peyto Lake views and pristine alpine scenery at this iconic wonder.',
+    date: '2026-03-10',
+    category: 'Guides',
+    image: '/images/blog/bow-summit-viewpoint.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'ski-touring-canmore',
     title: 'Ultimate Ski Touring Guide: Canmore to Banff 2026',
     description: 'Discover the best ski touring routes from Canmore to Banff in 2026. Expert tips, safety advice, and stunning backcountry trails in the Canadian Rockies.',
