@@ -410,7 +410,13 @@ function writePostsToCodebase(posts) {
   let slugPageContent = fs.readFileSync(blogPage, 'utf8');
 
   for (const post of posts) {
-    const contentEntry = `\n  '${post.slug}': \`\n${post.html.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\n\`,`;
+    const sanitizedHtml = post.html
+      .replace(/\\'/g, "'")
+      .replace(/'[a-z-]+':\s*`/g, '')
+      .replace(/`/g, '\\`')
+      .replace(/\$\{/g, '\\${')
+      .replace(/(?<!\\)\$/g, '\\$');
+    const contentEntry = `\n  '${post.slug}': \`\n${sanitizedHtml}\n\`,`;
 
     slugPageContent = slugPageContent.replace(
       'const content: Record<string, string> = {',

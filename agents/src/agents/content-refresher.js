@@ -309,14 +309,21 @@ function writeRefreshedContent(slug, newHtml) {
   const escapedSlug = slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const regex = new RegExp(`('${escapedSlug}':\\s*\`)([\\s\\S]*?)(\`\\s*,)`);
 
-  const escapedHtml = newHtml.replace(/`/g, '\\`').replace(/\$/g, '\\$');
+  // Sanitize: remove stray backticks, JS object syntax, and template literals
+  // that Claude sometimes hallucinates into HTML output
+  let sanitized = newHtml
+    .replace(/\\'/g, "'")                          // unescape single quotes
+    .replace(/'[a-z-]+':\s*`/g, '')                // remove JS object key: ` patterns
+    .replace(/`/g, '\\`')                          // escape backticks for template literal
+    .replace(/\$\{/g, '\\${')                      // escape JS template expressions
+    .replace(/(?<!\\)\$/g, '\\$');                  // escape bare $ signs
 
   if (!regex.test(content)) {
     log.error(`Could not find content block for slug "${slug}" in [slug].astro`);
     return false;
   }
 
-  content = content.replace(regex, `$1\n${escapedHtml}\n$3`);
+  content = content.replace(regex, `$1\n${sanitized}\n$3`);
   fs.writeFileSync(blogPage, content);
   log.info(`Replaced HTML content for "${slug}" in [slug].astro`);
   return true;
