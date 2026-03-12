@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-icewalk',
+    title: 'Banff Icewalk 2026: Ultimate Guide to Frozen Canyon Adventures',
+    description: 'Discover Banff\'s magical frozen canyons in 2026! Complete icewalk guide covering best routes, safety tips, gear essentials, and booking info for unforgettable adventures.',
+    date: '2026-03-12',
+    category: 'Hiking',
+    image: '/images/blog/banff-icewalk.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'backcountry-skiing-day-tours-canadian-rockies',
+    title: 'Epic Banff Backcountry Skiing Day Tours: 2026 Ultimate Guide',
+    description: 'Discover Banff\'s best backcountry skiing day tours in 2026! Expert guide to epic powder runs, safety tips, gear recommendations, and top routes for all skill levels.',
+    date: '2026-03-12',
+    category: 'Itineraries',
+    image: '/images/blog/backcountry-skiing-day-tours-canadian-rockies.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'bow-summit-viewpoint',
     title: 'Bow Summit Viewpoint Banff: 2026\'s Must-See Alpine Wonder',
     description: 'Discover Bow Summit Viewpoint, Banff\'s highest accessible lookout in 2026. Experience breathtaking Peyto Lake views and pristine alpine scenery at this iconic wonder.',
