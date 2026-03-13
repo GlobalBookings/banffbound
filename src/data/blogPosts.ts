@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'bow-summit',
+    title: 'Bow Summit Banff: Epic Views & Hidden Gems Guide 2026',
+    description: 'Discover Bow Summit\'s breathtaking views and secret spots in our 2026 Banff guide. Find hiking trails, photography tips, and insider secrets for the perfect visit.',
+    date: '2026-03-13',
+    category: 'Guides',
+    image: '/images/blog/bow-summit.webp',
+    readTime: '9 min read',
+  },
+  {
+    slug: 'ski-touring',
+    title: 'Epic Banff Ski Touring Adventures: Your 2026 Guide',
+    description: 'Discover Banff\'s best ski touring routes in 2026! From beginner-friendly trails to epic backcountry adventures, find insider tips, gear guides & safety advice.',
+    date: '2026-03-13',
+    category: 'Seasonal',
+    image: '/images/blog/ski-touring.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-icewalk',
     title: 'Banff Icewalk 2026: Ultimate Guide to Frozen Canyon Adventures',
     description: 'Discover Banff\'s magical frozen canyons in 2026! Complete icewalk guide covering best routes, safety tips, gear essentials, and booking info for unforgettable adventures.',
