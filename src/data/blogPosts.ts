@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'drink-deals',
+    title: 'Best Banff Drink Deals 2026: Where to Sip for Less',
+    description: 'Discover Banff\'s top drink deals in 2026! From happy hour specials to craft beer discounts, find the best places to enjoy affordable cocktails and beverages.',
+    date: '2026-03-14',
+    category: 'Food & Drink',
+    image: '/images/blog/drink-deals.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'bow-summit',
     title: 'Bow Summit Banff: Epic Views & Hidden Gems Guide 2026',
     description: 'Discover Bow Summit\'s breathtaking views and secret spots in our 2026 Banff guide. Find hiking trails, photography tips, and insider secrets for the perfect visit.',
