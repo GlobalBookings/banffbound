@@ -1,0 +1,811 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const recreation = [
+  {
+    name: 'Fenlands Banff Recreation Centre',
+    description: 'The hub of community recreation in the Town of Banff. The Fenlands houses an NHL-size ice rink (home to adult hockey leagues, public skating, and figure skating), a fitness centre with cardio and weight equipment, a gymnasium used for basketball, volleyball, badminton, and pickleball, an indoor running/walking track, and a climbing wall. Drop-in programs run year-round for all ages.',
+    location: '101 Bear Street, Banff',
+    phone: '403-762-1235',
+    website: 'https://banff.ca/150/Fenlands-Banff-Recreation-Centre',
+    highlights: ['NHL-size ice rink', 'Fitness centre', 'Gymnasium', 'Indoor climbing wall', 'Running track', 'Drop-in programs'],
+  },
+  {
+    name: 'Sally Borden Building — Banff Centre',
+    description: 'Part of the Banff Centre for Arts and Creativity campus on Tunnel Mountain, the Sally Borden building offers a swimming pool, hot tub, steam room, climbing wall, and a well-equipped fitness centre. Community memberships are available for Bow Valley residents at reduced rates. The pool is popular with lane swimmers and families, and the climbing wall is one of the best indoor walls in the valley.',
+    location: 'Banff Centre, Tunnel Mountain',
+    phone: '403-762-6100',
+    website: 'https://www.banffcentre.ca/sally-borden',
+    highlights: ['Swimming pool & hot tub', 'Climbing wall', 'Fitness centre', 'Steam room', 'Community memberships'],
+  },
+  {
+    name: 'Canmore Nordic Centre Provincial Park',
+    description: 'Built for the 1988 Winter Olympics and located 20 minutes from Banff in Canmore. Offers 65 km of groomed cross-country ski trails in winter (classic and skate) and extensive mountain biking and trail running networks in summer. The Nordic Centre hosts races, clinics, and community programs throughout the year. Day passes and season passes available.',
+    location: '1988 Olympic Way, Canmore',
+    phone: '403-678-2400',
+    website: 'https://www.albertaparks.ca/parks/kananaskis/canmore-nordic-centre-pp/',
+    highlights: ['65 km groomed ski trails', 'Mountain biking', 'Trail running', 'Biathlon range', 'Day lodge'],
+  },
+  {
+    name: 'Banff Recreation Grounds',
+    description: 'An open green space on Cave Avenue with sports fields, a baseball diamond, a basketball court, and the only designated off-leash dog area within the Town of Banff. Used for community sports, pick-up games, and seasonal events. The adjacent Bow River trail connects to the town centre.',
+    location: 'Cave Avenue, Banff',
+    highlights: ['Sports fields', 'Baseball diamond', 'Basketball court', 'Off-leash dog area', 'Bow River trail access'],
+  },
+];
+
+const sportsClubs = [
+  {
+    name: 'Banff Hockey — Adult Leagues',
+    description: 'The Fenlands ice rink hosts multiple adult hockey leagues throughout the winter season, from beginner-friendly to competitive divisions. Shinny (drop-in) hockey sessions are available weekly. The Town of Banff Recreation department coordinates league registration each fall.',
+    season: 'October - March',
+    contact: 'Town of Banff Recreation: 403-762-1235',
+    type: 'Ice Hockey',
+  },
+  {
+    name: 'Banff Curling Club',
+    description: 'The curling club runs leagues and social bonspiels from the Fenlands Recreation Centre during winter. Open to all skill levels with learn-to-curl sessions for newcomers. A great way to meet locals in a relaxed, social environment — one of Canada\'s most iconic community sports.',
+    season: 'October - March',
+    contact: 'banffcurling@gmail.com',
+    type: 'Curling',
+  },
+  {
+    name: 'Bow Valley Running & Hiking Groups',
+    description: 'Several informal running groups operate in the Bow Valley. Trail running groups meet weekly in spring, summer, and fall for group runs on local trails. The Banff Marathon (held each June) draws runners from across the valley. Facebook groups like "Bow Valley Trail Running" and "Banff Trail Runners" are the best way to connect.',
+    season: 'Year-round',
+    contact: 'Search "Bow Valley Trail Running" on Facebook',
+    type: 'Running',
+  },
+  {
+    name: 'Bow Valley Climbing & Mountaineering',
+    description: 'The Bow Valley has one of the strongest climbing communities in Canada. Indoor climbing at the Fenlands and Sally Borden walls provides winter training, while Banff, Canmore, and the surrounding Rockies offer world-class rock climbing, ice climbing, and mountaineering. Local guide companies run courses and clinics. The Alpine Club of Canada (national headquarters in Canmore) is a key hub.',
+    season: 'Year-round',
+    contact: 'Alpine Club of Canada: alpineclubofcanada.ca',
+    type: 'Climbing',
+  },
+  {
+    name: 'Bow Valley Cycling & Mountain Biking',
+    description: 'Road cycling on the Legacy Trail (Banff-Canmore), mountain biking at the Nordic Centre, and gravel riding in Kananaskis are all popular with locals. Bike Banff and local shops organise group rides. Canmore hosts cycling races and events throughout summer.',
+    season: 'May - October',
+    contact: 'Check local bike shops for group ride schedules',
+    type: 'Cycling',
+  },
+  {
+    name: 'Yoga & Fitness Studios',
+    description: 'Banff and Canmore have several yoga studios and fitness facilities offering drop-in classes. Styles range from hot yoga and vinyasa flow to restorative and yin. Many studios offer community pricing or punch cards for locals, and outdoor mountain yoga sessions run during summer months.',
+    season: 'Year-round',
+    contact: 'Check individual studio websites for schedules',
+    type: 'Yoga & Fitness',
+  },
+  {
+    name: 'Banff Soccer & Volleyball Leagues',
+    description: 'The Town of Banff runs recreational soccer leagues and indoor volleyball leagues seasonally. Games are held at the Banff Recreation Grounds (summer soccer) and Fenlands gymnasium (indoor volleyball). Registration opens through the Town of Banff recreation program guide each season.',
+    season: 'Soccer: June - August | Volleyball: October - April',
+    contact: 'Town of Banff Recreation: 403-762-1235',
+    type: 'Team Sports',
+  },
+];
+
+const communityGroups = [
+  {
+    name: 'Bow Valley Naturalists',
+    description: 'A volunteer naturalist society dedicated to understanding and appreciating the natural history of the Bow Valley. Organises guided nature walks, bird counts, educational talks, and conservation initiatives. Open to anyone interested in local ecology and wildlife.',
+    website: 'https://bowvalleynaturalists.org',
+  },
+  {
+    name: 'Banff Canmore Community Foundation',
+    description: 'A charitable foundation supporting community projects, grants, and initiatives across the Bow Valley. Funds local arts, education, environment, and social programs. A good starting point for residents who want to donate to or volunteer with local causes.',
+    website: 'https://banffcanmorecf.org',
+  },
+  {
+    name: 'Banff Heritage Tourism Corporation',
+    description: 'Preserves and promotes Banff\'s cultural and natural heritage through museums, programs, and heritage interpretation. Volunteer opportunities include working at heritage sites, assisting with events, and participating in the Heritage Passport program.',
+    website: 'https://banffheritage.com',
+  },
+  {
+    name: 'YWCA Banff',
+    description: 'Provides essential community services including affordable housing, family programs, childcare, and support services for individuals and families in the Bow Valley. A key social services organisation for residents.',
+    website: 'https://ywcabanff.ca',
+  },
+  {
+    name: 'Alpine Club of Canada',
+    description: 'Canada\'s national mountaineering organisation, headquartered in Canmore. Offers memberships, mountain huts, skills courses, group climbs, and a vibrant community of outdoor enthusiasts. The local Bow Valley section runs regular trips, slideshows, and social events.',
+    website: 'https://alpineclubofcanada.ca',
+  },
+  {
+    name: 'Bow Valley Immigration Partnership',
+    description: 'Supports newcomers to the Bow Valley with settlement services, language programs, community connections, and integration support. An essential resource for international workers and new residents navigating life in Banff and Canmore.',
+    website: 'https://bowvalleyip.ca',
+  },
+];
+
+const volunteerOpportunities = [
+  {
+    name: 'Parks Canada Volunteer Program',
+    description: 'Help with trail maintenance, wildlife monitoring, visitor education, and conservation projects in Banff National Park. Parks Canada runs seasonal volunteer programs and one-off events like trail clean-up days. A meaningful way to give back to the park that makes this community unique.',
+    link: 'https://parks.canada.ca/pn-np/ab/banff/info/vol',
+  },
+  {
+    name: 'Banff Volunteer Centre',
+    description: 'The Town of Banff coordinates volunteer opportunities across the community. From event support and community clean-ups to ongoing roles with local organisations, the volunteer centre connects residents with ways to contribute.',
+    link: 'https://banff.ca/volunteers',
+  },
+  {
+    name: 'Banff Centre Volunteering',
+    description: 'The Banff Centre for Arts and Creativity recruits volunteers for events, festivals (including the Banff Mountain Film Festival), and ongoing programs. A unique opportunity to be part of a world-class cultural institution.',
+    link: 'https://www.banffcentre.ca/volunteer',
+  },
+  {
+    name: 'Biosphere Institute of the Bow Valley',
+    description: 'Environmental education and sustainability organisation serving the Bow Valley. Volunteers support recycling programs, educational workshops, wildlife coexistence initiatives, and community environmental projects.',
+    link: 'https://biosphereinstitute.org',
+  },
+];
+
+const essentialServices = [
+  {
+    name: 'Town of Banff',
+    description: 'Municipal government for the Town of Banff. Handles bylaws, permits, recreation programs, transit, waste collection, and community services. The main office is at 110 Bear Street.',
+    phone: '403-762-1200',
+    website: 'https://banff.ca',
+    address: '110 Bear Street, Banff',
+  },
+  {
+    name: 'Bow Valley Primary Care Network',
+    description: 'Primary healthcare services for Bow Valley residents. Walk-in clinics and family physician services are available in both Banff and Canmore.',
+    phone: '403-762-3418',
+    website: 'https://www.bowvalleypcn.ca',
+    address: 'Banff Mineral Springs Hospital, 305 Lynx Street',
+  },
+  {
+    name: 'Banff Mineral Springs Hospital',
+    description: 'The local hospital providing emergency care, diagnostic imaging, laboratory services, and outpatient clinics. Operated by Alberta Health Services. For emergencies, call 911.',
+    phone: '403-762-2222',
+    website: 'https://www.albertahealthservices.ca',
+    address: '305 Lynx Street, Banff',
+  },
+  {
+    name: 'Banff Public Library',
+    description: 'A community hub offering books, digital resources, free WiFi, public computers, meeting rooms, children\'s programs, and community events. The library runs reading groups, author talks, and seasonal programs. Free library cards for Bow Valley residents.',
+    phone: '403-762-2661',
+    website: 'https://banfflibrary.ab.ca',
+    address: '101 Bear Street, Banff',
+  },
+  {
+    name: 'Roam Public Transit',
+    description: 'Banff\'s public bus system connecting the town to Canmore, Lake Minnewanka, Tunnel Mountain, and Sulphur Mountain. Local routes run frequently. Monthly passes are available for residents and offer significant savings over single fares.',
+    phone: '403-762-0606',
+    website: 'https://roamtransit.com',
+    address: 'Various stops throughout Banff',
+  },
+  {
+    name: 'RCMP — Banff Detachment',
+    description: 'The Royal Canadian Mounted Police provides law enforcement services for the Town of Banff and Banff National Park. For emergencies, call 911. For non-emergencies, call the Banff detachment directly.',
+    phone: '403-763-6600',
+    website: 'https://banff.ca/178/Police---RCMP',
+    address: '335 Lynx Street, Banff',
+  },
+];
+
+const facebookGroups = [
+  { name: 'Bow Valley Hiking', description: 'Daily trail condition reports, hiking partners, and route recommendations from local hikers.' },
+  { name: 'Canadian Rockies Trail Conditions', description: 'Real-time trail conditions across the Rockies, updated by the community.' },
+  { name: 'Bow Valley Classifieds / Buy & Sell', description: 'Buy, sell, and trade goods with other Bow Valley residents.' },
+  { name: 'Banff Housing', description: 'The primary resource for finding rental accommodation in Banff. Staff housing, shared rooms, and private rentals.' },
+  { name: 'Bow Valley Trail Running', description: 'Connect with local trail runners for group runs, race info, and trail conditions.' },
+  { name: 'Banff and Canmore Community Board', description: 'General community discussion, event announcements, and local news.' },
+];
+---
+
+<BaseLayout
+  title="Banff Locals Guide: Community Recreation, Sports Clubs & Services"
+  description="The local's guide to living in Banff. Recreation programs, sports leagues, community groups, volunteer opportunities, essential services, and how to get involved in the Bow Valley community."
+>
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Locals Guide' }]} />
+  </div>
+  <section class="page-hero">
+    <img
+      src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
+      alt="Town of Banff community with mountain backdrop"
+      class="page-hero-bg"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="page-hero-content">
+      <span class="badge">Community</span>
+      <h1>Banff Locals Guide</h1>
+      <p>Everything you need to know about living in Banff and the Bow Valley. Recreation, sports, clubs, volunteering, essential services, and how to get involved in your community.</p>
+    </div>
+  </section>
+
+  <!-- Quick Navigation -->
+  <section class="section quick-nav-section">
+    <div class="container">
+      <div class="quick-nav">
+        <a href="#recreation" class="quick-nav-link">Recreation Facilities</a>
+        <a href="#sports" class="quick-nav-link">Sports & Clubs</a>
+        <a href="#community" class="quick-nav-link">Community Groups</a>
+        <a href="#volunteer" class="quick-nav-link">Volunteering</a>
+        <a href="#services" class="quick-nav-link">Essential Services</a>
+        <a href="#connect" class="quick-nav-link">Stay Connected</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recreation Facilities -->
+  <section class="section" id="recreation">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Facilities</span>
+        <h2>Recreation Facilities</h2>
+        <p>Banff and the Bow Valley offer year-round recreation facilities for residents, from ice rinks and climbing walls to Olympic-grade cross-country ski trails.</p>
+      </div>
+      <div class="facility-list">
+        {recreation.map(item => (
+          <div class="facility-card">
+            <div class="facility-card-body">
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div class="facility-highlights">
+                {item.highlights.map(h => (
+                  <span class="highlight-tag">{h}</span>
+                ))}
+              </div>
+              <div class="facility-meta">
+                <span class="meta-item">&#128205; {item.location}</span>
+                {item.phone && <span class="meta-item">&#128222; <a href={`tel:${item.phone.replace(/[^0-9]/g, '')}`}>{item.phone}</a></span>}
+                {item.website && <span class="meta-item"><a href={item.website} target="_blank" rel="noopener">Official Website &rarr;</a></span>}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Sports & Clubs -->
+  <section class="section" id="sports" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Get Active</span>
+        <h2>Sports Leagues & Clubs</h2>
+        <p>From adult hockey leagues to trail running groups, the Bow Valley has a thriving sports community. Most activities are open to all skill levels.</p>
+      </div>
+      <div class="grid grid-2">
+        {sportsClubs.map(club => (
+          <div class="card">
+            <div class="card-body">
+              <div class="club-header">
+                <h3>{club.name}</h3>
+                <span class="sport-type">{club.type}</span>
+              </div>
+              <p>{club.description}</p>
+              <div class="card-meta">
+                <span>&#128197; {club.season}</span>
+              </div>
+              <div class="card-meta">
+                <span>&#128172; {club.contact}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Groups -->
+  <section class="section" id="community">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Get Involved</span>
+        <h2>Community Organisations</h2>
+        <p>The Bow Valley has a strong network of community groups covering everything from conservation and culture to newcomer support and charitable giving.</p>
+      </div>
+      <div class="grid grid-3">
+        {communityGroups.map(group => (
+          <div class="card">
+            <div class="card-body">
+              <h3>{group.name}</h3>
+              <p>{group.description}</p>
+              {group.website && (
+                <a href={group.website} target="_blank" rel="noopener" class="card-link">Visit Website &rarr;</a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteering -->
+  <section class="section" id="volunteer" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Give Back</span>
+        <h2>Volunteer Opportunities</h2>
+        <p>Volunteering is one of the best ways to build connections in a mountain town. These organisations actively recruit volunteers year-round.</p>
+      </div>
+      <div class="grid grid-2">
+        {volunteerOpportunities.map(vol => (
+          <div class="card">
+            <div class="card-body">
+              <h3>{vol.name}</h3>
+              <p>{vol.description}</p>
+              <a href={vol.link} target="_blank" rel="noopener" class="card-link">Learn More &rarr;</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Essential Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Services</span>
+        <h2>Essential Services</h2>
+        <p>Key contacts and services every Banff and Bow Valley resident should know.</p>
+      </div>
+      <div class="services-grid">
+        {essentialServices.map(svc => (
+          <div class="service-card">
+            <h3>{svc.name}</h3>
+            <p>{svc.description}</p>
+            <div class="service-details">
+              <span>&#128205; {svc.address}</span>
+              <span>&#128222; <a href={`tel:${svc.phone.replace(/[^0-9]/g, '')}`}>{svc.phone}</a></span>
+              <a href={svc.website} target="_blank" rel="noopener">{svc.website.replace('https://', '').replace('http://', '')} &rarr;</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stay Connected -->
+  <section class="section" id="connect" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Connect</span>
+        <h2>Stay Connected</h2>
+        <p>The Bow Valley community is active on Facebook. These groups are the primary way locals share information, find housing, organise activities, and stay in the loop.</p>
+      </div>
+      <div class="grid grid-2">
+        {facebookGroups.map(group => (
+          <div class="card">
+            <div class="card-body">
+              <h3>{group.name}</h3>
+              <p>{group.description}</p>
+              <p class="fb-note">Search for this group on Facebook to request access.</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Tips -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Insider Tips</span>
+        <h2>Living in Banff: What You Should Know</h2>
+        <p>Practical advice for new and long-time residents of the Bow Valley.</p>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h3>&#127968; Housing</h3>
+          <p>Housing in Banff is limited by the national park boundary. Most rentals are found through the Banff Housing Facebook group, employer-provided staff accommodation, or the YWCA. Canmore offers more options but is more expensive for purchasing. Expect to pay $800-$1,200/month for a shared room and $1,500-$2,500+ for a private unit in Banff.</p>
+        </div>
+        <div class="tip-card">
+          <h3>&#128663; Getting Around</h3>
+          <p>The Town of Banff is just 3.94 sq. km. Most locals walk, cycle, or use Roam Transit. A car is useful for accessing backcountry trailheads, Canmore, and Calgary, but parking in town is limited. Many residents share vehicles or use carpooling. The Roam Route 3 connects Banff and Canmore.</p>
+        </div>
+        <div class="tip-card">
+          <h3>&#128176; Cost of Living</h3>
+          <p>Banff is more expensive than most Canadian towns. Groceries cost more due to transportation into the park. There is no provincial sales tax in Alberta. Many employers offer subsidised housing and ski passes. The nearest Costco and major shopping is in Canmore or Calgary (1.5 hours east).</p>
+        </div>
+        <div class="tip-card">
+          <h3>&#127784;&#65039; Winter Preparedness</h3>
+          <p>Winters are long (October to May) with temperatures dropping to -30C. Invest in quality winter gear, winter tires (legally required Oct 1 - Apr 30 on mountain highways), and understand avalanche safety if venturing into the backcountry. The Fenlands and Sally Borden facilities keep locals active indoors.</p>
+        </div>
+        <div class="tip-card">
+          <h3>&#128059; Wildlife Safety</h3>
+          <p>You share this town with elk, bears, cougars, and wolves. Carry bear spray when hiking. Secure all garbage in bear-proof bins (mandatory). Keep your distance from wildlife (30m from elk, 100m from bears). Wildlife corridors are real — respect trail closures.</p>
+        </div>
+        <div class="tip-card">
+          <h3>&#127963;&#65039; National Park Rules</h3>
+          <p>Banff is inside a national park. You need a Parks Canada pass to stop anywhere in the park (residents can buy annual passes at reduced rates). Collecting rocks, plants, or antlers is illegal. Drones are prohibited. Pets must be on-leash on all trails. These rules exist to protect the ecosystem that makes this place special.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Guides -->
+  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Explore More Banff Guides</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Discover trails, restaurants, activities, and everything else the Bow Valley has to offer.</p>
+      <div class="related-links">
+        <a href="/eat-and-drink" class="btn btn-accent">Where to Eat</a>
+        <a href="/hiking" class="btn btn-accent">Hiking Trails</a>
+        <a href="/activities" class="btn btn-accent">Activities</a>
+        <a href="/events" class="btn btn-accent">Events</a>
+        <a href="/blog/working-in-banff" class="btn btn-accent">Working in Banff</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Schema-friendly section -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions About Living in Banff</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How do I find housing in Banff?</summary>
+          <p>The most common way to find housing in Banff is through the "Banff Housing" Facebook group, employer-provided staff accommodation, or the YWCA Banff. The Town of Banff has strict residency requirements — you must work at least 20 hours per week for a Banff business to live in the townsite. Private rental listings are limited due to the national park boundary restricting development.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What sports leagues are available in Banff?</summary>
+          <p>The Town of Banff offers adult hockey leagues, curling leagues, recreational soccer (summer), indoor volleyball (winter), and drop-in sports at the Fenlands Recreation Centre. Informal running groups, cycling clubs, and climbing groups are also active. Registration for most Town-run leagues opens seasonally through the recreation program guide at banff.ca.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where can I swim or work out in Banff?</summary>
+          <p>The Sally Borden Building at the Banff Centre has a swimming pool, hot tub, climbing wall, and fitness centre with community memberships available. The Fenlands Recreation Centre has a fitness centre, climbing wall, gymnasium, and running track. The Banff Upper Hot Springs offers outdoor soaking in naturally heated mineral water (not a fitness facility, but a local favourite for recovery).</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I volunteer in Banff National Park?</summary>
+          <p>Parks Canada runs seasonal volunteer programs for trail maintenance, wildlife monitoring, and visitor education. The Town of Banff coordinates community volunteering through banff.ca. The Banff Centre, Biosphere Institute, and Bow Valley Naturalists all recruit volunteers regularly. Check individual organisation websites or the Town of Banff volunteer page for current opportunities.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need a car to live in Banff?</summary>
+          <p>No. The Town of Banff is 3.94 sq. km and most residents walk, cycle, or use Roam Transit. Roam connects Banff to Canmore, Tunnel Mountain, Lake Minnewanka, and the Banff Springs area. A car is useful for accessing backcountry trailheads and Calgary, but many locals carpool or go without. Monthly Roam passes offer good value for regular commuters.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is the cost of living in Banff?</summary>
+          <p>Banff is expensive relative to most Canadian towns. A shared room typically costs $800-$1,200/month; a studio or one-bedroom is $1,500-$2,500+. Groceries cost approximately 10-20% more than Calgary due to transportation. There is no provincial sales tax in Alberta. Many employers offset costs with subsidised housing and recreational perks such as ski passes.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I find housing in Banff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most common way to find housing in Banff is through the Banff Housing Facebook group, employer-provided staff accommodation, or the YWCA Banff. The Town of Banff has strict residency requirements — you must work at least 20 hours per week for a Banff business to live in the townsite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What sports leagues are available in Banff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Town of Banff offers adult hockey leagues, curling leagues, recreational soccer, indoor volleyball, and drop-in sports at the Fenlands Recreation Centre. Informal running groups, cycling clubs, and climbing groups are also active in the Bow Valley."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I swim or work out in Banff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Sally Borden Building at the Banff Centre has a swimming pool, hot tub, climbing wall, and fitness centre with community memberships. The Fenlands Recreation Centre has a fitness centre, climbing wall, gymnasium, and running track."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I volunteer in Banff National Park?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Parks Canada runs seasonal volunteer programs for trail maintenance, wildlife monitoring, and visitor education. The Town of Banff, Banff Centre, Biosphere Institute, and Bow Valley Naturalists all recruit volunteers regularly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a car to live in Banff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The Town of Banff is 3.94 sq. km and most residents walk, cycle, or use Roam Transit. Roam connects Banff to Canmore and other key areas. A car is useful for backcountry access and Calgary trips, but many locals go without."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cost of living in Banff?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Banff is expensive relative to most Canadian towns. Shared rooms cost $800-$1,200/month; studios are $1,500-$2,500+. Groceries cost 10-20% more than Calgary. There is no provincial sales tax in Alberta. Many employers offer subsidised housing and ski passes."
+        }
+      }
+    ]
+  })} />
+</BaseLayout>
+
+<style>
+  .quick-nav-section {
+    padding: 1.5rem 0;
+  }
+
+  .quick-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .quick-nav-link {
+    padding: 0.5rem 1.25rem;
+    background: var(--color-bg-alt);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+  }
+
+  .quick-nav-link:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .facility-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .facility-card {
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  .facility-card-body {
+    padding: 2rem;
+  }
+
+  .facility-card-body h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .facility-card-body > p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .facility-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .highlight-tag {
+    padding: 0.3rem 0.75rem;
+    background: var(--color-bg-alt);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+
+  .facility-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .meta-item {
+    color: var(--color-text-light);
+  }
+
+  .meta-item a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .club-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .club-header h3 {
+    margin-bottom: 0;
+  }
+
+  .sport-type {
+    padding: 0.25rem 0.7rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .fb-note {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    opacity: 0.7;
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+  }
+
+  .service-card > p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+
+  .service-details a {
+    color: var(--color-primary);
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tip-card {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+
+  .tip-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+  }
+
+  .tip-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    font-size: 0.92rem;
+  }
+
+  .related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .faq-section {
+    padding-bottom: 4rem;
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 1.25rem 0;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--color-text);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--color-text-light);
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] summary::after {
+    content: '-';
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item p {
+    margin-top: 0.75rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 1024px) {
+    .services-grid,
+    .tips-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .grid-2,
+    .grid-3,
+    .services-grid,
+    .tips-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .club-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>
