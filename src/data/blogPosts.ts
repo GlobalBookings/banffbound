@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'sunshine-ski-resort-accommodation',
+    title: 'Best Sunshine Village Ski Resort Lodging in Banff 2026',
+    description: 'Discover the top ski lodges and hotels near Sunshine Village in 2026. From luxury mountain resorts to cozy chalets, find your perfect Banff ski getaway.',
+    date: '2026-03-15',
+    category: 'Seasonal',
+    image: '/images/blog/sunshine-ski-resort-accommodation.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'drink-deals',
     title: 'Best Banff Drink Deals 2026: Where to Sip for Less',
     description: 'Discover Banff\'s top drink deals in 2026! From happy hour specials to craft beer discounts, find the best places to enjoy affordable cocktails and beverages.',
