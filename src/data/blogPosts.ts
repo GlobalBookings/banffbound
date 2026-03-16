@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-restaurant-specials',
+    title: 'Best Banff Restaurant Specials & Deals You Can\'t Miss 2026',
+    description: 'Discover the hottest restaurant deals and specials in Banff for 2026! From fine dining discounts to local favorites, save money while experiencing the best cuisine.',
+    date: '2026-03-16',
+    category: 'Food & Drink',
+    image: '/images/blog/banff-restaurant-specials.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'sunshine-ski-resort-accommodation',
     title: 'Best Sunshine Village Ski Resort Lodging in Banff 2026',
     description: 'Discover the top ski lodges and hotels near Sunshine Village in 2026. From luxury mountain resorts to cozy chalets, find your perfect Banff ski getaway.',
