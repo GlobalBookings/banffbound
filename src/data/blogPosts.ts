@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'viewpoint-banff',
+    title: '15 Epic Banff Viewpoints You Can\'t Miss in 2026',
+    description: 'Discover 15 breathtaking Banff viewpoints in 2026! From Lake Louise to Moraine Lake, find the best spots for stunning mountain photography and unforgettable views.',
+    date: '2026-03-18',
+    category: 'Guides',
+    image: '/images/blog/viewpoint-banff.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'bow-lake-viewpoint',
     title: 'Bow Lake Viewpoint Banff: 2026\'s Most Instagrammable Spot',
     description: 'Discover Bow Lake Viewpoint\'s stunning turquoise waters and glacier backdrop - Banff\'s most photographed location in 2026. Get tips for perfect shots and timing.',
