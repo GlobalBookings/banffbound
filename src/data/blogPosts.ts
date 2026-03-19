@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: '1',
+    title: 'Banff 1주일 여행 완벽 가이드: 2026년 실제 경비 공개!',
+    description: '2026년 밴프 1주일 여행의 모든 것! 실제 경비부터 숨겨진 명소, 계절별 추천 코스까지. 캐나다 로키의 절경을 완벽하게 즐기는 최신 여행 가이드로 꿈의 여행을 계획',
+    date: '2026-03-19',
+    category: 'Guides',
+    image: '/images/blog/1.webp',
+    readTime: '5 min read',
+  },
+  {
     slug: 'viewpoint-banff',
     title: '15 Epic Banff Viewpoints You Can\'t Miss in 2026',
     description: 'Discover 15 breathtaking Banff viewpoints in 2026! From Lake Louise to Moraine Lake, find the best spots for stunning mountain photography and unforgettable views.',
