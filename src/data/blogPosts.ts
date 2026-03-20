@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'parks-canada-discovery-pass-price-2026',
+    title: 'Banff Parks Canada Discovery Pass: 2026 Prices & Savings Tips',
+    description: 'Save money on your 2026 Banff adventure! Complete guide to Parks Canada Discovery Pass pricing, multi-park savings, and insider tips for maximum value.',
+    date: '2026-03-20',
+    category: 'Guides',
+    image: '/images/blog/parks-canada-discovery-pass-price-2026.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'num-ti-jah-lodge-alberta-canada',
+    title: 'Num-Ti-Jah Lodge Banff: Your Ultimate 2026 Mountain Retreat',
+    description: 'Discover Num-Ti-Jah Lodge\'s alpine charm in 2026. Historic lakefront retreat offering stunning mountain views, cozy accommodations & authentic Banff wilderness.',
+    date: '2026-03-20',
+    category: 'Accommodation',
+    image: '/images/blog/num-ti-jah-lodge-alberta-canada.webp',
+    readTime: '8 min read',
+  },
+  {
     slug: '1',
     title: 'Banff 1주일 여행 완벽 가이드: 2026년 실제 경비 공개!',
     description: '2026년 밴프 1주일 여행의 모든 것! 실제 경비부터 숨겨진 명소, 계절별 추천 코스까지. 캐나다 로키의 절경을 완벽하게 즐기는 최신 여행 가이드로 꿈의 여행을 계획',
