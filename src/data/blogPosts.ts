@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-view',
+    title: '15 Epic Banff Views That Will Leave You Speechless in 2026',
+    description: 'Discover 15 breathtaking Banff viewpoints in 2026! From Lake Louise to Moraine Lake, explore Canada\'s most stunning mountain vistas and photo spots.',
+    date: '2026-03-21',
+    category: 'Guides',
+    image: '/images/blog/banff-view.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'parks-canada-discovery-pass-price-2026',
     title: 'Banff Parks Canada Discovery Pass: 2026 Prices & Savings Tips',
     description: 'Save money on your 2026 Banff adventure! Complete guide to Parks Canada Discovery Pass pricing, multi-park savings, and insider tips for maximum value.',
