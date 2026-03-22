@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'bow-summit-trail',
+    title: 'Bow Summit Trail Banff: Epic Views Without the Crowds 2026',
+    description: 'Discover Bow Summit Trail\'s breathtaking Peyto Lake views in 2026. This accessible Banff hike offers stunning alpine scenery without tourist crowds. Perfect for all skill levels.',
+    date: '2026-03-22',
+    category: 'Hiking',
+    image: '/images/blog/bow-summit-trail.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-view',
     title: '15 Epic Banff Views That Will Leave You Speechless in 2026',
     description: 'Discover 15 breathtaking Banff viewpoints in 2026! From Lake Louise to Moraine Lake, explore Canada\'s most stunning mountain vistas and photo spots.',
