@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'sunshine-mountain-lodge',
+    title: 'Sunshine Mountain Lodge Banff: Your 2026 Alpine Escape Guide',
+    description: 'Discover Sunshine Mountain Lodge Banff in 2026 - your ultimate alpine escape guide featuring luxury accommodations, world-class skiing, and breathtaking Rocky Mountain views.',
+    date: '2026-03-23',
+    category: 'Accommodation',
+    image: '/images/blog/sunshine-mountain-lodge.webp',
+    readTime: '8 min read',
+  },
+  {
     slug: 'bow-summit-trail',
     title: 'Bow Summit Trail Banff: Epic Views Without the Crowds 2026',
     description: 'Discover Bow Summit Trail\'s breathtaking Peyto Lake views in 2026. This accessible Banff hike offers stunning alpine scenery without tourist crowds. Perfect for all skill levels.',
