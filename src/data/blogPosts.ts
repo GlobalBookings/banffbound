@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: '',
+    title: 'Banff 여행 경비 완벽 가이드 2026: 예산별 알뜰 여행 팁',
+    description: '2026년 밴프 여행 예산 완벽 가이드! 숙박, 식사, 액티비티별 실제 비용과 절약 팁으로 예산에 맞는 캐나다 로키산맥 여행을 계획하세요. 알뜰 여행법 대공개!',
+    date: '2026-03-24',
+    category: 'Guides',
+    image: '/images/blog/.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'sunshine-mountain-lodge',
     title: 'Sunshine Mountain Lodge Banff: Your 2026 Alpine Escape Guide',
     description: 'Discover Sunshine Mountain Lodge Banff in 2026 - your ultimate alpine escape guide featuring luxury accommodations, world-class skiing, and breathtaking Rocky Mountain views.',
