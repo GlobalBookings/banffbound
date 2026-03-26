@@ -11,6 +11,15 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: '',
+    title: 'Banff 여행 경비 완벽 가이드 2026: 예산별 알뜰 여행 팁',
+    description: '2026년 최신 밴프 여행 경비 완벽 가이드! 예산별 숙박, 식사, 액티비티 비용과 절약 팁으로 알뜰하게 캐나다 로키를 즐기는 방법을 확인하세요.',
+    date: '2026-03-26',
+    category: 'Guides',
+    image: '/images/blog/.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: '',
     title: 'Banff 여행 경비 완벽 가이드 2026: 예산별 팁과 숨은 비용까지!',
     description: '2026년 밴프 여행비용 완벽 분석! 숙박, 교통, 식비부터 숨겨진 비용까지 예산별 맞춤 팁으로 스마트하게 여행하세요. 실용적인 절약 노하우까지 한번에!',
     date: '2026-03-25',
