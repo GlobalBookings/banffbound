@@ -10,24 +10,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: '',
-    title: 'Banff 여행 경비 완벽 가이드 2026: 예산별 알뜰 여행 팁',
-    description: '2026년 최신 밴프 여행 경비 완벽 가이드! 예산별 숙박, 식사, 액티비티 비용과 절약 팁으로 알뜰하게 캐나다 로키를 즐기는 방법을 확인하세요.',
-    date: '2026-03-26',
-    category: 'Guides',
-    image: '/images/blog/.webp',
-    readTime: '6 min read',
-  },
-  {
-    slug: '',
-    title: 'Banff 여행 경비 완벽 가이드 2026: 예산별 팁과 숨은 비용까지!',
-    description: '2026년 밴프 여행비용 완벽 분석! 숙박, 교통, 식비부터 숨겨진 비용까지 예산별 맞춤 팁으로 스마트하게 여행하세요. 실용적인 절약 노하우까지 한번에!',
-    date: '2026-03-25',
-    category: 'Guides',
-    image: '/images/blog/.webp',
-    readTime: '6 min read',
-  },
-  {
     slug: 'chalets-for-rent-in-banff',
     title: 'Best Chalets for Rent in Banff 2026: Ultimate Guide',
     description: 'Discover the top luxury chalets for rent in Banff in 2026. From cozy mountain retreats to premium ski-in/ski-out properties, find your perfect Alpine getaway.',
@@ -35,15 +17,6 @@ export const blogPosts: BlogPost[] = [
     category: 'Guides',
     image: '/images/blog/chalets-for-rent-in-banff.webp',
     readTime: '7 min read',
-  },
-  {
-    slug: '',
-    title: 'Banff 여행 경비 완벽 가이드 2026: 예산별 알뜰 여행 팁',
-    description: '2026년 밴프 여행 예산 완벽 가이드! 숙박, 식사, 액티비티별 실제 비용과 절약 팁으로 예산에 맞는 캐나다 로키산맥 여행을 계획하세요. 알뜰 여행법 대공개!',
-    date: '2026-03-24',
-    category: 'Guides',
-    image: '/images/blog/.webp',
-    readTime: '6 min read',
   },
   {
     slug: 'sunshine-mountain-lodge',
@@ -89,15 +62,6 @@ export const blogPosts: BlogPost[] = [
     category: 'Accommodation',
     image: '/images/blog/num-ti-jah-lodge-alberta-canada.webp',
     readTime: '8 min read',
-  },
-  {
-    slug: '1',
-    title: 'Banff 1주일 여행 완벽 가이드: 2026년 실제 경비 공개!',
-    description: '2026년 밴프 1주일 여행의 모든 것! 실제 경비부터 숨겨진 명소, 계절별 추천 코스까지. 캐나다 로키의 절경을 완벽하게 즐기는 최신 여행 가이드로 꿈의 여행을 계획',
-    date: '2026-03-19',
-    category: 'Guides',
-    image: '/images/blog/1.webp',
-    readTime: '5 min read',
   },
   {
     slug: 'viewpoint-banff',
