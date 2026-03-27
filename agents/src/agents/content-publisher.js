@@ -20,8 +20,13 @@ function getRepoPaths() {
   return {
     root: WORK_DIR,
     blogData: path.join(WORK_DIR, 'src', 'data', 'blogPosts.ts'),
-    blogPage: path.join(WORK_DIR, 'src', 'pages', 'blog', '[slug].astro'),
+    blogContent: path.join(WORK_DIR, 'src', 'data', 'blogContent.ts'),
   };
+}
+
+// Only allow ASCII + common punctuation in slugs/titles (blocks CJK, Cyrillic, Arabic, etc.)
+function isEnglishOnly(text) {
+  return /^[\x00-\x7F\u00C0-\u00FF]+$/.test(text);
 }
 
 const UNSPLASH_KEY = process.env.UNSPLASH_ACCESS_KEY;
@@ -184,9 +189,10 @@ async function findContentGaps() {
   for (const row of rows) {
     const query = row.keys[0].toLowerCase();
 
-    // Skip very short or branded queries
+    // Skip very short, branded, or non-English queries
     if (query.length < 8) continue;
     if (query.includes('banffbound')) continue;
+    if (!isEnglishOnly(query)) continue;
 
     // Check if we already have a blog post roughly matching this query
     const querySlug = query.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -258,6 +264,11 @@ async function findContentGaps() {
 
 // ── Generate a blog post via Claude ───────────────────────
 async function generatePost(topic, relatedQueries) {
+  // Block non-English content to prevent broken slugs and build failures
+  if (!isEnglishOnly(topic.query)) {
+    throw new Error(`Skipping non-English query: "${topic.query}"`);
+  }
+
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
   const slug = topic.query
@@ -265,6 +276,10 @@ async function generatePost(topic, relatedQueries) {
     .trim()
     .replace(/\s+/g, '-')
     .slice(0, 60);
+
+  if (!slug) {
+    throw new Error(`Empty slug generated from query: "${topic.query}"`);
+  }
 
   const queryContext = relatedQueries
     .map(q => `"${q.query}" (${q.impressions} impressions, position ${q.position.toFixed(0)})`)
@@ -381,7 +396,7 @@ Return ONLY the description text.`;
 
 // ── Write posts to codebase ───────────────────────────────
 function writePostsToCodebase(posts) {
-  const { blogData, blogPage } = getRepoPaths();
+  const { blogData, blogContent } = getRepoPaths();
 
   // 1. Add metadata to blogPosts.ts
   let blogDataContent = fs.readFileSync(blogData, 'utf8');
@@ -406,8 +421,8 @@ function writePostsToCodebase(posts) {
   fs.writeFileSync(blogData, blogDataContent);
   log.info(`Added ${posts.length} entries to blogPosts.ts`);
 
-  // 2. Add HTML content to [slug].astro
-  let slugPageContent = fs.readFileSync(blogPage, 'utf8');
+  // 2. Add HTML content to blogContent.ts
+  let contentFileData = fs.readFileSync(blogContent, 'utf8');
 
   for (const post of posts) {
     const sanitizedHtml = post.html
@@ -418,14 +433,14 @@ function writePostsToCodebase(posts) {
       .replace(/(?<!\\)\$/g, '\\$');
     const contentEntry = `\n  '${post.slug}': \`\n${sanitizedHtml}\n\`,`;
 
-    slugPageContent = slugPageContent.replace(
-      'const content: Record<string, string> = {',
-      `const content: Record<string, string> = {${contentEntry}`
+    contentFileData = contentFileData.replace(
+      'export const blogContent: Record<string, string> = {',
+      `export const blogContent: Record<string, string> = {${contentEntry}`
     );
   }
 
-  fs.writeFileSync(blogPage, slugPageContent);
-  log.info(`Added ${posts.length} content blocks to [slug].astro`);
+  fs.writeFileSync(blogContent, contentFileData);
+  log.info(`Added ${posts.length} content blocks to blogContent.ts`);
 }
 
 // ── Git commit and push ───────────────────────────────────
@@ -435,7 +450,7 @@ function gitCommitAndPush(posts) {
   const message = `Auto-publish ${posts.length} blog posts: ${titles.slice(0, 200)}`;
 
   try {
-    execSync('git add src/data/blogPosts.ts "src/pages/blog/[slug].astro" public/images/blog/', { cwd: root, stdio: 'pipe' });
+    execSync('git add src/data/blogPosts.ts src/data/blogContent.ts public/images/blog/', { cwd: root, stdio: 'pipe' });
     execSync(`git commit -m "${message.replace(/"/g, '\\"')}"`, { cwd: root, stdio: 'pipe' });
     execSync('git push origin main', { cwd: root, stdio: 'pipe' });
     log.info('Pushed to GitHub -- site rebuild triggered');

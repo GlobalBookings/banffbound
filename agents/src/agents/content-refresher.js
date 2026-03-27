@@ -23,7 +23,7 @@ function getRepoPaths() {
   return {
     root: WORK_DIR,
     blogData: path.join(WORK_DIR, 'src', 'data', 'blogPosts.ts'),
-    blogPage: path.join(WORK_DIR, 'src', 'pages', 'blog', '[slug].astro'),
+    blogContent: path.join(WORK_DIR, 'src', 'data', 'blogContent.ts'),
   };
 }
 
@@ -89,10 +89,10 @@ function parseBlogMetadata() {
   return posts;
 }
 
-// ── Read HTML content for a slug from [slug].astro ────────
+// ── Read HTML content for a slug from blogContent.ts ──────
 function readSlugContent(slug) {
-  const { blogPage } = getRepoPaths();
-  const content = fs.readFileSync(blogPage, 'utf8');
+  const { blogContent } = getRepoPaths();
+  const content = fs.readFileSync(blogContent, 'utf8');
 
   // Match the slug entry in the Record<string, string> map
   // Pattern: 'slug': `...content...`,
@@ -302,8 +302,8 @@ CRITICAL: Return ONLY the refreshed HTML content. No markdown, no code fences, n
 
 // ── Write refreshed content back to files ─────────────────
 function writeRefreshedContent(slug, newHtml) {
-  const { blogPage } = getRepoPaths();
-  let content = fs.readFileSync(blogPage, 'utf8');
+  const { blogContent } = getRepoPaths();
+  let content = fs.readFileSync(blogContent, 'utf8');
 
   // Replace the existing slug content in the Record<string, string> map
   const escapedSlug = slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -319,13 +319,13 @@ function writeRefreshedContent(slug, newHtml) {
     .replace(/(?<!\\)\$/g, '\\$');                  // escape bare $ signs
 
   if (!regex.test(content)) {
-    log.error(`Could not find content block for slug "${slug}" in [slug].astro`);
+    log.error(`Could not find content block for slug "${slug}" in blogContent.ts`);
     return false;
   }
 
   content = content.replace(regex, `$1\n${sanitized}\n$3`);
-  fs.writeFileSync(blogPage, content);
-  log.info(`Replaced HTML content for "${slug}" in [slug].astro`);
+  fs.writeFileSync(blogContent, content);
+  log.info(`Replaced HTML content for "${slug}" in blogContent.ts`);
   return true;
 }
 
@@ -356,7 +356,7 @@ function gitCommitAndPush(refreshedPosts) {
   const message = `Refresh ${refreshedPosts.length} aging blog posts: ${titles.slice(0, 200)}`;
 
   try {
-    execSync('git add src/data/blogPosts.ts "src/pages/blog/[slug].astro"', { cwd: root, stdio: 'pipe' });
+    execSync('git add src/data/blogPosts.ts src/data/blogContent.ts', { cwd: root, stdio: 'pipe' });
     execSync(`git commit -m "${message.replace(/"/g, '\\"')}"`, { cwd: root, stdio: 'pipe' });
     execSync('git push origin main', { cwd: root, stdio: 'pipe' });
     log.info('Pushed to GitHub — site rebuild triggered');

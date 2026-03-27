@@ -31,7 +31,7 @@ function getRepoPaths() {
   return {
     root: WORK_DIR,
     blogData: path.join(WORK_DIR, 'src', 'data', 'blogPosts.ts'),
-    blogPage: path.join(WORK_DIR, 'src', 'pages', 'blog', '[slug].astro'),
+    blogContent: path.join(WORK_DIR, 'src', 'data', 'blogContent.ts'),
   };
 }
 
@@ -77,12 +77,12 @@ function parseBlogPosts() {
   return posts;
 }
 
-// ── Parse HTML content blocks from [slug].astro ────────────
+// ── Parse HTML content blocks from blogContent.ts ──────────
 function parseSlugContent() {
-  const { blogPage } = getRepoPaths();
-  const raw = fs.readFileSync(blogPage, 'utf8');
+  const { blogContent } = getRepoPaths();
+  const raw = fs.readFileSync(blogContent, 'utf8');
 
-  // The file has: const content: Record<string, string> = { 'slug': `...`, ... };
+  // The file has: export const blogContent: Record<string, string> = { 'slug': `...`, ... };
   // We parse each slug -> HTML mapping
   const contentMap = {};
   const slugBlockRegex = /'([^']+)':\s*`([\s\S]*?)`(?:\s*,|\s*\})/g;
@@ -92,7 +92,7 @@ function parseSlugContent() {
     contentMap[match[1]] = match[2];
   }
 
-  log.info(`Parsed ${Object.keys(contentMap).length} content blocks from [slug].astro`);
+  log.info(`Parsed ${Object.keys(contentMap).length} content blocks from blogContent.ts`);
   return { raw, contentMap };
 }
 
@@ -440,18 +440,18 @@ export async function run() {
     return { linksAdded: 0, postsModified: 0 };
   }
 
-  // 7. Write modified [slug].astro back
-  const { blogPage } = getRepoPaths();
-  let updatedAstroContent = astroFileContent;
+  // 7. Write modified blogContent.ts back
+  const { blogContent } = getRepoPaths();
+  let updatedContentFile = astroFileContent;
 
   for (const slug of modifiedSlugs) {
     const originalHTML = contentMap[slug];
     const newHTML = modifiedContentMap[slug];
-    updatedAstroContent = updatedAstroContent.replace(originalHTML, newHTML);
+    updatedContentFile = updatedContentFile.replace(originalHTML, newHTML);
   }
 
-  fs.writeFileSync(blogPage, updatedAstroContent);
-  log.info(`Updated [slug].astro with ${appliedLinks.length} new links across ${modifiedSlugs.size} posts`);
+  fs.writeFileSync(blogContent, updatedContentFile);
+  log.info(`Updated blogContent.ts with ${appliedLinks.length} new links across ${modifiedSlugs.size} posts`);
 
   // 8. Git commit and push
   const { root } = getRepoPaths();
@@ -459,7 +459,7 @@ export async function run() {
   let pushed = false;
 
   try {
-    execSync('git add "src/pages/blog/[slug].astro"', { cwd: root, stdio: 'pipe' });
+    execSync('git add src/data/blogContent.ts', { cwd: root, stdio: 'pipe' });
     execSync(`git commit -m "${commitMsg.replace(/"/g, '\\"')}"`, { cwd: root, stdio: 'pipe' });
     execSync('git push origin main', { cwd: root, stdio: 'pipe' });
     log.info('Pushed to GitHub -- site rebuild triggered');
