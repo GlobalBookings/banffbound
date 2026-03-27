@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: '',
+    title: 'Banff 여행 경비 완벽 가이드 2026: 예산별 여행 팁과 절약 비법',
+    description: '2026년 밴프 여행 완벽 예산 가이드! 숙박, 식비, 액티비티까지 예산별 여행 팁과 현지인만 아는 절약 비법으로 스마트하게 캐나다 로키를 즐기세요.',
+    date: '2026-03-27',
+    category: 'Guides',
+    image: '/images/blog/.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'chalets-for-rent-in-banff',
     title: 'Best Chalets for Rent in Banff 2026: Ultimate Guide',
     description: 'Discover the top luxury chalets for rent in Banff in 2026. From cozy mountain retreats to premium ski-in/ski-out properties, find your perfect Alpine getaway.',
