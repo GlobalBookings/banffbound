@@ -19,11 +19,13 @@ const MAX_REFRESHES = 2;
 const EXPEDIA_LINK = 'https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX';
 const GYG_LINK = 'https://www.getyourguide.com/banff-l284/?partner_id=QW960HO';
 
+const CONTENT_CHUNKS = ['blogContent1.ts', 'blogContent2.ts', 'blogContent3.ts'];
+
 function getRepoPaths() {
   return {
     root: WORK_DIR,
     blogData: path.join(WORK_DIR, 'src', 'data', 'blogPosts.ts'),
-    blogContent: path.join(WORK_DIR, 'src', 'data', 'blogContent.ts'),
+    blogContentFiles: CONTENT_CHUNKS.map(f => path.join(WORK_DIR, 'src', 'data', f)),
   };
 }
 
@@ -89,19 +91,19 @@ function parseBlogMetadata() {
   return posts;
 }
 
-// ── Read HTML content for a slug from blogContent.ts ──────
+// ── Read HTML content for a slug from blogContent chunk files ──
 function readSlugContent(slug) {
-  const { blogContent } = getRepoPaths();
-  const content = fs.readFileSync(blogContent, 'utf8');
-
-  // Match the slug entry in the Record<string, string> map
-  // Pattern: 'slug': `...content...`,
+  const { blogContentFiles } = getRepoPaths();
   const escapedSlug = slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const regex = new RegExp(`'${escapedSlug}':\\s*\`([\\s\\S]*?)\`\\s*,`);
-  const match = content.match(regex);
 
-  if (!match) return null;
-  return match[1].replace(/\\`/g, '`').replace(/\\\$/g, '$');
+  for (const filePath of blogContentFiles) {
+    if (!fs.existsSync(filePath)) continue;
+    const content = fs.readFileSync(filePath, 'utf8');
+    const match = content.match(regex);
+    if (match) return match[1].replace(/\\`/g, '`').replace(/\\\$/g, '$');
+  }
+  return null;
 }
 
 // ── Find declining and underperforming posts ──────────────
@@ -302,31 +304,30 @@ CRITICAL: Return ONLY the refreshed HTML content. No markdown, no code fences, n
 
 // ── Write refreshed content back to files ─────────────────
 function writeRefreshedContent(slug, newHtml) {
-  const { blogContent } = getRepoPaths();
-  let content = fs.readFileSync(blogContent, 'utf8');
-
-  // Replace the existing slug content in the Record<string, string> map
+  const { blogContentFiles } = getRepoPaths();
   const escapedSlug = slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const regex = new RegExp(`('${escapedSlug}':\\s*\`)([\\s\\S]*?)(\`\\s*,)`);
 
-  // Sanitize: remove stray backticks, JS object syntax, and template literals
-  // that Claude sometimes hallucinates into HTML output
   let sanitized = newHtml
-    .replace(/\\'/g, "'")                          // unescape single quotes
-    .replace(/'[a-z-]+':\s*`/g, '')                // remove JS object key: ` patterns
-    .replace(/`/g, '\\`')                          // escape backticks for template literal
-    .replace(/\$\{/g, '\\${')                      // escape JS template expressions
-    .replace(/(?<!\\)\$/g, '\\$');                  // escape bare $ signs
+    .replace(/\\'/g, "'")
+    .replace(/'[a-z-]+':\s*`/g, '')
+    .replace(/`/g, '\\`')
+    .replace(/\$\{/g, '\\${')
+    .replace(/(?<!\\)\$/g, '\\$');
 
-  if (!regex.test(content)) {
-    log.error(`Could not find content block for slug "${slug}" in blogContent.ts`);
-    return false;
+  for (const filePath of blogContentFiles) {
+    if (!fs.existsSync(filePath)) continue;
+    let content = fs.readFileSync(filePath, 'utf8');
+    if (regex.test(content)) {
+      content = content.replace(regex, `$1\n${sanitized}\n$3`);
+      fs.writeFileSync(filePath, content);
+      log.info(`Replaced HTML content for "${slug}" in ${path.basename(filePath)}`);
+      return true;
+    }
   }
 
-  content = content.replace(regex, `$1\n${sanitized}\n$3`);
-  fs.writeFileSync(blogContent, content);
-  log.info(`Replaced HTML content for "${slug}" in blogContent.ts`);
-  return true;
+  log.error(`Could not find content block for slug "${slug}" in any blogContent chunk`);
+  return false;
 }
 
 // ── Update post date in blogPosts.ts ──────────────────────
@@ -335,17 +336,26 @@ function updatePostDate(slug, newDate) {
   let content = fs.readFileSync(blogData, 'utf8');
 
   const escapedSlug = slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  // Match the date line within the specific slug entry
-  const regex = new RegExp(`(slug:\\s*'${escapedSlug}',[\\s\\S]*?date:\\s*')([^']+)(')`);
 
-  if (!regex.test(content)) {
-    log.error(`Could not find date entry for slug "${slug}" in blogPosts.ts`);
-    return false;
+  // Check if lastUpdated already exists for this slug
+  const hasLastUpdated = new RegExp(`slug:\\s*'${escapedSlug}',[\\s\\S]*?lastUpdated:`).test(content);
+
+  if (hasLastUpdated) {
+    // Update existing lastUpdated
+    const regex = new RegExp(`(slug:\\s*'${escapedSlug}',[\\s\\S]*?lastUpdated:\\s*')([^']+)(')`);
+    content = content.replace(regex, `$1${newDate}$3`);
+  } else {
+    // Add lastUpdated after the date line
+    const regex = new RegExp(`(slug:\\s*'${escapedSlug}',[\\s\\S]*?date:\\s*'[^']+'),(\\s*)`);
+    if (!regex.test(content)) {
+      log.error(`Could not find date entry for slug "${slug}" in blogPosts.ts`);
+      return false;
+    }
+    content = content.replace(regex, `$1\n    lastUpdated: '${newDate}',$2`);
   }
 
-  content = content.replace(regex, `$1${newDate}$3`);
   fs.writeFileSync(blogData, content);
-  log.info(`Updated date for "${slug}" to ${newDate} in blogPosts.ts`);
+  log.info(`Set lastUpdated for "${slug}" to ${newDate} in blogPosts.ts`);
   return true;
 }
 
@@ -356,7 +366,7 @@ function gitCommitAndPush(refreshedPosts) {
   const message = `Refresh ${refreshedPosts.length} aging blog posts: ${titles.slice(0, 200)}`;
 
   try {
-    execSync('git add src/data/blogPosts.ts src/data/blogContent.ts', { cwd: root, stdio: 'pipe' });
+    execSync('git add src/data/blogPosts.ts src/data/blogContent1.ts src/data/blogContent2.ts src/data/blogContent3.ts', { cwd: root, stdio: 'pipe' });
     execSync(`git commit -m "${message.replace(/"/g, '\\"')}"`, { cwd: root, stdio: 'pipe' });
     execSync('git push origin main', { cwd: root, stdio: 'pipe' });
     log.info('Pushed to GitHub — site rebuild triggered');

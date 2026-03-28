@@ -20,7 +20,7 @@ function getRepoPaths() {
   return {
     root: WORK_DIR,
     blogData: path.join(WORK_DIR, 'src', 'data', 'blogPosts.ts'),
-    blogContent: path.join(WORK_DIR, 'src', 'data', 'blogContent.ts'),
+    blogContent: path.join(WORK_DIR, 'src', 'data', 'blogContent3.ts'),
   };
 }
 
@@ -434,8 +434,8 @@ function writePostsToCodebase(posts) {
     const contentEntry = `\n  '${post.slug}': \`\n${sanitizedHtml}\n\`,`;
 
     contentFileData = contentFileData.replace(
-      'export const blogContent: Record<string, string> = {',
-      `export const blogContent: Record<string, string> = {${contentEntry}`
+      'export const blogContent3: Record<string, string> = {',
+      `export const blogContent3: Record<string, string> = {${contentEntry}`
     );
   }
 
@@ -450,7 +450,7 @@ function gitCommitAndPush(posts) {
   const message = `Auto-publish ${posts.length} blog posts: ${titles.slice(0, 200)}`;
 
   try {
-    execSync('git add src/data/blogPosts.ts src/data/blogContent.ts public/images/blog/', { cwd: root, stdio: 'pipe' });
+    execSync('git add src/data/blogPosts.ts src/data/blogContent3.ts public/images/blog/', { cwd: root, stdio: 'pipe' });
     execSync(`git commit -m "${message.replace(/"/g, '\\"')}"`, { cwd: root, stdio: 'pipe' });
     execSync('git push origin main', { cwd: root, stdio: 'pipe' });
     log.info('Pushed to GitHub -- site rebuild triggered');

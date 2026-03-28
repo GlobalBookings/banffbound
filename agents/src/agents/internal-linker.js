@@ -11,8 +11,8 @@ const WORK_DIR = path.join(__dirname, '..', '..', 'data', 'repo-checkout');
 const GH_TOKEN = process.env.GITHUB_TOKEN;
 const GH_REPO = process.env.GITHUB_REPO || 'GlobalBookings/banffbound';
 
-const MAX_LINKS_PER_POST = 3;
-const MAX_LINKS_PER_RUN = 15;
+const MAX_LINKS_PER_POST = 4;
+const MAX_LINKS_PER_RUN = 40;
 const MIN_INBOUND_THRESHOLD = 2;
 
 // Related category pairs for topical matching
@@ -27,11 +27,13 @@ const RELATED_CATEGORIES = {
   'Food & Drink': ['Guides', 'Itineraries', 'Planning'],
 };
 
+const CONTENT_CHUNKS = ['blogContent1.ts', 'blogContent2.ts', 'blogContent3.ts'];
+
 function getRepoPaths() {
   return {
     root: WORK_DIR,
     blogData: path.join(WORK_DIR, 'src', 'data', 'blogPosts.ts'),
-    blogContent: path.join(WORK_DIR, 'src', 'data', 'blogContent.ts'),
+    blogContentFiles: CONTENT_CHUNKS.map(f => path.join(WORK_DIR, 'src', 'data', f)),
   };
 }
 
@@ -77,23 +79,27 @@ function parseBlogPosts() {
   return posts;
 }
 
-// ── Parse HTML content blocks from blogContent.ts ──────────
+// ── Parse HTML content blocks from blogContent chunk files ──
 function parseSlugContent() {
-  const { blogContent } = getRepoPaths();
-  const raw = fs.readFileSync(blogContent, 'utf8');
-
-  // The file has: export const blogContent: Record<string, string> = { 'slug': `...`, ... };
-  // We parse each slug -> HTML mapping
+  const { blogContentFiles } = getRepoPaths();
   const contentMap = {};
-  const slugBlockRegex = /'([^']+)':\s*`([\s\S]*?)`(?:\s*,|\s*\})/g;
-  let match;
+  const fileContents = {};
+  const slugToFile = {};
 
-  while ((match = slugBlockRegex.exec(raw)) !== null) {
-    contentMap[match[1]] = match[2];
+  for (const filePath of blogContentFiles) {
+    if (!fs.existsSync(filePath)) continue;
+    const raw = fs.readFileSync(filePath, 'utf8');
+    fileContents[filePath] = raw;
+    const slugBlockRegex = /'([^']+)':\s*`([\s\S]*?)`(?:\s*,|\s*\})/g;
+    let match;
+    while ((match = slugBlockRegex.exec(raw)) !== null) {
+      contentMap[match[1]] = match[2];
+      slugToFile[match[1]] = filePath;
+    }
   }
 
-  log.info(`Parsed ${Object.keys(contentMap).length} content blocks from blogContent.ts`);
-  return { raw, contentMap };
+  log.info(`Parsed ${Object.keys(contentMap).length} content blocks from ${Object.keys(fileContents).length} chunk files`);
+  return { fileContents, contentMap, slugToFile };
 }
 
 // ── Extract existing internal links from HTML ──────────────
@@ -318,7 +324,7 @@ export async function run() {
   }
 
   // 2. Read HTML content
-  const { raw: astroFileContent, contentMap } = parseSlugContent();
+  const { fileContents, contentMap, slugToFile } = parseSlugContent();
 
   // 3. Build link graph
   const { outbound, inbound } = buildLinkMap(contentMap);
@@ -440,18 +446,22 @@ export async function run() {
     return { linksAdded: 0, postsModified: 0 };
   }
 
-  // 7. Write modified blogContent.ts back
-  const { blogContent } = getRepoPaths();
-  let updatedContentFile = astroFileContent;
-
+  // 7. Write modified content back to chunk files
+  const modifiedFiles = new Set();
   for (const slug of modifiedSlugs) {
+    const filePath = slugToFile[slug];
+    if (!filePath) continue;
     const originalHTML = contentMap[slug];
     const newHTML = modifiedContentMap[slug];
-    updatedContentFile = updatedContentFile.replace(originalHTML, newHTML);
+    if (!fileContents[filePath]) continue;
+    fileContents[filePath] = fileContents[filePath].replace(originalHTML, newHTML);
+    modifiedFiles.add(filePath);
   }
 
-  fs.writeFileSync(blogContent, updatedContentFile);
-  log.info(`Updated blogContent.ts with ${appliedLinks.length} new links across ${modifiedSlugs.size} posts`);
+  for (const filePath of modifiedFiles) {
+    fs.writeFileSync(filePath, fileContents[filePath]);
+  }
+  log.info(`Updated ${modifiedFiles.size} chunk file(s) with ${appliedLinks.length} new links across ${modifiedSlugs.size} posts`);
 
   // 8. Git commit and push
   const { root } = getRepoPaths();
@@ -459,7 +469,7 @@ export async function run() {
   let pushed = false;
 
   try {
-    execSync('git add src/data/blogContent.ts', { cwd: root, stdio: 'pipe' });
+    execSync('git add src/data/blogContent1.ts src/data/blogContent2.ts src/data/blogContent3.ts', { cwd: root, stdio: 'pipe' });
     execSync(`git commit -m "${commitMsg.replace(/"/g, '\\"')}"`, { cwd: root, stdio: 'pipe' });
     execSync('git push origin main', { cwd: root, stdio: 'pipe' });
     log.info('Pushed to GitHub -- site rebuild triggered');

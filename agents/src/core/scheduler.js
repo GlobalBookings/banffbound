@@ -14,10 +14,10 @@ export function schedule(name, cronExpr, fn) {
     } catch (err) {
       log.error(`${name} failed: ${err.message}`);
     }
-  }, { timezone: 'Europe/London' });
+  }, { timezone: 'America/Edmonton' });
 
   jobs.push({ name, cronExpr, task });
-  log.info(`Scheduled ${name} → ${cronExpr} (Mountain Time)`);
+  log.info(`Scheduled ${name} → ${cronExpr} (Mountain Time / America/Edmonton)`);
   return task;
 }
 

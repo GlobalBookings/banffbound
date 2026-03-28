@@ -6,15 +6,20 @@ interface Props {
   title: string;
   description: string;
   date: string;
+  lastUpdated?: string;
   category: string;
   image: string;
   readTime: string;
   slug?: string;
 }
 
-const { title, description, date, category, image, readTime, slug } = Astro.props;
+const { title, description, date, lastUpdated, category, image, readTime, slug } = Astro.props;
 const formattedDate = new Date(date).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
 const isoDate = new Date(date).toISOString();
+const isoModified = lastUpdated ? new Date(lastUpdated).toISOString() : isoDate;
+const formattedModified = lastUpdated
+  ? new Date(lastUpdated).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })
+  : formattedDate;
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -23,7 +28,7 @@ const articleSchema = {
   description,
   image,
   datePublished: isoDate,
-  dateModified: isoDate,
+  dateModified: isoModified,
   author: { '@type': 'Organization', name: 'BanffBound' },
   publisher: {
     '@type': 'Organization',
@@ -33,7 +38,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} image={image} lastUpdated={isoDate}>
+<BaseLayout title={title} description={description} image={image} lastUpdated={isoModified}>
   <div class="container">
     <Breadcrumbs items={[
       { label: 'Guides', href: '/blog' },
@@ -67,7 +72,7 @@ const articleSchema = {
       <div class="article-footer">
         <div class="article-updated">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Last updated: <time datetime={isoDate}>{formattedDate}</time>
+          Last updated: <time datetime={isoModified}>{formattedModified}</time>
         </div>
         <a href="/blog" class="btn btn-outline">&larr; Back to All Guides</a>
       </div>

@@ -18,6 +18,8 @@ import { run as runRankTracker } from './agents/rank-tracker.js';
 import { run as runInternalLinker } from './agents/internal-linker.js';
 import { run as runContentRefresher } from './agents/content-refresher.js';
 import { run as runJournalistPitcher } from './agents/journalist-pitcher.js';
+import { run as runInfographicGen } from './agents/infographic-generator.js';
+import { run as runInfographicOutreach } from './agents/infographic-outreach.js';
 
 const log = createLogger('main');
 
@@ -47,22 +49,25 @@ registerTrigger('rank-tracker', runRankTracker);
 registerTrigger('internal-linker', runInternalLinker);
 registerTrigger('content-refresher', runContentRefresher);
 registerTrigger('journalist-pitcher', runJournalistPitcher);
+registerTrigger('infographic-generator', runInfographicGen);
+registerTrigger('infographic-outreach', runInfographicOutreach);
 
 // ── Schedule agents (Mountain Time = America/Edmonton) ────
 // schedule('PPC Review',     '0 8 * * *',  runPPC);       // DISABLED — PPC paused
-schedule('GA4 Briefing',     '0 9 * * *',  runGA4);        // 9:00 AM GMT daily
-// schedule('Keyword Miner', '0 10 * * *', runKeywords);   // DISABLED — PPC paused
-schedule('Backlink Monitor', '0 10 * * 1', runBacklinks);   // 10:00 AM GMT every Monday
-schedule('Content Publisher', '0 12 * * *', runContent);    // 12:00 PM GMT daily
-schedule('Inbox Summary',    '0 18 * * *', runInbox);       // 6:00 PM GMT daily
-schedule('Reddit Promoter',  '0 14 * * 2,5', runReddit);   // 2:00 PM GMT Tue & Fri
-schedule('Blogger Outreach',  '0 11 * * 1-5', runOutreach); // 11:00 AM GMT Mon-Fri (5x/week)
-schedule('Directory Tracker', '0 10 1 * *', runDirectories); // 10:00 AM GMT 1st of month
-schedule('Shareable Content', '0 12 * * 3', runShareable);  // 12:00 PM GMT Wednesday
-schedule('Rank Tracker',     '0 9 * * 1',  runRankTracker);    // 9:00 AM GMT Monday (after weekend data settles)
-schedule('Internal Linker',  '0 13 * * 4', runInternalLinker);  // 1:00 PM GMT Thursday
-schedule('Content Refresher','0 11 * * 2', runContentRefresher);// 11:00 AM GMT Tuesday
-schedule('Journalist Pitcher','0 14 * * 1,3', runJournalistPitcher);// 2:00 PM GMT Mon & Wed
+schedule('GA4 Briefing',     '0 9 * * *',  runGA4);        // 9 AM MT daily
+schedule('Backlink Monitor', '0 10 * * 1', runBacklinks);   // 10 AM MT Monday
+schedule('Content Publisher', '0 12 * * *', runContent);    // 12 PM MT daily
+schedule('Inbox Summary',    '0 18 * * *', runInbox);       // 6 PM MT daily
+schedule('Reddit Promoter',  '0 14 * * 2,5', runReddit);   // 2 PM MT Tue & Fri
+schedule('Blogger Outreach',  '0 11 * * 1-5', runOutreach); // 11 AM MT Mon-Fri
+schedule('Directory Tracker', '0 10 1 * *', runDirectories); // 10 AM MT 1st of month
+schedule('Shareable Content', '0 12 * * 3', runShareable);  // 12 PM MT Wednesday
+schedule('Rank Tracker',     '0 9 * * 1',  runRankTracker);    // 9 AM MT Monday
+schedule('Internal Linker',  '0 13 * * 1-5', runInternalLinker);  // 1 PM MT Mon-Fri (catch up backlog)
+schedule('Content Refresher','0 11 * * 2', runContentRefresher);// 11 AM MT Tuesday
+schedule('Journalist Pitcher','0 14 * * 1,3', runJournalistPitcher);// 2 PM MT Mon & Wed
+schedule('Infographic Generator','0 10 * * 3', runInfographicGen);    // 10 AM MT Wednesday
+schedule('Infographic Outreach', '0 11 * * 2,4', runInfographicOutreach);// 11 AM MT Tue & Thu
 
 // ── Startup notification ──────────────────────────────────
 const jobs = listJobs();
