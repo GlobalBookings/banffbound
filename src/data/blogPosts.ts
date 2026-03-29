@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-outdoor-stores',
+    title: 'Best Banff Outdoor Stores 2026: Your Ultimate Gear Guide',
+    description: 'Discover the top outdoor gear stores in Banff for 2026! From hiking boots to camping essentials, find everything you need for your Canadian Rockies adventure.',
+    date: '2026-03-29',
+    category: 'Guides',
+    image: '/images/blog/banff-outdoor-stores.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-bars',
     title: 'Best Banff Bars 2026: Your Ultimate Nightlife Guide',
     description: 'Discover Banff\'s hottest bars and nightlife spots in 2026! From cozy mountain pubs to trendy cocktail lounges, find your perfect night out in the Canadian Rockies.',
