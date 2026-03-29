@@ -20,6 +20,7 @@ import { run as runContentRefresher } from './agents/content-refresher.js';
 import { run as runJournalistPitcher } from './agents/journalist-pitcher.js';
 import { run as runInfographicGen } from './agents/infographic-generator.js';
 import { run as runInfographicOutreach } from './agents/infographic-outreach.js';
+import { run as runTrailConditions } from './agents/trail-conditions.js';
 
 const log = createLogger('main');
 
@@ -68,6 +69,7 @@ schedule('Content Refresher','0 11 * * 2', runContentRefresher);// 11 AM MT Tues
 schedule('Journalist Pitcher','0 14 * * 1,3', runJournalistPitcher);// 2 PM MT Mon & Wed
 schedule('Infographic Generator','0 10 * * 3', runInfographicGen);    // 10 AM MT Wednesday
 schedule('Infographic Outreach', '0 11 * * 2,4', runInfographicOutreach);// 11 AM MT Tue & Thu
+schedule('Trail Conditions',  '0 8 * * *', runTrailConditions); // 8 AM MT daily — Parks Canada scrape
 
 // ── Startup notification ──────────────────────────────────
 const jobs = listJobs();

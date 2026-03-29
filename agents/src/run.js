@@ -23,6 +23,8 @@ if (!agent) {
   console.log('  internal-linker    — Find under-linked posts and add cross-links');
   console.log('  content-refresher  — Refresh aging posts losing rankings');
   console.log('  journalist-pitcher — Pitch guest posts & resource links to publications');
+  console.log('  infographic-gen    — Generate SVG infographics with companion blog posts');
+  console.log('  infographic-outreach — Outreach bloggers with free infographics for backlinks');
   console.log('  test               — Verify configuration');
   process.exit(1);
 }
@@ -78,6 +80,8 @@ const agents = {
   'internal-linker': () => import('./agents/internal-linker.js'),
   'content-refresher': () => import('./agents/content-refresher.js'),
   'journalist-pitcher': () => import('./agents/journalist-pitcher.js'),
+  'infographic-gen': () => import('./agents/infographic-generator.js'),
+  'infographic-outreach': () => import('./agents/infographic-outreach.js'),
 };
 
 const loader = agents[agent];

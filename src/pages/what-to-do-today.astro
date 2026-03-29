@@ -21,19 +21,41 @@ const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
 
   <section class="section">
     <div class="container">
-      <div class="weather-display" id="weather-display">
+      <div class="weather-dual" id="weather-dual">
         <div class="weather-loading" id="weather-loading">
           <div class="spinner"></div>
-          <p>Checking current weather in Banff...</p>
+          <p>Checking weather in Banff & Lake Louise...</p>
         </div>
-        <div class="weather-current" id="weather-current" style="display:none;">
-          <img id="weather-icon" src="" alt="Weather icon" width="80" height="80" />
-          <div class="weather-info">
-            <span class="weather-temp" id="weather-temp"></span>
-            <span class="weather-desc" id="weather-desc"></span>
-            <span class="weather-detail" id="weather-detail"></span>
+        <div class="weather-cards" id="weather-cards" style="display:none;">
+          <div class="weather-card" id="weather-banff">
+            <h3>Banff</h3>
+            <div class="weather-card-body">
+              <img id="banff-icon" src="" alt="" width="60" height="60" />
+              <div class="weather-card-info">
+                <span class="weather-temp" id="banff-temp"></span>
+                <span class="weather-desc" id="banff-desc"></span>
+                <span class="weather-detail" id="banff-detail"></span>
+              </div>
+            </div>
+          </div>
+          <div class="weather-card" id="weather-ll">
+            <h3>Lake Louise</h3>
+            <div class="weather-card-body">
+              <img id="ll-icon" src="" alt="" width="60" height="60" />
+              <div class="weather-card-info">
+                <span class="weather-temp" id="ll-temp"></span>
+                <span class="weather-desc" id="ll-desc"></span>
+                <span class="weather-detail" id="ll-detail"></span>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="forecast-section" id="forecast-section" style="display:none;">
+        <h3>5-Day Outlook</h3>
+        <div class="forecast-grid" id="forecast-grid"></div>
+        <p class="best-day" id="best-day"></p>
       </div>
 
       <div class="section-header" style="margin-top: 2rem;">
@@ -79,8 +101,8 @@ const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
 
 <script define:vars={{ OWM_KEY_SSR }}>
   const OWM_KEY = OWM_KEY_SSR;
-  const LAT = 51.1784;
-  const LON = -115.5708;
+  const BANFF = { lat: 51.1784, lon: -115.5708, name: 'Banff' };
+  const LAKE_LOUISE = { lat: 51.4167, lon: -116.1833, name: 'Lake Louise' };
 
   const activities = {
     winter: [
@@ -165,39 +187,102 @@ const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
     `).join('');
   }
 
+  async function fetchWeather(loc) {
+    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${loc.lat}&lon=${loc.lon}&units=metric&appid=${OWM_KEY}`);
+    if (!res.ok) throw new Error('API error');
+    return res.json();
+  }
+
+  async function fetchForecast(loc) {
+    const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${loc.lat}&lon=${loc.lon}&units=metric&appid=${OWM_KEY}`);
+    if (!res.ok) throw new Error('API error');
+    return res.json();
+  }
+
+  function populateCard(prefix, data) {
+    const temp = Math.round(data.main.temp);
+    const desc = data.weather[0].description;
+    const icon = data.weather[0].icon;
+    const feelsLike = Math.round(data.main.feels_like);
+    const wind = Math.round(data.wind.speed * 3.6);
+    document.getElementById(`${prefix}-icon`).src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+    document.getElementById(`${prefix}-icon`).alt = desc;
+    document.getElementById(`${prefix}-temp`).textContent = `${temp}°C`;
+    document.getElementById(`${prefix}-desc`).textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
+    document.getElementById(`${prefix}-detail`).textContent = `Feels like ${feelsLike}°C · Wind ${wind} km/h`;
+    return { temp, weatherMain: data.weather[0].main };
+  }
+
+  function renderForecast(forecastData) {
+    const dailyMap = {};
+    const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    for (const item of forecastData.list) {
+      const d = new Date(item.dt * 1000);
+      const key = d.toISOString().split('T')[0];
+      if (key === new Date().toISOString().split('T')[0]) continue;
+      if (!dailyMap[key]) dailyMap[key] = { temps: [], icons: [], mains: [], date: d };
+      dailyMap[key].temps.push(item.main.temp);
+      dailyMap[key].icons.push(item.weather[0].icon);
+      dailyMap[key].mains.push(item.weather[0].main);
+    }
+
+    const entries = Object.values(dailyMap).slice(0, 4);
+    const grid = document.getElementById('forecast-grid');
+    grid.innerHTML = entries.map(day => {
+      const hi = Math.round(Math.max(...day.temps));
+      const lo = Math.round(Math.min(...day.temps));
+      const midIcon = day.icons[Math.floor(day.icons.length / 2)];
+      const dayName = days[day.date.getDay()];
+      return `<div class="forecast-day">
+        <span class="forecast-name">${dayName}</span>
+        <img src="https://openweathermap.org/img/wn/${midIcon}.png" alt="" width="40" height="40" />
+        <span class="forecast-temps">${hi}° / ${lo}°</span>
+      </div>`;
+    }).join('');
+
+    // Find best hiking day
+    let bestDay = null, bestScore = -999;
+    for (const day of entries) {
+      const hi = Math.max(...day.temps);
+      const hasRain = day.mains.some(m => ['Rain','Drizzle','Thunderstorm'].includes(m));
+      const score = hi - (hasRain ? 20 : 0);
+      if (score > bestScore) { bestScore = score; bestDay = day; }
+    }
+    if (bestDay) {
+      const dayName = days[bestDay.date.getDay()];
+      const hi = Math.round(Math.max(...bestDay.temps));
+      document.getElementById('best-day').innerHTML =
+        `<strong>Best day for hiking this week:</strong> ${dayName} (${hi}°C, mostly clear)`;
+    }
+    document.getElementById('forecast-section').style.display = 'block';
+  }
+
   async function loadWeather() {
     const loading = document.getElementById('weather-loading');
-    const current = document.getElementById('weather-current');
+    const cards = document.getElementById('weather-cards');
     const month = new Date().getMonth();
 
     try {
       if (!OWM_KEY) throw new Error('No API key');
-      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&units=metric&appid=${OWM_KEY}`);
-      if (!res.ok) throw new Error('API error');
-      const data = await res.json();
+      const [banffData, llData, forecastData] = await Promise.all([
+        fetchWeather(BANFF),
+        fetchWeather(LAKE_LOUISE),
+        fetchForecast(BANFF),
+      ]);
 
-      const temp = Math.round(data.main.temp);
-      const desc = data.weather[0].description;
-      const icon = data.weather[0].icon;
-      const weatherMain = data.weather[0].main;
-      const feelsLike = Math.round(data.main.feels_like);
-      const humidity = data.main.humidity;
-
-      document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-      document.getElementById('weather-icon').alt = desc;
-      document.getElementById('weather-temp').textContent = `${temp}°C`;
-      document.getElementById('weather-desc').textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
-      document.getElementById('weather-detail').textContent = `Feels like ${feelsLike}°C · Humidity ${humidity}%`;
-
+      const banff = populateCard('banff', banffData);
+      populateCard('ll', llData);
       loading.style.display = 'none';
-      current.style.display = 'flex';
+      cards.style.display = 'grid';
 
-      const { suggestions, reason } = getSuggestions(temp, weatherMain, month);
+      renderForecast(forecastData);
+
+      const { suggestions, reason } = getSuggestions(banff.temp, banff.weatherMain, month);
       renderSuggestions(suggestions, reason);
     } catch {
       loading.style.display = 'none';
-      current.innerHTML = '<p class="weather-fallback">Weather data unavailable — showing seasonal suggestions.</p>';
-      current.style.display = 'flex';
+      cards.innerHTML = '<p class="weather-fallback">Weather data unavailable — showing seasonal suggestions.</p>';
+      cards.style.display = 'grid';
 
       const season = getMonthSeason(month);
       const fallback = activities[season];
@@ -209,70 +294,46 @@ const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
 </script>
 
 <style>
-  .weather-display {
-    background: var(--color-white, #fff);
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    text-align: center;
-  }
+  .weather-dual { text-align: center; }
 
   .weather-loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 2rem;
+    background: var(--color-white, #fff); border-radius: var(--radius); box-shadow: var(--shadow);
   }
 
   .spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid rgba(0,0,0,0.1);
-    border-top-color: var(--color-primary);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
+    width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1);
+    border-top-color: var(--color-primary); border-radius: 50%; animation: spin 0.8s linear infinite;
   }
-
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  .weather-current {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+  .weather-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .weather-card {
+    background: var(--color-white, #fff); border-radius: var(--radius); padding: 1.5rem;
+    box-shadow: var(--shadow);
   }
+  .weather-card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-light); margin-bottom: 0.75rem; }
+  .weather-card-body { display: flex; align-items: center; gap: 1rem; }
+  .weather-card-info { display: flex; flex-direction: column; text-align: left; }
 
-  .weather-info {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
+  .weather-temp { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--color-primary); line-height: 1; }
+  .weather-desc { font-size: 1rem; color: var(--color-text); margin-top: 0.2rem; }
+  .weather-detail { font-size: 0.8rem; color: var(--color-text-light); margin-top: 0.1rem; }
+  .weather-fallback { color: var(--color-text-light); font-size: 0.95rem; }
 
-  .weather-temp {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    line-height: 1;
+  .forecast-section {
+    margin-top: 1.5rem; background: var(--color-white, #fff); border-radius: var(--radius);
+    padding: 1.5rem; box-shadow: var(--shadow);
   }
-
-  .weather-desc {
-    font-size: 1.1rem;
-    color: var(--color-text);
-    margin-top: 0.25rem;
+  .forecast-section h3 { font-size: 1rem; margin-bottom: 1rem; }
+  .forecast-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+  .forecast-day {
+    display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+    padding: 0.75rem; background: var(--color-bg-alt); border-radius: var(--radius);
   }
-
-  .weather-detail {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    margin-top: 0.15rem;
-  }
-
-  .weather-fallback {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-  }
+  .forecast-name { font-weight: 700; font-size: 0.85rem; }
+  .forecast-temps { font-size: 0.85rem; color: var(--color-text-light); }
+  .best-day { margin-top: 1rem; font-size: 0.9rem; color: var(--color-primary); text-align: center; }
 
   .suggestions-grid {
     display: grid;

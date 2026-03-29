@@ -20,6 +20,12 @@ export interface Trail {
   parksCanadaUrl: string;
   transitAccessible: boolean;
   transitRoute?: string;
+  status?: 'open' | 'caution' | 'closed' | 'unknown';
+  conditionNote?: string;
+  conditionUpdated?: string;
+  parkingCapacity?: string;
+  parkingNotes?: string;
+  crowdLevel?: { summer: 'low' | 'medium' | 'high'; winter: 'low' | 'medium' | 'high' };
 }
 
 export const trails: Trail[] = [
@@ -58,6 +64,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'marsh-loop',
@@ -89,6 +99,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 4',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'spray-river-east',
@@ -119,6 +133,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'spray-river-west',
@@ -149,6 +167,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'tunnel-campground-loop',
@@ -180,6 +202,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 2',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'stewart-canyon',
@@ -211,6 +237,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'johnson-lake',
@@ -242,6 +272,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'sunshine-meadows',
@@ -272,6 +306,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'johnston-canyon-lower-falls',
@@ -303,6 +341,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 9',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'johnston-canyon-upper-falls',
@@ -334,6 +376,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 9',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'silverton-falls',
@@ -364,6 +410,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'boom-lake',
@@ -394,6 +444,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'vista-lake',
@@ -424,6 +478,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ── Banff Easy/Moderate ───────────────────────────────────────────────
@@ -458,6 +516,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 4',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'ink-pots',
@@ -489,6 +551,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 9',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ── Banff Moderate ────────────────────────────────────────────────────
@@ -523,6 +589,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 1',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'tunnel-mountain-summit',
@@ -553,6 +623,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'surprise-corner-to-hoodoos',
@@ -583,6 +657,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'upper-stoney',
@@ -614,6 +692,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Norquay Shuttle',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'cascade-amphitheatre',
@@ -645,6 +727,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Norquay Shuttle',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'c-level-cirque',
@@ -675,6 +761,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'healy-pass',
@@ -706,6 +796,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Sunshine Shuttle',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'bourgeau-lake',
@@ -736,6 +830,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'harvey-pass',
@@ -766,6 +864,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'rockbound-lake',
@@ -796,6 +898,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'arnica-lake',
@@ -826,6 +932,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'twin-lakes',
@@ -856,6 +966,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ── Banff Challenging ─────────────────────────────────────────────────
@@ -890,6 +1004,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'aylmer-pass',
@@ -921,6 +1039,10 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'cory-pass-loop',
@@ -951,6 +1073,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ═══════════════════════════════════════════════════════════════════════
@@ -988,6 +1114,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'fairview-lookout',
@@ -1018,6 +1148,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'bow-river-lake-louise',
@@ -1048,6 +1182,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'rockpile',
@@ -1078,6 +1216,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'moraine-lake-lakeshore',
@@ -1108,6 +1250,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'consolation-lakes',
@@ -1138,6 +1284,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ── Lake Louise Moderate ──────────────────────────────────────────────
@@ -1171,6 +1321,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'plain-of-six-glaciers',
@@ -1201,6 +1355,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'tramline',
@@ -1231,6 +1389,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'lake-annette',
@@ -1261,6 +1423,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'eiffel-lake',
@@ -1291,6 +1457,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'larch-valley-minnestimma-lakes',
@@ -1321,6 +1491,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ── Lake Louise Challenging ───────────────────────────────────────────
@@ -1354,6 +1528,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'fairview-mountain',
@@ -1384,6 +1562,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'sheol-paradise-connector',
@@ -1414,6 +1596,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'paradise-valley-giant-steps',
@@ -1444,6 +1630,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'sentinel-pass-from-paradise-valley',
@@ -1474,6 +1664,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'sentinel-pass-via-larch-valley',
@@ -1504,6 +1698,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'wenkchemna-pass',
@@ -1534,6 +1732,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'hidden-lake',
@@ -1564,6 +1766,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'deception-pass',
@@ -1594,6 +1800,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ═══════════════════════════════════════════════════════════════════════
@@ -1629,6 +1839,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/1A',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'stanley-glacier',
@@ -1659,6 +1873,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/1A',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'taylor-lake',
@@ -1689,6 +1907,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/1A',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ═══════════════════════════════════════════════════════════════════════
@@ -1726,6 +1948,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'bow-summit-viewpoint',
@@ -1756,6 +1982,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'mistaya-canyon',
@@ -1786,6 +2016,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ── Icefields Parkway Moderate ────────────────────────────────────────
@@ -1819,6 +2053,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'helen-lake',
@@ -1849,6 +2087,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'cirque-lake',
@@ -1879,6 +2121,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'chephren-lake',
@@ -1909,6 +2155,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'nigel-pass',
@@ -1939,6 +2189,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'parker-ridge',
@@ -1969,6 +2223,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
 
   // ── Icefields Parkway Challenging ─────────────────────────────────────
@@ -2002,6 +2260,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'north-molar-pass',
@@ -2032,6 +2294,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'dolomite-pass',
@@ -2062,6 +2328,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'peyto-lake-shore',
@@ -2092,6 +2362,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'glacier-lake',
@@ -2122,6 +2396,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'sunset-lookout',
@@ -2152,6 +2430,10 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
   },
   {
     id: 'sunset-pass',
@@ -2182,5 +2464,288 @@ export const trails: Trail[] = [
     parksCanadaUrl:
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
+  
+    status: 'open',
+    conditionNote: '',
+    conditionUpdated: '2026-03-29',
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // WINTER TRAILS — Cross-Country Skiing, Snowshoeing, Ice Walks
+  // ═══════════════════════════════════════════════════════════════════════
+
+  {
+    id: 'cascade-valley-xc-ski',
+    name: 'Cascade Valley Cross-Country Ski Trail',
+    slug: 'cascade-valley-xc-ski',
+    description: 'A groomed classic cross-country ski trail following the Cascade River through quiet valley forest north of Banff.',
+    longDescription: 'The Cascade Valley trail is one of the most popular groomed cross-country ski routes in Banff National Park. Following the Cascade River north from the trailhead near Lake Minnewanka Road, the trail winds through peaceful spruce forest with mountain views. Parks Canada grooms this trail regularly throughout winter for classic technique. Wildlife sightings are common — watch for elk, coyotes, and the occasional wolf track in the snow.',
+    difficulty: 'moderate',
+    distance: '14 km return',
+    elevationGain: '100 m',
+    elevationLoss: '100 m',
+    time: '2-3 hrs',
+    season: 'winter',
+    type: 'trail',
+    area: 'Banff',
+    lat: 51.2101,
+    lng: -115.5302,
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    highlights: ['Groomed classic track', 'Cascade River valley views', 'Wildlife corridor'],
+    trailhead: 'Cascade Fire Road parking, Lake Minnewanka Road',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
+    transitAccessible: false,
+    status: 'open',
+    conditionNote: 'Groomed regularly Dec-Mar',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '20 vehicles',
+    crowdLevel: { summer: 'low', winter: 'medium' },
+  },
+  {
+    id: 'spray-river-loop-xc-ski',
+    name: 'Spray River Loop Cross-Country Ski',
+    slug: 'spray-river-loop-xc-ski',
+    description: 'A popular groomed loop along the Spray River past the Fairmont Banff Springs, ideal for intermediate cross-country skiers.',
+    longDescription: 'The Spray River Loop is a classic Banff winter trail offering groomed cross-country skiing through the Spray Valley. The trail passes directly below the Fairmont Banff Springs hotel before following the Spray River south into quiet forest. Parks Canada grooms this route for both classic and skate techniques. The relatively flat terrain with gentle rolling hills makes it accessible for intermediate skiers, while the mountain backdrop and river scenery keep it interesting.',
+    difficulty: 'moderate',
+    distance: '12 km loop',
+    elevationGain: '75 m',
+    elevationLoss: '75 m',
+    time: '2-3 hrs',
+    season: 'winter',
+    type: 'trail',
+    area: 'Banff',
+    lat: 51.1618,
+    lng: -115.5575,
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    highlights: ['Groomed classic & skate', 'Fairmont Banff Springs views', 'Spray River scenery'],
+    trailhead: 'Spray River trailhead, Bow Falls parking area',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
+    transitAccessible: true,
+    transitRoute: 'Roam Route 1 to Banff Springs',
+    status: 'open',
+    conditionNote: 'Groomed regularly Dec-Mar',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'low', winter: 'medium' },
+  },
+  {
+    id: 'tunnel-mountain-winter',
+    name: 'Tunnel Mountain Winter Trails',
+    slug: 'tunnel-mountain-winter',
+    description: 'A network of groomed winter trails around Tunnel Mountain, perfect for beginner cross-country skiers and snowshoers.',
+    longDescription: 'The Tunnel Mountain winter trail network offers the most accessible cross-country skiing in Banff National Park. Located right in Banff townsite, the trails wind through the campground area and surrounding forest. Parks Canada grooms several loops for classic technique, ranging from 1-5 km. The gentle terrain and proximity to town make this the ideal spot for beginners, families, and anyone wanting a quick ski without a long drive to a trailhead.',
+    difficulty: 'easy',
+    distance: '5 km network',
+    elevationGain: '30 m',
+    elevationLoss: '30 m',
+    time: '1-2 hrs',
+    season: 'winter',
+    type: 'trail',
+    area: 'Banff',
+    lat: 51.1782,
+    lng: -115.5512,
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    highlights: ['Beginner-friendly groomed loops', 'Walking distance from town', 'Family-friendly'],
+    trailhead: 'Tunnel Mountain campground area',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
+    transitAccessible: true,
+    transitRoute: 'Roam Route 2',
+    status: 'open',
+    conditionNote: 'Groomed regularly Dec-Mar',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'medium' },
+  },
+  {
+    id: 'johnston-canyon-ice-walk',
+    name: 'Johnston Canyon Ice Walk',
+    slug: 'johnston-canyon-ice-walk',
+    description: 'A spectacular winter walk through frozen Johnston Canyon to see ice-encased waterfalls and dramatic ice formations.',
+    longDescription: 'Johnston Canyon transforms into an ice wonderland in winter, with frozen waterfalls creating towering walls of blue and white ice. The catwalks and trail to the Lower Falls (1.1 km) and Upper Falls (2.7 km) remain accessible throughout winter, though ice cleats are essential. Guided ice walk tours are popular and include icecleats and interpretation. The experience is completely different from summer — quieter, more dramatic, and the frozen falls are genuinely awe-inspiring.',
+    difficulty: 'easy',
+    distance: '5.4 km return to Upper Falls',
+    elevationGain: '120 m',
+    elevationLoss: '120 m',
+    time: '2-3 hrs',
+    season: 'winter',
+    type: 'trail',
+    area: 'Castle Junction',
+    lat: 51.2454,
+    lng: -115.8396,
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=80',
+    highlights: ['Frozen waterfalls', 'Ice cleats required', 'Guided tours available'],
+    trailhead: 'Johnston Canyon parking lot, Bow Valley Parkway',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/1A',
+    transitAccessible: false,
+    status: 'open',
+    conditionNote: 'Ice cleats essential Nov-Apr',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '50 vehicles',
+    crowdLevel: { summer: 'high', winter: 'medium' },
+  },
+  {
+    id: 'lake-louise-lakeshore-snowshoe',
+    name: 'Lake Louise Lakeshore Snowshoe',
+    slug: 'lake-louise-lakeshore-snowshoe',
+    description: 'A magical winter snowshoe along frozen Lake Louise with Victoria Glacier towering above — one of the most iconic winter scenes in the Rockies.',
+    longDescription: 'Walking across frozen Lake Louise in winter is a bucket-list experience. The lake freezes solid from December, and Parks Canada maintains a cleared walking path across the surface. Snowshoeing along the lakeshore and onto the frozen lake provides completely different perspectives of Victoria Glacier and the surrounding peaks. Snowshoe rentals are available at the Fairmont Chateau Lake Louise and several shops in Lake Louise village. The combination of the frozen turquoise ice, snow-covered peaks, and the grand Chateau backdrop is unforgettable.',
+    difficulty: 'easy',
+    distance: '4 km return',
+    elevationGain: '0 m',
+    elevationLoss: '0 m',
+    time: '1.5 hrs',
+    season: 'winter',
+    type: 'lake',
+    area: 'Lake Louise',
+    lat: 51.4167,
+    lng: -116.1767,
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
+    highlights: ['Frozen Lake Louise', 'Victoria Glacier views', 'Snowshoe rental available'],
+    trailhead: 'Fairmont Chateau Lake Louise',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
+    transitAccessible: true,
+    transitRoute: 'Parks Canada shuttle (seasonal)',
+    status: 'open',
+    conditionNote: 'Lake frozen Dec-Apr',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '400 vehicles (fills early)',
+    crowdLevel: { summer: 'high', winter: 'high' },
+  },
+  {
+    id: 'marble-canyon-snowshoe',
+    name: 'Marble Canyon Snowshoe',
+    slug: 'marble-canyon-snowshoe',
+    description: 'A quiet snowshoe through a narrow marble canyon in Kootenay National Park, just 30 minutes from Banff — far fewer crowds than Johnston Canyon.',
+    longDescription: 'Marble Canyon is the insider alternative to Johnston Canyon in winter. Located just across the border in Kootenay National Park (30 minutes from Banff), this short trail follows a narrow canyon carved through marble and limestone. In winter, ice formations coat the canyon walls and the creek below runs beneath a layer of blue ice. The trail crosses several bridges over the canyon, each offering increasingly dramatic views. Snowshoes or microspikes are recommended. You will need a Parks Canada pass for Kootenay as well.',
+    difficulty: 'easy',
+    distance: '1.6 km return',
+    elevationGain: '35 m',
+    elevationLoss: '35 m',
+    time: '45 min',
+    season: 'winter',
+    type: 'trail',
+    area: 'Castle Junction',
+    lat: 51.1794,
+    lng: -116.1172,
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=80',
+    highlights: ['Frozen canyon walls', 'Far fewer crowds than Johnston Canyon', 'Kootenay National Park'],
+    trailhead: 'Marble Canyon parking, Highway 93 South',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/bc/kootenay',
+    transitAccessible: false,
+    status: 'open',
+    conditionNote: 'Microspikes recommended Nov-Apr',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '25 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
+  },
+  {
+    id: 'ink-pots-snowshoe',
+    name: 'Ink Pots Winter Snowshoe',
+    slug: 'ink-pots-snowshoe',
+    description: 'A longer snowshoe through Johnston Canyon and beyond to the Ink Pots — bubbling mineral springs that stay unfrozen all winter.',
+    longDescription: 'The Ink Pots snowshoe extends beyond Johnston Canyon Upper Falls to reach a group of natural mineral springs in an open meadow. The springs bubble up through coloured pools that remain unfrozen even in the deepest cold, creating a surreal contrast against the snowy landscape. The route follows the Johnston Canyon trail (ice cleats needed for the canyon section) then continues through forest to the open meadow. At 11.6 km return, this is a solid half-day winter outing requiring good fitness and proper gear.',
+    difficulty: 'moderate',
+    distance: '11.6 km return',
+    elevationGain: '310 m',
+    elevationLoss: '310 m',
+    time: '4-5 hrs',
+    season: 'winter',
+    type: 'trail',
+    area: 'Castle Junction',
+    lat: 51.2531,
+    lng: -115.8561,
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=80',
+    highlights: ['Unfrozen mineral springs in winter', 'Through Johnston Canyon', 'Remote meadow setting'],
+    trailhead: 'Johnston Canyon parking lot, Bow Valley Parkway',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/1A',
+    transitAccessible: false,
+    status: 'open',
+    conditionNote: 'Ice cleats + snowshoes needed',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '50 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
+  },
+  {
+    id: 'goat-creek-xc-ski',
+    name: 'Goat Creek Cross-Country Ski Trail',
+    slug: 'goat-creek-xc-ski',
+    description: 'A classic point-to-point ski trail from Canmore to Banff following Goat Creek through spectacular Spray Valley scenery.',
+    longDescription: 'Goat Creek is one of the signature cross-country ski routes in the Canadian Rockies, running from the Smith-Dorrien Highway near Canmore down to the Banff Springs Golf Course. The trail follows Goat Creek through the Spray Valley with views of Mount Rundle, Ha Ling Peak, and the Spray Range. It is predominantly downhill from the Canmore end, losing about 300 m over 19 km, making it a fast and exhilarating classic ski. Most people arrange a shuttle or taxi for the return. Not groomed by Parks Canada but well-tracked by regular use.',
+    difficulty: 'moderate',
+    distance: '19 km one way',
+    elevationGain: '50 m',
+    elevationLoss: '350 m',
+    time: '4-6 hrs',
+    season: 'winter',
+    type: 'trail',
+    area: 'Banff',
+    lat: 51.1181,
+    lng: -115.4406,
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    highlights: ['Point-to-point Canmore to Banff', 'Predominantly downhill', 'Spray Valley scenery'],
+    trailhead: 'Smith-Dorrien Highway parking (Canmore end)',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
+    transitAccessible: false,
+    status: 'open',
+    conditionNote: 'Not groomed, user-tracked',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '10 vehicles at trailhead',
+    crowdLevel: { summer: 'low', winter: 'medium' },
+  },
+  {
+    id: 'healy-creek-xc-ski',
+    name: 'Healy Creek Cross-Country Ski Trail',
+    slug: 'healy-creek-xc-ski',
+    description: 'A groomed backcountry ski trail following Healy Creek toward Sunshine Village, offering peaceful forest skiing with mountain views.',
+    longDescription: 'The Healy Creek trail follows the summer hiking route toward Sunshine Meadows, but in winter it becomes a lovely cross-country ski through dense forest along Healy Creek. Parks Canada grooms the first section for classic technique. The terrain is gently rolling with a few short climbs, making it suitable for intermediate skiers. The surrounding peaks and quiet forest provide a genuine backcountry feel despite being relatively close to the Sunshine Village access road.',
+    difficulty: 'moderate',
+    distance: '9 km return',
+    elevationGain: '150 m',
+    elevationLoss: '150 m',
+    time: '2-3 hrs',
+    season: 'winter',
+    type: 'trail',
+    area: 'Banff',
+    lat: 51.1352,
+    lng: -115.7558,
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    highlights: ['Groomed classic track', 'Backcountry forest skiing', 'Mountain creek scenery'],
+    trailhead: 'Sunshine Village access road, Bourgeau parking lot',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
+    transitAccessible: false,
+    status: 'open',
+    conditionNote: 'Groomed regularly Dec-Mar',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
+  },
+  {
+    id: 'golf-course-loop-xc-ski',
+    name: 'Banff Golf Course Loop',
+    slug: 'golf-course-loop-xc-ski',
+    description: 'The easiest and most accessible cross-country ski loop in Banff — flat terrain on the golf course with elk sightings almost guaranteed.',
+    longDescription: 'The Banff Golf Course transforms into a beginner-friendly cross-country ski area in winter. The flat, open terrain is perfect for first-timers learning Nordic technique, and Parks Canada grooms several loops for classic skiing. The open fairways provide clear views of Mount Rundle, Cascade Mountain, and Sulphur Mountain. Elk commonly graze on the golf course throughout winter — you will almost certainly see them. This is the best place in Banff for a first-ever cross-country ski experience.',
+    difficulty: 'easy',
+    distance: '5 km loop',
+    elevationGain: '10 m',
+    elevationLoss: '10 m',
+    time: '1-1.5 hrs',
+    season: 'winter',
+    type: 'trail',
+    area: 'Banff',
+    lat: 51.1908,
+    lng: -115.5642,
+    image: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    highlights: ['Flat beginner-friendly terrain', 'Almost guaranteed elk sightings', 'Mountain panorama'],
+    trailhead: 'Banff Springs Golf Course parking',
+    parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
+    transitAccessible: true,
+    transitRoute: 'Roam Route 1',
+    status: 'open',
+    conditionNote: 'Groomed regularly Dec-Mar',
+    conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'low', winter: 'medium' },
   },
 ];

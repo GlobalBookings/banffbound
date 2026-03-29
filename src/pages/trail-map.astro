@@ -6,6 +6,7 @@ import { trails } from '../data/trails';
 const trailData = JSON.stringify(trails.map(t => ({
   id: t.id,
   name: t.name,
+  slug: t.slug,
   description: t.description,
   difficulty: t.difficulty,
   distance: t.distance,
@@ -17,6 +18,8 @@ const trailData = JSON.stringify(trails.map(t => ({
   lng: t.lng,
   image: t.image,
   highlights: t.highlights,
+  status: t.status || 'unknown',
+  conditionNote: t.conditionNote || '',
 })));
 
 const difficulties = ['easy', 'moderate', 'challenging'];
@@ -62,6 +65,14 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
             {seasons.map(s => <option value={s}>{s}</option>)}
           </select>
         </div>
+        <div class="filter-group">
+          <select id="status-filter">
+            <option value="all">All Conditions</option>
+            <option value="open">Open</option>
+            <option value="caution">Caution</option>
+            <option value="closed">Closed</option>
+          </select>
+        </div>
         <button id="clear-filters" class="clear-btn" style="display:none;">Clear</button>
         <span class="result-count" id="result-count">{trails.length} trails</span>
       </div>
@@ -83,12 +94,18 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
                data-difficulty={trail.difficulty}
                data-type={trail.type}
                data-season={trail.season}
+               data-status={trail.status || 'unknown'}
                data-name={trail.name.toLowerCase()}>
             <img src={trail.image} alt={trail.name} class="trail-card-img" loading="lazy" />
             <div class="trail-card-body">
               <div class="trail-card-top">
                 <span class={`difficulty-badge difficulty-${trail.difficulty}`}>{trail.difficulty}</span>
                 <span class="type-badge">{trail.type}</span>
+                {trail.status && trail.status !== 'unknown' && (
+                  <span class={`status-dot status-${trail.status}`}>
+                    {trail.status === 'open' ? '✓' : trail.status === 'caution' ? '⚠' : '✕'}
+                  </span>
+                )}
               </div>
               <h3>{trail.name}</h3>
               <p class="trail-desc">{trail.description.slice(0, 120)}...</p>
@@ -114,6 +131,7 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
   const difficultyFilter = document.getElementById('difficulty-filter');
   const typeFilter = document.getElementById('type-filter');
   const seasonFilter = document.getElementById('season-filter');
+  const statusFilter = document.getElementById('status-filter');
   const clearBtn = document.getElementById('clear-filters');
   const cards = document.querySelectorAll('.trail-card');
   const countEl = document.getElementById('result-count');
@@ -131,6 +149,7 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
     const difficulty = difficultyFilter.value;
     const type = typeFilter.value;
     const season = seasonFilter.value;
+    const status = statusFilter.value;
     const visibleIds = new Set();
     let visible = 0;
 
@@ -139,7 +158,8 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
       const matchDifficulty = difficulty === 'all' || card.dataset.difficulty === difficulty;
       const matchType = type === 'all' || card.dataset.type === type;
       const matchSeason = season === 'all' || card.dataset.season === season;
-      const show = matchSearch && matchDifficulty && matchType && matchSeason;
+      const matchStatus = status === 'all' || card.dataset.status === status;
+      const show = matchSearch && matchDifficulty && matchType && matchSeason && matchStatus;
       card.style.display = show ? '' : 'none';
       if (show) {
         visible++;
@@ -148,7 +168,7 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
     });
 
     countEl.textContent = `${visible} trail${visible !== 1 ? 's' : ''}`;
-    clearBtn.style.display = (search || difficulty !== 'all' || type !== 'all' || season !== 'all') ? '' : 'none';
+    clearBtn.style.display = (search || difficulty !== 'all' || type !== 'all' || season !== 'all' || status !== 'all') ? '' : 'none';
     return visibleIds;
   }
 
@@ -162,6 +182,7 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
     difficultyFilter.value = 'all';
     typeFilter.value = 'all';
     seasonFilter.value = 'all';
+    statusFilter.value = 'all';
     applyFilters();
   }
 
@@ -169,6 +190,7 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
   difficultyFilter.addEventListener('change', applyFilters);
   typeFilter.addEventListener('change', applyFilters);
   seasonFilter.addEventListener('change', applyFilters);
+  statusFilter.addEventListener('change', applyFilters);
   clearBtn.addEventListener('click', clearAll);
 
   gridViewBtn.addEventListener('click', () => {
@@ -395,6 +417,14 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
     text-transform: capitalize;
     font-weight: 500;
   }
+
+  .status-dot {
+    font-size: 0.7rem; font-weight: 700; padding: 0.1rem 0.4rem;
+    border-radius: 3px; margin-left: auto;
+  }
+  .status-dot.status-open { background: #dcfce7; color: #166534; }
+  .status-dot.status-caution { background: #fef3c7; color: #92400e; }
+  .status-dot.status-closed { background: #fee2e2; color: #991b1b; }
 
   .trail-card-body h3 {
     font-size: 1rem;

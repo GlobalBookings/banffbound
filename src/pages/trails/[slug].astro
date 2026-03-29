@@ -68,6 +68,11 @@ const trailSchema = {
           <span class="difficulty-badge" style={`background:${difficultyBg};color:${difficultyColor};`}>{trail.difficulty}</span>
           <span class="badge">{trail.area}</span>
           <span class="type-tag">{trail.type}</span>
+          {trail.status && trail.status !== 'unknown' && (
+            <span class={`status-badge status-${trail.status}`}>
+              {trail.status === 'open' ? '✓ Open' : trail.status === 'caution' ? '⚠ Caution' : '✕ Closed'}
+            </span>
+          )}
         </div>
         <h1>{trail.name}</h1>
         <p class="hero-desc">{trail.description}</p>
@@ -109,6 +114,42 @@ const trailSchema = {
       </div>
     </div>
   </div>
+
+  {(trail.conditionNote || trail.parkingCapacity || trail.crowdLevel) && (
+    <div class="conditions-bar">
+      <div class="container conditions-bar-inner">
+        {trail.conditionNote && (
+          <div class="condition-item">
+            <span class="condition-icon">📋</span>
+            <div>
+              <strong>Trail Conditions</strong>
+              <span>{trail.conditionNote}</span>
+              {trail.conditionUpdated && <small>Updated {trail.conditionUpdated}</small>}
+            </div>
+          </div>
+        )}
+        {trail.parkingCapacity && (
+          <div class="condition-item">
+            <span class="condition-icon">🅿️</span>
+            <div>
+              <strong>Parking</strong>
+              <span>{trail.parkingCapacity}</span>
+              {trail.parkingNotes && <small>{trail.parkingNotes}</small>}
+            </div>
+          </div>
+        )}
+        {trail.crowdLevel && (
+          <div class="condition-item">
+            <span class="condition-icon">👥</span>
+            <div>
+              <strong>Typical Crowds</strong>
+              <span>Summer: {trail.crowdLevel.summer} · Winter: {trail.crowdLevel.winter}</span>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  )}
 
   <section class="section">
     <div class="container">
@@ -266,6 +307,26 @@ const trailSchema = {
 </script>
 
 <style>
+  .status-badge {
+    font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem;
+    border-radius: 4px; text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .status-open { background: #dcfce7; color: #166534; }
+  .status-caution { background: #fef3c7; color: #92400e; }
+  .status-closed { background: #fee2e2; color: #991b1b; }
+
+  .conditions-bar {
+    background: var(--color-bg-alt); border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+    padding: 1rem 0;
+  }
+  .conditions-bar-inner { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .condition-item { display: flex; gap: 0.6rem; align-items: flex-start; }
+  .condition-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .condition-item div { display: flex; flex-direction: column; gap: 0.1rem; }
+  .condition-item strong { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
+  .condition-item span { font-size: 0.9rem; color: var(--color-text); }
+  .condition-item small { font-size: 0.75rem; color: var(--color-text-light); }
+
   .trail-hero {
     position: relative;
     height: 50vh;

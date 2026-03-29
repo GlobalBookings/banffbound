@@ -37,42 +37,42 @@ const categories = [
     description: 'From scenic gondola rides to serene lake walks, discover unforgettable experiences in the heart of the Rockies.',
     href: '/things-to-do',
     icon: '&#128507;',
-    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=75&fm=webp',
   },
   {
     title: 'Eat & Drink',
     description: 'Savor world-class dining, cozy mountain cafes, craft breweries, and everything in between.',
     href: '/eat-and-drink',
     icon: '&#127860;',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=75&fm=webp',
   },
   {
     title: 'Shopping',
     description: 'Browse unique local boutiques, outdoor gear shops, Indigenous art, and handcrafted souvenirs.',
     href: '/shopping',
     icon: '&#128717;',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=75&fm=webp',
   },
   {
     title: 'Activities',
     description: 'Hit the slopes, paddle pristine lakes, hike alpine trails, and chase wildlife year-round.',
     href: '/activities',
     icon: '&#9968;',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=75&fm=webp',
   },
   {
     title: 'Iconic Lakes',
     description: 'Lake Louise, Moraine Lake, Peyto Lake, and more. Explore the turquoise jewels of the Canadian Rockies.',
     href: '/lakes',
     icon: '&#128167;',
-    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=75&fm=webp',
   },
   {
     title: 'Tours & Adventures',
     description: 'Book guided tours, day trips, wildlife safaris, and unique experiences with top-rated local operators.',
     href: '/tours',
     icon: '&#127760;',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75&fm=webp',
   },
 ];
 
@@ -85,14 +85,48 @@ const highlights = [
 ---
 
 <BaseLayout title="Home" description="BanffBound - Your complete guide to Banff, Alberta. Everything to do, eat, drink, shop, and experience in the Canadian Rockies.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://banffbound.com/#website',
+        url: 'https://banffbound.com',
+        name: 'BanffBound',
+        description: 'Your complete guide to Banff, Alberta. Everything to do, eat, drink, shop, and experience in the Canadian Rockies.',
+        publisher: { '@id': 'https://banffbound.com/#organization' },
+        inLanguage: 'en',
+      },
+      {
+        '@type': 'Organization',
+        '@id': 'https://banffbound.com/#organization',
+        name: 'BanffBound',
+        url: 'https://banffbound.com',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://banffbound.com/favicon.svg',
+        },
+        sameAs: [],
+      },
+    ],
+  })} />
   <!-- Hero Slideshow -->
   <section class="hero" id="hero">
     <div class="hero-slides">
-      <img src="https://images.unsplash.com/photo-1561134643-668f9057cce4?w=1800&q=80" alt="Mount Rundle reflected in Vermilion Lakes at sunrise" class="hero-slide active" />
-      <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1800&q=80" alt="Moraine Lake and the Valley of the Ten Peaks" class="hero-slide" />
-      <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1800&q=80" alt="Lake Louise turquoise waters with Victoria Glacier" class="hero-slide" />
-      <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1800&q=80" alt="Snow-capped peaks in Banff National Park" class="hero-slide" />
-      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=80" alt="Peyto Lake aerial turquoise view" class="hero-slide" />
+      <img
+        src="https://images.unsplash.com/photo-1561134643-668f9057cce4?w=1200&q=75&fm=webp"
+        srcset="https://images.unsplash.com/photo-1561134643-668f9057cce4?w=640&q=75&fm=webp 640w, https://images.unsplash.com/photo-1561134643-668f9057cce4?w=1200&q=75&fm=webp 1200w"
+        sizes="100vw"
+        alt="Mount Rundle reflected in Vermilion Lakes at sunrise"
+        class="hero-slide active"
+        fetchpriority="high"
+        width="1200"
+        height="800"
+      />
+      <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=75&fm=webp" alt="Moraine Lake and the Valley of the Ten Peaks" class="hero-slide" loading="lazy" width="1200" height="800" />
+      <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=75&fm=webp" alt="Lake Louise turquoise waters with Victoria Glacier" class="hero-slide" loading="lazy" width="1200" height="800" />
+      <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=75&fm=webp" alt="Snow-capped peaks in Banff National Park" class="hero-slide" loading="lazy" width="1200" height="800" />
+      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=75&fm=webp" alt="Peyto Lake aerial turquoise view" class="hero-slide" loading="lazy" width="1200" height="800" />
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -135,7 +169,7 @@ const highlights = [
       <div class="grid grid-2">
         {categories.map(cat => (
           <a href={cat.href} class="category-card card">
-            <img src={cat.image} alt={cat.title} class="card-image" loading="lazy" />
+            <img src={cat.image} alt={cat.title} class="card-image" loading="lazy" width="600" height="400" />
             <div class="card-body">
               <span class="category-icon" set:html={cat.icon}></span>
               <h3>{cat.title}</h3>
@@ -230,9 +264,12 @@ const highlights = [
           <a href="https://www.pc.gc.ca/en/pn-np/ab/banff" target="_blank" rel="noopener" class="btn btn-primary">Get Your Park Pass &rarr;</a>
         </div>
         <img
-          src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=80"
+          src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=75&fm=webp"
           alt="Scenic Banff landscape"
           class="cta-image"
+          loading="lazy"
+          width="600"
+          height="400"
         />
       </div>
     </div>
