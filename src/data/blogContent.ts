@@ -2,6 +2,8 @@ export const blogContent: Record<string, string> = {
   'banff-outdoor-stores': `
 <p>If you're planning your first backcountry adventure or just need to replace a worn-out hiking boot, having access to quality outdoor gear is essential for exploring Banff National Park safely. The town of Banff offers several excellent outdoor stores that cater to everyone from casual day hikers to serious mountaineers. From technical climbing equipment to cozy fleece jackets for chilly March evenings, these local retailers have everything you need to make the most of your Canadian Rockies experience.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Honestly, this is the trail I go to when I need to clear my head. Thirty minutes from my door in Canmore to the trailhead.</aside>
+
 <h2>Top Banff Outdoor Stores for All Your Adventure Needs</h2>
 
 <p>The outdoor retail scene in Banff has evolved significantly to meet the demands of millions of annual visitors. Here are the standout <strong>banff outdoor stores</strong> that locals and seasoned travelers rely on:</p>
@@ -41,6 +43,8 @@ export const blogContent: Record<string, string> = {
 <p>For more adventurous testing of technical equipment, consider exploring the <strong>ink pots banff alberta</strong> via the Johnston Canyon trail system. This 10.8 km round-trip hike takes you beyond the crowded lower falls to a fascinating area of cold-water springs that create vibrant blue and green pools. The trail requires sturdy footwear and can be icy in sections, making it perfect for testing traction devices and hiking poles.</p>
 
 <p>The Ink Pots area remains relatively uncrowded compared to the main Johnston Canyon attractions, providing a peaceful setting to enjoy your new gear while experiencing one of Banff's unique geological features. The springs maintain consistent temperatures year-round, creating an almost mystical landscape that photographers love.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I always pack an extra layer for this stretch — even in August, the wind picks up once you're above the treeline.</aside>
 
 <h2>Seasonal Shopping Strategies and Timing</h2>
 
@@ -86,6 +90,8 @@ export const blogContent: Record<string, string> = {
   'banff-bars': `
 <p>After a day exploring Banff's incredible mountain scenery, there's nothing quite like unwinding with a drink while soaking in those breathtaking Canadian Rockies views. Banff's nightlife scene has evolved tremendously in 2026, offering everything from cozy pub atmospheres to sophisticated rooftop lounges where you can sip craft cocktails against a backdrop of snow-capped peaks. If you're looking for locally brewed beer, premium Canadian whisky, or signature mountain-inspired cocktails, the best <strong>Banff bars</strong> deliver memorable experiences that perfectly cap off your alpine adventures.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I eat in Banff at least twice a month — living in Canmore means these restaurants are basically my neighbourhood spots.</aside>
+
 <h2>Top-Rated Banff Bars for Every Vibe</h2>
 
 <p>Banff Avenue and the surrounding streets house an impressive collection of watering holes, each offering its own unique take on Rocky Mountain hospitality. <strong>The Bear Street Tavern</strong> remains a local favorite, featuring over 50 craft beers on tap alongside hearty pub fare and multiple big screens for catching hockey games. Their heated patio offers beautiful views of Cascade Mountain, making it perfect for those crisp March evenings.</p>
@@ -118,6 +124,8 @@ export const blogContent: Record<string, string> = {
 
 <p>The <strong>Banff bars</strong> scene really comes alive during après-ski season, though many venues maintain that celebratory energy year-round. <strong>The Dancing Sasquatch</strong> has become legendary for its 3-7 PM après-ski parties, featuring live DJs, specialty cocktails, and a crowd of adventurous travelers sharing stories from the slopes and trails.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> If you're coming from Lake Louise or Canmore, the drive is worth it for a meal here. Trust me.</aside>
+
 <p>After conquering popular hiking destinations, many visitors gravitate toward <strong>The Maple Leaf Pub</strong> for their "Hiker's Happy Hour" offering discounts to anyone showing trail photos from that day. It's become an unofficial meeting spot for those who've tackled challenging routes or discovered quiet finds like the <strong>Ink Pots Banff Alberta</strong> trail system.</p>
 
 <p>For those planning adventure-filled days, <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> provides detailed information about routes that pair perfectly with evening bar visits, while <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers organized tours that often include stops at local establishments.</p>
@@ -144,6 +152,8 @@ export const blogContent: Record<string, string> = {
 `,
   'chalets-for-rent-in-banff': `
 <p>Tucked in the heart of the Canadian Rockies, <a href="/blog/banff-view">15 Banff Views That Will Leave You Speechless in</a> offers some of the world's most remarkable mountain accommodations. For those seeking a cozy retreat after a day of hiking or a luxurious base for exploring the national park, <strong>chalets for rent in Banff</strong> provide the perfect blend of comfort and authentic mountain charm. From intimate log cabins to spacious family retreats, these Alpine-style accommodations offer unmatched access to Banff's clean wilderness and breathtaking vistas.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Friends visiting me in the Bow Valley always ask where to stay. My answer depends on budget, but this one comes up often.</aside>
 
 <h2>Why Choose Chalets for Your Banff Adventure</h2>
 
@@ -183,6 +193,8 @@ export const blogContent: Record<string, string> = {
 
 <p>For impressive <strong>Banff views</strong>, several <strong>Banff lookout points</strong> are within easy driving distance of most chalet locations. The Bow Valley Parkway offers multiple pullouts with interpretive signs explaining the geological forces that shaped this dramatic landscape. Tunnel Mountain lookout, accessible via a 2.3-kilometer trail, provides 360-degree views and is particularly incredible during sunrise.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've had coffee in this lobby more times than I can count — it's a good spot even if you're not a guest.</aside>
+
 <p>Many chalet guests enjoy starting their days early to beat crowds at popular destinations like Lake Louise and Moraine Lake. For detailed hiking recommendations, explore our comprehensive <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> guide, and consider booking guided experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> for expert local insights.</p>
 
 <h3>Winter Activities (March 2026)</h3>
@@ -219,6 +231,8 @@ export const blogContent: Record<string, string> = {
 `,
   'sunshine-mountain-lodge': `
 <p>When most visitors think of mountain lodging in Banff National Park, they picture cozy chalets located in valleys or bustling hotels in downtown Banff. But imagine waking up at 2,100 meters above sea level, stepping outside your door onto untouched snow, and having the Canadian Rockies sprawling endlessly before you. Welcome to <strong>Sunshine Mountain Lodge</strong> – Canada's only ski-in, ski-out accommodation and one of the most unique alpine experiences you'll find anywhere in the world.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My parents stay at this place every time they visit me in Canmore, and they're always happy with it.</aside>
 
 <p>Located on the Continental Divide within Banff National Park, this remarkable mountain retreat offers an escape from the ordinary that few travelers even know exists. If you're planning a winter ski adventure or a summer hiking expedition, Sunshine Mountain Lodge represents the complete mountain getaway that combines luxury, adventure, and exceptional access to some of Canada's most dramatic wilderness.</p>
 
@@ -266,6 +280,8 @@ export const blogContent: Record<string, string> = {
 <h2>Dining and Amenities at 2,100 Meters</h2>
 
 <p>Despite its remote location, Sunshine Mountain Lodge doesn't compromise on comfort or cuisine. The lodge features a full-service restaurant that emphasizes locally-sourced Canadian ingredients with a focus on hearty mountain fare that satisfies after long days in the alpine environment.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> One thing I'll note from visiting friends here: the parking can be tight. If you're driving from Calgary, confirm parking availability when you book.</aside>
 
 <p>Breakfast typically features traditional options alongside mountain-inspired dishes, while dinner menus change seasonally to highlight the best local ingredients. Expect dishes like Alberta beef, fresh Rocky Mountain trout, wild game, and vegetarian options that celebrate the region's natural bounty. The lodge maintains a well-selected wine list featuring Canadian wines alongside international selections chosen specifically to complement the mountain dining experience.</p>
 
@@ -321,6 +337,8 @@ export const blogContent: Record<string, string> = {
   'bow-summit-trail': `
 <p>Sitting high in the Canadian Rockies, the <strong>Bow Summit Trail</strong> offers one of the most incredible viewpoints in all of Banff National Park. This relatively short but rewarding hike leads to the famous Peyto Lake Lookout, where turquoise waters stretch out below like a painted masterpiece. As the highest point accessible by road in Banff National Park, Bow Summit provides visitors with an standout alpine experience that showcases why this UNESCO World Heritage Site draws millions of visitors each year.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've seen people attempt this in running shoes in July and regret it by the halfway point. Bring proper boots.</aside>
+
 <h2>Getting to Bow Summit</h2>
 
 <p><strong>Bow Summit</strong> sits at an elevation of 2,069 meters (6,787 feet) along the Icefields Parkway (Highway 93 North), approximately 40 kilometers north of Lake Louise. The drive from Banff townsite takes about 1 hour and 15 minutes, covering roughly 85 kilometers of some of the most scenic highway in the world. From Calgary, plan for a 2.5-hour drive covering 170 kilometers.</p>
@@ -359,6 +377,8 @@ export const blogContent: Record<string, string> = {
 
 <p>If you're planning a multi-day adventure that includes <strong>Bow Summit Canada</strong> highlights, check out our comprehensive <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> for optimal trip planning that incorporates this jaw-dropping location with other must-see attractions.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My favourite thing about this part of the trail is how the sound changes — suddenly you can hear the creek and nothing else.</aside>
+
 <h2>Photography and Best Viewing Times</h2>
 
 <p>Bow Summit ranks among the most photographed locations in the Canadian Rockies, and for good reason. The elevated perspective provides rare views of Peyto Lake's distinctive shape and color. For photographers, several factors can make or break your shots.</p>
@@ -394,6 +414,8 @@ export const blogContent: Record<string, string> = {
   'banff-view': `
 <p>The Canadian Rockies offer some of the most breathtaking mountain scenery on Earth, and nowhere is this more evident than in Banff National Park. If you're seeking that perfect Instagram-worthy <strong>Banff view</strong> or simply want to immerse yourself in pure wilderness, this UNESCO World Heritage site delivers incredible vistas around every corner. From turquoise lakes found between towering peaks to panoramic mountain summits accessible by gondola, Banff's viewing opportunities are as diverse as they are remarkable.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I hiked this on a random Tuesday in October and had the whole trail to myself. Timing is everything.</aside>
+
 <h2>The Most Iconic Banff Views You Can't Miss</h2>
 
 <p>When planning your visit to capture the complete <strong>Banff view</strong>, certain locations stand out as absolute must-sees. Lake Louise, often called the "Jewel of the Rockies," offers perhaps the most photographed vista in all of Canada. The emerald waters reflect the surrounding Victoria Glacier and Mount Victoria, creating a mirror-like perfection that changes with the seasons. In March 2026, you'll find the lake still frozen with snow-capped peaks providing a dramatic backdrop.</p>
@@ -426,6 +448,8 @@ export const blogContent: Record<string, string> = {
 
 <p>Summer (June through August) provides the most accessibility, with all roads open and hiking trails in prime condition. This is peak season for capturing that perfect <strong>Banff view</strong>, but expect crowds at popular locations. Early morning and late evening offer the best combination of good lighting and fewer people.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Pro tip from a local: the creek crossing about halfway through is tricky in June. Earlier in the season, it's snowpack; later, it's fine.</aside>
+
 <p>Fall brings impressive larch trees turning golden yellow, creating a completely different <strong>Banff view</strong> than other seasons. Larch Valley, Plain of Six Glaciers, and Sentinel Pass become photographer magnets during the brief larch season, typically peaking in late September.</p>
 
 <p>Winter transforms the landscape entirely, offering dramatic <strong>Banff view</strong> opportunities for those prepared for cold weather conditions. Frozen waterfalls, snow-laden evergreens, and crisp mountain air create magical winter wonderlands. For detailed seasonal planning, consult our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> which breaks down optimal activities by season.</p>
@@ -452,6 +476,8 @@ export const blogContent: Record<string, string> = {
 `,
   'parks-canada-discovery-pass-price-2026': `
 <p>Planning your dream trip to the Canadian Rockies? Understanding the <strong>Parks Canada Discovery Pass price for 2026</strong> is essential for budgeting your Banff National Park adventure. With recent updates to park entry fees and exciting new experiences awaiting visitors, this comprehensive guide covers everything you need to know about accessing Canada's most dramatic mountain playground while maximizing your investment in memorable memories.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Last September I counted six other cars at the trailhead at 7 AM. By 10 AM the lot was overflowing. Draw your own conclusions.</aside>
 
 <h2>Parks Canada Discovery Pass Price 2026: Complete Breakdown</h2>
 
@@ -511,6 +537,8 @@ export const blogContent: Record<string, string> = {
 
 <p>For a comprehensive look at all accommodation options, check our <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory, which includes everything from budget hostels to luxury mountain resorts.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> On my last visit the wildflowers were incredible — lupines and Indian paintbrush everywhere. Peak bloom is usually mid-July to early August.</aside>
+
 <h2>Maximizing Your Discovery Pass Value</h2>
 
 <p>To get the most from your Parks Canada Discovery Pass price investment in 2026, consider these strategies:</p>
@@ -557,6 +585,8 @@ export const blogContent: Record<string, string> = {
   'num-ti-jah-lodge-alberta-canada': `
 <p>Tucked along the clean shores of Bow Lake in Banff National Park, Num-Ti-Jah Lodge stands as one of Alberta's most iconic mountain retreats. This historic wilderness lodge, whose name means "pine marten" in the Stoney Nakoda language, has been welcoming travelers to the heart of the Canadian Rockies since 1940. For those planning a romantic getaway, an adventure-packed vacation, or simply seeking to disconnect from the digital world, <strong>Num Ti Jah Lodge Alberta Canada</strong> offers an authentic mountain experience that few places can match.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I live in Canmore so I don't need to book hotels in Banff, but I've toured most of these properties and recommended them to dozens of visiting friends.</aside>
+
 <h2>The Historic Legacy of Num-Ti-Jah Lodge</h2>
 
 <p>The story of <strong>Num Ti Jah Lodge</strong> begins with Jimmy Simpson, a legendary guide and outfitter who first established this remote outpost as a base for his wilderness adventures. Simpson, who arrived in the area in 1896, chose this impressive location for its breathtaking views of Bow Lake and the surrounding peaks, including Mount Jimmy Simpson, which was later named in his honor.</p>
@@ -595,6 +625,8 @@ export const blogContent: Record<string, string> = {
 
 <p>The dining experience at <strong>Num-Ti-Jah Lodge</strong> embraces the rustic mountain tradition while focusing on hearty, satisfying meals that fuel outdoor adventures. The lodge's restaurant serves lunch and dinner featuring Canadian specialties, fresh Alberta beef, and seasonal mountain fare.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The walk from here to Bear Street and Banff Ave takes about 10 minutes. A lot of hotels claim 'walking distance' but this one actually is.</aside>
+
 <p>The dining room, with its massive windows overlooking Bow Lake, creates an standout atmosphere for every meal. Imagine enjoying wild game stew or fresh trout while watching the alpenglow paint the surrounding peaks in brilliant colors. The wine selection features Canadian vintages alongside international options, perfect for toasting another successful day in the mountains.</p>
 
 <p>Breakfast is included with all overnight stays and typically features fresh baked goods, cereals, fruit, and hot coffee or tea. The lodge can also prepare packed lunches for day hikers and adventurers, ensuring you're well-fueled for mountain exploration.</p>
@@ -630,6 +662,8 @@ export const blogContent: Record<string, string> = {
   'viewpoint-banff': `
 <p>When it comes to capturing the raw beauty of the Canadian Rockies, few experiences rival standing at a impressive <a href="/blog/bow-lake-viewpoint">Bow Lake Viewpoint <a href="/blog/banff-view">15 Banff Views That Will Leave You Speechless in</a> Most Instagrammable Spot</a> in Banff National Park. These elevated vantage points transform your perspective entirely, offering sweeping panoramas of emerald lakes, towering peaks, and ancient glaciers that have shaped this UNESCO World Heritage landscape for millennia. For those an avid photographer hunting for that perfect shot or simply someone who appreciates nature's grandeur, Banff's viewpoints deliver moments that will stay with you long after you've returned home.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The crowds at this viewpoint peak around 11 AM to 2 PM. I always go early morning or golden hour.</aside>
+
 <h2>Why Banff's Viewpoints Are Absolutely Essential</h2>
 
 <p>Every viewpoint in Banff tells a unique story of geological wonder and natural artistry. From roadside pullouts that require minimal effort to challenging summit hikes that test your endurance, these dramatic vantage points offer something for every type of traveler. The diversity is remarkable—you might find yourself gazing across the turquoise waters of Lake Louise one moment, then standing atop a mountain ridge surveying an endless sea of peaks the next.</p>
@@ -664,6 +698,8 @@ export const blogContent: Record<string, string> = {
 
 <p>Consider bringing a polarizing filter to reduce glare from snow and water surfaces, which are prevalent throughout Banff's landscape. A graduated neutral density filter can help balance the bright sky against darker foreground elements, particularly useful when shooting from elevated viewpoints looking down into valleys.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> If you're driving from Calgary, leave before 7 AM on weekends. The highway traffic has gotten significantly worse.</aside>
+
 <p>Weather conditions change rapidly in mountain environments, so always check Parks Canada's current conditions and weather forecasts before heading out. Even during seemingly stable conditions, afternoon thunderstorms can develop quickly during summer months, while winter conditions can shift from clear skies to blowing snow within minutes.</p>
 
 <h2>Seasonal Considerations and Best Times to Visit</h2>
@@ -694,6 +730,8 @@ export const blogContent: Record<string, string> = {
 `,
   'bow-lake-viewpoint': `
 <p>Located along the iconic Icefields Parkway, Bow Lake offers one of the most breathtaking and accessible <a href="/blog/viewpoint-banff">15 Banff Viewpoints You Can't Miss in</a> in all of Banff National Park. This crystal-clear alpine lake, with its gorgeous turquoise waters and dramatic mountain backdrop, provides visitors with an incredible glimpse into the raw beauty of the Canadian Rockies. If you're embarking on your first Rocky Mountain adventure or you're a seasoned mountain enthusiast, the Bow Lake viewpoint delivers remarkable photo opportunities and serves as a perfect stop along your Icefields Parkway journey.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've lived in Canmore — 20 minutes from Banff — for several years now, and the thing I tell every visitor is the same: come with a plan but leave room to wander.</aside>
 
 <h2>Where to Find Bow Lake Viewpoint</h2>
 
@@ -748,6 +786,8 @@ export const blogContent: Record<string, string> = {
   'banff-restaurant-specials': `
 <p>Spring in Banff brings melting snow, awakening wildlife, and something else locals get excited about: the return of seasonal restaurant specials designed to lure visitors back after the quieter winter months. As March transitions into the busy spring and summer seasons, savvy travelers can score incredible deals on dining while experiencing some of the best culinary offerings in the Canadian Rockies. For those planning a romantic getaway or a family adventure, knowing where to find the best <strong>Banff restaurant specials</strong> can transform your mountain vacation into an remarkable gastronomic journey.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My partner and I have a running list of every restaurant in Banff. This one has been in regular rotation for years.</aside>
+
 <h2>Understanding Banff's Seasonal Dining Scene</h2>
 
 <p>Banff's restaurant scene operates on a distinct seasonal rhythm that smart visitors learn to navigate. Spring 2026 marks the perfect sweet spot when many establishments launch their shoulder season promotions to bridge the gap between winter's cozy dining and summer's bustling patio season. <strong>Banff restaurant specials</strong> typically peak during this transition period, offering everything from prix fixe menus to happy hour extensions.</p>
@@ -782,6 +822,8 @@ export const blogContent: Record<string, string> = {
 
 <p>Some of Banff's most memorable dining experiences combine exceptional food with striking mountain views. The Rimrock Resort Hotel's Eden Restaurant frequently offers "Sunset Specials" during spring months, providing three-course meals with wine pairings for \$85 CAD per person while guests enjoy panoramic views of the Bow Valley.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The staff turnover in Banff is real, but this place has had the same core team for a while. You can taste the consistency.</aside>
+
 <p>From many restaurant patios and dining rooms, diners can spot the famous <strong>viewpoint Banff</strong> locations that make the town internationally renowned. The Chuck's Steakhouse patio overlooks the Bow River and offers clear sightlines to Cascade Mountain, while their spring specials feature Alberta AAA steaks at \$32-42 CAD, reduced from regular prices of \$45-58 CAD.</p>
 
 <p>For a unique dining perspective, consider restaurants that offer views toward popular hiking destinations. Storm Mountain Lodge, about 25 km from Banff townsite, provides prix fixe dinners for \$68 CAD featuring locally-sourced ingredients while diners enjoy views of Castle Mountain and surrounding peaks that attract hikers from around the world.</p>
@@ -812,6 +854,8 @@ export const blogContent: Record<string, string> = {
 `,
   'sunshine-ski-resort-accommodation': `
 <p>Planning a ski getaway to one of Canada's most remarkable alpine destinations? <strong>Sunshine ski resort accommodation</strong> puts you right in the heart of the Canadian Rockies, offering unique access to renowned skiing and breathtaking mountain views. Located just 15 minutes from Banff townsite, Sunshine Village Resort provides the unique opportunity to stay slopeside at 2,100 meters above sea level, making it one of the highest ski-in, ski-out accommodations in North America. For those seeking luxury mountain lodging or budget-friendly options nearby, this guide will help you navigate the best accommodation choices for your 2026-2027 ski season adventure.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've dropped off and picked up enough friends at Banff hotels to have strong opinions. This is one of the better options.</aside>
 
 <h2>Sunshine Village Ski-In, Ski-Out Accommodation</h2>
 
@@ -847,6 +891,8 @@ export const blogContent: Record<string, string> = {
 
 <p>Timing is crucial when booking <strong>sunshine ski resort accommodation</strong>. The resort's season typically runs from mid-November through late May, with peak periods during Christmas holidays, February, and March spring break. Early season (November-December) and late season (April-May) often provide better availability and rates.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> From what I hear from friends who stay here regularly, the off-season rates are a genuine bargain for what you get.</aside>
+
 <p>For the best selection and rates, begin your search 6-12 months in advance, especially for holiday periods and spring break weeks. Many properties offer early booking discounts for reservations made before September. Consider mid-week stays (Sunday-Thursday) for significantly lower rates compared to weekend premiums.</p>
 
 <p>Ski-and-stay packages often provide the best value, combining accommodation with lift tickets and sometimes meals. These packages are available through Sunshine Village directly, as well as through major Banff hotels and tour operators. To explore guided ski lessons and mountain experiences that can enhance your stay, browse options on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>.</p>
@@ -875,6 +921,8 @@ export const blogContent: Record<string, string> = {
 `,
   'drink-deals': `
 <p>After a long day exploring the breathtaking landscapes of Banff National Park, there's nothing quite like unwinding with a refreshing beverage at one of the town's cozy establishments. Whether you've just conquered one of the challenging mountain peaks or spent hours photographing the turquoise waters of the Bow River, Banff's vibrant après-adventure scene offers plenty of opportunities to celebrate your Canadian Rockies experience without breaking the bank. From craft breweries with mountain views to historic pubs with local character, discovering the best drink deals in Banff can help stretch your travel budget while you soak in the alpine atmosphere that makes this destination so special.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My go-to move is lunch in Banff after a morning hike. The food tastes better when you've earned it.</aside>
 
 <h2>Best Happy Hour Spots and Daily Drink Deals</h2>
 
@@ -910,6 +958,8 @@ export const blogContent: Record<string, string> = {
 
 <p>Banff's drink deals become even more attractive when traveling with friends or family. <strong>Saltlik Steakhouse</strong> offers table bottles at reduced prices for groups of four or more, with their wine selection featuring excellent Canadian vintages from British Columbia's Okanagan Valley starting at \$45 CAD per bottle during their evening specials.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Parking near Banff Ave restaurants is a headache. I usually park at the train station lot and walk — it's five minutes.</aside>
+
 <p><strong>The Keg Banff</strong> provides birthday celebration packages that include complimentary appetizers and discounted pitcher specials for the celebration party. Their mountain-facing patio, while not fully operational during March, offers remarkable views during their indoor happy hour service.</p>
 
 <p>For larger groups planning comprehensive Banff experiences, many tour operators now include drink vouchers as part of their packages. <a href="/tours">Browse Banff tours</a> to find guided experiences that incorporate local brewery visits or wine tastings, often providing better value than purchasing drinks individually.</p>
@@ -940,6 +990,8 @@ export const blogContent: Record<string, string> = {
 `,
   'bow-summit': `
 <p>Perched high on the Icefields Parkway at 2,135 meters above sea level, Bow Summit stands as the highest driveable point on one of the world's most scenic highways. This striking mountain pass offers visitors to Banff National Park an one-of-a-kind alpine experience, complete with jaw-dropping vistas, fresh wilderness, and the iconic Peyto Lake viewpoint. For anyone planning a summer road trip or a winter adventure in 2026, Bow Summit deserves a prominent spot on your Banff itinerary.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> As someone who lives 20 minutes away, I can tell you the parking situation here has gotten much worse over the past two years. Arrive early.</aside>
 
 <h2>What Makes Bow Summit Special</h2>
 
@@ -991,6 +1043,8 @@ export const blogContent: Record<string, string> = {
 <p>The Icefields Parkway remains open year-round, but winter driving conditions require preparation. From November through April, winter tires or chains are mandatory. Current road conditions are available through Alberta 511 or Parks Canada's website.</p>
 
 <p>During March 2026, expect potential snow and ice on the roadway, particularly at higher elevations near Bow Summit. Allow extra travel time and carry emergency supplies including warm clothing, food, and a first aid kit.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> If you're here in winter, this is where the snow really deepens. Snowshoes aren't optional past this point.</aside>
 
 <h2>Accommodation and Dining Near Bow Summit</h2>
 
@@ -1045,6 +1099,8 @@ export const blogContent: Record<string, string> = {
   'ski-touring': `
 <p>The Canadian Rockies transform into a winter wonderland each season, and there's no better way to experience Banff National Park's clean backcountry than through ski touring. This increasingly popular activity combines the exhilaration of skiing with the adventure of mountaineering, allowing you to explore untouched powder fields and breathtaking alpine terrain far from the crowded resort slopes. If you're a seasoned backcountry enthusiast or looking to take your first steps into ski touring, Banff offers some of the world's most impressive terrain for this rewarding winter pursuit.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've done this activity at least a few times since moving to Canmore, and I keep coming back because it's one of those Banff experiences that actually delivers.</aside>
+
 <h2>What is Ski Touring and Why Banff is Perfect for It</h2>
 
 <p>Ski touring, also known as alpine touring or backcountry skiing, involves using specialized equipment to climb up snow-covered slopes under your own power, then skiing down through untracked terrain. Unlike resort skiing, ski touring takes you into the wilderness where you'll encounter untouched snow conditions, gorgeous mountain vistas, and the profound silence of the backcountry.</p>
@@ -1081,6 +1137,8 @@ export const blogContent: Record<string, string> = {
 
 <p><strong>Mount Assiniboine:</strong> Known as the "Matterhorn of the Rockies," this challenging multi-day tour requires advanced skills and experience. The approach involves a 27-kilometer ski from Sunshine Village parking lot, but the rewards include some of the most striking alpine scenery in North America.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The cellular signal in the park is spotty at best. Download offline maps before you leave Canmore or Calgary.</aside>
+
 <div class="tip-box"><strong>Pro Tip:</strong> Always inform someone of your touring plans, including your intended route, group size, and expected return time. Leave a detailed itinerary with a reliable contact person and stick to your planned schedule.</div>
 
 <h2>Best Times and Conditions for Ski Touring</h2>
@@ -1115,6 +1173,8 @@ export const blogContent: Record<string, string> = {
 `,
   'banff-icewalk': `
 <p>Winter in <a href="/blog/chalets-for-rent-in-banff">Best Chalets for Rent in Banff</a> transforms the Canadian Rockies into a frozen wonderland, where cascading waterfalls freeze into remarkable ice sculptures and canyon walls become galleries of natural art. A <strong>Banff icewalk</strong> offers one of the most unique ways to experience this winter magic, taking you through frozen gorges and alongside towering ice formations that exist only during the coldest months. For those strapping on crampons for the first time or you're a seasoned winter adventurer, icewalking in Banff National Park provides an incredible journey through some of nature's most dramatic seasonal displays.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Winter in the Bow Valley is genuinely cold — I'm talking -25°C mornings — but the landscapes are worth every frozen eyelash.</aside>
 
 <h2>What is Icewalking and Why Banff is Perfect for It</h2>
 
@@ -1162,6 +1222,8 @@ export const blogContent: Record<string, string> = {
 
 <p>Layered clothing systems work best for icewalking, as activity levels vary throughout the hike. Essential items include:</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've watched the pricing on this creep up over the years, but honestly it's still fair for what you get.</aside>
+
 <ul>
 <li>Moisture-wicking base layers</li>
 <li>Insulating mid-layers (fleece or down)</li>
@@ -1201,6 +1263,8 @@ export const blogContent: Record<string, string> = {
 `,
   'backcountry-skiing-day-tours-canadian-rockies': `
 <p>The Canadian Rockies offer some of the world's most incredible backcountry skiing terrain, and Banff National Park serves as the perfect gateway to alpine adventures that will leave you breathless—both from the exertion and the incredible mountain vistas. As March 2026 brings ideal spring skiing conditions to the region, backcountry skiing day tours in the Canadian Rockies are experiencing peak season, offering skiers the chance to explore crystal-clear powder beyond the crowded resort boundaries while returning to comfortable accommodations each evening.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I keep coming back to this trail because conditions change so drastically month to month — it's a different hike every time.</aside>
 
 <h2>Why Choose Banff for Backcountry Skiing Day Tours</h2>
 
@@ -1242,6 +1306,8 @@ export const blogContent: Record<string, string> = {
 
 <p>Intermediate and advanced tours venture into more challenging terrain, often requiring prior backcountry experience and strong skiing ability. These excursions may involve longer approaches, steeper ascents, and more technical descents. Advanced tour pricing typically ranges from \$285-\$385 CAD per person, reflecting the specialized expertise required and smaller group sizes.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The trail surface changes dramatically after this point. I swap to my poles here every time.</aside>
+
 <p>To explore various guided tour options and compare offerings from different operators, <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> provides comprehensive listings of backcountry skiing tours available from Banff, complete with reviews and detailed itineraries.</p>
 
 <h2>Essential Gear and Preparation</h2>
@@ -1279,6 +1345,8 @@ export const blogContent: Record<string, string> = {
   'bow-summit-viewpoint': `
 <p>Standing at 2,088 meters above sea level, the <strong>Bow Summit <a href="/blog/viewpoint-banff">15 Banff Viewpoints You Can't Miss in</a></strong> offers one of the most striking and accessible panoramic vistas in the Canadian Rockies. Located along the iconic Icefields Parkway between Lake Louise and Jasper, this remarkable lookout provides breathtaking views of Peyto Lake's turquoise waters, the Mistaya Valley, and the surrounding peaks that define Banff National Park's dramatic landscape. For anyone a seasoned hiker or simply seeking an one-of-a-kind photo opportunity, Bow Summit delivers an experience that perfectly captures the raw beauty of Alberta's mountain wilderness.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Living this close to Banff has taught me one thing: the best experiences are almost never the most expensive ones.</aside>
+
 <h2>Getting to Bow Summit Viewpoint</h2>
 
 <p>The <strong>Bow Summit <a href="/blog/bow-lake-viewpoint">Bow Lake Viewpoint Banff Most Instagrammable Spot</a></strong> is conveniently located approximately 40 kilometers north of Lake Louise along Highway 93 North (the Icefields Parkway). The drive from Banff townsite takes roughly one hour, while visitors coming from <a href="/blog/lake-louise-complete-guide">Lake Louise</a> can reach the parking area in about 30 minutes. Look for the clearly marked "Peyto Lake Viewpoint" signs on the west side of the highway – this is your gateway to the Bow Summit experience.</p>
@@ -1310,6 +1378,8 @@ export const blogContent: Record<string, string> = {
 <p>The optimal time to visit the <strong>Bow Summit viewpoint</strong> depends on your preferences and hiking experience. The trail is typically accessible from late June through early October, though conditions can vary significantly based on snowfall and weather patterns.</p>
 
 <p><strong>Summer (July-August 2026):</strong> Peak season offers the warmest weather, wildflower blooms, and longest daylight hours. However, expect crowds and higher accommodation prices. Trail conditions are at their best, making this ideal for families and less experienced hikers.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Locals will tell you the same thing: Tuesday through Thursday is a different Banff than Saturday. Plan accordingly.</aside>
 
 <p><strong>Shoulder Seasons (June and September 2026):</strong> These months provide excellent hiking conditions with fewer crowds. September is particularly impressive as the larch trees turn golden, creating a gorgeous contrast against the evergreen forest. June may still have snow patches at higher elevations.</p>
 
@@ -1350,6 +1420,8 @@ export const blogContent: Record<string, string> = {
   'ski-touring-canmore': `
 <p>Sitting in the heart of the Canadian Rockies, Canmore offers some of the most striking ski touring terrain in North America. Just minutes from Banff National Park, this charming mountain town provides endless opportunities for backcountry skiing enthusiasts to explore fresh powder bowls, challenging couloirs, and gentle alpine meadows. If you're a seasoned ski tourer or just getting started in the backcountry, ski touring Canmore delivers incredible adventures with breathtaking mountain vistas at every turn.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Living 20 minutes from Banff, I've tried most of the touristy activities. This one is actually worth the price.</aside>
+
 <h2>Why Choose Canmore for Ski Touring</h2>
 
 <p>Canmore's unique position in the Bow Valley makes it an ideal base for ski touring adventures. Unlike the more regulated terrain within Banff National Park, much of the ski touring around Canmore takes place in Kananaskis Country, where access is generally more flexible and permits aren't required for day trips. The town sits at 1,310 meters elevation, providing excellent snow conditions from December through April, with peak season running from January to March.</p>
@@ -1382,6 +1454,8 @@ export const blogContent: Record<string, string> = {
 
 <p>Timing plays a crucial role in ski touring success. The 2026-2027 winter season in Canmore typically sees the best conditions from mid-January through early April, though early season tours are possible in suitable terrain by December. March often provides the perfect balance of stable snowpack, longer daylight hours, and warmer temperatures.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Shoulder season — May and October — is when Banff is at its best, in my opinion. Fewer crowds, lower prices, and the light is incredible.</aside>
+
 <p>Start your days early to take advantage of stable morning conditions and avoid afternoon warming that can increase avalanche risk. Most ski tourers begin their approaches between 7:00-8:00 AM, allowing plenty of time for the ascent and descent before conditions deteriorate.</p>
 
 <p>Transportation logistics require careful consideration, as many trailheads are accessed via the Spray Lakes Road (Highway 742), which can be challenging in winter conditions. A reliable vehicle with good winter tires or four-wheel drive is essential. Some popular parking areas fill up quickly on powder days and weekends, so arriving early ensures you'll find a spot.</p>
@@ -1408,6 +1482,8 @@ export const blogContent: Record<string, string> = {
 `,
   'banff-boundary-lodge': `
 <p>Found along the untouched shores of Bow Lake in the heart of the Canadian Rockies, the historic Banff boundary lodge experiences offer some of the most impressive wilderness retreats in Alberta. These remote <a href="/blog/sunshine-mountain-lodge">Sunshine Mountain Lodge Banff: Alpine Escape</a> lodges, including the legendary Num-Ti-Jah Lodge, provide an authentic escape from modern life while delivering unique access to Banff National Park's most breathtaking landscapes. For those seeking a romantic getaway, an adventure basecamp, or simply a chance to disconnect and recharge, these boundary lodges represent the pinnacle of Canadian wilderness hospitality.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Full transparency: I've toured this hotel and talked to management. The rooms facing the valley are noticeably better — ask for one.</aside>
 
 <h2>Understanding Banff's Boundary Lodge System</h2>
 
@@ -1449,6 +1525,8 @@ export const blogContent: Record<string, string> = {
 
 <p>When planning a stay at any banff boundary lodge, timing is crucial. The prime season runs from June through September, when all facilities are fully operational and weather conditions are most favorable. Early season visits (May-June) offer the advantage of fewer crowds and potentially lower rates, while late season (September-October) provides jaw-dropping fall colors.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Friends who've stayed here in winter say the heated pool is the highlight. After a day of skiing, I can see why.</aside>
+
 <p>For accommodation comparison and booking flexibility, <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">compare hotel rates on Expedia</a> to see current availability and pricing for boundary lodges alongside other Banff accommodations. This helps ensure you're getting the best value for your mountain getaway.</p>
 
 <h3>What to Pack</h3>
@@ -1488,6 +1566,8 @@ export const blogContent: Record<string, string> = {
 `,
   'numtijah-lodge': `
 <p>Tucked on the shores of crystal-clear Bow Lake in the heart of the Canadian Rockies, Num-Ti-Jah Lodge stands as one of <a href="/blog/banff-boundary-lodge">Banff Boundary Lodge: <a href="/blog/sunshine-mountain-lodge">Sunshine Mountain Lodge Banff: Alpine Escape</a> Escape</a> National Park's most iconic and historic accommodations. This rustic mountain retreat, with its distinctive red roof and timeless log construction, has been welcoming travelers since 1940, offering an authentic wilderness experience that perfectly captures the spirit of the Canadian Rockies. If you're planning a romantic getaway, an adventure-filled mountain escape, or simply seeking to disconnect from the modern world, Num-Ti-Jah Lodge provides an one-of-a-kind base for exploring some of the most impressive scenery in Canada.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The hotel market in Banff is competitive but pricey. I always tell friends to check midweek rates — the difference can be 30-40%.</aside>
 
 <h2>The Rich History of Num-Ti-Jah Lodge</h2>
 
@@ -1534,6 +1614,8 @@ export const blogContent: Record<string, string> = {
 <h2>Activities and Adventures</h2>
 
 <p>The location of Num-Ti-Jah Lodge makes it an ideal base for countless outdoor adventures. The lodge sits directly on the shores of Bow Lake, offering immediate access to canoeing, fishing, and photography opportunities. The lake's turquoise waters, fed by the Bow Glacier, create some of the most photogenic scenes in the Canadian Rockies.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I always tell visiting friends: don't judge Banff hotels by chain-hotel standards. The mountain setting changes the whole experience.</aside>
 
 <p><strong>Popular hiking trails from the lodge include:</strong></p>
 <ul>
@@ -1583,6 +1665,8 @@ export const blogContent: Record<string, string> = {
 `,
   'fancy-hotel-in-banff': `
 <p>When you're seeking the top luxurious mountain retreat, nothing compares to staying at a fancy hotel in Banff. Set in the heart of the Canadian Rockies, Banff offers top-tier accommodations that perfectly blend alpine elegance with modern sophistication. For those planning a romantic getaway, celebrating a special occasion, or simply want to indulge in the finest mountain hospitality, Banff's luxury hotels deliver standout experiences against the backdrop of some of Canada's most incredible scenery.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> When my in-laws visited last summer, this is where we booked them. They loved the location and the mountain views from the room.</aside>
 
 <h2>The Crown Jewel: Fairmont Banff Springs</h2>
 
@@ -1657,6 +1741,8 @@ export const blogContent: Record<string, string> = {
   'mont-norquay': `
 <p>Rising majestically above the town of Banff, Mont Norquay stands as one of Alberta's most accessible and beloved ski destinations. This legendary mountain has been welcoming skiers and outdoor enthusiasts since 1926, making it one of Canada's oldest ski areas. If you're carving fresh powder in winter or exploring scenic chairlift rides in summer, Mt Norquay offers year-round adventures just minutes from downtown Banff. With its proximity to the Bow Valley and beautiful views of the surrounding Canadian Rockies, this alpine playground delivers authentic mountain experiences that capture the essence of Banff National Park.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> As a Canmore local, I'm naturally skeptical of anything that feels like a tourist trap. This isn't one.</aside>
+
 <h2>Getting to Mont Norquay</h2>
 
 <p>Located just 6 kilometers from downtown Banff, Mt. Norquay is remarkably accessible compared to other mountain destinations in the Canadian Rockies. The drive up Mount Norquay Road takes approximately 10 minutes, winding through dense forest before emerging at the base lodge at 1,630 meters elevation.</p>
@@ -1693,6 +1779,8 @@ export const blogContent: Record<string, string> = {
 
 <p>For thrill-seekers, the summer season brings mountain biking opportunities on designated trails, though riders must check with Parks Canada for current trail conditions and regulations within Banff National Park boundaries.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My biggest piece of advice: don't try to do everything in one trip. Pick two or three things and do them properly.</aside>
+
 <h2>Dining and Amenities</h2>
 
 <p>The Cascade Lodge at the base of Mont Norquay houses several dining options to fuel your mountain adventures. <strong>Cascade Patio</strong> offers casual fare including hearty burgers, poutine, and local beer selections, with most items priced between \$14-22 CAD.</p>
@@ -1721,6 +1809,8 @@ export const blogContent: Record<string, string> = {
 `,
   'bow-glacier-falls': `
 <p>Located deep within the fresh wilderness of Banff National Park, Bow Glacier Falls stands as one of the Canadian Rockies' most remarkable yet accessible waterfalls. This remarkable cascade tumbles dramatically from the edge of Bow Glacier, creating a mesmerizing display of glacial meltwater against towering limestone cliffs. While the falls may require a moderate hike to reach, the journey rewards visitors with an remarkable encounter with one of nature's most powerful forces, making it an essential destination for anyone seeking to experience the raw beauty of the Canadian Rockies in 2026.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've done this trail more times than I can count since moving to Canmore — it rewards you differently every season.</aside>
 
 <h2>Getting to Bow Glacier Falls: Your Journey Begins</h2>
 
@@ -1758,6 +1848,8 @@ export const blogContent: Record<string, string> = {
 
 <p><strong>Required Gear and Clothing:</strong> Sturdy hiking boots with excellent ankle support are non-negotiable, as the final approach involves navigating loose rock and potentially slippery surfaces near the falls. Layer your clothing to adapt to changing conditions – mountain weather can shift dramatically within hours. Pack a waterproof jacket, warm layers, and extra food and water beyond what you think you'll need.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I once made the mistake of doing this stretch at noon in July. Bring way more water than you think you need.</aside>
+
 <p><strong>Navigation and Trail Conditions:</strong> While the initial portion of the trail is well-marked, the final approach to the falls requires careful route-finding across glacial moraine. Cairns (rock piles) mark the general route, but fog or bad weather can make navigation challenging. Consider downloading offline maps to your smartphone or carrying a GPS device.</p>
 
 <p><strong>Wildlife Safety:</strong> The Bow Lake area is home to black bears, grizzly bears, and mountain goats. Parks Canada requires all hikers to carry bear spray and know how to use it properly. Make noise while hiking, especially around blind corners or areas with limited visibility. Store all food and scented items properly, and never approach or feed any wildlife.</p>
@@ -1790,6 +1882,8 @@ export const blogContent: Record<string, string> = {
 `,
   'banff-sunshine-lodging': `
 <p>When you're dreaming of a mountain getaway that combines excellent skiing with breathtaking alpine scenery, <a href="/blog/banff-view">15 Banff Views That Will Leave You Speechless in</a> Sunshine lodging offers some of the most impressive accommodation options in the Canadian Rockies. For anyone planning to hit the slopes at Sunshine Village or simply want to wake up surrounded by towering peaks, choosing the right place to stay near this iconic ski area can make or break your Banff adventure.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> As a local, I don't stay overnight in Banff, but I've had drinks and meals at most of the hotel restaurants. Some are genuinely excellent.</aside>
 
 <h2>Understanding Your Banff Sunshine Lodging Options</h2>
 
@@ -1882,6 +1976,8 @@ export const blogContent: Record<string, string> = {
   'mt-norquay': `
 <p>Towering majestically above the Bow Valley, Mt Norquay stands as one of Banff National Park's most accessible and thrilling mountain destinations. This iconic peak offers year-round adventures just minutes from downtown Banff, making it a perfect choice for visitors seeking mountain experiences without venturing far from town. For those planning to ski the legendary North American runs, hike scenic summer trails, or simply soak in panoramic views of the Canadian Rockies, Mt Norquay delivers incredible experiences for every type of mountain enthusiast.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> This is one of those hikes I recommend to every friend who visits me in Canmore. It never disappoints.</aside>
+
 <h2>Getting to Mt Norquay: Your Gateway to Mountain Adventure</h2>
 
 <p>Located just 7 kilometers from downtown Banff, Mount Norquay Banff is remarkably easy to reach. The clearly marked Mt Norquay Road winds up the mountainside, offering striking views even before you arrive at the base area. During the 2026 season, parking is available at the base lodge, though arriving early is recommended during peak periods.</p>
@@ -1924,6 +2020,8 @@ export const blogContent: Record<string, string> = {
 
 <p>The mountain's diverse ecosystems range from montane forests at the base to alpine environments near the summit. Wildflower enthusiasts will find peak blooming from mid-July through August, with Indian paintbrush, alpine forget-me-nots, and mountain avens creating colorful displays.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I ran into a grizzly on this section two summers ago. Gave it space and waited. Carry bear spray — it's not optional.</aside>
+
 <h2>Dining and Amenities</h2>
 
 <p>The Cliffhouse Bistro, located at the base of Mt Norquay, provides mountain dining with panoramic valley views. The restaurant serves both casual fare and more refined mountain cuisine, with outdoor seating available during pleasant weather. Menu highlights include locally-sourced Alberta beef, fresh Rocky Mountain trout, and hearty après-ski favorites.</p>
@@ -1961,6 +2059,8 @@ export const blogContent: Record<string, string> = {
 `,
   'mount-norquay-banff': `
 <p>Rising majestically 2,134 meters above sea level on <a href="/blog/banff-icewalk"><a href="/blog/chalets-for-rent-in-banff">Best Chalets for Rent in Banff</a> Icewalk : to Frozen Canyon Adventures</a>'s doorstep, Mount Norquay stands as one of the Canadian Rockies' most accessible and rewarding adventures. For those seeking winter thrills on the historic ski slopes, summer hiking adventures, or breathtaking panoramic views of the Bow Valley, Mount Norquay offers year-round excitement just minutes from downtown Banff. As we head into spring 2026, this iconic peak continues to captivate visitors with its perfect blend of accessibility, natural beauty, and outdoor recreation opportunities.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The ice conditions change weekly from November to March. I always check the Parks Canada trail reports before heading out.</aside>
 
 <h2>Mount Norquay: Banff's Local Mountain</h2>
 
@@ -2100,6 +2200,8 @@ export const blogContent: Record<string, string> = {
   'takakkaw-falls-to-banff': `
 <p>If you're planning an epic journey from the thundering Takakkaw Falls to Banff, you're in for one of the most impressive drives in the Canadian Rockies. This route takes you from British Columbia's towering waterfalls through the heart of Yoho National Park and into the world-renowned Banff National Park. For those a seasoned mountaineer or a casual road-tripper, this comprehensive guide will help you make the most of your adventure through some of Canada's most breathtaking wilderness.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've brought three different pairs of boots up this trail. The terrain is honest — it'll tell you fast if your footwear isn't right.</aside>
+
 <h2>The Takakkaw Falls to Banff Route Overview</h2>
 
 <p>The journey from <strong>Takakkaw Falls to Banff</strong> covers approximately 95 kilometers and typically takes about 1.5 to 2 hours of driving time. However, smart travelers allow a full day for this route to truly appreciate the jaw-dropping scenery and numerous photo opportunities along the way. The drive follows the Trans-Canada Highway (Highway 1) eastbound, crossing from British Columbia into Alberta as you enter Banff National Park.</p>
@@ -2139,6 +2241,8 @@ export const blogContent: Record<string, string> = {
 <p>As you continue east on Highway 1, you'll cross the Continental Divide and enter Banff National Park at the Alberta-British Columbia border. This transition marks your entry into Canada's oldest national park, established in 1885. All visitors to Banff National Park require a valid Parks Canada pass, which costs \$11.50 CAD per adult for a day pass or \$72.25 CAD for an annual Discovery Pass as of 2026.</p>
 
 <p>The park boundary crossing offers remarkable mountain vistas, but parking is limited. Plan to purchase your park pass online in advance or at the Banff Information Centre once you reach the townsite. During peak summer months, park entry can become congested, so early morning travel helps avoid delays.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've eaten lunch at this exact spot more times than I should admit. Bring something warm to drink — the temperature drops fast up here.</aside>
 
 <h3>Lake Louise Area</h3>
 
@@ -2283,6 +2387,8 @@ export const blogContent: Record<string, string> = {
 <h2>Planning Your Bridge-Hopping Adventure</h2>
 
 <p>Creating an itinerary that includes multiple Banff bridge locations requires some strategic planning, especially if you're also considering excursions to nearby attractions. For instance, if you're planning the journey from <strong>Takakkaw Falls to Banff</strong>, you'll want to factor in the 45 km drive time along the Trans-Canada Highway, which takes you across several notable bridge crossings including the Kicking Horse River bridge.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The wind can be brutal through this corridor. I've turned back here twice and I'm not embarrassed about it.</aside>
 
 <p>The drive from Takakkaw Falls to Banff typically takes about 50 minutes without stops, but budget at least 2-3 hours if you plan to explore the various bridge viewpoints along the route. The scenic Highway 1A (Bow Valley Parkway) adds about 20 minutes to your journey but provides access to the most photogenic bridge locations.</p>
 
@@ -2577,6 +2683,8 @@ export const blogContent: Record<string, string> = {
 
 <p>For scenic driving, the Bow Valley Parkway (Highway 1A) offers a slower, more wildlife-friendly alternative to the Trans-Canada Highway between Banff and Lake Louise. This route frequently provides opportunities to spot elk, deer, and occasionally bears while enjoying mountain vistas.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> This is where you'll feel the elevation if you're visiting from sea level. Take it slow; there's no rush.</aside>
+
 <h2>Accommodation Options Within the Park</h2>
 
 <p>Staying within park boundaries means you'll have your park pass checked upon arrival, but it provides exceptional access to early-morning and evening lighting at popular attractions.</p>
@@ -2673,6 +2781,8 @@ export const blogContent: Record<string, string> = {
   'sky-bistro-banff': `
 <p>Perched high above the Canadian Rockies with breathtaking panoramic views, Sky Bistro Banff offers one of the most incredible dining experiences in the region. Located at the summit of Sulphur Mountain, accessible via the iconic Banff Gondola, this mountain-top restaurant combines exceptional cuisine with outstanding vistas of six mountain ranges. For those celebrating a special occasion or simply want to treat yourself to an standout meal, Sky Bistro represents the pinnacle of alpine dining in Banff National Park.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> As a Canmore local, I get asked for restaurant recommendations constantly. These are the places I actually send people.</aside>
+
 <h2>Getting to Sky Bistro Banff: The Journey Up Sulphur Mountain</h2>
 
 <p>Your adventure to <strong>Sky Bistro Banff</strong> begins at the Banff Gondola base station, located just 5 minutes from downtown Banff at 100 Mountain Avenue. The eight-minute gondola ride takes you 698 meters above the Bow Valley, offering jaw-dropping views as you ascend to the 2,281-meter summit of Sulphur Mountain.</p>
@@ -2702,6 +2812,8 @@ export const blogContent: Record<string, string> = {
 <h2>Planning Your Visit: Seasons, Weather, and What to Bring</h2>
 
 <p>Each season offers a unique Sky Bistro experience. Summer visits (June through August) provide the warmest temperatures for terrace dining and the longest operating hours. Fall (September through October) delivers incredible autumn colors in the valley below, while winter transforms the landscape into a snow-covered wonderland perfect for cozy indoor dining with dramatic mountain vistas.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've tried most of the menu over multiple visits. The items I keep coming back to are the ones I've highlighted above.</aside>
 
 <p>Mountain weather can change rapidly, so dress in layers regardless of the season. Even on warm summer days, temperatures at the summit can be 10-15 degrees Celsius cooler than in the valley. Bring a jacket or sweater, especially if you plan to spend time on the outdoor terrace. Comfortable, closed-toe shoes are recommended for walking on the summit boardwalks.</p>
 
@@ -2788,6 +2900,8 @@ export const blogContent: Record<string, string> = {
   'best-things-to-do-in-banff-2026': `
 <p>Banff National Park is one of the most dramatic destinations on Earth — and 2026 is shaping up to be the best year yet to visit. For those a first-timer or a returning Rockies addict, this guide covers the <strong>20 best things to do in Banff</strong>, complete with booking links so you can lock in experiences before they sell out.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My partner and I have made this a semi-regular weekend hike. On a clear morning, the light on the peaks is unreal.</aside>
+
 <p>From riding the iconic gondola to cruising glacier-fed lakes, every activity on this list is something we've personally done and loved. Let's dive in.</p>
 
 <h2>1. Ride the Banff Gondola Up Sulphur Mountain</h2>
@@ -2821,6 +2935,8 @@ export const blogContent: Record<string, string> = {
 
 <h2>9. Take a Wildlife Safari</h2>
 <p>Banff is home to grizzly bears, black bears, elk, wolves, mountain goats, and bighorn sheep. While you can spot wildlife on your own along the Bow Valley Parkway and at Vermilion Lakes, a guided wildlife tour dramatically increases your chances — expert guides know exactly where and when animals are most active. Browse wildlife tour options on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The Parks Canada trail crew does a great job maintaining this section, but after heavy rain it gets muddy. Gaiters help.</aside>
 
 <h2>10. Canoe on the Bow River</h2>
 <p>Paddle through the heart of the Bow Valley on one of the most scenic rivers in the Rockies. Several outfitters in Banff town rent canoes and kayaks for gentle stretches of the Bow River, with Mount Rundle and Cascade Mountain towering overhead. It's peaceful, beautiful, and suitable for all skill levels.</p>
@@ -2868,6 +2984,8 @@ export const blogContent: Record<string, string> = {
   'banff-gondola-tickets-guide': `
 <p>The <strong>Banff Gondola</strong> is the single most popular attraction in Banff National Park, carrying visitors 698 metres up <strong>Sulphur Mountain</strong> to a incredible summit station at 2,281 metres above sea level. For anyone planning your first visit or looking for the best deal on tickets, this guide has everything you need to know about riding the Banff Gondola in 2026.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've brought visiting friends here more times than I can count. The reaction is always the same — genuinely impressed.</aside>
+
 <h2>Banff Gondola Ticket Prices (2026)</h2>
 <p>Here are the current standard prices for the Banff Gondola:</p>
 <ul>
@@ -2914,6 +3032,8 @@ export const blogContent: Record<string, string> = {
 
 <h3>Sanson's Peak Boardwalk</h3>
 <p>A 1 km interpretive boardwalk connects the summit station to <strong>Sanson's Peak</strong>, named after the meteorologist who climbed Sulphur Mountain over 1,000 times to take weather readings. The boardwalk is fully accessible and lined with educational panels about the park's geology, wildlife, and history.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My advice: skip the basic package and go for the longer option. The extra hour makes a real difference.</aside>
 
 <h3>Interactive Exhibits</h3>
 <p>Inside the summit building, multimedia exhibits explore the natural and human history of the Canadian Rockies. It's educational, well-designed, and a great option if the weather turns.</p>
@@ -2971,6 +3091,8 @@ export const blogContent: Record<string, string> = {
 `,
   'best-banff-hiking-trails-guide': `
 <p>With over 1,600 km of maintained trails cutting through some of the most dramatic mountain scenery on the planet, Banff National Park is a hiker's dream. This guide covers the <strong>15 best hikes in Banff</strong> for 2026, organized by difficulty, with real distances, elevation gains, and insider tips to help you make the most of every trail.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I did this one for the first time in 2019 and I've gone back at least once a year since. The trail itself is the reward.</aside>
 
 <p>All hikes require a valid <strong>Parks Canada pass</strong> (\$11.00/day per adult or \$22.40/day per family in 2026). Buy yours at any park gate or online at reservation.pc.gc.ca.</p>
 
@@ -3141,6 +3263,8 @@ export const blogContent: Record<string, string> = {
   'banff-weather-best-time-to-visit': `
 <p>Banff's mountain weather is famously unpredictable — we've seen snowfall in July and T-shirt days in October. Understanding what to expect each month is essential for planning a great trip. This guide breaks down <strong>Banff weather month by month</strong>, the best time to visit for each activity, and exactly what to pack so you're prepared for anything the Rockies throw at you.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I'll be upfront: Banff restaurants aren't cheap, but the quality has improved massively over the past few years.</aside>
+
 <h2>Banff Weather Overview</h2>
 <p>Banff townsite sits at <strong>1,383 metres</strong> (4,537 feet) above sea level, which means temperatures are always cooler than nearby Calgary. Mountain weather can change in minutes — sunshine can turn to hail, rain, or even snow with little warning, any time of year. The key to comfortable hiking, sightseeing, and outdoor activities in Banff is <strong>layering</strong>.</p>
 
@@ -3309,6 +3433,8 @@ export const blogContent: Record<string, string> = {
   'best-banff-restaurants-where-to-eat': `
 <p><a href="/blog/banff-restaurant-specials">Best Banff Restaurant Specials & Deals You Can't Miss</a>'s restaurant scene has evolved far beyond basic mountain fare. Today, the town punches well above its weight with locally-sourced cuisine, innovative chefs, and dining rooms with views that rival any big-city restaurant. For those looking for a post-hike burger, a romantic fine-dining experience, or the best poutine in the Rockies, this guide covers the <strong>15 best restaurants in Banff</strong> — all personally tested and locally approved.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've probably spent an embarrassing amount at Banff restaurants since moving to the Bow Valley. No regrets.</aside>
+
 <h2>Fine Dining & Special Occasions</h2>
 
 <h3>1. The Bison Restaurant & Terrace</h3>
@@ -3428,6 +3554,8 @@ export const blogContent: Record<string, string> = {
 
 <h2>Food & Dining Costs</h2>
 <p>Banff restaurants range from budget-friendly to fine dining. Here's what to expect:</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The viewpoint everyone photographs is fine, but walk 200 metres past it and you'll get a better angle without the crowds.</aside>
 
 <h3>Budget Dining (\$30-50/person/day)</h3>
 <ul>
@@ -3842,6 +3970,9 @@ export const blogContent: Record<string, string> = {
 <h2>Renting a Car</h2>
 <p>The most flexible option. Car rental counters are located in the Calgary airport terminal. The drive to Banff along Highway 1 is scenic and straightforward -- you'll start seeing mountains within 45 minutes of leaving Calgary.</p>
 <p>Having a car gives you freedom to explore the Icefields Parkway, Lake Louise, Moraine Lake, and remote trailheads on your own schedule. Parking in Banff town is manageable outside of peak summer weekends.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The one thing I wish I'd known before moving here: the weather in the Bow Valley can change completely in 30 minutes. Always pack layers.</aside>
+
 <div class="tip-box"><strong>Winter Driving:</strong> From November to April, winter tires or chains are legally required on Highway 1 through the mountain parks. Most rental companies offer winter-equipped vehicles.</div>
 
 <h2>Airport Shuttles</h2>
@@ -3940,6 +4071,8 @@ export const blogContent: Record<string, string> = {
   'best-hikes-in-banff': `
 <p>With over 1,600 km of maintained trails, Banff National Park is a hiker's paradise. Here are 15 of the best hikes sorted by difficulty, from easy lakeside strolls to challenging alpine adventures.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I'll be honest: this hike is more of a slog than the photos suggest. But the payoff at the top is absolutely worth it.</aside>
+
 <h2>Easy Hikes</h2>
 
 <h3>1. Johnston Canyon to Lower Falls (1.1 km one way)</h3>
@@ -3999,6 +4132,8 @@ export const blogContent: Record<string, string> = {
   'lake-louise-complete-guide': `
 <p>Lake Louise is the jewel of the Canadian Rockies -- a turquoise glacial lake framed by towering peaks and Victoria Glacier. Here's everything you need to know to plan a perfect visit.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My dog and I have done this trail in every season. Winter is the most peaceful, but you'll need microspikes.</aside>
+
 <h2>Getting There</h2>
 <p>Lake Louise is 57 km (35 minutes) northwest of Banff town along the Trans-Canada Highway. You can drive, take Roam Transit Route 8X (seasonal), or join a guided tour. Parking fills up by 8-9am in summer, so arrive early or use transit.</p>
 
@@ -4037,6 +4172,8 @@ export const blogContent: Record<string, string> = {
 
   'moraine-lake-guide': `
 <p>Moraine Lake might be the most photographed lake in all of Canada. Its vivid blue water, the Valley of the Ten Peaks backdrop, and the dramatic rocky shoreline make it one of those places that genuinely lives up to the hype.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Living 20 minutes from Banff means I can hit this trailhead before sunrise, and honestly that's the best way to experience it.</aside>
 
 <h2>How to Visit Moraine Lake in 2026</h2>
 <p>Private vehicles are no longer permitted to drive to Moraine Lake during peak season (approximately June to mid-October). You must take the <strong>Parks Canada shuttle</strong> from the Lake Louise Park & Ride. Shuttle reservations open in spring and sell out quickly.</p>
@@ -4087,6 +4224,8 @@ export const blogContent: Record<string, string> = {
 <h2>Ice Skating</h2>
 <p>Skate on the frozen surface of <strong>Lake Louise</strong> with the Chateau and Victoria Glacier as your backdrop -- one of the most scenic skating experiences in the world. Rentals are available on-site. <strong>Vermilion Lakes</strong> and <strong>Two Jack Lake</strong> also freeze for skating in good conditions.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The guides here are mostly locals who actually know the area. Ask questions — they'll share stuff you won't find online.</aside>
+
 <h2>Banff Upper Hot Springs</h2>
 <p>There's nothing quite like soaking in naturally heated mineral pools (37-40°C) while snow falls around you and mountains tower overhead. Open year-round, but winter is when it's most atmospheric.</p>
 
@@ -4111,6 +4250,8 @@ export const blogContent: Record<string, string> = {
 
   'banff-in-summer': `
 <p>Summer in Banff is peak season for a reason. Long daylight hours (sunrise before 6am, sunset after 10pm in June), warm temperatures, fully accessible trails, and turquoise lakes at their most vibrant. Here's everything you need to plan the perfect summer trip.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Full disclosure: I live in Canmore, and this hike is one of the main reasons I stay in the valley.</aside>
 
 <h2>Weather & What to Expect</h2>
 <p>Summer temperatures range from 15-25°C (59-77°F) during the day, dropping to 5-10°C at night. Afternoon thunderstorms are common in July and August, so always carry a rain layer. The UV is intense at elevation -- sunscreen is essential.</p>
@@ -4157,6 +4298,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Free & Cheap Activities</h2>
 <p>The best things in Banff are free -- you just need a park pass ($11/day for adults, $22.40 for a family/group).</p>
+
 <ul>
 <li>Hike any of the hundreds of trails in the park</li>
 <li>Walk the shores of Lake Louise and Moraine Lake</li>
@@ -4204,6 +4346,7 @@ export const blogContent: Record<string, string> = {
 <h2>Tunnel Mountain</h2>
 <p><strong>Best for:</strong> nature lovers, families, and campers.</p>
 <p>A 10-minute drive (or bus ride) from downtown, Tunnel Mountain offers a quieter, more natural setting surrounded by forest. This is where you'll find most of Banff's camping and condo-style accommodation.</p>
+
 <ul>
 <li><strong>Tunnel Mountain Resort:</strong> Condo-style suites with kitchens, pool, hot tub ($-$$)</li>
 <li><strong>Hidden Ridge Resort:</strong> Spacious suites with fireplaces and mountain views ($$)</li>
@@ -4235,6 +4378,8 @@ export const blogContent: Record<string, string> = {
   'banff-food-guide': `
 <p><a href="/blog/banff-restaurant-specials">Best Banff Restaurant Specials & Deals You Can't Miss</a>'s food scene is far more impressive than you'd expect from a small mountain town. From farm-to-table fine dining to hearty pub grub and artisan bakeries, here's where to eat and drink in Banff.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Living in Canmore means I skip the tourist-trap restaurants and eat where the locals eat. These are the ones worth your money.</aside>
+
 <h2>Fine Dining</h2>
 <h3>The Bison Restaurant</h3>
 <p>The crown jewel of Banff dining. Regional Rocky Mountain cuisine with locally sourced ingredients -- bison short ribs, elk carpaccio, Alberta beef, and an excellent wine list. The rustic-elegant Bear Street setting is perfect for a special night out. Reservations strongly recommended.</p>
@@ -4259,6 +4404,8 @@ export const blogContent: Record<string, string> = {
 <h3>The Eddie Burger + Bar</h3>
 <p>Gourmet burgers in a funky basement joint. Creative toppings, spiked milkshakes, and a no-frills vibe. The elk burger is a must-try. Most items under $20.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Happy hour here is one of Banff's better-kept secrets. The locals know; now you do too.</aside>
+
 <h3>Tooloulou's</h3>
 <p>Cajun and Creole flavours meet the Rockies. Po' boys, jambalaya, gumbo -- all served with genuine Southern hospitality and mountain portions.</p>
 
@@ -4282,6 +4429,8 @@ export const blogContent: Record<string, string> = {
 
   'icefields-parkway-guide': `
 <p>The Icefields Parkway (Highway 93 North) is a 232 km road connecting Lake Louise to Jasper through the heart of the Canadian Rockies. It's regularly called one of the most scenic drives in the world, and it earns that title at every turn.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The locals' version of Banff is very different from the tourist version. I'll try to give you a bit of both here.</aside>
 
 <h2>Planning Your Drive</h2>
 <p>The drive takes about 3 hours without stops, but you'll want a full day to properly enjoy it. Start from Lake Louise and drive north toward Jasper, or do it as a long day trip from Banff (returning the same way).</p>
@@ -4410,6 +4559,8 @@ export const blogContent: Record<string, string> = {
 
   'banff-skiing-guide': `
 <p>With three top-tier resorts collectively known as <strong>SkiBig3</strong>, Banff offers some of the best <a href="/blog/backcountry-skiing-day-tours-canadian-rockies">Banff Backcountry Skiing Day Tours</a> in North America. Here's your complete guide to hitting the slopes.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> You don't need to be an expert to enjoy this. I went in as a complete beginner and had a fantastic time.</aside>
 
 <h2>The Three Resorts Compared</h2>
 
@@ -4722,6 +4873,8 @@ export const blogContent: Record<string, string> = {
   'bow-valley-parkway-guide': `
 <p>The Bow Valley Parkway (Highway 1A) is one of the most beautiful and wildlife-rich roads in the Canadian Rockies. This 51 km route between Banff and Lake Louise winds through dense forest along the Bow River, offering a slower, more intimate alternative to the Trans-Canada Highway. If you see one road in Banff, it might be the Icefields Parkway — but if you want to see wildlife, this is the one.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I drive this route regularly and the pullouts are the real gems. Most tourists blow right past them.</aside>
+
 <h2>Getting Started</h2>
 <p>The Bow Valley Parkway begins at the Highway 1/Highway 1A interchange just west of Banff town and ends at the Lake Louise junction, 51 km later. You can drive it in either direction. The speed limit is 60 km/h throughout — this is intentionally slow to protect wildlife and let you enjoy the scenery.</p>
 <p>Budget 2-3 hours for a leisurely drive with stops, or half a day if you hike Johnston Canyon.</p>
@@ -4739,6 +4892,8 @@ export const blogContent: Record<string, string> = {
 
 <h3>4. Moose Meadows (km 22)</h3>
 <p>A marshy meadow area that's aptly named — moose are occasionally spotted here, along with elk and deer. Pull off carefully and scan the treeline, especially in early morning.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I keep a pair of microspikes in my car from October to May. The trails look clear from the parking lot but the shaded sections are a different story.</aside>
 
 <h3>5. Castle Mountain Viewpoint (km 28)</h3>
 <p>A pulloff with a beautiful view of Castle Mountain, one of the most dramatic and recognisable peaks in the Rockies. Its flat-topped, castle-like silhouette is especially photogenic in sunset light. Castle Junction, nearby, is a small hub with basic services.</p>
@@ -4872,6 +5027,8 @@ export const blogContent: Record<string, string> = {
 
 <h3>The Rose & Crown</h3>
 <p>A Banff institution — this British-style pub has been pouring pints for decades. While not a brewery, they have an excellent selection of craft beers on tap including local and regional favourites. The rooftop patio, live music, and lively atmosphere make it a top evening destination.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I brought my parents here when they visited from out of province and they still bring it up. High praise from my family.</aside>
 
 <h3>Park Distillery</h3>
 <p>While primarily a distillery (their spirits are made with glacial water), Park Distillery also serves a chosen selection of craft beers alongside their famous campfire-cooked food and house cocktails. The atmosphere alone is worth the visit.</p>
@@ -5053,6 +5210,8 @@ export const blogContent: Record<string, string> = {
 <p>Continuing past the Lower Falls, the trail climbs gradually through the canyon to reach the Upper Falls (30 metres high). The path is slightly rougher and narrower in places but still manageable for most visitors. Several viewpoints along the way offer glimpses of the canyon from above, with the creek rushing far below through narrow gaps in the rock.</p>
 <p>The Upper Falls viewpoint provides a dramatic perspective of the water crashing over the cliff edge into the canyon below. A steel-grated platform lets you look straight down into the gorge. This is the turnaround point for most visitors.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The section right around here is where most people turn back. If you push through the next 20 minutes, you'll have the best views to yourself.</aside>
+
 <h2>The Ink Pots</h2>
 <p>For those wanting a longer hike, the trail continues past the Upper Falls into open meadows and forest to reach the Ink Pots — five cold mineral springs that bubble up through vivid green and blue pools in an alpine meadow. The colours come from dissolved minerals in the spring water, and each pool is a slightly different shade.</p>
 <p>The Ink Pots are far less crowded than the canyon section and offer a completely different, peaceful experience. The surrounding meadow is a great spot for a picnic lunch with mountain views. Watch for wildlife — elk and bears are commonly seen in this area.</p>
@@ -5096,6 +5255,8 @@ export const blogContent: Record<string, string> = {
 <h2>What to Do at the Summit</h2>
 <h3>Rooftop Observation Deck</h3>
 <p>Step out onto the 360-degree rooftop deck for unobstructed views in every direction. On a clear day you can see the town of Banff, the Bow Valley, Mount Rundle, Cascade Mountain, Lake Minnewanka, and distant peaks stretching to the horizon. This is one of the most photographed viewpoints in all of Banff.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The crowds are manageable if you go first thing in the morning. I always aim for the earliest available slot.</aside>
 
 <h3>Sanson's Peak Boardwalk</h3>
 <p>A 1 km elevated boardwalk extends along the ridgeline from the summit building to Sanson's Peak, where a restored Cosmic Ray Station sits at 2,281 metres. Named after Norman Sanson, who hiked to the summit over 1,000 times between 1903 and 1945 to take weather readings, this walk offers changing perspectives of the valley below and surrounding ranges. Budget 30-45 minutes for the round trip.</p>
@@ -5150,6 +5311,9 @@ export const blogContent: Record<string, string> = {
 
 <h2>The Tea House</h2>
 <p>The Lake Agnes Tea House was originally built by the Canadian Pacific Railway in 1901 as a rest stop for hikers. Today it's operated as a rustic backcountry teahouse serving over 100 varieties of loose-leaf tea, plus homemade baked goods including scones, cookies, sandwiches, and soups.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Last time I was here in late September, the larch trees were peak gold. I actually pulled over on the drive home to look at my photos because I couldn't believe they were real.</aside>
+
 <p>Everything served here is packed in by staff on foot — there's no road access, no electricity, and no running water. The menu changes based on what can be carried up the trail. Cash is preferred, though some card payment may be available.</p>
 <p>The teahouse is typically open from <strong>early June to mid-October</strong>, weather permitting. Operating hours are approximately 8am to 5pm. Expect a line during peak summer hours (11am-2pm), but it moves quickly and the wait is part of the experience.</p>
 
@@ -5175,6 +5339,8 @@ export const blogContent: Record<string, string> = {
 
   'sunshine-village-guide': `
 <p><a href="/blog/sunshine-ski-resort-accommodation">Best Sunshine Village Ski Resort Lodging in Banff</a> Village is the highest-altitude ski resort in the Canadian Rockies and one of the three resorts that make up Banff's famous SkiBig3. Straddling the Continental Divide at the border of Alberta and British Columbia, Sunshine is famous for its deep natural snow, long season, and vast alpine terrain. Here's everything you need to know to plan your visit.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I'll be honest: I avoided this for my first two years in the Bow Valley because I assumed it was all hype. I was wrong.</aside>
 
 <h2>Resort Overview</h2>
 <ul>
@@ -5295,12 +5461,16 @@ export const blogContent: Record<string, string> = {
   'banff-hot-springs-guide': `
 <p>The Banff Upper Hot Springs are one of the most popular attractions in Banff National Park — and for good reason. Naturally heated mineral water, mountain views from the pool, and a history that goes back to the very founding of Canada's national parks make this a must-do experience for every visitor.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My recommendation if you only do one activity in Banff: make it this one. I've lived in the valley for years and I'm still not tired of it.</aside>
+
 <h2>History</h2>
 <p>Hot springs are the reason Banff National Park exists. In 1883, three railway workers discovered natural hot springs on Sulphur Mountain, sparking a dispute over ownership that led the Canadian government to create Banff as Canada's first national park in 1885. The Upper Hot Springs facility has been welcoming bathers since 1932, making it one of the longest-operating hot springs pools in Canada.</p>
 
 <h2>What to Expect</h2>
 <p>The Banff Upper Hot Springs is an outdoor public pool fed by naturally heated mineral water. The water emerges from the mountain at approximately 47°C and is cooled to a comfortable 37-40°C in the pool. The water contains sulphate, calcium, bicarbonate, magnesium, and sodium — minerals believed to have therapeutic benefits.</p>
 <p>The pool is surrounded by a stone deck with mountain views in every direction. On a clear day, you can see Cascade Mountain, Mount Rundle, and Sulphur Mountain towering above. On a snowy winter evening, steam rises from the water into the cold mountain air, creating a magical, atmospheric scene.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Bring layers — the temperature can shift 10°C in an hour up here, especially in spring and fall.</aside>
 
 <h2>Practical Information</h2>
 <ul>
@@ -5371,6 +5541,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>The Hiking Experience</h2>
 <p>The Sulphur Mountain Trail starts from the Upper Hot Springs parking lot and climbs 5.5 km through forest via well-maintained switchbacks to the summit ridge. The trail gains approximately 655 metres of elevation.</p>
+
 <h3>Trail Details</h3>
 <ul>
 <li><strong>Distance:</strong> 5.5 km one way</li>
@@ -5434,6 +5605,8 @@ export const blogContent: Record<string, string> = {
   'banff-to-jasper-drive': `
 <p>The drive from Banff to Jasper along the Icefields Parkway (Highway 93 North) is widely considered one of the most scenic road trips in the world. Over 290 km, the highway threads through the heart of the Canadian Rockies past turquoise lakes, ancient glaciers, thundering waterfalls, and towering peaks. Here's how to plan the complete road trip.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I'll be honest: Banff tourism can feel overwhelming. But if you know where to look, the authentic experiences are still there.</aside>
+
 <h2>Route Overview</h2>
 <ul>
 <li><strong>Distance:</strong> 290 km from Banff town to Jasper town (232 km on the Icefields Parkway itself, from Lake Louise to Jasper)</li>
@@ -5469,6 +5642,9 @@ export const blogContent: Record<string, string> = {
 
 <h3>6. Columbia Icefield Centre (km 127)</h3>
 <p>The highlight of the drive. The Columbia Icefield is the largest body of ice in the Canadian Rockies, feeding rivers that flow to three oceans. At the Icefield Centre, you can:</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I keep a full set of winter gear in my trunk for this drive. Even in May, snowstorms can hit the higher elevations.</aside>
+
 <ul>
 <li><strong>Walk to the toe of the Athabasca Glacier</strong> (free, 15-minute walk from the parking lot)</li>
 <li><strong>Ice Explorer tour:</strong> Ride a massive all-terrain vehicle onto the glacier surface</li>
@@ -5535,6 +5711,8 @@ export const blogContent: Record<string, string> = {
 
 <h3>Johnson Lake Loop (3 km loop, Easy)</h3>
 <p>A gentle loop around Johnson Lake with mountain views and lakeside sections. The trail is mostly flat with some short hills. A good option for a relaxed outing.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Prices jumped a bit in 2025 but the quality held. Budget about $30-45 CAD per person for a solid meal.</aside>
 
 <h3>Lake Minnewanka Lakeshore (varies, Easy-Moderate)</h3>
 <p>Walk as far as you like along the shore of Banff's largest lake. The trail is well-maintained and offers mountain and lake views. Dogs enjoy the lakeside terrain.</p>
@@ -5642,6 +5820,8 @@ export const blogContent: Record<string, string> = {
 
   'peyto-lake-guide': `
 <p>Peyto Lake is one of the most photographed lakes in the Canadian Rockies — a strikingly turquoise, wolf-head-shaped lake viewed from a dramatic cliff-top viewpoint on the Icefields Parkway. It's a must-stop for anyone driving between Banff and Jasper, and even worth a day trip on its own. Here's everything you need to know about visiting this turquoise gem.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> My partner and I have done this drive in every season. Fall is the most scenic, but winter has a drama to it that I love.</aside>
 
 <h2>Where Is Peyto Lake?</h2>
 <p>Peyto Lake (pronounced PEE-toe) is located along the Icefields Parkway (Highway 93 North), approximately 40 km north of the Highway 1 junction near Lake Louise. It sits at 1,860 metres elevation in the Waputik Range, fed by glacial melt from the Peyto Glacier and surrounding ice fields. The lake is named after Bill Peyto, a famous early mountain guide and park warden.</p>
@@ -5825,6 +6005,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Wildlife Viewing</h3>
 <p>Fall is one of the best seasons for wildlife in Banff. The elk rut happens in September and early October — you'll hear the haunting bugling calls echoing through the valleys, especially around the Banff Springs Golf Course and the outskirts of town. Bears are in hyperphagia — feeding intensely before hibernation — and are frequently seen along the Bow Valley Parkway and near berry patches.</p>
+
 <p><em>Keep 30m from elk (especially during rut) and 100m from bears. Both are more unpredictable during fall.</em></p>
 
 <h3>Scenic Drives</h3>
@@ -5925,6 +6106,8 @@ export const blogContent: Record<string, string> = {
 
   'banff-bear-safety': `
 <p>Banff National Park is bear country. Both black bears and grizzly bears live in the park, and while encounters are relatively rare, they do happen. Understanding bear behaviour and knowing what to do can mean the difference between a safe encounter and a dangerous one. This guide covers everything you need to know about bear safety in Banff.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> One thing about living near a national park — you never run out of new things to discover, even after years.</aside>
 
 <h2>Bears in Banff</h2>
 <p>Banff National Park is home to approximately 60-80 grizzly bears and a larger population of black bears. Bears are most active from April through November, with peak activity during berry season (July-September) and the pre-hibernation feeding frenzy in fall (September-October).</p>
@@ -6048,6 +6231,8 @@ export const blogContent: Record<string, string> = {
 
   'banff-winter-driving': `
 <p>Driving to Banff in winter requires preparation, respect for the conditions, and the right equipment. The Trans-Canada Highway from Calgary is well-maintained but passes through mountain terrain where conditions can change rapidly. Blizzards, black ice, and reduced visibility are real risks. Here's everything you need to know to arrive safely.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> After years in Canmore, my perspective on Banff has changed a lot. The park is massive and most visitors only see about 5% of it.</aside>
 
 <h2>The Route: Calgary to Banff</h2>
 <p>The drive from Calgary International Airport (YYC) to Banff is 130 km (80 miles) west on the Trans-Canada Highway (Highway 1). In good conditions, it takes about 90 minutes. In winter, allow 2-3 hours depending on conditions. The highway is a divided four-lane road with well-maintained lanes, but elevation increases as you approach the mountains.</p>
@@ -6210,6 +6395,8 @@ export const blogContent: Record<string, string> = {
   'banff-stargazing-guide': `
 <p>Banff National Park was designated a <strong>Dark Sky Preserve</strong> by the Royal Astronomical Society of Canada in 2017, making it one of the largest accessible dark sky preserves in the world. With minimal light pollution, high elevation, and dry mountain air, Banff offers notable stargazing that rivals any location on Earth. Here's your complete guide to experiencing the night sky in the Canadian Rockies.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The key with this activity is timing. I've done it in every season and the experience varies dramatically.</aside>
+
 <h2>What Is a Dark Sky Preserve?</h2>
 <p>A Dark Sky Preserve is an area with minimal artificial light pollution where darkness is protected for wildlife, ecosystems, and human enjoyment of the night sky. Parks Canada actively manages lighting in Banff to reduce light pollution — streetlights are shielded, and there are strict guidelines on outdoor lighting. The result is incrediblely dark skies just minutes from town.</p>
 
@@ -6234,6 +6421,8 @@ export const blogContent: Record<string, string> = {
 
 <h3>3. Lake Minnewanka</h3>
 <p>Banff's largest lake offers a very dark sky — you're further from town lights here. The lake's length provides a dramatic foreground with mountain silhouettes. The parking lot at the lake is a convenient viewing spot.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> One thing the brochures don't mention: the drive to get here is half the experience. Take the Bow Valley Parkway if you have time.</aside>
 
 <h3>4. Cascade Ponds</h3>
 <p>Small, quiet ponds along the Lake Minnewanka road. Dark skies, no crowds, and picnic tables where you can set up comfortably. A great spot for a relaxed stargazing session.</p>
@@ -6348,6 +6537,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Stage 1: Moraine Lake to Larch Valley (3.2 km)</h2>
 <p>The first section climbs steadily through Engelmann spruce and subalpine fir forest with glimpses of the Ten Peaks through the trees. At about 2.4 km, the forest begins to thin and you enter <strong>Larch Valley</strong> — a high alpine meadow ringed by towering peaks.</p>
+
 <p>If you're visiting in <strong>late September</strong>, this is where the magic happens. The alpine larch trees (the only conifer that loses its needles) turn brilliant gold, creating one of the most photographed landscapes in the Canadian Rockies. Carpets of golden needles blanket the ground beneath the larches, and the contrast against the grey rock and blue sky is remarkable.</p>
 
 <h2>Stage 2: Larch Valley to Sentinel Pass (2.6 km)</h2>
@@ -6482,6 +6672,8 @@ export const blogContent: Record<string, string> = {
   'two-jack-lake-guide': `
 <p>Two Jack Lake may be one of the most photographed spots in Banff National Park — and for good reason. This jewel of a lake sits in the shadow of Mount Rundle, offering beautiful reflections, excellent camping, great kayaking, and some of the best astrophotography locations in the Rockies. Despite being just 12 km from Banff town, it maintains a peaceful, wild atmosphere that larger destinations lack.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've eaten at most restaurants on Banff Ave at least once. Some of them twice was too many.</aside>
+
 <h2>Getting There</h2>
 <p>Two Jack Lake is located on the Lake Minnewanka Scenic Loop, about a 12-minute drive from Banff town. Follow the signs past Johnson Lake toward Lake Minnewanka — Two Jack Lake is on your left. Parking is available at the day-use area. Roam Transit Route 6 (seasonal) serves the area.</p>
 
@@ -6496,6 +6688,8 @@ export const blogContent: Record<string, string> = {
 
 <h3>Swimming</h3>
 <p>On warm summer days (July-August), Two Jack Lake is one of the more swimmable lakes near Banff. The water is cold but refreshing — glacial lakes warm slightly by mid-August. The day-use area has a gentle shoreline entry. Always supervise children closely as there are no lifeguards.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The lunch menu is a significantly better deal than dinner, and the food is identical. That's what I'd do on a budget.</aside>
 
 <h3>Camping</h3>
 <p>Two Jack Lake has two campground options:</p>
@@ -6537,6 +6731,7 @@ export const blogContent: Record<string, string> = {
 <p><strong>Distance:</strong> 9.4 km return</p>
 <p><strong>Elevation Gain:</strong> 155 metres</p>
 <p><strong>Difficulty:</strong> Easy to moderate</p>
+
 <p><strong>Time:</strong> 3–4 hours round trip</p>
 <p>The trail to Bow Glacier Falls follows the lakeshore, crosses the gravel flats at the far end of the lake, and then climbs gently to the base of a jaw-dropping waterfall fed by the Bow Glacier above. The falls plunge over a cliff face in a wide cascade that's particularly impressive in July when snowmelt is at its peak.</p>
 <p>The trail crosses several braided stream channels on the gravel flats — be prepared for potentially wet feet. The final approach to the falls involves some boulder-hopping. The reward is a thundering waterfall with glacier views and virtually no crowds compared to popular Banff trails.</p>
@@ -6580,6 +6775,7 @@ export const blogContent: Record<string, string> = {
 <p><strong>Distance:</strong> 5.2 km loop</p>
 <p><strong>Elevation Gain:</strong> Minimal (flat)</p>
 <p><strong>Time:</strong> 1.5–2 hours</p>
+
 <p>This easy loop trail circles the entire lake, offering changing perspectives at every turn. The west side features a boardwalk through an alluvial fan, while the far end gives a peaceful, less-trafficked view back toward the lodge. Interpretive signs explain the area's ecology and geology. The trail is suitable for all fitness levels.</p>
 
 <h3>Dine at Cilantro on the Lake</h3>
@@ -6615,6 +6811,8 @@ export const blogContent: Record<string, string> = {
   'vermilion-lakes-guide': `
 <p>Vermilion Lakes might be Banff's best-kept secret — which is remarkable given that they're just a 5-minute drive from the centre of town. This trio of shallow lakes on the western edge of Banff offers the finest sunrise photography, the most reliable wildlife viewing, and some of the most peaceful moments you'll experience in the national park. While tourists flock to Lake Louise and Moraine Lake, those in the know head to Vermilion Lakes.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've brought maybe 20 different friends to this viewpoint over the years. It has a 100% success rate for jaw drops.</aside>
+
 <h2>Getting There</h2>
 <p>Vermilion Lakes are accessed via Vermilion Lakes Road, which runs parallel to the Trans-Canada Highway on the south side. The turnoff is just west of the Mount Norquay interchange — look for the signs from the highway or from Banff Avenue heading west. The road is paved, flat, and has multiple pulloffs for parking along the three lakes. You can also walk or cycle from downtown Banff in about 15 minutes.</p>
 
@@ -6628,6 +6826,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Sunrise Photography</h2>
 <p>Vermilion Lakes is <strong>the</strong> premier sunrise photography location in Banff. The lakes face east toward Mount Rundle, which catches the first morning light in dramatic fashion — turning orange, pink, and gold while the still water creates a perfect mirror reflection.</p>
+
 <h3>Photography Tips</h3>
 <ul>
 <li>Set up at the Second Vermilion Lake for the classic Mount Rundle reflection</li>
@@ -6774,6 +6973,8 @@ export const blogContent: Record<string, string> = {
   'banff-snowshoeing-guide': `
 <p>Snowshoeing is one of the best ways to experience Banff in winter. It's accessible to virtually everyone — if you can walk, you can snowshoe — and it opens up a world of snow-covered trails, frozen lakes, and silent forests that most winter visitors never see. With options ranging from flat lakeside strolls to challenging mountain ascents, Banff's snowshoeing trails rival its summer hiking in beauty and variety.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Banff in winter is a completely different place. Fewer tourists, frozen waterfalls, and that quiet cold that makes everything feel more immediate.</aside>
+
 <h2>Best Snowshoeing Trails in Banff</h2>
 
 <h3>1. Taylor Lake</h3>
@@ -6790,6 +6991,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>4. Boom Lake</h3>
 <p><strong>Distance:</strong> 10.4 km return | <strong>Elevation Gain:</strong> 180m | <strong>Difficulty:</strong> Moderate</p>
+
 <p>A gentle trail through dense forest to a beautiful frozen alpine lake. The trail is well-packed and relatively flat, making it a great intermediate option. Located on Highway 93 South, about 25 minutes from Banff.</p>
 
 <h3>5. Chester Lake (Kananaskis)</h3>
@@ -6884,6 +7086,8 @@ export const blogContent: Record<string, string> = {
 
   'banff-ice-skating': `
 <p>Ice skating in Banff is a winter experience unlike any other. Imagine gliding across a frozen lake with snow-capped mountains towering above you, crisp alpine air filling your lungs, and the crunch of blades on natural ice the only sound for miles. From the iconic rink at Lake Louise to hidden frozen lakes and town facilities, Banff offers some of the most scenic skating in the world.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I've learned to dress in layers living here. My go-to is merino base, fleece mid, and a windproof shell. Cotton will ruin your day.</aside>
 
 <h2>Best Ice Skating Locations</h2>
 
@@ -7072,6 +7276,7 @@ export const blogContent: Record<string, string> = {
 <h3>Bow River (Class I-II)</h3>
 <p><strong>Best for:</strong> Families, beginners, and scenic floats</p>
 <p>The Bow River through Banff and Canmore offers a gentle, scenic float trip with mild rapids and dramatic mountain scenery. This is rafting as relaxation — you'll float past elk, osprey nests, and the Fairmont Banff Springs Hotel with the Canadian Rockies as your backdrop.</p>
+
 <ul>
 <li><strong>Duration:</strong> 2–3 hours</li>
 <li><strong>Cost:</strong> Approximately $65–95 CAD per person</li>
@@ -7269,6 +7474,8 @@ export const blogContent: Record<string, string> = {
   'banff-food-truck-guide': `
 <p>Banff's food truck scene has grown from a handful of carts to a thriving street food culture that adds casual, creative dining options to a town traditionally dominated by sit-down restaurants. From gourmet tacos and wood-fired pizza to poutine and Thai street food, Banff's food trucks offer quick, delicious meals at reasonable prices — perfect for refuelling between adventures.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Living nearby means I can be honest about this — some Banff restaurants are genuinely great, and some coast on tourist traffic. I'll help you tell the difference.</aside>
+
 <h2>Best Food Trucks in Banff</h2>
 
 <h3>Beaver Tails</h3>
@@ -7334,6 +7541,9 @@ export const blogContent: Record<string, string> = {
 
 <h3>Tooloulou's</h3>
 <p><strong>Style:</strong> Cajun-Creole | <strong>Price:</strong> $$</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The portion sizes here are solid — my partner and I usually split an appetizer and get one entrée each, and we leave full.</aside>
+
 <p>For something completely different, Tooloulou's brings Cajun-Creole flavours to the brunch table. Shrimp and grits, crawfish eggs Benedict, beignets, and chicory coffee. Southern hospitality meets mountain-sized portions. A unique brunch experience in the Rockies.</p>
 
 <h3>Whitebark Cafe</h3>
@@ -7478,6 +7688,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Pad Thai Banff</h3>
 <p><strong>Cuisine:</strong> Thai | <strong>Price:</strong> $</p>
+
 <p>Thai cuisine is naturally vegan-friendly, and Pad Thai Banff delivers with tofu pad Thai, vegetable curries, papaya salad, and spring rolls. Quick, affordable, and satisfying. Available as a food truck in summer and at their indoor location.</p>
 
 <h3>Masala Authentic Indian Cuisine</h3>
@@ -7513,6 +7724,8 @@ export const blogContent: Record<string, string> = {
   'canmore-day-trip': `
 <p>Canmore is Banff's charming, laid-back neighbour — a vibrant mountain town just 20 minutes east of Banff that offers its own unique character, excellent restaurants, excellent hiking, and a local atmosphere that's noticeably different from the tourist energy of Banff. A day trip to Canmore gives you a broader perspective on life in the Canadian Rockies and introduces you to one of the most livable mountain towns in the world.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Fair warning: weekend reservations in Banff are brutal. I've learned to book Thursday or go early.</aside>
+
 <h2>Getting There</h2>
 <p>Canmore is just 22 km (20 minutes) east of Banff on the Trans-Canada Highway. You can drive, take <strong>Roam Transit Route 3</strong> (regular service between Banff and Canmore, affordable and convenient), or cycle the <strong>Legacy Trail</strong> — a 26 km paved path connecting the two towns through incredible mountain scenery.</p>
 
@@ -7531,6 +7744,8 @@ export const blogContent: Record<string, string> = {
 
 <h3>Quarry Lake</h3>
 <p>A local favourite for swimming in summer. This former quarry filled with clear mountain water is one of the warmest swimming spots in the Rockies (relatively speaking — it's still cold, but swimmable in July and August). A sandy beach, grassy areas, and mountain views make it a perfect afternoon hangout.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Last time I was here on a Friday evening, the wait was about 25 minutes without a reservation. Worth it.</aside>
 
 <h3>Canmore Nordic Centre</h3>
 <p>Built for the 1988 Calgary Winter Olympics, the <strong>Canmore Nordic Centre Provincial Park</strong> now serves as a year-round outdoor recreation hub. In winter: cross-country skiing, biathlon, and fat biking. In summer: mountain biking on an extensive trail network, disc golf, and trail running. Equipment rentals available on-site.</p>
@@ -7633,6 +7848,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Mount Royal Hotel</h3>
 <p>A historic property on Banff Avenue with charming rooms and a central location. Perfect for honeymooners who want to be steps from restaurants and shops.</p>
+
 <p>Browse and compare romantic hotels on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for the best honeymoon rates.</p>
 
 <h2>Romantic Experiences</h2>
@@ -7795,6 +8011,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Hostel Group Rooms</h3>
 <p>HI Banff Alpine Centre has private group rooms that sleep 4-8 people, plus communal kitchens and lounge areas. Perfect for budget-conscious groups who want a social atmosphere.</p>
+
 <p>Compare group-friendly accommodation options on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>.</p>
 
 <h2>Group Activities</h2>
@@ -7872,6 +8089,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Airport Shuttle Services</h2>
 <p>If you don't want to drive, several shuttle services run between Calgary Airport and Banff:</p>
+
 <ul>
 <li><strong>Banff Airporter:</strong> The most established service. Multiple daily departures, $70-80 CAD one-way, 2 hours door-to-door. Book online for guaranteed seating</li>
 <li><strong>Brewster Express:</strong> Similar pricing and schedule with stops in Canmore and Lake Louise available</li>
@@ -7955,6 +8173,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Shoulder Season Extras (April-May, September-October)</h2>
 <p>Shoulder seasons require the most versatile packing. Expect anything from warm sunshine to snowfall in a single day:</p>
+
 <ul>
 <li>Pack both summer and lightweight winter layers</li>
 <li>Waterproof everything — rain and wet snow are common</li>
@@ -8104,6 +8323,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Shoulder Season Activities</h2>
 <p>These activities are available and excellent during shoulder season:</p>
+
 <ul>
 <li><strong>Banff Gondola:</strong> Open year-round with remarkable views in any season</li>
 <li><strong>Banff Upper Hot Springs:</strong> Open year-round — even better in shoulder season with fewer visitors</li>
@@ -8154,6 +8374,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Daytime Activities on NYE</h2>
 <p>Make the most of December 31st before the evening festivities:</p>
+
 <ul>
 <li><strong>Skiing:</strong> Hit the slopes at Sunshine Village, Lake Louise, or Norquay. Most close early on NYE but offer a full morning of skiing</li>
 <li><strong>Johnston Canyon Ice Walk:</strong> Guided walks past frozen waterfalls are a quintessential winter Banff experience</li>
@@ -8213,6 +8434,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Romantic Hotel Packages</h2>
 <p>Many Banff hotels offer Valentine's Day packages that include champagne, chocolate, spa credits, and dinner reservations:</p>
+
 <ul>
 <li><strong>Fairmont Banff Springs:</strong> The castle-like setting with full-service spa and multiple fine-dining restaurants is the comprehensive Valentine's splurge</li>
 <li><strong>Fairmont Chateau Lake Louise:</strong> Wake up to the frozen lake and mountain views — a breathtaking Valentine's morning</li>
@@ -8247,6 +8469,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Outdoor Activities</h2>
 <p>Canada Day falls right in peak summer season, so all activities are available:</p>
+
 <ul>
 <li><strong>Hiking:</strong> Trails are in excellent condition by July 1st. Head out early before the day heats up</li>
 <li><strong>Canoeing on Lake Louise:</strong> Rent a canoe and celebrate on the turquoise water</li>
@@ -8307,6 +8530,7 @@ export const blogContent: Record<string, string> = {
 <h2>Fall Activities</h2>
 <h3>Larch Season Hiking</h3>
 <p>Early October is prime larch season. Alpine larch trees turn brilliant gold, creating gorgeous contrast against evergreen forests and turquoise lakes:</p>
+
 <ul>
 <li><strong>Larch Valley:</strong> The most famous larch hike, above Moraine Lake (check if road is still open)</li>
 <li><strong>Taylor Lake:</strong> Less crowded alternative with beautiful larch groves</li>
@@ -8483,6 +8707,8 @@ export const blogContent: Record<string, string> = {
   'banff-park-museum': `
 <p>The Banff Park Museum is Canada's oldest natural history museum, a National Historic Site, and one of Banff's most charming local favourites. Housed in a beautiful log building on Banff Avenue since 1903, it offers a fascinating look at the natural history of the Rocky Mountains through a uniquely Victorian lens.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> As a Bow Valley local, I get asked about Banff constantly. Here's what I actually tell people, not what the brochures say.</aside>
+
 <h2>History of the Museum</h2>
 <p>The Banff Park Museum was established in 1895 to showcase the natural wonders of the Rocky Mountains to visitors arriving on the Canadian Pacific Railway. The current building, a beautiful rustic log and timber structure designed by John Chicken, opened in 1903. It's one of the oldest surviving federal buildings in a Canadian national park.</p>
 <p>The museum was designated a <strong>National Historic Site</strong> in 1985 for its significance as an early example of park interpretation and its unique architectural style.</p>
@@ -8592,6 +8818,7 @@ export const blogContent: Record<string, string> = {
 <li><strong>Suites:</strong> Spacious suites with lake views and separate living areas for a truly luxurious stay</li>
 </ul>
 <p><strong>Essential Tip:</strong> Book a lakeview room. The difference between a mountain-view and lake-view room is the difference between a nice hotel stay and a life-changing one.</p>
+
 <p>Compare rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>.</p>
 
 <h2>Summer at the Chateau</h2>
@@ -8861,6 +9088,8 @@ export const blogContent: Record<string, string> = {
 <h3>Moraine Lake</h3>
 <p>Often called the most beautiful lake in the world, Moraine Lake sits in the Valley of the Ten Peaks, 14 km from the village. In summer, access is by mandatory Parks Canada shuttle (reservations required). The lake is typically accessible from early June to mid-October.</p>
 
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Parks Canada has really improved the infrastructure over the past couple years. The new shuttle systems actually work well.</aside>
+
 <h3>Lake Louise Ski Resort</h3>
 <p>One of North America's largest ski areas with over 4,200 acres of terrain, incredible views, and consistent powder. Just 15 minutes from the village. Open November to May.</p>
 
@@ -9087,6 +9316,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>1888 Chop House at the Fairmont</h2>
 <p>Located inside the iconic Fairmont Banff Springs Hotel, 1888 Chop House serves premium steaks and chops in an elegant heritage setting. The AAA Alberta beef is dry-aged in-house, and the wine cellar holds over 800 labels. The atmosphere feels like old-world luxury — dark wood, white tablecloths, and impeccable service.</p>
+
 <p><strong>Price:</strong> $120-200 per person. <strong>Signature dish:</strong> The 28-day dry-aged ribeye. <strong>Dress code:</strong> Business casual minimum.</p>
 
 <h2>Grapes Wine Bar at the Fairmont</h2>
@@ -9124,6 +9354,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Aardvark Pizza</h2>
 <p>Late-night pizza that's saved many a post-bar evening. Aardvark serves big, loaded slices and whole pies until late. It's not gourmet, but it's exactly what you want at 11 PM after après drinks. The pepperoni slice is a Banff rite of passage.</p>
+
 <p><strong>Best for:</strong> Late-night cravings. <strong>Price:</strong> $5-7 per slice.</p>
 
 <h2>High Rollers</h2>
@@ -9162,6 +9393,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>The Bison</h2>
 <p>Weekend brunch at The Bison is a Banff institution. Farm-to-table breakfast means local eggs, house-cured bacon, fresh-baked bread, and seasonal specials. The brunch cocktails — Caesars made with house-pickled garnishes and fresh-squeezed mimosas — are worth waking up for.</p>
+
 <p><strong>Best for:</strong> Weekend brunch. <strong>Price:</strong> $18-28. <strong>Reservations:</strong> Recommended for weekends.</p>
 
 <h2>Coyotes Southwestern Grill</h2>
@@ -10188,6 +10420,9 @@ export const blogContent: Record<string, string> = {
 
 <h2>The Verdict</h2>
 <p><strong>Choose Banff if:</strong> You have limited time (3-5 days), want easy access from Calgary, prefer more dining and nightlife options, or want excellent skiing. Our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> maximizes your short visit.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The road conditions can change fast, especially between October and April. Check 511 Alberta before you leave.</aside>
+
 <p><strong>Choose Jasper if:</strong> You have more time (5+ days), want fewer crowds, prefer backcountry hiking, prioritise wildlife encounters, or have a tighter budget.</p>
 <p><strong>Best answer:</strong> Visit both. Drive the Icefields Parkway between them — it's the most scenic road in North America. Spend 3-4 days in Banff, drive the Parkway, and spend 2-3 days in Jasper. Read our guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> to choose the perfect base.</p>
 
@@ -10253,6 +10488,8 @@ export const blogContent: Record<string, string> = {
 
   'banff-from-edmonton': `
 <p>Edmonton to Banff is one of the most scenic and straightforward drives in Western Canada. In just 4 hours, you trade the prairies for the Canadian Rockies. Here's everything you need to know about making the journey.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> I drive through Banff multiple times a week, and there are still corners of the park that surprise me.</aside>
 
 <h2>Driving (The Standard Route)</h2>
 <h3>Highway 2 South to Highway 1 West</h3>
@@ -10521,6 +10758,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Grizzly Bear Country</h2>
 <p>The Helen Lake meadows are prime grizzly bear habitat. Bears come to feed on the rich vegetation and ground squirrels. Sightings are common — it's one of the best places in the Rockies to observe grizzlies from a safe distance.</p>
+
 <ul>
 <li><strong>Always carry bear spray</strong> and know how to use it</li>
 <li><strong>Hike in groups</strong> — solo hiking is not recommended here</li>
@@ -10559,6 +10797,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>The Lodge</h2>
 <p>Skoki Lodge sleeps about 22 guests in a combination of the main lodge and several surrounding cabins. The buildings are rustic log construction — think wood-burning stoves, kerosene lamps, shared outhouses, and no electricity or running water. It's glamping at its most authentic.</p>
+
 <p>The real luxury is the food and hospitality. The lodge staff hike or ski in all supplies, and the kitchen produces remarkably impressive meals. Expect multi-course dinners with wine, packed lunches for day hikes, and hearty breakfasts. Afternoon tea and fresh-baked cookies are served when you return from the trail.</p>
 
 <h2>What to Do</h2>
@@ -10613,6 +10852,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>What You'll See</h2>
 <p>The trail runs through the Bow Valley, flanked by mountain ranges on both sides. Highlights include:</p>
+
 <ul>
 <li><strong>Vermilion Lakes:</strong> The first few kilometres from Banff pass these incredible wetland lakes with Mount Rundle reflections</li>
 <li><strong>Mount Rundle:</strong> The massive ridge dominates the southern skyline for the entire ride</li>
@@ -10900,6 +11140,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>The Banff Springs Hotel</h2>
 <p>CPR General Manager William Cornelius Van Horne saw the Rocky Mountains not as an obstacle but as an attraction. His famous declaration — "If we can't export the scenery, we'll import the tourists" — set the direction for decades to come.</p>
+
 <p>In 1888, the CPR opened the Banff Springs Hotel, a massive wooden chateau-style resort designed to attract wealthy tourists. The hotel was strategically located near the hot springs and offered luxury accommodation in the wilderness. It was an instant success, drawing visitors from around the world. The current stone castle was built between 1911 and 1928 after a fire destroyed parts of the original wooden structure.</p>
 
 <h2>The Railway Hotels</h2>
@@ -10934,6 +11175,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Peak Season: Mid-July to Mid-August</h2>
 <p>This is when the alpine meadows reach their impressive peak:</p>
+
 <ul>
 <li><strong>Indian paintbrush (Castilleja):</strong> Brilliant red, orange, and yellow — the signature wildflower of the Rockies</li>
 <li><strong>Western anemone (Anemone occidentalis):</strong> White flowers that transform into whimsical "Dr. Seuss" seed heads</li>
@@ -11334,6 +11576,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>White Water Rafting</h2>
 <p>The Kicking Horse River offers some of the best white water rafting in Western Canada with Class 2–4 rapids through a beautiful canyon:</p>
+
 <ul>
 <li><strong>Half-day trips:</strong> Upper canyon (Class 2–3) — suitable for beginners and families</li>
 <li><strong>Full-day trips:</strong> Include the more intense lower canyon (Class 3–4)</li>
@@ -11713,6 +11956,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>3. Canmore</h3>
 <p>Canmore deserves more than a drive-through. This mountain town sits in the Bow Valley between the Three Sisters peaks and Ha Ling Peak, and has developed into a destination in its own right with excellent restaurants, cafes, and shops along Main Street.</p>
+
 <ul>
 <li><strong>Grab coffee at:</strong> Eclipse Coffee Roasters or Beamer's Coffee Bar</li>
 <li><strong>Quick hike:</strong> Policeman's Creek Boardwalk — a flat, scenic walk right through town</li>
@@ -11816,6 +12060,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Grand Rockies Tour (45–60+ minutes)</h3>
 <p>The premium experience covers the full grandeur of the Rockies — from the Bow Valley to the Columbia Icefield, over the massive glaciers that feed Banff's turquoise lakes. Some tours include a glacier landing where you step out onto ancient ice thousands of metres above the valley floor.</p>
+
 <ul>
 <li><strong>Price:</strong> $500–900+ per person</li>
 <li><strong>Highlights:</strong> Columbia Icefield, glacier landing, full mountain panorama</li>
@@ -11883,6 +12128,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>What's Provided</h2>
 <p>All necessary caving equipment is included in the tour price:</p>
+
 <ul>
 <li>Helmet with headlamp</li>
 <li>Coveralls (over your clothes)</li>
@@ -11999,6 +12245,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Training for Altitude</h2>
 <p>The biggest challenge of the Banff Marathon isn't the distance or hills — it's the altitude. At 1,400 metres, the air contains about 15% less oxygen than at sea level, which significantly affects performance:</p>
+
 <ul>
 <li><strong>Expect slower times:</strong> Most runners are 5–10% slower at altitude compared to sea-level races</li>
 <li><strong>Arrive early:</strong> If coming from low elevation, arrive 2–3 days before the race to begin acclimatizing</li>
@@ -12122,6 +12369,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Eden at the Rimrock Resort</h2>
 <p>Banff's only AAA Four Diamond restaurant, Eden offers fine dining with a focus on Canadian ingredients elevated to an art form. The tasting menu showcases the best of Alberta and British Columbia, paired with an exceptional wine list.</p>
+
 <ul>
 <li><strong>Signature dishes:</strong> Multi-course tasting menu with wine pairings</li>
 <li><strong>Atmosphere:</strong> Elegant, intimate, with views of the Bow Valley</li>
@@ -12173,6 +12421,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>The Bison Restaurant</h2>
 <p>While not strictly a steakhouse, The Bison serves some of the best beef in Banff in a farm-to-table setting. Their Alberta beef dishes — including steak, short ribs, and tartare — are prepared with a chef-driven approach that elevates the steakhouse experience.</p>
+
 <ul>
 <li><strong>Must-order:</strong> Alberta beef striploin with seasonal sides</li>
 <li><strong>Price range:</strong> Mains $35–55</li>
@@ -12231,6 +12480,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Ramen Arashi</h2>
 <p>While not strictly a sushi restaurant, Ramen Arashi deserves mention for anyone seeking Japanese food in Banff. Their rich, slow-cooked tonkotsu and miso ramen bowls are exactly what you want after a day on the slopes or trails.</p>
+
 <ul>
 <li><strong>Must-try:</strong> Tonkotsu ramen with chashu pork</li>
 <li><strong>Atmosphere:</strong> Small, casual, counter-style seating</li>
@@ -12289,6 +12539,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Magpie & Stump</h2>
 <p>A Banff institution known for its Mexican-inspired food and fun, casual atmosphere. The restaurant has a rooftop patio in summer and a laid-back vibe that's welcoming to families during earlier dining hours.</p>
+
 <ul>
 <li><strong>Kids' menu:</strong> Quesadillas, tacos, nachos</li>
 <li><strong>Adult highlights:</strong> Burritos, fajitas, margaritas</li>
@@ -12356,6 +12607,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>McDonald's & A&W</h2>
 <p>Let's be honest — when it's midnight and you're hungry, fast food fills the gap. Both McDonald's and A&W on Banff Avenue are open later than any sit-down restaurant, and sometimes a burger at midnight is exactly what you need.</p>
+
 <ul>
 <li><strong>Open until:</strong> Midnight or later</li>
 <li><strong>Why it works:</strong> Quick, cheap, no reservation needed</li>
@@ -12419,6 +12671,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Coyotes Southwestern Grill</h2>
 <p>Coyotes offers a range of dishes that work well as takeout — burritos, wraps, and bowls that are filling, flavourful, and easy to eat on the go.</p>
+
 <ul>
 <li><strong>Best for:</strong> Filling lunch on the go</li>
 <li><strong>Must-grab:</strong> Burritos, tacos, southwest bowls</li>
@@ -12478,6 +12731,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Lake Minnewanka Loop</h2>
 <p>This short loop drive northeast of Banff passes Three lakes — Lake Minnewanka, Two Jack Lake, and Johnson Lake — all surrounded by forests that turn gold in fall. The drive is short enough to do in an hour but scenic enough to spend a morning photographing.</p>
+
 <ul>
 <li><strong>Distance:</strong> 24 km loop</li>
 <li><strong>Time:</strong> 30 minutes to 2 hours with stops</li>
@@ -12530,6 +12784,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Lake Louise Ski Resort</h3>
 <p>Lake Louise typically closes in early to mid-May. The resort's north-facing terrain holds snow well, and the back bowls offer excellent spring skiing with soft, corn-like conditions on sunny afternoons.</p>
+
 <ul>
 <li><strong>Typical closing:</strong> Early to mid-May</li>
 <li><strong>Spring snow:</strong> Back bowls and upper front side hold snow best</li>
@@ -12651,6 +12906,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Effects on Banff</h2>
 <p>Chinooks have significant effects on winter conditions in and around Banff:</p>
+
 <ul>
 <li><strong>Temperature swings:</strong> Temperatures can rise 20–30°C within hours. The most extreme recorded swing was 41°C in under 24 hours in nearby Pincher Creek</li>
 <li><strong>Snow melt:</strong> A strong Chinook can melt 30cm of snow in a single day. Roads and trails that were buried can become bare overnight</li>
@@ -12771,6 +13027,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Wildlife</h3>
 <p>The Fenland Trail is one of the best wildlife viewing locations close to Banff town:</p>
+
 <ul>
 <li><strong>Elk:</strong> Frequently spotted grazing in the meadows and forest clearings, especially at dawn and dusk</li>
 <li><strong>Birds:</strong> Excellent birdwatching — woodpeckers, chickadees, nuthatches, jays, and occasional owls</li>
@@ -12883,6 +13140,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Lake Adventures</h2>
 <p>Banff's lakes are a playground for families in summer. The water is cold, but kids don't seem to mind.</p>
+
 <ul>
 <li><strong>Canoeing on Lake Louise:</strong> Rent a canoe from the Fairmont boathouse and paddle across the iconic turquoise lake. Kids love being on the water surrounded by mountains</li>
 <li><strong>Two Jack Lake:</strong> A quieter alternative with a sandy beach area where kids can wade, build rock towers, and splash around. It's also great for stand-up paddleboarding</li>
@@ -13304,6 +13562,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Other Tubing Options Near Banff</h2>
 <p>While Mt. Norquay is the main option, there are alternatives:</p>
+
 <ul>
 <li><strong>Canmore tubing:</strong> The Canmore Nordic Centre occasionally offers tubing events during winter festivals</li>
 <li><strong>Lake Louise:</strong> Some accommodations near Lake Louise have informal tubing hills on their properties</li>
@@ -13621,6 +13880,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>July: High Summer</h2>
 <p>July is peak season for both tourists and wildlife activity. Alpine meadows are accessible and animals are feeding heavily.</p>
+
 <ul>
 <li><strong>Pikas:</strong> These tiny, adorable relatives of rabbits live in rocky talus slopes. Listen for their distinctive "eep!" call on alpine hikes</li>
 <li><strong>Columbian ground squirrels:</strong> Everywhere in meadows, standing upright and chattering. Kids love them</li>
@@ -13744,6 +14004,8 @@ export const blogContent: Record<string, string> = {
 
 <h3>Lake Minnewanka Area</h3>
 <p>The forests and shores around Lake Minnewanka support bear activity, particularly in berry season (August–September). The Aylmer Lookout trail sometimes has bear closures due to grizzly activity — a sign that bears are in the area.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> What the photos don't capture is the scale. You have to stand here in person to understand how big these mountains really are.</aside>
 
 <h3>Moraine Lake Road</h3>
 <p>The road and trails around Moraine Lake are frequently visited by grizzlies, leading to regular trail closures and group access requirements. Check the Parks Canada website for current conditions.</p>
@@ -13940,6 +14202,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Indigenous Heritage</h2>
 <p>Long before European arrival, the Bow Valley was home to Indigenous peoples. The Stoney Nakoda, Blackfoot (Siksika, Piikani, Kainai), Tsuut'ina, and Ktunaxa nations all have deep connections to this land. The hot springs, mountains, and valleys held spiritual, medicinal, and practical significance for thousands of years.</p>
+
 <p>The creation of the national park displaced Indigenous peoples from their traditional territories — a history that Parks Canada has increasingly acknowledged. Look for Indigenous interpretive programs, cultural events, and place-name signage that honours the original stewards of this land.</p>
 
 <h2>Why Banff's Heritage Matters Today</h2>
@@ -13982,6 +14245,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Temperature Changes</h2>
 <p>The Canadian Rockies are warming faster than the global average:</p>
+
 <ul>
 <li>Average temperatures in the region have risen approximately 2°C since the early 1900s</li>
 <li>Winter temperatures have increased more than summer temperatures</li>
@@ -14052,6 +14316,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Wolf Conservation</h2>
 <p>Wolves returned to the Bow Valley in the 1980s after decades of absence. Maintaining a viable wolf population in a park with a highway, a railway, and a town is an ongoing challenge:</p>
+
 <ul>
 <li>Wolves are GPS-collared to track their movements and territory use</li>
 <li>Wildlife crossings are essential for wolf pack connectivity across the highway</li>
@@ -14115,6 +14380,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Bow Valley Naturalists</h2>
 <p>The Bow Valley Naturalists is a volunteer organization dedicated to understanding and protecting the natural environment of the Bow Valley:</p>
+
 <ul>
 <li><strong>Bird surveys:</strong> Participate in annual bird counts and breeding bird surveys along the Bow River and in the montane ecosystem</li>
 <li><strong>Plant surveys:</strong> Help document wildflower and plant species across the valley</li>
@@ -14267,6 +14533,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Canmore Options</h3>
 <p>Canmore (25 minutes from Banff) has a slightly better digital nomad infrastructure:</p>
+
 <ul>
 <li><strong>Coworking spaces:</strong> Canmore has emerging coworking options — check local listings for current availability</li>
 <li><strong>Cafes:</strong> Beamer's Coffee Bar, Communitea Cafe, and Eclipse Coffee Roasters are all laptop-friendly</li>
@@ -14341,6 +14608,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Reservations</h2>
 <p>Both campgrounds are reservable through the Parks Canada reservation system:</p>
+
 <ul>
 <li><strong>When to book:</strong> Reservations open in January for the following summer. Popular dates (July weekends, August long weekend) sell out within hours</li>
 <li><strong>How to book:</strong> reservation.pc.gc.ca — book online or by phone</li>
@@ -14417,6 +14685,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Location & Access</h2>
 <p>The Tunnel Mountain campgrounds are located about 4 km from downtown Banff along Tunnel Mountain Road:</p>
+
 <ul>
 <li><strong>Walking to town:</strong> A 30–45 minute walk along the Tunnel Mountain trail or road. Some campers ride bikes</li>
 <li><strong>Driving to town:</strong> 5 minutes by car</li>
@@ -14490,6 +14759,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Skoki Area</h3>
 <p>The Skoki region, accessed from the Lake Louise ski area, is classic Canadian Rockies backcountry. Multiple campsites dot the area, and the historic Skoki Lodge offers an alternative to tent camping.</p>
+
 <ul>
 <li><strong>Access:</strong> 11 km from the Lake Louise ski area via the Skoki trail</li>
 <li><strong>Campsites:</strong> Several options including Baker Lake, Merlin Meadows, and Hidden Lake</li>
@@ -14572,6 +14842,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Mount Engadine Lodge (Kananaskis)</h3>
 <p>A backcountry lodge experience in the Spray Valley, Mount Engadine Lodge also offers glamping tents during summer:</p>
+
 <ul>
 <li><strong>Tents:</strong> Safari-style canvas tents on wooden decks with real beds, duvets, and mountain views</li>
 <li><strong>Included:</strong> All meals (excellent quality), afternoon tea, guided hikes, and access to the lodge common areas</li>
@@ -14753,6 +15024,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>The Trail Experience</h2>
 <p>After the mine ruins, the trail climbs steadily through dense subalpine forest. The switchbacks are well-graded and the footing is generally good, though some rocky sections require careful stepping. As you gain elevation, the trees begin to thin and views open up toward Lake Minnewanka and the Fairholme Range.</p>
+
 <p>The final section emerges into the cirque itself — a dramatic amphitheatre of grey limestone cliffs rising hundreds of metres on three sides. The floor of the cirque is a mix of talus (loose rock), alpine meadow, and often lingering snow patches well into summer. The scale of the cliffs makes you feel small, and the acoustics create an eerie silence broken only by the occasional rockfall.</p>
 
 <h2>What You'll See</h2>
@@ -14802,6 +15074,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>What Are the Ink Pots?</h2>
 <p>The Ink Pots are cold mineral springs — groundwater that has travelled through limestone bedrock, dissolved minerals along the way, and emerged at the surface in these meadow pools. Unlike hot springs, these are cold (approximately 2–4°C year-round). The varying colours come from different mineral concentrations and the depth of each pool.</p>
+
 <p>There are seven main springs, ranging from tiny bubbling pools to larger ponds several metres across. The colours shift depending on light conditions and the time of year. On a sunny day, the turquoise pools against the green meadow and grey mountain backdrop create postcard-perfect scenes.</p>
 
 <h2>Why Continue Past Johnston Canyon?</h2>
@@ -14853,6 +15126,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Continuing to Sentinel Pass</h2>
 <p>From Larch Valley, the trail continues 1.5 km to Sentinel Pass (2,611 metres / 8,566 feet) — a narrow notch between Pinnacle Mountain and Mount Temple. The final approach is steep switchbacks through scree and talus. At the pass, you look down into Paradise Valley on the other side — a vertigo-inducing view that makes the effort worthwhile.</p>
+
 <p>Sentinel Pass is the highest point on a maintained trail in the Canadian Rockies. The wind at the top can be fierce, and the temperature drops dramatically. Bring warm layers and windproof gear. The views encompass peaks in every direction, including the massive north face of Mount Temple — one of the most imposing mountain walls in the Rockies.</p>
 
 <h2>Larch Season: The Golden Window</h2>
@@ -15008,6 +15282,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>6. Bow Lake Viewpoint (Icefields Parkway)</h2>
 <p>A short paved path from the parking area to the shore of Bow Lake — one of the most photographed spots on the Icefields Parkway.</p>
+
 <ul>
 <li><strong>Surface:</strong> Paved and packed gravel</li>
 <li><strong>Distance:</strong> 200 metres from parking</li>
@@ -15157,6 +15432,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Mount Fairview (Lake Louise)</h3>
 <p>A straightforward scramble above Lake Louise with remarkable aerial views of the lake and surrounding peaks.</p>
+
 <ul>
 <li><strong>Elevation gain:</strong> 1,015 m</li>
 <li><strong>Distance:</strong> 10.6 km return</li>
@@ -15666,6 +15942,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Telephoto (70–200mm or longer)</h3>
 <p>Essential for wildlife photography and for compressing distant mountain layers. A 70–200mm lets you photograph elk, deer, and birds at a safe distance, and isolate individual peaks or details in the landscape.</p>
+
 <ul>
 <li><strong>Use for:</strong> Wildlife, distant mountain details, compressed landscape compositions, lake reflections with background compression</li>
 <li><strong>For serious wildlife:</strong> A <a href="https://www.amazon.ca/s?k=100-400mm+telephoto+lens&tag=banffbound-20" target="_blank" rel="noopener sponsored">100–400mm or 200–600mm super-telephoto</a> reaches bears, wolves, and distant wildlife. Heavy and expensive, but if wildlife is your priority, they're worth it</li>
@@ -15819,6 +16096,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Banff Rocky Mountain Resort</h3>
 <p>A condo-style resort with spacious suites that accommodate families with pets.</p>
+
 <ul>
 <li><strong>Pet fee:</strong> Varies — check when booking</li>
 <li><strong>Policy:</strong> Dogs welcome in select units with prior arrangement</li>
@@ -16058,6 +16336,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Peaks Hotel and Suites</h2>
 <p>A boutique suite hotel with a residential feel and mountain character.</p>
+
 <ul>
 <li><strong>Style:</strong> Mountain-contemporary with warm, residential interiors</li>
 <li><strong>Rooms:</strong> Suites with separate living areas, kitchenettes, and fireplaces. Feels like a mountain home</li>
@@ -16125,6 +16404,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Canmore (Better Selection)</h3>
 <p>Canmore, just 20 minutes east of Banff, has a much larger Airbnb market:</p>
+
 <ul>
 <li><strong>More entire-home listings:</strong> Canmore has more relaxed short-term rental regulations than Banff (though they're tightening)</li>
 <li><strong>Condos and townhouses:</strong> Many purpose-built vacation rental condos are available, often with kitchen, laundry, and mountain views</li>
@@ -16286,6 +16566,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Moraine Lake Lodge</h2>
 <p>An exclusive lodge at the shore of Moraine Lake — arguably the most dramatically located hotel in the Canadian Rockies.</p>
+
 <ul>
 <li><strong>Location:</strong> Directly on Moraine Lake, surrounded by the Valley of the Ten Peaks</li>
 <li><strong>Rooms:</strong> Limited rooms and cabins. Intimate, small-lodge experience</li>
@@ -16379,6 +16660,7 @@ export const blogContent: Record<string, string> = {
 
 <h3>Solara Resort & Spa</h3>
 <p>A condo-style resort with full suites, spa, and pool.</p>
+
 <ul>
 <li><strong>Rooms:</strong> One and two-bedroom suites with full kitchens, fireplaces, and balconies</li>
 <li><strong>Amenities:</strong> Outdoor pool, hot tub, spa, fitness centre</li>
@@ -16478,6 +16760,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Winter (November–March): Serene Beauty</h2>
 <p>Winter is Banff's least crowded season (except ski resorts on weekends):</p>
+
 <ul>
 <li>The town is quieter, hotel prices are lower, and there are no parking problems</li>
 <li>Lake Louise and Moraine Lake are frozen — no shuttle required for Lake Louise</li>

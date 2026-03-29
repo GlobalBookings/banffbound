@@ -230,6 +230,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Stage 1: Moraine Lake to Larch Valley (3.2 km)</h2>
 <p>The first section climbs steadily through Engelmann spruce and subalpine fir forest with glimpses of the Ten Peaks through the trees. At about 2.4 km, the forest begins to thin and you enter <strong>Larch Valley</strong> — a high alpine meadow ringed by towering peaks.</p>
+
 <p>If you're visiting in <strong>late September</strong>, this is where the magic happens. The alpine larch trees (the only conifer that loses its needles) turn brilliant gold, creating one of the most photographed landscapes in the Canadian Rockies. Carpets of golden needles blanket the ground beneath the larches, and the contrast against the grey rock and blue sky is impressive.</p>
 
 <h2>Stage 2: Larch Valley to Sentinel Pass (2.6 km)</h2>
@@ -415,6 +416,7 @@ export const blogContent2: Record<string, string> = {
 <p><strong>Distance:</strong> 9.4 km return</p>
 <p><strong>Elevation Gain:</strong> 155 metres</p>
 <p><strong>Difficulty:</strong> Easy to moderate</p>
+
 <p><strong>Time:</strong> 3–4 hours round trip</p>
 <p>The trail to Bow Glacier Falls follows the lakeshore, crosses the gravel flats at the far end of the lake, and then climbs gently to the base of a remarkable waterfall fed by the Bow Glacier above. The falls plunge over a cliff face in a wide cascade that's particularly impressive in July when snowmelt is at its peak.</p>
 <p>The trail crosses several braided stream channels on the gravel flats — be prepared for potentially wet feet. The final approach to the falls involves some boulder-hopping. The reward is a thundering waterfall with glacier views and virtually no crowds compared to popular Banff trails.</p>
@@ -457,6 +459,7 @@ export const blogContent2: Record<string, string> = {
 <p><strong>Distance:</strong> 5.2 km loop</p>
 <p><strong>Elevation Gain:</strong> Minimal (flat)</p>
 <p><strong>Time:</strong> 1.5–2 hours</p>
+
 <p>This easy loop trail circles the entire lake, offering changing perspectives at every turn. The west side features a boardwalk through an alluvial fan, while the far end gives a peaceful, less-trafficked view back toward the lodge. Interpretive signs explain the area's ecology and geology. The trail is suitable for all fitness levels.</p>
 
 <h3>Dine at Cilantro on the Lake</h3>
@@ -504,6 +507,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Sunrise Photography</h2>
 <p>Vermilion Lakes is <strong>the</strong> premier sunrise photography location in Banff. The lakes face east toward Mount Rundle, which catches the first morning light in striking fashion — turning orange, pink, and gold while the still water creates a perfect mirror reflection.</p>
+
 <h3>Photography Tips</h3>
 <ul>
 <li>Set up at the Second Vermilion Lake for the classic Mount Rundle reflection</li>
@@ -663,6 +667,7 @@ export const blogContent2: Record<string, string> = {
 
 <h3>4. Boom Lake</h3>
 <p><strong>Distance:</strong> 10.4 km return | <strong>Elevation Gain:</strong> 180m | <strong>Difficulty:</strong> Moderate</p>
+
 <p>A gentle trail through dense forest to a beautiful frozen alpine lake. The trail is well-packed and relatively flat, making it a great intermediate option. Located on Highway 93 South, about 25 minutes from Banff.</p>
 
 <h3>5. Chester Lake (Kananaskis)</h3>
@@ -940,6 +945,7 @@ export const blogContent2: Record<string, string> = {
 <h3>Bow River (Class I-II)</h3>
 <p><strong>Best for:</strong> Families, beginners, and scenic floats</p>
 <p>The Bow River through Banff and Canmore offers a gentle, scenic float trip with mild rapids and striking mountain scenery. This is rafting as relaxation — you'll float past elk, osprey nests, and the Fairmont Banff Springs Hotel with the Canadian Rockies as your backdrop.</p>
+
 <ul>
 <li><strong>Duration:</strong> 2–3 hours</li>
 <li><strong>Cost:</strong> Approximately $65–95 CAD per person</li>
@@ -1197,6 +1203,7 @@ export const blogContent2: Record<string, string> = {
 
 <h3>Tooloulou's</h3>
 <p><strong>Style:</strong> Cajun-Creole | <strong>Price:</strong> $$</p>
+
 <p>For something completely different, Tooloulou's brings Cajun-Creole flavours to the brunch table. Shrimp and grits, crawfish eggs Benedict, beignets, and chicory coffee. Southern hospitality meets mountain-sized portions. A unique brunch experience in the Rockies.</p>
 
 <h3>Whitebark Cafe</h3>
@@ -1338,6 +1345,7 @@ export const blogContent2: Record<string, string> = {
 
 <h3>Pad Thai Banff</h3>
 <p><strong>Cuisine:</strong> Thai | <strong>Price:</strong> $</p>
+
 <p>Thai cuisine is naturally vegan-friendly, and Pad Thai Banff delivers with tofu pad Thai, vegetable curries, papaya salad, and spring rolls. Quick, affordable, and satisfying. Available as a food truck in summer and at their indoor location.</p>
 
 <h3>Masala Authentic Indian Cuisine</h3>
@@ -1490,6 +1498,7 @@ export const blogContent2: Record<string, string> = {
 
 <h3>Mount Royal Hotel</h3>
 <p>A historic property on Banff Avenue with charming rooms and a central location. Perfect for honeymooners who want to be steps from restaurants and shops.</p>
+
 <p>Browse and compare romantic hotels on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for the best honeymoon rates.</p>
 
 <h2>Romantic Experiences</h2>
@@ -1649,6 +1658,7 @@ export const blogContent2: Record<string, string> = {
 
 <h3>Hostel Group Rooms</h3>
 <p>HI Banff Alpine Centre has private group rooms that sleep 4-8 people, plus communal kitchens and lounge areas. Perfect for budget-conscious groups who want a social atmosphere.</p>
+
 <p>Compare group-friendly accommodation options on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>.</p>
 
 <h2>Group Activities</h2>
@@ -1725,6 +1735,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Airport Shuttle Services</h2>
 <p>If you don't want to drive, several shuttle services run between Calgary Airport and Banff:</p>
+
 <ul>
 <li><strong>Banff Airporter:</strong> The most established service. Multiple daily departures, $70-80 CAD one-way, 2 hours door-to-door. Book online for guaranteed seating</li>
 <li><strong>Brewster Express:</strong> Similar pricing and schedule with stops in Canmore and Lake Louise available</li>
@@ -1807,6 +1818,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Shoulder Season Extras (April-May, September-October)</h2>
 <p>Shoulder seasons require the most versatile packing. Expect anything from warm sunshine to snowfall in a single day:</p>
+
 <ul>
 <li>Pack both summer and lightweight winter layers</li>
 <li>Waterproof everything — rain and wet snow are common</li>
@@ -1954,6 +1966,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Shoulder Season Activities</h2>
 <p>These activities are available and excellent during shoulder season:</p>
+
 <ul>
 <li><strong>Banff Gondola:</strong> Open year-round with gorgeous views in any season</li>
 <li><strong>Banff Upper Hot Springs:</strong> Open year-round — even better in shoulder season with fewer visitors</li>
@@ -2003,6 +2016,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Daytime Activities on NYE</h2>
 <p>Make the most of December 31st before the evening festivities:</p>
+
 <ul>
 <li><strong>Skiing:</strong> Hit the slopes at Sunshine Village, Lake Louise, or Norquay. Most close early on NYE but offer a full morning of skiing</li>
 <li><strong>Johnston Canyon Ice Walk:</strong> Guided walks past frozen waterfalls are a quintessential winter Banff experience</li>
@@ -2061,6 +2075,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Romantic Hotel Packages</h2>
 <p>Many Banff hotels offer Valentine's Day packages that include champagne, chocolate, spa credits, and dinner reservations:</p>
+
 <ul>
 <li><strong>Fairmont Banff Springs:</strong> The castle-like setting with full-service spa and multiple fine-dining restaurants is the best Valentine's splurge</li>
 <li><strong>Fairmont Chateau Lake Louise:</strong> Wake up to the frozen lake and mountain views — a breathtaking Valentine's morning</li>
@@ -2094,6 +2109,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Outdoor Activities</h2>
 <p>Canada Day falls right in peak summer season, so all activities are available:</p>
+
 <ul>
 <li><strong>Hiking:</strong> Trails are in excellent condition by July 1st. Head out early before the day heats up</li>
 <li><strong>Canoeing on Lake Louise:</strong> Rent a canoe and celebrate on the turquoise water</li>
@@ -2153,6 +2169,7 @@ export const blogContent2: Record<string, string> = {
 <h2>Fall Activities</h2>
 <h3>Larch Season Hiking</h3>
 <p>Early October is prime larch season. Alpine larch trees turn brilliant gold, creating beautiful contrast against evergreen forests and turquoise lakes:</p>
+
 <ul>
 <li><strong>Larch Valley:</strong> The most famous larch hike, above Moraine Lake (check if road is still open)</li>
 <li><strong>Taylor Lake:</strong> Less crowded alternative with beautiful larch groves</li>
@@ -2432,6 +2449,7 @@ export const blogContent2: Record<string, string> = {
 <li><strong>Suites:</strong> Spacious suites with lake views and separate living areas for a truly luxurious stay</li>
 </ul>
 <p><strong>Essential Tip:</strong> Book a lakeview room. The difference between a mountain-view and lake-view room is the difference between a nice hotel stay and a life-changing one.</p>
+
 <p>Compare rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>.</p>
 
 <h2>Summer at the Chateau</h2>
@@ -2919,6 +2937,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>1888 Chop House at the Fairmont</h2>
 <p>Located inside the iconic Fairmont Banff Springs Hotel, 1888 Chop House serves premium steaks and chops in an elegant heritage setting. The AAA Alberta beef is dry-aged in-house, and the wine cellar holds over 800 labels. The atmosphere feels like old-world luxury — dark wood, white tablecloths, and impeccable service.</p>
+
 <p><strong>Price:</strong> $120-200 per person. <strong>Signature dish:</strong> The 28-day dry-aged ribeye. <strong>Dress code:</strong> Business casual minimum.</p>
 
 <h2>Grapes Wine Bar at the Fairmont</h2>
@@ -2955,6 +2974,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Aardvark Pizza</h2>
 <p>Late-night pizza that's saved many a post-bar evening. Aardvark serves big, loaded slices and whole pies until late. It's not gourmet, but it's exactly what you want at 11 PM after après drinks. The pepperoni slice is a Banff rite of passage.</p>
+
 <p><strong>Best for:</strong> Late-night cravings. <strong>Price:</strong> $5-7 per slice.</p>
 
 <h2>High Rollers</h2>
@@ -2992,6 +3012,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>The Bison</h2>
 <p>Weekend brunch at The Bison is a Banff institution. Farm-to-table breakfast means local eggs, house-cured bacon, fresh-baked bread, and seasonal specials. The brunch cocktails — Caesars made with house-pickled garnishes and fresh-squeezed mimosas — are worth waking up for.</p>
+
 <p><strong>Best for:</strong> Weekend brunch. <strong>Price:</strong> $18-28. <strong>Reservations:</strong> Recommended for weekends.</p>
 
 <h2>Coyotes Southwestern Grill</h2>
@@ -3999,6 +4020,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>The Verdict</h2>
 <p><strong>Choose Banff if:</strong> You have limited time (3-5 days), want easy access from Calgary, prefer more dining and nightlife options, or want outstanding skiing. Our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> maximizes your short visit.</p>
+
 <p><strong>Choose Jasper if:</strong> You have more time (5+ days), want fewer crowds, prefer backcountry hiking, prioritise wildlife encounters, or have a tighter budget.</p>
 <p><strong>Best answer:</strong> Visit both. Drive the Icefields Parkway between them — it's the most scenic road in North America. Spend 3-4 days in Banff, drive the Parkway, and spend 2-3 days in Jasper. Read our guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> to choose the perfect base.</p>
 
@@ -4324,6 +4346,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Grizzly Bear Country</h2>
 <p>The Helen Lake meadows are prime grizzly bear habitat. Bears come to feed on the rich vegetation and ground squirrels. Sightings are common — it's one of the best places in the Rockies to observe grizzlies from a safe distance.</p>
+
 <ul>
 <li><strong>Always carry bear spray</strong> and know how to use it</li>
 <li><strong>Hike in groups</strong> — solo hiking is not recommended here</li>
@@ -4361,6 +4384,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>The Lodge</h2>
 <p>Skoki Lodge sleeps about 22 guests in a combination of the main lodge and several surrounding cabins. The buildings are rustic log construction — think wood-burning stoves, kerosene lamps, shared outhouses, and no electricity or running water. It's glamping at its most authentic.</p>
+
 <p>The real luxury is the food and hospitality. The lodge staff hike or ski in all supplies, and the kitchen produces remarkably impressive meals. Expect multi-course dinners with wine, packed lunches for day hikes, and hearty breakfasts. Afternoon tea and fresh-baked cookies are served when you return from the trail.</p>
 
 <h2>What to Do</h2>
@@ -4414,6 +4438,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>What You'll See</h2>
 <p>The trail runs through the Bow Valley, flanked by mountain ranges on both sides. Highlights include:</p>
+
 <ul>
 <li><strong>Vermilion Lakes:</strong> The first few kilometres from Banff pass these jaw-dropping wetland lakes with Mount Rundle reflections</li>
 <li><strong>Mount Rundle:</strong> The massive ridge dominates the southern skyline for the entire ride</li>

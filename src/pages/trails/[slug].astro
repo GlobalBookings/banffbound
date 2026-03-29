@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { trails } from '../../data/trails';
+import { trailPolylines } from '../../data/trailPolylines';
 
 const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
 
@@ -14,6 +15,18 @@ export function getStaticPaths() {
 
 const { trail } = Astro.props;
 const nearbyTrails = trails.filter(t => t.slug !== trail.slug && t.area === trail.area).slice(0, 4);
+
+// Find polyline segments near this trail's coordinates (within ~2km)
+const nearbyPolylines = trailPolylines.features.filter((f: any) => {
+  if (!f.geometry?.coordinates?.length) return false;
+  const firstPath = f.geometry.coordinates[0];
+  if (!firstPath?.length) return false;
+  const [lng, lat] = firstPath[0];
+  const dlat = Math.abs(lat - trail.lat);
+  const dlng = Math.abs(lng - trail.lng);
+  return dlat < 0.02 && dlng < 0.03;
+});
+const polylineJSON = JSON.stringify(nearbyPolylines.map((f: any) => f.geometry.coordinates));
 
 const difficultyColor = trail.difficulty === 'easy' ? '#166534' : trail.difficulty === 'moderate' ? '#92400e' : '#991b1b';
 const difficultyBg = trail.difficulty === 'easy' ? '#dcfce7' : trail.difficulty === 'moderate' ? '#fef3c7' : '#fee2e2';
@@ -313,16 +326,33 @@ const trailSchema = {
   )}
 </BaseLayout>
 
-<script define:vars={{ lat: trail.lat, lng: trail.lng, name: trail.name, difficulty: trail.difficulty, season: trail.season, distance: trail.distance, elevationGain: trail.elevationGain, time: trail.time, status: trail.status || 'open', OWM_KEY: OWM_KEY_SSR }}>
-  // ── Map ───────────────────────────────────────────
+<script define:vars={{ lat: trail.lat, lng: trail.lng, name: trail.name, difficulty: trail.difficulty, season: trail.season, distance: trail.distance, elevationGain: trail.elevationGain, time: trail.time, status: trail.status || 'open', OWM_KEY: OWM_KEY_SSR, polylineJSON }}>
+  // ── Map with trail polylines ──────────────────────
   function initTrailMap() {
     const mapEl = document.getElementById('trail-detail-map');
     if (!mapEl || typeof L === 'undefined') return;
-    const map = L.map('trail-detail-map').setView([lat, lng], 13);
+    const map = L.map('trail-detail-map').setView([lat, lng], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors',
+      attribution: '&copy; OpenStreetMap contributors · Trail data: Town of Banff GIS',
       maxZoom: 18,
     }).addTo(map);
+
+    const polylines = JSON.parse(polylineJSON || '[]');
+    if (polylines.length > 0) {
+      const allLatLngs = [];
+      polylines.forEach(multiPath => {
+        multiPath.forEach(path => {
+          const latlngs = path.map(([lng, lat]) => [lat, lng]);
+          allLatLngs.push(...latlngs);
+          L.polyline(latlngs, { color: '#e74c3c', weight: 3, opacity: 0.8 }).addTo(map);
+        });
+      });
+      if (allLatLngs.length > 2) {
+        const bounds = L.latLngBounds(allLatLngs);
+        map.fitBounds(bounds, { padding: [30, 30] });
+      }
+    }
+
     L.marker([lat, lng]).addTo(map).bindPopup(`<strong>${name}</strong>`).openPopup();
   }
   const script = document.createElement('script');

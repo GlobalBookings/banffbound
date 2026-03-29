@@ -3697,6 +3697,7 @@ export const blogContent1: Record<string, string> = {
 <h2>Renting a Car</h2>
 <p>The most flexible option. Car rental counters are located in the Calgary airport terminal. The drive to Banff along Highway 1 is scenic and straightforward -- you'll start seeing mountains within 45 minutes of leaving Calgary.</p>
 <p>Having a car gives you freedom to explore the Icefields Parkway, Lake Louise, Moraine Lake, and remote trailheads on your own schedule. Parking in Banff town is manageable outside of peak summer weekends.</p>
+
 <div class="tip-box"><strong>Winter Driving:</strong> From November to April, winter tires or chains are legally required on Highway 1 through the mountain parks. Most rental companies offer winter-equipped vehicles.</div>
 
 <h2>Airport Shuttles</h2>
@@ -4004,6 +4005,7 @@ export const blogContent1: Record<string, string> = {
 
 <h2>Free & Cheap Activities</h2>
 <p>The best things in Banff are free -- you just need a park pass ($11/day for adults, $22.40 for a family/group).</p>
+
 <ul>
 <li>Hike any of the hundreds of trails in the park</li>
 <li>Walk the shores of Lake Louise and Moraine Lake</li>
@@ -4050,6 +4052,7 @@ export const blogContent1: Record<string, string> = {
 <h2>Tunnel Mountain</h2>
 <p><strong>Best for:</strong> nature lovers, families, and campers.</p>
 <p>A 10-minute drive (or bus ride) from downtown, Tunnel Mountain offers a quieter, more natural setting surrounded by forest. This is where you'll find most of Banff's camping and condo-style accommodation.</p>
+
 <ul>
 <li><strong>Tunnel Mountain Resort:</strong> Condo-style suites with kitchens, pool, hot tub ($-$$)</li>
 <li><strong>Hidden Ridge Resort:</strong> Spacious suites with fireplaces and mountain views ($$)</li>
@@ -4247,6 +4250,7 @@ export const blogContent1: Record<string, string> = {
 <h2>Common Questions</h2>
 <p><strong>Is the pass per person or per vehicle?</strong> The Family/Group pass covers everyone in one vehicle (up to 7 people). Individual passes are per person.</p>
 <p><strong>Does it cover Jasper too?</strong> The Discovery Pass covers all Parks Canada sites. A daily Banff pass covers Banff only.</p>
+
 <p><strong>Do I need a pass to drive through on Highway 1?</strong> Technically yes, though enforcement focuses on people who stop and use park facilities.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-skiing-guide': `
@@ -4979,6 +4983,7 @@ export const blogContent1: Record<string, string> = {
 <h2>The Tea House</h2>
 <p>The Lake Agnes Tea House was originally built by the Canadian Pacific Railway in 1901 as a rest stop for hikers. Today it's operated as a rustic backcountry teahouse serving over 100 varieties of loose-leaf tea, plus homemade baked goods including scones, cookies, sandwiches, and soups.</p>
 <p>Everything served here is packed in by staff on foot — there's no road access, no electricity, and no running water. The menu changes based on what can be carried up the trail. Cash is preferred, though some card payment may be available.</p>
+
 <p>The teahouse is typically open from <strong>early June to mid-October</strong>, weather permitting. Operating hours are approximately 8am to 5pm. Expect a line during peak summer hours (11am-2pm), but it moves quickly and the wait is part of the experience.</p>
 
 <h2>Beyond the Tea House: Big Beehive</h2>
@@ -5195,6 +5200,7 @@ export const blogContent1: Record<string, string> = {
 
 <h2>The Hiking Experience</h2>
 <p>The Sulphur Mountain Trail starts from the Upper Hot Springs parking lot and climbs 5.5 km through forest via well-maintained switchbacks to the summit ridge. The trail gains approximately 655 metres of elevation.</p>
+
 <h3>Trail Details</h3>
 <ul>
 <li><strong>Distance:</strong> 5.5 km one way</li>
@@ -5292,6 +5298,7 @@ export const blogContent1: Record<string, string> = {
 
 <h3>6. Columbia Icefield Centre (km 127)</h3>
 <p>The highlight of the drive. The Columbia Icefield is the largest body of ice in the Canadian Rockies, feeding rivers that flow to three oceans. At the Icefield Centre, you can:</p>
+
 <ul>
 <li><strong>Walk to the toe of the Athabasca Glacier</strong> (free, 15-minute walk from the parking lot)</li>
 <li><strong>Ice Explorer tour:</strong> Ride a massive all-terrain vehicle onto the glacier surface</li>
@@ -5642,6 +5649,7 @@ export const blogContent1: Record<string, string> = {
 
 <h3>Wildlife Viewing</h3>
 <p>Fall is one of the best seasons for wildlife in Banff. The elk rut happens in September and early October — you'll hear the haunting bugling calls echoing through the valleys, especially around the Banff Springs Golf Course and the outskirts of town. Bears are in hyperphagia — feeding intensely before hibernation — and are frequently seen along the Bow Valley Parkway and near berry patches.</p>
+
 <p><em>Keep 30m from elk (especially during rut) and 100m from bears. Both are more unpredictable during fall.</em></p>
 
 <h3>Scenic Drives</h3>

@@ -2,7 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { trails } from '../data/trails';
+import { trailPolylines } from '../data/trailPolylines';
 
+const polylineData = JSON.stringify(trailPolylines);
 const trailData = JSON.stringify(trails.map(t => ({
   id: t.id,
   name: t.name,
@@ -125,8 +127,9 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
   </section>
 </BaseLayout>
 
-<script define:vars={{ trailData }}>
+<script define:vars={{ trailData, polylineData }}>
   const allTrails = JSON.parse(trailData);
+  const polyGeoJSON = JSON.parse(polylineData || '{"features":[]}');
   const searchInput = document.getElementById('search-input');
   const difficultyFilter = document.getElementById('difficulty-filter');
   const typeFilter = document.getElementById('type-filter');
@@ -227,9 +230,20 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
   function initMap() {
     map = L.map('trail-map').setView([51.1784, -115.5708], 10);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors',
+      attribution: '&copy; OpenStreetMap contributors · Trail data: Town of Banff GIS',
       maxZoom: 18,
     }).addTo(map);
+
+    // Draw trail polylines from ArcGIS data
+    if (polyGeoJSON.features && polyGeoJSON.features.length > 0) {
+      polyGeoJSON.features.forEach(f => {
+        if (!f.geometry?.coordinates) return;
+        f.geometry.coordinates.forEach(path => {
+          const latlngs = path.map(([lng, lat]) => [lat, lng]);
+          L.polyline(latlngs, { color: '#e74c3c', weight: 2, opacity: 0.5 }).addTo(map);
+        });
+      });
+    }
 
     allTrails.forEach(t => {
       if (!t.lat || !t.lng) return;
