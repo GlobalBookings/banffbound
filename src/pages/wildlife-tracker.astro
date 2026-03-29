@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { wildlifeZones } from '../data/wildlifeZones';
+
+const zonesJSON = JSON.stringify(wildlifeZones);
+const speciesList = [...new Set(wildlifeZones.flatMap(z => z.species))].sort();
+---
+
+<BaseLayout title="Banff Wildlife Tracker — Where to See Bears, Elk & More" description="Interactive map of where to spot bears, elk, bighorn sheep, and wolves in Banff National Park. Best times, safety tips, and seasonal hotspots.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Where can I see bears in Banff National Park?', acceptedAnswer: { '@type': 'Answer', text: 'The best places to see bears in Banff are: Bow Valley Parkway (1A) in spring (May-June) when bears forage on roadside dandelions, Moraine Lake Road / Paradise Valley area in summer, Lake Louise gondola area where grizzlies are frequently spotted from the gondola, and Icefields Parkway km 50-100 on avalanche slopes. Always carry bear spray, maintain 100m distance, and never approach a bear.' } },
+      { '@type': 'Question', name: 'Where are elk in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Elk are almost guaranteed at Vermilion Lakes (year-round, especially dawn/dusk), Cascade Ponds / Bankhead area, the Banff golf course in winter, and along the Fenland Trail. During the fall rut (September-October), bull elk become aggressive — maintain 50m+ distance. Elk also graze on the lawns of the Banff town centre.' } },
+      { '@type': 'Question', name: 'When is the best time for wildlife viewing in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Dawn and dusk are best year-round. Spring (May-June) is peak bear season. Fall (September-October) brings the elk rut. Winter concentrates animals in the valleys. The Bow Valley Parkway has a seasonal evening closure (8 PM - 8 AM, March-June) to protect wildlife — this is when animals are most active.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Wildlife Tracker' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=1600&q=80" alt="Elk in Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Wildlife Map</span>
+      <h1>Wildlife Tracker</h1>
+      <p>Where to see bears, elk, bighorn sheep, and more across Banff. Best times, safety rules, and seasonal hotspots.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="wildlife-controls">
+        <div class="control-group">
+          <label>Filter by species</label>
+          <select id="species-filter">
+            <option value="all">All Species</option>
+            {speciesList.map(s => <option value={s}>{s}</option>)}
+          </select>
+        </div>
+        <div class="control-group">
+          <label>Season</label>
+          <select id="season-filter">
+            <option value="all">Any Season</option>
+            <option value="spring">Spring (May-Jun)</option>
+            <option value="summer">Summer (Jul-Aug)</option>
+            <option value="fall">Fall (Sep-Oct)</option>
+            <option value="winter">Winter (Nov-Apr)</option>
+          </select>
+        </div>
+      </div>
+
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      <div id="wildlife-map" style="height:500px;border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem;"></div>
+
+      <div class="zones-list" id="zones-list">
+        {wildlifeZones.map(zone => (
+          <div class="zone-card" data-zone-id={zone.id} data-species={zone.species.join(',')} data-season={zone.season}>
+            <div class="zone-header">
+              <h3>{zone.name}</h3>
+              <span class={`freq-badge freq-${zone.frequency}`}>{zone.frequency}</span>
+            </div>
+            <div class="zone-species">
+              {zone.species.map(s => <span class="species-tag">{s}</span>)}
+            </div>
+            <p class="zone-desc">{zone.description}</p>
+            <div class="zone-meta">
+              <span>🕐 {zone.bestTime}</span>
+              <span>📅 {zone.season}</span>
+            </div>
+            <div class="zone-safety">
+              <strong>⚠️ Safety:</strong> {zone.safetyNote}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="seo-summary" style="margin-top:2rem;">
+        <h2>Essential Banff Wildlife Safety Rules</h2>
+        <ul>
+          <li><strong>Bears:</strong> Maintain 100m distance. Carry bear spray on ALL trails. Travel in groups of 4+. Make noise. Never run from a bear.</li>
+          <li><strong>Elk:</strong> Keep 30m distance (50m+ during fall rut Sep-Oct). Bull elk are aggressive and charge without warning during rut season.</li>
+          <li><strong>Bighorn Sheep & Deer:</strong> 30m distance. Do not feed. They may approach you — back away.</li>
+          <li><strong>Wolves & Cougars:</strong> Extremely rare sightings. If seen, do not approach. Make yourself large. Back away slowly. Report sightings to Parks Canada.</li>
+          <li><strong>General:</strong> Never feed wildlife. It is illegal under the Canada National Parks Act (fine up to $25,000). A fed bear is a dead bear.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ zonesJSON }}>
+  const zones = JSON.parse(zonesJSON);
+  const speciesFilter = document.getElementById('species-filter');
+  const seasonFilter = document.getElementById('season-filter');
+
+  function filterZones() {
+    const sp = speciesFilter.value;
+    const se = seasonFilter.value;
+    document.querySelectorAll('.zone-card').forEach(card => {
+      const species = card.dataset.species.split(',');
+      const season = card.dataset.season;
+      const matchSp = sp === 'all' || species.includes(sp);
+      const matchSe = se === 'all' || season === 'year-round' || season === se;
+      card.style.display = matchSp && matchSe ? '' : 'none';
+    });
+  }
+
+  speciesFilter.addEventListener('change', filterZones);
+  seasonFilter.addEventListener('change', filterZones);
+
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  script.onload = () => {
+    const map = L.map('wildlife-map').setView([51.25, -115.75], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors', maxZoom: 15,
+    }).addTo(map);
+
+    const freqColors = { daily: '#22c55e', common: '#f59e0b', occasional: '#3b82f6', rare: '#a855f7' };
+    zones.forEach(z => {
+      const circle = L.circle([z.lat, z.lng], {
+        radius: z.radius, color: freqColors[z.frequency] || '#888',
+        fillOpacity: 0.2, weight: 2,
+      }).addTo(map);
+      circle.bindPopup(`<strong>${z.name}</strong><br/>${z.species.join(', ')}<br/><em>${z.bestTime} · ${z.season}</em>`);
+    });
+  };
+  document.head.appendChild(script);
+</script>
+
+<style>
+  .wildlife-controls { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .control-group { display: flex; flex-direction: column; gap: 0.3rem; }
+  .control-group label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); font-weight: 600; }
+  .control-group select { padding: 0.6rem 0.8rem; border: 1px solid rgba(0,0,0,0.12); border-radius: 6px; font-size: 0.9rem; }
+
+  .zones-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem; }
+  .zone-card { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+  .zone-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+  .zone-header h3 { font-size: 1rem; }
+  .freq-badge { font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase; }
+  .freq-daily { background: #dcfce7; color: #166534; }
+  .freq-common { background: #fef3c7; color: #92400e; }
+  .freq-occasional { background: #dbeafe; color: #1e40af; }
+  .freq-rare { background: #f3e8ff; color: #6b21a8; }
+  .zone-species { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+  .species-tag { font-size: 0.72rem; background: var(--color-bg-alt); padding: 0.15rem 0.4rem; border-radius: 3px; }
+  .zone-desc { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.5rem; }
+  .zone-meta { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--color-text-light); margin-bottom: 0.5rem; }
+  .zone-safety { font-size: 0.8rem; background: #fef2f2; padding: 0.5rem 0.75rem; border-radius: 6px; color: #991b1b; line-height: 1.4; }
+  .zone-safety strong { color: #dc2626; }
+
+  .seo-summary { background: var(--color-white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+  .seo-summary h2 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+  .seo-summary ul { list-style: none; padding: 0; }
+  .seo-summary li { font-size: 0.88rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); line-height: 1.5; }
+
+  @media (max-width: 768px) { .zones-list { grid-template-columns: 1fr; } }
+</style>

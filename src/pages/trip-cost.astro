@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const costs = {
+  accommodation: {
+    hostel: { label: 'Hostel / Budget', perNight: 55, desc: 'HI Banff Alpine Centre, Samesun' },
+    budget: { label: 'Budget Hotel', perNight: 150, desc: 'Banff Inn, Irwin\'s, Homestead Inn' },
+    mid: { label: 'Mid-Range', perNight: 280, desc: 'Moose Hotel, Mount Royal, Elk + Avenue' },
+    upscale: { label: 'Upscale', perNight: 420, desc: 'Rimrock, Fairmont Banff Springs' },
+    luxury: { label: 'Luxury Suite', perNight: 650, desc: 'Fairmont Lake Louise, penthouse suites' },
+  },
+  food: {
+    budget: { label: 'Budget', perDay: 35, desc: 'Groceries, fast food, coffee shops' },
+    moderate: { label: 'Moderate', perDay: 75, desc: 'Casual dining, one nice meal/day' },
+    foodie: { label: 'Foodie', perDay: 130, desc: 'Restaurants for lunch & dinner, cocktails' },
+    splurge: { label: 'Splurge', perDay: 200, desc: 'Fine dining, wine pairings, tasting menus' },
+  },
+  activities: {
+    free: { label: 'Mostly Free', perDay: 10, desc: 'Hiking, lakes, viewpoints, free attractions' },
+    moderate: { label: 'Some Tours', perDay: 65, desc: '1 paid activity/day (gondola, canoe, etc.)' },
+    active: { label: 'Active', perDay: 130, desc: 'Via ferrata, rafting, guided tours daily' },
+    premium: { label: 'Premium', perDay: 220, desc: 'Heli tours, private guides, ski passes' },
+  },
+  transport: {
+    transit: { label: 'Transit Only', perDay: 5, desc: 'Roam Transit, walking, shuttle' },
+    rental: { label: 'Rental Car', perDay: 75, desc: 'Economy car + gas + Parks pass portion' },
+    premium: { label: 'SUV / Premium', perDay: 130, desc: 'SUV rental + gas + parking fees' },
+  },
+  parkPass: 11.00,
+};
+
+const costsJSON = JSON.stringify(costs);
+---
+
+<BaseLayout title="Banff Trip Cost Calculator 2026 — How Much Will It Cost?" description="Interactive cost calculator for a Banff trip. Adjust accommodation, food, activities, and transport to get a personalized daily and total budget for 2026.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'How much does a trip to Banff cost per day in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'A Banff trip costs $105-$1,200 per person per day in 2026 depending on your style. Budget travellers (hostel, groceries, free hikes): ~$105/day. Mid-range (hotel, casual dining, some tours): ~$430/day. Luxury (Fairmont, fine dining, premium activities): ~$1,000+/day. Parks Canada pass is $11/person/day. Accommodation is the biggest variable — hostels start at $55/night while the Fairmont Banff Springs runs $420-650+/night.' } },
+      { '@type': 'Question', name: 'How much does 5 days in Banff cost for 2 people?', acceptedAnswer: { '@type': 'Answer', text: 'For 2 people spending 5 days in Banff in 2026: Budget trip ~$1,550 total ($155/person/day). Mid-range trip ~$3,700 total ($370/person/day). Luxury trip ~$8,500+ total ($850+/person/day). These estimates include accommodation, food, activities, transport, and park passes. Summer (June-September) is 20-40% more expensive than shoulder or winter seasons for accommodation.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Trip Cost Calculator' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">2026 Prices</span>
+      <h1>Trip Cost Calculator</h1>
+      <p>How much will your Banff trip actually cost? Adjust the sliders to match your style.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="calc-layout">
+        <div class="calc-controls">
+          <div class="calc-group">
+            <label>How many days?</label>
+            <div class="slider-row">
+              <input type="range" id="days" min="1" max="14" value="5" />
+              <span class="slider-val" id="days-val">5</span>
+            </div>
+          </div>
+          <div class="calc-group">
+            <label>How many people?</label>
+            <div class="slider-row">
+              <input type="range" id="people" min="1" max="6" value="2" />
+              <span class="slider-val" id="people-val">2</span>
+            </div>
+          </div>
+          <div class="calc-group">
+            <label>Accommodation</label>
+            <div class="option-cards" id="accom-options"></div>
+          </div>
+          <div class="calc-group">
+            <label>Food & Dining</label>
+            <div class="option-cards" id="food-options"></div>
+          </div>
+          <div class="calc-group">
+            <label>Activities & Tours</label>
+            <div class="option-cards" id="activity-options"></div>
+          </div>
+          <div class="calc-group">
+            <label>Transport</label>
+            <div class="option-cards" id="transport-options"></div>
+          </div>
+        </div>
+
+        <div class="calc-result" id="calc-result">
+          <h2>Your Estimate</h2>
+          <div class="result-total" id="result-total">$0</div>
+          <p class="result-subtitle" id="result-subtitle"></p>
+          <div class="result-breakdown" id="result-breakdown"></div>
+          <div class="result-tip" id="result-tip"></div>
+          <a href="/hotels" class="btn btn-primary" style="margin-top:1rem;">Browse Hotels</a>
+          <a href="/trip-builder" class="btn btn-outline" style="margin-top:0.5rem;">Build Your Itinerary</a>
+        </div>
+      </div>
+
+      <div class="seo-summary" style="margin-top:2rem;">
+        <h2>Banff Trip Cost Guide for 2026</h2>
+        <p><strong>Budget trip (per person/day):</strong> $105 — hostel ($55), groceries ($35), free hikes ($10), transit ($5). Parks pass $11/day.</p>
+        <p><strong>Mid-range trip (per person/day):</strong> $430 — hotel ($280), casual dining ($75), one tour ($65), rental car split ($75/2). Parks pass $11/day.</p>
+        <p><strong>Luxury trip (per person/day):</strong> $1,000+ — Fairmont ($650), fine dining ($200), premium activities ($220), SUV ($130). Parks pass $11/day.</p>
+        <p><strong>Tip:</strong> Shoulder season (May, October) accommodation is 20-40% cheaper than July-August. Booking 3+ months ahead saves 15-25% on hotels.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ costsJSON }}>
+  const costs = JSON.parse(costsJSON);
+  let state = { days: 5, people: 2, accom: 'mid', food: 'moderate', activity: 'moderate', transport: 'rental' };
+
+  function renderOptions(containerId, options, category) {
+    const el = document.getElementById(containerId);
+    el.innerHTML = Object.entries(options).map(([key, opt]) =>
+      `<button class="opt-btn ${state[category] === key ? 'active' : ''}" data-cat="${category}" data-key="${key}">
+        <strong>${opt.label}</strong>
+        <span>$${opt.perNight || opt.perDay}/day</span>
+        <small>${opt.desc}</small>
+      </button>`
+    ).join('');
+  }
+
+  function calculate() {
+    const d = state.days, p = state.people;
+    const accom = costs.accommodation[state.accom].perNight * d;
+    const food = costs.food[state.food].perDay * d * p;
+    const activities = costs.activities[state.activity].perDay * d * p;
+    const transport = costs.transport[state.transport].perDay * d;
+    const pass = costs.parkPass * d * p;
+    const total = accom + food + activities + transport + pass;
+    const perPersonPerDay = Math.round(total / p / d);
+
+    document.getElementById('result-total').textContent = `$${total.toLocaleString()}`;
+    document.getElementById('result-subtitle').textContent = `${d} days, ${p} people — $${perPersonPerDay}/person/day`;
+    document.getElementById('result-breakdown').innerHTML = `
+      <div class="breakdown-row"><span>Accommodation</span><span>$${accom.toLocaleString()}</span></div>
+      <div class="breakdown-row"><span>Food & Dining</span><span>$${food.toLocaleString()}</span></div>
+      <div class="breakdown-row"><span>Activities</span><span>$${activities.toLocaleString()}</span></div>
+      <div class="breakdown-row"><span>Transport</span><span>$${transport.toLocaleString()}</span></div>
+      <div class="breakdown-row"><span>Parks Pass</span><span>$${pass.toLocaleString()}</span></div>
+    `;
+
+    let tip = '';
+    if (perPersonPerDay < 150) tip = 'Great budget planning. Consider the Discovery Pass ($75/year) if visiting 7+ days.';
+    else if (perPersonPerDay < 400) tip = 'Solid mid-range budget. Book accommodation 3+ months ahead for best rates.';
+    else tip = 'Premium experience. Consider the Fairmont Gold floor for the best value at the high end.';
+    document.getElementById('result-tip').textContent = tip;
+  }
+
+  function init() {
+    renderOptions('accom-options', costs.accommodation, 'accom');
+    renderOptions('food-options', costs.food, 'food');
+    renderOptions('activity-options', costs.activities, 'activity');
+    renderOptions('transport-options', costs.transport, 'transport');
+
+    document.querySelectorAll('.opt-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state[btn.dataset.cat] = btn.dataset.key;
+        const container = btn.parentElement;
+        container.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        calculate();
+      });
+    });
+
+    ['days', 'people'].forEach(id => {
+      const input = document.getElementById(id);
+      input.addEventListener('input', () => {
+        state[id] = parseInt(input.value);
+        document.getElementById(`${id}-val`).textContent = input.value;
+        calculate();
+      });
+    });
+
+    calculate();
+  }
+
+  init();
+</script>
+
+<style>
+  .calc-layout { display: grid; grid-template-columns: 1fr 340px; gap: 2rem; align-items: start; }
+  .calc-controls { display: flex; flex-direction: column; gap: 1.5rem; }
+  .calc-group label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); font-weight: 600; display: block; margin-bottom: 0.5rem; }
+  .slider-row { display: flex; align-items: center; gap: 1rem; }
+  .slider-row input[type="range"] { flex: 1; accent-color: var(--color-primary); }
+  .slider-val { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; min-width: 2.5rem; text-align: center; }
+
+  .option-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; }
+  .opt-btn {
+    background: var(--color-white); border: 2px solid transparent; border-radius: 8px; padding: 0.75rem;
+    cursor: pointer; text-align: left; font-family: var(--font-body); box-shadow: var(--shadow); transition: all 0.15s;
+    display: flex; flex-direction: column; gap: 0.15rem;
+  }
+  .opt-btn:hover { border-color: var(--color-accent); }
+  .opt-btn.active { border-color: var(--color-primary); background: #f0f7f4; }
+  .opt-btn strong { font-size: 0.85rem; }
+  .opt-btn span { font-size: 0.82rem; color: var(--color-primary); font-weight: 600; }
+  .opt-btn small { font-size: 0.72rem; color: var(--color-text-light); }
+
+  .calc-result {
+    background: var(--color-white); border-radius: var(--radius); padding: 2rem;
+    box-shadow: var(--shadow); position: sticky; top: 6rem; text-align: center;
+  }
+  .calc-result h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-light); margin-bottom: 0.5rem; }
+  .result-total { font-family: var(--font-heading); font-size: 3rem; font-weight: 700; color: var(--color-primary); }
+  .result-subtitle { font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 1.25rem; }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.85rem; }
+  .result-tip { font-size: 0.82rem; color: var(--color-accent); font-style: italic; margin-top: 1rem; }
+
+  @media (max-width: 768px) {
+    .calc-layout { grid-template-columns: 1fr; }
+    .calc-result { position: static; }
+    .option-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

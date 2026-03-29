@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const spots = [
+  { name: 'Moraine Lake Rockpile', slug: 'moraine-lake-lakeshore', lat: 51.3217, lng: -116.1860, type: 'sunrise', elevation: '1885m', season: 'Jun-Oct', bestLight: 'Sunrise (6-7:30 AM)', tip: 'The classic Twenty Dollar View. Shuttle required. First shuttle gives best light. Tripod allowed on the Rockpile. Reflection disappears by 9 AM as wind picks up.', subjects: ['Turquoise lake', 'Valley of Ten Peaks', 'Mirror reflections'] },
+  { name: 'Vermilion Lakes', slug: 'fenland-trail', lat: 51.1830, lng: -115.6050, type: 'sunset', elevation: '1380m', season: 'Year-round', bestLight: 'Sunset (golden hour)', tip: 'Drive to the third lake for Mount Rundle reflections. Winter sunsets are the most dramatic — pink alpenglow on Rundle with frozen lake in foreground. Elk in frame common.', subjects: ['Mount Rundle reflections', 'Sunset alpenglow', 'Elk in foreground'] },
+  { name: 'Peyto Lake Viewpoint', slug: 'peyto-lake-viewpoint', lat: 51.7167, lng: -116.5333, type: 'midday', elevation: '2088m', season: 'Jun-Oct', bestLight: 'Mid-morning (9-11 AM)', tip: 'The fox-head lake is actually best in midday light when the turquoise colour is most saturated. Early morning puts Peyto in shadow. New viewing platform has fences — shoot through or over them.', subjects: ['Fox-head turquoise lake', 'Glacier backdrop', 'Alpine colour'] },
+  { name: 'Lake Louise Lakeshore', slug: 'lake-louise-lakeshore', lat: 51.4167, lng: -116.1767, type: 'sunrise', elevation: '1731m', season: 'Year-round', bestLight: 'Sunrise (first light on glacier)', tip: 'Arrive 30 min before sunrise for mirror-still water. Walk past the Chateau to the lakeshore. In winter, the frozen turquoise ice with Chateau in background is iconic. Summer: canoe at dawn for the classic shot.', subjects: ['Victoria Glacier', 'Turquoise water', 'Chateau backdrop'] },
+  { name: 'Two Jack Lake', slug: null, lat: 51.2280, lng: -115.4790, type: 'sunrise', elevation: '1500m', season: 'Year-round', bestLight: 'Sunrise (golden light on Rundle)', tip: 'The foreground rocks in the shallows make this. Wade out (carefully) for lower angle. Mount Rundle catches first light beautifully. Far fewer people than the icon lakes.', subjects: ['Mount Rundle sunrise', 'Foreground rocks', 'Calm reflections'] },
+  { name: 'Bow Lake', slug: 'bow-lake', lat: 51.6700, lng: -116.4467, type: 'sunrise', elevation: '1920m', season: 'Jun-Oct', bestLight: 'Sunrise + first hour', tip: 'Num-Ti-Jah Lodge on the shore adds a foreground element. Bow Glacier and Bow Falls behind. Less crowded than the Lake Louise shots and equally beautiful. Good for wide panoramas.', subjects: ['Bow Glacier', 'Lodge foreground', 'Mountain panorama'] },
+  { name: 'Cascade Mountain from Banff', slug: null, lat: 51.1780, lng: -115.5700, type: 'anytime', elevation: '1400m', season: 'Year-round', bestLight: 'Blue hour / Christmas lights (winter)', tip: 'Shoot from the middle of Banff Avenue bridge for the classic "Cascade Mountain down the main street" shot. In December, Christmas lights on the avenue add foreground. Blue hour is best year-round.', subjects: ['Cascade Mountain', 'Banff Avenue', 'Town with mountains'] },
+  { name: 'Johnston Canyon Catwalks', slug: 'johnston-canyon-lower-falls', lat: 51.2454, lng: -115.8396, type: 'midday', elevation: '1430m', season: 'Year-round', bestLight: 'Overcast day (reduces harsh shadows in canyon)', tip: 'Overcast days are actually better here — direct sun creates extreme contrast in the narrow canyon. Winter ice formations are spectacular. Use a slow shutter (1-2s) for silky waterfall effect.', subjects: ['Waterfall', 'Canyon walls', 'Ice formations (winter)'] },
+  { name: 'Sentinel Pass Panorama', slug: 'sentinel-pass-via-larch-valley', lat: 51.3300, lng: -116.2100, type: 'morning', elevation: '2611m', season: 'Jul-Oct', bestLight: 'Morning (8-11 AM)', tip: 'The hike is 5.8 km to the pass. In September, golden larches below make this the single most photographed panorama in the Rockies. Wide-angle lens essential. Dress for wind at the pass.', subjects: ['Larch Valley gold', 'Valley of Ten Peaks', 'Alpine panorama'] },
+  { name: 'Athabasca Falls', slug: null, lat: 51.1167, lng: -117.2167, type: 'midday', elevation: '1220m', season: 'May-Oct', bestLight: 'Midday (sun reaches canyon floor)', tip: 'Multiple viewpoints via bridges — the lower viewpoint gives the most dramatic sense of power. Spray gets on your lens, bring a cloth. Long exposure (0.5-1s) smooths the water beautifully.', subjects: ['Powerful waterfall', 'Canyon gorge', 'Spray and mist'] },
+];
+
+const spotsJSON = JSON.stringify(spots);
+---
+
+<BaseLayout title="Best Photo Spots in Banff — Sunrise, Sunset & Golden Hour Guide" description="The 10 best photography locations in Banff National Park with exact sunrise/sunset timing, golden hour windows, and pro tips for each spot.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What are the best photo spots in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The top 10 photo spots in Banff: Moraine Lake Rockpile (sunrise, iconic Twenty Dollar View), Vermilion Lakes (sunset, Mount Rundle reflections), Peyto Lake Viewpoint (midday, fox-head turquoise lake), Lake Louise Lakeshore (sunrise, Victoria Glacier), Two Jack Lake (sunrise, Mount Rundle), Bow Lake (sunrise, glacier backdrop), Banff Avenue / Cascade Mountain (blue hour), Johnston Canyon (overcast days, waterfalls), Sentinel Pass (morning, larch season panorama), Athabasca Falls (midday, powerful waterfall).' } },
+      { '@type': 'Question', name: 'What time is sunrise and sunset in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Banff sunrise/sunset varies dramatically by season. Summer (June-July): sunrise ~5:30 AM, sunset ~9:45 PM, 16+ hours of daylight. Winter (December): sunrise ~8:30 AM, sunset ~4:30 PM, 8 hours of daylight. Golden hour lasts about 1 hour before sunset and 30 minutes after sunrise. September (larch season): sunrise ~7:00 AM, sunset ~7:30 PM.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Photo Spots' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Photography in Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Photography Guide</span>
+      <h1>Best Photo Spots</h1>
+      <p>10 top photography locations with golden hour timing, best light direction, and pro tips.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sun-banner" id="sun-banner">
+        <div class="sun-item"><span class="sun-label">Today's Sunrise</span><span class="sun-val" id="today-sunrise">--</span></div>
+        <div class="sun-item"><span class="sun-label">Golden Hour</span><span class="sun-val" id="today-golden">--</span></div>
+        <div class="sun-item"><span class="sun-label">Sunset</span><span class="sun-val" id="today-sunset">--</span></div>
+        <div class="sun-item"><span class="sun-label">Daylight</span><span class="sun-val" id="today-daylight">--</span></div>
+      </div>
+
+      <div class="spots-grid">
+        {spots.map((spot, i) => (
+          <div class={`spot-card spot-${spot.type}`}>
+            <div class="spot-header">
+              <span class="spot-num">{i + 1}</span>
+              <div>
+                <h3>{spot.name}</h3>
+                <span class="spot-light-badge">{spot.type === 'sunrise' ? '🌅 Sunrise' : spot.type === 'sunset' ? '🌇 Sunset' : spot.type === 'morning' ? '☀️ Morning' : '📷 Any Light'}</span>
+              </div>
+            </div>
+            <div class="spot-meta">
+              <span>📍 {spot.elevation}</span>
+              <span>📅 {spot.season}</span>
+              <span>💡 {spot.bestLight}</span>
+            </div>
+            <p class="spot-tip">{spot.tip}</p>
+            <div class="spot-subjects">
+              {spot.subjects.map(s => <span class="subject-tag">{s}</span>)}
+            </div>
+            {spot.slug && <a href={`/trails/${spot.slug}`} class="card-link">View Trail Details</a>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function calcSun(lat, lng, date) {
+    const rad = Math.PI / 180;
+    const dayOfYear = Math.floor((date - new Date(date.getFullYear(),0,0)) / 86400000);
+    const declination = 23.45 * Math.sin(rad * (360/365) * (dayOfYear - 81));
+    const hourAngle = Math.acos(-Math.tan(lat * rad) * Math.tan(declination * rad)) / rad;
+    const solarNoon = 12 - lng / 15;
+    const offset = -7;
+    return { sunrise: solarNoon - hourAngle / 15 - offset, sunset: solarNoon + hourAngle / 15 - offset };
+  }
+  function fmt(h) {
+    const hrs = Math.floor(h), mins = Math.round((h-hrs)*60), ap = hrs>=12?'PM':'AM';
+    return `${hrs>12?hrs-12:hrs||12}:${String(mins).padStart(2,'0')} ${ap}`;
+  }
+  const { sunrise, sunset } = calcSun(51.1784, -115.5708, new Date());
+  document.getElementById('today-sunrise').textContent = fmt(sunrise);
+  document.getElementById('today-sunset').textContent = fmt(sunset);
+  document.getElementById('today-golden').textContent = `${fmt(sunset-1)} - ${fmt(sunset)}`;
+  const dl = sunset - sunrise;
+  document.getElementById('today-daylight').textContent = `${Math.floor(dl)}h ${Math.round((dl%1)*60)}m`;
+</script>
+
+<style>
+  .sun-banner {
+    display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
+    background: var(--color-primary); color: var(--color-white); border-radius: var(--radius);
+    padding: 1.5rem; margin-bottom: 2rem; text-align: center;
+  }
+  .sun-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .sun-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-light); }
+  .sun-val { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; }
+
+  .spots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
+  .spot-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .spot-sunrise { border-top: 3px solid #f59e0b; }
+  .spot-sunset { border-top: 3px solid #ef4444; }
+  .spot-morning { border-top: 3px solid #3b82f6; }
+  .spot-midday { border-top: 3px solid #22c55e; }
+  .spot-anytime { border-top: 3px solid #8b5cf6; }
+
+  .spot-header { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
+  .spot-num { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-accent); }
+  .spot-header h3 { font-size: 1.05rem; margin-bottom: 0.15rem; }
+  .spot-light-badge { font-size: 0.75rem; color: var(--color-text-light); }
+
+  .spot-meta { display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--color-text-light); margin-bottom: 0.75rem; flex-wrap: wrap; }
+  .spot-tip { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.75rem; }
+  .spot-subjects { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .subject-tag { font-size: 0.72rem; background: var(--color-bg-alt); padding: 0.15rem 0.5rem; border-radius: 3px; color: var(--color-text-light); }
+  .card-link { display: inline-block; margin-top: 0.75rem; color: var(--color-accent); font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .spots-grid { grid-template-columns: 1fr; }
+    .sun-banner { gap: 1.5rem; }
+  }
+</style>

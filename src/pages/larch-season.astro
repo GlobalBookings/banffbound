@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const larchTrails = [
+  { name: 'Larch Valley / Sentinel Pass', slug: 'sentinel-pass-via-larch-valley', elevation: '2165-2611m', peakDate: 'Sep 18-28', rating: 5, note: 'THE larch hike. Dense stands in the valley, golden amphitheatre below Sentinel Pass. Extremely crowded — arrive before 6:30 AM or take the shuttle.' },
+  { name: 'Taylor Lake / O\'Brien Lake', slug: 'taylor-lake', elevation: '2060m', peakDate: 'Sep 15-25', rating: 4, note: 'Stunning larch stands around Taylor Lake with far fewer people than Larch Valley. One of the best-kept alternatives.' },
+  { name: 'Consolation Lakes', slug: 'consolation-lakes', elevation: '1950m', peakDate: 'Sep 20-30', rating: 4, note: 'Starts near Moraine Lake. Scattered larches along the trail with great boulder field scenery. Lower elevation = slightly later peak.' },
+  { name: 'Boom Lake', slug: 'boom-lake', elevation: '1895m', peakDate: 'Sep 22-Oct 2', rating: 3, note: 'Gentle trail to a glacial lake with larch trees dotting the surrounding slopes. Quieter and peaks later.' },
+  { name: 'Helen Lake', slug: 'helen-lake', elevation: '2395m', peakDate: 'Sep 12-22', rating: 4, note: 'High alpine meadow with scattered larches. The high elevation means colour comes earlier. Wildflowers transition to gold.' },
+  { name: 'Paradise Valley / Giant Steps', slug: 'paradise-valley-giant-steps', elevation: '1950-2100m', peakDate: 'Sep 18-28', rating: 4, note: 'The Giant Steps waterfall framed by golden larches is one of the great sights in the Rockies. Long hike but worth every step.' },
+  { name: 'Saddleback Pass', slug: 'saddleback-pass', elevation: '2330m', peakDate: 'Sep 15-25', rating: 3, note: 'Above Lake Louise, the pass has larches with Victoria Glacier as a backdrop. Less crowded than Larch Valley.' },
+  { name: 'Skoki Area', slug: null, elevation: '2100-2400m', peakDate: 'Sep 15-25', rating: 5, note: 'Backcountry paradise. Multiple larch-filled valleys around Skoki Lodge. Requires overnight or very long day hike. Almost no crowds.' },
+];
+
+const historicalDates = [
+  { year: 2019, peakStart: 'Sep 20', peakEnd: 'Sep 30', notes: 'Late season, warm September' },
+  { year: 2020, peakStart: 'Sep 15', peakEnd: 'Sep 25', notes: 'Early cold snap triggered early colour' },
+  { year: 2021, peakStart: 'Sep 18', peakEnd: 'Sep 28', notes: 'Average timing' },
+  { year: 2022, peakStart: 'Sep 22', peakEnd: 'Oct 2', notes: 'Extended warm fall, late peak' },
+  { year: 2023, peakStart: 'Sep 16', peakEnd: 'Sep 26', notes: 'Early frost, early colour' },
+  { year: 2024, peakStart: 'Sep 19', peakEnd: 'Sep 29', notes: 'Near-average timing' },
+  { year: 2025, peakStart: 'Sep 17', peakEnd: 'Sep 27', notes: 'Slightly early' },
+];
+---
+
+<BaseLayout title="Larch Season Predictor 2026 — When Do Larches Turn Gold in Banff?" description="When do the larches turn in Banff? Peak colour prediction for 2026 based on 7 years of data. Best larch trails ranked, with crowd avoidance tips.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'When do the larches turn gold in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Larch trees in Banff typically peak between September 15-30, with the average peak around September 18-28. Higher elevations (2300m+) like Helen Lake and Saddleback peak 5-7 days earlier than lower trails like Boom Lake. Based on 7 years of data, the best week to visit for larches is September 18-25. Early cold snaps can push colour earlier; warm falls delay it.' } },
+      { '@type': 'Question', name: 'What is the best larch hike in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Larch Valley / Sentinel Pass is the most famous larch hike, with dense golden stands in an alpine amphitheatre. However, it is extremely crowded in September. For fewer crowds with equally beautiful larches, try Taylor Lake (90% fewer people), Paradise Valley / Giant Steps, or Saddleback Pass. The Skoki backcountry area has the best larches of all but requires an overnight trip.' } },
+      { '@type': 'Question', name: 'When is larch season 2026 in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Based on 7 years of historical data (2019-2025), larch season 2026 in Banff is predicted to peak between September 17-28, 2026. The best single week is typically September 18-25. Visit earlier (Sep 12-18) for high-elevation trails like Helen Lake, later (Sep 25-Oct 2) for lower trails like Boom Lake. Book shuttle reservations and accommodation well in advance — this is the busiest hiking period of the year.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Larch Season' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=1600&q=80" alt="Golden larch trees in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">2026 Prediction</span>
+      <h1>Larch Season Predictor</h1>
+      <p>When do the larches turn gold? Historical data, trail-by-trail timing, and crowd avoidance strategy.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prediction-card">
+        <h2>2026 Predicted Peak</h2>
+        <div class="prediction-dates">
+          <div class="pred-block">
+            <span class="pred-label">High Elevation (2300m+)</span>
+            <span class="pred-date">Sep 12-22</span>
+          </div>
+          <div class="pred-block pred-main">
+            <span class="pred-label">Best Overall Week</span>
+            <span class="pred-date">Sep 18-25</span>
+          </div>
+          <div class="pred-block">
+            <span class="pred-label">Low Elevation (1900m)</span>
+            <span class="pred-date">Sep 22-Oct 2</span>
+          </div>
+        </div>
+        <p class="pred-note">Based on 7 years of observed peak dates (2019-2025). Actual timing varies with temperature. Nighttime temperatures below 0°C trigger colour change; sustained freezing causes needle drop.</p>
+      </div>
+
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Best Larch Trails — Ranked</h2>
+        <p>Sorted by quality of larch displays. Star ratings based on density of golden larches.</p>
+      </div>
+
+      <div class="larch-trails">
+        {larchTrails.map((t, i) => (
+          <a href={t.slug ? `/trails/${t.slug}` : '#'} class="larch-card" style="text-decoration:none;color:inherit;">
+            <div class="larch-rank">{i + 1}</div>
+            <div class="larch-info">
+              <div class="larch-top">
+                <h3>{t.name}</h3>
+                <span class="larch-stars">{'★'.repeat(t.rating)}{'☆'.repeat(5 - t.rating)}</span>
+              </div>
+              <div class="larch-meta">
+                <span>📍 {t.elevation}</span>
+                <span>🍂 Peak: {t.peakDate}</span>
+              </div>
+              <p>{t.note}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Historical Peak Dates</h2>
+      </div>
+
+      <div class="history-table">
+        <div class="history-header">
+          <span>Year</span><span>Peak Start</span><span>Peak End</span><span>Notes</span>
+        </div>
+        {historicalDates.map(d => (
+          <div class="history-row">
+            <span>{d.year}</span><span>{d.peakStart}</span><span>{d.peakEnd}</span><span>{d.notes}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prediction-card { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; text-align: center; }
+  .prediction-card h2 { color: var(--color-white); margin-bottom: 1.5rem; }
+  .prediction-dates { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .pred-block { display: flex; flex-direction: column; gap: 0.3rem; padding: 1rem 1.5rem; background: rgba(255,255,255,0.1); border-radius: 8px; }
+  .pred-main { background: rgba(255,255,255,0.2); border: 2px solid var(--color-accent); }
+  .pred-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-light); }
+  .pred-date { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; }
+  .pred-note { font-size: 0.85rem; color: var(--color-accent-light); margin-top: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  .larch-trails { display: flex; flex-direction: column; gap: 0.75rem; }
+  .larch-card { display: flex; gap: 1rem; align-items: flex-start; background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); transition: all 0.2s; }
+  .larch-card:hover { transform: translateX(4px); box-shadow: var(--shadow-lg); }
+  .larch-rank { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-accent); min-width: 2rem; text-align: center; }
+  .larch-info { flex: 1; }
+  .larch-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem; }
+  .larch-top h3 { font-size: 1rem; }
+  .larch-stars { color: #f59e0b; letter-spacing: 0.1em; }
+  .larch-meta { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--color-text-light); margin-bottom: 0.4rem; }
+  .larch-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .history-table { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .history-header, .history-row { display: grid; grid-template-columns: 80px 120px 120px 1fr; padding: 0.75rem 1.25rem; }
+  .history-header { background: var(--color-primary); color: var(--color-white); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .history-row { font-size: 0.88rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .history-row span:last-child { color: var(--color-text-light); font-size: 0.82rem; }
+
+  @media (max-width: 768px) {
+    .prediction-dates { flex-direction: column; align-items: center; }
+    .history-header, .history-row { grid-template-columns: 60px 90px 90px 1fr; font-size: 0.8rem; padding: 0.5rem 0.75rem; }
+  }
+</style>
