@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { trails } from '../data/trails';
+
+const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
+
+const trailsJSON = JSON.stringify(trails.map(t => ({
+  id: t.id, name: t.name, slug: t.slug, difficulty: t.difficulty,
+  distance: t.distance, elevationGain: t.elevationGain, time: t.time,
+  season: t.season, area: t.area, image: t.image, lat: t.lat, lng: t.lng,
+  status: t.status || 'open', crowdLevel: t.crowdLevel,
+  highlights: t.highlights, type: t.type,
+})));
+---
+
+<BaseLayout title="Quiet Trails Right Now — Avoid Banff Crowds" description="Find the least crowded trails in Banff right now. Real-time crowd avoidance based on day of week, time, and season. Never hike in a queue again.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Quiet Trails' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="Empty mountain trail in Banff" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Crowd Avoidance</span>
+      <h1>Quiet Trails Right Now</h1>
+      <p>Ranked by how empty they are based on time of day, day of week, and season. Updated live.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="quiet-controls">
+        <div class="control-group">
+          <label>Difficulty</label>
+          <select id="q-difficulty">
+            <option value="all">Any</option>
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="challenging">Challenging</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label>Area</label>
+          <select id="q-area">
+            <option value="all">Anywhere</option>
+            <option value="Banff">Banff</option>
+            <option value="Lake Louise">Lake Louise</option>
+            <option value="Castle Junction">Castle Junction</option>
+            <option value="Icefields Parkway">Icefields Parkway</option>
+          </select>
+        </div>
+        <div class="quiet-context" id="quiet-context"></div>
+      </div>
+
+      <div class="quiet-results" id="quiet-results"></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ trailsJSON, OWM_KEY: OWM_KEY_SSR }}>
+  const allTrails = JSON.parse(trailsJSON);
+
+  // Crowd scoring model: lower = quieter
+  function crowdScore(trail) {
+    const now = new Date();
+    const hour = now.getHours();
+    const dow = now.getDay(); // 0=Sun
+    const month = now.getMonth(); // 0-indexed
+    const isWeekend = dow === 0 || dow === 6;
+    const isSummer = month >= 5 && month <= 8;
+    const isWinter = month >= 10 || month <= 3;
+    const isShoulder = !isSummer && !isWinter;
+
+    let score = 30; // base
+
+    // Popularity by crowd level data
+    const seasonKey = isSummer ? 'summer' : 'winter';
+    if (trail.crowdLevel) {
+      const level = trail.crowdLevel[seasonKey];
+      if (level === 'high') score += 40;
+      else if (level === 'medium') score += 20;
+    } else {
+      // Estimate from trail name / area
+      const popular = ['lake-louise', 'moraine', 'johnston-canyon', 'tunnel-mountain', 'bow-falls', 'lake-agnes'];
+      if (popular.some(p => trail.slug?.includes(p) || trail.id?.includes(p))) score += 35;
+    }
+
+    // Time of day
+    if (hour >= 10 && hour <= 15) score += 20; // peak hours
+    else if (hour < 7 || hour > 18) score -= 15; // early/late = quiet
+    else score += 5;
+
+    // Day of week
+    if (isWeekend) score += 15;
+    if (dow >= 1 && dow <= 3) score -= 10; // Tue-Wed-Thu quietest
+
+    // Season
+    if (isSummer) score += 15;
+    if (isWinter && trail.season === 'summer') score -= 20; // closed trails irrelevant
+    if (isShoulder) score -= 10;
+
+    // Area bonus: Icefields Parkway always quieter
+    if (trail.area === 'Icefields Parkway') score -= 15;
+    if (trail.area === 'Castle Junction' && trail.id !== 'johnston-canyon') score -= 10;
+
+    // Difficulty: harder = quieter
+    if (trail.difficulty === 'challenging') score -= 15;
+    if (trail.difficulty === 'easy') score += 10;
+
+    // Trail status
+    if (trail.status === 'closed') score = 999;
+
+    return Math.max(0, score);
+  }
+
+  function quietnessLabel(score) {
+    if (score <= 20) return { text: 'Very Quiet', color: '#16a34a', emoji: '🟢' };
+    if (score <= 40) return { text: 'Quiet', color: '#22c55e', emoji: '🟢' };
+    if (score <= 55) return { text: 'Moderate', color: '#d97706', emoji: '🟡' };
+    if (score <= 70) return { text: 'Busy', color: '#ea580c', emoji: '🟠' };
+    return { text: 'Very Busy', color: '#dc2626', emoji: '🔴' };
+  }
+
+  function render() {
+    const diffFilter = document.getElementById('q-difficulty').value;
+    const areaFilter = document.getElementById('q-area').value;
+
+    const now = new Date();
+    const hour = now.getHours();
+    const dow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()];
+    const month = now.toLocaleString('default', { month: 'long' });
+    const isSummer = now.getMonth() >= 5 && now.getMonth() <= 8;
+
+    document.getElementById('quiet-context').innerHTML =
+      `<span>📅 ${dow} · ⏰ ${hour}:${String(now.getMinutes()).padStart(2,'0')} · 🗓 ${month}</span>` +
+      `<span class="context-tip">${hour < 8 ? 'Early morning — most trails are quiet right now' : hour > 17 ? 'Evening — crowds are thinning out' : now.getDay() >= 1 && now.getDay() <= 3 ? 'Midweek — quieter than weekends' : 'Expect moderate-to-high crowds at popular spots'}</span>`;
+
+    let filtered = allTrails.filter(t => {
+      if (t.status === 'closed') return false;
+      if (isSummer && t.season === 'winter') return false;
+      if (!isSummer && t.season === 'summer') return false;
+      if (diffFilter !== 'all' && t.difficulty !== diffFilter) return false;
+      if (areaFilter !== 'all' && t.area !== areaFilter) return false;
+      return true;
+    });
+
+    filtered = filtered.map(t => ({ ...t, score: crowdScore(t) }))
+      .sort((a, b) => a.score - b.score);
+
+    const container = document.getElementById('quiet-results');
+    if (filtered.length === 0) {
+      container.innerHTML = '<p class="no-results">No trails match your filters for the current season.</p>';
+      return;
+    }
+
+    container.innerHTML = filtered.map((t, i) => {
+      const q = quietnessLabel(t.score);
+      return `
+        <a href="/trails/${t.slug}" class="quiet-card ${i < 3 ? 'quiet-top' : ''}">
+          <div class="quiet-rank">${i + 1}</div>
+          <img src="${t.image}" alt="${t.name}" class="quiet-img" loading="lazy" />
+          <div class="quiet-info">
+            <div class="quiet-top-row">
+              <h3>${t.name}</h3>
+              <span class="quiet-badge" style="color:${q.color};">${q.emoji} ${q.text}</span>
+            </div>
+            <div class="quiet-meta">
+              <span>${t.difficulty}</span>
+              <span>📏 ${t.distance}</span>
+              <span>⬆️ ${t.elevationGain}</span>
+              <span>⏱️ ${t.time}</span>
+              <span>📍 ${t.area}</span>
+            </div>
+            ${i < 3 ? `<p class="quiet-why">${t.highlights ? t.highlights.slice(0, 2).join(' · ') : ''}</p>` : ''}
+          </div>
+        </a>
+      `;
+    }).join('');
+  }
+
+  document.getElementById('q-difficulty').addEventListener('change', render);
+  document.getElementById('q-area').addEventListener('change', render);
+  render();
+</script>
+
+<style>
+  .quiet-controls {
+    display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;
+    background: var(--color-white); padding: 1.5rem; border-radius: var(--radius);
+    box-shadow: var(--shadow); margin-bottom: 1.5rem;
+  }
+  .control-group { display: flex; flex-direction: column; gap: 0.3rem; }
+  .control-group label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); font-weight: 600; }
+  .control-group select { padding: 0.6rem 0.8rem; border: 1px solid rgba(0,0,0,0.12); border-radius: 6px; font-size: 0.9rem; font-family: var(--font-body); }
+
+  .quiet-context { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; }
+  .quiet-context span { font-size: 0.85rem; color: var(--color-text-light); }
+  .context-tip { font-style: italic; font-size: 0.8rem; color: var(--color-accent); }
+
+  .quiet-results { display: flex; flex-direction: column; gap: 0.75rem; }
+  .quiet-card {
+    display: flex; gap: 1rem; align-items: center; text-decoration: none; color: inherit;
+    background: var(--color-white); border-radius: var(--radius); padding: 1rem;
+    box-shadow: var(--shadow); transition: all 0.2s;
+  }
+  .quiet-card:hover { transform: translateX(4px); box-shadow: var(--shadow-lg); }
+  .quiet-top { border-left: 4px solid #22c55e; }
+  .quiet-rank { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-text-light); min-width: 2rem; text-align: center; }
+  .quiet-img { width: 80px; height: 60px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+  .quiet-info { flex: 1; min-width: 0; }
+  .quiet-top-row { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+  .quiet-top-row h3 { font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .quiet-badge { font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
+  .quiet-meta { display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--color-text-light); margin-top: 0.3rem; flex-wrap: wrap; }
+  .quiet-meta span { text-transform: capitalize; }
+  .quiet-why { font-size: 0.82rem; color: var(--color-text-light); margin-top: 0.25rem; }
+  .no-results { text-align: center; color: var(--color-text-light); padding: 3rem; font-size: 0.95rem; }
+
+  @media (max-width: 768px) {
+    .quiet-controls { flex-direction: column; align-items: stretch; }
+    .quiet-context { margin-left: 0; align-items: flex-start; }
+    .quiet-img { display: none; }
+  }
+</style>

@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { parkingLots } from '../data/parkingData';
+
+const lotsJSON = JSON.stringify(parkingLots);
+---
+
+<BaseLayout title="Banff Parking Predictor — When Do Lots Fill Up?" description="Know exactly when parking lots fill at Lake Louise, Johnston Canyon, Moraine Lake, and more. Data-driven fill times by season so you never get turned away.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Parking Predictor' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="Banff parking lot with mountain views" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Local Data</span>
+      <h1>Parking Predictor</h1>
+      <p>Know exactly when lots fill up across Banff National Park. Plan your arrival time so you never get turned away.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="predictor-controls">
+        <div class="control-group">
+          <label>When are you visiting?</label>
+          <select id="season-select">
+            <option value="auto">Auto-detect (today)</option>
+            <option value="peakSummer">Peak Summer (Jul-Aug weekends)</option>
+            <option value="summer">Summer Weekdays (Jun-Sep)</option>
+            <option value="shoulder">Shoulder Season (May, Oct)</option>
+            <option value="winter">Winter (Nov-Apr)</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label>What time will you arrive?</label>
+          <input type="time" id="arrival-time" value="08:00" />
+        </div>
+        <button class="btn btn-primary" id="predict-btn">Check Availability</button>
+      </div>
+
+      <div id="results-summary" class="results-summary" style="display:none;"></div>
+
+      <div class="lots-grid">
+        {parkingLots.map(lot => (
+          <div class="lot-card" data-lot-id={lot.id}>
+            <div class="lot-header">
+              <h3>{lot.name}</h3>
+              <span class="lot-location">{lot.location}</span>
+            </div>
+            <div class="lot-status" id={`status-${lot.id}`}>
+              <div class="fill-times">
+                <div class="fill-row">
+                  <span class="fill-label">Peak Summer</span>
+                  <span class="fill-value fill-peak">{lot.fillTimes.peakSummer}</span>
+                </div>
+                <div class="fill-row">
+                  <span class="fill-label">Summer Weekday</span>
+                  <span class="fill-value">{lot.fillTimes.summer}</span>
+                </div>
+                <div class="fill-row">
+                  <span class="fill-label">Shoulder Season</span>
+                  <span class="fill-value">{lot.fillTimes.shoulder}</span>
+                </div>
+                <div class="fill-row">
+                  <span class="fill-label">Winter</span>
+                  <span class="fill-value">{lot.fillTimes.winter}</span>
+                </div>
+              </div>
+            </div>
+            <div class="lot-verdict" id={`verdict-${lot.id}`}></div>
+            <div class="lot-tips">
+              <p>{lot.tips}</p>
+            </div>
+            {lot.capacity > 0 && (
+              <div class="lot-capacity">
+                <span>🅿️ {lot.capacity} spaces</span>
+                {lot.transitOption && <span>🚌 {lot.transitOption}</span>}
+              </div>
+            )}
+            {lot.alternatives.length > 0 && (
+              <div class="lot-alternatives">
+                <strong>Alternatives:</strong>
+                <ul>
+                  {lot.alternatives.map(alt => <li>{alt}</li>)}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ lotsJSON }}>
+  const lots = JSON.parse(lotsJSON);
+
+  function getSeason() {
+    const sel = document.getElementById('season-select').value;
+    if (sel !== 'auto') return sel;
+    const m = new Date().getMonth();
+    const dow = new Date().getDay();
+    if (m >= 6 && m <= 7 && (dow === 0 || dow === 6)) return 'peakSummer';
+    if (m >= 5 && m <= 8) return 'summer';
+    if (m === 4 || m === 9) return 'shoulder';
+    return 'winter';
+  }
+
+  function parseTime(str) {
+    if (!str || str.includes('Rarely') || str.includes('closed') || str.includes('No private')) return null;
+    const m = str.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+    if (!m) return null;
+    let h = parseInt(m[1]);
+    if (m[3].toUpperCase() === 'PM' && h < 12) h += 12;
+    if (m[3].toUpperCase() === 'AM' && h === 12) h = 0;
+    return h * 60 + parseInt(m[2]);
+  }
+
+  function predict() {
+    const season = getSeason();
+    const timeInput = document.getElementById('arrival-time').value;
+    const [h, m] = timeInput.split(':').map(Number);
+    const arrivalMin = h * 60 + m;
+    let available = 0, full = 0, warning = 0;
+
+    lots.forEach(lot => {
+      const fillStr = lot.fillTimes[season];
+      const fillMin = parseTime(fillStr);
+      const verdictEl = document.getElementById(`verdict-${lot.id}`);
+      const card = document.querySelector(`[data-lot-id="${lot.id}"]`);
+
+      card.classList.remove('lot-available', 'lot-full', 'lot-warning', 'lot-na');
+
+      if (fillMin === null) {
+        verdictEl.innerHTML = `<span class="verdict-ok">✓ ${fillStr}</span>`;
+        card.classList.add('lot-available');
+        available++;
+        return;
+      }
+
+      const diff = fillMin - arrivalMin;
+      if (diff > 60) {
+        verdictEl.innerHTML = `<span class="verdict-ok">✓ Available — fills at ${fillStr}</span>`;
+        card.classList.add('lot-available');
+        available++;
+      } else if (diff > 0) {
+        verdictEl.innerHTML = `<span class="verdict-warn">⚠ Cutting it close — fills at ${fillStr}</span>`;
+        card.classList.add('lot-warning');
+        warning++;
+      } else {
+        verdictEl.innerHTML = `<span class="verdict-full">✕ Already full by ${fillStr}</span>`;
+        card.classList.add('lot-full');
+        full++;
+      }
+    });
+
+    const summary = document.getElementById('results-summary');
+    const seasonLabels = { peakSummer: 'peak summer weekend', summer: 'summer weekday', shoulder: 'shoulder season', winter: 'winter' };
+    summary.innerHTML = `
+      <div class="summary-inner">
+        <strong>Arriving at ${timeInput} during ${seasonLabels[season]}:</strong>
+        <span class="summary-available">${available} lots available</span>
+        <span class="summary-warning">${warning} lots filling soon</span>
+        <span class="summary-full">${full} lots already full</span>
+      </div>
+    `;
+    summary.style.display = 'block';
+  }
+
+  document.getElementById('predict-btn').addEventListener('click', predict);
+  predict();
+</script>
+
+<style>
+  .predictor-controls {
+    display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;
+    background: var(--color-white); padding: 1.5rem; border-radius: var(--radius);
+    box-shadow: var(--shadow); margin-bottom: 1.5rem;
+  }
+  .control-group { display: flex; flex-direction: column; gap: 0.3rem; }
+  .control-group label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); font-weight: 600; }
+  .control-group select, .control-group input { padding: 0.6rem 0.8rem; border: 1px solid rgba(0,0,0,0.12); border-radius: 6px; font-size: 0.9rem; font-family: var(--font-body); }
+
+  .results-summary {
+    background: var(--color-primary); color: var(--color-white); padding: 1rem 1.5rem;
+    border-radius: var(--radius); margin-bottom: 1.5rem;
+  }
+  .summary-inner { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; font-size: 0.9rem; }
+  .summary-available { color: #86efac; font-weight: 600; }
+  .summary-warning { color: #fde68a; font-weight: 600; }
+  .summary-full { color: #fca5a5; font-weight: 600; }
+
+  .lots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
+  .lot-card {
+    background: var(--color-white); border-radius: var(--radius); padding: 1.5rem;
+    box-shadow: var(--shadow); border-left: 4px solid transparent; transition: all 0.2s;
+  }
+  .lot-card.lot-available { border-left-color: #22c55e; }
+  .lot-card.lot-warning { border-left-color: #f59e0b; }
+  .lot-card.lot-full { border-left-color: #ef4444; }
+  .lot-card.lot-na { border-left-color: #9ca3af; }
+
+  .lot-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+  .lot-header h3 { font-size: 1.05rem; }
+  .lot-location { font-size: 0.75rem; color: var(--color-text-light); background: var(--color-bg-alt); padding: 0.15rem 0.5rem; border-radius: 4px; }
+
+  .fill-times { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 0.75rem; }
+  .fill-row { display: flex; justify-content: space-between; padding: 0.3rem 0.5rem; background: var(--color-bg-alt); border-radius: 4px; }
+  .fill-label { font-size: 0.78rem; color: var(--color-text-light); }
+  .fill-value { font-size: 0.78rem; font-weight: 700; }
+  .fill-peak { color: #ef4444; }
+
+  .lot-verdict { margin-bottom: 0.75rem; }
+  .verdict-ok { color: #16a34a; font-weight: 700; font-size: 0.9rem; }
+  .verdict-warn { color: #d97706; font-weight: 700; font-size: 0.9rem; }
+  .verdict-full { color: #dc2626; font-weight: 700; font-size: 0.9rem; }
+
+  .lot-tips { margin-bottom: 0.75rem; }
+  .lot-tips p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .lot-capacity { display: flex; gap: 1rem; font-size: 0.8rem; color: var(--color-text-light); margin-bottom: 0.5rem; }
+  .lot-alternatives { font-size: 0.82rem; }
+  .lot-alternatives strong { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
+  .lot-alternatives ul { list-style: none; padding: 0; margin: 0.3rem 0 0; }
+  .lot-alternatives li { padding: 0.15rem 0; color: var(--color-accent); }
+  .lot-alternatives li::before { content: '→ '; }
+
+  @media (max-width: 768px) {
+    .predictor-controls { flex-direction: column; align-items: stretch; }
+    .lots-grid { grid-template-columns: 1fr; }
+    .fill-times { grid-template-columns: 1fr; }
+  }
+</style>

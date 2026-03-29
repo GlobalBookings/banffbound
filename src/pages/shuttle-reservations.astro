@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const RESERVATION_OPEN = '2026-04-15T08:00:00-06:00';
+const MORAINE_SHUTTLE_START = '2026-06-01';
+const LOUISE_SHUTTLE_START = '2026-05-15';
+---
+
+<BaseLayout title="Banff Shuttle Reservations 2026 — Countdown & Booking Guide" description="Parks Canada shuttle reservations for Lake Louise and Moraine Lake open April 15 at 8 AM MT. Countdown timer, step-by-step booking guide, and backup plans.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Shuttle Reservations' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Moraine Lake shuttle" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">2026 Season</span>
+      <h1>Shuttle Reservations</h1>
+      <p>Parks Canada shuttles to Lake Louise & Moraine Lake. Countdown, booking guide, and backup plans.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Countdown -->
+      <div class="countdown-card" id="countdown-card">
+        <div class="countdown-header">
+          <h2>Reservations Open</h2>
+          <span class="countdown-date">April 15, 2026 at 8:00 AM Mountain Time</span>
+        </div>
+        <div class="countdown-grid" id="countdown-grid">
+          <div class="countdown-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
+          <div class="countdown-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div>
+          <div class="countdown-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Minutes</span></div>
+          <div class="countdown-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Seconds</span></div>
+        </div>
+        <div class="countdown-actions">
+          <a href="https://reservation.pc.gc.ca" target="_blank" rel="noopener" class="btn btn-primary">Go to Parks Canada Reservations</a>
+          <a href="https://reservation.pc.gc.ca/create-booking/results?bookingCategoryId=9" target="_blank" rel="noopener" class="btn btn-outline">Direct Shuttle Booking Link</a>
+        </div>
+      </div>
+
+      <!-- Booking Guide -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Step-by-Step Booking Guide</h2>
+        <p>Follow these steps exactly to maximize your chances of getting shuttle tickets.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Create Your Account NOW</h3>
+          <p>Go to <a href="https://reservation.pc.gc.ca" target="_blank" rel="noopener">reservation.pc.gc.ca</a> and create a GCKey account today. Do NOT wait until April 15. The signup process can take 10+ minutes and the site will be slammed on launch day.</p>
+          <span class="step-timing">Do this today</span>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Know What You Want</h3>
+          <p><strong>Moraine Lake shuttles</strong> sell out fastest. Book Moraine first, then Lake Louise. Peak dates (July weekends, long weekends) go in seconds. Have backup dates ready.</p>
+          <span class="step-timing">Decide before April 15</span>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Be Ready at 7:55 AM MT</h3>
+          <p>Log in 5 minutes early. Have the booking page loaded. Use a desktop computer (not mobile). Have payment info saved. The 40% initial release sells out in minutes for peak dates.</p>
+          <span class="step-timing">April 15 at 7:55 AM MT</span>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Rolling Release = Second Chances</h3>
+          <p>60% of tickets are released on a rolling basis starting 2 days before each departure. Set calendar reminders for 8 AM MT, two days before your target date. This is your backup plan.</p>
+          <span class="step-timing">Ongoing all season</span>
+        </div>
+      </div>
+
+      <!-- Key Dates -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Key Dates for 2026</h2>
+      </div>
+
+      <div class="dates-grid">
+        <div class="date-card date-highlight">
+          <span class="date-icon">🎫</span>
+          <div>
+            <strong>April 15 — Reservations Open</strong>
+            <p>40% of all shuttle tickets for the season are released at 8:00 AM MT. Create your account beforehand.</p>
+          </div>
+        </div>
+        <div class="date-card">
+          <span class="date-icon">🏔️</span>
+          <div>
+            <strong>May 15 — Lake Louise Shuttle Starts</strong>
+            <p>Shuttle service begins from Lake Louise Ski Resort to Lake Louise lakeshore.</p>
+          </div>
+        </div>
+        <div class="date-card">
+          <span class="date-icon">🏔️</span>
+          <div>
+            <strong>June 1 — Moraine Lake Shuttle Starts</strong>
+            <p>Moraine Lake Road opens to shuttle traffic. No private vehicles. Shuttle is the only way in.</p>
+          </div>
+        </div>
+        <div class="date-card">
+          <span class="date-icon">⚠️</span>
+          <div>
+            <strong>Rolling Release — 2 Days Before</strong>
+            <p>Remaining 60% of tickets released at 8 AM MT, exactly 2 days before departure. Set alerts.</p>
+          </div>
+        </div>
+        <div class="date-card">
+          <span class="date-icon">🍂</span>
+          <div>
+            <strong>Mid-October — Season Ends</strong>
+            <p>Shuttle service ends. Moraine Lake Road closes for winter. Larch season (late Sep) is the final rush.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backup Plans -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Backup Plans if Sold Out</h2>
+        <p>Could not get a shuttle ticket? You still have options.</p>
+      </div>
+
+      <div class="backup-grid">
+        <div class="backup-card">
+          <h3>Roam Transit</h3>
+          <p>Roam Transit Route 8S runs from Banff to Lake Louise. No reservation needed, first-come-first-served. Does NOT go to Moraine Lake.</p>
+          <a href="https://roamtransit.com" target="_blank" rel="noopener" class="card-link">roamtransit.com</a>
+        </div>
+        <div class="backup-card">
+          <h3>Commercial Tours</h3>
+          <p>Licensed tour operators can drive to both lakes. More expensive ($80-150/person) but guaranteed access. Book early — they sell out too.</p>
+          <a href="https://www.getyourguide.com/banff-l284/?q=moraine+lake&partner_id=QW960HO" target="_blank" rel="noopener" class="card-link">Browse tours on GetYourGuide</a>
+        </div>
+        <div class="backup-card">
+          <h3>Bike to Moraine Lake</h3>
+          <p>Cycling is permitted on Moraine Lake Road. 13 km uphill from the junction. Hard work, but no reservation needed and no crowds at 6 AM.</p>
+        </div>
+        <div class="backup-card">
+          <h3>Visit Alternatives Instead</h3>
+          <p>Emerald Lake (Yoho), Peyto Lake (Icefields Parkway), or Consolation Lakes (near Moraine) offer similar scenery without the shuttle system.</p>
+          <a href="/quiet-trails" class="card-link">Find quiet alternatives</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ RESERVATION_OPEN }}>
+  function updateCountdown() {
+    const target = new Date(RESERVATION_OPEN).getTime();
+    const now = Date.now();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.getElementById('countdown-grid').innerHTML =
+        '<div class="countdown-live">Reservations are OPEN — book now!</div>';
+      return;
+    }
+
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('cd-days').textContent = days;
+    document.getElementById('cd-hours').textContent = hours;
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+<style>
+  .countdown-card {
+    background: var(--color-primary); color: var(--color-white); border-radius: var(--radius);
+    padding: 2.5rem; text-align: center;
+  }
+  .countdown-header h2 { color: var(--color-white); font-size: 1.8rem; margin-bottom: 0.3rem; }
+  .countdown-date { color: var(--color-accent-light); font-size: 1rem; }
+  .countdown-grid { display: flex; justify-content: center; gap: 2rem; margin: 2rem 0; }
+  .countdown-unit { display: flex; flex-direction: column; align-items: center; }
+  .cd-num { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 700; line-height: 1; }
+  .cd-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent-light); margin-top: 0.3rem; }
+  .countdown-live { font-size: 1.5rem; font-weight: 700; color: #86efac; padding: 1rem; }
+  .countdown-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .countdown-actions .btn-outline { border-color: var(--color-white); color: var(--color-white); }
+  .countdown-actions .btn-outline:hover { background: var(--color-white); color: var(--color-primary); }
+
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+  .step-card {
+    background: var(--color-white); border-radius: var(--radius); padding: 1.5rem;
+    box-shadow: var(--shadow); position: relative;
+  }
+  .step-num {
+    position: absolute; top: -0.75rem; left: 1rem;
+    background: var(--color-accent); color: var(--color-white); width: 2rem; height: 2rem;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem;
+  }
+  .step-card h3 { margin-top: 0.5rem; font-size: 1rem; margin-bottom: 0.5rem; }
+  .step-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.5; }
+  .step-card a { color: var(--color-accent); font-weight: 600; }
+  .step-timing { display: inline-block; margin-top: 0.75rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-primary); background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: 4px; }
+
+  .dates-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+  .date-card {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--color-white); border-radius: var(--radius); padding: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .date-highlight { border-left: 4px solid var(--color-accent); }
+  .date-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .date-card strong { font-size: 0.95rem; }
+  .date-card p { font-size: 0.85rem; color: var(--color-text-light); margin-top: 0.2rem; line-height: 1.4; }
+
+  .backup-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+  .backup-card {
+    background: var(--color-white); border-radius: var(--radius); padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .backup-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .backup-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.5; }
+  .card-link { display: inline-block; margin-top: 0.75rem; color: var(--color-accent); font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .countdown-grid { gap: 1rem; }
+    .cd-num { font-size: 2.5rem; }
+    .steps-grid, .backup-grid { grid-template-columns: 1fr; }
+  }
+</style>

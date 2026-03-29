@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { trailAlternatives } from '../data/trailAlternatives';
+import { trails } from '../data/trails';
+
+const trailMap = Object.fromEntries(trails.map(t => [t.slug, t]));
+---
+
+<BaseLayout title="Quiet Alternatives to Banff's Busiest Trails" description="Skip the crowds. For every packed Banff trail, we show you 3 quieter alternatives with similar scenery. Local knowledge, not guesswork.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Quiet Alternatives' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="Empty trail in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Local Knowledge</span>
+      <h1>Quiet Alternatives</h1>
+      <p>For every packed trail in Banff, we have 3 quieter options with the same reward. No lines, no queues, no parking stress.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="alternatives-list">
+        {trailAlternatives.map(group => {
+          const popular = trailMap[group.popularTrail];
+          return (
+            <div class="alt-group">
+              <div class="alt-popular">
+                <div class="alt-popular-badge">Crowded</div>
+                <div class="alt-popular-info">
+                  <h2>{group.popularName}</h2>
+                  <p>{group.whyPopular}</p>
+                  {popular && (
+                    <div class="alt-popular-stats">
+                      <span>{popular.difficulty}</span>
+                      <span>📏 {popular.distance}</span>
+                      <span>⬆️ {popular.elevationGain}</span>
+                      <span>⏱️ {popular.time}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div class="alt-arrow">
+                <span>Try these instead</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              </div>
+
+              <div class="alt-options">
+                {group.alternatives.map(alt => {
+                  const t = trailMap[alt.slug];
+                  return (
+                    <a href={t ? `/trails/${alt.slug}` : '#'} class="alt-card">
+                      {t && <img src={t.image} alt={alt.name} class="alt-card-img" loading="lazy" />}
+                      <div class="alt-card-body">
+                        <div class="alt-card-top">
+                          <h3>{alt.name}</h3>
+                          <span class="crowd-reduction">{alt.crowdReduction}</span>
+                        </div>
+                        <p class="alt-why">{alt.whySimilar}</p>
+                        {t && (
+                          <div class="alt-stats">
+                            <span>{t.difficulty}</span>
+                            <span>📏 {t.distance}</span>
+                            <span>⬆️ {t.elevationGain}</span>
+                            <span>⏱️ {t.time}</span>
+                          </div>
+                        )}
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .alternatives-list { display: flex; flex-direction: column; gap: 3rem; }
+
+  .alt-group { }
+
+  .alt-popular {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: #fef2f2; border: 1px solid #fecaca; border-radius: var(--radius); padding: 1.5rem;
+    position: relative;
+  }
+  .alt-popular-badge {
+    position: absolute; top: -0.6rem; right: 1rem;
+    background: #ef4444; color: white; font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em; padding: 0.2rem 0.6rem; border-radius: 4px;
+  }
+  .alt-popular-info h2 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .alt-popular-info p { font-size: 0.9rem; color: var(--color-text-light); line-height: 1.5; }
+  .alt-popular-stats { display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--color-text-light); margin-top: 0.5rem; text-transform: capitalize; }
+
+  .alt-arrow {
+    display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+    padding: 1rem 0; color: var(--color-accent); font-weight: 700; font-size: 0.85rem;
+  }
+
+  .alt-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .alt-card {
+    background: var(--color-white); border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--shadow); text-decoration: none; color: inherit;
+    border-left: 4px solid #22c55e; transition: all 0.2s;
+  }
+  .alt-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .alt-card-img { width: 100%; height: 120px; object-fit: cover; }
+  .alt-card-body { padding: 1rem; }
+  .alt-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.4rem; }
+  .alt-card-top h3 { font-size: 0.95rem; }
+  .crowd-reduction { font-size: 0.72rem; font-weight: 700; color: #16a34a; background: #dcfce7; padding: 0.15rem 0.5rem; border-radius: 4px; white-space: nowrap; }
+  .alt-why { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.4; margin-bottom: 0.5rem; }
+  .alt-stats { display: flex; gap: 0.5rem; font-size: 0.72rem; color: var(--color-text-light); flex-wrap: wrap; text-transform: capitalize; }
+
+  @media (max-width: 768px) {
+    .alt-options { grid-template-columns: 1fr; }
+  }
+</style>
