@@ -3,72 +3,138 @@ const currentPath = Astro.url.pathname;
 
 const megaMenus = {
   'Things To Do': {
-    links: [
-      { href: '/activities', label: 'Activities' },
-      { href: '/hiking', label: 'Hiking' },
-      { href: '/skiing', label: 'Skiing & Snowboarding' },
-      { href: '/trail-map', label: 'Trail Map' },
-      { href: '/lakes', label: 'Lakes' },
-      { href: '/paddling', label: 'Paddling' },
-      { href: '/biking', label: 'Biking' },
-      { href: '/scenic-drives', label: 'Scenic Drives' },
-      { href: '/wildlife', label: 'Wildlife' },
-      { href: '/wellness', label: 'Wellness & Spas' },
-      { href: '/arts-culture', label: 'Arts & Culture' },
-      { href: '/shopping', label: 'Shopping' },
-      { href: '/eat-and-drink', label: 'Eat & Drink' },
-      { href: '/events', label: 'Events & Festivals' },
-      { href: '/tours', label: 'Tours & Experiences' },
+    groups: [
+      {
+        heading: 'Popular',
+        links: [
+          { href: '/hiking', label: 'Hiking' },
+          { href: '/trail-map', label: 'Interactive Trail Map' },
+          { href: '/lakes', label: 'Lakes' },
+          { href: '/eat-and-drink', label: 'Eat & Drink' },
+          { href: '/skiing', label: 'Skiing & Snowboarding' },
+          { href: '/scenic-drives', label: 'Scenic Drives' },
+        ],
+      },
+      {
+        heading: 'Outdoor Activities',
+        links: [
+          { href: '/paddling', label: 'Paddling & Canoeing' },
+          { href: '/biking', label: 'Biking' },
+          { href: '/via-ferrata', label: 'Via Ferrata' },
+          { href: '/wildlife', label: 'Wildlife Watching' },
+        ],
+      },
+      {
+        heading: 'Town & Culture',
+        links: [
+          { href: '/wellness', label: 'Wellness & Spas' },
+          { href: '/arts-culture', label: 'Arts & Culture' },
+          { href: '/shopping', label: 'Shopping' },
+          { href: '/events', label: 'Events & Festivals' },
+          { href: '/tours', label: 'Tours & Experiences' },
+        ],
+      },
     ],
     featured: [
-      { href: '/trail-map', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=75&fm=webp', title: 'Interactive Trail Map', subtitle: '80+ trails to explore' },
-      { href: '/eat-and-drink', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=75&fm=webp', title: 'Eat & Drink', subtitle: 'Restaurants, bars & cafes' },
+      { href: '/trail-map', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=75&fm=webp', title: 'Interactive Trail Map', subtitle: '80+ trails with GPS routes' },
       { href: '/lakes', image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=400&q=75&fm=webp', title: 'Iconic Lakes', subtitle: 'Lake Louise, Moraine & more' },
+      { href: '/eat-and-drink', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=75&fm=webp', title: 'Eat & Drink', subtitle: 'Restaurants, bars & cafes' },
     ],
   },
-  'Visitor Info': {
-    links: [
-      { href: '/banff-national-park', label: 'About Banff National Park' },
-      { href: '/weather-webcams', label: 'Weather & Webcams' },
-      { href: '/summer', label: 'Summer in Banff' },
-      { href: '/winter', label: 'Winter in Banff' },
-      { href: '/what-to-do-today', label: 'What To Do Today' },
-      { href: '/parking', label: 'Parking Predictor' },
-      { href: '/quiet-trails', label: 'Quiet Trails Finder' },
-      { href: '/shuttle-reservations', label: 'Shuttle Reservations 2026' },
-      { href: '/alternatives', label: 'Quiet Alternatives' },
-      { href: '/trip-cost', label: 'Trip Cost Calculator' },
-      { href: '/wildlife-tracker', label: 'Wildlife Tracker' },
-      { href: '/larch-season', label: 'Larch Season Predictor' },
-      { href: '/icefields-parkway-planner', label: 'Icefields Parkway Planner' },
-      { href: '/photo-spots', label: 'Best Photo Spots' },
-      { href: '/park-pass', label: 'Park Pass Guide' },
-      { href: '/monthly-weather', label: 'Weather by Month' },
-      { href: '/lake-faq', label: 'Lake FAQ & Science' },
-      { href: '/camping', label: 'Camping Guide 2026' },
-      { href: '/currency-converter', label: 'Currency Converter' },
-      { href: '/trip-reports', label: 'Trip Reports' },
-      { href: '/park-pass', label: 'Park Pass Guide (Prices & Where to Buy)' },
-      { href: '/locals', label: 'Locals Guide' },
-      { href: '/packing-list', label: '🎒 Pack for Banff — Gear Checklist', cta: true },
+  'Plan Your Trip': {
+    groups: [
+      {
+        heading: 'Essentials',
+        links: [
+          { href: '/park-pass', label: 'Park Pass Guide' },
+          { href: '/calgary-to-banff', label: 'Getting Here' },
+          { href: '/monthly-weather', label: 'Weather by Month' },
+          { href: '/trip-cost', label: 'Trip Cost Calculator' },
+          { href: '/packing-list', label: 'Packing List' },
+          { href: '/camping', label: 'Camping Guide 2026' },
+        ],
+      },
+      {
+        heading: 'Tools & Planners',
+        links: [
+          { href: '/parking', label: 'Parking Predictor' },
+          { href: '/quiet-trails', label: 'Quiet Trails Finder' },
+          { href: '/shuttle-reservations', label: 'Shuttle Reservations' },
+          { href: '/icefields-parkway-planner', label: 'Icefields Parkway' },
+          { href: '/ski-pass-calculator', label: 'Ski Pass Calculator' },
+          { href: '/tools', label: 'All 30+ Tools', cta: true },
+        ],
+      },
+      {
+        heading: 'Guides',
+        links: [
+          { href: '/canmore-vs-banff', label: 'Canmore vs Banff' },
+          { href: '/car-free-banff', label: 'Car-Free Banff' },
+          { href: '/family-guide', label: 'Family Guide' },
+          { href: '/dog-friendly', label: 'Dog-Friendly Guide' },
+          { href: '/accessible-trails', label: 'Accessible Trails' },
+          { href: '/lake-faq', label: 'Lake FAQ & Science' },
+        ],
+      },
     ],
     featured: [
-      { href: '/weather-webcams', image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=400&q=75&fm=webp', title: 'Weather & Webcams', subtitle: 'Live conditions & cameras' },
-      { href: '/packing-list', image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=400&q=75&fm=webp', title: 'Packing List', subtitle: 'Seasonal gear with Amazon links' },
+      { href: '/tools', image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=400&q=75&fm=webp', title: 'Planning Tools', subtitle: '30+ free interactive guides' },
       { href: '/what-to-do-today', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75&fm=webp', title: 'What To Do Today', subtitle: 'Weather-based suggestions' },
+      { href: '/packing-list', image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=400&q=75&fm=webp', title: 'Packing List', subtitle: 'Seasonal gear checklist' },
+    ],
+  },
+  'Safety': {
+    groups: [
+      {
+        heading: 'Wildlife',
+        links: [
+          { href: '/wildlife-safety', label: 'Wildlife Encounters' },
+          { href: '/bear-spray', label: 'Bear Spray Guide' },
+          { href: '/wildlife-tracker', label: 'Wildlife Tracker Map' },
+          { href: '/wildlife-calendar', label: 'Wildlife Calendar' },
+        ],
+      },
+      {
+        heading: 'Trail Safety',
+        links: [
+          { href: '/solo-hiking', label: 'Solo Hiker Safety' },
+          { href: '/altitude-guide', label: 'Altitude Sickness Guide' },
+          { href: '/air-quality', label: 'Air Quality & Smoke' },
+          { href: '/emergency-card', label: 'Emergency SOS Card' },
+        ],
+      },
+    ],
+    featured: [
+      { href: '/wildlife-safety', image: 'https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=400&q=75&fm=webp', title: 'Wildlife Safety', subtitle: 'Bear, elk & cougar protocols' },
+      { href: '/emergency-card', image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400&q=75&fm=webp', title: 'Emergency Card', subtitle: 'Printable SOS contacts' },
     ],
   },
   'Where To Stay': {
-    links: [
-      { href: '/hotel-directory', label: 'All Hotels & Lodges' },
-      { href: '/vacation-rentals', label: 'Vacation Rentals & Cabins' },
-      { href: '/hotel-directory?area=Downtown+Banff', label: 'Hotels in Downtown Banff' },
-      { href: '/hotel-directory?area=Tunnel+Mountain', label: 'Hotels on Tunnel Mountain' },
-      { href: '/hotel-directory?area=Lake+Louise', label: 'Hotels in Lake Louise' },
-      { href: '/hotel-directory?area=Canmore', label: 'Hotels in Canmore' },
-      { href: '/hotel-directory?type=Resort', label: 'Resorts' },
-      { href: '/hotel-directory?type=Lodge', label: 'Lodges & Cabins' },
-      { href: '/hotel-directory?type=Hostel', label: 'Hostels & Budget' },
+    groups: [
+      {
+        heading: 'Browse',
+        links: [
+          { href: '/hotel-directory', label: 'All Hotels & Lodges' },
+          { href: '/vacation-rentals', label: 'Vacation Rentals & Cabins' },
+        ],
+      },
+      {
+        heading: 'By Area',
+        links: [
+          { href: '/hotel-directory?area=Downtown+Banff', label: 'Downtown Banff' },
+          { href: '/hotel-directory?area=Tunnel+Mountain', label: 'Tunnel Mountain' },
+          { href: '/hotel-directory?area=Lake+Louise', label: 'Lake Louise' },
+          { href: '/hotel-directory?area=Canmore', label: 'Canmore' },
+        ],
+      },
+      {
+        heading: 'By Type',
+        links: [
+          { href: '/hotel-directory?type=Resort', label: 'Resorts' },
+          { href: '/hotel-directory?type=Lodge', label: 'Lodges & Cabins' },
+          { href: '/hotel-directory?type=Hostel', label: 'Hostels & Budget' },
+        ],
+      },
     ],
     featured: [
       { href: '/hotel-directory', image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&q=75&fm=webp', title: 'Hotel Directory', subtitle: '95 properties with map' },
@@ -79,7 +145,6 @@ const megaMenus = {
 };
 
 const directLinks = [
-  { href: '/tools', label: 'Tools' },
   { href: '/trip-builder', label: 'Trip Ideas' },
   { href: '/blog', label: 'Guides' },
 ];
@@ -96,9 +161,9 @@ const directLinks = [
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/><circle cx="12" cy="12" r="4"/></svg>
         Weather & Webcams
       </a>
-      <a href="https://parks.canada.ca/pn-np/ab/banff/visit/pass" target="_blank" rel="noopener" class="utility-link utility-link--pass">
+      <a href="/park-pass" class="utility-link utility-link--pass">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5h2a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
-        Buy Your Park Pass
+        Park Pass Guide
       </a>
     </div>
   </div>
@@ -120,18 +185,21 @@ const directLinks = [
           </button>
           <div class="mega-panel" role="menu">
             <div class="container mega-inner">
-              <div class="mega-links">
-                <h4 class="mega-heading">{label}</h4>
-                <ul>
-                  {menu.links.map(link => (
-                    <li>
-                      <a href={link.href} class:list={['mega-link', { 'mega-link--cta': link.cta }]} {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}>
-                        {link.label}
-                        {link.external && <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 1h7v7M11 1L5 7"/></svg>}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <div class="mega-columns">
+                {menu.groups.map(group => (
+                  <div class="mega-group">
+                    <h4 class="mega-heading">{group.heading}</h4>
+                    <ul>
+                      {group.links.map(link => (
+                        <li>
+                          <a href={link.href} class:list={['mega-link', { 'mega-link--cta': link.cta }]}>
+                            {link.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
               <div class="mega-featured">
                 {menu.featured.map(item => (
@@ -174,10 +242,15 @@ const directLinks = [
           <svg class="chevron" width="12" height="12" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l3 3 3-3"/></svg>
         </button>
         <div class="mobile-section-links">
-          {menu.links.map(link => (
-            <a href={link.href} class="mobile-link" {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}>
-              {link.label}
-            </a>
+          {menu.groups.map(group => (
+            <div class="mobile-group">
+              <span class="mobile-group-heading">{group.heading}</span>
+              {group.links.map(link => (
+                <a href={link.href} class:list={['mobile-link', { 'mobile-link--cta': link.cta }]}>
+                  {link.label}
+                </a>
+              ))}
+            </div>
           ))}
         </div>
       </div>
@@ -313,70 +386,81 @@ const directLinks = [
   }
   .mega-inner {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 2.5rem;
-    padding: 2rem 1.5rem;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  .mega-columns {
+    display: flex;
+    gap: 2rem;
+  }
+  .mega-group {
+    flex: 1;
+    min-width: 0;
   }
   .mega-heading {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.72rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: var(--color-text-light);
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--color-bg-alt);
   }
-  .mega-links ul {
+  .mega-group ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
+    gap: 0.05rem;
   }
   .mega-link {
     display: flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.45rem 0.6rem;
-    font-size: 0.88rem;
+    padding: 0.38rem 0.5rem;
+    font-size: 0.84rem;
     font-weight: 450;
     color: var(--color-text);
     border-radius: 6px;
     transition: all 0.15s ease;
+    white-space: nowrap;
   }
   .mega-link:hover {
     background: var(--color-bg-alt);
     color: var(--color-primary);
-    padding-left: 0.9rem;
+    padding-left: 0.75rem;
   }
-  .mega-link svg { opacity: 0.5; flex-shrink: 0; }
   .mega-link--cta {
-    background: var(--color-accent);
+    background: var(--color-primary);
     color: var(--color-white) !important;
     font-weight: 600;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     border-radius: 8px;
-    padding: 0.55rem 0.8rem;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.8rem;
   }
   .mega-link--cta:hover {
-    background: var(--color-accent-dark, #c4882a);
+    background: var(--color-accent);
     color: var(--color-white) !important;
-    padding-left: 0.8rem;
+    padding-left: 0.7rem;
   }
 
   /* ── Featured Cards ──────────────────────────────── */
   .mega-featured {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     align-self: start;
+    width: 200px;
+    flex-shrink: 0;
   }
   .mega-card {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    aspect-ratio: 4/5;
+    aspect-ratio: 16/9;
     display: block;
     transition: transform 0.2s ease;
   }
@@ -494,6 +578,25 @@ const directLinks = [
     transition: all 0.15s ease;
   }
   .mobile-link:hover { background: var(--color-bg-alt); color: var(--color-primary); }
+  .mobile-link--cta {
+    background: var(--color-primary);
+    color: var(--color-white) !important;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+  }
+  .mobile-link--cta:hover { background: var(--color-accent); color: var(--color-white) !important; }
+  .mobile-group { margin-bottom: 0.5rem; }
+  .mobile-group-heading {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+    padding: 0.5rem 1rem 0.2rem;
+  }
   .mobile-direct-link {
     display: block;
     padding: 0.9rem 1.5rem;
@@ -506,8 +609,8 @@ const directLinks = [
 
   /* ── Responsive ──────────────────────────────────── */
   @media (max-width: 1100px) {
-    .mega-featured { grid-template-columns: repeat(2, 1fr); }
-    .mega-featured .mega-card:last-child { display: none; }
+    .mega-featured { display: none; }
+    .mega-inner { grid-template-columns: 1fr; }
     .nav-link { padding: 0.45rem 0.6rem; font-size: 0.84rem; }
   }
 
