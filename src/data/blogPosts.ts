@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-lookout-point',
+    title: 'Best Banff Lookout Points 2026: Epic Views You Can\'t Miss',
+    description: 'Discover Banff\'s most breathtaking viewpoints in 2026! From Lake Louise to Moraine Lake, explore epic mountain vistas and hidden gems for unforgettable photos.',
+    date: '2026-03-29',
+    category: 'Guides',
+    image: '/images/blog/banff-lookout-point.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-outdoor-stores',
     title: 'Best Banff Outdoor Stores 2026: Your Ultimate Gear Guide',
     description: 'Discover the top outdoor gear stores in Banff for 2026! From hiking boots to camping essentials, find everything you need for your Canadian Rockies adventure.',
