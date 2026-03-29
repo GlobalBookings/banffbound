@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { trails } from '../../data/trails';
 
+const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
+
 export function getStaticPaths() {
   return trails.map(trail => ({
     params: { slug: trail.slug },
@@ -246,6 +248,29 @@ const trailSchema = {
             <div class="fact-row"><span>Transit</span><span>{trail.transitAccessible ? 'Yes' : 'No'}</span></div>
           </div>
 
+          <div class="sidebar-card sun-card">
+            <h3>Sun & Golden Hour</h3>
+            <div id="sun-data" class="sun-grid">
+              <div class="sun-item"><span class="sun-label">Sunrise</span><span class="sun-value" id="sunrise-time">--</span></div>
+              <div class="sun-item"><span class="sun-label">Sunset</span><span class="sun-value" id="sunset-time">--</span></div>
+              <div class="sun-item"><span class="sun-label">Golden Hour</span><span class="sun-value" id="golden-hour">--</span></div>
+              <div class="sun-item"><span class="sun-label">Daylight</span><span class="sun-value" id="daylight-hours">--</span></div>
+            </div>
+            <p class="sun-tip" id="sun-tip"></p>
+          </div>
+
+          <div class="sidebar-card gear-card">
+            <h3>Gear Checklist</h3>
+            <div class="gear-list" id="gear-list"></div>
+          </div>
+
+          <div class="sidebar-card hike-decision">
+            <h3>Should I Hike Today?</h3>
+            <div id="hike-verdict" class="hike-verdict">
+              <div class="hike-loading"><div class="spinner-sm"></div><span>Checking conditions...</span></div>
+            </div>
+          </div>
+
           <div class="sidebar-card">
             <h3>Official Info</h3>
             <p style="font-size:0.85rem;color:var(--color-text-light);margin-bottom:0.75rem;">Get the latest trail conditions, closures, and safety updates.</p>
@@ -288,7 +313,8 @@ const trailSchema = {
   )}
 </BaseLayout>
 
-<script define:vars={{ lat: trail.lat, lng: trail.lng, name: trail.name }}>
+<script define:vars={{ lat: trail.lat, lng: trail.lng, name: trail.name, difficulty: trail.difficulty, season: trail.season, distance: trail.distance, elevationGain: trail.elevationGain, time: trail.time, status: trail.status || 'open', OWM_KEY: OWM_KEY_SSR }}>
+  // ── Map ───────────────────────────────────────────
   function initTrailMap() {
     const mapEl = document.getElementById('trail-detail-map');
     if (!mapEl || typeof L === 'undefined') return;
@@ -299,11 +325,146 @@ const trailSchema = {
     }).addTo(map);
     L.marker([lat, lng]).addTo(map).bindPopup(`<strong>${name}</strong>`).openPopup();
   }
-
   const script = document.createElement('script');
   script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
   script.onload = initTrailMap;
   document.head.appendChild(script);
+
+  // ── Sunrise/Sunset Calculator (pure math, no API) ─
+  function calcSun(lat, lng, date) {
+    const rad = Math.PI / 180;
+    const dayOfYear = Math.floor((date - new Date(date.getFullYear(),0,0)) / 86400000);
+    const declination = 23.45 * Math.sin(rad * (360/365) * (dayOfYear - 81));
+    const hourAngle = Math.acos(
+      (-Math.tan(lat * rad) * Math.tan(declination * rad))
+    ) / rad;
+    const solarNoon = 12 - lng / 15;
+    const offset = -7; // MST
+    const sunrise = solarNoon - hourAngle / 15 - offset;
+    const sunset = solarNoon + hourAngle / 15 - offset;
+    return { sunrise, sunset };
+  }
+
+  function fmtTime(h) {
+    const hours = Math.floor(h);
+    const mins = Math.round((h - hours) * 60);
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const h12 = hours > 12 ? hours - 12 : hours === 0 ? 12 : hours;
+    return `${h12}:${mins.toString().padStart(2,'0')} ${ampm}`;
+  }
+
+  (function loadSun() {
+    const now = new Date();
+    const { sunrise, sunset } = calcSun(lat, lng, now);
+    const daylight = sunset - sunrise;
+    const goldenStart = sunset - 1;
+    document.getElementById('sunrise-time').textContent = fmtTime(sunrise);
+    document.getElementById('sunset-time').textContent = fmtTime(sunset);
+    document.getElementById('golden-hour').textContent = `${fmtTime(goldenStart)} - ${fmtTime(sunset)}`;
+    document.getElementById('daylight-hours').textContent = `${Math.floor(daylight)}h ${Math.round((daylight % 1) * 60)}m`;
+
+    const hikeHours = parseFloat(time) || 3;
+    const latestStart = sunset - hikeHours - 0.5;
+    document.getElementById('sun-tip').textContent =
+      `Start by ${fmtTime(latestStart)} to finish before dark (${hikeHours}hr hike + 30min buffer).`;
+  })();
+
+  // ── Gear Checklist ────────────────────────────────
+  (function loadGear() {
+    const month = new Date().getMonth();
+    const isWinter = month >= 10 || month <= 3;
+    const isSummer = month >= 5 && month <= 8;
+    const elevNum = parseInt(elevationGain) || 0;
+    const isHard = difficulty === 'challenging' || elevNum > 500;
+
+    const gear = [
+      { item: 'Water (1L+ per person)', always: true },
+      { item: 'Bear spray', always: true },
+      { item: 'Trail snacks / lunch', always: true },
+      { item: 'Sunscreen & sunglasses', always: true },
+      { item: 'First aid kit', always: true },
+      { item: 'Map / downloaded trail', show: isHard },
+      { item: 'Rain jacket', always: true },
+      { item: 'Extra warm layer', show: isWinter || isHard },
+      { item: 'Trekking poles', show: isHard || elevNum > 300 },
+      { item: 'Headlamp', show: isHard },
+      { item: 'Ice cleats / microspikes', show: isWinter || season === 'winter' },
+      { item: 'Snowshoes', show: season === 'winter' },
+      { item: 'Gaiters', show: isWinter && season === 'winter' },
+      { item: 'Insulated water bottle', show: isWinter },
+      { item: 'Bug spray', show: isSummer },
+      { item: 'Hat & gloves', show: isWinter || isHard },
+    ];
+
+    const list = document.getElementById('gear-list');
+    list.innerHTML = gear
+      .filter(g => g.always || g.show)
+      .map(g => `<label class="gear-item"><input type="checkbox" /><span>${g.item}</span></label>`)
+      .join('');
+  })();
+
+  // ── Should I Hike Today? Decision Engine ──────────
+  (async function hikeDecision() {
+    const verdict = document.getElementById('hike-verdict');
+    try {
+      if (!OWM_KEY) throw new Error('No key');
+      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${OWM_KEY}`);
+      if (!res.ok) throw new Error('API error');
+      const wx = await res.json();
+
+      const temp = Math.round(wx.main.temp);
+      const wind = Math.round(wx.wind.speed * 3.6);
+      const weatherMain = wx.weather[0].main;
+      const desc = wx.weather[0].description;
+
+      let score = 80;
+      let factors = [];
+
+      // Temperature scoring
+      if (temp >= 5 && temp <= 20) { score += 10; factors.push(`${temp}°C is ideal hiking temperature`); }
+      else if (temp < -15) { score -= 30; factors.push(`${temp}°C is dangerously cold`); }
+      else if (temp < 0) { score -= 10; factors.push(`${temp}°C — dress in warm layers`); }
+      else if (temp > 28) { score -= 15; factors.push(`${temp}°C — risk of heat exhaustion`); }
+
+      // Weather conditions
+      if (['Rain','Thunderstorm'].includes(weatherMain)) { score -= 25; factors.push(`${desc} — slippery trails, reduced visibility`); }
+      if (weatherMain === 'Snow' && season !== 'winter') { score -= 20; factors.push('Unexpected snow on a non-winter trail'); }
+      if (weatherMain === 'Clear' || weatherMain === 'Clouds') { score += 5; factors.push(`${desc} — good visibility`); }
+
+      // Wind
+      if (wind > 50) { score -= 20; factors.push(`Wind ${wind} km/h — dangerous on exposed ridges`); }
+      else if (wind > 30) { score -= 10; factors.push(`Wind ${wind} km/h — breezy on exposed sections`); }
+
+      // Trail status
+      if (status === 'closed') { score = 0; factors.push('Trail is currently CLOSED'); }
+      else if (status === 'caution') { score -= 15; factors.push('Trail advisory in effect — check conditions'); }
+
+      // Difficulty in bad weather
+      if (difficulty === 'challenging' && ['Rain','Snow','Thunderstorm'].includes(weatherMain)) {
+        score -= 15; factors.push('Challenging trail in poor weather — extra caution needed');
+      }
+
+      score = Math.max(0, Math.min(100, score));
+
+      let emoji, label, color;
+      if (score >= 75) { emoji = '✓'; label = 'Great day to hike!'; color = '#166534'; }
+      else if (score >= 50) { emoji = '~'; label = 'Doable with preparation'; color = '#92400e'; }
+      else if (score >= 25) { emoji = '!'; label = 'Not ideal — proceed with caution'; color = '#c2410c'; }
+      else { emoji = '✕'; label = 'Not recommended today'; color = '#991b1b'; }
+
+      verdict.innerHTML = `
+        <div class="hike-score" style="color:${color};">
+          <span class="score-num">${score}</span>
+          <span class="score-label">/100</span>
+        </div>
+        <p class="hike-label" style="color:${color};">${emoji} ${label}</p>
+        <ul class="hike-factors">${factors.map(f => `<li>${f}</li>`).join('')}</ul>
+        <p class="hike-current">${temp}°C · ${desc} · Wind ${wind} km/h</p>
+      `;
+    } catch {
+      verdict.innerHTML = '<p class="hike-fallback">Weather unavailable — check conditions before heading out.</p>';
+    }
+  })();
 </script>
 
 <style>
@@ -631,4 +792,32 @@ const trailSchema = {
       position: static;
     }
   }
+
+  /* Sun card */
+  .sun-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .sun-item { display: flex; flex-direction: column; gap: 0.1rem; }
+  .sun-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
+  .sun-value { font-size: 0.95rem; font-weight: 600; color: var(--color-text); }
+  .sun-tip { font-size: 0.8rem; color: var(--color-accent); margin-top: 0.75rem; font-style: italic; }
+
+  /* Gear checklist */
+  .gear-list { display: flex; flex-direction: column; gap: 0.4rem; }
+  .gear-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; cursor: pointer; }
+  .gear-item input[type="checkbox"] { accent-color: var(--color-primary); width: 16px; height: 16px; flex-shrink: 0; }
+  .gear-item span { line-height: 1.3; }
+  .gear-item:has(input:checked) span { text-decoration: line-through; color: var(--color-text-light); }
+
+  /* Hike decision */
+  .hike-verdict { text-align: center; }
+  .hike-loading { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.85rem; color: var(--color-text-light); }
+  .spinner-sm { width: 18px; height: 18px; border: 2px solid rgba(0,0,0,0.1); border-top-color: var(--color-primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  .hike-score { display: flex; align-items: baseline; justify-content: center; gap: 0.15rem; }
+  .score-num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; line-height: 1; }
+  .score-label { font-size: 1rem; font-weight: 500; }
+  .hike-label { font-weight: 700; font-size: 0.95rem; margin-top: 0.25rem; }
+  .hike-factors { list-style: none; padding: 0; margin: 0.75rem 0 0; text-align: left; }
+  .hike-factors li { font-size: 0.8rem; color: var(--color-text-light); padding: 0.2rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .hike-factors li::before { content: '·'; margin-right: 0.4rem; font-weight: 700; }
+  .hike-current { font-size: 0.78rem; color: var(--color-text-light); margin-top: 0.5rem; }
+  .hike-fallback { font-size: 0.85rem; color: var(--color-text-light); text-align: center; }
 </style>
