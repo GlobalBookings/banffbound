@@ -12,7 +12,7 @@ export interface TrailAlternative {
 
 export const trailAlternatives: TrailAlternative[] = [
   {
-    popularTrail: 'lake-agnes-teahouse',
+    popularTrail: 'lake-agnes',
     popularName: 'Lake Agnes Tea House',
     whyPopular: 'Iconic tea house above Lake Louise, alpine lake, easy-moderate difficulty. Queue times of 30+ minutes for tea in July.',
     alternatives: [
@@ -22,7 +22,7 @@ export const trailAlternatives: TrailAlternative[] = [
     ],
   },
   {
-    popularTrail: 'johnston-canyon',
+    popularTrail: 'johnston-canyon-lower-falls',
     popularName: 'Johnston Canyon',
     whyPopular: 'Catwalks through a narrow canyon to waterfalls. Feels like a theme park on summer weekends.',
     alternatives: [
@@ -32,17 +32,17 @@ export const trailAlternatives: TrailAlternative[] = [
     ],
   },
   {
-    popularTrail: 'tunnel-mountain',
+    popularTrail: 'tunnel-mountain-summit',
     popularName: 'Tunnel Mountain',
     whyPopular: 'Short summit hike in Banff town. 300m gain, great views. Extremely popular because of convenience.',
     alternatives: [
       { slug: 'fenland-trail', name: 'Fenland Trail', whySimilar: 'Easy walk in town, different vibe (forest instead of summit) but equally accessible.', crowdReduction: '60% fewer people' },
       { slug: 'sulphur-mountain', name: 'Sulphur Mountain Trail', whySimilar: 'Proper summit with better views. More effort but far more rewarding panorama.', crowdReduction: '50% fewer people' },
-      { slug: 'bow-falls-trail', name: 'Bow Falls Trail', whySimilar: 'Riverside walk with waterfall. Easy, in town, and less congested than Tunnel.', crowdReduction: '40% fewer people' },
+      { slug: 'sundance-canyon', name: 'Sundance Canyon', whySimilar: 'Flat riverside walk leading to a hidden canyon with a waterfall. Easy, near town, far fewer people.', crowdReduction: '70% fewer people' },
     ],
   },
   {
-    popularTrail: 'sentinel-pass',
+    popularTrail: 'sentinel-pass-via-larch-valley',
     popularName: 'Sentinel Pass',
     whyPopular: 'Highest point reachable by maintained trail in the park. Dramatic views of the Valley of the Ten Peaks.',
     alternatives: [
@@ -58,7 +58,7 @@ export const trailAlternatives: TrailAlternative[] = [
     alternatives: [
       { slug: 'saddleback-pass', name: 'Saddleback Pass', whySimilar: 'Starts from same area as Lake Agnes but branches off. Incredible alpine meadow.', crowdReduction: '80% fewer people' },
       { slug: 'taylor-lake', name: 'Taylor Lake', whySimilar: 'Stunning alpine lake without the Lake Louise starting point chaos.', crowdReduction: '85% fewer people' },
-      { slug: 'skoki-valley', name: 'Skoki Valley', whySimilar: 'Full backcountry experience near Lake Louise. Remote lodge, wildflowers, mountain passes.', crowdReduction: '95% fewer people' },
+      { slug: 'sunset-pass', name: 'Sunset Pass', whySimilar: 'Remote alpine pass on the Icefields Parkway. Genuine backcountry feel, almost no one there.', crowdReduction: '95% fewer people' },
     ],
   },
   {
@@ -66,9 +66,9 @@ export const trailAlternatives: TrailAlternative[] = [
     popularName: 'Lake Louise Lakeshore',
     whyPopular: 'Walk along turquoise Lake Louise. Iconic but shoulder-to-shoulder in summer.',
     alternatives: [
-      { slug: 'moraine-lakeshore', name: 'Moraine Lakeshore', whySimilar: 'Equally beautiful turquoise lake, shuttle-only access limits crowds.', crowdReduction: '30% fewer people' },
+      { slug: 'moraine-lake-lakeshore', name: 'Moraine Lakeshore', whySimilar: 'Equally beautiful turquoise lake, shuttle-only access limits crowds.', crowdReduction: '30% fewer people' },
       { slug: 'boom-lake', name: 'Boom Lake', whySimilar: 'Flat walk to a turquoise glacial lake. Similar reward, tiny fraction of the people.', crowdReduction: '90% fewer people' },
-      { slug: 'herbert-lake', name: 'Herbert Lake', whySimilar: 'Mirror-like lake right off the Icefields Parkway. 5-minute walk. Almost nobody there.', crowdReduction: '95% fewer people' },
+      { slug: 'peyto-lake-viewpoint', name: 'Peyto Lake Viewpoint', whySimilar: 'Iconic turquoise glacial lake viewed from above. Short walk from parking, fewer crowds than Louise.', crowdReduction: '60% fewer people' },
     ],
   },
 ];

@@ -3,8 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { trails } from '../data/trails';
 
-const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
-
 const trailsJSON = JSON.stringify(trails.map(t => ({
   id: t.id, name: t.name, slug: t.slug, difficulty: t.difficulty,
   distance: t.distance, elevationGain: t.elevationGain, time: t.time,
@@ -15,6 +13,17 @@ const trailsJSON = JSON.stringify(trails.map(t => ({
 ---
 
 <BaseLayout title="Quiet Trails Right Now — Avoid Banff Crowds" description="Find the least crowded trails in Banff right now. Real-time crowd avoidance based on day of week, time, and season. Never hike in a queue again.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Which Banff trails are least crowded?', acceptedAnswer: { '@type': 'Answer', text: 'The quietest trails in Banff are generally on the Icefields Parkway (Sunset Pass, Nigel Pass, Parker Ridge), Castle Junction area (Rockbound Lake, Boom Lake), and challenging routes like Cory Pass and Mt. Edith. Trails near Lake Louise and Johnston Canyon are the busiest. Visiting Tuesday-Thursday and arriving before 7 AM or after 4 PM dramatically reduces crowds on any trail.' } },
+      { '@type': 'Question', name: 'What time of day are Banff trails least busy?', acceptedAnswer: { '@type': 'Answer', text: 'Banff trails are quietest before 7 AM and after 5 PM. The busiest period is 10 AM to 3 PM. Starting early gives you empty trails, better light for photos, and easier parking. Sunset hikes are underrated — most day-trippers leave by 4 PM.' } },
+      { '@type': 'Question', name: 'What is the best day of the week to hike in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Tuesday, Wednesday, and Thursday are the quietest days on Banff trails. Saturday is the busiest day, followed by Sunday and Monday (long weekend effect). If you can only visit on weekends, start before 7 AM to beat the crowds.' } },
+    ],
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Quiet Trails' }]} />
   </div>
@@ -58,7 +67,7 @@ const trailsJSON = JSON.stringify(trails.map(t => ({
   </section>
 </BaseLayout>
 
-<script define:vars={{ trailsJSON, OWM_KEY: OWM_KEY_SSR }}>
+<script define:vars={{ trailsJSON }}>
   const allTrails = JSON.parse(trailsJSON);
 
   // Crowd scoring model: lower = quieter

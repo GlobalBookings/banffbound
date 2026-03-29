@@ -7,6 +7,20 @@ const lotsJSON = JSON.stringify(parkingLots);
 ---
 
 <BaseLayout title="Banff Parking Predictor — When Do Lots Fill Up?" description="Know exactly when parking lots fill at Lake Louise, Johnston Canyon, Moraine Lake, and more. Data-driven fill times by season so you never get turned away.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: parkingLots.filter(l => l.capacity > 0).map(l => ({
+      '@type': 'Question',
+      name: `When does ${l.name} parking fill up?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `In peak summer (July-August weekends), ${l.name} fills by ${l.fillTimes.peakSummer}. On summer weekdays it fills by ${l.fillTimes.summer}. In shoulder season (May/October) it fills by ${l.fillTimes.shoulder}. In winter: ${l.fillTimes.winter}. Capacity: ${l.capacity} spaces. ${l.tips}`,
+      },
+    })),
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Parking Predictor' }]} />
   </div>
@@ -17,6 +31,21 @@ const lotsJSON = JSON.stringify(parkingLots);
       <span class="badge">Local Data</span>
       <h1>Parking Predictor</h1>
       <p>Know exactly when lots fill up across Banff National Park. Plan your arrival time so you never get turned away.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="seo-summary">
+        <h2>Banff Parking Fill Times at a Glance</h2>
+        <p>The most common question visitors ask: <strong>"What time do I need to arrive to get parking?"</strong> Here are the key numbers based on local observation data:</p>
+        <ul>
+          {parkingLots.filter(l => l.capacity > 0).map(l => (
+            <li><strong>{l.name}</strong> — fills by {l.fillTimes.peakSummer} on peak summer weekends, {l.fillTimes.summer} on summer weekdays. {l.capacity} spaces. {l.transitOption ? `Transit: ${l.transitOption}.` : ''}</li>
+          ))}
+        </ul>
+        <p><strong>Pro tip from a local:</strong> Tuesday through Thursday mornings are a different park than Saturday. Arrive before 7 AM in July/August for Lake Louise. Use Roam Transit whenever possible.</p>
+      </div>
     </div>
   </section>
 
@@ -174,6 +203,16 @@ const lotsJSON = JSON.stringify(parkingLots);
 </script>
 
 <style>
+  .seo-summary {
+    background: var(--color-white); border-radius: var(--radius); padding: 2rem;
+    box-shadow: var(--shadow); margin-bottom: 1.5rem;
+  }
+  .seo-summary h2 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+  .seo-summary p { font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; margin-bottom: 0.75rem; }
+  .seo-summary ul { list-style: none; padding: 0; margin: 0 0 1rem; }
+  .seo-summary li { font-size: 0.88rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); line-height: 1.5; }
+  .seo-summary li strong { color: var(--color-text); }
+
   .predictor-controls {
     display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;
     background: var(--color-white); padding: 1.5rem; border-radius: var(--radius);

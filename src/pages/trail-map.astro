@@ -125,6 +125,29 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
       </div>
     </div>
   </section>
+
+  <section class="section" style="background:var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Trail Planning Tools</h2>
+        <p>Make the most of your time on the trails.</p>
+      </div>
+      <div class="grid grid-4">
+        <a href="/quiet-trails" class="card" style="text-decoration:none;color:inherit;">
+          <div class="card-body"><h3>Quiet Trails Finder</h3><p style="font-size:0.85rem;color:var(--color-text-light);">Which trails are least crowded right now.</p></div>
+        </a>
+        <a href="/parking" class="card" style="text-decoration:none;color:inherit;">
+          <div class="card-body"><h3>Parking Predictor</h3><p style="font-size:0.85rem;color:var(--color-text-light);">Know when lots fill up.</p></div>
+        </a>
+        <a href="/alternatives" class="card" style="text-decoration:none;color:inherit;">
+          <div class="card-body"><h3>Quiet Alternatives</h3><p style="font-size:0.85rem;color:var(--color-text-light);">Skip the crowds, keep the views.</p></div>
+        </a>
+        <a href="/shuttle-reservations" class="card" style="text-decoration:none;color:inherit;">
+          <div class="card-body"><h3>Shuttle Guide 2026</h3><p style="font-size:0.85rem;color:var(--color-text-light);">Countdown, tips, backup plans.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <script define:vars={{ trailData, polylineData }}>

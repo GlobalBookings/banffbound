@@ -8,6 +8,20 @@ const trailMap = Object.fromEntries(trails.map(t => [t.slug, t]));
 ---
 
 <BaseLayout title="Quiet Alternatives to Banff's Busiest Trails" description="Skip the crowds. For every packed Banff trail, we show you 3 quieter alternatives with similar scenery. Local knowledge, not guesswork.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: trailAlternatives.map(g => ({
+      '@type': 'Question',
+      name: `What are quieter alternatives to ${g.popularName} in Banff?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Instead of ${g.popularName} (${g.whyPopular}), try: ${g.alternatives.map(a => `${a.name} — ${a.whySimilar} (${a.crowdReduction})`).join('. ')}`,
+      },
+    })),
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Quiet Alternatives' }]} />
   </div>

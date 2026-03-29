@@ -8,6 +8,18 @@ const LOUISE_SHUTTLE_START = '2026-05-15';
 ---
 
 <BaseLayout title="Banff Shuttle Reservations 2026 — Countdown & Booking Guide" description="Parks Canada shuttle reservations for Lake Louise and Moraine Lake open April 15 at 8 AM MT. Countdown timer, step-by-step booking guide, and backup plans.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'When do Parks Canada shuttle reservations open for 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Parks Canada shuttle reservations for Lake Louise and Moraine Lake open on April 15, 2026 at 8:00 AM Mountain Time (MDT). 40% of all season tickets are released at this time. Create your reservation.pc.gc.ca account beforehand.' } },
+      { '@type': 'Question', name: 'Can I drive to Moraine Lake in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'No. Private vehicles are banned from Moraine Lake Road from June through mid-October. You must take the Parks Canada shuttle from the Lake Louise Ski Resort Park & Ride. Shuttle reservations are required and sell out quickly for peak dates.' } },
+      { '@type': 'Question', name: 'What if Moraine Lake shuttle tickets are sold out?', acceptedAnswer: { '@type': 'Answer', text: 'Four backup options: (1) Check the rolling release — 60% of tickets drop at 8 AM MT, 2 days before each departure. (2) Take Roam Transit to Lake Louise (no Moraine). (3) Book a commercial tour operator with vehicle access. (4) Cycle Moraine Lake Road (13 km uphill, no reservation needed).' } },
+      { '@type': 'Question', name: 'When does the Moraine Lake shuttle start running in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'The Moraine Lake shuttle begins on June 1, 2026, weather and avalanche conditions permitting. The Lake Louise shuttle starts earlier on May 15, 2026.' } },
+    ],
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Shuttle Reservations' }]} />
   </div>
