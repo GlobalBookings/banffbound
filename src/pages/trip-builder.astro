@@ -2,8 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { activities, tripTemplates, hotelLink } from '../data/tripActivities';
+import { trails } from '../data/trails';
 
+const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
 const activityMap = Object.fromEntries(activities.map(a => [a.id, a]));
+
+const trailConditions = trails.filter(t => t.status && t.status !== 'open').map(t => ({
+  name: t.name, slug: t.slug, status: t.status, note: t.conditionNote || '',
+}));
+const closedTrailNames = new Set(trails.filter(t => t.status === 'closed').map(t => t.name.toLowerCase()));
 ---
 
 <BaseLayout title="Trip Builder" description="Plan your perfect Banff trip day by day. Choose a template or build your own itinerary with booking links for tours, hotels, and activities.">
@@ -16,6 +23,26 @@ const activityMap = Object.fromEntries(activities.map(a => [a.id, a]));
       <span class="badge">Plan Your Trip</span>
       <h1>Banff Trip Builder</h1>
       <p>Choose a ready-made itinerary or build your own. Every activity includes booking links so you can secure your spots.</p>
+    </div>
+  </section>
+
+  <!-- Live Conditions Banner -->
+  <section class="conditions-banner" id="conditions-banner" style="display:none;">
+    <div class="container">
+      <div class="conditions-inner">
+        <div class="conditions-weather" id="conditions-weather"></div>
+        {trailConditions.length > 0 && (
+          <div class="conditions-alerts">
+            <strong>Trail Alerts:</strong>
+            {trailConditions.map(t => (
+              <a href={`/trails/${t.slug}`} class={`alert-chip alert-${t.status}`}>
+                {t.status === 'closed' ? '✕' : '⚠'} {t.name}
+                {t.note && <span class="alert-note"> — {t.note}</span>}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   </section>
 
@@ -135,15 +162,66 @@ const activityMap = Object.fromEntries(activities.map(a => [a.id, a]));
   ))}
 </BaseLayout>
 
-<script>
+<script define:vars={{ OWM_KEY: OWM_KEY_SSR }}>
   const templateCards = document.querySelectorAll('.template-card');
   const itineraries = document.querySelectorAll('.itinerary-section');
-  const templatesSection = document.querySelector('.templates-section') as HTMLElement;
+  const templatesSection = document.querySelector('.templates-section');
   const changeBtns = document.querySelectorAll('.change-template-btn');
 
-  function showTemplate(id: string) {
-    itineraries.forEach(s => (s as HTMLElement).style.display = 'none');
-    const target = document.querySelector(`[data-itinerary="${id}"]`) as HTMLElement;
+  // Load live weather into conditions banner
+  (async function loadTripWeather() {
+    try {
+      if (!OWM_KEY) return;
+      const [banffRes, forecastRes] = await Promise.all([
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=51.1784&lon=-115.5708&units=metric&appid=${OWM_KEY}`),
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=51.1784&lon=-115.5708&units=metric&appid=${OWM_KEY}`),
+      ]);
+      if (!banffRes.ok) return;
+      const wx = await banffRes.json();
+      const fc = forecastRes.ok ? await forecastRes.json() : null;
+
+      const temp = Math.round(wx.main.temp);
+      const desc = wx.weather[0].description;
+      const icon = wx.weather[0].icon;
+      const wind = Math.round(wx.wind.speed * 3.6);
+
+      let forecastHtml = '';
+      if (fc) {
+        const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        const dailyMap = {};
+        for (const item of fc.list) {
+          const d = new Date(item.dt * 1000);
+          const key = d.toISOString().split('T')[0];
+          if (key === new Date().toISOString().split('T')[0]) continue;
+          if (!dailyMap[key]) dailyMap[key] = { temps: [], icons: [], date: d };
+          dailyMap[key].temps.push(item.main.temp);
+          dailyMap[key].icons.push(item.weather[0].icon);
+        }
+        const entries = Object.values(dailyMap).slice(0, 3);
+        forecastHtml = '<div class="trip-forecast">' + entries.map(day => {
+          const hi = Math.round(Math.max(...day.temps));
+          const lo = Math.round(Math.min(...day.temps));
+          const midIcon = day.icons[Math.floor(day.icons.length / 2)];
+          return `<span class="fc-day">${days[day.date.getDay()]} <img src="https://openweathermap.org/img/wn/${midIcon}.png" width="24" height="24" alt="" /> ${hi}°/${lo}°</span>`;
+        }).join('') + '</div>';
+      }
+
+      const banner = document.getElementById('conditions-banner');
+      const weatherEl = document.getElementById('conditions-weather');
+      weatherEl.innerHTML = `
+        <div class="trip-wx-now">
+          <img src="https://openweathermap.org/img/wn/${icon}.png" width="36" height="36" alt="${desc}" />
+          <span><strong>${temp}°C</strong> ${desc} · Wind ${wind} km/h</span>
+        </div>
+        ${forecastHtml}
+      `;
+      banner.style.display = 'block';
+    } catch {}
+  })();
+
+  function showTemplate(id) {
+    itineraries.forEach(s => s.style.display = 'none');
+    const target = document.querySelector(`[data-itinerary="${id}"]`);
     if (target) {
       target.style.display = 'block';
       templatesSection.style.display = 'none';
@@ -152,14 +230,14 @@ const activityMap = Object.fromEntries(activities.map(a => [a.id, a]));
   }
 
   function showSelector() {
-    itineraries.forEach(s => (s as HTMLElement).style.display = 'none');
+    itineraries.forEach(s => s.style.display = 'none');
     templatesSection.style.display = 'block';
     templatesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   templateCards.forEach(card => {
     card.addEventListener('click', () => {
-      const id = (card as HTMLElement).dataset.template || '';
+      const id = card.dataset.template || '';
       showTemplate(id);
     });
   });
@@ -168,6 +246,19 @@ const activityMap = Object.fromEntries(activities.map(a => [a.id, a]));
 </script>
 
 <style>
+  /* Conditions banner */
+  .conditions-banner { background: var(--color-bg-alt); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 0; }
+  .conditions-inner { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
+  .trip-wx-now { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+  .trip-forecast { display: flex; gap: 0.75rem; }
+  .fc-day { display: flex; align-items: center; gap: 0.2rem; font-size: 0.8rem; color: var(--color-text-light); background: var(--color-white); padding: 0.25rem 0.5rem; border-radius: 4px; }
+  .conditions-alerts { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; font-size: 0.85rem; }
+  .conditions-alerts strong { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
+  .alert-chip { display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.78rem; padding: 0.2rem 0.5rem; border-radius: 4px; text-decoration: none; }
+  .alert-closed { background: #fee2e2; color: #991b1b; }
+  .alert-caution { background: #fef3c7; color: #92400e; }
+  .alert-note { font-weight: 400; }
+
   .templates-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
