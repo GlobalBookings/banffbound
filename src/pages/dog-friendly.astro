@@ -1,0 +1,266 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Dog-Friendly Banff Guide 2026 — Trails, Restaurants & Rules" description="Complete guide to visiting Banff with your dog. Dog-friendly trails, patios, pet-friendly hotels, leash rules, and Parks Canada regulations for dogs in Banff National Park.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Can I bring my dog to Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, dogs are welcome in Banff National Park but must be on a leash (max 2 metres) at ALL times — no exceptions. Dogs are allowed on most trails, roads, and in the town of Banff. However, dogs are prohibited on some trails to protect wildlife. Failure to leash your dog can result in fines up to $25,000. Always carry bags to clean up after your pet.' } },
+      { '@type': 'Question', name: 'Which Banff trails allow dogs?', acceptedAnswer: { '@type': 'Answer', text: 'Most Banff trails allow leashed dogs including: Fenland Trail, Tunnel Mountain, Sundance Canyon, Johnson Lake, Bow Falls, Spray River Loop, Bankhead, Lake Minnewanka Lakeside, Two Jack Lake loop, and Vermilion Lakes. Dogs are NOT allowed on: Moraine Lake Rockpile, Consolation Lakes, and some seasonal wildlife corridors. Always check trail reports at the Parks Canada website for current restrictions.' } },
+      { '@type': 'Question', name: 'Are dogs allowed at Lake Louise?', acceptedAnswer: { '@type': 'Answer', text: 'Leashed dogs are allowed at Lake Louise on the lakeshore trail. However, dogs are NOT permitted on the trail to Lake Agnes Teahouse (bears), the Plain of Six Glaciers trail, or Moraine Lake Rockpile Trail. The lakeshore path is paved and flat — fine for dogs. Always check the Parks Canada website for seasonal wildlife closures that may further restrict dog access.' } },
+      { '@type': 'Question', name: 'What are the dog leash rules in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'All dogs must be on a leash no longer than 2 metres (6 feet) at all times in Banff National Park. There are NO off-leash areas in the park. This rule exists to protect wildlife — even friendly dogs can chase, stress, or be injured by wild animals. Fines for off-leash dogs range from $100 to $25,000. This applies to the townsite, all trails, campgrounds, and parking lots.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Dog-Friendly Guide' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=1600&q=80" alt="Dog on a leash hiking in the mountains" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Pet Guide</span>
+      <h1>Dog-Friendly Banff</h1>
+      <p>Trails, patios, hotels, and everything you need to know about visiting Banff with your dog.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Important Rules -->
+      <div class="rules-banner">
+        <h2>⚠️ Important Rules for Dogs in Banff</h2>
+        <div class="rules-grid">
+          <div class="rule-item">
+            <strong>Leash Required — Always</strong>
+            <p>Dogs must be on a leash no longer than <strong>2 metres (6 feet)</strong> at all times. No off-leash areas exist in the entire national park.</p>
+          </div>
+          <div class="rule-item">
+            <strong>Fines Are Serious</strong>
+            <p>Off-leash fines range from <strong>$100 to $25,000</strong>. Parks Canada actively enforces this, especially on popular trails.</p>
+          </div>
+          <div class="rule-item">
+            <strong>Clean Up After Your Dog</strong>
+            <p>Carry waste bags. Dog waste must be packed out on trails without garbage bins. It's the law.</p>
+          </div>
+          <div class="rule-item">
+            <strong>Some Trails Prohibit Dogs</strong>
+            <p>Several trails are <strong>closed to dogs</strong> for wildlife protection. Check before you go.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dog-Friendly Trails -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Dog-Friendly Trails</h2>
+        <p>All require on-leash (2m max). Sorted by difficulty.</p>
+      </div>
+
+      <div class="trails-grid">
+        <div class="trail-card easy">
+          <span class="difficulty-badge easy">Easy</span>
+          <h3>Fenland Trail</h3>
+          <p><strong>2 km loop</strong> · Flat · Boardwalk</p>
+          <p>Flat loop through old-growth forest near the Vermilion Lakes. Boardwalk surface is great for dogs. Shady and quiet. Watch for elk.</p>
+        </div>
+        <div class="trail-card easy">
+          <span class="difficulty-badge easy">Easy</span>
+          <h3>Bow Falls Trail</h3>
+          <p><strong>1.2 km one way</strong> · Paved · Flat</p>
+          <p>Paved path from downtown Banff to Bow Falls. Dog-friendly the entire way. Great for a quick walk with scenic views of the falls.</p>
+        </div>
+        <div class="trail-card easy">
+          <span class="difficulty-badge easy">Easy</span>
+          <h3>Vermilion Lakes Road</h3>
+          <p><strong>4.3 km one way</strong> · Paved road · Flat</p>
+          <p>Quiet road along three stunning lakes with mountain reflections. Perfect for sunset walks. Dogs love the lake edges.</p>
+        </div>
+        <div class="trail-card easy">
+          <span class="difficulty-badge easy">Easy</span>
+          <h3>Johnson Lake Loop</h3>
+          <p><strong>2.8 km loop</strong> · Mostly flat · Some roots</p>
+          <p>Circles Johnson Lake with mountain views. Quieter than most Banff trails. Dogs can drink from the lake shore.</p>
+        </div>
+        <div class="trail-card easy">
+          <span class="difficulty-badge easy">Easy</span>
+          <h3>Lake Minnewanka Lakeside</h3>
+          <p><strong>First 2 km</strong> · Flat · Gravel</p>
+          <p>The first section of the Lake Minnewanka trail is wide, flat, and dog-friendly. Great lake views. Turn around after the first bay.</p>
+        </div>
+        <div class="trail-card easy">
+          <span class="difficulty-badge easy">Easy</span>
+          <h3>Two Jack Lake Loop</h3>
+          <p><strong>3 km loop</strong> · Flat · Mix of trail and road</p>
+          <p>Scenic loop around Two Jack Lake. Quiet on weekday mornings. Dogs allowed everywhere on-leash.</p>
+        </div>
+        <div class="trail-card moderate">
+          <span class="difficulty-badge moderate">Moderate</span>
+          <h3>Tunnel Mountain Trail</h3>
+          <p><strong>4.3 km return</strong> · 300m elevation · Switchbacks</p>
+          <p>Popular summit trail with panoramic views. Dogs do fine on the wide switchbacks. Bring water for them — exposed and hot in summer.</p>
+        </div>
+        <div class="trail-card moderate">
+          <span class="difficulty-badge moderate">Moderate</span>
+          <h3>Spray River Loop</h3>
+          <p><strong>12 km loop</strong> · Flat to rolling · Fire road</p>
+          <p>Wide fire road perfect for dogs. Less crowded than most Banff trails. Can be shortened by turning around at the river bridge.</p>
+        </div>
+        <div class="trail-card moderate">
+          <span class="difficulty-badge moderate">Moderate</span>
+          <h3>Sundance Canyon</h3>
+          <p><strong>7.4 km return</strong> · Paved then trail · Gentle climb</p>
+          <p>Paved path for 3.7 km then a short canyon loop. Dogs allowed the whole way. The paved section is great for older dogs.</p>
+        </div>
+        <div class="trail-card moderate">
+          <span class="difficulty-badge moderate">Moderate</span>
+          <h3>Bankhead Historical Loop</h3>
+          <p><strong>3.2 km loop</strong> · Gentle hills · Interpretive signs</p>
+          <p>Loop through a ghost town coal mine. Educational signs, quiet trails, and dogs love exploring the old foundations.</p>
+        </div>
+        <div class="trail-card moderate">
+          <span class="difficulty-badge moderate">Moderate</span>
+          <h3>Lake Louise Lakeshore</h3>
+          <p><strong>2 km one way</strong> · Flat · Gravel</p>
+          <p>Leashed dogs allowed on the lakeshore trail. Flat and scenic. The teahouse trails beyond are NOT dog-friendly.</p>
+        </div>
+      </div>
+
+      <!-- Trails Where Dogs Are NOT Allowed -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Trails Where Dogs Are NOT Allowed</h2>
+        <p>These trails prohibit dogs to protect wildlife corridors and sensitive ecosystems.</p>
+      </div>
+
+      <div class="no-dogs-list">
+        <div class="no-dog-item">❌ Moraine Lake Rockpile Trail</div>
+        <div class="no-dog-item">❌ Consolation Lakes Trail</div>
+        <div class="no-dog-item">❌ Lake Agnes / Plain of Six Glaciers (from Lake Louise)</div>
+        <div class="no-dog-item">❌ Seasonal wildlife corridors (check Parks Canada for current closures)</div>
+        <div class="no-dog-item">❌ Most backcountry/overnight trails</div>
+      </div>
+
+      <!-- Dog-Friendly Restaurants -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Dog-Friendly Restaurants & Patios</h2>
+        <p>Banff has several restaurants with patios that welcome leashed dogs.</p>
+      </div>
+
+      <div class="restaurant-grid">
+        <div class="restaurant-card">
+          <h3>🍕 Bear Street Tavern</h3>
+          <p>Heated patio, pizza and craft beer. Very dog-friendly — they sometimes have water bowls out.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>☕ Whitebark Café</h3>
+          <p>Coffee and pastries with a patio on Banff Ave. Dogs welcome at outdoor tables.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>🍔 Elk & Oarsman</h3>
+          <p>Pub with a patio on Banff Ave. Classic pub food. Dogs allowed on the patio.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>🌮 Magpie & Stump</h3>
+          <p>Mexican food with a large rooftop patio. Dogs welcome on the lower patio area.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>🥐 Wild Flour Bakery</h3>
+          <p>Fresh baked goods with a small outdoor seating area. Dogs can sit with you outside.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>🍺 Banff Ave Brewing</h3>
+          <p>Craft brewery with a dog-friendly patio. Pub food and local beers.</p>
+        </div>
+      </div>
+
+      <!-- Pet-Friendly Accommodation -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Pet-Friendly Hotels</h2>
+        <p>Several Banff hotels welcome dogs (pet fees typically $25-50/night).</p>
+      </div>
+
+      <div class="hotel-list">
+        <div class="hotel-item"><strong>Fairmont Banff Springs</strong> — Dogs up to 30 lbs, $50/night pet fee. Luxury option with on-site dog walking paths.</div>
+        <div class="hotel-item"><strong>Moose Hotel & Suites</strong> — Pet-friendly rooms available, $35/night fee. Central Banff location.</div>
+        <div class="hotel-item"><strong>Banff Aspen Lodge</strong> — Dogs welcome in select rooms, $25/night fee. Close to town centre.</div>
+        <div class="hotel-item"><strong>Hidden Ridge Resort</strong> — Pet-friendly cabins with yards. Great for dogs. On Tunnel Mountain.</div>
+        <div class="hotel-item"><strong>Tunnel Mountain Campgrounds</strong> — Dogs allowed at all campsites (on leash). Must not be left unattended.</div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Can I bring my dog to Banff?</summary>
+          <p>Yes — dogs are welcome in Banff National Park but must be on a 2-metre leash at all times. Most trails allow dogs, several restaurants have dog-friendly patios, and many hotels accept pets. Always clean up after your dog and check trail restrictions before hiking.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Which Banff trails allow dogs?</summary>
+          <p>Most trails allow leashed dogs including Fenland, Tunnel Mountain, Sundance Canyon, Johnson Lake, Bow Falls, Spray River, Bankhead, Lake Minnewanka, Two Jack Lake, and the Lake Louise lakeshore. Dogs are banned from Moraine Lake Rockpile, Consolation Lakes, and Lake Agnes/Plain of Six Glaciers trails.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are dogs allowed at Lake Louise?</summary>
+          <p>Leashed dogs are allowed on the Lake Louise lakeshore trail (flat, 2 km). Dogs are NOT allowed on the teahouse trails (Lake Agnes, Plain of Six Glaciers) or at Moraine Lake Rockpile due to bear activity and wildlife corridors.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are there off-leash areas in Banff?</summary>
+          <p>No. There are zero off-leash areas in Banff National Park. Dogs must be on a 2-metre leash at all times — on trails, at campsites, in the townsite, and everywhere else in the park.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can my dog swim in the lakes?</summary>
+          <p>Technically yes, but most Banff lakes are glacier-fed and extremely cold (4-8°C). Johnson Lake and Two Jack Lake are slightly warmer in late summer. Keep your dog on leash even at the water's edge.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .rules-banner { background: #fef3cd; border: 2px solid #f0c040; border-radius: var(--radius); padding: 2rem; }
+  .rules-banner h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+  .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .rule-item strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .rule-item p { font-size: 0.85rem; color: #5a5a5a; line-height: 1.5; }
+
+  .trails-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .trail-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); position: relative; border-top: 3px solid var(--color-bg-alt); }
+  .trail-card.easy { border-top-color: #4caf50; }
+  .trail-card.moderate { border-top-color: #ff9800; }
+  .difficulty-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem; }
+  .difficulty-badge.easy { background: #e8f5e9; color: #2e7d32; }
+  .difficulty-badge.moderate { background: #fff3e0; color: #e65100; }
+  .trail-card h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+  .trail-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.3rem; }
+
+  .no-dogs-list { display: flex; flex-direction: column; gap: 0.5rem; background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .no-dog-item { font-size: 0.9rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); color: #c0392b; font-weight: 500; }
+
+  .restaurant-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .restaurant-card { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+  .restaurant-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .restaurant-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .hotel-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .hotel-item { background: var(--color-white); border-radius: var(--radius); padding: 1rem 1.25rem; box-shadow: var(--shadow); font-size: 0.9rem; line-height: 1.5; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .rules-grid { grid-template-columns: 1fr; }
+    .trails-grid { grid-template-columns: 1fr; }
+    .restaurant-grid { grid-template-columns: 1fr; }
+  }
+</style>

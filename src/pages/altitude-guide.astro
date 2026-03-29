@@ -1,0 +1,348 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Banff Altitude Sickness Guide — Elevation Risk Screener & Prevention Tips" description="Can you get altitude sickness in Banff? Elevation guide for Banff town, Lake Louise, Moraine Lake, and trail passes. Interactive risk screener, prevention tips, and symptom checklist.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Can you get altitude sickness in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Banff town sits at 1,383m (4,537 ft) — generally not high enough to cause altitude sickness for most people. However, visitors from sea level who fly in and immediately do strenuous hikes at higher elevations can experience mild symptoms. Trail passes like Sentinel Pass (2,611m / 8,566 ft) and Parker Ridge (2,250m / 7,382 ft) reach elevations where altitude effects are more common, especially if you ascend quickly from sea level without acclimatization.' } },
+      { '@type': 'Question', name: 'What is the altitude of Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Banff town: 1,383m (4,537 ft). Lake Louise village: 1,731m (5,679 ft). Moraine Lake: 1,885m (6,184 ft). Lake Louise Ski Resort summit: 2,637m (8,651 ft). Sentinel Pass: 2,611m (8,566 ft). Parker Ridge: 2,250m (7,382 ft). Sunshine Village base: 2,160m (7,087 ft). The town itself is at moderate altitude, but many popular destinations sit significantly higher.' } },
+      { '@type': 'Question', name: 'How to prevent altitude sickness in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'To prevent altitude sickness in Banff: 1) Hydrate aggressively — drink 2-3 litres of water daily, starting before you arrive. 2) Avoid alcohol on your first day. 3) Ascend gradually — don\'t go straight from the airport to Sentinel Pass. 4) Spend your first day at lower elevations (Banff town, Vermilion Lakes). 5) Get adequate sleep. 6) Eat light, carbohydrate-rich meals. 7) Recognize early symptoms: headache, nausea, dizziness, fatigue. If symptoms appear, descend and rest.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Altitude Guide' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="High mountain peaks in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Health Guide</span>
+      <h1>Altitude Sickness Guide</h1>
+      <p>Elevation data, risk screening, and prevention tips for every Banff destination — from town to the highest trail passes.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="intro-block">
+        <h2>Understanding Altitude in Banff</h2>
+        <p>Banff sits in the Canadian Rockies at elevations ranging from 1,383m in town to over 2,600m at popular trail passes. While the town itself rarely causes altitude issues, visitors from low elevations who push hard on their first day can experience symptoms. Understanding your personal risk and taking simple precautions makes all the difference.</p>
+      </div>
+
+      <div class="elevation-section">
+        <h2>📍 Elevation of Key Banff Destinations</h2>
+        <div class="elevation-chart">
+          <div class="elev-bar" style="--height: 53%">
+            <div class="elev-fill"></div>
+            <div class="elev-info">
+              <strong>Sentinel Pass</strong>
+              <span>2,611m / 8,566 ft</span>
+            </div>
+          </div>
+          <div class="elev-bar" style="--height: 46%">
+            <div class="elev-fill"></div>
+            <div class="elev-info">
+              <strong>Parker Ridge</strong>
+              <span>2,250m / 7,382 ft</span>
+            </div>
+          </div>
+          <div class="elev-bar" style="--height: 44%">
+            <div class="elev-fill"></div>
+            <div class="elev-info">
+              <strong>Sunshine Village</strong>
+              <span>2,160m / 7,087 ft</span>
+            </div>
+          </div>
+          <div class="elev-bar" style="--height: 38%">
+            <div class="elev-fill"></div>
+            <div class="elev-info">
+              <strong>Moraine Lake</strong>
+              <span>1,885m / 6,184 ft</span>
+            </div>
+          </div>
+          <div class="elev-bar" style="--height: 35%">
+            <div class="elev-fill"></div>
+            <div class="elev-info">
+              <strong>Lake Louise</strong>
+              <span>1,731m / 5,679 ft</span>
+            </div>
+          </div>
+          <div class="elev-bar" style="--height: 28%">
+            <div class="elev-fill"></div>
+            <div class="elev-info">
+              <strong>Banff Town</strong>
+              <span>1,383m / 4,537 ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screener-section">
+        <h2>🩺 Altitude Risk Screener</h2>
+        <p>Select where you're coming from to get a personalized risk assessment.</p>
+        <div class="screener-cards" id="screener">
+          <button class="screener-btn" data-origin="sea-level">
+            <span class="screener-icon">🏖️</span>
+            <strong>Sea Level</strong>
+            <span>0-500m (coastal cities)</span>
+          </button>
+          <button class="screener-btn" data-origin="moderate">
+            <span class="screener-icon">🏘️</span>
+            <strong>Moderate Altitude</strong>
+            <span>500-1,500m (Calgary, Denver area)</span>
+          </button>
+          <button class="screener-btn" data-origin="high">
+            <span class="screener-icon">⛰️</span>
+            <strong>High Altitude</strong>
+            <span>1,500m+ (already acclimatized)</span>
+          </button>
+        </div>
+        <div class="screener-result" id="screener-result">
+          <div id="result-sea-level" class="result-card" style="display:none">
+            <h3>⚠️ Moderate Risk</h3>
+            <p>Coming from sea level to Banff (1,383m) is usually fine for most people, but you may notice mild effects like breathlessness during exertion, slight headache, or disturbed sleep on your first night.</p>
+            <h4>Your plan should be:</h4>
+            <ul>
+              <li><strong>Day 1:</strong> Easy activities in Banff town. Walk the Bow River trail, explore Banff Avenue, visit the hot springs. Don't hike above 1,800m.</li>
+              <li><strong>Day 2:</strong> Moderate hikes — Tunnel Mountain, Johnston Canyon, or Vermilion Lakes loop. Let your body adjust.</li>
+              <li><strong>Day 3+:</strong> You're acclimatized enough for higher trails like Lake Agnes, Sentinel Pass, or Parker Ridge.</li>
+            </ul>
+            <p><strong>Risk factors that increase your vulnerability:</strong> flying in the same day (pressurized cabin + altitude change), dehydration, alcohol, poor sleep, pre-existing respiratory conditions.</p>
+          </div>
+          <div id="result-moderate" class="result-card" style="display:none">
+            <h3>✅ Low Risk</h3>
+            <p>Coming from moderate altitude (like Calgary at 1,045m), you're already partially acclimatized. Banff town will feel normal. You may notice mild effects only at the highest trail passes (2,200m+).</p>
+            <h4>Recommendations:</h4>
+            <ul>
+              <li>Hydrate well, especially if hiking above 2,000m</li>
+              <li>You can start with moderate hikes on Day 1</li>
+              <li>High alpine passes (Sentinel, Parker Ridge) are fine from Day 2</li>
+              <li>Watch for symptoms during strenuous activity above 2,200m</li>
+            </ul>
+          </div>
+          <div id="result-high" class="result-card" style="display:none">
+            <h3>✅ Very Low Risk</h3>
+            <p>You're already acclimatized to high altitude. Banff's elevations should not cause any altitude-related issues for you. You can tackle any trail from Day 1.</p>
+            <h4>Standard reminders:</h4>
+            <ul>
+              <li>Stay hydrated — mountain air is dry regardless of your acclimatization</li>
+              <li>UV is stronger at altitude — use sunscreen and sunglasses</li>
+              <li>All normal hiking safety precautions still apply (bear spray, weather, etc.)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="symptoms-section">
+        <h2>🚨 Recognize Altitude Sickness Symptoms</h2>
+        <div class="symptoms-grid">
+          <div class="symptom-card mild">
+            <h3>Mild (AMS)</h3>
+            <ul>
+              <li>Headache</li>
+              <li>Nausea or loss of appetite</li>
+              <li>Dizziness or lightheadedness</li>
+              <li>Fatigue and weakness</li>
+              <li>Difficulty sleeping</li>
+            </ul>
+            <p class="action"><strong>Action:</strong> Stop ascending. Rest, hydrate, take ibuprofen for headache. Symptoms usually resolve in 12-24 hours. If they worsen, descend.</p>
+          </div>
+          <div class="symptom-card moderate">
+            <h3>Moderate</h3>
+            <ul>
+              <li>Severe headache not relieved by medication</li>
+              <li>Persistent vomiting</li>
+              <li>Increasing fatigue and weakness</li>
+              <li>Shortness of breath during light activity</li>
+              <li>Decreased coordination</li>
+            </ul>
+            <p class="action"><strong>Action:</strong> Descend immediately to lower elevation. Do not continue hiking. Seek medical attention if symptoms persist after descending.</p>
+          </div>
+          <div class="symptom-card severe">
+            <h3>Severe (HACE/HAPE)</h3>
+            <ul>
+              <li>Confusion or altered mental state</li>
+              <li>Inability to walk straight</li>
+              <li>Gurgling or rattling breath sounds</li>
+              <li>Blue lips or fingernails</li>
+              <li>Persistent cough with frothy sputum</li>
+            </ul>
+            <p class="action"><strong>Action:</strong> MEDICAL EMERGENCY. Descend immediately and call 911 or Parks Canada dispatch at 403-762-4506. These conditions can be fatal without treatment.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prevention-section">
+        <h2>💧 Prevention Tips</h2>
+        <div class="prevention-grid">
+          <div class="prevention-card">
+            <strong>Hydrate aggressively</strong>
+            <p>Drink 2-3 litres of water daily, starting before you arrive. Mountain air is very dry and you lose moisture faster than at sea level.</p>
+          </div>
+          <div class="prevention-card">
+            <strong>Avoid alcohol on Day 1</strong>
+            <p>Alcohol worsens dehydration and masks altitude symptoms. Save the craft beer for Day 2 after you've acclimatized.</p>
+          </div>
+          <div class="prevention-card">
+            <strong>Ascend gradually</strong>
+            <p>Spend your first day at lower elevations. Don't fly in from sea level and hike to Sentinel Pass the same day.</p>
+          </div>
+          <div class="prevention-card">
+            <strong>Get good sleep</strong>
+            <p>Sleep quality often decreases at altitude. Arrive a day early if possible. Avoid caffeine after 2 PM.</p>
+          </div>
+          <div class="prevention-card">
+            <strong>Eat carbohydrates</strong>
+            <p>Your body processes carbs more efficiently at altitude than fats or proteins. Eat pasta, bread, rice, and fruit.</p>
+          </div>
+          <div class="prevention-card">
+            <strong>Listen to your body</strong>
+            <p>If you feel a headache or nausea coming on, stop ascending. Rest, hydrate, and reassess before continuing.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  document.querySelectorAll('.screener-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.screener-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const origin = btn.dataset.origin;
+      document.querySelectorAll('.result-card').forEach(c => c.style.display = 'none');
+      const map: Record<string, string> = { 'sea-level': 'result-sea-level', 'moderate': 'result-moderate', 'high': 'result-high' };
+      const el = document.getElementById(map[origin]);
+      if (el) el.style.display = 'block';
+    });
+  });
+</script>
+
+<style>
+  .intro-block { max-width: 800px; margin: 0 auto 3rem; }
+  .intro-block h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; }
+  .intro-block p { color: var(--color-text-light); font-size: 1.05rem; line-height: 1.7; }
+
+  .elevation-section { margin-bottom: 3rem; }
+  .elevation-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; }
+
+  .elevation-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    height: 320px;
+    padding: 1rem;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+  }
+
+  .elev-bar {
+    flex: 1;
+    height: var(--height);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .elev-fill {
+    flex: 1;
+    background: linear-gradient(to top, var(--color-primary), var(--color-accent));
+    border-radius: 8px 8px 0 0;
+    min-height: 20px;
+  }
+
+  .elev-info {
+    text-align: center;
+    padding: 0.5rem 0.25rem;
+  }
+  .elev-info strong { display: block; font-size: 0.78rem; color: var(--color-primary); }
+  .elev-info span { font-size: 0.72rem; color: var(--color-text-light); }
+
+  .screener-section { margin-bottom: 3rem; }
+  .screener-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; }
+  .screener-section > p { color: var(--color-text-light); margin-bottom: 1.5rem; }
+
+  .screener-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+
+  .screener-btn {
+    background: var(--color-white);
+    border: 2px solid #e5e5e5;
+    border-radius: var(--radius);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .screener-btn:hover { border-color: var(--color-accent); box-shadow: var(--shadow); }
+  .screener-btn.active { border-color: var(--color-primary); background: var(--color-bg-alt); }
+
+  .screener-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+  .screener-btn strong { display: block; color: var(--color-primary); margin-bottom: 0.25rem; }
+  .screener-btn span { font-size: 0.82rem; color: var(--color-text-light); }
+
+  .result-card {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .result-card h3 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+  .result-card h4 { color: var(--color-primary); margin: 1rem 0 0.5rem; }
+  .result-card p { color: var(--color-text-light); line-height: 1.6; font-size: 0.95rem; }
+  .result-card ul { padding-left: 1.25rem; }
+  .result-card li { color: var(--color-text-light); line-height: 1.6; margin-bottom: 0.5rem; font-size: 0.95rem; }
+
+  .symptoms-section { margin-bottom: 3rem; }
+  .symptoms-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; }
+
+  .symptoms-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+
+  .symptom-card {
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border-left: 5px solid;
+  }
+  .symptom-card.mild { background: #fff3cd; border-color: #ffc107; }
+  .symptom-card.moderate { background: #fde2d2; border-color: #fd7e14; }
+  .symptom-card.severe { background: #f8d7da; border-color: #dc3545; }
+
+  .symptom-card h3 { font-family: var(--font-heading); margin-bottom: 0.75rem; font-size: 1.1rem; }
+  .symptom-card ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .symptom-card li { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.3rem; }
+  .symptom-card .action { font-size: 0.88rem; line-height: 1.5; margin: 0; }
+
+  .prevention-section { margin-bottom: 2rem; }
+  .prevention-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; }
+
+  .prevention-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+
+  .prevention-card {
+    background: var(--color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: var(--radius);
+    padding: 1.25rem;
+  }
+  .prevention-card strong { display: block; color: var(--color-primary); margin-bottom: 0.5rem; }
+  .prevention-card p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+
+  @media (max-width: 768px) {
+    .elevation-chart { height: auto; flex-direction: column; gap: 0.5rem; }
+    .elev-bar { height: auto; flex-direction: row; align-items: center; gap: 0.75rem; }
+    .elev-fill { min-height: auto; min-width: 20px; height: 40px; width: var(--height); border-radius: 0 8px 8px 0; }
+    .elev-info { text-align: left; }
+    .screener-cards { grid-template-columns: 1fr; }
+    .symptoms-grid { grid-template-columns: 1fr; }
+    .prevention-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,288 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Banff Emergency Card — Offline SOS Contacts & Trail Safety Card" description="Printable offline emergency card for Banff National Park. Emergency phone numbers, bear encounter protocol, hypothermia signs, GPS coordinates for trailheads, whistle signals, and what to do if lost.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What is the emergency number in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'For emergencies in Banff National Park, call 911 (where cell service is available) or Parks Canada Emergency Dispatch at 403-762-4506 (available 24/7). For non-emergency police, call Banff RCMP at 403-762-2226. For medical emergencies, Mineral Springs Hospital in Banff is at 403-762-2222. Save these numbers in your phone before heading out — cell service is unreliable on most trails.' } },
+      { '@type': 'Question', name: 'What to do if lost on a trail in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'If lost on a trail in Banff: STOP — Sit down, Think, Observe, Plan. Stay calm. 1) Stay put if possible — moving makes you harder to find. 2) Use three whistle blasts (universal distress signal) at regular intervals. 3) If you have cell service, call 911 or Parks Canada at 403-762-4506. 4) Use a satellite communicator (InReach/SPOT) to send SOS. 5) Make yourself visible — bright clothing, mirrors, fires (if safe). 6) Stay warm and hydrated. 7) If you must move, go downhill — trails and roads are in valleys.' } },
+      { '@type': 'Question', name: 'Is there cell service in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Cell service in Banff is available in Banff town, Lake Louise village, and along major highways (Trans-Canada, Icefields Parkway near town). However, most hiking trails, backcountry areas, and many lakes have NO cell service. Rogers has the best mountain coverage, followed by Telus and Bell. Always carry a satellite communicator (Garmin InReach, SPOT) for backcountry trips. Download offline maps before leaving town.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Emergency Card' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1600&q=80" alt="Mountain rescue and emergency preparedness in the Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Safety</span>
+      <h1>Emergency Card</h1>
+      <p>Print this card before your trip — offline emergency contacts, bear protocol, and survival essentials for Banff.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="intro-block">
+        <h2>Your Banff Emergency Reference</h2>
+        <p>Cell service is unreliable on most trails in Banff. Print this card, screenshot it, or save it offline before you head out. It contains everything you need in an emergency — from phone numbers to survival protocols.</p>
+        <button class="print-btn" id="print-btn">🖨️ Print This Card</button>
+      </div>
+
+      <div class="emergency-card" id="emergency-card">
+        <div class="card-header">
+          <h2>🆘 BANFF EMERGENCY CARD</h2>
+          <p>Keep this card in your pocket on every hike</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card-section">
+            <h3>📞 Emergency Numbers</h3>
+            <div class="number-list">
+              <div class="number-row">
+                <strong>911</strong>
+                <span>Life-threatening emergency (where cell service exists)</span>
+              </div>
+              <div class="number-row">
+                <strong><a href="tel:4037624506">403-762-4506</a></strong>
+                <span>Parks Canada Emergency Dispatch (24/7)</span>
+              </div>
+              <div class="number-row">
+                <strong><a href="tel:4037622226">403-762-2226</a></strong>
+                <span>Banff RCMP (non-emergency police)</span>
+              </div>
+              <div class="number-row">
+                <strong><a href="tel:4037622222">403-762-2222</a></strong>
+                <span>Mineral Springs Hospital, Banff</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-section">
+            <h3>🐻 Bear Encounter Quick Reference</h3>
+            <div class="quick-ref">
+              <p><strong>Grizzly (hump, dish face):</strong> Stay calm → back away slowly → if charged, STAND GROUND → if contact, PLAY DEAD (face down, protect neck)</p>
+              <p><strong>Black bear (no hump, straight face):</strong> Make yourself big → make noise → if charged, STAND GROUND → if contact, FIGHT BACK</p>
+              <p><strong>Bear spray:</strong> Remove safety → aim slightly down → spray at 6-10m → sweep side to side</p>
+            </div>
+          </div>
+
+          <div class="card-section">
+            <h3>🥶 Hypothermia Signs</h3>
+            <div class="quick-ref">
+              <p><strong>Mild:</strong> Shivering, cold hands/feet, difficulty with fine motor tasks</p>
+              <p><strong>Moderate:</strong> Violent shivering, slurred speech, confusion, stumbling</p>
+              <p><strong>Severe:</strong> Shivering stops, extreme confusion, loss of consciousness</p>
+              <p><strong>Action:</strong> Get out of wind/rain → remove wet clothes → insulate with dry layers → warm drinks (no alcohol) → call for help</p>
+            </div>
+          </div>
+
+          <div class="card-section">
+            <h3>📍 GPS Coordinates — Major Trailheads</h3>
+            <div class="coords-list">
+              <div class="coord-row">
+                <strong>Johnston Canyon</strong>
+                <span>51.2455° N, 115.8387° W</span>
+              </div>
+              <div class="coord-row">
+                <strong>Lake Louise Lakeshore</strong>
+                <span>51.4170° N, 116.1773° W</span>
+              </div>
+              <div class="coord-row">
+                <strong>Moraine Lake</strong>
+                <span>51.3217° N, 116.1860° W</span>
+              </div>
+              <div class="coord-row">
+                <strong>Tunnel Mountain</strong>
+                <span>51.1780° N, 115.5540° W</span>
+              </div>
+              <div class="coord-row">
+                <strong>Sunshine Village Base</strong>
+                <span>51.0715° N, 115.7637° W</span>
+              </div>
+              <div class="coord-row">
+                <strong>Parker Ridge</strong>
+                <span>51.9685° N, 116.8105° W</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-section">
+            <h3>🔊 Whistle Signals</h3>
+            <div class="quick-ref">
+              <p><strong>3 blasts = DISTRESS / HELP NEEDED</strong></p>
+              <p>Blow 3 short, sharp blasts, pause, repeat. This is the universal distress signal recognized by search and rescue teams worldwide.</p>
+              <p><strong>1 blast = "Where are you?"</strong> (used between group members)</p>
+              <p><strong>2 blasts = "Come to me"</strong> (used to regroup)</p>
+              <p>Always carry a whistle on your backpack strap. Sound carries much farther than your voice.</p>
+            </div>
+          </div>
+
+          <div class="card-section">
+            <h3>🧭 If You're Lost: STOP Protocol</h3>
+            <div class="quick-ref">
+              <p><strong>S — Sit down.</strong> Do not panic. Stop moving.</p>
+              <p><strong>T — Think.</strong> When did you last know where you were? What landmarks do you remember?</p>
+              <p><strong>O — Observe.</strong> Look for trail markers, listen for water or traffic, check your map.</p>
+              <p><strong>P — Plan.</strong> If you can retrace, do so carefully. If not, STAY PUT and signal for help.</p>
+              <p><strong>Key rules:</strong> Stay warm and dry. Ration food and water. Make yourself visible. If you must move, go DOWNHILL — trails and roads are in valleys. Three of anything is a distress signal (3 fires, 3 rock piles, 3 whistle blasts).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cell-service-section">
+        <h2>📱 Cell Service in Banff</h2>
+        <div class="service-grid">
+          <div class="service-card good">
+            <h3>✅ Good Signal</h3>
+            <ul>
+              <li>Banff town centre</li>
+              <li>Lake Louise village</li>
+              <li>Trans-Canada Highway</li>
+              <li>Canmore</li>
+            </ul>
+          </div>
+          <div class="service-card spotty">
+            <h3>⚠️ Spotty Signal</h3>
+            <ul>
+              <li>Bow Valley Parkway</li>
+              <li>Icefields Parkway (near town sections)</li>
+              <li>Lake Minnewanka area</li>
+              <li>Tunnel Mountain area</li>
+            </ul>
+          </div>
+          <div class="service-card none">
+            <h3>❌ No Signal</h3>
+            <ul>
+              <li>Most hiking trails</li>
+              <li>All backcountry areas</li>
+              <li>Moraine Lake road (parts)</li>
+              <li>Remote Icefields Parkway sections</li>
+            </ul>
+          </div>
+        </div>
+        <p class="service-note"><strong>Recommendation:</strong> Carry a satellite communicator (Garmin InReach or SPOT) for any backcountry travel. These work everywhere via satellite, regardless of cell coverage. SOS function contacts rescue services directly.</p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  document.getElementById('print-btn')?.addEventListener('click', () => {
+    window.print();
+  });
+</script>
+
+<style>
+  .intro-block { max-width: 800px; margin: 0 auto 2rem; text-align: center; }
+  .intro-block h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; }
+  .intro-block p { color: var(--color-text-light); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem; }
+
+  .print-btn {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.85rem 2rem;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: inherit;
+  }
+  .print-btn:hover { background: #0f2a1a; }
+
+  .emergency-card {
+    background: var(--color-white);
+    border: 3px solid var(--color-primary);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  .card-header {
+    background: var(--color-primary);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .card-header h2 { margin: 0 0 0.5rem; font-family: var(--font-heading); font-size: 1.5rem; color: white; }
+  .card-header p { margin: 0; opacity: 0.9; font-size: 0.9rem; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .card-section {
+    padding: 1.25rem;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+  }
+  .card-section:nth-child(even) { border-right: none; }
+  .card-section:nth-last-child(-n+2) { border-bottom: none; }
+
+  .card-section h3 { font-family: var(--font-heading); color: var(--color-primary); font-size: 1rem; margin-bottom: 0.75rem; }
+
+  .number-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .number-row { display: flex; align-items: baseline; gap: 0.75rem; }
+  .number-row strong { min-width: 120px; color: var(--color-accent); font-size: 1rem; }
+  .number-row strong a { color: var(--color-accent); text-decoration: none; }
+  .number-row span { font-size: 0.85rem; color: var(--color-text-light); }
+
+  .quick-ref p { font-size: 0.88rem; line-height: 1.6; margin-bottom: 0.5rem; color: #333; }
+  .quick-ref p:last-child { margin-bottom: 0; }
+
+  .coords-list { display: flex; flex-direction: column; gap: 0.4rem; }
+  .coord-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.85rem; }
+  .coord-row strong { color: var(--color-primary); }
+  .coord-row span { color: var(--color-text-light); font-family: monospace; font-size: 0.8rem; }
+
+  .cell-service-section { margin-bottom: 2rem; }
+  .cell-service-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; }
+
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem; }
+
+  .service-card {
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    border-left: 4px solid;
+  }
+  .service-card.good { background: #d4edda; border-color: #28a745; }
+  .service-card.spotty { background: #fff3cd; border-color: #ffc107; }
+  .service-card.none { background: #f8d7da; border-color: #dc3545; }
+
+  .service-card h3 { font-size: 0.95rem; margin-bottom: 0.75rem; }
+  .service-card ul { padding-left: 1rem; margin: 0; }
+  .service-card li { font-size: 0.88rem; line-height: 1.6; }
+
+  .service-note { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.5; background: var(--color-bg-alt); padding: 1rem; border-radius: var(--radius); }
+
+  @media print {
+    .page-hero, .intro-block, .print-btn, .cell-service-section, nav, header, footer { display: none !important; }
+    .emergency-card { border: 2px solid #000; page-break-inside: avoid; }
+    .card-header { background: #333 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card-section { font-size: 0.8rem; padding: 0.75rem; }
+  }
+
+  @media (max-width: 768px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .card-section { border-right: none !important; }
+    .service-grid { grid-template-columns: 1fr; }
+    .number-row { flex-direction: column; gap: 0.15rem; }
+    .coord-row { flex-direction: column; gap: 0.1rem; }
+  }
+</style>

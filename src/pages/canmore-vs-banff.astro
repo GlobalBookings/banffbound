@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Canmore vs Banff 2026 — Where Should You Stay?" description="Canmore vs Banff comparison: prices, convenience, dining, parking, vibe. Interactive tool to help you decide where to stay based on your travel priorities.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Should I stay in Canmore or Banff?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on your priorities. Stay in Banff if you want walkable restaurants, nightlife, and no driving to trailheads inside the park. Stay in Canmore if you want lower prices (20-30% cheaper hotels), a quieter local vibe, free parking, and don\'t mind a 20-minute drive to Banff. Canmore is outside the park so you don\'t need a park pass just to stay there, only when you drive into Banff National Park.' } },
+      { '@type': 'Question', name: 'Is Canmore cheaper than Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, significantly. Hotels in Canmore are 20-30% cheaper than comparable options in Banff. A mid-range hotel in Canmore runs $180-250/night vs $250-350 in Banff. Groceries are slightly cheaper. Dining is comparable. You also save on parking (free in Canmore, $4-6/hour in Banff) and don\'t need a park pass ($11/day) just to be in town — only when entering the park.' } },
+      { '@type': 'Question', name: 'How far is Canmore from Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Canmore is 22 km (14 miles) east of Banff — about a 20-minute drive on Highway 1. Roam Transit Route 3 also connects the two towns by bus (25 minutes, $6 one way). Canmore is just outside the eastern park gate, so you pass through the gate and need a park pass each time you drive to Banff.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Canmore vs Banff' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Mountain town view in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Decision Guide</span>
+      <h1>Canmore vs Banff</h1>
+      <p>Not sure where to stay? Compare prices, convenience, dining, and vibe to find your perfect base.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Interactive Decision Tool -->
+      <div class="decision-intro">
+        <h2>Where Should You Stay?</h2>
+        <p>Pick what matters most to you. We'll recommend the best base for your trip.</p>
+      </div>
+
+      <div class="priority-picker" id="priority-picker">
+        <button class="priority-btn" data-priority="budget" data-favors="canmore">💰 Lower prices</button>
+        <button class="priority-btn" data-priority="convenience" data-favors="banff">📍 Walking to everything</button>
+        <button class="priority-btn" data-priority="dining" data-favors="banff">🍽️ Restaurant variety</button>
+        <button class="priority-btn" data-priority="parking" data-favors="canmore">🅿️ Free parking</button>
+        <button class="priority-btn" data-priority="quiet" data-favors="canmore">🤫 Quiet / local vibe</button>
+        <button class="priority-btn" data-priority="nightlife" data-favors="banff">🎉 Nightlife / bars</button>
+        <button class="priority-btn" data-priority="families" data-favors="canmore">👨‍👩‍👧 Family-friendly</button>
+        <button class="priority-btn" data-priority="nature" data-favors="banff">🏔️ Inside the park</button>
+      </div>
+
+      <div class="decision-result" id="decision-result">
+        <p class="decision-text">Select your priorities above to get a recommendation.</p>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Side-by-Side Comparison</h2>
+        <p>How Canmore and Banff compare across every category that matters.</p>
+      </div>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>🏘️ Canmore</th>
+              <th>🏔️ Banff</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hotel Price (mid-range)</strong></td>
+              <td class="winner">$180-250/night ✅</td>
+              <td>$250-350/night</td>
+            </tr>
+            <tr>
+              <td><strong>Distance to Park</strong></td>
+              <td>20 min drive to Banff townsite</td>
+              <td class="winner">You're already in it ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Parking</strong></td>
+              <td class="winner">Free everywhere ✅</td>
+              <td>$4-6/hour, limited spots</td>
+            </tr>
+            <tr>
+              <td><strong>Park Pass Needed?</strong></td>
+              <td class="winner">Only when entering the park ✅</td>
+              <td>Yes, always ($11/day or $22/family)</td>
+            </tr>
+            <tr>
+              <td><strong>Restaurants</strong></td>
+              <td>~40 restaurants, casual focus</td>
+              <td class="winner">~80+ restaurants, all price points ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Nightlife</strong></td>
+              <td>A few pubs</td>
+              <td class="winner">Bars, clubs, live music ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Vibe</strong></td>
+              <td class="winner">Local, quiet, residential ✅</td>
+              <td>Touristy, busy, lively</td>
+            </tr>
+            <tr>
+              <td><strong>Groceries</strong></td>
+              <td class="winner">Safeway, Save-On — normal prices ✅</td>
+              <td>IGA — markup of 15-25%</td>
+            </tr>
+            <tr>
+              <td><strong>Transit to Banff</strong></td>
+              <td>Roam Route 3 (25 min, $6)</td>
+              <td class="winner">Walk everywhere ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Own Hiking Trails</strong></td>
+              <td class="winner">Grassi Lakes, Ha Ling Peak, Heart Creek ✅</td>
+              <td>Tunnel Mountain, Bow Falls, etc.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Detailed Sections -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>The Full Breakdown</h2>
+      </div>
+
+      <div class="breakdown-cards">
+        <div class="breakdown-card">
+          <h3>💰 Price</h3>
+          <p><strong>Canmore wins.</strong> Hotels are 20-30% cheaper. A mid-range hotel in Canmore (Lamphouse, Malcolm Hotel) runs $180-250/night vs $250-350 for comparable options in Banff (Moose Hotel, Mount Royal). Canmore also saves you on parking (free vs $4-6/hour) and park passes ($11/day saved when you're just at your hotel).</p>
+          <p class="saving-math"><strong>Typical savings for a 5-night trip:</strong> $350-500 on hotel + $50-80 parking + ~$55 park pass = <strong>$450-635 saved</strong></p>
+        </div>
+        <div class="breakdown-card">
+          <h3>📍 Convenience</h3>
+          <p><strong>Banff wins.</strong> You're inside the park with walking-distance access to restaurants, shops, the gondola, Bow Falls, and Tunnel Mountain. No need to drive to the park gate every morning. Lake Minnewanka is 15 minutes away. From Canmore, add 20 minutes + park gate lineup to every park destination.</p>
+        </div>
+        <div class="breakdown-card">
+          <h3>🍽️ Dining</h3>
+          <p><strong>Banff wins.</strong> 80+ restaurants ranging from casual (Bear Street Tavern, Magpie & Stump) to fine dining (Eden, Grapes). Canmore has ~40 solid restaurants — The Iron Goat, Communitea, Blake — but less variety overall. Both towns have good coffee shops and breweries.</p>
+        </div>
+        <div class="breakdown-card">
+          <h3>🅿️ Parking</h3>
+          <p><strong>Canmore wins.</strong> Free parking everywhere in Canmore, including hotels and grocery stores. Banff charges $4-6/hour for street parking, and popular lots at Lake Louise and Moraine Lake fill before 7 AM in summer. If you're driving, Canmore is far less stressful.</p>
+        </div>
+        <div class="breakdown-card">
+          <h3>🤫 Vibe</h3>
+          <p><strong>Canmore wins for quiet.</strong> Canmore feels like a real mountain town — locals walking dogs, kids at the playground, community events. Banff is a tourist town — busy streets, tour buses, souvenir shops. If you want that lively energy, Banff is great. If you want peace after a day of hiking, Canmore delivers.</p>
+        </div>
+        <div class="breakdown-card">
+          <h3>👨‍👩‍👧 Families</h3>
+          <p><strong>Canmore wins.</strong> More space (suites/condos), free parking for car seats and strollers, Elevation Place (pool/climbing gym), playgrounds, and Quarry Lake for swimming. Banff is more geared toward couples and party-goers, though it has kid-friendly activities too.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Line -->
+      <div class="bottom-line">
+        <h2>The Bottom Line</h2>
+        <div class="verdict-grid">
+          <div class="verdict-card canmore">
+            <h3>Stay in Canmore if…</h3>
+            <ul>
+              <li>You're on a budget</li>
+              <li>You have a rental car</li>
+              <li>You want a quieter, more local feel</li>
+              <li>You're travelling with family</li>
+              <li>You hate paid parking</li>
+            </ul>
+          </div>
+          <div class="verdict-card banff">
+            <h3>Stay in Banff if…</h3>
+            <ul>
+              <li>You want maximum convenience</li>
+              <li>You don't have a car</li>
+              <li>You want dining and nightlife variety</li>
+              <li>You want to be inside the park</li>
+              <li>It's your first time visiting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Should I stay in Canmore or Banff?</summary>
+          <p>Canmore if you want to save money (20-30% cheaper hotels, free parking) and prefer a quiet local vibe. Banff if you want walkable restaurants, nightlife, and the convenience of being inside the park. First-time visitors often prefer Banff; returning visitors often switch to Canmore.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Canmore cheaper than Banff?</summary>
+          <p>Yes. Hotels are 20-30% cheaper, parking is free, and groceries are normal price. A 5-night mid-range trip based in Canmore saves $450-635 compared to the same trip based in Banff.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How far is Canmore from Banff?</summary>
+          <p>22 km (14 miles) — about 20 minutes by car on Highway 1. Roam Transit Route 3 also connects the two towns (25 min, $6 one way). Canmore is just east of the park gates.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need a park pass in Canmore?</summary>
+          <p>No — Canmore is outside Banff National Park. You only need a park pass ($11/adult/day) when you drive through the park gates into Banff. Canmore's own hiking trails (Grassi Lakes, Ha Ling Peak) are in Kananaskis, which requires a separate $15/day Kananaskis Conservation Pass.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function initDecision() {
+    const buttons = document.querySelectorAll('.priority-btn');
+    const result = document.getElementById('decision-result');
+    const selected: Record<string, string> = {};
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const priority = (btn as HTMLElement).dataset.priority!;
+        const favors = (btn as HTMLElement).dataset.favors!;
+
+        if (btn.classList.contains('active')) {
+          btn.classList.remove('active');
+          delete selected[priority];
+        } else {
+          btn.classList.add('active');
+          selected[priority] = favors;
+        }
+
+        const votes = Object.values(selected);
+        if (votes.length === 0) {
+          result!.innerHTML = '<p class="decision-text">Select your priorities above to get a recommendation.</p>';
+          return;
+        }
+
+        const canmore = votes.filter(v => v === 'canmore').length;
+        const banff = votes.filter(v => v === 'banff').length;
+
+        if (canmore > banff) {
+          result!.innerHTML = `<div class="rec canmore-rec"><h3>🏘️ We recommend Canmore</h3><p>${canmore} of your ${votes.length} priorities favor Canmore. You'll save money, enjoy a quieter vibe, and have free parking. The 20-minute drive to Banff is easy.</p></div>`;
+        } else if (banff > canmore) {
+          result!.innerHTML = `<div class="rec banff-rec"><h3>🏔️ We recommend Banff</h3><p>${banff} of your ${votes.length} priorities favor Banff. You'll love the walkability, dining options, and being inside the park.</p></div>`;
+        } else {
+          result!.innerHTML = `<div class="rec tie-rec"><h3>🤝 It's a tie!</h3><p>Your priorities are evenly split. Consider splitting your stay — a few nights in each town gives you the best of both worlds.</p></div>`;
+        }
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initDecision);
+</script>
+
+<style>
+  .decision-intro { text-align: center; max-width: 600px; margin: 0 auto 1.5rem; }
+  .decision-intro h2 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .decision-intro p { color: var(--color-text-light); }
+
+  .priority-picker { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+  .priority-btn { background: var(--color-white); border: 2px solid var(--color-bg-alt); border-radius: var(--radius); padding: 0.75rem 1.25rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .priority-btn:hover { border-color: var(--color-accent); }
+  .priority-btn.active { border-color: var(--color-primary); background: var(--color-primary); color: var(--color-white); }
+
+  .decision-result { margin-top: 1.5rem; min-height: 80px; }
+  .decision-text { text-align: center; color: var(--color-text-light); font-size: 0.95rem; }
+  .rec { padding: 1.5rem; border-radius: var(--radius); text-align: center; }
+  .canmore-rec { background: #e8f5e9; border: 2px solid #4caf50; }
+  .banff-rec { background: #e3f2fd; border: 2px solid #2196f3; }
+  .tie-rec { background: #fff3e0; border: 2px solid #ff9800; }
+  .rec h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .rec p { font-size: 0.9rem; color: var(--color-text-light); }
+
+  .compare-table-wrap { overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; background: var(--color-white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .compare-table th { background: var(--color-primary); color: var(--color-white); padding: 0.9rem 1rem; text-align: left; font-size: 0.85rem; }
+  .compare-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.88rem; }
+  .compare-table td.winner { color: var(--color-primary); font-weight: 600; }
+
+  .breakdown-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .breakdown-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+  .breakdown-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .breakdown-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.6; margin-bottom: 0.5rem; }
+  .saving-math { background: var(--color-bg-alt); padding: 0.75rem; border-radius: 8px; font-size: 0.85rem !important; color: var(--color-primary) !important; }
+
+  .bottom-line { background: var(--color-bg-alt); border-radius: var(--radius); padding: 2rem; margin-top: 2rem; }
+  .bottom-line h2 { text-align: center; margin-bottom: 1.5rem; }
+  .verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .verdict-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .verdict-card.canmore { border-top: 4px solid #4caf50; }
+  .verdict-card.banff { border-top: 4px solid #2196f3; }
+  .verdict-card h3 { font-size: 1.05rem; margin-bottom: 0.75rem; }
+  .verdict-card ul { list-style: none; padding: 0; }
+  .verdict-card li { padding: 0.4rem 0; font-size: 0.88rem; padding-left: 1.5rem; position: relative; }
+  .verdict-card li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .breakdown-cards { grid-template-columns: 1fr; }
+    .verdict-grid { grid-template-columns: 1fr; }
+  }
+</style>

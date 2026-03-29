@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Banff Bird Checklist — 30+ Species Guide with Habitats & Best Spots" description="Complete Banff birding checklist with 30+ species organized by habitat. Alpine, forest, water, and town birds with season, difficulty to spot, and the best birding locations in the park.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What birds can I see in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Banff National Park hosts 260+ bird species. Common sightings include: Clark\'s nutcracker and gray jay (whiskey jack) in forests, bald eagle and osprey near lakes, American dipper along streams, white-tailed ptarmigan and gray-crowned rosy-finch in alpine areas, great blue heron at Vermilion Lakes, common loon on mountain lakes, and black-billed magpie and common raven in town. Rare finds include great gray owl, northern pygmy-owl, and harlequin duck.' } },
+      { '@type': 'Question', name: 'Are there eagles in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes! Bald eagles and golden eagles both live in Banff National Park. Bald eagles are most commonly spotted at Vermilion Lakes, along the Bow River, and near Lake Minnewanka. They are easiest to see in spring and fall during migration. Golden eagles are rarer and typically seen soaring above mountain ridges. The best eagle viewing spots are Vermilion Lakes at dawn and the Bow Valley Parkway.' } },
+      { '@type': 'Question', name: 'What are the best birding spots in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The best birding spots in Banff are: 1) Vermilion Lakes — best overall spot for waterfowl, eagles, osprey, and great blue heron. 2) Fenland Trail — easy 2km loop through marshland, excellent for warblers, woodpeckers, and waterfowl. 3) Bow Lake — common loon, harlequin duck, and alpine species nearby. 4) Johnston Canyon — American dipper, woodpeckers, and canyon-dwelling species. Early morning visits (6-9 AM) yield the most sightings at any location.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Bird Checklist' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1621631187532-0c3f8bae5ad5?w=1600&q=80" alt="Bird perched in a mountain forest setting" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Nature Guide</span>
+      <h1>Banff Bird Checklist</h1>
+      <p>30+ species organized by habitat — your printable birding field guide to the Canadian Rockies.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="intro-block">
+        <h2>Birding in Banff National Park</h2>
+        <p>Banff National Park hosts over 260 bird species across four distinct habitats: alpine tundra, montane forest, lakes and rivers, and the town itself. From the iconic Clark's nutcracker to bald eagles soaring over Vermilion Lakes, the park is a birder's paradise. Use this interactive checklist to track your sightings.</p>
+      </div>
+
+      <div class="habitat-section">
+        <h2>⛰️ Alpine Species</h2>
+        <p>Found above treeline (2,200m+) on ridges, scree slopes, and alpine meadows.</p>
+        <div class="bird-list">
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>White-tailed Ptarmigan</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Alpine meadows, scree</span><span class="spot-diff hard">Hard to spot</span></div><p>Masters of camouflage — pure white in winter, mottled brown in summer. Look on rocky alpine slopes above 2,200m. Parker Ridge and Sentinel Pass are good spots.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Gray-crowned Rosy-Finch</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Alpine cliffs, glaciers</span><span class="spot-diff moderate">Moderate</span></div><p>Pink-washed finches that feed at the edges of snowfields and glaciers. Often in flocks. Look near alpine lakes and high passes in summer.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Horned Lark</strong><div class="bird-meta"><span class="season">Spring–Fall</span><span class="habitat-tag">Alpine meadows</span><span class="spot-diff moderate">Moderate</span></div><p>Small songbird with distinctive black "horns." Found in open alpine meadows. Listen for their tinkling song high above treeline.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Golden Eagle</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Mountain ridges</span><span class="spot-diff hard">Hard to spot</span></div><p>Massive raptor soaring above mountain ridges. Wingspan up to 2.3m. More common than many think, but usually seen from great distance.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>American Pipit</strong><div class="bird-meta"><span class="season">Summer</span><span class="habitat-tag">Alpine tundra</span><span class="spot-diff easy">Easy</span></div><p>Small, streaky brown bird that bobs its tail constantly. Very common above treeline in summer. Walks on the ground rather than hopping.</p></div></label>
+        </div>
+      </div>
+
+      <div class="habitat-section">
+        <h2>🌲 Forest Species</h2>
+        <p>Found in montane and subalpine forests along trails and around campgrounds.</p>
+        <div class="bird-list">
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Clark's Nutcracker</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Subalpine forest</span><span class="spot-diff easy">Easy</span></div><p>Gray with black wings and white tail patches. Bold and noisy — often at viewpoints and picnic areas. Important whitebark pine seed disperser.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Canada Jay (Whiskey Jack)</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Boreal forest</span><span class="spot-diff easy">Easy</span></div><p>Fluffy gray bird with a white forehead. Extremely bold — will land on your hand for food (don't feed them!). Canada's national bird. Found on most forest trails.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Mountain Chickadee</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Coniferous forest</span><span class="spot-diff easy">Easy</span></div><p>Tiny and energetic with a distinctive white eyebrow stripe. Calls a buzzy "chick-a-dee-dee." Common on most trails.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Pileated Woodpecker</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Old-growth forest</span><span class="spot-diff moderate">Moderate</span></div><p>Crow-sized woodpecker with a flaming red crest. Listen for its loud drumming and "laughing" call. Leaves distinctive rectangular excavations in trees.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Steller's Jay</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Coniferous forest</span><span class="spot-diff easy">Easy</span></div><p>Striking deep blue with a black crest. Loud and conspicuous around campgrounds and picnic areas. Expert mimic of other birds and hawk calls.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Three-toed Woodpecker</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Spruce forest</span><span class="spot-diff hard">Hard to spot</span></div><p>Quiet, bark-flaking woodpecker with yellow crown patch (male). Prefers burned or beetle-killed forest. Methodical feeder — strips bark rather than drilling.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Red Crossbill</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Coniferous forest</span><span class="spot-diff moderate">Moderate</span></div><p>Brick-red males, olive-yellow females. Unique crossed bill for extracting conifer seeds. Nomadic — present depends on cone crop. Listen for "kip-kip" flight calls.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Great Gray Owl</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Meadow edges</span><span class="spot-diff hard">Hard to spot</span></div><p>North America's tallest owl with massive facial disc. Hunts at dawn and dusk at forest-meadow edges. Very rare sighting — consider yourself extremely lucky.</p></div></label>
+        </div>
+      </div>
+
+      <div class="habitat-section">
+        <h2>💧 Water Species</h2>
+        <p>Found along rivers, lakes, and wetlands throughout the park.</p>
+        <div class="bird-list">
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>American Dipper</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Fast-flowing streams</span><span class="spot-diff easy">Easy</span></div><p>Round, slate-gray bird that bobs constantly on stream rocks and walks underwater to catch insects. North America's only aquatic songbird. Johnston Canyon is a reliable spot.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Great Blue Heron</strong><div class="bird-meta"><span class="season">Spring–Fall</span><span class="habitat-tag">Wetlands, lakes</span><span class="spot-diff easy">Easy</span></div><p>Tall, elegant wading bird. Stands motionless in shallow water waiting for fish. Vermilion Lakes is the most reliable spot in Banff.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Osprey</strong><div class="bird-meta"><span class="season">Spring–Fall</span><span class="habitat-tag">Lakes, rivers</span><span class="spot-diff moderate">Moderate</span></div><p>Fish-eating raptor with distinctive black eye stripe. Nests on tall poles and dead trees near water. Look for them diving into lakes feet-first.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Bald Eagle</strong><div class="bird-meta"><span class="season">Year-round (peak spring/fall)</span><span class="habitat-tag">Lakes, rivers</span><span class="spot-diff moderate">Moderate</span></div><p>Iconic white-headed raptor. Adults unmistakable; juveniles are mottled brown. Best seen at Vermilion Lakes, Bow River, and Lake Minnewanka. Peak viewing during spring and fall migration.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Common Loon</strong><div class="bird-meta"><span class="season">Spring–Fall</span><span class="habitat-tag">Mountain lakes</span><span class="spot-diff moderate">Moderate</span></div><p>Black and white checkerboard plumage with haunting call. Found on quieter mountain lakes. Listen at dawn and dusk. Two Medicine Lake and Bow Lake are good spots.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Harlequin Duck</strong><div class="bird-meta"><span class="season">Summer</span><span class="habitat-tag">Fast-flowing rivers</span><span class="spot-diff hard">Hard to spot</span></div><p>Stunning blue-gray duck with bold white and chestnut markings. Feeds in whitewater rivers. A specialty bird that birders travel far to see.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Belted Kingfisher</strong><div class="bird-meta"><span class="season">Spring–Fall</span><span class="habitat-tag">Rivers, ponds</span><span class="spot-diff moderate">Moderate</span></div><p>Blue-gray with a shaggy crest and loud rattling call. Hovers above water before diving for fish. Look along the Bow River.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Spotted Sandpiper</strong><div class="bird-meta"><span class="season">Summer</span><span class="habitat-tag">Lake shores, rivers</span><span class="spot-diff easy">Easy</span></div><p>Small shorebird that bobs its tail constantly and teeters along the water's edge. Brown above with spotted breast in summer. Common at any lake shore.</p></div></label>
+        </div>
+      </div>
+
+      <div class="habitat-section">
+        <h2>🏘️ Town Species</h2>
+        <p>Commonly seen in Banff townsite, around buildings, and in parks.</p>
+        <div class="bird-list">
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Black-billed Magpie</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Town, parking lots</span><span class="spot-diff easy">Easy</span></div><p>Striking black and white with iridescent blue-green tail. Loud, social, and intelligent. Ubiquitous around town, parking lots, and anywhere food scraps exist.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Common Raven</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Everywhere</span><span class="spot-diff easy">Easy</span></div><p>Large, all-black with a wedge-shaped tail and deep "kronk" call. Incredibly intelligent. Seen everywhere from town to mountain summits. Performs acrobatic flights.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>American Robin</strong><div class="bird-meta"><span class="season">Spring–Fall</span><span class="habitat-tag">Lawns, gardens</span><span class="spot-diff easy">Easy</span></div><p>Familiar orange-breasted bird hopping on lawns. One of the first signs of spring in Banff. Listen for their cheerful "cheerily-cheerup" song at dawn.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Dark-eyed Junco</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Forest edges, town</span><span class="spot-diff easy">Easy</span></div><p>Small gray bird with white outer tail feathers that flash in flight. Common on the ground under feeders and at picnic areas. "Snowbird" that stays through winter.</p></div></label>
+          <label class="bird-item"><input type="checkbox" /><span class="check-box"></span><div class="bird-info"><strong>Pine Siskin</strong><div class="bird-meta"><span class="season">Year-round</span><span class="habitat-tag">Conifers, feeders</span><span class="spot-diff easy">Easy</span></div><p>Tiny, streaky finch with yellow wing flashes. Forms large, noisy flocks. Common at campgrounds and anywhere with spruce trees. Buzzy "zreeee" call.</p></div></label>
+        </div>
+      </div>
+
+      <div class="spots-section">
+        <h2>📍 Best Birding Spots in Banff</h2>
+        <div class="spot-cards">
+          <div class="spot-card">
+            <h3>Vermilion Lakes</h3>
+            <p>The #1 birding spot in Banff. Wetlands attract great blue heron, bald eagle, osprey, waterfowl, and shorebirds. Dawn visits are best. Drive or walk the Vermilion Lakes Road.</p>
+            <span class="spot-species">Best for: Eagles, herons, osprey, waterfowl</span>
+          </div>
+          <div class="spot-card">
+            <h3>Fenland Trail</h3>
+            <p>Easy 2 km loop through marshland near the town. Excellent for warblers, woodpeckers, chickadees, and waterfowl. Quiet and underrated. Starts near the Train Station trailhead.</p>
+            <span class="spot-species">Best for: Warblers, woodpeckers, songbirds</span>
+          </div>
+          <div class="spot-card">
+            <h3>Bow Lake</h3>
+            <p>Beautiful turquoise lake on the Icefields Parkway. Common loon, harlequin duck, and alpine species nearby. The Num-Ti-Jah Lodge area is particularly productive.</p>
+            <span class="spot-species">Best for: Loon, harlequin duck, alpine species</span>
+          </div>
+          <div class="spot-card">
+            <h3>Johnston Canyon</h3>
+            <p>Walk the canyon trail and look for American dipper on the rocks, woodpeckers in the forest, and canyon wrens on the cliff walls. Best in early morning before crowds.</p>
+            <span class="spot-species">Best for: Dipper, woodpeckers, canyon species</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .intro-block { max-width: 800px; margin: 0 auto 3rem; }
+  .intro-block h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; }
+  .intro-block p { color: var(--color-text-light); font-size: 1.05rem; line-height: 1.7; }
+
+  .habitat-section { margin-bottom: 3rem; }
+  .habitat-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; }
+  .habitat-section > p { color: var(--color-text-light); margin-bottom: 1.5rem; }
+
+  .bird-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .bird-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+  }
+  .bird-item:hover { box-shadow: var(--shadow); }
+  .bird-item input { display: none; }
+
+  .check-box {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border: 2px solid var(--color-primary);
+    border-radius: 6px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  .bird-item input:checked ~ .check-box {
+    background: var(--color-primary);
+  }
+  .bird-item input:checked ~ .check-box::after {
+    content: '✓';
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .bird-info { flex: 1; }
+  .bird-info strong { color: var(--color-primary); font-size: 1rem; }
+
+  .bird-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.4rem 0;
+  }
+
+  .season, .habitat-tag {
+    font-size: 0.75rem;
+    background: var(--color-bg-alt);
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    color: var(--color-text-light);
+  }
+
+  .spot-diff {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .spot-diff.easy { background: #d4edda; color: #155724; }
+  .spot-diff.moderate { background: #fff3cd; color: #856404; }
+  .spot-diff.hard { background: #f8d7da; color: #721c24; }
+
+  .bird-info p { color: var(--color-text-light); font-size: 0.88rem; line-height: 1.5; margin: 0; }
+
+  .spots-section { margin-bottom: 2rem; }
+  .spots-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; }
+
+  .spot-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+
+  .spot-card {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+  }
+  .spot-card h3 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.05rem; }
+  .spot-card p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.75rem; }
+
+  .spot-species {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .spot-cards { grid-template-columns: 1fr; }
+    .bird-meta { flex-direction: column; gap: 0.25rem; }
+  }
+</style>

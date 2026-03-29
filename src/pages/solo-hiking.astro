@@ -1,0 +1,315 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Solo Hiking Safety Planner for Banff — Essential Tips & Best Trails" description="Plan a safe solo hike in Banff National Park. Safety checklist, best trails for solo hikers, trails to avoid, emergency contacts, and expert tips for hiking alone in the Rockies.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Is it safe to hike alone in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, solo hiking in Banff can be safe if you take proper precautions. Stick to well-trafficked trails like Tunnel Mountain, Johnston Canyon, or Lake Agnes. Always carry bear spray, tell someone your plan and expected return time, check trail reports on the Parks Canada website, carry a satellite communicator (InReach or SPOT), and start early. Avoid remote backcountry trails with known grizzly activity when hiking alone.' } },
+      { '@type': 'Question', name: 'Do I need bear spray for solo hiking?', acceptedAnswer: { '@type': 'Answer', text: 'Absolutely yes. Bear spray is essential for all hiking in Banff, but especially critical for solo hikers. You are statistically more likely to have a negative bear encounter when alone. Carry bear spray in an accessible holster on your chest or hip — not in your backpack. You can buy or rent bear spray at shops in Banff town. Practice drawing it quickly before you hit the trail.' } },
+      { '@type': 'Question', name: 'What are the best solo hikes in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The best trails for solo hikers in Banff are popular enough that you will encounter other people: Tunnel Mountain (short, busy, great views), Johnston Canyon (paved, very popular), Lake Agnes Tea House (steady traffic all day in summer), and Sulphur Mountain via Cosmic Ray Station (well-maintained, busy). Avoid technical scrambles like Cory Pass and remote backcountry when alone.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Solo Hiking Safety' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=1600&q=80" alt="Solo hiker on a mountain trail in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Safety First</span>
+      <h1>Solo Hiking Safety Planner</h1>
+      <p>Everything you need to plan a safe solo hike in Banff National Park — checklists, trail picks, and emergency contacts.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="intro-block">
+        <h2>Solo Hiking in Banff: What You Need to Know</h2>
+        <p>Hiking alone in Banff National Park is one of the most rewarding outdoor experiences you can have — but it demands extra preparation. Without a partner to help in an emergency, your safety depends on planning, the right gear, and choosing appropriate trails. This guide covers everything a solo hiker needs.</p>
+      </div>
+
+      <div class="checklist-section">
+        <h2>🔒 Solo Hiker Safety Checklist</h2>
+        <p>Complete every item before you hit the trail.</p>
+        <div class="checklist-grid">
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <div>
+              <strong>Tell someone your plan</strong>
+              <p>Share your trail name, start time, and expected return time with a friend, family member, or your hotel front desk. Leave a note on your car dashboard with trail name and expected return.</p>
+            </div>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <div>
+              <strong>Carry bear spray</strong>
+              <p>Keep it in a hip or chest holster — never in your pack. Buy or rent at shops in Banff town ($30-50). Practice drawing it before your hike. Check expiry date.</p>
+            </div>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <div>
+              <strong>Check trail reports</strong>
+              <p>Visit the <a href="https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonee-hiking" target="_blank" rel="noopener">Parks Canada trail conditions</a> page the morning of your hike. Trails may be closed for bear activity, avalanche risk, or damage.</p>
+            </div>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <div>
+              <strong>Download offline maps</strong>
+              <p>Cell service is unreliable on most trails. Download the area in Google Maps, AllTrails, or Gaia GPS before you leave town. Know your route.</p>
+            </div>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <div>
+              <strong>Carry a satellite communicator</strong>
+              <p>A Garmin InReach or SPOT device lets you send an SOS from anywhere — even with no cell service. This is the single most important piece of safety gear for solo hikers.</p>
+            </div>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <div>
+              <strong>Start early</strong>
+              <p>Begin your hike before 8 AM. You'll beat crowds at the trailhead, have more daylight, and avoid afternoon thunderstorms that are common in the Rockies from July to September.</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="trails-section">
+        <h2>🥾 Best Trails for Solo Hikers</h2>
+        <p>These trails are popular enough that you'll encounter other hikers throughout the day, adding a safety buffer.</p>
+        <div class="trail-cards">
+          <div class="trail-card">
+            <div class="trail-header">
+              <h3>Tunnel Mountain</h3>
+              <span class="difficulty easy">Easy</span>
+            </div>
+            <div class="trail-stats">
+              <span>4.3 km return</span>
+              <span>260m elevation</span>
+              <span>1-2 hours</span>
+            </div>
+            <p>The most accessible summit in Banff. Short, well-maintained, and always busy. 360° views of the Bow Valley, Mt Rundle, and Banff town. Perfect warm-up hike or evening walk.</p>
+          </div>
+          <div class="trail-card">
+            <div class="trail-header">
+              <h3>Johnston Canyon</h3>
+              <span class="difficulty easy">Easy</span>
+            </div>
+            <div class="trail-stats">
+              <span>5.4 km to Upper Falls</span>
+              <span>135m elevation</span>
+              <span>2-3 hours</span>
+            </div>
+            <p>Paved walkways along canyon walls to stunning waterfalls. Extremely popular — you'll never be alone. Lower Falls is wheelchair-accessible. Continue to the Ink Pots for a longer outing.</p>
+          </div>
+          <div class="trail-card">
+            <div class="trail-header">
+              <h3>Lake Agnes Tea House</h3>
+              <span class="difficulty moderate">Moderate</span>
+            </div>
+            <div class="trail-stats">
+              <span>7.0 km return</span>
+              <span>385m elevation</span>
+              <span>3-4 hours</span>
+            </div>
+            <p>Starts at Lake Louise, climbs through forest to a historic tea house perched above a beautiful alpine lake. High traffic all day in summer. You can extend to the Big Beehive for panoramic views.</p>
+          </div>
+          <div class="trail-card">
+            <div class="trail-header">
+              <h3>Sulphur Mountain</h3>
+              <span class="difficulty moderate">Moderate</span>
+            </div>
+            <div class="trail-stats">
+              <span>11 km return</span>
+              <span>655m elevation</span>
+              <span>4-5 hours</span>
+            </div>
+            <p>Switchbacks up to the Banff Gondola station and Cosmic Ray Station. Busy trail, well-maintained. Take the gondola down if your knees need a break. Outstanding summit views.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="avoid-section">
+        <h2>⚠️ Trails to Avoid Solo</h2>
+        <div class="warning-box">
+          <p><strong>Cory Pass:</strong> Technical scramble with significant exposure. Loose rock, steep drop-offs, and route-finding required. A slip here could be fatal with no one to help. Always do this with a partner.</p>
+          <p><strong>Remote backcountry with grizzly activity:</strong> Any trail with active bear warnings or closures. Check Parks Canada for current advisories. Grizzly encounters are more dangerous for solo hikers — groups of 4+ are recommended in bear country.</p>
+          <p><strong>Any trail you're not sure about:</strong> If you can't find recent trip reports or the trail isn't well-marked, don't attempt it alone. Stick to well-documented routes with reliable signage.</p>
+        </div>
+      </div>
+
+      <div class="emergency-section">
+        <h2>📞 Emergency Contacts</h2>
+        <p>Save these numbers in your phone before your hike. Screenshot this section for offline access.</p>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <strong>Parks Canada Emergency Dispatch</strong>
+            <a href="tel:4037624506">403-762-4506</a>
+            <p>24/7 for emergencies in the park — wildlife encounters, injuries, lost hikers</p>
+          </div>
+          <div class="contact-card">
+            <strong>Banff RCMP</strong>
+            <a href="tel:4037622226">403-762-2226</a>
+            <p>Non-emergency police</p>
+          </div>
+          <div class="contact-card">
+            <strong>Emergency Services</strong>
+            <a href="tel:911">911</a>
+            <p>For life-threatening emergencies (where cell service exists)</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .intro-block { max-width: 800px; margin: 0 auto 3rem; }
+  .intro-block h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; }
+  .intro-block p { color: var(--color-text-light); font-size: 1.05rem; line-height: 1.7; }
+
+  .checklist-section { margin-bottom: 3rem; }
+  .checklist-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; }
+  .checklist-section > p { color: var(--color-text-light); margin-bottom: 1.5rem; }
+
+  .checklist-grid { display: flex; flex-direction: column; gap: 1rem; }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+  }
+  .checklist-item:hover { box-shadow: var(--shadow); }
+  .checklist-item input { display: none; }
+
+  .check-box {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border: 2px solid var(--color-primary);
+    border-radius: 6px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  .checklist-item input:checked ~ .check-box {
+    background: var(--color-primary);
+  }
+  .checklist-item input:checked ~ .check-box::after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .checklist-item strong { display: block; color: var(--color-primary); margin-bottom: 0.25rem; }
+  .checklist-item p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+  .checklist-item a { color: var(--color-accent); }
+
+  .trails-section { margin-bottom: 3rem; }
+  .trails-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; }
+  .trails-section > p { color: var(--color-text-light); margin-bottom: 1.5rem; }
+
+  .trail-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+
+  .trail-card {
+    background: var(--color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+  }
+  .trail-card:hover { box-shadow: var(--shadow); }
+
+  .trail-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+  .trail-header h3 { font-family: var(--font-heading); color: var(--color-primary); margin: 0; }
+
+  .difficulty {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .difficulty.easy { background: #d4edda; color: #155724; }
+  .difficulty.moderate { background: #fff3cd; color: #856404; }
+
+  .trail-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+
+  .trail-card p { color: var(--color-text-light); font-size: 0.92rem; line-height: 1.6; margin: 0; }
+
+  .avoid-section { margin-bottom: 3rem; }
+  .avoid-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; }
+
+  .warning-box {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .warning-box p { margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.6; color: #664d03; }
+  .warning-box p:last-child { margin-bottom: 0; }
+
+  .emergency-section { margin-bottom: 2rem; }
+  .emergency-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; }
+  .emergency-section > p { color: var(--color-text-light); margin-bottom: 1.5rem; }
+
+  .contact-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+
+  .contact-card {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .contact-card strong { display: block; color: var(--color-primary); margin-bottom: 0.5rem; }
+  .contact-card a {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+  }
+  .contact-card p { color: var(--color-text-light); font-size: 0.85rem; margin: 0; }
+
+  @media (max-width: 768px) {
+    .trail-cards { grid-template-columns: 1fr; }
+    .contact-cards { grid-template-columns: 1fr; }
+  }
+</style>

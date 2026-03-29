@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Wildlife Encounter Emergency Guide — Banff Bear, Elk & Cougar Safety" description="What to do if you encounter a bear, elk, cougar, or wolf in Banff National Park. Step-by-step emergency protocols, how to use bear spray, and essential safety rules.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What to do if you see a bear in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Stay calm and assess the bear species. For grizzly bears: do not run, speak calmly, back away slowly, and if charged, stand your ground — most charges are bluffs. If a grizzly makes contact, play dead face down, protect your neck. For black bears: appear large, make noise, and if attacked, fight back aggressively. Always carry bear spray and know how to use it. Maintain 100m distance from all bears.' } },
+      { '@type': 'Question', name: 'Are there cougars in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, cougars (mountain lions) live in Banff National Park, but sightings are extremely rare. They are solitary, nocturnal predators that actively avoid humans. If you encounter one: do not run, make yourself appear as large as possible, maintain eye contact, back away slowly, and if attacked, fight back aggressively. Pick up small children immediately. Cougar encounters are far less common than bear or elk encounters.' } },
+      { '@type': 'Question', name: 'How to use bear spray?', acceptedAnswer: { '@type': 'Answer', text: 'Bear spray is your best defence against an aggressive bear. To use: 1) Remove the safety clip with your thumb. 2) Hold with both hands, arms extended. 3) Aim slightly downward (spray creates a cloud). 4) When the bear is 6-10 metres away, spray a 2-3 second burst. 5) Spray in a side-to-side sweeping motion. 6) Continue spraying short bursts if the bear keeps approaching. 7) Back away while the spray cloud works. Bear spray is 92% effective at stopping aggressive bears.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Wildlife Safety' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=1600&q=80" alt="Grizzly bear in the Canadian Rockies wilderness" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Emergency Guide</span>
+      <h1>Wildlife Encounter Safety</h1>
+      <p>What to do if you encounter a bear, elk, cougar, or wolf in Banff. Species-specific protocols that could save your life.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="intro-block">
+        <h2>Banff Wildlife Encounter Protocols</h2>
+        <p>Banff National Park is home to grizzly bears, black bears, elk, cougars, wolves, and more. Most wildlife encounters are peaceful and thrilling — but you need to know what to do if an animal becomes aggressive. This guide covers species-specific emergency protocols based on Parks Canada guidelines.</p>
+      </div>
+
+      <div class="encounter-section">
+        <h2>🐻 Bear Encounter Protocol</h2>
+        <p>Bears are the most common dangerous wildlife encounter in Banff. Knowing the difference between grizzly and black bear behaviour can save your life.</p>
+
+        <div class="bear-compare">
+          <div class="bear-card grizzly">
+            <h3>Grizzly Bear</h3>
+            <div class="bear-id">
+              <p><strong>Identification:</strong> Shoulder hump, dish-shaped face, longer claws, typically brown/blonde</p>
+            </div>
+            <div class="protocol-steps">
+              <h4>If you see a grizzly:</h4>
+              <ol>
+                <li>Stay calm. Do NOT run — bears can run 50 km/h</li>
+                <li>Speak in a calm, low voice so the bear knows you're human</li>
+                <li>Back away slowly. Do not make direct eye contact</li>
+                <li>If it charges — <strong>stand your ground</strong>. Most charges are bluffs</li>
+                <li>Use bear spray when the bear is within 6-10 metres</li>
+              </ol>
+              <h4>If a grizzly makes contact:</h4>
+              <ol>
+                <li><strong>Play dead.</strong> Lie face down, spread your legs, protect your neck with hands</li>
+                <li>Keep your backpack on for protection</li>
+                <li>Stay still until the bear leaves the area</li>
+                <li>Exception: If the attack is prolonged or the bear starts feeding, fight back — this means it's predatory</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="bear-card black">
+            <h3>Black Bear</h3>
+            <div class="bear-id">
+              <p><strong>Identification:</strong> No shoulder hump, straight face profile, shorter claws, can be black, brown, or cinnamon</p>
+            </div>
+            <div class="protocol-steps">
+              <h4>If you see a black bear:</h4>
+              <ol>
+                <li>Stay calm. Do NOT run</li>
+                <li>Make yourself look big — raise your arms, stand on a rock</li>
+                <li>Make noise — yell, clap, bang pots</li>
+                <li>Back away slowly while facing the bear</li>
+                <li>Use bear spray if it approaches within 6-10 metres</li>
+              </ol>
+              <h4>If a black bear makes contact:</h4>
+              <ol>
+                <li><strong>Fight back aggressively.</strong> Do NOT play dead</li>
+                <li>Use anything available — rocks, sticks, fists, bear spray</li>
+                <li>Target the nose and eyes</li>
+                <li>Black bear attacks are more likely to be predatory — fighting back is your best chance</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="encounter-section">
+        <h2>🦌 Elk Encounter Protocol</h2>
+        <p>Elk are the most frequently encountered large animal in Banff — and one of the most dangerous, especially during the fall rut (September-October).</p>
+        <div class="protocol-box">
+          <ul>
+            <li><strong>Maintain 50+ metres distance</strong> at all times</li>
+            <li>During fall rut, bull elk are extremely aggressive and will charge without warning</li>
+            <li>Cow elk with calves (spring) are also protective and dangerous</li>
+            <li>If an elk lowers its head, pins back its ears, or paws the ground — it's about to charge</li>
+            <li><strong>Back away slowly.</strong> Get behind a tree, car, or building</li>
+            <li>Do NOT turn your back. Do NOT run — this triggers chase behaviour</li>
+            <li>If knocked down, curl into a ball and protect your head and neck</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="encounter-section">
+        <h2>🐆 Cougar Encounter Protocol</h2>
+        <p>Cougar (mountain lion) sightings in Banff are extremely rare. These solitary, nocturnal predators actively avoid humans.</p>
+        <div class="protocol-box">
+          <ul>
+            <li><strong>Do NOT run</strong> — this triggers a predatory chase response</li>
+            <li>Make yourself appear as large as possible — raise arms, open jacket wide</li>
+            <li>Maintain eye contact with the cougar</li>
+            <li>Pick up small children immediately without bending over</li>
+            <li>Back away slowly while facing the animal</li>
+            <li>Make loud noises — shout, clap, throw rocks near (not at) the cougar</li>
+            <li><strong>If attacked, fight back aggressively</strong> — target eyes and nose</li>
+            <li>Use bear spray if available</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="encounter-section">
+        <h2>🐺 Wolf Encounter Protocol</h2>
+        <p>Wolves live in Banff but are rarely seen. They generally avoid humans. If you encounter a wolf:</p>
+        <div class="protocol-box">
+          <ul>
+            <li>Maintain a safe distance — at least 100 metres</li>
+            <li>Do NOT approach, even if the wolf appears calm or curious</li>
+            <li>Back away slowly while facing the animal</li>
+            <li>Make yourself large and make noise</li>
+            <li>Do NOT run — maintain calm, assertive body language</li>
+            <li>Report all wolf sightings to Parks Canada at <a href="tel:4037624506">403-762-4506</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="spray-section">
+        <h2>🧴 How to Use Bear Spray — Step by Step</h2>
+        <p>Bear spray is 92% effective at stopping aggressive bears. It works on all wildlife. Here's how to use it correctly:</p>
+        <div class="spray-steps">
+          <div class="spray-step">
+            <div class="step-num">1</div>
+            <div>
+              <strong>Remove the safety clip</strong>
+              <p>Flip the orange safety tab off with your thumb. Practice this before your hike.</p>
+            </div>
+          </div>
+          <div class="spray-step">
+            <div class="step-num">2</div>
+            <div>
+              <strong>Hold with both hands</strong>
+              <p>Grip the canister firmly with both hands, arms extended in front of you.</p>
+            </div>
+          </div>
+          <div class="spray-step">
+            <div class="step-num">3</div>
+            <div>
+              <strong>Aim slightly downward</strong>
+              <p>The spray creates an expanding cloud. Aim for the area between you and the animal, slightly below face level.</p>
+            </div>
+          </div>
+          <div class="spray-step">
+            <div class="step-num">4</div>
+            <div>
+              <strong>Spray at 6-10 metres</strong>
+              <p>Wait until the bear is within 6-10 metres (20-30 feet). Spray too early and it will dissipate before reaching the bear.</p>
+            </div>
+          </div>
+          <div class="spray-step">
+            <div class="step-num">5</div>
+            <div>
+              <strong>Sweep side to side</strong>
+              <p>Spray a 2-3 second burst in a sweeping motion to create a wall of spray the bear must pass through.</p>
+            </div>
+          </div>
+          <div class="spray-step">
+            <div class="step-num">6</div>
+            <div>
+              <strong>Back away</strong>
+              <p>Continue backing away while the spray cloud takes effect. Be ready to spray again if needed — most cans have 6-8 seconds of spray.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .intro-block { max-width: 800px; margin: 0 auto 3rem; }
+  .intro-block h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; }
+  .intro-block p { color: var(--color-text-light); font-size: 1.05rem; line-height: 1.7; }
+
+  .encounter-section { margin-bottom: 3rem; }
+  .encounter-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; }
+  .encounter-section > p { color: var(--color-text-light); margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.6; }
+
+  .bear-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+  .bear-card {
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 2px solid;
+  }
+  .bear-card.grizzly { background: #fef3e2; border-color: #d4a056; }
+  .bear-card.black { background: #e8e8e8; border-color: #555; }
+
+  .bear-card h3 { font-family: var(--font-heading); margin-bottom: 0.75rem; font-size: 1.3rem; }
+  .bear-card.grizzly h3 { color: #8b5e34; }
+  .bear-card.black h3 { color: #333; }
+
+  .bear-id { margin-bottom: 1rem; }
+  .bear-id p { font-size: 0.9rem; line-height: 1.5; margin: 0; }
+
+  .protocol-steps h4 { font-size: 0.95rem; color: var(--color-primary); margin: 1rem 0 0.5rem; }
+  .protocol-steps ol { padding-left: 1.25rem; margin: 0; }
+  .protocol-steps li { font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.4rem; }
+
+  .protocol-box {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .protocol-box ul { padding-left: 1.25rem; margin: 0; }
+  .protocol-box li { font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.5rem; }
+  .protocol-box a { color: var(--color-accent); }
+
+  .spray-section { margin-bottom: 2rem; }
+  .spray-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; }
+  .spray-section > p { color: var(--color-text-light); margin-bottom: 1.5rem; }
+
+  .spray-steps { display: flex; flex-direction: column; gap: 1rem; }
+
+  .spray-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: var(--radius);
+    padding: 1.25rem;
+  }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .spray-step strong { display: block; color: var(--color-primary); margin-bottom: 0.25rem; }
+  .spray-step p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+
+  @media (max-width: 768px) {
+    .bear-compare { grid-template-columns: 1fr; }
+  }
+</style>

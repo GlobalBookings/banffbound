@@ -1,0 +1,306 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Accessible Trails in Banff 2026 — Wheelchair, Stroller & Mobility Guide" description="Complete accessibility guide for Banff National Park. Wheelchair accessible trails, stroller-friendly paths, mobility-limited options, adaptive programs, and accessible lodging.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Are there wheelchair accessible trails in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Several Banff trails are wheelchair accessible: Fenland Trail (2 km boardwalk loop, fully accessible), Bow Falls viewpoint (paved path), Lake Minnewanka shore (paved first 1 km), Vermilion Lakes road (4.3 km paved), Lake Louise lakeshore (paved, 2 km one way), Cascade Ponds (paved paths around the ponds), and Banff Legacy Trail (paved, connects Banff to Canmore). Parks Canada also offers GRIT Freedom Chairs for rent — all-terrain wheelchairs designed for trails.' } },
+      { '@type': 'Question', name: 'Is Lake Louise accessible?', acceptedAnswer: { '@type': 'Answer', text: 'Partially. The Lake Louise lakeshore trail is paved and mostly flat for 2 km — suitable for wheelchairs and strollers. The Fairmont has accessible washrooms and a ramp entrance. However, the teahouse trails (Lake Agnes, Plain of Six Glaciers) involve steep stairs and rough terrain and are NOT wheelchair accessible. The free Parks Canada shuttle to the lake in summer is wheelchair accessible.' } },
+      { '@type': 'Question', name: 'Can I bring a stroller on Banff trails?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, many trails are stroller-friendly: Fenland Trail (boardwalk, flat), Bow Falls (paved), Lake Minnewanka shore (first 1 km paved), Lake Louise lakeshore (paved), Vermilion Lakes road (paved), Johnston Canyon (to Lower Falls — paved but some narrow sections), Cascade Ponds (paved). An all-terrain stroller with large wheels handles most of these well. Avoid backcountry and mountain trails with strollers.' } },
+      { '@type': 'Question', name: 'Can I rent a wheelchair for Banff trails?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Parks Canada offers GRIT Freedom Chairs for free loan at the Banff Visitor Centre and Lake Louise Visitor Centre. These are all-terrain wheelchairs with one large front wheel designed to handle gravel trails. Reserve in advance by calling the visitor centre. Some hotels also have standard wheelchairs available for guests.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Accessible Trails' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="Accessible paved pathway through Banff National Park with mountain views" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Accessibility Guide</span>
+      <h1>Accessible Trails in Banff</h1>
+      <p>Wheelchair accessible, stroller-friendly, and mobility-limited trail options for everyone to enjoy the Rockies.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter Buttons -->
+      <div class="filter-bar" id="access-filters">
+        <button class="filter-btn active" data-filter="all">All Trails</button>
+        <button class="filter-btn" data-filter="wheelchair">♿ Wheelchair Accessible</button>
+        <button class="filter-btn" data-filter="stroller">🍼 Stroller Friendly</button>
+        <button class="filter-btn" data-filter="mobility">🦯 Mobility Limited</button>
+      </div>
+
+      <!-- Trails -->
+      <div class="trails-grid" id="trails-grid">
+
+        <div class="trail-card" data-access="wheelchair stroller mobility">
+          <div class="access-badges">
+            <span class="access-badge wheelchair">♿ Wheelchair</span>
+            <span class="access-badge stroller">🍼 Stroller</span>
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Fenland Trail</h3>
+          <p class="trail-stats"><strong>2 km loop</strong> · Boardwalk · Flat · 30 min</p>
+          <p>Fully accessible boardwalk loop through old-growth spruce forest. Flat throughout with no steps or steep sections. Wide enough for wheelchairs. Shady and sheltered. One of the most accessible trails in any Canadian national park.</p>
+          <p class="trail-access-note">✅ Full wheelchair access · Boardwalk surface · No barriers</p>
+        </div>
+
+        <div class="trail-card" data-access="wheelchair stroller mobility">
+          <div class="access-badges">
+            <span class="access-badge wheelchair">♿ Wheelchair</span>
+            <span class="access-badge stroller">🍼 Stroller</span>
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Bow Falls Viewpoint</h3>
+          <p class="trail-stats"><strong>1.2 km one way</strong> · Paved · Flat · 20 min</p>
+          <p>Paved path from downtown Banff to the Bow Falls viewpoint. Fully wheelchair accessible with gentle grades. The viewpoint has a railing and accessible viewing area. Popular photo spot with Fairmont Banff Springs in the background.</p>
+          <p class="trail-access-note">✅ Fully paved · Accessible viewpoint · Benches along route</p>
+        </div>
+
+        <div class="trail-card" data-access="wheelchair stroller mobility">
+          <div class="access-badges">
+            <span class="access-badge wheelchair">♿ Wheelchair</span>
+            <span class="access-badge stroller">🍼 Stroller</span>
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Vermilion Lakes Road</h3>
+          <p class="trail-stats"><strong>4.3 km one way</strong> · Paved road · Flat · 1-2 hours</p>
+          <p>Closed to most vehicle traffic, this paved road runs along three stunning lakes with the Rockies reflected in the water. Completely flat, wide, and smooth. Exceptional wildlife viewing — elk, osprey, and sometimes bears. Best at sunrise or sunset.</p>
+          <p class="trail-access-note">✅ Fully paved road · No barriers · Multiple pullouts with benches</p>
+        </div>
+
+        <div class="trail-card" data-access="wheelchair stroller mobility">
+          <div class="access-badges">
+            <span class="access-badge wheelchair">♿ Wheelchair</span>
+            <span class="access-badge stroller">🍼 Stroller</span>
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Lake Minnewanka Shore</h3>
+          <p class="trail-stats"><strong>First 1 km</strong> · Paved · Flat · 20 min</p>
+          <p>The first kilometre of the Lake Minnewanka lakeshore trail is paved and wheelchair accessible. Beautiful views of the lake and surrounding peaks. Accessible washrooms at the parking lot. Beyond 1 km, the trail becomes gravel and uneven.</p>
+          <p class="trail-access-note">✅ First 1 km paved · Accessible washrooms · Picnic tables</p>
+        </div>
+
+        <div class="trail-card" data-access="wheelchair stroller mobility">
+          <div class="access-badges">
+            <span class="access-badge wheelchair">♿ Wheelchair</span>
+            <span class="access-badge stroller">🍼 Stroller</span>
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Lake Louise Lakeshore</h3>
+          <p class="trail-stats"><strong>2 km one way</strong> · Paved · Mostly flat · 40 min</p>
+          <p>The iconic Lake Louise lakeshore trail is paved and mostly flat for 2 km along the turquoise lake. Some sections have gentle grades. The Fairmont has accessible washrooms. The free summer shuttle to the lake is wheelchair accessible.</p>
+          <p class="trail-access-note">✅ Paved · Gentle grades · Accessible shuttle</p>
+        </div>
+
+        <div class="trail-card" data-access="wheelchair stroller mobility">
+          <div class="access-badges">
+            <span class="access-badge wheelchair">♿ Wheelchair</span>
+            <span class="access-badge stroller">🍼 Stroller</span>
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Cascade Ponds</h3>
+          <p class="trail-stats"><strong>1 km loop</strong> · Paved · Flat · 20 min</p>
+          <p>Short paved loop around the Cascade Ponds recreation area. Flat, wide paths with accessible picnic tables. Great for families. Swimming area in summer (cold!). Accessible washrooms on-site.</p>
+          <p class="trail-access-note">✅ Fully paved loop · Accessible picnic area · Washrooms</p>
+        </div>
+
+        <div class="trail-card" data-access="wheelchair stroller">
+          <div class="access-badges">
+            <span class="access-badge wheelchair">♿ Wheelchair</span>
+            <span class="access-badge stroller">🍼 Stroller</span>
+          </div>
+          <h3>Banff Legacy Trail</h3>
+          <p class="trail-stats"><strong>26 km one way</strong> · Paved · Gentle grades · Multi-use</p>
+          <p>Fully paved multi-use path connecting Banff to Canmore. Wide and smooth, perfect for wheelchairs, scooters, and strollers. You don't need to do the full 26 km — the first few kilometres from Banff are beautiful. Gentle grades throughout.</p>
+          <p class="trail-access-note">✅ Fully paved · Wide path · Can do any portion</p>
+        </div>
+
+        <div class="trail-card" data-access="stroller mobility">
+          <div class="access-badges">
+            <span class="access-badge stroller">🍼 Stroller</span>
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Johnston Canyon (to Lower Falls)</h3>
+          <p class="trail-stats"><strong>1.1 km one way</strong> · Paved with catwalks · Slight incline · 30 min</p>
+          <p>Paved pathway with metal catwalks clinging to the canyon walls. Stroller accessible to the Lower Falls with an all-terrain stroller. Some narrow sections. Not recommended for standard wheelchairs due to narrow catwalks and slight inclines. Benches along the way.</p>
+          <p class="trail-access-note">⚠️ Stroller-ok with all-terrain wheels · Narrow sections · Not wheelchair accessible</p>
+        </div>
+
+        <div class="trail-card" data-access="stroller mobility">
+          <div class="access-badges">
+            <span class="access-badge stroller">🍼 Stroller</span>
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Johnson Lake Loop</h3>
+          <p class="trail-stats"><strong>2.8 km loop</strong> · Dirt/gravel · Mostly flat · 45 min</p>
+          <p>A mostly flat loop around Johnson Lake on a well-maintained gravel trail. All-terrain strollers handle it well. Some roots and minor uneven sections. Benches at the picnic area. Quieter than most Banff trails.</p>
+          <p class="trail-access-note">⚠️ Gravel surface · Mostly flat · All-terrain stroller recommended</p>
+        </div>
+
+        <div class="trail-card" data-access="mobility">
+          <div class="access-badges">
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Bankhead Interpretive Trail</h3>
+          <p class="trail-stats"><strong>1.1 km loop</strong> · Gravel · Mostly flat · 30 min</p>
+          <p>Easy gravel loop through the ruins of a historic coal-mining town. Mostly flat with interpretive signs. Not wheelchair accessible (gravel + some uneven sections) but manageable for those with limited mobility who can handle gravel paths. Multiple benches.</p>
+          <p class="trail-access-note">⚠️ Gravel · Benches available · Good for limited mobility</p>
+        </div>
+
+        <div class="trail-card" data-access="wheelchair stroller mobility">
+          <div class="access-badges">
+            <span class="access-badge wheelchair">♿ Wheelchair</span>
+            <span class="access-badge stroller">🍼 Stroller</span>
+            <span class="access-badge mobility">🦯 Mobility</span>
+          </div>
+          <h3>Cave and Basin Boardwalk</h3>
+          <p class="trail-stats"><strong>400m loop</strong> · Boardwalk · Flat · 15 min</p>
+          <p>Short boardwalk trail at the Cave and Basin National Historic Site. Fully accessible. The historic site itself has elevator access and accessible exhibits. The boardwalk passes by the natural hot springs where endangered Banff Springs snails live.</p>
+          <p class="trail-access-note">✅ Fully accessible · Indoor exhibits accessible · Elevator</p>
+        </div>
+      </div>
+
+      <!-- Adaptive Programs & Resources -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Adaptive Programs & Resources</h2>
+        <p>Equipment, programs, and services to make Banff accessible for everyone.</p>
+      </div>
+
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3>🦽 GRIT Freedom Chairs</h3>
+          <p>All-terrain wheelchairs with a large front wheel designed for gravel trails. Available for <strong>free loan</strong> at the Banff Visitor Centre (224 Banff Ave) and Lake Louise Visitor Centre. Reserve in advance by calling Parks Canada at 403-762-1550.</p>
+        </div>
+        <div class="resource-card">
+          <h3>🎿 Adaptive Ski Programs</h3>
+          <p>All three Banff ski resorts offer adaptive ski programs including sit-skiing, mono-skiing, and guide programs for visually impaired skiers. Contact the Canadian Adaptive Snowsports (CADS) program at each resort.</p>
+        </div>
+        <div class="resource-card">
+          <h3>🚌 Accessible Transit</h3>
+          <p>All Roam Transit buses have low floors and wheelchair ramps. The Banff Gondola has accessible cabins. Parks Canada shuttles to Lake Louise in summer are wheelchair accessible.</p>
+        </div>
+        <div class="resource-card">
+          <h3>ℹ️ Parks Canada Access Pass</h3>
+          <p>People with permanent disabilities qualify for a <strong>free Parks Canada Access Pass</strong> providing free entry to all national parks and historic sites. Apply at any Parks Canada office with documentation.</p>
+        </div>
+      </div>
+
+      <!-- Accessible Lodging -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Accessible Lodging</h2>
+        <p>Hotels in Banff with accessible rooms and facilities.</p>
+      </div>
+
+      <div class="lodging-list">
+        <div class="lodging-item"><strong>Fairmont Banff Springs</strong> — Accessible rooms with roll-in showers, grab bars, and lowered fixtures. Elevator access to all floors. Accessible paths on property.</div>
+        <div class="lodging-item"><strong>Moose Hotel & Suites</strong> — Accessible suites with wide doorways and roll-in showers. Central location in Banff. Elevator access.</div>
+        <div class="lodging-item"><strong>Banff Park Lodge</strong> — Accessible ground-floor rooms. Roll-in showers available. Indoor pool with accessible entry.</div>
+        <div class="lodging-item"><strong>Mount Royal Hotel</strong> — Heritage hotel with modernized accessible rooms. Elevator. Central Banff Ave location.</div>
+        <div class="lodging-item"><strong>Fairmont Chateau Lake Louise</strong> — Accessible rooms with lake views. Roll-in showers. The lakeshore trail is accessible directly from the hotel.</div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Are there wheelchair accessible trails in Banff?</summary>
+          <p>Yes — seven trails are fully wheelchair accessible: Fenland Trail (boardwalk), Bow Falls (paved), Vermilion Lakes Road (paved), Lake Minnewanka shore (first 1 km), Lake Louise lakeshore (paved), Cascade Ponds (paved loop), and the Banff Legacy Trail (paved). GRIT Freedom Chairs are available for free loan for rougher trails.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Lake Louise accessible?</summary>
+          <p>The lakeshore trail is paved and mostly flat for 2 km — accessible for wheelchairs and strollers. The Fairmont has accessible facilities. The summer shuttle is wheelchair accessible. The teahouse trails (Lake Agnes, Plain of Six Glaciers) are NOT accessible.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I bring a stroller on Banff trails?</summary>
+          <p>Many trails are stroller-friendly: Fenland (boardwalk), Bow Falls (paved), Lake Louise lakeshore (paved), Vermilion Lakes (paved), Cascade Ponds (paved), and Johnston Canyon to Lower Falls (with an all-terrain stroller). Get a stroller with large wheels for the best experience.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is the Banff Gondola wheelchair accessible?</summary>
+          <p>Yes. The Banff Gondola has wheelchair-accessible cabins. The summit boardwalk is accessible. Staff can assist with loading. The Cosmic Ray Station at the top has elevator access.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I get a free Parks Canada Access Pass?</summary>
+          <p>Visit any Parks Canada visitor centre or office with documentation of a permanent disability. The Access Pass provides free entry to all national parks and national historic sites across Canada. It's valid indefinitely.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function initAccessFilter() {
+    const buttons = document.querySelectorAll('#access-filters .filter-btn');
+    const cards = document.querySelectorAll('#trails-grid .trail-card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = (btn as HTMLElement).dataset.filter;
+
+        cards.forEach(card => {
+          const el = card as HTMLElement;
+          if (filter === 'all' || el.dataset.access?.includes(filter!)) {
+            el.style.display = 'block';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initAccessFilter);
+</script>
+
+<style>
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; }
+  .filter-btn { background: var(--color-white); border: 2px solid var(--color-bg-alt); border-radius: var(--radius); padding: 0.6rem 1.25rem; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .filter-btn:hover { border-color: var(--color-accent); }
+  .filter-btn.active { background: var(--color-primary); color: var(--color-white); border-color: var(--color-primary); }
+
+  .trails-grid { display: flex; flex-direction: column; gap: 1.25rem; }
+  .trail-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+  .access-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+  .access-badge { font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 4px; }
+  .access-badge.wheelchair { background: #e3f2fd; color: #1565c0; }
+  .access-badge.stroller { background: #fce4ec; color: #c62828; }
+  .access-badge.mobility { background: #f3e5f5; color: #6a1b9a; }
+  .trail-card h3 { font-size: 1.15rem; margin-bottom: 0.3rem; }
+  .trail-stats { font-size: 0.85rem; font-weight: 600; color: var(--color-primary); margin-bottom: 0.5rem; }
+  .trail-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.6; margin-bottom: 0.3rem; }
+  .trail-access-note { font-size: 0.82rem; font-weight: 600; padding: 0.5rem 0.75rem; background: var(--color-bg-alt); border-radius: 6px; margin-top: 0.5rem; }
+
+  .resource-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .resource-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .resource-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .resource-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.6; }
+
+  .lodging-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .lodging-item { background: var(--color-white); border-radius: var(--radius); padding: 1rem 1.25rem; box-shadow: var(--shadow); font-size: 0.9rem; line-height: 1.5; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .resource-grid { grid-template-columns: 1fr; }
+  }
+</style>

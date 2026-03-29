@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Banff Family Guide 2026 — Activities by Age Group" description="Complete Banff family guide with activities filtered by age: toddlers, kids, tweens, and teens. Best family hikes, restaurants, and tips for visiting Banff with children.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What to do in Banff with kids?', acceptedAnswer: { '@type': 'Answer', text: 'Banff has endless family activities: ride the Banff Gondola (free for kids under 6), visit the Banff Upper Hot Springs, explore Johnston Canyon (paved trail to Lower Falls), take a boat cruise on Lake Minnewanka, canoe at Lake Louise, visit the Cave and Basin historic site, swim at Banff Recreation Centre, and hike easy trails like Fenland and Bow Falls. In winter, kids can ski at Mt Norquay (beginner-friendly), ice skate on Lake Louise, or go tubing.' } },
+      { '@type': 'Question', name: 'Best family hikes in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Best family hikes in Banff by age: Toddlers (0-3) — Fenland Trail (flat boardwalk, 2 km loop), Bow Falls (paved, 1.2 km). Kids (4-8) — Johnston Canyon to Lower Falls (1.1 km, paved), Johnson Lake (2.8 km, flat). Tweens (9-12) — Tunnel Mountain (4.3 km, great views), Lake Louise Lakeshore (4 km). Teens (13-17) — Sulphur Mountain (11 km), Plain of Six Glaciers (10.6 km with teahouse reward).' } },
+      { '@type': 'Question', name: 'Is Banff good for toddlers?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Banff is surprisingly toddler-friendly. Several trails are stroller-compatible (Fenland, Bow Falls, Vermilion Lakes road, Lake Minnewanka first km). The Banff Gondola has stroller-accessible cabins (free for under 6). Hot springs have shallow wading areas. The Banff Recreation Centre has a kids pool. Many restaurants have kids menus and high chairs. Lake Louise lakeshore is flat and paved.' } },
+      { '@type': 'Question', name: 'Are there kid-friendly restaurants in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, many Banff restaurants are family-friendly. Top picks: Tooloulou\'s (Louisiana-style, big portions), Elk & Oarsman (pub with kids menu), Old Spaghetti Factory (classic family dining), Magpie & Stump (casual, patio), Banff Ave Brewing (family sections), and Eddie Burger + Bar (gourmet burgers). Most Banff restaurants have high chairs and kids menus. For a treat, visit the Fairmont Banff Springs for afternoon tea.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Family Guide' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="Family hiking in the Canadian Rockies with mountain views" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Family Travel</span>
+      <h1>Banff Family Guide</h1>
+      <p>Activities, hikes, and tips filtered by your kids' age — from toddlers to teens.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Age Filter -->
+      <div class="filter-intro">
+        <h2>Activities by Age Group</h2>
+        <p>Select an age group to see the best activities, hikes, restaurants, and tips.</p>
+      </div>
+
+      <div class="age-filters" id="age-filters">
+        <button class="age-btn active" data-age="all">All Ages</button>
+        <button class="age-btn" data-age="toddler">👶 Toddlers (0-3)</button>
+        <button class="age-btn" data-age="kids">🧒 Kids (4-8)</button>
+        <button class="age-btn" data-age="tweens">🧑 Tweens (9-12)</button>
+        <button class="age-btn" data-age="teens">🎒 Teens (13-17)</button>
+      </div>
+
+      <!-- Toddlers Section -->
+      <div class="age-section" data-age-section="toddler">
+        <h2>👶 Toddlers (0-3 Years)</h2>
+        <div class="age-grid">
+          <div class="age-card">
+            <h3>Best Trails</h3>
+            <ul>
+              <li><strong>Fenland Trail</strong> — 2 km flat boardwalk loop, stroller-friendly, shady forest</li>
+              <li><strong>Bow Falls Trail</strong> — 1.2 km paved path, flat, great for strollers</li>
+              <li><strong>Vermilion Lakes Road</strong> — 4.3 km paved road, flat, wildlife spotting</li>
+              <li><strong>Lake Minnewanka Shore</strong> — First 1 km paved, stroller-ok, lakeside views</li>
+            </ul>
+          </div>
+          <div class="age-card">
+            <h3>Best Activities</h3>
+            <ul>
+              <li><strong>Banff Gondola</strong> — Stroller-accessible cabins, free for under 6, mountain-top boardwalk</li>
+              <li><strong>Upper Hot Springs</strong> — Warm pools with shallow wading area for little ones</li>
+              <li><strong>Cave and Basin</strong> — Indoor historic site, interesting for parents, stroller-accessible</li>
+              <li><strong>Banff Recreation Centre</strong> — Indoor pool with kids splash area, great for rainy days</li>
+            </ul>
+          </div>
+          <div class="age-card">
+            <h3>Tips for Toddlers</h3>
+            <ul>
+              <li>Bring a good all-terrain stroller (trail surfaces vary)</li>
+              <li>Pack layers — mountain weather changes fast</li>
+              <li>Nap schedules: plan one big outing per morning</li>
+              <li>Sunscreen and bug spray are essential June-August</li>
+              <li>Many hotels have cribs available free on request</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kids Section -->
+      <div class="age-section" data-age-section="kids">
+        <h2>🧒 Kids (4-8 Years)</h2>
+        <div class="age-grid">
+          <div class="age-card">
+            <h3>Best Trails</h3>
+            <ul>
+              <li><strong>Johnston Canyon to Lower Falls</strong> — 1.1 km, paved, catwalks built into the canyon. Kids love it</li>
+              <li><strong>Johnson Lake Loop</strong> — 2.8 km flat loop, can wade at the shore in summer</li>
+              <li><strong>Lake Louise Lakeshore</strong> — 2 km one way, flat, gorgeous turquoise water</li>
+              <li><strong>Tunnel Mountain</strong> — 4.3 km return, manageable switchbacks, big reward at the top</li>
+              <li><strong>Bankhead Interpretive Trail</strong> — 3.2 km, explore an old coal mine ghost town</li>
+            </ul>
+          </div>
+          <div class="age-card">
+            <h3>Best Activities</h3>
+            <ul>
+              <li><strong>Lake Minnewanka Boat Cruise</strong> — 60-min scenic cruise, kids love spotting wildlife</li>
+              <li><strong>Canoeing at Lake Louise</strong> — Rent a canoe at the Fairmont boathouse ($155/hour)</li>
+              <li><strong>Banff Gondola</strong> — Summit boardwalk, interactive Cosmic Ray Station at the top</li>
+              <li><strong>Wildlife Viewing</strong> — Elk on Banff Ave at dusk, bighorn sheep on Norquay Road</li>
+              <li><strong>Biking the Legacy Trail</strong> — Rent kids bikes, ride the paved trail to Canmore</li>
+            </ul>
+          </div>
+          <div class="age-card">
+            <h3>Tips for Kids 4-8</h3>
+            <ul>
+              <li>Carry snacks — hungry kids = unhappy hikers</li>
+              <li>Make it a game: spot wildlife, count waterfalls, find cool rocks</li>
+              <li>Start hikes early to beat afternoon heat and crowds</li>
+              <li>Bring binoculars — they make wildlife encounters magical</li>
+              <li>Johnston Canyon: go early or late to avoid the worst crowds</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tweens Section -->
+      <div class="age-section" data-age-section="tweens">
+        <h2>🧑 Tweens (9-12 Years)</h2>
+        <div class="age-grid">
+          <div class="age-card">
+            <h3>Best Trails</h3>
+            <ul>
+              <li><strong>Johnston Canyon to Upper Falls</strong> — 5.4 km return, bigger waterfalls, more adventure</li>
+              <li><strong>Tunnel Mountain</strong> — 4.3 km, proper summit hike with mountain panorama</li>
+              <li><strong>Lake Agnes Teahouse</strong> — 7.2 km return from Lake Louise, teahouse at the top</li>
+              <li><strong>Sundance Canyon</strong> — 7.4 km, paved then trail, canyon loop at the end</li>
+              <li><strong>C Level Cirque</strong> — 8 km return, abandoned mine entrance, stunning views</li>
+            </ul>
+          </div>
+          <div class="age-card">
+            <h3>Best Activities</h3>
+            <ul>
+              <li><strong>Via Ferrata at Mt Norquay</strong> — Guided rock climbing with safety cables (age 8+, from $149)</li>
+              <li><strong>Whitewater Rafting</strong> — Family trips on the Kicking Horse River (age 5+, half-day $89)</li>
+              <li><strong>Horseback Riding</strong> — Trail rides along the Bow River (1-hour from $79)</li>
+              <li><strong>Stand-Up Paddleboarding</strong> — Johnson Lake or Two Jack Lake (rentals from $45/hour)</li>
+              <li><strong>Banff Climbing Gym</strong> — Indoor climbing at Elevation Place in Canmore</li>
+            </ul>
+          </div>
+          <div class="age-card">
+            <h3>Tips for Tweens</h3>
+            <ul>
+              <li>Give them a camera or let them document the trip</li>
+              <li>The teahouse hike reward (Lake Agnes) is a huge motivator</li>
+              <li>Via Ferrata is genuinely thrilling — best for confident, adventurous kids</li>
+              <li>This age group can handle 8-10 km hikes with breaks</li>
+              <li>Let them pick one activity per day to give them ownership</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teens Section -->
+      <div class="age-section" data-age-section="teens">
+        <h2>🎒 Teens (13-17 Years)</h2>
+        <div class="age-grid">
+          <div class="age-card">
+            <h3>Best Trails</h3>
+            <ul>
+              <li><strong>Plain of Six Glaciers</strong> — 10.6 km from Lake Louise, teahouse reward, glacier views</li>
+              <li><strong>Sulphur Mountain</strong> — 11 km return, earn the gondola view on foot</li>
+              <li><strong>Sentinel Pass</strong> — 11.6 km from Moraine Lake, highest maintained trail in the Rockies</li>
+              <li><strong>Cory Pass</strong> — 13 km loop, challenging scramble, jaw-dropping scenery</li>
+              <li><strong>Ink Pots via Johnston Canyon</strong> — 11.6 km, colourful mineral springs in a meadow</li>
+            </ul>
+          </div>
+          <div class="age-card">
+            <h3>Best Activities</h3>
+            <ul>
+              <li><strong>Explorer Via Ferrata</strong> — The harder route at Mt Norquay (age 12+, $229)</li>
+              <li><strong>Mountain Biking</strong> — Rent bikes and ride the trails around Tunnel Mountain</li>
+              <li><strong>Full-Day Rafting</strong> — Class III-IV rapids on the Kicking Horse River (age 12+, $139)</li>
+              <li><strong>Canoeing to Paint Pots</strong> — Paddle the Vermilion River to ochre beds</li>
+              <li><strong>Stargazing</strong> — Banff is a Dark Sky Preserve, summer programs available</li>
+            </ul>
+          </div>
+          <div class="age-card">
+            <h3>Tips for Teens</h3>
+            <ul>
+              <li>Challenge them: teens thrive on harder hikes and adventure activities</li>
+              <li>Give them free time to explore Banff Ave shops and cafes</li>
+              <li>Instagram-worthy spots: Moraine Lake, Lake Louise, Peyto Lake</li>
+              <li>Night activities: stargazing programs, hot springs after hiking</li>
+              <li>Let them plan one full day of the trip themselves</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Family Restaurants -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Family-Friendly Restaurants</h2>
+        <p>Banff restaurants with kids menus, high chairs, and a welcoming vibe.</p>
+      </div>
+
+      <div class="restaurant-grid">
+        <div class="restaurant-card">
+          <h3>🍝 Old Spaghetti Factory</h3>
+          <p>Classic family dining. Big portions, kids menu, affordable. Always a safe bet with children.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>🍔 Elk & Oarsman</h3>
+          <p>Pub atmosphere with a solid kids menu. Burgers, fries, mac & cheese. Central location on Banff Ave.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>🌮 Magpie & Stump</h3>
+          <p>Casual Mexican food. Kids love tacos and quesadillas. Great rooftop patio in summer.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>🍕 Bear Street Tavern</h3>
+          <p>Pizza and craft beer. Kids eat pizza, parents enjoy local brews. Heated patio.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>🍔 Eddie Burger + Bar</h3>
+          <p>Gourmet burgers and milkshakes. Fun atmosphere. Teens especially love it.</p>
+        </div>
+        <div class="restaurant-card">
+          <h3>🥞 Tooloulou's</h3>
+          <p>Louisiana-style breakfast/brunch. Huge portions. Kids love the pancakes and beignets.</p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What to do in Banff with kids?</summary>
+          <p>Top family activities: ride the Banff Gondola (free under 6), hike Johnston Canyon, visit Upper Hot Springs, cruise on Lake Minnewanka, canoe at Lake Louise, bike the Legacy Trail, and explore Cave and Basin. Winter: ski at Norquay, ice skate, go tubing.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Best family hikes in Banff?</summary>
+          <p>Toddlers: Fenland Trail (flat boardwalk). Kids 4-8: Johnston Canyon to Lower Falls. Tweens: Lake Agnes Teahouse. Teens: Plain of Six Glaciers or Sulphur Mountain. All ages: Bow Falls (paved) and Johnson Lake (flat loop).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Banff good for toddlers?</summary>
+          <p>Yes — several trails are stroller-friendly (Fenland, Bow Falls, Vermilion Lakes), the gondola is stroller-accessible and free for under 6, hot springs have shallow areas, and the Banff Recreation Centre has a kids pool. Most restaurants have high chairs.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if it rains?</summary>
+          <p>Rainy day options: Banff Recreation Centre (pool + gym), Banff Park Museum, Whyte Museum, Cave and Basin National Historic Site, Banff Public Library, or drive to Canmore for Elevation Place (pool + climbing gym). Shopping and restaurant hopping on Banff Ave is also fun in the rain.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function initAgeFilter() {
+    const buttons = document.querySelectorAll('.age-btn');
+    const sections = document.querySelectorAll('.age-section');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const age = (btn as HTMLElement).dataset.age;
+
+        sections.forEach(section => {
+          const el = section as HTMLElement;
+          if (age === 'all' || el.dataset.ageSection === age) {
+            el.style.display = 'block';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initAgeFilter);
+</script>
+
+<style>
+  .filter-intro { text-align: center; max-width: 600px; margin: 0 auto 1.5rem; }
+  .filter-intro h2 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .filter-intro p { color: var(--color-text-light); }
+
+  .age-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; }
+  .age-btn { background: var(--color-white); border: 2px solid var(--color-bg-alt); border-radius: var(--radius); padding: 0.6rem 1.25rem; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .age-btn:hover { border-color: var(--color-accent); }
+  .age-btn.active { background: var(--color-primary); color: var(--color-white); border-color: var(--color-primary); }
+
+  .age-section { margin-bottom: 2.5rem; }
+  .age-section h2 { font-size: 1.4rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-bg-alt); }
+
+  .age-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .age-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .age-card h3 { font-size: 1rem; margin-bottom: 0.75rem; color: var(--color-primary); }
+  .age-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .age-card li { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; padding-left: 1rem; position: relative; }
+  .age-card li::before { content: '•'; position: absolute; left: 0; color: var(--color-accent); font-weight: 700; }
+
+  .restaurant-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .restaurant-card { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+  .restaurant-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .restaurant-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .age-grid { grid-template-columns: 1fr; }
+    .restaurant-grid { grid-template-columns: 1fr; }
+  }
+</style>

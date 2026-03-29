@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const toolCategories = [
+  {
+    name: 'Trip Planning',
+    tools: [
+      { href: '/trip-cost', title: 'Trip Cost Calculator', desc: 'Interactive budget builder with accommodation, food, activities, and transport sliders.', icon: '💰' },
+      { href: '/trip-builder', title: 'Itinerary Builder', desc: 'Ready-made 3-7 day itineraries with booking links. Choose your style.', icon: '📋' },
+      { href: '/calgary-to-banff', title: 'Calgary to Banff Guide', desc: 'Airport arrival timeline, shuttle options, driving tips, and timing.', icon: '✈️' },
+      { href: '/canmore-vs-banff', title: 'Canmore vs Banff', desc: 'Interactive decision tool. Pick your priorities, get a recommendation.', icon: '🏘️' },
+      { href: '/monthly-weather', title: 'Weather by Month', desc: 'Temperature, crowds, packing, and activities for every month.', icon: '🌤️' },
+      { href: '/park-pass', title: 'Park Pass Guide', desc: 'Prices, where to buy, Discovery Pass math, and common questions.', icon: '🎫' },
+      { href: '/car-free-banff', title: 'Car-Free Banff', desc: 'Complete guide to visiting without a vehicle. Shuttles, transit, day trips.', icon: '🚌' },
+      { href: '/packing-list', title: 'Packing List', desc: 'Seasonal gear checklist with Amazon links.', icon: '🎒' },
+    ],
+  },
+  {
+    name: 'Trail Tools',
+    tools: [
+      { href: '/trail-map', title: 'Interactive Trail Map', desc: '80+ trails with GPS polylines, status badges, and filters.', icon: '🗺️' },
+      { href: '/quiet-trails', title: 'Quiet Trails Finder', desc: 'Real-time crowd ranking based on time, day, and season.', icon: '🤫' },
+      { href: '/alternatives', title: 'Quiet Alternatives', desc: 'For every packed trail, 3 quieter options with similar views.', icon: '🔄' },
+      { href: '/parking', title: 'Parking Predictor', desc: 'When do lots fill? Data-driven fill times for 11 parking lots.', icon: '🅿️' },
+      { href: '/shuttle-reservations', title: 'Shuttle Reservations', desc: 'Countdown timer, booking guide, and backup plans for 2026.', icon: '🚐' },
+      { href: '/accessible-trails', title: 'Accessible Trails', desc: 'Wheelchair, stroller, and mobility-friendly trail guide.', icon: '♿' },
+      { href: '/larch-season', title: 'Larch Season Predictor', desc: 'When do larches turn gold? Historical data and best trails.', icon: '🍂' },
+    ],
+  },
+  {
+    name: 'Safety & Wildlife',
+    tools: [
+      { href: '/wildlife-tracker', title: 'Wildlife Tracker', desc: 'Interactive map of bear, elk, and sheep hotspots with safety tips.', icon: '🐻' },
+      { href: '/wildlife-safety', title: 'Wildlife Encounters', desc: 'What to do if you meet a bear, elk, cougar, or wolf.', icon: '⚠️' },
+      { href: '/bear-spray', title: 'Bear Spray Guide', desc: 'How to use it, where to buy or rent, practice tips.', icon: '🧴' },
+      { href: '/solo-hiking', title: 'Solo Hiker Safety', desc: 'Checklist, best trails for solo hikers, emergency contacts.', icon: '🥾' },
+      { href: '/emergency-card', title: 'Emergency SOS Card', desc: 'Printable card with emergency numbers, protocols, and GPS coordinates.', icon: '🆘' },
+      { href: '/air-quality', title: 'Air Quality Tracker', desc: 'Wildfire smoke risk, AQI scale, and what to do on smoky days.', icon: '💨' },
+      { href: '/altitude-guide', title: 'Altitude Guide', desc: 'Risk screener, elevation chart, and prevention tips.', icon: '⛰️' },
+      { href: '/wildlife-calendar', title: 'Wildlife Calendar', desc: 'Month-by-month guide to what animals are active and where.', icon: '📅' },
+    ],
+  },
+  {
+    name: 'Activities & Adventures',
+    tools: [
+      { href: '/what-to-do-today', title: 'What to Do Today', desc: 'Live weather-based activity suggestions for right now.', icon: '☀️' },
+      { href: '/icefields-parkway-planner', title: 'Icefields Parkway', desc: 'Stop-by-stop road trip planner with toggle-able time estimates.', icon: '🛣️' },
+      { href: '/photo-spots', title: 'Photo Spots', desc: '10 best photography locations with golden hour times.', icon: '📸' },
+      { href: '/ski-pass-calculator', title: 'Ski Pass Calculator', desc: 'Compare passes across 3 resorts. Find the cheapest option.', icon: '⛷️' },
+      { href: '/via-ferrata', title: 'Via Ferrata Guide', desc: 'Routes, prices, fitness requirements for Mt Norquay.', icon: '🧗' },
+      { href: '/camping', title: 'Camping Guide', desc: 'All 12 campgrounds with fees, facilities, and FCFS strategy.', icon: '⛺' },
+      { href: '/bird-checklist', title: 'Bird Checklist', desc: '30+ species organized by habitat with checkboxes.', icon: '🐦' },
+    ],
+  },
+  {
+    name: 'Family & Accessibility',
+    tools: [
+      { href: '/family-guide', title: 'Family Guide', desc: 'Activities filtered by child age: toddlers, kids, tweens, teens.', icon: '👨‍👩‍👧‍👦' },
+      { href: '/dog-friendly', title: 'Dog-Friendly Guide', desc: 'Trails, restaurants, and hotels that welcome your dog.', icon: '🐕' },
+      { href: '/accessible-trails', title: 'Accessible Trails', desc: 'Wheelchair and stroller-friendly trails and resources.', icon: '♿' },
+    ],
+  },
+  {
+    name: 'Lake & Nature Guides',
+    tools: [
+      { href: '/lake-faq', title: 'Lake FAQ & Science', desc: 'Why they are blue, frozen status, swimming safety, canoeing.', icon: '💧' },
+      { href: '/lakes', title: 'Iconic Lakes', desc: 'Guide to Lake Louise, Moraine Lake, and more.', icon: '🏔️' },
+    ],
+  },
+];
+---
+
+<BaseLayout title="Banff Planning Tools — 30+ Free Interactive Guides" description="Every tool you need to plan a Banff trip. Trail finders, parking predictors, cost calculators, wildlife trackers, safety guides, and more. All free, no signup.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Planning Tools' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff National Park tools and planning" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Free Tools</span>
+      <h1>Banff Planning Tools</h1>
+      <p>30+ interactive guides and calculators to plan the perfect Banff trip. No signup, no ads, no fluff.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {toolCategories.map(cat => (
+        <div class="tool-category">
+          <h2>{cat.name}</h2>
+          <div class="tool-grid">
+            {cat.tools.map(tool => (
+              <a href={tool.href} class="tool-card">
+                <span class="tool-icon">{tool.icon}</span>
+                <div class="tool-info">
+                  <h3>{tool.title}</h3>
+                  <p>{tool.desc}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tool-category { margin-bottom: 3rem; }
+  .tool-category h2 { font-size: 1.3rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-bg-alt); }
+
+  .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+  .tool-card {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--color-white); border-radius: var(--radius); padding: 1.25rem;
+    box-shadow: var(--shadow); text-decoration: none; color: inherit;
+    transition: all 0.2s; border-left: 3px solid transparent;
+  }
+  .tool-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-left-color: var(--color-accent); }
+  .tool-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .tool-info h3 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .tool-info p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.4; }
+
+  @media (max-width: 768px) { .tool-grid { grid-template-columns: 1fr; } }
+</style>

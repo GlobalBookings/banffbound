@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Banff Via Ferrata Guide 2026 — Mt Norquay Routes, Prices & Tips" description="Complete guide to Banff's via ferrata at Mt Norquay. Routes from beginner to advanced, 2026 prices, what to expect, fitness requirements, and booking info for this unforgettable mountain climbing experience.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What is via ferrata in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Via ferrata (Italian for "iron road") is a guided mountain climbing experience on Mt Norquay in Banff using iron rungs, steel cables, and suspension bridges fixed to the cliff face. You clip into a safety cable with a harness at all times. No climbing experience is needed — routes range from beginner-friendly (Explorer, 2.5 hours) to advanced (Skyline, 6 hours). All climbs are guided by certified professionals. It is the most unique adventure activity in Banff.' } },
+      { '@type': 'Question', name: 'How much does Banff via ferrata cost?', acceptedAnswer: { '@type': 'Answer', text: 'Banff via ferrata prices at Mt Norquay in 2026: Explorer Route (beginner, 2.5h) starts at approximately $79 per person. Ridgewalker Route (intermediate, 4h) is approximately $159. Skyline Route (advanced, 6h) is approximately $229. Summit Route (advanced, 4h) is approximately $189. Prices include guide, harness, helmet, and all safety equipment. Book in advance during summer as routes sell out, especially on weekends.' } },
+      { '@type': 'Question', name: 'Is via ferrata scary?', acceptedAnswer: { '@type': 'Answer', text: 'Via ferrata can feel exhilarating and slightly nerve-wracking, but it is designed to be safe and accessible. You are clipped into a steel safety cable at all times, and guides are with you throughout. The Explorer Route is specifically designed for beginners and those with moderate fear of heights. The Skyline and Summit routes have more exposed sections with bigger drops. Most people report feeling nervous at first but exhilarated by the end. If you can climb a ladder, you can do the Explorer Route.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Via Ferrata' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?w=1600&q=80" alt="Climber on a mountain via ferrata route with mountain views" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Adventure</span>
+      <h1>Via Ferrata Guide</h1>
+      <p>Climb Mt Norquay on iron rungs and suspension bridges — Banff's most thrilling guided mountain experience.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="intro-block">
+        <h2>Banff Via Ferrata at Mt Norquay</h2>
+        <p>Via ferrata — Italian for "iron road" — is a guided climbing experience that lets you ascend a mountain face using iron rungs, steel cables, and suspension bridges bolted into the rock. You're clipped into a safety cable at all times, making it accessible to anyone with reasonable fitness. Mt Norquay, just 6 minutes from Banff town, offers four routes ranging from beginner-friendly to heart-pounding advanced.</p>
+      </div>
+
+      <div class="routes-section">
+        <h2>🧗 Routes</h2>
+        <div class="route-cards">
+          <div class="route-card">
+            <div class="route-header">
+              <h3>Explorer Route</h3>
+              <span class="level beginner">Beginner</span>
+            </div>
+            <div class="route-meta">
+              <span>⏱️ ~2.5 hours</span>
+              <span>💰 ~$79</span>
+              <span>📏 Ages 12+</span>
+            </div>
+            <p>The perfect introduction to via ferrata. Climb iron rungs along the cliff face, cross a suspension bridge, and enjoy panoramic views of the Bow Valley. No climbing experience needed. Moderate physical fitness required — think climbing lots of ladders.</p>
+            <div class="route-highlights">
+              <strong>Highlights:</strong> Suspension bridge, cliff-edge traverses, Bow Valley views, guided instruction for beginners
+            </div>
+          </div>
+
+          <div class="route-card">
+            <div class="route-header">
+              <h3>Ridgewalker Route</h3>
+              <span class="level intermediate">Intermediate</span>
+            </div>
+            <div class="route-meta">
+              <span>⏱️ ~4 hours</span>
+              <span>💰 ~$159</span>
+              <span>📏 Ages 12+</span>
+            </div>
+            <p>Includes everything in the Explorer Route plus a stunning ridge traverse with exposure on both sides. More challenging climbing sections and higher elevation. A significant step up in adventure and views.</p>
+            <div class="route-highlights">
+              <strong>Highlights:</strong> Ridge walk with dual exposure, longer climbing sections, alpine views, includes Explorer section
+            </div>
+          </div>
+
+          <div class="route-card">
+            <div class="route-header">
+              <h3>Skyline Route</h3>
+              <span class="level advanced">Advanced</span>
+            </div>
+            <div class="route-meta">
+              <span>⏱️ ~6 hours</span>
+              <span>💰 ~$229</span>
+              <span>📏 Ages 14+</span>
+            </div>
+            <p>The ultimate via ferrata experience. Full-day adventure traversing the entire mountain with the most exposed sections, longest suspension bridges, and the highest viewpoints. Requires good fitness and confidence with heights.</p>
+            <div class="route-highlights">
+              <strong>Highlights:</strong> Full mountain traverse, most exposed sections, longest bridges, summit panoramas, full-day adventure
+            </div>
+          </div>
+
+          <div class="route-card">
+            <div class="route-header">
+              <h3>Summit Route</h3>
+              <span class="level advanced">Advanced</span>
+            </div>
+            <div class="route-meta">
+              <span>⏱️ ~4 hours</span>
+              <span>💰 ~$189</span>
+              <span>📏 Ages 14+</span>
+            </div>
+            <p>A direct ascent to the summit with challenging vertical sections. Less horizontal traversing than the Skyline, but more intense climbing. Best for those who want maximum vertical with a shorter time commitment.</p>
+            <div class="route-highlights">
+              <strong>Highlights:</strong> Summit access, vertical climbing sections, concentrated challenge, dramatic exposure
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="expect-section">
+        <h2>📋 What to Expect</h2>
+        <div class="expect-grid">
+          <div class="expect-card">
+            <h3>🪢 Equipment Provided</h3>
+            <p>Harness, helmet, via ferrata lanyards (two clips), and instruction are all included. You don't need to bring any climbing gear.</p>
+          </div>
+          <div class="expect-card">
+            <h3>🧱 The Climbing</h3>
+            <p>You'll climb iron rungs bolted into the cliff face, traverse steel cables, walk across suspension bridges, and navigate exposed ridge sections. You're always clipped into a steel safety cable.</p>
+          </div>
+          <div class="expect-card">
+            <h3>👥 Guided Only</h3>
+            <p>All routes are guided by certified professionals. Groups are typically 8-12 people. Guides provide safety briefings, instruction, and encouragement throughout.</p>
+          </div>
+          <div class="expect-card">
+            <h3>🌧️ Weather Dependent</h3>
+            <p>Routes may be cancelled in thunderstorms or extreme weather. You'll be rescheduled or refunded. Check the forecast and book flexible dates if possible.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="prep-section">
+        <h2>✅ Preparation & Requirements</h2>
+        <div class="prep-box">
+          <div class="prep-col">
+            <h3>Fitness Requirements</h3>
+            <ul>
+              <li>Able to climb ladders for extended periods</li>
+              <li>Comfortable being at heights (though guides help with this)</li>
+              <li>Good upper body and grip strength for advanced routes</li>
+              <li>Cardio fitness for sustained effort — not a casual walk</li>
+              <li>No serious knee or shoulder injuries</li>
+            </ul>
+          </div>
+          <div class="prep-col">
+            <h3>What to Wear & Bring</h3>
+            <ul>
+              <li>Sturdy hiking boots or approach shoes (not running shoes)</li>
+              <li>Layers — it's cooler at elevation; mornings can be cold</li>
+              <li>Sunscreen and sunglasses (strapped)</li>
+              <li>1-2 litres of water</li>
+              <li>Snacks for longer routes</li>
+              <li>Gloves recommended (climbing gloves or light work gloves)</li>
+              <li>No loose items that can fall — secure your phone</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-section">
+        <h2>🎟️ Booking Information</h2>
+        <div class="booking-box">
+          <p><strong>Book in advance.</strong> Via ferrata routes sell out in summer, especially weekends and holidays. Booking 2-4 weeks ahead is recommended for July and August.</p>
+          <p><strong>Season:</strong> Typically late June through early October, weather permitting.</p>
+          <p><strong>Location:</strong> Mt Norquay, 6 minutes drive from Banff town. Free parking at the Norquay base area.</p>
+          <a href="https://banffnorquay.com/via-ferrata/" target="_blank" rel="noopener" class="booking-btn">Book at Banff Norquay →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .intro-block { max-width: 800px; margin: 0 auto 3rem; }
+  .intro-block h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; }
+  .intro-block p { color: var(--color-text-light); font-size: 1.05rem; line-height: 1.7; }
+
+  .routes-section { margin-bottom: 3rem; }
+  .routes-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; }
+
+  .route-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+
+  .route-card {
+    background: var(--color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+  }
+  .route-card:hover { box-shadow: var(--shadow); }
+
+  .route-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+  .route-header h3 { font-family: var(--font-heading); color: var(--color-primary); margin: 0; }
+
+  .level {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .level.beginner { background: #d4edda; color: #155724; }
+  .level.intermediate { background: #fff3cd; color: #856404; }
+  .level.advanced { background: #f8d7da; color: #721c24; }
+
+  .route-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+
+  .route-card p { color: var(--color-text-light); font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.75rem; }
+
+  .route-highlights {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    background: var(--color-bg-alt);
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .expect-section { margin-bottom: 3rem; }
+  .expect-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; }
+
+  .expect-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+
+  .expect-card {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+  }
+  .expect-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .expect-card p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+
+  .prep-section { margin-bottom: 3rem; }
+  .prep-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; }
+
+  .prep-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .prep-col {
+    background: var(--color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  .prep-col h3 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.75rem; font-size: 1.05rem; }
+  .prep-col ul { padding-left: 1.25rem; margin: 0; }
+  .prep-col li { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.4rem; }
+
+  .booking-section { margin-bottom: 2rem; }
+  .booking-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1.5rem; }
+
+  .booking-box {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .booking-box p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+
+  .booking-btn {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.85rem 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+  .booking-btn:hover { background: #0f2a1a; }
+
+  @media (max-width: 768px) {
+    .route-cards { grid-template-columns: 1fr; }
+    .prep-box { grid-template-columns: 1fr; }
+    .expect-grid { grid-template-columns: 1fr; }
+  }
+</style>

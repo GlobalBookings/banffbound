@@ -1,0 +1,311 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Bear Spray in Banff 2026 — Buy, Rent, and How to Use" description="Complete bear spray guide for Banff National Park. Where to buy or rent bear spray, how to use it, practice tips, and rental locations with prices in Banff and Lake Louise.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Do I need bear spray in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, Parks Canada strongly recommends carrying bear spray on all hikes in Banff National Park. Banff is home to both black bears and grizzly bears. While bear encounters are rare, bear spray is the most effective deterrent — studies show it stops aggressive bears 92% of the time. Carry it in a hip holster (not in your pack) and know how to use it before you hit the trail.' } },
+      { '@type': 'Question', name: 'Where to buy bear spray in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Bear spray is sold at: (1) Canadian Tire and Atmosphere in Canmore, (2) Banff Trail Riders and outdoor shops on Banff Ave, (3) Lake Louise Village shops, (4) Most outdoor/gear stores in the area. A canister costs $35-50. It contains about 7-9 seconds of spray with a range of 5-10 metres. Canisters expire after 3-4 years — check the date.' } },
+      { '@type': 'Question', name: 'Can I rent bear spray in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Several locations in Banff rent bear spray for $10-12/day: Wilson Mountain Sports (Banff Ave), Banff Adventures (Bear St), Ultimate Sports (Banff Ave), and Castle Mountain Chalets. Some hiking tour operators include bear spray in their guided hikes. Renting is a great option for short trips — buying makes sense if you\'re hiking for 3+ days.' } },
+      { '@type': 'Question', name: 'How do you use bear spray?', acceptedAnswer: { '@type': 'Answer', text: 'To use bear spray: (1) Remove the safety clip. (2) Hold the canister with both hands, arms extended. (3) Aim slightly downward — below the bear\'s face level, accounting for wind. (4) When the bear is 5-10 metres away, spray in short 1-2 second bursts. (5) Create a wall of spray between you and the bear. (6) Back away slowly — do not run. Practice removing the safety clip before you hike so you can do it quickly under stress.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Bear Spray Guide' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=1600&q=80" alt="Bear in the wilderness of the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Safety Guide</span>
+      <h1>Bear Spray Guide</h1>
+      <p>What it is, how to use it, and where to buy or rent bear spray in Banff National Park.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Quick Answer -->
+      <div class="quick-answer">
+        <h2>Do I Need Bear Spray?</h2>
+        <p class="answer-big">Yes. Parks Canada strongly recommends it for all hikes.</p>
+        <p>Banff is home to both grizzly and black bears. Bear spray is 92% effective at stopping aggressive bear charges. Carry it in a hip holster — not buried in your backpack.</p>
+      </div>
+
+      <!-- How to Use -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>How to Use Bear Spray</h2>
+        <p>Follow these steps if a bear charges. Practice removing the safety clip before your hike.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Remove Safety Clip</h3>
+          <p>Pull the orange safety clip off the trigger. Practice this beforehand so you can do it quickly under stress. The clip prevents accidental discharge.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Hold with Both Hands</h3>
+          <p>Grip the canister firmly with both hands, arms extended in front of you. Keep your thumb on the trigger. Do NOT extend just one arm — you need stability.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Aim Slightly Below Face</h3>
+          <p>Aim slightly downward from the bear's face level. The spray will billow upward into a cloud. Account for wind direction — spray downwind if possible.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Spray at 5-10 Metres</h3>
+          <p>Wait until the bear is within <strong>5-10 metres</strong> (15-30 feet). Spray in short <strong>1-2 second bursts</strong>, not one continuous stream. Create a wall of spray between you and the bear.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <h3>Back Away Slowly</h3>
+          <p>After spraying, back away slowly while facing the bear. <strong>Do NOT run</strong> — running triggers a chase response. Keep spraying if the bear continues to approach. Leave the area immediately.</p>
+        </div>
+      </div>
+
+      <!-- Important Tips -->
+      <div class="tips-banner">
+        <h3>⚠️ Critical Tips</h3>
+        <div class="tips-grid">
+          <div class="tip-item">
+            <strong>Carry it on your hip, not in your pack</strong>
+            <p>You have seconds to react. A hip holster lets you draw and deploy in 3-5 seconds. Digging through a backpack takes 30+ seconds — too slow.</p>
+          </div>
+          <div class="tip-item">
+            <strong>Bear spray ≠ bug spray</strong>
+            <p>Never apply bear spray to your body, tent, or gear as a repellent. The residue actually ATTRACTS bears. It's a spray weapon, not a deterrent cream.</p>
+          </div>
+          <div class="tip-item">
+            <strong>Check the expiry date</strong>
+            <p>Bear spray expires after 3-4 years. Expired spray loses pressure and may not reach the proper 5-10m range. Check before every trip.</p>
+          </div>
+          <div class="tip-item">
+            <strong>Wind matters</strong>
+            <p>If wind is blowing toward you, move to get the wind at your back if possible. Getting sprayed yourself is painful (burning eyes, difficulty breathing) but not dangerous.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Where to Buy/Rent -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Where to Buy Bear Spray</h2>
+        <p>Purchase a canister for $35-50. Best if hiking 3+ days.</p>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-card">
+          <h3>🏬 Canadian Tire — Canmore</h3>
+          <p>Largest selection and best prices. $35-45 per canister. On the highway in Canmore — easy stop on the way from Calgary. Also sells holsters.</p>
+        </div>
+        <div class="location-card">
+          <h3>🏔️ Atmosphere — Canmore</h3>
+          <p>Outdoor gear store with bear spray ($40-50) and holsters. Knowledgeable staff can demo proper use. Located on Main Street.</p>
+        </div>
+        <div class="location-card">
+          <h3>🛒 Banff Trail Riders — Banff</h3>
+          <p>Bear spray and holsters available. Located on Banff Ave. Staff can explain how to use it. $40-50.</p>
+        </div>
+        <div class="location-card">
+          <h3>⛰️ Lake Louise Village Shops</h3>
+          <p>Several shops in Lake Louise village sell bear spray. Slightly higher prices ($45-50) but convenient if you forgot to buy in Banff or Canmore.</p>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Where to Rent Bear Spray</h2>
+        <p>Rent for $10-12/day. Perfect for short trips or if you don't want to buy.</p>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-card rental">
+          <h3>🏪 Wilson Mountain Sports — Banff</h3>
+          <p><strong>$10/day</strong> including holster. Located on Banff Ave. Open 9 AM - 9 PM in summer. Includes brief safety demonstration. Deposit required.</p>
+        </div>
+        <div class="location-card rental">
+          <h3>🎒 Banff Adventures — Banff</h3>
+          <p><strong>$10/day</strong> with holster. Bear St location. Also rents hiking poles and day packs. Can bundle with other gear for a discount.</p>
+        </div>
+        <div class="location-card rental">
+          <h3>🏂 Ultimate Sports — Banff</h3>
+          <p><strong>$12/day</strong> including holster. Banff Ave near the bridge. Friendly staff will walk you through proper use.</p>
+        </div>
+        <div class="location-card rental">
+          <h3>🏕️ Castle Mountain Chalets</h3>
+          <p><strong>$10/day</strong> for guests. Located between Banff and Lake Louise. Convenient if staying in the area. Ask at front desk.</p>
+        </div>
+      </div>
+
+      <!-- Buy vs Rent -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Buy vs Rent?</h2>
+      </div>
+
+      <div class="compare-cards">
+        <div class="compare-card">
+          <h3>Buy ($35-50)</h3>
+          <ul>
+            <li>Best if hiking 3+ days</li>
+            <li>Keep it for future trips (lasts 3-4 years)</li>
+            <li>Peace of mind knowing it's new and full</li>
+            <li>Can practice with a cheap "practice canister" ($10)</li>
+          </ul>
+          <p class="compare-verdict">✅ Best for: multi-day trips, repeat visitors</p>
+        </div>
+        <div class="compare-card">
+          <h3>Rent ($10-12/day)</h3>
+          <ul>
+            <li>Best for 1-2 day hikes</li>
+            <li>No hassle with flying home (bear spray can't go on planes)</li>
+            <li>Staff demo proper use</li>
+            <li>Return when done — no waste</li>
+          </ul>
+          <p class="compare-verdict">✅ Best for: short trips, first-time visitors</p>
+        </div>
+      </div>
+
+      <!-- Bear Safety Beyond Spray -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Bear Safety Beyond Spray</h2>
+        <p>Bear spray is your last resort. Prevention is your first line of defense.</p>
+      </div>
+
+      <div class="safety-grid">
+        <div class="safety-item">
+          <span class="safety-icon">📢</span>
+          <div>
+            <h3>Make Noise</h3>
+            <p>Talk, clap, or call out "hey bear!" every few minutes, especially around blind corners, thick brush, and near streams. Bears will usually move away if they hear you coming.</p>
+          </div>
+        </div>
+        <div class="safety-item">
+          <span class="safety-icon">👥</span>
+          <div>
+            <h3>Hike in Groups</h3>
+            <p>Groups of 4+ are almost never involved in bear attacks. Stay together on the trail. Bears are intimidated by larger groups.</p>
+          </div>
+        </div>
+        <div class="safety-item">
+          <span class="safety-icon">🍎</span>
+          <div>
+            <h3>Store Food Properly</h3>
+            <p>Never leave food, coolers, or scented items unattended. Use bear-proof bins at campsites. Cook and eat at least 100m from your tent.</p>
+          </div>
+        </div>
+        <div class="safety-item">
+          <span class="safety-icon">🐾</span>
+          <div>
+            <h3>Watch for Signs</h3>
+            <p>Fresh bear scat, tracks, torn-up logs, digging — all signs bears are in the area. Be extra alert and make more noise. Check Parks Canada trail reports for recent bear sightings.</p>
+          </div>
+        </div>
+        <div class="safety-item">
+          <span class="safety-icon">🐕</span>
+          <div>
+            <h3>Leash Your Dog</h3>
+            <p>Off-leash dogs can provoke a bear and lead it back to you. Dogs must be leashed at all times in Banff National Park (max 2m leash).</p>
+          </div>
+        </div>
+        <div class="safety-item">
+          <span class="safety-icon">⏰</span>
+          <div>
+            <h3>Avoid Dawn/Dusk</h3>
+            <p>Bears are most active at dawn and dusk. Start hikes after full sunrise and return well before sunset, especially in bear-heavy areas like Moraine Lake and Lake Louise.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do I need bear spray in Banff?</summary>
+          <p>Yes — Parks Canada strongly recommends bear spray for all hikes. Banff has grizzly and black bears. Bear spray is 92% effective at stopping charges. Carry it in a hip holster, not your backpack.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where can I buy bear spray in Banff?</summary>
+          <p>Canadian Tire in Canmore ($35-45), Atmosphere in Canmore, outdoor shops on Banff Ave ($40-50), and Lake Louise village shops. Canmore has the best prices. Buy a holster too.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I rent bear spray in Banff?</summary>
+          <p>Yes — Wilson Mountain Sports ($10/day), Banff Adventures ($10/day), Ultimate Sports ($12/day), and Castle Mountain Chalets ($10/day for guests). Includes holster and a brief safety demo.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I fly with bear spray?</summary>
+          <p>No. Bear spray is prohibited on all commercial flights — both carry-on and checked luggage. If you bought a canister, either give it away, return it to a rental shop, or properly dispose of it before flying home. Do NOT put it in your luggage.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if I get bear spray on myself?</summary>
+          <p>It's painful — intense burning in eyes, skin, and lungs — but not dangerous. Flush eyes with water for 15-20 minutes. Remove contaminated clothing. Symptoms subside within 30-45 minutes. Do not rub your eyes.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .quick-answer { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; text-align: center; }
+  .quick-answer h2 { color: var(--color-white); margin-bottom: 1rem; }
+  .answer-big { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .quick-answer p { font-size: 0.95rem; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+
+  .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+  .step-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); text-align: center; }
+  .step-number { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background: var(--color-primary); color: var(--color-white); font-weight: 800; font-size: 1.1rem; border-radius: 50%; margin-bottom: 0.75rem; }
+  .step-card h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .step-card p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .tips-banner { background: #fef3cd; border: 2px solid #f0c040; border-radius: var(--radius); padding: 2rem; margin-top: 2rem; }
+  .tips-banner h3 { font-size: 1.15rem; margin-bottom: 1rem; }
+  .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .tips-grid .tip-item strong { display: block; font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .tips-grid .tip-item p { font-size: 0.82rem; color: #5a5a5a; line-height: 1.5; }
+
+  .location-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .location-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .location-card.rental { border-left: 4px solid var(--color-accent); }
+  .location-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .location-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .compare-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .compare-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+  .compare-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .compare-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .compare-card li { font-size: 0.85rem; color: var(--color-text-light); padding-left: 1.2rem; position: relative; }
+  .compare-card li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
+  .compare-verdict { font-size: 0.85rem; font-weight: 600; color: var(--color-primary); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-bg-alt); }
+
+  .safety-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .safety-item { display: flex; gap: 1rem; align-items: flex-start; background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+  .safety-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .safety-item h3 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .safety-item p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .location-grid { grid-template-columns: 1fr; }
+    .compare-cards { grid-template-columns: 1fr; }
+    .safety-grid { grid-template-columns: 1fr; }
+  }
+</style>

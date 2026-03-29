@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Car-Free Banff Guide 2026 — Visit Without a Car" description="Complete guide to visiting Banff without a car. Calgary to Banff shuttles, Roam Transit routes, day trips by bus, and transit passes. Save money and skip parking headaches.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Can I visit Banff without a car?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, absolutely. Banff is one of the most car-free-friendly national park destinations in North America. Shuttles run from Calgary Airport to Banff (Brewster Express $75, Banff Airporter $69, On-It bus $10 in summer). In Banff, Roam Transit covers the town plus Lake Louise, Johnston Canyon, and Canmore on 8 routes. Most popular trailheads are on bus routes.' } },
+      { '@type': 'Question', name: 'How to get from Calgary to Banff without a car?', acceptedAnswer: { '@type': 'Answer', text: 'Four options: (1) Brewster Express — year-round shuttle from Calgary Airport, ~$75 one way, 2 hours, bookable online. (2) Banff Airporter — year-round, ~$69 one way, 2 hours, hotel drop-off. (3) On-It Regional Transit — summer only (May-Sep), $10 one way from downtown Calgary, stops in Canmore and Banff. (4) Private transfer — ~$200-300 for a vehicle, worth it for groups of 3+.' } },
+      { '@type': 'Question', name: 'Is there public transit in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Roam Transit operates 8 bus routes in and around Banff. Route 1 covers Banff townsite and Sulphur Mountain. Route 2 connects Tunnel Mountain hotels. Route 4 goes to Johnston Canyon. Route 6 runs to Lake Minnewanka. Route 8S connects Banff to Lake Louise. Routes run every 20-40 minutes in summer. A day pass costs $5.' } },
+      { '@type': 'Question', name: 'Can I get to Lake Louise without a car?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Roam Transit Route 8S runs between Banff and Lake Louise village year-round with increased summer service. The ride takes about 40 minutes. From Lake Louise village, a free Parks Canada shuttle runs to the lake itself during peak summer months (mid-June to mid-October). One-way fare is $10; a day pass is $20.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Car-Free Banff' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80" alt="Roam Transit bus with Rocky Mountain backdrop" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">2026 Guide</span>
+      <h1>Car-Free Banff</h1>
+      <p>Everything you need to visit Banff National Park without a car — shuttles, buses, and day trips.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Quick Answer -->
+      <div class="quick-answer">
+        <h2>Can You Visit Banff Without a Car?</h2>
+        <p class="answer-big">Yes — and it's easier than you think.</p>
+        <p>Multiple shuttle services connect Calgary Airport to Banff. Once in town, Roam Transit covers the entire Bow Valley including Lake Louise and Johnston Canyon. You'll skip parking headaches, save money, and reduce your footprint.</p>
+      </div>
+
+      <!-- Getting to Banff -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Calgary to Banff (Without a Car)</h2>
+        <p>Four ways to get from Calgary Airport (YYC) to Banff — from $10.</p>
+      </div>
+
+      <div class="transport-grid">
+        <div class="transport-card">
+          <span class="transport-icon">🚌</span>
+          <h3>Brewster Express</h3>
+          <div class="transport-price">~$75 one way</div>
+          <ul>
+            <li>Year-round service from Calgary Airport</li>
+            <li>2-hour direct ride to Banff</li>
+            <li>Stops at major Banff hotels on request</li>
+            <li>Book online at brewster.ca</li>
+            <li>Wi-Fi and luggage storage on board</li>
+          </ul>
+          <span class="transport-tag">Most popular</span>
+        </div>
+        <div class="transport-card">
+          <span class="transport-icon">✈️</span>
+          <h3>Banff Airporter</h3>
+          <div class="transport-price">~$69 one way</div>
+          <ul>
+            <li>Year-round from Calgary Airport</li>
+            <li>2-hour ride with hotel drop-off in Banff</li>
+            <li>Smaller coaches, more departures</li>
+            <li>Book at banffairporter.com</li>
+            <li>Return service also available</li>
+          </ul>
+          <span class="transport-tag">Best value shuttle</span>
+        </div>
+        <div class="transport-card recommended">
+          <div class="rec-badge">Budget Pick</div>
+          <span class="transport-icon">🎒</span>
+          <h3>On-It Regional Transit</h3>
+          <div class="transport-price">~$10 one way</div>
+          <ul>
+            <li>Summer only (late May – early September)</li>
+            <li>Departs downtown Calgary (not airport)</li>
+            <li>Stops in Canmore and Banff</li>
+            <li>About 2.5 hours with stops</li>
+            <li>Must take CTrain to downtown first</li>
+          </ul>
+          <span class="transport-tag">Cheapest option</span>
+        </div>
+        <div class="transport-card">
+          <span class="transport-icon">🚐</span>
+          <h3>Private Transfer</h3>
+          <div class="transport-price">~$200-300 per vehicle</div>
+          <ul>
+            <li>Door-to-door from airport to hotel</li>
+            <li>Worth it for groups of 3+</li>
+            <li>Available 24/7, year-round</li>
+            <li>Can stop at Canmore or grocery store</li>
+            <li>Book via your hotel or Mountain Park Transportation</li>
+          </ul>
+          <span class="transport-tag">Best for groups</span>
+        </div>
+      </div>
+
+      <!-- Roam Transit -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Getting Around Banff — Roam Transit</h2>
+        <p>Roam Transit operates 8 bus routes covering the entire Bow Valley from Canmore to Lake Louise.</p>
+      </div>
+
+      <div class="roam-info">
+        <div class="roam-prices">
+          <h3>Fares (2026)</h3>
+          <div class="price-row"><span>Single ride (local)</span><strong>$2</strong></div>
+          <div class="price-row"><span>Day pass (local)</span><strong>$5</strong></div>
+          <div class="price-row"><span>Single ride (regional — Lake Louise)</span><strong>$10</strong></div>
+          <div class="price-row"><span>Day pass (regional)</span><strong>$20</strong></div>
+          <div class="price-row"><span>Children under 6</span><strong>Free</strong></div>
+        </div>
+      </div>
+
+      <div class="routes-grid">
+        <div class="route-card">
+          <div class="route-num">1</div>
+          <h3>Sulphur Mountain</h3>
+          <p>Banff Ave ↔ Banff Upper Hot Springs ↔ Banff Gondola base. Runs every 20 min in summer.</p>
+        </div>
+        <div class="route-card">
+          <div class="route-num">2</div>
+          <h3>Tunnel Mountain</h3>
+          <p>Banff Ave ↔ Tunnel Mountain hotels ↔ Banff Centre. Serves the hotel district.</p>
+        </div>
+        <div class="route-card">
+          <div class="route-num">3</div>
+          <h3>Canmore</h3>
+          <p>Banff ↔ Canmore. Year-round service connecting both towns. About 25 min ride.</p>
+        </div>
+        <div class="route-card">
+          <div class="route-num">4</div>
+          <h3>Johnston Canyon</h3>
+          <p>Banff ↔ Johnston Canyon trailhead. Summer only. Perfect for the most popular hike in the park.</p>
+        </div>
+        <div class="route-card">
+          <div class="route-num">5</div>
+          <h3>Bow Valley</h3>
+          <p>Local service through Banff townsite. Connects residential areas with downtown.</p>
+        </div>
+        <div class="route-card">
+          <div class="route-num">6</div>
+          <h3>Lake Minnewanka</h3>
+          <p>Banff ↔ Lake Minnewanka ↔ Two Jack Lake. Summer only. Great for lakeside walks and picnics.</p>
+        </div>
+        <div class="route-card">
+          <div class="route-num">7</div>
+          <h3>Cave & Basin</h3>
+          <p>Banff ↔ Cave and Basin National Historic Site. Also connects to the Sundance trail area.</p>
+        </div>
+        <div class="route-card highlight-card">
+          <div class="route-num">8S</div>
+          <h3>Lake Louise</h3>
+          <p>Banff ↔ Lake Louise village. ~40 min ride. Year-round. The most important route for car-free visitors. Connect to free Parks Canada shuttle to the lake itself in summer.</p>
+        </div>
+      </div>
+
+      <!-- Day Trips Without a Car -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Day Trips Without a Car</h2>
+        <p>Popular destinations easily accessible by Roam Transit.</p>
+      </div>
+
+      <div class="trip-cards">
+        <div class="trip-card">
+          <h3>🏞️ Lake Louise</h3>
+          <p><strong>How:</strong> Roam Route 8S to Lake Louise village (40 min), then free Parks Canada shuttle to the lake (summer) or walk 3 km.</p>
+          <p><strong>Do:</strong> Lakeshore trail, teahouse hike, canoeing, Fairmont lunch. Full day recommended.</p>
+        </div>
+        <div class="trip-card">
+          <h3>💧 Johnston Canyon</h3>
+          <p><strong>How:</strong> Roam Route 4 directly to the trailhead (25 min from Banff).</p>
+          <p><strong>Do:</strong> Walk to Lower Falls (1.1 km) and Upper Falls (2.7 km). Take the early bus to beat crowds.</p>
+        </div>
+        <div class="trip-card">
+          <h3>🦌 Lake Minnewanka</h3>
+          <p><strong>How:</strong> Roam Route 6 to Lake Minnewanka (15 min from Banff).</p>
+          <p><strong>Do:</strong> Lakeside walk, boat cruise, picnic at Two Jack Lake on the way back.</p>
+        </div>
+        <div class="trip-card">
+          <h3>♨️ Banff Hot Springs</h3>
+          <p><strong>How:</strong> Roam Route 1 to Banff Upper Hot Springs (10 min from downtown).</p>
+          <p><strong>Do:</strong> Soak in the historic hot springs, then ride the Banff Gondola next door.</p>
+        </div>
+        <div class="trip-card">
+          <h3>🏔️ Canmore</h3>
+          <p><strong>How:</strong> Roam Route 3 to Canmore (25 min).</p>
+          <p><strong>Do:</strong> Walk the main street shops, hike Grassi Lakes, explore the Nordic Centre trails.</p>
+        </div>
+      </div>
+
+      <!-- Tips -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Car-Free Tips</h2>
+      </div>
+
+      <div class="tips-list">
+        <div class="tip-item">
+          <span class="tip-icon">💡</span>
+          <div>
+            <h3>Buy a Roam Day Pass</h3>
+            <p>At $5/day (local) you can hop on and off unlimited. Cheaper than parking ($4-6/hour in Banff).</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">📱</span>
+          <div>
+            <h3>Download the Roam App</h3>
+            <p>Real-time bus tracking and schedules. Available for iOS and Android. Pay your fare through the app.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">🛒</span>
+          <div>
+            <h3>Stock Up on Arrival</h3>
+            <p>Ask your shuttle to stop at a grocery store in Canmore or grab supplies at IGA in Banff. No car means no quick grocery runs.</p>
+          </div>
+        </div>
+        <div class="tip-item">
+          <span class="tip-icon">🚲</span>
+          <div>
+            <h3>Rent a Bike for Side Trips</h3>
+            <p>Banff has great paved paths. Rent a bike from Banff Adventures or Soul Ski & Bike for trips along the Bow River and Legacy Trail to Canmore.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Can I visit Banff without a car?</summary>
+          <p>Yes. Multiple shuttles run from Calgary to Banff (from $10 on On-It bus), and Roam Transit covers the town plus Lake Louise, Johnston Canyon, and Lake Minnewanka. Most visitors without cars have no trouble getting around.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I get from Calgary Airport to Banff without a car?</summary>
+          <p>Take Brewster Express ($75) or Banff Airporter ($69) directly from the airport. In summer, On-It bus runs from downtown Calgary for $10. Private transfers cost $200-300 per vehicle.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there public transit in Banff?</summary>
+          <p>Yes — Roam Transit operates 8 routes covering Banff townsite, Tunnel Mountain, Sulphur Mountain, Lake Minnewanka, Johnston Canyon, Canmore, and Lake Louise. Day passes are $5 (local) or $20 (regional).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I still need a park pass without a car?</summary>
+          <p>Yes. Everyone entering Banff National Park needs a Parks Canada pass, even if arriving by bus. Passes are $11/adult/day or $22/family. Shuttles from Calgary usually stop at the gate for you to purchase one.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .quick-answer { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; text-align: center; }
+  .quick-answer h2 { color: var(--color-white); margin-bottom: 1rem; }
+  .answer-big { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .quick-answer p { font-size: 0.95rem; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+
+  .transport-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .transport-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); position: relative; }
+  .transport-card.recommended { border: 2px solid var(--color-accent); }
+  .rec-badge { position: absolute; top: -0.7rem; right: 1.5rem; background: var(--color-accent); color: var(--color-white); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.2rem 0.7rem; border-radius: 4px; }
+  .transport-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+  .transport-card h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+  .transport-price { font-size: 1.1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
+  .transport-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+  .transport-card li { font-size: 0.85rem; color: var(--color-text-light); padding-left: 1.2rem; position: relative; }
+  .transport-card li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
+  .transport-tag { display: inline-block; margin-top: 0.75rem; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--color-primary); background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: 4px; }
+
+  .roam-info { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .roam-prices h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+  .price-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.9rem; }
+
+  .routes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
+  .route-card { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+  .route-card.highlight-card { border: 2px solid var(--color-accent); }
+  .route-num { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: var(--color-primary); color: var(--color-white); font-weight: 700; font-size: 0.85rem; border-radius: 50%; margin-bottom: 0.5rem; }
+  .route-card h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .route-card p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .trip-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .trip-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .trip-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .trip-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.5rem; }
+
+  .tips-list { display: flex; flex-direction: column; gap: 1rem; }
+  .tip-item { display: flex; gap: 1rem; align-items: flex-start; background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+  .tip-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .tip-item h3 { font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .tip-item p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .transport-grid { grid-template-columns: 1fr; }
+    .routes-grid { grid-template-columns: repeat(2, 1fr); }
+    .trip-cards { grid-template-columns: 1fr; }
+  }
+</style>

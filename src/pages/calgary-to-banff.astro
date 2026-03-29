@@ -1,0 +1,348 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Calgary to Banff 2026 — Airport Guide, Drive Time, Shuttles & Tips" description="How to get from Calgary Airport to Banff. Drive time, shuttle options with prices, rental car tips, and a step-by-step timeline from landing to arriving in Banff.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'How long from Calgary to Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The drive from Calgary to Banff takes about 1 hour 20 minutes (130 km / 80 miles) via Highway 1 (Trans-Canada). From Calgary International Airport (YYC) to your Banff hotel, allow 1 hour 40 minutes total including getting to your car and navigating out of the city. To Lake Louise, add another 30 minutes (185 km total from Calgary, about 1 hour 50 minutes driving).' } },
+      { '@type': 'Question', name: 'How to get from Calgary airport to Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Four main options: (1) Rental car — most flexible, ~$50-120/day, 1h 20min drive. (2) Brewster Express shuttle — $75 one way, 2 hours, direct to Banff hotels. (3) Banff Airporter shuttle — $69 one way, 2 hours, hotel drop-off. (4) On-It bus — $10 one way, summer only, departs downtown Calgary (not airport). Rental car is best for flexibility; shuttle is best if you don\'t want to drive.' } },
+      { '@type': 'Question', name: 'Do I need a car for Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Not necessarily. The Town of Banff is walkable and Roam Transit buses cover Lake Louise, Johnston Canyon, Lake Minnewanka, and Canmore. However, a car gives you flexibility for early-morning starts, remote trailheads, and the Icefields Parkway. If you\'re staying 3+ days and want to explore beyond the townsite, a car is recommended. For a short trip focused on Banff and Lake Louise, transit works well.' } },
+      { '@type': 'Question', name: 'Do I need winter tires for Calgary to Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Winter tires or chains are legally required on Highway 1 from November 1 to April 30. All rental cars from Calgary should come with winter tires during this period, but always confirm when booking. All-season tires with the M+S marking are technically legal but not recommended — the highway crosses mountain passes and conditions can change rapidly.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Calgary to Banff' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1600&q=80" alt="Highway driving through the Canadian Rocky Mountains toward Banff" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Travel Guide</span>
+      <h1>Calgary to Banff</h1>
+      <p>Your complete guide from Calgary Airport to Banff — drive times, shuttles, rental tips, and timeline.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Quick Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num">130 km</span>
+          <span class="stat-label">Distance (Calgary to Banff)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">1h 20m</span>
+          <span class="stat-label">Drive time</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">1h 50m</span>
+          <span class="stat-label">Drive to Lake Louise</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">$10-75</span>
+          <span class="stat-label">Shuttle one-way</span>
+        </div>
+      </div>
+
+      <!-- Arrival Timeline -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Your Arrival Timeline</h2>
+        <p>Step-by-step from touchdown at Calgary Airport (YYC) to your Banff hotel.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="step-time">0:00</div>
+          <div class="step-content">
+            <h3>✈️ Land at Calgary Airport (YYC)</h3>
+            <p>Calgary International Airport has two terminals. Most domestic flights arrive at the main terminal; international flights at the International Terminal.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-time">0:15</div>
+          <div class="step-content">
+            <h3>🛂 Customs & Baggage</h3>
+            <p>Domestic: straight to baggage claim (~15 min). International: customs, then baggage (~30-60 min depending on lines). NEXUS/Global Entry saves time.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-time">0:30</div>
+          <div class="step-content">
+            <h3>🚗 Get Your Wheels (or Board a Shuttle)</h3>
+            <p><strong>Rental car:</strong> Follow signs to rental car centre (connected by free shuttle or skywalk). Allow 20-30 min for paperwork and finding your car.<br/>
+            <strong>Shuttle:</strong> Brewster Express and Banff Airporter pick up at the arrivals level. Check your confirmation for the exact bay number.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-time">0:45</div>
+          <div class="step-content">
+            <h3>🛣️ Hit Highway 1 West</h3>
+            <p>Follow signs to Trans-Canada Highway (Hwy 1 West) toward Banff/Lake Louise. The drive is straightforward — one highway all the way. Speed limit is 110 km/h on most sections.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-time">1:15</div>
+          <div class="step-content">
+            <h3>⛽ Canmore (Optional Stop)</h3>
+            <p>Last affordable gas before Banff (10-15% cheaper). Good stop for groceries at Safeway or Save-On-Foods. Grab lunch here if you're hungry. 20 min from Banff.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-time">1:30</div>
+          <div class="step-content">
+            <h3>🎫 Banff Park Gate</h3>
+            <p>Buy your Parks Canada pass here ($11/adult/day, $22/family). Summer wait: 10-45 min. Buy online at parks.canada.ca to skip the line. Keep your receipt visible on the dashboard.</p>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-time">1:40</div>
+          <div class="step-content">
+            <h3>🏨 Arrive in Banff!</h3>
+            <p>Welcome to Banff! Drop bags, grab a coffee on Banff Ave, and start exploring. If heading to Lake Louise, continue on Hwy 1 for another 30 min.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transport Options -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>How to Get There</h2>
+        <p>Compare your options for getting from Calgary Airport to Banff.</p>
+      </div>
+
+      <div class="options-grid">
+        <div class="option-card">
+          <div class="option-header">
+            <h3>🚗 Rental Car</h3>
+            <span class="option-price">$50-120/day</span>
+          </div>
+          <div class="option-pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Most flexible — go anywhere, any time</li>
+              <li>Essential for Icefields Parkway, Moraine Lake, remote trails</li>
+              <li>Cheaper for groups (split the cost)</li>
+              <li>Can stop in Canmore for gas and groceries</li>
+            </ul>
+          </div>
+          <div class="option-cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Parking in Banff is $4-6/hour</li>
+              <li>Popular lots fill by 7-8 AM in summer</li>
+              <li>Gas is expensive in Banff ($1.70+/L)</li>
+              <li>Winter driving requires confidence</li>
+            </ul>
+          </div>
+          <div class="option-tips">
+            <h4>Tips</h4>
+            <p>Book early — summer prices double if you wait. Confirm winter tires (Oct-Apr). Fill up in Canmore. Economy cars handle the highway fine — you don't need an SUV.</p>
+          </div>
+        </div>
+
+        <div class="option-card">
+          <div class="option-header">
+            <h3>🚌 Brewster Express</h3>
+            <span class="option-price">$75 one way</span>
+          </div>
+          <div class="option-pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Direct from airport to Banff hotels</li>
+              <li>Year-round, multiple daily departures</li>
+              <li>Wi-Fi, luggage storage, comfortable</li>
+              <li>No driving, no parking worries</li>
+            </ul>
+          </div>
+          <div class="option-cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Fixed schedule — wait for next departure</li>
+              <li>2 hours travel time</li>
+              <li>No flexibility for side stops</li>
+            </ul>
+          </div>
+          <div class="option-tips">
+            <h4>Tips</h4>
+            <p>Book return trip at the same time for a small discount. Meet at arrivals level Bay 11. Arrive 15 min early. They also offer Lake Louise drop-off.</p>
+          </div>
+        </div>
+
+        <div class="option-card">
+          <div class="option-header">
+            <h3>🚐 Banff Airporter</h3>
+            <span class="option-price">$69 one way</span>
+          </div>
+          <div class="option-pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Cheapest dedicated shuttle</li>
+              <li>Year-round from Calgary Airport</li>
+              <li>Hotel door-to-door drop-off</li>
+              <li>Smaller buses, more departures</li>
+            </ul>
+          </div>
+          <div class="option-cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Fixed schedule</li>
+              <li>2 hours travel time</li>
+              <li>Multiple hotel stops can add time</li>
+            </ul>
+          </div>
+          <div class="option-tips">
+            <h4>Tips</h4>
+            <p>Book online at banffairporter.com. Return trips also available. Good option if your flight arrives at an off-peak time.</p>
+          </div>
+        </div>
+
+        <div class="option-card budget-pick">
+          <div class="budget-badge">Budget Pick</div>
+          <div class="option-header">
+            <h3>🎒 On-It Regional Transit</h3>
+            <span class="option-price">$10 one way</span>
+          </div>
+          <div class="option-pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Incredibly cheap — $10 to Banff</li>
+              <li>Stops in Canmore along the way</li>
+              <li>Great for budget travellers</li>
+            </ul>
+          </div>
+          <div class="option-cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Summer only (late May – early Sep)</li>
+              <li>Departs downtown Calgary, NOT the airport</li>
+              <li>Need CTrain to get downtown first</li>
+              <li>About 2.5 hours total</li>
+            </ul>
+          </div>
+          <div class="option-tips">
+            <h4>Tips</h4>
+            <p>From YYC: take the shuttle to Airport CTrain station, ride the Red Line to downtown, then catch On-It. Total airport-to-Banff: ~3 hours. Worth it for the savings.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Driving Tips -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Driving Tips</h2>
+        <p>What to know before you drive from Calgary to Banff.</p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h3>⛽ Gas Up in Canmore</h3>
+          <p>Gas in Banff is 10-15% more expensive than Canmore, and 20%+ more than Calgary. Fill your tank in Canmore at the Petro-Canada or Shell on the highway.</p>
+        </div>
+        <div class="tip-card">
+          <h3>❄️ Winter Tires Required</h3>
+          <p>Winter tires or chains are required on Highway 1 from <strong>November 1 to April 30</strong>. All rental cars should have them — confirm when booking. Check road conditions at 511.alberta.ca.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🦌 Watch for Wildlife</h3>
+          <p>Elk, deer, and bears cross the highway, especially at dawn and dusk. The section between Canmore and Banff is fenced, but stay alert. Speed limits drop to 90 km/h in the park.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🎫 Buy Your Park Pass Online</h3>
+          <p>Skip the gate lineup (15-45 min in summer) by buying your Parks Canada pass online at parks.canada.ca before your trip.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🛒 Stop for Groceries</h3>
+          <p>Safeway and Save-On-Foods in Canmore have normal grocery prices. IGA in Banff has a 15-25% markup. Stock up before entering the park.</p>
+        </div>
+        <div class="tip-card">
+          <h3>📱 Download Offline Maps</h3>
+          <p>Cell service is spotty between Canmore and Lake Louise. Download Google Maps offline for the Banff area before you leave Calgary.</p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How long from Calgary to Banff?</summary>
+          <p>1 hour 20 minutes driving (130 km). From the airport, allow 1 hour 40 minutes total. To Lake Louise, about 1 hour 50 minutes from Calgary (185 km). Shuttles take about 2 hours.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How to get from Calgary airport to Banff?</summary>
+          <p>Rental car ($50-120/day, 1h 20min), Brewster Express ($75, 2h), Banff Airporter ($69, 2h), or On-It bus ($10, summer only, from downtown Calgary). Rental car is best for flexibility; shuttle is great if you prefer not to drive.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need a car for Banff?</summary>
+          <p>Not necessarily. Banff is walkable and Roam Transit covers Lake Louise, Johnston Canyon, and Lake Minnewanka. But a car gives you flexibility for early starts, remote trailheads, and the Icefields Parkway. For 3+ days with varied plans, a car is recommended.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is the drive from Calgary to Banff scenic?</summary>
+          <p>The first 45 minutes through the prairies is flat and unremarkable. Then the Rocky Mountains appear suddenly on the horizon — one of the most dramatic reveals in Canadian driving. The last 30 minutes through the mountains is stunning.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I Uber from Calgary to Banff?</summary>
+          <p>Technically possible but very expensive ($200-300+) and not always available. Drivers may not want to make the return trip empty. A shuttle is more reliable and much cheaper.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .stat-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); text-align: center; }
+  .stat-num { display: block; font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-primary); }
+  .stat-label { font-size: 0.82rem; color: var(--color-text-light); margin-top: 0.25rem; }
+
+  .timeline { position: relative; padding-left: 3rem; margin-top: 1rem; }
+  .timeline::before { content: ''; position: absolute; left: 1.1rem; top: 0; bottom: 0; width: 2px; background: var(--color-bg-alt); }
+  .timeline-step { position: relative; margin-bottom: 1.5rem; display: flex; gap: 1.25rem; }
+  .step-time { flex-shrink: 0; width: 3rem; font-size: 0.8rem; font-weight: 700; color: var(--color-accent); padding-top: 0.2rem; text-align: right; position: relative; }
+  .step-time::after { content: ''; position: absolute; right: -1.65rem; top: 0.4rem; width: 10px; height: 10px; border-radius: 50%; background: var(--color-primary); border: 2px solid var(--color-white); }
+  .step-content { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); flex: 1; }
+  .step-content h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .step-content p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.6; }
+
+  .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .option-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); position: relative; }
+  .option-card.budget-pick { border: 2px solid var(--color-accent); }
+  .budget-badge { position: absolute; top: -0.7rem; right: 1.5rem; background: var(--color-accent); color: var(--color-white); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; padding: 0.2rem 0.7rem; border-radius: 4px; }
+  .option-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .option-header h3 { font-size: 1.1rem; }
+  .option-price { font-size: 1.1rem; font-weight: 700; color: var(--color-accent); }
+  .option-pros h4, .option-cons h4, .option-tips h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); margin: 0.75rem 0 0.3rem; }
+  .option-pros ul, .option-cons ul { list-style: none; padding: 0; margin: 0; }
+  .option-pros li, .option-cons li { font-size: 0.82rem; padding: 0.2rem 0 0.2rem 1rem; position: relative; color: var(--color-text-light); }
+  .option-pros li::before { content: '✓'; position: absolute; left: 0; color: #4caf50; font-weight: 700; }
+  .option-cons li::before { content: '✗'; position: absolute; left: 0; color: #e74c3c; font-weight: 700; }
+  .option-tips p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; font-style: italic; }
+
+  .tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .tip-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .tip-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .tip-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .options-grid { grid-template-columns: 1fr; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .timeline { padding-left: 2rem; }
+  }
+</style>

@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Banff Ski Pass Calculator 2026 — Compare Prices & Find the Cheapest Option" description="Compare ski pass prices for Sunshine Village, Lake Louise, and Mt Norquay. Calculate the cheapest option for single-day, multi-day, Tri-Area, and Ikon Pass based on your trip.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'How much is a Banff ski pass?', acceptedAnswer: { '@type': 'Answer', text: 'Banff ski pass prices for 2025/26 vary by resort. Sunshine Village costs ~$149/day for an adult lift ticket, Lake Louise Ski Resort is ~$155/day, and Mt Norquay is ~$99/day. The Tri-Area 3-day pass covers all three resorts for ~$399. The Ikon Pass ($1,249/season) provides unlimited access to all three Banff resorts plus 50+ destinations worldwide.' } },
+      { '@type': 'Question', name: 'Which Banff ski resort is cheapest?', acceptedAnswer: { '@type': 'Answer', text: 'Mt Norquay is the cheapest Banff ski resort at ~$99/day for an adult lift ticket. It is the smallest of the three resorts but offers great value for beginners and intermediate skiers, plus night skiing on Fridays. Sunshine Village (~$149/day) and Lake Louise (~$155/day) are larger with more terrain but cost 50-60% more per day.' } },
+      { '@type': 'Question', name: 'Is the Ikon Pass worth it for Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The Ikon Pass ($1,249 for 2025/26 season) is worth it if you ski 8+ days at Banff resorts. It provides unlimited access to Sunshine Village, Lake Louise, and Mt Norquay — all three. At an average of ~$134/day across the three resorts, the Ikon Pass pays for itself in about 9 days. It also includes access to 50+ resorts worldwide including Revelstoke, Tremblant, and Steamboat.' } },
+      { '@type': 'Question', name: 'What is the Tri-Area ski pass in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The Tri-Area pass lets you ski all three Banff resorts (Sunshine Village, Lake Louise, and Mt Norquay) on a single multi-day pass. A 3-day Tri-Area pass costs ~$399 ($133/day), saving you money compared to buying individual day passes. It is available in 3-day, 5-day, and 7-day options and can be used on non-consecutive days.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Ski Pass Calculator' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1600&q=80" alt="Skiing in Banff National Park with mountain views" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">2025/26 Season</span>
+      <h1>Ski Pass Calculator</h1>
+      <p>Compare prices across all 3 Banff resorts and find the cheapest lift ticket option for your trip.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Calculator -->
+      <div class="calc-intro">
+        <h2>Find Your Cheapest Ski Pass</h2>
+        <p>Enter your group size, number of ski days, and which resorts you want to visit. We'll calculate whether individual day passes, Tri-Area passes, or the Ikon Pass saves you the most money.</p>
+      </div>
+
+      <div class="calc-layout">
+        <div class="calc-controls">
+          <div class="calc-group">
+            <label for="ski-days">How many ski days?</label>
+            <div class="slider-row">
+              <input type="range" id="ski-days" min="1" max="14" value="4" />
+              <span class="slider-val" id="ski-days-val">4</span>
+            </div>
+          </div>
+          <div class="calc-group">
+            <label for="ski-group">Group size (adults)</label>
+            <div class="slider-row">
+              <input type="range" id="ski-group" min="1" max="8" value="2" />
+              <span class="slider-val" id="ski-group-val">2</span>
+            </div>
+          </div>
+          <div class="calc-group">
+            <label>Which resorts?</label>
+            <div class="resort-checks">
+              <label class="check-label"><input type="checkbox" id="chk-sunshine" checked /> Sunshine Village <span class="price-tag">$149/day</span></label>
+              <label class="check-label"><input type="checkbox" id="chk-louise" checked /> Lake Louise <span class="price-tag">$155/day</span></label>
+              <label class="check-label"><input type="checkbox" id="chk-norquay" /> Mt Norquay <span class="price-tag">$99/day</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-result" id="ski-result">
+          <h2>Best Option</h2>
+          <div class="result-total" id="ski-total">$0</div>
+          <p class="result-subtitle" id="ski-subtitle"></p>
+          <div class="result-breakdown" id="ski-breakdown"></div>
+        </div>
+      </div>
+
+      <!-- Resort Comparison Table (static HTML for SEO) -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>2025/26 Ski Pass Prices</h2>
+        <p>Adult lift ticket and multi-day pass prices for all three Banff ski resorts.</p>
+      </div>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Pass Type</th>
+              <th>Sunshine Village</th>
+              <th>Lake Louise</th>
+              <th>Mt Norquay</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1-Day Adult</strong></td>
+              <td>$149</td>
+              <td>$155</td>
+              <td>$99</td>
+            </tr>
+            <tr>
+              <td><strong>1-Day Youth (13-17)</strong></td>
+              <td>$119</td>
+              <td>$119</td>
+              <td>$69</td>
+            </tr>
+            <tr>
+              <td><strong>1-Day Child (6-12)</strong></td>
+              <td>$75</td>
+              <td>$79</td>
+              <td>$45</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Tri-Area 3-Day</strong></td>
+              <td colspan="3" style="text-align:center;">$399 (~$133/day) — All 3 resorts</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Tri-Area 5-Day</strong></td>
+              <td colspan="3" style="text-align:center;">$625 (~$125/day) — All 3 resorts</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Tri-Area 7-Day</strong></td>
+              <td colspan="3" style="text-align:center;">$819 (~$117/day) — All 3 resorts</td>
+            </tr>
+            <tr class="ikon-row">
+              <td><strong>Ikon Pass (Season)</strong></td>
+              <td colspan="3" style="text-align:center;">$1,249 — Unlimited at all 3 + 50+ resorts worldwide</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Resort Cards (static SEO content) -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>The 3 Banff Ski Resorts</h2>
+        <p>All three are inside Banff National Park and covered by the Ikon Pass.</p>
+      </div>
+
+      <div class="resort-grid">
+        <div class="resort-card">
+          <h3>☀️ Sunshine Village</h3>
+          <div class="resort-stats">
+            <span>3,358 acres</span><span>137 runs</span><span>1,070m vertical</span>
+          </div>
+          <p>The largest Banff resort with the most natural snow in the Canadian Rockies. Known for long cruisers, open bowls, and a ski season lasting into late May. Base village is at 2,160m — you ride the gondola up from the parking lot.</p>
+          <p class="resort-price">Day pass: <strong>$149</strong> | Best for: Intermediate to advanced</p>
+        </div>
+        <div class="resort-card">
+          <h3>🏔️ Lake Louise Ski Resort</h3>
+          <div class="resort-stats">
+            <span>4,200 acres</span><span>164 runs</span><span>991m vertical</span>
+          </div>
+          <p>The most scenic resort in North America — ski with views of the Continental Divide. Massive terrain variety from gentle groomers to steep back bowls. 45 minutes from Banff townsite.</p>
+          <p class="resort-price">Day pass: <strong>$155</strong> | Best for: All levels, families</p>
+        </div>
+        <div class="resort-card">
+          <h3>🌙 Mt Norquay</h3>
+          <div class="resort-stats">
+            <span>190 acres</span><span>60 runs</span><span>503m vertical</span>
+          </div>
+          <p>Banff's "local hill" — just 6 minutes from town. Small but mighty with steep terrain and the only night skiing in the Rockies (Fridays). Great learn-to-ski packages and the most affordable day pass.</p>
+          <p class="resort-price">Day pass: <strong>$99</strong> | Best for: Beginners, budget, night skiing</p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Ski Pass FAQs</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How much is a Banff ski pass?</summary>
+          <p>Adult day passes range from $99 (Norquay) to $155 (Lake Louise). Sunshine Village is $149/day. Multi-day Tri-Area passes reduce the per-day cost to $117-133. The Ikon Pass ($1,249/season) gives unlimited access to all three resorts.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Which Banff ski resort is cheapest?</summary>
+          <p>Mt Norquay at $99/day. It's the smallest resort but offers solid terrain and is just 6 minutes from Banff. For a full big-mountain experience on a budget, buy a Tri-Area multi-day pass to average down the cost across all three resorts.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is the Ikon Pass worth it for Banff?</summary>
+          <p>If you'll ski 9+ days at Banff resorts, the Ikon Pass saves money vs day tickets. At ~$134/day average, 9 days × $134 = $1,206, so the $1,249 pass breaks even around day 9-10. Plus you get access to 50+ resorts worldwide.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I use my Tri-Area pass on non-consecutive days?</summary>
+          <p>Yes. Tri-Area multi-day passes can be used on non-consecutive days within the ski season. You pick which resort to visit each day.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need a park pass to go skiing in Banff?</summary>
+          <p>Yes. All three ski resorts are inside Banff National Park. You need a valid Parks Canada pass ($11/adult/day or $22/family/day) in addition to your ski lift ticket.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function initSkiCalc() {
+    const prices = {
+      sunshine: { day: 149, name: 'Sunshine Village' },
+      louise: { day: 155, name: 'Lake Louise' },
+      norquay: { day: 99, name: 'Mt Norquay' },
+    };
+    const triArea = { 3: 399, 5: 625, 7: 819 };
+    const ikonPrice = 1249;
+
+    const daysSlider = document.getElementById('ski-days') as HTMLInputElement;
+    const groupSlider = document.getElementById('ski-group') as HTMLInputElement;
+    const chkSunshine = document.getElementById('chk-sunshine') as HTMLInputElement;
+    const chkLouise = document.getElementById('chk-louise') as HTMLInputElement;
+    const chkNorquay = document.getElementById('chk-norquay') as HTMLInputElement;
+
+    function calc() {
+      const days = parseInt(daysSlider.value);
+      const group = parseInt(groupSlider.value);
+      document.getElementById('ski-days-val')!.textContent = String(days);
+      document.getElementById('ski-group-val')!.textContent = String(group);
+
+      const resorts: string[] = [];
+      if (chkSunshine.checked) resorts.push('sunshine');
+      if (chkLouise.checked) resorts.push('louise');
+      if (chkNorquay.checked) resorts.push('norquay');
+
+      if (resorts.length === 0) {
+        document.getElementById('ski-total')!.textContent = '$0';
+        document.getElementById('ski-subtitle')!.textContent = 'Select at least one resort';
+        document.getElementById('ski-breakdown')!.innerHTML = '';
+        return;
+      }
+
+      // Option 1: Individual day passes (split days evenly across selected resorts)
+      const daysPerResort = days / resorts.length;
+      let individualTotal = 0;
+      resorts.forEach(r => {
+        individualTotal += daysPerResort * (prices as any)[r].day;
+      });
+      individualTotal *= group;
+
+      // Option 2: Tri-Area pass (only if 3+ days and multiple resorts or want flexibility)
+      let triTotal = Infinity;
+      let triBestDays = 0;
+      if (resorts.length >= 2 || days >= 3) {
+        for (const [d, p] of Object.entries(triArea)) {
+          const triDays = parseInt(d);
+          if (triDays >= days) {
+            const cost = p * group;
+            if (cost < triTotal) {
+              triTotal = cost;
+              triBestDays = triDays;
+            }
+          }
+        }
+        // If days > 7, calculate per-day rate for 7-day pass + extra days
+        if (days > 7) {
+          const base = triArea[7] * group;
+          const avgDay = resorts.reduce((s, r) => s + (prices as any)[r].day, 0) / resorts.length;
+          const extra = (days - 7) * avgDay * group;
+          triTotal = base + extra;
+          triBestDays = days;
+        }
+      }
+
+      // Option 3: Ikon Pass
+      const ikonTotal = ikonPrice * group;
+
+      // Find cheapest
+      const options = [
+        { name: 'Individual Day Passes', total: Math.round(individualTotal), perDay: Math.round(individualTotal / days / group) },
+        { name: `Tri-Area ${triBestDays || days}-Day Pass`, total: Math.round(triTotal), perDay: Math.round(triTotal / days / group) },
+        { name: 'Ikon Pass (Season)', total: ikonTotal, perDay: Math.round(ikonTotal / days / group) },
+      ].filter(o => o.total < Infinity).sort((a, b) => a.total - b.total);
+
+      const best = options[0];
+      document.getElementById('ski-total')!.textContent = `$${best.total.toLocaleString()}`;
+      document.getElementById('ski-subtitle')!.textContent = `${best.name} — ${days} days, ${group} ${group === 1 ? 'person' : 'people'} ($${best.perDay}/person/day)`;
+
+      let html = '<h3 style="margin:1rem 0 0.5rem;font-size:0.85rem;text-transform:uppercase;color:var(--color-text-light);">All Options Compared</h3>';
+      options.forEach((o, i) => {
+        html += `<div class="breakdown-row ${i === 0 ? 'best' : ''}"><span>${o.name}${i === 0 ? ' ✅' : ''}</span><span>$${o.total.toLocaleString()} ($${o.perDay}/pp/day)</span></div>`;
+      });
+      document.getElementById('ski-breakdown')!.innerHTML = html;
+    }
+
+    [daysSlider, groupSlider, chkSunshine, chkLouise, chkNorquay].forEach(el => el.addEventListener('input', calc));
+    calc();
+  }
+  document.addEventListener('DOMContentLoaded', initSkiCalc);
+</script>
+
+<style>
+  .calc-intro { text-align: center; max-width: 700px; margin: 0 auto 2rem; }
+  .calc-intro h2 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.75rem; }
+  .calc-intro p { color: var(--color-text-light); font-size: 0.95rem; }
+
+  .calc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  .calc-controls { display: flex; flex-direction: column; gap: 1.5rem; }
+  .calc-group label { font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 0.5rem; }
+  .slider-row { display: flex; align-items: center; gap: 1rem; }
+  .slider-row input[type="range"] { flex: 1; accent-color: var(--color-primary); }
+  .slider-val { font-weight: 700; font-size: 1.3rem; min-width: 2rem; text-align: center; color: var(--color-primary); }
+
+  .resort-checks { display: flex; flex-direction: column; gap: 0.5rem; }
+  .check-label { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer; padding: 0.5rem 0.75rem; border-radius: 8px; background: var(--color-bg-alt); }
+  .check-label input { accent-color: var(--color-primary); width: 18px; height: 18px; }
+  .price-tag { margin-left: auto; font-size: 0.8rem; font-weight: 600; color: var(--color-accent); }
+
+  .calc-result { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2rem; position: sticky; top: 120px; }
+  .calc-result h2 { color: var(--color-white); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+  .result-total { font-size: 2.8rem; font-weight: 800; font-family: var(--font-heading); }
+  .result-subtitle { font-size: 0.88rem; color: var(--color-accent); margin-top: 0.25rem; }
+  .breakdown-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; }
+  .breakdown-row.best { color: var(--color-accent); font-weight: 700; }
+
+  .compare-table-wrap { overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; background: var(--color-white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .compare-table th { background: var(--color-primary); color: var(--color-white); padding: 0.9rem 1rem; text-align: left; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .compare-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.9rem; }
+  .highlight-row td { background: #f0f7f4; }
+  .ikon-row td { background: var(--color-accent); color: var(--color-white); font-weight: 600; }
+
+  .resort-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .resort-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+  .resort-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; }
+  .resort-stats { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  .resort-stats span { font-size: 0.78rem; font-weight: 600; background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: 4px; }
+  .resort-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.6; margin-bottom: 0.5rem; }
+  .resort-price { font-size: 0.85rem; color: var(--color-primary); font-weight: 600; margin-top: 0.75rem; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .calc-layout { grid-template-columns: 1fr; }
+    .calc-result { position: static; }
+    .resort-grid { grid-template-columns: 1fr; }
+    .compare-table { font-size: 0.82rem; }
+  }
+</style>
