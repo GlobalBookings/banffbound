@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Editorial Policy — How BanffBound Creates Content" description="How BanffBound researches, writes, and maintains travel guides for Banff National Park. Our standards for accuracy, honesty, and transparency.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Editorial Policy' }]} />
+  </div>
+
+  <section class="section">
+    <div class="container editorial-content">
+      <h1>Editorial Policy</h1>
+      <p class="editorial-lead">How we research, write, and maintain content on BanffBound.</p>
+
+      <h2>How we create content</h2>
+      <p>BanffBound's travel guides are built from a combination of on-the-ground experience in Banff National Park, official data from Parks Canada, and research from verified local sources. Our trail database uses GPS coordinates, measured distances, and elevation data cross-referenced with Parks Canada trail records. Hotel information is compiled from published rates, guest reviews, and direct property research.</p>
+      <p>Some content on this site is assisted by AI tools, which we then review, fact-check, and edit for accuracy. We believe in being upfront about this. AI helps us cover more ground; human judgement and local knowledge ensure it's actually correct and useful.</p>
+
+      <h2>How we make money</h2>
+      <p>BanffBound contains affiliate links to <strong>Expedia</strong> and <strong>GetYourGuide</strong>. When you book a hotel or tour through these links, we earn a commission at no extra cost to you. This is how we fund the site, keep the tools free, and maintain our data.</p>
+      <p>Affiliate relationships never influence our editorial decisions. We don't rank hotels higher because they pay more commission. We don't recommend tours we wouldn't do ourselves. If something isn't good, we don't feature it.</p>
+
+      <h2>Accuracy and corrections</h2>
+      <p>Prices, trail conditions, and operating hours change. We do our best to keep information current, but we can't guarantee everything is accurate at the moment you read it. We display publication and last-updated dates on every guide so you can judge freshness.</p>
+      <p>If you find an error — a wrong price, an outdated trail condition, a closed restaurant — please <a href="/contact">let us know</a>. We take corrections seriously and update content promptly.</p>
+
+      <h2>What we don't do</h2>
+      <ul>
+        <li>We don't accept payment for positive reviews or favourable placement</li>
+        <li>We don't publish sponsored content disguised as editorial</li>
+        <li>We don't scrape or copy content from other travel sites</li>
+        <li>We don't fabricate trip reports, reviews, or testimonials</li>
+      </ul>
+
+      <h2>About the author</h2>
+      <p>BanffBound is created and maintained by <a href="/about">Jack Chittenden</a>, an ultra runner, Ironman triathlete, and mountain sports enthusiast who has visited Banff across multiple seasons. Jack also works in digital marketing through <a href="https://jack.me.uk" target="_blank" rel="noopener">Spires Digital</a>, bringing both outdoor experience and technical expertise to the site.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .editorial-content { max-width: 720px; }
+  .editorial-content h1 { margin-bottom: 0.5rem; }
+  .editorial-lead { font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 2.5rem; }
+  .editorial-content h2 { margin: 2.5rem 0 1rem; font-size: 1.4rem; }
+  .editorial-content p { line-height: 1.8; margin-bottom: 1rem; }
+  .editorial-content a { color: var(--color-primary); text-decoration: underline; }
+  .editorial-content ul { margin: 1rem 0 1.5rem 1.5rem; line-height: 1.8; }
+  .editorial-content li { margin-bottom: 0.5rem; }
+</style>

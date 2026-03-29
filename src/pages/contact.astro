@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Contact BanffBound" description="Get in touch with BanffBound. Questions about Banff, corrections, partnership enquiries, or just want to say hello.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Contact' }]} />
+  </div>
+
+  <section class="section">
+    <div class="container contact-content">
+      <h1>Get in Touch</h1>
+      <p class="contact-lead">Got a question about Banff? Spotted something wrong in a guide? Want to work together? I'd love to hear from you.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>General Questions</h3>
+          <p>Questions about trip planning, trail conditions, or anything Banff-related. I'll do my best to help or point you in the right direction.</p>
+          <a href="mailto:hello@banffbound.com" class="btn">hello@banffbound.com</a>
+        </div>
+        <div class="contact-card">
+          <h3>Corrections & Updates</h3>
+          <p>Found outdated info, a wrong price, or a trail that's changed? Let me know and I'll update it. Accuracy matters.</p>
+          <a href="mailto:hello@banffbound.com?subject=Correction" class="btn btn-outline">Report a Correction</a>
+        </div>
+        <div class="contact-card">
+          <h3>Partnerships</h3>
+          <p>Local businesses, tourism boards, and tour operators — if you're based in Banff and want to be featured or updated on the site, reach out.</p>
+          <a href="mailto:hello@banffbound.com?subject=Partnership" class="btn btn-outline">Partnership Enquiry</a>
+        </div>
+      </div>
+
+      <div class="contact-person">
+        <div class="contact-avatar">JC</div>
+        <div>
+          <p><strong>Jack Chittenden</strong> — Creator of BanffBound</p>
+          <p class="contact-bio">Ultra runner, Ironman triathlete, and the person who reads every email this site gets. <a href="/about">More about me</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-content { max-width: 800px; }
+  .contact-content h1 { margin-bottom: 0.5rem; }
+  .contact-lead { font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 2.5rem; }
+
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+  .contact-card {
+    background: var(--color-bg-alt); border-radius: var(--radius); padding: 1.5rem;
+  }
+  .contact-card h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .contact-card p { font-size: 0.9rem; line-height: 1.6; color: var(--color-text); margin-bottom: 1rem; }
+
+  .contact-person {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 2rem; background: var(--color-bg-alt); border-radius: var(--radius);
+  }
+  .contact-avatar {
+    width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0;
+    background: var(--color-primary); color: var(--color-white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: 700; font-family: var(--font-heading);
+  }
+  .contact-person p { margin: 0; line-height: 1.6; }
+  .contact-bio { font-size: 0.9rem; color: var(--color-text-light); margin-top: 0.25rem !important; }
+  .contact-bio a { color: var(--color-primary); text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-person { flex-direction: column; text-align: center; }
+  }
+</style>

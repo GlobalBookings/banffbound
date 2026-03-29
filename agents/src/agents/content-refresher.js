@@ -270,22 +270,24 @@ YOUR TASK — Refresh this content while keeping the same overall structure and 
    - New sections with updated tips
    - Expanded details on existing sections
    - Fresh practical information for ${currentYear}
-4. AFFILIATE LINKS — Ensure these appear EARLY (after 1st-2nd <h2>) AND at the end:
+4. VOICE & STYLE — This is critical for quality:
+   - Write from first-person where natural ("I recommend", "When I last hiked this", "My go-to spot")
+   - The author is Jack Chittenden, an ultra runner, Ironman triathlete, and skier who visits Banff regularly
+   - Be direct and specific. Say "The parking lot fills by 7:30 AM in July" not "it can get busy"
+   - REMOVE these AI cliches wherever they appear: "nestled in the heart", "whether you're seeking", "unforgettable experience", "hidden gem", "breathtaking", "world-class" (unless literally true), "pristine", "look no further", "memories that last a lifetime"
+   - Replace vague superlatives with specific details
+5. AFFILIATE LINKS — Keep existing ones. Ensure Expedia and GetYourGuide links appear naturally:
    - Expedia: <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>
    - GetYourGuide: <a href="${GYG_LINK}" target="_blank" rel="noopener sponsored">GetYourGuide</a>
-   - Weave them in naturally (e.g. "Compare hotel rates on Expedia" or "Browse guided tours on GetYourGuide")
-5. INTERNAL LINKS — Ensure 2-4 internal links to other BanffBound pages exist. Keep existing ones, add more if needed:
+6. INTERNAL LINKS — Ensure 2-4 internal links to other BanffBound pages exist. Keep existing ones, add more if needed:
    - Hotel directory: <a href="/hotel-directory">Compare 95+ Banff hotels</a>
-   - Tours page: <a href="/tours">Browse Banff tours</a>
    - Hiking guide: <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>
-   - Lake Louise guide: <a href="/blog/lake-louise-complete-guide">Lake Louise guide</a>
    - Where to stay: <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a>
    - 3-day itinerary: <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>
    - Food guide: <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>
-   - Activities: <a href="/activities">Banff activities</a>
-6. KEEP all existing internal links intact
-7. All year references MUST say ${currentYear} or ${currentYear + 1}. NEVER reference past years as current.
-8. Include practical details: prices in CAD, distances in km, real names
+7. KEEP all existing internal links intact
+8. All year references MUST say ${currentYear} or ${currentYear + 1}. NEVER reference past years as current.
+9. Include practical details: prices in CAD, distances in km, real names
 
 CRITICAL: Return ONLY the refreshed HTML content. No markdown, no code fences, no preamble. Start with <p> and end with </p>.`;
 

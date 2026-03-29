@@ -299,31 +299,33 @@ TARGET KEYWORD: "${topic.query}"
 RELATED SEARCHES TO NATURALLY INCORPORATE:
 ${queryContext}
 
+AUTHOR CONTEXT: The author is Jack Chittenden, an ultra runner, Ironman triathlete, and keen skier who visits Banff regularly. Write as if Jack is sharing personal knowledge and recommendations.
+
 REQUIREMENTS:
 1. Write 1200-1800 words of genuinely helpful, accurate content about Banff National Park
 2. Use HTML formatting: <h2>, <h3>, <p>, <ul>/<li>, <strong>, <em>
-3. Start with an engaging intro paragraph (no <h1>, the page template adds it)
+3. Start with a direct, engaging intro paragraph (no <h1>, the page template adds it)
 4. Include 4-6 <h2> sections with detailed, practical information
 5. Include a <div class="tip-box"><strong>Pro Tip:</strong> ...</div> somewhere in the article
-6. IMPORTANT — Include affiliate links EARLY and CONTEXTUALLY, not just at the end:
-   - After the first or second <h2>, include a natural contextual CTA linking to Expedia or GetYourGuide where it fits the content (e.g. "Compare hotel rates on <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>" when discussing accommodation, or "Browse guided tours on <a href="${GYG_LINK}" target="_blank" rel="noopener sponsored">GetYourGuide</a>" when discussing activities)
-   - Also end with a closing paragraph that includes both affiliate links
+6. Include affiliate links naturally where relevant:
    - Expedia: <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>
    - GetYourGuide: <a href="${GYG_LINK}" target="_blank" rel="noopener sponsored">GetYourGuide</a>
-7. IMPORTANT — Include INTERNAL LINKS to relevant BanffBound pages. Use 2-4 of these where they naturally fit the content:
+7. Include 2-4 INTERNAL LINKS to relevant BanffBound pages where they naturally fit:
    - Hotel directory: <a href="/hotel-directory">Compare 95+ Banff hotels</a>
-   - Tours page: <a href="/tours">Browse Banff tours</a>
    - Hiking guide: <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>
-   - Lake Louise guide: <a href="/blog/lake-louise-complete-guide">Lake Louise guide</a>
    - Where to stay: <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a>
    - 3-day itinerary: <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>
    - Food guide: <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>
-   - Activities: <a href="/activities">Banff activities</a>
 8. All information must be accurate for Banff, Alberta, Canada (NOT Banff, Scotland)
-9. Include practical details: prices in CAD, distances in km, specific trail names, real restaurant names, etc.
+9. Include practical details: prices in CAD, distances in km, specific trail names, real restaurant names
 10. Mention Parks Canada where relevant
-11. Write in a friendly, authoritative tone -- like a local sharing insider knowledge
-12. CRITICAL: This is ${currentYear}. Any year references MUST say ${currentYear} or ${currentYear + 1}. NEVER reference 2024 or any past year as if it is current. If mentioning prices, seasons, or events, frame them for ${currentYear}.
+11. VOICE & STYLE — Critical:
+   - Write in first person where natural ("I recommend", "My favourite spot", "When I last visited")
+   - Be specific and direct. Say "arrive before 7 AM or you won't get parking" not "consider arriving early"
+   - NEVER use these phrases: "nestled in the heart", "whether you're seeking", "unforgettable experience", "hidden gem", "breathtaking views", "look no further", "memories that last a lifetime", "without breaking the bank", "pristine wilderness"
+   - Avoid stacking superlatives. One per paragraph maximum.
+   - If you don't know something specific, be honest rather than vague
+12. CRITICAL: This is ${currentYear}. Any year references MUST say ${currentYear} or ${currentYear + 1}. NEVER reference 2024 or any past year as current.
 13. Where relevant, reference the current season (it is ${currentMonth} ${currentYear})
 
 CRITICAL: Return ONLY the HTML content, no markdown, no code fences, no preamble. Start with <p> and end with </p>.`;

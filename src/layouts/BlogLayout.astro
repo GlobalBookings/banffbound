@@ -29,7 +29,12 @@ const articleSchema = {
   image,
   datePublished: isoDate,
   dateModified: isoModified,
-  author: { '@type': 'Organization', name: 'BanffBound' },
+  author: {
+    '@type': 'Person',
+    name: 'Jack Chittenden',
+    url: 'https://banffbound.com/about',
+    sameAs: ['https://jack.me.uk', 'https://linkedin.com/in/jackchittenden'],
+  },
   publisher: {
     '@type': 'Organization',
     name: 'BanffBound',
@@ -54,6 +59,8 @@ const articleSchema = {
         <span class="badge">{category}</span>
         <h1>{title}</h1>
         <div class="article-meta">
+          <a href="/about" class="author-link">Jack Chittenden</a>
+          <span>&middot;</span>
           <time datetime={isoDate}>{formattedDate}</time>
           <span>&middot;</span>
           <span>{readTime}</span>
@@ -176,6 +183,13 @@ const articleSchema = {
     gap: 0.5rem;
     font-size: 0.9rem;
     opacity: 0.8;
+  }
+
+  .article-meta :global(.author-link) {
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 500;
   }
 
   .article-body {
