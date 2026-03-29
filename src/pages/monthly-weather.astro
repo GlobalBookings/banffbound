@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const months = [
+  { name: 'January', avgHigh: -5, avgLow: -15, precip: 25, snow: 26, daylight: '8h 10m', crowd: 'Low', vibe: 'Deep winter. Skiing, ice walks, northern lights. Cold but magical.', pack: 'Heavy parka, thermal layers, insulated boots, hand warmers', bestFor: ['Skiing at Sunshine/Lake Louise/Norquay', 'Johnston Canyon Ice Walk', 'Hot springs soak', 'Northern lights hunting'] },
+  { name: 'February', avgHigh: -2, avgLow: -13, precip: 20, snow: 21, daylight: '9h 40m', crowd: 'Low', vibe: 'Still winter but days are getting longer. Family Day long weekend is busy.', pack: 'Heavy parka, thermals, insulated boots, ski gear', bestFor: ['Skiing (best snow month)', 'Dog sledding', 'Ice skating at Lake Louise', 'Snowshoeing'] },
+  { name: 'March', avgHigh: 2, avgLow: -10, precip: 22, snow: 24, daylight: '11h 50m', crowd: 'Medium', vibe: 'Spring skiing starts. Warmer days but still very cold nights. Shoulder season pricing.', pack: 'Warm layers, waterproof jacket, sunglasses (snow glare)', bestFor: ['Spring skiing', 'Ice walks (last chance)', 'Snowshoeing', 'Photography (dramatic light)'] },
+  { name: 'April', avgHigh: 7, avgLow: -4, precip: 27, snow: 20, daylight: '13h 50m', crowd: 'Low', vibe: 'Awkward shoulder season. Ski resorts closing. Trails muddy. Best hotel deals of the year.', pack: 'Layers, waterproof boots, rain jacket', bestFor: ['Hotel deals (cheapest month)', 'Banff Gondola', 'Town exploration', 'Bear watching (they emerge from hibernation)'] },
+  { name: 'May', avgHigh: 13, avgLow: 1, precip: 48, snow: 10, daylight: '15h 40m', crowd: 'Medium', vibe: 'Spring arrives. Valley trails clear. High trails still snow-covered. Waterfalls at peak flow.', pack: 'Layers, rain gear, waterproof hiking boots, bug spray', bestFor: ['Waterfall viewing (peak flow)', 'Valley hikes (Fenland, Sundance, Bow Falls)', 'Bear viewing on Bow Valley Parkway', 'Shoulder-season pricing'] },
+  { name: 'June', avgHigh: 17, avgLow: 5, precip: 60, snow: 2, daylight: '16h 30m', crowd: 'High', vibe: 'Summer begins. Most trails open. Wildflowers start. Longest days. Moraine Lake opens (~June 1).', pack: 'Layers, rain jacket, sun protection, bear spray, bug spray', bestFor: ['Moraine Lake (opens June 1)', 'Long daylight for hiking', 'Wildflower meadows', 'Canoeing at Lake Louise'] },
+  { name: 'July', avgHigh: 22, avgLow: 7, precip: 50, snow: 0, daylight: '16h 10m', crowd: 'Very High', vibe: 'Peak season. Everything open. Warmest month. Most crowded. Book everything months ahead.', pack: 'T-shirts + warm layer, rain jacket, sun hat, bear spray, bug spray', bestFor: ['All alpine trails open', 'Swimming at Johnson Lake', 'Whitewater rafting', 'All tours and activities available'] },
+  { name: 'August', avgHigh: 21, avgLow: 6, precip: 48, snow: 0, daylight: '14h 50m', crowd: 'Very High', vibe: 'Still peak season. Slightly cooler evenings. Wildfire smoke possible. Book ahead.', pack: 'Same as July, plus N95 mask (smoke days)', bestFor: ['Alpine hiking', 'Icefields Parkway', 'Lake canoeing', 'Stargazing (dark skies return)'] },
+  { name: 'September', avgHigh: 16, avgLow: 2, precip: 40, snow: 5, daylight: '12h 40m', crowd: 'High', vibe: 'Larch season (mid-Sep). Crowds spike for golden larches then drop off. Best hiking month.', pack: 'Warm layers, rain/wind jacket, warm hat + gloves, bear spray', bestFor: ['Larch Valley (peak Sep 18-25)', 'Photography (best light of the year)', 'Elk rut viewing', 'Hiking with cooler temps and fewer bugs'] },
+  { name: 'October', avgHigh: 9, avgLow: -3, precip: 22, snow: 15, daylight: '10h 50m', crowd: 'Low', vibe: 'Late fall. Moraine Lake closes mid-Oct. First snow on peaks. Quiet trails. Great deals.', pack: 'Warm layers, winter jacket, waterproof boots, gloves', bestFor: ['Quiet hiking (crowds gone)', 'Hotel deals', 'Elk rut (early Oct)', 'Atmospheric fall photography'] },
+  { name: 'November', avgHigh: 0, avgLow: -10, precip: 20, snow: 22, daylight: '8h 50m', crowd: 'Very Low', vibe: 'Early winter. Ski resorts opening. Most trails snow-covered. Town is quiet. Cheapest accommodation.', pack: 'Full winter gear, thermal layers, insulated boots', bestFor: ['Early-season skiing (Norquay opens first)', 'Hot springs', 'Cheapest hotel rates', 'Christmas market prep'] },
+  { name: 'December', avgHigh: -4, avgLow: -14, precip: 25, snow: 28, daylight: '7h 50m', crowd: 'Medium', vibe: 'Holiday season. Christmas lights on Banff Ave. Ski season in full swing. Magical atmosphere.', pack: 'Heavy parka, thermals, insulated boots, hand warmers, ski gear', bestFor: ['Skiing all three resorts', 'Christmas in the Rockies', 'Ice skating at Lake Louise', 'Northern lights (long dark nights)'] },
+];
+---
+
+<BaseLayout title="Banff Weather by Month — Best Time to Visit in 2026" description="Month-by-month Banff weather guide with average temperatures, snowfall, crowd levels, what to pack, and the best activities for each month of 2026.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What is the best month to visit Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The best month to visit Banff depends on what you want to do. For hiking: September (fewer crowds, golden larches, cool temps). For skiing: February (best snow). For budget travel: April or November (cheapest hotels). For everything open: July (warmest, longest days, but most crowded). For photography: September-October (best light, fall colours). For a balance of good weather and moderate crowds: June or September.' } },
+      { '@type': 'Question', name: 'What is the weather like in Banff in July?', acceptedAnswer: { '@type': 'Answer', text: 'July in Banff averages 22°C (72°F) high and 7°C (45°F) low with about 50mm of rain. It is the warmest and driest month. Expect 16+ hours of daylight. Afternoon thunderstorms are common but brief. Evenings are cool — always bring a warm layer. July is peak tourist season with very high crowds.' } },
+      { '@type': 'Question', name: 'What is the weather like in Banff in May?', acceptedAnswer: { '@type': 'Answer', text: 'May in Banff averages 13°C (55°F) high and 1°C (34°F) low. It is a transitional month — valley trails are clearing of snow but alpine trails above 2000m are still buried. Waterfalls are at peak flow from snowmelt. Rain is common (48mm average). Crowds are moderate and hotel prices are lower than summer. Pack layers and waterproof gear.' } },
+      { '@type': 'Question', name: 'Does it snow in Banff in September?', acceptedAnswer: { '@type': 'Answer', text: 'It can snow in Banff in September, especially at higher elevations. Average snowfall is 5cm, usually as brief dustings above 2000m. Valley temperatures average 16°C high / 2°C low. September is excellent for hiking — cooler temperatures, fewer bugs, and the famous larch season peaks mid-to-late September. Always pack warm layers and be prepared for sudden weather changes.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Monthly Weather' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff through the seasons" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Month by Month</span>
+      <h1>Banff Weather Guide</h1>
+      <p>Temperatures, snowfall, crowd levels, what to pack, and the best activities — every month of the year.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="months-grid">
+        {months.map(m => {
+          const crowdColor = m.crowd === 'Very High' ? '#dc2626' : m.crowd === 'High' ? '#ea580c' : m.crowd === 'Medium' ? '#d97706' : m.crowd === 'Low' ? '#16a34a' : '#22c55e';
+          return (
+            <div class="month-card" id={m.name.toLowerCase()}>
+              <div class="month-header">
+                <h2>{m.name}</h2>
+                <span class="crowd-badge" style={`color:${crowdColor};`}>{m.crowd} Crowds</span>
+              </div>
+              <div class="month-stats">
+                <div class="stat"><span class="stat-label">High</span><span class="stat-val">{m.avgHigh}°C</span></div>
+                <div class="stat"><span class="stat-label">Low</span><span class="stat-val">{m.avgLow}°C</span></div>
+                <div class="stat"><span class="stat-label">Rain</span><span class="stat-val">{m.precip}mm</span></div>
+                <div class="stat"><span class="stat-label">Snow</span><span class="stat-val">{m.snow}cm</span></div>
+                <div class="stat"><span class="stat-label">Daylight</span><span class="stat-val">{m.daylight}</span></div>
+              </div>
+              <p class="month-vibe">{m.vibe}</p>
+              <div class="month-best">
+                <strong>Best for:</strong>
+                <ul>{m.bestFor.map(b => <li>{b}</li>)}</ul>
+              </div>
+              <div class="month-pack">
+                <strong>Pack:</strong> {m.pack}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .months-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+  .month-card { background: var(--color-white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+  .month-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .month-header h2 { font-size: 1.4rem; }
+  .crowd-badge { font-size: 0.8rem; font-weight: 700; }
+
+  .month-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .stat { display: flex; flex-direction: column; gap: 0.1rem; }
+  .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
+  .stat-val { font-size: 1.1rem; font-weight: 700; color: var(--color-primary); }
+
+  .month-vibe { font-size: 0.95rem; color: var(--color-text); line-height: 1.5; margin-bottom: 1rem; font-style: italic; }
+  .month-best { margin-bottom: 0.75rem; }
+  .month-best strong { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
+  .month-best ul { list-style: none; padding: 0; margin: 0.3rem 0 0; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .month-best li { font-size: 0.82rem; background: var(--color-bg-alt); padding: 0.2rem 0.6rem; border-radius: 4px; }
+  .month-pack { font-size: 0.85rem; color: var(--color-text-light); }
+  .month-pack strong { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
+</style>

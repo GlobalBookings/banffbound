@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Banff Park Pass 2026 — Do I Need One? Prices, Where to Buy" description="Everything about the Banff National Park pass for 2026. Daily and annual prices, where to buy, who needs one, and how to save money with the Discovery Pass.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Do I need a park pass for Banff National Park?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Everyone entering Banff National Park needs a valid Parks Canada pass. This applies whether you are driving through, hiking, stopping at viewpoints, or just visiting the Town of Banff. The pass covers your vehicle and all passengers. You also need a pass for the Icefields Parkway, Lake Louise, Moraine Lake, and Johnston Canyon — they are all inside the park.' } },
+      { '@type': 'Question', name: 'How much is a Banff National Park pass in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'A Banff daily pass costs $11.00 per adult, $9.50 per senior (65+), $5.50 per youth (6-17), and free for children under 6. A family/group pass is $22.00/day (up to 7 people in one vehicle). The Discovery Pass (annual) costs $75.25 per adult or $151.00 per family/group and covers unlimited entry to all Parks Canada sites for 12 months.' } },
+      { '@type': 'Question', name: 'Where do I buy a Banff park pass?', acceptedAnswer: { '@type': 'Answer', text: 'You can buy a park pass at: (1) The East Gate entrance booth on Highway 1 from Calgary (open 24/7 in summer), (2) Online at parks.canada.ca before your trip, (3) Banff Visitor Centre on Banff Avenue, (4) Lake Louise Visitor Centre. Buying online in advance saves time at the gate — summer lineups can be 30+ minutes.' } },
+      { '@type': 'Question', name: 'Do I need a park pass for the Icefields Parkway?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The entire Icefields Parkway (Highway 93 North) from Lake Louise to Jasper runs through Banff and Jasper National Parks. You need a valid Parks Canada pass for the entire drive. One pass covers both parks on the same day.' } },
+      { '@type': 'Question', name: 'Is the Discovery Pass worth it?', acceptedAnswer: { '@type': 'Answer', text: 'The Discovery Pass ($75.25/adult, $151/family) pays for itself in 7 days of visits. If you are visiting Banff for a week or plan to visit any other Parks Canada site within 12 months (Jasper, Waterton, Pacific Rim, etc.), the Discovery Pass is the better deal. It also covers entry to national historic sites like Cave and Basin.' } },
+      { '@type': 'Question', name: 'Do I need a park pass to drive through Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Even if you are just driving Highway 1 through Banff National Park without stopping, you still need a valid pass. There is no "transit corridor" exemption. The park gates on Highway 1 eastbound (near Canmore) and westbound (near Lake Louise/Golden) check for passes.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Park Pass Guide' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff National Park entrance" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">2026 Prices</span>
+      <h1>Banff Park Pass Guide</h1>
+      <p>Do you need one? How much? Where to buy? Everything about the Parks Canada pass.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Quick Answer -->
+      <div class="quick-answer">
+        <h2>Do I Need a Park Pass?</h2>
+        <p class="answer-big">Yes. Everyone entering Banff National Park needs a valid Parks Canada pass — no exceptions.</p>
+        <p>This includes driving through on Highway 1, visiting the Town of Banff, hiking any trail, driving to Lake Louise or Moraine Lake, and driving the Icefields Parkway. One pass covers your vehicle and all passengers.</p>
+      </div>
+
+      <!-- Pricing -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>2026 Prices</h2>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Daily Pass</h3>
+          <div class="price-table">
+            <div class="price-row"><span>Adult (18-64)</span><strong>$11.00</strong></div>
+            <div class="price-row"><span>Senior (65+)</span><strong>$9.50</strong></div>
+            <div class="price-row"><span>Youth (6-17)</span><strong>$5.50</strong></div>
+            <div class="price-row"><span>Child (under 6)</span><strong>Free</strong></div>
+            <div class="price-row highlight"><span>Family / Group (up to 7 in one vehicle)</span><strong>$22.00</strong></div>
+          </div>
+          <p class="price-note">Valid for the calendar day of purchase until 4:00 PM the following day.</p>
+        </div>
+
+        <div class="price-card price-recommended">
+          <div class="recommended-badge">Best Value</div>
+          <h3>Discovery Pass (Annual)</h3>
+          <div class="price-table">
+            <div class="price-row"><span>Adult</span><strong>$75.25</strong></div>
+            <div class="price-row"><span>Senior</span><strong>$65.25</strong></div>
+            <div class="price-row"><span>Youth</span><strong>Free</strong></div>
+            <div class="price-row highlight"><span>Family / Group</span><strong>$151.00</strong></div>
+          </div>
+          <p class="price-note">Valid for 12 months from purchase. Covers ALL Parks Canada national parks and national historic sites across Canada.</p>
+          <p class="price-math"><strong>Pays for itself in just 7 days</strong> ($11/day × 7 = $77 > $75.25)</p>
+        </div>
+      </div>
+
+      <!-- Where to Buy -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Where to Buy</h2>
+      </div>
+
+      <div class="buy-grid">
+        <div class="buy-card">
+          <span class="buy-icon">💻</span>
+          <h3>Online (Recommended)</h3>
+          <p>Buy at <a href="https://parks.canada.ca/pn-np/ab/banff/visit/pass" target="_blank" rel="noopener">parks.canada.ca</a> before your trip. Print or save to phone. Skip the gate lineup.</p>
+          <span class="buy-tag">Saves 30+ min in summer</span>
+        </div>
+        <div class="buy-card">
+          <span class="buy-icon">🚗</span>
+          <h3>East Gate (Highway 1)</h3>
+          <p>Entrance booth on Highway 1 from Calgary. Open 24/7 in summer, reduced hours in winter. Cash and card accepted.</p>
+          <span class="buy-tag">Expect 15-45 min wait in summer</span>
+        </div>
+        <div class="buy-card">
+          <span class="buy-icon">ℹ️</span>
+          <h3>Visitor Centres</h3>
+          <p>Banff Visitor Centre (224 Banff Ave) or Lake Louise Visitor Centre. Also sell Discovery Passes and backcountry permits.</p>
+        </div>
+      </div>
+
+      <!-- Common Questions -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Common Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do I need a pass to ski at Sunshine, Lake Louise, or Norquay?</summary>
+          <p>Yes. All three ski resorts are inside Banff National Park. You need a valid park pass to drive to any of them.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does my pass cover Jasper too?</summary>
+          <p>A daily pass covers one park. If you drive the Icefields Parkway from Banff to Jasper, one daily pass covers both parks on the same day. The Discovery Pass covers all parks, always.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I use the pass at other national parks?</summary>
+          <p>Daily passes are only valid at the park where purchased. The Discovery Pass works at ALL 48 national parks and 171 national historic sites in Canada.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there a free day?</summary>
+          <p>Parks Canada offers free admission on Canada Day (July 1). Other occasional free days are announced on the Parks Canada website.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need a pass for Canmore?</summary>
+          <p>No. Canmore is outside Banff National Park. You do not need a pass to visit Canmore, Kananaskis, or any town on the east side of the park gates.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How to pronounce "Banff"?</summary>
+          <p>It rhymes with "can't" not "calm." Say it: <strong>BAMF</strong> (like "bam" + "f"). Not "bonf" or "bahnf."</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .quick-answer { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; text-align: center; }
+  .quick-answer h2 { color: var(--color-white); margin-bottom: 1rem; }
+  .answer-big { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .quick-answer p { font-size: 0.95rem; color: var(--color-accent-light); max-width: 700px; margin: 0 auto; line-height: 1.6; }
+
+  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .price-card { background: var(--color-white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); position: relative; }
+  .price-recommended { border: 2px solid var(--color-accent); }
+  .recommended-badge { position: absolute; top: -0.7rem; right: 1.5rem; background: var(--color-accent); color: var(--color-white); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.2rem 0.7rem; border-radius: 4px; }
+  .price-card h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+  .price-table { display: flex; flex-direction: column; gap: 0; }
+  .price-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.9rem; }
+  .price-row.highlight { background: #f0f7f4; margin: 0 -0.5rem; padding: 0.6rem 0.5rem; border-radius: 4px; }
+  .price-row strong { color: var(--color-primary); font-size: 1.05rem; }
+  .price-note { font-size: 0.82rem; color: var(--color-text-light); margin-top: 1rem; line-height: 1.4; }
+  .price-math { font-size: 0.85rem; color: var(--color-accent); margin-top: 0.5rem; }
+
+  .buy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .buy-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .buy-icon { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
+  .buy-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .buy-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.5; }
+  .buy-card a { color: var(--color-accent); font-weight: 600; }
+  .buy-tag { display: inline-block; margin-top: 0.75rem; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--color-primary); background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: 4px; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) { .price-grid, .buy-grid { grid-template-columns: 1fr; } }
+</style>

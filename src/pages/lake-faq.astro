@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const lakes = [
+  { name: 'Lake Louise', frozen: 'Late November to mid-June', swim: false, swimNote: 'Water temperature is 1-4°C even in August. Hypothermia risk in under 5 minutes. People canoe here — they do not swim.', blueReason: 'Rock flour from Victoria Glacier', canoe: true, canoeNote: '$135/hour from Fairmont Chateau boathouse', access: 'Vehicle or shuttle year-round. Parking fills by 7 AM in summer.' },
+  { name: 'Moraine Lake', frozen: 'Late October to late June', swim: false, swimNote: 'Even colder than Lake Louise (1-3°C). The lake is fed directly by glacial meltwater. Swimming would be dangerous.', blueReason: 'Rock flour from Wenkchemna Glacier', canoe: true, canoeNote: '$120/hour from Moraine Lake Lodge dock', access: 'Shuttle only June-October. Road closed in winter.' },
+  { name: 'Peyto Lake', frozen: 'November to June', swim: false, swimNote: 'No swimming access. The lake is viewed from a platform 250m above. No trail to the lakeshore.', blueReason: 'Rock flour from Peyto Glacier (highest concentration of any Rockies lake)', canoe: false, access: 'Icefields Parkway, 15-min walk from parking.' },
+  { name: 'Lake Minnewanka', frozen: 'December to April', swim: true, swimNote: 'Legal to swim but extremely cold (8-12°C in August). Only for experienced cold-water swimmers. No lifeguards, no designated swim area.', blueReason: 'Deep lake (142m) + dissolved minerals', canoe: false, canoeNote: 'Boat tours available. No canoe rental on-site.', access: 'Vehicle year-round, 15 min from Banff.' },
+  { name: 'Johnson Lake', frozen: 'December to March', swim: true, swimNote: 'The warmest swimmable lake near Banff (up to 18°C in August). Shallow sandy beach. Locals swim here. No lifeguards.', blueReason: 'Shallow depth and sandy bottom (not turquoise)', canoe: false, access: 'Vehicle, off Lake Minnewanka Road.' },
+  { name: 'Bow Lake', frozen: 'November to June', swim: false, swimNote: 'Glacial fed, 2-4°C. Not a swimming lake. Beautiful for photography.', blueReason: 'Rock flour from Bow Glacier', canoe: false, access: 'Icefields Parkway, roadside parking.' },
+  { name: 'Vermilion Lakes', frozen: 'December to March', swim: false, swimNote: 'Shallow marshland, not suitable for swimming. Important wildlife habitat.', blueReason: 'Not blue — brown/green marshland', canoe: true, canoeNote: 'Bring your own. Calm, flat water ideal for beginners.', access: 'Vehicle, 5 min from Banff.' },
+];
+---
+
+<BaseLayout title="Banff Lakes FAQ — Frozen Status, Swimming, Why They're Blue" description="Can I swim in Lake Louise? Is Moraine Lake frozen? Why are the lakes so blue? Every question about Banff's famous lakes answered with science and local knowledge.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Why are the lakes in Banff so blue?', acceptedAnswer: { '@type': 'Answer', text: 'The turquoise colour of Banff\'s lakes (Lake Louise, Moraine Lake, Peyto Lake, Bow Lake) comes from rock flour — microscopic particles of glacial sediment suspended in the water. As glaciers grind against bedrock, they produce this fine powder which is carried into the lakes by meltwater. The particles are the perfect size to scatter blue and green wavelengths of sunlight, creating the intense turquoise colour. The effect is strongest in July-August when glacial melt is at its peak, which is why the lakes look more vivid in summer than in spring.' } },
+      { '@type': 'Question', name: 'Can I swim in Lake Louise?', acceptedAnswer: { '@type': 'Answer', text: 'No, swimming in Lake Louise is not recommended and is dangerous. The water temperature is 1-4°C (34-39°F) even at the peak of summer because it is fed directly by glacial meltwater from Victoria Glacier. Hypothermia can set in within 5 minutes. People canoe on Lake Louise — they do not swim in it. If you want to swim in a lake near Banff, Johnson Lake is the only reasonably warm option (up to 18°C in August).' } },
+      { '@type': 'Question', name: 'Is Lake Louise frozen right now?', acceptedAnswer: { '@type': 'Answer', text: 'Lake Louise typically freezes from late November to mid-June. During winter, the ice is thick enough for ice skating (the Fairmont maintains a rink on the lake), ice walking, and even horse-drawn sleigh rides. The ice begins to break up in May-June. By late June / early July, the lake is fully thawed and the turquoise colour returns. Check Parks Canada or the Fairmont Lake Louise website for current conditions.' } },
+      { '@type': 'Question', name: 'Can I swim in Moraine Lake?', acceptedAnswer: { '@type': 'Answer', text: 'No. Moraine Lake water is 1-3°C (34-37°F) year-round due to direct glacial meltwater feeding. Swimming would be extremely dangerous due to hypothermia risk. You can canoe on Moraine Lake ($120/hour from the lodge dock). The only lake near Banff warm enough for swimming is Johnson Lake, which reaches up to 18°C in August.' } },
+      { '@type': 'Question', name: 'Is Moraine Lake open right now?', acceptedAnswer: { '@type': 'Answer', text: 'Moraine Lake is typically accessible from June 1 to mid-October, depending on snow and avalanche conditions. The road is closed from mid-October through May. Since 2023, private vehicles are banned — you must take the Parks Canada shuttle (reservations required, open April 15). In winter, the lake is frozen and inaccessible. Check Parks Canada for the current status of Moraine Lake Road.' } },
+      { '@type': 'Question', name: 'What makes Moraine Lake so blue?', acceptedAnswer: { '@type': 'Answer', text: 'Moraine Lake gets its intense turquoise colour from rock flour — glacial sediment from the Wenkchemna Glacier that is so fine it stays suspended in the water. These microscopic particles scatter blue-green light wavelengths, creating the vivid colour. The lake is bluest in July-August when glacial meltwater peaks. In early June (when the road opens), the lake may still have ice and appears less vivid. By mid-July, the colour is at its most intense.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Lake FAQ' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Turquoise lake in Banff" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Science & Facts</span>
+      <h1>Banff Lakes FAQ</h1>
+      <p>Frozen status, swimming safety, why they're blue, and everything else you need to know.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Why Blue -->
+      <div class="science-card">
+        <h2>Why Are Banff's Lakes So Blue?</h2>
+        <div class="science-content">
+          <p>Short answer: <strong>rock flour</strong> — microscopic particles of glacial sediment.</p>
+          <p>As glaciers grind slowly against bedrock, they produce an incredibly fine powder (rock flour) that washes into the lakes via meltwater streams. These particles are the perfect size (0.002-0.05mm) to scatter blue and green wavelengths of sunlight while absorbing red wavelengths. The result is the intense turquoise colour.</p>
+          <p><strong>Why some lakes are bluer than others:</strong> The concentration of rock flour varies. Peyto Lake has the highest concentration (fed by Peyto Glacier) and appears the most vivid. Lake Louise and Moraine Lake are fed by smaller glaciers and are slightly less saturated. Johnson Lake has no glacial input and appears green-brown.</p>
+          <p><strong>Why the colour changes by season:</strong> Glacial melt peaks in July-August, flooding the lakes with fresh rock flour and producing the most intense colour. In early June the lakes may still be partially frozen and less vivid. By October, melt slows and the colour fades slightly.</p>
+        </div>
+      </div>
+
+      <!-- Lake Cards -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Lake-by-Lake Guide</h2>
+      </div>
+
+      <div class="lakes-grid">
+        {lakes.map(lake => (
+          <div class="lake-card">
+            <h3>{lake.name}</h3>
+            <div class="lake-facts">
+              <div class="lake-fact">
+                <span class="fact-label">Frozen</span>
+                <span class="fact-val">{lake.frozen}</span>
+              </div>
+              <div class="lake-fact">
+                <span class="fact-label">Swimming</span>
+                <span class={`fact-val ${lake.swim ? 'fact-yes' : 'fact-no'}`}>{lake.swim ? 'Possible (cold)' : 'No'}</span>
+              </div>
+              <div class="lake-fact">
+                <span class="fact-label">Canoeing</span>
+                <span class={`fact-val ${lake.canoe ? 'fact-yes' : 'fact-no'}`}>{lake.canoe ? 'Yes' : 'No'}</span>
+              </div>
+              <div class="lake-fact">
+                <span class="fact-label">Colour Source</span>
+                <span class="fact-val">{lake.blueReason}</span>
+              </div>
+            </div>
+            <p class="lake-swim-note">{lake.swimNote}</p>
+            {lake.canoe && lake.canoeNote && <p class="lake-canoe-note">🛶 {lake.canoeNote}</p>}
+            <p class="lake-access">📍 {lake.access}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .science-card { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; }
+  .science-card h2 { color: var(--color-white); margin-bottom: 1.25rem; }
+  .science-content p { font-size: 0.95rem; line-height: 1.7; color: var(--color-accent-light); margin-bottom: 0.75rem; }
+  .science-content strong { color: var(--color-white); }
+
+  .lakes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
+  .lake-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .lake-card h3 { font-size: 1.15rem; margin-bottom: 1rem; }
+  .lake-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem; }
+  .lake-fact { display: flex; flex-direction: column; gap: 0.1rem; }
+  .fact-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
+  .fact-val { font-size: 0.88rem; font-weight: 600; }
+  .fact-yes { color: #16a34a; }
+  .fact-no { color: #dc2626; }
+  .lake-swim-note { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.5rem; }
+  .lake-canoe-note { font-size: 0.85rem; color: var(--color-accent); margin-bottom: 0.5rem; }
+  .lake-access { font-size: 0.82rem; color: var(--color-text-light); }
+
+  @media (max-width: 768px) { .lakes-grid { grid-template-columns: 1fr; } }
+</style>

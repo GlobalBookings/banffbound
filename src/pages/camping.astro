@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const campgrounds = [
+  { name: 'Tunnel Mountain Village I', sites: 618, type: 'Tent & RV (electric)', season: 'May-Sep', reservation: true, price: '$33-41', showers: true, flush: true, firePit: true, note: 'Largest campground, walking distance to Banff. Electric sites available. Books fast — reserve immediately when bookings open.', area: 'Banff' },
+  { name: 'Tunnel Mountain Village II', sites: 188, type: 'Tent only', season: 'May-Sep', reservation: true, price: '$28-33', showers: true, flush: true, firePit: true, note: 'Tent-only, quieter than Village I. Forested, good privacy. Same area, less RV noise.', area: 'Banff' },
+  { name: 'Tunnel Mountain Trailer Court', sites: 321, type: 'Full hookup RV', season: 'May-Oct', reservation: true, price: '$39-44', showers: true, flush: true, firePit: false, note: 'Full hookup (water, electric, sewer). RVs only. Most popular RV campground in the park.', area: 'Banff' },
+  { name: 'Two Jack Main', sites: 380, type: 'Tent & RV', season: 'Mid-Jun to Sep', reservation: true, price: '$28-33', showers: true, flush: true, firePit: true, note: 'Beautiful lakeside setting at Two Jack Lake. 12 km from Banff. Less crowded than Tunnel Mountain. Some walk-in sites.', area: 'Banff' },
+  { name: 'Two Jack Lakeside', sites: 64, type: 'Tent (walk-in)', season: 'Mid-Jun to Sep', reservation: true, price: '$28-33', showers: false, flush: false, firePit: true, note: 'Premium tent sites right on Two Jack Lake. The best tent camping in the park. Sells out in minutes when reservations open.', area: 'Banff' },
+  { name: 'Johnston Canyon', sites: 132, type: 'Tent & RV', season: 'Jun-Sep', reservation: true, price: '$28-33', showers: true, flush: true, firePit: true, note: 'Steps from Johnston Canyon trailhead. Hike to the falls before anyone else arrives. Very popular.', area: 'Castle Junction' },
+  { name: 'Castle Mountain', sites: 43, type: 'Tent & RV', season: 'Jun-Sep', reservation: false, price: '$22', showers: false, flush: false, firePit: true, note: 'First-come, first-served. Basic pit toilets. Quiet and peaceful. Fills by early afternoon on weekends.', area: 'Castle Junction' },
+  { name: 'Lake Louise Tent', sites: 206, type: 'Tent only', season: 'Jun-Sep', reservation: true, price: '$28-33', showers: true, flush: true, firePit: true, note: 'Tent camping near Lake Louise village. Bear-proof food storage required. Electric fence perimeter (bears are very active here).', area: 'Lake Louise' },
+  { name: 'Lake Louise Trailer', sites: 189, type: 'RV (full hookup)', season: 'Jun-Sep', reservation: true, price: '$39-44', showers: true, flush: true, firePit: false, note: 'Full hookup RV sites near Lake Louise. Quieter than Banff campgrounds. Good base for Icefields Parkway.', area: 'Lake Louise' },
+  { name: 'Mosquito Creek', sites: 32, type: 'Tent & RV', season: 'Jun-Sep', reservation: false, price: '$22', showers: false, flush: false, firePit: true, note: 'First-come, first-served on the Icefields Parkway. Rustic. One of the most scenic campground settings in the park. Fills by 2 PM in summer.', area: 'Icefields Parkway' },
+  { name: 'Waterfowl Lakes', sites: 116, type: 'Tent & RV', season: 'Jun-Sep', reservation: false, price: '$22', showers: false, flush: false, firePit: true, note: 'First-come, first-served. Stunning lakeside setting on the Icefields Parkway. Arrive before noon on weekdays, 10 AM on weekends.', area: 'Icefields Parkway' },
+  { name: 'Rampart Creek', sites: 50, type: 'Tent & RV', season: 'Jun-Sep', reservation: false, price: '$22', showers: false, flush: false, firePit: true, note: 'Basic first-come, first-served. Good for breaking up the Icefields Parkway drive. Near Saskatchewan Crossing.', area: 'Icefields Parkway' },
+];
+
+const RESERVATION_OPEN = '2026-01-13';
+---
+
+<BaseLayout title="Banff Camping Guide 2026 — Campgrounds, Reservations, Fees & Map" description="Complete Banff camping guide for 2026. All 12 campgrounds with fees, reservation dates, facilities, and tips. First-come-first-served strategy included.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'When do Banff camping reservations open for 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Parks Canada camping reservations for Banff National Park 2026 open on January 13, 2026 at 8:00 AM Mountain Time for the full season. High-demand campgrounds (Two Jack Lakeside, Tunnel Mountain, Johnston Canyon) sell out within hours. Create your reservation.pc.gc.ca account before the opening date. Have backup dates ready.' } },
+      { '@type': 'Question', name: 'How much does camping in Banff cost?', acceptedAnswer: { '@type': 'Answer', text: 'Banff camping costs $22-44/night depending on the campground and site type. Basic sites (pit toilets, no showers): $22/night. Standard sites with showers: $28-33/night. Full hookup RV sites: $39-44/night. Plus the daily park pass ($11/adult or $22/family). Firewood is $9/bundle. A reservation fee of $11.50 applies to all reservable sites.' } },
+      { '@type': 'Question', name: 'Which Banff campgrounds are first-come-first-served?', acceptedAnswer: { '@type': 'Answer', text: 'Four Banff campgrounds are first-come, first-served (no reservation needed): Castle Mountain (43 sites), Mosquito Creek (32 sites), Waterfowl Lakes (116 sites), and Rampart Creek (50 sites). All are basic with pit toilets and no showers ($22/night). On summer weekends, arrive before noon to get a site. Weekdays are easier — arrive by 2 PM.' } },
+      { '@type': 'Question', name: 'Can I camp anywhere in Banff National Park?', acceptedAnswer: { '@type': 'Answer', text: 'No. Random/dispersed camping is illegal in Banff National Park. You must camp in designated campgrounds (frontcountry) or designated backcountry campsites (requires a wilderness pass and reservation). Backcountry camping permits are $10.50/person/night and must be booked through Parks Canada. Popular backcountry sites (Egypt Lake, Skoki) sell out quickly.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Camping Guide' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=1600&q=80" alt="Camping in Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">2026 Guide</span>
+      <h1>Banff Camping Guide</h1>
+      <p>All 12 campgrounds with fees, reservation dates, facilities, and first-come-first-served strategy.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="reservation-banner">
+        <h2>2026 Reservations</h2>
+        <p>Parks Canada campsite reservations opened <strong>January 13, 2026 at 8 AM MT</strong> for the full season. High-demand sites may still be available — check <a href="https://reservation.pc.gc.ca" target="_blank" rel="noopener">reservation.pc.gc.ca</a> for availability.</p>
+      </div>
+
+      <!-- Filter -->
+      <div class="camp-filters" style="margin-top:1.5rem;">
+        <button class="filter-btn active" data-filter="all">All ({campgrounds.length})</button>
+        <button class="filter-btn" data-filter="Banff">Banff Area</button>
+        <button class="filter-btn" data-filter="Castle Junction">Castle Junction</button>
+        <button class="filter-btn" data-filter="Lake Louise">Lake Louise</button>
+        <button class="filter-btn" data-filter="Icefields Parkway">Icefields Pkwy</button>
+        <button class="filter-btn" data-filter="fcfs">First-Come Only</button>
+      </div>
+
+      <div class="camps-grid" id="camps-grid">
+        {campgrounds.map(c => (
+          <div class="camp-card" data-area={c.area} data-res={c.reservation ? 'res' : 'fcfs'}>
+            <div class="camp-header">
+              <h3>{c.name}</h3>
+              <span class={`res-badge ${c.reservation ? 'res-required' : 'res-fcfs'}`}>
+                {c.reservation ? 'Reservation' : 'First-Come'}
+              </span>
+            </div>
+            <div class="camp-stats">
+              <span>⛺ {c.sites} sites</span>
+              <span>📅 {c.season}</span>
+              <span>💰 {c.price}/night</span>
+              <span>📍 {c.area}</span>
+            </div>
+            <div class="camp-facilities">
+              {c.showers && <span class="fac-tag">🚿 Showers</span>}
+              {c.flush && <span class="fac-tag">🚽 Flush toilets</span>}
+              {!c.flush && <span class="fac-tag">🕳️ Pit toilets</span>}
+              {c.firePit && <span class="fac-tag">🔥 Fire pits</span>}
+            </div>
+            <p class="camp-type">{c.type}</p>
+            <p class="camp-note">{c.note}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="seo-summary" style="margin-top:2rem;">
+        <h2>Camping Tips from a Local</h2>
+        <ul>
+          <li><strong>Two Jack Lakeside</strong> is the best tent camping in the park. It sells out in minutes when reservations open. Book it or regret it.</li>
+          <li><strong>First-come-first-served strategy:</strong> Arrive before noon on weekdays, before 10 AM on weekends. Waterfowl Lakes and Mosquito Creek on the Icefields Parkway are the easiest to get.</li>
+          <li><strong>Bears are real:</strong> All campgrounds require proper food storage. Lake Louise campgrounds have electric fences. Carry bear spray even in camp.</li>
+          <li><strong>Firewood:</strong> $9/bundle at campground kiosks. You cannot bring outside firewood into the park (pest control).</li>
+          <li><strong>Park pass is extra:</strong> Camping fees do not include the park pass ($11/adult/day or $22/family/day).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.camp-card').forEach(card => {
+        if (f === 'all') card.style.display = '';
+        else if (f === 'fcfs') card.style.display = card.dataset.res === 'fcfs' ? '' : 'none';
+        else card.style.display = card.dataset.area === f ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+<style>
+  .reservation-banner { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2rem; text-align: center; }
+  .reservation-banner h2 { color: var(--color-white); margin-bottom: 0.5rem; }
+  .reservation-banner p { font-size: 0.95rem; color: var(--color-accent-light); }
+  .reservation-banner a { color: var(--color-accent); font-weight: 700; }
+
+  .camp-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .filter-btn { background: var(--color-white); border: 1px solid rgba(0,0,0,0.12); border-radius: 6px; padding: 0.5rem 1rem; font-size: 0.82rem; cursor: pointer; font-family: var(--font-body); transition: all 0.15s; }
+  .filter-btn:hover { border-color: var(--color-accent); }
+  .filter-btn.active { background: var(--color-primary); color: var(--color-white); border-color: var(--color-primary); }
+
+  .camps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
+  .camp-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .camp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+  .camp-header h3 { font-size: 1.05rem; }
+  .res-badge { font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase; white-space: nowrap; }
+  .res-required { background: #dbeafe; color: #1e40af; }
+  .res-fcfs { background: #dcfce7; color: #166534; }
+
+  .camp-stats { display: flex; gap: 0.75rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--color-text-light); margin-bottom: 0.75rem; }
+  .camp-facilities { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+  .fac-tag { font-size: 0.72rem; background: var(--color-bg-alt); padding: 0.15rem 0.4rem; border-radius: 3px; }
+  .camp-type { font-size: 0.82rem; font-weight: 600; color: var(--color-primary); margin-bottom: 0.4rem; }
+  .camp-note { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .seo-summary { background: var(--color-white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+  .seo-summary h2 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+  .seo-summary ul { list-style: none; padding: 0; }
+  .seo-summary li { font-size: 0.88rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); line-height: 1.5; }
+
+  @media (max-width: 768px) { .camps-grid { grid-template-columns: 1fr; } }
+</style>
