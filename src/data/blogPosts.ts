@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-views',
+    title: '15 Epic Banff Views That Will Leave You Speechless in 2026',
+    description: 'Discover 15 breathtaking Banff viewpoints in 2026! From Lake Louise to Mount Assiniboine, explore Canada\'s most stunning mountain vistas and scenic spots.',
+    date: '2026-03-30',
+    category: 'Guides',
+    image: '/images/blog/banff-views.webp',
+    readTime: '8 min read',
+  },
+  {
     slug: 'banff-lookout-point',
     title: 'Best Banff Lookout Points 2026: Epic Views You Can\'t Miss',
     description: 'Discover Banff\'s most breathtaking viewpoints in 2026! From Lake Louise to Moraine Lake, explore epic mountain vistas and hidden gems for unforgettable photos.',
