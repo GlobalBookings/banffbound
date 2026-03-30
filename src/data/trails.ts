@@ -66,8 +66,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    conditionNote: 'Groomed for classic cross-country skiing. Dogs not permitted.',
+    conditionUpdated: '2026-03-30',
   },
   {
     id: 'marsh-loop',
@@ -101,8 +101,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 4',
   
     status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    conditionNote: 'Good winter walking conditions.',
+    conditionUpdated: '2026-03-30',
   },
   {
     id: 'spray-river-east',
@@ -135,8 +135,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    conditionNote: 'Groomed for cross-country skiing and snowshoeing.',
+    conditionUpdated: '2026-03-30',
   },
   {
     id: 'spray-river-west',
@@ -273,9 +273,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    status: 'closed',
+    conditionNote: 'Not maintained in winter, avalanche danger.',
+    conditionUpdated: '2026-03-30',
   },
   {
     id: 'sunshine-meadows',
@@ -590,9 +590,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 1',
   
-    status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    status: 'caution',
+    conditionNote: 'Icy conditions, microspikes recommended.',
+    conditionUpdated: '2026-03-30',
   },
   {
     id: 'tunnel-mountain-summit',
@@ -729,8 +729,8 @@ export const trails: Trail[] = [
     transitRoute: 'Norquay Shuttle',
   
     status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    conditionNote: 'Easy winter walk, well maintained.',
+    conditionUpdated: '2026-03-30',
   },
   {
     id: 'c-level-cirque',
@@ -1356,9 +1356,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
   
-    status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    status: 'closed',
+    conditionNote: 'Winter closure, avalanche risk.',
+    conditionUpdated: '2026-03-30',
   },
   {
     id: 'tramline',
@@ -2687,9 +2687,9 @@ export const trails: Trail[] = [
     trailhead: 'Smith-Dorrien Highway parking (Canmore end)',
     parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
-    status: 'open',
-    conditionNote: 'Not groomed, user-tracked',
-    conditionUpdated: '2026-03-29',
+    status: 'caution',
+    conditionNote: 'Variable conditions, check current reports.',
+    conditionUpdated: '2026-03-30',
     parkingCapacity: '10 vehicles at trailhead',
     crowdLevel: { summer: 'low', winter: 'medium' },
   },
