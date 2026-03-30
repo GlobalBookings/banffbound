@@ -1050,7 +1050,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> The Bow River below Banff (outside the park, near Canmore and Cochrane) is considered one of the top 10 trout rivers in the world. If you have time, book a drift boat trip on the lower Bow — the fish are larger, the hatches are more prolific, and a good guide will put you on fish all day. It's a top-tier fly fishing experience.</div>
 `,
   'banff-golf-guide': `
-<p>Golf in the Canadian Rockies is an experience unlike any other. Imagine teeing off with snow-capped peaks towering above you, elk grazing on the fairway, and glacial rivers winding through the course. Banff and the surrounding area offer some of the most incrediblely scenic golf courses in the world, headlined by the legendary Fairmont Banff Springs Golf Course — a bucket-list destination for golfers worldwide.</p>
+<p>Golf in the Canadian Rockies is an experience unlike any other. Imagine teeing off with snow-capped peaks towering above you, elk grazing on the fairway, and glacial rivers winding through the course. <a href="/blog/banff-sunshine-lodging">Best Banff Sunshine Village Lodging Options for</a> and the surrounding area offer some of the most incrediblely scenic golf courses in the world, headlined by the legendary Fairmont Banff Springs Golf Course — a bucket-list destination for golfers worldwide.</p>
 
 <h2>Fairmont Banff Springs Golf Course</h2>
 <p>The <strong>Stanley Thompson 18</strong> at the Fairmont Banff Springs is consistently ranked among the top courses in Canada and the world. Designed by legendary golf architect Stanley Thompson in 1928, the course flows along the Bow River beneath Mount Rundle and Sulphur Mountain.</p>
@@ -1092,7 +1092,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> If the Banff Springs green fees are beyond your budget, play the Tunnel 9 instead. You get the same breathtaking setting, Stanley Thompson design, and Fairmont service at roughly a quarter of the price. Pair it with lunch at the clubhouse overlooking the Bow River and Mount Rundle — it's one of the best-value experiences in Banff.</div>
 `,
   'mt-norquay-guide': `
-<p>Mt Norquay is Banff's local mountain — the one that residents can see from their living rooms and reach in six minutes by car. While it's the smallest of the SkiBig3 resorts, Mt Norquay punches well above its weight with excellent terrain variety, night skiing, tubing, the famous Via Ferrata, and a sightseeing chairlift. It's the mountain where locals teach their kids to ski, where the après-ski is authentically laid-back, and where you can have a exceptional mountain experience without the crowds or price tags of the bigger resorts.</p>
+<p>Mt <a href="/blog/mont-norquay">Mount Norquay Banff : Skiing & Summer Adventures</a> is Banff's local mountain — the one that residents can see from their living rooms and reach in six minutes by car. While it's the smallest of the SkiBig3 resorts, Mt Norquay punches well above its weight with excellent terrain variety, night skiing, tubing, the famous Via Ferrata, and a sightseeing chairlift. It's the mountain where locals teach their kids to ski, where the après-ski is authentically laid-back, and where you can have a exceptional mountain experience without the crowds or price tags of the bigger resorts.</p>
 
 <h2>Winter: Skiing & Snowboarding</h2>
 <h3>Terrain Overview</h3>
@@ -3052,7 +3052,7 @@ export const blogContent2: Record<string, string> = {
 <p><strong>Happy hour:</strong> 3-5 PM daily. <strong>Deals:</strong> $8 margaritas, $5 draft beer, half-price nachos.</p>
 
 <h2>Rose & Crown Pub</h2>
-<p>A classic British-style pub with daily drink specials and a lively atmosphere. The Rose & Crown has been a <a href="/blog/banff-restaurant-specials">Best Banff Restaurant Specials & Deals You Can't Miss</a> gathering spot for years, and their happy hour draws a mix of locals, ski bums, and visitors.</p>
+<p>A classic British-style pub with daily <a href="/blog/drink-deals">Best Banff Drink Deals : Where to Sip for Less</a> specials and a lively atmosphere. The Rose & Crown has been a <a href="/blog/banff-restaurant-specials">Best Banff Restaurant Specials & Deals You Can't Miss</a> gathering spot for years, and their happy hour draws a mix of locals, ski bums, and visitors.</p>
 <p><strong>Happy hour:</strong> 4-6 PM daily. <strong>Deals:</strong> $5 pints, discounted well drinks.</p>
 
 <h2>High Rollers</h2>
