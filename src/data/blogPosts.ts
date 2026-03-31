@@ -11,6 +11,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'bow-summit-canada',
+    title: 'Bow Summit Banff: Epic Views & Hiking Tips for 2026',
+    description: 'Discover Bow Summit\'s breathtaking views and expert hiking tips for 2026. Your complete guide to Banff\'s highest viewpoint with trail maps and safety advice.',
+    date: '2026-03-31',
+    category: 'Guides',
+    image: '/images/blog/bow-summit-canada.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'nightclub-banff',
+    title: 'Banff Nightlife Guide 2026: Best Clubs & Late Night Spots',
+    description: 'Discover Banff\'s hottest nightlife scene in 2026! From trendy mountain clubs to cozy late-night bars, find the best spots to party after dark in the Rockies.',
+    date: '2026-03-31',
+    category: 'Guides',
+    image: '/images/blog/nightclub-banff.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'banff-views',
     title: '15 Epic Banff Views That Will Leave You Speechless in 2026',
     description: 'Discover 15 breathtaking Banff viewpoints in 2026! From Lake Louise to Mount Assiniboine, explore Canada\'s most stunning mountain vistas and scenic spots.',
