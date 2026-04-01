@@ -1,6 +1,6 @@
 export const blogContent2: Record<string, string> = {
   'banff-free-activities': `
-<p>Banff has a reputation for being expensive, but here's a secret: the best experiences in the park cost nothing beyond your Parks Canada pass. From beautiful hikes to outstanding viewpoints, wildlife encounters to stargazing, here are 25 free things to do in Banff National Park.</p>
+<p>Banff has a reputation for being expensive, but here's a secret: the best experiences in the park cost nothing beyond your Parks Canada pass. From beautiful hikes to outstanding viewpoints, wildlife encounters to stargazing, here are 25 free <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do in Banff National Park.</p>
 
 <h2>Hikes & Walks</h2>
 
@@ -928,7 +928,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> The Ridgewalker route offers the best balance of thrill and time investment. The suspension bridge and narrow ledge traverse are genuinely exciting, the views are impressive, and 4 hours feels substantial without being exhausting. If you only do one via ferrata in your life, make it this one.</div>
 `,
   'banff-white-water-rafting': `
-<p>White water rafting near Banff delivers one of the biggest adrenaline rushes in the Canadian Rockies. Crashing through rapids with glacial mountains towering above you, cold spray in your face, and your raft crew screaming with laughter — it's an memorable summer adventure. From gentle float trips suitable for young kids to class IV rapids that'll test your nerve, there's a river experience for everyone near Banff.</p>
+<p>White water rafting near <a href="/blog/banff-entry-fee">Banff Entry Fee : to Park Pass Costs</a> delivers one of the biggest adrenaline rushes in the Canadian Rockies. Crashing through rapids with glacial mountains towering above you, cold spray in your face, and your raft crew screaming with laughter — it's an memorable summer adventure. From gentle float trips suitable for young kids to class IV rapids that'll test your nerve, there's a river experience for everyone near Banff.</p>
 
 <h2>The Rivers</h2>
 
@@ -2251,7 +2251,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Festival Tip:</strong> Visit the ice sculptures twice — once during the day to see the crystal-clear detail of the carvings, and once after dark when coloured lights transform them into glowing works of art. The night-time experience is truly magical.</div>
 `,
   'banff-film-festival': `
-<p>The Banff Centre Mountain Film and Book Festival is one of the most prestigious mountain culture events in the world. Held every fall, it draws filmmakers, adventurers, authors, and outdoor enthusiasts from across the globe to the Banff Centre for Arts and Creativity. Here's everything you need to know about attending.</p>
+<p>The <a href="/blog/banff-admission">Banff Admission Fees : Save Money on Mountain Trip</a> Centre Mountain Film and Book Festival is one of the most prestigious mountain culture events in the world. Held every fall, it draws filmmakers, adventurers, authors, and outdoor enthusiasts from across the globe to the Banff Centre for Arts and Creativity. Here's everything you need to know about attending.</p>
 
 <h2>What Is the Banff Mountain Film Festival?</h2>
 <p>Founded in 1976, the Banff Centre Mountain Film and Book Festival showcases the best films, books, and presentations about mountain culture, adventure, environmental issues, and outdoor exploration. Over nine days in late October/early November, the festival screens hundreds of films, hosts book readings, panel discussions, and presentations by legendary adventurers.</p>
@@ -3623,7 +3623,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Lake Louise Tip:</strong> Do the Lake Agnes Tea House hike, then continue to Big Beehive. The extra 45 minutes of hiking gives you a view of Lake Louise from above that will be the highlight of your trip. Bring cash for tea and scones at the tea house — it's a tradition.</div>
 `,
   'things-to-do-winter-banff': `
-<p>Winter in Banff is magical — snow-covered peaks, frozen lakes, steaming hot springs, and outstanding skiing. Far from a dormant season, winter offers some of the most memorable experiences in the Canadian Rockies. Here are 30 things to do when the snow flies.</p>
+<p>Winter in Banff is magical — snow-covered peaks, frozen lakes, steaming hot springs, and outstanding skiing. Far from a dormant season, winter offers some of the most memorable experiences in the Canadian Rockies. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do when the snow flies.</p>
 
 <h2>Skiing & Snowboarding</h2>
 <ol>
@@ -3688,7 +3688,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Winter Tip:</strong> The Johnston Canyon ice walk is the single most magical winter experience in Banff. Go early morning (before 10 AM) or late afternoon (after 3 PM) to avoid crowds. Wear ice cleats — the trail is icy. The frozen blue waterfalls are otherworldly.</div>
 `,
   'things-to-do-summer-banff': `
-<p>Summer in Banff is when the Canadian Rockies come fully alive. Turquoise lakes thaw, wildflowers bloom, trails open to high alpine meadows, and the days stretch until 10 PM. Here are 30 things to do during the warmest and most beautiful season in the park.</p>
+<p>Summer in Banff is when the Canadian Rockies come fully alive. Turquoise lakes thaw, wildflowers bloom, trails open to high alpine meadows, and the days stretch until 10 PM. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do during the warmest and most beautiful season in the park.</p>
 
 <h2>Hiking</h2>
 <ol>
