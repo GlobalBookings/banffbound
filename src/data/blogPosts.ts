@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ink-pots-banff-alberta',
+    title: 'Banff\'s Hidden Ink Pots: Ultimate 2026 Adventure Guide',
+    description: 'Discover Banff\'s secret Ink Pots thermal springs in 2026! Complete hiking guide with updated trails, best photo spots, and insider tips for this hidden gem.',
+    date: '2026-04-01',
+    category: 'Guides',
+    image: '/images/blog/ink-pots-banff-alberta.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'bow-summit-canada',
     title: 'Bow Summit Banff: Epic Views & Hiking Tips for 2026',
     description: 'Discover Bow Summit\'s breathtaking views and expert hiking tips for 2026. Your complete guide to Banff\'s highest viewpoint with trail maps and safety advice.',
