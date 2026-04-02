@@ -989,7 +989,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> For the complete rafting experience, book a full-day Kicking Horse River trip in late June when water levels are at their peak. The rapids are bigger, the splashes are wetter, and the thrill factor is maxed out. Many full-day trips include a riverside BBQ lunch between the upper and lower sections — rafting and grilling in the mountains is peak summer living.</div>
 `,
   'banff-fly-fishing': `
-<p>Banff National Park is one of the most remarkable fly fishing destinations in North America. Crystal-clear mountain streams, untouched alpine lakes, and rivers teeming with native cutthroat trout and bull trout — all set against a backdrop of towering Rocky Mountain peaks. If you're a seasoned angler or a first-timer wanting to try fly fishing in one of the world's most beautiful settings, Banff delivers an notable experience.</p>
+<p><a href="/blog/best-hikes-in-banff">15 Best Hikes in Banff National Park (All</a> National Park is one of the most remarkable fly fishing destinations in North America. Crystal-clear mountain streams, untouched alpine lakes, and rivers teeming with native cutthroat trout and bull trout — all set against a backdrop of towering Rocky Mountain peaks. If you're a seasoned angler or a first-timer wanting to try fly fishing in one of the world's most beautiful settings, Banff delivers an notable experience.</p>
 
 <h2>Fishing Regulations & Permits</h2>
 <p>Fishing in Banff National Park is managed by Parks Canada with specific regulations designed to protect native fish populations:</p>
@@ -1710,7 +1710,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Group Tip:</strong> For the best group value, visit in May or October (shoulder season). You'll get significantly lower accommodation rates, fewer crowds at attractions, and most major activities are still available. A 6-person group can save $2,000+ compared to peak summer pricing.</div>
 `,
   'calgary-to-banff-guide': `
-<p>Calgary is the gateway to Banff, with the park sitting just 130 km (80 miles) west of the city along the Trans-Canada Highway. If you're landing at Calgary International Airport or starting from downtown Calgary, here's every way to make the journey — with costs, travel times, and practical tips.</p>
+<p>Calgary is the gateway to <a href="/blog/how-to-get-to-banff">How to Get to Banff: Every Transportation Option</a>, with the park sitting just 130 km (80 miles) west of the city along the Trans-Canada Highway. If you're landing at Calgary International Airport or starting from downtown Calgary, here's every way to make the journey — with costs, travel times, and practical tips.</p>
 
 <h2>Driving from Calgary to Banff</h2>
 <h3>The Route</h3>
@@ -1837,7 +1837,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Packing Tip:</strong> Layer, layer, layer. A sunny morning hike can turn into a cold, windy summit. Dress in a moisture-wicking base, insulating mid-layer, and waterproof outer shell — add or remove layers as conditions change. This system works year-round in the Rockies.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-travel-costs': `
-<p>A Banff trip can be surprisingly affordable or dramaticly luxurious — it all depends on your choices. Here's a detailed cost breakdown for every budget level, so you can plan a trip that matches your wallet.</p>
+<p>A <a href="/blog/banff-trip-cost-budget-guide">How Much Does a Banff Trip Cost? Budget Breakdown</a> trip can be surprisingly affordable or dramaticly luxurious — it all depends on your choices. Here's a detailed cost breakdown for every budget level, so you can plan a trip that matches your wallet.</p>
 
 <h2>Park Entry</h2>
 <p>You need a Parks Canada pass to enter Banff National Park:</p>
@@ -2491,7 +2491,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> Arrive at the Chateau early in the morning (before 8am) or late afternoon for parking. Midday parking is extremely limited in summer. Alternatively, take the Parks Canada shuttle from the Lake Louise Park and Ride — it drops you right at the hotel.</div>
 `,
   'banff-hostel-guide': `
-<p>Banff is one of the world's most expensive mountain towns, but budget travellers have excellent hostel options that make the Rockies accessible without breaking the bank. Here's your guide to the best hostels in and around Banff.</p>
+<p><a href="/blog/banff-trip-cost-budget-guide">How Much Does a Banff Trip Cost? Budget Breakdown</a> is one of the world's most expensive mountain towns, but budget travellers have excellent hostel options that make the Rockies accessible without breaking the bank. Here's your guide to the best hostels in and around Banff.</p>
 
 <h2>HI Banff Alpine Centre</h2>
 <h3>Overview</h3>
@@ -3259,7 +3259,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Patio Tip:</strong> The golden hour at Magpie & Stump's rooftop is magical — Cascade Mountain glows orange and pink as the sun sets behind you. Arrive at 7:30 PM on a clear summer evening and order a pitcher of margaritas. It's the most memorable patio experience in Banff.</div>
 `,
   '5-day-banff-itinerary': `
-<p>Five days in Banff is the sweet spot — enough time to see the iconic highlights, explore off-the-radar spots, and still have moments to simply sit and stare at the mountains. This day-by-day itinerary balances adventure with relaxation, nature with dining, and popular sites with lesser-known treasures.</p>
+<p>Five days in <a href="/blog/7-day-banff-itinerary">7-Day Banff Itinerary: The</a> is the sweet spot — enough time to see the iconic highlights, explore off-the-radar spots, and still have moments to simply sit and stare at the mountains. This day-by-day itinerary balances adventure with relaxation, nature with dining, and popular sites with lesser-known treasures.</p>
 
 <h2>Day 1: Arrive & Explore Banff Town</h2>
 <ul>
@@ -3311,7 +3311,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>5-Day Tip:</strong> Don't try to cram everything into the first two days. The beauty of five days is having time to slow down, revisit a favourite spot, or follow a spontaneous detour. Some of the best Banff moments happen when you abandon the itinerary and just sit by a lake.</div>
 `,
   'winter-banff-itinerary': `
-<p>Winter transforms Banff into a snow-covered wonderland. Frozen lakes, ice walks, top-tier skiing, and steaming hot springs await. This 4-day itinerary covers the best winter experiences while leaving time for cozy evenings by the fire.</p>
+<p>Winter transforms <a href="/blog/7-day-banff-itinerary">7-Day Banff Itinerary: The</a> into a snow-covered wonderland. Frozen lakes, ice walks, top-tier skiing, and steaming hot springs await. This 4-day itinerary covers the best winter experiences while leaving time for cozy evenings by the fire.</p>
 
 <h2>Day 1: Arrive & Winter Wonderland</h2>
 <ul>
@@ -3623,7 +3623,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Lake Louise Tip:</strong> Do the Lake Agnes Tea House hike, then continue to Big Beehive. The extra 45 minutes of hiking gives you a view of Lake Louise from above that will be the highlight of your trip. Bring cash for tea and scones at the tea house — it's a tradition.</div>
 `,
   'things-to-do-winter-banff': `
-<p>Winter in Banff is magical — snow-covered peaks, frozen lakes, steaming hot springs, and outstanding skiing. Far from a dormant season, winter offers some of the most memorable experiences in the Canadian Rockies. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do when the snow flies.</p>
+<p>Winter in <a href="/blog/banff-in-winter">Banff in Winter: The to a Winter Trip</a> is magical — snow-covered peaks, frozen lakes, steaming hot springs, and outstanding skiing. Far from a dormant season, winter offers some of the most memorable experiences in the Canadian Rockies. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do when the snow flies.</p>
 
 <h2>Skiing & Snowboarding</h2>
 <ol>
