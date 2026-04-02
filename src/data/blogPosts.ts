@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'sunshine-ski-in-ski-out',
+    title: 'Banff Sunshine Ski-In Ski-Out Guide: Ultimate 2026 Experience',
+    description: 'Discover Banff\'s premier ski-in ski-out experience at Sunshine Village in 2026. Complete guide to slopes, lodging, dining & mountain adventures.',
+    date: '2026-04-02',
+    category: 'Seasonal',
+    image: '/images/blog/sunshine-ski-in-ski-out.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'ink-pots-banff-alberta',
     title: 'Banff\'s Hidden Ink Pots: Ultimate 2026 Adventure Guide',
     description: 'Discover Banff\'s secret Ink Pots thermal springs in 2026! Complete hiking guide with updated trails, best photo spots, and insider tips for this hidden gem.',
