@@ -1137,7 +1137,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> Friday night skiing at Norquay is one of Banff's best-kept secrets. After a day of sightseeing, head up for a few runs under the lights — the atmosphere is relaxed, the slopes are quiet, and skiing with the lights of Banff twinkling below is pure magic. Grab a beer at the lodge afterward and you've got the perfect winter evening.</div>
 `,
   'banff-food-truck-guide': `
-<p>Banff's food truck scene has grown from a handful of carts to a thriving street food culture that adds casual, creative dining options to a town traditionally dominated by sit-down restaurants. From gourmet tacos and wood-fired pizza to poutine and Thai street food, Banff's food trucks offer quick, delicious meals at reasonable prices — perfect for refuelling between adventures.</p>
+<p><a href="/blog/banff-food-guide">The Banff Food : Best Restaurants & Cafes</a>'s food truck scene has grown from a handful of carts to a thriving street food culture that adds casual, creative dining options to a town traditionally dominated by sit-down restaurants. From gourmet tacos and wood-fired pizza to poutine and Thai street food, Banff's food trucks offer quick, delicious meals at reasonable prices — perfect for refuelling between adventures.</p>
 
 <h2>Best Food Trucks in Banff</h2>
 
@@ -1232,7 +1232,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> The definitive Banff brunch strategy: hike Tunnel Mountain at sunrise (1.5 hours round trip), then reward yourself with Wild Flour Bakery or Block Kitchen. You've earned those extra pancakes, and eating a big brunch after a morning hike is one of the purest pleasures in the mountains.</div>
 `,
   'banff-apres-ski': `
-<p>After a day carving turns through champagne powder with mountain peaks towering above you, there's nothing better than kicking off your ski boots and settling into Banff's legendary après-ski scene. From craft cocktails by roaring fires to steaming hot springs under the stars, Banff's après-ski culture is some of the best in North America. Here's where to wind down after your day on the slopes.</p>
+<p>After a day carving turns through champagne powder with mountain peaks towering above you, there's nothing better than kicking off your ski boots and settling into <a href="/blog/new-places-to-eat-in-banff">Banff's 12 Must-Try New Restaurants & Cafés in</a>'s legendary après-ski scene. From craft cocktails by roaring fires to steaming hot springs under the stars, Banff's après-ski culture is some of the best in North America. Here's where to wind down after your day on the slopes.</p>
 
 <h2>Best Après-Ski Bars & Restaurants</h2>
 
@@ -1588,7 +1588,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Tip:</strong> Banff's international, tourism-driven community is overwhelmingly welcoming. Travel with confidence, be yourselves, and enjoy one of the most beautiful places on the planet together.</div>
 `,
   'banff-senior-travel': `
-<p>Banff National Park isn't just for adventurous young hikers. The park offers countless experiences perfectly suited to older travellers — scenic drives, gentle walks, top-tier dining, cultural attractions, and comfortable accommodations. Here's how seniors can enjoy Banff to the fullest.</p>
+<p><a href="/blog/banff-with-kids">Banff with Kids: Family-Friendly Activities & Tips</a> National Park isn't just for adventurous young hikers. The park offers countless experiences perfectly suited to older travellers — scenic drives, gentle walks, top-tier dining, cultural attractions, and comfortable accommodations. Here's how seniors can enjoy Banff to the fullest.</p>
 
 <h2>Easy & Accessible Activities</h2>
 <h3>Scenic Drives</h3>
@@ -1710,7 +1710,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Group Tip:</strong> For the best group value, visit in May or October (shoulder season). You'll get significantly lower accommodation rates, fewer crowds at attractions, and most major activities are still available. A 6-person group can save $2,000+ compared to peak summer pricing.</div>
 `,
   'calgary-to-banff-guide': `
-<p>Calgary is the gateway to <a href="/blog/how-to-get-to-banff">How to Get to Banff: Every Transportation Option</a>, with the park sitting just 130 km (80 miles) west of the city along the Trans-Canada Highway. If you're landing at Calgary International Airport or starting from downtown Calgary, here's every way to make the journey — with costs, travel times, and practical tips.</p>
+<p>Calgary is the gateway to <a href="/blog/how-to-get-to-banff">How to Get to <a href="/blog/banff-park-pass-guide">Banff Park Pass: Everything You Need to Know in</a>: Every Transportation Option</a>, with the park sitting just 130 km (80 miles) west of the city along the Trans-Canada Highway. If you're landing at Calgary International Airport or starting from downtown Calgary, here's every way to make the journey — with costs, travel times, and practical tips.</p>
 
 <h2>Driving from Calgary to Banff</h2>
 <h3>The Route</h3>
@@ -2963,7 +2963,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Fine Dining Tip:</strong> The best value fine dining experience in Banff is the Sky Bistro sunset seating. Your gondola ride is included with dinner, and you get one of the most striking views in the Canadian Rockies as a backdrop. Book the latest available seating for golden-hour magic.</div>
 `,
   'banff-pizza-guide': `
-<p>After a long day of hiking, skiing, or exploring, few things satisfy like a great pizza. Banff delivers surprisingly excellent pizza — from wood-fired Neapolitan to loaded gourmet pies with wild game toppings. Here's every pizza spot in town, ranked and reviewed.</p>
+<p>After a long day of hiking, skiing, or exploring, few things satisfy like a great pizza. <a href="/blog/banff-food-guide">The Banff Food : Best Restaurants & Cafes</a> delivers surprisingly excellent pizza — from wood-fired Neapolitan to loaded gourmet pies with wild game toppings. Here's every pizza spot in town, ranked and reviewed.</p>
 
 <h2>Bear Street Tavern</h2>
 <p>The undisputed pizza champion of Banff. Bear Street Tavern makes thin-crust gourmet pizzas with creative toppings that go far beyond the ordinary. The dough is made fresh daily, and the flavour combinations are inspired — duck confit with caramelised onion, pulled pork with house BBQ, and a classic Margherita that's hard to beat. The craft beer selection complements the pizza perfectly.</p>
@@ -2997,7 +2997,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pizza Tip:</strong> Bear Street Tavern gets busy on weekends — arrive before 6 PM or after 8:30 PM to avoid the rush. Grab a seat at the bar for faster service. And don't skip the craft beer — the local brews are brewed to pair with their pizza menu.</div>
 `,
   'banff-breakfast-spots': `
-<p>Whether you need fuel before an early morning hike or want a leisurely brunch after sleeping in, Banff has breakfast spots for every mood and budget. From artisan bakeries to classic diners, here's where to start your day right.</p>
+<p>Whether you need fuel before an early morning hike or want a leisurely brunch after sleeping in, <a href="/blog/banff-photography-spots">12 Best Photography Spots in Banff (With Map & Tips)</a> has breakfast spots for every mood and budget. From artisan bakeries to classic diners, here's where to start your day right.</p>
 
 <h2>Wild Flour Bakery</h2>
 <p>The line out the door tells you everything. Wild Flour makes sourdough bread, croissants, pastries, and breakfast sandwiches from scratch every morning. Their sourdough croissants are flaky perfection, and the breakfast sandwiches on house-made bread are the best pre-hike fuel in town. Get here early — popular items sell out.</p>
@@ -3311,7 +3311,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>5-Day Tip:</strong> Don't try to cram everything into the first two days. The beauty of five days is having time to slow down, revisit a favourite spot, or follow a spontaneous detour. Some of the best Banff moments happen when you abandon the itinerary and just sit by a lake.</div>
 `,
   'winter-banff-itinerary': `
-<p>Winter transforms <a href="/blog/7-day-banff-itinerary">7-Day Banff Itinerary: The</a> into a snow-covered wonderland. Frozen lakes, ice walks, top-tier skiing, and steaming hot springs await. This 4-day itinerary covers the best winter experiences while leaving time for cozy evenings by the fire.</p>
+<p>Winter transforms <a href="/blog/7-day-banff-itinerary">7-Day <a href="/blog/banff-in-winter">Banff in Winter: The to a Winter Trip</a> Itinerary: The</a> into a snow-covered wonderland. Frozen lakes, ice walks, top-tier skiing, and steaming hot springs await. This 4-day itinerary covers the best winter experiences while leaving time for cozy evenings by the fire.</p>
 
 <h2>Day 1: Arrive & Winter Wonderland</h2>
 <ul>
@@ -3688,7 +3688,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Winter Tip:</strong> The Johnston Canyon ice walk is the single most magical winter experience in Banff. Go early morning (before 10 AM) or late afternoon (after 3 PM) to avoid crowds. Wear ice cleats — the trail is icy. The frozen blue waterfalls are otherworldly.</div>
 `,
   'things-to-do-summer-banff': `
-<p>Summer in Banff is when the Canadian Rockies come fully alive. Turquoise lakes thaw, wildflowers bloom, trails open to high alpine meadows, and the days stretch until 10 PM. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do during the warmest and most beautiful season in the park.</p>
+<p>Summer in <a href="/blog/banff-in-summer">Banff in Summer: to the Perfect Visit</a> is when the Canadian Rockies come fully alive. Turquoise lakes thaw, wildflowers bloom, trails open to high alpine meadows, and the days stretch until 10 PM. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do during the warmest and most beautiful season in the park.</p>
 
 <h2>Hiking</h2>
 <ol>
@@ -4505,7 +4505,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Spray River Tip:</strong> For a magical experience, walk the first 3 km of the trail at sunrise. The morning light filtering through the forest canopy and reflecting off the river is notable. You'll often have the trail completely to yourself, and wildlife sightings are common in the early morning quiet.</div>
 `,
   'banff-wildlife-overpass': `
-<p>Banff National Park is home to the most successful wildlife crossing system in the world. Since the first wildlife underpass was built in 1996, the Trans-Canada Highway through Banff has been fitted with 6 wildlife overpasses and 38 underpasses — massive structures specifically designed to allow animals to safely cross one of Canada's busiest highways. The result is a conservation success story that has been studied and replicated around the globe.</p>
+<p><a href="/blog/banff-wildlife-guide">Wildlife in Banff: Where to See Bears, Elk & More</a> National Park is home to the most successful wildlife crossing system in the world. Since the first wildlife underpass was built in 1996, the Trans-Canada Highway through Banff has been fitted with 6 wildlife overpasses and 38 underpasses — massive structures specifically designed to allow animals to safely cross one of Canada's busiest highways. The result is a conservation success story that has been studied and replicated around the globe.</p>
 
 <h2>Why Wildlife Crossings?</h2>
 <p>When the Trans-Canada Highway was twinned (expanded to four lanes) through Banff in the 1980s and 1990s, it created a deadly barrier for animals. Elk, deer, bears, wolves, cougars, and other species were being killed in vehicle collisions at alarming rates. The highway essentially split the park in half, isolating animal populations and threatening genetic diversity.</p>
