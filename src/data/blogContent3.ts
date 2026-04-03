@@ -1,4 +1,134 @@
 export const blogContent3: Record<string, string> = {
+  'new-places-to-eat-in-banff': `
+<p>As someone who's been training and competing in Banff for over a decade, I've watched the town's culinary scene evolve dramatically. After countless early morning runs and post-ski dinners, I can tell you that 2026 has brought some exciting new places to eat in Banff that are worth planning your meals around. From innovative mountain cuisine to casual spots perfect for refueling after a day on the trails, here's my insider guide to the newest dining experiences in town.</p>
+
+<h2>The Latest Culinary Additions to Banff Avenue</h2>
+
+<p>Banff's restaurant scene has exploded in recent years, and the new places to eat in Banff that opened in 2025 and early 2026 are already making their mark. <strong>Alpine Social</strong>, which opened its doors last fall, occupies the former Melissa's MisSteak location and focuses on locally-sourced ingredients with a modern twist. I've eaten there twice since my last training camp in February, and their elk tenderloin with juniper berry reduction (\$48 CAD) stands out as exceptional.</p>
+
+<p>Just down from Alpine Social, <strong>The Summit Kitchen</strong> replaced what used to be a souvenir shop and now serves some of the most creative breakfast dishes I've found in town. Their protein-packed breakfast bowls (\$16-22 CAD) have become my go-to pre-long run fuel. The portions are substantial enough to sustain a 25km mountain run, which I appreciate as an ultra runner.</p>
+
+<p>For those looking for quick, quality options, <strong>Mountain Melt</strong> opened in January 2026 near the Banff Park Museum. This grilled cheese and soup concept might sound simple, but their execution is flawless. Their truffle grilled cheese with Alberta cheddar (\$14 CAD) paired with their daily soup hits the spot after cold training sessions.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Most new restaurants in Banff don't take reservations for parties under 6 people. Plan to arrive right when they open (usually 5:30 PM) or be prepared to wait, especially on weekends and during peak season.</div>
+
+<h2>International Flavors Taking Root</h2>
+
+<p>One of the most exciting developments I've seen is the expansion of international cuisine options. <strong>Banff Ramen House</strong>, which soft-opened in March 2026, serves authentic tonkotsu ramen that rivals what I've had in Vancouver. Located in the Sundance Mall, their rich broths (\$18-24 CAD) provide the perfect recovery meal after intense training days in the mountains.</p>
+
+<p><strong>Himalayan Kitchen Banff</strong> took over the space previously occupied by a pizza joint on Bear Street and brings authentic Nepalese and Tibetan cuisine to town. Their momos (dumplings) are handmade daily, and I've become addicted to their dal bhat combo (\$19 CAD), which provides the complex carbohydrates I need for endurance training.</p>
+
+<p>The newest addition is <strong>Seoul Kitchen</strong>, which opened just last month in a renovated heritage building near Central Park. Their Korean BBQ bowls (\$15-28 CAD) and house-made kimchi have already earned a loyal following among locals. The fermented vegetables are excellent for gut health, something every endurance athlete should prioritize.</p>
+
+<h2>Elevated Casual Dining Options</h2>
+
+<p>Several establishments have filled the gap between fine dining and fast casual that previously existed in Banff. <strong>The Local Table</strong> opened in late 2025 where the old Boston Pizza used to be, and they've completely transformed the space. Their menu changes seasonally, but their commitment to Alberta beef and local produce remains constant. I particularly enjoy their bison burger (\$24 CAD) after completing workouts on the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>.</p>
+
+<p><strong>Canmore Creek Brewing Company</strong> expanded into Banff with a brewpub location that opened in December 2025. While technically they're based in Canmore, this new Banff location on Wolf Street serves their full range of craft beers alongside elevated pub food. Their stout-braised short ribs (\$32 CAD) pair perfectly with their flagship pale ale after a day of skiing at one of the local resorts.</p>
+
+<p>For lighter options, <strong>Fresh Valley Kitchen</strong> focuses on salads, grain bowls, and smoothies. As someone who needs to maintain a specific nutrition profile during training periods, I appreciate their macro-friendly options and transparent ingredient lists. Their recovery smoothies (\$12-15 CAD) include locally-sourced whey protein and hemp hearts.</p>
+
+<h2>Coffee Culture and Quick Bites</h2>
+
+<p>Banff's coffee scene has also expanded significantly. <strong>Altitude Coffee Roasters</strong> opened their flagship location near the Whyte Museum in January 2026, roasting beans on-site and serving some of the strongest espresso I've found in the Canadian Rockies. Their cortados (\$4.50 CAD) have the caffeine kick I need for 5 AM training sessions.</p>
+
+<p><strong>Basecamp Bagels</strong> replaced a struggling sandwich shop on Banff Avenue and now hand-rolls Montreal-style bagels daily. Their everything bagel with house-smoked salmon (\$16 CAD) provides the sodium and protein balance I need for high-altitude training. They open at 6 AM, making them perfect for early starts.</p>
+
+<p>The newest coffee addition is <strong>Peak Performance Cafe</strong>, which opened in February 2026 with a focus on athletic performance. They offer nitro cold brew, adaptogens, and performance-focused menu items. While the concept might sound gimmicky, their attention to detail in both coffee preparation and nutritional profiles is impressive.</p>
+
+<h2>Where These New Spots Fit in Your Banff Visit</h2>
+
+<p>When planning <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a>, consider proximity to these newer dining options. Most are concentrated along Banff Avenue and the surrounding blocks, making them easily walkable from most accommodations. If you're following a <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>, I recommend spacing out visits to these newer establishments rather than hitting all the established classics.</p>
+
+<p>These new places to eat in Banff complement rather than replace the town's established dining scene covered in my comprehensive guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>. They're particularly valuable during peak season when getting tables at longtime favorites becomes challenging.</p>
+
+<p>For accommodations near these dining options, check <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for current availability and rates. Many of the <a href="/hotel-directory">Compare 95+ Banff hotels</a> are within walking distance of these new culinary additions.</p>
+
+<h2>Practical Dining Considerations</h2>
+
+<p>Most of these new establishments operate on similar schedules, typically opening between 11 AM and 5 PM depending on whether they serve breakfast. Unlike some established Banff restaurants that close during shoulder seasons, these newer spots tend to maintain year-round operations, though hours may be reduced in November and April.</p>
+
+<p>Parking remains challenging near Banff Avenue, so I recommend walking from your accommodation when possible. The town is compact enough that even from the furthest hotels, you're looking at a maximum 15-minute walk to reach these dining options.</p>
+
+<p>Prices at these new establishments generally reflect Banff's resort town economics, with most entrees ranging from \$18-35 CAD. However, the quality and portion sizes justify the cost, particularly when you consider the logistics of running restaurants in a national park setting where Parks Canada regulations affect everything from waste disposal to supply delivery.</p>
+
+<p>If you're planning activities around your dining experiences, <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers several food-focused tours that now include some of these newer establishments in their itineraries.</p>
+
+<p>As Banff continues to evolve as a culinary destination, these new places to eat in Banff represent the town's commitment to diversifying beyond traditional mountain fare. Whether you're fueling up for outdoor adventures or unwinding after a day in the mountains, these additions provide excellent options that complement your Canadian Rockies experience perfectly.</p>
+`,
+  'num-ti-jah-lodge-hotel': `
+<p>When I first heard about Num-Ti-Jah Lodge during one of my training runs around Bow Lake, I knew I had to experience this historic mountain retreat for myself. Located on the shores of Bow Lake along the Icefields Parkway, the <strong>Num-Ti-Jah Lodge hotel</strong> offers something you won't find in Banff townsite: complete immersion in the Canadian Rockies wilderness, 40 kilometers north of Lake Louise.</p>
+
+<h2>What Makes Num-Ti-Jah Lodge Special</h2>
+
+<p>The <strong>Num Ti Jah Lodge</strong> sits at 1,920 meters elevation on Bow Lake's northeastern shore, with the Crowfoot Glacier and Bow Glacier creating a dramatic backdrop. Built in 1950 by legendary outfitter Jimmy Simpson, this rustic log lodge maintains its original charm while providing modern comfort.</p>
+
+<p>What sets this place apart is its isolation. Unlike the busy hotels in Banff townsite, you're truly disconnected here—cell service is spotty at best, which I've come to appreciate after intense training seasons. The lodge operates seasonally from May through October, making it perfect for summer hiking and early fall color viewing.</p>
+
+<p>The property features 25 guest rooms in the main lodge and several lakeside cabins. Rooms range from \$280-\$450 CAD per night in 2026, depending on the view and season. I recommend booking through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> to compare rates with other Icefields Parkway accommodations.</p>
+
+<h2>Location and Getting There</h2>
+
+<p>The lodge sits exactly 40 kilometers north of Lake Louise via Highway 93 North (Icefields Parkway). From Banff townsite, it's a 90-minute drive that ranks among Canada's most scenic routes. I always tell visitors to allow extra time—you'll want to stop at Peyto Lake viewpoint and Bow Summit along the way.</p>
+
+<p>Parking at the lodge is limited but usually sufficient, unlike the chaos you'll encounter at popular day-use areas. The lodge sits right off the highway, making it easily accessible even for guests arriving after dark.</p>
+
+<p>If you're comparing accommodation options, check out our comprehensive <a href="/hotel-directory">Compare 95+ Banff hotels</a> guide to see how Num-Ti-Jah stacks up against properties in town.</p>
+
+<h3>What to Expect During Your Drive</h3>
+
+<p>The journey itself is part of the experience. You'll climb steadily through montane and subalpine zones, with Mount Temple and the Bow Range dominating the eastern horizon. Gas up in Lake Louise—there are no services between Lake Louise and the lodge.</p>
+
+<p>Watch for wildlife along this stretch. I've spotted mountain goats on the cliffs above Bow Lake and black bears foraging in the avalanche slopes. Keep your camera ready but maintain the required 100-meter distance from bears and 30 meters from elk and deer.</p>
+
+<h2>Hiking and Activities from Num-Ti-Jah Lodge</h2>
+
+<p>The lodge's location makes it an excellent base for high-alpine adventures. Bow Lake itself offers easy walking along the shoreline—perfect for recovery days when I'm training at altitude. The lake typically remains partially frozen until late May, creating unique photo opportunities.</p>
+
+<p>For serious hikers, the Bow Glacier Falls trail starts right from the lodge. This 4.8-kilometer round trip takes you across Bow Lake's outwash plain to the base of Bow Falls. The trail requires some scrambling over loose rock, but the payoff is incredible. I usually complete this in 2.5 hours, including photo stops.</p>
+
+<p>Peyto Lake viewpoint is just 8 kilometers south—an easy morning hike or evening stroll. The classic viewpoint gets crowded between 10 AM and 4 PM, so I recommend sunrise or sunset visits for better lighting and fewer crowds.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Pack microspikes even in summer if you're hiking to Bow Glacier Falls. Snow and ice persist on the upper sections well into July, and the rocks can be slippery when wet.</div>
+
+<p>For comprehensive trail information, including difficulty ratings and current conditions, check our detailed <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> guide.</p>
+
+<h3>Photography and Wildlife Viewing</h3>
+
+<p>Bow Lake offers some of the Rockies' best reflection photography. The lake is calmest during early morning hours, typically before 8 AM. The surrounding peaks—Crowfoot Mountain, Mount Thompson, and Bow Peak—create a natural amphitheater that's spectacular at sunrise.</p>
+
+<p>Wildlife viewing is excellent here. Pikas are common in the surrounding talus slopes, and I regularly see golden-mantled ground squirrels around the lodge grounds. Mountain goats frequent the cliffs above the lake, especially during late summer.</p>
+
+<h2>Dining and Amenities</h2>
+
+<p>The lodge's dining room serves hearty mountain fare with picture windows overlooking Bow Lake. Breakfast runs \$18-\$25 CAD, while dinner entrees range from \$28-\$45 CAD. The menu focuses on Canadian classics—think Alberta beef, local trout, and game when available.</p>
+
+<p>Service can be slow during peak season, but that's part of the mountain pace. I appreciate the unhurried atmosphere after busy days in Banff townsite. The dining room doesn't take reservations for non-guests, so book ahead if you're day-tripping from elsewhere.</p>
+
+<p>The lodge has a small gift shop selling basic supplies, postcards, and local crafts. Don't expect extensive amenities—there's no gym, spa, or room service. What you get is authentic mountain hospitality and stunning natural surroundings.</p>
+
+<h2>Planning Your Stay</h2>
+
+<p>Book well in advance for summer stays, especially for July and August. The lodge typically opens in mid-May and closes in early October, depending on weather conditions. I prefer June or September visits—fewer crowds, better wildlife activity, and more comfortable hiking temperatures.</p>
+
+<p>If you're building a longer Banff itinerary, Num-Ti-Jah works perfectly as a two-night stay combined with time in Banff townsite or Lake Louise. Check our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> for specific routing suggestions.</p>
+
+<p>Pack layers regardless of season. I've experienced everything from snow squalls to 25°C sunshine during single April visits. The elevation and exposure make weather unpredictable, even in summer.</p>
+
+<h3>What to Bring</h3>
+
+<p>Essential items include a headlamp (rooms can be dark), warm layers, and sturdy hiking boots. The lodge provides basic toiletries, but bring specific brands you prefer. Cell service is unreliable, so download offline maps and inform someone of your plans.</p>
+
+<p>Consider booking activities through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> before arriving, as options become limited once you're at the lodge.</p>
+
+<h2>Is Num-Ti-Jah Lodge Right for You?</h2>
+
+<p>This lodge suits travelers seeking genuine mountain experiences over resort amenities. If you need WiFi, room service, or extensive dining options, stick with properties in Banff townsite. Our <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> guide covers full-service alternatives.</p>
+
+<p>However, if you want to wake up to mountain reflections, hear glacial streams instead of traffic, and experience the Rockies as they were meant to be experienced, Num-Ti-Jah delivers. After multiple stays, I keep returning for the complete disconnection from digital life and the immediate access to high-alpine terrain.</p>
+
+<p>The <strong>Num Ti Jah Lodge hotel</strong> represents old-school mountain hospitality in an age of standardized experiences. It's not perfect—rooms are simple, weather can be harsh, and you're isolated from services. But for those seeking authentic Rocky Mountain immersion, few places compare to waking up on the shores of Bow Lake with the Wapta Icefield stretching endlessly above you.</p>
+`,
   'sunshine-ski-in-ski-out': `
 <p>After countless ski trips to the Canadian Rockies, I can tell you that <strong>sunshine ski in ski out</strong> accommodations represent the absolute peak of convenience for alpine enthusiasts. Nothing beats stepping out your door onto pristine powder, especially when you're dealing with Banff's notoriously challenging parking situations and early morning lift queues. Having stayed in various ski-accessible lodges throughout Alberta, I've learned that proximity to the slopes can make or break your mountain experience.</p>
 

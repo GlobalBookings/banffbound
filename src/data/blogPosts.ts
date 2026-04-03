@@ -11,6 +11,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'new-places-to-eat-in-banff',
+    title: 'Banff\'s 12 Must-Try New Restaurants & Cafés in 2026',
+    description: 'Discover Banff\'s hottest new dining spots in 2026! From mountain-view cafés to innovative restaurants, explore 12 must-try culinary gems in the Rockies.',
+    date: '2026-04-03',
+    category: 'Food & Drink',
+    image: '/images/blog/new-places-to-eat-in-banff.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'num-ti-jah-lodge-hotel',
+    title: 'Num-Ti-Jah Lodge: Banff\'s Hidden Lake Louise Gem 2026',
+    description: 'Discover Num-Ti-Jah Lodge, a secluded wilderness retreat on Bow Lake near Lake Louise. Experience authentic Canadian Rockies hospitality in 2026.',
+    date: '2026-04-03',
+    category: 'Accommodation',
+    image: '/images/blog/num-ti-jah-lodge-hotel.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'sunshine-ski-in-ski-out',
     title: 'Banff Sunshine Ski-In Ski-Out Guide: Ultimate 2026 Experience',
     description: 'Discover Banff\'s premier ski-in ski-out experience at Sunshine Village in 2026. Complete guide to slopes, lodging, dining & mountain adventures.',
