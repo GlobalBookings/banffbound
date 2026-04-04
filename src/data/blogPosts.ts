@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'how-many-days-do-you-need-for-banff',
+    title: 'How Many Days in Banff? Perfect 2026 Itinerary Guide',
+    description: 'Plan your perfect Banff getaway with our 2026 itinerary guide. Discover ideal trip lengths, must-see attractions, and seasonal tips for an unforgettable adventure.',
+    date: '2026-04-04',
+    category: 'Itineraries',
+    image: '/images/blog/how-many-days-do-you-need-for-banff.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'new-places-to-eat-in-banff',
     title: 'Banff\'s 12 Must-Try New Restaurants & Cafés in 2026',
     description: 'Discover Banff\'s hottest new dining spots in 2026! From mountain-view cafés to innovative restaurants, explore 12 must-try culinary gems in the Rockies.',
