@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'open',
-    conditionNote: 'Groomed for classic cross-country skiing. Dogs not permitted.',
-    conditionUpdated: '2026-03-30',
+    status: 'caution',
+    conditionNote: 'Icy conditions above lake. Microspikes/crampons required.',
+    conditionUpdated: '2026-04-05',
   },
   {
     id: 'marsh-loop',
@@ -100,9 +100,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 4',
   
-    status: 'open',
-    conditionNote: 'Good winter walking conditions.',
-    conditionUpdated: '2026-03-30',
+    status: 'caution',
+    conditionNote: 'Icy sections. Exercise caution.',
+    conditionUpdated: '2026-04-05',
   },
   {
     id: 'spray-river-east',
@@ -239,8 +239,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    conditionNote: 'Cross-country skiing good. No dogs permitted.',
+    conditionUpdated: '2026-04-05',
   },
   {
     id: 'johnson-lake',
@@ -273,9 +273,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'closed',
-    conditionNote: 'Not maintained in winter, avalanche danger.',
-    conditionUpdated: '2026-03-30',
+    status: 'open',
+    conditionNote: 'Cross-country skiing good. Dogs permitted on leash.',
+    conditionUpdated: '2026-04-05',
   },
   {
     id: 'sunshine-meadows',
@@ -1357,8 +1357,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'closed',
-    conditionNote: 'Winter closure, avalanche risk.',
-    conditionUpdated: '2026-03-30',
+    conditionNote: 'Trail not maintained in winter beyond Tea House.',
+    conditionUpdated: '2026-04-05',
   },
   {
     id: 'tramline',
