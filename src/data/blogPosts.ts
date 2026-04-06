@@ -11,6 +11,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-clubs',
+    title: 'Best Banff Clubs 2026: Where Locals Party After Dark',
+    description: 'Discover Banff\'s hottest nightlife spots in 2026! From cozy pubs to energetic dance floors, explore where locals party after dark in the Canadian Rockies.',
+    date: '2026-04-06',
+    category: 'Guides',
+    image: '/images/blog/banff-clubs.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'jasper-national-park',
+    title: 'Banff to Jasper: The Ultimate 2026 Road Trip Guide',
+    description: 'Discover the ultimate Banff to Jasper road trip with our 2026 guide. Explore scenic routes, must-see stops, and hidden gems along the iconic Icefields Parkway.',
+    date: '2026-04-06',
+    category: 'Guides',
+    image: '/images/blog/jasper-national-park.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'jasper-canada',
+    title: 'Banff to Jasper 2026: Ultimate Canadian Rockies Road Trip Guide',
+    description: 'Discover the ultimate Banff to Jasper road trip in 2026! Your complete guide to stunning mountain views, wildlife spots, and must-see attractions along the Icefields Parkway.',
+    date: '2026-04-06',
+    category: 'Guides',
+    image: '/images/blog/jasper-canada.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'how-many-days-do-you-need-for-banff',
     title: 'How Many Days in Banff? Perfect 2026 Itinerary Guide',
     description: 'Plan your perfect Banff getaway with our 2026 itinerary guide. Discover ideal trip lengths, must-see attractions, and seasonal tips for an unforgettable adventure.',
