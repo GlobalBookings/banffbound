@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'caution',
-    conditionNote: 'Icy conditions above lake. Microspikes/crampons required.',
-    conditionUpdated: '2026-04-05',
+    status: 'open',
+    conditionNote: 'Well maintained, some snow cover',
+    conditionUpdated: '2026-04-06',
   },
   {
     id: 'marsh-loop',
@@ -100,9 +100,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 4',
   
-    status: 'caution',
-    conditionNote: 'Icy sections. Exercise caution.',
-    conditionUpdated: '2026-04-05',
+    status: 'open',
+    conditionNote: 'Trail packed, good for walking',
+    conditionUpdated: '2026-04-06',
   },
   {
     id: 'spray-river-east',
@@ -238,9 +238,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'open',
-    conditionNote: 'Cross-country skiing good. No dogs permitted.',
-    conditionUpdated: '2026-04-05',
+    status: 'caution',
+    conditionNote: 'Icy beyond lower falls, traction devices required',
+    conditionUpdated: '2026-04-06',
   },
   {
     id: 'johnson-lake',
@@ -273,9 +273,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'open',
-    conditionNote: 'Cross-country skiing good. Dogs permitted on leash.',
-    conditionUpdated: '2026-04-05',
+    status: 'closed',
+    conditionNote: 'Not maintained in winter',
+    conditionUpdated: '2026-04-06',
   },
   {
     id: 'sunshine-meadows',
@@ -591,8 +591,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 1',
   
     status: 'caution',
-    conditionNote: 'Icy conditions, microspikes recommended.',
-    conditionUpdated: '2026-03-30',
+    conditionNote: 'Icy conditions, microspikes recommended',
+    conditionUpdated: '2026-04-06',
   },
   {
     id: 'tunnel-mountain-summit',
@@ -1357,8 +1357,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'closed',
-    conditionNote: 'Trail not maintained in winter beyond Tea House.',
-    conditionUpdated: '2026-04-05',
+    conditionNote: 'Not maintained in winter',
+    conditionUpdated: '2026-04-06',
   },
   {
     id: 'tramline',
