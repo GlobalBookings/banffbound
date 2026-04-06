@@ -2722,7 +2722,7 @@ export const blogContent1: Record<string, string> = {
 <p>Start planning your trip today: browse tours and experiences on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>, and lock in your hotel on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>. The mountains are calling.</p>
 `,
   'banff-gondola-tickets-guide': `
-<p>The <strong><a href="/blog/banff-wildlife-guide">Wildlife in Banff: Where to See Bears, Elk & More</a> Gondola</strong> is the single most popular attraction in Banff National Park, carrying visitors 698 metres up <strong>Sulphur Mountain</strong> to a jaw-dropping summit station at 2,281 metres above sea level. For anyone planning your first visit or looking for the best deal on tickets, this guide has everything you need to know about riding the Banff Gondola in 2026.</p>
+<p>The <strong><a href="/blog/banff-wildlife-guide">Wildlife in <a href="/blog/banff-gondola-guide">Banff Gondola: Everything You Need to Know</a>: Where to See Bears, Elk & More</a> Gondola</strong> is the single most popular attraction in Banff National Park, carrying visitors 698 metres up <strong>Sulphur Mountain</strong> to a jaw-dropping summit station at 2,281 metres above sea level. For anyone planning your first visit or looking for the best deal on tickets, this guide has everything you need to know about riding the Banff Gondola in 2026.</p>
 
 <h2>Banff Gondola Ticket Prices (2026)</h2>
 <p>Here are the current standard prices for the Banff Gondola:</p>
@@ -2995,7 +2995,7 @@ export const blogContent1: Record<string, string> = {
 <p>The best hikes start with a great night's sleep. Whether you want a downtown Banff hotel, a Lake Louise lodge, or a budget-friendly spot in Canmore, book your hiking basecamp on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and wake up ready for the trail.</p>
 `,
   'banff-weather-best-time-to-visit': `
-<p><a href="/blog/how-to-get-to-banff">How to Get to Banff: Every Transportation Option</a>'s mountain weather is famously unpredictable — we've seen snowfall in July and T-shirt days in October. Understanding what to expect each month is essential for planning a great trip. This guide breaks down <strong>Banff weather month by month</strong>, the best time to <a href="/blog/best-time-to-visit-banff">Best Time to Visit Banff: A Month-by-Month</a> for each activity, and exactly what to pack so you're prepared for anything the Rockies throw at you.</p>
+<p><a href="/blog/how-to-get-to-banff">How to Get to <a href="/blog/accessible-banff">Accessible Banff: A for Visitors with Disabilities</a>: Every Transportation Option</a>'s mountain weather is famously unpredictable — we've seen snowfall in July and T-shirt days in October. Understanding what to expect each month is essential for planning a great trip. This guide breaks down <strong>Banff weather month by month</strong>, the best time to <a href="/blog/best-time-to-visit-banff">Best Time to Visit Banff: A Month-by-Month</a> for each activity, and exactly what to pack so you're prepared for anything the Rockies throw at you.</p>
 
 <h2>Banff Weather Overview</h2>
 <p>Banff townsite sits at <strong>1,383 metres</strong> (4,537 feet) above sea level, which means temperatures are always cooler than nearby Calgary. Mountain weather can change in minutes — sunshine can turn to hail, rain, or even snow with little warning, any time of year. The key to comfortable hiking, sightseeing, and outdoor activities in Banff is <strong>layering</strong>.</p>
@@ -3652,7 +3652,7 @@ export const blogContent1: Record<string, string> = {
 <p>Whether you choose to stay at the Sandman Hotel Canmore, within Banff townsite, or anywhere else in this remarkable region, the Canadian Rockies offer experiences that will create lifelong memories. From watching sunrise paint the peaks golden to spotting wildlife along mountain trails, every moment in Banff National Park connects you with some of the world's most remarkable wilderness. For the best deals on accommodation and to compare options across the Bow Valley, check out <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>. Don't forget to book your mountain adventures and guided experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your Rocky Mountain getaway.</p>
 `,
   'best-time-to-visit-banff': `
-<p><a href="/blog/banff-weather-best-time-to-visit"><a href="/blog/banff-on-a-budget">Banff on a Budget: How to Visit Without Breaking</a> Weather : Best Time to Visit & What to Pack in</a> National Park is gorgeous year-round, but each season offers a completely different experience. Knowing the best time to visit Banff depends on what you want to do, your budget, and how you feel about crowds.</p>
+<p><a href="/blog/banff-weather-best-time-to-visit"><a href="/blog/banff-on-a-budget"><a href="/blog/accessible-banff">Accessible Banff: A for Visitors with Disabilities</a> on a Budget: How to Visit Without Breaking</a> Weather : Best Time to Visit & What to Pack in</a> National Park is gorgeous year-round, but each season offers a completely different experience. Knowing the best time to visit Banff depends on what you want to do, your budget, and how you feel about crowds.</p>
 
 <h2>Summer (June to August)</h2>
 <p><strong>Best for:</strong> hiking, canoeing, scenic drives, wildlife viewing, and long daylight hours.</p>
@@ -3723,7 +3723,7 @@ export const blogContent1: Record<string, string> = {
 </ul>
 `,
   '3-day-banff-itinerary': `
-<p>Three days in <a href="/blog/7-day-banff-itinerary">7-Day Banff Itinerary: The</a> is enough to hit the major highlights and leave you desperate to come back for more. This itinerary balances iconic sights with enough time to actually enjoy them without rushing.</p>
+<p>Three days in <a href="/blog/7-day-banff-itinerary">7-Day <a href="/blog/how-many-days-do-you-need-for-banff">How Many Days in Banff? Perfect Itinerary</a> Itinerary: The</a> is enough to hit the major highlights and leave you desperate to come back for more. This itinerary balances iconic sights with enough time to actually enjoy them without rushing.</p>
 
 <h2>Day 1: Banff Town & Sulphur Mountain</h2>
 <h3>Morning</h3>
@@ -3767,7 +3767,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Budget Tip:</strong> Buy a Parks Canada Discovery Pass ($145.25/adult) if you're spending 7+ days in national parks per year. Otherwise, a daily pass ($11/adult) or family/group pass ($22.40) covers your entry.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   '7-day-banff-itinerary': `
-<p>A full week in <a href="/blog/banff-icewalk"><a href="/blog/fancy-hotel-in-banff">Banff's Most Luxurious Hotels</a> Icewalk : to Frozen Canyon Adventures</a> lets you go beyond the highlights and truly experience the depth of the Canadian Rockies. This itinerary covers the essentials and takes you to places most visitors never reach.</p>
+<p>A full week in <a href="/blog/banff-icewalk"><a href="/blog/fancy-hotel-in-banff"><a href="/blog/how-many-days-do-you-need-for-banff">How Many Days in Banff? Perfect Itinerary</a>'s Most Luxurious Hotels</a> Icewalk : to Frozen Canyon Adventures</a> lets you go beyond the highlights and truly experience the depth of the Canadian Rockies. This itinerary covers the essentials and takes you to places most visitors never reach.</p>
 
 <h2>Day 1: Arrival & Banff Town Exploration</h2>
 <p>Arrive in Banff and settle into your accommodation. Spend the afternoon walking <strong>Banff Avenue</strong>, browsing shops, and getting oriented. Visit <strong>Bow Falls</strong> and the <strong>Cascade of Time Garden</strong>. Watch the sunset from <strong>Surprise Corner Viewpoint</strong> with the Fairmont Banff Springs in the foreground. Dinner at <strong>Block Kitchen + Bar</strong>.</p>
@@ -3856,7 +3856,7 @@ export const blogContent1: Record<string, string> = {
 
 <h2>Best Time to Visit</h2>
 <p>The lake is accessible year-round, but the experience changes dramatically with the seasons. Summer (late June to September) offers the iconic turquoise water, canoeing, and hiking. Winter (December to March) brings ice skating on the frozen lake beneath the Chateau and incredible ice sculptures during the Ice Magic festival.</p>
-<p>The lake reaches its most vivid turquoise colour in July and August when glacial melt carries fine rock flour into the water. For more details, check out our <a href="/blog/icefields-parkway-guide">Icefields Parkway: The Driving</a> on <a href="/blog/moraine-lake-guide">Moraine Lake : How to Visit in (Shuttle, Tips & More)</a>.</p>
+<p>The lake reaches its most vivid turquoise colour in July and August when glacial melt carries fine rock flour into the water. For more details, check out our <a href="/blog/icefields-parkway-guide">Icefields <a href="/blog/bow-valley-parkway-guide">Bow Valley Parkway: Driving (Highway 1A)</a>: The Driving</a> on <a href="/blog/moraine-lake-guide">Moraine Lake : How to Visit in (Shuttle, Tips & More)</a>. For more details, check out our guide on <a href="/blog/johnston-canyon-guide">Johnston Canyon: Hiking</a>.</p>
 
 <h2>Top Things to Do at Lake Louise</h2>
 <h3>Walk the Lakeshore</h3>
@@ -3993,7 +3993,7 @@ export const blogContent1: Record<string, string> = {
 <p>Banff comes alive with events in summer: the <strong>Banff Centre Mountain Film and Book Festival</strong>, <strong>Canada Day celebrations</strong>, weekly <strong>farmers markets</strong>, and various outdoor concerts and art events throughout July and August.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-on-a-budget': `
-<p><a href="/blog/banff-trip-cost-budget-guide">How Much Does a Banff Trip Cost? Budget Breakdown</a> has a reputation for being expensive, and it can be -- but it doesn't have to be. With smart planning, you can experience the best of the Canadian Rockies without emptying your wallet.</p>
+<p><a href="/blog/banff-trip-cost-budget-guide">How Much Does a <a href="/blog/rainy-day-banff">Rainy Day in Banff: 15 Indoor Activities & Ideas</a> Trip Cost? Budget Breakdown</a> has a reputation for being expensive, and it can be -- but it doesn't have to be. With smart planning, you can experience the best of the Canadian Rockies without emptying your wallet.</p>
 
 <h2>Affordable Accommodation</h2>
 <ul>
@@ -4119,7 +4119,7 @@ export const blogContent1: Record<string, string> = {
 
 <h2>Breweries & Bars</h2>
 <h3>Banff Ave Brewing Co.</h3>
-<p>Banff's original craft brewery. House-brewed beers (try the Head Smashed IPA) alongside solid pub food. The rooftop patio is a great apres-ski spot.</p>
+<p><a href="/blog/banff-craft-beer-guide">Banff Craft Beer : Breweries, Taprooms & Best Pints</a>'s original craft brewery. House-brewed beers (try the Head Smashed IPA) alongside solid pub food. The rooftop patio is a great apres-ski spot.</p>
 
 <h3>The Rose & Crown</h3>
 <p>British-style pub with a rooftop patio, live music, and a lively atmosphere. A Banff institution for decades.</p>
@@ -4128,7 +4128,7 @@ export const blogContent1: Record<string, string> = {
 <p>Bowling alley meets cocktail lounge. Roll a few frames while sipping craft cocktails -- a fun rainy-day or evening activity.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'icefields-parkway-guide': `
-<p>The Icefields Parkway (Highway 93 North) is a 232 km road connecting Lake Louise to Jasper through the heart of the Canadian Rockies. It's regularly called one of the most scenic drives in the world, and it earns that title at every turn.</p>
+<p>The Icefields <a href="/blog/bow-valley-parkway-guide">Bow Valley Parkway: Driving (Highway 1A)</a> (Highway 93 North) is a 232 km road connecting Lake Louise to Jasper through the heart of the Canadian Rockies. It's regularly called one of the most scenic drives in the world, and it earns that title at every turn.</p>
 
 <h2>Planning Your Drive</h2>
 <p>The drive takes about 3 hours without stops, but you'll want a full day to properly enjoy it. Start from Lake Louise and drive north toward Jasper, or do it as a long day trip from Banff (returning the same way).</p>
@@ -4137,7 +4137,7 @@ export const blogContent1: Record<string, string> = {
 <h2>Must-Stop Viewpoints (South to North)</h2>
 
 <h3>1. Herbert Lake</h3>
-<p>Just 3 km from the Highway 1 junction. A calm lake with perfect mountain reflections, especially in early morning. Easy roadside stop. For more details, check out our guide on <a href="/blog/moraine-lake-guide">Moraine Lake : How to Visit in (Shuttle, Tips & More)</a>.</p>
+<p>Just 3 km from the Highway 1 junction. A calm lake with perfect mountain reflections, especially in early morning. Easy roadside stop. For more details, check out our <a href="/blog/johnston-canyon-guide">Johnston Canyon: Hiking</a> on <a href="/blog/moraine-lake-guide">Moraine Lake : How to Visit in (Shuttle, Tips & More)</a>.</p>
 
 <h3>2. Bow Lake</h3>
 <p>A beautiful turquoise lake beneath Bow Glacier at km 36. Walk to the lakeshore for incredible reflections. The historic Num-Ti-Jah Lodge sits at its edge.</p>
@@ -4212,7 +4212,7 @@ export const blogContent1: Record<string, string> = {
 </ul>
 `,
   'banff-park-pass-guide': `
-<p>Everyone entering Banff National Park needs a valid Parks Canada pass. Here's everything you need to know about types, pricing, and where to buy.</p>
+<p>Everyone entering <a href="/blog/banff-gondola-guide">Banff Gondola: Everything You Need to Know</a> National Park needs a valid Parks Canada pass. Here's everything you need to know about types, pricing, and where to buy.</p>
 
 <h2>Do You Need a Pass?</h2>
 <p>Yes. A Parks Canada entry pass is required for everyone visiting Banff National Park, for those driving through, hiking, or just stopping for lunch in town. The pass covers entry to the park only -- activities, parking, and camping are separate fees.</p>
@@ -4254,7 +4254,7 @@ export const blogContent1: Record<string, string> = {
 <p><strong>Do I need a pass to drive through on Highway 1?</strong> Technically yes, though enforcement focuses on people who stop and use park facilities.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-skiing-guide': `
-<p>With three renowned resorts collectively known as <strong>SkiBig3</strong>, <a href="/blog/banff-in-summer">Banff in Summer: to the Perfect Visit</a> offers some of the best <a href="/blog/backcountry-skiing-day-tours-canadian-rockies">Banff Backcountry Skiing Day Tours</a> in North America. Here's your complete guide to hitting the slopes.</p>
+<p>With three renowned resorts collectively known as <strong>SkiBig3</strong>, <a href="/blog/banff-in-summer"><a href="/blog/banff-camping-<a href="/blog/johnston-canyon-guide">Johnston Canyon: Hiking</a>">Camping in <a href="/blog/banff-christmas-guide">Christmas in Banff: Holiday Season</a>: The Campground</a> in Summer: to the Perfect Visit</a> offers some of the best <a href="/blog/backcountry-skiing-day-tours-canadian-rockies">Banff Backcountry Skiing Day Tours</a> in North America. Here's your complete guide to hitting the slopes.</p>
 
 <h2>The Three Resorts Compared</h2>
 
@@ -4300,7 +4300,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>First Timer?</strong> Start at Mt. Norquay for a relaxed, affordable introduction. Their beginner packages include a lift ticket, rental, and group lesson at excellent value.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-with-kids': `
-<p>Banff is an incredible destination for families. The combination of easy nature access, wildlife, and family-friendly activities makes it a place kids will remember forever.</p>
+<p><a href="/blog/rainy-day-banff">Rainy Day in Banff: 15 Indoor Activities & Ideas</a> is an incredible destination for families. The combination of easy nature access, wildlife, and family-friendly activities makes it a place kids will remember forever.</p>
 
 <h2>Easy Hikes for Kids</h2>
 <ul>
@@ -4624,7 +4624,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> For the best experience, drive the Parkway at sunset heading west, stopping at viewpoints as the light turns golden. Then return to Banff via the faster Highway 1. For guided wildlife drives, check <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> for evening safari tours.</div>
 `,
   'banff-camping-guide': `
-<p>Camping in <a href="/blog/banff-entry-fee"><a href="/blog/banff-wildlife-guide">Wildlife in <a href="/blog/banff-skiing-guide">Skiing in Banff: to the Big 3 Resorts</a>: Where to See Bears, Elk & More</a> Entry Fee : to Park Pass Costs</a> National Park is one of the best ways to experience the Canadian Rockies — waking up to mountain views, cooking under the stars, and falling asleep to the sound of rivers. Here's everything you need to know about campgrounds, booking, gear, and backcountry camping in Banff.</p>
+<p>Camping in <a href="/blog/banff-entry-fee"><a href="/blog/banff-wildlife-guide">Wildlife in <a href="/blog/banff-skiing-guide">Skiing in <a href="/blog/banff-christmas-guide">Christmas in Banff: Holiday Season</a>: to the Big 3 Resorts</a>: Where to See Bears, Elk & More</a> Entry Fee : to Park Pass Costs</a> National Park is one of the best ways to experience the Canadian Rockies — waking up to mountain views, cooking under the stars, and falling asleep to the sound of rivers. Here's everything you need to know about campgrounds, booking, gear, and backcountry camping in Banff.</p>
 
 <h2>Front-Country Campgrounds</h2>
 <p>Banff has several excellent Parks Canada campgrounds with varying amenities. All require a valid park pass in addition to the camping fee.</p>
@@ -4645,7 +4645,7 @@ export const blogContent1: Record<string, string> = {
 <p>74 walk-in tent sites right on the shore of Two Jack Lake — among the most scenic campground spots in the park. Some sites have direct lake views. Fire pits, food lockers, pit toilets. Sites from $29.25/night. <strong>Extremely popular — books out within minutes of opening.</strong></p>
 
 <h3>Johnston Canyon (Open May-September)</h3>
-<p>132 sites along Johnston Creek, steps from the Johnston Canyon trailhead. Flush toilets, food storage lockers, fire pits. A great base for exploring the Bow Valley <a href="/blog/icefields-parkway-guide">Icefields Parkway: The Driving</a>. Sites from $29.25/night.</p>
+<p>132 sites along Johnston Creek, steps from the Johnston Canyon trailhead. Flush toilets, food storage lockers, fire pits. A great base for exploring the Bow <a href="/blog/bow-valley-parkway-guide">Bow Valley Parkway: Driving (Highway 1A)</a> <a href="/blog/icefields-parkway-guide">Icefields Parkway: The Driving</a>. Sites from $29.25/night.</p>
 
 <h3>Lake Louise Campground (Open May-September)</h3>
 <p>189 tent sites and some RV sites near Lake Louise village. Hard-sided camping only (no tents in some sections) due to bear activity. Flush toilets, showers available at some loops. Sites from $29.25/night.</p>
@@ -5123,7 +5123,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> On clear days, take the Summit Platter to the highest point and pause to take in the view. You can see the Ten Peaks, Temple Mountain, and on exceptionally clear days, ranges stretching hundreds of kilometres in every direction. It's one of the most remarkable summit panoramas at any ski resort in the world.</div>
 `,
   'banff-hot-springs-guide': `
-<p>The <a href="/blog/banff-entry-fee"><a href="/blog/banff-skiing-guide">Skiing in Banff: to the Big 3 Resorts</a> Entry Fee : to Park Pass Costs</a> Upper Hot Springs are one of the most popular attractions in Banff National Park — and for good reason. Naturally heated mineral water, mountain views from the pool, and a history that goes back to the very founding of Canada's national parks make this a must-do experience for every visitor.</p>
+<p>The <a href="/blog/banff-entry-fee"><a href="/blog/banff-skiing-guide">Skiing in <a href="/blog/banff-camping-guide">Camping in <a href="/blog/banff-christmas-guide">Christmas in Banff: Holiday Season</a>: The Campground</a>: to the Big 3 Resorts</a> Entry Fee : to Park Pass Costs</a> Upper Hot Springs are one of the most popular attractions in Banff National Park — and for good reason. Naturally heated mineral water, mountain views from the pool, and a history that goes back to the very founding of Canada's national parks make this a must-do experience for every visitor.</p>
 
 <h2>History</h2>
 <p>Hot springs are the reason Banff National Park exists. In 1883, three railway workers discovered natural hot springs on Sulphur Mountain, sparking a dispute over ownership that led the Canadian government to create Banff as Canada's first national park in 1885. The Upper Hot Springs facility has been welcoming bathers since 1932, making it one of the longest-operating hot springs pools in Canada.</p>
@@ -5261,7 +5261,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Our Recommendation:</strong> If you can only do one, hike up and ride the gondola down. You get the best of both worlds — the trail experience, the workout, the summit views, and a comfortable descent. Finish with a soak at the Banff Upper Hot Springs at the mountain base. Book your <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">Banff Gondola tickets</a> online for the best rates.</div>
 `,
   'banff-to-jasper-drive': `
-<p>The drive from Banff to Jasper along the Icefields Parkway (Highway 93 North) is widely considered one of the most scenic road trips in the world. Over 290 km, the highway threads through the heart of the Canadian Rockies past turquoise lakes, ancient glaciers, thundering waterfalls, and towering peaks. Here's how to plan the top road trip.</p>
+<p>The drive from Banff to <a href="/blog/jasper-national-park">Banff to <a href="/blog/jasper-canada">Banff to Jasper : Canadian Rockies Road Trip</a>: The Road Trip</a> along the Icefields Parkway (Highway 93 North) is widely considered one of the most scenic road trips in the world. Over 290 km, the highway threads through the heart of the Canadian Rockies past turquoise lakes, ancient glaciers, thundering waterfalls, and towering peaks. Here's how to plan the top road trip.</p>
 
 <h2>Route Overview</h2>
 <ul>
@@ -5623,7 +5623,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Best Spring Strategy:</strong> Aim for late May when most lower trails are open, waterfalls are roaring, and spring skiing is still available. You get the best of both seasons, with shoulder-season prices and almost no crowds.</div>
 `,
   'banff-in-fall': `
-<p>Fall in Banff is when the Canadian Rockies put on their most colourful show. Golden larch trees, fewer crowds, crisp air, and warm autumn light make September and October one of the best times to visit. If you time it right for larch season, you'll witness one of the most remarkable natural displays in North America.</p>
+<p>Fall in Banff is when the Canadian Rockies put on their most colourful show. Golden <a href="/blog/fall-larch-season-banff">Larch Season in Banff: When & Where to See Golden</a> trees, fewer crowds, crisp air, and warm autumn light make September and October one of the best times to visit. If you time it right for larch season, you'll witness one of the most remarkable natural displays in North America.</p>
 
 <h2>Weather & Conditions</h2>
 <ul>
@@ -5678,7 +5678,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> The absolute best time to visit Banff in fall is the last week of September. Larches are at peak gold, the weather is usually stable, most trails and facilities are still open, and the summer crowds are gone. It's magical.</div>
 `,
   'banff-backcountry-guide': `
-<p>Beyond the popular front-country trails and day hikes, Banff's backcountry offers a world of remote wilderness, crystal-clear alpine lakes, wildflower meadows, and genuine solitude. Backcountry camping and multi-day hiking in Banff are notable experiences — but they require planning, preparation, and respect for the wilderness. Here's your complete guide.</p>
+<p>Beyond the popular front-country trails and day hikes, <a href="/blog/banff-camping-guide">Camping in Banff: The Campground</a>'s backcountry offers a world of remote wilderness, crystal-clear alpine lakes, wildflower meadows, and genuine solitude. Backcountry camping and multi-day hiking in Banff are notable experiences — but they require planning, preparation, and respect for the wilderness. Here's your complete guide.</p>
 
 <h2>What Is Backcountry Camping?</h2>
 <p>Backcountry camping in Banff means hiking to designated campgrounds deep in the wilderness, carrying all your gear, food, and water. There are no roads, no RV hookups, and no showers. What you get instead is silence, stars, wildlife encounters, and some of the most impressive scenery on Earth.</p>

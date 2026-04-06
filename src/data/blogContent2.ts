@@ -1137,7 +1137,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> Friday night skiing at Norquay is one of Banff's best-kept secrets. After a day of sightseeing, head up for a few runs under the lights — the atmosphere is relaxed, the slopes are quiet, and skiing with the lights of Banff twinkling below is pure magic. Grab a beer at the lodge afterward and you've got the perfect winter evening.</div>
 `,
   'banff-food-truck-guide': `
-<p><a href="/blog/banff-food-guide">The Banff Food : Best Restaurants & Cafes</a>'s food truck scene has grown from a handful of carts to a thriving street food culture that adds casual, creative dining options to a town traditionally dominated by sit-down restaurants. From gourmet tacos and wood-fired pizza to poutine and Thai street food, Banff's food trucks offer quick, delicious meals at reasonable prices — perfect for refuelling between adventures.</p>
+<p><a href="/blog/banff-food-guide">The <a href="/blog/banff-craft-beer-guide">Banff Craft Beer : Breweries, Taprooms & Best Pints</a> Food : Best Restaurants & Cafes</a>'s food truck scene has grown from a handful of carts to a thriving street food culture that adds casual, creative dining options to a town traditionally dominated by sit-down restaurants. From gourmet tacos and wood-fired pizza to poutine and Thai street food, Banff's food trucks offer quick, delicious meals at reasonable prices — perfect for refuelling between adventures.</p>
 
 <h2>Best Food Trucks in Banff</h2>
 
@@ -1588,7 +1588,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Tip:</strong> Banff's international, tourism-driven community is overwhelmingly welcoming. Travel with confidence, be yourselves, and enjoy one of the most beautiful places on the planet together.</div>
 `,
   'banff-senior-travel': `
-<p><a href="/blog/banff-with-kids">Banff with Kids: Family-Friendly Activities & Tips</a> National Park isn't just for adventurous young hikers. The park offers countless experiences perfectly suited to older travellers — scenic drives, gentle walks, top-tier dining, cultural attractions, and comfortable accommodations. Here's how seniors can enjoy Banff to the fullest.</p>
+<p><a href="/blog/banff-with-kids"><a href="/blog/rainy-day-banff">Rainy Day in Banff: 15 Indoor Activities & Ideas</a> with Kids: Family-Friendly Activities & Tips</a> National Park isn't just for adventurous young hikers. The park offers countless experiences perfectly suited to older travellers — scenic drives, gentle walks, top-tier dining, cultural attractions, and comfortable accommodations. Here's how seniors can enjoy Banff to the fullest.</p>
 
 <h2>Easy & Accessible Activities</h2>
 <h3>Scenic Drives</h3>
@@ -1647,7 +1647,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Senior Tip:</strong> The Banff Gondola plus Banff Upper Hot Springs combo is the perfect senior day out — incredible views without strenuous effort, followed by a soothing soak. Both are within a short drive of downtown Banff.</div>
 `,
   'banff-group-travel': `
-<p>Planning a group trip to Banff — whether it's a family reunion, bachelor party, corporate retreat, or friend group adventure — takes more coordination than a solo or couples trip. But with the right planning, a Banff group trip can be one of the most memorable experiences of everyone's lives. Here's how to pull it off.</p>
+<p>Planning a group trip to <a href="/blog/accessible-banff">Accessible Banff: A for Visitors with Disabilities</a> — whether it's a family reunion, bachelor party, corporate retreat, or friend group adventure — takes more coordination than a solo or couples trip. But with the right planning, a Banff group trip can be one of the most memorable experiences of everyone's lives. Here's how to pull it off.</p>
 
 <h2>Accommodation for Groups</h2>
 <h3>Vacation Rentals</h3>
@@ -1920,7 +1920,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Money-Saving Tip:</strong> Visit during shoulder season (May or October), stay in Canmore instead of Banff, cook some meals in your accommodation kitchen, and focus on free activities like hiking and scenic drives. You can have an incredible Banff experience for under $100/day.</div>
 `,
   'banff-shoulder-season': `
-<p>While most visitors flock to Banff in July-August or ski season, the shoulder months of May and October offer something special: fewer crowds, lower prices, and a unique atmosphere that the peak seasons can't match. Here's why shoulder season might be the best time to visit.</p>
+<p>While most visitors flock to Banff in July-August or ski <a href="/blog/fall-larch-season-banff">Larch Season in Banff: When & Where to See Golden</a>, the shoulder months of May and October offer something special: fewer crowds, lower prices, and a unique atmosphere that the peak seasons can't match. Here's why shoulder season might be the best time to visit.</p>
 
 <h2>May in Banff</h2>
 <h3>What to Expect</h3>
@@ -2966,7 +2966,7 @@ export const blogContent2: Record<string, string> = {
 <p>After a long day of hiking, skiing, or exploring, few things satisfy like a great pizza. <a href="/blog/banff-food-guide">The Banff Food : Best Restaurants & Cafes</a> delivers surprisingly excellent pizza — from wood-fired Neapolitan to loaded gourmet pies with wild game toppings. Here's every pizza spot in town, ranked and reviewed.</p>
 
 <h2>Bear Street Tavern</h2>
-<p>The undisputed pizza champion of Banff. Bear Street Tavern makes thin-crust gourmet pizzas with creative toppings that go far beyond the ordinary. The dough is made fresh daily, and the flavour combinations are inspired — duck confit with caramelised onion, pulled pork with house BBQ, and a classic Margherita that's hard to beat. The craft beer selection complements the pizza perfectly.</p>
+<p>The undisputed pizza champion of <a href="/blog/banff-craft-beer-guide">Banff Craft Beer : Breweries, Taprooms & Best Pints</a>. Bear Street Tavern makes thin-crust gourmet pizzas with creative toppings that go far beyond the ordinary. The dough is made fresh daily, and the flavour combinations are inspired — duck confit with caramelised onion, pulled pork with house BBQ, and a classic Margherita that's hard to beat. The craft beer selection complements the pizza perfectly.</p>
 <p><strong>Must-try:</strong> Duck Confit pizza. <strong>Price:</strong> $18-24 per pizza. <strong>Atmosphere:</strong> Casual, lively, local crowd.</p>
 
 <h2>Tooloulou's</h2>
@@ -3259,7 +3259,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Patio Tip:</strong> The golden hour at Magpie & Stump's rooftop is magical — Cascade Mountain glows orange and pink as the sun sets behind you. Arrive at 7:30 PM on a clear summer evening and order a pitcher of margaritas. It's the most memorable patio experience in Banff.</div>
 `,
   '5-day-banff-itinerary': `
-<p>Five days in <a href="/blog/7-day-banff-itinerary">7-Day Banff Itinerary: The</a> is the sweet spot — enough time to see the iconic highlights, explore off-the-radar spots, and still have moments to simply sit and stare at the mountains. This day-by-day itinerary balances adventure with relaxation, nature with dining, and popular sites with lesser-known treasures.</p>
+<p>Five days in <a href="/blog/7-day-banff-itinerary">7-Day <a href="/blog/how-many-days-do-you-need-for-banff">How Many Days in Banff? Perfect Itinerary</a> Itinerary: The</a> is the sweet spot — enough time to see the iconic highlights, explore off-the-radar spots, and still have moments to simply sit and stare at the mountains. This day-by-day itinerary balances adventure with relaxation, nature with dining, and popular sites with lesser-known treasures.</p>
 
 <h2>Day 1: Arrive & Explore Banff Town</h2>
 <ul>
@@ -3402,7 +3402,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Summer Tip:</strong> The Parks Canada shuttle to Moraine Lake is mandatory in peak season (June-October). Book your shuttle ticket on the Parks Canada website as soon as reservations open — they sell out within hours. Alternatively, arrive at the Moraine Lake parking lot before 6 AM to beat the shuttle system entirely.</div>
 `,
   'fall-banff-itinerary': `
-<p>Fall in Banff is a secret that photographers and locals guard jealously. While summer crowds thin out, the larch trees turn brilliant gold, the wildlife is active before winter, and the crisp mountain air makes every view sharper. This 3-day itinerary focuses on the best autumn experiences — golden larches, wildlife, and harvest dining.</p>
+<p>Fall in Banff is a secret that photographers and locals guard jealously. While summer crowds thin out, the <a href="/blog/fall-larch-season-banff">Larch Season in Banff: When & Where to See Golden</a> trees turn brilliant gold, the wildlife is active before winter, and the crisp mountain air makes every view sharper. This 3-day itinerary focuses on the best autumn experiences — golden larches, wildlife, and harvest dining.</p>
 
 <h2>Day 1: Larch Valley & Moraine Lake</h2>
 <ul>
