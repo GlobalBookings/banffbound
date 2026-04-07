@@ -308,7 +308,7 @@ export const blogContent1: Record<string, string> = {
 <p>For the complete <strong>Banff view</strong> experience, combine multiple transportation methods. Drive scenic routes for accessibility, take gondolas for effortless elevation gain, and hike trails for exclusive viewpoints. This multi-faceted approach ensures you capture the full range of perspectives that make Banff one of the world's premier mountain destinations. Start planning your 2026 adventure by browsing accommodation options on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and booking guided experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to ensure you don't miss any of these incredible mountain vistas.</p>
 `,
   'parks-canada-discovery-pass-price-2026': `
-<p>Planning your dream trip to the Canadian Rockies? Understanding the <strong>Parks Canada Discovery Pass price for 2026</strong> is essential for budgeting your Banff National Park adventure. With recent updates to park entry fees and exciting new experiences awaiting visitors, this comprehensive guide covers everything you need to know about accessing Canada's most striking mountain playground while maximizing your investment in one-of-a-kind memories.</p>
+<p>Planning your dream trip to the Canadian Rockies? Understanding the <strong>Parks Canada Discovery Pass price for 2026</strong> is essential for budgeting your Banff National Park adventure. With recent updates to park entry fees and exciting new experiences awaiting visitors, this comprehensive <a href="/blog/cave-and-basin-guide">Cave and Basin: Birthplace of Canada's National Parks</a> covers everything you need to know about accessing Canada's most striking mountain playground while maximizing your investment in one-of-a-kind memories.</p>
 
 <h2>Parks Canada Discovery Pass Price 2026: Complete Breakdown</h2>
 
@@ -668,7 +668,7 @@ export const blogContent1: Record<string, string> = {
 <p>If you're crafting a <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> or planning an extended mountain getaway, incorporating strategic dining choices enhances both your culinary experience and budget management. From upscale mountain lodges offering panoramic views to cozy bistros serving locally-sourced comfort food, Banff's restaurant scene provides exceptional value for travelers who know when and where to look. Start planning your culinary adventure by securing great accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>, then explore unique dining experiences and food tours on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to create the perfect blend of mountain adventure and exceptional dining in the heart of the Canadian Rockies.</p>
 `,
   'sunshine-ski-resort-accommodation': `
-<p>Planning a ski getaway to one of Canada's most incredible alpine destinations? <strong><a href="/blog/sunshine-ski-in-ski-out">Banff Sunshine Ski-In Ski-Out : Experience</a> ski resort accommodation</strong> puts you right in the heart of the Canadian Rockies, offering unique access to exceptional skiing and breathtaking mountain views. Located just 15 minutes from <a href="/blog/banff-sunshine-lodging">Best Banff Sunshine Village Lodging Options for</a> townsite, Sunshine Village Resort provides the unique opportunity to stay slopeside at 2,100 meters above sea level, making it one of the highest ski-in, ski-out accommodations in North America. For those seeking luxury mountain lodging or budget-friendly options nearby, this guide will help you navigate the best accommodation choices for your 2026-2027 ski season adventure.</p>
+<p>Planning a ski getaway to one of Canada's most incredible alpine destinations? <strong><a href="/blog/sunshine-ski-in-ski-out">Banff Sunshine Ski-In Ski-Out : Experience</a> ski resort accommodation</strong> puts you right in the heart of the Canadian Rockies, offering unique access to exceptional skiing and breathtaking mountain views. Located just 15 minutes from <a href="/blog/banff-sunshine-lodging">Best Banff Sunshine Village Lodging Options for</a> townsite, <a href="/blog/sunshine-village-guide">Sunshine Village Ski Resort</a> provides the unique opportunity to stay slopeside at 2,100 meters above sea level, making it one of the highest ski-in, ski-out accommodations in North America. For those seeking luxury mountain lodging or budget-friendly options nearby, this guide will help you navigate the best accommodation choices for your 2026-2027 ski season adventure.</p>
 
 <h2>Sunshine Village Ski-In, Ski-Out Accommodation</h2>
 
@@ -1961,7 +1961,7 @@ export const blogContent1: Record<string, string> = {
 
 <p>The journey from <strong>Takakkaw Falls to Banff</strong> covers approximately 95 kilometers and typically takes about 1.5 to 2 hours of driving time. However, smart travelers allow a full day for this route to truly appreciate the remarkable scenery and numerous photo opportunities along the way. The drive follows the Trans-Canada Highway (Highway 1) eastbound, crossing from British Columbia into Alberta as you enter Banff National Park.</p>
 
-<p>Starting at Takakkaw Falls, located in Yoho National Park's striking Yoho Valley, you'll first need to navigate the 13-kilometer Yoho Valley Road back to Highway 1. This winding mountain road requires careful attention, especially during spring conditions in March 2026, when weather can be unpredictable. Once you reach the Trans-Canada Highway, the route becomes more straightforward as you head toward the town of Banff.</p>
+<p>Starting at Takakkaw Falls, located in Yoho National Park's striking Yoho Valley, you'll first need to navigate the 13-kilometer Yoho Valley Road back to Highway 1. This winding mountain road requires careful attention, especially during spring conditions in March 2026, when weather can be unpredictable. Once you reach the Trans-Canada Highway, the route becomes more straightforward as you head toward the town of <a href="/blog/banff-in-spring">Visiting Banff in Spring: Shoulder Season</a>.</p>
 
 <p>The elevation changes throughout this journey are dramatic, dropping from the high alpine environment around Takakkaw Falls at 1,520 meters to Banff's townsite at 1,383 meters. This scenic route showcases the incredible diversity of the Canadian Rockies, from <a href="/blog/bow-glacier-falls">Bow Glacier Falls Banff</a>-fed waterfalls to fresh mountain lakes and dense coniferous forests.</p>
 
@@ -2432,7 +2432,7 @@ export const blogContent1: Record<string, string> = {
 <h3>The Famous Banff Bridge and Scenic Drives</h3>
 <p>The iconic Bow River Bridge (often searched as "Banff bridge") provides beautiful photo opportunities with the Fairmont Banff Springs Hotel backdrop. This historic bridge, built in 1923, offers one of the most photographed views in the Canadian Rockies. The bridge is easily accessible from Banff Avenue and connects to the Bow River Trail system.</p>
 
-<p>For scenic driving, the Bow Valley Parkway (Highway 1A) offers a slower, more wildlife-friendly alternative to the Trans-Canada Highway between Banff and Lake Louise. This route frequently provides opportunities to spot elk, deer, and occasionally bears while enjoying mountain vistas.</p>
+<p>For scenic driving, the Bow Valley Parkway (Highway 1A) offers a slower, more wildlife-friendly alternative to the Trans-Canada Highway between <a href="/blog/banff-dog-friendly">Dog-Friendly Banff: for Pet Owners</a> and Lake Louise. This route frequently provides opportunities to spot elk, deer, and occasionally bears while enjoying mountain vistas.</p>
 
 <h2>Accommodation Options Within the Park</h2>
 
@@ -2722,7 +2722,7 @@ export const blogContent1: Record<string, string> = {
 <p>Start planning your trip today: browse tours and experiences on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>, and lock in your hotel on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>. The mountains are calling.</p>
 `,
   'banff-gondola-tickets-guide': `
-<p>The <strong><a href="/blog/banff-wildlife-guide">Wildlife in <a href="/blog/banff-gondola-guide">Banff Gondola: Everything You Need to Know</a>: Where to See Bears, Elk & More</a> Gondola</strong> is the single most popular attraction in Banff National Park, carrying visitors 698 metres up <strong>Sulphur Mountain</strong> to a jaw-dropping summit station at 2,281 metres above sea level. For anyone planning your first visit or looking for the best deal on tickets, this guide has everything you need to know about riding the Banff Gondola in 2026.</p>
+<p>The <strong><a href="/blog/banff-wildlife-<a href="/blog/peyto-lake-<a href="/blog/cave-and-basin-guide">Cave and Basin: Birthplace of Canada's National Parks</a>">Peyto Lake: How to Visit This Turquoise Gem</a>">Wildlife in <a href="/blog/banff-gondola-guide"><a href="/blog/banff-gondola-vs-sulphur-mountain">Banff Gondola vs Hiking Sulphur Mountain</a> Gondola: Everything You Need to Know</a>: Where to See Bears, Elk & More</a> Gondola</strong> is the single most popular attraction in Banff National Park, carrying visitors 698 metres up <strong>Sulphur Mountain</strong> to a jaw-dropping summit station at 2,281 metres above sea level. For anyone planning your first visit or looking for the best deal on tickets, this guide has everything you need to know about riding the Banff Gondola in 2026.</p>
 
 <h2>Banff Gondola Ticket Prices (2026)</h2>
 <p>Here are the current standard prices for the Banff Gondola:</p>
@@ -2826,7 +2826,7 @@ export const blogContent1: Record<string, string> = {
 <p>Pair your gondola visit with a stay in Banff — browse hotels and deals on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> to find the perfect accommodation for your Rocky Mountain adventure.</p>
 `,
   'best-banff-hiking-trails-guide': `
-<p>With over 1,600 km of maintained trails cutting through some of the most dramatic mountain scenery on the planet, Banff National Park is a hiker's dream. This guide covers the <strong>15 best <a href="/blog/best-hikes-in-banff">15 Best Hikes in Banff National Park (All</a> in Banff</strong> for 2026, organized by difficulty, with real distances, elevation gains, and insider tips to help you make the most of every trail.</p>
+<p>With over 1,600 km of maintained trails cutting through some of the most dramatic mountain scenery on the planet, <a href="/blog/banff-gondola-vs-sulphur-mountain">Banff Gondola vs Hiking Sulphur Mountain</a> National Park is a hiker's dream. This guide covers the <strong>15 best <a href="/blog/best-hikes-in-banff">15 Best Hikes in Banff National Park (All</a> in Banff</strong> for 2026, organized by difficulty, with real distances, elevation gains, and insider tips to help you make the most of every trail.</p>
 
 <p>All hikes require a valid <strong>Parks Canada pass</strong> (\$11.00/day per adult or \$22.40/day per family in 2026). Buy yours at any park gate or online at reservation.pc.gc.ca.</p>
 
@@ -2877,7 +2877,7 @@ export const blogContent1: Record<string, string> = {
 <li><strong>Time:</strong> 3-4 hours</li>
 <li><strong>Difficulty:</strong> Moderate</li>
 </ul>
-<p>One of the most rewarding hikes in the Rockies. Climb from Lake Louise through subalpine forest, past Mirror Lake, to a historic teahouse perched beside alpine Lake Agnes. The teahouse serves fresh tea, scones, and baked goods (cash only, open June-October). The views from the deck are rare.</p>
+<p>One of the most rewarding hikes in the Rockies. Climb from Lake Louise through subalpine forest, past Mirror Lake, to a historic teahouse perched beside alpine Lake <a href="/blog/lake-agnes-tea-house">Hiking to Lake Agnes Tea House</a>. The teahouse serves fresh tea, scones, and baked goods (cash only, open June-October). The views from the deck are rare.</p>
 
 <h3>6. Johnston Canyon to the Ink Pots</h3>
 <ul>
@@ -3652,7 +3652,7 @@ export const blogContent1: Record<string, string> = {
 <p>Whether you choose to stay at the Sandman Hotel Canmore, within Banff townsite, or anywhere else in this remarkable region, the Canadian Rockies offer experiences that will create lifelong memories. From watching sunrise paint the peaks golden to spotting wildlife along mountain trails, every moment in Banff National Park connects you with some of the world's most remarkable wilderness. For the best deals on accommodation and to compare options across the Bow Valley, check out <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>. Don't forget to book your mountain adventures and guided experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your Rocky Mountain getaway.</p>
 `,
   'best-time-to-visit-banff': `
-<p><a href="/blog/banff-weather-best-time-to-visit"><a href="/blog/banff-on-a-budget"><a href="/blog/accessible-banff">Accessible Banff: A for Visitors with Disabilities</a> on a Budget: How to Visit Without Breaking</a> Weather : Best Time to Visit & What to Pack in</a> National Park is gorgeous year-round, but each season offers a completely different experience. Knowing the best time to visit Banff depends on what you want to do, your budget, and how you feel about crowds.</p>
+<p><a href="/blog/banff-weather-best-time-to-visit"><a href="/blog/banff-on-a-budget"><a href="/blog/accessible-banff">Accessible <a href="/blog/banff-dog-friendly">Dog-Friendly Banff: for Pet Owners</a>: A for Visitors with Disabilities</a> on a Budget: How to Visit Without Breaking</a> Weather : Best Time to Visit & What to Pack in</a> National Park is gorgeous year-round, but each season offers a completely different experience. Knowing the best time to visit Banff depends on what you want to do, your budget, and how you feel about crowds.</p>
 
 <h2>Summer (June to August)</h2>
 <p><strong>Best for:</strong> hiking, canoeing, scenic drives, wildlife viewing, and long daylight hours.</p>
@@ -3849,14 +3849,14 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Safety:</strong> Always carry bear spray and know how to use it. Check trail conditions at the Banff Visitor Centre before heading out. Register for backcountry permits if staying overnight. Tell someone your plans.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'lake-louise-complete-guide': `
-<p>Lake Louise is the jewel of the Canadian Rockies -- a turquoise glacial lake framed by towering peaks and Victoria Glacier. Here's everything you need to know to plan a perfect visit.</p>
+<p>Lake <a href="/blog/lake-louise-ski-resort">Lake Louise Ski Resort</a> is the jewel of the Canadian Rockies -- a turquoise glacial lake framed by towering peaks and Victoria Glacier. Here's everything you need to know to plan a perfect visit.</p>
 
 <h2>Getting There</h2>
 <p>Lake Louise is 57 km (35 minutes) northwest of Banff town along the Trans-Canada Highway. You can drive, take Roam Transit Route 8X (seasonal), or join a guided tour. Parking fills up by 8-9am in summer, so arrive early or use transit.</p>
 
 <h2>Best Time to Visit</h2>
 <p>The lake is accessible year-round, but the experience changes dramatically with the seasons. Summer (late June to September) offers the iconic turquoise water, canoeing, and hiking. Winter (December to March) brings ice skating on the frozen lake beneath the Chateau and incredible ice sculptures during the Ice Magic festival.</p>
-<p>The lake reaches its most vivid turquoise colour in July and August when glacial melt carries fine rock flour into the water. For more details, check out our <a href="/blog/icefields-parkway-guide">Icefields <a href="/blog/bow-valley-parkway-guide">Bow Valley Parkway: Driving (Highway 1A)</a>: The Driving</a> on <a href="/blog/moraine-lake-guide">Moraine Lake : How to Visit in (Shuttle, Tips & More)</a>. For more details, check out our guide on <a href="/blog/johnston-canyon-guide">Johnston Canyon: Hiking</a>.</p>
+<p>The lake reaches its most vivid turquoise colour in July and August when glacial melt carries fine rock flour into the water. For more details, check out our <a href="/blog/icefields-parkway-<a href="/blog/peyto-lake-<a href="/blog/cave-and-basin-guide">Cave and Basin: Birthplace of Canada's National Parks</a>">Peyto Lake: How to Visit This Turquoise Gem</a>">Icefields <a href="/blog/bow-valley-parkway-guide">Bow Valley Parkway: Driving (Highway 1A)</a>: The Driving</a> on <a href="/blog/moraine-lake-guide">Moraine Lake : How to Visit in (Shuttle, Tips & More)</a>. For more details, check out our guide on <a href="/blog/johnston-canyon-guide">Johnston Canyon: Hiking</a>.</p>
 
 <h2>Top Things to Do at Lake Louise</h2>
 <h3>Walk the Lakeshore</h3>
@@ -3894,7 +3894,7 @@ export const blogContent1: Record<string, string> = {
 <p>Book your shuttle at <a href="https://reservation.pc.gc.ca" target="_blank" rel="noopener">reservation.pc.gc.ca</a> as soon as reservations open (typically April). Morning slots are the most popular.</p>
 
 <h2>Best Time to Visit</h2>
-<p>Moraine Lake Road typically opens in late May or early June, depending on snow conditions, and closes in mid-October. The lake is at its most vivid turquoise in July and August. For larch season, visit in late September when the alpine larch trees above the lake turn brilliant gold.</p>
+<p>Moraine Lake Road typically opens in late May or early June, depending on snow conditions, and closes in mid-October. The lake is at its most vivid turquoise in July and August. For larch season, visit in late September when the alpine larch trees above the lake turn brilliant gold. For more details, check out our guide on <a href="/blog/peyto-lake-guide">Peyto Lake: How to Visit This Turquoise Gem</a>.</p>
 
 <h2>Top Things to Do</h2>
 <h3>The Rockpile Trail</h3>
@@ -4081,7 +4081,7 @@ export const blogContent1: Record<string, string> = {
 </ul>
 `,
   'banff-food-guide': `
-<p><a href="/blog/banff-restaurant-specials">Best <a href="/blog/new-places-to-eat-in-banff">Banff's 12 Must-Try New Restaurants & Cafés in</a> Restaurant Specials & Deals You Can't Miss</a>'s food scene is far more impressive than you'd expect from a small mountain town. From farm-to-table fine dining to hearty pub grub and artisan bakeries, here's where to eat and drink in Banff.</p>
+<p><a href="/blog/banff-restaurant-specials">Best <a href="/blog/new-places-to-eat-in-banff"><a href="/blog/banff-nightlife-guide">Banff Nightlife: Best Bars, Pubs & Entertainment</a>'s 12 Must-Try New Restaurants & Cafés in</a> Restaurant Specials & Deals You Can't Miss</a>'s food scene is far more impressive than you'd expect from a small mountain town. From farm-to-table fine dining to hearty pub grub and artisan bakeries, here's where to eat and drink in Banff.</p>
 
 <h2>Fine Dining</h2>
 <h3>The Bison Restaurant</h3>
@@ -4254,7 +4254,7 @@ export const blogContent1: Record<string, string> = {
 <p><strong>Do I need a pass to drive through on Highway 1?</strong> Technically yes, though enforcement focuses on people who stop and use park facilities.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-skiing-guide': `
-<p>With three renowned resorts collectively known as <strong>SkiBig3</strong>, <a href="/blog/banff-in-summer"><a href="/blog/banff-camping-<a href="/blog/johnston-canyon-guide">Johnston Canyon: Hiking</a>">Camping in <a href="/blog/banff-christmas-guide">Christmas in Banff: Holiday Season</a>: The Campground</a> in Summer: to the Perfect Visit</a> offers some of the best <a href="/blog/backcountry-skiing-day-tours-canadian-rockies">Banff Backcountry Skiing Day Tours</a> in North America. Here's your complete guide to hitting the slopes.</p>
+<p>With three renowned resorts collectively known as <strong>SkiBig3</strong>, <a href="/blog/banff-in-summer"><a href="/blog/banff-camping-<a href="/blog/johnston-canyon-guide">Johnston Canyon: Hiking</a>">Camping in <a href="/blog/banff-christmas-guide">Christmas in <a href="/blog/banff-hot-springs-guide">Banff Upper Hot Springs</a>: Holiday Season</a>: The Campground</a> in Summer: to the Perfect Visit</a> offers some of the best <a href="/blog/backcountry-skiing-day-tours-canadian-rockies">Banff Backcountry Skiing Day Tours</a> in North America. Here's your complete guide to hitting the slopes.</p>
 
 <h2>The Three Resorts Compared</h2>
 
@@ -4506,7 +4506,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Silver Lining:</strong> Many of Banff's most dramatic photographs are taken in moody, overcast weather. Clouds and mist clinging to mountain peaks create an atmosphere that bluebird days can't match. Bring your camera.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'fall-larch-season-banff': `
-<p>Every September, something magical happens in the Canadian Rockies. Alpine larch trees — one of the few conifers that shed their needles — turn brilliant gold against a backdrop of evergreen forests, turquoise lakes, and grey mountain peaks. Larch season in Banff is one of the most dramatic natural displays in North America, and this guide will help you experience it perfectly.</p>
+<p>Every September, something magical happens in the Canadian Rockies. Alpine larch trees — one of the few conifers that shed their needles — turn brilliant gold against a backdrop of evergreen forests, turquoise lakes, and grey mountain peaks. Larch season in <a href="/blog/banff-in-fall">Visiting Banff in Fall: Golden Larch Season</a> is one of the most dramatic natural displays in North America, and this guide will help you experience it perfectly.</p>
 
 <h2>What Are Larches?</h2>
 <p>Alpine larches (<em>Larix lyallii</em>) are remarkable trees that grow at high elevations (2,000-2,400m) in the Canadian Rockies. Unlike most conifers, they are deciduous — their soft needles turn from green to vibrant gold each autumn before dropping. The contrast of golden larch groves against dark evergreens and blue mountain lakes creates some of the most remarkable scenery in the Rockies.</p>
@@ -4624,7 +4624,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> For the best experience, drive the Parkway at sunset heading west, stopping at viewpoints as the light turns golden. Then return to Banff via the faster Highway 1. For guided wildlife drives, check <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> for evening safari tours.</div>
 `,
   'banff-camping-guide': `
-<p>Camping in <a href="/blog/banff-entry-fee"><a href="/blog/banff-wildlife-guide">Wildlife in <a href="/blog/banff-skiing-guide">Skiing in <a href="/blog/banff-christmas-guide">Christmas in Banff: Holiday Season</a>: to the Big 3 Resorts</a>: Where to See Bears, Elk & More</a> Entry Fee : to Park Pass Costs</a> National Park is one of the best ways to experience the Canadian Rockies — waking up to mountain views, cooking under the stars, and falling asleep to the sound of rivers. Here's everything you need to know about campgrounds, booking, gear, and backcountry camping in Banff.</p>
+<p>Camping in <a href="/blog/banff-entry-fee"><a href="/blog/banff-wildlife-guide">Wildlife in <a href="/blog/banff-skiing-guide">Skiing in <a href="/blog/banff-christmas-guide">Christmas in <a href="/blog/banff-hot-springs-guide">Banff Upper Hot Springs</a>: Holiday Season</a>: to the Big 3 Resorts</a>: Where to See Bears, Elk & More</a> Entry Fee : to Park Pass Costs</a> National Park is one of the best ways to experience the Canadian Rockies — waking up to mountain views, cooking under the stars, and falling asleep to the sound of rivers. Here's everything you need to know about campgrounds, booking, gear, and backcountry camping in Banff.</p>
 
 <h2>Front-Country Campgrounds</h2>
 <p>Banff has several excellent Parks Canada campgrounds with varying amenities. All require a valid park pass in addition to the camping fee.</p>
@@ -4689,7 +4689,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> If front-country sites are booked out, consider camping in nearby <strong>Kananaskis Country</strong> (provincial campgrounds, no park pass needed) or <strong>Canmore/Bow Valley</strong> campgrounds as a base for day trips into Banff.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-craft-beer-guide': `
-<p>After a day of hiking, skiing, or exploring the mountains, nothing beats a cold craft beer. <a href="/blog/banff-food-guide">The Banff Food : Best Restaurants & Cafes</a>'s craft beer scene has grown significantly in recent years, with local breweries, taprooms, and beer bars serving up creative brews inspired by the mountain lifestyle. Here's your guide to the best pints in the Canadian Rockies.</p>
+<p>After a day of hiking, skiing, or exploring the mountains, nothing beats a cold craft beer. <a href="/blog/banff-food-guide">The <a href="/blog/banff-nightlife-guide">Banff Nightlife: Best Bars, Pubs & Entertainment</a> Food : Best Restaurants & Cafes</a>'s craft beer scene has grown significantly in recent years, with local breweries, taprooms, and beer bars serving up creative brews inspired by the mountain lifestyle. Here's your guide to the best pints in the Canadian Rockies.</p>
 
 <h2>Breweries & Brewpubs</h2>
 
@@ -4802,7 +4802,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Planning Ahead:</strong> Contact Parks Canada at 1-888-773-8888 or visit the Banff Visitor Centre upon arrival to get the latest information on trail conditions, accessibility upgrades, and available adaptive equipment.</div>
 `,
   'banff-christmas-guide': `
-<p>Christmas in <a href="/blog/banff-skiing-guide">Skiing in Banff: to the Big 3 Resorts</a> is pure mountain magic. Snow-covered peaks, twinkling lights along Banff Avenue, frozen lakes, and a cozy small-town atmosphere make this one of the most enchanting places in the world to celebrate the holiday season. Here's your complete guide to Christmas in the Canadian Rockies.</p>
+<p>Christmas in <a href="/blog/banff-skiing-guide">Skiing in <a href="/blog/banff-hot-springs-guide"><a href="/blog/banff-in-spring">Visiting Banff in Spring: Shoulder Season</a> Upper Hot Springs</a>: to the Big 3 Resorts</a> is pure mountain magic. Snow-covered peaks, twinkling lights along Banff Avenue, frozen lakes, and a cozy small-town atmosphere make this one of the most enchanting places in the world to celebrate the holiday season. Here's your complete guide to Christmas in the Canadian Rockies.</p>
 
 <h2>Festive Events & Activities</h2>
 
@@ -4881,7 +4881,7 @@ export const blogContent1: Record<string, string> = {
 
 <h2>Lower Falls</h2>
 <p>The trail to the Lower Falls is paved and suitable for all fitness levels. Metal catwalks fastened to the canyon walls hang over the churning turquoise creek below. The path passes through cool, shaded forest and opens into the narrow canyon where water has carved through the limestone for thousands of years.</p>
-<p>At the Lower Falls viewpoint, a short tunnel leads to an observation platform directly in front of the 10-metre waterfall plunging into a deep pool. The mist, roar, and closeness of the falls make this an incredible moment. In winter, the falls freeze into a massive blue ice pillar — equally incredible.</p>
+<p>At the Lower Falls viewpoint, a short tunnel leads to an observation platform directly in front of the 10-metre waterfall plunging into a deep pool. The mist, roar, and closeness of the falls make this an incredible moment. In winter, the falls freeze into a massive blue ice pillar — equally incredible. For more details, check out our guide on <a href="/blog/lake-agnes-tea-house">Hiking to Lake Agnes Tea House</a>.</p>
 
 <h2>Upper Falls</h2>
 <p>Continuing past the Lower Falls, the trail climbs gradually through the canyon to reach the Upper Falls (30 metres high). The path is slightly rougher and narrower in places but still manageable for most visitors. Several viewpoints along the way offer glimpses of the canyon from above, with the creek rushing far below through narrow gaps in the rock.</p>
@@ -4914,7 +4914,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> For the most magical experience, visit Johnston Canyon at sunrise in summer. You'll have the catwalks nearly to yourself, the light filtering into the canyon is ethereal, and the sound of the rushing water echoing off the walls is memorable.</div>
 `,
   'banff-gondola-guide': `
-<p>The <a href="/blog/banff-park-pass-guide">Banff Park Pass: Everything You Need to Know in</a> Gondola is one of the most popular attractions in the Canadian Rockies, whisking visitors to the summit of Sulphur Mountain (2,281 metres) for panoramic views of six mountain ranges, the Bow Valley, and the town of Banff far below. Here's everything you need to know to plan your visit.</p>
+<p>The <a href="/blog/banff-park-pass-guide"><a href="/blog/banff-gondola-vs-sulphur-mountain">Banff Gondola vs Hiking Sulphur Mountain</a> Park Pass: Everything You Need to Know in</a> Gondola is one of the most popular attractions in the Canadian Rockies, whisking visitors to the summit of Sulphur Mountain (2,281 metres) for panoramic views of six mountain ranges, the Bow Valley, and the town of Banff far below. Here's everything you need to know to plan your visit.</p>
 
 <h2>What Is the Banff Gondola?</h2>
 <p>The Banff Gondola is an enclosed, four-person cable car that climbs 698 metres over 8 minutes from the base station to the summit of Sulphur Mountain. At the top, a modern summit building houses a restaurant, interpretive centre, theatre, and rooftop observation deck. A boardwalk trail extends 1 km along the ridgeline to the historic Sanson's Peak weather observatory.</p>
@@ -5181,7 +5181,7 @@ export const blogContent1: Record<string, string> = {
 <p>One of the most common questions visitors ask is: should I ride the <a href="/blog/banff-admission"><a href="/blog/banff-gondola-tickets-guide">Banff Gondola Tickets: Prices, Discounts & How to</a> Admission Fees : Save Money on Mountain Trip</a> Gondola or hike Sulphur Mountain? Both get you to the same incredible summit, but the experience is very different. Here's a detailed comparison to help you decide.</p>
 
 <h2>The Gondola Experience</h2>
-<p>The Banff Gondola is an enclosed, four-person cable car that climbs 698 metres in 8 minutes from the base station to the summit of Sulphur Mountain (2,281m). At the top, you can explore the summit building with its interpretive centre, Sky Bistro restaurant, rooftop observation deck, and the 1 km boardwalk to Sanson's Peak.</p>
+<p>The Banff Gondola is an enclosed, four-person cable car that climbs 698 metres in 8 minutes from the base station to the summit of Sulphur Mountain (2,281m). At the top, you can explore the summit building with its interpretive centre, Sky Bistro restaurant, rooftop observation deck, and the 1 km boardwalk to Sanson's Peak. For more details, check out our guide on <a href="/blog/lake-agnes-tea-house">Hiking to Lake Agnes Tea House</a>.</p>
 <h3>Pros</h3>
 <ul>
 <li>Effortless — accessible to all ages and fitness levels</li>
@@ -5562,7 +5562,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Fun Fact:</strong> The Cave and Basin has been designated a National Historic Site of Canada, recognizing its pivotal role in the creation of the Canadian national park system. It's one of the most important heritage sites in the country — and many visitors to Banff walk right past without realizing what they're missing.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-in-spring': `
-<p>Spring in Banff is the quiet shoulder season that savvy travellers love. From April through May, the park transitions from winter's snow to summer's green, offering thundering waterfalls, fewer crowds, lower prices, and a unique blend of winter and spring experiences. If you don't mind some trail closures and cooler weather, spring might be the best-kept secret in Banff.</p>
+<p>Spring in <a href="/blog/banff-in-fall">Visiting Banff in Fall: Golden Larch Season</a> is the quiet shoulder season that savvy travellers love. From April through May, the park transitions from winter's snow to summer's green, offering thundering waterfalls, fewer crowds, lower prices, and a unique blend of winter and spring experiences. If you don't mind some trail closures and cooler weather, spring might be the best-kept secret in Banff.</p>
 
 <h2>Weather & Conditions</h2>
 <p>Spring weather in Banff is unpredictable and highly variable:</p>
@@ -5623,7 +5623,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Best Spring Strategy:</strong> Aim for late May when most lower trails are open, waterfalls are roaring, and spring skiing is still available. You get the best of both seasons, with shoulder-season prices and almost no crowds.</div>
 `,
   'banff-in-fall': `
-<p>Fall in Banff is when the Canadian Rockies put on their most colourful show. Golden <a href="/blog/fall-larch-season-banff">Larch Season in Banff: When & Where to See Golden</a> trees, fewer crowds, crisp air, and warm autumn light make September and October one of the best times to visit. If you time it right for larch season, you'll witness one of the most remarkable natural displays in North America.</p>
+<p>Fall in <a href="/blog/banff-in-spring">Visiting Banff in Spring: Shoulder Season</a> is when the Canadian Rockies put on their most colourful show. Golden <a href="/blog/fall-larch-season-banff">Larch Season in Banff: When & Where to See Golden</a> trees, fewer crowds, crisp air, and warm autumn light make September and October one of the best times to visit. If you time it right for larch season, you'll witness one of the most remarkable natural displays in North America.</p>
 
 <h2>Weather & Conditions</h2>
 <ul>

@@ -38,7 +38,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>Budget-conscious visitors should consider the HI-Banff Alpine Centre, where dorm beds start around \$35 CAD per night. I've used their gear rental service for specialty items and found their local knowledge invaluable. The facility includes laundry, kitchen access, and secure equipment storage.</p>
 
-<p>If you're planning to visit both Banff and <strong>Jasper Alberta</strong> during your trip, consider splitting your accommodation between both locations rather than doing long day trips. The drive is beautiful but adds 7+ hours to any day itinerary.</p>
+<p>If you're planning to visit both <a href="/blog/banff-to-jasper-drive">Banff to Jasper Drive: Icefields Parkway Road Trip</a> and <strong>Jasper Alberta</strong> during your trip, consider splitting your accommodation between both locations rather than doing long day trips. The drive is beautiful but adds 7+ hours to any day itinerary.</p>
 
 <h2>Dining and Recovery Fuel</h2>
 
@@ -134,11 +134,11 @@ export const blogContent3: Record<string, string> = {
 <p>Remember that Banff's club scene reflects the town's outdoor-focused culture. Don't be surprised when conversations shift from DJ sets to powder conditions or trail reports. It's this unique blend of mountain lifestyle and cosmopolitan energy that makes Banff's nightlife genuinely special, even if the venues themselves are smaller than what you might expect in major cities.</p>
 `,
   'jasper-national-park': `
-<p>After countless trips through the Canadian Rockies, I've learned that while Banff National Park gets most of the attention, <strong><a href="/blog/jasper-canada">Banff to Jasper : Canadian Rockies Road Trip</a> National Park</strong> offers some of the most spectacular mountain experiences in Alberta. Located just 290 kilometers north of Banff via the iconic Icefields Parkway, Jasper is Canada's largest national park in the Rocky Mountains and my go-to destination when I want to escape the crowds without sacrificing world-class outdoor adventures.</p>
+<p>After countless trips through the Canadian Rockies, I've learned that while Banff National Park gets most of the attention, <strong><a href="/blog/jasper-canada">Banff to <a href="/blog/jasper-alberta">Banff to Jasper Alberta Road Trip</a> : Canadian Rockies Road Trip</a> National Park</strong> offers some of the most spectacular mountain experiences in Alberta. Located just 290 kilometers north of Banff via the iconic Icefields Parkway, Jasper is Canada's largest national park in the Rocky Mountains and my go-to destination when I want to escape the crowds without sacrificing world-class outdoor adventures.</p>
 
 <h2>Getting to Jasper National Park from Banff</h2>
 
-<p>The drive from Banff to <strong>Jasper Canada</strong> along Highway 93 North (the Icefields Parkway) ranks among the world's most scenic drives. I've done this route dozens of times, and it never gets old. Plan on 3.5 to 4 hours of driving time, but you'll want to budget a full day for stops at the Columbia Icefield, Peyto Lake, and Bow Lake.</p>
+<p>The drive from <a href="/blog/banff-to-jasper-drive">Banff to Jasper Drive: Icefields Parkway Road Trip</a> to <strong>Jasper Canada</strong> along Highway 93 North (the Icefields Parkway) ranks among the world's most scenic drives. I've done this route dozens of times, and it never gets old. Plan on 3.5 to 4 hours of driving time, but you'll want to budget a full day for stops at the Columbia Icefield, Peyto Lake, and Bow Lake.</p>
 
 <p>If you're flying in, the closest major airport is Edmonton International (YEG), about 370 kilometers east of Jasper. Calgary International (YYC) is closer to Banff but adds driving time if Jasper is your primary destination. Most visitors I recommend combine both parks in one trip—check out our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> if you're planning to visit both.</p>
 
@@ -193,7 +193,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>Why Jasper National Park Should Be on Your Radar</h2>
 
-<p><strong>Jasper Alberta</strong> represents everything epic about the Canadian Rockies, but with significantly fewer tour buses. The park covers 11,228 square kilometers—nearly five times larger than Banff—yet receives roughly half the annual visitors. When I'm training for Ironman events, I often escape to Jasper's extensive trail network where I can run for hours without encountering another soul.</p>
+<p><strong><a href="/blog/jasper-alberta">Banff to Jasper Alberta Road Trip</a> Alberta</strong> represents everything epic about the Canadian Rockies, but with significantly fewer tour buses. The park covers 11,228 square kilometers—nearly five times larger than Banff—yet receives roughly half the annual visitors. When I'm training for Ironman events, I often escape to Jasper's extensive trail network where I can run for hours without encountering another soul.</p>
 
 <p>The town of Jasper maintains an authentic mountain community feel that Banff lost decades ago. You'll find local families at the grocery store, not just tourists with cameras. Accommodation costs typically run 20-30% lower than comparable options in Banff, with hotel rooms starting around \$140 CAD per night during peak summer months.</p>
 
@@ -530,7 +530,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>Even dedicated skiers need rest days, and the Banff area delivers exceptional off-slope activities. During my April visits, I often combine skiing with hiking as snow conditions transition.</p>
 
-<p>The Tunnel Mountain Trail offers excellent shoulder-season hiking just 15 minutes from Sunshine Village access road. This 2.3 km loop provides panoramic views without requiring advanced mountaineering skills. For comprehensive trail information, consult our guide to the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>.</p>
+<p>The Tunnel Mountain Trail offers excellent shoulder-season hiking just 15 minutes from <a href="/blog/sunshine-village-guide">Sunshine Village Ski Resort</a> Village access road. This 2.3 km loop provides panoramic views without requiring advanced mountaineering skills. For comprehensive trail information, consult our guide to the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>.</p>
 
 <p>Banff Hot Springs, operational year-round, provides perfect post-ski recovery. The 39°C mineral waters work wonders on tired legs after aggressive mogul runs down Goat's Eye Mountain. Adult admission costs \$9.50 CAD.</p>
 
@@ -562,7 +562,7 @@ export const blogContent3: Record<string, string> = {
 <p>The investment in ski in ski out accommodations pays dividends for serious skiers. You'll maximize slope time, minimize logistics stress, and experience Banff's alpine environment in its purest form. After decades of mountain travel, I can confidently say that waking up on Sunshine Village represents one of Canada's premier ski experiences.</p>
 `,
   'ink-pots-banff-alberta': `
-<p>The Ink Pots in <a href="/blog/nightclub-banff"><a href="/blog/mount-norquay-banff">Mount Norquay <a href="/blog/banff-bridge"><a href="/blog/banff-admission"><a href="/blog/sandman-banff">Stay Like a Local: Sandman <a href="/blog/romantic-getaway-banff">Romantic Getaway in <a href="/blog/banff-clubs">Best Banff Clubs : Where Locals Party After Dark</a>: The Couples</a> Hotel & Hidden Gems</a> <a href="/blog/admission-ticket-to-golden-skybridge">Banff Golden Skybridge Ticket & Tips</a> Fees : Save Money on Mountain Trip</a> Bridge: to <a href="/blog/jasper-canada">Banff to Jasper : Canadian Rockies Road Trip</a>'s Most Crossing</a></a> Nightlife : Best Clubs & Late Night Spots</a> Alberta represent one of the most fascinating geological features I've encountered in over a decade of exploring the Canadian Rockies. These seven natural cold-water springs create ethereal pools of brilliant turquoise and emerald green, bubbling up from deep underground aquifers. As someone who's made this journey multiple times while training for ultra marathons, I can tell you the 5.8-kilometer hike to reach these natural wonders is absolutely worth every step.</p>
+<p>The Ink Pots in <a href="/blog/nightclub-banff"><a href="/blog/mount-norquay-banff">Mount Norquay <a href="/blog/banff-bridge"><a href="/blog/banff-admission"><a href="/blog/sandman-banff">Stay Like a Local: Sandman <a href="/blog/romantic-getaway-banff">Romantic Getaway in <a href="/blog/banff-clubs">Best Banff Clubs : Where Locals Party After Dark</a>: The Couples</a> Hotel & Hidden Gems</a> <a href="/blog/admission-ticket-to-golden-skybridge">Banff Golden Skybridge Ticket & Tips</a> Fees : Save Money on Mountain Trip</a> Bridge: to <a href="/blog/jasper-canada">Banff to <a href="/blog/jasper-alberta">Banff to Jasper Alberta Road Trip</a> : Canadian Rockies Road Trip</a>'s Most Crossing</a></a> Nightlife : Best Clubs & Late Night Spots</a> Alberta represent one of the most fascinating geological features I've encountered in over a decade of exploring the Canadian Rockies. These seven natural cold-water springs create ethereal pools of brilliant turquoise and emerald green, bubbling up from deep underground aquifers. As someone who's made this journey multiple times while training for ultra marathons, I can tell you the 5.8-kilometer hike to reach these natural wonders is absolutely worth every step.</p>
 
 <h2>What Are the Ink Pots and Why Are They Special?</h2>
 

@@ -1137,7 +1137,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> Friday night skiing at Norquay is one of Banff's best-kept secrets. After a day of sightseeing, head up for a few runs under the lights — the atmosphere is relaxed, the slopes are quiet, and skiing with the lights of Banff twinkling below is pure magic. Grab a beer at the lodge afterward and you've got the perfect winter evening.</div>
 `,
   'banff-food-truck-guide': `
-<p><a href="/blog/banff-food-guide">The <a href="/blog/banff-craft-beer-guide">Banff Craft Beer : Breweries, Taprooms & Best Pints</a> Food : Best Restaurants & Cafes</a>'s food truck scene has grown from a handful of carts to a thriving street food culture that adds casual, creative dining options to a town traditionally dominated by sit-down restaurants. From gourmet tacos and wood-fired pizza to poutine and Thai street food, Banff's food trucks offer quick, delicious meals at reasonable prices — perfect for refuelling between adventures.</p>
+<p><a href="/blog/banff-food-guide">The <a href="/blog/banff-craft-beer-guide"><a href="/blog/banff-nightlife-guide">Banff Nightlife: Best Bars, Pubs & Entertainment</a> Craft Beer : Breweries, Taprooms & Best Pints</a> Food : Best Restaurants & Cafes</a>'s food truck scene has grown from a handful of carts to a thriving street food culture that adds casual, creative dining options to a town traditionally dominated by sit-down restaurants. From gourmet tacos and wood-fired pizza to poutine and Thai street food, Banff's food trucks offer quick, delicious meals at reasonable prices — perfect for refuelling between adventures.</p>
 
 <h2>Best Food Trucks in Banff</h2>
 
@@ -1465,7 +1465,7 @@ export const blogContent2: Record<string, string> = {
 <p>Compare rates and find solo-friendly accommodation on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>.</p>
 
 <h2>Solo Dining Tips</h2>
-<p>Banff is very solo-diner friendly. Sit at the bar at Park Distillery for campfire-cooked meals and conversation with bartenders. Wild Flour Bakery is perfect for a quiet breakfast with a book. The food court at Cascade Shops offers casual, no-pressure dining. Many restaurants along Banff Avenue have bar seating specifically designed for solo guests.</p>
+<p><a href="/blog/banff-dog-friendly">Dog-Friendly Banff: for Pet Owners</a> is very solo-diner friendly. Sit at the bar at Park Distillery for campfire-cooked meals and conversation with bartenders. Wild Flour Bakery is perfect for a quiet breakfast with a book. The food court at Cascade Shops offers casual, no-pressure dining. Many restaurants along Banff Avenue have bar seating specifically designed for solo guests.</p>
 
 <h2>Budget Tips for Solo Travellers</h2>
 <ul>
@@ -2687,7 +2687,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>RV Tip:</strong> Two Jack Lakeside campground is the most coveted RV site in Banff — you literally camp on the lakeshore with Mount Rundle rising across the water. Set a reminder for when Parks Canada reservations open in January and book immediately. It's one of the best camping experiences in Canada.</div>
 `,
   'lake-louise-village-guide': `
-<p>Lake Louise Village is the small but perfectly located hub for exploring one of the most beautiful areas in the Canadian Rockies. Sitting at 1,540 metres elevation along the Trans-Canada Highway, it provides easy access to Lake Louise, Moraine Lake, the Icefields Parkway, and some of the best hiking and skiing in North America.</p>
+<p>Lake <a href="/blog/lake-louise-ski-resort">Lake Louise Ski Resort</a> <a href="/blog/sunshine-village-guide">Sunshine Village Ski Resort</a> is the small but perfectly located hub for exploring one of the most beautiful areas in the Canadian Rockies. Sitting at 1,540 metres elevation along the Trans-Canada Highway, it provides easy access to Lake Louise, Moraine Lake, the Icefields Parkway, and some of the best hiking and skiing in North America.</p>
 
 <h2>What's in the Village?</h2>
 <p>Lake Louise Village is compact — don't expect a bustling town. The core consists of:</p>
@@ -3612,7 +3612,7 @@ export const blogContent2: Record<string, string> = {
 <p>Often considered even more beautiful than Lake Louise, Moraine Lake sits in the Valley of the Ten Peaks. Walk the Rockpile Trail (short, easy) for the iconic viewpoint. Rent a canoe for an intimate experience on the water. Open mid-June to mid-October; access by shuttle required in peak season.</p>
 
 <h2>Lake Louise Ski Resort</h2>
-<p>In winter, Lake Louise Ski Resort is one of Canada's largest and most scenic ski areas. Over 4,200 acres of terrain, dramatic mountain scenery, and consistently excellent snow conditions. The views from the top of the gondola are breathtaking.</p>
+<p>In winter, <a href="/blog/lake-louise-ski-resort">Lake Louise Ski Resort</a> is one of Canada's largest and most scenic ski areas. Over 4,200 acres of terrain, dramatic mountain scenery, and consistently excellent snow conditions. The views from the top of the gondola are breathtaking.</p>
 
 <h2>Fairmont Chateau Lake Louise</h2>
 <p>Even if you're not staying here, visit the Fairmont Chateau for afternoon tea, a drink at the Lakeview Lounge (floor-to-ceiling lake views), or a meal at Walliser Stube (Swiss fondue). The grand hotel is a destination in itself.</p>
@@ -4032,7 +4032,7 @@ export const blogContent2: Record<string, string> = {
 <p><strong>Choose Banff if:</strong> You have limited time (3-5 days), want easy access from Calgary, prefer more dining and nightlife options, or want outstanding skiing. Our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> maximizes your short visit.</p>
 
 <p><strong>Choose Jasper if:</strong> You have more time (5+ days), want fewer crowds, prefer backcountry hiking, prioritise wildlife encounters, or have a tighter budget.</p>
-<p><strong>Best answer:</strong> Visit both. Drive the Icefields Parkway between them — it's the most scenic road in North America. Spend 3-4 days in Banff, drive the Parkway, and spend 2-3 days in Jasper. Read our guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> to choose the perfect base.</p>
+<p><strong>Best answer:</strong> Visit both. Drive the Icefields Parkway between them — it's the most scenic road in North America. Spend 3-4 days in <a href="/blog/banff-to-jasper-drive">Banff to Jasper Drive: Icefields Parkway Road Trip</a>, drive the Parkway, and spend 2-3 days in Jasper. Read our guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> to choose the perfect base.</p>
 
 <p>Book your accommodations early on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and explore <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">guided tours in both parks on GetYourGuide</a>.</p>
 
