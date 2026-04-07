@@ -3037,42 +3037,52 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Breakfast Tip:</strong> Wild Flour Bakery on Saturday and Sunday mornings can have 20-minute waits. Arrive at opening (7 AM) or go on a weekday. Alternatively, Whitebark Cafe offers equally excellent quality with shorter lines.</div>
 `,
   'banff-happy-hour': `
-<p>Après-hike drinks are a Banff tradition. After a day on the trails, slopes, or lakes, nothing beats a cold beer or creative cocktail at a discounted price. Here's your guide to the best happy hour deals in town.</p>
+<p>Après-hike drinks are a Banff tradition. After a day on the trails, slopes, or lakes, nothing beats a cold beer or creative cocktail at a discounted price. I've tested every happy hour in town after countless training runs and ski days — here's your guide to the best deals and atmospheres in 2026.</p>
 
 <h2>Park Distillery</h2>
-<p>Park Distillery's happy hour is legendary. Discounted house-distilled cocktails, local beer on tap, and appetizer specials make this the go-to after-adventure stop. Their house vodka, gin, and whisky form the base of creative cocktails served at reduced prices.</p>
-<p><strong>Happy hour:</strong> 3-5 PM daily. <strong>Deals:</strong> $2-4 off cocktails, $6 beer, discounted appetizers.</p>
+<p>Park Distillery's happy hour remains legendary, and their 2026 pricing is still the best value on Banff Avenue. Their house-distilled cocktails, local beer on tap, and appetizer specials make this my go-to after-adventure stop. The Campfire cocktail — made with their house whisky, maple syrup, and smoked salt — is my personal favorite after long trail runs.</p>
+<p><strong>Happy hour:</strong> 3-5 PM daily. <strong>Deals:</strong> \`,-5 off cocktails (now \'banff-happy-hour': `2-14), \$7 beer, 30% off appetizers. Their wood-fired nachos pair perfectly with recovery beers.</p>
 
 <h2>Banff Ave Brewing Co.</h2>
-<p>Banff's own craft brewery offers happy hour pricing on their house-brewed beers. Try a flight of their seasonal offerings — the IPA, lager, and stout are all excellent. The pub atmosphere is relaxed and social, perfect for meeting other travellers.</p>
-<p><strong>Happy hour:</strong> 3-6 PM weekdays. <strong>Deals:</strong> $5 pints of house beer, discounted wings and nachos.</p>
+<p>Banff's own craft brewery has expanded their happy hour offerings for 2026. Try a flight of their seasonal offerings — I recommend their new Trail Hazy IPA and the Alpine Lager. The pub atmosphere stays relaxed and social, perfect for meeting other travellers. Their new bike racks out front make it convenient after cycling the Legacy Trail.</p>
+<p><strong>Happy hour:</strong> 3-6 PM weekdays, now extended to 4-6 PM weekends. <strong>Deals:</strong> \$6 pints of house beer, \'banff-happy-hour': `8 wing platters, and \'banff-happy-hour': `2 loaded nachos.</p>
 
 <h2>Magpie & Stump</h2>
-<p>The rooftop patio at Magpie & Stump is the place to be on summer evenings. Happy hour brings discounted margaritas, beer specials, and cheap nachos. The mountain views from the rooftop make every drink taste better.</p>
-<p><strong>Happy hour:</strong> 3-5 PM daily. <strong>Deals:</strong> $8 margaritas, $5 draft beer, half-price nachos.</p>
+<p>The rooftop patio at Magpie & Stump is the place to be from May through September. I've watched countless sunsets here after training sessions. Happy hour brings discounted margaritas, beer specials, and their famous nachos. The mountain views from the rooftop make every drink taste better — you can see Mount Rundle and the Bow Valley spread out below.</p>
+<p><strong>Happy hour:</strong> 3-5 PM daily. <strong>Deals:</strong> \'banff-happy-hour': `0 margaritas, \$6 draft beer, half-price nachos (\$8).</p>
 
 <h2>Rose & Crown Pub</h2>
-<p>A classic British-style pub with daily <a href="/blog/drink-deals">Best Banff Drink Deals : Where to Sip for Less</a> specials and a lively atmosphere. The Rose & Crown has been a <a href="/blog/banff-restaurant-specials">Best Banff Restaurant Specials & Deals You Can't Miss</a> gathering spot for years, and their happy hour draws a mix of locals, ski bums, and visitors.</p>
-<p><strong>Happy hour:</strong> 4-6 PM daily. <strong>Deals:</strong> $5 pints, discounted well drinks.</p>
+<p>A classic British-style pub with daily <a href="/blog/drink-deals">Best Banff Drink Deals : Where to Sip for Less</a> specials and a lively atmosphere. The Rose & Crown has been a <a href="/blog/banff-restaurant-specials">Best Banff Restaurant Specials & Deals You Can't Miss</a> gathering spot for years, and their happy hour draws a mix of locals, ski bums, and visitors. Their fish and chips special during happy hour is solid comfort food.</p>
+<p><strong>Happy hour:</strong> 4-6 PM daily. <strong>Deals:</strong> \$6 pints, \$8 well drinks, \'banff-happy-hour': `6 fish and chips combo.</p>
 
 <h2>High Rollers</h2>
-<p>Bowling and drinks at the Fairmont Banff Springs. High Rollers offers drink specials alongside their bowling lanes — a fun twist on the traditional happy hour. The craft cocktails are surprisingly good for a bowling alley.</p>
+<p>Bowling and drinks at the Fairmont Banff Springs got a major upgrade in early 2026. High Rollers offers drink specials alongside their bowling lanes — a fun twist on the traditional happy hour. The craft cocktails are surprisingly good for a bowling alley, and they've added local beers on tap.</p>
+<p><strong>Happy hour:</strong> 3-6 PM daily. <strong>Deals:</strong> \$8 local beers, \'banff-happy-hour': `2 classic cocktails, bowling lane discounts.</p>
 
 <h2>Elk & Oarsman</h2>
-<p>A beloved local pub with generous daily specials. The Elk & Oarsman is where Banff's hospitality workers go after their shifts — which tells you everything about the value and vibe. Pool tables, darts, and affordable drinks.</p>
+<p>A beloved local pub with generous daily specials. The Elk & Oarsman is where Banff's hospitality workers go after their shifts — which tells you everything about the value and vibe. Pool tables, darts, and affordable drinks make this the most authentic local experience. I often end up here after evening runs when I want something low-key.</p>
+<p><strong>Happy hour:</strong> 4-7 PM daily. <strong>Deals:</strong> \$5.50 pints, \$7 well drinks, \'banff-happy-hour': `4 burger specials.</p>
+
+<h2>New for 2026: Three Bears Brewery & Restaurant</h2>
+<p>This new addition to Canmore (just 22 km from Banff) is worth the drive for their mountain-view patio and house-brewed beers. I discovered this spot during a bike ride and now stop regularly. Their Grizzly IPA and seasonal rotations are excellent, and the patio faces the Three Sisters peaks.</p>
+<p><strong>Happy hour:</strong> 3-5 PM Monday-Thursday. <strong>Deals:</strong> \$6 house beers, \$9 guest taps, 25% off appetizers.</p>
 
 <h2>Happy Hour Strategy</h2>
 <ul>
-<li><strong>Best patios:</strong> Magpie & Stump (rooftop), Park Distillery (street-level)</li>
-<li><strong>Best beer:</strong> Banff Ave Brewing Co. (house-brewed)</li>
-<li><strong>Best cocktails:</strong> Park Distillery (house spirits)</li>
+<li><strong>Best patios:</strong> Magpie & Stump (rooftop views), Three Bears (mountain-facing)</li>
+<li><strong>Best beer:</strong> Banff Ave Brewing Co. (house-brewed), Three Bears (Canmore option)</li>
+<li><strong>Best cocktails:</strong> Park Distillery (house spirits), High Rollers (upgraded menu)</li>
 <li><strong>Best value:</strong> Elk & Oarsman, Rose & Crown</li>
 <li><strong>Most fun:</strong> High Rollers (bowling + drinks)</li>
+<li><strong>Post-activity fuel:</strong> Park Distillery (wood-fired food), Banff Ave Brewing (hearty pub fare)</li>
 </ul>
 
-<p>Stay walking distance from the best bars — find your hotel on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>.</p>
+<h2>Timing Your Happy Hour Crawl</h2>
+<p>For the ultimate happy hour experience, I recommend this route: Start at Park Distillery at 3 PM for their Campfire cocktail, walk 2 minutes to Banff Ave Brewing Co. at 4 PM for their Trail Hazy IPA, then finish at Magpie & Stump's rooftop by 4:30 PM for sunset views. The entire crawl covers less than 500 meters on Banff Avenue. Book accommodation within walking distance — check availability on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> or read our guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a>.</p>
 
-<div class="tip-box"><strong>Happy Hour Tip:</strong> Park Distillery's happy hour is the best overall deal in Banff. Arrive at 3 PM, grab a spot by the fire, and order their signature Campfire cocktail at a discount. Pair it with their wood-fired appetizers for a perfect après experience.</div>
+<p>Planning a full Banff adventure? Pair your happy hour stops with activities from <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> and check out our complete <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> guide for dinner recommendations.</p>
+
+<div class="tip-box"><strong>Happy Hour Pro Tip:</strong> Park Distillery fills up by 3:15 PM during peak summer and winter seasons. Arrive right at 3 PM, grab a seat by their fire pit, and order the Campfire cocktail with wood-fired appetizers. The \$5 discount makes their premium cocktails the same price as basic drinks elsewhere. During ski season, the post-slope crowd arrives around 4 PM — beat them there.</div>
 `,
   'banff-ice-cream-guide': `
 <p>Nothing caps off a summer hike or a stroll through downtown Banff like a scoop of handmade ice cream or artisan gelato. The ice cream scene in Banff is small but mighty, with shops that use local ingredients and creative flavours inspired by the Rocky Mountains.</p>
