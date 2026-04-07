@@ -66,8 +66,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'open',
-    conditionNote: 'Well maintained, some snow cover',
-    conditionUpdated: '2026-04-06',
+    conditionNote: 'Good conditions on groomed trails',
+    conditionUpdated: '2026-04-07',
   },
   {
     id: 'marsh-loop',
@@ -101,8 +101,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 4',
   
     status: 'open',
-    conditionNote: 'Trail packed, good for walking',
-    conditionUpdated: '2026-04-06',
+    conditionNote: 'Good winter trail conditions',
+    conditionUpdated: '2026-04-07',
   },
   {
     id: 'spray-river-east',
@@ -239,8 +239,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'caution',
-    conditionNote: 'Icy beyond lower falls, traction devices required',
-    conditionUpdated: '2026-04-06',
+    conditionNote: 'Very icy, challenging conditions',
+    conditionUpdated: '2026-04-07',
   },
   {
     id: 'johnson-lake',
@@ -274,8 +274,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'closed',
-    conditionNote: 'Not maintained in winter',
-    conditionUpdated: '2026-04-06',
+    conditionNote: 'Closed for winter season',
+    conditionUpdated: '2026-04-07',
   },
   {
     id: 'sunshine-meadows',
@@ -591,8 +591,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 1',
   
     status: 'caution',
-    conditionNote: 'Icy conditions, microspikes recommended',
-    conditionUpdated: '2026-04-06',
+    conditionNote: 'Icy sections, use caution',
+    conditionUpdated: '2026-04-07',
   },
   {
     id: 'tunnel-mountain-summit',
@@ -1358,7 +1358,7 @@ export const trails: Trail[] = [
   
     status: 'closed',
     conditionNote: 'Not maintained in winter',
-    conditionUpdated: '2026-04-06',
+    conditionUpdated: '2026-04-07',
   },
   {
     id: 'tramline',
