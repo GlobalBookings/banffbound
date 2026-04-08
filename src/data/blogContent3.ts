@@ -1,4 +1,167 @@
 export const blogContent3: Record<string, string> = {
+  'jasper-town': `
+<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about Jasper National Park almost as much as Banff. While Jasper town sits about 290 km north of Banff townsite via the stunning Icefields Parkway, understanding both destinations helps you plan the ultimate Rocky Mountain adventure. Let me share what I've learned from years of racing, skiing, and exploring this incredible region.</p>
+
+<h2>Understanding Jasper vs Banff: Two Distinct Mountain Experiences</h2>
+
+<p>Jasper town offers a completely different vibe from Banff. During my last visit in summer 2025, I was struck by how much quieter and more laid-back Jasper feels compared to Banff's bustling energy. The town has about 5,000 residents versus Banff's 8,000, and you'll notice fewer crowds even during peak season.</p>
+
+<p>If you're planning to visit both parks—which I highly recommend—book accommodations early. Jasper town has fewer hotel options than Banff, making <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> a useful tool for comparing availability across both destinations.</p>
+
+<p>The drive between the two parks along Highway 93 (Icefields Parkway) ranks as one of Canada's most spectacular routes. I've cycled it twice as training for Ironman events, and the 290 km journey takes about 4 hours by car with stops at major viewpoints like the Columbia Icefield.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> If you're visiting both Banff and Jasper, buy the Parks Canada Discovery Pass (\$72.25 for adults in 2026) rather than daily passes. You'll break even after just three days, and it covers entry to both national parks plus 80+ other Parks Canada sites.</div>
+
+<h2>The Icefields Parkway: Your Gateway Between Parks</h2>
+
+<p>The connection between Banff and jasper town runs through what many consider the world's most beautiful drive. I've traveled this route in every season, and each offers something unique. In April 2026, you'll likely encounter snow at higher elevations, so pack accordingly.</p>
+
+<p>Key stops along the Icefields Parkway include:</p>
+
+<ul>
+<li><strong>Bow Lake:</strong> 36 km north of Lake Louise, perfect for photos without the Lake Louise crowds</li>
+<li><strong>Peyto Lake:</strong> The viewpoint sits at 2,088m elevation—I always stop here during training runs</li>
+<li><strong>Columbia Icefield:</strong> Home to the Athabasca Glacier, roughly halfway between the parks</li>
+<li><strong>Sunwapta Falls:</strong> An easy 10-minute walk from the parking area</li>
+</ul>
+
+<p>Fuel up before leaving either Banff or jasper town. The only gas station along the parkway sits at Saskatchewan River Crossing, and it's often closed during shoulder seasons.</p>
+
+<h2>Accommodation Strategy: Banff vs Jasper Town</h2>
+
+<p>Your choice between staying in Banff townsite or jasper town depends on your priorities. Banff offers more dining options, nightlife, and shopping, while Jasper provides a quieter mountain town experience with easier access to certain wilderness areas.</p>
+
+<p>Banff accommodation ranges from budget hostels (\$35-50 CAD per night) to luxury resorts (\$800+ CAD per night). I've stayed everywhere from the Banff Centre to backcountry hostels, and each serves different trip styles. For detailed options, check my guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a>.</p>
+
+<p>Jasper town typically costs 20-30% less than Banff for similar accommodation levels. However, you'll have fewer choices, especially for luxury properties. Book jasper town hotels by February for summer visits—I learned this the hard way in 2023 when everything was sold out.</p>
+
+<p>Many visitors split their time between both locations. A popular strategy involves 3-4 nights in Banff, driving the Icefields Parkway as a day trip or overnight in jasper town, then returning south. For time-pressed travelers, my <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> maximizes your Canadian Rockies experience from a single base.</p>
+
+<h3>Budget Considerations</h3>
+
+<p>Expect to pay premium prices in both locations, but Banff costs more across the board. During my April 2025 ski trip, dinner for two at a mid-range Banff restaurant averaged \$120-150 CAD including drinks and tips. Jasper town runs about \$100-120 CAD for comparable meals.</p>
+
+<p>Groceries cost 30-40% more than Calgary prices in both towns. I always stock up on non-perishables before arriving, especially for longer stays or backcountry trips.</p>
+
+<h2>Activities and Adventures: Banff's Endless Options</h2>
+
+<p>While jasper town offers excellent hiking and wildlife viewing, Banff provides unmatched activity diversity. As someone who trains year-round in these mountains, I can tell you Banff's trail network is more extensive and better developed.</p>
+
+<p>Must-do Banff activities include:</p>
+
+<ul>
+<li><strong>Lake Louise and Moraine Lake:</strong> Arrive before 7 AM or you won't get parking from June through September</li>
+<li><strong>Johnston Canyon:</strong> The lower falls require a 20-minute walk, upper falls take 45 minutes</li>
+<li><strong>Banff Gondola:</strong> Summit elevation reaches 2,281m with 360-degree mountain views</li>
+<li><strong>Lake Minnewanka:</strong> Perfect for kayaking, with rentals available from May through October</li>
+</ul>
+
+<p>For comprehensive trail information, including difficulty ratings and current conditions, consult my guide to the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>. I update trail conditions regularly based on my training runs throughout the park.</p>
+
+<p>Booking activities in advance saves money and guarantees availability. <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers competitive prices on popular experiences like ice walks, wildlife tours, and guided hikes.</p>
+
+<h3>Seasonal Activity Planning</h3>
+
+<p>April marks shoulder season in Banff, meaning some high-elevation activities remain closed while others just open for the season. Lake Louise typically stays frozen until mid-May, making it perfect for ice skating if conditions permit.</p>
+
+<p>Skiing at Lake Louise Ski Resort and Sunshine Village usually continues through early May, depending on snow conditions. I've skied fresh powder in late April several times—it's one of the season's best-kept secrets.</p>
+
+<h2>Dining and Local Flavors</h2>
+
+<p>Banff's restaurant scene far exceeds jasper town's options. From my regular visits, I can recommend spots across every price range and cuisine type.</p>
+
+<p>Budget-friendly options include Nourish Bistro for healthy bowls (\$15-20 CAD), Banff Perk for excellent coffee and pastries (\$8-12 CAD), and Wild Flour Bakery for fresh sandwiches and baked goods (\$10-15 CAD).</p>
+
+<p>Mid-range favorites include The Bison Restaurant for Canadian cuisine (\$25-40 CAD per entrée), Brazen Head for pub fare and craft beer (\$18-28 CAD), and Magpie & Stump for pizza and casual dining (\$16-24 CAD).</p>
+
+<p>For special occasions, Eden at the Rimrock Resort offers fine dining with mountain views (\$45-65 CAD per entrée), while The Maple Leaf provides upscale Canadian dishes in the heart of downtown (\$38-55 CAD).</p>
+
+<p>My complete restaurant recommendations, including seasonal menus and reservation tips, appear in my guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>.</p>
+
+<h2>Transportation and Getting Around</h2>
+
+<p>Most visitors drive to Banff, but several transportation options exist. Calgary International Airport sits 128 km east of Banff townsite, with shuttle services running \$65-75 CAD per person each way.</p>
+
+<p>Within Banff, the Roam public transit system connects major attractions during summer months. Single rides cost \$2 CAD, day passes \$5 CAD. I use Roam frequently during peak season to avoid parking hassles at popular trailheads.</p>
+
+<p>Parking in Banff townsite costs \$3 CAD per hour or \$15 CAD per day at most meters. Many hotels include parking, but confirm when booking through the <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory.</p>
+
+<p>For jasper town visits, you'll definitely need a vehicle. Public transportation between the parks doesn't exist, and jasper town's compact size makes walking viable only within the townsite itself.</p>
+
+<p>Whether you choose Banff as your Canadian Rockies base or venture north to jasper town, both destinations offer world-class mountain experiences. Banff provides more amenities, activities, and dining options, while Jasper offers a quieter, more authentic mountain town atmosphere. From my years exploring both parks, I recommend Banff for first-time visitors who want maximum options and convenience. You can always return to explore jasper town's wilder side on future trips.</p>
+`,
+  'banff-nightclubs': `
+<p>After spending countless hours training on Banff's mountain trails and exploring the town during my recovery days, I've discovered that the nightlife scene here offers more than most visitors expect. While Banff isn't Vancouver or Toronto, the compact downtown core packs several solid options for those looking to dance, drink, and socialize after dark. Here's my insider guide to the nightclub scene in Canada's most famous mountain town.</p>
+
+<h2>The Reality of Banff's Nightclub Scene</h2>
+
+<p>Let me be direct about what you'll find in Banff: this is a mountain town of 8,000 people that swells with tourists, seasonal workers, and outdoor enthusiasts. The nightclub options are limited but surprisingly energetic, especially during peak seasons. Most venues double as restaurants or bars during the day, transforming into dance floors after 10 PM.</p>
+
+<p>The crowd is typically a mix of international travelers, seasonal resort workers, and locals who know how to make the most of mountain town nightlife. I've found the energy peaks on weekends and during holiday periods, particularly in winter when the ski resort staff are looking to blow off steam.</p>
+
+<p>Expect higher prices than you'd pay in Calgary – a beer will run you \$8-12 CAD, and cocktails start around \$14 CAD. Cover charges range from free on weeknights to \$15 CAD on busy Saturday nights.</p>
+
+<h2>Top Nightclub Options in Banff</h2>
+
+<h3>Dancing Sasquatch</h3>
+<p>Located on Banff Avenue, Dancing Sasquatch consistently draws the biggest crowds when I'm in town. The basement level transforms into a proper dance floor with a decent sound system and lighting setup. They rotate DJs who play everything from top 40 to electronic music, and I've seen the place packed until 2 AM on weekend nights.</p>
+
+<p>The venue gets cramped quickly – arrive before 10:30 PM if you want space to move. The crowd skews younger, mostly 20s and early 30s. Cover charge is typically \$10 CAD on weekends.</p>
+
+<h3>Wild Bill's Legendary Saloon</h3>
+<p>This Western-themed venue on Banff Avenue offers country music nights and line dancing, which sounds cheesy but actually draws enthusiastic crowds. I've watched seasoned cowboys teach tourists the Electric Slide, and the energy is infectious. They host live bands several nights per week during peak season.</p>
+
+<p>The mechanical bull is exactly what you'd expect, and yes, after a few drinks, even serious athletes like myself have been known to give it a try. Cover charges vary based on entertainment, ranging from free to \$15 CAD.</p>
+
+<h3>Rose and Crown</h3>
+<p>The upstairs area of this British-style pub becomes a makeshift dance floor on busy nights. While not technically a nightclub, it's where many locals end up after dinner. The music leans toward classic rock and pub favorites, and the atmosphere is more relaxed than the other options.</p>
+
+<p>I appreciate that Rose and Crown keeps later kitchen hours, so you can grab food between training sessions and night activities. No cover charge most nights.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Download the Banff Trail Runner app or follow local Facebook groups to find out about pop-up parties and seasonal events. Some of the best nightlife happens at impromptu gatherings, especially during worker housing parties that welcome visitors.</div>
+
+<h2>Best Times and Seasons for Nightlife</h2>
+
+<p>Peak nightlife season runs from December through March during ski season, and again from June through September for summer visitors. January and February offer the most consistent nightclub energy – the seasonal worker population is at its highest, and everyone needs somewhere to go after long days on the mountain.</p>
+
+<p>Right now in April 2026, you're hitting a slower period as ski season winds down and hiking season hasn't fully started. Some venues reduce their hours or close certain nights. Call ahead or check websites before heading out.</p>
+
+<p>Weekend nights (Friday and Saturday) are obviously busiest, but Thursday nights can surprise you, especially during peak seasons. I've found some of my most enjoyable nights out were on Thursdays when the crowds were manageable but the energy was still high.</p>
+
+<p>Most venues close by 2 AM, with last call around 1:30 AM. The party often continues at after-hours spots or house parties if you connect with the right people.</p>
+
+<h2>Alternative Nightlife Options</h2>
+
+<p>If traditional nightclubs aren't your scene, Banff offers several alternatives that I've enjoyed over the years. The HI Hostel frequently hosts social events and parties that welcome non-guests. These tend to be more international and relaxed than the downtown club scene.</p>
+
+<p>Several <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> transform into social hubs with live music and dancing later in the evening. The Maple Leaf and Saltlik both have active bar scenes that can get quite lively.</p>
+
+<p>For a more unique experience, check if any hotels are hosting special events. The Fairmont Banff Springs occasionally opens its ballroom for themed parties, and the atmosphere in that castle-like setting is special.</p>
+
+<p>Craft breweries like Banff Brewing Company and Wild Rose Brewery often host late-night events with local DJs. The vibe is more chill than club-like, but I've seen these turn into impromptu dance parties.</p>
+
+<h2>Planning Your Night Out</h2>
+
+<p>Transportation is crucial since downtown Banff is compact but accommodations spread across the townsite. Most hotels are within walking distance of the nightlife, but winter conditions can make the walk challenging after midnight. Roam Transit stops running around 11 PM, and taxis can be scarce on busy nights.</p>
+
+<p>If you're staying outside town or at one of the larger resort hotels, plan your return trip in advance. Many visitors end up walking longer distances than expected in mountain weather.</p>
+
+<p>For accommodations, staying right downtown puts you within stumbling distance of all the action. Check out options to <a href="/hotel-directory">compare 95+ Banff hotels</a> and find something central to the nightlife scene.</p>
+
+<p>Dress codes are generally casual, but avoid hiking boots and athletic wear unless you're going for the post-adventure look. Layers are essential – venues get hot inside, but April nights in Banff still drop well below freezing.</p>
+
+<h2>What to Expect and Local Etiquette</h2>
+
+<p>The Banff nightclub scene feels like a small community where regulars and visitors mix freely. I've made friends from six different countries in a single night out. The seasonal worker crowd is particularly welcoming and knows where the real parties happen.</p>
+
+<p>Don't expect big city production values or massive sound systems. What you get instead is intimate venues where everyone ends up talking to everyone else. The mountain town energy means people are generally friendly and looking to have a good time.</p>
+
+<p>Respect the local scene – tip your bartenders well, don't be obnoxious about photo-taking, and remember that many staff members are living and working in expensive seasonal housing. They're making the best of mountain town life just like you're trying to enjoy your visit.</p>
+
+<p>Security is present but low-key compared to urban clubs. Problems are rare, but drinking at elevation affects people differently than at sea level. Pace yourself and stay hydrated.</p>
+
+<p>The nightclub scene fits well into a broader Banff experience. You might want to plan around it when creating your <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>, especially if you're balancing outdoor activities with social time.</p>
+`,
   'jasper-alberta': `
 <p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about <strong>Jasper Alberta</strong> almost as much as I do about Banff itself. While this guide focuses on Banff National Park, understanding the connection between these two iconic destinations will help you make the most of your Rocky Mountain adventure. Both parks offer world-class outdoor recreation, but each has its own character and highlights that serious outdoor enthusiasts need to know about.</p>
 

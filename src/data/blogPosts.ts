@@ -11,6 +11,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'jasper-town',
+    title: 'Banff to Jasper Town: Ultimate 2026 Adventure Guide',
+    description: 'Discover the ultimate Banff to Jasper adventure with our 2026 guide! Explore scenic drives, top attractions, wildlife viewing, and insider tips for an unforgettable journey.',
+    date: '2026-04-08',
+    category: 'Guides',
+    image: '/images/blog/jasper-town.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-nightclubs',
+    title: 'Banff\'s Hottest Nightclubs: Your 2026 Party Guide',
+    description: 'Discover Banff\'s top nightclubs and party hotspots in 2026! From alpine-themed venues to rooftop bars, find the best places to dance and drink in the Rockies.',
+    date: '2026-04-08',
+    category: 'Guides',
+    image: '/images/blog/banff-nightclubs.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'jasper-alberta',
     title: 'Ultimate Banff to Jasper Alberta Road Trip Guide 2026',
     description: 'Discover the ultimate Banff to Jasper road trip with our 2026 guide. Explore scenic routes, top attractions, hiking trails, and insider tips for Alberta\'s Rockies.',
