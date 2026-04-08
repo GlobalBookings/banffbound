@@ -5,7 +5,7 @@ export const blogContent2: Record<string, string> = {
 <h2>Hikes & Walks</h2>
 
 <h3>1. Tunnel Mountain Summit</h3>
-<p>The easiest summit hike near Banff town (2.3 km one way, 300m elevation gain). Panoramic views of the Bow Valley, Mount Rundle, and Banff from the top. Perfect for sunrise or sunset.</p>
+<p>The easiest summit hike near <a href="/blog/banff-sunrise-spots">10 Best Sunrise Spots in Banff National Park</a> town (2.3 km one way, 300m elevation gain). Panoramic views of the Bow Valley, Mount Rundle, and Banff from the top. Perfect for sunrise or sunset.</p>
 
 <h3>2. Johnston Canyon to Lower Falls</h3>
 <p>Walk along catwalks bolted to the canyon walls to reach a gorgeous waterfall. One of Banff's most iconic experiences. 1.1 km one way.</p>
@@ -92,7 +92,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Remember:</strong> While these activities are free, a <strong>Parks Canada pass</strong> is required to enter Banff National Park ($11/day adult, $22.40 family/group, or $145.25/year family Discovery Pass). This is the only cost you need for all 25 of these experiences. That's incredible value for some of the most incredible scenery on Earth.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-stargazing-guide': `
-<p>Banff National Park was designated a <strong>Dark Sky Preserve</strong> by the Royal Astronomical Society of Canada in 2017, making it one of the largest accessible dark sky preserves in the world. With minimal light pollution, high elevation, and dry mountain air, Banff offers remarkable stargazing that rivals any location on Earth. Here's your complete guide to experiencing the night sky in the Canadian Rockies.</p>
+<p><a href="/blog/banff-backcountry-guide">Banff Backcountry: Camping & Hiking</a> National Park was designated a <strong>Dark Sky Preserve</strong> by the Royal Astronomical Society of Canada in 2017, making it one of the largest accessible dark sky preserves in the world. With minimal light pollution, high elevation, and dry mountain air, Banff offers remarkable stargazing that rivals any location on Earth. Here's your complete guide to experiencing the night sky in the Canadian Rockies.</p>
 
 <h2>What Is a Dark Sky Preserve?</h2>
 <p>A Dark Sky Preserve is an area with minimal artificial light pollution where darkness is protected for wildlife, ecosystems, and human enjoyment of the night sky. Parks Canada actively manages lighting in Banff to reduce light pollution — streetlights are shielded, and there are strict guidelines on outdoor lighting. The result is impressively dark skies just minutes from town.</p>
@@ -1432,10 +1432,10 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> The best Canmore day trip plan: Ride the Legacy Trail from Banff to Canmore (1.5 hours, mostly downhill heading east), hike Grassi Lakes (1.5 hours), have lunch on Main Street, explore the shops and galleries, then take Roam Transit back to Banff with your bike. It's a full, satisfying day that shows you a different side of the Canadian Rockies.</div>
 `,
   'banff-solo-travel': `
-<p>Banff National Park is one of the best solo travel destinations in North America. It's safe, well-connected, beautifully beautiful, and packed with activities that are just as enjoyable — sometimes even more so — when you're on your own. For those seeking solitude on a mountain trail or looking to meet fellow travellers at a hostel bar, Banff delivers.</p>
+<p><a href="/blog/banff-lgbtq-travel">LGBTQ+ Travel to <a href="/blog/banff-senior-travel">Banff for Seniors: Easy Activities & Accessibility</a> & Lake Louise</a> National Park is one of the best solo travel destinations in North America. It's safe, well-connected, beautifully beautiful, and packed with activities that are just as enjoyable — sometimes even more so — when you're on your own. For those seeking solitude on a mountain trail or looking to meet fellow travellers at a hostel bar, Banff delivers.</p>
 
 <h2>Is Banff Safe for Solo Travellers?</h2>
-<p>Yes. Banff is exceptionally safe. The town is small, walkable, and well-lit. Crime rates are very low, and the community is welcoming to visitors from all backgrounds. As with any wilderness destination, the biggest safety considerations are wildlife encounters and trail conditions rather than personal safety in town.</p>
+<p>Yes. <a href="/blog/banff-bear-safety">Bear Safety in Banff: Essential</a> is exceptionally safe. The town is small, walkable, and well-lit. Crime rates are very low, and the community is welcoming to visitors from all backgrounds. As with any wilderness destination, the biggest safety considerations are wildlife encounters and trail conditions rather than personal safety in town.</p>
 <p>That said, solo hikers should take extra precautions: always tell someone your plans, carry bear spray, check trail conditions, and avoid hiking alone in remote areas during early morning or dusk when bears are most active. Consider joining a <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">guided hiking tour</a> for company and local expertise.</p>
 
 <h2>Best Activities for Solo Travellers</h2>
@@ -1479,7 +1479,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Solo Traveller Tip:</strong> Download offline maps before heading into the park. Cell service is available in Banff town but disappears quickly on many trails and scenic drives. Google Maps and AllTrails both offer offline mode — essential for solo navigation.</div>
 `,
   'banff-honeymoon-guide': `
-<p>Few places on Earth rival Banff for honeymoon magic. Snow-capped mountains, turquoise lakes, renowned dining, luxury spas, and endless adventure — the Canadian Rockies offer newlyweds an one-of-a-kind blend of romance and wild beauty. Here's how to plan the perfect Banff honeymoon.</p>
+<p>Few places on Earth rival <a href="/blog/banff-bear-safety">Bear Safety in Banff: Essential</a> for honeymoon magic. Snow-capped mountains, turquoise lakes, renowned dining, luxury spas, and endless adventure — the Canadian Rockies offer newlyweds an one-of-a-kind blend of romance and wild beauty. Here's how to plan the perfect Banff honeymoon.</p>
 
 <h2>Best Time for a Banff Honeymoon</h2>
 <p><strong>Summer (June-August):</strong> Long warm days, turquoise lakes, canoeing at sunset, wildflower meadows, and outdoor dining patios. The most popular and photogenic season.</p>
@@ -1538,7 +1538,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Honeymoon Tip:</strong> Many Banff hotels offer honeymoon packages with champagne, spa credits, and room upgrades. Always mention it's your honeymoon when booking — you'd be surprised how often you'll receive complimentary upgrades and special touches.</div>
 `,
   'banff-lgbtq-travel': `
-<p>Banff is a welcoming, inclusive destination for LGBTQ+ travellers. Canada has been at the forefront of LGBTQ+ rights — same-sex marriage has been legal nationwide since 2005 — and Banff's tourism-driven, internationally diverse community reflects that progressive culture. Here's everything LGBTQ+ visitors need to know for a wonderful trip.</p>
+<p><a href="/blog/banff-solo-travel">Solo Travel in <a href="/blog/banff-senior-travel">Banff for Seniors: Easy Activities & Accessibility</a></a> is a welcoming, inclusive destination for LGBTQ+ travellers. Canada has been at the forefront of LGBTQ+ rights — same-sex marriage has been legal nationwide since 2005 — and Banff's tourism-driven, internationally diverse community reflects that progressive culture. Here's everything LGBTQ+ visitors need to know for a wonderful trip.</p>
 
 <h2>Is Banff LGBTQ+ Friendly?</h2>
 <p>Absolutely. Banff is a small, cosmopolitan town whose economy revolves around welcoming people from all over the world. The hospitality industry attracts a diverse workforce, and LGBTQ+ travellers will find the same warm reception as any visitor. Public displays of affection between same-sex couples are common and unremarkable in town.</p>
@@ -1588,7 +1588,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Tip:</strong> Banff's international, tourism-driven community is overwhelmingly welcoming. Travel with confidence, be yourselves, and enjoy one of the most beautiful places on the planet together.</div>
 `,
   'banff-senior-travel': `
-<p><a href="/blog/banff-with-kids"><a href="/blog/rainy-day-banff">Rainy Day in Banff: 15 Indoor Activities & Ideas</a> with Kids: Family-Friendly Activities & Tips</a> National Park isn't just for adventurous young hikers. The park offers countless experiences perfectly suited to older travellers — scenic drives, gentle walks, top-tier dining, cultural attractions, and comfortable accommodations. Here's how seniors can enjoy Banff to the fullest.</p>
+<p><a href="/blog/banff-with-kids"><a href="/blog/rainy-day-banff">Rainy Day in <a href="/blog/banff-lgbtq-travel">LGBTQ+ Travel to Banff & Lake Louise</a>: 15 Indoor Activities & Ideas</a> with Kids: Family-Friendly Activities & Tips</a> National Park isn't just for adventurous young hikers. The park offers countless experiences perfectly suited to older travellers — scenic drives, gentle walks, top-tier dining, cultural attractions, and comfortable accommodations. Here's how seniors can enjoy Banff to the fullest.</p>
 
 <h2>Easy & Accessible Activities</h2>
 <h3>Scenic Drives</h3>
@@ -1647,7 +1647,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Senior Tip:</strong> The Banff Gondola plus Banff Upper Hot Springs combo is the perfect senior day out — incredible views without strenuous effort, followed by a soothing soak. Both are within a short drive of downtown Banff.</div>
 `,
   'banff-group-travel': `
-<p>Planning a group trip to <a href="/blog/accessible-banff">Accessible Banff: A for Visitors with Disabilities</a> — whether it's a family reunion, bachelor party, corporate retreat, or friend group adventure — takes more coordination than a solo or couples trip. But with the right planning, a Banff group trip can be one of the most memorable experiences of everyone's lives. Here's how to pull it off.</p>
+<p>Planning a group trip to <a href="/blog/accessible-banff">Accessible <a href="/blog/banff-solo-travel">Solo Travel in <a href="/blog/banff-lgbtq-travel">LGBTQ+ Travel to Banff & Lake Louise</a></a>: A for Visitors with Disabilities</a> — whether it's a family reunion, bachelor party, corporate retreat, or friend group adventure — takes more coordination than a solo or couples trip. But with the right planning, a Banff group trip can be one of the most memorable experiences of everyone's lives. Here's how to pull it off.</p>
 
 <h2>Accommodation for Groups</h2>
 <h3>Vacation Rentals</h3>
@@ -3321,7 +3321,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>5-Day Tip:</strong> Don't try to cram everything into the first two days. The beauty of five days is having time to slow down, revisit a favourite spot, or follow a spontaneous detour. Some of the best Banff moments happen when you abandon the itinerary and just sit by a lake.</div>
 `,
   'winter-banff-itinerary': `
-<p>Winter transforms <a href="/blog/7-day-banff-itinerary">7-Day <a href="/blog/banff-in-winter">Banff in Winter: The to a Winter Trip</a> Itinerary: The</a> into a snow-covered wonderland. Frozen lakes, ice walks, top-tier skiing, and steaming hot springs await. This 4-day itinerary covers the best winter experiences while leaving time for cozy evenings by the fire.</p>
+<p>Winter transforms <a href="/blog/7-day-banff-itinerary">7-Day <a href="/blog/banff-in-winter"><a href="/blog/banff-winter-driving">Winter Driving to Banff: Road Conditions & Safety</a> in Winter: The to a Winter Trip</a> Itinerary: The</a> into a snow-covered wonderland. Frozen lakes, ice walks, top-tier skiing, and steaming hot springs await. This 4-day itinerary covers the best winter experiences while leaving time for cozy evenings by the fire.</p>
 
 <h2>Day 1: Arrive & Winter Wonderland</h2>
 <ul>
@@ -3633,7 +3633,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Lake Louise Tip:</strong> Do the Lake Agnes Tea House hike, then continue to Big Beehive. The extra 45 minutes of hiking gives you a view of Lake Louise from above that will be the highlight of your trip. Bring cash for tea and scones at the tea house — it's a tradition.</div>
 `,
   'things-to-do-winter-banff': `
-<p>Winter in <a href="/blog/banff-in-winter">Banff in Winter: The to a Winter Trip</a> is magical — snow-covered peaks, frozen lakes, steaming hot springs, and outstanding skiing. Far from a dormant season, winter offers some of the most memorable experiences in the Canadian Rockies. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do when the snow flies.</p>
+<p>Winter in <a href="/blog/banff-in-winter"><a href="/blog/banff-winter-driving">Winter Driving to Banff: Road Conditions & Safety</a> in Winter: The to a Winter Trip</a> is magical — snow-covered peaks, frozen lakes, steaming hot springs, and outstanding skiing. Far from a dormant season, winter offers some of the most memorable experiences in the Canadian Rockies. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do when the snow flies.</p>
 
 <h2>Skiing & Snowboarding</h2>
 <ol>
@@ -3800,7 +3800,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Luxury Tip:</strong> The most luxurious experience in Banff isn't the most expensive. Book a sunrise canoe on Lake Louise (rent from the Chateau boathouse at opening) and paddle alone on turquoise water beneath a glacier. Follow with afternoon tea at the Chateau. Total cost: under $200. The memory: priceless.</div>
 `,
   'banff-hidden-gems': `
-<p>Everyone knows Lake Louise and Moraine Lake. But Banff National Park is vast — 6,641 square kilometres of mountains, forests, and valleys — and most visitors see only a fraction. Here are 15 lesser-known spots that locals love and tourists rarely find.</p>
+<p>Everyone knows Lake Louise and Moraine Lake. But <a href="/blog/banff-sunrise-spots">10 Best Sunrise Spots in <a href="/blog/banff-free-activities">25 Free Things to Do in Banff National Park</a> National Park</a> National Park is vast — 6,641 square kilometres of mountains, forests, and valleys — and most visitors see only a fraction. Here are 15 lesser-known spots that locals love and tourists rarely find.</p>
 
 <h2>1. Surprise Corner</h2>
 <p>A viewpoint 10 minutes' walk from downtown that most tourists never reach. The Fairmont Banff Springs Hotel framed by the Bow River and mountains is one of Banff's finest views — and it's free, easy, and almost always uncrowded. Best at sunset when the hotel glows golden.</p>
@@ -3852,7 +3852,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Quiet find Tip:</strong> The Ink Pots beyond Johnston Canyon are the best-kept secret in Banff. Most hikers turn around at the Upper Falls — but the extra 3 km to the Ink Pots is flat, beautiful, and rewards you with turquoise mineral springs in a wildflower meadow. Go on a weekday morning for near-solitude.</div>
 `,
   'banff-first-time-tips': `
-<p>Visiting Banff for the first time is exciting — and a little overwhelming. The park is enormous, the logistics can be tricky, and there's so much to see that planning feels daunting. Here are 20 essential things you need to know before your first visit to make the most of every moment.</p>
+<p>Visiting <a href="/blog/banff-free-activities">25 Free Things to Do in Banff National Park</a> for the first time is exciting — and a little overwhelming. The park is enormous, the logistics can be tricky, and there's so much to see that planning feels daunting. Here are 20 essential things you need to know before your first visit to make the most of every moment.</p>
 
 <h2>Before You Go</h2>
 <ol>
