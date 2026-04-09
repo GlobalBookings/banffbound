@@ -1050,7 +1050,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> The Bow River below Banff (outside the park, near Canmore and Cochrane) is considered one of the top 10 trout rivers in the world. If you have time, book a drift boat trip on the lower Bow — the fish are larger, the hatches are more prolific, and a good guide will put you on fish all day. It's a top-tier fly fishing experience.</div>
 `,
   'banff-golf-guide': `
-<p>Golf in the Canadian Rockies is an experience unlike any other. Imagine teeing off with snow-capped peaks towering above you, elk grazing on the fairway, and glacial rivers winding through the course. <a href="/blog/banff-sunshine-lodging">Best Banff Sunshine Village Lodging Options for</a> and the surrounding area offer some of the most incrediblely scenic golf courses in the world, headlined by the legendary Fairmont Banff Springs Golf Course — a bucket-list destination for golfers worldwide.</p>
+<p>Golf in the Canadian Rockies is an experience unlike any other. Imagine teeing off with snow-capped peaks towering above you, elk grazing on the fairway, and glacial rivers winding through the course. <a href="/blog/banff-sunshine-lodging">Best <a href="/blog/calgary-to-banff-guide">Calgary to Banff: All Transportation Options</a> Sunshine Village Lodging Options for</a> and the surrounding area offer some of the most incrediblely scenic golf courses in the world, headlined by the legendary Fairmont Banff Springs Golf Course — a bucket-list destination for golfers worldwide.</p>
 
 <h2>Fairmont Banff Springs Golf Course</h2>
 <p>The <strong>Stanley Thompson 18</strong> at the Fairmont Banff Springs is consistently ranked among the top courses in Canada and the world. Designed by legendary golf architect Stanley Thompson in 1928, the course flows along the Bow River beneath Mount Rundle and Sulphur Mountain.</p>
@@ -1432,7 +1432,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> The best Canmore day trip plan: Ride the Legacy Trail from Banff to Canmore (1.5 hours, mostly downhill heading east), hike Grassi Lakes (1.5 hours), have lunch on Main Street, explore the shops and galleries, then take Roam Transit back to Banff with your bike. It's a full, satisfying day that shows you a different side of the Canadian Rockies.</div>
 `,
   'banff-solo-travel': `
-<p><a href="/blog/banff-lgbtq-travel">LGBTQ+ Travel to <a href="/blog/banff-senior-travel">Banff for Seniors: Easy Activities & Accessibility</a> & Lake Louise</a> National Park is one of the best solo travel destinations in North America. It's safe, well-connected, beautifully beautiful, and packed with activities that are just as enjoyable — sometimes even more so — when you're on your own. For those seeking solitude on a mountain trail or looking to meet fellow travellers at a hostel bar, Banff delivers.</p>
+<p><a href="/blog/banff-lgbtq-travel">LGBTQ+ Travel to <a href="/blog/banff-senior-travel"><a href="/blog/banff-group-travel">Group Travel to <a href="/blog/banff-travel-costs">How Much Does a Banff Trip Cost? Budget Breakdown</a>: Planning</a> for Seniors: Easy Activities & Accessibility</a> & Lake Louise</a> National Park is one of the best solo travel destinations in North America. It's safe, well-connected, beautifully beautiful, and packed with activities that are just as enjoyable — sometimes even more so — when you're on your own. For those seeking solitude on a mountain trail or looking to meet fellow travellers at a hostel bar, Banff delivers.</p>
 
 <h2>Is Banff Safe for Solo Travellers?</h2>
 <p>Yes. <a href="/blog/banff-bear-safety">Bear Safety in Banff: Essential</a> is exceptionally safe. The town is small, walkable, and well-lit. Crime rates are very low, and the community is welcoming to visitors from all backgrounds. As with any wilderness destination, the biggest safety considerations are wildlife encounters and trail conditions rather than personal safety in town.</p>
@@ -1538,7 +1538,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Honeymoon Tip:</strong> Many Banff hotels offer honeymoon packages with champagne, spa credits, and room upgrades. Always mention it's your honeymoon when booking — you'd be surprised how often you'll receive complimentary upgrades and special touches.</div>
 `,
   'banff-lgbtq-travel': `
-<p><a href="/blog/banff-solo-travel">Solo Travel in <a href="/blog/banff-senior-travel">Banff for Seniors: Easy Activities & Accessibility</a></a> is a welcoming, inclusive destination for LGBTQ+ travellers. Canada has been at the forefront of LGBTQ+ rights — same-sex marriage has been legal nationwide since 2005 — and Banff's tourism-driven, internationally diverse community reflects that progressive culture. Here's everything LGBTQ+ visitors need to know for a wonderful trip.</p>
+<p><a href="/blog/banff-solo-travel">Solo Travel in <a href="/blog/banff-senior-travel"><a href="/blog/banff-group-travel">Group Travel to Banff: Planning</a> for Seniors: Easy Activities & Accessibility</a></a> is a welcoming, inclusive destination for LGBTQ+ travellers. Canada has been at the forefront of LGBTQ+ rights — same-sex marriage has been legal nationwide since 2005 — and Banff's tourism-driven, internationally diverse community reflects that progressive culture. Here's everything LGBTQ+ visitors need to know for a wonderful trip.</p>
 
 <h2>Is Banff LGBTQ+ Friendly?</h2>
 <p>Absolutely. Banff is a small, cosmopolitan town whose economy revolves around welcoming people from all over the world. The hospitality industry attracts a diverse workforce, and LGBTQ+ travellers will find the same warm reception as any visitor. Public displays of affection between same-sex couples are common and unremarkable in town.</p>
@@ -1647,7 +1647,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Senior Tip:</strong> The Banff Gondola plus Banff Upper Hot Springs combo is the perfect senior day out — incredible views without strenuous effort, followed by a soothing soak. Both are within a short drive of downtown Banff.</div>
 `,
   'banff-group-travel': `
-<p>Planning a group trip to <a href="/blog/accessible-banff">Accessible <a href="/blog/banff-solo-travel">Solo Travel in <a href="/blog/banff-lgbtq-travel">LGBTQ+ Travel to Banff & Lake Louise</a></a>: A for Visitors with Disabilities</a> — whether it's a family reunion, bachelor party, corporate retreat, or friend group adventure — takes more coordination than a solo or couples trip. But with the right planning, a Banff group trip can be one of the most memorable experiences of everyone's lives. Here's how to pull it off.</p>
+<p>Planning a group trip to <a href="/blog/accessible-banff">Accessible <a href="/blog/banff-solo-travel">Solo Travel in <a href="/blog/banff-lgbtq-travel">LGBTQ+ Travel to <a href="/blog/banff-travel-costs">How Much Does a Banff Trip Cost? Budget Breakdown</a> & Lake Louise</a></a>: A for Visitors with Disabilities</a> — whether it's a family reunion, bachelor party, corporate retreat, or friend group adventure — takes more coordination than a solo or couples trip. But with the right planning, a Banff group trip can be one of the most memorable experiences of everyone's lives. Here's how to pull it off.</p>
 
 <h2>Accommodation for Groups</h2>
 <h3>Vacation Rentals</h3>
@@ -1764,7 +1764,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> If you're renting a car for part of your trip, consider picking it up only for the days you need it. Spend a few days car-free in Banff town (it's very walkable with excellent transit), then rent a car for day trips to Lake Louise, Moraine Lake, and the Icefields Parkway. This saves on parking and rental costs.</div>
 `,
   'banff-packing-list': `
-<p>Packing for Banff requires planning for mountain weather that can change dramatically — sometimes within the same day. For anyone visiting in summer or winter, this comprehensive packing list ensures you'll be comfortable and prepared for everything the Canadian Rockies throw at you.</p>
+<p>Packing for <a href="/blog/banff-shoulder-season">Banff Shoulder Season: Why October & May Are Perfect</a> requires planning for mountain weather that can change dramatically — sometimes within the same day. For anyone visiting in summer or winter, this comprehensive packing list ensures you'll be comfortable and prepared for everything the Canadian Rockies throw at you.</p>
 
 <h2>Summer Packing List (June-August)</h2>
 <h3>Clothing</h3>
@@ -1837,7 +1837,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Packing Tip:</strong> Layer, layer, layer. A sunny morning hike can turn into a cold, windy summit. Dress in a moisture-wicking base, insulating mid-layer, and waterproof outer shell — add or remove layers as conditions change. This system works year-round in the Rockies.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-travel-costs': `
-<p>A <a href="/blog/banff-trip-cost-budget-guide">How Much Does a Banff Trip Cost? Budget Breakdown</a> trip can be surprisingly affordable or dramaticly luxurious — it all depends on your choices. Here's a detailed cost breakdown for every budget level, so you can plan a trip that matches your wallet.</p>
+<p>A <a href="/blog/banff-trip-cost-budget-guide">How Much Does a <a href="/blog/banff-group-travel">Group Travel to Banff: Planning</a> Trip Cost? Budget Breakdown</a> trip can be surprisingly affordable or dramaticly luxurious — it all depends on your choices. Here's a detailed cost breakdown for every budget level, so you can plan a trip that matches your wallet.</p>
 
 <h2>Park Entry</h2>
 <p>You need a Parks Canada pass to enter Banff National Park:</p>
@@ -1920,7 +1920,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Money-Saving Tip:</strong> Visit during shoulder season (May or October), stay in Canmore instead of Banff, cook some meals in your accommodation kitchen, and focus on free activities like hiking and scenic drives. You can have an incredible Banff experience for under $100/day.</div>
 `,
   'banff-shoulder-season': `
-<p>While most visitors flock to Banff in July-August or ski <a href="/blog/fall-larch-season-banff">Larch Season in Banff: When & Where to See Golden</a>, the shoulder months of May and October offer something special: fewer crowds, lower prices, and a unique atmosphere that the peak seasons can't match. Here's why shoulder season might be the best time to visit.</p>
+<p>While most visitors flock to <a href="/blog/banff-packing-list">Banff Packing List: What to Bring Every Season</a> in July-August or ski <a href="/blog/fall-larch-season-banff">Larch Season in Banff: When & Where to See Golden</a>, the shoulder months of May and October offer something special: fewer crowds, lower prices, and a unique atmosphere that the peak seasons can't match. Here's why shoulder season might be the best time to visit.</p>
 
 <h2>May in Banff</h2>
 <h3>What to Expect</h3>
@@ -2202,7 +2202,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Thanksgiving Tip:</strong> Combine a morning larch hike with an afternoon Thanksgiving dinner in town. Start at Larch Valley at sunrise when the golden larches glow in morning light, then return to Banff for a festive turkey dinner. It's the quintessential Canadian Thanksgiving in the Rockies.</div>
 `,
   'banff-snowdays-festival': `
-<p>Banff SnowDays is the town's premier winter festival, transforming downtown Banff into a magical wonderland of ice sculptures, snow activities, and cold-weather celebrations. Held annually in January, it's one of the best reasons to visit Banff in winter. Here's your complete guide.</p>
+<p><a href="/blog/banff-film-festival">Banff Mountain Film Festival</a> SnowDays is the town's premier winter festival, transforming downtown Banff into a magical wonderland of ice sculptures, snow activities, and cold-weather celebrations. Held annually in January, it's one of the best reasons to visit Banff in winter. Here's your complete guide.</p>
 
 <h2>What is SnowDays?</h2>
 <p>SnowDays is a multi-week winter festival featuring professional ice carving, snow sculpture exhibitions, outdoor activities, live entertainment, and community events. The festival typically runs for 2-3 weeks in mid-to-late January, centred around Banff Avenue and Bear Street.</p>
@@ -2251,7 +2251,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Festival Tip:</strong> Visit the ice sculptures twice — once during the day to see the crystal-clear detail of the carvings, and once after dark when coloured lights transform them into glowing works of art. The night-time experience is truly magical.</div>
 `,
   'banff-film-festival': `
-<p>The <a href="/blog/banff-admission">Banff Admission Fees : Save Money on Mountain Trip</a> Centre Mountain Film and Book Festival is one of the most prestigious mountain culture events in the world. Held every fall, it draws filmmakers, adventurers, authors, and outdoor enthusiasts from across the globe to the Banff Centre for Arts and Creativity. Here's everything you need to know about attending.</p>
+<p>The <a href="/blog/banff-admission"><a href="/blog/banff-snowdays-festival">Banff SnowDays Festival</a> Admission Fees : Save Money on Mountain Trip</a> Centre Mountain Film and Book Festival is one of the most prestigious mountain culture events in the world. Held every fall, it draws filmmakers, adventurers, authors, and outdoor enthusiasts from across the globe to the Banff Centre for Arts and Creativity. Here's everything you need to know about attending.</p>
 
 <h2>What Is the Banff Mountain Film Festival?</h2>
 <p>Founded in 1976, the Banff Centre Mountain Film and Book Festival showcases the best films, books, and presentations about mountain culture, adventure, environmental issues, and outdoor exploration. Over nine days in late October/early November, the festival screens hundreds of films, hosts book readings, panel discussions, and presentations by legendary adventurers.</p>
@@ -2373,7 +2373,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Museum Tip:</strong> Visit the Banff Park Museum on your first day in Banff. Seeing the taxidermied animals up close — their size, colouring, and features — helps you identify species when you encounter them in the wild during the rest of your trip. It's the perfect primer for a national park visit.</div>
 `,
   'fairmont-banff-springs': `
-<p>The Fairmont Banff Springs Hotel is more than accommodation — it's one of Canada's most iconic landmarks. Known as the "Castle in the Rockies," this grand railway hotel has been welcoming guests since 1888 and remains the crown jewel of Banff. If you're staying overnight or just visiting, here's everything you need to know.</p>
+<p>The <a href="/blog/fairmont-chateau-lake-louise">Fairmont Chateau Lake Louise: Staying at the Lake</a> Banff Springs Hotel is more than accommodation — it's one of Canada's most iconic landmarks. Known as the "Castle in the Rockies," this grand railway hotel has been welcoming guests since 1888 and remains the crown jewel of Banff. If you're staying overnight or just visiting, here's everything you need to know.</p>
 
 <h2>A Brief History</h2>
 <p>The original Banff Springs Hotel was built by the Canadian Pacific Railway in 1888 as part of a chain of luxury hotels designed to attract wealthy tourists to ride the transcontinental railroad through the Rockies. The original wooden structure burned in 1926, and the current castle-like stone building was completed in 1928 in a Scottish Baronial style.</p>
@@ -3450,7 +3450,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Larch Season Tip:</strong> The golden larches in Larch Valley above Moraine Lake are the highlight of fall in Banff. Peak colour lasts only 2-3 weeks — typically late September. Follow Parks Canada's larch reports on social media and be ready to go when they announce peak colour. Arrive at the trailhead before 7 AM.</div>
 `,
   'banff-wellness-weekend': `
-<p>Banff is a natural wellness destination — the mountains, the mineral hot springs, the clean mountain air, and the pace of nature create the perfect environment for resetting body and mind. This weekend itinerary combines hot springs, spa treatments, yoga, and gentle nature walks for the comprehensive Rocky Mountain wellness escape.</p>
+<p><a href="/blog/fairmont-banff-springs">Fairmont Banff Springs: The Castle in the Rockies</a> is a natural wellness destination — the mountains, the mineral hot springs, the clean mountain air, and the pace of nature create the perfect environment for resetting body and mind. This weekend itinerary combines hot springs, spa treatments, yoga, and gentle nature walks for the comprehensive Rocky Mountain wellness escape.</p>
 
 <h2>Day 1: Hot Springs & Arrival</h2>
 <ul>
@@ -3759,7 +3759,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Summer Tip:</strong> Start every day early. Parking at popular trailheads fills by 9 AM from late June through August. Set your alarm for 6 AM, grab coffee and a pastry from Wild Flour Bakery, and be at the trailhead by 7 AM. You'll beat the crowds, see more wildlife, and have the best light for photos.</div>
 `,
   'banff-luxury-experience': `
-<p>Banff does luxury differently. There are no beach clubs or velvet ropes here — luxury in the Rockies means waking up in a castle-like hotel with mountain views, dining on tasting menus at elevation, soaking in mineral hot springs, and experiencing the wilderness with expert guides. Here's how to experience the finest Banff has to offer.</p>
+<p><a href="/blog/banff-thanksgiving">Thanksgiving in Banff: Dining & Activities</a> does luxury differently. There are no beach clubs or velvet ropes here — luxury in the Rockies means waking up in a castle-like hotel with mountain views, dining on tasting menus at elevation, soaking in mineral hot springs, and experiencing the wilderness with expert guides. Here's how to experience the finest Banff has to offer.</p>
 
 <h2>Luxury Hotels</h2>
 <h3>Fairmont Banff Springs</h3>
