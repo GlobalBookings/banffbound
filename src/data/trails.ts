@@ -66,8 +66,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'open',
-    conditionNote: 'Good conditions on groomed trails',
-    conditionUpdated: '2026-04-07',
+    conditionNote: 'Good ski conditions. Dogs not permitted.',
+    conditionUpdated: '2026-04-09',
   },
   {
     id: 'marsh-loop',
@@ -100,9 +100,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 4',
   
-    status: 'open',
-    conditionNote: 'Good winter trail conditions',
-    conditionUpdated: '2026-04-07',
+    status: 'caution',
+    conditionNote: 'Packed snow with icy sections. Use caution near lakeshore.',
+    conditionUpdated: '2026-04-09',
   },
   {
     id: 'spray-river-east',
@@ -307,9 +307,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    status: 'closed',
+    conditionNote: 'Road access closed for winter season.',
+    conditionUpdated: '2026-04-09',
   },
   {
     id: 'johnston-canyon-lower-falls',
@@ -729,8 +729,8 @@ export const trails: Trail[] = [
     transitRoute: 'Norquay Shuttle',
   
     status: 'open',
-    conditionNote: 'Easy winter walk, well maintained.',
-    conditionUpdated: '2026-03-30',
+    conditionNote: 'Good conditions for skiing and snowshoeing.',
+    conditionUpdated: '2026-04-09',
   },
   {
     id: 'c-level-cirque',
