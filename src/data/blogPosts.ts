@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'back-country-ski-tours',
+    title: 'Epic Banff Backcountry Ski Tours: 2026\'s Ultimate Guide',
+    description: 'Discover Banff\'s best backcountry ski tours in 2026! Expert routes, safety tips, gear guides & hidden powder stashes in the Canadian Rockies await.',
+    date: '2026-04-09',
+    category: 'Seasonal',
+    image: '/images/blog/back-country-ski-tours.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'jasper-town',
     title: 'Banff to Jasper Town: Ultimate 2026 Adventure Guide',
     description: 'Discover the ultimate Banff to Jasper adventure with our 2026 guide! Explore scenic drives, top attractions, wildlife viewing, and insider tips for an unforgettable journey.',

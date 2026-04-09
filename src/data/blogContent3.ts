@@ -1,4 +1,71 @@
 export const blogContent3: Record<string, string> = {
+  'back-country-ski-tours': `
+<p>As someone who's spent countless mornings trudging through knee-deep powder in the Canadian Rockies, I can tell you that back country ski tours in Banff offer some of the most spectacular terrain accessible anywhere in North America. The combination of towering peaks, expansive glaciated valleys, and pristine snow conditions makes this region a mecca for skiers looking to escape the crowds and experience true alpine adventure.</p>
+
+<h2>Why Banff is Perfect for Back Country Ski Tours</h2>
+
+<p>The Banff area offers over 6,600 square kilometres of pristine wilderness within Banff National Park, providing endless opportunities for back country skiing. What sets this region apart is the accessibility – you can be skinning up a remote glacier within 30 minutes of downtown Banff. The snowpack here typically lasts from December through May, with April being one of my favourite months for touring due to longer daylight hours and more stable conditions.</p>
+
+<p>Parks Canada maintains excellent trail information and avalanche bulletins, which are crucial for planning safe tours. The terrain ranges from gentle valley bottoms perfect for beginners to technical couloirs that challenge even expert skiers. During my last visit in March 2026, I found the snow quality exceptional above 2,000 metres, with light powder persisting well into the spring season.</p>
+
+<h2>Essential Back Country Ski Tours for Every Skill Level</h2>
+
+<h3>Beginner Tours</h3>
+
+<p><strong>Peyto Lake:</strong> This 12-kilometre round trip offers stunning views of one of Canada's most photographed lakes. The route follows the summer hiking trail, making navigation straightforward. Expect a gradual 300-metre elevation gain over 6 kilometres. I recommend starting early – the parking area fills up quickly, especially on weekends.</p>
+
+<p><strong>Bow Summit:</strong> A shorter 8-kilometre tour that provides excellent views of the Wapta Icefield. The gentle terrain makes this ideal for skiers new to back country touring. The trailhead is located along the Icefields Parkway, approximately 40 kilometres north of Lake Louise.</p>
+
+<h3>Intermediate Tours</h3>
+
+<p><strong>Mount Hector:</strong> This challenging day tour covers 16 kilometres with 1,100 metres of elevation gain. The summit views encompass the entire Bow Valley and provide access to excellent ski descents on the north-facing slopes. Weather conditions can change rapidly here, so I always pack extra layers and emergency shelter.</p>
+
+<p><strong>Dolomite Peak:</strong> A technical tour that rewards experienced skiers with 1,200 metres of vertical descent. The approach involves some exposed terrain, making avalanche safety knowledge essential. Book professional guidance through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> if you're not confident with route-finding.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Always check the Avalanche Canada bulletin before heading out. Conditions can change rapidly in the Rockies, and I've turned around on more tours than I care to count due to elevated avalanche risk. Your safety is worth more than any powder run.</div>
+
+<h3>Advanced Tours</h3>
+
+<p><strong>Mount Assiniboine via Spray Lakes:</strong> This multi-day tour covers 55 kilometres and requires overnight camping or hut reservations. The Naiset Huts provide comfortable accommodation, but book well in advance – they fill up months ahead for peak season dates. The skiing around Mount Assiniboine is world-class, with options for both mellow tree skiing and steep couloir descents.</p>
+
+<p><strong>Wapta Icefield Traverse:</strong> The classic 6-day hut-to-hut traverse covers 45 kilometres across the Wapta Icefield. This tour requires solid glacier travel skills and proper crevasse rescue equipment. I've completed this traverse three times, and each trip offers different conditions and challenges.</p>
+
+<h2>Safety and Equipment Essentials</h2>
+
+<p>Back country skiing in Banff requires proper avalanche safety equipment and knowledge. The essential trio includes an avalanche transceiver, probe, and shovel – never tour without all three. I also carry a satellite communicator, first aid kit, and emergency shelter on every tour.</p>
+
+<p>Recent avalanche incidents in the 2025-2026 season have reinforced the importance of formal avalanche education. Take an Avalanche Skills Training Level 1 course before attempting any back country tours. The Association of Canadian Mountain Guides offers excellent programs throughout the winter season.</p>
+
+<p>Weather conditions in the Canadian Rockies can deteriorate rapidly. I always pack extra insulation, emergency food, and a headlamp even on day tours. Cell phone coverage is spotty or non-existent in most back country areas, making self-sufficiency crucial.</p>
+
+<h2>When to Go and Current Conditions</h2>
+
+<p>The 2026 ski touring season has been exceptional, with above-average snowfall throughout the winter months. Current conditions in April 2026 show a stable snowpack above 1,800 metres, with spring corn snow developing on south-facing slopes by mid-morning.</p>
+
+<p>Peak touring season runs from January through April, with each month offering different advantages. January and February provide the deepest powder but also the coldest temperatures and shortest daylight hours. March offers a good balance of snow quality and weather conditions. April, like now, delivers longer days and more stable weather, though you need to start early to catch the snow before it becomes too soft.</p>
+
+<p>For current conditions and trail reports, check the Parks Canada website and local guiding services. The Friends of Banff National Park also maintain excellent trip reports from recent tours.</p>
+
+<h2>Guided Tours vs. Self-Guided Adventures</h2>
+
+<p>First-time visitors to the Banff back country should strongly consider hiring a certified guide. Local guiding companies know current conditions, safe routes, and can provide avalanche education during your tour. Expect to pay \$400-600 CAD per person for a full-day guided tour, with group discounts available.</p>
+
+<p>For self-guided tours, invest in proper topographic maps and GPS navigation. The 1:50,000 scale maps published by Natural Resources Canada provide essential terrain details. I always carry both digital and paper maps – electronics can fail in cold conditions.</p>
+
+<p>Multi-day hut-based tours require reservations through the Alpine Club of Canada. The popular Wapta and Bow Huts book up quickly, especially for weekend dates. Make reservations by early November for the following season.</p>
+
+<h2>Planning Your Banff Back Country Ski Trip</h2>
+
+<p>Base yourself in Banff townsite for easy access to most touring areas. The drive to major trailheads ranges from 15 minutes (Sunshine Village area) to 90 minutes (Icefields Parkway tours). <a href="/blog/where-to-stay-in-banff">Where to stay in Banff</a> depends on your budget and group size, but I prefer accommodations with ski storage and drying facilities.</p>
+
+<p>Book accommodations well in advance, especially for March and April dates. <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> often has competitive rates for Banff hotels, or check our comprehensive <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory for detailed reviews and current availability.</p>
+
+<p>Rental equipment is available from several shops in Banff townsite, though I recommend bringing your own boots for comfort and familiarity. Expect to pay \$60-80 CAD per day for a complete touring setup including skis, boots, bindings, and safety equipment.</p>
+
+<p>If you're planning a longer stay, consider adding some resort skiing or exploring the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> on non-touring days. A well-rounded <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> might include one back country tour, one resort day, and one rest day exploring Banff townsite and sampling the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>.</p>
+
+<p>The back country skiing in Banff offers some of the finest touring terrain in North America, but it demands respect, preparation, and proper safety equipment. Start with easier tours to familiarize yourself with local conditions, invest in avalanche education, and never hesitate to turn back if conditions deteriorate. The mountains will be there tomorrow – make sure you are too.</p>
+`,
   'jasper-town': `
 <p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about Jasper National Park almost as much as Banff. While Jasper town sits about 290 km north of Banff townsite via the stunning Icefields Parkway, understanding both destinations helps you plan the ultimate Rocky Mountain adventure. Let me share what I've learned from years of racing, skiing, and exploring this incredible region.</p>
 
