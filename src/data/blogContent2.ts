@@ -1,6 +1,6 @@
 export const blogContent2: Record<string, string> = {
   'banff-free-activities': `
-<p>Banff has a reputation for being expensive, but here's a secret: the best experiences in the park cost nothing beyond your Parks Canada pass. From beautiful hikes to outstanding viewpoints, wildlife encounters to stargazing, here are 25 free <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do in Banff National Park.</p>
+<p><a href="/blog/banff-cabin-rentals">Best Cabin Rentals Near Banff National Park</a> has a reputation for being expensive, but here's a secret: the best experiences in the park cost nothing beyond your Parks Canada pass. From beautiful hikes to outstanding viewpoints, wildlife encounters to stargazing, here are 25 free <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do in Banff National Park.</p>
 
 <h2>Hikes & Walks</h2>
 
@@ -506,7 +506,7 @@ export const blogContent2: Record<string, string> = {
 </ul>
 
 <h2>Sunrise Photography</h2>
-<p>Vermilion Lakes is <strong>the</strong> premier sunrise photography location in Banff. The lakes face east toward Mount Rundle, which catches the first morning light in striking fashion — turning orange, pink, and gold while the still water creates a perfect mirror reflection.</p>
+<p>Vermilion Lakes is <strong>the</strong> premier sunrise photography location in Banff. The lakes face east toward Mount Rundle, which catches the first morning light in striking fashion — turning orange, pink, and gold while the still water creates a perfect mirror reflection. For more details, check out our guide on <a href="/blog/two-jack-lake-guide">Two Jack Lake: Camping, Kayaking & Photography</a>.</p>
 
 <h3>Photography Tips</h3>
 <ul>
@@ -1479,7 +1479,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Solo Traveller Tip:</strong> Download offline maps before heading into the park. Cell service is available in Banff town but disappears quickly on many trails and scenic drives. Google Maps and AllTrails both offer offline mode — essential for solo navigation.</div>
 `,
   'banff-honeymoon-guide': `
-<p>Few places on Earth rival <a href="/blog/banff-bear-safety">Bear Safety in Banff: Essential</a> for honeymoon magic. Snow-capped mountains, turquoise lakes, renowned dining, luxury spas, and endless adventure — the Canadian Rockies offer newlyweds an one-of-a-kind blend of romance and wild beauty. Here's how to plan the perfect Banff honeymoon.</p>
+<p>Few places on Earth rival <a href="/blog/banff-bear-safety">Bear Safety in <a href="/blog/banff-rv-guide">RV to Banff: Campgrounds & Regulations</a>: Essential</a> for honeymoon magic. Snow-capped mountains, turquoise lakes, renowned dining, luxury spas, and endless adventure — the Canadian Rockies offer newlyweds an one-of-a-kind blend of romance and wild beauty. Here's how to plan the perfect Banff honeymoon.</p>
 
 <h2>Best Time for a Banff Honeymoon</h2>
 <p><strong>Summer (June-August):</strong> Long warm days, turquoise lakes, canoeing at sunset, wildflower meadows, and outdoor dining patios. The most popular and photogenic season.</p>
@@ -2622,7 +2622,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Cabin Tip:</strong> For the best value, book a Canmore cabin with a full kitchen and hot tub. Cook most meals at the cabin, soak in the hot tub after hiking, and you'll enjoy a luxury mountain experience at a fraction of what hotels in Banff charge. A group of 4-6 can split a premium cabin for less than $100/person per night.</div>
 `,
   'banff-rv-guide': `
-<p>Exploring Banff National Park in an RV is one of the most flexible and rewarding ways to experience the Canadian Rockies. Waking up at a campground with mountain views, cooking breakfast at your campsite, and having your accommodation travel with you provides a level of freedom that hotels can't match. Here's everything you need to know.</p>
+<p>Exploring <a href="/blog/banff-hostel-guide">Best Hostels in Banff for Budget Travelers</a> National Park in an RV is one of the most flexible and rewarding ways to experience the Canadian Rockies. Waking up at a campground with mountain views, cooking breakfast at your campsite, and having your accommodation travel with you provides a level of freedom that hotels can't match. Here's everything you need to know.</p>
 
 <h2>Campgrounds in Banff National Park</h2>
 <h3>Tunnel Mountain Village</h3>
@@ -3590,7 +3590,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Photography Tip:</strong> The single best photo location in Banff changes with the season. Summer: Moraine Lake at sunrise. Fall: Larch Valley at peak colour. Winter: Lake Louise with frozen lake and snow. Spring: Vermilion Lakes with mist. Research conditions before each visit and adapt your itinerary to current conditions.</div>
 `,
   'things-to-do-lake-louise': `
-<p>Lake Louise is one of Canada's most iconic destinations — a turquoise glacial lake framed by Victoria Glacier and surrounded by some of the finest hiking in the Rockies. Located 40 minutes from Banff, Lake Louise deserves at least a full day, if not more. Here's everything you can do.</p>
+<p>Lake <a href="/blog/lake-louise-village-guide">Lake Louise Village: Area</a> is one of Canada's most iconic destinations — a turquoise glacial lake framed by Victoria Glacier and surrounded by some of the finest hiking in the Rockies. Located 40 minutes from Banff, Lake Louise deserves at least a full day, if not more. Here's everything you can do.</p>
 
 <h2>See the Lake</h2>
 <p>The first view of Lake Louise never disappoints. The turquoise colour comes from rock flour — glacially ground rock particles suspended in meltwater that refract light. Walk the paved lakeshore trail (2 km flat) to appreciate the colour from different angles. In summer, rent a canoe from the Chateau boathouse and paddle on the turquoise water ($135/hour). In winter, walk on the frozen lake surface and marvel at the ice castle (during the Ice Magic Festival in January).</p>
@@ -3800,7 +3800,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Luxury Tip:</strong> The most luxurious experience in Banff isn't the most expensive. Book a sunrise canoe on Lake Louise (rent from the Chateau boathouse at opening) and paddle alone on turquoise water beneath a glacier. Follow with afternoon tea at the Chateau. Total cost: under $200. The memory: priceless.</div>
 `,
   'banff-hidden-gems': `
-<p>Everyone knows Lake Louise and Moraine Lake. But <a href="/blog/banff-sunrise-spots">10 Best Sunrise Spots in <a href="/blog/banff-free-activities">25 Free Things to Do in Banff National Park</a> National Park</a> National Park is vast — 6,641 square kilometres of mountains, forests, and valleys — and most visitors see only a fraction. Here are 15 lesser-known spots that locals love and tourists rarely find.</p>
+<p>Everyone knows Lake Louise and Moraine Lake. But <a href="/blog/banff-sunrise-spots">10 Best Sunrise Spots in <a href="/blog/banff-free-activities">25 Free Things to Do in <a href="/blog/banff-cabin-rentals">Best Cabin Rentals Near Banff National Park</a> National Park</a> National Park</a> National Park is vast — 6,641 square kilometres of mountains, forests, and valleys — and most visitors see only a fraction. Here are 15 lesser-known spots that locals love and tourists rarely find.</p>
 
 <h2>1. Surprise Corner</h2>
 <p>A viewpoint 10 minutes' walk from downtown that most tourists never reach. The Fairmont Banff Springs Hotel framed by the Bow River and mountains is one of Banff's finest views — and it's free, easy, and almost always uncrowded. Best at sunset when the hotel glows golden.</p>
@@ -4144,7 +4144,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Edmonton to Banff Tip:</strong> If you have extra time, take the David Thompson Highway (Highway 11) west from Red Deer. The drive along Abraham Lake — especially in winter when the frozen methane bubbles are visible beneath the ice — is one of Alberta's most remarkable road experiences. It adds 2 hours but the scenery is worth every minute.</div>
 `,
   'cascade-mountain-hike': `
-<p>At 2,998 metres, Cascade Mountain is the most prominent peak visible from Banff townsite — the towering pyramid of rock that dominates every photograph and postcard of the town. Climbing it is one of the most rewarding challenges in the Canadian Rockies, offering a summit experience that puts you nearly 3,000 metres above sea level with 360-degree views of Banff National Park.</p>
+<p>At 2,998 metres, Cascade <a href="/blog/tunnel-mountain-hike">Tunnel Mountain Hike: Banff's Best Easy Trail</a> is the most prominent peak visible from Banff townsite — the towering pyramid of rock that dominates every photograph and postcard of the town. Climbing it is one of the most rewarding challenges in the Canadian Rockies, offering a summit experience that puts you nearly 3,000 metres above sea level with 360-degree views of Banff National Park.</p>
 
 <h2>Trail Overview</h2>
 <ul>
