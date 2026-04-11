@@ -1,4 +1,225 @@
 export const blogContent3: Record<string, string> = {
+  'johnsons-canyon': `
+<p>Johnson's Canyon remains one of Banff's most accessible yet spectacular waterfall hikes, and after dozens of visits over the past decade, I can tell you it's worth every step. Located just 23 kilometers northwest of Banff townsite along the Bow Valley Parkway, this trail delivers two impressive waterfalls, ice walking opportunities in winter, and some of the most dramatic limestone canyon scenery in the Canadian Rockies. Here's everything you need to know to make the most of your Johnson's Canyon adventure.</p>
+
+<h2>Getting to Johnson's Canyon</h2>
+
+<p>The trailhead sits right off the Bow Valley Parkway (Highway 1A), making it one of the easiest waterfalls to access in Banff National Park. From Banff townsite, take the Trans-Canada Highway west for about 17 kilometers, then exit onto the Bow Valley Parkway. The Johnson's Canyon parking area is clearly marked on your left after about 6 kilometers.</p>
+
+<p>Here's my biggest piece of advice: arrive before 7 AM during peak season (June through September) or you'll spend 30 minutes circling for parking. The lot fills completely by 8 AM most days, and Parks Canada doesn't allow roadside parking. I've learned this the hard way multiple times, especially on weekend mornings when the overflow from nearby Johnston Canyon Resort guests compounds the problem.</p>
+
+<p>If you're staying in Banff and don't have a vehicle, several tour operators offer transportation. <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> runs daily shuttles during summer months for about \$45 CAD per person, which includes the canyon tour.</p>
+
+<h2>The Trail: What to Expect</h2>
+
+<p>Johnson's Canyon offers a straightforward out-and-back hike with two distinct destinations. The Lower Falls sit 1.1 kilometers from the trailhead, while the Upper Falls require a 2.7-kilometer trek each way. The trail follows a steel catwalk system for most of the journey, making it accessible for families with children and visitors with mobility concerns.</p>
+
+<p>The Lower Falls cascade 30 meters into a narrow limestone gorge, and you can walk right up to the viewing platform for an up-close perspective. During my spring visits in April and May, the snowmelt creates a thunderous roar that echoes off the canyon walls. The spray can soak you completely, so bring a rain jacket even on sunny days.</p>
+
+<p>The Upper Falls demand more effort but deliver a 30-meter waterfall that plunges into a spectacular amphitheater of rock. The final section involves some steep switchbacks and natural trail surface, so proper hiking boots become essential here. Allow 2.5 to 3 hours for the complete round trip to Upper Falls.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> The lighting in Johnson's Canyon works best for photography between 11 AM and 2 PM when the sun penetrates the narrow gorge. Bring a tripod for the misty conditions near both falls.</div>
+
+<h2>Seasonal Considerations and Ice Walking</h2>
+
+<p>Johnson's Canyon transforms completely between seasons, and each offers distinct advantages. Summer provides the fullest water flow and warmest conditions, but also brings the largest crowds. I prefer late May or early June when the snowmelt creates powerful waterfalls but tourist numbers remain manageable.</p>
+
+<p>Winter turns Johnson's Canyon into one of Alberta's premier ice walking destinations. The waterfalls freeze into massive ice formations, and Parks Canada maintains the catwalk system for winter access. Specialized ice walking tours operate from December through March, providing crampons and guidance for navigating the frozen canyon floor.</p>
+
+<p>During my February 2026 visit, temperatures hit -25°C, but the ice formations were absolutely spectacular. Several outfitters in Banff offer guided ice walks for \$75-95 CAD per person, including all necessary equipment. The experience feels like entering a frozen cathedral.</p>
+
+<p>Spring brings variable conditions as ice begins melting and water flow increases. April visits require careful attention to trail conditions, as sections can become icy and slippery during freeze-thaw cycles. This current April 2026 period is actually perfect timing—most ice has cleared but crowds haven't peaked yet.</p>
+
+<h2>Beyond the Falls: Ink Pots Extension</h2>
+
+<p>Advanced hikers can extend their Johnson's Canyon adventure by continuing to the Ink Pots, a series of cold-water springs located 5.8 kilometers from the trailhead. This extension adds significant distance and elevation gain, transforming a casual walk into a serious day hike.</p>
+
+<p>The trail beyond Upper Falls climbs steeply through dense forest before emerging into an alpine meadow system. The Ink Pots themselves are seven spring-fed pools with vivid blue and green colors created by mineral deposits and aquatic vegetation. Water temperatures remain constant at 4°C year-round.</p>
+
+<p>I recommend the Ink Pots extension only for visitors with solid fitness levels and proper hiking equipment. The round trip from the parking lot covers nearly 12 kilometers with 400 meters of elevation gain. Budget 5-6 hours for the complete journey, and bring layers as weather conditions change dramatically with elevation.</p>
+
+<h2>Practical Planning Information</h2>
+
+<p>A Parks Canada Discovery Pass is required for access, costing \$142.40 CAD annually or \$19.60 CAD for a daily pass as of 2026. You can purchase passes online, at the park gates, or at the Banff Visitor Centre. The trail remains open year-round, though winter conditions may require additional safety equipment.</p>
+
+<p>No permits are needed for Johnson's Canyon hiking, but group sizes are limited to six people maximum. The trail typically takes 1.5-2 hours for Lower Falls only, or 3-4 hours if continuing to Upper Falls. Add another 3-4 hours for the Ink Pots extension.</p>
+
+<p>Facilities at the trailhead include washrooms and interpretive displays, but no food services. The nearby Johnston Canyon Resort offers dining and accommodation if you want to make this a multi-day base. For broader accommodation options, check our guide to <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> or browse <a href="/hotel-directory">Compare 95+ Banff hotels</a> for current rates and availability.</p>
+
+<h2>Safety and Wildlife Considerations</h2>
+
+<p>Johnson's Canyon sits in active bear habitat, and I've encountered both black bears and grizzly bears on the trail system. Carry bear spray, make noise while hiking, and travel in groups when possible. Parks Canada requires bear spray for all backcountry travel and strongly recommends it for frontcountry hikes like Johnson's Canyon.</p>
+
+<p>The canyon's steel catwalk system includes safety railings, but conditions can become extremely slippery when wet or icy. I've seen numerous visitors attempt the trail in running shoes during shoulder seasons, leading to dangerous slips on wet metal surfaces. Proper hiking boots with aggressive tread patterns are essential.</p>
+
+<p>Weather in the mountains changes rapidly, especially during spring and fall transitions. Even summer visits can experience sudden temperature drops and precipitation. I always pack extra layers, rain protection, and emergency supplies regardless of the forecast.</p>
+
+<h2>Combining Johnson's Canyon with Other Banff Adventures</h2>
+
+<p>Johnson's Canyon fits perfectly into broader Banff itineraries, especially when combined with other Bow Valley attractions. The trail makes an excellent morning activity before exploring downtown Banff in the afternoon. Consider pairing it with lunch at one of the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> or an afternoon soak at Banff Upper Hot Springs.</p>
+
+<p>For visitors with multiple days, Johnson's Canyon works well as part of a comprehensive hiking plan. Our <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> guide includes detailed information about combining multiple trail systems during your visit. The canyon also integrates smoothly into any <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> as a moderate-effort activity that delivers maximum scenic impact.</p>
+
+<p>Photography enthusiasts should budget extra time for the dramatic lighting conditions throughout the canyon system. The narrow gorge creates challenging exposure situations, but the payoff includes some of the most striking waterfall images in the Canadian Rockies. Morning visits offer the best lighting conditions and smallest crowds for serious photography work.</p>
+`,
+  'calgary-to-jasper': `
+<p>The drive from Calgary to Jasper is one of Canada's most spectacular road trips, taking you through the heart of the Canadian Rockies via the iconic Icefields Parkway. As someone who's made this journey countless times for training camps and ski trips, I can tell you it's far more than just transportation – it's an adventure that deserves proper planning to maximize every kilometer of stunning mountain scenery.</p>
+
+<h2>Planning Your Calgary to Jasper Route</h2>
+
+<p>The most direct route from Calgary to Jasper covers approximately 410 kilometers and takes about 4.5 hours of driving time. However, I strongly recommend allowing 6-8 hours minimum to account for stops, wildlife viewing, and photo opportunities. The journey follows Highway 1 west to Highway 93 North (the Icefields Parkway), passing through Banff National Park before entering Jasper National Park.</p>
+
+<p>Your route will take you through Canmore, Banff townsite, Lake Louise, and along the Icefields Parkway – arguably the most beautiful drive in North America. I've driven this route in every season, and while each offers unique rewards, April conditions in 2026 mean you'll encounter spring weather with possible snow at higher elevations.</p>
+
+<p>You'll need a Parks Canada Discovery Pass for this journey, costing \$72.25 CAD for an annual family pass or \$20.50 CAD for a single-day vehicle pass. Purchase yours online or at any park entrance gate. The pass covers both Banff and Jasper National Parks.</p>
+
+<h2>Essential Stops Between Calgary and Jasper</h2>
+
+<h3>Banff Townsite (2 hours from Calgary)</h3>
+
+<p>Banff makes an ideal first major stop for fuel, food, and supplies. I recommend grabbing coffee at Whitebark Cafe on Bear Street – their espresso keeps me alert for the mountain passes ahead. If you need accommodations, check out our <a href="/hotel-directory">Compare 95+ Banff hotels</a> for the best deals.</p>
+
+<p>The townsite offers your last major shopping opportunity before Jasper, so stock up on snacks and ensure your vehicle is ready for mountain driving. Parking downtown can be challenging – arrive before 9 AM or use the Banff Transit system from overflow lots.</p>
+
+<h3>Lake Louise (1 hour north of Banff)</h3>
+
+<p>Lake Louise deserves at least 45 minutes of your time. The lake itself may still have ice in early April, creating a unique landscape different from summer visits. Parking at Lake Louise fills by 8 AM during peak season, but April typically offers better availability.</p>
+
+<p>For those interested in hiking, our <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> guide covers options accessible from Lake Louise village. The Plain of Six Glaciers trail may have limited access in April due to snow conditions.</p>
+
+<h3>Saskatchewan River Crossing (2.5 hours from Lake Louise)</h3>
+
+<p>This remote outpost marks the halfway point of the Icefields Parkway. The service station here offers basic supplies, fuel, and washroom facilities – essential services since there's nothing else for the next 100 kilometers northbound. Fuel prices run approximately 15-20 cents higher per liter than Calgary.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Fill your gas tank at Saskatchewan River Crossing, even if you're only half empty. I learned this lesson the hard way during a winter training trip when weather delayed my arrival and stations were closed.</div>
+
+<h3>Columbia Icefield (1 hour north of Saskatchewan River Crossing)</h3>
+
+<p>The Columbia Icefield Discovery Centre is a must-stop destination. While the glacier tours may have limited operations in April, the visitor center provides excellent interpretive displays about glaciology and climate change. The Skywalk attraction typically opens for the season in April, weather permitting.</p>
+
+<p>Athabasca Glacier viewpoint offers incredible photo opportunities. During my ultra-running training camps, I often use this stop for leg stretches and hydration. The elevation here sits at 1,860 meters, so some visitors may notice the thinner air.</p>
+
+<h2>Driving Conditions and Safety Considerations</h2>
+
+<p>Mountain driving requires specific preparation, especially during April's variable conditions. I always carry emergency supplies including extra food, water, warm clothing, and a first aid kit. Cell phone coverage is spotty along much of the Icefields Parkway.</p>
+
+<p>Wildlife encounters are common – I've spotted mountain goats, bighorn sheep, elk, and bears during various trips. Maintain a 100-meter distance from bears and 30 meters from other wildlife. Never approach or feed animals, as this creates dangerous situations and hefty fines from Parks Canada.</p>
+
+<p>Weather can change rapidly in the mountains. Check road conditions at DriveBC.ca and Parks Canada's website before departing. I've encountered everything from brilliant sunshine to blizzards on this route, sometimes within the same day.</p>
+
+<h3>Vehicle Requirements</h3>
+
+<p>Any vehicle can handle this route during good conditions, but I recommend all-wheel or four-wheel drive during spring and fall transitions. Ensure your spare tire is properly inflated – mountain roads can be unforgiving on tires.</p>
+
+<p>Brake check areas are provided on steep descents. Use lower gears rather than riding your brakes to prevent overheating. I've seen too many vehicles with smoking brakes pulled over on Sunwapta Pass.</p>
+
+<h2>Where to Stay Along the Route</h2>
+
+<p>Several accommodation options exist between Calgary and Jasper, depending on your timeline and budget. For comprehensive guidance, our <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> article covers all Banff area options in detail.</p>
+
+<p>In Banff townsite, I frequently stay at the Mount Royal Hotel for its central location and reliable service. Budget travelers should consider the Samesun Banff hostel, while luxury seekers will appreciate the Fairmont Banff Springs.</p>
+
+<p>Lake Louise offers the iconic Fairmont Chateau Lake Louise, though rates start around \$400 CAD per night during peak season. More affordable options include Paradise Lodge and Bungalows or the Lake Louise Inn.</p>
+
+<p>For last-minute bookings or comparing multiple properties, <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> often has competitive rates and bundle deals combining accommodations with activities.</p>
+
+<h2>Activities and Tours Available</h2>
+
+<p>Beyond the drive itself, numerous activities enhance your Calgary to Jasper journey. During my visits, I've participated in everything from glacier walks to wildlife photography tours.</p>
+
+<p><a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers several small-group tours covering this route, perfect for visitors who prefer not to drive mountain roads themselves. Their full-day tours typically include transportation, guide services, and stops at major attractions.</p>
+
+<p>Helicopter tours operate from Canmore and Banff, providing aerial perspectives of the route you'll drive. These flights range from \$200-600 CAD per person depending on duration and route.</p>
+
+<h3>Spring Activities in April 2026</h3>
+
+<p>April offers unique opportunities as winter transitions to spring. Cross-country skiing may still be available at higher elevations, while lower elevation hikes become accessible. I recommend checking with Parks Canada visitor centers for current trail conditions.</p>
+
+<p>Photography enthusiasts will find April ideal for capturing snow-capped peaks reflected in partially thawed lakes. The contrast between winter and spring landscapes creates compelling compositions.</p>
+
+<h2>Practical Tips for Your Journey</h2>
+
+<p>Start early – I typically depart Calgary by 7 AM to maximize daylight hours and reduce wildlife encounter risks. Most animal activity occurs during dawn and dusk hours.</p>
+
+<p>Pack layers of clothing. April weather in the mountains is notoriously unpredictable. I've experienced 20°C sunshine in Canmore and -10°C with snow at the Columbia Icefield on the same day.</p>
+
+<p>Download offline maps before departing. GPS coverage is unreliable in mountainous terrain, and having backup navigation prevents costly detours or delays.</p>
+
+<p>Budget approximately \$100-150 CAD for fuel, depending on your vehicle's efficiency and current gas prices. Add another \$50-75 CAD for meals and incidental stops.</p>
+
+<p>Consider extending your trip with our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> if time permits. The region offers incredible depth beyond just passing through, and rushing this spectacular scenery feels like a missed opportunity.</p>
+
+<p>For dining recommendations along the route, our <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> guide covers everything from quick coffee stops to memorable dining experiences that complement your mountain adventure.</p>
+
+<p>The Calgary to Jasper drive represents more than simple transportation – it's an introduction to the Canadian Rockies that sets expectations for everything that follows. Take your time, respect the mountain environment, and prepare for one of the world's great scenic drives.</p>
+`,
+  'banff-ski-resort-accommodations': `
+<p>Finding the right <strong>Banff ski resort accommodations</strong> can make or break your mountain adventure. After countless trips to the Canadian Rockies over the past decade, I've learned that where you stay dramatically affects your ski experience. The difference between a 5 AM wake-up call and rolling out of bed at 8 AM? Your accommodation choice. Let me share what I've discovered about the best places to stay for skiers visiting Banff's world-class resorts.</p>
+
+<h2>Understanding Banff's Ski Resort Geography</h2>
+
+<p>Before diving into accommodations, you need to understand the layout. Banff has three main ski areas: Lake Louise Ski Resort (58 km from Banff townsite), Sunshine Village (18 km), and Mount Norquay (6 km). Each offers different terrain and requires different accommodation strategies.</p>
+
+<p>Lake Louise provides the most extensive terrain with over 4,200 skiable acres, while Sunshine Village boasts the longest season, often running from November through May. Mount Norquay, the closest to town, offers excellent night skiing and is perfect for quick afternoon sessions.</p>
+
+<p>Your choice of <strong>Banff ski resort accommodations</strong> should align with which mountain you'll ski most. I typically recommend staying in Banff townsite for flexibility, but there are compelling alternatives.</p>
+
+<h2>Ski-In/Ski-Out Options</h2>
+
+<p>For true convenience, nothing beats ski-in/ski-out accommodations. Sunshine Village offers the only true ski-in/ski-out experience in the Banff area at Sunshine Mountain Lodge. I've stayed here multiple times, and waking up on the mountain at 2,100 meters elevation feels magical.</p>
+
+<p>The lodge provides basic but comfortable rooms starting around \$200-300 CAD per night during peak season. Book early – they only have 84 rooms and fill up quickly. The real advantage isn't luxury; it's accessing fresh snow before day visitors arrive via gondola.</p>
+
+<p>At Lake Louise, the Fairmont Chateau Lake Louise sits lakeside, about 6 km from the ski area. While not ski-in/ski-out, the hotel runs a complimentary shuttle service. Rooms start at \$400+ CAD nightly, but the location and amenities justify the cost for special occasions.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> If staying at Sunshine Mountain Lodge, pack light snacks. The on-mountain dining gets expensive quickly, and room service options are limited. I always bring protein bars and instant oatmeal for early morning fuel.</div>
+
+<h2>Banff Townsite Accommodations for Skiers</h2>
+
+<p>Staying in Banff townsite offers the most flexibility and après-ski options. I prefer this approach when visiting with non-skiers or when hitting multiple mountains. The drive to Sunshine Village takes 25 minutes, Lake Louise requires 45 minutes, and Mount Norquay is just 10 minutes away.</p>
+
+<p>For budget-conscious skiers, I recommend HI Banff Alpine Centre. The hostel offers private rooms from \$120 CAD and dorm beds from \$45 CAD. The location on Tunnel Mountain Road provides easy highway access, and the communal kitchen saves money on meals.</p>
+
+<p>Mid-range options include the Banff Ptarmigan Inn, where I've stayed several times. Rooms run \$180-250 CAD nightly, and they offer ski storage and boot drying facilities. The heated underground parking is essential during January and February when temperatures drop below -20°C.</p>
+
+<p>For luxury, the Rimrock Resort Hotel delivers stunning valley views and a full-service spa perfect for post-ski recovery. Expect \$400+ CAD nightly, but the mountaintop location and amenities create a memorable experience.</p>
+
+<h2>Canmore: The Skier's Secret Base</h2>
+
+<p>Many experienced Banff skiers actually stay in Canmore, 20 km east of Banff townsite. The drive to Lake Louise takes 55 minutes, but you'll save 30-50% on accommodation costs while accessing better restaurant variety.</p>
+
+<p>I often book at the Malcolm Hotel when visiting in winter. This boutique property offers ski storage, underground parking, and rooms from \$200-280 CAD. The rooftop hot tubs provide perfect mountain views after long ski days.</p>
+
+<p>Vacation rentals through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> work well for groups. Three-bedroom condos in Canmore's Riverside area cost \$300-450 CAD nightly and sleep 6-8 people. Having a full kitchen and living space makes a huge difference during week-long ski trips.</p>
+
+<h3>Transportation Considerations from Canmore</h3>
+
+<p>The drive from Canmore to Banff's ski areas requires mountain driving skills. Highway 1A to Lake Louise includes steep grades and frequent wildlife. I always carry emergency supplies: blankets, flashlight, extra food, and a full gas tank. Cell service disappears in several areas, making preparation crucial.</p>
+
+<h2>Booking Strategies and Timing</h2>
+
+<p>Ski season accommodation booking follows predictable patterns. Christmas and New Year weeks book up by September, often at premium rates 200-300% above regular prices. I avoid these periods entirely, targeting January 15-February 15 for the best snow conditions and reasonable rates.</p>
+
+<p>March offers excellent spring skiing conditions with warming temperatures and longer days. Accommodation rates drop 20-30% compared to peak winter, and you'll find more availability. However, snow conditions become variable, especially at lower elevations.</p>
+
+<p>For budget travelers, I recommend Sunday-Thursday stays when possible. Weekend rates often double, and the mountains get crowded with Calgary and Vancouver visitors. Midweek skiing offers shorter lift lines and better accommodation value.</p>
+
+<h3>Last-Minute Deals</h3>
+
+<p>I've scored excellent last-minute deals through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>, particularly during January and early February. Hotels release unsold inventory 2-5 days ahead at 30-50% discounts. This strategy requires flexibility but can save hundreds of dollars.</p>
+
+<h2>Essential Amenities for Ski Accommodations</h2>
+
+<p>After years of ski trips, certain amenities prove essential. Heated underground parking prevents frozen locks and engine block heater needs. I won't book anywhere without this during winter months.</p>
+
+<p>Ski storage and boot drying facilities matter more than you might expect. Wet boots in a hotel room create moisture problems and uncomfortable next-day skiing. Properties like the Fairmont Banff Springs offer dedicated ski valets who tune equipment overnight.</p>
+
+<p>Hot tubs or pools provide crucial recovery after long ski days. The mineral-rich waters help relax tight leg muscles and prepare you for the next day's adventures. I always prioritize accommodations with these facilities during multi-day ski trips.</p>
+
+<p>For comprehensive options beyond skiing, check out our guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> which covers accommodations for all seasons and activities. If you're planning activities beyond skiing, our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> provides excellent suggestions for maximizing your mountain time.</p>
+
+<p>Choosing the right <strong>Banff ski resort accommodations</strong> requires balancing location, budget, and amenities. Whether you prefer the convenience of Sunshine Mountain Lodge, the luxury of Chateau Lake Louise, or the value of Canmore properties, each option offers unique advantages. Book early, prepare for mountain driving conditions, and prioritize amenities that enhance your skiing experience. The Canadian Rockies reward those who plan ahead with powder days and mountain memories that justify every accommodation dollar spent.</p>
+`,
   'back-country-ski-tours': `
 <p>As someone who's spent countless mornings trudging through knee-deep powder in the Canadian Rockies, I can tell you that back country ski tours in Banff offer some of the most spectacular terrain accessible anywhere in North America. The combination of towering peaks, expansive glaciated valleys, and pristine snow conditions makes this region a mecca for skiers looking to escape the crowds and experience true alpine adventure.</p>
 

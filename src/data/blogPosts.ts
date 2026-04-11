@@ -11,6 +11,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'johnsons-canyon',
+    title: 'Johnson\'s Canyon Banff: 2026\'s Most Underrated Hidden Gem',
+    description: 'Discover Johnson\'s Canyon, Banff\'s best-kept secret in 2026! Explore stunning waterfalls, easy hiking trails, and breathtaking views away from the crowds.',
+    date: '2026-04-11',
+    category: 'Guides',
+    image: '/images/blog/johnsons-canyon.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'calgary-to-jasper',
+    title: 'Calgary to Jasper via Banff: 2026\'s Ultimate Road Trip Guide',
+    description: 'Discover the ultimate Calgary to Jasper road trip through Banff in 2026. Get insider tips, scenic stops, and essential planning advice for your Rocky Mountain adventure.',
+    date: '2026-04-11',
+    category: 'Guides',
+    image: '/images/blog/calgary-to-jasper.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-ski-resort-accommodations',
+    title: 'Best Banff Ski Resort Accommodations 2026: Ultimate Guide',
+    description: 'Discover the top ski-in/ski-out hotels and luxury lodges near Banff\'s premier slopes in 2026. Complete guide to the best accommodations for your mountain getaway.',
+    date: '2026-04-11',
+    category: 'Seasonal',
+    image: '/images/blog/banff-ski-resort-accommodations.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'back-country-ski-tours',
     title: 'Epic Banff Backcountry Ski Tours: 2026\'s Ultimate Guide',
     description: 'Discover Banff\'s best backcountry ski tours in 2026! Expert routes, safety tips, gear guides & hidden powder stashes in the Canadian Rockies await.',
