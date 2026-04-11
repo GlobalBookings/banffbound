@@ -66,8 +66,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'open',
-    conditionNote: 'Good ski conditions. Dogs not permitted.',
-    conditionUpdated: '2026-04-09',
+    conditionNote: 'Recently groomed. Excellent conditions. No dogs.',
+    conditionUpdated: '2026-04-11',
   },
   {
     id: 'marsh-loop',
@@ -101,8 +101,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 4',
   
     status: 'caution',
-    conditionNote: 'Packed snow with icy sections. Use caution near lakeshore.',
-    conditionUpdated: '2026-04-09',
+    conditionNote: 'Icy boardwalk sections. Use caution.',
+    conditionUpdated: '2026-04-11',
   },
   {
     id: 'spray-river-east',
@@ -238,9 +238,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'caution',
-    conditionNote: 'Very icy, challenging conditions',
-    conditionUpdated: '2026-04-07',
+    status: 'open',
+    conditionNote: 'Lower falls accessible. Upper falls trail icy conditions.',
+    conditionUpdated: '2026-04-11',
   },
   {
     id: 'johnson-lake',
