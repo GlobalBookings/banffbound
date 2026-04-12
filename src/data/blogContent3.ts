@@ -1,4 +1,61 @@
 export const blogContent3: Record<string, string> = {
+  'johnstons-canyon': `
+<p>When people ask me about the most accessible yet stunning hike in Banff National Park, I always point them to Johnston's Canyon. This spectacular slot canyon offers two distinct waterfalls, year-round hiking opportunities, and some of the most dramatic limestone formations you'll find in the Canadian Rockies. After visiting this canyon dozens of times across all seasons, I can tell you it's worth every step—if you know how to navigate the crowds and timing.</p>
+
+<h2>Getting to Johnston's Canyon</h2>
+
+<p>Johnston's Canyon sits 23 kilometres northwest of Banff townsite along the Bow Valley Parkway (Highway 1A). The drive takes about 20 minutes from downtown Banff, and you'll find the trailhead parking lot clearly marked on your right. I strongly recommend taking the scenic Bow Valley Parkway rather than the Trans-Canada Highway—the extra few minutes give you mountain views and potential wildlife sightings.</p>
+
+<p>The parking situation here requires serious planning. During peak season (June through September), arrive before 7 AM or after 6 PM, or you'll circle the lot endlessly. I've seen cars backed up along the highway waiting for spots. The lot fills completely by 8 AM on summer weekends. If you're staying overnight, check out our guide on <a href="/where-to-stay-in-banff">where to stay in Banff</a> to position yourself for early morning departures.</p>
+
+<p>Parks Canada charges the standard daily vehicle permit fee of \$11.70 CAD (as of 2026), or you can purchase an annual Discovery Pass for \$72.25 CAD if you're planning multiple park visits. The trailhead includes washrooms, picnic tables, and interpretive signs, but no food services.</p>
+
+<h2>The Lower Falls Hike</h2>
+
+<p>The trail to Lower Falls covers 1.1 kilometres each way on a well-maintained pathway with metal catwalks bolted directly into the canyon walls. This engineering marvel lets you walk right into the narrow canyon—something impossible in most slot canyons worldwide. The trail gains only 30 metres in elevation, making it suitable for most fitness levels.</p>
+
+<p>Lower Falls drops 10 metres into a circular pool carved from limestone over thousands of years. The viewing platform puts you directly beside the waterfall, close enough to feel the spray. During spring runoff (typically May and early June), the falls thunder with snowmelt. By late summer, the flow becomes more gentle but still impressive.</p>
+
+<p>The canyon walls here rise 30 metres above you, creating a cool microclimate even on hot summer days. I've measured temperature differences of 8-10 degrees Celsius between the canyon floor and the parking lot. Limestone formations show clear evidence of water erosion, with smooth curves and pockets that hold ice well into spring.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Wear proper hiking boots even though this trail looks easy. The metal catwalks become slippery when wet, and I've seen too many people struggle in running shoes or sandals, especially during shoulder seasons when ice patches linger.</div>
+
+<h2>Upper Falls: The More Rewarding Destination</h2>
+
+<p>Continue past Lower Falls for another 1.6 kilometres to reach the 30-metre Upper Falls—my personal favorite destination in the canyon. The trail becomes more challenging here, gaining an additional 185 metres in elevation through switchbacks and rockier terrain. Total distance becomes 2.7 kilometres each way from the parking lot.</p>
+
+<p>Upper Falls cascades down a limestone cliff face into a deep pool surrounded by towering canyon walls. The viewing platform here offers multiple angles of the waterfall, and you can often spot American dippers (small grey birds) diving into the pools below the falls. The acoustics in this natural amphitheater amplify the waterfall's roar.</p>
+
+<p>For experienced hikers looking to extend their day, continue another 2.8 kilometres to the Ink Pots—seven cold-water springs that bubble up from underground sources. These springs maintain constant temperatures around 4°C year-round, creating unique ecosystems. This extension makes the total hike 10.8 kilometres return with 365 metres of elevation gain.</p>
+
+<h2>Winter Ice Walking at Johnston's Canyon</h2>
+
+<p>Johnston's Canyon transforms completely in winter, offering one of the Canadian Rockies' premier ice walking experiences. From December through March, both waterfalls freeze into massive ice formations reaching heights of 15-20 metres. The Lower Falls creates a curtain of blue-green ice, while Upper Falls becomes a frozen tower.</p>
+
+<p>Ice walking requires microspikes or ice cleats—absolutely non-negotiable equipment. The metal catwalks become skating rinks without proper traction. I recommend Yaktrax or Kahtoola MICROspikes, which you can rent in Banff if you don't own them. Temperatures in the canyon can drop to -30°C, so layer properly with insulated boots, warm gloves, and wind protection.</p>
+
+<p>Many visitors book guided ice walks through local operators. You can find several options on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>, including evening tours with headlamps. These typically cost \$85-120 CAD per person and include equipment rental.</p>
+
+<h2>Wildlife and Safety Considerations</h2>
+
+<p>Johnston's Canyon sits in active wildlife habitat, particularly for black bears during berry season (July through September). I've encountered bears on this trail three times over the years, always near the Ink Pots area where huckleberries grow thick along the creek. Carry bear spray and know how to use it. Make noise consistently, especially around blind corners on the upper sections.</p>
+
+<p>Mountain goats occasionally appear on the canyon walls above Lower Falls, particularly during early morning hours. Keep your distance—these animals can dislodge rocks when startled. I've also spotted bighorn sheep along the Bow Valley Parkway drive to the trailhead, usually during dawn or dusk hours.</p>
+
+<p>The creek water looks inviting but contains parasites year-round. Bring adequate drinking water (1.5-2 litres per person for the full Ink Pots hike) or carry a reliable water purification system. Cell phone coverage remains spotty throughout the canyon, cutting out completely near Upper Falls.</p>
+
+<h2>Planning Your Johnston's Canyon Visit</h2>
+
+<p>April 2026 presents ideal timing for planning your summer canyon visit. Snow typically clears from the upper trail sections by mid-May, though ice patches persist on north-facing areas through early June. Spring offers the advantage of maximum waterfall flow without summer crowds.</p>
+
+<p>Combine Johnston's Canyon with other nearby attractions for a full day. The Bow Valley Parkway passes several other trailheads, including Muleshoe and the Johnston Creek day-use area. Check out our comprehensive <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> guide for options that pair well with your canyon visit.</p>
+
+<p>For accommodation planning, Johnston's Canyon Resort operates seasonally (typically May through October) right at the trailhead, offering cabins if you want to stay on-site. Otherwise, Banff townsite provides the widest range of options—browse our <a href="/hotel-directory">Compare 95+ Banff hotels</a> tool to find accommodations that fit your budget and preferences.</p>
+
+<p>Food options remain limited at the canyon itself. Johnston's Canyon Resort operates a small cafe during summer months, but I recommend packing snacks and lunch for longer hikes. After your hike, drive back to Banff and explore our recommendations for the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> to refuel properly.</p>
+
+<p>Johnston's Canyon delivers exactly what most visitors hope to find in Banff: dramatic natural beauty, accessible hiking, and photo opportunities around every corner. The key to enjoying it lies in timing, preparation, and realistic expectations about crowds during peak season. Plan accordingly, and you'll understand why this canyon ranks among Banff's most popular destinations.</p>
+`,
   'johnsons-canyon': `
 <p>Johnson's Canyon remains one of Banff's most accessible yet spectacular waterfall hikes, and after dozens of visits over the past decade, I can tell you it's worth every step. Located just 23 kilometers northwest of Banff townsite along the Bow Valley Parkway, this trail delivers two impressive waterfalls, ice walking opportunities in winter, and some of the most dramatic limestone canyon scenery in the Canadian Rockies. Here's everything you need to know to make the most of your Johnson's Canyon adventure.</p>
 

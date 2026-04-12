@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'johnstons-canyon',
+    title: 'Johnston\'s Canyon Banff: Ultimate 2026 Hiking Guide',
+    description: 'Discover Johnston Canyon\'s stunning waterfalls with our complete 2026 hiking guide. Trail tips, best viewpoints, seasonal advice & insider secrets for Banff.',
+    date: '2026-04-12',
+    category: 'Guides',
+    image: '/images/blog/johnstons-canyon.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'johnsons-canyon',
     title: 'Johnson\'s Canyon Banff: 2026\'s Most Underrated Hidden Gem',
     description: 'Discover Johnson\'s Canyon, Banff\'s best-kept secret in 2026! Explore stunning waterfalls, easy hiking trails, and breathtaking views away from the crowds.',
