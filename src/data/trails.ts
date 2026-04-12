@@ -66,8 +66,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'open',
-    conditionNote: 'Recently groomed. Excellent conditions. No dogs.',
-    conditionUpdated: '2026-04-11',
+    conditionNote: 'Groomed, good conditions',
+    conditionUpdated: '2026-04-12',
   },
   {
     id: 'marsh-loop',
@@ -100,9 +100,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 4',
   
-    status: 'caution',
-    conditionNote: 'Icy boardwalk sections. Use caution.',
-    conditionUpdated: '2026-04-11',
+    status: 'open',
+    conditionNote: 'Groomed for cross-country skiing and walking',
+    conditionUpdated: '2026-04-12',
   },
   {
     id: 'spray-river-east',
@@ -238,9 +238,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'open',
-    conditionNote: 'Lower falls accessible. Upper falls trail icy conditions.',
-    conditionUpdated: '2026-04-11',
+    status: 'caution',
+    conditionNote: 'Very icy, ice cleats essential',
+    conditionUpdated: '2026-04-12',
   },
   {
     id: 'johnson-lake',
@@ -274,8 +274,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'closed',
-    conditionNote: 'Closed for winter season',
-    conditionUpdated: '2026-04-07',
+    conditionNote: 'Access road closed for winter',
+    conditionUpdated: '2026-04-12',
   },
   {
     id: 'sunshine-meadows',
@@ -590,9 +590,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 1',
   
-    status: 'caution',
-    conditionNote: 'Icy sections, use caution',
-    conditionUpdated: '2026-04-07',
+    status: 'open',
+    conditionNote: 'Good conditions, packed snow',
+    conditionUpdated: '2026-04-12',
   },
   {
     id: 'tunnel-mountain-summit',
@@ -1356,9 +1356,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
   
-    status: 'closed',
-    conditionNote: 'Not maintained in winter',
-    conditionUpdated: '2026-04-07',
+    status: 'caution',
+    conditionNote: 'Avalanche risk, check conditions',
+    conditionUpdated: '2026-04-12',
   },
   {
     id: 'tramline',
