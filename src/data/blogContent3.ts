@@ -1,6 +1,6 @@
 export const blogContent3: Record<string, string> = {
   'johnstons-canyon': `
-<p>When people ask me about the most accessible yet stunning hike in Banff National Park, I always point them to Johnston's Canyon. This spectacular slot canyon offers two distinct waterfalls, year-round hiking opportunities, and some of the most dramatic limestone formations you'll find in the Canadian Rockies. After visiting this canyon dozens of times across all seasons, I can tell you it's worth every step—if you know how to navigate the crowds and timing.</p>
+<p>When people ask me about the most accessible yet stunning hike in Banff National Park, I always point them to Johnston's <a href="/blog/johnsons-canyon">Johnson's Canyon Banff Most Underrated Hidden Gem</a>. This spectacular slot canyon offers two distinct waterfalls, year-round hiking opportunities, and some of the most dramatic limestone formations you'll find in the Canadian Rockies. After visiting this canyon dozens of times across all seasons, I can tell you it's worth every step—if you know how to navigate the crowds and timing.</p>
 
 <h2>Getting to Johnston's Canyon</h2>
 
@@ -48,7 +48,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>April 2026 presents ideal timing for planning your summer canyon visit. Snow typically clears from the upper trail sections by mid-May, though ice patches persist on north-facing areas through early June. Spring offers the advantage of maximum waterfall flow without summer crowds.</p>
 
-<p>Combine Johnston's Canyon with other nearby attractions for a full day. The Bow Valley Parkway passes several other trailheads, including Muleshoe and the Johnston Creek day-use area. Check out our comprehensive <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> guide for options that pair well with your canyon visit.</p>
+<p>Combine <a href="/blog/johnston-canyon-guide">Johnston Canyon: Hiking</a>'s Canyon with other nearby attractions for a full day. The Bow Valley Parkway passes several other trailheads, including Muleshoe and the Johnston Creek day-use area. Check out our comprehensive <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> guide for options that pair well with your canyon visit.</p>
 
 <p>For accommodation planning, Johnston's Canyon Resort operates seasonally (typically May through October) right at the trailhead, offering cabins if you want to stay on-site. Otherwise, Banff townsite provides the widest range of options—browse our <a href="/hotel-directory">Compare 95+ Banff hotels</a> tool to find accommodations that fit your budget and preferences.</p>
 
@@ -57,7 +57,7 @@ export const blogContent3: Record<string, string> = {
 <p>Johnston's Canyon delivers exactly what most visitors hope to find in Banff: dramatic natural beauty, accessible hiking, and photo opportunities around every corner. The key to enjoying it lies in timing, preparation, and realistic expectations about crowds during peak season. Plan accordingly, and you'll understand why this canyon ranks among Banff's most popular destinations.</p>
 `,
   'johnsons-canyon': `
-<p>Johnson's Canyon remains one of Banff's most accessible yet spectacular waterfall hikes, and after dozens of visits over the past decade, I can tell you it's worth every step. Located just 23 kilometers northwest of Banff townsite along the Bow Valley Parkway, this trail delivers two impressive waterfalls, ice walking opportunities in winter, and some of the most dramatic limestone canyon scenery in the Canadian Rockies. Here's everything you need to know to make the most of your Johnson's Canyon adventure.</p>
+<p>Johnson's <a href="/blog/johnstons-canyon">Johnston's Canyon Banff: Hiking</a> remains one of Banff's most accessible yet spectacular waterfall hikes, and after dozens of visits over the past decade, I can tell you it's worth every step. Located just 23 kilometers northwest of Banff townsite along the Bow Valley Parkway, this trail delivers two impressive waterfalls, ice walking opportunities in winter, and some of the most dramatic limestone canyon scenery in the Canadian Rockies. Here's everything you need to know to make the most of your Johnson's Canyon adventure.</p>
 
 <h2>Getting to Johnson's Canyon</h2>
 
@@ -345,7 +345,7 @@ export const blogContent3: Record<string, string> = {
 <p>The back country skiing in Banff offers some of the finest touring terrain in North America, but it demands respect, preparation, and proper safety equipment. Start with easier tours to familiarize yourself with local conditions, invest in avalanche education, and never hesitate to turn back if conditions deteriorate. The mountains will be there tomorrow – make sure you are too.</p>
 `,
   'jasper-town': `
-<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about Jasper National Park almost as much as Banff. While Jasper town sits about 290 km north of Banff townsite via the stunning Icefields Parkway, understanding both destinations helps you plan the ultimate Rocky Mountain adventure. Let me share what I've learned from years of racing, skiing, and exploring this incredible region.</p>
+<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about <a href="/blog/calgary-to-jasper">Calgary to Jasper via Banff Road Trip</a> National Park almost as much as Banff. While Jasper town sits about 290 km north of Banff townsite via the stunning Icefields Parkway, understanding both destinations helps you plan the ultimate Rocky Mountain adventure. Let me share what I've learned from years of racing, skiing, and exploring this incredible region.</p>
 
 <h2>Understanding Jasper vs Banff: Two Distinct Mountain Experiences</h2>
 
@@ -436,7 +436,7 @@ export const blogContent3: Record<string, string> = {
 <p>Whether you choose Banff as your Canadian Rockies base or venture north to jasper town, both destinations offer world-class mountain experiences. Banff provides more amenities, activities, and dining options, while Jasper offers a quieter, more authentic mountain town atmosphere. From my years exploring both parks, I recommend Banff for first-time visitors who want maximum options and convenience. You can always return to explore jasper town's wilder side on future trips.</p>
 `,
   'banff-nightclubs': `
-<p>After spending countless hours training on <a href="/blog/banff-film-festival"><a href="/blog/bear-street-banff">Bear Street Banff: The Best Block in Town</a> Mountain Film Festival</a>'s mountain trails and exploring the town during my recovery days, I've discovered that the nightlife scene here offers more than most visitors expect. While Banff isn't Vancouver or Toronto, the compact downtown core packs several solid options for those looking to dance, drink, and socialize after dark. Here's my insider guide to the nightclub scene in Canada's most famous mountain town.</p>
+<p>After spending countless hours training on <a href="/blog/banff-film-festival"><a href="/blog/bear-street-banff">Bear Street <a href="/blog/banff-horseback-riding">Horseback Riding in Banff: Best Trails & Outfitters</a>: The Best Block in Town</a> Mountain Film Festival</a>'s mountain trails and exploring the town during my recovery days, I've discovered that the nightlife scene here offers more than most visitors expect. While Banff isn't Vancouver or Toronto, the compact downtown core packs several solid options for those looking to dance, drink, and socialize after dark. Here's my insider guide to the nightclub scene in Canada's most famous mountain town.</p>
 
 <h2>The Reality of Banff's Nightclub Scene</h2>
 
@@ -508,7 +508,7 @@ export const blogContent3: Record<string, string> = {
 <p>The nightclub scene fits well into a broader Banff experience. You might want to plan around it when creating your <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>, especially if you're balancing outdoor activities with social time.</p>
 `,
   'jasper-alberta': `
-<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about <strong><a href="/blog/jasper-town">Banff to Jasper Town</a> Alberta</strong> almost as much as I do about Banff itself. While this guide focuses on Banff National Park, understanding the connection between these two iconic destinations will help you make the most of your Rocky Mountain adventure. Both parks offer world-class outdoor recreation, but each has its own character and highlights that serious outdoor enthusiasts need to know about.</p>
+<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about <strong><a href="/blog/jasper-town">Banff to <a href="/blog/calgary-to-jasper">Calgary to Jasper via Banff Road Trip</a> Town</a> Alberta</strong> almost as much as I do about Banff itself. While this guide focuses on Banff National Park, understanding the connection between these two iconic destinations will help you make the most of your Rocky Mountain adventure. Both parks offer world-class outdoor recreation, but each has its own character and highlights that serious outdoor enthusiasts need to know about.</p>
 
 <h2>Understanding Banff's Position in the Canadian Rockies</h2>
 
@@ -648,7 +648,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>The drive from <a href="/blog/banff-to-jasper-drive">Banff to Jasper Drive: Icefields Parkway Road Trip</a> to <strong>Jasper Canada</strong> along Highway 93 North (the Icefields Parkway) ranks among the world's most scenic drives. I've done this route dozens of times, and it never gets old. Plan on 3.5 to 4 hours of driving time, but you'll want to budget a full day for stops at the Columbia Icefield, Peyto Lake, and Bow Lake.</p>
 
-<p>If you're flying in, the closest major airport is Edmonton International (YEG), about 370 kilometers east of Jasper. Calgary International (YYC) is closer to Banff but adds driving time if Jasper is your primary destination. Most visitors I recommend combine both parks in one trip—check out our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> if you're planning to visit both.</p>
+<p>If you're flying in, the closest major airport is Edmonton International (YEG), about 370 kilometers east of Jasper. <a href="/blog/calgary-to-jasper">Calgary to Jasper via Banff Road Trip</a> International (YYC) is closer to Banff but adds driving time if Jasper is your primary destination. Most visitors I recommend combine both parks in one trip—check out our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> if you're planning to visit both.</p>
 
 <p>Parks Canada requires a valid national park pass for entry. As of 2026, daily passes cost \$11.50 CAD per adult, but if you're visiting multiple parks, the annual Discovery Pass at \$72.25 CAD pays for itself quickly.</p>
 
@@ -1082,7 +1082,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>The Complete Hiking Route to Ink Pots Banff Alberta</h2>
 
-<p>The journey to the Ink Pots begins at the Johnston Canyon parking area, located 23 kilometers northwest of Banff townsite along the Bow Valley Parkway (Highway 1A). From here, you'll follow the Johnston Canyon trail system, which is well-maintained and clearly marked throughout.</p>
+<p>The journey to the Ink Pots begins at the Johnston <a href="/blog/johnsons-canyon">Johnson's Canyon Banff Most Underrated Hidden Gem</a> parking area, located 23 kilometers northwest of Banff townsite along the Bow Valley Parkway (Highway 1A). From here, you'll follow the Johnston Canyon trail system, which is well-maintained and clearly marked throughout.</p>
 
 <p><strong>Trail Breakdown:</strong></p>
 <ul>
@@ -1144,7 +1144,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>The Ink Pots hike fits perfectly into a comprehensive Banff itinerary. If you're looking for more challenging adventures, consider exploring our guide to the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> for options ranging from easy walks to demanding alpine routes.</p>
 
-<p>For accommodations, the Johnston Canyon area is easily accessible from Banff townsite hotels, though you might also consider staying closer to the Bow Valley Parkway. Check out our <a href="/hotel-directory">Compare 95+ Banff hotels</a> resource to find options that fit your budget and preferences. Many visitors combine this hike with tours available through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>, which offers guided hiking experiences and transportation options.</p>
+<p>For accommodations, the Johnston Canyon area is easily accessible from <a href="/blog/banff-ski-resort-accommodations">Best Banff Ski Resort Accommodations</a> townsite hotels, though you might also consider staying closer to the Bow Valley Parkway. Check out our <a href="/hotel-directory">Compare 95+ Banff hotels</a> resource to find options that fit your budget and preferences. Many visitors combine this hike with tours available through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>, which offers guided hiking experiences and transportation options.</p>
 
 <p>After your hike, you'll likely work up an appetite for a substantial meal. Our guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> includes several options perfect for post-hike dining, from casual pubs to upscale mountain cuisine.</p>
 

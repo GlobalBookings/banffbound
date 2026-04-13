@@ -375,7 +375,7 @@ export const blogContent2: Record<string, string> = {
 <p>For <strong>astrophotography</strong>, Two Jack Lake is legendary. The open shoreline, dark skies, and dramatic mountain backdrop make it one of the top Milky Way photography locations in Canada. The Milky Way arcs perfectly over Mount Rundle from the eastern shoreline during summer months.</p>
 
 <h3>Swimming</h3>
-<p>On warm summer days (July-August), Two Jack Lake is one of the more swimmable lakes near Banff. The water is cold but refreshing — glacial lakes warm slightly by mid-August. The day-use area has a gentle shoreline entry. Always supervise children closely as there are no lifeguards.</p>
+<p>On warm summer days (July-August), Two Jack Lake is one of the more swimmable <a href="/blog/vermilion-lakes-guide">Vermilion Lakes: Sunrise Photography & Wildlife Viewing</a> near Banff. The water is cold but refreshing — glacial lakes warm slightly by mid-August. The day-use area has a gentle shoreline entry. Always supervise children closely as there are no lifeguards.</p>
 
 <h3>Camping</h3>
 <p>Two Jack Lake has two campground options:</p>
@@ -649,7 +649,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> Book an evening headlamp tour for the most atmospheric experience. Walking through the frozen canyon with only your headlamp illuminating the ice creates a sense of wonder that's hard to replicate in daylight. The frozen falls glow blue and green in the lamplight, and the silence is absolute.</div>
 `,
   'banff-snowshoeing-guide': `
-<p>Snowshoeing is one of the best ways to experience Banff in winter. It's accessible to virtually everyone — if you can walk, you can snowshoe — and it opens up a world of snow-covered trails, frozen lakes, and silent forests that most winter visitors never see. With options ranging from flat lakeside strolls to challenging mountain ascents, Banff's snowshoeing trails rival its summer hiking in beauty and variety.</p>
+<p>Snowshoeing is one of the best ways to experience <a href="/blog/banff-horseback-riding">Horseback Riding in Banff: Best Trails & Outfitters</a> in winter. It's accessible to virtually everyone — if you can walk, you can snowshoe — and it opens up a world of snow-covered trails, frozen lakes, and silent forests that most winter visitors never see. With options ranging from flat lakeside strolls to challenging mountain ascents, Banff's snowshoeing trails rival its summer hiking in beauty and variety.</p>
 
 <h2>Best Snowshoeing Trails in Banff</h2>
 
