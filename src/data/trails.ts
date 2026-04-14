@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'open',
-    conditionNote: 'Groomed, good conditions',
-    conditionUpdated: '2026-04-12',
+    status: 'caution',
+    conditionNote: 'Icy and slippery conditions. Microspikes recommended.',
+    conditionUpdated: '2026-04-14',
   },
   {
     id: 'marsh-loop',
@@ -101,8 +101,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 4',
   
     status: 'open',
-    conditionNote: 'Groomed for cross-country skiing and walking',
-    conditionUpdated: '2026-04-12',
+    conditionNote: 'Groomed for classic and skate skiing. Dogs allowed on leash.',
+    conditionUpdated: '2026-04-14',
   },
   {
     id: 'spray-river-east',
@@ -239,8 +239,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'caution',
-    conditionNote: 'Very icy, ice cleats essential',
-    conditionUpdated: '2026-04-12',
+    conditionNote: 'Lower Falls accessible, icy conditions. Upper Falls closed for season.',
+    conditionUpdated: '2026-04-14',
   },
   {
     id: 'johnson-lake',
@@ -274,8 +274,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'closed',
-    conditionNote: 'Access road closed for winter',
-    conditionUpdated: '2026-04-12',
+    conditionNote: 'Closed to vehicles. Accessible on foot/skis.',
+    conditionUpdated: '2026-04-14',
   },
   {
     id: 'sunshine-meadows',
@@ -1356,9 +1356,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
   
-    status: 'caution',
-    conditionNote: 'Avalanche risk, check conditions',
-    conditionUpdated: '2026-04-12',
+    status: 'closed',
+    conditionNote: 'Not maintained in winter. Avalanche risk.',
+    conditionUpdated: '2026-04-14',
   },
   {
     id: 'tramline',
