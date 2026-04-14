@@ -1,6 +1,6 @@
 export const blogContent2: Record<string, string> = {
   'banff-free-activities': `
-<p><a href="/blog/banff-cabin-rentals">Best Cabin Rentals Near Banff National Park</a> has a reputation for being expensive, but here's a secret: the best experiences in the park cost nothing beyond your Parks Canada pass. From beautiful hikes to outstanding viewpoints, wildlife encounters to stargazing, here are 25 free <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do in Banff National Park.</p>
+<p><a href="/blog/banff-cabin-rentals">Best Cabin Rentals Near <a href="/blog/banff-fly-fishing">Fly Fishing in Banff National Park</a> National Park</a> has a reputation for being expensive, but here's a secret: the best experiences in the park cost nothing beyond your Parks Canada pass. From beautiful hikes to outstanding viewpoints, wildlife encounters to stargazing, here are 25 free <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do in Banff National Park.</p>
 
 <h2>Hikes & Walks</h2>
 
@@ -1280,7 +1280,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> The best Banff après-ski progression: Start with a beer at Mad Trapper's Saloon on Sunshine Mountain, drive to the Banff Upper Hot Springs for a soak as the sun sets, then walk down to Park Distillery for craft cocktails and campfire food. By the end of the evening, your muscles will be loose, your stomach full, and your ski day memories sealed perfectly.</div>
 `,
   'banff-coffee-guide': `
-<p>Good coffee and mountain towns go hand in hand. Whether you need a pre-hike espresso to fuel a dawn start, a cozy mid-afternoon latte to warm up after a winter walk, or a specialty pour-over to savour on a rest day, Banff and Lake Louise have a surprising number of excellent coffee shops. Here are the best spots for your caffeine fix in the Canadian Rockies.</p>
+<p>Good coffee and mountain towns go hand in hand. Whether you need a pre-hike espresso to fuel a dawn start, a cozy mid-afternoon latte to warm up after a winter walk, or a specialty pour-over to savour on a rest day, <a href="/blog/banff-brunch-guide">Best Brunch Spots in Banff & Lake Louise</a> and Lake Louise have a surprising number of excellent coffee shops. Here are the best spots for your caffeine fix in the Canadian Rockies.</p>
 
 <h2>Best Coffee Shops in Banff</h2>
 
@@ -1710,7 +1710,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Group Tip:</strong> For the best group value, visit in May or October (shoulder season). You'll get significantly lower accommodation rates, fewer crowds at attractions, and most major activities are still available. A 6-person group can save $2,000+ compared to peak summer pricing.</div>
 `,
   'calgary-to-banff-guide': `
-<p>Calgary is the gateway to <a href="/blog/how-to-get-to-banff">How to Get to <a href="/blog/banff-park-pass-guide">Banff Park Pass: Everything You Need to Know in</a>: Every Transportation Option</a>, with the park sitting just 130 km (80 miles) west of the city along the Trans-Canada Highway. If you're landing at Calgary International Airport or starting from downtown Calgary, here's every way to make the journey — with costs, travel times, and practical tips.</p>
+<p>Calgary is the gateway to <a href="/blog/how-to-get-to-banff">How to Get to <a href="/blog/banff-park-pass-guide"><a href="/blog/banff-golf-guide">Golf in Banff: Fairmont Course & Other Options</a> Park Pass: Everything You Need to Know in</a>: Every Transportation Option</a>, with the park sitting just 130 km (80 miles) west of the city along the Trans-Canada Highway. If you're landing at Calgary International Airport or starting from downtown Calgary, here's every way to make the journey — with costs, travel times, and practical tips.</p>
 
 <h2>Driving from Calgary to Banff</h2>
 <h3>The Route</h3>
@@ -2963,7 +2963,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Fine Dining Tip:</strong> The best value fine dining experience in Banff is the Sky Bistro sunset seating. Your gondola ride is included with dinner, and you get one of the most striking views in the Canadian Rockies as a backdrop. Book the latest available seating for golden-hour magic.</div>
 `,
   'banff-pizza-guide': `
-<p>After a long day of hiking, skiing, or exploring, few things satisfy like a great pizza. <a href="/blog/banff-food-guide">The Banff Food : Best Restaurants & Cafes</a> delivers surprisingly excellent pizza — from wood-fired Neapolitan to loaded gourmet pies with wild game toppings. Here's every pizza spot in town, ranked and reviewed.</p>
+<p>After a long day of hiking, skiing, or exploring, few things satisfy like a great pizza. <a href="/blog/banff-food-guide">The <a href="/blog/banff-food-truck-guide">Banff Food Trucks & Street Food</a> Food : Best Restaurants & Cafes</a> delivers surprisingly excellent pizza — from wood-fired Neapolitan to loaded gourmet pies with wild game toppings. Here's every pizza spot in town, ranked and reviewed.</p>
 
 <h2>Bear Street Tavern</h2>
 <p>The undisputed pizza champion of <a href="/blog/banff-craft-beer-guide">Banff Craft Beer : Breweries, Taprooms & Best Pints</a>. Bear Street Tavern makes thin-crust gourmet pizzas with creative toppings that go far beyond the ordinary. The dough is made fresh daily, and the flavour combinations are inspired — duck confit with caramelised onion, pulled pork with house BBQ, and a classic Margherita that's hard to beat. The craft beer selection complements the pizza perfectly.</p>
@@ -3366,7 +3366,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Winter Tip:</strong> The Banff Upper Hot Springs at sunset on a snowy day is the most magical winter experience in the Rockies. Go between 4-5 PM when the sky turns pink and steam swirls around you. Bring a waterproof phone case for photos — you'll want to capture this moment.</div>
 `,
   'summer-banff-itinerary': `
-<p>Summer is peak Banff — the turquoise lakes thaw, wildflowers bloom, hiking trails open, and the days stretch past 10 PM. This 4-day itinerary captures the essential summer experiences while helping you beat the crowds.</p>
+<p>Summer is peak <a href="/blog/banff-ice-skating">Ice Skating in Banff: Best Rinks & Frozen Lakes</a> — the turquoise lakes thaw, wildflowers bloom, hiking trails open, and the days stretch past 10 PM. This 4-day itinerary captures the essential summer experiences while helping you beat the crowds.</p>
 
 <h2>Day 1: Banff Town & Vermilion Lakes</h2>
 <ul>
