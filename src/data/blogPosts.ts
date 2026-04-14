@@ -11,6 +11,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'jasper-weather',
+    title: 'Banff to Jasper Weather Guide 2026: Plan Your Perfect Trip',
+    description: 'Plan your 2026 Banff to Jasper adventure with our complete weather guide. Get seasonal forecasts, packing tips, and ideal travel times for hiking, skiing, and sightseeing.',
+    date: '2026-04-14',
+    category: 'Food & Drink',
+    image: '/images/blog/jasper-weather.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'johston-canyon',
+    title: 'Johnston Canyon Banff: Your Complete 2026 Travel Guide',
+    description: 'Discover Johnston Canyon Banff in 2026! Complete guide to hiking trails, frozen waterfalls, best viewing times, and insider tips for an unforgettable experience.',
+    date: '2026-04-14',
+    category: 'Guides',
+    image: '/images/blog/johston-canyon.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'deals-in-banff',
+    title: 'Score Epic Banff Deals 2026: Insider Secrets to Save Big',
+    description: 'Discover insider secrets to save big on your 2026 Banff adventure! From hidden hotel deals to free activities, unlock epic savings for your Rocky Mountain getaway.',
+    date: '2026-04-14',
+    category: 'Guides',
+    image: '/images/blog/deals-in-banff.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'johnstons-canyon',
     title: 'Johnston\'s Canyon Banff: Ultimate 2026 Hiking Guide',
     description: 'Discover Johnston Canyon\'s stunning waterfalls with our complete 2026 hiking guide. Trail tips, best viewpoints, seasonal advice & insider secrets for Banff.',
