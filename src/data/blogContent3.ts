@@ -1,4 +1,63 @@
 export const blogContent3: Record<string, string> = {
+  'jasper-to-kamloops': `
+<p>The route from Jasper to Kamloops might not seem directly connected to Banff, but as someone who's driven this stretch countless times after training camps in Jasper, I can tell you it's one of the most strategic routes for exploring the Canadian Rockies. Whether you're completing a loop that includes Banff, Jasper, and the interior valleys, or using Kamloops as your gateway to Vancouver after a Rockies adventure, this 350-kilometer journey offers incredible scenery and serves as the perfect bookend to any Banff-area expedition.</p>
+
+<h2>Planning Your Jasper to Kamloops Route</h2>
+
+<p>The drive from <strong>Jasper to Kamloops</strong> takes approximately 4 hours via the Yellowhead Highway (Highway 5), but I always recommend planning for 5-6 hours to account for stops and the inevitable photo opportunities. The route follows the North Thompson River valley for much of the journey, offering a completely different landscape than what you'll experience in Banff's high alpine terrain.</p>
+
+<p>From Jasper townsite, you'll head west on Highway 16 for about 20 kilometers before connecting to Highway 5 South (the Coquihalla Highway connector). The most scenic section begins around Clearwater, where you'll see dramatic river valleys and rolling hills that make for excellent rest stops. During my last drive in September 2025, I counted at least eight wildlife sightings between Barriere and Kamloops.</p>
+
+<p>Unlike the mountain highways around Banff, this route stays relatively low elevation, making it accessible year-round. However, winter driving conditions can still be challenging, and I always check DriveBC before departing, especially between November and March.</p>
+
+<h2>Strategic Stops and Attractions</h2>
+
+<p>Wells Gray Provincial Park deserves a full day if you have time in your itinerary. Located about 2 hours south of Jasper near Clearwater, the park features Spahats Falls and Helmcken Falls – the latter drops 141 meters and creates impressive ice formations in winter. The park entrance fee is \$5 CAD per person, significantly less than the \$11.50 daily fee for Banff National Park.</p>
+
+<p>Sun Peaks Resort, about 45 minutes northeast of Kamloops, makes an excellent overnight stop if you're traveling during ski season. I've used it as a training base when the weather in Banff becomes too unpredictable. The village offers year-round activities, and accommodation prices typically run \$150-300 CAD per night, depending on the season.</p>
+
+<p>For fuel and supplies, Clearwater serves as the last major service center before Kamloops. The Esso station there has clean restrooms and a decent selection of snacks – crucial for anyone continuing south to Vancouver or returning to Calgary via a different route.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Download offline maps before leaving Jasper. Cell service can be spotty between Clearwater and Barriere, and GPS connectivity isn't guaranteed throughout the entire route.</div>
+
+<h2>Connecting to Your Banff Adventure</h2>
+
+<p>Most travelers using the <strong>Jasper to Kamloops</strong> route are either completing a multi-park tour or using Kamloops as a strategic stopover. If you're planning to include Banff in your itinerary, I recommend the following loop: fly into Calgary, drive to Banff for 2-3 days, continue north via the Icefields Parkway to Jasper for 2-3 days, then complete the triangle with the drive to Kamloops before flying out of Vancouver.</p>
+
+<p>This approach maximizes your time in the mountains while minimizing backtracking. The Icefields Parkway between Banff and Jasper ranks as one of the world's most scenic drives, and you'll want to budget a full day for the 290-kilometer journey. When planning your <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> portion of the trip, book accommodations well in advance, especially for summer travel.</p>
+
+<p>For those starting their Rockies adventure in Kamloops, the reverse route works equally well. Kamloops offers several chain hotels near the airport, with rates typically 30-40% lower than comparable accommodations in Banff. You can find options through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> or check our <a href="/hotel-directory">Compare 95+ Banff hotels</a> section for Banff-specific accommodations.</p>
+
+<h2>Seasonal Considerations and Timing</h2>
+
+<p>April through October offers the most reliable driving conditions for the Jasper to Kamloops route. During my April 2026 training trips, I've found this stretch more predictable than the mountain passes around Banff, where weather can change dramatically with elevation.</p>
+
+<p>Summer months (June-August) provide the best photography opportunities but also bring the heaviest traffic. If you're combining this drive with hiking in Banff, plan your <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> for early mornings to avoid crowds, then use afternoons for driving between destinations.</p>
+
+<p>Winter driving requires more preparation. While the Jasper to Kamloops route doesn't cross high mountain passes like those around Banff, November through March can still bring challenging conditions. I carry emergency supplies including extra water, blankets, and a first aid kit during winter months. The drive typically adds 1-2 hours to your total time due to reduced speeds and additional rest stops.</p>
+
+<p>Spring shoulder season (April-May) often provides the best balance of good road conditions and fewer tourists. Snow may linger at higher elevations around Jasper, but the route to Kamloops typically clears by late March.</p>
+
+<h2>Practical Information and Costs</h2>
+
+<p>Fuel costs for the 350-kilometer journey typically range from \$45-65 CAD depending on your vehicle and current gas prices. I recommend starting with a full tank in Jasper, as fuel prices can vary significantly along the route. The Husky station in Clearwater usually offers competitive pricing.</p>
+
+<p>If you're planning activities in the area, <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers several tour options that can complement your road trip, though most concentrate around Banff and Jasper rather than the Kamloops area.</p>
+
+<p>For accommodation in Kamloops, budget \$100-180 CAD per night for standard hotel rooms. The city serves primarily as a functional stopover rather than a destination, but several hotels near the Trans-Canada Highway offer good value for travelers continuing to Vancouver or other BC destinations.</p>
+
+<p>Border crossings aren't required for this route, but if you're an international visitor, ensure your documentation remains valid throughout your trip. Parks Canada annual passes (\$72.25 CAD per person) make financial sense if you're visiting both Banff and Jasper, as individual park fees add up quickly.</p>
+
+<h2>Making the Most of Your Extended Itinerary</h2>
+
+<p>The Jasper to Kamloops drive works best as part of a larger Western Canada exploration. Consider extending your stay to include activities that showcase the region's diversity. While Banff offers world-class alpine hiking and skiing, the route to Kamloops provides access to interior BC's wine regions and different outdoor recreation opportunities.</p>
+
+<p>If you have 7-10 days total, I recommend spending 3 days in Banff (following a structured <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>), 2-3 days in Jasper, and using Kamloops as a strategic overnight stop before continuing to Vancouver, Victoria, or other BC destinations. This approach maximizes your mountain time while providing flexibility for weather-dependent activities.</p>
+
+<p>Food options along the route remain limited compared to Banff's dining scene. Before leaving Jasper, stock up on snacks and water. If you want to experience quality mountain cuisine, spend time exploring the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> before heading north to Jasper and ultimately south to Kamloops.</p>
+
+<p>The drive from Jasper to Kamloops may serve as a transitional segment of your Rocky Mountain adventure, but it offers its own rewards. The changing landscape provides perspective on the region's geographical diversity, and the lower elevation route offers reliable travel conditions that complement the more weather-dependent activities around Banff and Jasper. Plan accordingly, drive safely, and use this route to extend your Western Canada exploration beyond the famous mountain parks.</p>
+`,
   'jasper-weather': `
 <p>As someone who's spent countless hours training in the Canadian Rockies, I've learned that understanding weather patterns is crucial for planning any mountain adventure. While most visitors focus on Banff weather, many don't realize that <strong>Jasper weather</strong> patterns significantly influence conditions throughout the entire Rocky Mountain corridor, including Banff National Park. The two parks share similar elevation ranges and mountain systems, making Jasper's meteorological data an excellent predictor for what you'll experience during your Banff visit.</p>
 

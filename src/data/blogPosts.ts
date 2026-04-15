@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'jasper-to-kamloops',
+    title: 'Jasper to Kamloops via Banff: Epic 2026 Road Trip Guide',
+    description: 'Discover the ultimate Canadian Rockies road trip from Jasper to Kamloops through Banff in 2026. Complete guide with routes, stops, and insider tips.',
+    date: '2026-04-15',
+    category: 'Guides',
+    image: '/images/blog/jasper-to-kamloops.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'jasper-weather',
     title: 'Banff to Jasper Weather Guide 2026: Plan Your Perfect Trip',
     description: 'Plan your 2026 Banff to Jasper adventure with our complete weather guide. Get seasonal forecasts, packing tips, and ideal travel times for hiking, skiing, and sightseeing.',
