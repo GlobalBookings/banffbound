@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'caution',
-    conditionNote: 'Icy and slippery conditions. Microspikes recommended.',
-    conditionUpdated: '2026-04-14',
+    status: 'closed',
+    conditionNote: 'Not maintained in winter. Avalanche risk.',
+    conditionUpdated: '2026-04-15',
   },
   {
     id: 'marsh-loop',
@@ -101,8 +101,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 4',
   
     status: 'open',
-    conditionNote: 'Groomed for classic and skate skiing. Dogs allowed on leash.',
-    conditionUpdated: '2026-04-14',
+    conditionNote: 'Packed snow. Good conditions.',
+    conditionUpdated: '2026-04-15',
   },
   {
     id: 'spray-river-east',
@@ -239,8 +239,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'caution',
-    conditionNote: 'Lower Falls accessible, icy conditions. Upper Falls closed for season.',
-    conditionUpdated: '2026-04-14',
+    conditionNote: 'Lower Falls open. Upper Falls trail icy, use caution.',
+    conditionUpdated: '2026-04-15',
   },
   {
     id: 'johnson-lake',
@@ -274,8 +274,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'closed',
-    conditionNote: 'Closed to vehicles. Accessible on foot/skis.',
-    conditionUpdated: '2026-04-14',
+    conditionNote: 'Closed to vehicles. Walking/skiing permitted.',
+    conditionUpdated: '2026-04-15',
   },
   {
     id: 'sunshine-meadows',
@@ -729,8 +729,8 @@ export const trails: Trail[] = [
     transitRoute: 'Norquay Shuttle',
   
     status: 'open',
-    conditionNote: 'Good conditions for skiing and snowshoeing.',
-    conditionUpdated: '2026-04-09',
+    conditionNote: 'Good for snowshoeing. Well marked.',
+    conditionUpdated: '2026-04-15',
   },
   {
     id: 'c-level-cirque',
@@ -1357,8 +1357,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'closed',
-    conditionNote: 'Not maintained in winter. Avalanche risk.',
-    conditionUpdated: '2026-04-14',
+    conditionNote: 'Seasonal closure. Trail not maintained.',
+    conditionUpdated: '2026-04-15',
   },
   {
     id: 'tramline',
