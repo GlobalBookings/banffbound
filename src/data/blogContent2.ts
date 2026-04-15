@@ -1137,7 +1137,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Pro Tip:</strong> Friday night skiing at Norquay is one of Banff's best-kept secrets. After a day of sightseeing, head up for a few runs under the lights — the atmosphere is relaxed, the slopes are quiet, and skiing with the lights of Banff twinkling below is pure magic. Grab a beer at the lodge afterward and you've got the perfect winter evening.</div>
 `,
   'banff-food-truck-guide': `
-<p><a href="/blog/banff-food-guide">The <a href="/blog/banff-craft-beer-guide"><a href="/blog/banff-nightlife-guide">Banff Nightlife: Best Bars, Pubs & Entertainment</a> Craft Beer : Breweries, Taprooms & Best Pints</a> Food : Best Restaurants & Cafes</a>'s food truck scene has grown from a handful of carts to a thriving street food culture that adds casual, creative dining options to a town traditionally dominated by sit-down restaurants. From gourmet tacos and wood-fired pizza to poutine and Thai street food, Banff's food trucks offer quick, delicious meals at reasonable prices — perfect for refuelling between adventures.</p>
+<p><a href="/blog/banff-food-guide">The <a href="/blog/banff-craft-beer-guide"><a href="/blog/banff-nightlife-guide"><a href="/blog/banff-distillery-guide">Banff Park Distillery & Spirits</a> Nightlife: Best Bars, Pubs & Entertainment</a> Craft Beer : Breweries, Taprooms & Best Pints</a> Food : Best Restaurants & Cafes</a>'s food truck scene has grown from a handful of carts to a thriving street food culture that adds casual, creative dining options to a town traditionally dominated by sit-down restaurants. From gourmet tacos and wood-fired pizza to poutine and Thai street food, Banff's food trucks offer quick, delicious meals at reasonable prices — perfect for refuelling between adventures.</p>
 
 <h2>Best Food Trucks in Banff</h2>
 
@@ -1187,22 +1187,22 @@ export const blogContent2: Record<string, string> = {
 
 <h3>Wild Flour Bakery</h3>
 <p><strong>Style:</strong> Artisan bakery & café | <strong>Price:</strong> $</p>
-<p>The locals' favourite for good reason. Wild Flour's sourdough, croissants, breakfast sandwiches, and fresh pastries are the gold standard in Banff. The portions are generous, the coffee is strong, and the prices are fair by Banff standards. Arrive early — popular items sell out by mid-morning, and there's usually a line on weekends.</p>
+<p>The locals' favourite for good reason. Wild Flour's sourdough, croissants, breakfast sandwiches, and fresh pastries are the gold standard in <a href="/blog/banff-coffee-guide">Best Coffee Shops in Banff & Lake Louise</a>. The portions are generous, the coffee is strong, and the prices are fair by Banff standards. Arrive early — popular items sell out by mid-morning, and there's usually a line on weekends.</p>
 
 <h3>Block Kitchen + Bar</h3>
-<p><strong>Style:</strong> Modern comfort food | <strong>Price:</strong> $$</p>
+<p><strong>Style:</strong> Modern comfort food | <strong>Price:</strong> $</p>
 <p>Block's weekend brunch is one of the best in town. Eggs Benedict variations, grain bowls, avocado toast, and creative specials alongside craft cocktails and fresh-squeezed juices. The bright, modern interior on Banff Avenue is a great people-watching spot. Reservations recommended for weekends.</p>
 
 <h3>The Bison Restaurant</h3>
-<p><strong>Style:</strong> Rocky Mountain cuisine | <strong>Price:</strong> $$$</p>
+<p><strong>Style:</strong> Rocky Mountain cuisine | <strong>Price:</strong> $$</p>
 <p>The Bison's weekend brunch brings the same farm-to-table philosophy that makes their dinner service legendary. Think bison breakfast hash, elk sausage with eggs, house-baked bread, and seasonal dishes showcasing Alberta ingredients. The Bear Street setting is warm and inviting. Reservations essential.</p>
 
 <h3>Juniper Bistro</h3>
-<p><strong>Style:</strong> Modern bistro with views | <strong>Price:</strong> $$$</p>
+<p><strong>Style:</strong> Modern bistro with views | <strong>Price:</strong> $$</p>
 <p>Juniper Bistro's brunch pairs seasonal Alberta cuisine with the best patio views in Banff. Perched above town at the Juniper Hotel, the panoramic mountain views from the patio make every mimosa taste better. House-cured bacon, smoked trout hash, and their famous cinnamon buns are standouts.</p>
 
 <h3>Tooloulou's</h3>
-<p><strong>Style:</strong> Cajun-Creole | <strong>Price:</strong> $$</p>
+<p><strong>Style:</strong> Cajun-Creole | <strong>Price:</strong> $</p>
 
 <p>For something completely different, Tooloulou's brings Cajun-Creole flavours to the brunch table. Shrimp and grits, crawfish eggs Benedict, beignets, and chicory coffee. Southern hospitality meets mountain-sized portions. A unique brunch experience in the Rockies.</p>
 
@@ -1213,11 +1213,11 @@ export const blogContent2: Record<string, string> = {
 <h2>Brunch in Lake Louise</h2>
 
 <h3>Fairmont Chateau Lake Louise</h3>
-<p><strong>Style:</strong> Elegant hotel brunch | <strong>Price:</strong> $$$$</p>
+<p><strong>Style:</strong> Elegant hotel brunch | <strong>Price:</strong> $$</p>
 <p>The Sunday brunch buffet at the Chateau Lake Louise is a splurge-worthy experience. A lavish spread of eggs, pastries, charcuterie, seafood, carved meats, and desserts — all with the turquoise lake and Victoria Glacier as your backdrop. Reservations essential and book well in advance.</p>
 
 <h3>Lake Louise Station Restaurant</h3>
-<p><strong>Style:</strong> Heritage railway station | <strong>Price:</strong> $$</p>
+<p><strong>Style:</strong> Heritage railway station | <strong>Price:</strong> $</p>
 <p>Housed in a restored 1910 railway station, this restaurant serves a hearty mountain breakfast in a unique heritage setting. Classic eggs, pancakes, and bacon alongside the charm of railway history.</p>
 
 <h2>Brunch Tips</h2>
@@ -2751,7 +2751,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Village Tip:</strong> If you're choosing between basing yourself in Banff or Lake Louise, consider this: Banff has more restaurants, nightlife, and services, while Lake Louise puts you closer to the park's most beautiful natural attractions. For a week-long trip, consider splitting your time — a few days in each.</div>
 `,
   'banff-town-guide': `
-<p>The town of Banff is a unique place — a vibrant, cosmopolitan community of around 8,000 residents living inside a national park. It somehow manages to be both a serious outdoor adventure base and a charming mountain town with excellent restaurants, shops, and cultural attractions. Here's your insider guide to getting the most out of Banff town.</p>
+<p>The town of <a href="/blog/banff-coffee-guide">Best Coffee Shops in Banff & Lake Louise</a> is a unique place — a vibrant, cosmopolitan community of around 8,000 residents living inside a national park. It somehow manages to be both a serious outdoor adventure base and a charming mountain town with excellent restaurants, shops, and cultural attractions. Here's your insider guide to getting the most out of Banff town.</p>
 
 <h2>Banff Avenue: The Main Street</h2>
 <p>Banff Avenue is the heart of town — a lively strip running north-south with the mountains visible at both ends. You'll find:</p>
@@ -3321,7 +3321,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>5-Day Tip:</strong> Don't try to cram everything into the first two days. The beauty of five days is having time to slow down, revisit a favourite spot, or follow a spontaneous detour. Some of the best Banff moments happen when you abandon the itinerary and just sit by a lake.</div>
 `,
   'winter-banff-itinerary': `
-<p>Winter transforms <a href="/blog/7-day-banff-itinerary">7-Day <a href="/blog/banff-in-winter"><a href="/blog/banff-winter-driving">Winter Driving to Banff: Road Conditions & Safety</a> in Winter: The to a Winter Trip</a> Itinerary: The</a> into a snow-covered wonderland. Frozen lakes, ice walks, top-tier skiing, and steaming hot springs await. This 4-day itinerary covers the best winter experiences while leaving time for cozy evenings by the fire.</p>
+<p>Winter transforms <a href="/blog/7-day-banff-itinerary">7-Day <a href="/blog/banff-in-winter"><a href="/blog/banff-winter-driving">Winter Driving to <a href="/blog/5-day-banff-itinerary">5-Day Banff Itinerary: The Perfect Long Weekend</a>: Road Conditions & Safety</a> in Winter: The to a Winter Trip</a> Itinerary: The</a> into a snow-covered wonderland. Frozen lakes, ice walks, top-tier skiing, and steaming hot springs await. This 4-day itinerary covers the best winter experiences while leaving time for cozy evenings by the fire.</p>
 
 <h2>Day 1: Arrive & Winter Wonderland</h2>
 <ul>

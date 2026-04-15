@@ -412,7 +412,7 @@ export const blogContent3: Record<string, string> = {
 <p>Photography enthusiasts should budget extra time for the dramatic lighting conditions throughout the canyon system. The narrow gorge creates challenging exposure situations, but the payoff includes some of the most striking waterfall images in the Canadian Rockies. Morning visits offer the best lighting conditions and smallest crowds for serious photography work.</p>
 `,
   'calgary-to-jasper': `
-<p>The drive from Calgary to <a href="/blog/jasper-weather">Banff to Jasper Weather : Plan Perfect Trip</a> is one of Canada's most spectacular road trips, taking you through the heart of the Canadian Rockies via the iconic Icefields Parkway. As someone who's made this journey countless times for training camps and ski trips, I can tell you it's far more than just transportation – it's an adventure that deserves proper planning to maximize every kilometer of stunning mountain scenery.</p>
+<p>The drive from Calgary to <a href="/blog/jasper-weather">Banff to <a href="/blog/jasper-to-kamloops">Jasper to Kamloops via Banff: Road Trip</a> Weather : Plan Perfect Trip</a> is one of Canada's most spectacular road trips, taking you through the heart of the Canadian Rockies via the iconic Icefields Parkway. As someone who's made this journey countless times for training camps and ski trips, I can tell you it's far more than just transportation – it's an adventure that deserves proper planning to maximize every kilometer of stunning mountain scenery.</p>
 
 <h2>Planning Your Calgary to Jasper Route</h2>
 
@@ -637,7 +637,7 @@ export const blogContent3: Record<string, string> = {
 <p>The back country skiing in Banff offers some of the finest touring terrain in North America, but it demands respect, preparation, and proper safety equipment. Start with easier tours to familiarize yourself with local conditions, invest in avalanche education, and never hesitate to turn back if conditions deteriorate. The mountains will be there tomorrow – make sure you are too.</p>
 `,
   'jasper-town': `
-<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about <a href="/blog/calgary-to-jasper">Calgary to <a href="/blog/jasper-weather">Banff to Jasper Weather : Plan Perfect Trip</a> via Banff Road Trip</a> National Park almost as much as Banff. While Jasper town sits about 290 km north of Banff townsite via the stunning Icefields Parkway, understanding both destinations helps you plan the ultimate Rocky Mountain adventure. Let me share what I've learned from years of racing, skiing, and exploring this incredible region.</p>
+<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about <a href="/blog/calgary-to-jasper">Calgary to <a href="/blog/jasper-weather">Banff to <a href="/blog/jasper-to-kamloops">Jasper to Kamloops via Banff: Road Trip</a> Weather : Plan Perfect Trip</a> via Banff Road Trip</a> National Park almost as much as Banff. While Jasper town sits about 290 km north of Banff townsite via the stunning Icefields Parkway, understanding both destinations helps you plan the ultimate Rocky Mountain adventure. Let me share what I've learned from years of racing, skiing, and exploring this incredible region.</p>
 
 <h2>Understanding Jasper vs Banff: Two Distinct Mountain Experiences</h2>
 
@@ -800,7 +800,7 @@ export const blogContent3: Record<string, string> = {
 <p>The nightclub scene fits well into a broader Banff experience. You might want to plan around it when creating your <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>, especially if you're balancing outdoor activities with social time.</p>
 `,
   'jasper-alberta': `
-<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about <strong><a href="/blog/jasper-town">Banff to <a href="/blog/calgary-to-jasper">Calgary to Jasper via Banff Road Trip</a> Town</a> Alberta</strong> almost as much as I do about Banff itself. While this guide focuses on Banff National Park, understanding the connection between these two iconic destinations will help you make the most of your Rocky Mountain adventure. Both parks offer world-class outdoor recreation, but each has its own character and highlights that serious outdoor enthusiasts need to know about.</p>
+<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about <strong><a href="/blog/jasper-town">Banff to <a href="/blog/calgary-to-jasper">Calgary to <a href="/blog/jasper-to-kamloops">Jasper to Kamloops via Banff: Road Trip</a> via Banff Road Trip</a> Town</a> Alberta</strong> almost as much as I do about Banff itself. While this guide focuses on Banff National Park, understanding the connection between these two iconic destinations will help you make the most of your Rocky Mountain adventure. Both parks offer world-class outdoor recreation, but each has its own character and highlights that serious outdoor enthusiasts need to know about.</p>
 
 <h2>Understanding Banff's Position in the Canadian Rockies</h2>
 
@@ -1143,7 +1143,7 @@ export const blogContent3: Record<string, string> = {
 <p>The honest answer to how many days you need for Banff is that it depends on your priorities, fitness level, and travel style. For most visitors, 5-6 days provides the sweet spot between seeing major attractions and having time for spontaneous discoveries. But after two decades of exploring these mountains, I can tell you that no matter how long you stay, you'll leave planning your next visit. The Canadian Rockies have a way of getting into your blood—just ask anyone who's experienced sunrise over Lake Louise or completed their first scramble up a Rockies peak.</p>
 `,
   'new-places-to-eat-in-banff': `
-<p>As someone who's been training and competing in Banff for over a decade, I've watched the town's culinary scene evolve dramatically. After countless early morning runs and post-ski dinners, I can tell you that 2026 has brought some exciting new places to eat in Banff that are worth planning your meals around. From innovative mountain cuisine to casual spots perfect for refueling after a day on the trails, here's my insider guide to the newest dining experiences in town.</p>
+<p>As someone who's been training and competing in <a href="/blog/banff-apres-ski">Best Apres-Ski in <a href="/blog/best-banff-restaurants-2026">Best Restaurants in <a href="/blog/banff-fine-dining">Fine Dining in <a href="/blog/banff-rooftop-patios">Best Rooftop Patios in Banff</a>: Top Upscale Restaurants</a> : Where Locals Eat</a>: Bars, Restaurants & Hot</a> for over a decade, I've watched the town's culinary scene evolve dramatically. After countless early morning runs and post-ski dinners, I can tell you that 2026 has brought some exciting new places to eat in Banff that are worth planning your meals around. From innovative mountain cuisine to casual spots perfect for refueling after a day on the trails, here's my insider guide to the newest dining experiences in town.</p>
 
 <h2>The Latest Culinary Additions to Banff Avenue</h2>
 
