@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'closed',
-    conditionNote: 'Not maintained in winter. Avalanche risk.',
-    conditionUpdated: '2026-04-15',
+    status: 'open',
+    conditionNote: 'Well-maintained winter trail, packed snow.',
+    conditionUpdated: '2026-04-16',
   },
   {
     id: 'marsh-loop',
@@ -100,9 +100,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 4',
   
-    status: 'open',
-    conditionNote: 'Packed snow. Good conditions.',
-    conditionUpdated: '2026-04-15',
+    status: 'caution',
+    conditionNote: 'Partially snow-covered, icy patches.',
+    conditionUpdated: '2026-04-16',
   },
   {
     id: 'spray-river-east',
@@ -274,8 +274,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'closed',
-    conditionNote: 'Closed to vehicles. Walking/skiing permitted.',
-    conditionUpdated: '2026-04-15',
+    conditionNote: 'Winter closure, not maintained.',
+    conditionUpdated: '2026-04-16',
   },
   {
     id: 'sunshine-meadows',
@@ -308,8 +308,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'closed',
-    conditionNote: 'Road access closed for winter season.',
-    conditionUpdated: '2026-04-09',
+    conditionNote: 'Seasonal closure, deep snow.',
+    conditionUpdated: '2026-04-16',
   },
   {
     id: 'johnston-canyon-lower-falls',
@@ -590,9 +590,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 1',
   
-    status: 'open',
-    conditionNote: 'Good conditions, packed snow',
-    conditionUpdated: '2026-04-12',
+    status: 'caution',
+    conditionNote: 'Icy sections, microspikes recommended.',
+    conditionUpdated: '2026-04-16',
   },
   {
     id: 'tunnel-mountain-summit',
@@ -729,8 +729,8 @@ export const trails: Trail[] = [
     transitRoute: 'Norquay Shuttle',
   
     status: 'open',
-    conditionNote: 'Good for snowshoeing. Well marked.',
-    conditionUpdated: '2026-04-15',
+    conditionNote: 'Good winter conditions, packed trail.',
+    conditionUpdated: '2026-04-16',
   },
   {
     id: 'c-level-cirque',
@@ -1357,8 +1357,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'closed',
-    conditionNote: 'Seasonal closure. Trail not maintained.',
-    conditionUpdated: '2026-04-15',
+    conditionNote: 'Not maintained in winter, avalanche risk.',
+    conditionUpdated: '2026-04-16',
   },
   {
     id: 'tramline',
