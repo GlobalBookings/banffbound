@@ -1,6 +1,6 @@
 export const blogContent2: Record<string, string> = {
   'banff-free-activities': `
-<p><a href="/blog/banff-cabin-rentals">Best Cabin Rentals Near <a href="/blog/banff-fly-fishing">Fly Fishing in Banff National Park</a> National Park</a> has a reputation for being expensive, but here's a secret: the best experiences in the park cost nothing beyond your Parks Canada pass. From beautiful hikes to outstanding viewpoints, wildlife encounters to stargazing, here are 25 free <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do in Banff National Park.</p>
+<p><a href="/blog/banff-cabin-rentals">Best Cabin Rentals Near <a href="/blog/banff-fly-fishing">Fly Fishing in <a href="/blog/banff-hidden-gems">15 Hidden Gems in <a href="/blog/banff-first-time-tips">First Time in Banff: 20 Things You Need to Know</a> National Park</a> National Park</a> National Park</a> has a reputation for being expensive, but here's a secret: the best experiences in the park cost nothing beyond your Parks Canada pass. From beautiful hikes to outstanding viewpoints, wildlife encounters to stargazing, here are 25 free <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do in Banff National Park.</p>
 
 <h2>Hikes & Walks</h2>
 
@@ -1479,7 +1479,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Solo Traveller Tip:</strong> Download offline maps before heading into the park. Cell service is available in Banff town but disappears quickly on many trails and scenic drives. Google Maps and AllTrails both offer offline mode — essential for solo navigation.</div>
 `,
   'banff-honeymoon-guide': `
-<p>Few places on Earth rival <a href="/blog/banff-bear-safety">Bear Safety in <a href="/blog/banff-rv-guide">RV to Banff: Campgrounds & Regulations</a>: Essential</a> for honeymoon magic. Snow-capped mountains, turquoise lakes, renowned dining, luxury spas, and endless adventure — the Canadian Rockies offer newlyweds an one-of-a-kind blend of romance and wild beauty. Here's how to plan the perfect Banff honeymoon.</p>
+<p>Few places on Earth rival <a href="/blog/banff-bear-safety">Bear Safety in <a href="/blog/banff-rv-guide">RV to <a href="/blog/banff-luxury-experience">Luxury Banff: High-End Hotels, Dining & Experiences</a>: Campgrounds & Regulations</a>: Essential</a> for honeymoon magic. Snow-capped mountains, turquoise lakes, renowned dining, luxury spas, and endless adventure — the Canadian Rockies offer newlyweds an one-of-a-kind blend of romance and wild beauty. Here's how to plan the perfect Banff honeymoon.</p>
 
 <h2>Best Time for a Banff Honeymoon</h2>
 <p><strong>Summer (June-August):</strong> Long warm days, turquoise lakes, canoeing at sunset, wildflower meadows, and outdoor dining patios. The most popular and photogenic season.</p>
@@ -2150,7 +2150,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Canada Day Tip:</strong> Combine the parade and town festivities with an afternoon hike to escape the crowds. By 2pm, head to Tunnel Mountain or Sulphur Mountain for a quieter celebration surrounded by nature — the best of both worlds.</div>
 `,
   'banff-thanksgiving': `
-<p>Canadian Thanksgiving falls on the second Monday in October, placing it right in the heart of Banff's incredible fall season. Golden larch trees, snow-dusted peaks, bugling elk, and crisp mountain air make Thanksgiving in Banff a uniquely Canadian experience. Here's how to make the most of it.</p>
+<p>Canadian Thanksgiving falls on the second Monday in October, placing it right in the heart of <a href="/blog/banff-luxury-experience">Luxury Banff: High-End Hotels, Dining & Experiences</a>'s incredible fall season. Golden larch trees, snow-dusted peaks, bugling elk, and crisp mountain air make Thanksgiving in Banff a uniquely Canadian experience. Here's how to make the most of it.</p>
 
 <h2>Thanksgiving Dining in Banff</h2>
 <p>Several Banff restaurants offer special Thanksgiving menus featuring traditional turkey dinners with all the trimmings:</p>
@@ -2687,7 +2687,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>RV Tip:</strong> Two Jack Lakeside campground is the most coveted RV site in Banff — you literally camp on the lakeshore with Mount Rundle rising across the water. Set a reminder for when Parks Canada reservations open in January and book immediately. It's one of the best camping experiences in Canada.</div>
 `,
   'lake-louise-village-guide': `
-<p>Lake <a href="/blog/lake-louise-ski-resort">Lake Louise Ski Resort</a> <a href="/blog/sunshine-village-guide">Sunshine Village Ski Resort</a> is the small but perfectly located hub for exploring one of the most beautiful areas in the Canadian Rockies. Sitting at 1,540 metres elevation along the Trans-Canada Highway, it provides easy access to Lake Louise, Moraine Lake, the Icefields Parkway, and some of the best hiking and skiing in North America.</p>
+<p>Lake <a href="/blog/lake-louise-ski-resort">Lake <a href="/blog/things-to-do-lake-louise">Things to Do in Lake Louise</a> Ski Resort</a> <a href="/blog/sunshine-village-guide">Sunshine Village Ski Resort</a> is the small but perfectly located hub for exploring one of the most beautiful areas in the Canadian Rockies. Sitting at 1,540 metres elevation along the Trans-Canada Highway, it provides easy access to Lake Louise, Moraine Lake, the Icefields Parkway, and some of the best hiking and skiing in North America.</p>
 
 <h2>What's in the Village?</h2>
 <p>Lake Louise Village is compact — don't expect a bustling town. The core consists of:</p>
@@ -3269,7 +3269,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Patio Tip:</strong> The golden hour at Magpie & Stump's rooftop is magical — Cascade Mountain glows orange and pink as the sun sets behind you. Arrive at 7:30 PM on a clear summer evening and order a pitcher of margaritas. It's the most memorable patio experience in Banff.</div>
 `,
   '5-day-banff-itinerary': `
-<p>Five days in <a href="/blog/7-day-banff-itinerary">7-Day <a href="/blog/how-many-days-do-you-need-for-banff">How Many Days in Banff? Perfect Itinerary</a> Itinerary: The</a> is the sweet spot — enough time to see the iconic highlights, explore off-the-radar spots, and still have moments to simply sit and stare at the mountains. This day-by-day itinerary balances adventure with relaxation, nature with dining, and popular sites with lesser-known treasures.</p>
+<p>Five days in <a href="/blog/7-day-banff-itinerary">7-Day <a href="/blog/how-many-days-do-you-need-for-banff">How Many Days in <a href="/blog/winter-banff-itinerary">Winter <a href="/blog/summer-banff-itinerary">Summer <a href="/blog/fall-banff-itinerary">Fall <a href="/blog/banff-wellness-weekend">Banff Wellness Weekend: Hot Springs, Spa & Yoga</a> Itinerary: 3 Days of Golden Larches</a> Itinerary: 4 Days of Hiking & Lakes</a> Itinerary: 4 Days of Snow & Ice</a>? Perfect Itinerary</a> Itinerary: The</a> is the sweet spot — enough time to see the iconic highlights, explore off-the-radar spots, and still have moments to simply sit and stare at the mountains. This day-by-day itinerary balances adventure with relaxation, nature with dining, and popular sites with lesser-known treasures.</p>
 
 <h2>Day 1: Arrive & Explore Banff Town</h2>
 <ul>
@@ -3450,7 +3450,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Larch Season Tip:</strong> The golden larches in Larch Valley above Moraine Lake are the highlight of fall in Banff. Peak colour lasts only 2-3 weeks — typically late September. Follow Parks Canada's larch reports on social media and be ready to go when they announce peak colour. Arrive at the trailhead before 7 AM.</div>
 `,
   'banff-wellness-weekend': `
-<p><a href="/blog/fairmont-banff-springs">Fairmont Banff Springs: The Castle in the Rockies</a> is a natural wellness destination — the mountains, the mineral hot springs, the clean mountain air, and the pace of nature create the perfect environment for resetting body and mind. This weekend itinerary combines hot springs, spa treatments, yoga, and gentle nature walks for the comprehensive Rocky Mountain wellness escape.</p>
+<p><a href="/blog/fairmont-banff-springs">Fairmont <a href="/blog/banff-adventure-weekend">Banff Weekend: Rafting, Via Ferrata & More</a> Springs: The Castle in the Rockies</a> is a natural wellness destination — the mountains, the mineral hot springs, the clean mountain air, and the pace of nature create the perfect environment for resetting body and mind. This weekend itinerary combines hot springs, spa treatments, yoga, and gentle nature walks for the comprehensive Rocky Mountain wellness escape.</p>
 
 <h2>Day 1: Hot Springs & Arrival</h2>
 <ul>
@@ -3487,7 +3487,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Wellness Tip:</strong> The Kananaskis Nordic Spa is the highlight of any wellness weekend. Book a weekday morning slot for the quietest experience — you'll have the hot pools nearly to yourself. The contrast between the steaming pools and the cold mountain air is deeply restorative.</div>
 `,
   'banff-adventure-weekend': `
-<p>Banff isn't just pretty views and gentle hikes — it's one of Canada's premier adventure destinations. This weekend itinerary packs in white-water rafting, via ferrata climbing, caving, and more for an adrenaline-charged Rocky Mountain experience.</p>
+<p><a href="/blog/banff-wellness-weekend">Banff Wellness Weekend: Hot Springs, Spa & Yoga</a> isn't just pretty views and gentle hikes — it's one of Canada's premier adventure destinations. This weekend itinerary packs in white-water rafting, via ferrata climbing, caving, and more for an adrenaline-charged Rocky Mountain experience.</p>
 
 <h2>Day 1: White-Water Rafting</h2>
 <ul>
@@ -3633,7 +3633,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Lake Louise Tip:</strong> Do the Lake Agnes Tea House hike, then continue to Big Beehive. The extra 45 minutes of hiking gives you a view of Lake Louise from above that will be the highlight of your trip. Bring cash for tea and scones at the tea house — it's a tradition.</div>
 `,
   'things-to-do-winter-banff': `
-<p>Winter in <a href="/blog/banff-in-winter"><a href="/blog/banff-winter-driving">Winter Driving to Banff: Road Conditions & Safety</a> in Winter: The to a Winter Trip</a> is magical — snow-covered peaks, frozen lakes, steaming hot springs, and outstanding skiing. Far from a dormant season, winter offers some of the most memorable experiences in the Canadian Rockies. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do when the snow flies.</p>
+<p>Winter in <a href="/blog/banff-in-winter"><a href="/blog/banff-winter-driving">Winter Driving to Banff: Road Conditions & Safety</a> in Winter: The to a Winter Trip</a> is magical — snow-covered peaks, frozen lakes, steaming hot springs, and outstanding skiing. Far from a dormant season, winter offers some of the most memorable experiences in the Canadian Rockies. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best <a href="/blog/things-to-do-summer-banff">30 Things to Do in Banff in Summer</a> to Do in Banff in (With</a> to do when the snow flies.</p>
 
 <h2>Skiing & Snowboarding</h2>
 <ol>
@@ -3698,7 +3698,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Winter Tip:</strong> The Johnston Canyon ice walk is the single most magical winter experience in Banff. Go early morning (before 10 AM) or late afternoon (after 3 PM) to avoid crowds. Wear ice cleats — the trail is icy. The frozen blue waterfalls are otherworldly.</div>
 `,
   'things-to-do-summer-banff': `
-<p>Summer in <a href="/blog/banff-in-summer">Banff in Summer: to the Perfect Visit</a> is when the Canadian Rockies come fully alive. Turquoise lakes thaw, wildflowers bloom, trails open to high alpine meadows, and the days stretch until 10 PM. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best Things to Do in Banff in (With</a> to do during the warmest and most beautiful season in the park.</p>
+<p>Summer in <a href="/blog/banff-in-summer">Banff in Summer: to the Perfect Visit</a> is when the Canadian Rockies come fully alive. Turquoise lakes thaw, wildflowers bloom, trails open to high alpine meadows, and the days stretch until 10 PM. Here are 30 <a href="/blog/best-things-to-do-in-banff-2026">The 20 Best <a href="/blog/things-to-do-winter-banff">30 Things to Do in Banff in Winter</a> to Do in Banff in (With</a> to do during the warmest and most beautiful season in the park.</p>
 
 <h2>Hiking</h2>
 <ol>
