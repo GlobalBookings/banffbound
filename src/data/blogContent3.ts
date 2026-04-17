@@ -4,7 +4,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>Planning Your Jasper to Kamloops Route</h2>
 
-<p>The drive from <strong>Jasper to Kamloops</strong> takes approximately 4 hours via the Yellowhead Highway (Highway 5), but I always recommend planning for 5-6 hours to account for stops and the inevitable photo opportunities. The route follows the North Thompson River valley for much of the journey, offering a completely different landscape than what you'll experience in Banff's high alpine terrain.</p>
+<p>The drive from <strong>Jasper to Kamloops</strong> takes approximately 4 hours via the Yellowhead Highway (Highway 5), but I always recommend planning for 5-6 hours to account for stops and the inevitable photo opportunities. The route follows the North Thompson <a href="/blog/spray-river-trail">Spray River Loop: Easy Scenic Ride from Banff</a> valley for much of the journey, offering a completely different landscape than what you'll experience in Banff's high alpine terrain.</p>
 
 <p>From Jasper townsite, you'll head west on Highway 16 for about 20 kilometers before connecting to Highway 5 South (the Coquihalla Highway connector). The most scenic section begins around Clearwater, where you'll see dramatic river valleys and rolling hills that make for excellent rest stops. During my last drive in September 2025, I counted at least eight wildlife sightings between Barriere and Kamloops.</p>
 
@@ -207,7 +207,7 @@ export const blogContent3: Record<string, string> = {
 <p>Johnston Canyon delivers an exceptional mountain experience when visited with proper preparation and realistic expectations. The crowds are real, but the canyon's beauty justifies its popularity. Plan your timing carefully, arrive prepared, and you'll understand why this remains one of Banff's signature attractions after more than a century of welcoming visitors.</p>
 `,
   'deals-in-banff': `
-<p>After five years of regular visits to <a href="/blog/banff-via-ferrata">Mt Norquay Via Ferrata: Banff's Most Thrilling Climb</a> National Park, I've learned that scoring great deals here isn't about luck—it's about timing, knowing where to look, and understanding how this mountain town operates. Whether you're planning a quick weekend ski trip or a week-long hiking adventure, I'll share the specific strategies I use to save money while still experiencing everything this incredible park has to offer.</p>
+<p>After five years of regular visits to <a href="/blog/banff-via-ferrata">Mt Norquay Via Ferrata: <a href="/blog/banff-wildlife-overpass">Wildlife Overpasses: How Banff Protects Its Animals</a>'s Most Thrilling Climb</a> National Park, I've learned that scoring great deals here isn't about luck—it's about timing, knowing where to look, and understanding how this mountain town operates. Whether you're planning a quick weekend ski trip or a week-long hiking adventure, I'll share the specific strategies I use to save money while still experiencing everything this incredible park has to offer.</p>
 
 <h2>Best Times to Find Deals in Banff</h2>
 
@@ -251,7 +251,7 @@ export const blogContent3: Record<string, string> = {
 
 <h3>Free and Low-Cost Activities</h3>
 
-<p>Some of my favorite Banff experiences cost nothing. The Bow River Loop trail offers mountain views that rival expensive helicopter tours. Johnston Canyon's lower falls remain accessible year-round and require only the park entry fee.</p>
+<p>Some of my favorite <a href="/blog/banff-legacy-trail">Legacy Trail: Biking Banff to Canmore</a> experiences cost nothing. The Bow River Loop trail offers mountain views that rival expensive helicopter tours. Johnston Canyon's lower falls remain accessible year-round and require only the park entry fee.</p>
 
 <p>For detailed trail information and difficulty ratings, check out our guide to the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>. I update this regularly with current conditions and seasonal accessibility.</p>
 
@@ -728,7 +728,7 @@ export const blogContent3: Record<string, string> = {
 <p>Whether you choose Banff as your Canadian Rockies base or venture north to jasper town, both destinations offer world-class mountain experiences. Banff provides more amenities, activities, and dining options, while Jasper offers a quieter, more authentic mountain town atmosphere. From my years exploring both parks, I recommend Banff for first-time visitors who want maximum options and convenience. You can always return to explore jasper town's wilder side on future trips.</p>
 `,
   'banff-nightclubs': `
-<p>After spending countless hours training on <a href="/blog/banff-film-festival"><a href="/blog/bear-street-banff">Bear Street <a href="/blog/banff-horseback-riding">Horseback Riding in <a href="/blog/deals-in-banff">Score <a href="/blog/banff-via-ferrata">Mt Norquay Via Ferrata: Banff's Most Thrilling Climb</a> Deals : Insider Secrets to Save Big</a>: Best Trails & Outfitters</a>: The Best Block in Town</a> Mountain Film Festival</a>'s mountain trails and exploring the town during my recovery days, I've discovered that the nightlife scene here offers more than most visitors expect. While Banff isn't Vancouver or Toronto, the compact downtown core packs several solid options for those looking to dance, drink, and socialize after dark. Here's my insider guide to the nightclub scene in Canada's most famous mountain town.</p>
+<p>After spending countless hours training on <a href="/blog/banff-film-festival"><a href="/blog/bear-street-banff">Bear Street <a href="/blog/banff-horseback-riding">Horseback Riding in <a href="/blog/deals-in-banff">Score <a href="/blog/banff-via-ferrata">Mt Norquay Via Ferrata: <a href="/blog/banff-legacy-trail">Legacy Trail: Biking Banff to Canmore</a>'s Most Thrilling Climb</a> Deals : Insider Secrets to Save Big</a>: Best Trails & Outfitters</a>: The Best Block in Town</a> Mountain Film Festival</a>'s mountain trails and exploring the town during my recovery days, I've discovered that the nightlife scene here offers more than most visitors expect. While Banff isn't Vancouver or Toronto, the compact downtown core packs several solid options for those looking to dance, drink, and socialize after dark. Here's my insider guide to the nightclub scene in Canada's most famous mountain town.</p>
 
 <h2>The Reality of Banff's Nightclub Scene</h2>
 
@@ -1266,14 +1266,14 @@ export const blogContent3: Record<string, string> = {
 
 <h2>Is Num-Ti-Jah Lodge Right for You?</h2>
 
-<p>This lodge suits travelers seeking genuine mountain experiences over resort amenities. If you need WiFi, room service, or extensive dining options, stick with properties in Banff townsite. Our <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> guide covers full-service alternatives.</p>
+<p>This <a href="/blog/skoki-lodge-guide">Skoki Lodge: Historic Backcountry Stay</a> suits travelers seeking genuine mountain experiences over resort amenities. If you need WiFi, room service, or extensive dining options, stick with properties in Banff townsite. Our <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> guide covers full-service alternatives.</p>
 
 <p>However, if you want to wake up to mountain reflections, hear glacial streams instead of traffic, and experience the Rockies as they were meant to be experienced, Num-Ti-Jah delivers. After multiple stays, I keep returning for the complete disconnection from digital life and the immediate access to high-alpine terrain.</p>
 
 <p>The <strong>Num Ti Jah Lodge hotel</strong> represents old-school mountain hospitality in an age of standardized experiences. It's not perfect—rooms are simple, weather can be harsh, and you're isolated from services. But for those seeking authentic Rocky Mountain immersion, few places compare to waking up on the shores of Bow Lake with the Wapta Icefield stretching endlessly above you.</p>
 `,
   'sunshine-ski-in-ski-out': `
-<p>After countless ski trips to the Canadian Rockies, I can tell you that <strong>sunshine ski in ski out</strong> accommodations represent the absolute peak of convenience for alpine enthusiasts. Nothing beats stepping out your door onto pristine powder, especially when you're dealing with Banff's notoriously challenging parking situations and early morning lift queues. Having stayed in various ski-accessible lodges throughout Alberta, I've learned that proximity to the slopes can make or break your mountain experience.</p>
+<p>After countless ski trips to the Canadian Rockies, I can tell you that <strong><a href="/blog/sunshine-meadows-hike">Sunshine Meadows: Alpine Wildflower Hiking</a> ski in ski out</strong> accommodations represent the absolute peak of convenience for alpine enthusiasts. Nothing beats stepping out your door onto pristine powder, especially when you're dealing with Banff's notoriously challenging parking situations and early morning lift queues. Having stayed in various ski-accessible lodges throughout Alberta, I've learned that proximity to the slopes can make or break your mountain experience.</p>
 
 <h2>Understanding Ski In Ski Out Options Near Banff</h2>
 

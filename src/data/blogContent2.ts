@@ -171,7 +171,7 @@ export const blogContent2: Record<string, string> = {
 <p><strong>Difficulty:</strong> Easy to moderate</p>
 <p><strong>Time:</strong> 1.5–2.5 hours round trip</p>
 <p><strong>Trailhead:</strong> St. Julien Road, just off Tunnel Mountain Drive</p>
-<p>The trail is well-maintained with wide switchbacks that climb gradually through a montane forest of Douglas fir and lodgepole pine. There are no scrambling sections or exposed ridges — just a steady, pleasant ascent that rewards you with one of the finest viewpoints in the Bow Valley.</p>
+<p>The trail is well-maintained with wide switchbacks that climb gradually through a montane forest of Douglas fir and lodgepole pine. There are no scrambling sections or exposed ridges — just a steady, pleasant ascent that rewards you with one of the finest viewpoints in the Bow Valley. For more details, check out our guide on <a href="/blog/ha-ling-peak">Ha Ling Peak Hike: Canmore's Bucket List Trail</a>. For more details, check out our guide on <a href="/blog/boom-lake-hike">Boom Lake Trail: A Peaceful Backcountry Gem</a>.</p>
 
 <h2>What You'll See from the Summit</h2>
 <p>The 360-degree summit panorama is truly striking for such a short hike. From the top (1,692 metres), you can see:</p>
@@ -188,7 +188,7 @@ export const blogContent2: Record<string, string> = {
 <p>The summit faces east toward Mount Rundle, making it one of the best sunrise viewpoints near Banff. The early morning light paints Rundle in pink and gold tones while the valley below is still in shadow. In summer, sunrise is before 6am, so you'll have the trail largely to yourself.</p>
 
 <h3>Sunset</h3>
-<p>Equally beautiful. The setting sun illuminates Cascade Mountain and the Bow Valley in warm light. Bring a headlamp for the walk down — the trail through the forest is dark after sunset.</p>
+<p>Equally beautiful. The setting sun illuminates <a href="/blog/cascade-mountain-hike">Cascade Mountain: Banff's Iconic Peak Hike</a> Mountain and the Bow Valley in warm light. Bring a headlamp for the walk down — the trail through the forest is dark after sunset.</p>
 
 <h3>Seasonal Considerations</h3>
 <ul>
@@ -276,7 +276,7 @@ export const blogContent2: Record<string, string> = {
 
 <h2>The Route</h2>
 <h3>Lake Louise Lakeshore (First 2 km)</h3>
-<p>The trail begins with a flat, paved walk along the north shore of Lake Louise. The turquoise water, Victoria Glacier ahead, and the surrounding peaks make this section a destination in itself. The path gradually transitions from paved to a well-packed dirt trail as you reach the far end of the lake.</p>
+<p>The trail begins with a flat, paved walk along the north shore of Lake Louise. The turquoise water, Victoria Glacier ahead, and the surrounding peaks make this section a destination in itself. The path gradually transitions from paved to a well-packed dirt trail as you reach the far end of the lake. For more details, check out our guide on <a href="/blog/boom-lake-hike">Boom Lake Trail: A Peaceful Backcountry Gem</a>.</p>
 
 <h3>The Moraine & Switchbacks (2–4 km)</h3>
 <p>Beyond the lake, the trail enters a lateral moraine — a field of boulders and gravel deposited by glacial activity. The landscape becomes increasingly raw and dramatic. You'll cross several avalanche paths (look for debris in early season) before the trail begins switchbacking up to the tea house.</p>
@@ -4428,7 +4428,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Skoki Secret:</strong> Request the cabin farthest from the main lodge. You'll have the most privacy, and stepping outside at midnight to see the Milky Way blazing overhead with absolutely zero light pollution is a life-changing experience. The walk back in the dark with a headlamp is part of the adventure.</div>
 `,
   'banff-legacy-trail': `
-<p>The Legacy Trail is a 26-kilometre paved pathway connecting the town of Banff to the town of Canmore, running alongside the Trans-Canada Highway through some of the most scenic terrain in the Bow Valley. It's one of the best cycling experiences in the Canadian Rockies — flat enough for families, long enough to feel like an adventure, and remarkable from start to finish.</p>
+<p>The Legacy <a href="/blog/cory-pass-trail">Cory Pass & Edith Pass Loop: Advanced Rocky Hike</a> is a 26-kilometre paved pathway connecting the town of Banff to the town of Canmore, running alongside the Trans-Canada Highway through some of the most scenic terrain in the Bow Valley. It's one of the best cycling experiences in the Canadian Rockies — flat enough for families, long enough to feel like an adventure, and remarkable from start to finish.</p>
 
 <h2>Trail Details</h2>
 <ul>
@@ -4441,10 +4441,10 @@ export const blogContent2: Record<string, string> = {
 
 <h2>Trailheads</h2>
 <h3>Banff End</h3>
-<p>The Banff trailhead is at the Banff Train Station on Railway Avenue. There's a bike rental shop nearby if you need wheels. The trail starts with mountain views immediately as it follows the highway corridor east.</p>
+<p>The Banff <a href="/blog/spray-river-trail">Spray River Loop: Easy Scenic Ride from Banff</a> is at the Banff Train Station on Railway Avenue. There's a bike rental shop nearby if you need wheels. The trail starts with mountain views immediately as it follows the highway corridor east.</p>
 
 <h3>Canmore End</h3>
-<p>The Canmore trailhead is near the Travel Alberta Visitor Information Centre on the Trans-Canada. From here, local trails connect to downtown Canmore. You can also start from various points along the trail — there are multiple access points.</p>
+<p>The Canmore trailhead is near the Travel Alberta Visitor Information Centre on the Trans-Canada. From here, local trails connect to downtown Canmore. You can also start from various points along the trail — there are multiple access points. For more details, check out our guide on <a href="/blog/ha-ling-peak">Ha Ling Peak Hike: Canmore's Bucket List Trail</a>.</p>
 
 <h2>What You'll See</h2>
 <p>The trail runs through the Bow Valley, flanked by mountain ranges on both sides. Highlights include:</p>
@@ -4490,7 +4490,7 @@ export const blogContent2: Record<string, string> = {
 </ul>
 
 <h2>The Route</h2>
-<p>Start from the Bow Falls parking area near the Fairmont Banff Springs Hotel. Cross the bridge over the Bow River and turn right onto the Spray River trail. The path follows the east bank of the Spray River south, winding through dense spruce and pine forest with frequent river viewpoints.</p>
+<p>Start from the Bow Falls parking area near the Fairmont Banff Springs Hotel. Cross the bridge over the Bow River and turn right onto the Spray River <a href="/blog/cory-pass-trail">Cory Pass & Edith Pass Loop: Advanced Rocky Hike</a>. The path follows the east bank of the Spray River south, winding through dense spruce and pine forest with frequent river viewpoints.</p>
 <p>The trail loops back via Goat Creek trail or you can simply turn around at any point for an out-and-back walk. The full loop crosses the Spray River on a footbridge about 6 km out and returns on the west bank.</p>
 
 <h2>Highlights</h2>
