@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'open',
-    conditionNote: 'Well-maintained winter trail, packed snow.',
-    conditionUpdated: '2026-04-16',
+    status: 'closed',
+    conditionNote: 'Not maintained in winter',
+    conditionUpdated: '2026-04-17',
   },
   {
     id: 'marsh-loop',
@@ -100,9 +100,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 4',
   
-    status: 'caution',
-    conditionNote: 'Partially snow-covered, icy patches.',
-    conditionUpdated: '2026-04-16',
+    status: 'open',
+    conditionNote: 'Good winter walking trail',
+    conditionUpdated: '2026-04-17',
   },
   {
     id: 'spray-river-east',
@@ -239,8 +239,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'caution',
-    conditionNote: 'Lower Falls open. Upper Falls trail icy, use caution.',
-    conditionUpdated: '2026-04-15',
+    conditionNote: 'Very icy, ice cleats required',
+    conditionUpdated: '2026-04-17',
   },
   {
     id: 'johnson-lake',
