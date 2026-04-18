@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'closed',
-    conditionNote: 'Not maintained in winter',
-    conditionUpdated: '2026-04-17',
+    status: 'open',
+    conditionNote: 'Trail groomed for cross-country skiing. Snowshoes welcome.',
+    conditionUpdated: '2026-04-18',
   },
   {
     id: 'marsh-loop',
@@ -238,9 +238,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'caution',
-    conditionNote: 'Very icy, ice cleats required',
-    conditionUpdated: '2026-04-17',
+    status: 'open',
+    conditionNote: 'Trail groomed for cross-country skiing. Snowshoes welcome.',
+    conditionUpdated: '2026-04-18',
   },
   {
     id: 'johnson-lake',
@@ -273,9 +273,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'closed',
-    conditionNote: 'Winter closure, not maintained.',
-    conditionUpdated: '2026-04-16',
+    status: 'open',
+    conditionNote: 'Not groomed but maintained. Snowshoes recommended.',
+    conditionUpdated: '2026-04-18',
   },
   {
     id: 'sunshine-meadows',
@@ -590,9 +590,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 1',
   
-    status: 'caution',
-    conditionNote: 'Icy sections, microspikes recommended.',
-    conditionUpdated: '2026-04-16',
+    status: 'open',
+    conditionNote: 'Trail groomed for cross-country skiing. Snowshoes welcome.',
+    conditionUpdated: '2026-04-18',
   },
   {
     id: 'tunnel-mountain-summit',
@@ -729,8 +729,8 @@ export const trails: Trail[] = [
     transitRoute: 'Norquay Shuttle',
   
     status: 'open',
-    conditionNote: 'Good winter conditions, packed trail.',
-    conditionUpdated: '2026-04-16',
+    conditionNote: 'Trail groomed for cross-country skiing. Snowshoes welcome.',
+    conditionUpdated: '2026-04-18',
   },
   {
     id: 'c-level-cirque',
@@ -2496,8 +2496,8 @@ export const trails: Trail[] = [
     parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
     status: 'open',
-    conditionNote: 'Groomed regularly Dec-Mar',
-    conditionUpdated: '2026-03-29',
+    conditionNote: 'Trail groomed for cross-country skiing.',
+    conditionUpdated: '2026-04-18',
     parkingCapacity: '20 vehicles',
     crowdLevel: { summer: 'low', winter: 'medium' },
   },
