@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'open',
-    conditionNote: 'Trail groomed for cross-country skiing. Snowshoes welcome.',
-    conditionUpdated: '2026-04-18',
+    status: 'closed',
+    conditionNote: 'Snow covered, not maintained',
+    conditionUpdated: '2026-04-19',
   },
   {
     id: 'marsh-loop',
@@ -101,8 +101,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 4',
   
     status: 'open',
-    conditionNote: 'Good winter walking trail',
-    conditionUpdated: '2026-04-17',
+    conditionNote: 'Clear and dry',
+    conditionUpdated: '2026-04-19',
   },
   {
     id: 'spray-river-east',
@@ -239,8 +239,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'open',
-    conditionNote: 'Trail groomed for cross-country skiing. Snowshoes welcome.',
-    conditionUpdated: '2026-04-18',
+    conditionNote: 'Lower Falls accessible, Upper Falls icy',
+    conditionUpdated: '2026-04-19',
   },
   {
     id: 'johnson-lake',
@@ -729,8 +729,8 @@ export const trails: Trail[] = [
     transitRoute: 'Norquay Shuttle',
   
     status: 'open',
-    conditionNote: 'Trail groomed for cross-country skiing. Snowshoes welcome.',
-    conditionUpdated: '2026-04-18',
+    conditionNote: 'Groomed, good conditions',
+    conditionUpdated: '2026-04-19',
   },
   {
     id: 'c-level-cirque',
@@ -1357,8 +1357,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'closed',
-    conditionNote: 'Not maintained in winter, avalanche risk.',
-    conditionUpdated: '2026-04-16',
+    conditionNote: 'Heavy snow, avalanche risk',
+    conditionUpdated: '2026-04-19',
   },
   {
     id: 'tramline',
@@ -2742,9 +2742,9 @@ export const trails: Trail[] = [
     parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: true,
     transitRoute: 'Roam Route 1',
-    status: 'open',
-    conditionNote: 'Groomed regularly Dec-Mar',
-    conditionUpdated: '2026-03-29',
+    status: 'caution',
+    conditionNote: 'Thin snow cover in spots',
+    conditionUpdated: '2026-04-19',
     parkingCapacity: '30 vehicles',
     crowdLevel: { summer: 'low', winter: 'medium' },
   },
