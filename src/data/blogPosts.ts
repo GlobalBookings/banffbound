@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'club-in-banff',
+    title: 'Best Nightlife Clubs in Banff 2026: Ultimate Party Guide',
+    description: 'Discover Banff\'s hottest nightlife spots in 2026! From trendy mountain clubs to cozy après-ski bars, find the ultimate party destinations in the Rockies.',
+    date: '2026-04-20',
+    category: 'Guides',
+    image: '/images/blog/club-in-banff.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'jasper-to-kamloops',
     title: 'Jasper to Kamloops via Banff: Epic 2026 Road Trip Guide',
     description: 'Discover the ultimate Canadian Rockies road trip from Jasper to Kamloops through Banff in 2026. Complete guide with routes, stops, and insider tips.',

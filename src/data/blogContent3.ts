@@ -1,4 +1,73 @@
 export const blogContent3: Record<string, string> = {
+  'club-in-banff': `
+<p>When people search for a "club in banff," they're usually looking for nightlife options in the Canadian Rockies. As someone who's spent countless evenings in Banff after long training runs and ski days, I can tell you that while this mountain town isn't exactly Montreal or Toronto, it does offer some solid options for drinks, dancing, and late-night fun. The club scene here caters mainly to tourists, seasonal workers, and locals who want to unwind after outdoor adventures.</p>
+
+<h2>Understanding Banff's Nightlife Scene</h2>
+
+<p>Banff's nightlife revolves around Banff Avenue and the surrounding streets, with most venues within walking distance of each other. The scene peaks during summer months (June through August) and winter ski season (December through March). Right now in April 2026, things are picking up as we head into the busy spring hiking season.</p>
+
+<p>The clientele is typically a mix of international tourists, seasonal workers from Australia and Europe, and Canadians on vacation. Don't expect massive dance floors or world-class DJs – this is mountain town nightlife with a focus on craft beer, live music, and a relaxed atmosphere.</p>
+
+<p>Most bars and clubs in Banff close at 2 AM, and cover charges range from \$5 to \$15 CAD depending on the night and event. I always recommend starting your evening with dinner at one of the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> before hitting the nightlife spots.</p>
+
+<h2>Top Clubs and Late-Night Venues in Banff</h2>
+
+<h3>HooDoos Lounge</h3>
+<p>Located in the Banff Caribou Lodge, HooDoos is probably the closest thing to a traditional nightclub you'll find in Banff. They have a decent-sized dance floor, regular DJ nights, and stay open until 2 AM on weekends. The music varies from top 40 hits to electronic dance music, depending on the night.</p>
+
+<p>I've been here several times after completing long training runs in the area, and the energy is usually good, especially during peak season. Cover charge is typically \$10 CAD on weekends. The crowd tends to be younger, with lots of seasonal workers and tourists in their twenties.</p>
+
+<h3>Wild Bill's Legendary Saloon</h3>
+<p>This Western-themed bar on Banff Avenue transforms into a club atmosphere later in the evening. They have live bands, mechanical bull riding, and a dance floor that gets packed on weekends. The music leans toward country and rock, but they mix in popular hits too.</p>
+
+<p>Wild Bill's is particularly busy during Stampede season and attracts both tourists wanting the "authentic Canadian experience" and locals who enjoy the casual atmosphere. Expect to pay around \$8 CAD cover on busy nights.</p>
+
+<h3>Dancing Sasquatch</h3>
+<p>Located upstairs from Melissa's MisSteak restaurant, Dancing Sasquatch offers a more intimate club experience. The space is smaller but the sound system is solid, and they often feature local DJs and live music acts. This spot tends to attract a slightly older crowd than some other venues.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> If you're staying at one of the hotels along Banff Avenue, everything is walkable. But if you're at one of the larger resort properties like Fairmont Banff Springs, arrange transportation back to your hotel before you start drinking – taxis can be scarce late at night, especially in winter.</div>
+
+<h2>Alternative Nightlife Options</h2>
+
+<h3>Craft Beer Scene</h3>
+<p>If clubs aren't your thing, Banff has an excellent craft beer scene that transitions into late-night socializing. Banff Ave Brewing Co. often has live music and stays busy until closing. Tank 310 in the Banff Park Lodge offers craft cocktails and a sophisticated atmosphere.</p>
+
+<p>These venues might not have dance floors, but they're great for meeting people and often have more interesting conversations than you'll find in the clubs. After a day on the trails or slopes, I often prefer these spots for their relaxed vibe.</p>
+
+<h3>Seasonal Events and Pop-Up Parties</h3>
+<p>Throughout 2026, various seasonal events create temporary club-like atmospheres. The Banff Centre often hosts events that combine culture with nightlife, and during major festivals, pop-up parties appear in unique locations.</p>
+
+<p>Summer brings outdoor concert venues and patio parties that extend late into the evening. Winter features après-ski parties at the local ski hills that sometimes continue in town later.</p>
+
+<h2>Planning Your Night Out</h2>
+
+<h3>Best Days to Go Out</h3>
+<p>Friday and Saturday nights are obviously the busiest, but Thursday nights can be surprisingly active, especially during peak tourist seasons. Monday through Wednesday tend to be quieter, though some venues still offer live music or special events.</p>
+
+<p>During my visits in peak season, I've noticed that Tuesday nights often feature live music at several venues, making it a good alternative to weekend crowds.</p>
+
+<h3>What to Expect Cost-Wise</h3>
+<p>Budget around \$100-150 CAD per person for a full night out, including dinner, drinks, and cover charges. Drinks are expensive – expect to pay \$8-12 CAD for beer and \$15-18 CAD for cocktails. Pre-drinking at your hotel isn't uncommon, though be responsible about it.</p>
+
+<p>Many people stay at budget accommodations and splurge on nightlife, or vice versa. Check out options to <a href="/hotel-directory">compare 95+ Banff hotels</a> to find something that fits your overall budget.</p>
+
+<h3>Transportation and Safety</h3>
+<p>Most nightlife venues are concentrated along Banff Avenue and within a few blocks of each other. Everything is walkable if you're staying downtown. The streets are well-lit and generally safe, but mountain weather can change quickly even in summer.</p>
+
+<p>If you're staying at properties further out, like some of the places detailed in our guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a>, plan your transportation in advance. Some hotels offer shuttle services, but they don't usually run late enough for the club scene.</p>
+
+<h2>Making the Most of Your Banff Experience</h2>
+
+<p>While the club scene in Banff is decent, most visitors find that the real magic happens during the day. I always recommend balancing nightlife with outdoor activities. Check out our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> for ideas on combining adventures with evening entertainment.</p>
+
+<p>The elevation (1,400 meters above sea level) means alcohol affects you more quickly than at sea level. Combined with physical exertion from hiking or skiing, this can catch people off guard. Stay hydrated and pace yourself.</p>
+
+<p>If you're visiting specifically for nightlife, consider booking tours through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> for daytime activities, then save your energy for evening adventures. Many outdoor activities here are physically demanding, so plan accordingly.</p>
+
+<p>For accommodations, <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> offers good deals on hotels within walking distance of the main nightlife strip. Staying central makes the biggest difference in your nightlife experience here.</p>
+
+<p>Remember that Banff is a small town within a national park, so the club scene reflects that environment. Come with realistic expectations, embrace the mountain town vibe, and you'll likely have a great time meeting fellow adventurers from around the world.</p>
+`,
   'jasper-to-kamloops': `
 <p>The route from Jasper to Kamloops might not seem directly connected to Banff, but as someone who's driven this stretch countless times after training camps in Jasper, I can tell you it's one of the most strategic routes for exploring the Canadian Rockies. Whether you're completing a loop that includes Banff, Jasper, and the interior valleys, or using Kamloops as your gateway to Vancouver after a Rockies adventure, this 350-kilometer journey offers incredible scenery and serves as the perfect bookend to any Banff-area expedition.</p>
 
