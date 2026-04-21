@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'closed',
-    conditionNote: 'Snow covered, not maintained',
-    conditionUpdated: '2026-04-19',
+    status: 'open',
+    conditionNote: 'Groomed for cross-country skiing, dogs not permitted on groomed sections',
+    conditionUpdated: '2026-04-21',
   },
   {
     id: 'marsh-loop',
@@ -239,8 +239,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 6',
   
     status: 'open',
-    conditionNote: 'Lower Falls accessible, Upper Falls icy',
-    conditionUpdated: '2026-04-19',
+    conditionNote: 'Lower Falls accessible, icy conditions - microspikes recommended',
+    conditionUpdated: '2026-04-21',
   },
   {
     id: 'johnson-lake',
@@ -273,9 +273,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'open',
-    conditionNote: 'Not groomed but maintained. Snowshoes recommended.',
-    conditionUpdated: '2026-04-18',
+    status: 'closed',
+    conditionNote: 'Winter closure - not maintained for vehicles',
+    conditionUpdated: '2026-04-21',
   },
   {
     id: 'sunshine-meadows',
@@ -591,8 +591,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 1',
   
     status: 'open',
-    conditionNote: 'Trail groomed for cross-country skiing. Snowshoes welcome.',
-    conditionUpdated: '2026-04-18',
+    conditionNote: 'Trail packed, some icy sections',
+    conditionUpdated: '2026-04-21',
   },
   {
     id: 'tunnel-mountain-summit',
@@ -2224,9 +2224,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/93N',
     transitAccessible: false,
   
-    status: 'open',
-    conditionNote: '',
-    conditionUpdated: '2026-03-29',
+    status: 'closed',
+    conditionNote: 'Winter closure - avalanche danger',
+    conditionUpdated: '2026-04-21',
   },
 
   // ── Icefields Parkway Challenging ─────────────────────────────────────
@@ -2495,9 +2495,9 @@ export const trails: Trail[] = [
     trailhead: 'Cascade Fire Road parking, Lake Minnewanka Road',
     parksCanadaUrl: 'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
-    status: 'open',
-    conditionNote: 'Trail groomed for cross-country skiing.',
-    conditionUpdated: '2026-04-18',
+    status: 'caution',
+    conditionNote: 'Winter closure from Johnston Canyon to Castle Junction - walkers and cyclists only',
+    conditionUpdated: '2026-04-21',
     parkingCapacity: '20 vehicles',
     crowdLevel: { summer: 'low', winter: 'medium' },
   },
