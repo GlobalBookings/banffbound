@@ -1554,7 +1554,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Best Happy Hour Deals in Banff',
     description: 'Find the best happy hour deals in Banff. Drink specials, appetizer deals, and the best après-hike bars and patios in town.',
     date: '2025-12-04',
-    lastUpdated: '2026-04-14',
+    lastUpdated: '2026-04-21',
     category: 'Food & Drink',
     image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80',
     readTime: '6 min read',
@@ -1716,7 +1716,8 @@ export const blogPosts: BlogPost[] = [
     slug: 'banff-vs-jasper',
     title: 'Banff vs Jasper: Which National Park Should You Visit?',
     description: 'Banff vs Jasper — an honest comparison. Which park is better for hiking, wildlife, scenery, crowds, and budget? We help you decide.',
-    date: '2026-03-17',
+    date: '2026-03-17'
+    lastUpdated: '2026-04-21',
     category: 'Planning',
     image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
     readTime: '9 min read',
