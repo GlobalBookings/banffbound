@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'backcountry-ski-touring',
+    title: 'Epic Banff Backcountry Ski Touring Guide 2026: Hidden Peaks',
+    description: 'Discover Banff\'s best-kept backcountry skiing secrets in 2026. Expert route guides, safety tips, and hidden powder stashes for epic alpine adventures.',
+    date: '2026-04-27',
+    category: 'Seasonal',
+    image: '/images/blog/backcountry-ski-touring.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'club-in-banff',
     title: 'Best Nightlife Clubs in Banff 2026: Ultimate Party Guide',
     description: 'Discover Banff\'s hottest nightlife spots in 2026! From trendy mountain clubs to cozy après-ski bars, find the ultimate party destinations in the Rockies.',

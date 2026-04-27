@@ -1,4 +1,70 @@
 export const blogContent3: Record<string, string> = {
+  'backcountry-ski-touring': `
+<p>Backcountry ski touring in Banff National Park offers some of the most spectacular alpine terrain in North America. Having spent countless winter days exploring these mountains on skis, I can tell you that the Canadian Rockies deliver endless powder runs, dramatic mountain vistas, and the kind of solitude that's increasingly rare in our crowded world. But venturing into Banff's backcountry demands serious preparation, local knowledge, and respect for the inherent risks.</p>
+
+<h2>Essential Preparation for Backcountry Ski Touring</h2>
+
+<p>Before you even think about clicking into touring bindings in Banff, you need proper avalanche education. I always recommend completing an Avalanche Skills Training (AST) 1 course at minimum—AST 2 if you plan to tackle more advanced terrain. The Canadian Avalanche Centre provides detailed daily bulletins for the parks, and I check these religiously before every tour.</p>
+
+<p>Your essential safety kit must include an avalanche transceiver, probe, and shovel. I've carried these on every single backcountry tour for over a decade, and while I hope to never use them in a rescue scenario, they're non-negotiable. Add a first aid kit, emergency shelter, headlamp, and extra batteries. Weather changes fast in the Rockies—I've experienced temperature drops of 20°C in under an hour.</p>
+
+<p>A Parks Canada backcountry permit is required for overnight trips, costing \$10.25 per person per night in 2026. Day tours don't require permits, but you still need to register your party and route with someone reliable.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Download the Parks Canada app before heading out. It works offline and contains detailed trail maps, current conditions, and emergency contact information that could save your life in remote areas.</div>
+
+<h2>Best Backcountry Ski Touring Areas in Banff</h2>
+
+<p><strong>Lake Louise Area</strong></p>
+<p>The Skoki Valley remains my favourite multi-day touring destination. The 14.5-kilometer approach from the Lake Louise ski area parking lot filters out casual visitors, leaving pristine powder in the bowls surrounding Skoki Lodge. I typically spend 2-3 days here, using the historic lodge as a base for exploring Deception Pass, Ptarmigan Peak, and the Skoki Lakes basin.</p>
+
+<p>For day tours, the Plain of Six Glaciers offers excellent beginner-friendly terrain. The summer hiking trail provides a reliable route, though you'll need to break trail after heavy snowfall. The views of Mount Victoria and Mount Lefroy are worth the 5.5-kilometer skin track.</p>
+
+<p><strong>Icefields Parkway Corridor</strong></p>
+<p>The drive along Highway 93 North opens access to world-class touring. Bow Summit provides multiple route options, from mellow runs suitable for intermediate skiers to the advanced terrain around Bow Hut. Parker Ridge offers spectacular views of the Saskatchewan Glacier, though the approach can be wind-scoured and icy.</p>
+
+<p>I particularly enjoy the Peyto Lake viewpoint area for shorter tours. The parking area sits at 2,070 meters, giving you a significant elevation head start. The terrain above treeline opens into perfect bowl skiing when conditions align.</p>
+
+<p><strong>Sunshine Village Access</strong></p>
+<p>Once Sunshine Village closes for the season (typically mid-April), the summer road provides access to incredible high-alpine terrain. The approach to Mount Assiniboine Provincial Park starts here, though that's a serious multi-day expedition requiring advanced skills.</p>
+
+<h2>Timing and Snow Conditions</h2>
+
+<p>The backcountry ski season in Banff typically runs from December through April, with peak conditions often occurring in February and March. However, I've enjoyed fantastic powder skiing as late as May in high-elevation areas above 2,400 meters.</p>
+
+<p>Early season touring (December-January) can be challenging due to shallow snowpack and unstable conditions. I focus on lower-elevation, well-traveled routes during these months. The Bow River valley and areas around Lake Minnewanka offer good options when higher terrain remains off-limits.</p>
+
+<p>Spring touring (March-April 2026) brings longer days and more stable snow, but also increased avalanche risk as temperatures fluctuate. I start tours earlier—often by 6 AM—to take advantage of firmer snow conditions and avoid afternoon warming.</p>
+
+<p>Current snow conditions vary dramatically by elevation and aspect. South-facing slopes can become wind-crusted and sun-affected, while north-facing aspects often hold powder for days after storms. I always dig snow pits to assess layer structure before committing to steep terrain.</p>
+
+<h2>Guided Tours and Local Resources</h2>
+
+<p>If you're new to backcountry skiing or unfamiliar with Banff's terrain, hiring a guide makes excellent sense. Yamnuska Mountain Adventures and White Mountain Adventures both offer single-day and multi-day touring programs. Expect to pay \$400-600 CAD per person for a full-day guided tour in 2026.</p>
+
+<p><a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> often features backcountry skiing experiences, though availability varies by season and conditions. I recommend booking well in advance, especially for peak season dates in February and March.</p>
+
+<p>For gear rentals, Chateau Mountain Sports in Lake Louise and Wilson Mountain Sports in Banff town both carry quality touring equipment. Daily rental rates for a complete setup (skis, boots, bindings, poles) run approximately \$60-75 CAD. Both shops employ knowledgeable staff who can provide current route beta and conditions updates.</p>
+
+<h2>Safety Considerations and Risk Management</h2>
+
+<p>Backcountry ski touring carries inherent risks that extend far beyond avalanches. Weather exposure, equipment failure, navigation errors, and simple injuries can quickly escalate into life-threatening situations when you're hours from help.</p>
+
+<p>I never tour alone—even short day trips. My preferred group size is 3-4 people, providing redundancy for rescue scenarios while keeping the party small enough to move efficiently. We always designate a trip leader and discuss emergency procedures before leaving the trailhead.</p>
+
+<p>Cell phone coverage in Banff's backcountry is sporadic at best. I carry a satellite communicator on every tour, allowing two-way text messaging and emergency SOS activation regardless of location. The peace of mind is worth the \$200-300 CAD investment.</p>
+
+<p>Wildlife encounters, while rare in winter, can occur. Mountain goats frequent high alpine areas, and I've occasionally seen mountain sheep on windswept ridges. Black bears typically hibernate through winter, but grizzly bears may emerge during warm spells in late season. Make noise when visibility is limited, and always carry bear spray.</p>
+
+<h2>Planning Your Banff Backcountry Ski Adventure</h2>
+
+<p>Most backcountry skiers base themselves in Banff town or Lake Louise village for easy access to trailheads and amenities. <a href="/hotel-directory">Compare 95+ Banff hotels</a> to find accommodation that suits your budget and location preferences. I typically stay somewhere with ski storage and drying facilities—essential after long days in the mountains.</p>
+
+<p>If you're combining backcountry skiing with other Banff activities, check out my <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> for trip planning ideas. The town offers excellent recovery options, from hot springs at Banff Upper Hot Springs to hearty meals at local establishments featured in my guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>.</p>
+
+<p>Book accommodations early for 2027 visits, especially if you're planning to visit during peak season. <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> typically offers competitive rates and flexible booking options for Banff properties.</p>
+
+<p>Backcountry ski touring in Banff delivers some of the most rewarding mountain experiences available anywhere. The combination of technical terrain, reliable snowfall, and stunning alpine scenery creates conditions that keep me returning year after year. Respect the mountains, prepare thoroughly, and you'll discover why the Canadian Rockies rank among the world's premier ski touring destinations.</p>
+`,
   'club-in-banff': `
 <p>When people search for a "club in banff," they're usually looking for nightlife options in the Canadian Rockies. As someone who's spent countless evenings in Banff after long training runs and ski days, I can tell you that while this mountain town isn't exactly Montreal or Toronto, it does offer some solid options for drinks, dancing, and late-night fun. The club scene here caters mainly to tourists, seasonal workers, and locals who want to unwind after outdoor adventures.</p>
 
