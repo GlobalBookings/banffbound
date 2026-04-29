@@ -1,4 +1,75 @@
 export const blogContent3: Record<string, string> = {
+  'banff-whiskey': `
+<p>After spending countless hours exploring Banff's trails and warming up in its cozy establishments, I've discovered that few things beat unwinding with a quality whiskey while surrounded by the Canadian Rockies. Whether you're recovering from a long day on the slopes at Lake Louise or celebrating a successful summit of Mount Rundle, Banff's whiskey scene offers something special for every palate and budget.</p>
+
+<h2>The Best Whiskey Bars and Lounges in Banff</h2>
+
+<p>My go-to spot for Banff whiskey has to be <strong>The Maple Leaf Grill & Lounge</strong> on Banff Avenue. Their whiskey selection focuses heavily on Canadian distilleries, with over 40 bottles including rare releases from Crown Royal and Lot 40. The bartenders know their stuff – ask for recommendations based on your taste preferences. Expect to pay \$18-35 CAD per pour for premium selections.</p>
+
+<p><strong>The Wild Flour Bakery Café</strong> might surprise you as a whiskey destination, but their evening hours feature a curated selection of local Alberta whiskeys. I particularly enjoy their flight options (\$45 CAD for three 1-oz pours) which let you compare different distillery styles without committing to full glasses.</p>
+
+<p>For a more upscale experience, <strong>The Rimrock Resort Hotel's Larkspur Restaurant</strong> maintains an impressive whiskey library with bottles reaching \$75 CAD per pour. The view of the Bow Valley makes it worth the splurge, especially during sunset hours. Book ahead – they only have 12 bar seats.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Many Banff establishments offer whiskey and food pairings during their quieter weekday evenings. The Maple Leaf does theirs on Tuesdays starting at 6 PM for \$85 CAD per person.</div>
+
+<h2>Canadian Whiskey Distilleries Near Banff</h2>
+
+<p>While Banff itself doesn't house any major distilleries, several Alberta producers create exceptional whiskeys that you'll find throughout town. <strong>Alberta Distillers Limited</strong> in Calgary (130km southeast) produces Alberta Premium and Lot 40 – both excellent representatives of Canadian rye whiskey tradition.</p>
+
+<p>I've visited <strong>Eau Claire Distillery</strong> in Turner Valley, about 90 minutes from Banff. Their EquineOx whiskey uses Rocky Mountain water and local grains. You can taste the difference that elevation and climate make in their final product. Their distillery tours run Thursday through Saturday (\$25 CAD including tastings) and make for an excellent day trip if you're staying in Banff for several days.</p>
+
+<p><strong>Shelter Point Distillery</strong> on Vancouver Island ships their single malt to several Banff retailers. While not local to Alberta, their use of Canadian barley and unique coastal aging process creates flavors you won't find elsewhere. Look for it at <strong>Cascade Liquor Store</strong> on Banff Avenue.</p>
+
+<h2>Where to Buy Banff Whiskey for Home</h2>
+
+<p>For taking Banff whiskey memories home, I recommend three reliable options. <strong>Cascade Liquor Store</strong> (317 Banff Avenue) stocks the widest selection of Canadian whiskeys in town, including limited releases that sell out quickly during peak season. Their staff can ship within Canada if your purchases exceed airline limits.</p>
+
+<p><strong>Banff Rocky Mountain Liquor Store</strong> on Bear Street offers competitive prices and often runs promotions on Alberta distilleries. I picked up a bottle of Lot 40 Cask Strength there for \$20 CAD less than Calgary prices during their spring 2026 sale.</p>
+
+<p>The <strong>Fairmont Banff Springs gift shop</strong> carries premium selections in beautiful packaging – perfect for gifts but expect to pay 20-30% above retail. Their exclusive Fairmont-labeled bottles make unique souvenirs despite the markup.</p>
+
+<h2>Pairing Whiskey with Banff Dining</h2>
+
+<p>Several restaurants excel at whiskey and food combinations. <strong>The Bison Restaurant</strong> pairs their Alberta beef with local whiskeys – their sommelier recommended Lot 40 with their bison ribeye, and the combination of peppery rye notes with rich meat was outstanding.</p>
+
+<p>For a comprehensive dining experience, check out our guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> where several establishments feature whiskey-focused menus.</p>
+
+<p><strong>Park Distillery</strong> combines dining with their own whiskey production. Their in-house spirits include a Rocky Mountain Single Malt that pairs beautifully with their wild game dishes. Reservations are essential during summer months – book through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> if you're staying nearby.</p>
+
+<h3>Whiskey Events and Tastings</h3>
+
+<p>The <strong>Banff World Media Festival</strong> typically includes whiskey tasting events each June, though 2026 dates aren't confirmed yet. These provide opportunities to sample rare bottles and meet other enthusiasts.</p>
+
+<p>Several hotels host weekly whiskey education sessions. The <strong>Moose Hotel & Suites</strong> runs "Whiskey Wednesdays" with rotating themes like "Single Malts of the Rockies" or "Rye Whiskey Deep Dive." Sessions cost \$35 CAD and include four tastings plus appetizers.</p>
+
+<h2>Planning Your Whiskey-Focused Banff Trip</h2>
+
+<p>If whiskey appreciation is central to your Banff visit, I recommend staying in downtown Banff where most establishments are walkable. Check our <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> guide for accommodations near the main whiskey venues.</p>
+
+<p>Spring visits (April through May 2026) offer advantages for whiskey enthusiasts. Tourist crowds are lighter, making bar conversations easier, and many establishments offer off-season tastings. However, some hotel bars reduce hours during shoulder seasons – call ahead to confirm schedules.</p>
+
+<p>For outdoor activities between tastings, consider our <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> for morning adventures that build up an appetite for evening whiskey appreciation. The Tunnel Mountain trail offers a manageable 2.3km hike with excellent town views.</p>
+
+<h3>Transportation and Safety</h3>
+
+<p>Banff's compact downtown makes whiskey bar hopping feasible on foot. Most venues cluster within a six-block radius of Banff Avenue and Caribou Street. For outlying locations like the Rimrock Resort, taxi service runs \$15-20 CAD from downtown.</p>
+
+<p><strong>Banff Transit</strong> operates until 11 PM most nights, providing safe transportation back to hotels for \$2 CAD per ride. The Route 1 bus connects most major hotels with downtown bars.</p>
+
+<p>Always plan transportation before drinking. Banff RCMP actively patrol for impaired driving, and penalties are severe. Most hotels can arrange designated driver services or recommend reliable taxi companies.</p>
+
+<h2>Seasonal Considerations for Whiskey Enthusiasts</h2>
+
+<p>Winter months (December through March) create cozy whiskey weather, but also bring Banff's highest accommodation rates and crowds. Book well in advance and expect premium prices at popular establishments.</p>
+
+<p>Summer offers the longest bar hours and most special events, though you'll compete with peak tourist volumes. Many patios serve whiskey cocktails with Rocky Mountain views – a unique experience worth the seasonal crowds.</p>
+
+<p>Fall provides my favorite whiskey drinking conditions. September and October weather remains pleasant for walking between venues, tourist numbers drop significantly, and many establishments offer harvest-themed whiskey cocktails featuring local ingredients.</p>
+
+<p>For extended stays, consider our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> which balances outdoor activities with evening relaxation time. This schedule works well for incorporating whiskey appreciation without dominating your entire trip.</p>
+
+<p>Whether you're a serious whiskey collector or simply curious about Canadian distilling traditions, Banff offers authentic tasting experiences surrounded by some of Canada's most spectacular mountain scenery. The combination of quality spirits, knowledgeable staff, and Rocky Mountain ambiance creates whiskey experiences you won't find in larger cities.</p>
+`,
   'backcountry-ski-touring': `
 <p>Backcountry ski touring in Banff National Park offers some of the most spectacular alpine terrain in North America. Having spent countless winter days exploring these mountains on skis, I can tell you that the Canadian Rockies deliver endless powder runs, dramatic mountain vistas, and the kind of solitude that's increasingly rare in our crowded world. But venturing into Banff's backcountry demands serious preparation, local knowledge, and respect for the inherent risks.</p>
 

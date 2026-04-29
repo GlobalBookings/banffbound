@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-whiskey',
+    title: 'Banff Whiskey Trail 2026: Your Complete Rocky Mountain Guide',
+    description: 'Discover Banff\'s premier whiskey trail in 2026! Explore Rocky Mountain distilleries, craft tastings, and scenic routes through Canada\'s stunning national park.',
+    date: '2026-04-29',
+    category: 'Guides',
+    image: '/images/blog/banff-whiskey.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'backcountry-ski-touring',
     title: 'Epic Banff Backcountry Ski Touring Guide 2026: Hidden Peaks',
     description: 'Discover Banff\'s best-kept backcountry skiing secrets in 2026. Expert route guides, safety tips, and hidden powder stashes for epic alpine adventures.',
