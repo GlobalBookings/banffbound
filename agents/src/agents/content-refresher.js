@@ -353,7 +353,7 @@ function updatePostDate(slug, newDate) {
       log.error(`Could not find date entry for slug "${slug}" in blogPosts.ts`);
       return false;
     }
-    content = content.replace(regex, `$1\n    lastUpdated: '${newDate}',$2`);
+    content = content.replace(regex, `$1,\n    lastUpdated: '${newDate}',$2`);
   }
 
   fs.writeFileSync(blogData, content);
