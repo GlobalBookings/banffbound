@@ -115,6 +115,23 @@ public/           # favicon.svg, favicon.ico, static assets
 - Domain: banffbound.com (configured in DO App Platform)
 - SSL: Auto-provisioned by DigitalOcean
 
+## Known Issues & Fixes
+
+### Missing comma before `lastUpdated` in blogPosts.ts (May 2026)
+- **Symptom:** Build fails with `Expected "}" but found "lastUpdated"` at a line in `src/data/blogPosts.ts`
+- **Root cause:** The `updatePostDate()` function in `agents/src/agents/content-refresher.js` had a regex that consumed the trailing comma after the `date:` field but didn't preserve it in the replacement string. When a post had no `lastUpdated` and one was being inserted for the first time, the output was:
+  ```
+  date: '2026-03-17'
+  lastUpdated: '2026-04-21',
+  ```
+  instead of:
+  ```
+  date: '2026-03-17',
+  lastUpdated: '2026-04-21',
+  ```
+- **Fix:** Changed the replacement from `` `$1\n    lastUpdated: ...` `` to `` `$1,\n    lastUpdated: ...` `` to re-insert the comma consumed by the regex.
+- **Lesson:** Any agent script that modifies `blogPosts.ts` via regex must ensure all object properties retain their trailing commas. Always test the output with `npx astro build` before pushing.
+
 ## Content Expansion Notes
 - BLLT sitemap has ~400+ URLs covering experiences, blog posts, trip ideas, accommodation listings
 - Priority gaps to fill: individual experience pages, horseback riding, climbing/canyoning, fishing, cross-country skiing, fat biking, running, tubing, golf, indoor activities, arts & culture deep dives
