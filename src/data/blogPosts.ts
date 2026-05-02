@@ -11,6 +11,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'conde-nast-banff',
+    title: 'Conde Nast\'s Ultimate Banff Travel Guide 2026: Hidden Gems',
+    description: 'Discover Banff\'s best-kept secrets in 2026 with Conde Nast\'s insider guide. Explore hidden trails, local hotspots, and off-the-beaten-path gems beyond the crowds.',
+    date: '2026-05-02',
+    category: 'Guides',
+    image: '/images/blog/conde-nast-banff.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-snowboarding',
+    title: 'Banff Snowboarding Guide 2026: Epic Slopes & Hidden Gems',
+    description: 'Discover Banff\'s best snowboarding spots in 2026! From world-class slopes at Lake Louise to secret powder stashes, find epic runs and hidden gems in the Rockies.',
+    date: '2026-05-02',
+    category: 'Guides',
+    image: '/images/blog/banff-snowboarding.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-whiskey',
     title: 'Banff Whiskey Trail 2026: Your Complete Rocky Mountain Guide',
     description: 'Discover Banff\'s premier whiskey trail in 2026! Explore Rocky Mountain distilleries, craft tastings, and scenic routes through Canada\'s stunning national park.',
