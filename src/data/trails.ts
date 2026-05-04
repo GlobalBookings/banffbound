@@ -101,8 +101,8 @@ export const trails: Trail[] = [
     transitRoute: 'Roam Route 4',
   
     status: 'open',
-    conditionNote: 'Well maintained, some snow patches',
-    conditionUpdated: '2026-04-22',
+    conditionNote: 'Good conditions for cross-country skiing and snowshoeing',
+    conditionUpdated: '2026-05-04',
   },
   {
     id: 'spray-river-east',
@@ -238,9 +238,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'closed',
-    conditionNote: 'Trail not maintained beyond Lower Falls',
-    conditionUpdated: '2026-04-22',
+    status: 'open',
+    conditionNote: 'Lower Falls accessible, Upper Falls good conditions',
+    conditionUpdated: '2026-05-04',
   },
   {
     id: 'johnson-lake',
@@ -273,9 +273,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 6',
   
-    status: 'caution',
-    conditionNote: 'Icy trail conditions, traction devices recommended',
-    conditionUpdated: '2026-04-29',
+    status: 'closed',
+    conditionNote: 'Road closed to vehicles, accessible on foot/ski only',
+    conditionUpdated: '2026-05-04',
   },
   {
     id: 'sunshine-meadows',
@@ -590,9 +590,9 @@ export const trails: Trail[] = [
     transitAccessible: true,
     transitRoute: 'Roam Route 1',
   
-    status: 'open',
-    conditionNote: 'Trail in good condition, some snow patches',
-    conditionUpdated: '2026-04-29',
+    status: 'caution',
+    conditionNote: 'Icy conditions on upper sections, microspikes recommended',
+    conditionUpdated: '2026-05-04',
   },
   {
     id: 'tunnel-mountain-summit',
@@ -1356,9 +1356,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/lakelouise',
     transitAccessible: false,
   
-    status: 'caution',
-    conditionNote: 'Snow and ice present, proper winter gear required',
-    conditionUpdated: '2026-04-29',
+    status: 'closed',
+    conditionNote: 'Trail not maintained beyond teahouse in winter',
+    conditionUpdated: '2026-05-04',
   },
   {
     id: 'tramline',
