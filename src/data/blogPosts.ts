@@ -11,6 +11,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-ski',
+    title: 'Ultimate Banff Ski Guide 2026: Slopes, Snow & Adventures',
+    description: 'Discover Banff\'s best ski resorts, powder conditions, and mountain adventures in our comprehensive 2026 guide. From beginner slopes to expert terrain.',
+    date: '2026-05-04',
+    category: 'Seasonal',
+    image: '/images/blog/banff-ski.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-big-3',
+    title: 'Banff\'s Big 3: Your Ultimate 2026 Adventure Guide',
+    description: 'Discover Banff\'s iconic Big 3 peaks in 2026! Your complete adventure guide to Lake Louise, Moraine Lake & Mount Assiniboine with insider tips & trails.',
+    date: '2026-05-04',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-ski-resorts',
+    title: 'Banff\'s Best Ski Resorts 2026: Ultimate Powder Paradise Guide',
+    description: 'Discover Banff\'s top ski resorts in 2026! From world-class powder at Lake Louise to Sunshine Village\'s epic terrain. Your ultimate guide to skiing paradise.',
+    date: '2026-05-04',
+    category: 'Seasonal',
+    image: '/images/blog/banff-ski-resorts.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'conde-nast-banff',
     title: 'Conde Nast\'s Ultimate Banff Travel Guide 2026: Hidden Gems',
     description: 'Discover Banff\'s best-kept secrets in 2026 with Conde Nast\'s insider guide. Explore hidden trails, local hotspots, and off-the-beaten-path gems beyond the crowds.',
