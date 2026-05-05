@@ -1439,15 +1439,17 @@ export const blogContent1: Record<string, string> = {
 <p>A stay at Num-Ti-Jah Lodge offers more than just accommodation—it's a gateway to experiencing the raw beauty and clean wilderness of the Canadian Rockies in their most authentic form. For anyone watching sunrise paint the peaks in alpenglow from your lakefront room, hiking to hidden waterfalls, or simply enjoying a hearty meal while gazing across the turquoise waters of Bow Lake, this historic lodge provides memories that will last a lifetime. For booking your accommodations throughout Banff National Park, check availability on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>, and don't forget to explore additional mountain adventures and guided tours through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your Canadian Rockies experience.</p>
 `,
   'fancy-hotel-in-banff': `
-<p>When you're planning the ultimate luxurious mountain retreat, Banff's premium hotels deliver experiences that match the grandeur of the Canadian Rockies. Located in the heart of Banff National Park, these accommodations combine alpine elegance with modern sophistication. Having stayed at each of these properties multiple times during my training camps and recovery weeks, I can confidently say that Banff's luxury hotels offer some of North America's finest mountain hospitality - perfect for celebrating special occasions or simply indulging after crushing a long trail run in the backcountry.</p>
+<p>When you're planning the ultimate luxurious mountain retreat, Banff's premium hotels deliver experiences that match the grandeur of the Canadian Rockies. Located in Banff National Park, these accommodations combine alpine elegance with modern sophistication. Having stayed at each of these properties multiple times during my training camps and recovery weeks, I can confidently say that Banff's luxury hotels offer some of North America's finest mountain hospitality - perfect for celebrating special occasions or simply indulging after crushing a long trail run in the backcountry.</p>
 
 <h2>The Crown Jewel: Fairmont Banff Springs</h2>
 
 <p>When discussing luxury hotels in Banff, the conversation inevitably begins with the iconic <strong>Fairmont Banff Springs</strong>. Known as the "Castle in the Rockies," this legendary hotel has been welcoming guests since 1888 and remains the epitome of mountain luxury. The hotel's distinctive Scottish Baronial architecture stands majestically against the surrounding peaks, creating one of the most photographed hotels in the world.</p>
 
-<p>The Fairmont Banff Springs offers 764 rooms and suites, each thoughtfully appointed with mountain-inspired décor and modern amenities. Premium suites feature fireplaces, marble bathrooms, and stunning views of either the Bow Valley or Sulphur Mountain. For 2026, room rates typically start around \$450 CAD per night for standard rooms during shoulder season (April-May), climbing to \$900+ CAD for premium suites during peak summer months.</p>
+<p>The Fairmont Banff Springs offers 764 rooms and suites, each thoughtfully appointed with mountain-inspired décor and modern amenities. Premium suites feature fireplaces, marble bathrooms, and stunning views of either the Bow Valley or Sulphur Mountain. For summer 2026, room rates typically start around \$520 CAD per night for standard rooms during shoulder season (late August through September), climbing to \'fancy-hotel-in-banff': `,050+ CAD for premium suites during peak July and August weekends.</p>
 
 <p>The hotel's amenities are nothing short of impressive. The <em>Willow Stream Spa</em> spans 35,000 square feet and offers European-inspired treatments using natural Rocky Mountain elements. After particularly demanding training blocks, I've found their deep tissue massage treatments exceptional for recovery. The championship golf course, designed by Stanley Thompson, provides 27 holes of challenging play with spectacular mountain vistas. Dining options include the award-winning <strong>1888 Chop House</strong>, known for its Alberta beef and extensive wine cellar, and the elegant <strong>Bow Valley Grill</strong>, perfect for refined Canadian cuisine.</p>
+
+<p>For 2026, the hotel has introduced new concierge services specifically for active guests, including gear storage, equipment cleaning, and early breakfast options for those tackling dawn alpine starts. I particularly appreciate their new 5:30 AM continental breakfast service - perfect before heading out to <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> like Plain of Six Glaciers.</p>
 
 <h2>Intimate Luxury: Rimrock Resort Hotel</h2>
 
@@ -1455,7 +1457,24 @@ export const blogContent1: Record<string, string> = {
 
 <p>The Rimrock features 345 elegantly appointed rooms and suites, many with floor-to-ceiling windows that showcase the dramatic alpine landscape. The hotel's signature restaurant, <strong>Eden</strong>, consistently ranks among Canada's top dining establishments, offering contemporary cuisine with locally sourced ingredients. The wine list features over 200 selections, with many exclusive vintages not available elsewhere in the region.</p>
 
-<p>What sets the Rimrock apart is its exclusive location – being situated outside the townsite means fewer crowds and a more serene atmosphere. The hotel provides complimentary shuttle service to downtown Banff every 30 minutes, making it easy to explore local attractions while maintaining a peaceful retreat. Room rates for 2026 typically range from \`,80-650 CAD per night, depending on the season and room category. I particularly appreciate staying here during race recovery periods, as the elevated location provides cooler temperatures and cleaner air.</p>
+<p>What sets the Rimrock apart is its exclusive location – being situated outside the townsite means fewer crowds and a more serene atmosphere. The hotel provides complimentary shuttle service to downtown Banff every 30 minutes from 7 AM to 11 PM, making it easy to explore local attractions while maintaining a peaceful retreat. Room rates for summer 2026 typically range from \$485-\$650 CAD per night for standard rooms, with suites starting at \$850 CAD.</p>
+
+<h2>Contemporary Excellence: The Post Hotel & Spa</h2>
+
+<p>Located 8 km from Banff townsite in the Pipestone River Valley, <strong>The Post Hotel & Spa</strong> represents the pinnacle of boutique luxury in the Canadian Rockies. This Relais & Châteaux property has earned international acclaim for its impeccable service and exceptional cuisine since 1978.</p>
+
+<p>The Post Hotel features just 92 rooms and suites, ensuring personalized attention that larger properties cannot match. Each accommodation showcases rustic elegance with handcrafted log furniture, European linens, and private balconies or patios. The property's restaurant holds the distinction of maintaining the region's most extensive wine cellar, with over 25,000 bottles and 2,500 labels.</p>
+
+<p>During my recovery weeks here, I've found the spa treatments particularly effective for addressing the muscle fatigue that comes with high-altitude training. Their outdoor hot springs-style pools remain heated year-round, perfect for post-workout recovery sessions even in January's -25°C temperatures. For 2026, summer rates start at \$695 CAD per night for riverside rooms, climbing to \'fancy-hotel-in-banff': `,200+ CAD for premium suites during peak season.</p>
+
+<h2>Booking Your Luxury Banff Experience</h2>
+
+<p>When securing reservations at these premium properties, book at least 4-6 months in advance for summer stays, especially for July and August. I recommend checking <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for package deals that include spa credits or dining vouchers. For comprehensive comparisons of all available luxury options, visit our <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory.</p>
+
+<p>Pro tip from my frequent stays: request mountain-facing rooms on floors 3-5 at any of these hotels for optimal views without excessive elevation. If you're planning to combine luxury accommodation with adventure activities, <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers excellent guided experiences that pair perfectly with these hotel stays.</p>
+
+<p>For those weighing different accommodation styles and locations, check out our comprehensive guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> to understand how these luxury properties fit into your overall trip planning. Each of these hotels provides the perfect base for exploring everything from the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> to the most challenging alpine routes - just be prepared to pay premium prices for the privilege of mountain luxury at its finest.</p>
+`,80-650 CAD per night, depending on the season and room category. I particularly appreciate staying here during race recovery periods, as the elevated location provides cooler temperatures and cleaner air.</p>
 
 <div class="tip-box"><strong>Pro Tip:</strong> Book your luxury hotel stay for late April or early May 2026 to enjoy spring skiing at nearby Lake Louise and Sunshine Village while taking advantage of lower shoulder-season rates before the busy summer period begins. The weather is perfect for both skiing and hiking during this transition period.</div>
 
@@ -6336,6 +6355,30 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Wildlife Safety:</strong> Keep your dog on leash at ALL times. Off-leash dogs can provoke wildlife attacks — a dog chasing an elk or surprising a bear puts both your dog and you in serious danger. Bears can be attracted by dog food, so store it securely just like human food.</div>
 `,
   'banff-nightlife-guide': `
+<p>Banff may be a small mountain town, but its nightlife punches well above its weight. Fuelled by a young, international workforce of ski bums, hospitality workers, and adventure-seekers, Banff after dark is lively, fun, and refreshingly unpretentious. Having spent countless evenings here after long training runs and ski days, I can tell you the scene is authentic and welcoming. Here's your guide to the best bars, pubs, and entertainment in Canada's most famous mountain town.</p>
+
+<h2>Best Bars & Pubs</h2>
+
+<h3>The Rose & Crown</h3>
+<p>A Banff institution and the undisputed king of Banff nightlife. This British-style pub has been the town's social hub for decades. The main floor has a classic pub atmosphere with big screens, pool tables, and a solid food menu. Upstairs, the rooftop patio offers drinks with mountain views. Live bands play regularly on weekends, and the dance floor gets packed late on Friday and Saturday nights. I've noticed they've expanded their local beer selection significantly in 2026, with eight taps now featuring Alberta craft breweries.</p>
+
+<h3>Elk & Oarsman</h3>
+<p>Affectionately known as the "Elk" by locals, this pub is where the town's young hospo workers go after their shifts. Cheap drinks, a pool table, darts, and a no-frills atmosphere make it a favourite for a casual night out. The patio is lively in summer. This is where you meet Banff's international community of seasonal workers. Expect pints around \$8-9 CAD and shots for \$6-7 CAD — some of the most reasonable prices on Banff Avenue.</p>
+
+<h3>Banff Ave Brewing Co.</h3>
+<p>Banff's original craft brewery doubles as one of the best evening hangouts. House-brewed beers (try the Head Smashed IPA or seasonal specials), solid pub food, and a spacious interior with a rooftop patio. A good starting point for a night out — the atmosphere is welcoming and the beer is fresh. Their flight of four 5oz samples runs \'banff-nightlife-guide': `8 CAD and is perfect for trying their rotating seasonal selections.</p>
+
+<h3>Park Distillery</h3>
+<p>More sophisticated than a typical bar, Park Distillery makes its craft spirits with glacial water on-site. The cocktail menu is creative and the campfire-cooked food is excellent. Dimly lit, atmospheric, and with a grown-up vibe — this is the place for craft cocktails and conversation. Try the signature Park Old Fashioned. Cocktails range from \'banff-nightlife-guide': `6-22 CAD, but the quality justifies the price point.</p>
+
+<h3>High Rollers</h3>
+<p>A bowling alley-meets-cocktail lounge that's become one of Banff's most popular evening spots. Bowl a few frames while sipping expertly mixed cocktails. The atmosphere is fun and energetic, and it's a great option for groups. Book a lane in advance on weekends. Lane rentals start at \$45 CAD per hour, and I recommend booking by 2pm on Fridays and Saturdays during peak season.</p>
+
+<h3>Wild Bill's Legendary Saloon</h3>
+<p>A Banff classic. Wild Bill's is part bar, part live music venue, part late-night dance spot. The Western saloon theme is leaned into fully — think cowboy hats, line dancing, and country music mixed with top 40 and DJ sets later in the evening. If you want to dance in Banff, this is where you end up. They've added a mechanical bull in 2026, which gets surprisingly competitive after 10pm.</p>
+
+<h3>The Bear Street Tavern</h3>
+<p>A relaxed, wood-fired-pizza-and-beer kind of place that's great for an early evening hangout. The pizza is some of the best in town, and the craft beer selection is excellent. Not a late-night spot, but perfect for starting the evening with food and a few drinks. Their 16-inch pizzas (\
 <p><a href="/blog/banff-vegan-guide">Vegan & Vegetarian Dining in <a href="/blog/banff-ice-cream-guide">Best Ice Cream & Gelato in Banff</a></a> may be a small mountain town, but its nightlife punches well above its weight. Fuelled by a young, international workforce of ski bums, hospitality workers, and adventure-seekers, Banff after dark is lively, fun, and refreshingly unpretentious. Here's your guide to the best bars, pubs, and entertainment in Canada's most famous mountain town.</p>
 
 <h2>Best Bars & Pubs</h2>
@@ -6391,6 +6434,103 @@ export const blogContent1: Record<string, string> = {
 </ul>
 
 <div class="tip-box"><strong>Pro Night Out:</strong> Start with cocktails at <strong>Park Distillery</strong>, walk to <strong>Bear Street Tavern</strong> for pizza, then head to <strong>The Rose & Crown</strong> for live music and dancing. Grab a late-night slice at Aardvark's on the way home. Classic Banff night out.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
+4-28 CAD) easily feed two people, making it great value for Banff.</p>
+
+<h2>Live Music</h2>
+<p>Banff has a surprisingly active live music scene, especially on weekends. Key venues include:</p>
+<ul>
+<li><strong>The Rose & Crown:</strong> Live bands most Friday and Saturday nights — rock, blues, and cover bands</li>
+<li><strong>Wild Bill's:</strong> Country, rock, and DJ nights</li>
+<li><strong>The Banff Centre:</strong> The Banff Centre for Arts and Creativity hosts concerts, performances, and cultural events in more formal settings — from classical to jazz to world music. Check their events calendar</li>
+</ul>
+
+<h2>Late Night Options</h2>
+<p>Banff bars typically close at 2am. The late-night progression usually goes something like: dinner → patio drinks → Rose & Crown or Wild Bill's → late-night pizza. Popular late-night food stops include <strong>Aardvark's Pizza</strong> (slices until 2:30am) and <strong>Eddie Burger</strong> (until 3am on weekends). I've learned that Aardvark's runs out of pepperoni by 1:30am on busy nights, so get there earlier if that's your go-to slice.</p>
+
+<h2>Après-Ski Scene</h2>
+<p>In winter, the après-ski scene is a big part of Banff nightlife:</p>
+<ul>
+<li><strong>Mad Trapper's Saloon (Sunshine Village):</strong> The legendary on-mountain après spot with live music and a rowdy ski-day-ending atmosphere</li>
+<li><strong>Banff Ave Brewing Co.:</strong> A popular post-ski stop for flights and food</li>
+<li><strong>The Rose & Crown:</strong> Fills up by 4pm after the lifts close</li>
+</ul>
+
+<h2>Summer Patio Scene</h2>
+<p>Summer 2026 has brought some changes to Banff's patio culture. The Rose & Crown's rooftop gets busy by 6pm on sunny evenings, while Park Distillery's ground-level patio offers better mountain views and tends to be less crowded. I've found that Banff Ave Brewing's rooftop patio is your best bet for catching sunset — grab a spot by 7:30pm from June through August. Most patios now accept reservations for groups of six or more, which wasn't always the case.</p>
+
+<h2>Tips for Banff Nightlife</h2>
+<ul>
+<li>Most bars don't charge a cover — a pleasant surprise for a tourist town</li>
+<li>Expect a mix of tourists, seasonal workers, and locals at most venues</li>
+<li>Banff is walkable — you won't need a car or taxi to bar-hop</li>
+<li>Drink prices are 15-20% higher than Calgary due to the mountain town premium</li>
+<li>Weekends are busiest; mid-week can be surprisingly quiet outside peak seasons</li>
+<li>The legal drinking age in Alberta is 18 — expect a younger crowd at some venues</li>
+<li>Download the Banff app for real-time updates on live music schedules and drink specials</li>
+</ul>
+
+<h2>Planning Your Night Out</h2>
+<p>Based on my regular visits, here's what works: Reserve patio tables in advance during summer months, especially for groups larger than four. Most venues now use OpenTable or direct booking systems. If you're staying outside downtown, the Roam Transit Route 1 runs until midnight on weekends and costs just \
+<p><a href="/blog/banff-vegan-guide">Vegan & Vegetarian Dining in <a href="/blog/banff-ice-cream-guide">Best Ice Cream & Gelato in Banff</a></a> may be a small mountain town, but its nightlife punches well above its weight. Fuelled by a young, international workforce of ski bums, hospitality workers, and adventure-seekers, Banff after dark is lively, fun, and refreshingly unpretentious. Here's your guide to the best bars, pubs, and entertainment in Canada's most famous mountain town.</p>
+
+<h2>Best Bars & Pubs</h2>
+
+<h3>The Rose & Crown</h3>
+<p>A Banff institution and the undisputed king of Banff nightlife. This British-style pub has been the town's social hub for decades. The main floor has a classic pub atmosphere with big screens, pool tables, and a solid food menu. Upstairs, the rooftop patio offers drinks with mountain views. Live bands play regularly on weekends, and the dance floor gets packed late on Friday and Saturday nights.</p>
+
+<h3>Elk & Oarsman</h3>
+<p>Affectionately known as the "Elk" by locals, this pub is where the town's young hospo workers go after their shifts. Cheap drinks, a pool table, darts, and a no-frills atmosphere make it a favourite for a casual night out. The patio is lively in summer. This is where you meet Banff's international community of seasonal workers.</p>
+
+<h3>Banff Ave Brewing Co.</h3>
+<p>Banff's original craft brewery doubles as one of the best evening hangouts. House-brewed beers (try the Head Smashed IPA or seasonal specials), solid pub food, and a spacious interior with a rooftop patio. A good starting point for a night out — the atmosphere is welcoming and the beer is fresh.</p>
+
+<h3>Park Distillery</h3>
+<p>More sophisticated than a typical bar, Park Distillery makes its craft spirits with glacial water on-site. The cocktail menu is creative and the campfire-cooked food is excellent. Dimly lit, atmospheric, and with a grown-up vibe — this is the place for craft cocktails and conversation. Try the signature Park Old Fashioned.</p>
+
+<h3>High Rollers</h3>
+<p>A bowling alley-meets-cocktail lounge that's become one of Banff's most popular evening spots. Bowl a few frames while sipping expertly mixed cocktails. The atmosphere is fun and energetic, and it's a great option for groups. Book a lane in advance on weekends.</p>
+
+<h3>Wild Bill's Legendary Saloon</h3>
+<p>A Banff classic. Wild Bill's is part bar, part live music venue, part late-night dance spot. The Western saloon theme is leaned into fully — think cowboy hats, line dancing, and country music mixed with top 40 and DJ sets later in the evening. If you want to dance in Banff, this is where you end up.</p>
+
+<h3>The Bear Street Tavern</h3>
+<p>A relaxed, wood-fired-pizza-and-beer kind of place that's great for an early evening hangout. The pizza is some of the best in town, and the craft beer selection is excellent. Not a late-night spot, but perfect for starting the evening with food and a few drinks.</p>
+
+<h2>Live Music</h2>
+<p>Banff has a surprisingly active live music scene, especially on weekends. Key venues include:</p>
+<ul>
+<li><strong>The Rose & Crown:</strong> Live bands most Friday and Saturday nights — rock, blues, and cover bands</li>
+<li><strong>Wild Bill's:</strong> Country, rock, and DJ nights</li>
+<li><strong>The Banff Centre:</strong> The Banff Centre for Arts and Creativity hosts concerts, performances, and cultural events in more formal settings — from classical to jazz to world music. Check their events calendar</li>
+</ul>
+
+<h2>Late Night Options</h2>
+<p>Banff bars typically close at 2am. The late-night progression usually goes something like: dinner → patio drinks → Rose & Crown or Wild Bill's → late-night pizza. Popular late-night food stops include <strong>Aardvark's Pizza</strong> (slices until late) and <strong>Eddie Burger</strong>.</p>
+
+<h2>Après-Ski Scene</h2>
+<p>In winter, the après-ski scene is a big part of Banff nightlife:</p>
+<ul>
+<li><strong>Mad Trapper's Saloon (Sunshine Village):</strong> The legendary on-mountain après spot with live music and a rowdy ski-day-ending atmosphere</li>
+<li><strong>Banff Ave Brewing Co.:</strong> A popular post-ski stop for flights and food</li>
+<li><strong>The Rose & Crown:</strong> Fills up by 4pm after the lifts close</li>
+</ul>
+
+<h2>Tips for Banff Nightlife</h2>
+<ul>
+<li>Most bars don't charge a cover — a pleasant surprise for a tourist town</li>
+<li>Expect a mix of tourists, seasonal workers, and locals at most venues</li>
+<li>Banff is walkable — you won't need a car or taxi to bar-hop</li>
+<li>Drink prices are slightly higher than Calgary due to the mountain town premium</li>
+<li>Weekends are busiest; mid-week can be surprisingly quiet outside peak seasons</li>
+<li>The legal drinking age in Alberta is 18 — expect a younger crowd at some venues</li>
+</ul>
+
+<div class="tip-box"><strong>Pro Night Out:</strong> Start with cocktails at <strong>Park Distillery</strong>, walk to <strong>Bear Street Tavern</strong> for pizza, then head to <strong>The Rose & Crown</strong> for live music and dancing. Grab a late-night slice at Aardvark's on the way home. Classic Banff night out.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
+ CAD. For accommodation close to the action, check rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> — staying within two blocks of Banff Avenue puts you walking distance from every venue mentioned here. For more dining options to fuel your night out, see our guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>.</p>
+
+<div class="tip-box"><strong>Pro Night Out:</strong> Start with cocktails at <strong>Park Distillery</strong> (7pm), walk to <strong>Bear Street Tavern</strong> for pizza (8:30pm), then head to <strong>The Rose & Crown</strong> for live music and dancing (10pm). Grab a late-night slice at Aardvark's on the way home. Classic Banff night out that I've done dozens of times after long training days.</div>
+
+<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip. For comprehensive accommodation options, visit our <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory.</p>
 `,
   'peyto-lake-guide': `
 <p>Peyto Lake is one of the most photographed lakes in the Canadian Rockies — a strikingly turquoise, wolf-head-shaped lake viewed from a dramatic cliff-top viewpoint on the Icefields Parkway. It's a must-stop for anyone driving between Banff and Jasper, and even worth a day trip on its own. Here's everything you need to know about visiting this turquoise gem.</p>
