@@ -11,6 +11,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-ski-hills',
+    title: 'Ultimate Guide to Banff\'s Best Ski Hills for 2026',
+    description: 'Discover Banff\'s top ski destinations in 2026! From world-class slopes at Lake Louise to hidden gems, find the perfect mountain for your skill level and budget.',
+    date: '2026-05-05',
+    category: 'Seasonal',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-ski-areas',
+    title: 'Ultimate Banff Ski Areas Guide 2026: Top Slopes & Hidden Gems',
+    description: 'Discover Banff\'s best ski areas in 2026! From world-class slopes at Lake Louise to hidden powder stashes. Expert tips, trail maps & insider secrets included.',
+    date: '2026-05-05',
+    category: 'Seasonal',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'big3-ski-resort',
+    title: 'Big3 Banff Ski Resorts: Your Ultimate 2026 Guide',
+    description: 'Discover Banff\'s Big3 ski resorts in 2026! Complete guide to Lake Louise, Sunshine Village & Mt. Norquay with lift tickets, trails & insider tips.',
+    date: '2026-05-05',
+    category: 'Seasonal',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-ski',
     title: 'Ultimate Banff Ski Guide 2026: Slopes, Snow & Adventures',
     description: 'Discover Banff\'s best ski resorts, powder conditions, and mountain adventures in our comprehensive 2026 guide. From beginner slopes to expert terrain.',

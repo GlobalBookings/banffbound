@@ -1,4 +1,205 @@
 export const blogContent3: Record<string, string> = {
+  'banff-ski-hills': `
+<p>After fifteen years of racing down Banff ski hills every winter, I can tell you there's no better powder playground in the Canadian Rockies. The three major ski areas here offer everything from gentle cruisers perfect for families to challenging double-black diamonds that'll test even expert skiers. Whether you're planning your first visit or returning for another season, this guide covers what you need to know about skiing in Banff National Park and the surrounding area.</p>
+
+<h2>The Banff Big 3: Your Complete Ski Area Overview</h2>
+
+<p>The <strong>Banff Big 3</strong> refers to the three premier ski destinations within easy reach of Banff townsite: Lake Louise Ski Resort, Sunshine Village, and Mount Norquay. Each mountain offers a distinct personality and terrain profile that I've come to appreciate over countless ski days.</p>
+
+<p><strong>Lake Louise Ski Resort</strong> sits 45 minutes from Banff townsite and delivers the most varied terrain of the three mountains. With 4,200 skiable acres spread across four mountain faces, you'll find everything from wide-open bowls to tight tree runs. The Front Side serves up groomed cruisers perfect for warming up, while the Back Bowls challenge advanced skiers with steep pitches and deep snow. Lift tickets run around \$139 CAD for adults during peak season (2026-2027), but you can save significantly with multi-day passes.</p>
+
+<p><strong>Sunshine Village</strong> claims the longest ski season in the Canadian Rockies, typically running from November through May. Located 20 minutes from Banff via the Sunshine Village Road, this mountain sits entirely above treeline at elevations reaching 2,730 meters. The Continental Divide runs right through the resort, meaning you can literally ski from Alberta into British Columbia. What sets Sunshine apart is the reliable snow conditions - I've skied fresh powder here in April when other mountains were closing for the season.</p>
+
+<p><strong>Mount Norquay</strong> offers the most convenient option, just 10 minutes from downtown Banff. This smaller mountain focuses on night skiing and family-friendly terrain, though the North American run provides a genuine challenge for experts. Adult day passes cost approximately \$89 CAD, making Norquay the most budget-friendly option among Banff ski areas.</p>
+
+<h2>Best Terrain for Every Skill Level</h2>
+
+<p>I always recommend beginners start their Banff ski experience at Mount Norquay or the Wiwaxy area at Lake Louise. Norquay's Spirit Carpet and Cascade Chair serve gentle learning terrain without intimidating advanced skiers charging past every few seconds. The ski school here consistently receives high marks, and the shorter lift lines mean more actual skiing time.</p>
+
+<p>Intermediate skiers will find their sweet spot on Lake Louise's Front Side, particularly the Ptarmigan and Summit Platter areas. These runs offer consistent pitch and excellent grooming, perfect for building confidence before tackling steeper terrain. The blue runs off the Top of the World Express at Sunshine Village provide stunning alpine views while maintaining manageable difficulty.</p>
+
+<p>Advanced and expert skiers should prioritize Lake Louise's Back Bowls and Sunshine's Delirium Dive. The Back Bowls require avalanche transceivers and often close during high-risk periods, but when open, they deliver some of the best untracked powder in the Canadian Rockies. Delirium Dive at Sunshine challenges experts with mandatory cliff drops and variable snow conditions.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Buy your lift tickets online at least 48 hours in advance to save up to \$20 CAD per day. The mountains also offer significant discounts for multi-day passes - a 3-day Tri-Area pass costs around \$369 CAD versus \$417 CAD for individual day tickets.</div>
+
+<h3>Terrain Parks and Freestyle Options</h3>
+
+<p>Lake Louise operates the most comprehensive terrain park among the Banff ski areas, with features ranging from beginner boxes to massive jumps that host professional competitions. The Jungle terrain park typically opens by mid-December and expands throughout the season based on snow conditions.</p>
+
+<p>Sunshine Village focuses more on natural terrain features, though they maintain a smaller terrain park near the base area. Mount Norquay's terrain park caters primarily to beginners and intermediates, making it an excellent spot to learn basic park skills without intimidation.</p>
+
+<h2>Snow Conditions and Best Times to Visit</h2>
+
+<p>After tracking snow conditions across all three mountains for over a decade, I've noticed distinct patterns that can help you time your visit perfectly. Lake Louise typically receives the most natural snowfall, averaging 360cm annually, while Sunshine Village's high elevation ensures the longest lasting snow coverage.</p>
+
+<p>January through March delivers the most consistent conditions across all Banff ski hills. February particularly stands out for both snow quality and quantity - I've experienced some of my best powder days during this month. However, these peak months also bring the highest lift ticket prices and largest crowds.</p>
+
+<p>For value-conscious skiers, consider visiting in December or April. Early season skiing often provides excellent conditions with significantly lower accommodation costs. You can find deals on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for hotels that might cost double during peak season. April skiing at Sunshine Village offers spring conditions with longer daylight hours and surprisingly good snow on north-facing slopes.</p>
+
+<h3>Reading the Weather Patterns</h3>
+
+<p>Mountain weather in the Canadian Rockies changes rapidly, and conditions can vary dramatically between the three ski areas. I always check individual mountain reports rather than relying on Banff townsite forecasts. Sunshine Village's high elevation often means colder temperatures but better snow preservation, while Lake Louise's varied elevation provides options regardless of weather conditions.</p>
+
+<p>Wind significantly impacts skiing comfort at Sunshine Village due to the exposed alpine terrain. When Environment Canada forecasts winds above 40 km/h, consider skiing the more protected runs at Lake Louise or Mount Norquay instead.</p>
+
+<h2>Transportation and Logistics</h2>
+
+<p>Getting to the Banff ski areas requires some planning, especially during peak season when parking fills quickly. I recommend starting your drive by 7:30 AM on weekend mornings to secure parking at Lake Louise - arrive after 9 AM and you'll likely face a lengthy shuttle ride from overflow lots.</p>
+
+<p>The Roam Transit system connects Banff townsite to all three ski areas, though service to Sunshine Village requires a transfer at the Sunshine Village parking lot to the resort's gondola. A day pass costs \$5 CAD and includes unlimited rides between destinations. For visitors staying in Banff without a vehicle, this provides an economical alternative to rental cars or expensive taxi rides.</p>
+
+<p>Several tour operators offer ski packages through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> that include transportation, lift tickets, and sometimes equipment rentals. These packages work particularly well for single-day visits or travelers who prefer not to drive mountain roads in winter conditions.</p>
+
+<h3>Equipment Rentals and Services</h3>
+
+<p>Each ski area offers on-mountain rental facilities, but I've found better selection and prices at shops in Banff townsite. Ski Hub and Banff Ski Hub provide high-quality equipment with knowledgeable staff who can match gear to your ability level and the day's conditions. Expect to pay around \$55-65 CAD for a complete ski package including skis, boots, and poles.</p>
+
+<p>For multiple-day visits, consider renting in town and keeping the equipment at your accommodation. Most hotels offer ski storage areas, and this approach eliminates daily rental lines at the mountains. Check our <a href="/hotel-directory">Compare 95+ Banff hotels</a> guide to find accommodations with the best ski storage facilities.</p>
+
+<h2>Dining and Après-Ski Options</h2>
+
+<p>On-mountain dining varies significantly between the three Banff ski hills. Lake Louise offers the most extensive options, including the Post Hotel's fine dining for special occasions and casual cafeterias for quick refueling. The Temple Lodge provides mid-mountain dining with spectacular glacier views - worth the stop even if you're not particularly hungry.</p>
+
+<p>Sunshine Village's Mad Trapper's Saloon delivers the authentic Canadian ski lodge atmosphere, complete with live music on weekend afternoons. The Chimney Corner Lounge offers a more upscale après-ski experience with craft cocktails and panoramic mountain views.</p>
+
+<p>Mount Norquay keeps things simple with the Cascade Lodge providing standard ski area fare. However, the short drive back to Banff townsite means you can easily access the full range of restaurants covered in our <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> guide for dinner.</p>
+
+<p>Planning a longer stay to explore more than just the ski areas? Our comprehensive <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> includes recommendations for combining skiing with other winter activities like ice walks and wildlife viewing. The combination of world-class skiing and diverse winter experiences makes Banff ski hills an unmatched destination for any mountain enthusiast.</p>
+`,
+  'banff-ski-areas': `
+<p>After fifteen years of skiing the Canadian Rockies, I can tell you that <strong>Banff ski areas</strong> offer some of the most spectacular alpine skiing in North America. The combination of reliable powder, stunning mountain views, and world-class facilities makes this region a winter sports paradise. Whether you're planning your first ski trip to the Rockies or you're a seasoned veteran looking for insider knowledge, this comprehensive guide covers everything you need to know about skiing in and around Banff National Park.</p>
+
+<h2>The Banff Big 3: Canada's Premier Ski Destinations</h2>
+
+<p>When people talk about <strong>Banff ski</strong> experiences, they're usually referring to the <em>Banff Big 3</em> – three world-renowned ski resorts that form the backbone of the region's winter sports scene. These resorts are Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay, each offering distinct terrain and experiences.</p>
+
+<p><strong>Lake Louise Ski Resort</strong> is my personal favorite for its sheer size and variety. With over 4,200 acres of skiable terrain spread across four mountain faces, it's Canada's largest ski area. The resort features 164 marked runs and receives an average of 9 meters of natural snowfall annually. What sets Lake Louise apart is its spectacular scenery – you're literally skiing with views of glaciated peaks and the famous Lake Louise below.</p>
+
+<p>Lift tickets for the 2026-27 season start at \$139 CAD for adults during peak periods, though you can save significantly by purchasing multi-day passes or booking in advance. The resort operates from mid-November through early May, weather permitting.</p>
+
+<p><strong>Sunshine Village</strong> sits at higher elevation than its counterparts, with the base lodge at 2,160 meters above sea level. This elevation advantage means longer seasons and more reliable snow conditions. I've skied here as early as November and as late as May 24th. The resort spans the Continental Divide, literally allowing you to ski from Alberta into British Columbia and back again in a single run.</p>
+
+<p>The unique aspect of Sunshine is its ski-in, ski-out accommodation at Sunshine Mountain Lodge. Staying on-mountain means you can be first on the slopes and enjoy the mountain after day skiers leave. Daily lift tickets run around \$149 CAD for adults during peak times.</p>
+
+<h2>Mt. Norquay: Banff's Local Mountain</h2>
+
+<p><strong>Mt. Norquay</strong> holds a special place in Banff's skiing history as North America's first ski area with chairlift access, dating back to 1948. Located just five minutes from downtown Banff, it's the closest of the <strong>Banff ski hills</strong> to town and offers excellent night skiing until 9 PM on Fridays and Saturdays.</p>
+
+<p>While smaller than Lake Louise and Sunshine, Norquay punches above its weight with challenging terrain. The North American run is one of the steepest groomed runs I've encountered in the Rockies, with sections hitting 40-degree pitches. The resort is also home to the Via Ferrata, a unique mountain climbing experience that operates year-round.</p>
+
+<p>Norquay's pricing is more accessible, with adult day passes starting around \$89 CAD. For families or those looking to ski close to town, it's an excellent choice. The mountain also offers excellent beginner terrain and ski school programs.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Purchase the Tri-Area lift ticket to ski all three resorts during your stay. The pass includes free shuttle transportation between mountains and can save you up to 40% compared to individual day passes. Book accommodation through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> to find package deals that include lift tickets.</div>
+
+<h2>Beyond the Big 3: Additional Ski Options</h2>
+
+<p>While the Big 3 dominate the <strong>Banff ski areas</strong> conversation, several other options deserve consideration. <strong>Marmot Basin</strong> in nearby Jasper National Park offers a different perspective on Rockies skiing, though it requires a 3.5-hour drive north along the stunning Icefields Parkway.</p>
+
+<p>For cross-country skiing enthusiasts, the Canmore Nordic Centre Provincial Park provides world-class facilities that hosted events during the 1988 Calgary Olympics. The center maintains over 65 kilometers of groomed trails suitable for all skill levels. Daily trail passes cost \$15 CAD for adults, making it an affordable alternative to alpine skiing.</p>
+
+<p>Backcountry skiing opportunities abound throughout Banff National Park, but require proper avalanche education and equipment. Popular areas include Skoki Valley and the Lake O'Hara region, though both require significant planning and Parks Canada permits.</p>
+
+<h2>Planning Your Ski Trip: Accommodation and Logistics</h2>
+
+<p>Choosing <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> significantly impacts your ski experience. I recommend staying in Banff townsite if you want dining and nightlife options, or at Lake Louise village for closer access to two of the three mountains. The <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory can help you find accommodation that suits your budget and preferences.</p>
+
+<p>Transportation between mountains is straightforward with the complimentary shuttle services included in most multi-day lift tickets. The Lake Louise shuttle runs multiple times daily from major Banff hotels, while Sunshine Village operates a gondola from its parking area to the ski village above.</p>
+
+<p>For ski equipment, all three mountains offer full rental services, though I suggest booking online in advance during peak periods. Rental packages including skis, boots, and poles typically cost \$60-75 CAD per day for high-performance equipment.</p>
+
+<h2>Best Time to Ski and Snow Conditions</h2>
+
+<p>Snow conditions vary significantly throughout the season, and timing your visit correctly can make or break your trip. Based on my experience skiing here since 2011, January through March typically offers the most consistent conditions and deepest base depths.</p>
+
+<p>December can be hit-or-miss for natural snow, though all resorts have extensive snowmaking capabilities. I've had fantastic December ski days, but I've also encountered disappointing conditions with limited terrain open. If you're planning a December trip, book flexible accommodation and have backup activities ready.</p>
+
+<p>March and April provide the best combination of snow conditions and weather. Temperatures are milder, making for comfortable skiing, and daylight hours are longer. The drawback is higher prices and larger crowds during spring break periods.</p>
+
+<p>For current snow conditions and weather forecasts, check each resort's official website before heading out. Parks Canada also provides backcountry avalanche bulletins essential for anyone venturing outside resort boundaries.</p>
+
+<h2>Dining and Après-Ski Experiences</h2>
+
+<p>No ski day is complete without proper fuel and celebration afterward. Each mountain offers unique dining experiences, from casual cafeterias to upscale mountain restaurants. At Lake Louise, the Temple Lodge provides mid-mountain dining with panoramic views, while Sunshine Village's Mad Trapper's Saloon is famous for its lively après-ski atmosphere.</p>
+
+<p>Back in Banff townsite, the après-ski scene centers around several key establishments. The Rose and Crown is a traditional pub favorite, while Wild Bill's Legendary Saloon offers live music and a western atmosphere. For a comprehensive guide to dining options, check out our <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> guide.</p>
+
+<p>If you're planning a short visit, consider following our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> which includes optimal skiing schedules combined with other winter activities like ice walks and hot springs visits.</p>
+
+<h2>Essential Tips for Skiing Banff</h2>
+
+<p>Altitude affects some visitors, particularly at Sunshine Village's higher elevations. Stay hydrated and take breaks if you feel lightheaded or nauseous. The dry mountain air also means sunscreen is essential – I've gotten severe sunburns on overcast days by skipping this step.</p>
+
+<p>Weather can change rapidly in the mountains. Always carry extra layers, even on bluebird days. I keep a lightweight shell jacket and extra gloves in my pack regardless of morning conditions. Mountain temperatures can be 10-15 degrees cooler than in Banff townsite.</p>
+
+<p>Book activities and dining reservations well in advance, especially during peak periods like Christmas holidays and February school breaks. Popular experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> include ice walks, dog sledding, and helicopter tours that complement your skiing itinerary perfectly.</p>
+
+<p>The <strong>Banff ski areas</strong> offer some of the world's most spectacular alpine skiing, combining reliable snow conditions with stunning Canadian Rockies scenery. Whether you choose the expansive terrain at Lake Louise, the high-altitude experience at Sunshine Village, or the local charm of Mt. Norquay, you're guaranteed memorable days on the mountain. Plan ahead, dress appropriately, and prepare for some of the best skiing North America has to offer.</p>
+`,
+  'big3-ski-resort': `
+<p>The Big3 ski resort partnership has transformed winter sports in the Canadian Rockies, combining three world-class ski areas into one epic pass. As someone who's spent countless days carving turns across these mountains, I can tell you that understanding how the Big3 works will completely change your Banff skiing experience. Whether you're planning a week-long ski safari or just want to maximize your mountain time, this partnership offers unmatched variety across Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay.</p>
+
+<h2>What is the Big3 Ski Resort Partnership?</h2>
+
+<p>The Big3 isn't actually a single resort—it's a strategic partnership between Banff's three major ski areas that allows you to ski all three mountains with various pass options. I've been skiing these mountains since the early days of this partnership, and it's hands down the best value for serious skiers visiting the area.</p>
+
+<p>Lake Louise Ski Resort offers the largest skiable terrain in Canada with 4,200 acres of diverse runs. Sunshine Village sits higher than any other resort in the Canadian Rockies at 2,730 meters, guaranteeing powder conditions well into spring. Mt. Norquay provides the steepest terrain and night skiing right in Banff's backyard. Together, they create a skiing triangle that covers every type of terrain and condition you could want.</p>
+
+<p>The 2026-2027 season runs from early November through May, with Sunshine typically staying open the longest due to its elevation. I always recommend buying your Big3 pass online before arrival—you'll save at least \$20 CAD per day compared to walk-up window prices.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Buy your Big3 lift tickets at least 48 hours in advance online to get the best rates. During peak periods like Christmas week and March break, advance purchase can save you up to \$40 CAD per ticket.</div>
+
+<h2>Lake Louise Ski Resort: The Crown Jewel</h2>
+
+<p>Lake Louise consistently ranks as my top choice for a full day of skiing within the Big3 network. With 145 runs spread across four mountain faces, you can ski here for a week and never repeat the same line twice. The resort's back bowls offer some of the most reliable powder skiing in North America, while the front side provides perfectly groomed runs for warming up.</p>
+
+<p>The Summit Platter lift takes you to 2,637 meters elevation, where you'll find the famous Paradise Bowl and Ptarmigan Bowl. On powder days, I head straight to the Larch Area—it faces northeast and holds cold snow longer than anywhere else on the mountain. The men's and women's Olympic downhill courses from previous World Cup events are also open to the public, giving you a taste of what racing at this level feels like.</p>
+
+<p>Parking at Lake Louise fills up fast, especially on weekends. Arrive before 8:30 AM or you'll be parking along the Bow Valley Parkway and walking 15 minutes to the base lodge. The resort is located 57 kilometers west of Banff townsite via the Trans-Canada Highway—plan for a 45-minute drive in winter conditions.</p>
+
+<p>For accommodations near Lake Louise, I recommend checking <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for deals on slopeside lodging, or browse our comprehensive <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory for all your options.</p>
+
+<h2>Sunshine Village: High Alpine Paradise</h2>
+
+<p>At 2,730 meters base elevation, Sunshine Village offers a completely different skiing experience from Lake Louise. The higher elevation means colder temperatures, drier snow, and a longer season that often stretches into late May. I've skied here in June during exceptional snow years, making it a reliable choice for spring skiing when other resorts are closing.</p>
+
+<p>Sunshine's signature feature is the Continental Divide—you can literally ski from Alberta into British Columbia and back again. The Goat's Eye Mountain expansion added challenging expert terrain, including the famous Delirium Dive, which requires avalanche safety gear and a brief education session before entry.</p>
+
+<p>The resort operates a mandatory gondola system from the parking lot to the village, which adds 15 minutes to your arrival time but eliminates any driving on mountain roads. This eight-minute gondola ride is included with your lift ticket and runs every few minutes during operating hours.</p>
+
+<p>Sunshine's on-mountain accommodation at Sunshine Mountain Lodge offers true ski-in, ski-out convenience. When I'm planning multi-day skiing trips, staying on-mountain eliminates the daily drive and gets you first tracks on fresh snow.</p>
+
+<h2>Mt. Norquay: Steep Terrain and Night Skiing</h2>
+
+<p>Mt. Norquay might be the smallest of the Big3 resorts, but it packs serious punch for expert skiers. The Lone Pine double chair accesses some of the steepest in-bounds terrain in the Canadian Rockies, with runs like Lone Pine and North American dropping at sustained 40-degree pitches.</p>
+
+<p>What sets Norquay apart is its night skiing program—the only one available in Banff National Park. Friday and Saturday nights from December through March, the mountain stays open until 9 PM with full lighting on the main runs. After a full day skiing Lake Louise or Sunshine, I often head to Norquay for a few evening runs under the lights.</p>
+
+<p>The Cascade Express quad chair can get you from base to summit in under six minutes, making multiple laps efficient even during shorter winter days. Norquay sits just five kilometers from downtown Banff, making it the most convenient option if you're staying in town and want to maximize your time on snow versus driving.</p>
+
+<p>For budget-conscious skiers, Norquay offers the best value half-day tickets in the Big3 network. Their 1 PM to closing ticket costs about 40% less than a full-day pass while still giving you four to five hours of skiing.</p>
+
+<h2>Maximizing Your Big3 Experience</h2>
+
+<p>I've developed a strategy over years of skiing the Big3 that maximizes both terrain variety and snow conditions. Start your trip at Lake Louise on your freshest legs—it's the biggest mountain with the most terrain to explore. If fresh snow falls overnight, head to Sunshine the following day since its higher elevation typically receives more accumulation.</p>
+
+<p>Use Mt. Norquay as your shorter day or late-arrival option. Its proximity to Banff townsite makes it perfect for half-day sessions, and the steep terrain provides an excellent workout when you want to focus on technique over mileage.</p>
+
+<p>Weather plays a huge role in daily mountain selection. Lake Louise can be windy and cold when arctic air masses move through, while Sunshine's elevation can create whiteout conditions during storms. Norquay's lower elevation and protected location often provide the best visibility during poor weather.</p>
+
+<p>Consider booking guided experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> if you want insider knowledge of each mountain's best runs and secret stashes. Local guides know where to find untracked powder days after storms and can teach you about avalanche safety in the backcountry areas.</p>
+
+<h2>Practical Planning Tips for Your Visit</h2>
+
+<p>Transportation between the three mountains requires some planning since they're located in different valleys. Lake Louise and Sunshine both require 45-60 minute drives from Banff townsite, while Norquay is just 10 minutes away. Factor in these drive times when planning which mountain to ski each day.</p>
+
+<p>The Roam Transit system operates ski buses to all three mountains during winter, with multiple daily departures from major Banff hotels. The round-trip cost is \$10 CAD per person and eliminates parking concerns, though you'll be tied to the bus schedule rather than leaving when you want.</p>
+
+<p>Equipment rentals are available at all three mountains, but I recommend renting in Banff townsite where competition keeps prices lower and selection broader. Several shops offer multi-day packages that work well with Big3 lift ticket packages.</p>
+
+<p>For dining and accommodation planning, check out our guides on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> and the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> to fuel up between ski days. If you're planning a longer stay, our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> can help you balance skiing with other winter activities.</p>
+
+<p>The Big3 ski resort partnership represents the best of Rocky Mountain skiing in one convenient package. Each mountain offers distinct character and terrain, from Lake Louise's massive bowls to Sunshine's high-alpine snow quality to Norquay's steep local mountain vibe. Plan for at least three days to properly experience each resort, and don't be surprised if you find yourself planning return trips to explore all the terrain you missed on your first visit.</p>
+`,
   'banff-ski': `
 <p>Banff's ski season might be winding down by May, but if you're planning your 2027 winter adventure or curious about what makes this region a world-class skiing destination, you've come to the right place. Having carved up these slopes for over a decade, I can tell you that Banff ski terrain offers some of Canada's most diverse and spectacular alpine experiences. From beginner-friendly groomed runs to expert-only bowls that'll test your limits, the Canadian Rockies deliver skiing that matches the dramatic mountain scenery.</p>
 
