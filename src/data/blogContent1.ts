@@ -6008,7 +6008,7 @@ export const blogContent1: Record<string, string> = {
 <div class="tip-box"><strong>Insider Tip:</strong> For the best snow conditions, visit Sunshine during a January or February storm cycle. The resort's high elevation and position on the Continental Divide mean it catches more snow than almost anywhere else in the Rockies. Waist-deep powder days are not uncommon.</div>
 `,
   'lake-louise-ski-resort': `
-<p>Lake <a href="/blog/things-to-do-lake-louise">Things to Do in Lake Louise</a> Ski Resort is the largest ski resort in the Canadian Rockies, with 4,200 acres of terrain, gorgeous mountain scenery, and a legendary reputation among skiers worldwide. For those a beginner on gentle groomers or an expert hunting powder in the back bowls, Lake Louise delivers. Here's your definitive guide.</p>
+<p>Lake <a href="/blog/things-to-do-lake-louise">Things to Do in Lake Louise</a> Ski <a href="/blog/big3-ski-resort">Big3 Banff Ski Resorts</a> is the largest ski resort in the Canadian Rockies, with 4,200 acres of terrain, gorgeous mountain scenery, and a legendary reputation among skiers worldwide. For those a beginner on gentle groomers or an expert hunting powder in the back bowls, Lake Louise delivers. Here's your definitive guide.</p>
 
 <h2>Resort Overview</h2>
 <ul>

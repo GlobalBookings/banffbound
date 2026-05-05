@@ -83,7 +83,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>Mt. Norquay: Banff's Local Mountain</h2>
 
-<p><strong>Mt. Norquay</strong> holds a special place in Banff's skiing history as North America's first ski area with chairlift access, dating back to 1948. Located just five minutes from downtown Banff, it's the closest of the <strong>Banff ski hills</strong> to town and offers excellent night skiing until 9 PM on Fridays and Saturdays.</p>
+<p><strong>Mt. Norquay</strong> holds a special place in <a href="/blog/banff-ski-hills">to Banff's Best Ski Hills for</a>'s skiing history as North America's first ski area with chairlift access, dating back to 1948. Located just five minutes from downtown Banff, it's the closest of the <strong>Banff ski hills</strong> to town and offers excellent night skiing until 9 PM on Fridays and Saturdays.</p>
 
 <p>While smaller than Lake Louise and Sunshine, Norquay punches above its weight with challenging terrain. The North American run is one of the steepest groomed runs I've encountered in the Rockies, with sections hitting 40-degree pitches. The resort is also home to the Via Ferrata, a unique mountain climbing experience that operates year-round.</p>
 
@@ -201,11 +201,11 @@ export const blogContent3: Record<string, string> = {
 <p>The Big3 ski resort partnership represents the best of Rocky Mountain skiing in one convenient package. Each mountain offers distinct character and terrain, from Lake Louise's massive bowls to Sunshine's high-alpine snow quality to Norquay's steep local mountain vibe. Plan for at least three days to properly experience each resort, and don't be surprised if you find yourself planning return trips to explore all the terrain you missed on your first visit.</p>
 `,
   'banff-ski': `
-<p>Banff's ski season might be winding down by May, but if you're planning your 2027 winter adventure or curious about what makes this region a world-class skiing destination, you've come to the right place. Having carved up these slopes for over a decade, I can tell you that Banff ski terrain offers some of Canada's most diverse and spectacular alpine experiences. From beginner-friendly groomed runs to expert-only bowls that'll test your limits, the Canadian Rockies deliver skiing that matches the dramatic mountain scenery.</p>
+<p><a href="/blog/banff-ski-hills">to Banff's Best Ski Hills for</a>'s ski season might be winding down by May, but if you're planning your 2027 winter adventure or curious about what makes this region a world-class skiing destination, you've come to the right place. Having carved up these slopes for over a decade, I can tell you that Banff ski terrain offers some of Canada's most diverse and spectacular alpine experiences. From beginner-friendly groomed runs to expert-only bowls that'll test your limits, the Canadian Rockies deliver skiing that matches the dramatic mountain scenery.</p>
 
 <h2>The Banff Big 3: Your Complete Ski Resort Guide</h2>
 
-<p>The <strong>Banff Big 3</strong> refers to the three major ski areas that define winter sports in this region: Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay. Each resort has its own personality and strengths, and I've spent countless days exploring every corner of these mountains.</p>
+<p>The <strong><a href="/blog/banff-ski-areas">Banff Ski Areas : Top Slopes & Hidden Gems</a> Big 3</strong> refers to the three major ski areas that define winter sports in this region: Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay. Each resort has its own personality and strengths, and I've spent countless days exploring every corner of these mountains.</p>
 
 <p><strong>Lake Louise Ski Resort</strong> is the largest of the three, sprawling across four mountain faces with 164 marked runs. The front face offers perfectly groomed cruisers that intermediate skiers love, while the back bowls provide some of the most challenging terrain in North America. When conditions align, the Larch Area serves up knee-deep powder that rivals anything I've experienced in Japan or Europe. Lift tickets run about \$159 CAD for adults during peak season.</p>
 
@@ -357,11 +357,11 @@ export const blogContent3: Record<string, string> = {
 <p>The Banff Big 3 represents some of the finest skiing available anywhere in the world, each offering distinct personalities that reward exploration. Whether you're carving perfect groomers at Lake Louise, floating through Sunshine's champagne powder, or testing your skills on Norquay's steeps, these three resorts deliver experiences that will have you planning your return trip before you've even left the mountains.</p>
 `,
   'banff-ski-resorts': `
-<p>When the powder dumps across the Canadian Rockies, <a href="/blog/banff-ski">Banff Ski : Slopes, Snow & Adventures</a> transforms into one of North America's premier ski destinations. I've spent countless winter days carving turns across these peaks, and after years of exploring every lift and trail, I can tell you that the Banff ski resorts offer some of the most diverse and spectacular alpine experiences you'll find anywhere. From the legendary Banff Big 3 to smaller local areas, here's your complete guide to skiing in this mountain paradise.</p>
+<p>When the powder dumps across the Canadian Rockies, <a href="/blog/banff-ski"><a href="/blog/banff-ski-hills">to Banff's Best Ski Hills for</a> Ski : Slopes, Snow & Adventures</a> transforms into one of North America's premier ski destinations. I've spent countless winter days carving turns across these peaks, and after years of exploring every lift and trail, I can tell you that the Banff ski resorts offer some of the most diverse and spectacular alpine experiences you'll find anywhere. From the legendary Banff Big 3 to smaller local areas, here's your complete guide to skiing in this mountain paradise.</p>
 
 <h2>The Banff Big 3: Your Ski Resort Powerhouses</h2>
 
-<p>The <strong>Banff Big 3</strong> consists of Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay – three distinct mountains that form the backbone of Banff's ski scene. Each resort offers a unique character and terrain profile that I've come to appreciate for different reasons.</p>
+<p>The <strong>Banff Big 3</strong> consists of Lake Louise Ski <a href="/blog/big3-ski-resort">Big3 Banff Ski Resorts</a>, Sunshine Village, and Mt. Norquay – three distinct mountains that form the backbone of Banff's ski scene. Each resort offers a unique character and terrain profile that I've come to appreciate for different reasons.</p>
 
 <p><strong>Lake Louise Ski Resort</strong> stands as the largest of the three, sprawling across four mountain faces with over 4,200 acres of skiable terrain. When I'm training for racing or just want to log serious vertical, this is my go-to. The resort typically operates from late November through early May, with lift tickets running around \$139 CAD for adults during peak season in 2026. The Back Bowls offer some of the best advanced terrain, while the Front Face provides perfect cruising runs with postcard views of Lake Louise below.</p>
 
@@ -436,7 +436,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>Winter Excellence: Skiing and Snowboarding</h2>
 
-<p><a href="/blog/banff-snowboarding">Banff Snowboarding : Slopes & Hidden Gems</a> snowboarding and skiing opportunities span three major resort areas, each offering distinct experiences. During my regular winter visits, I've found that understanding each mountain's character helps maximize your time on snow.</p>
+<p><a href="/blog/banff-snowboarding"><a href="/blog/banff-ski-areas">Banff Ski Areas : Top Slopes & Hidden Gems</a> Snowboarding : Slopes & Hidden Gems</a> snowboarding and skiing opportunities span three major resort areas, each offering distinct experiences. During my regular winter visits, I've found that understanding each mountain's character helps maximize your time on snow.</p>
 
 <p><strong>Lake Louise Ski Resort</strong> delivers the most extensive terrain with 1,700 skiable hectares and a 991-meter vertical drop. The resort's back bowls provide advanced terrain that rivals anything in North America, while the front-side runs offer perfect intermediate cruising. Adult day tickets cost approximately \$129 CAD in 2026, with season passes available starting in early summer.</p>
 
@@ -511,7 +511,7 @@ export const blogContent3: Record<string, string> = {
 <p>Banff's consistent recognition by Conde Nast and other travel authorities reflects its genuine ability to deliver transformative mountain experiences. Whether you're planning winter adventures on world-class slopes or summer explorations through alpine wilderness, this corner of the Canadian Rockies provides the authentic mountain experience that keeps bringing me back season after season.</p>
 `,
   'banff-snowboarding': `
-<p>After fifteen years of chasing powder across the Canadian Rockies, I can tell you that Banff snowboarding offers some of the most spectacular terrain and reliable conditions you'll find anywhere. The three major ski areas within striking distance of Banff townsite – Sunshine Village, Lake Louise Ski Resort, and Mt. Norquay – each deliver their own character and challenges. Having logged countless days on these mountains as both a skier and occasional snowboarder, I'll break down everything you need to know to make the most of your Banff snowboarding adventure.</p>
+<p>After fifteen years of chasing powder across the Canadian Rockies, I can tell you that <a href="/blog/banff-ski-areas">Banff Ski Areas : Top Slopes & Hidden Gems</a> snowboarding offers some of the most spectacular terrain and reliable conditions you'll find anywhere. The three major ski areas within striking distance of Banff townsite – Sunshine Village, Lake Louise Ski Resort, and Mt. Norquay – each deliver their own character and challenges. Having logged countless days on these mountains as both a skier and occasional snowboarder, I'll break down everything you need to know to make the most of your Banff snowboarding adventure.</p>
 
 <h2>The Big Three: Banff's Premier Snowboarding Mountains</h2>
 
@@ -1299,7 +1299,7 @@ export const blogContent3: Record<string, string> = {
 <p>The Calgary to Jasper drive represents more than simple transportation – it's an introduction to the Canadian Rockies that sets expectations for everything that follows. Take your time, respect the mountain environment, and prepare for one of the world's great scenic drives.</p>
 `,
   'banff-ski-resort-accommodations': `
-<p>Finding the right <strong><a href="/blog/banff-ice-skating">Ice Skating in <a href="/blog/banff-ski"><a href="/blog/banff-ski-resorts">Banff's Best Ski Resorts : Powder Paradise</a> Ski : Slopes, Snow & Adventures</a>: Best Rinks & Frozen Lakes</a> ski resort accommodations</strong> can make or break your mountain adventure. After countless trips to the Canadian Rockies over the past decade, I've learned that where you stay dramatically affects your ski experience. The difference between a 5 AM wake-up call and rolling out of bed at 8 AM? Your accommodation choice. Let me share what I've discovered about the best places to stay for skiers visiting Banff's world-class resorts.</p>
+<p>Finding the right <strong><a href="/blog/banff-ice-skating">Ice Skating in <a href="/blog/banff-ski"><a href="/blog/banff-ski-resorts">Banff's Best Ski <a href="/blog/big3-ski-resort">Big3 Banff Ski Resorts</a> : Powder Paradise</a> Ski : Slopes, Snow & Adventures</a>: Best Rinks & Frozen Lakes</a> ski resort accommodations</strong> can make or break your mountain adventure. After countless trips to the Canadian Rockies over the past decade, I've learned that where you stay dramatically affects your ski experience. The difference between a 5 AM wake-up call and rolling out of bed at 8 AM? Your accommodation choice. Let me share what I've discovered about the best places to stay for skiers visiting Banff's world-class resorts.</p>
 
 <h2>Understanding Banff's Ski Resort Geography</h2>
 
