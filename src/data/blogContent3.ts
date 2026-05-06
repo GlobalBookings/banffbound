@@ -28,7 +28,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>The SkiBig3 lift ticket gives you access to all three resorts and represents the best value if you're skiing more than two days. A 3-day SkiBig3 pass costs around \$389 CAD (2026-2027 season), compared to \$149 CAD per day for individual resort tickets.</p>
 
-<p>I always buy my tickets online in advance – you'll save about \$20 CAD per day compared to purchasing at the base lodge. The mobile tickets work seamlessly with the RFID gate systems at all three resorts.</p>
+<p>I always buy my tickets online in advance – you'll save about \$20 CAD per day compared to purchasing at the base lodge. The mobile tickets work seamlessly with the RFID gate systems at all three resorts. For more details, check out our guide on <a href="/blog/ski-big-3">Banff's Big 3 Ski Resorts: & Tips</a>.</p>
 
 <p>For equipment rentals, each resort has on-site shops, but I prefer the rental shops in Banff townsite. <strong>Ski Hub</strong> and <strong>Performance Ski & Sports</strong> offer competitive rates and often stay open later for adjustments. Expect to pay \$55-65 CAD per day for a complete ski package.</p>
 
@@ -131,7 +131,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>Each resort offers signature runs that showcase its character. At Lake Louise, the <strong>Men's Downhill</strong> follows the actual World Cup racecourse and provides sustained intermediate terrain with spectacular glacier views. For experts, the <strong>Ultimate Steeps</strong> area off the Summit Platter offers consistently steep pitches.</p>
 
-<p>Sunshine's <strong>Goat's Eye Bowl</strong> holds powder longer than anywhere else in the Ski Big 3, thanks to its northern exposure and high elevation. The <strong>Continental Divide</strong> run literally crosses between Alberta and British Columbia – I always stop at the boundary marker for photos.</p>
+<p>Sunshine's <strong>Goat's Eye Bowl</strong> holds powder longer than anywhere else in the Ski Big 3, thanks to its northern exposure and high elevation. The <strong>Continental Divide</strong> run literally crosses between <a href="/blog/ski-big-3-alberta">Banff's Big 3 Ski Resorts</a> and British Columbia – I always stop at the boundary marker for photos.</p>
 
 <p>At Mt. Norquay, <strong>Gun Run</strong> and <strong>Lone Pine</strong> provide the steepest sustained pitches you'll find at any Canadian resort. These runs regularly exceed 40-degree angles and require expert-level skills.</p>
 
@@ -306,7 +306,7 @@ export const blogContent3: Record<string, string> = {
 <p>Planning a longer stay to explore more than just the ski areas? Our comprehensive <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> includes recommendations for combining skiing with other winter activities like ice walks and wildlife viewing. The combination of world-class skiing and diverse winter experiences makes Banff ski hills an unmatched destination for any mountain enthusiast.</p>
 `,
   'banff-ski-areas': `
-<p>After fifteen years of skiing the Canadian Rockies, I can tell you that <strong>Banff ski areas</strong> offer some of the most spectacular alpine skiing in North America. The combination of reliable powder, stunning mountain views, and world-class facilities makes this region a winter sports paradise. Whether you're planning your first ski trip to the Rockies or you're a seasoned veteran looking for insider knowledge, this comprehensive guide covers everything you need to know about skiing in and around Banff National Park.</p>
+<p>After fifteen years of skiing the Canadian Rockies, I can tell you that <strong><a href="/blog/ski-banff">Banff Ski : Slopes & Hidden Gems</a> ski areas</strong> offer some of the most spectacular alpine skiing in North America. The combination of reliable powder, stunning mountain views, and world-class facilities makes this region a winter sports paradise. Whether you're planning your first ski trip to the Rockies or you're a seasoned veteran looking for insider knowledge, this comprehensive guide covers everything you need to know about skiing in and around Banff National Park.</p>
 
 <h2>The Banff Big 3: Canada's Premier Ski Destinations</h2>
 
@@ -401,7 +401,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>At 2,730 meters base elevation, Sunshine Village offers a completely different skiing experience from Lake Louise. The higher elevation means colder temperatures, drier snow, and a longer season that often stretches into late May. I've skied here in June during exceptional snow years, making it a reliable choice for spring skiing when other resorts are closing.</p>
 
-<p>Sunshine's signature feature is the Continental Divide—you can literally ski from Alberta into British Columbia and back again. The Goat's Eye Mountain expansion added challenging expert terrain, including the famous Delirium Dive, which requires avalanche safety gear and a brief education session before entry.</p>
+<p>Sunshine's signature feature is the Continental Divide—you can literally ski from <a href="/blog/ski-big-3-alberta">Banff's Big 3 Ski Resorts</a> into British Columbia and back again. The Goat's Eye Mountain expansion added challenging expert terrain, including the famous Delirium Dive, which requires avalanche safety gear and a brief education session before entry.</p>
 
 <p>The resort operates a mandatory gondola system from the parking lot to the village, which adds 15 minutes to your arrival time but eliminates any driving on mountain roads. This eight-minute gondola ride is included with your lift ticket and runs every few minutes during operating hours.</p>
 
@@ -440,7 +440,7 @@ export const blogContent3: Record<string, string> = {
 <p>The Big3 ski resort partnership represents the best of Rocky Mountain skiing in one convenient package. Each mountain offers distinct character and terrain, from Lake Louise's massive bowls to Sunshine's high-alpine snow quality to Norquay's steep local mountain vibe. Plan for at least three days to properly experience each resort, and don't be surprised if you find yourself planning return trips to explore all the terrain you missed on your first visit.</p>
 `,
   'banff-ski': `
-<p><a href="/blog/banff-ski-hills">to Banff's Best Ski Hills for</a>'s ski season might be winding down by May, but if you're planning your 2027 winter adventure or curious about what makes this region a world-class skiing destination, you've come to the right place. Having carved up these slopes for over a decade, I can tell you that Banff ski terrain offers some of Canada's most diverse and spectacular alpine experiences. From beginner-friendly groomed runs to expert-only bowls that'll test your limits, the Canadian Rockies deliver skiing that matches the dramatic mountain scenery.</p>
+<p><a href="/blog/banff-ski-hills">to <a href="/blog/ski-banff">Banff Ski : Slopes & Hidden Gems</a>'s Best Ski Hills for</a>'s ski season might be winding down by May, but if you're planning your 2027 winter adventure or curious about what makes this region a world-class skiing destination, you've come to the right place. Having carved up these slopes for over a decade, I can tell you that Banff ski terrain offers some of Canada's most diverse and spectacular alpine experiences. From beginner-friendly groomed runs to expert-only bowls that'll test your limits, the Canadian Rockies deliver skiing that matches the dramatic mountain scenery.</p>
 
 <h2>The Banff Big 3: Your Complete Ski Resort Guide</h2>
 
@@ -616,7 +616,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>Sunshine Village claims bragging rights for snow quality and season length. The Continental Divide location creates unique weather patterns that dump an average of 9 meters of snow annually. Standish Chair and the Angel Express provide access to wide-open alpine bowls that are absolute magic on powder days. The trade-off is weather – when storms roll in, visibility can be challenging.</p>
 
-<p>Mt. Norquay compensates for its smaller size with character. The North American Chair services genuine black diamond terrain that's steeper than anything you'll find at the other two resorts. Lone Pine run is a particular favorite of mine for early morning laps before the crowds arrive.</p>
+<p>Mt. Norquay compensates for its smaller size with character. The North American Chair services genuine black diamond terrain that's steeper than anything you'll find at the other two resorts. Lone Pine run is a particular favorite of mine for early morning laps before the crowds arrive. For more details, check out our guide on <a href="/blog/ski-big-3-alberta">Banff's Big 3 Ski Resorts</a>.</p>
 
 <div class="tip-box"><strong>Pro Tip:</strong> Buy your lift tickets online at least 7 days in advance to save 15-20% off walk-up prices. The SkiBig3 pass gives you access to all three resorts and typically pays for itself after just 5-6 days of skiing.</div>
 
@@ -663,7 +663,7 @@ export const blogContent3: Record<string, string> = {
 <p>The Banff ski resorts deliver experiences that justify their reputation among North America's premier destinations. Whether you're carving perfect corduroy at Lake Louise, floating through Sunshine's powder, or testing your skills on Norquay's steeps, these mountains provide the backdrop for incredible ski adventures. Plan ahead, come prepared for mountain weather, and get ready to understand why skiers return to Banff year after year.</p>
 `,
   'conde-nast-banff': `
-<p>When Conde Nast Traveler consistently ranks <a href="/blog/banff-big-3">Banff's Big 3</a> among the world's top destinations, they're highlighting what I've experienced firsthand through countless visits to this Canadian Rockies paradise. As someone who's explored Banff's trails on foot, skis, and snowboard across all seasons, I can tell you the accolades are well-deserved. This comprehensive guide covers everything you need to know about visiting Banff National Park, from world-class skiing to summer trail running opportunities that keep drawing me back year after year.</p>
+<p>When Conde Nast Traveler consistently ranks <a href="/blog/banff-big-3"><a href="/blog/ski-banff">Banff Ski : Slopes & Hidden Gems</a>'s Big 3</a> among the world's top destinations, they're highlighting what I've experienced firsthand through countless visits to this Canadian Rockies paradise. As someone who's explored Banff's trails on foot, skis, and snowboard across all seasons, I can tell you the accolades are well-deserved. This comprehensive guide covers everything you need to know about visiting Banff National Park, from world-class skiing to summer trail running opportunities that keep drawing me back year after year.</p>
 
 <h2>Why Conde Nast and Travel Experts Love Banff</h2>
 
