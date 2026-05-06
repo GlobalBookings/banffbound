@@ -11,6 +11,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ski-big-3-alberta',
+    title: 'Banff\'s Big 3 Ski Resorts: Your 2026 Ultimate Guide',
+    description: 'Discover Banff\'s top 3 ski resorts in 2026! Complete guide to Lake Louise, Sunshine Village & Mt. Norquay with insider tips, lift tickets & snow conditions.',
+    date: '2026-05-06',
+    category: 'Seasonal',
+    image: '/images/blog/ski-big-3-alberta.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'ski-big-3',
+    title: 'Banff\'s Big 3 Ski Resorts: Ultimate 2026 Guide & Tips',
+    description: 'Discover Banff\'s top 3 ski resorts in 2026! Get insider tips on Sunshine Village, Lake Louise & Mount Norquay. Perfect slopes, conditions & planning advice.',
+    date: '2026-05-06',
+    category: 'Seasonal',
+    image: '/images/blog/ski-big-3.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'ski-banff',
+    title: 'Ultimate Banff Ski Guide 2026: Epic Slopes & Hidden Gems',
+    description: 'Discover Banff\'s best ski slopes and secret powder stashes in 2026! From world-class resorts to backcountry gems, your ultimate guide to epic skiing awaits.',
+    date: '2026-05-06',
+    category: 'Seasonal',
+    image: '/images/blog/ski-banff.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-ski-hills',
     title: 'Ultimate Guide to Banff\'s Best Ski Hills for 2026',
     description: 'Discover Banff\'s top ski destinations in 2026! From world-class slopes at Lake Louise to hidden gems, find the perfect mountain for your skill level and budget.',
