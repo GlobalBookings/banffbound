@@ -600,7 +600,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>Sunshine Village: High-Alpine Paradise</h2>
 
-<p>Sunshine Village delivers the longest ski season among Banff ski resorts, and the high elevation means consistently cold, dry powder. The resort sprawls across three mountains: Lookout Mountain, Mount Standish, and Goat's Eye Mountain, connected by an efficient lift network.</p>
+<p>Sunshine Village delivers the longest ski season among Banff ski resorts, and the high elevation means consistently cold, dry powder. The resort sprawls across three mountains: Lookout Mountain, Mount Standish, and Goat's Eye Mountain, connected by an efficient lift network. For more details, check out our guide on <a href="/blog/sky-bistro">Sky Bistro Banff : Views & Gourmet Dining</a>.</p>
 
 <p>What sets Sunshine apart is the variety of terrain accessible from the village base area. I can ski gentle groomers off Angel Express in the morning, then challenge myself on Delirium Dive's double-black steeps after lunch. The resort requires avalanche safety gear (beacon, probe, shovel) for accessing Delirium Dive and Wild West areas - they're serious about safety here.</p>
 
