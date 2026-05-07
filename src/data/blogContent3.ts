@@ -1,4 +1,71 @@
 export const blogContent3: Record<string, string> = {
+  'sky-bistro': `
+<p>The Sulphur Mountain Gondola's Sky Bistro stands 2,281 meters above sea level, making it one of Canada's highest dining experiences. After completing dozens of training runs and ski sessions in Banff over the years, I can confidently say this mountaintop restaurant offers something genuinely special beyond the obvious tourist appeal. The eight-minute gondola ride delivers you to a dining experience that combines serious mountain views with surprisingly good food – though knowing when to visit and what to expect makes all the difference.</p>
+
+<h2>Getting to Sky Bistro: Gondola Logistics and Timing</h2>
+
+<p>The Sulphur Mountain Gondola operates year-round, with the Sky Bistro serving lunch and dinner during peak seasons. From downtown Banff, it's a quick 5-kilometer drive or a scenic 45-minute walk along the Bow River. I always recommend the walk if you're staying in town – it's an excellent warm-up before your mountain dining experience.</p>
+
+<p>Gondola tickets cost \$70 CAD for adults in 2026, with the Sky Bistro requiring separate reservations. Here's what I've learned about timing: arrive at the gondola base before 10 AM or after 4 PM to avoid the worst crowds. The middle hours get packed with tour buses, making the experience less enjoyable.</p>
+
+<p>Parking fills up completely by 11 AM during summer months. I've seen frustrated visitors circling the lot for 30 minutes. If you're driving, get there early or take the Roam public transit Route 1, which runs every 30 minutes from downtown Banff.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Book your Sky Bistro reservation at the same time you purchase gondola tickets online. Walk-in dining availability is extremely limited, especially during summer and fall peak seasons.</div>
+
+<h3>Seasonal Operating Hours</h3>
+
+<p>The gondola runs different schedules throughout the year. Summer operations (May through October) typically run from 8:30 AM to 8:00 PM. Winter hours are shorter, usually 10:00 AM to 6:00 PM. Always check current schedules before heading out – I learned this the hard way after a post-ski dinner plan fell through one February evening.</p>
+
+<h2>Sky Bistro Menu and Dining Experience</h2>
+
+<p>The Sky Bistro focuses on elevated Canadian cuisine with local Alberta ingredients. During my last visit in March 2026, I tried their bison short rib and was genuinely impressed. The menu changes seasonally, but expect mains ranging from \$32-48 CAD, with appetizers around \$14-22 CAD.</p>
+
+<p>The restaurant operates as a full-service establishment, not a cafeteria-style mountain hut. Reservations are essential, and they enforce them strictly. I've witnessed several disappointed visitors turned away despite having gondola tickets.</p>
+
+<p>What sets this place apart from typical tourist dining is the kitchen's commitment to quality. Head chef responsibilities include sourcing from local suppliers, and it shows in the final product. The Alberta beef dishes consistently deliver, and their seasonal game options reflect genuine mountain cuisine traditions.</p>
+
+<h3>Drinks and Atmosphere</h3>
+
+<p>The wine list includes solid Canadian selections, particularly from British Columbia's Okanagan Valley. Cocktails run \$16-19 CAD, but the "Summit Mule" made with local spirits has become my go-to choice. The dining room features floor-to-ceiling windows facing the Bow Valley, though window tables require advance requests and aren't guaranteed.</p>
+
+<p>Service moves at mountain pace – expect a leisurely 90-minute dining experience. This works perfectly after a morning of skiing or hiking when you want to relax and take in the surroundings.</p>
+
+<h2>Activities Before and After Dining</h2>
+
+<p>The Sulphur Mountain summit offers more than just the restaurant. The boardwalk extends to multiple viewing platforms, and the historic weather station provides interesting context about the mountain's role in Canadian meteorology.</p>
+
+<p>For active visitors, the Cosmic Ray Station Canada trail starts near the upper gondola terminal. It's a moderate 1-kilometer walk that I often tackle before dinner to build an appetite. The trail connects to longer ridge walks, though these require proper mountain gear and experience.</p>
+
+<p>In winter months, the summit provides excellent cross-country skiing access. I've combined Sky Bistro lunches with afternoon ski tours several times – the restaurant staff will hold gear while you dine.</p>
+
+<h3>Photography Opportunities</h3>
+
+<p>The summit offers 360-degree mountain views, but the best photography happens during golden hour periods. If you're serious about mountain photography, book the latest dinner reservation available. The Bow Valley shots during sunset rival anything you'll capture elsewhere in Banff National Park.</p>
+
+<p>Bring layers regardless of valley weather. The summit sits over 1,400 meters higher than Banff townsite, creating significant temperature differences. I've experienced 15-degree temperature drops between base and summit during spring visits.</p>
+
+<h2>Alternative Mountain Dining Options</h2>
+
+<p>While Sky Bistro provides the most accessible mountaintop dining, Banff offers other elevated eating experiences worth considering. The Lake Louise Ski Resort's various on-mountain restaurants operate during winter seasons, offering more casual alternatives.</p>
+
+<p>For serious hikers, several backcountry huts provide dining experiences that require more effort but deliver greater satisfaction. The Skoki Lodge, accessible via an 11-kilometer ski or hike, represents true mountain hospitality. I've made this journey multiple times and consider it superior to any gondola-accessed dining.</p>
+
+<p>In town, many restaurants provide mountain views without the gondola expense. For comprehensive dining options, check out our guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> which covers everything from casual cafes to fine dining establishments.</p>
+
+<h2>Practical Planning Tips</h2>
+
+<p>Budget approximately \$150-200 CAD per person for the complete Sky Bistro experience, including gondola tickets, dinner, and drinks. This positions it as a special occasion destination rather than casual dining.</p>
+
+<p>Weather can change rapidly at elevation. I always pack a warm layer even during summer visits. The restaurant maintains comfortable interior temperatures, but you'll want proper clothing for the boardwalk and viewing areas.</p>
+
+<p>Combine your Sky Bistro visit with other Banff activities to maximize value. The gondola ticket provides all-day summit access, so consider hiking some of our recommended <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> earlier in the day.</p>
+
+<h3>Accommodation Considerations</h3>
+
+<p>If you're planning multiple mountain activities, staying near the gondola base reduces transportation hassles. Several hotels offer shuttle services, though I prefer the flexibility of my own vehicle or the public transit option. For comprehensive accommodation options, browse our <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory to find properties that match your mountain adventure plans.</p>
+
+<p>The Sky Bistro represents a unique intersection of accessibility and alpine dining that few destinations can match. While the price point limits it to special occasions for most visitors, the combination of excellent food, dramatic setting, and convenient access creates a genuinely memorable experience. Just remember to book ahead, dress appropriately, and arrive with realistic expectations about mountain weather and timing.</p>
+`,
   'ski-big-3-alberta': `
 <p>Alberta's Big 3 ski resorts – Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay – form the ultimate alpine playground in the Canadian Rockies. After spending countless winters carving turns across these legendary slopes, I can tell you that skiing the Big 3 offers everything from world-class terrain to spectacular mountain views that'll make you forget about the cold. Here's your complete guide to making the most of your ski adventure in Banff National Park.</p>
 

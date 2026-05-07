@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'sky-bistro',
+    title: 'Sky Bistro Banff 2026: Epic Views & Gourmet Dining Guide',
+    description: 'Experience Sky Bistro Banff\'s stunning mountain panoramas and exceptional cuisine in 2026. Your complete guide to Canada\'s highest dining destination.',
+    date: '2026-05-07',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'ski-big-3-alberta',
     title: 'Banff\'s Big 3 Ski Resorts: Your 2026 Ultimate Guide',
     description: 'Discover Banff\'s top 3 ski resorts in 2026! Complete guide to Lake Louise, Sunshine Village & Mt. Norquay with insider tips, lift tickets & snow conditions.',
