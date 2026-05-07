@@ -66,8 +66,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'open',
-    conditionNote: 'Good for cross-country skiing and snowshoeing',
-    conditionUpdated: '2026-04-29',
+    conditionNote: 'Dogs allowed on all trails unless otherwise specified. Keep on leash.',
+    conditionUpdated: '2026-05-07',
   },
   {
     id: 'marsh-loop',
