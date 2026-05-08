@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'open',
-    conditionNote: 'Dogs allowed on all trails unless otherwise specified. Keep on leash.',
-    conditionUpdated: '2026-05-07',
+    status: 'caution',
+    conditionNote: 'Avalanche danger present. Check avalanche bulletin for latest conditions.',
+    conditionUpdated: '2026-05-08',
   },
   {
     id: 'marsh-loop',
