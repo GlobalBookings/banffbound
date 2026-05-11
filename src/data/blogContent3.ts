@@ -568,7 +568,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>The Banff Big 3: Your Complete Ski Resort Guide</h2>
 
-<p>The <strong><a href="/blog/banff-ski-areas">Banff Ski Areas : Top Slopes & Hidden Gems</a> Big 3</strong> refers to the three major ski areas that define winter sports in this region: Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay. Each resort has its own personality and strengths, and I've spent countless days exploring every corner of these mountains.</p>
+<p>The <strong><a href="/blog/banff-ski-areas">Banff Ski Areas : Top Slopes & Hidden Gems</a> Big 3</strong> refers to the <a href="/blog/ski-big-three">Banff Ski Big Three : Powder Adventures</a> major ski areas that define winter sports in this region: Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay. Each resort has its own personality and strengths, and I've spent countless days exploring every corner of these mountains.</p>
 
 <p><strong>Lake Louise Ski Resort</strong> is the largest of the three, sprawling across four mountain faces with 164 marked runs. The front face offers perfectly groomed cruisers that intermediate skiers love, while the back bowls provide some of the most challenging terrain in North America. When conditions align, the Larch Area serves up knee-deep powder that rivals anything I've experienced in Japan or Europe. Lift tickets run about \$159 CAD for adults during peak season.</p>
 
@@ -724,7 +724,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>The Banff Big 3: Your Ski Resort Powerhouses</h2>
 
-<p>The <strong>Banff Big 3</strong> consists of Lake Louise Ski <a href="/blog/big3-ski-resort">Big3 Banff Ski Resorts</a>, Sunshine Village, and Mt. Norquay – three distinct mountains that form the backbone of Banff's ski scene. Each resort offers a unique character and terrain profile that I've come to appreciate for different reasons.</p>
+<p>The <strong>Banff Big 3</strong> consists of Lake Louise Ski <a href="/blog/big3-ski-resort">Big3 Banff Ski Resorts</a>, Sunshine Village, and Mt. Norquay – <a href="/blog/ski-big-three">Banff Ski Big Three : Powder Adventures</a> distinct mountains that form the backbone of Banff's ski scene. Each resort offers a unique character and terrain profile that I've come to appreciate for different reasons.</p>
 
 <p><strong>Lake Louise Ski Resort</strong> stands as the largest of the three, sprawling across four mountain faces with over 4,200 acres of skiable terrain. When I'm training for racing or just want to log serious vertical, this is my go-to. The resort typically operates from late November through early May, with lift tickets running around \$139 CAD for adults during peak season in 2026. The Back Bowls offer some of the best advanced terrain, while the Front Face provides perfect cruising runs with postcard views of Lake Louise below.</p>
 

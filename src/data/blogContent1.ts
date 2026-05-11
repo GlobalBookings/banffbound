@@ -924,7 +924,7 @@ export const blogContent1: Record<string, string> = {
 
 <h3>Beginner-Friendly Routes</h3>
 
-<p><strong>Sunshine Village Road:</strong> This 8-kilometer route follows the summer access road to Sunshine Village, gaining about 500 meters of elevation. It's perfect for newcomers to ski touring, offering consistent grade and beautiful views of the Sundance Range. The route typically requires 2-3 hours to ascend.</p>
+<p><strong>Sunshine Village Road:</strong> This 8-kilometer route follows the summer access road to Sunshine Village, gaining about 500 meters of elevation. It's perfect for newcomers to ski touring, offering consistent grade and beautiful views of the Sundance Range. The route typically requires 2-3 hours to ascend. For more details, check out our guide on <a href="/blog/ski-big-three">Banff Ski Big Three : Powder Adventures</a>.</p>
 
 <p><strong>Boom Lake:</strong> A scenic 5-kilometer tour that follows the summer hiking trail to a frozen alpine lake. With moderate elevation gain of 180 meters, this route provides gorgeous views of the surrounding peaks and is ideal for building touring endurance.</p>
 
