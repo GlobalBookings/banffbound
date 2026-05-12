@@ -450,7 +450,7 @@ export const blogContent3: Record<string, string> = {
 <p>The Ski Big 3 represents exceptional value for destination skiing, combining three distinct mountain experiences with easy access and reliable snow conditions. Whether you're chasing powder at Sunshine, carving groomers at Lake Louise, or testing your skills on Norquay's steeps, this trio delivers some of Canada's most memorable skiing. Book early, arrive prepared for mountain weather, and plan extra days – you'll want to experience everything these remarkable resorts offer.</p>
 `,
   'ski-banff': `
-<p>After spending countless early mornings charging up powder-covered slopes in the Canadian Rockies, I can tell you that when you ski Banff, you're not just hitting the trails—you're experiencing some of the most spectacular alpine terrain in North America. The combination of reliable snow, stunning mountain vistas, and world-class resort facilities makes this region a must-visit destination for anyone serious about winter sports.</p>
+<p>After spending countless early mornings charging up powder-covered slopes in the Canadian Rockies, I can tell you that when you ski <a href="/blog/banff-ski-accommodation">Best Banff Ski Accommodations</a>, you're not just hitting the trails—you're experiencing some of the most spectacular alpine terrain in North America. The combination of reliable snow, stunning mountain vistas, and world-class resort facilities makes this region a must-visit destination for anyone serious about winter sports.</p>
 
 <h2>The Banff Big 3: Your Ultimate Ski Playground</h2>
 
@@ -579,7 +579,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>Each ski area offers on-mountain rental facilities, but I've found better selection and prices at shops in Banff townsite. Ski Hub and Banff Ski Hub provide high-quality equipment with knowledgeable staff who can match gear to your ability level and the day's conditions. Expect to pay around \$55-65 CAD for a complete ski package including skis, boots, and poles.</p>
 
-<p>For multiple-day visits, consider renting in town and keeping the equipment at your accommodation. Most hotels offer ski storage areas, and this approach eliminates daily rental lines at the mountains. Check our <a href="/hotel-directory">Compare 95+ Banff hotels</a> guide to find accommodations with the best ski storage facilities.</p>
+<p>For multiple-day visits, consider renting in town and keeping the equipment at your accommodation. Most hotels offer ski storage areas, and this approach eliminates daily rental lines at the mountains. Check our <a href="/hotel-directory">Compare 95+ <a href="/blog/banff-ski-accommodation">Best Banff Ski Accommodations</a> hotels</a> guide to find accommodations with the best ski storage facilities.</p>
 
 <h2>Dining and Après-Ski Options</h2>
 
@@ -1824,7 +1824,7 @@ export const blogContent3: Record<string, string> = {
 <p>The Calgary to Jasper drive represents more than simple transportation – it's an introduction to the Canadian Rockies that sets expectations for everything that follows. Take your time, respect the mountain environment, and prepare for one of the world's great scenic drives.</p>
 `,
   'banff-ski-resort-accommodations': `
-<p>Finding the right <strong><a href="/blog/banff-ice-skating">Ice Skating in <a href="/blog/banff-ski"><a href="/blog/banff-ski-resorts">Banff's Best Ski <a href="/blog/big3-ski-resort">Big3 Banff Ski Resorts</a> : Powder Paradise</a> Ski : Slopes, Snow & Adventures</a>: Best Rinks & Frozen Lakes</a> ski resort accommodations</strong> can make or break your mountain adventure. After countless trips to the Canadian Rockies over the past decade, I've learned that where you stay dramatically affects your ski experience. The difference between a 5 AM wake-up call and rolling out of bed at 8 AM? Your accommodation choice. Let me share what I've discovered about the best places to stay for skiers visiting Banff's world-class resorts.</p>
+<p>Finding the right <strong><a href="/blog/banff-ice-skating">Ice Skating in <a href="/blog/banff-ski"><a href="/blog/banff-ski-resorts"><a href="/blog/banff-ski-accommodation">Best Banff Ski Accommodations</a>'s Best Ski <a href="/blog/big3-ski-resort">Big3 Banff Ski Resorts</a> : Powder Paradise</a> Ski : Slopes, Snow & Adventures</a>: Best Rinks & Frozen Lakes</a> ski resort accommodations</strong> can make or break your mountain adventure. After countless trips to the Canadian Rockies over the past decade, I've learned that where you stay dramatically affects your ski experience. The difference between a 5 AM wake-up call and rolling out of bed at 8 AM? Your accommodation choice. Let me share what I've discovered about the best places to stay for skiers visiting Banff's world-class resorts.</p>
 
 <h2>Understanding Banff's Ski Resort Geography</h2>
 
