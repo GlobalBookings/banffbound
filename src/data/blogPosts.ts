@@ -11,6 +11,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'photography-tips-sunshine-gondola',
+    title: 'Epic Banff Sunshine Gondola Photography Tips for 2026',
+    description: 'Capture stunning Banff Sunshine Gondola photos in 2026 with expert tips on lighting, angles, and seasonal shots. Master mountain photography from Canada\'s iconic peaks.',
+    date: '2026-05-12',
+    category: 'Tips',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-ski-accommodation',
+    title: 'Best Banff Ski Accommodations 2026: Ultimate Guide',
+    description: 'Discover the top ski accommodations in Banff for 2026. From luxury mountain lodges to budget-friendly options, find your perfect alpine retreat near the slopes.',
+    date: '2026-05-12',
+    category: 'Seasonal',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'ski-big-three',
     title: 'Banff Ski Big Three Guide 2026: Epic Powder Adventures',
     description: 'Master Banff\'s Big Three ski resorts in 2026! Your complete guide to Lake Louise, Sunshine Village & Norquay with insider tips for epic powder adventures.',

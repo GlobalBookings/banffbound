@@ -1,4 +1,166 @@
 export const blogContent3: Record<string, string> = {
+  'photography-tips-sunshine-gondola': `
+<p>The Sunshine Village Gondola offers some of the most spectacular photography opportunities in the Canadian Rockies, but capturing those perfect shots requires more than just pointing and clicking. Having ridden this gondola countless times during my training runs and ski trips, I've learned exactly when, where, and how to photograph from this aerial vantage point to get results that actually do justice to the scenery.</p>
+
+<h2>Best Times for Gondola Photography</h2>
+
+<p>Timing makes or breaks gondola photography. The golden hour—that magical time just after sunrise or before sunset—transforms the entire Bow Valley into a photographer's paradise. I always recommend the first gondola up in summer (typically 8:30 AM) when the light is soft and the crowds haven't arrived yet.</p>
+
+<p>For sunrise shots, you'll want to check Parks Canada's current sunrise times and plan accordingly. In May 2026, sunrise is around 5:45 AM, which means that early gondola ride captures the perfect aftermath lighting. The shadows are long, the peaks glow, and you'll have relatively empty gondola cars.</p>
+
+<p>Sunset rides are equally spectacular but come with challenges. Summer sunset gondola rides often sell out, especially on weekends. Book through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> well in advance. The last gondola typically runs until 8:00 PM during peak summer season.</p>
+
+<p>Weather plays a huge role. I've learned to check Environment Canada's mountain weather forecast obsessively. Clear mornings after overnight snow create the most dramatic contrast, while partially cloudy days add depth and texture to your compositions.</p>
+
+<h2>Camera Settings and Equipment for Gondola Shots</h2>
+
+<p>Gondola photography presents unique technical challenges. You're shooting through glass, dealing with movement, and often facing extreme contrast between bright snow and deep shadows.</p>
+
+<p><strong>Essential camera settings:</strong></p>
+<ul>
+<li>Shoot in RAW format for maximum post-processing flexibility</li>
+<li>Use a fast shutter speed (minimum 1/500s) to counter gondola movement</li>
+<li>Start with ISO 200-400 to maintain image quality</li>
+<li>Aperture around f/8-f/11 for sharp foreground and background</li>
+<li>Enable image stabilization if your lens has it</li>
+</ul>
+
+<p>The gondola windows can be surprisingly clean, but I always carry a microfiber cloth. Position your lens as close to the glass as possible without touching—this minimizes reflections and distortion. If you're shooting with a smartphone, the same principle applies.</p>
+
+<p>A polarizing filter helps cut through reflections and enhances the contrast between snow and sky, but be careful not to over-polarize and create unnatural-looking skies. I typically rotate my polarizer to about 60% effect rather than maximum.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> The gondola cars rotate slightly during the journey. Position yourself on the right side going up for the best views of Mount Assiniboine and the Continental Divide. On busy days, politely ask other passengers if you can rotate positions for different shots—most people are happy to help fellow photographers.</div>
+
+<h3>Recommended Equipment</h3>
+
+<p>For serious photography, I recommend a full-frame camera with a 24-70mm lens as your primary setup. This focal range covers everything from wide valley shots to tighter compositions of individual peaks. A 70-200mm lens is excellent for isolating distant mountains like Mount Assiniboine, but it can be unwieldy in crowded gondola cars.</p>
+
+<p>Smartphone photographers shouldn't feel left out. Modern phones handle the dynamic range surprisingly well, and features like HDR mode help balance those extreme contrasts. Just remember that digital zoom degrades quality quickly—it's better to crop later.</p>
+
+<h2>Key Photo Opportunities During the Ride</h2>
+
+<p>The 8-minute gondola ride offers distinct photographic opportunities at different elevations. I've identified the best spots through dozens of rides over the years.</p>
+
+<p><strong>Lower Section (Base to Mid-Station):</strong> Focus on the Bow Valley spread below. Banff townsite looks miniature from here, and the Bow River creates natural leading lines through your composition. The Fairmont Banff Springs Hotel stands out clearly against the forest backdrop.</p>
+
+<p><strong>Mid-Section Views:</strong> This is where the real drama begins. Mount Rundle dominates the eastern view with its distinctive layered rock face. I time my shots for when the gondola passes the support towers—these create interesting foreground elements that add depth to mountain compositions.</p>
+
+<p><strong>Upper Section Approach:</strong> The final third of the journey offers the most spectacular views. The Continental Divide peaks come into view, and on clear days, you can see Mount Assiniboine in the distance. This section moves more slowly, giving you time for multiple compositions.</p>
+
+<p>Don't ignore the view behind you. Looking back toward Banff provides a completely different perspective, especially of the Spray Valley and the mountains beyond Canmore.</p>
+
+<h2>Photography at Sunshine Village Summit</h2>
+
+<p>Once you reach the top, the photography opportunities multiply exponentially. The village sits at 2,160 meters elevation, providing 360-degree mountain views that change dramatically with the seasons.</p>
+
+<p><strong>Summer Photography (June-September):</strong> Alpine flowers bloom in incredible profusion. The meadows around the village burst with Indian paintbrush, mountain avens, and alpine forget-me-nots. I recommend the short walk to the Standish Viewpoint—it's only 10 minutes from the village but offers unobstructed views toward Mount Assiniboine.</p>
+
+<p><strong>Winter Considerations:</strong> If you're staying at one of the <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> sunshine ski in ski out accommodations, you have incredible access for dawn and dusk photography. The village transforms into a winter wonderland, and the contrast between the warm lodge lights and blue snow creates magical compositions.</p>
+
+<p>The observation deck provides the safest vantage point for photography, but venture onto the surrounding trails for more unique angles. The Rock Isle Lake trail (1.5 km each way) offers reflective water shots when conditions are calm.</p>
+
+<h3>Specific Shot Recommendations</h3>
+
+<p>Every photographer should attempt these classic Sunshine Village compositions:</p>
+
+<ul>
+<li><strong>The Banff Valley Panorama:</strong> Shoot from the main observation deck using a wide-angle lens. Include some foreground elements like the deck railing or alpine vegetation to add depth.</li>
+<li><strong>Mount Assiniboine Portrait:</strong> Use a telephoto lens to isolate this distinctive pyramid peak. Best light occurs in early morning when the peak catches the first sun.</li>
+<li><strong>The Village Context Shot:</strong> Step back and include the gondola station and village buildings in your composition to show the human scale against these massive peaks.</li>
+<li><strong>Seasonal Details:</strong> Don't forget macro photography opportunities. Summer wildflowers and winter ice formations provide intimate alternatives to the grand landscape shots.</li>
+</ul>
+
+<h2>Post-Processing Tips for Mountain Photography</h2>
+
+<p>Mountain photography from the gondola often requires significant post-processing to match what your eyes actually saw. The extreme dynamic range—bright snow against deep shadow—challenges even the best cameras.</p>
+
+<p>I always shoot in RAW format, which gives maximum flexibility for exposure adjustments. Start by lifting the shadows to reveal detail in the valley, then carefully adjust highlights to prevent snow from blowing out completely white. The graduated filter tool in Lightroom works perfectly for balancing bright skies against darker foregrounds.</p>
+
+<p>Color temperature adjustments make huge differences in mountain photography. Snow reflects the color of the sky, so morning and evening shots often need warming to counteract blue color casts. Don't overdo the saturation—mountain scenes look best with subtle color enhancement that feels natural.</p>
+
+<p>For smartphone shooters, apps like VSCO or Adobe Lightroom Mobile offer similar adjustment capabilities. The key is restraint—these landscapes are already spectacular and need enhancement, not transformation.</p>
+
+<h2>Practical Planning for Your Photography Trip</h2>
+
+<p>Success with gondola photography requires logistical planning beyond just camera settings. Gondola tickets cost around \$49 CAD for adults in summer 2026, with discounts for advance online booking.</p>
+
+<p>If you're planning a comprehensive Banff photography trip, consider reviewing our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> for optimal scheduling. The gondola works well as either a morning or afternoon activity, depending on your other plans.</p>
+
+<p>Weather changes rapidly at elevation. Even on warm valley days, bring layers. I've been caught in sudden snow squalls in July that made photography impossible but created incredible atmospheric conditions an hour later.</p>
+
+<p>Parking at Sunshine Village base fills early during peak season. Arrive by 8:00 AM or consider staying overnight in Banff and taking the shuttle service. Check our <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> guide for accommodation options that provide easy gondola access.</p>
+
+<p>The gondola operates seasonally, typically from late May through early October for summer operations, then December through April for skiing. Always verify current operating schedules with Sunshine Village directly, as weather can affect operations even during normal seasons.</p>
+
+<p>Battery life decreases rapidly in cold conditions, so bring extras and keep them warm. I learned this lesson the hard way during a January photography session when my camera died just as the light turned perfect. Pack a small thermos with hot coffee—you'll appreciate it during those early morning shoots, and other photographers will definitely appreciate your thoughtfulness.</p>
+`,
+  'banff-ski-accommodation': `
+<p>After countless skiing trips to Banff over the years, I've learned that finding the right ski accommodation can make or break your mountain adventure. With three world-class ski resorts within an hour's drive and accommodation options ranging from luxury hotels to cozy mountain lodges, choosing where to stay requires some insider knowledge. Let me share what I've discovered about securing the perfect base for your Banff ski trip.</p>
+
+<h2>Understanding Banff's Ski Landscape: The Big 3 Resorts</h2>
+
+<p>When planning your <strong>banff ski</strong> adventure, you need to understand the geography. The <strong>Banff Big 3</strong> ski resorts—Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay—each offer distinct experiences and influence where you should stay.</p>
+
+<p>Lake Louise Ski Resort sits 45 minutes west of Banff townsite, offering Canada's largest ski area with over 4,200 acres of terrain. I always tell people it's worth the drive for the variety alone. Sunshine Village, accessible only by gondola, provides ski-in, ski-out accommodation right on the mountain—something unique in the Canadian Rockies. Mt. Norquay, just 10 minutes from downtown Banff, serves as the local's mountain with excellent night skiing and terrain parks.</p>
+
+<p>Your accommodation choice should align with which mountains you plan to <strong>ski Banff</strong>. If you're hitting all three resorts, staying in Banff townsite offers the most flexibility. If you're focused on one mountain, proximity matters more than you might think, especially during powder days when roads can be challenging.</p>
+
+<h2>Downtown Banff: The Hub for Multi-Resort Skiing</h2>
+
+<p>For skiers planning to experience multiple resorts, downtown Banff provides the most practical base. I've stayed at properties ranging from the iconic Fairmont Banff Springs to budget-friendly hostels, and each serves different needs.</p>
+
+<p>The Fairmont Banff Springs offers luxury with ski shuttle services, but expect to pay CAD \$400-800 per night during peak season (December through March). The Rimrock Resort, perched above the townsite, provides similar luxury with better parking—crucial when you're loading ski gear at 6:30 AM.</p>
+
+<p>Mid-range options include the Banff Park Lodge and Mount Royal Hotel, both offering ski storage and shuttle access. These typically run CAD \$200-350 per night during ski season. For budget-conscious skiers, HI-Banff Alpine Centre provides clean accommodation with ski storage for around CAD \$40-60 per night in shared rooms.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Book ski shuttles the night before, not morning-of. Popular routes to Lake Louise and Sunshine fill up fast, and I've seen disappointed skiers stuck in town on perfect powder days.</div>
+
+<p>Downtown Banff also puts you within walking distance of equipment rentals, restaurants, and nightlife. When I'm training for Ironman events, I appreciate being able to run the Bow River pathway directly from most downtown hotels. You can <a href="/hotel-directory">compare 95+ Banff hotels</a> to find options that match your specific needs and budget.</p>
+
+<h2>Sunshine Village: True Ski-In, Ski-Out Experience</h2>
+
+<p>Sunshine Mountain Lodge represents the only ski-in, ski-out accommodation option among the Big 3 resorts. Located at 2,100 meters elevation on Sunshine Village, this lodge offers an experience you simply cannot get anywhere else in the Canadian Rockies.</p>
+
+<p>The lodge features 84 rooms ranging from standard hotel rooms to luxury suites. Rates during ski season run CAD \$300-600 per night, but this includes gondola access—a CAD \$25 value per person daily. What makes this special is stepping out your door onto the slopes. No driving, no parking hassles, no shuttle schedules.</p>
+
+<p>I've stayed here during multi-day training camps, and the convenience factor is enormous. You can ski until the last run, grab dinner at the lodge, and be first on the mountain the next morning. The elevation also means you're often above the cloud line—I've skied in brilliant sunshine while Banff townsite sat under overcast skies.</p>
+
+<p>The lodge restaurant serves solid mountain fare, though options are limited compared to downtown Banff. If you're particular about dining variety, this might influence your decision. Book well in advance; Sunshine Mountain Lodge typically sells out weekends and holidays by November for the following ski season.</p>
+
+<h2>Lake Louise Area: Proximity to Canada's Largest Ski Resort</h2>
+
+<p>For dedicated Lake Louise skiers, staying near the resort eliminates the daily 45-minute drive from Banff townsite. The Fairmont Chateau Lake Louise offers luxury accommodation just 10 minutes from the ski area, with shuttle service during operating hours.</p>
+
+<p>The Chateau provides world-class amenities and the famous Lake Louise ice walk right outside your door. However, expect premium pricing—CAD \$500-1,200 per night during peak ski season. The hotel's spa services are excellent for recovery after long ski days, something I particularly appreciate during intensive training periods.</p>
+
+<p>More affordable options include Lake Louise Inn (CAD \$150-300 per night) and several smaller lodges in the village. These provide basic accommodation with ski storage and easier resort access than staying in Banff townsite.</p>
+
+<p>The trade-off is limited dining and nightlife options compared to downtown Banff. Lake Louise village has a few restaurants, but you're essentially committed to a quieter evening routine. For serious skiers focused on maximizing mountain time, this can actually be an advantage.</p>
+
+<h2>Canmore: Budget-Friendly Alternative</h2>
+
+<p>Located 20 minutes east of Banff townsite, Canmore offers <strong>banff ski accommodation</strong> alternatives that can significantly reduce your overall trip cost. As it's outside Banff National Park boundaries, accommodation rates typically run 20-30% lower than equivalent Banff properties.</p>
+
+<p>I've used Canmore as a base when combining ski days with trail running training in the Bow Valley. Hotels like Coast Canmore and Sandman Inn provide comfortable accommodation with mountain views, typically CAD \$120-250 per night during ski season.</p>
+
+<p>The drive to ski resorts adds 15-20 minutes compared to staying in Banff townsite, but you gain access to Canmore's excellent restaurant scene and more affordable dining options. Several ski shuttle services operate from Canmore, though scheduling is less frequent than from Banff.</p>
+
+<p>Canmore works particularly well for longer stays (5+ days) where the accommodation savings offset the slightly increased transportation costs and time. You can easily explore <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> to compare all your options across both towns.</p>
+
+<h2>Booking Strategy and Practical Considerations</h2>
+
+<p>Securing the right <strong>banff ski accommodation</strong> requires strategic planning, especially for peak periods like Christmas holidays, spring break, and long weekends. I typically book 4-6 months ahead for specific dates, or earlier for holiday periods.</p>
+
+<p>Consider package deals that include lift tickets—many properties offer these arrangements that can provide significant savings. The Fairmont properties, in particular, often bundle accommodation with Big 3 lift tickets at rates better than booking separately.</p>
+
+<p>Transportation logistics matter more than many people realize. If you're flying in, verify whether your accommodation provides airport shuttles or if you need rental car arrangements. Parking at ski resorts fills early—arrive before 8:30 AM or expect to walk considerable distances from overflow lots.</p>
+
+<p>Weather can dramatically impact accommodation choice. During my years skiing Banff, I've experienced road conditions that made the Lake Louise drive challenging for inexperienced mountain drivers. Staying closer to your primary resort during forecasted storms eliminates this concern.</p>
+
+<p>Equipment storage and drying facilities vary significantly between properties. If you're traveling with your own gear, confirm these amenities before booking. Nothing beats starting each ski day with dry boots and gloves.</p>
+
+<p>For comprehensive accommodation research, <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> provides good comparison tools and often features exclusive deals for Banff properties. Remember that the perfect banff ski accommodation balances location, amenities, and budget with your specific skiing goals and travel style.</p>
+`,
   'ski-big-three': `
 <p>The Canadian Rockies' "Big Three" ski resorts—Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay—form the backbone of Banff's legendary winter sports scene. Having spent countless mornings carving fresh powder across these mountains, I can tell you that each resort offers something completely different. Whether you're chasing steep terrain, family-friendly runs, or that perfect bluebird day, understanding what makes each mountain unique will transform your Banff ski trip from good to exceptional.</p>
 
