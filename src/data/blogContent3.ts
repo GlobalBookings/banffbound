@@ -1251,7 +1251,7 @@ export const blogContent3: Record<string, string> = {
 <p>Whether you're a serious whiskey collector or simply curious about Canadian distilling traditions, Banff offers authentic tasting experiences surrounded by some of Canada's most spectacular mountain scenery. The combination of quality spirits, knowledgeable staff, and Rocky Mountain ambiance creates whiskey experiences you won't find in larger cities.</p>
 `,
   'backcountry-ski-touring': `
-<p>Backcountry ski touring in Banff National Park offers some of the most spectacular alpine terrain in North America. Having spent countless winter days exploring these mountains on skis, I can tell you that the Canadian Rockies deliver endless powder runs, dramatic mountain vistas, and the kind of solitude that's increasingly rare in our crowded world. But venturing into Banff's backcountry demands serious preparation, local knowledge, and respect for the inherent risks.</p>
+<p>Backcountry ski <a href="/blog/ski-touring-canada">Ski Touring Adventures in Banff</a> in Banff National Park offers some of the most spectacular alpine terrain in North America. Having spent countless winter days exploring these mountains on skis, I can tell you that the Canadian Rockies deliver endless powder runs, dramatic mountain vistas, and the kind of solitude that's increasingly rare in our crowded world. But venturing into Banff's backcountry demands serious preparation, local knowledge, and respect for the inherent risks.</p>
 
 <h2>Essential Preparation for Backcountry Ski Touring</h2>
 
