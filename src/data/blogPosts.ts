@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ski-touring-canada',
+    title: 'Epic Ski Touring Adventures in Banff: Your 2026 Guide',
+    description: 'Discover Banff\'s best ski touring routes in 2026! From beginner-friendly trails to expert backcountry adventures, find gear tips, safety guides & hidden gems.',
+    date: '2026-05-14',
+    category: 'Seasonal',
+    image: '/images/blog/ski-touring-canada.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'photography-tips-sunshine-gondola',
     title: 'Epic Banff Sunshine Gondola Photography Tips for 2026',
     description: 'Capture stunning Banff Sunshine Gondola photos in 2026 with expert tips on lighting, angles, and seasonal shots. Master mountain photography from Canada\'s iconic peaks.',

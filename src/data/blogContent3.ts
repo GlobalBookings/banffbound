@@ -1,4 +1,69 @@
 export const blogContent3: Record<string, string> = {
+  'ski-touring-canada': `
+<p>As someone who's spent countless hours exploring Banff's backcountry on skis, I can tell you that ski touring in Canada doesn't get much better than what you'll find here. The combination of reliable snowpack, diverse terrain, and world-class mountain scenery makes Banff National Park one of North America's premier ski touring destinations. Whether you're taking your first tentative steps into the backcountry or you're a seasoned tourer looking for your next challenge, the Canadian Rockies deliver experiences that will keep you coming back season after season.</p>
+
+<h2>Why Banff is a Premier Ski Touring Destination</h2>
+
+<p>During my years of ski touring across Canada, I've discovered that Banff offers something unique: accessibility without sacrificing adventure. The town sits at 1,400 meters elevation, which means you're already starting high. Most touring routes begin between 1,500-1,800 meters, giving you a significant head start on elevation gain.</p>
+
+<p>The snow conditions here are remarkably consistent. The continental snowpack typically establishes itself by early December and holds through April, sometimes into May at higher elevations. I've had some of my best powder days in March when the snowpack is deep and stable, and the days are getting longer.</p>
+
+<p>What sets ski touring in Banff apart from other Canadian destinations is the sheer variety. You can start with mellow valley tours like the Cascade Ponds area, progress to moderate alpine routes on peaks like Mount Rundle, and eventually tackle serious objectives like the Wapta Icefield traverse. All of this is accessible from a single basecamp in Banff townsite.</p>
+
+<h2>Essential Ski Touring Routes for Every Level</h2>
+
+<h3>Beginner-Friendly Tours</h3>
+
+<p>When I'm introducing friends to ski touring, I always start them on the <strong>Cascade Ponds Loop</strong>. It's a flat, 5-kilometer route that follows the Bow River valley floor. You won't gain much elevation, but you'll get comfortable with your gear while enjoying spectacular views of Cascade Mountain. The trailhead is just 3 kilometers north of Banff townsite on the Bow Valley Parkway.</p>
+
+<p>Another excellent beginner option is the <strong>Johnson Lake loop</strong>. The 2.8-kilometer circuit around the frozen lake offers gentle terrain and stunning views of Mount Rundle. I recommend this tour for families or anyone looking for a shorter outing. The parking area is small, so arrive before 9 AM on weekends.</p>
+
+<h3>Intermediate Adventures</h3>
+
+<p>The <strong>Skoki Lodge area</strong> provides some of the best intermediate ski touring in the Canadian Rockies. The approach follows a well-marked trail for 11 kilometers from the Lake Louise ski area, gaining about 350 meters of elevation. Once you reach the Skoki Valley, you have access to numerous day tours including Merlin Meadows and Pika Peak.</p>
+
+<p>I particularly enjoy the <strong>Dolomite Peak traverse</strong> from the Icefields Parkway. This 8-kilometer tour gains 600 meters of elevation and offers incredible views of the Waputik Range. The descent down the backside provides consistent fall-line skiing through open glades.</p>
+
+<h3>Advanced Objectives</h3>
+
+<p>For experienced tourers, the <strong>Wapta Icefield traverse</strong> represents the pinnacle of ski touring in Canada. This multi-day expedition covers 35 kilometers of glaciated terrain, connecting a series of alpine huts. I've completed this traverse three times, and each trip has delivered different conditions and challenges. Plan for 4-6 days and expect to encounter everything from wind-scoured sastrugi to deep powder bowls.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Always check the Parks Canada avalanche bulletin before heading out. The Canadian Avalanche Centre provides detailed forecasts for the Banff, Yoho, and Kootenay region. I check it religiously and adjust my route selection based on the current avalanche danger rating.</div>
+
+<h2>Gear Essentials and Where to Rent</h2>
+
+<p>Having the right equipment makes or breaks a ski touring experience. In Banff, you have several excellent rental options. <strong>Ski Hub</strong> on Banff Avenue carries high-quality touring setups including Dynafit and G3 bindings, plus lightweight skis from manufacturers like Salomon and Black Diamond. Expect to pay around \$65-75 CAD per day for a complete setup including skis, boots, bindings, and skins.</p>
+
+<p><strong>Monod Sports</strong> is another reliable option, particularly if you need avalanche safety equipment. They rent complete avalanche packages (beacon, probe, shovel) for \$35 CAD per day. Never venture into avalanche terrain without this trinity of safety gear.</p>
+
+<p>For clothing, I always recommend layers. Start with a merino wool base layer, add an insulating mid-layer like a lightweight down jacket, and top it with a breathable shell. The temperature swings in the mountains can be dramatic – I've experienced everything from -20°C at dawn to +10°C by afternoon on the same tour.</p>
+
+<h2>Planning Your Ski Touring Trip to Banff</h2>
+
+<p>Timing your visit correctly is crucial for the best ski touring experience. The prime season runs from January through March, when the snowpack is most stable and the weather patterns are most predictable. I prefer February visits because the days are getting noticeably longer while snow conditions remain excellent.</p>
+
+<p>For accommodation, staying in Banff townsite gives you the best access to trailheads. I usually book through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> to compare rates across the numerous hotels and lodges. The <a href="/hotel-directory">Compare 95+ Banff hotels</a> tool on this site is particularly helpful for finding accommodations that cater to outdoor enthusiasts.</p>
+
+<p>If you're planning a longer stay, consider our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> which can easily be adapted to focus on ski touring activities. The key is building in flexibility for weather and avalanche conditions.</p>
+
+<h2>Safety Considerations and Avalanche Education</h2>
+
+<p>Ski touring involves inherent risks that require proper education and preparation. I cannot overstate the importance of avalanche education. The <strong>Yamnuska Mountain Adventures</strong> in Canmore offers excellent AST (Avalanche Skills Training) courses throughout the winter. Their AST 1 course costs \$395 CAD and provides the foundational knowledge every backcountry skier needs.</p>
+
+<p>Weather in the Canadian Rockies can change rapidly. I've been caught in whiteout conditions that reduced visibility to less than 10 meters. Always carry navigation tools – I use a GPS device as my primary navigation tool and carry a map and compass as backup. The 1:50,000 scale topographic maps from Natural Resources Canada are excellent for route planning.</p>
+
+<p>Consider hiring a guide for your first few tours, especially if you're new to the area. <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> connects you with certified mountain guides who know the local conditions intimately.</p>
+
+<h2>Making the Most of Your Banff Ski Touring Experience</h2>
+
+<p>Beyond the touring itself, Banff offers an excellent après-ski scene. After a long day in the backcountry, I love unwinding at the <strong>Banff Avenue Brewing Company</strong> or <strong>Melissa's MisMeasured Restaurant</strong>. Both establishments understand the appetites that come with mountain adventures. For a comprehensive guide to refueling after your tours, check out our guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>.</p>
+
+<p>The town's compact size means everything is walkable, which is perfect when your legs are tired from a day of touring. The Banff Centre often hosts evening events and performances that provide cultural enrichment between mountain days.</p>
+
+<p>Consider mixing your ski touring with other winter activities. The <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> often transform into excellent snowshoe routes, providing variety for rest days or when avalanche conditions aren't favorable for touring.</p>
+
+<p>Spring touring, particularly in May and early June, offers unique rewards. The days are long, the weather is generally stable, and you can access high alpine terrain that's off-limits during winter storms. Just be prepared for variable snow conditions as the snowpack begins its annual transformation. Some of my most memorable ski touring experiences in Canada have happened during these extended spring days, watching the sun set behind the Continental Divide while making final turns down to the valley floor.</p>
+`,
   'photography-tips-sunshine-gondola': `
 <p>The Sunshine Village Gondola offers some of the most spectacular photography opportunities in the Canadian Rockies, but capturing those perfect shots requires more than just pointing and clicking. Having ridden this gondola countless times during my training runs and ski trips, I've learned exactly when, where, and how to photograph from this aerial vantage point to get results that actually do justice to the scenery.</p>
 
