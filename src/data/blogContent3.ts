@@ -69,7 +69,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>The drive up Mt Norquay Road is short but steep, climbing 6 kilometers from downtown Banff to the base lodge. In winter conditions, I always recommend having proper tires – the road can be icy, especially early morning. Parking is free but limited, so arrive before 8 AM on weekends and holidays or you'll be circling the lot.</p>
 
-<p>The Norquay ski shuttle provides a convenient alternative to driving. The shuttle runs from several hotels in downtown Banff, including the Fairmont Banff Springs and Rimrock Resort. Service typically operates from 8 AM to 4 PM during ski season, with shuttles departing every 30 minutes. A day pass costs \$15 CAD for adults, or you can purchase a combination lift ticket and shuttle package.</p>
+<p>The <a href="/blog/norquay-ski-shuttle">Banff's Norquay Ski Shuttle : Routes & Tips</a> ski shuttle provides a convenient alternative to driving. The shuttle runs from several hotels in downtown Banff, including the Fairmont Banff Springs and Rimrock Resort. Service typically operates from 8 AM to 4 PM during ski season, with shuttles departing every 30 minutes. A day pass costs \$15 CAD for adults, or you can purchase a combination lift ticket and shuttle package.</p>
 
 <p>For visitors staying in town, I often recommend taking the shuttle on powder days when the parking lot fills up quickly. You can book shuttle passes at most Banff hotels or online through the resort's website.</p>
 
