@@ -11,6 +11,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'norquay-ski-shuttle',
+    title: 'Banff\'s Norquay Ski Shuttle Guide 2026: Routes & Tips',
+    description: 'Navigate Banff\'s Norquay Ski Shuttle with ease in 2026. Complete guide covering routes, schedules, booking tips, and insider advice for hassle-free mountain access.',
+    date: '2026-05-15',
+    category: 'Seasonal',
+    image: '/images/blog/norquay-ski-shuttle.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'norquay-ski-resort',
+    title: 'Mount Norquay Banff: Your 2026 Ski Adventure Guide',
+    description: 'Discover Mount Norquay\'s skiing in 2026! Our complete Banff guide covers slopes, lift tickets, rentals, lessons, and insider tips for your perfect mountain adventure.',
+    date: '2026-05-15',
+    category: 'Seasonal',
+    image: '/images/blog/norquay-ski-resort.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'ski-touring-canada',
     title: 'Epic Ski Touring Adventures in Banff: Your 2026 Guide',
     description: 'Discover Banff\'s best ski touring routes in 2026! From beginner-friendly trails to expert backcountry adventures, find gear tips, safety guides & hidden gems.',

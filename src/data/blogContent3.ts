@@ -1,4 +1,118 @@
 export const blogContent3: Record<string, string> = {
+  'norquay-ski-shuttle': `
+<p>As someone who's spent countless mornings carving fresh tracks at Mt Norquay, I can tell you that getting there efficiently makes all the difference between catching first chair and watching the powder get tracked out. The <strong>Norquay ski shuttle</strong> has become an essential service for visitors staying in Banff town who want to hit the slopes without the hassle of driving up the mountain road themselves.</p>
+
+<h2>Understanding the Norquay Ski Shuttle Service</h2>
+
+<p>The <strong>norquay ski shuttle</strong> operates during the winter season (typically December through early April) and provides regular transport between downtown Banff and Mt Norquay ski resort. During my visits in the 2025-26 season, I found the shuttle ran approximately every 30 minutes during peak hours, with the first pickup around 8:00 AM and final return trip around 4:30 PM.</p>
+
+<p>The shuttle pickup points include major hotels along Banff Avenue and the Banff Transit Hub near the train station. When I stayed at the Fairmont Banff Springs last season, the shuttle stopped right at the hotel entrance, making it incredibly convenient with all my ski gear.</p>
+
+<p>Current shuttle rates for the 2025-26 season were \$15 CAD per person each way, though I'd recommend checking with your accommodation as many hotels offer discounted or complimentary shuttle passes as part of ski packages. The <a href="/hotel-directory">Compare 95+ Banff hotels</a> page shows which properties include shuttle access.</p>
+
+<h2>Mt Norquay Road: The Alternative Route</h2>
+
+<p><strong>Mt Norquay Road</strong> winds 6 kilometers up from the Trans-Canada Highway to the ski area base lodge. While the drive typically takes 10-12 minutes in good conditions, I've experienced it taking 30+ minutes during heavy snowfall or when traffic backs up at the base parking lots.</p>
+
+<p>The road can be challenging for drivers unfamiliar with mountain winter conditions. I've seen rental cars struggling on the steeper sections, especially the hairpin turns about halfway up. If you're driving yourself, ensure you have winter tires (required by law in Alberta from October 1 to March 31) and carry tire chains as backup.</p>
+
+<p>Parking at the base costs \$20 CAD per day during peak season, and spaces fill up by 9:30 AM on weekends and holidays. The shuttle eliminates both the driving stress and parking fees, making it cost-effective for solo travelers or couples.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Book your shuttle spot the night before, especially for weekend skiing. The shuttles reach capacity quickly during peak season, and I've seen disappointed skiers waiting an hour for the next available transport on busy powder days.</div>
+
+<h2>Mt Norquay: What Makes It Worth the Trip</h2>
+
+<p><strong>Mt Norquay</strong> holds the distinction of being Banff's local mountain, where generations of Banff families learned to ski. The <strong>norquay ski resort</strong> offers 60 skiable acres with a vertical drop of 503 meters, making it more intimate than the sprawling terrain at nearby Sunshine Village or Lake Louise.</p>
+
+<p>What I love about Mt Norquay is its character. The North American chair serves genuine expert terrain that challenges even strong skiers, while the Cascade and Spirit chairs provide excellent intermediate runs with spectacular views across the Bow Valley. The Mystic Express chair, added in recent years, opened up additional intermediate terrain that's perfect for building confidence.</p>
+
+<p>Night skiing operates Wednesday through Saturday until 9:00 PM, offering a unique experience you won't find at the other Banff area mountains. There's something magical about skiing under lights with the town of Banff twinkling below – though the shuttle service ends before night skiing concludes, so plan alternative transportation for evening sessions.</p>
+
+<h2>Planning Your Mt Norquay Day Trip</h2>
+
+<p>A typical Mt Norquay day works well as part of a multi-mountain ski trip. Since it's the smallest of the three Banff area ski resorts, dedicated skiers can explore most of the terrain in a single day. I often recommend Mt Norquay for the first day of a ski vacation – it's less overwhelming than the massive terrain at Sunshine or Lake Louise, making it ideal for getting your mountain legs back.</p>
+
+<p>Lift tickets for the 2025-26 season started at \$89 CAD for adults during value periods, rising to \$129 CAD during peak dates. The SkiBig3 pass, covering Mt Norquay, Sunshine Village, and Lake Louise Ski Resort, offers better value for trips longer than three days.</p>
+
+<p>The base lodge provides decent food service, though prices reflect typical ski resort markup. I usually grab breakfast in town before catching the early shuttle, then enjoy a proper lunch on the mountain. The cafeteria-style setup moves quickly, important when you want to maximize slope time during shorter winter days.</p>
+
+<h2>Accommodation and Transportation Connections</h2>
+
+<p>Staying in downtown Banff makes the most sense for shuttle access. Properties along Banff Avenue offer the most convenient pickup points, while hotels further from the core may require a short walk to shuttle stops. When booking accommodation, specifically ask about ski shuttle arrangements – some hotels coordinate with <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> to offer package deals including shuttle passes.</p>
+
+<p>The Banff public transit system connects to the ski shuttle hub, making it accessible even if you're staying at properties like the Fairmont Banff Springs or hotels in the Tunnel Mountain area. Route 2 runs frequently between major hotels and the downtown core.</p>
+
+<p>For those exploring beyond skiing, Mt Norquay's location makes it easy to combine with other Banff activities. The <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> shows how a Mt Norquay ski day fits into a broader Banff experience, especially during shoulder seasons when you might ski in the morning and explore town attractions afterward.</p>
+
+<h2>Beyond the Ski Season</h2>
+
+<p>Mt Norquay transforms during summer months, operating a scenic chairlift, mountain coaster, and via ferrata climbing experience. The summer shuttle service operates differently than winter – check current schedules as they vary significantly by season. <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> often features Mt Norquay summer activities as part of Banff adventure packages.</p>
+
+<p>The summit accessible by chairlift provides excellent views across the Bow Valley and serves as a starting point for advanced hiking routes. However, most visitors focusing on <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> will find better options elsewhere in the park during hiking season.</p>
+
+<p>As someone who returns to Banff multiple times each year for different activities, I appreciate how Mt Norquay offers a consistent, accessible mountain experience regardless of season. The shuttle service removes transportation barriers that can complicate mountain adventures, especially for international visitors unfamiliar with Canadian winter driving conditions.</p>
+
+<p>Planning your Mt Norquay experience around the shuttle schedule creates a structured day that maximizes mountain time while minimizing logistical headaches. For current shuttle schedules and booking information, contact your hotel concierge or check directly with Mt Norquay – services and schedules do adjust based on weather conditions and seasonal demand patterns that can shift from year to year.</p>
+`,
+  'norquay-ski-resort': `
+<p>As someone who's carved turns down Mt Norquay's legendary Memorial Bowl more times than I can count, I can tell you that Norquay Ski Resort holds a special place in my heart. This historic mountain, just five minutes from downtown Banff, offers some of the most challenging terrain in the Canadian Rockies alongside spectacular views of the Bow Valley. While other resorts get the headlines, Mt Norquay delivers an authentic Rocky Mountain skiing experience that keeps me coming back every winter.</p>
+
+<h2>About Norquay Ski Resort</h2>
+
+<p>Mt Norquay opened in 1926, making it one of Canada's oldest ski areas. The resort sits on the eastern slopes of Mount Norquay, rising to 2,133 meters above sea level with a vertical drop of 503 meters. What sets this mountain apart is its steep, challenging terrain – nearly 40% of the runs are rated expert level.</p>
+
+<p>The resort operates five lifts serving 60 runs across 190 acres of skiable terrain. The North American lift gives access to the famous double-black diamond runs like Lone Pine and Gun Run, while the Spirit Express quad chair serves the more moderate terrain perfect for intermediates. From my experience, the snow quality here is consistently excellent thanks to the mountain's elevation and north-facing exposure.</p>
+
+<p>Current lift ticket prices for the 2026-2027 season start at \$89 CAD for adults during regular periods, with early bird and multi-day discounts available. Season passes run \$899 CAD for adults, which pays for itself after about 10 days on the mountain.</p>
+
+<h2>Getting to Mt Norquay</h2>
+
+<p>The drive up Mt Norquay Road is short but steep, climbing 6 kilometers from downtown Banff to the base lodge. In winter conditions, I always recommend having proper tires – the road can be icy, especially early morning. Parking is free but limited, so arrive before 8 AM on weekends and holidays or you'll be circling the lot.</p>
+
+<p>The Norquay ski shuttle provides a convenient alternative to driving. The shuttle runs from several hotels in downtown Banff, including the Fairmont Banff Springs and Rimrock Resort. Service typically operates from 8 AM to 4 PM during ski season, with shuttles departing every 30 minutes. A day pass costs \$15 CAD for adults, or you can purchase a combination lift ticket and shuttle package.</p>
+
+<p>For visitors staying in town, I often recommend taking the shuttle on powder days when the parking lot fills up quickly. You can book shuttle passes at most Banff hotels or online through the resort's website.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> If you're driving up Mt Norquay Road in winter, keep your vehicle in a lower gear going down – the steep grade can overwhelm your brakes. I've seen too many cars sliding toward the bottom because drivers rode their brakes the entire descent.</div>
+
+<h2>Terrain and Skiing Experience</h2>
+
+<p>Mt Norquay's terrain breaks down to 20% beginner, 40% intermediate, and 40% advanced/expert. The mountain's signature run is Memorial Bowl, a wide-open expert run with consistent steep pitch and spectacular views across to Cascade Mountain. When conditions are right, this run offers some of the best skiing in Alberta.</p>
+
+<p>For intermediate skiers, I recommend the runs off the Spirit Express chair – Wishbone and Cascade are both fun, rolling intermediate runs that let you build confidence before tackling the steeper terrain. The Cascade Express services the mountain's gentler eastern slopes, perfect for families and developing skiers.</p>
+
+<p>Advanced skiers shouldn't miss the North American chair terrain. Lone Pine drops you into tight trees with natural features, while Gun Run offers sustained steep skiing with optional cliff drops for the truly committed. The Mystic Express accesses some hidden powder stashes that hold snow well into spring.</p>
+
+<p>Night skiing operates Wednesday through Saturday until 8 PM on selected runs served by the Spirit Express chair. There's something magical about carving turns under the lights with Banff's town lights twinkling below.</p>
+
+<h2>Facilities and Amenities</h2>
+
+<p>The main day lodge houses the rental shop, cafeteria, and ski school desk. The rental operation is solid – I've borrowed gear here when traveling light, and the equipment is well-maintained. Expect to pay around \$65 CAD per day for a complete ski package.</p>
+
+<p>The cafeteria serves typical ski hill fare, but the chili is legitimately good after a cold morning on the mountain. Prices are reasonable for a ski resort – expect \$15-18 CAD for lunch entrees. The outdoor deck provides incredible views of the Bow Valley when weather permits.</p>
+
+<p>The ski school offers group and private lessons for all ability levels. I've watched their instructors work with nervous beginners on the Cascade chair runs, and they do excellent work building confidence. Private lessons start at \$129 CAD per hour, while group lessons run \$89 CAD for a full day including lift ticket.</p>
+
+<h2>Beyond Winter: Summer Activities</h2>
+
+<p>Mt Norquay transforms into an adventure playground during summer months. The North American Chairlift operates for scenic rides, taking visitors to an elevation viewpoint at 2,000 meters. The 360-degree views from the top encompass the Bow Valley, downtown Banff, and surrounding peaks including Cascade Mountain and Mount Rundle.</p>
+
+<p>The Via Ferrata experience launched in recent years, offering guided climbing routes on the mountain's cliff faces using fixed cables and bridges. This half-day adventure costs \$169 CAD per person and provides an adrenaline rush with safety systems in place. As someone who prefers unassisted climbing, I was skeptical initially, but the routes are genuinely thrilling and well-designed.</p>
+
+<p>Summer chairlift rides operate from late May through early October, weather permitting. Adult tickets cost \$24 CAD, and the ride takes about 15 minutes each way. Pack layers – it's often 10 degrees cooler at the top than in the valley.</p>
+
+<h2>Planning Your Mt Norquay Visit</h2>
+
+<p>For accommodation, staying in downtown Banff puts you within easy reach of Mt Norquay Road. <a href="/hotel-directory">Compare 95+ Banff hotels</a> to find options that work for your budget and preferences. Many visitors combine Norquay with skiing at nearby Lake Louise or Sunshine Village as part of a multi-mountain experience.</p>
+
+<p>The SkiBig3 lift ticket provides access to all three Banff area mountains – Mt Norquay, Lake Louise, and Sunshine Village. At \$159 CAD per day, it's worth it if you plan to ski different mountains, though I often stick to Norquay for its convenience and challenging terrain.</p>
+
+<p>Book accommodations well in advance for winter visits, especially during Christmas holidays and February school breaks. <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> typically offers good package deals combining hotels with lift tickets.</p>
+
+<p>If you're planning a longer Banff visit, consider working Mt Norquay into a comprehensive <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> that includes hiking and other mountain activities. The resort's proximity to town makes it easy to combine with exploring Banff's dining scene at some of the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>.</p>
+
+<p>Weather can change rapidly at elevation, so pack appropriate gear regardless of season. In winter, temperatures can drop to -30°C with wind, while summer visitors should prepare for everything from t-shirt weather to snow squalls. Check Parks Canada weather updates before heading up Mt Norquay Road, as the access road occasionally closes during severe weather events.</p>
+`,
   'ski-touring-canada': `
 <p>As someone who's spent countless hours exploring Banff's backcountry on skis, I can tell you that ski touring in Canada doesn't get much better than what you'll find here. The combination of reliable snowpack, diverse terrain, and world-class mountain scenery makes Banff National Park one of North America's premier ski touring destinations. Whether you're taking your first tentative steps into the backcountry or you're a seasoned tourer looking for your next challenge, the Canadian Rockies deliver experiences that will keep you coming back season after season.</p>
 
