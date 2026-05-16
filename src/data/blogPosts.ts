@@ -11,6 +11,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'big-three-banff',
+    title: 'Banff\'s Big Three Lakes: Your Ultimate 2026 Guide to Paradise',
+    description: 'Discover Banff\'s iconic Lake Louise, Moraine Lake & Peyto Lake in 2026. Complete guide with insider tips, best viewpoints, hiking trails & photo spots.',
+    date: '2026-05-16',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'big-three-ski',
+    title: 'Banff\'s Big Three Ski Resorts: Your 2026 Ultimate Guide',
+    description: 'Discover Banff\'s top 3 ski resorts in 2026! Complete guide to Lake Louise, Sunshine Village & Mount Norquay with trails, conditions & insider tips.',
+    date: '2026-05-16',
+    category: 'Seasonal',
+    image: '/images/blog/big-three-ski.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-ski-mountains',
+    title: 'Banff\'s 7 Best Ski Mountains You Must Hit in 2026',
+    description: 'Discover Banff\'s top 7 ski mountains for 2026! From world-class slopes at Lake Louise to hidden gems, find the best powder, terrain, and mountain experiences.',
+    date: '2026-05-16',
+    category: 'Seasonal',
+    image: '/images/blog/banff-ski-mountains.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'norquay-ski-shuttle',
     title: 'Banff\'s Norquay Ski Shuttle Guide 2026: Routes & Tips',
     description: 'Navigate Banff\'s Norquay Ski Shuttle with ease in 2026. Complete guide covering routes, schedules, booking tips, and insider advice for hassle-free mountain access.',
