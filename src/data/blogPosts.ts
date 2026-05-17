@@ -11,6 +11,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'mt-norquay-road',
+    title: 'Mount Norquay Road: Banff\'s Hidden Scenic Drive Guide 2026',
+    description: 'Discover Mount Norquay Road, Banff\'s best-kept secret scenic drive in 2026. Complete guide to viewpoints, wildlife spotting, and mountain vistas awaits.',
+    date: '2026-05-17',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'golden-banff',
+    title: 'Golden Banff 2026: Your Ultimate Guide to Canada\'s Crown Jewel',
+    description: 'Discover Banff\'s stunning alpine landscapes, world-class skiing, and wildlife adventures in 2026. Your complete guide to Canada\'s most iconic national park.',
+    date: '2026-05-17',
+    category: 'Guides',
+    image: '/images/blog/golden-banff.webp',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'big-3-ski',
+    title: 'Banff\'s Big 3 Ski Resorts: Ultimate 2026 Guide & Tips',
+    description: 'Discover Banff\'s top 3 ski resorts in 2026! Our ultimate guide covers Lake Louise, Sunshine Village & Mt. Norquay with insider tips, conditions & deals.',
+    date: '2026-05-17',
+    category: 'Seasonal',
+    image: '/images/blog/big-3-ski.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'big-three-banff',
     title: 'Banff\'s Big Three Lakes: Your Ultimate 2026 Guide to Paradise',
     description: 'Discover Banff\'s iconic Lake Louise, Moraine Lake & Peyto Lake in 2026. Complete guide with insider tips, best viewpoints, hiking trails & photo spots.',

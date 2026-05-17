@@ -1,4 +1,212 @@
 export const blogContent3: Record<string, string> = {
+  'mt-norquay-road': `
+<p>Mt Norquay Road winds its way up the mountainside just minutes from downtown Banff, leading to one of the area's most accessible year-round adventure destinations. I've driven this scenic route countless times over the years, whether heading up for early morning ski runs in winter or summer hiking adventures. The 6-kilometer paved road climbs steadily from the Bow Valley floor to Mt Norquay's base facilities, offering spectacular views and access to activities that many visitors overlook.</p>
+
+<h2>Getting to Mt Norquay Road and What to Expect</h2>
+
+<p>Mt Norquay Road begins right off the Trans-Canada Highway, just 5 minutes north of downtown Banff. The turnoff is well-marked and easy to spot – look for the brown Parks Canada signs directing you toward "Mt Norquay." The drive up takes about 10 minutes, winding through dense forest with occasional clearings that reveal stunning mountain vistas.</p>
+
+<p>I always tell visitors to take their time on this road, especially if it's their first visit. There are several pullouts where you can stop for photos, and the views back toward the Bow Valley and town of Banff are spectacular. The road is well-maintained year-round, though you'll need winter tires from October through April as required by Parks Canada regulations.</p>
+
+<p>Parking at the top fills up quickly during peak seasons. In summer, I recommend arriving before 9 AM to guarantee a spot, while winter weekends require even earlier arrival – sometimes before 8 AM. Daily parking costs \$10 CAD, and you can pay at the automated machines near the lodge.</p>
+
+<h2>Mt Norquay Summer Activities and Adventures</h2>
+
+<p>Mt norquay summer operations have expanded significantly in recent years, transforming this ski hill into a legitimate year-round destination. The Via Ferrata, which I first tried in 2023, remains the standout summer attraction. This guided climbing experience uses fixed cables and bridges to navigate cliff faces that would otherwise require technical rock climbing skills.</p>
+
+<p>The sightseeing chairlift operates daily from late June through early September, weather permitting. At \$32 CAD for adults, it's reasonably priced compared to other Banff attractions. The 20-minute ride takes you up to 2,133 meters elevation, where the views extend across the entire Bow Valley. I've ridden this chairlift dozens of times, and it never gets old.</p>
+
+<p>For mountain biking enthusiasts, norquay mountain offers some of the most technical downhill trails in the Canadian Rockies. The bike park operates Friday through Sunday during summer months, with day passes starting at \$59 CAD. These trails are serious business – I've seen experienced riders struggle with the rocky, root-filled descents.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Book the Via Ferrata experience at least 48 hours in advance during July and August. The morning sessions at 9 AM offer cooler temperatures and better lighting for photos, plus you'll beat the afternoon thunderstorms that frequently roll through.</div>
+
+<h2>Hiking Trails Accessible from Mt Norquay Road</h2>
+
+<p>The road provides access to several excellent hiking options beyond the resort facilities. The Stoney Squaw Trail starts from a small parking area about halfway up Mt Norquay Road – watch for the trailhead sign on your left. This 2.1-kilometer loop takes about 90 minutes and offers panoramic views without the chairlift cost.</p>
+
+<p>From the main parking area at the top, you can access the more challenging Cascade Amphitheatre trail. This 6.8-kilometer hike climbs steadily through subalpine forest before opening into a spectacular cirque surrounded by towering limestone walls. I typically allow 3-4 hours for this hike, and it ranks among my top recommendations for intermediate hikers visiting Banff.</p>
+
+<p>The North American trail also begins near the base lodge, offering a gentler 2.5-kilometer walk through mature forest. This trail connects with several others, making it perfect for families or those wanting a shorter outdoor experience. For more challenging options, check out our comprehensive guide to the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>.</p>
+
+<h2>Winter Sports and Skiing at Mt Norquay</h2>
+
+<p>Mt norquay holds special significance as Canada's first ski resort, operating since 1926. The mountain offers some of the steepest and most challenging terrain accessible to the general public in Banff. With a 503-meter vertical drop and runs reaching 40-degree pitches, this isn't a beginner mountain.</p>
+
+<p>I've been skiing Mt Norquay for over a decade, and the Lone Pine run remains my favorite challenge. This double-black diamond drops straight down the fall line with no mercy for hesitant skiers. The North American chair accesses gentler terrain suitable for intermediate skiers, while the Spirit chair serves the expert runs.</p>
+
+<p>Lift tickets for the 2026-27 season start at \$89 CAD for adults on weekends, with midweek rates dropping to \$79 CAD. Night skiing operates Thursday through Saturday until 8 PM, offering a unique experience under the lights with Banff's town lights twinkling below.</p>
+
+<p>Equipment rental is available on-site, though I recommend booking in advance during peak periods like Christmas week and February long weekend. The base lodge cafeteria serves decent mountain food, but don't expect gourmet dining – stick to basics like chili or burgers.</p>
+
+<h2>Practical Information for Visiting Mt Norquay</h2>
+
+<p>The drive up Mt Norquay Road requires a valid Parks Canada Discovery Pass, which costs \$142.40 CAD annually or \$14.70 CAD for a daily pass. If you're staying multiple days, the annual pass pays for itself quickly and includes access to all Canadian national parks.</p>
+
+<p>Cell phone coverage becomes spotty about halfway up the road and is virtually non-existent at the summit. Download offline maps before heading up, and let someone know your planned return time if you're hiking.</p>
+
+<p>Weather can change rapidly at elevation. I've experienced snow in July and 20-degree temperature swings between the base and summit. Always bring extra layers, even for summer activities. The mountain operates its own weather monitoring system, and conditions at the top can differ dramatically from downtown Banff.</p>
+
+<p>For accommodations near Mt Norquay Road, several hotels offer shuttle services during ski season. The Banff Park Lodge and Mount Royal Hotel both provide regular transportation, though schedules vary by season. You can <a href="/hotel-directory">compare 95+ Banff hotels</a> to find options that suit your budget and location preferences.</p>
+
+<h2>Alternative Activities and Nearby Attractions</h2>
+
+<p>If Mt Norquay's activities don't appeal or weather forces plan changes, several alternatives exist within a short drive. The Banff Gondola operates year-round just 15 minutes south on the Bow Valley Parkway, though expect to pay premium prices for the experience.</p>
+
+<p>Cascade Ponds, located at the base of Mt Norquay Road, offers swimming and picnicking during summer months. The water never gets particularly warm – even in August, you're looking at maximum temperatures around 16°C – but it's refreshing after a long hike.</p>
+
+<p>For guided experiences and tours that include Mt Norquay area activities, <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers several options with local operators. These can be particularly valuable during your first visit when you're unfamiliar with the area.</p>
+
+<p>Planning a longer stay in Banff? Consider incorporating Mt Norquay into a broader itinerary that includes Lake Louise, Moraine Lake, and other iconic destinations. Our detailed <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> shows how to maximize your time while avoiding the crowds that plague more popular locations.</p>
+
+<p>Mt Norquay Road opens up a world of adventure that many visitors miss in their rush to reach Lake Louise or the Icefields Parkway. Whether you're seeking challenging ski runs, scenic summer chairlift rides, or access to excellent hiking trails, this easily accessible mountain delivers authentic Rocky Mountain experiences without the crowds. The road itself becomes part of the adventure, offering glimpses of the rugged wilderness that makes Banff National Park such a remarkable destination.</p>
+`,
+  'golden-banff': `
+<p>After running countless trails and skiing endless powder in the Canadian Rockies, I can tell you that Banff National Park offers some of the most spectacular mountain experiences in North America. The golden light that hits these peaks at sunrise and sunset creates what locals call "golden Banff" moments – those perfect conditions that make every photo look like a postcard and every adventure feel larger than life.</p>
+
+<h2>Why "Golden Banff" Creates the Perfect Mountain Experience</h2>
+
+<p>The term "golden Banff" refers to those magical hours when the sun hits the limestone peaks of the Canadian Rockies, bathing everything in warm, amber light. I've witnessed this phenomenon hundreds of times during my training runs and ski tours, and it never gets old. The best golden light typically occurs during the first hour after sunrise and the hour before sunset, when the sun sits low on the horizon.</p>
+
+<p>During my latest visit in early May 2026, I watched the sunrise from Tunnel Mountain and saw the entire Bow Valley transform from blue-grey shadows into a golden amphitheater. Mount Rundle's distinctive ridge line catches this light perfectly, while the Bow River below reflects the warm tones like a mirror.</p>
+
+<p>For photographers and outdoor enthusiasts, planning activities around these golden hours makes an enormous difference. I always schedule my trail runs to finish at scenic viewpoints just before sunset, and I start my winter ski tours early enough to catch the morning alpenglow on the peaks.</p>
+
+<h2>Conquering the Banff Big 3 Ski Areas</h2>
+
+<p>When people search for information about Banff ski opportunities, they're usually referring to the three major ski areas within driving distance of Banff townsite. As someone who has logged over 200 days on these slopes, I can provide specific insights about each location.</p>
+
+<p><strong>Sunshine Village</strong> sits at 2,100 meters elevation and typically offers the longest season, running from November through late May. The 20-minute drive from Banff townsite leads to a gondola base where you'll catch the 18-minute ride to the village. Day passes cost around \$129 CAD for adults in 2026. I particularly love the Delirium Dive area for advanced terrain, though you'll need avalanche gear and proper training.</p>
+
+<p><strong>Lake Louise Ski Resort</strong> provides the largest skiable terrain in the Banff area with over 4,200 acres. Located 45 minutes from Banff townsite, this resort offers consistently good snow conditions and fewer crowds on weekdays. Adult lift tickets run approximately \$135 CAD. The back bowls here provide some of the best powder skiing I've experienced in North America.</p>
+
+<p><strong>Mount Norquay</strong> serves as the closest option to downtown Banff, just 10 minutes by car. While smaller than the other two, Norquay offers excellent night skiing and tends to be less expensive at around \$89 CAD for day passes. The North American run provides a genuine double-black diamond challenge that tests even experienced skiers.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Buy your lift tickets online at least 48 hours in advance to save 10-15% on regular prices. I always check each resort's website the night before skiing to confirm current snow conditions and any lift closures.</div>
+
+<h2>Essential Banff Experiences Beyond Skiing</h2>
+
+<p>While the Banff ski area options dominate winter conversations, the park offers incredible experiences year-round. During my training seasons, I've discovered that late spring through early fall provides the most diverse activity options.</p>
+
+<p>The <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> include several that showcase the golden light phenomenon perfectly. Plain of Six Glaciers trail from Lake Louise offers stunning glacier views and ends at a historic tea house. The 14-kilometer round trip takes about 5-6 hours, but the views of Mount Victoria and surrounding peaks justify every step.</p>
+
+<p>For a shorter option that still delivers incredible scenery, I recommend the Johnston Canyon trail. The 2.7-kilometer walk to the Upper Falls takes about 2 hours and features dramatic limestone canyon walls and powerful waterfalls. Arrive before 8 AM during summer months or you'll face significant crowds and parking challenges.</p>
+
+<p>Lake Moraine presents another must-see location, though Parks Canada has implemented a reservation system for vehicle access during peak season (typically May through October). The \$8 CAD reservation fee helps manage the overwhelming popularity of this turquoise lake surrounded by the Valley of the Ten Peaks.</p>
+
+<h2>Where to Stay for Maximum Adventure Access</h2>
+
+<p>Choosing the right accommodation affects your entire Banff experience. After staying in various locations throughout the area, I can offer specific recommendations based on different priorities.</p>
+
+<p>For ski access, staying in Banff townsite provides the best balance of convenience and amenities. The <a href="/hotel-directory">Compare 95+ Banff hotels</a> tool helps identify options, but I particularly recommend properties within walking distance of downtown restaurants and shops. The Fairmont Banff Springs offers luxury but comes with premium pricing around \$450-600 CAD per night in peak season.</p>
+
+<p>Budget-conscious travelers should consider the HI Banff Alpine Centre, which provides clean dormitory and private rooms starting around \$35 CAD for dorm beds. The location puts you within walking distance of downtown while keeping costs manageable.</p>
+
+<p>If you prefer staying closer to Lake Louise for early morning photography or hiking access, the Post Hotel provides exceptional service and proximity to trailheads. Expect to pay \$300-500 CAD per night, but the location saves significant driving time for Lake Louise area activities.</p>
+
+<p>For detailed accommodation strategies, check our comprehensive guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> which covers specific neighborhoods and booking timing recommendations.</p>
+
+<h2>Planning Your Golden Banff Adventure</h2>
+
+<p>Successful Banff trips require more planning than many people realize. Parks Canada charges \$11.50 CAD per adult per day for park entry, or \$23.50 CAD for groups arriving in vehicles. Annual Discovery Passes cost \$72.25 CAD and pay for themselves quickly if you visit for more than 6 days total.</p>
+
+<p>Transportation within the park presents ongoing challenges. Parking at popular destinations like Lake Louise, Moraine Lake, and major trailheads fills completely by 7-8 AM during peak season. I always plan to arrive at trailheads before 7 AM or after 6 PM to avoid parking frustrations.</p>
+
+<p>The Roam Transit system provides bus service between Banff townsite, Lake Louise, and Canmore for \$5 CAD per ride. During summer 2026, they've expanded service to include more frequent runs to popular hiking areas, which helps reduce vehicle congestion.</p>
+
+<p>For activity booking, <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers various guided tours and experiences if you prefer structured activities over independent exploration. Their ice walk tours and wildlife viewing excursions receive consistently positive reviews.</p>
+
+<h2>Seasonal Considerations and Weather Realities</h2>
+
+<p>Banff's mountain weather changes rapidly and dramatically affects outdoor activities. During my years of training and racing in the area, I've learned that preparation makes the difference between epic adventures and dangerous situations.</p>
+
+<p>Summer temperatures (June through August) range from 5°C to 25°C, but mountain weather can shift from sunny to stormy within hours. I always carry layers including a waterproof shell, even on clear morning starts. Afternoon thunderstorms frequently develop over the peaks and move through valleys quickly.</p>
+
+<p>Winter conditions demand serious preparation. Temperatures commonly drop below -20°C, and chinook winds can create rapid temperature swings of 20-30 degrees within hours. The combination of elevation, wind, and mountain weather makes proper gear essential rather than optional.</p>
+
+<p>May 2026 weather patterns have shown typical spring conditions with snow still covering high elevation trails while valley bottom areas experience pleasant temperatures around 15°C during midday. This creates perfect conditions for lower elevation activities while higher peaks remain snow-covered.</p>
+
+<p>For accommodation during your visit, <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> provides competitive rates and allows easy comparison of different property types and locations throughout the Banff area.</p>
+
+<p>Whether you're planning a focused ski trip to tackle all three major ski areas or a comprehensive exploration following our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>, the key to experiencing those golden Banff moments lies in proper timing, realistic expectations, and respect for the mountain environment. The Canadian Rockies reward prepared visitors with experiences that genuinely live up to their worldwide reputation.</p>
+`,
+  'big-3-ski': `
+<p>The Big 3 ski passes at Banff and Lake Louise represent some of the most spectacular alpine skiing in North America, and after spending countless days on these slopes over the past decade, I can confidently say they offer experiences that rival the European Alps. The Big 3 consists of Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay – three distinct mountains that each bring their own character to your Banff skiing adventure. Whether you're carving perfect corduroy at Lake Louise or tackling the steep chutes at Sunshine, understanding how to maximize your time across these three resorts will transform your Canadian Rockies ski trip.</p>
+
+<h2>Understanding the Big 3 Ski Pass Options</h2>
+
+<p>The Big 3 ski pass system has evolved significantly in recent years, giving visitors flexible options to explore all three resorts. For the 2026-2027 season, you can purchase individual day passes or opt for multi-day packages that provide better value when skiing multiple mountains.</p>
+
+<p>Lake Louise Ski Resort typically runs around \$165 CAD for a full-day adult lift ticket, while Sunshine Village charges approximately \$159 CAD, and Mt. Norquay comes in at \$125 CAD. However, the Big 3 combo passes offer substantial savings. A 3-day Big 3 pass costs roughly \$390 CAD, compared to \$449 CAD if purchased separately.</p>
+
+<p>I always recommend the 5-day Big 3 pass at \$575 CAD if you're planning a week-long ski trip. This gives you flexibility to repeat your favorite mountain or take weather days without feeling pressured to ski every single day. The pass also includes shuttle transportation between resorts, which eliminates the hassle of driving mountain roads in winter conditions.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Purchase your Big 3 passes online at least 7 days in advance to save \$20 CAD per pass and guarantee availability during peak periods like Christmas week and February long weekends.</div>
+
+<h2>Lake Louise Ski Resort: The Crown Jewel</h2>
+
+<p>Lake Louise consistently ranks as my favorite of the three mountains, primarily because of its incredible above-treeline skiing and reliable snow conditions. The resort spans 4,200 acres across four distinct mountain faces, offering everything from gentle cruisers to expert-only bowls.</p>
+
+<p>The Back Bowls area provides some of the most exciting intermediate and advanced terrain. On powder days, I head straight to the Summit Platter lift to access Paradise Bowl and Whitehorn 2. These areas typically hold fresh snow longer than the front-side runs because they face away from the afternoon sun.</p>
+
+<p>For beginners, the Wiwaxy and Eagle chairlifts service excellent learning terrain with wide, forgiving slopes. The mountain's base elevation sits at 1,645 meters, with the summit reaching 2,637 meters, providing a substantial 993-meter vertical drop that keeps runs interesting without being overwhelming.</p>
+
+<p>Parking fills up quickly on weekends and holidays. I arrive by 8 AM to secure a spot in the main lot, or use the overflow parking with complimentary shuttle service. The day lodge offers decent food options, though prices reflect typical ski resort markups – expect to pay \$18-22 CAD for basic lunch entrées.</p>
+
+<h3>Best Runs at Lake Louise</h3>
+
+<ul>
+<li><strong>Men's Downhill:</strong> The original World Cup downhill course offers sustained steep pitches and excellent grooming</li>
+<li><strong>Boomerang Bowl:</strong> Advanced powder skiing with stunning glacier views</li>
+<li><strong>Ptarmigan:</strong> Perfect intermediate cruiser with consistent pitch</li>
+<li><strong>Easy Street:</strong> Ideal beginner run with gentle gradients and wide corridors</li>
+</ul>
+
+<h2>Sunshine Village: High Alpine Adventure</h2>
+
+<p>Sunshine Village holds the distinction of being Canada's highest ski resort, with a base elevation of 2,100 meters. This altitude advantage translates to a longer season – typically running from mid-November through late May – and consistently cold, dry powder conditions that I absolutely love.</p>
+
+<p>The resort's unique location requires a mandatory gondola ride from the Sunshine Village parking lot, which adds about 15 minutes to your mountain access but eliminates base area traffic. This gondola system actually works in your favor because it spreads out arrival times and reduces lift lines.</p>
+
+<p>Sunshine's terrain spreads across three mountains: Lookout Mountain, Mount Standish, and Goat's Eye Mountain. The Continental Divide runs directly through the resort, meaning you can literally ski from Alberta into British Columbia and back again during a single run.</p>
+
+<p>Goat's Eye Mountain provides the most challenging terrain, including the infamous Delirium Dive – an expert-only area that requires avalanche safety gear and brief safety orientation. Even as an experienced skier, I found these runs genuinely challenging and rewarding.</p>
+
+<p>Weather can change rapidly at this elevation. I always pack an extra layer and face protection, even on seemingly mild days. The high altitude also means stronger UV exposure, so sunscreen and quality goggles are essential.</p>
+
+<h2>Mt. Norquay: The Local Mountain</h2>
+
+<p>Mt. Norquay might be the smallest of the Big 3, but it punches well above its weight in terms of character and local atmosphere. Located just 10 minutes from downtown Banff, this mountain serves as the community hill where generations of locals learned to ski.</p>
+
+<p>The terrain skews toward intermediate and advanced skiers, with 60% of runs rated intermediate or higher. The North American chairlift accesses some genuinely steep runs that rival anything at the larger resorts. Gun Run and Cascade provide sustained expert skiing with consistent fall-line pitches.</p>
+
+<p>What sets Norquay apart is its night skiing operation, running until 9 PM on Fridays and Saturdays. After spending full days at Lake Louise or Sunshine, I sometimes grab a quick dinner in town and return to Norquay for evening laps under the lights. The atmosphere is relaxed and social, with many locals finishing their work day and joining friends for twilight skiing.</p>
+
+<p>The Cliffhouse Bistro at Norquay's summit offers the best on-mountain dining experience among the Big 3. Their menu focuses on locally-sourced ingredients, and the panoramic views of the Bow Valley are spectacular during lunch. Reservations are recommended, especially on weekends.</p>
+
+<h2>Planning Your Big 3 Ski Strategy</h2>
+
+<p>After skiing these mountains extensively, I've developed a strategic approach that maximizes both snow conditions and crowd management. Check weather forecasts and recent snowfall reports before deciding which mountain to ski each day.</p>
+
+<p>Start with Lake Louise on your first day to get oriented with the Big 3 system and experience the most diverse terrain. If fresh snow falls overnight, head to Sunshine Village the following day – their high elevation and north-facing aspects hold powder longer than the other mountains.</p>
+
+<p>Save Mt. Norquay for days when you want a more relaxed pace or when weather conditions are marginal at the higher elevation resorts. Norquay's lower elevation and protected terrain often provide better visibility during storms.</p>
+
+<p>Transportation between mountains is straightforward with the Big 3 shuttle service, but I prefer staying flexible by renting a car. This allows spontaneous mountain changes based on conditions and eliminates dependence on shuttle schedules. Winter driving requires experience and proper equipment – ensure your rental includes winter tires and carry emergency supplies.</p>
+
+<p>For accommodation, staying in Banff townsite provides equal access to all three mountains, typically within 30-45 minutes drive. <a href="/blog/where-to-stay-in-banff">Where to stay in Banff</a> depends largely on your budget and preferred atmosphere, but proximity to the mountains should factor into your decision. You can <a href="/hotel-directory">compare 95+ Banff hotels</a> to find options that include ski shuttle services.</p>
+
+<h2>Making the Most of Your Big 3 Experience</h2>
+
+<p>The Big 3 ski experience extends beyond just the slopes. Take advantage of après-ski opportunities at each mountain – the Kokanee Kabin at Lake Louise offers craft beer and live music, while Sunshine's Mad Trapper's Saloon provides classic ski lodge atmosphere with hearty food.</p>
+
+<p>Consider booking ski lessons through the Big 3 system if you want to improve your technique or explore advanced terrain safely. The instructors know these mountains intimately and can guide you to terrain that matches your ability level while avoiding crowds.</p>
+
+<p>If you're planning additional Banff activities beyond skiing, our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> includes suggestions for rest days, and the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> guide will help you fuel up properly for long ski days.</p>
+
+<p>For tours and activities beyond skiing, <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers winter adventures like ice walks and snowshoeing that complement your Big 3 ski experience. When booking accommodation, <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> often has package deals that combine lodging with lift tickets at discounted rates.</p>
+
+<p>The Big 3 ski experience represents one of North America's premier mountain destinations, combining world-class terrain with stunning Rocky Mountain scenery. Plan ahead, dress appropriately for mountain weather, and prepare for skiing that will challenge and inspire you regardless of your ability level.</p>
+`,
   'big-three-banff': `
 <p>When people ask me about the <strong>big three Banff</strong> ski areas, I tell them they're looking at some of the most accessible alpine skiing in the Canadian Rockies. Mount Norquay, Sunshine Village, and Lake Louise Ski Resort form this legendary trio that puts world-class skiing right at your doorstep when you stay in Banff townsite. As someone who's carved turns on all three mountains countless times over the years, I can tell you each offers something completely different – and that's exactly what makes this combination so special.</p>
 
