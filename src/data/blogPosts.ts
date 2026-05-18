@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-ski-area',
+    title: 'Banff Ski Area: 2026\'s Ultimate Guide to Epic Powder Days',
+    description: 'Discover Banff\'s world-class ski terrain in 2026! Your complete guide to powder days, lift tickets, accommodations, and insider tips for Canada\'s premier slopes.',
+    date: '2026-05-18',
+    category: 'Seasonal',
+    image: '/images/blog/banff-ski-area.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'mt-norquay-road',
     title: 'Mount Norquay Road: Banff\'s Hidden Scenic Drive Guide 2026',
     description: 'Discover Mount Norquay Road, Banff\'s best-kept secret scenic drive in 2026. Complete guide to viewpoints, wildlife spotting, and mountain vistas awaits.',
