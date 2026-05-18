@@ -66,8 +66,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'caution',
-    conditionNote: 'Avalanche danger present. Check avalanche bulletin for latest conditions.',
-    conditionUpdated: '2026-05-16',
+    conditionNote: 'Avalanche danger - check Avalanche Bulletin for latest conditions',
+    conditionUpdated: '2026-05-18',
   },
   {
     id: 'marsh-loop',
