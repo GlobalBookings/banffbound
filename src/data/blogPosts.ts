@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-ski-slopes',
+    title: 'Banff\'s Best Ski Slopes 2026: Your Ultimate Winter Guide',
+    description: 'Discover Banff\'s top ski slopes for 2026! From beginner-friendly runs to expert terrain, find perfect powder, stunning mountain views, and world-class skiing.',
+    date: '2026-05-19',
+    category: 'Seasonal',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-ski-area',
     title: 'Banff Ski Area: 2026\'s Ultimate Guide to Epic Powder Days',
     description: 'Discover Banff\'s world-class ski terrain in 2026! Your complete guide to powder days, lift tickets, accommodations, and insider tips for Canada\'s premier slopes.',
