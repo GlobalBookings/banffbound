@@ -11,6 +11,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-ski-big-3',
+    title: 'Banff Ski Big 3: Ultimate 2026 Guide to Epic Powder Days',
+    description: 'Discover Banff\'s Big 3 ski resorts in 2026! Your complete guide to Lake Louise, Sunshine Village & Mount Norquay for unforgettable powder adventures.',
+    date: '2026-05-20',
+    category: 'Seasonal',
+    image: '/images/blog/banff-ski-big-3.webp',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'eat-banff',
+    title: 'Eat Banff: 15 Must-Try Restaurants & Local Eats in 2026',
+    description: 'Discover Banff\'s best dining experiences in 2026! From cozy mountain bistros to upscale Canadian cuisine, explore 15 must-try restaurants and local eats.',
+    date: '2026-05-20',
+    category: 'Food & Drink',
+    image: '/images/blog/eat-banff.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-ski-slopes',
     title: 'Banff\'s Best Ski Slopes 2026: Your Ultimate Winter Guide',
     description: 'Discover Banff\'s top ski slopes for 2026! From beginner-friendly runs to expert terrain, find perfect powder, stunning mountain views, and world-class skiing.',

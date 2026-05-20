@@ -1,4 +1,140 @@
 export const blogContent3: Record<string, string> = {
+  'banff-ski-big-3': `
+<p>The Banff Big 3 ski areas – Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay – form one of Canada's most impressive skiing destinations, and I've spent countless powder days exploring every corner of these mountains. As someone who's been skiing Banff for over a decade, I can tell you that understanding each resort's unique character will make or break your ski trip. From Lake Louise's massive terrain to Norquay's night skiing and Sunshine's epic snow conditions, here's everything you need to know to ski the Big 3 like a local.</p>
+
+<h2>Understanding the Banff Big 3 Ski Areas</h2>
+
+<p>When people talk about <strong>Banff ski Big 3</strong>, they're referring to three distinct ski resorts within 30 minutes of Banff townsite. Each resort offers something completely different, which is why the tri-area lift ticket remains one of the best deals in Canadian skiing.</p>
+
+<p><strong>Lake Louise Ski Resort</strong> sits 57km northwest of Banff and delivers the biggest ski area in the Canadian Rockies with 4,200 acres of skiable terrain. The front side offers groomed runs perfect for intermediates, while the back bowls provide some of the most challenging off-piste skiing I've encountered anywhere.</p>
+
+<p><strong>Sunshine Village</strong> requires an 8-minute gondola ride from the parking area, but this unique access creates an alpine village experience at 2,100 meters elevation. The resort typically operates from November through May – sometimes into June – thanks to its high elevation and north-facing slopes.</p>
+
+<p><strong>Mt. Norquay</strong> sits just 6km from downtown Banff and serves as the locals' mountain. It's smaller than the other two, but the night skiing, terrain park, and quick access make it invaluable for evening sessions after exploring Banff during the day.</p>
+
+<h2>Tri-Area Lift Tickets and Pricing Strategy</h2>
+
+<p>The Big 3 Lift Ticket remains the smartest way to ski all three resorts. For the 2026-27 season, adult tickets start at \$109 CAD per day when purchased in advance online, compared to \$129 CAD for single-resort tickets at Lake Louise or Sunshine.</p>
+
+<p>I always recommend buying your tickets at least 7 days in advance through the official SkiBig3 website. Day-of purchases cost significantly more, and during peak periods like Christmas week or February long weekend, tickets can sell out entirely.</p>
+
+<p>The tri-area pass includes free shuttle service between resorts, though I prefer driving myself for schedule flexibility. Parking fills up fast at Lake Louise – arrive before 8 AM or expect a 10-minute walk from overflow lots.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> If you're staying in Banff for 4+ days, consider the multi-day packages. The 3-day Big 3 ticket costs \$289 CAD (versus \$327 for individual days) and doesn't need to be used consecutively.</div>
+
+<h2>Lake Louise: Your Big Mountain Experience</h2>
+
+<p>Lake Louise deserves at least two full days if you're serious about exploring. The resort divides into distinct zones, each requiring different skill levels and snow conditions.</p>
+
+<p>Start your day on the front face via the Glacier Express quad chair. The groomed runs like Wiwaxy and Eagle Meadows warm up your legs perfectly, and the views across the Bow Valley never get old. Intermediate skiers should focus their entire first day on the front side – there's easily enough terrain to keep you busy.</p>
+
+<p>The back bowls open around 10 AM once ski patrol completes avalanche control. Larch Bowl offers the most accessible off-piste skiing, while Ptarmigan Bowl requires strong advanced skills. I've seen too many intermediate skiers get in over their heads in the bowls – honestly assess your ability before heading back there.</p>
+
+<p>For expert terrain, the Summit Platter lift accesses some genuinely challenging runs. The West Bowl and Paradise Bowl provide thigh-burning descents, but weather closes this lift frequently. Check conditions at the base before making it your day's priority.</p>
+
+<h2>Sunshine Village: High Alpine Skiing</h2>
+
+<p>Sunshine's 8-minute gondola ride from the parking lot eliminates the base elevation issues that plague many ski areas. You're immediately at 2,100 meters, where the snow stays cold and dry even during chinook weather patterns.</p>
+
+<p>The Standish Chair services my favorite intermediate terrain in all of Banff ski areas. Runs like Jackrabbit and Fireweed offer perfect cruising pitches with stunning Continental Divide views. The grooming here consistently impresses me – the crew maintains excellent corduroy even during heavy snowfall periods.</p>
+
+<p>Advanced skiers should head straight to Goat's Eye Mountain via the high-speed quad. The terrain off this lift includes some of the steepest in-bounds runs in the Canadian Rockies. Wild West and Shootout will test your technical skills, while the Delirium Dive requires avalanche safety gear and beacon checks.</p>
+
+<p>Sunshine Village offers the unique option to stay slopeside at the Sunshine Mountain Lodge. While expensive (rooms start around \$400 CAD per night), waking up on the mountain and skiing fresh powder before the gondola crowds arrive creates magical experiences.</p>
+
+<h2>Mt. Norquay: The Local's Mountain</h2>
+
+<p>Don't underestimate Norquay because of its size. This mountain punches well above its weight with varied terrain, night skiing, and that unbeatable proximity to town.</p>
+
+<p>The North American Chair accesses Norquay's signature steep runs. The Lone Pine trail drops 490 vertical meters with sustained pitch that demands respect. I've skied this run hundreds of times, and poor snow conditions make it genuinely dangerous – stick to groomed runs when visibility drops.</p>
+
+<p>Norquay's terrain park consistently ranks among Western Canada's best. The park crew rebuilds features weekly, and the progression from beginner to expert jumps lets you build skills gradually. Night skiing operates until 9 PM on weekends, perfect for après-ski sessions under the lights.</p>
+
+<p>The Via Ferrata operates year-round when weather permits, offering a unique mountaineering experience just minutes from downtown. It's not skiing, but the combination day packages make sense for non-skiers in your group.</p>
+
+<h2>Where to Eat and Stay for Your Big 3 Adventure</h2>
+
+<p>Staying in Banff townsite gives you access to the best restaurants and nightlife, plus easy shuttle access to all three mountains. I recommend checking our <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> guide for detailed accommodation options, or browse the <a href="/hotel-directory">Compare 95+ Banff hotels</a> for real-time availability and pricing.</p>
+
+<p>For convenient bookings with flexible cancellation, <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> typically offers the widest selection of Banff accommodations.</p>
+
+<p>When you <strong>eat Banff</strong> after long ski days, several restaurants cater specifically to hungry skiers. The Bison Restaurant offers upscale Canadian cuisine perfect for celebration dinners, while Earls Banff provides reliable portions and mountain views. For detailed dining recommendations, check our comprehensive <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> guide.</p>
+
+<p>On-mountain dining varies significantly between resorts. Lake Louise's Lodge of the Ten Peaks serves decent cafeteria food but gets extremely crowded by noon. Sunshine's Mad Trapper's Saloon offers better quality with table service, though prices reflect the captive audience. Norquay's Cascade Patio provides the most affordable mountain dining with surprisingly good burgers.</p>
+
+<p>Planning your Big 3 ski adventure requires more than just lift tickets and accommodation. <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> offers ski lessons, equipment rentals, and transportation packages that can simplify logistics, especially for first-time visitors.</p>
+
+<p>The Banff Big 3 delivers an incredible diversity of skiing experiences within a compact area. Lake Louise's massive terrain, Sunshine's reliable snow conditions, and Norquay's convenient location create combinations that satisfy every skier's preferences. Start planning your 2027 ski season early – accommodations and lift tickets book up fast, and the mountains wait for no one.</p>
+`,
+  'eat-banff': `
+<p>After countless visits to Banff over the past decade—whether I'm here for ultra running training, catching epic ski days, or just soaking up the mountain atmosphere—I've learned that knowing where to eat in Banff can make or break your mountain adventure. The town might be small, but the dining scene punches well above its weight, and trust me, you'll want to fuel up properly before tackling those demanding trails or spending all day on the slopes.</p>
+
+<h2>Essential Banff Dining: My Go-To Spots After Years of Visits</h2>
+
+<p>Let me cut straight to what works. When I'm in Banff, I'm usually burning serious calories on the trails or mountains, so I need food that actually satisfies. Here are the places I return to every single trip.</p>
+
+<p><strong>The Bison Restaurant</strong> remains my top pick for a proper meal after a big day out. Their bison short ribs (around \$42 CAD) provide the protein I need after long training runs, and their Alberta beef is consistently excellent. The restaurant sources locally, which means fresher ingredients and better flavours. Book ahead—I've shown up without reservations and waited over an hour during peak season.</p>
+
+<p><strong>Park Distillery</strong> hits the sweet spot between casual and quality. Their elk burger (\$28 CAD) is massive and perfect when I'm carb-loading before big efforts. The distillery makes their own spirits on-site, and their Caesar cocktails are legendary among locals. The atmosphere works whether you're celebrating a successful summit or drowning your sorrows after a tough day.</p>
+
+<p>For quick fuel between activities, <strong>Wild Flour Bakery</strong> is my morning ritual. Their breakfast sandwiches (\$8-12 CAD) and fresh pastries keep me going during early starts. The coffee is strong enough to wake you up for those 6 AM trail starts, and their energy bars actually taste good—a rarity.</p>
+
+<h2>Budget-Friendly Options That Don't Compromise on Quality</h2>
+
+<p>Banff gets expensive fast, but you don't need to blow your budget on every meal. I've found several spots that deliver solid food without the tourist markup.</p>
+
+<p><strong>Nourish Bistro</strong> serves excellent vegetarian and vegan options that work well for recovery meals. Their Buddha bowls (\$16-18 CAD) pack enough nutrients to support serious training, and they're open to customization. Even as someone who typically eats meat, I genuinely enjoy their creative approach to plant-based dining.</p>
+
+<p><strong>Eddie Burger + Bar</strong> makes the best casual burgers in town. Their basic cheeseburger (\$14 CAD) beats anything you'll get from chain restaurants, and the portions are generous. When I'm staying at one of the <a href="/hotel-directory">Compare 95+ Banff hotels</a> without kitchen access, this place saves me from overpriced room service.</p>
+
+<p><strong>Banff Perk Coffee</strong> serves breakfast wraps and sandwiches that cost half what you'd pay at hotel restaurants. Their breakfast burrito (\$9 CAD) has become my pre-ski fuel of choice—substantial enough to last through a morning on the slopes but not so heavy that it weighs me down.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Download restaurant apps before you arrive. Many Banff restaurants offer pickup discounts through their apps, and you'll skip the wait times that can stretch to 90+ minutes during peak periods.</div>
+
+<h2>Fueling Up for Banff's Big 3 and Ski Adventures</h2>
+
+<p>When I'm planning to tackle the <strong>Banff Big 3</strong>—Lake Louise Ski Resort, Sunshine Village, and Mount Norquay—or heading out for epic ski days, my food strategy becomes crucial. These mountains demand serious energy, and the wrong meal choice can ruin your day on the slopes.</p>
+
+<p>For early <strong>Banff ski</strong> mornings, I stick to proven combinations. The night before a big ski day, I'll grab dinner at <strong>Melissa's MisTeak</strong> (despite the punny name, their steaks are excellent) to load up on protein and iron. Their 8oz Alberta beef tenderloin (\$48 CAD) might seem pricey, but I've learned that proper nutrition the night before makes a massive difference in how I feel at 8,000 feet.</p>
+
+<p>Morning of skiing, it's always Wild Flour Bakery for a breakfast sandwich and strong coffee, then I pack energy bars from <strong>Nesters Market</strong> for on-mountain fuel. Their selection includes local brands that actually work—unlike those cardboard energy bars from gas stations.</p>
+
+<p>After big days on the <strong>Banff ski Big 3</strong> resorts, I need substantial recovery meals. <strong>The Keg Banff</strong> delivers consistent quality steaks and hearty portions. Their prime rib (\$38 CAD) with loaded baked potato handles the calorie replacement I need after burning 4,000+ calories on the mountain.</p>
+
+<h2>Mountain Recovery and Post-Adventure Dining</h2>
+
+<p>Coming back from challenging days in the backcountry—whether I've been trail running the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> or completing long ski tours—my body demands specific nutrition for recovery.</p>
+
+<p><strong>Chuck's Steakhouse</strong> has become my go-to recovery spot. Their portions are enormous, prices reasonable by Banff standards (\$25-35 CAD for mains), and they understand that mountain athletes need serious fuel. The staff doesn't rush you, which matters when you're exhausted and need time to properly refuel.</p>
+
+<p><strong>Tooloulou's</strong> serves Cajun-inspired food that hits differently after big mountain days. Their jambalaya (\$24 CAD) provides complex carbohydrates and protein, while their spicy dishes help with circulation—something I appreciate after spending hours in cold conditions.</p>
+
+<p>For lighter recovery meals, <strong>Farm & Fire</strong> offers farm-to-table options that focus on nutrient density rather than just calories. Their rotating seasonal menu means fresh ingredients, and they accommodate dietary restrictions without making it complicated.</p>
+
+<h2>Practical Dining Logistics for Mountain Athletes</h2>
+
+<p>Here's what I've learned about actually eating well in Banff without wasting time or money. These details matter when you're trying to maximize mountain time.</p>
+
+<p>Timing is everything. Most restaurants open at 11:30 AM for lunch, but if you're coming off early morning activities, that gap can be brutal. Stock up on backup food from Nesters Market or Save-On-Foods—both carry decent grab-and-go options.</p>
+
+<p>Reservations become critical from December through March and again from June through September. I book dinner reservations before I even finalize my <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> plans. Walking into popular restaurants without reservations during peak times usually means 60+ minute waits.</p>
+
+<p>Many restaurants offer early bird specials (5:30-6:30 PM) that can save \$5-10 CAD per entree. As someone who likes eating early before evening training sessions, these specials work perfectly for my schedule and budget.</p>
+
+<h2>Seasonal Considerations and Planning Ahead</h2>
+
+<p>Banff's dining scene changes significantly with the seasons, and understanding these patterns helps you eat better and spend less.</p>
+
+<p>Right now in May 2026, we're in the sweet spot between ski season and full summer crowds. Restaurant availability is good, prices haven't hit peak summer levels, and many places are featuring spring menus with fresh ingredients. This is actually one of my favorite times to eat in Banff—you get quality without the chaos.</p>
+
+<p>Summer brings the biggest crowds and highest prices, but also the best patio dining and extended hours. If you're planning a <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> between June and August, factor in longer restaurant wait times and book everything possible in advance.</p>
+
+<p>Winter dining revolves around ski schedules. Most places understand that people want hearty meals after mountain days, so portions tend to be larger and menus feature more comfort food. However, some restaurants reduce hours or close entirely during slower periods in November and April.</p>
+
+<p>For comprehensive restaurant details and current menus, check out our complete guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>. If you're still deciding where to base yourself for easy access to great dining, browse accommodations through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> or book food tours and dining experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to discover spots you might otherwise miss.</p>
+
+<p>The bottom line: Banff offers genuinely excellent dining if you know where to go and how to navigate the tourist traps. Plan ahead, book reservations, and don't be afraid to spend a bit more for quality—your mountain adventures will be better fueled, and that makes everything else more enjoyable.</p>
+`,
   'banff-ski-slopes': `
 <p>As someone who's carved countless turns down Banff's legendary ski slopes over the past decade, I can tell you there's nothing quite like the combination of world-class terrain and jaw-dropping mountain scenery. The Canadian Rockies provide some of North America's most reliable powder conditions, and after years of racing down these mountains as both a competitive athlete and weekend warrior, I've learned which runs deliver the best bang for your buck and when to hit them for optimal conditions.</p>
 
