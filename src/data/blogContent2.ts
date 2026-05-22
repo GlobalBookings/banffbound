@@ -4719,7 +4719,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Wildlife Crossing Tip:</strong> The Banff wildlife crossing model has been so successful that it's been replicated in dozens of countries. When you drive under one of these overpasses, slow down and look up — you might just see an elk or bear silhouetted against the sky, walking safely across the highway above you.</div>
 `,
   'banff-dark-sky': `
-<p>Banff National Park was designated a Dark Sky Preserve by the Royal Astronomical Society of Canada in 2017, making it one of the largest protected dark-sky areas in the world. Away from town lights, the darkness here is profound — the Milky Way blazes overhead, thousands of stars emerge that are invisible from cities, and on lucky nights, the northern lights dance across the sky. It's a celestial show that rivals any landscape view in the park.</p>
+<p><a href="/blog/banff-dinner">Best Banff Dinner Spots : Where Locals Actually Eat</a> National Park was designated a Dark Sky Preserve by the Royal Astronomical Society of Canada in 2017, making it one of the largest protected dark-sky areas in the world. Away from town lights, the darkness here is profound — the Milky Way blazes overhead, thousands of stars emerge that are invisible from cities, and on lucky nights, the northern lights dance across the sky. It's a celestial show that rivals any landscape view in the park.</p>
 
 <h2>Best Viewing Spots</h2>
 
