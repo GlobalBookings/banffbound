@@ -1,4 +1,142 @@
 export const blogContent3: Record<string, string> = {
+  'banff-luxushotel': `
+<p>After completing dozens of marathons and triathlons in mountain destinations worldwide, I can confidently say that Banff offers something truly special for travelers seeking luxury accommodations paired with world-class outdoor adventures. The combination of premium hotels, exceptional dining, and year-round activities makes this Alberta destination a standout choice for discerning visitors in 2026.</p>
+
+<h2>Luxury Hotels in Banff: Where Comfort Meets the Rockies</h2>
+
+<p>When searching for a <strong>Banff luxushotel</strong>, you'll find options that cater to every type of traveler, from ski enthusiasts to summer hikers. The Fairmont Banff Springs remains the crown jewel, with rates starting around \$400 CAD per night during peak summer season. I've stayed here multiple times, and the spa facilities are perfect for recovery after long training runs in the mountains.</p>
+
+<p>The Rimrock Resort Hotel offers another excellent luxury option, perched dramatically on Sulphur Mountain with panoramic views of the Bow Valley. During my last visit in winter 2026, I particularly appreciated their heated outdoor pool – there's nothing quite like soaking in warm water while snow falls around you. Rates typically range from \$350-500 CAD depending on the season.</p>
+
+<p>For a more intimate luxury experience, consider the Buffalo Mountain Lodge. This property combines rustic Canadian charm with modern amenities, and their log cabin suites provide a cozy retreat after days spent exploring the backcountry. I recommend booking through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> to compare rates and find package deals that include breakfast or spa credits.</p>
+
+<p>When choosing <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a>, consider your primary activities. If you're planning to ski regularly, proximity to the shuttle routes matters more than you might think. The town is compact, but carrying ski gear through snowy streets gets old quickly.</p>
+
+<h2>Banff Skiing: Winter Paradise in the Canadian Rockies</h2>
+
+<p>The <strong>Banff ski</strong> scene centers around three main resorts, each offering distinct experiences. Lake Louise Ski Resort, about 45 minutes from Banff townsite, provides the most extensive terrain with over 4,200 acres. I've skied here countless times, and the back bowls offer some of the best powder skiing in North America when conditions align.</p>
+
+<p>Sunshine Village, accessible only by gondola, typically has the longest season, often running from November through May. The high elevation means reliable snow conditions, and I've enjoyed some of my best ski days here in late April when other resorts are closing. A day pass costs around \$95 CAD for adults in the 2026-2027 season.</p>
+
+<p>Norquay, the closest resort to Banff townsite at just 10 minutes away, offers excellent night skiing and is perfect for shorter sessions. The terrain is more limited, but the convenience factor is unmatched when you want to squeeze in a few runs after work or training.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Purchase a multi-resort pass if you're staying more than four days. The SkiBig3 pass provides access to all three resorts and typically pays for itself after five days of skiing.</div>
+
+<p>For guided experiences or equipment rentals, check <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> for packages that combine lift tickets with lessons or gear.</p>
+
+<h3>Spring Skiing Conditions in May 2026</h3>
+
+<p>As I write this in May 2026, Sunshine Village is still operating with decent coverage on upper slopes. Lake Louise typically closes by early May, but this year's strong snowpack extended their season slightly. Always check current conditions before heading out, as spring weather in the Rockies changes rapidly.</p>
+
+<h2>Fine Dining in Banff: Where to Eat After Adventure</h2>
+
+<p>Finding an exceptional <strong>Banff dinner</strong> requires knowing where locals actually go versus tourist traps. The Maple Leaf Grille & Lounge consistently delivers high-quality Canadian cuisine, and their Alberta beef dishes are outstanding. Expect to pay \$40-55 CAD for main courses, but the quality justifies the price.</p>
+
+<p>For a special occasion meal, book a table at 1888 Chop House in the Fairmont Banff Springs. The dry-aged steaks here are among the best I've had anywhere, though you'll pay premium prices – entrees range from \$50-80 CAD. Make reservations well in advance, especially during peak summer months.</p>
+
+<p>When you want to <strong>eat Banff</strong> style, try local favorites that many visitors miss. Nourish Bistro offers excellent vegetarian and vegan options, which I appreciate for lighter meals between training sessions. Their Buddha bowls provide perfect recovery nutrition after long runs in the mountains.</p>
+
+<p>The Bison Restaurant focuses on locally-sourced ingredients and creative preparations of Canadian cuisine. Their weekend brunch is exceptional, though expect a wait during peak times. I typically arrive right when they open at 8 AM to avoid crowds.</p>
+
+<p>For comprehensive dining recommendations across all price ranges, check out our guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a>, which includes everything from quick lunch spots to fine dining establishments.</p>
+
+<h3>Booking Dinner Reservations</h3>
+
+<p>Summer reservations in Banff require planning. Popular restaurants book weeks in advance during July and August. I've learned to make dinner reservations as soon as I confirm my travel dates, typically 2-3 months ahead for peak season visits.</p>
+
+<h2>Summer Activities: Beyond the Slopes</h2>
+
+<p>Summer in Banff offers incredible opportunities for outdoor enthusiasts. The hiking season typically begins in earnest by June, though lower elevation trails like the Bow River Loop remain accessible year-round. For serious hiking, consult our comprehensive guide to the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> before planning your adventures.</p>
+
+<p>Lake Louise and Moraine Lake are must-see destinations, but parking becomes impossible after 8 AM during peak season. I recommend staying overnight at one of the luxury hotels in Lake Louise village, then walking to the lake for sunrise photos before crowds arrive.</p>
+
+<p>For trail running, which I do regularly in Banff, the Legacy Trail provides a car-free route between Banff and Canmore. This 26-kilometer paved trail offers stunning mountain views and connects to numerous other trail systems.</p>
+
+<p>Mountain biking enthusiasts should explore the Tunnel Mountain area trails, which offer varied difficulty levels within minutes of downtown Banff. Bike rentals are available from several shops along Banff Avenue, with full-day rentals typically costing \$50-70 CAD.</p>
+
+<h2>Planning Your Luxury Banff Experience</h2>
+
+<p>A well-planned Banff visit balances outdoor activities with relaxation at your chosen luxury hotel. I typically structure my trips with active mornings followed by afternoon spa treatments or fine dining experiences. This approach maximizes both adventure and recovery time.</p>
+
+<p>Consider booking a comprehensive package that includes accommodation, meals, and activities. Many luxury hotels offer deals that provide better value than booking components separately. Our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> outlines how to structure a short luxury visit effectively.</p>
+
+<p>For extended stays, I recommend at least one rest day for every three active days. Banff's high elevation and mountain activities are more demanding than many visitors expect, especially if you're coming from sea level.</p>
+
+<p>Transportation within Banff National Park requires a Parks Canada pass, currently \$11.50 CAD per adult per day or \$22.50 CAD for an annual pass. If you're staying more than two days, the annual pass provides better value.</p>
+
+<h3>Seasonal Considerations for 2026-2027</h3>
+
+<p>Summer 2026 bookings are already heavy, with many luxury properties showing limited availability for July and August. Winter 2026-2027 reservations are now open, and early bookings often include valuable perks like complimentary breakfast or spa credits.</p>
+
+<p>Shoulder seasons offer excellent value for luxury accommodations. Late May and early October provide favorable weather with significantly lower prices. I often visit during these periods and find the experience more relaxing due to smaller crowds.</p>
+
+<p>To compare current rates and availability across all luxury properties, visit our <a href="/hotel-directory">Compare 95+ Banff hotels</a> page, which provides real-time pricing and booking options for your specific travel dates.</p>
+`,
+  'banff-dinner': `
+<p>After countless training runs through Banff's mountain trails and late-night returns from skiing, I've learned that finding the perfect <strong>Banff dinner</strong> spot can make or break your mountain adventure. Whether you're recovering from a day on the slopes or fueling up for tomorrow's hike, the dining scene in Banff townsite offers everything from casual pub fare to world-class fine dining that rivals any major city.</p>
+
+<h2>Fine Dining Excellence in Banff</h2>
+
+<p>When I want to celebrate a successful Ironman training week or treat myself after a big ski day, these upscale restaurants deliver exceptional experiences. <strong>The Maple Leaf</strong> remains my top choice for special occasions, serving Canadian cuisine with ingredients sourced from Alberta farms. Their bison tenderloin with wild mushroom risotto (\$48 CAD) is outstanding, and I always book the 6 PM seating to avoid crowds.</p>
+
+<p><strong>Eden</strong> at the Rimrock Resort offers the most sophisticated dining experience in Banff. The restaurant sits 15 minutes by car from downtown, but the mountain views and innovative tasting menu (\$95 CAD for five courses) justify the trip. I've taken visiting friends here multiple times, and their wine pairing never disappoints.</p>
+
+<p>For a more intimate setting, <strong>Nourish Bistro</strong> focuses on locally-sourced, health-conscious dishes that align perfectly with my training nutrition needs. Their pan-seared salmon with quinoa pilaf (\$34 CAD) provides excellent recovery fuel, and they accommodate dietary restrictions better than most Banff restaurants.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Make dinner reservations at least 48 hours in advance during peak season (June through September). I learned this the hard way after showing up to three restaurants without bookings on a Saturday night in July 2025.</div>
+
+<h2>Best Casual Dining for Athletes and Families</h2>
+
+<p>After long days on Banff ski slopes or completing trail runs around the Bow Valley, I often crave substantial, no-nonsense meals. <strong>The Bison Restaurant</strong> serves hearty portions of comfort food with a Canadian twist. Their bison burger (\$22 CAD) and sweet potato fries provide the carbohydrates and protein I need for recovery.</p>
+
+<p><strong>Magpie & Stump</strong> offers the best Mexican food in Banff, though that's not saying much given the limited options. Their fish tacos (\$18 CAD) and generous portions of nachos (\$16 CAD) work well for sharing after group ski sessions. The restaurant gets busy around 7 PM, so arrive earlier or expect to wait.</p>
+
+<p>When I want reliable pub food, <strong>Rose & Crown</strong> delivers consistent quality with larger portions than most Banff establishments. Their fish and chips (\$19 CAD) could easily feed two people, and they pour proper pints of Canadian beer. The atmosphere works well for families or groups celebrating outdoor achievements.</p>
+
+<p>For pizza after training days, <strong>Pacifica Pizzeria</strong> makes decent wood-fired options, though they're pricey at \$24-28 CAD for medium pizzas. I usually order the "Canadiana" with back bacon and mushrooms when I need something quick before evening runs.</p>
+
+<h2>Where to Eat Banff on a Budget</h2>
+
+<p>Training for Ironman competitions means eating frequently, and Banff's restaurant prices can quickly drain your budget. <strong>Melissa's MisSteak</strong> offers the best breakfast value in town, with their "Lumberjack" breakfast (\$14 CAD) providing enough fuel for half-day hikes. I often stop here before heading out on the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>.</p>
+
+<p>For lunch, <strong>Banff Pho</strong> serves large bowls of Vietnamese soup (\$12-15 CAD) that warm you up after cold morning runs. The portions are generous, and the broth helps with hydration after sweaty training sessions.</p>
+
+<p><strong>Wild Flour Bakery</strong> provides excellent coffee and pastries for early morning fuel. Their breakfast sandwiches (\$8 CAD) and fresh bread make perfect trail snacks. I stop here most mornings when staying downtown, usually around 6:30 AM before the crowds arrive.</p>
+
+<p>The <strong>Safeway</strong> on Cascade Plaza offers the most practical option for budget-conscious visitors. I regularly stock up on groceries here when staying at hotels with kitchenettes, especially for post-workout meals and trail snacks.</p>
+
+<h2>Luxury Hotel Dining Experiences</h2>
+
+<p>Several Banff luxury hotels house exceptional restaurants that provide convenient dining without leaving your accommodation. The <strong>Fairmont Banff Springs</strong> operates multiple dining venues, with their main dining room serving classic continental cuisine in an elegant setting. Prices reflect the luxury positioning (\$35-55 CAD for entrees), but the service and ambiance justify the cost for special occasions.</p>
+
+<p><strong>Castello Ristorante</strong> at the Fairmont offers Italian cuisine with mountain views. Their pasta dishes (\$26-32 CAD) provide good carbohydrate loading options before big training days, though portion sizes tend toward the smaller side.</p>
+
+<p>The <strong>Post Hotel</strong> dining room, located 15 minutes from downtown toward Lake Louise, serves French-inspired cuisine in a more intimate setting than the larger Fairmont properties. Their wine list impresses, and I've enjoyed several celebration dinners here after completing major races.</p>
+
+<p>When researching your stay, check <a href="/hotel-directory">Compare 95+ Banff hotels</a> to find accommodations that include dining options matching your preferences and budget.</p>
+
+<h2>Seasonal Dining Considerations and Practical Tips</h2>
+
+<p>Banff's dining scene changes significantly with the seasons. During winter months, restaurants reduce hours and some close entirely for renovations. I've learned to call ahead, especially in November and April when schedules fluctuate.</p>
+
+<p>Summer brings extended hours but also crowds and higher prices. Most restaurants add 10-15% to menu prices between June and September, reflecting increased demand from tourists. If you're planning a visit during peak season, consider building meal costs into your budget at \$40-60 CAD per person for dinner at mid-range establishments.</p>
+
+<p>For those combining dining with outdoor activities, many restaurants accommodate muddy hiking boots and ski gear better than others. Casual spots like The Bison and Rose & Crown welcome outdoor enthusiasts, while fine dining establishments prefer you clean up first.</p>
+
+<p>Parking downtown becomes challenging during dinner hours, especially on weekends. Most restaurants don't offer valet service, so factor in extra time for finding spaces or consider walking if you're staying within the townsite.</p>
+
+<h2>Making Reservations and Planning Your Banff Dinner Strategy</h2>
+
+<p>Based on my regular visits, I recommend booking dinner reservations when you finalize your <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> decisions. Popular restaurants like The Maple Leaf and Eden fill up weeks in advance during summer months.</p>
+
+<p>Most restaurants accept reservations by phone rather than online booking systems. I keep a list of contact numbers in my phone and call during slower afternoon hours (2-4 PM) for better service.</p>
+
+<p>Consider timing your meals around outdoor activities. Early dinners (5:30-6:30 PM) often provide better availability and service, plus you'll have energy for evening activities or early morning adventures.</p>
+
+<p>If you're following a structured <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a>, plan at least one upscale dinner, one casual meal, and one budget-friendly option to experience the full range of local dining.</p>
+
+<p>For comprehensive restaurant information including current menus and seasonal schedules, consult our detailed <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> guide. You can also find dining deals and restaurant bookings through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>, especially during peak tourist seasons when reservations become essential for quality dining experiences.</p>
+`,
   'banff-ski-big-3': `
 <p>The Banff Big 3 ski areas – Lake Louise Ski Resort, Sunshine Village, and Mt. Norquay – form one of Canada's most impressive skiing destinations, and I've spent countless powder days exploring every corner of these mountains. As someone who's been skiing Banff for over a decade, I can tell you that understanding each resort's unique character will make or break your ski trip. From Lake Louise's massive terrain to Norquay's night skiing and Sunshine's epic snow conditions, here's everything you need to know to ski the Big 3 like a local.</p>
 

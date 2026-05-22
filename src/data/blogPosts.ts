@@ -11,6 +11,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-luxushotel',
+    title: 'Banff\'s Most Luxurious Hotels: 2026 Ultimate Guide',
+    description: 'Discover Banff\'s most exclusive luxury hotels in 2026. From mountain chalets to world-class spas, find the perfect upscale accommodation for your Rockies getaway.',
+    date: '2026-05-22',
+    category: 'Accommodation',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'banff-dinner',
+    title: 'Best Banff Dinner Spots 2026: Where Locals Actually Eat',
+    description: 'Discover authentic Banff restaurants locals love in 2026. From cozy mountain bistros to hidden gems, find the best dinner spots beyond tourist traps in the Rockies.',
+    date: '2026-05-22',
+    category: 'Guides',
+    image: '/images/blog/banff-dinner.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'banff-ski-big-3',
     title: 'Banff Ski Big 3: Ultimate 2026 Guide to Epic Powder Days',
     description: 'Discover Banff\'s Big 3 ski resorts in 2026! Your complete guide to Lake Louise, Sunshine Village & Mount Norquay for unforgettable powder adventures.',
