@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'bow-lake-view-point',
+    title: 'Banff\'s Bow Lake Viewpoint: 2026\'s Most Instagram-Worthy Spot',
+    description: 'Discover Bow Lake\'s stunning turquoise waters and glacier backdrop in Banff. Our 2026 guide reveals the best photo angles, timing, and hidden gems at this viral viewpoint.',
+    date: '2026-05-23',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'banff-luxushotel',
     title: 'Banff\'s Most Luxurious Hotels: 2026 Ultimate Guide',
     description: 'Discover Banff\'s most exclusive luxury hotels in 2026. From mountain chalets to world-class spas, find the perfect upscale accommodation for your Rockies getaway.',
