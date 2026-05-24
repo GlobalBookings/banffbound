@@ -1,4 +1,71 @@
 export const blogContent3: Record<string, string> = {
+  'big-3-banff': `
+<p>The Big 3 Banff refers to the three major ski resorts that dominate winter recreation in the Canadian Rockies: Sunshine Village, Lake Louise Ski Resort, and Mount Norquay. As someone who's carved turns on all three mountains countless times over the past decade, I can tell you each offers a completely different skiing experience. Whether you're planning a multi-mountain adventure or trying to decide which single resort deserves your time and money, understanding what makes each of these areas unique will transform your Banff ski trip from good to exceptional.</p>
+
+<h2>Understanding the Big 3 Banff Ski Resorts</h2>
+
+<p>The Big 3 package exists because these three resorts recognize that serious skiers want variety. I've used the tri-area pass multiple times, and it's particularly valuable if you're staying in Banff for more than four days. The 2026-27 season pass costs \$1,899 CAD for adults, while day tickets range from \$149-189 CAD depending on the mountain and date.</p>
+
+<p>Each resort sits at a different elevation and faces different aspects, which means snow conditions can vary dramatically on the same day. I've skied powder at Sunshine while Lake Louise dealt with wind holds just 45 minutes away. This diversity is exactly why the Big 3 concept works so well for destination skiers.</p>
+
+<h3>Sunshine Village: The High-Alpine Specialist</h3>
+
+<p>At 2,730 meters base elevation, Sunshine Village offers the most reliable snow conditions in the Big 3. The resort typically opens in early November and runs until late May - I've skied there in tank tops during their famous May long weekend parties. The village sits entirely above treeline, creating an alpine skiing experience that's rare in North America.</p>
+
+<p>The Standish and Goat's Eye Express chairs access the resort's most challenging terrain. The back bowls - Delirium Dive and Wild West - require basic avalanche safety gear and attract expert skiers from around the world. If you're an intermediate skier, stick to the front face runs off the Continental Divide Express.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Book the Sunshine Village gondola for first tracks. The 8:00 AM upload gets you on-mountain 30 minutes before the parking lot crowd arrives, and those first runs down Jackrabbit or WaWa are worth the extra \$15.</div>
+
+<h3>Lake Louise Ski Resort: The Crown Jewel</h3>
+
+<p>Lake Louise consistently ranks among North America's top ski resorts, and after 15+ visits, I understand why. The mountain offers 4,200 acres of skiable terrain with legitimate expert runs like the West Bowl and gentler cruisers perfect for families. The views across the Bow Valley are spectacular on clear days.</p>
+
+<p>What sets Lake Louise apart is the terrain variety. The front face serves up classic resort skiing with perfectly groomed runs, while the back bowls provide off-piste adventure. The Larch Area, accessed via the Summit Platter, offers some of the best intermediate terrain in Western Canada.</p>
+
+<p>Parking fills up quickly - arrive before 8:30 AM on weekends or you'll be shuttling from overflow lots. The base lodge gets crowded, so I usually eat lunch at the Whitehorn Lodge mid-mountain instead.</p>
+
+<h3>Mount Norquay: The Local's Mountain</h3>
+
+<p>Mount Norquay might be the smallest of the Big 3, but it's my go-to for quick afternoon sessions. Located just 10 minutes from downtown Banff, Norquay offers night skiing until 8:00 PM on Fridays and Saturdays - perfect for squeezing in runs after exploring Banff townsite.</p>
+
+<p>The North American chair accesses the steepest runs, including the famous Lone Pine, which drops 40 degrees in sections. For beginners, the Cascade and Spirit lifts provide gentler terrain with excellent instruction programs. The mountain's compact size means you can ski the entire resort in a single day.</p>
+
+<h2>When to Ski Each Resort</h2>
+
+<p>Weather patterns dictate which mountain offers the best conditions. Sunshine Village handles wind better than Lake Louise due to its bowl configuration, making it my choice during chinook events. Mount Norquay, being the lowest elevation, works best early and late season when temperatures hover around freezing.</p>
+
+<p>I check snow reports the night before and choose accordingly. Fresh snow means Lake Louise for the big terrain, wind means Sunshine for protection, and limited time means Norquay for convenience. The Big 3 pass gives you this flexibility.</p>
+
+<p>Spring skiing (March through May) transforms the mountains. Sunshine's high elevation maintains powder while Lake Louise and Norquay shift to corn snow conditions. I prefer morning sessions during spring - the snow gets heavy and slow by 2:00 PM.</p>
+
+<h2>Beyond Skiing: Summer Big 3 Activities</h2>
+
+<p>The Big 3 properties don't shut down when snow melts. Sunshine Village operates the gondola for hiking access to the Sunshine Meadows, where wildflower displays peak in late July and August. The hiking trails from the village connect to some of the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>, including routes to Mount Assiniboine Provincial Park.</p>
+
+<p>Lake Louise transforms into a mountain biking destination with the resort's extensive trail network. The sightseeing chairlift runs daily from June through September, providing access to hiking trails and the Wildlife Interpretive Centre. Mount Norquay offers the Via Ferrata climbing route and scenic chairlift rides with views over Banff townsite.</p>
+
+<p>Summer activities require separate tickets from winter operations. Lake Louise sightseeing lift tickets cost \$45 CAD for adults, while Sunshine Meadows gondola access runs \$39 CAD. You can book summer activities through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> for package deals that include transportation from Banff.</p>
+
+<h2>Where to Eat Near the Big 3</h2>
+
+<p>Each resort offers different dining experiences, though none rank among my favorite mountain restaurants. Sunshine Village's Creekside Grill serves decent burgers and pizza, but I usually pack lunch for full-day skiing. Lake Louise's multiple restaurants provide more variety - the Whitehorn Lodge offers the best food quality of the three mountains.</p>
+
+<p>For serious meals, head back to Banff townsite. After long skiing days, I prefer casual spots like Park Distillery for Alberta beef and local beer, or Melissa's MisSteak for comfort food. The town offers far better dining variety than on-mountain options, and most restaurants stay open later than resort dining rooms.</p>
+
+<p>If you're planning where to eat during your Banff visit, check out our comprehensive guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> for detailed recommendations beyond typical ski lodge fare.</p>
+
+<h2>Planning Your Big 3 Adventure</h2>
+
+<p>Location matters when planning a Big 3 ski trip. Staying in Banff townsite provides equal access to all three mountains, though you'll need transportation. Lake Louise village offers ski-in access to that resort but requires 45-minute drives to reach Sunshine or Norquay.</p>
+
+<p>I recommend booking accommodations through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for package deals that include lift tickets. Many Banff hotels offer Big 3 packages during the 2026-27 season. For detailed accommodation options, browse our <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory.</p>
+
+<p>Transportation adds complexity to Big 3 skiing. Sunshine Village requires a 20-minute gondola ride from the parking area - factor this into your morning timeline. Lake Louise offers the largest parking area but fills earliest on powder days. Mount Norquay provides the most convenient access but smallest terrain.</p>
+
+<p>The Big 3 pass pays for itself after four full skiing days, assuming you'd otherwise buy individual daily tickets. Day passes work better for shorter trips or if you prefer concentrating on one mountain. Consider your skiing style, group dynamics, and weather flexibility when deciding between options.</p>
+
+<p>For first-time visitors trying to experience multiple mountains while balancing other Banff activities, our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> provides realistic scheduling that includes both skiing and other winter attractions around the national park.</p>
+`,
   'bow-lake-view-point': `
 <p>As someone who's driven the Icefields Parkway countless times during my training runs and ski trips to Banff, I can tell you that the Bow Lake view point is one of those stops that never gets old. Located 37 kilometers north of Lake Louise along Highway 93, this roadside pullout offers direct access to one of the Canadian Rockies' most photographed alpine lakes. Whether you're passing through on a day trip or planning a longer stay in the area, this accessible viewpoint deserves a spot on your itinerary.</p>
 

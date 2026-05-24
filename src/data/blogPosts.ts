@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'big-3-banff',
+    title: 'Banff\'s Big 3 Lakes: 2026 Ultimate Photography Guide',
+    description: 'Discover Banff\'s iconic Lake Louise, Moraine Lake & Bow Lake in our 2026 photography guide. Pro tips, best viewpoints, and seasonal shooting advice included.',
+    date: '2026-05-24',
+    category: 'Guides',
+    image: '/images/blog/big-3-banff.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'bow-lake-view-point',
     title: 'Banff\'s Bow Lake Viewpoint: 2026\'s Most Instagram-Worthy Spot',
     description: 'Discover Bow Lake\'s stunning turquoise waters and glacier backdrop in Banff. Our 2026 guide reveals the best photo angles, timing, and hidden gems at this viral viewpoint.',
