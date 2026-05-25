@@ -1,7 +1,10 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { blogPosts } from '../../data/blogPosts';
-import { blogContent } from '../../data/blogContent';
+import { blogContent as blogContentMain } from '../../data/blogContent';
+import { blogContent3 } from '../../data/blogContent3';
+
+const blogContent = { ...blogContentMain, ...blogContent3 };
 
 const skiRedirects: Record<string, string> = {
   'banff-ski-big-3': 'banff-skiing-guide',
