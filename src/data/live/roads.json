@@ -1,33 +1,59 @@
 {
-  "updatedAt": "2026-05-25T22:27:14.749Z",
+  "updatedAt": "2026-05-25T23:02:11.745Z",
   "highways": [
     {
-      "name": "Trans-Canada Highway",
+      "name": "Trans-Canada Highway (Hwy 1)",
       "number": "1",
-      "status": "Check 511.alberta.ca",
-      "conditions": "",
-      "advisory": ""
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 2,
+      "lastUpdated": 1779314349
     },
     {
-      "name": "Icefields Parkway",
-      "number": "93",
-      "status": "Check 511.alberta.ca",
-      "conditions": "",
-      "advisory": ""
-    },
-    {
-      "name": "Highway 1A (Bow Valley Parkway)",
+      "name": "Bow Valley Parkway (Hwy 1A)",
       "number": "1A",
-      "status": "Check 511.alberta.ca",
-      "conditions": "",
-      "advisory": ""
+      "status": "Partial Closure (1/2 sections)",
+      "conditions": "Closed",
+      "advisory": "Closed sections: Jct Hwy 1 to Johnston Canyon",
+      "segments": 2,
+      "lastUpdated": 1779313363
     },
     {
-      "name": "Highway 11 (David Thompson)",
-      "number": "11",
-      "status": "Check 511.alberta.ca",
-      "conditions": "",
-      "advisory": ""
+      "name": "Icefields Parkway (Hwy 93N)",
+      "number": "93N",
+      "status": "Bare Wet",
+      "conditions": "Bare Wet",
+      "advisory": "",
+      "segments": 6,
+      "lastUpdated": 1778379764
+    },
+    {
+      "name": "Hwy 93 South (Kootenay)",
+      "number": "93S",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 1,
+      "lastUpdated": 1779314352
+    },
+    {
+      "name": "Lake Minnewanka Road",
+      "number": "",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 3,
+      "lastUpdated": 1779314349
+    },
+    {
+      "name": "Golf Course Road",
+      "number": "",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 1,
+      "lastUpdated": 1779314349
     }
   ],
   "source": "https://511.alberta.ca"

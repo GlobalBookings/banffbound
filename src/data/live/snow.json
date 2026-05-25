@@ -1,38 +1,42 @@
 {
-  "updatedAt": "2026-05-25T22:27:14.618Z",
+  "updatedAt": "2026-05-25T23:02:11.752Z",
+  "offSeason": false,
   "resorts": [
     {
       "name": "Sunshine Village",
-      "status": "Check resort website",
+      "status": "Open until May 18",
       "baseDepth": null,
       "newSnow24h": null,
-      "newSnow48h": null,
+      "seasonTotal": null,
       "openRuns": null,
-      "totalRuns": null,
+      "totalRuns": 137,
       "openLifts": null,
-      "totalLifts": null
+      "totalLifts": 12,
+      "website": "https://www.skibanff.com/conditions"
     },
     {
       "name": "Lake Louise Ski Resort",
-      "status": "Check resort website",
+      "status": "Closed for Season",
       "baseDepth": null,
       "newSnow24h": null,
-      "newSnow48h": null,
+      "seasonTotal": null,
       "openRuns": null,
-      "totalRuns": null,
+      "totalRuns": 164,
       "openLifts": null,
-      "totalLifts": null
+      "totalLifts": 11,
+      "website": "https://www.skilouise.com/conditions/"
     },
     {
       "name": "Mt. Norquay",
-      "status": "Check resort website",
+      "status": "Closed for Season",
       "baseDepth": null,
       "newSnow24h": "0 cm",
-      "newSnow48h": null,
+      "seasonTotal": null,
       "openRuns": null,
-      "totalRuns": null,
+      "totalRuns": 60,
       "openLifts": null,
-      "totalLifts": null
+      "totalLifts": 5,
+      "website": "https://banffnorquay.com/conditions/"
     }
   ]
 }

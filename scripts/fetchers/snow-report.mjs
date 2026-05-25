@@ -1,163 +1,152 @@
 /**
- * Snow report fetcher — ski resort conditions for Banff area resorts
- * Sources: Resort websites (Sunshine, Lake Louise, Norquay)
+ * Snow report fetcher — ski resort conditions for Banff Big 3
+ * Uses resort websites + known data patterns
+ * In off-season (Jun-Oct), reports "Closed for Season" without fetching
  */
 
 const LOG_PREFIX = '[snow-report]';
-const TIMEOUT_MS = 10_000;
-
-const RESORTS = [
-  {
-    name: 'Sunshine Village',
-    url: 'https://www.skibanff.com/conditions',
-    patterns: {
-      baseDepth: /base[:\s]*([\d.]+)\s*cm/i,
-      newSnow24h: /(?:24\s*h(?:ou)?r?|new\s*snow)[:\s]*([\d.]+)\s*cm/i,
-      newSnow48h: /48\s*h(?:ou)?r?[:\s]*([\d.]+)\s*cm/i,
-      openRuns: /(\d+)\s*(?:of|\/)\s*(\d+)\s*(?:runs?|trails?)\s*open/i,
-      openLifts: /(\d+)\s*(?:of|\/)\s*(\d+)\s*lifts?\s*open/i,
-    },
-  },
-  {
-    name: 'Lake Louise Ski Resort',
-    url: 'https://www.skilouise.com/conditions/',
-    patterns: {
-      baseDepth: /base[:\s]*([\d.]+)\s*cm/i,
-      newSnow24h: /(?:24\s*h(?:ou)?r?|new\s*snow|overnight)[:\s]*([\d.]+)\s*cm/i,
-      newSnow48h: /48\s*h(?:ou)?r?[:\s]*([\d.]+)\s*cm/i,
-      openRuns: /(\d+)\s*(?:of|\/)\s*(\d+)\s*(?:runs?|trails?)/i,
-      openLifts: /(\d+)\s*(?:of|\/)\s*(\d+)\s*lifts?/i,
-    },
-  },
-  {
-    name: 'Mt. Norquay',
-    url: 'https://banffnorquay.com/conditions/',
-    patterns: {
-      baseDepth: /base[:\s]*([\d.]+)\s*cm/i,
-      newSnow24h: /(?:24\s*h(?:ou)?r?|new\s*snow)[:\s]*([\d.]+)\s*cm/i,
-      newSnow48h: /48\s*h(?:ou)?r?[:\s]*([\d.]+)\s*cm/i,
-      openRuns: /(\d+)\s*(?:of|\/)\s*(\d+)\s*(?:runs?|trails?)/i,
-      openLifts: /(\d+)\s*(?:of|\/)\s*(\d+)\s*lifts?/i,
-    },
-  },
-];
-
-// Summer months when resorts are closed (June=5 through October=9)
-const SUMMER_MONTHS = [5, 6, 7, 8, 9];
-
-function isSummerSeason() {
-  return SUMMER_MONTHS.includes(new Date().getMonth());
-}
+const TIMEOUT_MS = 15_000;
 
 async function safeFetch(url) {
   try {
-    console.log(`${LOG_PREFIX} Fetching ${url}`);
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
-    const res = await fetch(url, { signal: controller.signal });
+    const res = await fetch(url, {
+      signal: controller.signal,
+      headers: { 'User-Agent': 'BanffBound/1.0 (https://banffbound.com)' },
+    });
     clearTimeout(timer);
-    if (!res.ok) {
-      console.log(`${LOG_PREFIX} HTTP ${res.status} for ${url}`);
-      return null;
-    }
+    if (!res.ok) return null;
     return await res.text();
-  } catch (err) {
-    console.log(`${LOG_PREFIX} Fetch error for ${url}: ${err.message}`);
+  } catch {
     return null;
   }
 }
 
-function parseResortConditions(html, resort) {
-  const base = {
-    name: resort.name,
-    status: 'unknown',
-    baseDepth: null,
-    newSnow24h: null,
-    newSnow48h: null,
-    openRuns: null,
-    totalRuns: null,
-    openLifts: null,
-    totalLifts: null,
+function parseNorquay(html) {
+  if (!html) return null;
+
+  // Norquay has numbers in the page: base depth, season total, etc.
+  const cmValues = [...html.matchAll(/(\d+)\s*cm/gi)].map(m => parseInt(m[1]));
+
+  // Check for "Closed" status
+  const isClosed = /season.*(?:over|closed|ended)|closed.*season/i.test(html) ||
+    html.includes('>Closed<');
+
+  // Look for specific data patterns
+  const baseMatch = html.match(/base[^<]*?(\d+)\s*cm/i) ||
+    html.match(/(?:snow\s*)?depth[^<]*?(\d+)\s*cm/i);
+  const newSnowMatch = html.match(/(?:new|fresh|24)[^<]*?(\d+)\s*cm/i);
+  const seasonMatch = html.match(/season[^<]*?(\d+)\s*cm/i);
+
+  return {
+    name: 'Mt. Norquay',
+    status: isClosed ? 'Closed for Season' : 'Open',
+    baseDepth: baseMatch ? `${baseMatch[1]} cm` : null,
+    newSnow24h: newSnowMatch ? `${newSnowMatch[1]} cm` : '0 cm',
+    seasonTotal: seasonMatch ? `${seasonMatch[1]} cm` : null,
+    openRuns: null, totalRuns: 60,
+    openLifts: null, totalLifts: 5,
+    website: 'https://banffnorquay.com/conditions/',
   };
-
-  if (!html) return { ...base, status: 'Unable to fetch data' };
-
-  const text = html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ');
-
-  // Check if the page says closed
-  if (/closed\s*for\s*(?:the\s*)?season/i.test(text)) {
-    return { ...base, status: 'Closed for Season' };
-  }
-
-  // Try to extract data
-  const depthMatch = text.match(resort.patterns.baseDepth);
-  if (depthMatch) base.baseDepth = `${depthMatch[1]} cm`;
-
-  const snow24Match = text.match(resort.patterns.newSnow24h);
-  if (snow24Match) base.newSnow24h = `${snow24Match[1]} cm`;
-
-  const snow48Match = text.match(resort.patterns.newSnow48h);
-  if (snow48Match) base.newSnow48h = `${snow48Match[1]} cm`;
-
-  const runsMatch = text.match(resort.patterns.openRuns);
-  if (runsMatch) {
-    base.openRuns = parseInt(runsMatch[1], 10);
-    base.totalRuns = parseInt(runsMatch[2], 10);
-  }
-
-  const liftsMatch = text.match(resort.patterns.openLifts);
-  if (liftsMatch) {
-    base.openLifts = parseInt(liftsMatch[1], 10);
-    base.totalLifts = parseInt(liftsMatch[2], 10);
-  }
-
-  // Determine status
-  if (/open/i.test(text) && base.baseDepth) {
-    base.status = 'Open';
-  } else if (base.baseDepth || base.openRuns) {
-    base.status = 'Open';
-  } else {
-    base.status = 'Check resort website';
-  }
-
-  return base;
 }
 
-/**
- * Main export
- */
+function parseLouise(html) {
+  if (!html) return null;
+
+  const isClosed = /season.*(?:over|closed|ended)|closed.*season/i.test(html);
+
+  // Lake Louise shows "open" or "closed" for various facilities
+  const openCount = (html.match(/>\s*open\s*</gi) || []).length;
+  const closedCount = (html.match(/>\s*closed\s*</gi) || []).length;
+
+  const baseMatch = html.match(/base[^<]*?(\d+)\s*cm/i);
+  const newMatch = html.match(/(?:new|24|overnight)[^<]*?(\d+)\s*cm/i);
+
+  return {
+    name: 'Lake Louise Ski Resort',
+    status: isClosed ? 'Closed for Season' : (openCount > closedCount ? 'Open' : 'Closed for Season'),
+    baseDepth: baseMatch ? `${baseMatch[1]} cm` : null,
+    newSnow24h: newMatch ? `${newMatch[1]} cm` : null,
+    seasonTotal: null,
+    openRuns: null, totalRuns: 164,
+    openLifts: null, totalLifts: 11,
+    website: 'https://www.skilouise.com/conditions/',
+  };
+}
+
+function parseSunshine(html) {
+  if (!html) return null;
+
+  // Sunshine uses Handlebars templates that render client-side,
+  // but the page does have some static text
+  const isClosed = /season.*(?:over|closed|ended)|closed.*season/i.test(html);
+
+  // Look for "Open Until May 18th" type patterns
+  const openUntilMatch = html.match(/open\s+(?:until|through|till)\s+(\w+\s+\d+)/i);
+
+  const baseMatch = html.match(/base[^<]*?(\d+)\s*cm/i);
+  const newMatch = html.match(/(?:new|24|overnight)[^<]*?(\d+)\s*cm/i);
+
+  let status = 'Closed for Season';
+  if (openUntilMatch) {
+    status = `Open until ${openUntilMatch[1]}`;
+  } else if (!isClosed) {
+    // Check for general open indicators
+    if (/currently\s+open|we.re\s+open|now\s+open/i.test(html)) {
+      status = 'Open';
+    }
+  }
+
+  return {
+    name: 'Sunshine Village',
+    status,
+    baseDepth: baseMatch ? `${baseMatch[1]} cm` : null,
+    newSnow24h: newMatch ? `${newMatch[1]} cm` : null,
+    seasonTotal: null,
+    openRuns: null, totalRuns: 137,
+    openLifts: null, totalLifts: 12,
+    website: 'https://www.skibanff.com/conditions',
+  };
+}
+
 export async function fetchSnowReport() {
   console.log(`${LOG_PREFIX} Starting snow report fetch…`);
 
-  // In summer, skip fetching — resorts are closed
-  if (isSummerSeason()) {
-    console.log(`${LOG_PREFIX} Summer season detected — resorts closed for season`);
+  // In deep off-season (Jul-Sep), skip fetching entirely
+  const month = new Date().getMonth(); // 0-indexed
+  if (month >= 6 && month <= 8) {
+    console.log(`${LOG_PREFIX} Off-season (${['Jul','Aug','Sep'][month-6]}) — skipping resort fetches`);
     return {
       updatedAt: new Date().toISOString(),
-      resorts: RESORTS.map(r => ({
-        name: r.name,
-        status: 'Closed for Season',
-        baseDepth: null,
-        newSnow24h: null,
-        newSnow48h: null,
-        openRuns: null,
-        totalRuns: null,
-        openLifts: null,
-        totalLifts: null,
-      })),
+      offSeason: true,
+      seasonOpens: 'Early November',
+      resorts: [
+        { name: 'Sunshine Village', status: 'Closed for Season — Opens November', website: 'https://www.skibanff.com/conditions', totalRuns: 137 },
+        { name: 'Lake Louise Ski Resort', status: 'Closed for Season — Opens November', website: 'https://www.skilouise.com/conditions/', totalRuns: 164 },
+        { name: 'Mt. Norquay', status: 'Closed for Season — Opens November', website: 'https://banffnorquay.com/conditions/', totalRuns: 60 },
+      ],
     };
   }
 
-  // Fetch all resorts in parallel
-  const htmlResults = await Promise.all(RESORTS.map(r => safeFetch(r.url)));
+  console.log(`${LOG_PREFIX} Fetching resort conditions pages…`);
+  const [sunshineHtml, louiseHtml, norquayHtml] = await Promise.all([
+    safeFetch('https://www.skibanff.com/conditions'),
+    safeFetch('https://www.skilouise.com/conditions/'),
+    safeFetch('https://banffnorquay.com/conditions/'),
+  ]);
 
-  const resorts = RESORTS.map((resort, i) => parseResortConditions(htmlResults[i], resort));
+  const resorts = [
+    parseSunshine(sunshineHtml) || { name: 'Sunshine Village', status: 'Check website', website: 'https://www.skibanff.com/conditions' },
+    parseLouise(louiseHtml) || { name: 'Lake Louise Ski Resort', status: 'Check website', website: 'https://www.skilouise.com/conditions/' },
+    parseNorquay(norquayHtml) || { name: 'Mt. Norquay', status: 'Check website', website: 'https://banffnorquay.com/conditions/' },
+  ];
 
-  const data = {
+  console.log(`${LOG_PREFIX} Parsed: ${resorts.map(r => `${r.name}: ${r.status}`).join(', ')}`);
+
+  return {
     updatedAt: new Date().toISOString(),
+    offSeason: false,
     resorts,
   };
-
-  console.log(`${LOG_PREFIX} Parsed ${resorts.length} resorts`);
-  return data;
 }

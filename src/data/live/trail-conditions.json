@@ -1,5 +1,207 @@
 {
-  "updatedAt": "2026-05-25T22:27:14.739Z",
-  "trails": [],
-  "advisories": []
+  "updatedAt": "2026-05-25T23:02:11.058Z",
+  "trails": [
+    {
+      "name": "Tunnel Toe Wildfire Risk Reduction Project (Block B)",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "- Lake Louise Area Trails",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "Spray Wildfire Risk Reduction Project Upper Springs Block 1 and 2",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "Lake Minnewanka Sheep Point",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "west slope of Tunnel Mountain south of the Tunnel Mountain Trail",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "s For Wildlife",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "- Hillsdale",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "- Fairholme",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "- Roadside closure 93N avalanche debris",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "Eastern Section of the Bow Valley Parkway (Highway 1A)",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "s for Avalanche Control",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "Sundance Canyon Loop",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "- Bow Glacier Falls",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "- Wildlife crossing structures",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "Banff Springs Snail Critical Habitat",
+      "status": "closed",
+      "note": "Closed"
+    },
+    {
+      "name": "Middle Springs Wildlife Corridor and Banff Springs Snail Critical Habitat",
+      "status": "closed",
+      "note": "Closed"
+    }
+  ],
+  "advisories": [
+    {
+      "title": "Area Closure: Tunnel Toe Wildfire Risk Reduction Project (Block B)",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": "",
+      "summary": "Area Closure: Tunnel Toe Wildfire Risk Reduction Project (Block B) May 15, 2026 Restricted Activity: Johnston Canyon - Off-trail use is strictly prohibited May 15, 2026"
+    },
+    {
+      "title": "AREA CLOSURE: - Lake Louise Area Trails",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE - Lake Louise Area Trails May 15, 2026"
+    },
+    {
+      "title": "Area Closure: Spray Wildfire Risk Reduction Project Upper Springs Block 1 and 2",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": "",
+      "summary": "Area Closure: Spray Wildfire Risk Reduction Project Upper Springs Block 1 and 2 May 08, 2026"
+    },
+    {
+      "title": "Area Closure: Lake Minnewanka Sheep Point",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": "",
+      "summary": "Area Closure: Lake Minnewanka Sheep Point May 01, 2026"
+    },
+    {
+      "title": "AREA CLOSURE: west slope of Tunnel Mountain south of the Tunnel Mountain Trail",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE: west slope of Tunnel Mountain south of the Tunnel Mountain Trail May 01, 2026"
+    },
+    {
+      "title": "ADVISORY: The Elk Calving Season Has Begun",
+      "type": "ADVISORY",
+      "issued": "",
+      "ends": "",
+      "summary": "ADVISORY: The Elk Calving Season Has Begun May 01, 2026 Restricted Activity: Personal vehicle access on the Bow Valley Parkway April 30, 2026 Restricted Activity: paddling, fishing, scuba diving, and other non-motorized water activities April 15, 2026 Temporary"
+    },
+    {
+      "title": "Area Closure: s For Wildlife",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": "",
+      "summary": "Area Closures For Wildlife April 01, 2026 RESTRICTED ACTIVITY: Alcohol and Cannabis Ban April 01, 2026 ANNUAL"
+    },
+    {
+      "title": "AREA CLOSURE: - Hillsdale",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE - Hillsdale April 01, 2026 ANNUAL"
+    },
+    {
+      "title": "AREA CLOSURE: - Fairholme",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE - Fairholme April 01, 2026 TEMPORARY NO STOPPING ZONE FOR WILDLIFE April 01, 2026"
+    },
+    {
+      "title": "AREA CLOSURE: - Roadside closure 93N avalanche debris",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE - Roadside closure 93N avalanche debris March 27, 2026 RESTRICTED ACTIVITY - Lake Louise Trailer Campground March 25, 2026"
+    },
+    {
+      "title": "AREA CLOSURE: Eastern Section of the Bow Valley Parkway (Highway 1A)",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE: Eastern Section of the Bow Valley Parkway (Highway 1A) March 01, 2026 RESTRICTED ACTIVITY: Travel in Banff National Park January 16, 2026 Temporary"
+    },
+    {
+      "title": "Area Closure: s for Avalanche Control",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": "",
+      "summary": "Area Closures for Avalanche Control November 01, 2025"
+    },
+    {
+      "title": "Area Closure: Sundance Canyon Loop",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": "",
+      "summary": "Area Closure: Sundance Canyon Loop September 09, 2025 Restricted Activity: Angling prohibition in Cascade Creek. July 01, 2025"
+    },
+    {
+      "title": "AREA CLOSURE: - Bow Glacier Falls",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE - Bow Glacier Falls June 19, 2025 RESTRICTED ACTIVITY: Paragliding and hang gliding May 23, 2025 Restricted activity: BASE jumping May 23, 2025 Restricted Activity : Hidden Lake - Water based recreational activities April 01, 2025 Restricted Activity: Skoki Creek - Water based recreatio"
+    },
+    {
+      "title": "AREA CLOSURE: - Wildlife crossing structures",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE - Wildlife crossing structures January 20, 2025 RESTRICTED ACTIVITY: Personal Watercraft May 17, 2024 Lake Minnewanka Reservoir Motorized Watercraft Restrictions and Prohibitions May 17, 2024"
+    },
+    {
+      "title": "AREA CLOSURE: Banff Springs Snail Critical Habitat",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE: Banff Springs Snail Critical Habitat May 09, 2024"
+    },
+    {
+      "title": "AREA CLOSURE: Middle Springs Wildlife Corridor and Banff Springs Snail Critical Habitat",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": "",
+      "summary": "AREA CLOSURE: Middle Springs Wildlife Corridor and Banff Springs Snail Critical Habitat May 09, 2024 Restricted Activity: Fishing Restrictions Owen Creek April 15, 2022 RESTRICTED ACTIVITY ORDER: Quiet Hours from 23:00-07:00 daily March 21, 2020 RESTRICTED ACTIVITY: Generator Use 09:00-10:30 and 17:"
+    }
+  ],
+  "source": "https://parks.canada.ca/pn-np/ab/banff/bulletins"
 }
