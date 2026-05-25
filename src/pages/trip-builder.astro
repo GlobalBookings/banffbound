@@ -14,6 +14,36 @@ const closedTrailNames = new Set(trails.filter(t => t.status === 'closed').map(t
 ---
 
 <BaseLayout title="Trip Builder" description="Plan your perfect Banff trip day by day. Choose a template or build your own itinerary with booking links for tours, hotels, and activities.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'TouristTrip',
+    name: 'Banff Trip Builder — Plan Your Perfect Itinerary',
+    description: 'Plan your perfect Banff trip day by day. Choose a template or build your own itinerary with booking links for tours, hotels, and activities.',
+    url: 'https://banffbound.com/trip-builder',
+    touristType: ['Adventure travelers', 'Families', 'Couples', 'Solo travelers'],
+    itinerary: {
+      '@type': 'ItemList',
+      name: 'Banff Trip Templates',
+      numberOfItems: tripTemplates.length,
+      itemListElement: tripTemplates.map((tmpl, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Trip',
+          name: tmpl.name,
+          description: tmpl.description,
+        },
+      })),
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'CAD',
+      description: 'Free trip planning tool',
+    },
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Trip Builder' }]} />
   </div>
@@ -67,8 +97,14 @@ const closedTrailNames = new Set(trails.filter(t => t.status === 'closed').map(t
           </button>
         ))}
       </div>
+      <div class="clear-selection-wrap" id="clear-selection-wrap" style="display:none;">
+        <button class="btn btn-outline clear-selection-btn" id="clear-selection-btn">✕ Clear Saved Selection</button>
+      </div>
     </div>
   </section>
+
+  <!-- Share toast -->
+  <div class="share-toast" id="share-toast" aria-live="polite">Link copied!</div>
 
   <!-- Itineraries (all rendered, shown/hidden via JS) -->
   {tripTemplates.map((tmpl, i) => (
@@ -80,7 +116,17 @@ const closedTrailNames = new Set(trails.filter(t => t.status === 'closed').map(t
             <h2>{tmpl.name}</h2>
             <p>{tmpl.description}</p>
           </div>
-          <button class="btn btn-outline change-template-btn">Change Template</button>
+          <div class="itinerary-actions">
+            <button class="btn btn-outline change-template-btn">Change Template</button>
+            <button class="btn btn-outline share-btn" aria-label="Share this itinerary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share Itinerary
+            </button>
+            <button class="btn btn-outline print-btn" aria-label="Print this itinerary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              Print Itinerary
+            </button>
+          </div>
         </div>
 
         {tmpl.itinerary.map((day) => {
@@ -163,10 +209,18 @@ const closedTrailNames = new Set(trails.filter(t => t.status === 'closed').map(t
 </BaseLayout>
 
 <script define:vars={{ OWM_KEY: OWM_KEY_SSR }}>
+  const STORAGE_KEY = 'bb-trip-template';
   const templateCards = document.querySelectorAll('.template-card');
   const itineraries = document.querySelectorAll('.itinerary-section');
   const templatesSection = document.querySelector('.templates-section');
   const changeBtns = document.querySelectorAll('.change-template-btn');
+  const shareBtns = document.querySelectorAll('.share-btn');
+  const printBtns = document.querySelectorAll('.print-btn');
+  const clearWrap = document.getElementById('clear-selection-wrap');
+  const clearBtn = document.getElementById('clear-selection-btn');
+  const shareToast = document.getElementById('share-toast');
+
+  let activeTemplateId = null;
 
   // Load live weather into conditions banner
   (async function loadTripWeather() {
@@ -219,22 +273,39 @@ const closedTrailNames = new Set(trails.filter(t => t.status === 'closed').map(t
     } catch {}
   })();
 
-  function showTemplate(id) {
+  function showTemplate(id, saveToStorage) {
     itineraries.forEach(s => s.style.display = 'none');
     const target = document.querySelector(`[data-itinerary="${id}"]`);
     if (target) {
+      activeTemplateId = id;
       target.style.display = 'block';
       templatesSection.style.display = 'none';
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (saveToStorage !== false) {
+        try { localStorage.setItem(STORAGE_KEY, id); } catch {}
+      }
+      updateClearBtn();
     }
   }
 
   function showSelector() {
+    activeTemplateId = null;
     itineraries.forEach(s => s.style.display = 'none');
     templatesSection.style.display = 'block';
     templatesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    updateClearBtn();
   }
 
+  function updateClearBtn() {
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (clearWrap) clearWrap.style.display = saved ? 'flex' : 'none';
+    } catch {
+      if (clearWrap) clearWrap.style.display = 'none';
+    }
+  }
+
+  // Template card click
   templateCards.forEach(card => {
     card.addEventListener('click', () => {
       const id = card.dataset.template || '';
@@ -242,7 +313,75 @@ const closedTrailNames = new Set(trails.filter(t => t.status === 'closed').map(t
     });
   });
 
+  // Change template buttons
   changeBtns.forEach(btn => btn.addEventListener('click', showSelector));
+
+  // Share button — copy URL with ?template= param
+  shareBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!activeTemplateId) return;
+      const url = new URL(window.location.href);
+      url.searchParams.set('template', activeTemplateId);
+      url.hash = '';
+      navigator.clipboard.writeText(url.toString()).then(() => {
+        if (shareToast) {
+          shareToast.classList.add('show');
+          setTimeout(() => shareToast.classList.remove('show'), 2500);
+        }
+      }).catch(() => {
+        // Fallback for older browsers
+        var ta = document.createElement('textarea');
+        ta.value = url.toString();
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (shareToast) {
+          shareToast.classList.add('show');
+          setTimeout(() => shareToast.classList.remove('show'), 2500);
+        }
+      });
+    });
+  });
+
+  // Print button
+  printBtns.forEach(btn => {
+    btn.addEventListener('click', () => window.print());
+  });
+
+  // Clear selection button
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      try { localStorage.removeItem(STORAGE_KEY); } catch {}
+      showSelector();
+    });
+  }
+
+  // On page load: check URL params first, then localStorage
+  (function restoreSelection() {
+    const params = new URLSearchParams(window.location.search);
+    const urlTemplate = params.get('template');
+    if (urlTemplate) {
+      const exists = document.querySelector(`[data-itinerary="${urlTemplate}"]`);
+      if (exists) {
+        showTemplate(urlTemplate);
+        return;
+      }
+    }
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const exists = document.querySelector(`[data-itinerary="${saved}"]`);
+        if (exists) {
+          showTemplate(saved, false);
+          return;
+        }
+      }
+    } catch {}
+    updateClearBtn();
+  })();
 </script>
 
 <style>
@@ -466,12 +605,104 @@ const closedTrailNames = new Set(trails.filter(t => t.status === 'closed').map(t
 
   .templates-section { padding: 3rem 0; }
 
+  /* Itinerary action buttons */
+  .itinerary-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .share-btn, .print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .share-btn svg, .print-btn svg { flex-shrink: 0; }
+
+  /* Clear selection */
+  .clear-selection-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .clear-selection-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1.2rem;
+    color: var(--color-text-light);
+    border-color: rgba(0,0,0,0.15);
+  }
+
+  .clear-selection-btn:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  /* Share toast */
+  .share-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  .share-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
   @media (max-width: 768px) {
     .itinerary-header { flex-direction: column; }
+    .itinerary-actions { width: 100%; }
+    .itinerary-actions .btn { flex: 1; justify-content: center; font-size: 0.8rem; padding: 0.55rem 0.75rem; }
     .hotel-box { flex-direction: column; align-items: flex-start; }
     .hotel-links { flex-wrap: wrap; }
     .activity-card { flex-direction: column; }
     .activity-top { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
     .summary-stats { gap: 1.5rem; }
+  }
+
+  /* Print styles */
+  @media print {
+    .site-header, .site-footer, .conditions-banner,
+    .templates-section, .cookie-banner, .back-to-top,
+    .sticky-cta-bar, .share-toast, .page-hero,
+    .itinerary-actions, .summary-ctas, .hotel-box,
+    .book-btn, .clear-selection-wrap { display: none !important; }
+
+    main { margin-top: 0 !important; }
+
+    .itinerary-section { display: block !important; padding: 0 !important; }
+
+    .itinerary-header { margin-bottom: 1rem; }
+
+    .day-block { break-inside: avoid; margin-bottom: 1.5rem; border: 1px solid #ccc; }
+
+    .day-header { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    .activity-card { padding: 0.5rem 1rem; }
+
+    .trip-summary { box-shadow: none; border: 1px solid #ccc; }
+
+    .summary-stats { margin-bottom: 0; }
+
+    body { font-size: 11pt; }
   }
 </style>

@@ -6,6 +6,25 @@ const AFFILIATE_TAG = 'banffbound-20';
 ---
 
 <BaseLayout title="Banff Packing List Generator" description="Generate a personalized packing checklist for your Banff trip. Seasonal recommendations, activity-specific gear, and Amazon links for essential items.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Pack for a Banff Trip',
+    description: 'Generate a personalized packing checklist for your Banff trip. Seasonal recommendations, activity-specific gear, and links for essential items.',
+    url: 'https://banffbound.com/packing-list',
+    totalTime: 'PT30M',
+    estimatedCost: { '@type': 'MonetaryAmount', currency: 'CAD', value: '0' },
+    step: [
+      { '@type': 'HowToStep', position: 1, name: 'Choose your travel month', text: 'Select the month you plan to visit Banff. This determines whether you need winter, summer, or shoulder-season gear.' },
+      { '@type': 'HowToStep', position: 2, name: 'Select your planned activities', text: 'Choose from activities like hiking, skiing, snowshoeing, canoeing, camping, photography, dining, and hot springs. Each adds activity-specific gear to your list.' },
+      { '@type': 'HowToStep', position: 3, name: 'Generate your personalized packing list', text: 'Click generate to receive a customized checklist organized by category: clothing, footwear, gear, accessories, tech, toiletries, and documents. Check off items as you pack.' },
+    ],
+    tool: [
+      { '@type': 'HowToTool', name: 'BanffBound Packing List Generator' },
+    ],
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Packing List' }]} />
   </div>

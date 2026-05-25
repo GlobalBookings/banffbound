@@ -1,0 +1,302 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Moraine Lake vs Lake Louise — Which Banff Lake Should You Visit?" description="Moraine Lake vs Lake Louise: honest comparison of crowds, parking, scenery, accessibility, and which iconic Banff lake deserves your time in 2026.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Is Moraine Lake or Lake Louise better?', acceptedAnswer: { '@type': 'Answer', text: 'Neither is objectively "better" — they offer different experiences. Lake Louise is larger, easier to access, and has more infrastructure (hotel, restaurants, canoe rentals). Moraine Lake is smaller, more dramatic in colour, and feels wilder. If you can only visit one, Lake Louise is the safer bet for most visitors. If you want the most jaw-dropping turquoise water, Moraine Lake wins.' } },
+      { '@type': 'Question', name: 'Can you visit Moraine Lake and Lake Louise in the same day?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, they are only 14 km apart (about 15 minutes by car). The best strategy is to take the Parks Canada shuttle to Moraine Lake early in the morning (first shuttle at 6 AM), spend 1-2 hours, then shuttle back and drive to Lake Louise. Doing Moraine Lake first avoids the worst crowds.' } },
+      { '@type': 'Question', name: 'Do you need a shuttle to visit Moraine Lake?', acceptedAnswer: { '@type': 'Answer', text: 'From June to mid-October, yes. Private vehicles are banned on Moraine Lake Road during peak season. You must take the Parks Canada shuttle from the Lake Louise Park & Ride ($8 per person round trip) or book a commercial tour. The shuttle runs every 10-20 minutes starting at 6 AM.' } },
+      { '@type': 'Question', name: 'When is the best time to visit Moraine Lake and Lake Louise?', acceptedAnswer: { '@type': 'Answer', text: 'Mid-June to mid-September for the best turquoise colour. The lakes are typically frozen until late May or early June. Peak colour is July-August. September offers golden larch trees but cooler temperatures. Early morning (before 8 AM) is best for fewer crowds and mirror-like reflections at both lakes.' } },
+      { '@type': 'Question', name: 'Which lake is more crowded — Moraine Lake or Lake Louise?', acceptedAnswer: { '@type': 'Answer', text: 'Lake Louise is more crowded overall because it is open year-round and has a large hotel and parking lot. However, Moraine Lake feels more crowded because the viewing area is much smaller. The shuttle system at Moraine Lake has actually helped manage crowds since 2023, making the experience more pleasant than the old free-for-all parking situation.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Lakes', href: '/lakes' }, { label: 'Moraine Lake vs Lake Louise' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Turquoise lake surrounded by mountains in Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Lake Comparison</span>
+      <h1>Moraine Lake vs Lake Louise</h1>
+      <p>Two of the most famous lakes on Earth, just 14 km apart. Here's how to choose — or visit both.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Comparison Table -->
+      <div class="section-header">
+        <h2>Side-by-Side Comparison</h2>
+        <p>How these two iconic Banff lakes stack up across the categories that actually matter for planning your visit.</p>
+      </div>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>🏔️ Moraine Lake</th>
+              <th>💎 Lake Louise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Elevation</strong></td>
+              <td>1,884 m (6,181 ft)</td>
+              <td>1,731 m (5,679 ft)</td>
+            </tr>
+            <tr>
+              <td><strong>Best Time to Visit</strong></td>
+              <td>Mid-June to mid-October</td>
+              <td class="winner">Year-round ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Crowd Level (Summer)</strong></td>
+              <td>High (but controlled by shuttle)</td>
+              <td>Very high — expect 8,000+ daily visitors</td>
+            </tr>
+            <tr>
+              <td><strong>Parking Difficulty</strong></td>
+              <td>No private parking — shuttle only (June–Oct)</td>
+              <td>Lot fills by 7–8 AM in summer</td>
+            </tr>
+            <tr>
+              <td><strong>Accessibility</strong></td>
+              <td>Shuttle required in peak season ($8 pp)</td>
+              <td class="winner">Drive up year-round, paved path ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Difficulty to Reach</strong></td>
+              <td>Moderate — shuttle logistics required</td>
+              <td class="winner">Easy — large parking lot, well signed ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Best for Photography</strong></td>
+              <td class="winner">Rockpile sunrise = world-class ✅</td>
+              <td>Classic glacier backdrop from shoreline</td>
+            </tr>
+            <tr>
+              <td><strong>Best for Families</strong></td>
+              <td>Doable but shuttle adds complexity</td>
+              <td class="winner">Easy access, canoe rental, paved lakeshore ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Best for Solitude</strong></td>
+              <td class="winner">Early morning shuttle = fewer people ✅</td>
+              <td>Almost impossible in summer</td>
+            </tr>
+            <tr>
+              <td><strong>Turquoise Intensity</strong></td>
+              <td class="winner">Electric blue-green — arguably deeper colour ✅</td>
+              <td>Stunning turquoise with glacier backdrop</td>
+            </tr>
+            <tr>
+              <td><strong>Nearby Hikes</strong></td>
+              <td>Sentinel Pass, Larch Valley, Consolation Lakes</td>
+              <td class="winner">Lake Agnes Tea House, Plain of Six Glaciers, Big Beehive ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Amenities On-Site</strong></td>
+              <td>Small lodge (seasonal), basic washrooms</td>
+              <td class="winner">Fairmont Hotel, restaurant, canoe rentals ✅</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Moraine Lake Section -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Moraine Lake: The Jaw-Dropper</h2>
+      </div>
+
+      <div class="breakdown-cards">
+        <div class="breakdown-card full-width">
+          <h3>🏔️ Why People Lose Their Minds Over Moraine Lake</h3>
+          <p>There's a reason this lake appeared on the old Canadian $20 bill. Moraine Lake sits in the Valley of the Ten Peaks — ten towering summits that form a dramatic amphitheatre behind water so blue it looks digitally enhanced. It isn't. The colour comes from glacial rock flour suspended in the meltwater, and it peaks in July and August when glacial melt is highest.</p>
+          <p>The classic viewpoint is from the Rockpile — a short, steep scramble up a boulder pile at the lake's outlet. Arrive on the first shuttle at 6 AM and you'll have this spot nearly to yourself, with the lake mirror-still and the peaks reflected perfectly. By 9 AM, it's shoulder-to-shoulder.</p>
+          <p>Beyond the iconic viewpoint, Moraine Lake is the trailhead for some of Banff's best hikes. Sentinel Pass (2,611 m) is the highest point reachable by maintained trail in the Canadian Rockies, and Larch Valley is one of the best places on Earth to see golden larches in September. Consolation Lakes is a quieter option if you want to escape the crowds.</p>
+          <p><strong>Practical tip:</strong> Book your Parks Canada shuttle reservation as soon as they open (typically in April). Spots sell out in minutes for peak summer weekends. If you miss the reservation window, same-day spots are released at 6 AM but expect a line at the Park & Ride by 5:30 AM.</p>
+        </div>
+      </div>
+
+      <!-- Lake Louise Section -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Lake Louise: The Grand Icon</h2>
+      </div>
+
+      <div class="breakdown-cards">
+        <div class="breakdown-card full-width">
+          <h3>💎 Lake Louise Delivers Year-Round</h3>
+          <p>Lake Louise is the more "complete" destination. The Fairmont Chateau Lake Louise sits right at the lakeshore, giving you restaurants, coffee shops, and canoe rentals ($155/hour — expensive, but bucket-list-worthy). The flat, paved lakeshore trail is wheelchair and stroller accessible, making it the better choice for families and visitors with mobility challenges.</p>
+          <p>The lake itself is 2.4 km long and backed by Victoria Glacier, which feeds it that famous turquoise colour. The view from the shore is arguably the most photographed in Canada — and for good reason. Unlike Moraine Lake, Lake Louise is accessible year-round. In winter, the frozen lake becomes a natural skating rink and the surrounding mountains are draped in snow. The ice sculptures during the Ice Magic Festival (January) are spectacular.</p>
+          <p>Hiking from Lake Louise is exceptional. The Lake Agnes Tea House trail (3.5 km, 400 m gain) takes you to a rustic alpine tea house serving fresh-baked scones — one of Canada's most unique hiking rewards. The Plain of Six Glaciers trail (5.3 km) leads to another tea house with dramatic views of hanging glaciers and avalanche paths. You can link both for a full-day "tea house double."</p>
+          <p><strong>Practical tip:</strong> Arrive before 7 AM in summer or after 5 PM to avoid the worst crowds and find parking. Alternatively, take the Roam Transit bus from Lake Louise village (free with parking) or from Banff. The lake faces east, so morning light is best for photography.</p>
+        </div>
+      </div>
+
+      <!-- Verdict -->
+      <div class="bottom-line">
+        <h2>Which Should You Visit?</h2>
+        <div class="verdict-grid">
+          <div class="verdict-card moraine">
+            <h3>Visit Moraine Lake if…</h3>
+            <ul>
+              <li>You want the most intense turquoise colour</li>
+              <li>You're a photographer chasing the perfect shot</li>
+              <li>You want to hike Sentinel Pass or Larch Valley</li>
+              <li>You don't mind shuttle logistics</li>
+              <li>You're visiting June–October</li>
+            </ul>
+          </div>
+          <div class="verdict-card louise">
+            <h3>Visit Lake Louise if…</h3>
+            <ul>
+              <li>You're visiting with young kids or limited mobility</li>
+              <li>You want canoe rentals and on-site dining</li>
+              <li>You're visiting in winter</li>
+              <li>You want more hiking options from one trailhead</li>
+              <li>It's your first time in Banff</li>
+            </ul>
+          </div>
+        </div>
+        <div class="both-verdict">
+          <h3>🎯 Our honest take: Visit both.</h3>
+          <p>They're 14 km apart. Take the first Moraine Lake shuttle, spend 1–2 hours, shuttle back, and drive to Lake Louise. You'll see both before lunch. Don't overthink it — these are two of the most beautiful places on the planet, and skipping one would be a genuine regret.</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <h2>Book Lake Tours & Nearby Hotels</h2>
+        <p>Skip the stress and see both lakes with a guided tour, or lock in a hotel near Lake Louise village.</p>
+        <div class="cta-buttons">
+          <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=lake+louise+moraine" class="btn btn-accent" target="_blank" rel="noopener">Lake Tours on GetYourGuide →</a>
+          <a href="https://www.expedia.ca/Hotel-Search?destination=Lake+Louise%2C+Alberta&camref=1101l3MtWX" class="btn btn-outline" target="_blank" rel="noopener sponsored">Hotels Near Lake Louise →</a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is Moraine Lake or Lake Louise better?</summary>
+          <p>Neither is objectively "better." Lake Louise is easier to access, open year-round, and has more amenities (canoe rentals, hotel, restaurants). Moraine Lake has more intense turquoise colour and feels wilder. For first-timers, Lake Louise is the safer bet. For photographers, Moraine Lake is hard to beat.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you visit both in the same day?</summary>
+          <p>Absolutely. They're only 14 km apart. Take the early Moraine Lake shuttle (6 AM), spend 1–2 hours, shuttle back, and drive to Lake Louise. You'll have both done before noon. This is the strategy we recommend for every visitor.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you need a shuttle to visit Moraine Lake?</summary>
+          <p>From June to mid-October, yes. Private vehicles are banned on Moraine Lake Road. Take the Parks Canada shuttle from the Lake Louise Park & Ride ($8 per person round trip, runs every 10–20 minutes from 6 AM). Outside peak season (late October–May), the road is closed entirely due to snow.</p>
+        </details>
+        <details class="faq-item">
+          <summary>When is the best time for the turquoise colour?</summary>
+          <p>Mid-June to mid-September. The turquoise comes from glacial rock flour — fine particles of rock ground by glaciers and suspended in meltwater. Colour peaks in July–August when glacial melt is strongest. Before mid-June, both lakes may still be partially frozen.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Which lake is less crowded?</summary>
+          <p>Moraine Lake is less crowded overall since the shuttle system limits daily visitors. Lake Louise gets 8,000+ visitors daily in peak summer. The trick for both: arrive at first light. By 9 AM, crowds at both are significant.</p>
+        </details>
+      </div>
+
+      <!-- Related Links -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Related Guides</h2>
+      </div>
+
+      <div class="grid grid-4">
+        <a href="/blog/moraine-lake-guide" class="card" style="display:block;">
+          <div class="card-body">
+            <h3 style="font-size: 0.95rem;">Moraine Lake Guide</h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-light);">Shuttle tips, hikes & best times.</p>
+            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/blog/lake-louise-complete-guide" class="card" style="display:block;">
+          <div class="card-body">
+            <h3 style="font-size: 0.95rem;">Lake Louise Complete Guide</h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-light);">Everything you need to know.</p>
+            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/lakes" class="card" style="display:block;">
+          <div class="card-body">
+            <h3 style="font-size: 0.95rem;">All Banff Lakes</h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-light);">Explore every lake in the park.</p>
+            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Explore →</span>
+          </div>
+        </a>
+        <a href="/hiking" class="card" style="display:block;">
+          <div class="card-body">
+            <h3 style="font-size: 0.95rem;">Best Hikes in Banff</h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-light);">Trails for every skill level.</p>
+            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">View Hikes →</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .compare-table { width: 100%; border-collapse: collapse; background: var(--color-white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); min-width: 600px; }
+  .compare-table th { background: var(--color-primary); color: var(--color-white); padding: 0.9rem 1rem; text-align: left; font-size: 0.85rem; }
+  .compare-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.88rem; }
+  .compare-table td.winner { color: var(--color-primary); font-weight: 600; }
+  .compare-table tbody tr:hover { background: rgba(26,58,42,0.03); }
+
+  .breakdown-cards { display: grid; gap: 1.5rem; }
+  .breakdown-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+  .breakdown-card.full-width { grid-column: 1 / -1; }
+  .breakdown-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .breakdown-card p { font-size: 0.92rem; color: var(--color-text-light); line-height: 1.7; margin-bottom: 0.75rem; }
+
+  .bottom-line { background: var(--color-bg-alt); border-radius: var(--radius); padding: 2rem; margin-top: 2rem; }
+  .bottom-line h2 { text-align: center; margin-bottom: 1.5rem; }
+  .verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .verdict-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+  .verdict-card.moraine { border-top: 4px solid #00897b; }
+  .verdict-card.louise { border-top: 4px solid #1565c0; }
+  .verdict-card h3 { font-size: 1.05rem; margin-bottom: 0.75rem; }
+  .verdict-card ul { list-style: none; padding: 0; }
+  .verdict-card li { padding: 0.4rem 0; font-size: 0.88rem; padding-left: 1.5rem; position: relative; }
+  .verdict-card li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
+
+  .both-verdict { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); margin-top: 1.5rem; text-align: center; border-top: 4px solid var(--color-accent); }
+  .both-verdict h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .both-verdict p { font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; max-width: 700px; margin: 0 auto; }
+
+  .cta-section { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; margin-top: 3rem; text-align: center; }
+  .cta-section h2 { color: var(--color-white); margin-bottom: 0.5rem; }
+  .cta-section p { opacity: 0.9; max-width: 600px; margin: 0 auto 1.5rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .cta-section .btn-outline { color: var(--color-white); border-color: var(--color-white); }
+  .cta-section .btn-outline:hover { background: var(--color-white); color: var(--color-primary); }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .verdict-grid { grid-template-columns: 1fr; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+  }
+</style>

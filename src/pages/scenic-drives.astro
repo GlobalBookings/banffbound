@@ -43,6 +43,30 @@ const drives = [
 ---
 
 <BaseLayout title="Best Scenic Drives in Banff — Icefields Parkway, Bow Valley & More" description="Discover the most breathtaking scenic drives in Banff National Park — Icefields Parkway, Bow Valley Parkway, Lake Minnewanka Loop, and more.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Best Scenic Drives in Banff National Park',
+    description: 'Discover the most breathtaking scenic drives in Banff National Park — Icefields Parkway, Bow Valley Parkway, Lake Minnewanka Loop, and more.',
+    url: 'https://banffbound.com/scenic-drives',
+    numberOfItems: drives.length,
+    itemListElement: drives.map((drive, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'TouristAttraction',
+        name: drive.name,
+        description: drive.description,
+        image: drive.image,
+        touristType: 'Scenic drivers',
+        geo: { '@type': 'GeoCoordinates', latitude: 51.1784, longitude: -115.5708 },
+        isAccessibleForFree: true,
+        publicAccess: true,
+      },
+    })),
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Scenic Drives' }]} />
   </div>

@@ -30,6 +30,29 @@ const seasons = [...new Set(trails.map(t => t.season))].sort();
 ---
 
 <BaseLayout title="Interactive Trail Map — Banff Hiking Guide" description="Explore Banff's best hiking trails on an interactive map. Filter by difficulty, type, and season. Find your perfect mountain adventure.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Banff National Park Trail Map',
+    description: `Explore ${trails.length} hiking trails on an interactive map. Filter by difficulty, type, and season.`,
+    url: 'https://banffbound.com/trail-map',
+    numberOfItems: trails.length,
+    itemListElement: trails.slice(0, 20).map((trail, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'TouristAttraction',
+        name: trail.name,
+        description: trail.description.slice(0, 200),
+        url: `https://banffbound.com/trails/${trail.slug}`,
+        geo: trail.lat && trail.lng ? { '@type': 'GeoCoordinates', latitude: trail.lat, longitude: trail.lng } : undefined,
+        isAccessibleForFree: true,
+        publicAccess: true,
+      },
+    })),
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Trail Map' }]} />
   </div>

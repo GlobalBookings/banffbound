@@ -88,6 +88,30 @@ const lakes = [
 ---
 
 <BaseLayout title="Best Lakes in Banff — Louise, Moraine, Minnewanka & More" description="Explore the stunning turquoise lakes of Banff National Park — Lake Louise, Moraine Lake, Peyto Lake, Lake Minnewanka, and more.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Best Lakes in Banff National Park',
+    description: 'Explore the stunning turquoise lakes of Banff National Park — Lake Louise, Moraine Lake, Peyto Lake, Lake Minnewanka, and more.',
+    url: 'https://banffbound.com/lakes',
+    numberOfItems: lakes.length,
+    itemListElement: lakes.map((lake, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'TouristAttraction',
+        name: lake.name,
+        description: lake.description,
+        image: lake.image,
+        touristType: 'Nature lovers',
+        geo: { '@type': 'GeoCoordinates', latitude: 51.1784, longitude: -115.5708 },
+        isAccessibleForFree: true,
+        publicAccess: true,
+      },
+    })),
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Lakes' }]} />
   </div>

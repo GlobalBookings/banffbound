@@ -72,6 +72,32 @@ const toolCategories = [
 ---
 
 <BaseLayout title="Banff Planning Tools — 30+ Free Interactive Guides" description="Every tool you need to plan a Banff trip. Trail finders, parking predictors, cost calculators, wildlife trackers, safety guides, and more. All free, no signup.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Banff Planning Tools',
+    description: 'Every tool you need to plan a Banff trip. Trail finders, parking predictors, cost calculators, wildlife trackers, safety guides, and more. All free, no signup.',
+    url: 'https://banffbound.com/tools',
+    mainEntity: {
+      '@type': 'ItemList',
+      name: 'Banff Trip Planning Tools',
+      numberOfItems: toolCategories.reduce((acc, cat) => acc + cat.tools.length, 0),
+      itemListElement: toolCategories.flatMap((cat, ci) =>
+        cat.tools.map((tool, ti) => ({
+          '@type': 'ListItem',
+          position: ci * 10 + ti + 1,
+          item: {
+            '@type': 'WebPage',
+            name: tool.title,
+            description: tool.desc,
+            url: `https://banffbound.com${tool.href}`,
+          },
+        }))
+      ),
+    },
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Planning Tools' }]} />
   </div>

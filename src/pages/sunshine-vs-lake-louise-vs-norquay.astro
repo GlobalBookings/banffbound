@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Sunshine Village vs Lake Louise vs Mt Norquay — Which Banff Ski Resort?" description="Detailed comparison of Banff's Big 3 ski resorts: Sunshine Village, Lake Louise, and Mt Norquay. Terrain, snow, price, and which resort suits your level in 2026.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Which Banff ski resort is best for beginners?', acceptedAnswer: { '@type': 'Answer', text: 'Lake Louise is the best resort for beginners. It has the most dedicated beginner terrain (25% of 4,200 acres), wide groomed runs, and a separate beginner area with its own lifts. The Front Side offers long, gentle cruisers with incredible views. Mt Norquay also has good beginner runs and is cheaper for a half-day session.' } },
+      { '@type': 'Question', name: 'Which Banff ski resort gets the most snow?', acceptedAnswer: { '@type': 'Answer', text: 'Sunshine Village receives the most snow by far — an average of 9 metres (30 feet) of natural snowfall annually. Its base sits at 2,160m on the Continental Divide, which catches storms from both the Pacific and Arctic. Lake Louise averages about 4 metres and Mt Norquay about 3 metres.' } },
+      { '@type': 'Question', name: 'Is the SkiBig3 pass worth it?', acceptedAnswer: { '@type': 'Answer', text: 'If you are skiing 4 or more days, the SkiBig3 pass almost always saves money over buying individual day tickets. A 3-day Tri-Area pass costs around $399 vs $165+ per day at Lake Louise. The pass also includes free shuttle buses between resorts, which saves on parking and driving. For 7+ days, compare against the Ikon Pass which also covers the Big 3.' } },
+      { '@type': 'Question', name: 'Can you ski all three Banff resorts in one day?', acceptedAnswer: { '@type': 'Answer', text: 'Technically possible but not recommended. The resorts are spread apart — Norquay is 6 minutes from Banff, Sunshine is 20 minutes, and Lake Louise is 45 minutes. A better approach is one resort per day. If you only have one day, pick the resort that best matches your ability and preference.' } },
+      { '@type': 'Question', name: 'Which Banff ski resort has the longest season?', acceptedAnswer: { '@type': 'Answer', text: 'Sunshine Village has the longest season, typically opening in early November and staying open until late May (Victoria Day weekend). Its high elevation means the snow lasts well into spring. Lake Louise usually runs November to early May. Norquay opens in November but closes in mid-April.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Skiing', href: '/skiing' }, { label: 'Resort Comparison' }]} />
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="badge">Ski Resort Comparison</span>
+      <h1>Sunshine Village vs Lake Louise vs Mt Norquay</h1>
+      <p>Banff's Big 3 ski resorts compared — which one deserves your ski days?</p>
+    </div>
+  </section>
+
+  <div class="container content-section">
+    <p class="intro-text">Banff has three ski resorts within 45 minutes of each other, and they're genuinely different. Sunshine is the powder resort with the longest season. Lake Louise is the biggest with the most variety. Norquay is the steep, affordable local hill. Here's how to decide where to spend your time.</p>
+
+    <h2>At a Glance: The Big 3 Compared</h2>
+
+    <div class="table-scroll">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Sunshine Village</th>
+            <th>Lake Louise</th>
+            <th>Mt Norquay</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Skiable Acres</strong></td><td>3,358</td><td>4,200</td><td>190</td></tr>
+          <tr><td><strong>Named Runs</strong></td><td>137</td><td>164</td><td>60</td></tr>
+          <tr><td><strong>Vertical Drop</strong></td><td>1,070 m</td><td>991 m</td><td>503 m</td></tr>
+          <tr><td><strong>Base Elevation</strong></td><td>2,160 m</td><td>1,646 m</td><td>1,636 m</td></tr>
+          <tr><td><strong>Avg. Snowfall</strong></td><td>9 m (30 ft)</td><td>4 m (13 ft)</td><td>3 m (10 ft)</td></tr>
+          <tr><td><strong>Season</strong></td><td>Nov – late May</td><td>Nov – early May</td><td>Nov – mid-Apr</td></tr>
+          <tr><td><strong>Night Skiing</strong></td><td>No</td><td>No</td><td>Yes (Fri & Sat)</td></tr>
+          <tr><td><strong>Drive from Banff</strong></td><td>20 min</td><td>45 min</td><td>6 min</td></tr>
+          <tr><td><strong>Day Pass (Adult)</strong></td><td>~$145</td><td>~$165</td><td>~$110</td></tr>
+          <tr><td><strong>Beginner Terrain</strong></td><td>20%</td><td>25%</td><td>28%</td></tr>
+          <tr><td><strong>Intermediate</strong></td><td>55%</td><td>45%</td><td>36%</td></tr>
+          <tr><td><strong>Advanced/Expert</strong></td><td>25%</td><td>30%</td><td>36%</td></tr>
+          <tr><td><strong>Best For</strong></td><td>Powder, long season</td><td>Variety, families</td><td>Steeps, budget, locals</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Sunshine Village: The Powder Resort</h2>
+
+    <p>Sunshine sits on the Continental Divide at 2,160 m — the highest base elevation of any major Canadian resort. That altitude means two things: more snow (9 metres average) and a season that stretches from November to late May, often the last resort open in the Rockies.</p>
+
+    <p>The skiing is spread across three interconnected mountains — Lookout, Standish, and Goat's Eye. Lookout and Standish offer wide-open intermediate cruising above treeline, which is rare in the Canadian Rockies. Goat's Eye is where the steep, technical terrain lives — tight chutes, cliff drops, and some of the most challenging lift-accessed skiing in Alberta.</p>
+
+    <p>The catch: you can't drive to the resort. Everyone takes a gondola from the base parking lot (20 minutes). This sounds annoying but actually means the slopes feel less crowded than Lake Louise despite being closer to Banff. The on-mountain Sunshine Mountain Lodge is the only ski-in ski-out hotel in Banff National Park.</p>
+
+    <p><strong>Choose Sunshine if:</strong> You want the best snow conditions, you're an intermediate-to-advanced skier who loves wide-open bowls, or you're visiting in late March through May when other resorts are closing.</p>
+
+    <h2>Lake Louise Ski Resort: The All-Rounder</h2>
+
+    <p>Lake Louise is the largest ski area in the Canadian Rockies at 4,200 acres and the one most likely to satisfy every member of a mixed-ability group. The front side has long, perfectly groomed cruisers with views of the Valley of the Ten Peaks. The back bowls — Larch, Ptarmigan, Paradise — offer endless intermediate powder runs when conditions are right. The West Bowl and Summit Platter access genuine expert terrain.</p>
+
+    <p>The resort hosts World Cup alpine races (downhill and super-G) on the Men's and Women's Downhill courses, so the grooming is world-class. It's also the most family-friendly of the three, with excellent ski school programs and a dedicated learning area.</p>
+
+    <p>The downside is the 45-minute drive from Banff (or 25 from Lake Louise village). Parking fills on powder days and weekends — arrive before 8:30 AM or take the SkiBig3 shuttle. Day tickets are the most expensive of the three at around $165.</p>
+
+    <p><strong>Choose Lake Louise if:</strong> You're with a group of mixed abilities, you want the most terrain options in a single day, you love back bowl skiing, or it's your first trip and you want the classic Canadian Rockies experience.</p>
+
+    <h2>Mt Norquay: The Local's Secret</h2>
+
+    <p>Norquay is the smallest of the three and the most underrated. Six minutes from downtown Banff, it's where locals go for a quick session before work, a Friday night ski under the lights, or to access some of the steepest lift-accessed terrain in the Rockies — the North American chair is genuinely steep.</p>
+
+    <p>At 190 acres and 60 runs, Norquay is objectively small. But it punches above its weight. The terrain split is 28% beginner, 36% intermediate, 36% advanced/expert — that advanced percentage is the highest of the Big 3. The Lone Pine run holds the record as Canada's steepest named run at 41 degrees.</p>
+
+    <p>Day passes are the cheapest (~$110), and the resort offers night skiing on Fridays and Saturdays — the only one of the three to do so. The tubing park is excellent for families and non-skiers. It's also the only resort you can drive directly to (no gondola, no long highway).</p>
+
+    <p><strong>Choose Norquay if:</strong> You want a half-day session, you're on a budget, you want night skiing, you're an expert seeking steep terrain, or you have non-skiers who want to tube.</p>
+
+    <h2>Which Resort Should You Choose?</h2>
+
+    <div class="verdict-grid">
+      <div class="verdict-card">
+        <h3>You're a beginner</h3>
+        <p><strong>Go to Lake Louise.</strong> Best beginner terrain, most patient ski school, widest groomed runs. Norquay is a solid cheaper alternative for a half-day.</p>
+      </div>
+      <div class="verdict-card">
+        <h3>You're intermediate</h3>
+        <p><strong>Go to Sunshine.</strong> The above-treeline cruising on Lookout and Standish is pure joy. Lake Louise's back bowls are a close second on powder days.</p>
+      </div>
+      <div class="verdict-card">
+        <h3>You're advanced/expert</h3>
+        <p><strong>Ski all three.</strong> Goat's Eye at Sunshine, West Bowl at Lake Louise, and the North American chair at Norquay all offer different flavors of steep. Get the SkiBig3 pass.</p>
+      </div>
+      <div class="verdict-card">
+        <h3>You're with family</h3>
+        <p><strong>Lake Louise + Norquay.</strong> Louise for the ski school and terrain variety, Norquay for the tubing park and night skiing experience.</p>
+      </div>
+      <div class="verdict-card">
+        <h3>You're on a budget</h3>
+        <p><strong>Start with Norquay.</strong> Cheapest day pass, closest to town (no fuel costs), and if skiing 4+ days, the SkiBig3 pass saves money over individual tickets at any resort.</p>
+      </div>
+      <div class="verdict-card">
+        <h3>You're visiting in spring</h3>
+        <p><strong>Sunshine Village.</strong> Still getting fresh snow in April and May when the other two are closed or thin. Spring skiing in a t-shirt above treeline is a Banff rite of passage.</p>
+      </div>
+    </div>
+
+    <h2>Save Money: SkiBig3 Passes</h2>
+
+    <p>The SkiBig3 pass covers all three resorts and includes free shuttle buses between them. Pricing for 2025/26:</p>
+
+    <div class="table-scroll">
+      <table class="comparison-table">
+        <thead><tr><th>Pass Type</th><th>Price (Adult)</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td>3-Day Tri-Area</td><td>~$399</td><td>Short trips, sampling all 3</td></tr>
+          <tr><td>5-Day Tri-Area</td><td>~$599</td><td>Week-long ski holidays</td></tr>
+          <tr><td>SkiBig3 Season Pass</td><td>~$1,899</td><td>Locals, frequent visitors</td></tr>
+          <tr><td>Ikon Pass (covers Big 3)</td><td>~$1,359 USD</td><td>Multi-resort travelers</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Use our <a href="/ski-pass-calculator">Ski Pass Calculator</a> to compare options for your specific trip length.</p>
+
+    <div class="cta-section">
+      <div class="cta-card">
+        <h3>Book Ski Experiences</h3>
+        <p>Guided ski tours, lessons, and heli-skiing in the Canadian Rockies.</p>
+        <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=skiing" target="_blank" rel="noopener sponsored" class="btn btn-primary">Browse Ski Tours</a>
+      </div>
+      <div class="cta-card">
+        <h3>Find Ski-Friendly Hotels</h3>
+        <p>Compare 95+ hotels near the slopes with shuttle access.</p>
+        <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored" class="btn btn-accent">Check Hotel Deals</a>
+      </div>
+    </div>
+
+    <h2>Related Guides</h2>
+    <div class="related-links">
+      <a href="/skiing">Complete Banff Skiing Guide</a>
+      <a href="/ski-pass-calculator">Ski Pass Calculator</a>
+      <a href="/blog/banff-skiing-guide">Banff Skiing Blog</a>
+      <a href="/blog/banff-apres-ski">Apres-Ski Guide</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    min-height: 340px;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(135deg, #1a3a2a 0%, #0d1f16 100%);
+    overflow: hidden;
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    color: var(--color-white);
+  }
+  .page-hero-content h1 { color: var(--color-white); font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0.5rem 0; }
+  .page-hero-content p { opacity: 0.85; font-size: 1.1rem; max-width: 700px; }
+  .badge { background: var(--color-accent); color: var(--color-dark); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+  .content-section { max-width: 900px; padding: 3rem 1rem; }
+  .content-section h2 { margin: 2.5rem 0 1rem; font-size: 1.6rem; }
+  .content-section p { line-height: 1.8; margin-bottom: 1.25rem; color: var(--color-text); }
+  .intro-text { font-size: 1.1rem; line-height: 1.8; color: var(--color-text); border-left: 4px solid var(--color-accent); padding-left: 1.25rem; margin-bottom: 2rem; }
+  .table-scroll { overflow-x: auto; margin: 1.5rem 0 2rem; }
+  .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .comparison-table th { background: var(--color-primary); color: var(--color-white); padding: 0.75rem 1rem; text-align: left; font-weight: 600; white-space: nowrap; }
+  .comparison-table td { padding: 0.65rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .comparison-table tr:nth-child(even) td { background: var(--color-bg-alt); }
+  .comparison-table td:first-child { font-weight: 500; white-space: nowrap; }
+  .verdict-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0 2rem; }
+  .verdict-card { background: var(--color-bg-alt); border-radius: var(--radius); padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); }
+  .verdict-card h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--color-primary); }
+  .verdict-card p { font-size: 0.9rem; line-height: 1.6; margin: 0; }
+  .cta-section { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+  .cta-card { background: var(--color-bg-alt); border-radius: var(--radius); padding: 2rem; text-align: center; }
+  .cta-card h3 { margin-bottom: 0.5rem; }
+  .cta-card p { font-size: 0.9rem; margin-bottom: 1rem; }
+  .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: opacity 0.2s; }
+  .btn-primary { background: var(--color-primary); color: var(--color-white); }
+  .btn-accent { background: var(--color-accent); color: var(--color-dark); }
+  .btn:hover { opacity: 0.85; }
+  .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+  .related-links a { background: var(--color-bg-alt); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500; color: var(--color-primary); text-decoration: none; transition: background 0.2s; }
+  .related-links a:hover { background: var(--color-accent-light); }
+  @media (max-width: 768px) {
+    .page-hero-content { padding: 1.5rem; }
+    .cta-section { grid-template-columns: 1fr; }
+    .verdict-grid { grid-template-columns: 1fr; }
+  }
+</style>

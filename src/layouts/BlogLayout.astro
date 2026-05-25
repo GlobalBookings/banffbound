@@ -72,6 +72,15 @@ const articleSchema = {
     </div>
     <div class="article-body container" data-category={category}>
       <slot />
+      <div class="blog-email-capture">
+        <p class="blog-email-heading">Enjoyed this guide? Get weekly Banff tips.</p>
+        <form action="MAILCHIMP_FORM_ACTION_URL" method="post" class="blog-email-form" target="_blank" novalidate>
+          <div class="blog-email-group">
+            <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address" />
+            <button type="submit" class="btn btn-accent">Subscribe</button>
+          </div>
+        </form>
+      </div>
       <div class="gyg-widget-container">
         <h2>Recommended Tours & Activities</h2>
         <div data-gyg-widget="auto" data-gyg-partner-id="QW960HO" data-gyg-cmp="banffboundblog"></div>
@@ -81,7 +90,19 @@ const articleSchema = {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           Last updated: <time datetime={isoModified}>{formattedModified}</time>
         </div>
+        <div class="author-bio-card">
+          <div class="author-bio-avatar">JC</div>
+          <div class="author-bio-info">
+            <strong>Written by Jack Chittenden</strong>
+            <p>Banff-based adventure writer. Ironman finisher, ultra-runner, and full-time Rocky Mountains explorer. 70+ trails hiked, 95+ hotels reviewed.</p>
+            <div class="author-bio-links">
+              <a href="/about">About Jack</a>
+              <a href="https://linkedin.com/in/jackchittenden" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
         <a href="/blog" class="btn btn-outline">&larr; Back to All Guides</a>
+        <p class="trip-report-cta">Been to Banff? <a href="/trip-reports">Share your trip report</a> and help fellow travellers plan their adventure.</p>
       </div>
     </div>
   </article>
@@ -298,15 +319,63 @@ const articleSchema = {
     line-height: 1.6;
   }
 
+  .blog-email-capture {
+    margin: 2.5rem 0;
+    padding: 2rem;
+    border: 2px solid var(--color-bg-alt);
+    border-radius: var(--radius);
+    background: var(--color-bg-alt);
+    text-align: center;
+  }
+
+  .blog-email-heading {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .blog-email-form {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .blog-email-group {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .blog-email-group input[type="email"] {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(0,0,0,0.08);
+    border-radius: var(--radius);
+    background: var(--color-white);
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .blog-email-group input[type="email"]:focus {
+    border-color: var(--color-accent);
+  }
+
+  .blog-email-group .btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
   .article-footer {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(0,0,0,0.08);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 
   .article-updated {
@@ -315,6 +384,80 @@ const articleSchema = {
     gap: 0.4rem;
     font-size: 0.82rem;
     color: var(--color-text-light);
+  }
+
+  .author-bio-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    width: 100%;
+  }
+
+  .author-bio-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    border: 3px solid var(--color-accent);
+  }
+
+  .author-bio-info strong {
+    font-size: 1rem;
+    color: var(--color-dark);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .author-bio-info p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .author-bio-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .author-bio-links a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .author-bio-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .trip-report-cta {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-top: 0.5rem;
+  }
+
+  .trip-report-cta a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .trip-report-cta a:hover {
+    color: var(--color-accent);
   }
 
   .article-body :global(.mid-article-cta) {
@@ -435,5 +578,9 @@ const articleSchema = {
     .article-body :global(.mid-cta-buttons) { flex-direction: column; }
     :global(.sticky-cta-inner span) { display: none; }
     :global(.sticky-cta-btn) { font-size: 0.75rem; padding: 0.4rem 0.7rem; }
+    .blog-email-group { flex-direction: column; }
+    .blog-email-group .btn { width: 100%; }
+    .author-bio-card { flex-direction: column; align-items: center; text-align: center; }
+    .author-bio-links { justify-content: center; }
   }
 </style>

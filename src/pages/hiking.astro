@@ -148,6 +148,60 @@ const challengingHikes = [
 ---
 
 <BaseLayout title="Best Hikes in Banff 2026 — Easy, Moderate & Hard Trails" description="Complete guide to hiking in Banff National Park — 15+ trails organized by difficulty, with distances, elevation, time, and seasonal advice.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Best Hikes in Banff National Park',
+    description: 'Complete guide to hiking in Banff National Park — 15+ trails organized by difficulty, with distances, elevation, time, and seasonal advice.',
+    url: 'https://banffbound.com/hiking',
+    numberOfItems: easyHikes.length + moderateHikes.length + challengingHikes.length,
+    itemListElement: [
+      ...easyHikes.map((hike, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'TouristAttraction',
+          name: hike.name,
+          description: hike.description,
+          image: hike.image,
+          touristType: 'Hikers',
+          geo: { '@type': 'GeoCoordinates', latitude: 51.1784, longitude: -115.5708 },
+          isAccessibleForFree: true,
+          publicAccess: true,
+        },
+      })),
+      ...moderateHikes.map((hike, i) => ({
+        '@type': 'ListItem',
+        position: easyHikes.length + i + 1,
+        item: {
+          '@type': 'TouristAttraction',
+          name: hike.name,
+          description: hike.description,
+          image: hike.image,
+          touristType: 'Hikers',
+          geo: { '@type': 'GeoCoordinates', latitude: 51.1784, longitude: -115.5708 },
+          isAccessibleForFree: true,
+          publicAccess: true,
+        },
+      })),
+      ...challengingHikes.map((hike, i) => ({
+        '@type': 'ListItem',
+        position: easyHikes.length + moderateHikes.length + i + 1,
+        item: {
+          '@type': 'TouristAttraction',
+          name: hike.name,
+          description: hike.description,
+          image: hike.image,
+          touristType: 'Hikers',
+          geo: { '@type': 'GeoCoordinates', latitude: 51.1784, longitude: -115.5708 },
+          isAccessibleForFree: true,
+          publicAccess: true,
+        },
+      })),
+    ],
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Hiking' }]} />
   </div>

@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const lastUpdated = '2026-05-25';
+---
+
+<BaseLayout title="Terms of Service" description="Terms of service for BanffBound, including affiliate disclosure, content disclaimers, and intellectual property information." lastUpdated={lastUpdated}>
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Terms of Service' }]} />
+  </div>
+
+  <section class="section">
+    <div class="container terms-content">
+      <h1>Terms of Service</h1>
+      <p class="terms-lead">The rules of the road for using BanffBound. Last updated: {lastUpdated}.</p>
+
+      <h2>Affiliate disclosure</h2>
+      <p>BanffBound participates in affiliate programmes and earns commission from qualifying purchases. In accordance with the <strong>FTC Endorsement Guidelines</strong> (US) and <strong>ASA CAP Code</strong> (UK), we disclose the following:</p>
+      <ul>
+        <li>We are an <strong>Expedia</strong> affiliate. Links to hotels, flights, and vacation rentals on Expedia and VRBO may earn us a commission when you make a booking.</li>
+        <li>We are a <strong>GetYourGuide</strong> partner. Links to tours and activities may earn us a commission on bookings.</li>
+      </ul>
+      <p>These commissions come at <strong>no extra cost to you</strong> — the price you pay is identical whether you use our links or go directly. Affiliate relationships do not influence our editorial content, ratings, or recommendations. We recommend only products and services we believe are genuinely useful for visitors to Banff.</p>
+      <p>For more detail on how we create content, see our <a href="/editorial">Editorial Policy</a>.</p>
+
+      <h2>Content accuracy</h2>
+      <p>We strive to keep all information on BanffBound accurate and up to date, but travel information changes frequently. Prices, opening hours, trail conditions, weather, and availability are subject to change without notice.</p>
+      <p><strong>BanffBound is for informational purposes only.</strong> You should always verify critical details — especially relating to safety, weather conditions, trail closures, and park regulations — with official sources such as <a href="https://www.pc.gc.ca/en/pn-np/ab/banff" target="_blank" rel="noopener">Parks Canada</a> before making travel decisions.</p>
+      <p>We display last-updated dates on our guides so you can assess how current the information is. If you spot an error, please <a href="/contact">let us know</a>.</p>
+
+      <h2>Outdoor activities disclaimer</h2>
+      <p>Banff National Park involves real wilderness with real risks. Hiking, skiing, scrambling, paddling, and other outdoor activities carry inherent dangers including but not limited to wildlife encounters, avalanches, rockfall, rapidly changing weather, altitude effects, and river hazards.</p>
+      <p>BanffBound provides general guidance and trail information, but <strong>we are not a substitute for professional instruction, guide services, or your own judgement</strong>. Always assess conditions on the ground, carry appropriate safety equipment, and know your limits. We are not liable for any injury, loss, or damage arising from your use of information on this site.</p>
+
+      <h2>External links</h2>
+      <p>BanffBound links to third-party websites including booking platforms, government resources, tour operators, and local businesses. We provide these links for convenience and reference. We don't control and aren't responsible for the content, privacy practices, or availability of external sites.</p>
+      <p>The presence of a link doesn't imply endorsement of the linked site's views or content beyond what we've explicitly stated. We encourage you to review the terms and privacy policies of any third-party site you visit through our links.</p>
+
+      <h2>Intellectual property</h2>
+      <p>All original content on BanffBound — including text, graphics, logos, tool designs, data compilations, and code — is the property of BanffBound and protected by copyright law. You may not reproduce, distribute, or republish our content without written permission.</p>
+      <p>You're welcome to link to our pages and share them on social media. Brief quotations with attribution and a link back to the source page are fine under fair use.</p>
+      <p>Some images on this site are sourced from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> under their licence. Third-party trademarks (Expedia, GetYourGuide, Parks Canada, etc.) belong to their respective owners.</p>
+
+      <h2>User conduct</h2>
+      <p>When using BanffBound's interactive tools (Trip Builder, contact form, etc.), you agree not to:</p>
+      <ul>
+        <li>Submit false, misleading, or harmful content</li>
+        <li>Attempt to access restricted areas of the site or its infrastructure</li>
+        <li>Use automated tools to scrape or download content in bulk</li>
+        <li>Interfere with the site's operation or other users' experience</li>
+      </ul>
+
+      <h2>Limitation of liability</h2>
+      <p>BanffBound is provided "as is" without warranties of any kind, express or implied. To the fullest extent permitted by law, BanffBound shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of this site, reliance on its content, or any booking made through affiliate links.</p>
+
+      <h2>Governing law</h2>
+      <p>These terms are governed by the laws of the Province of Alberta, Canada. Any disputes arising from your use of this site shall be subject to the exclusive jurisdiction of the courts of Alberta.</p>
+
+      <h2>Changes to these terms</h2>
+      <p>We may update these terms from time to time. The "last updated" date at the top reflects the most recent revision. Continued use of the site after changes constitutes acceptance of the updated terms.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about these terms? Email us at <a href="mailto:hello@banffbound.com">hello@banffbound.com</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .terms-content { max-width: 720px; }
+  .terms-content h1 { margin-bottom: 0.5rem; }
+  .terms-lead { font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 2.5rem; }
+  .terms-content h2 { margin: 2.5rem 0 1rem; font-size: 1.4rem; }
+  .terms-content p { line-height: 1.8; margin-bottom: 1rem; }
+  .terms-content a { color: var(--color-primary); text-decoration: underline; }
+  .terms-content ul { margin: 1rem 0 1.5rem 1.5rem; line-height: 1.8; }
+  .terms-content li { margin-bottom: 0.5rem; }
+</style>

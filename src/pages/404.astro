@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found" description="The page you're looking for doesn't exist. Search BanffBound or explore our popular guides to plan your Banff trip.">
+  <section class="not-found">
+    <div class="container not-found-inner">
+      <span class="not-found-icon">🏔️</span>
+      <h1>Trail Not Found</h1>
+      <p class="not-found-subtitle">Looks like you've wandered off the beaten path. This page doesn't exist — but there's plenty more to explore in Banff.</p>
+
+      <div id="search-404" class="not-found-search"></div>
+
+      <div class="not-found-links">
+        <h3>Popular Destinations</h3>
+        <div class="not-found-grid">
+          <a href="/" class="not-found-card">
+            <span class="not-found-card-icon">🏠</span>
+            <span class="not-found-card-label">Homepage</span>
+          </a>
+          <a href="/hiking" class="not-found-card">
+            <span class="not-found-card-icon">🥾</span>
+            <span class="not-found-card-label">Hiking Trails</span>
+          </a>
+          <a href="/hotel-directory" class="not-found-card">
+            <span class="not-found-card-icon">🏨</span>
+            <span class="not-found-card-label">Hotels & Stays</span>
+          </a>
+          <a href="/blog" class="not-found-card">
+            <span class="not-found-card-icon">📖</span>
+            <span class="not-found-card-label">Travel Guides</span>
+          </a>
+          <a href="/trip-builder" class="not-found-card">
+            <span class="not-found-card-icon">🗺️</span>
+            <span class="not-found-card-label">Trip Builder</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function() {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/pagefind/pagefind-ui.css';
+      document.head.appendChild(link);
+      var script = document.createElement('script');
+      script.src = '/pagefind/pagefind-ui.js';
+      script.onload = function() {
+        new PagefindUI({ element: '#search-404', showSubResults: false, showImages: false });
+      };
+      document.head.appendChild(script);
+    })();
+  </script>
+</BaseLayout>
+
+<style>
+  .not-found {
+    padding: 5rem 0;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .not-found-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .not-found-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .not-found h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .not-found-subtitle {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .not-found-search {
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+
+  .not-found-links h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    margin-bottom: 1.25rem;
+  }
+
+  .not-found-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .not-found-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 1rem;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+  }
+
+  .not-found-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    color: var(--color-primary);
+  }
+
+  .not-found-card-icon {
+    font-size: 1.75rem;
+  }
+
+  .not-found-card-label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .not-found-card:hover .not-found-card-label {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .not-found { padding: 3rem 0; }
+    .not-found-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

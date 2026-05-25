@@ -50,6 +50,19 @@ const seasonalGuide = [
 ---
 
 <BaseLayout title="Banff Weather Guide" description="Month-by-month weather data for Banff — temperatures, precipitation, snowfall, best time to visit, what to pack, sunrise/sunset times, and altitude tips.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What is the best time to visit Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The best time to visit Banff depends on your interests. Summer (June-August) offers warm weather (highs of 19-22°C), all trails open, and the longest days. September is ideal for hiking with fewer crowds and golden larch trees. Winter (December-February) is best for skiing with average temperatures of -5°C to -15°C. July and August have the warmest, most stable weather but also the biggest crowds.' } },
+      { '@type': 'Question', name: 'How cold does Banff get in winter?', acceptedAnswer: { '@type': 'Answer', text: 'Banff winters are cold with average highs of -5°C and lows of -15°C in January and December. However, the dry mountain air feels less biting than coastal cold. Chinook winds can raise temperatures by 20°C+ in hours, turning a -15°C day into a 5°C day. Heavy insulated jackets, thermal base layers, insulated waterproof boots, and hand warmers are essential.' } },
+      { '@type': 'Question', name: 'Does it rain a lot in Banff in summer?', acceptedAnswer: { '@type': 'Answer', text: 'Banff receives moderate rainfall in summer — about 50-60mm per month in June through August. Afternoon thunderstorms are common, especially in July and August, but are usually brief. Mornings are typically clear. Always carry a rain jacket and start hikes early to be below treeline by early afternoon when storms are most likely.' } },
+      { '@type': 'Question', name: 'What should I pack for Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The key to packing for Banff is layering. Year-round essentials include a waterproof rain jacket, sunscreen (SPF 50+), and sunglasses. In summer, pack hiking boots, bug spray, bear spray, and a sun hat. In winter, bring heavy insulated jackets, thermal base layers, insulated waterproof boots, thick gloves, toque/beanie, and hand warmers. Mountain weather changes rapidly, so always have warm layers regardless of season.' } },
+      { '@type': 'Question', name: 'What is the altitude of Banff and does it affect visitors?', acceptedAnswer: { '@type': 'Answer', text: 'Banff town sits at 1,383 metres (4,537 feet) above sea level, with many hikes reaching 2,500m+. At altitude, you may experience dehydration (drink 50% more water), stronger sunburn (UV increases 10-12% per 1,000m), and mild altitude sickness (headaches, shortness of breath). Take it easy on day one and stay hydrated. Temperature drops about 6°C per 1,000m elevation gain.' } },
+    ],
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Plan Your Trip', href: '/tools' }, { label: 'Weather Guide' }]} />
   </div>

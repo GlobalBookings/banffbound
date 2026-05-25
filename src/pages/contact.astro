@@ -4,6 +4,33 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 ---
 
 <BaseLayout title="Contact BanffBound" description="Get in touch with BanffBound. Questions about Banff, corrections, partnership enquiries, or just want to say hello.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact BanffBound',
+    description: 'Get in touch with BanffBound. Questions about Banff, corrections, partnership enquiries, or just want to say hello.',
+    url: 'https://banffbound.com/contact',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'BanffBound',
+      url: 'https://banffbound.com',
+      email: 'hello@banffbound.com',
+      founder: {
+        '@type': 'Person',
+        name: 'Jack Chittenden',
+        url: 'https://jack.me.uk',
+        jobTitle: 'Creator',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'hello@banffbound.com',
+        contactType: 'customer support',
+        availableLanguage: 'English',
+      },
+    },
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Contact' }]} />
   </div>

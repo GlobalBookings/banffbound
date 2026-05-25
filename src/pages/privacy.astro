@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const lastUpdated = '2026-05-25';
+---
+
+<BaseLayout title="Privacy Policy" description="How BanffBound collects, uses, and protects your personal data. Covers analytics, cookies, affiliate links, and your rights under GDPR and PIPEDA." lastUpdated={lastUpdated}>
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Privacy Policy' }]} />
+  </div>
+
+  <section class="section">
+    <div class="container privacy-content">
+      <h1>Privacy Policy</h1>
+      <p class="privacy-lead">How we handle your data on BanffBound. Last updated: {lastUpdated}.</p>
+
+      <h2>Who we are</h2>
+      <p>BanffBound is a travel information website about Banff National Park, operated at <strong>banffbound.com</strong>. If you have questions about this policy, contact us at <a href="mailto:hello@banffbound.com">hello@banffbound.com</a>.</p>
+
+      <h2>Data we collect</h2>
+      <p>We don't require you to create an account or provide personal information to use this site. Data we do collect falls into these categories:</p>
+
+      <h3>Analytics (Google Analytics 4)</h3>
+      <p>We use Google Analytics 4 (measurement ID: G-2DP7J42ZW0) to understand how visitors use the site — which pages are popular, how people navigate, and what devices they use. GA4 collects anonymised data including page views, session duration, approximate location (country/region level), device type, and referral source. Google may set cookies to distinguish unique users. You can opt out via the cookie banner or by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+      <h3>Advertising (Google Ads &amp; AdSense)</h3>
+      <p>We use Google Ads (AW-17246982814) for conversion tracking and Google AdSense (ca-pub-9022308520000198) to display ads. These services may use cookies and similar technologies to serve ads based on your browsing history. You can manage ad personalisation at <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ad Settings</a>.</p>
+
+      <h3>Affiliate cookies</h3>
+      <p>When you click affiliate links on this site, our partners may set cookies to track referrals:</p>
+      <ul>
+        <li><strong>Expedia</strong> — hotel and accommodation bookings. Expedia's cookies track that you arrived via BanffBound so we earn a commission on qualifying bookings. See <a href="https://www.expedia.com/p/info-other/privacy-policy" target="_blank" rel="noopener">Expedia's Privacy Policy</a>.</li>
+        <li><strong>GetYourGuide</strong> — tours and activities. Similar referral tracking applies. See <a href="https://www.getyourguide.com/privacy_policy" target="_blank" rel="noopener">GetYourGuide's Privacy Policy</a>.</li>
+        <li><strong>VRBO</strong> — vacation rental bookings. See <a href="https://www.vrbo.com/legal/privacy-policy" target="_blank" rel="noopener">VRBO's Privacy Policy</a>.</li>
+      </ul>
+      <p>These cookies are set by the respective third parties, not by BanffBound. We don't have access to the data they collect beyond aggregate commission reports.</p>
+
+      <h3>Weather data (OpenWeatherMap)</h3>
+      <p>Our weather tools fetch data from the OpenWeatherMap API. These requests are made from your browser and include your approximate location only if you explicitly allow it. OpenWeatherMap's privacy policy applies to data they process. We don't store your weather queries.</p>
+
+      <h3>Contact form</h3>
+      <p>If you contact us via the <a href="/contact">contact page</a> or email, we'll receive your email address and message content. We use this only to respond to your enquiry and don't add you to any mailing list or share your details with third parties.</p>
+
+      <h2>Cookies we use</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Cookie</th>
+            <th>Provider</th>
+            <th>Purpose</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>_ga, _ga_*</td>
+            <td>Google Analytics</td>
+            <td>Distinguish unique visitors</td>
+            <td>2 years</td>
+          </tr>
+          <tr>
+            <td>_gid</td>
+            <td>Google Analytics</td>
+            <td>Distinguish unique visitors</td>
+            <td>24 hours</td>
+          </tr>
+          <tr>
+            <td>_gcl_*</td>
+            <td>Google Ads</td>
+            <td>Conversion tracking</td>
+            <td>90 days</td>
+          </tr>
+          <tr>
+            <td>__gads, __gpi</td>
+            <td>Google AdSense</td>
+            <td>Ad personalisation</td>
+            <td>13 months</td>
+          </tr>
+          <tr>
+            <td>bb-cookie-consent</td>
+            <td>BanffBound</td>
+            <td>Store your cookie preferences</td>
+            <td>1 year</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>How we use your data</h2>
+      <p>We use collected data to:</p>
+      <ul>
+        <li>Understand site traffic and improve content</li>
+        <li>Display relevant advertising</li>
+        <li>Track affiliate referrals for commission purposes</li>
+        <li>Respond to contact enquiries</li>
+        <li>Provide weather and trip planning tools</li>
+      </ul>
+      <p>We don't sell your personal data to anyone.</p>
+
+      <h2>Data retention</h2>
+      <p>Google Analytics data is retained for 14 months, after which it is automatically deleted. Contact form messages are retained only as long as needed to address your enquiry. Affiliate cookie durations are set by each partner (see table above).</p>
+
+      <h2>Third-party services</h2>
+      <p>We use the following third-party services that may process your data:</p>
+      <ul>
+        <li>Google Analytics, Google Ads, Google AdSense (Google LLC)</li>
+        <li>Expedia Group (Expedia, VRBO)</li>
+        <li>GetYourGuide</li>
+        <li>OpenWeatherMap</li>
+        <li>Google Fonts (font delivery)</li>
+        <li>Unsplash (images)</li>
+      </ul>
+
+      <h2>Your rights</h2>
+      <h3>Under GDPR (EU/UK visitors)</h3>
+      <p>You have the right to access, rectify, erase, restrict processing of, and port your personal data. You can object to processing and withdraw consent at any time. To exercise these rights, email <a href="mailto:hello@banffbound.com">hello@banffbound.com</a>.</p>
+
+      <h3>Under PIPEDA (Canadian visitors)</h3>
+      <p>You have the right to access your personal information held by us, challenge its accuracy, and withdraw consent for its collection, use, or disclosure. Contact us at <a href="mailto:hello@banffbound.com">hello@banffbound.com</a> to make a request.</p>
+
+      <h3>Under CCPA (California visitors)</h3>
+      <p>You have the right to know what personal information we collect, request its deletion, and opt out of its sale. We don't sell personal information. For requests, email <a href="mailto:hello@banffbound.com">hello@banffbound.com</a>.</p>
+
+      <h2>Children's privacy</h2>
+      <p>BanffBound is not directed at children under 16. We don't knowingly collect personal data from children. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy from time to time. The "last updated" date at the top reflects the most recent revision. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this privacy policy? Email us at <a href="mailto:hello@banffbound.com">hello@banffbound.com</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .privacy-content { max-width: 720px; }
+  .privacy-content h1 { margin-bottom: 0.5rem; }
+  .privacy-lead { font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 2.5rem; }
+  .privacy-content h2 { margin: 2.5rem 0 1rem; font-size: 1.4rem; }
+  .privacy-content h3 { margin: 1.5rem 0 0.5rem; font-size: 1.1rem; color: var(--color-primary); }
+  .privacy-content p { line-height: 1.8; margin-bottom: 1rem; }
+  .privacy-content a { color: var(--color-primary); text-decoration: underline; }
+  .privacy-content ul { margin: 1rem 0 1.5rem 1.5rem; line-height: 1.8; }
+  .privacy-content li { margin-bottom: 0.5rem; }
+  .privacy-content .comparison-table { margin: 1.5rem 0; }
+</style>

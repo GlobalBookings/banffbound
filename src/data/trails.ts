@@ -68,6 +68,8 @@ export const trails: Trail[] = [
     status: 'caution',
     conditionNote: 'Avalanche danger - check Avalanche Bulletin for latest conditions',
     conditionUpdated: '2026-05-18',
+    parkingCapacity: '25 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'marsh-loop',
@@ -103,6 +105,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: 'Good conditions for cross-country skiing and snowshoeing',
     conditionUpdated: '2026-05-04',
+    parkingCapacity: '40 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'spray-river-east',
@@ -137,6 +141,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: 'Groomed for cross-country skiing and snowshoeing.',
     conditionUpdated: '2026-03-30',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'spray-river-west',
@@ -171,6 +177,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'tunnel-campground-loop',
@@ -206,6 +214,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '20 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'stewart-canyon',
@@ -241,6 +251,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: 'Lower Falls accessible, Upper Falls good conditions',
     conditionUpdated: '2026-05-04',
+    parkingCapacity: '150 vehicles',
+    crowdLevel: { summer: 'high', winter: 'medium' },
   },
   {
     id: 'johnson-lake',
@@ -276,6 +288,8 @@ export const trails: Trail[] = [
     status: 'closed',
     conditionNote: 'Road closed to vehicles, accessible on foot/ski only',
     conditionUpdated: '2026-05-04',
+    parkingCapacity: '40 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'sunshine-meadows',
@@ -310,6 +324,8 @@ export const trails: Trail[] = [
     status: 'closed',
     conditionNote: 'Seasonal closure, deep snow.',
     conditionUpdated: '2026-04-16',
+    parkingCapacity: '200 vehicles',
+    crowdLevel: { summer: 'high', winter: 'low' },
   },
   {
     id: 'johnston-canyon-lower-falls',
@@ -345,6 +361,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '150 vehicles',
+    crowdLevel: { summer: 'high', winter: 'high' },
   },
   {
     id: 'johnston-canyon-upper-falls',
@@ -380,6 +398,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '150 vehicles',
+    crowdLevel: { summer: 'high', winter: 'medium' },
   },
   {
     id: 'silverton-falls',
@@ -414,6 +434,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '20 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'boom-lake',
@@ -448,6 +470,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'vista-lake',
@@ -482,6 +506,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '10 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
 
   // ── Banff Easy/Moderate ───────────────────────────────────────────────
@@ -520,6 +546,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '40 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'ink-pots',
@@ -555,6 +583,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '150 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
 
   // ── Banff Moderate ────────────────────────────────────────────────────
@@ -593,6 +623,8 @@ export const trails: Trail[] = [
     status: 'caution',
     conditionNote: 'Icy conditions on upper sections, microspikes recommended',
     conditionUpdated: '2026-05-04',
+    parkingCapacity: '100 vehicles',
+    crowdLevel: { summer: 'high', winter: 'medium' },
   },
   {
     id: 'tunnel-mountain-summit',
@@ -627,6 +659,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'high', winter: 'medium' },
   },
   {
     id: 'surprise-corner-to-hoodoos',
@@ -661,6 +695,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'upper-stoney',
@@ -696,6 +732,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '80 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'cascade-amphitheatre',
@@ -731,6 +769,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: 'Popular for winter walking and skiing',
     conditionUpdated: '2026-04-29',
+    parkingCapacity: '80 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'c-level-cirque',
@@ -765,6 +805,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'healy-pass',
@@ -800,6 +842,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '100 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'bourgeau-lake',
@@ -834,6 +878,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '20 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'harvey-pass',
@@ -868,6 +914,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '20 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'rockbound-lake',
@@ -902,6 +950,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '20 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'arnica-lake',
@@ -936,6 +986,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '10 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'twin-lakes',
@@ -970,6 +1022,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '10 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
 
   // ── Banff Challenging ─────────────────────────────────────────────────
@@ -1008,6 +1062,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '150 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'aylmer-pass',
@@ -1043,6 +1099,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '150 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'cory-pass-loop',
@@ -1077,6 +1135,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '25 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
 
   // ═══════════════════════════════════════════════════════════════════════
@@ -1118,6 +1178,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '400 vehicles',
+    crowdLevel: { summer: 'high', winter: 'high' },
   },
   {
     id: 'fairview-lookout',
@@ -1152,6 +1214,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '400 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'bow-river-lake-louise',
@@ -1186,6 +1250,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'rockpile',
@@ -1220,6 +1286,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '200 vehicles',
+    crowdLevel: { summer: 'high', winter: 'low' },
   },
   {
     id: 'moraine-lake-lakeshore',
@@ -1254,6 +1322,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '200 vehicles',
+    crowdLevel: { summer: 'high', winter: 'low' },
   },
   {
     id: 'consolation-lakes',
@@ -1288,6 +1358,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '200 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
 
   // ── Lake Louise Moderate ──────────────────────────────────────────────
@@ -1325,6 +1397,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '400 vehicles',
+    crowdLevel: { summer: 'high', winter: 'medium' },
   },
   {
     id: 'plain-of-six-glaciers',
@@ -1359,6 +1433,8 @@ export const trails: Trail[] = [
     status: 'closed',
     conditionNote: 'Trail not maintained beyond teahouse in winter',
     conditionUpdated: '2026-05-04',
+    parkingCapacity: '400 vehicles',
+    crowdLevel: { summer: 'high', winter: 'low' },
   },
   {
     id: 'tramline',
@@ -1393,6 +1469,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'lake-annette',
@@ -1427,6 +1505,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'eiffel-lake',
@@ -1461,6 +1541,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '200 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'larch-valley-minnestimma-lakes',
@@ -1495,6 +1577,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '200 vehicles',
+    crowdLevel: { summer: 'high', winter: 'low' },
   },
 
   // ── Lake Louise Challenging ───────────────────────────────────────────
@@ -1532,6 +1616,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '400 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'fairview-mountain',
@@ -1566,6 +1652,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '400 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'sheol-paradise-connector',
@@ -1600,6 +1688,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'paradise-valley-giant-steps',
@@ -1634,6 +1724,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'sentinel-pass-from-paradise-valley',
@@ -1668,6 +1760,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'sentinel-pass-via-larch-valley',
@@ -1702,6 +1796,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '200 vehicles',
+    crowdLevel: { summer: 'high', winter: 'low' },
   },
   {
     id: 'wenkchemna-pass',
@@ -1736,6 +1832,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '200 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'hidden-lake',
@@ -1770,6 +1868,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '25 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'deception-pass',
@@ -1804,6 +1904,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '25 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
 
   // ═══════════════════════════════════════════════════════════════════════
@@ -1843,6 +1945,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'stanley-glacier',
@@ -1877,6 +1981,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'taylor-lake',
@@ -1911,6 +2017,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
 
   // ═══════════════════════════════════════════════════════════════════════
@@ -1952,6 +2060,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '100 vehicles',
+    crowdLevel: { summer: 'high', winter: 'low' },
   },
   {
     id: 'bow-summit-viewpoint',
@@ -1986,6 +2096,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '100 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'mistaya-canyon',
@@ -2020,6 +2132,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '30 vehicles',
+    crowdLevel: { summer: 'high', winter: 'low' },
   },
 
   // ── Icefields Parkway Moderate ────────────────────────────────────────
@@ -2057,6 +2171,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '40 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'helen-lake',
@@ -2091,6 +2207,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '20 vehicles',
+    crowdLevel: { summer: 'medium', winter: 'low' },
   },
   {
     id: 'cirque-lake',
@@ -2125,6 +2243,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'chephren-lake',
@@ -2159,6 +2279,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'nigel-pass',
@@ -2193,6 +2315,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'parker-ridge',
@@ -2227,6 +2351,8 @@ export const trails: Trail[] = [
     status: 'closed',
     conditionNote: 'Winter closure - avalanche danger',
     conditionUpdated: '2026-04-21',
+    parkingCapacity: '40 vehicles',
+    crowdLevel: { summer: 'high', winter: 'low' },
   },
 
   // ── Icefields Parkway Challenging ─────────────────────────────────────
@@ -2264,6 +2390,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'north-molar-pass',
@@ -2298,6 +2426,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'dolomite-pass',
@@ -2332,6 +2462,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '20 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'peyto-lake-shore',
@@ -2366,6 +2498,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '100 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'glacier-lake',
@@ -2400,6 +2534,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'sunset-lookout',
@@ -2434,6 +2570,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
   {
     id: 'sunset-pass',
@@ -2468,6 +2606,8 @@ export const trails: Trail[] = [
     status: 'open',
     conditionNote: '',
     conditionUpdated: '2026-03-29',
+    parkingCapacity: '15 vehicles',
+    crowdLevel: { summer: 'low', winter: 'low' },
   },
 
   // ═══════════════════════════════════════════════════════════════════════

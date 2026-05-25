@@ -26,7 +26,8 @@ const canonical = canonicalUrl || Astro.url.href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1a3a2a">
     <link rel="dns-prefetch" href="https://api.openweathermap.org" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" /></noscript>
@@ -46,6 +47,270 @@ const canonical = canonicalUrl || Astro.url.href;
 
     <title>{pageTitle}</title>
 
+
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <Header />
+    <main id="main-content" role="main" style="margin-top: 100px;">
+      <slot />
+    </main>
+    <Footer />
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent" style="display:none;">
+      <div class="cookie-banner-inner">
+        <p class="cookie-banner-text">We use cookies for analytics, ads, and affiliate tracking to improve your experience. <a href="/privacy">Learn more</a></p>
+        <div class="cookie-banner-actions">
+          <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accept</button>
+          <button id="cookie-manage" class="cookie-btn cookie-btn-manage">Manage Preferences</button>
+        </div>
+      </div>
+      <div id="cookie-preferences" class="cookie-preferences" style="display:none;">
+        <div class="cookie-pref-row">
+          <label><input type="checkbox" checked disabled /> <strong>Essential</strong> — Required for the site to function</label>
+        </div>
+        <div class="cookie-pref-row">
+          <label><input type="checkbox" id="pref-analytics" checked /> <strong>Analytics</strong> — Google Analytics to improve content</label>
+        </div>
+        <div class="cookie-pref-row">
+          <label><input type="checkbox" id="pref-advertising" checked /> <strong>Advertising</strong> — Google Ads &amp; AdSense</label>
+        </div>
+        <div class="cookie-pref-row">
+          <label><input type="checkbox" id="pref-affiliate" checked /> <strong>Affiliate</strong> — Expedia, GetYourGuide, VRBO tracking</label>
+        </div>
+        <button id="cookie-save" class="cookie-btn cookie-btn-accept">Save Preferences</button>
+      </div>
+    </div>
+
+    <script is:inline>
+      (function() {
+        var consent = localStorage.getItem('bb-cookie-consent');
+        if (!consent) {
+          document.getElementById('cookie-banner').style.display = 'block';
+        }
+
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+          localStorage.setItem('bb-cookie-consent', JSON.stringify({
+            essential: true, analytics: true, advertising: true, affiliate: true, timestamp: Date.now()
+          }));
+          document.getElementById('cookie-banner').style.display = 'none';
+        });
+
+        document.getElementById('cookie-manage').addEventListener('click', function() {
+          var prefs = document.getElementById('cookie-preferences');
+          prefs.style.display = prefs.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('cookie-save').addEventListener('click', function() {
+          localStorage.setItem('bb-cookie-consent', JSON.stringify({
+            essential: true,
+            analytics: document.getElementById('pref-analytics').checked,
+            advertising: document.getElementById('pref-advertising').checked,
+            affiliate: document.getElementById('pref-affiliate').checked,
+            timestamp: Date.now()
+          }));
+          document.getElementById('cookie-banner').style.display = 'none';
+        });
+      })();
+    </script>
+
+    <script is:inline>
+      (function() {
+        var btn = document.getElementById('back-to-top');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 500) {
+            btn.classList.add('visible');
+          } else {
+            btn.classList.remove('visible');
+          }
+        });
+        btn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+    </script>
+
+    <style is:global>
+      .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: var(--color-dark, #1a1a1a);
+        color: rgba(255,255,255,0.85);
+        border-top: 2px solid var(--color-accent, #c8a96e);
+        box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+      }
+
+      .cookie-banner-inner {
+        max-width: var(--max-width, 1200px);
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      .cookie-banner-text {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .cookie-banner-text a {
+        color: var(--color-accent, #c8a96e);
+        text-decoration: underline;
+      }
+
+      .cookie-banner-actions {
+        display: flex;
+        gap: 0.5rem;
+        flex-shrink: 0;
+      }
+
+      .cookie-btn {
+        padding: 0.55rem 1.2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: var(--font-body, 'Inter', sans-serif);
+        transition: all 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .cookie-btn-accept {
+        background: var(--color-accent, #c8a96e);
+        color: var(--color-dark, #1a1a1a);
+      }
+
+      .cookie-btn-accept:hover {
+        background: var(--color-accent-light, #dfc9a0);
+      }
+
+      .cookie-btn-manage {
+        background: rgba(255,255,255,0.1);
+        color: rgba(255,255,255,0.8);
+      }
+
+      .cookie-btn-manage:hover {
+        background: rgba(255,255,255,0.18);
+        color: #fff;
+      }
+
+      .cookie-preferences {
+        max-width: var(--max-width, 1200px);
+        margin: 0 auto;
+        padding: 0 1.5rem 1rem;
+      }
+
+      .cookie-pref-row {
+        padding: 0.4rem 0;
+        font-size: 0.85rem;
+      }
+
+      .cookie-pref-row label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+      }
+
+      .cookie-pref-row input[type="checkbox"] {
+        accent-color: var(--color-accent, #c8a96e);
+        width: 16px;
+        height: 16px;
+      }
+
+      .cookie-preferences .cookie-btn {
+        margin-top: 0.75rem;
+      }
+
+      @media (max-width: 768px) {
+        .cookie-banner-inner {
+          flex-direction: column;
+          align-items: stretch;
+          text-align: center;
+          gap: 0.75rem;
+        }
+
+        .cookie-banner-actions {
+          justify-content: center;
+        }
+      }
+
+      /* Pagefind UI overrides */
+      .pagefind-ui__search-input {
+        font-family: var(--font-body) !important;
+        border-radius: 8px !important;
+        border: 2px solid var(--color-bg-alt) !important;
+        font-size: 1rem !important;
+        padding: 0.7rem 1rem !important;
+      }
+      .pagefind-ui__search-input:focus {
+        border-color: var(--color-primary) !important;
+        outline: none !important;
+        box-shadow: 0 0 0 3px rgba(26,58,42,0.1) !important;
+      }
+      .pagefind-ui__result-link {
+        color: var(--color-primary) !important;
+        font-family: var(--font-heading) !important;
+        font-weight: 600 !important;
+      }
+      .pagefind-ui__result-link:hover { color: var(--color-accent) !important; }
+      .pagefind-ui__button {
+        background: var(--color-primary) !important;
+        border-radius: 8px !important;
+      }
+      .pagefind-ui__button:hover { background: var(--color-primary-light) !important; }
+
+      /* Back to top */
+      .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 900;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+      }
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .back-to-top:hover {
+        background: var(--color-primary-light);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+      }
+      @media (max-width: 768px) {
+        .back-to-top { bottom: 1.25rem; right: 1.25rem; width: 40px; height: 40px; }
+      }
+    </style>
+
+    <!-- Analytics (deferred to avoid blocking first paint) -->
     <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9022308520000198" crossorigin="anonymous"></script>
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-2DP7J42ZW0"></script>
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-17246982814"></script>
@@ -70,13 +335,10 @@ const canonical = canonicalUrl || Astro.url.href;
       }
     </script>
     <script src="../scripts/tracking.js"></script>
-  </head>
-  <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <Header />
-    <main id="main-content" role="main" style="margin-top: 100px;">
-      <slot />
-    </main>
-    <Footer />
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
   </body>
 </html>

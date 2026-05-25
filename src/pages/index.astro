@@ -78,7 +78,7 @@ const categories = [
 
 const highlights = [
   { stat: '6,641 km\u00B2', label: 'National Park Area' },
-  { stat: '1,885m', label: 'Town Elevation' },
+  { stat: '1,383m', label: 'Town Elevation' },
   { stat: '3+', label: 'World-Class Ski Resorts' },
   { stat: '1,600 km', label: 'of Hiking Trails' },
 ];
@@ -254,6 +254,25 @@ const highlights = [
       </div>
       <div style="text-align: center; margin-top: 2rem;">
         <a href="/blog" class="btn btn-outline">View All Guides &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-card">
+        <div class="newsletter-content">
+          <h2>Get the Banff Insider Guide</h2>
+          <p>Weekly tips, trail conditions, and deals — straight from someone who lives here.</p>
+          <form action="MAILCHIMP_FORM_ACTION_URL" method="post" class="newsletter-form" target="_blank" novalidate>
+            <div class="newsletter-input-group">
+              <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address" />
+              <button type="submit" class="btn btn-accent">Subscribe</button>
+            </div>
+          </form>
+          <p class="newsletter-privacy">No spam. Unsubscribe anytime.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -529,6 +548,73 @@ const highlights = [
     max-width: 500px;
   }
 
+  .newsletter-section {
+    padding: 4rem 0;
+    background: var(--color-primary);
+  }
+
+  .newsletter-card {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .newsletter-content h2 {
+    color: var(--color-white);
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-content > p:first-of-type {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .newsletter-form {
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-input-group {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .newsletter-input-group input[type="email"] {
+    flex: 1;
+    padding: 0.85rem 1.25rem;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius);
+    background: rgba(255,255,255,0.1);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .newsletter-input-group input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .newsletter-input-group input[type="email"]:focus {
+    border-color: var(--color-accent);
+  }
+
+  .newsletter-input-group .btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .newsletter-privacy {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.5rem;
+  }
+
   @media (max-width: 768px) {
     .hero { height: 85vh; min-height: 550px; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -536,6 +622,8 @@ const highlights = [
     .cta-image { max-height: 250px; }
     .tours-cta { padding: 2rem; }
     .hero-scroll-hint { display: none; }
+    .newsletter-input-group { flex-direction: column; }
+    .newsletter-input-group .btn { width: 100%; }
   }
 </style>
 

@@ -11,6 +11,12 @@ const year = new Date().getFullYear();
           <span class="logo-text">BanffBound</span>
         </a>
         <p>Your ultimate guide to exploring Banff, Alberta. Discover the best things to do, places to eat, and adventures that await in the Canadian Rockies.</p>
+        <form action="MAILCHIMP_FORM_ACTION_URL" method="post" class="footer-newsletter" target="_blank" novalidate>
+          <div class="footer-newsletter-group">
+            <input type="email" name="EMAIL" placeholder="Your email" required aria-label="Email address" />
+            <button type="submit">Subscribe</button>
+          </div>
+        </form>
       </div>
       <div class="footer-links">
         <h4>Explore</h4>
@@ -36,6 +42,9 @@ const year = new Date().getFullYear();
         <a href="/about">About BanffBound</a>
         <a href="/contact">Contact</a>
         <a href="/editorial">Editorial Policy</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/trip-reports">Share a Trip Report</a>
         <a href="https://www.pc.gc.ca/en/pn-np/ab/banff" target="_blank" rel="noopener">Parks Canada</a>
         <a href="https://www.banfflakelouise.com" target="_blank" rel="noopener">Banff & Lake Louise Tourism</a>
         <div class="footer-social">
@@ -56,6 +65,7 @@ const year = new Date().getFullYear();
     </div>
     <div class="footer-bottom">
       <p>&copy; {year} BanffBound. All rights reserved.</p>
+      <p class="footer-affiliate-note">BanffBound may earn commission from links on this site. This doesn't affect our editorial independence.</p>
       <p class="footer-tagline">Made with love for the Canadian Rockies.</p>
     </div>
   </div>
@@ -121,6 +131,61 @@ const year = new Date().getFullYear();
   }
 
   .footer-tagline { color: var(--color-accent); }
+
+  .footer-affiliate-note {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.25rem;
+  }
+
+  .footer-newsletter {
+    margin-top: 1rem;
+  }
+
+  .footer-newsletter-group {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .footer-newsletter-group input[type="email"] {
+    flex: 1;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.08);
+    color: var(--color-white);
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.2s ease;
+    min-width: 0;
+  }
+
+  .footer-newsletter-group input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-newsletter-group input[type="email"]:focus {
+    border-color: var(--color-accent);
+  }
+
+  .footer-newsletter-group button {
+    padding: 0.55rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+
+  .footer-newsletter-group button:hover {
+    background: #b8963e;
+  }
 
   .footer-social {
     display: flex;

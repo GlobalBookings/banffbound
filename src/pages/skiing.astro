@@ -61,6 +61,28 @@ const xcTrails = [
 ---
 
 <BaseLayout title="Skiing in Banff 2026 — Sunshine, Lake Louise & Norquay Compared" description="Guide to skiing in Banff National Park — the Big 3 resorts (Sunshine Village, Lake Louise, Mt Norquay), SkiBig3 passes, cross-country skiing, and more.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Ski Resorts in Banff National Park',
+    description: 'The Big 3 ski resorts in Banff — Sunshine Village, Lake Louise, and Mt. Norquay compared.',
+    url: 'https://banffbound.com/skiing',
+    numberOfItems: resorts.length,
+    itemListElement: resorts.map((resort, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'SkiResort',
+        name: resort.name,
+        description: resort.description,
+        image: resort.image,
+        geo: { '@type': 'GeoCoordinates', latitude: 51.1784, longitude: -115.5708 },
+        address: { '@type': 'PostalAddress', addressLocality: 'Banff', addressRegion: 'AB', addressCountry: 'CA' },
+      },
+    })),
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Skiing' }]} />
   </div>

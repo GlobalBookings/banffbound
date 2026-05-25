@@ -71,6 +71,19 @@ const animals = [
 ---
 
 <BaseLayout title="Wildlife in Banff — Bears, Elk, Moose & Where to See Them" description="Guide to wildlife viewing in Banff National Park — elk, bears, mountain goats, bighorn sheep, moose, wolves, eagles. Best locations, seasons, safety rules, and photography tips.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What wildlife can I see in Banff National Park?', acceptedAnswer: { '@type': 'Answer', text: 'Banff is home to elk (wapiti), grizzly bears, black bears, bighorn sheep, mountain goats, moose, wolves, and over 260 bird species including bald eagles and golden eagles. Elk are the most commonly spotted — they roam freely through Banff townsite. Grizzly bears (about 65 in the park) are seen May-October on the Bow Valley Parkway and Lake Louise area. Wolves are rarely seen but occasionally spotted at dawn/dusk.' } },
+      { '@type': 'Question', name: 'Where are the best places to see wildlife in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The Bow Valley Parkway (Highway 1A) is the top wildlife corridor — elk, deer, bears, and wolves are regularly spotted here. Lake Minnewanka Road is excellent for bighorn sheep. Vermilion Lakes is great for birdwatching, elk, and sunset photography. The Banff townsite itself often has elk wandering through. For bears, early morning drives on the Bow Valley Parkway and Icefields Parkway offer the best chances.' } },
+      { '@type': 'Question', name: 'How close can I get to wildlife in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Parks Canada regulations require you to stay at least 100 metres from bears and cougars, and at least 30 metres from elk, moose, sheep, and goats. Use binoculars or a telephoto lens for close views. Never approach wildlife for a photo or selfie. If an animal changes its behaviour because of your presence, you are too close. Violations can result in fines up to $25,000.' } },
+      { '@type': 'Question', name: 'Do I need bear spray in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — carry bear spray whenever hiking in Banff National Park. Keep it in an accessible hip holster, not buried in your backpack. Bear spray is effective at stopping 98% of bear charges. You can buy or rent bear spray in Banff at outdoor shops. Also make noise on the trail (talk, clap, sing), hike in groups of four or more, and check Parks Canada for current trail closures due to bear activity.' } },
+      { '@type': 'Question', name: 'When is the best time for wildlife viewing in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The best times are early morning and late evening when animals are most active. Fall elk rut (September-October) is dramatic with bugling bulls. Spring (April-May) brings bears emerging from hibernation. Winter offers the best wolf activity sightings. Bighorn sheep rut runs November-December. Dawn and dusk drives on the Bow Valley Parkway offer the most consistent sightings year-round.' } },
+    ],
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Wildlife' }]} />
   </div>

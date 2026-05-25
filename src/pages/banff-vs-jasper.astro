@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<BaseLayout title="Banff vs Jasper — Which National Park Is Right for You?" description="Banff vs Jasper comparison: crowds, wildlife, hiking, cost, driving distance from Calgary, and whether you can do both parks in one trip.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Is Banff or Jasper better?', acceptedAnswer: { '@type': 'Answer', text: 'Banff is better for first-time visitors, shorter trips (2-3 days), fine dining, and iconic lakes like Lake Louise and Moraine Lake. Jasper is better for wildlife spotting, stargazing (it\'s a Dark Sky Preserve), fewer crowds, and a more rugged wilderness feel. Banff has more infrastructure; Jasper has more solitude. If this is your first Canadian Rockies trip, start with Banff.' } },
+      { '@type': 'Question', name: 'Can you do Banff and Jasper in one trip?', acceptedAnswer: { '@type': 'Answer', text: 'Absolutely — and you should if you have 5+ days. The Icefields Parkway (Highway 93N) connects them in a 3.5-hour scenic drive widely considered the most beautiful highway in the world. A common itinerary is 3 days in Banff, 1 day driving the Icefields Parkway (stopping at Peyto Lake, Columbia Icefield, Athabasca Falls), and 2 days in Jasper.' } },
+      { '@type': 'Question', name: 'How far is Jasper from Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Jasper is 288 km (179 miles) from Banff, about 3.5 hours driving via the Icefields Parkway (Highway 93N). From Calgary airport, Banff is 1.5 hours west. Jasper is 4.5 hours from Calgary — most people drive through Banff or take the Icefields Parkway. There is no commercial airport in Jasper.' } },
+      { '@type': 'Question', name: 'Which park has better wildlife viewing?', acceptedAnswer: { '@type': 'Answer', text: 'Jasper wins for wildlife. It has a much larger area with less human activity, meaning more frequent sightings of elk, bighorn sheep, black bears, grizzly bears, caribou, and even wolves. Maligne Lake Road and the Yellowhead Highway corridor are prime wildlife corridors. Banff has good wildlife too, but animals are more habituated to human presence and you\'ll share sightings with more tourists.' } },
+      { '@type': 'Question', name: 'Is Jasper cheaper than Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Hotels in Jasper average $180-280/night compared to $250-400 in Banff. Dining is slightly cheaper too. Both parks require the same Parks Canada pass ($11/adult/day or $145.25/year for a Discovery Pass). Jasper also has more budget-friendly hostel and cabin options. The trade-off is less dining variety and fewer luxury options.' } },
+    ],
+  })} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Banff vs Jasper' }]} />
+  </div>
+
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Mountain landscape in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Park Comparison</span>
+      <h1>Banff vs Jasper</h1>
+      <p>Canada's two most iconic Rocky Mountain parks, compared. Which one deserves your limited vacation days?</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Comparison Table -->
+      <div class="section-header">
+        <h2>Side-by-Side Comparison</h2>
+        <p>Banff and Jasper are only 288 km apart, but they offer very different experiences.</p>
+      </div>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>🏔️ Banff National Park</th>
+              <th>🦌 Jasper National Park</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Park Size</strong></td>
+              <td>6,641 km²</td>
+              <td class="winner">11,228 km² — largest in the Rockies ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Annual Visitors</strong></td>
+              <td>~4.1 million</td>
+              <td class="winner">~2.5 million — 40% less crowded ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Distance from Calgary</strong></td>
+              <td class="winner">130 km — 1.5 hours ✅</td>
+              <td>415 km — 4.5 hours</td>
+            </tr>
+            <tr>
+              <td><strong>Wildlife Viewing</strong></td>
+              <td>Good — elk, deer, bears common</td>
+              <td class="winner">Excellent — elk, bears, caribou, wolves ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Hiking Options</strong></td>
+              <td class="winner">1,600+ km of trails, more variety ✅</td>
+              <td>1,200+ km, more remote and rugged</td>
+            </tr>
+            <tr>
+              <td><strong>Iconic Lakes</strong></td>
+              <td class="winner">Lake Louise, Moraine Lake, Peyto Lake ✅</td>
+              <td>Maligne Lake, Medicine Lake, Pyramid Lake</td>
+            </tr>
+            <tr>
+              <td><strong>Accommodation Cost</strong></td>
+              <td>$250–400/night mid-range</td>
+              <td class="winner">$180–280/night mid-range ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Dining &amp; Nightlife</strong></td>
+              <td class="winner">80+ restaurants, bars, clubs ✅</td>
+              <td>~30 restaurants, quieter evenings</td>
+            </tr>
+            <tr>
+              <td><strong>Stargazing</strong></td>
+              <td>Good (some light pollution in town)</td>
+              <td class="winner">World-class — Dark Sky Preserve ✅</td>
+            </tr>
+            <tr>
+              <td><strong>Skiing</strong></td>
+              <td class="winner">Big 3 resorts: 8,000+ acres combined ✅</td>
+              <td>Marmot Basin: 1,720 acres</td>
+            </tr>
+            <tr>
+              <td><strong>Family-Friendliness</strong></td>
+              <td class="winner">More infrastructure, easier logistics ✅</td>
+              <td>Great for older kids who love adventure</td>
+            </tr>
+            <tr>
+              <td><strong>Best For</strong></td>
+              <td class="winner">First-timers, short trips, luxury ✅</td>
+              <td class="winner">Adventurers, solitude, wildlife ✅</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- What Each Park Does Better -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>What Each Park Does Better</h2>
+      </div>
+
+      <div class="breakdown-cards">
+        <div class="breakdown-card">
+          <h3>🏔️ Banff: The Polished Classic</h3>
+          <p><strong>Iconic lakes.</strong> Lake Louise and Moraine Lake are two of the most photographed places on Earth. Nothing in Jasper quite matches the electric turquoise of Moraine Lake from the Rockpile, or the grand glacier backdrop at Lake Louise. Peyto Lake (technically on the Icefields Parkway between the two parks) also falls in Banff's territory.</p>
+          <p><strong>Better infrastructure.</strong> Banff town has 80+ restaurants, multiple luxury hotels (Fairmont Banff Springs, Moose Hotel), boutique shopping, and lively nightlife. Lake Louise village adds the Fairmont Chateau and Post Hotel. Jasper has a fraction of this — which is either a plus or minus depending on your style.</p>
+          <p><strong>More accessible.</strong> Banff is 1.5 hours from Calgary International Airport with frequent shuttle services. You can fly in and be on a trail by lunch. Jasper requires 4.5 hours of driving from Calgary, or a scenic train ride on VIA Rail (not quick, but unforgettable).</p>
+          <p><strong>Better skiing.</strong> The SkiBig3 resorts (Sunshine Village, Lake Louise, Mt. Norquay) combine for 8,000+ acres of world-class terrain. Jasper's Marmot Basin is solid but can't compete on scale.</p>
+        </div>
+        <div class="breakdown-card">
+          <h3>🦌 Jasper: The Wild Frontier</h3>
+          <p><strong>Fewer crowds, more wildlife.</strong> Jasper gets 40% fewer visitors than Banff, and the park is nearly twice the size. This means more space, more solitude, and dramatically better wildlife viewing. Maligne Lake Road is famous for bear sightings, and the Yellowhead Highway corridor is one of the best places in the Rockies to spot elk, bighorn sheep, and even wolves.</p>
+          <p><strong>Dark Sky Preserve.</strong> Jasper is the second-largest Dark Sky Preserve in the world. On a clear night, you can see the Milky Way with the naked eye, and the annual Jasper Dark Sky Festival (October) draws astronomers from around the globe. Banff has significantly more light pollution.</p>
+          <p><strong>More rugged adventures.</strong> Jasper's backcountry feels wilder. The Skyline Trail (44 km) is one of Canada's top backpacking routes. Maligne Canyon ice walk in winter, Columbia Icefield glacier adventures, and Miette Hot Springs (the hottest in the Canadian Rockies at 54°C source temperature) all offer experiences you can't get in Banff.</p>
+          <p><strong>Better value.</strong> Hotels in Jasper run $180–280/night for mid-range options, compared to $250–400 in Banff. HI Jasper hostels start at $40/night. Dining is cheaper too — you'll spend 20–30% less on meals. The park pass costs the same for both.</p>
+        </div>
+      </div>
+
+      <!-- Can You Do Both? -->
+      <div class="both-section">
+        <h2>🚗 Can You Do Both?</h2>
+        <p>Yes — and here's why you should. The <strong>Icefields Parkway</strong> (Highway 93N) connects Banff and Jasper over 232 km of what National Geographic called "one of the top drives in the world." The drive takes 3–3.5 hours without stops, but you'll want a full day to stop at:</p>
+        <div class="stops-grid">
+          <div class="stop-card">
+            <h4>Peyto Lake Viewpoint</h4>
+            <p>Wolf-shaped turquoise lake seen from above — 30 min stop</p>
+          </div>
+          <div class="stop-card">
+            <h4>Columbia Icefield</h4>
+            <p>Walk on the Athabasca Glacier or try the Skywalk — 2–3 hours</p>
+          </div>
+          <div class="stop-card">
+            <h4>Athabasca Falls</h4>
+            <p>Thundering waterfall carving through a narrow limestone gorge — 30 min</p>
+          </div>
+          <div class="stop-card">
+            <h4>Mistaya Canyon</h4>
+            <p>Short walk to a slot-canyon carved by glacial water — 20 min</p>
+          </div>
+        </div>
+        <div class="itinerary-tip">
+          <h4>Suggested Itinerary (7 Days)</h4>
+          <p><strong>Days 1–3:</strong> Banff — Lake Louise, Moraine Lake, Sunshine Meadows, Banff town<br>
+          <strong>Day 4:</strong> Icefields Parkway drive (Banff → Jasper, full day with stops)<br>
+          <strong>Days 5–6:</strong> Jasper — Maligne Lake, Maligne Canyon, wildlife drives, stargazing<br>
+          <strong>Day 7:</strong> Drive back to Calgary via Highway 16 + Highway 2 (4 hours) or retrace the Parkway</p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <h2>Book Your Rocky Mountain Trip</h2>
+        <p>Guided tours covering both parks, or hotels in Banff and Jasper for an epic road trip.</p>
+        <div class="cta-buttons">
+          <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=jasper+icefields" class="btn btn-accent" target="_blank" rel="noopener">Icefields Parkway Tours →</a>
+          <a href="https://www.expedia.ca/Hotel-Search?destination=Jasper%2C+Alberta&camref=1101l3MtWX" class="btn btn-outline" target="_blank" rel="noopener sponsored">Hotels in Jasper →</a>
+          <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" class="btn btn-outline" target="_blank" rel="noopener sponsored">Hotels in Banff →</a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is Banff or Jasper better?</summary>
+          <p>Banff is better for first-timers, short trips, iconic lakes, and dining/nightlife. Jasper is better for wildlife, stargazing, solitude, and budget travel. Most people visiting the Canadian Rockies for the first time should start with Banff. Returning visitors who've "done" Banff should absolutely prioritize Jasper.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you do Banff and Jasper in one trip?</summary>
+          <p>Yes, and we strongly recommend it if you have 5+ days. The Icefields Parkway connecting them is one of the world's greatest drives. A 7-day trip with 3 days Banff, 1 day driving, and 2 days Jasper is ideal. Even 5 days works: 2 Banff, 1 Parkway, 2 Jasper.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How far is Jasper from Banff?</summary>
+          <p>288 km (179 miles) via the Icefields Parkway — about 3.5 hours of non-stop driving. From Calgary, Banff is 1.5 hours west; Jasper is 4.5 hours. There's no commercial airport in Jasper, so most visitors fly into Calgary and drive.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Which park has better wildlife?</summary>
+          <p>Jasper, without question. It's nearly twice the size of Banff with 40% fewer visitors, giving wildlife more room. Maligne Lake Road is one of the best wildlife corridors in the Rockies — grizzly bears, black bears, elk, moose, caribou, and wolves all frequent the area. Banff has wildlife too, but sightings are less frequent and you'll share them with more tourists.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Jasper cheaper than Banff?</summary>
+          <p>Yes. Hotels run $180–280/night vs $250–400 in Banff. Dining is 20–30% cheaper. Hostels start at $40/night. The park pass costs the same ($11/adult/day). The main trade-off is fewer restaurant options and no luxury hotels comparable to Banff's Fairmonts.</p>
+        </details>
+      </div>
+
+      <!-- Related Links -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Related Guides</h2>
+      </div>
+
+      <div class="grid grid-4">
+        <a href="/icefields-parkway-planner" class="card" style="display:block;">
+          <div class="card-body">
+            <h3 style="font-size: 0.95rem;">Icefields Parkway Planner</h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-light);">Plan every stop on the world's most scenic drive.</p>
+            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Plan Your Drive →</span>
+          </div>
+        </a>
+        <a href="/blog/jasper-national-park" class="card" style="display:block;">
+          <div class="card-body">
+            <h3 style="font-size: 0.95rem;">Jasper National Park Guide</h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-light);">Everything to see and do in Jasper.</p>
+            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/blog/icefields-parkway-guide" class="card" style="display:block;">
+          <div class="card-body">
+            <h3 style="font-size: 0.95rem;">Icefields Parkway Guide</h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-light);">Stops, timing & photo opportunities.</p>
+            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide →</span>
+          </div>
+        </a>
+        <a href="/things-to-do" class="card" style="display:block;">
+          <div class="card-body">
+            <h3 style="font-size: 0.95rem;">Things to Do in Banff</h3>
+            <p style="font-size: 0.82rem; color: var(--color-text-light);">Complete activities guide.</p>
+            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Explore →</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .compare-table { width: 100%; border-collapse: collapse; background: var(--color-white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); min-width: 600px; }
+  .compare-table th { background: var(--color-primary); color: var(--color-white); padding: 0.9rem 1rem; text-align: left; font-size: 0.85rem; }
+  .compare-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.88rem; }
+  .compare-table td.winner { color: var(--color-primary); font-weight: 600; }
+  .compare-table tbody tr:hover { background: rgba(26,58,42,0.03); }
+
+  .breakdown-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .breakdown-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+  .breakdown-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .breakdown-card p { font-size: 0.92rem; color: var(--color-text-light); line-height: 1.7; margin-bottom: 0.75rem; }
+
+  .both-section { background: var(--color-bg-alt); border-radius: var(--radius); padding: 2.5rem; margin-top: 3rem; }
+  .both-section h2 { text-align: center; margin-bottom: 1rem; }
+  .both-section > p { text-align: center; color: var(--color-text-light); font-size: 0.95rem; line-height: 1.7; max-width: 700px; margin: 0 auto 2rem; }
+
+  .stops-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .stop-card { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+  .stop-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--color-primary); }
+  .stop-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
+
+  .itinerary-tip { background: var(--color-white); border-left: 4px solid var(--color-accent); border-radius: var(--radius); padding: 1.5rem; }
+  .itinerary-tip h4 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--color-primary); }
+  .itinerary-tip p { font-size: 0.9rem; color: var(--color-text-light); line-height: 1.8; }
+
+  .cta-section { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; margin-top: 3rem; text-align: center; }
+  .cta-section h2 { color: var(--color-white); margin-bottom: 0.5rem; }
+  .cta-section p { opacity: 0.9; max-width: 600px; margin: 0 auto 1.5rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .cta-section .btn-outline { color: var(--color-white); border-color: var(--color-white); }
+  .cta-section .btn-outline:hover { background: var(--color-white); color: var(--color-primary); }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .breakdown-cards { grid-template-columns: 1fr; }
+    .stops-grid { grid-template-columns: 1fr 1fr; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+  }
+
+  @media (max-width: 480px) {
+    .stops-grid { grid-template-columns: 1fr; }
+  }
+</style>

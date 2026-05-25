@@ -1,0 +1,12 @@
+{
+  "name": "BanffBound - Banff Travel Guide",
+  "short_name": "BanffBound",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafaf7",
+  "theme_color": "#1a3a2a",
+  "description": "Your ultimate guide to Banff National Park",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}

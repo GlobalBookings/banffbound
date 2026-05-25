@@ -79,6 +79,30 @@ const attractions = [
 ---
 
 <BaseLayout title="Things to Do" description="Discover the best things to do in Banff - from iconic sightseeing spots to hidden gems in the Canadian Rockies.">
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Things to Do in Banff National Park',
+    description: 'Discover the best things to do in Banff — from iconic sightseeing spots to hidden gems in the Canadian Rockies.',
+    url: 'https://banffbound.com/things-to-do',
+    numberOfItems: attractions.length,
+    itemListElement: attractions.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'TouristAttraction',
+        name: item.name,
+        description: item.description,
+        image: item.image,
+        touristType: item.type,
+        geo: { '@type': 'GeoCoordinates', latitude: 51.1784, longitude: -115.5708 },
+        isAccessibleForFree: true,
+        publicAccess: true,
+      },
+    })),
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Things to Do' }]} />
   </div>

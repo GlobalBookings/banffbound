@@ -6,7 +6,7 @@
   --color-bg: #fafaf7;
   --color-bg-alt: #f0ede6;
   --color-text: #2c2c2c;
-  --color-text-light: #6b6b6b;
+  --color-text-light: #595959;
   --color-white: #ffffff;
   --color-dark: #1a1a1a;
   --font-heading: 'Playfair Display', Georgia, serif;
@@ -290,4 +290,15 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
   .page-hero { height: 40vh; min-height: 300px; }
   .comparison-table { font-size: 0.8rem; }
   .comparison-table th, .comparison-table td { padding: 0.5rem 0.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

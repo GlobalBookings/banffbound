@@ -16,6 +16,21 @@ const { activity } = Astro.props;
 ---
 
 <BaseLayout title={activity.name + ' in Banff'} description={activity.description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'TouristAttraction',
+    name: `${activity.name} in Banff`,
+    description: activity.description,
+    image: activity.image.replace('w=600', 'w=1600'),
+    url: `https://banffbound.com/activities/${activity.slug}`,
+    touristType: activity.tagline,
+    geo: { '@type': 'GeoCoordinates', latitude: 51.1784, longitude: -115.5708 },
+    address: { '@type': 'PostalAddress', addressLocality: 'Banff', addressRegion: 'AB', addressCountry: 'CA' },
+    isAccessibleForFree: true,
+    publicAccess: true,
+  })} />
+
   <div class="container">
     <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: activity.name }]} />
   </div>
