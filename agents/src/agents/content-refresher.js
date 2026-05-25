@@ -269,6 +269,7 @@ YOUR TASK — Refresh this content while keeping the same overall structure and 
 3. ADD 100-300 words of new, fresh content:
    - New sections with updated tips
    - Expanded details on existing sections
+   - Where comparing options (hotels, transport, tours, resorts), use an HTML comparison table: <table class="comparison-table"><thead>...</thead><tbody>...</tbody></table>
    - Fresh practical information for ${currentYear}
 4. VOICE & STYLE — This is critical for quality:
    - Write from first-person where natural ("I recommend", "When I last hiked this", "My go-to spot")

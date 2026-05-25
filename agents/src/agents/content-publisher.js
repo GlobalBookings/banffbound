@@ -304,8 +304,8 @@ AUTHOR CONTEXT: The author is Jack Chittenden, an ultra runner, Ironman triathle
 REQUIREMENTS:
 1. Write 1200-1800 words of genuinely helpful, accurate content about Banff National Park
 2. Use HTML formatting: <h2>, <h3>, <p>, <ul>/<li>, <strong>, <em>
-3. Start with a direct, engaging intro paragraph (no <h1>, the page template adds it)
-4. Include 4-6 <h2> sections with detailed, practical information
+3. Start with a 2-3 sentence direct answer to the page's primary query (no <h1>, the page template adds it). Keep sentences under 15 words. This opening paragraph should be scannable and factual — AI systems cite concise direct answers more often.
+4. Include 4-6 <h2> sections with detailed, practical information. Use H2s phrased as questions where natural ("How do I get from Calgary to Banff?"). Include comparison tables (HTML <table class="comparison-table">) when comparing options, prices, or features — these earn significantly more AI citations.
 5. Include a <div class="tip-box"><strong>Pro Tip:</strong> ...</div> somewhere in the article
 6. Include affiliate links naturally where relevant:
    - Expedia: <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>

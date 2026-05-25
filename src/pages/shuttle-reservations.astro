@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 const RESERVATION_OPEN = '2026-04-15T08:00:00-06:00';
 const MORAINE_SHUTTLE_START = '2026-06-01';
 const LOUISE_SHUTTLE_START = '2026-05-15';
+const isOpen = new Date() >= new Date(RESERVATION_OPEN);
 ---
 
 <BaseLayout title="Banff Shuttle Reservations 2026 — Countdown & Booking Guide" description="Parks Canada shuttle reservations for Lake Louise and Moraine Lake open April 15 at 8 AM MT. Countdown timer, step-by-step booking guide, and backup plans.">
@@ -42,10 +43,17 @@ const LOUISE_SHUTTLE_START = '2026-05-15';
           <span class="countdown-date">April 15, 2026 at 8:00 AM Mountain Time</span>
         </div>
         <div class="countdown-grid" id="countdown-grid">
-          <div class="countdown-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
-          <div class="countdown-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div>
-          <div class="countdown-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Minutes</span></div>
-          <div class="countdown-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Seconds</span></div>
+          {isOpen ? (
+            <p class="countdown-open-msg">Reservations are <strong>OPEN</strong> — book your shuttle now before popular dates sell out.</p>
+          ) : (
+            <>
+              <div class="countdown-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
+              <div class="countdown-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div>
+              <div class="countdown-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Minutes</span></div>
+              <div class="countdown-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Seconds</span></div>
+            </>
+          )}
+          <noscript><p>Shuttle reservations open April 15, 2026 at 8:00 AM Mountain Time via Parks Canada.</p></noscript>
         </div>
         <div class="countdown-actions">
           <a href="https://reservation.pc.gc.ca" target="_blank" rel="noopener" class="btn btn-primary">Go to Parks Canada Reservations</a>

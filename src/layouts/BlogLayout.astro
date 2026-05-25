@@ -70,7 +70,7 @@ const articleSchema = {
     <div class="expedia-leaderboard container">
       <div class="eg-affiliate-banners" data-program="ca-expedia" data-network="pz" data-layout="leaderboard" data-image="mountains" data-message="bye-bye-bucket-list-hello-adventure" data-camref="1101l3MtWX" data-pubref="" data-link="home"></div>
     </div>
-    <div class="article-body container">
+    <div class="article-body container" data-category={category}>
       <slot />
       <div class="gyg-widget-container">
         <h2>Recommended Tours & Activities</h2>
@@ -92,9 +92,22 @@ const articleSchema = {
   (function() {
     var body = document.querySelector('.article-body');
     if (!body) return;
+    var cat = (body.dataset.category || '').toLowerCase();
+
+    // Category-specific CTA config
+    var ctaConfig = {
+      'hiking': { heading: 'Plan Your Hike', desc: 'Find guided hiking tours and trail-side accommodation in Banff.', btn1: { text: 'Explore 81 Trails', href: '/trails' }, gyg: 'Browse Hiking Tours', gygQ: '&q=hiking' },
+      'food & drink': { heading: 'Hungry in Banff?', desc: 'Discover guided food tours and hotels near the best restaurants.', btn1: { text: 'Full Restaurant Guide', href: '/eat-and-drink' }, gyg: 'Food & Drink Tours', gygQ: '&q=food' },
+      'accommodation': { heading: 'Find Your Stay', desc: 'Compare 95+ Banff hotels by area, budget and amenities.', btn1: { text: 'Compare 95+ Hotels', href: '/hotel-directory' }, gyg: 'Browse Tours', gygQ: '' },
+      'seasonal': { heading: 'Plan Your Season', desc: 'Book seasonal activities and find the best deals on accommodation.', btn1: { text: 'Trip Builder', href: '/trip-builder' }, gyg: 'Seasonal Activities', gygQ: '' },
+      'itineraries': { heading: 'Build Your Trip', desc: 'Use our interactive planner to customise your Banff itinerary.', btn1: { text: 'Trip Builder', href: '/trip-builder' }, gyg: 'Browse Tours', gygQ: '' },
+      'planning': { heading: 'Plan Your Banff Trip', desc: 'Compare hotels, book tours, and get your park pass sorted.', btn1: { text: 'Compare 95+ Hotels', href: '/hotel-directory' }, gyg: 'Browse Tours', gygQ: '' },
+      'tips': { heading: 'Make the Most of Banff', desc: 'Book activities and find accommodation for your trip.', btn1: { text: 'Trip Builder', href: '/trip-builder' }, gyg: 'Browse Activities', gygQ: '' },
+    };
+    var cfg = ctaConfig[cat] || { heading: 'Plan Your Banff Trip', desc: 'Find hotels, tours, and activities for your Canadian Rockies adventure.', btn1: { text: 'Compare 95+ Hotels', href: '/hotel-directory' }, gyg: 'Browse Tours', gygQ: '' };
+
     var h2s = body.querySelectorAll('h2');
     if (h2s.length < 2) return;
-    // Skip the "Recommended Tours" h2 at the bottom (inside gyg-widget-container)
     var contentH2s = [];
     for (var i = 0; i < h2s.length; i++) {
       if (!h2s[i].closest('.gyg-widget-container')) contentH2s.push(h2s[i]);
@@ -105,15 +118,39 @@ const articleSchema = {
     cta.className = 'mid-article-cta';
     cta.innerHTML =
       '<div class="mid-cta-inner">' +
-        '<strong>Plan Your Banff Trip</strong>' +
-        '<p>Find hotels, tours, and activities for your Canadian Rockies adventure.</p>' +
+        '<strong>' + cfg.heading + '</strong>' +
+        '<p>' + cfg.desc + '</p>' +
         '<div class="mid-cta-buttons">' +
-          '<a href="/hotel-directory" class="mid-cta-btn">Compare 95+ Hotels</a>' +
-          '<a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored" class="mid-cta-btn mid-cta-gyg">Browse Tours</a>' +
+          '<a href="' + cfg.btn1.href + '" class="mid-cta-btn">' + cfg.btn1.text + '</a>' +
+          '<a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO' + cfg.gygQ + '" target="_blank" rel="noopener sponsored" class="mid-cta-btn mid-cta-gyg">' + cfg.gyg + '</a>' +
           '<a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored" class="mid-cta-btn mid-cta-exp">Check Hotel Deals</a>' +
         '</div>' +
       '</div>';
     contentH2s[1].parentNode.insertBefore(cta, contentH2s[1]);
+
+    // Sticky CTA bar — appears after scrolling past hero
+    var sticky = document.createElement('div');
+    sticky.className = 'sticky-cta-bar';
+    sticky.innerHTML =
+      '<div class="sticky-cta-inner">' +
+        '<span>' + cfg.heading + '</span>' +
+        '<div class="sticky-cta-links">' +
+          '<a href="' + cfg.btn1.href + '" class="sticky-cta-btn">' + cfg.btn1.text + '</a>' +
+          '<a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO' + cfg.gygQ + '" target="_blank" rel="noopener sponsored" class="sticky-cta-btn sticky-gyg">' + cfg.gyg + '</a>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(sticky);
+
+    var hero = document.querySelector('.article-hero');
+    var stickyVisible = false;
+    window.addEventListener('scroll', function() {
+      var threshold = hero ? hero.offsetHeight + hero.offsetTop : 400;
+      var shouldShow = window.scrollY > threshold;
+      if (shouldShow !== stickyVisible) {
+        stickyVisible = shouldShow;
+        sticky.classList.toggle('sticky-visible', shouldShow);
+      }
+    });
   })();
   </script>
 </BaseLayout>
@@ -348,9 +385,55 @@ const articleSchema = {
     color: var(--color-primary);
   }
 
+  :global(.sticky-cta-bar) {
+    position: fixed;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.6rem 1rem;
+    transition: bottom 0.3s ease;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+  }
+
+  :global(.sticky-cta-bar.sticky-visible) { bottom: 0; }
+
+  :global(.sticky-cta-inner) {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  :global(.sticky-cta-inner span) { font-weight: 600; font-size: 0.9rem; }
+
+  :global(.sticky-cta-links) { display: flex; gap: 0.5rem; }
+
+  :global(.sticky-cta-btn) {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: var(--color-accent);
+    color: var(--color-white);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  :global(.sticky-cta-btn:hover) { opacity: 0.9; }
+  :global(.sticky-gyg) { background: rgba(255,255,255,0.2); }
+  :global(.sticky-gyg:hover) { background: rgba(255,255,255,0.3); }
+
   @media (max-width: 768px) {
     .article-hero { min-height: 300px; }
     .article-hero-content { padding: 1.5rem; }
     .article-body :global(.mid-cta-buttons) { flex-direction: column; }
+    :global(.sticky-cta-inner span) { display: none; }
+    :global(.sticky-cta-btn) { font-size: 0.75rem; padding: 0.4rem 0.7rem; }
   }
 </style>

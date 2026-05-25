@@ -270,8 +270,24 @@ h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
   font-weight: 500;
 }
 
+/* Comparison tables for money pages */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.comparison-table thead { background: var(--color-primary); color: white; }
+.comparison-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; font-size: 0.85rem; }
+.comparison-table td { padding: 0.65rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
+.comparison-table tbody tr:hover { background: rgba(26,58,42,0.03); }
+.comparison-table .highlight { background: rgba(200,169,110,0.1); font-weight: 600; }
+
 @media (max-width: 768px) {
   .section { padding: 3rem 0; }
   .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .page-hero { height: 40vh; min-height: 300px; }
+  .comparison-table { font-size: 0.8rem; }
+  .comparison-table th, .comparison-table td { padding: 0.5rem 0.6rem; }
 }

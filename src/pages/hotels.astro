@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const EXPEDIA_CAMREF = '1101l3MtWX';
 
@@ -96,6 +97,9 @@ const travelTips = [
 ---
 
 <BaseLayout title="Hotels & Accommodation" description="Find the perfect place to stay in Banff. From luxury resorts to budget hostels, with Expedia integration for real-time booking.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Where to Stay', href: '/accommodation' }, { label: 'Hotels & Accommodation' }]} />
+  </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
