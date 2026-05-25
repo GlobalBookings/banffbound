@@ -585,7 +585,7 @@ export const blogContent3: Record<string, string> = {
 <p>Mt Norquay Road opens up a world of adventure that many visitors miss in their rush to reach Lake Louise or the Icefields Parkway. Whether you're seeking challenging ski runs, scenic summer chairlift rides, or access to excellent hiking trails, this easily accessible mountain delivers authentic Rocky Mountain experiences without the crowds. The road itself becomes part of the adventure, offering glimpses of the rugged wilderness that makes Banff National Park such a remarkable destination.</p>
 `,
   'golden-banff': `
-<p>After running countless trails and skiing endless powder in the Canadian Rockies, I can tell you that Banff National Park offers some of the most spectacular mountain experiences in North America. The golden light that hits these peaks at sunrise and sunset creates what locals call "golden Banff" moments – those perfect conditions that make every photo look like a postcard and every adventure feel larger than life.</p>
+<p>After running countless trails and skiing endless powder in the Canadian Rockies, I can tell you that <a href="/blog/big-3-banff">Banff's Big 3 Lakes Photography</a> National Park offers some of the most spectacular mountain experiences in North America. The golden light that hits these peaks at sunrise and sunset creates what locals call "golden Banff" moments – those perfect conditions that make every photo look like a postcard and every adventure feel larger than life.</p>
 
 <h2>Why "Golden Banff" Creates the Perfect Mountain Experience</h2>
 
@@ -732,7 +732,7 @@ export const blogContent3: Record<string, string> = {
 <p>The Big 3 ski experience represents one of North America's premier mountain destinations, combining world-class terrain with stunning Rocky Mountain scenery. Plan ahead, dress appropriately for mountain weather, and prepare for skiing that will challenge and inspire you regardless of your ability level.</p>
 `,
   'big-three-banff': `
-<p>When people ask me about the <strong>big <a href="/blog/big-three-ski">Banff's Big Three Ski Resorts</a> <a href="/blog/golden-banff">Golden Banff : to Canada's Crown Jewel</a></strong> ski areas, I tell them they're looking at some of the most accessible alpine skiing in the Canadian Rockies. Mount Norquay, Sunshine Village, and Lake Louise Ski Resort form this legendary trio that puts world-class skiing right at your doorstep when you stay in Banff townsite. As someone who's carved turns on all three mountains countless times over the years, I can tell you each offers something completely different – and that's exactly what makes this combination so special.</p>
+<p>When people ask me about the <strong>big <a href="/blog/big-three-ski"><a href="/blog/big-3-banff">Banff's Big 3 Lakes Photography</a>'s Big Three Ski Resorts</a> <a href="/blog/golden-banff">Golden Banff : to Canada's Crown Jewel</a></strong> ski areas, I tell them they're looking at some of the most accessible alpine skiing in the Canadian Rockies. Mount Norquay, Sunshine Village, and Lake Louise Ski Resort form this legendary trio that puts world-class skiing right at your doorstep when you stay in Banff townsite. As someone who's carved turns on all three mountains countless times over the years, I can tell you each offers something completely different – and that's exactly what makes this combination so special.</p>
 
 <h2>Understanding the Big Three: Your Complete Overview</h2>
 
@@ -1903,7 +1903,7 @@ export const blogContent3: Record<string, string> = {
 <p>For those planning a longer visit, our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> provides a framework that balances skiing with other winter activities and allows for weather contingencies. Flexibility in your daily plans often makes the difference between a good trip and an exceptional one in the Canadian Rockies.</p>
 `,
   'banff-big-3': `
-<p>The <strong><a href="/blog/conde-nast-banff">Conde Nast's <a href="/blog/golden-banff">Golden Banff : to Canada's Crown Jewel</a> Travel : Hidden Gems</a> Big 3</strong> refers to the three major ski resorts that define winter sports in the Canadian Rockies: Lake Louise Ski Resort, Sunshine Village, and Mount Norquay. As someone who's carved countless turns down these mountains over the past decade, I can tell you that each resort offers a completely different skiing personality. Whether you're planning a multi-mountain ski trip or trying to decide where to focus your time, understanding what makes each of these Banff ski areas unique will transform your mountain experience.</p>
+<p>The <strong><a href="/blog/conde-nast-banff">Conde Nast's <a href="/blog/golden-banff">Golden <a href="/blog/big-3-banff">Banff's Big 3 Lakes Photography</a> : to Canada's Crown Jewel</a> Travel : Hidden Gems</a> Big 3</strong> refers to the three major ski resorts that define winter sports in the Canadian Rockies: Lake Louise Ski Resort, Sunshine Village, and Mount Norquay. As someone who's carved countless turns down these mountains over the past decade, I can tell you that each resort offers a completely different skiing personality. Whether you're planning a multi-mountain ski trip or trying to decide where to focus your time, understanding what makes each of these Banff ski areas unique will transform your mountain experience.</p>
 
 <h2>What Are the Banff Big 3 Ski Resorts?</h2>
 
@@ -4103,7 +4103,7 @@ export const blogContent3: Record<string, string> = {
 <p>For dining recommendations to fuel your viewpoint adventures, consult my guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> featuring everything from quick trail snacks to celebratory dinners. And for more hiking inspiration beyond these viewpoints, explore my comprehensive guide to the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> covering routes from easy walks to challenging alpine scrambles.</p>
 `,
   'banff-lookout-point': `
-<p>After fifteen years of running, skiing, and exploring every corner of <a href="/blog/banff-views">15 Banff Views That Will Leave You Speechless in</a> National Park, I've discovered that finding the perfect <strong>banff lookout point</strong> can make or break your mountain experience. The difference between crowded tourist spots and spectacular viewpoints often comes down to timing, local knowledge, and knowing which trails actually deliver the views you're seeking.</p>
+<p>After fifteen years of running, skiing, and exploring every corner of <a href="/blog/banff-views">15 Banff Views That Will Leave You Speechless in</a> National Park, I've discovered that finding the perfect <strong>banff lookout <a href="/blog/bow-lake-view-point">Banff's Bow Lake Viewpoint Most Instagram-Worthy Spot</a></strong> can make or break your mountain experience. The difference between crowded tourist spots and spectacular viewpoints often comes down to timing, local knowledge, and knowing which trails actually deliver the views you're seeking.</p>
 
 <h2>The Top Banff Lookout Points for 2026</h2>
 
