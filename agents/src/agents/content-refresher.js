@@ -279,7 +279,11 @@ YOUR TASK — Refresh this content while keeping the same overall structure and 
    - Replace vague superlatives with specific details
 5. AFFILIATE LINKS — Keep existing ones. Ensure Expedia and GetYourGuide links appear naturally:
    - Expedia: <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>
-   - GetYourGuide: <a href="${GYG_LINK}" target="_blank" rel="noopener sponsored">GetYourGuide</a>
+   - GetYourGuide: ALWAYS deep-link with a specific &q= parameter matching the activity. Examples:
+     * Hiking: <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=hiking" target="_blank" rel="noopener sponsored">guided hiking tours</a>
+     * Gondola: <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=gondola" target="_blank" rel="noopener sponsored">Banff Gondola tickets</a>
+     * Ice walk: <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=ice+walk" target="_blank" rel="noopener sponsored">ice walk tours</a>
+     NEVER use the generic city page without a query parameter. Replace any existing generic GYG links with specific deep-links.
 6. INTERNAL LINKS — Ensure 2-4 internal links to other BanffBound pages exist. Keep existing ones, add more if needed:
    - Hotel directory: <a href="/hotel-directory">Compare 95+ Banff hotels</a>
    - Hiking guide: <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>

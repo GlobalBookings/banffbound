@@ -308,8 +308,14 @@ REQUIREMENTS:
 4. Include 4-6 <h2> sections with detailed, practical information. Use H2s phrased as questions where natural ("How do I get from Calgary to Banff?"). Include comparison tables (HTML <table class="comparison-table">) when comparing options, prices, or features — these earn significantly more AI citations.
 5. Include a <div class="tip-box"><strong>Pro Tip:</strong> ...</div> somewhere in the article
 6. Include affiliate links naturally where relevant:
-   - Expedia: <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>
-   - GetYourGuide: <a href="${GYG_LINK}" target="_blank" rel="noopener sponsored">GetYourGuide</a>
+   - Expedia hotels: <a href="${EXPEDIA_LINK}" target="_blank" rel="noopener sponsored">Expedia</a>
+   - GetYourGuide: When mentioning specific tours or activities, deep-link to a SPECIFIC search on GYG by appending &q=KEYWORD to the base URL. Examples:
+     * Hiking tours: <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=hiking" target="_blank" rel="noopener sponsored">guided hiking tours</a>
+     * Gondola tickets: <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=gondola" target="_blank" rel="noopener sponsored">Banff Gondola tickets</a>
+     * Ice walks: <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=ice+walk" target="_blank" rel="noopener sponsored">Johnston Canyon ice walk tours</a>
+     * Wildlife tours: <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=wildlife" target="_blank" rel="noopener sponsored">wildlife safari tours</a>
+     * Lake tours: <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=lake+louise" target="_blank" rel="noopener sponsored">Lake Louise tours</a>
+     ALWAYS use a specific &q= parameter matching the activity discussed. NEVER use the generic city page without a query.
 7. Include 2-4 INTERNAL LINKS to relevant BanffBound pages where they naturally fit:
    - Hotel directory: <a href="/hotel-directory">Compare 95+ Banff hotels</a>
    - Hiking guide: <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a>

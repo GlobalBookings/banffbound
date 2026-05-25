@@ -192,7 +192,7 @@ async function getGeo(analytics) {
 // ── Build Slack Report ────────────────────────────────────
 function buildReport(overview, sources, devices, topPages, landingPages, affiliateClicks, geo) {
   const blocks = [];
-  const yesterday = new Date(Date.now() - 86400000).toLocaleDateString('en-GB', { timeZone: 'Europe/London', weekday: 'long', day: 'numeric', month: 'long' });
+  const yesterday = new Date(Date.now() - 86400000).toLocaleDateString('en-GB', { timeZone: 'America/Edmonton', weekday: 'long', day: 'numeric', month: 'long' });
 
   blocks.push(slackHeader(`GA4 Daily Briefing — ${yesterday}`));
 
@@ -263,6 +263,25 @@ function buildReport(overview, sources, devices, topPages, landingPages, affilia
     blocks.push(slackDivider());
   }
 
+  // Content type breakdown
+  if (topPages.length > 0) {
+    const types = { blog: 0, hotel: 0, trail: 0, tool: 0, other: 0 };
+    for (const p of topPages) {
+      const path = p.path;
+      if (path.startsWith('/blog/')) types.blog += p.pageviews;
+      else if (path.startsWith('/hotel-directory/')) types.hotel += p.pageviews;
+      else if (path.startsWith('/trails/')) types.trail += p.pageviews;
+      else if (['/trip-builder', '/trail-map', '/weather', '/ski-pass-calculator', '/what-to-do-today'].some(t => path.startsWith(t))) types.tool += p.pageviews;
+      else types.other += p.pageviews;
+    }
+    const total = Object.values(types).reduce((s, v) => s + v, 0);
+    if (total > 0) {
+      const typeLine = Object.entries(types).filter(([, v]) => v > 0).map(([k, v]) => `${k}: ${fmtNum(v)} (${((v / total) * 100).toFixed(0)}%)`).join('  •  ');
+      blocks.push(slackSection(`:bar_chart: *Content Types:* ${typeLine}`));
+      blocks.push(slackDivider());
+    }
+  }
+
   // Geo
   if (geo.length > 0) {
     const geoLine = geo.map(g => `${g.country}: ${fmtNum(g.sessions)}`).join('  •  ');
@@ -279,14 +298,15 @@ export async function run() {
   const auth = getOAuth2Client();
   const analytics = google.analyticsdata({ version: 'v1beta', auth });
 
+  const safe = (fn, fallback) => fn.catch(e => { log.warn(`GA4 section failed: ${e.message}`); return fallback; });
   const [overview, sources, devices, topPages, landingPages, affiliateClicks, geo] = await Promise.all([
-    getOverview(analytics),
-    getSources(analytics),
-    getDevices(analytics),
-    getTopPages(analytics),
-    getLandingPages(analytics),
-    getAffiliateClicks(analytics).catch(e => { log.warn(`Affiliate clicks: ${e.message}`); return []; }),
-    getGeo(analytics),
+    safe(getOverview(analytics), { sessions: { val: 0, prev: 0 }, users: { val: 0, prev: 0 }, pageviews: { val: 0, prev: 0 }, bounceRate: { val: 0, prev: 0 }, avgDuration: { val: 0, prev: 0 }, newUsers: { val: 0, prev: 0 } }),
+    safe(getSources(analytics), []),
+    safe(getDevices(analytics), []),
+    safe(getTopPages(analytics), []),
+    safe(getLandingPages(analytics), []),
+    safe(getAffiliateClicks(analytics), []),
+    safe(getGeo(analytics), []),
   ]);
 
   const report = buildReport(overview, sources, devices, topPages, landingPages, affiliateClicks, geo);

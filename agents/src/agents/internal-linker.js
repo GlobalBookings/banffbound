@@ -329,13 +329,28 @@ export async function run() {
   // 3. Build link graph
   const { outbound, inbound } = buildLinkMap(contentMap);
 
-  // 4. Find under-linked posts
-  const underLinked = posts.filter(p => {
-    const inboundCount = (inbound[p.slug] || []).length;
-    return inboundCount < MIN_INBOUND_THRESHOLD && contentMap[p.slug];
-  });
+  // 4. Find under-linked posts, prioritizing money/affiliate pages
+  const MONEY_SLUGS = new Set([
+    'where-to-stay-in-banff', 'banff-skiing-guide', 'best-banff-hiking-trails-guide',
+    '3-day-banff-itinerary', '5-day-banff-itinerary', '7-day-banff-itinerary',
+    'banff-trip-cost-budget-guide', 'best-banff-restaurants-where-to-eat',
+    'lake-louise-complete-guide', 'moraine-lake-guide', 'icefields-parkway-guide',
+    'banff-weather-best-time-to-visit', 'best-time-to-visit-banff', 'banff-vs-jasper',
+    'calgary-to-banff-guide', 'banff-camping-guide', 'banff-park-pass-guide',
+  ]);
 
-  log.info(`Found ${underLinked.length} under-linked posts (< ${MIN_INBOUND_THRESHOLD} inbound links)`);
+  const underLinked = posts
+    .filter(p => {
+      const inboundCount = (inbound[p.slug] || []).length;
+      return inboundCount < MIN_INBOUND_THRESHOLD && contentMap[p.slug];
+    })
+    .sort((a, b) => {
+      const aIsMoney = MONEY_SLUGS.has(a.slug) ? 0 : 1;
+      const bIsMoney = MONEY_SLUGS.has(b.slug) ? 0 : 1;
+      return aIsMoney - bIsMoney;
+    });
+
+  log.info(`Found ${underLinked.length} under-linked posts (< ${MIN_INBOUND_THRESHOLD} inbound links, money pages prioritized)`);
 
   if (underLinked.length === 0) {
     log.info('All posts are well-linked -- nothing to do');

@@ -95,10 +95,12 @@ async function findDeclines(auth) {
   const searchconsole = google.searchconsole({ version: 'v1', auth });
 
   const now = new Date();
-  const thisWeekEnd = now.toISOString().split('T')[0];
-  const thisWeekStart = new Date(now - 7 * 86400000).toISOString().split('T')[0];
-  const lastWeekEnd = new Date(now - 7 * 86400000).toISOString().split('T')[0];
-  const lastWeekStart = new Date(now - 14 * 86400000).toISOString().split('T')[0];
+  const DAY = 86400000;
+  // GSC data has a 3-day lag, so end dates should be 3 days ago
+  const thisWeekEnd = new Date(now - 3 * DAY).toISOString().split('T')[0];
+  const thisWeekStart = new Date(now - 10 * DAY).toISOString().split('T')[0];
+  const lastWeekEnd = new Date(now - 11 * DAY).toISOString().split('T')[0];
+  const lastWeekStart = new Date(now - 17 * DAY).toISOString().split('T')[0];
 
   const [thisWeek, lastWeek] = await Promise.all([
     searchconsole.searchanalytics.query({
@@ -172,20 +174,34 @@ function findOrphanPages(sitemapUrls, pageData) {
 }
 
 // ── Analysis: Keyword Clusters ────────────────────────────
+function classifyIntent(query) {
+  const q = query.toLowerCase();
+  if (/\bvs\b|versus|compared|comparison|difference between/.test(q)) return 'comparison';
+  if (/\bhow\b|\bwhat\b|\bwhen\b|\bwhere\b|\bwhy\b|\bdo i need\b|\bcan i\b|\bis it\b/.test(q)) return 'question';
+  if (/\bbest\b|\btop\b|\brecommend/.test(q)) return 'best-of';
+  if (/\bbook\b|\bticket\b|\bprice\b|\bcost\b|\bhow much\b|\breservation\b|\btour\b/.test(q)) return 'transactional';
+  return 'informational';
+}
+
 function clusterKeywords(queries) {
   const themes = {
-    'hiking': [], 'hotel': [], 'restaurant': [], 'skiing': [],
+    'hiking': [], 'hotel': [], 'accommodation': [], 'restaurant': [], 'skiing': [],
     'lake': [], 'weather': [], 'things to do': [], 'camping': [],
     'trail': [], 'drive': [], 'winter': [], 'summer': [],
+    'wildlife': [], 'shuttle': [], 'itinerary': [], 'budget': [],
   };
 
   for (const q of queries) {
     const term = q.keys[0].toLowerCase();
+    let matched = false;
     for (const [theme, arr] of Object.entries(themes)) {
       if (term.includes(theme)) {
-        arr.push({ query: q.keys[0], impressions: q.impressions, clicks: q.clicks, position: q.position });
-        break;
+        arr.push({ query: q.keys[0], impressions: q.impressions, clicks: q.clicks, position: q.position, intent: classifyIntent(q.keys[0]) });
+        matched = true;
       }
+    }
+    if (!matched) {
+      // Still classify intent for unclustered queries
     }
   }
 
@@ -301,8 +317,8 @@ export async function run() {
   log.info('Starting Keyword Miner...');
 
   const auth = getOAuth2Client();
-  const endDate = new Date().toISOString().split('T')[0];
-  const startDate = new Date(Date.now() - 28 * 86400000).toISOString().split('T')[0];
+  const endDate = new Date(Date.now() - 3 * 86400000).toISOString().split('T')[0];
+  const startDate = new Date(Date.now() - 31 * 86400000).toISOString().split('T')[0];
 
   log.info(`Querying Search Console: ${startDate} to ${endDate}`);
   const { queries, pages, combos } = await getSearchConsoleData(auth, startDate, endDate);
