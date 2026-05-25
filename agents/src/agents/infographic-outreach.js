@@ -132,47 +132,8 @@ async function findRelevantBloggers(infographicId) {
 
 // ── Find contact email ────────────────────────────────────
 
-async function findContactEmail(domain) {
-  const emails = new Set();
-  const pages = [
-    `https://${domain}/contact`, `https://${domain}/contact-us`,
-    `https://${domain}/about`, `https://${domain}/work-with-me`,
-    `https://www.${domain}/contact`, `https://www.${domain}/about`,
-  ];
-
-  for (const pageUrl of pages.slice(0, 4)) {
-    try {
-      const res = await fetch(pageUrl, {
-        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; BanffBound/1.0)' },
-        signal: AbortSignal.timeout(5000),
-        redirect: 'follow',
-      });
-      if (!res.ok) continue;
-      const html = await res.text();
-      const found = html.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g) || [];
-      for (const email of found) {
-        const lower = email.toLowerCase();
-        if (lower.includes('example.com') || lower.includes('wixpress') || lower.includes('sentry')
-            || lower.includes('wordpress') || lower.endsWith('.png') || lower.endsWith('.jpg')
-            || lower.endsWith('.js') || lower.endsWith('.css')) continue;
-        emails.add(lower);
-      }
-      if (emails.size > 0) break;
-    } catch { /* timeout or network error */ }
-  }
-
-  const sorted = [...emails].sort((a, b) => {
-    const priority = ['hello@', 'contact@', 'info@', 'hi@', 'partnerships@', 'collab@'];
-    const aIdx = priority.findIndex(p => a.startsWith(p));
-    const bIdx = priority.findIndex(p => b.startsWith(p));
-    if (aIdx === -1 && bIdx === -1) return 0;
-    if (aIdx === -1) return 1;
-    if (bIdx === -1) return -1;
-    return aIdx - bIdx;
-  });
-
-  return sorted[0] || null;
-}
+// Email discovery moved to shared validated utility
+import { findContactEmail } from '../utils/email-validator.js';
 
 // ── Draft infographic outreach email ──────────────────────
 

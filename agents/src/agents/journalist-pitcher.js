@@ -162,44 +162,8 @@ function getCuratedTargets() {
   ];
 }
 
-// ── Find contact email ────────────────────────────────────
-async function findContactEmail(domain) {
-  const pages = [
-    `https://${domain}/contact`, `https://${domain}/about`,
-    `https://${domain}/write-for-us`, `https://${domain}/contribute`,
-    `https://www.${domain}/contact`, `https://www.${domain}/write-for-us`,
-  ];
-
-  for (const pageUrl of pages.slice(0, 4)) {
-    try {
-      const res = await fetch(pageUrl, {
-        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; BanffBound/1.0)' },
-        signal: AbortSignal.timeout(5000),
-        redirect: 'follow',
-      });
-      if (!res.ok) continue;
-      const html = await res.text();
-
-      const emails = (html.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g) || [])
-        .map(e => e.toLowerCase())
-        .filter(e => !e.includes('example.com') && !e.includes('wixpress') &&
-                     !e.includes('wordpress') && !e.endsWith('.png') && !e.endsWith('.js'));
-
-      if (emails.length > 0) {
-        return emails.sort((a, b) => {
-          const pri = ['editor@', 'editorial@', 'contribute@', 'submissions@', 'hello@', 'contact@', 'info@'];
-          const aI = pri.findIndex(p => a.startsWith(p));
-          const bI = pri.findIndex(p => b.startsWith(p));
-          if (aI === -1 && bI === -1) return 0;
-          if (aI === -1) return 1;
-          if (bI === -1) return -1;
-          return aI - bI;
-        })[0];
-      }
-    } catch { /* timeout or network error */ }
-  }
-  return null;
-}
+// Email discovery moved to shared validated utility
+import { findContactEmail } from '../utils/email-validator.js';
 
 // ── Draft pitch via Claude ────────────────────────────────
 async function draftPitch(opportunity) {

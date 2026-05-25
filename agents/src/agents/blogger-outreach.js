@@ -153,69 +153,8 @@ function getCuratedBloggers() {
 }
 
 // ── Find contact email from a website ─────────────────────
-async function findContactEmail(domain, url) {
-  const emails = new Set();
-
-  // Try common contact page URLs
-  const contactPages = [
-    `https://${domain}/contact`,
-    `https://${domain}/contact-us`,
-    `https://${domain}/about`,
-    `https://${domain}/about-us`,
-    `https://${domain}/collaborate`,
-    `https://${domain}/work-with-me`,
-    `https://${domain}/work-with-us`,
-    `https://www.${domain}/contact`,
-    `https://www.${domain}/about`,
-    `https://www.${domain}/work-with-me`,
-  ];
-
-  for (const pageUrl of contactPages.slice(0, 4)) {
-    try {
-      const res = await fetch(pageUrl, {
-        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; BanffBound/1.0)' },
-        signal: AbortSignal.timeout(5000),
-        redirect: 'follow',
-      });
-
-      if (!res.ok) continue;
-      const html = await res.text();
-
-      // Extract emails from page content
-      const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
-      const found = html.match(emailRegex) || [];
-
-      for (const email of found) {
-        const lower = email.toLowerCase();
-        // Skip obvious non-contact emails
-        if (lower.includes('example.com')) continue;
-        if (lower.includes('wixpress')) continue;
-        if (lower.includes('sentry.io')) continue;
-        if (lower.includes('wordpress')) continue;
-        if (lower.includes('.png') || lower.includes('.jpg')) continue;
-        if (lower.endsWith('.js') || lower.endsWith('.css')) continue;
-        emails.add(lower);
-      }
-
-      if (emails.size > 0) break;
-    } catch {
-      // Timeout or network error, continue to next page
-    }
-  }
-
-  // Prioritize emails: hello@ > contact@ > info@ > anything else
-  const sorted = [...emails].sort((a, b) => {
-    const priority = ['hello@', 'contact@', 'info@', 'hi@', 'partnerships@', 'collab@'];
-    const aIdx = priority.findIndex(p => a.startsWith(p));
-    const bIdx = priority.findIndex(p => b.startsWith(p));
-    if (aIdx === -1 && bIdx === -1) return 0;
-    if (aIdx === -1) return 1;
-    if (bIdx === -1) return -1;
-    return aIdx - bIdx;
-  });
-
-  return sorted[0] || null;
-}
+// Email discovery moved to shared validated utility
+import { findContactEmail } from '../utils/email-validator.js';
 
 // ── Draft outreach email via Claude ───────────────────────
 async function draftOutreach(blogger) {
