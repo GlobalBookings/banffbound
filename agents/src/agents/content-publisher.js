@@ -30,14 +30,15 @@ function isEnglishOnly(text) {
 }
 
 const UNSPLASH_KEY = process.env.UNSPLASH_ACCESS_KEY;
-const OPENAI_KEY = process.env.OPENAI_API_KEY;
 
 const EXPEDIA_LINK = 'https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX';
 const GYG_LINK = 'https://www.getyourguide.com/banff-l284/?partner_id=QW960HO';
 
 const CATEGORIES = ['Planning', 'Itineraries', 'Hiking', 'Guides', 'Seasonal', 'Tips', 'Accommodation', 'Food & Drink'];
 
-// ── Generate image via DALL-E 3 ─────────────────────────────
+import { generateImageBuffer } from '../utils/gemini-image.js';
+
+// ── Generate blog hero image ────────────────────────────────
 async function generateImage(query, slug) {
   const { root } = getRepoPaths();
   const imgDir = path.join(root, 'public', 'images', 'blog');
@@ -46,57 +47,22 @@ async function generateImage(query, slug) {
   const imgPath = path.join(imgDir, `${slug}.webp`);
   const publicUrl = `/images/blog/${slug}.webp`;
 
-  // Skip if image already exists (re-run protection)
   if (fs.existsSync(imgPath)) {
     log.info(`Image already exists: ${publicUrl}`);
     return publicUrl;
   }
 
-  // Primary: DALL-E 3
-  if (OPENAI_KEY) {
-    try {
-      const prompt = `Professional travel photography of ${query} in Banff National Park, Canadian Rockies, Alberta, Canada. ` +
-        `Photorealistic, golden hour lighting, wide-angle landscape shot, stunning mountain scenery, ` +
-        `crystal clear turquoise water where applicable, snow-capped peaks in background, ` +
-        `no text or watermarks, National Geographic quality travel photo.`;
+  // Primary: Gemini image generation
+  const prompt = `Professional travel photography of ${query} in Banff National Park, Canadian Rockies, Alberta, Canada. ` +
+    `Photorealistic, golden hour lighting, wide-angle landscape shot, stunning mountain scenery, ` +
+    `crystal clear turquoise water where applicable, snow-capped peaks in background, ` +
+    `no text or watermarks, National Geographic quality travel photo.`;
 
-      const res = await fetch('https://api.openai.com/v1/images/generations', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${OPENAI_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: 'dall-e-3',
-          prompt,
-          n: 1,
-          size: '1792x1024',
-          quality: 'standard',
-          response_format: 'b64_json',
-        }),
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        const b64 = data.data[0].b64_json;
-        const buffer = Buffer.from(b64, 'base64');
-
-        // Save as PNG first (DALL-E returns PNG), then we serve it directly
-        const pngPath = imgPath.replace('.webp', '.png');
-        fs.writeFileSync(pngPath, buffer);
-
-        // Rename to keep consistent naming
-        fs.renameSync(pngPath, imgPath);
-
-        log.info(`DALL-E image generated: ${publicUrl} (${(buffer.length / 1024).toFixed(0)}KB)`);
-        return publicUrl;
-      } else {
-        const err = await res.json().catch(() => ({}));
-        log.warn(`DALL-E failed: ${err.error?.message || res.statusText}`);
-      }
-    } catch (err) {
-      log.warn(`DALL-E error: ${err.message}`);
-    }
+  const result = await generateImageBuffer(prompt);
+  if (result) {
+    fs.writeFileSync(imgPath, result.buffer);
+    log.info(`Gemini image generated: ${publicUrl} (${(result.buffer.length / 1024).toFixed(0)}KB)`);
+    return publicUrl;
   }
 
   // Fallback: Unsplash search

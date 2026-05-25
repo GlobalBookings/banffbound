@@ -15,28 +15,12 @@ const INFOGRAPHIC_FILE = path.join(DATA_DIR, 'infographics.json');
 const SITE_URL = process.env.SITE_URL || 'https://banffbound.com';
 const GH_TOKEN = process.env.GITHUB_TOKEN;
 const GH_REPO = process.env.GITHUB_REPO || 'GlobalBookings/banffbound';
-const OPENAI_KEY = process.env.OPENAI_API_KEY;
+import { generateImage as geminiGenerateImage } from '../utils/gemini-image.js';
 
-// ── DALL-E 3 image generation ─────────────────────────────
+// ── Image generation via Gemini ───────────────────────────
 
 async function generateIllustration(prompt, size = '1792x1024') {
-  if (!OPENAI_KEY) {
-    log.warn('No OPENAI_API_KEY — using placeholder');
-    return null;
-  }
-  try {
-    const res = await fetch('https://api.openai.com/v1/images/generations', {
-      method: 'POST',
-      headers: { 'Authorization': `Bearer ${OPENAI_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model: 'dall-e-3', prompt, n: 1, size, quality: 'hd', response_format: 'b64_json' }),
-    });
-    if (!res.ok) { log.warn(`DALL-E error: ${res.status}`); return null; }
-    const data = await res.json();
-    return `data:image/png;base64,${data.data[0].b64_json}`;
-  } catch (err) {
-    log.warn(`DALL-E failed: ${err.message}`);
-    return null;
-  }
+  return geminiGenerateImage(prompt);
 }
 
 // ── Render HTML to PNG ────────────────────────────────────
@@ -579,10 +563,10 @@ export async function generateOne(id) {
 
   log.info(`Generating: "${template.title}"`);
 
-  // Generate DALL-E illustrations
+  // Generate illustrations via Gemini
   const images = [];
   for (const prompt of template.dallePrompts) {
-    log.info('Generating DALL-E illustration...');
+    log.info('Generating Gemini illustration...');
     const img = await generateIllustration(prompt);
     images.push(img);
   }

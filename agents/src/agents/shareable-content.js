@@ -15,7 +15,7 @@ const SITE_URL = process.env.SITE_URL || 'https://banffbound.com';
 const SC_URL = process.env.SEARCH_CONSOLE_SITE_URL || SITE_URL;
 const GH_TOKEN = process.env.GITHUB_TOKEN;
 const GH_REPO = process.env.GITHUB_REPO || 'GlobalBookings/banffbound';
-const OPENAI_KEY = process.env.OPENAI_API_KEY;
+import { generateImageBuffer } from '../utils/gemini-image.js';
 
 const CONTENT_TYPES = [
   {
@@ -121,7 +121,7 @@ async function pickContent(existingSlugs) {
   return weighted[Math.floor(Math.random() * weighted.length)];
 }
 
-// ── Generate image via DALL-E 3 ───────────────────────────
+// ── Generate image via Gemini ──────────────────────────────
 async function generateImage(topic, slug) {
   const imgDir = path.join(WORK_DIR, 'public', 'images', 'blog');
   fs.mkdirSync(imgDir, { recursive: true });
@@ -131,28 +131,14 @@ async function generateImage(topic, slug) {
 
   if (fs.existsSync(imgPath)) return publicUrl;
 
-  if (!OPENAI_KEY) {
-    return 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80';
-  }
+  const prompt = `Professional travel photography of ${topic} in Banff National Park, Canadian Rockies. ` +
+    `Photorealistic, golden hour, wide-angle landscape, stunning mountains, no text or watermarks.`;
 
-  try {
-    const prompt = `Professional travel photography of ${topic} in Banff National Park, Canadian Rockies. ` +
-      `Photorealistic, golden hour, wide-angle landscape, stunning mountains, no text or watermarks.`;
-
-    const res = await fetch('https://api.openai.com/v1/images/generations', {
-      method: 'POST',
-      headers: { 'Authorization': `Bearer ${OPENAI_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model: 'dall-e-3', prompt, n: 1, size: '1792x1024', quality: 'standard', response_format: 'b64_json' }),
-    });
-
-    if (res.ok) {
-      const data = await res.json();
-      fs.writeFileSync(imgPath, Buffer.from(data.data[0].b64_json, 'base64'));
-      log.info(`Image generated: ${publicUrl}`);
-      return publicUrl;
-    }
-  } catch (err) {
-    log.warn(`DALL-E failed: ${err.message}`);
+  const result = await generateImageBuffer(prompt);
+  if (result) {
+    fs.writeFileSync(imgPath, result.buffer);
+    log.info(`Image generated: ${publicUrl}`);
+    return publicUrl;
   }
 
   return 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80';
