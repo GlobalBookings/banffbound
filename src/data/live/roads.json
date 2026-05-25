@@ -1,0 +1,34 @@
+{
+  "updatedAt": "2026-05-25T22:27:14.749Z",
+  "highways": [
+    {
+      "name": "Trans-Canada Highway",
+      "number": "1",
+      "status": "Check 511.alberta.ca",
+      "conditions": "",
+      "advisory": ""
+    },
+    {
+      "name": "Icefields Parkway",
+      "number": "93",
+      "status": "Check 511.alberta.ca",
+      "conditions": "",
+      "advisory": ""
+    },
+    {
+      "name": "Highway 1A (Bow Valley Parkway)",
+      "number": "1A",
+      "status": "Check 511.alberta.ca",
+      "conditions": "",
+      "advisory": ""
+    },
+    {
+      "name": "Highway 11 (David Thompson)",
+      "number": "11",
+      "status": "Check 511.alberta.ca",
+      "conditions": "",
+      "advisory": ""
+    }
+  ],
+  "source": "https://511.alberta.ca"
+}

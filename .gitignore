@@ -27,5 +27,5 @@ agents/data/
 # jetbrains setting folder
 .idea/
 
-# Live data JSON (regenerated each build)
-src/data/live/*.json
+# Live data JSON is committed by the refresh-data GitHub Action
+# and regenerated at the start of each build

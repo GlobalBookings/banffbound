@@ -1,0 +1,38 @@
+{
+  "updatedAt": "2026-05-25T22:27:14.618Z",
+  "resorts": [
+    {
+      "name": "Sunshine Village",
+      "status": "Check resort website",
+      "baseDepth": null,
+      "newSnow24h": null,
+      "newSnow48h": null,
+      "openRuns": null,
+      "totalRuns": null,
+      "openLifts": null,
+      "totalLifts": null
+    },
+    {
+      "name": "Lake Louise Ski Resort",
+      "status": "Check resort website",
+      "baseDepth": null,
+      "newSnow24h": null,
+      "newSnow48h": null,
+      "openRuns": null,
+      "totalRuns": null,
+      "openLifts": null,
+      "totalLifts": null
+    },
+    {
+      "name": "Mt. Norquay",
+      "status": "Check resort website",
+      "baseDepth": null,
+      "newSnow24h": "0 cm",
+      "newSnow48h": null,
+      "openRuns": null,
+      "totalRuns": null,
+      "openLifts": null,
+      "totalLifts": null
+    }
+  ]
+}
