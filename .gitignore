@@ -26,3 +26,6 @@ agents/data/
 
 # jetbrains setting folder
 .idea/
+
+# Live data JSON (regenerated each build)
+src/data/live/*.json

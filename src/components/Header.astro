@@ -1,4 +1,9 @@
 ---
+let seasonData: any = { season: 'spring' };
+try { const m = await import('../data/live/season.json'); seasonData = m.default || m; } catch { /* use defaults */ }
+const seasonDotColors: Record<string, string> = { spring: '#e6c619', summer: '#27ae60', fall: '#e67e22', winter: '#3498db' };
+const seasonDotColor = seasonDotColors[seasonData.season] || '#27ae60';
+
 const currentPath = Astro.url.pathname;
 
 const megaMenus = {
@@ -161,6 +166,10 @@ const directLinks = [
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/><circle cx="12" cy="12" r="4"/></svg>
         Weather & Webcams
       </a>
+      <a href="/conditions" class="utility-link">
+        <span class="season-dot" style={`background: ${seasonDotColor};`}></span>
+        Conditions
+      </a>
       <a href="/park-pass" class="utility-link utility-link--pass">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5h2a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
         Park Pass Guide
@@ -306,6 +315,14 @@ const directLinks = [
   .utility-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
   .utility-link--pass { color: var(--color-accent); font-weight: 600; }
   .utility-link--pass:hover { color: var(--color-accent-light); background: rgba(255,255,255,0.1); }
+  .season-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 4px rgba(255,255,255,0.3);
+  }
 
   /* ── Site Header ─────────────────────────────────── */
   .site-header {

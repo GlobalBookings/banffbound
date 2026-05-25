@@ -1,0 +1,747 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+/* ── Import live data with fallbacks ─────────────── */
+let seasonData: any = { season: 'spring', month: '', seasonalHighlights: [], activeActivities: [], upcomingEvents: [], updatedAt: '' };
+try { const m = await import('../data/live/season.json'); seasonData = m.default || m; } catch { /* use defaults */ }
+
+let weatherData: any = { banff: { current: { temp: null, condition: 'Unknown', icon: '🌡️', humidity: null, wind: '' }, forecast: [] }, lakeLouise: { current: { temp: null, condition: 'Unknown', icon: '🌡️', humidity: null, wind: '' }, forecast: [] }, updatedAt: '' };
+try { const m = await import('../data/live/weather.json'); weatherData = m.default || m; } catch { /* use defaults */ }
+
+let trailData: any = { trails: [], advisories: [], updatedAt: '' };
+try { const m = await import('../data/live/trail-conditions.json'); trailData = m.default || m; } catch { /* use defaults */ }
+
+let roadData: any = { highways: [], source: 'https://511.alberta.ca', updatedAt: '' };
+try { const m = await import('../data/live/roads.json'); roadData = m.default || m; } catch { /* use defaults */ }
+
+let snowData: any = { resorts: [], updatedAt: '' };
+try { const m = await import('../data/live/snow.json'); snowData = m.default || m; } catch { /* use defaults */ }
+
+/* ── Helpers ─────────────────────────────────────── */
+const seasonIcons: Record<string, string> = { spring: '🌱', summer: '☀️', fall: '🍂', winter: '❄️' };
+const seasonIcon = seasonIcons[seasonData.season] || '🏔️';
+
+const showSnow = ['winter', 'spring'].includes(seasonData.season);
+
+function formatDate(iso: string) {
+  if (!iso) return 'N/A';
+  try {
+    return new Date(iso).toLocaleString('en-CA', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Edmonton' });
+  } catch { return iso; }
+}
+
+function roadStatusColor(status: string) {
+  const s = (status || '').toLowerCase();
+  if (s.includes('open') || s.includes('good') || s.includes('clear')) return 'green';
+  if (s.includes('closed') || s.includes('restrict')) return 'red';
+  return 'yellow';
+}
+
+function trailStatusColor(status: string) {
+  const s = (status || '').toLowerCase();
+  if (s.includes('open') || s.includes('good')) return 'green';
+  if (s.includes('closed')) return 'red';
+  return 'yellow';
+}
+
+/* ── FAQPage Schema ──────────────────────────────── */
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What are the current trail conditions in Banff National Park?',
+      acceptedAnswer: { '@type': 'Answer', text: trailData.trails.length > 0 ? `There are ${trailData.trails.length} trails being tracked. Check this page for live status updates on each trail.` : 'Trail conditions are updated regularly. Visit Parks Canada or check this page before heading out.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are the roads to Banff open right now?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Road conditions for the Trans-Canada Highway, Icefields Parkway, and Bow Valley Parkway are updated regularly. Check 511.alberta.ca for real-time status.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the current weather in Banff?',
+      acceptedAnswer: { '@type': 'Answer', text: weatherData.banff?.current?.temp != null ? `Current temperature in Banff is ${weatherData.banff.current.temp}°C with ${weatherData.banff.current.condition} conditions.` : 'Visit weather.gc.ca for the latest Banff weather forecast.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What season is it in Banff right now?',
+      acceptedAnswer: { '@type': 'Answer', text: `It is currently ${seasonData.season} (${seasonData.month}) in Banff National Park. ${seasonData.seasonalHighlights?.[0] || ''}` },
+    },
+  ],
+};
+---
+
+<BaseLayout title="Current Conditions" description="Live conditions dashboard for Banff National Park — weather, trail status, road conditions, snow reports, and park advisories updated regularly.">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Current Conditions' }]} />
+  </div>
+
+  <div class="page-hero" style="min-height: 280px; height: 30vh;">
+    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1400&q=80" alt="Banff National Park mountain panorama" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Live Dashboard</span>
+      <h1>Current Conditions</h1>
+      <p>Weather, trails, roads & snow — everything you need before heading out</p>
+    </div>
+  </div>
+
+  <!-- ═══ Current Season Banner ═══ -->
+  <section class="conditions-season-banner">
+    <div class="container">
+      <div class="season-banner-inner">
+        <div class="season-banner-header">
+          <span class="season-icon-lg">{seasonIcon}</span>
+          <div>
+            <h2 class="season-title">{seasonData.season.charAt(0).toUpperCase() + seasonData.season.slice(1)} in Banff</h2>
+            <span class="season-month">{seasonData.month} 2026</span>
+          </div>
+        </div>
+        {seasonData.seasonalHighlights.length > 0 && (
+          <div class="season-highlights">
+            <h3>What's Happening Now</h3>
+            <ul>
+              {seasonData.seasonalHighlights.slice(0, 4).map((h: string) => (
+                <li>{h}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {seasonData.activeActivities.length > 0 && (
+          <div class="season-activities">
+            {seasonData.activeActivities.slice(0, 6).map((a: string) => (
+              <span class="activity-tag">{a}</span>
+            ))}
+          </div>
+        )}
+        <p class="conditions-updated">Last updated: {formatDate(seasonData.updatedAt)}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Park Advisories ═══ -->
+  {trailData.advisories && trailData.advisories.length > 0 && (
+    <section class="conditions-advisories">
+      <div class="container">
+        <div class="advisory-banner">
+          <span class="advisory-icon">⚠️</span>
+          <div>
+            <h3>Park Advisories</h3>
+            <ul class="advisory-list">
+              {trailData.advisories.map((a: any) => (
+                <li>{typeof a === 'string' ? a : a.message || a.title || JSON.stringify(a)}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ═══ Weather Overview ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>🌤️ Weather Overview</h2>
+        <p>Current conditions and 3-day forecast</p>
+      </div>
+
+      {weatherData.error ? (
+        <div class="conditions-fallback">
+          <p>Weather data is temporarily unavailable.</p>
+          <a href="https://weather.gc.ca/city/pages/ab-49_metric_e.html" target="_blank" rel="noopener" class="btn btn-primary">
+            Check weather.gc.ca →
+          </a>
+        </div>
+      ) : (
+        <div class="weather-locations">
+          {/* Banff */}
+          <div class="weather-location-card">
+            <h3>Banff Town</h3>
+            <div class="weather-current">
+              <span class="weather-temp-lg">
+                {weatherData.banff?.current?.temp != null ? `${weatherData.banff.current.temp}°C` : '—'}
+              </span>
+              <div>
+                <span class="weather-icon-lg">{weatherData.banff?.current?.icon || '🌡️'}</span>
+                <span class="weather-condition">{weatherData.banff?.current?.condition || 'Unknown'}</span>
+                {weatherData.banff?.current?.humidity != null && <span class="weather-detail">Humidity: {weatherData.banff.current.humidity}%</span>}
+                {weatherData.banff?.current?.wind && <span class="weather-detail">Wind: {weatherData.banff.current.wind}</span>}
+              </div>
+            </div>
+            {weatherData.banff?.forecast?.length > 0 && (
+              <div class="weather-forecast-row">
+                {weatherData.banff.forecast.slice(0, 3).map((d: any) => (
+                  <div class="forecast-day">
+                    <span class="forecast-label">{d.day || d.date || ''}</span>
+                    <span class="forecast-icon">{d.icon || '🌡️'}</span>
+                    <span class="forecast-temp">{d.high != null ? `${d.high}°` : '—'} / {d.low != null ? `${d.low}°` : '—'}</span>
+                    <span class="forecast-cond">{d.condition || ''}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Lake Louise */}
+          <div class="weather-location-card">
+            <h3>Lake Louise</h3>
+            <div class="weather-current">
+              <span class="weather-temp-lg">
+                {weatherData.lakeLouise?.current?.temp != null ? `${weatherData.lakeLouise.current.temp}°C` : '—'}
+              </span>
+              <div>
+                <span class="weather-icon-lg">{weatherData.lakeLouise?.current?.icon || '🌡️'}</span>
+                <span class="weather-condition">{weatherData.lakeLouise?.current?.condition || 'Unknown'}</span>
+                {weatherData.lakeLouise?.current?.humidity != null && <span class="weather-detail">Humidity: {weatherData.lakeLouise.current.humidity}%</span>}
+                {weatherData.lakeLouise?.current?.wind && <span class="weather-detail">Wind: {weatherData.lakeLouise.current.wind}</span>}
+              </div>
+            </div>
+            {weatherData.lakeLouise?.forecast?.length > 0 && (
+              <div class="weather-forecast-row">
+                {weatherData.lakeLouise.forecast.slice(0, 3).map((d: any) => (
+                  <div class="forecast-day">
+                    <span class="forecast-label">{d.day || d.date || ''}</span>
+                    <span class="forecast-icon">{d.icon || '🌡️'}</span>
+                    <span class="forecast-temp">{d.high != null ? `${d.high}°` : '—'} / {d.low != null ? `${d.low}°` : '—'}</span>
+                    <span class="forecast-cond">{d.condition || ''}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      <div class="conditions-links">
+        <a href="/weather-webcams" class="btn btn-outline">📷 Live Webcams & Full Forecast →</a>
+        <a href="https://weather.gc.ca/city/pages/ab-49_metric_e.html" target="_blank" rel="noopener" class="conditions-ext-link">weather.gc.ca ↗</a>
+      </div>
+      <p class="conditions-updated">Last updated: {formatDate(weatherData.updatedAt)}</p>
+    </div>
+  </section>
+
+  <!-- ═══ Trail Conditions ═══ -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <h2>🥾 Trail Conditions</h2>
+        <p>Current status of trails in Banff National Park</p>
+      </div>
+
+      {trailData.trails.length > 0 ? (
+        <div class="trail-grid">
+          {trailData.trails.map((trail: any) => (
+            <div class="trail-row">
+              <span class="trail-name">{trail.name || trail.trail || 'Unknown Trail'}</span>
+              <span class={`status-badge status-${trailStatusColor(trail.status || trail.condition || '')}`}>
+                {trail.status || trail.condition || 'Unknown'}
+              </span>
+              {trail.notes && <span class="trail-notes">{trail.notes}</span>}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="conditions-fallback">
+          <p>Trail condition data is currently being refreshed. Check Parks Canada for the latest status.</p>
+          <a href="https://www.pc.gc.ca/en/pn-np/ab/banff/visit/conditions" target="_blank" rel="noopener" class="btn btn-primary">
+            Parks Canada Trail Report →
+          </a>
+        </div>
+      )}
+
+      <p class="conditions-updated">Last updated: {formatDate(trailData.updatedAt)}</p>
+    </div>
+  </section>
+
+  <!-- ═══ Road Conditions ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>🛣️ Road Conditions</h2>
+        <p>Highway status for getting to and around Banff</p>
+      </div>
+
+      {roadData.highways.length > 0 ? (
+        <div class="road-grid">
+          {roadData.highways.map((hwy: any) => (
+            <div class="road-card">
+              <div class="road-card-header">
+                <span class="road-number">Hwy {hwy.number}</span>
+                <span class={`status-badge status-${roadStatusColor(hwy.status)}`}>{hwy.status || 'Unknown'}</span>
+              </div>
+              <h3 class="road-name">{hwy.name}</h3>
+              {hwy.conditions && <p class="road-conditions">{hwy.conditions}</p>}
+              {hwy.advisory && <p class="road-advisory">⚠️ {hwy.advisory}</p>}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="conditions-fallback">
+          <p>Road data is currently being refreshed.</p>
+        </div>
+      )}
+
+      <div class="conditions-links">
+        <a href={roadData.source || 'https://511.alberta.ca'} target="_blank" rel="noopener" class="btn btn-outline">
+          Check 511.alberta.ca for live updates →
+        </a>
+      </div>
+      <p class="conditions-updated">Last updated: {formatDate(roadData.updatedAt)}</p>
+    </div>
+  </section>
+
+  <!-- ═══ Snow Report ═══ -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <h2>⛷️ Snow Report</h2>
+        <p>SkiBig3 resort conditions — Sunshine Village, Lake Louise, Mt. Norquay</p>
+      </div>
+
+      {showSnow ? (
+        snowData.resorts.length > 0 ? (
+          <div class="grid grid-3">
+            {snowData.resorts.map((resort: any) => (
+              <div class="snow-card card">
+                <div class="card-body">
+                  <h3>{resort.name}</h3>
+                  <span class={`status-badge status-${resort.status?.toLowerCase().includes('open') ? 'green' : 'yellow'}`}>
+                    {resort.status || 'Check resort website'}
+                  </span>
+                  <div class="snow-stats">
+                    <div class="snow-stat">
+                      <span class="snow-stat-label">Base Depth</span>
+                      <span class="snow-stat-value">{resort.baseDepth != null ? resort.baseDepth : '—'}</span>
+                    </div>
+                    <div class="snow-stat">
+                      <span class="snow-stat-label">New Snow (24h)</span>
+                      <span class="snow-stat-value">{resort.newSnow24h || '—'}</span>
+                    </div>
+                    <div class="snow-stat">
+                      <span class="snow-stat-label">New Snow (48h)</span>
+                      <span class="snow-stat-value">{resort.newSnow48h || '—'}</span>
+                    </div>
+                    <div class="snow-stat">
+                      <span class="snow-stat-label">Open Runs</span>
+                      <span class="snow-stat-value">{resort.openRuns != null ? `${resort.openRuns}/${resort.totalRuns || '?'}` : '—'}</span>
+                    </div>
+                    <div class="snow-stat">
+                      <span class="snow-stat-label">Open Lifts</span>
+                      <span class="snow-stat-value">{resort.openLifts != null ? `${resort.openLifts}/${resort.totalLifts || '?'}` : '—'}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="conditions-fallback">
+            <p>Snow data is currently being refreshed. Check resort websites for the latest reports.</p>
+            <a href="https://www.skibig3.com/conditions" target="_blank" rel="noopener" class="btn btn-primary">SkiBig3 Conditions →</a>
+          </div>
+        )
+      ) : (
+        <div class="conditions-fallback">
+          <p>🏔️ Ski season typically opens in November. Check back in fall for snow reports!</p>
+          <a href="/skiing" class="btn btn-outline">Plan Your Ski Trip →</a>
+        </div>
+      )}
+
+      <p class="conditions-updated">Last updated: {formatDate(snowData.updatedAt)}</p>
+    </div>
+  </section>
+
+  <!-- ═══ Quick Links ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>More Resources</h2>
+      </div>
+      <div class="grid grid-3">
+        <a href="/weather-webcams" class="category-card card">
+          <div class="card-body" style="text-align: center; padding: 2rem;">
+            <span style="font-size: 2.5rem;">📷</span>
+            <h3>Weather & Webcams</h3>
+            <p>Live camera views across Banff National Park</p>
+          </div>
+        </a>
+        <a href="/hiking" class="category-card card">
+          <div class="card-body" style="text-align: center; padding: 2rem;">
+            <span style="font-size: 2.5rem;">🥾</span>
+            <h3>Hiking Guide</h3>
+            <p>Trail info, difficulty ratings & recommendations</p>
+          </div>
+        </a>
+        <a href="/parking" class="category-card card">
+          <div class="card-body" style="text-align: center; padding: 2rem;">
+            <span style="font-size: 2.5rem;">🅿️</span>
+            <h3>Parking Predictor</h3>
+            <p>Find parking at popular trailheads</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ── Season Banner ─────────────────────────────── */
+  .conditions-season-banner {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2d5a3f 100%);
+    color: var(--color-white);
+    padding: 2.5rem 0;
+  }
+  .season-banner-inner {
+    max-width: 900px;
+  }
+  .season-banner-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .season-icon-lg {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  .season-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0;
+  }
+  .season-month {
+    font-size: 0.95rem;
+    opacity: 0.8;
+  }
+  .season-highlights h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-body);
+  }
+  .season-highlights ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.4rem;
+  }
+  .season-highlights li {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .season-highlights li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+  .season-activities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+  .activity-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: var(--color-white);
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── Advisories ────────────────────────────────── */
+  .conditions-advisories {
+    padding: 1.25rem 0;
+    background: #fff3cd;
+  }
+  .advisory-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 900px;
+  }
+  .advisory-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .advisory-banner h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #664d03;
+    margin-bottom: 0.35rem;
+  }
+  .advisory-list {
+    list-style: disc;
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+  .advisory-list li {
+    font-size: 0.9rem;
+    color: #664d03;
+    margin-bottom: 0.25rem;
+  }
+
+  /* ── Weather ───────────────────────────────────── */
+  .weather-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .weather-location-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .weather-location-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+  }
+  .weather-current {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .weather-temp-lg {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+  .weather-icon-lg {
+    font-size: 1.6rem;
+    margin-right: 0.4rem;
+  }
+  .weather-condition {
+    font-weight: 600;
+    font-size: 1rem;
+    display: block;
+  }
+  .weather-detail {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+  .weather-forecast-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 1rem;
+  }
+  .forecast-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.2rem;
+  }
+  .forecast-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+  }
+  .forecast-icon { font-size: 1.5rem; }
+  .forecast-temp {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .forecast-cond {
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+  }
+
+  /* ── Trails ────────────────────────────────────── */
+  .trail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .trail-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .trail-name {
+    flex: 1;
+    font-weight: 500;
+    font-size: 0.92rem;
+  }
+  .trail-notes {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    max-width: 250px;
+  }
+
+  /* ── Status Badges ─────────────────────────────── */
+  .status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  .status-green {
+    background: #d4edda;
+    color: #155724;
+  }
+  .status-yellow {
+    background: #fff3cd;
+    color: #664d03;
+  }
+  .status-red {
+    background: #f8d7da;
+    color: #721c24;
+  }
+
+  /* ── Roads ─────────────────────────────────────── */
+  .road-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .road-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .road-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  .road-number {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .road-name {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+  .road-conditions {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+  }
+  .road-advisory {
+    font-size: 0.85rem;
+    color: #664d03;
+    background: #fff3cd;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+  }
+
+  /* ── Snow Cards ────────────────────────────────── */
+  .snow-card .status-badge {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .snow-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .snow-stat {
+    display: flex;
+    flex-direction: column;
+  }
+  .snow-stat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
+  }
+  .snow-stat-value {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  /* ── Shared ────────────────────────────────────── */
+  .conditions-updated {
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    margin-top: 1.25rem;
+    opacity: 0.7;
+  }
+  .conditions-season-banner .conditions-updated {
+    color: rgba(255,255,255,0.5);
+  }
+  .conditions-fallback {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .conditions-fallback p {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+  }
+  .conditions-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .conditions-ext-link {
+    font-size: 0.88rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .conditions-ext-link:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .season-banner-header { flex-wrap: wrap; }
+    .season-highlights ul { grid-template-columns: 1fr; }
+    .weather-locations { grid-template-columns: 1fr; }
+    .weather-forecast-row { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+    .road-grid { grid-template-columns: 1fr; }
+    .conditions-links { flex-direction: column; align-items: flex-start; }
+  }
+</style>

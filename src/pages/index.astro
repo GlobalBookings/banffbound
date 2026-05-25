@@ -3,6 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Parser from 'rss-parser';
 import { blogPosts } from '../data/blogPosts';
 
+/* ── Season data for conditions strip ────────────── */
+let seasonData: any = { season: 'spring', month: '', seasonalHighlights: [], activeActivities: [], updatedAt: '' };
+try { const m = await import('../data/live/season.json'); seasonData = m.default || m; } catch { /* use defaults */ }
+const seasonIcons: Record<string, string> = { spring: '🌱', summer: '☀️', fall: '🍂', winter: '❄️' };
+const seasonIcon = seasonIcons[seasonData.season] || '🏔️';
+const seasonLabel = seasonData.season.charAt(0).toUpperCase() + seasonData.season.slice(1);
+const seasonSummary = seasonData.activeActivities?.slice(0, 3).join(', ') || 'Check current conditions';
+
 const featuredPosts = blogPosts.slice(0, 4);
 
 const parser = new Parser({
@@ -163,6 +171,18 @@ const highlights = [
     </div>
   </section>
 
+  <!-- Current Conditions Strip -->
+  <section class="conditions-strip">
+    <div class="container">
+      <a href="/conditions" class="conditions-strip-inner">
+        <span class="conditions-strip-season">{seasonIcon} {seasonLabel}</span>
+        <span class="conditions-strip-divider" aria-hidden="true">|</span>
+        <span class="conditions-strip-summary">{seasonSummary}</span>
+        <span class="conditions-strip-cta">View Conditions →</span>
+      </a>
+    </div>
+  </section>
+
   <!-- Categories -->
   <section class="section">
     <div class="container">
@@ -302,6 +322,48 @@ const highlights = [
 </BaseLayout>
 
 <style>
+  /* ── Conditions Strip ──────────────────────────── */
+  .conditions-strip {
+    background: var(--color-primary);
+    padding: 0;
+  }
+  .conditions-strip-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1rem;
+    color: rgba(255,255,255,0.9);
+    font-size: 0.88rem;
+    transition: background 0.2s ease;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  .conditions-strip-inner:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+  }
+  .conditions-strip-season {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .conditions-strip-divider {
+    opacity: 0.35;
+  }
+  .conditions-strip-summary {
+    opacity: 0.85;
+  }
+  .conditions-strip-cta {
+    font-weight: 600;
+    color: var(--color-accent);
+    white-space: nowrap;
+  }
+  @media (max-width: 600px) {
+    .conditions-strip-inner { font-size: 0.8rem; gap: 0.4rem; }
+    .conditions-strip-divider { display: none; }
+    .conditions-strip-summary { display: none; }
+  }
+
   .hero {
     position: relative;
     height: 100vh;
