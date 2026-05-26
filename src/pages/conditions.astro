@@ -9,7 +9,7 @@ try { const m = await import('../data/live/season.json'); seasonData = m.default
 let weatherData: any = { banff: { current: { temp: null, condition: 'Unknown', icon: '🌡️', humidity: null, wind: '' }, forecast: [] }, lakeLouise: { current: { temp: null, condition: 'Unknown', icon: '🌡️', humidity: null, wind: '' }, forecast: [] }, updatedAt: '' };
 try { const m = await import('../data/live/weather.json'); weatherData = m.default || m; } catch { /* use defaults */ }
 
-let trailData: any = { trails: [], advisories: [], updatedAt: '' };
+let trailData: any = { trails: [], advisories: [], areas: [], summary: { total: 0, open: 0, caution: 0, closed: 0 }, fireDanger: null, updatedAt: '' };
 try { const m = await import('../data/live/trail-conditions.json'); trailData = m.default || m; } catch { /* use defaults */ }
 
 let roadData: any = { highways: [], source: 'https://511.alberta.ca', updatedAt: '' };
@@ -40,8 +40,16 @@ function roadStatusColor(status: string) {
 
 function trailStatusColor(status: string) {
   const s = (status || '').toLowerCase();
-  if (s.includes('open') || s.includes('good')) return 'green';
-  if (s.includes('closed')) return 'red';
+  if (s === 'open') return 'green';
+  if (s === 'closed') return 'red';
+  return 'yellow';
+}
+
+function fireDangerColor(level: string) {
+  const l = (level || '').toLowerCase();
+  if (l === 'low') return 'green';
+  if (l === 'moderate') return 'yellow';
+  if (l === 'high' || l === 'very high' || l === 'extreme') return 'red';
   return 'yellow';
 }
 
@@ -53,7 +61,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'What are the current trail conditions in Banff National Park?',
-      acceptedAnswer: { '@type': 'Answer', text: trailData.trails.length > 0 ? `There are ${trailData.trails.length} trails being tracked. Check this page for live status updates on each trail.` : 'Trail conditions are updated regularly. Visit Parks Canada or check this page before heading out.' },
+      acceptedAnswer: { '@type': 'Answer', text: trailData.summary.total > 0 ? `There are ${trailData.summary.total} trails being tracked: ${trailData.summary.open} open, ${trailData.summary.caution} with caution advisories, and ${trailData.summary.closed} closed. Fire danger is currently ${trailData.fireDanger || 'unknown'}.` : 'Trail conditions are updated regularly. Visit Parks Canada or check this page before heading out.' },
     },
     {
       '@type': 'Question',
@@ -230,31 +238,73 @@ const faqSchema = {
     <div class="container">
       <div class="section-header">
         <h2>🥾 Trail Conditions</h2>
-        <p>Current status of trails in Banff National Park</p>
+        <p>Current status of {trailData.summary.total || ''} trails in Banff National Park</p>
       </div>
 
-      {trailData.trails.length > 0 ? (
-        <div class="trail-grid">
-          {trailData.trails.map((trail: any) => (
-            <div class="trail-row">
-              <span class="trail-name">{trail.name || trail.trail || 'Unknown Trail'}</span>
-              <span class={`status-badge status-${trailStatusColor(trail.status || trail.condition || '')}`}>
-                {trail.status || trail.condition || 'Unknown'}
-              </span>
-              {trail.notes && <span class="trail-notes">{trail.notes}</span>}
+      {trailData.summary.total > 0 && (
+        <div class="trail-summary-bar">
+          {trailData.fireDanger && (
+            <div class="summary-item">
+              <span class="summary-label">🔥 Fire Danger</span>
+              <span class={`status-badge status-${fireDangerColor(trailData.fireDanger)}`}>{trailData.fireDanger}</span>
             </div>
+          )}
+          <div class="summary-item">
+            <span class="summary-label">Open</span>
+            <span class="status-badge status-green">{trailData.summary.open}</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Caution</span>
+            <span class="status-badge status-yellow">{trailData.summary.caution}</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Closed</span>
+            <span class="status-badge status-red">{trailData.summary.closed}</span>
+          </div>
+        </div>
+      )}
+
+      {trailData.areas && trailData.areas.length > 0 ? (
+        <div class="trail-areas">
+          {trailData.areas.map((area: any) => (
+            <details class="trail-area-group" open={area.area === 'Banff Area'}>
+              <summary class="area-header">
+                <h3>{area.area}</h3>
+                <span class="area-count">{area.trails.length} trails</span>
+              </summary>
+              <div class="trail-grid">
+                {area.trails.map((trail: any) => (
+                  <div class="trail-row">
+                    <span class="trail-name">
+                      {trail.name}
+                      {trail.difficulty && trail.difficulty !== 'unknown' && (
+                        <span class={`difficulty-tag difficulty-${trail.difficulty.toLowerCase()}`}>{trail.difficulty}</span>
+                      )}
+                    </span>
+                    <span class={`status-badge status-${trailStatusColor(trail.status)}`}>
+                      {trail.condition}
+                    </span>
+                    {trail.comment && <span class="trail-notes">{trail.comment}</span>}
+                  </div>
+                ))}
+              </div>
+            </details>
           ))}
         </div>
       ) : (
         <div class="conditions-fallback">
           <p>Trail condition data is currently being refreshed. Check Parks Canada for the latest status.</p>
-          <a href="https://www.pc.gc.ca/en/pn-np/ab/banff/visit/conditions" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions" target="_blank" rel="noopener" class="btn btn-primary">
             Parks Canada Trail Report →
           </a>
         </div>
       )}
 
-      <p class="conditions-updated">Last updated: {formatDate(trailData.updatedAt)}</p>
+      <p class="conditions-updated">
+        Last updated: {formatDate(trailData.updatedAt)}
+        &nbsp;·&nbsp;
+        <a href="https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions" target="_blank" rel="noopener">Source: Parks Canada</a>
+      </p>
     </div>
   </section>
 
@@ -573,32 +623,111 @@ const faqSchema = {
     color: var(--color-text-light);
   }
 
+  /* ── Trail Summary Bar ──────────────────────────── */
+  .trail-summary-bar {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .summary-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .summary-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+  }
+
+  /* ── Trail Areas ───────────────────────────────── */
+  .trail-areas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .trail-area-group {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .area-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-alt, #f8f9fa);
+    cursor: pointer;
+    user-select: none;
+  }
+  .area-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  .area-count {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+  }
+  .trail-area-group[open] .trail-grid {
+    padding: 0.5rem 0.75rem 1rem;
+  }
+
   /* ── Trails ────────────────────────────────────── */
   .trail-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    max-width: 800px;
-    margin: 0 auto;
+    gap: 0.4rem;
   }
   .trail-row {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0.6rem 0.75rem;
     background: var(--color-white);
     border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
   .trail-name {
     flex: 1;
     font-weight: 500;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
+  .difficulty-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  .difficulty-easy { background: #d4edda; color: #155724; }
+  .difficulty-moderate { background: #cce5ff; color: #004085; }
+  .difficulty-difficult { background: #e2d5f1; color: #4a1d8e; }
   .trail-notes {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: var(--color-text-light);
-    max-width: 250px;
+    flex-basis: 100%;
+    padding-left: 0.75rem;
+    border-left: 2px solid rgba(0,0,0,0.06);
+    line-height: 1.4;
   }
 
   /* ── Status Badges ─────────────────────────────── */
