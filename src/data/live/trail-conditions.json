@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-05-26T21:29:46.837Z",
+  "updatedAt": "2026-05-26T23:03:03.501Z",
   "fireDanger": "low",
   "summary": {
     "total": 97,
-    "open": 33,
+    "open": 35,
     "caution": 44,
-    "closed": 20
+    "closed": 18
   },
   "areas": [
     {
@@ -78,9 +78,9 @@
         {
           "name": "Johnston Canyon Trail",
           "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Closed.",
-          "comment": "Closed until further notice",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Adhere to all posted warnings and closures along trails; Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
           "lastUpdated": "2026-05-26"
         },
         {
@@ -152,7 +152,7 @@
           "difficulty": "Easy",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Snow covered sections",
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
           "lastUpdated": "2026-05-26"
         },
         {
@@ -222,9 +222,9 @@
         {
           "name": "Ink Pots Trail",
           "difficulty": "Moderate",
-          "status": "closed",
-          "condition": "Closed.",
-          "comment": "Closed until further notice",
+          "status": "open",
+          "condition": "Fair.",
+          "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Wet and muddy sections",
           "lastUpdated": "2026-05-26"
         },
         {
@@ -876,9 +876,9 @@
     {
       "name": "Johnston Canyon Trail",
       "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Closed.",
-      "comment": "Closed until further notice",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Adhere to all posted warnings and closures along trails; Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
       "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
@@ -959,7 +959,7 @@
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Snow covered sections",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
       "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
@@ -1038,9 +1038,9 @@
     {
       "name": "Ink Pots Trail",
       "difficulty": "Moderate",
-      "status": "closed",
-      "condition": "Closed.",
-      "comment": "Closed until further notice",
+      "status": "open",
+      "condition": "Fair.",
+      "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Wet and muddy sections",
       "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
