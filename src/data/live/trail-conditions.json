@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-05-26T18:19:08.793Z",
+  "updatedAt": "2026-05-26T21:29:46.837Z",
   "fireDanger": "low",
   "summary": {
     "total": 97,
-    "open": 34,
+    "open": 33,
     "caution": 44,
-    "closed": 19
+    "closed": 20
   },
   "areas": [
     {
@@ -222,9 +222,9 @@
         {
           "name": "Ink Pots Trail",
           "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Wet and muddy sections",
+          "status": "closed",
+          "condition": "Closed.",
+          "comment": "Closed until further notice",
           "lastUpdated": "2026-05-26"
         },
         {
@@ -1038,9 +1038,9 @@
     {
       "name": "Ink Pots Trail",
       "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Wet and muddy sections",
+      "status": "closed",
+      "condition": "Closed.",
+      "comment": "Closed until further notice",
       "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },

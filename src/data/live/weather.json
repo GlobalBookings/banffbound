@@ -1,32 +1,32 @@
 {
-  "updatedAt": "2026-05-26T18:19:05.171Z",
+  "updatedAt": "2026-05-26T21:29:46.963Z",
   "banff": {
     "current": {
-      "temp": 21,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 38,
-      "wind": "3 km/h"
+      "temp": 23,
+      "condition": "Mainly clear",
+      "icon": "🌤️",
+      "humidity": 32,
+      "wind": "7 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 23,
+        "high": 24,
         "low": 9,
         "condition": "Moderate drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Wednesday",
-        "high": 22,
-        "low": 12,
-        "condition": "Moderate rain showers",
+        "high": 23,
+        "low": 11,
+        "condition": "Heavy rain",
         "icon": "🌧️"
       },
       {
         "day": "Thursday",
         "high": 24,
-        "low": 12,
+        "low": 11,
         "condition": "Moderate drizzle",
         "icon": "🌦️"
       },
@@ -48,31 +48,31 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 17,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 66,
-      "wind": "10 km/h"
+      "temp": 18,
+      "condition": "Mainly clear",
+      "icon": "🌤️",
+      "humidity": 65,
+      "wind": "18 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 18,
         "low": 8,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
+        "condition": "Dense drizzle",
+        "icon": "🌧️"
       },
       {
         "day": "Wednesday",
-        "high": 21,
-        "low": 8,
-        "condition": "Light drizzle",
+        "high": 19,
+        "low": 11,
+        "condition": "Moderate drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Thursday",
         "high": 25,
-        "low": 9,
+        "low": 8,
         "condition": "Light drizzle",
         "icon": "🌦️"
       },
