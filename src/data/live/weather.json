@@ -1,24 +1,95 @@
 {
-  "updatedAt": "2026-05-26T14:48:56.316Z",
+  "updatedAt": "2026-05-26T15:29:00.519Z",
   "banff": {
     "current": {
-      "temp": null,
-      "condition": "Unknown",
-      "icon": "🌡️",
-      "humidity": null,
-      "wind": ""
+      "temp": 15,
+      "condition": "Overcast",
+      "icon": "☁️",
+      "humidity": 66,
+      "wind": "3 km/h"
     },
-    "forecast": []
+    "forecast": [
+      {
+        "day": "Today",
+        "high": 23,
+        "low": 9,
+        "condition": "Moderate drizzle",
+        "icon": "🌦️"
+      },
+      {
+        "day": "Wednesday",
+        "high": 22,
+        "low": 13,
+        "condition": "Moderate rain showers",
+        "icon": "🌧️"
+      },
+      {
+        "day": "Thursday",
+        "high": 22,
+        "low": 12,
+        "condition": "Thunderstorm",
+        "icon": "⛈️"
+      },
+      {
+        "day": "Friday",
+        "high": 23,
+        "low": 11,
+        "condition": "Foggy",
+        "icon": "🌫️"
+      },
+      {
+        "day": "Saturday",
+        "high": 16,
+        "low": 9,
+        "condition": "Slight rain",
+        "icon": "🌦️"
+      }
+    ]
   },
   "lakeLouise": {
     "current": {
-      "temp": null,
-      "condition": "Unknown",
-      "icon": "🌡️",
-      "humidity": null,
-      "wind": ""
+      "temp": 14,
+      "condition": "Overcast",
+      "icon": "☁️",
+      "humidity": 66,
+      "wind": "7 km/h"
     },
-    "forecast": []
-  },
-  "error": "fetch failed"
+    "forecast": [
+      {
+        "day": "Today",
+        "high": 17,
+        "low": 8,
+        "condition": "Slight rain showers",
+        "icon": "🌦️"
+      },
+      {
+        "day": "Wednesday",
+        "high": 21,
+        "low": 8,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
+      },
+      {
+        "day": "Thursday",
+        "high": 21,
+        "low": 9,
+        "condition": "Slight rain showers",
+        "icon": "🌦️"
+      },
+      {
+        "day": "Friday",
+        "high": 20,
+        "low": 11,
+        "condition": "Foggy",
+        "icon": "🌫️"
+      },
+      {
+        "day": "Saturday",
+        "high": 13,
+        "low": 7,
+        "condition": "Thunderstorm",
+        "icon": "⛈️"
+      }
+    ]
+  }
 }

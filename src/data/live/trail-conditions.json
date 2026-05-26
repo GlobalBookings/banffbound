@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-26T14:48:54.495Z",
+  "updatedAt": "2026-05-26T15:29:08.499Z",
   "fireDanger": "low",
   "summary": {
     "total": 97,
@@ -17,15 +17,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-05-25"
+          "lastUpdated": "2026-05-26"
         },
         {
           "name": "Marsh Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Biking excluding e-bikes is allowed; Frequent horse use; Wet and muddy sections",
-          "lastUpdated": "2026-05-25"
+          "comment": "Biking excluding e-bikes is allowed; Heavy horse use; Wet and muddy sections",
+          "lastUpdated": "2026-05-26"
         },
         {
           "name": "Silverton Falls Trail",
@@ -33,7 +33,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet with muddy sections",
-          "lastUpdated": "2026-05-25"
+          "lastUpdated": "2026-05-26"
         },
         {
           "name": "Johnson Lake Loop",
@@ -41,7 +41,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-05-25"
+          "lastUpdated": "2026-05-26"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
@@ -49,7 +49,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-          "lastUpdated": "2026-05-25"
+          "lastUpdated": "2026-05-26"
         },
         {
           "name": "Tunnel Campground Loop",
@@ -57,7 +57,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-05-25"
+          "lastUpdated": "2026-05-26"
         },
         {
           "name": "Vermilion Lakes Drive",
@@ -65,7 +65,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-05-25"
+          "lastUpdated": "2026-05-26"
         },
         {
           "name": "Sundance Trail",
@@ -73,7 +73,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-05-25"
+          "lastUpdated": "2026-05-26"
         },
         {
           "name": "Johnston Canyon Trail",
@@ -807,7 +807,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-05-25",
+      "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
     {
@@ -815,8 +815,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Biking excluding e-bikes is allowed; Frequent horse use; Wet and muddy sections",
-      "lastUpdated": "2026-05-25",
+      "comment": "Biking excluding e-bikes is allowed; Heavy horse use; Wet and muddy sections",
+      "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
     {
@@ -825,7 +825,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet with muddy sections",
-      "lastUpdated": "2026-05-25",
+      "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
     {
@@ -834,7 +834,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-05-25",
+      "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
     {
@@ -843,7 +843,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-      "lastUpdated": "2026-05-25",
+      "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
     {
@@ -852,7 +852,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-05-25",
+      "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
     {
@@ -861,7 +861,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-05-25",
+      "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
     {
@@ -870,7 +870,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-05-25",
+      "lastUpdated": "2026-05-26",
       "area": "Banff Area"
     },
     {
