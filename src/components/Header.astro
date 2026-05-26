@@ -41,9 +41,9 @@ const megaMenus = {
       },
     ],
     featured: [
-      { href: '/trail-map', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=75&fm=webp', title: 'Interactive Trail Map', subtitle: '80+ trails with GPS routes' },
-      { href: '/lakes', image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=400&q=75&fm=webp', title: 'Iconic Lakes', subtitle: 'Lake Louise, Moraine & more' },
-      { href: '/eat-and-drink', image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=75&fm=webp', title: 'Eat & Drink', subtitle: 'Restaurants, bars & cafes' },
+      { href: '/trail-map', image: '/images/menu/trail-map.png', title: 'Interactive Trail Map', subtitle: '80+ trails with GPS routes' },
+      { href: '/lakes', image: '/images/menu/lakes.png', title: 'Iconic Lakes', subtitle: 'Lake Louise, Moraine & more' },
+      { href: '/eat-and-drink', image: '/images/menu/eat-and-drink.png', title: 'Eat & Drink', subtitle: 'Restaurants, bars & cafes' },
     ],
   },
   'Plan Your Trip': {
@@ -83,9 +83,9 @@ const megaMenus = {
       },
     ],
     featured: [
-      { href: '/tools', image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=400&q=75&fm=webp', title: 'Planning Tools', subtitle: '30+ free interactive guides' },
-      { href: '/what-to-do-today', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=75&fm=webp', title: 'What To Do Today', subtitle: 'Weather-based suggestions' },
-      { href: '/packing-list', image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=400&q=75&fm=webp', title: 'Packing List', subtitle: 'Seasonal gear checklist' },
+      { href: '/tools', image: '/images/menu/planning-tools.png', title: 'Planning Tools', subtitle: '30+ free interactive guides' },
+      { href: '/what-to-do-today', image: '/images/menu/what-to-do-today.png', title: 'What To Do Today', subtitle: 'Weather-based suggestions' },
+      { href: '/packing-list', image: '/images/menu/packing-list.png', title: 'Packing List', subtitle: 'Seasonal gear checklist' },
     ],
   },
   'Safety': {
@@ -110,8 +110,8 @@ const megaMenus = {
       },
     ],
     featured: [
-      { href: '/wildlife-safety', image: 'https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=400&q=75&fm=webp', title: 'Wildlife Safety', subtitle: 'Bear, elk & cougar protocols' },
-      { href: '/emergency-card', image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400&q=75&fm=webp', title: 'Emergency Card', subtitle: 'Printable SOS contacts' },
+      { href: '/wildlife-safety', image: '/images/menu/wildlife-safety.png', title: 'Wildlife Safety', subtitle: 'Bear, elk & cougar protocols' },
+      { href: '/emergency-card', image: '/images/menu/emergency-card.png', title: 'Emergency Card', subtitle: 'Printable SOS contacts' },
     ],
   },
   'Where To Stay': {
@@ -142,9 +142,9 @@ const megaMenus = {
       },
     ],
     featured: [
-      { href: '/hotel-directory', image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&q=75&fm=webp', title: 'Hotel Directory', subtitle: '95 properties with map' },
-      { href: '/hotel-directory?area=Lake+Louise', image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400&q=75&fm=webp', title: 'Lake Louise Hotels', subtitle: 'Stay by the lake' },
-      { href: '/hotel-directory?type=Resort', image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=75&fm=webp', title: 'Luxury Resorts', subtitle: 'Mountain retreats' },
+      { href: '/hotel-directory', image: '/images/menu/hotel-directory.png', title: 'Hotel Directory', subtitle: '95 properties with map' },
+      { href: '/hotel-directory?area=Lake+Louise', image: '/images/menu/lake-louise-hotels.png', title: 'Lake Louise Hotels', subtitle: 'Stay by the lake' },
+      { href: '/hotel-directory?type=Resort', image: '/images/menu/luxury-resorts.png', title: 'Luxury Resorts', subtitle: 'Mountain retreats' },
     ],
   },
 };
@@ -213,7 +213,7 @@ const directLinks = [
               <div class="mega-featured">
                 {menu.featured.map(item => (
                   <a href={item.href} class="mega-card">
-                    <img src={item.image} alt={item.title} loading="lazy" />
+                    <img src={item.image} alt={item.title} width="400" height="225" loading="lazy" />
                     <div class="mega-card-overlay">
                       <span class="mega-card-title">{item.title}</span>
                       <span class="mega-card-sub">{item.subtitle}</span>
