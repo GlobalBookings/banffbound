@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-05-27T14:58:20.404Z",
+  "updatedAt": "2026-05-27T18:20:58.567Z",
   "fireDanger": "low",
   "summary": {
-    "total": 97,
+    "total": 96,
     "open": 35,
-    "caution": 44,
+    "caution": 43,
     "closed": 18
   },
   "areas": [
@@ -707,14 +707,6 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Snowbound; Risk of post-holing; Not yet maintained",
-          "lastUpdated": "2026-05-04"
-        },
-        {
-          "name": "Mosquito Creek Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Snow covered with variable spring conditions: ice/snow crust/slush/fresh snow ; Snowshoes or ice cleats recommended",
           "lastUpdated": "2026-05-04"
         },
         {
@@ -1572,15 +1564,6 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Snowbound; Risk of post-holing; Not yet maintained",
-      "lastUpdated": "2026-05-04",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Mosquito Creek Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Snow covered with variable spring conditions: ice/snow crust/slush/fresh snow ; Snowshoes or ice cleats recommended",
       "lastUpdated": "2026-05-04",
       "area": "Icefields Parkway Area"
     },
