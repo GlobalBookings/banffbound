@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-27T02:38:14.673Z",
+  "updatedAt": "2026-05-27T07:57:16.461Z",
   "fireDanger": "low",
   "summary": {
     "total": 97,
@@ -1676,6 +1676,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "WARNING: Boom, Arnica, and Twin Lakes Trails",
+      "type": "WARNING",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Area Closure: Tunnel Toe Wildfire Risk Reduction Project (Block B)",
       "type": "Area Closure",
