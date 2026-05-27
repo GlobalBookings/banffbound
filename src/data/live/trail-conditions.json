@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-27T11:36:15.716Z",
+  "updatedAt": "2026-05-27T14:58:20.404Z",
   "fireDanger": "low",
   "summary": {
     "total": 97,
@@ -1677,8 +1677,8 @@
   ],
   "advisories": [
     {
-      "title": "WARNING: Boom, Arnica, and Twin Lakes Trails",
-      "type": "WARNING",
+      "title": "Warning: Boom, Arnica, and Twin Lakes Trails",
+      "type": "Warning",
       "issued": "",
       "ends": ""
     },
