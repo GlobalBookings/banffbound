@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-28T21:51:05.237Z",
+  "updatedAt": "2026-05-28T23:08:19.824Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -548,8 +548,8 @@
           "name": "Pipestone Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Numerous trees down on trail",
+          "condition": "Fair.",
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
           "lastUpdated": "2026-05-28"
         },
         {
@@ -1391,8 +1391,8 @@
       "name": "Pipestone Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Numerous trees down on trail",
+      "condition": "Fair.",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
       "lastUpdated": "2026-05-28",
       "area": "Lake Louise Area"
     },
@@ -1659,6 +1659,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Area Closure: Fenland Area",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Advisory: Mating loons are sensitive to human disturbance!",
       "type": "Advisory",
