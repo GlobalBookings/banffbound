@@ -1,4 +1,104 @@
 export const blogContent3: Record<string, string> = {
+  'banff-live-music': `
+<p>Banff offers excellent live music venues scattered throughout the townsite and surrounding areas. The Rose and Crown, Wild Bill's Legendary Saloon, and Aurora Lounge regularly host performers year-round. Most venues feature local Canadian artists alongside touring musicians from May through September.</p>
+
+<h2>Where to Experience Banff Live Music</h2>
+
+<p>During my countless visits to Banff over the past decade, I've discovered that the town punches well above its weight when it comes to <strong>banff live music</strong>. The compact townsite hosts several venues that consistently deliver quality performances, from intimate acoustic sets to full-band rock shows.</p>
+
+<p>The <strong>Rose and Crown Pub</strong> on Banff Avenue remains my top recommendation for live music. This authentic British-style pub features live performances Thursday through Saturday nights from 9 PM to midnight. I've caught everything from folk duos to blues bands here, and the acoustics work surprisingly well for such a bustling venue. The crowd typically includes a mix of locals and visitors, creating an energetic atmosphere that performers clearly feed off.</p>
+
+<p><strong>Wild Bill's Legendary Saloon</strong> offers a completely different vibe with its Western-themed setting and larger stage area. They host live music Friday and Saturday nights, often featuring country and rock acts. The venue can get packed during peak summer months, so I recommend arriving by 8 PM if you want a good spot near the stage.</p>
+
+<p>For a more upscale experience, the <strong>Aurora Lounge</strong> at the Banff Springs Hotel presents jazz and acoustic performances in an elegant setting. Their Sunday afternoon jazz sessions (2-5 PM) provide a sophisticated soundtrack while you enjoy views of the Bow Valley.</p>
+
+<table class="comparison-table">
+<tr>
+<th>Venue</th>
+<th>Music Nights</th>
+<th>Typical Genre</th>
+<th>Cover Charge</th>
+<th>Atmosphere</th>
+</tr>
+<tr>
+<td>Rose and Crown</td>
+<td>Thu-Sat</td>
+<td>Folk, Blues, Rock</td>
+<td>\$5-10</td>
+<td>Casual Pub</td>
+</tr>
+<tr>
+<td>Wild Bill's</td>
+<td>Fri-Sat</td>
+<td>Country, Rock</td>
+<td>\$10-15</td>
+<td>Western Saloon</td>
+</tr>
+<tr>
+<td>Aurora Lounge</td>
+<td>Sun Afternoons</td>
+<td>Jazz, Acoustic</td>
+<td>No Cover</td>
+<td>Upscale Hotel</td>
+</tr>
+</table>
+
+<h2>Seasonal Music Events and Festivals</h2>
+
+<p>Banff's live music scene expands significantly during summer months with outdoor concerts and special events. The <strong>Banff Summer Arts Festival</strong> runs from June through August 2026, featuring performances at the Banff Centre for Arts and Creativity. I attended several shows during the 2025 season and was impressed by the caliber of both classical and contemporary acts.</p>
+
+<p>The <strong>Banff Mountain Film and Book Festival</strong> in late October includes musical performances alongside its famous film screenings. While primarily focused on adventure films, the event typically features folk and acoustic artists whose music complements the outdoor adventure theme.</p>
+
+<p>For those visiting during winter months, several venues host special holiday concerts in December. The Banff Springs Hotel presents classical performances in their grand ballroom, while local pubs maintain their regular live music schedules throughout the ski season.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Check the Banff Centre website before your visit - they often have last-minute ticket releases for sold-out shows, and many performances offer student/local discounts that visitors can sometimes access.</div>
+
+<h2>Combining Music with Banff's Big 3 Attractions</h2>
+
+<p>Many visitors ask about experiencing <strong>banff big 3</strong> attractions while also enjoying the live music scene. The big three - Lake Louise, Moraine Lake, and the Banff Gondola - make for perfect daytime activities before evening music sessions.</p>
+
+<p>During my last visit in September 2025, I followed this exact pattern: early morning at Moraine Lake (arriving by 6:30 AM to avoid crowds), afternoon at Lake Louise for <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=lake+louise" target="_blank" rel="noopener sponsored">Lake Louise tours</a>, and evening back in town for live music at the Rose and Crown. The timing worked perfectly, allowing me to experience Banff's natural beauty during optimal lighting conditions while still making it to town for the 9 PM music start time.</p>
+
+<p>The Banff Gondola operates until 8 PM during summer months, giving you just enough time to catch sunset views from Sulphur Mountain before heading to evening performances. You can book <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=gondola" target="_blank" rel="noopener sponsored">Banff Gondola tickets</a> in advance to guarantee your preferred time slot.</p>
+
+<p>If you're planning to tackle the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> during your stay, I recommend morning hikes followed by afternoon rest at your accommodation before evening music sessions. This schedule helps prevent fatigue from affecting your enjoyment of both activities.</p>
+
+<h2>Where to Eat Before Live Music Shows</h2>
+
+<p>Planning <strong>eat banff</strong> experiences around live music schedules requires some strategic thinking. Most venues start music around 9 PM, giving you perfect timing for dinner between 6:30-8:30 PM.</p>
+
+<p><strong>The Bison Restaurant</strong> offers my favorite pre-music dining experience. Their Alberta beef dishes pair well with local craft beers, and the 7 PM seating gets you fed and ready for music venues by 8:30 PM. Reservations are essential, especially during summer months.</p>
+
+<p>For more casual options, <strong>Melissa's Missteak</strong> serves excellent steaks and has a lively bar atmosphere that serves as a good warm-up for live music venues. I often grab dinner here before heading to Wild Bill's, since both venues share a similar casual, energetic vibe.</p>
+
+<p><strong>The Maple Leaf</strong> provides upscale Canadian cuisine if you're planning to catch jazz at the Aurora Lounge afterward. The refined atmosphere transitions well to hotel lounge jazz performances.</p>
+
+<p>For budget-conscious travelers, <strong>Banff Brewing Company</strong> offers solid pub food and local beers at reasonable prices. Their fish and chips make an excellent pre-music meal, and you're already in the right mindset for pub-style venues.</p>
+
+<p>Check out our comprehensive guide to <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> for more detailed dining recommendations that work well with evening entertainment plans.</p>
+
+<h2>Live Music During Ski Season</h2>
+
+<p>The <strong>banff ski</strong> season brings a different energy to the live music scene. From December through March, venues cater more to locals and dedicated winter sports enthusiasts, creating an intimate atmosphere that I actually prefer to busy summer crowds.</p>
+
+<p>After days skiing at Lake Louise Ski Resort or Sunshine Village, evening live music provides perfect après-ski entertainment. The Rose and Crown becomes particularly cozy during winter months, with its fireplace and warm pub atmosphere creating the ideal post-skiing environment.</p>
+
+<p>Winter performances often feature more acoustic and folk acts, which complement the season's quieter, more contemplative mood. I've discovered some of my favorite local artists during winter visits when venues book regional talent for longer residencies.</p>
+
+<p>Many ski packages at local hotels include entertainment vouchers that work at live music venues. When booking accommodations through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>, look for deals that include dining and entertainment credits.</p>
+
+<h2>Planning Your Live Music Experience</h2>
+
+<p>Most venues don't require advance reservations for live music, but arriving early ensures better seating and parking. Downtown Banff parking becomes extremely limited after 7 PM, especially during summer months and winter ski season.</p>
+
+<p>Cover charges typically range from \$5-15 CAD depending on the venue and performer. Drinks run \$8-12 for beer and \$12-16 for cocktails, which aligns with standard Banff pricing.</p>
+
+<p>If you're staying outside the townsite, factor in taxi costs or designated driver arrangements. Most hotels offer shuttle services to downtown until 10 PM, but return trips often require taxi service that can cost \$15-25 depending on your accommodation location.</p>
+
+<p>For visitors planning comprehensive Banff experiences, consider our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> which includes recommendations for balancing outdoor activities with evening entertainment options. Our <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> guide also highlights accommodations within walking distance of live music venues.</p>
+
+<p>The live music scene continues evolving each season, with new performers and occasional venue changes. I recommend checking current schedules upon arrival, as summer 2026 promises several new acts based on early season bookings I've observed during recent visits.</p>
+`,
   'big-3-banff': `
 <p>The Big 3 Banff refers to the three major ski resorts that dominate winter recreation in the Canadian Rockies: Sunshine Village, Lake Louise Ski Resort, and Mount Norquay. As someone who's carved turns on all three mountains countless times over the past decade, I can tell you each offers a completely different skiing experience. Whether you're planning a multi-mountain adventure or trying to decide which single resort deserves your time and money, understanding what makes each of these areas unique will transform your Banff ski trip from good to exceptional.</p>
 

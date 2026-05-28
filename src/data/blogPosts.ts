@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-live-music',
+    title: 'Banff\'s Best Live Music Venues & Shows 2026: Your Guide',
+    description: 'Discover Banff\'s top live music venues and concerts in 2026. From intimate alpine bars to outdoor amphitheaters, find the best shows and performances.',
+    date: '2026-05-28',
+    category: 'Guides',
+    image: '/images/blog/banff-live-music.webp',
+    readTime: '7 min read',
+  },
+  {
     slug: 'big-3-banff',
     title: 'Banff\'s Big 3 Lakes: 2026 Ultimate Photography Guide',
     description: 'Discover Banff\'s iconic Lake Louise, Moraine Lake & Bow Lake in our 2026 photography guide. Pro tips, best viewpoints, and seasonal shooting advice included.',
