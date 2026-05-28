@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-05-28T15:32:01.614Z",
+  "updatedAt": "2026-05-28T18:30:58.148Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 35,
-    "caution": 40,
-    "closed": 21
+    "open": 39,
+    "caution": 37,
+    "closed": 20
   },
   "areas": [
     {
@@ -25,7 +25,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Biking excluding e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Silverton Falls Trail",
@@ -33,7 +33,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet with muddy sections",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Johnson Lake Loop",
@@ -41,7 +41,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
@@ -49,7 +49,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Tunnel Campground Loop",
@@ -57,7 +57,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Vermilion Lakes Drive",
@@ -65,7 +65,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Sundance Trail",
@@ -73,7 +73,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Johnston Canyon Trail",
@@ -81,7 +81,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Adhere to all posted warnings and closures along trails; Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Boom Lake Trail",
@@ -89,7 +89,7 @@
           "status": "caution",
           "condition": "Avalanche terrain.",
           "comment": "Avalanche terrain; Snow covered sections; Wet and muddy sections; Cleats recommended; Risk of post-holing; Bears frequenting the area; Bear warning in effect",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Water Tower Trail",
@@ -97,7 +97,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking excluding e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Healy Creek Trail",
@@ -105,7 +105,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Biking excluding e-bikes is allowed; Snow covered sections; Wet and muddy sections",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Spray River West Trail",
@@ -281,7 +281,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound; Risk of post-holing; Bear warning in effect; Bears frequenting the area",
-          "lastUpdated": "2026-05-27"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Harvey Pass Trail",
@@ -374,9 +374,9 @@
         {
           "name": "Cory Pass Loop",
           "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Closed.",
-          "comment": "Closed until further notice; Flooded sections",
+          "status": "open",
+          "condition": "Caution.",
+          "comment": "Dangerous snow conditions; Avalanche danger at high altitude; Bridge(s) out; Numerous trees down on trail; Risk of post-holing; Use caution",
           "lastUpdated": "2026-05-28"
         },
         {
@@ -420,9 +420,9 @@
           "name": "Fairview Lookout Trail",
           "difficulty": "Easy",
           "status": "caution",
-          "condition": "Snow covered with icy sections.",
+          "condition": "Snow covered with wet, muddy and slippery sections.",
           "comment": "Snow covered; Icy sections; Cleats recommended; Deadfall on trail",
-          "lastUpdated": "2026-05-23"
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Great Divide Trail",
@@ -477,16 +477,16 @@
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Hazardous conditions.",
-          "comment": "Avalanche danger; Snowbound; Risk of post-holing; Respect all posted notices and signs; Not yet maintained",
-          "lastUpdated": "2026-05-23"
+          "comment": "Avalanche danger; Snowbound; Risk of post-holing; Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Big Beehive to Plain of Six Glaciers Trail",
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Hazardous conditions.",
-          "comment": "Avalanche danger; Snowbound; Risk of post-holing; Respect all posted notices and signs; Not yet maintained",
-          "lastUpdated": "2026-05-23"
+          "comment": "Avalanche danger; Snowbound; Risk of post-holing; Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Castle Lookout Trail",
@@ -548,9 +548,9 @@
           "name": "Pipestone Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Some muddy sections.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered sections; Wet and muddy sections; Deadfall on trail",
-          "lastUpdated": "2026-05-17"
+          "condition": "Poor.",
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Numerous trees down on trail",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Plain of Six Glaciers Trail",
@@ -672,26 +672,26 @@
         {
           "name": "Mistaya Canyon Trail",
           "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Snow covered with variable spring conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-05-13"
+          "status": "open",
+          "condition": "Mainly Dry.",
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Peyto Lake Viewpoint Trail",
           "difficulty": "Easy",
           "status": "caution",
           "condition": "Snow covered with icy sections.",
-          "comment": "Snow covered with variable spring conditions: ice/snow crust/slush/fresh snow ; Cleats recommended; Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-05-04"
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended; Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Chephren Lake Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Snowbound; Risk of post-holing; Not yet maintained",
-          "lastUpdated": "2026-05-04"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Not yet maintained; Deadfall on trail; Wet and muddy sections",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Bow Glacier Falls Trail",
@@ -704,10 +704,10 @@
         {
           "name": "Cirque Lake Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Snowbound; Risk of post-holing; Not yet maintained",
-          "lastUpdated": "2026-05-04"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Not yet maintained; Deadfall on trail; Wet and muddy sections",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Helen Lake Trail",
@@ -745,9 +745,9 @@
           "name": "Glacier Lake Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Wet and snowy sections.",
-          "comment": "Snow covered sections; Numerous trees down on trail; Wet and muddy sections",
-          "lastUpdated": "2026-05-14"
+          "condition": "Some wet sections.",
+          "comment": "Wet and muddy sections; Mainly dry",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Molar Pass Trail",
@@ -808,7 +808,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Biking excluding e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -817,7 +817,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet with muddy sections",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -826,7 +826,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -835,7 +835,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -844,7 +844,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -853,7 +853,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -862,7 +862,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -871,7 +871,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Adhere to all posted warnings and closures along trails; Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -880,7 +880,7 @@
       "status": "caution",
       "condition": "Avalanche terrain.",
       "comment": "Avalanche terrain; Snow covered sections; Wet and muddy sections; Cleats recommended; Risk of post-holing; Bears frequenting the area; Bear warning in effect",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -889,7 +889,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking excluding e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -898,7 +898,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Biking excluding e-bikes is allowed; Snow covered sections; Wet and muddy sections",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -1096,7 +1096,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound; Risk of post-holing; Bear warning in effect; Bears frequenting the area",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -1201,9 +1201,9 @@
     {
       "name": "Cory Pass Loop",
       "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Closed.",
-      "comment": "Closed until further notice; Flooded sections",
+      "status": "open",
+      "condition": "Caution.",
+      "comment": "Dangerous snow conditions; Avalanche danger at high altitude; Bridge(s) out; Numerous trees down on trail; Risk of post-holing; Use caution",
       "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
@@ -1247,9 +1247,9 @@
       "name": "Fairview Lookout Trail",
       "difficulty": "Easy",
       "status": "caution",
-      "condition": "Snow covered with icy sections.",
+      "condition": "Snow covered with wet, muddy and slippery sections.",
       "comment": "Snow covered; Icy sections; Cleats recommended; Deadfall on trail",
-      "lastUpdated": "2026-05-23",
+      "lastUpdated": "2026-05-28",
       "area": "Lake Louise Area"
     },
     {
@@ -1311,8 +1311,8 @@
       "difficulty": "Moderate",
       "status": "caution",
       "condition": "Hazardous conditions.",
-      "comment": "Avalanche danger; Snowbound; Risk of post-holing; Respect all posted notices and signs; Not yet maintained",
-      "lastUpdated": "2026-05-23",
+      "comment": "Avalanche danger; Snowbound; Risk of post-holing; Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.",
+      "lastUpdated": "2026-05-28",
       "area": "Lake Louise Area"
     },
     {
@@ -1320,8 +1320,8 @@
       "difficulty": "Moderate",
       "status": "caution",
       "condition": "Hazardous conditions.",
-      "comment": "Avalanche danger; Snowbound; Risk of post-holing; Respect all posted notices and signs; Not yet maintained",
-      "lastUpdated": "2026-05-23",
+      "comment": "Avalanche danger; Snowbound; Risk of post-holing; Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.",
+      "lastUpdated": "2026-05-28",
       "area": "Lake Louise Area"
     },
     {
@@ -1391,9 +1391,9 @@
       "name": "Pipestone Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Some muddy sections.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered sections; Wet and muddy sections; Deadfall on trail",
-      "lastUpdated": "2026-05-17",
+      "condition": "Poor.",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Numerous trees down on trail",
+      "lastUpdated": "2026-05-28",
       "area": "Lake Louise Area"
     },
     {
@@ -1525,10 +1525,10 @@
     {
       "name": "Mistaya Canyon Trail",
       "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Snow covered with variable spring conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-05-13",
+      "status": "open",
+      "condition": "Mainly Dry.",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-05-28",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1536,17 +1536,17 @@
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Snow covered with icy sections.",
-      "comment": "Snow covered with variable spring conditions: ice/snow crust/slush/fresh snow ; Cleats recommended; Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-05-04",
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended; Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-05-28",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "Chephren Lake Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Snowbound; Risk of post-holing; Not yet maintained",
-      "lastUpdated": "2026-05-04",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Not yet maintained; Deadfall on trail; Wet and muddy sections",
+      "lastUpdated": "2026-05-28",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1561,10 +1561,10 @@
     {
       "name": "Cirque Lake Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Snowbound; Risk of post-holing; Not yet maintained",
-      "lastUpdated": "2026-05-04",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Not yet maintained; Deadfall on trail; Wet and muddy sections",
+      "lastUpdated": "2026-05-28",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1607,9 +1607,9 @@
       "name": "Glacier Lake Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Wet and snowy sections.",
-      "comment": "Snow covered sections; Numerous trees down on trail; Wet and muddy sections",
-      "lastUpdated": "2026-05-14",
+      "condition": "Some wet sections.",
+      "comment": "Wet and muddy sections; Mainly dry",
+      "lastUpdated": "2026-05-28",
       "area": "Icefields Parkway Area"
     },
     {
