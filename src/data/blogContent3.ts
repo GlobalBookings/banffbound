@@ -100,7 +100,7 @@ export const blogContent3: Record<string, string> = {
 <p>The live music scene continues evolving each season, with new performers and occasional venue changes. I recommend checking current schedules upon arrival, as summer 2026 promises several new acts based on early season bookings I've observed during recent visits.</p>
 `,
   'big-3-banff': `
-<p>The Big 3 Banff refers to the three major ski resorts that dominate winter recreation in the Canadian Rockies: Sunshine Village, Lake Louise Ski Resort, and Mount Norquay. As someone who's carved turns on all three mountains countless times over the past decade, I can tell you each offers a completely different skiing experience. Whether you're planning a multi-mountain adventure or trying to decide which single resort deserves your time and money, understanding what makes each of these areas unique will transform your Banff ski trip from good to exceptional.</p>
+<p>The Big 3 <a href="/blog/banff-live-music">Banff's Best Live Music Venues & Shows</a> refers to the three major ski resorts that dominate winter recreation in the Canadian Rockies: Sunshine Village, Lake Louise Ski Resort, and Mount Norquay. As someone who's carved turns on all three mountains countless times over the past decade, I can tell you each offers a completely different skiing experience. Whether you're planning a multi-mountain adventure or trying to decide which single resort deserves your time and money, understanding what makes each of these areas unique will transform your Banff ski trip from good to exceptional.</p>
 
 <h2>Understanding the Big 3 Banff Ski Resorts</h2>
 
@@ -685,7 +685,7 @@ export const blogContent3: Record<string, string> = {
 <p>Mt Norquay Road opens up a world of adventure that many visitors miss in their rush to reach Lake Louise or the Icefields Parkway. Whether you're seeking challenging ski runs, scenic summer chairlift rides, or access to excellent hiking trails, this easily accessible mountain delivers authentic Rocky Mountain experiences without the crowds. The road itself becomes part of the adventure, offering glimpses of the rugged wilderness that makes Banff National Park such a remarkable destination.</p>
 `,
   'golden-banff': `
-<p>After running countless trails and skiing endless powder in the Canadian Rockies, I can tell you that <a href="/blog/big-3-banff">Banff's Big 3 Lakes Photography</a> National Park offers some of the most spectacular mountain experiences in North America. The golden light that hits these peaks at sunrise and sunset creates what locals call "golden Banff" moments – those perfect conditions that make every photo look like a postcard and every adventure feel larger than life.</p>
+<p>After running countless trails and skiing endless powder in the Canadian Rockies, I can tell you that <a href="/blog/big-3-banff"><a href="/blog/banff-live-music">Banff's Best Live Music Venues & Shows</a>'s Big 3 Lakes Photography</a> National Park offers some of the most spectacular mountain experiences in North America. The golden light that hits these peaks at sunrise and sunset creates what locals call "golden Banff" moments – those perfect conditions that make every photo look like a postcard and every adventure feel larger than life.</p>
 
 <h2>Why "Golden Banff" Creates the Perfect Mountain Experience</h2>
 
@@ -832,7 +832,7 @@ export const blogContent3: Record<string, string> = {
 <p>The Big 3 ski experience represents one of North America's premier mountain destinations, combining world-class terrain with stunning Rocky Mountain scenery. Plan ahead, dress appropriately for mountain weather, and prepare for skiing that will challenge and inspire you regardless of your ability level.</p>
 `,
   'big-three-banff': `
-<p>When people ask me about the <strong>big <a href="/blog/big-three-ski"><a href="/blog/big-3-banff">Banff's Big 3 Lakes Photography</a>'s Big Three Ski Resorts</a> <a href="/blog/golden-banff">Golden Banff : to Canada's Crown Jewel</a></strong> ski areas, I tell them they're looking at some of the most accessible alpine skiing in the Canadian Rockies. Mount Norquay, Sunshine Village, and Lake Louise Ski Resort form this legendary trio that puts world-class skiing right at your doorstep when you stay in Banff townsite. As someone who's carved turns on all three mountains countless times over the years, I can tell you each offers something completely different – and that's exactly what makes this combination so special.</p>
+<p>When people ask me about the <strong>big <a href="/blog/big-three-ski"><a href="/blog/big-3-banff"><a href="/blog/banff-live-music">Banff's Best Live Music Venues & Shows</a>'s Big 3 Lakes Photography</a>'s Big Three Ski Resorts</a> <a href="/blog/golden-banff">Golden Banff : to Canada's Crown Jewel</a></strong> ski areas, I tell them they're looking at some of the most accessible alpine skiing in the Canadian Rockies. Mount Norquay, Sunshine Village, and Lake Louise Ski Resort form this legendary trio that puts world-class skiing right at your doorstep when you stay in Banff townsite. As someone who's carved turns on all three mountains countless times over the years, I can tell you each offers something completely different – and that's exactly what makes this combination so special.</p>
 
 <h2>Understanding the Big Three: Your Complete Overview</h2>
 
