@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-05-28T11:31:29.715Z",
+  "updatedAt": "2026-05-28T15:32:01.614Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 37,
-    "caution": 41,
-    "closed": 18
+    "open": 35,
+    "caution": 40,
+    "closed": 21
   },
   "areas": [
     {
@@ -14,10 +14,10 @@
         {
           "name": "Fenland Loop",
           "difficulty": "Easy",
-          "status": "open",
-          "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-05-27"
+          "status": "closed",
+          "condition": "Closed.",
+          "comment": "Closed until further notice; Flooded sections",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Marsh Trail",
@@ -150,10 +150,10 @@
         {
           "name": "Cascade Valley Trail",
           "difficulty": "Easy",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-05-27"
+          "status": "closed",
+          "condition": "Closed.",
+          "comment": "Closed until further notice; Flooded sections",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Upper Stoney Trail",
@@ -374,10 +374,10 @@
         {
           "name": "Cory Pass Loop",
           "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Dangerous snow conditions; Avalanche danger at high altitude; Bridge(s) out; Numerous trees down on trail; Risk of post-holing",
-          "lastUpdated": "2026-05-27"
+          "status": "closed",
+          "condition": "Closed.",
+          "comment": "Closed until further notice; Flooded sections",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Aylmer Lookout Trail",
@@ -405,8 +405,8 @@
           "difficulty": "Easy",
           "status": "closed",
           "condition": "Partially Closed",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Snow covered sections; Trail section along the southwest side of Bow River CLOSED from May 15 to October 15",
-          "lastUpdated": "2026-05-20"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Snow patches",
+          "lastUpdated": "2026-05-28"
         },
         {
           "name": "Consolation Lakes Trail",
@@ -796,10 +796,10 @@
     {
       "name": "Fenland Loop",
       "difficulty": "Easy",
-      "status": "open",
-      "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-05-27",
+      "status": "closed",
+      "condition": "Closed.",
+      "comment": "Closed until further notice; Flooded sections",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -949,10 +949,10 @@
     {
       "name": "Cascade Valley Trail",
       "difficulty": "Easy",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-05-27",
+      "status": "closed",
+      "condition": "Closed.",
+      "comment": "Closed until further notice; Flooded sections",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -1201,10 +1201,10 @@
     {
       "name": "Cory Pass Loop",
       "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Dangerous snow conditions; Avalanche danger at high altitude; Bridge(s) out; Numerous trees down on trail; Risk of post-holing",
-      "lastUpdated": "2026-05-27",
+      "status": "closed",
+      "condition": "Closed.",
+      "comment": "Closed until further notice; Flooded sections",
+      "lastUpdated": "2026-05-28",
       "area": "Banff Area"
     },
     {
@@ -1230,8 +1230,8 @@
       "difficulty": "Easy",
       "status": "closed",
       "condition": "Partially Closed",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Snow covered sections; Trail section along the southwest side of Bow River CLOSED from May 15 to October 15",
-      "lastUpdated": "2026-05-20",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Snow patches",
+      "lastUpdated": "2026-05-28",
       "area": "Lake Louise Area"
     },
     {
