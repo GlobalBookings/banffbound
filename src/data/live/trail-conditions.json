@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-29T18:27:31.424Z",
+  "updatedAt": "2026-05-29T21:46:30.514Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -445,8 +445,8 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Snow patches; Icy sections; Wet and muddy sections",
-          "lastUpdated": "2026-05-23"
+          "comment": "Wet and muddy sections; Avalanche risk beyond the end of Lake Louise",
+          "lastUpdated": "2026-05-29"
         },
         {
           "name": "Rockpile Trail",
@@ -564,9 +564,9 @@
           "name": "Taylor Lake Trail",
           "difficulty": "Moderate",
           "status": "caution",
-          "condition": "Snow covered.",
-          "comment": "Snow covered with variable spring conditions: ice/snow crust/slush/fresh snow ; Risk of post-holing; Deadfall on trail",
-          "lastUpdated": "2026-05-16"
+          "condition": "Variable conditions.",
+          "comment": "Snow at high elevation ; Risk of post-holing; Deadfall on trail",
+          "lastUpdated": "2026-05-29"
         },
         {
           "name": "Tramline Trail",
@@ -1275,8 +1275,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Snow patches; Icy sections; Wet and muddy sections",
-      "lastUpdated": "2026-05-23",
+      "comment": "Wet and muddy sections; Avalanche risk beyond the end of Lake Louise",
+      "lastUpdated": "2026-05-29",
       "area": "Lake Louise Area"
     },
     {
@@ -1409,9 +1409,9 @@
       "name": "Taylor Lake Trail",
       "difficulty": "Moderate",
       "status": "caution",
-      "condition": "Snow covered.",
-      "comment": "Snow covered with variable spring conditions: ice/snow crust/slush/fresh snow ; Risk of post-holing; Deadfall on trail",
-      "lastUpdated": "2026-05-16",
+      "condition": "Variable conditions.",
+      "comment": "Snow at high elevation ; Risk of post-holing; Deadfall on trail",
+      "lastUpdated": "2026-05-29",
       "area": "Lake Louise Area"
     },
     {
