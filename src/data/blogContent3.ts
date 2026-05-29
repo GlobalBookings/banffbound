@@ -1,4 +1,123 @@
 export const blogContent3: Record<string, string> = {
+  'big-3-ski-resorts': `
+<p>Banff's Big 3 ski resorts are Lake Louise, Sunshine Village, and Mount Norquay. These three destinations offer distinct experiences from beginner slopes to expert terrain. A tri-area lift ticket provides access to all three mountains.</p>
+
+<h2>What Makes Each of the Big 3 Ski Resorts Unique?</h2>
+
+<p>After skiing all three resorts countless times over the past decade, I can tell you each has a distinct personality. Lake Louise delivers postcard views and long cruising runs. Sunshine Village sits entirely above the treeline with reliable powder snow. Mount Norquay offers night skiing and the steepest terrain closest to Banff townsite.</p>
+
+<p>Lake Louise Ski Resort spans 4,200 acres across four mountain faces. The Front Face caters to beginners and intermediates, while the Back Bowls challenge experts with ungroomed terrain. When I ski here, I always start early on the Summit Platter to beat crowds to the powder stashes.</p>
+
+<p>Sunshine Village operates at elevations between 1,660 and 2,730 metres, making it one of Canada's highest ski areas. The Continental Divide runs through the resort, meaning you can literally ski from Alberta into British Columbia. The Delirium Dive requires avalanche gear and provides some of the most challenging inbounds terrain I've experienced.</p>
+
+<p>Mount Norquay covers 190 acres of primarily advanced terrain. The North American chair accesses steep chutes and tree runs that would challenge any expert skier. For families, the tube park and beginner area provide gentler options.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Buy your lift tickets online at least 7 days in advance to save up to 25% compared to gate prices. The savings add up quickly when skiing multiple days.</div>
+
+<h2>How Much Does It Cost to Ski the Big 3 Resorts?</h2>
+
+<p>Lift ticket prices vary significantly by season and advance purchase timing. Here's what you can expect for the 2026-27 season:</p>
+
+<table class="comparison-table">
+<tr>
+<th>Resort</th>
+<th>Adult Day Pass (Advance)</th>
+<th>Adult Day Pass (Gate)</th>
+<th>Tri-Area Pass (3 Days)</th>
+</tr>
+<tr>
+<td>Lake Louise</td>
+<td>\$89 CAD</td>
+<td>\$119 CAD</td>
+<td rowspan="3">\$267 CAD</td>
+</tr>
+<tr>
+<td>Sunshine Village</td>
+<td>\$89 CAD</td>
+<td>\$119 CAD</td>
+</tr>
+<tr>
+<td>Mount Norquay</td>
+<td>\$79 CAD</td>
+<td>\$99 CAD</td>
+</tr>
+</table>
+
+<p>The tri-area pass represents excellent value if you're skiing three or more days. I recommend this option for most visitors since you'll want to experience each resort's unique character. Season passes start at \$599 CAD for locals and \$899 CAD for everyone else.</p>
+
+<p>Rental equipment costs approximately \$45-60 CAD per day for skis, boots, and poles. High-performance demos run \$65-80 CAD daily. Most shops offer multi-day discounts of 10-15%.</p>
+
+<h3>Additional Costs to Consider</h3>
+
+<p>Parking at Lake Louise costs \$30 CAD per vehicle on weekends and holidays, free on weekdays. Sunshine Village and Mount Norquay offer free parking. Food on mountain averages \$18-25 CAD for lunch at base lodge cafeterias, while sit-down restaurants charge \$35-45 CAD per entrée.</p>
+
+<h2>Which Resort Should Beginners Choose?</h2>
+
+<p>Mount Norquay provides the best learning environment for absolute beginners. The Cascade Learning Area features three gentle slopes with magic carpet lifts, avoiding intimidating chairrides. Ski school meets at the base, and you won't get lost since the mountain is compact.</p>
+
+<p>Lake Louise works well for progressing beginners ready for longer runs. The Wiwaxy and Eagle chair areas offer wide, forgiving slopes perfect for building confidence. The scenic backdrop provides Instagram-worthy photos during rest breaks.</p>
+
+<p>I don't recommend Sunshine Village for true beginners. While it has beginner terrain, the high altitude can be tiring, and the village-to-village layout proves confusing for first-time visitors.</p>
+
+<p>Ski lessons cost \$89 CAD for group instruction and \$159 CAD for private lessons. Book lessons through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=ski+lessons" target="_blank" rel="noopener sponsored">ski instruction packages</a> which often include equipment rentals at reduced rates.</p>
+
+<h2>What's the Best Way to Get to Each Resort?</h2>
+
+<p>Transportation logistics differ significantly between the three resorts. Mount Norquay sits just 6 km from Banff townsite via Mount Norquay Road. The drive takes 10 minutes without traffic, though parking fills by 9 AM on powder days.</p>
+
+<p>Lake Louise requires a 45-minute drive along the Trans-Canada Highway, covering 58 km from Banff. The resort provides the most parking among the Big 3, but arrive before 8 AM during peak season or face 30-minute waits for spots.</p>
+
+<p>Sunshine Village operates a mandatory gondola from the parking area to the ski village. This 15-minute ride adds time but eliminates concerns about mountain road conditions. The Sunshine Village access road is 18 km from Banff townsite.</p>
+
+<table class="comparison-table">
+<tr>
+<th>Resort</th>
+<th>Distance from Banff</th>
+<th>Drive Time</th>
+<th>Parking Cost</th>
+<th>Special Access</th>
+</tr>
+<tr>
+<td>Mount Norquay</td>
+<td>6 km</td>
+<td>10 minutes</td>
+<td>Free</td>
+<td>Direct to base</td>
+</tr>
+<tr>
+<td>Sunshine Village</td>
+<td>18 km</td>
+<td>25 minutes</td>
+<td>Free</td>
+<td>Gondola required</td>
+</tr>
+<tr>
+<td>Lake Louise</td>
+<td>58 km</td>
+<td>45 minutes</td>
+<td>\$30 weekends</td>
+<td>Direct to base</td>
+</tr>
+</table>
+
+<p>Shuttle services operate between major <a href="/hotel-directory">Banff hotels</a> and all three resorts for \$25-35 CAD roundtrip. Book through your accommodation or reserve <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=ski+shuttle" target="_blank" rel="noopener sponsored">ski resort shuttle transfers</a> in advance.</p>
+
+<h2>When Is the Best Time to Ski the Big 3?</h2>
+
+<p>The Big 3 ski season typically runs from mid-November through late April, with some variation by resort. Sunshine Village often opens first thanks to its high elevation and usually closes last around mid-May.</p>
+
+<p>January and February deliver the most consistent snow conditions but also the largest crowds. I prefer skiing in March when daylight extends past 6 PM and spring conditions create perfect corn snow by afternoon.</p>
+
+<p>For powder hunting, plan visits 24-48 hours after major snowfall. The resorts receive an average of 360 cm annually, with Sunshine Village typically recording the deepest accumulations.</p>
+
+<h3>Weekly Timing Strategy</h3>
+
+<p>Weekdays offer shorter lift lines and lower accommodation rates. Tuesday through Thursday represent the sweet spot, especially at Lake Louise where weekend crowds can double lift wait times. Mount Norquay provides excellent value with \$59 CAD weekday tickets.</p>
+
+<p>Consider extending your ski trip to include some of Banff's other winter activities. The <a href="/blog/best-banff-hiking-trails-guide">winter hiking trails</a> around town offer spectacular views, and you can book <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=ice+walk" target="_blank" rel="noopener sponsored">Johnston Canyon ice walk tours</a> for a completely different mountain experience.</p>
+
+<p>If you're planning a longer stay, check out our complete <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> guide to find accommodation that matches your budget and provides easy resort access. Book through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> to compare rates across all property types from hostels to luxury hotels.</p>
+`,
   'banff-live-music': `
 <p>Banff offers excellent live music venues scattered throughout the townsite and surrounding areas. The Rose and Crown, Wild Bill's Legendary Saloon, and Aurora Lounge regularly host performers year-round. Most venues feature local Canadian artists alongside touring musicians from May through September.</p>
 

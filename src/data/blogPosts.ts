@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'big-3-ski-resorts',
+    title: 'Banff\'s Big 3 Ski Resorts: Ultimate 2026 Guide & Tips',
+    description: 'Discover Banff\'s top 3 ski resorts in 2026! Complete guide to Lake Louise, Sunshine Village & Mount Norquay with insider tips, slopes & snow conditions.',
+    date: '2026-05-29',
+    category: 'Seasonal',
+    image: '/images/blog/big-3-ski-resorts.webp',
+    readTime: '5 min read',
+  },
+  {
     slug: 'banff-live-music',
     title: 'Banff\'s Best Live Music Venues & Shows 2026: Your Guide',
     description: 'Discover Banff\'s top live music venues and concerts in 2026. From intimate alpine bars to outdoor amphitheaters, find the best shows and performances.',
