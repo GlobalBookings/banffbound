@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-28T23:08:19.824Z",
+  "updatedAt": "2026-05-29T02:29:52.241Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -1661,6 +1661,12 @@
   "advisories": [
     {
       "title": "Area Closure: Fenland Area",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: - Pipestone River area and trails - High water",
       "type": "Area Closure",
       "issued": "",
       "ends": ""
