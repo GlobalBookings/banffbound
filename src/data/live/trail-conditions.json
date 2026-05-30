@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-30T16:53:16.157Z",
+  "updatedAt": "2026-05-30T19:01:15.808Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -280,7 +280,7 @@
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Not recommended.",
-          "comment": "Avalanche terrain; Snowbound; Risk of post-holing",
+          "comment": "Avalanche terrain; Snowbound; Risk of post-holing; Bear warning in effect",
           "lastUpdated": "2026-05-30"
         },
         {
@@ -328,7 +328,7 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Walk or bike in access only, road closed to vehicles; Wildlife corridor; Respect all posted notices and signs; No parking on roadways, or highways; Biking including pedal-assist e-bikes is allowed",
+          "comment": "Walk or bike in access only, road closed to vehicles; Wildlife corridor; Respect all posted notices and signs; No parking on roadways, or highways; Biking including pedal-assist e-bikes is allowed; Be",
           "lastUpdated": "2026-05-30"
         },
         {
@@ -337,7 +337,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-05-29"
+          "lastUpdated": "2026-05-30"
         },
         {
           "name": "Tunnel Technical Trails: Star Wars Trail",
@@ -345,7 +345,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-05-29"
+          "lastUpdated": "2026-05-30"
         },
         {
           "name": "Tunnel Technical Trails: Topp Notch Trail",
@@ -353,7 +353,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-05-29"
+          "lastUpdated": "2026-05-30"
         },
         {
           "name": "Rundle Riverside Trail",
@@ -369,7 +369,7 @@
           "status": "closed",
           "condition": "Closed.",
           "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
-          "lastUpdated": "2026-05-29"
+          "lastUpdated": "2026-05-30"
         },
         {
           "name": "Cory Pass Loop",
@@ -385,7 +385,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry; Watch for ticks",
-          "lastUpdated": "2026-05-29"
+          "lastUpdated": "2026-05-30"
         },
         {
           "name": "Aylmer Pass Trail",
@@ -393,7 +393,7 @@
           "status": "caution",
           "condition": "Avalanche terrain.",
           "comment": "Avalanche terrain; Icy sections; Wet and muddy sections; Snow covered; Watch for ticks",
-          "lastUpdated": "2026-05-29"
+          "lastUpdated": "2026-05-30"
         }
       ]
     },
@@ -1095,7 +1095,7 @@
       "difficulty": "Moderate",
       "status": "caution",
       "condition": "Not recommended.",
-      "comment": "Avalanche terrain; Snowbound; Risk of post-holing",
+      "comment": "Avalanche terrain; Snowbound; Risk of post-holing; Bear warning in effect",
       "lastUpdated": "2026-05-30",
       "area": "Banff Area"
     },
@@ -1149,7 +1149,7 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Walk or bike in access only, road closed to vehicles; Wildlife corridor; Respect all posted notices and signs; No parking on roadways, or highways; Biking including pedal-assist e-bikes is allowed",
+      "comment": "Walk or bike in access only, road closed to vehicles; Wildlife corridor; Respect all posted notices and signs; No parking on roadways, or highways; Biking including pedal-assist e-bikes is allowed; Be",
       "lastUpdated": "2026-05-30",
       "area": "Banff Area"
     },
@@ -1159,7 +1159,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-05-29",
+      "lastUpdated": "2026-05-30",
       "area": "Banff Area"
     },
     {
@@ -1168,7 +1168,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-05-29",
+      "lastUpdated": "2026-05-30",
       "area": "Banff Area"
     },
     {
@@ -1177,7 +1177,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-05-29",
+      "lastUpdated": "2026-05-30",
       "area": "Banff Area"
     },
     {
@@ -1195,7 +1195,7 @@
       "status": "closed",
       "condition": "Closed.",
       "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
-      "lastUpdated": "2026-05-29",
+      "lastUpdated": "2026-05-30",
       "area": "Banff Area"
     },
     {
@@ -1213,7 +1213,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry; Watch for ticks",
-      "lastUpdated": "2026-05-29",
+      "lastUpdated": "2026-05-30",
       "area": "Banff Area"
     },
     {
@@ -1222,7 +1222,7 @@
       "status": "caution",
       "condition": "Avalanche terrain.",
       "comment": "Avalanche terrain; Icy sections; Wet and muddy sections; Snow covered; Watch for ticks",
-      "lastUpdated": "2026-05-29",
+      "lastUpdated": "2026-05-30",
       "area": "Banff Area"
     },
     {
@@ -1659,6 +1659,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Warning: Bow Falls Trail, Glen Avenue, Glen Crescent, Spray Avenue",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Area Closure: Fenland Area",
       "type": "Area Closure",
