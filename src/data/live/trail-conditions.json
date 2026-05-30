@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-30T02:13:44.978Z",
+  "updatedAt": "2026-05-30T06:41:15.287Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -1746,18 +1746,6 @@
     {
       "title": "AREA CLOSURE: Eastern Section of the Bow Valley Parkway (Highway 1A)",
       "type": "AREA CLOSURE",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: s for Avalanche Control",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: Sundance Canyon Loop",
-      "type": "Area Closure",
       "issued": "",
       "ends": ""
     },
