@@ -1,4 +1,170 @@
 export const blogContent3: Record<string, string> = {
+  'banff-ski-trips': `
+<p>Banff ski trips offer world-class downhill skiing at three major resorts within an hour of town. Lake Louise, Sunshine Village, and Mount Norquay provide over 8,000 acres of skiable terrain. The ski season typically runs from November through May, with peak conditions from January to March.</p>
+
+<h2>What Are the Big 3 Ski Resorts in Banff?</h2>
+
+<p>The <strong>Banff Big 3</strong> refers to the three premier ski destinations accessible from Banff townsite: Lake Louise Ski Resort, Sunshine Village, and Mount Norquay. Each resort offers distinct terrain and experiences, making them perfect for multi-day <strong>Banff ski</strong> adventures.</p>
+
+<table class="comparison-table">
+<tr>
+<th>Resort</th>
+<th>Distance from Banff</th>
+<th>Skiable Acres</th>
+<th>Vertical Drop</th>
+<th>Day Pass (2026)</th>
+</tr>
+<tr>
+<td>Lake Louise</td>
+<td>57 km</td>
+<td>4,200 acres</td>
+<td>991 m</td>
+<td>\$149 CAD</td>
+</tr>
+<tr>
+<td>Sunshine Village</td>
+<td>18 km</td>
+<td>3,300 acres</td>
+<td>1,070 m</td>
+<td>\$154 CAD</td>
+</tr>
+<tr>
+<td>Mount Norquay</td>
+<td>6 km</td>
+<td>190 acres</td>
+<td>503 m</td>
+<td>\$89 CAD</td>
+</tr>
+</table>
+
+<p>I typically start my Banff ski trips at Lake Louise for the massive terrain variety, then move to Sunshine for the high-alpine bowls, and finish at Norquay for night skiing. The Big 3 Ski Pass offers the best value at \$899 CAD for unlimited access to all three resorts through the 2026-27 season.</p>
+
+<h2>How Do You Plan Multi-Day Banff Ski Trips?</h2>
+
+<p>Smart logistics make or break <strong>Banff ski trips</strong>. I recommend staying in Banff townsite rather than resort accommodations for dining variety and cost savings. Check <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for ski package deals that include lift tickets.</p>
+
+<p>For transportation, rent a car with winter tires or book <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=ski+shuttle" target="_blank" rel="noopener sponsored">ski shuttle services</a> to avoid driving mountain roads. The Sunshine Village shuttle runs from several Banff hotels, while Lake Louise requires either driving or booking private transport.</p>
+
+<p>My typical 5-day itinerary looks like this:</p>
+<ul>
+<li><strong>Day 1-2:</strong> Lake Louise (largest terrain, needs two full days)</li>
+<li><strong>Day 3:</strong> Sunshine Village Back Bowls</li>
+<li><strong>Day 4:</strong> Mount Norquay day skiing plus night session</li>
+<li><strong>Day 5:</strong> Return to your favorite resort or explore <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> for recovery</li>
+</ul>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Book ski rentals in Banff townsite rather than on-mountain. Prices are 20-30% lower and you can walk to shops from most hotels. I use Monod Sports or Ski Hub for quality gear.</div>
+
+<h3>Best Time for Banff Ski Conditions</h3>
+
+<p>January through March offers the most reliable snow conditions and longest operating hours. Sunshine Village typically has the best snow quality due to its higher elevation (base at 2,100m). Lake Louise can be windier but offers more sheltered tree runs during storms.</p>
+
+<p>Avoid Canadian long weekends (Family Day in February, Easter weekend) when lift lines double. Weekday skiing provides the best experience, especially Tuesday through Thursday.</p>
+
+<h2>Where Should You Stay During Banff Ski Trips?</h2>
+
+<p>Banff townsite offers the best combination of accommodation options, dining, and nightlife for ski trips. I prefer staying within walking distance of Banff Avenue for easy access to restaurants and gear shops.</p>
+
+<p>Budget options include HI-Banff Alpine Centre (\$45-65 CAD per night) and Samesun Banff (\$55-85 CAD). Mid-range choices like Banff Inn or Red Carpet Inn run \$120-180 CAD nightly. For luxury, the Fairmont Banff Springs starts around \$400 CAD but offers ski packages with shuttle service.</p>
+
+<p>Check our complete <a href="/hotel-directory">Compare 95+ Banff hotels</a> for current availability and pricing. Many hotels offer ski-and-stay packages that include breakfast and discounted lift tickets.</p>
+
+<h3>Ski-In/Ski-Out vs. Town Accommodations</h3>
+
+<p>Sunshine Mountain Lodge provides the only true ski-in/ski-out experience among the Big 3, but rooms start at \$350 CAD per night. Lake Louise has the Post Hotel nearby, while Norquay offers no on-mountain lodging.</p>
+
+<p>I recommend town-based stays for most Banff ski trips. The drive to resorts takes 15-60 minutes, but you gain access to Banff's restaurant scene and save significantly on accommodation costs.</p>
+
+<h2>What Are the Best Runs at Each Ski Resort?</h2>
+
+<p>Each resort in the Banff Big 3 offers signature terrain that defines the <strong>Banff ski</strong> experience. Here's where I spend most of my time at each mountain:</p>
+
+<h3>Lake Louise Ski Resort</h3>
+
+<p>The Back Bowls provide the resort's most challenging terrain. Summit Platter accesses Powder Bowl and Eagle Ridge, offering steep pitches and deep snow pockets. For intermediate skiers, the Larch area delivers consistent grooming with spectacular views toward the Continental Divide.</p>
+
+<p>Men's Downhill, site of World Cup racing, offers a legitimate expert challenge. The pitch averages 35 degrees with sections hitting 45 degrees. Most recreational skiers should attempt this run only in perfect conditions.</p>
+
+<h3>Sunshine Village</h3>
+
+<p>Delirium Dive requires avalanche safety gear and partner confirmation, making it the most extreme inbounds skiing in Canada. For accessible advanced terrain, Goat's Eye Mountain provides consistently steep runs with reliable snow.</p>
+
+<p>The Wawa Bowl offers the best intermediate terrain, with wide-open runs perfect for carving high-speed turns. Angel Express Chair accesses this area efficiently, avoiding the main village crowds.</p>
+
+<h3>Mount Norquay</h3>
+
+<p>Despite its smaller size, Norquay offers legitimate expert terrain. The North American run drops 503 vertical meters with sustained 40-degree pitches. Lone Pine provides a more manageable advanced option with great views over the Bow Valley.</p>
+
+<p>Night skiing runs Friday and Saturday from 5:00 PM to 9:00 PM, costing \$49 CAD. The illuminated runs include intermediate and beginner terrain, perfect for extending ski days.</p>
+
+<h2>Where Should You Eat During Banff Ski Trips?</h2>
+
+<p>Smart planning around where to <strong>eat Banff</strong> enhances any ski trip. On-mountain dining proves expensive and limited, so I pack lunches most days and focus on dinner experiences in town.</p>
+
+<p>For post-ski meals, my go-to spots include:</p>
+
+<ul>
+<li><strong>The Bison Restaurant:</strong> Upscale Canadian cuisine, perfect for celebration dinners (\$35-55 CAD per entrée)</li>
+<li><strong>Brazen Head:</strong> Hearty pub fare and craft beer, ideal after big ski days (\$18-28 CAD)</li>
+<li><strong>Typhoon:</strong> Asian fusion with generous portions for hungry skiers (\$22-32 CAD)</li>
+<li><strong>Tooloulou's:</strong> Cajun comfort food and strong cocktails (\$24-36 CAD)</li>
+</ul>
+
+<p>For detailed reviews and complete listings, check our <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> guide. Many restaurants offer early bird specials before 6:00 PM, saving 15-20% on dinner costs.</p>
+
+<h3>On-Mountain Dining Options</h3>
+
+<p>Lake Louise's Lodge of the Ten Peaks serves the best on-mountain food, though expect \$25-35 CAD for basic entrées. Sunshine's Mad Trapper's Saloon offers decent pizza and beer. Norquay's Cascade Lodge provides simple cafeteria-style meals.</p>
+
+<p>I recommend packing energy bars, sandwiches, and thermos coffee for most ski days. This saves both money and time, letting you maximize slope hours during short winter days.</p>
+
+<h2>How Much Do Banff Ski Trips Cost?</h2>
+
+<p>Budget \$200-300 CAD daily for comprehensive Banff ski trips, including accommodation, meals, lift tickets, and transportation. Here's my typical cost breakdown for a 4-day ski vacation:</p>
+
+<table class="comparison-table">
+<tr>
+<th>Expense Category</th>
+<th>Budget Option</th>
+<th>Mid-Range</th>
+<th>Luxury</th>
+</tr>
+<tr>
+<td>Accommodation (4 nights)</td>
+<td>\$240 CAD</td>
+<td>\$600 CAD</td>
+<td>\$1,600 CAD</td>
+</tr>
+<tr>
+<td>Lift Tickets (4 days)</td>
+<td>\$400 CAD</td>
+<td>\$500 CAD</td>
+<td>\$500 CAD</td>
+</tr>
+<tr>
+<td>Meals</td>
+<td>\$160 CAD</td>
+<td>\$320 CAD</td>
+<td>\$600 CAD</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>\$120 CAD</td>
+<td>\$200 CAD</td>
+<td>\$400 CAD</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>\$920 CAD</strong></td>
+<td><strong>\$1,620 CAD</strong></td>
+<td><strong>\$3,100 CAD</strong></td>
+</tr>
+</table>
+
+<p>The Big 3 season pass at \$899 CAD pays for itself after 6 ski days and includes summer sightseeing access. Equipment rental adds \$65-85 CAD daily for skis, boots, and poles.</p>
+
+<p>For comprehensive trip planning including accommodation comparisons, review our <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> guide. Parks Canada requires a park pass (\$20.65 CAD daily or \$136.40 CAD annually) for all visitors to Banff National Park.</p>
+`,
   'big-3-ski-resorts': `
 <p>Banff's Big 3 ski resorts are Lake Louise, Sunshine Village, and Mount Norquay. These three destinations offer distinct experiences from beginner slopes to expert terrain. A tri-area lift ticket provides access to all three mountains.</p>
 

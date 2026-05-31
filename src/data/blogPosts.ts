@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-ski-trips',
+    title: 'Ultimate Banff Ski Trip Guide 2026: Slopes & Snow Adventures',
+    description: 'Plan your perfect Banff ski adventure with our 2026 guide covering the best slopes, snow activities, gear tips, and insider secrets for an unforgettable winter trip.',
+    date: '2026-05-31',
+    category: 'Seasonal',
+    image: '/images/blog/banff-ski-trips.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'big-3-ski-resorts',
     title: 'Banff\'s Big 3 Ski Resorts: Ultimate 2026 Guide & Tips',
     description: 'Discover Banff\'s top 3 ski resorts in 2026! Complete guide to Lake Louise, Sunshine Village & Mount Norquay with insider tips, slopes & snow conditions.',
