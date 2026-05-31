@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-31T19:05:14.521Z",
+  "updatedAt": "2026-05-31T20:50:56.986Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -1658,6 +1658,133 @@
       "area": "Icefields Parkway Area"
     }
   ],
-  "advisories": [],
+  "advisories": [
+    {
+      "title": "Warning: Bow Falls Trail, Glen Avenue, Glen Crescent, Spray Avenue",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Marsh Loop Trail and Cave and Basin Trail: Lower Boardwalk",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: Fenland Area",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: - Pipestone River area and trails - High water",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Advisory: Mating loons at Vermilion and Johnson Lakes",
+      "type": "Advisory",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Warning: Boom, Arnica, and Twin Lakes Trails",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: Tunnel Toe Wildfire Risk Reduction Project (Block B)",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Lake Louise Area Trails",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: Spray Wildfire Risk Reduction Project Upper Springs Block 1 and 2",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: Lake Minnewanka Sheep Point",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: west slope of Tunnel Mountain south of the Tunnel Mountain Trail",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "ADVISORY: The Elk Calving Season Has Begun",
+      "type": "ADVISORY",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: s For Wildlife",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Hillsdale",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Fairholme",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Roadside closure 93N avalanche debris",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: Eastern Section of the Bow Valley Parkway (Highway 1A)",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Bow Glacier Falls",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Wildlife crossing structures",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: Banff Springs Snail Critical Habitat",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: Middle Springs Wildlife Corridor and Banff Springs Snail Critical Habitat",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    }
+  ],
   "source": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions"
 }
