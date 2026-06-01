@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-06-01T15:49:56.107Z",
+  "updatedAt": "2026-06-01T20:11:40.630Z",
   "banff": {
     "current": {
-      "temp": 5,
+      "temp": 8,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 82,
-      "wind": "10 km/h"
+      "humidity": 70,
+      "wind": "5 km/h"
     },
     "forecast": [
       {
@@ -20,44 +20,44 @@
         "day": "Tuesday",
         "high": 10,
         "low": 5,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Wednesday",
-        "high": 15,
+        "high": 16,
         "low": 4,
-        "condition": "Light drizzle",
+        "condition": "Moderate drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Thursday",
-        "high": 19,
-        "low": 7,
+        "high": 18,
+        "low": 9,
         "condition": "Moderate drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Friday",
-        "high": 18,
-        "low": 10,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 19,
+        "low": 8,
+        "condition": "Overcast",
+        "icon": "☁️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 6,
+      "temp": 7,
       "condition": "Overcast",
       "icon": "☁️",
       "humidity": 80,
-      "wind": "25 km/h"
+      "wind": "29 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 9,
+        "high": 8,
         "low": 3,
         "condition": "Overcast",
         "icon": "☁️"
@@ -71,7 +71,7 @@
       },
       {
         "day": "Wednesday",
-        "high": 16,
+        "high": 15,
         "low": 3,
         "condition": "Moderate drizzle",
         "icon": "🌦️"
@@ -85,8 +85,8 @@
       },
       {
         "day": "Friday",
-        "high": 16,
-        "low": 8,
+        "high": 17,
+        "low": 7,
         "condition": "Moderate drizzle",
         "icon": "🌦️"
       }
