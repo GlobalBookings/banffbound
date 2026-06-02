@@ -408,9 +408,9 @@ const directLinks = [
     transform: translateY(0);
   }
   .mega-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
     padding: 1.5rem;
   }
   .mega-columns {
@@ -473,21 +473,22 @@ const directLinks = [
   /* ── Featured Cards ──────────────────────────────── */
   .mega-featured {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.75rem;
-    align-self: start;
-    width: 200px;
-    flex-shrink: 0;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 1rem;
   }
   .mega-card {
     position: relative;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    aspect-ratio: 16/9;
+    aspect-ratio: 2/1;
     display: block;
+    flex: 1;
+    min-width: 0;
     transition: transform 0.2s ease;
   }
-  .mega-card:hover { transform: translateY(-3px); }
+  .mega-card:hover { transform: translateY(-2px); }
   .mega-card img {
     width: 100%;
     height: 100%;
@@ -498,23 +499,23 @@ const directLinks = [
   .mega-card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 1rem;
+    padding: 0.6rem 0.75rem;
   }
   .mega-card-title {
     color: #fff;
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 0.82rem;
     font-weight: 600;
     line-height: 1.2;
   }
   .mega-card-sub {
-    color: rgba(255,255,255,0.75);
-    font-size: 0.78rem;
-    margin-top: 0.2rem;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.7rem;
+    margin-top: 0.1rem;
   }
 
   /* ── Backdrop ────────────────────────────────────── */
@@ -724,7 +725,6 @@ const directLinks = [
   /* ── Responsive ──────────────────────────────────── */
   @media (max-width: 1100px) {
     .mega-featured { display: none; }
-    .mega-inner { grid-template-columns: 1fr; }
     .nav-link { padding: 0.45rem 0.6rem; font-size: 0.84rem; }
   }
 
