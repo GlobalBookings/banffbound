@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2026-06-02T10:53:17.305Z",
+  "updatedAt": "2026-06-02T13:53:47.070Z",
   "banff": {
     "current": {
-      "temp": 6,
+      "temp": 7,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 81,
-      "wind": "12 km/h"
+      "humidity": 84,
+      "wind": "8 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 10,
         "low": 5,
-        "condition": "Light drizzle",
+        "condition": "Moderate drizzle",
         "icon": "🌦️"
       },
       {
@@ -32,7 +32,7 @@
       },
       {
         "day": "Friday",
-        "high": 18,
+        "high": 17,
         "low": 9,
         "condition": "Light drizzle",
         "icon": "🌦️"
@@ -41,24 +41,24 @@
         "day": "Saturday",
         "high": 14,
         "low": 5,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 5,
+      "temp": 7,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 88,
-      "wind": "19 km/h"
+      "humidity": 86,
+      "wind": "13 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 10,
-        "low": 5,
+        "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -72,21 +72,21 @@
       {
         "day": "Thursday",
         "high": 17,
-        "low": 9,
+        "low": 10,
+        "condition": "Moderate drizzle",
+        "icon": "🌦️"
+      },
+      {
+        "day": "Friday",
+        "high": 14,
+        "low": 8,
         "condition": "Slight snow showers",
         "icon": "🌨️"
       },
       {
-        "day": "Friday",
-        "high": 16,
-        "low": 7,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      },
-      {
         "day": "Saturday",
-        "high": 11,
-        "low": 3,
+        "high": 13,
+        "low": 4,
         "condition": "Slight snow showers",
         "icon": "🌨️"
       }
