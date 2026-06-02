@@ -1887,7 +1887,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Best Happy Hour Deals in Banff',
     description: 'Find the best happy hour deals in Banff. Drink specials, appetizer deals, and the best après-hike bars and patios in town.',
     date: '2025-12-04',
-    lastUpdated: '2026-05-26',
+    lastUpdated: '2026-06-02',
     category: 'Food & Drink',
     image: '/images/blog/banff-happy-hour.webp',
     readTime: '6 min read',
