@@ -65,9 +65,9 @@ export const trails: Trail[] = [
       'https://www.pc.gc.ca/en/pn-np/ab/banff/activ/randonnee-hiking/banff',
     transitAccessible: false,
   
-    status: 'caution',
-    conditionNote: 'Avalanche danger - check Avalanche Bulletin for latest conditions',
-    conditionUpdated: '2026-05-18',
+    status: 'open',
+    conditionNote: 'Dogs allowed on all trails in summer unless otherwise specified in restrictions.',
+    conditionUpdated: '2026-06-02',
     parkingCapacity: '25 vehicles',
     crowdLevel: { summer: 'medium', winter: 'low' },
   },
