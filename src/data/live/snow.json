@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-06-02T13:53:48.806Z",
+  "updatedAt": "2026-06-02T18:01:15.486Z",
   "offSeason": false,
   "resorts": [
     {
       "name": "Sunshine Village",
-      "status": "Open until May 18",
+      "status": "Closed for Season",
       "baseDepth": null,
       "newSnow24h": null,
       "seasonTotal": null,
