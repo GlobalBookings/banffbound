@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-06-03T14:22:48.938Z",
+  "updatedAt": "2026-06-03T19:43:04.441Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 44,
-    "caution": 33,
+    "open": 50,
+    "caution": 27,
     "closed": 19
   },
   "areas": [
@@ -405,8 +405,8 @@
           "difficulty": "Easy",
           "status": "closed",
           "condition": "Partially Closed",
-          "comment": "Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Impassable due to high water; Flooded sections; Trail section along the southwest side of Bow R",
-          "lastUpdated": "2026-06-01"
+          "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Consolation Lakes Trail",
@@ -437,8 +437,8 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Wet and muddy sections; Avalanche risk beyond the end of Lake Louise",
-          "lastUpdated": "2026-05-29"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Moraine Lakeshore Trail",
@@ -475,18 +475,18 @@
         {
           "name": "Big Beehive Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Avalanche terrain.",
-          "comment": "Avalanche danger; Snowbound; Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.",
-          "lastUpdated": "2026-05-29"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Avalanche terrain; Risk of post-holing",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Big Beehive to Plain of Six Glaciers Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Avalanche terrain.",
-          "comment": "Avalanche danger; Snowbound; Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.",
-          "lastUpdated": "2026-05-29"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Risk of post-holing; Avalanche debris on trail",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Castle Lookout Trail",
@@ -501,48 +501,48 @@
           "difficulty": "Moderate",
           "status": "closed",
           "condition": "No access.",
-          "comment": "No vehicle access; Not recommended; Dangerous snow conditions; Avalanche danger; Snowbound",
-          "lastUpdated": "2026-05-04"
+          "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Lake Agnes Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Avalanche terrain.",
-          "comment": "Avalanche danger; Not recommended; Respect all posted notices and signs; Snow covered; Icy sections; Deadfall on trail; Not yet maintained",
-          "lastUpdated": "2026-05-29"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Snow at high elevation ; Icy sections; Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Lake Annette Trail",
           "difficulty": "Moderate",
           "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered; Sections of deep snow; Risk of post-holing; Wet with muddy sections",
-          "lastUpdated": "2026-06-02"
+          "condition": "No access.",
+          "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Larch Valley/Minnestimma Lakes Trail",
           "difficulty": "Moderate",
           "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snowbound at higher elevation; Wet and muddy",
-          "lastUpdated": "2026-06-01"
+          "condition": "No access.",
+          "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Little Beehive Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Avalanche terrain.",
-          "comment": "Avalanche danger; Snowbound; Respect all posted notices and signs; Not yet maintained; Not recommended",
-          "lastUpdated": "2026-05-29"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Snow at high elevation ; Icy sections; Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Mirror Lake Highline Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Avalanche terrain.",
-          "comment": "Avalanche danger; Not recommended; Respect all posted notices and signs; Snow covered; Icy sections; Deadfall on trail; Not yet maintained",
-          "lastUpdated": "2026-05-29"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Pipestone Trail",
@@ -555,10 +555,10 @@
         {
           "name": "Plain of Six Glaciers Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Avalanche terrain.",
-          "comment": "Avalanche danger; Snowbound; Respect all posted notices and signs; Not yet maintained; Not recommended",
-          "lastUpdated": "2026-05-29"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Taylor Lake Trail",
@@ -638,7 +638,7 @@
           "status": "closed",
           "condition": "Road access closed",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snow covered; Snowbound at higher elevation; Avalanche danger",
-          "lastUpdated": "2026-06-01"
+          "lastUpdated": "2026-06-03"
         },
         {
           "name": "Sheol/Paradise Connector Trail",
@@ -1230,8 +1230,8 @@
       "difficulty": "Easy",
       "status": "closed",
       "condition": "Partially Closed",
-      "comment": "Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Impassable due to high water; Flooded sections; Trail section along the southwest side of Bow R",
-      "lastUpdated": "2026-06-01",
+      "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
@@ -1266,8 +1266,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Wet and muddy sections; Avalanche risk beyond the end of Lake Louise",
-      "lastUpdated": "2026-05-29",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
@@ -1309,19 +1309,19 @@
     {
       "name": "Big Beehive Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Avalanche terrain.",
-      "comment": "Avalanche danger; Snowbound; Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.",
-      "lastUpdated": "2026-05-29",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Avalanche terrain; Risk of post-holing",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
       "name": "Big Beehive to Plain of Six Glaciers Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Avalanche terrain.",
-      "comment": "Avalanche danger; Snowbound; Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.",
-      "lastUpdated": "2026-05-29",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Risk of post-holing; Avalanche debris on trail",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
@@ -1338,53 +1338,53 @@
       "difficulty": "Moderate",
       "status": "closed",
       "condition": "No access.",
-      "comment": "No vehicle access; Not recommended; Dangerous snow conditions; Avalanche danger; Snowbound",
-      "lastUpdated": "2026-05-04",
+      "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
       "name": "Lake Agnes Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Avalanche terrain.",
-      "comment": "Avalanche danger; Not recommended; Respect all posted notices and signs; Snow covered; Icy sections; Deadfall on trail; Not yet maintained",
-      "lastUpdated": "2026-05-29",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Snow at high elevation ; Icy sections; Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
       "name": "Lake Annette Trail",
       "difficulty": "Moderate",
       "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered; Sections of deep snow; Risk of post-holing; Wet with muddy sections",
-      "lastUpdated": "2026-06-02",
+      "condition": "No access.",
+      "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
       "name": "Larch Valley/Minnestimma Lakes Trail",
       "difficulty": "Moderate",
       "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snowbound at higher elevation; Wet and muddy",
-      "lastUpdated": "2026-06-01",
+      "condition": "No access.",
+      "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
       "name": "Little Beehive Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Avalanche terrain.",
-      "comment": "Avalanche danger; Snowbound; Respect all posted notices and signs; Not yet maintained; Not recommended",
-      "lastUpdated": "2026-05-29",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Snow at high elevation ; Icy sections; Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
       "name": "Mirror Lake Highline Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Avalanche terrain.",
-      "comment": "Avalanche danger; Not recommended; Respect all posted notices and signs; Snow covered; Icy sections; Deadfall on trail; Not yet maintained",
-      "lastUpdated": "2026-05-29",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
@@ -1399,10 +1399,10 @@
     {
       "name": "Plain of Six Glaciers Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Avalanche terrain.",
-      "comment": "Avalanche danger; Snowbound; Respect all posted notices and signs; Not yet maintained; Not recommended",
-      "lastUpdated": "2026-05-29",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
@@ -1492,7 +1492,7 @@
       "status": "closed",
       "condition": "Road access closed",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snow covered; Snowbound at higher elevation; Avalanche danger",
-      "lastUpdated": "2026-06-01",
+      "lastUpdated": "2026-06-03",
       "area": "Lake Louise Area"
     },
     {
