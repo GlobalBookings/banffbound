@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-restaraunts',
+    title: 'Best Banff Restaurants 2026: Where Locals Actually Eat',
+    description: 'Discover where Banff locals dine in 2026! Our insider guide reveals the best restaurants beyond tourist traps, from cozy cafes to fine dining gems.',
+    date: '2026-06-03',
+    category: 'Guides',
+    image: '/images/blog/banff-restaraunts.webp',
+    readTime: '5 min read',
+  },
+  {
     slug: 'banff-ski-trips',
     title: 'Ultimate Banff Ski Trip Guide 2026: Slopes & Snow Adventures',
     description: 'Plan your perfect Banff ski adventure with our 2026 guide covering the best slopes, snow activities, gear tips, and insider secrets for an unforgettable winter trip.',
