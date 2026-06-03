@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T19:43:02.340Z",
+  "updatedAt": "2026-06-03T22:24:41.650Z",
   "highways": [
     {
       "name": "Trans-Canada Highway (Hwy 1)",
@@ -22,11 +22,11 @@
     {
       "name": "Icefields Parkway (Hwy 93N)",
       "number": "93N",
-      "status": "Bare Wet",
-      "conditions": "Bare Wet",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
       "advisory": "",
       "segments": 6,
-      "lastUpdated": 1778379764
+      "lastUpdated": 1779314356
     },
     {
       "name": "Hwy 93 South (Kootenay)",
