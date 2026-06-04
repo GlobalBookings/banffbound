@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'eating-out-in-banff',
+    title: 'Best Restaurants in Banff 2026: Ultimate Foodie Guide',
+    description: 'Discover Banff\'s top dining destinations in 2026! From fine dining to cozy cafes, explore the best restaurants serving fresh local cuisine in Canada\'s Rockies.',
+    date: '2026-06-04',
+    category: 'Food & Drink',
+    image: '/images/blog/eating-out-in-banff.webp',
+    readTime: '6 min read',
+  },
+  {
     slug: 'banff-restaraunts',
     title: 'Best Banff Restaurants 2026: Where Locals Actually Eat',
     description: 'Discover where Banff locals dine in 2026! Our insider guide reveals the best restaurants beyond tourist traps, from cozy cafes to fine dining gems.',
