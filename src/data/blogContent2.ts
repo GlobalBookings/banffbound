@@ -2877,7 +2877,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Bear Street Tip:</strong> Visit Bear Street on your first morning in Banff. Start with Whitebark coffee, walk to the Whyte Museum to understand the history of the Rockies, then head to lunch at The Bison. You'll set the tone for your entire trip — and you'll keep coming back to this block throughout your stay.</div>
 `,
   'best-banff-restaurants-2026': `
-<p>Banff's restaurant scene punches well above its weight for a town of 8,000. From white-tablecloth dining rooms with sweeping mountain views to hole-in-the-wall spots where ski patrollers refuel, the culinary offerings here rival cities ten times its size. This is the definitive 2026 guide to where locals actually eat — not just the places that top tourist listicles.</p>
+<p><a href="/blog/banff-restaraunts">Best Banff Restaurants : Where Locals Actually Eat</a>'s restaurant scene punches well above its weight for a town of 8,000. From white-tablecloth dining rooms with sweeping mountain views to hole-in-the-wall spots where ski patrollers refuel, the culinary offerings here rival cities ten times its size. This is the definitive 2026 guide to where locals actually eat — not just the places that top tourist listicles.</p>
 
 <h2>Fine Dining</h2>
 <h3>Eden at the Rimrock</h3>
