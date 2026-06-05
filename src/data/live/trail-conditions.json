@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-04T23:02:33.797Z",
+  "updatedAt": "2026-06-05T02:37:14.681Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -445,8 +445,8 @@
           "difficulty": "Easy",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy; Snow covered sections",
-          "lastUpdated": "2026-06-01"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+          "lastUpdated": "2026-06-04"
         },
         {
           "name": "Paradise Connector",
@@ -461,8 +461,8 @@
           "difficulty": "Easy",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy; Slippery sections; Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-06-01"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Stay on designated trails and viewpoints; Mainly dry",
+          "lastUpdated": "2026-06-04"
         },
         {
           "name": "Louise Creek Trail",
@@ -1275,8 +1275,8 @@
       "difficulty": "Easy",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy; Snow covered sections",
-      "lastUpdated": "2026-06-01",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+      "lastUpdated": "2026-06-04",
       "area": "Lake Louise Area"
     },
     {
@@ -1293,8 +1293,8 @@
       "difficulty": "Easy",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy; Slippery sections; Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-06-01",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Stay on designated trails and viewpoints; Mainly dry",
+      "lastUpdated": "2026-06-04",
       "area": "Lake Louise Area"
     },
     {
