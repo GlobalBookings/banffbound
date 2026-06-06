@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-06-05T22:59:34.299Z",
+  "updatedAt": "2026-06-06T02:25:50.242Z",
   "banff": {
     "current": {
-      "temp": 12,
+      "temp": 9,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 52,
-      "wind": "24 km/h"
+      "humidity": 51,
+      "wind": "22 km/h"
     },
     "forecast": [
       {
@@ -18,55 +18,55 @@
       },
       {
         "day": "Saturday",
-        "high": 10,
+        "high": 13,
         "low": 3,
-        "condition": "Heavy snowfall",
-        "icon": "❄️"
+        "condition": "Dense drizzle",
+        "icon": "🌧️"
       },
       {
         "day": "Sunday",
         "high": 10,
-        "low": 2,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Monday",
-        "high": 14,
-        "low": 2,
+        "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
+        "day": "Monday",
+        "high": 13,
+        "low": 2,
+        "condition": "Foggy",
+        "icon": "🌫️"
+      },
+      {
         "day": "Tuesday",
-        "high": 16,
-        "low": 5,
-        "condition": "Slight snow showers",
-        "icon": "🌨️"
+        "high": 11,
+        "low": 4,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 8,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 74,
-      "wind": "17 km/h"
+      "temp": 7,
+      "condition": "Mainly clear",
+      "icon": "🌤️",
+      "humidity": 65,
+      "wind": "16 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 8,
         "low": 4,
-        "condition": "Slight snowfall",
-        "icon": "🌨️"
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Saturday",
-        "high": 6,
+        "high": 10,
         "low": 2,
-        "condition": "Moderate snowfall",
+        "condition": "Slight snowfall",
         "icon": "🌨️"
       },
       {
@@ -78,15 +78,15 @@
       },
       {
         "day": "Monday",
-        "high": 10,
-        "low": 1,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 8,
+        "low": 0,
+        "condition": "Slight snow showers",
+        "icon": "🌨️"
       },
       {
         "day": "Tuesday",
-        "high": 12,
-        "low": 1,
+        "high": 10,
+        "low": 0,
         "condition": "Slight snow showers",
         "icon": "🌨️"
       }
