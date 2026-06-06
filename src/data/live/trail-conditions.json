@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-06T15:07:02.856Z",
+  "updatedAt": "2026-06-06T17:01:44.405Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -17,7 +17,7 @@
           "status": "closed",
           "condition": "Closed.",
           "comment": "Closed until further notice; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Check the important bulletins for more informati",
-          "lastUpdated": "2026-06-05"
+          "lastUpdated": "2026-06-06"
         },
         {
           "name": "Marsh Trail",
@@ -385,7 +385,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Watch for ticks; Wet and muddy sections",
-          "lastUpdated": "2026-06-05"
+          "lastUpdated": "2026-06-06"
         },
         {
           "name": "Aylmer Pass Trail",
@@ -799,7 +799,7 @@
       "status": "closed",
       "condition": "Closed.",
       "comment": "Closed until further notice; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Check the important bulletins for more informati",
-      "lastUpdated": "2026-06-05",
+      "lastUpdated": "2026-06-06",
       "area": "Banff Area"
     },
     {
@@ -1213,7 +1213,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Watch for ticks; Wet and muddy sections",
-      "lastUpdated": "2026-06-05",
+      "lastUpdated": "2026-06-06",
       "area": "Banff Area"
     },
     {
