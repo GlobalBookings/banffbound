@@ -1,4 +1,135 @@
 export const blogContent3: Record<string, string> = {
+  'banff-ski-fields': `
+<p>Banff offers three world-class ski resorts within an hour's drive of town. The <strong>Banff ski fields</strong> include Lake Louise Ski Resort, Sunshine Village, and Mount Norquay. These three mountains form the legendary "Big 3" ski pass covering over 8,000 acres.</p>
+
+<h2>What Are the Three Main Banff Ski Fields?</h2>
+
+<p>When people talk about <strong>Banff ski</strong> options, they're referring to the Big 3 resorts that have defined Rocky Mountain skiing for decades. I've spent countless days on these slopes, and each mountain offers something completely different.</p>
+
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Resort</th>
+<th>Distance from Banff</th>
+<th>Terrain</th>
+<th>Best For</th>
+<th>Daily Lift Ticket (2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lake Louise</td>
+<td>60 km</td>
+<td>4,200 skiable acres</td>
+<td>All levels, varied terrain</td>
+<td>\$159 CAD</td>
+</tr>
+<tr>
+<td>Sunshine Village</td>
+<td>22 km</td>
+<td>3,300 skiable acres</td>
+<td>Powder skiing, long season</td>
+<td>\$149 CAD</td>
+</tr>
+<tr>
+<td>Mount Norquay</td>
+<td>10 km</td>
+<td>190 skiable acres</td>
+<td>Night skiing, steep terrain</td>
+<td>\$89 CAD</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Lake Louise Ski Resort: The Crown Jewel</h2>
+
+<p>Lake Louise consistently ranks among North America's top ski destinations, and after skiing here for over a decade, I understand why. The Front Side offers perfectly groomed runs with stunning views of the Continental Divide, while the Back Bowls provide challenging off-piste terrain.</p>
+
+<p>The resort's 145 marked runs spread across four mountain faces. My favourite area is the Larch Area, where you'll find consistent powder and fewer crowds. The Summit Platter takes you to the highest skiable point at 2,637 metres, offering 360-degree mountain views.</p>
+
+<p>Parking fills up by 8:30 AM on weekends during peak season (December through March). I recommend arriving by 8 AM or taking the shuttle from Banff townsite. The <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=lake+louise" target="_blank" rel="noopener sponsored">Lake Louise tours</a> often include transportation if you prefer guided options.</p>
+
+<h3>Lake Louise Dining and Amenities</h3>
+
+<p>The mountain offers six on-hill dining options. The Lodge of the Ten Peaks provides the most upscale experience with table service and mountain views. For quick refuelling, I stick to the Temple Day Lodge at the base - their chili actually tastes good, unlike most ski hill food.</p>
+
+<h2>Sunshine Village: Powder Paradise Above the Clouds</h2>
+
+<p>Sunshine Village sits entirely above the treeline at 2,130 metres, making it one of Canada's highest ski resorts. The season typically runs from November through May, and I've skied here in fresh powder as late as Victoria Day weekend.</p>
+
+<p>What sets Sunshine apart is the consistently dry, light snow. The Continental Divide creates a unique microclimate that dumps an average of 9 metres annually. Delirium Dive, accessed through a controlled gate, offers some of the steepest inbounds terrain in the Canadian Rockies.</p>
+
+<p>The resort operates the only gondola access in the <strong>Banff big 3</strong>. This 8-person gondola eliminates the need for parking stress - it runs every 15 minutes from the base area. However, the gondola ride takes 20 minutes each way, so factor that into your ski day timing.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Download the Sunshine Village app before your visit. It shows real-time lift status, weather updates, and helps you navigate the mountain layout efficiently.</div>
+
+<h3>Sunshine's Unique Ski-In/Ski-Out Accommodation</h3>
+
+<p>The Sunshine Mountain Lodge offers the only true ski-in/ski-out accommodation in Banff National Park. Staying overnight means first tracks in the morning and après-ski without the gondola commute. Rooms book up months in advance for peak season weekends.</p>
+
+<h2>Mount Norquay: Steep and Deep Close to Town</h2>
+
+<p>Mount Norquay punches well above its weight class. This smaller mountain offers the steepest marked runs in the area, including the infamous Lone Pine - a double-black diamond that drops 40 degrees in sections. It's only 10 minutes from downtown Banff, making it perfect for half-day sessions.</p>
+
+<p>The mountain's compact size means you can ski every run in a full day. The North American Chairlift accesses the expert terrain, while the Cascade and Spirit chairs serve intermediate and beginner slopes. Night skiing runs Friday and Saturday evenings until 9 PM through February.</p>
+
+<p>Norquay's terrain park consistently ranks among Western Canada's best. The park crew rebuilds features weekly, and the lower elevation means more stable snow conditions for progression.</p>
+
+<h2>How Much Does It Cost to Ski the Banff Big 3?</h2>
+
+<p>The SkiBig3 pass remains the best value for skiing multiple <strong>Banff ski fields</strong>. For the 2026-27 season, prices range from \$899 CAD for a 5-day pass to \$1,899 CAD for unlimited access to all three mountains.</p>
+
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Pass Type</th>
+<th>Price (2026-27)</th>
+<th>Valid Days</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SkiBig3 5-Day</td>
+<td>\$899 CAD</td>
+<td>Any 5 days</td>
+<td>Week-long vacation</td>
+</tr>
+<tr>
+<td>SkiBig3 7-Day</td>
+<td>\$1,199 CAD</td>
+<td>Any 7 days</td>
+<td>Extended trip</td>
+</tr>
+<tr>
+<td>SkiBig3 Unlimited</td>
+<td>\$1,899 CAD</td>
+<td>Full season</td>
+<td>Locals and frequent visitors</td>
+</tr>
+</tbody>
+</table>
+
+<p>Single-day tickets make sense only if you're skiing one mountain for 1-2 days maximum. The break-even point hits at day 3 when comparing individual tickets to the 5-day pass.</p>
+
+<h2>Where to Eat in Banff After Skiing</h2>
+
+<p>After a long day on the <strong>Banff ski fields</strong>, I have several go-to spots for recovery meals. The Bison Restaurant serves the best Alberta beef in town - their bison short ribs pair perfectly with a local Big Rock beer. For more casual options, <strong>eat Banff</strong> classics like Melissa's Restaurant for massive portions or The Maple Leaf for elevated Canadian cuisine.</p>
+
+<p>Three Bears Brewery offers excellent craft beer and hearty pub food. Their nachos easily feed four people, and the IPA selection changes seasonally. Wild Flour Bakery opens early for pre-ski coffee and pastries - their cinnamon buns fuel many of my powder days.</p>
+
+<p>For comprehensive dining recommendations across all price ranges, check out our guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> with insider tips on reservations and seasonal menus.</p>
+
+<h2>Planning Your Banff Ski Trip</h2>
+
+<p>Book accommodation early, especially for March and holiday periods. Downtown Banff puts you closest to Mount Norquay and Sunshine Village, while Canmore offers better value with a 30-minute drive to the mountains. Browse options through our <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory for deals across all price ranges.</p>
+
+<p>Equipment rental costs \$65-85 CAD daily for premium ski packages. Both Ski Hub and Monod Sports in Banff offer quality gear and will deliver to most hotels. Book rentals online 48 hours ahead for guaranteed sizing.</p>
+
+<p>Check Parks Canada avalanche bulletins before venturing into backcountry areas. All three ski areas offer <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=skiing" target="_blank" rel="noopener sponsored">guided skiing tours</a> for visitors wanting professional instruction or local knowledge.</p>
+
+<p>Transportation between mountains requires a vehicle or shuttle service. The Banff Gondola and local tour companies operate winter shuttles, though rental cars provide the most flexibility for exploring all three ski areas efficiently.</p>
+`,
   'eating-out-in-banff': `
 <p>Banff offers exceptional dining from casual mountain bistros to upscale restaurants. You'll find everything from hearty Canadian fare to international cuisine downtown. Expect to pay \$15-25 CAD for lunch and \$35-60 CAD for dinner at most establishments.</p>
 

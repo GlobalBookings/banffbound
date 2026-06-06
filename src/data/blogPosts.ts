@@ -11,6 +11,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'banff-ski-fields',
+    title: 'Banff Ski Fields 2026: Ultimate Guide to Epic Powder Days',
+    description: 'Discover Banff\'s best ski slopes in 2026! Complete guide to powder conditions, mountain resorts, lift tickets, and insider tips for unforgettable skiing.',
+    date: '2026-06-06',
+    category: 'Seasonal',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'eating-out-in-banff',
     title: 'Best Restaurants in Banff 2026: Ultimate Foodie Guide',
     description: 'Discover Banff\'s top dining destinations in 2026! From fine dining to cozy cafes, explore the best restaurants serving fresh local cuisine in Canada\'s Rockies.',
