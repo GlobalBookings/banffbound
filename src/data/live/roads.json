@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-07T13:24:34.574Z",
+  "updatedAt": "2026-06-07T15:19:36.360Z",
   "highways": [
     {
       "name": "Trans-Canada Highway (Hwy 1)",
@@ -8,16 +8,16 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 2,
-      "lastUpdated": 1779314349
+      "lastUpdated": 1780840184
     },
     {
       "name": "Bow Valley Parkway (Hwy 1A)",
       "number": "1A",
       "status": "Partial Closure (1/2 sections)",
-      "conditions": "Closed",
+      "conditions": "Bare Dry",
       "advisory": "Closed sections: Jct Hwy 1 to Johnston Canyon",
       "segments": 2,
-      "lastUpdated": 1779313363
+      "lastUpdated": 1780840184
     },
     {
       "name": "Icefields Parkway (Hwy 93N)",
@@ -26,7 +26,7 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 6,
-      "lastUpdated": 1779314356
+      "lastUpdated": 1780523925
     },
     {
       "name": "Hwy 93 South (Kootenay)",
@@ -35,7 +35,7 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 1,
-      "lastUpdated": 1779314352
+      "lastUpdated": 1780840193
     },
     {
       "name": "Lake Minnewanka Road",
@@ -44,7 +44,7 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 3,
-      "lastUpdated": 1779314349
+      "lastUpdated": 1780840184
     },
     {
       "name": "Golf Course Road",
@@ -53,7 +53,7 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 1,
-      "lastUpdated": 1780599696
+      "lastUpdated": 1780840184
     }
   ],
   "source": "https://511.alberta.ca"
