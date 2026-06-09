@@ -66,8 +66,8 @@ export const trails: Trail[] = [
     transitAccessible: false,
   
     status: 'open',
-    conditionNote: 'Dogs allowed on all trails in summer unless otherwise specified in restrictions.',
-    conditionUpdated: '2026-06-02',
+    conditionNote: 'Dogs allowed on all trails unless otherwise specified. Must be on leash.',
+    conditionUpdated: '2026-06-09',
     parkingCapacity: '25 vehicles',
     crowdLevel: { summer: 'medium', winter: 'low' },
   },
