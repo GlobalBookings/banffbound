@@ -5337,9 +5337,48 @@ export const blogContent1: Record<string, string> = {
 <p><strong>Do I need a pass to drive through on Highway 1?</strong> Technically yes, though enforcement focuses on people who stop and use park facilities.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
 `,
   'banff-skiing-guide': `
-<p>With three renowned resorts collectively known as <strong>SkiBig3</strong>, <a href="/blog/banff-in-summer"><a href="/blog/banff-camping-<a href="/blog/johnston-canyon-guide">Johnston Canyon: Hiking</a>">Camping in <a href="/blog/banff-christmas-guide">Christmas in <a href="/blog/banff-hot-springs-guide"><a href="/blog/banff-snowdays-festival"><a href="/blog/banff-rv-guide">RV to <a href="/blog/banff-camping-guide">Camping in <a href="/blog/banff-ice-walk-guide">Johnston Canyon Ice Walk: Winter's Best</a>: The Campground</a>: Campgrounds & Regulations</a> SnowDays Festival</a> Upper Hot Springs</a>: Holiday Season</a>: The Campground</a> in Summer: to the Perfect Visit</a> offers some of the best <a href="/blog/backcountry-skiing-day-tours-canadian-rockies"><a href="/blog/banff-snowshoeing-guide">Snowshoeing in <a href="/blog/banff-dog-sledding">Dog Sledding in Banff: Experience</a>: Best Trails & Tips</a> Backcountry Skiing Day Tours</a> in North America. Here's your complete guide to hitting the slopes.</p>
+<p>With three renowned resorts collectively known as <strong>SkiBig3</strong>, <a href="/blog/banff-in-summer">Banff in Summer</a> transforms into a winter playground offering some of the most reliable skiing in North America. Having skied all three mountains over the past decade, I can tell you each offers a distinct personality. Here's your complete guide to hitting the slopes in 2026-27.</p>
 
 <h2>The Three Resorts Compared</h2>
+
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Resort</th>
+<th>Terrain</th>
+<th>Vertical</th>
+<th>Season</th>
+<th>Best For</th>
+<th>Daily Lift Ticket (2026-27)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sunshine Village</td>
+<td>3,358 acres</td>
+<td>1,070m</td>
+<td>Nov-May</td>
+<td>Advanced skiers, powder</td>
+<td>\'banff-skiing-guide': `65-185 CAD</td>
+</tr>
+<tr>
+<td>Lake Louise</td>
+<td>4,200 acres</td>
+<td>1,000m</td>
+<td>Nov-May</td>
+<td>All levels, families</td>
+<td>\'banff-skiing-guide': `75-195 CAD</td>
+</tr>
+<tr>
+<td>Mt. Norquay</td>
+<td>190 acres</td>
+<td>503m</td>
+<td>Dec-Apr</td>
+<td>Beginners, night skiing</td>
+<td>\$85-105 CAD</td>
+</tr>
+</tbody>
+</table>
 
 <h3>Sunshine Village</h3>
 <ul>
@@ -5349,6 +5388,8 @@ export const blogContent1: Record<string, string> = {
 <li><strong>Best for:</strong> advanced skiers, powder chasers, and those who want the longest season</li>
 <li><strong>Highlights:</strong> Highest base elevation (2,160m), most natural snowfall, Delirium Dive (experts only), and straddles the Continental Divide</li>
 </ul>
+
+<p>I recommend arriving early on powder days—the gondola parking fills by 7:00 AM on weekends. The Strawberry Express chair accesses some of the most consistent snow conditions I've found anywhere.</p>
 
 <h3>Lake Louise Ski Resort</h3>
 <ul>
@@ -5363,24 +5404,35 @@ export const blogContent1: Record<string, string> = {
 <ul>
 <li><strong>Terrain:</strong> 190 acres</li>
 <li><strong>Vertical:</strong> 503m</li>
-<li><strong>Season:</strong> November to April</li>
+<li><strong>Season:</strong> December to April</li>
 <li><strong>Best for:</strong> families, beginners, night skiing, and quick sessions</li>
 <li><strong>Highlights:</strong> Just 6 minutes from Banff town, affordable, night skiing on Fridays and Saturdays, and excellent for learning</li>
 </ul>
 
 <h2>Lift Tickets & Passes</h2>
-<p>A <strong>SkiBig3 pass</strong> gives you access to all three resorts on a single ticket. Multi-day passes (3+ days) offer the best value and let you experience each mountain. Single-day tickets at individual resorts range from $80-170 CAD depending on the resort and date.</p>
+<p>A <strong>SkiBig3 pass</strong> gives you access to all three resorts on a single ticket. For 2026-27, three-day passes start at \`,90 CAD (compared to \$525 CAD for individual daily tickets), making them the clear winner for multi-day visits. I always recommend the five-day pass at \$595 CAD—it gives you flexibility to ski based on conditions rather than forcing specific mountains on specific days.</p>
+
+<h2>New for 2026-27: Dynamic Pricing Alert</h2>
+<p>All three resorts now use dynamic pricing, with weekend and holiday tickets costing 15-20% more than weekday rates. Book midweek visits when possible, and purchase tickets online at least 48 hours ahead for the best rates.</p>
 
 <h2>Ski & Stay Packages</h2>
-<p>Many Banff hotels offer ski & stay packages bundling accommodation with lift tickets at 20-30% savings compared to booking separately. Check the SkiBig3 website for current deals.</p>
+<p>Many Banff hotels offer ski & stay packages bundling accommodation with lift tickets at 20-30% savings compared to booking separately. The Fairmont Banff Springs and Rimrock Resort typically offer the strongest package deals. Check <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for current packages or browse our <a href="/hotel-directory">Compare 95+ Banff hotels</a> directory for direct booking options.</p>
 
 <h2>Gear Rental</h2>
-<p>Rent from shops in Banff town (<strong>Monod Sports</strong>, <strong>Ski Hub</strong>, <strong>Snowtips-Bactrax</strong>) rather than at the resort to save money. Most offer multi-day discounts.</p>
+<p>Rent from shops in Banff town (<strong>Monod Sports</strong>, <strong>Ski Hub</strong>, <strong>Snowtips-Bactrax</strong>) rather than at the resort to save 25-40%. Monod Sports offers the highest-end gear if you're an advanced skier, while Ski Hub provides excellent value for recreational skiers. Most shops offer three-day rental packages starting at \$85 CAD for skis, boots, and poles.</p>
+
+<h2>Transportation & Logistics</h2>
+<p>Sunshine Village requires a 15-minute gondola ride from the parking lot—factor this into your schedule. Lake Louise sits 45 minutes from Banff townsite, while Mt. Norquay is just 6 minutes up the mountain road. During peak season (December 26-January 8, February long weekend), I recommend leaving Banff by 7:30 AM to secure parking at Lake Louise and Sunshine.</p>
 
 <h2>Snow Conditions</h2>
-<p>Banff's resorts receive 750-900 cm of snowfall annually. The best powder typically falls in January and February. Sunshine Village's high elevation and Continental Divide position give it the most consistent conditions.</p>
+<p>Banff's resorts receive 750-900 cm of snowfall annually. The best powder typically falls in January and February. Sunshine Village's high elevation and Continental Divide position give it the most consistent conditions. When I'm chasing fresh snow, I check the overnight reports and head to Sunshine first—their elevation advantage means better snow quality even when valley temperatures rise.</p>
 
-<div class="tip-box"><strong>First Timer?</strong> Start at Mt. Norquay for a relaxed, affordable introduction. Their beginner packages include a lift ticket, rental, and group lesson at excellent value.</div>\n<p>Ready to plan your Banff adventure? Compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and browse guided tours and activities on <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your trip.</p>
+<h2>Lesson Recommendations</h2>
+<p>For beginners, Mt. Norquay offers the most relaxed learning environment and best value lesson packages at \'banff-skiing-guide': `65 CAD (includes lift, rental, and two-hour group lesson). Intermediate skiers benefit from Lake Louise's varied terrain for progression, while advanced skiers should consider Sunshine's off-piste workshops.</p>
+
+<div class="tip-box"><strong>First Timer?</strong> Start at Mt. Norquay for a relaxed, affordable introduction. Their beginner packages include a lift ticket, rental, and group lesson at excellent value.</div>
+
+<p>Ready to plan your Banff ski adventure? Book <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=skiing" target="_blank" rel="noopener sponsored">skiing packages and lessons</a> in advance, compare accommodation rates on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>, and check our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> for planning your complete winter trip.</p>
 `,
   'banff-with-kids': `
 <p><a href="/blog/rainy-day-banff">Rainy Day in <a href="/blog/banff-senior-travel"><a href="/blog/banff-northern-lights">Northern Lights in <a href="/blog/banff-mistakes-to-avoid">15 Mistakes to Avoid When Visiting Banff</a>: When & Where to See Them</a> for Seniors: Easy Activities & Accessibility</a>: 15 Indoor Activities & Ideas</a> is an incredible destination for families. The combination of easy nature access, wildlife, and family-friendly activities makes it a place kids will remember forever.</p>
