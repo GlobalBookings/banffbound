@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-06-11T13:53:32.486Z",
+  "updatedAt": "2026-06-11T17:33:17.536Z",
   "banff": {
     "current": {
-      "temp": 9,
+      "temp": 13,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 74,
-      "wind": "8 km/h"
+      "humidity": 54,
+      "wind": "18 km/h"
     },
     "forecast": [
       {
@@ -48,11 +48,11 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 7,
-      "condition": "Mainly clear",
-      "icon": "🌤️",
-      "humidity": 89,
-      "wind": "12 km/h"
+      "temp": 10,
+      "condition": "Overcast",
+      "icon": "☁️",
+      "humidity": 76,
+      "wind": "18 km/h"
     },
     "forecast": [
       {
