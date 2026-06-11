@@ -1,95 +1,24 @@
 {
-  "updatedAt": "2026-06-11T02:46:55.893Z",
+  "updatedAt": "2026-06-11T08:28:52.774Z",
   "banff": {
     "current": {
-      "temp": 11,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 72,
-      "wind": "5 km/h"
+      "temp": null,
+      "condition": "Unknown",
+      "icon": "🌡️",
+      "humidity": null,
+      "wind": ""
     },
-    "forecast": [
-      {
-        "day": "Today",
-        "high": 12,
-        "low": 6,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Thursday",
-        "high": 14,
-        "low": 7,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Friday",
-        "high": 9,
-        "low": 5,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Saturday",
-        "high": 21,
-        "low": 3,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Sunday",
-        "high": 20,
-        "low": 8,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      }
-    ]
+    "forecast": []
   },
   "lakeLouise": {
     "current": {
-      "temp": 8,
-      "condition": "Mainly clear",
-      "icon": "🌤️",
-      "humidity": 86,
-      "wind": "15 km/h"
+      "temp": null,
+      "condition": "Unknown",
+      "icon": "🌡️",
+      "humidity": null,
+      "wind": ""
     },
-    "forecast": [
-      {
-        "day": "Today",
-        "high": 10,
-        "low": 5,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Thursday",
-        "high": 10,
-        "low": 4,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Friday",
-        "high": 10,
-        "low": 3,
-        "condition": "Slight snow showers",
-        "icon": "🌨️"
-      },
-      {
-        "day": "Saturday",
-        "high": 19,
-        "low": 2,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Sunday",
-        "high": 19,
-        "low": 8,
-        "condition": "Overcast",
-        "icon": "☁️"
-      }
-    ]
-  }
+    "forecast": []
+  },
+  "error": "fetch failed"
 }
