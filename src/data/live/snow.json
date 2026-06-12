@@ -1,17 +1,10 @@
 {
-  "updatedAt": "2026-06-12T21:27:04.994Z",
+  "updatedAt": "2026-06-12T23:08:59.143Z",
   "offSeason": false,
   "resorts": [
     {
       "name": "Sunshine Village",
-      "status": "Closed for Season",
-      "baseDepth": null,
-      "newSnow24h": null,
-      "seasonTotal": null,
-      "openRuns": null,
-      "totalRuns": 137,
-      "openLifts": null,
-      "totalLifts": 12,
+      "status": "Check website",
       "website": "https://www.skibanff.com/conditions"
     },
     {
