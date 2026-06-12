@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-12T16:39:20.979Z",
+  "updatedAt": "2026-06-12T19:56:01.267Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 58,
+    "open": 59,
     "caution": 21,
-    "closed": 17
+    "closed": 16
   },
   "areas": [
     {
@@ -201,7 +201,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Wet and muddy sections; Snow covered sections; Cleats recommended; Avalanche debris on trail; Avalanche risk: Beyond the viewpoint the trail crosses large avalanche paths.; Risk of ",
-          "lastUpdated": "2026-06-09"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Tunnel Bench Loop",
@@ -209,7 +209,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Check the important bulletins for more information; Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Sulphur Mountain Trail",
@@ -217,7 +217,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Ink Pots Trail",
@@ -225,7 +225,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Wet and muddy sections",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Brewster Creek Trail",
@@ -233,7 +233,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy; Snow covered sections",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Bourgeau Lake Trail",
@@ -241,7 +241,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing; Avalanche debris on trail; Numerous trees down on trail",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Healy Pass Trail",
@@ -249,15 +249,15 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Redearth Creek Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Studded tires recommended; Avalanche terrain; Wet with muddy sections; Snow covered sections; Cleats recommended",
-          "lastUpdated": "2026-06-11"
+          "status": "open",
+          "condition": "Fair.",
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Snow patches",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Rockbound Lake Trail",
@@ -265,7 +265,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Cascade Amphitheatre Trail",
@@ -273,7 +273,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Arnica Lake Trail",
@@ -281,7 +281,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Harvey Pass Trail",
@@ -289,7 +289,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Goat Creek Trail",
@@ -297,7 +297,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "No access through Spray Lakes Road/Smith-Dorien Trail; Biking excluding e-bikes is allowed; Wet and muddy sections; Caution - river is flowing higher than normal. Exercise additional caution when walk",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
@@ -305,7 +305,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
@@ -313,7 +313,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
@@ -321,7 +321,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Bow Valley Parkway",
@@ -329,7 +329,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Walk or bike in access only, road closed to vehicles; Respect all posted notices and signs; No parking on roadways, or highways; Biking including pedal-assist e-bikes is allowed; Wildlife corridor; Be",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Tunnel Technical Trails: Return of the Jedi Trail",
@@ -337,7 +337,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Tunnel Technical Trails: Star Wars Trail",
@@ -345,7 +345,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Tunnel Technical Trails: Topp Notch Trail",
@@ -353,7 +353,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Rundle Riverside Trail",
@@ -361,7 +361,7 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Deadfall on trail; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "The Toe",
@@ -369,7 +369,7 @@
           "status": "closed",
           "condition": "Closed.",
           "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Cory Pass Loop",
@@ -377,15 +377,15 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Aylmer Lookout Trail",
           "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Watch for ticks; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-11"
+          "status": "caution",
+          "condition": "Not recommended.",
+          "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Aylmer Pass Trail",
@@ -393,7 +393,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snow at high elevation ; Wet and muddy sections; Watch for ticks; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         }
       ]
     },
@@ -510,23 +510,23 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Snow at high elevation ; Icy sections; Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Lake Annette Trail",
           "difficulty": "Moderate",
-          "status": "closed",
-          "condition": "No access.",
-          "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections",
-          "lastUpdated": "2026-06-07"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Larch Valley/Minnestimma Lakes Trail",
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Not recommended.",
-          "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; No vehicle access",
-          "lastUpdated": "2026-06-07"
+          "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; No vehicle access; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Little Beehive Trail",
@@ -534,7 +534,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Snow at high elevation ; Icy sections; Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Mirror Lake Highline Trail",
@@ -542,7 +542,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Pipestone Trail",
@@ -550,15 +550,15 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Debris on trail",
-          "lastUpdated": "2026-06-09"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Plain of Six Glaciers Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Poor.",
+          "condition": "Fair.",
           "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Taylor Lake Trail",
@@ -566,7 +566,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow at high elevation ; Risk of post-holing; Deadfall on trail; Wet and muddy",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Tramline Trail",
@@ -574,7 +574,7 @@
           "status": "closed",
           "condition": "Partially closed, check trail details for additional information.",
           "comment": "The lower section of Tramline is closed from May 15 until October 15. Begin from the Bow River parking lot, cross the bridge, take a left and follow the Bow River Trail until the junction with the new",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Fairview Mountain Trail",
@@ -582,31 +582,31 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche danger; Snowbound at higher elevation; Risk of post-holing",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Moraine Lake Highline Trail",
           "difficulty": "Difficult",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Deadfall on trail",
-          "lastUpdated": "2026-06-07"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Deadfall on trail; Not yet maintained",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Hidden Lake Trail",
           "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing",
-          "lastUpdated": "2026-06-07"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing; Not recommended",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Deception Pass Trail",
           "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing",
-          "lastUpdated": "2026-06-07"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing; Not recommended",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Paradise Valley and Giant Steps Trail",
@@ -614,15 +614,15 @@
           "status": "closed",
           "condition": "Road access closed",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Risk of post-holing; Deadfall on trail; Wet and muddy",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Sentinel Pass from Paradise Valley Trail",
           "difficulty": "Difficult",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snow covered; Snowbound at higher elevation; Avalanche danger",
-          "lastUpdated": "2026-06-07"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered; Snowbound at higher elevation; Avalanche danger; Not recommended",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Saddleback Pass Trail",
@@ -630,15 +630,15 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Sentinel Pass via Larch Valley Trail",
           "difficulty": "Difficult",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snow covered; Snowbound at higher elevation; Avalanche danger",
-          "lastUpdated": "2026-06-07"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered; Snowbound at higher elevation; Avalanche danger; Not recommended",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Sheol/Paradise Connector Trail",
@@ -646,7 +646,7 @@
           "status": "caution",
           "condition": "Avalanche terrain.",
           "comment": "Avalanche danger; Snowbound; Respect all posted notices and signs; Not yet maintained; Not recommended",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Wenkchemna Pass Trail",
@@ -654,7 +654,7 @@
           "status": "closed",
           "condition": "Road access closed",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snowbound at higher elevation; Risk of post-holing; Difficult route finding",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         }
       ]
     },
@@ -667,7 +667,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Mistaya Canyon Trail",
@@ -675,7 +675,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Wet and muddy sections; Slippery sections",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Peyto Lake Viewpoint Trail",
@@ -683,7 +683,7 @@
           "status": "caution",
           "condition": "Snow covered with icy sections.",
           "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended; Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-05-28"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Chephren Lake Trail",
@@ -691,7 +691,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Not yet maintained; Deadfall on trail; Wet and muddy sections",
-          "lastUpdated": "2026-05-28"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Bow Glacier Falls Trail",
@@ -699,7 +699,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Trail is closed at the end of Bow lake; no access to Bow Glacier Falls. For details, visit AREA CLOSURE - Bow Glacier Falls on \"Banff National Park Bulletin\" page; Adhere to all posted warnings and cl",
-          "lastUpdated": "2026-06-03"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Cirque Lake Trail",
@@ -707,7 +707,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Not yet maintained; Deadfall on trail; Wet and muddy sections",
-          "lastUpdated": "2026-05-28"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Helen Lake Trail",
@@ -715,7 +715,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-03"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Parker Ridge Trail",
@@ -723,7 +723,7 @@
           "status": "caution",
           "condition": "Avalanche terrain.",
           "comment": "Dangerous snow conditions; Avalanche danger; Snowbound; Not yet maintained; Not recommended",
-          "lastUpdated": "2026-05-29"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Nigel Pass Trail",
@@ -731,7 +731,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Dangerous snow conditions; Avalanche danger; Snowbound; Not yet maintained; Not recommended",
-          "lastUpdated": "2026-05-29"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Dolomite Pass Trail",
@@ -739,7 +739,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-03"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Glacier Lake Trail",
@@ -747,23 +747,23 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-06-11"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Molar Pass Trail",
           "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Poor.",
+          "status": "caution",
+          "condition": "Not recommended.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-03"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "North Molar Pass Trail",
           "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Poor.",
+          "status": "caution",
+          "condition": "Not recommended.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-03"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Sunset Pass Trail",
@@ -771,7 +771,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-03"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Sarbach Lookout Trail",
@@ -779,7 +779,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-03"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Sunset Lookout Trail",
@@ -787,7 +787,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow at high elevation ; Risk of post-holing; Not yet maintained",
-          "lastUpdated": "2026-05-28"
+          "lastUpdated": "2026-06-12"
         }
       ]
     }
@@ -1006,7 +1006,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Wet and muddy sections; Snow covered sections; Cleats recommended; Avalanche debris on trail; Avalanche risk: Beyond the viewpoint the trail crosses large avalanche paths.; Risk of ",
-      "lastUpdated": "2026-06-09",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1015,7 +1015,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Check the important bulletins for more information; Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1024,7 +1024,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1033,7 +1033,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Wet and muddy sections",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1042,7 +1042,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy; Snow covered sections",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1051,7 +1051,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing; Avalanche debris on trail; Numerous trees down on trail",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1060,16 +1060,16 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
       "name": "Redearth Creek Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Studded tires recommended; Avalanche terrain; Wet with muddy sections; Snow covered sections; Cleats recommended",
-      "lastUpdated": "2026-06-11",
+      "status": "open",
+      "condition": "Fair.",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Snow patches",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1078,7 +1078,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1087,7 +1087,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1096,7 +1096,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1105,7 +1105,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1114,7 +1114,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "No access through Spray Lakes Road/Smith-Dorien Trail; Biking excluding e-bikes is allowed; Wet and muddy sections; Caution - river is flowing higher than normal. Exercise additional caution when walk",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1123,7 +1123,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1132,7 +1132,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1141,7 +1141,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1150,7 +1150,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Walk or bike in access only, road closed to vehicles; Respect all posted notices and signs; No parking on roadways, or highways; Biking including pedal-assist e-bikes is allowed; Wildlife corridor; Be",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1159,7 +1159,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1168,7 +1168,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1177,7 +1177,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1186,7 +1186,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Deadfall on trail; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1195,7 +1195,7 @@
       "status": "closed",
       "condition": "Closed.",
       "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1204,16 +1204,16 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
       "name": "Aylmer Lookout Trail",
       "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Watch for ticks; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-11",
+      "status": "caution",
+      "condition": "Not recommended.",
+      "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1222,7 +1222,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snow at high elevation ; Wet and muddy sections; Watch for ticks; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Banff Area"
     },
     {
@@ -1348,16 +1348,16 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Snow at high elevation ; Icy sections; Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
       "name": "Lake Annette Trail",
       "difficulty": "Moderate",
-      "status": "closed",
-      "condition": "No access.",
-      "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections",
-      "lastUpdated": "2026-06-07",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1365,8 +1365,8 @@
       "difficulty": "Moderate",
       "status": "caution",
       "condition": "Not recommended.",
-      "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; No vehicle access",
-      "lastUpdated": "2026-06-07",
+      "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; No vehicle access; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1375,7 +1375,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Snow at high elevation ; Icy sections; Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1384,7 +1384,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1393,16 +1393,16 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Debris on trail",
-      "lastUpdated": "2026-06-09",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
       "name": "Plain of Six Glaciers Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Poor.",
+      "condition": "Fair.",
       "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1411,7 +1411,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow at high elevation ; Risk of post-holing; Deadfall on trail; Wet and muddy",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1420,7 +1420,7 @@
       "status": "closed",
       "condition": "Partially closed, check trail details for additional information.",
       "comment": "The lower section of Tramline is closed from May 15 until October 15. Begin from the Bow River parking lot, cross the bridge, take a left and follow the Bow River Trail until the junction with the new",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1429,7 +1429,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche danger; Snowbound at higher elevation; Risk of post-holing",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1437,26 +1437,26 @@
       "difficulty": "Difficult",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Deadfall on trail",
-      "lastUpdated": "2026-06-07",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Deadfall on trail; Not yet maintained",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
       "name": "Hidden Lake Trail",
       "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing",
-      "lastUpdated": "2026-06-07",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing; Not recommended",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
       "name": "Deception Pass Trail",
       "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing",
-      "lastUpdated": "2026-06-07",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing; Not recommended",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1465,7 +1465,7 @@
       "status": "closed",
       "condition": "Road access closed",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Risk of post-holing; Deadfall on trail; Wet and muddy",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1473,8 +1473,8 @@
       "difficulty": "Difficult",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snow covered; Snowbound at higher elevation; Avalanche danger",
-      "lastUpdated": "2026-06-07",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered; Snowbound at higher elevation; Avalanche danger; Not recommended",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1483,7 +1483,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1491,8 +1491,8 @@
       "difficulty": "Difficult",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snow covered; Snowbound at higher elevation; Avalanche danger",
-      "lastUpdated": "2026-06-07",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered; Snowbound at higher elevation; Avalanche danger; Not recommended",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1501,7 +1501,7 @@
       "status": "caution",
       "condition": "Avalanche terrain.",
       "comment": "Avalanche danger; Snowbound; Respect all posted notices and signs; Not yet maintained; Not recommended",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1510,7 +1510,7 @@
       "status": "closed",
       "condition": "Road access closed",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snowbound at higher elevation; Risk of post-holing; Difficult route finding",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1519,7 +1519,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1528,7 +1528,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Wet and muddy sections; Slippery sections",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1537,7 +1537,7 @@
       "status": "caution",
       "condition": "Snow covered with icy sections.",
       "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended; Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-05-28",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1546,7 +1546,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Not yet maintained; Deadfall on trail; Wet and muddy sections",
-      "lastUpdated": "2026-05-28",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1555,7 +1555,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Trail is closed at the end of Bow lake; no access to Bow Glacier Falls. For details, visit AREA CLOSURE - Bow Glacier Falls on \"Banff National Park Bulletin\" page; Adhere to all posted warnings and cl",
-      "lastUpdated": "2026-06-03",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1564,7 +1564,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Not yet maintained; Deadfall on trail; Wet and muddy sections",
-      "lastUpdated": "2026-05-28",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1573,7 +1573,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-03",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1582,7 +1582,7 @@
       "status": "caution",
       "condition": "Avalanche terrain.",
       "comment": "Dangerous snow conditions; Avalanche danger; Snowbound; Not yet maintained; Not recommended",
-      "lastUpdated": "2026-05-29",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1591,7 +1591,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Dangerous snow conditions; Avalanche danger; Snowbound; Not yet maintained; Not recommended",
-      "lastUpdated": "2026-05-29",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1600,7 +1600,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-03",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1609,25 +1609,25 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "Molar Pass Trail",
       "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Poor.",
+      "status": "caution",
+      "condition": "Not recommended.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-03",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "North Molar Pass Trail",
       "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Poor.",
+      "status": "caution",
+      "condition": "Not recommended.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-03",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1636,7 +1636,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-03",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1645,7 +1645,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-03",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1654,7 +1654,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow at high elevation ; Risk of post-holing; Not yet maintained",
-      "lastUpdated": "2026-05-28",
+      "lastUpdated": "2026-06-12",
       "area": "Icefields Parkway Area"
     }
   ],
