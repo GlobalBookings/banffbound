@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-12T19:56:01.267Z",
+  "updatedAt": "2026-06-12T21:27:11.029Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 59,
+    "open": 62,
     "caution": 21,
-    "closed": 16
+    "closed": 13
   },
   "areas": [
     {
@@ -406,23 +406,23 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Wet and muddy",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Consolation Lakes Trail",
           "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Road access closed",
+          "status": "open",
+          "condition": "Fair.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Risk of post-holing",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Fairview Lookout Trail",
           "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Snow covered with wet, muddy and slippery sections.",
+          "status": "open",
+          "condition": "Fair.",
           "comment": "Snow covered sections; Wet and muddy sections; Slippery sections; Icy sections; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Great Divide Trail",
@@ -430,7 +430,7 @@
           "status": "open",
           "condition": "Water on trail in some sections.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Wet",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Lake Louise Lakeshore Trail",
@@ -438,7 +438,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Moraine Lakeshore Trail",
@@ -446,7 +446,7 @@
           "status": "closed",
           "condition": "Road access closed",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Paradise Connector",
@@ -454,15 +454,15 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow covered sections; Deadfall on trail; Wet and muddy",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Rockpile Trail",
           "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Road access closed",
+          "status": "open",
+          "condition": "Please respect all posted notices and signs.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Louise Creek Trail",
@@ -470,23 +470,23 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "The lower section of the Louise Creek trail is CLOSED from May 15 to October 15 to help protect and improve important wildlife habitat. Hikers are asked to travel the new Tramline connector instead.; ",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Big Beehive Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Poor.",
-          "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Avalanche terrain; Risk of post-holing",
-          "lastUpdated": "2026-06-07"
+          "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Avalanche terrain; Risk of post-holing; Slippery sections",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Big Beehive to Plain of Six Glaciers Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Poor.",
-          "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Risk of post-holing; Avalanche debris on trail",
-          "lastUpdated": "2026-06-07"
+          "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Risk of post-holing; Avalanche debris on trail; Slippery sections",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Castle Lookout Trail",
@@ -494,15 +494,15 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Sturdy hiking boots and hiking poles recommended; Watch for ticks; Wet and muddy",
-          "lastUpdated": "2026-06-07"
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Eiffel Lake Trail",
           "difficulty": "Moderate",
-          "status": "closed",
-          "condition": "No access.",
-          "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-07"
+          "status": "caution",
+          "condition": "Not recommended.",
+          "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+          "lastUpdated": "2026-06-12"
         },
         {
           "name": "Lake Agnes Trail",
@@ -1231,25 +1231,25 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Wet and muddy",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
       "name": "Consolation Lakes Trail",
       "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Road access closed",
+      "status": "open",
+      "condition": "Fair.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Risk of post-holing",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
       "name": "Fairview Lookout Trail",
       "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Snow covered with wet, muddy and slippery sections.",
+      "status": "open",
+      "condition": "Fair.",
       "comment": "Snow covered sections; Wet and muddy sections; Slippery sections; Icy sections; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1258,7 +1258,7 @@
       "status": "open",
       "condition": "Water on trail in some sections.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Wet",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1267,7 +1267,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1276,7 +1276,7 @@
       "status": "closed",
       "condition": "Road access closed",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1285,16 +1285,16 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow covered sections; Deadfall on trail; Wet and muddy",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
       "name": "Rockpile Trail",
       "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Road access closed",
+      "status": "open",
+      "condition": "Please respect all posted notices and signs.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1303,7 +1303,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "The lower section of the Louise Creek trail is CLOSED from May 15 to October 15 to help protect and improve important wildlife habitat. Hikers are asked to travel the new Tramline connector instead.; ",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1311,8 +1311,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Poor.",
-      "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Avalanche terrain; Risk of post-holing",
-      "lastUpdated": "2026-06-07",
+      "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Avalanche terrain; Risk of post-holing; Slippery sections",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1320,8 +1320,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Poor.",
-      "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Risk of post-holing; Avalanche debris on trail",
-      "lastUpdated": "2026-06-07",
+      "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Risk of post-holing; Avalanche debris on trail; Slippery sections",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
@@ -1330,16 +1330,16 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Sturdy hiking boots and hiking poles recommended; Watch for ticks; Wet and muddy",
-      "lastUpdated": "2026-06-07",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
       "name": "Eiffel Lake Trail",
       "difficulty": "Moderate",
-      "status": "closed",
-      "condition": "No access.",
-      "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-07",
+      "status": "caution",
+      "condition": "Not recommended.",
+      "comment": "No vehicle access; Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+      "lastUpdated": "2026-06-12",
       "area": "Lake Louise Area"
     },
     {
