@@ -298,18 +298,42 @@ export async function run() {
   const auth = getOAuth2Client();
   const analytics = google.analyticsdata({ version: 'v1beta', auth });
 
-  const safe = (fn, fallback) => fn.catch(e => { log.warn(`GA4 section failed: ${e.message}`); return fallback; });
+  const errors = [];
+  const safe = (fn, fallback, label) => fn.catch(e => {
+    log.warn(`GA4 section failed (${label}): ${e.message}`);
+    errors.push({ label, message: e.message });
+    return fallback;
+  });
   const [overview, sources, devices, topPages, landingPages, affiliateClicks, geo] = await Promise.all([
-    safe(getOverview(analytics), { sessions: { val: 0, prev: 0 }, users: { val: 0, prev: 0 }, pageviews: { val: 0, prev: 0 }, bounceRate: { val: 0, prev: 0 }, avgDuration: { val: 0, prev: 0 }, newUsers: { val: 0, prev: 0 } }),
-    safe(getSources(analytics), []),
-    safe(getDevices(analytics), []),
-    safe(getTopPages(analytics), []),
-    safe(getLandingPages(analytics), []),
-    safe(getAffiliateClicks(analytics), []),
-    safe(getGeo(analytics), []),
+    safe(getOverview(analytics), { sessions: { val: 0, prev: 0 }, users: { val: 0, prev: 0 }, pageviews: { val: 0, prev: 0 }, bounceRate: { val: 0, prev: 0 }, avgDuration: { val: 0, prev: 0 }, newUsers: { val: 0, prev: 0 } }, 'overview'),
+    safe(getSources(analytics), [], 'sources'),
+    safe(getDevices(analytics), [], 'devices'),
+    safe(getTopPages(analytics), [], 'topPages'),
+    safe(getLandingPages(analytics), [], 'landingPages'),
+    safe(getAffiliateClicks(analytics), [], 'affiliateClicks'),
+    safe(getGeo(analytics), [], 'geo'),
   ]);
 
+  // If the core overview call failed the whole report is unreliable (usually an expired/missing
+  // GOOGLE_REFRESH_TOKEN or a quota error). Post the real error instead of a misleading all-zeros report.
+  if (errors.some(e => e.label === 'overview')) {
+    const detail = errors.map(e => `• \`${e.label}\`: ${e.message}`).join('\n');
+    log.error(`GA4 Daily Briefing failed — overview unavailable (${errors.length} section error(s))`);
+    await sendSlack([
+      slackHeader('⚠️ GA4 Daily Briefing Failed'),
+      slackSection(`Could not reach the GA4 Data API, so no metrics were retrieved. This usually means the Google OAuth credentials (\`GOOGLE_REFRESH_TOKEN\`) are expired, revoked, or missing in the deployment environment.\n\n*Errors:*\n${detail}`),
+    ], 'GA4 Daily Briefing failed');
+    return { error: errors.map(e => e.message).join('; ') };
+  }
+
   const report = buildReport(overview, sources, devices, topPages, landingPages, affiliateClicks, geo);
+
+  // Overview succeeded but some sections errored — surface that instead of silently dropping them.
+  if (errors.length > 0) {
+    report.push(slackDivider());
+    report.push(slackSection(`:warning: Some sections failed to load: ${errors.map(e => `\`${e.label}\``).join(', ')}. Check agent logs.`));
+  }
+
   await sendSlack(report, 'GA4 Daily Briefing');
 
   const totalSessions = overview.sessions.val;
