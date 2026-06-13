@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-06-13T17:13:41.556Z",
+  "updatedAt": "2026-06-13T19:10:52.856Z",
   "banff": {
     "current": {
-      "temp": 12,
-      "condition": "Clear sky",
-      "icon": "☀️",
-      "humidity": 54,
-      "wind": "4 km/h"
+      "temp": 14,
+      "condition": "Mainly clear",
+      "icon": "🌤️",
+      "humidity": 55,
+      "wind": "3 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 16,
         "low": 1,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Moderate drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Sunday",
@@ -25,34 +25,34 @@
       },
       {
         "day": "Monday",
-        "high": 22,
+        "high": 23,
         "low": 10,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Tuesday",
-        "high": 21,
-        "low": 10,
+        "high": 22,
+        "low": 9,
         "condition": "Slight rain showers",
         "icon": "🌦️"
       },
       {
         "day": "Wednesday",
-        "high": 17,
-        "low": 8,
-        "condition": "Slight snow showers",
-        "icon": "🌨️"
+        "high": 19,
+        "low": 7,
+        "condition": "Slight rain",
+        "icon": "🌦️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 11,
+      "temp": 12,
       "condition": "Mainly clear",
       "icon": "🌤️",
-      "humidity": 67,
-      "wind": "3 km/h"
+      "humidity": 66,
+      "wind": "9 km/h"
     },
     "forecast": [
       {
@@ -71,7 +71,7 @@
       },
       {
         "day": "Monday",
-        "high": 20,
+        "high": 21,
         "low": 7,
         "condition": "Light drizzle",
         "icon": "🌦️"
@@ -79,16 +79,16 @@
       {
         "day": "Tuesday",
         "high": 18,
-        "low": 7,
+        "low": 8,
         "condition": "Slight rain showers",
         "icon": "🌦️"
       },
       {
         "day": "Wednesday",
-        "high": 17,
-        "low": 7,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 16,
+        "low": 6,
+        "condition": "Slight snow showers",
+        "icon": "🌨️"
       }
     ]
   }
