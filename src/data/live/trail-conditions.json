@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-06-13T19:11:00.431Z",
+  "updatedAt": "2026-06-13T21:04:24.472Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 62,
-    "caution": 21,
+    "open": 63,
+    "caution": 20,
     "closed": 13
   },
   "areas": [
@@ -361,7 +361,7 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Deadfall on trail; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-13"
         },
         {
           "name": "The Toe",
@@ -369,7 +369,7 @@
           "status": "closed",
           "condition": "Closed.",
           "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-13"
         },
         {
           "name": "Cory Pass Loop",
@@ -377,15 +377,15 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-13"
         },
         {
           "name": "Aylmer Lookout Trail",
           "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
-          "lastUpdated": "2026-06-12"
+          "status": "open",
+          "condition": "Fair.",
+          "comment": "Watch for ticks; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
+          "lastUpdated": "2026-06-13"
         },
         {
           "name": "Aylmer Pass Trail",
@@ -393,7 +393,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snow at high elevation ; Wet and muddy sections; Watch for ticks; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-13"
         }
       ]
     },
@@ -1186,7 +1186,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Deadfall on trail; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-13",
       "area": "Banff Area"
     },
     {
@@ -1195,7 +1195,7 @@
       "status": "closed",
       "condition": "Closed.",
       "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-13",
       "area": "Banff Area"
     },
     {
@@ -1204,16 +1204,16 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-13",
       "area": "Banff Area"
     },
     {
       "name": "Aylmer Lookout Trail",
       "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
-      "lastUpdated": "2026-06-12",
+      "status": "open",
+      "condition": "Fair.",
+      "comment": "Watch for ticks; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
+      "lastUpdated": "2026-06-13",
       "area": "Banff Area"
     },
     {
@@ -1222,7 +1222,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snow at high elevation ; Wet and muddy sections; Watch for ticks; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-13",
       "area": "Banff Area"
     },
     {
