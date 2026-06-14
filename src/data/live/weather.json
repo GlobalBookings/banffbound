@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-06-14T08:09:47.481Z",
+  "updatedAt": "2026-06-14T11:49:45.294Z",
   "banff": {
     "current": {
-      "temp": 7,
+      "temp": 5,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 49,
-      "wind": "8 km/h"
+      "humidity": 53,
+      "wind": "5 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 22,
-        "low": 6,
+        "high": 21,
+        "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -34,54 +34,54 @@
         "day": "Wednesday",
         "high": 18,
         "low": 7,
-        "condition": "Moderate rain showers",
-        "icon": "🌧️"
+        "condition": "Slight snow showers",
+        "icon": "🌨️"
       },
       {
         "day": "Thursday",
         "high": 21,
         "low": 6,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "condition": "Dense drizzle",
+        "icon": "🌧️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 5,
+      "temp": 4,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 52,
-      "wind": "3 km/h"
+      "humidity": 61,
+      "wind": "4 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 18,
+        "high": 17,
         "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Monday",
-        "high": 17,
-        "low": 7,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 16,
+        "low": 8,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Tuesday",
         "high": 19,
         "low": 8,
-        "condition": "Slight rain showers",
+        "condition": "Moderate drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Wednesday",
         "high": 17,
         "low": 6,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
+        "condition": "Slight snow showers",
+        "icon": "🌨️"
       },
       {
         "day": "Thursday",
