@@ -47,6 +47,42 @@ const canonical = canonicalUrl || Astro.url.href;
 
     <title>{pageTitle}</title>
 
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': 'https://banffbound.com/#organization',
+          name: 'BanffBound',
+          url: 'https://banffbound.com',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://banffbound.com/favicon.svg',
+          },
+          sameAs: [],
+          description: 'Comprehensive travel guide to Banff National Park, Lake Louise, Jasper, Canmore and the Canadian Rockies.',
+        },
+        {
+          '@type': 'WebSite',
+          '@id': 'https://banffbound.com/#website',
+          url: 'https://banffbound.com',
+          name: 'BanffBound',
+          publisher: { '@id': 'https://banffbound.com/#organization' },
+          inLanguage: 'en',
+          description: 'Your ultimate guide to Banff, Alberta. Discover the best things to do, eat, drink, shop, and experience in the Canadian Rockies.',
+        },
+        {
+          '@type': 'WebPage',
+          '@id': canonical + '#webpage',
+          url: canonical,
+          name: pageTitle,
+          isPartOf: { '@id': 'https://banffbound.com/#website' },
+          description: description,
+          inLanguage: 'en',
+          ...(lastUpdated ? { dateModified: lastUpdated } : {}),
+        },
+      ],
+    })} />
 
   </head>
   <body>
