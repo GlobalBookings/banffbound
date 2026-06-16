@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-16T14:54:02.821Z",
+  "updatedAt": "2026-06-16T19:32:39.482Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 59,
+    "open": 60,
     "caution": 19,
-    "closed": 18
+    "closed": 17
   },
   "areas": [
     {
@@ -64,7 +64,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
+          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
           "lastUpdated": "2026-06-16"
         },
         {
@@ -302,9 +302,9 @@
         {
           "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
           "difficulty": "Moderate",
-          "status": "closed",
-          "condition": "Closed.",
-          "comment": "Closed until further notice; Check the important bulletins for more information",
+          "status": "open",
+          "condition": "Bear Warning.",
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
           "lastUpdated": "2026-06-16"
         },
         {
@@ -852,7 +852,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
       "lastUpdated": "2026-06-16",
       "area": "Banff Area"
     },
@@ -1120,9 +1120,9 @@
     {
       "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
       "difficulty": "Moderate",
-      "status": "closed",
-      "condition": "Closed.",
-      "comment": "Closed until further notice; Check the important bulletins for more information",
+      "status": "open",
+      "condition": "Bear Warning.",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
       "lastUpdated": "2026-06-16",
       "area": "Banff Area"
     },
