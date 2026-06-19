@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-19T19:27:48.052Z",
+  "updatedAt": "2026-06-19T21:02:24.599Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -494,7 +494,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Sturdy hiking boots and hiking poles recommended; Watch for ticks; Wet and muddy sections",
-          "lastUpdated": "2026-06-13"
+          "lastUpdated": "2026-06-19"
         },
         {
           "name": "Eiffel Lake Trail",
@@ -550,7 +550,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Debris on trail",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-19"
         },
         {
           "name": "Plain of Six Glaciers Trail",
@@ -574,7 +574,7 @@
           "status": "closed",
           "condition": "Partially closed, check trail details for additional information.",
           "comment": "The lower section of Tramline is closed from May 15 until October 15. Begin from the Bow River parking lot, cross the bridge, take a left and follow the Bow River Trail until the junction with the new",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-19"
         },
         {
           "name": "Fairview Mountain Trail",
@@ -667,7 +667,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-19"
         },
         {
           "name": "Mistaya Canyon Trail",
@@ -699,7 +699,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Trail is closed at the end of Bow lake; no access to Bow Glacier Falls. For details, visit AREA CLOSURE - Bow Glacier Falls on \"Banff National Park Bulletin\" page; Adhere to all posted warnings and cl",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-19"
         },
         {
           "name": "Cirque Lake Trail",
@@ -739,7 +739,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-19"
         },
         {
           "name": "Glacier Lake Trail",
@@ -747,7 +747,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-06-12"
+          "lastUpdated": "2026-06-19"
         },
         {
           "name": "Molar Pass Trail",
@@ -1330,7 +1330,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Sturdy hiking boots and hiking poles recommended; Watch for ticks; Wet and muddy sections",
-      "lastUpdated": "2026-06-13",
+      "lastUpdated": "2026-06-19",
       "area": "Lake Louise Area"
     },
     {
@@ -1393,7 +1393,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Debris on trail",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-19",
       "area": "Lake Louise Area"
     },
     {
@@ -1420,7 +1420,7 @@
       "status": "closed",
       "condition": "Partially closed, check trail details for additional information.",
       "comment": "The lower section of Tramline is closed from May 15 until October 15. Begin from the Bow River parking lot, cross the bridge, take a left and follow the Bow River Trail until the junction with the new",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-19",
       "area": "Lake Louise Area"
     },
     {
@@ -1519,7 +1519,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-19",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1555,7 +1555,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Trail is closed at the end of Bow lake; no access to Bow Glacier Falls. For details, visit AREA CLOSURE - Bow Glacier Falls on \"Banff National Park Bulletin\" page; Adhere to all posted warnings and cl",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-19",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1600,7 +1600,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-19",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1609,7 +1609,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-19",
       "area": "Icefields Parkway Area"
     },
     {
