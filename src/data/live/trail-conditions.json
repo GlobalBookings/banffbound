@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20T19:11:42.947Z",
+  "updatedAt": "2026-06-20T21:06:23.315Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -233,7 +233,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy; Flooded sections",
-          "lastUpdated": "2026-06-18"
+          "lastUpdated": "2026-06-20"
         },
         {
           "name": "Bourgeau Lake Trail",
@@ -257,7 +257,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Snow patches",
-          "lastUpdated": "2026-06-18"
+          "lastUpdated": "2026-06-20"
         },
         {
           "name": "Rockbound Lake Trail",
@@ -265,7 +265,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing; Avalanche debris on trail",
-          "lastUpdated": "2026-06-18"
+          "lastUpdated": "2026-06-20"
         },
         {
           "name": "Cascade Amphitheatre Trail",
@@ -273,7 +273,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-          "lastUpdated": "2026-06-18"
+          "lastUpdated": "2026-06-20"
         },
         {
           "name": "Arnica Lake Trail",
@@ -1042,7 +1042,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy; Flooded sections",
-      "lastUpdated": "2026-06-18",
+      "lastUpdated": "2026-06-20",
       "area": "Banff Area"
     },
     {
@@ -1069,7 +1069,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Snow patches",
-      "lastUpdated": "2026-06-18",
+      "lastUpdated": "2026-06-20",
       "area": "Banff Area"
     },
     {
@@ -1078,7 +1078,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing; Avalanche debris on trail",
-      "lastUpdated": "2026-06-18",
+      "lastUpdated": "2026-06-20",
       "area": "Banff Area"
     },
     {
@@ -1087,7 +1087,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-      "lastUpdated": "2026-06-18",
+      "lastUpdated": "2026-06-20",
       "area": "Banff Area"
     },
     {
