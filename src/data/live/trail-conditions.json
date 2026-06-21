@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T15:46:38.896Z",
+  "updatedAt": "2026-06-21T17:20:11.509Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -17,7 +17,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Adhere to all posted warnings and closures along trails; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Wet and muddy",
-          "lastUpdated": "2026-06-20"
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Marsh Trail",
@@ -25,7 +25,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Wet and muddy; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Heavy horse use",
-          "lastUpdated": "2026-06-20"
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Silverton Falls Trail",
@@ -33,7 +33,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-06-20"
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Johnson Lake Loop",
@@ -41,7 +41,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-06-20"
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
@@ -49,7 +49,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Wet and muddy sections",
-          "lastUpdated": "2026-06-20"
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Tunnel Campground Loop",
@@ -799,7 +799,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Adhere to all posted warnings and closures along trails; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Wet and muddy",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "area": "Banff Area"
     },
     {
@@ -808,7 +808,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Wet and muddy; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Heavy horse use",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "area": "Banff Area"
     },
     {
@@ -817,7 +817,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "area": "Banff Area"
     },
     {
@@ -826,7 +826,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "area": "Banff Area"
     },
     {
@@ -835,7 +835,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Wet and muddy sections",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "area": "Banff Area"
     },
     {
