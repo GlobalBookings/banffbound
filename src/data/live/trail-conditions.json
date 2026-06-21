@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-21T12:06:36.986Z",
+  "updatedAt": "2026-06-21T15:46:38.896Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
     "open": 64,
-    "caution": 13,
-    "closed": 19
+    "caution": 12,
+    "closed": 20
   },
   "areas": [
     {
@@ -126,10 +126,10 @@
         {
           "name": "Sunshine Meadows / Rock Isle Lake Trail",
           "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Avalanche terrain; Snowbound; Risk of post-holing; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-20"
+          "status": "closed",
+          "condition": "Partially Closed",
+          "comment": "Avalanche terrain; Snowbound; Risk of post-holing; Check the important bulletins for more information; Use caution, skiers in area",
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Banff Legacy Trail: Banff–Banff East Gate",
@@ -922,10 +922,10 @@
     {
       "name": "Sunshine Meadows / Rock Isle Lake Trail",
       "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Avalanche terrain; Snowbound; Risk of post-holing; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-20",
+      "status": "closed",
+      "condition": "Partially Closed",
+      "comment": "Avalanche terrain; Snowbound; Risk of post-holing; Check the important bulletins for more information; Use caution, skiers in area",
+      "lastUpdated": "2026-06-21",
       "area": "Banff Area"
     },
     {
