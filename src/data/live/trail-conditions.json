@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T17:20:11.509Z",
+  "updatedAt": "2026-06-21T19:17:42.947Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -57,7 +57,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Numerous trees down on trail",
-          "lastUpdated": "2026-06-20"
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Vermilion Lakes Drive",
@@ -65,7 +65,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-06-20"
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Sundance Trail",
@@ -73,7 +73,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-06-20"
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Johnston Canyon Trail",
@@ -508,9 +508,9 @@
           "name": "Lake Agnes Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-06-17"
+          "condition": "Good.",
+          "comment": "Wet and muddy sections; Mainly dry; Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Lake Annette Trail",
@@ -769,9 +769,9 @@
           "name": "Sunset Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-12"
+          "condition": "Fair.",
+          "comment": "Wet and muddy sections; Snow patches",
+          "lastUpdated": "2026-06-21"
         },
         {
           "name": "Sarbach Lookout Trail",
@@ -844,7 +844,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Numerous trees down on trail",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "area": "Banff Area"
     },
     {
@@ -853,7 +853,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "area": "Banff Area"
     },
     {
@@ -862,7 +862,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "area": "Banff Area"
     },
     {
@@ -1346,9 +1346,9 @@
       "name": "Lake Agnes Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Slippery sections; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-06-17",
+      "condition": "Good.",
+      "comment": "Wet and muddy sections; Mainly dry; Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-06-21",
       "area": "Lake Louise Area"
     },
     {
@@ -1634,9 +1634,9 @@
       "name": "Sunset Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-12",
+      "condition": "Fair.",
+      "comment": "Wet and muddy sections; Snow patches",
+      "lastUpdated": "2026-06-21",
       "area": "Icefields Parkway Area"
     },
     {
