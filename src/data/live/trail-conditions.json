@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T19:19:29.845Z",
+  "updatedAt": "2026-06-22T21:56:15.102Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -17,7 +17,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Adhere to all posted warnings and closures along trails; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Wet and muddy",
-          "lastUpdated": "2026-06-21"
+          "lastUpdated": "2026-06-22"
         },
         {
           "name": "Marsh Trail",
@@ -25,7 +25,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Wet and muddy; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Heavy horse use",
-          "lastUpdated": "2026-06-21"
+          "lastUpdated": "2026-06-22"
         },
         {
           "name": "Silverton Falls Trail",
@@ -799,7 +799,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Adhere to all posted warnings and closures along trails; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Wet and muddy",
-      "lastUpdated": "2026-06-21",
+      "lastUpdated": "2026-06-22",
       "area": "Banff Area"
     },
     {
@@ -808,7 +808,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Wet and muddy; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Heavy horse use",
-      "lastUpdated": "2026-06-21",
+      "lastUpdated": "2026-06-22",
       "area": "Banff Area"
     },
     {
