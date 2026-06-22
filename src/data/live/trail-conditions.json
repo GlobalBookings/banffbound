@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T15:14:07.489Z",
+  "updatedAt": "2026-06-22T19:19:29.845Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -413,8 +413,8 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Risk of post-holing; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-06-17"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-06-22"
         },
         {
           "name": "Fairview Lookout Trail",
@@ -1239,8 +1239,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Risk of post-holing; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-06-17",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-06-22",
       "area": "Lake Louise Area"
     },
     {
@@ -1660,6 +1660,12 @@
   ],
   "advisories": [
     {
+      "title": "Area Closure: Cascade Valley Trail",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
       "title": "Area Closure: Lake Minnewanka Bear Activity",
       "type": "Area Closure",
       "issued": "",
@@ -1733,12 +1739,6 @@
     },
     {
       "title": "AREA CLOSURE: - Fairholme",
-      "type": "AREA CLOSURE",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: - Roadside closure 93N avalanche debris",
       "type": "AREA CLOSURE",
       "issued": "",
       "ends": ""
