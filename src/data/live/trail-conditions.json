@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T14:30:14.576Z",
+  "updatedAt": "2026-06-23T17:46:12.612Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -111,17 +111,17 @@
           "name": "Spray River West Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
+          "condition": "Good.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-06-22"
+          "lastUpdated": "2026-06-23"
         },
         {
           "name": "Spray River East Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
+          "condition": "Good.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-06-22"
+          "lastUpdated": "2026-06-23"
         },
         {
           "name": "Sunshine Meadows / Rock Isle Lake Trail",
@@ -905,18 +905,18 @@
       "name": "Spray River West Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
+      "condition": "Good.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-06-22",
+      "lastUpdated": "2026-06-23",
       "area": "Banff Area"
     },
     {
       "name": "Spray River East Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
+      "condition": "Good.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-06-22",
+      "lastUpdated": "2026-06-23",
       "area": "Banff Area"
     },
     {

@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-06-23T14:30:14.423Z",
+  "updatedAt": "2026-06-23T17:46:04.520Z",
   "banff": {
     "current": {
-      "temp": 10,
+      "temp": 17,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 62,
-      "wind": "4 km/h"
+      "humidity": 42,
+      "wind": "5 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 22,
+        "high": 21,
         "low": 3,
         "condition": "Overcast",
         "icon": "☁️"
@@ -25,34 +25,34 @@
       },
       {
         "day": "Thursday",
-        "high": 23,
+        "high": 22,
         "low": 10,
+        "condition": "Dense drizzle",
+        "icon": "🌧️"
+      },
+      {
+        "day": "Friday",
+        "high": 20,
+        "low": 11,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
-        "day": "Friday",
-        "high": 17,
-        "low": 11,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
-      },
-      {
         "day": "Saturday",
         "high": 15,
-        "low": 10,
-        "condition": "Slight snow showers",
-        "icon": "🌨️"
+        "low": 9,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 11,
+      "temp": 15,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 58,
-      "wind": "5 km/h"
+      "humidity": 49,
+      "wind": "1 km/h"
     },
     "forecast": [
       {
@@ -71,23 +71,23 @@
       },
       {
         "day": "Thursday",
-        "high": 22,
+        "high": 21,
         "low": 8,
-        "condition": "Dense drizzle",
-        "icon": "🌧️"
+        "condition": "Moderate drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Friday",
-        "high": 13,
+        "high": 16,
         "low": 10,
         "condition": "Slight snow showers",
         "icon": "🌨️"
       },
       {
         "day": "Saturday",
-        "high": 13,
-        "low": 8,
-        "condition": "Slight rain showers",
+        "high": 10,
+        "low": 7,
+        "condition": "Slight rain",
         "icon": "🌦️"
       }
     ]
