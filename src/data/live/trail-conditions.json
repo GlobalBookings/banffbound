@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T17:46:12.612Z",
+  "updatedAt": "2026-06-23T19:51:16.011Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -17,7 +17,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Adhere to all posted warnings and closures along trails; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Wet and muddy",
-          "lastUpdated": "2026-06-22"
+          "lastUpdated": "2026-06-23"
         },
         {
           "name": "Marsh Trail",
@@ -376,8 +376,8 @@
           "difficulty": "Difficult",
           "status": "caution",
           "condition": "Not recommended.",
-          "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
-          "lastUpdated": "2026-06-21"
+          "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Stream levels are high; Numerous trees down on trail",
+          "lastUpdated": "2026-06-23"
         },
         {
           "name": "Aylmer Lookout Trail",
@@ -799,7 +799,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Adhere to all posted warnings and closures along trails; Flooded sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Wet and muddy",
-      "lastUpdated": "2026-06-22",
+      "lastUpdated": "2026-06-23",
       "area": "Banff Area"
     },
     {
@@ -1203,8 +1203,8 @@
       "difficulty": "Difficult",
       "status": "caution",
       "condition": "Not recommended.",
-      "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Bridge(s) out; Stream levels are high; Numerous trees down on trail",
-      "lastUpdated": "2026-06-21",
+      "comment": "No vehicle access; Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Stream levels are high; Numerous trees down on trail",
+      "lastUpdated": "2026-06-23",
       "area": "Banff Area"
     },
     {
