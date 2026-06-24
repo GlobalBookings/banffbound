@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T17:48:21.120Z",
+  "updatedAt": "2026-06-24T19:27:22.289Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -65,7 +65,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-06-22"
+          "lastUpdated": "2026-06-24"
         },
         {
           "name": "Sundance Trail",
@@ -73,7 +73,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-06-22"
+          "lastUpdated": "2026-06-24"
         },
         {
           "name": "Johnston Canyon Trail",
@@ -853,7 +853,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-06-22",
+      "lastUpdated": "2026-06-24",
       "area": "Banff Area"
     },
     {
@@ -862,7 +862,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-06-22",
+      "lastUpdated": "2026-06-24",
       "area": "Banff Area"
     },
     {
@@ -1679,12 +1679,6 @@
     },
     {
       "title": "Warning: Rampart Creek Campground",
-      "type": "Warning",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Warning: Bow Falls Trail, Glen Avenue, Glen Crescent, Spray Avenue",
       "type": "Warning",
       "issued": "",
       "ends": ""
