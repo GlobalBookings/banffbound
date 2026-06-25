@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25T02:31:55.063Z",
+  "updatedAt": "2026-06-25T07:35:47.538Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -1733,12 +1733,6 @@
     },
     {
       "title": "AREA CLOSURE: - Fairholme",
-      "type": "AREA CLOSURE",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: Eastern Section of the Bow Valley Parkway (Highway 1A)",
       "type": "AREA CLOSURE",
       "issued": "",
       "ends": ""
