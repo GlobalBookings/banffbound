@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25T18:04:05.234Z",
+  "updatedAt": "2026-06-25T21:23:33.178Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -224,7 +224,7 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Wet and muddy sections",
+          "comment": "Stay on trail; Wet and muddy sections",
           "lastUpdated": "2026-06-25"
         },
         {
@@ -256,7 +256,7 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Snow patches; Avalanche debris on trail",
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Avalanche debris on trail",
           "lastUpdated": "2026-06-25"
         },
         {
@@ -516,9 +516,9 @@
           "name": "Lake Annette Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Risk of post-holing; Wet and muddy sections; Deadfall on trail",
-          "lastUpdated": "2026-06-17"
+          "condition": "Fair.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy sections; Mainly dry",
+          "lastUpdated": "2026-06-25"
         },
         {
           "name": "Larch Valley/Minnestimma Lakes Trail",
@@ -613,8 +613,8 @@
           "difficulty": "Difficult",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Risk of post-holing; Deadfall on trail; Wet and muddy",
-          "lastUpdated": "2026-06-17"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy",
+          "lastUpdated": "2026-06-25"
         },
         {
           "name": "Sentinel Pass from Paradise Valley Trail",
@@ -1032,7 +1032,7 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Wet and muddy sections",
+      "comment": "Stay on trail; Wet and muddy sections",
       "lastUpdated": "2026-06-25",
       "area": "Banff Area"
     },
@@ -1068,7 +1068,7 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Snow patches; Avalanche debris on trail",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections; Avalanche debris on trail",
       "lastUpdated": "2026-06-25",
       "area": "Banff Area"
     },
@@ -1355,9 +1355,9 @@
       "name": "Lake Annette Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Risk of post-holing; Wet and muddy sections; Deadfall on trail",
-      "lastUpdated": "2026-06-17",
+      "condition": "Fair.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy sections; Mainly dry",
+      "lastUpdated": "2026-06-25",
       "area": "Lake Louise Area"
     },
     {
@@ -1464,8 +1464,8 @@
       "difficulty": "Difficult",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Risk of post-holing; Deadfall on trail; Wet and muddy",
-      "lastUpdated": "2026-06-17",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy",
+      "lastUpdated": "2026-06-25",
       "area": "Lake Louise Area"
     },
     {
