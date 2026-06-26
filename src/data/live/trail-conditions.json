@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-06-26T21:13:35.777Z",
+  "updatedAt": "2026-06-26T22:59:23.416Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 64,
-    "caution": 11,
+    "open": 65,
+    "caution": 10,
     "closed": 21
   },
   "areas": [
@@ -225,7 +225,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on trail; Wet and muddy sections",
-          "lastUpdated": "2026-06-25"
+          "lastUpdated": "2026-06-26"
         },
         {
           "name": "Brewster Creek Trail",
@@ -270,9 +270,9 @@
         {
           "name": "Cascade Amphitheatre Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Stay on trail; Wet and muddy sections",
           "lastUpdated": "2026-06-26"
         },
         {
@@ -1033,7 +1033,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on trail; Wet and muddy sections",
-      "lastUpdated": "2026-06-25",
+      "lastUpdated": "2026-06-26",
       "area": "Banff Area"
     },
     {
@@ -1084,9 +1084,9 @@
     {
       "name": "Cascade Amphitheatre Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Stay on trail; Wet and muddy sections",
       "lastUpdated": "2026-06-26",
       "area": "Banff Area"
     },
