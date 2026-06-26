@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26T10:44:27.185Z",
+  "updatedAt": "2026-06-26T14:06:03.734Z",
   "highways": [
     {
       "name": "Trans-Canada Highway (Hwy 1)",
@@ -13,9 +13,9 @@
     {
       "name": "Bow Valley Parkway (Hwy 1A)",
       "number": "1A",
-      "status": "Partial Closure (1/2 sections)",
+      "status": "Bare Dry",
       "conditions": "Bare Dry",
-      "advisory": "Closed sections: Jct Hwy 1 to Johnston Canyon",
+      "advisory": "",
       "segments": 2,
       "lastUpdated": 1780840184
     },
