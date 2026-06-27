@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T16:59:29.397Z",
+  "updatedAt": "2026-06-27T19:05:56.083Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -265,7 +265,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing; Avalanche debris on trail",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Cascade Amphitheatre Trail",
@@ -273,7 +273,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on trail; Wet and muddy sections",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Arnica Lake Trail",
@@ -281,7 +281,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Wet and muddy sections; Snow patches",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Harvey Pass Trail",
@@ -289,7 +289,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Goat Creek Trail",
@@ -297,7 +297,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "No access through Spray Lakes Road/Smith-Dorien Trail; Biking excluding e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
@@ -305,7 +305,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
@@ -313,7 +313,7 @@
           "status": "closed",
           "condition": "Closed.",
           "comment": "Closed until further notice; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
@@ -321,7 +321,7 @@
           "status": "closed",
           "condition": "Closed.",
           "comment": "Closed until further notice; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Bow Valley Parkway",
@@ -329,7 +329,7 @@
           "status": "open",
           "condition": "Open.",
           "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Tunnel Technical Trails: Return of the Jedi Trail",
@@ -337,7 +337,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Tunnel Technical Trails: Star Wars Trail",
@@ -345,7 +345,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Tunnel Technical Trails: Topp Notch Trail",
@@ -353,7 +353,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Rundle Riverside Trail",
@@ -361,7 +361,7 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "The Toe",
@@ -369,7 +369,7 @@
           "status": "closed",
           "condition": "Closed.",
           "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Cory Pass Loop",
@@ -377,7 +377,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Numerous trees down on trail",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Aylmer Lookout Trail",
@@ -385,7 +385,7 @@
           "status": "closed",
           "condition": "Closed.",
           "comment": "Closed until further notice; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         },
         {
           "name": "Aylmer Pass Trail",
@@ -393,7 +393,7 @@
           "status": "closed",
           "condition": "Closed.",
           "comment": "Closed until further notice; Check the important bulletins for more information",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-06-27"
         }
       ]
     },
@@ -1078,7 +1078,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing; Avalanche debris on trail",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1087,7 +1087,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on trail; Wet and muddy sections",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1096,7 +1096,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Wet and muddy sections; Snow patches",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1105,7 +1105,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche terrain; Snowbound at higher elevation; Risk of post-holing",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1114,7 +1114,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "No access through Spray Lakes Road/Smith-Dorien Trail; Biking excluding e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1123,7 +1123,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1132,7 +1132,7 @@
       "status": "closed",
       "condition": "Closed.",
       "comment": "Closed until further notice; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1141,7 +1141,7 @@
       "status": "closed",
       "condition": "Closed.",
       "comment": "Closed until further notice; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1150,7 +1150,7 @@
       "status": "open",
       "condition": "Open.",
       "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1159,7 +1159,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1168,7 +1168,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1177,7 +1177,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1186,7 +1186,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1195,7 +1195,7 @@
       "status": "closed",
       "condition": "Closed.",
       "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1204,7 +1204,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Avalanche danger at high altitude; Dangerous snow conditions; Risk of post-holing; Numerous trees down on trail",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1213,7 +1213,7 @@
       "status": "closed",
       "condition": "Closed.",
       "comment": "Closed until further notice; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
@@ -1222,7 +1222,7 @@
       "status": "closed",
       "condition": "Closed.",
       "comment": "Closed until further notice; Check the important bulletins for more information",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "area": "Banff Area"
     },
     {
