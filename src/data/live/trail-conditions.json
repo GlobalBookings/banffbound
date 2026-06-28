@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T19:04:26.522Z",
+  "updatedAt": "2026-06-28T20:52:34.289Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -119,7 +119,7 @@
           "name": "Spray River East Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Good.",
+          "condition": "Fair.",
           "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
           "lastUpdated": "2026-06-28"
         },
@@ -914,7 +914,7 @@
       "name": "Spray River East Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Good.",
+      "condition": "Fair.",
       "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
       "lastUpdated": "2026-06-28",
       "area": "Banff Area"
