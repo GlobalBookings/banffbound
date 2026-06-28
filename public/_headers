@@ -1,0 +1,24 @@
+# Cloudflare Pages custom headers
+
+# All pages - help with indexing
+/*
+  X-Robots-Tag: index, follow
+  X-Content-Type-Options: nosniff
+
+# AI context files - ensure accessible
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  X-Robots-Tag: index, follow
+
+/.well-known/ai-plugin.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+
+# Sitemap
+/sitemap-index.xml
+  Content-Type: application/xml
+  X-Robots-Tag: noindex
+
+/sitemap-0.xml
+  Content-Type: application/xml
+  X-Robots-Tag: noindex

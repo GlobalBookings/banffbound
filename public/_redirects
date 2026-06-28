@@ -1,0 +1,94 @@
+# Cloudflare Pages redirects
+# Format: [source] [destination] [status code]
+# Splat (*) and placeholder (:slug) supported
+
+# ─── Hotel directory URL migration ───
+# Old /hotels/:slug pattern → new /hotel-directory/:slug
+/hotels/:slug /hotel-directory/:slug 301
+
+# ─── Common URL variants people search for ───
+/hiking-trails /hiking 301
+/hikes /hiking 301
+/best-restaurants /eat-and-drink 301
+/restaurants /eat-and-drink 301
+/food /eat-and-drink 301
+/where-to-stay /accommodation 301
+/lodging /accommodation 301
+/getting-to-banff /calgary-to-banff 301
+/how-to-get-to-banff /calgary-to-banff 301
+/transport /calgary-to-banff 301
+/weather-forecast /weather 301
+/banff-weather /weather 301
+/ski-resorts /skiing 301
+/ski /skiing 301
+/snowboarding /skiing 301
+/lake-louise /lakes 301
+/moraine-lake /lakes 301
+/peyto-lake /lakes 301
+/nightlife /blog/banff-nightlife-guide 301
+/bars /blog/banff-nightlife-guide 301
+/hot-springs /blog/banff-hot-springs-guide 301
+/gondola /blog/banff-gondola-guide 301
+/banff-gondola /blog/banff-gondola-guide 301
+/johnston-canyon /blog/johnston-canyon-guide 301
+/icefields-parkway /blog/icefields-parkway-guide 301
+/park-passes /park-pass 301
+/passes /park-pass 301
+/itinerary /blog/3-day-banff-itinerary 301
+/3-day-itinerary /blog/3-day-banff-itinerary 301
+
+# ─── Blog slug variations ───
+/blog/banff-things-to-do /blog/best-things-to-do-in-banff-2026 301
+/blog/things-to-do-banff /blog/best-things-to-do-in-banff-2026 301
+/blog/things-to-do-in-banff /blog/best-things-to-do-in-banff-2026 301
+/blog/banff-hotels /blog/where-to-stay-in-banff 301
+/blog/banff-accommodation /blog/where-to-stay-in-banff 301
+/blog/hotels-in-banff /blog/where-to-stay-in-banff 301
+/blog/banff-hikes /blog/best-banff-hiking-trails-guide 301
+/blog/best-hikes-banff /blog/best-banff-hiking-trails-guide 301
+/blog/hiking-in-banff /blog/best-banff-hiking-trails-guide 301
+/blog/banff-food /blog/best-banff-restaurants-where-to-eat 301
+/blog/banff-restaurants /blog/best-banff-restaurants-where-to-eat 301
+/blog/restaurants-banff /blog/best-banff-restaurants-where-to-eat 301
+/blog/banff-budget /blog/banff-trip-cost-budget-guide 301
+/blog/banff-cost /blog/banff-trip-cost-budget-guide 301
+/blog/banff-weather /blog/best-time-to-visit-banff 301
+/blog/when-to-visit-banff /blog/best-time-to-visit-banff 301
+/blog/best-time-banff /blog/best-time-to-visit-banff 301
+/blog/calgary-banff /blog/calgary-to-banff-guide 301
+/blog/banff-from-calgary /blog/calgary-to-banff-guide 301
+/blog/lake-louise /blog/lake-louise-complete-guide 301
+/blog/lake-louise-guide /blog/lake-louise-complete-guide 301
+/blog/moraine-lake /blog/moraine-lake-guide 301
+/blog/banff-camping /blog/banff-camping-guide 301
+/blog/camping-banff /blog/banff-camping-guide 301
+/blog/banff-skiing /blog/banff-skiing-guide 301
+/blog/skiing-in-banff /blog/banff-skiing-guide 301
+/blog/banff-winter /blog/banff-in-winter 301
+/blog/winter-in-banff /blog/banff-in-winter 301
+/blog/banff-summer /blog/banff-in-summer 301
+/blog/summer-in-banff /blog/banff-in-summer 301
+/blog/banff-fall /blog/banff-in-fall 301
+/blog/jasper /blog/jasper-national-park 301
+/blog/jasper-guide /blog/jasper-national-park 301
+/blog/banff-jasper /blog/banff-vs-jasper 301
+/blog/wildlife /blog/banff-wildlife-guide 301
+/blog/bears /blog/banff-bear-safety 301
+/blog/bear-safety /blog/banff-bear-safety 301
+/blog/packing /blog/banff-packing-list 301
+/blog/what-to-pack /blog/banff-packing-list 301
+
+# ─── Old category/section patterns ───
+/guide/* /blog/:splat 301
+/guides/* /blog/:splat 301
+/activities/hiking /hiking 301
+/activities/skiing /skiing 301
+/activities/biking /biking 301
+/activities/paddling /paddling 301
+/activities/wildlife /wildlife 301
+
+# ─── Trailing slash normalization ───
+# Cloudflare Pages handles this automatically, but explicit for crawlers
+/blog /blog/ 301
+/trails /trails/ 301
+/hotel-directory /hotel-directory/ 301
