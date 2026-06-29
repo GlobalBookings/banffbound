@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ExploreMoreBar from '../components/ExploreMoreBar.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -93,6 +94,7 @@ const canonical = canonicalUrl || Astro.url.href;
       <slot />
     </main>
     <Footer />
+    <ExploreMoreBar />
 
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>

@@ -6,6 +6,18 @@ import { blogPosts } from '../data/blogPosts';
 /* ── Season data for conditions strip ────────────── */
 let seasonData: any = { season: 'spring', month: '', seasonalHighlights: [], activeActivities: [], updatedAt: '' };
 try { const m = await import('../data/live/season.json'); seasonData = m.default || m; } catch { /* use defaults */ }
+
+let weatherData: any = { banff: { current: { temp: null, condition: 'Unknown', icon: '🌡️' } } };
+try { const m = await import('../data/live/weather.json'); weatherData = m.default || m; } catch { /* use defaults */ }
+
+let trailData: any = { summary: { total: 0, open: 0, caution: 0, closed: 0 } };
+try { const m = await import('../data/live/trail-conditions.json'); trailData = m.default || m; } catch { /* use defaults */ }
+
+const banffTemp = weatherData.banff?.current?.temp;
+const banffCondition = weatherData.banff?.current?.condition || 'Unknown';
+const banffWeatherIcon = weatherData.banff?.current?.icon || '🌡️';
+const trailsOpen = trailData.summary?.open || 0;
+const trailsTotal = trailData.summary?.total || 81;
 const seasonIcons: Record<string, string> = { spring: '🌱', summer: '☀️', fall: '🍂', winter: '❄️' };
 const seasonIcon = seasonIcons[seasonData.season] || '🏔️';
 const seasonLabel = seasonData.season.charAt(0).toUpperCase() + seasonData.season.slice(1);
@@ -167,6 +179,29 @@ const highlights = [
             <span class="stat-label">{h.label}</span>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Today in Banff -->
+  <section class="today-strip">
+    <div class="container">
+      <div class="today-grid">
+        <a href="/conditions" class="today-item">
+          <span class="today-icon">{banffWeatherIcon}</span>
+          <span class="today-detail">{banffTemp != null ? `${banffTemp}°C` : '—'}</span>
+          <span class="today-label">{banffCondition}</span>
+        </a>
+        <a href="/trail-map" class="today-item">
+          <span class="today-icon">🥾</span>
+          <span class="today-detail">{trailsOpen}/{trailsTotal}</span>
+          <span class="today-label">Trails Open</span>
+        </a>
+        <a href="/what-to-do-today" class="today-item today-cta">
+          <span class="today-icon">🎯</span>
+          <span class="today-detail">Today's Picks</span>
+          <span class="today-label">What to do →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -500,6 +535,37 @@ const highlights = [
   @keyframes scrollBounce {
     0%, 100% { transform: rotate(45deg) translateY(0); }
     50% { transform: rotate(45deg) translateY(6px); }
+  }
+
+  .today-strip {
+    background: #f0f7f4;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .today-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .today-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--color-primary);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: background 0.15s;
+  }
+  .today-item:hover { background: rgba(0,0,0,0.04); }
+  .today-icon { font-size: 1.25rem; }
+  .today-detail { font-weight: 700; font-size: 0.95rem; }
+  .today-label { font-size: 0.8rem; color: var(--color-text-light); }
+  .today-cta .today-label { color: var(--color-accent); font-weight: 600; }
+  @media (max-width: 600px) {
+    .today-grid { gap: 0.75rem; }
+    .today-item { font-size: 0.85rem; }
   }
 
   .stats-bar {

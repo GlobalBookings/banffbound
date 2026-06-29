@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WhatsNext from '../components/WhatsNext.astro';
 ---
 
 <BaseLayout title="Bear Spray in Banff 2026 — Buy, Rent, and How to Use" description="Complete bear spray guide for Banff National Park. Where to buy or rent bear spray, how to use it, practice tips, and rental locations with prices in Banff and Lake Louise.">
@@ -252,6 +253,11 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
         </details>
       </div>
 
+      <WhatsNext steps={[
+        { icon: '🗺️', title: 'Plan Your Hike', description: 'Browse 81 trails with difficulty ratings, GPS data, and real-time conditions.', href: '/trail-map', label: 'Open Trail Map' },
+        { icon: '📋', title: 'Build Your Itinerary', description: 'Day-by-day trip planner with booking links for tours and hotels.', href: '/trip-builder', label: 'Start Planning' },
+        { icon: '🐻', title: 'Wildlife Tracker', description: 'See recent bear, elk, and moose sightings across the park.', href: '/wildlife-tracker', label: 'View Sightings' },
+      ]} />
     </div>
   </section>
 </BaseLayout>

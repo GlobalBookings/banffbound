@@ -1,0 +1,107 @@
+---
+// Sticky "Explore More" bar that appears after 60% scroll depth
+---
+
+<div class="explore-bar" id="explore-bar" aria-hidden="true">
+  <div class="explore-bar-inner">
+    <span class="explore-bar-label">Keep exploring:</span>
+    <a href="/what-to-do-today">🎯 Today's Picks</a>
+    <a href="/trip-builder">📋 Trip Builder</a>
+    <a href="/trail-map">🗺️ Trail Map</a>
+    <a href="/wildlife-tracker">🐻 Wildlife</a>
+    <button class="explore-bar-close" id="explore-bar-close" aria-label="Dismiss">✕</button>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  var bar = document.getElementById('explore-bar');
+  var closeBtn = document.getElementById('explore-bar-close');
+  if (!bar || !closeBtn) return;
+  if (sessionStorage.getItem('explore-bar-dismissed')) return;
+
+  var shown = false;
+  var scrollTimer;
+
+  window.addEventListener('scroll', function() {
+    if (shown) return;
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(function() {
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) return;
+      var pct = (window.scrollY / docHeight) * 100;
+      if (pct >= 60) {
+        bar.classList.add('explore-bar-visible');
+        bar.setAttribute('aria-hidden', 'false');
+        shown = true;
+      }
+    }, 100);
+  });
+
+  closeBtn.addEventListener('click', function() {
+    bar.classList.remove('explore-bar-visible');
+    bar.setAttribute('aria-hidden', 'true');
+    sessionStorage.setItem('explore-bar-dismissed', '1');
+  });
+})();
+</script>
+
+<style>
+  .explore-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+  .explore-bar-visible {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .explore-bar-inner {
+    background: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .explore-bar-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  .explore-bar a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .explore-bar a:hover {
+    background: rgba(255,255,255,0.15);
+  }
+  .explore-bar-close {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    margin-left: auto;
+  }
+  .explore-bar-close:hover { color: #fff; }
+  @media (max-width: 600px) {
+    .explore-bar-inner { gap: 0.75rem; padding: 0.6rem 1rem; }
+    .explore-bar a { font-size: 0.78rem; }
+    .explore-bar-label { display: none; }
+  }
+</style>

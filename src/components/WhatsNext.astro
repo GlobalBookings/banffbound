@@ -1,0 +1,95 @@
+---
+interface NextStep {
+  icon: string;
+  title: string;
+  description: string;
+  href: string;
+  label: string;
+}
+
+interface Props {
+  heading?: string;
+  steps: NextStep[];
+}
+
+const { heading = "What's Next?", steps } = Astro.props;
+---
+
+<section class="whats-next">
+  <div class="whats-next-header">
+    <h2>{heading}</h2>
+  </div>
+  <div class="whats-next-grid">
+    {steps.map(step => (
+      <a href={step.href} class="whats-next-card">
+        <span class="whats-next-icon">{step.icon}</span>
+        <div>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+          <span class="whats-next-link">{step.label} →</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .whats-next {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, #f0f7f4 100%);
+    border-radius: var(--radius);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .whats-next-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+    color: var(--color-primary);
+  }
+  .whats-next-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .whats-next-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .whats-next-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .whats-next-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .whats-next-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-primary);
+  }
+  .whats-next-card p {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    line-height: 1.45;
+    margin-bottom: 0.4rem;
+  }
+  .whats-next-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+  @media (max-width: 768px) {
+    .whats-next-grid { grid-template-columns: 1fr; }
+    .whats-next { padding: 1.5rem; }
+  }
+</style>

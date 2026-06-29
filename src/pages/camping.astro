@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WhatsNext from '../components/WhatsNext.astro';
 
 const campgrounds = [
   { name: 'Tunnel Mountain Village I', sites: 618, type: 'Tent & RV (electric)', season: 'May-Sep', reservation: true, price: '$33-41', showers: true, flush: true, firePit: true, note: 'Largest campground, walking distance to Banff. Electric sites available. Books fast — reserve immediately when bookings open.', area: 'Banff' },
@@ -100,6 +101,12 @@ const RESERVATION_OPEN = '2026-01-13';
           <li><strong>Park pass is extra:</strong> Camping fees do not include the park pass ($11/adult/day or $22/family/day).</li>
         </ul>
       </div>
+
+      <WhatsNext heading="Plan Your Camping Trip" steps={[
+        { icon: '🎫', title: 'Get Your Park Pass', description: 'You need a Parks Canada pass in addition to your campsite booking.', href: '/park-pass', label: 'Pass Guide' },
+        { icon: '🗺️', title: 'Find Nearby Trails', description: 'Hikes near every campground with difficulty ratings and GPS data.', href: '/trail-map', label: 'Open Trail Map' },
+        { icon: '🐻', title: 'Bear Safety', description: 'Essential bear spray and food storage info for camping in bear country.', href: '/bear-spray', label: 'Bear Spray Guide' },
+      ]} />
     </div>
   </section>
 </BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WhatsNext from '../components/WhatsNext.astro';
 
 const months = [
   { name: 'January', avgHigh: -5, avgLow: -15, precip: 25, snow: 26, daylight: '8h 10m', crowd: 'Low', vibe: 'Deep winter. Skiing, ice walks, northern lights. Cold but magical.', pack: 'Heavy parka, thermal layers, insulated boots, hand warmers', bestFor: ['Skiing at Sunshine/Lake Louise/Norquay', 'Johnston Canyon Ice Walk', 'Hot springs soak', 'Northern lights hunting'] },
@@ -74,6 +75,12 @@ const months = [
           );
         })}
       </div>
+
+      <WhatsNext heading="Plan Around the Weather" steps={[
+        { icon: '🎯', title: "What to Do Today", description: 'Get real-time activity ideas based on current Banff weather.', href: '/what-to-do-today', label: 'Get Suggestions' },
+        { icon: '📋', title: 'Trip Builder', description: 'Build a day-by-day itinerary for any season.', href: '/trip-builder', label: 'Start Planning' },
+        { icon: '📷', title: 'Live Webcams', description: 'See current conditions at key Banff locations right now.', href: '/weather-webcams', label: 'View Webcams' },
+      ]} />
     </div>
   </section>
 </BaseLayout>

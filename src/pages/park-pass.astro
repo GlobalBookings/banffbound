@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WhatsNext from '../components/WhatsNext.astro';
 ---
 
 <BaseLayout title="Banff Park Pass 2026 — Prices, Where to Buy & Best Option" description="Everything about the Banff National Park pass for 2026. Daily and annual prices, where to buy, who needs one, and how to save money with the Discovery Pass.">
@@ -128,6 +129,12 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
           <p>It rhymes with "can't" not "calm." Say it: <strong>BAMF</strong> (like "bam" + "f"). Not "bonf" or "bahnf."</p>
         </details>
       </div>
+
+      <WhatsNext heading="You've Got Your Pass — Now Plan Your Trip" steps={[
+        { icon: '📋', title: 'Build Your Itinerary', description: 'Day-by-day planner with templates for 3, 5, or 7 days.', href: '/trip-builder', label: 'Start Planning' },
+        { icon: '🎯', title: "What to Do Today", description: 'Weather-based activity suggestions personalised to current conditions.', href: '/what-to-do-today', label: 'Get Suggestions' },
+        { icon: '🏕️', title: 'Camping Guide', description: 'All 12 campgrounds with fees, reservations, and availability.', href: '/camping', label: 'View Campgrounds' },
+      ]} />
     </div>
   </section>
 </BaseLayout>
