@@ -1,4 +1,3 @@
-import puppeteer from 'puppeteer';
 import { createLogger } from '../core/logger.js';
 import { sendSlack, slackHeader, slackSection, slackDivider } from '../core/slack.js';
 import fs from 'fs';
@@ -11,8 +10,10 @@ const DATA_DIR = path.join(__dirname, '..', '..', 'data');
 const HISTORY_FILE = path.join(DATA_DIR, 'pinterest-history.json');
 const SITE_URL = process.env.SITE_URL || 'https://banffbound.com';
 
-const PINTEREST_EMAIL = process.env.PINTEREST_EMAIL;
-const PINTEREST_PASSWORD = process.env.PINTEREST_PASSWORD;
+const PINTEREST_APP_ID = process.env.PINTEREST_APP_ID;
+const PINTEREST_APP_SECRET = process.env.PINTEREST_APP_SECRET;
+const PINTEREST_ACCESS_TOKEN = process.env.PINTEREST_ACCESS_TOKEN;
+const PINTEREST_REFRESH_TOKEN = process.env.PINTEREST_REFRESH_TOKEN;
 const PINTEREST_BOARD_NAME = process.env.PINTEREST_BOARD_NAME || 'Banff Bound';
 
 const PINS_PER_RUN = 3;
@@ -247,146 +248,99 @@ function generatePinTitle(photoTitle) {
   return clean.substring(0, 97) + '...';
 }
 
-// ── Pinterest browser automation ──────────────────────────
-async function loginToPinterest(browser) {
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1280, height: 900 });
-  await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36');
+// ── Pinterest v5 API ──────────────────────────────────────
+let activeToken = PINTEREST_ACCESS_TOKEN;
 
-  log.info('Navigating to Pinterest login...');
-  await page.goto('https://www.pinterest.com/login/', { waitUntil: 'networkidle2', timeout: 30000 });
-  await new Promise(r => setTimeout(r, 2000));
+// Refresh the access token using the refresh token (tokens expire ~30 days)
+async function refreshAccessToken() {
+  if (!PINTEREST_REFRESH_TOKEN || !PINTEREST_APP_ID || !PINTEREST_APP_SECRET) return null;
 
-  // Fill email
-  const emailInput = await page.$('input[name="id"], input[type="email"], input#email');
-  if (!emailInput) throw new Error('Could not find email input on login page');
-  await emailInput.click({ clickCount: 3 });
-  await emailInput.type(PINTEREST_EMAIL, { delay: 50 });
+  const basicAuth = Buffer.from(`${PINTEREST_APP_ID}:${PINTEREST_APP_SECRET}`).toString('base64');
+  const res = await fetch('https://api.pinterest.com/v5/oauth/token', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Basic ${basicAuth}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      grant_type: 'refresh_token',
+      refresh_token: PINTEREST_REFRESH_TOKEN,
+    }),
+  });
 
-  // Fill password
-  const passInput = await page.$('input[name="password"], input[type="password"]');
-  if (!passInput) throw new Error('Could not find password input on login page');
-  await passInput.click({ clickCount: 3 });
-  await passInput.type(PINTEREST_PASSWORD, { delay: 50 });
-
-  // Submit
-  const loginBtn = await page.$('button[type="submit"], div[data-test-id="registerFormSubmitButton"]');
-  if (loginBtn) {
-    await loginBtn.click();
-  } else {
-    await passInput.press('Enter');
+  if (!res.ok) {
+    log.warn(`Token refresh failed: ${res.status}`);
+    return null;
   }
-
-  await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 30000 }).catch(() => {});
-  await new Promise(r => setTimeout(r, 3000));
-
-  // Verify logged in
-  const url = page.url();
-  if (url.includes('/login')) {
-    throw new Error('Login failed - still on login page. Check credentials.');
+  const data = await res.json();
+  if (data.access_token) {
+    activeToken = data.access_token;
+    log.info('Refreshed Pinterest access token');
+    return data.access_token;
   }
-
-  log.info('Successfully logged into Pinterest');
-  await page.close();
-  return true;
+  return null;
 }
 
-async function createPinViaBrowser(browser, { imageUrl, title, description, linkUrl, boardName }) {
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1280, height: 900 });
-  await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36');
+// Make an authenticated API call, refreshing the token once on 401
+async function pinterestFetch(url, options = {}, retry = true) {
+  const res = await fetch(url, {
+    ...options,
+    headers: {
+      ...(options.headers || {}),
+      'Authorization': `Bearer ${activeToken}`,
+    },
+  });
 
-  try {
-    log.info(`Creating pin: "${title.substring(0, 50)}..."`);
-    await page.goto('https://www.pinterest.com/pin-creation-tool/', { waitUntil: 'networkidle2', timeout: 30000 });
-    await new Promise(r => setTimeout(r, 3000));
-
-    // Download image and upload via file input
-    const tmpDir = path.join(DATA_DIR, 'pinterest-tmp');
-    if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir, { recursive: true });
-    const tmpFile = path.join(tmpDir, `pin-${Date.now()}.jpg`);
-
-    const imgRes = await fetch(imageUrl);
-    if (!imgRes.ok) throw new Error(`Failed to download image: ${imgRes.status}`);
-    const buffer = Buffer.from(await imgRes.arrayBuffer());
-    fs.writeFileSync(tmpFile, buffer);
-
-    const fileInput = await page.$('input[type="file"]');
-    if (!fileInput) throw new Error('Could not find file upload input');
-    await fileInput.uploadFile(tmpFile);
-    await new Promise(r => setTimeout(r, 4000));
-    fs.unlinkSync(tmpFile);
-
-    // Fill Title (placeholder: "Tell everyone what your Pin is about")
-    const titleInput = await page.$('input[placeholder*="Tell everyone"], input[placeholder*="title" i]');
-    if (titleInput) {
-      await titleInput.click({ clickCount: 3 });
-      await titleInput.type(title.slice(0, 100), { delay: 20 });
-    } else {
-      log.warn('Could not find title input');
-    }
-
-    // Fill Description (contenteditable div or textarea with "Describe your Pin")
-    const descInput = await page.$('textarea[placeholder*="Describe"], textarea[placeholder*="description" i]');
-    if (descInput) {
-      await descInput.click({ clickCount: 3 });
-      await descInput.type(description.slice(0, 500), { delay: 10 });
-    } else {
-      // Pinterest may use a contenteditable div for description
-      const descDiv = await page.evaluateHandle(() => {
-        const divs = [...document.querySelectorAll('[contenteditable="true"]')];
-        return divs.find(d => d.getAttribute('aria-label')?.includes('description') ||
-                              d.getAttribute('data-placeholder')?.includes('Describe')) || null;
-      });
-      if (descDiv && descDiv.asElement()) {
-        await descDiv.asElement().click();
-        await page.keyboard.type(description.slice(0, 500), { delay: 10 });
-      } else {
-        log.warn('Could not find description input');
-      }
-    }
-
-    // Fill Link (placeholder: "Add a link")
-    const linkInput = await page.$('input[placeholder*="Add a link"], input[placeholder*="link" i]');
-    if (linkInput) {
-      await linkInput.click({ clickCount: 3 });
-      await linkInput.type(linkUrl, { delay: 20 });
-    } else {
-      log.warn('Could not find link input');
-    }
-
-    await new Promise(r => setTimeout(r, 1000));
-
-    // Click Publish button
-    const publishBtn = await page.evaluateHandle(() => {
-      const buttons = [...document.querySelectorAll('button')];
-      return buttons.find(b => b.textContent.trim() === 'Publish') || null;
-    });
-
-    if (publishBtn && publishBtn.asElement()) {
-      await publishBtn.asElement().click();
-      await new Promise(r => setTimeout(r, 5000));
-      log.info(`Pin published: "${title.substring(0, 50)}..."`);
-      return { success: true };
-    }
-
-    throw new Error('Could not find Publish button');
-  } catch (err) {
-    const screenshotPath = path.join(DATA_DIR, `pinterest-error-${Date.now()}.png`);
-    await page.screenshot({ path: screenshotPath, fullPage: true }).catch(() => {});
-    log.error(`Pin creation failed: ${err.message}. Screenshot: ${screenshotPath}`);
-    throw err;
-  } finally {
-    await page.close();
+  if (res.status === 401 && retry) {
+    const refreshed = await refreshAccessToken();
+    if (refreshed) return pinterestFetch(url, options, false);
   }
+  return res;
+}
+
+// Resolve the board ID from the configured board name
+async function getBoardId(boardName) {
+  const res = await pinterestFetch('https://api.pinterest.com/v5/boards?page_size=50');
+  if (!res.ok) throw new Error(`Failed to list boards: ${res.status} ${await res.text()}`);
+  const data = await res.json();
+  const board = (data.items || []).find(b => b.name.toLowerCase() === boardName.toLowerCase());
+  if (!board) {
+    const names = (data.items || []).map(b => b.name).join(', ');
+    throw new Error(`Board "${boardName}" not found. Available: ${names}`);
+  }
+  return board.id;
+}
+
+// Create a pin via the v5 API
+async function createPin({ imageUrl, title, description, linkUrl, boardId }) {
+  const res = await pinterestFetch('https://api.pinterest.com/v5/pins', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      board_id: boardId,
+      title: title.slice(0, 100),
+      description: description.slice(0, 500),
+      link: linkUrl,
+      media_source: {
+        source_type: 'image_url',
+        url: imageUrl,
+      },
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Pinterest API error ${res.status}: ${await res.text()}`);
+  }
+  return await res.json();
 }
 
 // ── Main ──────────────────────────────────────────────────
 export async function run() {
   log.info('Pinterest Poster starting...');
 
-  if (!PINTEREST_EMAIL || !PINTEREST_PASSWORD) {
-    log.warn('PINTEREST_EMAIL and PINTEREST_PASSWORD not set. Running in preview mode.');
+  const hasCredentials = !!(PINTEREST_ACCESS_TOKEN || PINTEREST_REFRESH_TOKEN);
+  if (!hasCredentials) {
+    log.warn('No PINTEREST_ACCESS_TOKEN/REFRESH_TOKEN set. Running in preview mode.');
   }
 
   const history = loadHistory();
@@ -431,7 +385,7 @@ export async function run() {
 
   const results = [];
 
-  if (!PINTEREST_EMAIL || !PINTEREST_PASSWORD) {
+  if (!hasCredentials) {
     // Preview mode
     for (const pin of pinData) {
       log.info(`[PREVIEW] Would pin: "${pin.title}"`);
@@ -451,52 +405,55 @@ export async function run() {
       });
     }
   } else {
-    // Live mode: use Puppeteer
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-blink-features=AutomationControlled'],
-    });
-
+    // Live mode: use the Pinterest v5 API
+    let boardId;
     try {
-      await loginToPinterest(browser);
+      boardId = await getBoardId(PINTEREST_BOARD_NAME);
+      log.info(`Posting to board "${PINTEREST_BOARD_NAME}" (${boardId})`);
+    } catch (err) {
+      log.error(`Could not resolve board: ${err.message}`);
+      await sendSlack([
+        slackHeader('Pinterest Poster — Error'),
+        slackSection(`Could not resolve board: ${err.message}`),
+      ], 'Pinterest poster error');
+      return;
+    }
 
-      for (const pin of pinData) {
-        try {
-          await createPinViaBrowser(browser, {
-            imageUrl: pin.photo.imageUrl,
-            title: pin.title,
-            description: pin.description,
-            linkUrl: pin.linkUrl,
-            boardName: PINTEREST_BOARD_NAME,
-          });
+    for (const pin of pinData) {
+      try {
+        const created = await createPin({
+          imageUrl: pin.photo.imageUrl,
+          title: pin.title,
+          description: pin.description,
+          linkUrl: pin.linkUrl,
+          boardId,
+        });
+        log.info(`Pin published: "${pin.title.substring(0, 50)}..." → ${created.id}`);
 
-          results.push({
-            redditId: pin.photo.id,
-            title: pin.title,
-            imageUrl: pin.photo.imageUrl,
-            linkUrl: pin.linkUrl,
-            pagePath: pin.page.path,
-            pageTitle: pin.page.title,
-            redditScore: pin.photo.score,
-            subreddit: pin.photo.subreddit,
-            dryRun: false,
-            postedAt: new Date().toISOString(),
-          });
+        results.push({
+          redditId: pin.photo.id,
+          title: pin.title,
+          imageUrl: pin.photo.imageUrl,
+          linkUrl: pin.linkUrl,
+          pagePath: pin.page.path,
+          pageTitle: pin.page.title,
+          redditScore: pin.photo.score,
+          subreddit: pin.photo.subreddit,
+          pinId: created.id,
+          dryRun: false,
+          postedAt: new Date().toISOString(),
+        });
 
-          // Wait between pins to avoid rate limits
-          await new Promise(r => setTimeout(r, 5000));
-        } catch (err) {
-          log.error(`Failed to pin "${pin.title}": ${err.message}`);
-          results.push({
-            redditId: pin.photo.id,
-            title: pin.title,
-            error: err.message,
-            postedAt: new Date().toISOString(),
-          });
-        }
+        await new Promise(r => setTimeout(r, 2000));
+      } catch (err) {
+        log.error(`Failed to pin "${pin.title}": ${err.message}`);
+        results.push({
+          redditId: pin.photo.id,
+          title: pin.title,
+          error: err.message,
+          postedAt: new Date().toISOString(),
+        });
       }
-    } finally {
-      await browser.close();
     }
   }
 
@@ -511,13 +468,13 @@ export async function run() {
   const dryRuns = results.filter(r => r.dryRun);
   const errors = results.filter(r => r.error);
 
-  const modeLabel = dryRuns.length > 0 ? ' (PREVIEW - set PINTEREST_EMAIL/PASSWORD to go live)' : '';
+  const modeLabel = dryRuns.length > 0 ? ' (PREVIEW - no API token)' : '';
   const blocks = [
     slackHeader(`Pinterest Poster${modeLabel}`),
     slackSection(
       `*${successful.length} pins${dryRuns.length ? ' queued' : ' published'}*${errors.length ? ` | ${errors.length} failed` : ''}\n\n` +
       successful.map(r =>
-        `• *${r.title}*\n  → ${r.pageTitle} (${r.subreddit}, ${r.redditScore} upvotes)`
+        `• *${r.title}*\n  → ${r.pageTitle} (${r.subreddit}, ${r.redditScore} upvotes)${r.pinId ? `\n  https://pinterest.com/pin/${r.pinId}` : ''}`
       ).join('\n\n')
     ),
   ];
@@ -529,7 +486,7 @@ export async function run() {
 
   if (dryRuns.length > 0) {
     blocks.push(slackDivider());
-    blocks.push(slackSection('_Set PINTEREST_EMAIL and PINTEREST_PASSWORD in .env to enable live posting via browser automation._'));
+    blocks.push(slackSection('_Run `node scripts/pinterest-oauth.js` to authorize write access, then set PINTEREST_ACCESS_TOKEN/REFRESH_TOKEN in .env._'));
   }
 
   await sendSlack(blocks, `Pinterest: ${successful.length} pins ${dryRuns.length ? 'queued' : 'published'}`);
