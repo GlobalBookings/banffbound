@@ -1,48 +1,48 @@
 {
-  "updatedAt": "2026-06-28T22:55:58.408Z",
+  "updatedAt": "2026-06-29T02:40:12.319Z",
   "banff": {
     "current": {
-      "temp": 13,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 76,
-      "wind": "4 km/h"
+      "temp": 11,
+      "condition": "Dense drizzle",
+      "icon": "🌧️",
+      "humidity": 88,
+      "wind": "1 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 14,
         "low": 9,
-        "condition": "Dense drizzle",
+        "condition": "Moderate rain",
         "icon": "🌧️"
       },
       {
         "day": "Monday",
-        "high": 19,
+        "high": 18,
         "low": 11,
-        "condition": "Moderate drizzle",
+        "condition": "Slight rain",
         "icon": "🌦️"
       },
       {
         "day": "Tuesday",
         "high": 20,
-        "low": 9,
-        "condition": "Moderate drizzle",
+        "low": 8,
+        "condition": "Light drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Wednesday",
-        "high": 22,
-        "low": 10,
-        "condition": "Moderate drizzle",
+        "high": 19,
+        "low": 11,
+        "condition": "Slight rain showers",
         "icon": "🌦️"
       },
       {
         "day": "Thursday",
-        "high": 18,
+        "high": 19,
         "low": 11,
-        "condition": "Slight rain showers",
-        "icon": "🌦️"
+        "condition": "Moderate rain showers",
+        "icon": "🌧️"
       }
     ]
   },
@@ -51,8 +51,8 @@
       "temp": 13,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 77,
-      "wind": "1 km/h"
+      "humidity": 87,
+      "wind": "15 km/h"
     },
     "forecast": [
       {
@@ -65,29 +65,29 @@
       {
         "day": "Monday",
         "high": 17,
-        "low": 8,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "low": 9,
+        "condition": "Partly cloudy",
+        "icon": "⛅"
       },
       {
         "day": "Tuesday",
-        "high": 17,
-        "low": 6,
-        "condition": "Moderate rain showers",
-        "icon": "🌧️"
+        "high": 16,
+        "low": 5,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Wednesday",
-        "high": 20,
+        "high": 17,
         "low": 10,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
+        "condition": "Moderate rain showers",
+        "icon": "🌧️"
       },
       {
         "day": "Thursday",
         "high": 17,
         "low": 9,
-        "condition": "Moderate rain showers",
+        "condition": "Moderate rain",
         "icon": "🌧️"
       }
     ]
