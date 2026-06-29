@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-06-29T13:59:09.955Z",
+  "updatedAt": "2026-06-29T16:53:34.180Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 65,
+    "open": 64,
     "caution": 10,
-    "closed": 21
+    "closed": 22
   },
   "areas": [
     {
@@ -14,10 +14,10 @@
         {
           "name": "Fenland Loop",
           "difficulty": "Easy",
-          "status": "open",
-          "condition": "Water on trail in some sections.",
-          "comment": "Wet and muddy; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-06-28"
+          "status": "closed",
+          "condition": "Trail Closed.",
+          "comment": "Closed until further notice; Flooded sections",
+          "lastUpdated": "2026-06-29"
         },
         {
           "name": "Marsh Trail",
@@ -796,10 +796,10 @@
     {
       "name": "Fenland Loop",
       "difficulty": "Easy",
-      "status": "open",
-      "condition": "Water on trail in some sections.",
-      "comment": "Wet and muddy; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-06-28",
+      "status": "closed",
+      "condition": "Trail Closed.",
+      "comment": "Closed until further notice; Flooded sections",
+      "lastUpdated": "2026-06-29",
       "area": "Banff Area"
     },
     {
@@ -1659,6 +1659,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Area Closure: Fenland Area",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Area Closure: Cascade Valley Trail",
       "type": "Area Closure",
