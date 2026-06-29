@@ -36,30 +36,44 @@ const isOpen = new Date() >= new Date(RESERVATION_OPEN);
 
   <section class="section">
     <div class="container">
-      <!-- Countdown -->
-      <div class="countdown-card" id="countdown-card">
-        <div class="countdown-header">
-          <h2>Reservations Open</h2>
-          <span class="countdown-date">April 15, 2026 at 8:00 AM Mountain Time</span>
+      <!-- Current Season Status (shown when reservations are open) -->
+      {isOpen && (
+        <div class="status-card status-live">
+          <div class="status-header">
+            <span class="status-pulse"></span>
+            <h2>Shuttles Running Now</h2>
+          </div>
+          <p class="status-text">Most peak dates are <strong>sold out</strong> from the initial release. Your best option is the <strong>rolling release</strong>: 60% of tickets drop at <strong>8:00 AM MT, exactly 2 days before each departure</strong>. Set a calendar reminder.</p>
+          <div class="status-actions">
+            <a href="https://reservation.pc.gc.ca/create-booking/results?bookingCategoryId=9" target="_blank" rel="noopener" class="btn btn-primary">Check Available Dates Now</a>
+            <a href="https://reservation.pc.gc.ca" target="_blank" rel="noopener" class="btn btn-outline">Parks Canada Reservations</a>
+          </div>
+          <div class="status-tip">
+            <strong>Rolling release tip:</strong> Weekday mornings (Tue-Thu) have the best availability. Check at exactly 8:00 AM MT for dates 2 days out.
+          </div>
         </div>
-        <div class="countdown-grid" id="countdown-grid">
-          {isOpen ? (
-            <p class="countdown-open-msg">Reservations are <strong>OPEN</strong> — book your shuttle now before popular dates sell out.</p>
-          ) : (
-            <>
-              <div class="countdown-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
-              <div class="countdown-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div>
-              <div class="countdown-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Minutes</span></div>
-              <div class="countdown-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Seconds</span></div>
-            </>
-          )}
-          <noscript><p>Shuttle reservations open April 15, 2026 at 8:00 AM Mountain Time via Parks Canada.</p></noscript>
+      )}
+
+      <!-- Countdown (shown before reservations open) -->
+      {!isOpen && (
+        <div class="countdown-card" id="countdown-card">
+          <div class="countdown-header">
+            <h2>Reservations Open</h2>
+            <span class="countdown-date">April 15, 2026 at 8:00 AM Mountain Time</span>
+          </div>
+          <div class="countdown-grid" id="countdown-grid">
+            <div class="countdown-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
+            <div class="countdown-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div>
+            <div class="countdown-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Minutes</span></div>
+            <div class="countdown-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Seconds</span></div>
+            <noscript><p>Shuttle reservations open April 15, 2026 at 8:00 AM Mountain Time via Parks Canada.</p></noscript>
+          </div>
+          <div class="countdown-actions">
+            <a href="https://reservation.pc.gc.ca" target="_blank" rel="noopener" class="btn btn-primary">Go to Parks Canada Reservations</a>
+            <a href="https://reservation.pc.gc.ca/create-booking/results?bookingCategoryId=9" target="_blank" rel="noopener" class="btn btn-outline">Direct Shuttle Booking Link</a>
+          </div>
         </div>
-        <div class="countdown-actions">
-          <a href="https://reservation.pc.gc.ca" target="_blank" rel="noopener" class="btn btn-primary">Go to Parks Canada Reservations</a>
-          <a href="https://reservation.pc.gc.ca/create-booking/results?bookingCategoryId=9" target="_blank" rel="noopener" class="btn btn-outline">Direct Shuttle Booking Link</a>
-        </div>
-      </div>
+      )}
 
       <!-- Booking Guide -->
       <div class="section-header" style="margin-top:3rem;">
@@ -196,6 +210,28 @@ const isOpen = new Date() >= new Date(RESERVATION_OPEN);
 </script>
 
 <style>
+  .status-card {
+    background: var(--color-primary); color: var(--color-white); border-radius: var(--radius);
+    padding: 2.5rem;
+  }
+  .status-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+  .status-header h2 { color: var(--color-white); font-size: 1.6rem; margin: 0; }
+  .status-pulse {
+    width: 12px; height: 12px; background: #86efac; border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .status-text { font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem; color: rgba(255,255,255,0.9); }
+  .status-text strong { color: #fff; }
+  .status-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .status-actions .btn-outline { border-color: var(--color-white); color: var(--color-white); }
+  .status-actions .btn-outline:hover { background: var(--color-white); color: var(--color-primary); }
+  .status-tip {
+    background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem 1.25rem;
+    font-size: 0.9rem; line-height: 1.5; color: rgba(255,255,255,0.85);
+  }
+  .status-tip strong { color: #86efac; }
+
   .countdown-card {
     background: var(--color-primary); color: var(--color-white); border-radius: var(--radius);
     padding: 2.5rem; text-align: center;
