@@ -21,6 +21,7 @@ import { run as runJournalistPitcher } from './agents/journalist-pitcher.js';
 import { run as runInfographicGen } from './agents/infographic-generator.js';
 import { run as runInfographicOutreach } from './agents/infographic-outreach.js';
 import { run as runTrailConditions } from './agents/trail-conditions.js';
+import { run as runPinterest } from './agents/pinterest-poster.js';
 
 const log = createLogger('main');
 
@@ -52,6 +53,7 @@ registerTrigger('content-refresher', runContentRefresher);
 registerTrigger('journalist-pitcher', runJournalistPitcher);
 registerTrigger('infographic-generator', runInfographicGen);
 registerTrigger('infographic-outreach', runInfographicOutreach);
+registerTrigger('pinterest-poster', runPinterest);
 
 // ── Schedule agents (Mountain Time = America/Edmonton) ────
 // schedule('PPC Review',     '0 8 * * *',  runPPC);       // DISABLED — PPC paused
@@ -70,6 +72,7 @@ schedule('Journalist Pitcher','0 14 * * 1,3', runJournalistPitcher);// 2 PM MT M
 schedule('Infographic Generator','0 10 * * 3', runInfographicGen);    // 10 AM MT Wednesday
 schedule('Infographic Outreach', '0 11 * * 2,4', runInfographicOutreach);// 11 AM MT Tue & Thu
 schedule('Trail Conditions',  '0 8 * * *', runTrailConditions); // 8 AM MT daily — Parks Canada scrape
+schedule('Pinterest Poster', '0 10,14,18 * * *', runPinterest);  // 10 AM, 2 PM, 6 PM MT daily — 3 pins/day
 
 // ── Startup notification ──────────────────────────────────
 const jobs = listJobs();
