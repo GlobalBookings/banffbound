@@ -78,6 +78,20 @@
 /blog/packing /blog/banff-packing-list 301
 /blog/what-to-pack /blog/banff-packing-list 301
 
+# ─── Cannibalization fixes (consolidate duplicate content) ───
+# Ski pages → single canonical skiing guide
+/blog/banff-ski-slopes /blog/banff-skiing-guide 301
+/blog/banff-ski-area /blog/banff-skiing-guide 301
+/blog/banff-ski-trips /blog/banff-skiing-guide 301
+/blog/big-3-ski-resorts /blog/banff-skiing-guide 301
+
+# Restaurant pages → single canonical restaurant guide
+/blog/banff-restaraunts /blog/best-banff-restaurants-where-to-eat 301
+/blog/eating-out-in-banff /blog/best-banff-restaurants-where-to-eat 301
+
+# Sky Bistro duplicate → single page
+/blog/sky-bistro-banff /blog/sky-bistro 301
+
 # ─── Old category/section patterns ───
 /guide/* /blog/:splat 301
 /guides/* /blog/:splat 301

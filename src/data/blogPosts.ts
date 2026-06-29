@@ -885,8 +885,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'banff-hilton',
-    title: 'Banff Hilton: Your Gateway to Canadian Rockies Adventure',
-    description: 'Discover luxury at Banff Hilton, your perfect base for exploring the Canadian Rockies. From hiking trails to ski slopes, adventure awaits at your doorstep.',
+    title: 'Hilton Hotels in Banff & Canmore: Rates, Reviews & Booking Guide',
+    description: 'Complete guide to Hilton hotels near Banff National Park. Compare the Canmore properties, room rates from $280/night, Hilton Honors perks, and which to book.',
     date: '2026-03-02',
     category: 'Guides',
     image: '/images/blog/banff-hilton.webp',
@@ -1921,8 +1921,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'banff-ice-cream-guide',
-    title: 'Best Ice Cream & Gelato in Banff',
-    description: 'The best ice cream and gelato shops in Banff. Handmade scoops, unique flavours, and the sweetest treats on Banff Avenue.',
+    title: '7 Best Ice Cream & Gelato Shops in Banff (2026 Local Picks)',
+    description: 'Ranked: the best ice cream and gelato in Banff and Canmore. From Wild Flour\'s lavender honey to COWS on Banff Ave, with prices, hours, and what to order.',
     date: '2025-12-03',
     category: 'Food & Drink',
     image: '/images/blog/banff-ice-cream-guide.webp',
@@ -2426,8 +2426,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'banff-elk-rut',
-    title: 'Elk Rut in Banff: When & Where to Watch Safely',
-    description: 'Guide to watching the elk rut in Banff. When it happens, best viewing spots, safety distances, photography tips, and how to stay safe during mating season.',
+    title: 'Banff Elk Rut 2026: Best Viewing Spots, Dates & Safety Tips',
+    description: 'The elk rut in Banff runs mid-September to mid-October. See exactly where to watch safely, hear bugling calls, photograph rutting bulls, and avoid $25,000 fines.',
     date: '2025-11-02',
     category: 'Guides',
     image: '/images/blog/banff-elk-rut.webp',
@@ -2552,8 +2552,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'banff-sunset-spots',
-    title: '10 Best Sunset Spots in Banff National Park',
-    description: 'Discover the most stunning sunset viewpoints in Banff National Park. From Vermilion Lakes to Mount Norquay lookout, these are the top spots to watch the sun set over the Rockies.',
+    title: '10 Best Sunset Spots in Banff (With Exact Times & Directions)',
+    description: 'The best sunset viewpoints in Banff National Park ranked by a local photographer. Vermilion Lakes, Two Jack Lake, Mt Norquay lookout, and 7 more with parking and timing tips.',
     date: '2025-10-19',
     category: 'Tips',
     image: '/images/blog/banff-sunset-spots.webp',

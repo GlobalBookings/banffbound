@@ -12,6 +12,17 @@ export default defineConfig({
       lastmod: new Date(),
       changefreq: 'weekly',
       priority: 0.7,
+      filter(page) {
+        const excludeSlugs = [
+          'banff-ski-slopes', 'banff-ski-area', 'banff-ski-trips', 'big-3-ski-resorts',
+          'banff-restaraunts', 'eating-out-in-banff', 'sky-bistro-banff',
+          'banff-ski-big-3', 'big-3-ski', 'big-three-ski', 'ski-big-three',
+          'ski-big-3-alberta', 'ski-big-3', 'ski-banff', 'banff-ski-hills',
+          'banff-ski-areas', 'big3-ski-resort', 'banff-ski', 'banff-ski-resorts',
+          'banff-ski-fields',
+        ];
+        return !excludeSlugs.some(slug => page.includes(`/blog/${slug}`));
+      },
       serialize(item) {
         // Boost priority for high-value pages
         if (item.url === 'https://banffbound.com/') {
