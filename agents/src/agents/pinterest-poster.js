@@ -16,6 +16,10 @@ const PINTEREST_ACCESS_TOKEN = process.env.PINTEREST_ACCESS_TOKEN;
 const PINTEREST_REFRESH_TOKEN = process.env.PINTEREST_REFRESH_TOKEN;
 const PINTEREST_BOARD_NAME = process.env.PINTEREST_BOARD_NAME || 'Banff Bound';
 
+// Trial apps can only post to the sandbox; flip to production once approved for Standard access.
+const PINTEREST_SANDBOX = process.env.PINTEREST_SANDBOX === 'true';
+const API_BASE = PINTEREST_SANDBOX ? 'https://api-sandbox.pinterest.com' : 'https://api.pinterest.com';
+
 const PINS_PER_RUN = 3;
 
 // ── Keywords → page mapping for matching photos to site pages ──
@@ -256,7 +260,7 @@ async function refreshAccessToken() {
   if (!PINTEREST_REFRESH_TOKEN || !PINTEREST_APP_ID || !PINTEREST_APP_SECRET) return null;
 
   const basicAuth = Buffer.from(`${PINTEREST_APP_ID}:${PINTEREST_APP_SECRET}`).toString('base64');
-  const res = await fetch('https://api.pinterest.com/v5/oauth/token', {
+  const res = await fetch(`${API_BASE}/v5/oauth/token`, {
     method: 'POST',
     headers: {
       'Authorization': `Basic ${basicAuth}`,
@@ -300,7 +304,7 @@ async function pinterestFetch(url, options = {}, retry = true) {
 
 // Resolve the board ID from the configured board name
 async function getBoardId(boardName) {
-  const res = await pinterestFetch('https://api.pinterest.com/v5/boards?page_size=50');
+  const res = await pinterestFetch(`${API_BASE}/v5/boards?page_size=50`);
   if (!res.ok) throw new Error(`Failed to list boards: ${res.status} ${await res.text()}`);
   const data = await res.json();
   const board = (data.items || []).find(b => b.name.toLowerCase() === boardName.toLowerCase());
@@ -313,7 +317,7 @@ async function getBoardId(boardName) {
 
 // Create a pin via the v5 API
 async function createPin({ imageUrl, title, description, linkUrl, boardId }) {
-  const res = await pinterestFetch('https://api.pinterest.com/v5/pins', {
+  const res = await pinterestFetch(`${API_BASE}/v5/pins`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -341,6 +345,8 @@ export async function run() {
   const hasCredentials = !!(PINTEREST_ACCESS_TOKEN || PINTEREST_REFRESH_TOKEN);
   if (!hasCredentials) {
     log.warn('No PINTEREST_ACCESS_TOKEN/REFRESH_TOKEN set. Running in preview mode.');
+  } else {
+    log.info(`Mode: ${PINTEREST_SANDBOX ? 'SANDBOX' : 'PRODUCTION'} (${API_BASE})`);
   }
 
   const history = loadHistory();

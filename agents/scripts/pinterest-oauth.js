@@ -12,6 +12,10 @@ const APP_ID = process.env.PINTEREST_APP_ID;
 const APP_SECRET = process.env.PINTEREST_APP_SECRET;
 const REDIRECT_URI = process.env.PINTEREST_REDIRECT_URI || 'https://banffbound.com/';
 
+// Pass --sandbox to mint a sandbox token (trial apps can create pins there).
+const SANDBOX = process.argv.includes('--sandbox');
+const API_BASE = SANDBOX ? 'https://api-sandbox.pinterest.com' : 'https://api.pinterest.com';
+
 const SCOPES = 'pins:read,pins:write,boards:read,boards:write,user_accounts:read';
 
 function ask(question) {
@@ -50,9 +54,9 @@ async function main() {
   }
 
   // Step 3: exchange the code for an access token
-  console.log('\nExchanging code for access token...');
+  console.log(`\nExchanging code for ${SANDBOX ? 'SANDBOX' : 'PRODUCTION'} access token...`);
   const basicAuth = Buffer.from(`${APP_ID}:${APP_SECRET}`).toString('base64');
-  const res = await fetch('https://api.pinterest.com/v5/oauth/token', {
+  const res = await fetch(`${API_BASE}/v5/oauth/token`, {
     method: 'POST',
     headers: {
       'Authorization': `Basic ${basicAuth}`,
