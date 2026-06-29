@@ -301,115 +301,80 @@ async function createPinViaBrowser(browser, { imageUrl, title, description, link
     await page.goto('https://www.pinterest.com/pin-creation-tool/', { waitUntil: 'networkidle2', timeout: 30000 });
     await new Promise(r => setTimeout(r, 3000));
 
-    // Click "Save from site" or use the URL upload option
-    // Pinterest's pin creation allows importing from URL
-    const saveFromSiteBtn = await page.$('[data-test-id="scrape-from-url"], button:has-text("Save from site")');
-    if (saveFromSiteBtn) {
-      await saveFromSiteBtn.click();
-      await new Promise(r => setTimeout(r, 1000));
-    }
+    // Download image and upload via file input
+    const tmpDir = path.join(DATA_DIR, 'pinterest-tmp');
+    if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir, { recursive: true });
+    const tmpFile = path.join(tmpDir, `pin-${Date.now()}.jpg`);
 
-    // Try to use the "Save from URL" input for the image
-    // First check if there's a URL input for media
-    const urlInput = await page.$('input[placeholder*="URL"], input[placeholder*="url"], input[data-test-id="scrape-url-input"]');
-    if (urlInput) {
-      await urlInput.click({ clickCount: 3 });
-      await urlInput.type(imageUrl, { delay: 30 });
-      await new Promise(r => setTimeout(r, 1000));
+    const imgRes = await fetch(imageUrl);
+    if (!imgRes.ok) throw new Error(`Failed to download image: ${imgRes.status}`);
+    const buffer = Buffer.from(await imgRes.arrayBuffer());
+    fs.writeFileSync(tmpFile, buffer);
 
-      // Submit the URL
-      const submitUrlBtn = await page.$('[data-test-id="board-picker-save-button"], button[type="submit"]');
-      if (submitUrlBtn) await submitUrlBtn.click();
-      await new Promise(r => setTimeout(r, 3000));
-    } else {
-      // Direct image URL approach: download and upload
-      // Download the image to a temp file
-      const tmpDir = path.join(DATA_DIR, 'pinterest-tmp');
-      if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir, { recursive: true });
-      const tmpFile = path.join(tmpDir, `pin-${Date.now()}.jpg`);
+    const fileInput = await page.$('input[type="file"]');
+    if (!fileInput) throw new Error('Could not find file upload input');
+    await fileInput.uploadFile(tmpFile);
+    await new Promise(r => setTimeout(r, 4000));
+    fs.unlinkSync(tmpFile);
 
-      const imgRes = await fetch(imageUrl);
-      if (!imgRes.ok) throw new Error(`Failed to download image: ${imgRes.status}`);
-      const buffer = Buffer.from(await imgRes.arrayBuffer());
-      fs.writeFileSync(tmpFile, buffer);
-
-      // Find file upload input
-      const fileInput = await page.$('input[type="file"]');
-      if (!fileInput) throw new Error('Could not find file upload input');
-      await fileInput.uploadFile(tmpFile);
-      await new Promise(r => setTimeout(r, 4000));
-
-      // Cleanup temp file
-      fs.unlinkSync(tmpFile);
-    }
-
-    // Fill in title
-    const titleInput = await page.$('[data-test-id="pin-draft-title"] textarea, [data-test-id="pin-draft-title"] input, textarea[placeholder*="title" i], input[placeholder*="title" i]');
+    // Fill Title (placeholder: "Tell everyone what your Pin is about")
+    const titleInput = await page.$('input[placeholder*="Tell everyone"], input[placeholder*="title" i]');
     if (titleInput) {
       await titleInput.click({ clickCount: 3 });
       await titleInput.type(title.slice(0, 100), { delay: 20 });
+    } else {
+      log.warn('Could not find title input');
     }
 
-    // Fill in description
-    const descInput = await page.$('[data-test-id="pin-draft-description"] textarea, textarea[placeholder*="description" i], [data-test-id="pin-draft-description-field"] textarea');
+    // Fill Description (contenteditable div or textarea with "Describe your Pin")
+    const descInput = await page.$('textarea[placeholder*="Describe"], textarea[placeholder*="description" i]');
     if (descInput) {
       await descInput.click({ clickCount: 3 });
       await descInput.type(description.slice(0, 500), { delay: 10 });
+    } else {
+      // Pinterest may use a contenteditable div for description
+      const descDiv = await page.evaluateHandle(() => {
+        const divs = [...document.querySelectorAll('[contenteditable="true"]')];
+        return divs.find(d => d.getAttribute('aria-label')?.includes('description') ||
+                              d.getAttribute('data-placeholder')?.includes('Describe')) || null;
+      });
+      if (descDiv && descDiv.asElement()) {
+        await descDiv.asElement().click();
+        await page.keyboard.type(description.slice(0, 500), { delay: 10 });
+      } else {
+        log.warn('Could not find description input');
+      }
     }
 
-    // Fill in link
-    const linkInput = await page.$('[data-test-id="pin-draft-link"] input, input[placeholder*="link" i], input[placeholder*="url" i][name*="link"]');
+    // Fill Link (placeholder: "Add a link")
+    const linkInput = await page.$('input[placeholder*="Add a link"], input[placeholder*="link" i]');
     if (linkInput) {
       await linkInput.click({ clickCount: 3 });
       await linkInput.type(linkUrl, { delay: 20 });
+    } else {
+      log.warn('Could not find link input');
     }
 
-    // Select board
-    const boardSelector = await page.$('[data-test-id="board-dropdown-select-button"], [data-test-id="board-picker-dropdown"]');
-    if (boardSelector) {
-      await boardSelector.click();
-      await new Promise(r => setTimeout(r, 1500));
+    await new Promise(r => setTimeout(r, 1000));
 
-      // Search for board name
-      const boardSearchInput = await page.$('[data-test-id="board-picker-filter"] input, input[placeholder*="Search" i]');
-      if (boardSearchInput) {
-        await boardSearchInput.type(boardName, { delay: 30 });
-        await new Promise(r => setTimeout(r, 1500));
-      }
+    // Click Publish button
+    const publishBtn = await page.evaluateHandle(() => {
+      const buttons = [...document.querySelectorAll('button')];
+      return buttons.find(b => b.textContent.trim() === 'Publish') || null;
+    });
 
-      // Click the first matching board
-      const boardOption = await page.$('[data-test-id="board-row"]');
-      if (boardOption) await boardOption.click();
-      await new Promise(r => setTimeout(r, 1000));
-    }
-
-    // Publish the pin
-    const publishBtn = await page.$('[data-test-id="board-picker-save-button"], [data-test-id="create-pin-submit-button"], button:has-text("Publish")');
-    if (publishBtn) {
-      await publishBtn.click();
-      await new Promise(r => setTimeout(r, 4000));
-      log.info(`Pin created: "${title.substring(0, 50)}..."`);
+    if (publishBtn && publishBtn.asElement()) {
+      await publishBtn.asElement().click();
+      await new Promise(r => setTimeout(r, 5000));
+      log.info(`Pin published: "${title.substring(0, 50)}..."`);
       return { success: true };
     }
 
-    // Fallback: try any prominent button
-    const buttons = await page.$$('button');
-    for (const btn of buttons) {
-      const text = await page.evaluate(el => el.textContent, btn);
-      if (text && (text.includes('Publish') || text.includes('Save') || text.includes('Create'))) {
-        await btn.click();
-        await new Promise(r => setTimeout(r, 4000));
-        log.info(`Pin created via fallback button: "${title.substring(0, 50)}..."`);
-        return { success: true };
-      }
-    }
-
-    throw new Error('Could not find publish/save button');
+    throw new Error('Could not find Publish button');
   } catch (err) {
-    // Take screenshot for debugging
     const screenshotPath = path.join(DATA_DIR, `pinterest-error-${Date.now()}.png`);
     await page.screenshot({ path: screenshotPath, fullPage: true }).catch(() => {});
-    log.error(`Pin creation failed: ${err.message}. Screenshot saved: ${screenshotPath}`);
+    log.error(`Pin creation failed: ${err.message}. Screenshot: ${screenshotPath}`);
     throw err;
   } finally {
     await page.close();
