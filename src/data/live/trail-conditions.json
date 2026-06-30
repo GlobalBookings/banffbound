@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T19:44:03.269Z",
+  "updatedAt": "2026-06-30T21:22:57.236Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -596,9 +596,9 @@
           "name": "Hidden Lake Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing",
-          "lastUpdated": "2026-06-26"
+          "condition": "Fair.",
+          "comment": "Wet and muddy; Risk of post-holing; Snow patches",
+          "lastUpdated": "2026-06-30"
         },
         {
           "name": "Deception Pass Trail",
@@ -753,17 +753,17 @@
           "name": "Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Snowbound at higher elevation; Sections of deep snow; Risk of post-holing; Wet and muddy sections; Not recommended",
-          "lastUpdated": "2026-06-26"
+          "condition": "See comment section",
+          "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation",
+          "lastUpdated": "2026-06-30"
         },
         {
           "name": "North Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Snowbound at higher elevation; Sections of deep snow; Risk of post-holing; Wet and muddy sections; Not recommended",
-          "lastUpdated": "2026-06-26"
+          "condition": "See comment section",
+          "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation",
+          "lastUpdated": "2026-06-30"
         },
         {
           "name": "Sunset Pass Trail",
@@ -1445,9 +1445,9 @@
       "name": "Hidden Lake Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing",
-      "lastUpdated": "2026-06-26",
+      "condition": "Fair.",
+      "comment": "Wet and muddy; Risk of post-holing; Snow patches",
+      "lastUpdated": "2026-06-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1616,18 +1616,18 @@
       "name": "Molar Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Snowbound at higher elevation; Sections of deep snow; Risk of post-holing; Wet and muddy sections; Not recommended",
-      "lastUpdated": "2026-06-26",
+      "condition": "See comment section",
+      "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation",
+      "lastUpdated": "2026-06-30",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "North Molar Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Snowbound at higher elevation; Sections of deep snow; Risk of post-holing; Wet and muddy sections; Not recommended",
-      "lastUpdated": "2026-06-26",
+      "condition": "See comment section",
+      "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation",
+      "lastUpdated": "2026-06-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1659,6 +1659,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Warning: Castle Mountain Campground.",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Area Closure: Fenland Area",
       "type": "Area Closure",
