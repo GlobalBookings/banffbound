@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T19:40:49.776Z",
+  "updatedAt": "2026-07-01T21:19:29.991Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -500,9 +500,9 @@
           "name": "Eiffel Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Avalanche debris on trail; Risk of post-holing; Steep snow slopes ; Slippery sections",
-          "lastUpdated": "2026-06-26"
+          "condition": "Fair.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Steep snow slopes ; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Lake Agnes Trail",
@@ -525,8 +525,8 @@
           "difficulty": "Moderate",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; No vehicle access; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-          "lastUpdated": "2026-06-26"
+          "comment": "No vehicle access; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow patches; Wet and muddy sections; Stay on designated trails and viewpoints; Sturdy hiking b",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Little Beehive Trail",
@@ -597,16 +597,16 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Wet and muddy; Risk of post-holing; Snow patches",
-          "lastUpdated": "2026-06-30"
+          "comment": "Wet and muddy; Snow patches",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Deception Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing",
-          "lastUpdated": "2026-06-26"
+          "condition": "Fair.",
+          "comment": "Snow covered sections; Wet and muddy sections",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Paradise Valley and Giant Steps Trail",
@@ -621,8 +621,8 @@
           "difficulty": "Difficult",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snowbound; Steep snow slopes ; Slippery sections; Avalanche terrain",
-          "lastUpdated": "2026-06-26"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Steep snow slopes ; Slippery sections; Difficult route finding",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Saddleback Pass Trail",
@@ -637,8 +637,8 @@
           "difficulty": "Difficult",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snowbound; Steep snow slopes ; Slippery sections",
-          "lastUpdated": "2026-06-26"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Steep snow slopes ; Slippery sections; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Sheol/Paradise Connector Trail",
@@ -666,8 +666,8 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Poor.",
-          "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-26"
+          "comment": "Snow at high elevation ; Slippery sections; Difficult route finding",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Mistaya Canyon Trail",
@@ -713,9 +713,9 @@
           "name": "Helen Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Snow at high elevation ; Slippery sections; Stream crossings; Stream levels are high; Compact snow; Not recommended",
-          "lastUpdated": "2026-06-26"
+          "condition": "Fair.",
+          "comment": "Snow at high elevation ; Wet and muddy sections; Stay on designated trails and viewpoints; Stream crossings",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Parker Ridge Trail",
@@ -738,8 +738,8 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Poor.",
-          "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-26"
+          "comment": "Snow at high elevation ; Slippery sections; Stay on designated trails and viewpoints; Wet and muddy sections",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Glacier Lake Trail",
@@ -769,9 +769,9 @@
           "name": "Sunset Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Wet and muddy sections; Snow patches; Numerous trees down on trail",
-          "lastUpdated": "2026-06-29"
+          "condition": "Fair.",
+          "comment": "Wet and muddy sections; Snow patches; Deadfall on trail",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Sarbach Lookout Trail",
@@ -1337,9 +1337,9 @@
       "name": "Eiffel Lake Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Avalanche debris on trail; Risk of post-holing; Steep snow slopes ; Slippery sections",
-      "lastUpdated": "2026-06-26",
+      "condition": "Fair.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation ; Steep snow slopes ; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-07-01",
       "area": "Lake Louise Area"
     },
     {
@@ -1365,8 +1365,8 @@
       "difficulty": "Moderate",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; No vehicle access; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-      "lastUpdated": "2026-06-26",
+      "comment": "No vehicle access; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow patches; Wet and muddy sections; Stay on designated trails and viewpoints; Sturdy hiking b",
+      "lastUpdated": "2026-07-01",
       "area": "Lake Louise Area"
     },
     {
@@ -1446,17 +1446,17 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Wet and muddy; Risk of post-holing; Snow patches",
-      "lastUpdated": "2026-06-30",
+      "comment": "Wet and muddy; Snow patches",
+      "lastUpdated": "2026-07-01",
       "area": "Lake Louise Area"
     },
     {
       "name": "Deception Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Snow covered sections; Sections of deep snow; Wet and muddy; Risk of post-holing",
-      "lastUpdated": "2026-06-26",
+      "condition": "Fair.",
+      "comment": "Snow covered sections; Wet and muddy sections",
+      "lastUpdated": "2026-07-01",
       "area": "Lake Louise Area"
     },
     {
@@ -1473,8 +1473,8 @@
       "difficulty": "Difficult",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snowbound; Steep snow slopes ; Slippery sections; Avalanche terrain",
-      "lastUpdated": "2026-06-26",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Steep snow slopes ; Slippery sections; Difficult route finding",
+      "lastUpdated": "2026-07-01",
       "area": "Lake Louise Area"
     },
     {
@@ -1491,8 +1491,8 @@
       "difficulty": "Difficult",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snowbound; Steep snow slopes ; Slippery sections",
-      "lastUpdated": "2026-06-26",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Steep snow slopes ; Slippery sections; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+      "lastUpdated": "2026-07-01",
       "area": "Lake Louise Area"
     },
     {
@@ -1518,8 +1518,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Poor.",
-      "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-26",
+      "comment": "Snow at high elevation ; Slippery sections; Difficult route finding",
+      "lastUpdated": "2026-07-01",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1571,9 +1571,9 @@
       "name": "Helen Lake Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Snow at high elevation ; Slippery sections; Stream crossings; Stream levels are high; Compact snow; Not recommended",
-      "lastUpdated": "2026-06-26",
+      "condition": "Fair.",
+      "comment": "Snow at high elevation ; Wet and muddy sections; Stay on designated trails and viewpoints; Stream crossings",
+      "lastUpdated": "2026-07-01",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1599,8 +1599,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Poor.",
-      "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-26",
+      "comment": "Snow at high elevation ; Slippery sections; Stay on designated trails and viewpoints; Wet and muddy sections",
+      "lastUpdated": "2026-07-01",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1634,9 +1634,9 @@
       "name": "Sunset Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Wet and muddy sections; Snow patches; Numerous trees down on trail",
-      "lastUpdated": "2026-06-29",
+      "condition": "Fair.",
+      "comment": "Wet and muddy sections; Snow patches; Deadfall on trail",
+      "lastUpdated": "2026-07-01",
       "area": "Icefields Parkway Area"
     },
     {
