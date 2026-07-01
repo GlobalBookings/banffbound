@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-01T16:18:50.800Z",
+  "updatedAt": "2026-07-01T19:40:49.776Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 67,
-    "caution": 9,
+    "open": 66,
+    "caution": 10,
     "closed": 20
   },
   "areas": [
@@ -682,8 +682,8 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Please respect all posted notices and signs.",
-          "comment": "Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended; Stay on designated trails and viewpoints; Respect all posted notices and signs",
-          "lastUpdated": "2026-06-26"
+          "comment": "Stay on designated trails and viewpoints; Respect all posted notices and signs; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-07-01"
         },
         {
           "name": "Chephren Lake Trail",
@@ -784,10 +784,10 @@
         {
           "name": "Sunset Lookout Trail",
           "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Poor.",
-          "comment": "Wet and muddy sections; Snow patches; Numerous trees down on trail",
-          "lastUpdated": "2026-06-29"
+          "status": "caution",
+          "condition": "Not recommended.",
+          "comment": "Wet and muddy sections; Numerous trees down on trail; Not recommended",
+          "lastUpdated": "2026-07-01"
         }
       ]
     }
@@ -1536,8 +1536,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Please respect all posted notices and signs.",
-      "comment": "Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended; Stay on designated trails and viewpoints; Respect all posted notices and signs",
-      "lastUpdated": "2026-06-26",
+      "comment": "Stay on designated trails and viewpoints; Respect all posted notices and signs; Wet and muddy sections; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-07-01",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1651,10 +1651,10 @@
     {
       "name": "Sunset Lookout Trail",
       "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Poor.",
-      "comment": "Wet and muddy sections; Snow patches; Numerous trees down on trail",
-      "lastUpdated": "2026-06-29",
+      "status": "caution",
+      "condition": "Not recommended.",
+      "comment": "Wet and muddy sections; Numerous trees down on trail; Not recommended",
+      "lastUpdated": "2026-07-01",
       "area": "Icefields Parkway Area"
     }
   ],
