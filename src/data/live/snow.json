@@ -1,42 +1,25 @@
 {
-  "updatedAt": "2026-06-30T23:03:36.137Z",
-  "offSeason": false,
+  "updatedAt": "2026-07-01T02:40:39.107Z",
+  "offSeason": true,
+  "seasonOpens": "Early November",
   "resorts": [
     {
       "name": "Sunshine Village",
-      "status": "Closed for Season",
-      "baseDepth": null,
-      "newSnow24h": null,
-      "seasonTotal": null,
-      "openRuns": null,
-      "totalRuns": 137,
-      "openLifts": null,
-      "totalLifts": 12,
-      "website": "https://www.skibanff.com/conditions"
+      "status": "Closed for Season — Opens November",
+      "website": "https://www.skibanff.com/conditions",
+      "totalRuns": 137
     },
     {
       "name": "Lake Louise Ski Resort",
-      "status": "Closed for Season",
-      "baseDepth": null,
-      "newSnow24h": null,
-      "seasonTotal": null,
-      "openRuns": null,
-      "totalRuns": 164,
-      "openLifts": null,
-      "totalLifts": 11,
-      "website": "https://www.skilouise.com/conditions/"
+      "status": "Closed for Season — Opens November",
+      "website": "https://www.skilouise.com/conditions/",
+      "totalRuns": 164
     },
     {
       "name": "Mt. Norquay",
-      "status": "Closed for Season",
-      "baseDepth": null,
-      "newSnow24h": "0 cm",
-      "seasonTotal": null,
-      "openRuns": null,
-      "totalRuns": 60,
-      "openLifts": null,
-      "totalLifts": 5,
-      "website": "https://banffnorquay.com/conditions/"
+      "status": "Closed for Season — Opens November",
+      "website": "https://banffnorquay.com/conditions/",
+      "totalRuns": 60
     }
   ]
 }

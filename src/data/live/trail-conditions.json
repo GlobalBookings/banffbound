@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T23:03:34.826Z",
+  "updatedAt": "2026-07-01T02:40:39.745Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -360,7 +360,7 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Caution.",
-          "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
+          "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Flooded section",
           "lastUpdated": "2026-06-30"
         },
         {
@@ -1185,7 +1185,7 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Caution.",
-      "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
+      "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Flooded section",
       "lastUpdated": "2026-06-30",
       "area": "Banff Area"
     },
