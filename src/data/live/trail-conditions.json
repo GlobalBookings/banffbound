@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T02:40:39.745Z",
+  "updatedAt": "2026-07-01T08:04:42.084Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -1698,12 +1698,6 @@
     {
       "title": "Advisory: Mating loons at Vermilion and Johnson Lakes",
       "type": "Advisory",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: Tunnel Toe Wildfire Risk Reduction Project (Block B)",
-      "type": "Area Closure",
       "issued": "",
       "ends": ""
     },
