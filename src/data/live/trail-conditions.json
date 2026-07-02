@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T02:30:07.394Z",
+  "updatedAt": "2026-07-02T07:23:32.154Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -1659,12 +1659,6 @@
     }
   ],
   "advisories": [
-    {
-      "title": "Road Closure: Mount Norquay Road south of the Trans-Canada Highway",
-      "type": "Road Closure",
-      "issued": "",
-      "ends": ""
-    },
     {
       "title": "Warning: Castle Mountain Campground.",
       "type": "Warning",
