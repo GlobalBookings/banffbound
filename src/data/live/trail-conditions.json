@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T16:00:37.628Z",
+  "updatedAt": "2026-07-02T19:11:34.754Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -128,7 +128,7 @@
           "difficulty": "Easy",
           "status": "closed",
           "condition": "Partially Closed",
-          "comment": "Check the important bulletins for more information; Adhere to all posted warnings and closures along trails; Use caution, skiers in area; Snow covered sections; Risk of post-holing",
+          "comment": "Check the important bulletins for more information; Adhere to all posted warnings and closures along trails; Use caution, skiers in area; Snow patches",
           "lastUpdated": "2026-07-02"
         },
         {
@@ -264,7 +264,7 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Avalanche debris on trail; Snow patches; Risk of post-holing; Wet and muddy sections",
+          "comment": "Wet and muddy sections; Avalanche debris on trail; Snow covered sections; Risk of post-holing",
           "lastUpdated": "2026-07-02"
         },
         {
@@ -924,7 +924,7 @@
       "difficulty": "Easy",
       "status": "closed",
       "condition": "Partially Closed",
-      "comment": "Check the important bulletins for more information; Adhere to all posted warnings and closures along trails; Use caution, skiers in area; Snow covered sections; Risk of post-holing",
+      "comment": "Check the important bulletins for more information; Adhere to all posted warnings and closures along trails; Use caution, skiers in area; Snow patches",
       "lastUpdated": "2026-07-02",
       "area": "Banff Area"
     },
@@ -1077,7 +1077,7 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Avalanche debris on trail; Snow patches; Risk of post-holing; Wet and muddy sections",
+      "comment": "Wet and muddy sections; Avalanche debris on trail; Snow covered sections; Risk of post-holing",
       "lastUpdated": "2026-07-02",
       "area": "Banff Area"
     },
