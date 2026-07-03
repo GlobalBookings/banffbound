@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-07-02T22:57:37.640Z",
+  "updatedAt": "2026-07-03T02:05:23.974Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 66,
-    "caution": 10,
-    "closed": 20
+    "open": 77,
+    "caution": 8,
+    "closed": 11
   },
   "areas": [
     {
@@ -411,10 +411,10 @@
         {
           "name": "Consolation Lakes Trail",
           "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-06-26"
+          "status": "open",
+          "condition": "Fair.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy sections; Slippery sections",
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Fairview Lookout Trail",
@@ -443,10 +443,10 @@
         {
           "name": "Moraine Lakeshore Trail",
           "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Road access closed",
+          "status": "open",
+          "condition": "Good.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Paradise Connector",
@@ -475,18 +475,18 @@
         {
           "name": "Big Beehive Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Risk of post-holing; Slippery sections",
-          "lastUpdated": "2026-06-26"
+          "status": "open",
+          "condition": "Caution.",
+          "comment": "Steep switchback section - use caution; Slippery sections; Sturdy hiking boots and hiking poles recommended; Extensive trail erosion; Snow patches",
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Big Beehive to Plain of Six Glaciers Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Snow covered sections; Steep snow slopes ; Avalanche debris on trail; Risk of post-holing; Slippery sections",
-          "lastUpdated": "2026-06-26"
+          "status": "open",
+          "condition": "Fair.",
+          "comment": "Deadfall on trail; Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Castle Lookout Trail",
@@ -515,18 +515,18 @@
         {
           "name": "Lake Annette Trail",
           "difficulty": "Moderate",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy sections; Mainly dry",
-          "lastUpdated": "2026-06-26"
+          "status": "open",
+          "condition": "Fair.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy sections",
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Larch Valley/Minnestimma Lakes Trail",
           "difficulty": "Moderate",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "No vehicle access; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow patches; Wet and muddy sections; Stay on designated trails and viewpoints; Sturdy hiking b",
-          "lastUpdated": "2026-07-01"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow patches; Wet and muddy sections; Stay on designated trails and viewpoints; Sturdy hiking boots and hiking pol",
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Little Beehive Trail",
@@ -579,18 +579,18 @@
         {
           "name": "Fairview Mountain Trail",
           "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Snow at high elevation ; Sections of deep snow; Risk of post-holing; Steep snow slopes ; Slippery sections",
-          "lastUpdated": "2026-06-26"
+          "status": "open",
+          "condition": "Caution.",
+          "comment": "Snow at high elevation ; Steep snow slopes ; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Moraine Lake Highline Trail",
           "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Deadfall on trail; Not yet maintained",
-          "lastUpdated": "2026-06-26"
+          "status": "open",
+          "condition": "Poor.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Not yet maintained; Numerous trees down on trail",
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Hidden Lake Trail",
@@ -611,50 +611,50 @@
         {
           "name": "Paradise Valley and Giant Steps Trail",
           "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
+          "status": "open",
+          "condition": "Fair.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy",
-          "lastUpdated": "2026-06-25"
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Sentinel Pass from Paradise Valley Trail",
           "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
+          "status": "caution",
+          "condition": "Not recommended.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Steep snow slopes ; Slippery sections; Difficult route finding",
-          "lastUpdated": "2026-07-01"
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Saddleback Pass Trail",
           "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-          "lastUpdated": "2026-06-26"
+          "status": "open",
+          "condition": "Caution.",
+          "comment": "Snow at high elevation ; Slippery sections; Stay on designated trails and viewpoints; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Sentinel Pass via Larch Valley Trail",
           "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
+          "status": "open",
+          "condition": "Poor.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Steep snow slopes ; Slippery sections; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
-          "lastUpdated": "2026-07-01"
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Sheol/Paradise Connector Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Snow covered sections; Sections of deep snow; Deadfall on trail",
-          "lastUpdated": "2026-06-26"
+          "condition": "Fair.",
+          "comment": "Snow covered sections; Deadfall on trail",
+          "lastUpdated": "2026-07-02"
         },
         {
           "name": "Wenkchemna Pass Trail",
           "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
+          "status": "caution",
+          "condition": "Not recommended.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snowbound at higher elevation; Risk of post-holing; Difficult route finding",
-          "lastUpdated": "2026-06-26"
+          "lastUpdated": "2026-07-02"
         }
       ]
     },
@@ -1237,10 +1237,10 @@
     {
       "name": "Consolation Lakes Trail",
       "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-06-26",
+      "status": "open",
+      "condition": "Fair.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy sections; Slippery sections",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
@@ -1273,10 +1273,10 @@
     {
       "name": "Moraine Lakeshore Trail",
       "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Road access closed",
+      "status": "open",
+      "condition": "Good.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
@@ -1309,19 +1309,19 @@
     {
       "name": "Big Beehive Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Switchbacks from Lake Agnes to Big Beehive are steep, snowy and hazardous. Not recommended.; Risk of post-holing; Slippery sections",
-      "lastUpdated": "2026-06-26",
+      "status": "open",
+      "condition": "Caution.",
+      "comment": "Steep switchback section - use caution; Slippery sections; Sturdy hiking boots and hiking poles recommended; Extensive trail erosion; Snow patches",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
       "name": "Big Beehive to Plain of Six Glaciers Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Snow covered sections; Steep snow slopes ; Avalanche debris on trail; Risk of post-holing; Slippery sections",
-      "lastUpdated": "2026-06-26",
+      "status": "open",
+      "condition": "Fair.",
+      "comment": "Deadfall on trail; Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
@@ -1354,19 +1354,19 @@
     {
       "name": "Lake Annette Trail",
       "difficulty": "Moderate",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy sections; Mainly dry",
-      "lastUpdated": "2026-06-26",
+      "status": "open",
+      "condition": "Fair.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy sections",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
       "name": "Larch Valley/Minnestimma Lakes Trail",
       "difficulty": "Moderate",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "No vehicle access; Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow patches; Wet and muddy sections; Stay on designated trails and viewpoints; Sturdy hiking b",
-      "lastUpdated": "2026-07-01",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow patches; Wet and muddy sections; Stay on designated trails and viewpoints; Sturdy hiking boots and hiking pol",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
@@ -1426,19 +1426,19 @@
     {
       "name": "Fairview Mountain Trail",
       "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Snow at high elevation ; Sections of deep snow; Risk of post-holing; Steep snow slopes ; Slippery sections",
-      "lastUpdated": "2026-06-26",
+      "status": "open",
+      "condition": "Caution.",
+      "comment": "Snow at high elevation ; Steep snow slopes ; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
       "name": "Moraine Lake Highline Trail",
       "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Deadfall on trail; Not yet maintained",
-      "lastUpdated": "2026-06-26",
+      "status": "open",
+      "condition": "Poor.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Wet and muddy; Not yet maintained; Numerous trees down on trail",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
@@ -1462,55 +1462,55 @@
     {
       "name": "Paradise Valley and Giant Steps Trail",
       "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
+      "status": "open",
+      "condition": "Fair.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Deadfall on trail; Wet and muddy",
-      "lastUpdated": "2026-06-25",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
       "name": "Sentinel Pass from Paradise Valley Trail",
       "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
+      "status": "caution",
+      "condition": "Not recommended.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Steep snow slopes ; Slippery sections; Difficult route finding",
-      "lastUpdated": "2026-07-01",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
       "name": "Saddleback Pass Trail",
       "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Snow at high elevation ; Risk of post-holing; Slippery sections; Not recommended",
-      "lastUpdated": "2026-06-26",
+      "status": "open",
+      "condition": "Caution.",
+      "comment": "Snow at high elevation ; Slippery sections; Stay on designated trails and viewpoints; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
       "name": "Sentinel Pass via Larch Valley Trail",
       "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
+      "status": "open",
+      "condition": "Poor.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Steep snow slopes ; Slippery sections; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
-      "lastUpdated": "2026-07-01",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
       "name": "Sheol/Paradise Connector Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Snow covered sections; Sections of deep snow; Deadfall on trail",
-      "lastUpdated": "2026-06-26",
+      "condition": "Fair.",
+      "comment": "Snow covered sections; Deadfall on trail",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
       "name": "Wenkchemna Pass Trail",
       "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
+      "status": "caution",
+      "condition": "Not recommended.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Snowbound at higher elevation; Risk of post-holing; Difficult route finding",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-07-02",
       "area": "Lake Louise Area"
     },
     {
