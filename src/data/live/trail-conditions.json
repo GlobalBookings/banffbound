@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T19:04:24.587Z",
+  "updatedAt": "2026-07-03T20:54:25.347Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -151,9 +151,9 @@
           "name": "Cascade Valley Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-07-02"
+          "condition": "Caution.",
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bridge(s) out",
+          "lastUpdated": "2026-07-03"
         },
         {
           "name": "Upper Stoney Trail",
@@ -950,9 +950,9 @@
       "name": "Cascade Valley Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-07-02",
+      "condition": "Caution.",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bridge(s) out",
+      "lastUpdated": "2026-07-03",
       "area": "Banff Area"
     },
     {
