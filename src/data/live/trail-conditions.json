@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T20:54:25.347Z",
+  "updatedAt": "2026-07-03T22:55:55.145Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -1659,6 +1659,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "AREA CLOSURE: - Peyto Pit Road",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Warning: Castle Mountain Campground.",
       "type": "Warning",
