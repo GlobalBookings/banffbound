@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-05T20:49:07.237Z",
+  "updatedAt": "2026-07-05T22:54:18.310Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
-    "open": 79,
-    "caution": 6,
+    "open": 78,
+    "caution": 7,
     "closed": 11
   },
   "areas": [
@@ -374,9 +374,9 @@
         {
           "name": "Cory Pass Loop",
           "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Snow patches; Wet and muddy sections; Avalanche terrain",
+          "status": "caution",
+          "condition": "Not recommended.",
+          "comment": "Snow patches; Wet and muddy sections; Avalanche terrain; Compact snow; Snow covered sections",
           "lastUpdated": "2026-07-05"
         },
         {
@@ -1201,9 +1201,9 @@
     {
       "name": "Cory Pass Loop",
       "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Snow patches; Wet and muddy sections; Avalanche terrain",
+      "status": "caution",
+      "condition": "Not recommended.",
+      "comment": "Snow patches; Wet and muddy sections; Avalanche terrain; Compact snow; Snow covered sections",
       "lastUpdated": "2026-07-05",
       "area": "Banff Area"
     },
