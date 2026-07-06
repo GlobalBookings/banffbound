@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T22:54:18.310Z",
+  "updatedAt": "2026-07-06T02:23:46.276Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -556,9 +556,9 @@
           "name": "Plain of Six Glaciers Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Caution.",
-          "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended; Deadfall on trail",
-          "lastUpdated": "2026-07-04"
+          "condition": "Fair.",
+          "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+          "lastUpdated": "2026-07-05"
         },
         {
           "name": "Taylor Lake Trail",
@@ -1400,9 +1400,9 @@
       "name": "Plain of Six Glaciers Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Caution.",
-      "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended; Deadfall on trail",
-      "lastUpdated": "2026-07-04",
+      "condition": "Fair.",
+      "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended",
+      "lastUpdated": "2026-07-05",
       "area": "Lake Louise Area"
     },
     {
