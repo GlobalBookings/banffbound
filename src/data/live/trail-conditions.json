@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T17:52:34.940Z",
+  "updatedAt": "2026-07-07T19:43:28.326Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -689,9 +689,9 @@
           "name": "Chephren Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Deadfall on trail; Wet with muddy sections",
-          "lastUpdated": "2026-07-04"
+          "condition": "Poor.",
+          "comment": "Deadfall on trail; Numerous trees down on trail; Wet and muddy",
+          "lastUpdated": "2026-07-07"
         },
         {
           "name": "Bow Glacier Falls Trail",
@@ -705,17 +705,17 @@
           "name": "Cirque Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Deadfall on trail; Wet with muddy sections",
-          "lastUpdated": "2026-07-04"
+          "condition": "Poor.",
+          "comment": "Deadfall on trail; Numerous trees down on trail; Wet and muddy",
+          "lastUpdated": "2026-07-07"
         },
         {
           "name": "Helen Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Snow patches; Stay on designated trails and viewpoints; Wet and muddy sections",
-          "lastUpdated": "2026-07-06"
+          "comment": "Snow patches; Wet and muddy; Potential stream crossings; Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-07-07"
         },
         {
           "name": "Parker Ridge Trail",
@@ -1544,9 +1544,9 @@
       "name": "Chephren Lake Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Deadfall on trail; Wet with muddy sections",
-      "lastUpdated": "2026-07-04",
+      "condition": "Poor.",
+      "comment": "Deadfall on trail; Numerous trees down on trail; Wet and muddy",
+      "lastUpdated": "2026-07-07",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1562,9 +1562,9 @@
       "name": "Cirque Lake Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Deadfall on trail; Wet with muddy sections",
-      "lastUpdated": "2026-07-04",
+      "condition": "Poor.",
+      "comment": "Deadfall on trail; Numerous trees down on trail; Wet and muddy",
+      "lastUpdated": "2026-07-07",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1572,8 +1572,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Snow patches; Stay on designated trails and viewpoints; Wet and muddy sections",
-      "lastUpdated": "2026-07-06",
+      "comment": "Snow patches; Wet and muddy; Potential stream crossings; Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-07-07",
       "area": "Icefields Parkway Area"
     },
     {

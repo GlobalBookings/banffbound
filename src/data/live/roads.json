@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-07T17:52:34.146Z",
+  "updatedAt": "2026-07-07T19:43:19.048Z",
   "highways": [
     {
       "name": "Trans-Canada Highway (Hwy 1)",
@@ -49,11 +49,11 @@
     {
       "name": "Golf Course Road",
       "number": "",
-      "status": "Bare Dry",
-      "conditions": "Bare Dry",
-      "advisory": "",
+      "status": "Closed",
+      "conditions": "Closed",
+      "advisory": "Closed sections: River Ave - Golf Course Rd Loop",
       "segments": 1,
-      "lastUpdated": 1780840184
+      "lastUpdated": 1783446959
     }
   ],
   "source": "https://511.alberta.ca"
