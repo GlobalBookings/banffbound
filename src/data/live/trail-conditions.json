@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T15:58:05.504Z",
+  "updatedAt": "2026-07-08T17:27:44.942Z",
   "fireDanger": "low",
   "summary": {
     "total": 96,
@@ -754,8 +754,8 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "See comment section",
-          "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation ; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-07-04"
+          "comment": "Bridge(s) out; Stream crossings; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Mainly dry; Wet and muddy sections",
+          "lastUpdated": "2026-07-08"
         },
         {
           "name": "North Molar Pass Trail",
@@ -763,7 +763,7 @@
           "status": "open",
           "condition": "See comment section",
           "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation ; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-07-04"
+          "lastUpdated": "2026-07-08"
         },
         {
           "name": "Sunset Pass Trail",
@@ -1617,8 +1617,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "See comment section",
-      "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation ; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-07-04",
+      "comment": "Bridge(s) out; Stream crossings; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Mainly dry; Wet and muddy sections",
+      "lastUpdated": "2026-07-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1627,7 +1627,7 @@
       "status": "open",
       "condition": "See comment section",
       "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation ; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-07-04",
+      "lastUpdated": "2026-07-08",
       "area": "Icefields Parkway Area"
     },
     {
