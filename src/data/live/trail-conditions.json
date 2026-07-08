@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-07-08T19:10:02.341Z",
+  "updatedAt": "2026-07-08T20:57:54.464Z",
   "fireDanger": "low",
   "summary": {
-    "total": 96,
-    "open": 87,
+    "total": 98,
+    "open": 89,
     "caution": 3,
     "closed": 6
   },
@@ -73,6 +73,14 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
+          "lastUpdated": "2026-07-08"
+        },
+        {
+          "name": "Golf Course Road",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
           "lastUpdated": "2026-07-08"
         },
         {
@@ -193,6 +201,14 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Wet and muddy sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
+          "lastUpdated": "2026-07-08"
+        },
+        {
+          "name": "Lake Minnewanka Road",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic",
           "lastUpdated": "2026-07-08"
         },
         {
@@ -866,6 +882,15 @@
       "area": "Banff Area"
     },
     {
+      "name": "Golf Course Road",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Respect all posted notices and signs; Check the important bulletins for more information",
+      "lastUpdated": "2026-07-08",
+      "area": "Banff Area"
+    },
+    {
       "name": "Johnston Canyon Trail",
       "difficulty": "Easy",
       "status": "open",
@@ -997,6 +1022,15 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Wet and muddy sections; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
+      "lastUpdated": "2026-07-08",
+      "area": "Banff Area"
+    },
+    {
+      "name": "Lake Minnewanka Road",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic",
       "lastUpdated": "2026-07-08",
       "area": "Banff Area"
     },
