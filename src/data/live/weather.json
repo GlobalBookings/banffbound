@@ -1,95 +1,24 @@
 {
-  "updatedAt": "2026-07-08T17:27:45.141Z",
+  "updatedAt": "2026-07-08T19:10:02.433Z",
   "banff": {
     "current": {
-      "temp": 20,
-      "condition": "Clear sky",
-      "icon": "☀️",
-      "humidity": 37,
-      "wind": "18 km/h"
+      "temp": null,
+      "condition": "Unknown",
+      "icon": "🌡️",
+      "humidity": null,
+      "wind": ""
     },
-    "forecast": [
-      {
-        "day": "Today",
-        "high": 23,
-        "low": 10,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Thursday",
-        "high": 21,
-        "low": 11,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Friday",
-        "high": 24,
-        "low": 10,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Saturday",
-        "high": 24,
-        "low": 11,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Sunday",
-        "high": 21,
-        "low": 9,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      }
-    ]
+    "forecast": []
   },
   "lakeLouise": {
     "current": {
-      "temp": 17,
-      "condition": "Mainly clear",
-      "icon": "🌤️",
-      "humidity": 54,
-      "wind": "19 km/h"
+      "temp": null,
+      "condition": "Unknown",
+      "icon": "🌡️",
+      "humidity": null,
+      "wind": ""
     },
-    "forecast": [
-      {
-        "day": "Today",
-        "high": 18,
-        "low": 11,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Thursday",
-        "high": 16,
-        "low": 7,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Friday",
-        "high": 20,
-        "low": 9,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Saturday",
-        "high": 20,
-        "low": 10,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Sunday",
-        "high": 18,
-        "low": 7,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      }
-    ]
-  }
+    "forecast": []
+  },
+  "error": "fetch failed"
 }
