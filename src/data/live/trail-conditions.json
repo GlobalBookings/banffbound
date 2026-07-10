@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10T14:02:46.390Z",
+  "updatedAt": "2026-07-10T17:41:31.215Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -328,16 +328,16 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-09"
+          "comment": "Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
+          "lastUpdated": "2026-07-10"
         },
         {
           "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-09"
+          "comment": "Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
+          "lastUpdated": "2026-07-10"
         },
         {
           "name": "Bow Valley Parkway",
@@ -1165,8 +1165,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-09",
+      "comment": "Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
+      "lastUpdated": "2026-07-10",
       "area": "Banff Area"
     },
     {
@@ -1174,8 +1174,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-09",
+      "comment": "Wet and muddy sections; Bear warning in effect; Check the important bulletins for more information",
+      "lastUpdated": "2026-07-10",
       "area": "Banff Area"
     },
     {
