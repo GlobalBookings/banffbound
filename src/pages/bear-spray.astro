@@ -2,6 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import WhatsNext from '../components/WhatsNext.astro';
+
+const AFFILIATE_TAG = 'banffbound-20';
+const amazonLink = (term: string) => `https://www.amazon.ca/s?k=${encodeURIComponent(term)}&tag=${AFFILIATE_TAG}`;
+
+const onlineGear = [
+  { icon: '🐻', name: 'Bear Spray (Frontiersman / Sabre)', term: 'frontiersman bear spray', note: 'The trusted brands used across the Rockies. Order ahead if you\u2019re driving in from Calgary or within Canada \u2014 note it cannot be shipped by air or carried on flights.' },
+  { icon: '🎒', name: 'Hip Holster', term: 'bear spray holster', note: 'Keeps your canister on your hip where you can reach it in seconds. Ships and flies fine \u2014 buy this before you travel even if you rent the spray locally.' },
+  { icon: '🔔', name: 'Bear Bells', term: 'bear bells hiking', note: 'Cheap, packable early-warning noise-makers for the trail. Ship and fly with no restrictions.' },
+  { icon: '🥫', name: 'Bear-Proof Food Canister', term: 'bear proof food canister', note: 'Required practice for backcountry camping. Protects your food and keeps bears wild. Ships anywhere.' },
+];
 ---
 
 <BaseLayout title="Bear Spray in Banff 2026 — Buy, Rent, and How to Use" description="Complete bear spray guide for Banff National Park. Where to buy or rent bear spray, how to use it, practice tips, and rental locations with prices in Banff and Lake Louise.">
@@ -121,6 +131,26 @@ import WhatsNext from '../components/WhatsNext.astro';
           <p>Several shops in Lake Louise village sell bear spray. Slightly higher prices ($45-50) but convenient if you forgot to buy in Banff or Canmore.</p>
         </div>
       </div>
+
+      <!-- Buy Online -->
+      <div class="section-header" style="margin-top:3rem;">
+        <h2>Buy Online Before You Go</h2>
+        <p>Driving in from Calgary or across Canada? Order ahead and skip the shops. Holsters, bells, and canisters ship anywhere and can fly.</p>
+      </div>
+
+      <div class="online-grid">
+        {onlineGear.map(item => (
+          <a href={amazonLink(item.term)} target="_blank" rel="noopener sponsored" class="online-card">
+            <div class="online-icon">{item.icon}</div>
+            <div class="online-body">
+              <h3>{item.name}</h3>
+              <p>{item.note}</p>
+              <span class="online-cta">Check price on Amazon &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="affiliate-note">Heads up: bear spray is an aerosol and <strong>cannot be carried on or checked on flights</strong>. If you're flying in, rent locally or buy on arrival, and grab a holster and bells online beforehand. As an Amazon Associate we may earn from qualifying purchases.</p>
 
       <div class="section-header" style="margin-top:3rem;">
         <h2>Where to Rent Bear Spray</h2>
@@ -286,6 +316,15 @@ import WhatsNext from '../components/WhatsNext.astro';
   .location-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
   .location-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
 
+  .online-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .online-card { display: flex; gap: 1rem; align-items: flex-start; background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); border-left: 4px solid #ff9900; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .online-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  .online-icon { font-size: 1.75rem; flex-shrink: 0; }
+  .online-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .online-card p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.6rem; }
+  .online-cta { font-size: 0.85rem; font-weight: 700; color: #b45309; }
+  .affiliate-note { font-size: 0.78rem; color: var(--color-text-light); line-height: 1.5; margin-top: 1rem; font-style: italic; }
+
   .compare-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .compare-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
   .compare-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
@@ -311,6 +350,7 @@ import WhatsNext from '../components/WhatsNext.astro';
     .steps-grid { grid-template-columns: 1fr; }
     .tips-grid { grid-template-columns: 1fr; }
     .location-grid { grid-template-columns: 1fr; }
+    .online-grid { grid-template-columns: 1fr; }
     .compare-cards { grid-template-columns: 1fr; }
     .safety-grid { grid-template-columns: 1fr; }
   }

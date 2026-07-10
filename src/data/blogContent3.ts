@@ -5050,4 +5050,134 @@ export const blogContent3: Record<string, string> = {
 
 <p>After exploring Banff's vibrant nightlife scene, you'll understand why these mountain bars have become destinations in their own right. The combination of craft beverages, remarkable alpine views, and that unmistakable Canadian hospitality creates experiences you simply cannot find elsewhere. For anyone planning a comprehensive Banff adventure using our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> or seeking the perfect dining spots to complement your bar visits through our <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> guide, make sure to book accommodations in advance through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and consider organized experiences via <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to maximize your Rocky Mountain <a href="/blog/romantic-getaway-banff">Romantic Getaway in Banff: The Couples</a>.</p>
 `,
+
+  'lake-minnewanka-cruise-tickets': `
+<p>The <strong>Lake Minnewanka Cruise</strong> is one of the most relaxing ways to experience Banff National Park's largest lake — a 21 km glacial lake just five minutes from downtown Banff. This guide covers 2026 ticket prices, the cruise options, how to book, and how to get there.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> The evening sailings have the calmest water and the best light. If you can, skip the busy midday departures in July and August.</aside>
+
+<h2>Lake Minnewanka Cruise Prices (2026)</h2>
+<p>Cruises are operated by Pursuit and run daily from May 8 to October 12, 2026 (weather permitting). Advance online pricing:</p>
+<ul>
+<li><strong>Classic Cruise (1 hour):</strong> \$75 CAD adult, \$48 child</li>
+<li><strong>Premium Cruise (1.5 hours):</strong> \$94.50 CAD adult, \$61 child</li>
+<li><strong>Beer Voyage Cruise (1.5 hours, 18+):</strong> \$104 CAD</li>
+<li><strong>Children 5 & under:</strong> Free</li>
+</ul>
+<p>Alberta residents can save up to 20% with valid ID. Prices do not include your Banff <a href="/park-pass">park pass</a>, which you need to enter the park.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Book online in advance to lock in the lower rate and guarantee your seat — cruises regularly sell out on summer afternoons. <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">Check availability and book your Lake Minnewanka cruise here</a>.</div>
+
+<h2>Which Cruise Should You Book?</h2>
+<p>There are three main options for adults, plus a family cruise in peak summer:</p>
+<h3>Classic Cruise</h3>
+<p>The standard one-hour interpretive cruise sails to <strong>Devil's Gap</strong> at the eastern end of the lake, where the captain shuts off the engine for a moment of silence to take in the scenery. It's the best value and covers all the highlights.</p>
+<h3>Premium Cruise</h3>
+<p>The 1.5-hour premium sailing includes a longer stop at Devil's Gap and a taste of Pine tea. There's one daily departure at 10:30 AM — a good pick if you want more time on the water and fewer crowds.</p>
+<h3>Beer Voyage (18+)</h3>
+<p>A 90-minute evening cruise pairing the views with local craft beer. Two guests receive four beers to share. Consider taking transit if you're driving.</p>
+
+<h2>Where to Buy Lake Minnewanka Cruise Tickets</h2>
+<ul>
+<li><strong>Online (recommended):</strong> <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">Book on GetYourGuide</a> for instant confirmation and free cancellation up to 24 hours before your sailing.</li>
+<li><strong>Pursuit's official website:</strong> The operator also sells directly and offers combo passes.</li>
+<li><strong>Walk-up at the dock:</strong> Possible but risky in July and August, when popular departures sell out.</li>
+</ul>
+
+<h2>How to Get There</h2>
+<p>Lake Minnewanka is a 5-minute drive from Banff via the Lake Minnewanka Loop, just off the Trans-Canada Highway. The boat dock is a 10-minute walk from the parking lot, so arrive at least 15 minutes before departure. In summer you can also ride <strong>Roam Transit Route 6</strong> from downtown Banff — and cruise ticket holders get a free return ride the day of their sailing.</p>
+
+<div class="tip-box"><strong>Save with a combo:</strong> If you're also planning the <a href="/blog/banff-gondola-tickets-guide">Banff Gondola</a> or the <a href="/blog/columbia-icefield-adventure-tickets">Columbia Icefield Adventure</a>, Pursuit's multi-attraction passes can save 15-40% versus buying separately.</div>
+
+<h2>Is the Lake Minnewanka Cruise Worth It?</h2>
+<p>For most visitors, yes — it's an easy, family-friendly way to reach scenery you simply can't see from shore, and Devil's Gap is genuinely spectacular. Bring a windbreaker even in mid-summer; it's cool out on the water. Pair it with a picnic at nearby Two Jack Lake or Cascade Ponds to round out a half-day in this quiet corner of the park.</p>
+
+<p>Planning the rest of your trip? Browse more <a href="/tours">Banff tours and experiences</a> or build a day-by-day plan with our <a href="/trip-builder">trip builder</a>.</p>
+`,
+
+  'columbia-icefield-adventure-tickets': `
+<p>The <strong>Columbia Icefield Adventure</strong> is one of the most popular experiences along the Icefields Parkway, letting you ride a massive Ice Explorer onto the <strong>Athabasca Glacier</strong> and walk the glass-floored <strong>Columbia Icefield Skywalk</strong>. This guide covers 2026 ticket prices, discounts, what's included, and how to book.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> It can feel like winter on the glacier even in July — up to 15°C colder than the Discovery Centre. Dress in layers and wear closed-toe shoes with grip.</aside>
+
+<h2>Columbia Icefield Adventure Prices (2026)</h2>
+<p>The experience is operated by Pursuit and runs early May to mid-October. Pricing rises the closer you book to your date, so reserve early:</p>
+<ul>
+<li><strong>Adult:</strong> from approximately \$126 CAD (book 2+ weeks ahead)</li>
+<li><strong>Child (6-15):</strong> from approximately \$82 CAD</li>
+<li><strong>Children 5 & under:</strong> free when sharing a seat</li>
+</ul>
+<p>Tickets include both the Ice Explorer ride onto the Athabasca Glacier and access to the Columbia Icefield Skywalk. The full experience takes 2.5 to 3 hours.</p>
+
+<div class="tip-box"><strong>Pro Tip:</strong> Book online in advance for the best price and departure time — peak dates sell out. <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">Check Columbia Icefield tickets and availability here</a>.</div>
+
+<h2>How to Save on Columbia Icefield Tickets</h2>
+<h3>Off-Peak Departures</h3>
+<p>Choosing a departure after 3:30 PM can save roughly 20%, and the late-afternoon light on the glacier is beautiful.</p>
+<h3>Alberta Resident Rate</h3>
+<p>Alberta residents save about 20% with proof of residency.</p>
+<h3>Kids Go Free (Mornings)</h3>
+<p>Book a departure before 11 AM and you can get one free child admission (ages 6-15) with each full-price adult ticket — a big saving for families.</p>
+<h3>Multi-Attraction Passes</h3>
+<p>Pursuit's Rockies passes bundle the glacier tour with the <a href="/blog/banff-gondola-tickets-guide">Banff Gondola</a>, the <a href="/blog/lake-minnewanka-cruise-tickets">Lake Minnewanka Cruise</a>, the Golden Skybridge and more, saving up to 25-40% versus individual tickets.</p>
+
+<h2>What's Included</h2>
+<ul>
+<li><strong>Ice Explorer ride:</strong> A purpose-built six-wheel vehicle descends one of the steepest commercial roads in North America onto the Athabasca Glacier.</li>
+<li><strong>Glacier walk:</strong> About 30 minutes to explore a designated safe area on the ancient ice — you can even fill a bottle with fresh glacial meltwater.</li>
+<li><strong>Skywalk:</strong> A glass-floored horseshoe platform jutting 280 metres above the Sunwapta Valley, with interpretive panels on the region's geology and Indigenous history.</li>
+</ul>
+
+<h2>Where Is It?</h2>
+<p>The Columbia Icefield sits along the <a href="/icefields-parkway-planner">Icefields Parkway</a>, about a 2-hour drive north of Lake Louise toward Jasper. Most visitors combine it with a day exploring the parkway's other stops — Bow Lake, Peyto Lake and Crowfoot Glacier. If you'd rather not drive, guided day tours run from Banff, Lake Louise and Canmore.</p>
+
+<div class="tip-box"><strong>Note:</strong> The Columbia Icefield Adventure is seasonal and does not operate in winter. The season typically runs early May to mid-October.</div>
+
+<h2>Is It Worth It?</h2>
+<p>For first-time visitors driving the Icefields Parkway, it's one of the easiest ways to actually stand on a glacier without technical gear — memorable, and especially fun for kids. If you prefer quiet and independence, you can also hike to the glacier's toe for free, but you won't get out onto the ice itself.</p>
+
+<p>Map out your full Rockies road trip with our <a href="/icefields-parkway-planner">Icefields Parkway planner</a>, or browse more <a href="/tours">guided tours from Banff</a>.</p>
+`,
+
+  'moraine-lake-shuttle-guide': `
+<p>Moraine Lake is one of the most photographed places in Canada — and since <strong>Moraine Lake Road is closed to private vehicles</strong>, the only way to visit is by shuttle or guided tour. This guide explains every 2026 option, current prices, and how to book so you don't miss out.</p>
+
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> Even we book the Parks Canada shuttle well ahead. Morning slots sell out within minutes of release — have a backup plan.</aside>
+
+<h2>Why You Can't Drive to Moraine Lake</h2>
+<p>To manage crowds and protect the area, Parks Canada permanently closed Moraine Lake Road to personal vehicles. You now reach the lake by the Parks Canada shuttle, a commercial shuttle, a guided tour, or public transit. The road (and lake access) is open roughly June 1 to October 12, 2026.</p>
+
+<h2>Option 1: Parks Canada Shuttle (Cheapest)</h2>
+<p>The Parks Canada shuttle runs from the <strong>Lake Louise Park & Ride</strong> and is the most affordable option. 2026 round-trip fares:</p>
+<ul>
+<li><strong>Adult:</strong> \$12.75 CAD</li>
+<li><strong>Senior:</strong> \$6.00 CAD</li>
+<li><strong>Youth 17 & under:</strong> \$4.00 CAD</li>
+<li><strong>Plus a \$3.50 reservation fee</strong> (per booking, not per person)</li>
+</ul>
+<p>Your ticket also includes the <strong>Lake Connector</strong>, so you can visit both Moraine Lake and Lake Louise in one day. Reservations for 2026 opened April 15. Parks Canada releases 40% of tickets in advance and the remaining 60% two days before departure at 8:00 AM MDT — so set an alarm if your date is sold out.</p>
+
+<div class="tip-box"><strong>Important:</strong> Your park entry pass is not included with the shuttle. Grab a <a href="/park-pass">Banff park pass</a> before you go, and screenshot your reservation — cell service at the Park & Ride is unreliable.</div>
+
+<h2>Option 2: Guided Tours & Commercial Shuttles (Guaranteed Spot)</h2>
+<p>If the Parks Canada shuttle is sold out, or you want hotel pickup and a guide, book a tour or private transfer. These run roughly \$35-99 per person depending on time of day (sunrise is most expensive) and take the stress out of the reservation scramble.</p>
+<ul>
+<li><strong>Guided Lake Louise & Moraine Lake tours</strong> include both lakes with a guide and pickup — ideal for first-timers without a car.</li>
+<li><strong>Sunrise tours</strong> get you to the lake for the famous golden light before the crowds.</li>
+</ul>
+<div class="tip-box"><strong>Book a guaranteed spot:</strong> <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">Browse Moraine Lake and Lake Louise tours on GetYourGuide</a> — most include free cancellation.</div>
+
+<h2>Option 3: Public Transit (Car-Free Visitors)</h2>
+<p>Staying in Banff without a car? Book the <strong>Roam Transit Reservable Super Pass</strong> (about \$30 adult, \$15 youth/senior). Take Route 8X to Lake Louise lakeshore, then use the Parks Canada Lake Connector to Moraine Lake. Your trip must start in Banff.</p>
+
+<h2>When to Visit Moraine Lake</h2>
+<p>The lake reaches its brightest turquoise once fed by summer glacial melt — <strong>late June through September</strong> is ideal. The third week of September brings golden larches along the famous Larch Valley trail. In early June the lake may still be partly frozen (beautiful in its own way).</p>
+
+<div class="tip-box"><strong>New for 2026:</strong> Canoes, kayaks and paddleboards are no longer permitted on Moraine Lake, which is now a protected Water Preservation Zone.</div>
+
+<h2>Make It a Full Day</h2>
+<p>Because you can stay as long as you like once you arrive, pair Moraine Lake with the short Rockpile viewpoint, a lakeshore stroll, or a bigger hike to Larch Valley or Consolation Lakes. Then use the Lake Connector to finish at Lake Louise.</p>
+
+<p>Plan the rest of your itinerary with our <a href="/trip-builder">trip builder</a>, or see how Moraine Lake fits alongside other must-sees in our <a href="/tours">Banff tours</a> roundup.</p>
+`,
 };

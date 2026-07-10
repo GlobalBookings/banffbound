@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CarRentalCTA from '../components/CarRentalCTA.astro';
 import { parkingLots } from '../data/parkingData';
 
 const lotsJSON = JSON.stringify(parkingLots);
@@ -48,6 +49,13 @@ const lotsJSON = JSON.stringify(parkingLots);
       </div>
     </div>
   </section>
+
+  <div class="container">
+    <CarRentalCTA
+      heading="Driving in for Your Trip?"
+      text="Parking is tight at the big lakes, but a car is still the best way to reach early-morning trailheads and the Icefields Parkway. If you're renting, compare Calgary Airport agencies in one search and book early to beat summer price spikes."
+    />
+  </div>
 
   <section class="section">
     <div class="container">

@@ -3000,6 +3000,33 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog/banff-summer-crowds.webp',
     readTime: '9 min read',
   },
+  {
+    slug: 'lake-minnewanka-cruise-tickets',
+    title: 'Lake Minnewanka Cruise: Tickets, Prices & How to Book in 2026',
+    description: 'Everything you need to know about the Lake Minnewanka Cruise in 2026: current ticket prices, the different cruise options, how to book online, and how to get there.',
+    date: '2026-07-10',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'columbia-icefield-adventure-tickets',
+    title: 'Columbia Icefield Adventure: Tickets, Prices & Discounts in 2026',
+    description: 'A complete guide to the Columbia Icefield Adventure and Skywalk in 2026. Ticket prices, how to save with off-peak and family discounts, what is included, and how to book.',
+    date: '2026-07-10',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'moraine-lake-shuttle-guide',
+    title: 'Moraine Lake Shuttle 2026: How to Get There, Prices & Booking',
+    description: 'Moraine Lake Road is closed to private vehicles. Here is every 2026 way to visit: the Parks Canada shuttle, guided tours, and public transit, with current prices and booking tips.',
+    date: '2026-07-10',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80',
+    readTime: '8 min read',
+  },
 ];
 
 export const categories = [...new Set(blogPosts.map(p => p.category))];

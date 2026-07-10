@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CarRentalCTA from '../components/CarRentalCTA.astro';
 
 const stops = [
   { km: 0, name: 'Lake Louise (Start)', time: 0, stopMin: 0, type: 'start', desc: 'Fill up on gas and grab coffee. Last reliable gas station until Saskatchewan Crossing (km 77).' },
@@ -60,6 +61,11 @@ const stopsJSON = JSON.stringify(stops);
       </div>
 
       <p style="text-align:center;font-size:0.85rem;color:var(--color-text-light);margin:1rem 0 2rem;">Toggle stops on/off to build your custom itinerary. Total time updates automatically.</p>
+
+      <CarRentalCTA
+        heading="Driving the Parkway? Start With a Reliable Car"
+        text="There's only one gas station on the entire 233 km route, so a dependable rental and a full tank matter. Compare Calgary Airport agencies in one search and book ahead, especially for summer road-trip season."
+      />
 
       <div class="stops-timeline">
         {stops.map((stop, i) => (

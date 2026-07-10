@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CarRentalCTA from '../components/CarRentalCTA.astro';
 
 const drives = [
   {
@@ -92,6 +93,12 @@ const drives = [
         <h2>Top Scenic Drives</h2>
         <p>Each drive offers a unique perspective on the Canadian Rockies — from sweeping glacier views to intimate wildlife encounters along forested parkways.</p>
       </div>
+
+      <CarRentalCTA
+        heading="You'll Want Your Own Wheels for These"
+        text="Every drive on this list is best with your own vehicle so you can stop for photos whenever you like. If you're flying in, compare Calgary Airport car rentals in one search and book early for the best summer rates."
+      />
+
       <div class="drives-list">
         {drives.map(drive => (
           <div class="drive-card">
