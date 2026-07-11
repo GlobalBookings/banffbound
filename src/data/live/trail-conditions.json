@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T18:47:27.460Z",
+  "updatedAt": "2026-07-11T20:39:23.166Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -136,7 +136,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry; Snow patches; Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information",
+          "comment": "Mainly dry; Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information",
           "lastUpdated": "2026-07-11"
         },
         {
@@ -949,7 +949,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry; Snow patches; Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information",
+      "comment": "Mainly dry; Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information",
       "lastUpdated": "2026-07-11",
       "area": "Banff Area"
     },
