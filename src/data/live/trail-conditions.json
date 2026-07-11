@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-07-10T22:52:47.351Z",
+  "updatedAt": "2026-07-11T01:51:24.098Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
-    "open": 90,
-    "caution": 3,
+    "open": 91,
+    "caution": 2,
     "closed": 5
   },
   "areas": [
@@ -540,9 +540,9 @@
           "name": "Larch Valley/Minnestimma Lakes Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Poor.",
+          "condition": "Fair.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow patches; Wet and muddy sections; Stay on designated trails and viewpoints; Sturdy hiking boots and hiking pol",
-          "lastUpdated": "2026-07-02"
+          "lastUpdated": "2026-07-10"
         },
         {
           "name": "Little Beehive Trail",
@@ -573,8 +573,8 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-07-05"
+          "comment": "Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended; Snow patches",
+          "lastUpdated": "2026-07-10"
         },
         {
           "name": "Taylor Lake Trail",
@@ -635,10 +635,10 @@
         {
           "name": "Sentinel Pass from Paradise Valley Trail",
           "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Steep snow slopes ; Slippery sections; Difficult route finding",
-          "lastUpdated": "2026-07-02"
+          "status": "open",
+          "condition": "Fair.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Steep snow slopes ; Slippery sections; Difficult route finding",
+          "lastUpdated": "2026-07-10"
         },
         {
           "name": "Saddleback Pass Trail",
@@ -1398,9 +1398,9 @@
       "name": "Larch Valley/Minnestimma Lakes Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Poor.",
+      "condition": "Fair.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow patches; Wet and muddy sections; Stay on designated trails and viewpoints; Sturdy hiking boots and hiking pol",
-      "lastUpdated": "2026-07-02",
+      "lastUpdated": "2026-07-10",
       "area": "Lake Louise Area"
     },
     {
@@ -1435,8 +1435,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Snow covered sections; Sections of deep snow; Risk of post-holing; Slippery sections; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-07-05",
+      "comment": "Snow covered sections; Slippery sections; Sturdy hiking boots and hiking poles recommended; Snow patches",
+      "lastUpdated": "2026-07-10",
       "area": "Lake Louise Area"
     },
     {
@@ -1505,10 +1505,10 @@
     {
       "name": "Sentinel Pass from Paradise Valley Trail",
       "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Not recommended; Steep snow slopes ; Slippery sections; Difficult route finding",
-      "lastUpdated": "2026-07-02",
+      "status": "open",
+      "condition": "Fair.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Steep snow slopes ; Slippery sections; Difficult route finding",
+      "lastUpdated": "2026-07-10",
       "area": "Lake Louise Area"
     },
     {
