@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T20:39:23.166Z",
+  "updatedAt": "2026-07-11T22:38:45.134Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1726,12 +1726,6 @@
     {
       "title": "Warning: Rampart Creek Campground",
       "type": "Warning",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Advisory: Mating loons at Vermilion and Johnson Lakes",
-      "type": "Advisory",
       "issued": "",
       "ends": ""
     },
