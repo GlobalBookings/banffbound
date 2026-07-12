@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-11T22:38:45.134Z",
+  "updatedAt": "2026-07-12T01:53:34.635Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -746,7 +746,7 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Wet and muddy sections; Not recommended; Stream crossings; Stream levels are high; Numerous trees down on trail; Deadfall on trail",
+          "comment": "Wet and muddy sections; Stream crossings; Deadfall on trail",
           "lastUpdated": "2026-07-11"
         },
         {
@@ -1624,7 +1624,7 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Wet and muddy sections; Not recommended; Stream crossings; Stream levels are high; Numerous trees down on trail; Deadfall on trail",
+      "comment": "Wet and muddy sections; Stream crossings; Deadfall on trail",
       "lastUpdated": "2026-07-11",
       "area": "Icefields Parkway Area"
     },
