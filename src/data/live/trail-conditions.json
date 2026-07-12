@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-12T14:47:50.609Z",
+  "updatedAt": "2026-07-12T16:48:40.703Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -209,7 +209,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-07-11"
+          "lastUpdated": "2026-07-12"
         },
         {
           "name": "C-Level Cirque Trail",
@@ -217,7 +217,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Stay on designated trails and viewpoints; Snow patches",
-          "lastUpdated": "2026-07-11"
+          "lastUpdated": "2026-07-12"
         },
         {
           "name": "Tunnel Bench Loop",
@@ -225,7 +225,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-07-11"
+          "lastUpdated": "2026-07-12"
         },
         {
           "name": "Sulphur Mountain Trail",
@@ -233,7 +233,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-11"
+          "lastUpdated": "2026-07-12"
         },
         {
           "name": "Ink Pots Trail",
@@ -241,7 +241,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on trail; Wet and muddy sections",
-          "lastUpdated": "2026-07-11"
+          "lastUpdated": "2026-07-12"
         },
         {
           "name": "Brewster Creek Trail",
@@ -1031,7 +1031,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-07-11",
+      "lastUpdated": "2026-07-12",
       "area": "Banff Area"
     },
     {
@@ -1040,7 +1040,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Stay on designated trails and viewpoints; Snow patches",
-      "lastUpdated": "2026-07-11",
+      "lastUpdated": "2026-07-12",
       "area": "Banff Area"
     },
     {
@@ -1049,7 +1049,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-07-11",
+      "lastUpdated": "2026-07-12",
       "area": "Banff Area"
     },
     {
@@ -1058,7 +1058,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-11",
+      "lastUpdated": "2026-07-12",
       "area": "Banff Area"
     },
     {
@@ -1067,7 +1067,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on trail; Wet and muddy sections",
-      "lastUpdated": "2026-07-11",
+      "lastUpdated": "2026-07-12",
       "area": "Banff Area"
     },
     {
