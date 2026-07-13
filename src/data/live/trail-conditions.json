@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-13T12:26:41.382Z",
+  "updatedAt": "2026-07-13T16:22:12.467Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -613,8 +613,8 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Wet and muddy",
-          "lastUpdated": "2026-07-09"
+          "comment": "Wet with muddy sections",
+          "lastUpdated": "2026-07-13"
         },
         {
           "name": "Deception Pass Trail",
@@ -669,8 +669,8 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Caution.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Snow at high elevation ; Route finding may be necessary",
-          "lastUpdated": "2026-07-11"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Route finding may be necessary",
+          "lastUpdated": "2026-07-13"
         }
       ]
     },
@@ -738,8 +738,8 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Stay on designated trails and viewpoints; Snow at high elevation",
-          "lastUpdated": "2026-07-11"
+          "comment": "Fragile alpine vegetation, stay on the trail; Snow patches; Deadfall on trail",
+          "lastUpdated": "2026-07-13"
         },
         {
           "name": "Nigel Pass Trail",
@@ -770,16 +770,16 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "See comment section",
-          "comment": "Bridge(s) out; Stream crossings; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Mainly dry; Wet and muddy sections",
-          "lastUpdated": "2026-07-08"
+          "comment": "Bridge(s) out; Stream crossings; Mainly dry; Wet and muddy sections",
+          "lastUpdated": "2026-07-13"
         },
         {
           "name": "North Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "See comment section",
-          "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation ; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-          "lastUpdated": "2026-07-08"
+          "comment": "Bridge(s) out; Stream crossings; Mainly dry; Wet and muddy sections",
+          "lastUpdated": "2026-07-13"
         },
         {
           "name": "Sunset Pass Trail",
@@ -1480,8 +1480,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Wet and muddy",
-      "lastUpdated": "2026-07-09",
+      "comment": "Wet with muddy sections",
+      "lastUpdated": "2026-07-13",
       "area": "Lake Louise Area"
     },
     {
@@ -1543,8 +1543,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Caution.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Snow at high elevation ; Route finding may be necessary",
-      "lastUpdated": "2026-07-11",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow covered sections; Route finding may be necessary",
+      "lastUpdated": "2026-07-13",
       "area": "Lake Louise Area"
     },
     {
@@ -1615,8 +1615,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Stay on designated trails and viewpoints; Snow at high elevation",
-      "lastUpdated": "2026-07-11",
+      "comment": "Fragile alpine vegetation, stay on the trail; Snow patches; Deadfall on trail",
+      "lastUpdated": "2026-07-13",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1651,8 +1651,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "See comment section",
-      "comment": "Bridge(s) out; Stream crossings; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river ; Mainly dry; Wet and muddy sections",
-      "lastUpdated": "2026-07-08",
+      "comment": "Bridge(s) out; Stream crossings; Mainly dry; Wet and muddy sections",
+      "lastUpdated": "2026-07-13",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1660,8 +1660,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "See comment section",
-      "comment": "Bridge(s) out; Stream crossings; Wet and muddy; Snow at high elevation ; Caution - river is flowing higher than normal. Exercise additional caution when walking near the river",
-      "lastUpdated": "2026-07-08",
+      "comment": "Bridge(s) out; Stream crossings; Mainly dry; Wet and muddy sections",
+      "lastUpdated": "2026-07-13",
       "area": "Icefields Parkway Area"
     },
     {
