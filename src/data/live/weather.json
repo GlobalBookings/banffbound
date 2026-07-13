@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-07-13T16:22:12.450Z",
+  "updatedAt": "2026-07-13T19:13:47.217Z",
   "banff": {
     "current": {
-      "temp": 19,
+      "temp": 22,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 31,
-      "wind": "7 km/h"
+      "humidity": 18,
+      "wind": "21 km/h"
     },
     "forecast": [
       {
@@ -25,42 +25,42 @@
       },
       {
         "day": "Wednesday",
-        "high": 30,
+        "high": 29,
         "low": 13,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Thursday",
-        "high": 29,
+        "high": 30,
         "low": 12,
-        "condition": "Clear sky",
-        "icon": "☀️"
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Friday",
-        "high": 32,
-        "low": 16,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "high": 31,
+        "low": 15,
+        "condition": "Thunderstorm",
+        "icon": "⛈️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 16,
+      "temp": 19,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 42,
-      "wind": "15 km/h"
+      "humidity": 37,
+      "wind": "18 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 20,
         "low": 9,
-        "condition": "Mainly clear",
-        "icon": "🌤️"
+        "condition": "Clear sky",
+        "icon": "☀️"
       },
       {
         "day": "Tuesday",
@@ -71,24 +71,24 @@
       },
       {
         "day": "Wednesday",
-        "high": 27,
+        "high": 26,
         "low": 11,
-        "condition": "Slight rain",
+        "condition": "Light drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Thursday",
-        "high": 26,
+        "high": 27,
         "low": 11,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Friday",
-        "high": 29,
+        "high": 30,
         "low": 14,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "condition": "Overcast",
+        "icon": "☁️"
       }
     ]
   }
