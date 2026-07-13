@@ -325,7 +325,7 @@ export const blogContent2: Record<string, string> = {
 <h2>Top Things to Do</h2>
 
 <h3>Lake Minnewanka Cruise</h3>
-<p>The most popular activity at the lake is the <strong>scenic boat cruise</strong>. A 1.5-hour guided tour takes you along the lake's length with commentary about the area's geology, wildlife, and the fascinating story of the sunken town of Minnewanka Landing beneath the water. The lake is surrounded by towering peaks that rise dramatically from the shoreline.</p>
+<p>The most popular activity at the lake is the <strong>scenic boat cruise</strong>. A 1.5-hour guided tour takes you along the lake's length with commentary about the area's geology, wildlife, and the fascinating story of the sunken town of <a href="/blog/lake-minnewanka-cruise-tickets">Lake Minnewanka Cruise: Tickets, Prices & How to</a> Landing beneath the water. The lake is surrounded by towering peaks that rise dramatically from the shoreline.</p>
 <p>Cruises run from May to October, departing several times daily. Book in advance during summer as they sell out. The experience is family-friendly and accessible. Browse <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">Lake Minnewanka tours and activities</a> for current availability.</p>
 
 <h3>Hiking</h3>
@@ -3487,7 +3487,7 @@ export const blogContent2: Record<string, string> = {
 <div class="tip-box"><strong>Wellness Tip:</strong> The Kananaskis Nordic Spa is the highlight of any wellness weekend. Book a weekday morning slot for the quietest experience — you'll have the hot pools nearly to yourself. The contrast between the steaming pools and the cold mountain air is deeply restorative.</div>
 `,
   'banff-adventure-weekend': `
-<p><a href="/blog/banff-wellness-weekend">Banff Wellness Weekend: Hot Springs, Spa & Yoga</a> isn't just pretty views and gentle hikes — it's one of Canada's premier adventure destinations. This weekend itinerary packs in white-water rafting, via ferrata climbing, caving, and more for an adrenaline-charged Rocky Mountain experience.</p>
+<p><a href="/blog/banff-wellness-weekend">Banff Wellness Weekend: Hot Springs, Spa & Yoga</a> isn't just pretty views and gentle hikes — it's one of Canada's premier <a href="/blog/columbia-icefield-adventure-tickets">Columbia Icefield : Tickets, Prices & Discounts in</a> destinations. This weekend itinerary packs in white-water rafting, via ferrata climbing, caving, and more for an adrenaline-charged Rocky Mountain experience.</p>
 
 <h2>Day 1: White-Water Rafting</h2>
 <ul>

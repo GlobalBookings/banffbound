@@ -1735,7 +1735,7 @@ export const blogContent3: Record<string, string> = {
 <p>The Banff ski mountains offer terrain and experiences that rival anywhere in the world. From the challenging bowls of Lake Louise to the high-alpine skiing at Sunshine Village, each mountain delivers its own character and challenges. Combined with the stunning Rocky Mountain scenery and the charm of Banff townsite, it's a ski destination that keeps drawing me back year after year. Just remember to book early, pack layers, and respect the mountain conditions - these peaks demand preparation but reward you with some of the finest skiing in North America.</p>
 `,
   'norquay-ski-shuttle': `
-<p>As someone who's spent countless mornings carving fresh tracks at Mt Norquay, I can tell you that getting there efficiently makes all the difference between catching first chair and watching the powder get tracked out. The <strong>Norquay ski shuttle</strong> has become an essential service for visitors staying in Banff town who want to hit the slopes without the hassle of driving up the mountain road themselves.</p>
+<p>As someone who's spent countless mornings carving fresh tracks at Mt Norquay, I can tell you that getting there efficiently makes all the difference between catching first chair and watching the powder get tracked out. The <strong>Norquay ski <a href="/blog/moraine-lake-shuttle-guide">Moraine Lake Shuttle : How to Get There, Prices &</a></strong> has become an essential service for visitors staying in Banff town who want to hit the slopes without the hassle of driving up the mountain road themselves.</p>
 
 <h2>Understanding the Norquay Ski Shuttle Service</h2>
 
