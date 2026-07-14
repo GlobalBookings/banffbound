@@ -2863,7 +2863,7 @@ export const blogContent3: Record<string, string> = {
 <p>The Banff ski resorts deliver experiences that justify their reputation among North America's premier destinations. Whether you're carving perfect corduroy at Lake Louise, floating through Sunshine's powder, or testing your skills on Norquay's steeps, these mountains provide the backdrop for incredible ski adventures. Plan ahead, come prepared for mountain weather, and get ready to understand why skiers return to Banff year after year.</p>
 `,
   'conde-nast-banff': `
-<p>When Conde Nast Traveler consistently ranks <a href="/blog/banff-big-3"><a href="/blog/ski-banff">Banff Ski : Slopes & Hidden Gems</a>'s Big 3</a> among the world's top destinations, they're highlighting what I've experienced firsthand through countless visits to this Canadian Rockies paradise. As someone who's explored Banff's trails on foot, skis, and snowboard across all seasons, I can tell you the accolades are well-deserved. This comprehensive guide covers everything you need to know about visiting Banff National Park, from world-class skiing to summer trail running opportunities that keep drawing me back year after year.</p>
+<p>When Conde Nast Traveler consistently ranks <a href="/blog/banff-skiing-guide">Banff's Big 3 ski resorts</a> among the world's top destinations, they're highlighting what I've experienced firsthand through countless visits to this Canadian Rockies paradise. As someone who's explored Banff's trails on foot, skis, and snowboard across all seasons, I can tell you the accolades are well-deserved. This comprehensive guide covers everything you need to know about visiting Banff National Park, from world-class skiing to summer trail running opportunities that keep drawing me back year after year.</p>
 
 <h2>Why Conde Nast and Travel Experts Love Banff</h2>
 
@@ -2875,7 +2875,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>Winter Excellence: Skiing and Snowboarding</h2>
 
-<p><a href="/blog/banff-snowboarding"><a href="/blog/banff-ski-areas">Banff Ski Areas : Top Slopes & Hidden Gems</a> Snowboarding : Slopes & Hidden Gems</a> snowboarding and skiing opportunities span three major resort areas, each offering distinct experiences. During my regular winter visits, I've found that understanding each mountain's character helps maximize your time on snow.</p>
+<p>Banff's <a href="/blog/banff-snowboarding">snowboarding</a> and <a href="/blog/banff-skiing-guide">skiing</a> opportunities span three major resort areas, each offering distinct experiences. During my regular winter visits, I've found that understanding each mountain's character helps maximize your time on snow.</p>
 
 <p><strong>Lake Louise Ski Resort</strong> delivers the most extensive terrain with 1,700 skiable hectares and a 991-meter vertical drop. The resort's back bowls provide advanced terrain that rivals anything in North America, while the front-side runs offer perfect intermediate cruising. Adult day tickets cost approximately \$129 CAD in 2026, with season passes available starting in early summer.</p>
 

@@ -3,31 +3,17 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import { blogPosts } from '../../data/blogPosts';
 import { blogContent as blogContentMain } from '../../data/blogContent';
 import { blogContent3 } from '../../data/blogContent3';
+import { blogRedirects } from '../../data/redirects.mjs';
 
 const blogContent = { ...blogContentMain, ...blogContent3 };
-
-const skiRedirects: Record<string, string> = {
-  'banff-ski-big-3': 'banff-skiing-guide',
-  'big-3-ski': 'banff-skiing-guide',
-  'big-three-ski': 'banff-skiing-guide',
-  'ski-big-three': 'banff-skiing-guide',
-  'ski-big-3-alberta': 'banff-skiing-guide',
-  'ski-big-3': 'banff-skiing-guide',
-  'ski-banff': 'banff-skiing-guide',
-  'banff-ski-hills': 'banff-skiing-guide',
-  'banff-ski-areas': 'banff-skiing-guide',
-  'big3-ski-resort': 'banff-skiing-guide',
-  'banff-ski': 'banff-skiing-guide',
-  'banff-ski-resorts': 'banff-skiing-guide',
-};
 
 export function getStaticPaths() {
   return blogPosts.map(post => ({ params: { slug: post.slug }, props: { post } }));
 }
 
 const { post } = Astro.props;
-const redirect = skiRedirects[post.slug];
-if (redirect) return Astro.redirect(`/blog/${redirect}`, 301);
+const redirect = (blogRedirects as Record<string, string>)[post.slug];
+if (redirect) return Astro.redirect(`/blog/${redirect}/`, 301);
 
 const content = blogContent;
 ---

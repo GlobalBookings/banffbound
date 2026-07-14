@@ -1971,7 +1971,7 @@ export const blogContent: Record<string, string> = {
 
 <p>Consider the total cost of your stay, including accommodation, meals, lift tickets, equipment rentals, and transportation. A typical 3-day ski weekend in Banff can range from \$400-600 CAD per person for budget-conscious travelers to \$1,200-1,800 CAD for luxury experiences.</p>
 
-<p>Whether you choose a luxury resort with full-service amenities or a cozy mountain inn with rustic charm, Banff <a href="/blog/sunshine-ski-resort-accommodation">Best Sunshine Village Ski Resort Lodging in Banff</a> lodging provides an gateway to some of the world's most dramatic alpine scenery and winter recreation. Start planning your perfect mountain getaway by exploring accommodation options on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>, and don't forget to book exciting winter activities and guided tours through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your Canadian Rockies adventure.</p>
+<p>Whether you choose a luxury resort with full-service amenities or a cozy mountain inn with rustic charm, Banff <a href="/blog/sunshine-village-guide">ski resort</a> lodging provides a gateway to some of the world's most dramatic alpine scenery and winter recreation. Start planning your perfect mountain getaway by exploring accommodation options on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a>, and don't forget to book exciting winter activities and guided tours through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to make the most of your Canadian Rockies adventure.</p>
 `,
   'mt-norquay': `
 <p>Towering majestically above the Bow Valley, Mt Norquay stands as one of Banff National Park's most accessible and thrilling mountain destinations. This iconic peak offers year-round adventures just minutes from downtown Banff, making it a perfect choice for visitors seeking mountain experiences without venturing far from town. For those planning to ski the legendary North American runs, hike scenic summer trails, or simply soak in panoramic views of the Canadian Rockies, Mt Norquay delivers incredible experiences for every type of mountain enthusiast.</p>
@@ -2058,7 +2058,7 @@ export const blogContent: Record<string, string> = {
 <p>If you're carving fresh tracks down North American's steep slopes or hiking to panoramic summit views, Mt Norquay offers authentic Canadian Rockies experiences just minutes from Banff townsite. This accessible mountain provides year-round adventures that showcase the best of Banff National Park's natural beauty and recreational opportunities. To plan your complete Banff adventure, find accommodation deals on <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and discover guided mountain experiences through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>.</p>
 `,
   'mount-norquay-banff': `
-<p>Rising majestically 2,134 meters above sea level on <a href="/blog/banff-icewalk"><a href="/blog/chalets-for-rent-in-banff">Best Chalets for Rent in Banff</a> Icewalk : to Frozen Canyon Adventures</a>'s doorstep, Mount Norquay stands as one of the Canadian Rockies' most accessible and rewarding adventures. For those seeking winter thrills on the historic ski slopes, summer hiking adventures, or breathtaking panoramic views of the Bow Valley, Mount Norquay offers year-round excitement just minutes from downtown Banff. As we head into spring 2026, this iconic peak continues to captivate visitors with its perfect blend of accessibility, natural beauty, and outdoor recreation opportunities.</p>
+<p>Rising majestically 2,134 meters above sea level on Banff's doorstep, Mount Norquay stands as one of the Canadian Rockies' most accessible and rewarding adventures. For those seeking winter thrills on the historic ski slopes, summer hiking adventures, or breathtaking panoramic views of the Bow Valley, Mount Norquay offers year-round excitement just minutes from downtown Banff. As we head into spring 2026, this iconic peak continues to captivate visitors with its perfect blend of accessibility, natural beauty, and outdoor recreation opportunities.</p>
 
 <aside class="editor-note"><strong>🏔️ Local's Note:</strong> The ice conditions change weekly from November to March. I always check the Parks Canada trail reports before heading out.</aside>
 
@@ -2277,7 +2277,7 @@ export const blogContent: Record<string, string> = {
 <p>If you're completing this journey as part of a larger Canadian Rockies adventure or as a focused exploration of two incredible national parks, the route from Takakkaw Falls to Banff offers one-of-a-kind experiences. To make the most of your visit, consider booking accommodation well in advance through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> and exploring guided tour options through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a> to enhance your Canadian Rockies experience with local expertise and insider knowledge.</p>
 `,
   'kananaskis-heli-tours': `
-<p>Soaring above the rugged peaks of Kananaskis Country, with the towering Canadian Rockies stretching endlessly in every direction, offers an standout perspective that few visitors to the Banff region ever experience. While most travelers explore the mountains from ground level, Kananaskis heli <a href="/blog/backcountry-skiing-day-tours-canadian-rockies">Banff Backcountry Skiing Day Tours</a> provide an notable aerial adventure that showcases some of Alberta's most incredible wilderness from a bird's-eye view. Just 30 minutes southeast of Banff townsite, Kananaskis Country serves as the perfect launching pad for helicopter excursions that reveal hidden glacial valleys, pure alpine lakes, and towering summits that would take days to reach on foot.</p>
+<p>Soaring above the rugged peaks of Kananaskis Country, with the towering Canadian Rockies stretching endlessly in every direction, offers an standout perspective that few visitors to the Banff region ever experience. While most travelers explore the mountains from ground level, Kananaskis heli tours provide a notable aerial adventure that showcases some of Alberta's most incredible wilderness from a bird's-eye view. Just 30 minutes southeast of Banff townsite, Kananaskis Country serves as the perfect launching pad for helicopter excursions that reveal hidden glacial valleys, pure alpine lakes, and towering summits that would take days to reach on foot.</p>
 
 <h2>What Makes Kananaskis Heli Tours Special</h2>
 
@@ -4044,7 +4044,7 @@ export const blogContent: Record<string, string> = {
 `,
 
   '7-day-banff-itinerary': `
-<p>A full week in <a href="/blog/banff-icewalk">Banff Icewalk : to Frozen Canyon Adventures</a> lets you go beyond the highlights and truly experience the depth of the Canadian Rockies. This itinerary covers the essentials and takes you to places most visitors never reach.</p>
+<p>A full week in Banff lets you go beyond the highlights and truly experience the depth of the Canadian Rockies. This itinerary covers the essentials and takes you to places most visitors never reach.</p>
 
 <h2>Day 1: Arrival & Banff Town Exploration</h2>
 <p>Arrive in Banff and settle into your accommodation. Spend the afternoon walking <strong>Banff Avenue</strong>, browsing shops, and getting oriented. Visit <strong>Bow Falls</strong> and the <strong>Cascade of Time Garden</strong>. Watch the sunset from <strong>Surprise Corner Viewpoint</strong> with the Fairmont Banff Springs in the foreground. Dinner at <strong>Block Kitchen + Bar</strong>.</p>
@@ -4207,7 +4207,7 @@ export const blogContent: Record<string, string> = {
 `,
 
   'banff-in-winter': `
-<p>Winter in <a href="/blog/banff-icewalk">Banff Icewalk : to Frozen Canyon Adventures</a> is pure magic. Snow-covered peaks, frozen waterfalls, renowned skiing, and a fraction of the summer crowds. If you're prepared for the cold, a winter trip to Banff might be even more memorable than summer.</p>
+<p>Winter in Banff is pure magic. Snow-covered peaks, frozen waterfalls, world-class skiing, and a fraction of the summer crowds. If you're prepared for the cold, a winter trip to Banff might be even more memorable than summer.</p>
 
 <h2>Skiing & Snowboarding</h2>
 <p>Banff is home to three excellent ski resorts, collectively known as the <strong>SkiBig3</strong>:</p>
@@ -4216,7 +4216,7 @@ export const blogContent: Record<string, string> = {
 <li><strong>Lake Louise Ski Resort:</strong> The largest resort with 4,200 acres, beautiful scenery, and terrain for all levels. Famous for its back bowls.</li>
 <li><strong>Mt. Norquay:</strong> The closest to town (6 minutes), smallest of the three, but excellent for families and night skiing. Home to the Via Ferrata in summer.</li>
 </ul>
-<p>A SkiBig3 lift ticket gives you access to all three resorts. Multi-day passes offer significant savings.</p>
+<p>A SkiBig3 lift ticket gives you access to all three resorts, and multi-day passes offer significant savings. See our complete <a href="/blog/banff-skiing-guide">Banff skiing guide</a> for 2026-27 lift ticket prices, Ikon Pass details, ski &amp; stay deals, and how to get to the slopes.</p>
 
 <h2>Johnston Canyon Ice Walk</h2>
 <p>One of the most popular winter activities. Strap on ice cleats and walk along the frozen canyon to see the Lower and Upper Falls transformed into massive ice pillars. Guided tours are recommended as the trail can be icy and slippery.</p>
@@ -4558,24 +4558,33 @@ export const blogContent: Record<string, string> = {
 `,
 
   'banff-skiing-guide': `
-<p>With three top-tier resorts collectively known as <strong>SkiBig3</strong>, Banff offers some of the best <a href="/blog/backcountry-skiing-day-tours-canadian-rockies">Banff Backcountry Skiing Day Tours</a> in North America. Here's your complete guide to hitting the slopes.</p>
+<p>Banff National Park is home to <strong>SkiBig3</strong>: three world-class resorts (Banff Sunshine, Lake Louise, and Mt. Norquay) that you can ski on a single lift ticket. Between them you get more than 7,700 acres of terrain, one of the longest seasons on the continent, and some of the most jaw-dropping mountain scenery anywhere. This is your complete, up-to-date guide to skiing Banff for the 2026-27 season, from lift tickets and passes to where to stay, gear, and getting to the slopes.</p>
 
-<aside class="editor-note"><strong>🏔️ Local's Note:</strong> You don't need to be an expert to enjoy this. I went in as a complete beginner and had a fantastic time.</aside>
+<aside class="editor-note"><strong>🏔️ Local's Note:</strong> You don't need to be an expert to enjoy this. I went in as a complete beginner and had a fantastic time. Book lift tickets and lessons a few weeks ahead, because the online savings are real and the best ski &amp; stay packages sell out for the Christmas and March-break weeks.</aside>
+
+<h2>2026-27 Banff Ski Season Dates</h2>
+<p>Banff has one of the longest ski seasons in North America thanks to high elevation and reliable snowfall. Exact opening days depend on conditions each year, but the typical windows are:</p>
+<ul>
+<li><strong>Banff Sunshine:</strong> early-to-mid November through late May (the longest season in Canada, and it even runs a short summer-skiing window in late June)</li>
+<li><strong>Lake Louise:</strong> early November through early May</li>
+<li><strong>Mt. Norquay:</strong> early November through early April, with night skiing on select evenings</li>
+</ul>
+<p>The best powder usually falls in <strong>January and February</strong>. Late March and April deliver spring skiing with longer days, softer snow, and the best deals of the year.</p>
 
 <h2>The Three Resorts Compared</h2>
 
-<h3>Sunshine Village</h3>
+<h3>Banff Sunshine Village</h3>
 <ul>
 <li><strong>Terrain:</strong> 3,358 acres across three mountains</li>
 <li><strong>Vertical:</strong> 1,070m</li>
 <li><strong>Season:</strong> November to late May (longest in Canada)</li>
 <li><strong>Best for:</strong> advanced skiers, powder chasers, and those who want the longest season</li>
-<li><strong>Highlights:</strong> Highest base elevation (2,160m), most natural snowfall, Delirium Dive (experts only), and straddles the Continental Divide</li>
+<li><strong>Highlights:</strong> Highest base elevation (2,160m), most natural snowfall, Delirium Dive (experts only), and the only ski-in/ski-out hotel in the park at Sunshine Mountain Lodge</li>
 </ul>
 
 <h3>Lake Louise Ski Resort</h3>
 <ul>
-<li><strong>Terrain:</strong> 4,200 acres -- the largest in the Canadian Rockies</li>
+<li><strong>Terrain:</strong> 4,200 acres, the largest in the Canadian Rockies</li>
 <li><strong>Vertical:</strong> 1,000m</li>
 <li><strong>Season:</strong> November to early May</li>
 <li><strong>Best for:</strong> all levels, families, and those wanting variety</li>
@@ -4587,23 +4596,81 @@ export const blogContent: Record<string, string> = {
 <li><strong>Terrain:</strong> 190 acres</li>
 <li><strong>Vertical:</strong> 503m</li>
 <li><strong>Season:</strong> November to April</li>
-<li><strong>Best for:</strong> families, beginners, night skiing, and quick sessions</li>
-<li><strong>Highlights:</strong> Just 6 minutes from Banff town, affordable, night skiing on Fridays and Saturdays, and excellent for learning</li>
+<li><strong>Best for:</strong> families, beginners, night skiing, tubing, and quick sessions</li>
+<li><strong>Highlights:</strong> Just 7 minutes from Banff town, affordable, night skiing on select evenings, and excellent for learning</li>
 </ul>
 
-<h2>Lift Tickets & Passes</h2>
-<p>A <strong>SkiBig3 pass</strong> gives you access to all three resorts on a single ticket. Multi-day passes (3+ days) offer the best value and let you experience each mountain. Single-day tickets at individual resorts range from $80-170 CAD depending on the resort and date.</p>
+<p><strong>Quick take:</strong> choose <strong>Sunshine</strong> for the deepest snow and longest season, <strong>Lake Louise</strong> for scenery and sheer size, and <strong>Norquay</strong> for convenience, beginners, and night skiing. With a SkiBig3 ticket you don't have to choose, you can ski all three.</p>
 
-<h2>Ski & Stay Packages</h2>
-<p>Many Banff hotels offer ski & stay packages bundling accommodation with lift tickets at 20-30% savings compared to booking separately. Check the SkiBig3 website for current deals.</p>
+<h2>Lift Tickets, Passes &amp; How to Save</h2>
+<p>A <strong>SkiBig3 lift ticket</strong> gives you access to all three resorts on one ticket, plus the free SkiBig3 ski shuttle, hotel or in-town lift-ticket delivery, and flexible grace days on multi-day tickets. Multi-day tickets (3+ days) are the best value and let you sample each mountain.</p>
+<p>The single biggest way to save: <strong>buy online at least 21 days in advance to save up to 25%</strong>. As a guide, an early-season 3-day adult ticket starts around <strong>CAD \$418</strong> booked ahead, versus roughly \$500-600 at the window; single-day window rates run about \$140-170 depending on resort and date. Kids 5 and under generally ski free. Always check current dated pricing before you book, as rates rise as the date approaches.</p>
+<p>Planning lessons, rentals, or a guided ski day alongside your tickets? You can <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=skiing" target="_blank" rel="noopener sponsored">compare Banff ski experiences, lessons and rental packages here</a>.</p>
 
-<h2>Gear Rental</h2>
-<p>Rent from shops in Banff town (<strong>Monod Sports</strong>, <strong>Ski Hub</strong>, <strong>Snowtips-Bactrax</strong>) rather than at the resort to save money. Most offer multi-day discounts.</p>
+<h2>Ikon Pass &amp; Mountain Collective</h2>
+<p>SkiBig3 is a proud <strong>Ikon Pass</strong> destination, so if you already ski elsewhere your pass may cover Banff:</p>
+<ul>
+<li><strong>Ikon Pass:</strong> up to 7 days across Banff Sunshine, Lake Louise &amp; Norquay, with no blackout dates</li>
+<li><strong>Ikon Base Pass:</strong> up to 5 days, with blackout dates (for 2026-27: Dec 26-30 2026, Jan 16-17 2027, and Feb 13-14 2027)</li>
+<li><strong>Ikon Session Pass:</strong> 2, 3, or 4 total days</li>
+<li><strong>Mountain Collective:</strong> 2 days plus 50% off additional days</li>
+</ul>
+<p>Rule of thumb: if you're skiing roughly five or more days this winter (here or elsewhere), a season pass usually beats buying daily tickets. For a shorter trip, a multi-day SkiBig3 ticket is simplest.</p>
 
-<h2>Snow Conditions</h2>
-<p>Banff's resorts receive 750-900 cm of snowfall annually. The best powder typically falls in January and February. Sunshine Village's high elevation and Continental Divide position give it the most consistent conditions.</p>
+<h2>Ski &amp; Stay Packages: The Best-Value Way to Book</h2>
+<p>Bundling accommodation with lift tickets typically saves <strong>20-30%</strong> versus booking separately, and it's how most visitors book a Banff ski trip. You can stay <strong>ski-in/ski-out</strong> at Sunshine Mountain Lodge, slopeside near Lake Louise, or in <strong>Banff town</strong> for the best dining and après scene (most people choose town and ride the free shuttle). Compare <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Banff ski &amp; stay hotel deals on Expedia</a>, read our <a href="/blog/banff-ski-in-ski-out">Banff ski-in/ski-out guide</a>, or browse the full <a href="/hotel-directory">directory of 95+ Banff hotels</a>.</p>
 
-<div class="tip-box"><strong>First Timer?</strong> Start at Mt. Norquay for a relaxed, affordable introduction. Their beginner packages include a lift ticket, rental, and group lesson at excellent value.</div>
+<h2>Getting to the Resorts</h2>
+<p>The <strong>free SkiBig3 ski shuttle</strong> connects Banff and Canmore hotels to all three resorts, so you don't need a car to ski. If you'd rather drive, note that <strong>winter tires or chains are required</strong> on mountain park roads in the cold months and conditions can be icy. From Calgary International Airport it's about a 90-minute drive to Banff. <a href="https://expedia.com/affiliate/KB6G4xt" target="_blank" rel="noopener sponsored">Search car rentals with winter tires on Expedia</a>, and see our <a href="/calgary-to-banff">Calgary to Banff guide</a> and <a href="/blog/banff-winter-driving">winter driving guide</a> before you set off.</p>
+
+<h2>Gear Rental &amp; What to Pack</h2>
+<p>Renting from shops in <strong>Banff town</strong> (Monod Sports, Ski Hub, Snowtips-Bactrax) is usually cheaper than renting at the resort, and most offer multi-day discounts. You can also <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=ski+rental" target="_blank" rel="noopener sponsored">book ski rental and lesson packages in advance here</a>.</p>
+<p>Whatever you rent, bring your own personal essentials, both to save money and to stay comfortable when temperatures dip to -20°C or colder. The items worth owning:</p>
+<ul>
+<li><a href="https://www.amazon.ca/s?k=ski+goggles&tag=banffbound-20" target="_blank" rel="noopener sponsored">Quality ski goggles</a> (a spare low-light lens is gold on grey days)</li>
+<li><a href="https://www.amazon.ca/s?k=merino+wool+base+layer&tag=banffbound-20" target="_blank" rel="noopener sponsored">Merino wool base layers</a> (top and bottom)</li>
+<li><a href="https://www.amazon.ca/s?k=ski+gloves+mittens&tag=banffbound-20" target="_blank" rel="noopener sponsored">Insulated gloves or mittens</a></li>
+<li><a href="https://www.amazon.ca/s?k=hand+warmers+toe+warmers&tag=banffbound-20" target="_blank" rel="noopener sponsored">Hand &amp; toe warmers</a> (essential for deep-cold days)</li>
+<li><a href="https://www.amazon.ca/s?k=ski+helmet&tag=banffbound-20" target="_blank" rel="noopener sponsored">A ski helmet</a></li>
+<li><a href="https://www.amazon.ca/s?k=merino+ski+socks&tag=banffbound-20" target="_blank" rel="noopener sponsored">Merino ski socks</a> and a <a href="https://www.amazon.ca/s?k=neck+gaiter+balaclava&tag=banffbound-20" target="_blank" rel="noopener sponsored">neck gaiter or balaclava</a></li>
+</ul>
+<p>For a full head-to-toe list, see our <a href="/blog/banff-packing-list">Banff packing list</a>.</p>
+
+<h2>Ski &amp; Snowboard Lessons</h2>
+<p>All three resorts run ski and snowboard schools with group and private lessons. <strong>Mt. Norquay</strong> is the best value for first-timers, with beginner packages that bundle a lift ticket, rental, and group lesson. Group lessons start around \$89 CAD and private lessons around \$159 CAD. <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=ski+lessons" target="_blank" rel="noopener sponsored">Book lessons and beginner packages here</a>.</p>
+
+<h2>Snow Conditions &amp; Best Time to Ski</h2>
+<p>Banff's resorts receive roughly <strong>750-900 cm of snowfall</strong> annually. Sunshine Village's high elevation and Continental Divide position give it the most consistent natural snow. The deepest, most reliable powder falls in <strong>January and February</strong>; the Christmas-New Year and March-break weeks are the busiest and priciest; and <strong>late March into April</strong> is the sweet spot for sunshine, soft snow, and the best value. Check live <a href="/conditions">Banff conditions</a> before you go.</p>
+
+<h2>Beyond the Slopes: Winter in Banff</h2>
+<p>Not skiing every day? Banff's winter is packed with other adventures, perfect for rest days and non-skiers in your group:</p>
+<ul>
+<li><a href="/blog/banff-dog-sledding">Dog sledding</a> through the Rockies</li>
+<li><a href="/blog/banff-ice-walk-guide">Johnston Canyon ice walk</a> past frozen waterfalls</li>
+<li><a href="/blog/banff-snowshoeing-guide">Snowshoeing</a> and <a href="/blog/banff-cross-country-skiing">cross-country skiing</a></li>
+<li>Chasing the <a href="/blog/banff-northern-lights">Northern Lights</a></li>
+<li><a href="/blog/banff-ice-skating">Ice skating</a> on Lake Louise and <a href="/blog/banff-tubing-guide">tubing at Mt. Norquay</a></li>
+<li>Warming up with the best <a href="/blog/banff-apres-ski">après-ski in Banff</a></li>
+</ul>
+<p>You can <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=winter" target="_blank" rel="noopener sponsored">browse and book guided winter experiences here</a>. For a full winter itinerary, see our <a href="/blog/winter-banff-itinerary">winter Banff itinerary</a>.</p>
+
+<h2>Banff Skiing FAQ</h2>
+<h3>Which Banff ski resort is best for beginners?</h3>
+<p>Mt. Norquay is the friendliest for first-timers thanks to gentle learning terrain, good-value beginner packages, and its location just minutes from Banff town. Lake Louise is also excellent for progressing intermediates.</p>
+<h3>Can I ski all three Banff resorts on one ticket?</h3>
+<p>Yes. A SkiBig3 lift ticket covers Banff Sunshine, Lake Louise, and Mt. Norquay, and includes the free ski shuttle between them. Ikon and Mountain Collective passes also cover all three.</p>
+<h3>How much does it cost to ski in Banff?</h3>
+<p>Single-day window tickets run roughly CAD \$140-170. Multi-day SkiBig3 tickets bought online 21+ days ahead save up to 25% (a 3-day adult ticket starts around \$418 early season). Ski &amp; stay packages bundle lodging and lift tickets for 20-30% savings.</p>
+<h3>Do I need a car to ski in Banff?</h3>
+<p>No. The free SkiBig3 ski shuttle runs from Banff and Canmore hotels to all three resorts. A car adds flexibility, but if you drive, winter tires are required on park roads.</p>
+<h3>When is the best time to ski Banff?</h3>
+<p>January and February for the deepest powder, late March and April for sunshine and value, and December for early-season and holiday atmosphere (also the most crowded).</p>
+<h3>Is the Ikon Pass worth it for Banff?</h3>
+<p>If you'll ski about five or more days this season, an Ikon or SkiBig3 season pass usually beats daily tickets. The Ikon Pass gives up to 7 days at SkiBig3 with no blackouts; the Base Pass gives up to 5 days with blackout dates.</p>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which Banff ski resort is best for beginners?","acceptedAnswer":{"@type":"Answer","text":"Mt. Norquay is the friendliest for first-timers thanks to gentle learning terrain, good-value beginner packages, and its location just minutes from Banff town. Lake Louise is also excellent for progressing intermediates."}},{"@type":"Question","name":"Can I ski all three Banff resorts on one ticket?","acceptedAnswer":{"@type":"Answer","text":"Yes. A SkiBig3 lift ticket covers Banff Sunshine, Lake Louise, and Mt. Norquay, and includes the free ski shuttle between them. Ikon and Mountain Collective passes also cover all three."}},{"@type":"Question","name":"How much does it cost to ski in Banff?","acceptedAnswer":{"@type":"Answer","text":"Single-day window tickets run roughly CAD $140-170. Multi-day SkiBig3 tickets bought online 21+ days ahead save up to 25% (a 3-day adult ticket starts around $418 early season). Ski and stay packages bundle lodging and lift tickets for 20-30% savings."}},{"@type":"Question","name":"Do I need a car to ski in Banff?","acceptedAnswer":{"@type":"Answer","text":"No. The free SkiBig3 ski shuttle runs from Banff and Canmore hotels to all three resorts. A car adds flexibility, but if you drive, winter tires are required on park roads."}},{"@type":"Question","name":"When is the best time to ski Banff?","acceptedAnswer":{"@type":"Answer","text":"January and February for the deepest powder, late March and April for sunshine and value, and December for early-season and holiday atmosphere (also the most crowded)."}},{"@type":"Question","name":"Is the Ikon Pass worth it for Banff?","acceptedAnswer":{"@type":"Answer","text":"If you will ski about five or more days this season, an Ikon or SkiBig3 season pass usually beats daily tickets. The Ikon Pass gives up to 7 days at SkiBig3 with no blackouts; the Base Pass gives up to 5 days with blackout dates."}}]}</script>
+
+<div class="tip-box"><strong>First Timer?</strong> Start at Mt. Norquay for a relaxed, affordable introduction. Their beginner packages include a lift ticket, rental, and group lesson at excellent value, then graduate to Lake Louise and Sunshine on the same SkiBig3 ticket.</div>
 `,
 
   'banff-with-kids': `
@@ -5338,7 +5405,7 @@ export const blogContent: Record<string, string> = {
 `,
 
   'sunshine-village-guide': `
-<p><a href="/blog/sunshine-ski-resort-accommodation">Best Sunshine Village Ski Resort Lodging in Banff</a> Village is the highest-altitude ski resort in the Canadian Rockies and one of the three resorts that make up Banff's famous SkiBig3. Straddling the Continental Divide at the border of Alberta and British Columbia, Sunshine is famous for its deep natural snow, long season, and vast alpine terrain. Here's everything you need to know to plan your visit.</p>
+<p>Banff Sunshine Village is the highest-altitude ski resort in the Canadian Rockies and one of the three resorts that make up Banff's famous SkiBig3. Straddling the Continental Divide at the border of Alberta and British Columbia, Sunshine is famous for its deep natural snow, long season, and vast alpine terrain. Here's everything you need to know to plan your visit, including where to stay, lift tickets, and how to get there.</p>
 
 <aside class="editor-note"><strong>🏔️ Local's Note:</strong> I'll be honest: I avoided this for my first two years in the Bow Valley because I assumed it was all hype. I was wrong.</aside>
 
@@ -5367,12 +5434,12 @@ export const blogContent: Record<string, string> = {
 <p>Drive to the Sunshine Village parking lot (20 minutes from Banff on Highway 1, then 9 km up the Sunshine access road). From the parking lot, a free gondola (15 minutes) takes you to the village base area at 2,160m. Shuttle buses also run from Banff town hotels. The parking lot is large but fills on powder days — arrive early.</p>
 
 <h2>Lift Tickets & Passes</h2>
-<p>Single-day adult lift tickets are approximately $140-170 CAD depending on the date. Multi-day SkiBig3 passes that include Sunshine, Lake Louise, and Mt. Norquay offer better value. Early-season and spring passes are typically discounted. Purchase online in advance for the best rates.</p>
+<p>Single-day adult lift tickets are approximately $140-170 CAD depending on the date. Multi-day SkiBig3 passes that include Sunshine, Lake Louise, and Mt. Norquay offer better value, and buying online at least 21 days ahead can save up to 25%. Sunshine is also an <a href="/blog/banff-skiing-guide">Ikon Pass</a> destination. See our full <a href="/blog/banff-skiing-guide">Banff skiing guide</a> for a complete ticket and pass breakdown, or <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=skiing" target="_blank" rel="noopener sponsored">compare ski experiences, lessons and rentals here</a>.</p>
 
 <h2>Where to Stay</h2>
 <h3>Sunshine Mountain Lodge</h3>
 <p>The only ski-in/ski-out accommodation in Banff National Park. Located in the village at 2,160m, you wake up on the slopes with first tracks before the gondola opens. Rooms range from standard to premium with hot tub and lounge access. It's a unique experience — staying overnight above the clouds.</p>
-<p>For more accommodation options in the Banff area, check <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> for ski & stay deals.</p>
+<aside class="editor-note"><strong>🏨 Sunshine Village accommodation &amp; packages:</strong> Most visitors stay in Banff town and ride the free ski shuttle, which is cheaper and better for dining and après. <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Compare Sunshine Village ski &amp; stay hotel deals on Expedia</a> and book early for peak weeks. See our <a href="/blog/banff-ski-in-ski-out">ski-in/ski-out guide</a> for the closest options to the slopes.</aside>
 
 <h2>Summer at Sunshine Village</h2>
 <p>Sunshine Village operates a gondola and chairlift in summer (July-September) for access to <strong>Sunshine Meadows</strong> — some of the most impressive alpine wildflower meadows in the Rockies. Several well-maintained trails wind through meadows carpeted in wildflowers (peak bloom mid-July to early August) with views of the surrounding peaks. Popular routes include Rock Isle Lake, Grizzly Lake, and the Healy Pass trail. This is a must-do summer experience.</p>
@@ -5399,7 +5466,7 @@ export const blogContent: Record<string, string> = {
 `,
 
   'lake-louise-ski-resort': `
-<p>Lake Louise Ski Resort is the largest ski resort in the Canadian Rockies, with 4,200 acres of terrain, remarkable mountain scenery, and a legendary reputation among skiers worldwide. For those a beginner on gentle groomers or an expert hunting powder in the back bowls, Lake Louise delivers. Here's your best guide.</p>
+<p>Lake Louise Ski Resort is the largest ski resort in the Canadian Rockies, with 4,200 acres of terrain, remarkable mountain scenery, and a legendary reputation among skiers worldwide. For those a beginner on gentle groomers or an expert hunting powder in the back bowls, Lake Louise delivers. Here's your best guide. For lift ticket prices, Ikon Pass details, and ski &amp; stay deals across all three resorts, see our complete <a href="/blog/banff-skiing-guide">Banff skiing guide</a>.</p>
 
 <h2>Resort Overview</h2>
 <ul>
@@ -5427,7 +5494,7 @@ export const blogContent: Record<string, string> = {
 <p>Lake Louise is excellent for beginners despite its size. The <strong>Sunny Side</strong> area at the base has gentle slopes and a magic carpet for first-timers. Intermediate beginners can ride the Grizzly Express gondola to the top and ski gentle green runs with incredible views — a rarity at most resorts where beginners are stuck at the base.</p>
 
 <h2>Getting There</h2>
-<p>Drive west from Banff on Highway 1 (57 km, about 45 minutes) and follow signs to Lake Louise Ski Resort. Shuttle buses run from Banff town hotels, and the SkiBig3 connector shuttle links Lake Louise with <a href="/blog/sunshine-ski-resort-accommodation">Best Sunshine Village Ski Resort Lodging in Banff</a> Village and Mt. Norquay. Parking at the resort is free.</p>
+<p>Drive west from Banff on Highway 1 (57 km, about 45 minutes) and follow signs to Lake Louise Ski Resort. Shuttle buses run from Banff town hotels, and the SkiBig3 connector shuttle links Lake Louise with <a href="/blog/sunshine-village-guide">Sunshine Village</a> and Mt. Norquay. Parking at the resort is free.</p>
 
 <h2>Lift Tickets & Passes</h2>
 <p>Single-day adult lift tickets range from $130-170 CAD depending on the date. Multi-day SkiBig3 passes covering Lake Louise, Sunshine Village, and Mt. Norquay offer the best value for a ski trip. Book online for advance purchase discounts.</p>
@@ -6056,7 +6123,7 @@ export const blogContent: Record<string, string> = {
 <p>One of Banff's classic backcountry destinations. The trail crosses beautiful Healy Pass (2,330m) with panoramic views of the Massive Range before descending to Egypt Lake and its cluster of alpine lakes. A shelter and campground are available. From Egypt Lake, explore day-hike options to Pharaoh, Scarab, and Mummy Lakes.</p>
 
 <h3>Skoki Loop (32-40 km, 2-4 days)</h3>
-<p>Starting near Lake Louise Ski Resort, this loop passes through Boulder Pass, past untouched alpine lakes, through wildflower meadows, and to the historic <strong>Skoki Lodge</strong> — a <a href="/blog/backcountry-skiing-day-tours-canadian-rockies">Banff Backcountry Skiing Day Tours</a> lodge built in 1931 that serves meals and accommodation (book well in advance). The Skoki area is one of the most beautiful alpine regions in the Rockies.</p>
+<p>Starting near Lake Louise Ski Resort, this loop passes through Boulder Pass, past untouched alpine lakes, through wildflower meadows, and to the historic <strong>Skoki Lodge</strong> — a <a href="/blog/banff-ski-touring">backcountry ski touring</a> lodge built in 1931 that serves meals and accommodation (book well in advance). The Skoki area is one of the most beautiful alpine regions in the Rockies.</p>
 
 <h3>Sawback Trail (74 km, 4-5 days)</h3>
 <p>A serious through-hike connecting Banff to Lake Louise through the Sawback Range. This challenging route crosses multiple passes, traverses remote valleys, and offers genuine wilderness solitude. For experienced backpackers only. Five designated campgrounds along the route.</p>
@@ -7426,7 +7493,7 @@ export const blogContent: Record<string, string> = {
 `,
 
   'mt-norquay-guide': `
-<p>Mt Norquay is Banff's local mountain — the one that residents can see from their living rooms and reach in six minutes by car. While it's the smallest of the SkiBig3 resorts, Mt Norquay punches well above its weight with excellent terrain variety, night skiing, tubing, the famous Via Ferrata, and a sightseeing chairlift. It's the mountain where locals teach their kids to ski, where the après-ski is authentically laid-back, and where you can have a renowned mountain experience without the crowds or price tags of the bigger resorts.</p>
+<p>Mt Norquay is Banff's local mountain — the one that residents can see from their living rooms and reach in six minutes by car. While it's the smallest of the SkiBig3 resorts, Mt Norquay punches well above its weight with excellent terrain variety, night skiing, tubing, the famous Via Ferrata, and a sightseeing chairlift. It's the mountain where locals teach their kids to ski, where the après-ski is authentically laid-back, and where you can have a renowned mountain experience without the crowds or price tags of the bigger resorts. For a full breakdown of lift tickets, passes, and how the three resorts compare, see our complete <a href="/blog/banff-skiing-guide">Banff skiing guide</a>.</p>
 
 <h2>Winter: Skiing & Snowboarding</h2>
 <h3>Terrain Overview</h3>
@@ -7573,7 +7640,7 @@ export const blogContent: Record<string, string> = {
 `,
 
   'banff-apres-ski': `
-<p>After a day carving turns through champagne powder with mountain peaks towering above you, there's nothing better than kicking off your ski boots and settling into Banff's legendary après-ski scene. From craft cocktails by roaring fires to steaming hot springs under the stars, Banff's après-ski culture is some of the best in North America. Here's where to wind down after your day on the slopes.</p>
+<p>After a day <a href="/blog/banff-skiing-guide">skiing the Big 3 resorts</a> through champagne powder with mountain peaks towering above you, there's nothing better than kicking off your ski boots and settling into Banff's legendary après-ski scene. From craft cocktails by roaring fires to steaming hot springs under the stars, Banff's après-ski culture is some of the best in North America. Here's where to wind down after your day on the slopes.</p>
 
 <h2>Best Après-Ski Bars & Restaurants</h2>
 
@@ -9709,7 +9776,7 @@ export const blogContent: Record<string, string> = {
 
 <h2>Day 2: Ski Day at Sunshine Village or Lake Louise</h2>
 <ul>
-<li><strong>Full day:</strong> Hit the slopes at Sunshine Village (over 3,300 acres of skiable terrain) or Lake Louise Ski Resort (one of Canada's largest). Both offer runs for all levels from beginner to expert</li>
+<li><strong>Full day:</strong> Hit the slopes at Sunshine Village (over 3,300 acres of skiable terrain) or Lake Louise Ski Resort (one of Canada's largest). Both offer runs for all levels from beginner to expert. See our <a href="/blog/banff-skiing-guide">Banff skiing guide</a> for lift tickets, passes, and ski &amp; stay deals</li>
 <li><strong>Lunch:</strong> On-mountain dining at either resort</li>
 <li><strong>Après-ski:</strong> Return to Banff for happy hour at Banff Ave Brewing Co. or Rose & Crown</li>
 <li><strong>Dinner:</strong> Warm, hearty dinner at The Bison</li>
@@ -10026,6 +10093,7 @@ export const blogContent: Record<string, string> = {
 <li><strong>Ski Mount Norquay:</strong> Banff's local hill, 6 minutes from town. Night skiing available</li>
 <li><strong>Cross-country ski:</strong> Nordic trails at the Banff Springs Golf Course and Spray River loop</li>
 </ol>
+<p>New to the slopes here? Our complete <a href="/blog/banff-skiing-guide">Banff skiing guide</a> covers 2026-27 lift ticket prices, the Ikon Pass, ski &amp; stay deals, and getting to each resort.</p>
 
 <h2>Ice & Snow Experiences</h2>
 <ol start="5">
@@ -16460,6 +16528,8 @@ export const blogContent: Record<string, string> = {
   'banff-ski-in-ski-out': `
 <p>True ski-in ski-out accommodation — where you can click into your bindings at your door and ski directly to the lifts — is limited near Banff. The three ski resorts (Sunshine Village, Lake Louise Ski Resort, and Mount Norquay) are located away from any town, and on-mountain lodging options are few. Here's what exists and the best alternatives.</p>
 
+<aside class="editor-note"><strong>🎿 Book early:</strong> Ski-in/ski-out and slopeside rooms are the first to sell out for the Christmas, New Year, and March-break weeks. <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Compare Banff ski hotels and ski &amp; stay deals on Expedia</a> to lock in your dates and rates.</aside>
+
 <h2>True Ski-In Ski-Out Options</h2>
 
 <h3>Sunshine Mountain Lodge (Sunshine Village)</h3>
@@ -16512,7 +16582,7 @@ export const blogContent: Record<string, string> = {
 <p>Many hotels and lodges in Banff include ski shuttle packages in their winter rates. Ask when booking.</p>
 
 <h2>SkiBig3 Passes</h2>
-<p>The SkiBig3 lift ticket covers all three Banff resorts — Sunshine Village, Lake Louise, and Mount Norquay — on a single pass. Multi-day passes include free shuttle transportation between Banff and the resorts. This is the most economical way to ski all three mountains.</p>
+<p>The SkiBig3 lift ticket covers all three Banff resorts — Sunshine Village, Lake Louise, and Mount Norquay — on a single pass. Multi-day passes include free shuttle transportation between Banff and the resorts. This is the most economical way to ski all three mountains. For 2026-27 lift ticket prices, Ikon Pass options, and how to save, see our complete <a href="/blog/banff-skiing-guide">Banff skiing guide</a>.</p>
 
 <h2>Tips for Ski Accommodation</h2>
 <ul>

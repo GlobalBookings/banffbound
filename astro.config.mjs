@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
+import { blogRedirects } from './src/data/redirects.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,15 +14,12 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       filter(page) {
+        // Exclude every consolidated/redirected slug plus a few legacy duplicates.
         const excludeSlugs = [
-          'banff-ski-slopes', 'banff-ski-area', 'banff-ski-trips', 'big-3-ski-resorts',
+          ...Object.keys(blogRedirects),
           'banff-restaraunts', 'eating-out-in-banff', 'sky-bistro-banff',
-          'banff-ski-big-3', 'big-3-ski', 'big-three-ski', 'ski-big-three',
-          'ski-big-3-alberta', 'ski-big-3', 'ski-banff', 'banff-ski-hills',
-          'banff-ski-areas', 'big3-ski-resort', 'banff-ski', 'banff-ski-resorts',
-          'banff-ski-fields',
         ];
-        return !excludeSlugs.some(slug => page.includes(`/blog/${slug}`));
+        return !excludeSlugs.some(slug => page.endsWith(`/blog/${slug}/`) || page.endsWith(`/blog/${slug}`));
       },
       serialize(item) {
         // Boost priority for high-value pages

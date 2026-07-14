@@ -1146,12 +1146,13 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'banff-skiing-guide',
-    title: 'Skiing in Banff: Complete Guide to the Big 3 Resorts',
-    description: 'Everything you need to know about skiing in Banff. Sunshine Village, Lake Louise Ski Resort, and Mt. Norquay compared.',
+    title: 'Skiing in Banff 2026-27: Lift Tickets, Passes & the Big 3 Resorts',
+    description: 'Complete 2026-27 guide to skiing Banff: SkiBig3 lift ticket prices, Ikon Pass, resort comparison, ski & stay deals, gear, lessons, and how to get to the slopes.',
     date: '2025-12-20',
+    lastUpdated: '2026-07-14',
     category: 'Seasonal',
     image: '/images/blog/banff-skiing-guide.webp',
-    readTime: '12 min read',
+    readTime: '14 min read',
   },
   {
     slug: 'banff-with-kids',
