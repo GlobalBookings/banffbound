@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T20:51:24.233Z",
+  "updatedAt": "2026-07-14T22:48:54.042Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -205,7 +205,7 @@
         },
         {
           "name": "Lake Minnewanka Road",
-          "difficulty": "Easy",
+          "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
           "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed",
@@ -240,7 +240,7 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on trail; Wet and muddy sections",
+          "comment": "Stay on trail; Wet and muddy sections; Bridge washed out past the Ink Pots toward Jo9 campground",
           "lastUpdated": "2026-07-14"
         },
         {
@@ -1027,7 +1027,7 @@
     },
     {
       "name": "Lake Minnewanka Road",
-      "difficulty": "Easy",
+      "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
       "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed",
@@ -1066,7 +1066,7 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on trail; Wet and muddy sections",
+      "comment": "Stay on trail; Wet and muddy sections; Bridge washed out past the Ink Pots toward Jo9 campground",
       "lastUpdated": "2026-07-14",
       "area": "Banff Area"
     },
