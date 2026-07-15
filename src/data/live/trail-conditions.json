@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T01:29:23.539Z",
+  "updatedAt": "2026-07-15T04:42:31.386Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1738,12 +1738,6 @@
     {
       "title": "Area Closure: s For Wildlife",
       "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: - Hillsdale",
-      "type": "AREA CLOSURE",
       "issued": "",
       "ends": ""
     },
