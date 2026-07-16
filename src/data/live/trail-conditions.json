@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T13:23:26.189Z",
+  "updatedAt": "2026-07-16T15:27:23.525Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -17,7 +17,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Marsh Trail",
@@ -25,7 +25,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Heavy horse use; Wet and muddy sections",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Silverton Falls Trail",
@@ -33,7 +33,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Johnson Lake Loop",
@@ -41,7 +41,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
@@ -49,7 +49,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Tunnel Campground Loop",
@@ -815,7 +815,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -824,7 +824,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Heavy horse use; Wet and muddy sections",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -833,7 +833,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -842,7 +842,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -851,7 +851,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -1692,6 +1692,91 @@
       "area": "Icefields Parkway Area"
     }
   ],
-  "advisories": [],
+  "advisories": [
+    {
+      "title": "Advisory: Berry Season",
+      "type": "Advisory",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Warning: Lake Minnewanka Trail and Campgrounds",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: Rundle Rock",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Peyto Pit Road",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: Cascade Valley Trail",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: Spray Wildfire Risk Reduction Project Upper Springs Block 1 and 2",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Warning: Rampart Creek Campground",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Lake Louise Area Trails",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Area Closure: s For Wildlife",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Fairholme",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Bow Glacier Falls",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: - Wildlife crossing structures",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: Banff Springs Snail Critical Habitat",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "AREA CLOSURE: Middle Springs Wildlife Corridor and Banff Springs Snail Critical Habitat",
+      "type": "AREA CLOSURE",
+      "issued": "",
+      "ends": ""
+    }
+  ],
   "source": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions"
 }
