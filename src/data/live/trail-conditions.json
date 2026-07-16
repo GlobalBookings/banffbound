@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T20:47:40.611Z",
+  "updatedAt": "2026-07-16T22:50:32.244Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -185,7 +185,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Surprise Corner to Hoodoos Trail",
@@ -193,7 +193,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry; Adhere to all posted warnings and closures along trails; Stay on trail; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Sundance Canyon Loop",
@@ -201,7 +201,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "C-Level Cirque Trail",
@@ -209,7 +209,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Stay on designated trails and viewpoints; Snow patches",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Tunnel Bench Loop",
@@ -422,7 +422,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Mainly ",
-          "lastUpdated": "2026-07-11"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Consolation Lakes Trail",
@@ -714,7 +714,7 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Adhere to all posted warnings and closures along trails; Wet and muddy sections",
+          "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
           "lastUpdated": "2026-07-16"
         },
         {
@@ -1004,7 +1004,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -1013,7 +1013,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry; Adhere to all posted warnings and closures along trails; Stay on trail; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -1022,7 +1022,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -1031,7 +1031,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Stay on designated trails and viewpoints; Snow patches",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -1265,7 +1265,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Mainly ",
-      "lastUpdated": "2026-07-11",
+      "lastUpdated": "2026-07-16",
       "area": "Lake Louise Area"
     },
     {
@@ -1588,7 +1588,7 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Adhere to all posted warnings and closures along trails; Wet and muddy sections",
+      "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
       "lastUpdated": "2026-07-16",
       "area": "Icefields Parkway Area"
     },
@@ -1694,7 +1694,7 @@
   ],
   "advisories": [
     {
-      "title": "Area Closure: Hillsdale Wolf Closure",
+      "title": "Area Closure: Hillsdale Split",
       "type": "Area Closure",
       "issued": "",
       "ends": ""
@@ -1755,12 +1755,6 @@
     },
     {
       "title": "AREA CLOSURE: - Fairholme",
-      "type": "AREA CLOSURE",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: - Bow Glacier Falls",
       "type": "AREA CLOSURE",
       "issued": "",
       "ends": ""
