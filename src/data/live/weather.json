@@ -1,34 +1,34 @@
 {
-  "updatedAt": "2026-07-16T18:57:45.980Z",
+  "updatedAt": "2026-07-16T20:47:31.735Z",
   "banff": {
     "current": {
-      "temp": 26,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 25,
-      "wind": "2 km/h"
+      "temp": 28,
+      "condition": "Clear sky",
+      "icon": "☀️",
+      "humidity": 23,
+      "wind": "8 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 28,
         "low": 10,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Partly cloudy",
+        "icon": "⛅"
       },
       {
         "day": "Friday",
-        "high": 29,
+        "high": 27,
         "low": 15,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "condition": "Moderate rain",
+        "icon": "🌧️"
       },
       {
         "day": "Saturday",
         "high": 29,
-        "low": 15,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "low": 16,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Sunday",
@@ -48,33 +48,33 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 23,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 41,
-      "wind": "4 km/h"
+      "temp": 24,
+      "condition": "Clear sky",
+      "icon": "☀️",
+      "humidity": 38,
+      "wind": "5 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 25,
         "low": 11,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Mainly clear",
+        "icon": "🌤️"
       },
       {
         "day": "Friday",
-        "high": 25,
-        "low": 12,
+        "high": 26,
+        "low": 13,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Saturday",
         "high": 26,
-        "low": 14,
-        "condition": "Clear sky",
-        "icon": "☀️"
+        "low": 12,
+        "condition": "Dense drizzle",
+        "icon": "🌧️"
       },
       {
         "day": "Sunday",

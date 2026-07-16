@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T18:57:48.453Z",
+  "updatedAt": "2026-07-16T20:47:40.611Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -52,19 +52,19 @@
           "lastUpdated": "2026-07-16"
         },
         {
-          "name": "Tunnel Campground Loop",
-          "difficulty": "Easy",
-          "status": "open",
-          "condition": "Good.",
-          "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-          "lastUpdated": "2026-07-16"
-        },
-        {
           "name": "Vermilion Lakes Drive",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
+          "lastUpdated": "2026-07-16"
+        },
+        {
+          "name": "Tunnel Campground Loop",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
           "lastUpdated": "2026-07-16"
         },
         {
@@ -108,11 +108,11 @@
           "lastUpdated": "2026-07-16"
         },
         {
-          "name": "Healy Creek Trail",
+          "name": "Spray River East Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+          "condition": "Good.",
+          "comment": "Biking excluding e-bikes is allowed; Mainly dry",
           "lastUpdated": "2026-07-16"
         },
         {
@@ -124,11 +124,11 @@
           "lastUpdated": "2026-07-16"
         },
         {
-          "name": "Spray River East Trail",
+          "name": "Healy Creek Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Mainly dry",
+          "condition": "Fair.",
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
           "lastUpdated": "2026-07-16"
         },
         {
@@ -169,7 +169,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Tunnel Mountain Summit Trail",
@@ -177,7 +177,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry; Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-07-15"
+          "lastUpdated": "2026-07-16"
         },
         {
           "name": "Banff Avenue Trail",
@@ -204,14 +204,6 @@
           "lastUpdated": "2026-07-15"
         },
         {
-          "name": "Lake Minnewanka Road",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Good.",
-          "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-07-15"
-        },
-        {
           "name": "C-Level Cirque Trail",
           "difficulty": "Moderate",
           "status": "open",
@@ -225,6 +217,14 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
+          "lastUpdated": "2026-07-15"
+        },
+        {
+          "name": "Lake Minnewanka Road",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed",
           "lastUpdated": "2026-07-15"
         },
         {
@@ -276,19 +276,19 @@
           "lastUpdated": "2026-07-15"
         },
         {
-          "name": "Rockbound Lake Trail",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Wet and muddy sections; Avalanche debris on trail",
-          "lastUpdated": "2026-07-15"
-        },
-        {
           "name": "Cascade Amphitheatre Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on trail; Mainly dry",
+          "lastUpdated": "2026-07-15"
+        },
+        {
+          "name": "Rockbound Lake Trail",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Fair.",
+          "comment": "Wet and muddy sections; Avalanche debris on trail",
           "lastUpdated": "2026-07-15"
         },
         {
@@ -316,6 +316,14 @@
           "lastUpdated": "2026-07-15"
         },
         {
+          "name": "Bow Valley Parkway",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Open.",
+          "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
+          "lastUpdated": "2026-07-15"
+        },
+        {
           "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
           "difficulty": "Moderate",
           "status": "open",
@@ -337,14 +345,6 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Mainly dry; Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Must be in group of 4 or more",
-          "lastUpdated": "2026-07-15"
-        },
-        {
-          "name": "Bow Valley Parkway",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Open.",
-          "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
           "lastUpdated": "2026-07-15"
         },
         {
@@ -855,20 +855,20 @@
       "area": "Banff Area"
     },
     {
-      "name": "Tunnel Campground Loop",
-      "difficulty": "Easy",
-      "status": "open",
-      "condition": "Good.",
-      "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-      "lastUpdated": "2026-07-16",
-      "area": "Banff Area"
-    },
-    {
       "name": "Vermilion Lakes Drive",
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
+      "lastUpdated": "2026-07-16",
+      "area": "Banff Area"
+    },
+    {
+      "name": "Tunnel Campground Loop",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
       "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
@@ -918,11 +918,11 @@
       "area": "Banff Area"
     },
     {
-      "name": "Healy Creek Trail",
+      "name": "Spray River East Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+      "condition": "Good.",
+      "comment": "Biking excluding e-bikes is allowed; Mainly dry",
       "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
@@ -936,11 +936,11 @@
       "area": "Banff Area"
     },
     {
-      "name": "Spray River East Trail",
+      "name": "Healy Creek Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Mainly dry",
+      "condition": "Fair.",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
       "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
@@ -986,7 +986,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -995,7 +995,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry; Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-07-16",
       "area": "Banff Area"
     },
     {
@@ -1026,15 +1026,6 @@
       "area": "Banff Area"
     },
     {
-      "name": "Lake Minnewanka Road",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Good.",
-      "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-07-15",
-      "area": "Banff Area"
-    },
-    {
       "name": "C-Level Cirque Trail",
       "difficulty": "Moderate",
       "status": "open",
@@ -1049,6 +1040,15 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
+      "lastUpdated": "2026-07-15",
+      "area": "Banff Area"
+    },
+    {
+      "name": "Lake Minnewanka Road",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed",
       "lastUpdated": "2026-07-15",
       "area": "Banff Area"
     },
@@ -1107,20 +1107,20 @@
       "area": "Banff Area"
     },
     {
-      "name": "Rockbound Lake Trail",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Wet and muddy sections; Avalanche debris on trail",
-      "lastUpdated": "2026-07-15",
-      "area": "Banff Area"
-    },
-    {
       "name": "Cascade Amphitheatre Trail",
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on trail; Mainly dry",
+      "lastUpdated": "2026-07-15",
+      "area": "Banff Area"
+    },
+    {
+      "name": "Rockbound Lake Trail",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Fair.",
+      "comment": "Wet and muddy sections; Avalanche debris on trail",
       "lastUpdated": "2026-07-15",
       "area": "Banff Area"
     },
@@ -1152,6 +1152,15 @@
       "area": "Banff Area"
     },
     {
+      "name": "Bow Valley Parkway",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Open.",
+      "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
+      "lastUpdated": "2026-07-15",
+      "area": "Banff Area"
+    },
+    {
       "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
       "difficulty": "Moderate",
       "status": "open",
@@ -1175,15 +1184,6 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Mainly dry; Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Must be in group of 4 or more",
-      "lastUpdated": "2026-07-15",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Bow Valley Parkway",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Open.",
-      "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
       "lastUpdated": "2026-07-15",
       "area": "Banff Area"
     },
@@ -1693,6 +1693,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Area Closure: Hillsdale Wolf Closure",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Advisory: Berry Season",
       "type": "Advisory",
