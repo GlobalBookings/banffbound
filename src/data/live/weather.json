@@ -1,25 +1,25 @@
 {
-  "updatedAt": "2026-07-16T22:50:23.423Z",
+  "updatedAt": "2026-07-17T01:53:09.318Z",
   "banff": {
     "current": {
-      "temp": 28,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 23,
-      "wind": "10 km/h"
+      "temp": 26,
+      "condition": "Clear sky",
+      "icon": "☀️",
+      "humidity": 37,
+      "wind": "11 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 28,
+        "high": 31,
         "low": 10,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Partly cloudy",
+        "icon": "⛅"
       },
       {
         "day": "Friday",
         "high": 27,
-        "low": 14,
+        "low": 15,
         "condition": "Moderate rain",
         "icon": "🌧️"
       },
@@ -34,13 +34,13 @@
         "day": "Sunday",
         "high": 26,
         "low": 12,
-        "condition": "Slight rain showers",
-        "icon": "🌦️"
+        "condition": "Dense drizzle",
+        "icon": "🌧️"
       },
       {
         "day": "Monday",
         "high": 22,
-        "low": 12,
+        "low": 13,
         "condition": "Moderate drizzle",
         "icon": "🌦️"
       }
@@ -48,11 +48,11 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 25,
+      "temp": 23,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 37,
-      "wind": "4 km/h"
+      "humidity": 44,
+      "wind": "5 km/h"
     },
     "forecast": [
       {
@@ -64,7 +64,7 @@
       },
       {
         "day": "Friday",
-        "high": 26,
+        "high": 25,
         "low": 13,
         "condition": "Overcast",
         "icon": "☁️"
@@ -79,16 +79,16 @@
       {
         "day": "Sunday",
         "high": 24,
-        "low": 12,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "low": 11,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Monday",
         "high": 22,
         "low": 11,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       }
     ]
   }
