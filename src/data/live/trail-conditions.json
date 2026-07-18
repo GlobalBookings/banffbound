@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T14:44:04.427Z",
+  "updatedAt": "2026-07-18T16:45:17.937Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -745,9 +745,9 @@
           "name": "Nigel Pass Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Wet and muddy sections; Stream crossings; Deadfall on trail",
-          "lastUpdated": "2026-07-17"
+          "condition": "Good.",
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-07-18"
         },
         {
           "name": "Dolomite Pass Trail",
@@ -1623,9 +1623,9 @@
       "name": "Nigel Pass Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Wet and muddy sections; Stream crossings; Deadfall on trail",
-      "lastUpdated": "2026-07-17",
+      "condition": "Good.",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-07-18",
       "area": "Icefields Parkway Area"
     },
     {
