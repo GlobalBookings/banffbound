@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-19T20:38:18.159Z",
+  "updatedAt": "2026-07-19T22:42:22.171Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -281,7 +281,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on trail; Mainly dry",
-          "lastUpdated": "2026-07-18"
+          "lastUpdated": "2026-07-19"
         },
         {
           "name": "Rockbound Lake Trail",
@@ -289,7 +289,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Wet and muddy sections; Avalanche debris on trail",
-          "lastUpdated": "2026-07-18"
+          "lastUpdated": "2026-07-19"
         },
         {
           "name": "Arnica Lake Trail",
@@ -297,7 +297,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-07-18"
+          "lastUpdated": "2026-07-19"
         },
         {
           "name": "Harvey Pass Trail",
@@ -305,7 +305,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Snow patches; Deadfall on trail",
-          "lastUpdated": "2026-07-18"
+          "lastUpdated": "2026-07-19"
         },
         {
           "name": "Goat Creek Trail",
@@ -313,7 +313,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "No access through Spray Lakes Road/Smith-Dorien Trail; Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-07-18"
+          "lastUpdated": "2026-07-19"
         },
         {
           "name": "Bow Valley Parkway",
@@ -1112,7 +1112,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on trail; Mainly dry",
-      "lastUpdated": "2026-07-18",
+      "lastUpdated": "2026-07-19",
       "area": "Banff Area"
     },
     {
@@ -1121,7 +1121,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Wet and muddy sections; Avalanche debris on trail",
-      "lastUpdated": "2026-07-18",
+      "lastUpdated": "2026-07-19",
       "area": "Banff Area"
     },
     {
@@ -1130,7 +1130,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-07-18",
+      "lastUpdated": "2026-07-19",
       "area": "Banff Area"
     },
     {
@@ -1139,7 +1139,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Snow patches; Deadfall on trail",
-      "lastUpdated": "2026-07-18",
+      "lastUpdated": "2026-07-19",
       "area": "Banff Area"
     },
     {
@@ -1148,7 +1148,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "No access through Spray Lakes Road/Smith-Dorien Trail; Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-07-18",
+      "lastUpdated": "2026-07-19",
       "area": "Banff Area"
     },
     {
