@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T19:26:47.479Z",
+  "updatedAt": "2026-07-20T21:02:38.741Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1732,12 +1732,6 @@
     {
       "title": "Area Closure: Cascade Valley Trail",
       "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Warning: Rampart Creek Campground",
-      "type": "Warning",
       "issued": "",
       "ends": ""
     },
