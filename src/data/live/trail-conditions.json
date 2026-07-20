@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T06:39:18.319Z",
+  "updatedAt": "2026-07-20T10:42:26.760Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1693,6 +1693,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Area Closure: Spray Wildfire Risk Reduction Project",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Area Closure: Hillsdale Split",
       "type": "Area Closure",
