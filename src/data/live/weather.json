@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-07-21T17:07:30.820Z",
+  "updatedAt": "2026-07-21T19:05:36.338Z",
   "banff": {
     "current": {
-      "temp": 22,
+      "temp": 25,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 45,
-      "wind": "8 km/h"
+      "humidity": 33,
+      "wind": "7 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 27,
         "low": 13,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Partly cloudy",
+        "icon": "⛅"
       },
       {
         "day": "Wednesday",
@@ -33,25 +33,25 @@
       {
         "day": "Friday",
         "high": 28,
-        "low": 14,
+        "low": 15,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Saturday",
-        "high": 27,
+        "high": 28,
         "low": 13,
-        "condition": "Clear sky",
-        "icon": "☀️"
+        "condition": "Partly cloudy",
+        "icon": "⛅"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 20,
-      "condition": "Partly cloudy",
-      "icon": "⛅",
-      "humidity": 60,
+      "temp": 21,
+      "condition": "Overcast",
+      "icon": "☁️",
+      "humidity": 54,
       "wind": "7 km/h"
     },
     "forecast": [
@@ -66,27 +66,27 @@
         "day": "Wednesday",
         "high": 24,
         "low": 11,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Mainly clear",
+        "icon": "🌤️"
       },
       {
         "day": "Thursday",
-        "high": 28,
+        "high": 27,
         "low": 13,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Friday",
-        "high": 26,
-        "low": 13,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 27,
+        "low": 14,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Saturday",
         "high": 25,
-        "low": 12,
+        "low": 13,
         "condition": "Clear sky",
         "icon": "☀️"
       }
