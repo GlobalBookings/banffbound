@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22T15:26:26.690Z",
+  "updatedAt": "2026-07-22T17:08:22.931Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -337,7 +337,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
@@ -345,7 +345,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Tunnel Technical Trails: Return of the Jedi Trail",
@@ -400,16 +400,16 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Mainly dry; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-21"
+          "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Aylmer Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Mainly dry; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-21"
+          "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
+          "lastUpdated": "2026-07-22"
         }
       ]
     },
@@ -1175,7 +1175,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -1184,7 +1184,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -1246,8 +1246,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Mainly dry; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-21",
+      "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -1255,8 +1255,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Mainly dry; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-21",
+      "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
