@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22T17:08:22.931Z",
+  "updatedAt": "2026-07-22T18:59:10.756Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -15,9 +15,9 @@
           "name": "Fenland Loop",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Wet and muddy sections; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-07-21"
+          "condition": "Good.",
+          "comment": "Biking including pedal-assist e-bikes is allowed",
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Marsh Trail",
@@ -25,7 +25,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Heavy horse use; Mainly dry; Biking excluding e-bikes is allowed",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Silverton Falls Trail",
@@ -813,9 +813,9 @@
       "name": "Fenland Loop",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Wet and muddy sections; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-07-21",
+      "condition": "Good.",
+      "comment": "Biking including pedal-assist e-bikes is allowed",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -824,7 +824,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Heavy horse use; Mainly dry; Biking excluding e-bikes is allowed",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
