@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22T22:54:32.788Z",
+  "updatedAt": "2026-07-23T01:57:47.804Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -329,7 +329,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Mainly dry; Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
@@ -353,7 +353,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Tunnel Technical Trails: Star Wars Trail",
@@ -361,7 +361,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Tunnel Technical Trails: Topp Notch Trail",
@@ -369,7 +369,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Rundle Riverside Trail",
@@ -377,7 +377,7 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "The Toe",
@@ -385,7 +385,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Cory Pass Loop",
@@ -393,7 +393,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-21"
+          "lastUpdated": "2026-07-22"
         },
         {
           "name": "Aylmer Lookout Trail",
@@ -1166,7 +1166,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Mainly dry; Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -1193,7 +1193,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -1202,7 +1202,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -1211,7 +1211,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -1220,7 +1220,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -1229,7 +1229,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {
@@ -1238,7 +1238,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-07-22",
       "area": "Banff Area"
     },
     {

@@ -1,38 +1,38 @@
 {
-  "updatedAt": "2026-07-22T22:54:22.538Z",
+  "updatedAt": "2026-07-23T01:57:48.179Z",
   "banff": {
     "current": {
-      "temp": 28,
+      "temp": 27,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 23,
-      "wind": "14 km/h"
+      "humidity": 26,
+      "wind": "13 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 28,
+        "high": 30,
         "low": 12,
-        "condition": "Clear sky",
-        "icon": "☀️"
+        "condition": "Mainly clear",
+        "icon": "🌤️"
       },
       {
         "day": "Thursday",
-        "high": 26,
-        "low": 14,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 28,
+        "low": 15,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Friday",
-        "high": 29,
+        "high": 27,
         "low": 15,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Saturday",
-        "high": 30,
+        "high": 29,
         "low": 14,
         "condition": "Clear sky",
         "icon": "☀️"
@@ -48,11 +48,11 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 24,
+      "temp": 23,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 40,
-      "wind": "11 km/h"
+      "humidity": 46,
+      "wind": "14 km/h"
     },
     "forecast": [
       {
@@ -64,24 +64,24 @@
       },
       {
         "day": "Thursday",
-        "high": 23,
-        "low": 11,
+        "high": 24,
+        "low": 12,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Friday",
-        "high": 27,
-        "low": 11,
+        "high": 25,
+        "low": 12,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Saturday",
         "high": 27,
-        "low": 14,
-        "condition": "Clear sky",
-        "icon": "☀️"
+        "low": 13,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Sunday",
