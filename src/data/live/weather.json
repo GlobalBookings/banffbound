@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-07-23T22:48:30.669Z",
+  "updatedAt": "2026-07-24T01:53:32.105Z",
   "banff": {
     "current": {
-      "temp": 24,
+      "temp": 21,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 37,
+      "humidity": 45,
       "wind": "17 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 25,
+        "high": 24,
         "low": 9,
         "condition": "Light drizzle",
         "icon": "🌦️"
@@ -19,7 +19,7 @@
       {
         "day": "Friday",
         "high": 27,
-        "low": 13,
+        "low": 12,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -32,7 +32,7 @@
       },
       {
         "day": "Sunday",
-        "high": 26,
+        "high": 27,
         "low": 12,
         "condition": "Clear sky",
         "icon": "☀️"
@@ -41,24 +41,24 @@
         "day": "Monday",
         "high": 26,
         "low": 12,
-        "condition": "Partly cloudy",
-        "icon": "⛅"
+        "condition": "Overcast",
+        "icon": "☁️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 22,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 48,
-      "wind": "17 km/h"
+      "temp": 18,
+      "condition": "Clear sky",
+      "icon": "☀️",
+      "humidity": 72,
+      "wind": "14 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 23,
-        "low": 14,
+        "low": 13,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -66,29 +66,29 @@
         "day": "Friday",
         "high": 23,
         "low": 10,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Partly cloudy",
+        "icon": "⛅"
       },
       {
         "day": "Saturday",
         "high": 26,
         "low": 10,
-        "condition": "Partly cloudy",
-        "icon": "⛅"
+        "condition": "Clear sky",
+        "icon": "☀️"
       },
       {
         "day": "Sunday",
         "high": 24,
         "low": 12,
-        "condition": "Partly cloudy",
-        "icon": "⛅"
+        "condition": "Clear sky",
+        "icon": "☀️"
       },
       {
         "day": "Monday",
         "high": 23,
-        "low": 11,
-        "condition": "Partly cloudy",
-        "icon": "⛅"
+        "low": 12,
+        "condition": "Overcast",
+        "icon": "☁️"
       }
     ]
   }
