@@ -1,23 +1,16 @@
 {
-  "updatedAt": "2026-07-24T05:13:43.958Z",
+  "updatedAt": "2026-07-24T08:09:57.754Z",
   "banff": {
     "current": {
-      "temp": 14,
-      "condition": "Clear sky",
-      "icon": "☀️",
-      "humidity": 50,
-      "wind": "7 km/h"
+      "temp": 13,
+      "condition": "Overcast",
+      "icon": "☁️",
+      "humidity": 53,
+      "wind": "8 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 24,
-        "low": 9,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Friday",
         "high": 26,
         "low": 13,
         "condition": "Overcast",
@@ -26,7 +19,7 @@
       {
         "day": "Saturday",
         "high": 27,
-        "low": 14,
+        "low": 15,
         "condition": "Clear sky",
         "icon": "☀️"
       },
@@ -43,35 +36,35 @@
         "low": 12,
         "condition": "Overcast",
         "icon": "☁️"
+      },
+      {
+        "day": "Tuesday",
+        "high": 27,
+        "low": 11,
+        "condition": "Clear sky",
+        "icon": "☀️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 13,
+      "temp": 12,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 77,
-      "wind": "6 km/h"
+      "humidity": 68,
+      "wind": "8 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 23,
-        "low": 13,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
-        "day": "Friday",
         "high": 22,
         "low": 10,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Partly cloudy",
+        "icon": "⛅"
       },
       {
         "day": "Saturday",
-        "high": 24,
+        "high": 22,
         "low": 10,
         "condition": "Mainly clear",
         "icon": "🌤️"
@@ -89,6 +82,13 @@
         "low": 12,
         "condition": "Overcast",
         "icon": "☁️"
+      },
+      {
+        "day": "Tuesday",
+        "high": 24,
+        "low": 11,
+        "condition": "Clear sky",
+        "icon": "☀️"
       }
     ]
   }
