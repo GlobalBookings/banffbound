@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-24T15:20:59.932Z",
+  "updatedAt": "2026-07-24T17:21:05.575Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -369,7 +369,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-07-23"
+          "lastUpdated": "2026-07-24"
         },
         {
           "name": "Rundle Riverside Trail",
@@ -377,7 +377,7 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed",
-          "lastUpdated": "2026-07-23"
+          "lastUpdated": "2026-07-24"
         },
         {
           "name": "The Toe",
@@ -385,7 +385,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-07-23"
+          "lastUpdated": "2026-07-24"
         },
         {
           "name": "Cory Pass Loop",
@@ -393,7 +393,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-23"
+          "lastUpdated": "2026-07-24"
         },
         {
           "name": "Aylmer Lookout Trail",
@@ -401,7 +401,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-23"
+          "lastUpdated": "2026-07-24"
         },
         {
           "name": "Aylmer Pass Trail",
@@ -409,7 +409,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-23"
+          "lastUpdated": "2026-07-24"
         }
       ]
     },
@@ -1211,7 +1211,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-07-23",
+      "lastUpdated": "2026-07-24",
       "area": "Banff Area"
     },
     {
@@ -1220,7 +1220,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Deadfall on trail; Wet and muddy sections; Biking excluding e-bikes is allowed",
-      "lastUpdated": "2026-07-23",
+      "lastUpdated": "2026-07-24",
       "area": "Banff Area"
     },
     {
@@ -1229,7 +1229,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-07-23",
+      "lastUpdated": "2026-07-24",
       "area": "Banff Area"
     },
     {
@@ -1238,7 +1238,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-23",
+      "lastUpdated": "2026-07-24",
       "area": "Banff Area"
     },
     {
@@ -1247,7 +1247,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-23",
+      "lastUpdated": "2026-07-24",
       "area": "Banff Area"
     },
     {
@@ -1256,7 +1256,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-23",
+      "lastUpdated": "2026-07-24",
       "area": "Banff Area"
     },
     {
