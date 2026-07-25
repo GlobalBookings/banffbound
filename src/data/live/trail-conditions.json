@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25T07:52:06.396Z",
+  "updatedAt": "2026-07-25T09:29:32.064Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1742,14 +1742,14 @@
       "ends": ""
     },
     {
-      "title": "AREA CLOSURE: - Fairholme",
-      "type": "AREA CLOSURE",
+      "title": "Area Closure: s For Wildlife",
+      "type": "Area Closure",
       "issued": "",
       "ends": ""
     },
     {
-      "title": "Area Closure: s For Wildlife",
-      "type": "Area Closure",
+      "title": "AREA CLOSURE: - Fairholme",
+      "type": "AREA CLOSURE",
       "issued": "",
       "ends": ""
     },
@@ -1760,13 +1760,13 @@
       "ends": ""
     },
     {
-      "title": "AREA CLOSURE: Middle Springs Wildlife Corridor and Banff Springs Snail Critical Habitat",
+      "title": "AREA CLOSURE: Banff Springs Snail Critical Habitat",
       "type": "AREA CLOSURE",
       "issued": "",
       "ends": ""
     },
     {
-      "title": "AREA CLOSURE: Banff Springs Snail Critical Habitat",
+      "title": "AREA CLOSURE: Middle Springs Wildlife Corridor and Banff Springs Snail Critical Habitat",
       "type": "AREA CLOSURE",
       "issued": "",
       "ends": ""
