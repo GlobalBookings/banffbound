@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-28T19:09:58.015Z",
+  "updatedAt": "2026-07-28T21:00:04.670Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -17,7 +17,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-07-27"
+          "lastUpdated": "2026-07-28"
         },
         {
           "name": "Marsh Trail",
@@ -815,7 +815,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-07-27",
+      "lastUpdated": "2026-07-28",
       "area": "Banff Area"
     },
     {
@@ -1693,6 +1693,18 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Area Closure: Lake Minnewanka campgrounds Lm8, Lm9, Lm11, Lm20, Lm22, Lm31",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
+    {
+      "title": "Warning: Skoki trails",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Area Closure: Spray Wildfire Risk Reduction Project",
       "type": "Area Closure",
