@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-07-29T08:23:26.364Z",
+  "updatedAt": "2026-07-29T11:54:54.164Z",
   "banff": {
     "current": {
-      "temp": 13,
+      "temp": 11,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 46,
-      "wind": "6 km/h"
+      "humidity": 49,
+      "wind": "8 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 24,
-        "low": 10,
+        "low": 11,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -26,7 +26,7 @@
       {
         "day": "Friday",
         "high": 28,
-        "low": 13,
+        "low": 12,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -34,31 +34,31 @@
         "day": "Saturday",
         "high": 30,
         "low": 14,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Partly cloudy",
+        "icon": "⛅"
       },
       {
         "day": "Sunday",
-        "high": 19,
-        "low": 9,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
+        "high": 21,
+        "low": 8,
+        "condition": "Overcast",
+        "icon": "☁️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 10,
+      "temp": 9,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 76,
-      "wind": "7 km/h"
+      "humidity": 71,
+      "wind": "15 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 20,
-        "low": 6,
+        "low": 8,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -71,7 +71,7 @@
       },
       {
         "day": "Friday",
-        "high": 26,
+        "high": 27,
         "low": 12,
         "condition": "Overcast",
         "icon": "☁️"
@@ -79,14 +79,14 @@
       {
         "day": "Saturday",
         "high": 27,
-        "low": 14,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "low": 12,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Sunday",
-        "high": 15,
-        "low": 8,
+        "high": 18,
+        "low": 7,
         "condition": "Light drizzle",
         "icon": "🌦️"
       }
