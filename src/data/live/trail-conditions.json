@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T19:11:22.254Z",
+  "updatedAt": "2026-07-30T20:57:29.634Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1693,6 +1693,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Warning: Lake Minnewanka Loop",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Area Closure: Lake Minnewanka campgrounds Lm8, Lm9, Lm11, Lm20, Lm22, Lm31",
       "type": "Area Closure",
