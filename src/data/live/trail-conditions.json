@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T19:11:24.474Z",
+  "updatedAt": "2026-07-31T20:55:22.338Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -177,7 +177,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry; Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Banff Avenue Trail",
@@ -185,7 +185,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Surprise Corner to Hoodoos Trail",
@@ -193,7 +193,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Adhere to all posted warnings and closures along trails; Stay on trail; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Sundance Canyon Loop",
@@ -201,15 +201,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "C-Level Cirque Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Mainly dry; Compact snow",
-          "lastUpdated": "2026-07-30"
+          "comment": "Stay on designated trails and viewpoints; Mainly dry",
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Tunnel Bench Loop",
@@ -217,7 +217,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Lake Minnewanka Road",
@@ -233,7 +233,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry; Stay on trail",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Ink Pots Trail",
@@ -241,15 +241,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on trail; Wet and muddy sections; Bridge washed out past the Ink Pots toward Jo9 campground",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Brewster Creek Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Poor.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections; Flooded sections",
-          "lastUpdated": "2026-07-30"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy",
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Bourgeau Lake Trail",
@@ -257,7 +257,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Healy Pass Trail",
@@ -303,9 +303,9 @@
           "name": "Harvey Pass Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Snow patches; Deadfall on trail",
-          "lastUpdated": "2026-07-30"
+          "condition": "Good.",
+          "comment": "Deadfall on trail; Mainly dry",
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Goat Creek Trail",
@@ -995,7 +995,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry; Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1004,7 +1004,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1013,7 +1013,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Adhere to all posted warnings and closures along trails; Stay on trail; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1022,7 +1022,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1030,8 +1030,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Mainly dry; Compact snow",
-      "lastUpdated": "2026-07-30",
+      "comment": "Stay on designated trails and viewpoints; Mainly dry",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1040,7 +1040,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1058,7 +1058,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry; Stay on trail",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1067,7 +1067,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on trail; Wet and muddy sections; Bridge washed out past the Ink Pots toward Jo9 campground",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1075,8 +1075,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Poor.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections; Flooded sections",
-      "lastUpdated": "2026-07-30",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1085,7 +1085,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1137,9 +1137,9 @@
       "name": "Harvey Pass Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Snow patches; Deadfall on trail",
-      "lastUpdated": "2026-07-30",
+      "condition": "Good.",
+      "comment": "Deadfall on trail; Mainly dry",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
