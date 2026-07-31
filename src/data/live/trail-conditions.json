@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T20:55:22.338Z",
+  "updatedAt": "2026-07-31T22:52:47.551Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -265,15 +265,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Redearth Creek Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Fair.",
+          "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Cascade Amphitheatre Trail",
@@ -281,7 +281,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on trail; Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Rockbound Lake Trail",
@@ -289,7 +289,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Avalanche debris on trail; Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Arnica Lake Trail",
@@ -297,7 +297,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Harvey Pass Trail",
@@ -313,7 +313,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "No access through Spray Lakes Road/Smith-Dorien Trail; Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Bow Valley Parkway",
@@ -321,7 +321,7 @@
           "status": "open",
           "condition": "Open.",
           "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
@@ -329,7 +329,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Mainly dry; Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
@@ -1094,16 +1094,16 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
       "name": "Redearth Creek Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Fair.",
+      "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1112,7 +1112,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on trail; Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1121,7 +1121,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Avalanche debris on trail; Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1130,7 +1130,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1148,7 +1148,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "No access through Spray Lakes Road/Smith-Dorien Trail; Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1157,7 +1157,7 @@
       "status": "open",
       "condition": "Open.",
       "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -1166,7 +1166,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Mainly dry; Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
