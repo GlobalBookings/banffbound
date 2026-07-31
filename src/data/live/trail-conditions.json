@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T13:43:29.561Z",
+  "updatedAt": "2026-07-31T15:57:19.596Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -17,7 +17,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Marsh Trail",
@@ -25,7 +25,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Heavy horse use; Mainly dry; Biking excluding e-bikes is allowed",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Silverton Falls Trail",
@@ -33,7 +33,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Johnson Lake Loop",
@@ -41,7 +41,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
@@ -49,7 +49,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-          "lastUpdated": "2026-07-30"
+          "lastUpdated": "2026-07-31"
         },
         {
           "name": "Vermilion Lakes Drive",
@@ -815,7 +815,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -824,7 +824,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Heavy horse use; Mainly dry; Biking excluding e-bikes is allowed",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -833,7 +833,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -842,7 +842,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
@@ -851,7 +851,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Mainly dry",
-      "lastUpdated": "2026-07-30",
+      "lastUpdated": "2026-07-31",
       "area": "Banff Area"
     },
     {
