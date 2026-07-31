@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T17:21:23.683Z",
+  "updatedAt": "2026-07-31T19:11:24.474Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -468,8 +468,8 @@
           "name": "Paradise Connector",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Poor.",
-          "comment": "Deadfall on trail; Wet and muddy",
+          "condition": "Good.",
+          "comment": "Stay on designated trails and viewpoints",
           "lastUpdated": "2026-07-31"
         },
         {
@@ -660,8 +660,8 @@
           "name": "Sheol/Paradise Connector Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Deadfall on trail",
+          "condition": "Good.",
+          "comment": "Stay on designated trails and viewpoints",
           "lastUpdated": "2026-07-31"
         },
         {
@@ -1317,8 +1317,8 @@
       "name": "Paradise Connector",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Poor.",
-      "comment": "Deadfall on trail; Wet and muddy",
+      "condition": "Good.",
+      "comment": "Stay on designated trails and viewpoints",
       "lastUpdated": "2026-07-31",
       "area": "Lake Louise Area"
     },
@@ -1533,8 +1533,8 @@
       "name": "Sheol/Paradise Connector Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Deadfall on trail",
+      "condition": "Good.",
+      "comment": "Stay on designated trails and viewpoints",
       "lastUpdated": "2026-07-31",
       "area": "Lake Louise Area"
     },
