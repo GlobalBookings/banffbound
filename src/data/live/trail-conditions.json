@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T18:57:06.710Z",
+  "updatedAt": "2026-08-02T20:43:42.219Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -408,7 +408,7 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
+          "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information; Numerous trees down on trail",
           "lastUpdated": "2026-08-02"
         }
       ]
@@ -1255,7 +1255,7 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information",
+      "comment": "Mainly dry; Bear warning in effect; Check the important bulletins for more information; Numerous trees down on trail",
       "lastUpdated": "2026-08-02",
       "area": "Banff Area"
     },
