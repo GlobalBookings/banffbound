@@ -1,31 +1,24 @@
 {
-  "updatedAt": "2026-08-03T05:42:04.065Z",
+  "updatedAt": "2026-08-03T09:24:54.969Z",
   "banff": {
     "current": {
-      "temp": 10,
+      "temp": 8,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 52,
-      "wind": "9 km/h"
+      "humidity": 61,
+      "wind": "8 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 16,
-        "low": 9,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Monday",
-        "high": 18,
+        "high": 17,
         "low": 6,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Tuesday",
-        "high": 22,
+        "high": 19,
         "low": 7,
         "condition": "Overcast",
         "icon": "☁️"
@@ -43,35 +36,35 @@
         "low": 11,
         "condition": "Overcast",
         "icon": "☁️"
+      },
+      {
+        "day": "Friday",
+        "high": 29,
+        "low": 11,
+        "condition": "Overcast",
+        "icon": "☁️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 7,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 83,
-      "wind": "22 km/h"
+      "temp": 4,
+      "condition": "Mainly clear",
+      "icon": "🌤️",
+      "humidity": 85,
+      "wind": "7 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 12,
-        "low": 7,
-        "condition": "Moderate snowfall",
-        "icon": "🌨️"
-      },
-      {
-        "day": "Monday",
-        "high": 15,
+        "high": 14,
         "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Tuesday",
-        "high": 20,
+        "high": 17,
         "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
@@ -85,6 +78,13 @@
       },
       {
         "day": "Thursday",
+        "high": 27,
+        "low": 11,
+        "condition": "Overcast",
+        "icon": "☁️"
+      },
+      {
+        "day": "Friday",
         "high": 27,
         "low": 11,
         "condition": "Overcast",
