@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T17:30:07.197Z",
+  "updatedAt": "2026-08-04T19:20:02.663Z",
   "highways": [
     {
       "name": "Trans-Canada Highway (Hwy 1)",
@@ -8,7 +8,7 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 2,
-      "lastUpdated": 1780840184
+      "lastUpdated": 1785868074
     },
     {
       "name": "Bow Valley Parkway (Hwy 1A)",
@@ -17,7 +17,7 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 2,
-      "lastUpdated": 1780840184
+      "lastUpdated": 1785868074
     },
     {
       "name": "Icefields Parkway (Hwy 93N)",
@@ -44,16 +44,16 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 3,
-      "lastUpdated": 1780840184
+      "lastUpdated": 1785868074
     },
     {
       "name": "Golf Course Road",
       "number": "",
-      "status": "No Report",
-      "conditions": "No Report",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
       "advisory": "",
       "segments": 1,
-      "lastUpdated": 1783519127
+      "lastUpdated": 1785868074
     }
   ],
   "source": "https://511.alberta.ca"
