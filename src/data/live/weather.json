@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-03T22:53:38.037Z",
+  "updatedAt": "2026-08-04T01:44:35.754Z",
   "banff": {
     "current": {
-      "temp": 18,
+      "temp": 17,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 31,
-      "wind": "14 km/h"
+      "humidity": 34,
+      "wind": "10 km/h"
     },
     "forecast": [
       {
@@ -19,7 +19,7 @@
       {
         "day": "Tuesday",
         "high": 21,
-        "low": 6,
+        "low": 7,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -27,12 +27,12 @@
         "day": "Wednesday",
         "high": 26,
         "low": 9,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Partly cloudy",
+        "icon": "⛅"
       },
       {
         "day": "Thursday",
-        "high": 30,
+        "high": 29,
         "low": 10,
         "condition": "Overcast",
         "icon": "☁️"
@@ -40,7 +40,7 @@
       {
         "day": "Friday",
         "high": 28,
-        "low": 11,
+        "low": 12,
         "condition": "Light drizzle",
         "icon": "🌦️"
       }
@@ -48,16 +48,16 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 14,
-      "condition": "Mainly clear",
-      "icon": "🌤️",
-      "humidity": 50,
-      "wind": "11 km/h"
+      "temp": 13,
+      "condition": "Clear sky",
+      "icon": "☀️",
+      "humidity": 49,
+      "wind": "8 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 14,
+        "high": 15,
         "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
@@ -65,7 +65,7 @@
       {
         "day": "Tuesday",
         "high": 18,
-        "low": 4,
+        "low": 5,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -79,16 +79,16 @@
       {
         "day": "Thursday",
         "high": 26,
-        "low": 11,
+        "low": 10,
         "condition": "Clear sky",
         "icon": "☀️"
       },
       {
         "day": "Friday",
         "high": 26,
-        "low": 12,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
+        "low": 11,
+        "condition": "Dense drizzle",
+        "icon": "🌧️"
       }
     ]
   }
