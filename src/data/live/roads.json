@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T11:57:03.019Z",
+  "updatedAt": "2026-08-04T14:01:18.293Z",
   "highways": [
     {
       "name": "Trans-Canada Highway (Hwy 1)",
@@ -35,7 +35,7 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 1,
-      "lastUpdated": 1785761692
+      "lastUpdated": 1785847678
     },
     {
       "name": "Lake Minnewanka Road",
