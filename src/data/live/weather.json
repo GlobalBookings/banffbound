@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-05T20:58:35.103Z",
+  "updatedAt": "2026-08-05T22:49:56.290Z",
   "banff": {
     "current": {
       "temp": 24,
-      "condition": "Overcast",
-      "icon": "☁️",
+      "condition": "Mainly clear",
+      "icon": "🌤️",
       "humidity": 19,
-      "wind": "13 km/h"
+      "wind": "18 km/h"
     },
     "forecast": [
       {
@@ -51,13 +51,13 @@
       "temp": 20,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 41,
-      "wind": "15 km/h"
+      "humidity": 39,
+      "wind": "14 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 21,
+        "high": 20,
         "low": 8,
         "condition": "Overcast",
         "icon": "☁️"
