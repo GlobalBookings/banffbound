@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-05T15:55:10.218Z",
+  "updatedAt": "2026-08-05T17:21:55.682Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1693,6 +1693,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Warning: Rampart Creek Campground",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Warning: Lake Minnewanka Loop",
       "type": "Warning",
