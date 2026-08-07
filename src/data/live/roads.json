@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-07T02:11:00.793Z",
+  "updatedAt": "2026-08-07T05:28:00.920Z",
   "highways": [
     {
       "name": "Trans-Canada Highway (Hwy 1)",
@@ -26,7 +26,7 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 6,
-      "lastUpdated": 1786042557
+      "lastUpdated": 1786071075
     },
     {
       "name": "Hwy 93 South (Kootenay)",
@@ -35,7 +35,7 @@
       "conditions": "Bare Dry",
       "advisory": "",
       "segments": 1,
-      "lastUpdated": 1786042917
+      "lastUpdated": 1786071081
     },
     {
       "name": "Lake Minnewanka Road",
