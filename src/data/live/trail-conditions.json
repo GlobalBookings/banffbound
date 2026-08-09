@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T22:19:30.634Z",
+  "updatedAt": "2026-08-09T01:02:10.643Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -715,7 +715,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
-          "lastUpdated": "2026-07-31"
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "Cirque Lake Trail",
@@ -731,7 +731,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy; Potential stream crossings; Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-07-31"
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "Parker Ridge Trail",
@@ -739,7 +739,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-07-31"
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "Nigel Pass Trail",
@@ -747,39 +747,39 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-07-31"
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "Dolomite Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Stay on designated trails and viewpoints; Wet and muddy sections; Snow at high elevation",
-          "lastUpdated": "2026-07-31"
+          "comment": "Stay on designated trails and viewpoints; Wet and muddy sections",
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "Glacier Lake Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry; Deadfall on trail",
-          "lastUpdated": "2026-07-31"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Caution.",
-          "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections; Snow patches",
-          "lastUpdated": "2026-07-31"
+          "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "North Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Caution.",
-          "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections; Snow patches",
-          "lastUpdated": "2026-07-31"
+          "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "Sunset Pass Trail",
@@ -787,7 +787,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Trail is in good condition",
-          "lastUpdated": "2026-07-31"
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "Sarbach Lookout Trail",
@@ -795,7 +795,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Trail is in good condition",
-          "lastUpdated": "2026-07-31"
+          "lastUpdated": "2026-08-08"
         },
         {
           "name": "Sunset Lookout Trail",
@@ -803,7 +803,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Numerous trees down on trail; Not recommended",
-          "lastUpdated": "2026-07-31"
+          "lastUpdated": "2026-08-08"
         }
       ]
     }
@@ -1589,7 +1589,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
-      "lastUpdated": "2026-07-31",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1607,7 +1607,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy; Potential stream crossings; Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-07-31",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1616,7 +1616,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-07-31",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1625,7 +1625,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-07-31",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1633,8 +1633,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Stay on designated trails and viewpoints; Wet and muddy sections; Snow at high elevation",
-      "lastUpdated": "2026-07-31",
+      "comment": "Stay on designated trails and viewpoints; Wet and muddy sections",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1642,8 +1642,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry; Deadfall on trail",
-      "lastUpdated": "2026-07-31",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1651,8 +1651,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Caution.",
-      "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections; Snow patches",
-      "lastUpdated": "2026-07-31",
+      "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1660,8 +1660,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Caution.",
-      "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections; Snow patches",
-      "lastUpdated": "2026-07-31",
+      "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1670,7 +1670,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Trail is in good condition",
-      "lastUpdated": "2026-07-31",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1679,7 +1679,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Trail is in good condition",
-      "lastUpdated": "2026-07-31",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1688,7 +1688,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Numerous trees down on trail; Not recommended",
-      "lastUpdated": "2026-07-31",
+      "lastUpdated": "2026-08-08",
       "area": "Icefields Parkway Area"
     }
   ],
