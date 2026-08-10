@@ -1,6 +1,60 @@
 {
-  "updatedAt": "2026-08-10T18:43:33.765Z",
-  "highways": [],
-  "source": "https://511.alberta.ca",
-  "error": "API returned 403"
+  "updatedAt": "2026-08-10T20:32:37.486Z",
+  "highways": [
+    {
+      "name": "Trans-Canada Highway (Hwy 1)",
+      "number": "1",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 2,
+      "lastUpdated": 1786064952
+    },
+    {
+      "name": "Bow Valley Parkway (Hwy 1A)",
+      "number": "1A",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 2,
+      "lastUpdated": 1786064952
+    },
+    {
+      "name": "Icefields Parkway (Hwy 93N)",
+      "number": "93N",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 6,
+      "lastUpdated": 1786071075
+    },
+    {
+      "name": "Hwy 93 South (Kootenay)",
+      "number": "93S",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 1,
+      "lastUpdated": 1786071081
+    },
+    {
+      "name": "Lake Minnewanka Road",
+      "number": "",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 3,
+      "lastUpdated": 1786064952
+    },
+    {
+      "name": "Golf Course Road",
+      "number": "",
+      "status": "Bare Dry",
+      "conditions": "Bare Dry",
+      "advisory": "",
+      "segments": 1,
+      "lastUpdated": 1786064952
+    }
+  ],
+  "source": "https://511.alberta.ca"
 }
