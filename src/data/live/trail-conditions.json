@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T20:35:47.616Z",
+  "updatedAt": "2026-08-11T22:33:06.334Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -422,7 +422,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Mainly ",
-          "lastUpdated": "2026-08-08"
+          "lastUpdated": "2026-08-11"
         },
         {
           "name": "Consolation Lakes Trail",
@@ -430,7 +430,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-08-08"
+          "lastUpdated": "2026-08-11"
         },
         {
           "name": "Fairview Lookout Trail",
@@ -438,7 +438,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-08-08"
+          "lastUpdated": "2026-08-11"
         },
         {
           "name": "Great Divide",
@@ -446,7 +446,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Be Bear Aware; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-08-08"
+          "lastUpdated": "2026-08-11"
         },
         {
           "name": "Lake Louise Lakeshore Trail",
@@ -454,7 +454,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-08-08"
+          "lastUpdated": "2026-08-11"
         },
         {
           "name": "Moraine Lake Lakeshore Trail",
@@ -462,7 +462,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-          "lastUpdated": "2026-08-08"
+          "lastUpdated": "2026-08-11"
         },
         {
           "name": "Paradise Connector Trail",
@@ -612,17 +612,17 @@
           "name": "Hidden Lake Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Mainly dry",
-          "lastUpdated": "2026-08-08"
+          "condition": "Good.",
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-11"
         },
         {
           "name": "Deception Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Mainly dry",
-          "lastUpdated": "2026-08-08"
+          "condition": "Good.",
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-11"
         },
         {
           "name": "Paradise Valley and Giant Steps Trail",
@@ -1265,7 +1265,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Mainly ",
-      "lastUpdated": "2026-08-08",
+      "lastUpdated": "2026-08-11",
       "area": "Lake Louise Area"
     },
     {
@@ -1274,7 +1274,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-08-08",
+      "lastUpdated": "2026-08-11",
       "area": "Lake Louise Area"
     },
     {
@@ -1283,7 +1283,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-08-08",
+      "lastUpdated": "2026-08-11",
       "area": "Lake Louise Area"
     },
     {
@@ -1292,7 +1292,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Be Bear Aware; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-08-08",
+      "lastUpdated": "2026-08-11",
       "area": "Lake Louise Area"
     },
     {
@@ -1301,7 +1301,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-08-08",
+      "lastUpdated": "2026-08-11",
       "area": "Lake Louise Area"
     },
     {
@@ -1310,7 +1310,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-      "lastUpdated": "2026-08-08",
+      "lastUpdated": "2026-08-11",
       "area": "Lake Louise Area"
     },
     {
@@ -1479,18 +1479,18 @@
       "name": "Hidden Lake Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Mainly dry",
-      "lastUpdated": "2026-08-08",
+      "condition": "Good.",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-11",
       "area": "Lake Louise Area"
     },
     {
       "name": "Deception Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Mainly dry",
-      "lastUpdated": "2026-08-08",
+      "condition": "Good.",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-11",
       "area": "Lake Louise Area"
     },
     {
