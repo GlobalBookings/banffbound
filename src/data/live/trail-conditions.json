@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T16:48:37.565Z",
+  "updatedAt": "2026-08-11T18:49:44.961Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -441,7 +441,7 @@
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Great Divide Trail",
+          "name": "Great Divide",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
@@ -457,7 +457,7 @@
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Moraine Lakeshore Trail",
+          "name": "Moraine Lake Lakeshore Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
@@ -465,15 +465,15 @@
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Paradise Connector",
-          "difficulty": "Easy",
+          "name": "Paradise Connector Trail",
+          "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Rockpile Trail",
+          "name": "Rockpile Loop",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Please respect all posted notices and signs.",
@@ -489,7 +489,7 @@
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Big Beehive Trail",
+          "name": "Big Beehive",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
@@ -545,7 +545,7 @@
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Little Beehive Trail",
+          "name": "Little Beehive",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
@@ -561,7 +561,7 @@
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Pipestone Trail",
+          "name": "Pipestone",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
@@ -601,7 +601,7 @@
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Moraine Lake Highline Trail",
+          "name": "Moraine Lake Highline",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Fair.",
@@ -657,7 +657,7 @@
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Sheol/Paradise Connector Trail",
+          "name": "Sheol / Paradise Connector Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
@@ -678,7 +678,7 @@
       "area": "Icefields Parkway Area",
       "trails": [
         {
-          "name": "Bow Summit Lookout Trail",
+          "name": "Bow Summit Viewpoint Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Fair.",
@@ -694,7 +694,7 @@
           "lastUpdated": "2026-08-08"
         },
         {
-          "name": "Peyto Lake Viewpoint Trail",
+          "name": "Peyto Lake Lookout Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Please respect all posted notices and signs.",
@@ -1287,7 +1287,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Great Divide Trail",
+      "name": "Great Divide",
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
@@ -1305,7 +1305,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Moraine Lakeshore Trail",
+      "name": "Moraine Lake Lakeshore Trail",
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
@@ -1314,8 +1314,8 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Paradise Connector",
-      "difficulty": "Easy",
+      "name": "Paradise Connector Trail",
+      "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
@@ -1323,7 +1323,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Rockpile Trail",
+      "name": "Rockpile Loop",
       "difficulty": "Easy",
       "status": "open",
       "condition": "Please respect all posted notices and signs.",
@@ -1341,7 +1341,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Big Beehive Trail",
+      "name": "Big Beehive",
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
@@ -1404,7 +1404,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Little Beehive Trail",
+      "name": "Little Beehive",
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
@@ -1422,7 +1422,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Pipestone Trail",
+      "name": "Pipestone",
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
@@ -1467,7 +1467,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Moraine Lake Highline Trail",
+      "name": "Moraine Lake Highline",
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Fair.",
@@ -1530,7 +1530,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Sheol/Paradise Connector Trail",
+      "name": "Sheol / Paradise Connector Trail",
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
@@ -1548,7 +1548,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Bow Summit Lookout Trail",
+      "name": "Bow Summit Viewpoint Trail",
       "difficulty": "Easy",
       "status": "open",
       "condition": "Fair.",
@@ -1566,7 +1566,7 @@
       "area": "Icefields Parkway Area"
     },
     {
-      "name": "Peyto Lake Viewpoint Trail",
+      "name": "Peyto Lake Lookout Trail",
       "difficulty": "Easy",
       "status": "open",
       "condition": "Please respect all posted notices and signs.",
