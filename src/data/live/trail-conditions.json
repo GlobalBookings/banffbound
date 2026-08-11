@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T12:42:54.832Z",
+  "updatedAt": "2026-08-11T14:50:31.200Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -381,7 +381,7 @@
         },
         {
           "name": "The Toe",
-          "difficulty": "Moderate",
+          "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed",
@@ -1225,7 +1225,7 @@
     },
     {
       "name": "The Toe",
-      "difficulty": "Moderate",
+      "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry; Biking including pedal-assist e-bikes is allowed",
