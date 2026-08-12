@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T12:47:45.640Z",
+  "updatedAt": "2026-08-12T14:50:45.393Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1693,6 +1693,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Warning: Lake Louise Village",
+      "type": "Warning",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Warning: Rampart Creek Campground",
       "type": "Warning",
