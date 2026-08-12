@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T01:10:37.659Z",
+  "updatedAt": "2026-08-12T03:56:52.650Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1708,12 +1708,6 @@
     {
       "title": "Area Closure: Lake Minnewanka campgrounds Lm8, Lm9, Lm11, Lm20, Lm22, Lm31",
       "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Warning: Skoki trails",
-      "type": "Warning",
       "issued": "",
       "ends": ""
     },
