@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T20:22:45.856Z",
+  "updatedAt": "2026-08-14T22:13:34.832Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -240,8 +240,8 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground",
-          "lastUpdated": "2026-08-13"
+          "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground; Wet and muddy sections",
+          "lastUpdated": "2026-08-14"
         },
         {
           "name": "Brewster Creek Trail",
@@ -249,15 +249,15 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-          "lastUpdated": "2026-08-13"
+          "lastUpdated": "2026-08-14"
         },
         {
           "name": "Bourgeau Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-13"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-14"
         },
         {
           "name": "Healy Pass Trail",
@@ -1066,8 +1066,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground",
-      "lastUpdated": "2026-08-13",
+      "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground; Wet and muddy sections",
+      "lastUpdated": "2026-08-14",
       "area": "Banff Area"
     },
     {
@@ -1076,7 +1076,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-      "lastUpdated": "2026-08-13",
+      "lastUpdated": "2026-08-14",
       "area": "Banff Area"
     },
     {
@@ -1084,8 +1084,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-13",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-14",
       "area": "Banff Area"
     },
     {
