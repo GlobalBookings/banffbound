@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T14:13:26.604Z",
+  "updatedAt": "2026-08-15T16:13:59.421Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -17,7 +17,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-08-14"
+          "lastUpdated": "2026-08-15"
         },
         {
           "name": "Marsh Trail",
@@ -25,7 +25,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-08-14"
+          "lastUpdated": "2026-08-15"
         },
         {
           "name": "Silverton Falls Trail",
@@ -33,7 +33,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-14"
+          "lastUpdated": "2026-08-15"
         },
         {
           "name": "Johnson Lake Loop",
@@ -41,7 +41,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-14"
+          "lastUpdated": "2026-08-15"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
@@ -815,7 +815,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-08-14",
+      "lastUpdated": "2026-08-15",
       "area": "Banff Area"
     },
     {
@@ -824,7 +824,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-08-14",
+      "lastUpdated": "2026-08-15",
       "area": "Banff Area"
     },
     {
@@ -833,7 +833,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-14",
+      "lastUpdated": "2026-08-15",
       "area": "Banff Area"
     },
     {
@@ -842,7 +842,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-14",
+      "lastUpdated": "2026-08-15",
       "area": "Banff Area"
     },
     {
