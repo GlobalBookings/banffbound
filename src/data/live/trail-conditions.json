@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T14:14:12.078Z",
+  "updatedAt": "2026-08-16T16:14:15.466Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -17,7 +17,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-08-15"
+          "lastUpdated": "2026-08-16"
         },
         {
           "name": "Marsh Trail",
@@ -25,7 +25,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-08-15"
+          "lastUpdated": "2026-08-16"
         },
         {
           "name": "Silverton Falls Trail",
@@ -33,7 +33,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-15"
+          "lastUpdated": "2026-08-16"
         },
         {
           "name": "Johnson Lake Loop",
@@ -41,7 +41,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-15"
+          "lastUpdated": "2026-08-16"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
@@ -57,7 +57,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-08-15"
+          "lastUpdated": "2026-08-16"
         },
         {
           "name": "Tunnel Campground Loop",
@@ -65,7 +65,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-08-15"
+          "lastUpdated": "2026-08-16"
         },
         {
           "name": "Sundance Trail",
@@ -73,7 +73,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-          "lastUpdated": "2026-08-15"
+          "lastUpdated": "2026-08-16"
         },
         {
           "name": "Golf Course Road",
@@ -81,15 +81,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-08-15"
+          "lastUpdated": "2026-08-16"
         },
         {
           "name": "Johnston Canyon Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet and muddy sections",
-          "lastUpdated": "2026-08-15"
+          "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-08-16"
         },
         {
           "name": "Boom Lake Trail",
@@ -815,7 +815,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-08-15",
+      "lastUpdated": "2026-08-16",
       "area": "Banff Area"
     },
     {
@@ -824,7 +824,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-08-15",
+      "lastUpdated": "2026-08-16",
       "area": "Banff Area"
     },
     {
@@ -833,7 +833,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-15",
+      "lastUpdated": "2026-08-16",
       "area": "Banff Area"
     },
     {
@@ -842,7 +842,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-15",
+      "lastUpdated": "2026-08-16",
       "area": "Banff Area"
     },
     {
@@ -860,7 +860,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-08-15",
+      "lastUpdated": "2026-08-16",
       "area": "Banff Area"
     },
     {
@@ -869,7 +869,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-08-15",
+      "lastUpdated": "2026-08-16",
       "area": "Banff Area"
     },
     {
@@ -878,7 +878,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-      "lastUpdated": "2026-08-15",
+      "lastUpdated": "2026-08-16",
       "area": "Banff Area"
     },
     {
@@ -887,7 +887,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-08-15",
+      "lastUpdated": "2026-08-16",
       "area": "Banff Area"
     },
     {
@@ -895,8 +895,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet and muddy sections",
-      "lastUpdated": "2026-08-15",
+      "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-08-16",
       "area": "Banff Area"
     },
     {
