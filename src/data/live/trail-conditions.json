@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T20:16:10.341Z",
+  "updatedAt": "2026-08-17T22:14:47.536Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -393,7 +393,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Wet and muddy sections; Numerous trees down on trail",
-          "lastUpdated": "2026-08-16"
+          "lastUpdated": "2026-08-17"
         },
         {
           "name": "Aylmer Lookout Trail",
@@ -401,7 +401,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-          "lastUpdated": "2026-08-16"
+          "lastUpdated": "2026-08-17"
         },
         {
           "name": "Aylmer Pass Trail",
@@ -409,7 +409,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-          "lastUpdated": "2026-08-16"
+          "lastUpdated": "2026-08-17"
         }
       ]
     },
@@ -1238,7 +1238,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Wet and muddy sections; Numerous trees down on trail",
-      "lastUpdated": "2026-08-16",
+      "lastUpdated": "2026-08-17",
       "area": "Banff Area"
     },
     {
@@ -1247,7 +1247,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-      "lastUpdated": "2026-08-16",
+      "lastUpdated": "2026-08-17",
       "area": "Banff Area"
     },
     {
@@ -1256,7 +1256,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-      "lastUpdated": "2026-08-16",
+      "lastUpdated": "2026-08-17",
       "area": "Banff Area"
     },
     {
