@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-18T22:13:04.842Z",
+  "updatedAt": "2026-08-19T00:42:48.718Z",
   "banff": {
     "current": {
-      "temp": 23,
+      "temp": 22,
       "condition": "Mainly clear",
       "icon": "🌤️",
-      "humidity": 36,
-      "wind": "22 km/h"
+      "humidity": 42,
+      "wind": "19 km/h"
     },
     "forecast": [
       {
@@ -19,7 +19,7 @@
       {
         "day": "Wednesday",
         "high": 24,
-        "low": 11,
+        "low": 13,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -27,37 +27,37 @@
         "day": "Thursday",
         "high": 27,
         "low": 11,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Friday",
         "high": 29,
-        "low": 12,
+        "low": 13,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Saturday",
-        "high": 26,
-        "low": 12,
-        "condition": "Slight rain showers",
-        "icon": "🌦️"
+        "high": 28,
+        "low": 14,
+        "condition": "Moderate rain showers",
+        "icon": "🌧️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 19,
+      "temp": 18,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 57,
-      "wind": "16 km/h"
+      "humidity": 62,
+      "wind": "15 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 20,
+        "high": 19,
         "low": 9,
         "condition": "Overcast",
         "icon": "☁️"
@@ -65,20 +65,20 @@
       {
         "day": "Wednesday",
         "high": 21,
-        "low": 8,
+        "low": 9,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Thursday",
-        "high": 25,
+        "high": 24,
         "low": 9,
         "condition": "Light drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Friday",
-        "high": 27,
+        "high": 26,
         "low": 12,
         "condition": "Overcast",
         "icon": "☁️"
@@ -86,8 +86,8 @@
       {
         "day": "Saturday",
         "high": 24,
-        "low": 11,
-        "condition": "Slight rain",
+        "low": 13,
+        "condition": "Slight rain showers",
         "icon": "🌦️"
       }
     ]
