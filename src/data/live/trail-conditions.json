@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T18:20:52.151Z",
+  "updatedAt": "2026-08-19T20:17:10.210Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1692,103 +1692,6 @@
       "area": "Icefields Parkway Area"
     }
   ],
-  "advisories": [
-    {
-      "title": "Warning: Lake Louise Village",
-      "type": "Warning",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Warning: Rampart Creek Campground",
-      "type": "Warning",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Warning: Lake Minnewanka Loop",
-      "type": "Warning",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: Lake Minnewanka campgrounds Lm8, Lm9, Lm11, Lm20, Lm22, Lm31",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: Spray Wildfire Risk Reduction Project",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: Hillsdale Split",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Advisory: Berry Season",
-      "type": "Advisory",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Warning: Lake Minnewanka Trail and Campgrounds",
-      "type": "Warning",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: Rundle Rock",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: Cascade Valley Trail",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: - Lake Louise Area Trails",
-      "type": "AREA CLOSURE",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: s For Wildlife",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: - Fairholme",
-      "type": "AREA CLOSURE",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: - Wildlife crossing structures",
-      "type": "AREA CLOSURE",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: Banff Springs Snail Critical Habitat",
-      "type": "AREA CLOSURE",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: Middle Springs Wildlife Corridor and Banff Springs Snail Critical Habitat",
-      "type": "AREA CLOSURE",
-      "issued": "",
-      "ends": ""
-    }
-  ],
+  "advisories": [],
   "source": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions"
 }
