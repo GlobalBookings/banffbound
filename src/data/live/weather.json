@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-08-22T22:12:33.662Z",
+  "updatedAt": "2026-08-23T00:47:09.406Z",
   "banff": {
     "current": {
-      "temp": 27,
-      "condition": "Clear sky",
-      "icon": "☀️",
-      "humidity": 26,
-      "wind": "11 km/h"
+      "temp": 26,
+      "condition": "Partly cloudy",
+      "icon": "⛅",
+      "humidity": 32,
+      "wind": "14 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 27,
+        "high": 29,
         "low": 9,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Moderate rain",
+        "icon": "🌧️"
       },
       {
         "day": "Sunday",
@@ -25,7 +25,7 @@
       },
       {
         "day": "Monday",
-        "high": 21,
+        "high": 23,
         "low": 8,
         "condition": "Overcast",
         "icon": "☁️"
@@ -41,37 +41,37 @@
         "day": "Wednesday",
         "high": 29,
         "low": 12,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Slight rain showers",
+        "icon": "🌦️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 24,
-      "condition": "Clear sky",
-      "icon": "☀️",
-      "humidity": 41,
-      "wind": "18 km/h"
+      "temp": 22,
+      "condition": "Overcast",
+      "icon": "☁️",
+      "humidity": 47,
+      "wind": "12 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 25,
+        "high": 24,
         "low": 13,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Sunday",
-        "high": 16,
-        "low": 9,
+        "high": 15,
+        "low": 10,
         "condition": "Moderate rain",
         "icon": "🌧️"
       },
       {
         "day": "Monday",
-        "high": 20,
+        "high": 19,
         "low": 6,
         "condition": "Light drizzle",
         "icon": "🌦️"
@@ -80,8 +80,8 @@
         "day": "Tuesday",
         "high": 24,
         "low": 10,
-        "condition": "Clear sky",
-        "icon": "☀️"
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Wednesday",
