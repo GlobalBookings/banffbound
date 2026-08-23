@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T16:14:42.540Z",
+  "updatedAt": "2026-08-23T18:16:13.645Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -17,7 +17,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-22"
+          "lastUpdated": "2026-08-23"
         },
         {
           "name": "Marsh Trail",
@@ -25,7 +25,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-08-22"
+          "lastUpdated": "2026-08-23"
         },
         {
           "name": "Silverton Falls Trail",
@@ -815,7 +815,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-22",
+      "lastUpdated": "2026-08-23",
       "area": "Banff Area"
     },
     {
@@ -824,7 +824,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-08-22",
+      "lastUpdated": "2026-08-23",
       "area": "Banff Area"
     },
     {
