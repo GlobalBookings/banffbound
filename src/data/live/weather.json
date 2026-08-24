@@ -1,23 +1,16 @@
 {
-  "updatedAt": "2026-08-24T04:36:14.761Z",
+  "updatedAt": "2026-08-24T06:38:07.742Z",
   "banff": {
     "current": {
       "temp": 11,
       "condition": "Overcast",
       "icon": "☁️",
       "humidity": 75,
-      "wind": "12 km/h"
+      "wind": "10 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 22,
-        "low": 11,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Monday",
         "high": 22,
         "low": 9,
         "condition": "Overcast",
@@ -32,15 +25,22 @@
       },
       {
         "day": "Wednesday",
-        "high": 29,
+        "high": 28,
+        "low": 13,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
+      },
+      {
+        "day": "Thursday",
+        "high": 26,
         "low": 13,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
-        "day": "Thursday",
-        "high": 27,
-        "low": 13,
+        "day": "Friday",
+        "high": 23,
+        "low": 9,
         "condition": "Overcast",
         "icon": "☁️"
       }
@@ -48,22 +48,15 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 10,
+      "temp": 9,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 89,
-      "wind": "10 km/h"
+      "humidity": 91,
+      "wind": "12 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 17,
-        "low": 10,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Monday",
         "high": 19,
         "low": 6,
         "condition": "Mainly clear",
@@ -85,10 +78,17 @@
       },
       {
         "day": "Thursday",
-        "high": 25,
-        "low": 13,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 23,
+        "low": 11,
+        "condition": "Overcast",
+        "icon": "☁️"
+      },
+      {
+        "day": "Friday",
+        "high": 20,
+        "low": 8,
+        "condition": "Overcast",
+        "icon": "☁️"
       }
     ]
   }
