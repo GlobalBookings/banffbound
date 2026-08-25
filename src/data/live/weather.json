@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-08-25T10:22:15.416Z",
+  "updatedAt": "2026-08-25T12:30:12.769Z",
   "banff": {
     "current": {
-      "temp": 8,
+      "temp": 7,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 54,
-      "wind": "6 km/h"
+      "humidity": 53,
+      "wind": "9 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 26,
-        "low": 8,
+        "high": 25,
+        "low": 6,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -39,10 +39,10 @@
       },
       {
         "day": "Saturday",
-        "high": 17,
+        "high": 15,
         "low": 7,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
+        "condition": "Dense drizzle",
+        "icon": "🌧️"
       }
     ]
   },
@@ -51,14 +51,14 @@
       "temp": 9,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 69,
+      "humidity": 67,
       "wind": "8 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 23,
-        "low": 8,
+        "low": 9,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -71,24 +71,24 @@
       },
       {
         "day": "Thursday",
-        "high": 25,
+        "high": 24,
         "low": 13,
         "condition": "Light drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Friday",
-        "high": 17,
-        "low": 9,
+        "high": 18,
+        "low": 8,
         "condition": "Moderate drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Saturday",
         "high": 15,
-        "low": 7,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "low": 6,
+        "condition": "Dense drizzle",
+        "icon": "🌧️"
       }
     ]
   }
