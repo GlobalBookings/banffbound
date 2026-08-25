@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T22:16:54.807Z",
+  "updatedAt": "2026-08-25T00:44:10.272Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -753,17 +753,17 @@
           "name": "Dolomite Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Stay on designated trails and viewpoints; Wet and muddy sections",
-          "lastUpdated": "2026-08-16"
+          "condition": "Good.",
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-24"
         },
         {
           "name": "Glacier Lake Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Good.",
+          "condition": "Excellent.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-08-16"
+          "lastUpdated": "2026-08-24"
         },
         {
           "name": "Molar Pass Trail",
@@ -771,7 +771,7 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
-          "lastUpdated": "2026-08-16"
+          "lastUpdated": "2026-08-24"
         },
         {
           "name": "North Molar Pass Trail",
@@ -779,7 +779,7 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
-          "lastUpdated": "2026-08-16"
+          "lastUpdated": "2026-08-24"
         },
         {
           "name": "Sunset Pass Trail",
@@ -787,7 +787,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Trail is in good condition",
-          "lastUpdated": "2026-08-16"
+          "lastUpdated": "2026-08-24"
         },
         {
           "name": "Sarbach Lookout Trail",
@@ -795,7 +795,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Trail is in good condition",
-          "lastUpdated": "2026-08-16"
+          "lastUpdated": "2026-08-24"
         },
         {
           "name": "Sunset Lookout Trail",
@@ -803,7 +803,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Numerous trees down on trail; Not recommended",
-          "lastUpdated": "2026-08-16"
+          "lastUpdated": "2026-08-24"
         }
       ]
     }
@@ -1632,18 +1632,18 @@
       "name": "Dolomite Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Stay on designated trails and viewpoints; Wet and muddy sections",
-      "lastUpdated": "2026-08-16",
+      "condition": "Good.",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-24",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "Glacier Lake Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Good.",
+      "condition": "Excellent.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-08-16",
+      "lastUpdated": "2026-08-24",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1652,7 +1652,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
-      "lastUpdated": "2026-08-16",
+      "lastUpdated": "2026-08-24",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1661,7 +1661,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
-      "lastUpdated": "2026-08-16",
+      "lastUpdated": "2026-08-24",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1670,7 +1670,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Trail is in good condition",
-      "lastUpdated": "2026-08-16",
+      "lastUpdated": "2026-08-24",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1679,7 +1679,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Trail is in good condition",
-      "lastUpdated": "2026-08-16",
+      "lastUpdated": "2026-08-24",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1688,7 +1688,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Numerous trees down on trail; Not recommended",
-      "lastUpdated": "2026-08-16",
+      "lastUpdated": "2026-08-24",
       "area": "Icefields Parkway Area"
     }
   ],
