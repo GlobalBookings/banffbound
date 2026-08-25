@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T16:25:51.406Z",
+  "updatedAt": "2026-08-25T18:25:56.446Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -223,7 +223,7 @@
           "name": "Lake Minnewanka Road",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Bear Warning.",
+          "condition": "Caution.",
           "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed; Check the important bulletins for more information",
           "lastUpdated": "2026-08-25"
         },
@@ -1047,7 +1047,7 @@
       "name": "Lake Minnewanka Road",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Bear Warning.",
+      "condition": "Caution.",
       "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed; Check the important bulletins for more information",
       "lastUpdated": "2026-08-25",
       "area": "Banff Area"
@@ -1696,12 +1696,6 @@
     {
       "title": "Area Closure: - Fish Creek Rotenone Treatment",
       "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Warning: Lake Louise Village",
-      "type": "Warning",
       "issued": "",
       "ends": ""
     },
