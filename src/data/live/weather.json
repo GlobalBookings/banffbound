@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-29T16:29:40.874Z",
+  "updatedAt": "2026-08-29T20:12:40.379Z",
   "banff": {
     "current": {
-      "temp": 13,
+      "temp": 19,
       "condition": "Mainly clear",
       "icon": "🌤️",
-      "humidity": 46,
-      "wind": "3 km/h"
+      "humidity": 35,
+      "wind": "14 km/h"
     },
     "forecast": [
       {
@@ -18,29 +18,29 @@
       },
       {
         "day": "Sunday",
-        "high": 17,
+        "high": 15,
+        "low": 8,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
+      },
+      {
+        "day": "Monday",
+        "high": 19,
         "low": 6,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
-        "day": "Monday",
-        "high": 20,
-        "low": 5,
-        "condition": "Overcast",
-        "icon": "☁️"
-      },
-      {
         "day": "Tuesday",
-        "high": 23,
+        "high": 24,
         "low": 9,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Wednesday",
-        "high": 22,
-        "low": 12,
+        "high": 24,
+        "low": 10,
         "condition": "Overcast",
         "icon": "☁️"
       }
@@ -48,11 +48,11 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 13,
+      "temp": 16,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 55,
-      "wind": "5 km/h"
+      "humidity": 42,
+      "wind": "16 km/h"
     },
     "forecast": [
       {
@@ -64,15 +64,15 @@
       },
       {
         "day": "Sunday",
-        "high": 14,
-        "low": 3,
+        "high": 12,
+        "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Monday",
-        "high": 16,
-        "low": 5,
+        "high": 17,
+        "low": 6,
         "condition": "Overcast",
         "icon": "☁️"
       },
@@ -85,7 +85,7 @@
       },
       {
         "day": "Wednesday",
-        "high": 20,
+        "high": 21,
         "low": 10,
         "condition": "Overcast",
         "icon": "☁️"
