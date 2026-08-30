@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T14:35:24.841Z",
+  "updatedAt": "2026-08-30T18:56:45.548Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -16,80 +16,80 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Marsh Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Poor.",
-          "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-08-29"
+          "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Silverton Falls Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Johnson Lake Loop",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Vermilion Lakes Drive",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Tunnel Campground Loop",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sundance Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Golf Course Road",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-08-29"
+          "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed; Wet",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Johnston Canyon Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Boom Lake Trail",
@@ -97,151 +97,151 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-29"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Water Tower Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Spray River East Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Spray River West Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Healy Creek Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sunshine Meadows / Rock Isle Lake Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Fresh snow",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Banff Legacy Trail: Banff–Banff East Gate",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Banff Legacy Trail: Vermilion Lakes–Bow Valley Parkway",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Cascade Valley Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Caution.",
-          "comment": "Biking excluding e-bikes is allowed; Bridge(s) out; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking excluding e-bikes is allowed; Bridge(s) out; Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Upper Stoney Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Tunnel Mountain Summit Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Stay on designated trails and viewpoints; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Banff Avenue Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Surprise Corner to Hoodoos Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sundance Canyon Loop",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "C-Level Cirque Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Stay on designated trails and viewpoints; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Tunnel Bench Loop",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Lake Minnewanka Road",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Caution.",
-          "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed; Check the important bulletins for more information",
-          "lastUpdated": "2026-08-29"
+          "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed; Check the important bulletins for more information; Wet",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sulphur Mountain Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on trail; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Stay on trail; Wet with muddy sections; Fresh snow",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Ink Pots Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Brewster Creek Trail",
@@ -249,167 +249,167 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-          "lastUpdated": "2026-08-29"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Bourgeau Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Healy Pass Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Wet with muddy sections; Fresh snow",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Redearth Creek Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Cascade Amphitheatre Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Rockbound Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Avalanche debris on trail; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Avalanche debris on trail; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Arnica Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry; Deadfall on trail",
-          "lastUpdated": "2026-08-29"
+          "comment": "Deadfall on trail; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Harvey Pass Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Deadfall on trail; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Wet with muddy sections; Fresh snow",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Goat Creek Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Bow Valley Parkway",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Open.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended ; Wet",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Tunnel Technical Trails: Return of the Jedi Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Tunnel Technical Trails: Star Wars Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Tunnel Technical Trails: Topp Notch Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Rundle Riverside Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Caution.",
-          "comment": "Deadfall on trail; Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Deadfall on trail; Biking excluding e-bikes is allowed; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "The Toe",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Cory Pass Loop",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Numerous trees down on trail; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Numerous trees down on trail; Wet and muddy sections; Fresh snow",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Aylmer Lookout Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Aylmer Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-08-29"
+          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections; Fresh snow",
+          "lastUpdated": "2026-08-30"
         }
       ]
     },
@@ -420,9 +420,9 @@
           "name": "Bow River Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Mainly Dry.",
+          "condition": "Good.",
           "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Attenti",
-          "lastUpdated": "2026-08-25"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Consolation Lakes Trail",
@@ -430,15 +430,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Fairview Lookout Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Great Divide",
@@ -446,15 +446,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Lake Louise Lakeshore Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Moraine Lake Lakeshore Trail",
@@ -462,15 +462,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Paradise Connector Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Rockpile Loop",
@@ -478,7 +478,7 @@
           "status": "open",
           "condition": "Please respect all posted notices and signs.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Louise Creek Trail",
@@ -486,47 +486,47 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "The lower section of the Louise Creek trail is CLOSED from May 15 to October 15 to help protect and improve important wildlife habitat. Hikers are asked to travel the new Tramline connector instead.; ",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Big Beehive",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Steep switchback section - use caution; Extensive trail erosion; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-08-24"
+          "comment": "Steep switchback section - use caution; Extensive trail erosion",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Big Beehive to Plain of Six Glaciers Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Castle Lookout Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Eiffel Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Lake Agnes Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Lake Annette Trail",
@@ -534,7 +534,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Larch Valley/Minnestimma Lakes Trail",
@@ -542,47 +542,47 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Little Beehive",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Mirror Lake Highline Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Pipestone",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Biking excluding e-bikes is allowed; Fire guard debris for ~200m",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Plain of Six Glaciers Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Taylor Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Tramline Trail",
@@ -590,39 +590,39 @@
           "status": "closed",
           "condition": "Partially closed, check trail details for additional information.",
           "comment": "The lower section of Tramline is closed from May 15 until October 15. Begin from the Bow River parking lot, cross the bridge, take a left and follow the Bow River Trail until the junction with the new",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Fairview Mountain Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Steep switchback section - use caution",
-          "lastUpdated": "2026-08-24"
+          "condition": "Fair.",
+          "comment": "Steep switchback section - use caution; Snow at high elevation",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Moraine Lake Highline",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "condition": "Good.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Hidden Lake Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Deception Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Paradise Valley and Giant Steps Trail",
@@ -630,47 +630,47 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sentinel Pass from Paradise Valley Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding",
-          "lastUpdated": "2026-08-24"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding ; Snow at high elevation",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Saddleback Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-08-24"
+          "comment": "Fragile alpine vegetation, stay on the trail; Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sentinel Pass via Larch Valley Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "condition": "Fair.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sheol / Paradise Connector Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Wenkchemna Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-08-24"
+          "condition": "Fair.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Wet and muddy sections; Snow at high elevation",
+          "lastUpdated": "2026-08-30"
         }
       ]
     },
@@ -683,15 +683,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Mistaya Canyon Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Peyto Lake Lookout Trail",
@@ -699,15 +699,15 @@
           "status": "open",
           "condition": "Please respect all posted notices and signs.",
           "comment": "Stay on designated trails and viewpoints; Respect all posted notices and signs; Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Chephren Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Bow Glacier Falls Trail",
@@ -715,15 +715,15 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Cirque Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Helen Lake Trail",
@@ -731,7 +731,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Potential stream crossings; Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Parker Ridge Trail",
@@ -739,15 +739,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Nigel Pass Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Dolomite Pass Trail",
@@ -755,47 +755,47 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Glacier Lake Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Excellent.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-08-24"
+          "condition": "Good.",
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Caution.",
-          "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
-          "lastUpdated": "2026-08-24"
+          "condition": "Good.",
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "North Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Caution.",
-          "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
-          "lastUpdated": "2026-08-24"
+          "condition": "Good.",
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sunset Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Trail is in good condition",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sarbach Lookout Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Trail is in good condition",
-          "lastUpdated": "2026-08-24"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-08-30"
         },
         {
           "name": "Sunset Lookout Trail",
@@ -803,7 +803,7 @@
           "status": "caution",
           "condition": "Not recommended.",
           "comment": "Numerous trees down on trail; Not recommended",
-          "lastUpdated": "2026-08-24"
+          "lastUpdated": "2026-08-30"
         }
       ]
     }
@@ -814,8 +814,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -823,8 +823,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Poor.",
-      "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-08-29",
+      "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -832,8 +832,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -841,8 +841,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -850,8 +850,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -859,8 +859,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -868,8 +868,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -877,8 +877,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -886,8 +886,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-08-29",
+      "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed; Wet",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -895,8 +895,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -905,7 +905,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-29",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -913,8 +913,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -922,8 +922,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -931,8 +931,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -940,8 +940,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -949,8 +949,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Fresh snow",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -958,8 +958,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -967,8 +967,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -976,8 +976,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Caution.",
-      "comment": "Biking excluding e-bikes is allowed; Bridge(s) out; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking excluding e-bikes is allowed; Bridge(s) out; Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -985,8 +985,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -994,8 +994,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Stay on designated trails and viewpoints; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1003,8 +1003,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1012,8 +1012,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1021,8 +1021,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1030,8 +1030,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Stay on designated trails and viewpoints; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1039,8 +1039,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1048,8 +1048,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Caution.",
-      "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed; Check the important bulletins for more information",
-      "lastUpdated": "2026-08-29",
+      "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed; Check the important bulletins for more information; Wet",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1057,8 +1057,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on trail; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Stay on trail; Wet with muddy sections; Fresh snow",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1066,8 +1066,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1076,7 +1076,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-      "lastUpdated": "2026-08-29",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1084,8 +1084,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1093,8 +1093,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Wet with muddy sections; Fresh snow",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1102,8 +1102,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1111,8 +1111,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1120,8 +1120,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Avalanche debris on trail; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Avalanche debris on trail; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1129,8 +1129,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry; Deadfall on trail",
-      "lastUpdated": "2026-08-29",
+      "comment": "Deadfall on trail; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1138,8 +1138,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Deadfall on trail; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Wet with muddy sections; Fresh snow",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1147,8 +1147,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1156,8 +1156,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Open.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended ; Wet",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1165,8 +1165,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1174,8 +1174,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1183,8 +1183,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1192,8 +1192,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1201,8 +1201,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1210,8 +1210,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1219,8 +1219,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Caution.",
-      "comment": "Deadfall on trail; Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Deadfall on trail; Biking excluding e-bikes is allowed; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1228,8 +1228,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1237,8 +1237,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Numerous trees down on trail; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Numerous trees down on trail; Wet and muddy sections; Fresh snow",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1246,8 +1246,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
@@ -1255,17 +1255,17 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-08-29",
+      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections; Fresh snow",
+      "lastUpdated": "2026-08-30",
       "area": "Banff Area"
     },
     {
       "name": "Bow River Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Mainly Dry.",
+      "condition": "Good.",
       "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Attenti",
-      "lastUpdated": "2026-08-25",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1274,7 +1274,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1282,8 +1282,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1292,7 +1292,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1300,8 +1300,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1310,7 +1310,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1318,8 +1318,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1328,7 +1328,7 @@
       "status": "open",
       "condition": "Please respect all posted notices and signs.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1337,7 +1337,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "The lower section of the Louise Creek trail is CLOSED from May 15 to October 15 to help protect and improve important wildlife habitat. Hikers are asked to travel the new Tramline connector instead.; ",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1345,8 +1345,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Steep switchback section - use caution; Extensive trail erosion; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-08-24",
+      "comment": "Steep switchback section - use caution; Extensive trail erosion",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1354,8 +1354,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1363,8 +1363,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1372,8 +1372,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1381,8 +1381,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1391,7 +1391,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1400,7 +1400,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1408,8 +1408,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1417,8 +1417,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1426,8 +1426,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Biking excluding e-bikes is allowed; Fire guard debris for ~200m",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1435,8 +1435,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1444,8 +1444,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1454,25 +1454,25 @@
       "status": "closed",
       "condition": "Partially closed, check trail details for additional information.",
       "comment": "The lower section of Tramline is closed from May 15 until October 15. Begin from the Bow River parking lot, cross the bridge, take a left and follow the Bow River Trail until the junction with the new",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
       "name": "Fairview Mountain Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Steep switchback section - use caution",
-      "lastUpdated": "2026-08-24",
+      "condition": "Fair.",
+      "comment": "Steep switchback section - use caution; Snow at high elevation",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
       "name": "Moraine Lake Highline",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "condition": "Good.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1480,8 +1480,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1489,8 +1489,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1499,7 +1499,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1507,8 +1507,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding",
-      "lastUpdated": "2026-08-24",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding ; Snow at high elevation",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1516,17 +1516,17 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-08-24",
+      "comment": "Fragile alpine vegetation, stay on the trail; Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
       "name": "Sentinel Pass via Larch Valley Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "condition": "Fair.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1534,17 +1534,17 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
       "name": "Wenkchemna Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-08-24",
+      "condition": "Fair.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Wet and muddy sections; Snow at high elevation",
+      "lastUpdated": "2026-08-30",
       "area": "Lake Louise Area"
     },
     {
@@ -1553,7 +1553,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1561,8 +1561,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1571,7 +1571,7 @@
       "status": "open",
       "condition": "Please respect all posted notices and signs.",
       "comment": "Stay on designated trails and viewpoints; Respect all posted notices and signs; Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1579,8 +1579,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1589,7 +1589,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1597,8 +1597,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1607,7 +1607,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Potential stream crossings; Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1616,7 +1616,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1624,8 +1624,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1634,34 +1634,34 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "Glacier Lake Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Excellent.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-08-24",
+      "condition": "Good.",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "Molar Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Caution.",
-      "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
-      "lastUpdated": "2026-08-24",
+      "condition": "Good.",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "North Molar Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Caution.",
-      "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
-      "lastUpdated": "2026-08-24",
+      "condition": "Good.",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1669,8 +1669,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Trail is in good condition",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1678,8 +1678,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Trail is in good condition",
-      "lastUpdated": "2026-08-24",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1688,7 +1688,7 @@
       "status": "caution",
       "condition": "Not recommended.",
       "comment": "Numerous trees down on trail; Not recommended",
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-08-30",
       "area": "Icefields Parkway Area"
     }
   ],
