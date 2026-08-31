@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T18:29:16.595Z",
+  "updatedAt": "2026-08-31T23:30:45.896Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -225,15 +225,15 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed; Check the important bulletins for more information; Wet",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Sulphur Mountain Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on trail; Wet with muddy sections; Fresh snow",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on trail; Wet with muddy sections",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Ink Pots Trail",
@@ -241,7 +241,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground; Wet with muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Brewster Creek Trail",
@@ -249,7 +249,7 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Bourgeau Lake Trail",
@@ -265,7 +265,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Wet with muddy sections; Fresh snow",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Redearth Creek Trail",
@@ -281,7 +281,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet with muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Rockbound Lake Trail",
@@ -289,7 +289,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Avalanche debris on trail; Wet with muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Arnica Lake Trail",
@@ -297,7 +297,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Deadfall on trail; Wet with muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Harvey Pass Trail",
@@ -305,7 +305,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet with muddy sections; Fresh snow",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Goat Creek Trail",
@@ -321,7 +321,7 @@
           "status": "open",
           "condition": "Open.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended ; Wet",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
@@ -329,7 +329,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
@@ -337,7 +337,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
@@ -345,7 +345,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Tunnel Technical Trails: Return of the Jedi Trail",
@@ -377,7 +377,7 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Deadfall on trail; Biking excluding e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "The Toe",
@@ -393,7 +393,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Numerous trees down on trail; Wet and muddy sections; Fresh snow",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Aylmer Lookout Trail",
@@ -401,7 +401,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Aylmer Pass Trail",
@@ -409,7 +409,7 @@
           "status": "open",
           "condition": "Bear Warning.",
           "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections; Fresh snow",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         }
       ]
     },
@@ -501,32 +501,32 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Castle Lookout Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Eiffel Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Lake Agnes Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Lake Annette Trail",
@@ -549,16 +549,16 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Mirror Lake Highline Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Pipestone",
@@ -573,16 +573,16 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Taylor Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Tramline Trail",
@@ -613,16 +613,16 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Deception Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Paradise Valley and Giant Steps Trail",
@@ -645,8 +645,8 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Fragile alpine vegetation, stay on the trail; Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Fragile alpine vegetation, stay on the trail",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Sentinel Pass via Larch Valley Trail",
@@ -661,8 +661,8 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Wenkchemna Pass Trail",
@@ -705,9 +705,9 @@
           "name": "Chephren Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "condition": "Excellent.",
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Bow Glacier Falls Trail",
@@ -715,15 +715,15 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
-          "lastUpdated": "2026-08-30"
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Cirque Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Helen Lake Trail",
@@ -746,56 +746,56 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Dolomite Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Glacier Lake Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "North Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Sunset Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Stay on designated trails and viewpoints",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Sarbach Lookout Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-08-30"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-08-31"
         },
         {
           "name": "Sunset Lookout Trail",
@@ -1049,7 +1049,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Construction work in progress; Narrow paved road shoulder; Expect high volume vehicle traffic; Biking including pedal-assist e-bikes is allowed; Check the important bulletins for more information; Wet",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1057,8 +1057,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on trail; Wet with muddy sections; Fresh snow",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on trail; Wet with muddy sections",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1067,7 +1067,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on trail; Bridge washed out past the Ink Pots toward Jo9 campground; Wet with muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1076,7 +1076,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1094,7 +1094,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Wet with muddy sections; Fresh snow",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1112,7 +1112,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet with muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1121,7 +1121,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Avalanche debris on trail; Wet with muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1130,7 +1130,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Deadfall on trail; Wet with muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1139,7 +1139,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet with muddy sections; Fresh snow",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1157,7 +1157,7 @@
       "status": "open",
       "condition": "Open.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended ; Wet",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1166,7 +1166,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1175,7 +1175,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1184,7 +1184,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1220,7 +1220,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Deadfall on trail; Biking excluding e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1238,7 +1238,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Numerous trees down on trail; Wet and muddy sections; Fresh snow",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1247,7 +1247,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1256,7 +1256,7 @@
       "status": "open",
       "condition": "Bear Warning.",
       "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections; Fresh snow",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Banff Area"
     },
     {
@@ -1354,8 +1354,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1363,8 +1363,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1372,8 +1372,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1381,8 +1381,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1408,8 +1408,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1417,8 +1417,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1435,8 +1435,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1444,8 +1444,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1480,8 +1480,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1489,8 +1489,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1516,8 +1516,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Fragile alpine vegetation, stay on the trail; Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Fragile alpine vegetation, stay on the trail",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1534,8 +1534,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Lake Louise Area"
     },
     {
@@ -1578,9 +1578,9 @@
       "name": "Chephren Lake Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "condition": "Excellent.",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1589,7 +1589,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
-      "lastUpdated": "2026-08-30",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1597,8 +1597,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1624,8 +1624,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1633,8 +1633,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1642,8 +1642,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1651,8 +1651,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1660,8 +1660,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1669,8 +1669,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Stay on designated trails and viewpoints",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1678,8 +1678,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-08-30",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-08-31",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1693,12 +1693,6 @@
     }
   ],
   "advisories": [
-    {
-      "title": "Area Closure: - Fish Creek Rotenone Treatment",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
     {
       "title": "Area Closure: Lake Minnewanka campgrounds Lm8, Lm9, Lm11, Lm20, Lm22, Lm31",
       "type": "Area Closure",
