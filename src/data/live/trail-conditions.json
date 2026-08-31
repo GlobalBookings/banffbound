@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T02:32:06.673Z",
+  "updatedAt": "2026-08-31T10:17:22.623Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1718,12 +1718,6 @@
       "ends": ""
     },
     {
-      "title": "Area Closure: Hillsdale Split",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
       "title": "Advisory: Berry Season",
       "type": "Advisory",
       "issued": "",
@@ -1742,12 +1736,6 @@
       "ends": ""
     },
     {
-      "title": "Area Closure: Cascade Valley Trail",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
       "title": "AREA CLOSURE: - Lake Louise Area Trails",
       "type": "AREA CLOSURE",
       "issued": "",
@@ -1756,12 +1744,6 @@
     {
       "title": "Area Closure: s For Wildlife",
       "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "AREA CLOSURE: - Fairholme",
-      "type": "AREA CLOSURE",
       "issued": "",
       "ends": ""
     },
