@@ -1,35 +1,30 @@
 {
-  "updatedAt": "2026-08-31T23:30:36.518Z",
-  "season": "summer",
-  "month": "August",
+  "updatedAt": "2026-09-01T02:46:27.214Z",
+  "season": "fall",
+  "month": "September",
   "seasonalHighlights": [
-    "Alpine lakes thaw to reveal iconic turquoise waters — Lake Louise, Moraine Lake, Peyto Lake",
-    "Wildflower season peaks in July and August in alpine meadows",
-    "Longest days of the year — up to 16+ hours of daylight for hiking",
-    "All backcountry trails and campgrounds open for the season",
-    "Lake Minnewanka boat cruises and lakeside activities",
-    "Via Ferrata climbing routes open at Mt. Norquay",
-    "White-water rafting on the Kicking Horse River",
-    "Camping under the stars in the Canadian Rockies"
+    "Larch trees turn golden — stunning displays at Larch Valley, Sentinel Pass, and Paradise Valley (late Sep–mid Oct)",
+    "Elk rutting season — impressive bull elk bugling in Banff townsite (Sep–Oct)",
+    "Dramatically fewer crowds compared to summer",
+    "Crisp mountain air and stunning fall colors against snow-capped peaks",
+    "First snowfalls dust the mountain peaks — incredible photography",
+    "Shoulder-season hotel deals before ski season begins",
+    "Ski resorts begin opening in November"
   ],
   "activeActivities": [
-    "Hiking (all trails open)",
-    "Canoeing & kayaking",
-    "White-water rafting",
+    "Larch valley hiking (September–October)",
+    "Wildlife watching (elk rut)",
+    "Photography (fall colours)",
     "Mountain biking",
-    "Camping",
-    "Via Ferrata climbing",
-    "Swimming in alpine lakes",
-    "Wildlife watching",
-    "Horseback riding",
-    "Gondola sightseeing",
-    "Fishing",
-    "Stand-up paddleboarding"
+    "Hot springs",
+    "Early season skiing (November)",
+    "Scenic drives (Icefields Parkway)",
+    "Lake canoeing (early fall)"
   ],
   "upcomingEvents": [
-    "Canada Day celebrations (July 1)",
-    "Banff Marathon (June)",
-    "Banff Centre Mountain Film Festival (summer screenings)",
-    "Parks Day events (July)"
+    "Larch season peak (late September–early October)",
+    "Elk rut viewing (September–October)",
+    "Ski season opening (early November)",
+    "Banff Mountain Film & Book Festival (late October/November)"
   ]
 }
