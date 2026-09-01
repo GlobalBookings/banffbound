@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T19:02:11.726Z",
+  "updatedAt": "2026-09-01T22:13:10.677Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -88,7 +88,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet with muddy sections",
+          "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Wet with muddy sections; Bow Valley Parkway cycling offer in effect. Vehicle access via Castle Juncti",
           "lastUpdated": "2026-09-01"
         },
         {
@@ -320,8 +320,8 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Open.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended ; Wet",
-          "lastUpdated": "2026-08-31"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended ; Wet; Bow Valley Parkway cycling offer in effect. Vehicle access via Castle Junction.; Check the important bulletins for more ",
+          "lastUpdated": "2026-09-01"
         },
         {
           "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
@@ -895,7 +895,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet with muddy sections",
+      "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Wet with muddy sections; Bow Valley Parkway cycling offer in effect. Vehicle access via Castle Juncti",
       "lastUpdated": "2026-09-01",
       "area": "Banff Area"
     },
@@ -1156,8 +1156,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Open.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended ; Wet",
-      "lastUpdated": "2026-08-31",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Bear spray recommended ; Wet; Bow Valley Parkway cycling offer in effect. Vehicle access via Castle Junction.; Check the important bulletins for more ",
+      "lastUpdated": "2026-09-01",
       "area": "Banff Area"
     },
     {
