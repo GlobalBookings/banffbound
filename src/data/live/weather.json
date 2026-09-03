@@ -1,94 +1,94 @@
 {
-  "updatedAt": "2026-09-03T08:24:22.945Z",
+  "updatedAt": "2026-09-03T14:00:27.652Z",
   "banff": {
-    "current": {
-      "temp": 10,
-      "condition": "Mainly clear",
-      "icon": "🌤️",
-      "humidity": 79,
-      "wind": "7 km/h"
-    },
-    "forecast": [
-      {
-        "day": "Today",
-        "high": 14,
-        "low": 7,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      },
-      {
-        "day": "Friday",
-        "high": 14,
-        "low": 4,
-        "condition": "Moderate rain",
-        "icon": "🌧️"
-      },
-      {
-        "day": "Saturday",
-        "high": 13,
-        "low": 5,
-        "condition": "Moderate rain",
-        "icon": "🌧️"
-      },
-      {
-        "day": "Sunday",
-        "high": 13,
-        "low": 6,
-        "condition": "Foggy",
-        "icon": "🌫️"
-      },
-      {
-        "day": "Monday",
-        "high": 13,
-        "low": 7,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
-      }
-    ]
-  },
-  "lakeLouise": {
     "current": {
       "temp": 9,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 92,
-      "wind": "9 km/h"
+      "humidity": 80,
+      "wind": "6 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 11,
-        "low": 5,
+        "high": 15,
+        "low": 7,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Friday",
-        "high": 12,
-        "low": 2,
-        "condition": "Dense drizzle",
-        "icon": "🌧️"
+        "high": 13,
+        "low": 4,
+        "condition": "Moderate drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Saturday",
         "high": 14,
-        "low": 4,
-        "condition": "Moderate rain",
+        "low": 5,
+        "condition": "Moderate rain showers",
         "icon": "🌧️"
       },
       {
         "day": "Sunday",
-        "high": 15,
+        "high": 19,
         "low": 5,
         "condition": "Light drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Monday",
-        "high": 15,
+        "high": 19,
+        "low": 5,
+        "condition": "Overcast",
+        "icon": "☁️"
+      }
+    ]
+  },
+  "lakeLouise": {
+    "current": {
+      "temp": 8,
+      "condition": "Clear sky",
+      "icon": "☀️",
+      "humidity": 92,
+      "wind": "10 km/h"
+    },
+    "forecast": [
+      {
+        "day": "Today",
+        "high": 10,
+        "low": 6,
+        "condition": "Overcast",
+        "icon": "☁️"
+      },
+      {
+        "day": "Friday",
+        "high": 13,
+        "low": 2,
+        "condition": "Slight rain",
+        "icon": "🌦️"
+      },
+      {
+        "day": "Saturday",
+        "high": 14,
+        "low": 4,
+        "condition": "Slight rain",
+        "icon": "🌦️"
+      },
+      {
+        "day": "Sunday",
+        "high": 16,
         "low": 6,
         "condition": "Light drizzle",
         "icon": "🌦️"
+      },
+      {
+        "day": "Monday",
+        "high": 17,
+        "low": 5,
+        "condition": "Overcast",
+        "icon": "☁️"
       }
     ]
   }
