@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T19:48:02.610Z",
+  "updatedAt": "2026-09-06T21:51:54.399Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -596,9 +596,9 @@
           "name": "Fairview Mountain Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Steep switchback section - use caution; Snow at high elevation",
-          "lastUpdated": "2026-09-05"
+          "condition": "Good.",
+          "comment": "Steep switchback section - use caution",
+          "lastUpdated": "2026-09-06"
         },
         {
           "name": "Moraine Lake Highline",
@@ -637,8 +637,8 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding ; Snow at high elevation",
-          "lastUpdated": "2026-09-05"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding",
+          "lastUpdated": "2026-09-06"
         },
         {
           "name": "Saddleback Pass Trail",
@@ -652,9 +652,9 @@
           "name": "Sentinel Pass via Larch Valley Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation",
-          "lastUpdated": "2026-09-05"
+          "condition": "Good.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+          "lastUpdated": "2026-09-06"
         },
         {
           "name": "Sheol / Paradise Connector Trail",
@@ -668,9 +668,9 @@
           "name": "Wenkchemna Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Snow at high elevation",
-          "lastUpdated": "2026-09-05"
+          "condition": "Good.",
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail",
+          "lastUpdated": "2026-09-06"
         }
       ]
     },
@@ -1461,9 +1461,9 @@
       "name": "Fairview Mountain Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Steep switchback section - use caution; Snow at high elevation",
-      "lastUpdated": "2026-09-05",
+      "condition": "Good.",
+      "comment": "Steep switchback section - use caution",
+      "lastUpdated": "2026-09-06",
       "area": "Lake Louise Area"
     },
     {
@@ -1507,8 +1507,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding ; Snow at high elevation",
-      "lastUpdated": "2026-09-05",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding",
+      "lastUpdated": "2026-09-06",
       "area": "Lake Louise Area"
     },
     {
@@ -1524,9 +1524,9 @@
       "name": "Sentinel Pass via Larch Valley Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Snow at high elevation",
-      "lastUpdated": "2026-09-05",
+      "condition": "Good.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
+      "lastUpdated": "2026-09-06",
       "area": "Lake Louise Area"
     },
     {
@@ -1542,9 +1542,9 @@
       "name": "Wenkchemna Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Snow at high elevation",
-      "lastUpdated": "2026-09-05",
+      "condition": "Good.",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail",
+      "lastUpdated": "2026-09-06",
       "area": "Lake Louise Area"
     },
     {
