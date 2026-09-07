@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T08:45:58.770Z",
+  "updatedAt": "2026-09-07T15:24:35.387Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -17,7 +17,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Marsh Trail",
@@ -25,31 +25,31 @@
           "status": "open",
           "condition": "Poor.",
           "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Silverton Falls Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Wet and muddy",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Johnson Lake Loop",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Wet and muddy",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Vermilion Lakes Drive",
@@ -57,23 +57,23 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
-          "lastUpdated": "2026-09-06"
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Tunnel Campground Loop",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Sundance Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Golf Course Road",
@@ -81,7 +81,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed; Wet",
-          "lastUpdated": "2026-09-06"
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Johnston Canyon Trail",
@@ -89,39 +89,39 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Bow Valley Parkway cycling offer in effect. ; Vehicle access via Castle Junction; Check the important",
-          "lastUpdated": "2026-09-06"
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Boom Lake Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Water Tower Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Spray River East Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Spray River West Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Healy Creek Trail",
@@ -129,15 +129,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking excluding e-bikes is allowed; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Sunshine Meadows / Rock Isle Lake Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet with muddy sections",
-          "lastUpdated": "2026-09-06"
+          "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet and muddy sections",
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Banff Legacy Trail: Banff–Banff East Gate",
@@ -145,7 +145,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
-          "lastUpdated": "2026-09-06"
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Banff Legacy Trail: Vermilion Lakes–Bow Valley Parkway",
@@ -153,7 +153,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
-          "lastUpdated": "2026-09-06"
+          "lastUpdated": "2026-09-07"
         },
         {
           "name": "Cascade Valley Trail",
@@ -815,7 +815,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -824,7 +824,7 @@
       "status": "open",
       "condition": "Poor.",
       "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -832,8 +832,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Wet and muddy",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -841,8 +841,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Wet and muddy",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -850,8 +850,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -860,7 +860,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
-      "lastUpdated": "2026-09-06",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -868,8 +868,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -877,8 +877,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -887,7 +887,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed; Wet",
-      "lastUpdated": "2026-09-06",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -896,7 +896,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on designated trails and viewpoints; Adhere to all posted warnings and closures along trails; Bow Valley Parkway cycling offer in effect. ; Vehicle access via Castle Junction; Check the important",
-      "lastUpdated": "2026-09-06",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -904,8 +904,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -913,8 +913,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -922,8 +922,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -931,8 +931,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -941,7 +941,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking excluding e-bikes is allowed; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -949,8 +949,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet with muddy sections",
-      "lastUpdated": "2026-09-06",
+      "comment": "Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet and muddy sections",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -959,7 +959,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
-      "lastUpdated": "2026-09-06",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
@@ -968,7 +968,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet",
-      "lastUpdated": "2026-09-06",
+      "lastUpdated": "2026-09-07",
       "area": "Banff Area"
     },
     {
