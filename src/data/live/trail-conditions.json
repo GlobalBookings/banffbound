@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T19:09:21.663Z",
+  "updatedAt": "2026-09-08T22:12:00.694Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -441,7 +441,7 @@
           "lastUpdated": "2026-09-04"
         },
         {
-          "name": "Great Divide",
+          "name": "Great Divide Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
@@ -465,14 +465,6 @@
           "lastUpdated": "2026-09-04"
         },
         {
-          "name": "Paradise Connector Trail",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-09-04"
-        },
-        {
           "name": "Rockpile Loop",
           "difficulty": "Easy",
           "status": "open",
@@ -489,7 +481,7 @@
           "lastUpdated": "2026-09-04"
         },
         {
-          "name": "Big Beehive",
+          "name": "Big Beehive Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
@@ -545,7 +537,15 @@
           "lastUpdated": "2026-09-04"
         },
         {
-          "name": "Little Beehive",
+          "name": "Paradise Connector Trail",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-09-04"
+        },
+        {
+          "name": "Little Beehive Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
@@ -601,7 +601,7 @@
           "lastUpdated": "2026-09-06"
         },
         {
-          "name": "Moraine Lake Highline",
+          "name": "Moraine Lake Highline Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
@@ -1287,7 +1287,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Great Divide",
+      "name": "Great Divide Trail",
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
@@ -1314,15 +1314,6 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Paradise Connector Trail",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-09-04",
-      "area": "Lake Louise Area"
-    },
-    {
       "name": "Rockpile Loop",
       "difficulty": "Easy",
       "status": "open",
@@ -1341,7 +1332,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Big Beehive",
+      "name": "Big Beehive Trail",
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
@@ -1404,7 +1395,16 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Little Beehive",
+      "name": "Paradise Connector Trail",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-09-04",
+      "area": "Lake Louise Area"
+    },
+    {
+      "name": "Little Beehive Trail",
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
@@ -1467,7 +1467,7 @@
       "area": "Lake Louise Area"
     },
     {
-      "name": "Moraine Lake Highline",
+      "name": "Moraine Lake Highline Trail",
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
