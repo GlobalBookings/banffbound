@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T20:15:15.370Z",
+  "updatedAt": "2026-09-10T23:34:30.880Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -33,7 +33,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-09"
+          "lastUpdated": "2026-09-10"
         },
         {
           "name": "Johnson Lake Loop",
@@ -41,7 +41,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-09"
+          "lastUpdated": "2026-09-10"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
@@ -422,7 +422,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Attenti",
-          "lastUpdated": "2026-09-04"
+          "lastUpdated": "2026-09-10"
         },
         {
           "name": "Consolation Lakes Trail",
@@ -430,15 +430,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-09-04"
+          "lastUpdated": "2026-09-10"
         },
         {
           "name": "Fairview Lookout Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-09-04"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-09-10"
         },
         {
           "name": "Great Divide Trail",
@@ -446,7 +446,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-09-04"
+          "lastUpdated": "2026-09-10"
         },
         {
           "name": "Lake Louise Lakeshore Trail",
@@ -833,7 +833,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-09",
+      "lastUpdated": "2026-09-10",
       "area": "Banff Area"
     },
     {
@@ -842,7 +842,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-09",
+      "lastUpdated": "2026-09-10",
       "area": "Banff Area"
     },
     {
@@ -1265,7 +1265,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Attenti",
-      "lastUpdated": "2026-09-04",
+      "lastUpdated": "2026-09-10",
       "area": "Lake Louise Area"
     },
     {
@@ -1274,7 +1274,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-09-04",
+      "lastUpdated": "2026-09-10",
       "area": "Lake Louise Area"
     },
     {
@@ -1282,8 +1282,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-09-04",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-09-10",
       "area": "Lake Louise Area"
     },
     {
@@ -1292,7 +1292,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-09-04",
+      "lastUpdated": "2026-09-10",
       "area": "Lake Louise Area"
     },
     {
