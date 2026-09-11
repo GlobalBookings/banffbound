@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-09-11T17:29:13.146Z",
+  "updatedAt": "2026-09-11T20:14:39.992Z",
   "banff": {
     "current": {
       "temp": 9,
-      "condition": "Mainly clear",
-      "icon": "🌤️",
-      "humidity": 60,
-      "wind": "5 km/h"
+      "condition": "Overcast",
+      "icon": "☁️",
+      "humidity": 63,
+      "wind": "6 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 11,
+        "high": 10,
         "low": 1,
         "condition": "Moderate rain",
         "icon": "🌧️"
@@ -25,23 +25,23 @@
       },
       {
         "day": "Sunday",
-        "high": 19,
+        "high": 18,
         "low": 1,
         "condition": "Light drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Monday",
-        "high": 8,
-        "low": 6,
-        "condition": "Dense drizzle",
-        "icon": "🌧️"
+        "high": 9,
+        "low": 7,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Tuesday",
-        "high": 10,
-        "low": 7,
-        "condition": "Light drizzle",
+        "high": 8,
+        "low": 5,
+        "condition": "Moderate drizzle",
         "icon": "🌦️"
       }
     ]
@@ -51,13 +51,13 @@
       "temp": 8,
       "condition": "Overcast",
       "icon": "☁️",
-      "humidity": 73,
-      "wind": "8 km/h"
+      "humidity": 71,
+      "wind": "7 km/h"
     },
     "forecast": [
       {
         "day": "Today",
-        "high": 9,
+        "high": 8,
         "low": 3,
         "condition": "Overcast",
         "icon": "☁️"
@@ -73,22 +73,22 @@
         "day": "Sunday",
         "high": 16,
         "low": 3,
-        "condition": "Overcast",
-        "icon": "☁️"
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Monday",
         "high": 8,
-        "low": 5,
-        "condition": "Moderate drizzle",
+        "low": 6,
+        "condition": "Light drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Tuesday",
-        "high": 10,
-        "low": 6,
-        "condition": "Dense drizzle",
-        "icon": "🌧️"
+        "high": 9,
+        "low": 5,
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       }
     ]
   }
