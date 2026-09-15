@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T17:50:27.043Z",
+  "updatedAt": "2026-09-15T20:40:49.794Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -16,7 +16,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -24,7 +24,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Poor.",
-          "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
+          "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet with muddy sections",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -32,7 +32,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
+          "comment": "Wet with muddy sections",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -40,7 +40,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
+          "comment": "Wet with muddy sections",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -48,7 +48,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -64,7 +64,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -72,7 +72,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
+          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet with muddy sections",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -96,7 +96,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
+          "comment": "Wet with muddy sections",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -104,7 +104,7 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -328,88 +328,88 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "Tunnel Technical Trails: Return of the Jedi Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "Tunnel Technical Trails: Star Wars Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "Tunnel Technical Trails: Topp Notch Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "Rundle Riverside Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Poor.",
-          "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Biking excluding e-bikes is allowed; Wet with muddy sections",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "The Toe",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "Cory Pass Loop",
           "difficulty": "Difficult",
           "status": "closed",
           "condition": "Road access closed",
-          "comment": "Walk or bike in access only, road closed to vehicles; Bow Valley Parkway cycling offer in effect. ; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Walk or bike in access only, road closed to vehicles; Bow Valley Parkway cycling offer in effect. ; Wet with muddy sections; Snow at high elevation",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "Aylmer Lookout Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "lastUpdated": "2026-09-15"
         },
         {
           "name": "Aylmer Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections; Snow at high elevation",
+          "lastUpdated": "2026-09-15"
         }
       ]
     },
@@ -814,7 +814,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -823,7 +823,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Poor.",
-      "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
+      "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet with muddy sections",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -832,7 +832,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
+      "comment": "Wet with muddy sections",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -841,7 +841,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
+      "comment": "Wet with muddy sections",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -850,7 +850,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -868,7 +868,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "comment": "Respect all posted notices and signs; Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -877,7 +877,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet and muddy sections",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Wet with muddy sections",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -904,7 +904,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
+      "comment": "Wet with muddy sections",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -913,7 +913,7 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -1165,8 +1165,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Biking excluding e-bikes is allowed; Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1174,8 +1174,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1183,8 +1183,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1192,8 +1192,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1201,8 +1201,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1210,8 +1210,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1219,8 +1219,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Poor.",
-      "comment": "Biking excluding e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Biking excluding e-bikes is allowed; Wet with muddy sections",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1228,8 +1228,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet with muddy sections",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1237,8 +1237,8 @@
       "difficulty": "Difficult",
       "status": "closed",
       "condition": "Road access closed",
-      "comment": "Walk or bike in access only, road closed to vehicles; Bow Valley Parkway cycling offer in effect. ; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Walk or bike in access only, road closed to vehicles; Bow Valley Parkway cycling offer in effect. ; Wet with muddy sections; Snow at high elevation",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1246,8 +1246,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
@@ -1255,8 +1255,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections; Snow at high elevation",
+      "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
