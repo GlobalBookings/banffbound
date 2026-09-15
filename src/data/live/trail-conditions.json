@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-15T20:40:49.794Z",
+  "updatedAt": "2026-09-15T23:50:58.969Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
-    "open": 87,
+    "open": 83,
     "caution": 8,
-    "closed": 3
+    "closed": 7
   },
   "areas": [
     {
@@ -334,17 +334,17 @@
         {
           "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
           "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "status": "closed",
+          "condition": "Closed.",
+          "comment": "Check the important bulletins for more information",
           "lastUpdated": "2026-09-15"
         },
         {
           "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
           "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "status": "closed",
+          "condition": "Closed.",
+          "comment": "Check the important bulletins for more information",
           "lastUpdated": "2026-09-15"
         },
         {
@@ -398,17 +398,17 @@
         {
           "name": "Aylmer Lookout Trail",
           "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+          "status": "closed",
+          "condition": "Closed.",
+          "comment": "Check the important bulletins for more information",
           "lastUpdated": "2026-09-15"
         },
         {
           "name": "Aylmer Pass Trail",
           "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Bear Warning.",
-          "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections; Snow at high elevation",
+          "status": "closed",
+          "condition": "Closed.",
+          "comment": "Check the important bulletins for more information",
           "lastUpdated": "2026-09-15"
         }
       ]
@@ -1172,18 +1172,18 @@
     {
       "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
       "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "status": "closed",
+      "condition": "Closed.",
+      "comment": "Check the important bulletins for more information",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
       "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
       "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "status": "closed",
+      "condition": "Closed.",
+      "comment": "Check the important bulletins for more information",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -1244,18 +1244,18 @@
     {
       "name": "Aylmer Lookout Trail",
       "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections",
+      "status": "closed",
+      "condition": "Closed.",
+      "comment": "Check the important bulletins for more information",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
     {
       "name": "Aylmer Pass Trail",
       "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Bear Warning.",
-      "comment": "Bear warning in effect; Check the important bulletins for more information; Wet with muddy sections; Snow at high elevation",
+      "status": "closed",
+      "condition": "Closed.",
+      "comment": "Check the important bulletins for more information",
       "lastUpdated": "2026-09-15",
       "area": "Banff Area"
     },
@@ -1693,6 +1693,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Area Closure: Lake Minnewanka Trail, Aylmer Pass Trail, and Campgrounds",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Warning: Skoki trails",
       "type": "Warning",
