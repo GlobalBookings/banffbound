@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-16T02:31:17.059Z",
+  "updatedAt": "2026-09-16T08:57:13.729Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1714,12 +1714,6 @@
     {
       "title": "Area Closure: Spray Wildfire Risk Reduction Project",
       "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Advisory: Berry Season",
-      "type": "Advisory",
       "issued": "",
       "ends": ""
     },
