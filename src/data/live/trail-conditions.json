@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-09-16T19:13:48.458Z",
+  "updatedAt": "2026-09-16T22:30:15.066Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
-    "open": 87,
-    "caution": 4,
+    "open": 89,
+    "caution": 2,
     "closed": 7
   },
   "areas": [
@@ -230,9 +230,9 @@
         {
           "name": "Sulphur Mountain Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Stay on trail; Wet and muddy sections; Snow at high elevation",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Stay on trail; Wet and muddy sections",
           "lastUpdated": "2026-09-16"
         },
         {
@@ -286,9 +286,9 @@
         {
           "name": "Rockbound Lake Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Wet with muddy sections; Snow at high elevation",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Wet and muddy sections",
           "lastUpdated": "2026-09-16"
         },
         {
@@ -1055,9 +1055,9 @@
     {
       "name": "Sulphur Mountain Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Stay on trail; Wet and muddy sections; Snow at high elevation",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Stay on trail; Wet and muddy sections",
       "lastUpdated": "2026-09-16",
       "area": "Banff Area"
     },
@@ -1118,9 +1118,9 @@
     {
       "name": "Rockbound Lake Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Wet with muddy sections; Snow at high elevation",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Wet and muddy sections",
       "lastUpdated": "2026-09-16",
       "area": "Banff Area"
     },
