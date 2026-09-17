@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-09-17T02:35:45.195Z",
-  "fireDanger": null,
+  "updatedAt": "2026-09-17T09:02:22.221Z",
+  "fireDanger": "low",
   "summary": {
     "total": 0,
     "open": 0,
@@ -77,6 +77,5 @@
       "ends": ""
     }
   ],
-  "source": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions",
-  "error": "trail conditions page fetch failed"
+  "source": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions"
 }
