@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T17:34:27.092Z",
+  "updatedAt": "2026-09-18T20:11:07.205Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1706,20 +1706,8 @@
       "ends": ""
     },
     {
-      "title": "Area Closure: Lake Minnewanka campgrounds Lm8, Lm9, Lm11, Lm20, Lm22, Lm31",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
       "title": "Area Closure: Spray Wildfire Risk Reduction Project",
       "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Warning: Lake Minnewanka Trail and Campgrounds",
-      "type": "Warning",
       "issued": "",
       "ends": ""
     },
