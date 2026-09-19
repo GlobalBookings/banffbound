@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-19T08:24:23.937Z",
+  "updatedAt": "2026-09-19T13:35:48.931Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -1693,6 +1693,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Area Closure: Ceremonial Bison Harvest",
+      "type": "Area Closure",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Area Closure: Lake Minnewanka Trail, Aylmer Pass Trail, and Campgrounds",
       "type": "Area Closure",
