@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-21T16:06:19.569Z",
+  "updatedAt": "2026-09-21T21:27:14.725Z",
   "banff": {
     "current": {
-      "temp": 11,
+      "temp": 21,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 56,
-      "wind": "5 km/h"
+      "humidity": 25,
+      "wind": "21 km/h"
     },
     "forecast": [
       {
@@ -18,28 +18,28 @@
       },
       {
         "day": "Tuesday",
-        "high": 21,
-        "low": 9,
+        "high": 20,
+        "low": 8,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Wednesday",
         "high": 17,
-        "low": 6,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "low": 4,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Thursday",
-        "high": 17,
+        "high": 18,
         "low": 5,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Friday",
-        "high": 10,
+        "high": 14,
         "low": 4,
         "condition": "Violent rain showers",
         "icon": "🌧️"
@@ -48,11 +48,11 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 13,
+      "temp": 18,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 58,
-      "wind": "8 km/h"
+      "humidity": 42,
+      "wind": "15 km/h"
     },
     "forecast": [
       {
@@ -72,22 +72,22 @@
       {
         "day": "Wednesday",
         "high": 15,
-        "low": 3,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "low": 1,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Thursday",
-        "high": 14,
-        "low": 5,
+        "high": 15,
+        "low": 4,
         "condition": "Light drizzle",
         "icon": "🌦️"
       },
       {
         "day": "Friday",
-        "high": 8,
-        "low": 4,
-        "condition": "Slight rain showers",
+        "high": 11,
+        "low": 5,
+        "condition": "Moderate drizzle",
         "icon": "🌦️"
       }
     ]
