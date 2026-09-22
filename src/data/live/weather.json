@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-22T17:50:25.504Z",
+  "updatedAt": "2026-09-22T20:41:02.842Z",
   "banff": {
     "current": {
-      "temp": 16,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 38,
-      "wind": "7 km/h"
+      "temp": 19,
+      "condition": "Mainly clear",
+      "icon": "🌤️",
+      "humidity": 33,
+      "wind": "13 km/h"
     },
     "forecast": [
       {
@@ -32,27 +32,27 @@
       },
       {
         "day": "Friday",
-        "high": 19,
+        "high": 20,
         "low": 7,
-        "condition": "Moderate rain showers",
-        "icon": "🌧️"
+        "condition": "Light drizzle",
+        "icon": "🌦️"
       },
       {
         "day": "Saturday",
-        "high": 10,
-        "low": 3,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 7,
+        "low": -2,
+        "condition": "Moderate rain",
+        "icon": "🌧️"
       }
     ]
   },
   "lakeLouise": {
     "current": {
-      "temp": 14,
+      "temp": 16,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 46,
-      "wind": "9 km/h"
+      "humidity": 41,
+      "wind": "11 km/h"
     },
     "forecast": [
       {
@@ -64,30 +64,30 @@
       },
       {
         "day": "Wednesday",
-        "high": 12,
+        "high": 13,
         "low": 3,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Thursday",
-        "high": 15,
+        "high": 16,
         "low": 0,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Friday",
-        "high": 14,
-        "low": 5,
-        "condition": "Moderate rain showers",
-        "icon": "🌧️"
+        "high": 15,
+        "low": 6,
+        "condition": "Slight rain showers",
+        "icon": "🌦️"
       },
       {
         "day": "Saturday",
         "high": 7,
-        "low": 2,
-        "condition": "Light drizzle",
+        "low": -1,
+        "condition": "Slight rain showers",
         "icon": "🌦️"
       }
     ]
