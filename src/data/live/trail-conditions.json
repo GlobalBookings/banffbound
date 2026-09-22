@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T20:41:02.626Z",
+  "updatedAt": "2026-09-22T23:55:46.242Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -113,7 +113,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-09-21"
+          "lastUpdated": "2026-09-22"
         },
         {
           "name": "Spray River West Trail",
@@ -923,7 +923,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-09-21",
+      "lastUpdated": "2026-09-22",
       "area": "Banff Area"
     },
     {
