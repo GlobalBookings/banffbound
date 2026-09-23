@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T14:34:01.357Z",
+  "updatedAt": "2026-09-23T19:21:02.059Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -421,32 +421,32 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Attenti",
-          "lastUpdated": "2026-09-14"
+          "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Mainly ",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Consolation Lakes Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-09-14"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Fairview Lookout Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Great Divide Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-09-14"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Lake Louise Lakeshore Trail",
@@ -454,15 +454,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Moraine Lake Lakeshore Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-          "lastUpdated": "2026-09-14"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Rockpile Loop",
@@ -470,7 +470,7 @@
           "status": "open",
           "condition": "Please respect all posted notices and signs.",
           "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-09-14"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Louise Creek Trail",
@@ -478,15 +478,15 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "The lower section of the Louise Creek trail is CLOSED from May 15 to October 15 to help protect and improve important wildlife habitat. Hikers are asked to travel the new Tramline connector instead.; ",
-          "lastUpdated": "2026-09-14"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Big Beehive Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Steep switchback section - use caution; Extensive trail erosion",
-          "lastUpdated": "2026-09-14"
+          "comment": "Steep switchback section - use caution; Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Big Beehive to Plain of Six Glaciers Trail",
@@ -494,7 +494,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-09-14"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Castle Lookout Trail",
@@ -502,7 +502,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-09-14"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Eiffel Lake Trail",
@@ -510,31 +510,31 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-09-14"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Lake Agnes Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-09-14"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Lake Annette Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-09-14"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Larch Valley/Minnestimma Lakes Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Attention: It's berry season. Bear encounters are possible",
-          "lastUpdated": "2026-09-14"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Paradise Connector Trail",
@@ -542,15 +542,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-14"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Little Beehive Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-09-14"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Mirror Lake Highline Trail",
@@ -558,7 +558,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Pipestone",
@@ -566,7 +566,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking excluding e-bikes is allowed; Fire guard debris for ~200m; Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Plain of Six Glaciers Trail",
@@ -574,15 +574,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Taylor Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-09-11"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Tramline Trail",
@@ -590,23 +590,23 @@
           "status": "closed",
           "condition": "Partially closed, check trail details for additional information.",
           "comment": "The lower section of Tramline is closed from May 15 until October 15. Begin from the Bow River parking lot, cross the bridge, take a left and follow the Bow River Trail until the junction with the new",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Fairview Mountain Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Steep switchback section - use caution",
-          "lastUpdated": "2026-09-14"
+          "condition": "Good.",
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Moraine Lake Highline Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-          "lastUpdated": "2026-09-11"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Hidden Lake Trail",
@@ -1264,8 +1264,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Attenti",
-      "lastUpdated": "2026-09-14",
+      "comment": "Trail section along the southwest side of Bow River CLOSED from May 15 to October 15; Biking including pedal-assist e-bikes is allowed; Adhere to all posted warnings and closures along trails; Mainly ",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1273,8 +1273,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-09-14",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1282,8 +1282,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1291,8 +1291,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-09-14",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Parking lot closed.",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1301,7 +1301,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1309,8 +1309,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-      "lastUpdated": "2026-09-14",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1319,7 +1319,7 @@
       "status": "open",
       "condition": "Please respect all posted notices and signs.",
       "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-09-14",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1328,7 +1328,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "The lower section of the Louise Creek trail is CLOSED from May 15 to October 15 to help protect and improve important wildlife habitat. Hikers are asked to travel the new Tramline connector instead.; ",
-      "lastUpdated": "2026-09-14",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1336,8 +1336,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Steep switchback section - use caution; Extensive trail erosion",
-      "lastUpdated": "2026-09-14",
+      "comment": "Steep switchback section - use caution; Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1346,7 +1346,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-09-14",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1355,7 +1355,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-09-14",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1364,7 +1364,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-09-14",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1372,8 +1372,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-09-14",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1381,8 +1381,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-09-14",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1390,8 +1390,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Attention: It's berry season. Bear encounters are possible",
-      "lastUpdated": "2026-09-14",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail; Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1400,7 +1400,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-14",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1408,8 +1408,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-09-14",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1418,7 +1418,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1427,7 +1427,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking excluding e-bikes is allowed; Fire guard debris for ~200m; Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1436,7 +1436,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1444,8 +1444,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-09-11",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1454,16 +1454,16 @@
       "status": "closed",
       "condition": "Partially closed, check trail details for additional information.",
       "comment": "The lower section of Tramline is closed from May 15 until October 15. Begin from the Bow River parking lot, cross the bridge, take a left and follow the Bow River Trail until the junction with the new",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
       "name": "Fairview Mountain Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Steep switchback section - use caution",
-      "lastUpdated": "2026-09-14",
+      "condition": "Good.",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1471,8 +1471,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-      "lastUpdated": "2026-09-11",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
