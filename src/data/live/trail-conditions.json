@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-09-23T19:21:02.059Z",
+  "updatedAt": "2026-09-23T22:34:32.518Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
-    "open": 90,
-    "caution": 1,
+    "open": 91,
+    "caution": 0,
     "closed": 7
   },
   "areas": [
@@ -613,64 +613,64 @@
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Bear warning : Hike in a group and make noise.",
-          "comment": "Wet with muddy sections",
-          "lastUpdated": "2026-09-11"
+          "comment": "Aggressive bear in the area; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Deception Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Bear warning : Hike in a group and make noise.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "comment": "Aggressive bear in the area; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Paradise Valley and Giant Steps Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible; Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Sentinel Pass from Paradise Valley Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding",
-          "lastUpdated": "2026-09-11"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding ; Icy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Saddleback Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-09-11"
+          "condition": "Excellent.",
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Sentinel Pass via Larch Valley Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-          "lastUpdated": "2026-09-11"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Sheol / Paradise Connector Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Wenkchemna Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-09-11"
+          "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Mainly dry",
+          "lastUpdated": "2026-09-23"
         }
       ]
     },
@@ -683,23 +683,23 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail; Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Mistaya Canyon Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-09-11"
+          "condition": "Fair.",
+          "comment": "Extensive trail erosion; Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Peyto Lake Lookout Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Please respect all posted notices and signs.",
-          "comment": "Stay on designated trails and viewpoints; Respect all posted notices and signs; Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-09-11"
+          "condition": "Good.",
+          "comment": "Stay on designated trails and viewpoints; Respect all posted notices and signs; Fragile alpine vegetation, stay on the trail; Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Chephren Lake Trail",
@@ -707,7 +707,7 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Bow Glacier Falls Trail",
@@ -715,7 +715,7 @@
           "status": "open",
           "condition": "Caution.",
           "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Cirque Lake Trail",
@@ -723,39 +723,39 @@
           "status": "open",
           "condition": "Fair.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Helen Lake Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Potential stream crossings; Stay on designated trails and viewpoints; Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "condition": "Fair.",
+          "comment": "Potential stream crossings; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Parker Ridge Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Fragile alpine vegetation, stay on the trail",
-          "lastUpdated": "2026-09-11"
+          "comment": "Fragile alpine vegetation, stay on the trail; Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Nigel Pass Trail",
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-09-11"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Dolomite Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints",
-          "lastUpdated": "2026-09-11"
+          "comment": "Mainly dry",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Glacier Lake Trail",
@@ -763,23 +763,23 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Caution.",
-          "comment": "Bridge(s) out; Stream crossings",
-          "lastUpdated": "2026-09-11"
+          "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "North Molar Pass Trail",
           "difficulty": "Difficult",
           "status": "open",
           "condition": "Caution.",
-          "comment": "Bridge(s) out; Stream crossings",
-          "lastUpdated": "2026-09-11"
+          "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Sunset Pass Trail",
@@ -787,7 +787,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Sarbach Lookout Trail",
@@ -795,15 +795,15 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Mainly dry",
-          "lastUpdated": "2026-09-11"
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Sunset Lookout Trail",
           "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Numerous trees down on trail; Not recommended",
-          "lastUpdated": "2026-09-11"
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Deadfall on trail",
+          "lastUpdated": "2026-09-23"
         }
       ]
     }
@@ -1480,8 +1480,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Bear warning : Hike in a group and make noise.",
-      "comment": "Wet with muddy sections",
-      "lastUpdated": "2026-09-11",
+      "comment": "Aggressive bear in the area; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1489,8 +1489,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Bear warning : Hike in a group and make noise.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "comment": "Aggressive bear in the area; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1498,8 +1498,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Attention: It's berry season. Bear encounters are possible; Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1507,17 +1507,17 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding",
-      "lastUpdated": "2026-09-11",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Difficult route finding ; Icy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
       "name": "Saddleback Pass Trail",
       "difficulty": "Difficult",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-09-11",
+      "condition": "Excellent.",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1525,8 +1525,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October",
-      "lastUpdated": "2026-09-11",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1534,8 +1534,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1543,8 +1543,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-09-11",
+      "comment": "Moraine Lake Road is closed to personal vehicles - shuttle bus access June - October; Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Lake Louise Area"
     },
     {
@@ -1553,25 +1553,25 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Stay on designated trails and viewpoints; Fragile alpine vegetation, stay on the trail; Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "Mistaya Canyon Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-09-11",
+      "condition": "Fair.",
+      "comment": "Extensive trail erosion; Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "Peyto Lake Lookout Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Please respect all posted notices and signs.",
-      "comment": "Stay on designated trails and viewpoints; Respect all posted notices and signs; Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-09-11",
+      "condition": "Good.",
+      "comment": "Stay on designated trails and viewpoints; Respect all posted notices and signs; Fragile alpine vegetation, stay on the trail; Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1580,7 +1580,7 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1589,7 +1589,7 @@
       "status": "open",
       "condition": "Caution.",
       "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1598,16 +1598,16 @@
       "status": "open",
       "condition": "Fair.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "Helen Lake Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Potential stream crossings; Stay on designated trails and viewpoints; Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "condition": "Fair.",
+      "comment": "Potential stream crossings; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1615,8 +1615,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Fragile alpine vegetation, stay on the trail",
-      "lastUpdated": "2026-09-11",
+      "comment": "Fragile alpine vegetation, stay on the trail; Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1624,8 +1624,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-09-11",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1633,8 +1633,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints",
-      "lastUpdated": "2026-09-11",
+      "comment": "Mainly dry",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1643,7 +1643,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1651,8 +1651,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Caution.",
-      "comment": "Bridge(s) out; Stream crossings",
-      "lastUpdated": "2026-09-11",
+      "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1660,8 +1660,8 @@
       "difficulty": "Difficult",
       "status": "open",
       "condition": "Caution.",
-      "comment": "Bridge(s) out; Stream crossings",
-      "lastUpdated": "2026-09-11",
+      "comment": "Bridge(s) out; Stream crossings; Wet and muddy sections",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1670,7 +1670,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
@@ -1679,16 +1679,16 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Mainly dry",
-      "lastUpdated": "2026-09-11",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     },
     {
       "name": "Sunset Lookout Trail",
       "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Numerous trees down on trail; Not recommended",
-      "lastUpdated": "2026-09-11",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Deadfall on trail",
+      "lastUpdated": "2026-09-23",
       "area": "Icefields Parkway Area"
     }
   ],
