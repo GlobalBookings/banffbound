@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-23T08:57:06.136Z",
+  "updatedAt": "2026-09-23T14:34:01.357Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
-    "open": 89,
+    "open": 90,
     "caution": 1,
-    "closed": 8
+    "closed": 7
   },
   "areas": [
     {
@@ -118,10 +118,10 @@
         {
           "name": "Spray River West Trail",
           "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Closed.",
-          "comment": "Respect all posted notices and signs",
-          "lastUpdated": "2026-09-22"
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Biking excluding e-bikes is allowed",
+          "lastUpdated": "2026-09-23"
         },
         {
           "name": "Healy Creek Trail",
@@ -929,10 +929,10 @@
     {
       "name": "Spray River West Trail",
       "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Closed.",
-      "comment": "Respect all posted notices and signs",
-      "lastUpdated": "2026-09-22",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Biking excluding e-bikes is allowed",
+      "lastUpdated": "2026-09-23",
       "area": "Banff Area"
     },
     {
