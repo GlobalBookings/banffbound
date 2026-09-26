@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-26T17:37:20.143Z",
+  "updatedAt": "2026-09-26T20:24:50.785Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
-    "open": 90,
+    "open": 91,
     "caution": 0,
-    "closed": 8
+    "closed": 7
   },
   "areas": [
     {
@@ -16,40 +16,40 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Marsh Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Fair.",
-          "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Silverton Falls Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Johnson Lake Loop",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Wet and muddy sections",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Cascade Ponds-Bankhead Trail",
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Vermilion Lakes Drive",
@@ -57,7 +57,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-09-25"
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Tunnel Campground Loop",
@@ -78,9 +78,9 @@
         {
           "name": "Golf Course Road",
           "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Closed.",
-          "comment": "Event in progress",
+          "status": "open",
+          "condition": "Good.",
+          "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed",
           "lastUpdated": "2026-09-26"
         },
         {
@@ -136,8 +136,8 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Good.",
-          "comment": "Gondola closed; Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Gondola closed; Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet and muddy sections; Snow at high elevation",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Banff Legacy Trail: Banff–Banff East Gate",
@@ -175,8 +175,8 @@
           "name": "Tunnel Mountain Summit Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Caution.",
-          "comment": "Event in progress",
+          "condition": "Good.",
+          "comment": "Stay on designated trails and viewpoints; Wet with muddy sections",
           "lastUpdated": "2026-09-26"
         },
         {
@@ -192,8 +192,8 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Sundance Canyon Loop",
@@ -232,8 +232,8 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on trail; Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Stay on trail; Wet and muddy sections",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Ink Pots Trail",
@@ -264,8 +264,8 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Wet and muddy sections; Snow at high elevation",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Redearth Creek Trail",
@@ -288,8 +288,8 @@
           "difficulty": "Moderate",
           "status": "open",
           "condition": "Good.",
-          "comment": "Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "comment": "Wet and muddy sections; Snow at high elevation",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Arnica Lake Trail",
@@ -814,8 +814,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -823,8 +823,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Fair.",
-      "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -832,8 +832,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -841,8 +841,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Wet and muddy sections",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -850,8 +850,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -860,7 +860,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-09-25",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -884,9 +884,9 @@
     {
       "name": "Golf Course Road",
       "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Closed.",
-      "comment": "Event in progress",
+      "status": "open",
+      "condition": "Good.",
+      "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed",
       "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
@@ -949,8 +949,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Good.",
-      "comment": "Gondola closed; Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Gondola closed; Stay on trail; Adhere to all posted warnings and closures along trails; Check the important bulletins for more information; Wet and muddy sections; Snow at high elevation",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -993,8 +993,8 @@
       "name": "Tunnel Mountain Summit Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Caution.",
-      "comment": "Event in progress",
+      "condition": "Good.",
+      "comment": "Stay on designated trails and viewpoints; Wet with muddy sections",
       "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
@@ -1012,8 +1012,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -1057,8 +1057,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on trail; Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Stay on trail; Wet and muddy sections",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -1093,8 +1093,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Stay on designated trails and viewpoints; Check the important bulletins for more information; Wet and muddy sections; Snow at high elevation",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -1120,8 +1120,8 @@
       "difficulty": "Moderate",
       "status": "open",
       "condition": "Good.",
-      "comment": "Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "comment": "Wet and muddy sections; Snow at high elevation",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
