@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-26T13:58:25.998Z",
+  "updatedAt": "2026-09-26T17:37:20.143Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
-    "open": 91,
+    "open": 90,
     "caution": 0,
-    "closed": 7
+    "closed": 8
   },
   "areas": [
     {
@@ -78,10 +78,10 @@
         {
           "name": "Golf Course Road",
           "difficulty": "Easy",
-          "status": "open",
-          "condition": "Good.",
-          "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed",
-          "lastUpdated": "2026-09-25"
+          "status": "closed",
+          "condition": "Closed.",
+          "comment": "Event in progress",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Johnston Canyon Trail",
@@ -175,9 +175,9 @@
           "name": "Tunnel Mountain Summit Trail",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Good.",
-          "comment": "Stay on designated trails and viewpoints; Mainly dry",
-          "lastUpdated": "2026-09-25"
+          "condition": "Caution.",
+          "comment": "Event in progress",
+          "lastUpdated": "2026-09-26"
         },
         {
           "name": "Banff Avenue Trail",
@@ -884,10 +884,10 @@
     {
       "name": "Golf Course Road",
       "difficulty": "Easy",
-      "status": "open",
-      "condition": "Good.",
-      "comment": "Respect all posted notices and signs; Check the important bulletins for more information; Biking including pedal-assist e-bikes is allowed",
-      "lastUpdated": "2026-09-25",
+      "status": "closed",
+      "condition": "Closed.",
+      "comment": "Event in progress",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
@@ -993,9 +993,9 @@
       "name": "Tunnel Mountain Summit Trail",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Good.",
-      "comment": "Stay on designated trails and viewpoints; Mainly dry",
-      "lastUpdated": "2026-09-25",
+      "condition": "Caution.",
+      "comment": "Event in progress",
+      "lastUpdated": "2026-09-26",
       "area": "Banff Area"
     },
     {
