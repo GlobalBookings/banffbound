@@ -1,46 +1,46 @@
 {
-  "updatedAt": "2026-10-01T08:03:38.540Z",
+  "updatedAt": "2026-10-01T16:47:57.827Z",
   "banff": {
     "current": {
-      "temp": 2,
+      "temp": 3,
       "condition": "Clear sky",
       "icon": "☀️",
-      "humidity": 59,
-      "wind": "7 km/h"
+      "humidity": 63,
+      "wind": "4 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 12,
-        "low": 1,
+        "low": -3,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Friday",
-        "high": 12,
-        "low": 5,
+        "high": 14,
+        "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Saturday",
-        "high": 14,
-        "low": 5,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 16,
+        "low": 3,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Sunday",
-        "high": 18,
+        "high": 19,
         "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Monday",
-        "high": 18,
-        "low": 8,
+        "high": 19,
+        "low": 7,
         "condition": "Overcast",
         "icon": "☁️"
       }
@@ -48,38 +48,38 @@
   },
   "lakeLouise": {
     "current": {
-      "temp": 1,
-      "condition": "Overcast",
-      "icon": "☁️",
-      "humidity": 75,
-      "wind": "2 km/h"
+      "temp": 5,
+      "condition": "Clear sky",
+      "icon": "☀️",
+      "humidity": 51,
+      "wind": "4 km/h"
     },
     "forecast": [
       {
         "day": "Today",
         "high": 9,
-        "low": -2,
+        "low": -1,
         "condition": "Overcast",
         "icon": "☁️"
       },
       {
         "day": "Friday",
-        "high": 8,
-        "low": 4,
-        "condition": "Light drizzle",
-        "icon": "🌦️"
+        "high": 10,
+        "low": 3,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Saturday",
-        "high": 12,
-        "low": 5,
-        "condition": "Moderate drizzle",
-        "icon": "🌦️"
+        "high": 13,
+        "low": 3,
+        "condition": "Overcast",
+        "icon": "☁️"
       },
       {
         "day": "Sunday",
         "high": 16,
-        "low": 3,
+        "low": 4,
         "condition": "Overcast",
         "icon": "☁️"
       },
