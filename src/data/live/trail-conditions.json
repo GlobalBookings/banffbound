@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T22:09:39.010Z",
+  "updatedAt": "2026-10-02T03:16:53.188Z",
   "fireDanger": "low",
   "summary": {
     "total": 98,
@@ -385,7 +385,7 @@
           "status": "open",
           "condition": "Good.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-          "lastUpdated": "2026-09-29"
+          "lastUpdated": "2026-10-01"
         },
         {
           "name": "Cory Pass Loop",
@@ -393,7 +393,7 @@
           "status": "closed",
           "condition": "Road access closed",
           "comment": "Walk or bike in access only, road closed to vehicles; Bow Valley Parkway cycling offer in effect. ; Wet with muddy sections",
-          "lastUpdated": "2026-09-29"
+          "lastUpdated": "2026-10-01"
         },
         {
           "name": "Aylmer Lookout Trail",
@@ -1229,7 +1229,7 @@
       "status": "open",
       "condition": "Good.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Wet and muddy sections",
-      "lastUpdated": "2026-09-29",
+      "lastUpdated": "2026-10-01",
       "area": "Banff Area"
     },
     {
@@ -1238,7 +1238,7 @@
       "status": "closed",
       "condition": "Road access closed",
       "comment": "Walk or bike in access only, road closed to vehicles; Bow Valley Parkway cycling offer in effect. ; Wet with muddy sections",
-      "lastUpdated": "2026-09-29",
+      "lastUpdated": "2026-10-01",
       "area": "Banff Area"
     },
     {
