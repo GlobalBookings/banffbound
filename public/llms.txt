@@ -3,7 +3,7 @@
 > Travel guides and planning tools for Banff, Lake Louise, Canmore and the nearby Canadian Rockies. Use the source links in each guide for current operations and trip-day decisions. Booking links may be affiliate links.
 
 ## Winter planning
-- [Winter in Banff](https://banffbound.com/winter/): Search 24 winter planning guides by interest and explore seasonal month-by-month advice.
+- [Winter in Banff](https://banffbound.com/winter/): Search 27 winter planning guides by interest and explore seasonal month-by-month advice.
 - [Learn to ski](https://banffbound.com/learn-to-ski/): First ski or snowboard lessons, learning-area tickets, equipment, children’s booking questions and a saved readiness checklist.
 - [Ski day planner](https://banffbound.com/ski-day-planner/): Personalise a resort day by experience, base, resort, transport and group. Share selections or print a plan.
 - [Resort comparison](https://banffbound.com/sunshine-vs-lake-louise-vs-norquay/): Practical differences among Sunshine, Lake Louise and Norquay.
@@ -26,6 +26,9 @@
 - [Kananaskis](https://banffbound.com/towns/kananaskis/)
 
 ## Wider trip planning
+- [Family guide](https://banffbound.com/family-guide/): Filter seasonal ideas by age and outing style; check current operator eligibility and the room layout before booking.
+- [Dog-friendly planning](https://banffbound.com/dog-friendly/): Match pet transport, seasonal restrictions, off-leash areas and allocated pet rooms.
+- [Events](https://banffbound.com/events/): Filter dated Town calendar copies and check official winter festival programmes; failed retrievals are not an empty calendar.
 - [Editable trip builder](https://banffbound.com/trip-builder/): One to seven seasonal days, editable outings, transport checks, local saving and share links. Incoming links preserve an existing saved plan until an explicit edit.
 - [Choose an outing](https://banffbound.com/what-to-do-today/): Filter seasonal ideas by base, activity allowance and interests, then open a one-day starting plan. Filters are not an access or safety assessment.
 - [Weather and cameras](https://banffbound.com/weather-webcams/): Dated ECCC weather copies, separate provider observation/forecast times and official camera/report links.

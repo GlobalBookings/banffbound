@@ -19,6 +19,12 @@ const OUTPUT_DIR = join(PROJECT_ROOT, 'src', 'data', 'live');
 // Fetcher registry — each entry maps to a file in ./fetchers/
 const FETCHERS = [
   {
+    name: 'town-events',
+    module: './fetchers/town-events.mjs',
+    fn: 'fetchTownEvents',
+    output: 'town-events.json',
+  },
+  {
     name: 'parks-canada',
     module: './fetchers/parks-canada.mjs',
     fn: 'fetchParksCanada',

@@ -35,7 +35,6 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#1a3a2a">
-    <link rel="dns-prefetch" href="https://api.openweathermap.org" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" /></noscript>
     {lastUpdated && <meta property="article:modified_time" content={lastUpdated} />}
@@ -365,17 +364,14 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
       gtag('config', 'G-2DP7J42ZW0');
       gtag('config', 'AW-17246982814');
 
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.open(url, '_blank');
-          }
-        };
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17246982814/8ptcCPuTheAaEJ6lgKBA',
-          'event_callback': callback
-        });
-        return false;
+      function gtag_report_conversion() {
+        // Record the existing click conversion without controlling link navigation.
+        try {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17246982814/8ptcCPuTheAaEJ6lgKBA'
+          });
+        } catch (_) { /* Analytics availability does not govern provider access. */ }
+        return true;
       }
     </script>
     <script src="../scripts/tracking.js"></script>

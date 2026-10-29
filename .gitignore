@@ -29,3 +29,6 @@ agents/data/
 
 # Live data JSON is committed by the refresh-data GitHub Action
 # and regenerated at the start of each build
+
+# Local reports from connected accounts; do not publish with site sources.
+research/private/

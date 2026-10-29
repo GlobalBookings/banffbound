@@ -19,18 +19,16 @@
       else if (href.indexOf('amazon.ca') !== -1 && href.indexOf('banffbound-20') !== -1) affiliate = 'amazon';
 
       if (affiliate) {
-        e.preventDefault();
-        gtag('event', 'affiliate_click', {
+        // Analytics is best-effort. The anchor keeps its native target and navigation.
+        try { gtag('event', 'affiliate_click', {
           affiliate_partner: affiliate,
           link_url: href.substring(0, 500),
           link_text: (link.textContent || '').trim().substring(0, 100),
           page_path: window.location.pathname,
           page_title: document.title,
-        });
+        }); } catch (_) { /* A blocked tracker must not block the booking provider. */ }
         if (typeof gtag_report_conversion === 'function') {
-          gtag_report_conversion(href);
-        } else {
-          window.open(href, '_blank');
+          try { gtag_report_conversion(); } catch (_) { /* Keep native navigation. */ }
         }
       }
     });

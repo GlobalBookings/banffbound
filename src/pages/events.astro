@@ -1,244 +1,71 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Parser from 'rss-parser';
-
-const parser = new Parser({
-  customFields: {
-    item: [
-      ['calendarEvent:EventDates', 'eventDates'],
-      ['calendarEvent:EventTimes', 'eventTimes'],
-      ['calendarEvent:Location', 'eventLocation'],
-    ],
-  },
-});
-
-let events: any[] = [];
-let news: any[] = [];
-
-try {
-  const eventsFeed = await parser.parseURL('https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25');
-  events = (eventsFeed.items || []).slice(0, 12).map(item => {
-    const desc = (item.description || '')
-      .replace(/<[^>]+>/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim();
-    const descParts = desc.split('Description:');
-    const cleanDesc = descParts.length > 1 ? descParts[1].trim() : desc;
-    return {
-      title: item.title || '',
-      link: item.link || '',
-      dates: item.eventDates?.trim() || '',
-      times: item.eventTimes?.trim() || '',
-      location: item.eventLocation?.trim() || 'Banff, AB',
-      description: cleanDesc.slice(0, 250) + (cleanDesc.length > 250 ? '...' : ''),
-      image: item.enclosure?.url || '',
-    };
-  });
-} catch (e) {
-  console.error('Failed to fetch events RSS:', e);
-}
-
-try {
-  const newsFeed = await parser.parseURL('https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml');
-  news = (newsFeed.items || []).slice(0, 8).map(item => ({
-    title: item.title || '',
-    link: item.link || '',
-    date: item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' }) : '',
-    description: (item.contentSnippet || item.description || '').slice(0, 200) + '...',
-    image: item.enclosure?.url || '',
-  }));
-} catch (e) {
-  console.error('Failed to fetch news RSS:', e);
-}
-
-const buildDate = new Date().toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+import townSnapshot from '../data/live/town-events.json';
+import { TOWN_FEEDS,townFeedView,mountainDay,mountainTime } from '../data/townFeedModel.mjs';
+const calendar = townFeedView(townSnapshot,'events');
+const news = townFeedView(townSnapshot,'news');
+const today = mountainDay();
+const festivals = [
+  { title:'Christmas in Banff & Lake Louise', dates:'Selected events November 12, 2026–January 3, 2027', description:'Choose the particular event and operating date. Christmas Spirit needs a free advance reservation; the Christmas Market has its own admission and selected November 19–December 13 dates.', guide:'/blog/banff-christmas-guide', guideLabel:'Plan a festive stay', source:'https://www.banfflakelouise.com/events/christmas', sourceLabel:'Official Christmas programme' },
+  { title:'SnowDays 2027', dates:'January 21–February 7, 2027', description:'Downtown Banff sculptures and activities run on different calendars. Choose the specific event, then confirm its hours, weather updates and any ticket or waiver before building the day.', guide:'/blog/banff-snowdays-festival', guideLabel:'Plan SnowDays', source:'https://www.banfflakelouise.com/events/snowdays', sourceLabel:'Official SnowDays programme' },
+  { title:'Ice Magic at Lake Louise', dates:'February 3–7, 2027', description:'A separate Lake Louise booking within SnowDays. The organiser lists eligible accommodation and operator ticket arrangements, with a required shuttle. A general hotel booking does not establish admission.', guide:'/blog/banff-snowdays-festival#ice-magic', guideLabel:'Understand the access plan', source:'https://www.banfflakelouise.com/events/snowdays/ice-magic', sourceLabel:'Official Ice Magic access' },
+];
+const faqs = [
+  {question:'Is this a live Banff event calendar?',answer:'No. Town event and news items are a dated feed snapshot, retrieved separately from the dates supplied by the source. Listings expire here after 24 hours. Confirm the organiser’s current event page for tickets, cancellation, eligibility, location and start time.'},
+  {question:'Does an empty or unavailable feed mean no events are happening?',answer:'No. An unavailable feed means retrieval or validation failed. A verified empty feed means that specific feed returned no items. The Town Events category is only part of the full calendar, and tourism and venue organisers publish separate programmes.'},
+  {question:'Which time zone should I use for Banff events?',answer:'Plan Banff calendar dates in Mountain Time, using America/Edmonton so daylight saving changes are handled. Event date and time text is shown as supplied by the Town; confirm the organiser’s listing. Feed and item publication timestamps are separate from the event’s date.'},
+  {question:'Can visitors attend every Town programme?',answer:'Check each listing. Resident eligibility, age limits, registration, admission, access and venue rules vary. A calendar listing does not reserve a ticket or establish that a resident benefit is available to visitors.'},
+];
 ---
-
-<BaseLayout title="News & Events" description="Stay up to date with the latest news, events, and happenings in Banff, Alberta.">
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Events & News' }]} />
+<BaseLayout title="Banff Events & Winter Festivals: Town Calendar and News" description="Plan Banff events with dated Town calendar listings and announcements, 2026/27 winter festival guides, date filters and direct organiser links." image="https://banffbound.com/images/blog/banff-snowdays-festival.webp" lastUpdated="2026-10-28">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(faq=>({'@type':'Question',name:faq.question,acceptedAnswer:{'@type':'Answer',text:faq.answer}}))})} />
+  <div class="container"><Breadcrumbs items={[{label:'Events & News'}]} /></div>
+  <section class="page-hero"><img src="/images/blog/banff-snowdays-festival.webp" alt="Winter in Banff with a mountain backdrop" class="page-hero-bg" loading="eager" fetchpriority="high" /><div class="page-hero-content"><span class="badge">Choose the date, then the journey</span><h1>Banff events & winter festivals</h1><p>Town calendar listings, official announcements and practical planning for the 2026/27 winter programme.</p></div></section>
+  <div class="container events-content">
+    <p class="lead">Build your visit around the event you actually want to attend. A Town listing, a festival overview and a venue ticket are different pieces of the plan. Check the exact date, eligibility, access and cancellation terms before booking transport or a stay.</p>
+    <nav class="jump-links" aria-label="On this page"><a href="#town-calendar">Town listings</a><a href="#winter-festivals">Winter festivals</a><a href="#town-news">Town announcements</a><a href="#event-logistics">Make the journey work</a></nav>
+    <section id="town-calendar" data-town-panel data-town-kind="events" data-town-expires={calendar.expiresAt} data-town-retrieved={calendar.retrievedAt} aria-labelledby="calendar-heading">
+      <span class="eyebrow">Town of Banff · Events category</span><h2 id="calendar-heading">Find a date to investigate</h2>
+      <p>This is a selection from one Town calendar category, not a complete destination calendar. Dates and time text below are supplied by the Town; filters use Banff's Mountain Time calendar day. Event publication dates are not event start dates.</p>
+      <div class="source-status"><p><strong>Snapshot retrieved:</strong> {mountainTime(calendar.retrievedAt)}</p><p>{calendar.message}</p>{calendar.sourceUpdatedAt ? <p><strong>Feed timestamp supplied by Town:</strong> {mountainTime(calendar.sourceUpdatedAt)}</p> : calendar.sourceUpdatedAtText && <p><strong>Source feed timestamp:</strong> {calendar.sourceUpdatedAtText}. {calendar.sourceTimeIssue || 'The source update instant is unverified.'}</p>}</div>
+      {calendar.items.length > 0 && <div data-town-results>
+        <form id="town-event-filters" class="event-filters" hidden aria-label="Filter Town event listings">
+          <label for="town-event-from">From date<input id="town-event-from" type="date" value={today} /></label>
+          <label for="town-event-to">Through date<input id="town-event-to" type="date" /></label>
+          <label for="town-event-query">Search listings<input id="town-event-query" type="search" maxlength="100" placeholder="Title, place or description" /></label>
+          <button type="button" id="town-event-reset">Reset</button>
+        </form>
+        <p data-town-count role="status" aria-live="polite" aria-atomic="true">{calendar.items.length} dated listings in this snapshot. Confirm the organiser's current details.</p>
+        <div class="event-grid">{calendar.items.map(event=><article class="event-card" data-town-event data-town-search={[event.title,event.description,event.location].join(' ')} data-start={event.startDate} data-end={event.endDate}><p class="event-date">{event.dates}</p><h3><a href={event.link} target="_blank" rel="noopener">{event.title} ↗</a></h3>{event.times && <p><strong>Listed time:</strong> {event.times}</p>}{event.location && <p><strong>Listed location:</strong> {event.location}</p>}<p>{event.description}</p><p class="small">Listing published: {mountainTime(event.publishedAt)}</p><a href={event.link} target="_blank" rel="noopener" class="detail-link">Check tickets, eligibility & current details ↗</a></article>)}</div>
+        <p data-town-no-matches hidden>No listings match these dates and words. Reset the filters or use the full Town calendar; this does not establish that no events are scheduled.</p>
+      </div>}
+      <p class="source-status" data-town-stale hidden={calendar.status !== 'stale'}>The Town listing snapshot is unavailable or has expired. Open the official calendar for current dates; this does not mean there are no events.</p>
+      <noscript><p class="small">These are dated static listings. The filters and expiry check require JavaScript; use the official calendar to confirm what is happening on your date.</p></noscript>
+      <div class="related-links"><a href={TOWN_FEEDS.events.pageUrl} target="_blank" rel="noopener">Full Town calendar ↗</a><a href="https://www.banfflakelouise.com/events" target="_blank" rel="noopener">Tourism events & festivals ↗</a></div>
+    </section>
+    <section id="winter-festivals" aria-labelledby="winter-heading">
+      <span class="eyebrow">Published 2026/27 programme · reviewed October 28, 2026</span><h2 id="winter-heading">Choose a winter anchor for the trip</h2>
+      <p>These organiser announcements are separate from the Town feed. They are dates for the stated season, not forecasts for another winter. Individual activities, tickets and weather updates still need checking.</p>
+      <div class="event-grid">{festivals.map(event=><article class="festival-card"><h3>{event.title}</h3><p class="event-date">{event.dates}</p><p>{event.description}</p><a href={event.guide}>{event.guideLabel} →</a><a href={event.source} target="_blank" rel="noopener">{event.sourceLabel} ↗</a></article>)}</div>
+    </section>
+    <section id="town-news" data-town-panel data-town-kind="news" data-town-expires={news.expiresAt} data-town-retrieved={news.retrievedAt} aria-labelledby="news-heading">
+      <span class="eyebrow">Town of Banff · News Releases feed</span><h2 id="news-heading">Town announcements</h2>
+      <p>Use the original release for the full context and subsequent updates. An article's publication date does not establish that a past advisory or registration deadline is still in effect.</p>
+      <div class="source-status"><p><strong>Snapshot retrieved:</strong> {mountainTime(news.retrievedAt)}</p><p>{news.message}</p>{news.sourceUpdatedAt ? <p><strong>Feed timestamp supplied by Town:</strong> {mountainTime(news.sourceUpdatedAt)}</p> : news.sourceUpdatedAtText && <p><strong>Source feed timestamp:</strong> {news.sourceUpdatedAtText}. {news.sourceTimeIssue || 'The source update instant is unverified.'}</p>}</div>
+      {news.items.length > 0 && <div class="news-grid" data-town-results>{news.items.slice(0,8).map(item=><article class="news-card"><p class="small">Published: {mountainTime(item.publishedAt)}</p><h3><a href={item.link} target="_blank" rel="noopener">{item.title} ↗</a></h3><p>{item.description}</p><a href={item.link} target="_blank" rel="noopener">Read the Town release ↗</a></article>)}</div>}
+      <p class="source-status" data-town-stale hidden={news.status !== 'stale'}>The announcement snapshot is unavailable or has expired. Use the Town news page for its latest releases.</p>
+      <p><a href={TOWN_FEEDS.news.pageUrl} target="_blank" rel="noopener">Open Town news releases ↗</a></p>
+    </section>
+    <section class="planning-panel" id="event-logistics" aria-labelledby="logistics-heading"><h2 id="logistics-heading">Make the event fit the journey</h2><ul><li><strong>Check eligibility and the actual ticket.</strong> Some Town programmes are for residents or particular ages. A free event may still require registration. Read weather and cancellation terms before booking other parts of the trip.</li><li><strong>Find the exact venue.</strong> Banff town, Lake Louise village, the lakeshore and ski resort are separate journeys. A festival name is not a pickup address; check accessibility and the path from your stop with the organiser.</li><li><strong>Fix the return first.</strong> A ski shuttle is not a late-night event bus. Check the last useful service and every onward connection, especially when staying in Canmore or Lake Louise.</li><li><strong>Keep the day flexible.</strong> Leave room after an airport arrival or ski day, allow warm breaks, and confirm operation before travelling to an outdoor event.</li></ul><div class="related-links"><a href="/car-free-banff">Check a car-free journey →</a><a href="/winter-stays">Choose a winter base →</a><a href="/ski-day-planner">Fit the ski day around it →</a><a href="/winter">Find a flexible winter alternative →</a></div></section>
+    <section class="event-faq" aria-labelledby="faq-heading"><h2 id="faq-heading">Event planning questions</h2>{faqs.map(faq=><details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <section class="sources"><h2>Sources and review</h2><p>Editorial planning notes reviewed October 28, 2026. Town feed endpoints are listed in the <a href="https://www.banff.ca/Rss.aspx" target="_blank" rel="noopener">official RSS directory</a>. Snapshot retrieval, feed update and item publication dates are labelled separately above. Festival dates link to the organiser's current-season programme. Provider links are direct; no event availability is implied.</p></section>
   </div>
-  <section class="page-hero">
-    <img
-      src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
-      alt="Banff townsite"
-      class="page-hero-bg"
-      loading="eager"
-      fetchpriority="high"
-    />
-    <div class="page-hero-content">
-      <span class="badge">Stay Updated</span>
-      <h1>Banff News & Events</h1>
-      <p>What's happening in Banff right now -- festivals, community events, seasonal happenings, and local news.</p>
-    </div>
-  </section>
-
-  <!-- Events -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">What's On</span>
-        <h2>Upcoming Events</h2>
-        <p>Live events and happenings from the Town of Banff events calendar.</p>
-      </div>
-
-      {events.length > 0 ? (
-        <div class="grid grid-3">
-          {events.map(event => (
-            <a href={event.link} target="_blank" rel="noopener" class="event-card card">
-              {event.image && <img src={event.image} alt={event.title} class="card-image" loading="lazy" />}
-              <div class="card-body">
-                <h3>{event.title}</h3>
-                {event.dates && (
-                  <div class="event-meta">
-                    <span class="event-date">&#128197; {event.dates}</span>
-                    {event.times && <span class="event-time">&#9202; {event.times}</span>}
-                  </div>
-                )}
-                {event.location && <span class="event-location">&#128205; {event.location}</span>}
-                <p>{event.description}</p>
-                <span class="card-link">View Details &rarr;</span>
-              </div>
-            </a>
-          ))}
-        </div>
-      ) : (
-        <div class="empty-state">
-          <p>No upcoming events at the moment. Check back soon or visit <a href="https://banff.ca/Calendar.aspx" target="_blank" rel="noopener">banff.ca</a> for the full calendar.</p>
-        </div>
-      )}
-    </div>
-  </section>
-
-  <!-- News -->
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Latest News</span>
-        <h2>Banff News</h2>
-        <p>Recent updates and announcements from the Town of Banff.</p>
-      </div>
-
-      {news.length > 0 ? (
-        <div class="grid grid-2">
-          {news.map(item => (
-            <a href={item.link} target="_blank" rel="noopener" class="news-card">
-              <div class="news-content">
-                <span class="news-date">{item.date}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <span class="card-link">Read More &rarr;</span>
-              </div>
-            </a>
-          ))}
-        </div>
-      ) : (
-        <div class="empty-state">
-          <p>No recent news available. Visit <a href="https://banff.ca" target="_blank" rel="noopener">banff.ca</a> for the latest.</p>
-        </div>
-      )}
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="sources-note">
-        <p>&#128340; Last updated: {buildDate}. Events and news sourced from <a href="https://banff.ca" target="_blank" rel="noopener">banff.ca</a>.</p>
-      </div>
-    </div>
-  </section>
 </BaseLayout>
-
+<script>
+  import { installTownFeedPanels } from '../utils/townEvents';
+  installTownFeedPanels();
+</script>
 <style>
-  .event-card {
-    display: block;
-  }
-
-  .event-card .card-image {
-    height: 180px;
-    object-fit: cover;
-  }
-
-  .event-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin: 0.75rem 0 0.5rem;
-    font-size: 0.85rem;
-    color: var(--color-primary);
-    font-weight: 500;
-  }
-
-  .event-location {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    margin-bottom: 0.5rem;
-  }
-
-  .card-link {
-    display: inline-block;
-    margin-top: 0.75rem;
-    color: var(--color-primary);
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  .news-card {
-    display: block;
-    background: var(--color-white);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all var(--transition);
-  }
-
-  .news-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .news-content {
-    padding: 1.5rem;
-  }
-
-  .news-date {
-    font-size: 0.8rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .news-content h3 {
-    margin: 0.5rem 0;
-  }
-
-  .news-content p {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-  }
-
-  .empty-state {
-    text-align: center;
-    padding: 3rem;
-    color: var(--color-text-light);
-  }
-
-  .empty-state a {
-    color: var(--color-primary);
-    text-decoration: underline;
-  }
-
-  .sources-note {
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-  }
-
-  .sources-note a {
-    color: var(--color-primary);
-    text-decoration: underline;
-  }
+  .events-content{padding-top:2.5rem;padding-bottom:4rem}.events-content section{margin:3rem 0;scroll-margin-top:7.5rem}.events-content h2{margin-bottom:1rem}.events-content h3{font-size:1.15rem;margin-bottom:.75rem}.events-content p{line-height:1.75;margin-bottom:1rem}.events-content a{color:var(--color-primary);text-decoration:underline;text-underline-offset:3px}.lead{max-width:950px;font-size:1.12rem}.jump-links,.related-links{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-size:.9rem}.jump-links{margin:1.5rem 0}.eyebrow{display:block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-primary);margin-bottom:.5rem}.event-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin:1.5rem 0}.event-card,.festival-card,.news-card{padding:1.5rem;border:1px solid var(--color-border);border-radius:12px;background:var(--color-white)}.event-card p,.festival-card p,.news-card p{font-size:.92rem}.event-date{color:var(--color-primary);font-weight:600}.festival-card>a{display:block;margin-top:.75rem;font-size:.9rem}.small{font-size:.82rem!important;color:var(--color-text-light)}.source-status{padding:1rem 1.25rem;background:var(--color-bg-alt);border-left:3px solid var(--color-accent);font-size:.87rem;margin:1.25rem 0}.source-status p{margin-bottom:.4rem}.source-status p:last-child{margin-bottom:0}.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin:1.5rem 0}.event-filters{display:grid;grid-template-columns:1fr 1fr 1.5fr auto;gap:1rem;align-items:end;margin:1.5rem 0}.event-filters label{font-size:.85rem;font-weight:600}.event-filters input{display:block;width:100%;padding:.75rem;margin-top:.4rem;border:1px solid #aebfb4;border-radius:7px;background:white;font:inherit;min-width:0}.event-filters button{padding:.8rem 1rem;background:var(--color-primary);color:white;border:1px solid var(--color-primary);border-radius:7px;font:inherit;min-height:44px;cursor:pointer}.event-filters :focus-visible,summary:focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}.event-filters[hidden],[data-town-results][hidden],[data-town-event][hidden],[data-town-stale][hidden],[data-town-no-matches][hidden]{display:none!important}.planning-panel{padding:1.75rem;background:var(--color-bg-alt);border-radius:12px}.planning-panel ul{padding-left:1.3rem}.planning-panel li{line-height:1.75;margin-bottom:1rem}.event-faq details{padding:1rem 0;border-bottom:1px solid var(--color-border)}.event-faq summary{font-weight:600;color:var(--color-primary);cursor:pointer}.event-faq details p{padding-top:.75rem;margin-bottom:0}.sources{border-top:1px solid var(--color-border);padding-top:1.5rem;font-size:.86rem;color:var(--color-text-light)}.sources h2{font-size:1rem}@media(max-width:900px){.event-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.event-filters{grid-template-columns:1fr 1fr}}@media(max-width:600px){.event-grid,.news-grid,.event-filters{grid-template-columns:1fr}.event-card,.festival-card,.news-card,.planning-panel{padding:1.2rem}}
 </style>

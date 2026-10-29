@@ -1,4 +1,7 @@
 export const winterGuides = [
+  { title: 'Plan a family visit', href: '/family-guide', category: 'family', tag: 'Match ages and interests', desc: 'Filter seasonal outings, check participation limits and choose a room layout for your group.' },
+  { title: 'Winter with your dog', href: '/dog-friendly', category: 'practical', tag: 'Transport and pet rooms', desc: 'Check carrier rules, seasonal restrictions, off-leash areas and allocated pet-friendly rooms.' },
+  { title: 'Town events and winter festivals', href: '/events', category: 'slow', tag: 'Check the programme', desc: 'Filter dated Town calendar copies and plan Christmas, SnowDays and Ice Magic visits.' },
   { title: 'A winter trip without a car', href: '/car-free-banff', category: 'practical', tag: 'Check the full connection', desc: 'Choose a base, separate town transit from resort shuttles, and confirm the final return.' },
   { title: 'Warm-up days, heritage & spas', href: '/wellness', category: 'slow', tag: 'Confirm current access', desc: 'Separate actual bathing from Cave and Basin history, with dated closures and spa eligibility checks.' },
   { title: 'Weather, webcams & mountain reports', href: '/weather-webcams', category: 'practical', tag: 'Read the source time', desc: 'Check destination forecasts, operator camera viewers and the actual resort operating report.' },

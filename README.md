@@ -14,9 +14,11 @@ npm run audit:site
 npm run preview
 ```
 
-`build:cached` compiles the site and Pagefind search from the committed data snapshots without refreshing them. `build` first runs `scripts/fetch-live-data.mjs`, then compiles and indexes. `fetch-data` updates the five JSON files under `src/data/live/`; review those diffs before committing. A successful build is not a deployment receipt.
+`build:cached` compiles the site and Pagefind search from the committed data snapshots without refreshing them. `build` first runs `scripts/fetch-live-data.mjs`, then compiles and indexes. `fetch-data` updates the six JSON files under `src/data/live/`; review those diffs before committing. A successful build is not a deployment receipt.
 
 `node scripts/check-weather-source.mjs`, `node scripts/check-snow-source.mjs` and `node scripts/check-source-freshness.mjs` check provider identity, missing/zero values, explicit periods, source evidence, failures and clock/calendar expiry without writing snapshots. `node scripts/check-day-ideas.mjs` checks outing constraints and builder handoffs.
+
+`node scripts/check-road-source.mjs` checks key-gated 511 Alberta responses and independent section times. `node scripts/check-town-events.mjs` checks the bounded Town feed snapshot, failure states and date filters. `node scripts/check-affiliate-navigation.mjs` ensures trackers cannot block native booking navigation. These checks use offline fixtures and do not send test bookings or conversions.
 
 `node scripts/check-trip-planner.mjs` checks the real planning module using Astro’s installed compiler: seasonal/legacy templates, invalid shared state, limits, transport advice and affiliate identifiers.
 
@@ -26,10 +28,11 @@ npm run preview
 
 - `src/pages/`: static pages and dynamic blog/hotel/trail/town routes.
 - `src/data/blogPosts.ts`: canonical listing metadata; `allBlogPosts` also retains redirected slugs for generated redirect pages.
-- `src/data/blogContent.ts`, `blogContent3.ts`: legacy article HTML. `winterGuideOverrides.ts`, `winterActivityOverrides.ts`, `winterTripOverrides.ts`, `winterResortOverrides.ts` `winterSeasonOverrides.ts` and `winterWarmUpOverrides.ts` replace reviewed winter articles, and their metadata updates flow into the listings.
+- `src/data/blogContent.ts`, `blogContent3.ts`: legacy article HTML. `winterGuideOverrides.ts`, `winterActivityOverrides.ts`, `winterTripOverrides.ts`, `winterResortOverrides.ts` `winterSeasonOverrides.ts`, `winterWarmUpOverrides.ts` and `winterWellnessLegacyOverrides.ts` replace reviewed winter articles, and their metadata updates flow into the listings.
 - `src/data/winterHub.ts`: winter guide directory, month advice and FAQs.
 - `src/data/tripPlanner.ts`: seasonal itinerary catalogue, seven templates, validated share-state and transport checks for the editable trip builder.
 - `src/data/weatherPlanning.ts`: sourced 1991–2020 temperature normals, seasonal planning and primary camera/report links.
+- `src/data/townFeedModel.mjs` and `src/utils/townEvents.ts`: shared Town events/news validation, Mountain Time windows and stale/unavailable states; pages make no feed requests during rendering.
 - `src/data/dayIdeas.ts`: outing filters and one-day links using the shared trip catalogue.
 - `src/components/WeatherSnapshot.astro`: separately dated ECCC observations and forecast periods, with browser expiry and official-source fallbacks.
 - `scripts/lib/eccc-weather.mjs`: validated official Banff and Lake Louise weather responses.

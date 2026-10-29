@@ -1,0 +1,170 @@
+{
+  "checked_at": "2026-10-29T05:48:07.997742+00:00",
+  "pull_request": "https://github.com/GlobalBookings/banffbound/pull/2",
+  "merge_commit": "95757b45c29f7324805923a813e57ea65d93b9ac",
+  "pr_ci": {
+    "run": 40824800881,
+    "result": "success"
+  },
+  "main_ci": {
+    "run": 40824949611,
+    "result": "success"
+  },
+  "http_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "BanffBound \u2014 Banff National Park Trip Planner 2026 | Trails, Hotels & Local Tips",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:56 GMT",
+      "cache_status": "MISS",
+      "release_marker_present": true
+    },
+    {
+      "path": "/winter/",
+      "status": 200,
+      "title": "Banff Winter Guide: Ski Days, Snow Adventures & Places to Stay | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:57 GMT",
+      "cache_status": "MISS",
+      "release_marker_present": true
+    },
+    {
+      "path": "/car-free-banff/",
+      "status": 200,
+      "title": "Car-Free Banff: Winter Bases, Roam Routes & Ski Shuttles | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:43 GMT",
+      "cache_status": "MISS"
+    },
+    {
+      "path": "/calgary-to-banff/",
+      "status": 200,
+      "title": "Calgary Airport to Banff: Shuttles, Winter Driving & Arrival Plans | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:43 GMT",
+      "cache_status": "MISS"
+    },
+    {
+      "path": "/packing-list/",
+      "status": 200,
+      "title": "Banff Packing List: Winter, Summer & Ski-Day Checklist | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:56 GMT",
+      "cache_status": "MISS",
+      "release_marker_present": true
+    },
+    {
+      "path": "/wellness/",
+      "status": 200,
+      "title": "Banff Wellness & Winter Warm-Ups \u2014 Pools, Spas & Slow Days | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:57 GMT",
+      "cache_status": "MISS"
+    },
+    {
+      "path": "/weather/",
+      "status": 200,
+      "title": "Banff Weather Guide: Climate, Seasons & How to Plan | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:57 GMT",
+      "cache_status": "MISS"
+    },
+    {
+      "path": "/monthly-weather/",
+      "status": 200,
+      "title": "Banff Weather by Month: Seasonal Plans, Temperatures & Packing | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:56 GMT",
+      "cache_status": "MISS"
+    },
+    {
+      "path": "/weather-webcams/",
+      "status": 200,
+      "title": "Banff Weather & Webcams: Forecasts, Mountain Views & Snow Reports | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:57 GMT",
+      "cache_status": "MISS",
+      "release_marker_present": true
+    },
+    {
+      "path": "/what-to-do-today/",
+      "status": 200,
+      "title": "Things to Do in Banff Today: Find an Outing That Fits | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:57 GMT",
+      "cache_status": "MISS",
+      "release_marker_present": true
+    },
+    {
+      "path": "/conditions/",
+      "status": 200,
+      "title": "Banff Conditions \u2014 Weather, Trail & Road Report Links | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:43 GMT",
+      "cache_status": "MISS",
+      "release_marker_present": true
+    },
+    {
+      "path": "/blog/cave-and-basin-guide/",
+      "status": 200,
+      "title": "Cave and Basin Guide: Heritage, Winter Hours & Visitor Access | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:43 GMT",
+      "cache_status": "MISS"
+    },
+    {
+      "path": "/blog/banff-hot-springs-guide/",
+      "status": 200,
+      "title": "Banff Upper Hot Springs: Status, Admission & Visit Planning | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:43 GMT",
+      "cache_status": "MISS"
+    },
+    {
+      "path": "/blog/banff-wellness-weekend/",
+      "status": 200,
+      "title": "Banff Wellness Weekend: Spas, Culture & A Slower Winter Plan | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:43 GMT",
+      "cache_status": "MISS"
+    },
+    {
+      "path": "/learn-to-ski/",
+      "status": 200,
+      "title": "Learn to Ski in Banff: First Lessons, Rentals & Beginner Guide | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:56 GMT",
+      "cache_status": "MISS"
+    },
+    {
+      "path": "/ski-day-planner/",
+      "status": 200,
+      "title": "Banff Ski Day Planner: Choose a Resort, Lessons & Transport | BanffBound",
+      "matches_release_title": true,
+      "last_modified": "Thu, 29 Oct 2026 05:46:57 GMT",
+      "cache_status": "MISS"
+    }
+  ],
+  "all_http_checks_passed": true,
+  "deployment_status": "public release verified",
+  "hosting_receipt": {
+    "provider": "DigitalOcean App Platform",
+    "app": "banffbound",
+    "deployment_id": "57ee5aa2-4a91-47e6-97a8-2a27f5416561",
+    "commit": "95757b45c29f7324805923a813e57ea65d93b9ac",
+    "observed_status": "Success; Live Deployment; Healthy",
+    "build_time": "4m 33s"
+  },
+  "browser_checks": [
+    "Live outing chooser restores Summer/Canmore/lake filters and displays4 matches",
+    "Moraine card encodes a Summer/Canmore one-day plan and canonical remains query-free",
+    "No observed browser console errors on the live outing page",
+    "Live lesson packing URL selects both lesson and resort-ski checklists; print control is available"
+  ],
+  "remaining_observations": [
+    "Road source returnedHTTP400 during clean verification; official-link unavailable fallback worked",
+    "Existing Town event/news RSS requests timed out during production build; page generation continued. Review event-feed failure/empty semantics and bound its build-time dependency in the next pass",
+    "Broader legacy content/property review, host-level redirects and actual SEO/affiliate outcome measurement remain open"
+  ]
+}

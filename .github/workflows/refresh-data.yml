@@ -33,6 +33,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check source validation and expiry
+        run: |
+          node scripts/check-weather-source.mjs
+          node scripts/check-snow-source.mjs
+          node scripts/check-source-freshness.mjs
+          node scripts/check-road-source.mjs
+          node scripts/check-town-events.mjs
+
       # 4. Run the data fetchers to produce fresh JSON
       - name: Fetch live data
         run: node scripts/fetch-live-data.mjs

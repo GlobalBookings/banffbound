@@ -1,266 +1,78 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { hotels } from '../data/hotels';
+
+const ideas = [
+  {id:'bow-river',name:'A short Banff town walking plan',base:'banff',seasons:['winter','summer'],plan:'walk',place:'Banff · choose the open section',text:'Choose an on-leash town route with a short turnaround and a place for the whole group to return. Keep your dog under physical control and give wildlife space.',check:'The Bow Falls clifftop section is closed in winter. Check the exact approach, surface, steps and current closures rather than treating every riverside path as a flat year-round loop.',source:'https://www.banff.ca/654/Bow-Falls-Trail'},
+  {id:'off-leash',name:'A designated Town off-leash park',base:'banff',seasons:['winter','summer'],plan:'walk',place:'Banff · posted off-leash areas',text:'Banff has designated off-leash parks. The Town’s page names Sundance Park and the Industrial District park; this is an exception within the posted areas, not permission to let a dog loose on park trails.',check:'Check current opening and posted rules. Sundance has a spring dry-out closure; the Industrial District park is only open with frozen ground and snow coverage and can close during thaws. The Town excludes puppies under five months and requires current licensing/vaccinations.',source:'https://banff.ca/1030/Off-Leash-Dog-Parks'},
+  {id:'louise',name:'Lake Louise: solve transport before the outing',base:'lake-louise',seasons:['winter','summer'],plan:'outing',place:'Lake Louise · village and lakeshore are separate',text:'Check the exact trail or viewing area, the current restriction and the journey back. A pet-friendly room in the village does not put you at the lakeshore or establish admission to another venue.',check:'Ordinary pets on Parks Canada lake shuttles must stay in a small animal carrier held on the owner’s lap. The lake shuttles are seasonal. Confirm the current service, dog eligibility and all connections; do not assume a larger leashed dog can board.',source:'https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq'},
+  {id:'patio',name:'Bear Street Tavern: ask about the courtyard patio',base:'banff',seasons:['summer'],plan:'meal',place:'Banff · Bear Street',text:'The restaurant’s official page advertises a dog-friendly courtyard patio. This can be a meal option when the patio is operating and the venue confirms the party and dog.',check:'Confirm the actual patio, date, seating and conditions. Patio acceptance does not mean indoor pet access or winter operation. Keep a plan for the whole group if outdoor seating is unavailable.',source:'https://www.banffcollective.com/restaurant/bear-street-tavern-pizza'},
+  {id:'minnewanka',name:'Lake Minnewanka: check the trail and boat separately',base:'banff',seasons:['summer'],plan:'outing',place:'Lake Minnewanka · a separate journey',text:'The area’s trails and cruise have different rules. Do not turn a general dog-friendly label into permission for the whole shoreline or a boat trip.',check:'Parks Canada’s annual 10 July–15 September restriction prohibits dogs beyond Stewart Canyon Bridge in the specified Minnewanka/Aylmer trail area. The cruise operator says pet admission is discretionary, not guaranteed. Check the current order and obtain a real operator answer before booking.',source:'https://parks.canada.ca/pn-np/mtn/ours-bears/gestion-management/ours-bears/minnewanka'},
+  {id:'pet-care',name:'A non-pet attraction needs an approved care plan',base:'banff',seasons:['winter','summer'],plan:'care',place:'Banff · an outing for the people',text:'Banff Gondola does not admit ordinary pets. If it is part of your trip, arrange suitable care before booking or choose a plan everyone and the dog can join.',check:'Service-animal arrangements are separate from ordinary-pet policies; contact the operator about the requirements that apply. Do not leave a dog in a vehicle or tied outside while you go in.',source:'https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/'},
+  {id:'emerald',name:'An Emerald Lake stay needs a dog-and-meal plan',base:'yoho',seasons:['winter','summer'],plan:'stay',place:'Emerald Lake · Yoho National Park, British Columbia',text:'A limited number of Emerald Lake Lodge rooms are pet designated and must be arranged in advance. This is a separate Yoho stay, not a Banff town hotel.',check:'The dining room is not pet friendly. Confirm meals, supervision, your particular room and transfer from overnight parking. The property’s parking shuttle is not transport from Banff or Lake Louise.',source:'https://crmr.com/resorts/emerald-lake/faq/'},
+];
+const stayOptions = [
+  {slug:'moose-hotel-suites',source:'https://moosehotelandsuites.com/faq/',note:'The hotel asks guests to call reservations to confirm a pet room. Confirm your dog, room category, current fee, supervision and permitted shared areas before paying.'},
+  {slug:'tunnel-mountain-resort',source:'https://tunnelmountain.com/faq/',note:'Reservations must confirm a pet-room allocation. Check the condo/cabin category, stairs, fees, meals and supervision; the property is above town.'},
+  {slug:'emerald-lake-lodge',source:'https://crmr.com/resorts/emerald-lake/faq/',note:'Only a small number of rooms are pet designated and require advance booking. The dining room does not take pets. Arrange the full Yoho journey and meal plan.'},
+].map(stay=>{const hotel=hotels.find(hotel=>hotel.slug===stay.slug);if(!hotel)throw new Error(`Missing pet stay: ${stay.slug}`);return {...stay,hotel};});
+const transportAdvice:Record<string,string>={
+  all:'Choose the exact journey and confirm the policy with every carrier. A hotel’s bus pass does not establish pet admission.',
+  car:'Check your rental agreement or vehicle arrangements, current road access and a plan that keeps the dog supervised. Driving does not create attraction or trail admission.',
+  carrier:'Roam and Parks Canada lake shuttles require ordinary pets to remain enclosed in an appropriate carrier small enough to fit on your lap. Check the specific service and every connection.',
+  large:'If your dog cannot travel in a lap-sized carrier, do not plan on ordinary-pet access to Roam or Parks Canada lake shuttles. Choose local walks or verify a suitable private transport arrangement before booking.',
+};
+const checks=['Current trail report, area bulletin and posted dog restrictions checked','Leash, waste bags, drinking water and dog supplies ready','Transport and carrier eligibility confirmed for every leg','Pet-designated room explicitly confirmed for this dog and booking','Meals, indoor attractions and supervision / care arranged','Conditions, temperature and distance appropriate for the dog and group','Current dog-park status and posted rules checked if using an off-leash area'];
+const faqs=[
+  {q:'Can I visit Banff with my dog?',a:'Dogs can be part of a Banff trip when the whole plan works for them. Parks Canada requires a leash and physical control and restricts pets in some areas. Check the route, transport, accommodation, meals and care rather than assuming one dog-friendly booking covers everything.'},
+  {q:'Are there off-leash areas in Banff?',a:'Yes. The Town lists designated off-leash parks, with posted rules and seasonal closures. Outside an authorized area, keep your dog leashed and under physical control. Check the current Town conditions before visiting.'},
+  {q:'Can a large leashed dog use Roam or the Parks Canada lake shuttle?',a:'Ordinary-pet policies require an appropriate animal carrier small enough to fit on the owner’s lap, with the animal enclosed throughout the ride. A leash alone does not meet that policy. Service-animal arrangements are separate; ask the carrier about the applicable requirements.'},
+  {q:'Which trails allow dogs?',a:'Use the current Parks Canada trail report and area bulletins for the exact route and date. Do not apply a single permanent rule to every Lake Louise, Moraine Lake or backcountry trail. Seasonal dog restrictions, wildlife closures and winter route hazards can change a plan.'},
+  {q:'Does a pet-friendly hotel mean I can take my dog everywhere?',a:'No. A designated room does not establish restaurant, pool, attraction or transport access. Confirm the individual dog, room allocation, current charges, supervision and permitted areas directly with the property.'},
+];
 ---
-
-<BaseLayout title="Dog-Friendly Banff Guide 2026 — Trails, Restaurants & Rules" description="Complete guide to visiting Banff with your dog. Dog-friendly trails, patios, pet-friendly hotels, leash rules, and Parks Canada regulations for dogs in Banff National Park.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Can I bring my dog to Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, dogs are welcome in Banff National Park but must be on a leash (max 2 metres) at ALL times — no exceptions. Dogs are allowed on most trails, roads, and in the town of Banff. However, dogs are prohibited on some trails to protect wildlife. Failure to leash your dog can result in fines up to $25,000. Always carry bags to clean up after your pet.' } },
-      { '@type': 'Question', name: 'Which Banff trails allow dogs?', acceptedAnswer: { '@type': 'Answer', text: 'Most Banff trails allow leashed dogs including: Fenland Trail, Tunnel Mountain, Sundance Canyon, Johnson Lake, Bow Falls, Spray River Loop, Bankhead, Lake Minnewanka Lakeside, Two Jack Lake loop, and Vermilion Lakes. Dogs are NOT allowed on: Moraine Lake Rockpile, Consolation Lakes, and some seasonal wildlife corridors. Always check trail reports at the Parks Canada website for current restrictions.' } },
-      { '@type': 'Question', name: 'Are dogs allowed at Lake Louise?', acceptedAnswer: { '@type': 'Answer', text: 'Leashed dogs are allowed at Lake Louise on the lakeshore trail. However, dogs are NOT permitted on the trail to Lake Agnes Teahouse (bears), the Plain of Six Glaciers trail, or Moraine Lake Rockpile Trail. The lakeshore path is paved and flat — fine for dogs. Always check the Parks Canada website for seasonal wildlife closures that may further restrict dog access.' } },
-      { '@type': 'Question', name: 'What are the dog leash rules in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'All dogs must be on a leash no longer than 2 metres (6 feet) at all times in Banff National Park. There are NO off-leash areas in the park. This rule exists to protect wildlife — even friendly dogs can chase, stress, or be injured by wild animals. Fines for off-leash dogs range from $100 to $25,000. This applies to the townsite, all trails, campgrounds, and parking lots.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Dog-Friendly Guide' }]} />
-  </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=1600&q=80" alt="Dog on a leash hiking in the mountains" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Pet Guide</span>
-      <h1>Dog-Friendly Banff</h1>
-      <p>Trails, patios, hotels, and everything you need to know about visiting Banff with your dog.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-
-      <!-- Important Rules -->
-      <div class="rules-banner">
-        <h2>⚠️ Important Rules for Dogs in Banff</h2>
-        <div class="rules-grid">
-          <div class="rule-item">
-            <strong>Leash Required — Always</strong>
-            <p>Dogs must be on a leash no longer than <strong>2 metres (6 feet)</strong> at all times. No off-leash areas exist in the entire national park.</p>
-          </div>
-          <div class="rule-item">
-            <strong>Fines Are Serious</strong>
-            <p>Off-leash fines range from <strong>$100 to $25,000</strong>. Parks Canada actively enforces this, especially on popular trails.</p>
-          </div>
-          <div class="rule-item">
-            <strong>Clean Up After Your Dog</strong>
-            <p>Carry waste bags. Dog waste must be packed out on trails without garbage bins. It's the law.</p>
-          </div>
-          <div class="rule-item">
-            <strong>Some Trails Prohibit Dogs</strong>
-            <p>Several trails are <strong>closed to dogs</strong> for wildlife protection. Check before you go.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dog-Friendly Trails -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Dog-Friendly Trails</h2>
-        <p>All require on-leash (2m max). Sorted by difficulty.</p>
-      </div>
-
-      <div class="trails-grid">
-        <div class="trail-card easy">
-          <span class="difficulty-badge easy">Easy</span>
-          <h3>Fenland Trail</h3>
-          <p><strong>2 km loop</strong> · Flat · Boardwalk</p>
-          <p>Flat loop through old-growth forest near the Vermilion Lakes. Boardwalk surface is great for dogs. Shady and quiet. Watch for elk.</p>
-        </div>
-        <div class="trail-card easy">
-          <span class="difficulty-badge easy">Easy</span>
-          <h3>Bow Falls Trail</h3>
-          <p><strong>1.2 km one way</strong> · Paved · Flat</p>
-          <p>Paved path from downtown Banff to Bow Falls. Dog-friendly the entire way. Great for a quick walk with scenic views of the falls.</p>
-        </div>
-        <div class="trail-card easy">
-          <span class="difficulty-badge easy">Easy</span>
-          <h3>Vermilion Lakes Road</h3>
-          <p><strong>4.3 km one way</strong> · Paved road · Flat</p>
-          <p>Quiet road along three stunning lakes with mountain reflections. Perfect for sunset walks. Dogs love the lake edges.</p>
-        </div>
-        <div class="trail-card easy">
-          <span class="difficulty-badge easy">Easy</span>
-          <h3>Johnson Lake Loop</h3>
-          <p><strong>2.8 km loop</strong> · Mostly flat · Some roots</p>
-          <p>Circles Johnson Lake with mountain views. Quieter than most Banff trails. Dogs can drink from the lake shore.</p>
-        </div>
-        <div class="trail-card easy">
-          <span class="difficulty-badge easy">Easy</span>
-          <h3>Lake Minnewanka Lakeside</h3>
-          <p><strong>First 2 km</strong> · Flat · Gravel</p>
-          <p>The first section of the Lake Minnewanka trail is wide, flat, and dog-friendly. Great lake views. Turn around after the first bay.</p>
-        </div>
-        <div class="trail-card easy">
-          <span class="difficulty-badge easy">Easy</span>
-          <h3>Two Jack Lake Loop</h3>
-          <p><strong>3 km loop</strong> · Flat · Mix of trail and road</p>
-          <p>Scenic loop around Two Jack Lake. Quiet on weekday mornings. Dogs allowed everywhere on-leash.</p>
-        </div>
-        <div class="trail-card moderate">
-          <span class="difficulty-badge moderate">Moderate</span>
-          <h3>Tunnel Mountain Trail</h3>
-          <p><strong>4.3 km return</strong> · 300m elevation · Switchbacks</p>
-          <p>Popular summit trail with panoramic views. Dogs do fine on the wide switchbacks. Bring water for them — exposed and hot in summer.</p>
-        </div>
-        <div class="trail-card moderate">
-          <span class="difficulty-badge moderate">Moderate</span>
-          <h3>Spray River Loop</h3>
-          <p><strong>12 km loop</strong> · Flat to rolling · Fire road</p>
-          <p>Wide fire road perfect for dogs. Less crowded than most Banff trails. Can be shortened by turning around at the river bridge.</p>
-        </div>
-        <div class="trail-card moderate">
-          <span class="difficulty-badge moderate">Moderate</span>
-          <h3>Sundance Canyon</h3>
-          <p><strong>7.4 km return</strong> · Paved then trail · Gentle climb</p>
-          <p>Paved path for 3.7 km then a short canyon loop. Dogs allowed the whole way. The paved section is great for older dogs.</p>
-        </div>
-        <div class="trail-card moderate">
-          <span class="difficulty-badge moderate">Moderate</span>
-          <h3>Bankhead Historical Loop</h3>
-          <p><strong>3.2 km loop</strong> · Gentle hills · Interpretive signs</p>
-          <p>Loop through a ghost town coal mine. Educational signs, quiet trails, and dogs love exploring the old foundations.</p>
-        </div>
-        <div class="trail-card moderate">
-          <span class="difficulty-badge moderate">Moderate</span>
-          <h3>Lake Louise Lakeshore</h3>
-          <p><strong>2 km one way</strong> · Flat · Gravel</p>
-          <p>Leashed dogs allowed on the lakeshore trail. Flat and scenic. The teahouse trails beyond are NOT dog-friendly.</p>
-        </div>
-      </div>
-
-      <!-- Trails Where Dogs Are NOT Allowed -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Trails Where Dogs Are NOT Allowed</h2>
-        <p>These trails prohibit dogs to protect wildlife corridors and sensitive ecosystems.</p>
-      </div>
-
-      <div class="no-dogs-list">
-        <div class="no-dog-item">❌ Moraine Lake Rockpile Trail</div>
-        <div class="no-dog-item">❌ Consolation Lakes Trail</div>
-        <div class="no-dog-item">❌ Lake Agnes / Plain of Six Glaciers (from Lake Louise)</div>
-        <div class="no-dog-item">❌ Seasonal wildlife corridors (check Parks Canada for current closures)</div>
-        <div class="no-dog-item">❌ Most backcountry/overnight trails</div>
-      </div>
-
-      <!-- Dog-Friendly Restaurants -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Dog-Friendly Restaurants & Patios</h2>
-        <p>Banff has several restaurants with patios that welcome leashed dogs.</p>
-      </div>
-
-      <div class="restaurant-grid">
-        <div class="restaurant-card">
-          <h3>🍕 Bear Street Tavern</h3>
-          <p>Heated patio, pizza and craft beer. Very dog-friendly — they sometimes have water bowls out.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>☕ Whitebark Café</h3>
-          <p>Coffee and pastries with a patio on Banff Ave. Dogs welcome at outdoor tables.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>🍔 Elk & Oarsman</h3>
-          <p>Pub with a patio on Banff Ave. Classic pub food. Dogs allowed on the patio.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>🌮 Magpie & Stump</h3>
-          <p>Mexican food with a large rooftop patio. Dogs welcome on the lower patio area.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>🥐 Wild Flour Bakery</h3>
-          <p>Fresh baked goods with a small outdoor seating area. Dogs can sit with you outside.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>🍺 Banff Ave Brewing</h3>
-          <p>Craft brewery with a dog-friendly patio. Pub food and local beers.</p>
-        </div>
-      </div>
-
-      <!-- Pet-Friendly Accommodation -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Pet-Friendly Hotels</h2>
-        <p>Several Banff hotels welcome dogs (pet fees typically $25-50/night).</p>
-      </div>
-
-      <div class="hotel-list">
-        <div class="hotel-item"><strong>Fairmont Banff Springs</strong> — Dogs up to 30 lbs, $50/night pet fee. Luxury option with on-site dog walking paths.</div>
-        <div class="hotel-item"><strong>Moose Hotel & Suites</strong> — Pet-friendly rooms available, $35/night fee. Central Banff location.</div>
-        <div class="hotel-item"><strong>Banff Aspen Lodge</strong> — Dogs welcome in select rooms, $25/night fee. Close to town centre.</div>
-        <div class="hotel-item"><strong>Hidden Ridge Resort</strong> — Pet-friendly cabins with yards. Great for dogs. On Tunnel Mountain.</div>
-        <div class="hotel-item"><strong>Tunnel Mountain Campgrounds</strong> — Dogs allowed at all campsites (on leash). Must not be left unattended.</div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>Can I bring my dog to Banff?</summary>
-          <p>Yes — dogs are welcome in Banff National Park but must be on a 2-metre leash at all times. Most trails allow dogs, several restaurants have dog-friendly patios, and many hotels accept pets. Always clean up after your dog and check trail restrictions before hiking.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Which Banff trails allow dogs?</summary>
-          <p>Most trails allow leashed dogs including Fenland, Tunnel Mountain, Sundance Canyon, Johnson Lake, Bow Falls, Spray River, Bankhead, Lake Minnewanka, Two Jack Lake, and the Lake Louise lakeshore. Dogs are banned from Moraine Lake Rockpile, Consolation Lakes, and Lake Agnes/Plain of Six Glaciers trails.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Are dogs allowed at Lake Louise?</summary>
-          <p>Leashed dogs are allowed on the Lake Louise lakeshore trail (flat, 2 km). Dogs are NOT allowed on the teahouse trails (Lake Agnes, Plain of Six Glaciers) or at Moraine Lake Rockpile due to bear activity and wildlife corridors.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Are there off-leash areas in Banff?</summary>
-          <p>No. There are zero off-leash areas in Banff National Park. Dogs must be on a 2-metre leash at all times — on trails, at campsites, in the townsite, and everywhere else in the park.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Can my dog swim in the lakes?</summary>
-          <p>Technically yes, but most Banff lakes are glacier-fed and extremely cold (4-8°C). Johnson Lake and Two Jack Lake are slightly warmer in late summer. Keep your dog on leash even at the water's edge.</p>
-        </details>
-      </div>
-
-    </div>
-  </section>
+<BaseLayout title="Dog-Friendly Banff: Plan Walks, Transport & Pet Rooms" description="Plan a Banff trip with your dog using current park and Town rules, carrier limits, seasonal restrictions and property-specific pet-room checks. Filter practical ideas without treating them as admission guarantees." canonicalUrl="https://banffbound.com/dog-friendly/" lastUpdated="2026-10-28">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))})} />
+  <div class="container"><Breadcrumbs items={[{label:'Dog-friendly guide'}]} /></div>
+  <section class="dog-hero"><div class="container"><span class="eyebrow">Plan the whole day for the dog, too</span><h1>Banff with your dog.<br />Make the pieces fit.</h1><p>A permitted walk, a carrier-compatible journey, a confirmed room and a meal plan need separate checks. Start with the dog’s needs and the actual rules for every place you will visit.</p><a class="btn btn-accent" href="#dog-ideas">Explore the planning ideas &darr;</a></div></section>
+  <section class="section"><div class="container">
+    <nav class="journey-links" aria-label="Plan your stay"><a href="/winter"><strong>Winter access &rarr;</strong><span>Match the outing to current operation.</span></a><a href="/towns"><strong>Choose a base &rarr;</strong><span>Town, lake and region are different choices.</span></a><a href="/family-guide"><strong>Family planning &rarr;</strong><span>Children and pets need separate checks.</span></a><a href="/packing-list"><strong>Packing planner &rarr;</strong><span>Add clothing, transport and equipment checks.</span></a></nav>
+    <div class="rule-grid"><article><h2>Leash and physical control</h2><p><a href="https://parks.canada.ca/pn-np/ab/banff/visit/faune-wildlife/chiens-dogs" target="_blank" rel="noopener">Parks Canada’s rule</a> requires a leash and physical control; some areas prohibit dogs. Designated Town off-leash areas have their own posted boundaries and conditions. Keep away from wildlife and pack out waste.</p></article><article><h2>Care is part of the booking</h2><p><a href="https://parks.canada.ca/pn-np/ab/banff/securite-safety/regles-rules" target="_blank" rel="noopener">Park regulations</a> say not to leave pets unattended in a vehicle, campsite, tent or elsewhere. A room booking or patio listing does not provide pet care while you enter another attraction.</p></article></div>
+    <div class="section-heading" id="dog-ideas"><span class="eyebrow">Compare the plan, then verify it</span><h2>Ideas and constraints to work through</h2><p>Some cards describe a limit or a care arrangement rather than a place admitting pets. Filters organise this guide; they do not establish dog admission, route safety or current operation.</p></div>
+    <form id="dog-filters" class="filters" hidden><label>Base<select name="base"><option value="all">Any base</option><option value="banff">Banff</option><option value="lake-louise">Lake Louise</option><option value="yoho">Emerald Lake · Yoho, BC</option></select></label><label>Season<select name="season"><option value="all">Any season</option><option value="winter">Winter planning</option><option value="summer">Summer planning</option></select></label><label>Plan<select name="plan"><option value="all">Any plan</option><option value="walk">Walking / dog park</option><option value="outing">Lake outing checks</option><option value="meal">Patio meal</option><option value="care">An attraction without pets</option><option value="stay">Lodge-based stay</option></select></label><button type="reset">Reset filters</button></form>
+    <noscript><p>All seven planning cards are below, followed by the full transport and room guidance.</p></noscript><p id="dog-count" class="result-count" role="status" aria-live="polite">{ideas.length} planning cards to explore</p>
+    <div class="idea-grid">{ideas.map(idea=><article class="idea-card" data-dog-base={idea.base} data-dog-season={idea.seasons.join(' ')} data-dog-plan={idea.plan}><span class="eyebrow">{idea.place}</span><h3>{idea.name}</h3><p>{idea.text}</p><p class="season-label">Planning season: {idea.seasons.length===2?'winter or summer, subject to the specific rules':idea.seasons[0]}</p><div class="card-check"><strong>Resolve this before the outing</strong><p>{idea.check}</p></div><a href={idea.source} target="_blank" rel="noopener">Read the official policy &nearr;</a></article>)}</div>
+    <div id="dog-empty" class="notice" hidden><h3>No exact match in these planning cards.</h3><p>Try a different plan or base. Removing a filter does not remove an operator’s restrictions.</p><button type="reset" form="dog-filters">Reset filters</button></div>
+  </div></section>
+  <section class="section soft-section"><div class="container"><div class="section-heading"><span class="eyebrow">The whole connection matters</span><h2>Decide how the dog will travel</h2><p>A scheduled vehicle, private transfer and attraction can each have different policies. Read the full terms before you buy a ticket.</p></div>
+    <div id="dog-transport-tool" class="transport-tool" hidden><label for="dog-transport">My transport situation<select id="dog-transport"><option value="all">Still deciding</option><option value="car">Driving / rental vehicle</option><option value="carrier">Dog can travel in a lap-sized animal carrier</option><option value="large">Dog cannot travel in a lap-sized carrier</option></select></label><p id="dog-transport-advice" role="status" aria-live="polite">{transportAdvice.all}</p></div>
+    <div class="transport-table"><table><caption>Transport checks for ordinary pets</caption><thead><tr><th scope="col">Service</th><th scope="col">What to resolve</th></tr></thead><tbody><tr><th scope="row">Roam Transit</th><td>The animal must stay fully enclosed in a secure animal carrier small enough for your lap. Backpacks, tote bags and pet strollers are not accepted substitutes. Read the <a href="https://roamtransit.com/about-us/transportation-policies/" target="_blank" rel="noopener">current pet policy</a>.</td></tr><tr><th scope="row">Parks Canada lake shuttles</th><td>Ordinary pets need the small lap-held carrier; the service is seasonal. Confirm the full outward and return journey in the <a href="https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq" target="_blank" rel="noopener">shuttle FAQ</a>.</td></tr><tr><th scope="row">Private carrier or rental vehicle</th><td>Obtain the provider’s explicit answer about this dog, carrier, vehicle, fees and route. Do not assume another service follows the public-bus policy.</td></tr><tr><th scope="row">Service animals</th><td>These have separate arrangements from ordinary-pet policies. Contact the specific carrier or venue about the applicable requirements and support before travel.</td></tr></tbody></table></div>
+    <p class="source-note">The <a href="https://www.banffjaspercollection.com/attractions/lake-minnewanka-cruise/faqs/" target="_blank" rel="noopener">Lake Minnewanka Cruise FAQ</a> makes pet acceptance discretionary. It is not a guaranteed alternative for a dog that cannot use a shuttle.</p></div></section>
+  <section class="section"><div class="container"><div class="section-heading"><span class="eyebrow">Ask for the actual pet room</span><h2>Property-specific starting points</h2><p>These properties publish pet-room options, with limits and allocation to confirm. Ask about this dog, its room, current charges, supervision, permitted shared areas and meals. Do not infer universal pet acceptance from a hotel filter.</p></div><p class="affiliate-note">Booking links are affiliate links. BanffBound may earn a commission if you book. Confirm a pet-designated booking with the property before payment; a generic room quote does not reserve pet eligibility.</p><div class="hotel-grid">{stayOptions.map(stay=><article class="hotel-card">{stay.hotel.image&&<img src={stay.hotel.image} alt={stay.hotel.name} width="800" height="500" loading="lazy" />}<div><span class="eyebrow">{stay.hotel.area}</span><h3><a href={`/hotel-directory/${stay.slug}`}>{stay.hotel.name}</a></h3><p>{stay.note}</p><a href={stay.source} target="_blank" rel="noopener">Confirm the property’s pet policy &nearr;</a><a href={stay.hotel.expediaUrl} target="_blank" rel="noopener sponsored">{stay.hotel.expediaUrl.includes('Hotel-Search')?'Search the Emerald Lake destination':'Compare dates and rooms'} &nearr;</a></div></article>)}</div><p class="next-line"><a href="/hotel-directory">Hotel directory & map &rarr;</a> · <a href="/winter-stays">Winter stay comparisons &rarr;</a> · <a href="/towns/field-yoho">Understand Field and Yoho &rarr;</a></p></div></section>
+  <section class="section soft-section"><div class="container"><div class="section-heading"><h2>Before you leave with the dog</h2><p>Check the actual route and date. Snowshoes, ice cleats or a dog’s enthusiasm do not establish a suitable winter route or natural ice.</p></div><form class="checklist"><fieldset><legend>Dog trip-day checks</legend>{checks.map((check,index)=><label><input type="checkbox" name={`dog-check-${index}`} /><span>{check}</span></label>)}</fieldset><button type="reset">Reset trip-day checks</button></form><p class="source-note"><a href="https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions" target="_blank" rel="noopener">Parks Canada trail reports</a>, <a href="https://parks.canada.ca/pn-np/ab/banff/bulletins" target="_blank" rel="noopener">current bulletins</a> and <a href="https://banff.ca/conditions" target="_blank" rel="noopener">Town conditions</a> can change the plan. Track-set winter trails may have dog restrictions; summer trail access is not winter-route clearance. Use <a href="/conditions">the report hub</a> and <a href="/winter">winter guide</a>.</p></div></section>
+  <section class="section"><div class="container"><h2>Dog trip questions</h2><div class="faq-list">{faqs.map(f=><details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div><p class="source-note">Reviewed 28 October 2026 using the linked Parks Canada, Town, carrier and property sources. Confirm current charges, admission rules and any date-specific restriction before committing. For the rest of the party, see the <a href="/family-guide">family guide</a> and <a href="/packing-list">packing checklist</a>.</p></div></section>
 </BaseLayout>
-
+<script is:inline define:vars={{ transportAdvice }}>
+  const transport=document.querySelector('#dog-transport');
+  const advice=document.querySelector('#dog-transport-advice');
+  const tool=document.querySelector('#dog-transport-tool');
+  if(transport&&advice&&tool){tool.hidden=false;transport.addEventListener('change',()=>{advice.textContent=transportAdvice[transport.value]||transportAdvice.all;});}
+</script>
+<script>
+  const initDogGuide=()=>{
+    const form=document.querySelector<HTMLFormElement>('#dog-filters');if(!form||form.dataset.ready)return;
+    const selects=['base','season','plan'].map(name=>form.elements.namedItem(name) as HTMLSelectElement);
+    const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-dog-base]'));const count=document.querySelector('#dog-count');const empty=document.querySelector<HTMLElement>('#dog-empty');const params=new URLSearchParams(window.location.search);
+    for(const select of selects){const value=params.get(select.name);if(value&&Array.from(select.options).some(option=>option.value===value))select.value=value;}
+    const update=(sync=true)=>{let shown=0;for(const card of cards){const values=[card.dataset.dogBase,card.dataset.dogSeason,card.dataset.dogPlan];const match=selects.every((select,index)=>select.value==='all'||(values[index]||'').split(' ').includes(select.value));card.hidden=!match;if(match)shown++;}if(count)count.textContent=`${shown} planning ${shown===1?'card':'cards'} to explore — confirm each policy separately.`;if(empty)empty.hidden=shown>0;if(sync){const url=new URL(window.location.href);for(const select of selects)select.value==='all'?url.searchParams.delete(select.name):url.searchParams.set(select.name,select.value);try{window.history.replaceState({},'',url);}catch{}}};
+    form.dataset.ready='true';form.hidden=false;form.addEventListener('submit',event=>event.preventDefault());form.addEventListener('change',()=>update());form.addEventListener('reset',()=>window.setTimeout(()=>update(),0));update(false);
+  };initDogGuide();document.addEventListener('astro:page-load',initDogGuide);
+</script>
 <style>
-  .rules-banner { background: #fef3cd; border: 2px solid #f0c040; border-radius: var(--radius); padding: 2rem; }
-  .rules-banner h2 { font-size: 1.3rem; margin-bottom: 1rem; }
-  .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .rule-item strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
-  .rule-item p { font-size: 0.85rem; color: #5a5a5a; line-height: 1.5; }
-
-  .trails-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .trail-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); position: relative; border-top: 3px solid var(--color-bg-alt); }
-  .trail-card.easy { border-top-color: #4caf50; }
-  .trail-card.moderate { border-top-color: #ff9800; }
-  .difficulty-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem; }
-  .difficulty-badge.easy { background: #e8f5e9; color: #2e7d32; }
-  .difficulty-badge.moderate { background: #fff3e0; color: #e65100; }
-  .trail-card h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
-  .trail-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.3rem; }
-
-  .no-dogs-list { display: flex; flex-direction: column; gap: 0.5rem; background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .no-dog-item { font-size: 0.9rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); color: #c0392b; font-weight: 500; }
-
-  .restaurant-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .restaurant-card { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
-  .restaurant-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
-  .restaurant-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .hotel-list { display: flex; flex-direction: column; gap: 0.5rem; }
-  .hotel-item { background: var(--color-white); border-radius: var(--radius); padding: 1rem 1.25rem; box-shadow: var(--shadow); font-size: 0.9rem; line-height: 1.5; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
-  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
-
-  @media (max-width: 768px) {
-    .rules-grid { grid-template-columns: 1fr; }
-    .trails-grid { grid-template-columns: 1fr; }
-    .restaurant-grid { grid-template-columns: 1fr; }
-  }
+  .eyebrow{display:block;color:#806120;text-transform:uppercase;letter-spacing:.09em;font-size:.72rem;font-weight:700;margin-bottom:.7rem}.dog-hero{background:#173d2d;color:#e1e9e3;padding:4rem 0}.dog-hero .eyebrow{color:#e8cb87}.dog-hero h1{font-size:clamp(2.7rem,5.3vw,4.8rem);line-height:1.08;color:#fff;margin-bottom:1.4rem}.dog-hero p{max-width:46rem;font-size:1.1rem;margin-bottom:1.6rem}.journey-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-bottom:2rem}.journey-links a{padding:1.2rem;border:1px solid #dce4dd;border-radius:var(--radius);background:#f0f3ee}.journey-links strong,.journey-links span{display:block}.journey-links span{color:var(--color-text-light);font-size:.85rem;margin-top:.4rem}
+  .rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.3rem;margin:1rem 0 3rem}.rule-grid article{background:#f0f3ee;padding:1.5rem;border-radius:var(--radius);border-left:3px solid #b18a3a}.rule-grid h2{font-size:1.3rem;margin-bottom:.7rem}.rule-grid p{font-size:.92rem;color:var(--color-text-light)}.section-heading{max-width:52rem;margin-bottom:1.6rem;scroll-margin-top:7rem}.section-heading h2{margin-bottom:.7rem}.section-heading p{color:var(--color-text-light)}.filters{display:flex;align-items:end;flex-wrap:wrap;gap:1rem;background:#f0f3ee;padding:1.3rem;border-radius:var(--radius)}.filters label{display:grid;gap:.4rem;flex:1 1 12rem;color:var(--color-primary);font-weight:600;font-size:.88rem}.filters select,.transport-tool select{width:100%;min-height:2.8rem;background:#fff;padding:.6rem;border:1px solid #acb9ae;border-radius:.35rem;font:inherit}button{min-height:2.8rem;padding:.6rem 1rem;border:1px solid #acb9ae;border-radius:.35rem;background:white;color:var(--color-primary);font:inherit;font-size:.85rem;cursor:pointer}[hidden]{display:none!important}.result-count{font-weight:600;color:var(--color-primary);margin:1.2rem 0;font-size:.9rem}
+  .idea-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem}.idea-card{border:1px solid #dce4dd;border-radius:var(--radius);padding:1.6rem;background:#fff}.idea-card h3{font-size:1.45rem;margin-bottom:.8rem}.idea-card>p,.card-check p{font-size:.92rem;color:var(--color-text-light)}.idea-card .season-label{font-size:.76rem;margin:.8rem 0 1rem;color:#6b704f}.card-check{background:#f0f3ee;padding:1rem;margin:1rem 0}.card-check strong{color:var(--color-primary);font-size:.9rem}.card-check p{margin-top:.4rem}.idea-card>a{font-weight:600;font-size:.85rem}.notice{background:#f4f2e8;border-left:3px solid #b18a3a;padding:1.3rem;margin:1.5rem 0}.notice p{color:var(--color-text-light);margin:.8rem 0}.soft-section{background:var(--color-bg-alt)}
+  .transport-tool{padding:1.3rem;background:#fff;border:1px solid #dce4dd;border-radius:var(--radius);margin-bottom:1.5rem}.transport-tool label{display:grid;gap:.5rem;max-width:34rem;color:var(--color-primary);font-weight:600;font-size:.9rem}.transport-tool p{color:var(--color-text-light);font-size:.9rem;margin-top:1rem}.transport-table{overflow-x:auto;border:1px solid #dce4dd;border-radius:var(--radius);background:#fff}table{border-collapse:collapse;text-align:left;width:100%}caption{padding:1rem 1.2rem;text-align:left;font-weight:600;color:var(--color-primary)}th,td{padding:1rem 1.2rem;border-top:1px solid #dce4dd;vertical-align:top;font-size:.9rem}thead th{background:#eaf0e8}tbody th{width:23%}td{color:var(--color-text-light)}.affiliate-note,.source-note{font-size:.8rem;color:var(--color-text-light);max-width:62rem;margin:1.3rem 0}.hotel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}.hotel-card{border:1px solid #dce4dd;border-radius:var(--radius);overflow:hidden}.hotel-card img{display:block;width:100%;height:13rem;object-fit:cover}.hotel-card>div{padding:1.3rem}.hotel-card h3{font-size:1.25rem;margin-bottom:.7rem}.hotel-card p{color:var(--color-text-light);font-size:.9rem;margin-bottom:1rem}.hotel-card>div>a{display:block;font-size:.85rem;font-weight:600;margin-top:.7rem}.next-line{margin-top:1.5rem;font-size:.9rem}.checklist{max-width:53rem}.checklist fieldset{border:0;padding:0;margin:0 0 1.3rem}.checklist legend{font-weight:600;color:var(--color-primary);margin-bottom:1rem}.checklist label{display:flex;align-items:start;gap:.7rem;padding:.75rem 0;color:var(--color-text-light);font-size:.92rem;cursor:pointer}.checklist input{accent-color:#24553d;width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.15rem}.faq-list{max-width:57rem;margin-top:1rem}details{border-bottom:1px solid #dce4dd;padding:1rem 0}summary{font-weight:600;color:var(--color-primary);cursor:pointer}details p{color:var(--color-text-light);font-size:.9rem;margin-top:.8rem}a:focus-visible,select:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #b18a3a;outline-offset:4px}
+  @media(max-width:1000px){.journey-links{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:750px){.journey-links,.rule-grid,.idea-grid,.hotel-grid{grid-template-columns:1fr}.dog-hero{padding:3rem 0}.idea-card{padding:1.3rem}th,td{padding:.8rem}}
 </style>
