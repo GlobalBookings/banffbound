@@ -37,6 +37,9 @@ jobs:
           node scripts/check-day-ideas.mjs
           node scripts/check-trail-directory.mjs
           node scripts/check-production-redirects.mjs
+          node scripts/check-activities.mjs
+          node scripts/check-paddling.mjs
+          node research/check-rental-planning-2026-10-29.mjs
 
       - name: Check report source and expiry behavior
         run: |

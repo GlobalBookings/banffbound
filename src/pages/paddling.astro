@@ -1,234 +1,220 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { activitySearchUrl } from '../data/activityPlanning';
 
-const canoeingSpots = [
+const waterRulesUrl = 'https://parks.canada.ca/pn-np/ab/banff/activ/nautiques-sports';
+const paddlingUrl = 'https://parks.canada.ca/pn-np/ab/banff/activ/nautiques-sports/canotage-canoeing';
+const yohoOrderUrl = 'https://parks.canada.ca/pn-np/bc/yoho/bulletins/45b1cb4f-7cfc-4a7a-8b92-00770378ca4f';
+const lakeChoices = [
   {
-    name: 'Lake Louise',
-    description: 'Perhaps the most iconic canoeing spot in the world. Paddle across impossibly turquoise waters with Victoria Glacier towering above you. Canoe rentals are available at the Fairmont Chateau Lake Louise boathouse. Go early morning for calm water, fewer crowds, and the best light.',
-    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
-    difficulty: 'Easy',
-    season: 'June - September',
-    rental: 'On-site rental available',
+    name: 'Lake Louise', area: 'Banff National Park, Alberta',
+    description: 'A lakeshore canoe outing is separate from a visit to Lake Louise village or the ski resort. The Chateau boathouse is at the lake; organise your lakeshore journey and return before adding a rental.',
+    access: 'The Chateau publishes first-come rental arrangements and party limits. Its page currently says the boathouse is closed for the season, with a return planned for summer 2027. A transport ticket does not reserve a canoe.',
+    rule: 'Water Recreation Zone: personal craft require the current cleaning and self-certification conditions.',
+    source: 'https://www.chateau-lake-louise.com/activities/canoeing/', sourceLabel: 'Chateau canoe operation', guide: '/blog/lake-louise-complete-guide',
   },
   {
-    name: 'Moraine Lake',
-    description: 'Set in the Valley of the Ten Peaks, Moraine Lake\'s vivid blue water is a paddler\'s dream. Canoe rentals are available at the lodge. The lake is smaller and more sheltered than Lake Louise, making it ideal for a peaceful morning paddle surrounded by towering peaks.',
-    image: 'https://banfflakelouise.bynder.com/m/1e85056f0193bfe9/1500x915_jpg-2022_LakeLouise_Friends_ROAMCreative.jpg',
-    difficulty: 'Easy',
-    season: 'June - September',
-    rental: 'On-site rental available',
+    name: 'Moraine Lake', area: 'Banff National Park, Alberta',
+    description: 'Choose this for an on-site canoe rental during the operator’s actual season, rather than a trip with your own boat or board. The lodge offers first-come rentals, subject to water level and weather; no advance canoe reservation is offered.',
+    access: 'Moraine Lake Road is closed to personal vehicles year-round, with specific authorised exceptions. Arrange the appropriate seasonal transport and leave time for the return. The canoe season is narrower than the full visitor-transport season.',
+    rule: 'Water Preservation Zone: no personal watercraft. Only the permitted on-site rental craft that remain at Moraine Lake are an exception.',
+    source: 'https://morainelake.com/day-visits/', sourceLabel: 'Moraine Lake Lodge day visits', guide: '/blog/moraine-lake-guide',
   },
   {
-    name: 'Emerald Lake',
-    description: 'Located in nearby Yoho National Park, Emerald Lake lives up to its name with vivid green-blue water surrounded by dense forest. The calm, sheltered lake is perfect for leisurely canoeing with mountain reflections. Canoes available at Emerald Lake Lodge.',
-    image: 'https://banfflakelouise.bynder.com/m/1e85056f0193bfe9/1500x915_jpg-2022_LakeLouise_Friends_ROAMCreative.jpg',
-    difficulty: 'Easy',
-    season: 'June - September',
-    rental: 'On-site rental available',
+    name: 'Emerald Lake', area: 'Yoho National Park, British Columbia',
+    description: 'This is a separate journey into BC, not another stop on the Lake Louise–Moraine Lake Connector. The Boathouse Trading Co. near Emerald Lake Lodge supplies its own canoe rentals; confirm its operation and equipment for your date.',
+    access: 'The current Yoho watercraft order runs through March 31, 2027. It prohibits personal watercraft, with exceptions for Emerald Lake rental canoes and authorised commercial operators. That end date does not establish the rules after it.',
+    rule: 'Do not bring your own SUP, kayak, inflatable or canoe under the current order.',
+    source: 'https://crmr.com/activities/canoeing/', sourceLabel: 'Emerald Lake canoe operator', guide: '',
   },
   {
-    name: 'Bow River',
-    description: 'A gentle float through the heart of Banff offers unique town-to-wilderness perspectives. Launch from the Bow River canoe dock and paddle downstream past the Bow Falls area. Watch for ospreys, eagles, and elk along the riverbanks. Multiple outfitters offer canoe and kayak rentals.',
-    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80',
-    difficulty: 'Easy - Moderate',
-    season: 'June - September',
-    rental: 'Town rental shops',
+    name: 'Vermilion Lakes', area: 'Near Banff town, Alberta',
+    description: 'Consider the lakes for a Banff-based water outing, with wetland scenery rather than an alpine-lake transport day. Choose a specific legal launch and return with a local outfitter; a rental in town does not establish access or permission everywhere.',
+    access: 'If you intend to approach from the Bow River or Echo Creek, obtain the outfitter’s permitted route and return instructions. Do not improvise connections through channels, shore vegetation or private land.',
+    rule: 'Water Recreation Zone: cleaning and self-certification apply. Shallow water does not remove cold-water, wind or rescue demands.',
+    source: waterRulesUrl, sourceLabel: 'Parks water activity zones', guide: '',
   },
   {
-    name: 'Vermilion Lakes',
-    description: 'Three shallow lakes just west of Banff townsite offering spectacular sunset views of Mount Rundle. The calm water and marshy shoreline make this a favourite for photographers and birdwatchers. Bring your own canoe or rent from town — there are no on-site rentals.',
-    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80',
-    difficulty: 'Easy',
-    season: 'May - September',
-    rental: 'Bring your own or rent in town',
+    name: 'Two Jack Lake', area: 'Lake Minnewanka area, Alberta',
+    description: 'A lake option for people bringing suitable equipment and a plan for launch, changing conditions and recovery. Two Jack and Lake Minnewanka have different watercraft rules despite being near one another.',
+    access: 'Confirm legal shore access, current notices and how you will carry equipment before setting off. A scenic shoreline photograph is not a wind forecast or an assessment of the group’s ability.',
+    rule: 'Two Jack is in the Water Recreation Zone. Personal paddlecraft are prohibited at nearby Lake Minnewanka under its separate rules.',
+    source: waterRulesUrl, sourceLabel: 'Parks water activity zones', guide: '',
+  },
+  {
+    name: 'Johnson Lake', area: 'Lake Minnewanka area, Alberta',
+    description: 'Another lake to compare for a canoe, kayak or SUP plan near Banff. Choose it on the basis of permitted access, your equipment and the day’s conditions; the lake’s smaller scale is not a beginner-safety rating.',
+    access: 'Arrange transport and equipment separately. Ask about entry and exit, board or boat handling, suitable clothing and how everyone would recover after a capsize.',
+    rule: 'Water Recreation Zone: the same cleaning and self-certification duties apply to boards and paddling gear.',
+    source: waterRulesUrl, sourceLabel: 'Parks water activity zones', guide: '',
   },
 ];
-
-const raftingTrips = [
+const riverChoices = [
   {
-    name: 'Kicking Horse River — White Water',
-    description: 'The most thrilling rafting in the Canadian Rockies. The Kicking Horse River in nearby Golden, BC offers Class III-IV rapids through a stunning canyon. Full-day and half-day trips are available with professional guides and all equipment provided. A must-do for adrenaline seekers.',
-    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80',
-    difficulty: 'Class III-IV (Advanced)',
-    season: 'June - September',
-    duration: '4-6 hours',
+    name: 'Guided Bow River scenic float',
+    operator: 'Banff Adventures Hoodoo float • Banff, Alberta',
+    description: 'This guided sightseeing product launches below Bow Falls, near the golf course. It is separate from town canoe rentals and from a whitewater trip. The published minimum age is 2; confirm equipment fit, mobility needs and eligibility with the provider.',
+    arrival: 'Use the confirmed raft departure point, not the shop address on Bear Street. The product includes a return shuttle to its base; this does not establish hotel pickup or transport between bundled activities.',
+    url: 'https://www.banffadventures.com/things-to-do/float-trips/', label: 'Check the specific Bow float',
   },
   {
-    name: 'Bow River — Scenic Float',
-    description: 'A gentle family-friendly float trip on the Bow River offers stunning mountain scenery without the white water intensity. Perfect for families with young children, these relaxed trips float past towering peaks, wildlife habitat, and riverside meadows.',
-    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80',
-    difficulty: 'Class I-II (Beginner)',
-    season: 'June - September',
-    duration: '2-3 hours',
+    name: 'Kananaskis River whitewater',
+    operator: 'Chinook Rafting • Alberta, east of Canmore',
+    description: 'Chinook describes its Kananaskis trip as Class 2–3 and publishes a minimum age of 5. This is guided whitewater, with different demands from a scenic float. Ask about the actual participants, current water levels and all eligibility conditions.',
+    arrival: 'Self-drive only: the operator’s river base is on Highway 1A near Nakoda Lodge. Follow its confirmed check-in directions; a Banff accommodation booking does not include this journey.',
+    url: 'https://chinookrafting.com/tours/kananaskis-river/', label: 'Check Chinook’s Kananaskis trip',
   },
   {
-    name: 'Kananaskis River — Moderate Rapids',
-    description: 'A middle-ground option with Class II-III rapids that offers excitement without being too intense. Located about an hour south of Banff, the Kananaskis River trips are popular for groups and first-time rafters who want a taste of white water.',
-    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80',
-    difficulty: 'Class II-III (Intermediate)',
-    season: 'June - August',
-    duration: '3-4 hours',
-  },
-];
-
-const supSpots = [
-  {
-    name: 'Two Jack Lake',
-    description: 'A calm, clear lake just 12 km from Banff with stunning views of Mount Rundle. Ideal for stand-up paddleboarding with relatively warm water and gentle conditions. Bring your own board or rent from town.',
+    name: 'Horseshoe Canyon whitewater',
+    operator: 'Chinook Rafting • Bow River, Alberta',
+    description: 'This is a separate Bow River whitewater product, not the Banff scenic float. Chinook lists Class 3–4 and a minimum age of 12. Compare the river demands and participation requirements rather than choosing from the river name alone.',
+    arrival: 'Self-drive only to Chinook’s Highway 1A base near Nakoda Lodge. Confirm the booked product, check-in, clothing and return arrangements directly.',
+    url: 'https://chinookrafting.com/tours/horseshoe-canyon/', label: 'Check Chinook’s Horseshoe Canyon trip',
   },
   {
-    name: 'Johnson Lake',
-    description: 'A small, sheltered lake near Lake Minnewanka that warms up nicely in summer. Perfect for beginners learning to SUP with calm water and a scenic mountain backdrop.',
-  },
-  {
-    name: 'Vermilion Lakes',
-    description: 'Shallow, calm water and spectacular sunset views make the Vermilion Lakes a top SUP destination. Early morning sessions offer mirror-like reflections of the surrounding peaks.',
+    name: 'Kicking Horse whitewater',
+    operator: 'Wild Water Adventures • Golden / Yoho area, British Columbia',
+    description: 'Different river sections and products have different requirements. For example, Wild Water’s Whitewater Exciter publishes a minimum age of 12 and minimum weight of 90 lb (41 kg). Its milder Gentle product has separate rules; do not transfer these numbers between trips or operators.',
+    arrival: 'Trips meet at the River Base, 2750 Beaverfoot Road, Golden, BC. The Canmore administrative office is not the departure. An internal base-to-river shuttle does not mean a transfer from your Banff hotel.',
+    url: 'https://wildwater.com/kicking-horse-rafting-trips/whitewater-exciter/', label: 'Check Wild Water’s specific trip',
   },
 ];
 ---
 
-<BaseLayout title="Paddling in Banff — Canoeing, Kayaking, Rafting & SUP Guide" description="Complete guide to paddling in Banff — canoeing, kayaking, white water rafting, and stand-up paddleboarding. Best lakes, rivers, outfitters, and tours.">
+<BaseLayout title="Paddling in Banff — Lake Rentals, SUP & River Trip Planning" description="Compare Banff lake rentals, SUP and guided river trips, with current watercraft restrictions, Bow Falls route limits, cold-water preparation and operator-specific transport checks." lastUpdated="2026-10-29" image="https://banfflakelouise.bynder.com/m/1e85056f0193bfe9/1500x915_jpg-2022_LakeLouise_Friends_ROAMCreative.jpg">
   <div class="container">
     <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Paddling' }]} />
   </div>
   <section class="page-hero">
-    <img
-      src="https://banfflakelouise.bynder.com/m/1e85056f0193bfe9/1500x915_jpg-2022_LakeLouise_Friends_ROAMCreative.jpg"
-      alt="Canoeing on turquoise lake in the Canadian Rockies"
-      class="page-hero-bg"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <img src="https://banfflakelouise.bynder.com/m/1e85056f0193bfe9/1500x915_jpg-2022_LakeLouise_Friends_ROAMCreative.jpg" alt="Canoe outing at Lake Louise" class="page-hero-bg" loading="eager" fetchpriority="high" />
     <div class="page-hero-content">
       <span class="badge">On the Water</span>
       <h1>Paddling in Banff</h1>
-      <p>Canoe turquoise alpine lakes, raft wild rivers, and paddleboard beneath towering Rocky Mountain peaks.</p>
+      <p>Choose a lake rental, an independent paddle or a guided river trip, then plan the access, equipment and return for that particular outing.</p>
     </div>
   </section>
 
-  <!-- Canoeing -->
   <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">🛶 Canoeing</span>
-        <h2>Best Canoeing Spots</h2>
-        <p>Banff's turquoise glacial lakes are among the most beautiful paddling destinations on Earth.</p>
-      </div>
-      <div class="grid grid-3">
-        {canoeingSpots.map(spot => (
-          <div class="card">
-            <img src={spot.image} alt={spot.name} class="card-image" loading="lazy" />
-            <div class="card-body">
-              <h3>{spot.name}</h3>
-              <p>{spot.description}</p>
-              <div class="card-meta">
-                <span>📅 {spot.season}</span>
-                <span class="tag">{spot.difficulty}</span>
-              </div>
-              <div class="card-meta">
-                <span>🛶 {spot.rental}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div class="container planning-content">
+      <p class="review-date">Source review: October 29, 2026. This is a planning guide, not a live operating report.</p>
+      <nav class="page-links" aria-label="Paddling guide sections">
+        <a href="#bow-river">Bow River &amp; falls</a><a href="#watercraft-rules">Watercraft rules</a><a href="#lakes">Compare lakes</a><a href="#sup">SUP</a><a href="#rafting">Guided river trips</a><a href="#prepare">Prepare</a>
+      </nav>
+      <aside class="planning-note" aria-labelledby="bow-river">
+        <h2 id="bow-river">Bow River: do not paddle through or over Bow Falls</h2>
+        <p><strong>Do not continue downstream past the town canoe docks towards Bow Falls.</strong> Parks Canada identifies the docks at the Bow River–Echo Creek junction as a take-out and warns against continuing past them. This page does not describe a route through or over the falls.</p>
+        <p>The <a href={paddlingUrl} target="_blank" rel="noopener">Parks Bow River route guide</a> describes independent river sections for experienced canoeists. Currents, sweepers, logjams and changing channels require route-specific skills and rescue preparation. A town rental is not permission to improvise a downstream journey.</p>
+        <p>A guided sightseeing float starts separately <strong>below the falls</strong>. For town rentals, get the operator’s actual permitted paddling area and return instructions. <a href="https://banffcanoeclub.com/" target="_blank" rel="noopener">Banff Canoe Club</a>, at Wolf Street and Bow Avenue, currently says it is closed for the season and advertises 2027 plans; confirm future operation directly.</p>
+      </aside>
+
+      <h2 id="watercraft-rules">Check the waterbody before bringing a boat</h2>
+      <p>Banff’s current <a href={waterRulesUrl} target="_blank" rel="noopener">water activity zones</a> govern where personal craft may go. Moraine Lake permits only its on-site rental craft that remain there. Personal paddling is also prohibited at Bow Lake. Lake Minnewanka has separate restrictions that prohibit personal paddlecraft. A rule for Lake Louise or Two Jack does not apply to the next lake.</p>
+      <p>For permitted personal craft and gear, <strong>clean, drain, dry and carry the required self-certification permit</strong>. Parks currently specifies at least 48 hours drying after use within Alberta, BC, Yukon or Northwest Territories, and 30 days after use elsewhere. Read the current permit, including requirements when changing waterbodies. Do not plan a same-day tour of lakes with wet equipment or launch if you cannot meet the conditions.</p>
+      <p>Yoho has a different <a href={yohoOrderUrl} target="_blank" rel="noopener">watercraft prohibition through March 31, 2027</a>, with exceptions for Emerald Lake rental canoes and authorised commercial operators. Check replacement orders for later dates.</p>
     </div>
   </section>
 
-  <!-- Rafting -->
   <section class="section" style="background: var(--color-bg-alt);">
     <div class="container">
       <div class="section-header">
-        <span class="badge">🌊 Rafting</span>
-        <h2>White Water Rafting</h2>
-        <p>From gentle family floats to heart-pounding Class IV rapids, the rivers near Banff deliver world-class rafting.</p>
+        <h2 id="lakes">Compare lake outings</h2>
+        <p>These places have different transport and water-use arrangements. None is a promise of warm water, calm conditions or available rentals.</p>
       </div>
-      <div class="grid grid-3">
-        {raftingTrips.map(trip => (
-          <div class="card">
-            <img src={trip.image} alt={trip.name} class="card-image" loading="lazy" />
+      <div class="grid grid-2">
+        {lakeChoices.map(lake => (
+          <article class="card">
             <div class="card-body">
-              <h3>{trip.name}</h3>
-              <p>{trip.description}</p>
-              <div class="card-meta">
-                <span>⏱️ {trip.duration}</span>
-                <span class="tag">{trip.difficulty}</span>
-              </div>
-              <div class="card-meta">
-                <span>📅 {trip.season}</span>
-              </div>
+              <p class="location-label">{lake.area}</p>
+              <h3>{lake.name}</h3>
+              <p>{lake.description}</p><p>{lake.access}</p>
+              <p><strong>Watercraft:</strong> {lake.rule}</p>
+              <p><a href={lake.source} target="_blank" rel="noopener">{lake.sourceLabel} →</a>{lake.guide && <> · <a href={lake.guide}>Detailed visit guide</a></>}</p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
+      <p class="planning-followup">For the two alpine lakes, use <a href="https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise" target="_blank" rel="noopener">Parks Canada’s access and shuttle guide</a>. Check the exact destination, equipment rules and last return; a bus seat and a boat rental are separate arrangements.</p>
     </div>
   </section>
 
-  <!-- SUP -->
   <section class="section">
+    <div class="container planning-content">
+      <h2 id="sup">Planning a stand-up paddleboard outing</h2>
+      <p>Johnson Lake, Two Jack Lake and Vermilion Lakes are in the Water Recreation Zone. That designation permits an activity under the rules; it does not assess a paddler’s balance, rescue skills or the weather. Boards and related gear need the same cleaning and certification checks as other personal paddlecraft.</p>
+      <p>If you are learning, arrange instruction and discuss the specific venue with the provider. Before carrying a board to the water, establish a permitted entry and exit, equipment suited to that setting, flotation that fits, and a recovery plan for the whole group. Ask the instructor about board-specific rescue equipment and its use. Do not use an inflatable pool toy as river transport.</p>
+      <p>A sunny day or shallow shoreline does not make immersion harmless. Choose a shore-based day if wind, cold, visibility or the group’s preparation make the outing unsuitable. For snow-season plans, use the <a href="/winter">winter guide</a>; these summer water outings are not winter lake-access instructions.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
     <div class="container">
       <div class="section-header">
-        <span class="badge">🏄 SUP</span>
-        <h2>Stand-Up Paddleboarding</h2>
-        <p>SUP has exploded in popularity in the Rockies. These calm lakes are perfect for getting on the water.</p>
+        <h2 id="rafting">Choose the actual guided river product</h2>
+        <p>A scenic float and a whitewater trip have different demands. Published ages and river grades below belong to the named product, checked October 29, 2026; confirm all requirements before paying.</p>
       </div>
-      <div class="grid grid-3">
-        {supSpots.map(spot => (
-          <div class="card">
+      <div class="grid grid-2">
+        {riverChoices.map(trip => (
+          <article class="card">
             <div class="card-body">
-              <h3>{spot.name}</h3>
-              <p>{spot.description}</p>
+              <p class="location-label">{trip.operator}</p><h3>{trip.name}</h3>
+              <p>{trip.description}</p><p><strong>Getting there:</strong> {trip.arrival}</p>
+              <p><a href={trip.url} target="_blank" rel="noopener">{trip.label} →</a></p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
+      <p class="planning-followup">Chinook’s pages currently say its 2026 season has finished and advertise 2027 plans. None of these listings establishes operation today. For Kicking Horse, also read <a href="https://wildwater.com/getting-here/" target="_blank" rel="noopener">Wild Water’s River Base directions</a>. Confirm check-in time, actual meeting point, travel arrangements, equipment, cancellation terms and the party’s age, weight, health and mobility requirements. Ask the operator about swimming ability and participation demands; there is no universal rule across these trips.</p>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
-    <div class="container">
-      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book a Paddling Tour</h2>
-      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">From guided canoe tours on Lake Louise to thrilling white water rafting adventures, book your perfect water experience.</p>
-      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=paddle" class="btn btn-accent" target="_blank" rel="noopener">Browse Paddling Tours on GetYourGuide →</a>
-      <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" class="btn btn-accent" target="_blank" rel="noopener sponsored" style="margin-left: 1rem;">Find Hotels on Expedia →</a>
+  <section class="section">
+    <div class="container planning-content">
+      <h2 id="prepare">Build a complete water day</h2>
+      <ol class="preparation-list">
+        <li><strong>Choose the format.</strong> A local rental needs a return deadline; an independent route needs appropriate skills, route information and a recovery plan; a guided trip needs the right product and check-in. Decide who can participate before choosing a departure.</li>
+        <li><strong>Resolve the journey.</strong> Save the actual launch or river-base address and confirmation offline. Compare <a href="/towns">Banff, Lake Louise and Canmore bases</a>, and plan the full return using the <a href="/car-free-banff">transport guide</a>. Do not assume public transport will carry an inflated board, boat or all your gear.</li>
+        <li><strong>Prepare for cold immersion.</strong> Parks warns that cold water can cause hypothermia even in summer. Wear a properly fitted PFD, select suitable clothing and rescue equipment, and carry dry layers, drinking water and a means of communication. Cell coverage may be unreliable. Agree on your plan with someone ashore.</li>
+        <li><strong>Recheck before launching.</strong> Read <a href="https://parks.canada.ca/pn-np/ab/banff/bulletins" target="_blank" rel="noopener">Parks bulletins</a>, the water rules, weather and the operator’s briefing. Wind, thunderstorms, water levels and ice change the decision; a morning start does not guarantee suitable conditions.</li>
+        <li><strong>Protect the shoreline.</strong> Use permitted access, avoid disturbing wildlife and shoreline vegetation, and take rubbish and equipment away. Clean, drain and dry again after use. Keep photography secondary to boat control and the group’s needs.</li>
+      </ol>
+      <p>Build spare time around the outing with the <a href="/trip-builder">trip builder</a>, and use the <a href="/packing-list">packing guide</a> for the rest of the day. For a mixed group, settle the non-participants’ waiting location, facilities and return transport before separating.</p>
     </div>
   </section>
 
-  <section class="tip-section">
-    <div class="container">
-      <div class="tip-card">
-        <h3>🛶 Paddling Safety Tips</h3>
-        <p><strong>Cold Water Warning:</strong> Glacial lakes are extremely cold (4-12°C even in summer). Wear a PFD at all times and don't venture far from shore unless experienced.</p>
-        <p><strong>Weather Changes Fast:</strong> Mountain weather can shift quickly. Watch for afternoon winds and thunderstorms. Paddle early in the day for the calmest conditions.</p>
-        <p><strong>River Currents:</strong> Even the gentle Bow River has currents. Know your skill level and choose appropriate sections. Never paddle alone on moving water.</p>
-        <p><strong>Rental Bookings:</strong> Popular spots like Lake Louise and Moraine Lake can have long waits for canoe rentals. Arrive early or book guided tours in advance.</p>
-        <p><strong>Leave No Trace:</strong> Pack out all garbage and respect shoreline vegetation. Stay off nesting areas and keep noise levels low to protect wildlife.</p>
+  <section class="section booking-section">
+    <div class="container planning-content">
+      <h2>Compare tours and accommodation</h2>
+      <p>Use the direct operator links above to check the named products. A marketplace search can show different activities, locations or dates; inspect the actual listing and provider before booking.</p>
+      <div class="booking-links">
+        <a href={activitySearchUrl('Banff canoe kayak rafting')} class="btn btn-accent" target="_blank" rel="noopener sponsored">Search paddling activities on GetYourGuide →</a>
+        <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" class="btn btn-accent" target="_blank" rel="noopener sponsored">Search Banff accommodation on Expedia →</a>
       </div>
+      <p class="affiliate-note">These two search links are affiliate links. BanffBound may earn a commission. Results do not guarantee a particular trip, transport service, price or availability.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container planning-content source-note">
+      <h2>Sources and current operation</h2>
+      <p>Reviewed October 29, 2026 against <a href={waterRulesUrl} target="_blank" rel="noopener">Parks Canada’s Banff water rules</a>, <a href={paddlingUrl} target="_blank" rel="noopener">Bow River route and preparation guidance</a>, the <a href={yohoOrderUrl} target="_blank" rel="noopener">Yoho restricted-activity order</a>, and the named rental and rafting providers linked in each comparison. Rules, closures and product requirements can change; check those pages again for your travel date.</p>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .tip-section {
-    padding: 0 0 4rem;
-  }
-
-  .tip-card {
-    background: var(--color-bg-alt);
-    border-left: 4px solid var(--color-accent);
-    border-radius: var(--radius);
-    padding: 2rem;
-  }
-
-  .tip-card h3 {
-    margin-bottom: 1rem;
-  }
-
-  .tip-card p {
-    color: var(--color-text-light);
-    line-height: 1.7;
-    margin-bottom: 0.5rem;
-  }
+  .planning-content { max-width: 900px; }
+  .planning-content h2 { margin: 2rem 0 1rem; }
+  .planning-content p, .card-body p, .planning-followup, .preparation-list li { line-height: 1.75; margin-bottom: 1rem; }
+  .review-date, .location-label, .affiliate-note { color: var(--color-text-light); font-size: 0.9rem; }
+  .location-label { margin-bottom: 0.5rem !important; }
+  .page-links, .booking-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin: 1.5rem 0; }
+  .planning-note { border-left: 4px solid var(--color-accent); border-radius: var(--radius); padding: 1.5rem; background: var(--color-bg-alt); }
+  .planning-note h2 { margin-top: 0; }
+  .planning-followup { margin-top: 1.5rem; }
+  .preparation-list { padding-left: 1.5rem; }
+  .booking-section { background: var(--color-bg-alt); }
+  .booking-links .btn { white-space: normal; text-align: center; }
+  .source-note { border-top: 1px solid var(--color-border, #ddd); }
+  @media (max-width: 600px) { .planning-note { padding: 1rem; } .booking-links .btn { width: 100%; } }
 </style>

@@ -1,553 +1,204 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { rentals, rentalAreas, vrboAffiliateUrl } from '../../data/rentals';
-
-const areas = [...new Set(rentals.map(r => r.area))];
-const types = [...new Set(rentals.map(r => r.type))].sort();
-
-const rentalData = JSON.stringify(rentals.map(r => ({
-  slug: r.slug,
-  name: r.name,
-  type: r.type,
-  area: r.area,
-  sleeps: r.sleeps,
-  bedrooms: r.bedrooms,
-  bathrooms: r.bathrooms,
-  price: r.priceFrom,
-  rating: r.rating,
-  reviews: r.reviewCount,
-  lat: r.lat,
-  lng: r.lng,
-  img: r.image,
-  vrbo: vrboAffiliateUrl(r.vrboUrl),
-  premier: r.premierHost,
-})));
+import { rentals, rentalImportProvenance, vrboAffiliateUrl } from '../../data/rentals';
+import { rentalBaseGuides, reviewedRentalOptions, rentalPlanningSources, rentalPlanningCheckedOn } from '../../data/rentalPlanning';
+const types = [...new Set(rentals.map(r => r.type).filter((type): type is string => Boolean(type)))].sort();
+const baseNames: Record<string, string> = { banff: 'Banff town area', 'tunnel-mountain': 'Tunnel Mountain', 'harvie-heights': 'Harvie Heights', unknown: 'Area not recorded' };
+const providerBases = [...new Set(rentals.map(r => r.base))];
+const options = reviewedRentalOptions.map(option => ({ ...option, provider: option.providerId ? rentals.find(r => r.expediaId === option.providerId) : undefined }));
+const roomChecks = [
+  ['Sleeping separately', 'Bedrooms behind doors, loft beds, sofa beds, stairs and bathroom access. “Sleeps six” does not describe six equivalent beds.'],
+  ['Cooking meals', 'Oven or cooktop, fridge size, cookware and dining seats. A kitchen nook or mini-fridge serves a different purpose from a full kitchen.'],
+  ['A family ski morning', 'Gear storage, breakfast space, equipment collection and the first pickup. Match the room to your lesson and transport plan.'],
+  ['Mobility or access needs', 'Step-free arrival, lifts, internal levels, bed transfers, bathing fixtures and the route to parking or transit. Ask for confirmation of your specific requirements.'],
+  ['Pets, pools or hot tubs', 'The permitted room category, advance pet approval, facility access and current maintenance. A word in an imported title does not establish an inclusion.'],
+  ['A fair quote comparison', 'The same dates, party and room; total taxes/fees, parking, meals, transport, deposits and cancellation. No base is universally cheaper.'],
+];
+const pageSchema = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Banff vacation rental and condo planning guide', url: 'https://banffbound.com/vacation-rentals/', mainEntity: { '@type': 'ItemList', numberOfItems: options.length, itemListElement: options.map((option, i) => ({ '@type': 'ListItem', position: i + 1, name: option.name, url: option.links[0].href })) } };
 ---
+<BaseLayout title="Banff Vacation Rentals — Condo, Cabin & Kitchen-Stay Planner" description="Compare condo and cabin layouts, Banff and Canmore bases, kitchens, bedrooms and ski transport. Explore official-source options and preserved Vrbo listing leads." lastUpdated={rentalPlanningCheckedOn}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+  <div class="rental-page">
+    <div class="container"><Breadcrumbs items={[{ label: 'Vacation Rentals' }]} /></div>
+    <section class="rental-hero"><div class="container">
+      <span class="eyebrow">Condos, cabins &amp; self-catering stays</span>
+      <h1>Banff condos, cabins<br />and vacation rentals.</h1>
+      <p>A kitchen suite in town, a loft above Banff or a Canmore condo can lead to very different days. Start with your beds, cooking needs and daily transport, then compare the exact booking.</p>
+      <div class="hero-links"><a href="#stay-planner" class="btn btn-accent">Compare your base</a><a href="#provider-listings" class="btn btn-outline">Browse {rentals.length} provider leads</a></div>
+      <p class="hero-small">Planning and operator sources checked <time datetime={rentalPlanningCheckedOn}>29 October 2026</time>. Current availability and prices come from the selected provider.</p>
+    </div></section>
 
-<BaseLayout title="Vacation Rentals Near Banff — Cabins, Chalets & Condos" description="Browse 50+ vacation rentals near Banff National Park. Cabins, chalets, condos, and houses with mountain views, hot tubs, and full kitchens. Book direct on Vrbo.">
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Vacation Rentals' }]} />
+    <section class="section" id="stay-planner" aria-labelledby="planner-title"><div class="container">
+      <span class="eyebrow">Start with the trip you want</span><h2 id="planner-title">A base and room that work together</h2>
+      <p class="section-intro">Narrow what to investigate. Room examples describe categories on official operator pages; confirm the exact unit, party eligibility and transport before paying.</p>
+      <noscript><p class="source-note">All four base guides, four operator examples and {rentals.length} imported provider leads are available below. Interactive filters need JavaScript.</p></noscript>
+      <div class="planning-controls" id="planning-controls" hidden>
+        <label for="plan-base">Base<select id="plan-base"><option value="all">Compare all bases</option>{rentalBaseGuides.map(base => <option value={base.id}>{base.name}</option>)}</select></label>
+        <label for="plan-need">Room priority<select id="plan-need"><option value="all">All room examples</option><option value="separate-bedrooms">Separate bedroom categories</option><option value="loft">Loft or chalet categories</option><option value="laundry">In-suite laundry category</option></select></label>
+        <label for="plan-transport">Getting around<select id="plan-transport"><option value="all">Compare both approaches</option><option value="without-car">Without a car</option><option value="with-car">With a car</option></select></label>
+        <button type="button" id="plan-reset" class="reset-btn">Reset planner</button><p id="plan-result" class="result-count" role="status" aria-live="polite">4 base guides · 4 operator examples</p>
+      </div>
+      <div class="base-grid">{rentalBaseGuides.map(base => <article class="base-card" data-base-guide data-base={base.id}>
+        <h3>{base.name}</h3><p class="suits">{base.suits}</p><p>{base.room}</p>
+        <p class="transport-note" data-transport="without-car"><strong>Without a car:</strong> {base.withoutCar}</p>
+        <p class="transport-note" data-transport="with-car"><strong>With a car:</strong> {base.withCar}</p>
+        <div class="card-links"><a href={base.guide}>Town and area guide &rarr;</a>{base.id === 'canmore' ? <a href="/hotel-directory?area=Canmore">Compare Canmore suites &rarr;</a> : <a href="#provider-listings" data-choose-base={base.id}>Browse imported leads for this base &darr;</a>}</div>
+      </article>)}</div>
+      <div class="subsection-heading"><span class="eyebrow">Examples checked against official sources</span><h2>Four places to start comparing</h2><p>These managed suite, condo and chalet examples make the room tradeoffs concrete. A provider listing may offer different categories from the example described here.</p></div>
+      <p class="affiliate-note">Vrbo links are affiliate links: BanffBound may earn a commission if you book. Official operator links provide the sources for the room examples.</p>
+      <p id="option-empty" class="source-note" hidden>No reviewed operator example matches. Broaden the room priority, or use the provider leads below after checking the exact address and unit. The base guidance remains useful.</p>
+      <div class="option-grid">{options.map(option => <article class="option-card" data-option data-base={option.base} data-tags={option.tags.join(' ')}>
+        <span class="option-kind">{option.kind} · {rentalBaseGuides.find(base => base.id === option.base)?.name}</span><h3>{option.name}</h3><p class="suits">{option.why}</p>
+        <p><strong>Room example:</strong> {option.room}</p><p><strong>Check:</strong> {option.check}</p><p><strong>Transport:</strong> {option.transport}</p>
+        <ul class="source-links">{option.links.map(link => <li><a href={link.href}>{link.label} &nearr;</a></li>)}</ul>
+        {option.provider && <><a href={vrboAffiliateUrl(option.provider.vrboUrl)} target="_blank" rel="noopener sponsored" class="text-link">Compare the listing on Vrbo &nearr;</a><p class="small">Provider link. Match the exact room and full booking terms to the example above.</p></>}
+      </article>)}</div>
+    </div></section>
+
+    <section class="section room-section" aria-labelledby="room-title"><div class="container">
+      <span class="eyebrow">Compare the layout, not just the guest number</span><h2 id="room-title">What changes a self-catering stay?</h2>
+      <div class="table-wrap"><table><thead><tr><th scope="col">Your need</th><th scope="col">What to compare</th></tr></thead><tbody>{roomChecks.map(([need,check]) => <tr><th scope="row">{need}</th><td>{check}</td></tr>)}</tbody></table></div>
+      <p class="next-links"><a href="/ski-day-planner">Ski day planner</a><a href="/learn-to-ski">First lessons</a><a href="/winter-stays">Winter stays</a><a href="/packing-list">Packing checklist</a><a href="/family-guide">Family guide</a><a href="/dog-friendly">Travelling with a dog</a></p>
+    </div></section>
+
+    <section class="section" id="listing-checks" aria-labelledby="checks-title"><div class="container">
+      <h2 id="checks-title">Check the address and permitted use</h2>
+      <div class="rules-grid">
+        <article><h3>Banff</h3><p>The Town says visitor rooms in residential properties require an approved Accessory Guest Accommodation permit, including a live-in owner present during guest stays. Managed commercial suites are a different accommodation type. Confirm the address and approval for the offered unit; a platform title alone does not establish its status.</p><a href="https://banff.ca/bedandbreakfast">Town requirements &nearr;</a></article>
+        <article><h3>Canmore</h3><p>Visitor accommodation, tourist homes and residential dwellings have different rules. Canmore requires the appropriate permits and a business licence for short-term rentals, with the licence number displayed online. Confirm the unit’s approval and licence; a Vrbo listing does not establish a municipal check.</p><a href="https://www.canmore.ca/your-community/planning/accommodation-types">Accommodation types &nearr;</a><a href="https://www.canmore.ca/public/download/files/331587">Town licensing guidance &nearr;</a></article>
+        <article><h3>Harvie Heights</h3><p>This is a separate hamlet in the Municipal District of Bighorn. Ask for the unit address and relevant local approval rather than applying Banff or Canmore rules to it. Verify the manager, arrival process, parking and onward transport.</p><a href="https://www.mdbighorn.ca/165/Harvie-Heights">Official hamlet information &nearr;</a></article>
+      </div>
+      <p class="source-note">The imported leads have not been checked individually for current licensing, availability or facilities. Confirm the full address and unit with the provider before arranging transport.</p>
+    </div></section>
+
+    <section class="section provider-section" id="provider-listings" aria-labelledby="provider-title"><div class="container">
+      <span class="eyebrow">Continue your comparison with the provider</span><h2 id="provider-title">{rentals.length} preserved Vrbo listing leads</h2>
+      <p class="section-intro">{rentalImportProvenance.note} The capture date is unknown. Stored room counts help find leads to investigate; a resort-level result may describe one category rather than every unit.</p>
+      <p class="affiliate-note"><strong>Affiliate links:</strong> BanffBound may earn a commission if you book through a Vrbo link. Check current dates, the exact property and unit, occupancy, total price and cancellation on the provider’s page.</p>
+      <div class="lead-controls" id="lead-controls" hidden>
+        <label for="lead-search">Search stored listing labels<input type="search" id="lead-search" placeholder="Name or imported area" /></label>
+        <label for="lead-base">Imported base<select id="lead-base"><option value="all">All imported bases</option>{providerBases.map(base => <option value={base}>{baseNames[base]}</option>)}</select></label>
+        <label for="lead-type">Imported type<select id="lead-type"><option value="all">All recorded types</option>{types.map(type => <option value={type}>{type}</option>)}<option value="unknown">Type not recorded</option></select></label>
+        <label for="lead-guests">Imported capacity<select id="lead-guests"><option value="all">Any recorded capacity</option><option value="2">At least 2</option><option value="4">At least 4</option><option value="6">At least 6</option><option value="8">At least 8</option><option value="unknown">Capacity not recorded</option></select></label>
+        <label for="lead-bedrooms">Imported bedrooms<select id="lead-bedrooms"><option value="all">Any bedroom count</option><option value="1">At least 1</option><option value="2">At least 2</option><option value="3">At least 3</option><option value="unknown">Bedrooms not recorded</option></select></label>
+        <button type="button" id="lead-reset" class="reset-btn">Clear listing filters</button><p id="lead-count" class="result-count" role="status" aria-live="polite">{rentals.length} provider leads</p>
+      </div>
+      <p class="small">Minimum-count filters exclude records with missing counts. They compare the import only; they do not confirm present-day capacity or a suitable bed layout.</p>
+      <p id="lead-empty" class="source-note" hidden>No imported leads match. Clear filters or compare the official operator examples above, including the Canmore suite alternative.</p>
+      <div class="rental-grid">{rentals.map(rental => <article class="rental-card" data-rental data-name={rental.name.toLowerCase()} data-area={(rental.area || '').toLowerCase()} data-base={rental.base} data-type={rental.type || 'unknown'} data-sleeps={rental.importedSleeps ?? ''} data-bedrooms={rental.importedBedrooms ?? ''}>
+        <div class="provider-photo">{rental.image?.trim() ? <img src={rental.image} alt={`Imported Vrbo image for ${rental.name}`} loading="lazy" width="455" height="455" /> : <p>Provider photo unavailable</p>}</div>
+        <div class="rental-card-body"><span class="import-label">Historical provider lead</span><h3>{rental.name}</h3>
+          <p class="small">Imported area: {rental.area || 'not recorded'} · Type: {rental.type || 'not recorded'}</p>
+          <dl class="stored-counts"><div><dt>Capacity at import</dt><dd>{rental.importedSleeps ?? 'Not recorded'}</dd></div><div><dt>Bedrooms at import</dt><dd>{rental.importedBedrooms ?? 'Not recorded'}</dd></div><div><dt>Bathrooms at import</dt><dd>{rental.importedBathrooms ?? 'Not recorded'}</dd></div></dl>
+          <p class="small">Listing label and provider photo are preserved from the earlier import. Confirm current location, bed layout and inclusions on the listing.</p>
+          <a href={vrboAffiliateUrl(rental.vrboUrl)} target="_blank" rel="noopener sponsored" class="text-link">Check the listing on Vrbo &nearr;</a>
+        </div>
+      </article>)}</div>
+    </div></section>
+
+    <section class="section" aria-labelledby="sources-title"><div class="container sources-block"><h2 id="sources-title">Sources and next steps</h2><p>Operator and local planning sources reviewed <time datetime={rentalPlanningCheckedOn}>29 October 2026</time>. Imported listing fields have a separate, unknown capture date. The shortlist is planning advice; it does not reserve a room or verify an individual licence.</p><ul>{rentalPlanningSources.map(source => <li><a href={source.href}>{source.label} &nearr;</a></li>)}</ul><p class="next-links"><a href="/towns">Compare towns</a><a href="/accommodation">All accommodation types</a><a href="/hotel-directory">Hotel directory</a><a href="/conditions">Travel conditions</a></p></div></section>
   </div>
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=1600&q=80" alt="Mountain cabin near Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Rentals &amp; Cabins</span>
-      <h1>Vacation Rentals Near Banff</h1>
-      <p>Browse {rentals.length} vacation rentals — cabins, chalets, condos, and homes — in and around Banff National Park. Full kitchens, mountain views, and more space than a hotel room.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <!-- Filter bar -->
-      <div class="filter-bar" id="filters">
-        <div class="filter-group search-group">
-          <input type="text" id="search-input" placeholder="Search rentals..." class="search-input" />
-        </div>
-        <div class="filter-group">
-          <select id="area-filter">
-            <option value="all">All Areas</option>
-            {areas.map(a => <option value={a}>{a}</option>)}
-          </select>
-        </div>
-        <div class="filter-group">
-          <select id="type-filter">
-            <option value="all">All Types</option>
-            {types.map(t => <option value={t}>{t}</option>)}
-          </select>
-        </div>
-        <div class="filter-group">
-          <select id="guests-filter">
-            <option value="all">All Guests</option>
-            <option value="1-2">1–2 Guests</option>
-            <option value="3-4">3–4 Guests</option>
-            <option value="5-6">5–6 Guests</option>
-            <option value="7+">7+ Guests</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <select id="price-filter">
-            <option value="all">All Prices</option>
-            <option value="0-200">$0–$200/night</option>
-            <option value="200-400">$200–$400/night</option>
-            <option value="400-600">$400–$600/night</option>
-            <option value="600+">$600+/night</option>
-          </select>
-        </div>
-        <button id="clear-filters" class="clear-btn" style="display:none;">Clear</button>
-        <span class="result-count" id="result-count">{rentals.length} rentals</span>
-      </div>
-
-      <!-- View toggle -->
-      <div class="view-toggle">
-        <button id="grid-view-btn" class="view-btn active">Grid</button>
-        <button id="map-view-btn" class="view-btn">Map</button>
-      </div>
-
-      <!-- Interactive Map -->
-      <div id="map-container" class="map-container" style="display:none;">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <div id="rental-map" style="height: 500px; border-radius: var(--radius); overflow: hidden;"></div>
-      </div>
-
-      <!-- Rental grid -->
-      <div class="rental-grid" id="rental-grid">
-        {rentals.map(rental => (
-          <a href={vrboAffiliateUrl(rental.vrboUrl)} target="_blank" rel="noopener sponsored" class="rental-card"
-             data-area={rental.area} data-type={rental.type}
-             data-sleeps={String(rental.sleeps)} data-price={String(rental.priceFrom)}
-             data-name={rental.name.toLowerCase()} data-slug={rental.slug}
-             data-premier={String(rental.premierHost)}>
-            <div class="rental-card-img-wrap">
-              <img src={rental.image} alt={rental.name} class="rental-card-img" loading="lazy" />
-              {rental.premierHost && <span class="premier-badge">⭐ Premier Host</span>}
-              <span class="type-badge">{rental.type}</span>
-            </div>
-            <div class="rental-card-body">
-              <h3>{rental.name}</h3>
-              <p class="rental-area">{rental.area}</p>
-              <div class="rental-features">
-                <span class="rental-feature">👥 {rental.sleeps}</span>
-                {rental.bedrooms > 0 && <span class="rental-feature">🛏️ {rental.bedrooms}</span>}
-                <span class="rental-feature">🚿 {rental.bathrooms}</span>
-              </div>
-              {rental.rating > 0 && (
-                <div class="rental-review-mini">
-                  <span class="review-badge">{rental.rating}</span>
-                  <span>{rental.reviewCount} review{rental.reviewCount !== 1 ? 's' : ''}</span>
-                </div>
-              )}
-              <div class="rental-card-footer">
-                <span class="rental-price">From ${rental.priceFrom} CAD<small>/night</small></span>
-                <span class="rental-link">View on Vrbo →</span>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <div class="section-header">
-        <h2>Rental Areas Near Banff</h2>
-        <p>Where you stay matters — here's what each area offers for vacation rentals.</p>
-      </div>
-      <div class="grid grid-3">
-        {rentalAreas.map(area => (
-          <div class="card">
-            <div class="card-body">
-              <h3>{area.name}</h3>
-              <p>{area.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
 </BaseLayout>
 
-<script define:vars={{ rentalData }}>
-  const allRentals = JSON.parse(rentalData);
-  const searchInput = document.getElementById('search-input');
-  const areaFilter = document.getElementById('area-filter');
-  const typeFilter = document.getElementById('type-filter');
-  const guestsFilter = document.getElementById('guests-filter');
-  const priceFilter = document.getElementById('price-filter');
-  const clearBtn = document.getElementById('clear-filters');
-  const cards = document.querySelectorAll('.rental-card');
-  const countEl = document.getElementById('result-count');
-  const gridViewBtn = document.getElementById('grid-view-btn');
-  const mapViewBtn = document.getElementById('map-view-btn');
-  const mapContainer = document.getElementById('map-container');
-  const rentalGrid = document.getElementById('rental-grid');
-
-  let map = null;
-  let markers = [];
-  let leafletLoaded = false;
-
-  function matchGuests(sleeps, filter) {
-    if (filter === 'all') return true;
-    if (filter === '1-2') return sleeps >= 1 && sleeps <= 2;
-    if (filter === '3-4') return sleeps >= 3 && sleeps <= 4;
-    if (filter === '5-6') return sleeps >= 5 && sleeps <= 6;
-    if (filter === '7+') return sleeps >= 7;
-    return true;
-  }
-
-  function matchPrice(price, filter) {
-    if (filter === 'all') return true;
-    if (filter === '0-200') return price >= 0 && price <= 200;
-    if (filter === '200-400') return price > 200 && price <= 400;
-    if (filter === '400-600') return price > 400 && price <= 600;
-    if (filter === '600+') return price > 600;
-    return true;
-  }
-
-  function applyFilters() {
-    const search = searchInput.value.toLowerCase().trim();
-    const area = areaFilter.value;
-    const type = typeFilter.value;
-    const guests = guestsFilter.value;
-    const price = priceFilter.value;
-    let visible = 0;
-    const visibleSlugs = new Set();
-
-    cards.forEach(card => {
-      const matchSearch = !search || card.dataset.name.includes(search) || card.dataset.area.toLowerCase().includes(search);
-      const matchArea = area === 'all' || card.dataset.area === area;
-      const matchType = type === 'all' || card.dataset.type === type;
-      const matchG = matchGuests(Number(card.dataset.sleeps), guests);
-      const matchP = matchPrice(Number(card.dataset.price), price);
-      const show = matchSearch && matchArea && matchType && matchG && matchP;
-      card.style.display = show ? '' : 'none';
-      if (show) {
-        visible++;
-        visibleSlugs.add(card.dataset.slug);
-      }
+<script is:inline>
+(() => {
+  const get = id => document.getElementById(id);
+  const planBase = get('plan-base'), planNeed = get('plan-need'), planTransport = get('plan-transport');
+  const guides = document.querySelectorAll('[data-base-guide]'), options = document.querySelectorAll('[data-option]');
+  const leadSearch = get('lead-search'), leadBase = get('lead-base'), leadType = get('lead-type'), leadGuests = get('lead-guests'), leadBedrooms = get('lead-bedrooms');
+  const leads = document.querySelectorAll('[data-rental]');
+  function applyPlan() {
+    let guideCount = 0, optionCount = 0;
+    guides.forEach(guide => { guide.hidden = planBase.value !== 'all' && guide.dataset.base !== planBase.value; if (!guide.hidden) guideCount++; });
+    options.forEach(option => {
+      option.hidden = (planBase.value !== 'all' && option.dataset.base !== planBase.value) || (planNeed.value !== 'all' && !option.dataset.tags.split(' ').includes(planNeed.value));
+      if (!option.hidden) optionCount++;
     });
-
-    countEl.textContent = `${visible} rental${visible !== 1 ? 's' : ''}`;
-    clearBtn.style.display = (search || area !== 'all' || type !== 'all' || guests !== 'all' || price !== 'all') ? '' : 'none';
-
-    if (map && leafletLoaded) updateMapMarkers(visibleSlugs);
+    document.querySelectorAll('[data-transport]').forEach(note => { note.hidden = planTransport.value !== 'all' && note.dataset.transport !== planTransport.value; });
+    get('option-empty').hidden = optionCount > 0;
+    get('plan-result').textContent = guideCount + ' base guide' + (guideCount === 1 ? '' : 's') + ' · ' + optionCount + ' operator example' + (optionCount === 1 ? '' : 's');
   }
-
-  function clearAll() {
-    searchInput.value = '';
-    areaFilter.value = 'all';
-    typeFilter.value = 'all';
-    guestsFilter.value = 'all';
-    priceFilter.value = 'all';
-    applyFilters();
+  function matchesCount(stored, choice) {
+    if (choice === 'all') return true;
+    if (choice === 'unknown') return stored === '';
+    return stored !== '' && Number.isFinite(Number(stored)) && Number(stored) >= Number(choice);
   }
-
-  // Read URL params and pre-set filters
+  function applyLeads() {
+    const search = leadSearch.value.toLowerCase().trim(); let count = 0;
+    leads.forEach(lead => {
+      lead.hidden = !((!search || lead.dataset.name.includes(search) || lead.dataset.area.includes(search))
+        && (leadBase.value === 'all' || lead.dataset.base === leadBase.value)
+        && (leadType.value === 'all' || lead.dataset.type === leadType.value)
+        && matchesCount(lead.dataset.sleeps, leadGuests.value) && matchesCount(lead.dataset.bedrooms, leadBedrooms.value));
+      if (!lead.hidden) count++;
+    });
+    get('lead-count').textContent = count + ' provider lead' + (count === 1 ? '' : 's'); get('lead-empty').hidden = count > 0;
+  }
+  function setChoice(select, value) {
+    if (!value) return;
+    const option = Array.from(select.options).find(option => option.value.toLowerCase() === value.toLowerCase());
+    if (option) select.value = option.value;
+  }
   const params = new URLSearchParams(window.location.search);
-  const paramArea = params.get('area');
-  const paramType = params.get('type');
-  const paramGuests = params.get('guests');
-  const paramPrice = params.get('price');
-
-  if (paramArea) {
-    const opt = Array.from(areaFilter.options).find(o => o.value === paramArea);
-    if (opt) areaFilter.value = paramArea;
-  }
-  if (paramType) {
-    const opt = Array.from(typeFilter.options).find(o => o.value.toLowerCase() === paramType.toLowerCase());
-    if (opt) typeFilter.value = opt.value;
-  }
-  if (paramGuests) guestsFilter.value = paramGuests;
-  if (paramPrice) priceFilter.value = paramPrice;
-
-  if (paramArea || paramType || paramGuests || paramPrice) {
-    applyFilters();
-    document.getElementById('filters')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  searchInput.addEventListener('input', applyFilters);
-  areaFilter.addEventListener('change', applyFilters);
-  typeFilter.addEventListener('change', applyFilters);
-  guestsFilter.addEventListener('change', applyFilters);
-  priceFilter.addEventListener('change', applyFilters);
-  clearBtn.addEventListener('click', clearAll);
-
-  // View toggle
-  gridViewBtn.addEventListener('click', () => {
-    gridViewBtn.classList.add('active');
-    mapViewBtn.classList.remove('active');
-    rentalGrid.style.display = '';
-    mapContainer.style.display = 'none';
-  });
-
-  mapViewBtn.addEventListener('click', () => {
-    mapViewBtn.classList.add('active');
-    gridViewBtn.classList.remove('active');
-    rentalGrid.style.display = 'none';
-    mapContainer.style.display = '';
-    if (!leafletLoaded) loadMap();
-  });
-
-  function loadMap() {
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-    script.onload = () => {
-      leafletLoaded = true;
-      initMap();
-    };
-    document.head.appendChild(script);
-  }
-
-  function initMap() {
-    map = L.map('rental-map').setView([51.18, -115.53], 11);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors',
-      maxZoom: 18,
-    }).addTo(map);
-
-    allRentals.forEach(r => {
-      if (!r.lat || !r.lng) return;
-      const marker = L.marker([r.lat, r.lng]).addTo(map);
-      marker.bindPopup(`
-        <div style="min-width:200px;">
-          <img src="${r.img}" alt="${r.name}" style="width:100%;height:100px;object-fit:cover;border-radius:4px;margin-bottom:6px;" />
-          <strong style="font-size:0.9rem;">${r.name}</strong><br/>
-          <span style="font-size:0.8rem;color:#666;">${r.type} · ${r.area} · 👥${r.sleeps}</span><br/>
-          <span style="font-size:0.85rem;font-weight:600;color:#1a472a;">From $${r.price} CAD/night</span>
-          ${r.rating ? `<span style="font-size:0.8rem;color:#888;"> · ${r.rating}/10</span>` : ''}
-          ${r.premier ? '<br/><span style="font-size:0.75rem;color:#d4a843;">⭐ Premier Host</span>' : ''}
-          <br/><a href="${r.vrbo}" target="_blank" rel="noopener sponsored" style="font-size:0.8rem;color:#d4a843;font-weight:600;">View on Vrbo →</a>
-        </div>
-      `);
-      marker._rentalSlug = r.slug;
-      markers.push(marker);
-    });
-
-    updateMapMarkers(new Set(allRentals.map(r => r.slug)));
-  }
-
-  function updateMapMarkers(visibleSlugs) {
-    markers.forEach(m => {
-      if (visibleSlugs.has(m._rentalSlug)) {
-        m.addTo(map);
-      } else {
-        m.remove();
-      }
-    });
-  }
+  const legacyBases = {'Downtown Banff':'banff','Downtown':'banff','Uptown':'banff','Banff':'banff','Banff Springs':'banff','Banff Centre':'banff','Tunnel Mountain':'tunnel-mountain','Harvie Heights':'harvie-heights','Canmore':'canmore'};
+  const base = params.get('base') || legacyBases[params.get('area')];
+  setChoice(planBase, base); setChoice(leadBase, base); setChoice(planNeed, params.get('need')); setChoice(planTransport, params.get('transport'));
+  setChoice(leadType, params.get('type')); setChoice(leadGuests, params.get('guests')); setChoice(leadBedrooms, params.get('bedrooms'));
+  if (params.get('q')) leadSearch.value = params.get('q');
+  [planBase, planNeed, planTransport].forEach(select => select.addEventListener('change', applyPlan));
+  get('plan-reset').addEventListener('click', () => { planBase.value = planNeed.value = planTransport.value = 'all'; applyPlan(); });
+  [leadBase, leadType, leadGuests, leadBedrooms].forEach(select => select.addEventListener('change', applyLeads));
+  leadSearch.addEventListener('input', applyLeads);
+  get('lead-reset').addEventListener('click', () => { leadSearch.value = ''; leadBase.value = leadType.value = leadGuests.value = leadBedrooms.value = 'all'; applyLeads(); });
+  document.querySelectorAll('[data-choose-base]').forEach(link => link.addEventListener('click', () => { setChoice(leadBase, link.dataset.chooseBase); applyLeads(); }));
+  applyPlan(); applyLeads(); get('planning-controls').hidden = false; get('lead-controls').hidden = false;
+})();
 </script>
 
 <style>
-  .filter-bar {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
-    background: var(--color-white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-  }
-
-  .search-group { flex: 1; min-width: 180px; }
-
-  .search-input {
-    width: 100%;
-    padding: 0.5rem 0.8rem;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 6px;
-    font-size: 0.85rem;
-    background: var(--color-white);
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .search-input:focus {
-    border-color: var(--color-primary);
-  }
-
-  .search-input::placeholder { color: #aaa; }
-
-  .filter-group select {
-    padding: 0.5rem 0.8rem;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 6px;
-    font-size: 0.85rem;
-    background: var(--color-white);
-    cursor: pointer;
-  }
-
-  .clear-btn {
-    padding: 0.4rem 0.8rem;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 6px;
-    font-size: 0.8rem;
-    background: none;
-    cursor: pointer;
-    color: var(--color-text-light);
-  }
-
-  .clear-btn:hover { background: var(--color-bg-alt); }
-
-  .result-count {
-    margin-left: auto;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-primary);
-    white-space: nowrap;
-  }
-
-  .view-toggle {
-    display: flex;
-    gap: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .view-btn {
-    padding: 0.5rem 1.25rem;
-    border: 1px solid rgba(0,0,0,0.15);
-    background: var(--color-white);
-    font-size: 0.85rem;
-    cursor: pointer;
-    font-weight: 500;
-    color: var(--color-text-light);
-    transition: all 0.2s;
-  }
-
-  .view-btn:first-child { border-radius: 6px 0 0 6px; }
-  .view-btn:last-child { border-radius: 0 6px 6px 0; border-left: none; }
-
-  .view-btn.active {
-    background: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
-  }
-
-  .map-container {
-    margin-bottom: 1.5rem;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-
-  .rental-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .rental-card {
-    background: var(--color-white);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.2s ease;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .rental-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .rental-card-img-wrap {
-    position: relative;
-  }
-
-  .rental-card-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-
-  .premier-badge {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    background: rgba(26, 71, 42, 0.9);
-    color: white;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 600;
-  }
-
-  .type-badge {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 500;
-  }
-
-  .rental-card-body {
-    padding: 1rem 1.25rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .rental-card-body h3 {
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
-    line-height: 1.3;
-  }
-
-  .rental-area {
-    font-size: 0.78rem;
-    color: var(--color-text-light);
-    margin-bottom: 0.4rem;
-  }
-
-  .rental-features {
-    display: flex;
-    gap: 0.6rem;
-    margin-bottom: 0.4rem;
-    font-size: 0.78rem;
-    color: var(--color-text-light);
-  }
-
-  .rental-feature {
-    white-space: nowrap;
-  }
-
-  .rental-review-mini {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-bottom: 0.4rem;
-    font-size: 0.78rem;
-    color: var(--color-text-light);
-  }
-
-  .review-badge {
-    background: var(--color-primary);
-    color: white;
-    border-radius: 4px;
-    padding: 0.1rem 0.35rem;
-    font-size: 0.72rem;
-    font-weight: 700;
-  }
-
-  .rental-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    padding-top: 0.6rem;
-    border-top: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .rental-price {
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--color-primary);
-  }
-
-  .rental-price small {
-    font-weight: 400;
-    font-size: 0.72rem;
-    color: var(--color-text-light);
-  }
-
-  .rental-link {
-    color: var(--color-accent);
-    font-weight: 600;
-    font-size: 0.8rem;
-  }
-
-  @media (max-width: 768px) {
-    .filter-bar { flex-direction: column; align-items: stretch; }
-    .result-count { margin-left: 0; }
-    .rental-grid { grid-template-columns: 1fr; }
-    .search-group { min-width: auto; }
-  }
+  [hidden] { display: none !important; }
+  .rental-hero { padding: 4rem 0; background: var(--color-primary); color: white; }
+  .rental-hero h1 { color: white; font-size: clamp(2.3rem,5vw,4rem); line-height: 1.1; margin: .8rem 0 1.3rem; }
+  .rental-hero p { max-width: 760px; font-size: 1.08rem; line-height: 1.75; color: #eef3ed; }
+  .eyebrow { display: block; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--color-accent); }
+  .hero-links,.card-links,.next-links { display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; margin: 1.5rem 0; }
+  .hero-links .btn-outline { border-color: #e4eade; color: white; }
+  .rental-hero .hero-small { font-size: .8rem; opacity: .85; }
+  .section-intro { max-width: 900px; margin-bottom: 1.5rem; color: var(--color-text-light); line-height: 1.7; }
+  h2 { margin: .5rem 0 1rem; } h3 { margin: 0 0 .75rem; font-size: 1.3rem; }
+  .planning-controls,.lead-controls { display: flex; align-items: end; flex-wrap: wrap; gap: 1rem; padding: 1.25rem; margin: 1.5rem 0; border: 1px solid #dce3d8; border-radius: var(--radius); background: var(--color-bg-alt); }
+  label { display: flex; flex: 1 1 180px; flex-direction: column; gap: .4rem; font-size: .8rem; font-weight: 700; color: var(--color-primary); }
+  select,input { width: 100%; min-height: 44px; padding: .65rem; border: 1px solid #b9c6b7; border-radius: 5px; background: white; font: inherit; color: var(--color-text); }
+  select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+  .reset-btn { min-height: 44px; border: 1px solid var(--color-primary); padding: .65rem 1rem; border-radius: 5px; background: white; color: var(--color-primary); font: inherit; font-size: .82rem; cursor: pointer; }
+  .result-count { flex-basis: 100%; margin: 0; font-size: .85rem; font-weight: 700; color: var(--color-primary); }
+  .base-grid,.option-grid,.rules-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.25rem; }
+  .base-card,.option-card { padding: 1.5rem; border: 1px solid #dce3d8; border-radius: var(--radius); background: white; }
+  .base-card { border-top: 4px solid var(--color-accent); }
+  .base-card p,.option-card p,.rules-grid p { font-size: .9rem; line-height: 1.7; }
+  .suits { font-weight: 600; color: var(--color-primary); }
+  .transport-note { padding-top: .75rem; border-top: 1px solid #e7ece3; }
+  a:not(.btn) { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
+  .card-links a,.text-link,.next-links { font-size: .85rem; font-weight: 700; }
+  .subsection-heading { margin: 3.5rem 0 1.5rem; max-width: 850px; }
+  .option-kind,.import-label { display: block; color: var(--color-primary); font-size: .72rem; font-weight: 800; letter-spacing: .04em; margin-bottom: .65rem; }
+  .source-links { padding-left: 1.2rem; font-size: .83rem; line-height: 1.9; margin: 1rem 0; }
+  .small { font-size: .78rem !important; line-height: 1.6; color: var(--color-text-light); }
+  .room-section,.provider-section { background: var(--color-bg-alt); }
+  .table-wrap { overflow-x: auto; } table { border-collapse: collapse; width: 100%; background: white; font-size: .9rem; }
+  th,td { text-align: left; padding: 1rem; border: 1px solid #dce3d8; vertical-align: top; line-height: 1.6; }
+  thead th { background: var(--color-primary); color: white; } tbody th { min-width: 150px; width: 25%; }
+  .rules-grid { grid-template-columns: repeat(3,minmax(0,1fr)); margin: 1.5rem 0; } .rules-grid a { display: block; font-size: .82rem; margin-top: .65rem; }
+  .source-note,.affiliate-note { max-width: 1000px; padding: 1rem 1.25rem; border-left: 4px solid var(--color-accent); background: var(--color-bg-alt); font-size: .86rem; line-height: 1.7; }
+  .affiliate-note { background: white; }
+  .rental-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(270px,1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+  .rental-card { display: flex; flex-direction: column; border: 1px solid #dce3d8; border-radius: var(--radius); overflow: hidden; background: white; }
+  .provider-photo { aspect-ratio: 16/10; background: #dce3d8; display: grid; place-items: center; } .provider-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .rental-card-body { display: flex; flex: 1; flex-direction: column; padding: 1.2rem; } .rental-card h3 { font-size: 1.03rem; line-height: 1.4; }
+  .stored-counts { display: flex; flex-wrap: wrap; gap: .8rem; margin: .8rem 0; font-size: .78rem; } .stored-counts div { flex: 1 1 75px; } .stored-counts dt { color: var(--color-text-light); } .stored-counts dd { margin: .25rem 0 0; font-weight: 700; color: var(--color-primary); }
+  .rental-card .text-link { margin-top: auto; padding-top: .7rem; }
+  .sources-block { max-width: 1100px; } .sources-block p,.sources-block li { font-size: .9rem; line-height: 1.8; }
+  @media(max-width:800px) { .base-grid,.option-grid,.rules-grid { grid-template-columns: 1fr; } .rental-hero { padding: 2.5rem 0; } }
+  @media(max-width:480px) { .planning-controls,.lead-controls { padding: 1rem; } label { flex-basis: 100%; } .rental-grid { grid-template-columns: 1fr; } .reset-btn { width: 100%; } th,td { padding: .7rem; } }
 </style>
