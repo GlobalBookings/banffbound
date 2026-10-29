@@ -1,6 +1,62 @@
 {
-  "updatedAt": "2026-10-02T10:10:20.094Z",
-  "highways": [],
-  "source": "https://511.alberta.ca",
-  "error": "API returned 400"
+  "schemaVersion": 2,
+  "provider": "511 Alberta",
+  "sourceUrl": "https://511.alberta.ca/",
+  "retrievedAt": null,
+  "maxReportAgeHours": 6,
+  "availability": "unavailable",
+  "highways": [
+    {
+      "id": "hwy-1-banff",
+      "name": "Trans-Canada Highway (Hwy 1, Banff area)",
+      "number": "1",
+      "availability": "unavailable",
+      "coverage": "Reported sections only; complete route coverage is not verified.",
+      "segments": []
+    },
+    {
+      "id": "hwy-1a-bow-valley",
+      "name": "Bow Valley Parkway (Hwy 1A)",
+      "number": "1A",
+      "availability": "unavailable",
+      "coverage": "Reported sections only; complete route coverage is not verified.",
+      "segments": []
+    },
+    {
+      "id": "hwy-93n",
+      "name": "Icefields Parkway (Hwy 93N)",
+      "number": "93N",
+      "availability": "unavailable",
+      "coverage": "Reported sections only; complete route coverage is not verified.",
+      "segments": []
+    },
+    {
+      "id": "hwy-93s",
+      "name": "Highway 93 South (reported sections)",
+      "number": "93S",
+      "availability": "unavailable",
+      "coverage": "Reported sections only; complete route coverage is not verified.",
+      "segments": []
+    },
+    {
+      "id": "lake-minnewanka",
+      "name": "Lake Minnewanka Road",
+      "number": "",
+      "availability": "unavailable",
+      "coverage": "Reported sections only; complete route coverage is not verified.",
+      "segments": []
+    },
+    {
+      "id": "golf-course-road",
+      "name": "Golf Course Road",
+      "number": "",
+      "availability": "unavailable",
+      "coverage": "Reported sections only; complete route coverage is not verified.",
+      "segments": []
+    }
+  ],
+  "error": {
+    "code": "missing_api_key",
+    "message": "Local road reports are unavailable because server access is not configured. Check the official report."
+  }
 }
