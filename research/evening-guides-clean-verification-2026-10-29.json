@@ -1,0 +1,263 @@
+{
+  "checkedAtUTC": "2026-10-29T22:25:19.826456+00:00",
+  "sourceCommit": "4a2e0c2f1facbfc718a79a28e5a268633b030dcb",
+  "cleanArchive": true,
+  "dependencyRuntime": "Existing local node_modules reused via symlink; GitHub CI separately runs npm ci.",
+  "buildCommand": "npm run build",
+  "buildExitCode": 0,
+  "buildInfo": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T22:25:13.202Z",
+    "sourceRevision": null,
+    "sourceFingerprint": "a4b6e9b031bcf431a40b1ac7a1749caadcfc842984a19751b260631d0c99b6b7"
+  },
+  "revisionNote": "Git archive has no .git and sourceRevision is null; production must independently match the merged commit and exact selected-source fingerprint.",
+  "offlineChecks": [
+    {
+      "path": "scripts/check-trip-planner.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-day-ideas.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-directory.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-production-redirects.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-activities.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paddling.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paid-landings.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-banff-hotel-landing-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-louise-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-winter-activity-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cycling-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-internal-linker.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-blog-content.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-bow-lake-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-jasper-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cabin-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-article-booking-context.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-nightlife-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-live-music-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-drink-offer-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-evening-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lesson-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-stay-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-consent.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-embeds.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-safety.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parking-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-build-provenance.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-rental-planning-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-weather-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-snow-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-source-freshness.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-road-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-events.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-navigation.mjs",
+      "passed": true
+    }
+  ],
+  "strictAudit": {
+    "pages": 605,
+    "indexable_documents": 519,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "builtDirectoryVerification": {
+    "passed": true,
+    "mode": "read-only-built-directory",
+    "htmlRoutes": 222,
+    "htmlPassed": 222,
+    "photosPassed": 7,
+    "fullReviews": 62,
+    "remainingPartialRepairs": 8,
+    "sitemapUrls": 517,
+    "buildReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-29T22:25:13.202Z",
+      "sourceRevision": null,
+      "sourceFingerprint": "a4b6e9b031bcf431a40b1ac7a1749caadcfc842984a19751b260631d0c99b6b7"
+    },
+    "buildReceiptStable": true,
+    "productionIdentityVerified": false,
+    "failures": []
+  },
+  "contentComparison": "research/evening-guide-body-comparison-2026-10-29.json",
+  "contentScope": {
+    "canonicalBodies": 295,
+    "newFullReviews": 3,
+    "fullReviews": 62,
+    "partialOpeningRepairs": 8,
+    "otherCanonicalBodiesByteIdentical": 292,
+    "originalPublicationDatesPreserved": 335,
+    "restaurantDirectoryFullyReviewed": false
+  },
+  "browserPreview": {
+    "origin": "http://127.0.0.1:4329",
+    "defaultEveningFormats": 5,
+    "youngerMusicIds": [
+      "performance"
+    ],
+    "youngerDancing": 0,
+    "emptyStateVisible": true,
+    "adultDancing": 1,
+    "CanmoreReturn": "Roam Route 3",
+    "LakeLouiseReturn": "Roam Route 8X",
+    "reset": 5,
+    "mobileViewport": 390,
+    "documentWidths": {
+      "nightlife": 390,
+      "diningHub": 390
+    },
+    "diningHubGuideLinks": 4,
+    "diningHubItemListEntries": 27,
+    "diningHubFirstItemKeys": [
+      "@type",
+      "position",
+      "name",
+      "url"
+    ],
+    "oldRoseHoursVisible": false,
+    "RosePhotoQualified": true,
+    "automaticMidAndStickyCtas": 0,
+    "optionalProviderScriptAndFrameElements": 0,
+    "viewportReset": true,
+    "limit": "Actual rendered DOM and UI behavior; not a browser network trace or sales evidence. No merchant referral clicked to manufacture a conversion."
+  },
+  "preserved": {
+    "hotelIdentitiesAndProviderUrls": 95,
+    "hostAliasMappings": 40,
+    "affiliateAndMeasurementIdentifiers": true,
+    "restaurantDirectoryRecords": true,
+    "unrelatedUserFiles": true
+  },
+  "commercialBoundary": {
+    "adCampaignsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecificationOrEnvironmentMutated": false,
+    "salesProfitOrRankUpliftClaimed": false
+  },
+  "goalStatus": "active"
+}
