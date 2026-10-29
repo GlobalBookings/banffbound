@@ -1,0 +1,16 @@
+{
+  "pages": 601,
+  "indexable_documents": 559,
+  "counts": {},
+  "winter_counts": {},
+  "findings": [],
+  "source_commit": "b2d850f",
+  "build": "npm run build",
+  "scope": "clean git archive; live-source fetch in temporary checkout",
+  "planning_source_checks": "all five scripts passed",
+  "live_source_result": {
+    "weather": "both ECCC destinations validated with separate station, observation and forecast issue times",
+    "snow": "reviewed schema2; missing Lake Louise numbers and nonmatching source dates suppressed",
+    "roads": "API returned400; local report unavailable and official links displayed"
+  }
+}

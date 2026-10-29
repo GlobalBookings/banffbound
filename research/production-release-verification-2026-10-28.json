@@ -1,0 +1,193 @@
+{
+  "checked_at": "2026-10-29T05:06:03.542570+00:00",
+  "pull_request": "https://github.com/GlobalBookings/banffbound/pull/1",
+  "merge_commit": "d1b3073dde081a1fd8b0fbe438c6d405c527637a",
+  "pr_ci": {
+    "run": 40820911858,
+    "result": "success"
+  },
+  "main_ci": {
+    "run": 40821018431,
+    "result": "success"
+  },
+  "http_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:16 GMT",
+      "cache_status": "HIT",
+      "title": "BanffBound \u2014 Banff National Park Trip Planner 2026 | Trails, Hotels & Local Tips",
+      "matches_release_title": true
+    },
+    {
+      "path": "/winter/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Banff Winter Guide: Ski Days, Snow Adventures & Places to Stay | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/towns/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "HIT",
+      "title": "Banff & Nearby Towns: Choose Your Rockies Base | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/towns/banff/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Banff Travel Guide: Winter Days, Transport & Where to Stay | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/towns/canmore/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Canmore Travel Guide: Winter Days, Transport & Where to Stay | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/towns/lake-louise/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Lake Louise Travel Guide: Winter Days, Transport & Where to Stay | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/towns/field-yoho/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Field & Yoho Travel Guide: Winter Days, Transport & Where to Stay | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/towns/golden/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Golden Travel Guide: Winter Days, Transport & Where to Stay | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/towns/kananaskis/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Kananaskis Travel Guide: Winter Days, Transport & Where to Stay | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/learn-to-ski/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:16 GMT",
+      "cache_status": "HIT",
+      "title": "Learn to Ski in Banff: First Lessons, Rentals & Beginner Guide | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/ski-day-planner/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Banff Ski Day Planner: Choose a Resort, Lessons & Transport | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/winter-stays/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Where to Stay in Banff in Winter: Ski Hotels, Suites & Lodges | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/trip-builder/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "HIT",
+      "title": "Banff Trip Builder: Custom Winter & Summer Itineraries | BanffBound",
+      "matches_release_title": true,
+      "editor_present": true
+    },
+    {
+      "path": "/hotels/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:03 GMT",
+      "cache_status": "MISS",
+      "title": "Banff Hotels: Compare Locations, Rooms & Booking Options | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/accommodation/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:03 GMT",
+      "cache_status": "MISS",
+      "title": "Where to Stay in Banff: Areas, Hotels, Rentals & Camping | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/photo-spots/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:17 GMT",
+      "cache_status": "MISS",
+      "title": "Banff Photo Spots: 10 Locations, Seasonal Access & Light Planning | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/blog/banff-view/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:03 GMT",
+      "cache_status": "MISS",
+      "title": "Banff Viewpoints: Town, Lake & Gondola Views by Season | BanffBound",
+      "matches_release_title": true
+    },
+    {
+      "path": "/blog/banff-views/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:03 GMT",
+      "cache_status": "MISS",
+      "title": "Redirecting to: /blog/banff-view/",
+      "matches_release_title": true
+    },
+    {
+      "path": "/hotel-directory/lake-louise-inn/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:03 GMT",
+      "cache_status": "MISS",
+      "title": "Lake Louise Inn | Banff Hotel Guide | BanffBound",
+      "matches_release_title": true,
+      "correct_booking_id": true
+    },
+    {
+      "path": "/hotel-directory/fairmont-chateau-lake-louise/",
+      "status": 200,
+      "last_modified": "Thu, 29 Oct 2026 05:03:03 GMT",
+      "cache_status": "MISS",
+      "title": "Fairmont Chateau Lake Louise | Banff Hotel Guide | BanffBound",
+      "matches_release_title": true,
+      "correct_booking_id": true
+    }
+  ],
+  "all_http_checks_passed": true,
+  "deployment_status": "public release verified",
+  "hosting_receipt": {
+    "provider": "DigitalOcean App Platform",
+    "app": "banffbound",
+    "deployment_id": "6e31ebc5-1889-4437-8fad-c3474c0438aa",
+    "commit": "d1b3073dde081a1fd8b0fbe438c6d405c527637a",
+    "observed_status": "Success; Live Deployment; Healthy",
+    "build_time": "1m 57s"
+  },
+  "browser_checks": [
+    "Live trip editor adds a fourth day and undo restores the original three-day plan",
+    "No browser console errors observed during this editor check"
+  ],
+  "redirect_limit": "Plural viewpoint URL returns HTTP200 static noindex/canonical/meta-refresh stub, not an HTTP301."
+}

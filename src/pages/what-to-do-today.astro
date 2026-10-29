@@ -1,424 +1,49 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-
-const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
+import WinterStatusNotice from '../components/WinterStatusNotice.astro';
+import WeatherSnapshot from '../components/WeatherSnapshot.astro';
+import { dayIdeas, dayIdeaLink, dayDefaults } from '../data/dayIdeas';
+import '../styles/weatherPlanning.css';
+const areas={banff:'Banff area',canmore:'Canmore area',louise:'Lake Louise area',regional:'Regional outing · confirm the location'};
+const faqs=[
+ {q:'Are these activities confirmed open today?',a:'No. These are planning ideas filtered by the season and choices you enter. Confirm the actual operator or route, weather, equipment, age or ability requirements and the return journey. The linked sources and planning guides help with those checks.'},
+ {q:'Do the time filters include travel?',a:'No. They compare editorial allowances for the outing itself. Travel, queues, rental fitting, check-in and warm breaks may add time. An idea fitting the filter is not a promised schedule or a confirmed connection.'},
+ {q:'Does a weather forecast choose a safe activity for me?',a:'No. A town forecast cannot establish route access, suitable natural ice, open ski terrain or a suitable outing for your group. Check the current official reports and the specific activity; change the plan if it no longer suits the conditions or your group.'},
+ {q:'Can I turn an idea into an itinerary?',a:'Yes. Each card can open a one-day starting plan in the trip builder using your season and overnight base. The initial plan uses car-free or arranged transport; change that setting if you will drive. Check the suggested connections before booking anything.'},
+];
 ---
-
-<BaseLayout title="What to Do Today in Banff" description="Get personalized activity suggestions based on today's weather in Banff. Real-time recommendations for every season and condition.">
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'What to Do Today' }]} />
-  </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Banff National Park scenic view" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Today's Pick</span>
-      <h1>What to Do Today</h1>
-      <p>Personalized activity suggestions based on current weather conditions in Banff.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="weather-dual" id="weather-dual">
-        <div class="weather-loading" id="weather-loading">
-          <div class="spinner"></div>
-          <p>Checking weather in Banff & Lake Louise...</p>
-        </div>
-        <div class="weather-cards" id="weather-cards" style="display:none;">
-          <div class="weather-card" id="weather-banff">
-            <h3>Banff</h3>
-            <div class="weather-card-body">
-              <img id="banff-icon" src="" alt="" width="60" height="60" />
-              <div class="weather-card-info">
-                <span class="weather-temp" id="banff-temp"></span>
-                <span class="weather-desc" id="banff-desc"></span>
-                <span class="weather-detail" id="banff-detail"></span>
-              </div>
-            </div>
-          </div>
-          <div class="weather-card" id="weather-ll">
-            <h3>Lake Louise</h3>
-            <div class="weather-card-body">
-              <img id="ll-icon" src="" alt="" width="60" height="60" />
-              <div class="weather-card-info">
-                <span class="weather-temp" id="ll-temp"></span>
-                <span class="weather-desc" id="ll-desc"></span>
-                <span class="weather-detail" id="ll-detail"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="forecast-section" id="forecast-section" style="display:none;">
-        <h3>5-Day Outlook</h3>
-        <div class="forecast-grid" id="forecast-grid"></div>
-        <p class="best-day" id="best-day"></p>
-      </div>
-
-      <div class="section-header" style="margin-top: 2rem;">
-        <span class="badge" id="suggestions-badge">Recommended</span>
-        <h2 id="suggestions-title">Activities for You</h2>
-        <p id="suggestions-subtitle">Based on current conditions in Banff</p>
-      </div>
-
-      <div class="suggestions-grid" id="suggestions-grid"></div>
-    </div>
-  </section>
-
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Always Great</span>
-        <h2>No Matter the Weather</h2>
-        <p>These Banff favourites are perfect any time of year.</p>
-      </div>
-      <div class="grid grid-3">
-        <div class="yearround-card">
-          <span class="yearround-icon">♨️</span>
-          <h3>Banff Upper Hot Springs</h3>
-          <p>Soak in naturally heated mineral water at 38°C with mountain views. Open year-round, magical in winter with steam rising into cold air.</p>
-          <a href="/wellness" class="card-link">Learn More →</a>
-        </div>
-        <div class="yearround-card">
-          <span class="yearround-icon">🏛️</span>
-          <h3>Cave and Basin</h3>
-          <p>Visit the birthplace of Canada's national park system. Explore the cave, boardwalks, and exhibits telling the story of the hot springs discovery.</p>
-          <a href="/things-to-do" class="card-link">Learn More →</a>
-        </div>
-        <div class="yearround-card">
-          <span class="yearround-icon">🛍️</span>
-          <h3>Banff Avenue Shopping</h3>
-          <p>Browse unique mountain boutiques, outdoor gear shops, art galleries, and souvenir stores along Banff's charming main street.</p>
-          <a href="/shopping" class="card-link">Learn More →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<BaseLayout title="Things to Do in Banff Today: Find an Outing That Fits" description="Choose a Banff outing by season, overnight base, time at the activity and interests. Check official conditions, keep a warm alternative and turn an idea into a day plan." lastUpdated="2026-10-28">
+ <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))})} />
+ <div class="container"><Breadcrumbs items={[{label:'Planning Tools',href:'/tools'},{label:'Choose an Outing'}]} /></div>
+ <section class="weather-hero"><div class="container"><span class="weather-eyebrow">A good day can be a simple one</span><h1>What feels right<br />for your day?</h1><p>A short town outing, a lake view or a full snow day. Start with your time and interests, check the actual conditions and access, then keep some room to change your mind.</p><nav class="weather-nav" aria-label="Choose a day"><a href="#day-ideas">Find an idea ↓</a><a href="/trip-builder">Build a longer trip →</a><a href="/winter">Explore winter guides →</a></nav></div></section>
+ <section class="section"><div class="container"><WinterStatusNotice /><WeatherSnapshot /></div></section>
+ <section class="section weather-soft" id="day-ideas"><div class="container"><div class="weather-intro"><span class="weather-eyebrow">What belongs in today?</span><h2>Find an outing that fits</h2><p>Activity allowances below are planning estimates, excluding travel. A season or a filter match does not confirm operations, access or suitability. Follow each card to the guide and official source before committing.</p></div>
+ <form id="day-filters" class="day-filters" hidden>
+ <label>Season<select name="season"><option value="winter">Winter / snow season</option><option value="summer">Summer / hiking season</option></select></label>
+ <label>Overnight base<select name="base"><option value="banff">Banff</option><option value="canmore">Canmore</option><option value="louise">Lake Louise</option></select></label>
+ <label>Time at the activity<select name="time"><option value="any">Any allowance</option><option value="short">About 2 hours or less</option><option value="half">About 4 hours or less</option></select></label>
+ <label>What sounds good?<select name="mood"><option value="all">A little of everything</option><option value="town">Town & heritage time</option><option value="snow">A snow outing</option><option value="lakes">A lake outing</option></select></label>
+ <label class="nearby-check"><input type="checkbox" name="nearby" />Only my base area</label><button type="button" id="day-reset">Reset choices</button></form>
+ <p id="day-count" class="day-count" aria-live="polite">All 23 seasonal ideas are shown below.</p>
+ <noscript><p>All seasons are shown without JavaScript. Read the season label and choose a guide before planning the day.</p></noscript>
+ <div class="day-grid">{dayIdeas.map(activity=><article class="day-card" data-day-id={activity.id}><span class="day-icon" aria-hidden="true">{activity.icon}</span><span class="weather-eyebrow">{activity.season==='all'?'Year-round idea':activity.season==='winter'?'Winter idea':'Summer-access idea'}</span><h3>{activity.name}</h3><p class="day-location">{areas[activity.area]}</p><p>{activity.description}</p><p class="day-allowance">Allow about {activity.hours}h at the outing · travel extra</p><nav aria-label={activity.name+' planning'}><a href={activity.guide}>Read the planning guide →</a><a href={activity.source} target="_blank" rel="noopener">Official information ↗</a><a class="day-plan-link" href={dayIdeaLink(activity.id,{...dayDefaults,season:activity.season==='summer'?'summer':'winter'})}>Make this my starting plan →</a></nav></article>)}</div>
+ <div id="day-empty" class="weather-next" hidden><h3>No matching idea in this selection.</h3><p>Try a longer allowance, another interest or remove “Only my base area”. A nearby option may still need transport; choose the actual route before leaving.</p><button type="button" id="day-empty-reset">Reset choices</button></div>
+ <div class="weather-next"><h3>Check the whole day, including the return</h3><p>A town bus and a resort shuttle are different services. A Lake Louise village stay is separate from the lakeshore and ski resort. The starting plan carries your base into the trip builder so you can check those connections.</p><nav aria-label="Complete your day plan"><a href="/car-free-banff">Check car-free connections →</a><a href="/calgary-to-banff">Plan an airport arrival →</a><a href="/packing-list">Packing checklist →</a><a href="/wellness">A warm-up alternative →</a></nav></div></div></section>
+ <section class="section"><div class="container"><h2>Questions before you set out</h2><div class="weather-faqs">{faqs.map(f=><details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div><p class="weather-source-note">Editorial catalogue reviewed 28 October 2026. Each idea links its source and detailed guide. This chooser does not use weather or a calendar month to declare an activity open, safe or suitable.</p></div></section>
 </BaseLayout>
-
-<script define:vars={{ OWM_KEY_SSR }}>
-  const OWM_KEY = OWM_KEY_SSR;
-  const BANFF = { lat: 51.1784, lon: -115.5708, name: 'Banff' };
-  const LAKE_LOUISE = { lat: 51.4167, lon: -116.1833, name: 'Lake Louise' };
-
-  const activities = {
-    winter: [
-      { emoji: '⛷️', name: 'Skiing & Snowboarding', desc: 'Hit the slopes at Sunshine Village, Lake Louise, or Mt. Norquay. World-class powder and stunning alpine scenery.', link: '/skiing', page: 'Skiing Guide' },
-      { emoji: '⛸️', name: 'Ice Skating', desc: 'Glide across frozen lakes and outdoor rinks. Vermilion Lakes and Lake Louise offer unforgettable natural skating.', link: '/winter', page: 'Winter Activities' },
-      { emoji: '🥾', name: 'Snowshoeing', desc: 'Explore peaceful snowy trails through quiet forests. Rentals available in town — no experience needed.', link: '/winter', page: 'Winter Activities' },
-      { emoji: '♨️', name: 'Hot Springs Soak', desc: 'Warm up in the Banff Upper Hot Springs with mountain panoramas. Extra magical when steam rises into cold mountain air.', link: '/wellness', page: 'Wellness' },
-      { emoji: '🐕', name: 'Dog Sledding', desc: 'Experience the thrill of mushing through snowy wilderness with a team of enthusiastic huskies.', link: '/tours', page: 'Tours' },
-    ],
-    summer: [
-      { emoji: '🥾', name: 'Hiking', desc: 'Hundreds of trails from easy lakeside walks to challenging alpine scrambles. The mountains are calling.', link: '/hiking', page: 'Hiking Guide' },
-      { emoji: '🛶', name: 'Canoeing', desc: 'Paddle across turquoise glacial lakes. Rent a canoe at Lake Louise, Moraine Lake, or the Bow River.', link: '/paddling', page: 'Paddling' },
-      { emoji: '🚴', name: 'Mountain Biking', desc: 'Cruise the Legacy Trail to Canmore or tackle mountain bike trails around Tunnel Mountain.', link: '/biking', page: 'Biking' },
-      { emoji: '🦌', name: 'Wildlife Tours', desc: 'Spot bears, elk, mountain goats, and more on a guided wildlife safari through the park.', link: '/wildlife', page: 'Wildlife' },
-      { emoji: '🚗', name: 'Scenic Drives', desc: 'Drive the Icefields Parkway, Bow Valley Parkway, or Minnewanka Loop for jaw-dropping scenery.', link: '/scenic-drives', page: 'Scenic Drives' },
-    ],
-    shoulder: [
-      { emoji: '🥾', name: 'Moderate Hiking', desc: 'Enjoy cooler temperatures on classic trails with fewer crowds. Perfect conditions for valley walks.', link: '/hiking', page: 'Hiking Guide' },
-      { emoji: '🚡', name: 'Banff Gondola', desc: 'Ride to the summit of Sulphur Mountain for 360° panoramic views and the mountaintop boardwalk.', link: '/things-to-do', page: 'Things to Do' },
-      { emoji: '♨️', name: 'Hot Springs Visit', desc: 'The shoulder season is ideal for a relaxing soak without the peak-season crowds.', link: '/wellness', page: 'Wellness' },
-      { emoji: '📷', name: 'Photography', desc: 'Fall colours, spring waterfalls, and dramatic light make shoulder season a photographer\'s dream.', link: '/things-to-do', page: 'Things to Do' },
-      { emoji: '🦌', name: 'Wildlife Watching', desc: 'Spring brings baby animals and bear activity. Fall features the elk rut — antlers clashing at dusk.', link: '/wildlife', page: 'Wildlife' },
-    ],
-    indoor: [
-      { emoji: '🏛️', name: 'Museums & History', desc: 'Explore the Banff Park Museum, Whyte Museum, and Cave and Basin National Historic Site.', link: '/arts-culture', page: 'Arts & Culture' },
-      { emoji: '💆', name: 'Spa Day', desc: 'Treat yourself to a world-class spa experience at Fairmont Banff Springs or Kananaskis Nordic Spa.', link: '/wellness', page: 'Wellness' },
-      { emoji: '🛍️', name: 'Shopping', desc: 'Browse Banff Avenue\'s unique shops — from outdoor gear to Indigenous art and local souvenirs.', link: '/shopping', page: 'Shopping' },
-      { emoji: '🍺', name: 'Brewery Tour', desc: 'Sample craft beer at Banff Ave Brewing Co. or Three Bears Brewery. Warm up with local flavour.', link: '/eat-and-drink', page: 'Eat & Drink' },
-    ],
-  };
-
-  function getMonthSeason(month) {
-    if (month >= 5 && month <= 8) return 'summer';
-    if (month >= 10 || month <= 2) return 'winter';
-    return 'shoulder';
-  }
-
-  function getSuggestions(temp, weatherMain, month) {
-    const season = getMonthSeason(month);
-    let primary = [];
-    let reason = '';
-
-    const isRainy = ['Rain', 'Drizzle', 'Thunderstorm'].includes(weatherMain);
-    const isSnowy = weatherMain === 'Snow';
-
-    if (isRainy) {
-      primary = [...activities.indoor, ...activities[season].slice(0, 2)];
-      reason = 'the rainy conditions';
-    } else if (isSnowy && season !== 'winter') {
-      primary = [...activities.indoor.slice(0, 2), ...activities.winter.slice(0, 3)];
-      reason = 'the unexpected snowfall';
-    } else if (temp < 0 || season === 'winter') {
-      primary = activities.winter;
-      reason = `the ${temp}°C winter conditions`;
-    } else if (temp > 10 && season === 'summer') {
-      primary = activities.summer;
-      reason = `the beautiful ${temp}°C weather`;
-    } else {
-      primary = activities.shoulder;
-      reason = `the mild ${temp}°C conditions`;
-    }
-
-    return { suggestions: primary, reason };
-  }
-
-  function renderSuggestions(suggestions, reason) {
-    const grid = document.getElementById('suggestions-grid');
-    const title = document.getElementById('suggestions-title');
-    const subtitle = document.getElementById('suggestions-subtitle');
-
-    title.textContent = 'Recommended for Today';
-    subtitle.textContent = `Curated suggestions based on ${reason}`;
-
-    grid.innerHTML = suggestions.map(s => `
-      <div class="suggestion-card">
-        <span class="suggestion-emoji">${s.emoji}</span>
-        <h3>${s.name}</h3>
-        <p>${s.desc}</p>
-        <p class="suggestion-reason">Perfect because of ${reason}.</p>
-        <a href="${s.link}" class="card-link">Explore ${s.page} →</a>
-      </div>
-    `).join('');
-  }
-
-  async function fetchWeather(loc) {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${loc.lat}&lon=${loc.lon}&units=metric&appid=${OWM_KEY}`);
-    if (!res.ok) throw new Error('API error');
-    return res.json();
-  }
-
-  async function fetchForecast(loc) {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${loc.lat}&lon=${loc.lon}&units=metric&appid=${OWM_KEY}`);
-    if (!res.ok) throw new Error('API error');
-    return res.json();
-  }
-
-  function populateCard(prefix, data) {
-    const temp = Math.round(data.main.temp);
-    const desc = data.weather[0].description;
-    const icon = data.weather[0].icon;
-    const feelsLike = Math.round(data.main.feels_like);
-    const wind = Math.round(data.wind.speed * 3.6);
-    document.getElementById(`${prefix}-icon`).src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-    document.getElementById(`${prefix}-icon`).alt = desc;
-    document.getElementById(`${prefix}-temp`).textContent = `${temp}°C`;
-    document.getElementById(`${prefix}-desc`).textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
-    document.getElementById(`${prefix}-detail`).textContent = `Feels like ${feelsLike}°C · Wind ${wind} km/h`;
-    return { temp, weatherMain: data.weather[0].main };
-  }
-
-  function renderForecast(forecastData) {
-    const dailyMap = {};
-    const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    for (const item of forecastData.list) {
-      const d = new Date(item.dt * 1000);
-      const key = d.toISOString().split('T')[0];
-      if (key === new Date().toISOString().split('T')[0]) continue;
-      if (!dailyMap[key]) dailyMap[key] = { temps: [], icons: [], mains: [], date: d };
-      dailyMap[key].temps.push(item.main.temp);
-      dailyMap[key].icons.push(item.weather[0].icon);
-      dailyMap[key].mains.push(item.weather[0].main);
-    }
-
-    const entries = Object.values(dailyMap).slice(0, 4);
-    const grid = document.getElementById('forecast-grid');
-    grid.innerHTML = entries.map(day => {
-      const hi = Math.round(Math.max(...day.temps));
-      const lo = Math.round(Math.min(...day.temps));
-      const midIcon = day.icons[Math.floor(day.icons.length / 2)];
-      const dayName = days[day.date.getDay()];
-      return `<div class="forecast-day">
-        <span class="forecast-name">${dayName}</span>
-        <img src="https://openweathermap.org/img/wn/${midIcon}.png" alt="" width="40" height="40" />
-        <span class="forecast-temps">${hi}° / ${lo}°</span>
-      </div>`;
-    }).join('');
-
-    // Find best hiking day
-    let bestDay = null, bestScore = -999;
-    for (const day of entries) {
-      const hi = Math.max(...day.temps);
-      const hasRain = day.mains.some(m => ['Rain','Drizzle','Thunderstorm'].includes(m));
-      const score = hi - (hasRain ? 20 : 0);
-      if (score > bestScore) { bestScore = score; bestDay = day; }
-    }
-    if (bestDay) {
-      const dayName = days[bestDay.date.getDay()];
-      const hi = Math.round(Math.max(...bestDay.temps));
-      document.getElementById('best-day').innerHTML =
-        `<strong>Best day for hiking this week:</strong> ${dayName} (${hi}°C, mostly clear)`;
-    }
-    document.getElementById('forecast-section').style.display = 'block';
-  }
-
-  async function loadWeather() {
-    const loading = document.getElementById('weather-loading');
-    const cards = document.getElementById('weather-cards');
-    const month = new Date().getMonth();
-
-    try {
-      if (!OWM_KEY) throw new Error('No API key');
-      const [banffData, llData, forecastData] = await Promise.all([
-        fetchWeather(BANFF),
-        fetchWeather(LAKE_LOUISE),
-        fetchForecast(BANFF),
-      ]);
-
-      const banff = populateCard('banff', banffData);
-      populateCard('ll', llData);
-      loading.style.display = 'none';
-      cards.style.display = 'grid';
-
-      renderForecast(forecastData);
-
-      const { suggestions, reason } = getSuggestions(banff.temp, banff.weatherMain, month);
-      renderSuggestions(suggestions, reason);
-    } catch {
-      loading.style.display = 'none';
-      cards.innerHTML = '<p class="weather-fallback">Weather data unavailable — showing seasonal suggestions.</p>';
-      cards.style.display = 'grid';
-
-      const season = getMonthSeason(month);
-      const fallback = activities[season];
-      renderSuggestions(fallback, `the current ${['winter','winter','winter','spring','spring','summer','summer','summer','fall','fall','winter','winter'][month]} season`);
-    }
-  }
-
-  loadWeather();
+<script>
+ import { dayIdeas, matchesDayIdea, dayIdeaLink, readDayFilters, dayDefaults, type DayFilters } from '../data/dayIdeas';
+ const form=document.querySelector<HTMLFormElement>('#day-filters');
+ const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-day-id]'));
+ const count=document.querySelector('#day-count');
+ const empty=document.querySelector<HTMLElement>('#day-empty');
+ function setForm(filters:DayFilters){if(!form)return;for(const key of ['season','base','time','mood'] as const){const input=form.elements.namedItem(key) as HTMLSelectElement;if(input)input.value=filters[key];}const nearby=form.elements.namedItem('nearby') as HTMLInputElement;if(nearby)nearby.checked=filters.nearby;}
+ function render(filters:DayFilters){cards.forEach(card=>{const activity=dayIdeas.find(item=>item.id===card.dataset.dayId);card.hidden=!activity||!matchesDayIdea(activity,filters);const link=card.querySelector<HTMLAnchorElement>('.day-plan-link');if(link&&activity)link.href=dayIdeaLink(activity.id,filters);});const visible=cards.filter(card=>!card.hidden).length;if(count)count.textContent=visible+' '+(visible===1?'idea':'ideas')+' to research · check access and the complete journey.';if(empty)empty.hidden=visible>0;}
+ function writeUrl(filters:DayFilters){const q=new URLSearchParams();for(const key of ['season','base','time','mood'] as const)if(filters[key]!==dayDefaults[key])q.set(key,filters[key]);if(filters.nearby)q.set('nearby','1');history.replaceState(null,'',location.pathname+(q.size?'?'+q.toString():'')+location.hash);}
+ function reset(){setForm(dayDefaults);render(dayDefaults);writeUrl(dayDefaults);}
+ if(form){form.hidden=false;const initial=readDayFilters(location.search);setForm(initial);render(initial);form.addEventListener('submit',event=>event.preventDefault());form.addEventListener('change',()=>{const params=new URLSearchParams();new FormData(form).forEach((value,key)=>params.set(key,String(value)));const checkbox=form.elements.namedItem('nearby') as HTMLInputElement;if(checkbox?.checked)params.set('nearby','1');const filters=readDayFilters(params.toString());render(filters);writeUrl(filters);});document.querySelector('#day-reset')?.addEventListener('click',reset);document.querySelector('#day-empty-reset')?.addEventListener('click',reset);}
 </script>
-
 <style>
-  .weather-dual { text-align: center; }
-
-  .weather-loading {
-    display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 2rem;
-    background: var(--color-white, #fff); border-radius: var(--radius); box-shadow: var(--shadow);
-  }
-
-  .spinner {
-    width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1);
-    border-top-color: var(--color-primary); border-radius: 50%; animation: spin 0.8s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .weather-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .weather-card {
-    background: var(--color-white, #fff); border-radius: var(--radius); padding: 1.5rem;
-    box-shadow: var(--shadow);
-  }
-  .weather-card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-light); margin-bottom: 0.75rem; }
-  .weather-card-body { display: flex; align-items: center; gap: 1rem; }
-  .weather-card-info { display: flex; flex-direction: column; text-align: left; }
-
-  .weather-temp { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--color-primary); line-height: 1; }
-  .weather-desc { font-size: 1rem; color: var(--color-text); margin-top: 0.2rem; }
-  .weather-detail { font-size: 0.8rem; color: var(--color-text-light); margin-top: 0.1rem; }
-  .weather-fallback { color: var(--color-text-light); font-size: 0.95rem; }
-
-  .forecast-section {
-    margin-top: 1.5rem; background: var(--color-white, #fff); border-radius: var(--radius);
-    padding: 1.5rem; box-shadow: var(--shadow);
-  }
-  .forecast-section h3 { font-size: 1rem; margin-bottom: 1rem; }
-  .forecast-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
-  .forecast-day {
-    display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
-    padding: 0.75rem; background: var(--color-bg-alt); border-radius: var(--radius);
-  }
-  .forecast-name { font-weight: 700; font-size: 0.85rem; }
-  .forecast-temps { font-size: 0.85rem; color: var(--color-text-light); }
-  .best-day { margin-top: 1rem; font-size: 0.9rem; color: var(--color-primary); text-align: center; }
-
-  .suggestions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-
-  .suggestion-card {
-    background: var(--color-white, #fff);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-    transition: all var(--transition);
-  }
-
-  .suggestion-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .suggestion-emoji {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .suggestion-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .suggestion-card p {
-    font-size: 0.88rem;
-    color: var(--color-text-light);
-    line-height: 1.5;
-  }
-
-  .suggestion-reason {
-    font-style: italic;
-    font-size: 0.82rem !important;
-    color: var(--color-accent) !important;
-    margin-top: 0.5rem;
-  }
-
-  .card-link {
-    display: inline-block;
-    margin-top: 0.75rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-decoration: none;
-  }
-
-  .card-link:hover { color: var(--color-primary); }
-
-  .yearround-card {
-    background: var(--color-white, #fff);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-    transition: all var(--transition);
-  }
-
-  .yearround-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .yearround-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .yearround-card h3 { margin-bottom: 0.4rem; }
-
-  .yearround-card p {
-    font-size: 0.88rem;
-    color: var(--color-text-light);
-    line-height: 1.5;
-  }
-
-  @media (max-width: 768px) {
-    .suggestions-grid { grid-template-columns: 1fr; }
-    .weather-current { flex-direction: column; text-align: center; }
-    .weather-info { text-align: center; }
-  }
+ #day-ideas{scroll-margin-top:7rem}.day-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;align-items:end;padding:1.5rem;border:1px solid #d8e1d9;border-radius:var(--radius);background:white}.day-filters label{font-weight:600;font-size:.85rem}.day-filters select{display:block;width:100%;min-height:46px;border:1px solid #b1bfae;border-radius:6px;padding:.6rem;margin-top:.5rem;font:inherit;background:white}.day-filters .nearby-check{grid-column:span 2;display:flex;align-items:center;gap:.7rem;min-height:44px}.nearby-check input{width:20px;height:20px}.day-filters button,#day-empty-reset{font:inherit;background:#173d2d;color:white;border:0;border-radius:6px;padding:.8rem 1rem;cursor:pointer}.day-count{font-size:.84rem;color:var(--color-text-light);margin:1.2rem 0}.day-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem}.day-card{background:white;border:1px solid #d8e1d9;border-radius:var(--radius);padding:1.5rem}.day-icon{display:block;font-size:2.1rem;margin-bottom:1.1rem}.day-card h3{font-size:1.35rem;margin-bottom:.7rem}.day-card p{font-size:.92rem;color:var(--color-text-light);margin-bottom:1rem}.day-card .day-location{font-weight:600;color:var(--color-primary);font-size:.78rem}.day-card .day-allowance{font-size:.77rem;padding-top:1rem;border-top:1px solid #d8e1d9}.day-card nav{display:flex;flex-direction:column;gap:.7rem;font-size:.84rem}.day-plan-link{font-weight:700}#day-empty-reset{margin-top:1rem}@media(max-width:1000px){.day-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.day-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.day-filters,.day-grid{grid-template-columns:1fr}.day-filters .nearby-check{grid-column:auto}}
 </style>

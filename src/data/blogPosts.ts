@@ -1,3 +1,4 @@
+import { winterWarmUpMetadata } from './winterWarmUpOverrides';
 import { viewGuideMetadata } from './viewGuideOverride';
 import { winterResortMetadata } from './winterResortOverrides';
 import { winterSeasonMetadata } from './winterSeasonOverrides';
@@ -3038,7 +3039,7 @@ const originalBlogPosts: BlogPost[] = [
   },
 ];
 
-export const allBlogPosts: BlogPost[] = originalBlogPosts.map(post => ({ ...post, ...winterGuideMetadata[post.slug], ...winterActivityMetadata[post.slug], ...winterTripMetadata[post.slug], ...winterResortMetadata[post.slug], ...winterSeasonMetadata[post.slug], ...viewGuideMetadata[post.slug] }));
+export const allBlogPosts: BlogPost[] = originalBlogPosts.map(post => ({ ...post, ...winterGuideMetadata[post.slug], ...winterActivityMetadata[post.slug], ...winterTripMetadata[post.slug], ...winterResortMetadata[post.slug], ...winterSeasonMetadata[post.slug], ...viewGuideMetadata[post.slug], ...winterWarmUpMetadata[post.slug] }));
 // Keep redirect paths generated, but surface only canonical articles in listings.
 export const blogPosts = allBlogPosts.filter(post => !(post.slug in blogRedirects));
 

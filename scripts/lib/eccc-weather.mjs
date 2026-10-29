@@ -1,0 +1,108 @@
+/** ECCC source fields verified 2026-10-28; see research/weather-source-2026-10-28.md. */
+export const ECCC_PROVIDER = 'Environment and Climate Change Canada';
+export const ECCC_LOCATIONS = {
+  banff: {
+    name: 'Banff', identifier: 'ab-49', format: 'geomet',
+    apiUrl: 'https://api.weather.gc.ca/collections/citypageweather-realtime/items/ab-49?f=json',
+    sourceUrl: 'https://weather.gc.ca/en/location/index.html?coords=51.18,-115.57',
+  },
+  lakeLouise: {
+    name: 'Lake Louise', identifier: 'IACFT', format: 'location', lat: 51.425, lon: -116.181,
+    // Public JSON endpoint used by the official Lake Louise page, not a nearby city's forecast.
+    apiUrl: 'https://weather.gc.ca/api/app/v3/en/Location/51.425,-116.181?type=city',
+    sourceUrl: 'https://weather.gc.ca/en/location/index.html?coords=51.425,-116.181',
+  },
+};
+
+const english = value => value?.en;
+const text = value => typeof value === 'string' && value.trim() ? value.trim() : null;
+const number = value => {
+  if (typeof value === 'string' && /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(value.trim())) value = Number(value);
+  return typeof value === 'number' && Number.isFinite(value) ? value : null;
+};
+const humidity = value => { const n = number(value); return n !== null && n >= 0 && n <= 100 ? n : null; };
+const nonnegative = value => { const n = number(value); return n !== null && n >= 0 ? n : null; };
+const utc = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/.test(value)
+  && Number.isFinite(Date.parse(value)) ? new Date(value).toISOString() : null;
+const epochUtc = value => { const n = number(value); return n !== null && n > 0 && n <= 8.64e12 ? utc(new Date(n * 1000).toISOString()) : null; };
+const metricValue = (field, unit) => english(field?.units) === unit ? number(english(field?.value)) : null;
+
+function windText(direction, speed, gust) {
+  const parts = [];
+  if (speed !== null) parts.push(`${text(direction) ? `${direction.trim()} ` : ''}${speed} km/h`);
+  if (gust !== null) parts.push(`gusts ${gust} km/h`);
+  return parts.join(', ');
+}
+
+export function unavailableWeather(location, error = 'Official weather values unavailable') {
+  return {
+    sourceUrl: location.sourceUrl,
+    current: { temp: null, condition: 'Unavailable', icon: '🌡️', humidity: null, wind: '', observedAt: null, station: null },
+    forecastIssuedAt: null,
+    forecast: [],
+    error,
+  };
+}
+
+function observation({ temp, condition, humidity: relativeHumidity, wind, observedAt, station }) {
+  // A retrieval time cannot make an undated or unidentified observation current.
+  if (!observedAt || !station) return unavailableWeather({}).current;
+  return { temp, condition: text(condition) || 'Not observed', icon: '🌡️', humidity: relativeHumidity, wind, observedAt, station };
+}
+
+function normalizeGeomet(payload, location) {
+  const feature = payload?.type === 'Feature' ? payload : payload?.features?.find(item => item.properties?.identifier === location.identifier);
+  const data = feature?.properties;
+  if (data?.identifier !== location.identifier || english(data?.name) !== location.name) throw new Error('Unexpected ECCC location identity');
+  const current = data.currentConditions || {};
+  const forecastIssuedAt = utc(english(data.forecastGroup?.timestamp));
+  return {
+    sourceUrl: location.sourceUrl,
+    current: observation({
+      temp: metricValue(current.temperature, 'C'), condition: english(current.condition),
+      humidity: humidity(english(current.relativeHumidity?.value)),
+      wind: windText(english(current.wind?.direction?.value), nonnegative(metricValue(current.wind?.speed, 'km/h')), nonnegative(metricValue(current.wind?.gust, 'km/h'))),
+      observedAt: utc(english(current.timestamp)), station: text(english(current.station?.value)),
+    }),
+    forecastIssuedAt,
+    forecast: forecastIssuedAt && Array.isArray(data.forecastGroup?.forecasts) ? data.forecastGroup.forecasts.flatMap(period => {
+      if (!period || typeof period !== 'object' || Array.isArray(period)) return [];
+      const day = text(english(period.period?.value)) || text(english(period.period?.textForecastName));
+      if (!day) return [];
+      const temperatures = Array.isArray(period.temperatures?.temperature) ? period.temperatures.temperature : [];
+      const temperature = kind => metricValue(temperatures.find(item => english(item?.class) === kind), 'C');
+      return [{ day, high: temperature('high'), low: temperature('low'), condition: text(english(period.abbreviatedForecast?.textSummary)) || text(english(period.textSummary)) || 'Not reported' }];
+    }) : [],
+  };
+}
+
+function normalizeLocation(payload, location) {
+  const data = Array.isArray(payload) && payload.length === 1 ? payload[0] : null;
+  if (data?.displayName !== location.name || data?.cgndb !== location.identifier || data?.province !== 'AB'
+    || number(data?.lat) !== location.lat || number(data?.lon) !== location.lon) throw new Error('Unexpected ECCC location identity');
+  const current = data.observation || {};
+  const forecastIssuedAt = epochUtc(data.dailyFcst?.dailyIssuedTimeEpoch);
+  return {
+    sourceUrl: location.sourceUrl,
+    current: observation({
+      temp: number(current.temperature?.metricUnrounded) ?? number(current.temperature?.metric), condition: current.condition,
+      humidity: humidity(current.humidity), wind: windText(current.windDirection, nonnegative(current.windSpeed?.metric), nonnegative(current.windGust?.metric)),
+      observedAt: utc(current.timeStamp), station: text(current.observedAt),
+    }),
+    forecastIssuedAt,
+    forecast: forecastIssuedAt && Array.isArray(data.dailyFcst?.daily) ? data.dailyFcst.daily.flatMap(period => {
+      if (!period || typeof period !== 'object' || Array.isArray(period)) return [];
+      const label = text(period.periodLabel);
+      if (!label) return [];
+      // "Night" remains the provider's explicit label, accompanied by its provider-supplied date.
+      const date = text(period.date);
+      return [{ day: date && date !== label ? `${label} (${date})` : label, high: number(period.temperature?.periodHigh), low: number(period.temperature?.periodLow), condition: text(period.summary) || text(period.text) || 'Not reported' }];
+    }) : [],
+  };
+}
+
+export function normalizeEcccWeather(payload, location) {
+  const result = location.format === 'geomet' ? normalizeGeomet(payload, location) : normalizeLocation(payload, location);
+  if (result.current.temp === null && result.forecast.length === 0) return unavailableWeather(location);
+  return result;
+}

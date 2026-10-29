@@ -32,7 +32,15 @@ jobs:
         run: npm ci
 
       - name: Check trip-planning behavior
-        run: node scripts/check-trip-planner.mjs
+        run: |
+          node scripts/check-trip-planner.mjs
+          node scripts/check-day-ideas.mjs
+
+      - name: Check report source and expiry behavior
+        run: |
+          node scripts/check-weather-source.mjs
+          node scripts/check-snow-source.mjs
+          node scripts/check-source-freshness.mjs
 
       # 4. Fetch data once, compile Astro and generate the Pagefind index.
       - name: Build site

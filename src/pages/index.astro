@@ -11,8 +11,10 @@ try { const m = await import('../data/live/weather.json'); weatherData = m.defau
 let trailData: any = {};
 try { const m = await import('../data/live/trail-conditions.json'); trailData = m.default || m; } catch { /* unavailable */ }
 const weatherFreshness = dataFreshness(weatherData.updatedAt, 6);
+const weatherObservation = dataFreshness(weatherData.banff?.current?.observedAt,6);
+const weatherExpiry = weatherFreshness.expiresAt && weatherObservation.expiresAt ? new Date(Math.min(Date.parse(weatherFreshness.expiresAt),Date.parse(weatherObservation.expiresAt))).toISOString() : null;
 const trailFreshness = dataFreshness(trailData.updatedAt, 24);
-const weatherAvailable = weatherFreshness.status === 'fresh' && !weatherData.error && Number.isFinite(weatherData.banff?.current?.temp);
+const weatherAvailable = weatherFreshness.status === 'fresh' && weatherObservation.status === 'fresh' && weatherData.provider === 'Environment and Climate Change Canada' && !weatherData.error && Number.isFinite(weatherData.banff?.current?.temp);
 const trailReports = (trailData.areas || []).flatMap((area: any) => area.trails || []);
 const trailReportsRecent = trailReports.length > 0 && trailReports.every((trail: any) => dataFreshness(trail.lastUpdated, 24).status === 'fresh');
 const trailsAvailable = trailReportsRecent && trailFreshness.status === 'fresh' && !trailData.error && Number.isInteger(trailData.summary?.open) && Number.isInteger(trailData.summary?.total) && trailData.summary.total > 0 && trailData.summary.open >= 0 && trailData.summary.open <= trailData.summary.total;
@@ -182,11 +184,11 @@ const highlights = [
   <section class="today-strip">
     <div class="container">
       <div class="today-grid">
-        <a href="https://weather.gc.ca/city/pages/ab-49_metric_e.html" target="_blank" rel="noopener" class="today-item" data-fresh-until={weatherFreshness.expiresAt} data-snapshot-time={weatherFreshness.updatedAt}>
+        <a href="https://weather.gc.ca/en/location/index.html?coords=51.178,-115.571" target="_blank" rel="noopener" class="today-item" data-fresh-until={weatherExpiry} data-snapshot-time={weatherObservation.updatedAt}>
           <span class="today-icon">🌡️</span>
           {weatherAvailable && <span data-snapshot-fresh class="today-detail">{weatherData.banff.current.temp}°C · {weatherData.banff.current.condition}</span>}
           <span data-snapshot-unavailable hidden={weatherAvailable} class="today-detail">Weather unavailable</span>
-          <span class="today-label">Snapshot: {weatherFreshness.label}. Check official forecast ↗</span>
+          <span class="today-label">{weatherData.provider === 'Environment and Climate Change Canada' && weatherObservation.updatedAt ? 'ECCC observation: '+weatherObservation.label+'. ' : ''}Check official forecast ↗</span>
         </a>
         <a href="https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions" target="_blank" rel="noopener" class="today-item" data-fresh-until={trailFreshness.expiresAt} data-snapshot-time={trailFreshness.updatedAt}>
           <span class="today-icon">🥾</span>
@@ -196,7 +198,7 @@ const highlights = [
         </a>
         <a href="/what-to-do-today" class="today-item today-cta">
           <span class="today-icon">🎯</span>
-          <span class="today-detail">Today's Picks</span>
+          <span class="today-detail">Find an outing</span>
           <span class="today-label">What to do →</span>
         </a>
       </div>
