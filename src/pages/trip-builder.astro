@@ -1,708 +1,170 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { activities, tripTemplates, hotelLink } from '../data/tripActivities';
-import { trails } from '../data/trails';
-
-const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
-const activityMap = Object.fromEntries(activities.map(a => [a.id, a]));
-
-const trailConditions = trails.filter(t => t.status && t.status !== 'open').map(t => ({
-  name: t.name, slug: t.slug, status: t.status, note: t.conditionNote || '',
-}));
-const closedTrailNames = new Set(trails.filter(t => t.status === 'closed').map(t => t.name.toLowerCase()));
+import WinterStatusNotice from '../components/WinterStatusNotice.astro';
+import { defaultTripPlan, plannerActivities, plannerTemplates, activityById, tripStayUrl, activityFitsSeason } from '../data/tripPlanner';
+import '../styles/tripPlanner.css';
+const initial = defaultTripPlan();
+const faqs = [
+  { q:'Can I customise a Banff itinerary?', a:'Yes. Start with a seasonal template, choose your base and transport, then add, remove or reorder activities and days. The builder allows one to seven days with up to three outings each. Keep a full ski, lesson or road day focused on that main activity.' },
+  { q:'Does this planner check opening times or make bookings?', a:'No. It organises planning ideas and flags transport or crowded-day tradeoffs. The durations are editorial allowances, not appointment times or driving estimates, and do not include your transfers. Check the linked official information, weather, closures and your booking confirmations before travelling.' },
+  { q:'Can I use a summer itinerary in winter?', a:'Choose the winter season instead. Summer-only activities such as the Moraine Lake shuttle, lake canoeing and the Minnewanka cruise are excluded from winter plans. A seasonal category is not a current conditions report. Shared links with incompatible activity selections are rejected.' },
+  { q:'Where is my plan saved and what does sharing include?', a:'When browser storage is available, your selections save on this device. A shared link contains the season, base, transport and activity selections. It contains no hotel reservation, booking confirmation or personal contact information. If saving or copying is unavailable, use the displayed link or print the plan.' },
+];
 ---
-
-<BaseLayout title="Trip Builder" description="Plan your perfect Banff trip day by day. Choose a template or build your own itinerary with booking links for tours, hotels, and activities.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'TouristTrip',
-    name: 'Banff Trip Builder — Plan Your Perfect Itinerary',
-    description: 'Plan your perfect Banff trip day by day. Choose a template or build your own itinerary with booking links for tours, hotels, and activities.',
-    url: 'https://banffbound.com/trip-builder',
-    touristType: ['Adventure travelers', 'Families', 'Couples', 'Solo travelers'],
-    itinerary: {
-      '@type': 'ItemList',
-      name: 'Banff Trip Templates',
-      numberOfItems: tripTemplates.length,
-      itemListElement: tripTemplates.map((tmpl, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        item: {
-          '@type': 'Trip',
-          name: tmpl.name,
-          description: tmpl.description,
-        },
-      })),
-    },
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'CAD',
-      description: 'Free trip planning tool',
-    },
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Trip Builder' }]} />
-  </div>
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Plan Your Trip</span>
-      <h1>Banff Trip Builder</h1>
-      <p>Choose a ready-made itinerary or build your own. Every activity includes booking links so you can secure your spots.</p>
-    </div>
-  </section>
-
-  <!-- Live Conditions Banner -->
-  <section class="conditions-banner" id="conditions-banner" style="display:none;">
-    <div class="container">
-      <div class="conditions-inner">
-        <div class="conditions-weather" id="conditions-weather"></div>
-        {trailConditions.length > 0 && (
-          <div class="conditions-alerts">
-            <strong>Trail Alerts:</strong>
-            {trailConditions.map(t => (
-              <a href={`/trails/${t.slug}`} class={`alert-chip alert-${t.status}`}>
-                {t.status === 'closed' ? '✕' : '⚠'} {t.name}
-                {t.note && <span class="alert-note"> — {t.note}</span>}
-              </a>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  </section>
-
-  <!-- Template Selector -->
-  <section class="templates-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Choose Your Adventure</h2>
-        <p>Pick a template that matches your style, then customize it to fit your trip.</p>
-      </div>
-      <div class="templates-grid">
-        {tripTemplates.map((tmpl, i) => (
-          <button class="template-card" data-template={tmpl.id} data-index={i}>
-            <span class="template-style">{tmpl.style}</span>
-            <h3>{tmpl.name}</h3>
-            <p>{tmpl.description}</p>
-            <div class="template-meta">
-              <span>{tmpl.days} Days</span>
-              <span>&middot;</span>
-              <span>{tmpl.season === 'all' ? 'Year-round' : tmpl.season === 'summer' ? 'Summer' : 'Winter'}</span>
-            </div>
-          </button>
-        ))}
-      </div>
-      <div class="clear-selection-wrap" id="clear-selection-wrap" style="display:none;">
-        <button class="btn btn-outline clear-selection-btn" id="clear-selection-btn">✕ Clear Saved Selection</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Share toast -->
-  <div class="share-toast" id="share-toast" aria-live="polite">Link copied!</div>
-
-  <!-- Itineraries (all rendered, shown/hidden via JS) -->
-  {tripTemplates.map((tmpl, i) => (
-    <section class="itinerary-section" data-itinerary={tmpl.id} style="display:none;">
-      <div class="container">
-        <div class="itinerary-header">
-          <div>
-            <span class="badge">{tmpl.style}</span>
-            <h2>{tmpl.name}</h2>
-            <p>{tmpl.description}</p>
-          </div>
-          <div class="itinerary-actions">
-            <button class="btn btn-outline change-template-btn">Change Template</button>
-            <button class="btn btn-outline share-btn" aria-label="Share this itinerary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              Share Itinerary
-            </button>
-            <button class="btn btn-outline print-btn" aria-label="Print this itinerary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-              Print Itinerary
-            </button>
-          </div>
+<BaseLayout title="Banff Trip Builder: Custom Winter & Summer Itineraries" description="Build a Banff itinerary with editable days, winter and summer activities, transport checks and hotel links. Save your plan, share a link or print it for your trip." lastUpdated="2026-10-28">
+  <div class="container"><Breadcrumbs items={[{ label:'Trip Builder' }]} /></div>
+  <section class="trip-hero"><div class="container"><span class="trip-eyebrow">A good trip has room to breathe</span><h1>Your Banff trip.<br /><em>Make it yours.</em></h1><p>Start with an idea, move a day, leave an afternoon open. Build a winter or summer itinerary around the places and pace that suit you.</p><a href="#your-trip" class="btn btn-accent">Start shaping your trip ↓</a></div></section>
+  <div class="container trip-content">
+    <div class="trip-context"><p><strong>One main outing is often enough.</strong> Allowances below leave room for a warm drink, a late bus or a change of weather. Check the real opening days, transport and activity availability before booking.</p><a href="/winter">Winter guide →</a><a href="/towns">Compare mountain bases →</a><a href="/ski-day-planner">Plan one ski day →</a></div>
+    <WinterStatusNotice />
+    <section id="your-trip" class="trip-editor" aria-labelledby="trip-editor-heading">
+      <div class="trip-section-heading"><span class="trip-eyebrow">The pieces that shape your days</span><h2 id="trip-editor-heading">First, choose your starting point</h2></div>
+      <form id="trip-settings" hidden>
+        <div class="trip-settings-grid">
+          <label for="trip-season">Season<select id="trip-season"><option value="winter">Winter / snow season</option><option value="summer">Summer / hiking season</option></select></label>
+          <label for="trip-base">My overnight base<select id="trip-base"><option value="banff">Banff</option><option value="canmore">Canmore</option><option value="louise">Lake Louise</option></select></label>
+          <label for="trip-transport">Getting around<select id="trip-transport"><option value="car-free">Car-free / arranged transfers</option><option value="drive">Driving</option></select></label>
         </div>
-
-        {tmpl.itinerary.map((day) => {
-          const dayActivities = day.activityIds.map(id => activityMap[id]).filter(Boolean);
-          const bookable = dayActivities.filter(a => a.bookingUrl);
-          return (
-            <div class="day-block">
-              <div class="day-header">
-                <h3>{day.dayLabel}</h3>
-                <span class="day-count">{dayActivities.length} activities</span>
-              </div>
-
-              <div class="day-activities">
-                {dayActivities.map(act => (
-                  <div class="activity-card">
-                    <div class="activity-icon">{act.icon}</div>
-                    <div class="activity-info">
-                      <div class="activity-top">
-                        <strong>{act.name}</strong>
-                        {act.price && <span class="activity-price">{act.price}</span>}
-                      </div>
-                      <p>{act.description}</p>
-                      <div class="activity-tags">
-                        <span class="tag">{act.duration}</span>
-                        <span class="tag">{act.difficulty}</span>
-                        <span class="tag">{act.timeOfDay}</span>
-                      </div>
-                      {act.bookingUrl && (
-                        <a href={act.bookingUrl} target="_blank" rel="noopener" class="book-btn">
-                          Book Now &rarr;
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div class="hotel-box">
-                <div class="hotel-box-content">
-                  <span class="hotel-icon">&#127968;</span>
-                  <div>
-                    <strong>Need a place to stay?</strong>
-                    <p>Compare Banff hotels for this night on Expedia.</p>
-                  </div>
-                </div>
-                <div class="hotel-links">
-                  <a href={hotelLink('budget')} target="_blank" rel="noopener" class="hotel-link">Budget $</a>
-                  <a href={hotelLink('mid')} target="_blank" rel="noopener" class="hotel-link">Mid-Range $$</a>
-                  <a href={hotelLink('luxury')} target="_blank" rel="noopener" class="hotel-link">Luxury $$$</a>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-
-        <!-- Summary -->
-        <div class="trip-summary">
-          <div class="summary-stats">
-            <div class="summary-stat">
-              <span class="summary-number">{tmpl.days}</span>
-              <span>Days</span>
-            </div>
-            <div class="summary-stat">
-              <span class="summary-number">{tmpl.itinerary.reduce((acc, d) => acc + d.activityIds.length, 0)}</span>
-              <span>Activities</span>
-            </div>
-            <div class="summary-stat">
-              <span class="summary-number">{tmpl.itinerary.reduce((acc, d) => acc + d.activityIds.filter(id => activityMap[id]?.bookingUrl).length, 0)}</span>
-              <span>Bookable Tours</span>
-            </div>
-          </div>
-          <div class="summary-ctas">
-            <a href={`https://www.getyourguide.com/banff-l284/?partner_id=QW960HO`} target="_blank" rel="noopener" class="btn btn-accent">Browse All Banff Tours &rarr;</a>
-            <a href={hotelLink('mid')} target="_blank" rel="noopener" class="btn btn-primary">Find Hotels on Expedia &rarr;</a>
-          </div>
-        </div>
-      </div>
+        <p class="trip-small">Changing season removes incompatible outings. You can undo the last edit. A car-free selection still needs a confirmed connection for every outing.</p>
+        <div class="trip-template-row"><label for="trip-template">Start from a suggested itinerary<select id="trip-template">{plannerTemplates.map(template => <option value={template.id}>{template.season === 'winter' ? 'Winter' : 'Summer'} · {template.name}</option>)}</select></label><button type="button" id="load-trip-template" class="btn btn-primary">Load this idea</button></div>
+        <p id="trip-template-description" class="trip-small">{plannerTemplates[0].description}</p>
+      </form>
+      <noscript><p>This is a complete three-day winter example for a Banff base. Enable JavaScript to edit, save and share a plan. The guides, official links and hotel search work without it.</p></noscript>
+      <div class="trip-toolbar" id="trip-toolbar" hidden><button type="button" id="trip-add-day">+ Add an open day</button><button type="button" id="trip-undo" disabled>Undo last edit</button><button type="button" id="trip-share">Copy my plan link</button><button type="button" id="trip-print">Print my plan</button><button type="button" id="trip-reset">Start again</button></div>
+      <p id="trip-status" role="status" aria-live="polite" class="trip-status"></p>
+      <p id="trip-save-status" class="trip-small"></p>
+      <div id="trip-share-fallback" hidden><label for="trip-share-link">Select and copy your plan link<input type="text" id="trip-share-link" readonly /></label></div>
+      <div class="trip-result-heading"><h2>Your days in the Rockies</h2><p id="trip-summary">3 days · 5 outings · Winter · Banff base</p></div>
+      <div id="trip-days" class="trip-days">{initial.days.map((ids,index) => <article class="trip-day"><div class="trip-day-header"><div><span class="trip-eyebrow">Day {index+1}</span><h3 tabindex="-1" id={`trip-day-${index}`}>{ids.length ? `${ids.length} ${ids.length === 1 ? 'outing' : 'outings'}, with room between` : 'An open day'}</h3></div></div><ol class="trip-day-list">{ids.map(id => { const activity = activityById[id]; return <li class="trip-outing"><div class="trip-outing-icon" aria-hidden="true">{activity.icon}</div><div class="trip-outing-content"><div class="trip-outing-title"><h4>{activity.name}</h4><span>{activity.fullDay ? 'Main day activity' : `Allow about ${activity.hours}h`}</span></div><p>{activity.description}</p><div class="trip-outing-links"><a href={activity.guide}>Plan this outing →</a><a href={activity.source} target="_blank" rel="noopener">Official information ↗</a></div></div></li>; })}</ol></article>)}</div>
+      <div class="trip-checks" aria-labelledby="trip-checks-heading"><h3 id="trip-checks-heading">Make the connections work</h3><ul id="trip-checks-list"><li>Day 2 needs a confirmed Lake Louise transfer and return connection.</li></ul><p>These checks organise logistics. They do not establish safe terrain, road access, rink opening or a suitable activity for your group.</p></div>
     </section>
-  ))}
+    <section id="trip-catalogue" aria-labelledby="trip-catalogue-heading">
+      <div class="trip-section-heading"><span class="trip-eyebrow">A little inspiration</span><h2 id="trip-catalogue-heading">What belongs in your trip?</h2><p id="trip-catalogue-note">Winter ideas and year-round town outings. Follow each guide for the details.</p></div>
+      <div class="trip-catalogue-controls" id="trip-catalogue-controls" hidden><label for="trip-add-to">Add activities to<select id="trip-add-to">{initial.days.map((_,i) => <option value={i}>Day {i+1}</option>)}</select></label><label for="trip-activity-search">Find an activity<input id="trip-activity-search" type="search" placeholder="Try lessons, skating, culture…" autocomplete="off" /></label></div>
+      <p id="trip-catalogue-count" class="trip-small" aria-live="polite"></p>
+      <div class="trip-catalogue-grid">{plannerActivities.map(activity => <article class="trip-idea" hidden={!activityFitsSeason(activity, initial.season)} data-activity={activity.id} data-season={activity.season} data-search={`${activity.name} ${activity.description}`.toLowerCase()}><div class="trip-idea-top"><span aria-hidden="true">{activity.icon}</span><span>{activity.season === 'all' ? 'Year-round idea' : activity.season === 'winter' ? 'Winter idea' : 'Summer idea'}</span></div><h3>{activity.name}</h3><p>{activity.description}</p><a href={activity.guide}>Read the planning guide →</a><button class="trip-add-activity" type="button" data-add-activity={activity.id} hidden>Add to Day 1</button></article>)}</div>
+      <p id="trip-catalogue-empty" hidden>No activities match. Try a broader search or another season.</p>
+      <p class="trip-small">The list deliberately avoids suggesting Johnston Canyon’s main trail or Upper Hot Springs as available during their current reported closures. Use the dated notice and official sources above for reopening updates. For a separate heli-ski extension, see <a href="/blog/banff-heli-skiing">heli-skiing near Banff</a>.</p>
+    </section>
+    <aside class="trip-stays"><div><span class="trip-eyebrow">Make the morning easier</span><h2>Now find a base that fits.</h2><p id="trip-stay-note">Compare Banff stays, then check the exact address, room type, shuttle stop, total rate and cancellation terms.</p><p class="trip-small">Expedia links are affiliate links. BanffBound may earn a commission if you book.</p></div><div class="trip-stay-actions"><a id="trip-stay-link" class="btn btn-accent" href={tripStayUrl(initial.base)} target="_blank" rel="sponsored noopener">Check Banff stays on Expedia ↗</a><a href="/winter-stays">Compare winter hotel options →</a><a href="/hotel-directory">Browse the full hotel directory →</a></div></aside>
+    <section class="trip-faq"><div class="trip-section-heading"><h2>Before you set off</h2></div>{faqs.map(faq => <details><summary>{faq.q}</summary><p>{faq.a}</p></details>)}</section>
+    <section class="trip-sources"><h2>How this planner works</h2><p>Reviewed 28 October 2026. Templates and time allowances are editorial suggestions. The linked activity guides and official sources provide the next planning steps. Check <a href="https://parks.canada.ca/pn-np/ab/banff/bulletins">Parks Canada bulletins</a>, <a href="https://roamtransit.com/">Roam Transit</a>, <a href="https://511.alberta.ca/">Alberta 511</a>, <a href="https://www.drivebc.ca/">DriveBC</a> and your booked operator’s current details.</p><p>Summer-only boating, Moraine Lake transport and alpine hiking are separated from winter ideas. Early and late season operations vary. Cave and Basin’s published winter days and temporary closures also need checking; it is a historic site rather than a swimming pool.</p></section>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'WebApplication', name:'Banff Trip Builder', url:'https://banffbound.com/trip-builder/', applicationCategory:'TravelApplication', operatingSystem:'Any', browserRequirements:'JavaScript for editing; static example and guide links available without it', offers:{ '@type':'Offer',price:'0',priceCurrency:'CAD' }, description:'A free editable itinerary planner for winter and summer trips to Banff and the nearby towns.' })} />
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'FAQPage', mainEntity:faqs.map(faq => ({ '@type':'Question', name:faq.q, acceptedAnswer:{ '@type':'Answer',text:faq.a } })) })} />
 </BaseLayout>
-
-<script define:vars={{ OWM_KEY: OWM_KEY_SSR }}>
-  const STORAGE_KEY = 'bb-trip-template';
-  const templateCards = document.querySelectorAll('.template-card');
-  const itineraries = document.querySelectorAll('.itinerary-section');
-  const templatesSection = document.querySelector('.templates-section');
-  const changeBtns = document.querySelectorAll('.change-template-btn');
-  const shareBtns = document.querySelectorAll('.share-btn');
-  const printBtns = document.querySelectorAll('.print-btn');
-  const clearWrap = document.getElementById('clear-selection-wrap');
-  const clearBtn = document.getElementById('clear-selection-btn');
-  const shareToast = document.getElementById('share-toast');
-
-  let activeTemplateId = null;
-
-  // Load live weather into conditions banner
-  (async function loadTripWeather() {
+<script>
+  import { defaultTripPlan, createTripPlan, plannerActivities, plannerTemplates, activityById, activityFitsSeason, decodeTripPlan, encodeTripPlan, tripPlanWarnings, tripStayUrl, MAX_DAY_ACTIVITIES, MAX_TRIP_DAYS, type TripPlan } from '../data/tripPlanner';
+  const byId = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const season = byId<HTMLSelectElement>('trip-season');
+  const base = byId<HTMLSelectElement>('trip-base');
+  const transport = byId<HTMLSelectElement>('trip-transport');
+  const template = byId<HTMLSelectElement>('trip-template');
+  const targetDay = byId<HTMLSelectElement>('trip-add-to');
+  const search = byId<HTMLInputElement>('trip-activity-search');
+  const status = byId('trip-status');
+  const saveStatus = byId('trip-save-status');
+  const dayList = byId('trip-days');
+  const storageKey = 'bb-trip-plan-v2';
+  let plan = defaultTripPlan();
+  let previous: string | null = null;
+  let canSave = true;
+  let initialMessage = '';
+  const params = new URLSearchParams(location.search);
+  const shared = params.get('plan');
+  const legacyTemplate = params.get('template');
+  const openedIncomingPlan = shared !== null || legacyTemplate !== null;
+  if (shared !== null) { const parsed = decodeTripPlan(shared); if (parsed) { plan = parsed; initialMessage = 'Shared plan opened. Your saved trip stays unchanged until you edit this one.'; } else initialMessage = 'That shared plan could not be loaded. A winter example is shown; you can build a fresh plan below.'; }
+  else if (legacyTemplate && plannerTemplates.some(item => item.id === legacyTemplate)) plan = createTripPlan(legacyTemplate);
+  else {
     try {
-      if (!OWM_KEY) return;
-      const [banffRes, forecastRes] = await Promise.all([
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=51.1784&lon=-115.5708&units=metric&appid=${OWM_KEY}`),
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=51.1784&lon=-115.5708&units=metric&appid=${OWM_KEY}`),
-      ]);
-      if (!banffRes.ok) return;
-      const wx = await banffRes.json();
-      const fc = forecastRes.ok ? await forecastRes.json() : null;
-
-      const temp = Math.round(wx.main.temp);
-      const desc = wx.weather[0].description;
-      const icon = wx.weather[0].icon;
-      const wind = Math.round(wx.wind.speed * 3.6);
-
-      let forecastHtml = '';
-      if (fc) {
-        const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-        const dailyMap = {};
-        for (const item of fc.list) {
-          const d = new Date(item.dt * 1000);
-          const key = d.toISOString().split('T')[0];
-          if (key === new Date().toISOString().split('T')[0]) continue;
-          if (!dailyMap[key]) dailyMap[key] = { temps: [], icons: [], date: d };
-          dailyMap[key].temps.push(item.main.temp);
-          dailyMap[key].icons.push(item.weather[0].icon);
-        }
-        const entries = Object.values(dailyMap).slice(0, 3);
-        forecastHtml = '<div class="trip-forecast">' + entries.map(day => {
-          const hi = Math.round(Math.max(...day.temps));
-          const lo = Math.round(Math.min(...day.temps));
-          const midIcon = day.icons[Math.floor(day.icons.length / 2)];
-          return `<span class="fc-day">${days[day.date.getDay()]} <img src="https://openweathermap.org/img/wn/${midIcon}.png" width="24" height="24" alt="" /> ${hi}°/${lo}°</span>`;
-        }).join('') + '</div>';
-      }
-
-      const banner = document.getElementById('conditions-banner');
-      const weatherEl = document.getElementById('conditions-weather');
-      weatherEl.innerHTML = `
-        <div class="trip-wx-now">
-          <img src="https://openweathermap.org/img/wn/${icon}.png" width="36" height="36" alt="${desc}" />
-          <span><strong>${temp}°C</strong> ${desc} · Wind ${wind} km/h</span>
-        </div>
-        ${forecastHtml}
-      `;
-      banner.style.display = 'block';
-    } catch {}
-  })();
-
-  function showTemplate(id, saveToStorage) {
-    itineraries.forEach(s => s.style.display = 'none');
-    const target = document.querySelector(`[data-itinerary="${id}"]`);
-    if (target) {
-      activeTemplateId = id;
-      target.style.display = 'block';
-      templatesSection.style.display = 'none';
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      if (saveToStorage !== false) {
-        try { localStorage.setItem(STORAGE_KEY, id); } catch {}
-      }
-      updateClearBtn();
-    }
+      const saved = localStorage.getItem(storageKey);
+      const parsed = saved ? decodeTripPlan(saved) : null;
+      if (parsed) { plan = parsed; initialMessage = 'Your saved plan is ready to edit.'; }
+      else { const oldTemplate = localStorage.getItem('bb-trip-template'); if (oldTemplate && plannerTemplates.some(item => item.id === oldTemplate)) plan = createTripPlan(oldTemplate); }
+    } catch { canSave = false; }
   }
-
-  function showSelector() {
-    activeTemplateId = null;
-    itineraries.forEach(s => s.style.display = 'none');
-    templatesSection.style.display = 'block';
-    templatesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    updateClearBtn();
+  const baseNames = { banff:'Banff', canmore:'Canmore', louise:'Lake Louise' };
+  function node<K extends keyof HTMLElementTagNameMap>(tag: K, className: string, text?: string) {
+    const element = document.createElement(tag); element.className = className; if (text) element.textContent = text; return element;
   }
-
-  function updateClearBtn() {
-    try {
-      var saved = localStorage.getItem(STORAGE_KEY);
-      if (clearWrap) clearWrap.style.display = saved ? 'flex' : 'none';
-    } catch {
-      if (clearWrap) clearWrap.style.display = 'none';
-    }
+  function link(label: string, href: string, external = false) { const element = node('a','',label); element.href = href; if (external) { element.target = '_blank'; element.rel = 'noopener'; } return element; }
+  function button(label: string, action: () => void, disabled = false, name?: string) { const element = node('button','',label); element.type = 'button'; element.disabled = disabled; if (name) element.setAttribute('aria-label',name); element.addEventListener('click',action); return element; }
+  function focusDay(index: number) { byId(`trip-day-${Math.max(0,Math.min(index,plan.days.length-1))}`)?.focus(); }
+  function updateUrl() { const url = new URL(location.href); url.searchParams.delete('template'); url.searchParams.set('plan',encodeTripPlan(plan)); history.replaceState(null,'',url); }
+  function save() {
+    if (canSave) { try { localStorage.setItem(storageKey,encodeTripPlan(plan)); } catch { canSave = false; } }
+    saveStatus.textContent = canSave ? 'Saved in this browser. Sharing includes your planning choices, not bookings.' : 'Saving is unavailable. Keep a share link or print the plan for later.';
   }
-
-  // Template card click
-  templateCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const id = card.dataset.template || '';
-      showTemplate(id);
-    });
-  });
-
-  // Change template buttons
-  changeBtns.forEach(btn => btn.addEventListener('click', showSelector));
-
-  // Share button — copy URL with ?template= param
-  shareBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (!activeTemplateId) return;
-      const url = new URL(window.location.href);
-      url.searchParams.set('template', activeTemplateId);
-      url.hash = '';
-      navigator.clipboard.writeText(url.toString()).then(() => {
-        if (shareToast) {
-          shareToast.classList.add('show');
-          setTimeout(() => shareToast.classList.remove('show'), 2500);
-        }
-      }).catch(() => {
-        // Fallback for older browsers
-        var ta = document.createElement('textarea');
-        ta.value = url.toString();
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        if (shareToast) {
-          shareToast.classList.add('show');
-          setTimeout(() => shareToast.classList.remove('show'), 2500);
-        }
+  function edit(change: () => void, message: string, focus?: number) { previous = encodeTripPlan(plan); change(); render(); save(); updateUrl(); status.textContent = message; if (focus !== undefined) focusDay(focus); }
+  function renderDays() {
+    dayList.replaceChildren();
+    plan.days.forEach((ids,index) => {
+      const article = node('article','trip-day');
+      const header = node('div','trip-day-header');
+      const titleWrap = node('div',''); titleWrap.append(node('span','trip-eyebrow',`Day ${index+1}`));
+      const title = node('h3','',ids.length ? `${ids.length} ${ids.length === 1 ? 'outing' : 'outings'}, with room between` : 'An open day'); title.id = `trip-day-${index}`; title.tabIndex = -1; titleWrap.append(title); header.append(titleWrap);
+      const dayActions = node('div','trip-day-actions trip-no-print');
+      dayActions.append(button('Move day earlier',() => edit(() => { [plan.days[index-1],plan.days[index]] = [plan.days[index],plan.days[index-1]]; },`Day moved to position ${index}.`,index-1),index === 0));
+      dayActions.append(button('Move day later',() => edit(() => { [plan.days[index+1],plan.days[index]] = [plan.days[index],plan.days[index+1]]; },`Day moved to position ${index+2}.`,index+1),index === plan.days.length-1));
+      dayActions.append(button('Remove day',() => edit(() => { plan.days.splice(index,1); },'Day removed. Undo restores it.',index),plan.days.length === 1)); header.append(dayActions); article.append(header);
+      if (!ids.length) article.append(node('p','trip-open-day','A rest day, a travel day, or space for something you have not discovered yet. Add an outing from the ideas below.'));
+      const list = node('ol','trip-day-list');
+      ids.forEach((id,activityIndex) => {
+        const activity = activityById[id]; const li = node('li','trip-outing');
+        const icon = node('div','trip-outing-icon',activity.icon); icon.setAttribute('aria-hidden','true'); li.append(icon);
+        const content = node('div','trip-outing-content'); const titleRow = node('div','trip-outing-title'); titleRow.append(node('h4','',activity.name),node('span','',activity.fullDay ? 'Main day activity' : `Allow about ${activity.hours}h`)); content.append(titleRow,node('p','',activity.description));
+        const links = node('div','trip-outing-links'); links.append(link('Plan this outing →',activity.guide),link('Official information ↗',activity.source,true)); content.append(links);
+        const actions = node('div','trip-outing-actions trip-no-print');
+        actions.append(button('↑ Earlier',() => edit(() => { [ids[activityIndex-1],ids[activityIndex]] = [ids[activityIndex],ids[activityIndex-1]]; },'Outing moved earlier.',index),activityIndex === 0,`Move ${activity.name} earlier in Day ${index+1}`));
+        actions.append(button('↓ Later',() => edit(() => { [ids[activityIndex+1],ids[activityIndex]] = [ids[activityIndex],ids[activityIndex+1]]; },'Outing moved later.',index),activityIndex === ids.length-1,`Move ${activity.name} later in Day ${index+1}`));
+        actions.append(button('Remove',() => edit(() => { ids.splice(activityIndex,1); },`${activity.name} removed.`,index),false,`Remove ${activity.name} from Day ${index+1}`)); content.append(actions); li.append(content); list.append(li);
       });
-    });
-  });
-
-  // Print button
-  printBtns.forEach(btn => {
-    btn.addEventListener('click', () => window.print());
-  });
-
-  // Clear selection button
-  if (clearBtn) {
-    clearBtn.addEventListener('click', () => {
-      try { localStorage.removeItem(STORAGE_KEY); } catch {}
-      showSelector();
+      article.append(list); dayList.append(article);
     });
   }
-
-  // On page load: check URL params first, then localStorage
-  (function restoreSelection() {
-    const params = new URLSearchParams(window.location.search);
-    const urlTemplate = params.get('template');
-    if (urlTemplate) {
-      const exists = document.querySelector(`[data-itinerary="${urlTemplate}"]`);
-      if (exists) {
-        showTemplate(urlTemplate);
-        return;
-      }
-    }
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const exists = document.querySelector(`[data-itinerary="${saved}"]`);
-        if (exists) {
-          showTemplate(saved, false);
-          return;
-        }
-      }
-    } catch {}
-    updateClearBtn();
-  })();
+  function updateCatalogue() {
+    const term = search.value.trim().toLowerCase(); let count = 0;
+    document.querySelectorAll<HTMLElement>('.trip-idea').forEach(card => { const activity = activityById[card.dataset.activity!]; const show = activityFitsSeason(activity,plan.season) && (card.dataset.search || '').includes(term); card.hidden = !show; if (show) count++; });
+    const index = Number(targetDay.value) || 0; const selected = plan.days[index] || plan.days[0];
+    document.querySelectorAll<HTMLButtonElement>('[data-add-activity]').forEach(add => { const added = selected.includes(add.dataset.addActivity!); add.disabled = added || selected.length >= MAX_DAY_ACTIVITIES; add.textContent = added ? `Already in Day ${index+1}` : selected.length >= MAX_DAY_ACTIVITIES ? `Day ${index+1} has three outings` : `Add to Day ${index+1}`; add.setAttribute('aria-label',`${add.textContent}: ${activityById[add.dataset.addActivity!].name}`); add.hidden = false; });
+    byId('trip-catalogue-count').textContent = `${count} ${plan.season} ${count === 1 ? 'idea' : 'ideas'} to explore`;
+    byId('trip-catalogue-empty').hidden = count > 0;
+  }
+  function render() {
+    season.value = plan.season; base.value = plan.base; transport.value = plan.transport;
+    Array.from(template.options).forEach(option => { option.hidden = plannerTemplates.find(item => item.id === option.value)?.season !== plan.season; });
+    if (template.selectedOptions[0]?.hidden) template.value = plannerTemplates.find(item => item.season === plan.season)!.id;
+    byId('trip-template-description').textContent = plannerTemplates.find(item => item.id === template.value)?.description || '';
+    renderDays();
+    const oldTarget = Math.min(Number(targetDay.value)||0,plan.days.length-1); targetDay.replaceChildren(); plan.days.forEach((_,index) => { const option = node('option','',`Day ${index+1}`); option.value = String(index); targetDay.append(option); }); targetDay.value = String(oldTarget);
+    byId('trip-summary').textContent = `${plan.days.length} ${plan.days.length === 1 ? 'day' : 'days'} · ${plan.days.flat().length} outings · ${plan.season === 'winter' ? 'Winter' : 'Summer'} · ${baseNames[plan.base]} base`;
+    byId<HTMLButtonElement>('trip-add-day').disabled = plan.days.length >= MAX_TRIP_DAYS; byId<HTMLButtonElement>('trip-undo').disabled = !previous;
+    byId('trip-catalogue-note').textContent = `${plan.season === 'winter' ? 'Winter' : 'Summer'} ideas and year-round town outings. Season labels do not confirm current operations.`;
+    const checks = byId('trip-checks-list'); checks.replaceChildren(); const warnings = tripPlanWarnings(plan); (warnings.length ? warnings : ['Keep checking your actual booking times, transport, weather and current operations.']).forEach(warning => checks.append(node('li','',warning)));
+    const stay = byId<HTMLAnchorElement>('trip-stay-link'); stay.href = tripStayUrl(plan.base); stay.textContent = `Check ${baseNames[plan.base]} stays on Expedia ↗`;
+    byId('trip-stay-note').textContent = `Compare ${baseNames[plan.base]} stays, then check the exact address, room type, shuttle stop, total rate and cancellation terms.`;
+    byId('trip-share-fallback').hidden = true;
+    updateCatalogue();
+  }
+  byId<HTMLFormElement>('trip-settings').addEventListener('submit',event => event.preventDefault());
+  season.addEventListener('change',() => edit(() => { plan.season = season.value as TripPlan['season']; plan.days = plan.days.map(ids => ids.filter(id => activityFitsSeason(activityById[id],plan.season))); },'Season updated. Outings from the other season were removed; undo restores them.'));
+  base.addEventListener('change',() => edit(() => { plan.base = base.value as TripPlan['base']; },'Base updated. Check the revised transfers and hotel search.'));
+  transport.addEventListener('change',() => edit(() => { plan.transport = transport.value as TripPlan['transport']; },'Transport preference updated. Confirm the actual connections before booking.'));
+  template.addEventListener('change',() => { byId('trip-template-description').textContent = plannerTemplates.find(item => item.id === template.value)?.description || ''; });
+  byId('load-trip-template').addEventListener('click',() => edit(() => { const next = createTripPlan(template.value); next.base = plan.base; next.transport = plan.transport; plan = next; },'Suggested itinerary loaded. Every day is editable.',0));
+  byId('trip-add-day').addEventListener('click',() => { if (plan.days.length < MAX_TRIP_DAYS) edit(() => { plan.days.push([]); },'An open day was added.',plan.days.length); });
+  byId('trip-undo').addEventListener('click',() => { const restored = previous ? decodeTripPlan(previous) : null; if (restored) { plan = restored; previous = null; render(); save(); updateUrl(); status.textContent = 'Last edit undone.'; } });
+  byId('trip-reset').addEventListener('click',() => edit(() => { plan = defaultTripPlan(); template.value = plannerTemplates[0].id; },'Started again with a winter weekend. Undo restores your previous plan.',0));
+  targetDay.addEventListener('change',updateCatalogue); search.addEventListener('input',updateCatalogue);
+  document.querySelectorAll<HTMLButtonElement>('[data-add-activity]').forEach(add => add.addEventListener('click',() => { const id = add.dataset.addActivity!; const index = Number(targetDay.value)||0; if (plan.days[index].length < MAX_DAY_ACTIVITIES && !plan.days[index].includes(id) && activityFitsSeason(activityById[id],plan.season)) edit(() => { plan.days[index].push(id); },`${activityById[id].name} added to Day ${index+1}.`); }));
+  byId('trip-share').addEventListener('click',async () => { const url = new URL(location.href); url.searchParams.delete('template'); url.searchParams.set('plan',encodeTripPlan(plan)); url.hash = ''; try { await navigator.clipboard.writeText(url.href); status.textContent = 'Plan link copied. It shares your choices, not any bookings.'; } catch { const field = byId<HTMLInputElement>('trip-share-link'); field.value = url.href; byId('trip-share-fallback').hidden = false; field.focus(); field.select(); status.textContent = 'Select and copy your plan link above.'; } });
+  byId('trip-print').addEventListener('click',() => window.print());
+  if (legacyTemplate && plannerTemplates.some(item => item.id === legacyTemplate)) template.value = legacyTemplate;
+  render();
+  if (openedIncomingPlan) saveStatus.textContent = 'Your previous saved trip has not been changed. Editing this plan saves it in this browser.';
+  else save();
+  status.textContent = initialMessage;
+  ['trip-settings','trip-toolbar','trip-catalogue-controls'].forEach(id => { byId(id).hidden = false; });
 </script>
-
-<style>
-  /* Conditions banner */
-  .conditions-banner { background: var(--color-bg-alt); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 1rem 0; }
-  .conditions-inner { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
-  .trip-wx-now { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
-  .trip-forecast { display: flex; gap: 0.75rem; }
-  .fc-day { display: flex; align-items: center; gap: 0.2rem; font-size: 0.8rem; color: var(--color-text-light); background: var(--color-white); padding: 0.25rem 0.5rem; border-radius: 4px; }
-  .conditions-alerts { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; font-size: 0.85rem; }
-  .conditions-alerts strong { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
-  .alert-chip { display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.78rem; padding: 0.2rem 0.5rem; border-radius: 4px; text-decoration: none; }
-  .alert-closed { background: #fee2e2; color: #991b1b; }
-  .alert-caution { background: #fef3c7; color: #92400e; }
-  .alert-note { font-weight: 400; }
-
-  .templates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .template-card {
-    background: var(--color-white);
-    border: 2px solid transparent;
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: var(--shadow);
-    font-family: var(--font-body);
-  }
-
-  .template-card:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .template-style {
-    display: inline-block;
-    background: var(--color-accent);
-    color: var(--color-white);
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    margin-bottom: 0.75rem;
-  }
-
-  .template-card h3 { margin-bottom: 0.5rem; font-size: 1.15rem; }
-  .template-card p { color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 0.75rem; }
-
-  .template-meta {
-    display: flex;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    color: var(--color-text-light);
-  }
-
-  .itinerary-section { padding: 3rem 0; }
-
-  .itinerary-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2rem;
-    gap: 1rem;
-  }
-
-  .itinerary-header h2 { margin: 0.25rem 0; }
-  .itinerary-header p { color: var(--color-text-light); }
-
-  .day-block {
-    margin-bottom: 2.5rem;
-    border: 1px solid rgba(0,0,0,0.06);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-
-  .day-header {
-    background: var(--color-primary);
-    color: var(--color-white);
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .day-header h3 { color: var(--color-white); margin: 0; font-family: var(--font-body); font-size: 1rem; }
-  .day-count { font-size: 0.85rem; opacity: 0.8; }
-
-  .day-activities { padding: 1rem; }
-
-  .activity-card {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-    transition: background 0.2s;
-  }
-
-  .activity-card:hover { background: var(--color-bg-alt); }
-
-  .activity-icon { font-size: 1.8rem; flex-shrink: 0; padding-top: 0.15rem; }
-
-  .activity-info { flex: 1; }
-
-  .activity-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.25rem;
-  }
-
-  .activity-price {
-    font-weight: 700;
-    color: var(--color-primary);
-    font-size: 0.85rem;
-    white-space: nowrap;
-  }
-
-  .activity-info p {
-    color: var(--color-text-light);
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-  }
-
-  .activity-tags { display: flex; gap: 0.4rem; margin-bottom: 0.5rem; }
-
-  .book-btn {
-    display: inline-block;
-    background: var(--color-accent);
-    color: var(--color-white);
-    padding: 0.35rem 0.9rem;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    transition: all 0.2s;
-  }
-
-  .book-btn:hover { background: var(--color-primary); }
-
-  .hotel-box {
-    background: var(--color-bg-alt);
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .hotel-box-content {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .hotel-icon { font-size: 1.5rem; }
-  .hotel-box-content p { font-size: 0.85rem; color: var(--color-text-light); margin: 0; }
-
-  .hotel-links { display: flex; gap: 0.5rem; }
-
-  .hotel-link {
-    padding: 0.4rem 0.8rem;
-    background: var(--color-white);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--color-primary);
-    transition: all 0.2s;
-  }
-
-  .hotel-link:hover {
-    background: var(--color-primary);
-    color: var(--color-white);
-    border-color: var(--color-primary);
-  }
-
-  .trip-summary {
-    background: var(--color-white);
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    text-align: center;
-  }
-
-  .summary-stats {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .summary-stat { display: flex; flex-direction: column; align-items: center; }
-
-  .summary-number {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-accent);
-  }
-
-  .summary-stat span:last-child {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-  }
-
-  .summary-ctas {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .templates-section { padding: 3rem 0; }
-
-  /* Itinerary action buttons */
-  .itinerary-actions {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  .share-btn, .print-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-    padding: 0.6rem 1rem;
-  }
-
-  .share-btn svg, .print-btn svg { flex-shrink: 0; }
-
-  /* Clear selection */
-  .clear-selection-wrap {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-  }
-
-  .clear-selection-btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 1.2rem;
-    color: var(--color-text-light);
-    border-color: rgba(0,0,0,0.15);
-  }
-
-  .clear-selection-btn:hover {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-  }
-
-  /* Share toast */
-  .share-toast {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    background: var(--color-primary);
-    color: var(--color-white);
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius);
-    font-size: 0.9rem;
-    font-weight: 600;
-    box-shadow: var(--shadow-lg);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    pointer-events: none;
-  }
-
-  .share-toast.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  @media (max-width: 768px) {
-    .itinerary-header { flex-direction: column; }
-    .itinerary-actions { width: 100%; }
-    .itinerary-actions .btn { flex: 1; justify-content: center; font-size: 0.8rem; padding: 0.55rem 0.75rem; }
-    .hotel-box { flex-direction: column; align-items: flex-start; }
-    .hotel-links { flex-wrap: wrap; }
-    .activity-card { flex-direction: column; }
-    .activity-top { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
-    .summary-stats { gap: 1.5rem; }
-  }
-
-  /* Print styles */
-  @media print {
-    .site-header, .site-footer, .conditions-banner,
-    .templates-section, .cookie-banner, .back-to-top,
-    .sticky-cta-bar, .share-toast, .page-hero,
-    .itinerary-actions, .summary-ctas, .hotel-box,
-    .book-btn, .clear-selection-wrap { display: none !important; }
-
-    main { margin-top: 0 !important; }
-
-    .itinerary-section { display: block !important; padding: 0 !important; }
-
-    .itinerary-header { margin-bottom: 1rem; }
-
-    .day-block { break-inside: avoid; margin-bottom: 1.5rem; border: 1px solid #ccc; }
-
-    .day-header { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-
-    .activity-card { padding: 0.5rem 1rem; }
-
-    .trip-summary { box-shadow: none; border: 1px solid #ccc; }
-
-    .summary-stats { margin-bottom: 0; }
-
-    body { font-size: 11pt; }
-  }
-</style>

@@ -3,7 +3,7 @@
 > Travel guides and planning tools for Banff, Lake Louise, Canmore and the nearby Canadian Rockies. Use the source links in each guide for current operations and trip-day decisions. Booking links may be affiliate links.
 
 ## Winter planning
-- [Winter in Banff](https://banffbound.com/winter/): Search 20 winter planning guides by interest and explore seasonal month-by-month advice.
+- [Winter in Banff](https://banffbound.com/winter/): Search 21 winter planning guides by interest and explore seasonal month-by-month advice.
 - [Learn to ski](https://banffbound.com/learn-to-ski/): First ski or snowboard lessons, learning-area tickets, equipment, children’s booking questions and a saved readiness checklist.
 - [Ski day planner](https://banffbound.com/ski-day-planner/): Personalise a resort day by experience, base, resort, transport and group. Share selections or print a plan.
 - [Resort comparison](https://banffbound.com/sunshine-vs-lake-louise-vs-norquay/): Practical differences among Sunshine, Lake Louise and Norquay.
@@ -22,6 +22,7 @@
 - [Kananaskis](https://banffbound.com/towns/kananaskis/)
 
 ## Wider trip planning
+- [Editable trip builder](https://banffbound.com/trip-builder/): One to seven seasonal days, editable outings, transport checks, local saving and share links. Incoming links preserve an existing saved plan until an explicit edit.
 - [Planning tools](https://banffbound.com/tools/)
 - [Hotel directory](https://banffbound.com/hotel-directory/)
 - [Vacation rentals](https://banffbound.com/vacation-rentals/)

@@ -1,4 +1,7 @@
 ---
+import { viewGuideOverride } from '../../data/viewGuideOverride';
+import { winterResortOverrides } from '../../data/winterResortOverrides';
+import { winterSeasonOverrides } from '../../data/winterSeasonOverrides';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { allBlogPosts } from '../../data/blogPosts';
 import { blogContent as blogContentMain } from '../../data/blogContent';
@@ -8,7 +11,7 @@ import { winterActivityOverrides } from '../../data/winterActivityOverrides';
 import { winterGuideOverrides } from '../../data/winterGuideOverrides';
 import { blogRedirects } from '../../data/redirects.mjs';
 
-const blogContent = { ...blogContentMain, ...blogContent3, ...winterGuideOverrides, ...winterActivityOverrides, ...winterTripOverrides };
+const blogContent = { ...blogContentMain, ...blogContent3, ...winterGuideOverrides, ...winterActivityOverrides, ...winterTripOverrides, ...winterResortOverrides, ...winterSeasonOverrides, ...viewGuideOverride };
 
 export function getStaticPaths() {
   return allBlogPosts.map(post => ({ params: { slug: post.slug }, props: { post } }));

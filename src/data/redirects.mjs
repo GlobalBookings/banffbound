@@ -1,4 +1,4 @@
-// Slug-level 301 consolidations for /blog/<slug>.
+// Slug-level consolidations for /blog/<slug> using static redirect stubs.
 // Rendered as robots-noindex + canonical + instant meta-refresh stubs by
 // src/pages/blog/[slug].astro, and excluded from the sitemap in astro.config.mjs.
 //
@@ -8,6 +8,8 @@
 // actually consolidates duplicate ski/winter pages into their canonical pillars.
 
 export const blogRedirects = {
+  // Duplicate viewpoint title/intent; retain the singular URL's existing history.
+  'banff-views': 'banff-view',
   // ── Generic "Banff ski" duplicates → skiing pillar ──
   'banff-ski-big-3': 'banff-skiing-guide',
   'big-3-ski': 'banff-skiing-guide',

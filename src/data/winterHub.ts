@@ -14,6 +14,7 @@ export const winterGuides = [
   { title: 'Après-ski in Banff', href: '/blog/banff-apres-ski', category: 'slow', tag: 'After the lifts', desc: 'Turn a ski day into an easy evening in town with food, a warm drink and a ride home.' },
   { title: 'Family winter days', href: '/blog/banff-family-winter', category: 'family', tag: 'Short outings win', desc: 'Build around warm-up breaks, children’s energy, and one main outdoor activity.' },
   { title: 'Christmas in Banff', href: '/blog/banff-christmas-guide', category: 'slow', tag: 'Holiday planning', desc: 'Festive trip ideas; verify this season’s event dates and book holiday meals ahead.' },
+  { title: 'SnowDays & Ice Magic', href: '/blog/banff-snowdays-festival', category: 'family', tag: 'Winter festival planning', desc: 'Current festival dates, access restrictions, shuttle arrangements and a relaxed event day.' },
   { title: 'Winter photography', href: '/blog/banff-winter-photography', category: 'slow', tag: 'Keep batteries warm', desc: 'Snow, short daylight, accessible viewpoints, and protecting your equipment in the cold.' },
   { title: 'Winter driving & road checks', href: '/blog/banff-winter-driving', category: 'practical', tag: 'Before every journey', desc: 'Route-specific tire rules, Alberta and BC road reports, closures and a car-free alternative.' },
   { title: 'Winter hotels, lodges & suites', href: '/winter-stays', category: 'practical', tag: 'Find your base', desc: 'Filter stays by location and trip style, with the tradeoffs that matter on a winter trip.' },

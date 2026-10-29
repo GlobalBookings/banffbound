@@ -20,6 +20,11 @@ const withoutPriceClaims = (text: string) => text.split(/(?<=[.!?])\s+/).filter(
 const listedAmenities = (hotel.amenities || hotel.highlights).filter(item => !/\$\s*\d/.test(item));
 
 const areaGuides: Record<string, Array<{href: string; title: string; desc: string}>> = {
+  'Yoho National Park': [
+    { href: '/towns/field-yoho/', title: 'Field & Yoho travel guide', desc: 'A quiet BC base with a separate winter access plan.' },
+    { href: '/blog/banff-winter-driving', title: 'Winter driving', desc: 'Check Alberta and BC route requirements and reports.' },
+    { href: '/winter-stays', title: 'Winter stays finder', desc: 'Compare lodge and town-hotel tradeoffs.' },
+  ],
   'Downtown Banff': [
     { href: '/blog/where-to-stay-in-banff', title: 'Where to Stay in Banff: Best Areas & Hotels', desc: 'Compare every neighbourhood and budget tier.' },
     { href: '/blog/best-banff-restaurants-where-to-eat', title: 'Best Banff Restaurants', desc: 'Local picks for every budget.' },
@@ -70,7 +75,7 @@ const hotelSchema = {
 };
 ---
 
-<BaseLayout title={`${hotel.name} | Banff Hotel Guide`} description={`Explore ${hotel.name} in ${hotel.area}. Compare the location and room facilities, then check current availability, total prices and booking terms with the provider.`}>
+<BaseLayout title={`${hotel.name} | Banff Hotel Guide`} description={`Explore ${hotel.name} in ${hotel.area}. Compare the location and room facilities, then check current availability, total prices and booking terms with the provider.`} lastUpdated={hotel.checkedOn}>
 
   <div class="container">
     <Breadcrumbs items={[
@@ -84,9 +89,9 @@ const hotelSchema = {
 
   <!-- Hero with gallery -->
   <section class="hotel-hero">
-    <div class="hero-gallery">
+    <div class={`hero-gallery${galleryImages.length === 1 ? ' single-image' : ''}`}>
       <div class="hero-main-img">
-        <img src={galleryImages[0]} alt={hotel.name} />
+        <img src={galleryImages[0]} alt={hotel.name} loading="eager" fetchpriority="high" width="1200" height="800" />
       </div>
       {galleryImages.length > 1 && (
         <div class="hero-side-imgs">
@@ -333,6 +338,8 @@ const hotelSchema = {
     max-height: 420px;
     overflow: hidden;
   }
+
+  .hero-gallery.single-image { grid-template-columns: 1fr; }
 
   .hero-main-img img {
     width: 100%;
@@ -622,7 +629,9 @@ const hotelSchema = {
   @media (max-width: 768px) {
     .hero-gallery { grid-template-columns: 1fr; }
     .hero-side-imgs { display: none; }
-    .hero-main-img img { height: 280px; }
+    .hero-gallery.single-image { grid-template-columns: 1fr; }
+
+  .hero-main-img img { height: 280px; }
     .hotel-layout { grid-template-columns: 1fr; }
     .booking-card { position: static; }
     .amenities-grid, .room-features-grid, .nearby-grid, .checkin-grid { grid-template-columns: 1fr; }

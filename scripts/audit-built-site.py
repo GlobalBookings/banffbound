@@ -50,7 +50,7 @@ def resolve(path, root):
     return None
 
 def winter_route(route):
-    return route.startswith(('/winter','/learn-to-ski','/ski-day-planner','/ski-pass-calculator','/skiing','/sunshine-vs','/towns/')) or route.startswith('/blog/') and any(x in route for x in ('winter','ski','snowshoe','dog-sled','ice-walk','ice-skating','fat-bik','northern-lights'))
+    return route.startswith(('/winter','/learn-to-ski','/ski-day-planner','/ski-pass-calculator','/skiing','/sunshine-vs','/towns/','/trip-builder','/hotel-directory/','/hotels/','/accommodation/','/photo-spots/','/blog/banff-view/')) or route.startswith('/blog/') and any(x in route for x in ('winter','ski','snowshoe','dog-sled','ice-walk','ice-skating','fat-bik','northern-lights'))
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--directory',default='dist'); ap.add_argument('--report',default='research/built-site-audit-2026-10-28.json'); ap.add_argument('--strict-winter',action='store_true');args=ap.parse_args()
@@ -58,6 +58,15 @@ def main():
     for file in sorted(root.rglob('*.html')):
         page=Page();page.feed(file.read_text());pages[file]=page
     findings=[]
+    for attribute,kind in [('title','duplicate-title'),('canonical','duplicate-canonical')]:
+        groups={}
+        for file,page in pages.items():
+            if page.noindex or not page.title: continue
+            values=page.canonical if attribute=='canonical' else [page.title]
+            for value in values: groups.setdefault(value,[]).append(route_for(file,root))
+        for value,routes in groups.items():
+            if len(routes)>1:
+                for route in routes: findings.append({'route':route,'kind':kind,'value':value,'winter':winter_route(route)})
     for file,page in pages.items():
         route=route_for(file,root)
         # Astro redirect stubs have no complete document and are intentionally not indexed.

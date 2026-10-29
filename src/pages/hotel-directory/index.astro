@@ -7,6 +7,7 @@ const areas = [...new Set(hotels.map(h => h.area))];
 const types = [...new Set(hotels.map(h => h.type))].sort();
 const withoutPriceClaims = (text: string) => text.split(/(?<=[.!?])\s+/).filter(sentence => !/\$\s*\d/.test(sentence)).join(' ');
 const areaNotes: Record<string, string> = {
+  'Yoho National Park': 'A separate national park in British Columbia. Check the exact lodge address, winter road access, meal arrangements and any guest parking shuttle; this is not a Lake Louise village stay.',
   'Downtown Banff': 'Compare the exact address with restaurants and the ski-shuttle stop you need; not every Banff property has the same walk.',
   'Tunnel Mountain': 'A hillside area above central Banff. Check the route and current bus service before planning to walk with luggage or ski gear.',
   'Bow Valley': 'Locations vary widely. Check the actual address, road access and meal arrangements rather than assuming a town-centre stay.',

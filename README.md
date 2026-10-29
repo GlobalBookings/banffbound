@@ -16,14 +16,17 @@ npm run preview
 
 `build:cached` compiles the site and Pagefind search from the committed data snapshots without refreshing them. `build` first runs `scripts/fetch-live-data.mjs`, then compiles and indexes. `fetch-data` updates the five JSON files under `src/data/live/`; review those diffs before committing. A successful build is not a deployment receipt.
 
-`audit:site` crawls generated HTML for internal routes, fragments, local assets, one H1, production canonicals, descriptions and JSON-LD parse errors. It writes `research/built-site-audit-2026-10-28.json` and fails for route, asset or metadata errors in the winter cluster. It does not verify external availability, travel advice, search rankings or affiliate payouts.
+`node scripts/check-trip-planner.mjs` checks the real planning module using Astro’s installed compiler: seasonal/legacy templates, invalid shared state, limits, transport advice and affiliate identifiers.
+
+`audit:site` crawls generated HTML for internal routes, fragments, local assets, one H1, production canonicals, descriptions, duplicate indexable titles/canonicals and JSON-LD parse errors. It writes `research/built-site-audit-2026-10-28.json` and fails for route, asset or metadata errors in the winter cluster. It does not verify external availability, travel advice, search rankings or affiliate payouts.
 
 ## Main source areas
 
 - `src/pages/`: static pages and dynamic blog/hotel/trail/town routes.
 - `src/data/blogPosts.ts`: canonical listing metadata; `allBlogPosts` also retains redirected slugs for generated redirect pages.
-- `src/data/blogContent.ts`, `blogContent3.ts`: legacy article HTML. `winterGuideOverrides.ts`, `winterActivityOverrides.ts` and `winterTripOverrides.ts` replace reviewed winter articles, and their metadata updates flow into the listings.
+- `src/data/blogContent.ts`, `blogContent3.ts`: legacy article HTML. `winterGuideOverrides.ts`, `winterActivityOverrides.ts`, `winterTripOverrides.ts`, `winterResortOverrides.ts` and `winterSeasonOverrides.ts` replace reviewed winter articles, and their metadata updates flow into the listings.
 - `src/data/winterHub.ts`: winter guide directory, month advice and FAQs.
+- `src/data/tripPlanner.ts`: seasonal itinerary catalogue, seven templates, validated share-state and transport checks for the editable trip builder.
 - `src/data/skiPlanning.ts`: ski day planning suggestions and relative time allowances.
 - `src/data/towns.ts`: six destination guides.
 - `src/utils/dataFreshness.ts`: snapshot age checks and client expiry for the homepage and conditions page.
