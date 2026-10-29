@@ -11,7 +11,7 @@ This release continues the published winter expansion and practical journeys. It
 
 ## Verification
 
-Focused offline source, calendar and affiliate checks passed before integration. Full build, generated-site audit, browser behavior, CI and production receipts are recorded after execution. Build success alone does not establish hosting publication, search uplift or affiliate revenue.
+Final clean archive of code revision144e58a passed the full public-source build, generated-site audit (601 HTML documents,559 indexable, zero findings) and all eight offline checks. Browser checks passed family combined/empty/reset filters, pet base/season and transport advice, event search/invalid dates/reset,390px layouts, reviewed wellness integration and road missing-key fallbacks. Independent review findings about no-JS event expiry and future stored publication dates were fixed and regression-checked before that final build. Exact receipts are in family-events-clean-verification-2026-10-28.json. PR CI and hosting publication remain pending. Build success alone does not establish search uplift or affiliate revenue.
 
 ## Remaining full-goal work
 
