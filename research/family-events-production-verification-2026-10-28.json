@@ -1,0 +1,190 @@
+{
+  "checkedAt": "2026-10-29T06:24:25.219172+00:00",
+  "routes": [
+    {
+      "route": "/family-guide/",
+      "status": 200,
+      "title": "Banff Family Guide: Winter &amp; Summer Plans by Age | BanffBound",
+      "canonical": "https://banffbound.com/family-guide/",
+      "markers": {
+        "Banff Family Guide: Winter &amp; Summer Plans by Age": true,
+        "data-family-age": true,
+        "Norquay tubing": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:08 GMT",
+      "inlineConversionHasNavigationCallback": false,
+      "conversionDestinationPreserved": true,
+      "moduleAssets": []
+    },
+    {
+      "route": "/dog-friendly/",
+      "status": 200,
+      "title": "Dog-Friendly Banff: Plan Walks, Transport &amp; Pet Rooms | BanffBound",
+      "canonical": "https://banffbound.com/dog-friendly/",
+      "markers": {
+        "data-dog-base": true,
+        "dog-transport-advice": true,
+        "pet-designated": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:08 GMT"
+    },
+    {
+      "route": "/events/",
+      "status": 200,
+      "title": "Banff Events &amp; Winter Festivals: Town Calendar and News | BanffBound",
+      "canonical": "https://banffbound.com/events/",
+      "markers": {
+        "Banff events &amp; winter festivals": true,
+        "data-town-panel": true,
+        "SnowDays 2027": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:08 GMT"
+    },
+    {
+      "route": "/conditions/",
+      "status": 200,
+      "title": "Banff Conditions \u2014 Weather, Trail &amp; Road Report Links | BanffBound",
+      "canonical": "https://banffbound.com/conditions/",
+      "markers": {
+        "Local road section reports unavailable": true,
+        "Each section has its own source time": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:08 GMT"
+    },
+    {
+      "route": "/blog/banff-hot-springs-history/",
+      "status": 200,
+      "title": "Banff Hot Springs History: Indigenous Significance, Parks &amp; Bathing | BanffBound",
+      "canonical": "https://banffbound.com/blog/banff-hot-springs-history/",
+      "markers": {
+        "The story before the railway": true,
+        "Swimming is not allowed": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:08 GMT"
+    },
+    {
+      "route": "/blog/banff-wellness-retreats/",
+      "status": 200,
+      "title": "Wellness Retreats in Banff &amp; Kananaskis: Spas &amp; Planning | BanffBound",
+      "canonical": "https://banffbound.com/blog/banff-wellness-retreats/",
+      "markers": {
+        "Red Earth Spa": true,
+        "521 Banff Avenue": true,
+        "overnight guests": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:08 GMT"
+    },
+    {
+      "route": "/winter/",
+      "status": 200,
+      "title": "Banff Winter Guide: Ski Days, Snow Adventures &amp; Places to Stay | BanffBound",
+      "canonical": "https://banffbound.com/winter/",
+      "markers": {
+        "Winter with your dog": true,
+        "Town events and winter festivals": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:19 GMT"
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "title": "BanffBound \u2014 Banff National Park Trip Planner 2026 | Trails, Hotels &amp; Local Tips",
+      "canonical": "https://banffbound.com/",
+      "markers": {
+        "data-town-panel": true,
+        "Town": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:18 GMT"
+    },
+    {
+      "route": "/packing-list/",
+      "status": 200,
+      "title": "Banff Packing List: Winter, Summer &amp; Ski-Day Checklist | BanffBound",
+      "canonical": "https://banffbound.com/packing-list/",
+      "markers": {
+        "packing": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:18 GMT"
+    },
+    {
+      "route": "/car-free-banff/",
+      "status": 200,
+      "title": "Car-Free Banff: Winter Bases, Roam Routes &amp; Ski Shuttles | BanffBound",
+      "canonical": "https://banffbound.com/car-free-banff/",
+      "markers": {
+        "Roam": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:08 GMT"
+    },
+    {
+      "route": "/ski-day-planner/",
+      "status": 200,
+      "title": "Banff Ski Day Planner: Choose a Resort, Lessons &amp; Transport | BanffBound",
+      "canonical": "https://banffbound.com/ski-day-planner/",
+      "markers": {
+        "Ski": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:19 GMT"
+    },
+    {
+      "route": "/winter-stays/",
+      "status": 200,
+      "title": "Where to Stay in Banff in Winter: Ski Hotels, Suites &amp; Lodges | BanffBound",
+      "canonical": "https://banffbound.com/winter-stays/",
+      "markers": {
+        "1101l3MtWX": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 06:22:19 GMT"
+    }
+  ],
+  "verifiedAt": "2026-10-29T06:26:41.014360+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/3",
+  "pullRequestHead": "2536cf4ecad15587874dd2c1b18fa29c7dbc380f",
+  "mergeCommit": "a6f74bd7b9f4ee949f37b437e7202845fe50e4ce",
+  "pullRequestCI": {
+    "run": 40828524689,
+    "check": 123297070706,
+    "conclusion": "success"
+  },
+  "mainCI": {
+    "run": 40828651101,
+    "job": 123297470679,
+    "conclusion": "success"
+  },
+  "hosting": {
+    "provider": "DigitalOcean App Platform",
+    "deploymentId": "38eb4d64-22f2-4a16-890c-871231a16de3",
+    "status": "Success",
+    "liveDeployment": true,
+    "appHealth": "Healthy",
+    "sourceCommit": "a6f74bd7b9f4ee949f37b437e7202845fe50e4ce",
+    "startedAtUTC": "2026-10-29T06:20:53Z",
+    "wentLiveAtUTC": "2026-10-29T06:22:50Z",
+    "buildTimeDisplayed": "1m 46s total"
+  },
+  "tracking": {
+    "inlineTrackingBundleMatchesCleanBuild": true,
+    "sha256": "cfd78b17a06b355bbea1293752288adaef7998a9fafb47e1d43918d15e20a56e",
+    "bytes": 3743,
+    "conversionNavigationCallbackAbsent": true,
+    "conversionDestinationPreserved": true
+  },
+  "productionBrowserChecks": {
+    "family": "Under4 + winter + snow gives2 ideas: Fenlands public skate and age-appropriate lesson; native filters update query.",
+    "dog": "Large dog transport choice shows Roam/Parks lap-carrier restriction and private/local alternative.",
+    "events": "Town feeds unavailable after hosting8s timeout;0 feed result containers; explicit failed-source text and officialcalendar link. Christmas/SnowDays/IceMagic editorial cards remain visible."
+  },
+  "limitations": [
+    "Town RSS worked in clean local retrieval but timed out from DigitalOcean. No live destination-wide calendar or empty-calendar claim.",
+    "Road key remains unconfigured; official-source fallback, no fake current road reports.",
+    "Search and affiliate revenue impact is not established. Current GSC baseline stored locally under ignored research/private/.",
+    "Broader legacy/trail/property catalogue audit and true HTTP redirect work remain open."
+  ],
+  "cleanup": {
+    "ownedPreviewServersStopped": [
+      34921,
+      95007
+    ],
+    "unrelatedUserWorkPreserved": true
+  }
+}

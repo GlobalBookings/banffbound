@@ -1,11 +1,9 @@
-// Slug-level consolidations for /blog/<slug> using static redirect stubs.
-// Rendered as robots-noindex + canonical + instant meta-refresh stubs by
-// src/pages/blog/[slug].astro, and excluded from the sitemap in astro.config.mjs.
-//
-// Host note: this site runs on DigitalOcean App Platform (static files in object
-// storage) behind the Cloudflare CDN. It is NOT Cloudflare Pages, so the
-// public/_redirects file is ignored by the host. This map is the mechanism that
-// actually consolidates duplicate ski/winter pages into their canonical pillars.
+// Canonical /blog/ alias map. Native segment-prefix HTTP301 rules are configured
+// on DigitalOcean for these aliases; the public plan and live verification are
+// in research/redirect-alias-plan-2026-10-29.json and its verification receipt.
+// Static noindex/canonical/meta-refresh pages remain a deployment fallback.
+// The host ignores Cloudflare Pages _redirects files. Do not add unbounded raw
+// string-prefix rules: validate canonical isolation and real host semantics.
 
 export const blogRedirects = {
   // Duplicate viewpoint title/intent; retain the singular URL's existing history.

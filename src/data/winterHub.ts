@@ -1,4 +1,6 @@
 export const winterGuides = [
+  { title: 'Avalanche awareness for visitors', href: '/blog/banff-avalanche-safety', category: 'practical', tag: 'Terrain and training', desc: 'Understand what forecasts, rescue equipment and a summer route label can establish before planning a snow outing.' },
+  { title: 'New Year’s Eve in Banff', href: '/blog/banff-new-years-eve', category: 'slow', tag: 'Confirm the actual programme', desc: 'Plan tickets, a meal, transport and the return using current Town information and direct venue confirmations.' },
   { title: 'Plan a family visit', href: '/family-guide', category: 'family', tag: 'Match ages and interests', desc: 'Filter seasonal outings, check participation limits and choose a room layout for your group.' },
   { title: 'Winter with your dog', href: '/dog-friendly', category: 'practical', tag: 'Transport and pet rooms', desc: 'Check carrier rules, seasonal restrictions, off-leash areas and allocated pet-friendly rooms.' },
   { title: 'Town events and winter festivals', href: '/events', category: 'slow', tag: 'Check the programme', desc: 'Filter dated Town calendar copies and plan Christmas, SnowDays and Ice Magic visits.' },

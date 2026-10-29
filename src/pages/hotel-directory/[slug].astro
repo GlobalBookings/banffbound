@@ -13,7 +13,15 @@ export function getStaticPaths() {
 const { hotel } = Astro.props;
 const otherHotels = hotels.filter(h => h.slug !== hotel.slug && h.area === hotel.area).slice(0, 4);
 const GYG = 'QW960HO';
-const galleryImages = hotel.images?.length ? hotel.images : [hotel.image];
+const galleryImages = [...new Set([hotel.image, ...(hotel.images || [])].filter((image: unknown): image is string => typeof image === 'string' && image.trim().length > 0))];
+const primaryImage = galleryImages[0];
+const hasCoordinates = Number.isFinite(hotel.lat) && Number.isFinite(hotel.lng) && Math.abs(hotel.lat) <= 90 && Math.abs(hotel.lng) <= 180;
+const hasSourcedCoordinates = hasCoordinates && hotel.coordinateStatus === 'source-verified' && typeof hotel.coordinateSource === 'string' && hotel.coordinateSource.startsWith('https://');
+const isDestinationSearch = /\/Hotel-Search(?:[/?#]|$)/i.test(hotel.expediaUrl);
+const bookingLabel = isDestinationSearch ? 'Search the area on Expedia' : 'Check room options on Expedia';
+const bookingNote = isDestinationSearch
+  ? 'This opens destination search results, which can include other properties. Confirm the exact property, address and unit, then compare the selected room and final total.'
+  : 'Confirm the property address, selected room, final total and booking terms with the provider. Read current guest reviews there before choosing.';
 // Legacy descriptions can contain undated prices as well as the old rate fields.
 // Omit those sentences rather than presenting them as current room or fee quotes.
 const withoutPriceClaims = (text: string) => text.split(/(?<=[.!?])\s+/).filter(sentence => !/\$\s*\d/.test(sentence)).join(' ');
@@ -69,9 +77,9 @@ const hotelSchema = {
   '@type': 'Hotel',
   name: hotel.name,
   description: withoutPriceClaims(hotel.description),
-  image: hotel.image,
+  ...(primaryImage ? { image: new URL(primaryImage, 'https://banffbound.com').href } : {}),
   address: hotel.address ? { '@type': 'PostalAddress', streetAddress: hotel.address } : undefined,
-  ...(hotel.lat && hotel.lng ? { geo: { '@type': 'GeoCoordinates', latitude: hotel.lat, longitude: hotel.lng } } : {}),
+  ...(hasSourcedCoordinates ? { geo: { '@type': 'GeoCoordinates', latitude: hotel.lat, longitude: hotel.lng } } : {}),
 };
 ---
 
@@ -85,11 +93,11 @@ const hotelSchema = {
     ]} />
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(hotelSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(hotelSchema)} />
 
   <!-- Hero with gallery -->
-  <section class="hotel-hero">
-    <div class={`hero-gallery${galleryImages.length === 1 ? ' single-image' : ''}`}>
+  <section class:list={['hotel-hero', { 'no-photo': galleryImages.length === 0 }]}>
+    {galleryImages.length > 0 ? <div class={`hero-gallery${galleryImages.length === 1 ? ' single-image' : ''}`}>
       <div class="hero-main-img">
         <img src={galleryImages[0]} alt={hotel.name} loading="eager" fetchpriority="high" width="1200" height="800" />
       </div>
@@ -102,7 +110,7 @@ const hotelSchema = {
           ))}
         </div>
       )}
-    </div>
+    </div> : <div class="hero-photo-fallback container"><p>Property photo unavailable. Confirm the exact property and room with the linked source.</p></div>}
     <div class="hero-overlay">
       <div class="container">
         <span class="badge">{hotel.area}</span>
@@ -120,10 +128,10 @@ const hotelSchema = {
   <div class="booking-strip">
     <div class="container booking-strip-inner">
       <div class="booking-strip-price">
-        <span class="strip-label">Check your dates for a current total quote</span>
+        <span class="strip-label">{isDestinationSearch ? 'Destination search: confirm the exact property or unit' : 'Check your dates for a current total quote'}</span>
       </div>
       <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent">
-        Check Availability on Expedia →
+        {bookingLabel} →
       </a>
     </div>
   </div>
@@ -196,6 +204,9 @@ const hotelSchema = {
           <div class="content-section">
             <h2>Location & Getting Around</h2>
             <p><strong>Area:</strong> {hotel.area}</p>
+            {hotel.address && <p><strong>Listed address:</strong> {hotel.address}</p>}
+            <p class="location-note"><strong>{hasSourcedCoordinates ? 'Source-backed property locator.' : hasCoordinates ? 'Indicative map location.' : 'Map point unavailable.'}</strong> {hotel.coordinateNote}</p>
+            {hasSourcedCoordinates && <p class="location-source"><a href={hotel.coordinateSource} target="_blank" rel="noopener">Coordinate source &nearr;</a>{hotel.coordinateCheckedOn && <> · Checked <time datetime={hotel.coordinateCheckedOn}>{hotel.coordinateCheckedOn}</time></>}</p>}
             <div class="nearby-grid">
               {hotel.nearbyAttractions.map(a => (
                 <div class="nearby-item">
@@ -246,11 +257,11 @@ const hotelSchema = {
         <!-- Sidebar -->
         <div class="hotel-sidebar">
           <div class="booking-card">
-            <div class="booking-price">Get a quote for your dates</div>
+            <div class="booking-price">{isDestinationSearch ? 'Search stays in the area' : 'Get a quote for your dates'}</div>
             <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent booking-btn">
-              Check Availability →
+              {bookingLabel} →
             </a>
-            <p class="booking-note">Check available rooms, final total prices and current guest reviews with the booking provider. Affiliate link: BanffBound may earn a commission if you book.</p>
+            <p class="booking-note">{bookingNote} Affiliate link: BanffBound may earn a commission if you book.</p>
           </div>
 
           <div class="sidebar-card">
@@ -310,7 +321,7 @@ const hotelSchema = {
         <div class="grid grid-4">
           {otherHotels.map(h => (
             <a href={`/hotel-directory/${h.slug}`} class="card">
-              <img src={h.image} alt={h.name} class="card-image" style="height: 160px;" loading="lazy" />
+              {h.image?.trim() ? <img src={h.image} alt={h.name} class="card-image" style="height: 160px;" loading="lazy" /> : <div class="related-photo-fallback">Property photo unavailable</div>}
               <div class="card-body">
                 <span class="mini-stars">Editorial budget tier: {h.priceRange}</span>
                 <h3 style="font-size: 0.95rem;">{h.name}</h3>
@@ -330,6 +341,13 @@ const hotelSchema = {
   .facility-confirmation p { font-size: .88rem; margin-top: .7rem; color: var(--color-text-light); }
   .facility-confirmation a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
   .hotel-hero { position: relative; }
+  .hotel-hero.no-photo { background: var(--color-primary); color: white; }
+  .no-photo .hero-overlay { position: static; background: none; padding: 1rem 0 2rem; }
+  .hero-photo-fallback { padding-top: 2rem; font-size: .9rem; color: rgba(255,255,255,.85); }
+  .related-photo-fallback { height: 160px; display: grid; place-items: center; padding: 1rem; text-align: center; background: var(--color-bg-alt); color: var(--color-text-light); font-size: .85rem; }
+  .location-note { margin-top: 1rem; padding: 1rem; background: var(--color-bg-alt); border-radius: var(--radius); font-size: .9rem; }
+  .location-source { font-size: .85rem; }
+  .location-source a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
 
   .hero-gallery {
     display: grid;

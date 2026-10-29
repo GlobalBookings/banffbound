@@ -5,6 +5,7 @@ import { hotels, hotelAreas } from '../../data/hotels';
 
 const areas = [...new Set(hotels.map(h => h.area))];
 const types = [...new Set(hotels.map(h => h.type))].sort();
+const mappedHotelsCount = hotels.filter(h => Number.isFinite(h.lat) && Number.isFinite(h.lng) && h.coordinateStatus !== 'unavailable').length;
 const withoutPriceClaims = (text: string) => text.split(/(?<=[.!?])\s+/).filter(sentence => !/\$\s*\d/.test(sentence)).join(' ');
 const areaNotes: Record<string, string> = {
   'Yoho National Park': 'A separate national park in British Columbia. Check the exact lodge address, winter road access, meal arrangements and any guest parking shuttle; this is not a Lake Louise village stay.',
@@ -25,11 +26,15 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   lat: h.lat,
   lng: h.lng,
   img: h.image,
+  coordinateStatus: h.coordinateStatus,
+  coordinateSource: h.coordinateSource,
+  coordinateNote: h.coordinateNote,
+  destinationSearch: /\/Hotel-Search(?:[/?#]|$)/i.test(h.expediaUrl),
 })));
 ---
 
 <BaseLayout title="Banff Hotel Directory — Compare Hotels, Lodges & Suites" description="Explore hotels in Banff, Canmore and the Bow Valley with an interactive map. Filter by area, property type and editorial budget tier, then check current quotes.">
-  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Banff hotel directory', url: 'https://banffbound.com/hotel-directory/', mainEntity: { '@type': 'ItemList', numberOfItems: hotels.length, itemListElement: hotels.map((hotel, i) => ({ '@type': 'ListItem', position: i + 1, name: hotel.name, url: `https://banffbound.com/hotel-directory/${hotel.slug}/` })) } })} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Banff hotel directory', url: 'https://banffbound.com/hotel-directory/', mainEntity: { '@type': 'ItemList', numberOfItems: hotels.length, itemListElement: hotels.map((hotel, i) => ({ '@type': 'ListItem', position: i + 1, name: hotel.name, url: `https://banffbound.com/hotel-directory/${hotel.slug}/` })) } })} />
   <div class="container">
     <Breadcrumbs items={[{ label: 'Hotels' }]} />
   </div>
@@ -46,7 +51,8 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     <div class="container">
       <p class="directory-note">Budget tiers ($–$$$$) are editorial categories, not room quotes. Check the exact property address, selected room, final price and facility status for your dates. For a curated shortlist with winter transport tradeoffs, use the <a href="/winter-stays">winter stays finder</a>.</p>
       <!-- Filter bar -->
-      <div class="filter-bar" id="filters">
+      <noscript><p class="directory-note">All {hotels.length} hotel profiles are listed below. Search, filters and the map need JavaScript; each profile and its source notes remain available without it.</p></noscript>
+      <div class="filter-bar" id="filters" hidden>
         <div class="filter-group search-group">
           <input type="text" id="search-input" placeholder="Search hotels..." class="search-input" aria-label="Search hotels" />
         </div>
@@ -71,20 +77,23 @@ const hotelData = JSON.stringify(hotels.map(h => ({
             <option value="$$$$">$$$$ Luxury</option>
           </select>
         </div>
-        <button id="clear-filters" class="clear-btn" style="display:none;">Clear</button>
+        <button id="clear-filters" type="button" class="clear-btn" style="display:none;">Clear filters</button>
         <span class="result-count" id="result-count" role="status" aria-live="polite">{hotels.length} hotels</span>
       </div>
 
       <!-- View toggle -->
-      <div class="view-toggle">
-        <button id="grid-view-btn" class="view-btn active">Grid</button>
-        <button id="map-view-btn" class="view-btn">Map</button>
+      <p class="map-location-note" id="hotel-map-note">The map includes {mappedHotelsCount} retained listing locations. Pins have a documented coordinate source; hollow gold circles are indicative legacy points whose source is unverified. These are property locators, not parking entrances or arrival directions. Hotels without a retained point remain in the grid.</p>
+      <div class="view-toggle" id="view-controls" hidden>
+        <button id="grid-view-btn" type="button" class="view-btn active" aria-pressed="true" aria-controls="hotel-grid">Grid</button>
+        <button id="map-view-btn" type="button" class="view-btn" aria-pressed="false" aria-controls="map-container" aria-describedby="hotel-map-note">Map</button>
       </div>
+      <p id="map-status" class="map-status" role="status" aria-live="polite"></p>
 
       <!-- Interactive Map -->
       <div id="map-container" class="map-container" style="display:none;">
+        <p id="map-result-count" class="map-result-count" role="status" aria-live="polite"></p>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <div id="hotel-map" style="height: 500px; border-radius: var(--radius); overflow: hidden;"></div>
+        <div id="hotel-map" aria-label="Hotel listing map: source-backed pins and indicative circles" style="height: 500px; border-radius: var(--radius); overflow: hidden;"></div>
       </div>
 
       <!-- Hotel grid -->
@@ -94,7 +103,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
              data-area={hotel.area} data-price={hotel.priceRange}
              data-type={hotel.type}
              data-name={hotel.name.toLowerCase()} data-slug={hotel.slug}>
-            <img src={hotel.image} alt={hotel.name} class="hotel-card-img" loading="lazy" />
+            {hotel.image?.trim() ? <img src={hotel.image} alt={hotel.name} class="hotel-card-img" loading="lazy" /> : <div class="hotel-card-img hotel-photo-fallback">Property photo unavailable</div>}
             <div class="hotel-card-body">
               <div class="hotel-card-top">
                 <span class="hotel-price">Editorial budget tier: {hotel.priceRange}</span>
@@ -103,7 +112,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
               <p class="hotel-area">{hotel.area} · {hotel.type}</p>
               <p class="hotel-desc">{withoutPriceClaims(hotel.description).slice(0, 120)}...</p>
               <div class="hotel-card-footer">
-                <span class="hotel-avg">Check dates for a quote</span>
+                <span class="hotel-avg">{/\/Hotel-Search(?:[/?#]|$)/i.test(hotel.expediaUrl) ? 'Destination search available' : 'Check dates for a quote'}</span>
                 <span class="hotel-link">View Details →</span>
               </div>
             </div>
@@ -133,7 +142,8 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   </section>
 </BaseLayout>
 
-<script define:vars={{ hotelData }}>
+<script is:inline define:vars={{ hotelData }}>
+(() => {
   const allHotels = JSON.parse(hotelData);
   const searchInput = document.getElementById('search-input');
   const areaFilter = document.getElementById('area-filter');
@@ -146,10 +156,21 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   const mapViewBtn = document.getElementById('map-view-btn');
   const mapContainer = document.getElementById('map-container');
   const hotelGrid = document.getElementById('hotel-grid');
+  const mapStatus = document.getElementById('map-status');
+  const mapResultCount = document.getElementById('map-result-count');
 
   let map = null;
   let markers = [];
-  let leafletLoaded = false;
+  let leaflet = null;
+  let mapLoading = false;
+  let loadAttempt = 0;
+
+  function hasMapPoint(hotel) {
+    return Number.isFinite(hotel.lat) && Number.isFinite(hotel.lng)
+      && Math.abs(hotel.lat) <= 90 && Math.abs(hotel.lng) <= 180
+      && (hotel.coordinateStatus === 'indicative'
+        || (hotel.coordinateStatus === 'source-verified' && typeof hotel.coordinateSource === 'string' && hotel.coordinateSource.startsWith('https://')));
+  }
 
   function applyFilters() {
     const search = searchInput.value.toLowerCase().trim();
@@ -161,10 +182,9 @@ const hotelData = JSON.stringify(hotels.map(h => ({
 
     cards.forEach(card => {
       const matchSearch = !search || card.dataset.name.includes(search) || card.dataset.area.toLowerCase().includes(search);
-      const matchArea = area === 'all' || card.dataset.area === area;
-      const matchType = type === 'all' || card.dataset.type === type;
-      const matchPrice = price === 'all' || card.dataset.price === price;
-      const show = matchSearch && matchArea && matchType && matchPrice;
+      const show = matchSearch && (area === 'all' || card.dataset.area === area)
+        && (type === 'all' || card.dataset.type === type)
+        && (price === 'all' || card.dataset.price === price);
       card.style.display = show ? '' : 'none';
       if (show) {
         visible++;
@@ -172,10 +192,11 @@ const hotelData = JSON.stringify(hotels.map(h => ({
       }
     });
 
-    countEl.textContent = `${visible} hotel${visible !== 1 ? 's' : ''}`;
+    countEl.textContent = visible + ' hotel' + (visible !== 1 ? 's' : '');
     clearBtn.style.display = (search || area !== 'all' || type !== 'all' || price !== 'all') ? '' : 'none';
-
-    if (map && leafletLoaded) updateMapMarkers(visibleSlugs);
+    const mapped = allHotels.filter(h => visibleSlugs.has(h.slug) && hasMapPoint(h)).length;
+    mapResultCount.textContent = mapped + ' of ' + visible + ' matching hotels have a retained map point. Use Grid for the complete results.';
+    if (map) updateMapMarkers(visibleSlugs);
   }
 
   function clearAll() {
@@ -186,27 +207,16 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     applyFilters();
   }
 
-  // Read URL params and pre-set filters
   const params = new URLSearchParams(window.location.search);
   const paramArea = params.get('area');
   const paramType = params.get('type');
   const paramPrice = params.get('price');
-
-  if (paramArea) {
-    const opt = Array.from(areaFilter.options).find(o => o.value === paramArea);
-    if (opt) areaFilter.value = paramArea;
-  }
+  if (paramArea && Array.from(areaFilter.options).some(o => o.value === paramArea)) areaFilter.value = paramArea;
   if (paramType) {
     const opt = Array.from(typeFilter.options).find(o => o.value.toLowerCase() === paramType.toLowerCase());
     if (opt) typeFilter.value = opt.value;
   }
-  if (paramPrice && Array.from(priceFilter.options).some(option => option.value === paramPrice)) priceFilter.value = paramPrice;
-
-  if (paramArea || paramType || paramPrice) {
-    applyFilters();
-    // Scroll past hero to the filters
-    document.getElementById('filters')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  if (paramPrice && Array.from(priceFilter.options).some(o => o.value === paramPrice)) priceFilter.value = paramPrice;
 
   searchInput.addEventListener('input', applyFilters);
   areaFilter.addEventListener('change', applyFilters);
@@ -214,70 +224,169 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   priceFilter.addEventListener('change', applyFilters);
   clearBtn.addEventListener('click', clearAll);
 
-  // View toggle
-  gridViewBtn.addEventListener('click', () => {
+  function showGrid() {
     gridViewBtn.classList.add('active');
     mapViewBtn.classList.remove('active');
+    gridViewBtn.setAttribute('aria-pressed', 'true');
+    mapViewBtn.setAttribute('aria-pressed', 'false');
     hotelGrid.style.display = '';
     mapContainer.style.display = 'none';
-  });
+  }
+  gridViewBtn.addEventListener('click', showGrid);
 
   mapViewBtn.addEventListener('click', () => {
     mapViewBtn.classList.add('active');
     gridViewBtn.classList.remove('active');
+    mapViewBtn.setAttribute('aria-pressed', 'true');
+    gridViewBtn.setAttribute('aria-pressed', 'false');
     hotelGrid.style.display = 'none';
     mapContainer.style.display = '';
-    if (!leafletLoaded) loadMap();
+    if (map) {
+      map.invalidateSize();
+      applyFilters();
+    } else loadMap();
   });
 
   function loadMap() {
+    if (mapLoading) return;
+    mapLoading = true;
+    const attempt = ++loadAttempt;
+    mapStatus.textContent = 'Loading map…';
     const script = document.createElement('script');
+    const timer = window.setTimeout(() => failed(), 15000);
+    function failed() {
+      if (attempt !== loadAttempt) return;
+      loadAttempt++;
+      window.clearTimeout(timer);
+      mapLoading = false;
+      if (map) map.remove();
+      map = null;
+      markers = [];
+      leaflet = null;
+      script.remove();
+      showGrid();
+      mapStatus.textContent = 'The map could not load. All matching hotels remain available in the grid; choose Map to retry.';
+    }
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onerror = failed;
     script.onload = () => {
-      leafletLoaded = true;
-      initMap();
+      if (attempt !== loadAttempt) return;
+      window.clearTimeout(timer);
+      try {
+        if (!window.L) throw new Error('Map library unavailable');
+        leaflet = window.L;
+        initMap();
+        mapLoading = false;
+        mapStatus.textContent = '';
+      } catch {
+        failed();
+      }
     };
     document.head.appendChild(script);
   }
 
+  function popupFor(hotel) {
+    const popup = document.createElement('div');
+    popup.className = 'hotel-map-popup';
+    if (typeof hotel.img === 'string' && hotel.img.trim()) {
+      const img = document.createElement('img');
+      img.src = hotel.img;
+      img.alt = hotel.name;
+      img.className = 'hotel-popup-image';
+      popup.appendChild(img);
+    } else {
+      const fallback = document.createElement('p');
+      fallback.className = 'hotel-popup-photo-fallback';
+      fallback.textContent = 'Property photo unavailable';
+      popup.appendChild(fallback);
+    }
+    const name = document.createElement('strong');
+    name.textContent = hotel.name;
+    popup.appendChild(name);
+    const area = document.createElement('p');
+    area.textContent = hotel.area + ' · Editorial budget tier: ' + hotel.price;
+    popup.appendChild(area);
+    const location = document.createElement('p');
+    location.textContent = (hotel.coordinateStatus === 'source-verified' ? 'Source-backed property locator. ' : 'Indicative listing point. ') + (hotel.coordinateNote || 'Confirm the actual address and arrival directions.');
+    popup.appendChild(location);
+    if (hotel.coordinateStatus === 'source-verified' && hotel.coordinateSource.startsWith('https://')) {
+      const source = document.createElement('a');
+      source.href = hotel.coordinateSource;
+      source.target = '_blank';
+      source.rel = 'noopener';
+      source.textContent = 'Coordinate source';
+      popup.appendChild(source);
+    }
+    const quote = document.createElement('p');
+    quote.textContent = hotel.destinationSearch ? 'Destination search available; confirm the exact property.' : 'Check dates for a current quote';
+    popup.appendChild(quote);
+    const link = document.createElement('a');
+    link.href = '/hotel-directory/' + encodeURIComponent(hotel.slug);
+    link.textContent = 'View details →';
+    popup.appendChild(link);
+    return popup;
+  }
+
   function initMap() {
-    map = L.map('hotel-map').setView([51.22, -115.75], 10);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    map = leaflet.map('hotel-map').setView([51.22, -115.75], 10);
+    leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
       maxZoom: 18,
     }).addTo(map);
-
-    allHotels.forEach(h => {
-      if (!h.lat || !h.lng) return;
-      const marker = L.marker([h.lat, h.lng]).addTo(map);
-      marker.bindPopup(`
-        <div style="min-width:200px;">
-          <img src="${h.img}" alt="${h.name}" style="width:100%;height:100px;object-fit:cover;border-radius:4px;margin-bottom:6px;" />
-          <strong style="font-size:0.9rem;">${h.name}</strong><br/>
-          <span style="font-size:0.8rem;color:#666;">${h.area} · Editorial budget tier: ${h.price}</span><br/>
-          <span style="font-size:0.85rem;font-weight:600;color:#1a472a;">Check dates for a current quote</span>
-          <br/><a href="/hotel-directory/${h.slug}" style="font-size:0.8rem;color:#d4a843;font-weight:600;">View Details →</a>
-        </div>
-      `);
-      marker._hotelSlug = h.slug;
+    const indicativeIcon = leaflet.divIcon({
+      className: 'hotel-indicative-marker',
+      html: '<span class="hotel-indicative-dot" aria-hidden="true"></span>',
+      iconSize: [18, 18],
+      iconAnchor: [9, 9],
+    });
+    allHotels.filter(hasMapPoint).forEach(hotel => {
+      const indicative = hotel.coordinateStatus === 'indicative';
+      const marker = leaflet.marker([hotel.lat, hotel.lng], {
+        ...(indicative ? { icon: indicativeIcon } : {}),
+        title: hotel.name + (indicative ? ' — indicative listing point' : ' — source-backed property locator'),
+        alt: hotel.name + (indicative ? ' — indicative listing point' : ' — source-backed property locator'),
+        keyboard: true,
+      }).addTo(map);
+      marker.bindPopup(popupFor(hotel));
+      marker._hotelSlug = hotel.slug;
       markers.push(marker);
     });
-
     applyFilters();
+    map.invalidateSize();
   }
 
   function updateMapMarkers(visibleSlugs) {
-    markers.forEach(m => {
-      if (visibleSlugs.has(m._hotelSlug)) {
-        m.addTo(map);
-      } else {
-        m.remove();
+    const visiblePoints = [];
+    markers.forEach(marker => {
+      if (visibleSlugs.has(marker._hotelSlug)) {
+        marker.addTo(map);
+        visiblePoints.push(marker.getLatLng());
       }
+      else marker.remove();
     });
+    if (visiblePoints.length && mapContainer.style.display !== 'none') {
+      map.fitBounds(leaflet.latLngBounds(visiblePoints), { padding: [24, 24], maxZoom: 13 });
+    }
   }
+
+  document.getElementById('filters').hidden = false;
+  document.getElementById('view-controls').hidden = false;
+  applyFilters();
+})();
 </script>
 
 <style>
+  .filter-bar[hidden], .view-toggle[hidden] { display: none !important; }
+  .map-location-note { max-width: 950px; margin-bottom: 1rem; font-size: .85rem; color: var(--color-text-light); }
+  .map-status { font-size: .85rem; color: var(--color-primary); }
+  .map-status:empty { display: none; }
+  .map-result-count { padding: 1rem; margin: 0; font-size: .85rem; background: var(--color-bg-alt); }
+  .hotel-photo-fallback { display: grid; place-items: center; padding: 1rem; text-align: center; background: var(--color-bg-alt); color: var(--color-text-light); font-size: .85rem; }
+  :global(.hotel-indicative-dot) { display: block; width: 18px; height: 18px; border: 3px solid #9b6d0b; border-radius: 50%; background: rgba(212,168,67,.15); }
+  :global(.hotel-map-popup) { min-width: 190px; max-width: 260px; font-size: .8rem; line-height: 1.45; }
+  :global(.hotel-map-popup p) { margin: .5rem 0; }
+  :global(.hotel-popup-image) { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; margin-bottom: 6px; }
+  :global(.hotel-popup-photo-fallback) { padding: 1rem; background: #f3f4ef; color: #465149; text-align: center; }
   .directory-note { max-width: 950px; margin-bottom: 1.5rem; color: var(--color-text-light); font-size: .88rem; }
   .directory-note a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
   .filter-bar {

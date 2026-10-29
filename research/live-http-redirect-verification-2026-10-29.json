@@ -1,0 +1,894 @@
+{
+  "checkedAt": "2026-10-29T16:10:39.381Z",
+  "origin": "https://banffbound.com",
+  "mappings": 40,
+  "checks": 100,
+  "passed": 100,
+  "results": [
+    {
+      "path": "/blog/banff-views",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-view/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-view/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-views/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-view/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-view/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-big-3",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-big-3/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-3-ski",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-3-ski/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-three-ski",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-three-ski/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-big-three",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-big-three/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-big-3-alberta",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-big-3-alberta/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-big-3",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-big-3/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-banff",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-banff/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-hills",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-hills/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-areas",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-areas/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big3-ski-resort",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big3-ski-resort/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-resorts",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-resorts/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-slopes",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-slopes/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-area",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-area/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-mountains",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-mountains/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-fields",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-fields/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-trips",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-trips/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-3-ski-resorts",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-3-ski-resorts/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-3-banff",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-3-banff/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-three-banff",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/big-three-banff/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-big-3",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-big-3/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/norquay-ski-resort",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/norquay-ski-resort/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/mont-norquay",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/mont-norquay/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/mt-norquay",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/mt-norquay/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/mount-norquay-banff",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/mount-norquay-banff/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/norquay-ski-shuttle",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/norquay-ski-shuttle/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/sunshine-ski-resort-accommodation",
+      "status": 301,
+      "location": "https://banffbound.com/blog/sunshine-village-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/sunshine-village-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/sunshine-ski-resort-accommodation/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/sunshine-village-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/sunshine-village-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-sunshine-lodging",
+      "status": 301,
+      "location": "https://banffbound.com/blog/sunshine-village-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/sunshine-village-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-sunshine-lodging/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/sunshine-village-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/sunshine-village-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/sunshine-ski-in-ski-out",
+      "status": 301,
+      "location": "https://banffbound.com/blog/sunshine-village-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/sunshine-village-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/sunshine-ski-in-ski-out/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/sunshine-village-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/sunshine-village-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/sunshine-mountain-lodge",
+      "status": 301,
+      "location": "https://banffbound.com/blog/sunshine-village-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/sunshine-village-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/sunshine-mountain-lodge/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/sunshine-village-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/sunshine-village-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-accommodation",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-in-ski-out/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-in-ski-out/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-accommodation/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-in-ski-out/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-in-ski-out/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-resort-accommodations",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-in-ski-out/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-in-ski-out/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-resort-accommodations/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-in-ski-out/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-in-ski-out/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-touring",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-touring/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-touring-canada",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-touring-canada/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-touring-canmore",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/ski-touring-canmore/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/backcountry-ski-touring",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/backcountry-ski-touring/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/back-country-ski-tours",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/back-country-ski-tours/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/backcountry-skiing-day-tours-canadian-rockies",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/backcountry-skiing-day-tours-canadian-rockies/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ski-touring/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ski-touring/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-icewalk",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ice-walk-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ice-walk-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-icewalk/",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ice-walk-guide/",
+      "kind": "alias",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ice-walk-guide/",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-view/",
+      "status": 200,
+      "kind": "canonical-target",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-skiing-guide/",
+      "status": 200,
+      "kind": "canonical-target",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/blog/mt-norquay-guide/",
+      "status": 200,
+      "kind": "canonical-target",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/blog/sunshine-village-guide/",
+      "status": 200,
+      "kind": "canonical-target",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-in-ski-out/",
+      "status": 200,
+      "kind": "canonical-target",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski-touring/",
+      "status": 200,
+      "kind": "canonical-target",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ice-walk-guide/",
+      "status": 200,
+      "kind": "canonical-target",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-views/?utm_source=redirect-check&probe=a%20b",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-view/?utm_source=redirect-check&probe=a%20b",
+      "kind": "query",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-view/?utm_source=redirect-check&probe=a%20b",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-ski/?utm_source=redirect-check&probe=a%20b",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-skiing-guide/?utm_source=redirect-check&probe=a%20b",
+      "kind": "query",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-skiing-guide/?utm_source=redirect-check&probe=a%20b",
+      "passed": true
+    },
+    {
+      "path": "/blog/mt-norquay/?utm_source=redirect-check&probe=a%20b",
+      "status": 301,
+      "location": "https://banffbound.com/blog/mt-norquay-guide/?utm_source=redirect-check&probe=a%20b",
+      "kind": "query",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/mt-norquay-guide/?utm_source=redirect-check&probe=a%20b",
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-icewalk/?utm_source=redirect-check&probe=a%20b",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-ice-walk-guide/?utm_source=redirect-check&probe=a%20b",
+      "kind": "query",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-ice-walk-guide/?utm_source=redirect-check&probe=a%20b",
+      "passed": true
+    },
+    {
+      "path": "/blog/mt-norquay-road/",
+      "status": 200,
+      "kind": "canonical-prefix-overlap",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "kind": "control",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/winter/",
+      "status": 200,
+      "kind": "control",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/family-guide/",
+      "status": 200,
+      "kind": "control",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/trail-map/",
+      "status": 200,
+      "kind": "control",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/",
+      "status": 200,
+      "kind": "control",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/manifest.json",
+      "status": 200,
+      "kind": "control",
+      "actualStatus": 200,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-views-check/",
+      "status": 404,
+      "kind": "sibling-control",
+      "actualStatus": 404,
+      "actualLocation": null,
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-views/child",
+      "status": 301,
+      "location": "https://banffbound.com/blog/banff-view/",
+      "kind": "documented-descendant",
+      "actualStatus": 301,
+      "actualLocation": "https://banffbound.com/blog/banff-view/",
+      "passed": true
+    }
+  ]
+}

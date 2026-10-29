@@ -3,7 +3,7 @@ const CAMREF = '1101l3MtWX';
 export interface Hotel {
   slug: string;
   name: string;
-  stars: number;
+  stars?: number;
   area: 'Downtown Banff' | 'Tunnel Mountain' | 'Lake Louise' | 'Canmore' | 'Bow Valley' | 'Castle Junction' | 'Yoho National Park';
   type: 'Hotel' | 'Lodge' | 'Resort' | 'Hostel' | 'B&B' | 'Inn' | 'Motel' | 'Chalets';
   priceRange: '$' | '$$' | '$$$' | '$$$$';
@@ -13,8 +13,12 @@ export interface Hotel {
   description: string;
   highlights: string[];
   nearbyAttractions: string[];
-  lat?: number;
-  lng?: number;
+  lat?: number | null;
+  lng?: number | null;
+  coordinateStatus: 'source-verified' | 'indicative' | 'unavailable';
+  coordinateSource?: string;
+  coordinateCheckedOn?: string;
+  coordinateNote?: string;
   // Extended content fields
   overview?: string;
   roomFeatures?: string[];
@@ -37,22 +41,11 @@ export interface Hotel {
   facilityNote?: string;
 }
 
-// Area center coordinates for hotels without specific coords
-const areaCenters: Record<string, [number, number]> = {
-  'Downtown Banff': [51.1784, -115.5708],
-  'Tunnel Mountain': [51.1830, -115.5550],
-  'Lake Louise': [51.4254, -116.1773],
-  'Canmore': [51.0884, -115.3585],
-  'Bow Valley': [51.2500, -115.9000],
-  'Castle Junction': [51.2640, -115.9230],
-  'Yoho National Park': [51.4430, -116.5340],
-};
-
 function expLink(path: string) {
   return `https://www.expedia.ca/${path}?camref=${CAMREF}`;
 }
 
-export const hotels: Hotel[] = [
+const hotelRecords: Omit<Hotel, 'coordinateStatus'>[] = [
   {
     slug: 'fairmont-banff-springs',
     name: 'Fairmont Banff Springs',
@@ -1832,40 +1825,31 @@ export const hotels: Hotel[] = [
     ],
   },
   {
-    slug: 'hi-lake-louise-alpine-centre',
-    name: 'HI-Lake Louise Alpine Centre',
-    stars: 1,
-    area: 'Lake Louise',
-    type: 'Hostel',
-    priceRange: '$',
-    avgPrice: 'From $40/night',
+    slug: "hi-lake-louise-alpine-centre",
+    name: "HI-Lake Louise Alpine Centre",
+    area: "Lake Louise",
+    type: "Hostel",
+    priceRange: "$",
+    avgPrice: "Check your dates",
     expediaUrl: expLink('Lake-Louise-Hotels-HI-Lake-Louise-Alpine-Centre.h7700312.Hotel-Information'),
-    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
+    image: "/images/hotels/hi-lake-louise-official-exterior-2026-10-28.webp",
     lat: 51.426,
     lng: -116.1795,
-    description: 'Hostelling International\'s Lake Louise location offering dorm beds and private rooms in a stunning mountain setting. Features a large shared kitchen, fireplace lounge, and cafe. The most affordable way to stay near Lake Louise and access world-class trails.',
-    highlights: ['Dorm beds from $40', 'Private rooms available', 'Shared kitchen', 'Fireplace lounge', 'Cafe on-site', 'Bill Peyto\'s Cafe & Bar'],
-    nearbyAttractions: ['Lake Louise (10 min drive)', 'Lake Louise Ski Resort (10 min drive)', 'Moraine Lake (20 min drive)'],
-    overview: 'HI-Lake Louise Alpine Centre is Hostelling International\'s flagship mountain hostel, offering 164 beds in a stunning timber-frame building surrounded by the peaks of Lake Louise. The hostel caters to both budget-conscious backpackers in shared dorms and those seeking more privacy in small private rooms. The large communal kitchen is well-equipped for self-catering, and the cozy fireplace lounge is the perfect place to swap trail stories with fellow travellers. Bill Peyto\'s Cafe on-site serves affordable meals and is a popular gathering spot. This is the most affordable way to stay in the Lake Louise area while being within easy reach of world-class hiking and skiing.',
-    roomFeatures: ['Shared dorm rooms (4-6 beds)', 'Private rooms available', 'Bunk beds with reading lights', 'Locker storage in dorms', 'Shared bathrooms', 'Bed linens provided', 'No TVs in rooms'],
-    amenities: ['Bill Peyto\'s Cafe & Bar', 'Large communal kitchen', 'Fireplace lounge', 'Outdoor deck with mountain views', 'Gear drying room', 'Ski/board storage', 'Laundry facilities', 'Free parking', 'WiFi in common areas', 'Library and games'],
-    checkIn: '15:00',
-    checkOut: '11:00',
-    reviewScore: 7.6,
-    reviewLabel: 'Good',
-    reviewCount: 2100,
-    guestLoves: ['Most affordable Lake Louise accommodation', 'Great communal atmosphere', 'Bill Peyto\'s Cafe', 'Surrounded by hiking trails'],
-    dining: 'Bill Peyto\'s Cafe serves affordable breakfasts, lunches, and dinners with a licensed bar. The large communal kitchen allows self-catering with cookware, dishes, and utensils provided. A small convenience shop sells basic groceries and snacks.',
-    policies: 'HI membership provides discounts; non-members welcome at slightly higher rate. Quiet hours 11pm-7am. No pets. Dorms are mixed-gender unless specified. Free cancellation 48 hours before arrival. Towel rental available.',
-    address: 'Village Road, Lake Louise, AB T0L 1E0',
-    totalRooms: 164,
-    yearBuilt: '1992',
-    lastRenovated: '2017',
-    images: [
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
-    ],
+    description: "A year-round hostel at 203 Village Road in Lake Louise village, with shared rooms, private and family categories, communal kitchens and Bill Peyto’s Café. The village, lakeshore and ski resort are separate locations; plan transfers for each outing.",
+    highlights: ["Shared and private room categories", "Communal kitchens", "Bill Peyto’s Café", "Fireplace lounge", "Ski storage and waxing room", "Family rooms: check age and bed requirements"],
+    nearbyAttractions: ["Lake Louise village", "Lake Louise lakeshore: arrange onward transport", "Lake Louise Ski Resort: confirm seasonal transport", "Moraine Lake: seasonal access arrangements"],
+    overview: "HI Lake Louise offers both shared accommodation and private room categories. Check the exact bathroom description: an ensuite WC does not establish that the room has a private shower. Families should confirm bed layout, any loft access and the hostel’s age rules before choosing a room. Communal kitchens, a lounge and equipment storage support a self-catering stay; a village address does not put the hostel at the lake or on the ski slopes.",
+    roomFeatures: ["Shared 4–6-bed room categories", "Private and family room categories", "Some categories are labelled Ensuite WC: confirm shower arrangements", "Confirm bed layout and access needs with the hostel", "Lockers and luggage storage"],
+    amenities: ["Communal kitchens", "Bill Peyto’s Café", "Fireplace lounge", "Ski storage and waxing room", "Laundry facilities: charges apply", "WiFi and parking", "Sauna: confirm availability"],
+    checkIn: "From 4:00 PM",
+    checkOut: "Before 11:00 AM",
+    dining: "Bill Peyto’s Café is at the hostel, and shared kitchens support self-catering. Check current café hours and what your selected booking includes.",
+    policies: "The primary booker must be at least 18. Guests under 18 must travel with a parent or guardian; children 12 and under require a private room or privatized dorm. Pets are not accepted; the published terms except certified guide or service dogs. Direct bookings receive the member rate, with membership included. Cancellation rules depend on the booking channel and selected rate.",
+    address: "203 Village Road, Lake Louise, Alberta",
+    officialUrl: "https://hihostels.ca/en/hostels/hi-lake-louise",
+    checkedOn: "2026-10-28",
+    facilityNote: "Confirm the precise room, bathroom, bed access and family eligibility before paying. Ask the hostel and transport operator about the current ski shuttle; do not assume it serves the lakeshore or Moraine Lake. The existing Expedia property ID is retained but could not be independently verified in this review; use the official hostel site to confirm the property and booking details.",
+    images: ["/images/hotels/hi-lake-louise-official-exterior-2026-10-28.webp", "/images/hotels/hi-lake-louise-official-lounge-2026-10-28.webp"],
   },
   {
     slug: 'num-ti-jah-lodge',
@@ -2117,40 +2101,32 @@ export const hotels: Hotel[] = [
     ],
   },
   {
-    slug: 'douglas-fir-resort',
-    name: 'Douglas Fir Resort and Chalets',
+    slug: "douglas-fir-resort",
+    name: "Douglas Fir Resort and Chalets",
     stars: 3,
-    area: 'Tunnel Mountain',
-    type: 'Resort',
-    priceRange: '$$',
-    avgPrice: 'From $200/night',
-    expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
+    area: "Tunnel Mountain",
+    type: "Resort",
+    priceRange: "$$",
+    avgPrice: "Check your dates",
+    expediaUrl: expLink('Banff-Hotels-Douglas-Fir-Resort-And-Chalets.h904421.Hotel-Information'),
+    image: "/images/hotels/douglas-fir-official-winter-exterior-2026-10-28.jpg",
     lat: 51.1835,
     lng: -115.5545,
-    description: 'Family-friendly resort on Tunnel Mountain with loft-style suites featuring full kitchens and fireplaces. The highlight is the massive indoor waterslide complex with pools and hot tubs — a paradise for kids. A great-value family option in a quiet forest setting.',
-    highlights: ['Indoor waterslide complex', 'Full kitchen suites', 'Fireplaces', 'Loft-style rooms', 'BBQ areas', 'Free parking'],
-    nearbyAttractions: ['Tunnel Mountain trail (2 min walk)', 'Downtown Banff (5 min drive)', 'Hoodoos (5 min drive)'],
-    overview: 'Douglas Fir Resort and Chalets is a beloved family resort on Tunnel Mountain Road offering 133 loft-style units with full kitchens and fireplaces in a quiet forest setting. The undisputed star attraction is the massive indoor waterslide and pool complex, which includes two waterslides, a large swimming pool, a toddler pool, hot tubs, and a steam room — making rainy or cold days just as fun as sunny ones. The resort\'s Tunnel Mountain location provides direct trail access and a peaceful atmosphere while being just a short drive from downtown Banff. The loft-style units with upper sleeping areas and full kitchens make this one of the best-value family accommodations in the Banff area.',
-    roomFeatures: ['Loft-style units with upper bedrooms', 'Full kitchens with dishwasher', 'Wood-burning fireplaces', 'Free WiFi', 'Flat-screen TV', 'Living and dining areas', 'Private balcony or patio', 'Sleeper sofas'],
-    amenities: ['Indoor waterslide complex (2 slides)', 'Swimming pool and toddler pool', 'Hot tubs and steam room', 'BBQ and picnic areas', 'Playground', 'Free parking', 'Guest laundry', 'Tunnel Mountain trail access', 'Ski storage', 'Front desk', 'Ice machine', 'Firewood available'],
-    checkIn: '16:00',
-    checkOut: '11:00',
-    reviewScore: 8.1,
-    reviewLabel: 'Very Good',
-    reviewCount: 2200,
-    guestLoves: ['Indoor waterslide complex', 'Full kitchens save on dining costs', 'Fireplaces for cozy evenings', 'Forest setting on Tunnel Mountain', 'Excellent value for families'],
-    dining: 'No on-site restaurant, but every unit has a full kitchen with dishwasher for complete meal preparation. The resort provides BBQ areas for outdoor cooking. Downtown Banff restaurants are a 5-minute drive away.',
-    policies: 'Pet-friendly units available with deposit. Children very welcome — family-oriented property. Free cancellation typically 48 hours. Free parking. Complimentary firewood for in-room fireplaces.',
-    address: 'Tunnel Mountain Road, Banff, AB T1L 1B3',
-    totalRooms: 133,
-    yearBuilt: '1988',
-    lastRenovated: '2019',
-    images: [
-      'https://images.unsplash.com/photo-1548777123-e216912df7d8?w=800&q=80',
-      'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
-    ],
+    description: "Condo-style accommodation on Tunnel Mountain Drive with studios, condos, lofts, A-frame chalets and specialty suites. Kitchens and fireplaces are central features, but layouts differ. The guest waterpark has a dated maintenance closure; confirm facility status before booking.",
+    highlights: ["Studios, condos, lofts and chalets", "Kitchens: check selected layout", "Fireplace type varies by unit", "Guest waterpark: check maintenance notice", "Indoor play area", "Banff local Roam guest passes"],
+    nearbyAttractions: ["Tunnel Mountain area", "Banff town centre: local transport or drive", "Hoodoos viewpoints: check route conditions"],
+    overview: "Choose the room category before comparing rates: a studio, loft, condo and A-frame chalet have different sleeping arrangements and access. The resort advertises kitchens, an indoor play area and a waterpark for registered guests. It is above Banff town on Tunnel Mountain Drive, rather than on Banff Avenue. Local Roam guest passes do not establish transport to every ski hill, Lake Louise or an airport.",
+    roomFeatures: ["Studios, condos, lofts, A-frame chalets and specialty suites", "Kitchens: confirm equipment in the selected category", "Wood, gas or electric fireplaces depending on category", "Loft categories have an upper sleeping area: confirm stair access", "WiFi", "Playpens on request for children up to age 3; the FAQ says no cribs"],
+    amenities: ["Guest waterpark with two waterslides and wading pool: check closure notice", "Indoor and outdoor hot tubs: confirm current access", "Indoor play area", "Fitness room: check with the front desk", "Common barbecue area", "Banff local Roam guest passes", "Assigned underground parking for main-lodge units; confirm other unit parking", "Limited dog-friendly outside condos: advance phone approval required"],
+    checkIn: "From 4:00 PM",
+    checkOut: "Before 11:00 AM",
+    dining: "Use the kitchen in the selected unit for self-catering, and check which cooking equipment is included. The resort also lists common barbecue facilities; check seasonal availability and current restrictions.",
+    policies: "Book dog-friendly condos by phone in advance; the official policy allows a maximum of two dogs in approved outside units, with charges and conditions. Ordinary online room inventory does not establish pet acceptance. Check the selected rate’s deposit and cancellation terms. Children 17 and under must be supervised in the waterpark by an adult aged at least 18.",
+    address: "525 Tunnel Mountain Drive, Banff, Alberta",
+    officialUrl: "https://douglasfir.com/",
+    checkedOn: "2026-10-28",
+    facilityNote: "Checked 28 October 2026: the official waterpark page advertises a 26–30 October maintenance closure; Expedia identifies the closure year as 2026. Confirm reopening and which pools, hot tubs and slides are operating for your dates. The separate guest-pool FAQ also says closed. Published waterpark hours vary between official pages, so ask the resort for the current schedule.",
+    images: ["/images/hotels/douglas-fir-official-winter-exterior-2026-10-28.jpg", "/images/hotels/douglas-fir-official-room-2026-10-28.jpg"],
   },
   {
     slug: 'elkhorn-lodge',
@@ -2333,40 +2309,27 @@ export const hotels: Hotel[] = [
     ],
   },
   {
-    slug: 'banff-boundary-lodge',
-    name: 'Banff Boundary Lodge',
-    stars: 2,
-    area: 'Downtown Banff',
-    type: 'Lodge',
-    priceRange: '$',
-    avgPrice: 'From $130/night',
-    expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
-    lat: 51.105,
-    lng: -115.392,
-    description: 'Value lodge in Harvie Heights, just outside the Banff park gates. Offers simple, clean rooms at some of the lowest rates in the area. No park pass needed to stay here, though you\'ll need one for day trips into the park. Free parking and easy highway access.',
-    highlights: ['Lowest area rates', 'No park pass needed to stay', 'Free parking', 'Highway access', 'Clean rooms', 'Near park gate'],
-    nearbyAttractions: ['Banff park gate (2 min drive)', 'Downtown Banff (5 min drive)', 'Canmore (10 min drive)'],
-    overview: 'Banff Boundary Lodge is a budget-friendly accommodation in Harvie Heights, a tiny community located just outside the Banff National Park eastern gates on the Trans-Canada Highway. The lodge offers some of the lowest nightly rates in the greater Banff area, making it an attractive option for budget travellers who don\'t mind a short 5-minute drive into town. A key advantage is that no park pass is needed simply to stay at the lodge, though one is required for day trips into Banff National Park. The rooms are simple and clean with free parking and easy highway access to both Banff and Canmore.',
-    roomFeatures: ['Basic clean rooms', 'Free WiFi', 'TV', 'Private bathroom', 'Coffee maker', 'Heating', 'Non-smoking rooms available'],
-    amenities: ['Free parking', 'No park pass needed to stay', 'Highway access to Banff and Canmore', 'Quiet location', 'Mountain views', 'Ice machine', 'Front desk information'],
-    checkIn: '15:00',
-    checkOut: '11:00',
-    reviewScore: 6.5,
-    reviewLabel: 'Pleasant',
-    reviewCount: 520,
-    guestLoves: ['Lowest rates near Banff', 'No park pass needed to stay', 'Free parking', 'Easy highway access'],
-    dining: 'No on-site restaurant. Downtown Banff restaurants are a 5-minute drive. Canmore restaurants are a 10-minute drive. A small convenience store may be available nearby.',
-    policies: 'No pets. Children welcome. Free cancellation typically 48 hours. Free parking included. National park pass required for trips into Banff National Park.',
-    address: 'Harvie Heights, AB T1W 2W2',
-    totalRooms: 25,
-    yearBuilt: '1975',
-    lastRenovated: '2015',
-    images: [
-      'https://banfflakelouise.bynder.com/m/3f8ff699c7f23da5/1500x915_jpg-2025_CanoeHotel_BalconySunrise_BeautifulWorldMedia-2.jpg',
-      'https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=800&q=80',
-      'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
-    ],
+    slug: "banff-boundary-lodge",
+    name: "Banff Boundary Lodge",
+    area: "Bow Valley",
+    type: "Lodge",
+    priceRange: "$",
+    avgPrice: "Check your dates",
+    expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Harvie+Heights%2C+Alberta&camref=${CAMREF}`,
+    image: "",
+    lat: 51.125783,
+    lng: -115.3874,
+    description: "Condominium lodging at 1000 Harvie Heights Road in Harvie Heights, a separate community near Canmore and the eastern entrance to Banff National Park. This is outside Banff town. Confirm the exact unit, booking manager and arrival instructions before reserving.",
+    highlights: ["Harvie Heights location", "Outside Banff town", "Condominium property", "Unit-specific facilities and policies", "Check arrival and transport arrangements"],
+    nearbyAttractions: ["Harvie Heights", "Canmore: arrange onward transport", "Banff National Park: plan a separate journey"],
+    overview: "The Municipal District of Bighorn identifies Banff Boundary Lodge in Harvie Heights, and PEKA lists the condominium property. The name should not be read as a downtown Banff address. This review could not verify a current property-wide accommodation website, facility list or booking policy. Treat the selected rental listing as the source for the precise unit, manager, sleeping layout, kitchen equipment and access arrangements.",
+    dining: "Confirm the selected unit’s cooking facilities and plan meals in advance. This review did not verify a property-wide restaurant or included breakfast.",
+    policies: "Get written confirmation for the exact unit’s pet rules, access needs, maximum occupancy, parking, check-in process, cancellation terms and any charges. Do not infer a single policy across different rental listings or assume a Banff-town hotel shuttle will collect here.",
+    address: "1000 Harvie Heights Road, Harvie Heights, Alberta",
+    officialUrl: "https://peka.ab.ca/client-portal-condo/boundary",
+    checkedOn: "2026-10-28",
+    facilityNote: "The official link is a condominium-management listing, not a verified reservation desk. Current facilities and a usable official property photo could not be verified. The Expedia link opens a Harvie Heights destination search, not a confirmed Banff Boundary Lodge unit or property listing. Check the exact property address and unit before paying.",
+    images: [],
   },
   {
     slug: 'rundle-chalets',
@@ -3103,40 +3066,30 @@ export const hotels: Hotel[] = [
     ],
   },
   {
-    slug: 'rundle-mountain-lodge',
-    name: 'Rundle Mountain Lodge',
+    slug: "rundle-mountain-lodge",
+    name: "Rundle Mountain Lodge",
     stars: 2,
-    area: 'Canmore',
-    type: 'Lodge',
-    priceRange: '$',
-    avgPrice: 'From $130/night',
-    expediaUrl: `https://www.expedia.ca/Hotel-Search?destination=Canmore%2C+Alberta&camref=${CAMREF}`,
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
+    area: "Canmore",
+    type: "Lodge",
+    priceRange: "$",
+    avgPrice: "Check your dates",
+    expediaUrl: expLink('Canmore-Hotels-Rundle-Mountain-Lodge.h4371137.Hotel-Information'),
+    image: "/images/hotels/rundle-mountain-travel-alberta-entrance-2026-10-28.jpg",
     lat: 51.0908,
     lng: -115.3598,
-    description: 'Affordable lodge in Canmore with views of Mount Rundle. Simple rooms and kitchenette units with outdoor hot tub and BBQ area. A straightforward, budget-conscious choice for travellers who want to save on accommodation and spend on experiences.',
-    highlights: ['Mount Rundle views', 'Kitchenette units', 'Outdoor hot tub', 'BBQ area', 'Budget-friendly', 'Free parking'],
-    nearbyAttractions: ['Canmore downtown (5 min drive)', 'Banff (20 min drive)', 'Grassi Lakes (10 min drive)'],
-    overview: 'Rundle Mountain Lodge is a budget-friendly property on Bow Valley Trail with views of the iconic Mount Rundle. Simple rooms and kitchenette units offer basic comfort at affordable rates, while the outdoor hot tub and BBQ area add a touch of mountain hospitality. The lodge caters to practical travellers — skiers, hikers, and road-trippers — who prioritize spending on experiences over accommodation. It\'s a straightforward, honest lodge that delivers clean rooms and a good night\'s sleep without pretension. The views of Mount Rundle from the property are genuinely impressive for the price.',
-    roomFeatures: ['Kitchenette (select units)', 'Mini-fridge', 'Microwave', 'Coffee maker', 'Flat-screen TV', 'Free WiFi', 'Private bathroom'],
-    amenities: ['Outdoor hot tub', 'BBQ area', 'Free parking', 'Free WiFi', 'Ski storage', 'Guest laundry', 'Mountain views', 'Picnic tables'],
-    checkIn: '3:00 PM',
-    checkOut: '11:00 AM',
-    reviewScore: 7.0,
-    reviewLabel: 'Good',
-    reviewCount: 823,
-    guestLoves: ['Mount Rundle views', 'Affordable rates', 'Outdoor hot tub', 'Friendly staff', 'Clean rooms'],
-    dining: 'No on-site restaurant or breakfast. Kitchenette units have basic cooking facilities. Several restaurants within driving distance on Bow Valley Trail.',
-    policies: 'Pets allowed in select rooms with fee. Children welcome. Simple cancellation policy. Free parking included.',
-    address: 'Bow Valley Trail, Canmore, AB T1W 1N6',
-    totalRooms: 30,
-    yearBuilt: '1985',
-    lastRenovated: '2017',
-    images: [
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
-      'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
-      'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=800&q=80',
-    ],
+    description: "A Canmore lodge at 1723 Bow Valley Trail with standard rooms, selected kitchenette or cabin categories and a family condo. The official site lists an indoor pool and coin laundry. An in-room hot tub belongs to the Jacuzzi Suite category; it is not a verified shared outdoor hot tub.",
+    highlights: ["Canmore location", "Indoor pool: confirm current availability", "Kitchenette categories available", "Family condo category", "Coin laundry", "Designated pet-friendly rooms: confirm first"],
+    nearbyAttractions: ["Canmore town centre", "Banff National Park: arrange onward transport", "Grassi Lakes: check current trail conditions"],
+    overview: "Compare the room category as well as the total quote. A standard room includes a mini-fridge and coffee maker, while selected kitchenette rooms add cooking equipment; the appliances differ by category. The lodge advertises an indoor pool, WiFi, coin laundry and designated pet-friendly rooms. Canmore is a separate town from Banff, so confirm your ski transport and any pickup stop before booking.",
+    roomFeatures: ["Standard queen and two-queen room categories", "Mini-fridge and coffee maker", "WiFi", "Selected kitchenette categories: appliances vary", "Jacuzzi Suite: in-room hot tub, not a shared facility", "Family condo: separate bedroom and cooktop"],
+    amenities: ["Indoor pool: confirm current operating status", "WiFi", "Coin laundry", "Outdoor picnic area", "Designated pet-friendly rooms: charges and approval may apply"],
+    dining: "For self-catering, book a category whose listed appliances meet your needs; some have only a cooktop and others list a stove and oven. Confirm current meal options and inclusions rather than assuming breakfast is provided.",
+    policies: "Ask the lodge to approve a pet-friendly room before booking and confirm current charges. Confirm arrival hours, late-arrival arrangements, access needs and parking directly. Cancellation and payment conditions depend on the selected rate and booking channel.",
+    address: "1723 Bow Valley Trail, Canmore, Alberta",
+    officialUrl: "https://rundlemountain.com/",
+    checkedOn: "2026-10-28",
+    facilityNote: "The official site lists an indoor pool and a Jacuzzi Suite with its own hot tub; it does not substantiate the former shared outdoor-hot-tub claim. Request the exact room layout, cooking equipment, pet acceptance and access arrangements. Property photos here are identified images from the official Travel Alberta listing; the lodge’s own image server could not be fetched during this review.",
+    images: ["/images/hotels/rundle-mountain-travel-alberta-entrance-2026-10-28.jpg", "/images/hotels/rundle-mountain-travel-alberta-courtyard-2026-10-28.jpg"],
   },
   {
     slug: 'bear-bison-inn',
@@ -3403,7 +3356,8 @@ export const hotelAreas = [
   { name: 'Yoho National Park', description: 'British Columbia lodge stays near Field and Emerald Lake, with a separate road and transport plan.' },
 ];
 
-// Known coordinates for major hotels
+// Retained legacy manual listing points. Their coordinate provenance is unknown;
+// they are indicative unless independently documented in sourcedCoordinates below.
 const knownCoords: Record<string, [number, number]> = {
   'fairmont-banff-springs': [51.1627, -115.5581],
   'rimrock-resort-hotel': [51.1597, -115.5655],
@@ -3428,6 +3382,8 @@ const knownCoords: Record<string, [number, number]> = {
   'buffalo-mountain-lodge': [51.1850, -115.5540],
   'banff-rocky-mountain-resort': [51.1870, -115.5500],
   'douglas-fir-resort': [51.1860, -115.5520],
+  // Official MD of Bighorn emergency-plan point for the Boundary Lodge parking lot.
+  'banff-boundary-lodge': [51.125783, -115.3874],
   'hidden-ridge-resort': [51.1845, -115.5530],
   'fairmont-chateau-lake-louise': [51.416787, -116.212386],
   'lake-louise-inn': [51.4286653, -116.1848642],
@@ -3464,19 +3420,45 @@ const knownCoords: Record<string, [number, number]> = {
   'falcon-crest-lodge': [51.0843, -115.3595],
 };
 
-// Assign coordinates to all hotels (known coords or offset from area center)
-let areaCounters: Record<string, number> = {};
-hotels.forEach(hotel => {
-  if (knownCoords[hotel.slug]) {
-    [hotel.lat, hotel.lng] = knownCoords[hotel.slug];
-  } else {
-    const center = areaCenters[hotel.area] || [51.1784, -115.5708];
-    const idx = areaCounters[hotel.area] || 0;
-    areaCounters[hotel.area] = idx + 1;
-    // Spread hotels in a spiral around area center
-    const angle = idx * 0.8;
-    const radius = 0.003 + idx * 0.001;
-    hotel.lat = center[0] + radius * Math.cos(angle);
-    hotel.lng = center[1] + radius * Math.sin(angle);
-  }
+const sourcedCoordinates: Record<string, { lat: number; lng: number; source: string; note: string }> = {
+  'fairmont-chateau-lake-louise': {
+    lat: 51.416787, lng: -116.212386,
+    source: 'https://www.fairmont.com/en/hotels/lake-louise/fairmont-chateau-lake-louise/location-contact.html',
+    note: 'Property locator from the map linked by Fairmont. Confirm the actual arrival entrance and parking arrangements with the hotel.',
+  },
+  'lake-louise-inn': {
+    lat: 51.4286653, lng: -116.1848642,
+    source: 'https://www.lakelouiseinn.com/contact/',
+    note: 'Property locator published on the official hotel contact page. Confirm the actual arrival entrance and your accommodation building.',
+  },
+  'banff-boundary-lodge': {
+    lat: 51.125783, lng: -115.3874,
+    source: 'https://mdbighorn.ca/AgendaCenter/ViewFile/Agenda/_08182025-921',
+    note: 'Official municipal locator for the lodge parking lot at 1000 Harvie Heights Road. This is a property locator, not a unit entrance or visitor arrival instruction.',
+  },
+};
+
+// Never manufacture a property point from an area centre or an offset. A record's
+// old inline pair is not proof of location. Only retained manual points and the
+// directly documented source points are exposed to consumers.
+export const hotels: Hotel[] = hotelRecords.map((hotel): Hotel => {
+  const sourced = sourcedCoordinates[hotel.slug];
+  if (sourced) return {
+    ...hotel, lat: sourced.lat, lng: sourced.lng,
+    coordinateStatus: 'source-verified',
+    coordinateSource: sourced.source,
+    coordinateCheckedOn: '2026-10-28',
+    coordinateNote: sourced.note,
+  };
+  const indicative = knownCoords[hotel.slug];
+  if (indicative) return {
+    ...hotel, lat: indicative[0], lng: indicative[1],
+    coordinateStatus: 'indicative',
+    coordinateNote: 'Approximate legacy listing point; its coordinate source has not been independently verified. Confirm the property address and arrival directions directly.',
+  };
+  return {
+    ...hotel, lat: null, lng: null,
+    coordinateStatus: 'unavailable',
+    coordinateNote: 'No sourced or retained manual map point is available. Use the property address and confirm arrival directions directly; this listing is omitted from the map.',
+  };
 });
