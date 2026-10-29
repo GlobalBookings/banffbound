@@ -35,7 +35,8 @@ The production build remains `npm run build`, including data fetching. `npm run 
 ## Verification record
 
 - Astro production asset build and Pagefind index completed successfully.
-- Final crawl: 602 generated HTML documents, 560 indexable documents; zero broken internal links, missing local assets, H1/canonical/description issues or JSON-LD parse errors. The 404 page is explicitly noindex.
+- Workspace crawl: 602 generated HTML documents, 560 indexable documents; zero broken internal links, missing local assets, H1/canonical/description issues or JSON-LD parse errors. The 404 page is explicitly noindex.
+- A clean archive of release commit `d18fe5f`, with no unrelated untracked public or social files, also built and indexed successfully: 601 generated HTML documents, 560 indexable documents and zero audit findings. See `release-site-audit-2026-10-28.json`.
 - Browser checks at desktop and 390px phone width: winter category/search/empty/reset/month selection; ski-planner updates, URL restoration, checklist persistence and query-free canonical; hotel combined filters, no-match/reset and URL state; town-priority recommendations; mobile article tables and correct modified date; production Pagefind result for the heli-ski guide; unavailable conditions fallbacks. All six destination guides fit the phone viewport without horizontal overflow.
 - Shared planning logic was checked across all 288 input combinations. Calculator checks include missing days, complete/incomplete quotes, shared-day coverage and date confirmation. A review found and fixed validation of inactive optional inputs; a browser regression check confirmed an unused fractional pass allowance and zero-day quote no longer block a valid two-day comparison.
 - Source and component compilation checks passed for the new guides and tools.

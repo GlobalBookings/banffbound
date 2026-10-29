@@ -31,11 +31,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4. Fetch latest live data
-      - name: Fetch live data
-        run: npm run fetch-data
-
-      # 5. Run full build (astro build + pagefind)
+      # 4. Fetch data once, compile Astro and generate the Pagefind index.
       - name: Build site
         run: npm run build
 
