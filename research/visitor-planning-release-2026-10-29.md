@@ -10,9 +10,10 @@ Only the five full destination replacements receive new blog review metadata. Th
 
 ## Evidence
 
-- `activity-planning-sources-2026-10-29.md`, `rental-planning-sources-2026-10-29.md`, `accessibility-planning-sources-2026-10-29.md`, `visitor-destination-sources-2026-10-29.md` and the paddling source record document the finite content checks.
+- `activity-planning-sources-2026-10-29.md`, `rental-planning-sources-2026-10-29.md`, `accessibility-planning-sources-2026-10-29.md`, `visitor-destination-sources-2026-10-29.md` and `paddling-sources-2026-10-29.md` document the finite content checks.
 - `visitor-planning-browser-verification-2026-10-29.json` records exercised browser controls and mobile widths.
-- Clean source build and production receipts are recorded separately when verified; a merge alone is not deployment evidence.
+- `visitor-planning-clean-verification-2026-10-29.json`: clean source e29be853, full public-source build passed; 602 generated HTML documents / 559 indexable documents / zero audit findings; all 13 offline checks passed.
+- Production receipts are recorded separately after verification; a merge alone is not deployment evidence.
 
 ## Remaining whole-site work
 
