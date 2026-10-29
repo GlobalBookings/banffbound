@@ -1,0 +1,26 @@
+{
+  "phase": "Exact candidate rejected by actual app validator; never applied",
+  "sourceDomain": "banffbound.com",
+  "paths": [
+    "/blog/banff-views",
+    "/blog/banff-views/"
+  ],
+  "destination": "/blog/banff-view/",
+  "match": "exact",
+  "code": 302,
+  "purpose": "Temporary canary before permanent alias redirects; verify query preservation, source scope, canonical/asset/nonmatching paths and rollback.",
+  "preserved": "All non-ingress configuration, existing root component routing, sources, domains, environment variables, region and alert policies are semantically identical.",
+  "baselineDeployment": "38eb4d64-22f2-4a16-890c-871231a16de3",
+  "baselineSourceCommit": "a6f74bd7b9f4ee949f37b437e7202845fe50e4ce",
+  "rollback": "Restore the privately preserved baseline app spec, which has only the original root component rule.",
+  "verificationMatrix": [
+    "Both alias slash variants",
+    "Query string with UTM/test value",
+    "Canonical target remains200 withoutloop",
+    "Unknown child path remains404",
+    "Root, familyguide, winterhub and staticasset remainvalid",
+    "Same sourcecommit on deployment"
+  ],
+  "validatorError": "App Ingress path routing only supports prefix matching",
+  "supersededBy": "redirect-alias-plan-2026-10-29.json"
+}

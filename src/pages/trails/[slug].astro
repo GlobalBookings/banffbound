@@ -2,9 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { trails } from '../../data/trails';
-import { trailPolylines } from '../../data/trailPolylines';
-
-const OWM_KEY_SSR = import.meta.env.PUBLIC_OWM_KEY || '';
+import { isDirectoryTrail, trailSeasonLabel, trailPark, trailReportUrl, trailBulletinsUrl } from '../../data/trailPlanning';
 
 export function getStaticPaths() {
   return trails.map(trail => ({
@@ -14,29 +12,20 @@ export function getStaticPaths() {
 }
 
 const { trail } = Astro.props;
-const nearbyTrails = trails.filter(t => t.slug !== trail.slug && t.area === trail.area).slice(0, 4);
+const nearbyTrails = trails.filter(t => isDirectoryTrail(t) && t.slug !== trail.slug && t.area === trail.area).slice(0, 4);
+const listedCount = trails.filter(isDirectoryTrail).length;
+const conditionReportUrl = trailReportUrl(trail);
+const bulletinsUrl = trailBulletinsUrl(trail);
+const seasonLabel = trailSeasonLabel(trail.season);
 
-// Find polyline segments near this trail's coordinates (within ~2km)
-const nearbyPolylines = trailPolylines.features.filter((f: any) => {
-  if (!f.geometry?.coordinates?.length) return false;
-  const firstPath = f.geometry.coordinates[0];
-  if (!firstPath?.length) return false;
-  const [lng, lat] = firstPath[0];
-  const dlat = Math.abs(lat - trail.lat);
-  const dlng = Math.abs(lng - trail.lng);
-  return dlat < 0.02 && dlng < 0.03;
-});
-const polylineJSON = JSON.stringify(nearbyPolylines.map((f: any) => f.geometry.coordinates));
-
-const difficultyColor = trail.difficulty === 'easy' ? '#166534' : trail.difficulty === 'moderate' ? '#92400e' : '#991b1b';
-const difficultyBg = trail.difficulty === 'easy' ? '#dcfce7' : trail.difficulty === 'moderate' ? '#fef3c7' : '#fee2e2';
+const difficultyColor = trail.routeVerified === false ? '#4b5563' : trail.difficulty === 'easy' ? '#166534' : trail.difficulty === 'moderate' ? '#92400e' : '#991b1b';
+const difficultyBg = trail.routeVerified === false ? '#e5e7eb' : trail.difficulty === 'easy' ? '#dcfce7' : trail.difficulty === 'moderate' ? '#fef3c7' : '#fee2e2';
 
 const safetyTips = [
-  { icon: '🐻', text: 'Carry bear spray and know how to use it. Bears are active throughout Banff National Park.' },
-  { icon: '📋', text: 'Check trail conditions on the Parks Canada website before heading out.' },
-  { icon: '👥', text: 'Tell someone your hiking plan — where you\'re going and when you expect to return.' },
-  { icon: '🧥', text: 'Bring layers. Mountain weather can change rapidly, even in summer.' },
-  { icon: '💧', text: 'Carry at least 1 litre of water per person. There are no water stations on most trails.' },
+  { icon: '📋', text: 'Read the route-specific official report, closures and weather before choosing the outing. A permanent guide does not report today’s access.' },
+  { icon: '👥', text: 'Leave your route and return plan with someone. Decide a turnaround that fits the group, actual conditions and daylight.' },
+  { icon: '🎒', text: 'Carry navigation, a headlamp, suitable layers, first aid, food and enough water for the actual outing. Check the packing guide for a fuller checklist.' },
+  { icon: '❄️', text: 'A summer difficulty grade is not a winter suitability assessment. Snow and avalanche terrain require separate planning, training and equipment.' },
 ];
 
 const trailSchema = {
@@ -45,25 +34,17 @@ const trailSchema = {
   name: trail.name,
   description: trail.description,
   image: trail.image,
-  url: `https://banffbound.com/trails/${trail.slug}`,
+  url: `https://banffbound.com/trails/${trail.slug}/`,
   address: {
     '@type': 'PostalAddress',
     addressLocality: trail.area,
-    addressRegion: 'Alberta',
+    addressRegion: trail.province || (trail.area === 'Kootenay' ? 'British Columbia' : 'Alberta'),
     addressCountry: 'CA',
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: trail.lat,
-    longitude: trail.lng,
-  },
-  isAccessibleForFree: false,
-  publicAccess: true,
-  touristType: 'Hiking',
 };
 ---
 
-<BaseLayout title={`${trail.name} | Banff Trail Guide`} description={`Complete guide to ${trail.name} in ${trail.area}. ${trail.distance}, ${trail.elevationGain} elevation gain, ${trail.time}. Difficulty: ${trail.difficulty}.`}>
+<BaseLayout title={`${trail.name} | Trail Planning Guide`} description={`Plan ${trail.name} in the ${trail.area} area. Route distances, seasonal context, transport checks and official reports; current access must be checked separately.`} lastUpdated={trail.reviewedAt} noindex={trail.routeVerified === false}>
 
   <div class="container">
     <Breadcrumbs items={[
@@ -73,21 +54,17 @@ const trailSchema = {
     ]} />
   </div>
 
-  <script type="application/ld+json" set:html={JSON.stringify(trailSchema)} />
+  {trail.routeVerified !== false && <script type="application/ld+json" set:html={JSON.stringify(trailSchema)} />}
 
   <section class="trail-hero">
     <img src={trail.image} alt={trail.name} class="trail-hero-bg" loading="eager" fetchpriority="high" />
     <div class="trail-hero-overlay">
       <div class="container">
         <div class="hero-tags">
-          <span class="difficulty-badge" style={`background:${difficultyBg};color:${difficultyColor};`}>{trail.difficulty}</span>
+          <span class="difficulty-badge" style={`background:${difficultyBg};color:${difficultyColor};`}>{trail.routeVerified === false ? 'Route not verified' : trail.difficulty}</span>
           <span class="badge">{trail.area}</span>
           <span class="type-tag">{trail.type}</span>
-          {trail.status && trail.status !== 'unknown' && (
-            <span class={`status-badge status-${trail.status}`}>
-              {trail.status === 'open' ? '✓ Open' : trail.status === 'caution' ? '⚠ Caution' : '✕ Closed'}
-            </span>
-          )}
+          <span class="type-tag">Check current official report</span>
         </div>
         <h1>{trail.name}</h1>
         <p class="hero-desc">{trail.description}</p>
@@ -119,52 +96,22 @@ const trailSchema = {
       </div>
       <div class="stat-item">
         <span class="stat-icon">📅</span>
-        <span class="stat-label">Season</span>
-        <span class="stat-value">{trail.season}</span>
+        <span class="stat-label">Route context</span>
+        <span class="stat-value">{seasonLabel}</span>
       </div>
       <div class="stat-item">
         <span class="stat-icon">🏔️</span>
         <span class="stat-label">Difficulty</span>
-        <span class="stat-value" style={`color:${difficultyColor};`}>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</span>
+        <span class="stat-value" style={`color:${difficultyColor};`}>{trail.routeVerified === false ? 'Not verified' : trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</span>
       </div>
     </div>
   </div>
 
-  {(trail.conditionNote || trail.parkingCapacity || trail.crowdLevel) && (
-    <div class="conditions-bar">
-      <div class="container conditions-bar-inner">
-        {trail.conditionNote && (
-          <div class="condition-item">
-            <span class="condition-icon">📋</span>
-            <div>
-              <strong>Trail Conditions</strong>
-              <span>{trail.conditionNote}</span>
-              {trail.conditionUpdated && <small>Updated {trail.conditionUpdated}</small>}
-            </div>
-          </div>
-        )}
-        {trail.parkingCapacity && (
-          <div class="condition-item">
-            <span class="condition-icon">🅿️</span>
-            <div>
-              <strong>Parking</strong>
-              <span>{trail.parkingCapacity}</span>
-              {trail.parkingNotes && <small>{trail.parkingNotes}</small>}
-            </div>
-          </div>
-        )}
-        {trail.crowdLevel && (
-          <div class="condition-item">
-            <span class="condition-icon">👥</span>
-            <div>
-              <strong>Typical Crowds</strong>
-              <span>Summer: {trail.crowdLevel.summer} · Winter: {trail.crowdLevel.winter}</span>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  )}
+  <div class="conditions-bar"><div class="container">
+    <p><strong>Current trail status is not supplied by this guide.</strong> Check the <a href={conditionReportUrl} target="_blank" rel="noopener">official trail report</a> and <a href={bulletinsUrl} target="_blank" rel="noopener">park bulletins</a>. Parking availability and crowd levels are not measured here.</p>
+    <p>Distances, difficulty and time estimates describe the stated route and season. They do not establish winter suitability, surface conditions or a safe start time.</p>
+    {trail.currentNotice && <aside class="route-notice"><strong>Dated access notice — checked {trail.currentNotice.checkedAt}:</strong> {trail.currentNotice.text} <a href={trail.currentNotice.url} target="_blank" rel="noopener">Read the source notice ↗</a></aside>}
+  </div></div>
 
   <section class="section">
     <div class="container">
@@ -172,7 +119,7 @@ const trailSchema = {
         <div class="trail-main">
 
           <div class="content-section">
-            <h2>About This Trail</h2>
+            <h2>About This Route</h2>
             {trail.longDescription.split('\n\n').map(paragraph => (
               <p class="trail-text">{paragraph}</p>
             ))}
@@ -197,35 +144,25 @@ const trailSchema = {
                   <p>{trail.trailhead}</p>
                 </div>
               </div>
-              {trail.transitAccessible && (
-                <div class="trailhead-row">
-                  <span class="trailhead-icon">🚌</span>
-                  <div>
-                    <strong>Transit Accessible</strong>
-                    <p>{trail.transitRoute || 'Accessible by public transit'}</p>
-                  </div>
-                </div>
-              )}
-              {!trail.transitAccessible && (
-                <div class="trailhead-row">
-                  <span class="trailhead-icon">🚗</span>
-                  <div>
-                    <strong>Vehicle Required</strong>
-                    <p>This trail is not accessible by public transit. A personal vehicle or taxi is required.</p>
-                  </div>
-                </div>
-              )}
+              <div class="trailhead-row"><span class="trailhead-icon">🚌</span><div><strong>Transport planning</strong><p>{trail.routeVerified === false ? 'No transport or trailhead directions are verified for this legacy listing. Choose a designated route from the official guide before planning the journey.' : trail.transitRoute || 'No direct public-transit connection is verified here. Check the exact trailhead and any walking approach, arranged transfer or other transport before choosing the outing.'}</p><p>Verify operating dates, stops, reservations and the last return. A summer route or hotel shuttle does not establish winter service.</p></div></div>
+              {trail.accessNote && <div class="trailhead-row"><span class="trailhead-icon">📋</span><div><strong>Access notes</strong><p>{trail.accessNote}</p></div></div>}
+
             </div>
           </div>
 
+          {trail.routeVerified !== false ? <>
           <div class="content-section">
-            <h2>Trail Location</h2>
+            <h2>Indicative Route Area</h2>
+            <p class="trail-text">The marker shows an approximate listing location, which may be a general destination area. It is not a verified trailhead coordinate or parking entrance. No verified route line is supplied. Use the official route map and on-site signs for the actual start and navigation; nearby paths are not automatically part of this trail.</p>
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
             <div id="trail-detail-map" class="trail-map-embed"></div>
           </div>
 
+          </> : <div class="content-section"><h2>Route Not Verified</h2><p>No route or starting marker is supplied for this legacy listing. Choose a designated route from the <a href={trail.parksCanadaUrl} target="_blank" rel="noopener">current official guide</a>.</p></div>}
+
           <div class="content-section">
-            <h2>Safety Tips</h2>
+            <h2>Season and Preparation</h2>
+            <p class="trail-text">{trail.winterNote || 'Snow and ice can change access, footing and route choice. Read current winter-route information before using a summer description in snow season, and stay off unassessed lake or river ice.'}</p>
             <div class="safety-list">
               {safetyTips.map(tip => (
                 <div class="safety-item">
@@ -239,9 +176,9 @@ const trailSchema = {
           <div class="content-section">
             <div class="cta-box">
               <h3>Check Latest Trail Conditions</h3>
-              <p>Always check the official Parks Canada page for current conditions, closures, and advisories before heading out.</p>
-              <a href={trail.parksCanadaUrl} target="_blank" rel="noopener" class="btn btn-primary">
-                View on Parks Canada →
+              <p>Read the official trail report and current park bulletins before travelling. A route guide and a dated notice do not confirm today’s access.</p>
+              <a href={conditionReportUrl} target="_blank" rel="noopener" class="btn btn-primary">
+                Official trail report →
               </a>
             </div>
           </div>
@@ -254,45 +191,26 @@ const trailSchema = {
             <div class="fact-row"><span>Elevation Gain</span><span>{trail.elevationGain}</span></div>
             <div class="fact-row"><span>Elevation Loss</span><span>{trail.elevationLoss}</span></div>
             <div class="fact-row"><span>Time</span><span>{trail.time}</span></div>
-            <div class="fact-row"><span>Difficulty</span><span style={`color:${difficultyColor};font-weight:700;`}>{trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</span></div>
-            <div class="fact-row"><span>Season</span><span>{trail.season}</span></div>
+            <div class="fact-row"><span>Difficulty</span><span style={`color:${difficultyColor};font-weight:700;`}>{trail.routeVerified === false ? 'Not verified' : trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</span></div>
+            <div class="fact-row"><span>Route context</span><span>{seasonLabel}</span></div>
             <div class="fact-row"><span>Type</span><span style="text-transform:capitalize;">{trail.type}</span></div>
             <div class="fact-row"><span>Area</span><span>{trail.area}</span></div>
-            <div class="fact-row"><span>Transit</span><span>{trail.transitAccessible ? 'Yes' : 'No'}</span></div>
+            <div class="fact-row"><span>Park / region</span><span>{trailPark(trail)}</span></div>
           </div>
 
-          <div class="sidebar-card sun-card">
-            <h3>Sun & Golden Hour</h3>
-            <div id="sun-data" class="sun-grid">
-              <div class="sun-item"><span class="sun-label">Sunrise</span><span class="sun-value" id="sunrise-time">--</span></div>
-              <div class="sun-item"><span class="sun-label">Sunset</span><span class="sun-value" id="sunset-time">--</span></div>
-              <div class="sun-item"><span class="sun-label">Golden Hour</span><span class="sun-value" id="golden-hour">--</span></div>
-              <div class="sun-item"><span class="sun-label">Daylight</span><span class="sun-value" id="daylight-hours">--</span></div>
-            </div>
-            <p class="sun-tip" id="sun-tip"></p>
-          </div>
-
-          <div class="sidebar-card gear-card">
-            <h3>Gear Checklist</h3>
-            <div class="gear-list" id="gear-list"></div>
-          </div>
-
-          <div class="sidebar-card hike-decision">
-            <h3>Should I Hike Today?</h3>
-            <div id="hike-verdict" class="hike-verdict">
-              <div class="hike-loading"><div class="spinner-sm"></div><span>Checking conditions...</span></div>
-            </div>
-          </div>
-
+          <div class="sidebar-card"><h3>Daylight and Turnaround</h3><p>Check daylight for the destination and date, leave time for stops and delays, and decide when to turn back. This guide does not calculate a safe latest start or issue a hiking verdict.</p><a href="/weather">Weather planning →</a></div>
+          <div class="sidebar-card"><h3>What to Carry</h3><p>Match equipment to the actual activity, surface, weather and group. Include navigation and a headlamp even on a short outing.</p><a href="/packing-list">Packing checklist →</a><p><a href="/winter">Winter route planning →</a></p></div>
           <div class="sidebar-card">
             <h3>Official Info</h3>
             <p style="font-size:0.85rem;color:var(--color-text-light);margin-bottom:0.75rem;">Get the latest trail conditions, closures, and safety updates.</p>
-            <a href={trail.parksCanadaUrl} target="_blank" rel="noopener" class="btn btn-primary sidebar-btn">Parks Canada →</a>
+            <a href={trail.parksCanadaUrl} target="_blank" rel="noopener" class="btn btn-primary sidebar-btn">Official route information →</a>
+            {trail.sourceUrls && <ul class="source-links">{trail.sourceUrls.filter(source => source.url !== trail.parksCanadaUrl).map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.label} ↗</a></li>)}</ul>}
+            <p class="trail-text">{trail.reviewedAt ? `Guide reviewed ${trail.reviewedAt}; this is not a conditions timestamp.` : 'Check the official description for the latest route figures and access arrangements.'}</p>
           </div>
 
           <div class="sidebar-card">
             <h3>Explore More Trails</h3>
-            <a href="/trail-map" class="btn btn-outline sidebar-btn">View All {trails.length} Trails →</a>
+            <a href="/trail-map" class="btn btn-outline sidebar-btn">View {listedCount} Trail Listings →</a>
           </div>
         </div>
       </div>
@@ -326,185 +244,30 @@ const trailSchema = {
   )}
 </BaseLayout>
 
-<script define:vars={{ lat: trail.lat, lng: trail.lng, name: trail.name, difficulty: trail.difficulty, season: trail.season, distance: trail.distance, elevationGain: trail.elevationGain, time: trail.time, status: trail.status || 'open', OWM_KEY: OWM_KEY_SSR, polylineJSON }}>
-  // ── Map with trail polylines ──────────────────────
+<script define:vars={{ lat: trail.lat, lng: trail.lng, name: trail.name }}>
   function initTrailMap() {
     const mapEl = document.getElementById('trail-detail-map');
     if (!mapEl || typeof L === 'undefined') return;
-    const map = L.map('trail-detail-map').setView([lat, lng], 14);
+    const map = L.map('trail-detail-map').setView([lat, lng], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors · Trail data: Town of Banff GIS',
-      maxZoom: 18,
+      attribution: '&copy; OpenStreetMap contributors', maxZoom: 18,
     }).addTo(map);
-
-    const polylines = JSON.parse(polylineJSON || '[]');
-    if (polylines.length > 0) {
-      const allLatLngs = [];
-      polylines.forEach(multiPath => {
-        multiPath.forEach(path => {
-          const latlngs = path.map(([lng, lat]) => [lat, lng]);
-          allLatLngs.push(...latlngs);
-          L.polyline(latlngs, { color: '#e74c3c', weight: 3, opacity: 0.8 }).addTo(map);
-        });
-      });
-      if (allLatLngs.length > 2) {
-        const bounds = L.latLngBounds(allLatLngs);
-        map.fitBounds(bounds, { padding: [30, 30] });
-      }
-    }
-
-    L.marker([lat, lng]).addTo(map).bindPopup(`<strong>${name}</strong>`).openPopup();
+    const popup = document.createElement('div');
+    const title = document.createElement('strong'); title.textContent = name;
+    const note = document.createElement('p'); note.textContent = 'Indicative listing area only, not a verified trailhead or route line. Use the official map.';
+    popup.append(title, note);
+    L.marker([lat, lng]).addTo(map).bindPopup(popup).openPopup();
   }
   const script = document.createElement('script');
   script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
   script.onload = initTrailMap;
   document.head.appendChild(script);
-
-  // ── Sunrise/Sunset Calculator (pure math, no API) ─
-  function calcSun(lat, lng, date) {
-    const rad = Math.PI / 180;
-    const dayOfYear = Math.floor((date - new Date(date.getFullYear(),0,0)) / 86400000);
-    const declination = 23.45 * Math.sin(rad * (360/365) * (dayOfYear - 81));
-    const hourAngle = Math.acos(
-      (-Math.tan(lat * rad) * Math.tan(declination * rad))
-    ) / rad;
-    const solarNoon = 12 - lng / 15;
-    const offset = -7; // MST
-    const sunrise = solarNoon - hourAngle / 15 - offset;
-    const sunset = solarNoon + hourAngle / 15 - offset;
-    return { sunrise, sunset };
-  }
-
-  function fmtTime(h) {
-    const hours = Math.floor(h);
-    const mins = Math.round((h - hours) * 60);
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    const h12 = hours > 12 ? hours - 12 : hours === 0 ? 12 : hours;
-    return `${h12}:${mins.toString().padStart(2,'0')} ${ampm}`;
-  }
-
-  (function loadSun() {
-    const now = new Date();
-    const { sunrise, sunset } = calcSun(lat, lng, now);
-    const daylight = sunset - sunrise;
-    const goldenStart = sunset - 1;
-    document.getElementById('sunrise-time').textContent = fmtTime(sunrise);
-    document.getElementById('sunset-time').textContent = fmtTime(sunset);
-    document.getElementById('golden-hour').textContent = `${fmtTime(goldenStart)} - ${fmtTime(sunset)}`;
-    document.getElementById('daylight-hours').textContent = `${Math.floor(daylight)}h ${Math.round((daylight % 1) * 60)}m`;
-
-    const hikeHours = parseFloat(time) || 3;
-    const latestStart = sunset - hikeHours - 0.5;
-    document.getElementById('sun-tip').textContent =
-      `Start by ${fmtTime(latestStart)} to finish before dark (${hikeHours}hr hike + 30min buffer).`;
-  })();
-
-  // ── Gear Checklist ────────────────────────────────
-  (function loadGear() {
-    const month = new Date().getMonth();
-    const isWinter = month >= 10 || month <= 3;
-    const isSummer = month >= 5 && month <= 8;
-    const elevNum = parseInt(elevationGain) || 0;
-    const isHard = difficulty === 'challenging' || elevNum > 500;
-
-    const gear = [
-      { item: 'Water (1L+ per person)', always: true },
-      { item: 'Bear spray', always: true },
-      { item: 'Trail snacks / lunch', always: true },
-      { item: 'Sunscreen & sunglasses', always: true },
-      { item: 'First aid kit', always: true },
-      { item: 'Map / downloaded trail', show: isHard },
-      { item: 'Rain jacket', always: true },
-      { item: 'Extra warm layer', show: isWinter || isHard },
-      { item: 'Trekking poles', show: isHard || elevNum > 300 },
-      { item: 'Headlamp', show: isHard },
-      { item: 'Ice cleats / microspikes', show: isWinter || season === 'winter' },
-      { item: 'Snowshoes', show: season === 'winter' },
-      { item: 'Gaiters', show: isWinter && season === 'winter' },
-      { item: 'Insulated water bottle', show: isWinter },
-      { item: 'Bug spray', show: isSummer },
-      { item: 'Hat & gloves', show: isWinter || isHard },
-    ];
-
-    const list = document.getElementById('gear-list');
-    list.innerHTML = gear
-      .filter(g => g.always || g.show)
-      .map(g => `<label class="gear-item"><input type="checkbox" /><span>${g.item}</span></label>`)
-      .join('');
-  })();
-
-  // ── Should I Hike Today? Decision Engine ──────────
-  (async function hikeDecision() {
-    const verdict = document.getElementById('hike-verdict');
-    try {
-      if (!OWM_KEY) throw new Error('No key');
-      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${OWM_KEY}`);
-      if (!res.ok) throw new Error('API error');
-      const wx = await res.json();
-
-      const temp = Math.round(wx.main.temp);
-      const wind = Math.round(wx.wind.speed * 3.6);
-      const weatherMain = wx.weather[0].main;
-      const desc = wx.weather[0].description;
-
-      let score = 80;
-      let factors = [];
-
-      // Temperature scoring
-      if (temp >= 5 && temp <= 20) { score += 10; factors.push(`${temp}°C is ideal hiking temperature`); }
-      else if (temp < -15) { score -= 30; factors.push(`${temp}°C is dangerously cold`); }
-      else if (temp < 0) { score -= 10; factors.push(`${temp}°C — dress in warm layers`); }
-      else if (temp > 28) { score -= 15; factors.push(`${temp}°C — risk of heat exhaustion`); }
-
-      // Weather conditions
-      if (['Rain','Thunderstorm'].includes(weatherMain)) { score -= 25; factors.push(`${desc} — slippery trails, reduced visibility`); }
-      if (weatherMain === 'Snow' && season !== 'winter') { score -= 20; factors.push('Unexpected snow on a non-winter trail'); }
-      if (weatherMain === 'Clear' || weatherMain === 'Clouds') { score += 5; factors.push(`${desc} — good visibility`); }
-
-      // Wind
-      if (wind > 50) { score -= 20; factors.push(`Wind ${wind} km/h — dangerous on exposed ridges`); }
-      else if (wind > 30) { score -= 10; factors.push(`Wind ${wind} km/h — breezy on exposed sections`); }
-
-      // Trail status
-      if (status === 'closed') { score = 0; factors.push('Trail is currently CLOSED'); }
-      else if (status === 'caution') { score -= 15; factors.push('Trail advisory in effect — check conditions'); }
-
-      // Difficulty in bad weather
-      if (difficulty === 'challenging' && ['Rain','Snow','Thunderstorm'].includes(weatherMain)) {
-        score -= 15; factors.push('Challenging trail in poor weather — extra caution needed');
-      }
-
-      score = Math.max(0, Math.min(100, score));
-
-      let emoji, label, color;
-      if (score >= 75) { emoji = '✓'; label = 'Great day to hike!'; color = '#166534'; }
-      else if (score >= 50) { emoji = '~'; label = 'Doable with preparation'; color = '#92400e'; }
-      else if (score >= 25) { emoji = '!'; label = 'Not ideal — proceed with caution'; color = '#c2410c'; }
-      else { emoji = '✕'; label = 'Not recommended today'; color = '#991b1b'; }
-
-      verdict.innerHTML = `
-        <div class="hike-score" style="color:${color};">
-          <span class="score-num">${score}</span>
-          <span class="score-label">/100</span>
-        </div>
-        <p class="hike-label" style="color:${color};">${emoji} ${label}</p>
-        <ul class="hike-factors">${factors.map(f => `<li>${f}</li>`).join('')}</ul>
-        <p class="hike-current">${temp}°C · ${desc} · Wind ${wind} km/h</p>
-      `;
-    } catch {
-      verdict.innerHTML = '<p class="hike-fallback">Weather unavailable — check conditions before heading out.</p>';
-    }
-  })();
 </script>
 
 <style>
-  .status-badge {
-    font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem;
-    border-radius: 4px; text-transform: uppercase; letter-spacing: 0.03em;
-  }
-  .status-open { background: #dcfce7; color: #166534; }
-  .status-caution { background: #fef3c7; color: #92400e; }
-  .status-closed { background: #fee2e2; color: #991b1b; }
+  .conditions-bar p { margin:.6rem 0; line-height:1.6; }
+  .route-notice { padding:1rem; background:#fff3cd; border-radius:var(--radius); margin:1rem 0; }
+
 
   .conditions-bar {
     background: var(--color-bg-alt); border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
@@ -823,31 +586,4 @@ const trailSchema = {
     }
   }
 
-  /* Sun card */
-  .sun-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-  .sun-item { display: flex; flex-direction: column; gap: 0.1rem; }
-  .sun-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
-  .sun-value { font-size: 0.95rem; font-weight: 600; color: var(--color-text); }
-  .sun-tip { font-size: 0.8rem; color: var(--color-accent); margin-top: 0.75rem; font-style: italic; }
-
-  /* Gear checklist */
-  .gear-list { display: flex; flex-direction: column; gap: 0.4rem; }
-  .gear-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; cursor: pointer; }
-  .gear-item input[type="checkbox"] { accent-color: var(--color-primary); width: 16px; height: 16px; flex-shrink: 0; }
-  .gear-item span { line-height: 1.3; }
-  .gear-item:has(input:checked) span { text-decoration: line-through; color: var(--color-text-light); }
-
-  /* Hike decision */
-  .hike-verdict { text-align: center; }
-  .hike-loading { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.85rem; color: var(--color-text-light); }
-  .spinner-sm { width: 18px; height: 18px; border: 2px solid rgba(0,0,0,0.1); border-top-color: var(--color-primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
-  .hike-score { display: flex; align-items: baseline; justify-content: center; gap: 0.15rem; }
-  .score-num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; line-height: 1; }
-  .score-label { font-size: 1rem; font-weight: 500; }
-  .hike-label { font-weight: 700; font-size: 0.95rem; margin-top: 0.25rem; }
-  .hike-factors { list-style: none; padding: 0; margin: 0.75rem 0 0; text-align: left; }
-  .hike-factors li { font-size: 0.8rem; color: var(--color-text-light); padding: 0.2rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
-  .hike-factors li::before { content: '·'; margin-right: 0.4rem; font-weight: 700; }
-  .hike-current { font-size: 0.78rem; color: var(--color-text-light); margin-top: 0.5rem; }
-  .hike-fallback { font-size: 0.85rem; color: var(--color-text-light); text-align: center; }
 </style>

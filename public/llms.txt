@@ -3,7 +3,7 @@
 > Travel guides and planning tools for Banff, Lake Louise, Canmore and the nearby Canadian Rockies. Use the source links in each guide for current operations and trip-day decisions. Booking links may be affiliate links.
 
 ## Winter planning
-- [Winter in Banff](https://banffbound.com/winter/): Search 27 winter planning guides by interest and explore seasonal month-by-month advice.
+- [Winter in Banff](https://banffbound.com/winter/): Search 29 winter planning guides by interest and explore seasonal month-by-month advice.
 - [Learn to ski](https://banffbound.com/learn-to-ski/): First ski or snowboard lessons, learning-area tickets, equipment, children’s booking questions and a saved readiness checklist.
 - [Ski day planner](https://banffbound.com/ski-day-planner/): Personalise a resort day by experience, base, resort, transport and group. Share selections or print a plan.
 - [Resort comparison](https://banffbound.com/sunshine-vs-lake-louise-vs-norquay/): Practical differences among Sunshine, Lake Louise and Norquay.
@@ -37,7 +37,9 @@
 - [Hotel directory](https://banffbound.com/hotel-directory/)
 - [Vacation rentals](https://banffbound.com/vacation-rentals/)
 - [Trail directory](https://banffbound.com/trails/)
-- [Interactive trail map](https://banffbound.com/trail-map/)
+- [Interactive trail map](https://banffbound.com/trail-map/): Route descriptions and indicative listing areas; source reports determine current access.
+- [Quiet trail planning](https://banffbound.com/quiet-trails/): Selected route plans with season, area and interest filters; no live crowd estimates.
+- [Compare trail plans](https://banffbound.com/alternatives/): Different route demands, approaches and seasonal limits; no guaranteed equivalent replacement.
 - [Car-free Banff](https://banffbound.com/car-free-banff/)
 - [Calgary to Banff](https://banffbound.com/calgary-to-banff/)
 - [Conditions and official reports](https://banffbound.com/conditions/): Dated cached snapshots are suppressed when unavailable or stale; they are not a safety clearance or live report.

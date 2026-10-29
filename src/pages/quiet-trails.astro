@@ -1,234 +1,100 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { trails } from '../data/trails';
+import { trailPlanningRoutes, trailInterests, trailPlanningReviewedAt } from '../data/trailAlternatives';
+import { trailReportUrl, trailPark } from '../data/trailPlanning';
 
-const trailsJSON = JSON.stringify(trails.map(t => ({
-  id: t.id, name: t.name, slug: t.slug, difficulty: t.difficulty,
-  distance: t.distance, elevationGain: t.elevationGain, time: t.time,
-  season: t.season, area: t.area, image: t.image, lat: t.lat, lng: t.lng,
-  status: t.status || 'open', crowdLevel: t.crowdLevel,
-  highlights: t.highlights, type: t.type,
-})));
+const areas = [...new Set(trailPlanningRoutes.map(route => route.area))].sort();
 ---
 
-<BaseLayout title="Quiet Trails Right Now — Avoid Banff Crowds" description="Find the least crowded trails in Banff right now. Real-time crowd avoidance based on day of week, time, and season. Never hike in a queue again.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Which Banff trails are least crowded?', acceptedAnswer: { '@type': 'Answer', text: 'The quietest trails in Banff are generally on the Icefields Parkway (Sunset Pass, Nigel Pass, Parker Ridge), Castle Junction area (Rockbound Lake, Boom Lake), and challenging routes like Cory Pass and Mt. Edith. Trails near Lake Louise and Johnston Canyon are the busiest. Visiting Tuesday-Thursday and arriving before 7 AM or after 4 PM dramatically reduces crowds on any trail.' } },
-      { '@type': 'Question', name: 'What time of day are Banff trails least busy?', acceptedAnswer: { '@type': 'Answer', text: 'Banff trails are quietest before 7 AM and after 5 PM. The busiest period is 10 AM to 3 PM. Starting early gives you empty trails, better light for photos, and easier parking. Sunset hikes are underrated — most day-trippers leave by 4 PM.' } },
-      { '@type': 'Question', name: 'What is the best day of the week to hike in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Tuesday, Wednesday, and Thursday are the quietest days on Banff trails. Saturday is the busiest day, followed by Sunday and Monday (long weekend effect). If you can only visit on weekends, start before 7 AM to beat the crowds.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Quiet Trails' }]} />
-  </div>
-
+<BaseLayout title="Quiet Trail Planning: Banff Routes, Access & Seasons" description="Plan a Banff trail day with room to pause. Compare selected routes by area, season and interest, with actual demands, transport checks and official sources." lastUpdated={trailPlanningReviewedAt}>
+  <div class="container"><Breadcrumbs items={[{ label: 'Quiet Trail Planning' }]} /></div>
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="Empty mountain trail in Banff" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Crowd Avoidance</span>
-      <h1>Quiet Trails Right Now</h1>
-      <p>Ranked by how empty they are based on time of day, day of week, and season. Updated live.</p>
-    </div>
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="Mountain landscape" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content"><span class="badge">Plan Your Outing</span><h1>Quiet Trail Planning</h1><p>Give the day room to breathe: choose a route that fits the group, arrange its actual journey and leave space to change plans.</p></div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="quiet-controls">
-        <div class="control-group">
-          <label>Difficulty</label>
-          <select id="q-difficulty">
-            <option value="all">Any</option>
-            <option value="easy">Easy</option>
-            <option value="moderate">Moderate</option>
-            <option value="challenging">Challenging</option>
-          </select>
-        </div>
-        <div class="control-group">
-          <label>Area</label>
-          <select id="q-area">
-            <option value="all">Anywhere</option>
-            <option value="Banff">Banff</option>
-            <option value="Lake Louise">Lake Louise</option>
-            <option value="Castle Junction">Castle Junction</option>
-            <option value="Icefields Parkway">Icefields Parkway</option>
-          </select>
-        </div>
-        <div class="quiet-context" id="quiet-context"></div>
-      </div>
+  <section class="section"><div class="container planning-page">
+    <div class="planning-intro"><h2>A quieter pace starts with the whole journey</h2><p>This guide helps reduce rushing between stops. It does not measure visitors, parking occupancy or current trail access, and does not rank routes by how empty they are. A more remote or demanding trail can add transport and preparation rather than solve those problems.</p>
+    <ol class="planning-steps"><li><strong>Pick one main outing.</strong> Match the full return distance, surface and activity to the least experienced person. Count the approach from your hotel or bus stop.</li><li><strong>Resolve arrival and return together.</strong> Confirm the actual stop, operating season, reservations and equipment arrangements. Keep a practical alternative near your base.</li><li><strong>Set a route-specific turnaround.</strong> Use the weather, usable daylight, group pace and confirmed transport. A universal early or late start does not establish access, quiet conditions or suitability.</li></ol>
+    <p>For overnight logistics use <a href="/towns">the town comparison</a> and <a href="/car-free-banff">car-free planning</a>. For different route demands, open the <a href="/alternatives">route comparison guide</a>.</p></div>
 
-      <div class="quiet-results" id="quiet-results"></div>
+    <h2 id="route-plans">Choose a route description to investigate</h2>
+    <p id="filter-explanation">These {trailPlanningRoutes.length} selected examples are in planning order. Season filters describe the source material, not today's suitability or opening. Interest labels describe the outing; they are not difficulty grades. The <a href="/trail-map">full trail directory</a> has more listings.</p>
+    <form id="planning-filters" class="planning-filters" aria-label="Filter route plans" aria-describedby="filter-explanation" hidden>
+      <div><label for="q-season">Description season</label><select id="q-season" name="season" aria-controls="route-results"><option value="all">All descriptions</option><option value="summer">Summer route description</option><option value="winter">Winter activity description</option></select></div>
+      <div><label for="q-area">Area</label><select id="q-area" name="area" aria-controls="route-results"><option value="all">All areas</option>{areas.map(area => <option value={area}>{area}</option>)}</select></div>
+      <div><label for="q-interest">Interest or activity</label><select id="q-interest" name="interest" aria-controls="route-results"><option value="all">All interests</option>{Object.entries(trailInterests).map(([value,label]) => <option value={value}>{label}</option>)}</select></div>
+      <button type="button" class="btn btn-outline" data-reset>Reset filters</button>
+    </form>
+    <noscript><p>All route plans are available below without JavaScript. Browser filtering is optional.</p></noscript>
+    <p id="route-count" class="result-count" role="status" aria-live="polite" aria-atomic="true">{trailPlanningRoutes.length} route plans</p>
+    <div id="route-empty" class="empty-state" hidden><h3>No selected route matches those filters</h3><p>Change the description season, area or interest. A match would still need its own access and conditions check.</p><button type="button" class="btn btn-outline" data-reset>Show all route plans</button></div>
+    <div id="route-results" class="planning-results">
+      {trailPlanningRoutes.map(route => <article class="planning-card" data-plan data-seasons={route.seasons.join(' ')} data-area={route.area} data-interests={route.interests.join(' ')}>
+        <div class="card-heading"><div><p class="eyebrow">{route.area} · {route.seasons.includes('winter') ? 'Winter activity description' : 'Summer route description'}</p><h3><a href={`/trails/${route.slug}`}>{route.trail.name}</a></h3><p class="park-label">{trailPark(route.trail)}</p></div></div>
+        <dl class="guide-figures"><div><dt>Stated distance</dt><dd>{route.trail.distance}</dd></div><div><dt>Stated ascent</dt><dd>{route.trail.elevationGain}</dd></div></dl>
+        <p><strong>Plan the journey:</strong> {route.access}</p>
+        <details><summary>Route demands and seasonal limits</summary><p>{route.demand}</p><p>{route.seasonNote}</p></details>
+        {route.trail.currentNotice && <p class="dated-notice"><strong>Access notice checked {route.trail.currentNotice.checkedAt}:</strong> {route.trail.currentNotice.text} <a href={route.trail.currentNotice.url} target="_blank" rel="noopener">Source notice ↗</a></p>}
+        <div class="source-links"><a href={route.trail.parksCanadaUrl} target="_blank" rel="noopener">Official route description ↗</a><a href={trailReportUrl(route.trail)} target="_blank" rel="noopener">Current trail report ↗</a>{route.accessSource && <a href={route.accessSource.url} target="_blank" rel="noopener">{route.accessSource.label} ↗</a>}</div>
+      </article>)}
     </div>
-  </section>
+
+    <div class="planning-footer"><h2>Check the plan before leaving</h2><p>Read the route's official map, current report and <a href="https://parks.canada.ca/pn-np/ab/banff/bulletins" target="_blank" rel="noopener">Banff bulletins</a> or <a href="https://parks.canada.ca/pn-np/bc/kootenay/bulletins" target="_blank" rel="noopener">Kootenay bulletins</a>. Match clothing and equipment to the outing using the <a href="/packing-list">packing guide</a>. In snow season use <a href="/winter">winter planning</a> and the <a href="/blog/banff-avalanche-safety">avalanche awareness guide</a>; a summer grade is not a winter recommendation.</p><p>Reviewed October 29, 2026. Source figures and planning notes are not live reports. Follow signs, leave space for others to pass, keep to designated routes and give wildlife room. A calm visit can include a shorter outing or a different day; it does not require searching for an empty trail.</p></div>
+  </div></section>
 </BaseLayout>
 
-<script define:vars={{ trailsJSON }}>
-  const allTrails = JSON.parse(trailsJSON);
-
-  // Crowd scoring model: lower = quieter
-  function crowdScore(trail) {
-    const now = new Date();
-    const hour = now.getHours();
-    const dow = now.getDay(); // 0=Sun
-    const month = now.getMonth(); // 0-indexed
-    const isWeekend = dow === 0 || dow === 6;
-    const isSummer = month >= 5 && month <= 8;
-    const isWinter = month >= 10 || month <= 3;
-    const isShoulder = !isSummer && !isWinter;
-
-    let score = 30; // base
-
-    // Popularity by crowd level data
-    const seasonKey = isSummer ? 'summer' : 'winter';
-    if (trail.crowdLevel) {
-      const level = trail.crowdLevel[seasonKey];
-      if (level === 'high') score += 40;
-      else if (level === 'medium') score += 20;
-    } else {
-      // Estimate from trail name / area
-      const popular = ['lake-louise', 'moraine', 'johnston-canyon', 'tunnel-mountain', 'bow-falls', 'lake-agnes'];
-      if (popular.some(p => trail.slug?.includes(p) || trail.id?.includes(p))) score += 35;
-    }
-
-    // Time of day
-    if (hour >= 10 && hour <= 15) score += 20; // peak hours
-    else if (hour < 7 || hour > 18) score -= 15; // early/late = quiet
-    else score += 5;
-
-    // Day of week
-    if (isWeekend) score += 15;
-    if (dow >= 1 && dow <= 3) score -= 10; // Tue-Wed-Thu quietest
-
-    // Season
-    if (isSummer) score += 15;
-    if (isWinter && trail.season === 'summer') score -= 20; // closed trails irrelevant
-    if (isShoulder) score -= 10;
-
-    // Area bonus: Icefields Parkway always quieter
-    if (trail.area === 'Icefields Parkway') score -= 15;
-    if (trail.area === 'Castle Junction' && trail.id !== 'johnston-canyon') score -= 10;
-
-    // Difficulty: harder = quieter
-    if (trail.difficulty === 'challenging') score -= 15;
-    if (trail.difficulty === 'easy') score += 10;
-
-    // Trail status
-    if (trail.status === 'closed') score = 999;
-
-    return Math.max(0, score);
+<script>
+  const form = document.querySelector<HTMLFormElement>('#planning-filters');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-plan]'));
+  const count = document.querySelector<HTMLElement>('#route-count');
+  const empty = document.querySelector<HTMLElement>('#route-empty');
+  if (form && count && empty) {
+    const fields = ['q-season','q-area','q-interest'].map(id => document.getElementById(id) as HTMLSelectElement);
+    const update = () => {
+      const [season,area,interest] = fields.map(field => field.value);
+      let visible = 0;
+      for (const card of cards) {
+        const matches = (season === 'all' || card.dataset.seasons?.split(' ').includes(season)) && (area === 'all' || card.dataset.area === area) && (interest === 'all' || card.dataset.interests?.split(' ').includes(interest));
+        card.hidden = !matches;
+        if (matches) visible++;
+      }
+      count.textContent = `${visible} route plan${visible === 1 ? '' : 's'}`;
+      empty.hidden = visible !== 0;
+    };
+    form.addEventListener('submit', event => event.preventDefault());
+    fields.forEach(field => field.addEventListener('change', update));
+    document.querySelectorAll('[data-reset]').forEach(button => button.addEventListener('click', () => { form.reset(); update(); }));
+    form.hidden = false;
+    update();
   }
-
-  function quietnessLabel(score) {
-    if (score <= 20) return { text: 'Very Quiet', color: '#16a34a', emoji: '🟢' };
-    if (score <= 40) return { text: 'Quiet', color: '#22c55e', emoji: '🟢' };
-    if (score <= 55) return { text: 'Moderate', color: '#d97706', emoji: '🟡' };
-    if (score <= 70) return { text: 'Busy', color: '#ea580c', emoji: '🟠' };
-    return { text: 'Very Busy', color: '#dc2626', emoji: '🔴' };
-  }
-
-  function render() {
-    const diffFilter = document.getElementById('q-difficulty').value;
-    const areaFilter = document.getElementById('q-area').value;
-
-    const now = new Date();
-    const hour = now.getHours();
-    const dow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()];
-    const month = now.toLocaleString('default', { month: 'long' });
-    const isSummer = now.getMonth() >= 5 && now.getMonth() <= 8;
-
-    document.getElementById('quiet-context').innerHTML =
-      `<span>📅 ${dow} · ⏰ ${hour}:${String(now.getMinutes()).padStart(2,'0')} · 🗓 ${month}</span>` +
-      `<span class="context-tip">${hour < 8 ? 'Early morning — most trails are quiet right now' : hour > 17 ? 'Evening — crowds are thinning out' : now.getDay() >= 1 && now.getDay() <= 3 ? 'Midweek — quieter than weekends' : 'Expect moderate-to-high crowds at popular spots'}</span>`;
-
-    let filtered = allTrails.filter(t => {
-      if (t.status === 'closed') return false;
-      if (isSummer && t.season === 'winter') return false;
-      if (!isSummer && t.season === 'summer') return false;
-      if (diffFilter !== 'all' && t.difficulty !== diffFilter) return false;
-      if (areaFilter !== 'all' && t.area !== areaFilter) return false;
-      return true;
-    });
-
-    filtered = filtered.map(t => ({ ...t, score: crowdScore(t) }))
-      .sort((a, b) => a.score - b.score);
-
-    const container = document.getElementById('quiet-results');
-    if (filtered.length === 0) {
-      container.innerHTML = '<p class="no-results">No trails match your filters for the current season.</p>';
-      return;
-    }
-
-    container.innerHTML = filtered.map((t, i) => {
-      const q = quietnessLabel(t.score);
-      return `
-        <a href="/trails/${t.slug}" class="quiet-card ${i < 3 ? 'quiet-top' : ''}">
-          <div class="quiet-rank">${i + 1}</div>
-          <img src="${t.image}" alt="${t.name}" class="quiet-img" loading="lazy" />
-          <div class="quiet-info">
-            <div class="quiet-top-row">
-              <h3>${t.name}</h3>
-              <span class="quiet-badge" style="color:${q.color};">${q.emoji} ${q.text}</span>
-            </div>
-            <div class="quiet-meta">
-              <span>${t.difficulty}</span>
-              <span>📏 ${t.distance}</span>
-              <span>⬆️ ${t.elevationGain}</span>
-              <span>⏱️ ${t.time}</span>
-              <span>📍 ${t.area}</span>
-            </div>
-            ${i < 3 ? `<p class="quiet-why">${t.highlights ? t.highlights.slice(0, 2).join(' · ') : ''}</p>` : ''}
-          </div>
-        </a>
-      `;
-    }).join('');
-  }
-
-  document.getElementById('q-difficulty').addEventListener('change', render);
-  document.getElementById('q-area').addEventListener('change', render);
-  render();
 </script>
 
 <style>
-  .quiet-controls {
-    display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;
-    background: var(--color-white); padding: 1.5rem; border-radius: var(--radius);
-    box-shadow: var(--shadow); margin-bottom: 1.5rem;
-  }
-  .control-group { display: flex; flex-direction: column; gap: 0.3rem; }
-  .control-group label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); font-weight: 600; }
-  .control-group select { padding: 0.6rem 0.8rem; border: 1px solid rgba(0,0,0,0.12); border-radius: 6px; font-size: 0.9rem; font-family: var(--font-body); }
-
-  .quiet-context { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; }
-  .quiet-context span { font-size: 0.85rem; color: var(--color-text-light); }
-  .context-tip { font-style: italic; font-size: 0.8rem; color: var(--color-accent); }
-
-  .quiet-results { display: flex; flex-direction: column; gap: 0.75rem; }
-  .quiet-card {
-    display: flex; gap: 1rem; align-items: center; text-decoration: none; color: inherit;
-    background: var(--color-white); border-radius: var(--radius); padding: 1rem;
-    box-shadow: var(--shadow); transition: all 0.2s;
-  }
-  .quiet-card:hover { transform: translateX(4px); box-shadow: var(--shadow-lg); }
-  .quiet-top { border-left: 4px solid #22c55e; }
-  .quiet-rank { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-text-light); min-width: 2rem; text-align: center; }
-  .quiet-img { width: 80px; height: 60px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
-  .quiet-info { flex: 1; min-width: 0; }
-  .quiet-top-row { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
-  .quiet-top-row h3 { font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .quiet-badge { font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
-  .quiet-meta { display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--color-text-light); margin-top: 0.3rem; flex-wrap: wrap; }
-  .quiet-meta span { text-transform: capitalize; }
-  .quiet-why { font-size: 0.82rem; color: var(--color-text-light); margin-top: 0.25rem; }
-  .no-results { text-align: center; color: var(--color-text-light); padding: 3rem; font-size: 0.95rem; }
-
-  @media (max-width: 768px) {
-    .quiet-controls { flex-direction: column; align-items: stretch; }
-    .quiet-context { margin-left: 0; align-items: flex-start; }
-    .quiet-img { display: none; }
-  }
+  [hidden] { display:none !important; }
+  .planning-page { max-width:1100px; }
+  .planning-intro,.planning-footer { padding:1.5rem; margin-bottom:2rem; background:var(--color-bg-alt); border-radius:var(--radius); }
+  .planning-page p,.planning-page li { line-height:1.75; }
+  .planning-page p { margin-bottom:.8rem; }
+  .planning-steps { padding-left:1.4rem; margin:1rem 0; }
+  .planning-steps li { margin-bottom:.8rem; }
+  .planning-filters { display:flex; gap:1rem; align-items:flex-end; flex-wrap:wrap; padding:1.2rem; background:var(--color-bg-alt); border-radius:var(--radius); margin:1.2rem 0; }
+  .planning-filters>div { display:flex; flex:1 1 200px; flex-direction:column; gap:.35rem; }
+  label { font-weight:700; font-size:.9rem; }
+  select { width:100%; padding:.65rem; font:inherit; color:inherit; background:white; border:1px solid #9ca3af; border-radius:6px; }
+  .planning-results { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; margin:1rem 0 2rem; align-items:start; }
+  .planning-card { padding:1.4rem; border:1px solid #d1d5db; border-radius:var(--radius); background:var(--color-white); }
+  h3 { margin:.2rem 0 .4rem; font-size:1.2rem; }
+  .eyebrow,.park-label { color:var(--color-text-light); font-size:.8rem; }
+  .eyebrow { margin-bottom:.2rem; }
+  .guide-figures { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin:1rem 0; padding:.8rem; background:var(--color-bg-alt); border-radius:6px; }
+  dt { color:var(--color-text-light); font-size:.75rem; } dd { margin:0; font-size:.9rem; font-weight:600; }
+  summary { cursor:pointer; font-weight:700; padding:.6rem 0; } details p { margin:.5rem 0; }
+  .source-links { display:flex; flex-direction:column; gap:.45rem; margin-top:1rem; font-size:.87rem; }
+  .dated-notice { padding:.9rem; margin-top:1rem; background:#fff3cd; border-radius:6px; font-size:.87rem; }
+  .empty-state { padding:1.5rem; border:1px solid #d1d5db; border-radius:var(--radius); }
+  .result-count { font-weight:700; }
+  a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible { outline:3px solid var(--color-primary); outline-offset:3px; }
+  @media(max-width:760px) { .planning-results { grid-template-columns:1fr; } .planning-filters { align-items:stretch; } .planning-filters>div { flex-basis:100%; } .guide-figures { grid-template-columns:1fr; } }
 </style>

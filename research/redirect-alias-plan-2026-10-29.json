@@ -1,0 +1,359 @@
+{
+  "status": "Applied and verified live",
+  "domain": "banffbound.com",
+  "code": 301,
+  "match": "Segment-bounded prefix; live canary shows slash-normalized matching",
+  "mappingCount": 40,
+  "ruleCount": 40,
+  "mappings": [
+    {
+      "oldSlug": "banff-views",
+      "newSlug": "banff-view",
+      "paths": [
+        "/blog/banff-views/"
+      ],
+      "destination": "/blog/banff-view/"
+    },
+    {
+      "oldSlug": "banff-ski-big-3",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski-big-3/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "big-3-ski",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/big-3-ski/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "big-three-ski",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/big-three-ski/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "ski-big-three",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/ski-big-three/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "ski-big-3-alberta",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/ski-big-3-alberta/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "ski-big-3",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/ski-big-3/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "ski-banff",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/ski-banff/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-ski-hills",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski-hills/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-ski-areas",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski-areas/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "big3-ski-resort",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/big3-ski-resort/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-ski",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-ski-resorts",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski-resorts/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-ski-slopes",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski-slopes/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-ski-area",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski-area/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-ski-mountains",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski-mountains/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-ski-fields",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski-fields/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-ski-trips",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-ski-trips/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "big-3-ski-resorts",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/big-3-ski-resorts/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "big-3-banff",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/big-3-banff/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "big-three-banff",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/big-three-banff/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "banff-big-3",
+      "newSlug": "banff-skiing-guide",
+      "paths": [
+        "/blog/banff-big-3/"
+      ],
+      "destination": "/blog/banff-skiing-guide/"
+    },
+    {
+      "oldSlug": "norquay-ski-resort",
+      "newSlug": "mt-norquay-guide",
+      "paths": [
+        "/blog/norquay-ski-resort/"
+      ],
+      "destination": "/blog/mt-norquay-guide/"
+    },
+    {
+      "oldSlug": "mont-norquay",
+      "newSlug": "mt-norquay-guide",
+      "paths": [
+        "/blog/mont-norquay/"
+      ],
+      "destination": "/blog/mt-norquay-guide/"
+    },
+    {
+      "oldSlug": "mt-norquay",
+      "newSlug": "mt-norquay-guide",
+      "paths": [
+        "/blog/mt-norquay/"
+      ],
+      "destination": "/blog/mt-norquay-guide/"
+    },
+    {
+      "oldSlug": "mount-norquay-banff",
+      "newSlug": "mt-norquay-guide",
+      "paths": [
+        "/blog/mount-norquay-banff/"
+      ],
+      "destination": "/blog/mt-norquay-guide/"
+    },
+    {
+      "oldSlug": "norquay-ski-shuttle",
+      "newSlug": "mt-norquay-guide",
+      "paths": [
+        "/blog/norquay-ski-shuttle/"
+      ],
+      "destination": "/blog/mt-norquay-guide/"
+    },
+    {
+      "oldSlug": "sunshine-ski-resort-accommodation",
+      "newSlug": "sunshine-village-guide",
+      "paths": [
+        "/blog/sunshine-ski-resort-accommodation/"
+      ],
+      "destination": "/blog/sunshine-village-guide/"
+    },
+    {
+      "oldSlug": "banff-sunshine-lodging",
+      "newSlug": "sunshine-village-guide",
+      "paths": [
+        "/blog/banff-sunshine-lodging/"
+      ],
+      "destination": "/blog/sunshine-village-guide/"
+    },
+    {
+      "oldSlug": "sunshine-ski-in-ski-out",
+      "newSlug": "sunshine-village-guide",
+      "paths": [
+        "/blog/sunshine-ski-in-ski-out/"
+      ],
+      "destination": "/blog/sunshine-village-guide/"
+    },
+    {
+      "oldSlug": "sunshine-mountain-lodge",
+      "newSlug": "sunshine-village-guide",
+      "paths": [
+        "/blog/sunshine-mountain-lodge/"
+      ],
+      "destination": "/blog/sunshine-village-guide/"
+    },
+    {
+      "oldSlug": "banff-ski-accommodation",
+      "newSlug": "banff-ski-in-ski-out",
+      "paths": [
+        "/blog/banff-ski-accommodation/"
+      ],
+      "destination": "/blog/banff-ski-in-ski-out/"
+    },
+    {
+      "oldSlug": "banff-ski-resort-accommodations",
+      "newSlug": "banff-ski-in-ski-out",
+      "paths": [
+        "/blog/banff-ski-resort-accommodations/"
+      ],
+      "destination": "/blog/banff-ski-in-ski-out/"
+    },
+    {
+      "oldSlug": "ski-touring",
+      "newSlug": "banff-ski-touring",
+      "paths": [
+        "/blog/ski-touring/"
+      ],
+      "destination": "/blog/banff-ski-touring/"
+    },
+    {
+      "oldSlug": "ski-touring-canada",
+      "newSlug": "banff-ski-touring",
+      "paths": [
+        "/blog/ski-touring-canada/"
+      ],
+      "destination": "/blog/banff-ski-touring/"
+    },
+    {
+      "oldSlug": "ski-touring-canmore",
+      "newSlug": "banff-ski-touring",
+      "paths": [
+        "/blog/ski-touring-canmore/"
+      ],
+      "destination": "/blog/banff-ski-touring/"
+    },
+    {
+      "oldSlug": "backcountry-ski-touring",
+      "newSlug": "banff-ski-touring",
+      "paths": [
+        "/blog/backcountry-ski-touring/"
+      ],
+      "destination": "/blog/banff-ski-touring/"
+    },
+    {
+      "oldSlug": "back-country-ski-tours",
+      "newSlug": "banff-ski-touring",
+      "paths": [
+        "/blog/back-country-ski-tours/"
+      ],
+      "destination": "/blog/banff-ski-touring/"
+    },
+    {
+      "oldSlug": "backcountry-skiing-day-tours-canadian-rockies",
+      "newSlug": "banff-ski-touring",
+      "paths": [
+        "/blog/backcountry-skiing-day-tours-canadian-rockies/"
+      ],
+      "destination": "/blog/banff-ski-touring/"
+    },
+    {
+      "oldSlug": "banff-icewalk",
+      "newSlug": "banff-ice-walk-guide",
+      "paths": [
+        "/blog/banff-icewalk/"
+      ],
+      "destination": "/blog/banff-ice-walk-guide/"
+    }
+  ],
+  "unchanged": [
+    "Existing root component route",
+    "Source branch and repository",
+    "Environment values and scopes",
+    "Domains, region, alerts and security settings"
+  ],
+  "verification": [
+    "302 slash-bounded viewpoint canary",
+    "Query preservation",
+    "All40 target paths avoid their source prefix",
+    "All published canonicals and assets remain unaffected",
+    "Unknown descendants redirect by documented prefix semantics; no exact404 claim",
+    "Actual production source and deployment"
+  ],
+  "exactMatchAttempt": {
+    "status": "Rejected by actual app validation; no configuration saved",
+    "error": "App Ingress path routing only supports prefix matching"
+  },
+  "scope": "The40 alias segments and their descendants redirect. Live tests show both slash forms match, but sibling names do not; no canonical content exists beneath these alias segments.",
+  "canaryEvidence": {
+    "slash": 302,
+    "slashless": 302,
+    "canonicalTarget": 200,
+    "siblingLookalike": 404,
+    "queryPreserved": true,
+    "descendant": 302
+  },
+  "liveVerification": "live-http-redirect-verification-2026-10-29.json",
+  "actualBehavior": "The host normalizes slash variants and matches complete path segments. Both slash forms return301; query strings survive; sibling names do not match. Descendants match as approved."
+}

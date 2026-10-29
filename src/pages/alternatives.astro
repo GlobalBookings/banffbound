@@ -1,141 +1,106 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { trailAlternatives } from '../data/trailAlternatives';
-import { trails } from '../data/trails';
+import { trailAlternatives, trailPlanningRoutes, trailInterests, trailPlanningReviewedAt } from '../data/trailAlternatives';
+import { trailReportUrl, trailPark } from '../data/trailPlanning';
 
-const trailMap = Object.fromEntries(trails.map(t => [t.slug, t]));
+const comparisons = trailAlternatives.map(group => ({ ...group, routes: group.slugs.flatMap(slug => { const route = trailPlanningRoutes.find(item => item.slug === slug); return route ? [route] : []; }) })).filter(group => group.routes.length);
+const areas = [...new Set(trailPlanningRoutes.map(route => route.area))].sort();
+const routeCount = comparisons.reduce((total,group) => total + group.routes.length,0);
 ---
 
-<BaseLayout title="Quiet Alternatives to Banff's Busiest Trails" description="Skip the crowds. For every packed Banff trail, we show you 3 quieter alternatives with similar scenery. Local knowledge, not guesswork.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: trailAlternatives.map(g => ({
-      '@type': 'Question',
-      name: `What are quieter alternatives to ${g.popularName} in Banff?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Instead of ${g.popularName} (${g.whyPopular}), try: ${g.alternatives.map(a => `${a.name} — ${a.whySimilar} (${a.crowdReduction})`).join('. ')}`,
-      },
-    })),
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Quiet Alternatives' }]} />
-  </div>
-
+<BaseLayout title="Banff Trail Comparisons: Demands, Access & Seasons" description="Compare Banff and Kootenay outings by distance, terrain, season and transport. Different routes need different plans; no crowd-reduction or equivalent-reward promises." lastUpdated={trailPlanningReviewedAt}>
+  <div class="container"><Breadcrumbs items={[{ label: 'Trail Comparisons' }]} /></div>
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="Empty trail in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Local Knowledge</span>
-      <h1>Quiet Alternatives</h1>
-      <p>For every packed trail in Banff, we have 3 quieter options with the same reward. No lines, no queues, no parking stress.</p>
-    </div>
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80" alt="Mountain landscape" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content"><span class="badge">Compare the Whole Outing</span><h1>Trail Comparisons</h1><p>Look beyond the destination photo. Compare the route, climbing, season and journey before changing your plan.</p></div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="alternatives-list">
-        {trailAlternatives.map(group => {
-          const popular = trailMap[group.popularTrail];
-          return (
-            <div class="alt-group">
-              <div class="alt-popular">
-                <div class="alt-popular-badge">Crowded</div>
-                <div class="alt-popular-info">
-                  <h2>{group.popularName}</h2>
-                  <p>{group.whyPopular}</p>
-                  {popular && (
-                    <div class="alt-popular-stats">
-                      <span>{popular.difficulty}</span>
-                      <span>📏 {popular.distance}</span>
-                      <span>⬆️ {popular.elevationGain}</span>
-                      <span>⏱️ {popular.time}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <div class="alt-arrow">
-                <span>Try these instead</span>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-              </div>
-
-              <div class="alt-options">
-                {group.alternatives.map(alt => {
-                  const t = trailMap[alt.slug];
-                  return (
-                    <a href={t ? `/trails/${alt.slug}` : '#'} class="alt-card">
-                      {t && <img src={t.image} alt={alt.name} class="alt-card-img" loading="lazy" />}
-                      <div class="alt-card-body">
-                        <div class="alt-card-top">
-                          <h3>{alt.name}</h3>
-                          <span class="crowd-reduction">{alt.crowdReduction}</span>
-                        </div>
-                        <p class="alt-why">{alt.whySimilar}</p>
-                        {t && (
-                          <div class="alt-stats">
-                            <span>{t.difficulty}</span>
-                            <span>📏 {t.distance}</span>
-                            <span>⬆️ {t.elevationGain}</span>
-                            <span>⏱️ {t.time}</span>
-                          </div>
-                        )}
-                      </div>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+  <section class="section"><div class="container comparisons-page">
+    <div class="comparison-intro"><h2>Different routes need different decisions</h2><p>These comparisons explain what changes between outings. They do not identify quieter trails, count visitors or promise the same scenery with less effort. A farther trail can need a longer drive, more climbing, different equipment or a separate seasonal transport booking.</p><p>Read one-way and return distances carefully, add any approach or side trip, and compare the full group commitment. A summer grade does not assess winter terrain. If a route closes, another route towards the same destination needs its own assessment.</p><p>Use <a href="/quiet-trails">quiet trail planning</a> for a day with more room between commitments, <a href="/towns">town and base choices</a> for the overnight journey, or the <a href="/trail-map">full trail directory</a> to investigate a specific route.</p></div>
+    <h2 id="comparisons">Compare selected route descriptions</h2>
+    <p id="filter-help">The filters show matching cards within each comparison. A season label describes the source context, not current access. Interest labels are not difficulty grades, and a single remaining card is a planning lead rather than a recommended replacement.</p>
+    <form id="comparison-filters" class="comparison-filters" aria-label="Filter route comparisons" aria-describedby="filter-help" hidden>
+      <div><label for="a-season">Description season</label><select id="a-season" name="season" aria-controls="comparison-results"><option value="all">All descriptions</option><option value="summer">Summer route description</option><option value="winter">Winter activity description</option></select></div>
+      <div><label for="a-area">Area</label><select id="a-area" name="area" aria-controls="comparison-results"><option value="all">All areas</option>{areas.map(area => <option value={area}>{area}</option>)}</select></div>
+      <div><label for="a-interest">Interest or activity</label><select id="a-interest" name="interest" aria-controls="comparison-results"><option value="all">All interests</option>{Object.entries(trailInterests).map(([value,label]) => <option value={value}>{label}</option>)}</select></div>
+      <button type="button" class="btn btn-outline" data-reset>Reset filters</button>
+    </form>
+    <noscript><p>Every comparison and route card is available below without JavaScript. Browser filtering is optional.</p></noscript>
+    <p id="comparison-count" class="result-count" role="status" aria-live="polite" aria-atomic="true">{routeCount} route descriptions in {comparisons.length} comparisons</p>
+    <div id="comparison-empty" class="empty-state" hidden><h3>No selected route matches those filters</h3><p>Change the description season, area or interest. No match does not mean other routes are closed or unsuitable; this is a limited selection.</p><button type="button" class="btn btn-outline" data-reset>Show all comparisons</button></div>
+    <div id="comparison-results">
+      {comparisons.map(group => <section class="comparison-group" data-comparison aria-labelledby={group.id}>
+        <div class="group-heading"><h2 id={group.id}>{group.title}</h2><p>{group.comparison}</p></div>
+        <div class="comparison-cards">{group.routes.map(route => <article class="route-card" data-route data-seasons={route.seasons.join(' ')} data-area={route.area} data-interests={route.interests.join(' ')}>
+          <p class="route-context">{route.area} · {route.seasons.includes('winter') ? 'Winter activity description' : 'Summer route description'}</p>
+          <h3><a href={`/trails/${route.slug}`}>{route.trail.name}</a></h3><p class="park-label">{trailPark(route.trail)}</p>
+          <dl class="guide-figures"><div><dt>Stated distance</dt><dd>{route.trail.distance}</dd></div><div><dt>Stated ascent</dt><dd>{route.trail.elevationGain}</dd></div></dl>
+          <p><strong>Route demand:</strong> {route.demand}</p><p><strong>Journey and base:</strong> {route.access}</p><p><strong>Seasonal difference:</strong> {route.seasonNote}</p>
+          {route.trail.currentNotice && <p class="dated-notice"><strong>Access notice checked {route.trail.currentNotice.checkedAt}:</strong> {route.trail.currentNotice.text} <a href={route.trail.currentNotice.url} target="_blank" rel="noopener">Source notice ↗</a></p>}
+          <div class="source-links"><a href={`/trails/${route.slug}`}>Full route planning guide →</a><a href={route.trail.parksCanadaUrl} target="_blank" rel="noopener">Official route description ↗</a><a href={trailReportUrl(route.trail)} target="_blank" rel="noopener">Current trail report ↗</a>{route.accessSource && <a href={route.accessSource.url} target="_blank" rel="noopener">{route.accessSource.label} ↗</a>}</div>
+        </article>)}</div>
+      </section>)}
     </div>
-  </section>
+    <div class="comparison-footer"><h2>Change the plan without inheriting assumptions</h2><p>Before switching, confirm the new route's start, return distance, surfaces, current report, closures, weather and transport. Take its official map. A bus connection, short distance or another group's tracks does not settle those questions.</p><p>For snow season, use <a href="/winter">winter planning</a> and <a href="/blog/banff-avalanche-safety">avalanche awareness</a>. Check the <a href="/packing-list">equipment list</a> for the actual activity. A shorter visit near your base or an <a href="/what-to-do-today">operating indoor activity</a> can be a practical change without inventing an equivalent mountain hike.</p><p>Reviewed October 29, 2026. The linked Parks Canada, Town, transit and road sources support these selected comparisons; current official reports and notices govern access. No live occupancy data or reduction percentages are supplied.</p></div>
+  </div></section>
 </BaseLayout>
 
+<script>
+  const form = document.querySelector<HTMLFormElement>('#comparison-filters');
+  const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-comparison]'));
+  const count = document.querySelector<HTMLElement>('#comparison-count');
+  const empty = document.querySelector<HTMLElement>('#comparison-empty');
+  if (form && count && empty) {
+    const fields = ['a-season','a-area','a-interest'].map(id => document.getElementById(id) as HTMLSelectElement);
+    const update = () => {
+      const [season,area,interest] = fields.map(field => field.value);
+      let visible = 0;
+      let visibleGroups = 0;
+      for (const group of groups) {
+        let groupVisible = 0;
+        group.querySelectorAll<HTMLElement>('[data-route]').forEach(card => {
+          const matches = (season === 'all' || card.dataset.seasons?.split(' ').includes(season)) && (area === 'all' || card.dataset.area === area) && (interest === 'all' || card.dataset.interests?.split(' ').includes(interest));
+          card.hidden = !matches;
+          if (matches) groupVisible++;
+        });
+        group.hidden = groupVisible === 0;
+        if (groupVisible) visibleGroups++;
+        visible += groupVisible;
+      }
+      count.textContent = `${visible} route description${visible === 1 ? '' : 's'} in ${visibleGroups} comparison${visibleGroups === 1 ? '' : 's'}`;
+      empty.hidden = visible !== 0;
+    };
+    form.addEventListener('submit', event => event.preventDefault());
+    fields.forEach(field => field.addEventListener('change', update));
+    document.querySelectorAll('[data-reset]').forEach(button => button.addEventListener('click', () => { form.reset(); update(); }));
+    form.hidden = false;
+    update();
+  }
+</script>
+
 <style>
-  .alternatives-list { display: flex; flex-direction: column; gap: 3rem; }
-
-  .alt-group { }
-
-  .alt-popular {
-    display: flex; gap: 1rem; align-items: flex-start;
-    background: #fef2f2; border: 1px solid #fecaca; border-radius: var(--radius); padding: 1.5rem;
-    position: relative;
-  }
-  .alt-popular-badge {
-    position: absolute; top: -0.6rem; right: 1rem;
-    background: #ef4444; color: white; font-size: 0.7rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.06em; padding: 0.2rem 0.6rem; border-radius: 4px;
-  }
-  .alt-popular-info h2 { font-size: 1.2rem; margin-bottom: 0.3rem; }
-  .alt-popular-info p { font-size: 0.9rem; color: var(--color-text-light); line-height: 1.5; }
-  .alt-popular-stats { display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--color-text-light); margin-top: 0.5rem; text-transform: capitalize; }
-
-  .alt-arrow {
-    display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
-    padding: 1rem 0; color: var(--color-accent); font-weight: 700; font-size: 0.85rem;
-  }
-
-  .alt-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-  .alt-card {
-    background: var(--color-white); border-radius: var(--radius); overflow: hidden;
-    box-shadow: var(--shadow); text-decoration: none; color: inherit;
-    border-left: 4px solid #22c55e; transition: all 0.2s;
-  }
-  .alt-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-  .alt-card-img { width: 100%; height: 120px; object-fit: cover; }
-  .alt-card-body { padding: 1rem; }
-  .alt-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.4rem; }
-  .alt-card-top h3 { font-size: 0.95rem; }
-  .crowd-reduction { font-size: 0.72rem; font-weight: 700; color: #16a34a; background: #dcfce7; padding: 0.15rem 0.5rem; border-radius: 4px; white-space: nowrap; }
-  .alt-why { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.4; margin-bottom: 0.5rem; }
-  .alt-stats { display: flex; gap: 0.5rem; font-size: 0.72rem; color: var(--color-text-light); flex-wrap: wrap; text-transform: capitalize; }
-
-  @media (max-width: 768px) {
-    .alt-options { grid-template-columns: 1fr; }
-  }
+  [hidden] { display:none !important; }
+  .comparisons-page { max-width:1200px; }
+  .comparisons-page p { line-height:1.75; margin-bottom:.8rem; }
+  .comparison-intro,.comparison-footer { padding:1.5rem; margin-bottom:2rem; border-radius:var(--radius); background:var(--color-bg-alt); }
+  .comparison-filters { display:flex; gap:1rem; align-items:flex-end; flex-wrap:wrap; padding:1.2rem; margin:1.2rem 0; background:var(--color-bg-alt); border-radius:var(--radius); }
+  .comparison-filters>div { display:flex; flex-direction:column; flex:1 1 200px; gap:.35rem; }
+  label { font-weight:700; font-size:.9rem; }
+  select { width:100%; padding:.65rem; font:inherit; color:inherit; background:white; border:1px solid #9ca3af; border-radius:6px; }
+  .comparison-group { margin:2rem 0 3rem; }
+  .group-heading { padding:1.3rem; border-left:4px solid var(--color-primary); background:var(--color-bg-alt); border-radius:var(--radius); margin-bottom:1rem; }
+  .group-heading h2 { margin-bottom:.5rem; font-size:1.45rem; }
+  .comparison-cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.1rem; align-items:start; }
+  .route-card { padding:1.3rem; border:1px solid #d1d5db; border-radius:var(--radius); background:var(--color-white); }
+  .route-context,.park-label { font-size:.8rem; color:var(--color-text-light); }
+  .route-card h3 { font-size:1.2rem; margin-bottom:.4rem; }
+  .guide-figures { display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin:1rem 0; padding:.8rem; background:var(--color-bg-alt); border-radius:6px; }
+  dt { color:var(--color-text-light); font-size:.75rem; } dd { margin:0; font-size:.9rem; font-weight:600; }
+  .source-links { display:flex; flex-direction:column; gap:.45rem; font-size:.87rem; margin-top:1rem; }
+  .dated-notice { padding:.9rem; margin-top:1rem; background:#fff3cd; border-radius:6px; font-size:.87rem; }
+  .empty-state { padding:1.5rem; border:1px solid #d1d5db; border-radius:var(--radius); }
+  .result-count { font-weight:700; }
+  a:focus-visible,button:focus-visible,select:focus-visible { outline:3px solid var(--color-primary); outline-offset:3px; }
+  @media(max-width:760px) { .comparison-cards { grid-template-columns:1fr; } .comparison-filters { align-items:stretch; } .comparison-filters>div { flex-basis:100%; } .guide-figures { grid-template-columns:1fr; } }
 </style>

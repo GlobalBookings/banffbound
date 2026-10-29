@@ -35,6 +35,8 @@ jobs:
         run: |
           node scripts/check-trip-planner.mjs
           node scripts/check-day-ideas.mjs
+          node scripts/check-trail-directory.mjs
+          node scripts/check-production-redirects.mjs
 
       - name: Check report source and expiry behavior
         run: |
