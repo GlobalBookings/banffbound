@@ -18,6 +18,8 @@
   --transition: 0.3s ease;
 }
 
+[hidden] { display: none !important; }
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;

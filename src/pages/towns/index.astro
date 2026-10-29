@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { towns } from '../../data/towns';
+
+const faqs = [
+  { question: 'Which town is best for a first winter trip to Banff?', answer: 'Banff is a practical first choice for a mixed group, especially without a car. Canmore suits longer suite stays, Lake Louise suits focused ski or lakeshore trips, and Field, Golden and Kananaskis work best with a more specific transport and activity plan.' },
+  { question: 'Are all these places inside Banff National Park?', answer: 'No. Banff and Lake Louise are in Banff National Park. Canmore is outside the park, Field is in Yoho National Park in British Columbia, Golden is a separate BC town, and Kananaskis is an Alberta mountain region with its own parks and pass requirements.' },
+  { question: 'Can I visit every town in one winter day?', answer: 'That would leave little time in each place and make the day depend on winter road conditions. Pick one main destination, keep a shorter alternative and consider an overnight for a Golden or Yoho visit.' },
+];
+---
+
+<BaseLayout title="Banff & Nearby Towns: Choose Your Rockies Base" description="Compare Banff, Canmore, Lake Louise, Field, Golden and Kananaskis. Find your winter base with practical town guides, transport advice, day plans and stays." canonicalUrl="https://banffbound.com/towns/" lastUpdated="2026-10-28">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': [
+    { '@type': 'CollectionPage', name: 'Banff and nearby towns', url: 'https://banffbound.com/towns/', description: 'Practical destination guides for Banff and its surrounding mountain communities.', mainEntity: { '@type': 'ItemList', itemListElement: towns.map((town, i) => ({ '@type': 'ListItem', position: i + 1, name: town.name, url: `https://banffbound.com/towns/${town.slug}/` })) } },
+    { '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ] })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Towns & local areas' }]} /></div>
+  <section class="town-hero">
+    <div class="container hero-grid">
+      <div><span class="eyebrow">Six places. Six different trips.</span><h1>Banff &amp; the<br />mountain towns.</h1><p>Walk-to-dinner Banff, a spacious Canmore suite, a Lake Louise ski week or a quiet lodge across the Divide. Choose a base that fits your days.</p><a class="btn" href="#base-finder">Find my base &darr;</a></div>
+      <aside class="hero-note"><span class="eyebrow">Start here</span><h2>One region.<br />Different connections.</h2><p>These places are not one resort town. A good base saves you a cold transfer, a long winter drive or a rushed return.</p><a href="/winter-stays">Compare winter stays &rarr;</a><a href="/winter">Build a winter trip &rarr;</a></aside>
+    </div>
+  </section>
+
+  <section class="section" id="base-finder">
+    <div class="container">
+      <div class="finder-intro"><span class="eyebrow">Make it your trip</span><h2>What matters most?</h2><p>Choose a priority to highlight useful starting points. Every destination guide stays available below.</p></div>
+      <div class="choice-list" hidden role="group" aria-label="Find destinations by trip priority">
+        <button type="button" data-priority="all" aria-pressed="true">Show me everything</button>
+        <button type="button" data-priority="car-free" aria-pressed="false">Fewer car journeys</button>
+        <button type="button" data-priority="ski" aria-pressed="false">Downhill ski days</button>
+        <button type="button" data-priority="family" aria-pressed="false">Family time</button>
+        <button type="button" data-priority="quiet" aria-pressed="false">A quieter escape</button>
+      </div>
+      <p id="base-match" class="match-note" aria-live="polite">Explore all six bases. Start with the trip you want, then check the transport.</p>
+      <div class="town-grid">
+        {towns.map((town, i) => <article class="town-card" data-town-tags={town.tags.join(' ')}>
+          <a href={`/towns/${town.slug}/`} class="town-image-link"><img src={town.image} alt={`Explore ${town.name} and the surrounding mountains`} width="640" height="400" loading="lazy" /><span class="number">0{i + 1}</span></a>
+          <div class="town-card-body"><span class="eyebrow">{town.region}</span><h3><a href={`/towns/${town.slug}/`}>{town.name}</a></h3><p class="best-for">{town.bestFor}</p><p>{town.intro.split('. ').slice(0, 2).join('. ')}.</p><a class="text-link" href={`/towns/${town.slug}/`}>Plan a {town.name} stay &rarr;</a></div>
+        </article>)}
+      </div>
+      <noscript><p>All destination guides are shown. Open a guide for transport details and a sample winter day.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section compare-section"><div class="container"><span class="eyebrow">The quick comparison</span><h2>Choose the base, then the bed.</h2><div class="table-scroll" tabindex="0" role="region" aria-label="Destination comparison table"><table><caption>Practical starting points for a winter visit</caption><thead><tr><th scope="col">Base</th><th scope="col">Choose it for</th><th scope="col">Plan around</th></tr></thead><tbody>
+    <tr><th scope="row"><a href="/towns/banff/">Banff</a></th><td>Town evenings, mixed groups, resort shuttles</td><td>The precise hotel-to-shuttle walk</td></tr>
+    <tr><th scope="row"><a href="/towns/canmore/">Canmore</a></th><td>Suites, Nordic skiing, longer stays</td><td>Transfers for Banff ski resorts</td></tr>
+    <tr><th scope="row"><a href="/towns/lake-louise/">Lake Louise</a></th><td>Lake Louise skiing or lakeshore scenery</td><td>Village, lake and ski area are separate</td></tr>
+    <tr><th scope="row"><a href="/towns/field-yoho/">Field &amp; Yoho</a></th><td>Quiet village and lodge stays</td><td>Winter highway access and limited services</td></tr>
+    <tr><th scope="row"><a href="/towns/golden/">Golden</a></th><td>A Kicking Horse or heli-ski trip</td><td>Staying overnight and operator transfers</td></tr>
+    <tr><th scope="row"><a href="/towns/kananaskis/">Kananaskis</a></th><td>A focused resort or Nordic escape</td><td>Exact addresses, seasonal roads and passes</td></tr>
+  </tbody></table></div><p class="table-note">“Car-free” depends on the actual hotel, activity, timetable and mobility needs. Golden, Field and Kananaskis need their own transport plan.</p></div></section>
+
+  <section class="section"><div class="container narrow"><h2>Before you pick your base</h2>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}<p class="checked">Guides researched 28 October 2026. Each destination links to its current official transport and park information.</p><div class="next-links"><a class="btn" href="/winter-stays">Find a winter stay &rarr;</a><a class="btn btn-outline" href="/ski-day-planner">Plan a ski day &rarr;</a></div></div></section>
+</BaseLayout>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-priority]');
+  const cards = document.querySelectorAll<HTMLElement>('[data-town-tags]');
+  const note = document.getElementById('base-match');
+  const messages: Record<string, string> = {
+    all: 'Explore all six bases. Start with the trip you want, then check the transport.',
+    'car-free': 'Banff is the simplest starting point. Canmore has public transit; confirm onward connections for each outing.',
+    ski: 'Choose your resort first. Banff and Lake Louise serve SkiBig3 trips; Golden and Kananaskis create different ski holidays.',
+    family: 'These bases offer different family rhythms. Confirm room layout, lesson ages and travel times before booking.',
+    quiet: 'Quieter evenings can mean fewer services and more driving. Arrange meals and transport before you arrive.',
+  };
+  buttons.forEach(button => button.addEventListener('click', () => {
+    const priority = button.dataset.priority || 'all';
+    buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    cards.forEach(card => { card.classList.toggle('muted', priority !== 'all' && !card.dataset.townTags?.split(' ').includes(priority)); });
+    if (note) note.textContent = messages[priority];
+  }));
+  document.querySelector<HTMLElement>('.choice-list')!.hidden = false;
+</script>
+
+<style>
+  .eyebrow{display:block;text-transform:uppercase;letter-spacing:.13em;font-size:.72rem;font-weight:700;color:var(--color-primary);margin-bottom:.7rem}.town-hero{background:var(--color-bg-alt);padding:4.5rem 0}.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:4rem;align-items:center}.town-hero h1{font-size:clamp(2.5rem,5vw,4.3rem);margin-bottom:1.4rem}.town-hero p{max-width:650px;color:var(--color-text-light);margin-bottom:1.5rem;font-size:1.05rem}.hero-note{padding:2rem;background:var(--color-primary);border-radius:var(--radius);color:white}.hero-note h2,.hero-note .eyebrow,.hero-note p{color:white}.hero-note h2{font-size:2rem;margin-bottom:1rem}.hero-note a{display:block;color:var(--color-accent-light);font-weight:600;margin-top:.6rem}.finder-intro{max-width:650px}.finder-intro p{margin-top:1rem}.choice-list{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.5rem}.choice-list button{font:inherit;border:1px solid #bdc8bd;background:white;border-radius:24px;padding:.65rem 1.1rem;color:var(--color-primary);cursor:pointer}.choice-list button[aria-pressed=true]{background:var(--color-primary);color:white;border-color:var(--color-primary)}.match-note{padding:1rem 0 1.6rem;max-width:750px;font-size:.9rem;color:var(--color-text-light);min-height:5rem}.town-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}.town-card{background:white;border:1px solid #e3e6df;border-radius:var(--radius);overflow:hidden;transition:opacity .2s,border-color .2s}.town-card.muted{opacity:.6}.town-image-link{display:block;position:relative}.town-image-link img{width:100%;height:210px;object-fit:cover}.number{position:absolute;left:1rem;top:1rem;color:white;background:var(--color-primary);padding:.2rem .55rem;border-radius:5px;font-size:.8rem}.town-card-body{padding:1.5rem}.town-card-body .eyebrow{font-size:.63rem}.town-card-body h3{font-size:1.7rem;margin-bottom:.75rem}.town-card-body p{color:var(--color-text-light);font-size:.9rem;margin-bottom:1rem}.town-card-body .best-for{color:var(--color-primary);font-weight:600}.text-link{font-weight:600;color:var(--color-primary);text-decoration:underline;text-underline-offset:3px}.compare-section{background:var(--color-bg-alt)}.compare-section h2{margin-bottom:2rem}.table-scroll{overflow:auto;border-radius:var(--radius);background:white}table{width:100%;border-collapse:collapse;min-width:650px;text-align:left}caption{text-align:left;padding:1rem 1.25rem;font-size:.85rem;color:var(--color-text-light)}td,th{padding:1rem 1.25rem;border-bottom:1px solid #e3e6df}thead{background:var(--color-primary);color:white}tbody th{font-size:.95rem}tbody a{text-decoration:underline;text-underline-offset:3px}.table-note,.checked{font-size:.85rem;color:var(--color-text-light);margin-top:1.25rem}.narrow{max-width:850px}.narrow h2{margin-bottom:1.5rem}details{padding:1.2rem 0;border-bottom:1px solid #d9dfd7}summary{font-weight:600;cursor:pointer}details p{margin-top:.75rem;color:var(--color-text-light)}.next-links{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}@media(max-width:900px){.town-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{gap:2rem}}@media(max-width:600px){.hero-grid,.town-grid{grid-template-columns:1fr}.town-hero{padding:3rem 0}.hero-note{padding:1.5rem}.choice-list button{font-size:.85rem}.match-note{min-height:7rem}.town-card.muted{opacity:.65}}
+</style>

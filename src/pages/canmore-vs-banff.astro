@@ -1,254 +1,101 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqs = [
+  { question: 'Should I stay in Canmore or Banff?', answer: 'Choose a central Banff stay for town evenings and easier access to the Banff ski shuttle network. Consider Canmore for a suite-based stay, Nordic skiing and time in Canmore itself. Compare the exact hotel address, room layout and transport plan before deciding.' },
+  { question: 'Is Canmore always cheaper than Banff?', answer: 'No. Compare actual quotes for the same dates and party size, including room type, taxes, parking, meals and transport. A kitchen can help a longer stay, but extra ski transfers can offset an accommodation saving.' },
+  { question: 'Is parking free in Canmore?', answer: 'Not everywhere. Canmore has downtown paid parking, designated free parking and resident-only areas. Banff also has downtown paid parking and designated free parking areas. Check the current municipal map and local signs; hotel parking policies are separate.' },
+  { question: 'Can I travel between Canmore and Banff without a car?', answer: 'Roam Route 3 connects the towns. Use the current timetable and fares for your date and allow for the walk from your accommodation. A connection to a Banff ski shuttle is a separate leg, so check both directions before booking an early lesson.' },
+  { question: 'Do I need a Banff park pass to stay in Canmore?', answer: 'Canmore is outside Banff National Park, so staying in town does not itself require Banff park admission. A visit to Banff National Park has separate admission rules. Nearby Kananaskis parking pass requirements are also separate; check the applicable official information for each outing.' },
+];
+const rows = [
+  ['Accommodation cost', 'Compare the actual room and dates; suites can suit a longer stay', 'Compare the actual room and dates; location can reduce transfers'],
+  ['Location', 'Outside Banff National Park, east of Banff', 'Inside Banff National Park'],
+  ['Parking', 'Paid downtown zones, designated free areas and restrictions', 'Paid downtown zones, designated free areas and restrictions'],
+  ['Park admission', 'Not required just to stay in Canmore; check your outings', 'Check current Parks Canada admission for your visit'],
+  ['Food and evenings', 'Restaurants, breweries and a town-focused evening', 'Restaurants and nightlife around a compact visitor centre'],
+  ['Room layout', 'Consider suite and condo options for kitchens and living space', 'Hotel, suite and cabin options; check the room category'],
+  ['Car-free travel', 'Local transit and Route 3 to Banff; onward trips need planning', 'Local transit and selected resort shuttle stops'],
+  ['Downhill ski days', 'Plan the full transfer to your chosen resort', 'Confirm your hotel-to-resort shuttle connection'],
+  ['Nordic or town days', 'A base for Canmore activities and the Nordic Centre', 'A base for Banff town activities and park outings'],
+  ['Winter walking', 'Choose maintained paths and checked winter routes', 'Choose maintained paths and checked winter routes'],
+];
 ---
 
-<BaseLayout title="Canmore vs Banff — Where to Stay for Price, Access & Vibe" description="Canmore vs Banff comparison: prices, convenience, dining, parking, vibe. Interactive tool to help you decide where to stay based on your travel priorities.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Should I stay in Canmore or Banff?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on your priorities. Stay in Banff if you want walkable restaurants, nightlife, and no driving to trailheads inside the park. Stay in Canmore if you want lower prices (20-30% cheaper hotels), a quieter local vibe, free parking, and don\'t mind a 20-minute drive to Banff. Canmore is outside the park so you don\'t need a park pass just to stay there, only when you drive into Banff National Park.' } },
-      { '@type': 'Question', name: 'Is Canmore cheaper than Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, significantly. Hotels in Canmore are 20-30% cheaper than comparable options in Banff. A mid-range hotel in Canmore runs $180-250/night vs $250-350 in Banff. Groceries are slightly cheaper. Dining is comparable. You also save on parking (free in Canmore, $4-6/hour in Banff) and don\'t need a park pass ($11/day) just to be in town — only when entering the park.' } },
-      { '@type': 'Question', name: 'How far is Canmore from Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Canmore is 22 km (14 miles) east of Banff — about a 20-minute drive on Highway 1. Roam Transit Route 3 also connects the two towns by bus (25 minutes, $6 one way). Canmore is just outside the eastern park gate, so you pass through the gate and need a park pass each time you drive to Banff.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Canmore vs Banff' }]} />
-  </div>
-
+<BaseLayout title="Canmore vs Banff: Where to Stay for Your Winter Trip" description="Compare Canmore and Banff for winter stays, ski transfers, suites, parking and town evenings. Use a priority picker and check the real costs before booking." canonicalUrl="https://banffbound.com/canmore-vs-banff/" lastUpdated="2026-10-28">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Towns & local areas', href: '/towns/' }, { label: 'Canmore vs Banff' }]} /></div>
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Mountain town view in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Decision Guide</span>
-      <h1>Canmore vs Banff</h1>
-      <p>Not sure where to stay? Compare prices, convenience, dining, and vibe to find your perfect base.</p>
-    </div>
+    <img src="/images/blog/canmore-day-trip.webp" alt="Mountain scenery around the Bow Valley" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content"><span class="badge">Choose your base</span><h1>Canmore vs Banff</h1><p>Choose the town that fits your days. Compare the room, the connections and the evening you want to come back to.</p></div>
   </section>
-
-  <section class="section">
-    <div class="container">
-
-      <!-- Interactive Decision Tool -->
-      <div class="decision-intro">
-        <h2>Where Should You Stay?</h2>
-        <p>Pick what matters most to you. We'll recommend the best base for your trip.</p>
-      </div>
-
-      <div class="priority-picker" id="priority-picker">
-        <button class="priority-btn" data-priority="budget" data-favors="canmore">💰 Lower prices</button>
-        <button class="priority-btn" data-priority="convenience" data-favors="banff">📍 Walking to everything</button>
-        <button class="priority-btn" data-priority="dining" data-favors="banff">🍽️ Restaurant variety</button>
-        <button class="priority-btn" data-priority="parking" data-favors="canmore">🅿️ Free parking</button>
-        <button class="priority-btn" data-priority="quiet" data-favors="canmore">🤫 Quiet / local vibe</button>
-        <button class="priority-btn" data-priority="nightlife" data-favors="banff">🎉 Nightlife / bars</button>
-        <button class="priority-btn" data-priority="families" data-favors="canmore">👨‍👩‍👧 Family-friendly</button>
-        <button class="priority-btn" data-priority="nature" data-favors="banff">🏔️ Inside the park</button>
-      </div>
-
-      <div class="decision-result" id="decision-result">
-        <p class="decision-text">Select your priorities above to get a recommendation.</p>
-      </div>
-
-      <!-- Comparison Table -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Side-by-Side Comparison</h2>
-        <p>How Canmore and Banff compare across every category that matters.</p>
-      </div>
-
-      <div class="compare-table-wrap">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>🏘️ Canmore</th>
-              <th>🏔️ Banff</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Hotel Price (mid-range)</strong></td>
-              <td class="winner">$180-250/night ✅</td>
-              <td>$250-350/night</td>
-            </tr>
-            <tr>
-              <td><strong>Distance to Park</strong></td>
-              <td>20 min drive to Banff townsite</td>
-              <td class="winner">You're already in it ✅</td>
-            </tr>
-            <tr>
-              <td><strong>Parking</strong></td>
-              <td class="winner">Free everywhere ✅</td>
-              <td>$4-6/hour, limited spots</td>
-            </tr>
-            <tr>
-              <td><strong>Park Pass Needed?</strong></td>
-              <td class="winner">Only when entering the park ✅</td>
-              <td>Yes, always ($11/day or $22/family)</td>
-            </tr>
-            <tr>
-              <td><strong>Restaurants</strong></td>
-              <td>~40 restaurants, casual focus</td>
-              <td class="winner">~80+ restaurants, all price points ✅</td>
-            </tr>
-            <tr>
-              <td><strong>Nightlife</strong></td>
-              <td>A few pubs</td>
-              <td class="winner">Bars, clubs, live music ✅</td>
-            </tr>
-            <tr>
-              <td><strong>Vibe</strong></td>
-              <td class="winner">Local, quiet, residential ✅</td>
-              <td>Touristy, busy, lively</td>
-            </tr>
-            <tr>
-              <td><strong>Groceries</strong></td>
-              <td class="winner">Safeway, Save-On — normal prices ✅</td>
-              <td>IGA — markup of 15-25%</td>
-            </tr>
-            <tr>
-              <td><strong>Transit to Banff</strong></td>
-              <td>Roam Route 3 (25 min, $6)</td>
-              <td class="winner">Walk everywhere ✅</td>
-            </tr>
-            <tr>
-              <td><strong>Own Hiking Trails</strong></td>
-              <td class="winner">Grassi Lakes, Ha Ling Peak, Heart Creek ✅</td>
-              <td>Tunnel Mountain, Bow Falls, etc.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Detailed Sections -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>The Full Breakdown</h2>
-      </div>
-
-      <div class="breakdown-cards">
-        <div class="breakdown-card">
-          <h3>💰 Price</h3>
-          <p><strong>Canmore wins.</strong> Hotels are 20-30% cheaper. A mid-range hotel in Canmore (Lamphouse, Malcolm Hotel) runs $180-250/night vs $250-350 for comparable options in Banff (Moose Hotel, Mount Royal). Canmore also saves you on parking (free vs $4-6/hour) and park passes ($11/day saved when you're just at your hotel).</p>
-          <p class="saving-math"><strong>Typical savings for a 5-night trip:</strong> $350-500 on hotel + $50-80 parking + ~$55 park pass = <strong>$450-635 saved</strong></p>
-        </div>
-        <div class="breakdown-card">
-          <h3>📍 Convenience</h3>
-          <p><strong>Banff wins.</strong> You're inside the park with walking-distance access to restaurants, shops, the gondola, Bow Falls, and Tunnel Mountain. No need to drive to the park gate every morning. Lake Minnewanka is 15 minutes away. From Canmore, add 20 minutes + park gate lineup to every park destination.</p>
-        </div>
-        <div class="breakdown-card">
-          <h3>🍽️ Dining</h3>
-          <p><strong>Banff wins.</strong> 80+ restaurants ranging from casual (Bear Street Tavern, Magpie & Stump) to fine dining (Eden, Grapes). Canmore has ~40 solid restaurants — The Iron Goat, Communitea, Blake — but less variety overall. Both towns have good coffee shops and breweries.</p>
-        </div>
-        <div class="breakdown-card">
-          <h3>🅿️ Parking</h3>
-          <p><strong>Canmore wins.</strong> Free parking everywhere in Canmore, including hotels and grocery stores. Banff charges $4-6/hour for street parking, and popular lots at Lake Louise and Moraine Lake fill before 7 AM in summer. If you're driving, Canmore is far less stressful.</p>
-        </div>
-        <div class="breakdown-card">
-          <h3>🤫 Vibe</h3>
-          <p><strong>Canmore wins for quiet.</strong> Canmore feels like a real mountain town — locals walking dogs, kids at the playground, community events. Banff is a tourist town — busy streets, tour buses, souvenir shops. If you want that lively energy, Banff is great. If you want peace after a day of hiking, Canmore delivers.</p>
-        </div>
-        <div class="breakdown-card">
-          <h3>👨‍👩‍👧 Families</h3>
-          <p><strong>Canmore wins.</strong> More space (suites/condos), free parking for car seats and strollers, Elevation Place (pool/climbing gym), playgrounds, and Quarry Lake for swimming. Banff is more geared toward couples and party-goers, though it has kid-friendly activities too.</p>
-        </div>
-      </div>
-
-      <!-- Bottom Line -->
-      <div class="bottom-line">
-        <h2>The Bottom Line</h2>
-        <div class="verdict-grid">
-          <div class="verdict-card canmore">
-            <h3>Stay in Canmore if…</h3>
-            <ul>
-              <li>You're on a budget</li>
-              <li>You have a rental car</li>
-              <li>You want a quieter, more local feel</li>
-              <li>You're travelling with family</li>
-              <li>You hate paid parking</li>
-            </ul>
-          </div>
-          <div class="verdict-card banff">
-            <h3>Stay in Banff if…</h3>
-            <ul>
-              <li>You want maximum convenience</li>
-              <li>You don't have a car</li>
-              <li>You want dining and nightlife variety</li>
-              <li>You want to be inside the park</li>
-              <li>It's your first time visiting</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>Should I stay in Canmore or Banff?</summary>
-          <p>Canmore if you want to save money (20-30% cheaper hotels, free parking) and prefer a quiet local vibe. Banff if you want walkable restaurants, nightlife, and the convenience of being inside the park. First-time visitors often prefer Banff; returning visitors often switch to Canmore.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is Canmore cheaper than Banff?</summary>
-          <p>Yes. Hotels are 20-30% cheaper, parking is free, and groceries are normal price. A 5-night mid-range trip based in Canmore saves $450-635 compared to the same trip based in Banff.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How far is Canmore from Banff?</summary>
-          <p>22 km (14 miles) — about 20 minutes by car on Highway 1. Roam Transit Route 3 also connects the two towns (25 min, $6 one way). Canmore is just east of the park gates.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do I need a park pass in Canmore?</summary>
-          <p>No — Canmore is outside Banff National Park. You only need a park pass ($11/adult/day) when you drive through the park gates into Banff. Canmore's own hiking trails (Grassi Lakes, Ha Ling Peak) are in Kananaskis, which requires a separate $15/day Kananaskis Conservation Pass.</p>
-        </details>
-      </div>
-
+  <section class="section"><div class="container">
+    <div class="decision-intro"><h2>What matters to your trip?</h2><p>Select a few priorities for a starting suggestion, then compare actual rooms and transport. Both towns can work for families, couples and friends.</p></div>
+    <div class="priority-picker" id="priority-picker" role="group" aria-label="Accommodation priorities">
+      <button type="button" class="priority-btn" data-priority="convenience" data-favors="banff" aria-pressed="false">Walk to town restaurants</button>
+      <button type="button" class="priority-btn" data-priority="shuttles" data-favors="banff" aria-pressed="false">Banff resort shuttle access</button>
+      <button type="button" class="priority-btn" data-priority="nightlife" data-favors="banff" aria-pressed="false">Lively evenings</button>
+      <button type="button" class="priority-btn" data-priority="nature" data-favors="banff" aria-pressed="false">A base inside the national park</button>
+      <button type="button" class="priority-btn" data-priority="suite" data-favors="canmore" aria-pressed="false">A longer suite-based stay</button>
+      <button type="button" class="priority-btn" data-priority="nordic" data-favors="canmore" aria-pressed="false">Canmore Nordic days</button>
+      <button type="button" class="priority-btn" data-priority="canmore" data-favors="canmore" aria-pressed="false">Time exploring Canmore</button>
     </div>
-  </section>
+    <div class="decision-result" id="decision-result" aria-live="polite"><div class="rec"><h3 id="decision-title">Start with your days.</h3><p id="decision-copy">Select your priorities above. A central Banff hotel can simplify a ski trip; a Canmore suite can suit a longer stay built around Canmore.</p></div></div>
+    <noscript><p>The comparison and guides below work without the priority picker. Choose Banff for a central town stay or compare Canmore suites for a longer visit.</p></noscript>
+    <div class="guide-ctas"><a class="btn" href="/towns/banff/">Explore Banff &rarr;</a><a class="btn btn-outline" href="/towns/canmore/">Explore Canmore &rarr;</a><a class="text-link" href="/winter-stays">Compare winter stays &rarr;</a></div>
+
+    <div class="section-header" style="margin-top:3rem;"><h2>Side-by-side comparison</h2><p>Use this to shortlist a base, then confirm the details for your dates.</p></div>
+    <div class="compare-table-wrap" tabindex="0" role="region" aria-label="Canmore and Banff comparison"><table class="compare-table"><caption>Practical differences when choosing a winter base</caption><thead><tr><th scope="col">Category</th><th scope="col">Canmore</th><th scope="col">Banff</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row[0]}</th><td>{row[1]}</td><td>{row[2]}</td></tr>)}</tbody></table></div>
+
+    <div class="section-header" style="margin-top:3rem;"><h2>The details that change the decision</h2></div>
+    <div class="breakdown-cards">
+      <div class="breakdown-card"><h3>Compare the whole stay cost</h3><p>A fixed percentage saving cannot tell you which town is better value for your dates. Compare the final room quote, taxes, mandatory fees and cancellation terms. Add hotel parking and the transport needed for your actual outings.</p><p>A full kitchen can help when you want to cook. Confirm that it belongs to your booked room category; a suite, kitchenette and full kitchen mean different things.</p></div>
+      <div class="breakdown-card"><h3>Walkability depends on the address</h3><p>A central Banff address can make dinner and ski shuttle pickups easier. A hotel higher on Tunnel Mountain or farther along Banff Avenue creates a different walk. Canmore also has walkable central stays and properties farther from downtown.</p><p>Neither town puts every attraction on your doorstep. The gondola, ski resorts, Lake Louise and many trailheads need a separate transport plan.</p></div>
+      <div class="breakdown-card"><h3>Parking: both towns have paid areas</h3><p>Canmore’s downtown program includes paid zones, free areas and resident restrictions. Banff also has paid downtown spaces and designated free parking. The street signs and current municipal maps decide what applies where you stop.</p><p>Check hotel parking separately. A park admission pass does not pay for municipal parking, and a hotel parking space does not guarantee parking at the next attraction.</p></div>
+      <div class="breakdown-card"><h3>Winter ski transfers need a plan</h3><p>Roam Route 3 connects Canmore and Banff. It does not take you directly to every ski lesson. From Canmore, work through the hotel-to-bus journey, the connection to a resort shuttle and the return after skiing.</p><p>For an early lesson, a confirmed transfer or Banff stay near the right shuttle stop may make the morning simpler. Use current winter timetables and keep a missed-connection alternative.</p></div>
+      <div class="breakdown-card"><h3>Choose the evening you enjoy</h3><p>Banff’s compact centre suits a trip with restaurants, bars and a walk back after dinner. Canmore can suit a longer town stay with neighbourhood meals and suite time. Either town has busy periods and quieter corners.</p><p>Ask about the actual room position if sleep matters. A town-wide label such as “quiet” cannot guarantee your room’s noise level.</p></div>
+      <div class="breakdown-card"><h3>Families can choose either town</h3><p>Compare bedrooms, beds, food preparation, laundry and the journey to the activity your children are booked into. A larger Canmore suite may fit one family; a Banff hotel close to a lesson transfer may fit another.</p><p>Winter play, skating and walks depend on current conditions. Summer swimming and summit hikes are not substitutes for a checked winter plan.</p></div>
+    </div>
+
+    <div class="bottom-line"><h2>Two good starting points</h2><div class="verdict-grid"><div class="verdict-card canmore"><h3>Shortlist Canmore when…</h3><ul><li>You want time in Canmore itself</li><li>A particular suite layout fits your group</li><li>Nordic skiing is central to the trip</li><li>You have checked each onward transfer</li><li>The final quote works for your dates</li></ul></div><div class="verdict-card banff"><h3>Shortlist Banff when…</h3><ul><li>You want a central town base</li><li>You are planning around resort shuttles</li><li>You enjoy town dining and lively evenings</li><li>You want to stay inside the park</li><li>The hotel’s exact address simplifies your days</li></ul></div></div></div>
+
+    <div class="section-header" style="margin-top:3rem;"><h2>Frequently asked questions</h2></div><div class="faq-list">{faqs.map(faq => <details class="faq-item"><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div>
+    <div class="source-note"><h2>Check the current details</h2><p>Reviewed 28 October 2026. Accommodation costs depend on your dates; this page does not quote live hotel rates.</p><ul><li><a href="https://www.canmore.ca/public/download/files/239408" target="_blank" rel="noopener">Town of Canmore winter parking map</a></li><li><a href="https://banff.ca/1184/Visitor-Pay-Parking" target="_blank" rel="noopener">Town of Banff visitor parking and free areas</a></li><li><a href="https://roamtransit.com/schedules-routes/canmore-banff-regional-route-3/" target="_blank" rel="noopener">Roam Route 3 timetable</a> and <a href="https://roamtransit.com/fares/" target="_blank" rel="noopener">current fares</a></li><li><a href="https://parks.canada.ca/pn-np/ab/banff/visit" target="_blank" rel="noopener">Parks Canada visitor information</a></li><li><a href="https://www.albertaparks.ca/parks/kananaskis/kananaskis-country/" target="_blank" rel="noopener">Alberta Parks Kananaskis information and pass links</a></li></ul></div>
+    <div class="guide-ctas"><a class="btn" href="/winter-stays">Find a winter stay &rarr;</a><a class="btn btn-outline" href="/ski-day-planner">Plan a ski day &rarr;</a></div>
+  </div></section>
 </BaseLayout>
 
 <script>
-  function initDecision() {
-    const buttons = document.querySelectorAll('.priority-btn');
-    const result = document.getElementById('decision-result');
-    const selected: Record<string, string> = {};
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const priority = (btn as HTMLElement).dataset.priority!;
-        const favors = (btn as HTMLElement).dataset.favors!;
-
-        if (btn.classList.contains('active')) {
-          btn.classList.remove('active');
-          delete selected[priority];
-        } else {
-          btn.classList.add('active');
-          selected[priority] = favors;
-        }
-
-        const votes = Object.values(selected);
-        if (votes.length === 0) {
-          result!.innerHTML = '<p class="decision-text">Select your priorities above to get a recommendation.</p>';
-          return;
-        }
-
-        const canmore = votes.filter(v => v === 'canmore').length;
-        const banff = votes.filter(v => v === 'banff').length;
-
-        if (canmore > banff) {
-          result!.innerHTML = `<div class="rec canmore-rec"><h3>🏘️ We recommend Canmore</h3><p>${canmore} of your ${votes.length} priorities favor Canmore. You'll save money, enjoy a quieter vibe, and have free parking. The 20-minute drive to Banff is easy.</p></div>`;
-        } else if (banff > canmore) {
-          result!.innerHTML = `<div class="rec banff-rec"><h3>🏔️ We recommend Banff</h3><p>${banff} of your ${votes.length} priorities favor Banff. You'll love the walkability, dining options, and being inside the park.</p></div>`;
-        } else {
-          result!.innerHTML = `<div class="rec tie-rec"><h3>🤝 It's a tie!</h3><p>Your priorities are evenly split. Consider splitting your stay — a few nights in each town gives you the best of both worlds.</p></div>`;
-        }
-      });
-    });
-  }
-  document.addEventListener('DOMContentLoaded', initDecision);
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.priority-btn');
+  const result = document.getElementById('decision-result');
+  const title = document.getElementById('decision-title');
+  const copy = document.getElementById('decision-copy');
+  const selected = new Map<string, string>();
+  buttons.forEach(button => button.addEventListener('click', () => {
+    const priority = button.dataset.priority || '';
+    if (selected.has(priority)) selected.delete(priority); else selected.set(priority, button.dataset.favors || '');
+    const active = selected.has(priority);
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+    const votes = Array.from(selected.values());
+    const canmore = votes.filter(vote => vote === 'canmore').length;
+    const banff = votes.filter(vote => vote === 'banff').length;
+    if (!title || !copy || !result) return;
+    if (!votes.length) {
+      title.textContent = 'Start with your days.';
+      copy.textContent = 'Select your priorities above. A central Banff hotel can simplify a ski trip; a Canmore suite can suit a longer stay built around Canmore.';
+    } else if (canmore > banff) {
+      title.textContent = 'Start by comparing Canmore stays.';
+      copy.textContent = `${canmore} of your ${votes.length} selected priorities point toward a Canmore base. Check the actual suite, final quote and the complete transport plan for every ski day.`;
+    } else if (banff > canmore) {
+      title.textContent = 'Start by comparing central Banff stays.';
+      copy.textContent = `${banff} of your ${votes.length} selected priorities point toward a Banff base. Confirm the hotel address, nearest resort shuttle stop and the final quote for your dates.`;
+    } else {
+      title.textContent = 'Both towns could fit.';
+      copy.textContent = 'Your selected priorities are evenly split. Compare two actual rooms and a sample day from each address; changing hotels is not necessary to enjoy both towns.';
+    }
+  }));
 </script>
 
 <style>
@@ -272,7 +119,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 
   .compare-table-wrap { overflow-x: auto; }
   .compare-table { width: 100%; border-collapse: collapse; background: var(--color-white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-  .compare-table th { background: var(--color-primary); color: var(--color-white); padding: 0.9rem 1rem; text-align: left; font-size: 0.85rem; }
+  .compare-table thead th { background: var(--color-primary); color: var(--color-white); padding: 0.9rem 1rem; text-align: left; font-size: 0.85rem; }
   .compare-table td { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.88rem; }
   .compare-table td.winner { color: var(--color-primary); font-weight: 600; }
 
@@ -300,6 +147,16 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
   .faq-item[open] summary::after { content: '−'; }
   .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
 
+  .compare-table caption { text-align:left; padding:1rem; color:var(--color-text-light); font-size:.85rem; }
+  .compare-table tbody th { padding:.75rem 1rem; text-align:left; font-size:.85rem; border-bottom:1px solid rgba(0,0,0,.06); }
+  .compare-table { min-width:600px; }
+  .guide-ctas { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; margin-top:1.5rem; }
+  .text-link,.source-note a { color:var(--color-primary); text-decoration:underline; text-underline-offset:3px; }
+  .source-note { background:var(--color-bg-alt); border-radius:var(--radius); padding:1.5rem; margin-top:2rem; }
+  .source-note h2 { font-size:1.5rem; margin-bottom:1rem; }
+  .source-note p,.source-note li { font-size:.85rem; color:var(--color-text-light); }
+  .source-note ul { padding-left:1.2rem; margin-top:1rem; }
+  .source-note li { margin:.5rem 0; }
   @media (max-width: 768px) {
     .breakdown-cards { grid-template-columns: 1fr; }
     .verdict-grid { grid-template-columns: 1fr; }

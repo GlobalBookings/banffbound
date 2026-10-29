@@ -32,6 +32,9 @@ export interface Hotel {
   yearBuilt?: string;
   lastRenovated?: string;
   images?: string[];
+  officialUrl?: string;
+  checkedOn?: string;
+  facilityNote?: string;
 }
 
 // Area center coordinates for hotels without specific coords
@@ -707,25 +710,24 @@ export const hotels: Hotel[] = [
     area: 'Downtown Banff',
     type: 'Hotel',
     priceRange: '$$',
-    avgPrice: 'From $200/night',
+    avgPrice: 'Check your dates',
     expediaUrl: expLink('Banff-Hotels-Mount-Royal-Hotel.h688930.Hotel-Information'),
     image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
     lat: 51.1765,
     lng: -115.5678,
-    description: 'Historic hotel at the iconic corner of Banff Avenue and Caribou Street — the most central location in all of Banff. Home to the legendary Wild Bill\'s Legendary Saloon, Tony Roma\'s restaurant, and the Rose & Crown pub. Originally built in 1908, the Mount Royal Hotel is the social heart of downtown Banff.',
-    highlights: ['Wild Bill\'s Saloon', 'Tony Roma\'s', 'Rose & Crown pub', 'Most central location', 'Historic building', 'Rooftop hot tub'],
+    description: 'A central Banff Avenue hotel with on-site dining at Brazen and Cascade Lounge. The official hotel page reported both rooftop hot tubs closed for maintenance when checked on 28 October 2026; confirm facility status before booking.',
+    highlights: ['Banff Avenue location', 'Brazen restaurant', 'Cascade Lounge', 'Hotel library', 'Hot tubs: maintenance closure reported 28 October 2026'],
     nearbyAttractions: ['Banff Avenue (you\'re on it)', 'Bear Street (1 min walk)', 'Bow River (3 min walk)'],
-    overview: 'The Mount Royal Hotel is Banff\'s original social hub, standing at the crossroads of Banff Avenue and Caribou Street since 1908. This heritage property has been the town\'s gathering place for over a century, and today it houses three of Banff\'s most iconic nightlife venues: Wild Bill\'s Legendary Saloon (country music and line dancing), the Rose & Crown (British pub with a rooftop patio), and Tony Roma\'s restaurant. The rooms have been updated over the years to offer modern comfort while retaining character, and the rooftop hot tub offers views straight down Banff Avenue to Cascade Mountain. There is simply no more central location in Banff — you are literally at the heart of everything.',
-    roomFeatures: ['Updated rooms with modern beds', 'Flat-screen TV with cable', 'Complimentary WiFi', 'Coffee maker', 'Private bathroom with shower', 'Mountain or street views', 'Hair dryer', 'Historic building character', 'Individually controlled heat'],
-    amenities: ['Wild Bill\'s Legendary Saloon', 'Rose & Crown pub with rooftop patio', 'Tony Roma\'s restaurant', 'Rooftop hot tub', 'Free WiFi throughout', 'Most central location in Banff', '24-hour front desk', 'Parking nearby (fee applies)', 'Tour desk'],
+    overview: 'Mount Royal Hotel is a downtown option for travellers who want restaurants and town evenings close by. The hotel lists Brazen restaurant, Cascade Lounge, a library and a tour desk. Its central address still requires a separate journey to the ski resorts. Check the room category, parking arrangements and current facility status for your dates.',
+    roomFeatures: ['Air-conditioned rooms', 'Television and USB charging station', 'Desk and work area', 'Complimentary high-speed WiFi'],
+    amenities: ['Brazen restaurant', 'Cascade Lounge', 'Hotel library', 'Outdoor parking: confirm fees and availability', 'Bell service', '24-hour front desk', 'Complimentary high-speed WiFi'],
     checkIn: 'From 4:00 PM',
     checkOut: 'Before 11:00 AM',
-    reviewScore: 7.6,
-    reviewLabel: 'Very Good',
-    reviewCount: 1567,
-    guestLoves: ['Cannot beat the location', 'Wild Bill\'s is legendary', 'Rose & Crown rooftop is amazing', 'Historic character', 'Right in the middle of everything'],
-    dining: 'Three dining and nightlife venues on-site: Tony Roma\'s serves ribs, steaks, and seafood; the Rose & Crown offers British pub fare with a summer rooftop patio; and Wild Bill\'s serves casual food alongside live country music and dancing.',
-    policies: 'Cancellation policies vary by rate. Note that the bars and saloon below can be lively on weekend evenings — request an upper floor room if you prefer quiet.',
+    dining: 'The official hotel page lists Brazen as its on-site restaurant and Cascade Lounge as its lounge. Check current opening hours and any reservation requirements directly.',
+    policies: 'Read the cancellation terms of the specific room rate. Confirm parking fees, availability and current facility status directly before reserving.',
+    officialUrl: 'https://www.banffjaspercollection.com/hotels/mount-royal-hotel/',
+    checkedOn: '2026-10-28',
+    facilityNote: 'The official hotel page reported both rooftop hot tubs closed for maintenance when checked on 28 October 2026. This is a dated notice; confirm reopening with the hotel before booking for a soak.',
     address: '138 Banff Ave, Banff, AB',
     yearBuilt: '1908',
     images: [

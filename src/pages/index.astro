@@ -1,29 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import WinterStart from '../components/WinterStart.astro';
 import Parser from 'rss-parser';
 import { blogPosts } from '../data/blogPosts';
+import { dataFreshness } from '../utils/dataFreshness';
 
-/* ── Season data for conditions strip ────────────── */
-let seasonData: any = { season: 'spring', month: '', seasonalHighlights: [], activeActivities: [], updatedAt: '' };
-try { const m = await import('../data/live/season.json'); seasonData = m.default || m; } catch { /* use defaults */ }
+/* Cached data is displayed only while its dated snapshot remains recent. */
+let weatherData: any = {};
+try { const m = await import('../data/live/weather.json'); weatherData = m.default || m; } catch { /* unavailable */ }
+let trailData: any = {};
+try { const m = await import('../data/live/trail-conditions.json'); trailData = m.default || m; } catch { /* unavailable */ }
+const weatherFreshness = dataFreshness(weatherData.updatedAt, 6);
+const trailFreshness = dataFreshness(trailData.updatedAt, 24);
+const weatherAvailable = weatherFreshness.status === 'fresh' && !weatherData.error && Number.isFinite(weatherData.banff?.current?.temp);
+const trailReports = (trailData.areas || []).flatMap((area: any) => area.trails || []);
+const trailReportsRecent = trailReports.length > 0 && trailReports.every((trail: any) => dataFreshness(trail.lastUpdated, 24).status === 'fresh');
+const trailsAvailable = trailReportsRecent && trailFreshness.status === 'fresh' && !trailData.error && Number.isInteger(trailData.summary?.open) && Number.isInteger(trailData.summary?.total) && trailData.summary.total > 0 && trailData.summary.open >= 0 && trailData.summary.open <= trailData.summary.total;
 
-let weatherData: any = { banff: { current: { temp: null, condition: 'Unknown', icon: '🌡️' } } };
-try { const m = await import('../data/live/weather.json'); weatherData = m.default || m; } catch { /* use defaults */ }
-
-let trailData: any = { summary: { total: 0, open: 0, caution: 0, closed: 0 } };
-try { const m = await import('../data/live/trail-conditions.json'); trailData = m.default || m; } catch { /* use defaults */ }
-
-const banffTemp = weatherData.banff?.current?.temp;
-const banffCondition = weatherData.banff?.current?.condition || 'Unknown';
-const banffWeatherIcon = weatherData.banff?.current?.icon || '🌡️';
-const trailsOpen = trailData.summary?.open || 0;
-const trailsTotal = trailData.summary?.total || 81;
-const seasonIcons: Record<string, string> = { spring: '🌱', summer: '☀️', fall: '🍂', winter: '❄️' };
-const seasonIcon = seasonIcons[seasonData.season] || '🏔️';
-const seasonLabel = seasonData.season.charAt(0).toUpperCase() + seasonData.season.slice(1);
-const seasonSummary = seasonData.activeActivities?.slice(0, 3).join(', ') || 'Check current conditions';
-
-const featuredPosts = blogPosts.slice(0, 4);
+const featuredPosts = ['banff-heli-skiing', 'banff-snowshoeing-guide', 'banff-winter-driving', 'banff-ski-in-ski-out'].map(slug => blogPosts.find(post => post.slug === slug)).filter(Boolean);
 
 const parser = new Parser({
   customFields: {
@@ -155,7 +149,7 @@ const highlights = [
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Named Best Place to Travel 2026 by National Geographic</p>
+      <p class="hero-eyebrow">Banff, Lake Louise & the Canadian Rockies</p>
       <h1>Your Guide to<br/><span class="hero-accent">Banff National Park</span></h1>
       <p class="hero-sub">Plan your perfect escape to the Canadian Rockies. Iconic lakes, world-class skiing, mountain dining, and adventures that stay with you forever.</p>
       <div class="hero-buttons">
@@ -183,19 +177,22 @@ const highlights = [
     </div>
   </section>
 
+  <noscript><style>[data-snapshot-fresh] { display:none !important; } [data-fresh-until] [data-snapshot-unavailable][hidden] { display:block !important; }</style></noscript>
   <!-- Today in Banff -->
   <section class="today-strip">
     <div class="container">
       <div class="today-grid">
-        <a href="/conditions" class="today-item">
-          <span class="today-icon">{banffWeatherIcon}</span>
-          <span class="today-detail">{banffTemp != null ? `${banffTemp}°C` : '—'}</span>
-          <span class="today-label">{banffCondition}</span>
+        <a href="https://weather.gc.ca/city/pages/ab-49_metric_e.html" target="_blank" rel="noopener" class="today-item" data-fresh-until={weatherFreshness.expiresAt} data-snapshot-time={weatherFreshness.updatedAt}>
+          <span class="today-icon">🌡️</span>
+          {weatherAvailable && <span data-snapshot-fresh class="today-detail">{weatherData.banff.current.temp}°C · {weatherData.banff.current.condition}</span>}
+          <span data-snapshot-unavailable hidden={weatherAvailable} class="today-detail">Weather unavailable</span>
+          <span class="today-label">Snapshot: {weatherFreshness.label}. Check official forecast ↗</span>
         </a>
-        <a href="/trail-map" class="today-item">
+        <a href="https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions" target="_blank" rel="noopener" class="today-item" data-fresh-until={trailFreshness.expiresAt} data-snapshot-time={trailFreshness.updatedAt}>
           <span class="today-icon">🥾</span>
-          <span class="today-detail">{trailsOpen}/{trailsTotal}</span>
-          <span class="today-label">Trails Open</span>
+          {trailsAvailable && <span data-snapshot-fresh class="today-detail">{trailData.summary.open}/{trailData.summary.total} reported open</span>}
+          <span data-snapshot-unavailable hidden={trailsAvailable} class="today-detail">Trail status unavailable</span>
+          <span class="today-label">Snapshot: {trailFreshness.label}. Check Parks Canada ↗</span>
         </a>
         <a href="/what-to-do-today" class="today-item today-cta">
           <span class="today-icon">🎯</span>
@@ -206,13 +203,13 @@ const highlights = [
     </div>
   </section>
 
-  <!-- Current Conditions Strip -->
+  <!-- Conditions planning links -->
   <section class="conditions-strip">
     <div class="container">
       <a href="/conditions" class="conditions-strip-inner">
-        <span class="conditions-strip-season">{seasonIcon} {seasonLabel}</span>
+        <span class="conditions-strip-season">🏔️ Before you head out</span>
         <span class="conditions-strip-divider" aria-hidden="true">|</span>
-        <span class="conditions-strip-summary">{seasonSummary}</span>
+        <span class="conditions-strip-summary">Check weather, trail reports, road status and resort conditions</span>
         <span class="conditions-strip-cta">View Conditions →</span>
       </a>
       <div class="conditions-strip-tools">
@@ -222,6 +219,8 @@ const highlights = [
       </div>
     </div>
   </section>
+
+  <WinterStart />
 
   <!-- Categories -->
   <section class="section">
@@ -780,3 +779,11 @@ const highlights = [
     slides[current].classList.add('active');
   }, 5000);
 </script>
+
+<script>
+  import { installSnapshotExpiry } from '../utils/dataFreshness';
+  installSnapshotExpiry();
+</script>
+<style>
+  [data-fresh-until] [hidden] { display: none !important; }
+</style>

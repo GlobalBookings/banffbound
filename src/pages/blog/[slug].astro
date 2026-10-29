@@ -1,24 +1,31 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
-import { blogPosts } from '../../data/blogPosts';
+import { allBlogPosts } from '../../data/blogPosts';
 import { blogContent as blogContentMain } from '../../data/blogContent';
 import { blogContent3 } from '../../data/blogContent3';
+import { winterTripOverrides } from '../../data/winterTripOverrides';
+import { winterActivityOverrides } from '../../data/winterActivityOverrides';
+import { winterGuideOverrides } from '../../data/winterGuideOverrides';
 import { blogRedirects } from '../../data/redirects.mjs';
 
-const blogContent = { ...blogContentMain, ...blogContent3 };
+const blogContent = { ...blogContentMain, ...blogContent3, ...winterGuideOverrides, ...winterActivityOverrides, ...winterTripOverrides };
 
 export function getStaticPaths() {
-  return blogPosts.map(post => ({ params: { slug: post.slug }, props: { post } }));
+  return allBlogPosts.map(post => ({ params: { slug: post.slug }, props: { post } }));
 }
 
 const { post } = Astro.props;
 const redirect = (blogRedirects as Record<string, string>)[post.slug];
 if (redirect) return Astro.redirect(`/blog/${redirect}/`, 301);
 
-const content = blogContent;
+const content = (blogContent[post.slug] || '<p>Content coming soon.</p>').replace(
+  /<table\b[\s\S]*?<\/table>/gi,
+  table => `<div class="article-table-scroll" tabindex="0" role="region" aria-label="Guide comparison table">${table}</div>`
+);
 ---
 
 <BlogLayout
+  slug={post.slug}
   title={post.title}
   description={post.description}
   date={post.date}
@@ -27,5 +34,5 @@ const content = blogContent;
   image={post.image}
   readTime={post.readTime}
 >
-  <Fragment set:html={content[post.slug] || '<p>Content coming soon.</p>'} />
+  <Fragment set:html={content} />
 </BlogLayout>

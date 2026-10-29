@@ -10,11 +10,15 @@ interface Props {
   image?: string;
   canonicalUrl?: string;
   lastUpdated?: string;
+  noindex?: boolean;
 }
 
-const { title, description = 'Plan your Banff trip with local advice. 81 trail guides, 96 hotel reviews, daily conditions, and free planning tools. Updated daily by a Banff regular.', image = 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80', canonicalUrl, lastUpdated } = Astro.props;
+const { title, description = 'Plan Banff, Lake Louise and the nearby towns with practical travel guides, winter adventures, hotel comparisons and free interactive planning tools.', image = 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80', canonicalUrl, lastUpdated, noindex = false } = Astro.props;
 const pageTitle = title === 'Home' ? 'BanffBound — Banff National Park Trip Planner 2026 | Trails, Hotels & Local Tips' : `${title} | BanffBound`;
-const canonical = canonicalUrl || Astro.url.href;
+const canonical = new URL(canonicalUrl || Astro.url.pathname, Astro.site || 'https://banffbound.com');
+canonical.search = '';
+canonical.hash = '';
+const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
 ---
 
 <!DOCTYPE html>
@@ -24,7 +28,8 @@ const canonical = canonicalUrl || Astro.url.href;
     <meta name="google-site-verification" content="3hFnttFwDgl3EBATUfxs-nE0IrtdyopWJ1xlgEQPUo8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,14 +43,14 @@ const canonical = canonicalUrl || Astro.url.href;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:url" content={canonical.href} />
     <meta property="og:site_name" content="BanffBound" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={socialImage} />
 
     <title>{pageTitle}</title>
 
@@ -75,8 +80,8 @@ const canonical = canonicalUrl || Astro.url.href;
         },
         {
           '@type': 'WebPage',
-          '@id': canonical + '#webpage',
-          url: canonical,
+          '@id': canonical.href + '#webpage',
+          url: canonical.href,
           name: pageTitle,
           isPartOf: { '@id': 'https://banffbound.com/#website' },
           description: description,
@@ -87,10 +92,10 @@ const canonical = canonicalUrl || Astro.url.href;
     })} />
 
   </head>
-  <body>
+  <body data-pagefind-ignore={noindex ? 'all' : undefined}>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header />
-    <main id="main-content" role="main" style="margin-top: 100px;">
+    <main data-pagefind-body id="main-content" role="main" style="margin-top: 100px;">
       <slot />
     </main>
     <Footer />

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WinterStatusNotice from '../components/WinterStatusNotice.astro';
 import { blogPosts } from '../data/blogPosts';
 
 interface Props {
@@ -19,11 +20,11 @@ const { title, description, date, lastUpdated, category, image, readTime, slug }
 const relatedPosts = blogPosts
   .filter(p => p.category === category && p.slug !== slug && p.title !== title)
   .slice(0, 3);
-const formattedDate = new Date(date).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' });
+const formattedDate = new Date(date).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 const isoDate = new Date(date).toISOString();
 const isoModified = lastUpdated ? new Date(lastUpdated).toISOString() : isoDate;
 const formattedModified = lastUpdated
-  ? new Date(lastUpdated).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric' })
+  ? new Date(lastUpdated).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
   : formattedDate;
 
 const articleSchema = {
@@ -31,7 +32,8 @@ const articleSchema = {
   '@type': 'Article',
   headline: title,
   description,
-  image,
+  image: new URL(image, 'https://banffbound.com').href,
+  mainEntityOfPage: `https://banffbound.com/blog/${slug}/`,
   datePublished: isoDate,
   dateModified: isoModified,
   author: {
@@ -76,6 +78,7 @@ const articleSchema = {
       <div class="eg-affiliate-banners" data-program="ca-expedia" data-network="pz" data-layout="leaderboard" data-image="mountains" data-message="bye-bye-bucket-list-hello-adventure" data-camref="1101l3MtWX" data-pubref="" data-link="home"></div>
     </div>
     <div class="article-body container" data-category={category}>
+      {slug && /winter|ice-walk|hot-springs|snowshoe|ice-skating/.test(slug) && <WinterStatusNotice />}
       <slot />
       <div class="blog-email-capture">
         <p class="blog-email-heading">Enjoyed this guide? Get weekly Banff tips.</p>
@@ -100,7 +103,7 @@ const articleSchema = {
           <div class="author-bio-avatar">JC</div>
           <div class="author-bio-info">
             <strong>Written by Jack Chittenden</strong>
-            <p>Banff-based adventure writer. Ironman finisher, ultra-runner, and full-time Rocky Mountains explorer. 70+ trails hiked, 95+ hotels reviewed.</p>
+            <p>Creator of BanffBound. Researching the Canadian Rockies through destination guides, hotel comparisons and practical trip-planning tools.</p>
             <div class="author-bio-links">
               <a href="/about">About Jack</a>
               <a href="https://linkedin.com/in/jackchittenden" target="_blank" rel="noopener">LinkedIn</a>
@@ -276,7 +279,16 @@ const articleSchema = {
     padding-bottom: 3rem;
   }
 
+  .article-body :global(.article-table-scroll) { overflow-x: auto; max-width: 100%; margin: 1.5rem 0; border: 1px solid #dce1d5; border-radius: 8px; }
+  .article-body :global(table) { border-collapse: collapse; width: 100%; font-size: .88rem; min-width: 540px; }
+  .article-body :global(th), .article-body :global(td) { padding: .9rem; text-align: left; vertical-align: top; border-bottom: 1px solid #dce1d5; }
+  .article-body :global(th) { background: var(--color-primary); color: white; }
+  .article-body :global(tr:nth-child(even)) { background: var(--color-bg-alt); }
+  .article-body :global(details) { border: 1px solid #dce1d5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+  .article-body :global(summary) { color: var(--color-primary); cursor: pointer; font-weight: 600; }
+  .article-body :global(details p) { margin-top: 1rem; }
   .article-body :global(h2) {
+    scroll-margin-top: 125px;
     margin: 2.5rem 0 1rem;
     font-size: 1.8rem;
   }

@@ -6,6 +6,8 @@ name: Build Check
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
@@ -36,3 +38,7 @@ jobs:
       # 5. Run full build (astro build + pagefind)
       - name: Build site
         run: npm run build
+
+      # Catch broken routes, assets and metadata in the winter planning cluster.
+      - name: Audit generated site
+        run: npm run audit:site

@@ -5,24 +5,30 @@ import { hotels, hotelAreas } from '../../data/hotels';
 
 const areas = [...new Set(hotels.map(h => h.area))];
 const types = [...new Set(hotels.map(h => h.type))].sort();
-const starCounts = [5, 4, 3, 2, 1];
+const withoutPriceClaims = (text: string) => text.split(/(?<=[.!?])\s+/).filter(sentence => !/\$\s*\d/.test(sentence)).join(' ');
+const areaNotes: Record<string, string> = {
+  'Downtown Banff': 'Compare the exact address with restaurants and the ski-shuttle stop you need; not every Banff property has the same walk.',
+  'Tunnel Mountain': 'A hillside area above central Banff. Check the route and current bus service before planning to walk with luggage or ski gear.',
+  'Bow Valley': 'Locations vary widely. Check the actual address, road access and meal arrangements rather than assuming a town-centre stay.',
+  'Castle Junction': 'Cabin and lodge stays between Banff and Lake Louise. Confirm winter access, meals and your transport plan.',
+  'Canmore': 'A separate town outside Banff National Park. Compare suite options and the full journey to your chosen ski resort.',
+  'Lake Louise': 'The village, lakeshore and ski resort are separate places. Check which location the hotel actually serves.',
+};
 
 const hotelData = JSON.stringify(hotels.map(h => ({
   slug: h.slug,
   name: h.name,
-  stars: h.stars,
   area: h.area,
   type: h.type,
   price: h.priceRange,
-  avg: h.avgPrice,
   lat: h.lat,
   lng: h.lng,
-  score: h.reviewScore,
   img: h.image,
 })));
 ---
 
-<BaseLayout title="Banff Hotel Directory — Compare 95+ Hotels" description="Compare 95+ hotels in Banff, Canmore & the Bow Valley with interactive map. Filter by area, budget, type, and star rating. Real reviews, prices, and direct booking links.">
+<BaseLayout title="Banff Hotel Directory — Compare Hotels, Lodges & Suites" description="Explore hotels in Banff, Canmore and the Bow Valley with an interactive map. Filter by area, property type and editorial budget tier, then check current quotes.">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Banff hotel directory', url: 'https://banffbound.com/hotel-directory/', mainEntity: { '@type': 'ItemList', numberOfItems: hotels.length, itemListElement: hotels.map((hotel, i) => ({ '@type': 'ListItem', position: i + 1, name: hotel.name, url: `https://banffbound.com/hotel-directory/${hotel.slug}/` })) } })} />
   <div class="container">
     <Breadcrumbs items={[{ label: 'Hotels' }]} />
   </div>
@@ -31,46 +37,41 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     <div class="page-hero-content">
       <span class="badge">Hotel Directory</span>
       <h1>Where to Stay in Banff</h1>
-      <p>Compare {hotels.length} hotels, lodges, and inns across Banff, Canmore, and the Bow Valley. Every listing includes real reviews, detailed amenities, and direct booking links.</p>
+      <p>Explore {hotels.length} hotels, lodges and inns across Banff, Canmore and the Bow Valley. Compare locations and room styles, then check current rates, guest reviews and booking terms with the provider.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
+      <p class="directory-note">Budget tiers ($–$$$$) are editorial categories, not room quotes. Check the exact property address, selected room, final price and facility status for your dates. For a curated shortlist with winter transport tradeoffs, use the <a href="/winter-stays">winter stays finder</a>.</p>
       <!-- Filter bar -->
       <div class="filter-bar" id="filters">
         <div class="filter-group search-group">
-          <input type="text" id="search-input" placeholder="Search hotels..." class="search-input" />
+          <input type="text" id="search-input" placeholder="Search hotels..." class="search-input" aria-label="Search hotels" />
         </div>
         <div class="filter-group">
-          <select id="area-filter">
+          <select id="area-filter" aria-label="Filter by area">
             <option value="all">All Areas</option>
             {areas.map(a => <option value={a}>{a}</option>)}
           </select>
         </div>
         <div class="filter-group">
-          <select id="type-filter">
+          <select id="type-filter" aria-label="Filter by property type">
             <option value="all">All Types</option>
             {types.map(t => <option value={t}>{t}</option>)}
           </select>
         </div>
         <div class="filter-group">
-          <select id="price-filter">
-            <option value="all">All Prices</option>
+          <select id="price-filter" aria-label="Filter by editorial budget tier">
+            <option value="all">All editorial budget tiers</option>
             <option value="$">$ Budget</option>
             <option value="$$">$$ Mid-Range</option>
             <option value="$$$">$$$ Upscale</option>
             <option value="$$$$">$$$$ Luxury</option>
           </select>
         </div>
-        <div class="filter-group">
-          <select id="star-filter">
-            <option value="all">All Stars</option>
-            {starCounts.map(s => <option value={String(s)}>{s}★+</option>)}
-          </select>
-        </div>
         <button id="clear-filters" class="clear-btn" style="display:none;">Clear</button>
-        <span class="result-count" id="result-count">{hotels.length} hotels</span>
+        <span class="result-count" id="result-count" role="status" aria-live="polite">{hotels.length} hotels</span>
       </div>
 
       <!-- View toggle -->
@@ -90,25 +91,18 @@ const hotelData = JSON.stringify(hotels.map(h => ({
         {hotels.map(hotel => (
           <a href={`/hotel-directory/${hotel.slug}`} class="hotel-card"
              data-area={hotel.area} data-price={hotel.priceRange}
-             data-stars={String(hotel.stars)} data-type={hotel.type}
+             data-type={hotel.type}
              data-name={hotel.name.toLowerCase()} data-slug={hotel.slug}>
             <img src={hotel.image} alt={hotel.name} class="hotel-card-img" loading="lazy" />
             <div class="hotel-card-body">
               <div class="hotel-card-top">
-                <span class="hotel-stars">{'★'.repeat(hotel.stars)}</span>
-                <span class="hotel-price">{hotel.priceRange}</span>
+                <span class="hotel-price">Editorial budget tier: {hotel.priceRange}</span>
               </div>
               <h3>{hotel.name}</h3>
               <p class="hotel-area">{hotel.area} · {hotel.type}</p>
-              {hotel.reviewScore && (
-                <div class="hotel-review-mini">
-                  <span class="review-badge">{hotel.reviewScore}</span>
-                  <span>{hotel.reviewLabel}</span>
-                </div>
-              )}
-              <p class="hotel-desc">{hotel.description.slice(0, 120)}...</p>
+              <p class="hotel-desc">{withoutPriceClaims(hotel.description).slice(0, 120)}...</p>
               <div class="hotel-card-footer">
-                <span class="hotel-avg">{hotel.avgPrice}</span>
+                <span class="hotel-avg">Check dates for a quote</span>
                 <span class="hotel-link">View Details →</span>
               </div>
             </div>
@@ -129,7 +123,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
           <div class="card">
             <div class="card-body">
               <h3>{area.name}</h3>
-              <p>{area.description}</p>
+              <p>{areaNotes[area.name] || area.description}</p>
             </div>
           </div>
         ))}
@@ -144,7 +138,6 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   const areaFilter = document.getElementById('area-filter');
   const typeFilter = document.getElementById('type-filter');
   const priceFilter = document.getElementById('price-filter');
-  const starFilter = document.getElementById('star-filter');
   const clearBtn = document.getElementById('clear-filters');
   const cards = document.querySelectorAll('.hotel-card');
   const countEl = document.getElementById('result-count');
@@ -162,7 +155,6 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     const area = areaFilter.value;
     const type = typeFilter.value;
     const price = priceFilter.value;
-    const star = starFilter.value;
     let visible = 0;
     const visibleSlugs = new Set();
 
@@ -171,8 +163,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
       const matchArea = area === 'all' || card.dataset.area === area;
       const matchType = type === 'all' || card.dataset.type === type;
       const matchPrice = price === 'all' || card.dataset.price === price;
-      const matchStar = star === 'all' || Number(card.dataset.stars) >= Number(star);
-      const show = matchSearch && matchArea && matchType && matchPrice && matchStar;
+      const show = matchSearch && matchArea && matchType && matchPrice;
       card.style.display = show ? '' : 'none';
       if (show) {
         visible++;
@@ -181,7 +172,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     });
 
     countEl.textContent = `${visible} hotel${visible !== 1 ? 's' : ''}`;
-    clearBtn.style.display = (search || area !== 'all' || type !== 'all' || price !== 'all' || star !== 'all') ? '' : 'none';
+    clearBtn.style.display = (search || area !== 'all' || type !== 'all' || price !== 'all') ? '' : 'none';
 
     if (map && leafletLoaded) updateMapMarkers(visibleSlugs);
   }
@@ -191,7 +182,6 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     areaFilter.value = 'all';
     typeFilter.value = 'all';
     priceFilter.value = 'all';
-    starFilter.value = 'all';
     applyFilters();
   }
 
@@ -200,7 +190,6 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   const paramArea = params.get('area');
   const paramType = params.get('type');
   const paramPrice = params.get('price');
-  const paramStars = params.get('stars');
 
   if (paramArea) {
     const opt = Array.from(areaFilter.options).find(o => o.value === paramArea);
@@ -210,10 +199,9 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     const opt = Array.from(typeFilter.options).find(o => o.value.toLowerCase() === paramType.toLowerCase());
     if (opt) typeFilter.value = opt.value;
   }
-  if (paramPrice) priceFilter.value = paramPrice;
-  if (paramStars) starFilter.value = paramStars;
+  if (paramPrice && Array.from(priceFilter.options).some(option => option.value === paramPrice)) priceFilter.value = paramPrice;
 
-  if (paramArea || paramType || paramPrice || paramStars) {
+  if (paramArea || paramType || paramPrice) {
     applyFilters();
     // Scroll past hero to the filters
     document.getElementById('filters')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -223,7 +211,6 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   areaFilter.addEventListener('change', applyFilters);
   typeFilter.addEventListener('change', applyFilters);
   priceFilter.addEventListener('change', applyFilters);
-  starFilter.addEventListener('change', applyFilters);
   clearBtn.addEventListener('click', clearAll);
 
   // View toggle
@@ -266,9 +253,8 @@ const hotelData = JSON.stringify(hotels.map(h => ({
         <div style="min-width:200px;">
           <img src="${h.img}" alt="${h.name}" style="width:100%;height:100px;object-fit:cover;border-radius:4px;margin-bottom:6px;" />
           <strong style="font-size:0.9rem;">${h.name}</strong><br/>
-          <span style="font-size:0.8rem;color:#666;">${'★'.repeat(h.stars)} · ${h.area} · ${h.price}</span><br/>
-          <span style="font-size:0.85rem;font-weight:600;color:#1a472a;">${h.avg}</span>
-          ${h.score ? `<span style="font-size:0.8rem;color:#888;"> · ${h.score}/10</span>` : ''}
+          <span style="font-size:0.8rem;color:#666;">${h.area} · Editorial budget tier: ${h.price}</span><br/>
+          <span style="font-size:0.85rem;font-weight:600;color:#1a472a;">Check dates for a current quote</span>
           <br/><a href="/hotel-directory/${h.slug}" style="font-size:0.8rem;color:#d4a843;font-weight:600;">View Details →</a>
         </div>
       `);
@@ -276,7 +262,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
       markers.push(marker);
     });
 
-    updateMapMarkers(new Set(allHotels.map(h => h.slug)));
+    applyFilters();
   }
 
   function updateMapMarkers(visibleSlugs) {
@@ -291,6 +277,8 @@ const hotelData = JSON.stringify(hotels.map(h => ({
 </script>
 
 <style>
+  .directory-note { max-width: 950px; margin-bottom: 1.5rem; color: var(--color-text-light); font-size: .88rem; }
+  .directory-note a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
   .filter-bar {
     display: flex;
     gap: 0.75rem;
