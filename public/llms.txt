@@ -9,6 +9,9 @@
 - [Resort comparison](https://banffbound.com/sunshine-vs-lake-louise-vs-norquay/): Practical differences among Sunshine, Lake Louise and Norquay.
 - [Ski pass calculator](https://banffbound.com/ski-pass-calculator/): Compare user-entered current quotes and confirmed coverage. Contains no live ticket-price feed.
 - [Heli-skiing near Banff](https://banffbound.com/blog/banff-heli-skiing/): Operator bases in British Columbia, prerequisites, transfers and cancellation questions.
+- [Spring skiing](https://banffbound.com/blog/banff-spring-skiing/): Published resort season plans, actual spring lessons, ability and complete mountain-day choices.
+- [Helicopter sightseeing near Banff](https://banffbound.com/blog/banff-helicopter-tours/): Separate scenic flights, named landings and ski days, with actual operator bases and direct enquiry routes.
+- [Kananaskis helicopter planning](https://banffbound.com/blog/kananaskis-heli-tours/): Stoney Nakoda departure, current-date enquiries and the complete journey from accommodation.
 - [Winter driving](https://banffbound.com/blog/banff-winter-driving/): Route-specific tire guidance, official road reports and transport alternatives.
 - [Winter stays](https://banffbound.com/winter-stays/): Filter eight researched hotel and lodge options by base, group and priority. Availability, facilities and final prices require provider confirmation.
 
@@ -41,6 +44,7 @@
 - [Icefields Parkway planner](https://banffbound.com/icefields-parkway-planner/): Compare 14 documented places by direction, season and visit type, then copy a selected shortlist and current-source checks. It does not calculate an arrival time.
 - [Icefields Parkway stop choices](https://banffbound.com/blog/icefields-parkway-guide/): Distinguish viewpoints, walks, glacier experiences and seasonal services with labelled distance origins.
 - [Banff–Jasper journey](https://banffbound.com/blog/banff-to-jasper-drive/): Compare driving and seasonal transport, endpoint or confirmed lodge stays, and current road and recovery sources.
+- [Peyto Lake](https://banffbound.com/blog/peyto-lake-guide/): Main lookout, restricted upper accessible approach, longer Bow Summit hike and distinct winter snowshoe route.
 - [Lake Minnewanka](https://banffbound.com/blog/lake-minnewanka-guide/): Separate winter shore visits, approach roads, seasonal cruises/rentals, fishing rules and permitted water activities.
 - [Banff Gondola visit](https://banffbound.com/blog/banff-gondola-guide/): Summit complex, distinct stair-based boardwalk, transport and actual visitor access needs.
 - [Banff Gondola booking](https://banffbound.com/blog/banff-gondola-tickets-guide/): Compare admission and dining arrangements, including separate ordinary restaurant admission and product-specific inclusions.

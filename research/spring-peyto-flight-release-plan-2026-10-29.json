@@ -1,0 +1,59 @@
+{
+  "checkedAtUTC": "2026-10-29T23:20:29.028363+00:00",
+  "status": "Integrated locally; pending clean build and production proof",
+  "baselineRevision": "d3a04b2cf4e4bd8963e5fd07420022decba42e09",
+  "guides": [
+    {
+      "slug": "banff-spring-skiing",
+      "purpose": "Actual resort and service dates, ability, lessons, freeride requirements and complete spring day",
+      "originalPublished": "2025-09-30"
+    },
+    {
+      "slug": "peyto-lake-guide",
+      "purpose": "Main lookout, restricted upper-lot approach, longer Bow Summit hike and named winter snowshoe route",
+      "originalPublished": "2026-02-11"
+    },
+    {
+      "slug": "banff-helicopter-tours",
+      "purpose": "Three experience formats and real Canmore, Stoney Nakoda and Cline River base journeys",
+      "originalPublished": "2025-10-12"
+    },
+    {
+      "slug": "kananaskis-heli-tours",
+      "purpose": "Stoney Nakoda product and actual-date enquiry, approach and return",
+      "originalPublished": "2026-03-03"
+    }
+  ],
+  "scope": {
+    "canonicalBodies": 295,
+    "newFullReviews": 4,
+    "fullReviews": 71,
+    "partialOpeningRepairs": 8,
+    "unchangedOtherBodies": 291,
+    "originalPublicationDatesPreserved": 335,
+    "authoredBookingGuides": 19,
+    "releaseVerificationHTMLRoutes": 232,
+    "curatedBookingContextPages": 21,
+    "allCanonicalFactsReviewed": false
+  },
+  "verification": {
+    "workflowOfflineChecks": 47,
+    "actualLayoutSSRContexts": 22,
+    "sourceChecks": 3,
+    "faqsPerGuide": 5,
+    "sourceNotes": [
+      "research/spring-ski-guide-sources-2026-10-29.md",
+      "research/peyto-guide-sources-2026-10-29.md",
+      "research/scenic-flight-guide-sources-2026-10-29.md"
+    ]
+  },
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "newFlightAffiliateOfferInvented": false,
+    "paidCampaignsLaunched": false,
+    "paidActivityTrafficPermission": "Unverified; account investigation continues outside this source release",
+    "noAccountEvidencePublished": true,
+    "hostingSpecificationOrEnvironmentChanged": false
+  },
+  "goalStatus": "active"
+}

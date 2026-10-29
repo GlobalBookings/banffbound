@@ -1,0 +1,23 @@
+{
+  "checkedAtUTC": "2026-10-29T23:19:21.634Z",
+  "baselineRevision": "d3a04b2cf4e4bd8963e5fd07420022decba42e09",
+  "scope": "Canonical article body bytes and original publication metadata; metadata, related discovery links and booking-context suppression are separately reviewed.",
+  "canonical": 295,
+  "replacedBodies": 4,
+  "otherBodiesByteIdentical": 291,
+  "changedSlugs": [
+    "banff-helicopter-tours",
+    "banff-spring-skiing",
+    "kananaskis-heli-tours",
+    "peyto-lake-guide"
+  ],
+  "fullBodyReviews": {
+    "before": 67,
+    "after": 71
+  },
+  "partialCorrections": {
+    "before": 8,
+    "after": 8
+  },
+  "originalPublicationsPreserved": 335
+}

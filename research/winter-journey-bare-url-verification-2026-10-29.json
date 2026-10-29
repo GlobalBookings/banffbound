@@ -1,0 +1,49 @@
+{
+  "checkedAtUTC": "2026-10-29T23:08:49.519533+00:00",
+  "scope": "Bare canonical URLs without query strings; clean emitted titles, current guide review date, new planner and tool navigation verified independently of nonce checks. Full HTML contracts are checked by the 228-route verifier.",
+  "results": [
+    {
+      "url": "https://banffbound.com/blog/icefields-parkway-guide/",
+      "status": 200,
+      "title": "Icefields Parkway Stops: Viewpoints, Walks & Seasonal Choices | BanffBound",
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/banff-to-jasper-drive/",
+      "status": 200,
+      "title": "Banff to Jasper: Transfers, Overnight Bases & Winter Travel | BanffBound",
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/lake-minnewanka-guide/",
+      "status": 200,
+      "title": "Lake Minnewanka Guide: Winter Shore Visits & Summer Boats | BanffBound",
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/banff-gondola-guide/",
+      "status": 200,
+      "title": "Banff Gondola Guide: Summit, Stairs & Getting There | BanffBound",
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/banff-gondola-tickets-guide/",
+      "status": 200,
+      "title": "Banff Gondola Tickets: Admission, Dining & Booking Choices | BanffBound",
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/icefields-parkway-planner/",
+      "status": 200,
+      "title": "Icefields Parkway Planner \u2014 Seasonal Stops & Your Route | BanffBound",
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/tools/",
+      "status": 200,
+      "title": "Banff Planning Tools \u2014 30+ Free Interactive Guides | BanffBound",
+      "passed": true
+    }
+  ],
+  "passed": 7
+}
