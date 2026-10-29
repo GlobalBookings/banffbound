@@ -40,6 +40,13 @@ jobs:
           node scripts/check-production-redirects.mjs
           node scripts/check-activities.mjs
           node scripts/check-paddling.mjs
+          node scripts/check-paid-landings.mjs
+          node research/check-banff-hotel-landing-2026-10-29.mjs
+          node scripts/check-lake-louise-landing.mjs
+          node scripts/check-winter-activity-landing.mjs
+          node scripts/check-cycling-planning.mjs
+          node scripts/check-consent.mjs
+          node scripts/check-affiliate-embeds.mjs
           node scripts/check-wildlife-planning.mjs
           node scripts/check-wildlife-safety.mjs
           node scripts/check-lake-planning.mjs

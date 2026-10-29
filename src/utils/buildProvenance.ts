@@ -6,7 +6,7 @@ import { promisify } from 'node:util';
 
 const runFile = promisify(execFile);
 const rootInputs = ['astro.config.mjs', 'package.json', 'package-lock.json', 'public/llms.txt'];
-const sourceExtensions = new Set(['.astro', '.ts', '.mjs', '.css']);
+const sourceExtensions = new Set(['.astro', '.ts', '.mjs', '.js', '.css', '.json']);
 const excludedDirectories = new Set(['assets', 'private', '__private__', 'env', 'environment', 'environments', 'secret', 'secrets', 'generated', '__generated__', 'snapshots', '__snapshots__', 'dist', 'build', 'node_modules', 'coverage', 'tmp', 'temp', 'cache']);
 const excludedName = /(?:^|[._-])(?:env|environment|private|secrets?|generated)(?:[._-]|$)/i;
 function excludedPart(part: string): boolean {
@@ -17,7 +17,7 @@ function excludedPart(part: string): boolean {
 
 export interface BuildProvenance {
   formatVersion: 1;
-  scope: 'app-source-v1';
+  scope: 'app-source-v2';
   scopeNote: string;
   builtAtUTC: string;
   sourceRevision: string | null;
@@ -80,7 +80,7 @@ function frame(hash: Hash, bytes: Buffer): void {
 }
 function fingerprint(inputs: SourceInput[]): string {
   const hash = createHash('sha256');
-  hash.update('app-source-v1\0', 'utf8');
+  hash.update('app-source-v2\0', 'utf8');
   for (const input of inputs) {
     frame(hash, Buffer.from(input.relativePath, 'utf8'));
     hash.update(Buffer.from([input.bytes === null ? 0 : 1]));
@@ -139,8 +139,8 @@ export async function createBuildProvenance(root = process.cwd(), builtAt = new 
   const inputs = await collectInputs(path.resolve(root));
   return {
     formatVersion: 1,
-    scope: 'app-source-v1',
-    scopeNote: 'Selected regular .astro/.ts/.mjs/.css app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.',
+    scope: 'app-source-v2',
+    scopeNote: 'Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.',
     builtAtUTC: builtAt.toISOString(),
     sourceRevision: await matchingRevision(path.resolve(root), inputs),
     sourceFingerprint: fingerprint(inputs),

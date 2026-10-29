@@ -62,3 +62,15 @@
 - [Seasonal wildlife preparation](https://banffbound.com/wildlife-calendar/): Month selection with source-based preparation.
 - [Wildlife encounters](https://banffbound.com/wildlife-safety/): Behaviour-based encounter guidance and distinct reporting and emergency contacts.
 - [Bear-spray planning](https://banffbound.com/bear-spray/): Verified local rental leads, transport rules and preparation.
+
+## Cycling and privacy choices
+- [Cycling route planner](https://banffbound.com/biking/): Nine activity-specific route plans with summer/winter, pedal/assisted bicycle, direction and date restrictions. No current-open or surface verdict.
+- [Legacy corridor guide](https://banffbound.com/blog/banff-legacy-trail/): Published segment distances, bike choice and a whole return plan.
+- [Mountain biking guide](https://banffbound.com/blog/banff-mountain-biking/): Route demands, permitted segments and seasonal restrictions.
+- [Spray River route guide](https://banffbound.com/blog/spray-river-trail/): East/West and summer/winter activity distinctions.
+- [Privacy choices](https://banffbound.com/privacy/): Optional analytics, advertising and embedded booking content default off until enabled. Native referral links remain available.
+
+## Booking comparisons
+- [Compare Banff hotels](https://banffbound.com/book/banff-hotels/): Six source-reviewed Banff hotel fits, location and room priorities, with Expedia booking links.
+- [Compare Lake Louise stays](https://banffbound.com/book/lake-louise-stays/): Five village, lakeshore and nearby-road bases with category-specific kitchen and winter choices.
+- [Compare Banff winter activities](https://banffbound.com/book/banff-winter-activities/): Three distinct experience formats and verified GetYourGuide product links. Bookings and current terms are handled by the provider.

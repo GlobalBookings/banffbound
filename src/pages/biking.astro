@@ -1,225 +1,152 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-
-const trails = [
-  {
-    name: 'Legacy Trail',
-    description: 'A paved 26 km multi-use pathway connecting Banff to Canmore with stunning Bow Valley views. Perfect for road cycling and e-biking, this fully paved trail offers gentle grades and jaw-dropping mountain panoramas the entire way.',
-    image: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=600&q=80',
-    distance: '26 km one way',
-    difficulty: 'Easy',
-    surface: 'Paved',
-  },
-  {
-    name: 'Sundance Trail',
-    description: 'A scenic out-and-back trail following the Bow River south from the town of Banff to Sundance Canyon. Wide, well-maintained gravel path suitable for beginners and families with beautiful riverside scenery.',
-    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80',
-    distance: '7.4 km return',
-    difficulty: 'Easy',
-    surface: 'Gravel',
-  },
-  {
-    name: 'Goat Creek Trail',
-    description: 'A popular point-to-point trail running from the Smith-Dorrien Road near Canmore to the Banff Springs Hotel. Mostly downhill when ridden east, featuring forest singletrack and incredible Spray Valley views.',
-    image: 'https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=600&q=80',
-    distance: '19 km one way',
-    difficulty: 'Moderate',
-    surface: 'Singletrack / Gravel',
-  },
-  {
-    name: 'Spray River Loop',
-    description: 'A scenic loop trail that follows the Spray River past the Banff Springs Golf Course and through dense forest. Well-suited for intermediate riders looking for a half-day adventure close to town.',
-    image: 'https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=600&q=80',
-    distance: '12 km loop',
-    difficulty: 'Moderate',
-    surface: 'Gravel / Singletrack',
-  },
-  {
-    name: 'Tunnel Mountain Trail',
-    description: 'A short but rewarding ride to one of Banff\'s most accessible viewpoints. The trail winds through montane forest before opening up to panoramic views of the Bow Valley, Mount Rundle, and Cascade Mountain.',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
-    distance: '4.3 km return',
-    difficulty: 'Easy - Moderate',
-    surface: 'Gravel',
-  },
-  {
-    name: 'Rundle Riverside Trail',
-    description: 'A beautiful riverside trail that follows the Bow River from Banff to Canmore along a quieter route than the Legacy Trail. Gravel surface with some technical sections through forest and along riverbanks.',
-    image: 'https://images.unsplash.com/photo-1571188654248-7a89213915f7?w=600&q=80',
-    distance: '15 km one way',
-    difficulty: 'Moderate',
-    surface: 'Gravel / Dirt',
-  },
-];
-
-const bikingTypes = [
-  {
-    name: 'Road Cycling',
-    description: 'The Bow Valley Parkway (1A Highway) and the Legacy Trail offer world-class road cycling with long, smooth pavement and epic mountain scenery. Road cyclists will find well-maintained shoulders and dedicated cycling infrastructure throughout the park.',
-    icon: '🚴',
-  },
-  {
-    name: 'Mountain Biking',
-    description: 'From flowy cross-country trails to technical singletrack, Banff has terrain for every mountain biker. The Canmore Nordic Centre and trails around the Bow Valley offer dedicated mountain biking networks.',
-    icon: '🏔️',
-  },
-  {
-    name: 'E-Biking',
-    description: 'Electric bikes are permitted on most paved trails and roadways in Banff National Park. The Legacy Trail is especially popular for e-bikers, making the Banff-Canmore route accessible to all fitness levels.',
-    icon: '⚡',
-  },
-  {
-    name: 'Fat Biking (Winter)',
-    description: 'When the snow falls, fat bikes with oversized tires take over groomed trails. Popular winter routes include the Spray River Loop and trails around the Canmore Nordic Centre. A unique way to explore the winter landscape.',
-    icon: '❄️',
-  },
-];
+import { cyclingRoutes, cyclingSources, cyclingReviewedAt, cyclingSeasonOptions, cyclingBikeOptions, cyclingDirectionOptions } from '../data/cyclingPlanning';
 ---
-
-<BaseLayout title="Biking in Banff 2026 — Mountain, Road & E-Bike Trail Guide" description="Discover the best biking trails in Banff National Park — mountain biking, road cycling, e-biking, and fat biking. Trail guides, bike rentals, and guided tours.">
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Biking' }]} />
-  </div>
+<BaseLayout title="Cycling in Banff: Route, E-Bike & Winter Planner" description="Compare permitted Banff cycling profiles by route, direction, season and bike type. Plan distances, winter restrictions, rentals and the return journey." lastUpdated={cyclingReviewedAt}>
+  <div class="container"><Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: 'Cycling' }]} /></div>
   <section class="page-hero">
-    <img
-      src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=1600&q=80"
-      alt="Cycling through the Canadian Rockies near Banff"
-      class="page-hero-bg"
-      loading="eager"
-      fetchpriority="high"
-    />
-    <div class="page-hero-content">
-      <span class="badge">Two Wheels, Endless Views</span>
-      <h1>Biking in Banff</h1>
-      <p>From paved valley pathways to rugged alpine singletrack, explore the Canadian Rockies on two wheels year-round.</p>
-    </div>
+    <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=1600&q=80" alt="Illustrative cycling stock photograph; location and route not verified" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content"><span class="badge">Plan the ride and return</span><h1>Cycling in Banff</h1><p>Choose the permitted route, match its demands to the riders, then arrange the actual return. Paved paths, technical trails and winter fat-bike routes need different plans.</p><p class="photo-note">Illustrative stock photograph; not verified as a Banff route or current conditions.</p></div>
   </section>
-
-  <!-- Biking Types -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Choose Your Ride</span>
-        <h2>Types of Biking in Banff</h2>
-        <p>Whether you prefer smooth pavement or rugged trails, Banff has world-class cycling for every style and season.</p>
-      </div>
-      <div class="grid grid-2">
-        {bikingTypes.map(type => (
-          <div class="card">
-            <div class="card-body">
-              <h3>{type.icon} {type.name}</h3>
-              <p>{type.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Best Trails -->
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Top Trails</span>
-        <h2>Best Biking Trails</h2>
-        <p>Our favourite trails around Banff National Park, from beginner-friendly paths to intermediate adventures.</p>
-      </div>
-      <div class="grid grid-3">
-        {trails.map(trail => (
-          <div class="card">
-            <img src={trail.image} alt={trail.name} class="card-image" loading="lazy" />
-            <div class="card-body">
-              <h3>{trail.name}</h3>
-              <p>{trail.description}</p>
-              <div class="card-meta">
-                <span>📏 {trail.distance}</span>
-                <span class="tag">{trail.difficulty}</span>
-              </div>
-              <div class="card-meta">
-                <span>🛤️ {trail.surface}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Rentals & Guided Tours -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Gear Up</span>
-        <h2>Bike Rentals &amp; Guided Tours</h2>
-        <p>Don't have your own bike? Several shops in Banff and Canmore offer quality rentals and expert-led tours.</p>
-      </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-body">
-            <h3>🏪 Rental Shops</h3>
-            <p>Multiple bike shops in downtown Banff offer road bikes, mountain bikes, e-bikes, and fat bikes for rent. Most include helmets, locks, and trail maps. Half-day and full-day rentals available from around $40-$80 CAD.</p>
-          </div>
+  <section class="section"><div class="container">
+    <div class="planning-note"><p><strong>Route information reviewed October 29, 2026.</strong> These are published cycling profiles and permission checks. They do not report current opening, snow, grooming, traffic or crowd levels.</p><p>Read the <a href={cyclingSources.report} target="_blank" rel="noopener">official trail report</a>, <a href={cyclingSources.bulletins} target="_blank" rel="noopener">park bulletins</a> and current route map before travelling. A profile or a date outside an annual restriction does not confirm access.</p></div>
+    <div class="section-header"><h2>Compare a cycling plan</h2><p>The season selects an activity profile, rather than predicting conditions for your date. The optional date checks Minnewanka’s recurring cycling restriction only.</p></div>
+    <noscript><p class="planning-note">The comparison controls need JavaScript. All nine route listings, seasonal profiles, restrictions and source links are available below without it.</p></noscript>
+    <form id="cycling-planner" aria-describedby="planner-help">
+      <fieldset id="cycling-controls" disabled>
+        <legend>Route and equipment choices</legend>
+        <div class="planner-grid">
+          <label for="cycle-route">Route<select id="cycle-route" name="route"><option value="all">Compare all reviewed routes</option>{cyclingRoutes.map(route => <option value={route.id}>{route.name}</option>)}</select></label>
+          <label for="cycle-season">Route season<select id="cycle-season" name="season"><option value="all">All reviewed seasons</option>{cyclingSeasonOptions.map(option => <option value={option.value}>{option.label}</option>)}</select></label>
+          <label for="cycle-bike">Bike type<select id="cycle-bike" name="bike"><option value="all">Compare all bike types</option>{cyclingBikeOptions.map(option => <option value={option.value}>{option.label}</option>)}</select></label>
+          <label for="cycle-direction">Direction<select id="cycle-direction" name="direction">{cyclingDirectionOptions.map(option => <option value={option.value}>{option.label}</option>)}</select></label>
+          <label for="cycle-date">Ride date <span class="optional">(optional)</span><input id="cycle-date" name="date" type="date" aria-describedby="date-help" /></label>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>🗺️ Guided Tours</h3>
-            <p>Local guides know the best trails, the hidden viewpoints, and the safest routes. Guided cycling tours range from easy Legacy Trail rides to full-day backcountry mountain bike adventures.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>📅 Seasonal Info</h3>
-            <p><strong>Summer (Jun-Sep):</strong> Peak biking season with all trails open and long daylight hours.<br/><strong>Fall (Oct):</strong> Cooler temps, golden larches, fewer crowds.<br/><strong>Winter (Dec-Mar):</strong> Fat biking on groomed trails.<br/><strong>Spring (Apr-May):</strong> Trails may be muddy; paved routes open early.</p>
-          </div>
-        </div>
-      </div>
+        <p id="date-help" class="small">A date does not check current trail status or replace the selected summer/winter profile.</p>
+        <div class="planner-actions"><button type="submit" class="btn btn-primary">Compare selections</button><button type="reset" class="btn btn-outline">Reset choices</button></div>
+      </fieldset>
+    </form>
+    <p id="planner-help">Assisted bikes must meet Parks Canada’s pedal-assist definition and use a listed exception. A fat tyre, paved surface or ordinary bicycle permission does not extend e-bike access.</p>
+    <p id="cycle-feedback" role="status" aria-live="polite">Showing all 9 reviewed route listings. Use each seasonal profile and its restrictions.</p>
+    <p id="cycle-error" class="error-note" role="alert" hidden></p>
+    <div id="cycle-empty" class="planning-note" hidden><p><strong>No reviewed match for these selections.</strong> Change the route, season or bike type, or reset the choices. An absent profile is not proof that every activity is prohibited. Selected-route restrictions appear below.</p></div>
+    <section id="cycle-plan" class="selected-plan" aria-labelledby="cycle-plan-title" hidden><h3 id="cycle-plan-title" tabindex="-1">Selected route plan</h3><p id="cycle-plan-label"></p><p id="cycle-plan-profile"></p><p id="cycle-plan-direction"></p><ul id="cycle-plan-notes"></ul><p id="cycle-plan-return"></p><p id="cycle-plan-transport"></p><p><a href={cyclingSources.report} target="_blank" rel="noopener">Check the official trail report ↗</a></p></section>
+    <div class="route-grid" id="cycling-routes">
+      {cyclingRoutes.map(route => <article class="route-card" data-cycle-route={route.id}>
+        <h3>{route.name}</h3><p>{route.description}</p>
+        <dl class="profile-list">
+          {(['summer', 'winter'] as const).map(season => { const profile = route[season]; return profile && <div><dt>{season === 'summer' ? 'Summer bike profile' : 'Winter fat-bike profile'}</dt><dd><strong>{profile.distance}</strong> · Parks grade: {profile.grade}<br />{profile.surface}<br /><strong>Endpoints:</strong> {profile.endpoint}<br /><span class="small">{profile.basis}</span></dd></div>; })}
+        </dl>
+        <details><summary>Direction, return and restrictions</summary><p><strong>Listed direction:</strong> {route.direction}</p><p><strong>Reverse:</strong> {route.reverse}</p><p><strong>Return:</strong> {route.returnPlan}</p><p><strong>Transport:</strong> {route.transport}</p><ul>{route.constraints.map(note => <li>{note}</li>)}</ul><p><strong>Pedal-assist scope:</strong> {route.assist === 'not-listed' ? 'Not listed as an exception in the current Banff order.' : route.assist === 'winter-map-check' ? 'Exact assisted winter segments need confirmation; this planner does not verify them.' : 'The named segment/network is listed; the order’s limits and bicycle bans still apply.'}</p></details>
+        <p><a href={route.guide}>Read the related guide →</a></p><ul class="source-links">{route.sources.map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.label} ↗</a></li>)}</ul>
+      </article>)}
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
-    <div class="container">
-      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Book a Biking Tour in Banff</h2>
-      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Explore the Rockies with expert local guides. From scenic e-bike rides to thrilling mountain bike descents, find the perfect tour for your adventure.</p>
-      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=bike" class="btn btn-accent" target="_blank" rel="noopener">Browse Bike Tours on GetYourGuide →</a>
-      <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" class="btn btn-accent" target="_blank" rel="noopener sponsored" style="margin-left: 1rem;">Find Hotels on Expedia →</a>
+  </div></section>
+  <section class="section" id="rules" style="background:var(--color-bg-alt)"><div class="container">
+    <div class="section-header"><h2>Permission comes before the rental</h2><p>Use the exact route and bike type when asking a shop or guide for a plan.</p></div>
+    <div class="grid grid-2">
+      <article class="card"><div class="card-body"><h3>Ordinary bikes and e-bikes have different limits</h3><p>The <a href={cyclingSources.ebikes} target="_blank" rel="noopener">current Parks order</a> permits compliant pedal-assist bikes on named segments and networks. The definition includes a maximum 500 W total motor output, assistance stopping when pedalling stops, no further assistance at 32 km/h on level ground, and the specified motor-start safety mechanism. Check the complete definition with the rental provider.</p><p>All bicycles are prohibited on Tunnel Mountain Summit Trail, Hoodoos Interpretive Trail and the named corrals connectors. The maintained Tunnel Bench network has permitted routes; its name does not authorize every nearby path. Healy Creek’s pedal-assist exception ends at Brewster Creek junction and does not reach Sundance.</p></div></article>
+      <article class="card"><div class="card-body"><h3>Summer and winter are separate route plans</h3><p>Spray River East has a winter fat-bike profile; Spray River West prohibits bikes in winter. Sundance ends at the bike racks. The winter Tunnel network is different from the summer campground circuit and the ski-only loops.</p><p>Use firm snow and stop if tyres sink more than 2.5 cm, as <a href={cyclingSources.winter} target="_blank" rel="noopener">Parks advises</a>. Keep out of classic ski tracks. Ice, avalanche terrain, cold and poor visibility still require preparation; a valley trail or an Easy grade does not remove them.</p></div></article>
     </div>
-  </section>
-
-  <section class="tip-section">
-    <div class="container">
-      <div class="tip-card">
-        <h3>🚲 Biking Tips for Banff</h3>
-        <p><strong>Helmet Required:</strong> Alberta law requires helmets for cyclists under 18, but we recommend helmets for all riders on mountain trails.</p>
-        <p><strong>Wildlife Awareness:</strong> Make noise on trails to avoid surprising bears and other wildlife. Carry bear spray and know how to use it.</p>
-        <p><strong>Trail Etiquette:</strong> Yield to hikers and horses. Stay on designated trails to protect fragile alpine ecosystems.</p>
-        <p><strong>E-bike Rules:</strong> E-bikes are allowed on paved trails and roads but are prohibited on most singletrack trails in the national park.</p>
-        <p><strong>Water & Sunscreen:</strong> The mountain sun is intense at altitude. Carry plenty of water and apply sunscreen frequently.</p>
-      </div>
+    <p><strong>Minnewanka:</strong> cycling beyond Stewart Canyon Bridge is prohibited July 10–September 15 annually. A four-person hiking group does not create a cycling exception. Outside those dates, read <a href={cyclingSources.minnewanka} target="_blank" rel="noopener">current restrictions</a> and the full terrain description.</p>
+  </div></section>
+  <section class="section"><div class="container">
+    <div class="section-header"><h2>Build a ride that fits the day</h2></div>
+    <div class="grid grid-3">
+      <article class="card"><div class="card-body"><h3>A shorter paved outing</h3><p>Discuss a Sundance out-and-back or a selected Legacy section. Check brakes, turns and the bike fit first, identify the turnaround and leave time for shared paths and road crossings. These are different routes, with different access and distance; neither is assigned to every beginner.</p></div></article>
+      <article class="card"><div class="card-body"><h3>A technical or point-to-point ride</h3><p>Rundle Riverside’s rough/rooty terrain, Minnewanka’s exposed shoreline and Goat Creek’s distant endpoints need more than a distance comparison. Match handling skills, repair ability and supplies to the route, and arrange a return for riders and bikes before starting.</p></div></article>
+      <article class="card"><div class="card-body"><h3>A winter fat-bike outing</h3><p>Choose a designated winter profile and check the day’s surface before collecting equipment. Try control in a suitable short area, keep the first plan flexible and leave a rental-return buffer. Read the <a href="/blog/banff-fat-biking">reviewed fat-biking guide</a> and <a href="/winter">winter activity planner</a>.</p></div></article>
     </div>
-  </section>
+    <h2>Rentals, guides and getting home</h2>
+    <p>Ask for the exact bike, helmet, tyre setup, repair kit, lock, damage terms, cancellation policy, total quote and return deadline. Equipment inclusion and prices vary by provider. Ask a guide to name the permitted route, skill demands, meeting point and actual transfers; a generic tour search does not confirm a departure.</p>
+    <p><a href="https://www.banffadventures.com/plan-your-trip/contact-us/" target="_blank" rel="noopener">Banff Adventures is at 211 Bear Street, Banff</a>. <a href="https://www.wmsll.com/contact.html" target="_blank" rel="noopener">Wilson Mountain Sports is at Samson Mall, 101 Lake Louise Drive, Lake Louise</a>; it is not a Banff Bear Street shop. Confirm the chosen provider’s current rental range and hours directly.</p>
+    <p><a href={cyclingSources.roam} target="_blank" rel="noopener">Roam’s bicycle policy</a> makes transport dependent on available rack space, bike fit, the bus and driver decisions. A passenger reservation does not reserve a bike slot. A bus to Canmore town does not deliver you to Goat Creek Day Use or the Nordic Centre; confirm the last leg and a fallback.</p>
+    <p>Carry navigation, weather layers, water, food, a repair plan, first aid and emergency supplies for the actual outing. Yield to walkers and horses, slow well before passing and carry bear spray with knowledge of its use. <a href={cyclingSources.town} target="_blank" rel="noopener">Town guidance</a> requires helmets for pedal-bike riders/passengers under 18 and for electric/power-assisted riders/passengers of every age; a helmet is recommended for everyone.</p>
+    <p>Use <a href="/towns">town and base comparisons</a>, <a href="/packing-list">packing guidance</a> and <a href="/conditions">official conditions links</a>. An <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&amp;camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia accommodation search</a> and <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&amp;q=bike" target="_blank" rel="noopener sponsored">GetYourGuide cycling search</a> are affiliate links; BanffBound may earn a commission. Search results do not confirm a route, product or availability.</p>
+    <p class="small">Source review: {cyclingReviewedAt}. Permission orders and seasonal rules can change; recheck the linked primary sources before the ride. This guide supplies no safe-start calculation or live opening verdict.</p>
+  </div></section>
 </BaseLayout>
 
+<script>
+  import { cyclingRoutes, assessCyclingPlan, validCyclingDate } from '../data/cyclingPlanning';
+  const form = document.getElementById('cycling-planner') as HTMLFormElement;
+  const controls = document.getElementById('cycling-controls') as HTMLFieldSetElement;
+  const routeInput = document.getElementById('cycle-route') as HTMLSelectElement;
+  const seasonInput = document.getElementById('cycle-season') as HTMLSelectElement;
+  const bikeInput = document.getElementById('cycle-bike') as HTMLSelectElement;
+  const directionInput = document.getElementById('cycle-direction') as HTMLSelectElement;
+  const dateInput = document.getElementById('cycle-date') as HTMLInputElement;
+  const feedback = document.getElementById('cycle-feedback')!;
+  const error = document.getElementById('cycle-error')!;
+  const empty = document.getElementById('cycle-empty')!;
+  const plan = document.getElementById('cycle-plan')!;
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-cycle-route]')];
+  const text = (id: string, value: string) => { document.getElementById(id)!.textContent = value; };
+  function update(focus = false) {
+    const date = dateInput.value;
+    const dateInvalid = Boolean(date && !validCyclingDate(date));
+    error.hidden = !dateInvalid;
+    error.textContent = dateInvalid ? 'Enter a real ride date or clear the optional date field.' : '';
+    dateInput.setAttribute('aria-invalid', String(dateInvalid));
+    const seasons = seasonInput.value === 'all' ? ['summer', 'winter'] : [seasonInput.value];
+    const bikes = bikeInput.value === 'all' ? ['pedal', 'pedal-assist', 'fat', 'assisted-fat'] : [bikeInput.value];
+    let count = 0;
+    for (const card of cards) {
+      const route = cyclingRoutes.find(item => item.id === card.dataset.cycleRoute)!;
+      const selected = routeInput.value === 'all' || route.id === routeInput.value;
+      const match = !dateInvalid && selected && seasons.some(season => bikes.some(bike => assessCyclingPlan({ routeId: route.id, season, bike, direction: directionInput.value, date } as Parameters<typeof assessCyclingPlan>[0]).documented));
+      card.hidden = !match;
+      if (match) count++;
+    }
+    feedback.textContent = `${count} reviewed route listing${count === 1 ? '' : 's'} match the selections. Matching a published profile does not confirm current access or suitability.`;
+    empty.hidden = count > 0 || dateInvalid;
+    const selected = cyclingRoutes.find(item => item.id === routeInput.value);
+    plan.hidden = !selected || dateInvalid;
+    if (selected && !dateInvalid) {
+      const chosenSeason = seasonInput.value === 'all' ? selected.summer ? 'summer' : 'winter' : seasonInput.value;
+      const chosenBike = bikeInput.value === 'all' ? chosenSeason === 'winter' ? 'fat' : 'pedal' : bikeInput.value;
+      const result = assessCyclingPlan({ routeId: selected.id, season: chosenSeason, bike: chosenBike, direction: directionInput.value, date } as Parameters<typeof assessCyclingPlan>[0]);
+      text('cycle-plan-title', selected.name);
+      text('cycle-plan-label', `${result.label}. ${seasonInput.value === 'all' || bikeInput.value === 'all' ? `Detail preview uses the ${chosenSeason} profile and ${chosenBike === 'fat' ? 'unassisted fat bike' : chosenBike === 'pedal' ? 'unassisted bicycle' : 'selected bike type'}; select specific options to change it.` : ''}`);
+      text('cycle-plan-profile', result.profile ? `${result.profile.distance} · Parks grade ${result.profile.grade}. ${result.profile.endpoint}. ${result.profile.basis}` : 'No profile is reviewed for this season.');
+      text('cycle-plan-direction', result.direction);
+      const notes = document.getElementById('cycle-plan-notes')!;
+      notes.replaceChildren();
+      for (const note of [...result.errors, ...result.restrictions, ...result.notes]) {
+        const item = document.createElement('li'); item.textContent = note; notes.append(item);
+      }
+      text('cycle-plan-return', `Return: ${selected.returnPlan}`);
+      text('cycle-plan-transport', `Transport: ${selected.transport}`);
+      if (focus) document.getElementById('cycle-plan-title')!.focus();
+    }
+  }
+  controls.disabled = false;
+  form.addEventListener('submit', event => { event.preventDefault(); update(true); });
+  form.addEventListener('change', () => update());
+  form.addEventListener('reset', () => { setTimeout(() => update(), 0); });
+  update();
+</script>
 <style>
-  .tip-section {
-    padding: 0 0 4rem;
-  }
-
-  .tip-card {
-    background: var(--color-bg-alt);
-    border-left: 4px solid var(--color-accent);
-    border-radius: var(--radius);
-    padding: 2rem;
-  }
-
-  .tip-card h3 {
-    margin-bottom: 1rem;
-  }
-
-  .tip-card p {
-    color: var(--color-text-light);
-    line-height: 1.7;
-    margin-bottom: 0.5rem;
-  }
+  .photo-note { font-size:.8rem; opacity:.9; }
+  .planning-note,.selected-plan { padding:1.25rem; border:1px solid var(--color-border,#cbd5e1); border-radius:var(--radius); margin:1rem 0 1.5rem; background:var(--color-bg-alt); }
+  .planning-note p:last-child { margin-bottom:0; }
+  fieldset { border:1px solid var(--color-border,#cbd5e1); padding:1.25rem; border-radius:var(--radius); min-width:0; }
+  legend { padding:0 .35rem; font-weight:700; }
+  .planner-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:1rem; }
+  label { display:flex; flex-direction:column; gap:.4rem; font-weight:600; }
+  select,input { width:100%; min-width:0; padding:.7rem; border:1px solid #94a3b8; border-radius:.4rem; background:var(--color-bg); color:var(--color-text); font:inherit; }
+  select:focus-visible,input:focus-visible,summary:focus-visible { outline:3px solid var(--color-primary); outline-offset:3px; }
+  .optional,.small { font-size:.85rem; font-weight:400; color:var(--color-text-light); }
+  .planner-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem; }
+  .error-note { color:#991b1b; font-weight:700; }
+  .route-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:1.4rem; margin-top:1.5rem; }
+  .route-card { padding:1.35rem; border:1px solid var(--color-border,#cbd5e1); border-radius:var(--radius); min-width:0; }
+  .route-card[hidden], [hidden] { display:none !important; }
+  .profile-list>div { margin:1rem 0; }
+  dt { font-weight:700; } dd { margin:.3rem 0; line-height:1.6; }
+  details { margin:1rem 0; } summary { cursor:pointer; font-weight:700; } details p { margin:.8rem 0; }
+  .source-links { font-size:.85rem; padding-left:1.2rem; }
+  li { margin:.4rem 0; line-height:1.6; } a { overflow-wrap:anywhere; }
+  @media (max-width:640px) { fieldset,.route-card { padding:1rem; } }
 </style>

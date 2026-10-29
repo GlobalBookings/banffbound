@@ -1,0 +1,111 @@
+---
+import PaidLandingLayout from '../../layouts/PaidLandingLayout.astro';
+import { lakeLouiseLandingId, lakeLouiseLandingReviewedAt, lakeLouiseStayChoices, lakeLouiseStayFaqs } from '../../data/lakeLouiseLanding';
+const hero = lakeLouiseStayChoices[0];
+const defaultNotes = ['Compare location and room categories first. The lake, village and ski resort are separate places; the provider supplies the quote for your dates.'];
+const faqs = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: lakeLouiseStayFaqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) };
+const list = { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Five Lake Louise area stays to compare', numberOfItems: lakeLouiseStayChoices.length, itemListElement: lakeLouiseStayChoices.map((stay, index) => ({ '@type': 'ListItem', position: index + 1, name: stay.name, url: `https://banffbound.com/book/lake-louise-stays/#stay-${stay.slug}` })) };
+---
+
+<PaidLandingLayout
+  title="Lake Louise Stays: Village, Lakeshore & Cabins"
+  description="Compare five sourced Lake Louise hotels, suites and cabin bases by location and room layout. Choose village, lakeshore or road access, then compare your dates on Expedia."
+  eyebrow="Choose your Lake Louise address"
+  heading="Find the stay that fits your Lake Louise trip."
+  intro="A room beside the lake, a village hotel or a cabin on the Parkway leads to a different day. Compare five actual properties, their room choices and the journey before opening a quote."
+  primaryCta={{ label: 'Compare the five stays', href: '#compare-stays' }}
+  heroImage={hero.image}
+  heroAlt={hero.imageAlt}
+>
+  <p slot="hero-detail" class="hero-detail">Pictured: Fairmont Chateau Lake Louise at the lakeshore. Village hotels and the ski resort are separate locations. Source review: <time datetime={lakeLouiseLandingReviewedAt}>29 October 2026</time>.</p>
+  <script type="application/ld+json" set:html={JSON.stringify(faqs)} />
+  <script type="application/ld+json" set:html={JSON.stringify(list)} />
+
+  <div class="louise-landing" data-landing-id={lakeLouiseLandingId}>
+    <section id="compare-stays" class="comparison-section" aria-labelledby="compare-heading">
+      <div class="section-heading"><span class="eyebrow">The quick comparison</span><h2 id="compare-heading">Start with the location and one room decision</h2><p>These are editorial starting points drawn from source-reviewed stays. They are not a price or guest-rating ranking.</p></div>
+      <p class="affiliate-disclosure"><strong>Affiliate links:</strong> BanffBound may earn a commission from qualifying bookings. Expedia supplies current room choices, prices and terms. The links below open named property listings; check the address and selected room before paying.</p>
+      <div class="table-wrap" role="region" aria-label="Compare five Lake Louise stays" tabindex="0"><table><caption>Five different bases for a Lake Louise stay</caption><thead><tr><th scope="col">Stay</th><th scope="col">Why compare it</th><th scope="col">Booking options</th></tr></thead><tbody>{lakeLouiseStayChoices.map(stay => <tr><th scope="row">{stay.name}<span>{stay.location}</span></th><td>{stay.comparison}</td><td><a href={stay.expediaUrl} target="_blank" rel="noopener noreferrer sponsored" data-landing-id={lakeLouiseLandingId} data-offer-id={stay.slug} data-landing-placement="comparison-table" aria-label={`Compare ${stay.name} on Expedia, affiliate link, opens a new tab`}>Compare on Expedia ↗</a></td></tr>)}</tbody></table></div>
+      <p class="source-date">Property facts and merchant identity reviewed <time datetime={lakeLouiseLandingReviewedAt}>29 October 2026</time>. This date is not a room-availability check.</p>
+    </section>
+
+    <section aria-labelledby="fit-heading" class="fit-section">
+      <div class="section-heading"><span class="eyebrow">Narrow the shortlist</span><h2 id="fit-heading">What matters for your stay?</h2><p>Use location, room style and season to focus the detailed cards. All five properties remain in the quick comparison above.</p></div>
+      <form id="louise-fit-form" class="fit-form" hidden>
+        <div><label for="louise-base">Location</label><select id="louise-base" name="base"><option value="all">All locations</option><option value="village">Lake Louise village</option><option value="lakeshore">At the lakeshore</option><option value="road">Road bases outside the village</option></select></div>
+        <div><label for="louise-room">Room preference</label><select id="louise-room" name="room"><option value="all">Any room style</option><option value="cooking">A cooking-equipped category</option><option value="cabin">A cabin option</option></select></div>
+        <div><label for="louise-season">Trip season</label><select id="louise-season" name="season"><option value="unsure">Not decided</option><option value="winter">Winter</option><option value="summer">Summer</option></select></div>
+        <button type="reset" class="reset-button">Reset preferences</button>
+      </form>
+      <noscript><p>All five detailed cards are shown below. Their room, location, source and booking information work without JavaScript.</p></noscript>
+      <p id="louise-fit-count" class="result-count" role="status" aria-live="polite" aria-atomic="true">5 properties to compare</p>
+      <div id="louise-fit-notes" class="fit-notes">{defaultNotes.map(note => <p>{note}</p>)}</div>
+      <div id="louise-fit-empty" class="empty" hidden><h3>No exact category match in this shortlist</h3><p>Clear a preference or use the full comparison above. This is a location and room-category result, not a sold-out message.</p></div>
+      <div class="stay-grid">{lakeLouiseStayChoices.map(stay => <article id={`stay-${stay.slug}`} class="stay-card" data-stay-id={stay.slug}>
+        <figure><img src={stay.image} alt={stay.imageAlt} width="800" height="500" loading="lazy" /><figcaption>Property photograph from the operator’s reviewed gallery; the pictured room or facility is not a booking inclusion.</figcaption></figure>
+        <div class="stay-body"><p class="location-label">{stay.location}</p><h3>{stay.name}</h3><p class="address">{stay.address} · Lake Louise area</p><p class="fit-line">{stay.fit}</p><h4>The room decision</h4><p>{stay.roomDecision}</p><h4>The tradeoff</h4><p>{stay.tradeoff}</p>
+          <details><summary>Journey and season checks</summary><p>{stay.journey}</p><p>{stay.seasonNote}</p></details>
+          <a class="stay-cta" href={stay.expediaUrl} target="_blank" rel="noopener noreferrer sponsored" data-landing-id={lakeLouiseLandingId} data-offer-id={stay.slug} data-landing-placement="detail-card">Compare {stay.shortName} rooms on Expedia ↗</a>
+          <p class="booking-note">Named property listing · choose dates and a room there · affiliate link</p>
+          <div class="source-links"><a href={stay.officialUrl} target="_blank" rel="noopener noreferrer">{stay.officialLabel} ↗</a>{'roomSource' in stay && <a href={stay.roomSource} target="_blank" rel="noopener noreferrer">Exact room details ↗</a>}{'seasonSource' in stay && <a href={stay.seasonSource} target="_blank" rel="noopener noreferrer">Winter operation and arrival ↗</a>}{'transportSource' in stay && <a href={stay.transportSource} target="_blank" rel="noopener noreferrer">Hotel transport distinctions ↗</a>}</div>
+        </div>
+      </article>)}</div>
+    </section>
+
+    <section class="booking-checks" aria-labelledby="quote-heading"><div><span class="eyebrow">Make the quote comparable</span><h2 id="quote-heading">Match the whole stay, not just the hotel name</h2><p>Use the same dates, adults, children’s ages and number of rooms when comparing. Then check these four parts of the actual quote.</p></div><ol>
+      <li><strong>The room:</strong> exact beds, occupancy, stairs, bathroom, cooking equipment and any named view. Ask the property to allocate required access features before committing.</li>
+      <li><strong>The final total:</strong> currency, taxes, mandatory fees, parking, meals and payment timing. A headline amount may cover a different room or conditions.</li>
+      <li><strong>The flexibility:</strong> cancellation deadline and local time, deposit, refund conditions and who handles changes. Read the selected rate’s terms.</li>
+      <li><strong>The journey:</strong> airport arrival, groceries, activity pickup and the last return. A ski shuttle, summer lake shuttle and airport transfer are separate arrangements.</li>
+    </ol><p>Travelling without a car? Start by checking a village address and the actual seasonal pickup, then confirm every leg. For a road-base stay, obtain a property-specific transfer and return plan. <a href="/car-free-banff">Plan car-free journeys</a> · <a href="/shuttle-reservations">Check lake-shuttle arrangements</a> · <a href="/ski-day-planner">Plan a ski day</a>.</p></section>
+
+    <section class="faq-section" aria-labelledby="faq-heading"><h2 id="faq-heading">Before you choose a Lake Louise hotel</h2>{lakeLouiseStayFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <aside class="more-planning"><h2>Still deciding where to stay?</h2><p><a href="/towns/lake-louise">Understand Lake Louise</a> · <a href="/winter-stays">Compare winter bases</a> · <a href="/hotel-directory">Explore the wider hotel directory</a></p><p>Open the property’s direct information alongside Expedia and confirm anything essential to your stay. This page makes no reservation and does not promise a package, current rate or facility availability.</p></aside>
+  </div>
+</PaidLandingLayout>
+
+<script>
+  import { buildLakeLouiseStayComparison, normaliseLakeLouiseStayFilters } from '../../data/lakeLouiseLanding';
+  function initLakeLouiseStayFit() {
+    const form = document.querySelector<HTMLFormElement>('#louise-fit-form');
+    const base = document.querySelector<HTMLSelectElement>('#louise-base');
+    const room = document.querySelector<HTMLSelectElement>('#louise-room');
+    const season = document.querySelector<HTMLSelectElement>('#louise-season');
+    const count = document.querySelector<HTMLElement>('#louise-fit-count');
+    const notes = document.querySelector<HTMLElement>('#louise-fit-notes');
+    const empty = document.querySelector<HTMLElement>('#louise-fit-empty');
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-stay-id]')];
+    if (!form || !base || !room || !season || !count || !notes || !empty || !cards.length || form.dataset.ready) return;
+    form.dataset.ready = 'true';
+    const fields = { base, room, season };
+    const keys = { base: 'stay_base', room: 'stay_room', season: 'stay_season' };
+    const params = new URL(window.location.href).searchParams;
+    const restored = normaliseLakeLouiseStayFilters(Object.fromEntries(Object.entries(keys).map(([key, query]) => [key, params.get(query)])));
+    for (const [key, field] of Object.entries(fields)) field.value = restored[key as keyof typeof restored];
+    const update = (writeUrl = false) => {
+      const result = buildLakeLouiseStayComparison({ base: base.value, room: room.value, season: season.value });
+      for (const [key, field] of Object.entries(fields)) field.value = result.filters[key as keyof typeof result.filters];
+      const ids = new Set(result.selectedIds);
+      for (const card of cards) card.hidden = !ids.has(card.dataset.stayId as typeof result.selectedIds[number]);
+      count.textContent = `${result.selectedIds.length} ${result.selectedIds.length === 1 ? 'property' : 'properties'} to compare — category matches, not room availability`;
+      empty.hidden = result.selectedIds.length !== 0;
+      notes.replaceChildren(...result.notes.map(text => { const paragraph = document.createElement('p'); paragraph.textContent = text; return paragraph; }));
+      if (writeUrl) {
+        const url = new URL(window.location.href);
+        for (const [key, query] of Object.entries(keys)) { const value = result.filters[key as keyof typeof result.filters]; value === 'all' || value === 'unsure' ? url.searchParams.delete(query) : url.searchParams.set(query, value); }
+        try { window.history.replaceState({}, '', url); } catch { /* Filters still work when URL updates are unavailable. */ }
+      }
+    };
+    form.addEventListener('submit', event => event.preventDefault());
+    form.addEventListener('change', () => update(true));
+    form.addEventListener('reset', event => { event.preventDefault(); base.value = 'all'; room.value = 'all'; season.value = 'unsure'; update(true); });
+    update();
+    form.hidden = false;
+  }
+  initLakeLouiseStayFit();
+  document.addEventListener('astro:page-load', initLakeLouiseStayFit);
+</script>
+
+<style>
+  [hidden]{display:none!important}.hero-detail{font-size:.9rem;line-height:1.65}.louise-landing{max-width:1120px;margin:0 auto;padding:0 1.5rem 3rem}.louise-landing section{margin:3rem 0;scroll-margin-top:110px}.eyebrow{text-transform:uppercase;letter-spacing:.09em;font-size:.76rem;font-weight:800;color:var(--color-primary)}.section-heading{max-width:820px}.section-heading h2{margin:.4rem 0 1rem}.louise-landing a:not(.stay-cta){text-decoration:underline;text-underline-offset:.15em}.affiliate-disclosure{padding:1rem 1.2rem;border-left:4px solid var(--color-accent);background:var(--color-bg-alt);font-size:.9rem;line-height:1.7}.table-wrap{overflow-x:auto;border:1px solid #d5dbd2;border-radius:10px;margin:1.25rem 0}.table-wrap table{border-collapse:collapse;width:100%;min-width:650px;text-align:left}.table-wrap caption{text-align:left;font-weight:700;padding:1rem;background:var(--color-bg-alt)}.table-wrap th,.table-wrap td{padding:1rem;border-bottom:1px solid #e2e5de;vertical-align:top}.table-wrap thead{background:var(--color-primary);color:white}.table-wrap tbody th{width:32%;font-size:.95rem}.table-wrap tbody th span{display:block;font-size:.8rem;font-weight:400;margin-top:.35rem;color:var(--color-text-light)}.table-wrap td:last-child{min-width:155px;font-weight:700}.source-date,.booking-note{font-size:.8rem;color:var(--color-text-light);line-height:1.6}.fit-form{display:flex;flex-wrap:wrap;gap:1rem;align-items:end;background:var(--color-bg-alt);padding:1.25rem;border-radius:12px;margin:1.25rem 0}.fit-form>div{flex:1 1 210px}.fit-form label{display:block;font-weight:700;margin-bottom:.4rem;font-size:.9rem}.fit-form select,.reset-button{min-height:46px;font:inherit;border:1px solid #61745c;border-radius:6px;padding:.55rem .7rem;background:white;color:var(--color-text);width:100%}.reset-button{width:auto;background:var(--color-primary);color:white;cursor:pointer}.result-count{font-weight:750}.fit-notes p{font-size:.9rem;line-height:1.7;margin:.6rem 0}.stay-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin-top:1.5rem}.stay-card{border:1px solid #d5dbd2;border-radius:14px;overflow:hidden;background:white;scroll-margin-top:110px}.stay-card figure{margin:0}.stay-card img{display:block;width:100%;height:230px;object-fit:cover}.stay-card figcaption{font-size:.72rem;line-height:1.5;padding:.6rem 1rem;background:var(--color-bg-alt);color:#52604e}.stay-body{padding:1.5rem}.location-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;font-weight:750;color:var(--color-primary)}.stay-body h3{font-size:1.5rem;line-height:1.25;margin:.45rem 0}.address{font-size:.8rem;color:var(--color-text-light)}.fit-line{font-size:1.05rem;font-weight:700;margin:1rem 0}.stay-body h4{font-size:.9rem;margin:1.1rem 0 .35rem}.stay-body p{line-height:1.7}.stay-body details,.faq-section details{border-top:1px solid #dce1d6;padding:1rem 0;margin-top:1rem}.stay-body summary,.faq-section summary{cursor:pointer;font-weight:700;line-height:1.6}.stay-cta{display:block;background:var(--color-primary);color:white;padding:.9rem 1rem;min-height:48px;text-align:center;border-radius:7px;font-weight:700;margin-top:1.25rem;line-height:1.4}.stay-cta:hover{background:var(--color-primary-light)}.booking-note{margin:.6rem 0}.source-links{display:flex;flex-direction:column;gap:.5rem;font-size:.82rem;margin-top:1rem}.booking-checks,.more-planning,.empty{background:var(--color-bg-alt);border-radius:12px;padding:1.5rem}.booking-checks li{margin:.9rem 0;line-height:1.7}.booking-checks ol{padding-left:1.3rem}.empty{border:1px solid #d5dbd2;margin:1rem 0}.faq-section p,.more-planning p{line-height:1.75}@media(max-width:720px){.stay-grid{grid-template-columns:1fr}.louise-landing{padding:0 1rem 2rem}.stay-body{padding:1.25rem}.stay-card img{height:210px}.table-wrap{margin-right:0}.fit-form>div,.reset-button{flex-basis:100%;width:100%}}@media print{.fit-form{display:none}.stay-card[hidden]{display:block!important}.stay-card{break-inside:avoid}.table-wrap{overflow:visible}.table-wrap table{min-width:0}.stay-cta{color:black;background:white;border:1px solid black}}
+</style>

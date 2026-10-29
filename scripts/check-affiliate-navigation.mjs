@@ -1,43 +1,25 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
-import vm from 'node:vm';
-const source=await readFile('src/scripts/tracking.js','utf8');
-function click({href='https://www.expedia.ca/Hotel-Search?camref=1101l3MtWX',tracker='available',conversion='available',modifiers={}}={}){
- const handlers=[];const events=[];let prevented=0;let opened=0;let conversions=0;
- const context={
-  URL,Date,setInterval:()=>0,setTimeout:()=>0,clearTimeout:()=>{},
-  document:{title:'Hotel options',hidden:false,documentElement:{scrollHeight:2000},addEventListener(type,handler){if(type==='click')handlers.push(handler);}},
-  window:{location:{pathname:'/hotels/',hostname:'banffbound.com'},innerHeight:800,scrollY:0,addEventListener(){},open(){opened++;}},
- };
- if(tracker!=='absent')context.gtag=(...args)=>{if(tracker==='throws')throw new Error('blocked');events.push(args);};
- if(conversion!=='absent')context.gtag_report_conversion=()=>{conversions++;if(conversion==='throws')throw new Error('blocked');/* No callback ever arrives. */};
- vm.runInNewContext(source,context);
- const link={href,textContent:'Check dates',target:'_blank'};
- const event={target:{closest(selector){return selector==='a[href]'?link:null;}},button:0,defaultPrevented:false,preventDefault(){prevented++;this.defaultPrevented=true;},...modifiers};
- for(const handler of handlers)handler(event);
- return {prevented,opened,events,conversions,link};
+import { consentHarness, validConsent } from './lib/consent-harness.mjs';
+const destinations = ['https://www.expedia.ca/Hotel-Search?camref=1101l3MtWX','https://www.expedia.ca/Cars?camref=KB6G4xt','https://expedia.com/affiliate/example','https://www.getyourguide.com/banff-l284/?partner_id=QW960HO','https://www.amazon.ca/s?k=gloves&tag=banffbound-20','https://www.vrbo.com/affiliate/example','https://www.vrbo.com/search?camref=1101l3MtWL'];
+let checks=0;
+for(const tracker of ['available','absent','throws'])for(const analytics of [false,true])for(const advertising of [false,true])for(const href of destinations){
+ const h=consentHarness({stored:validConsent({analytics,advertising}),initTracking:true});
+ const baseline=h.commands.filter(c=>c[0]==='event').length;
+ if(tracker==='absent')h.window.gtag=undefined;
+ if(tracker==='throws')h.window.gtag=()=>{throw Error('Tracker blocked');};
+ const result=h.linkClick(href,{cta:true});assert.equal(result.prevented,0,'Native provider navigation never waits for tracking.');assert.equal(h.opened,0,'No callback popup or duplicate target.');assert.equal(result.link.target,'_blank');assert.equal(result.link.href,href,'All original affiliate parameters remain on the native link.');
+ const sent=h.commands.slice().filter(c=>c[0]==='event').slice(baseline);
+ assert.equal(sent.some(c=>c[1]==='affiliate_click'),tracker==='available'&&analytics);
+ assert.equal(sent.some(c=>c[1]==='conversion'),tracker==='available'&&advertising);
+ for(const command of sent.filter(c=>c[1]==='conversion')){assert.equal(command[2].send_to,'AW-17246982814/8ptcCPuTheAaEJ6lgKBA');assert.equal(command[2].event_callback,undefined);}
+ checks++;
 }
-for(const tracker of ['available','absent','throws']){
- for(const conversion of ['available','absent','throws']){
-  const result=click({tracker,conversion});
-  assert.equal(result.prevented,0,'Provider navigation never waits for analytics');
-  assert.equal(result.opened,0,'Do not create callback popups or duplicate the anchor target');
-  assert.equal(result.link.target,'_blank');
-  if(tracker==='available')assert(result.events.some(event=>event[1]==='affiliate_click'));
- }
-}
-for(const modifiers of [{ctrlKey:true},{metaKey:true},{shiftKey:true},{button:1}])assert.equal(click({modifiers}).prevented,0,'Keep browser navigation gestures');
-for(const href of ['https://www.getyourguide.com/s/?partner_id=QW960HO','https://www.amazon.ca/s?k=gloves&tag=banffbound-20','https://www.vrbo.com/affiliate/example'])assert.equal(click({href}).prevented,0);
-const layout=await readFile('src/layouts/BaseLayout.astro','utf8');
-const start=layout.indexOf('      window.dataLayer =');
-const end=layout.indexOf('</script>',start);
-const sandbox={dataLayer:[],open(){throw new Error('Unexpected popup');}};sandbox.window=sandbox;
-vm.runInNewContext(layout.slice(start,end),sandbox);
-assert.equal(sandbox.gtag_report_conversion('https://example.com'),true);
-const event=sandbox.dataLayer.at(-1);
-assert.equal(event[1],'conversion');
-assert.equal(event[2].send_to,'AW-17246982814/8ptcCPuTheAaEJ6lgKBA');
-assert.equal(event[2].event_callback,undefined,'Analytics completion cannot become a navigation gate');
-sandbox.gtag=()=>{throw new Error('blocked');};
-assert.equal(sandbox.gtag_report_conversion(),true);
-console.log('Affiliate navigation checks passed: unavailable/throwing trackers, missing callbacks, native targets and browser gestures.');
+for(const modifiers of [{ctrlKey:true},{metaKey:true},{shiftKey:true},{button:1}]){const h=consentHarness({stored:validConsent({analytics:true,advertising:true}),initTracking:true});assert.equal(h.linkClick(destinations[0],modifiers).prevented,0);}
+const h=consentHarness({stored:validConsent({analytics:true}),initTracking:true});
+for(const href of ['https://getyourguide.com.evil.test/?partner_id=QW960HO','https://example.com/?target=https://www.expedia.ca/','https://www.amazon.ca/?tag=some-other-tag','https://www.expedia.com/legal/privacy','https://www.expedia.com/legal/privacy?camref=1101l3MtWX','https://www.getyourguide.com/c/privacy-policy/','https://www.getyourguide.com/c/privacy-policy/?partner_id=QW960HO','https://www.expedia.ca/Hotel-Search?destination=Banff','https://www.getyourguide.com/s/?q=banff','javascript:void(0)'])assert.equal(h.api.affiliatePartner(href),null);
+const policies=consentHarness({stored:validConsent({analytics:true,advertising:true}),initTracking:true});
+for(const href of ['https://www.expedia.com/legal/privacy','https://www.getyourguide.com/c/privacy-policy/'])policies.linkClick(href);
+assert.equal(policies.commands.filter(c=>c[1]==='affiliate_click'||c[1]==='conversion').length,0,'Policy visits must never be affiliate conversions.');
+assert.equal(h.api.reportAffiliateConversion(),true);
+h.window.gtag=()=>{throw Error('Blocked');};assert.equal(h.api.reportAffiliateConversion(),true);
+console.log(`Affiliate navigation checks passed: ${checks} provider/tracker/category cases, native parameters/targets/gestures, no callbacks/popups, independent analytics/Ads gates and host identity.`);

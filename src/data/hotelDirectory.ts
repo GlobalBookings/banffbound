@@ -16,6 +16,14 @@ export interface DirectoryHotel extends Hotel {
 // field. This explicit register records the scope accepted in the source notes.
 export const banffTownHotelReviewSlugs = ["banff-park-lodge", "fox-hotel-suites", "banff-caribou-lodge-spa", "buffalo-mountain-lodge", "hotel-canoe-suites", "otter-hotel", "elk-avenue-hotel", "royal-canadian-lodge", "brewster-mountain-lodge", "banff-aspen-lodge", "banff-ptarmigan-inn", "charltons-banff", "peaks-hotel-suites", "canalta-lodge"] as const;
 
+export const regionalHotelReviewSlugs = [
+  'banff-rocky-mountain-resort', 'hidden-ridge-resort', 'rundlestone-lodge',
+  'juniper-hotel', 'hi-banff-alpine-centre', 'mountaineer-lodge',
+  'post-hotel-spa', 'paradise-lodge-bungalows', 'malcolm-hotel',
+  'coast-canmore-hotel', 'basecamp-lodge-canmore', 'lamphouse-canmore',
+  'pocaterra-inn-waterslide', 'canmore-inn-suites',
+] as const;
+
 export const reviewedHotelDirectorySlugs = [
   'moose-hotel-suites', 'mount-royal-hotel', 'tunnel-mountain-resort',
   'blackstone-mountain-lodge', 'lake-louise-inn', 'fairmont-chateau-lake-louise',
@@ -26,10 +34,88 @@ export const reviewedHotelDirectorySlugs = [
   'falcon-crest-lodge', 'cathedral-mountain-lodge',
   'fairmont-banff-springs', 'rimrock-banff',
   ...banffTownHotelReviewSlugs,
+  ...regionalHotelReviewSlugs,
 ] as const;
 const reviewed = new Set<string>(reviewedHotelDirectorySlugs);
 
 const additionalSources: Record<string, HotelSourceLink[]> = {
+  'banff-rocky-mountain-resort': [
+    { label: 'Official suites, condos and kitchen distinctions', url: 'https://rockymountainresort.com/rooms/' },
+    { label: 'Official pools, hot tubs and bistro', url: 'https://rockymountainresort.com/amenities/' },
+    { label: 'Official town shuttle, pet and parking FAQ', url: 'https://rockymountainresort.com/faq/' },
+  ],
+  'hidden-ridge-resort': [
+    { label: 'Official condo layouts and private-hot-tub category', url: 'https://banffhiddenridge.com/rooms/' },
+    { label: 'Official hot pool, wading pool and sauna', url: 'https://banffhiddenridge.com/amenities/' },
+    { label: 'Official local-transit, parking and pet FAQ', url: 'https://banffhiddenridge.com/faq/' },
+  ],
+  'rundlestone-lodge': [
+    { label: 'Official room outlooks, lofts and kitchens', url: 'https://rundlestonelodge.com/rooms/' },
+    { label: 'Official pool and facilities', url: 'https://rundlestonelodge.com/amenities/' },
+    { label: 'Official transport, parking and breakfast FAQ', url: 'https://rundlestonelodge.com/faq/' },
+  ],
+  'juniper-hotel': [
+    { label: 'Official rooms, suites and cabins', url: 'https://thejuniper.com/all-rooms/' },
+    { label: 'Official hot tub and guest facilities', url: 'https://thejuniper.com/amenities/' },
+    { label: 'Official address, shuttle hours and walking-route caveat', url: 'https://thejuniper.com/transport-location/' },
+    { label: 'Official pet and booking FAQ', url: 'https://thejuniper.com/faqs/' },
+  ],
+  'hi-banff-alpine-centre': [
+    { label: 'HI: actual room categories, kitchen, dining, local bus passes and publisher locator', url: 'https://hihostels.ca/en/hostels/hi-banff' },
+  ],
+  'mountaineer-lodge': [
+    { label: 'Official room inventory', url: 'https://mountaineerlodge.com/rooms' },
+    { label: 'King Explorer: appliances, beds and stairs', url: 'https://mountaineerlodge.com/rooms/king-explorer-suite' },
+    { label: 'Mountaineer Suite: appliances, beds and stairs', url: 'https://mountaineerlodge.com/rooms/mountaineer-suite' },
+    { label: 'Official buildings, indoor hot tub, breakfast and transfer information', url: 'https://mountaineerlodge.com/the-hotel/' },
+    { label: 'Official pet and booking policies', url: 'https://mountaineerlodge.com/the-hotel/hotel-policies' },
+  ],
+  'post-hotel-spa': [
+    { label: 'Official rooms and railway-side distinction', url: 'https://posthotel.com/stay/rooms' },
+    { label: 'Official Family Suite and Family Loft layouts', url: 'https://posthotel.com/stay/family-suites' },
+    { label: 'Official pool, spa and facilities', url: 'https://posthotel.com/amenities' },
+    { label: 'Official dog-room policy and transfer FAQ', url: 'https://posthotel.com/faqs' },
+  ],
+  'paradise-lodge-bungalows': [
+    { label: 'Official suite kitchens and convenience nooks', url: 'https://paradiselodge.com/suites/' },
+    { label: 'Official historic cabin categories', url: 'https://paradiselodge.com/cabins/' },
+    { label: 'Current winter-suite operation and arrival instructions', url: 'https://paradiselodge.com/paradise-lodge/' },
+    { label: 'Official address and arrival information', url: 'https://paradiselodge.com/about-paradise-lodge-bungalows/' },
+  ],
+  'malcolm-hotel': [
+    { label: 'Official address and current construction notice', url: 'https://www.malcolmhotel.ca/' },
+    { label: 'Premium Double Queen: balcony, equipment and no-pets restriction', url: 'https://www.malcolmhotel.ca/Stay/rooms/malcolm-premium-double-queen' },
+    { label: 'Official rooftop facilities and weather restrictions', url: 'https://www.malcolmhotel.ca/Stay/amenities' },
+  ],
+  'coast-canmore-hotel': [
+    { label: 'Official property and publisher locator', url: 'https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre' },
+    { label: 'Official room categories and accessible features', url: 'https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre/stay/rooms' },
+    { label: 'Premium King Suite: fireplace, soaker tub and steam shower', url: 'https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre/stay/rooms/coast-premium-king-suite-with-soaker-tub' },
+    { label: 'Official pool, dining and paid parking', url: 'https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre/services/amenities' },
+    { label: 'Official address and arrival options', url: 'https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre/contact' },
+  ],
+  'basecamp-lodge-canmore': [
+    { label: 'Current operator: Lodge rooms, Great Room and sauna', url: 'https://basecampresorts.com/canmorelodge/' },
+    { label: 'Micro Suite: full kitchen, parking and no-pets restriction', url: 'https://basecampresorts.com/room-details/canmore-lodge-micro-suite-with-kitchen/' },
+    { label: 'Official Lodge address', url: 'https://basecampresorts.com/contact/canmorelodge/' },
+  ],
+  'lamphouse-canmore': [
+    { label: 'Current operator: Lamphouse rooms and riverside hot tub', url: 'https://basecampresorts.com/lamphouse/' },
+    { label: 'Apartment: actual layout, stairs, kitchen and pet restriction', url: 'https://basecampresorts.com/room-details/lamphouse-apartment/' },
+    { label: 'Dog-friendly King is a separate category', url: 'https://basecampresorts.com/room-details/basecamp-lamphouse-canmore-king-room-dog-friendly/' },
+    { label: 'Official current address', url: 'https://basecampresorts.com/contact/lamphouse/' },
+  ],
+  'pocaterra-inn-waterslide': [
+    { label: 'Official room categories and cooling distinctions', url: 'https://pocaterrainn.com/rooms/' },
+    { label: 'Official pool, waterslide, breakfast and address', url: 'https://pocaterrainn.com/amenities/' },
+    { label: 'Official local arrangements FAQ; confirm current booking terms', url: 'https://pocaterrainn.com/faq/' },
+  ],
+  'canmore-inn-suites': [
+    { label: 'Official hotel rooms, railway-side suites and equipment', url: 'https://www.canmoreinn.com/rooms/' },
+    { label: 'Official indoor pool, waterslide and facilities', url: 'https://www.canmoreinn.com/amenities/' },
+    { label: 'Current official breakfast-rate and pet-room distinctions', url: 'https://www.canmoreinn.com/' },
+    { label: 'Official destination-tourism address and property image', url: 'https://www.explorecanmore.ca/listings/canmore-inn-suites-449/' },
+  ],
   'banff-park-lodge': [
     { label: "Official rooms and access categories", url: "https://www.banffparklodge.com/rooms/" },
     { label: "Official amenities and transport", url: "https://www.banffparklodge.com/amenities/" },
@@ -182,6 +268,8 @@ const formerNames: Record<string, { note: string; sources: HotelSourceLink[] }> 
 };
 
 const operationNotes: Record<string, string> = {
+  'paradise-lodge-bungalows': 'Checked 29 October 2026: the operator now publishes winter suite accommodation; historic cabins are described as summer lodging. Winter check-in uses Cabin 1 and limited front-desk hours. Confirm the chosen unit, actual dates and late arrival directly.',
+  'malcolm-hotel': 'Dated notice, checked 29 October 2026: the hotel reports construction of the future Alexander Boutique Hotel & Spa nearby. Ask about impacts for your dates. Outdoor pool/hot-tub operation can change with weather and maintenance.',
   'banff-park-lodge': 'Dated notice, checked 29 October 2026: the operator reports ongoing lobby/public renovations and lists La Terrazza closed for renovations. Confirm the actual entrance and available dining/services.',
   'peaks-hotel-suites': 'Pool, fitness and listed full dining facilities are across the street at Banff Park Lodge. That property currently reports public-area renovations and a La Terrazza closure; confirm usable services and the outdoor route.',
   'cathedral-mountain-lodge': 'Summer seasonal property. The official FAQ lists late May to early October; check the actual year and dates. This is not a year-round winter base.',

@@ -18,6 +18,7 @@ const scratch = await mkdtemp(path.join(os.tmpdir(), 'banff-build-provenance-'))
 const timestamp = new Date('2026-10-29T12:34:56.000Z');
 const fixtureFiles = [
   ['src/pages/z.astro', '<p>Z</p>\n'], ['src/pages/a.astro', '<p>A</p>\n'],
+  ['src/scripts/consent.js', 'export const allowed = false;\n'], ['src/data/photos.json', '{"items":[]}\n'],
   ['src/styles/main.css', 'body { color: black; }\n'], ['src/data/model.ts', 'export const value = 1;\n'],
   ['src/data/redirects.mjs', 'export default {};\n'],
   ['astro.config.mjs', 'export default {};\n'], ['package.json', '{"name":"fixture"}\n'],
@@ -43,7 +44,7 @@ async function fixtureGit(root, args) {
 function assertPublic(value) {
   assert.deepEqual(Object.keys(value).sort(), publicKeys);
   assert.equal(value.formatVersion, 1);
-  assert.equal(value.scope, 'app-source-v1');
+  assert.equal(value.scope, 'app-source-v2');
   assert.match(value.scopeNote, /excludes volatile snapshots, assets/);
   assert.match(value.sourceFingerprint, /^[a-f0-9]{64}$/);
   assert.ok(value.sourceRevision === null || /^[a-f0-9]{40}$/.test(value.sourceRevision));
@@ -77,6 +78,13 @@ try {
   assert.notEqual((await receipt(first)).sourceFingerprint, framed);
   await rm(path.join(first, 'src/data/a.ts')); await rm(path.join(first, 'src/data/b.ts'));
 
+  for (const relativePath of ['src/scripts/consent.js', 'src/data/photos.json']) {
+    const before = await receipt(first);
+    const original = await readFile(path.join(first, relativePath));
+    await put(first, relativePath, Buffer.concat([original, Buffer.from(' ')]));
+    assert.notEqual((await receipt(first)).sourceFingerprint, before.sourceFingerprint, 'Runtime JavaScript and imported source JSON must be covered.');
+    await put(first, relativePath, original);
+  }
   for (const relativePath of ['astro.config.mjs', 'package.json', 'package-lock.json', 'public/llms.txt']) {
     const bytes = await readFile(path.join(first, relativePath));
     await put(first, relativePath, Buffer.concat([bytes, Buffer.from('\nchanged')]));
@@ -112,6 +120,12 @@ try {
   assert.match(head, /^[a-f0-9]{40}$/);
   const clean = await receipt(gitRoot);
   assert.equal(clean.sourceRevision, head, 'Only an actual matching local HEAD is exact source identity.');
+  for (const relativePath of ['src/scripts/consent.js', 'src/data/photos.json']) {
+    const original = await readFile(path.join(gitRoot, relativePath));
+    await put(gitRoot, relativePath, Buffer.concat([original, Buffer.from(' ')]));
+    assert.equal((await receipt(gitRoot)).sourceRevision, null, 'Dirty JS/JSON must suppress exact revision.');
+    await put(gitRoot, relativePath, original);
+  }
   await put(gitRoot, 'src/pages/a.astro', '<p>Dirty</p>');
   assert.equal((await receipt(gitRoot)).sourceRevision, null, 'Unstaged selected changes must suppress the revision.');
   await fixtureGit(gitRoot, ['add', '--', 'src/pages/a.astro']);

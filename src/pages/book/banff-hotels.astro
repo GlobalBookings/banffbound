@@ -1,0 +1,182 @@
+---
+import PaidLandingLayout from '../../layouts/PaidLandingLayout.astro';
+import {
+  banffHotelLandingId, banffHotelLandingCheckedOn, banffHotelLandingOffers as offers,
+  banffHotelBaseOptions, banffHotelPriorityOptions, banffHotelLandingFaqs,
+  banffHotelLandingSchema,
+} from '../../data/banffHotelLanding';
+
+const faqSchema = { '@context':'https://schema.org', '@type':'FAQPage', mainEntity:banffHotelLandingFaqs.map(faq=>({'@type':'Question',name:faq.question,acceptedAnswer:{'@type':'Answer',text:faq.answer}})) };
+const hero = offers.find(offer => offer.slug === 'juniper-hotel')!;
+---
+
+<PaidLandingLayout
+  title="Banff Hotels: Compare 6 Stays & Check Dates"
+  description="Compare six Banff hotels by location, room layout, full kitchens and hot pools. Find your fit, then check your dates and room options on Expedia."
+  eyebrow="Banff hotel bookings"
+  heading="Find the Banff stay that fits your trip."
+  intro="Central restaurants, a kitchen for the family, or a hillside hotel? Compare six distinct Banff bases, choose the room that fits, then check your dates on Expedia."
+  primaryCta={{ label: 'Compare the six stays', href: '#compare-hotels' }}
+  heroImage={hero.image}
+  heroAlt={hero.imageAlt}
+>
+  <div slot="hero-detail" class="hero-detail">
+    <p>Six different stay plans · property sources checked <time datetime={banffHotelLandingCheckedOn}>29 October 2026</time></p>
+    <p class="hero-caption">Pictured: a Deluxe King room at The Juniper Hotel, one of the six choices below.</p>
+  </div>
+
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(banffHotelLandingSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="comparison-section" id="compare-hotels" aria-labelledby="compare-heading">
+    <div class="container">
+      <div class="comparison-heading">
+        <span class="eyebrow">Choose your base, then your room</span>
+        <h2 id="compare-heading">Which Banff stay fits?</h2>
+        <p>A central room and a hillside condo solve different trips. Use the room notes to make a shortlist, then open a current quote for your dates and party.</p>
+      </div>
+
+      <p class="affiliate-note"><strong>Affiliate links:</strong> We may earn a commission if you book through these Expedia links. Expedia supplies room offers, availability, prices and booking terms.</p>
+
+      <form id="banff-hotel-fit" class="fit-controls" hidden aria-label="Narrow the six hotel choices">
+        <div><label for="hotel-base">Where would you like to stay?</label><select id="hotel-base" name="base">{banffHotelBaseOptions.map(option => <option value={option.value}>{option.label}</option>)}</select></div>
+        <div><label for="hotel-priority">What would help your stay?</label><select id="hotel-priority" name="priority">{banffHotelPriorityOptions.map(option => <option value={option.value}>{option.label}</option>)}</select></div>
+        <button type="reset" class="reset-button">Show all six</button>
+      </form>
+      <p id="hotel-fit-count" class="fit-count" role="status" aria-live="polite">6 hotel choices to compare</p>
+      <noscript><p class="no-js-note">All six choices are shown below. Each booking link works without JavaScript.</p></noscript>
+
+      <div class="offer-grid">
+        {offers.map(offer => <article class="offer-card" id={`stay-${offer.slug}`} data-hotel-offer data-base={offer.base} data-priorities={offer.priorities.join(' ')} aria-labelledby={`name-${offer.slug}`}>
+          <figure class="offer-photo"><img src={offer.image} alt={offer.imageAlt} width="800" height="500" loading="lazy" /><figcaption>{offer.imageCaption}</figcaption></figure>
+          <div class="offer-body">
+            <p class="offer-fit">{offer.fit}</p>
+            <h3 id={`name-${offer.slug}`}>{offer.name}</h3>
+            <p class="offer-summary">{offer.summary}</p>
+            <dl class="room-comparison">
+              <div><dt>Room to compare</dt><dd>{offer.room}</dd></div>
+              <div><dt>Cooking</dt><dd>{offer.kitchen}</dd></div>
+              <div><dt>At the property</dt><dd>{offer.facilities}</dd></div>
+            </dl>
+            <p class="base-tradeoff"><strong>The base choice:</strong> {offer.tradeoff}</p>
+            {offer.notice && <p class="operation-note"><strong>Current facility note:</strong> {offer.notice}</p>}
+            <a class="booking-cta" href={offer.expediaUrl} target="_blank" rel="sponsored noopener" data-landing-id={banffHotelLandingId} data-offer-id={offer.slug} data-landing-placement="detail-card" aria-label={`Check dates for ${offer.name} on Expedia (opens in a new tab)`}>Check dates on Expedia <span aria-hidden="true">↗</span></a>
+            <p class="quote-note">Enter your dates and party to compare the room and full total.</p>
+            <details class="property-sources"><summary>Property details &amp; sources</summary><p>Selected facts and the Expedia property name/address checked <time datetime={offer.checkedOn}>29 October 2026</time>. Facilities and offers can change.</p><ul>{offer.officialSources.map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.label} <span aria-hidden="true">↗</span></a></li>)}</ul><a href={offer.profileUrl}>Read the full property notes →</a></details>
+          </div>
+        </article>)}
+      </div>
+
+      <div class="empty-fit" id="hotel-fit-empty" hidden><h3>Try a different combination</h3><p>These six choices do not include that exact combination. Show all six to compare the nearest fit.</p><button type="button" id="hotel-fit-clear" class="reset-button">Show all six stays</button></div>
+    </div>
+  </section>
+
+  <section class="quote-section" aria-labelledby="quote-heading"><div class="container">
+    <div class="quote-intro"><span class="eyebrow">Make your dates count</span><h2 id="quote-heading">Compare the same stay.</h2><p>The useful comparison is the room your party would actually book.</p></div>
+    <ol class="quote-checks">
+      <li><h3>Match the party</h3><p>Use the same dates, adults, children’s ages and room count on each quote. Check the actual beds and any sofa-bed or loft arrangement.</p></li>
+      <li><h3>Choose the equipment</h3><p>A microwave nook, kitchenette and full kitchen offer different meal plans. Select the named room category with the equipment and space you need.</p></li>
+      <li><h3>Read the complete total</h3><p>Include taxes, mandatory fees, parking and meals. Check payment timing and the selected rate’s change and cancellation terms before booking.</p></li>
+    </ol>
+  </div></section>
+
+  <section class="faq-section" aria-labelledby="hotel-faq-heading"><div class="container faq-wrap"><div><span class="eyebrow">A few booking decisions</span><h2 id="hotel-faq-heading">Before you choose.</h2><p>Still deciding on the wider area? <a href="/towns/banff/">Explore Banff as a base</a> or <a href="/winter-stays/">compare winter stays and transport</a>.</p></div><div class="faq-list">{banffHotelLandingFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></div></section>
+</PaidLandingLayout>
+
+<script is:inline>
+  function initBanffHotelFit() {
+    const form = document.getElementById('banff-hotel-fit');
+    if (!form || form.dataset.ready) return;
+    const base = document.getElementById('hotel-base');
+    const priority = document.getElementById('hotel-priority');
+    const cards = Array.from(document.querySelectorAll('[data-hotel-offer]'));
+    const count = document.getElementById('hotel-fit-count');
+    const empty = document.getElementById('hotel-fit-empty');
+    const clear = document.getElementById('hotel-fit-clear');
+    if (!base || !priority || !count || !empty || !clear || cards.length === 0) return;
+    const params = new URLSearchParams(window.location.search);
+    for (const select of [base, priority]) {
+      const requested = params.get(select.name);
+      if (requested && Array.from(select.options).some(option => option.value === requested)) select.value = requested;
+    }
+    const update = () => {
+      let visible = 0;
+      for (const card of cards) {
+        const matches = (base.value === 'all' || card.dataset.base === base.value)
+          && (priority.value === 'all' || (card.dataset.priorities || '').split(' ').includes(priority.value));
+        card.hidden = !matches;
+        if (matches) visible++;
+      }
+      count.textContent = `${visible} ${visible === 1 ? 'hotel choice' : 'hotel choices'} to compare`;
+      empty.hidden = visible !== 0;
+    };
+    base.addEventListener('change', update);
+    priority.addEventListener('change', update);
+    form.addEventListener('reset', () => { base.value = 'all'; priority.value = 'all'; update(); });
+    clear.addEventListener('click', () => { form.reset(); });
+    form.dataset.ready = 'true';
+    update();
+    form.hidden = false;
+  }
+  initBanffHotelFit();
+  document.addEventListener('astro:page-load', initBanffHotelFit);
+</script>
+
+<style>
+  [hidden] { display: none !important; }
+  .hero-detail p { margin: 0; font-size: .9rem; }
+  .hero-detail .hero-caption { margin-top: .45rem; opacity: .78; font-size: .78rem; }
+  .comparison-section, .quote-section, .faq-section { padding: 3.5rem 0; }
+  .comparison-section { scroll-margin-top: 1.5rem; }
+  .comparison-heading { max-width: 740px; }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.12; margin: .5rem 0 1rem; }
+  .comparison-heading > p { color: var(--color-text-light); line-height: 1.7; }
+  .affiliate-note { padding: 1rem 1.15rem; border-left: 3px solid var(--color-accent); background: var(--color-bg-alt); font-size: .88rem; line-height: 1.6; margin: 1.5rem 0; }
+  .fit-controls { display: grid; grid-template-columns: 1fr 1fr auto; gap: 1rem; align-items: end; padding: 1.2rem; background: var(--color-primary); color: white; border-radius: 12px; }
+  .fit-controls label { display: block; font-weight: 600; font-size: .84rem; margin-bottom: .45rem; }
+  .fit-controls select { width: 100%; min-height: 48px; padding: .7rem 2rem .7rem .8rem; border-radius: 6px; border: 1px solid #c5cfc8; background: white; color: #173e32; font: inherit; }
+  .reset-button { min-height: 48px; border: 1px solid currentColor; border-radius: 6px; background: transparent; padding: .7rem 1rem; font: inherit; font-weight: 600; cursor: pointer; }
+  .fit-controls .reset-button { color: white; }
+  .fit-count { font-size: .86rem; margin: 1.1rem 0; color: var(--color-text-light); }
+  .no-js-note { font-size: .9rem; }
+  .offer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
+  .offer-card { min-width: 0; border: 1px solid #dce3dd; border-radius: 14px; overflow: hidden; background: white; }
+  .offer-photo { margin: 0; }
+  .offer-photo img { display: block; width: 100%; aspect-ratio: 8/5; object-fit: cover; }
+  .offer-photo figcaption { padding: .65rem 1.4rem; background: var(--color-bg-alt); color: var(--color-text-light); font-size: .72rem; line-height: 1.5; }
+  .offer-body { padding: 1.45rem; }
+  .offer-fit { color: #73541e; font-weight: 700; font-size: .82rem; margin: 0 0 .45rem; }
+  .offer-body h3 { font-size: clamp(1.5rem, 3vw, 1.95rem); line-height: 1.2; margin: 0 0 .9rem; }
+  .offer-summary { line-height: 1.7; margin-bottom: 1.3rem; }
+  .room-comparison { margin: 0; font-size: .91rem; }
+  .room-comparison > div { padding: .8rem 0; border-top: 1px solid #e6ebe6; }
+  .room-comparison dt { font-weight: 700; color: var(--color-primary); margin-bottom: .25rem; }
+  .room-comparison dd { margin: 0; line-height: 1.65; }
+  .base-tradeoff { margin: 1rem 0 1.25rem; line-height: 1.65; font-size: .9rem; }
+  .operation-note { margin: 0 0 1.25rem; padding: .9rem; border-radius: 6px; background: #f8f1e3; color: #503c19; font-size: .86rem; line-height: 1.6; }
+  .booking-cta { display: flex; justify-content: center; align-items: center; gap: .7rem; padding: 1rem; min-height: 52px; border-radius: 7px; background: var(--color-accent); color: #173a2d; font-weight: 800; text-decoration: none; line-height: 1.3; }
+  .booking-cta:hover { background: #dcc18a; }
+  .quote-note { margin: .65rem 0 1rem; font-size: .78rem; text-align: center; color: var(--color-text-light); }
+  .property-sources { font-size: .82rem; line-height: 1.6; border-top: 1px solid #e6ebe6; padding-top: .8rem; }
+  summary { cursor: pointer; font-weight: 650; padding: .4rem 0; }
+  .property-sources p { margin-top: .6rem; }
+  .property-sources ul { padding-left: 1.2rem; }
+  .property-sources a, .faq-wrap a { text-underline-offset: .2em; overflow-wrap: anywhere; }
+  .empty-fit { padding: 2rem; background: var(--color-bg-alt); border-radius: 12px; }
+  .empty-fit h3 { margin-top: 0; }
+  .quote-section { background: var(--color-bg-alt); }
+  .quote-intro { max-width: 650px; }
+  .quote-checks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; list-style: none; padding: 0; margin: 2rem 0 0; counter-reset: quote; }
+  .quote-checks li { counter-increment: quote; }
+  .quote-checks li::before { content: counter(quote, decimal-leading-zero); color: #866323; font-size: .9rem; font-weight: 800; }
+  .quote-checks h3 { margin: .6rem 0; font-size: 1.3rem; }
+  .quote-checks p { line-height: 1.7; color: var(--color-text-light); font-size: .91rem; }
+  .faq-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; }
+  .faq-wrap > div > p { line-height: 1.7; }
+  .faq-list details { border-bottom: 1px solid #dce3dd; padding: .7rem 0; }
+  .faq-list summary { font-size: 1rem; padding: .6rem 0; }
+  .faq-list p { line-height: 1.75; color: var(--color-text-light); font-size: .93rem; }
+  :is(a, button, select, summary):focus-visible { outline: 3px solid #a77621; outline-offset: 4px; }
+  @media (max-width: 800px) { .fit-controls { grid-template-columns: 1fr 1fr; }.fit-controls .reset-button { grid-column: 1/-1; }.offer-grid { gap: 1rem; }.offer-body { padding: 1.1rem; }.offer-photo figcaption { padding: .6rem 1.1rem; }.faq-wrap { grid-template-columns: 1fr; gap: 1rem; }.quote-checks { gap: 1rem; } }
+  @media (max-width: 600px) { .comparison-section, .quote-section, .faq-section { padding: 2.5rem 0; }.fit-controls { grid-template-columns: 1fr; padding: 1rem; }.offer-grid, .quote-checks { grid-template-columns: 1fr; }.offer-body { padding: 1.2rem; }.quote-checks { gap: 1.5rem; } }
+</style>

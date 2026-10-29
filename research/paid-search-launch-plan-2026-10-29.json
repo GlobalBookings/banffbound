@@ -1,0 +1,193 @@
+{
+  "preparedAt": "2026-10-29",
+  "scope": "Affiliate landing pages and draft ad/message mapping. No campaign launch or profitability forecast.",
+  "platforms": [
+    "Google Search",
+    "Microsoft/Bing Search"
+  ],
+  "targetMarkets": null,
+  "currency": null,
+  "budgets": null,
+  "bids": null,
+  "adGroups": [
+    {
+      "id": "banff-hotels",
+      "purpose": "Banff hotel buyers comparing base and room fit",
+      "keywords": [
+        "banff hotels with kitchen",
+        "where to stay in banff",
+        "banff hotel suites",
+        "banff hotels central location",
+        "banff hotels hot pools"
+      ],
+      "deepLinks": {
+        "kitchen": "?priority=cook",
+        "central": "?base=central",
+        "bedroom": "?priority=separate"
+      },
+      "headlines": [
+        "Compare Banff Hotel Fits",
+        "Find Your Banff Base",
+        "Banff Rooms And Suites",
+        "Kitchens, Pools & Locations",
+        "Six Different Stay Choices",
+        "Central Or Hillside Banff",
+        "Room Layouts Compared",
+        "Plan A Banff Stay"
+      ],
+      "descriptions": [
+        "Compare six Banff stays by address and room setup. Check dates with the booking provider.",
+        "Choose a central hotel, kitchen category or hillside base. Find a fit for your trip.",
+        "See room layouts, facilities and location tradeoffs before opening your booking options.",
+        "Independent BanffBound comparison. Pick your stay, then check dates with the provider."
+      ],
+      "finalUrl": "https://banffbound.com/book/banff-hotels/",
+      "taggedUrls": {
+        "google": "https://banffbound.com/book/banff-hotels/?utm_source=google&utm_medium=cpc&utm_campaign=bb_banff_hotels",
+        "bing": "https://banffbound.com/book/banff-hotels/?utm_source=bing&utm_medium=cpc&utm_campaign=bb_banff_hotels"
+      },
+      "matchTypesToReview": [
+        "phrase",
+        "exact"
+      ],
+      "launchPermission": "Account-specific affiliate PPC permission not evidenced; confirm before launch."
+    },
+    {
+      "id": "lake-louise-stays",
+      "purpose": "Village, lakeshore and nearby-road hotel buyers",
+      "keywords": [
+        "where to stay in lake louise",
+        "lake louise hotels with kitchen",
+        "lake louise village hotels",
+        "lake louise cabins winter",
+        "lake louise lakeshore hotels"
+      ],
+      "deepLinks": {
+        "village": "?stay_base=village",
+        "cooking": "?stay_room=cooking",
+        "winterCabin": "?stay_room=cabin&stay_season=winter"
+      },
+      "headlines": [
+        "Lake Louise Stays Compared",
+        "Village, Lake Or Cabin?",
+        "Find Your Lake Louise Base",
+        "Five Different Places To Stay",
+        "Choose Your Room And Base",
+        "Compare Kitchens And Rooms",
+        "Make The Right Base Choice",
+        "Lake Louise Room Options"
+      ],
+      "descriptions": [
+        "Lakeshore and village hotels solve different trips. Compare five bases before you book.",
+        "Review room categories, cooking options and the journey. Check dates with the provider.",
+        "See village, lakeshore and road-base tradeoffs, then open the named property on Expedia.",
+        "Find a room setup that fits your plans. Compare the location, kitchen options and season."
+      ],
+      "finalUrl": "https://banffbound.com/book/lake-louise-stays/",
+      "taggedUrls": {
+        "google": "https://banffbound.com/book/lake-louise-stays/?utm_source=google&utm_medium=cpc&utm_campaign=bb_lake_louise_stays",
+        "bing": "https://banffbound.com/book/lake-louise-stays/?utm_source=bing&utm_medium=cpc&utm_campaign=bb_lake_louise_stays"
+      },
+      "matchTypesToReview": [
+        "phrase",
+        "exact"
+      ],
+      "launchPermission": "Account-specific affiliate PPC permission not evidenced; confirm before launch."
+    },
+    {
+      "id": "banff-winter-activities",
+      "purpose": "Visitors choosing an active walk, attraction visit or guided road day",
+      "keywords": [
+        "banff winter activities",
+        "banff guided icewalk",
+        "banff winter day tours",
+        "lake louise winter day trip",
+        "banff winter sightseeing experiences"
+      ],
+      "deepLinks": {
+        "guidedWalk": "?experience=icewalk",
+        "summitViews": "?experience=summit",
+        "roadDay": "?experience=road-day"
+      },
+      "headlines": [
+        "Banff Winter Experiences",
+        "Plan Your Banff Winter Day",
+        "Walk, Gondola Or Road Tour",
+        "Compare Three Winter Outings",
+        "Find Your Winter Highlight",
+        "Choose A Trip That Fits",
+        "Compare The Day And Journey",
+        "Plan One Winter Highlight"
+      ],
+      "descriptions": [
+        "Compare a guided canyon walk, gondola admission and a winter road day. Pick your format.",
+        "See transport and group-fit details, then check the date and terms with the provider.",
+        "Choose your main winter experience and plan the journey before opening booking options.",
+        "Independent comparisons with access notes. Check the exact tour and date before paying."
+      ],
+      "finalUrl": "https://banffbound.com/book/banff-winter-activities/",
+      "taggedUrls": {
+        "google": "https://banffbound.com/book/banff-winter-activities/?utm_source=google&utm_medium=cpc&utm_campaign=bb_banff_winter_activities",
+        "bing": "https://banffbound.com/book/banff-winter-activities/?utm_source=bing&utm_medium=cpc&utm_campaign=bb_banff_winter_activities"
+      },
+      "matchTypesToReview": [
+        "phrase",
+        "exact"
+      ],
+      "launchPermission": "Account-specific affiliate PPC permission not evidenced; confirm before launch."
+    }
+  ],
+  "negativeIntentSeeds": [
+    "jobs",
+    "careers",
+    "staff accommodation",
+    "long term rental",
+    "monthly rental",
+    "free",
+    "wallpaper",
+    "weather",
+    "map only"
+  ],
+  "brandPolicy": "Do not bid on partner, supplier or competitor trademarks without permission applicable to the account. Draft seeds use destination and trip-need language.",
+  "measurement": {
+    "diagnostic": "Consented affiliate_click and existing Google Ads click-out action; not a purchase or earned commission.",
+    "googleAction": "AW-17246982814/8ptcCPuTheAaEJ6lgKBA",
+    "ga4Fields": [
+      "landing_id",
+      "offer_id",
+      "placement",
+      "paid_source"
+    ],
+    "microsoftUet": "No configured UET ID found in project source; none invented or deployed.",
+    "partnerLinks": "Expedia camref1101l3MtWX; GetYourGuide partner_idQW960HO with static page cmp. Identifiers do not prove completed sales.",
+    "minimization": "No raw gclid, msclkid, campaign queries, email or booking details in custom events. Native referral URLs remain intact."
+  },
+  "profitability": {
+    "actualCommissionRate": null,
+    "actualPaidClicks": null,
+    "actualSpend": null,
+    "actualBookings": null,
+    "actualValidatedCommission": null,
+    "breakEvenCpc": "net validated attributable commission / paid clicks for the same cohort and currency",
+    "contribution": "net validated attributable commission - ad spend - incremental variable costs",
+    "forecastModel": "click-out rate \u00d7 provider purchase rate \u00d7 net commission per completed purchase; all inputs require evidence.",
+    "reporting": "Pending bookings and click-out conversions remain provisional. Reconcile cancellations, reversals and consumed validated commissions. Consent coverage and mixed organic/direct traffic limit attribution. Do not call clicks revenue."
+  },
+  "launchDecisions": [
+    "Account-specific Expedia/GetYourGuide paid-traffic permission and brand restrictions",
+    "Country, language, currency and actual demand/CPC research",
+    "Approved bounded budget, bid and stop rules",
+    "Actual commission terms and partner reporting access",
+    "Verify Google goal type/value and primary/secondary use; use a real Bing UET ID if conversion bidding is requested",
+    "Live destination, offer and date/access checks"
+  ],
+  "sources": [
+    "https://support.google.com/adspolicy/answer/16427718?hl=en",
+    "https://help.ads.microsoft.com/apex/index/3/en-gb/50813",
+    "https://www.getyourguide.com/c/partner-terms-and-conditions/",
+    "https://partner.getyourguide.support/hc/en-us/articles/37260265726493-Partner-Pages-Content-Guidelines",
+    "https://help.creator.expediagroup.com/hc/en-us/articles/13163964169495-Payments-101",
+    "https://support.google.com/google-ads/answer/7684791?hl=en",
+    "https://learn.microsoft.com/en-us/advertising/bulk-service/responsive-search-ad?view=bingads-13"
+  ]
+}

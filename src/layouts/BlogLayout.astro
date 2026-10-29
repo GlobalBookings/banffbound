@@ -12,11 +12,13 @@ interface Props {
   partialCorrectionDate?: string;
   category: string;
   image: string;
+  imageIsIllustrative?: boolean;
+  imageNote?: string;
   readTime: string;
   slug?: string;
 }
 
-const { title, description, date, lastUpdated, partialCorrectionDate, category, image, readTime, slug } = Astro.props;
+const { title, description, date, lastUpdated, partialCorrectionDate, category, image, imageIsIllustrative = false, imageNote = '', readTime, slug } = Astro.props;
 
 const relatedPosts = blogPosts
   .filter(p => p.category === category && p.slug !== slug && p.title !== title)
@@ -34,7 +36,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: title,
   description,
-  image: new URL(image, 'https://banffbound.com').href,
+  ...(imageIsIllustrative ? {} : { image: new URL(image, 'https://banffbound.com').href }),
   mainEntityOfPage: `https://banffbound.com/blog/${slug}/`,
   datePublished: isoDate,
   dateModified: isoModified,
@@ -52,7 +54,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} image={image} lastUpdated={isoModified}>
+<BaseLayout title={title} description={description} image={imageIsIllustrative ? undefined : image} lastUpdated={isoModified}>
   <div class="container">
     <Breadcrumbs items={[
       { label: 'Guides', href: '/blog' },
@@ -62,7 +64,7 @@ const articleSchema = {
   </div>
   <article class="blog-article">
     <div class="article-hero">
-      <img src={image} alt={title} class="article-hero-img" loading="eager" fetchpriority="high" />
+      <img src={image} alt={imageIsIllustrative ? `Illustrative outdoor photograph; not verified as the place or route in ${title}` : title} class="article-hero-img" loading="eager" fetchpriority="high" />
       <div class="article-hero-overlay"></div>
       <div class="article-hero-content">
         <span class="badge">{category}</span>
@@ -76,8 +78,14 @@ const articleSchema = {
         </div>
       </div>
     </div>
+    {imageIsIllustrative && <p class="article-image-note container">{imageNote || 'Illustrative outdoor photograph; not verified as the place or route described in this guide.'}</p>}
     <div class="expedia-leaderboard container">
-      <div class="eg-affiliate-banners" data-program="ca-expedia" data-network="pz" data-layout="leaderboard" data-image="mountains" data-message="bye-bye-bucket-list-hello-adventure" data-camref="1101l3MtWX" data-pubref="" data-link="home"></div>
+      <div class="affiliate-panel" data-affiliate-embed="expedia-banner">
+        <p><a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener noreferrer sponsored">Compare Banff stays on Expedia — affiliate link</a></p>
+        <p class="affiliate-embed-status" data-affiliate-status role="status" aria-live="polite">Optional partner content is off. You can use the direct link without enabling it.</p>
+        <button type="button" data-open-consent class="affiliate-preferences">Privacy choices</button>
+        <div data-affiliate-mount hidden></div>
+      </div>
     </div>
     <div class="article-body container" data-category={category}>
       {slug && /winter|ice-walk|hot-springs|snowshoe|ice-skating/.test(slug) && <WinterStatusNotice />}
@@ -94,7 +102,12 @@ const articleSchema = {
       </div>
       <div class="gyg-widget-container">
         <h2>Recommended Tours & Activities</h2>
-        <div data-gyg-widget="auto" data-gyg-partner-id="QW960HO" data-gyg-cmp="banffboundblog"></div>
+        <div class="affiliate-panel" data-affiliate-embed="gyg-auto">
+          <p><a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&cmp=banffboundblog" target="_blank" rel="noopener noreferrer sponsored">Browse Banff tours on GetYourGuide — affiliate link</a></p>
+          <p class="affiliate-embed-status" data-affiliate-status role="status" aria-live="polite">Optional partner content is off. You can use the direct link without enabling it.</p>
+          <button type="button" data-open-consent class="affiliate-preferences">Privacy choices</button>
+          <div data-affiliate-mount hidden></div>
+        </div>
       </div>
       <div class="article-footer">
         <div class="article-updated">
@@ -132,8 +145,10 @@ const articleSchema = {
     </div>
   </article>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  <script is:inline class="eg-affiliate-banners-script" src="https://creator.expediagroup.com/products/banners/assets/eg-affiliate-banners.js"></script>
-  <script is:inline src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="QW960HO"></script>
+  <script>
+    import { initAffiliateEmbeds } from '../scripts/affiliateEmbeds.js';
+    initAffiliateEmbeds();
+  </script>
   <script is:inline>
   (function() {
     var body = document.querySelector('.article-body');
@@ -202,6 +217,13 @@ const articleSchema = {
 </BaseLayout>
 
 <style>
+  .article-image-note { font-size: .85rem; color: var(--color-text-light); padding-top: .75rem; }
+  [data-affiliate-mount][hidden] { display: none !important; }
+  .affiliate-panel { border: 1px solid #d4d9ce; border-radius: 10px; padding: 1rem; text-align: left; background: var(--color-bg-alt); }
+  .affiliate-panel a { text-decoration: underline; text-underline-offset: .15em; }
+  .affiliate-embed-status { font-size: .85rem; margin: .6rem 0; }
+  .affiliate-preferences { font: inherit; background: transparent; border: 1px solid var(--color-primary); color: var(--color-primary); border-radius: 6px; min-height: 44px; padding: .45rem .8rem; cursor: pointer; }
+  [data-affiliate-mount] { margin-top: 1rem; }
   .gyg-widget-container {
     margin: 2.5rem 0;
     padding-top: 2rem;

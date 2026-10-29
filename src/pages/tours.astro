@@ -7,61 +7,49 @@ const GYG_PARTNER_ID = 'QW960HO';
 const featuredTours = [
   {
     name: 'Athabasca Glacier & Columbia Icefield Day Trip',
-    description: 'Full-day guided tour along the Icefields Parkway with glaciers, waterfalls, and emerald lakes. Includes packed lunch and expert commentary.',
+    description: 'Compare the dated itinerary, departure point, transport and any glacier activity included in this listing. Check seasonal operation and the return before planning an Icefields Parkway day.',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
-    duration: '11 hours',
-    rating: '4.8',
-    price: 'From $145 CAD',
+    linkLabel: 'View the Icefields trip listing',
     gygUrl: `https://www.getyourguide.com/banff-l284/athabasca-glacier-columbia-icefield-day-trip-t113074/?partner_id=${GYG_PARTNER_ID}`,
     type: 'Day Trip',
   },
   {
     name: 'Emerald Lake & Takakkaw Falls Tour',
-    description: 'Small group tour to Yoho National Park featuring Emerald Lake, Takakkaw Falls, and the Natural Bridge. Optional canoeing available.',
+    description: 'Use Banff tour results to compare Yoho itineraries. Confirm that the actual product includes your chosen stops; Takakkaw Falls road access and other outdoor activities are seasonal.',
     image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
-    duration: '10 hours',
-    rating: '4.9',
-    price: 'From $135 CAD',
+    linkLabel: 'Search Banff tour results',
     gygUrl: `https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}`,
     type: 'Day Trip',
   },
   {
     name: 'Sunset & Stars Walking Tour',
-    description: 'Evening guided hike through Banff with sunset views and stargazing. Guides carry bear spray and provide headlamps and lanterns.',
+    description: 'Check this evening-walk listing for its meeting point, walking demands and supplied equipment. Weather and mountain horizons affect the view; sunset colours and visible stars are not guaranteed.',
     image: 'https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80',
-    duration: '2 hours',
-    rating: '4.9',
-    price: 'From $65 CAD',
+    linkLabel: 'View the evening-walk listing',
     gygUrl: `https://www.getyourguide.com/banff-l284/banff-sunset-and-stargazing-evening-walking-tour-t441813/?partner_id=${GYG_PARTNER_ID}`,
     type: 'Evening',
   },
   {
     name: 'Wildlife Safari & Scenic Drive',
-    description: 'Guided wildlife viewing tour through Banff National Park. Spot elk, bighorn sheep, bears, and more with an expert naturalist guide.',
-    image: 'https://banfflakelouise.bynder.com/m/30543649c0240f70/1500x915_jpg-2024_Wildlife_Wolverine_WillLambert.jpg',
-    duration: '3-4 hours',
-    rating: '4.7',
-    price: 'From $85 CAD',
+    description: 'Compare the wildlife and nature category, then read the actual itinerary, guide credentials, transport and viewing practices. No tour can guarantee that a wild animal will appear.',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    linkLabel: 'Browse the wildlife and nature category',
     gygUrl: `https://www.getyourguide.com/banff-l284/safaris-wildlife-activities-tc40/?partner_id=${GYG_PARTNER_ID}`,
     type: 'Wildlife',
   },
   {
     name: 'Lake Louise & Moraine Lake Tour',
-    description: 'Visit two of the most stunning lakes in the Canadian Rockies. Includes photo stops, scenic viewpoints, and local history from your guide.',
+    description: 'Search for the actual lake itinerary and transport arrangement. Moraine Lake journeys are seasonal; confirm the road-access period and do not assume a winter Lake Louise tour also reaches Moraine Lake.',
     image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
-    duration: '8 hours',
-    rating: '4.8',
-    price: 'From $120 CAD',
+    linkLabel: 'Search Banff tour results',
     gygUrl: `https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}`,
     type: 'Day Trip',
   },
   {
     name: 'Banff Gondola Experience',
-    description: 'Skip-the-line gondola ride to the summit of Sulphur Mountain. Panoramic views, boardwalk, and the chance to dine at Sky Bistro.',
+    description: 'Compare sightseeing products in the destination results. Check which gondola, timed entry, return transport and dining are included in the actual product; a search link is not a ticket reservation.',
     image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
-    duration: '2-3 hours',
-    rating: '4.7',
-    price: 'From $75 CAD',
+    linkLabel: 'Search Banff sightseeing products',
     gygUrl: `https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}`,
     type: 'Sightseeing',
   },
@@ -77,14 +65,14 @@ const categories = [
 ];
 ---
 
-<BaseLayout title="Tours & Adventures" description="Book the best tours and guided adventures in Banff. Day trips, wildlife safaris, gondola rides, and more.">
+<BaseLayout title="Banff Tours & Activities: Compare Listings and Plan the Journey" description="Compare Banff tour listings, categories and destination searches. Check the actual itinerary, season, transport and cancellation terms; optional partner widgets follow your privacy choices." lastUpdated="2026-10-29">
   <div class="container">
     <Breadcrumbs items={[{ label: 'Tours & Adventures' }]} />
   </div>
   <section class="page-hero">
     <img
       src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
-      alt="Mountain adventure"
+      alt="Illustrative mountain landscape; not a verified photograph of a listed tour"
       class="page-hero-bg"
       loading="eager"
       fetchpriority="high"
@@ -92,7 +80,7 @@ const categories = [
     <div class="page-hero-content">
       <span class="badge">Book Adventures</span>
       <h1>Tours & Adventures</h1>
-      <p>Curated tours and guided experiences in Banff National Park. Book with free cancellation and skip-the-line access.</p>
+      <p>Compare the outing, meeting point and return before you book. Prices, availability, inclusions and cancellation terms come from the actual product and date.</p>
     </div>
   </section>
 
@@ -101,7 +89,7 @@ const categories = [
     <div class="container">
       <div class="categories-grid">
         {categories.map(cat => (
-          <a href={cat.url} target="_blank" rel="noopener" class="category-pill">
+          <a href={cat.url} target="_blank" rel="noopener noreferrer sponsored" class="category-pill">
             <span set:html={cat.icon}></span>
             <span>{cat.label}</span>
           </a>
@@ -114,30 +102,22 @@ const categories = [
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Top Rated</span>
-        <h2>Featured Tours</h2>
-        <p>Hand-picked tours and experiences from local guides and top-rated operators.</p>
+        <span class="badge">Compare the outing</span>
+        <h2>Tour ideas and listing links</h2>
+        <p>Some links open a specific listing; others open a category or Banff search results, as labelled. Confirm the exact activity and operator there. Images are illustrative stock landscapes, not verified tour photographs.</p>
+        <p>Affiliate links: BanffBound may earn a commission from qualifying bookings. These native links work without optional affiliate content.</p>
       </div>
       <div class="grid grid-3">
         {featuredTours.map(tour => (
-          <a href={tour.gygUrl} target="_blank" rel="noopener" class="tour-card card">
+          <a href={tour.gygUrl} target="_blank" rel="noopener noreferrer sponsored" class="tour-card card">
             <div class="tour-image-wrap">
-              <img src={tour.image} alt={tour.name} class="card-image" loading="lazy" />
+              <img src={tour.image} alt="Illustrative landscape; not verified as this tour" class="card-image" loading="lazy" />
               <span class="tour-type-badge">{tour.type}</span>
             </div>
             <div class="card-body">
-              <div class="tour-rating">
-                <span class="stars">&#9733; {tour.rating}</span>
-              </div>
               <h3>{tour.name}</h3>
               <p>{tour.description}</p>
-              <div class="tour-footer">
-                <div class="tour-meta">
-                  <span>&#9202; {tour.duration}</span>
-                </div>
-                <span class="tour-price">{tour.price}</span>
-              </div>
-              <span class="book-btn">Check Availability &rarr;</span>
+              <span class="book-btn">{tour.linkLabel} &rarr;</span>
             </div>
           </a>
         ))}
@@ -151,21 +131,17 @@ const categories = [
       <div class="section-header">
         <span class="badge">More Adventures</span>
         <h2>Explore All Banff Activities</h2>
-        <p>Browse hundreds of tours, activities, and experiences available in Banff.</p>
+        <p>Use the direct link, or enable optional affiliate content in Privacy choices to request GetYourGuide’s embedded results.</p>
       </div>
-      <div class="widget-container">
-        <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame"
-             data-gyg-location-id="284"
-             data-gyg-locale-code="en-US"
-             data-gyg-widget="activities"
-             data-gyg-number-of-items="9"
-             data-gyg-partner-id={GYG_PARTNER_ID}>
-        </div>
+      <div class="widget-container" data-affiliate-embed="gyg-activities">
+        <p data-affiliate-status role="status" aria-live="polite">Optional partner content is off. You can use the direct link without enabling it.</p>
+        <button type="button" data-open-consent class="affiliate-preferences">Privacy choices</button>
+        <div data-affiliate-mount hidden></div>
       </div>
       <div class="widget-cta">
         <a href={`https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}`}
-           target="_blank" rel="noopener" class="btn btn-primary">
-          View All Banff Tours on GetYourGuide &rarr;
+           target="_blank" rel="noopener noreferrer sponsored" class="btn btn-primary">
+          Browse Banff tours on GetYourGuide — affiliate link &rarr;
         </a>
       </div>
     </div>
@@ -213,7 +189,10 @@ const categories = [
   </section>
 </BaseLayout>
 
-<script is:inline src="https://widget.getyourguide.com/dist/pa.umd.min.js" data-gyg-partner-id="QW960HO"></script>
+<script>
+  import { initAffiliateEmbeds } from '../scripts/affiliateEmbeds.js';
+  initAffiliateEmbeds();
+</script>
 
 <style>
   .categories-bar {
@@ -323,11 +302,16 @@ const categories = [
   .widget-container {
     max-width: 100%;
     margin: 0 auto;
-    min-height: 400px;
+    padding: 1.25rem;
+    border: 1px solid #d4d9ce;
+    border-radius: 10px;
   }
 
   .widget-cta {
     text-align: center;
     margin-top: 2rem;
   }
+  [data-affiliate-mount][hidden] { display: none !important; }
+  [data-affiliate-mount] { margin-top: 1rem; }
+  .affiliate-preferences { font: inherit; background: transparent; border: 1px solid var(--color-primary); color: var(--color-primary); border-radius: 6px; min-height: 44px; padding: .45rem .8rem; cursor: pointer; }
 </style>

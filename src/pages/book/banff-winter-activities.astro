@@ -1,0 +1,99 @@
+---
+import PaidLandingLayout from '../../layouts/PaidLandingLayout.astro';
+import { winterActivityLandingId, winterActivityReviewedAt, winterActivityOffers, winterActivityFaqs, winterActivityClosureSource, winterActivityExperienceOptions } from '../../data/winterActivityLanding';
+---
+<PaidLandingLayout
+  title="Banff Winter Activities: Icewalk, Gondola & Guided Day Tours"
+  description="Compare a guided Johnston Canyon icewalk, Banff Gondola admission and a Lake Louise winter outing. Choose the experience, check your date and book on GetYourGuide."
+  eyebrow="Banff winter experiences"
+  heading="Find your winter day in Banff"
+  intro="Walk through a winter canyon with a guide, ride above Banff on the gondola, or spend the day exploring Lake Louise and Johnston Canyon. Compare the experience and journey, then choose your date."
+  primaryCta={{ label: 'Compare winter experiences', href: '#experiences' }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: winterActivityFaqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div slot="hero-detail" class="hero-detail"><p><strong>Three different ways to enjoy winter.</strong> Guided walking · attraction admission · a guided road day</p><p>Affiliate disclosure: booking links open GetYourGuide. BanffBound may earn a commission from qualifying bookings.</p></div>
+  <section class="landing-section" id="experiences" aria-labelledby="experience-heading">
+    <div class="section-intro"><span class="section-kicker">Choose the experience that fits</span><h2 id="experience-heading">A canyon walk, mountain ride or winter road day?</h2><p>Start with what you want to do. The differences below help you choose a product for your group, rather than treating every winter tour as the same outing.</p></div>
+    <form id="winter-experience-form" class="experience-filter" hidden aria-describedby="winter-experience-count">
+      <div><label for="winter-experience">What would you like to do?</label><select id="winter-experience" name="experience">{winterActivityExperienceOptions.map(option => <option value={option.value}>{option.label}</option>)}</select></div>
+      <button type="reset">Show all three</button>
+    </form>
+    <p id="winter-experience-count" class="experience-count" role="status" aria-live="polite" aria-atomic="true">3 experiences to compare</p>
+    <noscript><p>All three experiences and their booking links are shown below. You can compare and book without JavaScript.</p></noscript>
+    <div class="experience-grid">
+      {winterActivityOffers.map(offer => <article class="experience-card" id={offer.anchor} data-winter-offer={offer.id} data-experience-type={offer.experienceType}>
+        <span class="format-tag">{offer.format}</span><h3>{offer.name}</h3><p class="provider">Activity provider: {offer.provider}</p>
+        <p class="fit">{offer.fit}</p><p>{offer.experience}</p>
+        {offer.needsCanyonCheck && <p class="card-access"><strong>Johnston Canyon closure — checked October 29, 2026:</strong> Parks lists the trail and day-use area closed from October 13 to a scheduled December 11, 2026. Reopening is not confirmed. Ask the operator to confirm the route for your date before booking. <a href={winterActivityClosureSource} target="_blank" rel="noopener">Read the closure notice</a>.</p>}
+        <a class="booking-cta" href={offer.bookingUrl} target="_blank" rel="noopener sponsored" data-landing-id={winterActivityLandingId} data-offer-id={offer.id} data-landing-placement="detail-card">{offer.cta} <span aria-hidden="true">↗</span></a>
+        <p class="booking-helper">Select your date, participants and option on GetYourGuide.</p>
+        <dl><div><dt>Consider the tradeoff</dt><dd>{offer.tradeoff}</dd></div><div><dt>Getting there and back</dt><dd>{offer.transport}</dd></div><div><dt>For your group</dt><dd>{offer.group}</dd></div></dl>
+        <details><summary>What to confirm for your date</summary><p>{offer.bookingCheck}</p><p><a href={offer.operatorUrl} target="_blank" rel="noopener">Operator information ↗</a></p><p class="small">Listing identity: {offer.productTitle}. Product {offer.productId}; reviewed {winterActivityReviewedAt}.</p></details>
+      </article>)}
+    </div>
+    <aside class="access-note"><strong>Johnston Canyon access — checked October 29, 2026:</strong> Parks Canada’s construction notice lists the trail and day-use area closed from October 13 to a scheduled December 11, 2026. This is not confirmation of reopening. For either canyon experience, ask the operator about your date and any revised route before paying. <a href={winterActivityClosureSource} target="_blank" rel="noopener">Read the Parks notice ↗</a></aside>
+  </section>
+  <section class="landing-section decision-section" aria-labelledby="day-heading">
+    <div class="section-intro"><h2 id="day-heading">Build the day around one main experience</h2><p>Keep the rest of the plan flexible enough for the real journey, meals and a warm break.</p></div>
+    <div class="decision-grid"><article><h3>When the walk is the highlight</h3><p>Make the icewalk your main outdoor outing. Confirm footwear and the walking requirements, arrange the actual pickup and leave time afterwards for a meal in Banff. A guided walk still requires comfort with winter footing.</p></article><article><h3>When your group wants different amounts of walking</h3><p>Compare the gondola’s indoor summit visit with its optional outdoor sections. Ask about the exact access features everyone needs, then decide how much of the viewing area fits the group and the day’s weather.</p></article><article><h3>When you want someone else to handle the road route</h3><p>The Radventures outing links destinations by vehicle, with outdoor stops along the way. Set aside the day, confirm the meeting point and ask which activities are intended for that departure. Do not add another tightly timed booking at the return.</p></article></div>
+  </section>
+  <section class="landing-section booking-section" aria-labelledby="booking-heading">
+    <h2 id="booking-heading">Choose the date and exact option before you pay</h2>
+    <ol class="booking-steps"><li><strong>Open the product that fits.</strong> Each orange button goes to the named GetYourGuide product, with BanffBound’s referral identifier.</li><li><strong>Check your party and journey.</strong> Confirm age and access requirements, the meeting point, pickup option, equipment and the return.</li><li><strong>Review the complete booking.</strong> Read the current total, inclusions and cancellation terms for the selected date. Your confirmation and payment are handled by GetYourGuide and the activity provider.</li></ol>
+    <p>Bring clothing for outdoor stops as well as time in a vehicle or building. Warm boots, layers and hand protection matter even on a sightseeing day. For a fuller plan, use the <a href="/packing-list">winter packing checklist</a> or <a href="/winter">winter activity guide</a>.</p>
+    <p class="disclosure"><strong>Affiliate links:</strong> BanffBound may receive a commission from qualifying bookings. You can use these direct links with optional booking widgets switched off. GetYourGuide’s own terms and privacy choices apply after you leave this site.</p>
+  </section>
+  <section class="landing-section faq-section" aria-labelledby="faq-heading"><h2 id="faq-heading">Before you book</h2>{winterActivityFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+  <section class="landing-section final-choice"><h2>Which winter experience fits your trip?</h2><p>Choose the walk, ride or road outing, then check the product’s dates and options.</p><div class="final-links">{winterActivityOffers.map(offer => <a href={offer.bookingUrl} target="_blank" rel="noopener sponsored" data-landing-id={winterActivityLandingId} data-offer-id={offer.id} data-landing-placement="final-shortlist">{offer.name} ↗</a>)}</div><p class="source-note">Product identities and linked operator information reviewed {winterActivityReviewedAt}. This is a comparison of published experiences, not a live availability feed. <a href="/contact">Contact BanffBound</a> about this guide.</p></section>
+</PaidLandingLayout>
+
+<script>
+  import { buildWinterActivitySelection, normaliseWinterActivityExperience, winterActivityExperienceOptions } from '../../data/winterActivityLanding';
+  function initWinterExperienceFilter() {
+    const form = document.getElementById('winter-experience-form') as HTMLFormElement | null;
+    const select = document.getElementById('winter-experience') as HTMLSelectElement | null;
+    const count = document.getElementById('winter-experience-count');
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-winter-offer]')];
+    if (!form || !select || !count || !cards.length || form.dataset.ready) return;
+    form.dataset.ready = 'true';
+    let hadParameter = false;
+    try {
+      const values = new URL(window.location.href).searchParams.getAll('experience');
+      hadParameter = values.length > 0;
+      select.value = normaliseWinterActivityExperience(values.length === 1 ? values[0] : undefined);
+    } catch { select.value = 'all'; }
+    function update(writeUrl = false) {
+      const result = buildWinterActivitySelection(select!.value);
+      select!.value = result.experience;
+      const visible = new Set(result.offerIds);
+      for (const card of cards) card.hidden = !visible.has(card.dataset.winterOffer!);
+      const label = winterActivityExperienceOptions.find(option => option.value === result.experience)!.label;
+      count!.textContent = `${result.offerIds.length} ${result.offerIds.length === 1 ? 'experience shown' : 'experiences shown'} — ${label}`;
+      if (writeUrl) {
+        try {
+          const url = new URL(window.location.href);
+          result.experience === 'all' ? url.searchParams.delete('experience') : url.searchParams.set('experience', result.experience);
+          window.history.replaceState({}, '', url);
+        } catch { /* The local preference filter still works without URL updates. */ }
+      }
+    }
+    form.addEventListener('submit', event => event.preventDefault());
+    form.addEventListener('change', () => update(true));
+    form.addEventListener('reset', event => { event.preventDefault(); select.value = 'all'; update(true); });
+    update(hadParameter);
+    form.hidden = false;
+  }
+  initWinterExperienceFilter();
+  document.addEventListener('astro:page-load', initWinterExperienceFilter);
+</script>
+<style>
+  [hidden]{display:none!important}.experience-filter{display:flex;align-items:end;gap:1rem;flex-wrap:wrap;padding:1rem 1.2rem;margin:1.2rem 0;background:#f1f6ef;border-radius:10px}.experience-filter>div{flex:1 1 300px}.experience-filter label{display:block;font-weight:700;margin-bottom:.4rem}.experience-filter select,.experience-filter button{font:inherit;min-height:46px;border:1px solid #61745c;border-radius:7px;padding:.65rem .8rem;background:white;color:#153e2c}.experience-filter select{width:100%}.experience-filter button{cursor:pointer;font-weight:700}.experience-filter :focus-visible{outline:3px solid #1c6d4b;outline-offset:3px}.experience-count{font-size:.9rem;font-weight:700;line-height:1.6}
+  .hero-detail p { margin:.5rem 0; line-height:1.6; }.hero-detail p:last-child{font-size:.9rem}
+  .landing-section{max-width:1180px;margin:0 auto;padding:3rem 1.25rem;scroll-margin-top:1.5rem}.section-intro{max-width:760px;margin-bottom:1.8rem}.section-intro h2{margin:.4rem 0 .8rem}.section-kicker{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;font-weight:700;color:#196040}
+  .experience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}.experience-card{border:1px solid #d7dfd9;border-radius:16px;padding:1.4rem;background:#fff;min-width:0;scroll-margin-top:1.5rem}.format-tag{font-size:.78rem;font-weight:700;color:#28543d;background:#edf5ee;border-radius:20px;display:inline-block;padding:.35rem .6rem;margin-bottom:.9rem}.experience-card h3{font-size:1.4rem;line-height:1.25;margin-bottom:.5rem}.provider{font-size:.85rem;color:#526358;margin-bottom:1rem}.experience-card p,.experience-card dd{font-size:.96rem;line-height:1.65}.fit{font-weight:600}
+  .card-access{padding:.65rem .8rem;background:#fff7e8;border-radius:8px;font-size:.84rem!important;line-height:1.55!important}
+  .booking-cta{display:block;margin:1.25rem 0 .5rem;padding:.9rem 1rem;border-radius:9px;background:#cb4b16;color:white;text-decoration:none;font-weight:700;line-height:1.4;text-align:center}.booking-cta:hover{background:#a83c10}.booking-cta:focus-visible,.final-links a:focus-visible,summary:focus-visible{outline:3px solid #1c6d4b;outline-offset:4px}.booking-helper{font-size:.78rem!important;color:#57645c}.experience-card dl>div{padding-top:1rem}.experience-card dt{font-size:.88rem;font-weight:700}.experience-card dd{margin:.3rem 0 0}.experience-card details{border-top:1px solid #dce3dd;margin-top:1.2rem;padding-top:1rem}.experience-card a:not(.booking-cta){color:#1a5b3b}.small{font-size:.8rem!important;color:#58675e}
+  .access-note{margin-top:1.4rem;padding:1rem 1.2rem;background:#fff7e8;border:1px solid #ead9b7;border-radius:10px;font-size:.9rem;line-height:1.65}.access-note a{color:#634117}.decision-section{background:#f4f7f2;border-radius:16px}.decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.7rem}.decision-grid p,.booking-section p,.booking-steps li{line-height:1.8}.booking-steps{padding-left:1.3rem}.booking-steps li{margin:1rem 0}.disclosure{padding:1rem;background:#f4f7f2;border-radius:10px;font-size:.9rem}.faq-section{max-width:900px}.faq-section details{border-top:1px solid #d7dfd9;padding:1rem 0}.faq-section summary,.experience-card summary{cursor:pointer;font-weight:700;line-height:1.5}.faq-section p{line-height:1.8;margin:.8rem 0}
+  .final-choice{background:#153e2c;color:#fff;border-radius:16px;margin-bottom:2rem}.final-choice h2{color:#fff}.final-links{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.5rem 0}.final-links a{padding:.85rem 1rem;background:#fff;color:#153e2c;border-radius:8px;text-decoration:none;font-weight:700}.source-note{font-size:.85rem;opacity:.9;line-height:1.65}.source-note a{color:#fff}a{overflow-wrap:anywhere}
+  @media(max-width:1000px){.experience-grid{grid-template-columns:1fr}.experience-card{max-width:760px}.decision-grid{grid-template-columns:1fr}.landing-section{padding:2rem 1rem}.final-choice,.decision-section{border-radius:0}.final-links{flex-direction:column}}
+</style>

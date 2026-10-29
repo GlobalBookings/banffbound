@@ -1,0 +1,74 @@
+{
+  "checkedAtUTC": "2026-10-29T18:48:11.927853+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/7",
+  "mergedAtUTC": "2026-10-29T18:40:13Z",
+  "codeCommit": "e41916e9c8e90e8289da700d9a40f82e8288fca9",
+  "reviewedHead": "412aa7ce2e9a74adf6b46a6f29f700165314611f",
+  "mergeCommit": "8ee827332d19511eaa43d3c5d34881a8fe24ee13",
+  "pullRequestCI": {
+    "conclusion": "success",
+    "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40932771379/job/123655277159"
+  },
+  "mainCI": {
+    "conclusion": "success",
+    "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40932988722/job/123656050566"
+  },
+  "cleanReceipt": "research/wildlife-trails-stays-clean-verification-2026-10-29.json",
+  "productionReceipt": "research/wildlife-trails-stays-production-verified-2026-10-29.json",
+  "productionBuildInfo": {
+    "formatVersion": 1,
+    "scope": "app-source-v1",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.css app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T18:41:27.647Z",
+    "sourceRevision": "8ee827332d19511eaa43d3c5d34881a8fe24ee13",
+    "sourceFingerprint": "4373faf53094a183f5f887b4c89e60f11065d029974c23c4687b1ab035b9f6e0"
+  },
+  "publicChecks": {
+    "htmlPassed": 184,
+    "htmlFailed": 0,
+    "photosPassed": 7,
+    "photosFailed": 0,
+    "failures": 0
+  },
+  "redirectChecks": {
+    "checkedAt": "2026-10-29T18:44:54.160Z",
+    "mappings": 40,
+    "passed": 100
+  },
+  "browserChecks": {
+    "liveOrigin": "https://banffbound.com",
+    "wildlifeMap": {
+      "goatAndWinterCards": 2,
+      "goatAndWinterMarkers": 2,
+      "resetCards": 10,
+      "resetMarkers": 10
+    },
+    "liveMobile": {
+      "route": "/wildlife/",
+      "viewportWidth": 390,
+      "documentScrollWidth": 390,
+      "heroPhotoLoadedAfterRequestCompleted": true,
+      "photoNaturalWidth": 500,
+      "photoCredit": "moos_and_shoots \u00b7 CC BY 4.0 \u00b7 historical illustration (2024). Unchanged image."
+    },
+    "cleanPreview": {
+      "calendarOctoberCards": 1,
+      "roamRentalAdvice": true,
+      "reviewedHotelFilterRecords": 35,
+      "coryPassLoopDistance": "11.7 km loop",
+      "mobilePagesFit": [
+        "/wildlife/",
+        "/wildlife-calendar/",
+        "/bear-spray/",
+        "/hotel-directory/"
+      ]
+    }
+  },
+  "verificationToolSha256": "a4ee56f6916421baca0f0ecdb05daac81847d35072eb9cc48a458f6d87b3fc3e",
+  "verifierCorrections": "Use a fresh query nonce per GET. Initial attempt183/184 expected an optional hidden map note to be visible before map selection; corrected to require the visible planning scope plus retained optional-map markup. Original failed receipt preserved; no product patch was required.",
+  "hostingSpecificationChangedThisRelease": false,
+  "environmentValuesChangedThisRelease": false,
+  "previewServerStopped": true,
+  "remainingAudit": "research/site-follow-up-findings-2026-10-29.md",
+  "goalStatus": "active"
+}
