@@ -99,10 +99,10 @@ export function eventMatches(item, { from = '',to = '',query = '' } = {}, now = 
     && (!validCivilDate(to) || item.startDate <= to)
     && [item.title,item.description,item.location].join(' ').toLowerCase().includes(query.trim().toLowerCase()));
 }
-function storedItem(item, kind) {
+function storedItem(item, kind, retrievedAt) {
   if (!item || !plainText(item.title) || !safeTownUrl(item.link,kind,true)) return false;
   if (typeof item.description !== 'string') return false;
-  if (item.publishedAt !== null && !isoInstant(item.publishedAt)) return false;
+  if (item.publishedAt !== null && (!isoInstant(item.publishedAt) || Date.parse(item.publishedAt) > Date.parse(retrievedAt)+300_000)) return false;
   return kind === 'news' || (typeof item.times === 'string' && typeof item.location === 'string' && validCivilDate(item.startDate) && validCivilDate(item.endDate) && item.startDate <= item.endDate && eventDateRange(item.dates)?.startDate === item.startDate && eventDateRange(item.dates)?.endDate === item.endDate);
 }
 /** A shared snapshot is revalidated on read; a failed/partial feed is never a valid empty feed. */
@@ -117,7 +117,7 @@ export function townFeedView(snapshot, kind, now = Date.now()) {
   const view = { ...fallback,retrievedAt:feed.retrievedAt,expiresAt,sourceUpdatedAt:sourceUpdated && Date.parse(sourceUpdated) <= retrieved+300_000 ? sourceUpdated : null,sourceUpdatedAtText:plainText(feed.sourceUpdatedAtText,120)||null,sourceTimeIssue:plainText(feed.sourceTimeIssue,200)||null,rejectedCount:Number.isInteger(feed.rejectedCount)&&feed.rejectedCount>=0?feed.rejectedCount:0 };
   if (retrieved > now || now > Date.parse(expiresAt)) return { ...view,status:'stale',message:'This dated feed snapshot has expired or its retrieval time cannot be verified. Use the official source for current listings.' };
   if (!['available','partial','empty'].includes(feed.status) || !Array.isArray(feed.items) || (feed.status === 'empty' && feed.items.length) || (feed.status === 'available' && !feed.items.length)) return view;
-  const valid = feed.items.filter(item => storedItem(item,kind));
+  const valid = feed.items.filter(item => storedItem(item,kind,feed.retrievedAt));
   const corrupt = valid.length !== feed.items.length;
   const items = kind === 'events' ? valid.filter(item => item.endDate >= mountainDay(now)).sort((a,b) => a.startDate.localeCompare(b.startDate) || a.title.localeCompare(b.title)) : valid.slice().sort((a,b) => (b.publishedAt||'').localeCompare(a.publishedAt||''));
   const status = corrupt || feed.status === 'partial' ? 'partial' : feed.status;

@@ -248,8 +248,8 @@ const highlights = [
           ))}
         </div>}
         <p data-town-no-matches hidden>No remaining event dates appear in these previews. Open the calendar for more listings.</p>
-        <p data-town-stale hidden={townCalendar.status !== 'stale'}>The local calendar snapshot is unavailable or has expired. This does not mean no events are scheduled.</p>
-        <noscript><p>These are static dated previews. Confirm current details with the Town calendar.</p></noscript>
+        <p data-town-stale hidden={townCalendar.status !== 'stale'}>The local calendar snapshot is unavailable, expired or cannot be checked here. Use the <a href={TOWN_FEEDS.events.pageUrl} target="_blank" rel="noopener">official Town calendar</a> for current dates; this does not mean no events are scheduled.</p>
+        <noscript><style is:inline>[data-town-panel] [data-town-results] { display:none !important; } [data-town-panel][data-town-kind] [data-town-stale][hidden] { display:block !important; }</style><p>Feed previews are hidden without JavaScript because their expiry cannot be checked. Use the official calendar or the winter festival planning guides.</p></noscript>
         <div style="text-align: center; margin-top: 2rem;">
           <a href="/events" class="btn btn-outline">Events & Winter Festivals &rarr;</a>
           <a href={TOWN_FEEDS.events.pageUrl} target="_blank" rel="noopener" class="btn btn-outline">Official Town Calendar &rarr;</a>

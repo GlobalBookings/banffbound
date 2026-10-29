@@ -58,7 +58,9 @@ At review, the Town's lastBuildDate was about an hour later than the actual retr
 
 Retrieval snapshots expire after 24 hours. The server read model rejects expired/future retrieval clocks and revalidates stored links/dates; browser enhancements repeat expiry and event-day checks on load, periodically and on returning to the tab. Missing, failed, partial, valid-empty, no-remaining-date and stale states are worded distinctly. No state claims that nothing is happening across Banff.
 
-Without JavaScript, dated static content, source links and winter planning remain available, with an explicit note to verify the original calendar. Filters are only shown after initialization. Date/search filters, invalid-range guidance, result count, reset and expiry messages use existing DOM elements; no unsafe HTML insertion or browser feed request occurs.
+Without JavaScript, dated feed result panels are hidden and the official-calendar/news fallback is made visible because expiry cannot be rechecked. The winter festival editorial section, planning guidance and direct source links remain available. Filters are only shown after initialization. Date/search filters, invalid-range guidance, result count, reset and expiry messages use existing DOM elements; no unsafe HTML insertion or browser feed request occurs.
+
+Stored-item read validation uses the same retrieval-plus-five-minute publication bound as normalization. A future stored publication timestamp rejects that item and makes the view partial, even when the event's civil date otherwise looks valid; it does not become a verified empty result.
 
 ## Winter planning sources
 
@@ -81,6 +83,7 @@ Pages link the existing detailed winter festival guides, car-free journey, winte
 
 - Offline regressions and captured official XML normalization passed: node scripts/check-town-events.mjs --fixtures /tmp/banff-town-events.txt /tmp/banff-town-news.txt
 - Covered source identity, available/empty/partial/failure, unsafe links, missing/impossible/reversed dates, separate pub/event dates, Mountain midnight/DST, source-clock drift, snapshot expiry, duplicate occurrences, partial failure, concurrent request count and request/body deadlines.
+- Follow-up regressions cover stored 2099 publication dates for events/news, the exact five-minute read-time boundary, and no-JS rules hiding feed results while showing official fallbacks.
 - A focused browser-helper DOM harness passed date filtering, search, invalid ranges, reset and expiry without network or unsafe HTML.
 - Direct Astro compiler transforms of /events and homepage passed with zero errors. Visible FAQ and schema on /events use the same array.
 - Homepage changes are restricted to the old event fetch/imports and event section/script. Non-event content and metadata are unchanged.

@@ -62,9 +62,31 @@ assert.equal(townFeedView({...snapshot,feeds:{events:invalid}},'events',Date.par
 const corrupt = structuredClone(snapshot);corrupt.feeds.events.items[0].link='javascript:alert(1)';
 assert.equal(townFeedView(corrupt,'events',Date.parse(retrievedAt)).status,'partial');
 assert(!townFeedView(corrupt,'events',Date.parse(retrievedAt)).items.some(item=>item.link.startsWith('javascript')));
+const futurePublication = structuredClone(snapshot);
+futurePublication.feeds.events.items[0].publishedAt = '2099-01-01T00:00:00.000Z';
+assert.equal(townFeedView(futurePublication,'events',Date.parse(retrievedAt)).status,'partial');
+assert(!townFeedView(futurePublication,'events',Date.parse(retrievedAt)).items.some(item=>item.link===parsed.items[0].link),'Read-time validation rejects a future publication even with an otherwise valid event date');
+for (const [offset,accepted] of [[300_000,true],[300_001,false]]) {
+  const boundary = structuredClone(snapshot);
+  boundary.feeds.events.items[0].publishedAt = new Date(Date.parse(retrievedAt)+offset).toISOString();
+  assert.equal(townFeedView(boundary,'events',Date.parse(retrievedAt)).items.some(item=>item.link===parsed.items[0].link),accepted,'Read-time publication bound is retrieval plus five minutes');
+}
+const parsedNews = await normalizeTownFeed(newsXml,'news',retrievedAt);
+const futureNews = {schemaVersion:TOWN_FEED_VERSION,provider:TOWN_FEED_PROVIDER,feeds:{news:structuredClone(parsedNews)}};
+futureNews.feeds.news.items[0].publishedAt = '2099-01-01T00:00:00.000Z';
+assert.equal(townFeedView(futureNews,'news',Date.parse(retrievedAt)).status,'partial');
+assert.equal(townFeedView(futureNews,'news',Date.parse(retrievedAt)).items.length,0,'Future stored news is rejected, not displayed or relabelled as valid empty');
 assert(eventMatches(parsed.items[2],{from:'2026-10-30',to:'2026-10-30',query:'example'},Date.parse(retrievedAt)));
 assert(!eventMatches(parsed.items[0],{to:'2026-10-29'},Date.parse(retrievedAt)));
 assert(!eventMatches(parsed.items[0],{query:'not-in-the-listing'},Date.parse(retrievedAt)));
+for (const page of ['src/pages/events.astro','src/pages/index.astro']) {
+  const html = await readFile(page,'utf8');
+  const noScript = [...html.matchAll(/<noscript>([\s\S]*?)<\/noscript>/g)].map(match=>match[1]).find(block=>block.includes('[data-town-results]'));
+  assert(noScript,page+': a no-JS fallback is required for the dated feed');
+  assert(noScript.includes('[data-town-panel] [data-town-results] { display:none !important; }'),page+': no-JS must hide all Town feed result panels');
+  assert(noScript.includes('[data-town-panel][data-town-kind] [data-town-stale][hidden] { display:block !important; }'),page+': the official fallback must override hidden styles');
+  assert(noScript.includes('<style is:inline>'),page+': no-JS style must stay inside noscript rather than becoming an always-active stylesheet');
+}
 
 let release;
 const gate = new Promise(resolve=>{release=resolve;});
