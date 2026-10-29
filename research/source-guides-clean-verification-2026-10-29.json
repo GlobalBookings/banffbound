@@ -1,0 +1,215 @@
+{
+  "checkedAtUTC": "2026-10-29T21:59:55.547243+00:00",
+  "sourceCommit": "1ae58fe8b0c3c99a8dd2ec6c41e890efbca09425",
+  "cleanArchive": true,
+  "dependencyRuntime": "Existing local node_modules reused via symlink; GitHub CI separately runs npm ci.",
+  "buildCommand": "npm run build",
+  "buildExitCode": 0,
+  "buildInfo": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T21:59:48.870Z",
+    "sourceRevision": null,
+    "sourceFingerprint": "0dd151877f32555939d202b9b3573c5ce9027d8e3c41bd70c09c23f8e78ceaaf"
+  },
+  "revisionNote": "Git archive has no .git and sourceRevision is null; production must independently match the merged commit and exact selected-source fingerprint.",
+  "offlineChecks": [
+    {
+      "path": "scripts/check-trip-planner.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-day-ideas.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-directory.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-production-redirects.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-activities.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paddling.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paid-landings.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-banff-hotel-landing-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-louise-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-winter-activity-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cycling-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-internal-linker.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-blog-content.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-bow-lake-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-jasper-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cabin-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-article-booking-context.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lesson-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-stay-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-consent.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-embeds.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-safety.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parking-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-build-provenance.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-rental-planning-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-weather-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-snow-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-source-freshness.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-road-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-events.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-navigation.mjs",
+      "passed": true
+    }
+  ],
+  "verifierFixtures": "218 unique HTML routes, seven local photo hashes; original193 CLI preserved and imports silent",
+  "strictAudit": {
+    "pages": 605,
+    "indexable_documents": 519,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "sitemapEntries": 517,
+  "contentScope": {
+    "canonicalBodies": 295,
+    "fullBodyReviews": 59,
+    "openingParagraphRepairs": 8,
+    "newFullReviews": 7,
+    "otherBodiesByteIdentical": 288,
+    "missingBodies": 0,
+    "resolvedAnchorIssues": 0,
+    "factsAcrossRemainingArticlesVerified": false
+  },
+  "browserPreview": {
+    "origin": "http://127.0.0.1:4328",
+    "cabinDefaultResults": 6,
+    "cabinWinterResults": 4,
+    "cabinWinterFullKitchenResults": 2,
+    "cabinWinterFullKitchenYohoResults": 0,
+    "cabinResetResults": 6,
+    "mobileViewport": 390,
+    "mobileDocumentWidths": {
+      "cabins": 390,
+      "dining": 390,
+      "jasper": 390
+    },
+    "firstTwoPropertyPhotosLoaded": true,
+    "defaultOptionalProviderScripts": 0,
+    "curatedGuidesAutomaticCTAs": 0,
+    "JasperNativeFallbackDestination": "Jasper, Alberta",
+    "originalPublicationDatesPreserved": true,
+    "limit": "DOM/render and UI behavior verified; no referral click or purchase used to manufacture a conversion."
+  },
+  "preserved": {
+    "hotelIdentitiesAndProviderUrls": 95,
+    "hostAliases": 40,
+    "affiliateAndMeasurementIdentifiers": true,
+    "publicationDates": 335
+  },
+  "commercialBoundary": {
+    "adCampaignsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecificationOrEnvironmentMutated": false,
+    "salesProfitOrRankUpliftClaimed": false
+  },
+  "goalStatus": "active"
+}
