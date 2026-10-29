@@ -1,7 +1,10 @@
 {
   "pages": 601,
-  "indexable_documents": 560,
+  "indexable_documents": 559,
   "counts": {},
   "winter_counts": {},
-  "findings": []
+  "findings": [],
+  "source_commit": "3dee2e7",
+  "build": "npm run build:cached",
+  "scope": "clean git archive with no untracked public files"
 }
