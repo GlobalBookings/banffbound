@@ -1,0 +1,96 @@
+{
+  "scope": "Actual article body bytes with baseline Git body inputs versus13opening repairs. Original blog metadata/override order and bounded hotel corrections preserved; the new visible partial-correction dates are separately tested.",
+  "canonical": 295,
+  "changed": 13,
+  "unchanged": 282,
+  "changedSlugs": [
+    "banff-bars",
+    "banff-clubs",
+    "banff-nightclubs",
+    "calgary-to-jasper",
+    "deals-in-banff",
+    "golden-banff",
+    "jasper-national-park",
+    "jasper-town",
+    "johnsons-canyon",
+    "new-places-to-eat-in-banff",
+    "nightclub-banff",
+    "num-ti-jah-lodge",
+    "numtijah-lodge"
+  ],
+  "before": {
+    "canonical": 295,
+    "missing": 0,
+    "under300words": 0,
+    "withCorruptedAnchors": 13,
+    "nestedOpenings": 34
+  },
+  "affectedBefore": [
+    {
+      "slug": "golden-banff",
+      "nestedOpenings": 2,
+      "openingText": "After running countless trails and skiing endless powder in the Canadian Rockies, I can tell you that Best Restaurants in Banff : Foodie's Best Live Music Venues & Shows's Big 3 Lakes Photography National Park offers some of the most spectacular mountain experiences in North America. The golden light that hits these peaks at sunrise and sunset crea"
+    },
+    {
+      "slug": "deals-in-banff",
+      "nestedOpenings": 1,
+      "openingText": "After five years of regular visits to Mt Norquay Via Ferrata: Wildlife Overpasses: How Banff Protects Its Animals's Most Thrilling Climb National Park, I've learned that scoring great deals here isn't about luck\u2014it's about timing, knowing where to look, and understanding how this mountain town operates. Whether you're planning a quick weekend ski t"
+    },
+    {
+      "slug": "johnsons-canyon",
+      "nestedOpenings": 1,
+      "openingText": "Johnson's Johnston's Johnston Canyon Banff: Travel Banff: Hiking remains one of Banff's most accessible yet spectacular waterfall hikes, and after dozens of visits over the past decade, I can tell you it's worth every step. Located just 23 kilometers northwest of Banff townsite along the Bow Valley Parkway, this trail delivers two impressive waterf"
+    },
+    {
+      "slug": "calgary-to-jasper",
+      "nestedOpenings": 1,
+      "openingText": "The drive from Calgary to Banff to Jasper to Kamloops via Banff: Road Trip Weather : Plan Perfect Trip is one of Canada's most spectacular road trips, taking you through the heart of the Canadian Rockies via the iconic Icefields Parkway. As someone who's made this journey countless times for training camps and ski trips, I can tell you it's far mor"
+    },
+    {
+      "slug": "jasper-town",
+      "nestedOpenings": 2,
+      "openingText": "As someone who's spent countless hours exploring the Canadian Rockies, I get asked about Calgary to Banff to Jasper to Kamloops via Banff: Road Trip Weather : Plan Perfect Trip via Banff Road Trip National Park almost as much as Banff. While Jasper town sits about 290 km north of Banff townsite via the stunning Icefields Parkway, understanding both"
+    },
+    {
+      "slug": "banff-nightclubs",
+      "nestedOpenings": 6,
+      "openingText": "After spending countless hours training on Bear Street Horseback Riding in Score Mt Norquay Via Ferrata: Legacy Trail: Biking Best Nightlife Clubs in Banff : Party to Canmore's Most Thrilling Climb Deals : Insider Secrets to Save Big: Best Trails & Outfitters: The Best Block in Town Mountain Film Festival's mountain trails and exploring the town du"
+    },
+    {
+      "slug": "banff-clubs",
+      "nestedOpenings": 3,
+      "openingText": "After countless visits to Bear Street Score Best Banff Restaurants : Where Locals Actually Eat Deals : Insider Secrets to Save Big: The Best Block in Town's Hottest Nightclubs: Party over the years, I've noticed that most travelers focus on the obvious attractions\u2014Lake Louise, Moraine Lake, the gondola. But what about when the sun goes down? The tr"
+    },
+    {
+      "slug": "jasper-national-park",
+      "nestedOpenings": 2,
+      "openingText": "After countless trips through the Canadian Rockies, I've learned that while Banff National Park gets most of the attention, Banff to Banff to Banff to Jasper Town Alberta Road Trip : Canadian Rockies Road Trip National Park offers some of the most spectacular mountain experiences in Alberta. Located just 290 kilometers north of Banff via the iconic"
+    },
+    {
+      "slug": "new-places-to-eat-in-banff",
+      "nestedOpenings": 4,
+      "openingText": "As someone who's been training and competing in Best Apres-Ski in Best Restaurants in Fine Dining in Best Rooftop Patios in Eat Banff: 15 Must-Try Restaurants & Local Eats in: Top Upscale Restaurants : Where Locals Eat: Bars, Restaurants & Hot for over a decade, I've watched the town's culinary scene evolve dramatically. After countless early morni"
+    },
+    {
+      "slug": "nightclub-banff",
+      "nestedOpenings": 7,
+      "openingText": "After years of visiting Sky Bistro Best Best Nightlife Clubs in Best Banff Dinner Spots : Where Locals Actually Eat Dark Sky Preserve: Best Viewing Spots : Party's Hottest Nightclubs: Party Clubs : Where Locals Party After Dark: to Dining Above the Clouds Hilton: Gateway to Canadian Rockies Bridge: to Canada's Most Crossing and racing through its m"
+    },
+    {
+      "slug": "banff-bars",
+      "nestedOpenings": 3,
+      "openingText": "After a day exploring 15 Best Nightlife Clubs in Banff : Party Bridge: to Canada's Most Crossing Nightlife : Best Clubs & Late Night Spots Views That Will Leave You Speechless in's incredible mountain scenery, there's nothing quite like unwinding with a drink while soaking in those breathtaking Canadian Rockies views. Banff's nightlife scene has ev"
+    },
+    {
+      "slug": "numtijah-lodge",
+      "nestedOpenings": 1,
+      "openingText": "Tucked on the shores of crystal-clear Bow Lake in the heart of the Canadian Rockies, Num-Ti-Jah Lodge stands as one of Banff Boundary Lodge: Sunshine Mountain Lodge Banff: Alpine Escape Escape National Park's most iconic and historic accommodations. This rustic mountain retreat, with its distinctive red roof and timeless log construction, has been "
+    },
+    {
+      "slug": "num-ti-jah-lodge",
+      "nestedOpenings": 1,
+      "openingText": "Sitting deep within the untouched wilderness of Banff Boundary Lodge: Sunshine Mountain Lodge Banff: Alpine Escape Escape National Park, Num-Ti-Jah Lodge stands as one of the Canadian Rockies' most legendary mountain retreats. This historic lakefront lodge, perched on the shores of Bow Lake along the iconic Icefields Parkway, offers visitors an rar"
+    }
+  ],
+  "baselineRevision": "d0b4964fe46a00f0164fa0f967b2b92f9cd024b7"
+}

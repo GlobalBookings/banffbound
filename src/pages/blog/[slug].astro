@@ -1,23 +1,11 @@
 ---
-import { cyclingGuideOverrides, cyclingGuideMetadata } from '../../data/cyclingGuideOverrides';
-import { lakeJourneyOverrides } from '../../data/lakeJourneyOverrides';
-import { visitorDestinationOverrides, applyVisitorHotelLocationCorrections, visitorHotelLocationCorrections, visitorHotelCorrectionDate } from '../../data/visitorDestinationOverrides';
-import { winterLibraryOverrides } from '../../data/winterLibraryOverrides';
-import { winterWellnessLegacyOverrides } from '../../data/winterWellnessLegacyOverrides';
-import { winterWarmUpOverrides } from '../../data/winterWarmUpOverrides';
-import { viewGuideOverride } from '../../data/viewGuideOverride';
-import { winterResortOverrides } from '../../data/winterResortOverrides';
-import { winterSeasonOverrides } from '../../data/winterSeasonOverrides';
+import { cyclingGuideMetadata } from '../../data/cyclingGuideOverrides';
+import { visitorHotelLocationCorrections, visitorHotelCorrectionDate } from '../../data/visitorDestinationOverrides';
+import { legacyTextCorrections } from '../../data/legacyTextCorrections';
+import { resolveBlogContent, reviewedBlogBodies } from '../../data/blogContentRegistry';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { allBlogPosts } from '../../data/blogPosts';
-import { blogContent as blogContentMain } from '../../data/blogContent';
-import { blogContent3 } from '../../data/blogContent3';
-import { winterTripOverrides } from '../../data/winterTripOverrides';
-import { winterActivityOverrides } from '../../data/winterActivityOverrides';
-import { winterGuideOverrides } from '../../data/winterGuideOverrides';
 import { blogRedirects } from '../../data/redirects.mjs';
-
-const blogContent = { ...blogContentMain, ...blogContent3, ...winterGuideOverrides, ...winterActivityOverrides, ...winterTripOverrides, ...winterResortOverrides, ...winterSeasonOverrides, ...viewGuideOverride, ...winterWarmUpOverrides, ...winterWellnessLegacyOverrides, ...winterLibraryOverrides, ...visitorDestinationOverrides, ...lakeJourneyOverrides, ...cyclingGuideOverrides };
 
 export function getStaticPaths() {
   return allBlogPosts.map(post => ({ params: { slug: post.slug }, props: { post } }));
@@ -26,11 +14,12 @@ export function getStaticPaths() {
 const { post } = Astro.props;
 const redirect = (blogRedirects as Record<string, string>)[post.slug];
 if (redirect) return Astro.redirect(`/blog/${redirect}/`, 301);
-
-const content = applyVisitorHotelLocationCorrections(post.slug, blogContent[post.slug] || '<p>Content coming soon.</p>').replace(
+const textCorrection = Object.hasOwn(reviewedBlogBodies, post.slug) ? undefined : legacyTextCorrections[post.slug];
+const content = resolveBlogContent(post.slug).replace(
   /<table\b[\s\S]*?<\/table>/gi,
   table => `<div class="article-table-scroll" tabindex="0" role="region" aria-label="Guide comparison table">${table}</div>`
 );
+
 ---
 
 <BlogLayout
@@ -39,7 +28,8 @@ const content = applyVisitorHotelLocationCorrections(post.slug, blogContent[post
   description={post.description}
   date={post.date}
   lastUpdated={post.lastUpdated}
-  partialCorrectionDate={visitorHotelLocationCorrections[post.slug] ? visitorHotelCorrectionDate : undefined}
+  partialCorrectionDate={textCorrection?.correctedAt || (visitorHotelLocationCorrections[post.slug] ? visitorHotelCorrectionDate : undefined)}
+  partialCorrectionLabel={textCorrection ? "Opening paragraph repaired (full guide review pending):" : undefined}
   category={post.category}
   image={post.image}
   imageIsIllustrative={Object.hasOwn(cyclingGuideMetadata, post.slug)}

@@ -1,0 +1,128 @@
+{
+  "checkedAtUTC": "2026-10-29T20:34:48.544779+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/8",
+  "mergedAtUTC": "2026-10-29T20:27:07Z",
+  "codeCommit": "9777309ef97905e06c16c9b3ce30855abe9e2e97",
+  "reviewedHead": "77c78328615df964160126a5f2b06c6ab9d57f76",
+  "mergeCommit": "d0b4964fe46a00f0164fa0f967b2b92f9cd024b7",
+  "pullRequestCI": {
+    "conclusion": "success",
+    "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40948869741/job/123711318240"
+  },
+  "mainCI": {
+    "conclusion": "success",
+    "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40949147354/job/123712305564"
+  },
+  "cleanReceipt": "research/affiliate-booking-clean-verification-2026-10-29.json",
+  "productionReceipt": "research/affiliate-booking-production-verified-2026-10-29.json",
+  "productionBuildInfo": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T20:28:35.910Z",
+    "sourceRevision": "d0b4964fe46a00f0164fa0f967b2b92f9cd024b7",
+    "sourceFingerprint": "61fe146c9af59b38c9c82b699dabd035c5362d972a343b64812dd823f86dab71"
+  },
+  "publicChecks": {
+    "htmlPassed": 193,
+    "htmlFailed": 0,
+    "photosPassed": 7,
+    "photosFailed": 0,
+    "failures": 0
+  },
+  "redirectChecks": {
+    "checkedAt": "2026-10-29T20:30:34.763Z",
+    "mappings": 40,
+    "passed": 100
+  },
+  "browserChecks": {
+    "ordinaryLandingUrls": [
+      {
+        "path": "/book/banff-hotels/",
+        "status": 200
+      },
+      {
+        "path": "/book/lake-louise-stays/",
+        "status": 200
+      },
+      {
+        "path": "/book/banff-winter-activities/",
+        "status": 200
+      }
+    ],
+    "freshBanffLanding": {
+      "offers": 6,
+      "paidBodyMarker": true,
+      "heroImageLoaded": true,
+      "optionalProviderScriptElements": 0
+    },
+    "rejectedOptional": {
+      "nativeLinksRetained": true,
+      "optionalProviderScriptElements": 0
+    },
+    "liveMobile": {
+      "viewportWidth": 390,
+      "documentWidths": {
+        "banffHotels": 390,
+        "lakeLouiseStays": 390,
+        "winterActivities": 390
+      },
+      "banffCookingMatches": [
+        "tunnel-mountain-resort",
+        "canalta-lodge"
+      ],
+      "lakeLouiseWinterCabinMatches": [
+        "baker-creek-by-basecamp"
+      ],
+      "lakeLouiseImpossibleAndReset": [
+        0,
+        5
+      ],
+      "activityIcewalkSummitAndReset": [
+        1,
+        1,
+        3
+      ],
+      "canyonClosureBeforeBookingCta": true
+    },
+    "toursFallback": {
+      "visibleAdjacentSibling": true,
+      "href": "https://www.getyourguide.com/banff-l284/?partner_id=QW960HO",
+      "widgetMountHidden": true,
+      "optionalProviderScriptElements": 0
+    },
+    "limit": "Read-only DOM/render observations and genuine UI filter/privacy interactions; not a complete network trace or delivered-conversion guarantee. No referral or purchase used to manufacture a conversion."
+  },
+  "verificationToolSha256": "4ef855299a1d5c9acf4b21a08b4d34f82abdcf98d08a425e860c3de2e9af6a83",
+  "verifierCorrection": {
+    "originalReceipt": "research/affiliate-booking-production-verification-2026-10-29.json",
+    "originalSummary": {
+      "htmlPassed": 192,
+      "htmlFailed": 1,
+      "photosPassed": 7,
+      "photosFailed": 0,
+      "failures": 1
+    },
+    "reason": "Tours native fallback is an explicit adjacent sibling inside the same section, not a child of the widget slot. The verifier now accepts only that reviewed /tours/ topology, retaining negative fixtures for missing/outside-section/hidden/wrong partner and unchanged blog child contract. No product change or redeploy was needed."
+  },
+  "hostingSpecificationMutatedByThisRelease": false,
+  "environmentValuesMutatedByThisRelease": false,
+  "agentRuntimeRestartVerified": false,
+  "commercialBoundary": {
+    "affiliateFirst": true,
+    "adCampaignsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "accountSpecificPpcPermissionVerified": false,
+    "purchaseRevenueOrProfitClaimed": false,
+    "googleClickOutIsDiagnostic": true,
+    "microsoftUetInvented": false
+  },
+  "goalStatus": "active",
+  "remainingReview": [
+    "research/internal-linker-repair-2026-10-29.md",
+    "research/paid-search-launch-plan-2026-10-29.json",
+    "research/site-follow-up-findings-2026-10-29.md"
+  ],
+  "previewServerStopped": true,
+  "browserViewportReset": true
+}

@@ -2,15 +2,30 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { towns } from '../../data/towns';
-import { hotels } from '../../data/hotels';
+import { directoryHotels as hotels } from '../../data/hotelDirectory';
+import {
+  townStayPlanningReviewedAt, townStayUpdatedSlugs, townBookingJourneys, townResortJourneys,
+  canmoreStayExamples, canmoreAreaNotes, nearbyHamletNotes, townStayPlanningSources,
+  canmoreStayPriorities, canmoreStaySeasons, canmoreStayTransport, buildCanmoreStayPlan,
+} from '../../data/townStayPlanning';
 
 export function getStaticPaths() { return towns.map(town => ({ params: { slug: town.slug }, props: { town } })); }
 const { town } = Astro.props;
-const stays = town.hotelSlugs.map((slug: string) => hotels.find(hotel => hotel.slug === slug)).filter(Boolean);
+const stays = town.hotelSlugs.map((slug: string) => hotels.find(hotel => hotel.slug === slug)).filter((hotel: any) => hotel?.sourceStatus === 'reviewed');
 const bookingUrl = `https://www.expedia.ca/Hotel-Search?destination=${encodeURIComponent(town.hotelArea === 'Downtown Banff' ? 'Banff, Alberta' : town.hotelArea)}&camref=1101l3MtWX`;
+const bookingJourney = townBookingJourneys[town.slug];
+const resortJourney = townResortJourneys[town.slug];
+const supportsBanffSkiPlanner = ['banff', 'canmore', 'lake-louise'].includes(town.slug);
+const stayUpdated = townStayUpdatedSlugs.includes(town.slug) ? townStayPlanningReviewedAt : undefined;
+const defaultCanmorePlan = buildCanmoreStayPlan();
+const canmoreExamples = town.slug === 'canmore' ? canmoreStayExamples.map(example => {
+  const hotel = hotels.find(hotel => hotel.slug === example.slug);
+  if (!hotel || hotel.sourceStatus !== 'reviewed') throw new Error(`Canmore example needs selected-fact source review: ${example.slug}`);
+  return { ...example, hotel };
+}) : [];
 ---
 
-<BaseLayout title={`${town.name} Travel Guide: Winter Days, Transport & Where to Stay`} description={town.description} image={`https://banffbound.com${town.image}`} canonicalUrl={`https://banffbound.com/towns/${town.slug}/`} lastUpdated="2026-10-28">
+<BaseLayout title={`${town.name} Travel Guide: Winter Days, Transport & Where to Stay`} description={town.description} image={`https://banffbound.com${town.image}`} canonicalUrl={`https://banffbound.com/towns/${town.slug}/`} lastUpdated={stayUpdated || '2026-10-28'}>
   <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': [
     { '@type': 'TouristDestination', name: town.name, description: town.description, url: `https://banffbound.com/towns/${town.slug}/`, touristType: town.bestFor, image: `https://banffbound.com${town.image}` },
     { '@type': 'FAQPage', mainEntity: town.faqs.map((faq: { question: string; answer: string }) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
@@ -18,23 +33,92 @@ const bookingUrl = `https://www.expedia.ca/Hotel-Search?destination=${encodeURIC
   <div class="container"><Breadcrumbs items={[{ label: 'Towns & local areas', href: '/towns/' }, { label: town.name }]} /></div>
   <section class="guide-hero"><div class="container hero-grid"><div><span class="eyebrow">{town.region}</span><h1>{town.name}</h1><p class="lead">{town.bestFor}.</p><p>{town.intro}</p><div class="hero-links"><a class="btn" href="#winter-day">Plan a winter day &darr;</a><a class="btn btn-outline" href="#where-to-stay">Where to stay</a></div></div><img src={town.image} alt={`Trip inspiration for ${town.name}`} width="800" height="600" loading="eager" fetchpriority="high" /></div></section>
   <div class="container guide-layout">
-    <aside class="guide-nav"><span class="eyebrow">Your local guide</span><nav aria-label={`${town.name} guide sections`}><a href="#where-to-stay">Choose your base</a><a href="#getting-around">Getting around</a><a href="#winter-day">Your winter day</a><a href="#seasonal-limits">Winter limits</a><a href="#other-seasons">Other seasons</a><a href="#questions">Common questions</a><a href="#official-sources">Official sources</a></nav><span class="checked">Researched 28 October 2026</span></aside>
+    <aside class="guide-nav"><span class="eyebrow">Your local guide</span><nav aria-label={`${town.name} guide sections`}><a href="#where-to-stay">Choose your base</a>{canmoreExamples.length > 0 && <a href="#canmore-stay-comparison">Canmore area &amp; room finder</a>}<a href="#getting-around">Getting around</a><a href="#winter-day">Your winter day</a><a href="#seasonal-limits">Winter limits</a><a href="#other-seasons">Other seasons</a><a href="#questions">Common questions</a><a href="#official-sources">Official sources</a></nav><span class="checked">Guide researched 28 October 2026.{stayUpdated && <> Stay/transport journey updated <time datetime={stayUpdated}>29 October 2026</time>.</>}</span></aside>
     <div class="guide-content">
       <section id="where-to-stay"><span class="eyebrow">The right address</span><h2>Where to base yourself</h2><p>{town.stay}</p>
         {stays.length > 0 && <div class="stay-links">{stays.map((hotel: any) => <a href={`/hotel-directory/${hotel.slug}`}><span>Explore a stay</span><strong>{hotel.name} &rarr;</strong></a>)}</div>}
+        {bookingJourney && <div class="booking-journey"><h3>Turn the base into a room shortlist</h3><p>{bookingJourney.text}</p><a class="text-link" href={bookingJourney.href} data-town-booking-comparison>{bookingJourney.label} &rarr;</a></div>}
         <div class="booking-box"><p>Compare available rooms for your dates. Check the exact location, room facilities, taxes and cancellation terms before reserving.</p><a href={bookingUrl} target="_blank" rel="noopener sponsored" class="text-link">Search {town.name} stays on Expedia &rarr;</a><small>Affiliate link: BanffBound may earn a commission if you book.</small></div>
       </section>
-      <section id="getting-around"><span class="eyebrow">Make the connections work</span><h2>Getting there &amp; getting around</h2><p>{town.transport}</p><p>For a ski day, build your travel around the booked lesson meeting time and the last return. Our <a href="/ski-day-planner">ski day planner</a> helps organise the pieces; the operator’s current timetable confirms the departure.</p></section>
+      {canmoreExamples.length > 0 && <section id="canmore-stay-comparison" aria-labelledby="canmore-stay-heading">
+        <span class="eyebrow">The address changes the stay</span><h2 id="canmore-stay-heading">Find your Canmore area and room fit</h2>
+        <p>Town dinners, a kitchen for the week and a road base lead to different choices. These six examples use selected facts from reviewed property profiles. Compare the category and journey before opening a quote.</p>
+        <div class="canmore-area-notes">{canmoreAreaNotes.map(area => <div><h3>{area.name}</h3><p>{area.text}</p></div>)}</div>
+        <form id="canmore-stay-form" class="canmore-stay-form" hidden aria-describedby="canmore-filter-purpose">
+          <div><label for="canmore-priority">Your room and base priority</label><select id="canmore-priority" name="priority">{canmoreStayPriorities.map(option => <option value={option.value}>{option.label}</option>)}</select></div>
+          <div><label for="canmore-season">Trip season</label><select id="canmore-season" name="season">{canmoreStaySeasons.map(option => <option value={option.value}>{option.label}</option>)}</select></div>
+          <div><label for="canmore-transport">Getting around</label><select id="canmore-transport" name="transport">{canmoreStayTransport.map(option => <option value={option.value}>{option.label}</option>)}</select></div>
+          <button type="reset">Reset comparison</button>
+        </form>
+        <p id="canmore-filter-purpose" class="section-note">Priority narrows the room examples. Season and transport change the journey checklist; they do not confirm room availability or a suitable connection.</p>
+        <noscript><p>All six room examples and the winter journey checklist are shown. Open each property profile for its sources; no filter is required.</p></noscript>
+        <p id="canmore-stay-count" class="canmore-stay-count" role="status" aria-live="polite" aria-atomic="true">6 room-category examples · journey checklist below</p>
+        <div id="canmore-stay-notes" class="canmore-journey-notes">{defaultCanmorePlan.notes.map(note => <p>{note}</p>)}</div>
+        <div class="canmore-example-grid">{canmoreExamples.map(example => <article class="canmore-stay-example" data-canmore-stay-id={example.slug} aria-labelledby={`canmore-${example.slug}`}>
+          <span class="eyebrow">{example.area}</span><h3 id={`canmore-${example.slug}`}>{example.hotel.name}</h3><p class="canmore-fit">{example.fit}</p>
+          <p><strong>The room:</strong> {example.room}</p><p><strong>The tradeoff:</strong> {example.tradeoff}</p><p><strong>The journey:</strong> {example.journey}</p>
+          <p class="example-source">Selected property facts checked <time datetime={example.hotel.checkedOn}>{example.hotel.checkedOn}</time>. The profile has the source scope and current facility notes.</p>
+          <a class="text-link" href={`/hotel-directory/${example.slug}/`} data-canmore-profile>Read {example.hotel.name} room and source notes &rarr;</a>
+        </article>)}</div>
+        <aside class="hamlet-notes" id="nearby-hamlets"><h3>Nearby hamlets are separate bases</h3>{nearbyHamletNotes.map(hamlet => <div><h4>{hamlet.name}</h4><p>{hamlet.text}</p></div>)}<p data-source-scope="location-only"><a href="/hotel-directory/banff-boundary-lodge/">Read Boundary’s location-only record &rarr;</a> Its unit facilities are not included in the room matches above.</p></aside>
+        <p class="section-note">Area, transport and comparison logic checked <time datetime={townStayPlanningReviewedAt}>29 October 2026</time>. The individual operator-fact review dates remain on each example.</p>
+        <details class="canmore-comparison-sources"><summary>Area and transport sources</summary><ul class="source-list">{townStayPlanningSources.map(source => <li><a href={source.href} target="_blank" rel="noopener">{source.label} &nearr;</a></li>)}</ul></details>
+        <a class="text-link" href="/hotel-directory/?area=Canmore&amp;source=reviewed">Explore more selected-fact Canmore profiles &rarr;</a>
+      </section>}
+      <section id="getting-around"><span class="eyebrow">Make the connections work</span><h2>Getting there &amp; getting around</h2><p>{town.transport}</p>
+        {resortJourney ? <div class="resort-journey"><h3>Plan the actual {resortJourney.name} day</h3><p>{resortJourney.text}</p><div class="related-links"><a href={resortJourney.lessons} target="_blank" rel="noopener" data-town-resort-lessons>{resortJourney.name} official lessons &nearr;</a><a href={resortJourney.arrival} target="_blank" rel="noopener" data-town-resort-arrival>{resortJourney.name} arrival and transport &nearr;</a></div></div>
+          : supportsBanffSkiPlanner ? <p>For a ski day from Banff, Canmore or Lake Louise, build around the booked lesson meeting time and last return. Our <a href="/ski-day-planner">Banff three-resort ski day planner</a> helps organise those bases; the operator’s current timetable confirms the departure.</p>
+          : <p>For a ski outing from this base, confirm the complete property-to-resort journey, lesson meeting point and final return directly. The Banff three-resort planner does not establish a connection from Field or Emerald Lake.</p>}
+      </section>
       <section id="winter-day"><span class="eyebrow">One good day</span><h2>A winter day in {town.name}</h2><p class="section-note">A flexible planning idea, subject to weather, access and bookings. Choose one main outing and keep a warm alternative.</p><ol class="day-plan">{town.winter.map((step: { title: string; text: string }, i: number) => <li><span class="step-number">0{i + 1}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol><a class="text-link" href="/winter">Explore more winter activities &rarr;</a></section>
       <section id="seasonal-limits" class="winter-note"><h2>What changes in winter</h2><p>{town.avoid}</p><p>Check conditions on the day. A summer trail description, old bus timetable or another visitor’s tracks do not confirm today’s access or safety.</p></section>
       <section id="other-seasons"><h2>Visiting outside winter?</h2><p>{town.otherSeasons}</p></section>
       <section id="questions"><h2>{town.name}: common questions</h2>{town.faqs.map((faq: { question: string; answer: string }) => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
-      <section id="official-sources"><span class="eyebrow">Check before you go</span><h2>Official local information</h2><p>Researched 28 October 2026. These sources provide the current operating details; this guide is not a live conditions report.</p><ul class="source-list">{town.sources.map((source: { label: string; href: string }) => <li><a href={source.href} target="_blank" rel="noopener">{source.label} &nearr;</a></li>)}</ul></section>
-      <section class="keep-exploring"><h2>Keep planning</h2><div class="related-links">{town.related.map((item: { label: string; href: string }) => <a href={item.href}>{item.label} &rarr;</a>)}</div><div class="related-links"><a href="/towns/">Compare all six bases &rarr;</a><a href="/winter-stays">Winter stays finder &rarr;</a><a href="/learn-to-ski">Plan your first lesson &rarr;</a></div></section>
+      <section id="official-sources"><span class="eyebrow">Check before you go</span><h2>Official local information</h2><p>Guide researched 28 October 2026.{stayUpdated && <> Stay/transport journey updated <time datetime={stayUpdated}>29 October 2026</time>; earlier operator-fact review dates are retained.</>} These sources provide current operating details; this guide is not a live conditions report.</p><ul class="source-list">{town.sources.map((source: { label: string; href: string }) => <li><a href={source.href} target="_blank" rel="noopener">{source.label} &nearr;</a></li>)}</ul></section>
+      <section class="keep-exploring"><h2>Keep planning</h2><div class="related-links">{town.related.map((item: { label: string; href: string }) => <a href={item.href}>{item.label} &rarr;</a>)}</div><div class="related-links"><a href="/towns/">Compare all six bases &rarr;</a><a href="/winter-stays">Winter stays finder &rarr;</a>{supportsBanffSkiPlanner && <a href="/learn-to-ski">Plan a first lesson at a Banff resort &rarr;</a>}{resortJourney && <a href={resortJourney.lessons} target="_blank" rel="noopener">Plan a {resortJourney.name} lesson &nearr;</a>}</div></section>
     </div>
   </div>
 </BaseLayout>
 
+<script>
+  import { buildCanmoreStayPlan, normaliseCanmoreStayFilters } from '../../data/townStayPlanning';
+  function initCanmoreStayComparison() {
+    const form = document.getElementById('canmore-stay-form') as HTMLFormElement | null;
+    const priority = document.getElementById('canmore-priority') as HTMLSelectElement | null;
+    const season = document.getElementById('canmore-season') as HTMLSelectElement | null;
+    const transport = document.getElementById('canmore-transport') as HTMLSelectElement | null;
+    const count = document.getElementById('canmore-stay-count');
+    const notes = document.getElementById('canmore-stay-notes');
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-canmore-stay-id]')];
+    if (!form || !priority || !season || !transport || !count || !notes || !cards.length || form.dataset.ready) return;
+    const fields = { priority, season, transport };
+    const keys = { priority: 'town_priority', season: 'town_season', transport: 'town_transport' };
+    const params = new URL(window.location.href).searchParams;
+    const restored = normaliseCanmoreStayFilters(Object.fromEntries(Object.entries(keys).map(([key, query]) => { const values = params.getAll(query); return [key, values.length === 1 ? values[0] : undefined]; })));
+    for (const [key, field] of Object.entries(fields)) field.value = restored[key as keyof typeof restored];
+    const update = (writeUrl = false) => {
+      const result = buildCanmoreStayPlan({ priority: priority.value, season: season.value, transport: transport.value });
+      for (const [key, field] of Object.entries(fields)) field.value = result.filters[key as keyof typeof result.filters];
+      const ids = new Set(result.selectedIds);
+      for (const card of cards) card.hidden = !ids.has(card.dataset.canmoreStayId as typeof result.selectedIds[number]);
+      count.textContent = `${result.selectedIds.length} ${result.selectedIds.length === 1 ? 'room-category example' : 'room-category examples'} · journey checklist updated below`;
+      notes.replaceChildren(...result.notes.map(text => { const paragraph = document.createElement('p'); paragraph.textContent = text; return paragraph; }));
+      if (writeUrl) {
+        const url = new URL(window.location.href);
+        for (const [key, query] of Object.entries(keys)) { const value = result.filters[key as keyof typeof result.filters]; const isDefault = (key === 'priority' && value === 'all') || (key === 'season' && value === 'winter') || (key === 'transport' && value === 'unsure'); isDefault ? url.searchParams.delete(query) : url.searchParams.set(query, value); }
+        try { window.history.replaceState({}, '', url); } catch { /* The comparison remains usable if URL changes are unavailable. */ }
+      }
+    };
+    form.addEventListener('submit', event => event.preventDefault());
+    form.addEventListener('change', () => update(true));
+    form.addEventListener('reset', event => { event.preventDefault(); priority.value = 'all'; season.value = 'winter'; transport.value = 'unsure'; update(true); });
+    update(); form.dataset.ready = 'true'; form.hidden = false;
+  }
+  initCanmoreStayComparison();
+  document.addEventListener('astro:page-load', initCanmoreStayComparison);
+</script>
+
 <style>
+  [hidden]{display:none!important}.booking-journey{border:1px solid #dce2d8;border-left:4px solid var(--color-primary);border-radius:8px;padding:1.25rem;margin:1.3rem 0}.booking-journey h3,.resort-journey h3{font-size:1.2rem;margin-bottom:.7rem}.canmore-area-notes{display:grid;gap:1rem;margin:1.3rem 0}.canmore-area-notes>div{border-left:3px solid #d6dfd1;padding-left:1rem}.canmore-area-notes h3{font-size:1.1rem;margin-bottom:.4rem}.canmore-area-notes p{font-size:.9rem;margin-bottom:0}.canmore-stay-form{display:flex;flex-wrap:wrap;gap:1rem;background:var(--color-bg-alt);padding:1.2rem;border-radius:10px;margin:1.5rem 0 1rem}.canmore-stay-form>div{flex:1 1 180px}.canmore-stay-form label{display:block;font-size:.84rem;font-weight:700;margin-bottom:.4rem}.canmore-stay-form select,.canmore-stay-form button{font:inherit;min-height:46px;border:1px solid #647b60;border-radius:6px;padding:.6rem .75rem;background:white;color:var(--color-text);width:100%}.canmore-stay-form button{background:var(--color-primary);color:white;font-weight:700;cursor:pointer}.canmore-stay-form :focus-visible{outline:3px solid #a77621;outline-offset:3px}.guide-content .canmore-stay-count{font-weight:700;color:var(--color-primary)}.canmore-journey-notes{background:#f0f5ec;border-radius:10px;padding:1.2rem;margin:1rem 0 1.5rem}.canmore-journey-notes p{font-size:.9rem;line-height:1.7}.canmore-journey-notes p:last-child{margin-bottom:0}.canmore-example-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.canmore-stay-example{border:1px solid #dce2d8;border-radius:10px;padding:1.25rem;min-width:0}.canmore-stay-example h3{font-size:1.35rem;line-height:1.3;margin-bottom:.7rem}.canmore-stay-example p{font-size:.9rem;line-height:1.7}.guide-content .canmore-fit{font-weight:700;color:var(--color-primary)}.canmore-stay-example .text-link{font-size:.86rem;overflow-wrap:anywhere}.canmore-stay-example .example-source{font-size:.76rem}.hamlet-notes{padding:1.3rem;margin:1.5rem 0;background:var(--color-bg-alt);border-radius:10px}.hamlet-notes h3{font-size:1.3rem;margin-bottom:1rem}.hamlet-notes h4{font-size:1rem;margin:.8rem 0 .4rem}.hamlet-notes p{font-size:.9rem}.canmore-comparison-sources{margin-bottom:1rem}.resort-journey{background:var(--color-bg-alt);padding:1.25rem;border-radius:10px;margin-top:1.3rem}@media(max-width:1000px){.canmore-example-grid{grid-template-columns:1fr}}@media(max-width:700px){.canmore-stay-form{padding:1rem}.canmore-stay-form>div{flex-basis:100%}}
   .eyebrow{display:block;text-transform:uppercase;letter-spacing:.13em;font-size:.7rem;font-weight:700;color:var(--color-primary);margin-bottom:.7rem}.guide-hero{background:var(--color-bg-alt);padding:3.5rem 0}.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}.guide-hero h1{font-size:clamp(2.8rem,6vw,4.5rem);margin-bottom:1rem}.guide-hero .lead{font-size:1.2rem;color:var(--color-primary);font-weight:500}.guide-hero p{color:var(--color-text-light);margin-bottom:1.2rem}.guide-hero img{height:370px;width:100%;object-fit:cover;border-radius:var(--radius)}.hero-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}.guide-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:4rem;padding-top:3rem;padding-bottom:5rem}.guide-nav{position:sticky;top:120px;align-self:start}.guide-nav nav{display:flex;flex-direction:column;gap:.7rem;font-size:.9rem}.guide-nav a{color:var(--color-primary)}.guide-nav a:hover{text-decoration:underline}.checked{display:block;font-size:.75rem;color:var(--color-text-light);margin-top:1.5rem}.guide-content section{margin-bottom:3.5rem;scroll-margin-top:125px}.guide-content h2{margin-bottom:1rem}.guide-content p{margin-bottom:1rem;color:var(--color-text-light)}.guide-content p a,.text-link{color:var(--color-primary);text-decoration:underline;text-underline-offset:3px;font-weight:600}.stay-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem;margin:1.5rem 0}.stay-links a{border:1px solid #dce2d8;border-radius:8px;padding:1rem;background:white}.stay-links span{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-light);margin-bottom:.3rem}.stay-links strong{font-size:.9rem;color:var(--color-primary)}.booking-box{background:var(--color-bg-alt);padding:1.25rem;border-radius:var(--radius)}.booking-box p{font-size:.9rem}.booking-box small{display:block;color:var(--color-text-light);font-size:.75rem;margin-top:.7rem}.day-plan{list-style:none;margin:1.5rem 0}.day-plan li{display:flex;gap:1.25rem;border-top:1px solid #dce2d8;padding:1.5rem 0}.step-number{font-family:var(--font-heading);font-size:1.7rem;color:var(--color-primary)}.day-plan h3{font-size:1.2rem;margin-bottom:.75rem}.day-plan p{margin-bottom:0}.section-note{font-size:.9rem}.winter-note{background:var(--color-bg-alt);border-left:4px solid var(--color-accent);padding:1.5rem;border-radius:var(--radius)}.winter-note h2{font-size:1.7rem}details{padding:1.1rem 0;border-bottom:1px solid #dce2d8}summary{font-weight:600;cursor:pointer}details p{margin-top:.75rem}.source-list{padding-left:1.2rem}.source-list li{margin:.6rem 0}.source-list a{color:var(--color-primary);text-decoration:underline;text-underline-offset:3px;font-size:.9rem}.related-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:.75rem}.related-links a{border:1px solid #dce2d8;padding:.65rem 1rem;border-radius:8px;color:var(--color-primary);font-size:.85rem;background:white}@media(max-width:900px){.guide-layout{grid-template-columns:180px minmax(0,1fr);gap:2rem}.hero-grid{gap:2rem}}@media(max-width:700px){.hero-grid,.guide-layout{grid-template-columns:1fr}.guide-nav{position:static;border-bottom:1px solid #dce2d8;padding-bottom:1.5rem}.guide-nav nav{flex-direction:row;flex-wrap:wrap;gap:.65rem 1.25rem}.guide-hero img{height:230px}.guide-layout{gap:2rem}.guide-hero{padding:2.5rem 0}.hero-links .btn{font-size:.85rem}}
 </style>
