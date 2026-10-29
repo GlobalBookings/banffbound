@@ -8,6 +8,9 @@ import { drinkOfferGuideMetadata } from './drinkOfferGuideOverrides';
 import { parkwayGuideMetadata } from './parkwayGuideOverrides';
 import { minnewankaGuideMetadata } from './minnewankaGuideOverrides';
 import { gondolaGuideMetadata } from './gondolaGuideOverrides';
+import { springSkiGuideMetadata } from './springSkiGuideOverrides';
+import { peytoGuideMetadata } from './peytoGuideOverrides';
+import { scenicFlightGuideMetadata } from './scenicFlightGuideOverrides';
 import { cyclingGuideMetadata } from './cyclingGuideOverrides';
 import { lakeJourneyMetadata } from './lakeJourneyOverrides';
 import { visitorDestinationMetadata } from './visitorDestinationOverrides';
@@ -35,7 +38,7 @@ export interface BlogPost {
   imageNote?: string;
 }
 
-const newlyReviewedMetadata: Record<string, Partial<BlogPost>> = { ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata };
+const newlyReviewedMetadata: Record<string, Partial<BlogPost>> = { ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata, ...springSkiGuideMetadata, ...peytoGuideMetadata, ...scenicFlightGuideMetadata };
 
 const originalBlogPosts: BlogPost[] = [
   {

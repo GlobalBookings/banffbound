@@ -1,0 +1,117 @@
+{
+  "checkedAtUTC": "2026-10-29T23:12:35.074955+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/12",
+  "codeCommit": "728e147e2e13ea8256b221d4c287b9f9b306a5cd",
+  "reviewedHead": "07a87e553844d26eb40f75b94bc9dad1e6497c05",
+  "mergedRevision": "d3a04b2cf4e4bd8963e5fd07420022decba42e09",
+  "mergedAtUTC": "2026-10-29T23:05:43Z",
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T23:06:56.579Z",
+    "sourceRevision": "d3a04b2cf4e4bd8963e5fd07420022decba42e09",
+    "sourceFingerprint": "ba7ada9168d76cc89bee795e6194087f9aa25a95cb4dbc7a41524bac39789e5e"
+  },
+  "ci": {
+    "pullRequest": {
+      "run": 40970408359,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40970408359",
+      "revision": "07a87e553844d26eb40f75b94bc9dad1e6497c05",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123785448666,
+      "completedAt": "2026-10-29T23:04:29Z"
+    },
+    "main": {
+      "run": 40970710452,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40970710452",
+      "revision": "d3a04b2cf4e4bd8963e5fd07420022decba42e09",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123786441542,
+      "completedAt": "2026-10-29T23:06:47Z"
+    }
+  },
+  "cleanVerification": "research/winter-journey-clean-verification-2026-10-29.json",
+  "productionVerification": {
+    "report": "research/winter-journey-production-verification-2026-10-29.json",
+    "passed": true,
+    "htmlRoutes": 228,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "stableExactRevisionAndFingerprint": true
+  },
+  "bareUrlVerification": {
+    "report": "research/winter-journey-bare-url-verification-2026-10-29.json",
+    "passed": 7
+  },
+  "redirectVerification": {
+    "report": "research/live-http-redirect-verification-2026-10-29.json",
+    "mappings": 40,
+    "checksPassed": 100
+  },
+  "browserProduction": {
+    "url": "https://banffbound.com/icefields-parkway-planner/",
+    "defaultCandidates": 4,
+    "defaultSelections": 0,
+    "visibleDefaultIds": [
+      "lake-louise",
+      "hector-viewpoint",
+      "crowfoot",
+      "bow-lake",
+      "tangle-falls",
+      "jasper"
+    ],
+    "SpaceOnBowLakeRetainsNativeFocus": true,
+    "visitTypePreservesBowSelection": true,
+    "reverseMixedShortlist": [
+      "peyto",
+      "bow-lake"
+    ],
+    "BowNorthboundMapKm": 39,
+    "BowSouthboundMapKm": 194,
+    "summerParkerSelectionPrunedInWinter": true,
+    "resetCandidates": 4,
+    "resetSelections": 0,
+    "oldTimeSummaryAbsent": true,
+    "mobileViewportAndDocumentWidth": 390,
+    "viewportResetReloadVerified": {
+      "width": 1280,
+      "height": 720
+    },
+    "optionalProviderScriptAndFrameElements": 0,
+    "screenshot": "Local ephemeral /tmp/banffbound-parkway-planner-live-2026-10-29.png",
+    "scopeNote": "Actual DOM/render, keyboard and selection behavior. Clipboard paths verified with the actual-client VM; no user clipboard read or changed. No merchant referral clicked to manufacture a conversion."
+  },
+  "contentScope": {
+    "canonicalBodies": 295,
+    "fullReviews": 67,
+    "newFullReviews": 5,
+    "partialOpeningRepairs": 8,
+    "other290BodyBytesPreserved": true,
+    "all335PublicationDatesPreserved": true,
+    "allCanonicalFactsReviewed": false
+  },
+  "preserved": {
+    "hotelIdentitiesAndProviderUrls": 95,
+    "hostAliasMappings": 40,
+    "affiliateAndMeasurementIdentifiers": true,
+    "sharedTrailAndLakeRecords": true,
+    "unrelatedUserFiles": true
+  },
+  "commercialBoundary": {
+    "adCampaignsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecificationOrEnvironmentMutated": false,
+    "salesProfitOrRankUpliftClaimed": false
+  },
+  "nextPreparedGuides": [
+    "banff-spring-skiing",
+    "peyto-lake-guide",
+    "banff-helicopter-tours",
+    "kananaskis-heli-tours"
+  ],
+  "nextPreparedGuidesRegisteredOrPublished": false,
+  "goalStatus": "active"
+}

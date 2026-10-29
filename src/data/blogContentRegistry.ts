@@ -8,6 +8,9 @@ import { drinkOfferGuideOverrides } from './drinkOfferGuideOverrides';
 import { parkwayGuideOverrides } from './parkwayGuideOverrides';
 import { minnewankaGuideOverrides } from './minnewankaGuideOverrides';
 import { gondolaGuideOverrides } from './gondolaGuideOverrides';
+import { springSkiGuideOverrides } from './springSkiGuideOverrides';
+import { peytoGuideOverrides } from './peytoGuideOverrides';
+import { scenicFlightGuideOverrides } from './scenicFlightGuideOverrides';
 // Canonical body precedence shared by the page and content-health checks.
 import { cyclingGuideOverrides } from './cyclingGuideOverrides';
 import { lakeJourneyOverrides } from './lakeJourneyOverrides';
@@ -24,7 +27,7 @@ import { winterTripOverrides } from './winterTripOverrides';
 import { winterActivityOverrides } from './winterActivityOverrides';
 import { winterGuideOverrides } from './winterGuideOverrides';
 
-export const reviewedBlogBodies: Record<string, string> = { ...winterGuideOverrides, ...winterActivityOverrides, ...winterTripOverrides, ...winterResortOverrides, ...winterSeasonOverrides, ...viewGuideOverride, ...winterWarmUpOverrides, ...winterWellnessLegacyOverrides, ...winterLibraryOverrides, ...visitorDestinationOverrides, ...lakeJourneyOverrides, ...cyclingGuideOverrides, ...bowLakeGuideOverrides, ...jasperGuideOverrides, ...diningGuideOverrides, ...cabinGuideOverrides, ...nightlifeGuideOverrides, ...liveMusicGuideOverrides, ...drinkOfferGuideOverrides, ...parkwayGuideOverrides, ...minnewankaGuideOverrides, ...gondolaGuideOverrides };
+export const reviewedBlogBodies: Record<string, string> = { ...winterGuideOverrides, ...winterActivityOverrides, ...winterTripOverrides, ...winterResortOverrides, ...winterSeasonOverrides, ...viewGuideOverride, ...winterWarmUpOverrides, ...winterWellnessLegacyOverrides, ...winterLibraryOverrides, ...visitorDestinationOverrides, ...lakeJourneyOverrides, ...cyclingGuideOverrides, ...bowLakeGuideOverrides, ...jasperGuideOverrides, ...diningGuideOverrides, ...cabinGuideOverrides, ...nightlifeGuideOverrides, ...liveMusicGuideOverrides, ...drinkOfferGuideOverrides, ...parkwayGuideOverrides, ...minnewankaGuideOverrides, ...gondolaGuideOverrides, ...springSkiGuideOverrides, ...peytoGuideOverrides, ...scenicFlightGuideOverrides };
 export const resolvedBlogContent: Record<string, string> = { ...blogContentMain, ...blogContent3, ...reviewedBlogBodies };
 
 export function resolveBlogContent(slug: string): string {
@@ -32,4 +35,4 @@ export function resolveBlogContent(slug: string): string {
 }
 
 // These authored comparisons already contain relevant native booking routes.
-export const authoredBookingGuideSlugs = [...Object.keys(bowLakeGuideOverrides), ...Object.keys(jasperGuideOverrides), ...Object.keys(diningGuideOverrides), ...Object.keys(cabinGuideOverrides), ...Object.keys(nightlifeGuideOverrides), ...Object.keys(liveMusicGuideOverrides), ...Object.keys(drinkOfferGuideOverrides), ...Object.keys(parkwayGuideOverrides), ...Object.keys(minnewankaGuideOverrides), ...Object.keys(gondolaGuideOverrides)];
+export const authoredBookingGuideSlugs = [...Object.keys(bowLakeGuideOverrides), ...Object.keys(jasperGuideOverrides), ...Object.keys(diningGuideOverrides), ...Object.keys(cabinGuideOverrides), ...Object.keys(nightlifeGuideOverrides), ...Object.keys(liveMusicGuideOverrides), ...Object.keys(drinkOfferGuideOverrides), ...Object.keys(parkwayGuideOverrides), ...Object.keys(minnewankaGuideOverrides), ...Object.keys(gondolaGuideOverrides), ...Object.keys(springSkiGuideOverrides), ...Object.keys(peytoGuideOverrides), ...Object.keys(scenicFlightGuideOverrides)];

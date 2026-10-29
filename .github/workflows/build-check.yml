@@ -60,6 +60,9 @@ jobs:
           node scripts/check-minnewanka-guide.mjs
           node scripts/check-gondola-guides.mjs
           node scripts/check-parkway-planning.mjs
+          node scripts/check-spring-ski-guide.mjs
+          node scripts/check-peyto-guide.mjs
+          node scripts/check-scenic-flight-guides.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs

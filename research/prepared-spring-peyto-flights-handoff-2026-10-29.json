@@ -1,0 +1,67 @@
+{
+  "checkedAtUTC": "2026-10-29T23:12:35.076526+00:00",
+  "status": "Four source-reviewed replacements prepared and focused checks passed; not registered, committed or published in PR12.",
+  "currentPublishedFullReviews": 67,
+  "nextBodyModules": [
+    "src/data/springSkiGuideOverrides.ts",
+    "src/data/peytoGuideOverrides.ts",
+    "src/data/scenicFlightGuideOverrides.ts"
+  ],
+  "nextMetadataExports": [
+    "springSkiGuideMetadata",
+    "peytoGuideMetadata",
+    "scenicFlightGuideMetadata"
+  ],
+  "nextBodyExports": [
+    "springSkiGuideOverrides",
+    "peytoGuideOverrides",
+    "scenicFlightGuideOverrides"
+  ],
+  "nextFaqExports": [
+    "springSkiGuideFaqs",
+    "peytoGuideFaqs",
+    "scenicFlightGuideFaqs"
+  ],
+  "faqShapes": [
+    "single five-entry array",
+    "single five-entry array",
+    "keyed by two slugs, five each"
+  ],
+  "slugs": [
+    "banff-spring-skiing",
+    "peyto-lake-guide",
+    "banff-helicopter-tours",
+    "kananaskis-heli-tours"
+  ],
+  "originalPublicationDates": [
+    "2025-09-30",
+    "2026-02-11",
+    "2025-10-12",
+    "2026-03-03"
+  ],
+  "checks": [
+    "scripts/check-spring-ski-guide.mjs",
+    "scripts/check-peyto-guide.mjs",
+    "scripts/check-scenic-flight-guides.mjs"
+  ],
+  "sourceNotes": [
+    "research/spring-ski-guide-sources-2026-10-29.md",
+    "research/peyto-guide-sources-2026-10-29.md",
+    "research/scenic-flight-guide-sources-2026-10-29.md"
+  ],
+  "expectedAfterIntegration": {
+    "fullReviews": 71,
+    "partialOpeningRepairs": 8,
+    "authoredBookingGuideSlugs": 19
+  },
+  "remainingIntegration": "Read actual current exports and source evidence; register bodies/metadata/curated flags/sitemap dates/llms, extend release verification, build clean archive, release and independently verify. Existing heli-ski logistics comparison and source-reviewed restaurant projection remain separate work.",
+  "goalStatus": "active",
+  "integrationUpdate": {
+    "checkedAtUTC": "2026-10-29T23:20:29.028130+00:00",
+    "state": "Registered locally for next release; deployment still unverified",
+    "fullReviews": 71,
+    "authoredBookingGuides": 19,
+    "bodyComparison": "research/spring-peyto-flight-body-comparison-2026-10-29.json",
+    "remaining": "Clean committed-source build, rendered-page QA, CI and production release proof."
+  }
+}
