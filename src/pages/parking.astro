@@ -2,281 +2,71 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CarRentalCTA from '../components/CarRentalCTA.astro';
-import { parkingLots } from '../data/parkingData';
-
-const lotsJSON = JSON.stringify(parkingLots);
+import { parkingLots, parkingReviewedAt } from '../data/parkingData';
+import { buildParkingPlan, parkingFaqs } from '../data/parkingPlanning';
+const fallback = buildParkingPlan();
 ---
-
-<BaseLayout title="Banff Parking Predictor — When Do Lots Fill Up?" description="Know exactly when parking lots fill at Lake Louise, Johnston Canyon, Moraine Lake, and more. Data-driven fill times by season so you never get turned away.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: parkingLots.filter(l => l.capacity > 0).map(l => ({
-      '@type': 'Question',
-      name: `When does ${l.name} parking fill up?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `In peak summer (July-August weekends), ${l.name} fills by ${l.fillTimes.peakSummer}. On summer weekdays it fills by ${l.fillTimes.summer}. In shoulder season (May/October) it fills by ${l.fillTimes.shoulder}. In winter: ${l.fillTimes.winter}. Capacity: ${l.capacity} spaces. ${l.tips}`,
-      },
-    })),
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Parking Predictor' }]} />
-  </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="Banff parking lot with mountain views" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Local Data</span>
-      <h1>Parking Predictor</h1>
-      <p>Know exactly when lots fill up across Banff National Park. Plan your arrival time so you never get turned away.</p>
+<BaseLayout title="Banff Parking & Transport Planner: Lakes, Town & Trailheads" description="Plan parking and transport for 11 Banff-area destinations. Compare seasonal access, official routes, vehicle and group needs, and the full return journey." lastUpdated={parkingReviewedAt}>
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: parkingFaqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Parking & Transport Planning' }]} /></div>
+  <section class="page-hero"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="" class="page-hero-bg" loading="eager" fetchpriority="high" /><div class="page-hero-content"><span class="badge">Plan the arrival and the return</span><h1>Parking & Transport Planner</h1><p>Choose the actual destination, then work through its parking rules, seasonal services and the journey home. A departure time alone cannot tell you whether a space will be available.</p><p class="image-note">Illustrative mountain image; not a verified parking location or current condition.</p></div></section>
+  <section class="section"><div class="container parking-page">
+    <div class="planning-note"><h2>What this planner can establish</h2><p>Use it to compare practical choices: driving to Lake Louise versus a reserved shuttle, a town bus versus a resort bus, or a legal day lot versus an overnight arrangement. It supplies no measured parking occupancy, capacities, fill times or availability predictions.</p><p>Sources reviewed <time datetime={parkingReviewedAt}>{parkingReviewedAt}</time>. Current road closures, service notices, parking signs and staff directions take precedence. <a href="/conditions">Check official current reports</a>.</p></div>
+    <form id="parking-form" class="planner-controls" aria-label="Parking and transport choices" hidden>
+      <div class="choice-grid"><label>Destination<select id="parking-destination"><option value="all">Compare all destinations</option>{parkingLots.map(lot => <option value={lot.id}>{lot.name}</option>)}</select></label>
+      <label>Seasonal context<select id="parking-season"><option value="unsure">Date / season not settled</option><option value="winter">Snow season</option><option value="summer">Summer visitor season</option><option value="shoulder">Spring or autumn transition</option></select></label>
+      <label>How you plan to travel<select id="parking-travel"><option value="unsure">Compare options</option><option value="vehicle">Private / rental vehicle</option><option value="carfree">Public transit / booked transfer</option></select></label>
+      <label>Your base<select id="parking-base"><option value="banff">Banff</option><option value="canmore">Canmore</option><option value="lake-louise">Lake Louise</option><option value="other">Another starting place</option></select></label>
+      <label>Time constraints<select id="parking-timing"><option value="day">Flexible daytime outing</option><option value="early-late">Early booking or late return</option></select></label></div>
+      <fieldset><legend>Questions to add to the plan</legend><label><input type="checkbox" id="parking-mobility" /> Mobility device, step-free approach or assistance</label><label><input type="checkbox" id="parking-children" /> Children, stroller or child equipment</label><label><input type="checkbox" id="parking-large-vehicle" disabled /> RV, trailer or high vehicle (driving option)</label></fieldset>
+      <p>Selections organise planning checks. They do not establish a suitable route, an operating service or a parking space.</p><div class="planner-actions"><button type="reset" class="btn btn-outline">Reset plan</button><button type="button" class="btn btn-outline" id="parking-print">Print this view</button></div>
+    </form>
+    <p id="parking-status" role="status" aria-live="polite">All 11 destination guides are shown.</p>
+    <section class="journey-plan" aria-labelledby="parking-plan-heading"><h2 id="parking-plan-heading">{fallback.heading}</h2><ol id="parking-plan-steps">{fallback.steps.map(step => <li>{step}</li>)}</ol><div id="parking-plan-links" class="source-links">{fallback.links.map(source => <a href={source.url} target="_blank" rel="noopener">{source.label} ↗</a>)}</div></section>
+    <noscript><p>All destination plans, seasonal notes and source links are available below without JavaScript. Use the transport and return sections for your chosen place.</p></noscript>
+    <h2>Destination parking and transport guides</h2><div class="destination-grid" id="parking-destinations">
+      {parkingLots.map(lot => <article class="destination-card" id={`destination-${lot.id}`} data-destination={lot.id}><p class="place-label">{lot.location}</p><h3>{lot.name}</h3><p>{lot.summary}</p>{lot.notice && <aside class="dated-notice"><strong>Dated source check:</strong> {lot.notice}</aside>}<h4>Driving and parking</h4><p>{lot.parkingPlan}</p><h4>Seasonal decision</h4><dl><div><dt>Snow season</dt><dd>{lot.seasonAdvice.winter}</dd></div><div><dt>Summer visitor season</dt><dd>{lot.seasonAdvice.summer}</dd></div><div><dt>Spring / autumn transition</dt><dd>{lot.seasonAdvice.shoulder}</dd></div></dl><h4>Transit or transfer</h4><p>{lot.transitPlan}</p><h4>Return check</h4><p>{lot.returnPlan}</p><h4>Vehicle and group access</h4><p>{lot.vehicleNote}</p><p>{lot.accessNote}</p><h4>If the first plan does not work</h4><ul>{lot.alternatives.map(item => <li>{item}</li>)}</ul><h4>Direct sources</h4><ul>{lot.sources.map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.label} ↗</a></li>)}</ul><p class="review-date">Planning sources reviewed {parkingReviewedAt}; no occupancy report supplied.</p><p>{lot.guides.map((guide, index) => <>{index > 0 && ' · '}<a href={guide.href}>{guide.label}</a></>)}</p></article>)}
     </div>
-  </section>
-
-  <section class="section" style="padding-bottom:0;">
-    <div class="container">
-      <div class="seo-summary">
-        <h2>Banff Parking Fill Times at a Glance</h2>
-        <p>The most common question visitors ask: <strong>"What time do I need to arrive to get parking?"</strong> Here are the key numbers based on local observation data:</p>
-        <ul>
-          {parkingLots.filter(l => l.capacity > 0).map(l => (
-            <li><strong>{l.name}</strong> — fills by {l.fillTimes.peakSummer} on peak summer weekends, {l.fillTimes.summer} on summer weekdays. {l.capacity} spaces. {l.transitOption ? `Transit: ${l.transitOption}.` : ''}</li>
-          ))}
-        </ul>
-        <p><strong>Pro tip from a local:</strong> Tuesday through Thursday mornings are a different park than Saturday. Arrive before 7 AM in July/August for Lake Louise. Use Roam Transit whenever possible.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <CarRentalCTA
-      heading="Driving in for Your Trip?"
-      text="Parking is tight at the big lakes, but a car is still the best way to reach early-morning trailheads and the Icefields Parkway. If you're renting, compare Calgary Airport agencies in one search and book early to beat summer price spikes."
-    />
-  </div>
-
-  <section class="section">
-    <div class="container">
-      <div class="predictor-controls">
-        <div class="control-group">
-          <label>When are you visiting?</label>
-          <select id="season-select">
-            <option value="auto">Auto-detect (today)</option>
-            <option value="peakSummer">Peak Summer (Jul-Aug weekends)</option>
-            <option value="summer">Summer Weekdays (Jun-Sep)</option>
-            <option value="shoulder">Shoulder Season (May, Oct)</option>
-            <option value="winter">Winter (Nov-Apr)</option>
-          </select>
-        </div>
-        <div class="control-group">
-          <label>What time will you arrive?</label>
-          <input type="time" id="arrival-time" value="08:00" />
-        </div>
-        <button class="btn btn-primary" id="predict-btn">Check Availability</button>
-      </div>
-
-      <div id="results-summary" class="results-summary" style="display:none;"></div>
-
-      <div class="lots-grid">
-        {parkingLots.map(lot => (
-          <div class="lot-card" data-lot-id={lot.id}>
-            <div class="lot-header">
-              <h3>{lot.name}</h3>
-              <span class="lot-location">{lot.location}</span>
-            </div>
-            <div class="lot-status" id={`status-${lot.id}`}>
-              <div class="fill-times">
-                <div class="fill-row">
-                  <span class="fill-label">Peak Summer</span>
-                  <span class="fill-value fill-peak">{lot.fillTimes.peakSummer}</span>
-                </div>
-                <div class="fill-row">
-                  <span class="fill-label">Summer Weekday</span>
-                  <span class="fill-value">{lot.fillTimes.summer}</span>
-                </div>
-                <div class="fill-row">
-                  <span class="fill-label">Shoulder Season</span>
-                  <span class="fill-value">{lot.fillTimes.shoulder}</span>
-                </div>
-                <div class="fill-row">
-                  <span class="fill-label">Winter</span>
-                  <span class="fill-value">{lot.fillTimes.winter}</span>
-                </div>
-              </div>
-            </div>
-            <div class="lot-verdict" id={`verdict-${lot.id}`}></div>
-            <div class="lot-tips">
-              <p>{lot.tips}</p>
-            </div>
-            {lot.capacity > 0 && (
-              <div class="lot-capacity">
-                <span>🅿️ {lot.capacity} spaces</span>
-                {lot.transitOption && <span>🚌 {lot.transitOption}</span>}
-              </div>
-            )}
-            {lot.alternatives.length > 0 && (
-              <div class="lot-alternatives">
-                <strong>Alternatives:</strong>
-                <ul>
-                  {lot.alternatives.map(alt => <li>{alt}</li>)}
-                </ul>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  </div></section>
+  <section class="section" style="background:var(--color-bg-alt)"><div class="container parking-page"><h2>Make the transport choice concrete</h2><div class="next-grid"><div><h3>Lake access</h3><p><a href="/shuttle-reservations">Compare Park and Ride, Roam 8X and the Lake Connector</a>. Check the actual year and departure base before paying.</p></div><div><h3>Snow activities</h3><p><a href="/ski-day-planner">Build the resort day</a> around lessons, equipment and the resort shuttle, with <a href="/winter-stays">a base that fits</a>.</p></div><div><h3>People and return</h3><p><a href="/accessible-trails">Check the whole access chain</a> and <a href="/car-free-banff">transport connections</a>. Keep an alternative near <a href="/towns">your base</a>.</p></div></div>
+    <p>Optional affiliate car-rental search: we may earn a commission from qualifying bookings. The search does not reserve parking, confirm winter equipment or authorise a restricted road.</p><CarRentalCTA heading="Compare car rentals if driving fits your trip" text="Check the rental’s actual winter equipment, vehicle dimensions and cancellation terms, then confirm the roads and designated parking for your destinations. A rental reservation does not reserve a parking space." /></div></section>
+  <section class="section"><div class="container parking-page"><h2>Parking planning questions</h2>{parkingFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
 </BaseLayout>
-
-<script define:vars={{ lotsJSON }}>
-  const lots = JSON.parse(lotsJSON);
-
-  function getSeason() {
-    const sel = document.getElementById('season-select').value;
-    if (sel !== 'auto') return sel;
-    const m = new Date().getMonth();
-    const dow = new Date().getDay();
-    if (m >= 6 && m <= 7 && (dow === 0 || dow === 6)) return 'peakSummer';
-    if (m >= 5 && m <= 8) return 'summer';
-    if (m === 4 || m === 9) return 'shoulder';
-    return 'winter';
+<script>
+  import { buildParkingPlan } from '../data/parkingPlanning';
+  const form = document.querySelector<HTMLFormElement>('#parking-form');
+  const destination = document.querySelector<HTMLSelectElement>('#parking-destination');
+  const season = document.querySelector<HTMLSelectElement>('#parking-season');
+  const travel = document.querySelector<HTMLSelectElement>('#parking-travel');
+  const base = document.querySelector<HTMLSelectElement>('#parking-base');
+  const timing = document.querySelector<HTMLSelectElement>('#parking-timing');
+  const mobility = document.querySelector<HTMLInputElement>('#parking-mobility');
+  const children = document.querySelector<HTMLInputElement>('#parking-children');
+  const largeVehicle = document.querySelector<HTMLInputElement>('#parking-large-vehicle');
+  const heading = document.querySelector<HTMLElement>('#parking-plan-heading');
+  const steps = document.querySelector<HTMLOListElement>('#parking-plan-steps');
+  const links = document.querySelector<HTMLElement>('#parking-plan-links');
+  const status = document.querySelector<HTMLElement>('#parking-status');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-destination]'));
+  if (form && destination && season && travel && base && timing && mobility && children && largeVehicle && heading && steps && links && status) {
+    function updatePlan() {
+      largeVehicle.disabled = travel.value !== 'vehicle';
+      const plan = buildParkingPlan({ destination: destination.value, season: season.value, travel: travel.value, base: base.value, timing: timing.value, mobility: mobility.checked, children: children.checked, largeVehicle: largeVehicle.checked });
+      heading.textContent = plan.heading;
+      steps.replaceChildren(...plan.steps.map(text => { const item = document.createElement('li'); item.textContent = text; return item; }));
+      links.replaceChildren(...plan.links.map(source => { const link = document.createElement('a'); link.href = source.url; link.textContent = `${source.label} ↗`; link.target = '_blank'; link.rel = 'noopener'; return link; }));
+      const visible = new Set(plan.selectedIds);
+      cards.forEach(card => { card.hidden = !visible.has(card.dataset.destination || ''); });
+      status.textContent = plan.choices.destination === 'all' ? 'All 11 destination guides are shown. Your choices add journey checks above.' : 'One destination guide is shown below. Your choices update the journey checks above.';
+    }
+    form.addEventListener('submit', event => event.preventDefault());
+    form.addEventListener('change', updatePlan);
+    form.addEventListener('reset', event => { event.preventDefault(); destination.value = 'all'; season.value = 'unsure'; travel.value = 'unsure'; base.value = 'banff'; timing.value = 'day'; mobility.checked = children.checked = largeVehicle.checked = false; updatePlan(); });
+    document.querySelector('#parking-print')?.addEventListener('click', () => window.print());
+    form.hidden = false;
+    updatePlan();
   }
-
-  function parseTime(str) {
-    if (!str || str.includes('Rarely') || str.includes('closed') || str.includes('No private')) return null;
-    const m = str.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
-    if (!m) return null;
-    let h = parseInt(m[1]);
-    if (m[3].toUpperCase() === 'PM' && h < 12) h += 12;
-    if (m[3].toUpperCase() === 'AM' && h === 12) h = 0;
-    return h * 60 + parseInt(m[2]);
-  }
-
-  function predict() {
-    const season = getSeason();
-    const timeInput = document.getElementById('arrival-time').value;
-    const [h, m] = timeInput.split(':').map(Number);
-    const arrivalMin = h * 60 + m;
-    let available = 0, full = 0, warning = 0;
-
-    lots.forEach(lot => {
-      const fillStr = lot.fillTimes[season];
-      const fillMin = parseTime(fillStr);
-      const verdictEl = document.getElementById(`verdict-${lot.id}`);
-      const card = document.querySelector(`[data-lot-id="${lot.id}"]`);
-
-      card.classList.remove('lot-available', 'lot-full', 'lot-warning', 'lot-na');
-
-      if (fillMin === null) {
-        verdictEl.innerHTML = `<span class="verdict-ok">✓ ${fillStr}</span>`;
-        card.classList.add('lot-available');
-        available++;
-        return;
-      }
-
-      const diff = fillMin - arrivalMin;
-      if (diff > 60) {
-        verdictEl.innerHTML = `<span class="verdict-ok">✓ Available — fills at ${fillStr}</span>`;
-        card.classList.add('lot-available');
-        available++;
-      } else if (diff > 0) {
-        verdictEl.innerHTML = `<span class="verdict-warn">⚠ Cutting it close — fills at ${fillStr}</span>`;
-        card.classList.add('lot-warning');
-        warning++;
-      } else {
-        verdictEl.innerHTML = `<span class="verdict-full">✕ Already full by ${fillStr}</span>`;
-        card.classList.add('lot-full');
-        full++;
-      }
-    });
-
-    const summary = document.getElementById('results-summary');
-    const seasonLabels = { peakSummer: 'peak summer weekend', summer: 'summer weekday', shoulder: 'shoulder season', winter: 'winter' };
-    summary.innerHTML = `
-      <div class="summary-inner">
-        <strong>Arriving at ${timeInput} during ${seasonLabels[season]}:</strong>
-        <span class="summary-available">${available} lots available</span>
-        <span class="summary-warning">${warning} lots filling soon</span>
-        <span class="summary-full">${full} lots already full</span>
-      </div>
-    `;
-    summary.style.display = 'block';
-  }
-
-  document.getElementById('predict-btn').addEventListener('click', predict);
-  predict();
 </script>
-
 <style>
-  .seo-summary {
-    background: var(--color-white); border-radius: var(--radius); padding: 2rem;
-    box-shadow: var(--shadow); margin-bottom: 1.5rem;
-  }
-  .seo-summary h2 { font-size: 1.3rem; margin-bottom: 0.75rem; }
-  .seo-summary p { font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; margin-bottom: 0.75rem; }
-  .seo-summary ul { list-style: none; padding: 0; margin: 0 0 1rem; }
-  .seo-summary li { font-size: 0.88rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); line-height: 1.5; }
-  .seo-summary li strong { color: var(--color-text); }
-
-  .predictor-controls {
-    display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;
-    background: var(--color-white); padding: 1.5rem; border-radius: var(--radius);
-    box-shadow: var(--shadow); margin-bottom: 1.5rem;
-  }
-  .control-group { display: flex; flex-direction: column; gap: 0.3rem; }
-  .control-group label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); font-weight: 600; }
-  .control-group select, .control-group input { padding: 0.6rem 0.8rem; border: 1px solid rgba(0,0,0,0.12); border-radius: 6px; font-size: 0.9rem; font-family: var(--font-body); }
-
-  .results-summary {
-    background: var(--color-primary); color: var(--color-white); padding: 1rem 1.5rem;
-    border-radius: var(--radius); margin-bottom: 1.5rem;
-  }
-  .summary-inner { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; font-size: 0.9rem; }
-  .summary-available { color: #86efac; font-weight: 600; }
-  .summary-warning { color: #fde68a; font-weight: 600; }
-  .summary-full { color: #fca5a5; font-weight: 600; }
-
-  .lots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
-  .lot-card {
-    background: var(--color-white); border-radius: var(--radius); padding: 1.5rem;
-    box-shadow: var(--shadow); border-left: 4px solid transparent; transition: all 0.2s;
-  }
-  .lot-card.lot-available { border-left-color: #22c55e; }
-  .lot-card.lot-warning { border-left-color: #f59e0b; }
-  .lot-card.lot-full { border-left-color: #ef4444; }
-  .lot-card.lot-na { border-left-color: #9ca3af; }
-
-  .lot-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
-  .lot-header h3 { font-size: 1.05rem; }
-  .lot-location { font-size: 0.75rem; color: var(--color-text-light); background: var(--color-bg-alt); padding: 0.15rem 0.5rem; border-radius: 4px; }
-
-  .fill-times { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 0.75rem; }
-  .fill-row { display: flex; justify-content: space-between; padding: 0.3rem 0.5rem; background: var(--color-bg-alt); border-radius: 4px; }
-  .fill-label { font-size: 0.78rem; color: var(--color-text-light); }
-  .fill-value { font-size: 0.78rem; font-weight: 700; }
-  .fill-peak { color: #ef4444; }
-
-  .lot-verdict { margin-bottom: 0.75rem; }
-  .verdict-ok { color: #16a34a; font-weight: 700; font-size: 0.9rem; }
-  .verdict-warn { color: #d97706; font-weight: 700; font-size: 0.9rem; }
-  .verdict-full { color: #dc2626; font-weight: 700; font-size: 0.9rem; }
-
-  .lot-tips { margin-bottom: 0.75rem; }
-  .lot-tips p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .lot-capacity { display: flex; gap: 1rem; font-size: 0.8rem; color: var(--color-text-light); margin-bottom: 0.5rem; }
-  .lot-alternatives { font-size: 0.82rem; }
-  .lot-alternatives strong { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
-  .lot-alternatives ul { list-style: none; padding: 0; margin: 0.3rem 0 0; }
-  .lot-alternatives li { padding: 0.15rem 0; color: var(--color-accent); }
-  .lot-alternatives li::before { content: '→ '; }
-
-  @media (max-width: 768px) {
-    .predictor-controls { flex-direction: column; align-items: stretch; }
-    .lots-grid { grid-template-columns: 1fr; }
-    .fill-times { grid-template-columns: 1fr; }
-  }
+  [hidden]{display:none!important}.parking-page{max-width:1150px}.parking-page p,.parking-page li{line-height:1.75}.parking-page h2{margin:2rem 0 1rem}.image-note{font-size:.76rem!important;line-height:1.5!important;opacity:.9}.planning-note,.journey-plan{padding:1.5rem;background:var(--color-bg-alt);border-left:4px solid var(--color-accent);border-radius:var(--radius);margin:1.5rem 0}.journey-plan li{margin:.8rem 0}.planner-controls{padding:1.4rem;border:1px solid #b8c8bd;border-radius:var(--radius);margin:1.5rem 0}.choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}.choice-grid label{display:flex;flex-direction:column;gap:.4rem;font-weight:700}select{font:inherit;width:100%;padding:.65rem;border:1px solid #94a99c;border-radius:6px;color:var(--color-text);background:white}fieldset{margin:1.3rem 0;padding:1rem;border:1px solid #c3cec7}legend{font-weight:700}fieldset label{display:block;margin:.6rem 0;line-height:1.6}input[type=checkbox]{margin-right:.5rem}.planner-actions,.source-links{display:flex;flex-wrap:wrap;gap:.7rem}.source-links a{display:block;font-weight:600}.destination-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:1.3rem;align-items:start}.destination-card{padding:1.4rem;border:1px solid #c7d3cb;border-radius:var(--radius)}.destination-card h3{font-size:1.4rem}.destination-card h4{font-size:1rem;margin:1.3rem 0 .4rem}.place-label,.review-date{font-size:.8rem;color:var(--color-text-light)}dt{font-weight:700}dd{margin:.2rem 0 .9rem;line-height:1.7}.dated-notice{padding:1rem;background:#fff4d8;border-left:3px solid #987700;line-height:1.7}.next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem}details{border-bottom:1px solid #d1dbd4;padding:1rem 0}summary{font-weight:700;cursor:pointer}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--color-primary);outline-offset:3px}@media(max-width:600px){.planning-note,.journey-plan,.planner-controls,.destination-card{padding:1rem}}@media print{.planner-controls,.car-cta{display:none!important}.destination-grid{display:block}.destination-card{break-inside:avoid;margin:1rem 0}.page-hero{min-height:0!important}.page-hero-bg{display:none}.page-hero-content{color:#111!important;text-shadow:none!important}.source-links{display:block}}
 </style>

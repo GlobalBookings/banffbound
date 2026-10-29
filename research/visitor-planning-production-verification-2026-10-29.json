@@ -1,0 +1,286 @@
+{
+  "checkedAt": "2026-10-29T17:02:42.233952+00:00",
+  "origin": "https://banffbound.com",
+  "htmlRoutes": 21,
+  "results": [
+    {
+      "path": "/accessible-trails/",
+      "status": 200,
+      "canonical": "https://banffbound.com/accessible-trails/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "profiles": 3,
+        "faqParity": true,
+        "deviceLimitWording": true
+      }
+    },
+    {
+      "path": "/activities/",
+      "status": 200,
+      "canonical": "https://banffbound.com/activities/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "activityCards": 12
+      }
+    },
+    {
+      "path": "/things-to-do/",
+      "status": 200,
+      "canonical": "https://banffbound.com/things-to-do/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:59 GMT",
+      "markers": {}
+    },
+    {
+      "path": "/vacation-rentals/",
+      "status": 200,
+      "canonical": "https://banffbound.com/vacation-rentals/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:01:00 GMT",
+      "markers": {
+        "leads": 50,
+        "reviewedExamples": 4,
+        "baseGuides": 4
+      }
+    },
+    {
+      "path": "/paddling/",
+      "status": 200,
+      "canonical": "https://banffbound.com/paddling/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:58 GMT",
+      "markers": {
+        "bowFallsLimit": true,
+        "currentWatercraftRules": true
+      }
+    },
+    {
+      "path": "/tools/",
+      "status": 200,
+      "canonical": "https://banffbound.com/tools/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:59 GMT",
+      "markers": {}
+    },
+    {
+      "path": "/winter/",
+      "status": 200,
+      "canonical": "https://banffbound.com/winter/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:01:00 GMT",
+      "markers": {
+        "collectionDate": "2026-10-29"
+      }
+    },
+    {
+      "path": "/activities/ice-walk-johnston-canyon/",
+      "status": 200,
+      "canonical": "https://banffbound.com/activities/ice-walk-johnston-canyon/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "reviewedActivityBody": true,
+        "noFreeAttractionSchema": true
+      }
+    },
+    {
+      "path": "/activities/ice-skating/",
+      "status": 200,
+      "canonical": "https://banffbound.com/activities/ice-skating/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "reviewedActivityBody": true,
+        "noFreeAttractionSchema": true
+      }
+    },
+    {
+      "path": "/activities/dog-sledding/",
+      "status": 200,
+      "canonical": "https://banffbound.com/activities/dog-sledding/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "reviewedActivityBody": true,
+        "noFreeAttractionSchema": true
+      }
+    },
+    {
+      "path": "/activities/via-ferrata/",
+      "status": 200,
+      "canonical": "https://banffbound.com/activities/via-ferrata/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "reviewedActivityBody": true,
+        "noFreeAttractionSchema": true
+      }
+    },
+    {
+      "path": "/activities/northern-lights/",
+      "status": 200,
+      "canonical": "https://banffbound.com/activities/northern-lights/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "reviewedActivityBody": true,
+        "noFreeAttractionSchema": true
+      }
+    },
+    {
+      "path": "/activities/white-water-rafting/",
+      "status": 200,
+      "canonical": "https://banffbound.com/activities/white-water-rafting/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "reviewedActivityBody": true,
+        "noFreeAttractionSchema": true
+      }
+    },
+    {
+      "path": "/activities/snowshoeing/",
+      "status": 200,
+      "canonical": "https://banffbound.com/activities/snowshoeing/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "reviewedActivityBody": true,
+        "noFreeAttractionSchema": true
+      }
+    },
+    {
+      "path": "/blog/johnston-canyon-guide/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/johnston-canyon-guide/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:45 GMT",
+      "markers": {
+        "reviewedBlogDate": true
+      }
+    },
+    {
+      "path": "/blog/ink-pots-banff-alberta/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/ink-pots-banff-alberta/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:45 GMT",
+      "markers": {
+        "reviewedBlogDate": true
+      }
+    },
+    {
+      "path": "/blog/banff-hilton/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-hilton/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:45 GMT",
+      "markers": {
+        "reviewedBlogDate": true
+      }
+    },
+    {
+      "path": "/blog/lake-louise-complete-guide/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/lake-louise-complete-guide/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:45 GMT",
+      "markers": {
+        "reviewedBlogDate": true
+      }
+    },
+    {
+      "path": "/blog/moraine-lake-guide/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/moraine-lake-guide/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:45 GMT",
+      "markers": {
+        "reviewedBlogDate": true
+      }
+    },
+    {
+      "path": "/blog/banff-admission/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-admission/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:44 GMT",
+      "markers": {
+        "publicationRetained": true,
+        "boundedCorrectionDate": true
+      }
+    },
+    {
+      "path": "/blog/banff-entry-fee/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-entry-fee/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:00:45 GMT",
+      "markers": {
+        "publicationRetained": true,
+        "boundedCorrectionDate": true
+      }
+    }
+  ],
+  "llmsLinks": true,
+  "boundedCorrectionSitemapDates": true,
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/5",
+  "sourceCommit": "e29be853cee4b2d02d529437018fa5142c8cda7a",
+  "proofHead": "3b665efc4fdaf4d8452acc501fd0a7b659d5a681",
+  "mergeCommit": "a1d31ee1dd1634b4c719eef000b77fc75cc52c4e",
+  "hosting": {
+    "appId": "27d45246-5dde-4a22-800c-fc1b6c094bf1",
+    "deploymentId": "85378d49-6ea7-4c0b-9d77-927de1b3ae59",
+    "status": "Success",
+    "live": true,
+    "health": "Healthy",
+    "sourceCommit": "a1d31ee1dd1634b4c719eef000b77fc75cc52c4e",
+    "startedAt": "2026-10-29T16:59:30Z",
+    "buildTime": "2m 22s total; 51s billable"
+  },
+  "ci": {
+    "pullRequestRun": 40916764528,
+    "pullRequestCheck": 123598958676,
+    "mainRun": 40916956063,
+    "mainJob": 123599642617,
+    "result": "success"
+  },
+  "redirects": {
+    "checkedAt": "2026-10-29T17:04:31.108248+00:00",
+    "mappings": 40,
+    "checks": 100,
+    "passed": 100,
+    "command": "node scripts/check-production-redirects.mjs --live"
+  },
+  "liveBrowser": {
+    "profileComparison": "Marsh Trail + Minnewanka; reset to3",
+    "activityEmpty": 0,
+    "activityReset": 12,
+    "canmoreLaundryExample": "Blackstone Mountain Lodge",
+    "rentalReset": "4base guides;4operator examples;50provider leads"
+  },
+  "verifiedAt": "2026-10-29T17:04:31.108568+00:00"
+}

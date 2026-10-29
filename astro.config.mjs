@@ -2,10 +2,11 @@
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
+import { lakeJourneyMetadata } from './src/data/lakeJourneyOverrides.ts';
 import { visitorDestinationMetadata, visitorHotelLocationCorrections, visitorHotelCorrectionDate } from './src/data/visitorDestinationOverrides.ts';
 import { winterLibraryMetadata } from './src/data/winterLibraryOverrides.ts';
 import { trails } from './src/data/trails.ts';
-import { hotels } from './src/data/hotels.ts';
+import { directoryHotels, unreviewedHotelDirectorySlugs } from './src/data/hotelDirectory.ts';
 import { winterWellnessLegacyMetadata } from './src/data/winterWellnessLegacyOverrides.ts';
 import { winterWarmUpMetadata } from './src/data/winterWarmUpOverrides.ts';
 import { viewGuideMetadata } from './src/data/viewGuideOverride.ts';
@@ -15,11 +16,12 @@ import { blogRedirects } from './src/data/redirects.mjs';
 import { winterGuideMetadata } from './src/data/winterGuideOverrides.ts';
 import { winterTripMetadata } from './src/data/winterTripOverrides.ts';
 import { winterActivityMetadata } from './src/data/winterActivityOverrides.ts';
-const reviewedBlogSlugs = new Set([...Object.keys(winterGuideMetadata), ...Object.keys(winterActivityMetadata), ...Object.keys(winterTripMetadata), ...Object.keys(winterResortMetadata), ...Object.keys(winterSeasonMetadata), ...Object.keys(viewGuideMetadata), ...Object.keys(winterWarmUpMetadata), ...Object.keys(winterWellnessLegacyMetadata), ...Object.keys(winterLibraryMetadata)]);
+const reviewedBlogMetadata = { ...winterGuideMetadata, ...winterActivityMetadata, ...winterTripMetadata, ...winterResortMetadata, ...winterSeasonMetadata, ...viewGuideMetadata, ...winterWarmUpMetadata, ...winterWellnessLegacyMetadata, ...winterLibraryMetadata, ...visitorDestinationMetadata, ...lakeJourneyMetadata };
+const reviewedBlogDates = new Map(Object.entries(reviewedBlogMetadata).map(([slug, post]) => [slug, post.lastUpdated]));
 
 const excludedTrails = new Set(trails.filter(trail => trail.directoryEligible === false).map(trail => trail.slug));
 const reviewedTrailDates = new Map(trails.filter(trail => trail.reviewedAt).map(trail => [trail.slug, trail.reviewedAt]));
-const reviewedHotelDates = new Map(hotels.filter(hotel => hotel.checkedOn).map(hotel => [hotel.slug, hotel.checkedOn]));
+const reviewedHotelDates = new Map(directoryHotels.filter(hotel => hotel.checkedOn).map(hotel => [hotel.slug, hotel.checkedOn]));
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +33,8 @@ export default defineConfig({
       priority: 0.7,
       filter(page) {
         // Exclude every consolidated/redirected slug plus a few legacy duplicates.
+        const pathname = new URL(page).pathname.replace(/\/$/, '');
+        if (pathname === '/build-info.json' || (pathname.startsWith('/hotel-directory/') && unreviewedHotelDirectorySlugs.has(pathname.slice('/hotel-directory/'.length)))) return false;
         const excludeSlugs = [
           ...Object.keys(blogRedirects),
           'banff-restaraunts', 'eating-out-in-banff', 'sky-bistro-banff',
@@ -41,13 +45,15 @@ export default defineConfig({
       serialize(item) {
         // Date only content actually reviewed; build time is not an editorial update.
         const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
-        if (/^\/(winter|learn-to-ski|ski-day-planner|winter-stays|towns)(\/|$)/.test(path) || ['/', '/skiing', '/ski-pass-calculator', '/sunshine-vs-lake-louise-vs-norquay', '/canmore-vs-banff', '/conditions', '/trip-builder', '/hotels', '/accommodation', '/photo-spots', '/car-free-banff', '/calgary-to-banff', '/packing-list', '/wellness', '/weather', '/weather-webcams', '/monthly-weather', '/what-to-do-today', '/family-guide', '/dog-friendly', '/events'].includes(path) || reviewedBlogSlugs.has(path.replace('/blog/', ''))) {
+        if (/^\/(winter|learn-to-ski|ski-day-planner|winter-stays|towns)(\/|$)/.test(path) || ['/', '/skiing', '/ski-pass-calculator', '/sunshine-vs-lake-louise-vs-norquay', '/canmore-vs-banff', '/conditions', '/trip-builder', '/hotels', '/accommodation', '/photo-spots', '/car-free-banff', '/calgary-to-banff', '/packing-list', '/wellness', '/weather', '/weather-webcams', '/monthly-weather', '/what-to-do-today', '/family-guide', '/dog-friendly', '/events'].includes(path) || reviewedBlogDates.has(path.replace('/blog/', ''))) {
           item.lastmod = new Date('2026-10-28');
         }
         const reviewedDate = path.startsWith('/trails/') ? reviewedTrailDates.get(path.slice('/trails/'.length)) : path.startsWith('/hotel-directory/') ? reviewedHotelDates.get(path.slice('/hotel-directory/'.length)) : undefined;
         if (reviewedDate) item.lastmod = new Date(reviewedDate);
-        if (['/winter', '/trail-map', '/quiet-trails', '/alternatives', '/hotel-directory', '/tools', '/accessible-trails', '/paddling', '/activities', '/things-to-do', '/vacation-rentals'].includes(path) || path.startsWith('/activities/') || Object.hasOwn(visitorDestinationMetadata, path.replace('/blog/', ''))) item.lastmod = new Date('2026-10-29');
+        if (['/winter', '/trail-map', '/quiet-trails', '/alternatives', '/hotel-directory', '/tools', '/accessible-trails', '/paddling', '/activities', '/things-to-do', '/vacation-rentals', '/lakes', '/lake-faq', '/parking', '/shuttle-reservations'].includes(path) || path.startsWith('/activities/') || Object.hasOwn(visitorDestinationMetadata, path.replace('/blog/', ''))) item.lastmod = new Date('2026-10-29');
         if (Object.hasOwn(visitorHotelLocationCorrections, path.replace('/blog/', ''))) item.lastmod = new Date(visitorHotelCorrectionDate);
+        const blogDate = reviewedBlogDates.get(path.replace('/blog/', ''));
+        if (blogDate) item.lastmod = new Date(blogDate);
         // Boost priority for high-value pages
         if (item.url === 'https://banffbound.com/') {
           item.priority = 1.0;

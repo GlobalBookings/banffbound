@@ -1,13 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { hotels, hotelAreas } from '../../data/hotels';
+import { hotelAreas } from '../../data/hotels';
+import { directoryHotels as hotels, hotelDirectoryPlanningChecks } from '../../data/hotelDirectory';
 
 const areas = [...new Set(hotels.map(h => h.area))];
 const types = [...new Set(hotels.map(h => h.type))].sort();
 const mappedHotelsCount = hotels.filter(h => Number.isFinite(h.lat) && Number.isFinite(h.lng) && h.coordinateStatus !== 'unavailable').length;
+const reviewedCount = hotels.filter(h => h.sourceStatus === 'reviewed').length;
+const locationCount = hotels.filter(h => h.sourceStatus === 'location-only').length;
+const historyCount = hotels.filter(h => h.sourceStatus === 'former-name').length;
+const pendingCount = hotels.filter(h => h.sourceStatus === 'unreviewed').length;
 const withoutPriceClaims = (text: string) => text.split(/(?<=[.!?])\s+/).filter(sentence => !/\$\s*\d/.test(sentence)).join(' ');
 const areaNotes: Record<string, string> = {
+  'Spray Avenue': 'Banff Springs is on Spray Avenue, separate from the central Banff Avenue hotel strip. Match the actual walking or local transit journey to your plans.',
+  'Sulphur Mountain': 'An elevated Banff location near the gondola and Upper Hot Springs area. Check the road or bus journey back from town, winter walking conditions and each attraction’s operation separately.',
   'Yoho National Park': 'A separate national park in British Columbia. Check the exact lodge address, winter road access, meal arrangements and any guest parking shuttle; this is not a Lake Louise village stay.',
   'Downtown Banff': 'Compare the exact address with restaurants and the ski-shuttle stop you need; not every Banff property has the same walk.',
   'Tunnel Mountain': 'A hillside area above central Banff. Check the route and current bus service before planning to walk with luggage or ski gear.',
@@ -29,32 +36,43 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   coordinateStatus: h.coordinateStatus,
   coordinateSource: h.coordinateSource,
   coordinateNote: h.coordinateNote,
+  sourceStatus: h.sourceStatus,
+  sourceStatusLabel: h.sourceStatusLabel,
   destinationSearch: /\/Hotel-Search(?:[/?#]|$)/i.test(h.expediaUrl),
 })));
 ---
 
-<BaseLayout title="Banff Hotel Directory — Compare Hotels, Lodges & Suites" description="Explore hotels in Banff, Canmore and the Bow Valley with an interactive map. Filter by area, property type and editorial budget tier, then check current quotes.">
+<BaseLayout title="Banff Hotel Directory — Reviewed Stays & Listing Leads" description="Compare source-reviewed hotel profiles and retained directory leads around Banff. Filter area, type, editorial budget tier and source status, then confirm the exact room and dates.">
   <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Banff hotel directory', url: 'https://banffbound.com/hotel-directory/', mainEntity: { '@type': 'ItemList', numberOfItems: hotels.length, itemListElement: hotels.map((hotel, i) => ({ '@type': 'ListItem', position: i + 1, name: hotel.name, url: `https://banffbound.com/hotel-directory/${hotel.slug}/` })) } })} />
   <div class="container">
     <Breadcrumbs items={[{ label: 'Hotels' }]} />
   </div>
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="Canadian Rocky Mountains hotel view" class="page-hero-bg" loading="eager" fetchpriority="high" />
+  <section class="page-hero directory-hero">
     <div class="page-hero-content">
       <span class="badge">Hotel Directory</span>
       <h1>Where to Stay in Banff</h1>
-      <p>Explore {hotels.length} hotels, lodges and inns across Banff, Canmore and the Bow Valley. Compare locations and room styles, then check current rates, guest reviews and booking terms with the provider.</p>
+      <p>Start with {reviewedCount} hotel and lodge profiles whose selected facts have been source-reviewed. Compare actual room layouts and base choices, then confirm current operation, availability and the complete booking.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <p class="directory-note">Budget tiers ($–$$$$) are editorial categories, not room quotes. Check the exact property address, selected room, final price and facility status for your dates. For a curated shortlist with winter transport tradeoffs, use the <a href="/winter-stays">winter stays finder</a>.</p>
+      <p class="directory-note">All {hotels.length} retained records remain discoverable: {reviewedCount} selected-fact reviews, {locationCount} location-only profile, {historyCount} former-name histories and {pendingCount} legacy leads awaiting source review. Legacy area/type labels are stored classifications, not verified addresses or facilities. Unverified photos and property claims are withheld.</p>
       <!-- Filter bar -->
       <noscript><p class="directory-note">All {hotels.length} hotel profiles are listed below. Search, filters and the map need JavaScript; each profile and its source notes remain available without it.</p></noscript>
       <div class="filter-bar" id="filters" hidden>
         <div class="filter-group search-group">
           <input type="text" id="search-input" placeholder="Search hotels..." class="search-input" aria-label="Search hotels" />
+        </div>
+        <div class="filter-group">
+          <select id="source-filter" aria-label="Filter by source status">
+            <option value="all">All source statuses</option>
+            <option value="reviewed">Selected facts reviewed</option>
+            <option value="location-only">Location only</option>
+            <option value="former-name">Former-name histories</option>
+            <option value="unreviewed">Legacy leads awaiting review</option>
+          </select>
         </div>
         <div class="filter-group">
           <select id="area-filter" aria-label="Filter by area">
@@ -78,11 +96,11 @@ const hotelData = JSON.stringify(hotels.map(h => ({
           </select>
         </div>
         <button id="clear-filters" type="button" class="clear-btn" style="display:none;">Clear filters</button>
-        <span class="result-count" id="result-count" role="status" aria-live="polite">{hotels.length} hotels</span>
+        <span class="result-count" id="result-count" role="status" aria-live="polite">{hotels.length} directory records</span>
       </div>
 
       <!-- View toggle -->
-      <p class="map-location-note" id="hotel-map-note">The map includes {mappedHotelsCount} retained listing locations. Pins have a documented coordinate source; hollow gold circles are indicative legacy points whose source is unverified. These are property locators, not parking entrances or arrival directions. Hotels without a retained point remain in the grid.</p>
+      <p class="map-location-note" id="hotel-map-note">Only {mappedHotelsCount} source-documented location points are plotted. They are property locators, not parking entrances or arrival directions, and do not establish current operation. Records without a sourced point remain in the complete grid. Legacy manual coordinates are not plotted.</p>
       <div class="view-toggle" id="view-controls" hidden>
         <button id="grid-view-btn" type="button" class="view-btn active" aria-pressed="true" aria-controls="hotel-grid">Grid</button>
         <button id="map-view-btn" type="button" class="view-btn" aria-pressed="false" aria-controls="map-container" aria-describedby="hotel-map-note">Map</button>
@@ -93,7 +111,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
       <div id="map-container" class="map-container" style="display:none;">
         <p id="map-result-count" class="map-result-count" role="status" aria-live="polite"></p>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <div id="hotel-map" aria-label="Hotel listing map: source-backed pins and indicative circles" style="height: 500px; border-radius: var(--radius); overflow: hidden;"></div>
+        <div id="hotel-map" aria-label="Directory map: source-documented property locators only" style="height: 500px; border-radius: var(--radius); overflow: hidden;"></div>
       </div>
 
       <!-- Hotel grid -->
@@ -102,6 +120,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
           <a href={`/hotel-directory/${hotel.slug}`} class="hotel-card"
              data-area={hotel.area} data-price={hotel.priceRange}
              data-type={hotel.type}
+             data-source={hotel.sourceStatus}
              data-name={hotel.name.toLowerCase()} data-slug={hotel.slug}>
             {hotel.image?.trim() ? <img src={hotel.image} alt={hotel.name} class="hotel-card-img" loading="lazy" /> : <div class="hotel-card-img hotel-photo-fallback">Property photo unavailable</div>}
             <div class="hotel-card-body">
@@ -109,10 +128,12 @@ const hotelData = JSON.stringify(hotels.map(h => ({
                 <span class="hotel-price">Editorial budget tier: {hotel.priceRange}</span>
               </div>
               <h3>{hotel.name}</h3>
-              <p class="hotel-area">{hotel.area} · {hotel.type}</p>
+              <p class="source-badge">{hotel.sourceStatusLabel}</p>
+              {hotel.operationNote && <p class="operation-note">{hotel.operationNote}</p>}
+              <p class="hotel-area">{hotel.sourceStatus === 'unreviewed' ? 'Stored labels: ' : ''}{hotel.area} · {hotel.type}</p>
               <p class="hotel-desc">{withoutPriceClaims(hotel.description).slice(0, 120)}...</p>
               <div class="hotel-card-footer">
-                <span class="hotel-avg">{/\/Hotel-Search(?:[/?#]|$)/i.test(hotel.expediaUrl) ? 'Destination search available' : 'Check dates for a quote'}</span>
+                <span class="hotel-avg">{hotel.sourceStatus === 'unreviewed' ? 'Source review pending' : hotel.sourceStatus === 'former-name' ? 'Check current identity' : /\/Hotel-Search(?:[/?#]|$)/i.test(hotel.expediaUrl) ? 'Destination search available' : 'Check dates for a quote'}</span>
                 <span class="hotel-link">View Details →</span>
               </div>
             </div>
@@ -124,6 +145,10 @@ const hotelData = JSON.stringify(hotels.map(h => ({
 
   <section class="section" style="background: var(--color-bg-alt);">
     <div class="container">
+      <div class="section-header">
+        <h2>Compare the stay and the whole journey</h2>
+      </div>
+      <div class="grid grid-2 stay-checks">{hotelDirectoryPlanningChecks.map(check => <article><h3>{check.title}</h3><p>{check.text}</p></article>)}</div>
       <div class="section-header">
         <h2>Banff Hotel Areas Guide</h2>
         <p>Where you stay in Banff matters. Here's what each area offers.</p>
@@ -149,6 +174,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   const areaFilter = document.getElementById('area-filter');
   const typeFilter = document.getElementById('type-filter');
   const priceFilter = document.getElementById('price-filter');
+  const sourceFilter = document.getElementById('source-filter');
   const clearBtn = document.getElementById('clear-filters');
   const cards = document.querySelectorAll('.hotel-card');
   const countEl = document.getElementById('result-count');
@@ -168,8 +194,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   function hasMapPoint(hotel) {
     return Number.isFinite(hotel.lat) && Number.isFinite(hotel.lng)
       && Math.abs(hotel.lat) <= 90 && Math.abs(hotel.lng) <= 180
-      && (hotel.coordinateStatus === 'indicative'
-        || (hotel.coordinateStatus === 'source-verified' && typeof hotel.coordinateSource === 'string' && hotel.coordinateSource.startsWith('https://')));
+      && hotel.coordinateStatus === 'source-verified' && typeof hotel.coordinateSource === 'string' && hotel.coordinateSource.startsWith('https://');
   }
 
   function applyFilters() {
@@ -177,6 +202,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     const area = areaFilter.value;
     const type = typeFilter.value;
     const price = priceFilter.value;
+    const source = sourceFilter.value;
     let visible = 0;
     const visibleSlugs = new Set();
 
@@ -184,7 +210,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
       const matchSearch = !search || card.dataset.name.includes(search) || card.dataset.area.toLowerCase().includes(search);
       const show = matchSearch && (area === 'all' || card.dataset.area === area)
         && (type === 'all' || card.dataset.type === type)
-        && (price === 'all' || card.dataset.price === price);
+        && (price === 'all' || card.dataset.price === price) && (source === 'all' || card.dataset.source === source);
       card.style.display = show ? '' : 'none';
       if (show) {
         visible++;
@@ -192,10 +218,10 @@ const hotelData = JSON.stringify(hotels.map(h => ({
       }
     });
 
-    countEl.textContent = visible + ' hotel' + (visible !== 1 ? 's' : '');
-    clearBtn.style.display = (search || area !== 'all' || type !== 'all' || price !== 'all') ? '' : 'none';
+    countEl.textContent = visible + ' directory record' + (visible !== 1 ? 's' : '');
+    clearBtn.style.display = (search || area !== 'all' || type !== 'all' || price !== 'all' || source !== 'all') ? '' : 'none';
     const mapped = allHotels.filter(h => visibleSlugs.has(h.slug) && hasMapPoint(h)).length;
-    mapResultCount.textContent = mapped + ' of ' + visible + ' matching hotels have a retained map point. Use Grid for the complete results.';
+    mapResultCount.textContent = mapped + ' of ' + visible + ' matching records have a source-documented point. Use Grid for the complete results.';
     if (map) updateMapMarkers(visibleSlugs);
   }
 
@@ -204,6 +230,7 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     areaFilter.value = 'all';
     typeFilter.value = 'all';
     priceFilter.value = 'all';
+    sourceFilter.value = 'all';
     applyFilters();
   }
 
@@ -211,17 +238,20 @@ const hotelData = JSON.stringify(hotels.map(h => ({
   const paramArea = params.get('area');
   const paramType = params.get('type');
   const paramPrice = params.get('price');
+  const paramSource = params.get('source');
   if (paramArea && Array.from(areaFilter.options).some(o => o.value === paramArea)) areaFilter.value = paramArea;
   if (paramType) {
     const opt = Array.from(typeFilter.options).find(o => o.value.toLowerCase() === paramType.toLowerCase());
     if (opt) typeFilter.value = opt.value;
   }
   if (paramPrice && Array.from(priceFilter.options).some(o => o.value === paramPrice)) priceFilter.value = paramPrice;
+  if (paramSource && Array.from(sourceFilter.options).some(o => o.value === paramSource)) sourceFilter.value = paramSource;
 
   searchInput.addEventListener('input', applyFilters);
   areaFilter.addEventListener('change', applyFilters);
   typeFilter.addEventListener('change', applyFilters);
   priceFilter.addEventListener('change', applyFilters);
+  sourceFilter.addEventListener('change', applyFilters);
   clearBtn.addEventListener('click', clearAll);
 
   function showGrid() {
@@ -303,6 +333,9 @@ const hotelData = JSON.stringify(hotels.map(h => ({
     const name = document.createElement('strong');
     name.textContent = hotel.name;
     popup.appendChild(name);
+    const status = document.createElement('p');
+    status.textContent = hotel.sourceStatusLabel;
+    popup.appendChild(status);
     const area = document.createElement('p');
     area.textContent = hotel.area + ' · Editorial budget tier: ' + hotel.price;
     popup.appendChild(area);
@@ -333,18 +366,10 @@ const hotelData = JSON.stringify(hotels.map(h => ({
       attribution: '&copy; OpenStreetMap contributors',
       maxZoom: 18,
     }).addTo(map);
-    const indicativeIcon = leaflet.divIcon({
-      className: 'hotel-indicative-marker',
-      html: '<span class="hotel-indicative-dot" aria-hidden="true"></span>',
-      iconSize: [18, 18],
-      iconAnchor: [9, 9],
-    });
     allHotels.filter(hasMapPoint).forEach(hotel => {
-      const indicative = hotel.coordinateStatus === 'indicative';
       const marker = leaflet.marker([hotel.lat, hotel.lng], {
-        ...(indicative ? { icon: indicativeIcon } : {}),
-        title: hotel.name + (indicative ? ' — indicative listing point' : ' — source-backed property locator'),
-        alt: hotel.name + (indicative ? ' — indicative listing point' : ' — source-backed property locator'),
+        title: hotel.name + ' — source-documented property locator',
+        alt: hotel.name + ' — source-documented property locator',
         keyboard: true,
       }).addTo(map);
       marker.bindPopup(popupFor(hotel));
@@ -376,6 +401,12 @@ const hotelData = JSON.stringify(hotels.map(h => ({
 </script>
 
 <style>
+  .directory-hero { background: var(--color-primary); }
+  .source-badge { font-size: .73rem; font-weight: 800; color: var(--color-primary); margin: .4rem 0; }
+  .operation-note { font-size: .78rem; line-height: 1.6; background: var(--color-bg-alt); border-left: 3px solid var(--color-accent); padding: .6rem; }
+  .stay-checks { margin-bottom: 2.5rem; }
+  .stay-checks h3 { font-size: 1.1rem; }
+  .stay-checks p { font-size: .9rem; line-height: 1.7; color: var(--color-text-light); }
   .filter-bar[hidden], .view-toggle[hidden] { display: none !important; }
   .map-location-note { max-width: 950px; margin-bottom: 1rem; font-size: .85rem; color: var(--color-text-light); }
   .map-status { font-size: .85rem; color: var(--color-primary); }
