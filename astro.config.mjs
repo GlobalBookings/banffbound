@@ -3,6 +3,9 @@ import { bowLakeGuideMetadata } from './src/data/bowLakeGuideOverrides.ts';
 import { jasperGuideMetadata } from './src/data/jasperGuideOverrides.ts';
 import { diningGuideMetadata } from './src/data/diningGuideOverrides.ts';
 import { cabinGuideMetadata } from './src/data/cabinGuideOverrides.ts';
+import { nightlifeGuideMetadata } from './src/data/nightlifeGuideOverrides.ts';
+import { liveMusicGuideMetadata } from './src/data/liveMusicGuideOverrides.ts';
+import { drinkOfferGuideMetadata } from './src/data/drinkOfferGuideOverrides.ts';
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
@@ -23,7 +26,7 @@ import { blogRedirects } from './src/data/redirects.mjs';
 import { winterGuideMetadata } from './src/data/winterGuideOverrides.ts';
 import { winterTripMetadata } from './src/data/winterTripOverrides.ts';
 import { winterActivityMetadata } from './src/data/winterActivityOverrides.ts';
-const reviewedBlogMetadata = { ...winterGuideMetadata, ...winterActivityMetadata, ...winterTripMetadata, ...winterResortMetadata, ...winterSeasonMetadata, ...viewGuideMetadata, ...winterWarmUpMetadata, ...winterWellnessLegacyMetadata, ...winterLibraryMetadata, ...visitorDestinationMetadata, ...lakeJourneyMetadata, ...cyclingGuideMetadata, ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata };
+const reviewedBlogMetadata = { ...winterGuideMetadata, ...winterActivityMetadata, ...winterTripMetadata, ...winterResortMetadata, ...winterSeasonMetadata, ...viewGuideMetadata, ...winterWarmUpMetadata, ...winterWellnessLegacyMetadata, ...winterLibraryMetadata, ...visitorDestinationMetadata, ...lakeJourneyMetadata, ...cyclingGuideMetadata, ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata };
 const reviewedBlogDates = new Map(Object.entries(reviewedBlogMetadata).map(([slug, post]) => [slug, post.lastUpdated]));
 
 const excludedTrails = new Set(trails.filter(trail => trail.directoryEligible === false).map(trail => trail.slug));

@@ -1,0 +1,37 @@
+<script>
+  import { buildEveningPlan, defaultEveningFilters } from '../data/eveningPlanning';
+  function initEveningPlanner() {
+    const form=document.querySelector<HTMLFormElement>('#evening-fit-form');
+    if(!form||form.dataset.ready)return;
+    const selects={style:document.querySelector<HTMLSelectElement>('#evening-style'),group:document.querySelector<HTMLSelectElement>('#evening-group'),base:document.querySelector<HTMLSelectElement>('#evening-base')};
+    const count=document.querySelector('#evening-fit-count'),notes=document.querySelector('#evening-fit-notes'),empty=document.querySelector<HTMLElement>('#evening-fit-empty');
+    const heading=document.querySelector('#evening-journey-title'),steps=document.querySelector('#evening-steps'),link=document.querySelector<HTMLAnchorElement>('#evening-journey-link');
+    const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-evening-id]'));
+    if(!selects.style||!selects.group||!selects.base||!count||!notes||!empty||!heading||!steps||!link||cards.length!==5)return;
+    const keys={style:'evening_style',group:'evening_group',base:'evening_base'} as const;
+    const url=new URL(window.location.href),raw:Record<string,string>={};
+    for(const key of ['style','group','base'] as const){const values=url.searchParams.getAll(keys[key]);if(values.length===1)raw[key]=values[0];}
+    const restored=buildEveningPlan(raw).filters;
+    for(const key of ['style','group','base'] as const)selects[key]!.value=restored[key];
+    const render=()=>{
+      const result=buildEveningPlan({style:selects.style!.value,group:selects.group!.value,base:selects.base!.value}),ids=new Set(result.selectedIds);
+      for(const card of cards)card.hidden=!ids.has(card.dataset.eveningId||'');
+      count.textContent=`${ids.size} ${ids.size===1?'evening format':'evening formats'} to explore`;
+      notes.replaceChildren(...result.notes.map(text=>{const p=document.createElement('p');p.textContent=text;return p;}));
+      empty.hidden=ids.size!==0;heading.textContent=result.journey.title;
+      steps.replaceChildren(...result.steps.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
+      link.href=result.journey.href;link.textContent=result.journey.label+' ↗';
+      link.target=result.journey.href.startsWith('https:')?'_blank':'_self';
+      const next=new URL(window.location.href);
+      for(const key of ['style','group','base'] as const){next.searchParams.delete(keys[key]);if(result.filters[key]!==defaultEveningFilters[key])next.searchParams.set(keys[key],result.filters[key]);}
+      try{window.history.replaceState(null,'',next);}catch{/* The evening plan remains usable without history. */}
+    };
+    form.addEventListener('submit',event=>{event.preventDefault();render();});form.addEventListener('change',render);
+    form.addEventListener('reset',()=>{for(const key of ['style','group','base'] as const)selects[key]!.value=defaultEveningFilters[key];render();});
+    form.dataset.ready='true';form.hidden=false;render();
+  }
+  initEveningPlanner();document.addEventListener('astro:page-load',initEveningPlanner);
+</script>
+<style is:global>
+  .evening-planner [hidden]{display:none!important}.evening-planner{scroll-margin-top:110px;margin:2.5rem 0}.evening-planner form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;padding:1.2rem;border:1px solid #d4ddce;border-radius:12px;background:#eef2eb}.evening-planner label{display:block;font-weight:700;font-size:.85rem;margin-bottom:.4rem}.evening-planner select{width:100%;min-height:48px;padding:.65rem;border:1px solid #aab9a6;border-radius:6px;background:white;color:#173c29;font:inherit}.evening-planner button{min-height:48px;cursor:pointer;font:inherit}.evening-reset{background:white;color:#173c29;border:1px solid #173c29;border-radius:6px;padding:.6rem 1rem}.evening-planner [role=status]{font-size:.95rem;font-weight:700}.evening-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}.evening-card{min-width:0;border:1px solid #d4ddce;border-radius:12px;padding:1.2rem;background:white}.evening-card h3{font-size:1.35rem;margin-top:0!important}.evening-card p,.evening-card dd{font-size:.87rem;line-height:1.65}.evening-card dl{margin:0 0 1rem}.evening-card dl>div{padding:.65rem 0;border-top:1px solid #e1e6dc}.evening-card dt{font-size:.84rem;font-weight:700}.evening-card dd{margin:0}.evening-action{display:block;padding:.8rem;border-radius:6px;background:#204d35;color:white!important;text-decoration:none!important;font-size:.85rem;font-weight:700}.evening-source,.evening-review{font-size:.75rem!important;line-height:1.6!important}.evening-journey{background:#eef2eb;border-left:3px solid #9e7d42;margin:1.5rem 0;padding:1.2rem}.evening-journey h3{margin-top:0!important}.evening-planner a{overflow-wrap:anywhere}.evening-planner :is(a,button,select):focus-visible{outline:3px solid #a9792e;outline-offset:3px}@media(max-width:700px){.evening-planner form,.evening-grid{grid-template-columns:1fr}.evening-card{padding:1rem}}
+</style>

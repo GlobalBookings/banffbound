@@ -1,0 +1,104 @@
+{
+  "checkedAtUTC": "2026-10-29T22:07:17.847573+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/10",
+  "codeCommit": "1ae58fe8b0c3c99a8dd2ec6c41e890efbca09425",
+  "reviewedHead": "be2f5d0e81adcfbeb73f4db5847c28a1fbc1e242",
+  "mergedRevision": "c1a173277b969dddfadeb51b195a2e3a9756f4f1",
+  "mergedAtUTC": "2026-10-29T22:01:42Z",
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T22:03:44.964Z",
+    "sourceRevision": "c1a173277b969dddfadeb51b195a2e3a9756f4f1",
+    "sourceFingerprint": "0dd151877f32555939d202b9b3573c5ce9027d8e3c41bd70c09c23f8e78ceaaf"
+  },
+  "ci": {
+    "pullRequest": {
+      "run": 40962440889,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40962440889",
+      "revision": "be2f5d0e81adcfbeb73f4db5847c28a1fbc1e242",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123758431827,
+      "completedAt": "2026-10-29T22:01:27Z"
+    },
+    "main": {
+      "run": 40962619897,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40962619897",
+      "revision": "c1a173277b969dddfadeb51b195a2e3a9756f4f1",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123759025114,
+      "completedAt": "2026-10-29T22:02:30Z"
+    }
+  },
+  "cleanArchiveVerification": "research/source-guides-clean-verification-2026-10-29.json",
+  "productionVerification": {
+    "report": "research/source-guides-production-verification-2026-10-29.json",
+    "passed": true,
+    "htmlRoutes": 218,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "stableExactRevisionAndFingerprint": true
+  },
+  "bareUrlVerification": {
+    "report": "research/source-guides-bare-url-verification-2026-10-29.json",
+    "passed": 7
+  },
+  "redirectVerification": {
+    "report": "research/live-http-redirect-verification-2026-10-29.json",
+    "mappings": 40,
+    "checksPassed": 100
+  },
+  "browserProduction": {
+    "cabinUrl": "https://banffbound.com/blog/banff-cabin-rentals/#cabin-comparison",
+    "cabinDefault": 6,
+    "winter": 4,
+    "winterFullKitchen": 2,
+    "winterFullKitchenYoho": 0,
+    "emptyStateVisible": true,
+    "reset": 6,
+    "queryStateUpdated": true,
+    "mobileViewportAndDocumentWidth": 390,
+    "faqSchemaQuestions": 5,
+    "JasperNativeExpediaDestination": "Jasper, Alberta",
+    "JasperNativeGetYourGuideQuery": "Jasper, Alberta",
+    "curatedBookingFlag": true,
+    "automaticMidAndStickyCtas": {
+      "cabins": 0,
+      "jasper": 0
+    },
+    "automaticCtaSelectors": [
+      ".mid-article-cta",
+      ".sticky-cta-bar"
+    ],
+    "optionalProviderScriptAndFrameElements": 0,
+    "viewportReset": true,
+    "screenshot": "Local ephemeral /tmp/banffbound-cabin-comparison-live-2026-10-29.png",
+    "scopeNote": "DOM/render and actual filter behavior; not a complete browser network trace or evidence of sales. No merchant referral clicked to manufacture a conversion."
+  },
+  "contentScope": {
+    "canonicalBodies": 295,
+    "fullReviews": 59,
+    "newFullReviews": 7,
+    "partialOpeningRepairsRemaining": 8,
+    "other288BodyBytesPreserved": true,
+    "all335PublicationDatesPreserved": true,
+    "allCanonicalFactsReviewed": false
+  },
+  "preserved": {
+    "hotelIdentitiesAndProviderUrls": 95,
+    "hostAliasMappings": 40,
+    "affiliateAndMeasurementIdentifiers": true,
+    "unrelatedUserFiles": true
+  },
+  "commercialBoundary": {
+    "adCampaignsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecificationOrEnvironmentMutated": false,
+    "salesProfitOrRankUpliftClaimed": false
+  },
+  "nextReviewPlan": "research/next-nightlife-review-plan-2026-10-29.json",
+  "goalStatus": "active"
+}

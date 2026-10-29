@@ -1,7 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { restaurants as allRestaurants, drinkSpots as drinks, getRestaurantsByArea, type Area } from '../data/restaurants';
+import { restaurants as allRestaurants, drinkSpots as importedDrinks, getRestaurantsByArea, type Area } from '../data/restaurants';
+
+// Preserve the imported record while superseding its unsupported fixed schedule
+// and promotion claims with the current source-reviewed pub discovery route.
+const drinks=importedDrinks.map(item=>item.slug==='the-rose-and-crown'?{...item,description:'A pub at 202 Banff Avenue with a dated calendar of bands, DJs and other events. Check the actual listing, the service you want and the current menu before reserving; a table and show admission can be different arrangements.'}:item);
 
 const areas: { key: Area; label: string; description: string }[] = [
   { key: 'Banff', label: 'Banff', description: 'Banff\'s dining scene is a delicious mix of fine dining, creative global kitchens, beloved local institutions, and award-winning casual eateries.' },
@@ -16,32 +20,20 @@ const restaurantsByArea = areas.map(a => ({
 }));
 ---
 
-<BaseLayout title="Best Restaurants in Banff, Lake Louise & Canmore — Cafes, Breweries & Local Picks" description="The best restaurants, cafes, bars, and breweries in Banff, Lake Louise, Canmore, and the Bow Valley Parkway. From farm-to-table fine dining to cozy mountain pubs, craft breweries, and artisan bakeries.">
+<BaseLayout title="Dining in Banff, Lake Louise & Canmore — Restaurants & Evening Plans" description="Browse dining ideas in Banff, Lake Louise and Canmore, then plan an evening with restaurant, live-music, offer and return-journey guides.">
 
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Best Restaurants in Banff, Lake Louise & Canmore',
-    description: 'The best restaurants, cafes, bars, and breweries in Banff, Lake Louise, Canmore, and the Bow Valley Parkway.',
+    name: 'Dining ideas in Banff, Lake Louise & Canmore',
+    description: 'Restaurant names and operator links for planning a Bow Valley meal.',
     url: 'https://banffbound.com/eat-and-drink',
     numberOfItems: allRestaurants.length,
     itemListElement: allRestaurants.map((r, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      item: {
-        '@type': 'Restaurant',
-        name: r.name,
-        description: r.description,
-        image: r.image,
-        servesCuisine: r.cuisine,
-        priceRange: r.priceRange,
-        address: { '@type': 'PostalAddress', streetAddress: r.address, addressLocality: r.area, addressRegion: 'AB', addressCountry: 'CA' },
-        telephone: r.phone,
-        openingHours: r.hours,
-        url: r.website,
-        menu: r.menuUrl,
-        geo: { '@type': 'GeoCoordinates', latitude: r.lat, longitude: r.lng },
-      },
+      name: r.name,
+      ...(r.website ? {url:r.website} : {}),
     })),
   })} />
 
@@ -60,6 +52,22 @@ const restaurantsByArea = areas.map(a => ({
       <span class="badge">Dine & Sip</span>
       <h1>Eat & Drink in Banff & Beyond</h1>
       <p>From elevated Rocky Mountain cuisine to cozy craft breweries, the Banff, Lake Louise, and Canmore dining scene punches well above its weight.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="evening-guides-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">After the mountains</span>
+        <h2 id="evening-guides-title">Give your evening a shape</h2>
+        <p>Make dinner the occasion, find a performance, or put a little friendly competition in the plan.</p>
+      </div>
+      <div class="grid grid-2 evening-guide-links">
+        <a href="/blog/banff-nightlife-guide/#evening-planner"><strong>Build your Banff evening →</strong><span>Compare five formats and connect the outing with the return to your stay.</span></a>
+        <a href="/blog/new-places-to-eat-in-banff/"><strong>Find a dining discovery →</strong><span>Separate dated additions and reopenings from other restaurants worth investigating.</span></a>
+        <a href="/blog/banff-live-music/"><strong>Find music or a show →</strong><span>Choose a dated performance and the right table, ticket or registration.</span></a>
+        <a href="/blog/drink-deals/"><strong>Compare current offer formats →</strong><span>Check the meal, admission and booking conditions behind an offer headline.</span></a>
+      </div>
     </div>
   </section>
 
@@ -101,10 +109,10 @@ const restaurantsByArea = areas.map(a => ({
                       <span>{item.phone}</span>
                     </div>
                   )}
-                  {item.hours && (
+                  {item.website && (
                     <div class="detail-row">
                       <span class="detail-icon">&#128336;</span>
-                      <span>{item.hours}</span>
+                      <a href={item.website} target="_blank" rel="noopener noreferrer">Check current hours with the venue ↗</a>
                     </div>
                   )}
                 </div>
@@ -138,9 +146,10 @@ const restaurantsByArea = areas.map(a => ({
         {drinks.map(item => (
           <div class="drink-card-full">
             <div class="drink-image-wrap">
-              <img src={item.image} alt={item.name} class="drink-image" loading="lazy" />
+              <img src={item.image} alt={item.slug==='the-rose-and-crown'?'Illustrative pub image; not verified as Rose & Crown':item.name} aria-describedby={item.slug==='the-rose-and-crown'?'rose-crown-image-note':undefined} class="drink-image" loading="lazy" />
             </div>
             <div class="drink-body">
+              {item.slug==='the-rose-and-crown'&&<p id="rose-crown-image-note" class="directory-image-note">Illustrative image; not a verified view of this venue.</p>}
               <span class="tag">{item.type}</span>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
@@ -153,10 +162,10 @@ const restaurantsByArea = areas.map(a => ({
                   <span class="detail-icon">&#128222;</span>
                   <span>{item.phone}</span>
                 </div>
-                <div class="detail-row">
+                {item.website && <div class="detail-row">
                   <span class="detail-icon">&#128336;</span>
-                  <span>{item.hours}</span>
-                </div>
+                  <a href={item.website} target="_blank" rel="noopener noreferrer">Check current hours with the venue ↗</a>
+                </div>}
               </div>
               <div class="restaurant-actions">
                 <a href={item.website} target="_blank" rel="noopener" class="btn btn-sm">Website</a>
@@ -172,10 +181,10 @@ const restaurantsByArea = areas.map(a => ({
   <!-- CTA -->
   <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
     <div class="container">
-      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Plan Your Banff Dining Trip</h2>
-      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Book a food tour to discover Banff's best restaurants, or find the perfect hotel for your culinary getaway.</p>
-      <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&q=food" class="btn btn-accent" target="_blank" rel="noopener">Browse Food Tours on GetYourGuide →</a>
-      <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" class="btn btn-accent" target="_blank" rel="noopener sponsored" style="margin-left: 1rem;">Find Hotels on Expedia →</a>
+      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Stay close to your evening plans</h2>
+      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Compare six Banff hotel bases and their actual locations, then fit your evening around the complete journey back.</p>
+      <a href="/book/banff-hotels/" class="btn btn-accent">Compare Banff hotel bases →</a>
+      <a href="/blog/banff-nightlife-guide/#evening-planner" class="btn btn-accent" style="margin-left: 1rem;">Build your evening →</a>
     </div>
   </section>
 
@@ -195,14 +204,19 @@ const restaurantsByArea = areas.map(a => ({
           <p>Bear Street is Banff's foodie hub. Within two blocks you'll find Wild Flour Bakery, Nourish Bistro, Three Bears Brewery, Bear Street Tavern, and The Bison -- all walkable.</p>
         </div>
         <div class="tip-card">
-          <h3>Happy Hour Culture</h3>
-          <p>Nearly every bar offers daily happy hour specials. High Rollers does all-day happy hour Wednesdays, Three Bears runs 3-5pm daily, and Eddie Burger has all-day specials on Thursdays.</p>
+          <h3>Compare the whole offer</h3>
+          <p>Check the current operator page for the date you want, including food, admission and holiday conditions. Our <a href="/blog/drink-deals/">drink-offer guide</a> explains three formats and the booking questions to resolve before you go.</p>
         </div>
       </div>
     </div>
   </section>
 
 <style>
+  .directory-image-note{font-size:.75rem;line-height:1.5;padding:.6rem 1rem;margin:0;background:var(--color-bg-alt);}
+  .evening-guide-links a {display:flex;flex-direction:column;gap:.65rem;padding:1.4rem;border:1px solid var(--color-border,#d4ddce);border-radius:var(--radius);background:var(--color-bg-alt);color:var(--color-primary);text-decoration:none;}
+  .evening-guide-links a:hover {box-shadow:var(--shadow);}
+  .evening-guide-links span {font-size:.95rem;line-height:1.6;color:var(--color-text-light);}
+  .evening-guide-links a:focus-visible {outline:3px solid var(--color-accent);outline-offset:3px;}
   .card-tags {
     display: flex;
     gap: 0.5rem;

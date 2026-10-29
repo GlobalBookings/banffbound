@@ -14,8 +14,8 @@ const data = await build({ stdin: { contents: "export {getArticleBookingContext}
 const { getArticleBookingContext: contextFor, authoredBookingGuideSlugs: authored, resolveBlogContent } = await import(`data:text/javascript;base64,${Buffer.from(data.outputFiles[0].text).toString('base64')}`);
 const jasper = ['jasper-town', 'jasper-national-park', 'jasper-canada', 'jasper-alberta', 'calgary-to-jasper'];
 const bow = ['numtijah-lodge', 'num-ti-jah-lodge'];
-assert.deepEqual([...authored].sort(), [...bow, ...jasper.slice(0, 3), 'new-places-to-eat-in-banff', 'banff-cabin-rentals'].sort());
-assert.equal(new Set(authored).size, 7);
+assert.deepEqual([...authored].sort(), [...bow, ...jasper.slice(0, 3), 'new-places-to-eat-in-banff', 'banff-cabin-rentals', 'banff-nightlife-guide', 'banff-live-music', 'drink-deals'].sort());
+assert.equal(new Set(authored).size, 10);
 const defaultContext = contextFor(undefined);
 assert.deepEqual(defaultContext, {
   hotelLabel: 'Banff', tourLabel: 'Banff',
@@ -136,4 +136,4 @@ for (const [category, heading, firstHref] of [['Guides', 'Plan Your Banff Trip',
 }
 assert.equal(runInline({ missing: true }).created.length, 0);
 assert.equal(runInline({ short: true }).created.length, 0);
-console.log(`Article booking context checks passed: fixed Jasper5/Bow2/default destinations and native IDs, hostile input exclusion, authored7 integration, ${cases.length} actual BlogLayout SSR contexts, preserved authored links, actual-IIFE early suppression/no DOM injections and retained legacy mid/sticky behavior. No network or site build.`);
+console.log(`Article booking context checks passed: fixed Jasper5/Bow2/default destinations and native IDs, hostile input exclusion, authored10 integration, ${cases.length} actual BlogLayout SSR contexts, preserved authored links, actual-IIFE early suppression/no DOM injections and retained legacy mid/sticky behavior. No network or site build.`);

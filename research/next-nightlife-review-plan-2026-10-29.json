@@ -1,0 +1,30 @@
+{
+  "checkedAtUTC": "2026-10-29T22:03:00Z",
+  "status": "Read-only candidate review; no bodies, routes, host rules or ads changed by this plan.",
+  "scope": "Three distinct canonical intentions for the next source-review batch, following the seven-guide release.",
+  "candidates": [
+    {
+      "slug": "banff-nightlife-guide",
+      "purpose": "Choose an evening format and plan the return journey.",
+      "reviewTriggers": ["Old venue identity and location assumptions", "Unsupported crowd/closing-time claims", "Generic walkability claims"],
+      "sourceLeads": ["https://www.dustybootbanff.com/", "https://www.banffcollective.com/contact-us", "https://www.highrollersbanff.com/", "https://roamtransit.com/schedules-routes/"],
+      "reuse": ["Existing apres-ski journeys", "New dining guide", "Town-specific transport guidance"]
+    },
+    {
+      "slug": "banff-live-music",
+      "purpose": "Distinguish pub performances from dated, ticketed concerts and explain booking and access checks.",
+      "reviewTriggers": ["Fixed weekly show-time claims unsupported by current event calendars", "Unverified lounge identity", "Fabricated visits", "Generic hotel-shuttle claims"],
+      "sourceLeads": ["https://roseandcrown.ca/events/", "https://melissasmissteak.com/live-events/", "https://www.banffcentre.ca/events", "https://www.banff-springs-hotel.com/dine/"]
+    },
+    {
+      "slug": "drink-deals",
+      "purpose": "Explain a small sourced set of offers with food, admission, holiday and booking limits.",
+      "reviewTriggers": ["Old March promotion claims", "Unsupported recurring prices", "Current operator offer periods differ from legacy copy", "Gondola admission and holiday exclusions omitted"],
+      "sourceLeads": ["https://roseandcrown.ca/", "https://www.highrollersbanff.com/", "https://www.banffjaspercollection.com/dining/sky-bistro/"],
+      "freshnessRule": "Recheck each dated operator offer before publication; do not make an undated fixed-price directory."
+    }
+  ],
+  "overlapAuditPending": ["club-in-banff", "banff-nightclubs", "banff-clubs", "nightclub-banff", "banff-bars"],
+  "distinctLaterCandidate": {"slug":"banff-whiskey","reviewTriggers":["EquineOx identified as vodka by its operator", "PARK Banff Whisky identified as Canadian rye, not asserted single malt"],"sourceLeads":["https://eauclairedistillery.ca/products/prickly-pear-equineox-vodka", "https://parkdistillery.com/products/banff-whisky"]},
+  "limits": ["No new redirect mappings proposed", "No analytics or ranking uplift claim", "Current source pages must be checked again during implementation", "This candidate plan is not a full factual review"]
+}
