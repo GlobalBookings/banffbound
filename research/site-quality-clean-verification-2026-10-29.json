@@ -1,0 +1,62 @@
+{
+  "verifiedAt": "2026-10-29T16:19:16.939708+00:00",
+  "codeRevision": "c78e4d72c255686a23e77a23262f3db339d0e567",
+  "baseRevision": "154dd45ce7a58bfb8022668009773cd15c605c6b",
+  "cleanArchive": "/tmp/banffbound-quality-release-ebw20epg",
+  "build": "Full public-source build passed",
+  "audit": {
+    "pages": 602,
+    "indexable_documents": 559,
+    "counts": {},
+    "winter_counts": {}
+  },
+  "offlineChecks": {
+    "trip-planner": "passed",
+    "day-ideas": "passed",
+    "weather-source": "passed",
+    "snow-source": "passed",
+    "source-freshness": "passed",
+    "road-source": "passed",
+    "town-events": "passed",
+    "affiliate-navigation": "passed",
+    "trail-directory": "passed",
+    "production-redirect-plan": "passed"
+  },
+  "browserChecks": {
+    "quietPlan": "Winter + LakeLouise gives1 shoreline plan; incompatible ski interest gives empty; reset restores17.",
+    "comparisons": "Winter + Kootenay gives1 MarbleCanyon description;390px no horizontal overflow.",
+    "trailMap": "Kootenay area query restores2 listings; actual double Map click gives2 filtered markers, no error or duplicate initialization;390px no horizontal overflow.",
+    "hotelBoundary": "Empty-photo hero, no blank src,2 destination-search links, source-backed geo;390px no horizontal overflow.",
+    "hotelRundle": "Two verified local images; no unverified schema geo.",
+    "hotelMap": "BowValley query gives8 hotels,3 retained markers (2 labelled indicative,1 source-backed), no browser errors.",
+    "NYE": "Revised title/body/canonical and no Town fireworks promise.",
+    "legacyGolf": "Noindex/follow, no map or TouristAttraction schema.",
+    "winterHub": "New avalanche and NYE canonical links present."
+  },
+  "sitemapChecks": {
+    "golfLegacyExcluded": true,
+    "bowFallsIncluded": "2026-10-28",
+    "goatCreekReview": "2026-10-29",
+    "quietToolsReview": "2026-10-29",
+    "newLibraryReviews": "2026-10-28"
+  },
+  "independentReviews": [
+    "Five article claims, keys, source links and inventory completeness reviewed.",
+    "Trail transit leak/GoatCreek jurisdiction/map concurrency issues fixed and actual-script regression-covered.",
+    "Hotel property/photos/nullable coordinate provenance and template fallback checks passed."
+  ],
+  "liveRedirects": {
+    "rules": 40,
+    "checks": 100,
+    "passed": 100,
+    "report": "live-http-redirect-verification-2026-10-29.json"
+  },
+  "deployment": "Pending PR/main CI, merge and public verification.",
+  "limitations": [
+    "Catalogue inventory is not a claim that all inherited facts are individually verified.",
+    "HI LakeLouise existing Expedia ID remains unresolved and preserved.",
+    "Road data requires configured server access; official fallback remains.",
+    "Town feed availability is separate from a successful build.",
+    "Search and affiliate revenue gains require complete postrelease measurement."
+  ]
+}

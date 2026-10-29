@@ -12,7 +12,7 @@ This release follows the three published winter journey releases. It keeps the f
 
 ## Verification in progress
 
-Cached build and site audit pass:603 workspace HTML documents,559 indexable and zero findings. The clean archive has one fewer HTML document because an unrelated untracked user asset is excluded. All nine planning/source/navigation regressions and the new offline redirect-plan check pass. Browser checks passed combined trail-plan filters, empty/reset, winter/Kootenay comparisons,390px layout, Boundary empty-photo/search links/source geo, Rundle real photos/no unverified schema geo and revised NYE canonical/content. Final clean build, CI, deployment and public route receipts follow actual execution.
+Cached build and site audit pass:603 workspace HTML documents,559 indexable and zero findings. The clean archive has one fewer HTML document because an unrelated untracked user asset is excluded. All nine planning/source/navigation regressions and the new offline redirect-plan check pass. Browser checks passed combined trail-plan filters, empty/reset, winter/Kootenay comparisons,390px layout, Boundary empty-photo/search links/source geo, Rundle real photos/no unverified schema geo and revised NYE canonical/content. Clean archive of codec78e4d7 passed the full public-source build,602HTML/559indexable audit with zero findings and all ten regressions. Sitemap exclusions/dates and legacy noindex safeguards also pass. Exact results are in site-quality-clean-verification-2026-10-29.json. CI, deployment and public content-route receipts remain pending.
 
 ## Full-goal requirement audit
 
