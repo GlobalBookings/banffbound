@@ -19,7 +19,9 @@ This continues the full BanffBound goal after the published winter/town expansio
 - All five planning/source/freshness check scripts pass.
 - Browser: outing filters, no match/reset, query restoration, clean canonical and one-day Summer/Canmore plan handoff; month hash selection, Fahrenheit conversion and reset; packing check identity across seasonal/activity changes and reload, explicit save-off/reset and390px layout; Canmore/Moraine winter advice, Lake Louise/mobility arrival advice and phone layouts; three ski-mountain camera matches.
 - Original committed live snapshots and unrelated local automation/social files remain unchanged.
-- Clean full-fetch release build, final CI and production verification are recorded after they occur. This document does not yet claim the new journey release is live.
+- Clean archive of code commit `b2d850f`: full live-source production build passed;601 HTML documents,559 indexable and zero audit findings. All five planning/source checks passed. Both ECCC destinations were validated; browser display preserves the actual station, UTC-derived source times and independent high/low periods. Sunshine upper-mountain measurements display with their source date; missing Lake Louise values and a Norquay report with a nonmatching date remain unavailable. The road API returned400, and the visible dashboard correctly uses its unavailable/official-link fallback.
+- Clean-release browser checks also passed at1280px and390px. Source displays produced no observed browser errors.
+- Final CI and production verification are recorded after they occur; these clean-build results do not yet claim the new journey release is live.
 
 ## Remaining full-goal work
 

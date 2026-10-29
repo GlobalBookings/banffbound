@@ -16,6 +16,8 @@ npm run preview
 
 `build:cached` compiles the site and Pagefind search from the committed data snapshots without refreshing them. `build` first runs `scripts/fetch-live-data.mjs`, then compiles and indexes. `fetch-data` updates the five JSON files under `src/data/live/`; review those diffs before committing. A successful build is not a deployment receipt.
 
+`node scripts/check-weather-source.mjs`, `node scripts/check-snow-source.mjs` and `node scripts/check-source-freshness.mjs` check provider identity, missing/zero values, explicit periods, source evidence, failures and clock/calendar expiry without writing snapshots. `node scripts/check-day-ideas.mjs` checks outing constraints and builder handoffs.
+
 `node scripts/check-trip-planner.mjs` checks the real planning module using Astro’s installed compiler: seasonal/legacy templates, invalid shared state, limits, transport advice and affiliate identifiers.
 
 `audit:site` crawls generated HTML for internal routes, fragments, local assets, one H1, production canonicals, descriptions, duplicate indexable titles/canonicals and JSON-LD parse errors. It writes `research/built-site-audit-2026-10-28.json` and fails for route, asset or metadata errors in the winter cluster. It does not verify external availability, travel advice, search rankings or affiliate payouts.
