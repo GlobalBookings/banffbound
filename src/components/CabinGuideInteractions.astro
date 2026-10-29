@@ -1,0 +1,31 @@
+<script>
+  import { compareCabinStays } from '../data/cabinPlanning';
+  function initCabinComparison() {
+    const form=document.querySelector<HTMLFormElement>('#cabin-fit-form');
+    if(!form||form.dataset.ready)return;
+    const selects={base:document.querySelector<HTMLSelectElement>('#cabin-base'),season:document.querySelector<HTMLSelectElement>('#cabin-season'),kitchen:document.querySelector<HTMLSelectElement>('#cabin-kitchen')};
+    const count=document.querySelector('#cabin-fit-count'),notes=document.querySelector('#cabin-fit-notes'),empty=document.querySelector<HTMLElement>('#cabin-fit-empty');
+    const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-cabin-id]'));
+    if(!selects.base||!selects.season||!selects.kitchen||!count||!notes||!empty||!cards.length)return;
+    const keys={base:'cabin_base',season:'cabin_season',kitchen:'cabin_kitchen'} as const;
+    const url=new URL(window.location.href),raw:Record<string,string>={};
+    for(const key of ['base','season','kitchen'] as const){const values=url.searchParams.getAll(keys[key]);if(values.length===1)raw[key]=values[0];}
+    const restored=compareCabinStays(raw).filters;
+    for(const key of ['base','season','kitchen'] as const)selects[key]!.value=restored[key];
+    const render=()=>{
+      const result=compareCabinStays({base:selects.base!.value,season:selects.season!.value,kitchen:selects.kitchen!.value}),ids=new Set<string>(result.selectedIds);
+      for(const card of cards)card.hidden=!ids.has(card.dataset.cabinId||'');
+      count.textContent=`${ids.size} ${ids.size===1?'cabin-category example':'cabin-category examples'} to compare`;
+      notes.replaceChildren(...result.notes.map(text=>{const p=document.createElement('p');p.textContent=text;return p;}));empty.hidden=ids.size!==0;
+      const next=new URL(window.location.href);for(const key of ['base','season','kitchen'] as const){next.searchParams.delete(keys[key]);if(result.filters[key]!=='all')next.searchParams.set(keys[key],result.filters[key]);}
+      try{window.history.replaceState(null,'',next);}catch{/* Filters still work when history is unavailable. */}
+    };
+    form.addEventListener('submit',event=>{event.preventDefault();render();});form.addEventListener('change',render);
+    form.addEventListener('reset',()=>{for(const select of Object.values(selects))select!.value='all';render();});
+    form.dataset.ready='true';form.hidden=false;render();
+  }
+  initCabinComparison();document.addEventListener('astro:page-load',initCabinComparison);
+</script>
+<style is:global>
+  .cabin-comparison [hidden]{display:none!important}.cabin-comparison{scroll-margin-top:110px;margin:2.5rem 0}.cabin-comparison .cabin-disclosure{font-size:.86rem;background:#eef2eb;padding:1rem;border-left:3px solid #9e7d42}.cabin-comparison form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;background:#eef2eb;border:1px solid #d4ddce;padding:1.2rem;border-radius:10px}.cabin-comparison label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.35rem}.cabin-comparison select{display:block;width:100%;min-height:48px;padding:.65rem;border:1px solid #aab9a6;border-radius:6px;background:white;color:#173c29;font:inherit}.cabin-comparison button{min-height:48px;font:inherit;cursor:pointer}.cabin-reset{background:white;color:#173c29;border:1px solid #173c29;border-radius:6px;padding:.6rem 1rem}.cabin-comparison [role=status]{font-weight:600;font-size:.9rem}.cabin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.cabin-card{min-width:0;border:1px solid #d4ddce;border-radius:12px;overflow:hidden;background:white}.cabin-card>img{display:block;width:100%;aspect-ratio:8/5;object-fit:cover;margin:0!important}.cabin-photo-note{font-size:.7rem!important;line-height:1.5!important;padding:.6rem 1rem;margin:0!important;background:#f2f4ef}.cabin-card-body{padding:1.2rem}.cabin-card h3{font-size:1.35rem;margin-top:0!important}.cabin-card p,.cabin-card dd{font-size:.88rem;line-height:1.7}.cabin-card dl{margin:0}.cabin-card dl>div{padding:.65rem 0;border-top:1px solid #e1e6dc}.cabin-card dt{font-size:.85rem;font-weight:700}.cabin-card dd{margin:0}.cabin-book{display:block;padding:.85rem;background:#204d35;color:white!important;border-radius:6px;font-weight:700;text-align:center;text-decoration:none!important}.cabin-link-note{font-size:.73rem!important;line-height:1.5!important}.cabin-card details{font-size:.8rem;line-height:1.6}.cabin-card summary{font-weight:600;cursor:pointer}.cabin-card a{overflow-wrap:anywhere}.cabin-comparison :is(a,button,select,summary):focus-visible{outline:3px solid #a9792e;outline-offset:3px}@media(max-width:700px){.cabin-grid,.cabin-comparison form{grid-template-columns:1fr}.cabin-card-body{padding:1rem}}
+</style>

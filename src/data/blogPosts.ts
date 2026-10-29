@@ -1,3 +1,7 @@
+import { bowLakeGuideMetadata } from './bowLakeGuideOverrides';
+import { jasperGuideMetadata } from './jasperGuideOverrides';
+import { diningGuideMetadata } from './diningGuideOverrides';
+import { cabinGuideMetadata } from './cabinGuideOverrides';
 import { cyclingGuideMetadata } from './cyclingGuideOverrides';
 import { lakeJourneyMetadata } from './lakeJourneyOverrides';
 import { visitorDestinationMetadata } from './visitorDestinationOverrides';
@@ -21,7 +25,11 @@ export interface BlogPost {
   category: string;
   image: string;
   readTime: string;
+  imageIsIllustrative?: boolean;
+  imageNote?: string;
 }
+
+const newlyReviewedMetadata: Record<string, Partial<BlogPost>> = { ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata };
 
 const originalBlogPosts: BlogPost[] = [
   {
@@ -3044,7 +3052,7 @@ const originalBlogPosts: BlogPost[] = [
   },
 ];
 
-export const allBlogPosts: BlogPost[] = originalBlogPosts.map(post => ({ ...post, ...winterGuideMetadata[post.slug], ...winterActivityMetadata[post.slug], ...winterTripMetadata[post.slug], ...winterResortMetadata[post.slug], ...winterSeasonMetadata[post.slug], ...viewGuideMetadata[post.slug], ...winterWarmUpMetadata[post.slug], ...winterWellnessLegacyMetadata[post.slug], ...winterLibraryMetadata[post.slug], ...visitorDestinationMetadata[post.slug], ...lakeJourneyMetadata[post.slug], ...cyclingGuideMetadata[post.slug] }));
+export const allBlogPosts: BlogPost[] = originalBlogPosts.map(post => ({ ...post, ...winterGuideMetadata[post.slug], ...winterActivityMetadata[post.slug], ...winterTripMetadata[post.slug], ...winterResortMetadata[post.slug], ...winterSeasonMetadata[post.slug], ...viewGuideMetadata[post.slug], ...winterWarmUpMetadata[post.slug], ...winterWellnessLegacyMetadata[post.slug], ...winterLibraryMetadata[post.slug], ...visitorDestinationMetadata[post.slug], ...lakeJourneyMetadata[post.slug], ...cyclingGuideMetadata[post.slug], ...newlyReviewedMetadata[post.slug], ...(Object.hasOwn(newlyReviewedMetadata, post.slug) ? { imageIsIllustrative: true, imageNote: newlyReviewedMetadata[post.slug].imageNote || 'Illustrative image; not a verified view of the places or current conditions described in this guide.' } : {}) }));
 // Keep redirect paths generated, but surface only canonical articles in listings.
 export const blogPosts = allBlogPosts.filter(post => !(post.slug in blogRedirects));
 

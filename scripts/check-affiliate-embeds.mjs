@@ -104,12 +104,20 @@ for (const page of pages.slice(0, 2)) {
   assert.ok(!/\bdata-gyg-widget=|class="eg-affiliate-banners"/.test(page), 'Vendor scanner targets only appear after permission.');
   assert.ok(page.includes('partner_id=') && page.includes('sponsored') && page.includes('direct link'));
 }
-assert.ok(pages[0].includes('camref=1101l3MtWX') && pages[0].includes('cmp=banffboundblog'));
+const bookingHelperBuild = await build({ entryPoints: ['src/data/articleBookingContext.ts'], bundle: true, write: false, platform: 'node', format: 'esm' });
+const { getArticleBookingContext } = await import(`data:text/javascript;base64,${Buffer.from(bookingHelperBuild.outputFiles[0].text).toString('base64')}`);
+const defaultBookingContext = getArticleBookingContext(undefined);
+const defaultHotel = new URL(defaultBookingContext.hotelHref), defaultTour = new URL(defaultBookingContext.tourHref);
+assert.equal(defaultHotel.origin, 'https://www.expedia.ca'); assert.equal(defaultHotel.pathname, '/Hotel-Search');
+assert.equal(defaultHotel.searchParams.get('destination'), 'Banff, Alberta'); assert.equal(defaultHotel.searchParams.get('camref'), '1101l3MtWX');
+assert.equal(defaultTour.origin, 'https://www.getyourguide.com'); assert.equal(defaultTour.pathname, '/banff-l284/');
+assert.equal(defaultTour.searchParams.get('partner_id'), 'QW960HO'); assert.equal(defaultTour.searchParams.get('cmp'), 'banffboundblog');
+for (const reference of ['getArticleBookingContext(slug, curatedBookingLinks)', 'href={bookingContext.hotelHref}', 'href={bookingContext.tourHref}']) assert.ok(pages[0].includes(reference), 'Layout uses the helper native-link contract, not duplicated literal identifiers.');
 const blogFrontmatter = pages[0].split('---')[1].replace(/^import .*;\s*$/gm, '');
 for (const illustrative of [false, true]) {
   const props = { title: 'Fixture route', description: 'Fixture description', date: '2026-10-29', category: 'Hiking', image: '/images/fixture.jpg', readTime: '5 min', slug: 'fixture-route', ...(illustrative ? { imageIsIllustrative: true, imageNote: 'Illustrative stock; route identity unverified.' } : {}) };
   const compiled = await build({ stdin: { contents: `const Astro={props:${JSON.stringify(props)}}; const blogPosts=[];\n${blogFrontmatter}\nexport {articleSchema,imageIsIllustrative,imageNote};`, loader: 'ts' }, write: false, platform: 'node', format: 'cjs' });
-  const context = { module: { exports: {} }, exports: {}, URL }; context.exports = context.module.exports;
+  const context = { module: { exports: {} }, exports: {}, URL, getArticleBookingContext }; context.exports = context.module.exports;
   vm.runInNewContext(compiled.outputFiles[0].text, context);
   assert.equal(Object.hasOwn(context.module.exports.articleSchema, 'image'), !illustrative, 'Illustrative route photos must be absent from Article schema.');
   assert.equal(context.module.exports.imageIsIllustrative, illustrative, 'Default remains false for other guides.');

@@ -40,6 +40,13 @@
 - [Planning tools](https://banffbound.com/tools/)
 - [Hotel directory](https://banffbound.com/hotel-directory/)
 - [Vacation rentals](https://banffbound.com/vacation-rentals/): Source-reviewed managed-stay examples and imported listing leads; prices, availability and unverified locations are not asserted.
+- [Cabin rentals near Banff](https://banffbound.com/blog/banff-cabin-rentals/): Compare six named cabin/chalet categories by area, season and meal plan; summer cabins and winter suites are distinct.
+- [The Lodge at Bow Lake](https://banffbound.com/blog/num-ti-jah-lodge/): Current room, meal, season and arrival decisions, with direct operator booking information.
+- [Former Num-Ti-Jah Lodge](https://banffbound.com/blog/numtijah-lodge/): Former-name history and a separate Bow Lake day visit, with current access and café context.
+- [Jasper park access](https://banffbound.com/blog/jasper-national-park/): Recovery, current closure precedence and named route choices; permission and trip-day conditions are separate.
+- [Jasper town](https://banffbound.com/blog/jasper-town/): Base choice, local transit, meals and arrival logistics.
+- [Arriving in Jasper, Canada](https://banffbound.com/blog/jasper-canada/): Edmonton, Calgary and rail approaches, with separate Banff–Jasper trip planning.
+- [New dining discoveries in Banff](https://banffbound.com/blog/new-places-to-eat-in-banff/): Dated additions/reopenings, separately labelled discoveries and venue-specific booking links.
 - [Accessible Banff](https://banffbound.com/accessible-trails/): Published physical trail profiles, visitor access features, transport and adaptive activity arrangements.
 - [Activity planning](https://banffbound.com/activities/): Seasonal activity descriptions, preparation questions and current operator sources.
 - [Paddling planning](https://banffbound.com/paddling/): Separate lake, river and guided-trip choices with current watercraft rules.

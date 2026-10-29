@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import WinterStatusNotice from '../components/WinterStatusNotice.astro';
 import { blogPosts } from '../data/blogPosts';
+import { getArticleBookingContext } from '../data/articleBookingContext';
 
 interface Props {
   title: string;
@@ -15,11 +16,13 @@ interface Props {
   image: string;
   imageIsIllustrative?: boolean;
   imageNote?: string;
+  curatedBookingLinks?: boolean;
   readTime: string;
   slug?: string;
 }
 
-const { title, description, date, lastUpdated, partialCorrectionDate, partialCorrectionLabel = 'Hotel location paragraph corrected:', category, image, imageIsIllustrative = false, imageNote = '', readTime, slug } = Astro.props;
+const { title, description, date, lastUpdated, partialCorrectionDate, partialCorrectionLabel = 'Hotel location paragraph corrected:', category, image, imageIsIllustrative = false, imageNote = '', curatedBookingLinks = false, readTime, slug } = Astro.props;
+const bookingContext = getArticleBookingContext(slug, curatedBookingLinks);
 
 const relatedPosts = blogPosts
   .filter(p => p.category === category && p.slug !== slug && p.title !== title)
@@ -65,7 +68,7 @@ const articleSchema = {
   </div>
   <article class="blog-article">
     <div class="article-hero">
-      <img src={image} alt={imageIsIllustrative ? `Illustrative outdoor photograph; not verified as the place or route in ${title}` : title} class="article-hero-img" loading="eager" fetchpriority="high" />
+      <img src={image} alt={imageIsIllustrative ? `Illustrative image; not verified as the place or activity in ${title}` : title} class="article-hero-img" loading="eager" fetchpriority="high" />
       <div class="article-hero-overlay"></div>
       <div class="article-hero-content">
         <span class="badge">{category}</span>
@@ -79,16 +82,16 @@ const articleSchema = {
         </div>
       </div>
     </div>
-    {imageIsIllustrative && <p class="article-image-note container">{imageNote || 'Illustrative outdoor photograph; not verified as the place or route described in this guide.'}</p>}
+    {imageIsIllustrative && <p class="article-image-note container">{imageNote || 'Illustrative image; not verified as the place or activity described in this guide.'}</p>}
     <div class="expedia-leaderboard container">
       <div class="affiliate-panel" data-affiliate-embed="expedia-banner">
-        <p><a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener noreferrer sponsored">Compare Banff stays on Expedia — affiliate link</a></p>
+        <p><a href={bookingContext.hotelHref} target="_blank" rel="noopener noreferrer sponsored">Compare {bookingContext.hotelLabel} stays on Expedia — affiliate link</a></p>
         <p class="affiliate-embed-status" data-affiliate-status role="status" aria-live="polite">Optional partner content is off. You can use the direct link without enabling it.</p>
         <button type="button" data-open-consent class="affiliate-preferences">Privacy choices</button>
         <div data-affiliate-mount hidden></div>
       </div>
     </div>
-    <div class="article-body container" data-category={category}>
+    <div class="article-body container" data-category={category} data-curated-booking={bookingContext.suppressAutomaticCTA ? 'true' : 'false'}>
       {slug && /winter|ice-walk|hot-springs|snowshoe|ice-skating/.test(slug) && <WinterStatusNotice />}
       <slot />
       <div class="blog-email-capture">
@@ -104,7 +107,7 @@ const articleSchema = {
       <div class="gyg-widget-container">
         <h2>Recommended Tours & Activities</h2>
         <div class="affiliate-panel" data-affiliate-embed="gyg-auto">
-          <p><a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&cmp=banffboundblog" target="_blank" rel="noopener noreferrer sponsored">Browse Banff tours on GetYourGuide — affiliate link</a></p>
+          <p><a href={bookingContext.tourHref} target="_blank" rel="noopener noreferrer sponsored">Browse {bookingContext.tourLabel} activity results on GetYourGuide — affiliate link</a></p>
           <p class="affiliate-embed-status" data-affiliate-status role="status" aria-live="polite">Optional partner content is off. You can use the direct link without enabling it.</p>
           <button type="button" data-open-consent class="affiliate-preferences">Privacy choices</button>
           <div data-affiliate-mount hidden></div>
@@ -154,6 +157,7 @@ const articleSchema = {
   (function() {
     var body = document.querySelector('.article-body');
     if (!body) return;
+    if (body.dataset.curatedBooking === 'true') return;
     var cat = (body.dataset.category || '').toLowerCase();
 
     // Category-specific CTA config
