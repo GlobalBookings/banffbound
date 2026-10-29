@@ -1,0 +1,296 @@
+{
+  "checkedAt": "2026-10-29T16:24:21.628721+00:00",
+  "routes": [
+    {
+      "path": "/quiet-trails/",
+      "status": 200,
+      "canonical": "https://banffbound.com/quiet-trails/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Quiet Trail Planning": true,
+        "route-plans": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:46 GMT",
+      "plans": 17
+    },
+    {
+      "path": "/alternatives/",
+      "status": 200,
+      "canonical": "https://banffbound.com/alternatives/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Trail Comparisons": true,
+        "comparison-filters": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT",
+      "routeDescriptions": 17,
+      "comparisonGroups": 5
+    },
+    {
+      "path": "/trail-map/",
+      "status": 200,
+      "canonical": "https://banffbound.com/trail-map/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Indicative listing locations only": true,
+        "map-load-feedback": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:46 GMT"
+    },
+    {
+      "path": "/trails/stanley-glacier/",
+      "status": 200,
+      "canonical": "https://banffbound.com/trails/stanley-glacier/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "4.9 km one way": true,
+        "Kootenay National Park": true,
+        "British Columbia": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:46 GMT"
+    },
+    {
+      "path": "/trails/peyto-lake-shore/",
+      "status": 200,
+      "canonical": "https://banffbound.com/trails/peyto-lake-shore/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "1.3 km one way from Peyto Lookout": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:46 GMT"
+    },
+    {
+      "path": "/trails/bow-falls/",
+      "status": 200,
+      "canonical": "https://banffbound.com/trails/bow-falls/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "1.2 km one way from Bow River Bridge": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:46 GMT"
+    },
+    {
+      "path": "/trails/goat-creek-xc-ski/",
+      "status": 200,
+      "canonical": "https://banffbound.com/trails/goat-creek-xc-ski/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Spray Valley Provincial Park": true,
+        "albertaparks.ca": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:46 GMT"
+    },
+    {
+      "path": "/trails/golf-course-loop-xc-ski/",
+      "status": 200,
+      "canonical": "https://banffbound.com/trails/golf-course-loop-xc-ski/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Route not verified": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:46 GMT",
+      "robots": "noindex, follow"
+    },
+    {
+      "path": "/hotel-directory/banff-boundary-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-boundary-lodge/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Property photo unavailable": true,
+        "Search the area on Expedia": true,
+        "51.125783": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/hotel-directory/rundle-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/rundle-mountain-lodge/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "h4371137": true,
+        "rundle-mountain-travel-alberta": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/hotel-directory/douglas-fir-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/douglas-fir-resort/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "h904421": true,
+        "douglas-fir-official": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/hotel-directory/hi-lake-louise-alpine-centre/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/hi-lake-louise-alpine-centre/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "hi-lake-louise-official": true,
+        "Alpine": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/hotel-directory/tunnel-mountain-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/tunnel-mountain-resort/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Tunnel Mountain Resort": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/hotel-directory/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Indicative listing point": true,
+        "53 retained listing locations": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/blog/banff-avalanche-safety/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-avalanche-safety/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Avalanche Awareness for Banff Visitors": true,
+        "avalanche.ca/training": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/blog/banff-park-bus/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-park-bus/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Banff Bus Guide": true,
+        "8X": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/blog/banff-shoulder-season/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-shoulder-season/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Banff in May or October": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/blog/banff-new-years-eve/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-new-years-eve/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "2026/27": true,
+        "banff.ca/NYE": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/blog/banff-weather-best-time-to-visit/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-weather-best-time-to-visit/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Banff Weather Guide: Seasonal Packing": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:32 GMT"
+    },
+    {
+      "path": "/winter/",
+      "status": 200,
+      "canonical": "https://banffbound.com/winter/",
+      "h1": 1,
+      "emptyImages": 0,
+      "markers": {
+        "Avalanche awareness for visitors": true,
+        "New Year\u2019s Eve in Banff": true
+      },
+      "lastModified": "Thu, 29 Oct 2026 16:22:46 GMT"
+    }
+  ],
+  "verifiedAt": "2026-10-29T16:26:10.545625+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/4",
+  "pullRequestHead": "81cc9742e610c1b8e62b4cfecb8b0f2c6a173109",
+  "mergeCommit": "49a73c5dc7087322f59225fbe7328a0a87226252",
+  "pullRequestCI": {
+    "run": 40910433258,
+    "check": 123576616249,
+    "conclusion": "success"
+  },
+  "mainCI": {
+    "run": 40910751216,
+    "conclusion": "success",
+    "job": 123577738657
+  },
+  "hosting": {
+    "provider": "DigitalOcean App Platform",
+    "deploymentId": "3434af01-edac-464d-9d5a-26c4b8f81ae4",
+    "sourceCommit": "49a73c5dc7087322f59225fbe7328a0a87226252",
+    "status": "Success",
+    "liveDeployment": true,
+    "health": "Healthy",
+    "startedAtUTC": "2026-10-29T16:21:26Z",
+    "buildTimeDisplayed": "1m 48s total"
+  },
+  "redirectsAfterContentDeploy": {
+    "report": "live-http-redirect-verification-2026-10-29.json",
+    "rules": 40,
+    "checks": 100,
+    "passed": 100,
+    "bothSlashForms": true,
+    "queryPreserved": true,
+    "canonicalOverlapControlsPassed": true
+  },
+  "liveBrowser": {
+    "trailPlanner": "Winter+Kootenay yields1 MarbleCanyon plan; reset restores17.",
+    "publicRedirect": "Browser visiting /blog/banff-views/ lands at /blog/banff-view/ with the reviewed canonical title."
+  },
+  "sourceLimits": [
+    "Road server key remains unconfigured; official-source fallback is intentional.",
+    "Hosted Town feeds may be unavailable independently of build success.",
+    "HI LakeLouise existing ExpediaID remains unresolved and preserved.",
+    "Broader article/property/route inventory remains incomplete; no blanket factual or ranking/revenue claim."
+  ],
+  "preserved": [
+    "All non-ingress hosting configuration preserved semantically; private app specs excluded from Git.",
+    "Unrelated local automation/social work preserved."
+  ],
+  "ownedPreviewServersStopped": [
+    47864,
+    46127
+  ]
+}

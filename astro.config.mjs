@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
+import { visitorDestinationMetadata, visitorHotelLocationCorrections, visitorHotelCorrectionDate } from './src/data/visitorDestinationOverrides.ts';
 import { winterLibraryMetadata } from './src/data/winterLibraryOverrides.ts';
 import { trails } from './src/data/trails.ts';
 import { hotels } from './src/data/hotels.ts';
@@ -45,7 +46,8 @@ export default defineConfig({
         }
         const reviewedDate = path.startsWith('/trails/') ? reviewedTrailDates.get(path.slice('/trails/'.length)) : path.startsWith('/hotel-directory/') ? reviewedHotelDates.get(path.slice('/hotel-directory/'.length)) : undefined;
         if (reviewedDate) item.lastmod = new Date(reviewedDate);
-        if (['/winter', '/trail-map', '/quiet-trails', '/alternatives', '/hotel-directory', '/tools'].includes(path)) item.lastmod = new Date('2026-10-29');
+        if (['/winter', '/trail-map', '/quiet-trails', '/alternatives', '/hotel-directory', '/tools', '/accessible-trails', '/paddling', '/activities', '/things-to-do', '/vacation-rentals'].includes(path) || path.startsWith('/activities/') || Object.hasOwn(visitorDestinationMetadata, path.replace('/blog/', ''))) item.lastmod = new Date('2026-10-29');
+        if (Object.hasOwn(visitorHotelLocationCorrections, path.replace('/blog/', ''))) item.lastmod = new Date(visitorHotelCorrectionDate);
         // Boost priority for high-value pages
         if (item.url === 'https://banffbound.com/') {
           item.priority = 1.0;

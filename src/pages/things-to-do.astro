@@ -1,175 +1,95 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WinterStatusNotice from '../components/WinterStatusNotice.astro';
 
 const attractions = [
-  {
-    name: 'Banff Gondola',
-    description: 'Soar to the summit of Sulphur Mountain for panoramic views of six mountain ranges. The 8-minute ride takes you 2,281m above sea level to a boardwalk, interpretive centre, and sky bistro.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
-    type: 'Sightseeing',
-    season: 'Year-round',
-    duration: '2-3 hours',
-  },
-  {
-    name: 'Lake Louise',
-    description: 'One of the most photographed lakes in the world. The turquoise glacial waters set against Victoria Glacier create a postcard-perfect scene. Walk the lakeshore or hike to the Lake Agnes Tea House.',
-    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
-    type: 'Nature',
-    season: 'Year-round',
-    duration: 'Half day',
-  },
-  {
-    name: 'Moraine Lake',
-    description: 'The iconic Valley of the Ten Peaks setting. The stunning blue waters surrounded by dramatic peaks make this one of Canada\'s most treasured natural landmarks. Arrive early for the best experience.',
-    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80',
-    type: 'Nature',
-    season: 'June - October',
-    duration: 'Half day',
-  },
-  {
-    name: 'Johnston Canyon',
-    description: 'Walk along the catwalks bolted to the canyon walls to see the stunning Lower and Upper Falls. In winter, the frozen waterfalls create a magical ice wonderland perfect for ice walks.',
-    image: 'https://images.unsplash.com/photo-1548587439-b1b3ed498e3b?w=600&q=80',
-    type: 'Hiking',
-    season: 'Year-round',
-    duration: '2-4 hours',
-  },
-  {
-    name: 'Banff Upper Hot Springs',
-    description: 'Soak in naturally heated mineral waters at 37-40 degrees Celsius while surrounded by mountain views. These historic hot springs have been welcoming visitors since the 1880s.',
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80',
-    type: 'Relaxation',
-    season: 'Year-round',
-    duration: '1-2 hours',
-  },
-  {
-    name: 'Bow Falls',
-    description: 'A short walk from downtown Banff, these wide cascading falls on the Bow River are beautiful year-round. Famous for appearing in the 1953 Marilyn Monroe film "River of No Return."',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
-    type: 'Sightseeing',
-    season: 'Year-round',
-    duration: '30 min',
-  },
-  {
-    name: 'Cave and Basin National Historic Site',
-    description: 'The birthplace of Canada\'s national parks. Explore the cave where hot springs were discovered in 1883 and learn about the history that led to the creation of Banff National Park.',
-    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80',
-    type: 'History',
-    season: 'Year-round',
-    duration: '1-2 hours',
-  },
-  {
-    name: 'Minnewanka Lake Cruise',
-    description: 'Take a scenic boat cruise on the largest lake in Banff National Park. Learn about the area\'s history, spot wildlife along the shore, and take in the dramatic mountain scenery.',
-    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80',
-    type: 'Sightseeing',
-    season: 'May - October',
-    duration: '1.5 hours',
-  },
-  {
-    name: 'Vermilion Lakes',
-    description: 'Three stunning lakes just minutes from Banff townsite, famous for spectacular sunset photography. Watch for ospreys, bald eagles, and elk along the scenic drive.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
-    type: 'Nature',
-    season: 'Year-round',
-    duration: '1-2 hours',
-  },
+  { name: 'Banff Gondola', type: 'A booked sightseeing visit',
+    description: 'Travel up Sulphur Mountain for the summit visitor experience. Weather can limit views, and outdoor boardwalks involve a different surface and exposure from the indoor building.',
+    timing: 'Check the selected date’s operating hours, last upload and last descent; dining has separate hours.',
+    journey: 'The base is above town on Mountain Avenue. Check Roam Route 1 or your booked transfer, including the final return. Allow time between arrival, ticketing and any dining booking.',
+    question: 'Does the ticket include the exact summit or dining experience you want, and what happens if weather affects the visit?',
+    guide: '/blog/banff-gondola-tickets-guide', source: 'https://www.banffjaspercollection.com/attractions/banff-gondola/hours-location/', sourceLabel: 'Direct gondola hours, location and terms',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80' },
+  { name: 'Lake Louise', type: 'A lakeshore visit with a complete return plan',
+    description: 'Visit the lakeshore for mountain scenery in its actual season. A summer trail to a tea house is a separate mountain hike; snow, avalanche exposure and seasonal services change that plan.',
+    timing: 'A lake visit is possible in different seasons, subject to current access and conditions. Neither turquoise water nor a usable skating surface is guaranteed.',
+    journey: 'Lake Louise village, the lakeshore and the ski resort are different places. Confirm that your transport serves the intended destination, plus its last return and any reservation.',
+    question: 'Is this a lakeshore stop, a designated rink session or a hike, and how will everyone reach the correct start?',
+    guide: '/blog/lake-louise-complete-guide', source: 'https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise', sourceLabel: 'Parks Canada lake access and transport',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80' },
+  { name: 'Moraine Lake', type: 'A seasonal transport-led day',
+    description: 'Plan an authorised seasonal journey to the Valley of the Ten Peaks. Personal vehicles are restricted, and arriving earlier does not remove the access rules. The road’s winter closure is not a casual winter-walking invitation.',
+    timing: 'Use the published service season for the year you are travelling. Do not carry a previous summer’s dates into a winter itinerary.',
+    journey: 'Compare Parks Canada shuttles with other authorised options. Confirm the correct departure point, reservation, luggage rules and final return; a Banff hotel booking does not provide lake access.',
+    question: 'What exactly is reserved: the transport, a guided outing, an on-site canoe rental, or only accommodation?',
+    guide: '/shuttle-reservations', source: 'https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq', sourceLabel: 'Parks Canada Moraine access and watercraft rules',
+    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=80' },
+  { name: 'Johnston Canyon', type: 'A route choice after the closure check',
+    description: 'The main route uses canyon paths and catwalks to falls. At the 29 October 2026 check, Parks Canada’s remediation closure covered the main trail, day-use facilities and P1 parking; its scheduled end did not establish reopening.',
+    timing: 'Current access takes precedence over a “year-round” label. Winter footing and a chosen endpoint need their own assessment.',
+    journey: 'Confirm the actual approach and any Route 9 service or tour pickup for your date. No booking or bus timetable overrides a closure.',
+    question: 'Is the main route open, and can the least experienced person manage the actual return in current conditions?',
+    guide: '/activities/ice-walk-johnston-canyon', source: 'https://parks.canada.ca/pn-np/ab/banff/bulletins/06d4ef61-a3c9-4b65-8dfc-66d056252d6c', sourceLabel: 'Parks Canada main-trail closure notice',
+    image: 'https://images.unsplash.com/photo-1548587439-b1b3ed498e3b?w=600&q=80' },
+  { name: 'Banff Upper Hot Springs', type: 'A facility visit after confirming operation',
+    description: 'This managed outdoor bathing facility is separate from Cave and Basin. At the 29 October 2026 check, Parks Canada still listed maintenance closure from 13 October to early November. Recheck actual reopening before travelling.',
+    timing: 'Check current hours, closures and admission arrangements. The source currently specifies in-person, first-come admission rather than online advance reservations.',
+    journey: 'Check Roam Route 1 and the actual stop/approach. Plan clothing, changing time, any assistance and the return separately from a gondola visit.',
+    question: 'Is the pool operating, does the visit fit your group’s needs, and how will you reach the facility and return?',
+    guide: '/blog/banff-hot-springs-guide', source: 'https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs', sourceLabel: 'Parks Canada operating notice and admission',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80' },
+  { name: 'Bow Falls', type: 'A viewpoint with a season-specific approach',
+    description: 'See the river and falls from a designated open viewpoint. The Town explicitly closes the pedestrian clifftop section in winter, so a summer walk from the bridge is not a guaranteed winter route.',
+    timing: 'Check the actual pedestrian route, ice and barriers. A brief viewpoint stop and a longer riverside walk require different plans.',
+    journey: 'Verify the open approach from your starting place. Summer transit or a nearby hotel stop does not confirm a winter walking connection; remain away from the river and closed sections.',
+    question: 'Which open viewpoint and approach fit the group today, including the return climb or steps?',
+    guide: '/trails/bow-falls', source: 'https://banff.ca/654/Bow-Falls-Trail', sourceLabel: 'Town Bow Falls route and winter clifftop closure',
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80' },
+  { name: 'Cave and Basin National Historic Site', type: 'History and interpretation near town',
+    description: 'Learn about the thermal springs, longstanding Indigenous significance and the development of Canada’s national parks. This is a heritage visit; the protected thermal waters are not a swimming destination.',
+    timing: 'Opening days vary by season and there are dated closure exceptions. Check the actual day rather than assuming daily winter opening.',
+    journey: 'Plan the approach, indoor visit and any outdoor paths separately. Verify transit operating dates, entrance arrangements and the return before leaving town.',
+    question: 'Which exhibits and areas are available on your day, and what route or assistance does your group need?',
+    guide: '/blog/banff-hot-springs-history', source: 'https://parks.canada.ca/lhn-nhs/ab/caveandbasin/visit/heures-hours', sourceLabel: 'Parks Canada opening days and closure exceptions',
+    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80' },
+  { name: 'Lake Minnewanka Cruise', type: 'A seasonal booked lake trip',
+    description: 'Choose the named cruise product and actual departure. A summer boat trip is separate from a winter land-based lake visit; a frozen lake does not supply the same attraction.',
+    timing: 'The direct operator page was marked closed for the 2026 season at review and lists a 2027 programme. Confirm the chosen date and weather terms before booking.',
+    journey: 'Check transport to the lake for that season and the last return. Leave time for check-in, the route to the dock and any boarding assistance; do not assume summer Route 6 service runs in winter.',
+    question: 'Does the selected cruise, boarding arrangement and transfer fit the actual party and date?',
+    guide: '/tours', source: 'https://www.banffjaspercollection.com/attractions/lake-minnewanka-cruise/location-hours/', sourceLabel: 'Direct cruise season, departure and location information',
+    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80' },
+  { name: 'Vermilion Lakes', type: 'A flexible land-based viewpoint',
+    description: 'Look for an open legal viewing place around the wetland and scenic road. Scenery, reflections and wildlife vary; do not plan the visit around a promised photograph or animal sighting.',
+    timing: 'Choose an approach that works with actual road and surface conditions. Lakeside scenery does not establish safe ice access.',
+    journey: 'Parking is limited. Check your pedestrian or cycling approach and its return; use legal stopping places and keep people and tripods out of traffic.',
+    question: 'Can you reach and use the viewpoint on land without entering a road lane, closed area or unassessed ice?',
+    guide: '/photo-spots', source: 'https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/vermilion', sourceLabel: 'Parks Canada Vermilion visitor information',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80' },
+];
+const faqs = [
+  { question: 'Can I fit all these Banff sights into one day?', answer: 'Build the day around one main booked visit or destination, its travel and final return. Add a nearby flexible stop only if access, daylight and the group’s energy allow. These cards are choices, not a timed route through all nine places.' },
+  { question: 'Is Moraine Lake a normal winter sightseeing stop?', answer: 'No. Its seasonal road and visitor transport arrangements differ from Lake Louise. Use Parks Canada’s current access information and do not treat a road closure as an invitation for a casual winter walk to the lake.' },
+  { question: 'Does an attraction listing mean admission and transport are included?', answer: 'No. Park admission, attraction tickets, reservations, equipment and transport are separate unless the selected product explicitly includes them. Check the actual provider, meeting point and cancellation terms.' },
 ];
 ---
 
-<BaseLayout title="Things to Do" description="Discover the best things to do in Banff - from iconic sightseeing spots to hidden gems in the Canadian Rockies.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Things to Do in Banff National Park',
-    description: 'Discover the best things to do in Banff — from iconic sightseeing spots to hidden gems in the Canadian Rockies.',
-    url: 'https://banffbound.com/things-to-do',
-    numberOfItems: attractions.length,
-    itemListElement: attractions.map((item, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      item: {
-        '@type': 'TouristAttraction',
-        name: item.name,
-        description: item.description,
-        image: item.image,
-        touristType: item.type,
-        geo: { '@type': 'GeoCoordinates', latitude: 51.1784, longitude: -115.5708 },
-        isAccessibleForFree: true,
-        publicAccess: true,
-      },
-    })),
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Things to Do' }]} />
-  </div>
-  <section class="page-hero">
-    <img
-      src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
-      alt="Banff mountain landscape"
-      class="page-hero-bg"
-      loading="eager"
-      fetchpriority="high"
-    />
-    <div class="page-hero-content">
-      <span class="badge">Explore</span>
-      <h1>Things to Do in Banff</h1>
-      <p>From iconic landmarks to hidden gems, discover the best experiences that Banff National Park has to offer.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-3">
-        {attractions.map(item => (
-          <div class="card">
-            <img src={item.image} alt={item.name} class="card-image" loading="lazy" />
-            <div class="card-body">
-              <span class="tag">{item.type}</span>
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
-              <div class="card-meta">
-                <span>&#128197; {item.season}</span>
-                <span>&#9202; {item.duration}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="tip-section">
-    <div class="container">
-      <div class="tip-card">
-        <h3>&#128161; Insider Tip</h3>
-        <p>For the best experience at popular spots like Moraine Lake and Lake Louise, arrive before 8am or after 4pm. A Parks Canada shuttle reservation is required for Moraine Lake during peak season (June-October). Book well in advance at reservation.pc.gc.ca.</p>
-      </div>
-    </div>
-  </section>
+<BaseLayout title="Things to Do in Banff: Sights, Seasons & Practical Plans" description="Choose among nine Banff sights with honest seasonal context, current source links, transport checks and questions for your group. Plan a flexible winter or summer day." lastUpdated="2026-10-29">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', name: 'Banff sightseeing planning choices', url: 'https://banffbound.com/things-to-do', numberOfItems: attractions.length, itemListElement: attractions.map((item, index) => ({ '@type': 'ListItem', position: index + 1, item: { '@type': 'WebPage', name: item.name, description: item.description, url: `https://banffbound.com${item.guide}` } })) })} />
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Things to Do' }]} /></div>
+  <section class="page-hero"><img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="" class="page-hero-bg" loading="eager" fetchpriority="high" /><div class="page-hero-content"><span class="badge">Choose a workable day</span><h1>Things to Do in Banff</h1><p>Choose a main sight, make the journey work and leave room for the weather. These nine places need different access, tickets and seasonal plans.</p><p class="image-note">Illustrative mountain image; location and conditions unverified.</p></div></section>
+  <section class="section"><div class="container"><WinterStatusNotice /><div class="planning-note"><h2>Choose a day shape</h2><div class="grid grid-3"><div><h3>Stay near your base</h3><p>Combine one open town-area viewpoint or heritage visit with a warm stop. Check the exact path, opening day and return before leaving.</p></div><div><h3>Book one main experience</h3><p>Let the timed attraction determine arrival and return transport. Keep room for check-in, equipment, meals and delays.</p></div><div><h3>Make a seasonal day trip</h3><p>Confirm the destination’s access and reserved transport first. Lake Louise and Moraine Lake are separate plans, especially in winter.</p></div></div><p>Editorial source check: <time datetime="2026-10-29">29 October 2026</time>. This page does not provide live availability, traffic or conditions. <a href="/what-to-do-today">Use today’s planning checks</a> and <a href="/activities">compare active outings</a>.</p></div>
+    <div class="grid grid-3">{attractions.map(item => <article class="card"><figure><img src={item.image} alt="" class="card-image" loading="lazy" /><figcaption>Illustrative image; not verified as this site or its current conditions.</figcaption></figure><div class="card-body"><p class="choice-type">{item.type}</p><h2>{item.name}</h2><p>{item.description}</p><h3>When it fits</h3><p>{item.timing}</p><h3>Journey check</h3><p>{item.journey}</p><p><strong>Before choosing:</strong> {item.question}</p><p><a href={item.guide}>Read the planning guide →</a></p><p><a href={item.source} target="_blank" rel="noopener">{item.sourceLabel} ↗</a><br /><span class="source-date">Source checked 2026-10-29</span></p></div></article>)}</div>
+  </div></section>
+  <section class="section" style="background:var(--color-bg-alt)"><div class="container"><h2>Finish the practical plan</h2><div class="grid grid-3"><div><h3>Your base and transfer</h3><p><a href="/towns">Compare Banff, Canmore and Lake Louise</a>, then check <a href="/car-free-banff">the full car-free journey</a>. A hotel location does not establish attraction pickup.</p></div><div><h3>People and conditions</h3><p>Check <a href="/accessible-trails">access requirements</a>, <a href="/weather">weather</a> and <a href="/conditions">current official reports</a>. Describe the actual group to the operator or facility.</p></div><div><h3>A flexible winter stay</h3><p>Use the <a href="/winter">winter guide</a>, <a href="/winter-stays">winter accommodation planning</a> and <a href="/ski-day-planner">ski-day planner</a> when the trip includes snow activities.</p></div></div></div></section>
+  <section class="section"><div class="container"><h2>Sightseeing planning questions</h2>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
 </BaseLayout>
 
 <style>
-  .tip-section {
-    padding: 0 0 4rem;
-  }
-
-  .tip-card {
-    background: var(--color-bg-alt);
-    border-left: 4px solid var(--color-accent);
-    border-radius: var(--radius);
-    padding: 2rem;
-  }
-
-  .tip-card h3 {
-    margin-bottom: 0.5rem;
-  }
-
-  .tip-card p {
-    color: var(--color-text-light);
-    line-height: 1.7;
-  }
+  .image-note,.source-date{font-size:.76rem!important;line-height:1.5!important}.image-note{opacity:.9}.planning-note{padding:1.5rem;background:var(--color-bg-alt);border-left:4px solid var(--color-accent);border-radius:var(--radius);margin:1.5rem 0 2rem}
+  figure{margin:0}figcaption{padding:.5rem 1rem;font-size:.7rem;line-height:1.4;color:var(--color-text-light)}.card-body p{line-height:1.7}.card-body h2{font-size:1.35rem}.card-body h3{font-size:.95rem;margin-top:1.2rem}.choice-type{font-size:.78rem;font-weight:700;color:var(--color-primary)}.source-date{color:var(--color-text-light)}
+  details{padding:1rem 0;border-bottom:1px solid #d6ded8}summary{font-weight:700;cursor:pointer}details p{line-height:1.7;margin:.7rem 0}
+  @media(max-width:600px){.planning-note{padding:1rem}}
 </style>

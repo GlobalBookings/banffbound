@@ -35,7 +35,10 @@
 - [Weather by month](https://banffbound.com/monthly-weather/): Sourced 1991–2020 BANFF temperature normals and seasonal planning, with no promised crowd levels or cheapest-month claims.
 - [Planning tools](https://banffbound.com/tools/)
 - [Hotel directory](https://banffbound.com/hotel-directory/)
-- [Vacation rentals](https://banffbound.com/vacation-rentals/)
+- [Vacation rentals](https://banffbound.com/vacation-rentals/): Source-reviewed managed-stay examples and imported listing leads; prices, availability and unverified locations are not asserted.
+- [Accessible Banff](https://banffbound.com/accessible-trails/): Published physical trail profiles, visitor access features, transport and adaptive activity arrangements.
+- [Activity planning](https://banffbound.com/activities/): Seasonal activity descriptions, preparation questions and current operator sources.
+- [Paddling planning](https://banffbound.com/paddling/): Separate lake, river and guided-trip choices with current watercraft rules.
 - [Trail directory](https://banffbound.com/trails/)
 - [Interactive trail map](https://banffbound.com/trail-map/): Route descriptions and indicative listing areas; source reports determine current access.
 - [Quiet trail planning](https://banffbound.com/quiet-trails/): Selected route plans with season, area and interest filters; no live crowd estimates.

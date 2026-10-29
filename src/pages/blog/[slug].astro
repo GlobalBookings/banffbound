@@ -1,4 +1,5 @@
 ---
+import { visitorDestinationOverrides, applyVisitorHotelLocationCorrections, visitorHotelLocationCorrections, visitorHotelCorrectionDate } from '../../data/visitorDestinationOverrides';
 import { winterLibraryOverrides } from '../../data/winterLibraryOverrides';
 import { winterWellnessLegacyOverrides } from '../../data/winterWellnessLegacyOverrides';
 import { winterWarmUpOverrides } from '../../data/winterWarmUpOverrides';
@@ -14,7 +15,7 @@ import { winterActivityOverrides } from '../../data/winterActivityOverrides';
 import { winterGuideOverrides } from '../../data/winterGuideOverrides';
 import { blogRedirects } from '../../data/redirects.mjs';
 
-const blogContent = { ...blogContentMain, ...blogContent3, ...winterGuideOverrides, ...winterActivityOverrides, ...winterTripOverrides, ...winterResortOverrides, ...winterSeasonOverrides, ...viewGuideOverride, ...winterWarmUpOverrides, ...winterWellnessLegacyOverrides, ...winterLibraryOverrides };
+const blogContent = { ...blogContentMain, ...blogContent3, ...winterGuideOverrides, ...winterActivityOverrides, ...winterTripOverrides, ...winterResortOverrides, ...winterSeasonOverrides, ...viewGuideOverride, ...winterWarmUpOverrides, ...winterWellnessLegacyOverrides, ...winterLibraryOverrides, ...visitorDestinationOverrides };
 
 export function getStaticPaths() {
   return allBlogPosts.map(post => ({ params: { slug: post.slug }, props: { post } }));
@@ -24,7 +25,7 @@ const { post } = Astro.props;
 const redirect = (blogRedirects as Record<string, string>)[post.slug];
 if (redirect) return Astro.redirect(`/blog/${redirect}/`, 301);
 
-const content = (blogContent[post.slug] || '<p>Content coming soon.</p>').replace(
+const content = applyVisitorHotelLocationCorrections(post.slug, blogContent[post.slug] || '<p>Content coming soon.</p>').replace(
   /<table\b[\s\S]*?<\/table>/gi,
   table => `<div class="article-table-scroll" tabindex="0" role="region" aria-label="Guide comparison table">${table}</div>`
 );
@@ -36,6 +37,7 @@ const content = (blogContent[post.slug] || '<p>Content coming soon.</p>').replac
   description={post.description}
   date={post.date}
   lastUpdated={post.lastUpdated}
+  partialCorrectionDate={visitorHotelLocationCorrections[post.slug] ? visitorHotelCorrectionDate : undefined}
   category={post.category}
   image={post.image}
   readTime={post.readTime}

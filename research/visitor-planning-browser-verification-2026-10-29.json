@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-10-29T16:51:36.312389+00:00",
+  "build": "workspace cached build",
+  "browser": "in-app browser; actual controls on 127.0.0.1:4321",
+  "accessibility": {
+    "initialProfiles": 3,
+    "comparison": [
+      "Marsh Trail",
+      "Minnewanka to Stewart Canyon"
+    ],
+    "sameSelectionProfiles": 1,
+    "resetProfiles": 3,
+    "nativeFAQ": true,
+    "nativeChecklist": true,
+    "mobileViewport": 390,
+    "documentWidth": 390,
+    "comparisonScrollContained": true
+  },
+  "activities": {
+    "initial": 12,
+    "winterAndWater": 0,
+    "emptyVisible": true,
+    "reset": 12,
+    "mobileDocumentWidth": 390
+  },
+  "rentals": {
+    "initialLeads": 50,
+    "baseGuides": 4,
+    "reviewedExamples": 4,
+    "canmoreLaundry": {
+      "baseGuides": 1,
+      "reviewedExamples": 1,
+      "property": "Blackstone Mountain Lodge"
+    },
+    "unknownCapacityLeads": 1,
+    "unknownCapacityValue": "",
+    "resetLeads": 50,
+    "mobileDocumentWidth": 390
+  },
+  "notes": [
+    "No booking, account form, test purchase or conversion submitted.",
+    "Final cached build rechecked after the Gondola wording and bounded correction-date changes."
+  ],
+  "finalCachedChecks": {
+    "paddlingBowFallsLimit": true,
+    "specificRiverProducts": 4,
+    "lakeAndTownWaterSettings": 7,
+    "affiliateSearchIds": [
+      "QW960HO",
+      "1101l3MtWX"
+    ],
+    "boundedCorrectionLabel": "Hotel location paragraph corrected",
+    "originalPublicationDate": "2026-03-02",
+    "actualCorrectionDate": "2026-10-29",
+    "mobileLayouts": [
+      {
+        "path": "/paddling/",
+        "viewport": 390,
+        "documentWidth": 390,
+        "h1": 1
+      },
+      {
+        "path": "/blog/johnston-canyon-guide/",
+        "viewport": 390,
+        "documentWidth": 390,
+        "h1": 1
+      },
+      {
+        "path": "/accessible-trails/",
+        "viewport": 390,
+        "documentWidth": 390,
+        "h1": 1
+      }
+    ],
+    "correctedGondolaDeviceLimitWording": true
+  }
+}
