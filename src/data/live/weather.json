@@ -1,19 +1,19 @@
 {
   "provider": "Environment and Climate Change Canada",
   "licenceUrl": "https://eccc-msc.github.io/open-data/licence/readme_en/",
-  "updatedAt": "2026-10-29T12:26:31.754Z",
+  "updatedAt": "2026-10-29T19:26:59.626Z",
   "banff": {
     "sourceUrl": "https://weather.gc.ca/en/location/index.html?coords=51.18,-115.57",
     "current": {
-      "temp": -5.8,
+      "temp": -2.9,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 87,
-      "wind": "ENE 6 km/h, gusts 32 km/h",
-      "observedAt": "2026-10-29T12:00:00.000Z",
+      "humidity": 75,
+      "wind": "SE 3 km/h, gusts 32 km/h",
+      "observedAt": "2026-10-29T19:00:00.000Z",
       "station": "Banff"
     },
-    "forecastIssuedAt": "2026-10-29T11:00:00.000Z",
+    "forecastIssuedAt": "2026-10-29T17:00:00.000Z",
     "forecast": [
       {
         "day": "Thursday",
@@ -98,15 +98,15 @@
   "lakeLouise": {
     "sourceUrl": "https://weather.gc.ca/en/location/index.html?coords=51.425,-116.181",
     "current": {
-      "temp": -6.1,
+      "temp": -2.6,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 91,
-      "wind": "ENE 10 km/h",
-      "observedAt": "2026-10-29T12:00:00.000Z",
+      "humidity": 79,
+      "wind": "NE 10 km/h",
+      "observedAt": "2026-10-29T19:00:00.000Z",
       "station": "Yoho National Park"
     },
-    "forecastIssuedAt": "2026-10-29T11:00:00.000Z",
+    "forecastIssuedAt": "2026-10-29T17:00:00.000Z",
     "forecast": [
       {
         "day": "Today (Thu, 29 Oct)",

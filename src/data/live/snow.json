@@ -2,43 +2,43 @@
   "schemaVersion": 2,
   "provider": "Official resort report pages",
   "experimental": true,
-  "updatedAt": "2026-10-29T12:26:31.973Z",
-  "retrievedAt": "2026-10-29T12:26:31.973Z",
+  "updatedAt": "2026-10-29T19:26:59.849Z",
+  "retrievedAt": "2026-10-29T19:26:59.849Z",
   "resorts": [
     {
       "id": "sunshine",
       "name": "Sunshine Village",
       "website": "https://www.skibanff.com/the-mountain/mountain-report/current-conditions",
       "sourceUrl": "https://www.skibanff.com/the-mountain/mountain-report/current-conditions",
-      "retrievedAt": "2026-10-29T12:26:31.834Z",
+      "retrievedAt": "2026-10-29T19:26:59.544Z",
       "sourceReportedAt": null,
-      "sourceReportedAtText": "Wednesday, October 28th, 2026 4:32 PM",
-      "sourceReportDate": "2026-10-28",
+      "sourceReportedAtText": "Thursday, October 29th, 2026 10:32 AM",
+      "sourceReportDate": "2026-10-29",
       "sourceTimeZone": null,
       "status": null,
       "reportSummary": "Opening for the 26/27 Winter Season Early November. Weather Dependent.",
-      "baseDepth": "10 cm",
-      "newSnow24h": "3 cm",
-      "seasonTotal": "17 cm",
+      "baseDepth": "22 cm",
+      "newSnow24h": "14 cm",
+      "seasonTotal": "31 cm",
       "openRuns": null,
       "totalRuns": null,
       "openLifts": null,
       "totalLifts": null,
       "measurements": {
         "newSnow24h": {
-          "value": 3,
+          "value": 14,
           "unit": "cm",
           "label": "24hr",
           "location": "Upper Mountain"
         },
         "baseDepth": {
-          "value": 10,
+          "value": 22,
           "unit": "cm",
           "label": "Base",
           "location": "Upper Mountain"
         },
         "seasonTotal": {
-          "value": 17,
+          "value": 31,
           "unit": "cm",
           "label": "Cumulative",
           "location": "Upper Mountain"
@@ -52,9 +52,9 @@
       "name": "Lake Louise Ski Resort",
       "website": "https://www.skilouise.com/snow-conditions/",
       "sourceUrl": "https://www.skilouise.com/snow-conditions/",
-      "retrievedAt": "2026-10-29T12:26:31.968Z",
+      "retrievedAt": "2026-10-29T19:26:59.841Z",
       "sourceReportedAt": null,
-      "sourceReportedAtText": "Thursday, October 29, 2026 at 11:00 AM",
+      "sourceReportedAtText": "Thursday, October 29, 2026 at 3:13 PM",
       "sourceReportDate": "2026-10-29",
       "sourceTimeZone": null,
       "status": null,
@@ -75,7 +75,7 @@
       "name": "Mt. Norquay",
       "website": "https://banffnorquay.com/conditions/",
       "sourceUrl": "https://banffnorquay.com/conditions/",
-      "retrievedAt": "2026-10-29T12:26:31.805Z",
+      "retrievedAt": "2026-10-29T19:26:59.723Z",
       "sourceReportedAt": null,
       "sourceReportedAtText": "Thursday, October 29, 2026",
       "sourceReportDate": "2026-10-29",
@@ -83,15 +83,15 @@
       "status": null,
       "reportSummary": "Winter is on the way and our tentative opening day is November 7th. Think snow!",
       "baseDepth": "0 cm",
-      "newSnow24h": "0 cm",
-      "seasonTotal": "8 cm",
+      "newSnow24h": "8 cm",
+      "seasonTotal": "17 cm",
       "openRuns": 0,
       "totalRuns": 80,
       "openLifts": null,
       "totalLifts": null,
       "measurements": {
         "newSnow24h": {
-          "value": 0,
+          "value": 8,
           "unit": "cm",
           "label": "Last 24 Hours",
           "location": null
@@ -103,7 +103,7 @@
           "location": "Upper Mountain"
         },
         "seasonTotal": {
-          "value": 8,
+          "value": 17,
           "unit": "cm",
           "label": "Year to Date Snowfall",
           "location": "Upper Mountain"
