@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-10-29T12:26:31.932Z",
+  "retrievedAt": "2026-10-29T19:26:59.868Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-10-29T12:26:31.929Z",
+      "retrievedAt": "2026-10-29T19:26:59.864Z",
       "sourceUpdatedAt": null,
-      "sourceUpdatedAtText": "Thu, 29 Oct 2026 06:26:31 -0700",
+      "sourceUpdatedAtText": "Thu, 29 Oct 2026 13:26:59 -0700",
       "sourceTimeIssue": "Source feed clock is later than retrieval; its update time is unverified.",
       "status": "available",
       "rejectedCount": 0,
@@ -84,18 +84,18 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-10-29T12:26:31.895Z",
+      "retrievedAt": "2026-10-29T19:26:59.815Z",
       "sourceUpdatedAt": null,
-      "sourceUpdatedAtText": "Thu, 29 Oct 2026 06:26:31 -0700",
+      "sourceUpdatedAtText": "Thu, 29 Oct 2026 13:26:59 -0700",
       "sourceTimeIssue": "Source feed clock is later than retrieval; its update time is unverified.",
       "status": "available",
       "rejectedCount": 0,
       "items": [
         {
-          "title": "Banff residents and businesses can now recycle more",
+          "title": "Banff residents can now recycle more",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1931",
           "description": "Plastic bags, styrofoam, candy wrappers, coffee cups among materials that can now be diverted from landfill!",
-          "publishedAt": "2026-10-28T22:50:22.000Z"
+          "publishedAt": "2026-10-29T17:02:00.000Z"
         },
         {
           "title": "New drop-in recreation sessions offer more ways to use your Pauw Pass",
