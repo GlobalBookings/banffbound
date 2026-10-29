@@ -20,7 +20,8 @@ No native redirect, hosting specification, environment credential, analytics acc
 - lake-journey-sources-2026-10-29.md
 - parking-shuttle-planning-sources-2026-10-29.md
 - hotel-directory-claim-audit-2026-10-29.md
-- Automated model/client/provenance/directory checks, cached and clean-source builds, generated-site coverage, browser behavior and public deployment receipts are recorded separately as verified.
+- Clean source7c63caa passed the full build and all17checks:602HTML documents,488indexable documents, zero audit findings. All95hotel routes were inspected for robots/schema/sitemap coverage; exactly71are noindex and24are eligible. The clean source fingerprint is in lakes-parking-hotel-clean-verification-2026-10-29.json.
+- Actual browser controls, map states and six390px layouts are recorded in lakes-parking-hotel-browser-verification-2026-10-29.json. Public deployment verification follows release.
 
 ## Remaining whole-site work
 
