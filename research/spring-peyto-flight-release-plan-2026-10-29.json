@@ -1,6 +1,6 @@
 {
   "checkedAtUTC": "2026-10-29T23:20:29.028363+00:00",
-  "status": "Integrated locally; pending clean build and production proof",
+  "status": "Clean committed-source build, strict audit, 47 checks, 232-route emitted verifier and browser QA passed; pending CI and production proof",
   "baselineRevision": "d3a04b2cf4e4bd8963e5fd07420022decba42e09",
   "guides": [
     {
@@ -55,5 +55,6 @@
     "noAccountEvidencePublished": true,
     "hostingSpecificationOrEnvironmentChanged": false
   },
-  "goalStatus": "active"
+  "goalStatus": "active",
+  "cleanVerification": "research/spring-peyto-flight-clean-verification-2026-10-29.json"
 }

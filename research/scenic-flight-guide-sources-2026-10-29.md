@@ -46,3 +46,7 @@ Native external links are direct primary operator/source routes, without `partne
 ## Focused verification
 
 `node scripts/check-scenic-flight-guides.mjs` checks the standalone future module without requiring current registry inclusion. It extracts and evaluates only the raw original post array to verify exact publication dates and canonical/internal targets. It verifies two distinct metadata/body/FAQ keys, fixed source-review date, illustrative-image scope, useful complete tables/sections, exact primary operator/product URLs, native enquiry/booking labels, visible/schema FAQ equality, balanced links/fragments and actual Astro fragment transformation. Negative fixtures reject medication/smoothness/seat/price/weight/false-base/blanket-overflight and stale-season claims, remove a source or FAQ and corrupt a native handoff. No network, site build, file output, deployment or merchant action is performed by the check.
+
+## Subsequent integration
+
+The prepared authoring boundary above records the earlier stage. All four guide replacements are now registered and clean-build verified for the release documented in `research/spring-peyto-flight-clean-verification-2026-10-29.json` (71 full reviews). This note does not itself establish production deployment.

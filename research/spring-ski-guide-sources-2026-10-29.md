@@ -46,3 +46,7 @@ Search results still expose2025/26 and April2026 schedule PDFs. The body tells r
 The full replacement removes a fixed2pm finish, starting by9am/chasing south-facing slopes as a universal snow strategy, negligible queues, automatic hotel/ticket savings, guaranteed pleasant spring coverage, light-colour goggles prescribed for all bright light, and Delirium Dive presented as an ordinary spring recommendation. It invents no visit, price, package, named run sequence, opening or transport promise.
 
 `node scripts/check-spring-ski-guide.mjs` checks the standalone body/metadata and original post date only; it deliberately does not require current registry integration. It verifies substantive distinct content, source/dated-service limits, full freeride requirements in their own section, one-array FAQ parity, native/internal links and illustrative metadata. Negative fixtures restore timing/queue/price/terrain claims, remove equipment/partner/current-status gates, change dates or image/publication flags, corrupt anchors or remove schema. No network, build output, account transaction, Git or shared-source edit is performed.
+
+## Subsequent integration
+
+The prepared authoring boundary above records the earlier stage. All four guide replacements are now registered and clean-build verified for the release documented in `research/spring-peyto-flight-clean-verification-2026-10-29.json` (71 full reviews). This note does not itself establish production deployment.

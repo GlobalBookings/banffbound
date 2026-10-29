@@ -61,3 +61,7 @@ The replacement omits fabricated personal drives; a universal 500 m or 10–15 m
 - Read-only consistency with the existing trail, lake, parking and Parkway record contracts.
 
 Prepared and frozen for root's **next-release** integration. No current-registry or production claim is made.
+
+## Subsequent integration
+
+The prepared authoring boundary above records the earlier stage. All four guide replacements are now registered and clean-build verified for the release documented in `research/spring-peyto-flight-clean-verification-2026-10-29.json` (71 full reviews). This note does not itself establish production deployment.
