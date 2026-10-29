@@ -796,7 +796,7 @@ export const blogContent3: Record<string, string> = {
 <p>The live music scene continues evolving each season, with new performers and occasional venue changes. I recommend checking current schedules upon arrival, as summer 2026 promises several new acts based on early season bookings I've observed during recent visits.</p>
 `,
   'big-3-banff': `
-<p>The Big 3 <a href="/blog/banff-live-music"><a href="/blog/eating-out-in-banff">Best Restaurants in <a href="/blog/banff-big-3">Banff's Big 3</a> : Foodie</a>'s Best Live Music Venues & Shows</a> refers to the three major ski resorts that dominate winter recreation in the Canadian Rockies: Sunshine Village, Lake Louise Ski Resort, and Mount Norquay. As someone who's carved turns on all three mountains countless times over the past decade, I can tell you each offers a completely different skiing experience. Whether you're planning a multi-mountain adventure or trying to decide which single resort deserves your time and money, understanding what makes each of these areas unique will transform your Banff ski trip from good to exceptional.</p>
+<p>Banff's three main downhill ski resorts are Sunshine Village, Lake Louise Ski Resort and Mount Norquay. Each has a different layout, arrival journey and range of terrain. Start with the <a href="/sunshine-vs-lake-louise-vs-norquay">three-resort comparison</a>, then use the <a href="/ski-day-planner">ski day planner</a> to choose a resort around the group's ability, lessons, transport and current operations.</p>
 
 <h2>Understanding the Big 3 Banff Ski Resorts</h2>
 
@@ -1342,7 +1342,7 @@ export const blogContent3: Record<string, string> = {
 
 <h2>Hiking Trails Accessible from Mt Norquay Road</h2>
 
-<p>The road provides access to several excellent hiking options beyond the resort facilities. The Stoney Squaw Trail starts from a small parking area about halfway up Mt Norquay Road – watch for the trailhead sign on your left. This 2.1-kilometer loop takes about 90 minutes and offers panoramic views without the chairlift cost. For more details, check out our guide on <a href="/blog/johnsons-canyon">Johnson's Canyon Banff Most Underrated Hidden Gem</a>.</p>
+<p>Summer hiking near Norquay includes <a href="/trails/upper-stoney">Upper Stoney</a> and the longer <a href="/trails/cascade-amphitheatre">Cascade Amphitheatre route</a>. These are distinct outings with different distances and climbing demands. Choose the exact trail and check its current access, conditions and return arrangements before travelling.</p>
 
 <p>From the main parking area at the top, you can access the more challenging Cascade Amphitheatre trail. This 6.8-kilometer hike climbs steadily through subalpine forest before opening into a spectacular cirque surrounded by towering limestone walls. I typically allow 3-4 hours for this hike, and it ranks among my top recommendations for intermediate hikers visiting Banff.</p>
 
@@ -2699,7 +2699,7 @@ export const blogContent3: Record<string, string> = {
 <p>For those planning a longer visit, our <a href="/blog/3-day-banff-itinerary">3-day Banff itinerary</a> provides a framework that balances skiing with other winter activities and allows for weather contingencies. Flexibility in your daily plans often makes the difference between a good trip and an exceptional one in the Canadian Rockies.</p>
 `,
   'banff-big-3': `
-<p>The <strong><a href="/blog/conde-nast-banff">Conde Nast's <a href="/blog/golden-banff">Golden <a href="/blog/big-3-banff"><a href="/blog/banff-adventure-weekend">Banff Weekend: Rafting, Via Ferrata & More</a>'s Big 3 Lakes Photography</a> : to Canada's Crown Jewel</a> Travel : Hidden Gems</a> Big 3</strong> refers to the three major ski resorts that define winter sports in the Canadian Rockies: Lake Louise Ski Resort, Sunshine Village, and Mount Norquay. As someone who's carved countless turns down these mountains over the past decade, I can tell you that each resort offers a completely different skiing personality. Whether you're planning a multi-mountain ski trip or trying to decide where to focus your time, understanding what makes each of these Banff ski areas unique will transform your mountain experience.</p>
+<p>The <strong>Banff Big 3</strong> means Sunshine Village, Lake Louise Ski Resort and Mount Norquay. A useful resort choice starts with the skiing you intend to do and how the group will reach the base, collect equipment and meet an instructor. Compare the <a href="/sunshine-vs-lake-louise-vs-norquay">three resort layouts and journeys</a>, and check the exact lift-ticket or pass terms for your dates before booking.</p>
 
 <h2>What Are the Banff Big 3 Ski Resorts?</h2>
 
@@ -3379,7 +3379,7 @@ export const blogContent3: Record<string, string> = {
 <p>Understanding jasper weather patterns gives you a significant advantage when planning your Banff adventure. By monitoring both locations and preparing for variable conditions, you'll maximize your time in these incredible mountain parks regardless of what Mother Nature delivers.</p>
 `,
   'johston-canyon': `
-<p>Johnston <a href="/blog/johnsons-canyon">Johnson's Canyon Banff Most Underrated Hidden Gem</a> stands as one of Banff's most popular hiking destinations, and after countless trips here over the years, I can confirm it lives up to the hype. This spectacular canyon walk takes you through limestone corridors to two magnificent waterfalls, offering some of the most accessible waterfall viewing in the Canadian Rockies. The trail attracts over 300,000 visitors annually, so timing and preparation are everything if you want to enjoy it properly.</p>
+<p>Johnston Canyon is a waterfall outing reached by paths and narrow catwalks, with separate Lower Falls, Upper Falls and longer Ink Pots objectives. Use the <a href="/blog/johnston-canyon-guide">reviewed Johnston Canyon guide</a> to choose an endpoint and check the dated closure, actual approach and transport. A winter visit needs its own footing and weather plan; begin with the <a href="/blog/banff-ice-walk-guide">canyon ice walk guide</a>.</p>
 
 <h2>Understanding Johnston Canyon: What Makes It Special</h2>
 
@@ -3527,7 +3527,7 @@ export const blogContent3: Record<string, string> = {
 <p>The key to finding consistent deals in Banff lies in flexibility—with dates, accommodation location, and activity choices. I've never visited without finding ways to save money while still experiencing the incredible landscape that keeps drawing me back year after year.</p>
 `,
   'johnstons-canyon': `
-<p><a href="/blog/johnston-canyon-guide">Johnston <a href="/blog/johnsons-canyon">Johnson's Canyon Banff Most Underrated Hidden Gem</a></a> is a popular Banff National Park outing with paths and catwalks leading to its waterfalls. Plan around current trail conditions and seasonal access. In winter, ice and changing conditions require a separate plan; start with our <a href="/blog/banff-ice-walk-guide">Johnston Canyon ice walk guide</a>.</p>
+<p><a href="/blog/johnston-canyon-guide">Johnston Canyon</a> is a Banff National Park outing with paths and catwalks leading to its waterfalls. Choose the actual endpoint and check current access and trail conditions. In winter, ice and changing conditions require a separate plan; start with our <a href="/blog/banff-ice-walk-guide">Johnston Canyon ice walk guide</a>.</p>
 
 <h2>Getting to Johnston's Canyon</h2>
 
@@ -4605,7 +4605,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>What makes these springs truly remarkable is their active bubbling. Underground pressure forces water and sediment up through the spring beds, creating a constant churning effect that keeps the pools crystal clear. The vibrant colors come from light refraction through the clear water and the pale limestone beneath, combined with mineral deposits that have accumulated over thousands of years.</p>
 
-<p>During my last visit in September 2025, I spent nearly an hour photographing the interplay of light and color as the afternoon sun hit the pools at different angles. The contrast between the warm-toned surrounding grasslands and the cool blues of the springs creates some of the most striking natural photography opportunities in <a href="/blog/banff-big-3">Banff's Big 3</a> National Park.</p>
+<p>At the Ink Pots, take photographs from the designated paths and keep the spring pools and their edges undisturbed. Make time for the full return hike rather than extending a waterfall visit without a plan. The <a href="/trails/ink-pots">Ink Pots route record</a> distinguishes the longer outing and its approach from a short Johnston Canyon visit.</p>
 
 <h2>The Complete Hiking Route to Ink Pots Banff Alberta</h2>
 

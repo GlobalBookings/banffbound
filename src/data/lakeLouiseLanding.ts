@@ -14,7 +14,7 @@ export const lakeLouiseStayChoices = [
     seasonNote: 'Seasonal rentals, skating and other activities depend on current operation and conditions. A room does not guarantee an activity or a particular view outside.',
     cooking: false, cabinSeasons: [] as string[],
     image: 'https://m.ahstatic.com/is/image/accorhotels/met_p_a099-82:4by3?fmt=jpg&wid=1200&hei=900&qlt=80',
-    imageAlt: 'Fairmont Chateau Lake Louise at the lakeshore',
+    imageAlt: 'Lake Louise and surrounding mountains in Fairmont’s official property gallery',
     officialUrl: 'https://www.fairmont.com/en/hotels/lake-louise/fairmont-chateau-lake-louise/rooms.html',
     officialLabel: 'Official room and view categories',
     expediaUrl: 'https://www.expedia.ca/Lake-Louise-Hotels-Fairmont-Chateau-Lake-Louise.h22503.Hotel-Information?camref=1101l3MtWX',

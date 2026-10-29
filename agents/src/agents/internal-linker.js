@@ -1,14 +1,12 @@
 import { createLogger } from '../core/logger.js';
-import { sendSlack, slackHeader, slackSection, slackDivider } from '../core/slack.js';
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 const log = createLogger('internal-linker');
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const WORK_DIR = path.join(__dirname, '..', '..', 'data', 'repo-checkout');
-const GH_TOKEN = process.env.GITHUB_TOKEN;
 const GH_REPO = process.env.GITHUB_REPO || 'GlobalBookings/banffbound';
 
 const MAX_LINKS_PER_POST = 4;
@@ -27,7 +25,7 @@ const RELATED_CATEGORIES = {
   'Food & Drink': ['Guides', 'Itineraries', 'Planning'],
 };
 
-const CONTENT_CHUNKS = ['blogContent1.ts', 'blogContent2.ts', 'blogContent3.ts'];
+const CONTENT_CHUNKS = ['blogContent.ts', 'blogContent3.ts'];
 
 function getRepoPaths() {
   return {
@@ -39,6 +37,7 @@ function getRepoPaths() {
 
 // ── Clone or pull the repo ─────────────────────────────────
 function ensureRepoCheckout() {
+  const GH_TOKEN = process.env.GITHUB_TOKEN;
   if (!GH_TOKEN) throw new Error('GITHUB_TOKEN not set');
 
   const repoUrl = `https://x-access-token:${GH_TOKEN}@github.com/${GH_REPO}.git`;
@@ -80,6 +79,18 @@ function parseBlogPosts() {
 }
 
 // ── Parse HTML content blocks from blogContent chunk files ──
+export function parseContentBlocks(raw) {
+  const contentMap = {};
+  const slugBlockRegex = /'([^']+)':\s*`([\s\S]*?)`(?:\s*,|\s*\})/g;
+  for (const match of raw.matchAll(slugBlockRegex)) contentMap[match[1]] = match[2];
+  return contentMap;
+}
+
+// Function replacement preserves literal dollar sequences in legacy HTML.
+export function replaceContentBlock(raw, originalHTML, newHTML) {
+  return raw.replace(originalHTML, () => newHTML);
+}
+
 function parseSlugContent() {
   const { blogContentFiles } = getRepoPaths();
   const contentMap = {};
@@ -90,11 +101,9 @@ function parseSlugContent() {
     if (!fs.existsSync(filePath)) continue;
     const raw = fs.readFileSync(filePath, 'utf8');
     fileContents[filePath] = raw;
-    const slugBlockRegex = /'([^']+)':\s*`([\s\S]*?)`(?:\s*,|\s*\})/g;
-    let match;
-    while ((match = slugBlockRegex.exec(raw)) !== null) {
-      contentMap[match[1]] = match[2];
-      slugToFile[match[1]] = filePath;
+    for (const [slug, html] of Object.entries(parseContentBlocks(raw))) {
+      contentMap[slug] = html;
+      slugToFile[slug] = filePath;
     }
   }
 
@@ -183,107 +192,69 @@ function calculateRelevance(postA, postB) {
   return score;
 }
 
-// ── Find a suitable paragraph and insert a link ────────────
-function insertLinkIntoHTML(html, targetSlug, anchorText) {
-  // Build significant keywords from the target slug to match against paragraphs
-  const targetWords = getSignificantWords(targetSlug.replace(/-/g, ' '));
-
-  // Split HTML into paragraphs
-  const paragraphs = html.match(/<p>[\s\S]*?<\/p>/g) || [];
-
-  let bestParagraph = null;
-  let bestScore = 0;
-  let bestPhrase = null;
-
-  for (const para of paragraphs) {
-    // Skip paragraphs that already have links to the same target
-    if (para.includes(`/blog/${targetSlug}`)) continue;
-
-    // Skip very short paragraphs or tip boxes
-    const plainText = para.replace(/<[^>]*>/g, '');
-    if (plainText.length < 80) continue;
-
-    // Score this paragraph by keyword overlap
-    const paraWords = getSignificantWords(plainText);
-    const overlap = targetWords.filter(w => paraWords.includes(w));
-    const overlapScore = overlap.length;
-
-    if (overlapScore > bestScore) {
-      bestScore = overlapScore;
-      bestParagraph = para;
-      bestPhrase = findLinkablePhrase(plainText, targetWords, anchorText);
-    }
+// ── Insert only an existing, exact multiword phrase ────────
+// Exported for offline regression checks. Importing this module never runs the
+// agent, loads Slack, checks out a repository, writes content or makes requests.
+export function insertLinkIntoHTML(html, targetSlug, anchorText, retiredSlugs = new Set()) {
+  if (typeof html !== 'string' || typeof targetSlug !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(targetSlug) || retiredSlugs.has(targetSlug)) return null;
+  const targetPath = `/blog/${targetSlug}`;
+  const hrefs = html.matchAll(/\bhref\s*=\s*(["'])(.*?)\1/gi);
+  for (const [, , href] of hrefs) {
+    if (href.split(/[?#]/, 1)[0].replace(/\/$/, '') === targetPath) return null;
   }
 
-  // If no keyword match, pick a long middle paragraph as fallback
-  if (!bestParagraph && paragraphs.length >= 3) {
-    // Pick from middle third of paragraphs
-    const middleStart = Math.floor(paragraphs.length / 3);
-    const middleEnd = Math.floor((paragraphs.length * 2) / 3);
-    for (let i = middleStart; i <= middleEnd; i++) {
-      const para = paragraphs[i];
-      if (!para) continue;
-      const plainText = para.replace(/<[^>]*>/g, '');
-      if (plainText.length >= 100) {
-        bestParagraph = para;
-        bestPhrase = null;
-        break;
+  // Never replace a lone generic word (such as "Banff") with a post title.
+  // The visible anchor always remains the exact phrase already in the prose.
+  const phrases = [...new Set([
+    typeof anchorText === 'string' ? anchorText.trim() : '',
+    targetSlug.replace(/-/g, ' '),
+    targetSlug.replace(/^(?:best|complete|ultimate)-/, '').replace(/-(?:(?:complete|ultimate|travel)-)?guide$/, '').replace(/-/g, ' '),
+  ])].filter(phrase => phrase.split(/\s+/).length >= 2 && phrase.length >= 8)
+    .sort((a, b) => b.length - a.length);
+  if (!phrases.length) return null;
+  const patterns = phrases.map(phrase => new RegExp(
+    `(?<![a-z0-9])${phrase.split(/\s+/).map(word => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+')}(?![a-z0-9])`, 'i'
+  ));
+
+  // Tokenize tags including quoted attributes, comments and raw/protected
+  // elements. Only plain paragraph text outside these contexts is eligible.
+  // Paragraphs containing any inline markup are deliberately left unchanged.
+  const protectedTags = new Set(['a', 'script', 'style', 'pre', 'code', 'textarea', 'button', 'select', 'template', 'noscript', 'svg', 'math']);
+  const tokens = /<!--[\s\S]*?(?:-->|$)|<![^>]*>|<\/?([a-z][a-z0-9:-]*)\b(?:[^>"']|"[^"]*"|'[^']*')*>/gi;
+  const protectedStack = [];
+  let paragraph = null;
+  for (const token of html.matchAll(tokens)) {
+    const markup = token[0];
+    const name = token[1]?.toLowerCase();
+    const closing = /^<\//.test(markup);
+    if (name === 'p' && closing) {
+      if (paragraph && !paragraph.hasMarkup && !protectedStack.length) {
+        const text = html.slice(paragraph.start, token.index);
+        if (text.length >= 80 && !/[<>]/.test(text)) {
+          for (const pattern of patterns) {
+            const match = text.match(pattern);
+            if (!match) continue;
+            const offset = paragraph.start + match.index;
+            const link = `<a href="${targetPath}">${match[0]}</a>`;
+            return html.slice(0, offset) + link + html.slice(offset + match[0].length);
+          }
+        }
+      }
+      paragraph = null;
+    } else if (name === 'p' && !closing) {
+      paragraph = protectedStack.length ? null : { start: token.index + markup.length, hasMarkup: false };
+    } else if (paragraph) {
+      paragraph.hasMarkup = true;
+    }
+    if (protectedTags.has(name)) {
+      if (!closing && !/\/\s*>$/.test(markup)) protectedStack.push(name);
+      if (closing) {
+        const index = protectedStack.lastIndexOf(name);
+        if (index >= 0) protectedStack.splice(index);
       }
     }
   }
-
-  if (!bestParagraph) return null;
-
-  // Build the link tag
-  const linkTag = `<a href="/blog/${targetSlug}">${anchorText}</a>`;
-
-  let modifiedPara;
-
-  if (bestPhrase && bestParagraph.includes(bestPhrase)) {
-    // Replace the matched phrase with a linked version
-    modifiedPara = bestParagraph.replace(bestPhrase, linkTag);
-  } else {
-    // Append a contextual sentence before the closing </p>
-    const sentence = ` For more details, check out our guide on ${linkTag}.`;
-    modifiedPara = bestParagraph.replace('</p>', `${sentence}</p>`);
-  }
-
-  const newHTML = html.replace(bestParagraph, modifiedPara);
-
-  // Verify the replacement actually happened
-  if (newHTML === html) return null;
-
-  return newHTML;
-}
-
-// ── Find a phrase in text that matches target keywords ─────
-function findLinkablePhrase(text, targetWords, anchorText) {
-  // Try to find the anchor text literally in the paragraph
-  if (text.includes(anchorText)) {
-    return anchorText;
-  }
-
-  // Try to find a shortened version of anchor text (first 3-4 significant words)
-  const anchorWords = getSignificantWords(anchorText);
-  if (anchorWords.length >= 2) {
-    const shortAnchor = anchorWords.slice(0, 3).join(' ');
-    // Search for this sequence in the text
-    const lowerText = text.toLowerCase();
-    const idx = lowerText.indexOf(shortAnchor);
-    if (idx >= 0) {
-      return text.substring(idx, idx + shortAnchor.length);
-    }
-  }
-
-  // Try to match individual target words in a nearby cluster
-  for (const word of targetWords) {
-    const regex = new RegExp(`\\b(${word}\\w*)\\b`, 'i');
-    const match = text.match(regex);
-    if (match) {
-      return match[0];
-    }
-  }
-
+  // No forced middle-paragraph sentence: absence of a natural phrase is a skip.
   return null;
 }
 
@@ -311,13 +282,24 @@ function generateAnchorText(post) {
 
 // ── Main ──────────────────────────────────────────────────
 export async function run() {
+  const { sendSlack, slackHeader, slackSection, slackDivider } = await import('../core/slack.js');
   log.info('Internal Link Optimiser starting...');
 
   // 0. Clone/pull latest repo
   ensureRepoCheckout();
 
+  // Use the site's exact canonical alias map without loading the Astro/TS app.
+  // Refresh the module cache key when this long-running agent pulls a new map.
+  // Missing/invalid maps fail closed instead of adding links to retired URLs.
+  const redirectFile = path.join(WORK_DIR, 'src', 'data', 'redirects.mjs');
+  const redirectUrl = pathToFileURL(redirectFile);
+  redirectUrl.searchParams.set('mtime', String(fs.statSync(redirectFile).mtimeMs));
+  const { blogRedirects } = await import(redirectUrl.href);
+  if (!blogRedirects || typeof blogRedirects !== 'object' || Array.isArray(blogRedirects)) throw new Error('Canonical blog alias map unavailable');
+  const retiredSlugs = new Set(Object.keys(blogRedirects));
+
   // 1. Read blog post metadata
-  const posts = parseBlogPosts();
+  const posts = parseBlogPosts().filter(post => !retiredSlugs.has(post.slug));
   if (posts.length === 0) {
     log.warn('No blog posts found -- skipping');
     return { linksAdded: 0, postsModified: 0 };
@@ -440,7 +422,7 @@ export async function run() {
       continue;
     }
 
-    const newHTML = insertLinkIntoHTML(currentHTML, link.targetSlug, link.anchorText);
+    const newHTML = insertLinkIntoHTML(currentHTML, link.targetSlug, link.anchorText, retiredSlugs);
 
     if (newHTML) {
       modifiedContentMap[link.sourceSlug] = newHTML;
@@ -469,7 +451,7 @@ export async function run() {
     const originalHTML = contentMap[slug];
     const newHTML = modifiedContentMap[slug];
     if (!fileContents[filePath]) continue;
-    fileContents[filePath] = fileContents[filePath].replace(originalHTML, newHTML);
+    fileContents[filePath] = replaceContentBlock(fileContents[filePath], originalHTML, newHTML);
     modifiedFiles.add(filePath);
   }
 
@@ -484,7 +466,7 @@ export async function run() {
   let pushed = false;
 
   try {
-    execSync('git add src/data/blogContent1.ts src/data/blogContent2.ts src/data/blogContent3.ts', { cwd: root, stdio: 'pipe' });
+    execSync('git add src/data/blogContent.ts src/data/blogContent3.ts', { cwd: root, stdio: 'pipe' });
     execSync(`git commit -m "${commitMsg.replace(/"/g, '\\"')}"`, { cwd: root, stdio: 'pipe' });
     execSync('git push origin main', { cwd: root, stdio: 'pipe' });
     log.info('Pushed to GitHub -- site rebuild triggered');

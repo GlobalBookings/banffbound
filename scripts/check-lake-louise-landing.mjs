@@ -48,6 +48,8 @@ const page = await readFile(filename, 'utf8');
 const transformed = await transformAstro(page, { filename });
 assert.deepEqual(transformed.diagnostics.filter(diagnostic => diagnostic.severity === 1), []);
 assert.ok(page.includes('PaidLandingLayout') && page.includes('slot="hero-detail"'));
+assert.match(stays[0].imageAlt, /^Lake Louise and surrounding mountains/);
+assert.ok(page.includes('Pictured: Lake Louise in Fairmont’s official gallery.'));
 assert.ok(page.includes('lakeLouiseStayFaqs.map(faq') && page.includes('faq.question') && page.includes('faq.answer'));
 assert.equal(faqs.length, 4);
 assert.ok(page.includes('data-landing-id={lakeLouiseLandingId}') && page.includes('data-offer-id={stay.slug}'));

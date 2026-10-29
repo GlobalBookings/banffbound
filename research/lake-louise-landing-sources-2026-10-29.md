@@ -60,7 +60,7 @@ Merchant research used bare public property pages, without affiliate click param
 
 The previous global Mountaineer/Paradise/Baker targets contain IDs893459/893466/6584769. The research tool could not retrieve those exact old paths. Different IDs plus inaccessible retrieval are an unresolved identity check, **not proof that a particular wrong property is returned**. Root was notified. All existing95global URLs remain untouched; the new landing has independently sourced property targets. All five landing targets were identifiable, so no property CTA needed an uncertain search-destination label. The page nevertheless tells the visitor to match the returned address and room.
 
-Property photographs reuse the exact current reviewed directory image URLs; no new asset, inferred picture identity or third-party widget was added. Each card explains that the photographed room/facility is not a booking inclusion; hero caption names the Chateau lakeshore image rather than implying all five properties have that location.
+Photographs reuse the exact current reviewed directory image URLs; no new asset or third-party widget was added. Each card explains that the photographed room/facility is not a booking inclusion. Final visual review showed the Fairmont gallery asset is a scenic lake image, so its alt text and hero caption name Lake Louise rather than claiming the hotel building is pictured. The caption separately locates the Chateau at the lakeshore and distinguishes village hotels and the ski resort.
 
 ## High-intent keyword/message mapping (planning only)
 

@@ -2,6 +2,10 @@
 
 These are evidence-led follow-ups to the completed scoped release, not changes included in PR7. Recorded29 October2026. The broader site review remains active.
 
+Status update for the next release: the cycling findings below are repaired in the nine-route planner and three reviewed guide overrides; consent enforcement is replaced by the shared versioned loader/event controls and tested withdrawal paths. Evidence is in `cycling-planning-sources-2026-10-29.md` and `consent-control-sources-2026-10-29.md`. These dated findings are retained as the before-state record.
+
+Three new hotel/activity booking comparisons and draft Google/Bing message mappings follow the user's affiliate-first choice. Publishing the pages does not establish account-specific paid-traffic permission, an approved advertising budget, sales or profitability. The launch plan records those remaining decisions. Across the broader site, 52 of295 canonical blog guides and52 of95 hotel profiles now have the scoped review status described by their registers; remaining legacy content needs review rather than a blanket freshness claim.
+
 ## Cycling permissions and route planning
 
 Read-only audit: `biking.astro`, its local route cards, four rendered bike articles and cycling activity data.

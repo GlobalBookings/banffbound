@@ -45,6 +45,7 @@ jobs:
           node scripts/check-lake-louise-landing.mjs
           node scripts/check-winter-activity-landing.mjs
           node scripts/check-cycling-planning.mjs
+          node scripts/check-internal-linker.mjs
           node scripts/check-consent.mjs
           node scripts/check-affiliate-embeds.mjs
           node scripts/check-wildlife-planning.mjs
