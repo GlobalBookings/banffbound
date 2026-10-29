@@ -2,353 +2,197 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CarRentalCTA from '../components/CarRentalCTA.astro';
+
+const airporter = 'https://banffairporter.com/schedule-rates/';
+const airporterInfo = 'https://banffairporter.com/travel-information/';
+const brewster = 'https://www.banffjaspercollection.com/brewster-express/schedule/';
+const brewsterStops = 'https://www.banffjaspercollection.com/brewster-express/locations/';
+const brewsterInfo = 'https://www.banffjaspercollection.com/brewster-express/faqs/';
+const yyc = 'https://www.yyc.com/en-us/navigatingyyc/groundtransportation.aspx';
+const faqs = [
+  { question: 'How do I get from Calgary Airport to Banff without a car?', answer: 'Compare the dated Banff Airporter and Brewster Express services, their exact stops and available departures. Reserve a journey that allows for arrival formalities and baggage, and confirm the delay policy. A private transfer or an airport overnight may suit an arrival after the last usable scheduled service.' },
+  { question: 'How long should I allow from landing at YYC to my Banff hotel?', answer: 'Separate the journey into airport processing, the wait or rental collection, and road travel plus the final drop-off. About two hours of road travel is only an initial planning allowance for YYC to Banff; weather, traffic, stops and hotel collection routes can add time. It is not a landing-to-hotel promise. Use the operator confirmation for a scheduled transfer.' },
+  { question: 'Can I book the same airport shuttle for Canmore or Lake Louise?', answer: 'Check the actual destination. Banff Airporter and Brewster Express list the Coast Canmore Hotel as their Canmore stop, so other properties need an onward plan. Airporter does not run a scheduled Lake Louise service. Brewster lists Lake Louise services and selected stops, but not every Banff departure continues there.' },
+  { question: 'Is there a train or a cheap On-It airport bus to Banff?', answer: 'YYC has Calgary Transit bus connections, rather than an airport LRT station. Those city buses are not a through service to Banff. Roam says the Calgary–Canmore–Banff On-It service did not operate in summer 2026; do not rely on an old On-It fare or timetable for your booking.' },
+  { question: 'Will a shuttle wait if my flight is delayed?', answer: 'Do not assume so. Operators have their own flight-tracking, rebooking, availability and last-departure policies. Give them accurate flight details, save their contact information and read the booked terms. Moving to the next available service does not guarantee a seat that night or cover a separate taxi or hotel.' },
+  { question: 'Are winter tires automatically included with a Calgary rental car?', answer: 'Do not assume a vehicle category or all-wheel drive confirms the tires supplied. Ask the rental provider about the actual winter equipment and your whole route. Parks Canada lists specific snow-tire or chain requirements for Highway 93 and roads into British Columbia; this is not a blanket November-to-April rule for every Alberta highway.' },
+];
 ---
 
-<BaseLayout title="How to Get from Calgary to Banff — Shuttle, Drive, Bus & Costs" description="How to get from Calgary Airport to Banff. Drive time, shuttle options with prices, rental car tips, and a step-by-step timeline from landing to arriving in Banff.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'How long from Calgary to Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The drive from Calgary to Banff takes about 1 hour 20 minutes (130 km / 80 miles) via Highway 1 (Trans-Canada). From Calgary International Airport (YYC) to your Banff hotel, allow 1 hour 40 minutes total including getting to your car and navigating out of the city. To Lake Louise, add another 30 minutes (185 km total from Calgary, about 1 hour 50 minutes driving).' } },
-      { '@type': 'Question', name: 'How to get from Calgary airport to Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Four main options: (1) Rental car — most flexible, ~$50-120/day, 1h 20min drive. (2) Brewster Express shuttle — $75 one way, 2 hours, direct to Banff hotels. (3) Banff Airporter shuttle — $69 one way, 2 hours, hotel drop-off. (4) On-It bus — $10 one way, summer only, departs downtown Calgary (not airport). Rental car is best for flexibility; shuttle is best if you don\'t want to drive.' } },
-      { '@type': 'Question', name: 'Do I need a car for Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Not necessarily. The Town of Banff is walkable and Roam Transit buses cover Lake Louise, Johnston Canyon, Lake Minnewanka, and Canmore. However, a car gives you flexibility for early-morning starts, remote trailheads, and the Icefields Parkway. If you\'re staying 3+ days and want to explore beyond the townsite, a car is recommended. For a short trip focused on Banff and Lake Louise, transit works well.' } },
-      { '@type': 'Question', name: 'Do I need winter tires for Calgary to Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Winter tires or chains are legally required on Highway 1 from November 1 to April 30. All rental cars from Calgary should come with winter tires during this period, but always confirm when booking. All-season tires with the M+S marking are technically legal but not recommended — the highway crosses mountain passes and conditions can change rapidly.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Calgary to Banff' }]} />
-  </div>
-
+<BaseLayout title="Calgary Airport to Banff: Shuttles, Winter Driving & Arrival Plans" description="Compare Calgary Airport transfers to Banff, Canmore and Lake Louise. Plan baggage, late arrivals, winter driving, accessible transport and the flight home." image="https://banffbound.com/images/blog/calgary-to-banff-guide.webp" lastUpdated="2026-10-28">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Calgary to Banff' }]} /></div>
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1600&q=80" alt="Highway driving through the Canadian Rocky Mountains toward Banff" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Travel Guide</span>
-      <h1>Calgary to Banff</h1>
-      <p>Your complete guide from Calgary Airport to Banff — drive times, shuttles, rental tips, and timeline.</p>
-    </div>
+    <img src="/images/blog/calgary-to-banff-guide.webp" alt="Mountain landscape on the journey from Calgary to Banff" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content"><span class="badge">From airport arrival to your actual address</span><h1>Calgary Airport to Banff</h1><p>A practical arrival plan for Banff, Canmore or Lake Louise, with enough room for baggage, winter roads and the journey home.</p></div>
   </section>
 
-  <section class="section">
-    <div class="container">
+  <div class="container arrival-content">
+    <p class="lead">Choose the overnight address first, then book transport that reaches it on your arrival date. A Banff shuttle, a Canmore stop and a Lake Louise transfer are different products. Compare the complete journey and its cancellation terms, rather than an old headline fare.</p>
+    <p class="review">Reviewed <time datetime="2026-10-28">October 28, 2026</time>. Schedules, stops, fares and available seats are controlled by the operators. All journey allowances here are planning estimates.</p>
+    <nav class="jump-links" aria-label="On this page"><a href="#compare">Compare transport</a><a href="#arrival-check">Check your arrival</a><a href="#sequence">Arrival sequence</a><a href="#drive">Winter driving</a><a href="#flight-home">Flight home</a><a href="#questions">Questions</a></nav>
 
-      <!-- Quick Stats -->
-      <div class="stats-grid">
-        <div class="stat-card">
-          <span class="stat-num">130 km</span>
-          <span class="stat-label">Distance (Calgary to Banff)</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">1h 20m</span>
-          <span class="stat-label">Drive time</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">1h 50m</span>
-          <span class="stat-label">Drive to Lake Louise</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">$10-75</span>
-          <span class="stat-label">Shuttle one-way</span>
-        </div>
+    <section id="compare" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">Match the service to your destination</h2>
+      <div class="comparison-wrap" tabindex="0" role="region" aria-label="Airport transport comparison, scroll horizontally if needed">
+        <table><caption>Use the dated operator timetable and exact pickup/drop-off confirmation before paying.</caption><thead><tr><th scope="col">Option</th><th scope="col">Where it can fit</th><th scope="col">Resolve before booking</th></tr></thead><tbody>
+          <tr><th scope="row"><a href={airporter}>Banff Airporter ↗</a><span>Direct operator</span></th><td>Scheduled Calgary Airport–Banff service; Canmore uses the Coast Canmore Hotel stop. No scheduled Lake Louise service.</td><td>Exact Banff address, date-specific first/last service, flight-delay terms, bags and child seats. A new winter timetable begins December 15, 2026.</td></tr>
+          <tr><th scope="row"><a href={brewster}>Brewster Express ↗</a><span>Direct operator</span></th><td>Scheduled airport services with Banff, Canmore and selected Lake Louise stops. The published winter timetable covers November 1, 2026–April 30, 2027.</td><td>Not every departure reaches Lake Louise. Check the <a href={brewsterStops}>actual hotel/stop</a> and all arrival/departure columns. Canmore uses the Coast Canmore Hotel.</td></tr>
+          <tr><th scope="row"><a href="https://banffondemand.com/">Prebooked private transfer ↗</a><span>Direct operator example</span></th><td>A group, a specific address or a flight outside a useful scheduled service may justify requesting a tailored quote.</td><td>Confirmed vehicle, party size, baggage, accessibility, child restraints, delay waiting policy and the total price. A request is not a confirmed vehicle or a guaranteed connection.</td></tr>
+          <tr><th scope="row">Rental car</th><td>Useful when your actual outings require independent transport and you can manage the driving, parking and vehicle requirements.</td><td>Desk hours, delayed-flight procedure, winter equipment, insurance, deposits, fuel, parking and whether you can return the car at your departure time.</td></tr>
+        </tbody></table>
       </div>
+      <p>Get a quote for your <strong>travel dates, whole party and full baggage load</strong>. Check taxes, extra luggage, child fares, change fees and the final address before comparing totals. Do not assume a coach is nonstop, that a larger group is always cheaper privately, or that Wi-Fi is available.</p>
+      <p class="notice"><strong>Old budget-bus advice needs replacing:</strong> <a href="https://roamtransit.com/on-it-regional-transit-service-notice-2026/">Roam's April 2026 notice</a> says On-It did not operate its Calgary–Canmore–Banff service that summer. <a href={yyc}>YYC lists Calgary Transit bus connections</a>, with no airport LRT connection; a city-bus trip is not a through ticket to Banff. Check any separate intercity booking and its pickup point before travelling into Calgary.</p>
+    </section>
 
-      <CarRentalCTA
-        heading="Renting a Car at Calgary Airport?"
-        text="A rental car is the most flexible way to reach Banff and explore the lakes and trailheads on your own schedule. Compare every agency at YYC in one search and book ahead for the best rates, especially in summer."
-      />
-
-      <!-- Arrival Timeline -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Your Arrival Timeline</h2>
-        <p>Step-by-step from touchdown at Calgary Airport (YYC) to your Banff hotel.</p>
+    <section class="arrival-panel" id="arrival-check" aria-labelledby="arrival-heading">
+      <span class="eyebrow">Choose the address and the complication</span><h2 id="arrival-heading">Build a workable airport handoff</h2>
+      <p>This helper identifies the booking questions for your arrival. It does not select a departure, check seats or promise that a flight connects.</p>
+      <form id="arrival-controls" class="controls" hidden>
+        <label for="arrival-base">Overnight destination<select id="arrival-base"><option value="banff">Banff</option><option value="canmore">Canmore</option><option value="louise">Lake Louise</option></select></label>
+        <label for="arrival-need">Main planning concern<select id="arrival-need"><option value="standard">A straightforward scheduled arrival</option><option value="late">Late flight / last service</option><option value="mobility">Mobility or wheelchair requirements</option><option value="family">Children / child seats</option><option value="skis">Ski bags / extra luggage</option></select></label>
+        <button type="button" id="arrival-reset">Reset</button>
+      </form>
+      <div class="arrival-result" role="status" aria-live="polite" aria-atomic="true">
+        <h3 id="arrival-result-title">Banff · scheduled arrival</h3>
+        <p id="arrival-result-destination">Compare Banff Airporter and Brewster's dated airport-to-Banff departures. Enter your actual property and confirm the final drop-off, rather than assuming every address uses the same stop.</p>
+        <p id="arrival-result-need">Choose the service using your flight's scheduled gate arrival, the operator's arrival guidance and room for baggage and airport formalities. A flight-tracking policy does not mean the bus waits for you.</p>
+        <p id="arrival-result-fallback">Keep the operator contact, booking terms and a possible airport-overnight plan available offline. Tell your accommodation if check-in could be late; leave arrival evening flexible.</p>
       </div>
+      <noscript><p>The Banff scheduled-arrival example is shown above. The comparison and booking checklist below cover Canmore, Lake Louise and additional needs without JavaScript.</p></noscript>
+    </section>
 
-      <div class="timeline">
-        <div class="timeline-step">
-          <div class="step-time">0:00</div>
-          <div class="step-content">
-            <h3>✈️ Land at Calgary Airport (YYC)</h3>
-            <p>Calgary International Airport has two terminals. Most domestic flights arrive at the main terminal; international flights at the International Terminal.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="step-time">0:15</div>
-          <div class="step-content">
-            <h3>🛂 Customs & Baggage</h3>
-            <p>Domestic: straight to baggage claim (~15 min). International: customs, then baggage (~30-60 min depending on lines). NEXUS/Global Entry saves time.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="step-time">0:30</div>
-          <div class="step-content">
-            <h3>🚗 Get Your Wheels (or Board a Shuttle)</h3>
-            <p><strong>Rental car:</strong> Follow signs to rental car centre (connected by free shuttle or skywalk). Allow 20-30 min for paperwork and finding your car.<br/>
-            <strong>Shuttle:</strong> Brewster Express and Banff Airporter pick up at the arrivals level. Check your confirmation for the exact bay number.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="step-time">0:45</div>
-          <div class="step-content">
-            <h3>🛣️ Hit Highway 1 West</h3>
-            <p>Follow signs to Trans-Canada Highway (Hwy 1 West) toward Banff/Lake Louise. The drive is straightforward — one highway all the way. Speed limit is 110 km/h on most sections.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="step-time">1:15</div>
-          <div class="step-content">
-            <h3>⛽ Canmore (Optional Stop)</h3>
-            <p>Last affordable gas before Banff (10-15% cheaper). Good stop for groceries at Safeway or Save-On-Foods. Grab lunch here if you're hungry. 20 min from Banff.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="step-time">1:30</div>
-          <div class="step-content">
-            <h3>🎫 Banff Park Gate</h3>
-            <p>Buy your Parks Canada pass here ($11/adult/day, $22/family). Summer wait: 10-45 min. Buy online at parks.canada.ca to skip the line. Keep your receipt visible on the dashboard.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="step-time">1:40</div>
-          <div class="step-content">
-            <h3>🏨 Arrive in Banff!</h3>
-            <p>Welcome to Banff! Drop bags, grab a coffee on Banff Ave, and start exploring. If heading to Lake Louise, continue on Hwy 1 for another 30 min.</p>
-          </div>
-        </div>
+    <section id="sequence" aria-labelledby="sequence-heading">
+      <h2 id="sequence-heading">Plan three stages, without a false arrival clock</h2>
+      <ol class="sequence">
+        <li><h3>Airport processing</h3><p>Allow for getting off the aircraft, immigration and customs where applicable, baggage, oversized equipment and the walk to your meeting point. Flight arrival time does not mean you are ready to board a bus. Do not anchor a departure to a generic “15 minutes after landing” rule.</p></li>
+        <li><h3>Collection and boarding</h3><p>Follow your operator's meeting instructions and boarding cutoff. Airporter currently directs passengers to its desk <strong>inside arrivals between exit doors 5 and 6</strong>; use its <a href={airporterInfo}>arrival guidance</a> and your confirmation. For Brewster, check its <a href={brewsterStops}>location information</a>. Rental collection adds its own desk, paperwork and vehicle-check time; confirm on-airport versus off-airport pickup.</p></li>
+        <li><h3>Road travel and the last stretch</h3><p>As an initial planning allowance, think in terms of <strong>about two hours of road travel from YYC to Banff</strong>, then add the airport stages above, waiting and any final hotel routing. Weather, congestion and intermediate stops can lengthen the journey. Lake Louise needs a further checked leg; use its actual booked arrival, not Banff's arrival time.</p></li>
+      </ol>
+      <p>Keep the first evening simple: reach the property, eat nearby and prepare for the next day. A prepaid lesson, distant dinner or last gondola ride is a poor match for an arrival whose first two stages you cannot control. If you will arrive after reception closes, obtain the property's actual late check-in instructions.</p>
+    </section>
+
+    <section aria-labelledby="requirements-heading">
+      <h2 id="requirements-heading">Resolve these needs before paying</h2>
+      <div class="needs-grid">
+        <article class="note-card"><h3>A late or delayed flight</h3><p>Check the last <em>usable</em> service for your destination on the correct seasonal timetable. Airporter tracks flights but does not move its departure time to wait for them. Both operators describe next-available-service arrangements; available seats and the final departure remain constraints.</p><p>Read the <a href={airporterInfo}>Airporter terms</a> or <a href={brewsterInfo}>Brewster FAQ</a> for your booking. If a flight lands too late for a realistic connection, compare a confirmed private transfer with a Calgary airport overnight and next-day travel. Do not assume another company pays for either.</p></article>
+        <article class="note-card"><h3>Wheelchairs and mobility aids</h3><p>Brewster's current FAQ says its coaches are <strong>not wheelchair accessible</strong>. Ask any provider about the actual vehicle, lift/ramp, securement, device dimensions, transfers, assistance and equipment storage. Do this before buying a nonrefundable ticket.</p><p>YYC's <a href={yyc}>transport and accessibility links</a> can help with the airport stage. A ramp-equipped Roam bus at the destination does not make an inaccessible airport coach suitable, or confirm the condition of a hotel's snowy approach.</p></article>
+        <article class="note-card"><h3>Children and a full group</h3><p>Reserve for every traveller. Airporter requires a separate seat for an infant or child and says child safety seats can be provided; arrange the required size and availability in advance. Ask other providers for their own restraint rules rather than applying that policy to every vehicle.</p><p>Allow time to collect a stroller and settle the group. A lower child fare does not remove the need to book, and one person's early arrival at a stop may not secure space for the whole party.</p></article>
+        <article class="note-card"><h3>Skis and large bags</h3><p>Declare the number and size of bags, protective ski/board bags and any oversized equipment. Airporter publishes an allowance and capacity caveats; Brewster accepts sports equipment subject to luggage space. Read the policy rather than assuming an airline allowance transfers unchanged.</p><p>Plan the final connection too. <a href="https://roamtransit.com/about-us/transportation-policies/">Roam has no dedicated luggage storage</a> and cannot guarantee transport of large luggage. A Canmore coach drop-off is not a guaranteed onward public-bus trip with several suitcases.</p></article>
       </div>
+    </section>
 
-      <!-- Transport Options -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>How to Get There</h2>
-        <p>Compare your options for getting from Calgary Airport to Banff.</p>
+    <section id="drive" aria-labelledby="drive-heading">
+      <h2 id="drive-heading">Decide whether to drive the whole trip</h2>
+      <p>A rental can suit unserved destinations, a group with complex luggage or a trip spanning several places. An airport transfer plus local or resort transport can suit a Banff-centred holiday. Compare accommodation parking, fuel, rental terms and every planned outing; the number of nights alone does not decide which is better.</p>
+      <p>For winter travel, confirm the tires and equipment actually supplied. All-wheel drive is not a tire specification. <a href="https://parks.canada.ca/pn-np/ab/banff/securite-safety/conduite-driving">Parks Canada lists snow-tire or chain rules for Highway 93N/93S in Banff from November 1 to March 31, and whenever those roads are snow- or ice-covered</a>; different dates apply on specified roads in British Columbia. Check your entire route. There is no basis for treating this as a universal November–April law on Alberta's Highway 1.</p>
+      <p>Before departure, use <a href="https://511.alberta.ca/">Alberta 511</a> for roads and <a href="/weather-webcams">our weather-check guide</a> for the relevant places. Build around daylight where possible, carry warm supplies and change the plan if conditions or fatigue make the drive unsuitable. Read the <a href="/blog/banff-winter-driving">winter driving guide</a> before selecting a vehicle.</p>
+      <p>A car does not remove access restrictions or guarantee parking. <a href="https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise">Personal vehicles cannot use Moraine Lake Road</a>, and its summer shuttle system is not winter access. For served outings, compare the <a href="/car-free-banff">car-free base and route guide</a> before paying for a vehicle you may leave parked.</p>
+      <CarRentalCTA heading="Compare a rental for the journeys you actually need" text="Expedia car-rental comparison is an affiliate link. Check the provider's total quote, collection hours, cancellation terms and actual winter equipment before booking. A search result does not confirm tires, road access or parking." />
+    </section>
+
+    <section id="flight-home" aria-labelledby="home-heading">
+      <h2 id="home-heading">Book the flight-home journey as carefully</h2>
+      <p>Work backwards from your airline's check-in, bag-drop and boarding requirements, then add road disruption and the operator's actual pickup. Airporter's published guidance recommends leaving Banff four to five hours before a flight, depending on domestic or international travel. Treat that as operator guidance, not a guarantee that every flight connection is suitable.</p>
+      <p>Brewster warns that a Banff hotel pickup can be <strong>up to an hour before the timetable's final Banff departure</strong>. Use the pickup time on the confirmation. For Canmore, plan how to reach the Coast Hotel with your luggage; for Lake Louise, use the separate dated eastbound service and the actual collection address.</p>
+      <p>If the first service cannot meet your flight requirements with enough room for disruption, change the transfer or consider a Calgary overnight. Do not turn a missed connection into a rushed winter drive. For a rental, include return inspection, refuelling, any off-airport shuttle and the walk back into the terminal.</p>
+      <div class="checklist">
+        <h3>Your final booking check</h3>
+        <p class="small">Use this checklist while booking. It is not saved when you leave the page.</p>
+        <label><input type="checkbox" /> Exact travel date, Mountain Time and seasonal timetable checked</label>
+        <label><input type="checkbox" /> Every traveller, child seat, bag and mobility requirement confirmed</label>
+        <label><input type="checkbox" /> Actual pickup/drop-off addresses and final hotel connection saved</label>
+        <label><input type="checkbox" /> Delay, missed-last-service and cancellation terms understood</label>
+        <label><input type="checkbox" /> Flight-home pickup, airline requirements and weather buffer checked</label>
       </div>
+      <p>Arrange <a href="https://parks.canada.ca/pn-np/ab/banff/visit/tarifs-fees">any park admission required for your dates</a> separately; a transfer fare is not itself a park pass. Airporter says it does not stop at the gate. Once arrival is settled, compare <a href="/towns">the overnight bases</a>, choose <a href="/winter-stays">a winter stay</a>, and leave space in your <a href="/trip-builder">trip plan</a> for changing weather.</p>
+    </section>
 
-      <div class="options-grid">
-        <div class="option-card">
-          <div class="option-header">
-            <h3>🚗 Rental Car</h3>
-            <span class="option-price">$50-120/day</span>
-          </div>
-          <div class="option-pros">
-            <h4>Pros</h4>
-            <ul>
-              <li>Most flexible — go anywhere, any time</li>
-              <li>Essential for Icefields Parkway, Moraine Lake, remote trails</li>
-              <li>Cheaper for groups (split the cost)</li>
-              <li>Can stop in Canmore for gas and groceries</li>
-            </ul>
-          </div>
-          <div class="option-cons">
-            <h4>Cons</h4>
-            <ul>
-              <li>Parking in Banff is $4-6/hour</li>
-              <li>Popular lots fill by 7-8 AM in summer</li>
-              <li>Gas is expensive in Banff ($1.70+/L)</li>
-              <li>Winter driving requires confidence</li>
-            </ul>
-          </div>
-          <div class="option-tips">
-            <h4>Tips</h4>
-            <p>Book early — summer prices double if you wait. Confirm winter tires (Oct-Apr). Fill up in Canmore. Economy cars handle the highway fine — you don't need an SUV.</p>
-          </div>
-        </div>
-
-        <div class="option-card">
-          <div class="option-header">
-            <h3>🚌 Brewster Express</h3>
-            <span class="option-price">$75 one way</span>
-          </div>
-          <div class="option-pros">
-            <h4>Pros</h4>
-            <ul>
-              <li>Direct from airport to Banff hotels</li>
-              <li>Year-round, multiple daily departures</li>
-              <li>Wi-Fi, luggage storage, comfortable</li>
-              <li>No driving, no parking worries</li>
-            </ul>
-          </div>
-          <div class="option-cons">
-            <h4>Cons</h4>
-            <ul>
-              <li>Fixed schedule — wait for next departure</li>
-              <li>2 hours travel time</li>
-              <li>No flexibility for side stops</li>
-            </ul>
-          </div>
-          <div class="option-tips">
-            <h4>Tips</h4>
-            <p>Book return trip at the same time for a small discount. Meet at arrivals level Bay 11. Arrive 15 min early. They also offer Lake Louise drop-off.</p>
-          </div>
-        </div>
-
-        <div class="option-card">
-          <div class="option-header">
-            <h3>🚐 Banff Airporter</h3>
-            <span class="option-price">$69 one way</span>
-          </div>
-          <div class="option-pros">
-            <h4>Pros</h4>
-            <ul>
-              <li>Cheapest dedicated shuttle</li>
-              <li>Year-round from Calgary Airport</li>
-              <li>Hotel door-to-door drop-off</li>
-              <li>Smaller buses, more departures</li>
-            </ul>
-          </div>
-          <div class="option-cons">
-            <h4>Cons</h4>
-            <ul>
-              <li>Fixed schedule</li>
-              <li>2 hours travel time</li>
-              <li>Multiple hotel stops can add time</li>
-            </ul>
-          </div>
-          <div class="option-tips">
-            <h4>Tips</h4>
-            <p>Book online at banffairporter.com. Return trips also available. Good option if your flight arrives at an off-peak time.</p>
-          </div>
-        </div>
-
-        <div class="option-card budget-pick">
-          <div class="budget-badge">Budget Pick</div>
-          <div class="option-header">
-            <h3>🎒 On-It Regional Transit</h3>
-            <span class="option-price">$10 one way</span>
-          </div>
-          <div class="option-pros">
-            <h4>Pros</h4>
-            <ul>
-              <li>Incredibly cheap — $10 to Banff</li>
-              <li>Stops in Canmore along the way</li>
-              <li>Great for budget travellers</li>
-            </ul>
-          </div>
-          <div class="option-cons">
-            <h4>Cons</h4>
-            <ul>
-              <li>Summer only (late May – early Sep)</li>
-              <li>Departs downtown Calgary, NOT the airport</li>
-              <li>Need CTrain to get downtown first</li>
-              <li>About 2.5 hours total</li>
-            </ul>
-          </div>
-          <div class="option-tips">
-            <h4>Tips</h4>
-            <p>From YYC: take the shuttle to Airport CTrain station, ride the Red Line to downtown, then catch On-It. Total airport-to-Banff: ~3 hours. Worth it for the savings.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Driving Tips -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Driving Tips</h2>
-        <p>What to know before you drive from Calgary to Banff.</p>
-      </div>
-
-      <div class="tips-grid">
-        <div class="tip-card">
-          <h3>⛽ Gas Up in Canmore</h3>
-          <p>Gas in Banff is 10-15% more expensive than Canmore, and 20%+ more than Calgary. Fill your tank in Canmore at the Petro-Canada or Shell on the highway.</p>
-        </div>
-        <div class="tip-card">
-          <h3>❄️ Winter Tires Required</h3>
-          <p>Winter tires or chains are required on Highway 1 from <strong>November 1 to April 30</strong>. All rental cars should have them — confirm when booking. Check road conditions at 511.alberta.ca.</p>
-        </div>
-        <div class="tip-card">
-          <h3>🦌 Watch for Wildlife</h3>
-          <p>Elk, deer, and bears cross the highway, especially at dawn and dusk. The section between Canmore and Banff is fenced, but stay alert. Speed limits drop to 90 km/h in the park.</p>
-        </div>
-        <div class="tip-card">
-          <h3>🎫 Buy Your Park Pass Online</h3>
-          <p>Skip the gate lineup (15-45 min in summer) by buying your Parks Canada pass online at parks.canada.ca before your trip.</p>
-        </div>
-        <div class="tip-card">
-          <h3>🛒 Stop for Groceries</h3>
-          <p>Safeway and Save-On-Foods in Canmore have normal grocery prices. IGA in Banff has a 15-25% markup. Stock up before entering the park.</p>
-        </div>
-        <div class="tip-card">
-          <h3>📱 Download Offline Maps</h3>
-          <p>Cell service is spotty between Canmore and Lake Louise. Download Google Maps offline for the Banff area before you leave Calgary.</p>
-        </div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>How long from Calgary to Banff?</summary>
-          <p>1 hour 20 minutes driving (130 km). From the airport, allow 1 hour 40 minutes total. To Lake Louise, about 1 hour 50 minutes from Calgary (185 km). Shuttles take about 2 hours.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How to get from Calgary airport to Banff?</summary>
-          <p>Rental car ($50-120/day, 1h 20min), Brewster Express ($75, 2h), Banff Airporter ($69, 2h), or On-It bus ($10, summer only, from downtown Calgary). Rental car is best for flexibility; shuttle is great if you prefer not to drive.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do I need a car for Banff?</summary>
-          <p>Not necessarily. Banff is walkable and Roam Transit covers Lake Louise, Johnston Canyon, and Lake Minnewanka. But a car gives you flexibility for early starts, remote trailheads, and the Icefields Parkway. For 3+ days with varied plans, a car is recommended.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is the drive from Calgary to Banff scenic?</summary>
-          <p>The first 45 minutes through the prairies is flat and unremarkable. Then the Rocky Mountains appear suddenly on the horizon — one of the most dramatic reveals in Canadian driving. The last 30 minutes through the mountains is stunning.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Can I Uber from Calgary to Banff?</summary>
-          <p>Technically possible but very expensive ($200-300+) and not always available. Drivers may not want to make the return trip empty. A shuttle is more reliable and much cheaper.</p>
-        </details>
-      </div>
-
-    </div>
-  </section>
+    <section id="questions" class="faq" aria-labelledby="questions-heading"><h2 id="questions-heading">Airport transfer questions</h2>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <section class="sources" aria-labelledby="sources-heading"><h2 id="sources-heading">Sources and review</h2><p>Reviewed October 28, 2026 using <a href={airporter}>Airporter's dated schedules</a> and <a href={airporterInfo}>travel policies</a>; <a href={brewster}>Brewster's winter schedule</a>, <a href={brewsterStops}>stops</a> and <a href={brewsterInfo}>FAQ</a>; <a href={yyc}>YYC ground transport</a>; <a href="https://roamtransit.com/on-it-regional-transit-service-notice-2026/">Roam's On-It notice</a>; and <a href="https://parks.canada.ca/pn-np/ab/banff/securite-safety/conduite-driving">Parks Canada driving guidance</a>. Operator links are direct. The Expedia car-rental button is an affiliate link. Fares are left with the operators so the final quote matches your date and party.</p></section>
+  </div>
 </BaseLayout>
 
-<style>
-  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-  .stat-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); text-align: center; }
-  .stat-num { display: block; font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-primary); }
-  .stat-label { font-size: 0.82rem; color: var(--color-text-light); margin-top: 0.25rem; }
-
-  .timeline { position: relative; padding-left: 3rem; margin-top: 1rem; }
-  .timeline::before { content: ''; position: absolute; left: 1.1rem; top: 0; bottom: 0; width: 2px; background: var(--color-bg-alt); }
-  .timeline-step { position: relative; margin-bottom: 1.5rem; display: flex; gap: 1.25rem; }
-  .step-time { flex-shrink: 0; width: 3rem; font-size: 0.8rem; font-weight: 700; color: var(--color-accent); padding-top: 0.2rem; text-align: right; position: relative; }
-  .step-time::after { content: ''; position: absolute; right: -1.65rem; top: 0.4rem; width: 10px; height: 10px; border-radius: 50%; background: var(--color-primary); border: 2px solid var(--color-white); }
-  .step-content { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); flex: 1; }
-  .step-content h3 { font-size: 1rem; margin-bottom: 0.4rem; }
-  .step-content p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.6; }
-
-  .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .option-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); position: relative; }
-  .option-card.budget-pick { border: 2px solid var(--color-accent); }
-  .budget-badge { position: absolute; top: -0.7rem; right: 1.5rem; background: var(--color-accent); color: var(--color-white); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; padding: 0.2rem 0.7rem; border-radius: 4px; }
-  .option-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-  .option-header h3 { font-size: 1.1rem; }
-  .option-price { font-size: 1.1rem; font-weight: 700; color: var(--color-accent); }
-  .option-pros h4, .option-cons h4, .option-tips h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); margin: 0.75rem 0 0.3rem; }
-  .option-pros ul, .option-cons ul { list-style: none; padding: 0; margin: 0; }
-  .option-pros li, .option-cons li { font-size: 0.82rem; padding: 0.2rem 0 0.2rem 1rem; position: relative; color: var(--color-text-light); }
-  .option-pros li::before { content: '✓'; position: absolute; left: 0; color: #4caf50; font-weight: 700; }
-  .option-cons li::before { content: '✗'; position: absolute; left: 0; color: #e74c3c; font-weight: 700; }
-  .option-tips p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; font-style: italic; }
-
-  .tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .tip-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .tip-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
-  .tip-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
-  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
-
-  @media (max-width: 768px) {
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .options-grid { grid-template-columns: 1fr; }
-    .tips-grid { grid-template-columns: 1fr; }
-    .timeline { padding-left: 2rem; }
+<script>
+  const controls = document.querySelector<HTMLFormElement>('#arrival-controls');
+  const base = document.querySelector<HTMLSelectElement>('#arrival-base');
+  const need = document.querySelector<HTMLSelectElement>('#arrival-need');
+  const reset = document.querySelector<HTMLButtonElement>('#arrival-reset');
+  const title = document.querySelector<HTMLElement>('#arrival-result-title');
+  const destination = document.querySelector<HTMLElement>('#arrival-result-destination');
+  const advice = document.querySelector<HTMLElement>('#arrival-result-need');
+  const fallback = document.querySelector<HTMLElement>('#arrival-result-fallback');
+  const destinations: Record<string, string> = {
+    banff: "Compare Banff Airporter and Brewster's dated airport-to-Banff departures. Enter your actual property and confirm the final drop-off, rather than assuming every address uses the same stop.",
+    canmore: 'Both Banff Airporter and Brewster list the Coast Canmore Hotel stop. Confirm your onward hotel journey, especially after dark or with large bags; neither service description means door-to-door travel to every Canmore property.',
+    louise: 'Use a dated Brewster service that actually continues to your Lake Louise stop, or request a confirmed private transfer. Banff Airporter has no scheduled Lake Louise service. Village, lakeshore and ski-resort addresses are different.',
+  };
+  const needs: Record<string, string> = {
+    standard: "Choose the service using your flight's scheduled gate arrival, the operator's arrival guidance and room for baggage and airport formalities. A flight-tracking policy does not mean the bus waits for you.",
+    late: 'Check the last usable departure for this destination and season, plus the operator boarding cutoff. If the flight does not leave a realistic margin, compare a confirmed private transfer with an airport overnight and next-day travel before committing.',
+    mobility: "Brewster currently says its coaches are not wheelchair accessible. Contact a provider before paying with your device dimensions, securement and transfer requirements. Confirm the actual vehicle and both ends of the journey; do not infer accessibility from a photo.",
+    family: 'Book every infant and child as part of the party. Confirm the correct child restraint with the operator; Airporter requires a separate seat and offers child safety seats by arrangement. Include stroller collection and the full group in the arrival margin.',
+    skis: 'Declare protective ski/board bags and all oversized luggage before booking. Check allowance and space, then confirm the last hotel connection. Roam cannot guarantee transport of large luggage, so a regional bus is not a certain final leg with several bags.',
+  };
+  function updateArrival() {
+    if (!base || !need || !title || !destination || !advice || !fallback) return;
+    title.textContent = base.options[base.selectedIndex].text + ' · ' + need.options[need.selectedIndex].text;
+    destination.textContent = destinations[base.value];
+    advice.textContent = needs[need.value];
+    fallback.textContent = need.value === 'late' ? 'A next-available-service policy does not guarantee another seat that night. Save operator contact details and the applicable terms; confirm any overnight room and its late check-in rather than assuming availability.' : 'Keep the operator contact, booking terms and a possible airport-overnight plan available offline. Tell your accommodation if check-in could be late; leave arrival evening flexible.';
   }
+  if (controls && base && need && reset) {
+    controls.addEventListener('submit', event => event.preventDefault());
+    [base, need].forEach(select => select.addEventListener('change', updateArrival));
+    reset.addEventListener('click', () => { base.value = 'banff'; need.value = 'standard'; updateArrival(); });
+    controls.hidden = false;
+    updateArrival();
+  }
+</script>
+
+<style>
+  .arrival-content { padding-top: 2.5rem; padding-bottom: 4rem; }
+  .arrival-content a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
+  .arrival-content section { margin: 3rem 0; scroll-margin-top: 120px; }
+  .arrival-content h2 { margin-bottom: 1rem; }
+  .arrival-content h3 { font-size: 1.14rem; margin-bottom: .75rem; }
+  .arrival-content p { line-height: 1.75; margin-bottom: 1rem; }
+  .lead { max-width: 950px; font-size: 1.12rem; }
+  .review, .small { font-size: .88rem; color: var(--color-text-light); }
+  .jump-links { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; font-size: .9rem; margin: 1.5rem 0 2rem; }
+  .comparison-wrap { overflow-x: auto; border: 1px solid var(--color-border); border-radius: 10px; margin-bottom: 1.25rem; }
+  table { width: 100%; border-collapse: collapse; min-width: 690px; font-size: .92rem; }
+  caption { text-align: left; padding: 1rem; color: var(--color-text-light); font-size: .84rem; background: var(--color-bg-alt); }
+  th, td { text-align: left; vertical-align: top; padding: 1rem 1.2rem; border-bottom: 1px solid var(--color-border); line-height: 1.65; }
+  thead { background: var(--color-primary); color: white; }
+  tbody th { width: 23%; color: var(--color-primary); }
+  tbody th span { display: block; font-size: .75rem; font-weight: 400; color: var(--color-text-light); margin-top: .4rem; }
+  tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
+  .notice { background: #fff5df; border-left: 3px solid var(--color-accent); padding: 1rem 1.25rem; }
+  .arrival-panel { padding: 2rem; border: 1px solid #c9d8d0; border-top: 4px solid var(--color-accent); border-radius: 12px; background: var(--color-bg-alt); }
+  .eyebrow { display: block; color: var(--color-primary); font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .6rem; }
+  .controls { display: grid; grid-template-columns: 1fr 1fr auto; gap: 1rem; align-items: end; margin: 1.5rem 0; }
+  .controls[hidden] { display: none !important; }
+  .controls label { font-size: .85rem; font-weight: 600; }
+  .controls select { width: 100%; padding: .75rem; margin-top: .4rem; border: 1px solid #aebfb4; border-radius: 7px; background: white; font: inherit; color: var(--color-text); }
+  .controls button { padding: .8rem 1rem; border: 1px solid var(--color-primary); background: var(--color-primary); color: white; border-radius: 7px; font: inherit; cursor: pointer; min-height: 44px; }
+  .controls :focus-visible, .comparison-wrap:focus-visible, summary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+  .arrival-result { padding: 1.5rem; border-left: 4px solid var(--color-primary); border-radius: 8px; background: white; }
+  .arrival-result p:last-child { margin-bottom: 0; }
+  .sequence { padding-left: 1.5rem; }
+  .sequence li { margin-bottom: 1.5rem; padding-left: .5rem; }
+  .sequence li::marker { color: var(--color-primary); font-weight: 700; }
+  .needs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+  .note-card { border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; }
+  .note-card p { font-size: .94rem; }
+  .checklist { background: var(--color-bg-alt); border-radius: 10px; padding: 1.5rem; margin: 1.5rem 0; }
+  .checklist label { display: flex; align-items: flex-start; gap: .75rem; margin: .6rem 0; padding: .35rem 0; line-height: 1.6; cursor: pointer; }
+  .checklist input { margin-top: .35rem; width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--color-primary); }
+  .faq details { border-bottom: 1px solid var(--color-border); padding: 1rem 0; }
+  .faq summary { cursor: pointer; font-weight: 600; color: var(--color-primary); min-height: 32px; }
+  .faq details p { padding-top: .75rem; margin-bottom: 0; }
+  .sources { padding-top: 1.5rem; border-top: 1px solid var(--color-border); font-size: .86rem; color: var(--color-text-light); }
+  .sources h2 { font-size: 1rem; }
+  @media (max-width: 700px) { .controls, .needs-grid { grid-template-columns: 1fr; } .arrival-panel { padding: 1.2rem; } .arrival-result, .note-card, .checklist { padding: 1.2rem; } .arrival-content section { margin: 2.4rem 0; } th, td { padding: .8rem; } }
 </style>

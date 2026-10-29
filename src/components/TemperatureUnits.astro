@@ -1,0 +1,15 @@
+<div class="temperature-units" aria-label="Temperature units" hidden><button type="button" data-temp-toggle="c" aria-pressed="true">°C</button><button type="button" data-temp-toggle="f" aria-pressed="false">°F</button><span>Fahrenheit values are converted.</span></div>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-temp-toggle]').forEach(button=>button.addEventListener('click',()=>{
+    const fahrenheit=button.dataset.tempToggle==='f';
+    document.querySelectorAll('[data-temp-toggle]').forEach(item=>item.setAttribute('aria-pressed',String((item as HTMLElement).dataset.tempToggle===(fahrenheit?'f':'c'))));
+    document.querySelectorAll<HTMLElement>('[data-celsius]').forEach(item=>{
+      const celsius=Number(item.dataset.celsius);
+      if(Number.isFinite(celsius)) item.textContent=(fahrenheit?celsius*9/5+32:celsius).toFixed(1)+(fahrenheit?'°F':'°C');
+    });
+  }));
+  document.querySelectorAll<HTMLElement>('.temperature-units').forEach(control=>{control.hidden=false;});
+</script>
+<style>
+  .temperature-units{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin:1.3rem 0}.temperature-units button{border:1px solid #b2c0b3;border-radius:6px;padding:.5rem .8rem;font:inherit;background:white;cursor:pointer}.temperature-units button[aria-pressed="true"]{background:var(--color-primary);color:white}.temperature-units span{font-size:.78rem;color:var(--color-text-light);margin-left:.4rem}.temperature-units[hidden]{display:none!important}.temperature-units button:focus-visible{outline:3px solid #b18a3a;outline-offset:3px}
+</style>

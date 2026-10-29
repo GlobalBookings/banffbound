@@ -1,4 +1,8 @@
 export const winterGuides = [
+  { title: 'A winter trip without a car', href: '/car-free-banff', category: 'practical', tag: 'Check the full connection', desc: 'Choose a base, separate town transit from resort shuttles, and confirm the final return.' },
+  { title: 'Warm-up days, heritage & spas', href: '/wellness', category: 'slow', tag: 'Confirm current access', desc: 'Separate actual bathing from Cave and Basin history, with dated closures and spa eligibility checks.' },
+  { title: 'Weather, webcams & mountain reports', href: '/weather-webcams', category: 'practical', tag: 'Read the source time', desc: 'Check destination forecasts, operator camera viewers and the actual resort operating report.' },
+
   { title: 'Your first ski or snowboard lesson', href: '/learn-to-ski', category: 'ski', tag: 'Start here', desc: 'Pick a learning area, understand the bundle, arrange rentals, and arrive ready to learn.' },
   { title: 'Build your ski day', href: '/ski-day-planner', category: 'ski', tag: 'Interactive planner', desc: 'Choose your base, resort, ability and transport for a practical mountain-day plan.' },
   { title: 'Sunshine vs Lake Louise vs Norquay', href: '/sunshine-vs-lake-louise-vs-norquay', category: 'ski', tag: 'Compare the Big 3', desc: 'Match the resort to your group before you buy tickets or book lessons.' },

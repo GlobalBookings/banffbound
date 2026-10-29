@@ -3,635 +3,337 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const AFFILIATE_TAG = 'banffbound-20';
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const activities = [
+  { id: 'hiking', name: 'Hiking / trail walking' }, { id: 'skiing', name: 'Resort skiing / snowboarding' },
+  { id: 'lesson', name: 'First ski / snowboard lesson' }, { id: 'skating', name: 'Ice skating' },
+  { id: 'snowshoeing', name: 'Snowshoeing' }, { id: 'paddling', name: 'Canoeing / kayaking' },
+  { id: 'camping', name: 'Camping' }, { id: 'photography', name: 'Photography' },
+  { id: 'dining', name: 'Dining out' }, { id: 'hotsprings', name: 'Pool / hot springs' },
+  { id: 'driving', name: 'Driving / rental car' }, { id: 'flying', name: 'Flying to Canada' },
+];
+interface PackingItem { id: string; name: string; note?: string; tags?: string[]; amazon?: string; }
+const groups: { id: string; name: string; items: PackingItem[] }[] = [
+  { id: 'plans', name: 'Bookings, documents & day plan', items: [
+    { id: 'travel-id', name: 'ID / passport and required travel documents' },
+    { id: 'insurance', name: 'Travel insurance details and emergency contacts', note: 'Check that your actual activities are covered.' },
+    { id: 'bookings', name: 'Accommodation and activity confirmations saved offline' },
+    { id: 'park-pass', name: 'Park entry / camping permits checked for your dates', note: 'Check the current admission and reservation requirements; an equipment list is not a permit.' },
+    { id: 'payment', name: 'Payment cards and some Canadian cash' },
+    { id: 'conditions', name: 'Current forecast, operating status and closures checked', note: 'Recheck on the day, including the return journey.' },
+    { id: 'route-plan', name: 'Route, turnaround time and return plan shared with a contact', tags: ['hiking', 'snowshoeing', 'camping'] },
+    { id: 'ski-ticket', name: 'Resort ticket / pass and permitted lift access confirmed', note: 'A room or lesson booking does not automatically include a lift ticket.', tags: ['skiing'] },
+    { id: 'rental-booking', name: 'Skis or board, boots and fitting / collection arrangements', note: 'Confirm your rental reservation, equipment, pickup location and return time.', tags: ['skiing'] },
+    { id: 'ski-transfer', name: 'Ski shuttle / drive, pickup and last return confirmed', note: 'At Sunshine, include the base-to-village gondola and check its current operation.', tags: ['skiing'] },
+    { id: 'lesson-confirmation', name: 'Correct lesson age, ability, discipline and date booked', tags: ['lesson'] },
+    { id: 'lesson-meeting', name: 'Lesson meeting point, check-in and fitting time saved', note: 'Follow the operator’s arrival instructions; a first lesson does not establish readiness for other terrain.', tags: ['lesson'] },
+    { id: 'child-lesson', name: 'If relevant: child supervision, lunch and collection arranged', tags: ['lesson'] },
+    { id: 'paddle-permission', name: 'Paddling location, operator and current access / biosecurity rules checked', note: 'Not every waterbody or rental operates in every season.', tags: ['paddling'] },
+    { id: 'camp-reservation', name: 'Booked campsite, permit, opening dates and services confirmed', tags: ['camping'] },
+    { id: 'vehicle-check', name: 'Actual vehicle, tires, route requirements and rental terms checked', note: 'Confirm the tires supplied; an AWD label is not a tire check. See the Alberta and BC sources below.', tags: ['driving'] },
+    { id: 'flight-restrictions', name: 'Airline and CATSA restrictions checked for outdoor equipment', note: 'Bear spray and camping fuel are not allowed in carry-on or checked baggage; arrange them at your destination.', tags: ['flying', 'camping'] },
+  ] },
+  { id: 'clothing', name: 'Clothing & layers', items: [
+    { id: 'everyday-tops', name: 'Everyday tops, underwear and comfortable trousers' },
+    { id: 'midlayer', name: 'Fleece or other warm mid-layer' },
+    { id: 'rain-shell', name: 'Waterproof rain / wind shell', amazon: 'waterproof rain jacket' },
+    { id: 'winter-base', name: 'Thermal base layers: top and bottom', tags: ['winter'], amazon: 'merino wool base layer' },
+    { id: 'winter-jacket', name: 'Insulated winter jacket', tags: ['winter'], amazon: 'down jacket winter' },
+    { id: 'snow-pants', name: 'Waterproof snow pants for snow activities', tags: ['winter'], amazon: 'insulated snow pants' },
+    { id: 'warm-sweater', name: 'Warm sweater / extra insulating layer', tags: ['winter'] },
+    { id: 'light-base', name: 'Light thermal layer for changeable conditions', tags: ['shoulder'], amazon: 'lightweight base layer' },
+    { id: 'warm-vest', name: 'Warm fleece or insulated vest', tags: ['shoulder'], amazon: 'down vest' },
+    { id: 'summer-shorts', name: 'Shorts and light trousers', tags: ['summer'] },
+    { id: 'wicking-shirts', name: 'Moisture-wicking tops and a long-sleeve sun shirt', tags: ['summer', 'hiking'] },
+    { id: 'ski-layers', name: 'Ski layers that fit together without restricting movement', note: 'Use wool or synthetic layers against the skin; avoid jeans as ski clothing.', tags: ['skiing'] },
+    { id: 'quick-dry', name: 'Quick-dry paddling clothes and a dry change', note: 'Dress for the water conditions and follow your operator’s briefing.', tags: ['paddling'] },
+    { id: 'swimsuit', name: 'Swimsuit', tags: ['summer', 'hotsprings'] },
+    { id: 'dinner-outfit', name: 'Optional smart-casual outfit for your booked restaurant', tags: ['dining'] },
+  ] },
+  { id: 'feet', name: 'Footwear, hands & head', items: [
+    { id: 'walking-shoes', name: 'Comfortable everyday walking shoes' },
+    { id: 'sunglasses', name: 'Sunglasses', amazon: 'polarized sunglasses' },
+    { id: 'summer-hat', name: 'Sun hat / cap', tags: ['summer'] },
+    { id: 'winter-boots', name: 'Insulated waterproof winter boots', tags: ['winter'], amazon: 'insulated winter boots' },
+    { id: 'ice-cleats', name: 'Ice cleats fitted to your boots for icy walking', note: 'Practice fitting them. They do not make a steep, closed or avalanche-exposed route appropriate.', tags: ['winter', 'snowshoeing'], amazon: 'ice cleats boots' },
+    { id: 'winter-hat', name: 'Warm toque / beanie', tags: ['winter', 'shoulder'], amazon: 'merino wool beanie' },
+    { id: 'winter-gloves', name: 'Insulated waterproof gloves or mittens', tags: ['winter'], amazon: 'insulated winter gloves' },
+    { id: 'light-gloves', name: 'Light warm gloves', tags: ['shoulder'], amazon: 'lightweight hiking gloves' },
+    { id: 'neck-warmer', name: 'Neck gaiter / balaclava', tags: ['winter', 'skiing'] },
+    { id: 'warm-socks', name: 'Warm socks and spare dry socks', tags: ['winter'], amazon: 'merino wool socks' },
+    { id: 'hand-warmers', name: 'Optional hand / toe warmers', tags: ['winter'], amazon: 'hand warmers' },
+    { id: 'trail-footwear', name: 'Trail footwear matched to the route and conditions', note: 'Choose a suitable pair rather than assuming one boot works for every season.', tags: ['hiking', 'summer', 'shoulder'], amazon: 'hiking boots waterproof' },
+    { id: 'waterproof-boots', name: 'If needed: waterproof boots for wet shoulder-season plans', tags: ['shoulder'], amazon: 'waterproof hiking boots' },
+    { id: 'sandals', name: 'Sandals / flip-flops for your accommodation or pool', tags: ['summer', 'hotsprings'] },
+    { id: 'water-shoes', name: 'Water footwear recommended by your paddling operator', tags: ['paddling'], amazon: 'water shoes' },
+  ] },
+  { id: 'daybag', name: 'Day bag & outdoor basics', items: [
+    { id: 'daypack', name: 'Daypack with room for spare layers', amazon: 'hiking daypack' },
+    { id: 'water', name: 'Water bottle and enough drinking water for the plan' },
+    { id: 'food', name: 'Food / snacks and extra supplies for delays' },
+    { id: 'thermos', name: 'Optional thermos for a warm drink', tags: ['winter'] },
+    { id: 'first-aid', name: 'Personal first-aid supplies and any required medication' },
+    { id: 'offline-map', name: 'Route information and offline map / navigation backup', note: 'Do not rely on a phone app or mobile coverage alone.', tags: ['hiking', 'snowshoeing', 'camping'] },
+    { id: 'headlamp', name: 'Headlamp / flashlight and spare power', tags: ['hiking', 'snowshoeing', 'camping', 'winter'], amazon: 'headlamp camping' },
+    { id: 'emergency-kit', name: 'Emergency shelter / blanket, whistle and repair basics', note: 'Match the kit and communication plan to the outing; know how to use it.', tags: ['hiking', 'snowshoeing', 'camping'] },
+    { id: 'trekking-poles', name: 'Optional hiking poles appropriate for the surface', tags: ['hiking', 'snowshoeing'], amazon: 'trekking poles hiking' },
+    { id: 'bear-spray', name: 'Bear spray arranged locally, accessible, and use understood', note: 'Parks Canada recommends it for winter walking too. Bear bells are not a substitute. Do not pack bear spray on a flight.', tags: ['hiking', 'snowshoeing', 'camping', 'summer'], amazon: 'bear spray Canada' },
+    { id: 'outdoor-communication', name: 'Communication / emergency plan suited to the route', note: 'Mobile coverage is unreliable in parts of the park; a device is useful only if you know its limits and how to use it.', tags: ['hiking', 'snowshoeing', 'camping'] },
+    { id: 'dry-bag', name: 'Dry bag for spare clothing and electronics', tags: ['paddling'], amazon: 'waterproof dry bag' },
+    { id: 'pool-towel', name: 'Towel if your pool / hot-springs booking requires one', tags: ['hotsprings'], amazon: 'microfiber travel towel' },
+    { id: 'vehicle-kit', name: 'Vehicle emergency kit, scraper and extra warm clothing', note: 'Check the vehicle’s winter equipment and current road reports before departure.', tags: ['driving'] },
+  ] },
+  { id: 'activity-gear', name: 'Ski, snow & water equipment', items: [
+    { id: 'ski-helmet', name: 'Correctly fitted ski / snowboard helmet', note: 'Confirm whether your rental includes it; do not assume every lesson bundle does.', tags: ['skiing'] },
+    { id: 'ski-goggles', name: 'Goggles suitable for the expected light', tags: ['skiing'], amazon: 'ski goggles' },
+    { id: 'ski-socks', name: 'Ski socks: one well-fitting pair worn, plus a dry spare', tags: ['skiing'], amazon: 'ski socks merino' },
+    { id: 'ski-pass-holder', name: 'Pass pocket / holder compatible with your resort', tags: ['skiing'] },
+    { id: 'skates', name: 'Skates and a confirmed rental / fitting if needed', note: 'Use an operator-confirmed open rink; packing skates is not an ice-safety assessment.', tags: ['skating'] },
+    { id: 'skate-protection', name: 'Helmet and any protection appropriate for your skating session', tags: ['skating'] },
+    { id: 'snowshoes', name: 'Snowshoes: route-appropriate size and rental confirmed', note: 'Snowshoes do not establish avalanche-terrain skills.', tags: ['snowshoeing'] },
+    { id: 'gaiters', name: 'Optional gaiters for your snow / trail conditions', tags: ['snowshoeing'], amazon: 'waterproof gaiters' },
+    { id: 'pfd', name: 'Properly fitted, approved lifejacket / PFD to wear', note: 'Confirm it and the boat’s required safety equipment with the operator before launching.', tags: ['paddling'] },
+  ] },
+  { id: 'camping', name: 'Camping: confirm the site first', items: [
+    { id: 'tent', name: 'Tent / shelter appropriate to your booked campsite and conditions', tags: ['camping'], amazon: 'backpacking tent' },
+    { id: 'sleeping-bag', name: 'Sleeping bag chosen for expected overnight conditions', tags: ['camping'], amazon: 'sleeping bag cold weather' },
+    { id: 'sleeping-pad', name: 'Insulating sleeping pad', tags: ['camping'], amazon: 'camping sleeping pad' },
+    { id: 'stove', name: 'Camp stove, cookware and locally arranged fuel', note: 'Follow current fire restrictions. Fuel cannot go in airline carry-on or checked baggage.', tags: ['camping'] },
+    { id: 'food-storage', name: 'Food and scented-item storage required at your booked site', note: 'Confirm lockers, the site’s storage system or approved containers; do not assume a rope alone satisfies every site’s rules.', tags: ['camping'] },
+    { id: 'camp-water', name: 'Drinking-water supply / treatment matched to site services', tags: ['camping'] },
+    { id: 'camp-hygiene', name: 'Waste bags, campsite hygiene supplies and a leave-no-trace plan', tags: ['camping'] },
+  ] },
+  { id: 'tech', name: 'Tech & photography', items: [
+    { id: 'phone-power', name: 'Phone, charger and portable battery pack' },
+    { id: 'camera', name: 'Camera if you want one' },
+    { id: 'tripod', name: 'Tripod', tags: ['photography'], amazon: 'travel tripod camera' },
+    { id: 'lens-cleaner', name: 'Lens-cleaning kit', tags: ['photography'], amazon: 'lens cleaning kit camera' },
+    { id: 'memory-cards', name: 'Spare memory cards and batteries', tags: ['photography'] },
+    { id: 'polarizing-filter', name: 'Optional polarizing filter', tags: ['photography'], amazon: 'camera polarizing filter' },
+  ] },
+  { id: 'personal', name: 'Personal care & sun protection', items: [
+    { id: 'toiletries', name: 'Toothbrush, toothpaste, deodorant and personal toiletries' },
+    { id: 'lip-spf', name: 'Lip balm with SPF' },
+    { id: 'sunscreen', name: 'Sunscreen for exposed skin, including winter days', amazon: 'sunscreen SPF 50 sport' },
+    { id: 'shoulder-sunscreen', name: 'If preferred: your shoulder-season sunscreen choice', note: 'An alternative to the sunscreen above, not a second required bottle.', tags: ['shoulder'], amazon: 'sunscreen SPF 30' },
+    { id: 'insect-repellent', name: 'Insect repellent for your summer outing', tags: ['summer'], amazon: 'insect repellent spray' },
+    { id: 'after-sun', name: 'Optional skin moisturiser / after-sun lotion', tags: ['summer'] },
+  ] },
+];
+const itemCount = groups.reduce((total, group) => total + group.items.length, 0);
+const amazonLink = (term: string) => `https://www.amazon.ca/s?k=${encodeURIComponent(term)}&tag=${AFFILIATE_TAG}`;
+const sources = [
+  { name: 'Parks Canada: winter walking, recommended gear and avalanche awareness', url: 'https://parks.canada.ca/pn-np/ab/banff/activ/marchehiver-winterwalking' },
+  { name: 'Parks Canada: natural ice and skating', url: 'https://parks.canada.ca/pn-np/ab/banff/activ/patinage-skating' },
+  { name: 'Avalanche Canada: start here and training', url: 'https://avalanche.ca/start-here' },
+  { name: 'Sunshine: first-timer clothing, rentals and arrival', url: 'https://www.skibanff.com/plan/first-time-visitors/first-timers-guide' },
+  { name: 'Parks Canada: camping permits, facilities and food storage', url: 'https://parks.canada.ca/pn-np/ab/banff/activ/camping' },
+  { name: 'Transport Canada: lifejackets and paddling safety resources', url: 'https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/boating-safety-resources' },
+  { name: 'Alberta: safer winter highways', url: 'https://www.alberta.ca/safer-winter-highways' },
+  { name: 'BC: passenger-vehicle tire and chain requirements', url: 'https://www2.gov.bc.ca/gov/content/transportation/driving-and-cycling/traveller-information/seasonal/winter-driving/about-winter-tires' },
+  { name: 'CATSA: flying with outdoor equipment', url: 'https://www.catsa-acsta.gc.ca/en/travel-tips/outdoor-adventure' },
+];
+const faqs = [
+  { question: 'Does my travel month tell me exactly what to pack?', answer: 'No. The month creates a seasonal starting point, not a forecast. Conditions vary with elevation, route and the day. Winter activities add winter clothing even if your travel month is outside winter; check that the activity is actually operating.' },
+  { question: 'Will the packing checklist remember my progress?', answer: 'Only if you turn on Save on this browser. It saves your selected month, activities, view and checked item IDs in this browser, without an account. Turn saving off to remove this version’s saved checklist. Reset all check marks clears progress for every item, including hidden items, while keeping your selections.' },
+  { question: 'Does a completed gear list mean a winter route or frozen lake is safe?', answer: 'No. A checklist does not assess ice, avalanche terrain, weather, closures or your experience. Equipment does not provide terrain skills. Use current official conditions, operator instructions and appropriate training or qualified guidance.' },
+];
 ---
 
-<BaseLayout title="Banff Packing List Generator" description="Generate a personalized packing checklist for your Banff trip. Seasonal recommendations, activity-specific gear, and Amazon links for essential items.">
+<BaseLayout title="Banff Packing List: Winter, Summer & Ski-Day Checklist" description="Build a Banff packing checklist by travel month and activity. Prepare for a ski lesson, summer hike or camping trip; save progress on this browser or print the list." canonicalUrl="https://banffbound.com/packing-list/" lastUpdated="2026-10-28">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Packing list' }]} /></div>
+  <section class="packing-hero"><div class="container"><span class="eyebrow">Pack for the day you have planned</span><h1>Your Banff<br />packing checklist.</h1><p>Warm layers for a first lesson. A day bag for a summer trail. The confirmations that make the return journey work. Choose your month and activities, then tick things off as you pack or arrange them.</p><a class="btn btn-accent" href="#packing-checklist">Start my checklist &darr;</a></div></section>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: 'How to Pack for a Banff Trip',
-    description: 'Generate a personalized packing checklist for your Banff trip. Seasonal recommendations, activity-specific gear, and links for essential items.',
-    url: 'https://banffbound.com/packing-list',
-    totalTime: 'PT30M',
-    estimatedCost: { '@type': 'MonetaryAmount', currency: 'CAD', value: '0' },
-    step: [
-      { '@type': 'HowToStep', position: 1, name: 'Choose your travel month', text: 'Select the month you plan to visit Banff. This determines whether you need winter, summer, or shoulder-season gear.' },
-      { '@type': 'HowToStep', position: 2, name: 'Select your planned activities', text: 'Choose from activities like hiking, skiing, snowshoeing, canoeing, camping, photography, dining, and hot springs. Each adds activity-specific gear to your list.' },
-      { '@type': 'HowToStep', position: 3, name: 'Generate your personalized packing list', text: 'Click generate to receive a customized checklist organized by category: clothing, footwear, gear, accessories, tech, toiletries, and documents. Check off items as you pack.' },
-    ],
-    tool: [
-      { '@type': 'HowToTool', name: 'BanffBound Packing List Generator' },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Packing List' }]} />
-  </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1600&q=80" alt="Packing for a mountain adventure" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Plan Smart</span>
-      <h1>Packing List Generator</h1>
-      <p>Get a personalized checklist based on your travel month and planned activities. Never forget essential gear again.</p>
+  <section class="section"><div class="container">
+    <nav class="journey-links no-print" aria-label="Plan the day before packing"><a href="/learn-to-ski"><strong>First lesson &rarr;</strong><span>Check tickets, rental inclusions and arrival.</span></a><a href="/ski-day-planner"><strong>Ski day planner &rarr;</strong><span>Put the resort, lesson and transport together.</span></a><a href="/skiing"><strong>Compare ski resorts &rarr;</strong><span>Choose your resort and actual activity.</span></a><a href="/winter"><strong>Winter guide &rarr;</strong><span>Understand seasonal access and trip choices.</span></a></nav>
+    <div class="tool-controls no-print" id="packing-controls" hidden>
+      <form id="packing-form"><div class="control-heading"><span class="eyebrow">Make the list fit your plans</span><h2>When are you going, and what will you do?</h2></div><label class="month-label" for="packing-month">Travel month<select id="packing-month" name="month"><option value="all">All-season starter / not sure yet</option>{months.map((month, index) => <option value={index}>{month}</option>)}</select></label>
+        <fieldset><legend>Planned activities</legend><p class="control-help">Select what you have planned. A first lesson also adds resort ski essentials. Selecting an activity does not confirm that it is open.</p><div class="activity-grid">{activities.map(activity => <label><input type="checkbox" name="activity" value={activity.id} /><span>{activity.name}</span></label>)}</div></fieldset>
+        <div class="filter-footer"><label for="packing-view">Show<select id="packing-view" name="view"><option value="all">All items in my plan</option><option value="unpacked">Still to pack / arrange</option><option value="packed">Already packed / arranged</option></select></label><button type="reset">Reset selections</button><p>Changing selections keeps your check marks. Reset selections keeps progress and returns to the all-season starter.</p></div>
+      </form>
+      <div class="save-controls"><label><input type="checkbox" id="packing-remember" /><span>Save on this browser</span></label><p id="packing-save-status" role="status">Optional: remember selections and check marks here between visits. No account is needed.</p></div>
     </div>
-  </section>
+    <noscript><div class="no-script-note"><strong>The complete checklist is below.</strong> Tick the items that apply to your trip and print using your browser. Month/activity filtering and saved progress require JavaScript; the full list and source links remain usable here.</div></noscript>
 
-  <section class="section">
-    <div class="container">
-      <div class="generator-card" id="generator">
-        <div class="step">
-          <h3>Step 1: When are you visiting?</h3>
-          <select id="month-select">
-            <option value="">Select month...</option>
-            <option value="0">January</option>
-            <option value="1">February</option>
-            <option value="2">March</option>
-            <option value="3">April</option>
-            <option value="4">May</option>
-            <option value="5">June</option>
-            <option value="6">July</option>
-            <option value="7">August</option>
-            <option value="8">September</option>
-            <option value="9">October</option>
-            <option value="10">November</option>
-            <option value="11">December</option>
-          </select>
-        </div>
-        <div class="step">
-          <h3>Step 2: What activities are you planning?</h3>
-          <div class="activity-grid">
-            <label class="activity-check"><input type="checkbox" value="hiking" /> 🥾 Hiking</label>
-            <label class="activity-check"><input type="checkbox" value="skiing" /> ⛷️ Skiing / Snowboarding</label>
-            <label class="activity-check"><input type="checkbox" value="skating" /> ⛸️ Ice Skating</label>
-            <label class="activity-check"><input type="checkbox" value="snowshoeing" /> 🥾 Snowshoeing</label>
-            <label class="activity-check"><input type="checkbox" value="paddling" /> 🛶 Canoeing / Kayaking</label>
-            <label class="activity-check"><input type="checkbox" value="camping" /> ⛺ Camping</label>
-            <label class="activity-check"><input type="checkbox" value="photography" /> 📷 Photography</label>
-            <label class="activity-check"><input type="checkbox" value="dining" /> 🍽️ Dining Out</label>
-            <label class="activity-check"><input type="checkbox" value="hotsprings" /> ♨️ Hot Springs</label>
-          </div>
-        </div>
-        <button class="btn btn-primary" id="generate-btn">Generate My Packing List</button>
-      </div>
+    <div class="checklist-heading" id="packing-checklist"><div><span class="eyebrow">Packed or arranged</span><h2 id="packing-title">Complete Banff packing checklist</h2><p id="packing-context">Use the season and activity labels to choose what applies. This is a starting point; adapt it to your group, operator and current conditions.</p><div id="packing-progress-wrap" hidden><label for="packing-progress" id="packing-progress-text">0 of {itemCount} items packed or arranged</label><progress id="packing-progress" value="0" max={itemCount}></progress><p id="packing-results" aria-live="polite" role="status"></p></div></div><div class="checklist-actions no-print" id="packing-actions" hidden><button type="button" id="packing-print">Print this view</button><button type="button" id="packing-share">Copy plan link</button><button type="button" id="packing-reset">Reset all check marks</button><p>Print uses the current filters. Reset clears every check mark, including hidden items, and keeps your month and activities.</p></div></div>
+    <p id="packing-action-status" class="action-status" role="status" aria-live="polite"></p><div id="packing-share-fallback" class="share-fallback no-print" hidden><label for="packing-share-url">Plan link: copy manually</label><input id="packing-share-url" readonly /><p>The link shares month and activities, never your checked items.</p></div>
+    <div class="scope-note"><strong>Packing is one part of planning.</strong> This list does not assess conditions, ice, avalanche terrain, road access or your ability. Ice cleats, snowshoes and rescue equipment do not provide terrain skills. Check current official guidance and follow your operator or instructor’s directions.</div>
+    <p class="affiliate-note">Amazon search links are affiliate links using BanffBound’s existing tag. We may earn a commission from qualifying purchases. These are product searches, not live price, review or suitability recommendations. Check the equipment, fit and transport restrictions before buying.</p>
+    <div class="packing-groups">{groups.map(group => <section class="packing-group" data-group={group.id} aria-labelledby={`group-${group.id}`}><h3 id={`group-${group.id}`}>{group.name}</h3><ul>{group.items.map(item => <li class="packing-row" data-item-id={item.id} data-tags={(item.tags || []).join(' ')}><input type="checkbox" id={`pack-${item.id}`} data-pack-id={item.id} /><div class="pack-copy"><label for={`pack-${item.id}`}><span class="item-name">{item.name}</span></label>{item.note && <p>{item.note}</p>}{item.tags?.length && <span class="item-tags">{item.tags.map(tag => activities.find(activity => activity.id === tag)?.name || `${tag.charAt(0).toUpperCase()}${tag.slice(1)} season`).join(' · ')}</span>}</div>{item.amazon && <a class="shop-link no-print" href={amazonLink(item.amazon)} target="_blank" rel="noopener sponsored" aria-label={`Search Amazon for ${item.name}`}>Shop &nearr;</a>}</li>)}</ul></section>)}</div>
+    <div id="packing-empty" class="empty-note" hidden><h3>No items in this view.</h3><p>Change the activity or show all items in your plan. A fully checked list is not confirmation that conditions or terrain are appropriate.</p></div>
 
-      <div id="packing-result" style="display:none;">
-        <div class="result-header">
-          <div>
-            <h2 id="list-title">Your Packing List</h2>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" id="progress-bar"></div>
-            </div>
-            <span class="progress-text" id="progress-text">0 of 0 items packed</span>
-          </div>
-          <div class="result-actions">
-            <button class="btn btn-outline" id="print-btn">🖨️ Print</button>
-            <button class="btn btn-outline" id="reset-btn">🔄 Reset</button>
-          </div>
-        </div>
-        <div class="categories-grid" id="categories-grid"></div>
-      </div>
-    </div>
-  </section>
+    <section class="planning-notes" aria-labelledby="packing-conditions"><span class="eyebrow">Check before setting out</span><h2 id="packing-conditions">The equipment is not the go-ahead</h2><div class="note-grid"><article><h3>Winter walking and avalanche terrain</h3><p>A summer trail sign does not establish a winter route. <a href="https://parks.canada.ca/pn-np/ab/banff/activ/marchehiver-winterwalking" target="_blank" rel="noopener">Parks Canada’s winter walking guidance</a> recommends route checks, maps, warm extras and emergency supplies. <a href="https://avalanche.ca/start-here" target="_blank" rel="noopener">Avalanche Canada</a> explains why even flat ground can lie beneath an avalanche slope. A shopping list does not replace training, terrain judgment or qualified guidance.</p></article><article><h3>Skating needs an open, appropriate surface</h3><p>Parks Canada does not monitor natural ice for safety or mark its hazards. Packing skates does not assess thickness or access. Choose an operator-confirmed open rink and follow current closures and <a href="https://parks.canada.ca/pn-np/ab/banff/activ/patinage-skating" target="_blank" rel="noopener">official skating guidance</a>.</p></article><article><h3>Rental car means checking the actual tires</h3><p>Confirm the tires supplied and the requirements for your route. <a href="https://www.alberta.ca/safer-winter-highways" target="_blank" rel="noopener">Alberta recommends winter preparation</a>; <a href="https://www2.gov.bc.ca/gov/content/transportation/driving-and-cycling/traveller-information/seasonal/winter-driving/about-winter-tires" target="_blank" rel="noopener">BC has seasonal requirements on designated routes</a>. A vehicle type or a packed emergency kit does not establish road conditions. Recheck <a href="https://511.alberta.ca/" target="_blank" rel="noopener">Alberta 511</a> and <a href="https://www.drivebc.ca/" target="_blank" rel="noopener">DriveBC</a>.</p></article><article><h3>Flying changes what you can bring</h3><p><a href="https://www.catsa-acsta.gc.ca/en/travel-tips/outdoor-adventure" target="_blank" rel="noopener">CATSA prohibits bear spray and camping fuel in carry-on and checked baggage</a>. Arrange them locally and check the carrier’s rules for other equipment. For paddling, confirm the boat’s kit and wear a <a href="https://tc.canada.ca/en/marine-transportation/marine-safety/boating-safety/boating-safety-resources" target="_blank" rel="noopener">properly fitted approved lifejacket / PFD</a>.</p></article></div></section>
+    <section class="packing-faq"><h2>Packing checklist questions</h2>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <section class="source-list"><h2>Sources and review date</h2><p>Reviewed 28 October 2026. The item selection and seasonal grouping are editorial starting points, not a current forecast or a complete backcountry equipment specification. Use these primary sources and your booked operator’s current instructions.</p><ul>{sources.map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.name}</a></li>)}</ul></section>
+  </div></section>
 </BaseLayout>
 
-<script define:vars={{ AFFILIATE_TAG }}>
-  const STORAGE_KEY = 'banffbound_packing_list';
-  const TAG = AFFILIATE_TAG;
-
-  const amazonLink = (term) => `https://www.amazon.ca/s?k=${encodeURIComponent(term)}&tag=${TAG}`;
-
-  const baseItems = {
-    Clothing: [
-      { name: 'T-shirts / tops', seasons: 'all' },
-      { name: 'Underwear & socks', seasons: 'all' },
-      { name: 'Comfortable pants / jeans', seasons: 'all' },
-      { name: 'Light jacket or fleece', seasons: 'all' },
-      { name: 'Rain jacket', seasons: 'all', amazon: 'waterproof rain jacket' },
-    ],
-    Footwear: [
-      { name: 'Comfortable walking shoes', seasons: 'all' },
-    ],
-    Gear: [
-      { name: 'Daypack / backpack', seasons: 'all', amazon: 'hiking daypack' },
-      { name: 'Reusable water bottle', seasons: 'all' },
-    ],
-    Accessories: [
-      { name: 'Sunglasses', seasons: 'all', amazon: 'polarized sunglasses' },
-      { name: 'Hat / cap', seasons: 'all' },
-    ],
-    Tech: [
-      { name: 'Phone & charger', seasons: 'all' },
-      { name: 'Portable battery pack', seasons: 'all' },
-      { name: 'Camera', seasons: 'all' },
-    ],
-    Toiletries: [
-      { name: 'Toothbrush & toothpaste', seasons: 'all' },
-      { name: 'Deodorant', seasons: 'all' },
-      { name: 'Medications / prescriptions', seasons: 'all' },
-      { name: 'First aid kit basics', seasons: 'all' },
-      { name: 'Lip balm with SPF', seasons: 'all' },
-    ],
-    Documents: [
-      { name: 'ID / Passport', seasons: 'all' },
-      { name: 'Travel insurance details', seasons: 'all' },
-      { name: 'Hotel confirmation', seasons: 'all' },
-      { name: 'Parks Canada pass', seasons: 'all' },
-      { name: 'Credit cards & cash (CAD)', seasons: 'all' },
-    ],
-  };
-
-  const winterItems = {
-    Clothing: [
-      { name: 'Thermal base layers (top & bottom)', amazon: 'merino wool base layer' },
-      { name: 'Insulated down jacket', amazon: 'down jacket winter' },
-      { name: 'Insulated waterproof pants', amazon: 'insulated snow pants' },
-      { name: 'Fleece mid-layer' },
-      { name: 'Wool sweater' },
-    ],
-    Footwear: [
-      { name: 'Insulated waterproof winter boots', amazon: 'insulated winter boots' },
-      { name: 'Boot ice grippers / cleats', amazon: 'ice cleats boots' },
-    ],
-    Accessories: [
-      { name: 'Warm toque / beanie', amazon: 'merino wool beanie' },
-      { name: 'Insulated gloves', amazon: 'insulated winter gloves' },
-      { name: 'Neck gaiter / balaclava' },
-      { name: 'Hand warmers (pack of 10)', amazon: 'hand warmers' },
-      { name: 'Thick wool socks', amazon: 'merino wool socks' },
-    ],
-    Gear: [
-      { name: 'Thermos for hot drinks' },
-    ],
-  };
-
-  const summerItems = {
-    Clothing: [
-      { name: 'Hiking shorts' },
-      { name: 'Moisture-wicking shirts' },
-      { name: 'Swimsuit' },
-      { name: 'Light long-sleeve sun shirt' },
-    ],
-    Footwear: [
-      { name: 'Hiking boots', amazon: 'hiking boots waterproof' },
-      { name: 'Sandals / flip-flops' },
-    ],
-    Accessories: [
-      { name: 'Wide-brim sun hat' },
-    ],
-    Toiletries: [
-      { name: 'Sunscreen SPF 50+', amazon: 'sunscreen SPF 50 sport' },
-      { name: 'Bug spray / insect repellent', amazon: 'insect repellent spray' },
-      { name: 'After-sun lotion' },
-    ],
-    Gear: [
-      { name: 'Bear spray', amazon: 'bear spray Canada' },
-    ],
-  };
-
-  const shoulderItems = {
-    Clothing: [
-      { name: 'Warm fleece or down vest', amazon: 'down vest' },
-      { name: 'Long pants & warm layers' },
-      { name: 'Light thermal base layer', amazon: 'lightweight base layer' },
-    ],
-    Footwear: [
-      { name: 'Waterproof hiking boots', amazon: 'waterproof hiking boots' },
-    ],
-    Accessories: [
-      { name: 'Warm gloves (light)', amazon: 'lightweight hiking gloves' },
-      { name: 'Toque / beanie' },
-    ],
-    Toiletries: [
-      { name: 'Sunscreen SPF 30+', amazon: 'sunscreen SPF 30' },
-    ],
-  };
-
-  const activityItems = {
-    hiking: {
-      Gear: [
-        { name: 'Trekking poles', amazon: 'trekking poles hiking' },
-        { name: 'Trail map or AllTrails app' },
-        { name: 'Bear bell', amazon: 'bear bell hiking' },
-        { name: 'Emergency whistle' },
-        { name: 'Bear spray', amazon: 'bear spray Canada' },
-      ],
-    },
-    skiing: {
-      Gear: [
-        { name: 'Ski goggles', amazon: 'ski goggles' },
-        { name: 'Ski pass holder / lanyard' },
-        { name: 'Helmet (or rent on-mountain)' },
-      ],
-      Accessories: [
-        { name: 'Ski socks (thin wool)', amazon: 'ski socks merino' },
-        { name: 'Neck warmer / face mask' },
-      ],
-    },
-    skating: {
-      Gear: [
-        { name: 'Ice skates (or rent locally)' },
-      ],
-      Accessories: [
-        { name: 'Wrist guards (optional)' },
-      ],
-    },
-    snowshoeing: {
-      Gear: [
-        { name: 'Snowshoes (or rent locally)' },
-        { name: 'Gaiters', amazon: 'waterproof gaiters' },
-      ],
-    },
-    paddling: {
-      Clothing: [
-        { name: 'Quick-dry clothing' },
-        { name: 'Water shoes', amazon: 'water shoes' },
-      ],
-      Gear: [
-        { name: 'Dry bag for electronics', amazon: 'waterproof dry bag' },
-      ],
-    },
-    camping: {
-      Gear: [
-        { name: 'Tent', amazon: 'backpacking tent' },
-        { name: 'Sleeping bag (rated for temp)', amazon: 'sleeping bag cold weather' },
-        { name: 'Sleeping pad', amazon: 'camping sleeping pad' },
-        { name: 'Camp stove & fuel' },
-        { name: 'Headlamp', amazon: 'headlamp camping' },
-        { name: 'Bear canister / hang rope' },
-      ],
-    },
-    photography: {
-      Tech: [
-        { name: 'Tripod', amazon: 'travel tripod camera' },
-        { name: 'Lens cleaning kit', amazon: 'lens cleaning kit camera' },
-        { name: 'Extra memory cards' },
-        { name: 'Extra batteries' },
-        { name: 'Polarizing filter', amazon: 'camera polarizing filter' },
-      ],
-    },
-    dining: {
-      Clothing: [
-        { name: 'Smart casual outfit for nice restaurants' },
-      ],
-    },
-    hotsprings: {
-      Clothing: [
-        { name: 'Swimsuit' },
-      ],
-      Accessories: [
-        { name: 'Quick-dry towel', amazon: 'microfiber travel towel' },
-        { name: 'Flip-flops / sandals' },
-      ],
-    },
-  };
-
-  function getSeason(month) {
-    if ([10, 11, 0, 1, 2].includes(month)) return 'winter';
-    if ([5, 6, 7].includes(month)) return 'summer';
-    return 'shoulder';
-  }
-
-  function generateList(month, activities) {
-    const season = getSeason(month);
-    const list = {};
-
-    // Add base items
-    for (const [cat, items] of Object.entries(baseItems)) {
-      list[cat] = [...items.map(i => ({ ...i }))];
+<script>
+  const initPackingList = () => {
+    const form = document.querySelector<HTMLFormElement>('#packing-form');
+    if (!form || form.dataset.ready) return;
+    const month = document.querySelector<HTMLSelectElement>('#packing-month')!;
+    const view = document.querySelector<HTMLSelectElement>('#packing-view')!;
+    const remember = document.querySelector<HTMLInputElement>('#packing-remember')!;
+    const activityInputs = Array.from(form.querySelectorAll<HTMLInputElement>('input[name="activity"]'));
+    const checks = Array.from(document.querySelectorAll<HTMLInputElement>('[data-pack-id]'));
+    const rows = Array.from(document.querySelectorAll<HTMLElement>('[data-item-id]'));
+    const groups = Array.from(document.querySelectorAll<HTMLElement>('[data-group]'));
+    const allowedIds = new Set(checks.map(check => check.dataset.packId!));
+    const allowedActivities = new Set(activityInputs.map(input => input.value));
+    const allowedMonths = new Set(Array.from(month.options).map(option => option.value));
+    const allowedViews = new Set(['all', 'unpacked', 'packed']);
+    const checked = new Set<string>();
+    const key = 'banffbound-packing-v2';
+    const saveStatus = document.querySelector<HTMLElement>('#packing-save-status')!;
+    const actionStatus = document.querySelector<HTMLElement>('#packing-action-status')!;
+    const title = document.querySelector<HTMLElement>('#packing-title')!;
+    const context = document.querySelector<HTMLElement>('#packing-context')!;
+    const progress = document.querySelector<HTMLProgressElement>('#packing-progress')!;
+    const progressText = document.querySelector<HTMLElement>('#packing-progress-text')!;
+    const results = document.querySelector<HTMLElement>('#packing-results')!;
+    const empty = document.querySelector<HTMLElement>('#packing-empty')!;
+    const monthNames = Array.from(month.options).slice(1).map(option => option.textContent || '');
+    let saveFailed = false;
+    const selectedActivities = () => activityInputs.filter(input => input.checked).map(input => input.value);
+    const ensureLessonGear = () => {
+      if (activityInputs.some(input => input.value === 'lesson' && input.checked)) activityInputs.find(input => input.value === 'skiing')!.checked = true;
+    };
+    const seasonFor = (value: string) => value === 'all' ? 'all' : [10, 11, 0, 1, 2].includes(Number(value)) ? 'winter' : [5, 6, 7].includes(Number(value)) ? 'summer' : 'shoulder';
+    const removeSaved = () => {
+      try { window.localStorage.removeItem(key); saveFailed = false; return true; }
+      catch { saveFailed = true; return false; }
+    };
+    const save = () => {
+      if (!remember.checked) return;
+      try {
+        window.localStorage.setItem(key, JSON.stringify({ version: 2, month: month.value, activities: selectedActivities(), view: view.value, checked: Array.from(checked) }));
+        saveFailed = false;
+        saveStatus.textContent = 'Selections and check marks are saved on this browser. Turn saving off to remove this saved checklist.';
+      } catch {
+        saveFailed = true;
+        saveStatus.textContent = 'Browser saving is unavailable. You can still use and print this checklist; changes may not survive a reload.';
+      }
+    };
+    try {
+      const raw = window.localStorage.getItem(key);
+      if (raw) {
+        const saved: unknown = JSON.parse(raw);
+        if (saved && typeof saved === 'object' && 'version' in saved && saved.version === 2) {
+          const data = saved as Record<string, unknown>;
+          if (typeof data.month === 'string' && allowedMonths.has(data.month)) month.value = data.month;
+          if (typeof data.view === 'string' && allowedViews.has(data.view)) view.value = data.view;
+          if (Array.isArray(data.activities)) for (const input of activityInputs) input.checked = data.activities.includes(input.value);
+          if (Array.isArray(data.checked)) for (const id of data.checked) if (typeof id === 'string' && allowedIds.has(id)) checked.add(id);
+          remember.checked = true;
+          saveStatus.textContent = 'Saved selections and check marks restored from this browser.';
+        } else saveStatus.textContent = 'The saved checklist could not be restored. This checklist still works; turn saving on to start a new saved copy.';
+      }
+    } catch {
+      saveFailed = true;
+      saveStatus.textContent = 'A saved checklist could not be read. You can still use and print this list; turn saving on to try saving a new copy.';
     }
-
-    // Add seasonal items
-    const seasonalItems = season === 'winter' ? winterItems : season === 'summer' ? summerItems : shoulderItems;
-    for (const [cat, items] of Object.entries(seasonalItems)) {
-      if (!list[cat]) list[cat] = [];
-      items.forEach(item => {
-        if (!list[cat].some(i => i.name === item.name)) {
-          list[cat].push({ ...item });
-        }
-      });
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('month') || params.has('activities')) {
+      const chosenMonth = params.get('month') || 'all';
+      month.value = allowedMonths.has(chosenMonth) ? chosenMonth : 'all';
+      const chosenActivities = new Set((params.get('activities') || '').split(',').filter(activity => allowedActivities.has(activity)));
+      for (const input of activityInputs) input.checked = chosenActivities.has(input.value);
+      view.value = 'all';
     }
-
-    // Add activity items
-    activities.forEach(act => {
-      const actItems = activityItems[act];
-      if (!actItems) return;
-      for (const [cat, items] of Object.entries(actItems)) {
-        if (!list[cat]) list[cat] = [];
-        items.forEach(item => {
-          if (!list[cat].some(i => i.name === item.name)) {
-            list[cat].push({ ...item });
-          }
-        });
+    ensureLessonGear();
+    for (const check of checks) check.checked = checked.has(check.dataset.packId!);
+    const updateUrl = () => {
+      const url = new URL(window.location.href);
+      month.value === 'all' ? url.searchParams.delete('month') : url.searchParams.set('month', month.value);
+      const selected = selectedActivities();
+      selected.length ? url.searchParams.set('activities', selected.join(',')) : url.searchParams.delete('activities');
+      try { window.history.replaceState({}, '', url); } catch { /* The checklist remains usable if history is unavailable. */ }
+    };
+    const update = () => {
+      const selected = selectedActivities();
+      const season = seasonFor(month.value);
+      const winterActivity = selected.some(activity => ['skiing', 'lesson', 'skating', 'snowshoeing'].includes(activity));
+      const tags = new Set([...selected, season]);
+      if (season === 'all') for (const value of ['winter', 'summer', 'shoulder']) tags.add(value);
+      if (winterActivity) tags.add('winter');
+      let total = 0, packed = 0, shown = 0;
+      for (const row of rows) {
+        const itemTags = (row.dataset.tags || '').split(' ').filter(Boolean);
+        const included = !itemTags.length || itemTags.some(tag => tags.has(tag));
+        const done = checked.has(row.dataset.itemId!);
+        if (included) { total++; if (done) packed++; }
+        row.hidden = !included || (view.value === 'unpacked' && done) || (view.value === 'packed' && !done);
+        if (!row.hidden) shown++;
+      }
+      for (const group of groups) group.hidden = !Array.from(group.querySelectorAll<HTMLElement>('[data-item-id]')).some(row => !row.hidden);
+      progress.max = Math.max(total, 1); progress.value = packed;
+      progressText.textContent = `${packed} of ${total} items packed or arranged`;
+      results.textContent = `${shown} ${shown === 1 ? 'item' : 'items'} shown. Progress covers all items in this plan, including checked items hidden by the view filter.`;
+      title.textContent = month.value === 'all' ? 'Your all-season packing starter' : `Your ${monthNames[Number(month.value)]} packing checklist`;
+      context.textContent = `Seasonal starting point: ${season === 'all' ? 'all seasons' : season}. ${selected.length ? `${selected.length} activities selected.` : 'Choose activities to add their equipment and booking checks.'} ${winterActivity && season !== 'winter' ? 'Winter activities also add winter layers; this does not confirm seasonal operation.' : 'Recheck the actual forecast, route and operator instructions.'}`;
+      empty.hidden = shown > 0;
+    };
+    form.addEventListener('submit', event => event.preventDefault());
+    form.addEventListener('change', event => {
+      const target = event.target as HTMLInputElement;
+      if (target.name === 'activity' && target.value === 'skiing' && !target.checked) activityInputs.find(input => input.value === 'lesson')!.checked = false;
+      ensureLessonGear(); update(); updateUrl(); save();
+    });
+    form.addEventListener('reset', () => window.setTimeout(() => { ensureLessonGear(); update(); updateUrl(); save(); actionStatus.textContent = 'Selections reset. Your check marks have been kept.'; }, 0));
+    for (const check of checks) check.addEventListener('change', () => {
+      const id = check.dataset.packId!;
+      check.checked ? checked.add(id) : checked.delete(id);
+      update(); save();
+    });
+    remember.addEventListener('change', () => {
+      if (remember.checked) save();
+      else saveStatus.textContent = removeSaved() ? 'Saving is off. The saved checklist was removed; your current selections and checks remain for this visit.' : 'Saving is off, but browser storage could not be cleared. The checklist works for this visit; use your browser’s site-data controls if you need to remove a previously saved copy.';
+    });
+    document.querySelector('#packing-reset')!.addEventListener('click', () => {
+      checked.clear(); for (const check of checks) check.checked = false;
+      update(); save();
+      actionStatus.textContent = saveFailed && remember.checked ? 'All check marks cleared for this visit, including hidden items. Browser storage could not be updated.' : 'All check marks reset, including hidden items. Your month and activity selections are unchanged.';
+    });
+    document.querySelector('#packing-print')!.addEventListener('click', () => window.print());
+    document.querySelector('#packing-share')!.addEventListener('click', async () => {
+      const url = new URL('/packing-list/', window.location.origin);
+      if (month.value !== 'all') url.searchParams.set('month', month.value);
+      const selected = selectedActivities(); if (selected.length) url.searchParams.set('activities', selected.join(','));
+      try {
+        await navigator.clipboard.writeText(url.href);
+        document.querySelector<HTMLElement>('#packing-share-fallback')!.hidden = true;
+        actionStatus.textContent = 'Plan link copied. It shares the month and activities, never your checked items.';
+      } catch {
+        const field = document.querySelector<HTMLInputElement>('#packing-share-url')!;
+        field.value = url.href; document.querySelector<HTMLElement>('#packing-share-fallback')!.hidden = false; field.focus(); field.select();
+        actionStatus.textContent = 'Copy the plan link below. Your checked items are not included.';
       }
     });
-
-    return list;
-  }
-
-  function loadCheckedState() {
-    try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    } catch { return {}; }
-  }
-
-  function saveCheckedState(state) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  }
-
-  function updateProgress() {
-    const checks = document.querySelectorAll('#categories-grid input[type="checkbox"]');
-    const total = checks.length;
-    const packed = Array.from(checks).filter(c => c.checked).length;
-    const pct = total ? Math.round((packed / total) * 100) : 0;
-
-    document.getElementById('progress-bar').style.width = pct + '%';
-    document.getElementById('progress-text').textContent = `${packed} of ${total} items packed`;
-  }
-
-  function renderList(list) {
-    const grid = document.getElementById('categories-grid');
-    const checkedState = loadCheckedState();
-    const categoryIcons = {
-      Clothing: '👕',
-      Footwear: '👟',
-      Gear: '🎒',
-      Accessories: '🧢',
-      Tech: '📱',
-      Toiletries: '🧴',
-      Documents: '📄',
-    };
-
-    const categoryOrder = ['Clothing', 'Footwear', 'Gear', 'Accessories', 'Tech', 'Toiletries', 'Documents'];
-
-    grid.innerHTML = categoryOrder
-      .filter(cat => list[cat] && list[cat].length)
-      .map(cat => {
-        const items = list[cat];
-        const icon = categoryIcons[cat] || '📦';
-        return `
-          <div class="category-card">
-            <h3>${icon} ${cat}</h3>
-            <ul class="item-list">
-              ${items.map((item, i) => {
-                const key = `${cat}-${i}`;
-                const checked = checkedState[key] ? 'checked' : '';
-                const shopBtn = item.amazon
-                  ? `<a href="${amazonLink(item.amazon)}" target="_blank" rel="noopener" class="shop-link">Shop</a>`
-                  : '';
-                return `<li>
-                  <label class="pack-item">
-                    <input type="checkbox" data-key="${key}" ${checked} />
-                    <span class="item-name ${checked ? 'packed' : ''}">${item.name}</span>
-                    ${shopBtn}
-                  </label>
-                </li>`;
-              }).join('')}
-            </ul>
-          </div>
-        `;
-      }).join('');
-
-    // Attach check handlers
-    grid.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-      cb.addEventListener('change', () => {
-        const state = loadCheckedState();
-        state[cb.dataset.key] = cb.checked;
-        saveCheckedState(state);
-        cb.nextElementSibling.classList.toggle('packed', cb.checked);
-        updateProgress();
-      });
-    });
-
-    updateProgress();
-  }
-
-  // Generate button
-  document.getElementById('generate-btn').addEventListener('click', () => {
-    const monthVal = document.getElementById('month-select').value;
-    if (monthVal === '') { alert('Please select a travel month.'); return; }
-
-    const month = Number(monthVal);
-    const activities = Array.from(document.querySelectorAll('.activity-grid input:checked')).map(c => c.value);
-    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
-    const list = generateList(month, activities);
-    document.getElementById('list-title').textContent = `Your ${monthNames[month]} Packing List`;
-    document.getElementById('packing-result').style.display = '';
-    renderList(list);
-
-    document.getElementById('packing-result').scrollIntoView({ behavior: 'smooth' });
-  });
-
-  // Print
-  document.getElementById('print-btn').addEventListener('click', () => { window.print(); });
-
-  // Reset
-  document.getElementById('reset-btn').addEventListener('click', () => {
-    localStorage.removeItem(STORAGE_KEY);
-    document.querySelectorAll('#categories-grid input[type="checkbox"]').forEach(cb => {
-      cb.checked = false;
-      cb.nextElementSibling.classList.remove('packed');
-    });
-    updateProgress();
-  });
+    form.dataset.ready = 'true';
+    for (const id of ['packing-controls', 'packing-actions', 'packing-progress-wrap']) document.getElementById(id)!.hidden = false;
+    update();
+  };
+  initPackingList();
+  document.addEventListener('astro:page-load', initPackingList);
 </script>
 
 <style>
-  .generator-card {
-    background: var(--color-white, #fff);
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .step {
-    margin-bottom: 1.5rem;
-  }
-
-  .step h3 {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .step select {
-    width: 100%;
-    padding: 0.6rem 0.8rem;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 6px;
-    font-size: 0.9rem;
-    background: var(--color-white, #fff);
-  }
-
-  .activity-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 0.5rem;
-  }
-
-  .activity-check {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-    padding: 0.4rem 0.6rem;
-    border-radius: 6px;
-    transition: background 0.2s;
-  }
-
-  .activity-check:hover { background: var(--color-bg-alt); }
-
-  .btn {
-    padding: 0.65rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .btn-primary {
-    background: var(--color-primary);
-    color: white;
-    width: 100%;
-  }
-
-  .btn-primary:hover { opacity: 0.9; }
-
-  .btn-outline {
-    background: none;
-    border: 1px solid rgba(0,0,0,0.15);
-    color: var(--color-text);
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .btn-outline:hover { background: var(--color-bg-alt); }
-
-  .result-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 2rem 0 1.5rem;
-    gap: 1rem;
-  }
-
-  .result-header h2 { margin-bottom: 0.5rem; }
-
-  .result-actions {
-    display: flex;
-    gap: 0.5rem;
-    flex-shrink: 0;
-  }
-
-  .progress-bar-wrap {
-    width: 250px;
-    height: 8px;
-    background: var(--color-bg-alt);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 0.3rem;
-  }
-
-  .progress-bar {
-    height: 100%;
-    background: var(--color-primary);
-    border-radius: 4px;
-    transition: width 0.3s ease;
-    width: 0%;
-  }
-
-  .progress-text {
-    font-size: 0.82rem;
-    color: var(--color-text-light);
-  }
-
-  .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .category-card {
-    background: var(--color-white, #fff);
-    border-radius: var(--radius);
-    padding: 1.25rem;
-    box-shadow: var(--shadow);
-  }
-
-  .category-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .item-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .item-list li {
-    padding: 0.3rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.03);
-  }
-
-  .item-list li:last-child { border-bottom: none; }
-
-  .pack-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.88rem;
-    cursor: pointer;
-  }
-
-  .item-name {
-    flex: 1;
-    transition: all 0.2s;
-  }
-
-  .item-name.packed {
-    text-decoration: line-through;
-    color: var(--color-text-light);
-    opacity: 0.6;
-  }
-
-  .shop-link {
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    text-decoration: none;
-    padding: 0.15rem 0.5rem;
-    border: 1px solid var(--color-accent);
-    border-radius: 4px;
-    white-space: nowrap;
-    transition: all 0.2s;
-  }
-
-  .shop-link:hover {
-    background: var(--color-accent);
-    color: white;
-  }
-
-  @media print {
-    .generator-card, .result-actions, .shop-link, nav, header, footer { display: none !important; }
-    .categories-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 768px) {
-    .generator-card { padding: 1.25rem; }
-    .result-header { flex-direction: column; }
-    .progress-bar-wrap { width: 100%; }
-    .categories-grid { grid-template-columns: 1fr; }
-    .activity-grid { grid-template-columns: 1fr; }
-  }
+  .eyebrow { display: block; color: #806120; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 700; margin-bottom: .7rem; }
+  .packing-hero { background: #173d2d; color: #fff; padding: 4rem 0; } .packing-hero .eyebrow { color: #e8cb87; } .packing-hero h1 { color: #fff; font-size: clamp(2.7rem, 5.5vw, 4.8rem); line-height: 1.07; margin-bottom: 1.4rem; } .packing-hero p { max-width: 45rem; color: #e1e9e3; font-size: 1.08rem; margin-bottom: 1.6rem; }
+  .journey-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-bottom: 2.5rem; } .journey-links a { display: block; padding: 1.2rem; border: 1px solid #dce4dd; background: #f0f3ee; border-radius: var(--radius); } .journey-links strong, .journey-links span { display: block; } .journey-links span { margin-top: .4rem; font-size: .85rem; color: var(--color-text-light); }
+  .tool-controls { border: 1px solid #d3ddcf; background: #f4f6ef; border-radius: var(--radius); padding: 2rem; margin-bottom: 3rem; } .tool-controls[hidden], [data-item-id][hidden], [data-group][hidden], #packing-empty[hidden], .share-fallback[hidden], #packing-actions[hidden], #packing-progress-wrap[hidden] { display: none; }
+  .control-heading h2 { margin-bottom: 1.4rem; } .month-label, .filter-footer > label { display: grid; gap: .45rem; max-width: 26rem; color: var(--color-primary); font-weight: 600; font-size: .9rem; } select { background: #fff; border: 1px solid #a8b6a7; border-radius: .35rem; min-height: 2.8rem; padding: .6rem .75rem; font: inherit; color: var(--color-text); width: 100%; }
+  fieldset { border: 0; padding: 0; margin: 1.6rem 0; min-width: 0; } legend { color: var(--color-primary); font-weight: 700; } .control-help { color: var(--color-text-light); font-size: .85rem; margin: .4rem 0 .8rem; } .activity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; } .activity-grid label { display: flex; align-items: center; gap: .65rem; padding: .65rem; min-height: 3rem; background: #fff; border: 1px solid #d3ddcf; border-radius: .4rem; font-size: .88rem; cursor: pointer; } input[type='checkbox'] { accent-color: #24553d; width: 1.15rem; height: 1.15rem; flex-shrink: 0; cursor: pointer; }
+  .filter-footer { display: flex; flex-wrap: wrap; gap: 1rem; align-items: end; } .filter-footer > p { flex: 1 1 16rem; font-size: .8rem; color: var(--color-text-light); } button { min-height: 2.8rem; border: 1px solid #a8b6a7; border-radius: .35rem; color: var(--color-primary); background: #fff; font: inherit; font-size: .85rem; padding: .65rem 1rem; cursor: pointer; } .save-controls { border-top: 1px solid #d3ddcf; margin-top: 1.5rem; padding-top: 1.2rem; } .save-controls label { display: flex; gap: .65rem; align-items: center; color: var(--color-primary); font-weight: 600; cursor: pointer; } .save-controls p { font-size: .8rem; color: var(--color-text-light); margin-top: .55rem; }
+  .no-script-note, .scope-note, .empty-note { background: #f0f3ee; border-left: 3px solid #ad8b45; border-radius: .3rem; padding: 1.25rem; margin-bottom: 1.5rem; color: var(--color-text-light); } .checklist-heading { display: flex; justify-content: space-between; gap: 2rem; align-items: start; scroll-margin-top: 7rem; } .checklist-heading > div:first-child { max-width: 45rem; } .checklist-heading h2 { margin-bottom: .7rem; } #packing-context { color: var(--color-text-light); font-size: .93rem; } #packing-progress-wrap { margin-top: 1.2rem; } #packing-progress-text { display: block; color: var(--color-primary); font-weight: 600; font-size: .9rem; } progress { width: min(100%, 30rem); height: 1rem; accent-color: #24553d; display: block; margin: .55rem 0; } #packing-results { font-size: .78rem; color: var(--color-text-light); }
+  .checklist-actions { display: flex; gap: .5rem; flex-wrap: wrap; max-width: 23rem; } .checklist-actions p { font-size: .76rem; color: var(--color-text-light); } .action-status { min-height: 1.4rem; margin: 1rem 0; color: var(--color-primary); font-size: .87rem; } .share-fallback { margin-bottom: 1.5rem; } .share-fallback label { display: block; font-weight: 600; margin-bottom: .4rem; } .share-fallback input { width: 100%; padding: .7rem; border: 1px solid #a8b6a7; border-radius: .35rem; font: inherit; } .share-fallback p { font-size: .8rem; color: var(--color-text-light); margin-top: .4rem; }
+  .scope-note { font-size: .88rem; margin-top: 1rem; } .scope-note strong { color: var(--color-primary); } .affiliate-note { font-size: .78rem; color: var(--color-text-light); margin-bottom: 1.5rem; max-width: 65rem; }
+  .packing-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; align-items: start; } .packing-group { border: 1px solid #dce4dd; border-radius: var(--radius); overflow: hidden; background: #fff; } .packing-group h3 { font-size: 1.2rem; padding: 1.15rem 1.3rem; background: #edf2e9; color: var(--color-primary); } .packing-group ul { padding: 0 1.1rem; margin: 0; list-style: none; } .packing-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: .7rem; padding: .95rem 0; border-bottom: 1px solid #e8ede6; align-items: start; } .packing-row:last-child { border-bottom: 0; } .packing-row > input { margin-top: .2rem; } .pack-copy label { display: block; min-height: 1.8rem; cursor: pointer; font-size: .92rem; line-height: 1.45; } .pack-copy p { font-size: .78rem; line-height: 1.5; color: var(--color-text-light); margin-top: .3rem; } .item-tags { display: block; font-size: .66rem; text-transform: uppercase; letter-spacing: .035em; color: #626b5d; margin-top: .45rem; } .packing-row > input:checked ~ .pack-copy .item-name { text-decoration: line-through; color: #60705f; } .shop-link { font-size: .7rem; border: 1px solid #b79958; padding: .35rem; border-radius: .3rem; white-space: nowrap; color: #70551d; }
+  .planning-notes, .packing-faq, .source-list { margin-top: 3.5rem; } .planning-notes h2, .packing-faq h2, .source-list h2 { margin-bottom: 1.3rem; } .note-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; } .note-grid article { background: #f2f5ef; padding: 1.4rem; border-radius: var(--radius); } .note-grid h3 { font-size: 1.1rem; margin-bottom: .6rem; } .note-grid p, .source-list p, .source-list li, details p { color: var(--color-text-light); font-size: .88rem; } details { border-top: 1px solid #dce4dd; padding: 1rem 0; } summary { cursor: pointer; font-weight: 600; color: var(--color-primary); } details p { margin-top: .8rem; } .source-list ul { padding-left: 1.2rem; margin-top: 1rem; } .source-list li { margin-bottom: .5rem; }
+  a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid #b18a3a; outline-offset: 4px; }
+  @media (max-width: 1000px) { .journey-links { grid-template-columns: repeat(2, minmax(0, 1fr)); } .activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .checklist-heading { flex-direction: column; } .checklist-actions { max-width: 100%; } }
+  @media (max-width: 700px) { .packing-groups, .note-grid, .journey-links, .activity-grid { grid-template-columns: 1fr; } .tool-controls { padding: 1.2rem; } .packing-hero { padding: 3rem 0; } .packing-row { gap: .5rem; } .shop-link { font-size: .65rem; } .filter-footer > label { width: 100%; } }
+  @media print { :global(header), :global(footer), :global(nav), :global(#cookie-banner), :global(.back-to-top), :global(.explore-more-bar), .no-print, .packing-hero, .planning-notes, .packing-faq, .source-list, .affiliate-note, .action-status { display: none !important; } :global(main) { margin-top: 0 !important; } .section { padding: 0; } .container { max-width: none; width: 100%; } .checklist-heading { display: block; } .packing-groups { display: block; } .packing-group { margin-bottom: 1rem; break-inside: auto; border-color: #999; } .packing-group h3 { break-after: avoid; } .packing-row { break-inside: avoid; padding: .4rem 0; } .pack-copy p, .item-tags { font-size: .7rem; color: #333; } .scope-note { padding: .5rem; font-size: .75rem; } #packing-results { display: none; } }
 </style>

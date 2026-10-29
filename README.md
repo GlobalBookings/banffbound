@@ -24,9 +24,13 @@ npm run preview
 
 - `src/pages/`: static pages and dynamic blog/hotel/trail/town routes.
 - `src/data/blogPosts.ts`: canonical listing metadata; `allBlogPosts` also retains redirected slugs for generated redirect pages.
-- `src/data/blogContent.ts`, `blogContent3.ts`: legacy article HTML. `winterGuideOverrides.ts`, `winterActivityOverrides.ts`, `winterTripOverrides.ts`, `winterResortOverrides.ts` and `winterSeasonOverrides.ts` replace reviewed winter articles, and their metadata updates flow into the listings.
+- `src/data/blogContent.ts`, `blogContent3.ts`: legacy article HTML. `winterGuideOverrides.ts`, `winterActivityOverrides.ts`, `winterTripOverrides.ts`, `winterResortOverrides.ts` `winterSeasonOverrides.ts` and `winterWarmUpOverrides.ts` replace reviewed winter articles, and their metadata updates flow into the listings.
 - `src/data/winterHub.ts`: winter guide directory, month advice and FAQs.
 - `src/data/tripPlanner.ts`: seasonal itinerary catalogue, seven templates, validated share-state and transport checks for the editable trip builder.
+- `src/data/weatherPlanning.ts`: sourced 1991–2020 temperature normals, seasonal planning and primary camera/report links.
+- `src/data/dayIdeas.ts`: outing filters and one-day links using the shared trip catalogue.
+- `src/components/WeatherSnapshot.astro`: separately dated ECCC observations and forecast periods, with browser expiry and official-source fallbacks.
+- `scripts/lib/eccc-weather.mjs`: validated official Banff and Lake Louise weather responses.
 - `src/data/skiPlanning.ts`: ski day planning suggestions and relative time allowances.
 - `src/data/towns.ts`: six destination guides.
 - `src/utils/dataFreshness.ts`: snapshot age checks and client expiry for the homepage and conditions page.

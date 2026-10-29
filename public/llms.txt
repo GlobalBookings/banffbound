@@ -3,7 +3,7 @@
 > Travel guides and planning tools for Banff, Lake Louise, Canmore and the nearby Canadian Rockies. Use the source links in each guide for current operations and trip-day decisions. Booking links may be affiliate links.
 
 ## Winter planning
-- [Winter in Banff](https://banffbound.com/winter/): Search 21 winter planning guides by interest and explore seasonal month-by-month advice.
+- [Winter in Banff](https://banffbound.com/winter/): Search 24 winter planning guides by interest and explore seasonal month-by-month advice.
 - [Learn to ski](https://banffbound.com/learn-to-ski/): First ski or snowboard lessons, learning-area tickets, equipment, children’s booking questions and a saved readiness checklist.
 - [Ski day planner](https://banffbound.com/ski-day-planner/): Personalise a resort day by experience, base, resort, transport and group. Share selections or print a plan.
 - [Resort comparison](https://banffbound.com/sunshine-vs-lake-louise-vs-norquay/): Practical differences among Sunshine, Lake Louise and Norquay.
@@ -11,6 +11,10 @@
 - [Heli-skiing near Banff](https://banffbound.com/blog/banff-heli-skiing/): Operator bases in British Columbia, prerequisites, transfers and cancellation questions.
 - [Winter driving](https://banffbound.com/blog/banff-winter-driving/): Route-specific tire guidance, official road reports and transport alternatives.
 - [Winter stays](https://banffbound.com/winter-stays/): Filter eight researched hotel and lodge options by base, group and priority. Availability, facilities and final prices require provider confirmation.
+
+- [Winter packing checklist](https://banffbound.com/packing-list/): Month/activity filters, stable item checks, optional local saving, settings-only sharing and printing. Gear links may be affiliate links.
+- [Car-free winter planning](https://banffbound.com/car-free-banff/): Correct transit routes, seasonal limitations, base choice and complete resort/return connections.
+- [Warm-up alternatives](https://banffbound.com/wellness/): Bathing, heritage, spas and indoor visits, with current closure context and conditional access.
 
 ## Mountain bases
 - [Compare towns and local areas](https://banffbound.com/towns/): Banff, Canmore, Lake Louise, Field & Yoho, Golden and Kananaskis.
@@ -23,6 +27,9 @@
 
 ## Wider trip planning
 - [Editable trip builder](https://banffbound.com/trip-builder/): One to seven seasonal days, editable outings, transport checks, local saving and share links. Incoming links preserve an existing saved plan until an explicit edit.
+- [Choose an outing](https://banffbound.com/what-to-do-today/): Filter seasonal ideas by base, activity allowance and interests, then open a one-day starting plan. Filters are not an access or safety assessment.
+- [Weather and cameras](https://banffbound.com/weather-webcams/): Dated ECCC weather copies, separate provider observation/forecast times and official camera/report links.
+- [Weather by month](https://banffbound.com/monthly-weather/): Sourced 1991–2020 BANFF temperature normals and seasonal planning, with no promised crowd levels or cheapest-month claims.
 - [Planning tools](https://banffbound.com/tools/)
 - [Hotel directory](https://banffbound.com/hotel-directory/)
 - [Vacation rentals](https://banffbound.com/vacation-rentals/)

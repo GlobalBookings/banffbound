@@ -1,0 +1,55 @@
+---
+import weatherSnapshot from '../data/live/weather.json';
+import { dataFreshness } from '../utils/dataFreshness';
+import { weatherSources } from '../data/weatherPlanning';
+const weather: any = weatherSnapshot && typeof weatherSnapshot === 'object' ? weatherSnapshot : {};
+const retrieved = dataFreshness(weather.updatedAt, 6);
+const sourceValid = retrieved.status === 'fresh' && !weather.error && weather.provider === 'Environment and Climate Change Canada';
+const locations = [{key:'banff', name:'Banff', url:weatherSources.banff},{key:'lakeLouise', name:'Lake Louise', url:weatherSources.lakeLouise}];
+---
+<section class="weather-snapshot" aria-label="Dated weather reports">
+  <div class="snapshot-heading"><div><span class="snapshot-eyebrow">Read the report for your destination</span><h2>Weather before you go</h2></div><a href="/conditions">Roads, trails & resort reports →</a></div>
+  <p class="snapshot-intro">Town observations and a mountain forecast describe different places. Check the official forecast, alerts and the actual route before setting out.</p>
+  <div data-fresh-until={retrieved.expiresAt} data-snapshot-time={retrieved.updatedAt}>
+    <div data-snapshot-fresh hidden={!sourceValid} class="snapshot-grid">
+      {locations.map(location => {
+        const data = weather[location.key] || {};
+        const observation = dataFreshness(data.current?.observedAt,6);
+        const forecast = dataFreshness(data.forecastIssuedAt,18);
+        const showCurrent = sourceValid && observation.status === 'fresh' && Number.isFinite(data.current?.temp);
+        const periods = Array.isArray(data.forecast) ? data.forecast.filter((period:any) => period && typeof period === 'object' && typeof period.day === 'string').slice(0,3) : [];
+        const showForecast = sourceValid && forecast.status === 'fresh' && periods.length > 0;
+        return <article class="snapshot-card"><h3>{location.name}</h3>
+          <div data-fresh-until={observation.expiresAt} data-snapshot-time={observation.updatedAt}>
+            <div data-snapshot-fresh hidden={!showCurrent}><p class="snapshot-temp">{data.current?.temp}°C</p><p>{data.current?.condition || 'Weather description not reported'}</p>{data.current?.station && <p class="snapshot-small">Observed at {data.current.station}</p>}<p class="snapshot-small">Observation: {observation.label}</p>{data.current?.wind && <p class="snapshot-small">Wind: {data.current.wind}</p>}</div>
+            <p data-snapshot-unavailable hidden={showCurrent}>Local observation unavailable or older than six hours. Use the official report.</p>
+          </div>
+          <div data-fresh-until={forecast.expiresAt} data-snapshot-time={forecast.updatedAt}>
+            <div data-snapshot-fresh hidden={!showForecast}><p class="snapshot-small">Forecast issued: {forecast.label}</p><ul class="snapshot-forecast">{periods.map((period:any) => <li><strong>{period.day}</strong><span>{[Number.isFinite(period.high) ? 'High ' + period.high + '°C' : '', Number.isFinite(period.low) ? 'Low ' + period.low + '°C' : ''].filter(Boolean).join(' · ')}</span><span>{period.condition}</span></li>)}</ul></div>
+            <p data-snapshot-unavailable hidden={showForecast} class="snapshot-small">Local forecast unavailable or expired. Check the official forecast for the latest periods.</p>
+          </div>
+          <a href={location.url} target="_blank" rel="noopener">Official {location.name} forecast & alerts ↗</a>
+        </article>;
+      })}
+    </div>
+    <div data-snapshot-unavailable hidden={sourceValid} class="snapshot-fallback"><strong>Local weather snapshot unavailable.</strong><p>Use the official forecasts for <a href={weatherSources.banff} target="_blank" rel="noopener">Banff ↗</a> and <a href={weatherSources.lakeLouise} target="_blank" rel="noopener">Lake Louise ↗</a>. Missing information does not mean clear weather.</p></div>
+    <p class="snapshot-small snapshot-retrieved">Data Source: <a href="https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/weatheroffice-online-services.html">Environment and Climate Change Canada</a> · <a href="https://eccc-msc.github.io/open-data/licence/readme_en/">Data licence</a>. Snapshot retrieved: {weather.provider === 'Environment and Climate Change Canada' ? retrieved.label : 'Unavailable for this source'}. Retrieval time is separate from observation and forecast issue times.</p>
+  </div>
+  <noscript><style>[data-snapshot-fresh] { display:none !important; } [data-snapshot-unavailable][hidden] { display:block !important; }</style><p>Open the official report for current information; this static page cannot recheck its age without JavaScript.</p></noscript>
+</section>
+<script>
+  import { installSnapshotExpiry } from '../utils/dataFreshness';
+  installSnapshotExpiry();
+</script>
+<style>
+  .weather-snapshot { padding:2rem; border:1px solid #d8e1d9; border-radius:var(--radius); background:#f1f4ef; }
+  .snapshot-heading { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; } .snapshot-heading h2 { margin:.3rem 0 .8rem; } .snapshot-heading a,.snapshot-card > a { font-weight:600; font-size:.88rem; }
+  .snapshot-eyebrow { font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:#6c653d; }
+  .snapshot-intro { max-width:54rem; color:var(--color-text-light); margin-bottom:1.4rem; }
+  .snapshot-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem; } .snapshot-card { padding:1.5rem; border:1px solid #d8e1d9; background:white; border-radius:var(--radius); } .snapshot-card h3 { margin-bottom:1rem; }
+  .snapshot-card p { margin:.4rem 0; } .snapshot-temp { font-family:var(--font-heading); font-size:2.5rem; color:var(--color-primary); } .snapshot-small { font-size:.78rem; color:var(--color-text-light); }
+  .snapshot-forecast { padding:0; list-style:none; margin:1rem 0; } .snapshot-forecast li { padding:.65rem 0; border-top:1px solid #dce4dd; font-size:.85rem; } .snapshot-forecast strong,.snapshot-forecast span { display:block; } .snapshot-forecast span { color:var(--color-text-light); }
+  .snapshot-fallback { padding:1.3rem; background:white; border-radius:var(--radius); } .snapshot-fallback p { margin:.5rem 0 0; } .snapshot-retrieved { margin:1rem 0 0; }
+  [hidden] { display:none !important; } a:focus-visible { outline:3px solid #b18a3a; outline-offset:4px; }
+  @media(max-width:650px) { .weather-snapshot { padding:1.2rem; } .snapshot-grid { grid-template-columns:1fr; } }
+</style>

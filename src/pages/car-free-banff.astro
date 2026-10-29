@@ -1,314 +1,209 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WinterStatusNotice from '../components/WinterStatusNotice.astro';
+
+const roam = 'https://roamtransit.com/';
+const winterReservations = 'https://roamtransit.com/fares/reservations/winter-reservations/';
+const parkShuttles = 'https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise';
+const routes = [
+  { number: '1', name: 'Sulphur Mountain', use: 'Downtown Banff to the Banff Gondola and Upper Hot Springs area.', season: 'Check the current timetable and attraction opening status separately.', url: 'https://roamtransit.com/schedules-routes/route-1/' },
+  { number: '2', name: 'Tunnel Mountain – Fairmont', use: 'Tunnel Mountain, downtown Banff and Fairmont Banff Springs.', season: 'Year-round route; campground coverage changes in summer.', url: 'https://roamtransit.com/schedules-routes/route-2/' },
+  { number: '3', name: 'Canmore – Banff', use: 'Regional travel between the two towns, with separate local journeys at either end.', season: 'Year-round. Check temporary stops, first and last departures in both directions.', url: 'https://roamtransit.com/schedules-routes/canmore-banff-regional-route-3/' },
+  { number: '5 / 12', name: 'Canmore local', use: 'Routes 5C, 5T and 12 serve parts of Canmore, not Banff town.', season: 'Use the map for the exact property. These routes do not establish a connection to Grassi Lakes or the Nordic Centre.', url: 'https://roamtransit.com/schedules-routes/' },
+  { number: '7', name: 'Banff Centre / Fenlands', use: 'A Banff local option to check for the Banff Centre and recreation centre.', season: 'Seasonal timetable. Confirm the dates and stops rather than assuming summer and winter match.', url: 'https://roamtransit.com/schedules-routes/route-7/' },
+  { number: '8X', name: 'Lake Louise express', use: 'Banff to Lake Louise village and lakeshore. The ski resort is a different destination.', season: 'Year-round route. Reservations, local village–lakeshore travel and summer connections have separate rules.', url: 'https://roamtransit.com/schedules-routes/lake-louise-banff-express-route-8x/' },
+  { number: '9', name: 'Johnston Canyon', use: 'The canyon route, rather than Route 4.', season: 'Suspended at the October 28 review during the canyon remediation closure. Confirm both bus resumption and trail reopening.', url: 'https://roamtransit.com/schedules-routes/johnston-canyon-regional-route-9/' },
+  { number: '4 / 6', name: 'Summer routes', use: 'Route 4 serves Cave and Basin; Route 6 serves the Lake Minnewanka area.', season: 'Summer services. A summer map does not provide winter transport or a late evening return.', url: 'https://roamtransit.com/schedules-routes/' },
+];
+const faqs = [
+  { question: 'Can I visit Banff without a car in winter?', answer: 'Yes, if your accommodation, airport transfer and planned outings fit the services operating on your dates. Banff town is a practical base for town activities and eligible resort shuttles. Confirm the exact stop, return service and any connections before booking an activity.' },
+  { question: 'Is Roam Transit free for visitors?', answer: 'There is no single free visitor pass covering every journey. Participating Banff hotels provide passes for specified local routes, and Canmore local routes have their own fare policy. Regional Route 3, Lake Louise tickets, airport transfers and ski shuttles have separate rules. Ask your property exactly what its pass includes.' },
+  { question: 'Which bus goes from Banff to Lake Louise?', answer: 'Roam Route 8X serves Lake Louise village and lakeshore. It does not go to Lake Louise Ski Resort or the Parks Canada Park and Ride. Check the reservation product for your date, book the return you need and use the correct departure stop.' },
+  { question: 'Is Canmore a good car-free base for skiing?', answer: 'It can work, but verify the complete chain before booking. A Canmore hotel may require a local journey to Route 3, then a connection in Banff to an eligible ski shuttle. Do not assume a Banff resort shuttle collects in Canmore, that the first connection reaches your lesson, or that the last resort return connects home.' },
+  { question: 'Can I use public transit to visit Moraine Lake in winter?', answer: 'The summer shuttle network is not a winter visitor service to Moraine Lake. Do not plan it as a routine winter day trip or substitute a walk along the closed road. Use the current Parks Canada access guidance and choose an operating destination instead.' },
+  { question: 'Do I still need park admission without a car?', answer: 'Check Parks Canada admission rules for the dates and places you will visit, including any date-specific free-admission periods. A bus fare, hotel booking or lift ticket does not itself establish park admission. Airport transfers may not include a stop to buy a pass.' },
+];
 ---
 
-<BaseLayout title="Car-Free Banff Guide 2026 — Visit Without a Car" description="Complete guide to visiting Banff without a car. Calgary to Banff shuttles, Roam Transit routes, day trips by bus, and transit passes. Save money and skip parking headaches.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Can I visit Banff without a car?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, absolutely. Banff is one of the most car-free-friendly national park destinations in North America. Shuttles run from Calgary Airport to Banff (Brewster Express $75, Banff Airporter $69, On-It bus $10 in summer). In Banff, Roam Transit covers the town plus Lake Louise, Johnston Canyon, and Canmore on 8 routes. Most popular trailheads are on bus routes.' } },
-      { '@type': 'Question', name: 'How to get from Calgary to Banff without a car?', acceptedAnswer: { '@type': 'Answer', text: 'Four options: (1) Brewster Express — year-round shuttle from Calgary Airport, ~$75 one way, 2 hours, bookable online. (2) Banff Airporter — year-round, ~$69 one way, 2 hours, hotel drop-off. (3) On-It Regional Transit — summer only (May-Sep), $10 one way from downtown Calgary, stops in Canmore and Banff. (4) Private transfer — ~$200-300 for a vehicle, worth it for groups of 3+.' } },
-      { '@type': 'Question', name: 'Is there public transit in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Roam Transit operates 8 bus routes in and around Banff. Route 1 covers Banff townsite and Sulphur Mountain. Route 2 connects Tunnel Mountain hotels. Route 4 goes to Johnston Canyon. Route 6 runs to Lake Minnewanka. Route 8S connects Banff to Lake Louise. Routes run every 20-40 minutes in summer. A day pass costs $5.' } },
-      { '@type': 'Question', name: 'Can I get to Lake Louise without a car?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Roam Transit Route 8S runs between Banff and Lake Louise village year-round with increased summer service. The ride takes about 40 minutes. From Lake Louise village, a free Parks Canada shuttle runs to the lake itself during peak summer months (mid-June to mid-October). One-way fare is $10; a day pass is $20.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Car-Free Banff' }]} />
-  </div>
-
+<BaseLayout title="Car-Free Banff: Winter Bases, Roam Routes & Ski Shuttles" description="Plan Banff without a car: compare Banff, Canmore and Lake Louise bases, check winter Roam routes, ski shuttles, reservations and the journey home." image="https://banffbound.com/images/blog/banff-town-guide.webp" lastUpdated="2026-10-28">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Car-Free Banff' }]} /></div>
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80" alt="Roam Transit bus with Rocky Mountain backdrop" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">2026 Guide</span>
-      <h1>Car-Free Banff</h1>
-      <p>Everything you need to visit Banff National Park without a car — shuttles, buses, and day trips.</p>
-    </div>
+    <img src="/images/blog/banff-town-guide.webp" alt="Banff town with its mountain backdrop" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content"><span class="badge">A base that fits your journeys</span><h1>Banff without a car</h1><p>Choose your overnight base, match the right bus to the right destination, and plan the return before the day begins.</p></div>
   </section>
+  <div class="container transport-content">
+    <p class="lead">A car-free holiday works best when you build it around a few reachable outings. Banff town offers a useful combination of restaurants, local transit and ski-shuttle stops. Canmore and Lake Louise can suit different trips, but neither is an interchangeable version of Banff. Check a property's actual location before comparing room prices.</p>
+    <p class="review">Reviewed <time datetime="2026-10-28">October 28, 2026</time>. Route descriptions below help you plan; operator timetables, fares, availability and closure notices govern the journey.</p>
+    <nav class="jump-links" aria-label="On this page"><a href="#base">Choose a base</a><a href="#fit-check">Check your outing</a><a href="#routes">Find a route</a><a href="#ski">Ski days</a><a href="#return">Protect the return</a><a href="#questions">Questions</a></nav>
+    <WinterStatusNotice />
 
-  <section class="section">
-    <div class="container">
-
-      <!-- Quick Answer -->
-      <div class="quick-answer">
-        <h2>Can You Visit Banff Without a Car?</h2>
-        <p class="answer-big">Yes — and it's easier than you think.</p>
-        <p>Multiple shuttle services connect Calgary Airport to Banff. Once in town, Roam Transit covers the entire Bow Valley including Lake Louise and Johnston Canyon. You'll skip parking headaches, save money, and reduce your footprint.</p>
+    <section id="base" aria-labelledby="base-heading">
+      <h2 id="base-heading">Choose the base before the hotel</h2>
+      <div class="base-grid">
+        <article class="base-card"><span class="eyebrow">Town activities + varied ski days</span><h3>Banff</h3><p>Start here if most days combine Banff town, local attractions and the three ski resorts. A central address can reduce transfers, while Tunnel Mountain and outlying hotels need a closer stop-and-walk check.</p><p><strong>Before booking:</strong> Find the airport drop-off, local bus stop and relevant ski-shuttle stop. Ask which local transit pass, if any, is included.</p><a href="/towns/banff/">Explore Banff town →</a></article>
+        <article class="base-card"><span class="eyebrow">Canmore time + regional connections</span><h3>Canmore</h3><p>Choose it for the town you want to spend time in. Route 3 links it with Banff; a hotel can still be some distance from the regional stop. Extra fares and transfer time may change the apparent accommodation saving.</p><p><strong>Before booking:</strong> Trace the first connection to your outing and the final connection home. A town bus map is not a route to every Canmore trailhead.</p><a href="/towns/canmore/">Explore Canmore →</a></article>
+        <article class="base-card"><span class="eyebrow">A focused Lake Louise stay</span><h3>Lake Louise</h3><p>The village, lakeshore and ski resort are separate places. A lakeshore hotel suits time by the lake; a village address needs a checked onward journey. Dining choice and evening transport depend on the property.</p><p><strong>Before booking:</strong> Confirm the airport service reaches your exact hotel and ask about its ski and lakeshore transport, including the last return.</p><a href="/towns/lake-louise/">Explore Lake Louise →</a></article>
       </div>
+      <p>Compare location and winter logistics in <a href="/towns">our town guide</a> and <a href="/winter-stays">winter stays guide</a>. Ask for the actual stop name and walking route, not simply whether a property is “near transit.” Snow, hills, luggage and mobility needs can make a short map distance a different journey.</p>
+    </section>
 
-      <!-- Getting to Banff -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Calgary to Banff (Without a Car)</h2>
-        <p>Four ways to get from Calgary Airport (YYC) to Banff — from $10.</p>
+    <section class="fit-panel" id="fit-check" aria-labelledby="fit-heading">
+      <span class="eyebrow">A connection check, not a live timetable</span><h2 id="fit-heading">Does the outing fit your base?</h2>
+      <p>Choose a base, season and main outing for the transport questions to resolve. These suggestions do not confirm an open attraction, an available seat or a safe trail.</p>
+      <form id="carfree-controls" class="controls" hidden>
+        <label for="carfree-base">Overnight base<select id="carfree-base"><option value="banff">Banff town</option><option value="canmore">Canmore</option><option value="louise">Lake Louise</option></select></label>
+        <label for="carfree-season">Travel season<select id="carfree-season"><option value="winter">Winter / snow season</option><option value="summer">Summer service season</option></select></label>
+        <label for="carfree-outing">Main outing<select id="carfree-outing"><option value="town">Banff town + local attractions</option><option value="ski">A resort ski day</option><option value="lake">Lake Louise lakeshore</option><option value="minnewanka">Lake Minnewanka</option><option value="moraine">Moraine Lake</option><option value="johnston">Johnston Canyon</option></select></label>
+        <button type="button" id="carfree-reset">Reset</button>
+      </form>
+      <div class="fit-result" role="status" aria-live="polite" aria-atomic="true">
+        <h3 id="carfree-result-title">Banff base · winter town day</h3>
+        <p id="carfree-result-base">From a Banff base, start with the exact walk or local bus from your accommodation. A hotel on Tunnel Mountain or outside the centre may need a bus even for a town day.</p>
+        <p id="carfree-result-outing">Use the current Route 1 or Route 2 map for the attraction you want. Attraction tickets and opening hours are separate from the bus timetable; check hot springs reopening before making it the anchor of your day.</p>
+        <p id="carfree-result-return">Check the last useful local bus to your property and keep a shorter town activity as a fallback. An evening dinner booking does not hold a bus or reserve a seat.</p>
       </div>
+      <noscript><p>The Banff winter example is shown above. The base notes and route directory below cover the other choices without JavaScript.</p></noscript>
+      <p class="small">Start with the <a href="#routes">route directory</a>, then check <a href="https://roamtransit.com/service-updates/">Roam service updates</a> and <a href="/weather-webcams">the weather checks</a> for your date.</p>
+    </section>
 
-      <div class="transport-grid">
-        <div class="transport-card">
-          <span class="transport-icon">🚌</span>
-          <h3>Brewster Express</h3>
-          <div class="transport-price">~$75 one way</div>
-          <ul>
-            <li>Year-round service from Calgary Airport</li>
-            <li>2-hour direct ride to Banff</li>
-            <li>Stops at major Banff hotels on request</li>
-            <li>Book online at brewster.ca</li>
-            <li>Wi-Fi and luggage storage on board</li>
-          </ul>
-          <span class="transport-tag">Most popular</span>
-        </div>
-        <div class="transport-card">
-          <span class="transport-icon">✈️</span>
-          <h3>Banff Airporter</h3>
-          <div class="transport-price">~$69 one way</div>
-          <ul>
-            <li>Year-round from Calgary Airport</li>
-            <li>2-hour ride with hotel drop-off in Banff</li>
-            <li>Smaller coaches, more departures</li>
-            <li>Book at banffairporter.com</li>
-            <li>Return service also available</li>
-          </ul>
-          <span class="transport-tag">Best value shuttle</span>
-        </div>
-        <div class="transport-card recommended">
-          <div class="rec-badge">Budget Pick</div>
-          <span class="transport-icon">🎒</span>
-          <h3>On-It Regional Transit</h3>
-          <div class="transport-price">~$10 one way</div>
-          <ul>
-            <li>Summer only (late May – early September)</li>
-            <li>Departs downtown Calgary (not airport)</li>
-            <li>Stops in Canmore and Banff</li>
-            <li>About 2.5 hours with stops</li>
-            <li>Must take CTrain to downtown first</li>
-          </ul>
-          <span class="transport-tag">Cheapest option</span>
-        </div>
-        <div class="transport-card">
-          <span class="transport-icon">🚐</span>
-          <h3>Private Transfer</h3>
-          <div class="transport-price">~$200-300 per vehicle</div>
-          <ul>
-            <li>Door-to-door from airport to hotel</li>
-            <li>Worth it for groups of 3+</li>
-            <li>Available 24/7, year-round</li>
-            <li>Can stop at Canmore or grocery store</li>
-            <li>Book via your hotel or Mountain Park Transportation</li>
-          </ul>
-          <span class="transport-tag">Best for groups</span>
-        </div>
+    <section aria-labelledby="airport-heading">
+      <h2 id="airport-heading">Get from the airport to the right address</h2>
+      <p><a href="https://banffairporter.com/schedule-rates/">Banff Airporter</a> and <a href="https://www.banffjaspercollection.com/brewster-express/schedule/">Brewster Express</a> publish date-specific Calgary Airport services. Airporter does not run a scheduled Lake Louise service; both operators list a Coast Canmore Hotel stop rather than a transfer to every Canmore property. Brewster lists selected Lake Louise stops. Confirm the exact destination in your booking.</p>
+      <p>A scheduled bus is not an on-demand grocery transfer. Reserve the seats, declare your luggage and ski bags, arrange child or mobility requirements, and read what happens after a flight delay or missed final departure. For a late arrival, compare a confirmed private transfer with an airport overnight and next-day service.</p>
+      <p class="notice"><strong>Do not plan around old On-It fares:</strong> Roam's <a href="https://roamtransit.com/on-it-regional-transit-service-notice-2026/">2026 notice</a> says the Calgary–Canmore–Banff On-It service did not operate that summer. It is not a current airport alternative.</p>
+      <a class="text-link" href="/calgary-to-banff">Build your Calgary Airport arrival and flight-home plan →</a>
+    </section>
+
+    <section id="routes" aria-labelledby="routes-heading">
+      <h2 id="routes-heading">Use the right transport network</h2>
+      <p>Roam is local and regional public transit. Airport buses, resort ski shuttles, Parks Canada summer shuttles and private tours are separate services with separate tickets. There is no single pass that automatically covers them all.</p>
+      <div class="routes-grid">{routes.map(route => <article class="route-card"><span class="route-number">{route.number}</span><h3>{route.name}</h3><p>{route.use}</p><p class="small">{route.season}</p><a href={route.url} target="_blank" rel="noopener">Check route and timetable ↗</a></article>)}</div>
+      <div class="two-col">
+        <article class="note-card"><h3>Lake Louise in winter</h3><p>Route 8X reaches the village and lakeshore, rather than ending at the village with a free onward shuttle. Check the <a href={winterReservations}>2026/27 winter reservation rules</a>. Choose outbound and return journeys that fit your day; a system-wide day pass and one-way reservation are different products.</p><p>Roam currently requires reserved passengers at the correct stop <strong>20 minutes before departure</strong>. Include every child in a reservation. Village–lakeshore travel is capacity-dependent and has its own fare rules; do not substitute a long uphill roadside walk.</p></article>
+        <article class="note-card"><h3>Summer lake access is a different plan</h3><p>The 2026 Parks Canada shuttle season ended October 12. For a future summer visit, use the <a href={parkShuttles}>official Lake Louise and Moraine Lake transport page</a> when that season is published. Check whether your ticket starts at the Park and Ride or includes a lakeshore connection; Route 8X does not reach the Park and Ride.</p><p>Personal vehicles are prohibited on Moraine Lake Road. Summer service, reservation products and connectors do not establish winter access. The road is not a routine winter walk to the lake.</p></article>
       </div>
+    </section>
 
-      <!-- Roam Transit -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Getting Around Banff — Roam Transit</h2>
-        <p>Roam Transit operates 8 bus routes covering the entire Bow Valley from Canmore to Lake Louise.</p>
-      </div>
+    <section id="ski" aria-labelledby="ski-heading">
+      <h2 id="ski-heading">Build ski days around resort shuttles</h2>
+      <p>Check <a href="https://www.skibig3.com/ski/ski-shuttle/">SkiBig3's shuttle page</a> and the current resort information for <a href="https://www.skibanff.com/plan/getting-here/free-shuttle">Sunshine</a>, <a href="https://www.skilouise.com/getting-here/">Lake Louise</a> and <a href="https://banffnorquay.com/shuttle-service/">Norquay</a>. SkiBig3 lists complimentary service for eligible lift-ticket and pass holders, with seats filled first come, first served. Check eligibility and stops for the ticket you actually hold.</p>
+      <p>Do not use Route 8X as a substitute for a ski-resort shuttle. From Canmore, verify any Route 3 connection in Banff against the ski shuttle and lesson check-in time, then repeat the calculation for the return. From Lake Louise, check your property's route rather than assuming a Banff hotel pickup applies.</p>
+      <p>Write down the last <em>shuttle departure</em>, the resort's download requirements and the onward bus separately. Resort closing time is not a guaranteed departure time for your journey home. If a late restaurant booking would miss that chain, eat earlier or arrange another confirmed return.</p>
+      <div class="related-links"><a href="/ski-day-planner">Plan a ski day →</a><a href="/learn-to-ski">Prepare for a first lesson →</a><a href="/sunshine-vs-lake-louise-vs-norquay">Compare the three resorts →</a></div>
+    </section>
 
-      <div class="roam-info">
-        <div class="roam-prices">
-          <h3>Fares (2026)</h3>
-          <div class="price-row"><span>Single ride (local)</span><strong>$2</strong></div>
-          <div class="price-row"><span>Day pass (local)</span><strong>$5</strong></div>
-          <div class="price-row"><span>Single ride (regional — Lake Louise)</span><strong>$10</strong></div>
-          <div class="price-row"><span>Day pass (regional)</span><strong>$20</strong></div>
-          <div class="price-row"><span>Children under 6</span><strong>Free</strong></div>
-        </div>
-      </div>
-
-      <div class="routes-grid">
-        <div class="route-card">
-          <div class="route-num">1</div>
-          <h3>Sulphur Mountain</h3>
-          <p>Banff Ave ↔ Banff Upper Hot Springs ↔ Banff Gondola base. Runs every 20 min in summer.</p>
-        </div>
-        <div class="route-card">
-          <div class="route-num">2</div>
-          <h3>Tunnel Mountain</h3>
-          <p>Banff Ave ↔ Tunnel Mountain hotels ↔ Banff Centre. Serves the hotel district.</p>
-        </div>
-        <div class="route-card">
-          <div class="route-num">3</div>
-          <h3>Canmore</h3>
-          <p>Banff ↔ Canmore. Year-round service connecting both towns. About 25 min ride.</p>
-        </div>
-        <div class="route-card">
-          <div class="route-num">4</div>
-          <h3>Johnston Canyon</h3>
-          <p>Banff ↔ Johnston Canyon trailhead. Summer only. Perfect for the most popular hike in the park.</p>
-        </div>
-        <div class="route-card">
-          <div class="route-num">5</div>
-          <h3>Bow Valley</h3>
-          <p>Local service through Banff townsite. Connects residential areas with downtown.</p>
-        </div>
-        <div class="route-card">
-          <div class="route-num">6</div>
-          <h3>Lake Minnewanka</h3>
-          <p>Banff ↔ Lake Minnewanka ↔ Two Jack Lake. Summer only. Great for lakeside walks and picnics.</p>
-        </div>
-        <div class="route-card">
-          <div class="route-num">7</div>
-          <h3>Cave & Basin</h3>
-          <p>Banff ↔ Cave and Basin National Historic Site. Also connects to the Sundance trail area.</p>
-        </div>
-        <div class="route-card highlight-card">
-          <div class="route-num">8S</div>
-          <h3>Lake Louise</h3>
-          <p>Banff ↔ Lake Louise village. ~40 min ride. Year-round. The most important route for car-free visitors. Connect to free Parks Canada shuttle to the lake itself in summer.</p>
-        </div>
-      </div>
-
-      <!-- Day Trips Without a Car -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Day Trips Without a Car</h2>
-        <p>Popular destinations easily accessible by Roam Transit.</p>
-      </div>
-
-      <div class="trip-cards">
-        <div class="trip-card">
-          <h3>🏞️ Lake Louise</h3>
-          <p><strong>How:</strong> Roam Route 8S to Lake Louise village (40 min), then free Parks Canada shuttle to the lake (summer) or walk 3 km.</p>
-          <p><strong>Do:</strong> Lakeshore trail, teahouse hike, canoeing, Fairmont lunch. Full day recommended.</p>
-        </div>
-        <div class="trip-card">
-          <h3>💧 Johnston Canyon</h3>
-          <p><strong>How:</strong> Roam Route 4 directly to the trailhead (25 min from Banff).</p>
-          <p><strong>Do:</strong> Walk to Lower Falls (1.1 km) and Upper Falls (2.7 km). Take the early bus to beat crowds.</p>
-        </div>
-        <div class="trip-card">
-          <h3>🦌 Lake Minnewanka</h3>
-          <p><strong>How:</strong> Roam Route 6 to Lake Minnewanka (15 min from Banff).</p>
-          <p><strong>Do:</strong> Lakeside walk, boat cruise, picnic at Two Jack Lake on the way back.</p>
-        </div>
-        <div class="trip-card">
-          <h3>♨️ Banff Hot Springs</h3>
-          <p><strong>How:</strong> Roam Route 1 to Banff Upper Hot Springs (10 min from downtown).</p>
-          <p><strong>Do:</strong> Soak in the historic hot springs, then ride the Banff Gondola next door.</p>
-        </div>
-        <div class="trip-card">
-          <h3>🏔️ Canmore</h3>
-          <p><strong>How:</strong> Roam Route 3 to Canmore (25 min).</p>
-          <p><strong>Do:</strong> Walk the main street shops, hike Grassi Lakes, explore the Nordic Centre trails.</p>
-        </div>
-      </div>
-
-      <!-- Tips -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Car-Free Tips</h2>
-      </div>
-
-      <div class="tips-list">
-        <div class="tip-item">
-          <span class="tip-icon">💡</span>
-          <div>
-            <h3>Buy a Roam Day Pass</h3>
-            <p>At $5/day (local) you can hop on and off unlimited. Cheaper than parking ($4-6/hour in Banff).</p>
-          </div>
-        </div>
-        <div class="tip-item">
-          <span class="tip-icon">📱</span>
-          <div>
-            <h3>Download the Roam App</h3>
-            <p>Real-time bus tracking and schedules. Available for iOS and Android. Pay your fare through the app.</p>
-          </div>
-        </div>
-        <div class="tip-item">
-          <span class="tip-icon">🛒</span>
-          <div>
-            <h3>Stock Up on Arrival</h3>
-            <p>Ask your shuttle to stop at a grocery store in Canmore or grab supplies at IGA in Banff. No car means no quick grocery runs.</p>
-          </div>
-        </div>
-        <div class="tip-item">
-          <span class="tip-icon">🚲</span>
-          <div>
-            <h3>Rent a Bike for Side Trips</h3>
-            <p>Banff has great paved paths. Rent a bike from Banff Adventures or Soul Ski & Bike for trips along the Bow River and Legacy Trail to Canmore.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>Can I visit Banff without a car?</summary>
-          <p>Yes. Multiple shuttles run from Calgary to Banff (from $10 on On-It bus), and Roam Transit covers the town plus Lake Louise, Johnston Canyon, and Lake Minnewanka. Most visitors without cars have no trouble getting around.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How do I get from Calgary Airport to Banff without a car?</summary>
-          <p>Take Brewster Express ($75) or Banff Airporter ($69) directly from the airport. In summer, On-It bus runs from downtown Calgary for $10. Private transfers cost $200-300 per vehicle.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is there public transit in Banff?</summary>
-          <p>Yes — Roam Transit operates 8 routes covering Banff townsite, Tunnel Mountain, Sulphur Mountain, Lake Minnewanka, Johnston Canyon, Canmore, and Lake Louise. Day passes are $5 (local) or $20 (regional).</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do I still need a park pass without a car?</summary>
-          <p>Yes. Everyone entering Banff National Park needs a Parks Canada pass, even if arriving by bus. Passes are $11/adult/day or $22/family. Shuttles from Calgary usually stop at the gate for you to purchase one.</p>
-        </details>
-      </div>
-
-    </div>
-  </section>
+    <section id="return" aria-labelledby="return-heading">
+      <h2 id="return-heading">Make the return the fixed part of the day</h2>
+      <ol class="planning-list"><li><strong>Open the timetable for the actual date and direction.</strong> Save your stop, reservation, boarding deadline and the last departure that still connects home. Banff uses Mountain Time; check travel-device and wallet-ticket time zones.</li><li><strong>Leave room between services.</strong> Walking to the right stop, getting a full group ready, boarding and winter delays all take time. A timetable connection is not protected by a different operator.</li><li><strong>Check access as well as transport.</strong> A bus route does not confirm that a trail, hot spring, attraction or lake surface is open or suitable. Use current notices and a town-based fallback.</li><li><strong>Carry what you can manage.</strong> Roam has no dedicated luggage storage and cannot guarantee transport of large bags. Airport baggage allowances do not transfer to a town bus.</li><li><strong>Confirm accessibility for the whole chain.</strong> Roam has ramp-equipped, kneeling buses, but mobility-device fit, the stop surface and the walk at either end still matter. Contact the operator with the device dimensions and assistance you need.</li></ol>
+      <p><a href="https://roamtransit.com/about-us/transportation-policies/">Roam's transport policies</a> explain luggage and mobility requirements. Ask your hotel about a taxi fallback in advance; availability, capacity and a remote pickup are not guaranteed. Keep a charged phone, warm layers, food and downloaded confirmations with you.</p>
+      <div class="two-col"><article class="note-card"><h3>Fares and “free” passes</h3><p>Use <a href="https://roamtransit.com/fares/">current Roam fares</a> for the routes, ages and reservation product in your plan. Ask a <a href="https://www.banff.ca/435/Roam-Public-Transit">participating hotel</a> which local routes its guest pass covers. A resident pass is not a visitor benefit; a local hotel pass does not automatically cover Route 3 or 8X.</p></article><article class="note-card"><h3>Park admission</h3><p>Check <a href="https://parks.canada.ca/pn-np/ab/banff/visit/tarifs-fees">Parks Canada admission</a> for your dates, including any free-admission periods. Arrange any required admission separately. Airporter says its ticket does not include a park pass and it does not stop at the park gate.</p></article></div>
+      <p>Use <a href="/what-to-do-today">today's activity chooser</a> for a flexible alternative, explore <a href="/winter">winter outings</a>, or put the journeys into the <a href="/trip-builder">trip builder</a>. For unserved trailheads and early or late outings, compare a specifically booked tour or transfer with changing the activity.</p>
+    </section>
+    <section id="questions" class="faq" aria-labelledby="questions-heading"><h2 id="questions-heading">Car-free planning questions</h2>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <section class="sources" aria-labelledby="sources-heading"><h2 id="sources-heading">Sources and review</h2><p>Reviewed October 28, 2026 using <a href={roam}>Roam's route directory</a>, <a href={winterReservations}>winter reservation guidance</a>, <a href="https://roamtransit.com/about-us/transportation-policies/">transport policies</a>, the <a href="https://www.banff.ca/435/Roam-Public-Transit">Town of Banff guest-pass information</a>, <a href={parkShuttles}>Parks Canada lake transport</a>, direct airport operators and the resort links above. This is an editorial planning guide, not a live service feed. Operator links on this page go directly to the provider.</p></section>
+  </div>
 </BaseLayout>
 
-<style>
-  .quick-answer { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; text-align: center; }
-  .quick-answer h2 { color: var(--color-white); margin-bottom: 1rem; }
-  .answer-big { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
-  .quick-answer p { font-size: 0.95rem; max-width: 700px; margin: 0 auto; line-height: 1.6; }
-
-  .transport-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .transport-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); position: relative; }
-  .transport-card.recommended { border: 2px solid var(--color-accent); }
-  .rec-badge { position: absolute; top: -0.7rem; right: 1.5rem; background: var(--color-accent); color: var(--color-white); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.2rem 0.7rem; border-radius: 4px; }
-  .transport-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
-  .transport-card h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
-  .transport-price { font-size: 1.1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
-  .transport-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.3rem; }
-  .transport-card li { font-size: 0.85rem; color: var(--color-text-light); padding-left: 1.2rem; position: relative; }
-  .transport-card li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
-  .transport-tag { display: inline-block; margin-top: 0.75rem; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--color-primary); background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: 4px; }
-
-  .roam-info { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .roam-prices h3 { font-size: 1rem; margin-bottom: 0.75rem; }
-  .price-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.9rem; }
-
-  .routes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
-  .route-card { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
-  .route-card.highlight-card { border: 2px solid var(--color-accent); }
-  .route-num { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; background: var(--color-primary); color: var(--color-white); font-weight: 700; font-size: 0.85rem; border-radius: 50%; margin-bottom: 0.5rem; }
-  .route-card h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
-  .route-card p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .trip-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-  .trip-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .trip-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
-  .trip-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.5rem; }
-
-  .tips-list { display: flex; flex-direction: column; gap: 1rem; }
-  .tip-item { display: flex; gap: 1rem; align-items: flex-start; background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
-  .tip-icon { font-size: 1.5rem; flex-shrink: 0; }
-  .tip-item h3 { font-size: 0.95rem; margin-bottom: 0.25rem; }
-  .tip-item p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
-  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
-
-  @media (max-width: 768px) {
-    .transport-grid { grid-template-columns: 1fr; }
-    .routes-grid { grid-template-columns: repeat(2, 1fr); }
-    .trip-cards { grid-template-columns: 1fr; }
+<script>
+  const controls = document.querySelector<HTMLFormElement>('#carfree-controls');
+  const base = document.querySelector<HTMLSelectElement>('#carfree-base');
+  const season = document.querySelector<HTMLSelectElement>('#carfree-season');
+  const outing = document.querySelector<HTMLSelectElement>('#carfree-outing');
+  const reset = document.querySelector<HTMLButtonElement>('#carfree-reset');
+  const title = document.querySelector<HTMLElement>('#carfree-result-title');
+  const baseResult = document.querySelector<HTMLElement>('#carfree-result-base');
+  const outingResult = document.querySelector<HTMLElement>('#carfree-result-outing');
+  const returnResult = document.querySelector<HTMLElement>('#carfree-result-return');
+  const baseNotes: Record<string, string> = {
+    banff: 'From a Banff base, start with the exact walk or local bus from your accommodation. A hotel on Tunnel Mountain or outside the centre may need a bus even for a town day.',
+    canmore: 'From Canmore, check your property-to-stop journey and Route 3 in both directions before adding a Banff-area outing. Allow for walking and waiting between separately operated services; the connection is not guaranteed.',
+    louise: 'From Lake Louise, identify whether your property is in the village, at the lakeshore or elsewhere. Check any hotel transfer and the exact 8X stop; the ski resort is a separate destination.',
+  };
+  const labels: Record<string, string> = { town: 'Banff town day', ski: 'resort ski day', lake: 'Lake Louise lakeshore', minnewanka: 'Lake Minnewanka', moraine: 'Moraine Lake', johnston: 'Johnston Canyon' };
+  function updateCarFree() {
+    if (!base || !season || !outing || !title || !baseResult || !outingResult || !returnResult) return;
+    const winter = season.value === 'winter';
+    title.textContent = base.options[base.selectedIndex].text + ' · ' + (winter ? 'winter' : 'summer') + ' · ' + labels[outing.value];
+    baseResult.textContent = baseNotes[base.value];
+    let advice = '';
+    let home = 'Check the last useful service for every leg home and choose an earlier return that leaves room for disruption. A booking with another operator does not hold the bus or reserve a seat.';
+    switch (outing.value) {
+      case 'town':
+        advice = 'Use the current Route 1 or Route 2 map for the attraction you want. Attraction tickets and opening hours are separate from the bus timetable; check hot springs reopening before making it the anchor of your day.';
+        if (base.value === 'louise') advice += ' A Banff town day also needs a checked 8X journey in each direction.';
+        if (base.value === 'banff') home = 'Check the last useful local bus to your property and keep a shorter town activity as a fallback. An evening dinner booking does not hold a bus or reserve a seat.';
+        break;
+      case 'ski':
+        advice = winter ? 'Use the current resort ski shuttle and verify ticket eligibility, the actual pickup stop and lesson check-in. Route 8X goes to the lakeshore and village, not Lake Louise Ski Resort.' : 'Winter ski-shuttle schedules do not establish a summer service. Choose a summer attraction and check its own dated transport, opening and ticket rules.';
+        if (base.value === 'canmore' && winter) advice += ' Confirm the first Route 3 reaches the Banff ski-shuttle stop in time; do not assume a Canmore hotel pickup.';
+        home = 'Record the resort shuttle return, gondola download requirements where relevant, and every onward connection separately. A resort closing time is not your bus departure time.';
+        break;
+      case 'lake':
+        advice = base.value === 'louise' ? 'Check the actual property-to-lakeshore route. Village–lakeshore Roam travel has separate fare and capacity rules; a village hotel is not a lakeshore hotel.' : 'Check Route 8X to the lakeshore and reserve the appropriate outbound and return product for your date. Include every traveller, including children, and follow the boarding deadline.';
+        if (base.value === 'canmore') advice += ' Add Route 3 and the walk to the correct Banff 8X stop in both directions.';
+        home = 'Keep the booked return and its boarding deadline central to the outing. This transport suggestion stays on suitable land-based visitor paths; it does not assess lake ice or a hiking route.';
+        break;
+      case 'minnewanka':
+        advice = winter ? 'Route 6 is a summer service. Do not build a winter visit around that bus or treat a long roadside walk as the missing connection. Research a specifically operating tour or change to a served town destination.' : 'Check whether Route 6 is operating on your exact date, the stop nearest your intended activity, and the last return. A lake cruise or other activity needs its own booking.';
+        break;
+      case 'moraine':
+        advice = winter ? 'Moraine Lake is not a routine winter transit outing. Summer buses and lake connectors do not operate as a winter visitor service; do not substitute a walk along the closed road.' : 'Use the Parks Canada page for the published summer season. Check the reservation product, departure point and eligibility for any lake connector. Personal vehicles cannot use Moraine Lake Road; 8X does not reach the Park and Ride.';
+        home = winter ? 'Choose an operating alternative, such as a checked Lake Louise lakeshore or Banff town day. Check the actual access and conditions there too.' : 'Reserve or confirm the required return from Moraine Lake and every onward leg. Do not apply the expired 2026 calendar to a future season.';
+        break;
+      case 'johnston':
+        advice = 'At the October 28, 2026 review, the main Johnston Canyon trail/P1 are closed and Roam Route 9 is suspended. Confirm both reopening and bus resumption; a scheduled end date is not proof of either.';
+        home = 'Keep a different outing in the plan until access and the dated return service are confirmed. When open, transport availability still does not assess the trail or winter footing.';
+        break;
+    }
+    outingResult.textContent = advice;
+    returnResult.textContent = home;
   }
+  if (controls && base && season && outing && reset) {
+    controls.addEventListener('submit', event => event.preventDefault());
+    [base, season, outing].forEach(select => select.addEventListener('change', updateCarFree));
+    reset.addEventListener('click', () => { base.value = 'banff'; season.value = 'winter'; outing.value = 'town'; updateCarFree(); });
+    controls.hidden = false;
+    updateCarFree();
+  }
+</script>
+
+<style>
+  .transport-content { padding-top: 2.5rem; padding-bottom: 4rem; }
+  .transport-content a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
+  .transport-content section { margin: 3rem 0; scroll-margin-top: 120px; }
+  .transport-content h2 { margin-bottom: 1rem; }
+  .transport-content h3 { font-size: 1.14rem; margin-bottom: .75rem; }
+  .transport-content p { margin-bottom: 1rem; line-height: 1.75; }
+  .lead { max-width: 950px; font-size: 1.12rem; }
+  .review, .small { font-size: .88rem; color: var(--color-text-light); }
+  .jump-links, .related-links { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; font-size: .9rem; }
+  .jump-links { margin: 1.5rem 0 2rem; }
+  .base-grid, .routes-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+  .base-card, .route-card, .note-card { padding: 1.5rem; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-white); }
+  .base-card p, .route-card p, .note-card p { font-size: .94rem; }
+  .eyebrow { display: block; color: var(--color-primary); font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .6rem; }
+  .route-number { display: inline-block; background: var(--color-primary); color: white; border-radius: 8px; padding: .25rem .65rem; font-weight: 700; margin-bottom: 1rem; }
+  .route-card a { font-size: .86rem; font-weight: 600; }
+  .fit-panel { padding: 2rem; border: 1px solid #c9d8d0; border-top: 4px solid var(--color-accent); border-radius: 12px; background: var(--color-bg-alt); }
+  .controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 1rem; align-items: end; margin: 1.5rem 0; }
+  .controls[hidden] { display: none !important; }
+  .controls label { font-size: .85rem; font-weight: 600; }
+  .controls select { width: 100%; padding: .75rem; margin-top: .4rem; border: 1px solid #aebfb4; border-radius: 7px; background: white; font: inherit; color: var(--color-text); }
+  .controls button { padding: .8rem 1rem; border: 1px solid var(--color-primary); background: var(--color-primary); color: white; border-radius: 7px; font: inherit; cursor: pointer; min-height: 44px; }
+  .controls :focus-visible, .transport-content summary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+  .fit-result { padding: 1.5rem; background: white; border-radius: 8px; border-left: 4px solid var(--color-primary); }
+  .fit-result p:last-child { margin-bottom: 0; }
+  .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+  .notice { background: #fff5df; border-left: 3px solid var(--color-accent); padding: 1rem 1.25rem; }
+  .planning-list { padding-left: 1.4rem; }
+  .planning-list li { margin-bottom: 1.1rem; padding-left: .3rem; line-height: 1.75; }
+  .faq details { border-bottom: 1px solid var(--color-border); padding: 1rem 0; }
+  .faq summary { cursor: pointer; font-weight: 600; color: var(--color-primary); min-height: 32px; }
+  .faq details p { padding-top: .75rem; margin-bottom: 0; }
+  .sources { padding-top: 1.5rem; border-top: 1px solid var(--color-border); font-size: .86rem; color: var(--color-text-light); }
+  .sources h2 { font-size: 1rem; }
+  @media (max-width: 900px) { .base-grid, .routes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .controls { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .base-grid, .routes-grid, .two-col, .controls { grid-template-columns: 1fr; } .fit-panel { padding: 1.2rem; } .fit-result, .base-card, .route-card, .note-card { padding: 1.2rem; } .transport-content section { margin: 2.4rem 0; } }
 </style>

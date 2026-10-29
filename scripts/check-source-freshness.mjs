@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { transform } from 'esbuild';
+const {code}=await transform(await readFile('src/utils/dataFreshness.ts','utf8'),{loader:'ts',format:'esm'});
+const {dataFreshness,sourceReportDayMatches}=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
+const now=Date.parse('2026-10-29T05:55:00Z');
+assert.equal(dataFreshness(null,6,now).status,'unavailable');
+assert.equal(dataFreshness(new Date(now+1).toISOString(),6,now).status,'unavailable');
+assert.equal(dataFreshness(new Date(now-6*3600000).toISOString(),6,now).status,'fresh');
+assert.equal(dataFreshness(new Date(now-6*3600000-1).toISOString(),6,now).status,'stale');
+assert(sourceReportDayMatches('2026-10-28',now),'Use Mountain Time, not the UTC retrieval date');
+assert(!sourceReportDayMatches('2026-10-29',now),'Do not accept a report dated tomorrow locally');
+assert(!sourceReportDayMatches('2026-10-28',Date.parse('2026-10-29T06:00:00Z')),'Hide date-only measurements at local midnight');
+assert(sourceReportDayMatches('2026-11-01',Date.parse('2026-11-01T07:30:00Z')),'DST transition preserves the correct civil day');
+assert(!sourceReportDayMatches('Oct 28, 2026',now),'Reject ambiguous report dates');
+assert(!sourceReportDayMatches(null,now));
+console.log('Source freshness checks passed: missing/future/expired timestamps, local midnight and DST calendar dates.');

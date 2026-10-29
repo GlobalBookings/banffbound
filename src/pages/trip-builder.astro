@@ -139,7 +139,7 @@ const faqs = [
     byId('trip-template-description').textContent = plannerTemplates.find(item => item.id === template.value)?.description || '';
     renderDays();
     const oldTarget = Math.min(Number(targetDay.value)||0,plan.days.length-1); targetDay.replaceChildren(); plan.days.forEach((_,index) => { const option = node('option','',`Day ${index+1}`); option.value = String(index); targetDay.append(option); }); targetDay.value = String(oldTarget);
-    byId('trip-summary').textContent = `${plan.days.length} ${plan.days.length === 1 ? 'day' : 'days'} · ${plan.days.flat().length} outings · ${plan.season === 'winter' ? 'Winter' : 'Summer'} · ${baseNames[plan.base]} base`;
+    byId('trip-summary').textContent = `${plan.days.length} ${plan.days.length === 1 ? 'day' : 'days'} · ${plan.days.flat().length} ${plan.days.flat().length === 1 ? "outing" : "outings"} · ${plan.season === 'winter' ? 'Winter' : 'Summer'} · ${baseNames[plan.base]} base`;
     byId<HTMLButtonElement>('trip-add-day').disabled = plan.days.length >= MAX_TRIP_DAYS; byId<HTMLButtonElement>('trip-undo').disabled = !previous;
     byId('trip-catalogue-note').textContent = `${plan.season === 'winter' ? 'Winter' : 'Summer'} ideas and year-round town outings. Season labels do not confirm current operations.`;
     const checks = byId('trip-checks-list'); checks.replaceChildren(); const warnings = tripPlanWarnings(plan); (warnings.length ? warnings : ['Keep checking your actual booking times, transport, weather and current operations.']).forEach(warning => checks.append(node('li','',warning)));
