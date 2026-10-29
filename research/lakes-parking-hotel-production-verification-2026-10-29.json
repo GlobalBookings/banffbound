@@ -1,0 +1,1350 @@
+{
+  "checkedAt": "2026-10-29T17:57:50.856966+00:00",
+  "origin": "https://banffbound.com",
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v1",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.css app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T17:53:20.386Z",
+    "sourceRevision": "5e3650cd33db1cbd9f09bb7a3a34a71cdf6c45f9",
+    "sourceFingerprint": "064dfcc2efda6024609cacea7829a719537b2639ef3cebd765ae6b0eff8ef569"
+  },
+  "expectedFingerprint": "064dfcc2efda6024609cacea7829a719537b2639ef3cebd765ae6b0eff8ef569",
+  "fingerprintMatches": true,
+  "htmlRoutes": 108,
+  "hotelProfiles": 95,
+  "noindexAndExcluded": 71,
+  "eligibleHotelProfiles": 24,
+  "llmsLinks": true,
+  "results": [
+    {
+      "path": "/lakes/",
+      "status": 200,
+      "canonical": "https://banffbound.com/lakes/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:38 GMT",
+      "markers": {
+        "lakePlans": 10
+      }
+    },
+    {
+      "path": "/lake-faq/",
+      "status": 200,
+      "canonical": "https://banffbound.com/lake-faq/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:38 GMT",
+      "markers": {
+        "faqParity": true,
+        "questions": 9
+      }
+    },
+    {
+      "path": "/parking/",
+      "status": 200,
+      "canonical": "https://banffbound.com/parking/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:39 GMT",
+      "markers": {
+        "destinationPlans": 11
+      }
+    },
+    {
+      "path": "/shuttle-reservations/",
+      "status": 200,
+      "canonical": "https://banffbound.com/shuttle-reservations/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:39 GMT",
+      "markers": {
+        "journeyPlanner": true
+      }
+    },
+    {
+      "path": "/hotel-directory/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "records": 95,
+        "sourcedPoints": 5
+      }
+    },
+    {
+      "path": "/tools/",
+      "status": 200,
+      "canonical": "https://banffbound.com/tools/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:39 GMT",
+      "markers": {}
+    },
+    {
+      "path": "/blog/banff-boundary-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-boundary-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "reviewedGuide": true
+      }
+    },
+    {
+      "path": "/blog/banff-teen-activities/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/banff-teen-activities/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "reviewedGuide": true
+      }
+    },
+    {
+      "path": "/blog/two-jack-lake-guide/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/two-jack-lake-guide/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "reviewedGuide": true
+      }
+    },
+    {
+      "path": "/blog/romantic-getaway-banff/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/romantic-getaway-banff/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "reviewedGuide": true
+      }
+    },
+    {
+      "path": "/blog/summer-banff-itinerary/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/summer-banff-itinerary/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "reviewedGuide": true
+      }
+    },
+    {
+      "path": "/blog/fall-banff-itinerary/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/fall-banff-itinerary/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "reviewedGuide": true
+      }
+    },
+    {
+      "path": "/blog/jasper-alberta/",
+      "status": 200,
+      "canonical": "https://banffbound.com/blog/jasper-alberta/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "reviewedGuide": true
+      }
+    },
+    {
+      "path": "/hotel-directory/baker-creek-by-basecamp/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/baker-creek-by-basecamp/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-aspen-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-aspen-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-beaver-cabins/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-beaver-cabins/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-boundary-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-boundary-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-boutique-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-boutique-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-caribou-lodge-spa/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-caribou-lodge-spa/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-centre-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-centre-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-gate-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-gate-mountain-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-international-hostel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-international-hostel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-international-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-international-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-park-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-park-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-ptarmigan-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-ptarmigan-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/banff-rocky-mountain-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/banff-rocky-mountain-resort/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/basecamp-lodge-canmore/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/basecamp-lodge-canmore/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/basecamp-suites-banff/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/basecamp-suites-banff/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/bear-bison-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/bear-bison-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/best-western-banff/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/best-western-banff/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/blackstone-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/blackstone-mountain-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/bow-view-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/bow-view-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/brewster-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/brewster-mountain-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/buffalo-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/buffalo-mountain-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/canalta-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/canalta-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/canmore-inn-suites/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/canmore-inn-suites/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/canmore-rocky-mountain-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/canmore-rocky-mountain-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/castle-mountain-chalets/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/castle-mountain-chalets/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/cathedral-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/cathedral-mountain-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/charltons-banff/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/charltons-banff/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/chateau-canmore/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/chateau-canmore/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/coast-canmore-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/coast-canmore-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/copperstone-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/copperstone-resort/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/crossing-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/crossing-resort/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/days-inn-canmore/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/days-inn-canmore/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/deer-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/deer-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/dorothy-motel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/dorothy-motel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/douglas-fir-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/douglas-fir-resort/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/drake-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/drake-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/elk-avenue-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/elk-avenue-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/elkhorn-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/elkhorn-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/emerald-lake-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/emerald-lake-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/everwild-canmore/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/everwild-canmore/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/fairmont-banff-springs/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/fairmont-banff-springs/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/fairmont-chateau-lake-louise/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/fairmont-chateau-lake-louise/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/falcon-crest-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/falcon-crest-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/fox-hotel-suites/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/fox-hotel-suites/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/georgetown-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/georgetown-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/grande-rockies-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/grande-rockies-resort/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/hi-banff-alpine-centre/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/hi-banff-alpine-centre/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/hi-castle-mountain-hostel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/hi-castle-mountain-hostel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/hi-lake-louise-alpine-centre/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/hi-lake-louise-alpine-centre/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/hidden-ridge-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/hidden-ridge-resort/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/hotel-canoe-suites/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/hotel-canoe-suites/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/inns-of-banff/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/inns-of-banff/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/irwins-mountain-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/irwins-mountain-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/johnston-canyon-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/johnston-canyon-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/juniper-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/juniper-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/kenrick-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/kenrick-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/kicking-horse-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/kicking-horse-mountain-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/king-edward-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/king-edward-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/lady-macdonald-country-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/lady-macdonald-country-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/lake-louise-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/lake-louise-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/lamphouse-canmore/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/lamphouse-canmore/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/malcolm-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/malcolm-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/moose-hotel-suites/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/moose-hotel-suites/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/mount-engadine-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/mount-engadine-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/mount-royal-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/mount-royal-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/mountaineer-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/mountaineer-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/moxy-banff/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/moxy-banff/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:24 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/mystic-springs-chalets/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/mystic-springs-chalets/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/northwinds-hotel-canmore/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/northwinds-hotel-canmore/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/num-ti-jah-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/num-ti-jah-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/otter-hotel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/otter-hotel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/painted-warriors-ranch/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/painted-warriors-ranch/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/paradise-lodge-bungalows/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/paradise-lodge-bungalows/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/peaks-hotel-suites/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/peaks-hotel-suites/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/pocaterra-inn-waterslide/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/pocaterra-inn-waterslide/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/post-hotel-spa/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/post-hotel-spa/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/red-carpet-inn/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/red-carpet-inn/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/rimrock-banff/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/rimrock-banff/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/rocky-mountain-ski-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/rocky-mountain-ski-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/royal-canadian-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/royal-canadian-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/rundle-chalets/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/rundle-chalets/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/rundle-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/rundle-mountain-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/rundlestone-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/rundlestone-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/samesun-banff-hostel/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/samesun-banff-hostel/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/silver-creek-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/silver-creek-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/solara-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/solara-resort/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/stoneridge-mountain-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/stoneridge-mountain-resort/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/storm-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/storm-mountain-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/summit-grande-rockies/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/summit-grande-rockies/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/sunset-resorts-canmore/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/sunset-resorts-canmore/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/sunshine-mountain-lodge/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/sunshine-mountain-lodge/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/super-8-canmore/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/super-8-canmore/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    },
+    {
+      "path": "/hotel-directory/tunnel-mountain-resort/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/tunnel-mountain-resort/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": false,
+        "inSitemap": true
+      }
+    },
+    {
+      "path": "/hotel-directory/windtower-lodge-suites/",
+      "status": 200,
+      "canonical": "https://banffbound.com/hotel-directory/windtower-lodge-suites/",
+      "h1": 1,
+      "schemaValid": true,
+      "lastModified": "Thu, 29 Oct 2026 17:53:25 GMT",
+      "markers": {
+        "noindex": true,
+        "inSitemap": false
+      }
+    }
+  ],
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/6",
+  "sourceCommit": "7c63caa422b38552811ca4a1721a695cda55b4e6",
+  "proofHead": "651ee1dfd125b9ae0c00e5e8aadeb9a13fdae674",
+  "mergeCommit": "5e3650cd33db1cbd9f09bb7a3a34a71cdf6c45f9",
+  "deploymentVerification": "Public build receipt matches merge revision and clean app-source fingerprint; public rendered routes checked independently.",
+  "ci": {
+    "pullRequestRun": 40925248159,
+    "pullRequestCheck": 123628884788,
+    "mainRun": 40925407292,
+    "mainJob": 123629453642,
+    "result": "success"
+  },
+  "redirects": {
+    "checkedAt": "2026-10-29T17:59:41.483210+00:00",
+    "mappings": 40,
+    "checks": 100,
+    "passed": 100
+  },
+  "liveBrowser": {
+    "lakePlans": 10,
+    "winterRental": 0,
+    "summerRentalPreset": [
+      "Lake Louise",
+      "Moraine Lake",
+      "Emerald Lake"
+    ],
+    "reviewedHotelFilter": 21,
+    "unreviewedHotelFilter": 71,
+    "hotelReset": 95,
+    "mapPoints": 5,
+    "winterMoraineParkingRestriction": true,
+    "winterShuttleDistinction": true,
+    "mobile": [
+      {
+        "path": "/shuttle-reservations/",
+        "viewport": 390,
+        "documentWidth": 390
+      },
+      {
+        "path": "/lakes/",
+        "viewport": 390,
+        "documentWidth": 390
+      }
+    ]
+  },
+  "verifiedAt": "2026-10-29T17:59:41.483509+00:00"
+}

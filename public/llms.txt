@@ -55,3 +55,10 @@
 
 ## Index
 - [Sitemap](https://banffbound.com/sitemap-index.xml)
+
+## Wildlife planning
+- [Wildlife field guide](https://banffbound.com/wildlife/): Nine species, identification features and credited historical educational photographs.
+- [Wildlife habitat map](https://banffbound.com/wildlife-tracker/): Ten public visitor-area plans, habitat and seasonal access filters. No live animal locations or measured sighting frequency.
+- [Seasonal wildlife preparation](https://banffbound.com/wildlife-calendar/): Month selection with source-based preparation.
+- [Wildlife encounters](https://banffbound.com/wildlife-safety/): Behaviour-based encounter guidance and distinct reporting and emergency contacts.
+- [Bear-spray planning](https://banffbound.com/bear-spray/): Verified local rental leads, transport rules and preparation.

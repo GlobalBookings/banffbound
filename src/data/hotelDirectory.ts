@@ -14,6 +14,8 @@ export interface DirectoryHotel extends Hotel {
 
 // A facilities checkedOn field is not automatic permission to publish every old
 // field. This explicit register records the scope accepted in the source notes.
+export const banffTownHotelReviewSlugs = ["banff-park-lodge", "fox-hotel-suites", "banff-caribou-lodge-spa", "buffalo-mountain-lodge", "hotel-canoe-suites", "otter-hotel", "elk-avenue-hotel", "royal-canadian-lodge", "brewster-mountain-lodge", "banff-aspen-lodge", "banff-ptarmigan-inn", "charltons-banff", "peaks-hotel-suites", "canalta-lodge"] as const;
+
 export const reviewedHotelDirectorySlugs = [
   'moose-hotel-suites', 'mount-royal-hotel', 'tunnel-mountain-resort',
   'blackstone-mountain-lodge', 'lake-louise-inn', 'fairmont-chateau-lake-louise',
@@ -23,10 +25,96 @@ export const reviewedHotelDirectorySlugs = [
   'baker-creek-by-basecamp', 'copperstone-resort', 'stoneridge-mountain-resort',
   'falcon-crest-lodge', 'cathedral-mountain-lodge',
   'fairmont-banff-springs', 'rimrock-banff',
+  ...banffTownHotelReviewSlugs,
 ] as const;
 const reviewed = new Set<string>(reviewedHotelDirectorySlugs);
 
 const additionalSources: Record<string, HotelSourceLink[]> = {
+  'banff-park-lodge': [
+    { label: "Official rooms and access categories", url: "https://www.banffparklodge.com/rooms/" },
+    { label: "Official amenities and transport", url: "https://www.banffparklodge.com/amenities/" },
+    { label: "Current guest directory and renovation closures", url: "https://www.banffparklodge.com/faq/" },
+    { label: "Official home: ongoing public renovations", url: "https://www.banffparklodge.com/" },
+    { label: "Current address and publisher map", url: "https://www.banffparklodge.com/contact-us/" },
+  ],
+  'fox-hotel-suites': [
+    { label: "Official room categories", url: "https://foxhotelandsuites.com/rooms/" },
+    { label: "One-bedroom layout and kitchen nook", url: "https://foxhotelandsuites.com/superior-one-bedroom-suite/" },
+    { label: "Official facilities and address", url: "https://foxhotelandsuites.com/" },
+    { label: "Official transport, parking and pet FAQ", url: "https://foxhotelandsuites.com/faq/" },
+  ],
+  'banff-caribou-lodge-spa': [
+    { label: "Official rooms", url: "https://banffcariboulodge.com/rooms/" },
+    { label: "Specific accessible-room features", url: "https://banffcariboulodge.com/accessible-rooms/" },
+    { label: "Official hot pool, spa and dining", url: "https://banffcariboulodge.com/amenities/" },
+    { label: "Official parking, pets and transit FAQ", url: "https://banffcariboulodge.com/faq/" },
+  ],
+  'buffalo-mountain-lodge': [
+    { label: "Official rooms and cooking facilities", url: "https://crmr.com/resorts/buffalo-mountain/accommodations/" },
+    { label: "Official facility, transit and pet FAQ", url: "https://crmr.com/resorts/buffalo-mountain/faq/" },
+    { label: "Official address and arrival information", url: "https://crmr.com/resorts/buffalo-mountain/getting-here/" },
+  ],
+  'hotel-canoe-suites': [
+    { label: "Official room, suite and condo categories", url: "https://hotelcanoeandsuites.com/rooms-suites/" },
+    { label: "Official amenities and dining", url: "https://hotelcanoeandsuites.com/amenities/" },
+    { label: "Official address, local transit and arrival FAQ", url: "https://hotelcanoeandsuites.com/faq/" },
+  ],
+  'otter-hotel': [
+    { label: "Official room categories and nooks", url: "https://otterhotel.com/rooms-suites/" },
+    { label: "Official wellness and Good Folk dining", url: "https://otterhotel.com/amenities/" },
+    { label: "Official address and transfer options", url: "https://otterhotel.com/contact/" },
+  ],
+  'elk-avenue-hotel': [
+    { label: "Official rooms and loft layouts", url: "https://www.banffjaspercollection.com/hotels/elk-avenue-hotel/rooms/" },
+    { label: "Official current facilities and dining", url: "https://www.banffjaspercollection.com/hotels/elk-avenue-hotel/" },
+    { label: "Official parking, meals and pet FAQ", url: "https://www.banffjaspercollection.com/hotels/elk-avenue-hotel/experience/faqs/" },
+    { label: "Official address", url: "https://www.banffjaspercollection.com/hotels/elk-avenue-hotel/location/" },
+  ],
+  'royal-canadian-lodge': [
+    { label: "Official room configurations", url: "https://royalcanadianlodge.com/rooms/" },
+    { label: "Current operator: Banff Collection by InnVest", url: "https://royalcanadianlodge.com/" },
+    { label: "Official wellness, parking and dining", url: "https://royalcanadianlodge.com/amenities/" },
+    { label: "Official hotel terms", url: "https://royalcanadianlodge.com/hotel-policies/" },
+  ],
+  'brewster-mountain-lodge': [
+    { label: "Official room categories", url: "https://brewstermountainlodge.com/banff-hotel-rooms/" },
+    { label: "Official loft stairs, bath and balcony distinction", url: "https://brewstermountainlodge.com/room-type/loft-suite/" },
+    { label: "Official breakfast, common areas and parking FAQ", url: "https://brewstermountainlodge.com/brewster-main-faqs/" },
+    { label: "Official address", url: "https://brewstermountainlodge.com/contact-us/" },
+    { label: "Official destination-tourism image source", url: "https://www.banfflakelouise.com/business/brewsters-mountain-lodge" },
+  ],
+  'banff-aspen-lodge': [
+    { label: "Official room, balcony and access categories", url: "https://www.banffaspenlodge.com/rooms" },
+    { label: "Official tubs, sauna, breakfast and pet rules", url: "https://www.banffaspenlodge.com/hotel-amenities" },
+    { label: "Official address and transfer information", url: "https://www.banffaspenlodge.com/contact-us" },
+  ],
+  'banff-ptarmigan-inn': [
+    { label: "Official room and split-room layouts", url: "https://banffptarmiganinn.com/rooms/" },
+    { label: "Official hot tubs and dining", url: "https://banffptarmiganinn.com/amenities/" },
+    { label: "Official local transit, pets and parking FAQ", url: "https://banffptarmiganinn.com/faq/" },
+  ],
+  'charltons-banff': [
+    { label: "Official rooms and suites", url: "https://www.charltonsbanff.com/rooms/" },
+    { label: "Official Kitchenette Suite equipment", url: "https://www.charltonsbanff.com/room/kitchenette-suite/" },
+    { label: "Official pool and sister-property dining", url: "https://www.charltonsbanff.com/amenities/" },
+    { label: "Official hotel address", url: "https://www.charltonsbanff.com/contact/" },
+    { label: "Official pet/booking terms", url: "https://www.charltonsbanff.com/hotel-policies/" },
+  ],
+  'peaks-hotel-suites': [
+    { label: "Official Standard room configurations", url: "https://www.peaksbanff.com/standard-rooms" },
+    { label: "Official Junior Studio and Suite pantry layouts", url: "https://www.peaksbanff.com/junior-studios-and-suite" },
+    { label: "Official sister-property facilities", url: "https://www.peaksbanff.com/amenities" },
+    { label: "Official hotel address", url: "https://www.peaksbanff.com/" },
+    { label: "Sister-property closure/renovation directory", url: "https://www.banffparklodge.com/faq/" },
+  ],
+  'canalta-lodge': [
+    { label: "Official rooms, kitchens, lofts and pet categories", url: "https://canaltalodge.com/stay/" },
+    { label: 'King with Sofa Loft equipment', url: 'https://canaltalodge.com/stay/single-king-sofa-loft-room/' },
+    { label: 'King with Sofa and Kitchen Loft equipment', url: 'https://canaltalodge.com/stay/single-king-sofa-kitchen-loft-room/' },
+    { label: "Official outdoor courtyard facilities", url: "https://canaltalodge.com/courtyard/" },
+    { label: "Official address", url: "https://canaltalodge.com/contact/" },
+  ],
+
   'fairmont-banff-springs': [
     { label: 'Current official room inventory', url: 'https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html' },
     { label: 'Official Gatehouse family layouts', url: 'https://www.banff-springs-hotel.com/stay/gatehouse/' },
@@ -94,6 +182,8 @@ const formerNames: Record<string, { note: string; sources: HotelSourceLink[] }> 
 };
 
 const operationNotes: Record<string, string> = {
+  'banff-park-lodge': 'Dated notice, checked 29 October 2026: the operator reports ongoing lobby/public renovations and lists La Terrazza closed for renovations. Confirm the actual entrance and available dining/services.',
+  'peaks-hotel-suites': 'Pool, fitness and listed full dining facilities are across the street at Banff Park Lodge. That property currently reports public-area renovations and a La Terrazza closure; confirm usable services and the outdoor route.',
   'cathedral-mountain-lodge': 'Summer seasonal property. The official FAQ lists late May to early October; check the actual year and dates. This is not a year-round winter base.',
   'hi-castle-mountain-hostel': 'Dated operating notice: HI’s calendar lists a 12 October–5 November 2026 closure and date-specific winter opening patterns. Confirm reopening and the chosen date.',
   'storm-mountain-lodge': 'Reduced-season midweek operation. Official home/contact schedules differ; confirm opening nights and meals directly.',

@@ -13,6 +13,7 @@ const historyCount = hotels.filter(h => h.sourceStatus === 'former-name').length
 const pendingCount = hotels.filter(h => h.sourceStatus === 'unreviewed').length;
 const withoutPriceClaims = (text: string) => text.split(/(?<=[.!?])\s+/).filter(sentence => !/\$\s*\d/.test(sentence)).join(' ');
 const areaNotes: Record<string, string> = {
+  'Banff Avenue hotel strip': 'Banff Avenue continues beyond the central pedestrian blocks. Compare the exact address with groceries, your activity pickup, winter walking conditions and the last local bus.',
   'Spray Avenue': 'Banff Springs is on Spray Avenue, separate from the central Banff Avenue hotel strip. Match the actual walking or local transit journey to your plans.',
   'Sulphur Mountain': 'An elevated Banff location near the gondola and Upper Hot Springs area. Check the road or bus journey back from town, winter walking conditions and each attraction’s operation separately.',
   'Yoho National Park': 'A separate national park in British Columbia. Check the exact lodge address, winter road access, meal arrangements and any guest parking shuttle; this is not a Lake Louise village stay.',

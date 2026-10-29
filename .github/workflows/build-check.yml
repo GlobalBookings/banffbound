@@ -36,9 +36,12 @@ jobs:
           node scripts/check-trip-planner.mjs
           node scripts/check-day-ideas.mjs
           node scripts/check-trail-directory.mjs
+          node scripts/check-trail-source-reviews.mjs
           node scripts/check-production-redirects.mjs
           node scripts/check-activities.mjs
           node scripts/check-paddling.mjs
+          node scripts/check-wildlife-planning.mjs
+          node scripts/check-wildlife-safety.mjs
           node scripts/check-lake-planning.mjs
           node scripts/check-parking-planning.mjs
           node scripts/check-build-provenance.mjs

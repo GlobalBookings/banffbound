@@ -1,3 +1,5 @@
+import { applyTrailSourceReviews } from './trailSourceReviews';
+
 export interface Trail {
   id: string;
   name: string;
@@ -12,8 +14,17 @@ export interface Trail {
   season: 'year-round' | 'summer' | 'winter';
   type: 'trail' | 'viewpoint' | 'lake';
   area: 'Banff' | 'Lake Louise' | 'Castle Junction' | 'Icefields Parkway' | 'Kootenay';
-  park?: 'Banff National Park' | 'Kootenay National Park' | 'Banff National Park / Spray Valley Provincial Park';
-  province?: 'Alberta' | 'British Columbia';
+  park?: 'Banff National Park' | 'Kootenay National Park' | 'Banff National Park / Spray Valley Provincial Park' | 'Banff National Park / Mount Assiniboine Provincial Park';
+  province?: 'Alberta' | 'British Columbia' | 'Alberta / British Columbia';
+  sourceReview?: {
+    status: 'reviewed' | 'unverified';
+    scope: string;
+    officialName?: string;
+    officialGrade?: 'easy' | 'moderate' | 'difficult';
+    distanceBasis?: 'one-way' | 'loop' | 'network' | 'connector';
+  };
+  imageStatus?: 'illustrative' | 'verified';
+  imageNote?: string;
   reviewedAt?: string;
   directoryEligible?: boolean;
   routeVerified?: boolean;
@@ -37,7 +48,7 @@ export interface Trail {
   crowdLevel?: { summer: 'low' | 'medium' | 'high'; winter: 'low' | 'medium' | 'high' };
 }
 
-export const trails: Trail[] = [
+const trailRecords: Trail[] = [
   // ═══════════════════════════════════════════════════════════════════════
   // BANFF AREA (30 trails)
   // ═══════════════════════════════════════════════════════════════════════
@@ -2688,3 +2699,6 @@ export const trails: Trail[] = [
     ]
   },
 ];
+
+// Consumers receive the reviewed projection; stable IDs, URLs and indicative coordinates are retained.
+export const trails: Trail[] = applyTrailSourceReviews(trailRecords);

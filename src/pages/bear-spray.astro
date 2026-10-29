@@ -1,357 +1,93 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import WhatsNext from '../components/WhatsNext.astro';
-
-const AFFILIATE_TAG = 'banffbound-20';
-const amazonLink = (term: string) => `https://www.amazon.ca/s?k=${encodeURIComponent(term)}&tag=${AFFILIATE_TAG}`;
-
-const onlineGear = [
-  { icon: '🐻', name: 'Bear Spray (Frontiersman / Sabre)', term: 'frontiersman bear spray', note: 'The trusted brands used across the Rockies. Order ahead if you\u2019re driving in from Calgary or within Canada \u2014 note it cannot be shipped by air or carried on flights.' },
-  { icon: '🎒', name: 'Hip Holster', term: 'bear spray holster', note: 'Keeps your canister on your hip where you can reach it in seconds. Ships and flies fine \u2014 buy this before you travel even if you rent the spray locally.' },
-  { icon: '🔔', name: 'Bear Bells', term: 'bear bells hiking', note: 'Cheap, packable early-warning noise-makers for the trail. Ship and fly with no restrictions.' },
-  { icon: '🥫', name: 'Bear-Proof Food Canister', term: 'bear proof food canister', note: 'Required practice for backcountry camping. Protects your food and keeps bears wild. Ships anywhere.' },
-];
+import { wildlifeReviewedAt, wildlifeSources, bearSprayProviders, bearSprayFaqs } from '../data/wildlifeSafety';
+const holsterSearch = 'https://www.amazon.ca/s?k=bear+spray+holster&tag=banffbound-20';
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: bearSprayFaqs.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) };
 ---
 
-<BaseLayout title="Bear Spray in Banff 2026 — Buy, Rent, and How to Use" description="Complete bear spray guide for Banff National Park. Where to buy or rent bear spray, how to use it, practice tips, and rental locations with prices in Banff and Lake Louise.">
+<BaseLayout title="Bear Spray in Banff: Local Rental, Flights, Roam & Preparation" description="Plan bear-spray purchase or rental in Banff with direct shops, collection and return questions, flight restrictions, Roam storage rules and official training resources." lastUpdated={wildlifeReviewedAt}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Wildlife Safety', href: '/wildlife-safety' }, { label: 'Bear Spray' }]} /></div>
+  <header class="spray-hero"><div class="container"><span class="badge">Equipment and transport planning</span><h1>Bear spray in Banff</h1><p>Arrange the right canister, learn to use it and plan both collection and return. Flying, riding a bus and walking a trail require different storage decisions.</p><p class="review">Official rules and direct provider pages reviewed <time datetime={wildlifeReviewedAt}>29 October 2026</time>. Listings confirm an advertised service, not today’s stock, opening hours or price.</p></div></header>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Do I need bear spray in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, Parks Canada strongly recommends carrying bear spray on all hikes in Banff National Park. Banff is home to both black bears and grizzly bears. While bear encounters are rare, bear spray is the most effective deterrent — studies show it stops aggressive bears 92% of the time. Carry it in a hip holster (not in your pack) and know how to use it before you hit the trail.' } },
-      { '@type': 'Question', name: 'Where to buy bear spray in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Bear spray is sold at: (1) Canadian Tire and Atmosphere in Canmore, (2) Banff Trail Riders and outdoor shops on Banff Ave, (3) Lake Louise Village shops, (4) Most outdoor/gear stores in the area. A canister costs $35-50. It contains about 7-9 seconds of spray with a range of 5-10 metres. Canisters expire after 3-4 years — check the date.' } },
-      { '@type': 'Question', name: 'Can I rent bear spray in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Several locations in Banff rent bear spray for $10-12/day: Wilson Mountain Sports (Banff Ave), Banff Adventures (Bear St), Ultimate Sports (Banff Ave), and Castle Mountain Chalets. Some hiking tour operators include bear spray in their guided hikes. Renting is a great option for short trips — buying makes sense if you\'re hiking for 3+ days.' } },
-      { '@type': 'Question', name: 'How do you use bear spray?', acceptedAnswer: { '@type': 'Answer', text: 'To use bear spray: (1) Remove the safety clip. (2) Hold the canister with both hands, arms extended. (3) Aim slightly downward — below the bear\'s face level, accounting for wind. (4) When the bear is 5-10 metres away, spray in short 1-2 second bursts. (5) Create a wall of spray between you and the bear. (6) Back away slowly — do not run. Practice removing the safety clip before you hike so you can do it quickly under stress.' } },
-    ],
-  })} />
+  <div class="container spray-content">
+    <section aria-labelledby="start-heading"><h2 id="start-heading">Start with instruction, not just a purchase</h2><p>Parks Canada recommends carrying bear spray when recreating in the mountain parks, including hiking, picnicking, cycling and paddling. Keep it accessible on the trail and know how to use your exact canister. Spray can deter an aggressive animal; it cannot guarantee safety or replace avoiding close encounters. <a href={wildlifeSources.spray}>Parks Canada’s bear-spray guide and demonstration</a>.</p><p>Read <a href="/wildlife-safety">wildlife prevention and encounter responses</a> as part of the same preparation. Winter is not an automatic exemption: <a href={wildlifeSources.winter}>Parks Canada’s winter packing advice</a> includes bear spray.</p></section>
 
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Bear Spray Guide' }]} />
+    <section aria-labelledby="transport-heading"><h2 id="transport-heading">Plan the journey with your canister</h2>
+      <form id="spray-planner" class="planner" hidden>
+        <div><label for="spray-transport">Transport to plan for</label><select id="spray-transport" name="transport"><option value="air">Commercial flight</option><option value="road">Car or road trip</option><option value="roam">Roam Transit</option><option value="other">Other shuttle, coach or aircraft</option></select></div>
+        <div><label for="spray-arrangement">Equipment arrangement</label><select id="spray-arrangement" name="arrangement"><option value="unsure">Comparing purchase and rental</option><option value="rent">Rent locally</option><option value="buy">Buy a canister</option></select></div>
+        <button type="reset" class="btn btn-secondary">Reset choices</button>
+        <div class="planner-result" role="status" aria-live="polite" aria-atomic="true"><h3 id="spray-result-title"></h3><p id="spray-result-travel"></p><p id="spray-result-preparation"></p><a id="spray-result-source">Official transport guidance</a></div>
+      </form>
+      <p>The full transport advice is below, whether or not the planner runs. The choices organise logistics; they do not assess your ability, medical risk or safety.</p>
+      <div class="transport-grid">
+        <article class="card"><h3>Commercial flights</h3><p><strong>Do not pack bear spray in carry-on or checked baggage.</strong> Collect it locally after arrival and arrange its return or approved disposal before the flight home. <a href={wildlifeSources.flights}>CATSA’s outdoor equipment rules</a>. Specialty aircraft transport needs advance instructions from the operator; do not assume an exemption. <a href={wildlifeSources.aircraft}>Transport Canada dangerous-goods guidance</a>.</p></article>
+        <article class="card"><h3>Driving</h3><p>Keep the safety clip in place and protect the canister from heat, cold, puncture and crushing. Parks Canada recommends the trunk or a sealed container during transport; Alberta recommends a travel container and removing the canister from the vehicle on arrival rather than storing it there through temperature changes. Follow its label. <a href={wildlifeSources.spray}>Parks Canada</a> · <a href={wildlifeSources.sprayTraining}>Alberta storage advice</a>.</p></article>
+        <article class="card"><h3>Roam Transit</h3><p>Keep the canister properly sealed, safety cap intact, <strong>inside your bag for the entire bus ride</strong>. Do not hold it or place it exposed on a seat. After leaving the bus, put it in an accessible holster before starting a trail. Other operators may have different rules. <a href={wildlifeSources.roam}>Roam’s bear-spray policy</a>.</p></article>
+      </div>
+      <p><strong>Crossing the Canadian border?</strong> CBSA distinguishes qualifying animal repellents from prohibited sprays designed for use against people. The product’s design, animal-use label and Canadian pesticide requirements matter. Check the <a href={wildlifeSources.border}>current CBSA conditions</a> before carrying a product across a border; do not treat a generic “pepper spray” listing as confirmation.</p>
+    </section>
+
+    <section aria-labelledby="providers-heading"><h2 id="providers-heading">Direct local purchase and rental options</h2><p>These businesses advertise the service on their own websites. Contact the shop for your actual dates, especially in winter or for an early start. The links below go directly to the provider and are not affiliate bookings.</p>
+      <div class="provider-grid">{bearSprayProviders.map(provider => <article class="card"><h3>{provider.name}</h3><p class="location">{provider.location}</p><p>{provider.offer}</p><p>{provider.terms}</p><a href={provider.url}>Direct provider information</a></article>)}</div>
+      <h3>Before paying or reserving, ask these questions</h3><ul>
+        <li>Can I collect before my first outing and return after my last one? Does “one day” mean store hours or 24 hours?</li>
+        <li>What ID, payment card, age or purchaser requirements and waiver apply? Is there a deposit or card hold?</li>
+        <li>Is a compatible holster included, and can staff demonstrate the clip and grip using a training can?</li>
+        <li>What happens if I discharge it, damage it, return late or need to cancel? Is overnight use allowed?</li>
+        <li>If buying, what is the expiry, which Canadian registration and label apply, and where can I return an unused or expired can?</li>
+      </ul><p>Compare the full terms for your stay. A universal “rent for two days, buy for three” rule overlooks deposits, return hours, included equipment and disposal.</p>
+    </section>
+
+    <section aria-labelledby="training-heading"><h2 id="training-heading">Prepare the canister before the trail</h2><ol class="training-list">
+      <li><strong>Read the actual label.</strong> Check animal-use labelling, expiry, safety clip, spray range, duration and temperature limits. Do not copy a single range or burst duration from another brand.</li>
+      <li><strong>Fit the canister and holster together.</strong> Place it where you can reach it while wearing your pack and layers. Ask for instruction, and practise safely with an inert training can rather than using up or accidentally firing the active spray.</li>
+      <li><strong>Watch the official demonstration.</strong> Learn the grip, removing the safety clip, wind effects, aiming and leaving the area after an encounter. Understand the response to the animal before deciding to deploy spray.</li>
+      <li><strong>Keep it for an encounter.</strong> Do not apply it to skin, clothing, tents or equipment as a repellent. Keep the safety secured when it is not being deployed and protect it from accidental discharge.</li>
+    </ol><p><a href={wildlifeSources.sprayTraining}>Alberta’s canister, practice and storage instructions</a> and <a href={wildlifeSources.spray}>Parks Canada’s video and guidance</a>. Wind, rain, freezing conditions and product age can affect performance.</p>
+      <aside class="gear"><h3>Looking for a holster?</h3><p>Check that it fits the exact rented or purchased canister and holds it securely with your clothing and pack. An online search does not confirm compatibility or availability.</p><a href={holsterSearch} target="_blank" rel="noopener noreferrer sponsored">Search Amazon.ca for bear-spray holsters — affiliate link</a><p class="small">As an Amazon Associate we may earn from qualifying purchases. This is an equipment search, not a bear-spray stock, shipping or transport guarantee.</p></aside>
+    </section>
+
+    <section aria-labelledby="return-heading"><h2 id="return-heading">Return, disposal and accidental exposure</h2><p>Return a rental according to the provider’s instructions, including after use. For a purchased can, arrange an accepted hazardous-waste hand-in before departure. Do not leave it in a hotel room, abandon it at a trailhead, puncture or crush it, or put it in ordinary waste or recycling.</p><p>The <a href={wildlifeSources.disposal}>Banff Transfer Site</a> at 160 Hawk Avenue accepts household hazardous waste. Before taking a bear-spray canister there, call Town Operations at <a href="tel:+14037621240">403-762-1240</a> to confirm the canister, visitor drop-off terms and current hours. If returning through Calgary, see <a href={wildlifeSources.disposalCalgary}>the City’s specific bear-spray disposal instructions</a> and confirm the appropriate location before travelling.</p><p>For accidental exposure, follow the canister’s first-aid label and obtain poison advice at <a href="tel:+18447647669">1-844-764-7669 (POISON-X)</a>. Call <a href="tel:911">911</a> for an emergency. Do not assume exposure is harmless or rely on a promised recovery time. <a href={wildlifeSources.poison}>Health Canada’s poison-centre contact information</a>.</p></section>
+
+    <section aria-labelledby="faq-heading"><h2 id="faq-heading">Bear-spray questions</h2>{bearSprayFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <aside class="next"><h2>Prepare the whole outing</h2><p><a href="/wildlife-safety">Encounter responses and reporting</a> · <a href="/wildlife-calendar">Seasonal preparation</a> · <a href="/car-free-banff">Car-free trip logistics</a> · <a href="/winter">Winter planning</a> · <a href="/trails">Trail planning</a></p><p>Rules and provider terms can change after the review date. Confirm transport and equipment arrangements directly; no booking or reservation is made by this page.</p></aside>
   </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1530210124550-912dc1381cb8?w=1600&q=80" alt="Bear in the wilderness of the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Safety Guide</span>
-      <h1>Bear Spray Guide</h1>
-      <p>What it is, how to use it, and where to buy or rent bear spray in Banff National Park.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-
-      <!-- Quick Answer -->
-      <div class="quick-answer">
-        <h2>Do I Need Bear Spray?</h2>
-        <p class="answer-big">Yes. Parks Canada strongly recommends it for all hikes.</p>
-        <p>Banff is home to both grizzly and black bears. Bear spray is 92% effective at stopping aggressive bear charges. Carry it in a hip holster — not buried in your backpack.</p>
-      </div>
-
-      <!-- How to Use -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>How to Use Bear Spray</h2>
-        <p>Follow these steps if a bear charges. Practice removing the safety clip before your hike.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <h3>Remove Safety Clip</h3>
-          <p>Pull the orange safety clip off the trigger. Practice this beforehand so you can do it quickly under stress. The clip prevents accidental discharge.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <h3>Hold with Both Hands</h3>
-          <p>Grip the canister firmly with both hands, arms extended in front of you. Keep your thumb on the trigger. Do NOT extend just one arm — you need stability.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <h3>Aim Slightly Below Face</h3>
-          <p>Aim slightly downward from the bear's face level. The spray will billow upward into a cloud. Account for wind direction — spray downwind if possible.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <h3>Spray at 5-10 Metres</h3>
-          <p>Wait until the bear is within <strong>5-10 metres</strong> (15-30 feet). Spray in short <strong>1-2 second bursts</strong>, not one continuous stream. Create a wall of spray between you and the bear.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-number">5</div>
-          <h3>Back Away Slowly</h3>
-          <p>After spraying, back away slowly while facing the bear. <strong>Do NOT run</strong> — running triggers a chase response. Keep spraying if the bear continues to approach. Leave the area immediately.</p>
-        </div>
-      </div>
-
-      <!-- Important Tips -->
-      <div class="tips-banner">
-        <h3>⚠️ Critical Tips</h3>
-        <div class="tips-grid">
-          <div class="tip-item">
-            <strong>Carry it on your hip, not in your pack</strong>
-            <p>You have seconds to react. A hip holster lets you draw and deploy in 3-5 seconds. Digging through a backpack takes 30+ seconds — too slow.</p>
-          </div>
-          <div class="tip-item">
-            <strong>Bear spray ≠ bug spray</strong>
-            <p>Never apply bear spray to your body, tent, or gear as a repellent. The residue actually ATTRACTS bears. It's a spray weapon, not a deterrent cream.</p>
-          </div>
-          <div class="tip-item">
-            <strong>Check the expiry date</strong>
-            <p>Bear spray expires after 3-4 years. Expired spray loses pressure and may not reach the proper 5-10m range. Check before every trip.</p>
-          </div>
-          <div class="tip-item">
-            <strong>Wind matters</strong>
-            <p>If wind is blowing toward you, move to get the wind at your back if possible. Getting sprayed yourself is painful (burning eyes, difficulty breathing) but not dangerous.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Where to Buy/Rent -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Where to Buy Bear Spray</h2>
-        <p>Purchase a canister for $35-50. Best if hiking 3+ days.</p>
-      </div>
-
-      <div class="location-grid">
-        <div class="location-card">
-          <h3>🏬 Canadian Tire — Canmore</h3>
-          <p>Largest selection and best prices. $35-45 per canister. On the highway in Canmore — easy stop on the way from Calgary. Also sells holsters.</p>
-        </div>
-        <div class="location-card">
-          <h3>🏔️ Atmosphere — Canmore</h3>
-          <p>Outdoor gear store with bear spray ($40-50) and holsters. Knowledgeable staff can demo proper use. Located on Main Street.</p>
-        </div>
-        <div class="location-card">
-          <h3>🛒 Banff Trail Riders — Banff</h3>
-          <p>Bear spray and holsters available. Located on Banff Ave. Staff can explain how to use it. $40-50.</p>
-        </div>
-        <div class="location-card">
-          <h3>⛰️ Lake Louise Village Shops</h3>
-          <p>Several shops in Lake Louise village sell bear spray. Slightly higher prices ($45-50) but convenient if you forgot to buy in Banff or Canmore.</p>
-        </div>
-      </div>
-
-      <!-- Buy Online -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Buy Online Before You Go</h2>
-        <p>Driving in from Calgary or across Canada? Order ahead and skip the shops. Holsters, bells, and canisters ship anywhere and can fly.</p>
-      </div>
-
-      <div class="online-grid">
-        {onlineGear.map(item => (
-          <a href={amazonLink(item.term)} target="_blank" rel="noopener sponsored" class="online-card">
-            <div class="online-icon">{item.icon}</div>
-            <div class="online-body">
-              <h3>{item.name}</h3>
-              <p>{item.note}</p>
-              <span class="online-cta">Check price on Amazon &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-      <p class="affiliate-note">Heads up: bear spray is an aerosol and <strong>cannot be carried on or checked on flights</strong>. If you're flying in, rent locally or buy on arrival, and grab a holster and bells online beforehand. As an Amazon Associate we may earn from qualifying purchases.</p>
-
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Where to Rent Bear Spray</h2>
-        <p>Rent for $10-12/day. Perfect for short trips or if you don't want to buy.</p>
-      </div>
-
-      <div class="location-grid">
-        <div class="location-card rental">
-          <h3>🏪 Wilson Mountain Sports — Banff</h3>
-          <p><strong>$10/day</strong> including holster. Located on Banff Ave. Open 9 AM - 9 PM in summer. Includes brief safety demonstration. Deposit required.</p>
-        </div>
-        <div class="location-card rental">
-          <h3>🎒 Banff Adventures — Banff</h3>
-          <p><strong>$10/day</strong> with holster. Bear St location. Also rents hiking poles and day packs. Can bundle with other gear for a discount.</p>
-        </div>
-        <div class="location-card rental">
-          <h3>🏂 Ultimate Sports — Banff</h3>
-          <p><strong>$12/day</strong> including holster. Banff Ave near the bridge. Friendly staff will walk you through proper use.</p>
-        </div>
-        <div class="location-card rental">
-          <h3>🏕️ Castle Mountain Chalets</h3>
-          <p><strong>$10/day</strong> for guests. Located between Banff and Lake Louise. Convenient if staying in the area. Ask at front desk.</p>
-        </div>
-      </div>
-
-      <!-- Buy vs Rent -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Buy vs Rent?</h2>
-      </div>
-
-      <div class="compare-cards">
-        <div class="compare-card">
-          <h3>Buy ($35-50)</h3>
-          <ul>
-            <li>Best if hiking 3+ days</li>
-            <li>Keep it for future trips (lasts 3-4 years)</li>
-            <li>Peace of mind knowing it's new and full</li>
-            <li>Can practice with a cheap "practice canister" ($10)</li>
-          </ul>
-          <p class="compare-verdict">✅ Best for: multi-day trips, repeat visitors</p>
-        </div>
-        <div class="compare-card">
-          <h3>Rent ($10-12/day)</h3>
-          <ul>
-            <li>Best for 1-2 day hikes</li>
-            <li>No hassle with flying home (bear spray can't go on planes)</li>
-            <li>Staff demo proper use</li>
-            <li>Return when done — no waste</li>
-          </ul>
-          <p class="compare-verdict">✅ Best for: short trips, first-time visitors</p>
-        </div>
-      </div>
-
-      <!-- Bear Safety Beyond Spray -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Bear Safety Beyond Spray</h2>
-        <p>Bear spray is your last resort. Prevention is your first line of defense.</p>
-      </div>
-
-      <div class="safety-grid">
-        <div class="safety-item">
-          <span class="safety-icon">📢</span>
-          <div>
-            <h3>Make Noise</h3>
-            <p>Talk, clap, or call out "hey bear!" every few minutes, especially around blind corners, thick brush, and near streams. Bears will usually move away if they hear you coming.</p>
-          </div>
-        </div>
-        <div class="safety-item">
-          <span class="safety-icon">👥</span>
-          <div>
-            <h3>Hike in Groups</h3>
-            <p>Groups of 4+ are almost never involved in bear attacks. Stay together on the trail. Bears are intimidated by larger groups.</p>
-          </div>
-        </div>
-        <div class="safety-item">
-          <span class="safety-icon">🍎</span>
-          <div>
-            <h3>Store Food Properly</h3>
-            <p>Never leave food, coolers, or scented items unattended. Use bear-proof bins at campsites. Cook and eat at least 100m from your tent.</p>
-          </div>
-        </div>
-        <div class="safety-item">
-          <span class="safety-icon">🐾</span>
-          <div>
-            <h3>Watch for Signs</h3>
-            <p>Fresh bear scat, tracks, torn-up logs, digging — all signs bears are in the area. Be extra alert and make more noise. Check Parks Canada trail reports for recent bear sightings.</p>
-          </div>
-        </div>
-        <div class="safety-item">
-          <span class="safety-icon">🐕</span>
-          <div>
-            <h3>Leash Your Dog</h3>
-            <p>Off-leash dogs can provoke a bear and lead it back to you. Dogs must be leashed at all times in Banff National Park (max 2m leash).</p>
-          </div>
-        </div>
-        <div class="safety-item">
-          <span class="safety-icon">⏰</span>
-          <div>
-            <h3>Avoid Dawn/Dusk</h3>
-            <p>Bears are most active at dawn and dusk. Start hikes after full sunrise and return well before sunset, especially in bear-heavy areas like Moraine Lake and Lake Louise.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>Do I need bear spray in Banff?</summary>
-          <p>Yes — Parks Canada strongly recommends bear spray for all hikes. Banff has grizzly and black bears. Bear spray is 92% effective at stopping charges. Carry it in a hip holster, not your backpack.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Where can I buy bear spray in Banff?</summary>
-          <p>Canadian Tire in Canmore ($35-45), Atmosphere in Canmore, outdoor shops on Banff Ave ($40-50), and Lake Louise village shops. Canmore has the best prices. Buy a holster too.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Can I rent bear spray in Banff?</summary>
-          <p>Yes — Wilson Mountain Sports ($10/day), Banff Adventures ($10/day), Ultimate Sports ($12/day), and Castle Mountain Chalets ($10/day for guests). Includes holster and a brief safety demo.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Can I fly with bear spray?</summary>
-          <p>No. Bear spray is prohibited on all commercial flights — both carry-on and checked luggage. If you bought a canister, either give it away, return it to a rental shop, or properly dispose of it before flying home. Do NOT put it in your luggage.</p>
-        </details>
-        <details class="faq-item">
-          <summary>What if I get bear spray on myself?</summary>
-          <p>It's painful — intense burning in eyes, skin, and lungs — but not dangerous. Flush eyes with water for 15-20 minutes. Remove contaminated clothing. Symptoms subside within 30-45 minutes. Do not rub your eyes.</p>
-        </details>
-      </div>
-
-      <WhatsNext steps={[
-        { icon: '🗺️', title: 'Plan Your Hike', description: 'Browse 81 trails with difficulty ratings, GPS data, and real-time conditions.', href: '/trail-map', label: 'Open Trail Map' },
-        { icon: '📋', title: 'Build Your Itinerary', description: 'Day-by-day trip planner with booking links for tours and hotels.', href: '/trip-builder', label: 'Start Planning' },
-        { icon: '🐻', title: 'Wildlife Tracker', description: 'See recent bear, elk, and moose sightings across the park.', href: '/wildlife-tracker', label: 'View Sightings' },
-      ]} />
-    </div>
-  </section>
 </BaseLayout>
 
-<style>
-  .quick-answer { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; text-align: center; }
-  .quick-answer h2 { color: var(--color-white); margin-bottom: 1rem; }
-  .answer-big { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
-  .quick-answer p { font-size: 0.95rem; max-width: 700px; margin: 0 auto; line-height: 1.6; }
-
-  .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
-  .step-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); text-align: center; }
-  .step-number { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background: var(--color-primary); color: var(--color-white); font-weight: 800; font-size: 1.1rem; border-radius: 50%; margin-bottom: 0.75rem; }
-  .step-card h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
-  .step-card p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .tips-banner { background: #fef3cd; border: 2px solid #f0c040; border-radius: var(--radius); padding: 2rem; margin-top: 2rem; }
-  .tips-banner h3 { font-size: 1.15rem; margin-bottom: 1rem; }
-  .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .tips-grid .tip-item strong { display: block; font-size: 0.9rem; margin-bottom: 0.25rem; }
-  .tips-grid .tip-item p { font-size: 0.82rem; color: #5a5a5a; line-height: 1.5; }
-
-  .location-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-  .location-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .location-card.rental { border-left: 4px solid var(--color-accent); }
-  .location-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
-  .location-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .online-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-  .online-card { display: flex; gap: 1rem; align-items: flex-start; background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); border-left: 4px solid #ff9900; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-  .online-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-  .online-icon { font-size: 1.75rem; flex-shrink: 0; }
-  .online-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
-  .online-card p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.6rem; }
-  .online-cta { font-size: 0.85rem; font-weight: 700; color: #b45309; }
-  .affiliate-note { font-size: 0.78rem; color: var(--color-text-light); line-height: 1.5; margin-top: 1rem; font-style: italic; }
-
-  .compare-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .compare-card { background: var(--color-white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
-  .compare-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
-  .compare-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
-  .compare-card li { font-size: 0.85rem; color: var(--color-text-light); padding-left: 1.2rem; position: relative; }
-  .compare-card li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
-  .compare-verdict { font-size: 0.85rem; font-weight: 600; color: var(--color-primary); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--color-bg-alt); }
-
-  .safety-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .safety-item { display: flex; gap: 1rem; align-items: flex-start; background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
-  .safety-icon { font-size: 1.5rem; flex-shrink: 0; }
-  .safety-item h3 { font-size: 0.95rem; margin-bottom: 0.25rem; }
-  .safety-item p { font-size: 0.82rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
-  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
-
-  @media (max-width: 768px) {
-    .steps-grid { grid-template-columns: 1fr; }
-    .tips-grid { grid-template-columns: 1fr; }
-    .location-grid { grid-template-columns: 1fr; }
-    .online-grid { grid-template-columns: 1fr; }
-    .compare-cards { grid-template-columns: 1fr; }
-    .safety-grid { grid-template-columns: 1fr; }
+<script>
+  import { getBearSprayTravelAdvice } from '../data/wildlifeSafety';
+  function initBearSprayPlanner() {
+    const form = document.querySelector<HTMLFormElement>('#spray-planner');
+    const transport = document.querySelector<HTMLSelectElement>('#spray-transport');
+    const arrangement = document.querySelector<HTMLSelectElement>('#spray-arrangement');
+    const title = document.querySelector<HTMLElement>('#spray-result-title');
+    const travel = document.querySelector<HTMLElement>('#spray-result-travel');
+    const preparation = document.querySelector<HTMLElement>('#spray-result-preparation');
+    const source = document.querySelector<HTMLAnchorElement>('#spray-result-source');
+    if (!form || !transport || !arrangement || !title || !travel || !preparation || !source || form.dataset.ready) return;
+    form.dataset.ready = 'true';
+    const render = () => {
+      const advice = getBearSprayTravelAdvice(transport.value, arrangement.value);
+      title.textContent = advice?.title ?? 'Choose transport and an equipment arrangement';
+      travel.textContent = advice?.text ?? 'The complete transport and provider guidance remains below.';
+      preparation.textContent = advice?.preparation ?? '';
+      source.hidden = !advice;
+      if (advice) source.href = advice.source;
+      else source.removeAttribute('href');
+    };
+    form.addEventListener('submit', event => event.preventDefault());
+    form.addEventListener('change', render);
+    form.addEventListener('reset', event => { event.preventDefault(); transport.value = 'air'; arrangement.value = 'unsure'; render(); });
+    render();
+    form.hidden = false;
   }
+  initBearSprayPlanner();
+  document.addEventListener('astro:page-load', initBearSprayPlanner);
+</script>
+
+<style>
+  [hidden]{display:none!important}.spray-hero{background:var(--color-primary);color:white;padding:3rem 0}.spray-hero h1,.spray-hero p{color:white;max-width:820px}.review{font-size:.9rem;opacity:.9}.spray-content{max-width:1080px;padding:2rem 1.5rem 3rem}.spray-content section{margin-bottom:2.5rem}.spray-content a{text-decoration:underline;text-underline-offset:.15em}.spray-content li{margin:.7rem 0}.transport-grid,.provider-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1rem;margin:1.5rem 0}.card{padding:1.4rem;background:white;border:1px solid #d8d8ce;border-top:4px solid var(--color-accent);border-radius:12px}.location{font-weight:700}.planner{display:flex;flex-wrap:wrap;align-items:end;gap:1rem;padding:1.5rem;background:var(--color-bg-alt);border-radius:12px}.planner>div:not(.planner-result){flex:1 1 250px}.planner label{display:block;font-weight:700;margin-bottom:.4rem}.planner select{font:inherit;min-height:46px;padding:.5rem;border:1px solid #73776e;border-radius:5px;width:100%;max-width:100%;background:white}.planner-result{flex-basis:100%;border-top:1px solid #b9bbae;padding-top:1.25rem}.gear,.next{padding:1.5rem;background:var(--color-bg-alt);border-radius:12px}.small{font-size:.9rem;margin-top:.7rem}.spray-content details{border-bottom:1px solid #d8d8ce;padding:1rem}.spray-content summary{font-weight:700;cursor:pointer}@media print{.planner,.gear{display:none}.card{break-inside:avoid}.spray-hero{background:white;color:black;padding:1rem 0}.spray-hero h1,.spray-hero p{color:black}}
 </style>

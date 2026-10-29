@@ -1,0 +1,8 @@
+---
+import photos from '../data/wildlifePhotos.json';
+interface Props { id:string; eager?:boolean; }
+const { id, eager=false }=Astro.props;
+const photo=photos.find(p=>p.id===id);
+---
+{photo && <figure class="wildlife-photo"><img src={photo.src} width={photo.width} height={photo.height} alt={`${photo.name} — historical species illustration`} loading={eager?'eager':'lazy'} /><figcaption><a href={photo.source}>{photo.creator}</a> · <a href={photo.licenseUrl}>{photo.license}</a> · historical illustration ({photo.observationYear}). Unchanged image.</figcaption></figure>}
+<style>.wildlife-photo{margin:0;background:#eaf0e9;border-radius:12px;overflow:hidden}.wildlife-photo img{display:block;width:100%;height:260px;object-fit:contain}.wildlife-photo figcaption{padding:.6rem .8rem;font-size:.74rem;line-height:1.5;color:#364b3d}.wildlife-photo a{text-decoration:underline}</style>
