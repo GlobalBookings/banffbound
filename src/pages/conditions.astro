@@ -1,466 +1,61 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-
-/* ── Import live data with fallbacks ─────────────── */
-let seasonData: any = { season: 'spring', month: '', seasonalHighlights: [], activeActivities: [], upcomingEvents: [], updatedAt: '' };
-try { const m = await import('../data/live/season.json'); seasonData = m.default || m; } catch { /* use defaults */ }
-
-let weatherData: any = { banff: { current: { temp: null, condition: 'Unknown', icon: '🌡️', humidity: null, wind: '' }, forecast: [] }, lakeLouise: { current: { temp: null, condition: 'Unknown', icon: '🌡️', humidity: null, wind: '' }, forecast: [] }, updatedAt: '' };
-try { const m = await import('../data/live/weather.json'); weatherData = m.default || m; } catch { /* use defaults */ }
-
-let trailData: any = { trails: [], advisories: [], areas: [], summary: { total: 0, open: 0, caution: 0, closed: 0 }, fireDanger: null, updatedAt: '' };
-try { const m = await import('../data/live/trail-conditions.json'); trailData = m.default || m; } catch { /* use defaults */ }
-
-let roadData: any = { highways: [], source: 'https://511.alberta.ca', updatedAt: '' };
-try { const m = await import('../data/live/roads.json'); roadData = m.default || m; } catch { /* use defaults */ }
-
-let snowData: any = { resorts: [], updatedAt: '' };
-try { const m = await import('../data/live/snow.json'); snowData = m.default || m; } catch { /* use defaults */ }
-
-/* ── Helpers ─────────────────────────────────────── */
-const seasonIcons: Record<string, string> = { spring: '🌱', summer: '☀️', fall: '🍂', winter: '❄️' };
-const seasonIcon = seasonIcons[seasonData.season] || '🏔️';
-
-const showSnow = ['winter', 'spring'].includes(seasonData.season);
-
-function formatDate(iso: string) {
-  if (!iso) return 'N/A';
-  try {
-    return new Date(iso).toLocaleString('en-CA', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Edmonton' });
-  } catch { return iso; }
-}
-
-function roadStatusColor(status: string) {
-  const s = (status || '').toLowerCase();
-  if (s.includes('open') || s.includes('good') || s.includes('clear')) return 'green';
-  if (s.includes('closed') || s.includes('restrict')) return 'red';
-  return 'yellow';
-}
-
-function trailStatusColor(status: string) {
-  const s = (status || '').toLowerCase();
-  if (s === 'open') return 'green';
-  if (s === 'closed') return 'red';
-  return 'yellow';
-}
-
-function fireDangerColor(level: string) {
-  const l = (level || '').toLowerCase();
-  if (l === 'low') return 'green';
-  if (l === 'moderate') return 'yellow';
-  if (l === 'high' || l === 'very high' || l === 'extreme') return 'red';
-  return 'yellow';
-}
-
-/* ── FAQPage Schema ──────────────────────────────── */
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What are the current trail conditions in Banff National Park?',
-      acceptedAnswer: { '@type': 'Answer', text: trailData.summary.total > 0 ? `There are ${trailData.summary.total} trails being tracked: ${trailData.summary.open} open, ${trailData.summary.caution} with caution advisories, and ${trailData.summary.closed} closed. Fire danger is currently ${trailData.fireDanger || 'unknown'}.` : 'Trail conditions are updated regularly. Visit Parks Canada or check this page before heading out.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Are the roads to Banff open right now?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Road conditions for the Trans-Canada Highway, Icefields Parkway, and Bow Valley Parkway are updated regularly. Check 511.alberta.ca for real-time status.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the current weather in Banff?',
-      acceptedAnswer: { '@type': 'Answer', text: weatherData.banff?.current?.temp != null ? `Current temperature in Banff is ${weatherData.banff.current.temp}°C with ${weatherData.banff.current.condition} conditions.` : 'Visit weather.gc.ca for the latest Banff weather forecast.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What season is it in Banff right now?',
-      acceptedAnswer: { '@type': 'Answer', text: `It is currently ${seasonData.season} (${seasonData.month}) in Banff National Park. ${seasonData.seasonalHighlights?.[0] || ''}` },
-    },
-  ],
-};
+import { dataFreshness } from '../utils/dataFreshness';
+let weatherData: any = {}, trailData: any = {}, roadData: any = {}, snowData: any = {};
+try { const m = await import('../data/live/weather.json'); weatherData = m.default || m; } catch { /* unavailable */ }
+try { const m = await import('../data/live/trail-conditions.json'); trailData = m.default || m; } catch { /* unavailable */ }
+try { const m = await import('../data/live/roads.json'); roadData = m.default || m; } catch { /* unavailable */ }
+try { const m = await import('../data/live/snow.json'); snowData = m.default || m; } catch { /* unavailable */ }
+const weather = dataFreshness(weatherData.updatedAt, 6);
+const trails = dataFreshness(trailData.updatedAt, 24);
+const roads = dataFreshness(roadData.updatedAt, 6);
+const snow = dataFreshness(snowData.updatedAt, 24);
+const showWeather = weather.status === 'fresh' && !weatherData.error;
+const summary = trailData.summary;
+const validSummary = summary && ['total','open','caution','closed'].every(key => Number.isInteger(summary[key]) && summary[key] >= 0) && summary.total > 0 && summary.open + summary.caution + summary.closed <= summary.total;
+const trailReports = (trailData.areas || []).flatMap((area: any) => area.trails || []);
+const trailReportsRecent = trailReports.length > 0 && trailReports.every((trail: any) => dataFreshness(trail.lastUpdated,24).status === 'fresh');
+const showTrails = trails.status === 'fresh' && !trailData.error && validSummary;
+const showRoads = roads.status === 'fresh' && !roadData.error && Array.isArray(roadData.highways) && roadData.highways.length > 0;
+const showSnow = snow.status === 'fresh' && !snowData.error && Array.isArray(snowData.resorts) && snowData.resorts.length > 0;
+const trailReport = 'https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions';
+function statusColor(status: string) { const s = (status || '').toLowerCase(); return s.includes('closed') || s.includes('restrict') ? 'red' : s === 'open' || s.includes('bare dry') || s.includes('clear') ? 'green' : 'yellow'; }
+const faqs = [
+  { question:'Where should I check current Banff trail conditions?', answer:'Check the Parks Canada trail report and current bulletins before choosing a route. Our local trail snapshot is only displayed within 24 hours of its retrieval time; missing or older data is unavailable, not a count of zero open trails.' },
+  { question:'Where can I check road conditions around Banff?', answer:'Use Alberta 511 for Alberta roads and DriveBC for British Columbia. Read the full route’s current closures and advisories before departure; a dated local snapshot is not a live road report.' },
+  { question:'Is this dashboard a live weather feed?', answer:'No. It displays dated snapshots when available. Weather and road snapshots expire after 6 hours; trail and snow snapshots expire after 24 hours. Use the linked official reports for current information.' },
+];
 ---
-
-<BaseLayout title="Current Conditions" description="Live conditions dashboard for Banff National Park — weather, trail status, road conditions, snow reports, and park advisories updated regularly.">
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Current Conditions' }]} />
-  </div>
-
-  <div class="page-hero" style="min-height: 280px; height: 30vh;">
-    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1400&q=80" alt="Banff National Park mountain panorama" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Live Dashboard</span>
-      <h1>Current Conditions</h1>
-      <p>Weather, trails, roads & snow — everything you need before heading out</p>
-    </div>
-  </div>
-
-  <!-- ═══ Current Season Banner ═══ -->
-  <section class="conditions-season-banner">
-    <div class="container">
-      <div class="season-banner-inner">
-        <div class="season-banner-header">
-          <span class="season-icon-lg">{seasonIcon}</span>
-          <div>
-            <h2 class="season-title">{seasonData.season.charAt(0).toUpperCase() + seasonData.season.slice(1)} in Banff</h2>
-            <span class="season-month">{seasonData.month} 2026</span>
-          </div>
-        </div>
-        {seasonData.seasonalHighlights.length > 0 && (
-          <div class="season-highlights">
-            <h3>What's Happening Now</h3>
-            <ul>
-              {seasonData.seasonalHighlights.slice(0, 4).map((h: string) => (
-                <li>{h}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {seasonData.activeActivities.length > 0 && (
-          <div class="season-activities">
-            {seasonData.activeActivities.slice(0, 6).map((a: string) => (
-              <span class="activity-tag">{a}</span>
-            ))}
-          </div>
-        )}
-        <p class="conditions-updated">Last updated: {formatDate(seasonData.updatedAt)}</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ Park Advisories ═══ -->
-  {trailData.advisories && trailData.advisories.length > 0 && (
-    <section class="conditions-advisories">
-      <div class="container">
-        <div class="advisory-banner">
-          <span class="advisory-icon">⚠️</span>
-          <div>
-            <h3>Park Advisories</h3>
-            <ul class="advisory-list">
-              {trailData.advisories.map((a: any) => (
-                <li>{typeof a === 'string' ? a : a.message || a.title || JSON.stringify(a)}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- ═══ Weather Overview ═══ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>🌤️ Weather Overview</h2>
-        <p>Current conditions and 3-day forecast</p>
-      </div>
-
-      {weatherData.error ? (
-        <div class="conditions-fallback">
-          <p>Weather data is temporarily unavailable.</p>
-          <a href="https://weather.gc.ca/city/pages/ab-49_metric_e.html" target="_blank" rel="noopener" class="btn btn-primary">
-            Check weather.gc.ca →
-          </a>
-        </div>
-      ) : (
-        <div class="weather-locations">
-          {/* Banff */}
-          <div class="weather-location-card">
-            <h3>Banff Town</h3>
-            <div class="weather-current">
-              <span class="weather-temp-lg">
-                {weatherData.banff?.current?.temp != null ? `${weatherData.banff.current.temp}°C` : '—'}
-              </span>
-              <div>
-                <span class="weather-icon-lg">{weatherData.banff?.current?.icon || '🌡️'}</span>
-                <span class="weather-condition">{weatherData.banff?.current?.condition || 'Unknown'}</span>
-                {weatherData.banff?.current?.humidity != null && <span class="weather-detail">Humidity: {weatherData.banff.current.humidity}%</span>}
-                {weatherData.banff?.current?.wind && <span class="weather-detail">Wind: {weatherData.banff.current.wind}</span>}
-              </div>
-            </div>
-            {weatherData.banff?.forecast?.length > 0 && (
-              <div class="weather-forecast-row">
-                {weatherData.banff.forecast.slice(0, 3).map((d: any) => (
-                  <div class="forecast-day">
-                    <span class="forecast-label">{d.day || d.date || ''}</span>
-                    <span class="forecast-icon">{d.icon || '🌡️'}</span>
-                    <span class="forecast-temp">{d.high != null ? `${d.high}°` : '—'} / {d.low != null ? `${d.low}°` : '—'}</span>
-                    <span class="forecast-cond">{d.condition || ''}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Lake Louise */}
-          <div class="weather-location-card">
-            <h3>Lake Louise</h3>
-            <div class="weather-current">
-              <span class="weather-temp-lg">
-                {weatherData.lakeLouise?.current?.temp != null ? `${weatherData.lakeLouise.current.temp}°C` : '—'}
-              </span>
-              <div>
-                <span class="weather-icon-lg">{weatherData.lakeLouise?.current?.icon || '🌡️'}</span>
-                <span class="weather-condition">{weatherData.lakeLouise?.current?.condition || 'Unknown'}</span>
-                {weatherData.lakeLouise?.current?.humidity != null && <span class="weather-detail">Humidity: {weatherData.lakeLouise.current.humidity}%</span>}
-                {weatherData.lakeLouise?.current?.wind && <span class="weather-detail">Wind: {weatherData.lakeLouise.current.wind}</span>}
-              </div>
-            </div>
-            {weatherData.lakeLouise?.forecast?.length > 0 && (
-              <div class="weather-forecast-row">
-                {weatherData.lakeLouise.forecast.slice(0, 3).map((d: any) => (
-                  <div class="forecast-day">
-                    <span class="forecast-label">{d.day || d.date || ''}</span>
-                    <span class="forecast-icon">{d.icon || '🌡️'}</span>
-                    <span class="forecast-temp">{d.high != null ? `${d.high}°` : '—'} / {d.low != null ? `${d.low}°` : '—'}</span>
-                    <span class="forecast-cond">{d.condition || ''}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      <div class="conditions-links">
-        <a href="/what-to-do-today" class="btn btn-primary">🎯 What to Do Today →</a>
-        <a href="/weather-webcams" class="btn btn-outline">📷 Live Webcams & Full Forecast →</a>
-        <a href="https://weather.gc.ca/city/pages/ab-49_metric_e.html" target="_blank" rel="noopener" class="conditions-ext-link">weather.gc.ca ↗</a>
-      </div>
-      <p class="conditions-updated">Last updated: {formatDate(weatherData.updatedAt)}</p>
-    </div>
-  </section>
-
-  <!-- ═══ Trail Conditions ═══ -->
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <div class="section-header">
-        <h2>🥾 Trail Conditions</h2>
-        <p>Current status of {trailData.summary.total || ''} trails in Banff National Park</p>
-      </div>
-
-      {trailData.summary.total > 0 && (
-        <div class="trail-summary-bar">
-          {trailData.fireDanger && (
-            <div class="summary-item">
-              <span class="summary-label">🔥 Fire Danger</span>
-              <span class={`status-badge status-${fireDangerColor(trailData.fireDanger)}`}>{trailData.fireDanger}</span>
-            </div>
-          )}
-          <div class="summary-item">
-            <span class="summary-label">Open</span>
-            <span class="status-badge status-green">{trailData.summary.open}</span>
-          </div>
-          <div class="summary-item">
-            <span class="summary-label">Caution</span>
-            <span class="status-badge status-yellow">{trailData.summary.caution}</span>
-          </div>
-          <div class="summary-item">
-            <span class="summary-label">Closed</span>
-            <span class="status-badge status-red">{trailData.summary.closed}</span>
-          </div>
-        </div>
-      )}
-
-      {trailData.areas && trailData.areas.length > 0 ? (
-        <div class="trail-areas">
-          {trailData.areas.map((area: any) => (
-            <details class="trail-area-group" open={area.area === 'Banff Area'}>
-              <summary class="area-header">
-                <h3>{area.area}</h3>
-                <span class="area-count">{area.trails.length} trails</span>
-              </summary>
-              <div class="trail-grid">
-                {area.trails.map((trail: any) => (
-                  <div class="trail-row">
-                    <span class="trail-name">
-                      {trail.name}
-                      {trail.difficulty && trail.difficulty !== 'unknown' && (
-                        <span class={`difficulty-tag difficulty-${trail.difficulty.toLowerCase()}`}>{trail.difficulty}</span>
-                      )}
-                    </span>
-                    <span class={`status-badge status-${trailStatusColor(trail.status)}`}>
-                      {trail.condition}
-                    </span>
-                    {trail.comment && <span class="trail-notes">{trail.comment}</span>}
-                  </div>
-                ))}
-              </div>
-            </details>
-          ))}
-        </div>
-      ) : (
-        <div class="conditions-fallback">
-          <p>Trail condition data is currently being refreshed. Check Parks Canada for the latest status.</p>
-          <a href="https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions" target="_blank" rel="noopener" class="btn btn-primary">
-            Parks Canada Trail Report →
-          </a>
-        </div>
-      )}
-
-      <p class="conditions-updated">
-        Last updated: {formatDate(trailData.updatedAt)}
-        &nbsp;·&nbsp;
-        <a href="https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions" target="_blank" rel="noopener">Source: Parks Canada</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══ Road Conditions ═══ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>🛣️ Road Conditions</h2>
-        <p>Highway status for getting to and around Banff</p>
-      </div>
-
-      {roadData.highways.length > 0 ? (
-        <div class="road-grid">
-          {roadData.highways.map((hwy: any) => (
-            <div class="road-card">
-              <div class="road-card-header">
-                <span class="road-number">Hwy {hwy.number}</span>
-                <span class={`status-badge status-${roadStatusColor(hwy.status)}`}>{hwy.status || 'Unknown'}</span>
-              </div>
-              <h3 class="road-name">{hwy.name}</h3>
-              {hwy.conditions && <p class="road-conditions">{hwy.conditions}</p>}
-              {hwy.advisory && <p class="road-advisory">⚠️ {hwy.advisory}</p>}
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div class="conditions-fallback">
-          <p>Road data is currently being refreshed.</p>
-        </div>
-      )}
-
-      <div class="conditions-links">
-        <a href={roadData.source || 'https://511.alberta.ca'} target="_blank" rel="noopener" class="btn btn-outline">
-          Check 511.alberta.ca for live updates →
-        </a>
-      </div>
-      <p class="conditions-updated">Last updated: {formatDate(roadData.updatedAt)}</p>
-    </div>
-  </section>
-
-  <!-- ═══ Snow Report ═══ -->
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <div class="section-header">
-        <h2>⛷️ Snow Report</h2>
-        <p>SkiBig3 resort conditions — Sunshine Village, Lake Louise, Mt. Norquay</p>
-      </div>
-
-      {showSnow ? (
-        snowData.resorts.length > 0 ? (
-          <div class="grid grid-3">
-            {snowData.resorts.map((resort: any) => (
-              <div class="snow-card card">
-                <div class="card-body">
-                  <h3>{resort.name}</h3>
-                  <span class={`status-badge status-${resort.status?.toLowerCase().includes('open') ? 'green' : 'yellow'}`}>
-                    {resort.status || 'Check resort website'}
-                  </span>
-                  <div class="snow-stats">
-                    <div class="snow-stat">
-                      <span class="snow-stat-label">Base Depth</span>
-                      <span class="snow-stat-value">{resort.baseDepth != null ? resort.baseDepth : '—'}</span>
-                    </div>
-                    <div class="snow-stat">
-                      <span class="snow-stat-label">New Snow (24h)</span>
-                      <span class="snow-stat-value">{resort.newSnow24h || '—'}</span>
-                    </div>
-                    <div class="snow-stat">
-                      <span class="snow-stat-label">New Snow (48h)</span>
-                      <span class="snow-stat-value">{resort.newSnow48h || '—'}</span>
-                    </div>
-                    <div class="snow-stat">
-                      <span class="snow-stat-label">Open Runs</span>
-                      <span class="snow-stat-value">{resort.openRuns != null ? `${resort.openRuns}/${resort.totalRuns || '?'}` : '—'}</span>
-                    </div>
-                    <div class="snow-stat">
-                      <span class="snow-stat-label">Open Lifts</span>
-                      <span class="snow-stat-value">{resort.openLifts != null ? `${resort.openLifts}/${resort.totalLifts || '?'}` : '—'}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div class="conditions-fallback">
-            <p>Snow data is currently being refreshed. Check resort websites for the latest reports.</p>
-            <a href="https://www.skibig3.com/conditions" target="_blank" rel="noopener" class="btn btn-primary">SkiBig3 Conditions →</a>
-          </div>
-        )
-      ) : (
-        <div class="conditions-fallback">
-          <p>🏔️ Ski season typically opens in November. Check back in fall for snow reports!</p>
-          <a href="/skiing" class="btn btn-outline">Plan Your Ski Trip →</a>
-        </div>
-      )}
-
-      <p class="conditions-updated">Last updated: {formatDate(snowData.updatedAt)}</p>
-    </div>
-  </section>
-
-  <!-- ═══ Quick Links ═══ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Planning Tools</h2>
-      </div>
-      <div class="grid grid-3">
-        <a href="/what-to-do-today" class="category-card card">
-          <div class="card-body" style="text-align: center; padding: 2rem;">
-            <span style="font-size: 2.5rem;">🎯</span>
-            <h3>What to Do Today</h3>
-            <p>Personalised activity suggestions based on today's weather</p>
-          </div>
-        </a>
-        <a href="/wildlife-tracker" class="category-card card">
-          <div class="card-body" style="text-align: center; padding: 2rem;">
-            <span style="font-size: 2.5rem;">🐻</span>
-            <h3>Wildlife Tracker</h3>
-            <p>Recent sightings of bears, elk, moose and more</p>
-          </div>
-        </a>
-        <a href="/trip-builder" class="category-card card">
-          <div class="card-body" style="text-align: center; padding: 2rem;">
-            <span style="font-size: 2.5rem;">📋</span>
-            <h3>Trip Builder</h3>
-            <p>Build your perfect day-by-day Banff itinerary</p>
-          </div>
-        </a>
-        <a href="/trail-map" class="category-card card">
-          <div class="card-body" style="text-align: center; padding: 2rem;">
-            <span style="font-size: 2.5rem;">🗺️</span>
-            <h3>Interactive Trail Map</h3>
-            <p>81 trails with GPS data and difficulty ratings</p>
-          </div>
-        </a>
-        <a href="/weather-webcams" class="category-card card">
-          <div class="card-body" style="text-align: center; padding: 2rem;">
-            <span style="font-size: 2.5rem;">📷</span>
-            <h3>Weather & Webcams</h3>
-            <p>Live camera views across Banff National Park</p>
-          </div>
-        </a>
-        <a href="/parking" class="category-card card">
-          <div class="card-body" style="text-align: center; padding: 2rem;">
-            <span style="font-size: 2.5rem;">🅿️</span>
-            <h3>Parking Predictor</h3>
-            <p>Know when lots fill at popular trailheads</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+<BaseLayout title="Banff Conditions — Weather, Trail & Road Report Links" description="Check official Banff weather, trail, road and ski reports. Dated local snapshots show only when recent; missing or stale reports are marked unavailable.">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'FAQPage', mainEntity:faqs.map(f => ({ '@type':'Question', name:f.question, acceptedAnswer:{ '@type':'Answer',text:f.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label:'Conditions' }]} /></div>
+  <div class="page-hero" style="min-height:280px;height:30vh"><img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1400&q=80" alt="Mountain panorama" class="page-hero-bg" loading="eager" fetchpriority="high" /><div class="page-hero-content"><span class="badge">Check before you head out</span><h1>Banff Conditions</h1><p>Official reports and dated snapshots for weather, trails, roads and skiing.</p></div></div>
+  <section class="conditions-season-banner"><div class="container"><div class="season-banner-inner"><h2 class="season-title">Use the latest report for your route</h2><p>Weather and road snapshots expire after 6 hours; trail and snow snapshots after 24 hours. Retrieval time does not guarantee every source observation is equally recent. Always check official closures and on-site signs.</p><div class="season-activities"><a class="activity-tag" href="https://parks.canada.ca/pn-np/ab/banff/bulletins" target="_blank" rel="noopener">Parks Canada bulletins ↗</a><a class="activity-tag" href="https://avalanche.ca/" target="_blank" rel="noopener">Avalanche forecast ↗</a><a class="activity-tag" href="/winter">Winter planning →</a></div></div></div></section>
+  <noscript><style>[data-snapshot-fresh] { display:none !important; } [data-fresh-until] [data-snapshot-unavailable][hidden] { display:block !important; }</style></noscript>
+  <section class="section"><div class="container" data-fresh-until={weather.expiresAt} data-snapshot-time={weather.updatedAt}><div class="section-header"><h2>Weather</h2><p>Banff and Lake Louise — dated local snapshot</p></div>
+    {showWeather && <div data-snapshot-fresh class="weather-locations">{[{key:'banff',name:'Banff Town'},{key:'lakeLouise',name:'Lake Louise'}].map(location => {const data = weatherData[location.key]; return <div class="weather-location-card"><h3>{location.name}</h3>{Number.isFinite(data?.current?.temp) ? <><div class="weather-current"><span class="weather-temp-lg">{data.current.temp}°C</span><div><span class="weather-condition">{data.current.condition || 'Condition unavailable'}</span>{Number.isFinite(data.current.humidity) && <span class="weather-detail">Humidity: {data.current.humidity}%</span>}{data.current.wind && <span class="weather-detail">Wind: {data.current.wind}</span>}</div></div>{Array.isArray(data.forecast) && data.forecast.length > 0 && <div class="weather-forecast-row">{data.forecast.slice(0,3).map((day:any) => <div class="forecast-day"><span class="forecast-label">{day.day || day.date}</span><span class="forecast-temp">{Number.isFinite(day.high) ? `${day.high}°` : 'Unavailable'} / {Number.isFinite(day.low) ? `${day.low}°` : 'Unavailable'}</span><span class="forecast-cond">{day.condition}</span></div>)}</div>}</> : <p>Weather unavailable for this location.</p>}</div>})}</div>}
+    <div data-snapshot-unavailable hidden={showWeather} class="conditions-fallback"><p><strong>Weather unavailable.</strong> The local snapshot is missing, failed or older than 6 hours. Check the official forecast for today's weather.</p></div>
+    <div class="conditions-links"><a href="https://weather.gc.ca/city/pages/ab-49_metric_e.html" target="_blank" rel="noopener" class="btn">Official Banff forecast ↗</a><a href="/weather-webcams" class="btn btn-outline">Weather & webcams →</a></div><p class="conditions-updated">Snapshot retrieved: {weather.label}</p>
+  </div></section>
+  <section class="section" style="background:var(--color-bg-alt)"><div class="container" data-fresh-until={trails.expiresAt} data-snapshot-time={trails.updatedAt}><div class="section-header"><h2>Trail conditions</h2><p>Read both the route report and current park bulletins.</p></div>
+    {showTrails && <div data-snapshot-fresh>{trailReportsRecent ? <div class="trail-summary-bar">{['open','caution','closed'].map(status => <div class="summary-item"><span class="summary-label">Reported {status}</span><span class={`status-badge status-${statusColor(status)}`}>{summary[status]}</span></div>)}</div> : <p>Aggregate status unavailable: some source report times are missing or older than 24 hours.</p>}{Array.isArray(trailData.areas) && <div class="trail-areas">{trailData.areas.map((area:any) => <details class="trail-area-group"><summary class="area-header"><h3>{area.area}</h3></summary><div class="trail-grid">{(area.trails || []).map((trail:any) => {const reported = dataFreshness(trail.lastUpdated,24);return <div class="trail-row" data-fresh-until={reported.expiresAt} data-snapshot-time={reported.updatedAt}><span class="trail-name">{trail.name}</span>{reported.status === 'fresh' && <div data-snapshot-fresh><span class={`status-badge status-${statusColor(trail.status)}`}>{trail.condition || trail.status || 'Unavailable'}</span>{trail.comment && <span class="trail-notes">{trail.comment}</span>}</div>}<span data-snapshot-unavailable hidden={reported.status === 'fresh'}>Status unavailable</span><span class="trail-notes">Source report time: {reported.label}</span></div>})}</div></details>)}</div>}</div>}
+    <div data-snapshot-unavailable hidden={showTrails} class="conditions-fallback"><p><strong>Trail status unavailable.</strong> The local snapshot is missing, failed or older than 24 hours. This does not mean that zero trails are open.</p></div><div class="conditions-links"><a href={trailReport} target="_blank" rel="noopener" class="btn">Parks Canada trail report ↗</a><a href="https://parks.canada.ca/pn-np/ab/banff/bulletins" target="_blank" rel="noopener" class="btn btn-outline">Closures and bulletins ↗</a></div><p class="conditions-updated">Snapshot retrieved: {trails.label}. Individual reports may be older.</p>
+  </div></section>
+  <section class="section"><div class="container" data-fresh-until={roads.expiresAt} data-snapshot-time={roads.updatedAt}><div class="section-header"><h2>Road conditions</h2><p>Conditions can change between retrieval and your drive.</p></div>
+    {showRoads && <div data-snapshot-fresh class="road-grid">{roadData.highways.map((highway:any) => {const reported = dataFreshness(highway.lastUpdated,6);return <div class="road-card" data-fresh-until={reported.expiresAt} data-snapshot-time={reported.updatedAt}><h3 class="road-name">{highway.name}</h3>{reported.status === 'fresh' && <div data-snapshot-fresh><span class={`status-badge status-${statusColor(highway.status)}`}>{highway.status || 'Unavailable'}</span>{highway.conditions && <p class="road-conditions">{highway.conditions}</p>}{highway.advisory && <p class="road-advisory">{highway.advisory}</p>}</div>}<p data-snapshot-unavailable hidden={reported.status === 'fresh'}>Status unavailable — check the official road report.</p><p class="conditions-updated">Source report time: {reported.label}</p></div>})}</div>}
+    <div data-snapshot-unavailable hidden={showRoads} class="conditions-fallback"><p><strong>Road status unavailable.</strong> The local snapshot is missing, failed or older than 6 hours. Do not infer that a route is open or clear.</p></div><div class="conditions-links"><a href="https://511.alberta.ca/" target="_blank" rel="noopener" class="btn">Alberta 511 ↗</a><a href="https://www.drivebc.ca/" target="_blank" rel="noopener" class="btn btn-outline">DriveBC ↗</a><a href="/blog/banff-winter-driving/" class="conditions-ext-link">Winter driving guide →</a></div><p class="conditions-updated">Snapshot retrieved: {roads.label}. Individual reports may be older.</p>
+  </div></section>
+  <section class="section" style="background:var(--color-bg-alt)"><div class="container" data-fresh-until={snow.expiresAt} data-snapshot-time={snow.updatedAt}><div class="section-header"><h2>Snow and resort reports</h2><p>Check the resort for open lifts, terrain and operating plans.</p></div>
+    {showSnow && <div data-snapshot-fresh class="grid grid-3">{snowData.resorts.map((resort:any) => <div class="snow-card card"><div class="card-body"><h3>{resort.name}</h3><p>{resort.status || 'Status unavailable'}</p><div class="snow-stats">{[{label:'Base depth',value:resort.baseDepth},{label:'New snow (24h)',value:resort.newSnow24h},{label:'Open runs',value:resort.openRuns},{label:'Open lifts',value:resort.openLifts}].map(stat => <div class="snow-stat"><span class="snow-stat-label">{stat.label}</span><span class="snow-stat-value">{stat.value != null && stat.value !== '' ? stat.value : 'Unavailable'}</span></div>)}</div></div></div>)}</div>}
+    <div data-snapshot-unavailable hidden={showSnow} class="conditions-fallback"><p><strong>Snow report unavailable.</strong> The local snapshot is missing, failed or older than 24 hours. It does not confirm whether any resort is open or closed.</p></div><div class="conditions-links"><a href="https://www.skibanff.com/" target="_blank" rel="noopener" class="conditions-ext-link">Sunshine official report ↗</a><a href="https://www.skilouise.com/" target="_blank" rel="noopener" class="conditions-ext-link">Lake Louise official report ↗</a><a href="https://banffnorquay.com/" target="_blank" rel="noopener" class="conditions-ext-link">Norquay official report ↗</a><a href="/ski-day-planner" class="btn btn-outline">Plan a ski day →</a></div><p class="conditions-updated">Snapshot retrieved: {snow.label}</p>
+  </div></section>
+  <section class="section"><div class="container faq-list"><h2>About these reports</h2>{faqs.map(f => <details><summary>{f.question}</summary><p>{f.answer}</p></details>)}<div class="conditions-links"><a href="/winter">Winter guides →</a><a href="/weather">Seasonal weather guide →</a><a href="/skiing">Skiing guide →</a><a href="/tools">All planning tools →</a></div></div></section>
 </BaseLayout>
-
+<script>
+  import { installSnapshotExpiry } from '../utils/dataFreshness';
+  installSnapshotExpiry();
+</script>
 <style>
   /* ── Season Banner ─────────────────────────────── */
   .conditions-season-banner {
@@ -895,4 +490,11 @@ const faqSchema = {
     .road-grid { grid-template-columns: 1fr; }
     .conditions-links { flex-direction: column; align-items: flex-start; }
   }
+</style>
+<style>
+  [data-fresh-until] [hidden] { display:none !important; }
+  .faq-list details { margin:1rem 0; padding:1rem; border:1px solid #d9ded6; border-radius:8px; }
+  .faq-list summary { font-weight:600; cursor:pointer; }.faq-list details p { margin-top:.7rem; }
+  .conditions-season-banner p { margin:1rem 0; max-width:850px; }
+  .conditions-updated { opacity:1; }
 </style>

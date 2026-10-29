@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { defaultSkiChoices, makeSkiDayPlan } from '../data/skiPlanning';
+import '../styles/skiPlanning.css';
+
+const plan = makeSkiDayPlan(defaultSkiChoices);
+const faqs = [
+  { question: 'How do I plan one ski day in Banff?', answer: 'Choose one resort, confirm its operations for your date, and make your ticket, rentals, lesson and transport fit together. Add time for equipment fitting and transfers, take an indoor break, and allow enough time for the return. This planner builds a suggested sequence; it does not provide live lift, snow or shuttle information.' },
+  { question: 'Which Banff ski resort should I choose for a first lesson?', answer: 'All three Banff resorts have first-time instruction. Our suggested starting point is Norquay for a lesson-focused day from Banff or Canmore, or Lake Louise if you are staying there. Sunshine is also an option with extra time for the base-to-village gondola. Confirm age group, package inclusions, availability and transport before deciding.' },
+  { question: 'Can I use this planner without a car?', answer: 'Yes. Select ski shuttle and check the actual operator timetable and eligible ticket or pass. A Canmore base or a transfer from Lake Louise to another resort may need an additional connection; the planner flags those cases instead of assuming a direct shuttle.' },
+  { question: 'Does this planner recommend ski runs or assess avalanche safety?', answer: 'No. It organises the logistics of a resort ski day. Terrain choices depend on your actual ability, current operations, conditions and resort rules. Obey closures and ask resort staff or an instructor for suitable open terrain. The planner does not plan backcountry or heli-ski routes.' },
+  { question: 'Can I save or share my ski day?', answer: 'Yes. Enable JavaScript to copy a link containing your planning selections, or print the generated plan. The readiness checklist is saved in this browser when local storage is available. Sharing a link shares the selections, not your checklist ticks or any bookings.' },
+];
+const checklist = ['Lesson or ticket booked for the correct date and ability', 'Rentals, helmet and collection instructions confirmed', 'Outbound transport and return connection checked', 'Current resort report, forecast and road conditions checked', 'Confirmation, map and contact details saved offline', 'Warm clothing, food, water and meeting point ready'];
+---
+
+<BaseLayout title="Banff Ski Day Planner: Choose a Resort, Lessons & Transport" description="Build a practical Banff ski day for your ability, base, group and transport. Get a personalised checklist and arrival plan for Sunshine, Lake Louise or Norquay." lastUpdated="2026-10-28">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Winter', href: '/winter' }, { label: 'Ski Day Planner' }]} /></div>
+  <section class="page-hero"><img src="/images/blog/sunshine-village-guide.webp" alt="Snowy ski resort terrain in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" /><div class="page-hero-content"><span class="badge">One mountain. A day that fits.</span><h1>Your Banff ski day</h1><p>Choose your starting point. We’ll help put the day in order.</p></div></section>
+  <div class="container ski-content">
+    <p class="ski-lead">First turns, family lessons or a full day exploring? Match your resort, arrival and return before you make bookings. These suggestions organise your day; they do not reserve anything or check live availability.</p>
+    <div class="ski-note"><p><strong>Plan around the real conditions.</strong> Timing below is a suggested allowance, not a bus or lift schedule. Check the resort’s latest operations, mountain weather and transport for your date. This planner does not choose safe terrain or assess avalanche conditions.</p></div>
+    <form id="ski-planner" class="ski-panel ski-no-print" hidden>
+      <h2 style="margin-top:0">Make it your day</h2>
+      <div class="ski-fields">
+        <label for="ski-ability">Your experience<select id="ski-ability" name="ability"><option value="first">First-ever ski or snowboard day</option><option value="beginner">Beginner / learning green runs</option><option value="intermediate">Confident intermediate</option><option value="advanced">Advanced resort skier or rider</option></select></label>
+        <label for="ski-base">Where you are staying<select id="ski-base" name="base"><option value="banff">Banff</option><option value="canmore">Canmore</option><option value="louise">Lake Louise</option></select></label>
+        <label for="ski-resort">Your resort<select id="ski-resort" name="resort"><option value="auto">Suggest a starting point</option><option value="norquay">Mt. Norquay</option><option value="louise">Lake Louise Ski Resort</option><option value="sunshine">Banff Sunshine Village</option></select></label>
+        <label for="ski-transport">Getting there<select id="ski-transport" name="transport"><option value="shuttle">Ski shuttle / confirmed transfer</option><option value="drive">Drive</option></select></label>
+        <label for="ski-group">Your group<select id="ski-group" name="group"><option value="adults">Solo / adults</option><option value="children">Family with children learning</option><option value="mixed">Mixed abilities / skiers &amp; non-skiers</option></select></label>
+      </div>
+      <p class="ski-small">Suggestions use your base and group to choose a logistical starting point. You can override the resort. Lesson availability and an instructor’s assessment still matter.</p>
+      <p id="ski-update-status" class="ski-status" role="status" aria-live="polite"></p>
+      <div class="ski-actions"><button id="share-ski-plan" class="btn" type="button">Copy a link to this day</button><button id="print-ski-plan" class="ski-action-secondary" type="button">Print my plan</button><button id="reset-ski-plan" class="ski-action-secondary" type="button">Reset choices</button></div>
+      <div id="ski-share-fallback" hidden><label for="ski-share-url">Select and copy your plan link<input id="ski-share-url" type="text" readonly /></label></div>
+      <p id="ski-share-status" class="ski-status" role="status" aria-live="polite"></p>
+    </form>
+    <noscript><p class="ski-note">Personalise, share and save with JavaScript enabled. Below is a complete example for an adult first-timer staying in Banff and planning to use a ski shuttle. The guide links and checklist remain usable.</p></noscript>
+
+    <section aria-labelledby="ski-result-heading">
+      <div class="ski-result-head"><div><p class="ski-eyebrow">Your suggested starting point</p><h2 id="ski-result-heading" style="margin-top:.4rem">{plan.resort.name}</h2></div><a href="/sunshine-vs-lake-louise-vs-norquay" class="ski-no-print">Compare all three resorts →</a></div>
+      <p id="ski-plan-reason">{plan.reason}</p>
+      <p id="ski-plan-selections" class="ski-small">First-ever day · Banff base · Ski shuttle / confirmed transfer · Solo / adults</p>
+      <div class="ski-note"><h3>Make the group plan work</h3><p id="ski-group-note">{plan.group}</p></div>
+      <ol class="ski-timeline" id="ski-day-timeline">{plan.timeline.map((step, i) => <li><span class="ski-step-number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><span class="ski-eyebrow">{step.when}</span><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>
+      <div class="ski-actions"><a id="ski-operator-link" class="btn" href={plan.resort.lessonUrl} target="_blank" rel="noopener">Check {plan.resort.name} lesson details ↗</a><a id="ski-transport-link" href={plan.resort.transportUrl} target="_blank" rel="noopener">Current resort transport information ↗</a><a id="ski-report-link" href={plan.resort.officialUrl} target="_blank" rel="noopener">Resort site &amp; current operations ↗</a></div>
+      <p class="ski-small">These links go directly to the resort; the suggested day is not a booking. For a first lesson, check whether the product includes rentals and limited learning-area access before buying extra tickets.</p>
+    </section>
+
+    <section class="ski-panel" aria-labelledby="ski-ready-heading"><h2 id="ski-ready-heading" style="margin-top:0">Ready to head out?</h2><p>This checklist applies to any resort day. Ticks save on this device when browser storage is available. Your shared link contains planning choices only.</p><ul class="ski-checklist" id="ski-ready-list">{checklist.map((item, i) => <li><label><input type="checkbox" data-check={i} /><span>{item}</span></label></li>)}</ul><p id="ski-ready-status" class="ski-status" role="status" aria-live="polite"></p><button class="ski-action-secondary ski-no-print" type="button" id="reset-ski-checklist" hidden>Reset checklist</button></section>
+
+    <h2>Before buying a pass, compare the complete day</h2>
+    <p>A beginner package can include access that a lesson-only product does not. Write down the total for instruction, the appropriate ticket, equipment, clothing, transport and food. Then compare like for like using current operator quotes. A multi-resort pass is useful only if its access, dates and terms fit the trip you will actually take.</p>
+    <div class="ski-cards"><article class="ski-card"><h3>Starting from zero?</h3><p>Learn what the first session involves, what to wear and how to book the right package.</p><a href="/learn-to-ski">First ski lesson guide →</a></article><article class="ski-card"><h3>Several ski days?</h3><p>Use a pass comparison as a starting point, then recheck current prices and any existing pass benefits.</p><a href="/ski-pass-calculator">Compare ski passes →</a></article><article class="ski-card"><h3>Choosing a base?</h3><p>Match the hotel to the morning transfer, room layout and rest-day plans.</p><a href="/winter-stays">Winter hotel finder →</a></article></div>
+    <h2>Leave room for a different kind of day</h2>
+    <p>Choose one main activity per day and keep a rest day in a longer trip. If the resort is closed or the weather makes the plan unsuitable, check indoor options in Banff or Canmore and confirm opening hours. For mixed groups, make individual bookings and a clear meeting plan; do not assume non-skiers can use the same lifts or tickets.</p>
+    <div class="ski-related"><a href="/winter">Find winter activities</a><a href="/towns">Explore nearby towns</a><a href="/car-free-banff">Plan a car-free stay</a><a href="/conditions">Conditions &amp; official reports</a></div>
+    <section class="ski-faq" aria-labelledby="ski-faq-heading"><h2 id="ski-faq-heading">Banff ski day questions</h2>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <section class="ski-sources"><h2>How these suggestions are built</h2><p>Reviewed October 28, 2026. Resort choice is a simple logistics suggestion based on the selected base and group, not a quality or safety ranking. Arrival buffers are our conservative estimates. Operator pages below support the check-in and transport details; current confirmations and operating rules take priority.</p><ul><li><a href="https://banffnorquay.com/snow-school/first-time-ski-snowboard/">Norquay first-time lesson inclusions and check-in</a> · <a href="https://banffnorquay.com/shuttle-service/">Norquay shuttle</a></li><li><a href="https://www.skilouise.com/ski-snowboard-lessons/adult-lessons/adult-group-lessons/">Lake Louise beginner packages and rental arrival guidance</a> · <a href="https://www.skilouise.com/getting-here/">Lake Louise transport</a></li><li><a href="https://www.skibanff.com/plan/first-time-visitors/first-timers-guide">Sunshine first-timer arrival and gondola guide</a> · <a href="https://www.skibanff.com/plan/getting-here/free-shuttle">Sunshine shuttle</a></li><li><a href="https://www.skibig3.com/ski/ski-shuttle/">SkiBig3 shuttle eligibility and service details</a></li></ul></section>
+  </div>
+</BaseLayout>
+
+<script>
+  import { defaultSkiChoices, makeSkiDayPlan, type SkiPlanChoices } from '../data/skiPlanning';
+  const form = document.querySelector<HTMLFormElement>('#ski-planner');
+  const allowed = {
+    ability: ['first', 'beginner', 'intermediate', 'advanced'],
+    base: ['banff', 'canmore', 'louise'],
+    resort: ['auto', 'norquay', 'louise', 'sunshine'],
+    transport: ['shuttle', 'drive'],
+    group: ['adults', 'children', 'mixed'],
+  };
+  const keys = Object.keys(allowed) as (keyof SkiPlanChoices)[];
+  let choices: SkiPlanChoices = { ...defaultSkiChoices };
+  const query = new URLSearchParams(window.location.search);
+  keys.forEach(key => {
+    const value = query.get(key);
+    if (value && allowed[key].includes(value)) (choices as Record<string, string>)[key] = value;
+  });
+  function setText(id: string, value: string) { const element = document.getElementById(id); if (element) element.textContent = value; }
+  function currentLink() {
+    const url = new URL(window.location.href);
+    keys.forEach(key => url.searchParams.set(key, choices[key]));
+    url.hash = '';
+    return url.href;
+  }
+  function render(announce = true) {
+    const plan = makeSkiDayPlan(choices);
+    setText('ski-result-heading', plan.resort.name);
+    setText('ski-plan-reason', plan.reason);
+    setText('ski-group-note', plan.group);
+    const labels = keys.filter(key => key !== 'resort').map(key => {
+      const select = form?.elements.namedItem(key) as HTMLSelectElement | null;
+      return select?.selectedOptions[0]?.textContent || choices[key];
+    });
+    setText('ski-plan-selections', labels.join(' · '));
+    const timeline = document.getElementById('ski-day-timeline');
+    if (timeline) {
+      const steps = plan.timeline.map((step, i) => {
+        const li = document.createElement('li');
+        const number = document.createElement('span'); number.className = 'ski-step-number'; number.setAttribute('aria-hidden', 'true'); number.textContent = String(i + 1).padStart(2, '0');
+        const body = document.createElement('div');
+        const when = document.createElement('span'); when.className = 'ski-eyebrow'; when.textContent = step.when;
+        const heading = document.createElement('h3'); heading.textContent = step.title;
+        const text = document.createElement('p'); text.textContent = step.text;
+        body.append(when, heading, text); li.append(number, body); return li;
+      });
+      timeline.replaceChildren(...steps);
+    }
+    const operator = document.querySelector<HTMLAnchorElement>('#ski-operator-link');
+    const transport = document.querySelector<HTMLAnchorElement>('#ski-transport-link');
+    const report = document.querySelector<HTMLAnchorElement>('#ski-report-link');
+    if (operator) { operator.href = plan.resort.lessonUrl; operator.textContent = `Check ${plan.resort.name} lesson details ↗`; }
+    if (transport) transport.href = plan.resort.transportUrl;
+    if (report) report.href = plan.resort.officialUrl;
+    if (announce) setText('ski-update-status', `Plan updated for ${plan.resort.name}. Check the arrival, group and return steps below.`);
+    document.getElementById('ski-share-fallback')?.setAttribute('hidden', '');
+    setText('ski-share-status', '');
+    try { window.history.replaceState(null, '', currentLink()); } catch { /* Sharing still works if URL updates are restricted. */ }
+  }
+  if (form) {
+    keys.forEach(key => {
+      const select = form.elements.namedItem(key) as HTMLSelectElement | null;
+      if (select) select.value = choices[key];
+    });
+    form.hidden = false;
+    form.addEventListener('submit', event => event.preventDefault());
+    form.addEventListener('change', () => {
+      keys.forEach(key => {
+        const value = (form.elements.namedItem(key) as HTMLSelectElement).value;
+        if (allowed[key].includes(value)) (choices as Record<string, string>)[key] = value;
+      });
+      render();
+    });
+    document.getElementById('reset-ski-plan')?.addEventListener('click', () => {
+      choices = { ...defaultSkiChoices };
+      keys.forEach(key => { (form.elements.namedItem(key) as HTMLSelectElement).value = choices[key]; });
+      render();
+    });
+    render(false);
+  }
+  document.getElementById('print-ski-plan')?.addEventListener('click', () => window.print());
+  document.getElementById('share-ski-plan')?.addEventListener('click', async () => {
+    const link = currentLink();
+    try {
+      await navigator.clipboard.writeText(link);
+      setText('ski-share-status', 'Plan link copied. It includes your choices, but not checklist ticks or bookings.');
+    } catch {
+      const fallback = document.getElementById('ski-share-fallback');
+      const input = document.querySelector<HTMLInputElement>('#ski-share-url');
+      if (fallback && input) { fallback.hidden = false; input.value = link; input.focus(); input.select(); }
+      setText('ski-share-status', 'Select and copy the link above to share your choices.');
+    }
+  });
+  const boxes = Array.from(document.querySelectorAll<HTMLInputElement>('#ski-ready-list input[type="checkbox"]'));
+  const storageKey = 'banffbound-ski-day-checklist-v1';
+  let canStore = true;
+  try { const saved = JSON.parse(localStorage.getItem(storageKey) || '[]'); if (Array.isArray(saved)) boxes.forEach((box, i) => { box.checked = saved.includes(i); }); }
+  catch { canStore = false; }
+  function updateChecklist() {
+    if (canStore) { try { localStorage.setItem(storageKey, JSON.stringify(boxes.flatMap((box, i) => box.checked ? [i] : []))); } catch { canStore = false; } }
+    setText('ski-ready-status', `${boxes.filter(box => box.checked).length} of ${boxes.length} ready.${canStore ? ' Saved in this browser.' : ' Saving is unavailable; ticks last for this visit.'}`);
+  }
+  boxes.forEach(box => box.addEventListener('change', updateChecklist));
+  const resetChecklist = document.querySelector<HTMLButtonElement>('#reset-ski-checklist');
+  if (resetChecklist) { resetChecklist.hidden = false; resetChecklist.addEventListener('click', () => { boxes.forEach(box => { box.checked = false; }); updateChecklist(); }); }
+  updateChecklist();
+</script>
+
+<style is:global>
+  .ski-fields { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.1rem; margin: 1.2rem 0; }
+  .ski-fields label, #ski-share-fallback label { font-size: .88rem; font-weight: 600; display: block; }
+  .ski-fields select, #ski-share-url { display: block; width: 100%; margin-top: .45rem; padding: .8rem; min-height: 48px; border: 1px solid #b9c4b9; border-radius: 7px; background: var(--color-bg); color: var(--color-text); font: inherit; }
+  .ski-result-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 2.5rem 0 1rem; }
+  .ski-result-head a { font-size: .88rem; }
+  .ski-timeline { padding-left: 0 !important; list-style: none; margin: 2rem 0 !important; }
+  .ski-timeline li { display: flex; gap: 1.25rem; margin: 0 0 1.5rem; }
+  .ski-step-number { flex: 0 0 44px; height: 44px; display: grid; place-items: center; background: var(--color-primary); color: white; border-radius: 50%; font-size: .85rem; font-weight: 700; }
+  .ski-timeline h3 { margin: .3rem 0 .55rem; font-size: 1.3rem; }
+  .ski-timeline p { margin-bottom: 0; }
+  @media(max-width: 760px) { .ski-fields { grid-template-columns: 1fr; } .ski-result-head { display: block; } .ski-timeline li { gap: .8rem; } .ski-step-number { flex-basis: 34px; height: 34px; font-size: .7rem; } }
+  @media print { .ski-timeline li { break-inside: avoid; } }
+</style>

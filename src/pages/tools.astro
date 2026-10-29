@@ -3,11 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const toolCategories = [
+  { name: 'Winter Planning', tools: [
+    { href: '/winter', title: 'Find Your Winter Day', desc: 'Search winter guides by interest and explore the season month by month.', icon: '❄️' },
+    { href: '/ski-day-planner', title: 'Ski Day Planner', desc: 'A personalised resort day with lessons, rentals, transport and a saved checklist.', icon: '🎿' },
+    { href: '/learn-to-ski', title: 'Your First Ski Lesson', desc: 'Compare first-timer options and get ready for the first day on snow.', icon: '⛷️' },
+    { href: '/winter-stays', title: 'Winter Stay Finder', desc: 'Filter hotels and lodges by your base and trip priorities.', icon: '🏔️' },
+    { href: '/towns', title: 'Choose a Mountain Base', desc: 'Banff, Canmore, Lake Louise, Field, Golden and Kananaskis compared.', icon: '🏘️' },
+  ] },
   {
     name: 'Trip Planning',
     tools: [
       { href: '/trip-cost', title: 'Trip Cost Calculator', desc: 'Interactive budget builder with accommodation, food, activities, and transport sliders.', icon: '💰' },
-      { href: '/trip-builder', title: 'Itinerary Builder', desc: 'Ready-made 3-7 day itineraries with booking links. Choose your style.', icon: '📋' },
+      { href: '/trip-builder', title: 'Itinerary Builder', desc: 'Edit 1-7 winter or summer days, move outings, save a plan and share your itinerary.', icon: '📋' },
       { href: '/calgary-to-banff', title: 'Calgary to Banff Guide', desc: 'Airport arrival timeline, shuttle options, driving tips, and timing.', icon: '✈️' },
       { href: '/canmore-vs-banff', title: 'Canmore vs Banff', desc: 'Interactive decision tool. Pick your priorities, get a recommendation.', icon: '🏘️' },
       { href: '/monthly-weather', title: 'Weather by Month', desc: 'Temperature, crowds, packing, and activities for every month.', icon: '🌤️' },
@@ -86,7 +93,7 @@ const toolCategories = [
       itemListElement: toolCategories.flatMap((cat, ci) =>
         cat.tools.map((tool, ti) => ({
           '@type': 'ListItem',
-          position: ci * 10 + ti + 1,
+          position: toolCategories.slice(0, ci).reduce((sum, category) => sum + category.tools.length, 0) + ti + 1,
           item: {
             '@type': 'WebPage',
             name: tool.title,
@@ -107,7 +114,7 @@ const toolCategories = [
     <div class="page-hero-content">
       <span class="badge">Free Tools</span>
       <h1>Banff Planning Tools</h1>
-      <p>30+ interactive guides and calculators to plan the perfect Banff trip. No signup, no ads, no fluff.</p>
+      <p>30+ interactive guides and calculators to plan the perfect Banff trip. Free to explore, with no signup required.</p>
     </div>
   </section>
 

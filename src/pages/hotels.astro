@@ -1,366 +1,135 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { hotels } from '../data/hotels';
 
-const EXPEDIA_CAMREF = '1101l3MtWX';
-
-const hotelCategories = [
-  {
-    title: 'Luxury & Resort',
-    description: 'World-class resorts with spa facilities, fine dining, and breathtaking mountain views.',
-    icon: '&#127775;',
-    priceRange: '$$$+',
-    searchUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&sort=RECOMMENDED&star=50&camref=${EXPEDIA_CAMREF}`,
-    hotels: [
-      {
-        name: 'Fairmont Banff Springs',
-        description: 'The iconic "Castle in the Rockies." A National Historic Site with world-class spa, golf, and multiple restaurants. The most legendary hotel in the Canadian Rockies.',
-        price: '$$$+',
-        highlight: 'Iconic Landmark',
-      },
-      {
-        name: 'Rimrock Resort Hotel',
-        description: 'Perched on Sulphur Mountain with stunning valley views. Award-winning dining at Eden Restaurant, full spa, and a serene atmosphere above the bustle of town.',
-        price: '$$$',
-        highlight: 'Mountain Views',
-      },
-      {
-        name: 'Fairmont Chateau Lake Louise',
-        description: 'Overlooking the turquoise waters of Lake Louise and Victoria Glacier. Canoeing, hiking, and skiing right at your doorstep.',
-        price: '$$$+',
-        highlight: 'Lakefront',
-      },
-    ],
-  },
-  {
-    title: 'Mid-Range & Boutique',
-    description: 'Comfortable, well-located hotels with character and solid amenities.',
-    icon: '&#127968;',
-    priceRange: '$$',
-    searchUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&sort=RECOMMENDED&star=30,40&camref=${EXPEDIA_CAMREF}`,
-    hotels: [
-      {
-        name: 'Moose Hotel & Suites',
-        description: 'Modern mountain lodge on Banff Avenue with rooftop hot pools, kitchenette suites, and an excellent central location.',
-        price: '$$',
-        highlight: 'Rooftop Hot Pools',
-      },
-      {
-        name: 'Mount Royal Hotel',
-        description: 'Historic boutique hotel right on Banff Avenue. Recently renovated with stylish rooms, on-site dining, and a prime downtown location.',
-        price: '$$',
-        highlight: 'Downtown Location',
-      },
-      {
-        name: 'The Juniper Hotel',
-        description: 'Retro-modern boutique hotel perched above town with panoramic views. Home to the excellent Juniper Bistro restaurant.',
-        price: '$$',
-        highlight: 'Panoramic Views',
-      },
-    ],
-  },
-  {
-    title: 'Budget-Friendly',
-    description: 'Great value options for travellers who want to spend more on experiences than accommodation.',
-    icon: '&#128176;',
-    priceRange: '$',
-    searchUrl: `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&sort=PRICE_LOW_TO_HIGH&camref=${EXPEDIA_CAMREF}`,
-    hotels: [
-      {
-        name: 'Banff Aspen Lodge',
-        description: 'Clean, comfortable, and well-priced. Outdoor hot tub, free parking, and a short walk to downtown. Great base for budget-conscious adventurers.',
-        price: '$',
-        highlight: 'Great Value',
-      },
-      {
-        name: 'HI Banff Alpine Centre',
-        description: 'Hostel-style accommodation on Tunnel Mountain. Private and dorm rooms available. Kitchen, lounge, and a social vibe perfect for solo travellers.',
-        price: '$',
-        highlight: 'Social Hostel',
-      },
-      {
-        name: 'Tunnel Mountain Resort',
-        description: 'Condo-style suites with full kitchens, perfect for families and groups. Indoor pool, hot tub, and surrounded by nature on Tunnel Mountain.',
-        price: '$-$$',
-        highlight: 'Family Friendly',
-      },
-    ],
-  },
+const selections = [
+  { slug: 'moose-hotel-suites', base: 'banff', address: 'Banff town · Banff Avenue', needs: [], choice: 'Compare a hotel room with a suite. A suite kitchen nook is not a full cooking kitchen.' },
+  { slug: 'mount-royal-hotel', base: 'banff', address: 'Banff town · central Banff Avenue', needs: [], choice: 'Choose the bed layout and room position. Reconfirm the dated rooftop hot-tub maintenance notice before booking for a soak.' },
+  { slug: 'tunnel-mountain-resort', base: 'banff', address: 'Banff · above town on Tunnel Mountain', needs: ['kitchen'], choice: 'Select a full-kitchen condo or cabin if cooking matters; some suites have smaller kitchen facilities. Check the hill and bus stop.' },
+  { slug: 'blackstone-mountain-lodge', base: 'canmore', address: 'Canmore · Bow Valley', needs: ['kitchen'], choice: 'A hotel-style room and a kitchen suite are different bookings. Confirm the specific room, access needs and onward transport.' },
+  { slug: 'lake-louise-inn', base: 'lake-louise', address: 'Lake Louise village', needs: ['kitchen'], choice: 'Check the building, stairs and kitchen category. The lake and the ski resort are separate journeys from the village.' },
+  { slug: 'fairmont-chateau-lake-louise', base: 'lake-louise', address: 'Lake Louise lakeshore', needs: [], choice: 'Book a lake-view category if the view is essential. The Chateau is separate from Lake Louise Ski Resort.' },
+  { slug: 'sunshine-mountain-lodge', base: 'sunshine', address: 'On mountain · Sunshine Village', needs: ['ski-in'], choice: 'The ski-in, ski-out option in this shortlist. Gondola access, luggage and package inclusions need to fit your arrival and departure.' },
+  { slug: 'emerald-lake-lodge', base: 'yoho', address: 'Emerald Lake · Yoho National Park, BC', needs: [], choice: 'A lodge stay in a different national park. The guest-parking shuttle does not bring you from Banff; plan the full road journey.' },
+].map(selection => {
+  const hotel = hotels.find(hotel => hotel.slug === selection.slug);
+  if (!hotel) throw new Error(`Missing hotel shortlist record: ${selection.slug}`);
+  return { ...selection, hotel };
+});
+const heroHotel = selections.find(selection => selection.slug === 'fairmont-chateau-lake-louise')!.hotel;
+const comparisons = [
+  { item: 'Same stay', check: 'Use identical dates, adults, children’s ages, number of rooms and currency.' },
+  { item: 'Same room', check: 'Match the room category, beds, occupancy, kitchen equipment, view and accessibility features.' },
+  { item: 'Final payable total', check: 'Include taxes, mandatory fees, parking, meals and any transport you need. Check when payment is taken.' },
+  { item: 'Change and cancellation terms', check: 'Compare the actual deadline, local time, deposit, refund conditions and who handles changes.' },
+  { item: 'Package inclusions', check: 'Price only the lift tickets, rentals, meals or transfers you would use. Check dates, ages and restrictions; a package is not automatically a saving.' },
 ];
-
-const travelTips = [
-  { title: 'Book Early for Summer', text: 'July and August fill up months in advance. Book 3-6 months ahead for the best selection and prices.' },
-  { title: 'Shoulder Season Savings', text: 'Visit in May-June or October for significantly lower rates and fewer crowds. The scenery is still spectacular.' },
-  { title: 'Ski & Stay Packages', text: 'Winter packages bundling lift tickets with accommodation can save 20-30% compared to booking separately.' },
-  { title: 'Location Matters', text: 'Downtown Banff Avenue hotels are walkable to restaurants and shops. Tunnel Mountain properties are quieter but may need a car.' },
+const faqs = [
+  { question: 'Are Lake Louise village hotels at the lake or ski resort?', answer: 'No. Lake Louise village, the lakeshore and Lake Louise Ski Resort are separate locations. Check the exact address and the seasonal transport between them. Fairmont Chateau Lake Louise is at the lakeshore; Lake Louise Inn is in the village.' },
+  { question: 'Which hotel is ski-in, ski-out?', answer: 'Sunshine Mountain Lodge is the on-mountain ski-in, ski-out choice in this shortlist. It is reached by gondola from the base area. Banff town, Canmore and Lake Louise village or lakeshore hotels require a journey to the ski lifts.' },
+  { question: 'Are room rates and facilities checked live here?', answer: 'No. This shortlist was reviewed on 28 October 2026. Open the hotel’s official page and a booking quote for your dates, room and party. Facilities, transport, availability and booking conditions can change.' },
 ];
 ---
 
-<BaseLayout title="Hotels & Accommodation" description="Find the perfect place to stay in Banff. From luxury resorts to budget hostels, with Expedia integration for real-time booking.">
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Where to Stay', href: '/accommodation' }, { label: 'Hotels & Accommodation' }]} />
-  </div>
-  <section class="page-hero">
-    <img
-      src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80"
-      alt="Banff mountain resort"
-      class="page-hero-bg"
-      loading="eager"
-      fetchpriority="high"
-    />
-    <div class="page-hero-content">
-      <span class="badge">Stay in Banff</span>
-      <h1>Hotels & Accommodation</h1>
-      <p>Find your perfect mountain retreat. From iconic luxury resorts to cozy budget-friendly stays.</p>
-    </div>
-  </section>
+<BaseLayout title="Banff Hotels: Compare Locations, Rooms & Booking Options" description="Compare eight researched hotel options in Banff, Canmore, Lake Louise and Yoho. Check room types, kitchen options, ski access and the full booking terms." image={heroHotel.image} canonicalUrl="https://banffbound.com/hotels/" lastUpdated="2026-10-28">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': [
+    { '@type': 'ItemList', name: 'Banff region hotel planning shortlist', itemListOrder: 'https://schema.org/ItemListUnordered', numberOfItems: selections.length, itemListElement: selections.map((selection, index) => ({ '@type': 'ListItem', position: index + 1, item: { '@type': 'Hotel', name: selection.hotel.name, url: `https://banffbound.com/hotel-directory/${selection.slug}/`, description: selection.hotel.description } })) },
+    { '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ] })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Accommodation', href: '/accommodation' }, { label: 'Hotels' }]} /></div>
+  <section class="hotel-hero"><div class="container hero-grid"><div><span class="eyebrow">Choose the address. Then the room.</span><h1>Find the right<br />Banff hotel.</h1><p>A town room, a kitchen suite, a lakeshore stay or a night on the mountain: each leads to a different trip. Start with location and room fit, then compare a quote for your dates.</p><a class="btn btn-accent" href="#hotel-shortlist">Explore the shortlist &darr;</a></div><figure><img src={heroHotel.image} alt="Fairmont Chateau Lake Louise beside Lake Louise" width="1000" height="750" loading="eager" fetchpriority="high" /><figcaption>{heroHotel.name} · at the lakeshore, separate from the ski resort</figcaption></figure></div></section>
 
-  <!-- Expedia Search Widget -->
-  <section class="search-section">
-    <div class="container">
-      <div class="search-card">
-        <h2>Search Hotels in Banff</h2>
-        <p>Compare prices across hundreds of hotels, lodges, and vacation rentals.</p>
-        <div class="expedia-widget-wrap" id="expedia-widget">
-          <script
-            is:inline
-            src={`https://www.expedia.ca/marketing/v2/widget/search?lob=HOTELS&des=Banff%2C+Alberta%2C+Canada&camref=${EXPEDIA_CAMREF}&creativeref=1011l87781`}>
-          </script>
-          <noscript>
-            <a href={`https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${EXPEDIA_CAMREF}`}
-               class="btn btn-primary" target="_blank" rel="noopener">
-              Search Banff Hotels on Expedia &rarr;
-            </a>
-          </noscript>
-        </div>
-        <div class="search-fallback">
-          <a href={`https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${EXPEDIA_CAMREF}`}
-             class="btn btn-primary" target="_blank" rel="noopener">
-            Search All Banff Hotels on Expedia &rarr;
-          </a>
-        </div>
+  <section class="section"><div class="container">
+    <nav class="guide-links" aria-label="Stay planning guides"><a href="/hotel-directory"><strong>Hotel directory &rarr;</strong><span>Search properties and explore the map.</span></a><a href="/winter-stays"><strong>Winter stays &rarr;</strong><span>Match your base, travel party and winter priorities.</span></a><a href="/towns"><strong>Compare the towns &rarr;</strong><span>Choose the place your days will revolve around.</span></a></nav>
+    <div class="section-heading" id="hotel-shortlist"><span class="eyebrow">Eight researched starting points</span><h2>Match your hotel to your plans</h2><p>This is an editorial shortlist, not a guest-score or price ranking. A kitchen tag means selected room categories have full kitchens; confirm the room you actually reserve.</p></div>
+    <form id="hotel-shortlist-form" class="hotel-filters" hidden><label>Base<select name="base"><option value="all">All locations</option><option value="banff">Banff town + Tunnel Mountain</option><option value="canmore">Canmore</option><option value="lake-louise">Lake Louise</option><option value="sunshine">Sunshine · on mountain</option><option value="yoho">Emerald Lake · Yoho, BC</option></select></label><label>Room priority<select name="need"><option value="all">Any room priority</option><option value="kitchen">A full-kitchen option</option><option value="ski-in">Ski-in, ski-out</option></select></label><button type="reset">Reset</button></form>
+    <noscript><p>All eight hotels appear below with their room notes, official sources and booking links.</p></noscript>
+    <p class="result-count" id="hotel-shortlist-count" role="status" aria-live="polite">{selections.length} hotels to explore</p>
+    <p class="disclosure">Booking links are affiliate links. BanffBound may earn a commission if you book. Quotes and availability are supplied by the booking provider; the property notes were checked on 28 October 2026.</p>
+    <div class="hotel-grid">{selections.map(selection => <article class="hotel-card" data-base={selection.base} data-needs={selection.needs.join(' ')}>
+      <a class="hotel-image" href={`/hotel-directory/${selection.slug}`}>{selection.hotel.image && <img src={selection.hotel.image} alt={selection.hotel.name} width="800" height="500" loading="lazy" />}</a>
+      <div class="hotel-body"><span class="eyebrow">{selection.address}</span><h3><a href={`/hotel-directory/${selection.slug}`}>{selection.hotel.name}</a></h3><p>{selection.hotel.description}</p><p class="room-choice"><strong>The booking decision:</strong> {selection.choice}</p>
+        {selection.hotel.facilityNote && <details><summary>Current room, facility and access notes</summary><p>{selection.hotel.facilityNote}</p></details>}
+        <div class="hotel-actions"><a class="btn btn-primary" href={selection.hotel.expediaUrl} target="_blank" rel="noopener sponsored">{selection.hotel.expediaUrl.includes('Hotel-Search') ? 'Search Emerald Lake on Expedia' : 'Check dates on Expedia'} &nearr;</a>{selection.hotel.officialUrl && <a href={selection.hotel.officialUrl} target="_blank" rel="noopener">Official hotel information &nearr;</a>}</div>
       </div>
-    </div>
-  </section>
+    </article>)}</div>
+    <div id="hotel-shortlist-empty" class="empty-result" hidden><h3>No exact match in these eight hotels.</h3><p>Remove a filter or explore the wider directory. A full kitchen and an on-mountain address are different booking priorities.</p><a href="/hotel-directory">Explore the hotel directory &rarr;</a></div>
+  </div></section>
 
-  <!-- Hotel Categories -->
-  {hotelCategories.map(category => (
-    <section class="section hotel-section">
-      <div class="container">
-        <div class="category-header">
-          <div>
-            <span class="category-icon" set:html={category.icon}></span>
-            <h2>{category.title}</h2>
-            <p>{category.description}</p>
-          </div>
-          <a href={category.searchUrl} target="_blank" rel="noopener" class="btn btn-outline">
-            Browse {category.priceRange} Hotels &rarr;
-          </a>
-        </div>
-        <div class="grid grid-3">
-          {category.hotels.map(hotel => (
-            <div class="hotel-card">
-              <div class="hotel-highlight">
-                <span class="tag">{hotel.highlight}</span>
-                <span class="hotel-price">{hotel.price}</span>
-              </div>
-              <h3>{hotel.name}</h3>
-              <p>{hotel.description}</p>
-              <a href={`https://www.expedia.ca/Hotel-Search?destination=${encodeURIComponent(hotel.name + ' Banff')}&camref=${EXPEDIA_CAMREF}`}
-                 target="_blank" rel="noopener" class="check-link">
-                Check Prices &rarr;
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  ))}
+  <section class="section comparison-section"><div class="container"><div class="section-heading"><span class="eyebrow">Compare like with like</span><h2>Make the booking quote useful</h2><p>Open the property’s official booking option alongside the provider quote. A lower headline amount can cover a different room or different conditions.</p></div><div class="comparison-wrap"><table><caption>A practical hotel quote comparison</caption><thead><tr><th scope="col">Compare</th><th scope="col">What to match or confirm</th></tr></thead><tbody>{comparisons.map(row => <tr><th scope="row">{row.item}</th><td>{row.check}</td></tr>)}</tbody></table></div><p class="transport-note">A hotel’s local bus pass does not establish your ski-resort transfer or every regional journey. Check the stop, first and last service, luggage and accessibility on <a href="https://roamtransit.com/schedules-routes/" target="_blank" rel="noopener">Roam’s current route pages</a>, and confirm resort transport with the operator. For Sunshine, check the lodge’s gondola arrangements directly.</p></div></section>
 
-  <!-- Travel Tips -->
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Pro Tips</span>
-        <h2>Booking Tips</h2>
-      </div>
-      <div class="grid grid-2">
-        {travelTips.map(tip => (
-          <div class="tip-item">
-            <h3>{tip.title}</h3>
-            <p>{tip.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Bottom CTA -->
-  <section class="section">
-    <div class="container" style="text-align: center;">
-      <h2>Ready to Book?</h2>
-      <p style="color: var(--color-text-light); max-width: 500px; margin: 1rem auto 2rem;">Compare hundreds of Banff hotels, read reviews, and book with free cancellation on most properties.</p>
-      <a href={`https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=${EXPEDIA_CAMREF}`}
-         target="_blank" rel="noopener" class="btn btn-accent">
-        Find Your Perfect Hotel &rarr;
-      </a>
-    </div>
-  </section>
-
-  <!-- Related Guides & Hotel Directory -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">More Resources</span>
-        <h2>Accommodation Guides</h2>
-        <p>In-depth guides to help you choose where to stay.</p>
-      </div>
-      <div class="grid grid-4">
-        <a href="/hotel-directory" class="card" style="display:block;">
-          <div class="card-body">
-            <h3 style="font-size: 0.95rem;">Full Hotel Directory</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-light);">Compare 95+ hotels with map, filters & reviews.</p>
-            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Browse Directory &rarr;</span>
-          </div>
-        </a>
-        <a href="/blog/where-to-stay-in-banff" class="card" style="display:block;">
-          <div class="card-body">
-            <h3 style="font-size: 0.95rem;">Where to Stay in Banff</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-light);">Best areas & hotels for every budget.</p>
-            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide &rarr;</span>
-          </div>
-        </a>
-        <a href="/blog/banff-trip-cost-budget-guide" class="card" style="display:block;">
-          <div class="card-body">
-            <h3 style="font-size: 0.95rem;">Banff Trip Cost Guide</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-light);">Budget breakdown for every travel style.</p>
-            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide &rarr;</span>
-          </div>
-        </a>
-        <a href="/blog/banff-on-a-budget" class="card" style="display:block;">
-          <div class="card-body">
-            <h3 style="font-size: 0.95rem;">Banff on a Budget</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-light);">Money-saving tips for accommodation & more.</p>
-            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide &rarr;</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+  <section class="section"><div class="container"><div class="section-heading"><span class="eyebrow">Before you book</span><h2>Hotel questions that change the trip</h2></div><div class="faq-list">{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div><p class="next-step">Still choosing the kind of stay? <a href="/accommodation">Compare hotels, suites, rentals, camping and backcountry stays &rarr;</a></p></div></section>
 </BaseLayout>
 
+<script>
+  const initHotelShortlist = () => {
+    const form = document.querySelector<HTMLFormElement>('#hotel-shortlist-form');
+    if (!form || form.dataset.ready) return;
+    const base = form.elements.namedItem('base') as HTMLSelectElement;
+    const need = form.elements.namedItem('need') as HTMLSelectElement;
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('.hotel-card[data-base]'));
+    const count = document.querySelector('#hotel-shortlist-count');
+    const empty = document.querySelector<HTMLElement>('#hotel-shortlist-empty');
+    const params = new URLSearchParams(window.location.search);
+    for (const select of [base, need]) {
+      const saved = params.get(select.name);
+      if (saved && Array.from(select.options).some(option => option.value === saved)) select.value = saved;
+    }
+    const update = (syncUrl = true) => {
+      let visible = 0;
+      for (const card of cards) {
+        const match = (base.value === 'all' || card.dataset.base === base.value) && (need.value === 'all' || (card.dataset.needs || '').split(' ').includes(need.value));
+        card.hidden = !match;
+        if (match) visible++;
+      }
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'hotel' : 'hotels'} to explore`;
+      if (empty) empty.hidden = visible !== 0;
+      if (syncUrl) {
+        const url = new URL(window.location.href);
+        for (const select of [base, need]) select.value === 'all' ? url.searchParams.delete(select.name) : url.searchParams.set(select.name, select.value);
+        window.history.replaceState({}, '', url);
+      }
+    };
+    form.dataset.ready = 'true';
+    form.hidden = false;
+    form.addEventListener('change', () => update());
+    form.addEventListener('submit', event => event.preventDefault());
+    form.addEventListener('reset', () => window.setTimeout(() => update(), 0));
+    update(false);
+  };
+  initHotelShortlist();
+  document.addEventListener('astro:page-load', initHotelShortlist);
+</script>
+
 <style>
-  .search-section {
-    margin-top: -3rem;
-    position: relative;
-    z-index: 10;
-    padding: 0 0 2rem;
-  }
-
-  .search-card {
-    background: var(--color-white);
-    border-radius: var(--radius);
-    padding: 2.5rem;
-    box-shadow: var(--shadow-lg);
-    text-align: center;
-  }
-
-  .search-card h2 {
-    margin-bottom: 0.5rem;
-  }
-
-  .search-card > p {
-    color: var(--color-text-light);
-    margin-bottom: 1.5rem;
-  }
-
-  .expedia-widget-wrap {
-    max-width: 600px;
-    margin: 0 auto;
-    min-height: 60px;
-  }
-
-  .search-fallback {
-    margin-top: 1rem;
-  }
-
-  .category-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2rem;
-    gap: 2rem;
-  }
-
-  .category-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .category-header h2 { margin-bottom: 0.25rem; }
-  .category-header p { color: var(--color-text-light); }
-
-  .hotel-card {
-    background: var(--color-white);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-    transition: all var(--transition);
-  }
-
-  .hotel-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .hotel-highlight {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-  }
-
-  .hotel-price {
-    font-weight: 700;
-    color: var(--color-primary);
-    font-size: 1.1rem;
-  }
-
-  .hotel-card h3 { margin-bottom: 0.5rem; }
-
-  .hotel-card p {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-  }
-
-  .check-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  .check-link:hover { color: var(--color-primary); }
-
-  .hotel-section:nth-child(even) {
-    background: var(--color-bg-alt);
-  }
-
-  .tip-item {
-    background: var(--color-white);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-  }
-
-  .tip-item h3 { margin-bottom: 0.5rem; }
-  .tip-item p { color: var(--color-text-light); font-size: 0.95rem; }
-
-  @media (max-width: 768px) {
-    .category-header { flex-direction: column; }
-    .search-section { margin-top: -2rem; }
-    .search-card { padding: 1.5rem; }
-  }
+  .eyebrow { display: block; color: #806120; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 700; margin-bottom: .7rem; }
+  .hotel-hero { background: #173d2d; padding: 4rem 0; color: #fff; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
+  .hotel-hero .eyebrow { color: #e8cb87; }
+  .hotel-hero h1 { color: #fff; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: 1.06; margin-bottom: 1.4rem; }
+  .hotel-hero p { color: #e1e9e3; max-width: 36rem; margin-bottom: 1.6rem; font-size: 1.08rem; }
+  figure { margin: 0; } figure img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); } figcaption { color: #d8e3dc; font-size: .78rem; margin-top: .65rem; }
+  .guide-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3.5rem; }
+  .guide-links a { padding: 1.25rem; background: var(--color-bg-alt); border: 1px solid #dce4dd; border-radius: var(--radius); color: var(--color-primary); }
+  .guide-links strong, .guide-links span { display: block; } .guide-links span { font-size: .88rem; margin-top: .35rem; color: var(--color-text-light); }
+  .section-heading { max-width: 46rem; margin-bottom: 1.7rem; scroll-margin-top: 8rem; } .section-heading h2 { margin-bottom: .7rem; } .section-heading p, .disclosure, .room-choice, .transport-note, .next-step { color: var(--color-text-light); }
+  .hotel-filters { display: flex; align-items: end; flex-wrap: wrap; gap: 1rem; background: #f0f3ee; padding: 1.25rem; border-radius: var(--radius); }
+  .hotel-filters[hidden], .hotel-card[hidden], .empty-result[hidden] { display: none; }
+  .hotel-filters label { display: grid; gap: .4rem; flex: 1 1 15rem; color: var(--color-primary); font-size: .88rem; font-weight: 600; }
+  .hotel-filters select { width: 100%; min-height: 2.8rem; padding: .6rem; background: #fff; border: 1px solid #acb9ae; border-radius: .35rem; color: var(--color-text); font: inherit; }
+  .hotel-filters button { min-height: 2.8rem; padding: .6rem 1rem; background: #fff; border: 1px solid #acb9ae; border-radius: .35rem; color: var(--color-primary); cursor: pointer; font: inherit; }
+  .result-count { margin: 1.2rem 0 .5rem; font-weight: 600; color: var(--color-primary); } .disclosure { font-size: .82rem; margin-bottom: 1.5rem; max-width: 58rem; }
+  .hotel-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem; }
+  .hotel-card { background: #fff; border: 1px solid #dce4dd; border-radius: var(--radius); overflow: hidden; }
+  .hotel-image { display: block; } .hotel-image img { width: 100%; height: 16rem; object-fit: cover; display: block; }
+  .hotel-body { padding: 1.5rem; } .hotel-body h3 { font-size: 1.5rem; margin-bottom: .8rem; } .hotel-body h3 a { color: var(--color-primary); }
+  .hotel-body > p { font-size: .94rem; margin-bottom: 1rem; } .room-choice { padding: 1rem; background: #f3f5ef; border-left: 3px solid #b89754; }
+  .hotel-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.3rem; } .hotel-actions .btn { font-size: .85rem; } .hotel-actions > a:last-child { font-size: .84rem; }
+  details { border-top: 1px solid #dce4dd; padding: 1rem 0; } summary { color: var(--color-primary); font-weight: 600; cursor: pointer; } details p { margin-top: .8rem; color: var(--color-text-light); font-size: .92rem; }
+  .empty-result { padding: 2rem; background: #f3f5ef; border-radius: var(--radius); } .empty-result p { margin: .8rem 0; }
+  .comparison-section { background: var(--color-bg-alt); } .comparison-wrap { overflow-x: auto; border: 1px solid #dce4dd; border-radius: var(--radius); background: #fff; } table { width: 100%; border-collapse: collapse; text-align: left; } caption { text-align: left; padding: 1rem 1.25rem; font-weight: 600; color: var(--color-primary); } th, td { padding: 1rem 1.25rem; border-top: 1px solid #dce4dd; vertical-align: top; } thead th { background: #eaf0e8; color: var(--color-primary); } tbody th { width: 24%; } td { color: var(--color-text-light); } .transport-note { margin-top: 1.5rem; max-width: 57rem; }
+  .faq-list { max-width: 55rem; } .next-step { margin-top: 2rem; }
+  a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid #b18a3a; outline-offset: 4px; }
+  @media (max-width: 800px) { .hero-grid, .hotel-grid { grid-template-columns: 1fr; } .hotel-hero { padding: 3rem 0; } .guide-links { grid-template-columns: 1fr; } .hero-grid { gap: 2rem; } .hotel-image img { height: 14rem; } th, td { padding: .85rem; } }
 </style>

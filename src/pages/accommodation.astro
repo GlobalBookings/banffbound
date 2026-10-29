@@ -1,260 +1,71 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { hotels } from '../data/hotels';
 
-const accommodationTypes = [
-  {
-    name: 'Luxury Hotels',
-    description: 'Banff is home to several iconic luxury properties, including the Fairmont Banff Springs ("Castle in the Rockies"), the Fairmont Chateau Lake Louise, and the Rimrock Resort Hotel. These properties offer world-class dining, full-service spas, and breathtaking mountain views. Expect to pay $400-$1,200+ CAD per night in peak season.',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80',
-    priceRange: '$400 - $1,200+ / night',
-    bestFor: 'Special occasions, couples, luxury seekers',
-  },
-  {
-    name: 'Mid-Range Hotels',
-    description: 'Comfortable hotels along Banff Avenue and in the surrounding area offer clean rooms, good amenities, and convenient access to downtown restaurants and shops. Properties like the Moose Hotel & Suites, Banff Ptarmigan Inn, and the Fox Hotel feature pools, hot tubs, and on-site dining.',
-    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80',
-    priceRange: '$200 - $400 / night',
-    bestFor: 'Families, couples, comfort seekers',
-  },
-  {
-    name: 'Budget Hotels & Hostels',
-    description: 'HI Banff Alpine Centre is one of Canada\'s best hostels, with private rooms and dorms, a kitchen, and a fireplace lounge. Budget hotels on the outskirts of town and in Canmore offer significant savings while keeping you close to the action.',
-    image: 'https://images.unsplash.com/photo-1520277739336-7bf67edfa768?w=600&q=80',
-    priceRange: '$40 - $200 / night',
-    bestFor: 'Solo travellers, backpackers, budget-conscious',
-  },
-  {
-    name: 'Cabins & Vacation Rentals',
-    description: 'Rustic log cabins and modern vacation rentals offer a uniquely Canadian mountain experience. From cozy one-bedroom cabins near the Bow River to luxury chalets with hot tubs and mountain views, there\'s something for every group size and budget.',
-    image: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=600&q=80',
-    priceRange: '$150 - $800 / night',
-    bestFor: 'Groups, families, romantic getaways',
-  },
-  {
-    name: 'Backcountry Lodges',
-    description: 'For a truly remote experience, backcountry lodges like Skoki Lodge, Shadow Lake Lodge, and Sundance Lodge offer overnight wilderness stays accessible only by hiking, skiing, or horseback. Meals are included, and the solitude is unmatched.',
-    image: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=600&q=80',
-    priceRange: '$250 - $500 / night (meals included)',
-    bestFor: 'Adventurers, hikers, backcountry enthusiasts',
-  },
-  {
-    name: 'Camping & RV Parks',
-    description: 'Banff National Park has 13 campgrounds with over 2,400 sites. Tunnel Mountain (3 campgrounds), Two Jack Lake, and Lake Louise are the most popular. Frontcountry sites have fire pits and picnic tables; some offer full RV hookups. Book well ahead for summer.',
-    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80',
-    priceRange: '$16 - $40 / night',
-    bestFor: 'Nature lovers, families, RV travellers',
-  },
+const types = [
+  { name: 'Hotels, inns and lodges', fit: 'A private room and a staffed property', description: 'Start with the address, bed layout and room access. A pool, spa, breakfast or parking may have separate conditions; the property name alone does not establish what your rate includes.', check: 'Confirm the exact room, facilities operating on your dates, all fees and cancellation terms.', href: '/hotels', link: 'Compare the researched hotel shortlist' },
+  { name: 'Suites, condos and cabins', fit: 'Separate living space or cooking facilities', description: 'These can be hotel-managed accommodation. A cabin is not automatically remote, and a suite is not automatically a full kitchen. Match the number of bedrooms, bathrooms, beds and cooking appliances to your group.', check: 'Check occupancy, sofa beds, stairs, cookware and whether laundry is private or shared.', href: '#room-examples', link: 'See the room-category differences' },
+  { name: 'Hostels and shared accommodation', fit: 'A dorm bed or a private room in a shared setting', description: 'Compare the actual room type rather than the hostel label. Bathrooms, kitchens, quiet hours, age rules and bedding arrangements differ. A private room may still use shared facilities.', check: 'Check who can use each room, bathroom access, kitchen hours and luggage or equipment storage.', href: '/hotel-directory', link: 'Explore accommodation in the directory' },
+  { name: 'Vacation rentals and B&Bs', fit: 'A particular layout, host or longer stay', description: 'Check the exact address, operator and authorized visitor use. A listing platform does not establish that a residential unit is permitted as vacation accommodation. Canmore distinguishes visitor accommodation, tourist homes and residential dwellings.', check: 'Ask about local authorization, cleaning and service fees, check-in support, parking and the full refund policy.', href: 'https://www.canmore.ca/your-community/planning/accommodation-types', link: 'Read Canmore’s accommodation guidance' },
+  { name: 'Frontcountry camping and RV stays', fit: 'A designated campsite with your own equipment', description: 'In Banff National Park, camping is permitted in designated areas with the required reservation, camping permit and park entry pass. Opening dates, site dimensions and services vary; a summer campground listing does not establish winter availability.', check: 'Check the operating dates, vehicle length, hookups, water, food storage and current fire restrictions. Use the published reservation launch dates for your travel year.', href: 'https://parks.canada.ca/pn-np/ab/banff/activ/camping', link: 'Check Parks Canada campground information' },
+  { name: 'Backcountry lodges, huts and campsites', fit: 'A trip built around reaching a remote overnight stay', description: 'Book commercial lodges or huts with their operator and establish the access route, season, meals, baggage and any guide or transfer arrangements. Backcountry camping requires the appropriate park permit and reservation; it is a different booking from a commercial lodge room.', check: 'Confirm permits for your itinerary, conditions, navigation and emergency arrangements. Winter routes can cross avalanche terrain and need suitable skills and equipment.', href: 'https://parks.canada.ca/pn-np/ab/banff/activ/arrierepays-backcountry', link: 'Read Parks Canada backcountry planning guidance' },
 ];
-
 const areas = [
-  {
-    name: 'Downtown Banff',
-    description: 'Walking distance to restaurants, shops, and nightlife. Most convenient location but also the most expensive. Perfect if you want to experience the vibrant town atmosphere without a car.',
-    highlights: 'Restaurants, shopping, nightlife, transit hub',
-  },
-  {
-    name: 'Tunnel Mountain',
-    description: 'Just 5 minutes from downtown by car or bus, Tunnel Mountain offers a quieter setting with stunning views. Home to three Parks Canada campgrounds and several hotel properties surrounded by forest.',
-    highlights: 'Campgrounds, forest trails, quieter atmosphere',
-  },
-  {
-    name: 'Lake Louise Village',
-    description: 'A small cluster of hotels and services near Lake Louise ski resort and the famous lake itself. Quieter and more remote than Banff town, with quick access to some of the park\'s best hiking.',
-    highlights: 'Lake access, skiing, hiking trailheads',
-  },
-  {
-    name: 'Canmore',
-    description: 'Just outside the park boundary (25 min from Banff), Canmore offers significantly lower prices with a charming mountain-town vibe. Great restaurants, local shops, and the Canmore Nordic Centre.',
-    highlights: 'Lower prices, local vibe, Nordic Centre',
-  },
+  { name: 'Banff town', fit: 'Town restaurants, shops and a base for mixed days', detail: 'Choose the exact street and distance to the bus stop. A town hotel still requires transport to ski resorts and many trailheads.', href: '/towns/banff', link: 'Plan a Banff base' },
+  { name: 'Tunnel Mountain', fit: 'Hotel-managed suites, cabins or designated camping above town', detail: 'Check the hill, winter walking route and bus connection. Staying in this area does not mean every property or campground has the same services.', href: '/hotel-directory', link: 'Explore the property map' },
+  { name: 'Canmore', fit: 'A different mountain town with suite and rental options', detail: 'Canmore is outside Banff National Park. Compare the total room, parking and travel cost for your dates; a Canmore booking is not automatically cheaper. Regional transit does not serve every hotel or ski resort directly.', href: '/towns/canmore', link: 'Plan a Canmore base' },
+  { name: 'Lake Louise', fit: 'Days focused on the village, lake or ski resort', detail: 'These are three separate locations. A village address is not the lakeshore; a lakeshore hotel is not at the ski lifts. Check the seasonal connection for each day.', href: '/towns/lake-louise', link: 'Understand Lake Louise geography' },
+  { name: 'Sunshine’s upper village', fit: 'An on-mountain ski stay', detail: 'Sunshine Mountain Lodge is reached by gondola from the base area. Arrival, luggage, town outings and airport transfers need to fit the lodge’s current access arrangements.', href: '/winter-stays', link: 'Compare the winter stay options' },
+  { name: 'Field and Yoho', fit: 'A separate village or lodge stay in British Columbia', detail: 'This is a different national park west of Lake Louise. At Emerald Lake Lodge, the shuttle from guest parking is not transport from Banff. Arrange the whole journey and winter meal plan.', href: '/towns/field-yoho', link: 'Plan a Field and Yoho base' },
+];
+const roomExamples = [
+  { slug: 'moose-hotel-suites', label: 'A kitchen nook', note: 'Suites have a kitchen nook. Confirm the microwave, mini-fridge, sink and other equipment; do not assume a full cooking kitchen.' },
+  { slug: 'tunnel-mountain-resort', label: 'A full-kitchen category', note: 'Selected condos and cabins have full kitchens. Compare the category with smaller suite kitchen facilities before reserving.' },
+  { slug: 'blackstone-mountain-lodge', label: 'A room or a suite', note: 'Hotel-style rooms and condo suites have different facilities. Select the kitchen and laundry category you actually need.' },
+].map(example => {
+  const hotel = hotels.find(hotel => hotel.slug === example.slug);
+  if (!hotel) throw new Error(`Missing accommodation example: ${example.slug}`);
+  return { ...example, hotel };
+});
+const faqs = [
+  { question: 'Is Canmore always cheaper than Banff?', answer: 'No. Compare quotes for the same dates, group, room layout and cancellation terms, then include parking and the transport needed for your plans. The exact address and travel connections matter as much as the destination name.' },
+  { question: 'Can I assume a suite has a full kitchen?', answer: 'No. Suites may have a kitchen nook, kitchenette or full kitchen, and hotel-style rooms in the same property may have none. Confirm the appliances, cookware, layout and room category before booking.' },
+  { question: 'Can I camp anywhere in Banff National Park?', answer: 'No. Frontcountry camping is in designated areas with a reservation, camping permit and park entry pass. Backcountry stays have separate permit and route-planning requirements. Use Parks Canada’s current campground and backcountry information for the specific trip.' },
 ];
 ---
 
-<BaseLayout title="Where to Stay in Banff — Hotels, Hostels, Cabins & Camping" description="Complete guide to accommodation in Banff — hotels, hostels, cabins, B&Bs, backcountry lodges, camping and RV parks. Areas, prices, and booking tips.">
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Accommodation' }]} />
-  </div>
-  <section class="page-hero">
-    <img
-      src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80"
-      alt="Mountain hotel accommodation in Banff"
-      class="page-hero-bg"
-      loading="eager"
-      fetchpriority="high"
-    />
-    <div class="page-hero-content">
-      <span class="badge">Where to Stay</span>
-      <h1>Accommodation in Banff</h1>
-      <p>From iconic castle hotels to cozy backcountry lodges, find the perfect place to rest after your Rocky Mountain adventures.</p>
-    </div>
-  </section>
+<BaseLayout title="Where to Stay in Banff: Areas, Hotels, Rentals & Camping" description="Choose a Banff-area base and accommodation type. Compare hotel rooms, kitchen suites, rentals, hostels, camping and backcountry stays with practical booking requirements." image={roomExamples[0].hotel.image} canonicalUrl="https://banffbound.com/accommodation/" lastUpdated="2026-10-28">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Accommodation' }]} /></div>
+  <section class="accommodation-hero"><div class="container"><span class="eyebrow">Where your Banff trip begins</span><h1>Choose your base.<br />Find your kind of stay.</h1><p>A town hotel, a kitchen suite, a campsite and a remote lodge call for different plans. Choose the place and the accommodation type before comparing a room quote.</p><div class="hero-actions"><a href="#accommodation-types" class="btn btn-accent">Explore the stay types &darr;</a><a href="/towns">Compare nearby towns &rarr;</a></div><div class="decision-strip"><span><strong>1</strong> Choose the area</span><span><strong>2</strong> Match the room or site</span><span><strong>3</strong> Confirm the whole journey</span></div></div></section>
 
-  <!-- Accommodation Types -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Every Budget</span>
-        <h2>Types of Accommodation</h2>
-        <p>Banff offers accommodation for every budget and travel style, from $16/night campgrounds to $1,200/night luxury suites.</p>
-      </div>
-      <div class="grid grid-3">
-        {accommodationTypes.map(type => (
-          <div class="card">
-            <img src={type.image} alt={type.name} class="card-image" loading="lazy" />
-            <div class="card-body">
-              <h3>{type.name}</h3>
-              <p>{type.description}</p>
-              <div class="card-meta">
-                <span>💰 {type.priceRange}</span>
-              </div>
-              <div class="card-meta">
-                <span class="tag">{type.bestFor}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <section class="section" id="accommodation-types"><div class="container"><div class="section-heading"><span class="eyebrow">What kind of overnight stay?</span><h2>Choose what you need from the accommodation</h2><p>Compare the full cost for the same dates and party. Space, equipment, meals, parking, fees and access can change the value of a booking. There is no fixed nightly price range that fits every season or room.</p></div><div class="type-grid">{types.map((type, index) => <article class="type-card"><span class="type-number" aria-hidden="true">0{index + 1}</span><h3>{type.name}</h3><p class="fit">{type.fit}</p><p>{type.description}</p><details><summary>Check before booking</summary><p>{type.check}</p></details><a class="text-link" href={type.href} {...(type.href.startsWith('https://') ? { target: '_blank', rel: 'noopener' } : {})}>{type.link} &rarr;</a></article>)}</div></div></section>
 
-  <!-- Areas -->
-  <section class="section" style="background: var(--color-bg-alt);">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Neighbourhoods</span>
-        <h2>Where to Stay</h2>
-        <p>Each area around Banff has a different character and price point. Choose based on your priorities.</p>
-      </div>
-      <div class="grid grid-2">
-        {areas.map(area => (
-          <div class="card">
-            <div class="card-body">
-              <h3>📍 {area.name}</h3>
-              <p>{area.description}</p>
-              <div class="card-meta">
-                <span class="tag">{area.highlights}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <section class="section area-section"><div class="container"><div class="section-heading"><span class="eyebrow">Geography changes the day</span><h2>Choose a base for the places you will visit</h2><p>Town names can hide a long transfer or a very different setting. Start with the exact address and the journey you will repeat most often.</p></div><div class="area-grid">{areas.map(area => <article class="area-card"><h3>{area.name}</h3><p class="fit">{area.fit}</p><p>{area.detail}</p><a class="text-link" href={area.href}>{area.link} &rarr;</a></article>)}</div><p class="transit-note">For a trip without a car, check the <a href="https://roamtransit.com/schedules-routes/" target="_blank" rel="noopener">current Roam routes and service updates</a> and each resort’s transport separately. A hotel’s local guest pass does not cover every regional route, ski transfer or destination. Check the last return, luggage and access needs before reserving.</p><a class="btn btn-outline" href="/towns">Explore Banff, Canmore, Lake Louise and the nearby towns &rarr;</a></div></section>
 
-  <!-- Booking Tips -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Pro Tips</span>
-        <h2>Booking Tips &amp; Advice</h2>
-        <p>Smart strategies for getting the best value on accommodation in Banff National Park.</p>
-      </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-body">
-            <h3>📅 Peak Season</h3>
-            <p>July and August are peak season. Book 3-6 months ahead for the best selection and rates. December-March is ski season peak — book early for slope-side properties.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>💡 Shoulder Season Savings</h3>
-            <p>May-June and October-November offer significantly lower rates and fewer crowds. Many properties offer 30-50% discounts during shoulder seasons.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h3>🏕️ Camping Reservations</h3>
-            <p>Parks Canada campgrounds open for booking in January for the summer season. Popular sites like Two Jack Lakeside sell out within hours. Set a reminder and book the moment reservations open.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="section" id="room-examples"><div class="container"><div class="section-heading"><span class="eyebrow">A category makes the difference</span><h2>Three examples of what “kitchen” can mean</h2><p>These examples use hotel information checked on 28 October 2026. Select the actual room category and confirm its equipment with the property.</p></div><div class="example-grid">{roomExamples.map(example => <article class="example-card">{example.hotel.image && <a href={`/hotel-directory/${example.slug}`}><img src={example.hotel.image} alt={example.hotel.name} width="800" height="500" loading="lazy" /></a>}<div><span class="eyebrow">{example.label}</span><h3><a href={`/hotel-directory/${example.slug}`}>{example.hotel.name}</a></h3><p>{example.note}</p><a class="text-link" href={`/hotel-directory/${example.slug}`}>Compare the property details &rarr;</a>{example.hotel.officialUrl && <a class="official-link" href={example.hotel.officialUrl} target="_blank" rel="noopener">Official property information &nearr;</a>}</div></article>)}</div></div></section>
 
-  <!-- Expedia CTA -->
-  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
-    <div class="container">
-      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Search Hotels in Banff</h2>
-      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Compare prices from hundreds of properties in Banff, Lake Louise, and Canmore. Find your perfect mountain retreat.</p>
-      <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" class="btn btn-accent" target="_blank" rel="noopener">Search Hotels on Expedia →</a>
-    </div>
-  </section>
+  <section class="section planning-section"><div class="container planning-grid"><div><span class="eyebrow">Before you reserve</span><h2>Check the stay and the route together</h2><p>The room or campsite is one part of the trip. A kitchen needs groceries and the right appliances; an isolated lodge needs an arrival and meal plan; winter camping needs an operating site and suitable equipment.</p><p>Read the actual cancellation and deposit conditions. For packages, confirm which meals, tickets, rentals, lessons and transfers are included. Compare the total with the same items bought separately.</p></div><ol><li><strong>Match the space.</strong> Count bedrooms, beds, bathrooms, stairs and accessible facilities; a sofa bed is not another bedroom.</li><li><strong>Match the dates.</strong> Check campground seasons, lodge access and facilities operating during your stay.</li><li><strong>Match the transport.</strong> Confirm how you arrive, reach the day’s activities and return after dinner or skiing.</li><li><strong>Match the total.</strong> Include taxes, mandatory fees, parking, meals, equipment and onward travel.</li></ol></div></section>
 
-  <section class="tip-section">
-    <div class="container">
-      <div class="tip-card">
-        <h3>🏨 Accommodation Quick Tips</h3>
-        <p><strong>Free Cancellation:</strong> Book refundable rates when possible — Banff weather can be unpredictable and plans change.</p>
-        <p><strong>Parking:</strong> Many downtown hotels charge $15-$40/night for parking. Check before booking, especially if you have a vehicle.</p>
-        <p><strong>Free Transit:</strong> Roam Transit connects Banff, Canmore, and Lake Louise. Staying outside downtown is viable with good bus service.</p>
-        <p><strong>Kitchen Access:</strong> Dining in Banff is expensive. A room with a kitchenette can save significant money on meals.</p>
-        <p><strong>Hot Tubs:</strong> After a long day of hiking or skiing, a hotel hot tub under the stars is a game-changer. Many Banff hotels have them.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Related Guides & Hotel Directory -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Explore Further</span>
-        <h2>Accommodation Guides</h2>
-      </div>
-      <div class="grid grid-4">
-        <a href="/hotel-directory" class="card" style="display:block;">
-          <div class="card-body">
-            <h3 style="font-size: 0.95rem;">Full Hotel Directory</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-light);">Compare 95+ hotels with interactive map.</p>
-            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Browse Directory &rarr;</span>
-          </div>
-        </a>
-        <a href="/blog/where-to-stay-in-banff" class="card" style="display:block;">
-          <div class="card-body">
-            <h3 style="font-size: 0.95rem;">Where to Stay in Banff</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-light);">Best areas for every budget.</p>
-            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide &rarr;</span>
-          </div>
-        </a>
-        <a href="/vacation-rentals" class="card" style="display:block;">
-          <div class="card-body">
-            <h3 style="font-size: 0.95rem;">Vacation Rentals</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-light);">Cabins, chalets & apartment rentals.</p>
-            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Browse Rentals &rarr;</span>
-          </div>
-        </a>
-        <a href="/blog/banff-camping-guide" class="card" style="display:block;">
-          <div class="card-body">
-            <h3 style="font-size: 0.95rem;">Camping in Banff Guide</h3>
-            <p style="font-size: 0.82rem; color: var(--color-text-light);">13 campgrounds & booking tips.</p>
-            <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide &rarr;</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+  <section class="section"><div class="container"><div class="section-heading"><span class="eyebrow">Useful next steps</span><h2>Turn the area choice into a shortlist</h2></div><nav class="next-links" aria-label="Accommodation planning"><a href="/hotels"><strong>Hotel shortlist &rarr;</strong><span>Location, room decisions and quote-comparison help.</span></a><a href="/hotel-directory"><strong>Hotel directory &rarr;</strong><span>Search properties and use the area map.</span></a><a href="/winter-stays"><strong>Winter stays &rarr;</strong><span>Filter by base, travel party and winter priority.</span></a><a href="/towns"><strong>Town guides &rarr;</strong><span>Plan the place, day and travel connections.</span></a></nav><div class="faq-list">{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div><div class="source-note"><strong>Official planning sources · checked 28 October 2026</strong><p>Use <a href="https://parks.canada.ca/pn-np/ab/banff/activ/camping" target="_blank" rel="noopener">Parks Canada’s campground information</a> for designated sites, permits, opening dates and services; <a href="https://parks.canada.ca/pn-np/ab/banff/activ/arrierepays-backcountry" target="_blank" rel="noopener">its backcountry guide</a> for permits, route conditions and winter hazards; and <a href="https://www.canmore.ca/your-community/planning/accommodation-types" target="_blank" rel="noopener">Canmore’s accommodation guidance</a> for local visitor-use distinctions. Future reservation launch dates and transport schedules should be checked for the travel year.</p></div></div></section>
 </BaseLayout>
 
 <style>
-  .tip-section {
-    padding: 0 0 4rem;
-  }
-
-  .tip-card {
-    background: var(--color-bg-alt);
-    border-left: 4px solid var(--color-accent);
-    border-radius: var(--radius);
-    padding: 2rem;
-  }
-
-  .tip-card h3 {
-    margin-bottom: 1rem;
-  }
-
-  .tip-card p {
-    color: var(--color-text-light);
-    line-height: 1.7;
-    margin-bottom: 0.5rem;
-  }
+  .eyebrow { display: block; color: #806120; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 700; margin-bottom: .7rem; }
+  .accommodation-hero { background: #173d2d; color: #fff; padding: 4.5rem 0 3rem; } .accommodation-hero .eyebrow { color: #e8cb87; } .accommodation-hero h1 { color: #fff; font-size: clamp(2.6rem, 5vw, 4.8rem); line-height: 1.08; margin-bottom: 1.4rem; } .accommodation-hero p { max-width: 43rem; color: #e1e9e3; font-size: 1.1rem; margin-bottom: 1.6rem; }
+  .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; } .hero-actions > a:last-child { color: #edce87; font-weight: 600; }
+  .decision-strip { display: flex; gap: 2rem; flex-wrap: wrap; border-top: 1px solid #446250; margin-top: 3rem; padding-top: 1.5rem; color: #e1e9e3; font-size: .9rem; } .decision-strip strong { color: #edce87; margin-right: .6rem; }
+  .section-heading { max-width: 46rem; margin-bottom: 2rem; } .section-heading h2 { margin-bottom: .7rem; } .section-heading p, .type-card > p, .area-card > p, .example-card p, .transit-note, .planning-grid p, .planning-grid li, .source-note p { color: var(--color-text-light); }
+  #accommodation-types, #room-examples { scroll-margin-top: 7rem; }
+  .type-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; } .type-card { background: #fff; border: 1px solid #dce4dd; border-radius: var(--radius); padding: 1.5rem; } .type-number { color: #9d7c39; font-family: 'Playfair Display', Georgia, serif; font-size: 1.8rem; display: block; margin-bottom: .6rem; } .type-card h3, .area-card h3 { font-size: 1.4rem; margin-bottom: .5rem; } .type-card p, .area-card p { font-size: .94rem; margin-bottom: 1rem; } .fit { color: var(--color-primary) !important; font-weight: 600; }
+  .text-link { font-size: .88rem; font-weight: 600; display: inline-block; margin-top: .5rem; } details { border-top: 1px solid #dce4dd; padding: 1rem 0; } summary { color: var(--color-primary); font-weight: 600; cursor: pointer; } details p { margin-top: .8rem; font-size: .92rem; color: var(--color-text-light); }
+  .area-section { background: var(--color-bg-alt); } .area-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; } .area-card { padding: 1.5rem; background: #fff; border-radius: var(--radius); border: 1px solid #dce4dd; } .transit-note { max-width: 58rem; margin: 1.7rem 0; }
+  .example-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; } .example-card { border: 1px solid #dce4dd; border-radius: var(--radius); overflow: hidden; } .example-card img { width: 100%; height: 13rem; object-fit: cover; display: block; } .example-card > div { padding: 1.4rem; } .example-card h3 { font-size: 1.3rem; margin-bottom: .8rem; } .example-card h3 a { color: var(--color-primary); } .example-card p { font-size: .93rem; } .official-link { display: block; font-size: .8rem; margin-top: .8rem; }
+  .planning-section { background: #f0f3ee; } .planning-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; } .planning-grid h2 { margin-bottom: 1rem; } .planning-grid p { margin-bottom: 1rem; } .planning-grid ol { padding-left: 1.5rem; } .planning-grid li { padding: 0 0 1.3rem .5rem; } .planning-grid strong { color: var(--color-primary); }
+  .next-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-bottom: 3rem; } .next-links a { background: #f0f3ee; border: 1px solid #dce4dd; padding: 1.2rem; border-radius: var(--radius); } .next-links strong, .next-links span { display: block; } .next-links span { margin-top: .5rem; color: var(--color-text-light); font-size: .87rem; }
+  .faq-list { max-width: 55rem; } .source-note { margin-top: 2rem; border-top: 1px solid #dce4dd; padding-top: 1.5rem; max-width: 60rem; font-size: .85rem; } .source-note strong { color: var(--color-primary); } .source-note p { margin-top: .6rem; }
+  a:focus-visible, summary:focus-visible { outline: 3px solid #b18a3a; outline-offset: 4px; }
+  @media (max-width: 1000px) { .type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .next-links { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 750px) { .type-grid, .area-grid, .example-grid, .planning-grid, .next-links { grid-template-columns: 1fr; } .accommodation-hero { padding: 3rem 0 2rem; } .planning-grid { gap: 1rem; } .decision-strip { gap: 1rem; } .example-card img { height: 15rem; } }
 </style>

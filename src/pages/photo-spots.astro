@@ -1,136 +1,148 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WinterStatusNotice from '../components/WinterStatusNotice.astro';
 
+const banffTrails = 'https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions';
+const parkway = 'https://parks.canada.ca/pn-np/ab/banff/visit/promenadedesglaciers-icefieldsparkway';
+const sunCalculator = 'https://nrc.canada.ca/en/research-development/products-services/software-applications/sun-calculator/';
+const sunInterpretation = 'https://nrc.canada.ca/en/research-development/products-services/software-applications/interpreting-results-sunrisesunset-calculator';
 const spots = [
-  { name: 'Moraine Lake Rockpile', slug: 'moraine-lake-lakeshore', lat: 51.3217, lng: -116.1860, type: 'sunrise', elevation: '1885m', season: 'Jun-Oct', bestLight: 'Sunrise (6-7:30 AM)', tip: 'The classic Twenty Dollar View. Shuttle required. First shuttle gives best light. Tripod allowed on the Rockpile. Reflection disappears by 9 AM as wind picks up.', subjects: ['Turquoise lake', 'Valley of Ten Peaks', 'Mirror reflections'] },
-  { name: 'Vermilion Lakes', slug: 'fenland-trail', lat: 51.1830, lng: -115.6050, type: 'sunset', elevation: '1380m', season: 'Year-round', bestLight: 'Sunset (golden hour)', tip: 'Drive to the third lake for Mount Rundle reflections. Winter sunsets are the most dramatic — pink alpenglow on Rundle with frozen lake in foreground. Elk in frame common.', subjects: ['Mount Rundle reflections', 'Sunset alpenglow', 'Elk in foreground'] },
-  { name: 'Peyto Lake Viewpoint', slug: 'peyto-lake-viewpoint', lat: 51.7167, lng: -116.5333, type: 'midday', elevation: '2088m', season: 'Jun-Oct', bestLight: 'Mid-morning (9-11 AM)', tip: 'The fox-head lake is actually best in midday light when the turquoise colour is most saturated. Early morning puts Peyto in shadow. New viewing platform has fences — shoot through or over them.', subjects: ['Fox-head turquoise lake', 'Glacier backdrop', 'Alpine colour'] },
-  { name: 'Lake Louise Lakeshore', slug: 'lake-louise-lakeshore', lat: 51.4167, lng: -116.1767, type: 'sunrise', elevation: '1731m', season: 'Year-round', bestLight: 'Sunrise (first light on glacier)', tip: 'Arrive 30 min before sunrise for mirror-still water. Walk past the Chateau to the lakeshore. In winter, the frozen turquoise ice with Chateau in background is iconic. Summer: canoe at dawn for the classic shot.', subjects: ['Victoria Glacier', 'Turquoise water', 'Chateau backdrop'] },
-  { name: 'Two Jack Lake', slug: null, lat: 51.2280, lng: -115.4790, type: 'sunrise', elevation: '1500m', season: 'Year-round', bestLight: 'Sunrise (golden light on Rundle)', tip: 'The foreground rocks in the shallows make this. Wade out (carefully) for lower angle. Mount Rundle catches first light beautifully. Far fewer people than the icon lakes.', subjects: ['Mount Rundle sunrise', 'Foreground rocks', 'Calm reflections'] },
-  { name: 'Bow Lake', slug: 'bow-lake', lat: 51.6700, lng: -116.4467, type: 'sunrise', elevation: '1920m', season: 'Jun-Oct', bestLight: 'Sunrise + first hour', tip: 'Num-Ti-Jah Lodge on the shore adds a foreground element. Bow Glacier and Bow Falls behind. Less crowded than the Lake Louise shots and equally beautiful. Good for wide panoramas.', subjects: ['Bow Glacier', 'Lodge foreground', 'Mountain panorama'] },
-  { name: 'Cascade Mountain from Banff', slug: null, lat: 51.1780, lng: -115.5700, type: 'anytime', elevation: '1400m', season: 'Year-round', bestLight: 'Blue hour / Christmas lights (winter)', tip: 'Shoot from the middle of Banff Avenue bridge for the classic "Cascade Mountain down the main street" shot. In December, Christmas lights on the avenue add foreground. Blue hour is best year-round.', subjects: ['Cascade Mountain', 'Banff Avenue', 'Town with mountains'] },
-  { name: 'Johnston Canyon Catwalks', slug: 'johnston-canyon-lower-falls', lat: 51.2454, lng: -115.8396, type: 'midday', elevation: '1430m', season: 'Year-round', bestLight: 'Overcast day (reduces harsh shadows in canyon)', tip: 'Overcast days are actually better here — direct sun creates extreme contrast in the narrow canyon. Winter ice formations are spectacular. Use a slow shutter (1-2s) for silky waterfall effect.', subjects: ['Waterfall', 'Canyon walls', 'Ice formations (winter)'] },
-  { name: 'Sentinel Pass Panorama', slug: 'sentinel-pass-via-larch-valley', lat: 51.3300, lng: -116.2100, type: 'morning', elevation: '2611m', season: 'Jul-Oct', bestLight: 'Morning (8-11 AM)', tip: 'The hike is 5.8 km to the pass. In September, golden larches below make this the single most photographed panorama in the Rockies. Wide-angle lens essential. Dress for wind at the pass.', subjects: ['Larch Valley gold', 'Valley of Ten Peaks', 'Alpine panorama'] },
-  { name: 'Athabasca Falls', slug: null, lat: 51.1167, lng: -117.2167, type: 'midday', elevation: '1220m', season: 'May-Oct', bestLight: 'Midday (sun reaches canyon floor)', tip: 'Multiple viewpoints via bridges — the lower viewpoint gives the most dramatic sense of power. Spray gets on your lens, bring a cloth. Long exposure (0.5-1s) smooths the water beautifully.', subjects: ['Powerful waterfall', 'Canyon gorge', 'Spray and mist'] },
+  { name: 'Moraine Lake Rockpile', area: 'Lake Louise area · Banff National Park', region: 'banff', seasons: ['summer'], lights: ['early', 'day'], seasonLabel: 'Summer-access outing', light: 'Compare early light and daytime colour', access: 'Book permitted seasonal transport. A sunrise plan needs a service that actually arrives in time; a shuttle ticket is not automatically an early-morning ticket.', tip: 'Use the designated Rockpile paths and viewpoints. Let the mountain shapes and weather guide the frame; calm reflections and turquoise colour are not guaranteed. This is not a winter lake outing.', subjects: ['Valley of the Ten Peaks', 'Mountain shapes', 'Open-water colour'], guide: '/blog/moraine-lake-shuttle-guide', guideLabel: 'Plan Moraine Lake access', source: 'https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise', sourceLabel: 'Parks Canada lake access' },
+  { name: 'Vermilion Lakes', area: 'Banff area · Banff National Park', region: 'banff', seasons: ['summer', 'winter'], lights: ['early', 'evening'], seasonLabel: 'Summer & winter, with access checks', light: 'Try changing morning or evening sky', access: 'Check the permitted stopping place and approach for the date. Use appropriate land-based viewpoints and keep the road clear.', tip: 'Frame mountains, reeds or a changing sky from a place you can reach responsibly. Wind, water, snow and cloud change the foreground. Give wildlife space rather than moving closer to put an animal in the composition.', subjects: ['Mount Rundle', 'Reeds and shoreline', 'Changing skies'], guide: '/blog/banff-winter-photography', guideLabel: 'Winter photo preparation', source: 'https://www.banfflakelouise.com/experiences/vermilion-lakes', sourceLabel: 'Tourism destination information' },
+  { name: 'Peyto Lake Viewpoint', area: 'Icefields Parkway · Banff National Park', region: 'banff', seasons: ['summer', 'winter'], lights: ['day', 'overcast'], seasonLabel: 'Summer viewpoint; separate winter route check', light: 'Try daylight colour or cloud layers', access: 'Check the Parkway, parking and current lookout trail report. Snow-season access is a winter outing, with a separate route and equipment decision.', tip: 'Use the designated viewing platform and stay behind barriers. Change focal length or your position within the permitted space instead of reaching over or climbing a fence. Snow and lake cover change the subject in winter.', subjects: ['Lake shape', 'Valley layers', 'Mountain backdrop'], guide: '/blog/peyto-lake-guide', guideLabel: 'Plan the Peyto viewpoint', source: parkway, sourceLabel: 'Parks Canada Parkway guide' },
+  { name: 'Lake Louise Lakeshore', area: 'Lake Louise area · Banff National Park', region: 'banff', seasons: ['summer', 'winter'], lights: ['early', 'day'], seasonLabel: 'Land-based viewpoints in either season', light: 'Watch light move across the valley', access: 'The village, lakeshore and ski resort are separate destinations. Confirm the actual lakeshore journey, current paths and return.', tip: 'Make a composition from an open designated path or viewpoint. A winter photograph does not require going onto the lake or towards the glacier. Summer boat rentals have their own hours; do not assume dawn canoe access.', subjects: ['Victoria Glacier backdrop', 'Valley panorama', 'Seasonal shoreline'], guide: '/towns/lake-louise/', guideLabel: 'Plan a Lake Louise visit', source: 'https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise', sourceLabel: 'Parks Canada Lake Louise information' },
+  { name: 'Two Jack Lake', area: 'Banff area · Banff National Park', region: 'banff', seasons: ['summer', 'winter'], lights: ['early', 'evening'], seasonLabel: 'Summer & winter, with access checks', light: 'Explore early or evening sky from shore', access: 'Check the road approach and designated parking. Seasonal transit does not establish a winter service or a late return.', tip: 'Use shoreline textures and the mountain backdrop from permitted land. Keep your feet out of the water and off unassessed ice; adjust the framing where you are instead of wading out for a lower angle.', subjects: ['Mount Rundle backdrop', 'Shoreline textures', 'Changing water and snow'], guide: '/lakes', guideLabel: 'Explore the lakes guide', source: 'https://www.banfflakelouise.com/experiences/two-jack-lake', sourceLabel: 'Tourism Two Jack information' },
+  { name: 'Bow Lake', area: 'Icefields Parkway · Banff National Park', region: 'banff', seasons: ['summer', 'winter'], lights: ['early', 'day', 'evening'], seasonLabel: 'Summer visit; separate winter access check', light: 'Build a panorama around the available light', access: 'Check road, parking and facility access. Some Parkway day-use facilities are summer-only; do not assume a clear winter path from a summer description.', tip: 'Choose an appropriate land-based viewpoint and keep the outing within the access you have checked. Cloud and snow can make a different photograph from an open-water view. This card does not extend the outing onto the lake or to Bow Glacier Falls.', subjects: ['Mountain panorama', 'Glacier backdrop', 'Seasonal shoreline'], guide: '/blog/bow-lake-guide', guideLabel: 'Plan Bow Lake', source: parkway, sourceLabel: 'Parks Canada Parkway guide' },
+  { name: 'Cascade Mountain from Banff', area: 'Banff town', region: 'banff', seasons: ['summer', 'winter'], lights: ['early', 'day', 'evening'], seasonLabel: 'Town outing in either season', light: 'Try daylight detail or evening town lights', access: 'Use open public pedestrian areas. Check the surface underfoot and leave room for people using the pavement or bridge.', tip: 'Work from a pavement or designated pedestrian space with the mountain behind the town. Stay out of traffic lanes, keep crossings clear and do not stop in the middle of a road or vehicle bridge for a photograph.', subjects: ['Cascade Mountain', 'Town streets', 'Evening lights'], guide: '/towns/banff/', guideLabel: 'Explore Banff town', source: 'https://banff.ca/', sourceLabel: 'Town of Banff information' },
+  { name: 'Johnston Canyon Catwalks', area: 'Bow Valley Parkway · Banff National Park', region: 'banff', seasons: ['summer', 'winter'], lights: ['overcast', 'day'], seasonLabel: 'Main trail/P1 closed at October 28 review', light: 'Explore softer contrast when access permits', access: 'Read the current closure notice before any booking or journey. The listed scheduled closure end is not proof that the main trail has reopened.', tip: 'When the route is officially open and suitable, stay on designated paths behind railings and keep narrow sections clear. A tripod must not block other visitors. Do not enter closed areas or move onto creek ice for a waterfall angle.', subjects: ['Canyon textures', 'Waterfalls', 'Seasonal ice formations'], guide: '/blog/banff-ice-walk-guide', guideLabel: 'Read the canyon access guide', source: 'https://parks.canada.ca/pn-np/ab/banff/bulletins/06d4ef61-a3c9-4b65-8dfc-66d056252d6c', sourceLabel: 'Current closure bulletin' },
+  { name: 'Sentinel Pass Panorama', area: 'Moraine Lake area · Banff National Park', region: 'banff', seasons: ['summer'], lights: ['early', 'day'], seasonLabel: 'Alpine hiking day in the summer-access season', light: 'Plan the hike first, then photograph its light', access: 'Check the complete hike, current snow and wildlife restrictions, group ability and the last booked return from Moraine Lake. This is not a roadside photo stop.', tip: 'Make turnaround, weather and footing the priority. Stay on the trail; a wide panorama can be made without scrambling beyond the planned route. Larch colour and snow-free conditions vary rather than following a guaranteed date.', subjects: ['Larch Valley', 'Alpine panorama', 'Mountain layers'], guide: '/trails/sentinel-pass-via-larch-valley', guideLabel: 'Read the full hike guide', source: banffTrails, sourceLabel: 'Parks Canada trail conditions' },
+  { name: 'Athabasca Falls — Jasper extension', area: 'Jasper National Park · separate destination', region: 'jasper', seasons: ['summer', 'winter'], lights: ['overcast', 'day'], seasonLabel: 'Separate Jasper trip; check seasonal access', light: 'Try waterfall detail or soft canyon light', access: 'Plan this as part of a Jasper or Parkway extension, with its own road, trail and return checks. It is not a Banff-town photo stop.', tip: 'Stay on designated trails and behind railings. Spray and ice can affect the path and your equipment; change the plan if footing is unsuitable. Never step onto river ice or beyond barriers to get closer to the falls.', subjects: ['Waterfall detail', 'Canyon textures', 'Seasonal ice'], guide: '/icefields-parkway-planner', guideLabel: 'Plan a separate Parkway journey', source: 'https://parks.canada.ca/pn-np/ab/jasper/activ/experience/sentiers-trails/glaciers-icefields', sourceLabel: 'Parks Canada Jasper guide' },
 ];
-
-const spotsJSON = JSON.stringify(spots);
+const faqs = [
+  { question: 'Which photo spots are in Banff, and which are farther away?', answer: 'This guide has nine Banff-area destinations and one separate Jasper extension. Banff town, Vermilion Lakes and Two Jack Lake are different journeys from Lake Louise, Moraine Lake and the Icefields Parkway. Athabasca Falls is in Jasper National Park and needs a separate travel plan.' },
+  { question: 'How do I find sunrise and sunset for my Banff travel date?', answer: 'Use the National Research Council Canada sunrise/sunset calculator with the correct place, date and time zone, then read its interpretation notes. NRC tables use Standard Time; add one hour when daylight saving applies. Terrain can delay the sun reaching a lake or hide it before the tabulated sunset.' },
+  { question: 'Do the winter and light filters confirm that a viewpoint is open?', answer: 'No. They narrow ideas to research. Check the current road, trail, parking, daylight, weather and transport for the specific outing. Johnston Canyon has a dated main-trail closure notice, while Moraine Lake and Sentinel Pass are excluded from the winter ideas in this guide.' },
+  { question: 'Can I photograph lakes from the water or ice?', answer: 'Use appropriate permitted land-based viewpoints for these suggestions. The guide does not assess ice or direct visitors to wade out for a composition. Footprints, a cold temperature or a photo online do not establish a suitable surface. Follow local closures and on-site instructions.' },
+  { question: 'Can I fly a drone or arrange a commercial shoot?', answer: 'Recreational drone flying is prohibited at Parks Canada places. Commercial photography or filming may require permits and business licensing from the relevant land manager. Check the Town of Banff or Parks Canada for the actual location and project before arranging a shoot.' },
+];
 ---
 
-<BaseLayout title="Best Photo Spots in Banff — Sunrise, Sunset & Golden Hour Guide" description="The 10 best photography locations in Banff National Park with exact sunrise/sunset timing, golden hour windows, and pro tips for each spot.">
+<BaseLayout title="Banff Photo Spots: 10 Locations, Seasonal Access & Light Planning" description="Compare nine Banff photo destinations and a separate Jasper extension. Filter by season and light, check access, and use official sunrise resources to plan your outing." image="https://banffbound.com/images/blog/banff-photography-spots.webp" lastUpdated="2026-10-28">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Photo Spots' }]} /></div>
+  <section class="page-hero"><img src="/images/blog/banff-photography-spots.webp" alt="Mountain landscape in the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" /><div class="page-hero-content"><span class="badge">Make room for the light</span><h1>Banff photo spots</h1><p>Nine Banff destinations and one Jasper extension. Pick a subject, check the journey, and let the day shape the photograph.</p></div></section>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'What are the best photo spots in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'The top 10 photo spots in Banff: Moraine Lake Rockpile (sunrise, iconic Twenty Dollar View), Vermilion Lakes (sunset, Mount Rundle reflections), Peyto Lake Viewpoint (midday, fox-head turquoise lake), Lake Louise Lakeshore (sunrise, Victoria Glacier), Two Jack Lake (sunrise, Mount Rundle), Bow Lake (sunrise, glacier backdrop), Banff Avenue / Cascade Mountain (blue hour), Johnston Canyon (overcast days, waterfalls), Sentinel Pass (morning, larch season panorama), Athabasca Falls (midday, powerful waterfall).' } },
-      { '@type': 'Question', name: 'What time is sunrise and sunset in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Banff sunrise/sunset varies dramatically by season. Summer (June-July): sunrise ~5:30 AM, sunset ~9:45 PM, 16+ hours of daylight. Winter (December): sunrise ~8:30 AM, sunset ~4:30 PM, 8 hours of daylight. Golden hour lasts about 1 hour before sunset and 30 minutes after sunrise. September (larch season): sunrise ~7:00 AM, sunset ~7:30 PM.' } },
-    ],
-  })} />
+  <div class="container photo-content">
+    <p class="photo-lead">The best outing is one you can reach, enjoy and return from without rushing. Use these locations as ideas, then check the actual access and weather. Light labels are suggestions to explore, not a promise of colour, reflections, clear skies or a particular sunrise angle.</p>
+    <nav class="photo-jump" aria-label="On this page"><a href="#photo-light">Plan the light</a><a href="#photo-destinations">Find a destination</a><a href="#photo-field">In the field</a><a href="#photo-faq">Questions</a></nav>
+    <WinterStatusNotice />
 
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Photo Spots' }]} />
+    <section class="photo-light-panel" aria-labelledby="photo-light">
+      <span class="photo-eyebrow">Date, location and the mountain horizon</span><h2 id="photo-light">Plan a light window, not an exact promise</h2>
+      <p>Use the <a href={sunCalculator} target="_blank" rel="noopener">official NRC sunrise/sunset calculator ↗</a> for your date and location. Check its time-zone setting and <a href={sunInterpretation} target="_blank" rel="noopener">interpretation notes ↗</a>: the tables use Standard Time, so add one hour when daylight saving applies. Do not substitute the time zone of the device you are travelling with.</p>
+      <p>The tabulated sunrise uses a theoretical horizon. Peaks can leave a lakeshore in shadow after that time, or hide the sun before tabulated sunset. Cloud, wind and your viewpoint change the result too. Leave time for safe travel, setup and a different composition rather than treating “golden hour” as a fixed daily appointment.</p>
+      <div class="photo-related"><a href="/blog/banff-winter-photography">Winter camera preparation →</a><a href="/blog/banff-northern-lights">Aurora planning →</a><a href="/weather-webcams">Check mountain weather →</a></div>
+    </section>
+
+    <section aria-labelledby="photo-destinations">
+      <h2 id="photo-destinations">Choose a subject for your day</h2>
+      <p>Winter labels identify places that need winter-specific research. They do not confirm an open or cleared route. Moraine Lake and Sentinel Pass are summer-access ideas here; do not use their summer routes as a winter plan.</p>
+      <form id="photo-filters" class="photo-controls" hidden aria-label="Filter photo destinations">
+        <label for="photo-season">Season to research<select id="photo-season"><option value="all">All seasonal ideas</option><option value="summer">Summer / hiking season</option><option value="winter">Winter / snow season</option></select></label>
+        <label for="photo-light-filter">Light to explore<select id="photo-light-filter"><option value="all">Any light</option><option value="early">Early light</option><option value="day">Daylight</option><option value="evening">Evening / town lights</option><option value="overcast">Overcast / softer contrast</option></select></label>
+        <button type="button" id="photo-reset">Reset filters</button>
+      </form>
+      <p id="photo-result-count" class="photo-result" role="status" aria-live="polite" aria-atomic="true">10 destinations to research · 1 is a separate Jasper extension.</p>
+      <noscript><p class="photo-small">All 10 destinations are shown below. Enable JavaScript to narrow the ideas by season and light; the location notes, sources and guide links work without it.</p></noscript>
+      <div class="spots-grid" id="photo-results">
+        {spots.map((spot, i) => <article class="spot-card" data-photo-spot data-seasons={spot.seasons.join(' ')} data-lights={spot.lights.join(' ')} data-region={spot.region} aria-labelledby={`photo-spot-${i}`}>
+          <div class="spot-header"><span class="spot-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><div><span class="photo-eyebrow">{spot.area}</span><h3 id={`photo-spot-${i}`}>{spot.name}</h3></div></div>
+          <p class:list={['spot-season', { 'spot-season-alert': i === 7 }]}>{spot.seasonLabel}</p>
+          <p class="spot-light"><strong>Light idea:</strong> {spot.light}</p>
+          <p class="spot-access"><strong>The access check:</strong> {spot.access}</p>
+          <p class="spot-tip">{spot.tip}</p>
+          <div class="spot-subjects" aria-label="Possible subjects">{spot.subjects.map(subject => <span class="subject-tag">{subject}</span>)}</div>
+          <div class="spot-links"><a href={spot.guide}>{spot.guideLabel} →</a><a href={spot.source} target="_blank" rel="noopener">{spot.sourceLabel} ↗</a></div>
+        </article>)}
+      </div>
+      <p id="photo-empty" class="photo-empty" hidden>No destinations match both choices. Try another light idea or reset the filters.</p>
+    </section>
+
+    <section class="photo-field" aria-labelledby="photo-field"><h2 id="photo-field">Keep the viewpoint part of the plan</h2><ul><li>Work from permitted public paths and viewing spaces, stay behind barriers and leave room for other people. A tripod should not block a narrow path or bridge.</li><li>Use designated parking and a legal pedestrian position. Photograph from the pavement, not a traffic lane, and keep your attention on footing and road users.</li><li>Give wildlife the space required by <a href="https://parks.canada.ca/voyage-travel/conseils-tips/trucs-photo-tips" target="_blank" rel="noopener">Parks Canada's photography guidance</a>. Choose a longer lens or crop rather than approaching an animal.</li><li><a href="https://parks.canada.ca/pn-np/ab/banff/info/permis-permit/drone" target="_blank" rel="noopener">Recreational drone flying is prohibited at Parks Canada places</a>. For a commercial project, check the applicable <a href="https://banff.ca/688/Film-Permits" target="_blank" rel="noopener">Town of Banff requirements</a> and Parks Canada permits before arranging the shoot.</li><li>Choose one main photo outing, save its details offline and set a return that leaves space for conditions to change. Check <a href="https://511.alberta.ca/" target="_blank" rel="noopener">Alberta 511</a>, trail reports and any booked transport before leaving.</li></ul><p>Connect the outing with our <a href="/trip-builder">editable trip builder</a>, compare <a href="/winter-stays">winter bases</a>, or use the <a href="/winter">winter activity finder</a> when weather suggests a different day.</p></section>
+    <section class="photo-faq" aria-labelledby="photo-faq"><h2 id="photo-faq">Photo planning questions</h2>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <section class="photo-sources"><h2>Sources and review</h2><p>Reviewed October 28, 2026. Each card links to primary destination or access information. The <a href={sunCalculator}>National Research Council calculator</a> and <a href={sunInterpretation}>interpretation notes</a> support the solar-time explanation; <a href={banffTrails}>Parks Canada trail reports</a>, <a href="https://parks.canada.ca/pn-np/ab/banff/bulletins">Banff bulletins</a> and <a href="https://parks.canada.ca/pn-np/ab/jasper/bulletins">Jasper bulletins</a> provide current checks. Light and composition suggestions are starting points, not live forecasts or access assessments.</p></section>
   </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Photography in Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Photography Guide</span>
-      <h1>Best Photo Spots</h1>
-      <p>10 top photography locations with golden hour timing, best light direction, and pro tips.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="sun-banner" id="sun-banner">
-        <div class="sun-item"><span class="sun-label">Today's Sunrise</span><span class="sun-val" id="today-sunrise">--</span></div>
-        <div class="sun-item"><span class="sun-label">Golden Hour</span><span class="sun-val" id="today-golden">--</span></div>
-        <div class="sun-item"><span class="sun-label">Sunset</span><span class="sun-val" id="today-sunset">--</span></div>
-        <div class="sun-item"><span class="sun-label">Daylight</span><span class="sun-val" id="today-daylight">--</span></div>
-      </div>
-
-      <div class="spots-grid">
-        {spots.map((spot, i) => (
-          <div class={`spot-card spot-${spot.type}`}>
-            <div class="spot-header">
-              <span class="spot-num">{i + 1}</span>
-              <div>
-                <h3>{spot.name}</h3>
-                <span class="spot-light-badge">{spot.type === 'sunrise' ? '🌅 Sunrise' : spot.type === 'sunset' ? '🌇 Sunset' : spot.type === 'morning' ? '☀️ Morning' : '📷 Any Light'}</span>
-              </div>
-            </div>
-            <div class="spot-meta">
-              <span>📍 {spot.elevation}</span>
-              <span>📅 {spot.season}</span>
-              <span>💡 {spot.bestLight}</span>
-            </div>
-            <p class="spot-tip">{spot.tip}</p>
-            <div class="spot-subjects">
-              {spot.subjects.map(s => <span class="subject-tag">{s}</span>)}
-            </div>
-            {spot.slug && <a href={`/trails/${spot.slug}`} class="card-link">View Trail Details</a>}
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
 </BaseLayout>
 
 <script>
-  function calcSun(lat, lng, date) {
-    const rad = Math.PI / 180;
-    const dayOfYear = Math.floor((date - new Date(date.getFullYear(),0,0)) / 86400000);
-    const declination = 23.45 * Math.sin(rad * (360/365) * (dayOfYear - 81));
-    const hourAngle = Math.acos(-Math.tan(lat * rad) * Math.tan(declination * rad)) / rad;
-    const solarNoon = 12 - lng / 15;
-    const offset = -7;
-    return { sunrise: solarNoon - hourAngle / 15 - offset, sunset: solarNoon + hourAngle / 15 - offset };
+  const controls = document.querySelector<HTMLFormElement>('#photo-filters');
+  const season = document.querySelector<HTMLSelectElement>('#photo-season');
+  const light = document.querySelector<HTMLSelectElement>('#photo-light-filter');
+  const reset = document.querySelector<HTMLButtonElement>('#photo-reset');
+  const count = document.querySelector<HTMLElement>('#photo-result-count');
+  const empty = document.querySelector<HTMLElement>('#photo-empty');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-photo-spot]'));
+  function filterSpots() {
+    let visible = 0;
+    let jasper = 0;
+    cards.forEach(card => {
+      const matchesSeason = season?.value === 'all' || (card.dataset.seasons || '').split(' ').includes(season?.value || '');
+      const matchesLight = light?.value === 'all' || (card.dataset.lights || '').split(' ').includes(light?.value || '');
+      card.hidden = !(matchesSeason && matchesLight);
+      if (!card.hidden) { visible++; if (card.dataset.region === 'jasper') jasper++; }
+    });
+    if (count) count.textContent = `${visible} ${visible === 1 ? 'destination' : 'destinations'} to research${jasper ? ' · 1 is a separate Jasper extension' : ''}. These filters do not confirm current access.`;
+    if (empty) empty.hidden = visible > 0;
   }
-  function fmt(h) {
-    const hrs = Math.floor(h), mins = Math.round((h-hrs)*60), ap = hrs>=12?'PM':'AM';
-    return `${hrs>12?hrs-12:hrs||12}:${String(mins).padStart(2,'0')} ${ap}`;
+  if (controls && season && light && reset) {
+    controls.addEventListener('submit', event => event.preventDefault());
+    season.addEventListener('change', filterSpots);
+    light.addEventListener('change', filterSpots);
+    reset.addEventListener('click', () => { season.value = 'all'; light.value = 'all'; filterSpots(); });
+    controls.hidden = false;
+    filterSpots();
   }
-  const { sunrise, sunset } = calcSun(51.1784, -115.5708, new Date());
-  document.getElementById('today-sunrise').textContent = fmt(sunrise);
-  document.getElementById('today-sunset').textContent = fmt(sunset);
-  document.getElementById('today-golden').textContent = `${fmt(sunset-1)} - ${fmt(sunset)}`;
-  const dl = sunset - sunrise;
-  document.getElementById('today-daylight').textContent = `${Math.floor(dl)}h ${Math.round((dl%1)*60)}m`;
 </script>
 
 <style>
-  .sun-banner {
-    display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
-    background: var(--color-primary); color: var(--color-white); border-radius: var(--radius);
-    padding: 1.5rem; margin-bottom: 2rem; text-align: center;
-  }
-  .sun-item { display: flex; flex-direction: column; gap: 0.2rem; }
-  .sun-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-light); }
-  .sun-val { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; }
-
-  .spots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
-  .spot-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .spot-sunrise { border-top: 3px solid #f59e0b; }
-  .spot-sunset { border-top: 3px solid #ef4444; }
-  .spot-morning { border-top: 3px solid #3b82f6; }
-  .spot-midday { border-top: 3px solid #22c55e; }
-  .spot-anytime { border-top: 3px solid #8b5cf6; }
-
-  .spot-header { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
-  .spot-num { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-accent); }
-  .spot-header h3 { font-size: 1.05rem; margin-bottom: 0.15rem; }
-  .spot-light-badge { font-size: 0.75rem; color: var(--color-text-light); }
-
-  .spot-meta { display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--color-text-light); margin-bottom: 0.75rem; flex-wrap: wrap; }
-  .spot-tip { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.75rem; }
-  .spot-subjects { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-  .subject-tag { font-size: 0.72rem; background: var(--color-bg-alt); padding: 0.15rem 0.5rem; border-radius: 3px; color: var(--color-text-light); }
-  .card-link { display: inline-block; margin-top: 0.75rem; color: var(--color-accent); font-weight: 600; font-size: 0.85rem; text-decoration: none; }
-
-  @media (max-width: 768px) {
-    .spots-grid { grid-template-columns: 1fr; }
-    .sun-banner { gap: 1.5rem; }
-  }
+  .photo-content { padding-top: 2.5rem; padding-bottom: 4rem; }
+  .photo-content a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; }
+  .photo-content h2 { margin-bottom: 1rem; scroll-margin-top: 130px; }
+  .photo-content p { margin-bottom: 1rem; }
+  .photo-lead { max-width: 900px; font-size: 1.1rem; }
+  .photo-jump, .photo-related { display: flex; flex-wrap: wrap; gap: .65rem 1.5rem; font-size: .87rem; }
+  .photo-jump { margin: 1.5rem 0 2rem; }
+  .photo-eyebrow { display: block; font-size: .69rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; color: var(--color-text-light); margin-bottom: .45rem; }
+  .photo-light-panel { padding: clamp(1.3rem, 3vw, 2rem); margin: 2rem 0 3rem; background: var(--color-bg-alt); border-radius: var(--radius); }
+  .photo-light-panel p { max-width: 950px; }
+  .photo-controls { display: grid; grid-template-columns: 1fr 1fr auto; gap: 1rem; align-items: end; padding: 1.3rem; margin: 1.5rem 0 1rem; border: 1px solid #d6dfd1; background: white; border-radius: var(--radius); }
+  .photo-controls[hidden], .spot-card[hidden], .photo-empty[hidden] { display: none !important; }
+  .photo-controls label { font-size: .85rem; font-weight: 600; }
+  .photo-controls select { display: block; width: 100%; min-height: 48px; padding: .75rem; margin-top: .4rem; border: 1px solid #aab7a5; border-radius: 7px; background: var(--color-bg); color: var(--color-text); font: inherit; }
+  .photo-controls button { padding: .75rem 1.2rem; min-height: 48px; border: 1px solid var(--color-primary); border-radius: 7px; background: var(--color-primary); color: white; font: inherit; font-size: .9rem; cursor: pointer; }
+  .photo-result, .photo-small { font-size: .85rem; color: var(--color-text-light); }
+  .spots-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3rem; }
+  .spot-card { background: white; border: 1px solid #d6dfd1; border-radius: var(--radius); padding: clamp(1.2rem, 2vw, 1.6rem); }
+  .spot-header { display: flex; gap: .9rem; align-items: flex-start; margin-bottom: 1rem; }
+  .spot-num { font-family: var(--font-heading); font-size: 1.6rem; line-height: 1.15; font-weight: 600; color: #8b6b32; }
+  .spot-header h3 { font-size: 1.4rem; }
+  .spot-season { display: inline-block; background: #edf3eb; border-radius: 5px; padding: .3rem .6rem; font-size: .72rem; font-weight: 600; color: #344c32; }
+  .spot-season-alert { background: #fff0d5; color: #65491f; }
+  .spot-light, .spot-access, .spot-tip { font-size: .87rem; color: var(--color-text-light); line-height: 1.65; }
+  .spot-subjects { display: flex; gap: .4rem; flex-wrap: wrap; margin: 1.1rem 0; }
+  .subject-tag { font-size: .69rem; background: var(--color-bg-alt); padding: .2rem .5rem; border-radius: 4px; color: var(--color-text-light); }
+  .spot-links { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; font-size: .8rem; font-weight: 600; }
+  .photo-empty { padding: 1.4rem; border-radius: var(--radius); background: var(--color-bg-alt); }
+  .photo-field { margin: 3rem 0; max-width: 950px; }
+  .photo-field ul { padding-left: 1.3rem; margin-bottom: 1rem; }
+  .photo-field li { margin-bottom: .8rem; }
+  .photo-faq { max-width: 950px; }
+  .photo-faq details { padding: 1.1rem 0; border-bottom: 1px solid #d6dfd1; }
+  .photo-faq summary { font-weight: 600; cursor: pointer; }
+  .photo-faq details p { padding-top: .8rem; margin-bottom: 0; }
+  .photo-sources { margin-top: 3rem; max-width: 950px; font-size: .85rem; color: var(--color-text-light); }
+  .photo-sources h2 { font-size: 1.5rem; }
+  @media(max-width: 760px) { .spots-grid, .photo-controls { grid-template-columns: 1fr; } }
+  @media print { .photo-controls, .photo-jump { display: none !important; } .spot-card { break-inside: avoid; } .spots-grid { grid-template-columns: 1fr; } }
 </style>

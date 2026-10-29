@@ -1,3 +1,11 @@
+import { viewGuideMetadata } from './viewGuideOverride';
+import { winterResortMetadata } from './winterResortOverrides';
+import { winterSeasonMetadata } from './winterSeasonOverrides';
+import { winterTripMetadata } from './winterTripOverrides';
+import { winterActivityMetadata } from './winterActivityOverrides';
+import { winterGuideMetadata } from './winterGuideOverrides';
+import { blogRedirects } from './redirects.mjs';
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -9,7 +17,7 @@ export interface BlogPost {
   readTime: string;
 }
 
-export const blogPosts: BlogPost[] = [
+const originalBlogPosts: BlogPost[] = [
   {
     slug: 'banff-ski-fields',
     title: 'Banff Ski Fields 2026: Ultimate Guide to Epic Powder Days',
@@ -3029,5 +3037,9 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min read',
   },
 ];
+
+export const allBlogPosts: BlogPost[] = originalBlogPosts.map(post => ({ ...post, ...winterGuideMetadata[post.slug], ...winterActivityMetadata[post.slug], ...winterTripMetadata[post.slug], ...winterResortMetadata[post.slug], ...winterSeasonMetadata[post.slug], ...viewGuideMetadata[post.slug] }));
+// Keep redirect paths generated, but surface only canonical articles in listings.
+export const blogPosts = allBlogPosts.filter(post => !(post.slug in blogRedirects));
 
 export const categories = [...new Set(blogPosts.map(p => p.category))];

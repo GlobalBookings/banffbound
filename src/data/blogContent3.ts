@@ -3527,13 +3527,13 @@ export const blogContent3: Record<string, string> = {
 <p>The key to finding consistent deals in Banff lies in flexibility—with dates, accommodation location, and activity choices. I've never visited without finding ways to save money while still experiencing the incredible landscape that keeps drawing me back year after year.</p>
 `,
   'johnstons-canyon': `
-<p>When people ask me about the most accessible yet stunning hike in Banff National Park, I always point them to Johnston's <a href="/blog/johnsons-canyon">Johnson's <a href="/blog/johston-canyon">Johnston Canyon Banff: Travel</a> Banff Most Underrated Hidden Gem</a>. This spectacular slot canyon offers two distinct waterfalls, year-round hiking opportunities, and some of the most dramatic limestone formations you'll find in the Canadian Rockies. After visiting this canyon dozens of times across all seasons, I can tell you it's worth every step—if you know how to navigate the crowds and timing.</p>
+<p><a href="/blog/johnston-canyon-guide">Johnston Canyon</a> is a popular Banff National Park outing with paths and catwalks leading to its waterfalls. Plan around current trail conditions and seasonal access. In winter, ice and changing conditions require a separate plan; start with our <a href="/blog/banff-ice-walk-guide">Johnston Canyon ice walk guide</a>.</p>
 
 <h2>Getting to Johnston's Canyon</h2>
 
 <p>Johnston's Canyon sits 23 kilometres northwest of Banff townsite along the Bow Valley Parkway (Highway 1A). The drive takes about 20 minutes from downtown Banff, and you'll find the trailhead parking lot clearly marked on your right. I strongly recommend taking the scenic Bow Valley Parkway rather than the Trans-Canada Highway—the extra few minutes give you mountain views and potential wildlife sightings.</p>
 
-<p>The parking situation here requires serious planning. During peak season (June through September), arrive before 7 AM or after 6 PM, or you'll circle the lot endlessly. I've seen cars backed up along the highway waiting for spots. The lot fills completely by 8 AM on summer weekends. If you're staying overnight, check out our guide on <a href="/where-to-stay-in-banff">where to stay in Banff</a> to position yourself for early morning departures.</p>
+<p>The parking situation here requires serious planning. During peak season (June through September), arrive before 7 AM or after 6 PM, or you'll circle the lot endlessly. I've seen cars backed up along the highway waiting for spots. The lot fills completely by 8 AM on summer weekends. If you're staying overnight, check out our guide on <a href="/blog/where-to-stay-in-banff">where to stay in Banff</a> to position yourself for early morning departures.</p>
 
 <p>Parks Canada charges the standard daily vehicle permit fee of \$11.70 CAD (as of 2026), or you can purchase an annual Discovery Pass for \$72.25 CAD if you're planning multiple park visits. The trailhead includes washrooms, picnic tables, and interpretive signs, but no food services.</p>
 
@@ -4265,7 +4265,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>Most visitors spend 3-4 days in Banff before heading north, but I recommend allocating at least 2-3 days for <strong>Jasper Canada</strong> to truly appreciate what the park offers. The optimal itinerary depends on your interests and fitness level.</p>
 
-<p>For active travelers, start with Banff's easily accessible highlights like Lake Louise and Moraine Lake (arrive before 6 AM during summer 2026 or face parking closures). Check out our comprehensive <a href="/blog/best-banff-hiking-trails-<a href="/blog/whyte-museum-guide">Whyte Museum of the Canadian Rockies</a>">best Banff hiking trails</a> guide for specific recommendations based on difficulty level.</p>
+<p>Start your Banff visit by planning access to Lake Louise and Moraine Lake, including reserved seasonal transport where required. Our <a href="/blog/best-banff-hiking-trails-guide">Banff hiking trails guide</a> compares walking and hiking options by difficulty. Choose a route that fits your group and the current conditions.</p>
 
 <p>After experiencing Banff's crowds, Jasper provides welcome relief. Book accommodations through <a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Expedia</a> well in advance, especially for July and August visits. The Fairmont Jasper Park Lodge offers luxury lakeside accommodations, while the Pyramid Lake Resort provides excellent mid-range options with direct lake access.</p>
 
@@ -4597,7 +4597,7 @@ export const blogContent3: Record<string, string> = {
 <p>The investment in ski in ski out accommodations pays dividends for serious skiers. You'll maximize slope time, minimize logistics stress, and experience Banff's alpine environment in its purest form. After decades of mountain travel, I can confidently say that waking up on Sunshine Village represents one of Canada's premier ski experiences.</p>
 `,
   'ink-pots-banff-alberta': `
-<p>The Ink Pots in <a href="/blog/nightclub-banff"><a href="/blog/mount-norquay-banff">Mount Norquay <a href="/blog/banff-bridge"><a href="/blog/banff-admission"><a href="/blog/sandman-banff">Stay Like a Local: Sandman <a href="/blog/romantic-getaway-banff">Romantic Getaway in <a href="/blog/banff-clubs">Best <a href="/blog/banff-nightclubs"><a href="/blog/banff-film-festival"><a href="/blog/bear-street-banff">Bear Street <a href="/blog/deals-in-banff">Score <a href="/blog/banff-adventure-weekend"><a href="/blog/banff-hidden-gems">15 Hidden Gems in <a href="/blog/banff-big-3"><a href="/blog/conde-nast-banff">Conde Nast's <a href="/blog/banff-snowboarding">Banff Snowboarding : Slopes & Hidden Gems</a> Travel : Hidden Gems</a>'s Big 3</a> National Park</a> Weekend: Rafting, Via Ferrata & More</a> Deals : Insider Secrets to Save Big</a>: The Best Block in Town</a> Mountain Film Festival</a>'s Hottest Nightclubs: Party</a> Clubs : Where Locals Party After Dark</a>: The Couples</a> Hotel & Hidden Gems</a> <a href="/blog/admission-ticket-to-golden-skybridge">Banff Golden Skybridge Ticket & Tips</a> Fees : Save Money on Mountain Trip</a> Bridge: to <a href="/blog/jasper-canada">Banff to <a href="/blog/jasper-alberta">Banff to Jasper Alberta Road Trip</a> : Canadian Rockies Road Trip</a>'s Most Crossing</a></a> Nightlife : Best Clubs & Late Night Spots</a> Alberta represent one of the most fascinating geological features I've encountered in over a decade of exploring the Canadian Rockies. These seven natural cold-water springs create ethereal pools of brilliant turquoise and emerald green, bubbling up from deep underground aquifers. As someone who's made this journey multiple times while training for ultra marathons, I can tell you the 5.8-kilometer hike to reach these natural wonders is absolutely worth every step.</p>
+<p>The Ink Pots are cold mineral springs in a meadow beyond Johnston Canyon. This is a longer outing than visiting the canyon waterfalls. Read the <a href="/trails/ink-pots">Ink Pots trail notes</a> and check current conditions before choosing the route; a summer hiking plan does not establish winter safety.</p>
 
 <h2>What Are the Ink Pots and Why Are They Special?</h2>
 
@@ -4605,11 +4605,11 @@ export const blogContent3: Record<string, string> = {
 
 <p>What makes these springs truly remarkable is their active bubbling. Underground pressure forces water and sediment up through the spring beds, creating a constant churning effect that keeps the pools crystal clear. The vibrant colors come from light refraction through the clear water and the pale limestone beneath, combined with mineral deposits that have accumulated over thousands of years.</p>
 
-<p>During my last visit in September 2025, I spent nearly an hour photographing the interplay of light and color as the afternoon sun hit the pools at different angles. The contrast between the warm-toned surrounding grasslands and the cool blues of the springs creates some of the most striking natural photography opportunities in Banff <a href="/blog/jasper-national-park">Banff to Jasper: The Road Trip</a> Park.</p>
+<p>During my last visit in September 2025, I spent nearly an hour photographing the interplay of light and color as the afternoon sun hit the pools at different angles. The contrast between the warm-toned surrounding grasslands and the cool blues of the springs creates some of the most striking natural photography opportunities in Banff National Park.</p>
 
 <h2>The Complete Hiking Route to Ink Pots Banff Alberta</h2>
 
-<p>The journey to the Ink Pots begins at the Johnston <a href="/blog/johnsons-canyon">Johnson's Canyon Banff Most Underrated Hidden Gem</a> parking area, located 23 kilometers northwest of Banff townsite along the Bow Valley Parkway (Highway 1A). From here, you'll follow the Johnston Canyon trail system, which is well-maintained and clearly marked throughout.</p>
+<p>The journey to the Ink Pots begins at the <a href="/blog/johnston-canyon-guide">Johnston Canyon</a> parking area, located 23 kilometers northwest of Banff townsite along the Bow Valley Parkway (Highway 1A). From here, you'll follow the Johnston Canyon trail system, which is well-maintained and clearly marked throughout.</p>
 
 <p><strong>Trail Breakdown:</strong></p>
 <ul>
@@ -4671,7 +4671,7 @@ export const blogContent3: Record<string, string> = {
 
 <p>The Ink Pots hike fits perfectly into a comprehensive Banff itinerary. If you're looking for more challenging adventures, consider exploring our guide to the <a href="/blog/best-banff-hiking-trails-guide">best Banff hiking trails</a> for options ranging from easy walks to demanding alpine routes.</p>
 
-<p>For accommodations, the Johnston Canyon area is easily accessible from <a href="/blog/banff-ski-resort-accommodations">Best Banff Ski Resort Accommodations</a> townsite hotels, though you might also consider staying closer to the Bow Valley Parkway. Check out our <a href="/hotel-directory">Compare 95+ Banff hotels</a> resource to find options that fit your budget and preferences. Many visitors combine this hike with tours available through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>, which offers guided hiking experiences and transportation options.</p>
+<p>For accommodations, the Johnston Canyon area is easily accessible from <a href="/towns/banff/">Banff townsite hotels</a>, though you might also consider staying closer to the Bow Valley Parkway. Check out our <a href="/hotel-directory">Compare 95+ Banff hotels</a> resource to find options that fit your budget and preferences. Many visitors combine this hike with tours available through <a href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO" target="_blank" rel="noopener sponsored">GetYourGuide</a>, which offers guided hiking experiences and transportation options.</p>
 
 <p>After your hike, you'll likely work up an appetite for a substantial meal. Our guide to the <a href="/blog/best-banff-restaurants-where-to-eat">best Banff restaurants</a> includes several options perfect for post-hike dining, from casual pubs to upscale mountain cuisine.</p>
 

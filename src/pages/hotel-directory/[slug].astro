@@ -14,9 +14,17 @@ const { hotel } = Astro.props;
 const otherHotels = hotels.filter(h => h.slug !== hotel.slug && h.area === hotel.area).slice(0, 4);
 const GYG = 'QW960HO';
 const galleryImages = hotel.images?.length ? hotel.images : [hotel.image];
-const starWord = hotel.reviewScore ? (hotel.reviewScore >= 9 ? 'Exceptional' : hotel.reviewScore >= 8 ? 'Very Good' : hotel.reviewScore >= 7 ? 'Good' : 'Fair') : '';
+// Legacy descriptions can contain undated prices as well as the old rate fields.
+// Omit those sentences rather than presenting them as current room or fee quotes.
+const withoutPriceClaims = (text: string) => text.split(/(?<=[.!?])\s+/).filter(sentence => !/\$\s*\d/.test(sentence)).join(' ');
+const listedAmenities = (hotel.amenities || hotel.highlights).filter(item => !/\$\s*\d/.test(item));
 
 const areaGuides: Record<string, Array<{href: string; title: string; desc: string}>> = {
+  'Yoho National Park': [
+    { href: '/towns/field-yoho/', title: 'Field & Yoho travel guide', desc: 'A quiet BC base with a separate winter access plan.' },
+    { href: '/blog/banff-winter-driving', title: 'Winter driving', desc: 'Check Alberta and BC route requirements and reports.' },
+    { href: '/winter-stays', title: 'Winter stays finder', desc: 'Compare lodge and town-hotel tradeoffs.' },
+  ],
   'Downtown Banff': [
     { href: '/blog/where-to-stay-in-banff', title: 'Where to Stay in Banff: Best Areas & Hotels', desc: 'Compare every neighbourhood and budget tier.' },
     { href: '/blog/best-banff-restaurants-where-to-eat', title: 'Best Banff Restaurants', desc: 'Local picks for every budget.' },
@@ -60,17 +68,14 @@ const hotelSchema = {
   '@context': 'https://schema.org',
   '@type': 'Hotel',
   name: hotel.name,
-  description: hotel.description,
+  description: withoutPriceClaims(hotel.description),
   image: hotel.image,
   address: hotel.address ? { '@type': 'PostalAddress', streetAddress: hotel.address } : undefined,
-  starRating: { '@type': 'Rating', ratingValue: hotel.stars },
-  priceRange: hotel.priceRange,
-  ...(hotel.reviewScore ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: hotel.reviewScore, bestRating: 10, reviewCount: hotel.reviewCount || 1 } } : {}),
   ...(hotel.lat && hotel.lng ? { geo: { '@type': 'GeoCoordinates', latitude: hotel.lat, longitude: hotel.lng } } : {}),
 };
 ---
 
-<BaseLayout title={`${hotel.name} | Banff Hotel Guide`} description={`Detailed guide to ${hotel.name} in ${hotel.area}. ${hotel.avgPrice}. Real reviews, amenities, room info, check-in details, and direct booking links.`}>
+<BaseLayout title={`${hotel.name} | Banff Hotel Guide`} description={`Explore ${hotel.name} in ${hotel.area}. Compare the location and room facilities, then check current availability, total prices and booking terms with the provider.`} lastUpdated={hotel.checkedOn}>
 
   <div class="container">
     <Breadcrumbs items={[
@@ -84,9 +89,9 @@ const hotelSchema = {
 
   <!-- Hero with gallery -->
   <section class="hotel-hero">
-    <div class="hero-gallery">
+    <div class={`hero-gallery${galleryImages.length === 1 ? ' single-image' : ''}`}>
       <div class="hero-main-img">
-        <img src={galleryImages[0]} alt={hotel.name} />
+        <img src={galleryImages[0]} alt={hotel.name} loading="eager" fetchpriority="high" width="1200" height="800" />
       </div>
       {galleryImages.length > 1 && (
         <div class="hero-side-imgs">
@@ -103,17 +108,9 @@ const hotelSchema = {
         <span class="badge">{hotel.area}</span>
         <h1>{hotel.name}</h1>
         <div class="hero-meta">
-          <span class="hero-stars">{'★'.repeat(hotel.stars)}{'☆'.repeat(5 - hotel.stars)}</span>
-          <span class="hero-sep">·</span>
           <span>{hotel.type}</span>
           <span class="hero-sep">·</span>
-          <span>{hotel.priceRange}</span>
-          {hotel.reviewScore && (
-            <>
-              <span class="hero-sep">·</span>
-              <span class="hero-review">{hotel.reviewScore}/10 {hotel.reviewLabel || starWord}</span>
-            </>
-          )}
+          <span>Editorial budget tier: {hotel.priceRange}</span>
         </div>
       </div>
     </div>
@@ -123,8 +120,7 @@ const hotelSchema = {
   <div class="booking-strip">
     <div class="container booking-strip-inner">
       <div class="booking-strip-price">
-        <span class="strip-label">From</span>
-        <span class="strip-price">{hotel.avgPrice.replace('From ', '')}</span>
+        <span class="strip-label">Check your dates for a current total quote</span>
       </div>
       <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent">
         Check Availability on Expedia →
@@ -138,13 +134,21 @@ const hotelSchema = {
       <div class="hotel-layout">
         <div class="hotel-main">
 
+          <aside class="facility-confirmation">
+            <h2>Confirm the room and facilities before booking</h2>
+            <p>Check your exact room layout, accessibility needs, pool or hot-tub status, parking, resort transfers and cancellation terms with the hotel or booking provider. Facilities and inclusions can vary by room and date.</p>
+            <p><a href="/winter-stays">Compare winter stays and transport tradeoffs &rarr;</a></p>
+            {hotel.facilityNote && <p><strong>Facility notice:</strong> {hotel.facilityNote}</p>}
+            {hotel.officialUrl && <p><a href={hotel.officialUrl} target="_blank" rel="noopener">Official hotel information &nearr;</a>{hotel.checkedOn && <span> · Checked <time datetime={hotel.checkedOn}>{hotel.checkedOn}</time></span>}</p>}
+          </aside>
+
           <!-- Overview -->
           <div class="content-section">
             <h2>Overview</h2>
             {hotel.overview ? (
-              <p class="overview-text">{hotel.overview}</p>
+              <p class="overview-text">{withoutPriceClaims(hotel.overview)}</p>
             ) : (
-              <p class="overview-text">{hotel.description}</p>
+              <p class="overview-text">{withoutPriceClaims(hotel.description)}</p>
             )}
             {hotel.totalRooms && <p class="hotel-stat"><strong>Total rooms:</strong> {hotel.totalRooms}</p>}
             {hotel.yearBuilt && <p class="hotel-stat"><strong>Established:</strong> {hotel.yearBuilt}</p>}
@@ -152,30 +156,11 @@ const hotelSchema = {
             {hotel.address && <p class="hotel-stat"><strong>Address:</strong> {hotel.address}</p>}
           </div>
 
-          <!-- Guest reviews callout -->
-          {hotel.reviewScore && (
-            <div class="review-callout">
-              <div class="review-score-box">
-                <span class="review-number">{hotel.reviewScore}</span>
-                <span class="review-scale">/10</span>
-              </div>
-              <div class="review-detail">
-                <strong>{hotel.reviewLabel || starWord}</strong>
-                {hotel.reviewCount && <span class="review-count">Based on {hotel.reviewCount.toLocaleString()} verified guest reviews</span>}
-                {hotel.guestLoves && hotel.guestLoves.length > 0 && (
-                  <div class="guest-loves">
-                    {hotel.guestLoves.map(love => <span class="love-tag">{love}</span>)}
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
           <!-- Popular amenities -->
           <div class="content-section">
             <h2>Popular Amenities</h2>
             <div class="amenities-grid">
-              {(hotel.amenities || hotel.highlights).map(a => (
+              {listedAmenities.map(a => (
                 <div class="amenity-item">
                   <span class="amenity-icon">✓</span>
                   <span>{a}</span>
@@ -203,7 +188,7 @@ const hotelSchema = {
           {hotel.dining && (
             <div class="content-section">
               <h2>Dining</h2>
-              <p>{hotel.dining}</p>
+              <p>{withoutPriceClaims(hotel.dining)}</p>
             </div>
           )}
 
@@ -246,14 +231,14 @@ const hotelSchema = {
           {hotel.policies && (
             <div class="content-section">
               <h2>Good to Know</h2>
-              <p>{hotel.policies}</p>
+              <p>{withoutPriceClaims(hotel.policies) || 'Confirm the current policies and terms for the room rate you choose.'}</p>
             </div>
           )}
 
           <!-- Booking tip -->
           <div class="content-section">
             <div class="tip-box">
-              <strong>Booking Tip:</strong> Rates at {hotel.name} vary significantly by season. Summer (June-August) is peak season with the highest prices — book 3-6 months ahead. Shoulder season (May, September-October) offers lower rates with excellent weather. Winter rates drop except during Christmas, New Year's, and ski season weekends. Always check Expedia for members-only prices and last-minute deals.
+              <strong>Compare the full booking:</strong> Use the same dates, party size and room type when comparing quotes. Include taxes, required fees, parking, meals and transport, then check cancellation terms. A budget tier is an editorial category, not a room rate.
             </div>
           </div>
         </div>
@@ -261,19 +246,18 @@ const hotelSchema = {
         <!-- Sidebar -->
         <div class="hotel-sidebar">
           <div class="booking-card">
-            <div class="booking-price">{hotel.avgPrice}</div>
+            <div class="booking-price">Get a quote for your dates</div>
             <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent booking-btn">
               Check Availability →
             </a>
-            <p class="booking-note">Prices vary by date. Click to see current rates and member discounts.</p>
+            <p class="booking-note">Check available rooms, final total prices and current guest reviews with the booking provider. Affiliate link: BanffBound may earn a commission if you book.</p>
           </div>
 
           <div class="sidebar-card">
             <h3>Quick Facts</h3>
-            <div class="fact-row"><span>Rating</span><span>{'★'.repeat(hotel.stars)} {hotel.stars}-star</span></div>
             <div class="fact-row"><span>Type</span><span>{hotel.type}</span></div>
             <div class="fact-row"><span>Area</span><span>{hotel.area}</span></div>
-            <div class="fact-row"><span>Price</span><span>{hotel.priceRange} · {hotel.avgPrice}</span></div>
+            <div class="fact-row"><span>Editorial budget tier</span><span>{hotel.priceRange}</span></div>
             {hotel.totalRooms && <div class="fact-row"><span>Rooms</span><span>{hotel.totalRooms}</span></div>}
             {hotel.checkIn && <div class="fact-row"><span>Check-in</span><span>{hotel.checkIn}</span></div>}
             {hotel.checkOut && <div class="fact-row"><span>Check-out</span><span>{hotel.checkOut}</span></div>}
@@ -328,9 +312,9 @@ const hotelSchema = {
             <a href={`/hotel-directory/${h.slug}`} class="card">
               <img src={h.image} alt={h.name} class="card-image" style="height: 160px;" loading="lazy" />
               <div class="card-body">
-                <span class="mini-stars">{'★'.repeat(h.stars)} · {h.priceRange}</span>
+                <span class="mini-stars">Editorial budget tier: {h.priceRange}</span>
                 <h3 style="font-size: 0.95rem;">{h.name}</h3>
-                <p style="font-size: 0.8rem; color: var(--color-text-light);">{h.avgPrice}</p>
+                <p style="font-size: 0.8rem; color: var(--color-text-light);">Check dates and room options &rarr;</p>
               </div>
             </a>
           ))}
@@ -341,6 +325,10 @@ const hotelSchema = {
 </BaseLayout>
 
 <style>
+  .facility-confirmation { background: var(--color-bg-alt); border-left: 4px solid var(--color-accent); padding: 1.4rem; border-radius: var(--radius); margin-bottom: 2rem; }
+  .facility-confirmation h2 { font-size: 1.4rem; margin-bottom: .8rem; }
+  .facility-confirmation p { font-size: .88rem; margin-top: .7rem; color: var(--color-text-light); }
+  .facility-confirmation a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
   .hotel-hero { position: relative; }
 
   .hero-gallery {
@@ -350,6 +338,8 @@ const hotelSchema = {
     max-height: 420px;
     overflow: hidden;
   }
+
+  .hero-gallery.single-image { grid-template-columns: 1fr; }
 
   .hero-main-img img {
     width: 100%;
@@ -639,7 +629,9 @@ const hotelSchema = {
   @media (max-width: 768px) {
     .hero-gallery { grid-template-columns: 1fr; }
     .hero-side-imgs { display: none; }
-    .hero-main-img img { height: 280px; }
+    .hero-gallery.single-image { grid-template-columns: 1fr; }
+
+  .hero-main-img img { height: 280px; }
     .hotel-layout { grid-template-columns: 1fr; }
     .booking-card { position: static; }
     .amenities-grid, .room-features-grid, .nearby-grid, .checkin-grid { grid-template-columns: 1fr; }

@@ -2,7 +2,14 @@
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
+import { viewGuideMetadata } from './src/data/viewGuideOverride.ts';
+import { winterResortMetadata } from './src/data/winterResortOverrides.ts';
+import { winterSeasonMetadata } from './src/data/winterSeasonOverrides.ts';
 import { blogRedirects } from './src/data/redirects.mjs';
+import { winterGuideMetadata } from './src/data/winterGuideOverrides.ts';
+import { winterTripMetadata } from './src/data/winterTripOverrides.ts';
+import { winterActivityMetadata } from './src/data/winterActivityOverrides.ts';
+const reviewedBlogSlugs = new Set([...Object.keys(winterGuideMetadata), ...Object.keys(winterActivityMetadata), ...Object.keys(winterTripMetadata), ...Object.keys(winterResortMetadata), ...Object.keys(winterSeasonMetadata), ...Object.keys(viewGuideMetadata)]);
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,7 +17,6 @@ export default defineConfig({
   output: 'static',
   integrations: [
     sitemap({
-      lastmod: new Date(),
       changefreq: 'weekly',
       priority: 0.7,
       filter(page) {
@@ -22,6 +28,11 @@ export default defineConfig({
         return !excludeSlugs.some(slug => page.endsWith(`/blog/${slug}/`) || page.endsWith(`/blog/${slug}`));
       },
       serialize(item) {
+        // Date only content actually reviewed; build time is not an editorial update.
+        const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
+        if (/^\/(winter|learn-to-ski|ski-day-planner|winter-stays|towns)(\/|$)/.test(path) || ['/', '/skiing', '/ski-pass-calculator', '/sunshine-vs-lake-louise-vs-norquay', '/canmore-vs-banff', '/conditions', '/trip-builder', '/hotels', '/accommodation', '/photo-spots'].includes(path) || reviewedBlogSlugs.has(path.replace('/blog/', ''))) {
+          item.lastmod = new Date('2026-10-28');
+        }
         // Boost priority for high-value pages
         if (item.url === 'https://banffbound.com/') {
           item.priority = 1.0;

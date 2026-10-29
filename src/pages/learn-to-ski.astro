@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import '../styles/skiPlanning.css';
+
+const faqs = [
+  { question: 'Can complete beginners learn to ski in Banff?', answer: 'Yes. Mt. Norquay, Lake Louise Ski Resort and Banff Sunshine all offer first-time ski or snowboard instruction. Book the correct beginner level and choose by lesson availability, age requirements, package inclusions and transport. Your instructor should decide when you are ready to progress beyond the learning area.' },
+  { question: 'Does a Banff ski lesson include a lift ticket and rentals?', answer: 'It depends on the product. Norquay’s first-time package includes instruction, equipment rentals and a magic-carpet-only ticket. Lake Louise’s adult Level 1–2 beginner packages include rentals and a Learning Area ticket. Other lessons may be instruction only. Confirm helmet, ticket access, dates and equipment before paying.' },
+  { question: 'How early should I arrive for my first ski lesson?', answer: 'Follow your booking confirmation. Norquay asks first-time guests to check in at least an hour before the lesson; Lake Louise recommends an hour if collecting equipment. Sunshine adds a base-to-village gondola journey and queues, so allow more time. Our planner suggests extra buffers rather than promising a fixed transfer time.' },
+  { question: 'Do I need to rent a car to learn to ski in Banff?', answer: 'A Banff stay can work well with resort ski shuttles. Check the current timetable, eligible ticket or pass, pickup stop and return before booking an early lesson. A Canmore stay or a transfer between resorts may need another connection. Do not assume a ski shuttle and Roam public transit are the same service.' },
+  { question: 'Can children and adults take the same ski lesson?', answer: 'Do not assume so. Group lessons are usually divided by age, ability and ski or snowboard discipline. Ask the snow school whether a private family lesson is suitable and confirm minimum ages, supervision, lunch and collection arrangements for each child.' },
+  { question: 'Is one lesson enough to ski the whole mountain?', answer: 'A first lesson introduces basic movement, stopping, turning and lifts at an individual pace. It does not guarantee access to every green run or readiness to join experienced friends. Ask your instructor where to practise next and consider another lesson before moving to harder terrain.' },
+];
+const checklist = [
+  'Correct lesson date, discipline, age group and ability level booked',
+  'Lift or learning-area access and rental inclusions confirmed',
+  'Helmet, gloves, goggles and weather-appropriate layers arranged',
+  'Rental fitting, lesson check-in and meeting point saved offline',
+  'Outbound pickup or driving route and return plan confirmed',
+  'Current resort operations, weather and cancellation terms checked',
+  'Lunch, water, warm-up breaks and family collection plan arranged',
+];
+---
+
+<BaseLayout title="Learn to Ski in Banff: First Lessons, Rentals & Beginner Guide" description="Plan your first ski or snowboard lesson in Banff. Compare Norquay, Lake Louise and Sunshine, understand lesson bundles, arrange rentals and build a relaxed first day." lastUpdated="2026-10-28">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Winter', href: '/winter' }, { label: 'Learn to Ski' }]} /></div>
+  <section class="page-hero">
+    <img src="/images/blog/banff-skiing-guide.webp" alt="Snow-covered ski slopes and Rocky Mountain peaks" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content"><span class="badge">Your first turns</span><h1>Learn to ski in Banff</h1><p>A warm pair of gloves, a patient instructor, and a day that leaves room to learn.</p></div>
+  </section>
+  <div class="container ski-content">
+    <p class="ski-eyebrow">First ski &amp; snowboard lessons · Reviewed October 28, 2026</p>
+    <p class="ski-lead">Your first day does not need to be a dawn-to-dusk mountain mission. Book a lesson at your actual level, make sure the ticket and rental equipment fit that lesson, and leave enough time to reach the meeting point without rushing.</p>
+    <nav class="ski-jump" aria-label="On this page"><a href="#choose">Choose a snow school</a><a href="#booking">What to book</a><a href="#first-day">Your first day</a><a href="#progress">Days two &amp; three</a><a href="#checklist">Ready-to-go checklist</a><a href="#questions">Questions</a></nav>
+    <div class="ski-actions ski-no-print"><a class="btn" href="/ski-day-planner">Build my ski day →</a><a href="/winter">Explore the winter guide</a></div>
+
+    <h2 id="choose">Which Banff resort should you learn at?</h2>
+    <p>All three resorts have instruction for first-timers. A convenient lesson time and an appropriate package matter more than total skiable acreage on day one. Start with the snow school that can confirm your group’s places and a workable journey.</p>
+    <div class="ski-cards">
+      <article class="ski-card"><span class="ski-eyebrow">A lesson-focused start</span><h3>Mt. Norquay</h3><p>Consider Norquay when you want a first-time package and a day centred on the learning area. Its first-time offer includes a two-hour lesson, equipment and a carpet-only ticket. That ticket is not an all-mountain pass.</p><p>Check in with Snow School before collecting rentals, at least an hour before the lesson.</p><a href="https://banffnorquay.com/snow-school/first-time-ski-snowboard/" target="_blank" rel="noopener">Norquay first-time lessons ↗</a></article>
+      <article class="ski-card"><span class="ski-eyebrow">A Lake Louise base</span><h3>Lake Louise</h3><p>A useful first place to check if you are staying in Lake Louise. The adult Level 1–2 beginner packages currently include rentals and a Learning Area ticket. Adult group lessons start at age 13; confirm the separate children’s programme for younger learners.</p><p>The resort recommends an hour before your lesson if you need equipment.</p><a href="https://www.skilouise.com/ski-snowboard-lessons/adult-lessons/adult-group-lessons/" target="_blank" rel="noopener">Lake Louise beginner packages ↗</a></article>
+      <article class="ski-card"><span class="ski-eyebrow">Build in the gondola</span><h3>Sunshine Village</h3><p>Sunshine has beginner instruction up in the mountain village. Plan for base-area ticket or rental administration, then a roughly 20-minute gondola ride plus queues and walking to the lesson meeting point.</p><p>Check exactly where your package requires you to collect equipment. Riding up the gondola is part of the journey to class.</p><a href="https://www.skibanff.com/plan/first-time-visitors/first-timers-guide" target="_blank" rel="noopener">Sunshine first-timer guide ↗</a></article>
+    </div>
+    <p class="ski-small">These are direct operator links. Product details, age groups, availability and prices can change; the current booking terms apply. For a wider overview, use our <a href="/sunshine-vs-lake-louise-vs-norquay">three-resort comparison</a>.</p>
+
+    <h2 id="booking">Book the lesson, ticket and equipment together</h2>
+    <p>A lesson reservation is not automatically everything you need for a ski day. Before paying, check these as three separate items even when they are sold as a bundle.</p>
+    <div class="ski-table-wrap" role="region" aria-label="First ski lesson booking checklist" tabindex="0"><table class="ski-table"><caption>What the booking needs to cover</caption><thead><tr><th scope="col">Item</th><th scope="col">What to confirm</th><th scope="col">Easy mistake to avoid</th></tr></thead><tbody>
+      <tr><th scope="row">Instruction</th><td>First-time ski or first-time snowboard; age group; group or private; duration; meeting point.</td><td>Booking a general improver class when you have never worn skis, or putting a child into an adult group.</td></tr>
+      <tr><th scope="row">Ticket access</th><td>Learning-area or all-mountain; gondola access if relevant; valid hours and day; collection or activation.</td><td>Buying a full resort pass before checking whether your beginner package already includes the access you need.</td></tr>
+      <tr><th scope="row">Rental equipment</th><td>Skis or board, boots, appropriate accessories, helmet inclusion, collection location and return deadline.</td><td>Assuming warm clothing, gloves and goggles are part of an equipment rental.</td></tr>
+      <tr><th scope="row">Transport</th><td>Exact stop, date-specific departure, capacity or reservation rules and final return.</td><td>Assuming every hotel has a pickup or that a Canmore booking includes a Banff resort shuttle connection.</td></tr>
+    </tbody></table></div>
+    <p><strong>Group or private?</strong> A group lesson can be a sociable way to learn with people at a similar level. A private lesson can make sense for a particular confidence goal, accessibility need or timetable. Ask before combining a nervous first-timer with a more confident friend; different starting points can make a shared lesson less useful.</p>
+    <p><strong>For children:</strong> Confirm the programme’s minimum age, ski versus snowboard eligibility, ability grouping, lunch arrangements, toilet independence requirements, equipment fitting and parent handover. Childcare and a ski lesson are different services. Ask the school what happens if a child becomes tired or wants to stop.</p>
+    <p><strong>For a multi-day trip:</strong> Start by comparing the total beginner package, then compare any extra practice-day tickets. Our <a href="/ski-pass-calculator">ski pass calculator</a> is a starting point for pass comparisons; check current operator quotes and package inclusions before purchasing.</p>
+
+    <h2 id="first-day">What your first day can look like</h2>
+    <p>This is a suggested rhythm, not a timetable. Your lesson confirmation and the current transport schedule determine the actual times.</p>
+    <ol>
+      <li><strong>The night before:</strong> Download the lesson confirmation, check the meeting point, check the resort forecast and operating report, and lay out your clothing. Confirm your return before committing to the morning departure.</li>
+      <li><strong>Arrive with room to spare:</strong> Follow the school’s stated check-in time. Our <a href="/ski-day-planner">day planner</a> adds a buffer for first-time fitting, ticket collection and the Sunshine gondola when needed.</li>
+      <li><strong>Get the fit right:</strong> Tell the rental technician that you are a beginner and provide accurate fitting information. Tell staff about painful pressure, numbness or a poor fit before heading out; do not adjust bindings yourself.</li>
+      <li><strong>Meet the instructor:</strong> Explain your experience honestly, including if it is zero. Practise stopping, turning, getting up and using the appropriate lift at your own pace.</li>
+      <li><strong>Take an indoor break:</strong> Eat, drink and warm up. Feeling cold or exhausted is a reason to shorten the session. Arrange an indoor reunion point if your group has split up.</li>
+      <li><strong>Practise what you were taught:</strong> Ask the instructor where to go next. Check what your ticket covers; an easy-looking run on a map is not proof that it is suitable today.</li>
+      <li><strong>Finish while it is still fun:</strong> Allow time for rental returns and the journey down to the bus. At Sunshine, do not rely on skiing the ski-out on your first day; check gondola download arrangements.</li>
+    </ol>
+    <div class="ski-note"><h3>A car-free first day</h3><p>A Banff hotel near a confirmed resort pickup can simplify the morning. Sunshine and Norquay publish their own shuttle information; SkiBig3 lists its service and ticket eligibility. Check the date, stop and return directly. From Canmore or between different resort bases, confirm the full connection rather than assuming a direct ride.</p><p><a href="https://www.skibig3.com/ski/ski-shuttle/" target="_blank" rel="noopener">SkiBig3 shuttle information ↗</a> · <a href="https://www.skibanff.com/plan/getting-here/free-shuttle" target="_blank" rel="noopener">Sunshine shuttle ↗</a> · <a href="https://banffnorquay.com/shuttle-service/" target="_blank" rel="noopener">Norquay shuttle ↗</a></p></div>
+
+    <h2>What to wear and bring</h2>
+    <p>Use a moisture-managing base layer, insulating layer and weather-resistant jacket and trousers. Bring warm waterproof gloves or mittens, ski socks, eye protection and a suitable helmet. Keep clothing and socks smooth inside boots; if you are unsure about fit, ask the rental staff. Take sunscreen, water, a snack and a charged phone with your saved confirmations.</p>
+    <p>Do a clothing check before the trip. Buying or renting suitable outerwear is easier before you are standing at the lesson meeting point. Use the <a href="/packing-list">seasonal packing checklist</a> and check mountain conditions separately from the weather in Banff town.</p>
+
+    <h2 id="progress">Days two and three: keep the progression flexible</h2>
+    <div class="ski-cards">
+      <article class="ski-card"><h3>Day one: the basics</h3><p>Make comfortable equipment, stopping and turning the goal. A good day can stay entirely in the learning area. Ask what to practise before the next session.</p></article>
+      <article class="ski-card"><h3>Day two: repetition</h3><p>Repeat the same familiar skills and consider a follow-up lesson. Let the instructor reassess your level rather than automatically moving up a group or buying broader lift access.</p></article>
+      <article class="ski-card"><h3>Day three: confidence</h3><p>Progress only when appropriate. Another lesson, a short practice session or a rest day are all sensible options. Leave room for weather and tired legs in the itinerary.</p></article>
+    </div>
+    <p><strong>Cold, delays or cancellations:</strong> Read the lesson, rental and ticket cancellation rules separately; they may have different deadlines. If weather or transport threatens your arrival, contact the snow school promptly. Do not assume cold weather guarantees a refund or a free move. Keep an indoor alternative in Banff or Canmore and check opening hours before going.</p>
+
+    <section class="ski-panel" aria-labelledby="checklist">
+      <h2 id="checklist" style="margin-top:0">Ready for your first turns?</h2>
+      <p>Tick these as you arrange your day. With JavaScript enabled, ticks stay in this browser when storage is available.</p>
+      <ul class="ski-checklist" id="first-lesson-checklist">{checklist.map((item, i) => <li><label><input type="checkbox" data-check={i} /><span>{item}</span></label></li>)}</ul>
+      <p id="lesson-checklist-status" class="ski-status" role="status" aria-live="polite"></p>
+      <button class="ski-action-secondary ski-no-print" id="reset-lesson-checklist" type="button" hidden>Reset checklist</button>
+    </section>
+
+    <h2>Choose a base that makes the morning easier</h2>
+    <p>For a short first ski trip, a reliable journey to class is worth considering alongside the room rate. Check your exact pickup, luggage rules and equipment storage with the hotel or operator. A hotel in Banff town is not ski-in/ski-out.</p>
+    <div class="ski-actions"><a class="btn" href="/winter-stays">Find your winter base →</a><a href="/towns">Compare Banff &amp; nearby towns</a><a href="https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&amp;camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Check Banff stays on Expedia ↗</a></div>
+    <p class="ski-small">The Expedia link is an affiliate link; we may earn a commission. Check the hotel location, total cost and cancellation terms for your dates.</p>
+
+    <section class="ski-faq" aria-labelledby="questions"><h2 id="questions">First ski lesson questions</h2>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <section class="ski-sources" aria-labelledby="sources"><h2 id="sources">Sources &amp; booking details</h2><p>Operator information reviewed October 28, 2026. We use these pages for package inclusions, check-in and transport details; the suggested day structure is our planning advice. Recheck your chosen product before booking.</p><ul><li><a href="https://banffnorquay.com/snow-school/first-time-ski-snowboard/">Norquay first-time packages</a> and <a href="https://banffnorquay.com/snow-school/faqs/">Snow School FAQs</a></li><li><a href="https://www.skilouise.com/ski-snowboard-lessons/adult-lessons/adult-group-lessons/">Lake Louise beginner group packages</a> and <a href="https://www.skilouise.com/rentals-lessons/ski-snowboard-lessons/">lesson and ability information</a></li><li><a href="https://www.skibanff.com/plan/first-time-visitors/first-timers-guide">Sunshine first-timer arrival guide</a></li><li><a href="https://www.skibig3.com/ski/lessons/">SkiBig3 lesson options</a> and <a href="https://www.skibig3.com/ski/ski-shuttle/">ski shuttle service</a></li></ul></section>
+    <nav class="ski-related ski-no-print" aria-label="More winter planning"><a href="/ski-day-planner">Ski day planner</a><a href="/winter">Winter activity finder</a><a href="/winter-stays">Winter stays</a><a href="/skiing">Skiing overview</a></nav>
+  </div>
+</BaseLayout>
+
+<script>
+  const checklist = document.querySelector('#first-lesson-checklist');
+  const boxes = Array.from(checklist?.querySelectorAll<HTMLInputElement>('input[type="checkbox"]') || []);
+  const status = document.querySelector<HTMLElement>('#lesson-checklist-status');
+  const reset = document.querySelector<HTMLButtonElement>('#reset-lesson-checklist');
+  const storageKey = 'banffbound-first-lesson-checklist-v1';
+  let canStore = true;
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    if (Array.isArray(saved)) boxes.forEach((box, i) => { box.checked = saved.includes(i); });
+  } catch { canStore = false; }
+  function update() {
+    if (canStore) {
+      try { localStorage.setItem(storageKey, JSON.stringify(boxes.flatMap((box, i) => box.checked ? [i] : []))); }
+      catch { canStore = false; }
+    }
+    if (status) status.textContent = `${boxes.filter(box => box.checked).length} of ${boxes.length} ready.${canStore ? ' Saved in this browser.' : ' Browser saving is unavailable; ticks will last for this visit.'}`;
+  }
+  boxes.forEach(box => box.addEventListener('change', update));
+  if (reset) {
+    reset.hidden = false;
+    reset.addEventListener('click', () => { boxes.forEach(box => { box.checked = false; }); update(); });
+  }
+  update();
+</script>
