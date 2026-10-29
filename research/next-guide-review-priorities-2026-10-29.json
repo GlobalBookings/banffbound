@@ -1,0 +1,131 @@
+{
+  "preparedAtUTC": "2026-10-29T21:12:30.054408+00:00",
+  "scope": "Read-only primary-source preparation for the next full guide reviews; no article/metadata/alias edits included in this record.",
+  "priorities": [
+    {
+      "slugs": [
+        "numtijah-lodge",
+        "num-ti-jah-lodge"
+      ],
+      "required": [
+        "Remove natural-ice rink/safety and casual winter route assumptions.",
+        "Use current Lodge at Bow Lake identity; distinguish seasonal Historic Lodge stays and advertised2027Chalet.",
+        "Replace invented room inventory, family facilities, Wi-Fi and undated room/meal prices with current operator categories and actual booking inclusion checks.",
+        "Treat equipment rental, winter route suitability and reopening as unverified unless exact source supports them."
+      ],
+      "sources": [
+        "https://parks.canada.ca/pn-np/ab/banff/activ/patinage-skating",
+        "https://lodgeatbowlake.com/winter",
+        "https://lodgeatbowlake.com/stay",
+        "https://lodgeatbowlake.com/connect",
+        "https://lodgeatbowlake.com/the-lodge",
+        "https://parks.canada.ca/pn-np/ab/banff/activ/nautiques-sports",
+        "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking"
+      ]
+    },
+    {
+      "slugs": [
+        "jasper-national-park",
+        "jasper-town",
+        "jasper-canada"
+      ],
+      "required": [
+        "Remove Maligne Canyon year-round/winter recreational access claims; current closure order takes precedence over older guided-walk prose.",
+        "Do not infer skating safety from calendar month or frozen appearance.",
+        "Use current named Valley of Five Lakes route variants/recovery context; remove unsubstantiated44kmwinter road ski route."
+      ],
+      "sources": [
+        "https://parks.canada.ca/pn-np/ab/jasper/bulletins/76ecae58-8a63-480c-8304-dc903837eefd",
+        "https://parks.canada.ca/pn-np/ab/jasper/activ/experience/hiver-winter/canyon",
+        "https://parks.canada.ca/pn-np/ab/jasper/gestion-management/serviceimmobilier-realty/retablissement-recovery/pc-recovery",
+        "https://parks.canada.ca/pn-np/ab/jasper/activ/experience/sentiers-trails/sud-south?wbdisable=true",
+        "https://parks.canada.ca/pn-np/ab/jasper/activ/experience/hiver-winter/lac-maligne-lake",
+        "https://parks.canada.ca/pn-np/ab/jasper/visit/routes-roads"
+      ]
+    },
+    {
+      "slugs": [
+        "new-places-to-eat-in-banff",
+        "banff-cabin-rentals",
+        "banff-bars"
+      ],
+      "required": [
+        "Complete current operator/source review before claiming openings, exact location, dates, prices or available booking offers.",
+        "Preserve useful URL intent and inspect URL history before any proposed consolidation; no new native aliases authorized in this release."
+      ],
+      "sources": [
+        "research/legacy-text-repair-2026-10-29.md"
+      ]
+    }
+  ],
+  "privateAnalytics": "Priority snapshot remains ignored/private at research/private/search-console-priorities-2026-10-29.json. Its date range predates releases and establishes no uplift.",
+  "diningPreparation": {
+    "confirmedError": {
+      "venue": "Alpine Social",
+      "correction": "Operator locates it at Fairmont Chateau Lake Louise,111LakeLouiseDrive; not the former Melissa location in Banff.",
+      "source": "https://www.chateau-lake-louise.com/dine/alpine-social/"
+    },
+    "exactNamesUnverified": [
+      "The Summit Kitchen",
+      "Mountain Melt",
+      "Banff Ramen House",
+      "Himalayan Kitchen Banff",
+      "Seoul Kitchen",
+      "The Local Table",
+      "Canmore Creek Brewing Company",
+      "Fresh Valley Kitchen",
+      "Altitude Coffee Roasters",
+      "Basecamp Bagels",
+      "Peak Performance Cafe"
+    ],
+    "absenceLimit": "Lack of primary confirmation/search/directory presence is not proof of nonexistence. Remove unsupported assertions from the reviewed replacement rather than declaring closure or nonexistence.",
+    "replacementIntent": "Dated additions and reopenings, followed by separately labelled current discoveries. Preserve new-dining intent without promising12new2026openings.",
+    "sources": [
+      "https://www.banfflakelouise.com/business-directory",
+      "https://www.ramenarashi.ca/locations",
+      "https://www.canmorebrewing.com/",
+      "https://goodfolkrestaurant.com/",
+      "https://banffcaribouproperties.com/in-the-news/",
+      "https://banffcaribouproperties.com/wp-content/uploads/PReleaseBCP_July2025-FINAL.pdf",
+      "https://www.banffparklodge.com/refresh/",
+      "https://cravebanff.com/",
+      "https://www.banffparklodge.com/la-terrazza/",
+      "https://www.banfflakelouise.com/business/pizzeria-sophia",
+      "https://fatoxbanff.ca/about/"
+    ],
+    "dateLimits": [
+      "GoodFolk: operatornews20Aug2025 says openedearlierthatyear; no inventedmonth.",
+      "SuddenSally: mentioned2025operatorannouncement, exactopeningdate notestablished.",
+      "Crave: renovated/reopenedDec2025, notanewbusiness.",
+      "LaTerrazza/TerraceLounge: renovationreopeningApr2026.",
+      "PizzeriaSophia/FatOx: currentidentity/locationverified, openingdatesunverified."
+    ],
+    "removeOrSource": [
+      "remaining inventedpersonalvisits/trainingclaims",
+      "blanketreservations/hours/yearroundoperation",
+      "universal15minwalk",
+      "tourinclusionassertions",
+      "inventedmenuitems/prices"
+    ]
+  },
+  "statusUpdate": {
+    "checkedAtUTC": "2026-10-29T21:50:38.681429+00:00",
+    "scope": "Following full-review source changes prepared; deployment is separately verified by the source-guide release receipts.",
+    "fullyReplaced": [
+      "numtijah-lodge",
+      "num-ti-jah-lodge",
+      "jasper-national-park",
+      "jasper-town",
+      "jasper-canada",
+      "new-places-to-eat-in-banff",
+      "banff-cabin-rentals"
+    ],
+    "sourceNotes": [
+      "research/bow-lake-guide-sources-2026-10-29.md",
+      "research/jasper-guide-sources-2026-10-29.md",
+      "research/dining-guide-sources-2026-10-29.md",
+      "research/cabin-guide-sources-2026-10-29.md"
+    ],
+    "remaining": "The before-state assertions above are retained as audit evidence. No new aliases are added. Nightlife, remaining canonical factual reviews and URL-intent consolidation remain open."
+  }
+}

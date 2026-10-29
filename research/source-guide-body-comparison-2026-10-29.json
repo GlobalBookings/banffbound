@@ -1,0 +1,26 @@
+{
+  "checkedAtUTC": "2026-10-29T21:45:15.876Z",
+  "baselineRevision": "90157188ffd975ca7faf28f93c2ce9526cac0f4b",
+  "scope": "Canonical article body bytes and original publication metadata only; shared layout context/illustration changes also affect rendered HTML.",
+  "canonical": 295,
+  "replacedBodies": 7,
+  "otherBodiesByteIdentical": 288,
+  "changedSlugs": [
+    "banff-cabin-rentals",
+    "jasper-canada",
+    "jasper-national-park",
+    "jasper-town",
+    "new-places-to-eat-in-banff",
+    "num-ti-jah-lodge",
+    "numtijah-lodge"
+  ],
+  "fullBodyReviews": {
+    "before": 52,
+    "after": 59
+  },
+  "partialCorrections": {
+    "before": 13,
+    "after": 8
+  },
+  "originalPublicationsPreserved": 335
+}

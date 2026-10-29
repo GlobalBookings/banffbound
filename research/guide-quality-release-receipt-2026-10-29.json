@@ -1,0 +1,91 @@
+{
+  "checkedAtUTC": "2026-10-29T21:12:30.052825+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/9",
+  "mergedAtUTC": "2026-10-29T21:05:32Z",
+  "codeCommit": "4c375cf1b19af950f49bfa00bd3937572c8e76cb",
+  "reviewedHead": "56ca72407cadad078aee5e7ff587fd95d1a7ae3b",
+  "mergeCommit": "90157188ffd975ca7faf28f93c2ce9526cac0f4b",
+  "pullRequestCI": {
+    "conclusion": "success",
+    "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40954491586/job/123730919531"
+  },
+  "mainCI": {
+    "conclusion": "success",
+    "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40954766902/job/123731869545"
+  },
+  "cleanReceipt": "research/guide-quality-clean-verification-2026-10-29.json",
+  "productionReceipt": "research/guide-quality-production-verification-2026-10-29.json",
+  "productionBuildInfo": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T21:06:48.237Z",
+    "sourceRevision": "90157188ffd975ca7faf28f93c2ce9526cac0f4b",
+    "sourceFingerprint": "69d4976b48f130c61031a375c50c3209f8092aacdae5fb7081792ddff8cf5090"
+  },
+  "publicChecks": {
+    "htmlPassed": 215,
+    "htmlFailed": 0,
+    "photosPassed": 7,
+    "photosFailed": 0,
+    "failures": 0
+  },
+  "redirectChecks": {
+    "checkedAt": "2026-10-29T21:09:15.315Z",
+    "mappings": 40,
+    "passed": 100
+  },
+  "browserChecks": {
+    "ordinaryLiveUrls": [
+      "/learn-to-ski/",
+      "/towns/canmore/",
+      "/blog/new-places-to-eat-in-banff/"
+    ],
+    "lessonSSRProgrammes": 8,
+    "lessonAge5WithoutDaycare": [
+      "norquay-kinder",
+      "louise-kids"
+    ],
+    "lessonReset": 8,
+    "familyAutoHeading": "Choose a suitable snow school first",
+    "canmoreRoadBase": {
+      "count": 1,
+      "copperstoneVisible": true,
+      "lamphouseVisible": false,
+      "noCarGuidance": "Property-specific connection and return required; no pickup assumed"
+    },
+    "canmoreReset": 6,
+    "winterRoute12NoticeVisible": true,
+    "mobile": {
+      "viewport": 390,
+      "learnToSkiWidth": 390,
+      "canmoreWidth": 390
+    },
+    "boundedArticleLabel": "Opening paragraph repaired (full guide review pending): October 29, 2026",
+    "defaultOptionalProviderScripts": 0,
+    "limit": "Actual DOM/render and UI actions, not a complete network trace or booking/conversion delivery guarantee. No native referral was used to manufacture a conversion."
+  },
+  "verifierSha256": "f4573c15b08b33060f8eb264283c7efacb819813c35fd0f61391d0a4f1d5266d",
+  "sharedVerifierSha256": "31a245e9b998d484a94d56cfd3fb3c10485200ef7deff71213175cadf855ce3b",
+  "contentScope": {
+    "canonicalBodies": 295,
+    "fullBodyReviews": 52,
+    "openingParagraphRepairs": 13,
+    "otherBodiesByteIdentical": 282,
+    "factsAcrossRemainingArticlesVerified": false
+  },
+  "commercialBoundary": {
+    "adCampaignsLaunched": false,
+    "budgetsOrBidsChanged": false,
+    "hostingSpecificationOrEnvironmentMutated": false,
+    "salesProfitOrRankUpliftClaimed": false
+  },
+  "goalStatus": "active",
+  "remainingReviews": [
+    "research/legacy-text-repair-2026-10-29.md",
+    "research/first-lesson-planning-sources-2026-10-29.md",
+    "research/next-guide-review-priorities-2026-10-29.json"
+  ],
+  "previewServerStopped": true,
+  "browserViewportReset": true
+}

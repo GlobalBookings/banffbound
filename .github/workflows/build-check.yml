@@ -47,6 +47,11 @@ jobs:
           node scripts/check-cycling-planning.mjs
           node scripts/check-internal-linker.mjs
           node scripts/check-blog-content.mjs
+          node scripts/check-bow-lake-guides.mjs
+          node scripts/check-jasper-guides.mjs
+          node scripts/check-dining-guides.mjs
+          node scripts/check-cabin-planning.mjs
+          node scripts/check-article-booking-context.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs

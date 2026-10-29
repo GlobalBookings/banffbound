@@ -1,0 +1,4185 @@
+{
+  "formatVersion": 1,
+  "startedAt": "2026-10-29T21:09:10.356Z",
+  "checkedAt": "2026-10-29T21:09:27.526Z",
+  "origin": "https://banffbound.com",
+  "expectedRevision": "90157188ffd975ca7faf28f93c2ce9526cac0f4b",
+  "expectedFingerprint": "69d4976b48f130c61031a375c50c3209f8092aacdae5fb7081792ddff8cf5090",
+  "policy": {
+    "method": "GET",
+    "concurrency": 6,
+    "requestTimeoutMs": 15000,
+    "runTimeoutMs": 360000,
+    "retries": 0,
+    "uniqueNoncePerGet": true,
+    "preConsentScope": "Every checked HTML document: executable provider script/frame URLs, consent controls and reviewed affiliate fallbacks; not a browser network trace"
+  },
+  "passed": true,
+  "requests": 226,
+  "inventory": {
+    "htmlRoutes": 215,
+    "trails": {
+      "total": 81,
+      "indexable": 80,
+      "noindex": 1
+    },
+    "hotels": {
+      "total": 95,
+      "indexable": 52,
+      "noindex": 43
+    },
+    "wildlifePages": 5,
+    "cyclingPages": 4,
+    "consentPages": 2,
+    "paidLandingPages": 3,
+    "nativeLandingOffers": {
+      "banffHotels": 6,
+      "lakeLouiseStays": 5,
+      "winterActivities": 3
+    },
+    "photos": 7,
+    "photoManifestSha256": "54613faffa013718b136138666699bdf3daa01c6aa1a4a4fc4910b097bb78fb3",
+    "legacyOpeningRepairs": 13,
+    "lessonAndDayPlanners": 2,
+    "townPages": 7
+  },
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T21:06:48.237Z",
+    "sourceRevision": "90157188ffd975ca7faf28f93c2ce9526cac0f4b",
+    "sourceFingerprint": "69d4976b48f130c61031a375c50c3209f8092aacdae5fb7081792ddff8cf5090"
+  },
+  "buildReceiptStable": true,
+  "sitemap": {
+    "files": [
+      "/sitemap-0.xml"
+    ],
+    "urlCount": 517,
+    "buildInfoExcluded": true
+  },
+  "results": [
+    {
+      "path": "/trails/fenland-trail/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/fenland-trail/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/marsh-loop/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/marsh-loop/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/spray-river-east/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/spray-river-east/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/spray-river-west/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/spray-river-west/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/tunnel-campground-loop/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/tunnel-campground-loop/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/stewart-canyon/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/stewart-canyon/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/johnson-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/johnson-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/sunshine-meadows/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/sunshine-meadows/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/johnston-canyon-lower-falls/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/johnston-canyon-lower-falls/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/johnston-canyon-upper-falls/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/johnston-canyon-upper-falls/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/silverton-falls/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/silverton-falls/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/boom-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/boom-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/vista-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/vista-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/sundance-canyon/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/sundance-canyon/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/ink-pots/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/ink-pots/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/sulphur-mountain/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/sulphur-mountain/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/tunnel-mountain-summit/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/tunnel-mountain-summit/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/surprise-corner-to-hoodoos/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/surprise-corner-to-hoodoos/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/upper-stoney/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/upper-stoney/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/cascade-amphitheatre/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/cascade-amphitheatre/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/c-level-cirque/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/c-level-cirque/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/healy-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/healy-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/bourgeau-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/bourgeau-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/harvey-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/harvey-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/rockbound-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/rockbound-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/arnica-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/arnica-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/twin-lakes/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/twin-lakes/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/aylmer-lookout/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/aylmer-lookout/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/aylmer-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/aylmer-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/cory-pass-loop/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/cory-pass-loop/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/lake-louise-lakeshore/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/lake-louise-lakeshore/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/fairview-lookout/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/fairview-lookout/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/bow-river-lake-louise/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/bow-river-lake-louise/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/rockpile/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/rockpile/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/moraine-lake-lakeshore/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/moraine-lake-lakeshore/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/consolation-lakes/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/consolation-lakes/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/lake-agnes/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/lake-agnes/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/plain-of-six-glaciers/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/plain-of-six-glaciers/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/tramline/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/tramline/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/lake-annette/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/lake-annette/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/eiffel-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/eiffel-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/larch-valley-minnestimma-lakes/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/larch-valley-minnestimma-lakes/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/saddleback-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/saddleback-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/fairview-mountain/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/fairview-mountain/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/sheol-paradise-connector/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/sheol-paradise-connector/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/paradise-valley-giant-steps/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/paradise-valley-giant-steps/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/sentinel-pass-from-paradise-valley/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/sentinel-pass-from-paradise-valley/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/sentinel-pass-via-larch-valley/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/sentinel-pass-via-larch-valley/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/wenkchemna-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/wenkchemna-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/hidden-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/hidden-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/deception-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/deception-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/castle-lookout/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/castle-lookout/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/stanley-glacier/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/stanley-glacier/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/taylor-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/taylor-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/peyto-lake-viewpoint/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/peyto-lake-viewpoint/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/bow-summit-viewpoint/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/bow-summit-viewpoint/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/mistaya-canyon/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/mistaya-canyon/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/bow-glacier-falls/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/bow-glacier-falls/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/helen-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/helen-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/cirque-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/cirque-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/chephren-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/chephren-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/nigel-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/nigel-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/parker-ridge/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/parker-ridge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/molar-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/molar-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/north-molar-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/north-molar-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/dolomite-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/dolomite-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/peyto-lake-shore/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/peyto-lake-shore/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/glacier-lake/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/glacier-lake/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/sunset-lookout/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/sunset-lookout/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/sunset-pass/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/sunset-pass/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/cascade-valley-xc-ski/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/cascade-valley-xc-ski/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/spray-river-loop-xc-ski/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/spray-river-loop-xc-ski/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/tunnel-mountain-winter/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/trails/tunnel-mountain-winter/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/johnston-canyon-ice-walk/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/johnston-canyon-ice-walk/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/lake-louise-lakeshore-snowshoe/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/lake-louise-lakeshore-snowshoe/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/marble-canyon-snowshoe/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/marble-canyon-snowshoe/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/ink-pots-snowshoe/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/ink-pots-snowshoe/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/goat-creek-xc-ski/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/goat-creek-xc-ski/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/healy-creek-xc-ski/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/healy-creek-xc-ski/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/golf-course-loop-xc-ski/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/golf-course-loop-xc-ski/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trails/bow-falls/",
+      "kind": "trail",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trails/bow-falls/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceReview": true,
+        "statusScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/fairmont-banff-springs/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/fairmont-banff-springs/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/rimrock-banff/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/rimrock-banff/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/moose-hotel-suites/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/moose-hotel-suites/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/hotel-canoe-suites/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/hotel-canoe-suites/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/otter-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/otter-hotel/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/fox-hotel-suites/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/fox-hotel-suites/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-caribou-lodge-spa/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-caribou-lodge-spa/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-park-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-park-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/buffalo-mountain-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/buffalo-mountain-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-rocky-mountain-resort/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-rocky-mountain-resort/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/tunnel-mountain-resort/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/tunnel-mountain-resort/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/elk-avenue-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/elk-avenue-hotel/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/royal-canadian-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/royal-canadian-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/brewster-mountain-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/brewster-mountain-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/peaks-hotel-suites/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/peaks-hotel-suites/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/rundlestone-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/rundlestone-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-aspen-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-aspen-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-ptarmigan-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-ptarmigan-inn/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/canalta-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/canalta-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/mount-royal-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/mount-royal-hotel/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/juniper-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/juniper-hotel/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/charltons-banff/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/charltons-banff/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/hi-banff-alpine-centre/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/hi-banff-alpine-centre/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/sunshine-mountain-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/sunshine-mountain-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/castle-mountain-chalets/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/castle-mountain-chalets/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/storm-mountain-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/storm-mountain-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/blackstone-mountain-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/blackstone-mountain-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/malcolm-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/malcolm-hotel/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/coast-canmore-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/coast-canmore-hotel/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/basecamp-lodge-canmore/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/basecamp-lodge-canmore/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/lamphouse-canmore/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/lamphouse-canmore/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/fairmont-chateau-lake-louise/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/fairmont-chateau-lake-louise/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/lake-louise-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/lake-louise-inn/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/mountaineer-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/mountaineer-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/post-hotel-spa/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/post-hotel-spa/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/baker-creek-by-basecamp/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/baker-creek-by-basecamp/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/paradise-lodge-bungalows/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/paradise-lodge-bungalows/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/hi-lake-louise-alpine-centre/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/hi-lake-louise-alpine-centre/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/emerald-lake-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/emerald-lake-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/hidden-ridge-resort/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/hidden-ridge-resort/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/douglas-fir-resort/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/douglas-fir-resort/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/falcon-crest-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/falcon-crest-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/pocaterra-inn-waterslide/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/pocaterra-inn-waterslide/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/stoneridge-mountain-resort/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/stoneridge-mountain-resort/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/copperstone-resort/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/copperstone-resort/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/canmore-inn-suites/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/canmore-inn-suites/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/rundle-mountain-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/rundle-mountain-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/hi-castle-mountain-hostel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/hi-castle-mountain-hostel/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/cathedral-mountain-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/cathedral-mountain-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-boundary-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-boundary-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/inns-of-banff/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/inns-of-banff/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-international-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-international-hotel/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/best-western-banff/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/best-western-banff/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-inn/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/dorothy-motel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/dorothy-motel/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/bow-view-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/bow-view-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/red-carpet-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/red-carpet-inn/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/irwins-mountain-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/irwins-mountain-inn/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/kenrick-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/kenrick-hotel/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/moxy-banff/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/moxy-banff/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/king-edward-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/king-edward-hotel/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/johnston-canyon-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/johnston-canyon-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/everwild-canmore/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/everwild-canmore/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/mount-engadine-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/mount-engadine-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/mystic-springs-chalets/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/mystic-springs-chalets/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/deer-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/deer-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/num-ti-jah-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/num-ti-jah-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-centre-hotel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-centre-hotel/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-boutique-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-boutique-inn/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-beaver-cabins/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-beaver-cabins/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/basecamp-suites-banff/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/basecamp-suites-banff/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/elkhorn-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/elkhorn-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/samesun-banff-hostel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/samesun-banff-hostel/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-international-hostel/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-international-hostel/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/rundle-chalets/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/rundle-chalets/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/rocky-mountain-ski-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/rocky-mountain-ski-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/canmore-rocky-mountain-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/canmore-rocky-mountain-inn/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/northwinds-hotel-canmore/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/northwinds-hotel-canmore/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/chateau-canmore/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/chateau-canmore/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/silver-creek-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/silver-creek-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/grande-rockies-resort/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/grande-rockies-resort/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/super-8-canmore/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/super-8-canmore/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/georgetown-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/georgetown-inn/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/drake-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/drake-inn/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/sunset-resorts-canmore/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/sunset-resorts-canmore/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/lady-macdonald-country-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/lady-macdonald-country-inn/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/windtower-lodge-suites/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/windtower-lodge-suites/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/summit-grande-rockies/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/summit-grande-rockies/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/solara-resort/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/solara-resort/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/days-inn-canmore/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/days-inn-canmore/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/bear-bison-inn/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/bear-bison-inn/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/banff-gate-mountain-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/banff-gate-mountain-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/crossing-resort/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/crossing-resort/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/kicking-horse-mountain-lodge/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/kicking-horse-mountain-lodge/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/painted-warriors-ranch/",
+      "kind": "hotel",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/painted-warriors-ranch/",
+      "h1": 1,
+      "noindex": true,
+      "inSitemap": false,
+      "markers": {
+        "sourceStatus": true,
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/wildlife/",
+      "kind": "wildlife",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/wildlife/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 4,
+      "markers": {
+        "sourceReview": true,
+        "photoScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/wildlife-tracker/",
+      "kind": "wildlife",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/wildlife-tracker/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 5,
+      "markers": {
+        "sourceReview": true,
+        "feedScope": true,
+        "areaCount": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/wildlife-safety/",
+      "kind": "wildlife",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/wildlife-safety/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 3,
+      "markers": {
+        "sourceReview": true,
+        "reportContact": true,
+        "emergencyContact": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/wildlife-calendar/",
+      "kind": "wildlife",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:07 GMT",
+      "canonical": "https://banffbound.com/wildlife-calendar/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 3,
+      "markers": {
+        "sourceReview": true,
+        "preparationScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/bear-spray/",
+      "kind": "wildlife",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/bear-spray/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 4,
+      "markers": {
+        "sourceReview": true,
+        "provider": true,
+        "poisonAdvice": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trail-map/",
+      "kind": "directory",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/trail-map/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "planningScope": true,
+        "photoScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/hotel-directory/",
+      "kind": "directory",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:53 GMT",
+      "canonical": "https://banffbound.com/hotel-directory/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceScope": true,
+        "legacyScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/tools/",
+      "kind": "directory",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/tools/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "wildlifeScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/biking/",
+      "kind": "cycling",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/biking/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "planner": true,
+        "permission": true,
+        "winter": true,
+        "dates": true,
+        "sourceScope": true,
+        "photo": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-legacy-trail/",
+      "kind": "cycling-blog",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/banff-legacy-trail/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "distanceBasis": true,
+        "corridor": true,
+        "transport": true,
+        "winter": true,
+        "shops": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-mountain-biking/",
+      "kind": "cycling-blog",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/banff-mountain-biking/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "permission": true,
+        "minnewanka": true,
+        "difficulty": true,
+        "winter": true,
+        "endpoint": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/spray-river-trail/",
+      "kind": "cycling-blog",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/spray-river-trail/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "profiles": true,
+        "winter": true,
+        "eBikeScope": true,
+        "pointToPoint": true,
+        "avalanche": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/privacy/",
+      "kind": "privacy",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/privacy/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "separateChoices": true,
+        "noImpliedConsent": true,
+        "storage": true,
+        "expiry": true,
+        "withdrawal": true,
+        "referrals": true,
+        "fallback": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/tours/",
+      "kind": "tours",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/tours/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "sourceScope": true,
+        "photoScope": true,
+        "fallback": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/book/banff-hotels/",
+      "kind": "paid-landing",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/book/banff-hotels/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 4,
+      "markers": {
+        "disclosure": true,
+        "sourceScope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/book/lake-louise-stays/",
+      "kind": "paid-landing",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/book/lake-louise-stays/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 4,
+      "markers": {
+        "sourceScope": true,
+        "identity": true,
+        "scope": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/book/banff-winter-activities/",
+      "kind": "paid-landing",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/book/banff-winter-activities/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 4,
+      "markers": {
+        "disclosure": true,
+        "sourceScope": true,
+        "access": true,
+        "format": true,
+        "reviewDate": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/nightclub-banff/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/nightclub-banff/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-nightclubs/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/banff-nightclubs/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/new-places-to-eat-in-banff/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/new-places-to-eat-in-banff/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-clubs/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/banff-clubs/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-bars/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/banff-bars/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/golden-banff/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/golden-banff/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/jasper-town/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/jasper-town/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/jasper-national-park/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/jasper-national-park/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/deals-in-banff/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/deals-in-banff/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/johnsons-canyon/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/johnsons-canyon/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/calgary-to-jasper/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/calgary-to-jasper/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/numtijah-lodge/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/numtijah-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/num-ti-jah-lodge/",
+      "kind": "legacy-text-repair",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:06:52 GMT",
+      "canonical": "https://banffbound.com/blog/num-ti-jah-lodge/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "markers": {
+        "partialCorrection": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/learn-to-ski/",
+      "kind": "lesson-planner",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:05 GMT",
+      "canonical": "https://banffbound.com/learn-to-ski/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 7,
+      "markers": {
+        "sourceReview": true,
+        "scope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/ski-day-planner/",
+      "kind": "ski-day-planner",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/ski-day-planner/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 5,
+      "markers": {
+        "childReview": true,
+        "defaultResort": true,
+        "scope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/towns/",
+      "kind": "town-index",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/towns/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 3,
+      "markers": {
+        "sourceScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/towns/banff/",
+      "kind": "town-guide",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/towns/banff/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 2,
+      "markers": {
+        "intro": true,
+        "sourceScope": true,
+        "journeyScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/towns/canmore/",
+      "kind": "town-guide",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/towns/canmore/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 2,
+      "markers": {
+        "intro": true,
+        "sourceScope": true,
+        "roomScope": true,
+        "winterNordic": true,
+        "journeyScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/towns/lake-louise/",
+      "kind": "town-guide",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/towns/lake-louise/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 2,
+      "markers": {
+        "intro": true,
+        "sourceScope": true,
+        "journeyScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/towns/field-yoho/",
+      "kind": "town-guide",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/towns/field-yoho/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 2,
+      "markers": {
+        "intro": true,
+        "sourceScope": true,
+        "journeyScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/towns/golden/",
+      "kind": "town-guide",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/towns/golden/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 2,
+      "markers": {
+        "intro": true,
+        "sourceScope": true,
+        "journeyScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/towns/kananaskis/",
+      "kind": "town-guide",
+      "status": 200,
+      "lastModified": "Thu, 29 Oct 2026 21:07:06 GMT",
+      "canonical": "https://banffbound.com/towns/kananaskis/",
+      "h1": 1,
+      "noindex": false,
+      "inSitemap": true,
+      "faqQuestions": 2,
+      "markers": {
+        "intro": true,
+        "sourceScope": true,
+        "journeyScope": true
+      },
+      "activeOptionalResources": [],
+      "consentMarkupPassed": true,
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "photos": [
+    {
+      "id": "elk",
+      "path": "/images/wildlife/field-guide/elk.jpg",
+      "status": 200,
+      "bytes": 112592,
+      "expectedSha256": "eb4d539c997af9ffc4b27f79bbdb8d8c781f8b85041de8a7528526a4730e3a13",
+      "sha256": "eb4d539c997af9ffc4b27f79bbdb8d8c781f8b85041de8a7528526a4730e3a13",
+      "passed": true
+    },
+    {
+      "id": "black-bear",
+      "path": "/images/wildlife/field-guide/black-bear.jpeg",
+      "status": 200,
+      "bytes": 86739,
+      "expectedSha256": "c3536fcb3049898375cfc199ba86ec0891f065406114a1520ec0ebd5c752382d",
+      "sha256": "c3536fcb3049898375cfc199ba86ec0891f065406114a1520ec0ebd5c752382d",
+      "passed": true
+    },
+    {
+      "id": "grizzly",
+      "path": "/images/wildlife/field-guide/grizzly.jpeg",
+      "status": 200,
+      "bytes": 142055,
+      "expectedSha256": "5d78a453ecbc128ad09b532923a86ae84c85f16d829d98d0bd919412de292c47",
+      "sha256": "5d78a453ecbc128ad09b532923a86ae84c85f16d829d98d0bd919412de292c47",
+      "passed": true
+    },
+    {
+      "id": "bighorn-sheep",
+      "path": "/images/wildlife/field-guide/bighorn-sheep.jpeg",
+      "status": 200,
+      "bytes": 125722,
+      "expectedSha256": "6ccb6b3c9f7cacfb7f03afb1f0efbbd98f1415e439e3bf1ac53940c49035bc69",
+      "sha256": "6ccb6b3c9f7cacfb7f03afb1f0efbbd98f1415e439e3bf1ac53940c49035bc69",
+      "passed": true
+    },
+    {
+      "id": "moose",
+      "path": "/images/wildlife/field-guide/moose.jpeg",
+      "status": 200,
+      "bytes": 91443,
+      "expectedSha256": "34e7adca18012adcb351e0f4b4fee17f2f9f69fd439809103644f9b4304882c3",
+      "sha256": "34e7adca18012adcb351e0f4b4fee17f2f9f69fd439809103644f9b4304882c3",
+      "passed": true
+    },
+    {
+      "id": "mountain-goat",
+      "path": "/images/wildlife/field-guide/mountain-goat.jpeg",
+      "status": 200,
+      "bytes": 143043,
+      "expectedSha256": "89ce90bb7e2c92876f2eb0f2e812695308ab681d3c07d309c3e3535d4343288e",
+      "sha256": "89ce90bb7e2c92876f2eb0f2e812695308ab681d3c07d309c3e3535d4343288e",
+      "passed": true
+    },
+    {
+      "id": "pika",
+      "path": "/images/wildlife/field-guide/pika.jpeg",
+      "status": 200,
+      "bytes": 143720,
+      "expectedSha256": "93c1b7ab148d4fb26aca8afc7d41712f00ec98f968701e79a8c7712a79e4074c",
+      "sha256": "93c1b7ab148d4fb26aca8afc7d41712f00ec98f968701e79a8c7712a79e4074c",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "durationMs": 17170,
+  "summary": {
+    "htmlPassed": 215,
+    "htmlFailed": 0,
+    "photosPassed": 7,
+    "photosFailed": 0,
+    "failures": 0
+  }
+}

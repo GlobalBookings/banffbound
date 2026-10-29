@@ -39,3 +39,7 @@ The new linker source guard prevents the specific nested/existing-link/title-rep
 ## Focused validation
 
 The edit operation checks each target's actual winning source, requires nested markup in its old opening, and verifies all surrounding text plus affiliate parameters are byte-preserved. Offline in-memory module checks validate the 13 manifest entries/date, balanced new links, removal of first-person claims in the corrected paragraphs, internal-route existence, and zero nested anchors across the 295 resolved canonical bodies. No site build, live publication, account or host action is performed. Root owns label/integration and the reusable resolved-body audit.
+
+## Subsequent full reviews
+
+The later source-guide batch replaces the full bodies for both Bow Lake lodge URLs, Jasper town/national-park, and the dining article above, plus Jasper Canada and the cabin-rentals guide. Those five opening-only entries are removed from the active partial-correction manifest; eight remain. The full-review registry grows from 52 to 59. The historical before-state and proposed review priorities above are retained; current scope is in the Bow Lake/Jasper/dining/cabin source notes and source-guide release receipts. No new redirect aliases are added.

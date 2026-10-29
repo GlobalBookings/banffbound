@@ -2,8 +2,9 @@
 import { cyclingGuideMetadata } from '../../data/cyclingGuideOverrides';
 import { visitorHotelLocationCorrections, visitorHotelCorrectionDate } from '../../data/visitorDestinationOverrides';
 import { legacyTextCorrections } from '../../data/legacyTextCorrections';
-import { resolveBlogContent, reviewedBlogBodies } from '../../data/blogContentRegistry';
+import { resolveBlogContent, reviewedBlogBodies, authoredBookingGuideSlugs } from '../../data/blogContentRegistry';
 import BlogLayout from '../../layouts/BlogLayout.astro';
+import CabinGuideInteractions from '../../components/CabinGuideInteractions.astro';
 import { allBlogPosts } from '../../data/blogPosts';
 import { blogRedirects } from '../../data/redirects.mjs';
 
@@ -15,6 +16,8 @@ const { post } = Astro.props;
 const redirect = (blogRedirects as Record<string, string>)[post.slug];
 if (redirect) return Astro.redirect(`/blog/${redirect}/`, 301);
 const textCorrection = Object.hasOwn(reviewedBlogBodies, post.slug) ? undefined : legacyTextCorrections[post.slug];
+const imageIsIllustrative = post.imageIsIllustrative || Object.hasOwn(cyclingGuideMetadata, post.slug);
+const imageNote = post.imageNote || (Object.hasOwn(cyclingGuideMetadata, post.slug) ? 'Illustrative image; not verified as this route or its current conditions.' : undefined);
 const content = resolveBlogContent(post.slug).replace(
   /<table\b[\s\S]*?<\/table>/gi,
   table => `<div class="article-table-scroll" tabindex="0" role="region" aria-label="Guide comparison table">${table}</div>`
@@ -32,9 +35,11 @@ const content = resolveBlogContent(post.slug).replace(
   partialCorrectionLabel={textCorrection ? "Opening paragraph repaired (full guide review pending):" : undefined}
   category={post.category}
   image={post.image}
-  imageIsIllustrative={Object.hasOwn(cyclingGuideMetadata, post.slug)}
-  imageNote={Object.hasOwn(cyclingGuideMetadata, post.slug) ? "Illustrative stock photograph; not verified as this route or its current conditions." : undefined}
+  imageIsIllustrative={imageIsIllustrative}
+  imageNote={imageNote}
+  curatedBookingLinks={authoredBookingGuideSlugs.includes(post.slug)}
   readTime={post.readTime}
 >
   <Fragment set:html={content} />
+  {post.slug === 'banff-cabin-rentals' && <CabinGuideInteractions />}
 </BlogLayout>
