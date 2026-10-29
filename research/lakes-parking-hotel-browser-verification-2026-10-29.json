@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-29T17:47:26.477870+00:00",
+  "build": "final workspace cached build",
+  "browser": "in-app browser, local preview127.0.0.1:4322",
+  "lakeExplorer": {
+    "initial": 10,
+    "winterRental": 0,
+    "winterShoreline": [
+      "lake-louise"
+    ],
+    "summerRentalPreset": [
+      "lake-louise",
+      "moraine-lake",
+      "emerald"
+    ],
+    "reset": 10
+  },
+  "faq": {
+    "initial": 9,
+    "caseInsensitivePeytoSearch": 1,
+    "waterIntersection": 0,
+    "reset": 9
+  },
+  "parking": {
+    "initial": 11,
+    "moraineWinterVehicleGuides": 1,
+    "winterLakeWorkaroundRejected": true,
+    "largeVehicleQuestions": true,
+    "resetGuides": 11,
+    "resetVehicleCheckboxDisabledAndUnchecked": true
+  },
+  "shuttle": {
+    "summerMoraineMobilityAndEarlyCheck": true,
+    "winterTransitionRemovesSummerConnectionAssumption": true
+  },
+  "hotelDirectory": {
+    "initial": 95,
+    "selectedFactsFilter": 21,
+    "formerNamesFilter": 2,
+    "unreviewedFilter": 71,
+    "reset": 95,
+    "mapPoints": 5,
+    "unreviewedMapPoints": 0,
+    "mapReset": 5
+  },
+  "mobile": [
+    {
+      "path": "/lakes/",
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1
+    },
+    {
+      "path": "/lake-faq/",
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1
+    },
+    {
+      "path": "/parking/",
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1
+    },
+    {
+      "path": "/shuttle-reservations/",
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1
+    },
+    {
+      "path": "/hotel-directory/",
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1
+    },
+    {
+      "path": "/hotel-directory/copperstone-resort/",
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1
+    }
+  ],
+  "builtCoverage": {
+    "hotelProfiles": 95,
+    "eligibleInSitemap": 24,
+    "noindexAndExcluded": 71,
+    "noUnverifiedLodgingSchema": true,
+    "publicBuildReceiptFields": 6
+  },
+  "notes": [
+    "No booking, payment, account form or test conversion submitted.",
+    "Initial source-filter/mobile checks preceded the two additional flagship reviews; the reviewed21/unreviewed71/map5 states were rechecked after the final cached build."
+  ]
+}

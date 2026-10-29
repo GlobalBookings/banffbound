@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { hotels } from '../../data/hotels';
+import { directoryHotels as hotels, hotelDirectorySchema, hotelDirectoryPlanningChecks, isHotelDirectoryIndexable } from '../../data/hotelDirectory';
 
 export function getStaticPaths() {
   return hotels.map(hotel => ({
@@ -11,14 +11,14 @@ export function getStaticPaths() {
 }
 
 const { hotel } = Astro.props;
-const otherHotels = hotels.filter(h => h.slug !== hotel.slug && h.area === hotel.area).slice(0, 4);
+const otherHotels = hotels.filter(h => h.slug !== hotel.slug && h.area === hotel.area && h.sourceStatus === 'reviewed').slice(0, 4);
 const GYG = 'QW960HO';
 const galleryImages = [...new Set([hotel.image, ...(hotel.images || [])].filter((image: unknown): image is string => typeof image === 'string' && image.trim().length > 0))];
 const primaryImage = galleryImages[0];
 const hasCoordinates = Number.isFinite(hotel.lat) && Number.isFinite(hotel.lng) && Math.abs(hotel.lat) <= 90 && Math.abs(hotel.lng) <= 180;
 const hasSourcedCoordinates = hasCoordinates && hotel.coordinateStatus === 'source-verified' && typeof hotel.coordinateSource === 'string' && hotel.coordinateSource.startsWith('https://');
 const isDestinationSearch = /\/Hotel-Search(?:[/?#]|$)/i.test(hotel.expediaUrl);
-const bookingLabel = isDestinationSearch ? 'Search the area on Expedia' : 'Check room options on Expedia';
+const bookingLabel = isDestinationSearch ? 'Search the area on Expedia' : ['unreviewed', 'former-name'].includes(hotel.sourceStatus) ? 'Open the retained provider listing' : 'Check room options on Expedia';
 const bookingNote = isDestinationSearch
   ? 'This opens destination search results, which can include other properties. Confirm the exact property, address and unit, then compare the selected room and final total.'
   : 'Confirm the property address, selected room, final total and booking terms with the provider. Read current guest reviews there before choosing.';
@@ -70,20 +70,16 @@ const areaGuides: Record<string, Array<{href: string; title: string; desc: strin
     { href: '/blog/7-day-banff-itinerary', title: '7-Day Banff Itinerary', desc: 'Complete week in the Rockies.' },
   ],
 };
-const relatedGuides = areaGuides[hotel.area] || areaGuides['Downtown Banff'];
+const relatedGuides = hotel.sourceStatus === 'unreviewed' ? [
+  { href: '/towns', title: 'Choose a mountain base', desc: 'Compare actual towns and regional transport before selecting a property.' },
+  { href: '/winter-stays', title: 'Reviewed winter stays', desc: 'Compare sourced hotel and lodge examples.' },
+  { href: '/vacation-rentals', title: 'Condo and cabin planning', desc: 'Compare room layouts, kitchens and the full journey.' },
+] : areaGuides[hotel.area] || areaGuides['Downtown Banff'];
 
-const hotelSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Hotel',
-  name: hotel.name,
-  description: withoutPriceClaims(hotel.description),
-  ...(primaryImage ? { image: new URL(primaryImage, 'https://banffbound.com').href } : {}),
-  address: hotel.address ? { '@type': 'PostalAddress', streetAddress: hotel.address } : undefined,
-  ...(hasSourcedCoordinates ? { geo: { '@type': 'GeoCoordinates', latitude: hotel.lat, longitude: hotel.lng } } : {}),
-};
+const hotelSchema = hotelDirectorySchema(hotel);
 ---
 
-<BaseLayout title={`${hotel.name} | Banff Hotel Guide`} description={`Explore ${hotel.name} in ${hotel.area}. Compare the location and room facilities, then check current availability, total prices and booking terms with the provider.`} lastUpdated={hotel.checkedOn}>
+<BaseLayout title={`${hotel.name} | Banff Hotel Directory`} description={hotel.sourceStatus === 'unreviewed' ? `Retained directory lead for ${hotel.name}. Current property identity and facilities await source review. Compare reviewed alternatives and confirm the provider listing.` : hotel.description} lastUpdated={hotel.checkedOn} noindex={!isHotelDirectoryIndexable(hotel.slug)}>
 
   <div class="container">
     <Breadcrumbs items={[
@@ -113,16 +109,18 @@ const hotelSchema = {
     </div> : <div class="hero-photo-fallback container"><p>Property photo unavailable. Confirm the exact property and room with the linked source.</p></div>}
     <div class="hero-overlay">
       <div class="container">
-        <span class="badge">{hotel.area}</span>
+        <span class="badge">{hotel.sourceStatusLabel}</span>
         <h1>{hotel.name}</h1>
         <div class="hero-meta">
-          <span>{hotel.type}</span>
+          <span>{hotel.sourceStatus === 'unreviewed' ? 'Stored classification: ' : ''}{hotel.type}</span>
           <span class="hero-sep">·</span>
           <span>Editorial budget tier: {hotel.priceRange}</span>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="container"><p class="photo-caption">{hotel.photoNote}</p></div>
 
   <!-- Quick booking bar -->
   <div class="booking-strip">
@@ -143,15 +141,19 @@ const hotelSchema = {
         <div class="hotel-main">
 
           <aside class="facility-confirmation">
-            <h2>Confirm the room and facilities before booking</h2>
-            <p>Check your exact room layout, accessibility needs, pool or hot-tub status, parking, resort transfers and cancellation terms with the hotel or booking provider. Facilities and inclusions can vary by room and date.</p>
+            <h2>{hotel.sourceStatusLabel}</h2>
+            <p>{hotel.sourceScope}</p>
+            {hotel.operationNote && <p><strong>Operation and identity:</strong> {hotel.operationNote}</p>}
             <p><a href="/winter-stays">Compare winter stays and transport tradeoffs &rarr;</a></p>
             {hotel.facilityNote && <p><strong>Facility notice:</strong> {hotel.facilityNote}</p>}
-            {hotel.officialUrl && <p><a href={hotel.officialUrl} target="_blank" rel="noopener">Official hotel information &nearr;</a>{hotel.checkedOn && <span> · Checked <time datetime={hotel.checkedOn}>{hotel.checkedOn}</time></span>}</p>}
+            {hotel.sourceLinks.length > 0 && <ul>{hotel.sourceLinks.map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.label} &nearr;</a></li>)}</ul>}
+            {hotel.checkedOn && <p>Source scope checked <time datetime={hotel.checkedOn}>{hotel.checkedOn}</time>.</p>}
+            <p>The provider link is retained separately from the operator sources. Confirm the property identity, address and selected room returned by that link before paying.</p>
+            {isDestinationSearch && <p><strong>Provider destination search:</strong> {hotel.providerDestination || 'Check the destination on the provider page'}. This is not a property or unit reservation; confirm its actual address separately.</p>}
           </aside>
 
           <!-- Overview -->
-          <div class="content-section">
+          {['reviewed', 'location-only'].includes(hotel.sourceStatus) && <div class="content-section">
             <h2>Overview</h2>
             {hotel.overview ? (
               <p class="overview-text">{withoutPriceClaims(hotel.overview)}</p>
@@ -162,10 +164,12 @@ const hotelSchema = {
             {hotel.yearBuilt && <p class="hotel-stat"><strong>Established:</strong> {hotel.yearBuilt}</p>}
             {hotel.lastRenovated && <p class="hotel-stat"><strong>Last renovated:</strong> {hotel.lastRenovated}</p>}
             {hotel.address && <p class="hotel-stat"><strong>Address:</strong> {hotel.address}</p>}
-          </div>
+          </div>}
+
+          {['unreviewed', 'former-name'].includes(hotel.sourceStatus) && <div class="content-section"><h2>Continue with a complete stay comparison</h2><div class="planning-checks">{hotelDirectoryPlanningChecks.map(check => <div><h3>{check.title}</h3><p>{check.text}</p></div>)}</div><p>Use the source-reviewed alternatives below and confirm the identity returned by the retained provider link.</p></div>}
 
           <!-- Popular amenities -->
-          <div class="content-section">
+          {listedAmenities.length > 0 && <div class="content-section">
             <h2>Popular Amenities</h2>
             <div class="amenities-grid">
               {listedAmenities.map(a => (
@@ -175,7 +179,7 @@ const hotelSchema = {
                 </div>
               ))}
             </div>
-          </div>
+          </div>}
 
           <!-- Room features -->
           {hotel.roomFeatures && hotel.roomFeatures.length > 0 && (
@@ -203,7 +207,7 @@ const hotelSchema = {
           <!-- Location & Nearby -->
           <div class="content-section">
             <h2>Location & Getting Around</h2>
-            <p><strong>Area:</strong> {hotel.area}</p>
+            <p><strong>{hotel.sourceStatus === 'unreviewed' ? 'Stored area label (not a verified address):' : 'Area:'}</strong> {hotel.area}</p>
             {hotel.address && <p><strong>Listed address:</strong> {hotel.address}</p>}
             <p class="location-note"><strong>{hasSourcedCoordinates ? 'Source-backed property locator.' : hasCoordinates ? 'Indicative map location.' : 'Map point unavailable.'}</strong> {hotel.coordinateNote}</p>
             {hasSourcedCoordinates && <p class="location-source"><a href={hotel.coordinateSource} target="_blank" rel="noopener">Coordinate source &nearr;</a>{hotel.coordinateCheckedOn && <> · Checked <time datetime={hotel.coordinateCheckedOn}>{hotel.coordinateCheckedOn}</time></>}</p>}
@@ -257,7 +261,7 @@ const hotelSchema = {
         <!-- Sidebar -->
         <div class="hotel-sidebar">
           <div class="booking-card">
-            <div class="booking-price">{isDestinationSearch ? 'Search stays in the area' : 'Get a quote for your dates'}</div>
+            <div class="booking-price">{isDestinationSearch ? 'Search stays in the area' : ['unreviewed', 'former-name'].includes(hotel.sourceStatus) ? 'Check the provider identity' : 'Get a quote for your dates'}</div>
             <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent booking-btn">
               {bookingLabel} →
             </a>
@@ -265,9 +269,10 @@ const hotelSchema = {
           </div>
 
           <div class="sidebar-card">
-            <h3>Quick Facts</h3>
-            <div class="fact-row"><span>Type</span><span>{hotel.type}</span></div>
-            <div class="fact-row"><span>Area</span><span>{hotel.area}</span></div>
+            <h3>Directory summary</h3>
+            <div class="fact-row"><span>Source status</span><span>{hotel.sourceStatusLabel}</span></div>
+            <div class="fact-row"><span>{hotel.sourceStatus === 'unreviewed' ? 'Stored type' : 'Type'}</span><span>{hotel.type}</span></div>
+            <div class="fact-row"><span>{hotel.sourceStatus === 'unreviewed' ? 'Stored area' : 'Area'}</span><span>{hotel.area}</span></div>
             <div class="fact-row"><span>Editorial budget tier</span><span>{hotel.priceRange}</span></div>
             {hotel.totalRooms && <div class="fact-row"><span>Rooms</span><span>{hotel.totalRooms}</span></div>}
             {hotel.checkIn && <div class="fact-row"><span>Check-in</span><span>{hotel.checkIn}</span></div>}
@@ -276,13 +281,13 @@ const hotelSchema = {
 
           <div class="sidebar-card">
             <h3>Book Banff Experiences</h3>
-            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 0.75rem;">Guided tours, activities, and day trips from your hotel.</p>
+            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 0.75rem;">Compare operator activities, then confirm the actual starting place and return.</p>
             <a href={`https://www.getyourguide.com/banff-l284/?partner_id=${GYG}`} target="_blank" rel="noopener sponsored" class="btn btn-primary sidebar-btn">Browse Tours →</a>
           </div>
 
           <div class="sidebar-card">
             <h3>Need More Options?</h3>
-            <a href="/hotel-directory" class="btn btn-outline sidebar-btn">View All {hotels.length} Hotels →</a>
+            <a href="/hotel-directory" class="btn btn-outline sidebar-btn">View {hotels.length} Directory Records →</a>
           </div>
         </div>
       </div>
@@ -293,8 +298,8 @@ const hotelSchema = {
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Guides for {hotel.area}</h2>
-        <p>Plan your stay with these insider guides.</p>
+        <h2>{hotel.sourceStatus === 'unreviewed' ? 'Compare your base and stay type' : `Guides for ${hotel.area}`}</h2>
+        <p>Plan the base, season and complete journey.</p>
       </div>
       <div class="grid grid-4">
         {relatedGuides.map(guide => (
@@ -315,8 +320,8 @@ const hotelSchema = {
     <section class="section" style="background: var(--color-bg-alt);">
       <div class="container">
         <div class="section-header">
-          <h2>More Hotels in {hotel.area}</h2>
-          <p>Compare other options nearby.</p>
+          <h2>Source-reviewed alternatives</h2>
+          <p>Compare the actual addresses and journeys; an area grouping does not establish the same location.</p>
         </div>
         <div class="grid grid-4">
           {otherHotels.map(h => (
@@ -340,6 +345,10 @@ const hotelSchema = {
   .facility-confirmation h2 { font-size: 1.4rem; margin-bottom: .8rem; }
   .facility-confirmation p { font-size: .88rem; margin-top: .7rem; color: var(--color-text-light); }
   .facility-confirmation a { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+  .facility-confirmation ul { padding-left: 1.2rem; font-size: .87rem; line-height: 1.8; }
+  .planning-checks h3 { font-size: 1rem; margin: 1rem 0 .4rem; }
+  .planning-checks p { font-size: .9rem; line-height: 1.7; }
+  .photo-caption { font-size: .78rem; color: var(--color-text-light); margin: .7rem 0; }
   .hotel-hero { position: relative; }
   .hotel-hero.no-photo { background: var(--color-primary); color: white; }
   .no-photo .hero-overlay { position: static; background: none; padding: 1rem 0 2rem; }

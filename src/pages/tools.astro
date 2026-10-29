@@ -29,8 +29,8 @@ const toolCategories = [
       { href: '/trail-map', title: 'Interactive Trail Map', desc: 'Trail listings with indicative map points, route filters and official report links.', icon: '🗺️' },
       { href: '/quiet-trails', title: 'Quiet Trail Planning', desc: 'Compare route demands, access, seasons and the full journey.', icon: '🤫' },
       { href: '/alternatives', title: 'Compare Trail Plans', desc: 'Understand different route demands before changing the day.', icon: '🔄' },
-      { href: '/parking', title: 'Parking Predictor', desc: 'When do lots fill? Data-driven fill times for 11 parking lots.', icon: '🅿️' },
-      { href: '/shuttle-reservations', title: 'Shuttle Reservations', desc: 'Countdown timer, booking guide, and backup plans for 2026.', icon: '🚐' },
+      { href: '/parking', title: 'Parking & Transport Planner', desc: 'Match 11 destinations to seasonal access, group needs and the return journey.', icon: '🅿️' },
+      { href: '/shuttle-reservations', title: 'Lake Shuttle Planning', desc: 'Compare actual lake services, reservation steps and connections.', icon: '🚐' },
       { href: '/accessible-trails', title: 'Accessible Banff', desc: 'Compare physical trail profiles, visitor features and transport arrangements.', icon: '♿' },
       { href: '/larch-season', title: 'Larch Season Predictor', desc: 'When do larches turn gold? Historical data and best trails.', icon: '🍂' },
     ],
@@ -73,20 +73,20 @@ const toolCategories = [
   {
     name: 'Lake & Nature Guides',
     tools: [
-      { href: '/lake-faq', title: 'Lake FAQ & Science', desc: 'Why they are blue, frozen status, swimming safety, canoeing.', icon: '💧' },
-      { href: '/lakes', title: 'Iconic Lakes', desc: 'Guide to Lake Louise, Moraine Lake, and more.', icon: '🏔️' },
+      { href: '/lake-faq', title: 'Lake FAQ & Science', desc: 'Sourced answers about colour, ice, swimming, watercraft and actual access.', icon: '💧' },
+      { href: '/lakes', title: 'Choose a Lake Day', desc: 'Compare 10 lake plans by area, trip season and the kind of outing.', icon: '🏔️' },
     ],
   },
 ];
 ---
 
-<BaseLayout title="Banff Planning Tools — 30+ Free Interactive Guides" description="Every tool you need to plan a Banff trip. Trail finders, parking predictors, cost calculators, wildlife trackers, safety guides, and more. All free, no signup.">
+<BaseLayout title="Banff Planning Tools — 30+ Free Interactive Guides" description="Every tool you need to plan a Banff trip. Trail finders, parking and transport planning, cost calculators, wildlife trackers, safety guides, and more. All free, no signup.">
 
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Banff Planning Tools',
-    description: 'Every tool you need to plan a Banff trip. Trail finders, parking predictors, cost calculators, wildlife trackers, safety guides, and more. All free, no signup.',
+    description: 'Every tool you need to plan a Banff trip. Trail finders, parking and transport planning, cost calculators, wildlife trackers, safety guides, and more. All free, no signup.',
     url: 'https://banffbound.com/tools',
     mainEntity: {
       '@type': 'ItemList',

@@ -1,114 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-
-const lakes = [
-  { name: 'Lake Louise', frozen: 'Late November to mid-June', swim: false, swimNote: 'Water temperature is 1-4°C even in August. Hypothermia risk in under 5 minutes. People canoe here — they do not swim.', blueReason: 'Rock flour from Victoria Glacier', canoe: true, canoeNote: '$135/hour from Fairmont Chateau boathouse', access: 'Vehicle or shuttle year-round. Parking fills by 7 AM in summer.' },
-  { name: 'Moraine Lake', frozen: 'Late October to late June', swim: false, swimNote: 'Even colder than Lake Louise (1-3°C). The lake is fed directly by glacial meltwater. Swimming would be dangerous.', blueReason: 'Rock flour from Wenkchemna Glacier', canoe: true, canoeNote: '$120/hour from Moraine Lake Lodge dock', access: 'Shuttle only June-October. Road closed in winter.' },
-  { name: 'Peyto Lake', frozen: 'November to June', swim: false, swimNote: 'No swimming access. The lake is viewed from a platform 250m above. No trail to the lakeshore.', blueReason: 'Rock flour from Peyto Glacier (highest concentration of any Rockies lake)', canoe: false, access: 'Icefields Parkway, 15-min walk from parking.' },
-  { name: 'Lake Minnewanka', frozen: 'December to April', swim: true, swimNote: 'Legal to swim but extremely cold (8-12°C in August). Only for experienced cold-water swimmers. No lifeguards, no designated swim area.', blueReason: 'Deep lake (142m) + dissolved minerals', canoe: false, canoeNote: 'Boat tours available. No canoe rental on-site.', access: 'Vehicle year-round, 15 min from Banff.' },
-  { name: 'Johnson Lake', frozen: 'December to March', swim: true, swimNote: 'The warmest swimmable lake near Banff (up to 18°C in August). Shallow sandy beach. Locals swim here. No lifeguards.', blueReason: 'Shallow depth and sandy bottom (not turquoise)', canoe: false, access: 'Vehicle, off Lake Minnewanka Road.' },
-  { name: 'Bow Lake', frozen: 'November to June', swim: false, swimNote: 'Glacial fed, 2-4°C. Not a swimming lake. Beautiful for photography.', blueReason: 'Rock flour from Bow Glacier', canoe: false, access: 'Icefields Parkway, roadside parking.' },
-  { name: 'Vermilion Lakes', frozen: 'December to March', swim: false, swimNote: 'Shallow marshland, not suitable for swimming. Important wildlife habitat.', blueReason: 'Not blue — brown/green marshland', canoe: true, canoeNote: 'Bring your own. Calm, flat water ideal for beginners.', access: 'Vehicle, 5 min from Banff.' },
-];
+import { lakeFaqs, lakeSources, lakePlanningReviewedAt } from '../data/lakePlanning';
+const topics={science:'Colour and science',ice:'Ice and skating',water:'Water activities',journey:'Choosing and reaching a lake'};
 ---
-
-<BaseLayout title="Banff Lakes FAQ — Frozen Status, Swimming, Why They're Blue" description="Can I swim in Lake Louise? Is Moraine Lake frozen? Why are the lakes so blue? Every question about Banff's famous lakes answered with science and local knowledge.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Why are the lakes in Banff so blue?', acceptedAnswer: { '@type': 'Answer', text: 'The turquoise colour of Banff\'s lakes (Lake Louise, Moraine Lake, Peyto Lake, Bow Lake) comes from rock flour — microscopic particles of glacial sediment suspended in the water. As glaciers grind against bedrock, they produce this fine powder which is carried into the lakes by meltwater. The particles are the perfect size to scatter blue and green wavelengths of sunlight, creating the intense turquoise colour. The effect is strongest in July-August when glacial melt is at its peak, which is why the lakes look more vivid in summer than in spring.' } },
-      { '@type': 'Question', name: 'Can I swim in Lake Louise?', acceptedAnswer: { '@type': 'Answer', text: 'No, swimming in Lake Louise is not recommended and is dangerous. The water temperature is 1-4°C (34-39°F) even at the peak of summer because it is fed directly by glacial meltwater from Victoria Glacier. Hypothermia can set in within 5 minutes. People canoe on Lake Louise — they do not swim in it. If you want to swim in a lake near Banff, Johnson Lake is the only reasonably warm option (up to 18°C in August).' } },
-      { '@type': 'Question', name: 'Is Lake Louise frozen right now?', acceptedAnswer: { '@type': 'Answer', text: 'Lake Louise typically freezes from late November to mid-June. During winter, the ice is thick enough for ice skating (the Fairmont maintains a rink on the lake), ice walking, and even horse-drawn sleigh rides. The ice begins to break up in May-June. By late June / early July, the lake is fully thawed and the turquoise colour returns. Check Parks Canada or the Fairmont Lake Louise website for current conditions.' } },
-      { '@type': 'Question', name: 'Can I swim in Moraine Lake?', acceptedAnswer: { '@type': 'Answer', text: 'No. Moraine Lake water is 1-3°C (34-37°F) year-round due to direct glacial meltwater feeding. Swimming would be extremely dangerous due to hypothermia risk. You can canoe on Moraine Lake ($120/hour from the lodge dock). The only lake near Banff warm enough for swimming is Johnson Lake, which reaches up to 18°C in August.' } },
-      { '@type': 'Question', name: 'Is Moraine Lake open right now?', acceptedAnswer: { '@type': 'Answer', text: 'Moraine Lake is typically accessible from June 1 to mid-October, depending on snow and avalanche conditions. The road is closed from mid-October through May. Since 2023, private vehicles are banned — you must take the Parks Canada shuttle (reservations required, open April 15). In winter, the lake is frozen and inaccessible. Check Parks Canada for the current status of Moraine Lake Road.' } },
-      { '@type': 'Question', name: 'What makes Moraine Lake so blue?', acceptedAnswer: { '@type': 'Answer', text: 'Moraine Lake gets its intense turquoise colour from rock flour — glacial sediment from the Wenkchemna Glacier that is so fine it stays suspended in the water. These microscopic particles scatter blue-green light wavelengths, creating the vivid colour. The lake is bluest in July-August when glacial meltwater peaks. In early June (when the road opens), the lake may still have ice and appears less vivid. By mid-July, the colour is at its most intense.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Lake FAQ' }]} />
-  </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1600&q=80" alt="Turquoise lake in Banff" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Science & Facts</span>
-      <h1>Banff Lakes FAQ</h1>
-      <p>Frozen status, swimming safety, why they're blue, and everything else you need to know.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <!-- Why Blue -->
-      <div class="science-card">
-        <h2>Why Are Banff's Lakes So Blue?</h2>
-        <div class="science-content">
-          <p>Short answer: <strong>rock flour</strong> — microscopic particles of glacial sediment.</p>
-          <p>As glaciers grind slowly against bedrock, they produce an incredibly fine powder (rock flour) that washes into the lakes via meltwater streams. These particles are the perfect size (0.002-0.05mm) to scatter blue and green wavelengths of sunlight while absorbing red wavelengths. The result is the intense turquoise colour.</p>
-          <p><strong>Why some lakes are bluer than others:</strong> The concentration of rock flour varies. Peyto Lake has the highest concentration (fed by Peyto Glacier) and appears the most vivid. Lake Louise and Moraine Lake are fed by smaller glaciers and are slightly less saturated. Johnson Lake has no glacial input and appears green-brown.</p>
-          <p><strong>Why the colour changes by season:</strong> Glacial melt peaks in July-August, flooding the lakes with fresh rock flour and producing the most intense colour. In early June the lakes may still be partially frozen and less vivid. By October, melt slows and the colour fades slightly.</p>
-        </div>
-      </div>
-
-      <!-- Lake Cards -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Lake-by-Lake Guide</h2>
-      </div>
-
-      <div class="lakes-grid">
-        {lakes.map(lake => (
-          <div class="lake-card">
-            <h3>{lake.name}</h3>
-            <div class="lake-facts">
-              <div class="lake-fact">
-                <span class="fact-label">Frozen</span>
-                <span class="fact-val">{lake.frozen}</span>
-              </div>
-              <div class="lake-fact">
-                <span class="fact-label">Swimming</span>
-                <span class={`fact-val ${lake.swim ? 'fact-yes' : 'fact-no'}`}>{lake.swim ? 'Possible (cold)' : 'No'}</span>
-              </div>
-              <div class="lake-fact">
-                <span class="fact-label">Canoeing</span>
-                <span class={`fact-val ${lake.canoe ? 'fact-yes' : 'fact-no'}`}>{lake.canoe ? 'Yes' : 'No'}</span>
-              </div>
-              <div class="lake-fact">
-                <span class="fact-label">Colour Source</span>
-                <span class="fact-val">{lake.blueReason}</span>
-              </div>
-            </div>
-            <p class="lake-swim-note">{lake.swimNote}</p>
-            {lake.canoe && lake.canoeNote && <p class="lake-canoe-note">🛶 {lake.canoeNote}</p>}
-            <p class="lake-access">📍 {lake.access}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+<BaseLayout title="Banff Lake FAQ — Blue Water, Ice, Swimming & Canoes" description="Why are Banff lakes blue? What does frozen-looking ice mean? Find sourced answers about swimming, canoes, Moraine access and choosing a lake day." lastUpdated={lakePlanningReviewedAt}>
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context':'https://schema.org', '@type':'FAQPage', mainEntity:lakeFaqs.map(faq=>({ '@type':'Question',name:faq.question,acceptedAnswer:{'@type':'Answer',text:faq.answer} })) })} />
+  <div class="container"><Breadcrumbs items={[{label:'Lakes',href:'/lakes'},{label:'Lake FAQ and Science'}]} /></div>
+  <section class="page-hero"><img src="https://banfflakelouise.bynder.com/m/1e85056f0193bfe9/1500x915_jpg-2022_LakeLouise_Friends_ROAMCreative.jpg" alt="A canoe outing at Lake Louise" class="page-hero-bg" loading="eager" fetchpriority="high" /><div class="page-hero-content"><span class="badge">Look a Little Closer</span><h1>Banff Lakes: Questions &amp; Science</h1><p>Understand the colour, separate appearance from conditions, and choose what to check for your actual lake day.</p></div></section>
+  <section class="section"><div class="container faq-page">
+    <div class="science-panel"><h2>How rock becomes part of the view</h2><p>Moving glacier ice grinds bedrock into sediment. The finest material, called rock flour, can remain suspended in meltwater. Light interacting with those particles helps create the cloudy blue, green and milky appearance associated with many glacier-fed lakes.</p><ol class="science-flow"><li><span aria-hidden="true">🏔️</span><strong>Glacier and bedrock</strong><p>Grinding produces particles ranging from large fragments to very fine sediment.</p></li><li><span aria-hidden="true">〰️</span><strong>Meltwater transport</strong><p>Fine material can travel in streams and remain suspended in lake water.</p></li><li><span aria-hidden="true">☀️</span><strong>Sediment and light</strong><p>Scattering changes how the water appears to an observer.</p></li></ol><p>This is an explanation of a physical process, not a colour forecast or a claim that one Banff lake has the most sediment. A photograph does not establish what your own visit will look like.</p><p><a href={lakeSources.flour} target="_blank" rel="noopener">National Park Service: glacial flour ↗</a> · <a href={lakeSources.colour} target="_blank" rel="noopener">Glacier National Park: the turquoise mechanism ↗</a></p></div>
+    <div class="quick-grid"><article><h2>For a winter lake visit</h2><p>Plan the designated land approach or a currently operating managed rink. This guide has no ice sensor or current water-temperature reading. A cold forecast, a month name or another person's tracks cannot establish conditions along a route.</p><p><a href="/activities/ice-skating">Choose a rink and check its status</a> · <a href="/winter">Compare other winter days</a></p></article><article><h2>For a water activity</h2><p>Start with permission at the exact waterbody, then equipment, experience, weather and recovery arrangements. Cold immersion can impair breathing and movement rapidly; closeness to shore and swimming ability do not remove that risk. Wear a properly fitted, approved flotation device for the activity.</p><p><a href={lakeSources.flotation} target="_blank" rel="noopener">Transport Canada: flotation and cold water ↗</a> · <a href="/paddling">Lake and river planning</a></p></article></div>
+    <h2 id="questions">Find your question</h2><form class="faq-filters" id="faq-filters" aria-label="Filter lake questions" hidden><div><label for="lake-question-search">Search questions and answers</label><input type="search" id="lake-question-search" placeholder="Ice, canoes, Peyto, colour…" /></div><div><label for="lake-question-topic">Topic</label><select id="lake-question-topic"><option value="all">All topics</option>{Object.entries(topics).map(([value,label])=><option value={value}>{label}</option>)}</select></div><button type="button" class="btn btn-outline" id="faq-reset">Reset question filters</button></form><p id="faq-count" role="status" aria-live="polite" aria-atomic="true">{lakeFaqs.length} questions</p><noscript><p>All questions and answers are available below without JavaScript.</p></noscript><p id="faq-empty" class="notice" hidden>No question matches. Clear the search or choose another topic. The <a href="/lakes">lake comparison</a> and <a href="/paddling">paddling guide</a> offer more planning detail.</p>
+    <div class="faq-list">{lakeFaqs.map(faq=><details id={'question-'+faq.id} data-topic={faq.topic} data-question-search={(faq.question+' '+faq.answer).toLowerCase()}><summary>{faq.question}</summary><div class="answer"><p data-answer>{faq.answer}</p><a href={faq.source} target={faq.source.startsWith('https:')?'_blank':undefined} rel={faq.source.startsWith('https:')?'noopener':undefined}>{faq.label} {faq.source.startsWith('https:')?'↗':'→'}</a></div></details>)}</div>
+    <div class="next-plan"><h2>Turn the answer into a day</h2><p>Choose the main experience, then check its actual journey and return. A lake view does not need to become a full hike or a paddle to be worthwhile.</p><a href="/lakes#lake-plans" class="btn btn-primary">Compare 10 lake plans →</a><div class="next-links"><a href="/accessible-trails">Physical access features</a><a href="/parking">Parking and arrival</a><a href="/shuttle-reservations">Reserved lake journeys</a><a href="/packing-list">Packing checklist</a><a href="/conditions">Official conditions sources</a></div></div><p class="small">Reviewed October 29, 2026. Linked sources establish the stated science, rules and planning information; they do not establish today's opening, ice thickness, water temperature, rental availability or individual suitability.</p>
+  </div></section>
 </BaseLayout>
-
+<script>
+  const form=document.querySelector<HTMLFormElement>('#faq-filters');
+  const search=document.querySelector<HTMLInputElement>('#lake-question-search');
+  const topic=document.querySelector<HTMLSelectElement>('#lake-question-topic');
+  const count=document.querySelector<HTMLElement>('#faq-count');
+  const empty=document.querySelector<HTMLElement>('#faq-empty');
+  const items=Array.from(document.querySelectorAll<HTMLDetailsElement>('[data-question-search]'));
+  if(form&&search&&topic&&count&&empty) {
+    const update=()=>{
+      const query=search.value.trim().toLowerCase();let found=0;
+      items.forEach(item=>{const match=(!query||item.dataset.questionSearch?.includes(query))&&(topic.value==='all'||item.dataset.topic===topic.value);item.hidden=!match;if(match)found++;});
+      count.textContent=found+' of '+items.length+' questions';empty.hidden=found!==0;
+    };
+    search.addEventListener('input',update);topic.addEventListener('change',update);
+    form.addEventListener('submit',event=>event.preventDefault());
+    document.querySelector('#faq-reset')?.addEventListener('click',()=>{form.reset();update();});
+    form.hidden=false;update();
+  }
+</script>
 <style>
-  .science-card { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; }
-  .science-card h2 { color: var(--color-white); margin-bottom: 1.25rem; }
-  .science-content p { font-size: 0.95rem; line-height: 1.7; color: var(--color-accent-light); margin-bottom: 0.75rem; }
-  .science-content strong { color: var(--color-white); }
-
-  .lakes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
-  .lake-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .lake-card h3 { font-size: 1.15rem; margin-bottom: 1rem; }
-  .lake-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem; }
-  .lake-fact { display: flex; flex-direction: column; gap: 0.1rem; }
-  .fact-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); }
-  .fact-val { font-size: 0.88rem; font-weight: 600; }
-  .fact-yes { color: #16a34a; }
-  .fact-no { color: #dc2626; }
-  .lake-swim-note { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 0.5rem; }
-  .lake-canoe-note { font-size: 0.85rem; color: var(--color-accent); margin-bottom: 0.5rem; }
-  .lake-access { font-size: 0.82rem; color: var(--color-text-light); }
-
-  @media (max-width: 768px) { .lakes-grid { grid-template-columns: 1fr; } }
+  [hidden]{display:none!important}.faq-page{max-width:1100px}.faq-page p{line-height:1.75;margin:.7rem 0 1rem}.faq-page h2{margin:2.5rem 0 1rem;scroll-margin-top:6rem}.science-panel{background:var(--color-primary);color:var(--color-white);padding:2rem;border-radius:var(--radius)}.science-panel h2{color:var(--color-white);margin-top:0}.science-panel a{color:#f4d4a8;text-decoration:underline}.science-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;padding:0;gap:1.2rem;margin:1.5rem 0}.science-flow li{padding:1.2rem;border:1px solid #93a897;border-radius:8px}.science-flow strong,.science-flow span{display:block}.science-flow span{font-size:2rem;margin-bottom:.5rem}.science-flow p{font-size:.9rem}.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0}.quick-grid article,.next-plan{padding:1.5rem;background:var(--color-bg-alt);border-radius:var(--radius)}.quick-grid h2,.next-plan h2{margin-top:0;font-size:1.6rem}.faq-filters{display:flex;gap:1rem;flex-wrap:wrap;align-items:end;padding:1.25rem;background:var(--color-bg-alt);border-radius:8px}.faq-filters>div{display:flex;flex:1 1 230px;flex-direction:column;gap:.4rem}label{font-weight:700}input,select{font:inherit;color:inherit;padding:.7rem;background:white;border:1px solid #94a3b8;border-radius:6px;width:100%}.faq-list details{border-bottom:1px solid #cbd5e1;padding:.5rem 0}.faq-list summary{font-size:1.05rem;font-weight:700;cursor:pointer;padding:.8rem 0}.answer{padding:0 1rem 1rem}.answer a{font-size:.88rem}.notice{padding:1.2rem;border:1px solid #cbd5e1;border-radius:8px}.next-plan{margin:2rem 0}.next-links{display:flex;gap:.7rem 1.2rem;flex-wrap:wrap;margin-top:1rem}.small{font-size:.83rem;color:var(--color-text-light)}a:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}@media(max-width:760px){.science-flow,.quick-grid{grid-template-columns:1fr}.science-panel{padding:1.25rem}.faq-filters>div{flex-basis:100%}.answer{padding-left:.25rem}.btn{white-space:normal}}
 </style>

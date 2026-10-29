@@ -1,0 +1,99 @@
+{
+  "sourceCommit": "7c63caa422b38552811ca4a1721a695cda55b4e6",
+  "cleanDirectory": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-lakes-release-2dqh_whw",
+  "checkedAt": "2026-10-29T17:48:37.766254+00:00",
+  "buildExitCode": 0,
+  "checks": [
+    {
+      "script": "scripts/check-trip-planner.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-day-ideas.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-weather-source.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-snow-source.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-source-freshness.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-road-source.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-town-events.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-affiliate-navigation.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-trail-directory.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-production-redirects.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-activities.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-paddling.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "research/check-rental-planning-2026-10-29.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-lake-planning.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-parking-planning.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "scripts/check-build-provenance.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "exitCode": 0
+    }
+  ],
+  "auditExitCode": 0,
+  "audit": {
+    "pages": 602,
+    "indexable_documents": 488,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v1",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.css app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T17:48:44.892Z",
+    "sourceRevision": null,
+    "sourceFingerprint": "064dfcc2efda6024609cacea7829a719537b2639ef3cebd765ae6b0eff8ef569"
+  },
+  "hotelCoverage": {
+    "routes": 95,
+    "noindexAndExcluded": 71,
+    "eligibleAndInSitemap": 24,
+    "noUnverifiedLodgingSchema": true
+  },
+  "verifiedAt": "2026-10-29T17:48:53.340555+00:00"
+}

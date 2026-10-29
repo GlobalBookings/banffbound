@@ -33,6 +33,10 @@
 - [Choose an outing](https://banffbound.com/what-to-do-today/): Filter seasonal ideas by base, activity allowance and interests, then open a one-day starting plan. Filters are not an access or safety assessment.
 - [Weather and cameras](https://banffbound.com/weather-webcams/): Dated ECCC weather copies, separate provider observation/forecast times and official camera/report links.
 - [Weather by month](https://banffbound.com/monthly-weather/): Sourced 1991–2020 BANFF temperature normals and seasonal planning, with no promised crowd levels or cheapest-month claims.
+- [Choose a lake day](https://banffbound.com/lakes/): Ten lake plans with area, trip-season and outing filters, specific waterbody rules and the whole return journey.
+- [Lake FAQ and science](https://banffbound.com/lake-faq/): Nine sourced answers about glacial colour, ice, swimming, canoes and access; no calendar-based ice verdict.
+- [Parking and transport](https://banffbound.com/parking/): Eleven destination plans with season, base, vehicle, party and return questions; no occupancy predictions.
+- [Lake shuttle planning](https://banffbound.com/shuttle-reservations/): Distinct reserved Parks, Roam and commercial journeys with actual boarding and return checks.
 - [Planning tools](https://banffbound.com/tools/)
 - [Hotel directory](https://banffbound.com/hotel-directory/)
 - [Vacation rentals](https://banffbound.com/vacation-rentals/): Source-reviewed managed-stay examples and imported listing leads; prices, availability and unverified locations are not asserted.
