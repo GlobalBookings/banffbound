@@ -1,0 +1,31 @@
+{
+  "checkedAtUTC": "2026-10-29T22:31:43.523885+00:00",
+  "scope": "Bare public canonical URLs without query strings; titles compared to clean emitted HTML, current guide review dates and bounded hub changes present. Full contracts are separately checked by the 222-route verifier.",
+  "results": [
+    {
+      "url": "https://banffbound.com/blog/banff-nightlife-guide/",
+      "status": 200,
+      "title": "Banff Nightlife: Music, Bowling, Dancing & Getting Home | BanffBound",
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/banff-live-music/",
+      "status": 200,
+      "title": "Live Music in Banff: Pubs, Concerts & Show Planning | BanffBound",
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/drink-deals/",
+      "status": 200,
+      "title": "Banff Drink Deals: Happy Hours, Food & the Full Cost | BanffBound",
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/eat-and-drink/",
+      "status": 200,
+      "title": "Dining in Banff, Lake Louise & Canmore \u2014 Restaurants & Evening Plans | BanffBound",
+      "passed": true
+    }
+  ],
+  "passed": 4
+}

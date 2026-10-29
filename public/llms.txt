@@ -38,6 +38,12 @@
 - [Parking and transport](https://banffbound.com/parking/): Eleven destination plans with season, base, vehicle, party and return questions; no occupancy predictions.
 - [Lake shuttle planning](https://banffbound.com/shuttle-reservations/): Distinct reserved Parks, Roam and commercial journeys with actual boarding and return checks.
 - [Planning tools](https://banffbound.com/tools/)
+- [Icefields Parkway planner](https://banffbound.com/icefields-parkway-planner/): Compare 14 documented places by direction, season and visit type, then copy a selected shortlist and current-source checks. It does not calculate an arrival time.
+- [Icefields Parkway stop choices](https://banffbound.com/blog/icefields-parkway-guide/): Distinguish viewpoints, walks, glacier experiences and seasonal services with labelled distance origins.
+- [Banff–Jasper journey](https://banffbound.com/blog/banff-to-jasper-drive/): Compare driving and seasonal transport, endpoint or confirmed lodge stays, and current road and recovery sources.
+- [Lake Minnewanka](https://banffbound.com/blog/lake-minnewanka-guide/): Separate winter shore visits, approach roads, seasonal cruises/rentals, fishing rules and permitted water activities.
+- [Banff Gondola visit](https://banffbound.com/blog/banff-gondola-guide/): Summit complex, distinct stair-based boardwalk, transport and actual visitor access needs.
+- [Banff Gondola booking](https://banffbound.com/blog/banff-gondola-tickets-guide/): Compare admission and dining arrangements, including separate ordinary restaurant admission and product-specific inclusions.
 - [Hotel directory](https://banffbound.com/hotel-directory/)
 - [Vacation rentals](https://banffbound.com/vacation-rentals/): Source-reviewed managed-stay examples and imported listing leads; prices, availability and unverified locations are not asserted.
 - [Cabin rentals near Banff](https://banffbound.com/blog/banff-cabin-rentals/): Compare six named cabin/chalet categories by area, season and meal plan; summer cabins and winter suites are distinct.

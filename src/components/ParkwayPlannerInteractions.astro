@@ -1,0 +1,57 @@
+<script>
+  import {buildParkwayPlan,defaultParkwayFilters,parkwayStops} from '../data/parkwayPlanning';
+  function initParkwayPlanner(){
+    const form=document.querySelector<HTMLFormElement>('#parkway-form');
+    if(!form||form.dataset.ready)return;
+    const selects={direction:document.querySelector<HTMLSelectElement>('#parkway-direction'),season:document.querySelector<HTMLSelectElement>('#parkway-season'),interest:document.querySelector<HTMLSelectElement>('#parkway-interest')};
+    const container=document.querySelector('#parkway-stops'),count=document.querySelector('#parkway-status'),notes=document.querySelector('#parkway-notes'),shortlist=document.querySelector('#parkway-shortlist');
+    const origin=document.querySelector('#parkway-origin'),copy=document.querySelector<HTMLButtonElement>('#parkway-copy'),copyStatus=document.querySelector('#parkway-copy-status');
+    const fallback=document.querySelector<HTMLElement>('#parkway-copy-fallback'),text=document.querySelector<HTMLTextAreaElement>('#parkway-brief');
+    const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-parkway-id]'));
+    if(!selects.direction||!selects.season||!selects.interest||!container||!count||!notes||!shortlist||!origin||!copy||!copyStatus||!fallback||!text||cards.length!==parkwayStops.length)return;
+    const byId=new Map(cards.map(card=>[card.dataset.parkwayId!,card]));
+    if(byId.size!==parkwayStops.length||parkwayStops.some(stop=>!byId.has(stop.id)))return;
+    const keys={direction:'parkway_direction',season:'parkway_season',interest:'parkway_interest'} as const;
+    const initialURL=new URL(window.location.href),raw:Record<string,string>={};
+    for(const key of ['direction','season','interest'] as const){const values=initialURL.searchParams.getAll(keys[key]);if(values.length===1)raw[key]=values[0];}
+    const selectedValues=initialURL.searchParams.getAll('parkway_stops');
+    let chosen=new Set<string>(selectedValues.length===1&&selectedValues[0].length<=500?selectedValues[0].split(',').slice(0,30):[]);
+    const restored=buildParkwayPlan(raw,[...chosen]);
+    for(const key of ['direction','season','interest'] as const)selects[key]!.value=restored.filters[key];
+    let currentBrief='',renderedDirection='north';
+    const render=()=>{
+      const result=buildParkwayPlan({direction:selects.direction!.value,season:selects.season!.value,interest:selects.interest!.value},[...chosen]);
+      chosen=new Set(result.selectedIds);const visible=new Set(result.visibleIds);
+      if(result.filters.direction!==renderedDirection){
+        container.replaceChildren(...result.orderedIds.map(id=>byId.get(id)!));
+        renderedDirection=result.filters.direction;
+      }
+      for(const stop of parkwayStops){
+        const card=byId.get(stop.id)!;card.hidden=!visible.has(stop.id);
+        const distance=card.querySelector('[data-parkway-distance]'),seasonNote=card.querySelector('[data-parkway-season-note]');
+        if(distance)distance.textContent=`About ${result.filters.direction==='north'?stop.fromLouiseKm:stop.fromJasperKm} km from ${result.origin}`;
+        if(seasonNote)seasonNote.textContent=result.filters.season==='winter'?stop.winter:stop.summer;
+        const input=card.querySelector<HTMLInputElement>('[data-parkway-select]');if(input)input.checked=chosen.has(stop.id);
+      }
+      origin.textContent=`Route order: ${result.direction}. Approximate map distances from ${result.origin}.`;
+      count.textContent=`${result.candidateIds.length} ${result.candidateIds.length===1?'candidate':'candidates'} shown · ${chosen.size} optional ${chosen.size===1?'stop':'stops'} selected`;
+      notes.replaceChildren(...result.notes.map(value=>{const p=document.createElement('p');p.textContent=value;return p;}));
+      shortlist.replaceChildren(...(result.selectedIds.length?result.selectedIds.map(id=>{const stop=parkwayStops.find(stop=>stop.id===id)!,li=document.createElement('li');li.textContent=`${stop.name} — about ${result.filters.direction==='north'?stop.fromLouiseKm:stop.fromJasperKm} km from ${result.origin}`;return li;}):[(()=>{const li=document.createElement('li');li.textContent='No optional stops selected. Use the cards to build a small shortlist.';return li;})()]));
+      currentBrief=result.brief;text.value=currentBrief;copyStatus.textContent='';fallback.hidden=true;
+      const next=new URL(window.location.href);
+      for(const key of ['direction','season','interest'] as const){next.searchParams.delete(keys[key]);if(result.filters[key]!==defaultParkwayFilters[key])next.searchParams.set(keys[key],result.filters[key]);}
+      next.searchParams.delete('parkway_stops');if(result.selectedIds.length)next.searchParams.set('parkway_stops',result.selectedIds.join(','));
+      try{window.history.replaceState(null,'',next);}catch{/* Planning works if history is unavailable. */}
+    };
+    form.addEventListener('submit',event=>{event.preventDefault();render();});form.addEventListener('change',render);
+    form.addEventListener('reset',()=>{chosen.clear();for(const key of ['direction','season','interest'] as const)selects[key]!.value=defaultParkwayFilters[key];render();});
+    for(const card of cards){const input=card.querySelector<HTMLInputElement>('[data-parkway-select]');if(input)input.addEventListener('change',()=>{if(input.checked)chosen.add(input.value);else chosen.delete(input.value);render();});}
+    copy.addEventListener('click',async()=>{
+      try{if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(currentBrief);copyStatus.textContent='Planning brief copied.';}
+      catch{fallback.hidden=false;text.focus();text.select();copyStatus.textContent='Select and copy the planning brief below.';}
+    });
+    for(const label of document.querySelectorAll<HTMLElement>('[data-parkway-choice]'))label.hidden=false;
+    form.dataset.ready='true';form.hidden=false;copy.hidden=false;render();
+  }
+  initParkwayPlanner();document.addEventListener('astro:page-load',initParkwayPlanner);
+</script>

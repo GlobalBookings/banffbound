@@ -1,0 +1,24 @@
+{
+  "checkedAtUTC": "2026-10-29T22:54:49.234Z",
+  "baselineRevision": "3ec35fa593bcd1dd215855360ce19efb4f185ed8",
+  "scope": "Canonical article body bytes and original publication metadata; shared metadata and the standalone Parkway planner are separately reviewed.",
+  "canonical": 295,
+  "replacedBodies": 5,
+  "otherBodiesByteIdentical": 290,
+  "changedSlugs": [
+    "banff-gondola-guide",
+    "banff-gondola-tickets-guide",
+    "banff-to-jasper-drive",
+    "icefields-parkway-guide",
+    "lake-minnewanka-guide"
+  ],
+  "fullBodyReviews": {
+    "before": 62,
+    "after": 67
+  },
+  "partialCorrections": {
+    "before": 8,
+    "after": 8
+  },
+  "originalPublicationsPreserved": 335
+}

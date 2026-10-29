@@ -14,7 +14,7 @@ import { ORIGIN, ROOT, normal, htmlFacts, htmlElements, textInside, schemaNodes,
 // node scripts/verify-guide-quality-release.mjs --revision <40hex> --fingerprint <64hex> --report research/<new-local.json>
 // --built-dir <directory> reads emitted HTML/sitemaps/photos and a stable local
 // build receipt; it does not assert deployed identity, HTTP status or redirects.
-const EXPECTED_ROUTES = 222;
+const EXPECTED_ROUTES = 228;
 const PARTIAL_LABEL = 'Opening paragraph repaired (full guide review pending):';
 const ORIGINAL_PUBLICATION = {
   'nightclub-banff':'2026-03-31', 'banff-nightclubs':'2026-04-08', 'new-places-to-eat-in-banff':'2026-04-03',
@@ -27,6 +27,8 @@ const FULL_PUBLICATION = {
   'jasper-national-park':'2026-04-06', 'jasper-town':'2026-04-08', 'jasper-canada':'2026-04-06',
   'new-places-to-eat-in-banff':'2026-04-03', 'banff-cabin-rentals':'2026-01-07',
   'banff-nightlife-guide':'2026-02-10', 'banff-live-music':'2026-05-28', 'drink-deals':'2026-03-14',
+  'icefields-parkway-guide':'2026-01-05', 'banff-to-jasper-drive':'2026-02-08', 'lake-minnewanka-guide':'2026-02-18',
+  'banff-gondola-guide':'2026-02-02', 'banff-gondola-tickets-guide':'2026-03-01',
 };
 const PARTIAL_PUBLICATION = Object.fromEntries(Object.entries(ORIGINAL_PUBLICATION).filter(([slug])=>!Object.hasOwn(FULL_PUBLICATION,slug)));
 const jasperContextSlugs=['jasper-town','jasper-national-park','jasper-canada','jasper-alberta','calgary-to-jasper'];
@@ -64,6 +66,11 @@ const fullMarkers = {
   'banff-nightlife-guide': {identity:'120 Banff Avenue',age:'18+ entry condition',minors:'no minors are allowed after 10pm',booking:'separate dining and bowling reservations',source:'Guide reviewed October 29, 2026.',season:'fall/winter seasonal service',count:'5 evening formats to explore',journey:'last useful departure'},
   'banff-live-music': {source:'Fully reviewed October 29, 2026',age:'minors welcome until 9:30 p.m.',table:'A table reservation can establish a meal without show admission.',tickets:'original PDF rather than a screenshot',identity:'201 Banff Avenue #2',hotel:'No recurring hotel jazz programme is established by this guide.',journey:'A show ending late can outlast the bus service.'},
   'drink-deals': {source:'Offers checked October 29, 2026.',afternoon:'2–5 p.m.',late:'9–11 p.m.',conflict:'conflicting weekday bowling happy-hour times',holidays:'not available on holidays or long weekends',lane:'A table confirmation does not establish a reserved lane.',skyTime:'Summit Hours from 3–5 p.m.',skyOffer:'50% off local beer, house wine and selected shareable plates',admission:'book Banff Gondola admission separately'},
+  'icefields-parkway-guide': {source:'Fully reviewed October 29, 2026',purpose:'choose the stops',origin:'Highway 1 / Highway 93N junction',bow:'36 km north of the junction',peyto:'40 km north of the junction',mistaya:'72 km north of the junction',fuel:'all services are closed for winter',future:'April 2027',tires:'November 1–March 31',glacier:'crossing the barriers onto the Athabasca Glacier',water:'where paddling is prohibited'},
+  'banff-to-jasper-drive': {source:'Fully reviewed October 29, 2026',purpose:'the transfer and overnight decisions',route:'approximately 232 km between Lake Louise and Jasper',fuel:'all services are closed for winter',tires:'November 1–March 31',equipment:'snowflake or M+S',transport:'October 2025–April 2026 season',newSeason:'actual 2026/27 date',closure:'winter recreation in Maligne Canyon is prohibited'},
+  'lake-minnewanka-guide': {source:'Fully reviewed October 29, 2026',road:'western section of Minnewanka Loop Road closed to driving from November to May',approach:'eastern side via Two Jack Lake',ice:'does not monitor natural ice for safety',zone:'Special Tactics Zone',personal:'Personal canoes, kayaks, paddleboards and large inflatables are prohibited.',rental:'specific exceptions for authorized rental watercraft',fishing:'May 16–September 7, 2026',boats:'ticket office, boat rentals and Black Anchor closed for the 2026 season'},
+  'banff-gondola-guide': {source:'Full guide reviewed October 29, 2026',access:'368 shallow stairs each way and is not wheelchair accessible',limits:'31 inches wide by 41 inches long',weight:'320 kg total weight limit',warmth:'gondola cabins are unheated',hike:'5.5 km one way and 655 m of elevation gain',dining:'require separate gondola admission'},
+  'banff-gondola-tickets-guide': {source:'Full guide reviewed October 29, 2026',product:'256607',supplier:'Pursuit Collection',terms:'non-refundable',dining:'separate Banff Gondola admission',descent:'paid one-way trip down',stairs:'368 shallow stairs each way and is not wheelchair accessible'},
 };
 const diningSections = [
   {id:'good-folk',markers:['#1000–600 Banff Avenue','inside the Otter Hotel','August 20, 2025'],href:'https://goodfolkrestaurant.com/'},
@@ -74,9 +81,9 @@ const diningSections = [
   {id:'fat-ox',markers:['415 Banff Avenue','No opening year is asserted'],href:'https://fatoxbanff.ca/'},
 ];
 function fullReviewChecks(d) {
-  const metadata={...d.bowLakeGuideMetadata,...d.jasperGuideMetadata,...d.diningGuideMetadata,...d.cabinGuideMetadata,...d.nightlifeGuideMetadata,...d.liveMusicGuideMetadata,...d.drinkOfferGuideMetadata};
+  const metadata={...d.bowLakeGuideMetadata,...d.jasperGuideMetadata,...d.diningGuideMetadata,...d.cabinGuideMetadata,...d.nightlifeGuideMetadata,...d.liveMusicGuideMetadata,...d.drinkOfferGuideMetadata,...d.parkwayGuideMetadata,...d.minnewankaGuideMetadata,...d.gondolaGuideMetadata};
   assert.deepEqual(Object.keys(metadata).sort(),Object.keys(FULL_PUBLICATION).sort());
-  assert.equal(Object.keys(d.reviewedBlogBodies).length,62,'Current registry has62 full reviews; historical receipts remain versioned.');
+  assert.equal(Object.keys(d.reviewedBlogBodies).length,67,'Current registry has67 full reviews; historical receipts remain versioned.');
   assert.equal(Object.keys(d.blogRedirects).length,40);assert.equal(d.blogRedirects['norquay-ski-shuttle'],'mt-norquay-guide');
   assert.equal(d.cabinExamples.length,6);assert.equal(d.compareCabinStays({}).selectedIds.length,6);assert.equal(d.compareCabinStays({season:'winter'}).selectedIds.length,4);
   const verifiedIds={'tunnel-mountain-cabin':'16324','baker-family-cabin':'7710611','paradise-wilson-cabin':'7829397'};
@@ -88,9 +95,9 @@ function fullReviewChecks(d) {
     assert.equal(post.title,meta.title);assert.equal(post.lastUpdated,meta.lastUpdated);assert.equal(post.imageIsIllustrative,true);assert.ok(post.imageNote);
     const bodyHtml=d.resolveBlogContent(slug),facts=htmlFacts(`<html><body>${bodyHtml}</body></html>`),schemas=facts.documents.flatMap(doc=>schemaNodes(doc,'FAQPage'));
     assert.equal(schemas.length,1,slug+': source must emit one FAQPage');
-    const faqArrays={'banff-cabin-rentals':d.cabinGuideFaqs,'new-places-to-eat-in-banff':d.diningGuideFaqs,'banff-nightlife-guide':d.nightlifeGuideFaqs,'banff-live-music':d.liveMusicGuideFaqs,'drink-deals':d.drinkOfferGuideFaqs};
-    const fullFaqs=d.jasperGuideFaqs[slug]??faqArrays[slug]??schemas[0].mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text}));
-    assert.equal(fullFaqs.length,['num-ti-jah-lodge','banff-cabin-rentals','new-places-to-eat-in-banff','banff-nightlife-guide','drink-deals'].includes(slug)?5:['numtijah-lodge','banff-live-music'].includes(slug)?4:3);
+    const faqArrays={'banff-cabin-rentals':d.cabinGuideFaqs,'new-places-to-eat-in-banff':d.diningGuideFaqs,'banff-nightlife-guide':d.nightlifeGuideFaqs,'banff-live-music':d.liveMusicGuideFaqs,'drink-deals':d.drinkOfferGuideFaqs,'lake-minnewanka-guide':d.minnewankaGuideFaqs};
+    const fullFaqs=d.jasperGuideFaqs[slug]??d.parkwayGuideFaqs[slug]??d.gondolaGuideFaqs[slug]??faqArrays[slug]??schemas[0].mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text}));
+    assert.equal(fullFaqs.length,['jasper-national-park','jasper-town','jasper-canada'].includes(slug)?3:['numtijah-lodge','banff-live-music'].includes(slug)?4:5);
     const quality={type:'full',slug,bodyHtml,description:meta.description,published:date,corrected:meta.lastUpdated,imageNote:post.imageNote,fullFaqs};
     if(slug==='new-places-to-eat-in-banff')quality.diningSections=diningSections;
     if(slug==='banff-cabin-rentals'){
@@ -104,6 +111,10 @@ function fullReviewChecks(d) {
       quality.cards={attribute:'data-evening-id',items:d.eveningFormats.map(f=>({id:f.id,href:f.href,text:[f.name,f.idea,f.booking,f.groupNote]}))};
       quality.evening={options:d.eveningFilterOptions,...defaultEvening};
     }
+    if(slug==='banff-gondola-tickets-guide'){
+      const offer=d.winterActivityOffers.find(o=>o.id==='gyg-256607');assert.ok(offer);const url=new URL(offer.bookingUrl);assert.equal(url.hostname,'www.getyourguide.com');assert.match(url.pathname,/-t256607\/$/);assert.equal(url.searchParams.get('partner_id'),'QW960HO');
+      quality.gondolaProduct={href:offer.bookingUrl,id:'256607'};
+    }
     return {path:`/blog/${slug}/`,kind:'full-guide-review',name:post.title,noindex:false,publishedDate:date,modifiedDate:meta.lastUpdated,affiliateKinds:['expedia-banner','gyg-auto'],markers:fullMarkers[slug],links:[...new Set(facts.links)],quality};
   });
 }
@@ -111,7 +122,7 @@ function fullReviewChecks(d) {
 export async function loadGuideInventory() {
   const foundation = await loadInventory();
   assert.equal(foundation.checks.length,193);assert.equal(foundation.photos.length,7);
-  const d = await moduleData("export {allBlogPosts} from './src/data/blogPosts.ts'; export {blogRedirects} from './src/data/redirects.mjs'; export {resolveBlogContent,reviewedBlogBodies,authoredBookingGuideSlugs} from './src/data/blogContentRegistry.ts'; export * from './src/data/legacyTextCorrections.ts'; export * from './src/data/lessonPlanning.ts'; export * from './src/data/skiPlanning.ts'; export {towns} from './src/data/towns.ts'; export * from './src/data/townStayPlanning.ts'; export {bowLakeGuideMetadata} from './src/data/bowLakeGuideOverrides.ts'; export {jasperGuideMetadata,jasperGuideFaqs} from './src/data/jasperGuideOverrides.ts'; export {diningGuideMetadata,diningGuideFaqs} from './src/data/diningGuideOverrides.ts'; export {cabinGuideMetadata,cabinGuideFaqs} from './src/data/cabinGuideOverrides.ts'; export * from './src/data/cabinPlanning.ts'; export {nightlifeGuideMetadata,nightlifeGuideFaqs} from './src/data/nightlifeGuideOverrides.ts'; export {liveMusicGuideMetadata,liveMusicGuideFaqs} from './src/data/liveMusicGuideOverrides.ts'; export {drinkOfferGuideMetadata,drinkOfferGuideFaqs} from './src/data/drinkOfferGuideOverrides.ts'; export * from './src/data/eveningPlanning.ts'; export {getArticleBookingContext} from './src/data/articleBookingContext.ts';");
+  const d = await moduleData("export {allBlogPosts} from './src/data/blogPosts.ts'; export {blogRedirects} from './src/data/redirects.mjs'; export {resolveBlogContent,reviewedBlogBodies,authoredBookingGuideSlugs} from './src/data/blogContentRegistry.ts'; export * from './src/data/legacyTextCorrections.ts'; export * from './src/data/lessonPlanning.ts'; export * from './src/data/skiPlanning.ts'; export {towns} from './src/data/towns.ts'; export * from './src/data/townStayPlanning.ts'; export {bowLakeGuideMetadata} from './src/data/bowLakeGuideOverrides.ts'; export {jasperGuideMetadata,jasperGuideFaqs} from './src/data/jasperGuideOverrides.ts'; export {diningGuideMetadata,diningGuideFaqs} from './src/data/diningGuideOverrides.ts'; export {cabinGuideMetadata,cabinGuideFaqs} from './src/data/cabinGuideOverrides.ts'; export * from './src/data/cabinPlanning.ts'; export {nightlifeGuideMetadata,nightlifeGuideFaqs} from './src/data/nightlifeGuideOverrides.ts'; export {liveMusicGuideMetadata,liveMusicGuideFaqs} from './src/data/liveMusicGuideOverrides.ts'; export {drinkOfferGuideMetadata,drinkOfferGuideFaqs} from './src/data/drinkOfferGuideOverrides.ts'; export * from './src/data/eveningPlanning.ts'; export {parkwayGuideMetadata,parkwayGuideFaqs} from './src/data/parkwayGuideOverrides.ts'; export {minnewankaGuideMetadata,minnewankaGuideFaqs} from './src/data/minnewankaGuideOverrides.ts'; export {gondolaGuideMetadata,gondolaGuideFaqs} from './src/data/gondolaGuideOverrides.ts'; export * from './src/data/parkwayPlanning.ts'; export {winterActivityOffers} from './src/data/winterActivityLanding.ts'; export {getArticleBookingContext} from './src/data/articleBookingContext.ts';");
   assert.deepEqual(Object.keys(d.legacyTextCorrections).sort(),Object.keys(PARTIAL_PUBLICATION).sort());
   assert.equal(d.legacyTextCorrectionDate,'2026-10-29');
   const additions = Object.entries(PARTIAL_PUBLICATION).map(([slug,date])=>{
@@ -124,11 +135,15 @@ export async function loadGuideInventory() {
   additions.push(...fullReviewChecks(d));
   const contextPost=d.allBlogPosts.find(p=>p.slug==='jasper-alberta');assert.ok(contextPost&&!d.blogRedirects[contextPost.slug]);
   additions.push({path:'/blog/jasper-alberta/',kind:'article-booking-context',name:contextPost.title,noindex:false,affiliateKinds:['expedia-banner','gyg-auto'],quality:{type:'context'}});
-  assert.equal(d.authoredBookingGuideSlugs.length,10);
+  assert.equal(d.authoredBookingGuideSlugs.length,15);
   for(const check of additions){const slug=check.path.split('/')[2],authored=d.authoredBookingGuideSlugs.includes(slug),expected=expectedBookingContext(slug,authored);assert.deepEqual(d.getArticleBookingContext(slug,authored),expected);if(expected.suppressAutomaticCTA)check.quality.bookingContext=expected;}
-  assert.equal(additions.filter(c=>c.quality.bookingContext).length,12);
+  assert.equal(additions.filter(c=>c.quality.bookingContext).length,17);
   const hubLinks=[{href:'/blog/banff-nightlife-guide/#evening-planner',label:'Build your Banff evening'},{href:'/blog/new-places-to-eat-in-banff/',label:'Find a dining discovery'},{href:'/blog/banff-live-music/',label:'Find music or a show'},{href:'/blog/drink-deals/',label:'Compare current offer formats'}];
   additions.push({path:'/eat-and-drink/',kind:'dining-evening-hub',name:'Eat & Drink in Banff & Beyond',noindex:false,markers:{eveningNavigation:'Give your evening a shape',offerPlanning:'Compare the whole offer'},links:[...hubLinks.map(l=>l.href),'/book/banff-hotels/'],quality:{type:'dining-hub',hubLinks,hotelHref:'/book/banff-hotels/'}});
+  const parkwayPairs={'lake-louise':[0,233],'herbert-lake':[6,227],'hector-viewpoint':[19,214],crowfoot:[36,197],'bow-lake':[39,194],peyto:[43,190],mistaya:[74,159],crossing:[80,153],'parker-ridge':[121,112],'icefield-centre':[130,103],'tangle-falls':[137,96],sunwapta:[179,54],'athabasca-falls':[203,30],jasper:[233,0]};
+  assert.equal(d.parkwayStops.length,14);assert.deepEqual(d.parkwayStops.map(s=>s.id).sort(),Object.keys(parkwayPairs).sort());for(const stop of d.parkwayStops)assert.deepEqual([stop.fromLouiseKm,stop.fromJasperKm],parkwayPairs[stop.id],'Official map community-distance pair: '+stop.id);
+  const initialParkway=d.buildParkwayPlan();assert.deepEqual(initialParkway.filters,{direction:'north',season:'winter',interest:'scenic'});assert.deepEqual(initialParkway.selectedIds,[]);assert.equal(initialParkway.checklist.length,3);assert.equal(d.parkwayFaqs.length,6);
+  additions.push({path:'/icefields-parkway-planner/',kind:'parkway-planner',name:'Plan your Icefields Parkway stops',noindex:false,modifiedDate:d.parkwayReviewedAt,reviewDate:'29 October 2026',faqs:d.parkwayFaqs,markers:{defaultSelection:'14 places documented · no optional stops selected',distanceScope:'Approximate map distances from Lake Louise village.',winterFuel:'Prepare for no en-route fuel and no dependable walk-in services.',tires:'snow tires or chains November 1–March 31',futureFuel:'planned April 2027 return has no confirmed day',scope:'A rental booking does not establish that the Parkway or any stop is open.'},links:[...Object.values(d.parkwaySources),'https://expedia.com/affiliate/KB6G4xt','/conditions/','/blog/banff-winter-driving/','/blog/icefields-parkway-guide/','/blog/banff-to-jasper-drive/','/book/lake-louise-stays/','/blog/jasper-town/','/blog/jasper-national-park/'],quality:{type:'parkway',controls:[control('parkway-form','form',{hidden:true}),...['direction','season','interest'].map(key=>control(`parkway-${key}`,'select')),control('parkway-status','p',{role:'status','aria-live':'polite'}),control('parkway-origin','p'),control('parkway-notes','div'),control('parkway-shortlist','ul'),control('parkway-stops','div'),control('parkway-checklist','ol'),control('parkway-copy','button',{hidden:true,type:'button'}),control('parkway-copy-status','p',{role:'status','aria-live':'polite'}),control('parkway-copy-fallback','div',{hidden:true}),control('parkway-brief','textarea',{readonly:true})],cards:{attribute:'data-parkway-id',items:d.parkwayStops.map(s=>({id:s.id,href:s.href,text:[s.name,s.idea,s.winter,s.summer]}))},parkway:{stops:d.parkwayStops,options:d.parkwayFilterOptions,initial:initialParkway,carHref:'https://expedia.com/affiliate/KB6G4xt'}}});
   const lessonFaqs=await localArray('src/pages/learn-to-ski.astro','faqs');
   const plannerFaqs=await localArray('src/pages/ski-day-planner.astro','faqs');
   const townFaqs=await localArray('src/pages/towns/index.astro','faqs');
@@ -165,10 +180,10 @@ export async function loadGuideInventory() {
     if(d.townStayUpdatedSlugs.includes(town.slug))markers.journeyScope='Stay/transport journey updated';
     additions.push({path:`/towns/${town.slug}/`,kind:'town-guide',name:town.name,noindex:false,...(d.townStayUpdatedSlugs.includes(town.slug)?{modifiedDate:d.townStayPlanningReviewedAt}:{}),faqs:town.faqs,markers,links,quality});
   }
-  assert.equal(additions.length,29);assert.equal(additions.filter(c=>c.kind==='legacy-text-repair').length,8);assert.equal(additions.filter(c=>c.kind==='full-guide-review').length,10);
+  assert.equal(additions.length,35);assert.equal(additions.filter(c=>c.kind==='legacy-text-repair').length,8);assert.equal(additions.filter(c=>c.kind==='full-guide-review').length,15);
   const checks=[...foundation.checks,...additions];assert.equal(checks.length,EXPECTED_ROUTES);assert.equal(new Set(checks.map(c=>c.path)).size,EXPECTED_ROUTES,'Supplements must not replace or double-count foundation routes.');
   for(const base of foundation.checks)assert.equal(checks.find(c=>c.path===base.path),base,'Every foundation check is preserved.');
-  return {...foundation,checks,releaseScope:{legacyOpeningRepairs:8,newFullGuides:10,totalFullReviews:62,lessonAndDayPlanners:2,townPages:7,contextOnlyGuides:1,eveningDiningHubs:1,curatedBookingContextPages:12,canonicalAliases:40},supplementData:{lessonProgrammes:d.lessonProgrammes,defaultPlan,family}};
+  return {...foundation,checks,releaseScope:{legacyOpeningRepairs:8,newFullGuides:15,totalFullReviews:67,lessonAndDayPlanners:2,townPages:7,contextOnlyGuides:1,eveningDiningHubs:1,parkwayPlanners:1,curatedBookingContextPages:17,canonicalAliases:40},supplementData:{lessonProgrammes:d.lessonProgrammes,defaultPlan,family}};
 }
 
 export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
@@ -225,6 +240,14 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
         'drink-deals':/Sky Bistro includes gondola admission|(?:the )?(?:whole|entire) menu is 50% off|High Rollers bowling happy hour runs from|specials are available on (?:all )?holidays/i,
       }[q.slug];
       if(eveningBad?.test(bodyText))errors.push('Unsupported inherited/current claim in full review');
+      const winterBad={
+        'icefields-parkway-guide':/fuel is available at (?:Saskatchewan )?(?:River )?Crossing in winter|walk onto the Athabasca Glacier|complete (?:the|this) drive in \d|all stops are accessible/i,
+        'banff-to-jasper-drive':/fuel is available at (?:Saskatchewan )?(?:River )?Crossing in winter|Maligne Canyon is open for winter|complete (?:the|this) drive in \d|(?:winter|snow) tires (?:are )?(?:legally )?required (?:from )?October 1/i,
+        'lake-minnewanka-guide':/Minnewanka is open for ice fishing|the road is open year-round|personal paddlecraft are allowed|you can paddle your own/i,
+        'banff-gondola-guide':/boardwalk is fully accessible|Sky Bistro reservations include gondola admission|gondola cabins are heated|(?:standalone|all|your|these) tickets include hotel pickup/i,
+        'banff-gondola-tickets-guide':/boardwalk is fully accessible|Sky Bistro reservations include gondola admission|free cancellation (?:applies|is included)|(?:standalone|all|your|these) tickets include hotel pickup/i,
+      }[q.slug];
+      if(winterBad?.test(bodyText))errors.push('Unsupported inherited/current claim in full review');
     }
     // Jasper's trusted static answer HTML is semantically compared, not treated
     // as literal visible angle brackets. The original193 FAQ contract is intact.
@@ -256,6 +279,10 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
       const journey=byId('evening-journey-link')[0],heading=byId('evening-journey-title')[0];
       if(!journey||journey.hidden||journey.attributes.href!==q.evening.journey.href||textInside(html,journey)!==normal(q.evening.journey.label+' ↗')||journey.attributes.target!=='_blank'||!(journey.attributes.rel??'').split(/\s+/).includes('noopener')||!heading||textInside(html,heading)!==normal(q.evening.journey.title))errors.push('Missing exact native default Banff evening journey');
       if(visibleLinks.filter(n=>n.attributes.href==='#evening-planner').length!==1)errors.push('Missing unique Evening planner jump link');
+    }
+    if(q.gondolaProduct){
+      const body=bodies[0],links=body?visibleLinks.filter(n=>inside(n,body)&&n.attributes.href===q.gondolaProduct.href):[];
+      if(links.length!==1||links[0].attributes.target!=='_blank'||!['noopener','sponsored'].every(rel=>(links[0].attributes.rel??'').split(/\s+/).includes(rel))||!textInside(html,links[0]).includes('affiliate booking link'))errors.push('Missing exact native Gondola product/affiliate handoff');
     }
   }
   if(q.cards){
@@ -297,10 +324,47 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
     const scoped=[...section,...offer,...(hotelSection?[hotelSection]:[])].map(n=>textInside(html,n)).join(' ');
     if(/free (?:dining|drinks?|meals?|shuttle)|(?:meal|dining|drinks?) vouchers?|guaranteed (?:savings|discounts|tables)|every (?:bar|restaurant) (?:offers|has)|happy hour (?:runs|is) (?:from )?3[–-]6|(?:hotel|room) bookings? include (?:dining|drinks?|meals?)/i.test(scoped))errors.push('Unsupported hub offer/booking promise');
   }
+  if(q.type==='parkway'){
+    const plan=q.parkway,form=byId('parkway-form')[0],container=byId('parkway-stops')[0];
+    if(!elements.some(n=>hasClass(n,'filter-note')&&!n.hidden&&textInside(html,n).includes('Changing visit type keeps your shortlist')&&textInside(html,n).includes('Changing season removes choices outside that seasonal comparison')))errors.push('Missing Parkway filter/selection scope explanation');
+    for(const type of ['submit','reset'])if(!form||elements.filter(n=>n.tag==='button'&&n.attributes.type===type&&inside(n,form)).length!==1)errors.push(`Missing native Parkway ${type} control`);
+    for(const [key,options]of Object.entries(plan.options)){
+      const select=byId(`parkway-${key}`)[0],actual=select?elements.filter(n=>n.tag==='option'&&inside(n,select)):[];
+      if(!form||!select||!inside(select,form)||actual.length!==options.length||actual.some((n,i)=>n.attributes.value!==options[i]?.[0]||textInside(html,n)!==normal(options[i]?.[1])||(i>0&&Object.hasOwn(n.attributes,'selected')))||actual[0]?.attributes.value!==plan.initial.filters[key]||elements.filter(n=>n.tag==='label'&&n.attributes.for===`parkway-${key}`&&inside(n,form)).length!==1)errors.push(`Parkway select/default/label differs: ${key}`);
+    }
+    const choices=elements.filter(n=>Object.hasOwn(n.attributes,'data-parkway-choice')),inputs=elements.filter(n=>Object.hasOwn(n.attributes,'data-parkway-select'));
+    if(choices.length!==12||inputs.length!==12)errors.push('Parkway needs twelve progressive unselected optional choices');
+    for(const stop of plan.stops){
+      const card=elements.find(n=>n.attributes['data-parkway-id']===stop.id);if(!card||!container||!inside(card,container))errors.push('Parkway card outside documented stop container: '+stop.id);
+      if(!card)continue;
+      const distances=elements.filter(n=>Object.hasOwn(n.attributes,'data-parkway-distance')&&inside(n,card));
+      if(distances.length!==1||distances[0].hidden||textInside(html,distances[0])!==`About ${stop.fromLouiseKm} km from Lake Louise village`)errors.push('Parkway default map-distance text differs: '+stop.id);
+      const winter=elements.filter(n=>Object.hasOwn(n.attributes,'data-parkway-season-note')&&inside(n,card)),summer=elements.filter(n=>n.tag==='details'&&inside(n,card));
+      if(winter.length!==1||textInside(html,winter[0])!==normal(stop.winter)||summer.length!==1||!textInside(html,summer[0]).includes(normal(stop.summer))||!textInside(html,summer[0]).includes('Summer planning notes'))errors.push('Missing full SSR seasonal Parkway notes: '+stop.id);
+      const labels=choices.filter(n=>inside(n,card)),selects=inputs.filter(n=>inside(n,card));
+      if(stop.kind==='endpoint'){if(labels.length||selects.length)errors.push('Parkway endpoint incorrectly offered as optional stop: '+stop.id);}
+      else if(labels.length!==1||labels[0].tag!=='label'||!Object.hasOwn(labels[0].attributes,'hidden')||selects.length!==1||selects[0].tag!=='input'||selects[0].attributes.type!=='checkbox'||selects[0].attributes.value!==stop.id||Object.hasOwn(selects[0].attributes,'checked')||!inside(selects[0],labels[0]))errors.push('Parkway optional choice is missing/visible/preselected: '+stop.id);
+    }
+    const origin=byId('parkway-origin')[0],notes=byId('parkway-notes')[0],shortlist=byId('parkway-shortlist')[0],items=shortlist?elements.filter(n=>n.tag==='li'&&inside(n,shortlist)):[];
+    const status=byId('parkway-status')[0];if(!status||status.hidden||textInside(html,status)!=='14 places documented · no optional stops selected')errors.push('Incorrect default Parkway documented/selected count');
+    if(!origin||textInside(html,origin)!==`Route order: ${plan.initial.direction}. Approximate map distances from ${plan.initial.origin}.`)errors.push('Incorrect default Parkway order/origin');
+    if(!notes||plan.initial.notes.some(note=>!textInside(html,notes).includes(normal(note))))errors.push('Missing Parkway seasonal/source scope');
+    if(items.length!==1||textInside(html,items[0])!=='No optional stops selected. Read the cards and choose a few places to investigate.')errors.push('Parkway default shortlist is not empty');
+    const ready=byId('parkway-checklist')[0],checks=ready?elements.filter(n=>n.tag==='li'&&inside(n,ready)):[];
+    if(checks.length!==3||checks.some((n,i)=>textInside(html,n)!==normal(plan.initial.checklist[i])))errors.push('Missing complete three Parkway journey checks');
+    const car=visibleLinks.filter(n=>hasClass(n,'car-cta-btn')&&n.attributes.href===plan.carHref);
+    if(car.length!==1||car[0].attributes.target!=='_blank'||!['noopener','sponsored'].every(rel=>(car[0].attributes.rel??'').split(/\s+/).includes(rel))||!textInside(html,car[0]).includes('Search Car Rentals on Expedia')||!facts.text.includes('commission'))errors.push('Missing honest native KB6G4xt car referral/disclosure');
+    if(elements.some(n=>n.attributes.id==='total-time'||Object.hasOwn(n.attributes,'data-stop-min'))||/\b(?:2\.5[–-]3|6[–-]9) hours|Parker Ridge is the must-do|winter tires are legally required October 1|gas is essential|fuel is guaranteed|guaranteed fuel is available|complete the drive in \d/i.test(facts.text))errors.push('Unsupported Parkway fixed ETA/fuel/route prescription');
+    if(!elements.some(n=>n.tag==='img'&&hasClass(n,'page-hero-bg')&&/Illustrative.*not verified/i.test(n.attributes.alt??''))||!elements.some(n=>hasClass(n,'image-note')&&!n.hidden&&/Illustrative.*not a verified/i.test(textInside(html,n))))errors.push('Missing illustrative Parkway hero qualification');
+  }
   return result;
 }
 
 const consentFixture='<footer><a href="/privacy">Privacy Policy</a><button type="button" data-open-consent>Privacy choices</button></footer><div id="cookie-banner" role="dialog" aria-describedby="cookie-description" hidden><p id="cookie-description">Choose optional services.</p><button type="button" id="cookie-accept">Accept all</button><button type="button" id="cookie-reject">Reject optional</button><button type="button" id="cookie-manage">Manage preferences</button><div id="cookie-preferences" hidden><input type="checkbox" id="pref-analytics"><input type="checkbox" id="pref-advertising"><input type="checkbox" id="pref-affiliate"><button type="button" id="cookie-save">Save preferences</button></div><p id="cookie-storage-status"></p><button type="button" id="cookie-close" hidden>Close choices</button></div><noscript><p>Optional analytics, advertising and booking widgets are off when JavaScript is disabled. Ordinary booking links remain available.</p></noscript>';
+function parkwayFixture(q){
+  const p=q.parkway;
+  return `<img class="page-hero-bg" alt="Illustrative road; not verified as this route"><p class="image-note">Illustrative image; not a verified view.</p><form id="parkway-form" hidden>${Object.entries(p.options).map(([key,options])=>`<label for="parkway-${key}">${key}</label><select id="parkway-${key}">${options.map(([value,label])=>`<option value="${value}">${esc(label)}</option>`).join('')}</select>`).join('')}<button type="submit">Build</button><button type="reset">Reset</button></form><p id="parkway-status" role="status" aria-live="polite">14 places documented · no optional stops selected</p><p id="parkway-origin">Route order: ${esc(p.initial.direction)}. Approximate map distances from ${p.initial.origin}.</p><div id="parkway-notes">${p.initial.notes.map(n=>`<p>${esc(n)}</p>`).join('')}</div><ul id="parkway-shortlist"><li>No optional stops selected. Read the cards and choose a few places to investigate.</li></ul><button id="parkway-copy" type="button" hidden>Copy</button><p id="parkway-copy-status" role="status" aria-live="polite"></p><div id="parkway-copy-fallback" hidden><textarea id="parkway-brief" readonly></textarea></div><div id="parkway-stops">${p.stops.map(s=>`<article data-parkway-id="${s.id}"><span data-parkway-distance>About ${s.fromLouiseKm} km from Lake Louise village</span><h3>${esc(s.name)}</h3><p>${esc(s.idea)}</p><p data-parkway-season-note>${esc(s.winter)}</p><details><summary>Summer planning notes</summary><p>${esc(s.summer)}</p></details><a href="${esc(s.href)}">${esc(s.linkLabel)}</a>${s.kind==='endpoint'?'':`<label data-parkway-choice hidden><input type="checkbox" data-parkway-select value="${s.id}">Add</label>`}</article>`).join('')}</div><ol id="parkway-checklist">${p.initial.checklist.map(n=>`<li>${esc(n)}</li>`).join('')}</ol><a class="car-cta-btn" href="${p.carHref}" target="_blank" rel="noopener sponsored">Search Car Rentals on Expedia →</a><p>BanffBound may earn a commission.</p>`;
+}
 function fixture(check){
   const q=check.quality;let body=`<h1>${esc(check.name)}</h1>`;const schemas=[];
   if(q.type!=='full'){
@@ -323,7 +387,9 @@ function fixture(check){
     const context=q.bookingContext;
     for(const kind of check.affiliateKinds){const href=context?(kind==='gyg-auto'?context.tourHref:context.hotelHref):(kind==='gyg-auto'?'https://www.getyourguide.com/banff-l284/?partner_id=QW960HO':'https://www.expedia.ca/Hotel-Search?camref=1101l3MtWX');const label=context?(kind==='gyg-auto'?`Browse ${context.tourLabel} activity results on GetYourGuide — affiliate link`:`Compare ${context.hotelLabel} stays on Expedia — affiliate link`):'Native referral';body+=`<div data-affiliate-embed="${kind}"><p data-affiliate-status role="status" aria-live="polite">Optional partner content is off.</p><button type="button" data-open-consent>Privacy choices</button><div data-affiliate-mount hidden></div><a href="${esc(href)}" target="_blank" rel="noopener sponsored">${esc(label)}</a></div>`;}
   }
-  if(q.type!=='full'){
+  if(q.type==='parkway')body+=parkwayFixture(q)+`<time datetime="2026-10-29">29 October 2026</time>`;
+  if(q.type==='parkway')body+='<p class="filter-note">Changing visit type keeps your shortlist. Changing season removes choices outside that seasonal comparison.</p>';
+  if(!['full','parkway'].includes(q.type)){
   for(const spec of q.controls??[]){const a=Object.entries(spec.attributes).map(([k,v])=>v===true?k:`${k}="${esc(v)}"`).join(' ');let inner='';if(q.checklist?.id===spec.id)inner=Array.from({length:q.checklist.count},()=>'<li><input type="checkbox"></li>').join('');if(spec.id==='ski-day-timeline')inner=Array.from({length:q.timelineCount},()=>'<li>Timeline step</li>').join('');body+=`<${spec.tag} id="${spec.id}" ${a}>${inner}${['input'].includes(spec.tag)?'':`</${spec.tag}>`}`;}
   if(q.cards)for(const item of q.cards.items)body+=`<article ${q.cards.attribute}="${item.id}">${item.text.map(t=>`<p>${esc(t)}</p>`).join('')}<a ${q.cards.linkAttribute??''} href="${esc(item.href)}">Native detail</a></article>`;
   if(q.boundaryLocationOnly)body+='<p data-source-scope="location-only">Boundary unit facilities are not included</p>';
@@ -338,7 +404,7 @@ function fixture(check){
 }
 export async function selfTest(){
   await foundationSelfTest();const inventory=await loadGuideInventory();
-  const supplements=inventory.checks.filter(c=>c.quality);assert.equal(supplements.length,29);
+  const supplements=inventory.checks.filter(c=>c.quality);assert.equal(supplements.length,35);
   for(const check of supplements){const html=fixture(check),sitemap=new Set([ORIGIN+check.path]);assert.deepEqual(analyseGuideHtml(html,check,sitemap).errors,[],check.path+': complete supplement fixture');
     assert.ok(analyseGuideHtml(html.replace('rel="canonical"','rel="alternate"'),check,sitemap).errors.length,check.path+': canonical negative');
     assert.ok(analyseGuideHtml(html.replace('</body>','<script src="https://widget.getyourguide.com/sdk.js"></script></body>'),check,sitemap).errors.some(e=>e.includes('Active pre-consent')));
@@ -354,7 +420,7 @@ export async function selfTest(){
       assert.ok(analyseGuideHtml(html.replace('class="article-image-note"','class="missing-image-note"'),check,sitemap).errors.some(e=>e.includes('illustrative hero scope')));
       assert.ok(analyseGuideHtml(html.replace('</body>',`<p>${PARTIAL_LABEL}</p></body>`),check,sitemap).errors.some(e=>e.includes('incorrectly labelled')));
       assert.ok(analyseGuideHtml(html.replace('"@type":"FAQPage"','"@type":"WebPage"'),check,sitemap).errors.some(e=>e.includes('FAQ schema count')));
-      const badClaim=check.quality.slug.startsWith('num')?'The frozen lake becomes a natural skating rink.':check.quality.slug.startsWith('jasper')?'The Maligne Canyon trail offers year-round access.':check.quality.slug==='banff-cabin-rentals'?'Each cabin has a full kitchen.':({'banff-nightlife-guide':'Dancing Sasquatch is the current dance venue.','banff-live-music':'Every Banff Centre performance is suitable for children.','drink-deals':'Sky Bistro includes gondola admission.'}[check.quality.slug]??'All six restaurants opened in 2026.');
+      const badClaim=check.quality.slug.startsWith('num')?'The frozen lake becomes a natural skating rink.':check.quality.slug.startsWith('jasper')?'The Maligne Canyon trail offers year-round access.':check.quality.slug==='banff-cabin-rentals'?'Each cabin has a full kitchen.':({'banff-nightlife-guide':'Dancing Sasquatch is the current dance venue.','banff-live-music':'Every Banff Centre performance is suitable for children.','drink-deals':'Sky Bistro includes gondola admission.','icefields-parkway-guide':'Fuel is available at Crossing in winter.','banff-to-jasper-drive':'Maligne Canyon is open for winter.','lake-minnewanka-guide':'Minnewanka is open for ice fishing.','banff-gondola-guide':'The boardwalk is fully accessible.','banff-gondola-tickets-guide':'Sky Bistro reservations include gondola admission.'}[check.quality.slug]??'All six restaurants opened in 2026.');
       assert.ok(analyseGuideHtml(html.replace(/class="article-body"[^>]*>/,tag=>tag+`<p>${badClaim}</p>`),check,sitemap).errors.some(e=>e.includes('Unsupported inherited/current claim')));
       if(check.quality.slug.startsWith('num'))assert.ok(analyseGuideHtml(html.replaceAll('as prohibited','as permitted'),check,sitemap).errors.length,'Bow Lake permission reversal must fail.');
       if(check.quality.slug==='jasper-canada')assert.ok(analyseGuideHtml(html.replace('/blog/jasper-national-park/#park-recovery','/wrong-source/'),check,sitemap).errors.some(e=>e.includes('source/photo link')),'HTML-bearing FAQ retains its native source link.');
@@ -369,6 +435,20 @@ export async function selfTest(){
         assert.ok(analyseGuideHtml(html.replace(check.quality.evening.steps[0],'Incomplete evening planning step.'),check,sitemap).errors.some(e=>e.includes('default evening return steps')));
         assert.ok(analyseGuideHtml(html.replace('id="evening-journey-link" href="'+esc(check.quality.evening.journey.href)+'"','id="evening-journey-link" href="https://example.com/wrong"'),check,sitemap).errors.some(e=>e.includes('native default Banff evening journey')));
         assert.ok(analyseGuideHtml(html.replaceAll('no minors are allowed after 10pm','no minors are allowed after 11pm'),check,sitemap).errors.length,'Current minors cutoff reversal must fail.');
+      }
+      if(['icefields-parkway-guide','banff-to-jasper-drive'].includes(check.quality.slug)){
+        assert.ok(analyseGuideHtml(html.replaceAll('November 1–March 31','October 1–April 30'),check,sitemap).errors.length,'93N legal date reversal must fail.');
+        assert.ok(analyseGuideHtml(html.replaceAll('all services are closed for winter','all services are open for winter'),check,sitemap).errors.length,'Winter service reversal must fail.');
+      }
+      if(check.quality.slug==='icefields-parkway-guide')assert.ok(analyseGuideHtml(html.replaceAll('36 km north of the junction','17 km north of the junction'),check,sitemap).errors.length,'Junction-origin route distance regression.');
+      if(check.quality.slug==='lake-minnewanka-guide'){
+        assert.ok(analyseGuideHtml(html.replaceAll('Personal canoes, kayaks, paddleboards and large inflatables are prohibited.','Personal canoes, kayaks, paddleboards and large inflatables are permitted.'),check,sitemap).errors.length,'Personal craft restriction reversal.');
+        assert.ok(analyseGuideHtml(html.replaceAll('May 16–September 7, 2026','November 1–March 31, 2026'),check,sitemap).errors.length,'Closed fishing season cannot become winter fishing.');
+      }
+      if(check.quality.gondolaProduct){
+        assert.ok(analyseGuideHtml(html.replace(`href="${esc(check.quality.gondolaProduct.href)}"`,`href="${esc(check.quality.gondolaProduct.href.replace('partner_id=QW960HO','partner_id=wrong'))}"`),check,sitemap).errors.some(e=>e.includes('native Gondola product/affiliate')));
+        assert.ok(analyseGuideHtml(html.replaceAll('368 shallow stairs each way','no stairs'),check,sitemap).errors.length,'Physical access regression.');
+        assert.ok(analyseGuideHtml(html.replaceAll('non-refundable','fully refundable'),check,sitemap).errors.length,'Product-specific cancellation regression.');
       }
     }
     if(check.quality.bookingContext){
@@ -393,12 +473,26 @@ export async function selfTest(){
       assert.ok(analyseGuideHtml(html.replace('"name":"Fixture restaurant"','"name":"Fixture restaurant","openingHours":"Mo-Su 13:00-02:00"'),check,sitemap).errors.some(e=>e.includes('ItemList exceeds name/operator-link scope')));
       assert.deepEqual(analyseGuideHtml(html.replace('</body>','<section><h2>Inherited restaurant catalogue, outside new handoff scope</h2><p>Happy hour is from 3–6.</p></section></body>'),check,sitemap).errors,[],'Scoped handoff checks do not claim a full restaurant-data source review.');
     }
+    if(check.quality.type==='parkway'){
+      const p=check.quality.parkway;
+      assert.ok(analyseGuideHtml(html.replace('About 39 km from Lake Louise village','About 17 km from Lake Louise village'),check,sitemap).errors.some(e=>e.includes('map-distance text differs')));
+      assert.ok(analyseGuideHtml(html.replace('data-parkway-select value="herbert-lake"','data-parkway-select checked value="herbert-lake"'),check,sitemap).errors.some(e=>e.includes('optional choice is missing/visible/preselected')));
+      assert.ok(analyseGuideHtml(html.replace('data-parkway-choice hidden','data-parkway-choice'),check,sitemap).errors.some(e=>e.includes('optional choice is missing/visible/preselected')));
+      assert.ok(analyseGuideHtml(html.replace('value="winter"','value="unknown-season"'),check,sitemap).errors.some(e=>e.includes('Parkway select/default/label')));
+      assert.ok(analyseGuideHtml(html.replace('<li>'+esc(p.initial.checklist[0])+'</li>',''),check,sitemap).errors.some(e=>e.includes('complete three Parkway journey checks')));
+      assert.ok(analyseGuideHtml(html.replaceAll('https://expedia.com/affiliate/KB6G4xt','https://expedia.com/affiliate/wrong'),check,sitemap).errors.some(e=>e.includes('KB6G4xt car referral')));
+      assert.ok(analyseGuideHtml(html.replace('"@type":"FAQPage"','"@type":"WebPage"'),check,sitemap).errors.some(e=>e.includes('FAQPage')));
+      for(const added of ['<p>Complete the drive in 3 hours.</p>','<p>Fuel is guaranteed.</p>','<span id="total-time">6 hours</span>','<p data-stop-min="20">Fixed stop minutes</p>'])assert.ok(analyseGuideHtml(html.replace('</body>',added+'</body>'),check,sitemap).errors.some(e=>e.includes('fixed ETA/fuel/route prescription')));
+      assert.ok(analyseGuideHtml(html.replaceAll('snow tires or chains November 1–March 31','snow tires or chains October 1–April 30'),check,sitemap).errors.length,'Planner tire-rule regression.');
+      assert.ok(analyseGuideHtml(html.replace(/class="image-note"/,'class="missing-note"'),check,sitemap).errors.some(e=>e.includes('illustrative Parkway hero')));
+      assert.ok(analyseGuideHtml(html.replace('class="filter-note"','class="missing-filter-note"'),check,sitemap).errors.some(e=>e.includes('filter/selection scope')));
+    }
   }
   const {stdout,stderr}=await promisify(execFile)(process.execPath,['--input-type=module','-e',`globalThis.fetch=()=>{throw Error('Import attempted network')}; await import(${JSON.stringify(new URL('./verify-cycling-consent-release.mjs',import.meta.url).href)}); await import(${JSON.stringify(import.meta.url)});`],{cwd:ROOT,timeout:15000,maxBuffer:100000});
   assert.equal(stdout,'','Import must not run either CLI/self-test');assert.equal(stderr,'');
   assert.throws(()=>builtLocations('<!DOCTYPE x><urlset><url><loc>https://banffbound.com/</loc></url></urlset>','urlset'));
   assert.throws(()=>builtLocations('<urlset><url><loc>https://example.com/</loc></url></urlset>','urlset'));
-  console.log('Guide-quality offline fixtures passed: preserved193 foundation +8 bounded repairs +10full guides +2lesson/day planners +7town pages +1context-only guide +1scoped dining/evening hub =222 unique HTML routes; 62full-review registry/original publication/partial-vs-full labels/illustrative schema, full SSR cards/controls/native links/FAQ and scoped base handoffs; evening default5/3steps/native journey, dated offer permissions, no blanket hub promises; negative canonicals/providers/missing controls/links/labels/dates/nested text; import-safe shared engine and seven photo hashes. No network, receipt writes, Git, host calls or site build.');
+  console.log('Guide-quality offline fixtures passed: preserved193 foundation +8 bounded repairs +15full guides +2lesson/day planners +7town pages +1context-only guide +1scoped dining/evening hub +1Parkway planner =228 unique HTML routes; 67full-review registry/original publication/partial-vs-full labels/illustrative schema, full SSR cards/controls/native links/FAQ and scoped base handoffs; evening defaults, dated offer permissions, no blanket hub promises;14Parkway map pairs/default-distance cards/season notes/unchecked progressive choices/6FAQs/3journey checks/KB6G4xt native referral without ETA/fuel guarantees; negative access/admission/season/price/canonical/provider/control/link/label/date/nested-text fixtures; import-safe shared engine and seven photo hashes. No network, receipt writes, Git, host calls or site build.');
 }
 function builtLocations(xml,kind){
   assert.ok(!/<!DOCTYPE|<!ENTITY/i.test(xml),'Built sitemap cannot declare entities');assert.ok(new RegExp(`<${kind}\\b`).test(xml),'Unexpected built sitemap type');
@@ -417,7 +511,7 @@ export async function checkBuiltDirectory(directory){
   for(const check of inventory.checks){try{const html=await readFile(path.resolve(root,'.'+check.path,'index.html'),'utf8'),result=analyseGuideHtml(html,check,sitemap);if(result.errors.length)failures.push({path:check.path,errors:result.errors});else htmlPassed++;}catch(error){failures.push({path:check.path,errors:[String(error.message??error.name)]});}}
   for(const photo of inventory.photos){try{const bytes=await readFile(path.resolve(root,'.'+photo.src)),digest=createHash('sha256').update(bytes).digest('hex');assert.equal(digest,photo.sha256);photosPassed++;}catch(error){failures.push({path:photo.src,errors:['Built photo missing or SHA256 differs']});}}
   assert.equal(await readFile(path.join(root,'build-info.json'),'utf8'),receiptText,'Local build receipt changed during HTML inspection');
-  return {passed:htmlPassed===EXPECTED_ROUTES&&photosPassed===7&&failures.length===0,mode:'read-only-built-directory',htmlRoutes:inventory.checks.length,htmlPassed,photosPassed,fullReviews:62,remainingPartialRepairs:8,sitemapUrls:sitemap.size,buildReceipt,buildReceiptStable:true,productionIdentityVerified:false,failures};
+  return {passed:htmlPassed===EXPECTED_ROUTES&&photosPassed===7&&failures.length===0,mode:'read-only-built-directory',htmlRoutes:inventory.checks.length,htmlPassed,photosPassed,fullReviews:67,remainingPartialRepairs:8,sitemapUrls:sitemap.size,buildReceipt,buildReceiptStable:true,productionIdentityVerified:false,failures};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try{if(process.argv.length===3&&process.argv[2]==='--self-test')await selfTest();else if(process.argv.length===4&&process.argv[2]==='--built-dir'){const result=await checkBuiltDirectory(process.argv[3]);console.log(JSON.stringify(result));if(!result.passed)process.exitCode=1;}else await verify(options(process.argv.slice(2)),{inventoryLoader:loadGuideInventory,htmlAnalyser:analyseGuideHtml,userAgent:'BanffBound-guide-quality-release-verification/1.0'});}

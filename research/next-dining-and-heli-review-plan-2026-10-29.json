@@ -1,0 +1,21 @@
+{
+  "baselineRevision": "3ec35fa593bcd1dd215855360ce19efb4f185ed8",
+  "status": "Read-only source audit, pending implementation; no app, merchant, hosting or ad changes.",
+  "diningInventory": {"restaurants":27,"drinkSpots":5,"uniqueSlugs":32,"restaurantAreas":{"Banff":13,"Lake Louise":6,"Canmore":6,"Highway 1A":2},"missingReviewProvenanceFields":true,"nonBanffRestaurantsWithoutWebsiteOrMenu":14,"fullInventoryReviewed":false},
+  "diningCandidates": [
+    {"slug":"the-alpine-social","issue":"Village address in the record conflicts with the Chateau operator address; guest priority and service access need dated scope.","sources":["https://www.chateau-lake-louise.com/dine/alpine-social/"]},
+    {"slug":"blake-brewpub","issue":"Current operator address/phone and ordinary walk-in model differ from the imported record.","sources":["https://www.blakecanmore.com/contact"]},
+    {"slug":"the-iron-goat","issue":"Operator Benchlands Trail address conflicts with imported Main Street address; changes the actual meal journey.","sources":["https://www.irongoat.ca/"]},
+    {"slug":"baker-creek-bistro","issue":"Current property publisher supports Creekside Cafe grab-and-go breakfast/lunch/snacks, not the old fine-dinner bistro expectation. No closure date established.","sources":["https://basecampresorts.com/bakercreek/","https://basecampresorts.com/bakercreek/arrival-essentials/"]},
+    {"slug":"pd3-by-blake","issue":"Current operator pages did not establish the imported pizzeria identity/address/menu. Pending verification is not evidence of closure.","sources":["https://www.blakecanmore.com/","https://www.blakecanmore.com/blake-menu"]}
+  ],
+  "diningImplementationPurpose":"Source-reviewed projection preserving existing slugs, with explicit pending scope, factual/service/operator links and photograph/coordinate provenance; do not infer venue identity or image licensing from hostnames.",
+  "heliCoverage": {"reviewedCanonical":"banff-heli-skiing","reviewedRelated":["banff-ski-touring","banff-avalanche-safety"],"unreviewedRelated":["banff-helicopter-tours","kananaskis-heli-tours","golden-bc-day-trip","skoki-lodge-guide"],"substantiveCatSkiComparisonFound":false},
+  "heliCandidates": [
+    {"scope":"Existing banff-heli-skiing guide","purpose":"Two operator-specific full SSR cards and a logistics chooser: starting base, self-drive or confirmed transfer, overnight plan, equipment questions and copyable enquiry brief. Operator retains ability/terrain approval.","sources":["https://www.cmhheli.com/destinations/purcell","https://rkheliski.com/plan-your-trip/transportation/"],"boundaries":["Purcell self-drive and transport/accommodation exclusions must not become an implied Banff pickup", "RK paid transfers need current minimum numbers and transport-refund terms", "Recheck forthcoming products and equipment before publication"]},
+    {"scope":"Existing banff-helicopter-tours and kananaskis-heli-tours canonicals","purpose":"Separate scenic-flight base/transport decisions from heli-ski programmes and permitted landings; remove medication timing and window-seat/smooth-flight guarantees and unverified product/weight/refund assertions.","sources":["https://alpinehelicopter.com/","https://alpinehelicopter.com/contact-us/","https://www.rockiesheli.com/contact/","https://www.parcs.canada.ca/pn-np/ab/banff/securite-safety/regles-rules/vols-flights"],"boundary":"Canmore Municipal Heliport, Stoney Nakoda and Cline River/Highway 11 are distinct departure bases. Overflight and approved landing are different questions."},
+    {"scope":"Brief heli-versus-cat comparison within existing guide","purpose":"Describe format and direct operator enquiry without a new SEO slug or unconfirmed future availability.","sources":["https://www.skifortress.com/kpow-cat-skiing","https://explorekananaskis.com/directory/cat-skiing/"],"boundary":"KPOW operator page retained past-season and inconsistent year labels at audit; no forthcoming booking dates established."}
+  ],
+  "limits":["Recheck current primary evidence at implementation", "This is not a review of every restaurant or every helicopter product", "No ad launch or revenue/ranking claim"],
+  "goalStatus":"active"
+}
