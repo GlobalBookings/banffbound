@@ -2,6 +2,9 @@ import { bowLakeGuideMetadata } from './bowLakeGuideOverrides';
 import { jasperGuideMetadata } from './jasperGuideOverrides';
 import { diningGuideMetadata } from './diningGuideOverrides';
 import { cabinGuideMetadata } from './cabinGuideOverrides';
+import { nightlifeGuideMetadata } from './nightlifeGuideOverrides';
+import { liveMusicGuideMetadata } from './liveMusicGuideOverrides';
+import { drinkOfferGuideMetadata } from './drinkOfferGuideOverrides';
 import { cyclingGuideMetadata } from './cyclingGuideOverrides';
 import { lakeJourneyMetadata } from './lakeJourneyOverrides';
 import { visitorDestinationMetadata } from './visitorDestinationOverrides';
@@ -29,7 +32,7 @@ export interface BlogPost {
   imageNote?: string;
 }
 
-const newlyReviewedMetadata: Record<string, Partial<BlogPost>> = { ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata };
+const newlyReviewedMetadata: Record<string, Partial<BlogPost>> = { ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata };
 
 const originalBlogPosts: BlogPost[] = [
   {

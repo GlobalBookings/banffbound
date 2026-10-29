@@ -1,0 +1,22 @@
+{
+  "checkedAtUTC": "2026-10-29T22:21:37.724Z",
+  "baselineRevision": "c1a173277b969dddfadeb51b195a2e3a9756f4f1",
+  "scope": "Canonical article body bytes and original publication metadata; shared metadata and dining hub presentation changes are separately reviewed.",
+  "canonical": 295,
+  "replacedBodies": 3,
+  "otherBodiesByteIdentical": 292,
+  "changedSlugs": [
+    "banff-live-music",
+    "banff-nightlife-guide",
+    "drink-deals"
+  ],
+  "fullBodyReviews": {
+    "before": 59,
+    "after": 62
+  },
+  "partialCorrections": {
+    "before": 8,
+    "after": 8
+  },
+  "originalPublicationsPreserved": 335
+}

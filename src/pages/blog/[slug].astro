@@ -5,6 +5,7 @@ import { legacyTextCorrections } from '../../data/legacyTextCorrections';
 import { resolveBlogContent, reviewedBlogBodies, authoredBookingGuideSlugs } from '../../data/blogContentRegistry';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import CabinGuideInteractions from '../../components/CabinGuideInteractions.astro';
+import EveningGuideInteractions from '../../components/EveningGuideInteractions.astro';
 import { allBlogPosts } from '../../data/blogPosts';
 import { blogRedirects } from '../../data/redirects.mjs';
 
@@ -42,4 +43,5 @@ const content = resolveBlogContent(post.slug).replace(
 >
   <Fragment set:html={content} />
   {post.slug === 'banff-cabin-rentals' && <CabinGuideInteractions />}
+  {post.slug === 'banff-nightlife-guide' && <EveningGuideInteractions />}
 </BlogLayout>

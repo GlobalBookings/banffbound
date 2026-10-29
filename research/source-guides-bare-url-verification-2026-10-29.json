@@ -1,0 +1,56 @@
+{
+  "checkedAtUTC": "2026-10-29T22:06:21.800599+00:00",
+  "scope": "Bare canonical URLs without query strings; titles compared with validated clean emitted HTML and current review schema date present. Full metadata/content contracts are checked separately by the 218-route verifier.",
+  "results": [
+    {
+      "url": "https://banffbound.com/blog/num-ti-jah-lodge/",
+      "status": 200,
+      "title": "The Lodge at Bow Lake: Rooms, Meals, Seasons & Arrival | BanffBound",
+      "reviewDatePresent": true,
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/numtijah-lodge/",
+      "status": 200,
+      "title": "Former Num-Ti-Jah Lodge: Bow Lake History & Day Visits | BanffBound",
+      "reviewDatePresent": true,
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/jasper-national-park/",
+      "status": 200,
+      "title": "Jasper National Park: Recovery, Access & Named Route Choices | BanffBound",
+      "reviewDatePresent": true,
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/jasper-town/",
+      "status": 200,
+      "title": "Jasper Town Guide: Where to Base, Transit, Meals & Arrival | BanffBound",
+      "reviewDatePresent": true,
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/jasper-canada/",
+      "status": 200,
+      "title": "Jasper, Canada: Arrival Routes & A Banff\u2013Jasper Trip Plan | BanffBound",
+      "reviewDatePresent": true,
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/new-places-to-eat-in-banff/",
+      "status": 200,
+      "title": "New Places to Eat in Banff: Additions, Reopenings & Discoveries | BanffBound",
+      "reviewDatePresent": true,
+      "passed": true
+    },
+    {
+      "url": "https://banffbound.com/blog/banff-cabin-rentals/",
+      "status": 200,
+      "title": "Cabin Rentals Near Banff: Six Stays Compared | BanffBound",
+      "reviewDatePresent": true,
+      "passed": true
+    }
+  ],
+  "passed": 7
+}

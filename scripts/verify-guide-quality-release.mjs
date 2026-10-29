@@ -14,7 +14,7 @@ import { ORIGIN, ROOT, normal, htmlFacts, htmlElements, textInside, schemaNodes,
 // node scripts/verify-guide-quality-release.mjs --revision <40hex> --fingerprint <64hex> --report research/<new-local.json>
 // --built-dir <directory> reads emitted HTML/sitemaps/photos and a stable local
 // build receipt; it does not assert deployed identity, HTTP status or redirects.
-const EXPECTED_ROUTES = 218;
+const EXPECTED_ROUTES = 222;
 const PARTIAL_LABEL = 'Opening paragraph repaired (full guide review pending):';
 const ORIGINAL_PUBLICATION = {
   'nightclub-banff':'2026-03-31', 'banff-nightclubs':'2026-04-08', 'new-places-to-eat-in-banff':'2026-04-03',
@@ -26,6 +26,7 @@ const FULL_PUBLICATION = {
   'num-ti-jah-lodge':'2026-03-04', 'numtijah-lodge':'2026-03-08',
   'jasper-national-park':'2026-04-06', 'jasper-town':'2026-04-08', 'jasper-canada':'2026-04-06',
   'new-places-to-eat-in-banff':'2026-04-03', 'banff-cabin-rentals':'2026-01-07',
+  'banff-nightlife-guide':'2026-02-10', 'banff-live-music':'2026-05-28', 'drink-deals':'2026-03-14',
 };
 const PARTIAL_PUBLICATION = Object.fromEntries(Object.entries(ORIGINAL_PUBLICATION).filter(([slug])=>!Object.hasOwn(FULL_PUBLICATION,slug)));
 const jasperContextSlugs=['jasper-town','jasper-national-park','jasper-canada','jasper-alberta','calgary-to-jasper'];
@@ -60,6 +61,9 @@ const fullMarkers = {
   'jasper-canada': {geography:'Highway 16 / Yellowhead',endpoints:'approximately 232 km',closure:"Parks Canada's closure prohibits winter recreation there.",arrival:'Edmonton suits a Jasper-first plan via Highway 16.'},
   'new-places-to-eat-in-banff': {date2025:'reopened in December 2025',date2026:'reopened after renovation in April 2026',dateEvidence:'August 20, 2025',otherLocation:'Fairmont Chateau Lake Louise, 111 Lake Louise Drive'},
   'banff-cabin-rentals': {scope:'These are selected examples, not an exhaustive ranking or live room inventory.',defaultCount:'6 cabin-category examples to compare',categories:'Historic-cabin season and winter-suite statements',disclosure:'BanffBound may earn a commission from qualifying Expedia bookings.'},
+  'banff-nightlife-guide': {identity:'120 Banff Avenue',age:'18+ entry condition',minors:'no minors are allowed after 10pm',booking:'separate dining and bowling reservations',source:'Guide reviewed October 29, 2026.',season:'fall/winter seasonal service',count:'5 evening formats to explore',journey:'last useful departure'},
+  'banff-live-music': {source:'Fully reviewed October 29, 2026',age:'minors welcome until 9:30 p.m.',table:'A table reservation can establish a meal without show admission.',tickets:'original PDF rather than a screenshot',identity:'201 Banff Avenue #2',hotel:'No recurring hotel jazz programme is established by this guide.',journey:'A show ending late can outlast the bus service.'},
+  'drink-deals': {source:'Offers checked October 29, 2026.',afternoon:'2–5 p.m.',late:'9–11 p.m.',conflict:'conflicting weekday bowling happy-hour times',holidays:'not available on holidays or long weekends',lane:'A table confirmation does not establish a reserved lane.',skyTime:'Summit Hours from 3–5 p.m.',skyOffer:'50% off local beer, house wine and selected shareable plates',admission:'book Banff Gondola admission separately'},
 };
 const diningSections = [
   {id:'good-folk',markers:['#1000–600 Banff Avenue','inside the Otter Hotel','August 20, 2025'],href:'https://goodfolkrestaurant.com/'},
@@ -70,9 +74,9 @@ const diningSections = [
   {id:'fat-ox',markers:['415 Banff Avenue','No opening year is asserted'],href:'https://fatoxbanff.ca/'},
 ];
 function fullReviewChecks(d) {
-  const metadata={...d.bowLakeGuideMetadata,...d.jasperGuideMetadata,...d.diningGuideMetadata,...d.cabinGuideMetadata};
+  const metadata={...d.bowLakeGuideMetadata,...d.jasperGuideMetadata,...d.diningGuideMetadata,...d.cabinGuideMetadata,...d.nightlifeGuideMetadata,...d.liveMusicGuideMetadata,...d.drinkOfferGuideMetadata};
   assert.deepEqual(Object.keys(metadata).sort(),Object.keys(FULL_PUBLICATION).sort());
-  assert.equal(Object.keys(d.reviewedBlogBodies).length,59,'Current registry has59 full reviews; historical receipts remain versioned.');
+  assert.equal(Object.keys(d.reviewedBlogBodies).length,62,'Current registry has62 full reviews; historical receipts remain versioned.');
   assert.equal(Object.keys(d.blogRedirects).length,40);assert.equal(d.blogRedirects['norquay-ski-shuttle'],'mt-norquay-guide');
   assert.equal(d.cabinExamples.length,6);assert.equal(d.compareCabinStays({}).selectedIds.length,6);assert.equal(d.compareCabinStays({season:'winter'}).selectedIds.length,4);
   const verifiedIds={'tunnel-mountain-cabin':'16324','baker-family-cabin':'7710611','paradise-wilson-cabin':'7829397'};
@@ -84,14 +88,21 @@ function fullReviewChecks(d) {
     assert.equal(post.title,meta.title);assert.equal(post.lastUpdated,meta.lastUpdated);assert.equal(post.imageIsIllustrative,true);assert.ok(post.imageNote);
     const bodyHtml=d.resolveBlogContent(slug),facts=htmlFacts(`<html><body>${bodyHtml}</body></html>`),schemas=facts.documents.flatMap(doc=>schemaNodes(doc,'FAQPage'));
     assert.equal(schemas.length,1,slug+': source must emit one FAQPage');
-    const fullFaqs=d.jasperGuideFaqs[slug]??(slug==='banff-cabin-rentals'?d.cabinGuideFaqs:slug==='new-places-to-eat-in-banff'?d.diningGuideFaqs:schemas[0].mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text})));
-    assert.equal(fullFaqs.length,slug==='num-ti-jah-lodge'||slug==='banff-cabin-rentals'||slug==='new-places-to-eat-in-banff'?5:slug==='numtijah-lodge'?4:3);
+    const faqArrays={'banff-cabin-rentals':d.cabinGuideFaqs,'new-places-to-eat-in-banff':d.diningGuideFaqs,'banff-nightlife-guide':d.nightlifeGuideFaqs,'banff-live-music':d.liveMusicGuideFaqs,'drink-deals':d.drinkOfferGuideFaqs};
+    const fullFaqs=d.jasperGuideFaqs[slug]??faqArrays[slug]??schemas[0].mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text}));
+    assert.equal(fullFaqs.length,['num-ti-jah-lodge','banff-cabin-rentals','new-places-to-eat-in-banff','banff-nightlife-guide','drink-deals'].includes(slug)?5:['numtijah-lodge','banff-live-music'].includes(slug)?4:3);
     const quality={type:'full',slug,bodyHtml,description:meta.description,published:date,corrected:meta.lastUpdated,imageNote:post.imageNote,fullFaqs};
     if(slug==='new-places-to-eat-in-banff')quality.diningSections=diningSections;
     if(slug==='banff-cabin-rentals'){
       quality.controls=[control('cabin-fit-form','form',{hidden:true}),...['base','season','kitchen'].map(key=>control(`cabin-${key}`,'select')),control('cabin-fit-count','p',{role:'status','aria-live':'polite'}),control('cabin-fit-notes','div'),control('cabin-fit-empty','div',{hidden:true})];
       quality.cards={attribute:'data-cabin-id',items:d.cabinExamples.map(c=>({id:c.id,href:c.bookingHref,text:[c.name,c.room,c.cooking,c.seasonNote,c.journey]}))};
       quality.cabinNative=d.cabinExamples.map(c=>({id:c.id,href:c.bookingHref,affiliate:c.affiliate}));quality.cabinOptions=d.cabinFilterOptions;
+    }
+    if(slug==='banff-nightlife-guide'){
+      const defaultEvening=d.buildEveningPlan();assert.equal(d.eveningFormats.length,5);assert.equal(defaultEvening.selectedIds.length,5);assert.equal(defaultEvening.filters.base,'banff');assert.equal(defaultEvening.steps.length,3);
+      quality.controls=[control('evening-planner','section'),control('evening-fit-form','form',{hidden:true}),...['style','group','base'].map(key=>control(`evening-${key}`,'select')),control('evening-fit-count','p',{role:'status','aria-live':'polite'}),control('evening-fit-notes','div'),control('evening-fit-empty','div',{hidden:true}),control('evening-steps','ol'),control('evening-journey-link','a')];
+      quality.cards={attribute:'data-evening-id',items:d.eveningFormats.map(f=>({id:f.id,href:f.href,text:[f.name,f.idea,f.booking,f.groupNote]}))};
+      quality.evening={options:d.eveningFilterOptions,...defaultEvening};
     }
     return {path:`/blog/${slug}/`,kind:'full-guide-review',name:post.title,noindex:false,publishedDate:date,modifiedDate:meta.lastUpdated,affiliateKinds:['expedia-banner','gyg-auto'],markers:fullMarkers[slug],links:[...new Set(facts.links)],quality};
   });
@@ -100,7 +111,7 @@ function fullReviewChecks(d) {
 export async function loadGuideInventory() {
   const foundation = await loadInventory();
   assert.equal(foundation.checks.length,193);assert.equal(foundation.photos.length,7);
-  const d = await moduleData("export {allBlogPosts} from './src/data/blogPosts.ts'; export {blogRedirects} from './src/data/redirects.mjs'; export {resolveBlogContent,reviewedBlogBodies,authoredBookingGuideSlugs} from './src/data/blogContentRegistry.ts'; export * from './src/data/legacyTextCorrections.ts'; export * from './src/data/lessonPlanning.ts'; export * from './src/data/skiPlanning.ts'; export {towns} from './src/data/towns.ts'; export * from './src/data/townStayPlanning.ts'; export {bowLakeGuideMetadata} from './src/data/bowLakeGuideOverrides.ts'; export {jasperGuideMetadata,jasperGuideFaqs} from './src/data/jasperGuideOverrides.ts'; export {diningGuideMetadata,diningGuideFaqs} from './src/data/diningGuideOverrides.ts'; export {cabinGuideMetadata,cabinGuideFaqs} from './src/data/cabinGuideOverrides.ts'; export * from './src/data/cabinPlanning.ts'; export {getArticleBookingContext} from './src/data/articleBookingContext.ts';");
+  const d = await moduleData("export {allBlogPosts} from './src/data/blogPosts.ts'; export {blogRedirects} from './src/data/redirects.mjs'; export {resolveBlogContent,reviewedBlogBodies,authoredBookingGuideSlugs} from './src/data/blogContentRegistry.ts'; export * from './src/data/legacyTextCorrections.ts'; export * from './src/data/lessonPlanning.ts'; export * from './src/data/skiPlanning.ts'; export {towns} from './src/data/towns.ts'; export * from './src/data/townStayPlanning.ts'; export {bowLakeGuideMetadata} from './src/data/bowLakeGuideOverrides.ts'; export {jasperGuideMetadata,jasperGuideFaqs} from './src/data/jasperGuideOverrides.ts'; export {diningGuideMetadata,diningGuideFaqs} from './src/data/diningGuideOverrides.ts'; export {cabinGuideMetadata,cabinGuideFaqs} from './src/data/cabinGuideOverrides.ts'; export * from './src/data/cabinPlanning.ts'; export {nightlifeGuideMetadata,nightlifeGuideFaqs} from './src/data/nightlifeGuideOverrides.ts'; export {liveMusicGuideMetadata,liveMusicGuideFaqs} from './src/data/liveMusicGuideOverrides.ts'; export {drinkOfferGuideMetadata,drinkOfferGuideFaqs} from './src/data/drinkOfferGuideOverrides.ts'; export * from './src/data/eveningPlanning.ts'; export {getArticleBookingContext} from './src/data/articleBookingContext.ts';");
   assert.deepEqual(Object.keys(d.legacyTextCorrections).sort(),Object.keys(PARTIAL_PUBLICATION).sort());
   assert.equal(d.legacyTextCorrectionDate,'2026-10-29');
   const additions = Object.entries(PARTIAL_PUBLICATION).map(([slug,date])=>{
@@ -113,9 +124,11 @@ export async function loadGuideInventory() {
   additions.push(...fullReviewChecks(d));
   const contextPost=d.allBlogPosts.find(p=>p.slug==='jasper-alberta');assert.ok(contextPost&&!d.blogRedirects[contextPost.slug]);
   additions.push({path:'/blog/jasper-alberta/',kind:'article-booking-context',name:contextPost.title,noindex:false,affiliateKinds:['expedia-banner','gyg-auto'],quality:{type:'context'}});
-  assert.equal(d.authoredBookingGuideSlugs.length,7);
+  assert.equal(d.authoredBookingGuideSlugs.length,10);
   for(const check of additions){const slug=check.path.split('/')[2],authored=d.authoredBookingGuideSlugs.includes(slug),expected=expectedBookingContext(slug,authored);assert.deepEqual(d.getArticleBookingContext(slug,authored),expected);if(expected.suppressAutomaticCTA)check.quality.bookingContext=expected;}
-  assert.equal(additions.filter(c=>c.quality.bookingContext).length,9);
+  assert.equal(additions.filter(c=>c.quality.bookingContext).length,12);
+  const hubLinks=[{href:'/blog/banff-nightlife-guide/#evening-planner',label:'Build your Banff evening'},{href:'/blog/new-places-to-eat-in-banff/',label:'Find a dining discovery'},{href:'/blog/banff-live-music/',label:'Find music or a show'},{href:'/blog/drink-deals/',label:'Compare current offer formats'}];
+  additions.push({path:'/eat-and-drink/',kind:'dining-evening-hub',name:'Eat & Drink in Banff & Beyond',noindex:false,markers:{eveningNavigation:'Give your evening a shape',offerPlanning:'Compare the whole offer'},links:[...hubLinks.map(l=>l.href),'/book/banff-hotels/'],quality:{type:'dining-hub',hubLinks,hotelHref:'/book/banff-hotels/'}});
   const lessonFaqs=await localArray('src/pages/learn-to-ski.astro','faqs');
   const plannerFaqs=await localArray('src/pages/ski-day-planner.astro','faqs');
   const townFaqs=await localArray('src/pages/towns/index.astro','faqs');
@@ -152,10 +165,10 @@ export async function loadGuideInventory() {
     if(d.townStayUpdatedSlugs.includes(town.slug))markers.journeyScope='Stay/transport journey updated';
     additions.push({path:`/towns/${town.slug}/`,kind:'town-guide',name:town.name,noindex:false,...(d.townStayUpdatedSlugs.includes(town.slug)?{modifiedDate:d.townStayPlanningReviewedAt}:{}),faqs:town.faqs,markers,links,quality});
   }
-  assert.equal(additions.length,25);assert.equal(additions.filter(c=>c.kind==='legacy-text-repair').length,8);assert.equal(additions.filter(c=>c.kind==='full-guide-review').length,7);
+  assert.equal(additions.length,29);assert.equal(additions.filter(c=>c.kind==='legacy-text-repair').length,8);assert.equal(additions.filter(c=>c.kind==='full-guide-review').length,10);
   const checks=[...foundation.checks,...additions];assert.equal(checks.length,EXPECTED_ROUTES);assert.equal(new Set(checks.map(c=>c.path)).size,EXPECTED_ROUTES,'Supplements must not replace or double-count foundation routes.');
   for(const base of foundation.checks)assert.equal(checks.find(c=>c.path===base.path),base,'Every foundation check is preserved.');
-  return {...foundation,checks,releaseScope:{legacyOpeningRepairs:8,newFullGuides:7,totalFullReviews:59,lessonAndDayPlanners:2,townPages:7,contextOnlyGuides:1,curatedBookingContextPages:9,canonicalAliases:40},supplementData:{lessonProgrammes:d.lessonProgrammes,defaultPlan,family}};
+  return {...foundation,checks,releaseScope:{legacyOpeningRepairs:8,newFullGuides:10,totalFullReviews:62,lessonAndDayPlanners:2,townPages:7,contextOnlyGuides:1,eveningDiningHubs:1,curatedBookingContextPages:12,canonicalAliases:40},supplementData:{lessonProgrammes:d.lessonProgrammes,defaultPlan,family}};
 }
 
 export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
@@ -204,6 +217,14 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
       const bodyText=textInside(html,bodies[0]);
       const bad=/natural skating rink|complimentary wi[ -]?fi|(?:canoe|kayak|paddleboard) rentals? (?:are|is) available|Maligne Canyon trail offers year-round access|Ice climbing opportunities abound in Maligne Canyon|skied the Maligne Lake road multiple times|all six (?:restaurants|venues) (?:are new|opened in 2026)|each cabin has a full kitchen|during my last visit|\$\s*\d|\bCAD\s*\d/i;
       if(bad.test(bodyText))errors.push('Unsupported inherited/current claim in full review');
+      // Dated percentages on selected items are legitimate; do not equate a
+      // documented 50% offer with an invented dollar price or blanket discount.
+      const eveningBad={
+        'banff-nightlife-guide':/Dancing Sasquatch (?:is|hosts|offers)|Wild Bill['’]s is|most bars (?:do not|don['’]t) charge (?:a )?cover|(?:taxis?|buses?) are always available|(?:won['’]t|do not) need (?:a )?(?:car|taxi)/i,
+        'banff-live-music':/Aurora Lounge (?:hosts|offers|has)|every Banff Centre performance is suitable for children|(?:free|complimentary) hotel shuttles? (?:run|are available) all night|(?:Rose & Crown|Melissa['’]s) (?:has|hosts) live bands every (?:Friday|Saturday)/i,
+        'drink-deals':/Sky Bistro includes gondola admission|(?:the )?(?:whole|entire) menu is 50% off|High Rollers bowling happy hour runs from|specials are available on (?:all )?holidays/i,
+      }[q.slug];
+      if(eveningBad?.test(bodyText))errors.push('Unsupported inherited/current claim in full review');
     }
     // Jasper's trusted static answer HTML is semantically compared, not treated
     // as literal visible angle brackets. The original193 FAQ contract is intact.
@@ -220,6 +241,21 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
       const form=byId('cabin-fit-form')[0];if(!form||elements.filter(n=>n.tag==='button'&&n.attributes.type==='reset'&&inside(n,form)).length!==1)errors.push('Missing native cabin reset control');
       for(const [key,options]of Object.entries(q.cabinOptions)){const select=byId(`cabin-${key}`)[0],actual=select?elements.filter(n=>n.tag==='option'&&inside(n,select)):[];if(actual.map(n=>n.attributes.value).join('|')!==options.map(o=>o[0]).join('|')||actual[0]?.attributes.value!=='all'||actual.some((n,i)=>i>0&&Object.hasOwn(n.attributes,'selected')))errors.push(`Cabin default/whitelist differs: ${key}`);}
       for(const item of q.cabinNative){const card=elements.find(n=>n.attributes['data-cabin-id']===item.id),cta=card&&visibleLinks.filter(n=>inside(n,card)&&hasClass(n,'cabin-book'));if(!cta||cta.length!==1||cta[0].attributes.href!==item.href||cta[0].attributes.target!=='_blank'||!(cta[0].attributes.rel??'').split(/\s+/).includes('noopener')||(cta[0].attributes.rel??'').split(/\s+/).includes('sponsored')!==item.affiliate)errors.push(`Cabin native merchant/operator contract differs: ${item.id}`);}
+    }
+    if(q.evening){
+      const form=byId('evening-fit-form')[0];
+      for(const type of ['submit','reset'])if(!form||elements.filter(n=>n.tag==='button'&&n.attributes.type===type&&inside(n,form)).length!==1)errors.push(`Missing native evening ${type} control`);
+      for(const [key,options]of Object.entries(q.evening.options)){
+        const select=byId(`evening-${key}`)[0],actual=select?elements.filter(n=>n.tag==='option'&&inside(n,select)):[];
+        if(actual.length!==options.length||actual.some((n,i)=>n.attributes.value!==options[i]?.[0]||textInside(html,n)!==normal(options[i]?.[1])||(i>0&&Object.hasOwn(n.attributes,'selected')))||actual[0]?.attributes.value!==q.evening.filters[key]||!form||!select||!inside(select,form)||elements.filter(n=>n.tag==='label'&&n.attributes.for===`evening-${key}`&&inside(n,form)).length!==1)errors.push(`Evening default/whitelist/label differs: ${key}`);
+      }
+      const count=byId('evening-fit-count')[0];if(!count||count.hidden||textInside(html,count)!=='5 evening formats to explore')errors.push('Evening SSR default count differs');
+      const notes=byId('evening-fit-notes')[0];if(!notes||q.evening.notes.some(note=>!textInside(html,notes).includes(normal(note))))errors.push('Missing evening planning scope notes');
+      const list=byId('evening-steps')[0],steps=list?elements.filter(n=>n.tag==='li'&&inside(n,list)):[];
+      if(steps.length!==3||steps.some((n,i)=>textInside(html,n)!==normal(q.evening.steps[i])))errors.push('Missing complete default evening return steps');
+      const journey=byId('evening-journey-link')[0],heading=byId('evening-journey-title')[0];
+      if(!journey||journey.hidden||journey.attributes.href!==q.evening.journey.href||textInside(html,journey)!==normal(q.evening.journey.label+' ↗')||journey.attributes.target!=='_blank'||!(journey.attributes.rel??'').split(/\s+/).includes('noopener')||!heading||textInside(html,heading)!==normal(q.evening.journey.title))errors.push('Missing exact native default Banff evening journey');
+      if(visibleLinks.filter(n=>n.attributes.href==='#evening-planner').length!==1)errors.push('Missing unique Evening planner jump link');
     }
   }
   if(q.cards){
@@ -243,6 +279,24 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
     if(!guide)errors.push('Missing scoped town guide content');
     else if(visibleLinks.some(n=>inside(n,guide)&&new URL(n.attributes.href,ORIGIN).pathname.replace(/\/$/,'')==='/ski-day-planner'))errors.push('Unsupported Banff three-resort planner handoff from other base');
   }
+  if(q.type==='dining-hub'){
+    if(/Open\s+1\s*p\.?m\.?\s*(?:to|[–-])\s*2\s*a\.?m\.?\s+daily/i.test(facts.text))errors.push('Unsupported inherited Rose & Crown daily hours');
+    const lists=facts.documents.flatMap(doc=>schemaNodes(doc,'ItemList'));
+    if(lists.length!==1||!Array.isArray(lists[0].itemListElement)||lists[0].itemListElement.length<1||lists[0].numberOfItems!==lists[0].itemListElement.length)errors.push('Missing minimal dining name/link ItemList');
+    else if(lists[0].itemListElement.some((item,i)=>item['@type']!=='ListItem'||item.position!==i+1||typeof item.name!=='string'||!item.name.trim()||Object.keys(item).some(key=>!['@type','position','name','url'].includes(key))||(item.url&&(!/^https:\/\//.test(item.url)||typeof item.url!=='string'))))errors.push('Dining ItemList exceeds name/operator-link scope (no Restaurant/LocalBusiness openingHours)');
+    const section=elements.filter(n=>n.tag==='section'&&n.attributes['aria-labelledby']==='evening-guides-title');
+    if(section.length!==1)errors.push('Missing unique scoped evening guide hub');
+    else for(const target of q.hubLinks){const links=visibleLinks.filter(n=>inside(n,section[0])&&n.attributes.href===target.href);if(links.length!==1||!textInside(html,links[0]).includes(target.label))errors.push('Missing scoped reviewed evening handoff: '+target.href);}
+    const hotel=visibleLinks.filter(n=>n.attributes.href===q.hotelHref&&textInside(html,n).includes('Compare Banff hotel bases'));
+    if(hotel.length!==1)errors.push('Missing honest native hub hotel comparison');
+    const offer=elements.filter(n=>hasClass(n,'tip-card')&&textInside(html,n).includes('Compare the whole offer'));
+    if(offer.length!==1||!textInside(html,offer[0]).includes('food, admission and holiday conditions')||!visibleLinks.some(n=>inside(n,offer[0])&&n.attributes.href==='/blog/drink-deals/'))errors.push('Missing scoped offer-condition planning handoff');
+    // This check certifies only new navigation/offer/hotel handoffs. It does
+    // not promote the inherited restaurant catalogue to a full source review.
+    const hotelSection=hotel[0]&&elements.filter(n=>n.tag==='section'&&inside(hotel[0],n)).sort((a,b)=>(a.end-a.start)-(b.end-b.start))[0];
+    const scoped=[...section,...offer,...(hotelSection?[hotelSection]:[])].map(n=>textInside(html,n)).join(' ');
+    if(/free (?:dining|drinks?|meals?|shuttle)|(?:meal|dining|drinks?) vouchers?|guaranteed (?:savings|discounts|tables)|every (?:bar|restaurant) (?:offers|has)|happy hour (?:runs|is) (?:from )?3[–-]6|(?:hotel|room) bookings? include (?:dining|drinks?|meals?)/i.test(scoped))errors.push('Unsupported hub offer/booking promise');
+  }
   return result;
 }
 
@@ -251,7 +305,11 @@ function fixture(check){
   const q=check.quality;let body=`<h1>${esc(check.name)}</h1>`;const schemas=[];
   if(q.type!=='full'){
   for(const marker of Object.values(check.markers??{}))body+=`<p>${esc(marker)}</p>`;
-  for(const href of check.links??[])body+=`<a href="${esc(href)}">Source or journey</a>`;
+  if(q.type==='dining-hub'){
+    schemas.push({'@context':'https://schema.org','@type':'ItemList',numberOfItems:1,itemListElement:[{'@type':'ListItem',position:1,name:'Fixture restaurant',url:'https://example.com/'}]});
+    body+=`<section aria-labelledby="evening-guides-title"><h2 id="evening-guides-title">Give your evening a shape</h2>${q.hubLinks.map(l=>`<a href="${esc(l.href)}">${esc(l.label)} →</a>`).join('')}</section><section><a href="${q.hotelHref}">Compare Banff hotel bases →</a></section><div class="tip-card"><h3>Compare the whole offer</h3><p>Check the current operator page for food, admission and holiday conditions. Read the <a href="/blog/drink-deals/">drink-offer guide</a>.</p></div>`;
+  }
+  else for(const href of check.links??[])body+=`<a href="${esc(href)}">Source or journey</a>`;
   if(check.faqs){schemas.push({'@context':'https://schema.org','@type':'FAQPage',mainEntity:check.faqs.map(f=>({'@type':'Question',name:f.question,acceptedAnswer:{'@type':'Answer',text:f.answer}}))});body+=check.faqs.map(f=>`<details><summary>${esc(f.question)}</summary><p>${esc(f.answer)}</p></details>`).join('');}
   }
   if(q.type==='partial'||q.type==='full'){
@@ -280,7 +338,7 @@ function fixture(check){
 }
 export async function selfTest(){
   await foundationSelfTest();const inventory=await loadGuideInventory();
-  const supplements=inventory.checks.filter(c=>c.quality);assert.equal(supplements.length,25);
+  const supplements=inventory.checks.filter(c=>c.quality);assert.equal(supplements.length,29);
   for(const check of supplements){const html=fixture(check),sitemap=new Set([ORIGIN+check.path]);assert.deepEqual(analyseGuideHtml(html,check,sitemap).errors,[],check.path+': complete supplement fixture');
     assert.ok(analyseGuideHtml(html.replace('rel="canonical"','rel="alternate"'),check,sitemap).errors.length,check.path+': canonical negative');
     assert.ok(analyseGuideHtml(html.replace('</body>','<script src="https://widget.getyourguide.com/sdk.js"></script></body>'),check,sitemap).errors.some(e=>e.includes('Active pre-consent')));
@@ -296,30 +354,51 @@ export async function selfTest(){
       assert.ok(analyseGuideHtml(html.replace('class="article-image-note"','class="missing-image-note"'),check,sitemap).errors.some(e=>e.includes('illustrative hero scope')));
       assert.ok(analyseGuideHtml(html.replace('</body>',`<p>${PARTIAL_LABEL}</p></body>`),check,sitemap).errors.some(e=>e.includes('incorrectly labelled')));
       assert.ok(analyseGuideHtml(html.replace('"@type":"FAQPage"','"@type":"WebPage"'),check,sitemap).errors.some(e=>e.includes('FAQ schema count')));
-      const badClaim=check.quality.slug.startsWith('num')?'The frozen lake becomes a natural skating rink.':check.quality.slug.startsWith('jasper')?'The Maligne Canyon trail offers year-round access.':check.quality.slug==='banff-cabin-rentals'?'Each cabin has a full kitchen.':'All six restaurants opened in 2026.';
+      const badClaim=check.quality.slug.startsWith('num')?'The frozen lake becomes a natural skating rink.':check.quality.slug.startsWith('jasper')?'The Maligne Canyon trail offers year-round access.':check.quality.slug==='banff-cabin-rentals'?'Each cabin has a full kitchen.':({'banff-nightlife-guide':'Dancing Sasquatch is the current dance venue.','banff-live-music':'Every Banff Centre performance is suitable for children.','drink-deals':'Sky Bistro includes gondola admission.'}[check.quality.slug]??'All six restaurants opened in 2026.');
       assert.ok(analyseGuideHtml(html.replace(/class="article-body"[^>]*>/,tag=>tag+`<p>${badClaim}</p>`),check,sitemap).errors.some(e=>e.includes('Unsupported inherited/current claim')));
       if(check.quality.slug.startsWith('num'))assert.ok(analyseGuideHtml(html.replaceAll('as prohibited','as permitted'),check,sitemap).errors.length,'Bow Lake permission reversal must fail.');
       if(check.quality.slug==='jasper-canada')assert.ok(analyseGuideHtml(html.replace('/blog/jasper-national-park/#park-recovery','/wrong-source/'),check,sitemap).errors.some(e=>e.includes('source/photo link')),'HTML-bearing FAQ retains its native source link.');
       if(check.quality.cabinNative)assert.ok(analyseGuideHtml(html.replace('camref=1101l3MtWX','camref=wrong'),check,sitemap).errors.some(e=>e.includes('merchant/operator contract')));
+      if(check.quality.slug==='drink-deals'){
+        assert.ok(html.includes('50% off local beer'),'Legitimate dated selected-item percentage remains in positive fixture.');
+        for(const [before,after]of [['2–5 p.m.','3–6 p.m.'],['9–11 p.m.','10–12 p.m.'],['Summit Hours from 3–5 p.m.','Summit Hours from 4–6 p.m.'],['50% off local beer, house wine and selected shareable plates','50% off the entire menu'],['not available on holidays or long weekends','available on every holiday'],['book Banff Gondola admission separately','gondola admission is included']])assert.ok(analyseGuideHtml(html.replaceAll(before,after),check,sitemap).errors.length,'Dated offer/eligibility/admission reversal must fail: '+before);
+      }
+      if(check.quality.evening){
+        assert.ok(analyseGuideHtml(html.replace('value="banff"','value="wrong-base"'),check,sitemap).errors.some(e=>e.includes('Evening default/whitelist')));
+        assert.ok(analyseGuideHtml(html.replace('type="reset" class="evening-reset"','type="button" class="evening-reset"'),check,sitemap).errors.some(e=>e.includes('native evening reset')));
+        assert.ok(analyseGuideHtml(html.replace(check.quality.evening.steps[0],'Incomplete evening planning step.'),check,sitemap).errors.some(e=>e.includes('default evening return steps')));
+        assert.ok(analyseGuideHtml(html.replace('id="evening-journey-link" href="'+esc(check.quality.evening.journey.href)+'"','id="evening-journey-link" href="https://example.com/wrong"'),check,sitemap).errors.some(e=>e.includes('native default Banff evening journey')));
+        assert.ok(analyseGuideHtml(html.replaceAll('no minors are allowed after 10pm','no minors are allowed after 11pm'),check,sitemap).errors.length,'Current minors cutoff reversal must fail.');
+      }
     }
     if(check.quality.bookingContext){
       assert.ok(analyseGuideHtml(html.replace('data-curated-booking="true"','data-curated-booking="false"'),check,sitemap).errors.some(e=>e.includes('curated booking SSR')));
       const start=html.indexOf('data-affiliate-embed="expedia-banner"'),wrong=html.slice(0,start)+html.slice(start).replace(`href="${esc(check.quality.bookingContext.hotelHref)}"`,'href="https://www.expedia.ca/Hotel-Search?destination=WrongPlace&amp;camref=1101l3MtWX"');
       assert.ok(analyseGuideHtml(wrong,check,sitemap).errors.some(e=>e.includes('native article booking context')),'Destination mismatch must fail even with the preserved affiliate ID.');
     }
-    if(check.quality.cards){const {attribute,items}=check.quality.cards;assert.ok(analyseGuideHtml(html.replace(`${attribute}="${items[0].id}"`,`${attribute}="unknown"`),check,sitemap).errors.some(e=>e.includes('guide card')));assert.ok(analyseGuideHtml(html.replace(`href="${esc(items[0].href)}"`,'href="/wrong/"'),check,sitemap).errors.some(e=>e.includes('native guide card')));}
+    if(check.quality.cards){const {attribute,items}=check.quality.cards;assert.ok(analyseGuideHtml(html.replace(`${attribute}="${items[0].id}"`,`${attribute}="unknown"`),check,sitemap).errors.some(e=>e.includes('guide card')));const card=htmlElements(html).find(n=>n.attributes[attribute]===items[0].id),wrong=html.slice(0,card.start)+html.slice(card.start,card.end).replace(`href="${esc(items[0].href)}"`,'href="/wrong/"')+html.slice(card.end);assert.ok(analyseGuideHtml(wrong,check,sitemap).errors.some(e=>e.includes('native guide card')));}
     if(check.quality.controls?.length){const id=check.quality.controls[0].id;assert.ok(analyseGuideHtml(html.replace(`id="${id}"`,'id="missing-control"'),check,sitemap).errors.some(e=>e.includes('guide control')));}
     if(check.quality.taggedLinks?.length){const attr=check.quality.taggedLinks[0].attribute;assert.ok(analyseGuideHtml(html.replace(`${attr} href=`,`data-wrong-journey href=`),check,sitemap).errors.some(e=>e.includes('town journey link')));}
     if(check.quality.noSkiPlanner){
       assert.deepEqual(analyseGuideHtml(html.replace('<body>','<body><header><a href="/ski-day-planner">Ski planner navigation</a></header>'),check,sitemap).errors,[],'Shared navigation does not imply destination-specific transport coverage.');
       assert.ok(analyseGuideHtml(html.replace('class="guide-content">','class="guide-content"><a href="/ski-day-planner">Plan this resort day</a>'),check,sitemap).errors.some(e=>e.includes('Unsupported Banff')));
     }
+    if(check.quality.type==='dining-hub'){
+      for(const target of check.quality.hubLinks){const wrong=html.replace(`href="${esc(target.href)}"`,'href="/wrong/"');assert.ok(analyseGuideHtml(wrong,check,sitemap).errors.some(e=>e.includes('scoped reviewed evening handoff')));}
+      assert.ok(analyseGuideHtml(html.replace('aria-labelledby="evening-guides-title"','aria-labelledby="wrong-section"'),check,sitemap).errors.some(e=>e.includes('scoped evening guide hub')));
+      assert.ok(analyseGuideHtml(html.replace('Compare Banff hotel bases','Book your hotel with free dining vouchers'),check,sitemap).errors.some(e=>e.includes('hub hotel comparison')));
+      assert.ok(analyseGuideHtml(html.replace('food, admission and holiday conditions','guaranteed savings and free drinks'),check,sitemap).errors.some(e=>e.includes('Unsupported hub offer/booking promise')));
+      assert.ok(analyseGuideHtml(html.replace('</body>','<p>Open 1pm to 2am daily.</p></body>'),check,sitemap).errors.some(e=>e.includes('Rose & Crown daily hours')));
+      for(const entity of ['Restaurant','LocalBusiness'])assert.ok(analyseGuideHtml(html.replace('"name":"Fixture restaurant"',`"name":"Fixture restaurant","item":{"@type":"${entity}","openingHours":"Mo-Su 13:00-02:00"}`),check,sitemap).errors.some(e=>e.includes('ItemList exceeds name/operator-link scope')));
+      assert.ok(analyseGuideHtml(html.replace('"name":"Fixture restaurant"','"name":"Fixture restaurant","openingHours":"Mo-Su 13:00-02:00"'),check,sitemap).errors.some(e=>e.includes('ItemList exceeds name/operator-link scope')));
+      assert.deepEqual(analyseGuideHtml(html.replace('</body>','<section><h2>Inherited restaurant catalogue, outside new handoff scope</h2><p>Happy hour is from 3–6.</p></section></body>'),check,sitemap).errors,[],'Scoped handoff checks do not claim a full restaurant-data source review.');
+    }
   }
   const {stdout,stderr}=await promisify(execFile)(process.execPath,['--input-type=module','-e',`globalThis.fetch=()=>{throw Error('Import attempted network')}; await import(${JSON.stringify(new URL('./verify-cycling-consent-release.mjs',import.meta.url).href)}); await import(${JSON.stringify(import.meta.url)});`],{cwd:ROOT,timeout:15000,maxBuffer:100000});
   assert.equal(stdout,'','Import must not run either CLI/self-test');assert.equal(stderr,'');
   assert.throws(()=>builtLocations('<!DOCTYPE x><urlset><url><loc>https://banffbound.com/</loc></url></urlset>','urlset'));
   assert.throws(()=>builtLocations('<urlset><url><loc>https://example.com/</loc></url></urlset>','urlset'));
-  console.log('Guide-quality offline fixtures passed: preserved193 foundation +8 bounded repairs +7full guides +2lesson/day planners +7town pages +1context-only guide =218 unique HTML routes; 59full-review registry/original publication/partial-vs-full labels/illustrative schema, full SSR cards/controls/native links/FAQ and scoped base handoffs; negative canonicals/providers/missing controls/links/labels/dates/nested text; import-safe shared engine and seven photo hashes. No network, receipt writes, Git, host calls or site build.');
+  console.log('Guide-quality offline fixtures passed: preserved193 foundation +8 bounded repairs +10full guides +2lesson/day planners +7town pages +1context-only guide +1scoped dining/evening hub =222 unique HTML routes; 62full-review registry/original publication/partial-vs-full labels/illustrative schema, full SSR cards/controls/native links/FAQ and scoped base handoffs; evening default5/3steps/native journey, dated offer permissions, no blanket hub promises; negative canonicals/providers/missing controls/links/labels/dates/nested text; import-safe shared engine and seven photo hashes. No network, receipt writes, Git, host calls or site build.');
 }
 function builtLocations(xml,kind){
   assert.ok(!/<!DOCTYPE|<!ENTITY/i.test(xml),'Built sitemap cannot declare entities');assert.ok(new RegExp(`<${kind}\\b`).test(xml),'Unexpected built sitemap type');
@@ -338,7 +417,7 @@ export async function checkBuiltDirectory(directory){
   for(const check of inventory.checks){try{const html=await readFile(path.resolve(root,'.'+check.path,'index.html'),'utf8'),result=analyseGuideHtml(html,check,sitemap);if(result.errors.length)failures.push({path:check.path,errors:result.errors});else htmlPassed++;}catch(error){failures.push({path:check.path,errors:[String(error.message??error.name)]});}}
   for(const photo of inventory.photos){try{const bytes=await readFile(path.resolve(root,'.'+photo.src)),digest=createHash('sha256').update(bytes).digest('hex');assert.equal(digest,photo.sha256);photosPassed++;}catch(error){failures.push({path:photo.src,errors:['Built photo missing or SHA256 differs']});}}
   assert.equal(await readFile(path.join(root,'build-info.json'),'utf8'),receiptText,'Local build receipt changed during HTML inspection');
-  return {passed:htmlPassed===EXPECTED_ROUTES&&photosPassed===7&&failures.length===0,mode:'read-only-built-directory',htmlRoutes:inventory.checks.length,htmlPassed,photosPassed,fullReviews:59,remainingPartialRepairs:8,sitemapUrls:sitemap.size,buildReceipt,buildReceiptStable:true,productionIdentityVerified:false,failures};
+  return {passed:htmlPassed===EXPECTED_ROUTES&&photosPassed===7&&failures.length===0,mode:'read-only-built-directory',htmlRoutes:inventory.checks.length,htmlPassed,photosPassed,fullReviews:62,remainingPartialRepairs:8,sitemapUrls:sitemap.size,buildReceipt,buildReceiptStable:true,productionIdentityVerified:false,failures};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try{if(process.argv.length===3&&process.argv[2]==='--self-test')await selfTest();else if(process.argv.length===4&&process.argv[2]==='--built-dir'){const result=await checkBuiltDirectory(process.argv[3]);console.log(JSON.stringify(result));if(!result.passed)process.exitCode=1;}else await verify(options(process.argv.slice(2)),{inventoryLoader:loadGuideInventory,htmlAnalyser:analyseGuideHtml,userAgent:'BanffBound-guide-quality-release-verification/1.0'});}

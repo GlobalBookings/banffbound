@@ -52,6 +52,10 @@ jobs:
           node scripts/check-dining-guides.mjs
           node scripts/check-cabin-planning.mjs
           node scripts/check-article-booking-context.mjs
+          node scripts/check-nightlife-guide.mjs
+          node scripts/check-live-music-guide.mjs
+          node scripts/check-drink-offer-guide.mjs
+          node scripts/check-evening-planning.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs
