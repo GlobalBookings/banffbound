@@ -1,0 +1,186 @@
+{
+  "checkedAtUTC": "2026-10-29T20:25:10.768242+00:00",
+  "sourceCommit": "9777309ef97905e06c16c9b3ce30855abe9e2e97",
+  "integratedMain": "ec7aa1e205b6d6daccd18967cac2c4f5344f7a58",
+  "cleanArchive": true,
+  "dependencyRuntime": "Existing local node_modules reused by symlink; GitHub CI separately runs npm ci.",
+  "buildCommand": "npm run build",
+  "buildExitCode": 0,
+  "buildInfo": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T20:24:06.968Z",
+    "sourceRevision": null,
+    "sourceFingerprint": "61fe146c9af59b38c9c82b699dabd035c5362d972a343b64812dd823f86dab71"
+  },
+  "revisionNote": "Git archive contains no .git, so its public sourceRevision is null. Production must independently show the merged commit and this exact selected-source fingerprint.",
+  "offlineChecks": [
+    {
+      "path": "scripts/check-trip-planner.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-day-ideas.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-directory.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-production-redirects.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-activities.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paddling.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paid-landings.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-banff-hotel-landing-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-louise-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-winter-activity-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cycling-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-internal-linker.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-consent.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-embeds.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-safety.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parking-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-build-provenance.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-rental-planning-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-weather-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-snow-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-source-freshness.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-road-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-events.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-navigation.mjs",
+      "passed": true
+    }
+  ],
+  "verifierSelfTest": "passed, 193-route inventory and seven photo hashes",
+  "strictAudit": {
+    "pages": 605,
+    "indexable_documents": 519,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "sitemapEntries": 517,
+  "scopedReviewCounts": {
+    "blogGuides": 52,
+    "canonicalBlogGuides": 295,
+    "eligibleHotelProfiles": 52,
+    "legacyNoindexHotelProfiles": 43,
+    "cyclingRoutes": 9,
+    "paidLandingPages": 3
+  },
+  "browserPreview": {
+    "origin": "http://127.0.0.1:4325",
+    "defaultOptionalProviderScriptElements": 0,
+    "lakeLouiseWinterCabinMatches": [
+      "baker-creek-by-basecamp"
+    ],
+    "correctedScenicCaption": true,
+    "heroImageLoaded": true,
+    "earlierWorkspaceChecks": {
+      "banffCookingMatches": 2,
+      "lakeLouiseEmptyAndReset": [
+        0,
+        5
+      ],
+      "activityFormatAndReset": true,
+      "mobileViewport": 390,
+      "mobileDocumentWidths": [
+        390,
+        390,
+        390
+      ],
+      "nativeAffiliateNavigationRetained": true,
+      "noBookingClickUsedToManufactureConversion": true
+    },
+    "consentObservations": "fresh/reject/reload off; affiliate-only real widget mount; revoke reload removes owned scripts/targets/frames; analytics-only excludes AdSense/affiliate frames",
+    "limit": "DOM/render and actual-client checks, not a complete network trace or conversion-delivery guarantee"
+  },
+  "commercialBoundary": {
+    "userChoice": "Affiliate bookings first",
+    "adCampaignsLaunched": false,
+    "paidGuideCheckoutAdded": false,
+    "purchaseOrRevenueEventInvented": false,
+    "microsoftUetIdInvented": false,
+    "accountSpecificPpcPermissionVerified": false,
+    "profitOrSalesClaimed": false
+  },
+  "followUp": "research/internal-linker-repair-2026-10-29.md; research/paid-search-launch-plan-2026-10-29.json; broader legacy review remains active"
+}

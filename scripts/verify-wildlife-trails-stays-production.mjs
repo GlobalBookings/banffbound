@@ -105,6 +105,7 @@ function analyseHtml(html, check, sitemap, headerRobots = '') {
       });
     }
   }
+  for (const expected of check.requiredMarkup ?? []) if (!html.includes(expected)) errors.push('Missing required optional-map markup');
   for (const expected of check.links ?? []) if (!facts.links.includes(expected)) errors.push(`Missing visible source/photo link: ${expected}`);
   return { canonical: facts.canonicals.length === 1 ? facts.canonicals[0] : null, h1: facts.h1.length, noindex, inSitemap, ...(faqQuestions !== undefined ? { faqQuestions } : {}), markers, errors };
 }
@@ -150,7 +151,7 @@ async function loadInventory() {
     { path: '/wildlife-safety/', kind: 'wildlife', faqs: data.wildlifeSafetyFaqs, markers: { sourceReview: 'Official guidance reviewed', reportContact: '403-762-1470', emergencyContact: '403-762-4506' } },
     { path: '/wildlife-calendar/', kind: 'wildlife', faqs: data.wildlifeCalendarFaqs, markers: { sourceReview: 'Official sources reviewed', preparationScope: 'This calendar contains no live animal locations or sighting forecasts.' } },
     { path: '/bear-spray/', kind: 'wildlife', faqs: data.bearSprayFaqs, markers: { sourceReview: 'Official rules and direct provider pages reviewed', provider: 'Ultimate Sports', poisonAdvice: '1-844-764-7669' } },
-    { path: '/trail-map/', kind: 'directory', markers: { locationScope: 'Indicative listing locations only.', photoScope: 'Illustrative stock landscape; not a verified trail photograph.' } },
+    { path: '/trail-map/', kind: 'directory', markers: { planningScope: 'Planning information, not current trail status.', photoScope: 'Illustrative stock landscape; not a verified trail photograph.' }, requiredMarkup: ['Indicative listing locations only.'] },
     { path: '/hotel-directory/', kind: 'directory', markers: { sourceScope: 'selected-fact reviews', legacyScope: 'legacy leads awaiting source review' } },
     { path: '/tools/', kind: 'directory', markers: { wildlifeScope: 'Compare public visitor areas, habitat, species and seasonal access.' } },
   ].map(check => ({ noindex: false, ...check }));
@@ -182,7 +183,7 @@ async function verify(config) {
     if (remaining <= 0) throw Error('Global verification time limit reached');
     const url = new URL(pathname, ORIGIN);
     assert.equal(url.origin, ORIGIN); assert.ok(!url.search && !url.hash && !url.username && !url.password);
-    url.searchParams.set('__release_verify', `${config.revision.slice(0, 12)}-${started}`);
+    url.searchParams.set('__release_verify', `${config.revision.slice(0, 12)}-${started}-${report.requests}`);
     report.requests++;
     const response = await fetch(url, { method: 'GET', redirect: 'manual', signal: AbortSignal.timeout(Math.min(REQUEST_TIMEOUT_MS, remaining)), headers: { 'Cache-Control': 'no-cache', 'User-Agent': 'BanffBound-public-release-verification/1.0' } });
     if (response.status !== 200) { await response.body?.cancel(); throw Error(`HTTP ${response.status}; expected 200 without redirect`); }
@@ -248,6 +249,7 @@ async function selfTest() {
   const fixture = `<html><head><link href="${ORIGIN}/wildlife/" rel="canonical"><script type="application/ld+json">${JSON.stringify(schema)}</script></head><body><h1>Wildlife &amp; space</h1><p>Reviewed 2026-10-29</p><details><summary>Who &amp; where?</summary><p>A source-based answer.</p></details></body></html>`;
   const sitemap = new Set([`${ORIGIN}/wildlife/`]);
   assert.deepEqual(analyseHtml(fixture, check, sitemap).errors, []);
+  assert.ok(analyseHtml(fixture, { ...check, requiredMarkup: ['Absent optional-map note'] }, sitemap).errors.some(error => error.includes('optional-map markup')));
   assert.ok(analyseHtml(fixture, check, sitemap, 'noindex').errors.length > 0);
   assert.ok(analyseHtml(fixture.replace('<details>', '<div hidden><details>').replace('</details>', '</details></div>'), check, sitemap).errors.some(error => error.includes('Visible FAQ')));
   assert.ok(analyseHtml(fixture.replace('<p>A source-based answer.</p>', '<p>A different answer.</p>'), check, sitemap).errors.some(error => error.includes('Visible FAQ')));

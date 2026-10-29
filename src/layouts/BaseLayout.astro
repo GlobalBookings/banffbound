@@ -1,5 +1,7 @@
 ---
 import Header from '../components/Header.astro';
+import BookingHeader from '../components/BookingHeader.astro';
+import BookingFooter from '../components/BookingFooter.astro';
 import Footer from '../components/Footer.astro';
 import ExploreMoreBar from '../components/ExploreMoreBar.astro';
 import '../styles/global.css';
@@ -11,9 +13,10 @@ interface Props {
   canonicalUrl?: string;
   lastUpdated?: string;
   noindex?: boolean;
+  focusedLanding?: boolean;
 }
 
-const { title, description = 'Plan Banff, Lake Louise and the nearby towns with practical travel guides, winter adventures, hotel comparisons and free interactive planning tools.', image = 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80', canonicalUrl, lastUpdated, noindex = false } = Astro.props;
+const { title, description = 'Plan Banff, Lake Louise and the nearby towns with practical travel guides, winter adventures, hotel comparisons and free interactive planning tools.', image = 'https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=80', canonicalUrl, lastUpdated, noindex = false, focusedLanding = false } = Astro.props;
 const pageTitle = title === 'Home' ? 'BanffBound — Banff National Park Trip Planner 2026 | Trails, Hotels & Local Tips' : `${title} | BanffBound`;
 const canonical = new URL(canonicalUrl || Astro.url.pathname, Astro.site || 'https://banffbound.com');
 canonical.search = '';
@@ -91,76 +94,39 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
     })} />
 
   </head>
-  <body data-pagefind-ignore={noindex ? 'all' : undefined}>
+  <body data-paid-landing={focusedLanding ? 'true' : undefined} data-pagefind-ignore={noindex ? 'all' : undefined}>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <Header />
-    <main data-pagefind-body id="main-content" role="main" style="margin-top: 100px;">
+    {focusedLanding ? <BookingHeader /> : <Header />}
+    <main data-pagefind-body id="main-content" role="main" tabindex="-1" style={`margin-top: ${focusedLanding ? 68 : 100}px;`}>
       <slot />
     </main>
-    <Footer />
-    <ExploreMoreBar />
+    {focusedLanding ? <BookingFooter /> : <Footer />}
+    {!focusedLanding && <ExploreMoreBar />}
 
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
     </button>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent" style="display:none;">
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Privacy choices" aria-describedby="cookie-description" hidden>
       <div class="cookie-banner-inner">
-        <p class="cookie-banner-text">We use cookies for analytics, ads, and affiliate tracking to improve your experience. <a href="/privacy">Learn more</a></p>
+        <p id="cookie-description" class="cookie-banner-text">Choose whether to load optional analytics, advertising and booking widgets. You can browse and use booking links without them. <a href="/privacy">Privacy details</a></p>
         <div class="cookie-banner-actions">
-          <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accept</button>
-          <button id="cookie-manage" class="cookie-btn cookie-btn-manage">Manage Preferences</button>
+          <button type="button" id="cookie-accept" class="cookie-btn cookie-btn-accept">Accept all</button>
+          <button type="button" id="cookie-reject" class="cookie-btn cookie-btn-manage">Reject optional</button>
+          <button type="button" id="cookie-manage" class="cookie-btn cookie-btn-manage" aria-expanded="false" aria-controls="cookie-preferences">Manage preferences</button>
         </div>
       </div>
-      <div id="cookie-preferences" class="cookie-preferences" style="display:none;">
-        <div class="cookie-pref-row">
-          <label><input type="checkbox" checked disabled /> <strong>Essential</strong> — Required for the site to function</label>
-        </div>
-        <div class="cookie-pref-row">
-          <label><input type="checkbox" id="pref-analytics" checked /> <strong>Analytics</strong> — Google Analytics to improve content</label>
-        </div>
-        <div class="cookie-pref-row">
-          <label><input type="checkbox" id="pref-advertising" checked /> <strong>Advertising</strong> — Google Ads &amp; AdSense</label>
-        </div>
-        <div class="cookie-pref-row">
-          <label><input type="checkbox" id="pref-affiliate" checked /> <strong>Affiliate</strong> — Expedia, GetYourGuide, VRBO tracking</label>
-        </div>
-        <button id="cookie-save" class="cookie-btn cookie-btn-accept">Save Preferences</button>
+      <div id="cookie-preferences" class="cookie-preferences" hidden>
+        <div class="cookie-pref-row"><label><input type="checkbox" checked disabled /> <span><strong>Essential</strong> — Saves these choices and supports site functions.</span></label></div>
+        <div class="cookie-pref-row"><label><input type="checkbox" id="pref-analytics" /> <span><strong>Analytics</strong> — Google Analytics usage measurement.</span></label></div>
+        <div class="cookie-pref-row"><label><input type="checkbox" id="pref-advertising" /> <span><strong>Advertising</strong> — Google Ads measurement and AdSense.</span></label></div>
+        <div class="cookie-pref-row"><label><input type="checkbox" id="pref-affiliate" /> <span><strong>Booking widgets</strong> — Embedded Expedia and GetYourGuide content.</span></label></div>
+        <p class="cookie-pref-note">Turning a service off reloads this page to stop its code. Ordinary links still open the booking provider, where its own privacy choices apply.</p>
+        <button type="button" id="cookie-save" class="cookie-btn cookie-btn-accept">Save preferences</button>
       </div>
+      <div class="cookie-banner-status"><p id="cookie-storage-status" role="status" aria-live="polite"></p><button type="button" id="cookie-close" class="cookie-btn cookie-btn-manage" hidden>Close choices</button></div>
     </div>
-
-    <script is:inline>
-      (function() {
-        var consent = localStorage.getItem('bb-cookie-consent');
-        if (!consent) {
-          document.getElementById('cookie-banner').style.display = 'block';
-        }
-
-        document.getElementById('cookie-accept').addEventListener('click', function() {
-          localStorage.setItem('bb-cookie-consent', JSON.stringify({
-            essential: true, analytics: true, advertising: true, affiliate: true, timestamp: Date.now()
-          }));
-          document.getElementById('cookie-banner').style.display = 'none';
-        });
-
-        document.getElementById('cookie-manage').addEventListener('click', function() {
-          var prefs = document.getElementById('cookie-preferences');
-          prefs.style.display = prefs.style.display === 'none' ? 'block' : 'none';
-        });
-
-        document.getElementById('cookie-save').addEventListener('click', function() {
-          localStorage.setItem('bb-cookie-consent', JSON.stringify({
-            essential: true,
-            analytics: document.getElementById('pref-analytics').checked,
-            advertising: document.getElementById('pref-advertising').checked,
-            affiliate: document.getElementById('pref-affiliate').checked,
-            timestamp: Date.now()
-          }));
-          document.getElementById('cookie-banner').style.display = 'none';
-        });
-      })();
-    </script>
+    <noscript><p class="consent-noscript">Optional analytics, advertising and booking widgets are off when JavaScript is disabled. Ordinary booking links remain available.</p></noscript>
 
     <script is:inline>
       (function() {
@@ -180,7 +146,14 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
     </script>
 
     <style is:global>
+      .cookie-banner[hidden], .cookie-preferences[hidden], .cookie-banner button[hidden] { display: none !important; }
+      .cookie-banner-status { max-width: var(--max-width, 1200px); margin: 0 auto; padding: 0 1.5rem .75rem; }
+      .cookie-banner-status:has(p:empty):has(button[hidden]) { display: none; }
+      .cookie-banner-status p { font-size: .83rem; line-height: 1.5; }
+      .cookie-pref-note { font-size: .8rem; line-height: 1.6; margin: .8rem 0; }
+      .consent-noscript { padding: 1rem; text-align: center; font-size: .8rem; }
       .cookie-banner {
+        max-height: 90vh; overflow: auto;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -216,7 +189,7 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
       .cookie-banner-actions {
         display: flex;
         gap: 0.5rem;
-        flex-shrink: 0;
+        flex-shrink: 0; flex-wrap: wrap;
       }
 
       .cookie-btn {
@@ -353,28 +326,12 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
       }
     </style>
 
-    <!-- Analytics (deferred to avoid blocking first paint) -->
-    <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9022308520000198" crossorigin="anonymous"></script>
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-2DP7J42ZW0"></script>
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-17246982814"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2DP7J42ZW0');
-      gtag('config', 'AW-17246982814');
-
-      function gtag_report_conversion() {
-        // Record the existing click conversion without controlling link navigation.
-        try {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-17246982814/8ptcCPuTheAaEJ6lgKBA'
-          });
-        } catch (_) { /* Analytics availability does not govern provider access. */ }
-        return true;
-      }
+    <script>
+      import { initConsent } from '../scripts/consent.js';
+      import { initTracking } from '../scripts/tracking.js';
+      initConsent();
+      initTracking();
     </script>
-    <script src="../scripts/tracking.js"></script>
     <script is:inline>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(() => {});
