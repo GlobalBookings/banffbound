@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WinterStart from '../components/WinterStart.astro';
-import Parser from 'rss-parser';
+import townSnapshot from '../data/live/town-events.json';
+import { TOWN_FEEDS,townFeedView,mountainTime } from '../data/townFeedModel.mjs';
 import { blogPosts } from '../data/blogPosts';
 import { dataFreshness } from '../utils/dataFreshness';
 
@@ -21,31 +22,8 @@ const trailsAvailable = trailReportsRecent && trailFreshness.status === 'fresh' 
 
 const featuredPosts = ['banff-heli-skiing', 'banff-snowshoeing-guide', 'banff-winter-driving', 'banff-ski-in-ski-out'].map(slug => blogPosts.find(post => post.slug === slug)).filter(Boolean);
 
-const parser = new Parser({
-  customFields: {
-    item: [
-      ['calendarEvent:EventDates', 'eventDates'],
-    ],
-  },
-});
-
-let upcomingEvents: any[] = [];
-try {
-  const feed = await parser.parseURL('https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25');
-  upcomingEvents = (feed.items || []).slice(0, 3).map(item => {
-    const desc = (item.description || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-    const parts = desc.split('Description:');
-    const clean = parts.length > 1 ? parts[1].trim() : desc;
-    return {
-      title: item.title || '',
-      link: item.link || '',
-      dates: item.eventDates?.trim() || '',
-      description: clean.slice(0, 150) + (clean.length > 150 ? '...' : ''),
-    };
-  });
-} catch (e) {
-  // Events fetch failed silently
-}
+const townCalendar = townFeedView(townSnapshot,'events');
+const upcomingEvents = townCalendar.items.slice(0,3);
 
 const categories = [
   {
@@ -249,17 +227,17 @@ const highlights = [
   </section>
 
   <!-- Upcoming Events -->
-  {upcomingEvents.length > 0 && (
-    <section class="section" style="background: var(--color-bg-alt);">
+    <section class="section" style="background: var(--color-bg-alt);" data-town-panel data-town-kind="events" data-town-expires={townCalendar.expiresAt} data-town-retrieved={townCalendar.retrievedAt}>
       <div class="container">
         <div class="section-header">
           <span class="badge">What's Happening</span>
-          <h2>Upcoming Events</h2>
-          <p>Don't miss what's happening in Banff right now.</p>
+          <h2>Town calendar dates</h2>
+          <p>Dated listings from the Town's Events category. Confirm the organiser's details before making the journey.</p>
         </div>
-        <div class="grid grid-3">
+        <p style="font-size:.85rem;color:var(--color-text-light);margin-bottom:1rem">Snapshot retrieved: {mountainTime(townCalendar.retrievedAt)}. {townCalendar.message}</p>
+        {upcomingEvents.length > 0 && <div class="grid grid-3" data-town-results>
           {upcomingEvents.map(event => (
-            <a href={event.link} target="_blank" rel="noopener" class="event-preview card">
+            <a href={event.link} target="_blank" rel="noopener" class="event-preview card" data-town-event data-start={event.startDate} data-end={event.endDate}>
               <div class="card-body">
                 <span class="event-dates">&#128197; {event.dates}</span>
                 <h3>{event.title}</h3>
@@ -268,13 +246,20 @@ const highlights = [
               </div>
             </a>
           ))}
-        </div>
+        </div>}
+        <p data-town-no-matches hidden>No remaining event dates appear in these previews. Open the calendar for more listings.</p>
+        <p data-town-stale hidden={townCalendar.status !== 'stale'}>The local calendar snapshot is unavailable, expired or cannot be checked here. Use the <a href={TOWN_FEEDS.events.pageUrl} target="_blank" rel="noopener">official Town calendar</a> for current dates; this does not mean no events are scheduled.</p>
+        <noscript><style is:inline>[data-town-panel] [data-town-results] { display:none !important; } [data-town-panel][data-town-kind] [data-town-stale][hidden] { display:block !important; }</style><p>Feed previews are hidden without JavaScript because their expiry cannot be checked. Use the official calendar or the winter festival planning guides.</p></noscript>
         <div style="text-align: center; margin-top: 2rem;">
-          <a href="/events" class="btn btn-outline">View All Events &rarr;</a>
+          <a href="/events" class="btn btn-outline">Events & Winter Festivals &rarr;</a>
+          <a href={TOWN_FEEDS.events.pageUrl} target="_blank" rel="noopener" class="btn btn-outline">Official Town Calendar &rarr;</a>
         </div>
       </div>
     </section>
-  )}
+  <script>
+    import { installTownFeedPanels } from '../utils/townEvents';
+    installTownFeedPanels();
+  </script>
 
   <!-- Book Tours CTA -->
   <section class="section">

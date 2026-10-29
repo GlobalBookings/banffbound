@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "provider": "Town of Banff RSS",
+  "retrievedAt": "2026-10-29T05:58:35.701Z",
+  "feeds": {
+    "events": {
+      "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
+      "pageUrl": "https://banff.ca/Calendar.aspx",
+      "retrievedAt": "2026-10-29T05:58:35.696Z",
+      "sourceUpdatedAt": null,
+      "sourceUpdatedAtText": "Wed, 28 Oct 2026 23:58:34 -0700",
+      "sourceTimeIssue": "Source feed clock is later than retrieval; its update time is unverified.",
+      "status": "available",
+      "rejectedCount": 0,
+      "items": [
+        {
+          "title": "Banff Halloween: The Great Pumpkin Walk & Community Campfire",
+          "link": "https://banff.ca/Calendar.aspx?EID=33813",
+          "description": "Banff Residents, pick up a free pumpkin and carve it for Banff's glowing autumn tradition, The Great Pumpkin Walk. After sunset, we’ll light up the pumpkins for a beautiful walk from Central Park to the Recreation Grounds, where we'll enjoy live local music, and sip hot chocolate around the fire.",
+          "publishedAt": "2026-10-16T18:31:44.000Z",
+          "startDate": "2026-10-30",
+          "endDate": "2026-10-30",
+          "dates": "October 30, 2026",
+          "times": "05:30 PM - 08:00 PM",
+          "location": "Banff, AB T1L 1A1"
+        },
+        {
+          "title": "A Brother’s Fountain",
+          "link": "https://banff.ca/Calendar.aspx?EID=35412",
+          "description": "After the Banff Centre Mountain Film Festival's keynote event Sarah Hueniken, Ines Papert – and Films, on November 6 at 7:30 p.m., keep the party going in CLVB ’33 with a special guest performance from Colorado's favourite \"campfire folk\" group A Brother’s Fountain.",
+          "publishedAt": "2026-10-23T21:11:32.000Z",
+          "startDate": "2026-11-06",
+          "endDate": "2026-11-06",
+          "dates": "November 6, 2026",
+          "times": "10:45 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Banff Winterstart Night Race",
+          "link": "https://banff.ca/Calendar.aspx?EID=35410",
+          "description": "Join a moving river of light for five unforgettable miles through Banff. Feel the energy of the start, settle into your stride beneath the Rockies, and carry that momentum all the way to a warm, welcoming finish at the Rundlestone Lodge.",
+          "publishedAt": "2026-10-22T22:12:22.000Z",
+          "startDate": "2026-11-07",
+          "endDate": "2026-11-07",
+          "dates": "November 7, 2026",
+          "times": "07:00 PM - 11:59 PM",
+          "location": "Banff, AB T1L 1A1"
+        },
+        {
+          "title": "Visual Arts Open Lecture Series: Deanna Bowen",
+          "link": "https://banff.ca/Calendar.aspx?EID=35413",
+          "description": "Join us for an afternoon Visual Arts lecture with Deanna Bowen, a Montreal-based interdisciplinary artist whose practice includes films, video installations, performances, drawing, sculpture and photography.",
+          "publishedAt": "2026-10-23T21:14:05.000Z",
+          "startDate": "2026-11-09",
+          "endDate": "2026-11-09",
+          "dates": "November 9, 2026",
+          "times": "04:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Visual Arts Open Lecture Series: Tania Willard",
+          "link": "https://banff.ca/Calendar.aspx?EID=35414",
+          "description": "Join us for an afternoon Visual Arts lecture with Tania Willard, a mixed Secwépemc and settler artist whose research intersects with land-based art practices.",
+          "publishedAt": "2026-10-23T21:17:25.000Z",
+          "startDate": "2026-11-10",
+          "endDate": "2026-11-10",
+          "dates": "November 10, 2026",
+          "times": "04:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Visual Arts Open Lecture Series: Tarah Hogue",
+          "link": "https://banff.ca/Calendar.aspx?EID=35417",
+          "description": "Join Banff Centre for an afternoon Visual Arts lecture with writer and curator Tarah Hogue, based in Treaty 6 and 7 territories and the Métis homeland.",
+          "publishedAt": "2026-10-23T21:28:40.000Z",
+          "startDate": "2026-11-11",
+          "endDate": "2026-11-11",
+          "dates": "November 11, 2026",
+          "times": "04:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        }
+      ]
+    },
+    "news": {
+      "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
+      "pageUrl": "https://banff.ca/CivicAlerts.aspx",
+      "retrievedAt": "2026-10-29T05:58:35.596Z",
+      "sourceUpdatedAt": null,
+      "sourceUpdatedAtText": "Wed, 28 Oct 2026 23:58:34 -0700",
+      "sourceTimeIssue": "Source feed clock is later than retrieval; its update time is unverified.",
+      "status": "available",
+      "rejectedCount": 0,
+      "items": [
+        {
+          "title": "Banff residents and businesses can now recycle more",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1931",
+          "description": "Plastic bags, styrofoam, candy wrappers, coffee cups among materials that can now be diverted from landfill!",
+          "publishedAt": "2026-10-28T22:50:22.000Z"
+        },
+        {
+          "title": "New drop-in recreation sessions offer more ways to use your Pauw Pass",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1926",
+          "description": "From badminton to roller disco, and soccer to pickleball, there is something for everyone in the Town of Banff’s updated drop-in recreation schedule.",
+          "publishedAt": "2026-10-28T22:36:00.000Z"
+        },
+        {
+          "title": "Banff Winterstart Night Run — November 7",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1930",
+          "description": "On Saturday, November 7, lace up. Switch on your headlamp. Run beneath the Rockies.",
+          "publishedAt": "2026-10-22T22:07:00.000Z"
+        },
+        {
+          "title": "WinterStart Race Traffic Info and Road Closures — Nov. 7",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1929",
+          "description": "On Saturday, November 7, 2026, Banff hosts the Winterstart Night Run. Traffic will experience detours from 6 p.m. – 9:30 p.m.",
+          "publishedAt": "2026-10-22T21:47:53.000Z"
+        },
+        {
+          "title": "Banff Halloween: The Great Pumpkin Walk & Community Campfire — October 30",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1912",
+          "description": "Banff residents, pick up a free pumpkin and carve it for Banff's glowing autumn tradition, The Great Pumpkin Walk.",
+          "publishedAt": "2026-10-16T18:36:00.000Z"
+        },
+        {
+          "title": "Final week to join Banff decision-makers",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1925",
+          "description": "The Town is seeking Banff residents for roles on boards, commissions and committees that make decisions about the future of the community on key topics such as affordable housing, commercial/residential development, policing, public art, community grants",
+          "publishedAt": "2026-10-04T20:57:30.000Z"
+        },
+        {
+          "title": "Banff opens new park at iconic welcome sign",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1922",
+          "description": "Banff celebrates new park and reduction in traffic congestion this summer",
+          "publishedAt": "2026-10-01T20:21:00.000Z"
+        }
+      ]
+    }
+  }
+}

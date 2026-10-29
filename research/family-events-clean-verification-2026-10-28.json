@@ -1,0 +1,64 @@
+{
+  "verifiedAt": "2026-10-29T06:19:27.757824+00:00",
+  "codeRevision": "144e58abaa3546a5d88daec67fcf513865086c52",
+  "cleanArchive": "/tmp/banffbound-family-final-f9hfsz5b",
+  "build": "npm run build: passed with real public-source retrieval",
+  "audit": {
+    "pages": 601,
+    "indexable_documents": 559,
+    "counts": {},
+    "winter_counts": {}
+  },
+  "offlineChecks": {
+    "trip-planner": "passed",
+    "day-ideas": "passed",
+    "weather-source": "passed",
+    "snow-source": "passed",
+    "source-freshness": "passed",
+    "road-source": "passed",
+    "town-events": "passed",
+    "affiliate-navigation": "passed"
+  },
+  "browserChecks": {
+    "family": "Combined Under4/winter/snow gives Fenlands and lesson; active yields empty; reset restores9; clean canonical.",
+    "dog": "LakeLouise/winter gives1 planning card; large-dog transport helper shows carrier limit.",
+    "events": "Winterstart search gives1; invalid range retains results with message; reset restores6. Final clean-build event search passes; compiled noJS rule hides feeds with linked fallback.",
+    "phone": "390px family/dog/events; scrollWidth equals390.",
+    "wellness": "Reviewed retreat title/body and canonical.",
+    "roads": "Six unavailable road cards and direct511/DriveBC/Parks links; no retrieval timestamp invented."
+  },
+  "independentReview": [
+    "Affiliate native targets and tracking identifiers preserved; supplemental36 scenarios passed.",
+    "Event noJS expiry and future stored publication issues fixed with regressions before final build.",
+    "Road independent section/retrieval expiry and noJS display approved."
+  ],
+  "sourceResults": {
+    "townFeeds": {
+      "events": {
+        "status": "available",
+        "items": 6,
+        "retrievedAt": "2026-10-29T06:17:55.782Z",
+        "sourceClockVerified": false
+      },
+      "news": {
+        "status": "available",
+        "items": 7,
+        "retrievedAt": "2026-10-29T06:17:55.710Z",
+        "sourceClockVerified": false
+      }
+    },
+    "roads": {
+      "schemaVersion": 2,
+      "availability": "unavailable",
+      "retrievedAt": null,
+      "reason": "missing_api_key"
+    },
+    "notes": [
+      "A completed fetcher invocation is not proof every source is available.",
+      "Road key missing is an explicit unavailable outcome; no account/key/hosting setting changed.",
+      "Existing five tracked live snapshots and unrelated workspace changes remain unchanged.",
+      "Current Search Console evidence is local and ignored; no raw analytics published."
+    ]
+  },
+  "deployment": "Pending PR CI, merge and host/public verification."
+}

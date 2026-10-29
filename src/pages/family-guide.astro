@@ -1,317 +1,72 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { hotels } from '../data/hotels';
+
+const ages = [{id:'young',name:'Under 4'},{id:'kids',name:'4–7'},{id:'older',name:'8–11'},{id:'teens',name:'12–17'}];
+const allAges = ages.map(age => age.id);
+const ideas = [
+  { id:'gondola', name:'Banff Gondola: summit building and views', ages:allAges, seasons:['winter','summer'], styles:['sightseeing'], place:'Above Banff town', text:'A sightseeing plan with indoor summit space and a separate outdoor boardwalk. Choose it around your group’s comfort with heights, weather and the actual operating report.', eligibility:'Check a ticket for every traveller and the current child-product terms. A seasonal promotion is not a universal free-entry rule.', access:'The operator does not recommend strollers. Summit-building levels have elevator access, but the outdoor boardwalk has stairs and is not wheelchair accessible. Confirm your specific mobility device before booking.', source:'https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/', link:'/blog/banff-gondola-guide' },
+  { id:'cave-basin', name:'Cave and Basin: exhibits and history', ages:allAges, seasons:['winter','summer'], styles:['indoor','sightseeing'], place:'Banff · Cave Avenue', text:'Interactive exhibits and short films offer a different pace from a trail day. This is a historic-site visit; a swim or soak needs a separate facility and operation check.', eligibility:'When reviewed on 28 October 2026, the published winter schedule was Thursday–Monday, with a 14–17 December 2026 closure. Check your actual day and any program booking.', access:'Parks Canada lists accessible services. Ask staff about the cave, interior route, stroller or mobility device, and the outdoor boardwalk rather than assuming every part has the same access.', source:'https://parks.canada.ca/lhn-nhs/ab/caveandbasin', link:'/wellness' },
+  { id:'elevation-swim', name:'Elevation Place: choose a swim session', ages:allAges, seasons:['winter','summer'], styles:['indoor'], place:'Canmore · separate journey from Banff', text:'Choose the scheduled Public Swim or Family Swim for the facilities you want. Family Swim does not include the lap pool or waterslide.', eligibility:'The current general rule for children 7 and under is a caregiver aged 13+ within 1 metre, with one caregiver per four children. Ask the facility about swim-test exceptions and the rules for your session.', access:'Confirm changing facilities, accessible entry and the specific pool you need. A building opening time is not a guarantee of a public-swim session.', source:'https://www.canmore.ca/your-community/recreation/indoor-recreation/aquatics', link:'/towns/canmore' },
+  { id:'fenlands-skate', name:'The Fenlands: a scheduled public skate', ages:allAges, seasons:['winter'], styles:['snow','indoor'], place:'Banff · Norquay Road', text:'Look for a public session that fits the family, then check equipment and supervision. The Town lists seasonal ice rinks and other recreation facilities here; this is not a swimming-pool recommendation.', eligibility:'Read the session’s age, supervision and equipment rules. Confirm skate rentals and any helmet requirements before setting out.', access:'Ask about the arrival route, changing facilities and any adaptive skating arrangements. Outdoor ice has its own operating status.', source:'https://www.banff.ca/132/Fenlands-Banff-Recreation-Centre', link:'/winter' },
+  { id:'first-lesson', name:'An age-appropriate ski or snowboard lesson', ages:allAges, seasons:['winter'], styles:['snow'], place:'Your chosen resort · confirm the whole connection', text:'Ask the snow school for the correct age, discipline and first-time level. A lesson-focused day can include fitting, a warm break and an early return.', eligibility:'Minimum ages and child programs vary by resort and product. Confirm lesson, ticket access, rentals, helmet, supervision, lunch and collection separately. An age-filter match is not enrolment eligibility.', access:'Check the meeting point, fitting time, accessible support and transfer. Sunshine adds the base-to-village gondola. Your instructor should decide where to practise next.', source:'https://banffnorquay.com/snow-school/first-time-ski-snowboard/', link:'/learn-to-ski' },
+  { id:'tubing', name:'Norquay tubing: check age and height together', ages:['kids','older','teens'], seasons:['winter'], styles:['snow'], place:'Mt. Norquay · above Banff', text:'A booked tubing session is different from an informal sledding outing. Check the current schedule and session rules before committing the group.', eligibility:'The operator currently requires a minimum age of 4 AND height of 42 inches (about 107 cm). Reconfirm the requirement and supervision for the selected session.', access:'Ask about the journey from arrival to the lanes, loading, footwear and any support needs. The age filter does not measure a child or confirm participation.', source:'https://banffnorquay.com/tubing/', link:'/blog/mt-norquay-guide' },
+  { id:'short-walk', name:'A short town walk with a planned turnaround', ages:allAges, seasons:['winter','summer'], styles:['walk'], place:'Banff · choose the actual open section', text:'Start with a route your least-experienced traveller can manage, a warm-up stop and a simple return. Distance alone does not establish whether a child, stroller or mobility aid can use it.', eligibility:'Check the Town and Parks reports. The Bow Falls clifftop section is closed in winter; do not treat the whole approach as a flat, paved, year-round stroller route.', access:'Confirm the exact surface, steps and snow clearance. Ice cleats or a carrier do not make a closed or avalanche-exposed route appropriate.', source:'https://www.banff.ca/654/Bow-Falls-Trail', link:'/conditions' },
+  { id:'cruise', name:'Lake Minnewanka: a seasonal cruise', ages:allAges, seasons:['summer'], styles:['sightseeing'], place:'Lake Minnewanka · separate transfer', text:'Compare the actual cruise product, its operating dates and the transfer. Choose a product suitable for the family rather than assuming every specialty cruise has the same eligibility.', eligibility:'Confirm all passengers, check-in, weather policies and the selected product. Wildlife sightings are not guaranteed.', access:'Strollers cannot go aboard under the published policy. Wheelchair access is on the back deck of most boats, with no accessible interior; arrange needs directly with the operator.', source:'https://www.banffjaspercollection.com/attractions/lake-minnewanka-cruise/faqs/', link:'/towns/banff' },
+  { id:'via-ferrata', name:'Norquay via ferrata: a specific guided summer product', ages:['teens'], seasons:['summer'], styles:['active'], place:'Mt. Norquay · guided mountain activity', text:'This is a guided climbing activity, with route-specific eligibility and a seasonal operating calendar. Choose it because the individual participant wants it and the operator confirms the fit.', eligibility:'Explorer and Ridgewalker are 12+; Alpinist, Skyline and Summiteer are 14+. The published weight range is 40–120 kg for all routes. Confirm the current route, waiver and other requirements.', access:'This is not a stroller or step-free outing. Tell the operator about any access or support needs; an age match does not establish fitness, comfort or admission.', source:'https://banffnorquay.com/via-ferrata/', link:'/summer' },
+];
+const rooms = [
+  {slug:'moose-hotel-suites',note:'Compare hotel rooms with suites and their kitchen nooks. Ask for the actual bed layout, cot availability and child pool rules; a kitchen nook is not a full cooking kitchen.'},
+  {slug:'tunnel-mountain-resort',note:'Compare the condo, cabin and suite category for beds, stairs and cooking equipment. Full kitchens belong to selected categories; confirm the hill and your bus connection.'},
+  {slug:'lake-louise-inn',note:'Check the particular building and room. Some accommodation is in walk-up buildings without elevators; the village is separate from the lake and ski resort.'},
+].map(room => {const hotel=hotels.find(hotel=>hotel.slug===room.slug);if(!hotel)throw new Error(`Missing family hotel: ${room.slug}`);return {...room,hotel};});
+const checks = ['Exact product, date and tickets for every traveller confirmed','Age, height, weight and supervision requirements checked where applicable','Stroller, mobility device and any support needs discussed with the operator','Outbound and final return transport, equipment and child arrangements confirmed','Food, toilets, medication, dry layers and a warm-break plan arranged','Current weather, operating report, trail status and closures checked','Room beds, stairs, cot request and any pet arrangements confirmed'];
+const faqs = [
+  {q:'Does an age-group match mean my child can take part?',a:'No. The filters organise ideas. Operators set product-specific age, height, weight, supervision, equipment and other requirements. A child’s age does not establish trail ability, swimming ability or admission.'},
+  {q:'Can I take a stroller everywhere in Banff?',a:'No. Check the actual route and operator. Banff Gondola does not recommend strollers and its summit boardwalk has stairs. Lake Minnewanka Cruise does not take strollers aboard. Snow, ice, stairs and vehicle storage can change the plan even at a venue with accessible services.'},
+  {q:'Where can families swim indoors?',a:'Check a current public or family swim at Elevation Place in Canmore and its supervision rules. The Fenlands in Banff has rinks and recreation facilities; it should not be treated as a swimming pool. A hotel pool has its own guest and child rules.'},
+  {q:'Can we bring the family dog to all these outings?',a:'No. For example, Banff Gondola does not admit ordinary pets. A pet-designated hotel room does not establish admission to attractions or transport. Plan approved care or an outing the dog can join, and check our separate dog guide.'},
+];
 ---
-
-<BaseLayout title="Banff Family Guide 2026 — Activities by Age Group" description="Complete Banff family guide with activities filtered by age: toddlers, kids, tweens, and teens. Best family hikes, restaurants, and tips for visiting Banff with children.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'What to do in Banff with kids?', acceptedAnswer: { '@type': 'Answer', text: 'Banff has endless family activities: ride the Banff Gondola (free for kids under 6), visit the Banff Upper Hot Springs, explore Johnston Canyon (paved trail to Lower Falls), take a boat cruise on Lake Minnewanka, canoe at Lake Louise, visit the Cave and Basin historic site, swim at Banff Recreation Centre, and hike easy trails like Fenland and Bow Falls. In winter, kids can ski at Mt Norquay (beginner-friendly), ice skate on Lake Louise, or go tubing.' } },
-      { '@type': 'Question', name: 'Best family hikes in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Best family hikes in Banff by age: Toddlers (0-3) — Fenland Trail (flat boardwalk, 2 km loop), Bow Falls (paved, 1.2 km). Kids (4-8) — Johnston Canyon to Lower Falls (1.1 km, paved), Johnson Lake (2.8 km, flat). Tweens (9-12) — Tunnel Mountain (4.3 km, great views), Lake Louise Lakeshore (4 km). Teens (13-17) — Sulphur Mountain (11 km), Plain of Six Glaciers (10.6 km with teahouse reward).' } },
-      { '@type': 'Question', name: 'Is Banff good for toddlers?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Banff is surprisingly toddler-friendly. Several trails are stroller-compatible (Fenland, Bow Falls, Vermilion Lakes road, Lake Minnewanka first km). The Banff Gondola has stroller-accessible cabins (free for under 6). Hot springs have shallow wading areas. The Banff Recreation Centre has a kids pool. Many restaurants have kids menus and high chairs. Lake Louise lakeshore is flat and paved.' } },
-      { '@type': 'Question', name: 'Are there kid-friendly restaurants in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, many Banff restaurants are family-friendly. Top picks: Tooloulou\'s (Louisiana-style, big portions), Elk & Oarsman (pub with kids menu), Old Spaghetti Factory (classic family dining), Magpie & Stump (casual, patio), Banff Ave Brewing (family sections), and Eddie Burger + Bar (gourmet burgers). Most Banff restaurants have high chairs and kids menus. For a treat, visit the Fairmont Banff Springs for afternoon tea.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Family Guide' }]} />
-  </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80" alt="Family hiking in the Canadian Rockies with mountain views" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Family Travel</span>
-      <h1>Banff Family Guide</h1>
-      <p>Activities, hikes, and tips filtered by your kids' age — from toddlers to teens.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-
-      <!-- Age Filter -->
-      <div class="filter-intro">
-        <h2>Activities by Age Group</h2>
-        <p>Select an age group to see the best activities, hikes, restaurants, and tips.</p>
-      </div>
-
-      <div class="age-filters" id="age-filters">
-        <button class="age-btn active" data-age="all">All Ages</button>
-        <button class="age-btn" data-age="toddler">👶 Toddlers (0-3)</button>
-        <button class="age-btn" data-age="kids">🧒 Kids (4-8)</button>
-        <button class="age-btn" data-age="tweens">🧑 Tweens (9-12)</button>
-        <button class="age-btn" data-age="teens">🎒 Teens (13-17)</button>
-      </div>
-
-      <!-- Toddlers Section -->
-      <div class="age-section" data-age-section="toddler">
-        <h2>👶 Toddlers (0-3 Years)</h2>
-        <div class="age-grid">
-          <div class="age-card">
-            <h3>Best Trails</h3>
-            <ul>
-              <li><strong>Fenland Trail</strong> — 2 km flat boardwalk loop, stroller-friendly, shady forest</li>
-              <li><strong>Bow Falls Trail</strong> — 1.2 km paved path, flat, great for strollers</li>
-              <li><strong>Vermilion Lakes Road</strong> — 4.3 km paved road, flat, wildlife spotting</li>
-              <li><strong>Lake Minnewanka Shore</strong> — First 1 km paved, stroller-ok, lakeside views</li>
-            </ul>
-          </div>
-          <div class="age-card">
-            <h3>Best Activities</h3>
-            <ul>
-              <li><strong>Banff Gondola</strong> — Stroller-accessible cabins, free for under 6, mountain-top boardwalk</li>
-              <li><strong>Upper Hot Springs</strong> — Warm pools with shallow wading area for little ones</li>
-              <li><strong>Cave and Basin</strong> — Indoor historic site, interesting for parents, stroller-accessible</li>
-              <li><strong>Banff Recreation Centre</strong> — Indoor pool with kids splash area, great for rainy days</li>
-            </ul>
-          </div>
-          <div class="age-card">
-            <h3>Tips for Toddlers</h3>
-            <ul>
-              <li>Bring a good all-terrain stroller (trail surfaces vary)</li>
-              <li>Pack layers — mountain weather changes fast</li>
-              <li>Nap schedules: plan one big outing per morning</li>
-              <li>Sunscreen and bug spray are essential June-August</li>
-              <li>Many hotels have cribs available free on request</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Kids Section -->
-      <div class="age-section" data-age-section="kids">
-        <h2>🧒 Kids (4-8 Years)</h2>
-        <div class="age-grid">
-          <div class="age-card">
-            <h3>Best Trails</h3>
-            <ul>
-              <li><strong>Johnston Canyon to Lower Falls</strong> — 1.1 km, paved, catwalks built into the canyon. Kids love it</li>
-              <li><strong>Johnson Lake Loop</strong> — 2.8 km flat loop, can wade at the shore in summer</li>
-              <li><strong>Lake Louise Lakeshore</strong> — 2 km one way, flat, gorgeous turquoise water</li>
-              <li><strong>Tunnel Mountain</strong> — 4.3 km return, manageable switchbacks, big reward at the top</li>
-              <li><strong>Bankhead Interpretive Trail</strong> — 3.2 km, explore an old coal mine ghost town</li>
-            </ul>
-          </div>
-          <div class="age-card">
-            <h3>Best Activities</h3>
-            <ul>
-              <li><strong>Lake Minnewanka Boat Cruise</strong> — 60-min scenic cruise, kids love spotting wildlife</li>
-              <li><strong>Canoeing at Lake Louise</strong> — Rent a canoe at the Fairmont boathouse ($155/hour)</li>
-              <li><strong>Banff Gondola</strong> — Summit boardwalk, interactive Cosmic Ray Station at the top</li>
-              <li><strong>Wildlife Viewing</strong> — Elk on Banff Ave at dusk, bighorn sheep on Norquay Road</li>
-              <li><strong>Biking the Legacy Trail</strong> — Rent kids bikes, ride the paved trail to Canmore</li>
-            </ul>
-          </div>
-          <div class="age-card">
-            <h3>Tips for Kids 4-8</h3>
-            <ul>
-              <li>Carry snacks — hungry kids = unhappy hikers</li>
-              <li>Make it a game: spot wildlife, count waterfalls, find cool rocks</li>
-              <li>Start hikes early to beat afternoon heat and crowds</li>
-              <li>Bring binoculars — they make wildlife encounters magical</li>
-              <li>Johnston Canyon: go early or late to avoid the worst crowds</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tweens Section -->
-      <div class="age-section" data-age-section="tweens">
-        <h2>🧑 Tweens (9-12 Years)</h2>
-        <div class="age-grid">
-          <div class="age-card">
-            <h3>Best Trails</h3>
-            <ul>
-              <li><strong>Johnston Canyon to Upper Falls</strong> — 5.4 km return, bigger waterfalls, more adventure</li>
-              <li><strong>Tunnel Mountain</strong> — 4.3 km, proper summit hike with mountain panorama</li>
-              <li><strong>Lake Agnes Teahouse</strong> — 7.2 km return from Lake Louise, teahouse at the top</li>
-              <li><strong>Sundance Canyon</strong> — 7.4 km, paved then trail, canyon loop at the end</li>
-              <li><strong>C Level Cirque</strong> — 8 km return, abandoned mine entrance, stunning views</li>
-            </ul>
-          </div>
-          <div class="age-card">
-            <h3>Best Activities</h3>
-            <ul>
-              <li><strong>Via Ferrata at Mt Norquay</strong> — Guided rock climbing with safety cables (age 8+, from $149)</li>
-              <li><strong>Whitewater Rafting</strong> — Family trips on the Kicking Horse River (age 5+, half-day $89)</li>
-              <li><strong>Horseback Riding</strong> — Trail rides along the Bow River (1-hour from $79)</li>
-              <li><strong>Stand-Up Paddleboarding</strong> — Johnson Lake or Two Jack Lake (rentals from $45/hour)</li>
-              <li><strong>Banff Climbing Gym</strong> — Indoor climbing at Elevation Place in Canmore</li>
-            </ul>
-          </div>
-          <div class="age-card">
-            <h3>Tips for Tweens</h3>
-            <ul>
-              <li>Give them a camera or let them document the trip</li>
-              <li>The teahouse hike reward (Lake Agnes) is a huge motivator</li>
-              <li>Via Ferrata is genuinely thrilling — best for confident, adventurous kids</li>
-              <li>This age group can handle 8-10 km hikes with breaks</li>
-              <li>Let them pick one activity per day to give them ownership</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Teens Section -->
-      <div class="age-section" data-age-section="teens">
-        <h2>🎒 Teens (13-17 Years)</h2>
-        <div class="age-grid">
-          <div class="age-card">
-            <h3>Best Trails</h3>
-            <ul>
-              <li><strong>Plain of Six Glaciers</strong> — 10.6 km from Lake Louise, teahouse reward, glacier views</li>
-              <li><strong>Sulphur Mountain</strong> — 11 km return, earn the gondola view on foot</li>
-              <li><strong>Sentinel Pass</strong> — 11.6 km from Moraine Lake, highest maintained trail in the Rockies</li>
-              <li><strong>Cory Pass</strong> — 13 km loop, challenging scramble, jaw-dropping scenery</li>
-              <li><strong>Ink Pots via Johnston Canyon</strong> — 11.6 km, colourful mineral springs in a meadow</li>
-            </ul>
-          </div>
-          <div class="age-card">
-            <h3>Best Activities</h3>
-            <ul>
-              <li><strong>Explorer Via Ferrata</strong> — The harder route at Mt Norquay (age 12+, $229)</li>
-              <li><strong>Mountain Biking</strong> — Rent bikes and ride the trails around Tunnel Mountain</li>
-              <li><strong>Full-Day Rafting</strong> — Class III-IV rapids on the Kicking Horse River (age 12+, $139)</li>
-              <li><strong>Canoeing to Paint Pots</strong> — Paddle the Vermilion River to ochre beds</li>
-              <li><strong>Stargazing</strong> — Banff is a Dark Sky Preserve, summer programs available</li>
-            </ul>
-          </div>
-          <div class="age-card">
-            <h3>Tips for Teens</h3>
-            <ul>
-              <li>Challenge them: teens thrive on harder hikes and adventure activities</li>
-              <li>Give them free time to explore Banff Ave shops and cafes</li>
-              <li>Instagram-worthy spots: Moraine Lake, Lake Louise, Peyto Lake</li>
-              <li>Night activities: stargazing programs, hot springs after hiking</li>
-              <li>Let them plan one full day of the trip themselves</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Family Restaurants -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Family-Friendly Restaurants</h2>
-        <p>Banff restaurants with kids menus, high chairs, and a welcoming vibe.</p>
-      </div>
-
-      <div class="restaurant-grid">
-        <div class="restaurant-card">
-          <h3>🍝 Old Spaghetti Factory</h3>
-          <p>Classic family dining. Big portions, kids menu, affordable. Always a safe bet with children.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>🍔 Elk & Oarsman</h3>
-          <p>Pub atmosphere with a solid kids menu. Burgers, fries, mac & cheese. Central location on Banff Ave.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>🌮 Magpie & Stump</h3>
-          <p>Casual Mexican food. Kids love tacos and quesadillas. Great rooftop patio in summer.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>🍕 Bear Street Tavern</h3>
-          <p>Pizza and craft beer. Kids eat pizza, parents enjoy local brews. Heated patio.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>🍔 Eddie Burger + Bar</h3>
-          <p>Gourmet burgers and milkshakes. Fun atmosphere. Teens especially love it.</p>
-        </div>
-        <div class="restaurant-card">
-          <h3>🥞 Tooloulou's</h3>
-          <p>Louisiana-style breakfast/brunch. Huge portions. Kids love the pancakes and beignets.</p>
-        </div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>What to do in Banff with kids?</summary>
-          <p>Top family activities: ride the Banff Gondola (free under 6), hike Johnston Canyon, visit Upper Hot Springs, cruise on Lake Minnewanka, canoe at Lake Louise, bike the Legacy Trail, and explore Cave and Basin. Winter: ski at Norquay, ice skate, go tubing.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Best family hikes in Banff?</summary>
-          <p>Toddlers: Fenland Trail (flat boardwalk). Kids 4-8: Johnston Canyon to Lower Falls. Tweens: Lake Agnes Teahouse. Teens: Plain of Six Glaciers or Sulphur Mountain. All ages: Bow Falls (paved) and Johnson Lake (flat loop).</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is Banff good for toddlers?</summary>
-          <p>Yes — several trails are stroller-friendly (Fenland, Bow Falls, Vermilion Lakes), the gondola is stroller-accessible and free for under 6, hot springs have shallow areas, and the Banff Recreation Centre has a kids pool. Most restaurants have high chairs.</p>
-        </details>
-        <details class="faq-item">
-          <summary>What if it rains?</summary>
-          <p>Rainy day options: Banff Recreation Centre (pool + gym), Banff Park Museum, Whyte Museum, Cave and Basin National Historic Site, Banff Public Library, or drive to Canmore for Elevation Place (pool + climbing gym). Shopping and restaurant hopping on Banff Ave is also fun in the rain.</p>
-        </details>
-      </div>
-
-    </div>
-  </section>
+<BaseLayout title="Banff Family Guide: Winter & Summer Plans by Age" description="Build a family day in Banff or Canmore with age, season and activity filters, specific eligibility checks, stroller and mobility notes, room choices and official sources." canonicalUrl="https://banffbound.com/family-guide/" lastUpdated="2026-10-28">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))})} />
+  <div class="container"><Breadcrumbs items={[{label:'Family guide'}]} /></div>
+  <section class="family-hero"><div class="container"><span class="eyebrow">One good outing. Room for a change of plan.</span><h1>Make Banff work<br />for your family.</h1><p>Choose the day around the people coming with you: ages, access needs, energy, food and the return. These ideas help you ask the right questions before you book.</p><a href="#family-ideas" class="btn btn-accent">Find a family-day idea &darr;</a></div></section>
+  <section class="section"><div class="container">
+    <nav class="journey-links" aria-label="Family trip planning"><a href="/winter"><strong>Winter activity guide &rarr;</strong><span>Seasonal access and flexible days.</span></a><a href="/learn-to-ski"><strong>First lessons &rarr;</strong><span>Age, equipment and arrival questions.</span></a><a href="/towns"><strong>Choose your base &rarr;</strong><span>Banff, Canmore, Lake Louise and beyond.</span></a><a href="/packing-list"><strong>Packing checklist &rarr;</strong><span>Clothing, equipment and booking checks.</span></a></nav>
+    <div class="notice"><strong>Check the actual day.</strong> When reviewed on 28 October 2026, <a href="https://parks.canada.ca/pn-np/ab/banff/bulletins" target="_blank" rel="noopener">Parks Canada’s bulletins</a> listed a Johnston Canyon trail/day-use closure dated 13 October. Check reopening before adding it to a family itinerary. Seasonal tags below describe a planning category, not current opening or safe conditions.</div>
+    <div class="section-heading" id="family-ideas"><span class="eyebrow">A practical starting point</span><h2>Find ideas to investigate together</h2><p>Pick the youngest child’s age group, season and the kind of outing you want. Each card keeps its eligibility, access and source checks visible. The filters do not establish admission, ability or safety.</p></div>
+    <form class="filters" id="family-filters" hidden><label>Youngest child<select name="age"><option value="all">All age groups</option>{ages.map(age=><option value={age.id}>{age.name}</option>)}</select></label><label>Season<select name="season"><option value="all">Any season</option><option value="winter">Winter planning</option><option value="summer">Summer planning</option></select></label><label>Day style<select name="style"><option value="all">Any style</option><option value="indoor">Indoor / warm break</option><option value="snow">Snow / skating / lesson</option><option value="sightseeing">Sightseeing</option><option value="walk">A short walking plan</option><option value="active">Guided active outing</option></select></label><button type="reset">Reset filters</button></form>
+    <noscript><p>All nine ideas are listed below. Use each card’s season and eligibility notes to compare them manually.</p></noscript><p id="family-count" class="result-count" role="status" aria-live="polite">{ideas.length} ideas to investigate</p>
+    <div class="idea-grid">{ideas.map(idea=><article class="idea-card" data-family-age={idea.ages.join(' ')} data-family-season={idea.seasons.join(' ')} data-family-style={idea.styles.join(' ')}><span class="eyebrow">{idea.place}</span><h3>{idea.name}</h3><p>{idea.text}</p><p class="season-label">Planning season: {idea.seasons.length===2?'winter or summer, subject to operation':idea.seasons[0]}</p><div class="card-check"><strong>Eligibility and booking</strong><p>{idea.eligibility}</p></div><div class="access-check"><strong>Stroller, mobility and access</strong><p>{idea.access}</p></div><div class="card-links"><a href={idea.source} target="_blank" rel="noopener">Official requirements &nearr;</a><a href={idea.link}>Plan the next step &rarr;</a></div></article>)}</div>
+    <div id="family-empty" class="notice" hidden><h3>No exact match among these ideas.</h3><p>Try another style or season. The list is a starting point, not every possible family outing.</p><button type="reset" form="family-filters">Reset filters</button></div>
+  </div></section>
+  <section class="section soft-section"><div class="container"><div class="section-heading"><span class="eyebrow">Make the whole day manageable</span><h2>Plan the connections and the breaks</h2></div><div class="planning-grid"><article><h3>Strollers and transport</h3><p><a href="https://roamtransit.com/general-route-faq/" target="_blank" rel="noopener">Roam allows strollers</a>, subject to size, aisle space and boarding needs; you may need to fold yours. Confirm the actual vehicle and child arrangements with the carrier. A ski shuttle, public bus and private transfer can have different policies.</p><p>For seasonal lake access, read the <a href="https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq" target="_blank" rel="noopener">Parks Canada shuttle guidance</a>. Stroller accommodation, accessible dispatch and a ticket reservation do not establish step-free access along every lakeshore trail.</p></article><article><h3>A warm-up option with an opening check</h3><p>Keep one nearby indoor alternative, not a chain of unconfirmed venues. Check hours, toilets, meals and reservations. At Cave and Basin, a winter weekday can be a closed day; at a pool, the booked session controls which facilities are available.</p><p><a href="https://www.banffcollective.com/restaurant/bear-street-tavern-pizza" target="_blank" rel="noopener">Bear Street Tavern’s official page</a> lists a kids menu and welcomes children. Ask directly about high chairs, allergies, access and seating rather than assuming every restaurant provides them.</p></article><article><h3>Choose a walk for the group, not the age label</h3><p>Check surface, elevation, distance, daylight and a turnaround point for the least-experienced person. A teenager is not automatically ready for an alpine hike; a short trail is not automatically suitable for a stroller.</p><p><a href="https://parks.canada.ca/pn-np/ab/banff/activ/marchehiver-winterwalking" target="_blank" rel="noopener">Parks Canada’s winter walking guidance</a> explains why summer destinations can involve winter hazards. Keep off closed routes and do not use a frozen-looking lake as a walking or skating invitation.</p></article></div></div></section>
+  <section class="section"><div class="container"><div class="section-heading"><span class="eyebrow">Match the actual room</span><h2>A useful family base starts with the layout</h2><p>Confirm beds, stairs, cooking facilities and child supervision rules. Cot or adjoining-room requests need confirmation; a property name or family tag does not reserve a layout.</p></div><p class="affiliate-note">Booking links are affiliate links. BanffBound may earn a commission if you book. Compare the exact room, dates, full total and cancellation terms.</p><div class="hotel-grid">{rooms.map(room=><article class="hotel-card">{room.hotel.image&&<img src={room.hotel.image} alt={room.hotel.name} width="800" height="500" loading="lazy" />}<div><h3><a href={`/hotel-directory/${room.slug}`}>{room.hotel.name}</a></h3><p>{room.note}</p><a href={room.hotel.expediaUrl} target="_blank" rel="noopener sponsored">Check the room and dates &nearr;</a></div></article>)}</div><p class="next-line"><a href="/hotel-directory">Explore the hotel map &rarr;</a> · <a href="/winter-stays">Compare winter stays &rarr;</a> · <a href="/dog-friendly">Bringing a dog? Plan its day too &rarr;</a></p></div></section>
+  <section class="section soft-section"><div class="container"><div class="section-heading"><h2>Before the family leaves</h2><p>Use these checks for the selected outing. For a checklist you can save and print, open the <a href="/packing-list">packing planner</a>.</p></div><form class="checklist"><fieldset><legend>Family trip-day checks</legend>{checks.map((check,index)=><label><input type="checkbox" name={`family-check-${index}`} /><span>{check}</span></label>)}</fieldset><button type="reset">Reset trip-day checks</button></form></div></section>
+  <section class="section"><div class="container"><h2>Family planning questions</h2><div class="faq-list">{faqs.map(f=><details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div><p class="source-note">Reviewed 28 October 2026 using the official Parks Canada, Town, transit and operator pages linked beside the claims. Recheck product requirements and operations for your date. More context: <a href="/blog/banff-family-winter">family winter guide</a>, <a href="/ski-day-planner">ski-day planner</a> and <a href="/conditions">current-report links</a>.</p></div></section>
 </BaseLayout>
-
 <script>
-  function initAgeFilter() {
-    const buttons = document.querySelectorAll('.age-btn');
-    const sections = document.querySelectorAll('.age-section');
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const age = (btn as HTMLElement).dataset.age;
-
-        sections.forEach(section => {
-          const el = section as HTMLElement;
-          if (age === 'all' || el.dataset.ageSection === age) {
-            el.style.display = 'block';
-          } else {
-            el.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
-  document.addEventListener('DOMContentLoaded', initAgeFilter);
+  const initFamilyGuide = () => {
+    const form=document.querySelector<HTMLFormElement>('#family-filters');
+    if(!form||form.dataset.ready)return;
+    const selects=['age','season','style'].map(name=>form.elements.namedItem(name) as HTMLSelectElement);
+    const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-family-age]'));
+    const count=document.querySelector('#family-count');
+    const empty=document.querySelector<HTMLElement>('#family-empty');
+    const params=new URLSearchParams(window.location.search);
+    for(const select of selects){const value=params.get(select.name);if(value&&Array.from(select.options).some(option=>option.value===value))select.value=value;}
+    const update=(sync=true)=>{let shown=0;for(const card of cards){const fields=[card.dataset.familyAge,card.dataset.familySeason,card.dataset.familyStyle];const match=selects.every((select,index)=>select.value==='all'||(fields[index]||'').split(' ').includes(select.value));card.hidden=!match;if(match)shown++;}if(count)count.textContent=`${shown} ${shown===1?'idea':'ideas'} to investigate — confirm the requirements before booking.`;if(empty)empty.hidden=shown>0;if(sync){const url=new URL(window.location.href);for(const select of selects)select.value==='all'?url.searchParams.delete(select.name):url.searchParams.set(select.name,select.value);try{window.history.replaceState({},'',url);}catch{}}};
+    form.dataset.ready='true';form.hidden=false;form.addEventListener('submit',event=>event.preventDefault());form.addEventListener('change',()=>update());form.addEventListener('reset',()=>window.setTimeout(()=>update(),0));update(false);
+  };
+  initFamilyGuide();document.addEventListener('astro:page-load',initFamilyGuide);
 </script>
-
 <style>
-  .filter-intro { text-align: center; max-width: 600px; margin: 0 auto 1.5rem; }
-  .filter-intro h2 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem; }
-  .filter-intro p { color: var(--color-text-light); }
-
-  .age-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; }
-  .age-btn { background: var(--color-white); border: 2px solid var(--color-bg-alt); border-radius: var(--radius); padding: 0.6rem 1.25rem; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-  .age-btn:hover { border-color: var(--color-accent); }
-  .age-btn.active { background: var(--color-primary); color: var(--color-white); border-color: var(--color-primary); }
-
-  .age-section { margin-bottom: 2.5rem; }
-  .age-section h2 { font-size: 1.4rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-bg-alt); }
-
-  .age-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .age-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .age-card h3 { font-size: 1rem; margin-bottom: 0.75rem; color: var(--color-primary); }
-  .age-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
-  .age-card li { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; padding-left: 1rem; position: relative; }
-  .age-card li::before { content: '•'; position: absolute; left: 0; color: var(--color-accent); font-weight: 700; }
-
-  .restaurant-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .restaurant-card { background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
-  .restaurant-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
-  .restaurant-card p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
-  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
-
-  @media (max-width: 768px) {
-    .age-grid { grid-template-columns: 1fr; }
-    .restaurant-grid { grid-template-columns: 1fr; }
-  }
+  .eyebrow{display:block;color:#806120;text-transform:uppercase;letter-spacing:.09em;font-size:.72rem;font-weight:700;margin-bottom:.7rem}.family-hero{padding:4rem 0;background:#173d2d;color:#e1e9e3}.family-hero .eyebrow{color:#e8cb87}.family-hero h1{color:#fff;font-size:clamp(2.7rem,5.3vw,4.8rem);line-height:1.08;margin-bottom:1.4rem}.family-hero p{max-width:46rem;font-size:1.1rem;margin-bottom:1.6rem}
+  .journey-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-bottom:2rem}.journey-links a{padding:1.2rem;background:#f0f3ee;border:1px solid #dce4dd;border-radius:var(--radius)}.journey-links strong,.journey-links span{display:block}.journey-links span{margin-top:.4rem;font-size:.85rem;color:var(--color-text-light)}.notice{background:#f4f2e8;border-left:3px solid #b18a3a;padding:1.3rem;margin:1.5rem 0;color:var(--color-text-light);font-size:.9rem}.notice strong{color:var(--color-primary)}.section-heading{max-width:51rem;margin-bottom:1.6rem;scroll-margin-top:7rem}.section-heading h2{margin-bottom:.7rem}.section-heading p{color:var(--color-text-light)}
+  .filters{display:flex;gap:1rem;align-items:end;flex-wrap:wrap;background:#f0f3ee;padding:1.3rem;border-radius:var(--radius)}.filters label{display:grid;gap:.4rem;flex:1 1 12rem;color:var(--color-primary);font-size:.88rem;font-weight:600}.filters select{width:100%;min-height:2.8rem;padding:.6rem;background:white;border:1px solid #acb9ae;border-radius:.35rem;font:inherit}button{min-height:2.8rem;padding:.6rem 1rem;border:1px solid #acb9ae;border-radius:.35rem;background:white;color:var(--color-primary);font:inherit;font-size:.85rem;cursor:pointer}[hidden]{display:none!important}.result-count{margin:1.2rem 0;color:var(--color-primary);font-size:.9rem;font-weight:600}
+  .idea-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem}.idea-card{border:1px solid #dce4dd;border-radius:var(--radius);padding:1.6rem;background:white}.idea-card h3{font-size:1.45rem;margin-bottom:.8rem}.idea-card>p,.card-check p,.access-check p{color:var(--color-text-light);font-size:.92rem}.idea-card .season-label{font-size:.76rem;margin:.8rem 0 1rem;color:#6b704f}.card-check{background:#f0f3ee;padding:1rem;margin:1rem 0}.card-check strong,.access-check strong{color:var(--color-primary);font-size:.9rem}.card-check p,.access-check p{margin-top:.4rem}.card-links{display:flex;gap:.8rem 1.3rem;flex-wrap:wrap;font-size:.85rem;font-weight:600;margin-top:1.2rem}.soft-section{background:var(--color-bg-alt)}.planning-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}.planning-grid article{background:#fff;border:1px solid #dce4dd;border-radius:var(--radius);padding:1.5rem}.planning-grid h3{font-size:1.25rem;margin-bottom:.8rem}.planning-grid p{font-size:.9rem;color:var(--color-text-light);margin-bottom:.8rem}
+  .affiliate-note,.source-note{font-size:.8rem;color:var(--color-text-light);margin:1.2rem 0;max-width:62rem}.hotel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}.hotel-card{border:1px solid #dce4dd;border-radius:var(--radius);overflow:hidden}.hotel-card img{display:block;width:100%;height:13rem;object-fit:cover}.hotel-card>div{padding:1.3rem}.hotel-card h3{font-size:1.25rem;margin-bottom:.7rem}.hotel-card p{font-size:.9rem;color:var(--color-text-light);margin-bottom:.9rem}.hotel-card>div>a{font-size:.85rem;font-weight:600}.next-line{margin-top:1.5rem;font-size:.9rem}.checklist{max-width:53rem}.checklist fieldset{border:0;padding:0;margin:0 0 1.3rem}.checklist legend{font-weight:600;color:var(--color-primary);margin-bottom:1rem}.checklist label{display:flex;align-items:start;gap:.7rem;padding:.75rem 0;color:var(--color-text-light);font-size:.92rem;cursor:pointer}.checklist input{accent-color:#24553d;width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.15rem}.faq-list{max-width:57rem;margin-top:1rem}details{border-bottom:1px solid #dce4dd;padding:1rem 0}summary{font-weight:600;color:var(--color-primary);cursor:pointer}details p{margin-top:.8rem;color:var(--color-text-light);font-size:.9rem}a:focus-visible,select:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #b18a3a;outline-offset:4px}
+  @media(max-width:1000px){.journey-links,.planning-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:750px){.journey-links,.planning-grid,.hotel-grid,.idea-grid{grid-template-columns:1fr}.family-hero{padding:3rem 0}.idea-card{padding:1.3rem}}
 </style>

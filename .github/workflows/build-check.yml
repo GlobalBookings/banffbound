@@ -41,6 +41,11 @@ jobs:
           node scripts/check-weather-source.mjs
           node scripts/check-snow-source.mjs
           node scripts/check-source-freshness.mjs
+          node scripts/check-road-source.mjs
+          node scripts/check-town-events.mjs
+
+      - name: Check booking navigation
+        run: node scripts/check-affiliate-navigation.mjs
 
       # 4. Fetch data once, compile Astro and generate the Pagefind index.
       - name: Build site
