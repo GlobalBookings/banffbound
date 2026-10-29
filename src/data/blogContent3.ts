@@ -1381,7 +1381,7 @@ export const blogContent3: Record<string, string> = {
 <p>Mt Norquay Road opens up a world of adventure that many visitors miss in their rush to reach Lake Louise or the Icefields Parkway. Whether you're seeking challenging ski runs, scenic summer chairlift rides, or access to excellent hiking trails, this easily accessible mountain delivers authentic Rocky Mountain experiences without the crowds. The road itself becomes part of the adventure, offering glimpses of the rugged wilderness that makes Banff National Park such a remarkable destination.</p>
 `,
   'golden-banff': `
-<p>After running countless trails and skiing endless powder in the Canadian Rockies, I can tell you that <a href="/blog/big-3-banff"><a href="/blog/banff-live-music"><a href="/blog/eating-out-in-banff">Best Restaurants in Banff : Foodie</a>'s Best Live Music Venues & Shows</a>'s Big 3 Lakes Photography</a> National Park offers some of the most spectacular mountain experiences in North America. The golden light that hits these peaks at sunrise and sunset creates what locals call "golden Banff" moments – those perfect conditions that make every photo look like a postcard and every adventure feel larger than life.</p>
+<p>For scenery around Banff, choose whether the day centres on a town viewpoint, a lake visit or a mountain attraction, then arrange the actual journey and return. The <a href="/photo-spots">photography planning guide</a> helps compare those settings. If your destination is Golden, British Columbia, use the separate <a href="/towns/golden">Golden town guide</a> to plan that base rather than treating it as part of Banff town.</p>
 
 <h2>Why "Golden Banff" Creates the Perfect Mountain Experience</h2>
 
@@ -3442,7 +3442,7 @@ export const blogContent3: Record<string, string> = {
 <p>Johnston Canyon delivers an exceptional mountain experience when visited with proper preparation and realistic expectations. The crowds are real, but the canyon's beauty justifies its popularity. Plan your timing carefully, arrive prepared, and you'll understand why this remains one of Banff's signature attractions after more than a century of welcoming visitors.</p>
 `,
   'deals-in-banff': `
-<p>After five years of regular visits to <a href="/blog/banff-via-ferrata">Mt Norquay Via Ferrata: <a href="/blog/banff-wildlife-overpass">Wildlife Overpasses: How Banff Protects Its Animals</a>'s Most Thrilling Climb</a> National Park, I've learned that scoring great deals here isn't about luck—it's about timing, knowing where to look, and understanding how this mountain town operates. Whether you're planning a quick weekend ski trip or a week-long hiking adventure, I'll share the specific strategies I use to save money while still experiencing everything this incredible park has to offer.</p>
+<p>Compare the full cost of the trip using quotes for your actual dates, room, participants and inclusions. A lower headline price can mean a different base, journey or booking option, so keep those differences visible. The <a href="/winter-stays">winter stay comparison</a>, <a href="/ski-pass-calculator">ski quote calculator</a> and <a href="/trip-builder">trip builder</a> help organise those choices without assuming a discount or current availability.</p>
 
 <h2>Best Times to Find Deals in Banff</h2>
 
@@ -3584,7 +3584,7 @@ export const blogContent3: Record<string, string> = {
 <p>Johnston's Canyon delivers exactly what most visitors hope to find in Banff: dramatic natural beauty, accessible hiking, and photo opportunities around every corner. The key to enjoying it lies in timing, preparation, and realistic expectations about crowds during peak season. Plan accordingly, and you'll understand why this canyon ranks among Banff's most popular destinations.</p>
 `,
   'johnsons-canyon': `
-<p>Johnson's <a href="/blog/johnstons-canyon">Johnston's <a href="/blog/johston-canyon">Johnston Canyon Banff: Travel</a> Banff: Hiking</a> remains one of Banff's most accessible yet spectacular waterfall hikes, and after dozens of visits over the past decade, I can tell you it's worth every step. Located just 23 kilometers northwest of Banff townsite along the Bow Valley Parkway, this trail delivers two impressive waterfalls, ice walking opportunities in winter, and some of the most dramatic limestone canyon scenery in the Canadian Rockies. Here's everything you need to know to make the most of your Johnson's Canyon adventure.</p>
+<p>Johnston Canyon offers different waterfall endpoints and the longer Ink Pots outing, each requiring its own return plan. Begin with the <a href="/blog/johnston-canyon-guide">reviewed Johnston Canyon guide</a> to check the chosen endpoint, dated access notice and transport. For a winter visit, use the separate <a href="/blog/banff-ice-walk-guide">canyon ice walk guide</a> rather than assuming summer access or footing.</p>
 
 <h2>Getting to Johnson's Canyon</h2>
 
@@ -3647,7 +3647,7 @@ export const blogContent3: Record<string, string> = {
 <p>Photography enthusiasts should budget extra time for the dramatic lighting conditions throughout the canyon system. The narrow gorge creates challenging exposure situations, but the payoff includes some of the most striking waterfall images in the Canadian Rockies. Morning visits offer the best lighting conditions and smallest crowds for serious photography work.</p>
 `,
   'calgary-to-jasper': `
-<p>The drive from Calgary to <a href="/blog/jasper-weather">Banff to <a href="/blog/jasper-to-kamloops">Jasper to Kamloops via Banff: Road Trip</a> Weather : Plan Perfect Trip</a> is one of Canada's most spectacular road trips, taking you through the heart of the Canadian Rockies via the iconic Icefields Parkway. As someone who's made this journey countless times for training camps and ski trips, I can tell you it's far more than just transportation – it's an adventure that deserves proper planning to maximize every kilometer of stunning mountain scenery.</p>
+<p>Plan a Calgary-to-Jasper journey around whether you want a direct travel day or a longer trip with time in Banff and stops along the way. Resolve the vehicle or booked transport, overnight base and return before adding activities. The <a href="/calgary-to-banff">Calgary-to-Banff guide</a>, <a href="/blog/jasper-alberta">reviewed Jasper guide</a> and <a href="/conditions">dated conditions sources</a> help separate those parts of the journey.</p>
 
 <h2>Planning Your Calgary to Jasper Route</h2>
 
@@ -3872,7 +3872,7 @@ export const blogContent3: Record<string, string> = {
 <p>The back country skiing in Banff offers some of the finest touring terrain in North America, but it demands respect, preparation, and proper safety equipment. Start with easier tours to familiarize yourself with local conditions, invest in avalanche education, and never hesitate to turn back if conditions deteriorate. The mountains will be there tomorrow – make sure you are too.</p>
 `,
   'jasper-town': `
-<p>As someone who's spent countless hours exploring the Canadian Rockies, I get asked about <a href="/blog/calgary-to-jasper">Calgary to <a href="/blog/jasper-weather">Banff to <a href="/blog/jasper-to-kamloops">Jasper to Kamloops via Banff: Road Trip</a> Weather : Plan Perfect Trip</a> via Banff Road Trip</a> National Park almost as much as Banff. While Jasper town sits about 290 km north of Banff townsite via the stunning Icefields Parkway, understanding both destinations helps you plan the ultimate Rocky Mountain adventure. Let me share what I've learned from years of racing, skiing, and exploring this incredible region.</p>
+<p>A Jasper visit needs a plan for the town, the surrounding park and the journey from your previous base. Decide how much time belongs to travel and how much to the places you want to visit. Start with the <a href="/blog/jasper-alberta">reviewed Jasper planning guide</a> for access and recovery checks, and use the <a href="/towns">base comparison</a> when combining Jasper with a Banff-area stay.</p>
 
 <h2>Understanding Jasper vs Banff: Two Distinct Mountain Experiences</h2>
 
@@ -3963,7 +3963,7 @@ export const blogContent3: Record<string, string> = {
 <p>Whether you choose Banff as your Canadian Rockies base or venture north to jasper town, both destinations offer world-class mountain experiences. Banff provides more amenities, activities, and dining options, while Jasper offers a quieter, more authentic mountain town atmosphere. From my years exploring both parks, I recommend Banff for first-time visitors who want maximum options and convenience. You can always return to explore jasper town's wilder side on future trips.</p>
 `,
   'banff-nightclubs': `
-<p>After spending countless hours training on <a href="/blog/banff-film-festival"><a href="/blog/bear-street-banff">Bear Street <a href="/blog/banff-horseback-riding">Horseback Riding in <a href="/blog/deals-in-banff">Score <a href="/blog/banff-via-ferrata">Mt Norquay Via Ferrata: <a href="/blog/banff-legacy-trail">Legacy Trail: Biking <a href="/blog/club-in-banff">Best Nightlife Clubs in Banff : Party</a> to Canmore</a>'s Most Thrilling Climb</a> Deals : Insider Secrets to Save Big</a>: Best Trails & Outfitters</a>: The Best Block in Town</a> Mountain Film Festival</a>'s mountain trails and exploring the town during my recovery days, I've discovered that the nightlife scene here offers more than most visitors expect. While Banff isn't Vancouver or Toronto, the compact downtown core packs several solid options for those looking to dance, drink, and socialize after dark. Here's my insider guide to the nightclub scene in Canada's most famous mountain town.</p>
+<p>Choose the event and the journey before choosing a nightclub. Check what is actually scheduled, whether everyone in the group meets the entry requirements, and how you will return afterwards. Use the <a href="/towns/banff">Banff town guide</a> to compare your base and the <a href="/car-free-banff">car-free planning guide</a> for transport questions; a daytime connection does not establish a late-night return.</p>
 
 <h2>The Reality of Banff's Nightclub Scene</h2>
 
@@ -4098,7 +4098,7 @@ export const blogContent3: Record<string, string> = {
 <p>Weather changes rapidly in the mountains, so pack layers regardless of season. I always carry a shell jacket, even on sunny July days. Cell phone coverage is generally reliable in the Bow Valley but becomes spotty in backcountry areas. Download offline maps and inform someone of your plans before heading out on solo adventures.</p>
 `,
   'banff-clubs': `
-<p>After countless visits to <a href="/blog/banff-nightclubs"><a href="/blog/bear-street-banff">Bear Street <a href="/blog/deals-in-banff">Score <a href="/blog/banff-restaraunts">Best Banff Restaurants : Where Locals Actually Eat</a> Deals : Insider Secrets to Save Big</a>: The Best Block in Town</a>'s Hottest Nightclubs: Party</a> over the years, I've noticed that most travelers focus on the obvious attractions—Lake Louise, Moraine Lake, the gondola. But what about when the sun goes down? The truth is, Banff's nightlife and club scene might surprise you. While it's not Montreal or Vancouver, this mountain town has developed a surprisingly vibrant after-dark culture that ranges from cozy pub atmospheres to legitimate dance floors where you can party until 2 AM.</p>
+<p>Decide whether the evening is centred on dancing, a live performance or conversation over drinks, then check the actual venue and event for your date. Confirm admission requirements and the journey home before committing to a late finish. The <a href="/towns/banff">Banff base guide</a> and <a href="/car-free-banff">car-free transport guide</a> provide context for staying in town or returning to another base.</p>
 
 <h2>Understanding Banff's Unique Nightlife Scene</h2>
 
@@ -4169,7 +4169,7 @@ export const blogContent3: Record<string, string> = {
 <p>Remember that Banff's club scene reflects the town's outdoor-focused culture. Don't be surprised when conversations shift from DJ sets to powder conditions or trail reports. It's this unique blend of mountain lifestyle and cosmopolitan energy that makes Banff's nightlife genuinely special, even if the venues themselves are smaller than what you might expect in major cities.</p>
 `,
   'jasper-national-park': `
-<p>After countless trips through the Canadian Rockies, I've learned that while Banff National Park gets most of the attention, <strong><a href="/blog/jasper-canada">Banff to <a href="/blog/jasper-alberta">Banff to <a href="/blog/jasper-town">Banff to Jasper Town</a> Alberta Road Trip</a> : Canadian Rockies Road Trip</a> National Park</strong> offers some of the most spectacular mountain experiences in Alberta. Located just 290 kilometers north of Banff via the iconic Icefields Parkway, Jasper is Canada's largest national park in the Rocky Mountains and my go-to destination when I want to escape the crowds without sacrificing world-class outdoor adventures.</p>
+<p>A Banff-to-Jasper trip combines two park destinations with a road journey that needs its own time, service and conditions checks. Choose the actual stops and overnight base before filling the days with activities. Use the <a href="/blog/jasper-alberta">reviewed Jasper guide</a> for park access and recovery planning, and the <a href="/conditions">conditions page</a> for dated reports and direct official road sources.</p>
 
 <h2>Getting to Jasper National Park from Banff</h2>
 
@@ -4378,7 +4378,7 @@ export const blogContent3: Record<string, string> = {
 <p>The honest answer to how many days you need for Banff is that it depends on your priorities, fitness level, and travel style. For most visitors, 5-6 days provides the sweet spot between seeing major attractions and having time for spontaneous discoveries. But after two decades of exploring these mountains, I can tell you that no matter how long you stay, you'll leave planning your next visit. The Canadian Rockies have a way of getting into your blood—just ask anyone who's experienced sunrise over Lake Louise or completed their first scramble up a Rockies peak.</p>
 `,
   'new-places-to-eat-in-banff': `
-<p>As someone who's been training and competing in <a href="/blog/banff-apres-ski">Best Apres-Ski in <a href="/blog/best-banff-restaurants-2026">Best Restaurants in <a href="/blog/banff-fine-dining">Fine Dining in <a href="/blog/banff-rooftop-patios">Best Rooftop Patios in <a href="/blog/eat-banff">Eat Banff: 15 Must-Try Restaurants & Local Eats in</a></a>: Top Upscale Restaurants</a> : Where Locals Eat</a>: Bars, Restaurants & Hot</a> for over a decade, I've watched the town's culinary scene evolve dramatically. After countless early morning runs and post-ski dinners, I can tell you that 2026 has brought some exciting new places to eat in Banff that are worth planning your meals around. From innovative mountain cuisine to casual spots perfect for refueling after a day on the trails, here's my insider guide to the newest dining experiences in town.</p>
+<p>For a meal in Banff, start with the restaurant's current address, menu and reservation policy. A claim that a venue is new needs a dated operator announcement, rather than an assumed opening year. Compare the meal with your group's dietary needs and the day's return journey, using the <a href="/towns/banff">Banff base guide</a> and <a href="/trip-builder">trip builder</a> to fit dining around your other plans.</p>
 
 <h2>The Latest Culinary Additions to Banff Avenue</h2>
 
@@ -4739,7 +4739,7 @@ export const blogContent3: Record<string, string> = {
 <p>Bow Summit represents everything that makes the Canadian Rockies special—accessible natural beauty, multiple activity levels, and views that genuinely live up to the hype. Whether you're doing the quick viewpoint walk or tackling one of the longer trails, it's a stop that belongs on every Banff itinerary.</p>
 `,
   'nightclub-banff': `
-<p>After years of visiting <a href="/blog/banff-bridge"><a href="/blog/banff-hilton"><a href="/blog/sky-bistro-banff">Sky Bistro <a href="/blog/banff-clubs">Best <a href="/blog/banff-nightclubs"><a href="/blog/club-in-banff">Best Nightlife Clubs in <a href="/blog/banff-dark-sky"><a href="/blog/banff-dinner">Best Banff Dinner Spots : Where Locals Actually Eat</a> Dark Sky Preserve: Best Viewing Spots</a> : Party</a>'s Hottest Nightclubs: Party</a> Clubs : Where Locals Party After Dark</a>: to Dining Above the Clouds</a> Hilton: Gateway to Canadian Rockies</a> Bridge: to Canada's Most Crossing</a> and racing through its mountain trails, I've learned that this alpine town transforms dramatically once the sun sets. While most visitors focus on the daytime adventures, Banff's nightlife scene offers everything from intimate mountain bars to energetic dance floors. Whether you're looking to unwind after a day on the slopes or celebrate completing a challenging hike, knowing where to find the best <strong>nightclub Banff</strong> options will help you make the most of your mountain evenings.</p>
+<p>Plan a night out in Banff around the kind of evening your group wants: dancing, live music, or a quieter meal and drinks. Confirm the chosen venue's current event, address and entry requirements, then arrange the return to your accommodation. The <a href="/towns/banff">Banff base guide</a> and <a href="/car-free-banff">car-free transport guide</a> help connect the evening with the rest of the trip.</p>
 
 <h2>Banff's Premier Nightclub and Dance Venues</h2>
 
@@ -4992,7 +4992,7 @@ export const blogContent3: Record<string, string> = {
 <p>The key to finding exceptional <strong>banff lookout points</strong> lies in moving beyond the obvious destinations and exploring with intention. Whether you choose the accessibility of Tunnel Mountain or challenge yourself with Ha Ling Peak's scramble, these viewpoints offer perspectives on the Canadian Rockies that will reshape how you see this remarkable landscape.</p>
 `,
   'banff-bars': `
-<p>After a day exploring <a href="/blog/banff-views">15 <a href="/blog/nightclub-banff"><a href="/blog/banff-bridge"><a href="/blog/club-in-banff">Best Nightlife Clubs in Banff : Party</a> Bridge: to Canada's Most Crossing</a> Nightlife : Best Clubs & Late Night Spots</a> Views That Will Leave You Speechless in</a>'s incredible mountain scenery, there's nothing quite like unwinding with a drink while soaking in those breathtaking Canadian Rockies views. Banff's nightlife scene has evolved tremendously in 2026, offering everything from cozy pub atmospheres to sophisticated rooftop lounges where you can sip craft cocktails against a backdrop of snow-capped peaks. If you're looking for locally brewed beer, premium Canadian whisky, or signature mountain-inspired cocktails, the best <strong>Banff bars</strong> deliver incredible experiences that perfectly cap off your alpine adventures.</p>
+<p>A useful bar choice starts with the atmosphere and journey your group wants: a meal with drinks, live entertainment or a quieter place to talk. Check the current menu, event schedule, entry requirements and return arrangements directly. Use the <a href="/towns/banff">Banff town guide</a> to plan your base and the <a href="/car-free-banff">car-free guide</a> to assess the actual evening transport.</p>
 
 <h2>Top-Rated Banff Bars for Every Vibe</h2>
 

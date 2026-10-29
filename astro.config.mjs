@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
+import { legacyTextCorrections } from './src/data/legacyTextCorrections.ts';
+import { townStayPlanningReviewedAt, townStayUpdatedSlugs } from './src/data/townStayPlanning.ts';
 import { cyclingGuideMetadata } from './src/data/cyclingGuideOverrides.ts';
 import { lakeJourneyMetadata } from './src/data/lakeJourneyOverrides.ts';
 import { visitorDestinationMetadata, visitorHotelLocationCorrections, visitorHotelCorrectionDate } from './src/data/visitorDestinationOverrides.ts';
@@ -53,6 +55,9 @@ export default defineConfig({
         if (reviewedDate) item.lastmod = new Date(reviewedDate);
         if (['/winter', '/trail-map', '/quiet-trails', '/alternatives', '/hotel-directory', '/tools', '/accessible-trails', '/paddling', '/activities', '/things-to-do', '/vacation-rentals', '/lakes', '/lake-faq', '/parking', '/shuttle-reservations', '/wildlife', '/wildlife-tracker', '/wildlife-calendar', '/wildlife-safety', '/bear-spray', '/biking', '/privacy', '/tours', '/book/banff-hotels', '/book/lake-louise-stays', '/book/banff-winter-activities'].includes(path) || path.startsWith('/activities/') || Object.hasOwn(visitorDestinationMetadata, path.replace('/blog/', ''))) item.lastmod = new Date('2026-10-29');
         if (Object.hasOwn(visitorHotelLocationCorrections, path.replace('/blog/', ''))) item.lastmod = new Date(visitorHotelCorrectionDate);
+        const textCorrection = legacyTextCorrections[path.replace('/blog/', '')];
+        if (textCorrection) item.lastmod = new Date(textCorrection.correctedAt);
+        if (['/learn-to-ski', '/ski-day-planner'].includes(path) || townStayUpdatedSlugs.some(slug => path === `/towns/${slug}`)) item.lastmod = new Date(townStayPlanningReviewedAt);
         const blogDate = reviewedBlogDates.get(path.replace('/blog/', ''));
         if (blogDate) item.lastmod = new Date(blogDate);
         // Boost priority for high-value pages

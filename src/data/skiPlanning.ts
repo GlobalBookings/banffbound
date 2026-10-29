@@ -40,15 +40,24 @@ export const defaultSkiChoices: SkiPlanChoices = {
 };
 
 export function makeSkiDayPlan(choices: SkiPlanChoices) {
-  const chosen: ResortKey = choices.resort !== 'auto' ? choices.resort
+  // A family label supplies neither the child's age nor the appropriate product.
+  const schoolFirst = choices.resort === 'auto' && choices.group === 'children';
+  const chosen: ResortKey | null = schoolFirst ? null : choices.resort !== 'auto' ? choices.resort
     : choices.base === 'louise' ? 'louise'
-      : choices.ability === 'first' || choices.group === 'children' ? 'norquay' : 'sunshine';
-  const resort = skiResorts[chosen];
-  const reason = choices.resort !== 'auto'
+      : choices.ability === 'first' ? 'norquay' : 'sunshine';
+  const resort = chosen === null ? {
+    name: 'Choose a suitable snow school first',
+    lessonUrl: '/learn-to-ski/#lesson-fit', transportUrl: '/car-free-banff', officialUrl: '/skiing',
+    checkin: 'Confirm the child’s age band, sport, check-in and equipment collection with the selected school. Use that confirmation to set your departure time.',
+    arrival: 'Choose the lesson first, then allow for its required check-in, equipment fitting and any gondola journey. The arrival buffer depends on the resort and product.',
+  } : skiResorts[chosen];
+  const reason = schoolFirst
+    ? 'A family label is not enough to choose a lesson: schools have different child and adult age bands, and some young-child products require daycare. Compare each learner’s age and sport before selecting a resort. You can choose a confirmed resort above once the school and transport fit.'
+    : choices.resort !== 'auto'
     ? 'You chose this resort. The plan adapts the arrival and transfer steps to that choice.'
     : choices.base === 'louise'
       ? 'Start by checking your local resort: a Lake Louise base keeps the first transfer simpler. Confirm your exact hotel pickup or road route.'
-      : choices.ability === 'first' || choices.group === 'children'
+      : choices.ability === 'first'
         ? 'Start by checking Norquay’s first-time lesson availability. For a Banff or Canmore base it is a practical option for a lesson-focused day. Another resort may fit better if the lesson time or age group is unavailable.'
         : 'Start by checking Sunshine’s availability for a full resort day. It adds a gondola transfer, so build that into the morning. Your chosen terrain must still match your ability and conditions.';
   const isLearner = choices.ability === 'first' || choices.ability === 'beginner';
@@ -56,7 +65,9 @@ export function makeSkiDayPlan(choices: SkiPlanChoices) {
     ? 'Check road and resort access conditions before departure. Confirm suitable winter equipment with your rental company, allow for parking and walking, and keep the evening flexible if weather deteriorates.'
     : choices.base === 'canmore'
       ? 'Do not assume a Banff ski shuttle picks up in Canmore. Confirm a direct service or a separate Canmore–Banff transfer, then check that the connection reaches the resort early enough. If it does not, change the lesson time or arrange another transfer.'
-      : choices.base === 'louise' && chosen !== 'louise'
+    : schoolFirst
+      ? 'Once a lesson option fits, confirm its exact pickup and final return before booking. Do not assume public transit reaches the snow-school meeting point or that a resort shuttle covers every hotel.'
+    : choices.base === 'louise' && chosen !== 'louise'
         ? 'Do not assume a direct Lake Louise hotel shuttle to this resort. Ask the operator to confirm the full outbound and return connection before booking the lesson; a Banff connection may make an early lesson impractical.'
         : 'Open the current operator timetable and match your exact pickup stop to the required arrival time. Check eligibility, outbound capacity and the final return. Ski shuttle and public transit services are different.';
   const group = choices.group === 'children'
@@ -71,6 +82,9 @@ export function makeSkiDayPlan(choices: SkiPlanChoices) {
       : 'Warm up on easier open terrain, then choose runs using the current trail map and your own ability. Ask resort staff or book a lesson if the snow, visibility or grading feels unfamiliar.';
   return {
     key: chosen, resort, reason, transfer, group, session,
+    lessonLinkLabel: schoolFirst ? 'Compare lessons by learner age & sport →' : `Check ${resort.name} lesson details ↗`,
+    transportLinkLabel: schoolFirst ? 'Plan the transport connection →' : 'Current resort transport information ↗',
+    reportLinkLabel: schoolFirst ? 'Compare Banff ski resorts →' : 'Resort site & current operations ↗',
     timeline: [
       { when: 'The evening before', title: 'Make the bookings line up', text: 'Confirm lesson time, correct ticket access, rentals and return transport. Save confirmations and the current resort map offline.' },
       { when: 'Before leaving your base', title: 'Check the day, then travel', text: transfer },
@@ -78,7 +92,7 @@ export function makeSkiDayPlan(choices: SkiPlanChoices) {
       { when: 'Check-in & fitting', title: 'Follow your booking instructions', text: resort.checkin },
       { when: 'Morning session', title: isLearner ? 'Learn at your own pace' : 'Warm up before exploring', text: session },
       { when: 'Lunch & afternoon', title: 'Keep a warm-up break', text: 'Eat indoors, check how everyone feels and agree the afternoon plan. Shorten the day for cold, fatigue or poor visibility. A museum, café or another indoor stop in town can be a good alternative; check hours.' },
-      { when: 'Before the final return', title: 'Leave time to get off the mountain', text: chosen === 'sunshine' ? 'Check the last gondola download and your bus separately. Allow time to reach the gondola, travel down, return rentals and get to the pickup. Do not build a first day around skiing the ski-out.' : 'Check lift closing and the last bus separately. Leave time to descend within your ability, return rentals and reach the pickup; choose an earlier return if conditions worsen.' },
+      { when: 'Before the final return', title: 'Leave time to get off the mountain', text: schoolFirst ? 'Once the resort is confirmed, check lesson collection, equipment returns and the final bus. At Sunshine, allow separately for the gondola download; a first-time learner should not rely on the ski-out.' : chosen === 'sunshine' ? 'Check the last gondola download and your bus separately. Allow time to reach the gondola, travel down, return rentals and get to the pickup. Do not build a first day around skiing the ski-out.' : 'Check lift closing and the last bus separately. Leave time to descend within your ability, return rentals and reach the pickup; choose an earlier return if conditions worsen.' },
     ],
   };
 }

@@ -165,9 +165,23 @@ function consentMarkupErrors(html, elements, check) {
     if (!children.some(node => Object.hasOwn(node.attributes,'data-affiliate-mount') && Object.hasOwn(node.attributes,'hidden'))) errors.push(`Affiliate mount must start hidden: ${kind}`);
     if (!children.some(node => !node.hidden && Object.hasOwn(node.attributes,'data-affiliate-status') && node.attributes.role === 'status' && node.attributes['aria-live'] === 'polite' && /Optional partner content is off\./.test(textInside(html,node)))) errors.push(`Missing accessible blocked affiliate status: ${kind}`);
     if (!children.some(node => node.tag === 'button' && !node.hidden && Object.hasOwn(node.attributes,'data-open-consent'))) errors.push(`Missing affiliate preference control: ${kind}`);
-    const native = children.filter(node => node.tag === 'a' && !node.hidden && node.attributes.href).some(node => {
+    const nativeReferral = node => {
+      if (node.tag !== 'a' || node.hidden || !node.attributes.href) return false;
       try { const url = new URL(node.attributes.href); return kind.startsWith('gyg') ? /(^|\.)getyourguide\.com$/.test(url.hostname) && url.searchParams.get('partner_id') === 'QW960HO' : /(^|\.)expedia\.ca$/.test(url.hostname) && url.searchParams.get('camref') === '1101l3MtWX'; } catch { return false; }
-    });
+    };
+    let native = children.some(nativeReferral);
+    // The reviewed tours page puts its fallback in the next widget-cta sibling.
+    // Restrict this exception to that route/kind and the slot's nearest section;
+    // unrelated links elsewhere on a page cannot satisfy a widget fallback.
+    if (!native && check.path === '/tours/' && check.kind === 'tours' && kind === 'gyg-activities') {
+      const section = active.filter(node => node.tag === 'section' && !node.hidden && node.openEnd <= slot.start && node.innerEnd >= slot.end).sort((a,b) => b.start-a.start)[0];
+      if (section) {
+        const cta = active.find(node => node.tag === 'div' && !node.hidden && !node.noscript && (node.attributes.class ?? '').split(/\s+/).includes('widget-cta')
+          && node.start >= slot.end && node.end <= section.innerEnd
+          && !html.slice(slot.end,node.start).replace(/<!--[\s\S]*?-->/g,'').trim());
+        if (cta) native = active.some(node => !node.noscript && node.start >= cta.openEnd && node.end <= cta.innerEnd && nativeReferral(node));
+      }
+    }
     if (!native) errors.push(`Missing preserved native referral fallback: ${kind}`);
   }
   // Provider scanner targets are promised to be created after consent, not in initial SSR markup.
@@ -416,7 +430,7 @@ function options(args) {
   assert.match(result['--revision'] ?? '', /^[a-f0-9]{40}$/i); assert.match(result['--fingerprint'] ?? '', /^[a-f0-9]{64}$/i); assert.match(result['--report'] ?? '', /\.json$/i);
   return { revision: result['--revision'].toLowerCase(), fingerprint: result['--fingerprint'].toLowerCase(), report: path.resolve(result['--report']) };
 }
-async function verify(config) {
+async function verify(config, { inventoryLoader = loadInventory, htmlAnalyser = analyseHtml, userAgent = 'BanffBound-cycling-consent-release-verification/1.0' } = {}) {
   const started = Date.now(), deadline = started + RUN_TIMEOUT_MS;
   const requestNonces = new Set();
   const report = { formatVersion: 1, startedAt: new Date(started).toISOString(), checkedAt: null, origin: ORIGIN, expectedRevision: config.revision, expectedFingerprint: config.fingerprint, policy: { method: 'GET', concurrency: CONCURRENCY, requestTimeoutMs: REQUEST_TIMEOUT_MS, runTimeoutMs: RUN_TIMEOUT_MS, retries: 0, uniqueNoncePerGet: true, preConsentScope: 'Every checked HTML document: executable provider script/frame URLs, consent controls and reviewed affiliate fallbacks; not a browser network trace' }, passed: false, requests: 0, inventory: null, buildReceipt: null, buildReceiptStable: false, sitemap: null, results: [], photos: [], failures: [] };
@@ -428,7 +442,7 @@ async function verify(config) {
     const nonce = url.searchParams.get('__release_verify');
     assert.ok(!requestNonces.has(nonce), 'Each GET must use a unique request nonce'); requestNonces.add(nonce);
     report.requests++;
-    const response = await fetch(url, { method: 'GET', redirect: 'manual', signal: AbortSignal.timeout(Math.min(REQUEST_TIMEOUT_MS, remaining)), headers: { 'Cache-Control': 'no-cache', 'User-Agent': 'BanffBound-cycling-consent-release-verification/1.0' } });
+    const response = await fetch(url, { method: 'GET', redirect: 'manual', signal: AbortSignal.timeout(Math.min(REQUEST_TIMEOUT_MS, remaining)), headers: { 'Cache-Control': 'no-cache', 'User-Agent': userAgent } });
     if (response.status !== 200) { await response.body?.cancel(); throw Error(`HTTP ${response.status}; expected 200 without redirect`); }
     const type = response.headers.get('content-type') ?? '';
     if (!contentType.test(type)) { await response.body?.cancel(); throw Error('Unexpected content type'); }
@@ -439,8 +453,8 @@ async function verify(config) {
     return { bytes: Buffer.concat(chunks), status: response.status, lastModified: response.headers.get('last-modified'), robots: response.headers.get('x-robots-tag') ?? '' };
   };
   try {
-    const inventory = await loadInventory();
-    report.inventory = { htmlRoutes: inventory.checks.length, trails: { total: 81, indexable: 80, noindex: 1 }, hotels: inventory.hotelCounts, wildlifePages: 5, cyclingPages: 4, consentPages: 2, paidLandingPages: 3, nativeLandingOffers: { banffHotels: 6, lakeLouiseStays: 5, winterActivities: 3 }, photos: 7, photoManifestSha256: inventory.manifestSha256 };
+    const inventory = await inventoryLoader();
+    report.inventory = { htmlRoutes: inventory.checks.length, trails: { total: 81, indexable: 80, noindex: 1 }, hotels: inventory.hotelCounts, wildlifePages: 5, cyclingPages: 4, consentPages: 2, paidLandingPages: 3, nativeLandingOffers: { banffHotels: 6, lakeLouiseStays: 5, winterActivities: 3 }, photos: 7, photoManifestSha256: inventory.manifestSha256, ...(inventory.releaseScope ?? {}) };
     const buildResponse = await get('/build-info.json', 16_384, /^application\/json(?:\s*;|$)/i);
     report.buildReceipt = JSON.parse(buildResponse.bytes.toString('utf8'));
     validateBuildInfo(report.buildReceipt, config.revision, config.fingerprint);
@@ -456,7 +470,7 @@ async function verify(config) {
     report.results = await pool(inventory.checks, async check => {
       try {
         const response = await get(check.path, 2 * 1024 * 1024, /^text\/html(?:\s*;|$)/i);
-        const facts = analyseHtml(response.bytes.toString('utf8'), check, sitemap, response.robots);
+        const facts = htmlAnalyser(response.bytes.toString('utf8'), check, sitemap, response.robots);
         return { path: check.path, kind: check.kind, status: response.status, lastModified: response.lastModified, ...facts, passed: facts.errors.length === 0 };
       } catch (error) { return { path: check.path, kind: check.kind, passed: false, errors: [String(error.message ?? error.name).slice(0, 300)] }; }
     });
@@ -471,7 +485,7 @@ async function verify(config) {
     report.buildReceiptStable = true;
     for (const row of report.results.filter(row => !row.passed)) fail(row.path, row.errors.join('; '));
     for (const row of report.photos.filter(row => !row.passed)) fail(row.path, row.error ?? 'Photo bytes SHA256 mismatch');
-    report.passed = report.results.length === 193 && report.photos.length === 7 && report.buildReceiptStable && report.failures.length === 0;
+    report.passed = report.results.length === inventory.checks.length && report.photos.length === 7 && report.buildReceiptStable && report.failures.length === 0;
   } catch (error) { fail('verification', error.message ?? error.name); }
   report.checkedAt = new Date().toISOString(); report.durationMs = Date.now() - started;
   report.summary = { htmlPassed: report.results.filter(row => row.passed).length, htmlFailed: report.results.filter(row => !row.passed).length, photosPassed: report.photos.filter(row => row.passed).length, photosFailed: report.photos.filter(row => !row.passed).length, failures: report.failures.length };
@@ -522,6 +536,27 @@ async function selfTest() {
   assert.deepEqual(analyseHtml(inject(widget),widgetCheck,sitemap).errors,[]);
   assert.ok(analyseHtml(inject(widget.replace('data-affiliate-mount hidden','data-affiliate-mount')),widgetCheck,sitemap).errors.some(error=>error.includes('start hidden')));
   assert.ok(analyseHtml(inject(widget.replace('partner_id=QW960HO','partner_id=wrong')),widgetCheck,sitemap).errors.some(error=>error.includes('native referral fallback')));
+  const toursSource = await readFile(path.join(ROOT,'src/pages/tours.astro'),'utf8');
+  assert.match(toursSource,/const GYG_PARTNER_ID = 'QW960HO'/);
+  const toursSlotStart = toursSource.indexOf('data-affiliate-embed="gyg-activities"');
+  assert.ok(toursSlotStart >= 0);
+  const toursSectionStart = toursSource.lastIndexOf('<section',toursSlotStart);
+  const toursSectionEnd = toursSource.indexOf('</section>',toursSlotStart) + '</section>'.length;
+  const toursSection = toursSource.slice(toursSectionStart,toursSectionEnd).replace('href={`https://www.getyourguide.com/banff-l284/?partner_id=${GYG_PARTNER_ID}`}','href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO"');
+  const toursCta = toursSection.match(/<div class="widget-cta">[\s\S]*?<\/div>/)?.[0];
+  assert.ok(toursCta && toursSection.includes('href="https://www.getyourguide.com/banff-l284/?partner_id=QW960HO"'),'Exercise the current tours sibling CTA and its real referral ID.');
+  const toursCheck = { ...widgetCheck, path:'/tours/', kind:'tours' };
+  const fallbackErrors = (markup,routeCheck=toursCheck) => consentMarkupErrors(inject(markup),htmlElements(inject(markup)),routeCheck);
+  const missingFallback = errors => errors.some(error => error.includes('native referral fallback'));
+  assert.deepEqual(fallbackErrors(toursSection),[],'Actual reviewed tours markup permits the explicit adjacent sibling fallback.');
+  assert.ok(missingFallback(fallbackErrors(toursSection.replace(toursCta,''))),'Missing tours fallback still fails.');
+  assert.ok(missingFallback(fallbackErrors(toursSection.replace(toursCta,'')+toursCta)),'A sibling CTA outside the owning section cannot satisfy the fallback.');
+  assert.ok(missingFallback(fallbackErrors(toursSection,widgetCheck)),'The tours exception cannot apply to another page.');
+  assert.ok(missingFallback(fallbackErrors(toursSection,{...toursCheck,path:'/blog/example/',kind:'blog'})),'Blog slots retain the child-link contract.');
+  assert.ok(missingFallback(fallbackErrors(toursSection.replace('class="widget-cta"','class="unrelated-links"'))),'An arbitrary same-section link cannot replace the explicit widget CTA.');
+  assert.ok(missingFallback(fallbackErrors(toursSection.replace(toursCta,'<p>Intervening content</p>'+toursCta))),'The reviewed CTA must be the adjacent sibling.');
+  assert.ok(missingFallback(fallbackErrors(toursSection.replace('class="widget-cta"','class="widget-cta" hidden'))),'A hidden fallback does not count.');
+  assert.ok(missingFallback(fallbackErrors(toursSection.replace('partner_id=QW960HO','partner_id=wrong'))),'The sibling fallback must retain the correct native referral ID.');
   assert.ok(analyseHtml(inject('<div data-gyg-widget="auto"></div>'),check,sitemap).errors.some(error=>error.includes('widget target')));
   assert.ok(analyseHtml(inject('<time datetime="2025-12-26">26 December 2025</time>'),{...check,publishedDate:'2025-12-26'},sitemap).errors.length===0);
   assert.ok(analyseHtml(fixture,{...check,publishedDate:'2025-12-26'},sitemap).errors.some(error=>error.includes('publication datetime')));
@@ -580,13 +615,18 @@ async function selfTest() {
   const values = await pool(Array.from({ length: 19 }, (_, i) => i), async value => { inFlight++; maximum = Math.max(maximum, inFlight); await new Promise(resolve => setTimeout(resolve, 1)); inFlight--; return value; });
   assert.deepEqual(values, Array.from({ length: 19 }, (_, i) => i)); assert.ok(maximum <= CONCURRENCY && maximum > 1);
   for (const photo of inventory.photos) assert.equal(sha256(await readFile(path.join(ROOT, 'public', photo.src))), photo.sha256, `Local manifest/photo mismatch: ${photo.id}`);
-  console.log('Offline verifier fixtures passed: exact receipt/UTC identity, 193-route inventory and current eligibility, visible FAQ/schema/hidden content, canonical/noindex/sitemap failures, safe sitemap scope, seven local photo hashes, bounded concurrency, per-GET nonce and arguments; active provider script/frame detection vs inert config/native anchors, consent controls/fallbacks and current denied runtime; all three paid landings, 6/5/3 native affiliate identities, compact chrome, body markers and FAQ/ItemList fixtures. No network, report write, Git or host calls.');
+  console.log('Offline verifier fixtures passed: exact receipt/UTC identity, 193-route inventory and current eligibility, visible FAQ/schema/hidden content, canonical/noindex/sitemap failures, safe sitemap scope, seven local photo hashes, bounded concurrency, per-GET nonce and arguments; active provider script/frame detection vs inert config/native anchors, consent controls/fallbacks and current denied runtime; actual tours adjacent-sibling fallback with missing/outside-section/page-scope/hidden/wrong-ID negatives and unchanged blog child contract; all three paid landings, 6/5/3 native affiliate identities, compact chrome, body markers and FAQ/ItemList fixtures. No network, report write, Git or host calls.');
 }
 
-try {
-  if (process.argv.length === 3 && process.argv[2] === '--self-test') await selfTest();
-  else await verify(options(process.argv.slice(2)));
-} catch (error) {
-  console.error(String(error.message ?? error.name));
-  process.exitCode = 1;
+// Import-safe foundation for subsequent bounded release inventories. CLI use
+// retains the original 193-route inventory and self-test; imports never GET.
+export { ORIGIN, ROOT, normal, htmlFacts, htmlElements, textInside, schemaNodes, analyseHtml, loadInventory, options, verify, selfTest };
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  try {
+    if (process.argv.length === 3 && process.argv[2] === '--self-test') await selfTest();
+    else await verify(options(process.argv.slice(2)));
+  } catch (error) {
+    console.error(String(error.message ?? error.name));
+    process.exitCode = 1;
+  }
 }

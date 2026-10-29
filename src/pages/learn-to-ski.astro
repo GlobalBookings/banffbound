@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { lessonProgrammes, lessonSchoolContacts } from '../data/lessonPlanning';
 import '../styles/skiPlanning.css';
 
 const faqs = [
@@ -9,6 +10,7 @@ const faqs = [
   { question: 'How early should I arrive for my first ski lesson?', answer: 'Follow your booking confirmation. Norquay asks first-time guests to check in at least an hour before the lesson; Lake Louise recommends an hour if collecting equipment. Sunshine adds a base-to-village gondola journey and queues, so allow more time. Our planner suggests extra buffers rather than promising a fixed transfer time.' },
   { question: 'Do I need to rent a car to learn to ski in Banff?', answer: 'A Banff stay can work well with resort ski shuttles. Check the current timetable, eligible ticket or pass, pickup stop and return before booking an early lesson. A Canmore stay or a transfer between resorts may need another connection. Do not assume a ski shuttle and Roam public transit are the same service.' },
   { question: 'Can children and adults take the same ski lesson?', answer: 'Do not assume so. Group lessons are usually divided by age, ability and ski or snowboard discipline. Ask the snow school whether a private family lesson is suitable and confirm minimum ages, supervision, lunch and collection arrangements for each child.' },
+  { question: 'Which lesson age band applies to a 13-year-old?', answer: 'The reviewed Lake Louise and Sunshine group products use an adult/teen band from age 13. Norquay’s first-time youth package covers ages 6–14 and its adult package begins at 15. These are product age bands, not a statement about legal adulthood. Check each learner separately and confirm the selected product with the school.' },
   { question: 'Is one lesson enough to ski the whole mountain?', answer: 'A first lesson introduces basic movement, stopping, turning and lifts at an individual pace. It does not guarantee access to every green run or readiness to join experienced friends. Ask your instructor where to practise next and consider another lesson before moving to harder terrain.' },
 ];
 const checklist = [
@@ -22,7 +24,7 @@ const checklist = [
 ];
 ---
 
-<BaseLayout title="Learn to Ski in Banff: First Lessons, Rentals & Beginner Guide" description="Plan your first ski or snowboard lesson in Banff. Compare Norquay, Lake Louise and Sunshine, understand lesson bundles, arrange rentals and build a relaxed first day." lastUpdated="2026-10-28">
+<BaseLayout title="Learn to Ski in Banff: First Lessons, Rentals & Beginner Guide" description="Find first ski or snowboard lesson options by age. Compare Norquay, Lake Louise and Sunshine packages, kids programmes, rentals and arrival plans." lastUpdated="2026-10-29">
   <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
   <div class="container"><Breadcrumbs items={[{ label: 'Winter', href: '/winter' }, { label: 'Learn to Ski' }]} /></div>
   <section class="page-hero">
@@ -30,19 +32,41 @@ const checklist = [
     <div class="page-hero-content"><span class="badge">Your first turns</span><h1>Learn to ski in Banff</h1><p>A warm pair of gloves, a patient instructor, and a day that leaves room to learn.</p></div>
   </section>
   <div class="container ski-content">
-    <p class="ski-eyebrow">First ski &amp; snowboard lessons · Reviewed October 28, 2026</p>
+    <p class="ski-eyebrow">First ski &amp; snowboard lessons · Reviewed October 29, 2026</p>
     <p class="ski-lead">Your first day does not need to be a dawn-to-dusk mountain mission. Book a lesson at your actual level, make sure the ticket and rental equipment fit that lesson, and leave enough time to reach the meeting point without rushing.</p>
-    <nav class="ski-jump" aria-label="On this page"><a href="#choose">Choose a snow school</a><a href="#booking">What to book</a><a href="#first-day">Your first day</a><a href="#progress">Days two &amp; three</a><a href="#checklist">Ready-to-go checklist</a><a href="#questions">Questions</a></nav>
+    <nav class="ski-jump" aria-label="On this page"><a href="#lesson-fit">Find lesson options</a><a href="#booking">What to book</a><a href="#first-day">Your first day</a><a href="#progress">Days two &amp; three</a><a href="#checklist">Ready-to-go checklist</a><a href="#questions">Questions</a></nav>
     <div class="ski-actions ski-no-print"><a class="btn" href="/ski-day-planner">Build my ski day →</a><a href="/winter">Explore the winter guide</a></div>
 
     <h2 id="choose">Which Banff resort should you learn at?</h2>
     <p>All three resorts have instruction for first-timers. A convenient lesson time and an appropriate package matter more than total skiable acreage on day one. Start with the snow school that can confirm your group’s places and a workable journey.</p>
-    <div class="ski-cards">
-      <article class="ski-card"><span class="ski-eyebrow">A lesson-focused start</span><h3>Mt. Norquay</h3><p>Consider Norquay when you want a first-time package and a day centred on the learning area. Its first-time offer includes a two-hour lesson, equipment and a carpet-only ticket. That ticket is not an all-mountain pass.</p><p>Check in with Snow School before collecting rentals, at least an hour before the lesson.</p><a href="https://banffnorquay.com/snow-school/first-time-ski-snowboard/" target="_blank" rel="noopener">Norquay first-time lessons ↗</a></article>
-      <article class="ski-card"><span class="ski-eyebrow">A Lake Louise base</span><h3>Lake Louise</h3><p>A useful first place to check if you are staying in Lake Louise. The adult Level 1–2 beginner packages currently include rentals and a Learning Area ticket. Adult group lessons start at age 13; confirm the separate children’s programme for younger learners.</p><p>The resort recommends an hour before your lesson if you need equipment.</p><a href="https://www.skilouise.com/ski-snowboard-lessons/adult-lessons/adult-group-lessons/" target="_blank" rel="noopener">Lake Louise beginner packages ↗</a></article>
-      <article class="ski-card"><span class="ski-eyebrow">Build in the gondola</span><h3>Sunshine Village</h3><p>Sunshine has beginner instruction up in the mountain village. Plan for base-area ticket or rental administration, then a roughly 20-minute gondola ride plus queues and walking to the lesson meeting point.</p><p>Check exactly where your package requires you to collect equipment. Riding up the gondola is part of the journey to class.</p><a href="https://www.skibanff.com/plan/first-time-visitors/first-timers-guide" target="_blank" rel="noopener">Sunshine first-timer guide ↗</a></article>
-    </div>
-    <p class="ski-small">These are direct operator links. Product details, age groups, availability and prices can change; the current booking terms apply. For a wider overview, use our <a href="/sunshine-vs-lake-louise-vs-norquay">three-resort comparison</a>.</p>
+    <section aria-labelledby="lesson-fit" class="lesson-chooser">
+      <h2 id="lesson-fit">Find a first-lesson starting point</h2>
+      <p>Compare <strong>one learner at a time</strong>, using their age on the lesson date. These eight published product examples cover first-time groups and two young-child formats; they are not every private or adaptive programme. Results identify age bands to enquire about, not confirmed suitability, places or operating dates.</p>
+      <form id="lesson-fit-form" class="ski-panel ski-no-print" novalidate hidden>
+        <div class="lesson-fields">
+          <label for="lesson-age">Learner’s age in whole years<input id="lesson-age" name="lesson_age" type="number" min="1" max="120" step="1" inputmode="numeric" placeholder="Leave blank for all ages" aria-describedby="lesson-age-help" /></label>
+          <label for="lesson-sport">First lesson in<select id="lesson-sport" name="lesson_sport"><option value="all">Undecided / compare both</option><option value="ski">Skiing</option><option value="snowboard">Snowboarding</option></select></label>
+          <label for="lesson-format">Lesson arrangement<select id="lesson-format" name="lesson_format"><option value="all">All listed formats</option><option value="lesson">Lesson without daycare</option><option value="daycare">Daycare plus lesson</option></select></label>
+        </div>
+        <p id="lesson-age-help" class="ski-small">No date of birth is needed. Check each family member separately: the same age can fall into different product groups at different schools.</p>
+        <div class="ski-actions"><button class="btn btn-primary" type="submit">Show lesson options</button><button class="ski-action-secondary" type="reset">Reset options</button><button class="ski-action-secondary" id="copy-lesson-options" type="button">Copy options link</button></div>
+        <p id="lesson-fit-error" class="lesson-error" role="alert" hidden></p>
+        <p id="lesson-copy-status" class="ski-status" role="status"></p>
+        <div id="lesson-copy-fallback" hidden><label for="lesson-copy-url">Select and copy this options link<input id="lesson-copy-url" type="text" readonly /></label></div>
+      </form>
+      <noscript><p class="ski-note">The full comparison and direct school links below work without JavaScript. With JavaScript, narrow the examples by age and arrangement, tailor a ski or snowboard booking brief, and copy the choices in the page address.</p></noscript>
+      <p id="lesson-fit-count" class="ski-status" role="status" aria-live="polite">All 8 published programme examples shown. Check the age band and inclusions before booking.</p>
+      <p id="lesson-booking-brief">Ask for a first-ever lesson in the chosen sport and confirm equipment fit, ticket access, check-in, cancellation terms and return transport. Every example below currently lists both skiing and snowboarding; the school must confirm the actual session.</p>
+      <div class="ski-note" id="lesson-fit-empty" hidden><h3>No listed example matches these choices</h3><p>This does not mean lessons are sold out or that the learner cannot take a lesson. This is a limited comparison. Ask a school about an age-appropriate private, adaptive or other programme; explain the learner’s age, sport and first-time experience. For under-threes, confirm what the school can offer rather than treating daycare as ski instruction.</p></div>
+      <div class="ski-cards lesson-programmes">{lessonProgrammes.map(programme => <article class="ski-card" data-lesson-id={programme.id}>
+        <p class="ski-eyebrow">{programme.resort}</p><h3>{programme.name}</h3><p><strong>{programme.ageLabel}</strong> · {programme.formatLabel}<br />Ski or snowboard</p>
+        <p>{programme.includes}</p><p><strong>Before booking:</strong> {programme.check}</p>
+        <a href={programme.url} target="_blank" rel="noopener">Check {programme.name.toLowerCase()} with {programme.resort} ↗</a>
+      </article>)}</div>
+      <p><strong>Need another format or advice?</strong> For family private lessons, support needs, uncertain equipment fit, or a learner outside a listed age band, ask the school directly: {lessonSchoolContacts.map((school, i) => <>{i > 0 && ' · '}<a href={school.url} target="_blank" rel="noopener">{school.name} ↗</a></>)}. Give the actual age and sport; avoid booking an older group just to fit a timetable.</p>
+      <p class="ski-small">These are direct operator information and booking-option links. Both sports are listed for these examples, so choosing a sport tailors your booking brief rather than inventing different age eligibility. The school’s current product and terms take priority. Reviewed October 29, 2026.</p>
+    </section>
+    <p><strong>Then make the journey work.</strong> Lake Louise Ski Resort is separate from the village and lakeshore. Sunshine lessons meet above the gondola: allow for base-area administration, the roughly 20-minute ride, queues and walking. Confirm equipment collection with the school. Compare the <a href="/sunshine-vs-lake-louise-vs-norquay">three resorts</a> and use the <a href="/ski-day-planner">day planner</a> after you have a suitable lesson and return connection.</p>
 
     <h2 id="booking">Book the lesson, ticket and equipment together</h2>
     <p>A lesson reservation is not automatically everything you need for a ski day. Before paying, check these as three separate items even when they are sold as a bundle.</p>
@@ -95,10 +119,106 @@ const checklist = [
     <p class="ski-small">The Expedia link is an affiliate link; we may earn a commission. Check the hotel location, total cost and cancellation terms for your dates.</p>
 
     <section class="ski-faq" aria-labelledby="questions"><h2 id="questions">First ski lesson questions</h2>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
-    <section class="ski-sources" aria-labelledby="sources"><h2 id="sources">Sources &amp; booking details</h2><p>Operator information reviewed October 28, 2026. We use these pages for package inclusions, check-in and transport details; the suggested day structure is our planning advice. Recheck your chosen product before booking.</p><ul><li><a href="https://banffnorquay.com/snow-school/first-time-ski-snowboard/">Norquay first-time packages</a> and <a href="https://banffnorquay.com/snow-school/faqs/">Snow School FAQs</a></li><li><a href="https://www.skilouise.com/ski-snowboard-lessons/adult-lessons/adult-group-lessons/">Lake Louise beginner group packages</a> and <a href="https://www.skilouise.com/rentals-lessons/ski-snowboard-lessons/">lesson and ability information</a></li><li><a href="https://www.skibanff.com/plan/first-time-visitors/first-timers-guide">Sunshine first-timer arrival guide</a></li><li><a href="https://www.skibig3.com/ski/lessons/">SkiBig3 lesson options</a> and <a href="https://www.skibig3.com/ski/ski-shuttle/">ski shuttle service</a></li></ul></section>
+    <section class="ski-sources" aria-labelledby="sources"><h2 id="sources">Sources &amp; booking details</h2><p>Lesson product information reviewed October 29, 2026 using the direct operator pages in each comparison card. They support age bands, disciplines, inclusions and check-in details. Transport and general day-planning sources below were reviewed October 28, 2026; the suggested day structure is our planning advice. Recheck your chosen product and date before booking.</p><ul><li><a href="https://banffnorquay.com/snow-school/first-time-ski-snowboard/">Norquay first-time packages</a> and <a href="https://banffnorquay.com/snow-school/children-youth/">Kinder private lessons</a></li><li><a href="https://www.skilouise.com/ski-snowboard-lessons/adult-lessons/adult-group-lessons/">Lake Louise adult/teen beginner packages</a> and <a href="https://www.skilouise.com/ski-snowboard-lessons/kids-lessons/kids-group-lessons/">children’s groups</a></li><li><a href="https://www.skibanff.com/lessons/group-lessons">Sunshine group lessons</a>, <a href="https://www.skibanff.com/lessons/daycare-tiny-tiger-lessons">Tiny Tigers</a> and <a href="https://www.skibanff.com/plan/first-time-visitors/first-timers-guide">first-timer arrival guide</a></li><li><a href="https://www.skibig3.com/ski/lessons/">SkiBig3 lesson options</a> and <a href="https://www.skibig3.com/ski/ski-shuttle/">ski shuttle service</a></li></ul></section>
     <nav class="ski-related ski-no-print" aria-label="More winter planning"><a href="/ski-day-planner">Ski day planner</a><a href="/winter">Winter activity finder</a><a href="/winter-stays">Winter stays</a><a href="/skiing">Skiing overview</a></nav>
   </div>
 </BaseLayout>
+
+<style>
+  .lesson-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .lesson-fields label, #lesson-copy-fallback label { display: block; font-weight: 600; }
+  .lesson-fields input, .lesson-fields select, #lesson-copy-url { display: block; width: 100%; min-height: 48px; margin-top: .5rem; padding: .7rem; border: 1px solid #a9b0a5; border-radius: 5px; background: white; color: var(--color-text); font: inherit; }
+  .lesson-fields [aria-invalid="true"] { border: 2px solid #9d2d1c; }
+  .lesson-error { color: #8b281c; font-weight: 600; }
+  .lesson-programmes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lesson-chooser [hidden] { display: none !important; }
+  #lesson-fit { scroll-margin-top: 130px; }
+  @media (max-width: 760px) { .lesson-fields, .lesson-programmes { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+  import { lessonProgrammes, parseLessonChoices, matchLessonProgrammes, lessonBookingBrief } from '../data/lessonPlanning';
+
+  function initLessonChooser() {
+    const form = document.querySelector<HTMLFormElement>('#lesson-fit-form');
+    if (!form || form.dataset.lessonReady) return;
+    form.dataset.lessonReady = 'true';
+    const age = document.querySelector<HTMLInputElement>('#lesson-age')!;
+    const sport = document.querySelector<HTMLSelectElement>('#lesson-sport')!;
+    const format = document.querySelector<HTMLSelectElement>('#lesson-format')!;
+    const count = document.querySelector<HTMLElement>('#lesson-fit-count')!;
+    const error = document.querySelector<HTMLElement>('#lesson-fit-error')!;
+    const empty = document.querySelector<HTMLElement>('#lesson-fit-empty')!;
+    const brief = document.querySelector<HTMLElement>('#lesson-booking-brief')!;
+    const copyStatus = document.querySelector<HTMLElement>('#lesson-copy-status')!;
+    const copyFallback = document.querySelector<HTMLElement>('#lesson-copy-fallback')!;
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-lesson-id]'));
+    const fields = { age, discipline: sport, format };
+    const params = { age: 'lesson_age', discipline: 'lesson_sport', format: 'lesson_format' } as const;
+    let current = parseLessonChoices({}).choices;
+    let invalid = false;
+    function render(raw: unknown, updateUrl = true) {
+      const parsed = parseLessonChoices(raw);
+      invalid = Object.keys(parsed.errors).length > 0;
+      for (const key of ['age', 'discipline', 'format'] as const) {
+        if (parsed.errors[key]) fields[key].setAttribute('aria-invalid', 'true');
+        else fields[key].removeAttribute('aria-invalid');
+      }
+      error.textContent = invalid ? `${Object.values(parsed.errors).join(' ')} All examples are shown until the choices are corrected.` : '';
+      error.hidden = !invalid;
+      current = parsed.choices;
+      const selected = invalid ? lessonProgrammes : matchLessonProgrammes(current);
+      const ids = new Set(selected.map(programme => programme.id));
+      cards.forEach(card => { card.hidden = !ids.has(card.dataset.lessonId || ''); });
+      empty.hidden = selected.length !== 0;
+      count.textContent = invalid ? 'Choices could not be applied. All 8 published examples shown.' : `${selected.length} published programme ${selected.length === 1 ? 'example' : 'examples'} shown${current.age === null ? ' across all listed ages' : ` for age ${current.age}`}. Confirm the product with the school; this is not availability.`;
+      brief.textContent = invalid ? 'Correct or reset the choices, or compare the full age bands below.' : lessonBookingBrief(current);
+      copyStatus.textContent = '';
+      copyFallback.hidden = true;
+      if (updateUrl && !invalid) {
+        const url = new URL(window.location.href);
+        Object.values(params).forEach(key => url.searchParams.delete(key));
+        if (current.age !== null) url.searchParams.set(params.age, String(current.age));
+        if (current.discipline !== 'all') url.searchParams.set(params.discipline, current.discipline);
+        if (current.format !== 'all') url.searchParams.set(params.format, current.format);
+        try { window.history.replaceState(null, '', url.href); } catch { /* The comparison still works without updating the address. */ }
+      }
+    }
+    const url = new URL(window.location.href);
+    const raw = Object.fromEntries(Object.entries(params).map(([key, name]) => { const values = url.searchParams.getAll(name); return [key, values.length > 1 ? values : values[0] || '']; }));
+    const restored = parseLessonChoices(raw).choices;
+    age.value = restored.age === null ? '' : String(restored.age);
+    sport.value = restored.discipline;
+    format.value = restored.format;
+    render(raw, false);
+    form.hidden = false;
+    function applyFields() {
+      render({ age: age.validity.badInput ? 'invalid' : age.value, discipline: sport.value, format: format.value });
+      if (invalid) Object.values(fields).find(field => field.getAttribute('aria-invalid') === 'true')?.focus();
+    }
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      applyFields();
+    });
+    form.addEventListener('reset', event => {
+      event.preventDefault(); age.value = ''; sport.value = 'all'; format.value = 'all'; render({});
+    });
+    document.querySelector<HTMLButtonElement>('#copy-lesson-options')?.addEventListener('click', async () => {
+      applyFields();
+      if (invalid) { copyStatus.textContent = 'Correct or reset the choices before copying an options link.'; return; }
+      const link = new URL(window.location.href);
+      Object.values(params).forEach(key => link.searchParams.delete(key));
+      if (current.age !== null) link.searchParams.set(params.age, String(current.age));
+      if (current.discipline !== 'all') link.searchParams.set(params.discipline, current.discipline);
+      if (current.format !== 'all') link.searchParams.set(params.format, current.format);
+      link.hash = 'lesson-fit';
+      try { await navigator.clipboard.writeText(link.href); copyStatus.textContent = 'Options link copied. It shares age and lesson choices, not bookings or checklist ticks.'; }
+      catch { const input = document.querySelector<HTMLInputElement>('#lesson-copy-url')!; input.value = link.href; copyFallback.hidden = false; input.focus(); input.select(); copyStatus.textContent = 'Copy the options link from the field below.'; }
+    });
+  }
+  initLessonChooser();
+  document.addEventListener('astro:page-load', initLessonChooser);
+</script>
 
 <script>
   const checklist = document.querySelector('#first-lesson-checklist');

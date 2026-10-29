@@ -10,9 +10,11 @@ assert.ok(!/^\s*(?:await\s+)?run\s*\(/m.test(source), 'Importing the linker must
 assert.match(source, /const CONTENT_CHUNKS = \['blogContent.ts', 'blogContent3.ts'\]/, 'Only the two actual renderer inputs can be mutated.');
 assert.match(source, /git add src\/data\/blogContent.ts src\/data\/blogContent3.ts'/, 'The staging list also excludes unused legacy chunks.');
 const renderer = await readFile('src/pages/blog/[slug].astro', 'utf8');
-assert.match(renderer, /from ['"]\.\.\/\.\.\/data\/blogContent['"]/);
-assert.match(renderer, /from ['"]\.\.\/\.\.\/data\/blogContent3['"]/);
-assert.ok(!/from ['"]\.\.\/\.\.\/data\/blogContent[12]['"]/.test(renderer));
+assert.match(renderer, /from ['"]\.\.\/\.\.\/data\/blogContentRegistry['"]/);
+const registry = await readFile('src/data/blogContentRegistry.ts', 'utf8');
+assert.match(registry, /from ['"]\.\/blogContent['"]/);
+assert.match(registry, /from ['"]\.\/blogContent3['"]/);
+assert.ok(!/from ['"]\.\/blogContent[12]['"]/.test(registry));
 const { insertLinkIntoHTML: insert, parseContentBlocks, replaceContentBlock } = await import('../agents/src/agents/internal-linker.js');
 const tail = ' Leave enough room for the return journey, meals and the particular needs of everyone in the group.';
 const paragraph = text => `<p>${text}${tail}</p>`;

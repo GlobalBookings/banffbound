@@ -10,6 +10,7 @@ interface Props {
   date: string;
   lastUpdated?: string;
   partialCorrectionDate?: string;
+  partialCorrectionLabel?: string;
   category: string;
   image: string;
   imageIsIllustrative?: boolean;
@@ -18,7 +19,7 @@ interface Props {
   slug?: string;
 }
 
-const { title, description, date, lastUpdated, partialCorrectionDate, category, image, imageIsIllustrative = false, imageNote = '', readTime, slug } = Astro.props;
+const { title, description, date, lastUpdated, partialCorrectionDate, partialCorrectionLabel = 'Hotel location paragraph corrected:', category, image, imageIsIllustrative = false, imageNote = '', readTime, slug } = Astro.props;
 
 const relatedPosts = blogPosts
   .filter(p => p.category === category && p.slug !== slug && p.title !== title)
@@ -112,7 +113,7 @@ const articleSchema = {
       <div class="article-footer">
         <div class="article-updated">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          {partialCorrectionDate ? 'Hotel location paragraph corrected:' : 'Last updated:'} <time datetime={isoModified}>{formattedModified}</time>
+          {partialCorrectionDate ? partialCorrectionLabel : 'Last updated:'} <time datetime={isoModified}>{formattedModified}</time>
         </div>
         <div class="author-bio-card">
           <div class="author-bio-avatar">JC</div>

@@ -4,7 +4,7 @@
 
 ## Winter planning
 - [Winter in Banff](https://banffbound.com/winter/): Search 29 winter planning guides by interest and explore seasonal month-by-month advice.
-- [Learn to ski](https://banffbound.com/learn-to-ski/): First ski or snowboard lessons, learning-area tickets, equipment, children’s booking questions and a saved readiness checklist.
+- [Learn to ski](https://banffbound.com/learn-to-ski/): Compare first-lesson options by learner age, ski or snowboard and format; check ticket/equipment inclusions and save a readiness checklist. Matches are published programme rules, not confirmed places.
 - [Ski day planner](https://banffbound.com/ski-day-planner/): Personalise a resort day by experience, base, resort, transport and group. Share selections or print a plan.
 - [Resort comparison](https://banffbound.com/sunshine-vs-lake-louise-vs-norquay/): Practical differences among Sunshine, Lake Louise and Norquay.
 - [Ski pass calculator](https://banffbound.com/ski-pass-calculator/): Compare user-entered current quotes and confirmed coverage. Contains no live ticket-price feed.
@@ -19,7 +19,7 @@
 ## Mountain bases
 - [Compare towns and local areas](https://banffbound.com/towns/): Banff, Canmore, Lake Louise, Field & Yoho, Golden and Kananaskis.
 - [Banff town](https://banffbound.com/towns/banff/)
-- [Canmore](https://banffbound.com/towns/canmore/)
+- [Canmore](https://banffbound.com/towns/canmore/): Compare town and nearby stay areas, room categories and winter transport arrangements.
 - [Lake Louise](https://banffbound.com/towns/lake-louise/)
 - [Field & Yoho](https://banffbound.com/towns/field-yoho/)
 - [Golden](https://banffbound.com/towns/golden/)

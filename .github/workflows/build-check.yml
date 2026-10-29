@@ -46,6 +46,9 @@ jobs:
           node scripts/check-winter-activity-landing.mjs
           node scripts/check-cycling-planning.mjs
           node scripts/check-internal-linker.mjs
+          node scripts/check-blog-content.mjs
+          node scripts/check-lesson-planning.mjs
+          node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs
           node scripts/check-affiliate-embeds.mjs
           node scripts/check-wildlife-planning.mjs
