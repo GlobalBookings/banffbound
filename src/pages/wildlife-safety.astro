@@ -1,271 +1,80 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { wildlifeReviewedAt, wildlifeSources, wildlifeDistanceGroups, wildlifeContacts, wildlifeSafetyFaqs } from '../data/wildlifeSafety';
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: wildlifeSafetyFaqs.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) };
 ---
 
-<BaseLayout title="Wildlife Encounter Emergency Guide — Banff Bear, Elk & Cougar Safety" description="What to do if you encounter a bear, elk, cougar, or wolf in Banff National Park. Step-by-step emergency protocols, how to use bear spray, and essential safety rules.">
+<BaseLayout title="Banff Wildlife Safety: Bears, Elk, Cougars & Emergency Contacts" description="Prepare for Banff wildlife encounters with Parks Canada viewing distances, behaviour-based bear advice, elk and cougar guidance, and separate emergency and reporting contacts." lastUpdated={wildlifeReviewedAt}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Wildlife', href: '/wildlife' }, { label: 'Wildlife Safety' }]} /></div>
+  <header class="safety-hero"><div class="container">
+    <span class="badge">Prepare before you go</span>
+    <h1>Wildlife safety in Banff</h1>
+    <p>Give animals room, avoid a close encounter, and learn the response before you need it. Town paths, picnic areas and roadside stops are wildlife habitat too.</p>
+    <p class="review">Official guidance reviewed <time datetime={wildlifeReviewedAt}>29 October 2026</time>. This is preparation guidance, not a current wildlife or trail report.</p>
+  </div></header>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'What to do if you see a bear in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Stay calm and assess the bear species. For grizzly bears: do not run, speak calmly, back away slowly, and if charged, stand your ground — most charges are bluffs. If a grizzly makes contact, play dead face down, protect your neck. For black bears: appear large, make noise, and if attacked, fight back aggressively. Always carry bear spray and know how to use it. Maintain 100m distance from all bears.' } },
-      { '@type': 'Question', name: 'Are there cougars in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, cougars (mountain lions) live in Banff National Park, but sightings are extremely rare. They are solitary, nocturnal predators that actively avoid humans. If you encounter one: do not run, make yourself appear as large as possible, maintain eye contact, back away slowly, and if attacked, fight back aggressively. Pick up small children immediately. Cougar encounters are far less common than bear or elk encounters.' } },
-      { '@type': 'Question', name: 'How to use bear spray?', acceptedAnswer: { '@type': 'Answer', text: 'Bear spray is your best defence against an aggressive bear. To use: 1) Remove the safety clip with your thumb. 2) Hold with both hands, arms extended. 3) Aim slightly downward (spray creates a cloud). 4) When the bear is 6-10 metres away, spray a 2-3 second burst. 5) Spray in a side-to-side sweeping motion. 6) Continue spraying short bursts if the bear keeps approaching. 7) Back away while the spray cloud works. Bear spray is 92% effective at stopping aggressive bears.' } },
-    ],
-  })} />
+  <div class="container safety-content">
+    <section aria-labelledby="contacts-heading" class="contacts-section">
+      <h2 id="contacts-heading">Emergency help and wildlife reports</h2>
+      <div class="cards contacts">{Object.values(wildlifeContacts).map(contact => <article class="card">
+        <h3>{contact.label}</h3><p class="phone"><a href={contact.href}>{contact.phone}</a></p><p>{contact.note}</p><a href={contact.source}>Official contact guidance</a>
+      </article>)}</div>
+      <p>Save these numbers and your route before leaving. Tell a trusted person when to expect you back. A phone page cannot provide emergency assistance, and cell coverage cannot be assumed. <a href={wildlifeSources.safety}>Read Parks Canada’s trip-safety advice</a>.</p>
+    </section>
 
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Wildlife Safety' }]} />
+    <nav aria-label="On this page" class="jump-links"><a href="#space">Viewing distances</a><a href="#bears">Bears</a><a href="#elk">Elk</a><a href="#carnivores">Cougars, wolves & coyotes</a><a href="#preparation">Before the outing</a></nav>
+
+    <section id="space" aria-labelledby="space-heading">
+      <h2 id="space-heading">Leave space before taking a photograph</h2>
+      <div class="cards">{wildlifeDistanceGroups.map(group => <article class="card distance"><strong>{group.metres} metres minimum</strong><h3>{group.species.join(', ')}</h3><a href={group.source}>Parks Canada viewing guidance</a></article>)}</div>
+      <p>These are minimum viewing distances, not a protective boundary. Back off if an animal becomes alert, nervous or changes what it is doing because of you. Use binoculars or a long lens; never crowd, follow, surround, feed or lure wildlife.</p>
+      <p>At the roadside, slow down and stay in your vehicle. Stop only where safe and legal, keep the visit brief and move on if there is a traffic jam. Do not block an animal’s path or get out for a closer view. <a href={wildlifeSources.viewing}>Read the complete viewing and roadside rules</a>.</p>
+    </section>
+
+    <section id="bears" aria-labelledby="bear-heading">
+      <h2 id="bear-heading">Bears: the encounter and behaviour matter</h2>
+      <p>Parks Canada’s response guidance applies to both grizzly and black bears. Do not choose “play dead” or “fight back” from colour or species alone. <a href={wildlifeSources.bears}>Read the full official bear-encounter guide</a> before a trip; behaviour can be difficult to interpret.</p>
+      <div class="cards">
+        <article class="card"><h3>A bear has not noticed you</h3><p>Stop, remain calm and prepare your spray. Leave quietly without attracting its attention. Give it room; do not approach to identify or photograph it.</p></article>
+        <article class="card"><h3>A bear knows you are there</h3><p>Stay together, pick up small children, speak calmly and firmly, and back away slowly when possible. Do not run. Keep your backpack on and leave the bear an escape route.</p></article>
+      </div>
+      <article class="response"><h3>A defensive bear approaches</h3><p>A surprised bear, or one defending food or young, may be stressed. Remain calm and non-threatening; back away when it stops advancing. If it keeps approaching, stand your ground and prepare to use bear spray according to the product instructions.</p><p><strong>If defensive contact occurs:</strong> Parks Canada advises lying face down, legs apart, hands protecting the back of your neck and backpack on. Remain still until the bear leaves. If the attack continues, it may have become predatory: fight back.</p></article>
+      <article class="response"><h3>A bear follows, stalks or attacks as a predator</h3><p>A non-defensive approach can have different motivations. If the bear follows you, stop, stand your ground, speak firmly and act aggressively to discourage it; use spray if it approaches within your canister’s effective range. In a predatory attack, including an attack at night, <strong>do not play dead</strong>. Try to reach a secure vehicle or building; if you cannot escape, fight back.</p></article>
+      <p><a href="/bear-spray">Arrange bear spray and instruction</a>. Wind, cold, rain and product condition can affect performance. Carrying spray does not replace avoiding an encounter.</p>
+    </section>
+
+    <section id="elk" aria-labelledby="elk-heading">
+      <h2 id="elk-heading">Elk: change your route when they need space</h2>
+      <p>Keep at least 30 metres away, including on lawns and paths in town. Elk can strike with hooves or charge with antlers. Never walk through a group or between a cow and calf. If an elk becomes nervous, grinds its teeth or moves its ears back, increase the distance and leave it room.</p>
+      <p>Be particularly cautious during spring calving and fall mating. Follow temporary closures; do not use a calendar end date as permission to approach. If your path is blocked, wait well back or choose another route instead of squeezing past. <a href={wildlifeSources.elk}>Parks Canada elk safety</a> and <a href={wildlifeSources.bulletins}>current advisories</a>.</p>
+    </section>
+
+    <section id="carnivores" aria-labelledby="carnivore-heading">
+      <h2 id="carnivore-heading">Cougars, wolves and coyotes</h2>
+      <p>Leave at least 100 metres when observing. If one approaches without fear, Parks Canada advises standing your ground, making yourself large and acting aggressively: shout, stomp or throw an object. Pick up small children, stay together, do not run and do not jump towards the animal. Be ready to use bear spray. <a href={wildlifeSources.carnivores}>Official carnivore encounter guidance</a>.</p>
+      <p><strong>If a cougar attacks, fight back.</strong> Alberta advises using everything available, aiming at the face and eyes, getting back to your feet if knocked down and never playing dead. <a href={wildlifeSources.cougars}>Read Alberta’s cougar-specific response</a>.</p>
+      <p>Once safe, report encounters to Park Dispatch at <a href={wildlifeContacts.wildlifeReport.href}>403-762-1470</a>. Note the location, animal description, behaviour and possible attractants; do not follow the animal to improve the report.</p>
+    </section>
+
+    <section id="preparation" aria-labelledby="prep-heading">
+      <h2 id="prep-heading">Before a walk, ride, run or picnic</h2>
+      <ul>
+        <li>Check <a href={wildlifeSources.bulletins}>Parks Canada warnings and closures</a> and the specific route. A nearby sighting does not establish whether a trail is open.</li>
+        <li>Travel together, keep children close and make human voices heard near blind corners, running water and dense vegetation. Bear bells alone are not enough.</li>
+        <li>Keep dogs leashed and under physical control; check restrictions and consider leaving a dog at home. Dogs can provoke an encounter.</li>
+        <li>Keep food, rubbish and scented items controlled. Leave a large animal carcass immediately and report it.</li>
+        <li>Carry bear spray where you can reach it on the trail, know the exact canister, and plan your emergency communication.</li>
+      </ul>
+      <p>These preparation points follow <a href={wildlifeSources.bears}>Parks Canada’s bear-country guidance</a>. Winter also requires preparation: bears can wake briefly while denning, and other wildlife remains active. Never follow tracks towards an animal. <a href={wildlifeSources.winter}>Official winter safety advice</a>.</p>
+    </section>
+
+    <section aria-labelledby="faq-heading"><h2 id="faq-heading">Common questions</h2>{wildlifeSafetyFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <aside class="next"><h2>Build the rest of the outing</h2><p><a href="/wildlife-calendar">Seasonal wildlife preparation</a> · <a href="/wildlife">Wildlife field guide</a> · <a href="/trails">Trail planning</a> · <a href="/winter">Winter trip planning</a></p><p>Official source review covers Banff National Park and the linked Alberta cougar guidance. Other parks and carriers can have different rules. Recheck local signs and current notices on the day.</p></aside>
   </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=1600&q=80" alt="Grizzly bear in the Canadian Rockies wilderness" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Emergency Guide</span>
-      <h1>Wildlife Encounter Safety</h1>
-      <p>What to do if you encounter a bear, elk, cougar, or wolf in Banff. Species-specific protocols that could save your life.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-
-      <div class="intro-block">
-        <h2>Banff Wildlife Encounter Protocols</h2>
-        <p>Banff National Park is home to grizzly bears, black bears, elk, cougars, wolves, and more. Most wildlife encounters are peaceful and thrilling — but you need to know what to do if an animal becomes aggressive. This guide covers species-specific emergency protocols based on Parks Canada guidelines.</p>
-      </div>
-
-      <div class="encounter-section">
-        <h2>🐻 Bear Encounter Protocol</h2>
-        <p>Bears are the most common dangerous wildlife encounter in Banff. Knowing the difference between grizzly and black bear behaviour can save your life.</p>
-
-        <div class="bear-compare">
-          <div class="bear-card grizzly">
-            <h3>Grizzly Bear</h3>
-            <div class="bear-id">
-              <p><strong>Identification:</strong> Shoulder hump, dish-shaped face, longer claws, typically brown/blonde</p>
-            </div>
-            <div class="protocol-steps">
-              <h4>If you see a grizzly:</h4>
-              <ol>
-                <li>Stay calm. Do NOT run — bears can run 50 km/h</li>
-                <li>Speak in a calm, low voice so the bear knows you're human</li>
-                <li>Back away slowly. Do not make direct eye contact</li>
-                <li>If it charges — <strong>stand your ground</strong>. Most charges are bluffs</li>
-                <li>Use bear spray when the bear is within 6-10 metres</li>
-              </ol>
-              <h4>If a grizzly makes contact:</h4>
-              <ol>
-                <li><strong>Play dead.</strong> Lie face down, spread your legs, protect your neck with hands</li>
-                <li>Keep your backpack on for protection</li>
-                <li>Stay still until the bear leaves the area</li>
-                <li>Exception: If the attack is prolonged or the bear starts feeding, fight back — this means it's predatory</li>
-              </ol>
-            </div>
-          </div>
-
-          <div class="bear-card black">
-            <h3>Black Bear</h3>
-            <div class="bear-id">
-              <p><strong>Identification:</strong> No shoulder hump, straight face profile, shorter claws, can be black, brown, or cinnamon</p>
-            </div>
-            <div class="protocol-steps">
-              <h4>If you see a black bear:</h4>
-              <ol>
-                <li>Stay calm. Do NOT run</li>
-                <li>Make yourself look big — raise your arms, stand on a rock</li>
-                <li>Make noise — yell, clap, bang pots</li>
-                <li>Back away slowly while facing the bear</li>
-                <li>Use bear spray if it approaches within 6-10 metres</li>
-              </ol>
-              <h4>If a black bear makes contact:</h4>
-              <ol>
-                <li><strong>Fight back aggressively.</strong> Do NOT play dead</li>
-                <li>Use anything available — rocks, sticks, fists, bear spray</li>
-                <li>Target the nose and eyes</li>
-                <li>Black bear attacks are more likely to be predatory — fighting back is your best chance</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="encounter-section">
-        <h2>🦌 Elk Encounter Protocol</h2>
-        <p>Elk are the most frequently encountered large animal in Banff — and one of the most dangerous, especially during the fall rut (September-October).</p>
-        <div class="protocol-box">
-          <ul>
-            <li><strong>Maintain 50+ metres distance</strong> at all times</li>
-            <li>During fall rut, bull elk are extremely aggressive and will charge without warning</li>
-            <li>Cow elk with calves (spring) are also protective and dangerous</li>
-            <li>If an elk lowers its head, pins back its ears, or paws the ground — it's about to charge</li>
-            <li><strong>Back away slowly.</strong> Get behind a tree, car, or building</li>
-            <li>Do NOT turn your back. Do NOT run — this triggers chase behaviour</li>
-            <li>If knocked down, curl into a ball and protect your head and neck</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="encounter-section">
-        <h2>🐆 Cougar Encounter Protocol</h2>
-        <p>Cougar (mountain lion) sightings in Banff are extremely rare. These solitary, nocturnal predators actively avoid humans.</p>
-        <div class="protocol-box">
-          <ul>
-            <li><strong>Do NOT run</strong> — this triggers a predatory chase response</li>
-            <li>Make yourself appear as large as possible — raise arms, open jacket wide</li>
-            <li>Maintain eye contact with the cougar</li>
-            <li>Pick up small children immediately without bending over</li>
-            <li>Back away slowly while facing the animal</li>
-            <li>Make loud noises — shout, clap, throw rocks near (not at) the cougar</li>
-            <li><strong>If attacked, fight back aggressively</strong> — target eyes and nose</li>
-            <li>Use bear spray if available</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="encounter-section">
-        <h2>🐺 Wolf Encounter Protocol</h2>
-        <p>Wolves live in Banff but are rarely seen. They generally avoid humans. If you encounter a wolf:</p>
-        <div class="protocol-box">
-          <ul>
-            <li>Maintain a safe distance — at least 100 metres</li>
-            <li>Do NOT approach, even if the wolf appears calm or curious</li>
-            <li>Back away slowly while facing the animal</li>
-            <li>Make yourself large and make noise</li>
-            <li>Do NOT run — maintain calm, assertive body language</li>
-            <li>Report all wolf sightings to Parks Canada at <a href="tel:4037624506">403-762-4506</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="spray-section">
-        <h2>🧴 How to Use Bear Spray — Step by Step</h2>
-        <p>Bear spray is 92% effective at stopping aggressive bears. It works on all wildlife. Here's how to use it correctly:</p>
-        <div class="spray-steps">
-          <div class="spray-step">
-            <div class="step-num">1</div>
-            <div>
-              <strong>Remove the safety clip</strong>
-              <p>Flip the orange safety tab off with your thumb. Practice this before your hike.</p>
-            </div>
-          </div>
-          <div class="spray-step">
-            <div class="step-num">2</div>
-            <div>
-              <strong>Hold with both hands</strong>
-              <p>Grip the canister firmly with both hands, arms extended in front of you.</p>
-            </div>
-          </div>
-          <div class="spray-step">
-            <div class="step-num">3</div>
-            <div>
-              <strong>Aim slightly downward</strong>
-              <p>The spray creates an expanding cloud. Aim for the area between you and the animal, slightly below face level.</p>
-            </div>
-          </div>
-          <div class="spray-step">
-            <div class="step-num">4</div>
-            <div>
-              <strong>Spray at 6-10 metres</strong>
-              <p>Wait until the bear is within 6-10 metres (20-30 feet). Spray too early and it will dissipate before reaching the bear.</p>
-            </div>
-          </div>
-          <div class="spray-step">
-            <div class="step-num">5</div>
-            <div>
-              <strong>Sweep side to side</strong>
-              <p>Spray a 2-3 second burst in a sweeping motion to create a wall of spray the bear must pass through.</p>
-            </div>
-          </div>
-          <div class="spray-step">
-            <div class="step-num">6</div>
-            <div>
-              <strong>Back away</strong>
-              <p>Continue backing away while the spray cloud takes effect. Be ready to spray again if needed — most cans have 6-8 seconds of spray.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
 </BaseLayout>
 
 <style>
-  .intro-block { max-width: 800px; margin: 0 auto 3rem; }
-  .intro-block h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; }
-  .intro-block p { color: var(--color-text-light); font-size: 1.05rem; line-height: 1.7; }
-
-  .encounter-section { margin-bottom: 3rem; }
-  .encounter-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; }
-  .encounter-section > p { color: var(--color-text-light); margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.6; }
-
-  .bear-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-
-  .bear-card {
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    border: 2px solid;
-  }
-  .bear-card.grizzly { background: #fef3e2; border-color: #d4a056; }
-  .bear-card.black { background: #e8e8e8; border-color: #555; }
-
-  .bear-card h3 { font-family: var(--font-heading); margin-bottom: 0.75rem; font-size: 1.3rem; }
-  .bear-card.grizzly h3 { color: #8b5e34; }
-  .bear-card.black h3 { color: #333; }
-
-  .bear-id { margin-bottom: 1rem; }
-  .bear-id p { font-size: 0.9rem; line-height: 1.5; margin: 0; }
-
-  .protocol-steps h4 { font-size: 0.95rem; color: var(--color-primary); margin: 1rem 0 0.5rem; }
-  .protocol-steps ol { padding-left: 1.25rem; margin: 0; }
-  .protocol-steps li { font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.4rem; }
-
-  .protocol-box {
-    background: var(--color-bg-alt);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-  }
-  .protocol-box ul { padding-left: 1.25rem; margin: 0; }
-  .protocol-box li { font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.5rem; }
-  .protocol-box a { color: var(--color-accent); }
-
-  .spray-section { margin-bottom: 2rem; }
-  .spray-section h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 0.5rem; }
-  .spray-section > p { color: var(--color-text-light); margin-bottom: 1.5rem; }
-
-  .spray-steps { display: flex; flex-direction: column; gap: 1rem; }
-
-  .spray-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    background: var(--color-white);
-    border: 1px solid #e5e5e5;
-    border-radius: var(--radius);
-    padding: 1.25rem;
-  }
-
-  .step-num {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
-
-  .spray-step strong { display: block; color: var(--color-primary); margin-bottom: 0.25rem; }
-  .spray-step p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.5; margin: 0; }
-
-  @media (max-width: 768px) {
-    .bear-compare { grid-template-columns: 1fr; }
-  }
+  .safety-hero{background:var(--color-primary);color:white;padding:3rem 0}.safety-hero h1{color:white;max-width:850px}.safety-hero p{color:white;max-width:800px}.review{font-size:.9rem;opacity:.9}.safety-content{max-width:1080px;padding-top:2rem;padding-bottom:3rem}.safety-content section{margin:2.5rem 0;scroll-margin-top:7rem}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1rem;margin:1.25rem 0}.card,.response,.next{padding:1.4rem;border:1px solid #d8d8ce;border-radius:12px;background:white}.contacts .card{border-top:4px solid var(--color-accent)}.phone{font-size:1.6rem;font-weight:750}.distance strong{font-size:1.7rem;color:var(--color-primary)}.response{margin:1rem 0;border-left:5px solid var(--color-accent)}.jump-links{display:flex;flex-wrap:wrap;gap:.75rem;background:var(--color-bg-alt);padding:1rem;border-radius:8px}.jump-links a{padding:.35rem}.safety-content a{text-decoration:underline;text-underline-offset:.16em}.safety-content li{margin:.6rem 0}.safety-content details{padding:1rem;border-bottom:1px solid #d8d8ce}.safety-content summary{font-weight:700;cursor:pointer}.next{margin-top:2rem;background:var(--color-bg-alt)}@media print{.safety-hero{background:white;color:black;padding:1rem 0}.safety-hero h1,.safety-hero p{color:black}.jump-links{display:none}.card,.response{break-inside:avoid}}
 </style>

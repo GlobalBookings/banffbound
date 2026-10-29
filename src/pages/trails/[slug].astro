@@ -17,6 +17,8 @@ const listedCount = trails.filter(isDirectoryTrail).length;
 const conditionReportUrl = trailReportUrl(trail);
 const bulletinsUrl = trailBulletinsUrl(trail);
 const seasonLabel = trailSeasonLabel(trail.season);
+const imageIsVerified = trail.imageStatus === 'verified';
+const gradeLabel = trail.routeVerified === false ? 'Not verified' : trail.sourceReview?.officialGrade || trail.difficulty;
 
 const difficultyColor = trail.routeVerified === false ? '#4b5563' : trail.difficulty === 'easy' ? '#166534' : trail.difficulty === 'moderate' ? '#92400e' : '#991b1b';
 const difficultyBg = trail.routeVerified === false ? '#e5e7eb' : trail.difficulty === 'easy' ? '#dcfce7' : trail.difficulty === 'moderate' ? '#fef3c7' : '#fee2e2';
@@ -33,14 +35,9 @@ const trailSchema = {
   '@type': 'TouristAttraction',
   name: trail.name,
   description: trail.description,
-  image: trail.image,
+  ...(imageIsVerified ? { image: trail.image } : {}),
   url: `https://banffbound.com/trails/${trail.slug}/`,
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: trail.area,
-    addressRegion: trail.province || (trail.area === 'Kootenay' ? 'British Columbia' : 'Alberta'),
-    addressCountry: 'CA',
-  },
+  containedInPlace: { '@type': 'Place', name: trailPark(trail) },
 };
 ---
 
@@ -57,17 +54,18 @@ const trailSchema = {
   {trail.routeVerified !== false && <script type="application/ld+json" set:html={JSON.stringify(trailSchema)} />}
 
   <section class="trail-hero">
-    <img src={trail.image} alt={trail.name} class="trail-hero-bg" loading="eager" fetchpriority="high" />
+    <img src={trail.image} alt={imageIsVerified ? trail.name : "Illustrative outdoor stock photograph; not verified as this route"} class="trail-hero-bg" loading="eager" fetchpriority="high" />
     <div class="trail-hero-overlay">
       <div class="container">
         <div class="hero-tags">
-          <span class="difficulty-badge" style={`background:${difficultyBg};color:${difficultyColor};`}>{trail.routeVerified === false ? 'Route not verified' : trail.difficulty}</span>
+          <span class="difficulty-badge" style={`background:${difficultyBg};color:${difficultyColor};`}>{trail.routeVerified === false ? 'Route not verified' : gradeLabel}</span>
           <span class="badge">{trail.area}</span>
           <span class="type-tag">{trail.type}</span>
           <span class="type-tag">Check current official report</span>
         </div>
         <h1>{trail.name}</h1>
         <p class="hero-desc">{trail.description}</p>
+        {!imageIsVerified && <p class="photo-note">{trail.imageNote || 'Illustrative stock photograph; not verified as this route.'}</p>}
       </div>
     </div>
   </section>
@@ -102,7 +100,7 @@ const trailSchema = {
       <div class="stat-item">
         <span class="stat-icon">🏔️</span>
         <span class="stat-label">Difficulty</span>
-        <span class="stat-value" style={`color:${difficultyColor};`}>{trail.routeVerified === false ? 'Not verified' : trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</span>
+        <span class="stat-value" style={`color:${difficultyColor};`}>{gradeLabel.charAt(0).toUpperCase() + gradeLabel.slice(1)}</span>
       </div>
     </div>
   </div>
@@ -191,7 +189,7 @@ const trailSchema = {
             <div class="fact-row"><span>Elevation Gain</span><span>{trail.elevationGain}</span></div>
             <div class="fact-row"><span>Elevation Loss</span><span>{trail.elevationLoss}</span></div>
             <div class="fact-row"><span>Time</span><span>{trail.time}</span></div>
-            <div class="fact-row"><span>Difficulty</span><span style={`color:${difficultyColor};font-weight:700;`}>{trail.routeVerified === false ? 'Not verified' : trail.difficulty.charAt(0).toUpperCase() + trail.difficulty.slice(1)}</span></div>
+            <div class="fact-row"><span>Difficulty</span><span style={`color:${difficultyColor};font-weight:700;`}>{gradeLabel.charAt(0).toUpperCase() + gradeLabel.slice(1)}</span></div>
             <div class="fact-row"><span>Route context</span><span>{seasonLabel}</span></div>
             <div class="fact-row"><span>Type</span><span style="text-transform:capitalize;">{trail.type}</span></div>
             <div class="fact-row"><span>Area</span><span>{trail.area}</span></div>
@@ -202,6 +200,7 @@ const trailSchema = {
           <div class="sidebar-card"><h3>What to Carry</h3><p>Match equipment to the actual activity, surface, weather and group. Include navigation and a headlamp even on a short outing.</p><a href="/packing-list">Packing checklist →</a><p><a href="/winter">Winter route planning →</a></p></div>
           <div class="sidebar-card">
             <h3>Official Info</h3>
+            {trail.sourceReview && <p class="review-scope"><strong>{trail.sourceReview.status === 'reviewed' ? 'Review scope:' : 'Unverified listing:'}</strong> {trail.sourceReview.scope}</p>}
             <p style="font-size:0.85rem;color:var(--color-text-light);margin-bottom:0.75rem;">Get the latest trail conditions, closures, and safety updates.</p>
             <a href={trail.parksCanadaUrl} target="_blank" rel="noopener" class="btn btn-primary sidebar-btn">Official route information →</a>
             {trail.sourceUrls && <ul class="source-links">{trail.sourceUrls.filter(source => source.url !== trail.parksCanadaUrl).map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.label} ↗</a></li>)}</ul>}
@@ -227,8 +226,9 @@ const trailSchema = {
         <div class="grid grid-4">
           {nearbyTrails.map(t => (
             <a href={`/trails/${t.slug}`} class="card">
-              <img src={t.image} alt={t.name} class="card-image" style="height:160px;" loading="lazy" />
+              <img src={t.image} alt={t.imageStatus === 'verified' ? t.name : "Illustrative stock photograph; not verified as this route"} class="card-image" style="height:160px;" loading="lazy" />
               <div class="card-body">
+                {t.imageStatus !== 'verified' && <p class="card-photo-note">Illustrative stock photo</p>}
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.3rem;">
                   <span class="nearby-difficulty" style={`background:${t.difficulty === 'easy' ? '#dcfce7' : t.difficulty === 'moderate' ? '#fef3c7' : '#fee2e2'};color:${t.difficulty === 'easy' ? '#166534' : t.difficulty === 'moderate' ? '#92400e' : '#991b1b'};`}>{t.difficulty}</span>
                   <span style="font-size:0.75rem;color:var(--color-text-light);text-transform:capitalize;">{t.type}</span>
@@ -265,6 +265,9 @@ const trailSchema = {
 </script>
 
 <style>
+  .photo-note { font-size:.8rem; color:rgba(255,255,255,.9); margin-top:.65rem; max-width:48rem; }
+  .card-photo-note { font-size:.75rem; color:var(--color-text-light); margin:0 0 .5rem; }
+  .review-scope { font-size:.85rem; line-height:1.6; margin-bottom:.75rem; }
   .conditions-bar p { margin:.6rem 0; line-height:1.6; }
   .route-notice { padding:1rem; background:#fff3cd; border-radius:var(--radius); margin:1rem 0; }
 

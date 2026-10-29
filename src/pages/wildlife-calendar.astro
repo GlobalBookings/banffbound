@@ -1,285 +1,71 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { wildlifeReviewedAt, wildlifeSources, wildlifeSeasons, wildlifeCalendarFaqs } from '../data/wildlifeSafety';
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: wildlifeCalendarFaqs.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) };
+const sourceLabels: Record<string, string> = { winter: 'Winter safety', spray: 'Bear spray', bears: 'Bear-country preparation', parkway: 'Parkway restrictions', elkSeasons: 'Seasonal elk guidance', elk: 'Elk safety', bulletins: 'Current notices', viewing: 'Viewing rules' };
 ---
 
-<BaseLayout title="Banff Wildlife Calendar — Month-by-Month Animal Activity Guide" description="Month-by-month wildlife activity calendar for Banff National Park. When bears emerge, elk rut, bird migration, wolf activity, and the best month for wildlife viewing across all seasons.">
+<BaseLayout title="Banff Wildlife Calendar: Seasonal Preparation, Elk Rut & Winter Advice" description="A month-by-month Banff wildlife preparation calendar with elk calving and rut guidance, winter precautions, seasonal access checks and official sources. No promised sightings." lastUpdated={wildlifeReviewedAt}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Wildlife', href: '/wildlife' }, { label: 'Wildlife Calendar' }]} /></div>
+  <header class="calendar-hero"><div class="container"><span class="badge">A seasonal field guide</span><h1>Banff wildlife calendar</h1><p>Choose the preparation for your travel month. Seasons affect animal behaviour and access rules, but they cannot predict what you will see or make a close encounter safe.</p><p class="review">Official sources reviewed <time datetime={wildlifeReviewedAt}>29 October 2026</time>. This calendar contains no live animal locations or sighting forecasts.</p></div></header>
+  <div class="container calendar-content">
+    <section aria-labelledby="plan-heading"><h2 id="plan-heading">Plan an outing that works without a sighting</h2><p>Choose a walk, landscape stop or guided learning experience for its own value. Carry binoculars and allow time to wait well back or change direction when wildlife occupies a path. Never follow tracks, seek a nest or approach an animal to complete a checklist.</p><p><a href="/wildlife-safety">Read the encounter and reporting guide</a> before leaving. Parks Canada’s minimum distances are 100 metres from bears, wolves, cougars and coyotes, and 30 metres from deer, elk, sheep and moose. Give more space whenever an animal reacts to you. <a href={wildlifeSources.viewing}>Official viewing rules</a>.</p></section>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'When is elk rut in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Elk rut in Banff runs from mid-September through mid-October, peaking in late September and early October. Bull elk become extremely aggressive during this time — they bugle loudly, spar with other males, and will charge humans who get too close. Maintain at least 50 metres distance. The best places to observe the rut are Vermilion Lakes, the Banff Springs golf course area, and the Cascade Gardens. Never approach a rutting bull elk — they have killed people.' } },
-      { '@type': 'Question', name: 'When do bears come out of hibernation in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Bears in Banff typically emerge from hibernation between mid-March and late April. Male grizzlies emerge first, followed by females and females with cubs (usually late April to May). Bears are hungry after hibernation and actively forage at lower elevations along roadsides — the Bow Valley Parkway (1A) is famous for spring bear sightings. May and June are peak bear viewing months in Banff. Bears enter dens again in late October to November.' } },
-      { '@type': 'Question', name: 'What is the best month for wildlife in Banff?', acceptedAnswer: { '@type': 'Answer', text: 'September is the best overall month for wildlife in Banff. You get: elk rut (spectacular bugling and sparring), bears in hyperphagia (feeding frenzy before hibernation, very active and visible), fall bird migration, golden larch season, and fewer tourists than summer. Other top months: May-June for bears with cubs and spring birds, January-February for wolves and elk in valleys, and July-August for mountain goats and pikas at high elevation.' } },
-    ],
-  })} />
+    <section aria-labelledby="calendar-heading"><h2 id="calendar-heading">Preparation through the year</h2>
+      <form id="wildlife-month-filter" class="filter" hidden>
+        <div><label for="wildlife-month">Travel month</label><select id="wildlife-month" name="month"><option value="all">All months</option>{months.map((month, index) => <option value={index + 1}>{month}</option>)}</select></div>
+        <button type="reset" class="btn btn-secondary">Show all months</button>
+        <p id="wildlife-month-count" role="status" aria-live="polite" aria-atomic="true">6 seasonal cards shown.</p>
+      </form>
+      <noscript><p>All six seasonal cards are shown below. Each covers two months; no JavaScript is needed to read the guide.</p></noscript>
+      <div class="season-grid" id="wildlife-season-cards">{wildlifeSeasons.map(season => <article class="season-card" id={`season-${season.id}`} data-season={season.id}>
+        <span class="season-label">{season.season}</span><h3>{season.title}</h3><p>{season.summary}</p><ul>{season.preparation.map(item => <li>{item}</li>)}</ul><p class="sources">Sources: {season.sourceKeys.map((key, index) => <><a href={wildlifeSources[key]}>{sourceLabels[key]}</a>{index < season.sourceKeys.length - 1 ? ' · ' : ''}</>)}</p>
+      </article>)}</div>
+    </section>
 
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Wildlife Calendar' }]} />
+    <section class="access-note" aria-labelledby="access-heading"><h2 id="access-heading">Seasonal access is a separate check</h2><p>The Bow Valley Parkway has an annual overnight travel restriction from <strong>1 March to 25 June, 8 p.m. to 8 a.m.</strong> on the 17 km section between Johnston Canyon Campground and Fireside Picnic Area. It applies to driving, cycling and walking. This is not a description of every Parkway section or a guarantee that another route is open. <a href={wildlifeSources.parkway}>Check the exact official restriction and other Parkway access details</a>.</p><p>Temporary wildlife closures and group-size restrictions can apply elsewhere. Read <a href={wildlifeSources.bulletins}>current Parks Canada bulletins</a> and trailhead signs on the day. In winter, also check weather, avalanche terrain and ice hazards; the wildlife calendar does not assess a route’s suitability.</p></section>
+
+    <section aria-labelledby="seasonal-heading"><h2 id="seasonal-heading">How to use seasonal behaviour responsibly</h2><div class="principles">
+      <article><h3>Calves and mating groups need room</h3><p>Do not separate a cow from a calf or walk between elk. Keep the whole group in view from a distance and take another route if necessary. A calf may be hidden; an apparently solitary cow still deserves space.</p></article>
+      <article><h3>Feeding is more important than a photograph</h3><p>Keep stops brief and let animals carry on without changing their behaviour. At a roadside sighting, stay in the vehicle, stop only where legal and safe, and move on if congestion develops.</p></article>
+      <article><h3>Denning does not mean absent</h3><p>Parks Canada explicitly includes bear spray in its winter packing advice and says bears can wake briefly. Prepare for wildlife on winter outings rather than using snow or a month as reassurance.</p></article>
+    </div><p>Read <a href={wildlifeSources.elk}>elk guidance</a>, <a href={wildlifeSources.viewing}>responsible viewing advice</a> and <a href={wildlifeSources.winter}>winter preparation</a> for the underlying rules.</p></section>
+
+    <section aria-labelledby="faq-heading"><h2 id="faq-heading">Calendar questions</h2>{wildlifeCalendarFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+    <aside class="next"><h2>Continue planning</h2><p><a href="/bear-spray">Local bear-spray preparation</a> · <a href="/wildlife">Wildlife field guide</a> · <a href="/trails">Trail directory</a> · <a href="/winter">Winter planning</a> · <a href="/towns">Choose a base</a></p><p>Review dates refer to the linked sources, not observations of animals. Seasonal windows vary and official pages may describe them differently; current signs and restrictions take priority.</p></aside>
   </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=1600&q=80" alt="Elk in autumn landscape of the Canadian Rockies" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Seasonal Guide</span>
-      <h1>Wildlife Calendar</h1>
-      <p>Month-by-month guide to wildlife activity in Banff — know exactly when and where to see bears, elk, wolves, and more.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-
-      <div class="intro-block">
-        <h2>Banff Wildlife Through the Seasons</h2>
-        <p>Wildlife in Banff follows predictable seasonal patterns — bears hibernate in winter and forage in spring, elk rut in fall, birds migrate, and wolves are most visible in the cold months. Understanding these cycles lets you plan your trip for the exact wildlife encounters you want.</p>
-      </div>
-
-      <div class="calendar-timeline">
-
-        <div class="month-card winter">
-          <div class="month-header">
-            <span class="month-icon">❄️</span>
-            <h3>January & February</h3>
-            <span class="season-tag winter-tag">Winter</span>
-          </div>
-          <div class="month-content">
-            <div class="wildlife-items">
-              <div class="wildlife-item">
-                <strong>🐺 Wolves</strong>
-                <p>Most active and visible in winter. Packs hunt elk in the valleys. Bow Valley wolf pack is occasionally seen from the Trans-Canada Highway or Vermilion Lakes Road. Dawn and dusk are best.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🦌 Elk</strong>
-                <p>Large herds concentrate in valleys near Banff town. Commonly seen on the Banff Springs golf course, Cascade Gardens, and along the Bow River. Easier to spot with no foliage.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🐏 Bighorn Sheep</strong>
-                <p>Move to lower elevations and roadways to escape deep snow. Commonly seen on the Trans-Canada Highway shoulders and near Lake Minnewanka Road. Often lick road salt.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🦉 Owls</strong>
-                <p>Great horned owl and great gray owl are more active and visible. Listen at dusk in forested areas. Fenland Trail is a good spot.</p>
-              </div>
-            </div>
-            <p class="month-tip"><strong>Tip:</strong> Winter wildlife viewing is exceptional because animals concentrate in valleys and bare trees improve visibility. Drive the Bow Valley Parkway slowly at dawn.</p>
-          </div>
-        </div>
-
-        <div class="month-card spring">
-          <div class="month-header">
-            <span class="month-icon">🌱</span>
-            <h3>March & April</h3>
-            <span class="season-tag spring-tag">Early Spring</span>
-          </div>
-          <div class="month-content">
-            <div class="wildlife-items">
-              <div class="wildlife-item">
-                <strong>🐻 Bears Emerging</strong>
-                <p>Grizzlies and black bears emerge from hibernation starting mid-March (males first). Hungry and foraging at low elevations. Bow Valley Parkway dandelion fields are prime bear viewing in April-May.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🐦 First Bird Migrants</strong>
-                <p>Mountain bluebirds, robins, and early warblers return. Vermilion Lakes marshes come alive with waterfowl. Osprey return to nesting platforms.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🦌 Elk</strong>
-                <p>Pregnant cows begin moving to calving areas. Antler shedding begins for bull elk. Shed antler hunting is a popular activity (observe only — collecting is illegal in national parks).</p>
-              </div>
-            </div>
-            <p class="month-tip"><strong>Tip:</strong> Carry bear spray even on short walks — bears are unpredictable when first emerging from hibernation. The Bow Valley Parkway has an evening closure (8 PM - 8 AM, March-June) to protect wildlife.</p>
-          </div>
-        </div>
-
-        <div class="month-card spring">
-          <div class="month-header">
-            <span class="month-icon">🌸</span>
-            <h3>May & June</h3>
-            <span class="season-tag spring-tag">Late Spring</span>
-          </div>
-          <div class="month-content">
-            <div class="wildlife-items">
-              <div class="wildlife-item">
-                <strong>🐻 Bear Cubs</strong>
-                <p>Female grizzlies appear with cubs of the year (usually 1-3 cubs). Incredibly cute but extremely dangerous — mother bears are fiercely protective. Maintain 100m+ distance at all times.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🦅 Osprey Nesting</strong>
-                <p>Osprey build and occupy large stick nests on poles near lakes and rivers. Watch them dive for fish. Nests are visible at several spots along the Bow River and Vermilion Lakes.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🌼 Wildflowers</strong>
-                <p>Alpine meadows burst with wildflowers — glacier lilies, Indian paintbrush, and western anemone. Attracts butterflies, hummingbirds, and pollinating insects.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🦌 Elk Calving</strong>
-                <p>Cow elk give birth in late May and June. Calves are spotted and wobbly. Mother elk are extremely protective and will charge. Keep 50m+ distance from all elk with calves.</p>
-              </div>
-            </div>
-            <p class="month-tip"><strong>Tip:</strong> May-June is peak bear viewing season. The Bow Valley Parkway (1A) is the best road in the park for wildlife — drive it slowly with binoculars ready.</p>
-          </div>
-        </div>
-
-        <div class="month-card summer">
-          <div class="month-header">
-            <span class="month-icon">☀️</span>
-            <h3>July & August</h3>
-            <span class="season-tag summer-tag">Summer</span>
-          </div>
-          <div class="month-content">
-            <div class="wildlife-items">
-              <div class="wildlife-item">
-                <strong>🐐 Mountain Goats</strong>
-                <p>Found at high elevation on rocky cliffs and alpine meadows. Parker Ridge, Plain of Six Glaciers, and the Lake Louise gondola area are reliable spots. White coats are unmistakable.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🐹 Pikas</strong>
-                <p>Adorable small mammals that live in rocky talus slopes above treeline. Listen for their distinctive high-pitched "eep!" call. Moraine Lake rockpile, Sentinel Pass, and any boulder field above 2,000m.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🐻 Bears at High Elevation</strong>
-                <p>Bears move to higher elevations following berry crops. Grizzlies seen above treeline feeding on glacier lilies and ground squirrels. Excellent viewing from the Lake Louise gondola.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🦅 All Species Active</strong>
-                <p>Peak activity for virtually all species. Marmots sunbathing on rocks, ground squirrels everywhere, deer with fawns, and maximum bird diversity. Dawn and dusk are still best times.</p>
-              </div>
-            </div>
-            <p class="month-tip"><strong>Tip:</strong> Summer crowds push wildlife to dawn and dusk hours. Start hikes at 6-7 AM for the best chance of sightings. Carry bear spray on every trail.</p>
-          </div>
-        </div>
-
-        <div class="month-card fall">
-          <div class="month-header">
-            <span class="month-icon">🍂</span>
-            <h3>September & October</h3>
-            <span class="season-tag fall-tag">Fall</span>
-          </div>
-          <div class="month-content">
-            <div class="wildlife-items">
-              <div class="wildlife-item">
-                <strong>🦌 Elk Rut</strong>
-                <p>THE wildlife event of the year. Bull elk bugle, spar, and herd cows from mid-September through mid-October. Spectacular but dangerous — bulls are extremely aggressive. Vermilion Lakes and the Banff Springs area are prime viewing spots. Maintain 50m+.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🐻 Bears in Hyperphagia</strong>
-                <p>Bears enter "hyperphagia" — an eating frenzy where they consume 20,000+ calories daily to prepare for hibernation. Extremely active and visible along berry patches, roadsides, and avalanche slopes. Peak viewing September through late October.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🌲 Larch Season</strong>
-                <p>Golden larch trees peak in late September. While not wildlife, the colour attracts visitors to alpine areas where mountain goats, pikas, and grizzlies are also present. Larch Valley and Sentinel Pass combine wildlife and autumn gold.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🐦 Bird Migration South</strong>
-                <p>Waterfowl, raptors, and songbirds begin southbound migration. Hawk migration over mountain ridges. Vermilion Lakes hosts staging waterfowl. Last chance to see summer species before they depart.</p>
-              </div>
-            </div>
-            <p class="month-tip"><strong>Tip:</strong> September is arguably the BEST month for wildlife in Banff — elk rut + bear hyperphagia + fall colours + fewer tourists. Book accommodation early for late September.</p>
-          </div>
-        </div>
-
-        <div class="month-card winter">
-          <div class="month-header">
-            <span class="month-icon">🌨️</span>
-            <h3>November & December</h3>
-            <span class="season-tag winter-tag">Early Winter</span>
-          </div>
-          <div class="month-content">
-            <div class="wildlife-items">
-              <div class="wildlife-item">
-                <strong>🐻 Bears Enter Dens</strong>
-                <p>Bears enter hibernation dens by late October to November. Pregnant females den first, followed by males. You won't see bears again until spring.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🦌 Wildlife Moves to Valleys</strong>
-                <p>Heavy snowfall pushes all large mammals to valley floors. Elk, deer, and bighorn sheep concentrate near Banff town and along the Bow River. Excellent viewing from roads.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🐺 Wolves Visible</strong>
-                <p>Wolf packs follow elk herds into valleys. December sightings increase. Short days mean wolves are active during more visible hours. Vermilion Lakes Road at dawn is the best bet.</p>
-              </div>
-              <div class="wildlife-item">
-                <strong>🦉 Owls Active</strong>
-                <p>Great horned owls begin courtship calls in late November. Great gray owls hunt in open meadows. Northern pygmy-owls are occasionally seen in daylight along forest edges. Listen at dusk on the Fenland Trail.</p>
-              </div>
-            </div>
-            <p class="month-tip"><strong>Tip:</strong> Short winter days mean wildlife is active during daylight hours more often. Dress warm and drive the Bow Valley Parkway and Vermilion Lakes Road slowly at dawn and dusk.</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
 </BaseLayout>
 
+<script>
+  import { getWildlifeSeason } from '../data/wildlifeSafety';
+  function initWildlifeCalendar() {
+    const form = document.querySelector<HTMLFormElement>('#wildlife-month-filter');
+    const select = document.querySelector<HTMLSelectElement>('#wildlife-month');
+    const count = document.querySelector<HTMLElement>('#wildlife-month-count');
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-season]')];
+    if (!form || !select || !count || !cards.length || form.dataset.ready) return;
+    form.dataset.ready = 'true';
+    const render = () => {
+      const season = getWildlifeSeason(select.value);
+      if (!season) select.value = 'all';
+      for (const card of cards) card.hidden = Boolean(season && card.dataset.season !== season.id);
+      count.textContent = season ? `1 seasonal card shown for ${select.selectedOptions[0]?.textContent ?? 'your month'}: ${season.title}. This is preparation, not a sighting forecast.` : `${cards.length} seasonal cards shown. This is preparation, not a sighting forecast.`;
+    };
+    const requested = new URL(window.location.href).searchParams.get('month');
+    if (getWildlifeSeason(requested)) select.value = String(requested);
+    form.addEventListener('submit', event => event.preventDefault());
+    select.addEventListener('change', render);
+    form.addEventListener('reset', event => { event.preventDefault(); select.value = 'all'; render(); });
+    render();
+    form.hidden = false;
+  }
+  initWildlifeCalendar();
+  document.addEventListener('astro:page-load', initWildlifeCalendar);
+</script>
+
 <style>
-  .intro-block { max-width: 800px; margin: 0 auto 3rem; }
-  .intro-block h2 { font-family: var(--font-heading); color: var(--color-primary); margin-bottom: 1rem; }
-  .intro-block p { color: var(--color-text-light); font-size: 1.05rem; line-height: 1.7; }
-
-  .calendar-timeline { display: flex; flex-direction: column; gap: 2rem; }
-
-  .month-card {
-    background: var(--color-white);
-    border: 1px solid #e5e5e5;
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: box-shadow 0.2s ease;
-  }
-  .month-card:hover { box-shadow: var(--shadow); }
-
-  .month-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid #e5e5e5;
-  }
-
-  .month-icon { font-size: 1.5rem; }
-  .month-header h3 { font-family: var(--font-heading); color: var(--color-primary); margin: 0; flex: 1; }
-
-  .season-tag {
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 0.2rem 0.75rem;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .winter-tag { background: #d1ecf1; color: #0c5460; }
-  .spring-tag { background: #d4edda; color: #155724; }
-  .summer-tag { background: #fff3cd; color: #856404; }
-  .fall-tag { background: #fde2d2; color: #8b4513; }
-
-  .month-content { padding: 1.5rem; }
-
-  .wildlife-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
-
-  .wildlife-item {
-    background: var(--color-bg-alt);
-    border-radius: 8px;
-    padding: 1rem;
-  }
-  .wildlife-item strong { display: block; color: var(--color-primary); margin-bottom: 0.4rem; }
-  .wildlife-item p { color: var(--color-text-light); font-size: 0.88rem; line-height: 1.5; margin: 0; }
-
-  .month-tip {
-    background: #fffde7;
-    border: 1px solid #ffc107;
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    color: #664d03;
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    .wildlife-items { grid-template-columns: 1fr; }
-    .month-header { flex-wrap: wrap; }
-  }
+  [hidden]{display:none!important}.calendar-hero{background:var(--color-primary);color:white;padding:3rem 0}.calendar-hero h1,.calendar-hero p{color:white;max-width:820px}.review{font-size:.9rem;opacity:.9}.calendar-content{max-width:1080px;padding:2rem 1.5rem 3rem}.calendar-content section{margin-bottom:2.5rem}.calendar-content a{text-decoration:underline;text-underline-offset:.15em}.filter{display:flex;flex-wrap:wrap;align-items:end;gap:1rem;background:var(--color-bg-alt);padding:1.25rem;border-radius:10px;margin:1rem 0}.filter label{display:block;font-weight:700;margin-bottom:.4rem}.filter select{font:inherit;min-height:46px;padding:.5rem 2rem .5rem .7rem;border:1px solid #73776e;border-radius:5px;max-width:100%}.filter p{flex-basis:100%;margin:0}.season-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:1.25rem}.season-card{background:white;border:1px solid #d8d8ce;border-top:5px solid var(--color-accent);border-radius:12px;padding:1.5rem}.season-label{font-weight:700;color:var(--color-primary);font-size:.9rem}.season-card li{margin:.65rem 0}.sources{font-size:.88rem;margin-bottom:0}.access-note,.next{padding:1.5rem;background:var(--color-bg-alt);border-radius:12px}.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.25rem}.calendar-content details{border-bottom:1px solid #d8d8ce;padding:1rem}.calendar-content summary{font-weight:700;cursor:pointer}@media print{.filter{display:none}.season-card[hidden]{display:block!important}.season-card{break-inside:avoid}.calendar-hero{background:white;color:black;padding:1rem 0}.calendar-hero h1,.calendar-hero p{color:black}}
 </style>
