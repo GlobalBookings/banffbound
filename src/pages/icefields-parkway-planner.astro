@@ -2,150 +2,49 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import CarRentalCTA from '../components/CarRentalCTA.astro';
-
-const stops = [
-  { km: 0, name: 'Lake Louise (Start)', time: 0, stopMin: 0, type: 'start', desc: 'Fill up on gas and grab coffee. Last reliable gas station until Saskatchewan Crossing (km 77).' },
-  { km: 2, name: 'Herbert Lake', time: 2, stopMin: 15, type: 'viewpoint', desc: 'Perfect mirror reflections on calm mornings. Quick 2-minute walk from pullout. Best before 9 AM.' },
-  { km: 9, name: 'Hector Lake Viewpoint', time: 8, stopMin: 10, type: 'viewpoint', desc: 'Turquoise lake framed by Mount Hector. Roadside pullout, no walking required.' },
-  { km: 17, name: 'Bow Lake', time: 15, stopMin: 30, type: 'highlight', desc: 'One of the best stops on the Parkway. Walk to the shoreline (5 min) for views of Bow Glacier. Num-Ti-Jah Lodge serves food.' },
-  { km: 22, name: 'Crowfoot Glacier Viewpoint', time: 18, stopMin: 10, type: 'viewpoint', desc: 'Named for its three-toed appearance (though the third toe has melted). Roadside viewpoint.' },
-  { km: 40, name: 'Peyto Lake Viewpoint', time: 30, stopMin: 45, type: 'highlight', desc: 'The iconic fox-head-shaped turquoise lake. New viewing platform (2023). 15-min walk from parking. Go early — lot fills by 10 AM in summer.' },
-  { km: 57, name: 'Mistaya Canyon', time: 42, stopMin: 30, type: 'trail', desc: 'Short but dramatic canyon carved through limestone. 10-min walk to the canyon bridge. One of the most underrated stops.' },
-  { km: 77, name: 'Saskatchewan River Crossing', time: 55, stopMin: 20, type: 'services', desc: 'The ONLY services between Lake Louise and Jasper. Gas, food, washrooms. The food is mediocre but the gas is essential.' },
-  { km: 103, name: 'Parker Ridge Trail', time: 75, stopMin: 120, type: 'trail', desc: 'Best short hike on the Parkway. 2.7 km to above-treeline views of Saskatchewan Glacier. Allow 2 hours. Do not skip this.' },
-  { km: 107, name: 'Columbia Icefield Centre', time: 80, stopMin: 60, type: 'highlight', desc: 'Glacier Skywalk and Ice Explorer tours depart here. Pre-book tickets. Even without tours, the Athabasca Glacier viewpoint is free and incredible.' },
-  { km: 117, name: 'Tangle Falls', time: 88, stopMin: 10, type: 'viewpoint', desc: 'Waterfall right beside the road. Pull over and walk 30 seconds. Often missed because people are tired by this point.' },
-  { km: 135, name: 'Sunwapta Falls', time: 100, stopMin: 30, type: 'highlight', desc: 'Powerful waterfall in a narrow gorge. 5-min walk from parking. Upper and lower viewpoints. Worth the stop.' },
-  { km: 170, name: 'Athabasca Falls', time: 120, stopMin: 30, type: 'highlight', desc: 'Thundering falls through a narrow canyon. Multiple viewpoints connected by bridges. Last major stop before Jasper.' },
-  { km: 233, name: 'Jasper (End)', time: 160, stopMin: 0, type: 'end', desc: 'Welcome to Jasper. Total drive without stops: ~2.5-3 hours. With stops: 6-9 hours.' },
-];
-
-const stopsJSON = JSON.stringify(stops);
+import ParkwayPlannerInteractions from '../components/ParkwayPlannerInteractions.astro';
+import {buildParkwayPlan,parkwayFilterOptions,parkwayStops,parkwayFaqs,parkwayReviewedAt,parkwaySources} from '../data/parkwayPlanning';
+const initial=buildParkwayPlan();
+const labels={direction:'Your direction',season:'Planning season',interest:'What to explore'};
+const kinds={endpoint:'Journey endpoint',scenic:'Scenic landmark',walk:'Walking decision',hike:'Separate mountain hike',service:'Seasonal service',attraction:'Seasonal attraction'};
 ---
-
-<BaseLayout title="Icefields Parkway Planner — Stop-by-Stop Driving Guide" description="Interactive Icefields Parkway planner. Every stop from Lake Louise to Jasper with driving times, suggested durations, and what not to miss. Plan your perfect road trip.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'How long does the Icefields Parkway take?', acceptedAnswer: { '@type': 'Answer', text: 'The Icefields Parkway (Highway 93 North) from Lake Louise to Jasper is 233 km and takes 2.5-3 hours of pure driving time. However, you should plan 6-9 hours total to stop at the key viewpoints and do at least one short hike (Parker Ridge is the must-do). If you want to hike Parker Ridge and visit the Columbia Icefield, plan for 8+ hours.' } },
-      { '@type': 'Question', name: 'What are the must-stop spots on the Icefields Parkway?', acceptedAnswer: { '@type': 'Answer', text: 'The essential stops on the Icefields Parkway are: Bow Lake (km 17, turquoise lake), Peyto Lake Viewpoint (km 40, iconic turquoise lake from above), Mistaya Canyon (km 57, dramatic narrow canyon), Parker Ridge Trail (km 103, best short hike), Columbia Icefield Centre (km 107, glacier views), Sunwapta Falls (km 135, powerful gorge waterfall), and Athabasca Falls (km 170, thundering canyon falls). Saskatchewan River Crossing (km 77) is the only gas station between Lake Louise and Jasper.' } },
-      { '@type': 'Question', name: 'Where do I get gas on the Icefields Parkway?', acceptedAnswer: { '@type': 'Answer', text: 'There is only ONE gas station on the entire 233 km Icefields Parkway: Saskatchewan River Crossing at km 77. Fill up in Lake Louise before you start. In Jasper at the end. The gas at Saskatchewan Crossing is expensive but essential if you are running low.' } },
-      { '@type': 'Question', name: 'Is the Icefields Parkway open in winter?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, the Icefields Parkway is open year-round, but winter driving requires extreme caution. The road is maintained but can be icy, snow-packed, and subject to temporary closures for avalanche control. Winter tires are legally required October 1 - April 30. Saskatchewan River Crossing services close in winter. Cell service is nonexistent for most of the drive. Carry emergency supplies, a full tank of gas, warm clothing, and food.' } },
-      { '@type': 'Question', name: 'Is the Icefields Parkway dangerous?', acceptedAnswer: { '@type': 'Answer', text: 'The Icefields Parkway is not inherently dangerous in summer conditions — it is a well-maintained two-lane highway with a 90 km/h speed limit. Hazards include wildlife on the road (especially at dawn/dusk), sudden weather changes at high passes, distracted drivers stopping for photos, and limited cell service. In winter, avalanche zones, ice, and isolation make it significantly more challenging. Always check road conditions at 511ab.ca before departing.' } },
-      { '@type': 'Question', name: 'Do I need a park pass for the Icefields Parkway?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The entire Icefields Parkway runs through Banff and Jasper National Parks. A valid Parks Canada pass is required for the full drive. One daily pass covers both parks on the same day. Buy online at parks.canada.ca or at the Lake Louise Visitor Centre before you start.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Icefields Parkway Planner' }]} />
-  </div>
-
+<BaseLayout title="Icefields Parkway Planner — Seasonal Stops & Your Route" description="Build a flexible Lake Louise–Jasper shortlist by direction, season and visit type. Compare 14 documented places, plan services and copy your trip checks.">
+  <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:parkwayFaqs.map(f=>({'@type':'Question',name:f.question,acceptedAnswer:{'@type':'Answer',text:f.answer}}))})} />
+  <div class="container"><Breadcrumbs items={[{label:'Icefields Parkway Planner'}]} /></div>
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1505578066749-4faedfc40c26?w=1600&q=80" alt="Icefields Parkway mountain road" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">Road Trip Planner</span>
-      <h1>Icefields Parkway</h1>
-      <p>233 km of the world's most scenic road. Plan every stop from Lake Louise to Jasper.</p>
-    </div>
+    <img src="https://images.unsplash.com/photo-1505578066749-4faedfc40c26?w=1600&q=80" alt="Illustrative mountain-road image; not verified as the Icefields Parkway or current conditions" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content"><span class="badge">A flexible mountain journey</span><h1>Plan your Icefields Parkway stops</h1><p>Choose the places that give your Lake Louise–Jasper journey its shape, then fit the season, services and actual conditions around them.</p></div>
   </section>
-
-  <section class="section">
+  <div class="container"><p class="image-note">Illustrative image; not a verified view of this road or its current conditions.</p></div>
+  <section class="section parkway-planner" id="parkway-planner" aria-labelledby="parkway-title">
     <div class="container">
-      <div class="planner-summary">
-        <div class="summary-stat"><span class="summary-num">233</span><span>km total</span></div>
-        <div class="summary-stat"><span class="summary-num">14</span><span>stops</span></div>
-        <div class="summary-stat"><span class="summary-num" id="total-time">--</span><span>hours with stops</span></div>
-        <div class="summary-stat"><span class="summary-num">1</span><span>gas station</span></div>
+      <div class="section-header"><span class="badge">Lake Louise ↔ Jasper</span><h2 id="parkway-title">Build a small, flexible shortlist</h2><p>Start with your direction and planning season. Explore viewpoints, walking routes and seasonal visits, then choose the optional stops you want to investigate.</p></div>
+      <p>All 14 documented places and their seasonal notes are readable on this page. With the filters, winter planning starts with scenic landmarks and no optional stops selected. Each walking route, attraction and usable stopping place needs its own current check.</p>
+      <p class="filter-note">Changing visit type keeps your shortlist, so you can combine a view with a walk. Changing season removes choices outside that seasonal comparison; use All visit types to see every candidate in the chosen season.</p>
+      <form id="parkway-form" hidden>
+        {(['direction','season','interest'] as const).map(key=><div><label for={`parkway-${key}`}>{labels[key]}</label><select id={`parkway-${key}`} name={key}>{parkwayFilterOptions[key].map(([value,label])=><option value={value}>{label}</option>)}</select></div>)}
+        <button type="submit" class="btn btn-primary">Build my shortlist</button><button type="reset" class="reset-button">Reset shortlist</button>
+      </form>
+      <p id="parkway-status" role="status" aria-live="polite">14 places documented · no optional stops selected</p>
+      <p id="parkway-origin">Route order: Lake Louise → Jasper. Approximate map distances from Lake Louise village.</p>
+      <div id="parkway-notes" class="planning-notes">{initial.notes.map(note=><p>{note}</p>)}</div>
+      <aside class="shortlist-panel" aria-labelledby="parkway-shortlist-title"><h3 id="parkway-shortlist-title">Your planning shortlist</h3><ul id="parkway-shortlist"><li>No optional stops selected. Read the cards and choose a few places to investigate.</li></ul><p>Use the brief to discuss the journey with your party. It records your choices and checks; road reports, parking, walking conditions and bookings determine the actual trip.</p><button id="parkway-copy" type="button" hidden>Copy planning brief</button><p id="parkway-copy-status" role="status" aria-live="polite"></p><div id="parkway-copy-fallback" hidden><label for="parkway-brief">Your planning brief</label><textarea id="parkway-brief" rows="12" readonly></textarea></div></aside>
+      <div id="parkway-stops" class="stops-timeline">
+        {parkwayStops.map(stop=><article class="stop-card" data-parkway-id={stop.id} id={`parkway-stop-${stop.id}`} aria-labelledby={`parkway-name-${stop.id}`}>
+          <div class="stop-reference"><span data-parkway-distance>About {stop.fromLouiseKm} km from Lake Louise village</span><span class="stop-kind">{kinds[stop.kind]}</span></div>
+          <div class="stop-body"><h3 id={`parkway-name-${stop.id}`}>{stop.name}</h3><p>{stop.idea}</p><p data-parkway-season-note>{stop.winter}</p><details><summary>Summer planning notes</summary><p>{stop.summer}</p></details><a class="stop-link" href={stop.href} {...(stop.href.startsWith('https:')?{target:'_blank',rel:'noopener noreferrer'}:{})}>{stop.linkLabel} →</a>{stop.kind!=='endpoint'&&<label class="stop-choice" data-parkway-choice hidden><input type="checkbox" value={stop.id} data-parkway-select />Add this planning candidate</label>}</div>
+        </article>)}
       </div>
-
-      <p style="text-align:center;font-size:0.85rem;color:var(--color-text-light);margin:1rem 0 2rem;">Toggle stops on/off to build your custom itinerary. Total time updates automatically.</p>
-
-      <CarRentalCTA
-        heading="Driving the Parkway? Start With a Reliable Car"
-        text="There's only one gas station on the entire 233 km route, so a dependable rental and a full tank matter. Compare Calgary Airport agencies in one search and book ahead, especially for summer road-trip season."
-      />
-
-      <div class="stops-timeline">
-        {stops.map((stop, i) => (
-          <div class={`stop-card stop-${stop.type}`} data-stop-idx={i} data-stop-min={stop.stopMin}>
-            <div class="stop-km">km {stop.km}</div>
-            <div class="stop-body">
-              <div class="stop-top">
-                <h3>{stop.name}</h3>
-                {stop.stopMin > 0 && (
-                  <label class="stop-toggle">
-                    <input type="checkbox" checked data-idx={i} />
-                    <span>{stop.stopMin} min</span>
-                  </label>
-                )}
-              </div>
-              <p>{stop.desc}</p>
-              {stop.type === 'highlight' && <span class="stop-tag">Must-Stop</span>}
-              {stop.type === 'trail' && <span class="stop-tag stop-tag-trail">Hike</span>}
-              {stop.type === 'services' && <span class="stop-tag stop-tag-services">Gas & Food</span>}
-            </div>
-          </div>
-        ))}
-      </div>
+      <section class="journey-checks" aria-labelledby="parkway-checks-title"><h2 id="parkway-checks-title">Join the shortlist to the real journey</h2><ol id="parkway-checklist">{initial.checklist.map(item=><li>{item}</li>)}</ol><p><a href={parkwaySources.road} target="_blank" rel="noopener noreferrer">Open Alberta 511 →</a> · <a href="/conditions/">Weather, road and closure sources →</a> · <a href="/blog/banff-winter-driving/">Winter driving planning →</a></p><p><strong>Snow-season equipment:</strong> Parks requires snow tires or chains November 1–March 31 and when the road is otherwise covered with snow and ice. Its snow-tire definition includes snowflake or M+S markings. Confirm the actual equipment on your vehicle and read the <a href={parkwaySources.maintenance} target="_blank" rel="noopener noreferrer">current Parks guidance</a>.</p><p><strong>Fuel and meals:</strong> leave either endpoint supplied for the remote route. The Crossing’s services are closed for winter at this review; its planned April 2027 return has no confirmed day. Check <a href={parkwaySources.crossing} target="_blank" rel="noopener noreferrer">the operator</a> for your actual date. A separately reserved lodge stay or meal needs direct confirmation and does not establish public roadside services.</p></section>
+      <p class="affiliate-note">Affiliate link: BanffBound may earn a commission from qualifying rental bookings. Compare the actual provider quote and terms.</p>
+      <CarRentalCTA heading="Compare the vehicle and the actual equipment" text="Compare rental quotes, then confirm winter equipment, route restrictions, fees and your selected agreement with the provider. A rental booking does not establish that the Parkway or any stop is open." />
+      <section class="next-journey" aria-labelledby="parkway-next-title"><h2 id="parkway-next-title">Make the endpoints work</h2><div class="grid grid-2"><div><h3>Lake Louise and the southern approach</h3><p>Village, lakeshore and ski-resort addresses create different starts and finishes. Compare the <a href="/book/lake-louise-stays/">reviewed Lake Louise stay examples</a> and leave room for your own approach.</p></div><div><h3>Arriving in Jasper</h3><p>Use the <a href="/blog/jasper-town/">Jasper town guide</a> for the base and meals, plus <a href="/blog/jasper-national-park/">current park recovery and access sources</a> for the next outing.</p></div></div><p>For stop selection, read the <a href="/blog/icefields-parkway-guide/">scenic-stop guide</a>. For transport, bookings and overnight decisions, use the distinct <a href="/blog/banff-to-jasper-drive/">Banff–Jasper journey guide</a>.</p></section>
+      <section aria-labelledby="parkway-faq-title"><h2 id="parkway-faq-title">Questions before the drive</h2>{parkwayFaqs.map(f=><details class="faq-item"><summary>{f.question}</summary><p>{f.answer}</p></details>)}</section>
+      <section class="source-notes" aria-labelledby="parkway-sources-title"><h2 id="parkway-sources-title">Sources and review</h2><p>Planning information reviewed <time datetime={parkwayReviewedAt}>29 October 2026</time>. Distances use the community references in the <a href={parkwaySources.map} target="_blank" rel="noopener noreferrer">official Parks Canada map</a>; some trailhead descriptions use a different Highway 1/93N junction origin. These approximate location references are separate from current access, operations and travel time.</p><ul><li><a href={parkwaySources.overview} target="_blank" rel="noopener noreferrer">Parks Canada: places along the Parkway</a></li><li><a href={parkwaySources.winter} target="_blank" rel="noopener noreferrer">Parks Canada: winter planning</a></li><li><a href={parkwaySources.maintenance} target="_blank" rel="noopener noreferrer">Winter maintenance, closures and no-stopping zones</a></li><li><a href={parkwaySources.banffTrails} target="_blank" rel="noopener noreferrer">Banff trail descriptions and distinct trailhead distances</a></li><li><a href={parkwaySources.winterWalks} target="_blank" rel="noopener noreferrer">Designated Lake Louise-area winter outings</a></li></ul></section>
     </div>
   </section>
+  <ParkwayPlannerInteractions />
 </BaseLayout>
-
-<script define:vars={{ stopsJSON }}>
-  const stops = JSON.parse(stopsJSON);
-
-  function updateTotal() {
-    const driveMin = stops[stops.length - 1].time;
-    let stopMin = 0;
-    document.querySelectorAll('.stop-toggle input:checked').forEach(cb => {
-      stopMin += stops[parseInt(cb.dataset.idx)].stopMin;
-    });
-    const totalHours = ((driveMin + stopMin) / 60).toFixed(1);
-    document.getElementById('total-time').textContent = totalHours;
-  }
-
-  document.querySelectorAll('.stop-toggle input').forEach(cb => {
-    cb.addEventListener('change', updateTotal);
-  });
-
-  updateTotal();
-</script>
-
 <style>
-  .planner-summary { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
-  .summary-stat { display: flex; flex-direction: column; align-items: center; }
-  .summary-num { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; color: var(--color-primary); line-height: 1; }
-  .summary-stat span:last-child { font-size: 0.8rem; color: var(--color-text-light); text-transform: uppercase; letter-spacing: 0.04em; }
-
-  .stops-timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
-  .stops-timeline::before { content: ''; position: absolute; left: 40px; top: 0; bottom: 0; width: 3px; background: var(--color-bg-alt); }
-
-  .stop-card { display: flex; gap: 1.25rem; padding: 1.25rem 0; position: relative; }
-  .stop-km {
-    min-width: 80px; font-size: 0.75rem; font-weight: 700; color: var(--color-text-light);
-    text-align: right; padding-top: 0.3rem; position: relative; z-index: 1;
-  }
-  .stop-body { flex: 1; background: var(--color-white); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
-  .stop-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; }
-  .stop-top h3 { font-size: 1rem; }
-  .stop-body p { font-size: 0.85rem; color: var(--color-text-light); line-height: 1.5; }
-
-  .stop-toggle { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--color-text-light); cursor: pointer; }
-  .stop-toggle input { accent-color: var(--color-primary); }
-
-  .stop-tag { display: inline-block; margin-top: 0.5rem; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase; background: #fef3c7; color: #92400e; }
-  .stop-tag-trail { background: #dcfce7; color: #166534; }
-  .stop-tag-services { background: #dbeafe; color: #1e40af; }
-
-  .stop-highlight .stop-body { border-left: 4px solid var(--color-accent); }
-  .stop-start .stop-body, .stop-end .stop-body { border-left: 4px solid var(--color-primary); }
-
-  @media (max-width: 768px) {
-    .stops-timeline::before { left: 20px; }
-    .stop-km { min-width: 50px; font-size: 0.7rem; }
-    .planner-summary { gap: 1.5rem; }
-    .summary-num { font-size: 2rem; }
-  }
+  .parkway-planner [hidden]{display:none!important}.image-note{font-size:.78rem;color:var(--color-text-light);margin:1rem 0}.parkway-planner{scroll-margin-top:90px}.parkway-planner p{line-height:1.75}.parkway-planner form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;background:var(--color-bg-alt);padding:1.3rem;border:1px solid #d4ddce;border-radius:12px;margin:1.5rem 0}.parkway-planner form label,.parkway-planner #parkway-copy-fallback label{display:block;font-weight:700;font-size:.9rem;margin-bottom:.4rem}.parkway-planner select{width:100%;min-height:48px;padding:.6rem;border:1px solid #aab9a6;border-radius:6px;background:white;color:var(--color-primary);font:inherit}.parkway-planner button{font:inherit;min-height:48px;cursor:pointer}.reset-button,#parkway-copy{padding:.7rem 1rem;border:1px solid var(--color-primary);border-radius:6px;color:var(--color-primary);background:white}.parkway-planner #parkway-status{font-weight:700}.parkway-planner #parkway-origin{font-size:.9rem}.planning-notes{font-size:.9rem;padding:.2rem 1.2rem;border-left:3px solid var(--color-accent);margin:1rem 0 1.5rem}.shortlist-panel{background:var(--color-bg-alt);padding:1.5rem;border-radius:12px;margin-bottom:2rem}.shortlist-panel h3{margin-top:0}.shortlist-panel p{font-size:.9rem}.shortlist-panel textarea{width:100%;font:inherit;padding:1rem;border:1px solid #aab9a6;border-radius:6px;box-sizing:border-box}.stops-timeline{display:flex;flex-direction:column;gap:1.1rem}.stop-card{display:grid;grid-template-columns:180px minmax(0,1fr);border:1px solid #d4ddce;border-radius:12px;overflow:hidden;background:white}.stop-reference{display:flex;flex-direction:column;gap:.7rem;padding:1.3rem;background:var(--color-bg-alt);font-weight:700;font-size:.85rem}.stop-kind{font-size:.75rem;font-weight:500}.stop-body{padding:1.3rem;min-width:0}.stop-body h3{margin-top:0}.stop-body p,.stop-body details{font-size:.9rem}.stop-link{display:block;margin-top:1rem;font-weight:700;overflow-wrap:anywhere}.stop-choice{display:flex;align-items:center;gap:.65rem;margin-top:1.1rem;min-height:44px;font-weight:700;font-size:.88rem;cursor:pointer}.stop-choice input{width:20px;height:20px;accent-color:var(--color-primary)}.journey-checks,.next-journey,.source-notes{margin:3rem 0}.journey-checks li{line-height:1.75;margin-bottom:.8rem}.faq-item{padding:1rem 0;border-bottom:1px solid #d4ddce}.faq-item summary{font-weight:700;cursor:pointer;min-height:32px}.source-notes{font-size:.88rem}.parkway-planner :is(a,button,select,input,textarea,summary):focus-visible{outline:3px solid #a9792e;outline-offset:3px}@media(max-width:700px){.parkway-planner form,.stop-card{grid-template-columns:1fr}.stop-reference{padding:1rem;gap:.3rem}.stop-body,.shortlist-panel{padding:1.1rem}}
 </style>

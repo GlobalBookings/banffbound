@@ -1,0 +1,115 @@
+{
+  "checkedAtUTC": "2026-10-29T22:34:16.448177+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/11",
+  "codeCommit": "4a2e0c2f1facbfc718a79a28e5a268633b030dcb",
+  "reviewedHead": "42c85b0dc03a5b0a1f01025de2811a1b60641b88",
+  "mergedRevision": "3ec35fa593bcd1dd215855360ce19efb4f185ed8",
+  "mergedAtUTC": "2026-10-29T22:27:48Z",
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T22:28:57.505Z",
+    "sourceRevision": "3ec35fa593bcd1dd215855360ce19efb4f185ed8",
+    "sourceFingerprint": "a4b6e9b031bcf431a40b1ac7a1749caadcfc842984a19751b260631d0c99b6b7"
+  },
+  "ci": {
+    "pullRequest": {
+      "run": 40965869982,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40965869982",
+      "revision": "42c85b0dc03a5b0a1f01025de2811a1b60641b88",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123770097987,
+      "completedAt": "2026-10-29T22:27:17Z"
+    },
+    "main": {
+      "run": 40966057960,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40966057960",
+      "revision": "3ec35fa593bcd1dd215855360ce19efb4f185ed8",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123770739694,
+      "completedAt": "2026-10-29T22:29:10Z"
+    }
+  },
+  "cleanVerification": "research/evening-guides-clean-verification-2026-10-29.json",
+  "productionVerification": {
+    "report": "research/evening-guides-production-verification-2026-10-29.json",
+    "passed": true,
+    "htmlRoutes": 222,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "stableExactRevisionAndFingerprint": true
+  },
+  "bareUrlVerification": {
+    "report": "research/evening-guides-bare-url-verification-2026-10-29.json",
+    "passed": 4
+  },
+  "redirectVerification": {
+    "report": "research/live-http-redirect-verification-2026-10-29.json",
+    "mappings": 40,
+    "checksPassed": 100
+  },
+  "browserProduction": {
+    "url": "https://banffbound.com/blog/banff-nightlife-guide/#evening-planner",
+    "defaultEveningFormats": 5,
+    "youngerMusicIds": [
+      "performance"
+    ],
+    "youngerCanmoreReturnHref": "https://roamtransit.com/schedules-routes/canmore-banff-regional-route-3/",
+    "youngerDancing": 0,
+    "emptyVisible": true,
+    "adultDancing": 1,
+    "adultLakeLouiseReturnHref": "https://roamtransit.com/schedules-routes/lake-louise-banff-express-route-8x/",
+    "reset": 5,
+    "mobilePlannerViewportAndDocumentWidth": 390,
+    "automaticMidAndStickyCtas": 0,
+    "optionalProviderScriptAndFrameElements": 0,
+    "liveHubGuideCards": 4,
+    "liveHubItemListCount": 27,
+    "liveHubFirstItemKeys": [
+      "@type",
+      "position",
+      "name",
+      "url"
+    ],
+    "oldRoseHoursVisible": false,
+    "RoseImageQualified": true,
+    "responsiveTestTabClosed": true,
+    "freshDefaultViewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "screenshot": "Local ephemeral /tmp/banffbound-evening-planner-live-2026-10-29.png",
+    "scopeNote": "Actual rendered DOM and filters; not a full browser network trace or sales proof. No merchant referral clicked to manufacture a conversion."
+  },
+  "contentScope": {
+    "canonicalBodies": 295,
+    "fullReviews": 62,
+    "newFullReviews": 3,
+    "partialOpeningRepairs": 8,
+    "other292BodyBytesPreserved": true,
+    "all335PublicationDatesPreserved": true,
+    "diningDirectoryFullyReviewed": false,
+    "allCanonicalFactsReviewed": false
+  },
+  "preserved": {
+    "hotelIdentitiesAndProviderUrls": 95,
+    "hostAliasMappings": 40,
+    "affiliateAndMeasurementIdentifiers": true,
+    "restaurantDirectoryRecords": true,
+    "unrelatedUserFiles": true
+  },
+  "commercialBoundary": {
+    "adCampaignsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecificationOrEnvironmentMutated": false,
+    "salesProfitOrRankUpliftClaimed": false
+  },
+  "nextReviewPlans": [
+    "research/next-winter-journey-review-plan-2026-10-29.json",
+    "research/next-dining-and-heli-review-plan-2026-10-29.json"
+  ],
+  "goalStatus": "active"
+}

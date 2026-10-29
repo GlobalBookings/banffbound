@@ -1,0 +1,126 @@
+{
+  "status": "Read-only source audit; no app changes or new redirects in this plan.",
+  "baselineRevision": "3ec35fa593bcd1dd215855360ce19efb4f185ed8",
+  "scope": "Prioritise contradictions in canonical destination/transfer guides and the inherited Parkway planner, following the evening release.",
+  "candidates": [
+    {
+      "priority": 1,
+      "routes": [
+        "/icefields-parkway-planner/",
+        "/blog/icefields-parkway-guide/",
+        "/blog/banff-to-jasper-drive/"
+      ],
+      "triggers": [
+        "Incorrect landmark distances in the interactive planner",
+        "Unqualified Saskatchewan Crossing fuel/lodge service in winter",
+        "BC tire dates applied to Highway 93N",
+        "All fourteen stops defaulted with fixed elapsed-time arithmetic and no seasonal activity screening"
+      ],
+      "purposes": [
+        "Direction- and season-aware journey planner",
+        "Scenic-stop choice guide",
+        "Distinct Banff-Jasper transfer and overnight decisions"
+      ],
+      "primarySources": [
+        "https://parks.canada.ca/pn-np/ab/banff/visit/promenadedesglaciers-icefieldsparkway",
+        "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking"
+      ],
+      "boundary": "Do not manufacture a safe departure/arrival or imply winter fuel services. Recheck current primary road requirements, closures and facilities before implementation."
+    },
+    {
+      "priority": 2,
+      "routes": [
+        "/blog/lake-minnewanka-guide/"
+      ],
+      "triggers": [
+        "Winter ice-fishing and cross-country lake-use claims",
+        "Whole-road year-round access claim",
+        "Unqualified craft/cruise availability"
+      ],
+      "purpose": "Distinguish a winter land-based visit, approach roads, unmonitored natural ice and separately permitted/booked summer water activities.",
+      "primarySources": [
+        "https://parks.canada.ca/pn-np/ab/banff/activ/peche-fishing",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/fermetures-closures",
+        "https://parks.canada.ca/pn-np/ab/banff/activ/nautiques-sports",
+        "https://www.banffjaspercollection.com/attractions/lake-minnewanka-cruise/location-hours/"
+      ]
+    },
+    {
+      "priority": 3,
+      "routes": [
+        "/blog/banff-gondola-guide/",
+        "/blog/banff-gondola-tickets-guide/"
+      ],
+      "triggers": [
+        "Ordinary Sky Bistro table said to include gondola admission",
+        "Whole boardwalk described as fully accessible",
+        "Unsupported fixed prices and savings"
+      ],
+      "purposes": [
+        "Summit access, physical routes and transport",
+        "Ticket/product inclusion comparison linked to the reviewed winter-activity landing"
+      ],
+      "primarySources": [
+        "https://www.banffjaspercollection.com/dining/sky-bistro/",
+        "https://prod.banffjaspercollection.com/attractions/banff-gondola/faqs/"
+      ]
+    },
+    {
+      "priority": 4,
+      "routes": [
+        "/blog/banff-spring-skiing/"
+      ],
+      "triggers": [
+        "Delirium Dive suggestion without freeride requirements",
+        "Clock-based terrain advice",
+        "Guaranteed small queues and savings"
+      ],
+      "purpose": "Resort-specific late-season operation, ability/lesson choices and conditions-based planning.",
+      "primarySources": [
+        "https://www.skibanff.com/the-mountain/lifts-terrain/freeride-zones"
+      ],
+      "boundary": "Exact slug confirmed in blogPosts.ts; no blanket terrain suitability or fixed snow conditions."
+    },
+    {
+      "priority": 5,
+      "routes": [
+        "/blog/peyto-lake-guide/"
+      ],
+      "triggers": [
+        "Main viewpoint/accessible approach/longer Bow Summit hike conflated",
+        "Wrong distance/elevation for the longer route",
+        "Unsupported washroom/access claims",
+        "Winter approach not distinguished"
+      ],
+      "purpose": "Use the reviewed trail records to distinguish main viewpoint, upper-lot approach, longer summer hike and winter outing.",
+      "primarySources": [
+        "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+        "https://parks.canada.ca/pn-np/ab/banff/activ/raquette-snowshoeing/lakelouise",
+        "https://parks.canada.ca/pn-np/ab/jasper/activ/itineraires-itineraries/promenadedesglaciers-icefieldsparkway"
+      ]
+    }
+  ],
+  "limits": [
+    "A prioritisation audit is not a complete factual review of these bodies",
+    "Verify exact slugs and current operator/Parks terms at implementation",
+    "No ranking, sales or account changes claimed"
+  ],
+  "goalStatus": "active",
+  "statusUpdate": {
+    "checkedAtUTC": "2026-10-29T22:58:34.339808+00:00",
+    "preparedForRelease": [
+      "/icefields-parkway-planner/",
+      "/blog/icefields-parkway-guide/",
+      "/blog/banff-to-jasper-drive/",
+      "/blog/lake-minnewanka-guide/",
+      "/blog/banff-gondola-guide/",
+      "/blog/banff-gondola-tickets-guide/"
+    ],
+    "fullReviewsAfter": 67,
+    "remaining": [
+      "/blog/banff-spring-skiing/",
+      "/blog/peyto-lake-guide/"
+    ],
+    "deployment": "Separately verified by the winter-journey release receipts."
+  }
+}

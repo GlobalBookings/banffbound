@@ -56,6 +56,10 @@ jobs:
           node scripts/check-live-music-guide.mjs
           node scripts/check-drink-offer-guide.mjs
           node scripts/check-evening-planning.mjs
+          node scripts/check-parkway-guides.mjs
+          node scripts/check-minnewanka-guide.mjs
+          node scripts/check-gondola-guides.mjs
+          node scripts/check-parkway-planning.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs
