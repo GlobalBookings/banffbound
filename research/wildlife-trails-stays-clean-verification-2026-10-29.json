@@ -1,0 +1,157 @@
+{
+  "checkedAt": "2026-10-29T18:36:07.369067+00:00",
+  "sourceCommit": "e41916e9c8e90e8289da700d9a40f82e8288fca9",
+  "cleanRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-wildlife-release-2h7kelf0",
+  "buildLog": "/tmp/banffbound-wildlife-clean-build.log",
+  "checks": [
+    {
+      "path": "scripts/check-trip-planner.mjs",
+      "exitCode": 0,
+      "output": "Trip planner checks passed: 7 templates, legacy links, shared-state rejection, transport and affiliate invariants."
+    },
+    {
+      "path": "scripts/check-day-ideas.mjs",
+      "exitCode": 0,
+      "output": "Day-idea checks passed: season/base/time constraints, empty states, invalid filters and all23 one-day links."
+    },
+    {
+      "path": "scripts/check-trail-directory.mjs",
+      "exitCode": 0,
+      "output": "Trail transport, mixed-jurisdiction and actual-script map regressions passed."
+    },
+    {
+      "path": "scripts/check-trail-source-reviews.mjs",
+      "exitCode": 0,
+      "output": "Trail source review checks passed: 81 identities preserved; 58 summer reviews + 23 retained scopes; 80 reviewed / 1 unverified; route/season/transport/photo regressions and both Astro templates."
+    },
+    {
+      "path": "scripts/check-production-redirects.mjs",
+      "exitCode": 0,
+      "output": "Redirect plan checks passed: 40 direct mappings, canonical targets and segment-boundary isolation. No network requests."
+    },
+    {
+      "path": "scripts/check-activities.mjs",
+      "exitCode": 0,
+      "output": "Activity checks passed: 12 records, 7 detail URLs, 9 sights, source/affiliate/schema contracts, three Astro transforms and actual-client filters."
+    },
+    {
+      "path": "scripts/check-paddling.mjs",
+      "exitCode": 0,
+      "output": "Paddling checks passed: Astro transform, 7 water settings, 4 distinct river products, falls/rule/closure regressions, current operator eligibility, SSR content, section/internal links and affiliate contracts."
+    },
+    {
+      "path": "scripts/check-wildlife-planning.mjs",
+      "exitCode": 0,
+      "output": "Wildlife planning checks passed: 800 filter combinations, seven licensed asset hashes, two Astro transforms, actual-client SSR/filter/map agreement, failure/timeout/retry/partial-init recovery."
+    },
+    {
+      "path": "scripts/check-wildlife-safety.mjs",
+      "exitCode": 0,
+      "output": "Wildlife safety checks passed: 3 Astro pages, 12 months, 12 logistics combinations, contact/distance/source/FAQ/affiliate contracts and actual-client filters, URL restore, reset, invalid recovery and repeat init. No site build or network."
+    },
+    {
+      "path": "scripts/check-lake-planning.mjs",
+      "exitCode": 0,
+      "output": "Lake checks passed: 10 plans, 9 FAQs, joint seasonal rules, invalid filters, actual-client presets/empty/reset/search and both Astro transforms."
+    },
+    {
+      "path": "scripts/check-parking-planning.mjs",
+      "exitCode": 0,
+      "output": "Parking/shuttle checks passed: 11 records; 9216 validated planning combinations; canonical/source/affiliate/FAQ contracts; both Astro transforms; actual-client filtering, constraints, reset, winter transition and print."
+    },
+    {
+      "path": "scripts/check-build-provenance.mjs",
+      "exitCode": 0,
+      "output": "Build provenance checks passed: deterministic framing/order, source/root changes, exclusions/symlinks, Gitless/unavailable/dirty/staged/untracked/ignored/deleted cases, live-only cleanliness and static endpoint field allowlist."
+    },
+    {
+      "path": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "exitCode": 0,
+      "output": "{\n  \"assertions\": 809,\n  \"discoveryRecords\": 95,\n  \"indexableDetails\": 38,\n  \"noindexDetails\": 57,\n  \"reviewedFacts\": 35,\n  \"locationOnly\": 1,\n  \"formerNameHistories\": 2,\n  \"newPropertyReviewsThisPhase\": 14,\n  \"sourceMapPoints\": 6,\n  \"propertyPhotoProfiles\": 34,\n  \"protectedPriorScopes\": 24,\n  \"identityHash\": \"18d4c39bbe88ad1221c66f86cf7c535e4e7fb6e173933e4639d6e8d84dec370d\",\n  \"compilerDiagnostics\": 0\n}"
+    },
+    {
+      "path": "research/check-rental-planning-2026-10-29.mjs",
+      "exitCode": 0,
+      "output": "{\n  \"assertions\": 352,\n  \"records\": 50,\n  \"identityHash\": \"43a366153e55477496a1401dc415a308a4ff3fba5cbb9237892db8ee4afc2690\",\n  \"sourceReviewedOptions\": 4,\n  \"baseGuides\": 4,\n  \"syntheticPoints\": 0,\n  \"compilerDiagnostics\": 0\n}"
+    },
+    {
+      "path": "scripts/check-weather-source.mjs",
+      "exitCode": 0,
+      "output": "Checking expected HTTP failure, identity rejection and timeout cases:\n[weather] Banff unavailable: ECCC returned HTTP 503\n[weather] Lake Louise unavailable: ECCC returned HTTP 503\n[weather] Lake Louise unavailable: Unexpected ECCC location identity\n[weather] Banff unavailable: aborted\n[weather] Lake Louise unavailable: aborted\nECCC weather checks passed: source identity, UTC times, zero/null values, explicit periods, failures and timeouts. No snapshots written."
+    },
+    {
+      "path": "scripts/check-snow-source.mjs",
+      "exitCode": 0,
+      "output": "[snow-report] Sunshine Village unavailable: HTTP 503\n[snow-report] Lake Louise Ski Resort unavailable: HTTP 503\n[snow-report] Mt. Norquay unavailable: HTTP 503\n[snow-report] Sunshine Village unavailable: Unexpected report host\n[snow-report] Lake Louise Ski Resort unavailable: Unexpected report host\n[snow-report] Mt. Norquay unavailable: Unexpected report host\n[snow-report] Sunshine Village unavailable: aborted\n[snow-report] Lake Louise Ski Resort unavailable: aborted\n[snow-report] Mt. Norquay unavailable: aborted\nSnow source checks passed: direct evidence, zero/null, metric periods/locations, hidden data, ambiguous labels, failures and timeouts. No snapshots written."
+    },
+    {
+      "path": "scripts/check-source-freshness.mjs",
+      "exitCode": 0,
+      "output": "Source freshness checks passed: missing/future/expired timestamps, local midnight and DST calendar dates."
+    },
+    {
+      "path": "scripts/check-road-source.mjs",
+      "exitCode": 0,
+      "output": "Road source checks passed: v3/key handling, section identity, independent source times, null/stale/future/unit rejection, partial reports, HTTP failures, body/header timeouts and secret-safe output. No live requests or snapshot writes."
+    },
+    {
+      "path": "scripts/check-town-events.mjs",
+      "exitCode": 0,
+      "output": "[town-events] events unavailable: HTTP 503\n[town-events] news unavailable: HTTP 503\n[town-events] events unavailable: Feed not recognized as RSS 1 or 2.\n[town-events] events unavailable: Unexpected feed redirect\n[town-events] news unavailable: Unexpected feed redirect\n[town-events] events unavailable: Town feed timeout\n[town-events] news unavailable: Town feed timeout\n[town-events] events unavailable: Town feed timeout\n[town-events] news unavailable: Town feed timeout\nTown feed checks passed: bounded shared retrieval, identity, empty/failure, safe URLs, dates, Mountain Time, partial validation and expiry. No snapshots written."
+    },
+    {
+      "path": "scripts/check-affiliate-navigation.mjs",
+      "exitCode": 0,
+      "output": "Affiliate navigation checks passed: unavailable/throwing trackers, missing callbacks, native targets and browser gestures."
+    }
+  ],
+  "audit": {
+    "pages": 602,
+    "indexable_documents": 502,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "routeChecks": {
+    "trails": {
+      "details": 81,
+      "indexable": 80,
+      "noindex": 1
+    },
+    "hotel-directory": {
+      "details": 95,
+      "indexable": 38,
+      "noindex": 57
+    },
+    "wildlife": {
+      "faqParity": 4,
+      "selfCanonical": "https://banffbound.com/wildlife/"
+    },
+    "wildlife-tracker": {
+      "faqParity": 5,
+      "selfCanonical": "https://banffbound.com/wildlife-tracker/"
+    },
+    "wildlife-safety": {
+      "faqParity": 3,
+      "selfCanonical": "https://banffbound.com/wildlife-safety/"
+    },
+    "wildlife-calendar": {
+      "faqParity": 3,
+      "selfCanonical": "https://banffbound.com/wildlife-calendar/"
+    },
+    "bear-spray": {
+      "faqParity": 4,
+      "selfCanonical": "https://banffbound.com/bear-spray/"
+    }
+  },
+  "buildInfo": {
+    "formatVersion": 1,
+    "scope": "app-source-v1",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.css app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T18:36:00.254Z",
+    "sourceRevision": null,
+    "sourceFingerprint": "4373faf53094a183f5f887b4c89e60f11065d029974c23c4687b1ab035b9f6e0"
+  },
+  "userWorkExcluded": true,
+  "fullBuildExitCode": 0
+}
