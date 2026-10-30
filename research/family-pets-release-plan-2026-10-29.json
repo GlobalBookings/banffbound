@@ -99,5 +99,12 @@
     "hotelModelAssertionsPassed": 861,
     "applicationSourceChangedAfterInitialCommit": false,
     "initialFailureEvidenceRetained": true
+  },
+  "browserFinding": {
+    "issue": "Shared article table-header links inherited the default green anchor color on green header cells.",
+    "beforeObservedColor": "rgb(26, 58, 42)",
+    "headerBackground": "rgb(26, 58, 42)",
+    "fix": "Scoped th anchors inherit the header\u2019s white color; existing underline and native links remain.",
+    "verificationStatus": "New committed-source build and browser recheck pending."
   }
 }
