@@ -1,3 +1,4 @@
+import { skokiGuideMetadata } from './skokiGuideOverrides';
 import { bowLakeGuideMetadata } from './bowLakeGuideOverrides';
 import { jasperGuideMetadata } from './jasperGuideOverrides';
 import { diningGuideMetadata } from './diningGuideOverrides';
@@ -40,7 +41,7 @@ export interface BlogPost {
   imageNote?: string;
 }
 
-const newlyReviewedMetadata: Record<string, Partial<BlogPost>> = { ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata, ...springSkiGuideMetadata, ...peytoGuideMetadata, ...scenicFlightGuideMetadata, ...goldenDayGuideMetadata, ...heliSkiGuideMetadata };
+const newlyReviewedMetadata: Record<string, Partial<BlogPost>> = { ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata, ...springSkiGuideMetadata, ...peytoGuideMetadata, ...scenicFlightGuideMetadata, ...goldenDayGuideMetadata, ...heliSkiGuideMetadata, ...skokiGuideMetadata };
 
 const originalBlogPosts: BlogPost[] = [
   {

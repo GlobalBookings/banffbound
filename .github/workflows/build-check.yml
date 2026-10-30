@@ -67,6 +67,10 @@ jobs:
           node scripts/check-heli-ski-planning.mjs
           node scripts/check-restaurant-source-reviews.mjs
           node scripts/check-dining-planning.mjs
+          node scripts/check-skoki-guide.mjs
+          node scripts/check-trip-cost-planning.mjs
+          node scripts/check-altitude-planning.mjs
+          node scripts/check-larch-planning.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs

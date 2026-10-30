@@ -1,0 +1,22 @@
+<script>
+  import {buildLarchPlan,readLarchFiltersFromUrl,updateLarchSettingsUrl,defaultLarchFilters} from '../data/larchPlanning';
+  function mountLarchPlanner(){
+    const root=document.getElementById('larch-planner'),form=document.getElementById('larch-form') as HTMLFormElement|null;
+    const status=document.getElementById('larch-status'),note=document.getElementById('larch-season-note'),empty=document.getElementById('larch-empty');
+    const area=document.getElementById('larch-area') as HTMLSelectElement|null,duration=document.getElementById('larch-duration') as HTMLSelectElement|null,season=document.getElementById('larch-season') as HTMLSelectElement|null;
+    const cards=[...document.querySelectorAll<HTMLElement>('[data-larch-route]')];
+    if(!root||!form||!status||!note||!empty||!area||!duration||!season||cards.length!==5||root.dataset.larchReady)return;
+    const apply=(filters:unknown,remember=false)=>{
+      const result=buildLarchPlan(filters);area.value=result.filters.area;duration.value=result.filters.duration;season.value=result.filters.season;
+      for(const card of cards)card.hidden=!result.visibleIds.some(id=>id===card.dataset.larchRoute);
+      status.textContent=result.summary;note.textContent=result.note;empty.hidden=!result.empty;
+      if(remember){const url=updateLarchSettingsUrl(location.href,result.filters);if(url)try{history.replaceState(null,'',url);}catch{}}
+    };
+    const update=()=>apply({area:area.value,duration:duration.value,season:season.value},true);
+    form.addEventListener('change',update);form.addEventListener('submit',event=>{event.preventDefault();update();});form.addEventListener('reset',event=>{event.preventDefault();apply(defaultLarchFilters,true);});
+    window.addEventListener('popstate',()=>apply(readLarchFiltersFromUrl(location.href)));
+    apply(readLarchFiltersFromUrl(location.href));form.hidden=false;root.dataset.larchReady='true';
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountLarchPlanner,{once:true});else mountLarchPlanner();
+  document.addEventListener('astro:page-load',mountLarchPlanner);
+</script>

@@ -1,0 +1,96 @@
+<script>
+  import { calculateTripBudget, defaultTripBudget, formatBudgetMoney, tripBudgetCategories } from '../data/tripCostPlanning';
+  function initTripBudget() {
+    const form = document.querySelector<HTMLFormElement>('#trip-budget-form');
+    if (!form || form.dataset.budgetReady) return;
+    const input = (id: string) => document.querySelector<HTMLInputElement>('#' + id);
+    const people = input('budget-people'), days = input('budget-days'), nights = input('budget-nights'), reserve = input('budget-reserve');
+    const compare = input('budget-compare'), confirmed = input('budget-confirmed');
+    const errors = document.querySelector<HTMLElement>('#budget-errors'), comparison = document.querySelector<HTMLElement>('#budget-comparison');
+    const print = document.querySelector<HTMLButtonElement>('#budget-print');
+    const plans = (['a', 'b'] as const).map(id => ({
+      id, fieldset: document.querySelector<HTMLFieldSetElement>(`#budget-${id}-fields`), rooms: input(`budget-${id}-rooms`), result: document.querySelector<HTMLElement>(`#budget-${id}-result`),
+      total: document.querySelector<HTMLElement>(`#budget-${id}-total`), summary: document.querySelector<HTMLElement>(`#budget-${id}-summary`), subtotal: document.querySelector<HTMLElement>(`#budget-${id}-subtotal`),
+      buffer: document.querySelector<HTMLElement>(`#budget-${id}-reserve`), person: document.querySelector<HTMLElement>(`#budget-${id}-perperson`), daily: document.querySelector<HTMLElement>(`#budget-${id}-daily`),
+      items: tripBudgetCategories.map(category => ({ id: category.id,
+        mode: document.querySelector<HTMLSelectElement>(`#budget-${id}-${category.id}-mode`), amount: input(`budget-${id}-${category.id}-amount`),
+        basis: document.querySelector<HTMLInputElement | HTMLSelectElement>(`#budget-${id}-${category.id}-basis`),
+        value: document.querySelector<HTMLElement>(`#budget-${id}-result [data-budget-row="${category.id}"] [data-budget-value]`),
+        detail: document.querySelector<HTMLElement>(`#budget-${id}-result [data-budget-row="${category.id}"] [data-budget-detail]`),
+      })),
+    }));
+    if (!people || !days || !nights || !reserve || !compare || !confirmed || !errors || !comparison || !print || plans.some(plan => !plan.fieldset || !plan.rooms || !plan.result || !plan.total || !plan.summary || !plan.subtotal || !plan.buffer || !plan.person || !plan.daily || plan.items.some(item => !item.mode || !item.amount || !item.basis || !item.value || !item.detail))) return;
+    let attached = false;
+    const allFields = [people, days, nights, reserve, ...plans.flatMap(plan => [plan.rooms!, ...plan.items.flatMap(item => [item.mode!, item.amount!, item.basis!])])];
+    const clearErrors = () => { errors.replaceChildren(); errors.hidden = true; allFields.forEach(field => field.removeAttribute('aria-invalid')); };
+    const syncModes = () => {
+      for (const plan of plans) {
+        const enabled = plan.id === 'a' || compare.checked;
+        plan.fieldset!.hidden = !enabled; plan.fieldset!.disabled = !enabled; plan.result!.hidden = !enabled;
+        for (const item of plan.items) { const disabled = !enabled || item.mode!.value !== 'quoted'; item.amount!.disabled = disabled; item.basis!.disabled = disabled; }
+        const lodging = plan.items[0]; plan.rooms!.disabled = !enabled || lodging.mode!.value !== 'quoted' || lodging.basis!.value !== 'room-night' || nights.value === '0';
+      }
+    };
+    const resetOutputs = (changed = false) => {
+      for (const plan of plans) {
+        plan.total!.textContent = changed ? 'Update your budget' : 'No total yet';
+        plan.summary!.textContent = changed ? 'Entries changed. Calculate again to update the breakdown.' : 'Enter your own amounts. Blank costs stay unknown.';
+        for (const output of [plan.subtotal, plan.buffer, plan.person, plan.daily]) output!.textContent = '—';
+        for (const item of plan.items) { item.value!.textContent = changed ? 'Not recalculated' : 'Not entered'; item.detail!.textContent = ''; }
+      }
+      comparison.textContent = compare.checked ? 'Calculate both budgets for a whole-trip comparison.' : 'Add Plan B to compare two budgets for the same trip.';
+    };
+    const restore = () => {
+      if (attached) { form.removeEventListener('submit', submit); form.removeEventListener('input', changed); form.removeEventListener('change', changed); form.removeEventListener('reset', reset); print.removeEventListener('click', printBudget); attached = false; }
+      form.hidden = true; delete form.dataset.budgetReady; print.hidden = true;
+      try { clearErrors(); resetOutputs(); comparison.textContent = 'Use the complete worksheet below to calculate your budget.'; } catch { /* The server-rendered worksheet remains usable. */ }
+    };
+    const read = () => ({ people: people.value, days: days.value, nights: nights.value, reserve: reserve.value, compare: compare.checked, confirmed: confirmed.checked,
+      plans: Object.fromEntries(plans.map(plan => [plan.id, { rooms: plan.rooms!.value, items: Object.fromEntries(plan.items.map(item => [item.id, { mode: item.mode!.value, amount: item.amount!.value, basis: item.basis!.value }])) }])),
+    });
+    function submit(event: Event) {
+      event.preventDefault();
+      try {
+        clearErrors(); const result = calculateTripBudget(read());
+        if (result.errors.length) {
+          resetOutputs(true);
+          for (const problem of result.errors) {
+            document.getElementById(problem.field)?.setAttribute('aria-invalid', 'true');
+            const paragraph = document.createElement('p'); paragraph.textContent = problem.message; errors.append(paragraph);
+          }
+          errors.hidden = false; errors.focus(); return;
+        }
+        for (const calculated of result.plans) {
+          const view = plans.find(plan => plan.id === calculated.id)!;
+          view.total!.textContent = calculated.complete ? formatBudgetMoney(calculated.totalCents!) : formatBudgetMoney(calculated.knownWithReserveCents) + ' entered so far';
+          view.summary!.textContent = calculated.complete
+            ? `All seven categories covered for ${result.people} people, ${result.days} days and ${result.nights} nights.${result.confirmed ? ' You confirmed the quote basis.' : ' Currency, taxes and required fees still need your confirmation.'}`
+            : `Partial budget: ${calculated.missingCount} unknown, ${calculated.omittedCount} left out. This is not a whole-trip total; the reserve covers entered amounts only.`;
+          view.subtotal!.textContent = formatBudgetMoney(calculated.subtotalCents);
+          view.buffer!.textContent = `${formatBudgetMoney(calculated.reserveCents)} (${result.reserve}% of entered costs)`;
+          view.person!.textContent = calculated.perPersonCents === null ? 'Needs a complete budget' : formatBudgetMoney(calculated.perPersonCents);
+          view.daily!.textContent = calculated.perPersonDayCents === null ? 'Needs a complete budget' : formatBudgetMoney(calculated.perPersonDayCents);
+          for (const row of calculated.rows) { const item = view.items.find(item => item.id === row.id)!; item.value!.textContent = row.cents === null ? row.state === 'omitted' ? 'Left out' : 'Unknown' : formatBudgetMoney(row.cents); item.detail!.textContent = row.detail; }
+        }
+        comparison.textContent = result.comparison.text;
+      } catch { restore(); }
+    }
+    function changed() { try { clearErrors(); syncModes(); resetOutputs(true); } catch { restore(); } }
+    function reset(event: Event) {
+      event.preventDefault();
+      try {
+        people.value = defaultTripBudget.people; days.value = defaultTripBudget.days; nights.value = defaultTripBudget.nights; reserve.value = defaultTripBudget.reserve;
+        compare.checked = false; confirmed.checked = false;
+        for (const plan of plans) { plan.rooms!.value = '1'; for (const [index, item] of plan.items.entries()) { item.mode!.value = 'quoted'; item.amount!.value = ''; item.basis!.value = tripBudgetCategories[index].bases[0][0]; } }
+        clearErrors(); syncModes(); resetOutputs();
+      } catch { restore(); }
+    }
+    function printBudget() { window.print(); }
+    try {
+      syncModes(); resetOutputs();
+      form.addEventListener('submit', submit); form.addEventListener('input', changed); form.addEventListener('change', changed); form.addEventListener('reset', reset); print.addEventListener('click', printBudget); attached = true;
+      form.dataset.budgetReady = 'true'; form.hidden = false; print.hidden = false;
+    } catch { restore(); }
+  }
+  initTripBudget(); document.addEventListener('astro:page-load', initTripBudget);
+</script>

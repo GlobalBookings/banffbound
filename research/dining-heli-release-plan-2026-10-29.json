@@ -1,7 +1,7 @@
 {
   "preparedAtUTC": "2026-10-30T00:00:59.266887+00:00",
   "baselineRevision": "3d8076de3457078634e0a4fe9551d18595e26bca",
-  "status": "Committed-source build, all51 checks, strict audit,234 built HTML contracts,7 photo hashes and desktop/phone browser QA passed; pending remote CI and production proof",
+  "status": "Merged and live verified:51 checks, clean build and strict audit,234 production HTML contracts,7 protected photo hashes,5 bare canonical/discovery routes and100 existing redirect checks passed",
   "scope": {
     "newInteractiveJourneys": [
       "32-entry area/format dining finder",
@@ -61,5 +61,6 @@
     "commissionRevenueProfitOrRankUpliftClaimed": false
   },
   "goalStatus": "active",
-  "cleanVerification": "research/dining-heli-clean-verification-2026-10-29.json"
+  "cleanVerification": "research/dining-heli-clean-verification-2026-10-29.json",
+  "releaseReceipt": "research/dining-heli-release-receipt-2026-10-29.json"
 }

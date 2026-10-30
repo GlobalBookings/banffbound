@@ -15,8 +15,9 @@ const { getArticleBookingContext: contextFor, authoredBookingGuideSlugs: authore
 const jasper = ['jasper-town', 'jasper-national-park', 'jasper-canada', 'jasper-alberta', 'calgary-to-jasper'];
 const bow = ['numtijah-lodge', 'num-ti-jah-lodge'];
 const golden = 'golden-bc-day-trip';
-assert.deepEqual([...authored].sort(), [...bow, ...jasper.slice(0, 3), 'new-places-to-eat-in-banff', 'banff-cabin-rentals', 'banff-nightlife-guide', 'banff-live-music', 'drink-deals', 'icefields-parkway-guide', 'banff-to-jasper-drive', 'lake-minnewanka-guide', 'banff-gondola-guide', 'banff-gondola-tickets-guide', 'banff-spring-skiing', 'peyto-lake-guide', 'banff-helicopter-tours', 'kananaskis-heli-tours', golden, 'banff-heli-skiing'].sort());
-assert.equal(new Set(authored).size, 21);
+const skoki = 'skoki-lodge-guide';
+assert.deepEqual([...authored].sort(), [...bow, ...jasper.slice(0, 3), 'new-places-to-eat-in-banff', 'banff-cabin-rentals', 'banff-nightlife-guide', 'banff-live-music', 'drink-deals', 'icefields-parkway-guide', 'banff-to-jasper-drive', 'lake-minnewanka-guide', 'banff-gondola-guide', 'banff-gondola-tickets-guide', 'banff-spring-skiing', 'peyto-lake-guide', 'banff-helicopter-tours', 'kananaskis-heli-tours', golden, 'banff-heli-skiing', skoki].sort());
+assert.equal(new Set(authored).size, 22);
 const defaultContext = contextFor(undefined);
 assert.deepEqual(defaultContext, {
   hotelLabel: 'Banff', tourLabel: 'Banff',
@@ -33,11 +34,11 @@ const goldenContext = {
 function expectedContext(slug, curated) {
   if (slug === golden) return goldenContext;
   if (jasper.includes(slug)) return {hotelLabel:'Jasper',tourLabel:'Jasper',hotelHref:'https://www.expedia.ca/Hotel-Search?destination=Jasper%2C%20Alberta&camref=1101l3MtWX',tourHref:'https://www.getyourguide.com/s/?q=Jasper%2C%20Alberta&partner_id=QW960HO&cmp=banffboundblog',suppressAutomaticCTA:true};
-  if (bow.includes(slug)) return {hotelLabel:'Lake Louise area',tourLabel:'Lake Louise',hotelHref:'https://www.expedia.ca/Hotel-Search?destination=Lake%20Louise%2C%20Alberta&camref=1101l3MtWX',tourHref:'https://www.getyourguide.com/s/?q=Lake%20Louise%2C%20Alberta&partner_id=QW960HO&cmp=banffboundblog',suppressAutomaticCTA:true};
+  if (bow.includes(slug) || slug===skoki) return {hotelLabel:'Lake Louise area',tourLabel:'Lake Louise',hotelHref:'https://www.expedia.ca/Hotel-Search?destination=Lake%20Louise%2C%20Alberta&camref=1101l3MtWX',tourHref:'https://www.getyourguide.com/s/?q=Lake%20Louise%2C%20Alberta&partner_id=QW960HO&cmp=banffboundblog',suppressAutomaticCTA:true};
   return {...defaultContext,suppressAutomaticCTA:curated===true};
 }
-for (const slug of [...jasper, ...bow, golden, 'banff-heli-skiing', 'ordinary-banff-guide']) for (const curated of [false, true]) {
-  const result = contextFor(slug, curated), isJasper = jasper.includes(slug), isBow = bow.includes(slug), isGolden = slug === golden;
+for (const slug of [...jasper, ...bow, golden, skoki, 'banff-heli-skiing', 'ordinary-banff-guide']) for (const curated of [false, true]) {
+  const result = contextFor(slug, curated), isJasper = jasper.includes(slug), isBow = bow.includes(slug) || slug===skoki, isGolden = slug === golden;
   assert.deepEqual(result, expectedContext(slug, curated), 'Independent exact native context: ' + slug);
   const hotel = new URL(result.hotelHref), tour = new URL(result.tourHref);
   assert.equal(hotel.origin, 'https://www.expedia.ca'); assert.equal(hotel.pathname, '/Hotel-Search');
@@ -54,7 +55,7 @@ for (const slug of [...jasper, ...bow, golden, 'banff-heli-skiing', 'ordinary-ba
   assert.equal(result.suppressAutomaticCTA, curated || isJasper || isBow || isGolden);
 }
 const poison = { toString() { throw Error('Reader input must not be coerced into a URL'); } };
-for (const slug of [null, undefined, 1, false, Symbol('reader'), poison, [], {}, Object.create(null), '__proto__', 'constructor', 'JASPER-TOWN', 'GOLDEN-BC-DAY-TRIP', 'golden-bc-day-trip ', ' golden-bc-day-trip', 'golden', 'golden-banff', 'golden-bc-day-trip?destination=Golden&gclid=PRIVATE', 'golden-bc-day-trip#book', 'jasper-town?gclid=PRIVATE&email=private@example.test', 'https://evil.example/?destination=Golden', '<script>PRIVATE</script>']) assert.deepEqual(contextFor(slug), defaultContext);
+for (const slug of [null, undefined, 1, false, Symbol('reader'), poison, [], {}, Object.create(null), '__proto__', 'constructor', 'JASPER-TOWN', 'GOLDEN-BC-DAY-TRIP', 'golden-bc-day-trip ', ' golden-bc-day-trip', 'golden', 'golden-banff', 'golden-bc-day-trip?destination=Golden&gclid=PRIVATE', 'golden-bc-day-trip#book', 'SKOKI-LODGE-GUIDE', 'skoki-lodge-guide ', 'skoki-lodge-guide?destination=Banff', 'jasper-town?gclid=PRIVATE&email=private@example.test', 'https://evil.example/?destination=Golden', '<script>PRIVATE</script>']) assert.deepEqual(contextFor(slug), defaultContext);
 for (const curated of ['true', 1, poison, null]) assert.equal(contextFor('ordinary-banff-guide', curated).suppressAutomaticCTA, false, 'Only boolean true enables the curated override.');
 assert.equal(contextFor(poison, true).suppressAutomaticCTA, true);
 
@@ -90,7 +91,7 @@ const attr = (node, name) => node.attrs?.find(attribute => attribute.name === na
 const text = node => node.nodeName === '#text' ? node.value : (node.childNodes ?? []).map(text).join('');
 const hasClass = (node, name) => (attr(node, 'class') ?? '').split(/\s+/).includes(name);
 const cases = [...new Set([...jasper, ...bow, ...authored, 'ordinary-banff-guide'])];
-const ssrCases = [...cases.map(slug=>({slug,curated:authored.includes(slug)})),{slug:golden,curated:false},{slug:'banff-heli-skiing',curated:false}];
+const ssrCases = [...cases.map(slug=>({slug,curated:authored.includes(slug)})),{slug:golden,curated:false},{slug:'banff-heli-skiing',curated:false},{slug:skoki,curated:false}];
 const flags = new Map();
 for (const {slug,curated} of ssrCases) {
   const expected = expectedContext(slug, curated);
@@ -154,4 +155,4 @@ for (const [category, heading, firstHref] of [['Guides', 'Plan Your Banff Trip',
 }
 assert.equal(runInline({ missing: true }).created.length, 0);
 assert.equal(runInline({ short: true }).created.length, 0);
-console.log(`Article booking context checks passed: fixed Jasper5/Bow2/Golden/default destinations and native IDs, hostile input exclusion, authored21 integration, ${ssrCases.length} actual BlogLayout SSR contexts including uncurated Golden and generic heli, preserved authored links, actual-IIFE early suppression/no DOM injections and retained legacy mid/sticky behavior. No network or site build.`);
+console.log(`Article booking context checks passed: fixed Jasper5/Bow2/Golden/Skoki/default destinations and native IDs, hostile input exclusion, authored${authored.length} integration, ${ssrCases.length} actual BlogLayout SSR contexts including uncurated Golden/Skoki and generic heli, preserved authored links, actual-IIFE early suppression/no DOM injections and retained legacy mid/sticky behavior. No network or site build.`);

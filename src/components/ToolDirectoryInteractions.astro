@@ -1,0 +1,22 @@
+<script>
+  function mountToolDirectory(){
+    const form=document.getElementById('tools-find') as HTMLFormElement|null;
+    const query=document.getElementById('tools-query') as HTMLInputElement|null;
+    const topic=document.getElementById('tools-category') as HTMLSelectElement|null;
+    const status=document.getElementById('tools-status'),empty=document.getElementById('tools-empty');
+    const cards=[...document.querySelectorAll<HTMLAnchorElement>('[data-tool-search]')];
+    const groups=[...document.querySelectorAll<HTMLElement>('[data-tool-category]')];
+    if(!form||!query||!topic||!status||!empty||!cards.length||form.dataset.ready)return;
+    const normal=(text:string)=>text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+    const update=()=>{
+      const words=normal(query.value).trim().split(/\s+/).filter(Boolean);let shown=0;
+      for(const card of cards){const matches=(topic.value==='all'||card.dataset.toolTopic===topic.value)&&words.every(word=>normal(card.dataset.toolSearch||'').includes(word));card.hidden=!matches;if(matches)shown++;}
+      for(const group of groups)group.hidden=![...group.querySelectorAll<HTMLElement>('[data-tool-search]')].some(card=>!card.hidden);
+      status.textContent=`${shown} of ${cards.length} guide and tool links shown`;empty.hidden=shown!==0;
+    };
+    query.addEventListener('input',update);topic.addEventListener('change',update);form.addEventListener('submit',event=>{event.preventDefault();update();});form.addEventListener('reset',event=>{event.preventDefault();query.value='';topic.value='all';update();});
+    update();form.hidden=false;form.dataset.ready='true';
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountToolDirectory,{once:true});else mountToolDirectory();
+  document.addEventListener('astro:page-load',mountToolDirectory);
+</script>

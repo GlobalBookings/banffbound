@@ -1,226 +1,78 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-
-const costs = {
-  accommodation: {
-    hostel: { label: 'Hostel / Budget', perNight: 55, desc: 'HI Banff Alpine Centre, Samesun' },
-    budget: { label: 'Budget Hotel', perNight: 150, desc: 'Banff Inn, Irwin\'s, Homestead Inn' },
-    mid: { label: 'Mid-Range', perNight: 280, desc: 'Moose Hotel, Mount Royal, Elk + Avenue' },
-    upscale: { label: 'Upscale', perNight: 420, desc: 'Rimrock, Fairmont Banff Springs' },
-    luxury: { label: 'Luxury Suite', perNight: 650, desc: 'Fairmont Lake Louise, penthouse suites' },
-  },
-  food: {
-    budget: { label: 'Budget', perDay: 35, desc: 'Groceries, fast food, coffee shops' },
-    moderate: { label: 'Moderate', perDay: 75, desc: 'Casual dining, one nice meal/day' },
-    foodie: { label: 'Foodie', perDay: 130, desc: 'Restaurants for lunch & dinner, cocktails' },
-    splurge: { label: 'Splurge', perDay: 200, desc: 'Fine dining, wine pairings, tasting menus' },
-  },
-  activities: {
-    free: { label: 'Mostly Free', perDay: 10, desc: 'Hiking, lakes, viewpoints, free attractions' },
-    moderate: { label: 'Some Tours', perDay: 65, desc: '1 paid activity/day (gondola, canoe, etc.)' },
-    active: { label: 'Active', perDay: 130, desc: 'Via ferrata, rafting, guided tours daily' },
-    premium: { label: 'Premium', perDay: 220, desc: 'Heli tours, private guides, ski passes' },
-  },
-  transport: {
-    transit: { label: 'Transit Only', perDay: 5, desc: 'Roam Transit, walking, shuttle' },
-    rental: { label: 'Rental Car', perDay: 75, desc: 'Economy car + gas + Parks pass portion' },
-    premium: { label: 'SUV / Premium', perDay: 130, desc: 'SUV rental + gas + parking fees' },
-  },
-  parkPass: 11.00,
-};
-
-const costsJSON = JSON.stringify(costs);
+import TripCostInteractions from '../components/TripCostInteractions.astro';
+import { defaultTripBudget, tripBudgetCategories, tripBudgetFaqs, tripBudgetModes, tripBudgetReviewedAt } from '../data/tripCostPlanning';
+const planIds = ['a', 'b'] as const;
+const quoteLinks = [
+  { href: '/book/banff-hotels/', title: 'Banff hotel quotes', text: 'Compare actual room and location choices, then check your dates with the provider.' },
+  { href: '/book/lake-louise-stays/', title: 'Lake Louise stay choices', text: 'Distinguish the lakeshore, village and ski area before comparing a room quote.' },
+  { href: '/book/banff-winter-activities/', title: 'Winter activity quotes', text: 'Check the exact product, party ages, equipment and meeting arrangements.' },
+  { href: '/eat-and-drink/', title: 'Meals & menus', text: 'Use current operator menus and add the meals, drinks, taxes and tips you intend to budget.' },
+];
 ---
-
-<BaseLayout title="Banff Trip Cost Calculator 2026 — How Much Will It Cost?" description="Interactive cost calculator for a Banff trip. Adjust accommodation, food, activities, and transport to get a personalized daily and total budget for 2026.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'How much does a trip to Banff cost per day in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'A Banff trip costs $105-$1,200 per person per day in 2026 depending on your style. Budget travellers (hostel, groceries, free hikes): ~$105/day. Mid-range (hotel, casual dining, some tours): ~$430/day. Luxury (Fairmont, fine dining, premium activities): ~$1,000+/day. Parks Canada pass is $11/person/day. Accommodation is the biggest variable — hostels start at $55/night while the Fairmont Banff Springs runs $420-650+/night.' } },
-      { '@type': 'Question', name: 'How much does 5 days in Banff cost for 2 people?', acceptedAnswer: { '@type': 'Answer', text: 'For 2 people spending 5 days in Banff in 2026: Budget trip ~$1,550 total ($155/person/day). Mid-range trip ~$3,700 total ($370/person/day). Luxury trip ~$8,500+ total ($850+/person/day). These estimates include accommodation, food, activities, transport, and park passes. Summer (June-September) is 20-40% more expensive than shoulder or winter seasons for accommodation.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Trip Cost Calculator' }]} />
-  </div>
-
+<BaseLayout title="Banff Trip Cost Calculator — Build & Compare Your Own Budget" description="Build a Banff trip budget from your own current quotes. Separate people, days, nights and rooms, see a full breakdown and compare two plans in Canadian dollars." lastUpdated={tripBudgetReviewedAt}>
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: tripBudgetFaqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Trip Cost Calculator' }]} /></div>
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff National Park" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">2026 Prices</span>
-      <h1>Trip Cost Calculator</h1>
-      <p>How much will your Banff trip actually cost? Adjust the sliders to match your style.</p>
-    </div>
+    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Illustrative mountain landscape; not verified as Banff or current conditions" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content"><span class="badge">Your quotes. A clearer trip.</span><h1>Trip Cost Calculator</h1><p>Put the whole Banff trip on one page. Compare a package, a different base, or two ways to travel using the amounts you actually have.</p></div>
   </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="calc-layout">
-        <div class="calc-controls">
-          <div class="calc-group">
-            <label>How many days?</label>
-            <div class="slider-row">
-              <input type="range" id="days" min="1" max="14" value="5" />
-              <span class="slider-val" id="days-val">5</span>
-            </div>
-          </div>
-          <div class="calc-group">
-            <label>How many people?</label>
-            <div class="slider-row">
-              <input type="range" id="people" min="1" max="6" value="2" />
-              <span class="slider-val" id="people-val">2</span>
-            </div>
-          </div>
-          <div class="calc-group">
-            <label>Accommodation</label>
-            <div class="option-cards" id="accom-options"></div>
-          </div>
-          <div class="calc-group">
-            <label>Food & Dining</label>
-            <div class="option-cards" id="food-options"></div>
-          </div>
-          <div class="calc-group">
-            <label>Activities & Tours</label>
-            <div class="option-cards" id="activity-options"></div>
-          </div>
-          <div class="calc-group">
-            <label>Transport</label>
-            <div class="option-cards" id="transport-options"></div>
-          </div>
-        </div>
-
-        <div class="calc-result" id="calc-result">
-          <h2>Your Estimate</h2>
-          <div class="result-total" id="result-total">$0</div>
-          <p class="result-subtitle" id="result-subtitle"></p>
-          <div class="result-breakdown" id="result-breakdown"></div>
-          <div class="result-tip" id="result-tip"></div>
-          <a href="/hotels" class="btn btn-primary" style="margin-top:1rem;">Browse Hotels</a>
-          <a href="/trip-builder" class="btn btn-outline" style="margin-top:0.5rem;">Build Your Itinerary</a>
-        </div>
-      </div>
-
-      <div class="seo-summary" style="margin-top:2rem;">
-        <h2>Banff Trip Cost Guide for 2026</h2>
-        <p><strong>Budget trip (per person/day):</strong> $105 — hostel ($55), groceries ($35), free hikes ($10), transit ($5). Parks pass $11/day.</p>
-        <p><strong>Mid-range trip (per person/day):</strong> $430 — hotel ($280), casual dining ($75), one tour ($65), rental car split ($75/2). Parks pass $11/day.</p>
-        <p><strong>Luxury trip (per person/day):</strong> $1,000+ — Fairmont ($650), fine dining ($200), premium activities ($220), SUV ($130). Parks pass $11/day.</p>
-        <p><strong>Tip:</strong> Shoulder season (May, October) accommodation is 20-40% cheaper than July-August. Booking 3+ months ahead saves 15-25% on hotels.</p>
-      </div>
+  <p class="budget-image-note">Illustrative landscape; not a verified Banff location or view of current conditions.</p>
+  <section class="section" id="trip-budget-planner"><div class="container budget-container">
+    <div class="budget-intro"><span class="eyebrow">Count the stay. Count the journey.</span><h2>What is in your Banff budget?</h2><p>Enter <strong>Canadian dollars (CAD), including taxes and required fees</strong>. There are no default market prices. A blank stays unknown; a cost you leave out makes the result a partial budget.</p><p>Use the same party and dates in both plans. Include costs already paid if you want a total trip budget. For a package, enter its total once and mark covered rows as counted elsewhere.</p><p class="help">This calculator does not save entries or put them into booking links. Use Clear & start again to remove the current entries. It does not convert currencies; use your own conversion and allow for expected payment fees.</p></div>
+    <div class="budget-layout">
+      <form id="trip-budget-form" class="budget-form" autocomplete="off" novalidate hidden>
+        <fieldset class="trip-shape"><legend>1. The same trip for both plans</legend><div class="shape-grid">
+          <label for="budget-people">People, including children<input id="budget-people" type="number" min="1" max="30" step="1" inputmode="numeric" value={defaultTripBudget.people} /></label>
+          <label for="budget-days">Total travel days<input id="budget-days" type="number" min="1" max="90" step="1" inputmode="numeric" value={defaultTripBudget.days} aria-describedby="budget-duration-help" /></label>
+          <label for="budget-nights">Accommodation nights<input id="budget-nights" type="number" min="0" max="90" step="1" inputmode="numeric" value={defaultTripBudget.nights} aria-describedby="budget-duration-help" /></label>
+          <label for="budget-reserve">Extra reserve (%)<input id="budget-reserve" type="number" min="0" max="100" step="0.01" inputmode="decimal" value={defaultTripBudget.reserve} aria-describedby="budget-reserve-help" /></label>
+        </div><p class="help" id="budget-duration-help">Count arrival and departure days. Five travel days may mean four nights. For a day trip, enter zero nights. People sets the food/bed multipliers and an equal per-person split; it does not determine ticket eligibility.</p><p class="help" id="budget-reserve-help">Your optional reserve is added to entered costs, not unknown costs. It is an amount you choose to set aside, not a prediction of extra charges.</p></fieldset>
+        <label class="budget-check compare-toggle" for="budget-compare"><input id="budget-compare" type="checkbox" /> Add Plan B to compare a second way to make the same trip.</label>
+        {planIds.map(id => <fieldset id={`budget-${id}-fields`} data-budget-plan={id} class="plan-fields" hidden={id === 'b'} disabled={id === 'b'}><legend>{id === 'a' ? '2. Plan A' : 'Plan B — your alternative'}</legend>
+          <label class="rooms-field" for={`budget-${id}-rooms`}>Rooms / units if using a per-room nightly quote<input id={`budget-${id}-rooms`} type="number" min="1" max="15" step="1" inputmode="numeric" value="1" /></label>
+          {tripBudgetCategories.map(category => <div class="budget-entry"><h3>{category.label}</h3><p class="help" id={`budget-${id}-${category.id}-help`}>{category.help}</p><div class="entry-grid">
+            <label for={`budget-${id}-${category.id}-mode`}>How to count it<select id={`budget-${id}-${category.id}-mode`} aria-describedby={`budget-${id}-${category.id}-help`}>{tripBudgetModes.map(([value, label]) => <option value={value}>{label}</option>)}</select></label>
+            <label for={`budget-${id}-${category.id}-amount`}>Amount (CAD)<input id={`budget-${id}-${category.id}-amount`} type="number" min="0" max="1000000" step="0.01" inputmode="decimal" placeholder="Unknown until entered" aria-describedby={`budget-${id}-${category.id}-help`} /></label>
+            {category.bases.length > 1 ? <label class="basis-field" for={`budget-${id}-${category.id}-basis`}>Amount covers<select id={`budget-${id}-${category.id}-basis`}>{category.bases.map(([value, label]) => <option value={value}>{label}</option>)}</select></label> : <div class="fixed-basis"><span>Amount covers</span><strong>Whole party / trip</strong><input id={`budget-${id}-${category.id}-basis`} type="hidden" value="trip" /></div>}
+          </div></div>)}
+        </fieldset>)}
+        <label class="budget-check" for="budget-confirmed"><input id="budget-confirmed" type="checkbox" /> My amounts use the same CAD basis, dates and party, with taxes and required fees included. I checked package inclusions and did not count them twice.</label>
+        <div class="budget-buttons"><button type="submit" class="btn btn-primary">Calculate my budget</button><button type="reset" class="btn btn-outline">Clear & start again</button></div>
+        <div id="budget-errors" class="budget-errors" role="alert" tabindex="-1" hidden></div>
+      </form>
+      <aside class="budget-results" aria-label="Your budget breakdown" tabindex="0">
+        <div class="results-heading"><span class="eyebrow">Your entered amounts</span><h2>The whole-trip view</h2><p class="help">All displayed money is CAD. A calculated budget is not a booking quote or a promise of availability.</p></div>
+        {planIds.map(id => <section id={`budget-${id}-result`} class="plan-result" aria-labelledby={`budget-${id}-heading`} hidden={id === 'b'}><h3 id={`budget-${id}-heading`}>Plan {id.toUpperCase()}</h3><p class="budget-total" id={`budget-${id}-total`}>No total yet</p><p class="result-summary" id={`budget-${id}-summary`}>Enter your own amounts. Blank costs stay unknown.</p>
+          <table><caption class="sr-only">Plan {id.toUpperCase()} category breakdown in CAD</caption><thead class="sr-only"><tr><th scope="col">Cost</th><th scope="col">Amount and basis</th></tr></thead><tbody>{tripBudgetCategories.map(category => <tr data-budget-row={category.id}><th scope="row">{category.label}</th><td><span data-budget-value>Not entered</span><small data-budget-detail></small></td></tr>)}</tbody></table>
+          <dl class="budget-totals"><div><dt>Entered costs</dt><dd id={`budget-${id}-subtotal`}>—</dd></div><div><dt>Your extra reserve</dt><dd id={`budget-${id}-reserve`}>—</dd></div><div><dt>Equal split / person</dt><dd id={`budget-${id}-perperson`}>—</dd></div><div><dt>Equal split / person / travel day</dt><dd id={`budget-${id}-daily`}>—</dd></div></dl>
+        </section>)}
+        <p class="budget-comparison" id="budget-comparison" role="status" aria-live="polite">Add Plan B to compare two budgets for the same trip.</p><p class="help">An equal split is a planning average, not each traveller’s bill. Compare room type, transport time, inclusions and cancellation terms alongside the amounts.</p><button type="button" id="budget-print" class="btn btn-outline" hidden>Print budget / worksheet</button>
+      </aside>
     </div>
-  </section>
+    <noscript><p class="manual-notice">The interactive calculator needs JavaScript. The complete worksheet below works without it and can be printed using your browser.</p></noscript>
+  </div></section>
+  <section class="section worksheet-section" id="trip-budget-worksheet"><div class="container budget-container"><span class="eyebrow">On paper or on screen</span><h2>A budget worksheet that adds up</h2><p>Write down your party, total travel days, accommodation nights and room count. Fill both columns for a comparison. Leave unknown costs visibly blank; do not substitute zero.</p><div class="table-scroll"><table class="manual-table"><caption>Whole-party trip costs in CAD — fill with your actual quotes or planned spending</caption><thead><tr><th scope="col">Cost</th><th scope="col">How to turn the quote into a trip total</th><th scope="col">Plan A</th><th scope="col">Plan B</th></tr></thead><tbody>
+    <tr><th scope="row">Accommodation</th><td>Room rate × rooms × nights; or bed rate × people × nights; or enter the complete party quote.</td><td>________</td><td>________</td></tr>
+    <tr><th scope="row">Food & drinks</th><td>Person/day budget × people × days; or party/day budget × days; or one trip total.</td><td>________</td><td>________</td></tr>
+    {tripBudgetCategories.slice(2).map(category => <tr><th scope="row">{category.label}</th><td>{category.help} Enter the whole-party trip total.</td><td>________</td><td>________</td></tr>)}
+    <tr><th scope="row">Entered subtotal</th><td>Add the seven cost rows. Label it partial if any are blank or deliberately left out.</td><td>________</td><td>________</td></tr><tr><th scope="row">Optional reserve</th><td>Entered subtotal × your reserve percentage ÷ 100.</td><td>________</td><td>________</td></tr><tr><th scope="row">Trip total</th><td>Subtotal + reserve, only when all categories are covered. Equal split: total ÷ people; person/day: total ÷ people ÷ travel days.</td><td>________</td><td>________</td></tr>
+    </tbody></table></div><p class="help">Use zero additional cost only for a cost-free choice or an inclusion already counted elsewhere. Keep already-paid costs in the budget if you want the full cost of the trip.</p></div></section>
+  <section class="section quote-sources"><div class="container budget-container"><span class="eyebrow">Find the amounts worth comparing</span><h2>Choose the base and inclusions first</h2><div class="quote-grid">{quoteLinks.map(link => <a href={link.href}><h3>{link.title}</h3><p>{link.text}</p><span>Open the planning guide →</span></a>)}</div>
+    <div class="source-checks"><h3>Before you call the budget complete</h3><ul><li>Accommodation: use the same room occupancy and dates. Check required fees, parking, meals and the cancellation terms.</li><li>Activities: use each traveller’s actual age and product. A lesson, equipment rental, lift ticket and transport may be separate or partly bundled.</li><li>Transport: include both the arrival journey and getting around. Car rental, fuel, parking and route-specific transit are different costs.</li><li>Admission: check the relevant daily or pass coverage, ages and vehicle party. An existing pass can change the additional admission needed.</li></ul><p>Current official checks: <a href="https://parks.canada.ca/pn-np/ab/banff/visit/tarifs-fees" target="_blank" rel="noopener noreferrer">Parks Canada fees</a> · <a href="https://roamtransit.com/fares/" target="_blank" rel="noopener noreferrer">Roam route-specific fares</a> · <a href="https://www.skibig3.com/ski/lift-tickets/" target="_blank" rel="noopener noreferrer">SkiBig3 ticket products</a>. Use the quote for your actual date and product; no amounts from these pages are prefilled here.</p></div>
+    <nav class="budget-next" aria-label="Continue trip planning"><a href="/hotels">Browse hotel choices</a><a href="/winter-stays">Compare winter stay bases</a><a href="/ski-pass-calculator">Compare your ski-ticket quotes</a><a href="/calgary-to-banff">Plan arrival & transfers</a><a href="/car-free-banff">Compare a car-free trip</a><a href="/trip-builder">Build your itinerary</a></nav>
+  </div></section>
+  <section class="section budget-faq"><div class="container budget-container"><h2 id="trip-budget-faq">Questions about your trip budget</h2>{tripBudgetFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}<p class="review-note">Calculator and linked source routes checked <time datetime={tripBudgetReviewedAt}>29 October 2026</time>. This is a quote-entry tool, not a live price feed.</p></div></section>
+  <TripCostInteractions />
 </BaseLayout>
-
-<script define:vars={{ costsJSON }}>
-  const costs = JSON.parse(costsJSON);
-  let state = { days: 5, people: 2, accom: 'mid', food: 'moderate', activity: 'moderate', transport: 'rental' };
-
-  function renderOptions(containerId, options, category) {
-    const el = document.getElementById(containerId);
-    el.innerHTML = Object.entries(options).map(([key, opt]) =>
-      `<button class="opt-btn ${state[category] === key ? 'active' : ''}" data-cat="${category}" data-key="${key}">
-        <strong>${opt.label}</strong>
-        <span>$${opt.perNight || opt.perDay}/day</span>
-        <small>${opt.desc}</small>
-      </button>`
-    ).join('');
-  }
-
-  function calculate() {
-    const d = state.days, p = state.people;
-    const accom = costs.accommodation[state.accom].perNight * d;
-    const food = costs.food[state.food].perDay * d * p;
-    const activities = costs.activities[state.activity].perDay * d * p;
-    const transport = costs.transport[state.transport].perDay * d;
-    const pass = costs.parkPass * d * p;
-    const total = accom + food + activities + transport + pass;
-    const perPersonPerDay = Math.round(total / p / d);
-
-    document.getElementById('result-total').textContent = `$${total.toLocaleString()}`;
-    document.getElementById('result-subtitle').textContent = `${d} days, ${p} people — $${perPersonPerDay}/person/day`;
-    document.getElementById('result-breakdown').innerHTML = `
-      <div class="breakdown-row"><span>Accommodation</span><span>$${accom.toLocaleString()}</span></div>
-      <div class="breakdown-row"><span>Food & Dining</span><span>$${food.toLocaleString()}</span></div>
-      <div class="breakdown-row"><span>Activities</span><span>$${activities.toLocaleString()}</span></div>
-      <div class="breakdown-row"><span>Transport</span><span>$${transport.toLocaleString()}</span></div>
-      <div class="breakdown-row"><span>Parks Pass</span><span>$${pass.toLocaleString()}</span></div>
-    `;
-
-    let tip = '';
-    if (perPersonPerDay < 150) tip = 'Great budget planning. Consider the Discovery Pass ($75/year) if visiting 7+ days.';
-    else if (perPersonPerDay < 400) tip = 'Solid mid-range budget. Book accommodation 3+ months ahead for best rates.';
-    else tip = 'Premium experience. Consider the Fairmont Gold floor for the best value at the high end.';
-    document.getElementById('result-tip').textContent = tip;
-  }
-
-  function init() {
-    renderOptions('accom-options', costs.accommodation, 'accom');
-    renderOptions('food-options', costs.food, 'food');
-    renderOptions('activity-options', costs.activities, 'activity');
-    renderOptions('transport-options', costs.transport, 'transport');
-
-    document.querySelectorAll('.opt-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        state[btn.dataset.cat] = btn.dataset.key;
-        const container = btn.parentElement;
-        container.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        calculate();
-      });
-    });
-
-    ['days', 'people'].forEach(id => {
-      const input = document.getElementById(id);
-      input.addEventListener('input', () => {
-        state[id] = parseInt(input.value);
-        document.getElementById(`${id}-val`).textContent = input.value;
-        calculate();
-      });
-    });
-
-    calculate();
-  }
-
-  init();
-</script>
-
 <style>
-  .calc-layout { display: grid; grid-template-columns: 1fr 340px; gap: 2rem; align-items: start; }
-  .calc-controls { display: flex; flex-direction: column; gap: 1.5rem; }
-  .calc-group label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-light); font-weight: 600; display: block; margin-bottom: 0.5rem; }
-  .slider-row { display: flex; align-items: center; gap: 1rem; }
-  .slider-row input[type="range"] { flex: 1; accent-color: var(--color-primary); }
-  .slider-val { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; min-width: 2.5rem; text-align: center; }
+  .budget-image-note{margin:.6rem auto 0;max-width:1200px;padding:0 1.5rem;font-size:.8rem;color:var(--color-text-light);line-height:1.7}
 
-  .option-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; }
-  .opt-btn {
-    background: var(--color-white); border: 2px solid transparent; border-radius: 8px; padding: 0.75rem;
-    cursor: pointer; text-align: left; font-family: var(--font-body); box-shadow: var(--shadow); transition: all 0.15s;
-    display: flex; flex-direction: column; gap: 0.15rem;
-  }
-  .opt-btn:hover { border-color: var(--color-accent); }
-  .opt-btn.active { border-color: var(--color-primary); background: #f0f7f4; }
-  .opt-btn strong { font-size: 0.85rem; }
-  .opt-btn span { font-size: 0.82rem; color: var(--color-primary); font-weight: 600; }
-  .opt-btn small { font-size: 0.72rem; color: var(--color-text-light); }
-
-  .calc-result {
-    background: var(--color-white); border-radius: var(--radius); padding: 2rem;
-    box-shadow: var(--shadow); position: sticky; top: 6rem; text-align: center;
-  }
-  .calc-result h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-light); margin-bottom: 0.5rem; }
-  .result-total { font-family: var(--font-heading); font-size: 3rem; font-weight: 700; color: var(--color-primary); }
-  .result-subtitle { font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 1.25rem; }
-  .breakdown-row { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.85rem; }
-  .result-tip { font-size: 0.82rem; color: var(--color-accent); font-style: italic; margin-top: 1rem; }
-
-  @media (max-width: 768px) {
-    .calc-layout { grid-template-columns: 1fr; }
-    .calc-result { position: static; }
-    .option-cards { grid-template-columns: repeat(2, 1fr); }
-  }
+  .budget-container { max-width: 1180px; }.budget-intro { max-width: 800px; margin-bottom: 2rem; }.budget-intro h2,.worksheet-section h2,.quote-sources h2 { margin: .6rem 0 1rem; }.budget-intro p { margin: .8rem 0; }.eyebrow { color: #76591d; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; }.help { color: var(--color-text-light); font-size: .85rem; line-height: 1.6; }
+  .budget-layout { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 2rem; align-items: start; }fieldset { min-width: 0; border: 1px solid #d4ded4; border-radius: 12px; padding: 1.25rem; margin: 0 0 1.4rem; background: white; }legend { font-weight: 700; padding: 0 .4rem; }.shape-grid,.entry-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .7rem 1rem; }label { display: block; font-size: .84rem; font-weight: 600; }input[type="number"],select { display: block; min-width: 0; width: 100%; padding: .7rem; border: 1px solid #a5b1a4; border-radius: 6px; font: inherit; color: var(--color-text); background: #fff; margin: .35rem 0 .45rem; }input:disabled,select:disabled { background: #f1f3f0; color: #6b7469; }input[aria-invalid="true"],select[aria-invalid="true"] { border: 2px solid #a52626; }input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible { outline: 3px solid #9b741e; outline-offset: 3px; }.budget-check { display: flex; align-items: flex-start; gap: .7rem; line-height: 1.6; font-weight: 500; margin: 1.1rem 0; }.budget-check input { width: 20px; height: 20px; flex-shrink: 0; margin-top: .15rem; accent-color: var(--color-primary); }.compare-toggle { padding: 1rem; border-radius: 8px; background: #edf3ec; }.rooms-field { max-width: 340px; }.budget-entry { padding-top: 1.1rem; margin-top: 1rem; border-top: 1px solid #dce3d8; }.budget-entry h3 { font-family: var(--font-body); font-size: 1.02rem; margin-bottom: .3rem; }.budget-entry .help { margin-bottom: .75rem; }.basis-field { grid-column: 1/-1; }.fixed-basis { grid-column: 1/-1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem; font-size: .8rem; color: var(--color-text-light); }.budget-buttons { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1.5rem 0; }.budget-buttons .btn { white-space: normal; }.budget-errors { padding: 1rem; background: #fff0ea; color: #7f2020; border-left: 4px solid #a52626; }.budget-errors p+p { margin-top: .5rem; }
+  .budget-results { background: #eef2e9; border-radius: 16px; padding: 1.5rem; position: sticky; top: 115px; max-height: calc(100vh - 130px); overflow-y: auto; }.results-heading h2 { font-size: 1.7rem; margin: .5rem 0; }.plan-result { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #c7d1c1; }.plan-result h3 { font-family: var(--font-body); font-size: 1rem; }.budget-total { color: var(--color-primary); font-family: var(--font-heading); font-size: clamp(1.5rem,2.3vw,2rem); line-height: 1.3; overflow-wrap: anywhere; margin: .6rem 0; }.result-summary { font-size: .83rem; line-height: 1.6; }table { border-collapse: collapse; width: 100%; margin-top: 1rem; font-size: .83rem; }th,td { text-align: left; vertical-align: top; padding: .6rem .4rem; border-bottom: 1px solid #cfd8ca; }th { font-weight: 600; }.plan-result th { width: 42%; }.plan-result td { text-align: right; }.plan-result td small { display: block; color: var(--color-text-light); font-size: .73rem; line-height: 1.5; margin-top: .25rem; }.budget-totals { font-size: .82rem; margin-top: 1rem; }.budget-totals div { display: flex; justify-content: space-between; gap: 1rem; padding: .4rem 0; }.budget-totals dd { text-align: right; font-weight: 600; }.budget-comparison { padding: 1rem; background: white; border-radius: 8px; margin: 1.3rem 0 .7rem; font-size: .87rem; line-height: 1.6; }.budget-results .btn { margin-top: 1rem; }.manual-notice { margin-top: 1.5rem; padding: 1rem; background: #f5eddb; }
+  .worksheet-section { background: var(--color-bg-alt); }.table-scroll { overflow-x: auto; }.manual-table { min-width: 660px; background: white; }.manual-table caption { text-align: left; font-weight: 600; padding: .8rem 0; }.manual-table th,.manual-table td { padding: .8rem; }.manual-table td:nth-last-child(-n+2) { min-width: 95px; }.worksheet-section .help { margin-top: 1rem; }.quote-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-top: 1.5rem; }.quote-grid>a { display: block; border: 1px solid #d4ded4; border-radius: 10px; padding: 1.2rem; color: inherit; background: white; text-decoration: none; }.quote-grid h3 { font-size: 1.2rem; }.quote-grid p { font-size: .88rem; margin: .6rem 0; }.quote-grid span { color: var(--color-primary); font-weight: 700; font-size: .82rem; }.source-checks { margin-top: 2rem; max-width: 900px; }.source-checks li { margin: .8rem 0; line-height: 1.6; }.source-checks ul { padding-left: 1.3rem; }.source-checks p { margin-top: 1rem; font-size: .88rem; }.source-checks a { text-decoration: underline; }.budget-next { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 2rem; }.budget-next a { background: #eef2e9; padding: .75rem 1rem; border-radius: 6px; font-size: .85rem; font-weight: 600; }.budget-faq { background: var(--color-bg-alt); }.budget-faq details { margin-top: .8rem; border: 1px solid #d4ded4; border-radius: 8px; padding: 1rem; background: white; }.budget-faq summary { cursor: pointer; font-weight: 600; }.budget-faq details p { margin-top: .7rem; line-height: 1.7; }.review-note { color: var(--color-text-light); font-size: .8rem; margin-top: 1.5rem; }.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }[hidden] { display: none !important; }
+  @media(max-width: 880px) { .budget-layout { grid-template-columns: minmax(0,1fr); }.budget-results { position: static; max-height: none; overflow: visible; }.budget-total { font-size: 2rem; } }@media(max-width: 480px) { .shape-grid,.entry-grid,.quote-grid { grid-template-columns: minmax(0,1fr); }fieldset,.budget-results { padding: 1rem; }.budget-buttons { flex-direction: column; }.budget-totals div { gap: .7rem; }.plan-result th { width: 40%; } }
+  @media print { .page-hero,.budget-form,.quote-sources,.budget-faq,#budget-print { display: none !important; }.section { padding: 1rem 0; }.budget-results { position: static; max-height: none; overflow: visible; background: white; border: 1px solid #999; }.budget-layout { display: block; }.plan-result { break-inside: avoid; }.worksheet-section { break-before: page; background: white; }.manual-table { min-width: 0; }.table-scroll { overflow: visible; }th,td { font-size: 10pt; }.budget-intro .help { display: none; } }
 </style>
