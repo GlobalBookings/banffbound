@@ -1,0 +1,96 @@
+{
+  "checkedAtUTC": "2026-10-29T23:31:09.149002+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/13",
+  "codeCommit": "22163cb881c91efc2cfdedd2eca4f46c07080fc8",
+  "reviewedHead": "89226d3dcbf2a59cb8c7d2b62c1b428c759a9fba",
+  "mergedRevision": "3d8076de3457078634e0a4fe9551d18595e26bca",
+  "mergedAtUTC": "2026-10-29T23:27:23Z",
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-29T23:28:33.892Z",
+    "sourceRevision": "3d8076de3457078634e0a4fe9551d18595e26bca",
+    "sourceFingerprint": "2483df6f72bf743376a25ca09ad4a518cd510e9520bfced0856faae976dc9c35"
+  },
+  "ci": {
+    "pullRequest": {
+      "run": 40973080307,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40973080307",
+      "revision": "89226d3dcbf2a59cb8c7d2b62c1b428c759a9fba",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123794355406,
+      "completedAt": "2026-10-29T23:26:53Z"
+    },
+    "main": {
+      "run": 40973268088,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40973268088",
+      "revision": "3d8076de3457078634e0a4fe9551d18595e26bca",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123794985073,
+      "completedAt": "2026-10-29T23:28:11Z"
+    }
+  },
+  "cleanVerification": "research/spring-peyto-flight-clean-verification-2026-10-29.json",
+  "productionVerification": {
+    "report": "research/spring-peyto-flight-production-verification-2026-10-29.json",
+    "passed": true,
+    "htmlRoutes": 232,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "stableExactRevisionAndFingerprint": true
+  },
+  "bareUrlVerification": {
+    "report": "research/spring-peyto-flight-bare-url-verification-2026-10-29.json",
+    "passed": 4
+  },
+  "redirectVerification": {
+    "report": "research/live-http-redirect-verification-2026-10-29.json",
+    "mappings": 40,
+    "checksPassed": 100
+  },
+  "browserProduction": {
+    "url": "https://banffbound.com/blog/peyto-lake-guide/#peyto-choices",
+    "fourDistinctVisitRowsVisible": true,
+    "nativeSectionJumpWorks": true,
+    "faqCount": 5,
+    "curatedBookingFlag": true,
+    "optionalProviderScriptAndFrameElements": 0,
+    "viewportWidth": 1280,
+    "documentWidth": 1280,
+    "screenshot": "/tmp/banffbound-peyto-guide-live-2026-10-29.png",
+    "otherThreePages": "Full live HTML verifier and bare canonical GETs; all four mobile layouts checked against clean build."
+  },
+  "scope": {
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 67,
+    "fullReviewsAfter": 71,
+    "newFullReviews": 4,
+    "otherCanonicalBodiesByteIdentical": 291,
+    "partialOpeningRepairs": 8,
+    "originalPublicationDatesPreserved": 335,
+    "allCanonicalFactsReviewed": false
+  },
+  "preserved": {
+    "hotelIdentitiesAndProviderURLs": 95,
+    "hostAliasMappings": 40,
+    "affiliateAndMeasurementIdentifiers": true,
+    "sharedTrailLakeParkwayRecords": true,
+    "unrelatedUserWork": true
+  },
+  "commercialBoundary": {
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "revenueProfitOrRankUpliftClaimed": false,
+    "paidActivityPermissionUnverified": true
+  },
+  "remaining": [
+    "GetYourGuide account-specific agreement/exception check requires portal access; separate local private evidence only.",
+    "Source-reviewed restaurant projection and heli-ski logistics work remain queued.",
+    "224 canonical blog bodies do not yet have a full review; eight have bounded opening repairs."
+  ],
+  "goalStatus": "active"
+}

@@ -8,7 +8,7 @@
 - [Ski day planner](https://banffbound.com/ski-day-planner/): Personalise a resort day by experience, base, resort, transport and group. Share selections or print a plan.
 - [Resort comparison](https://banffbound.com/sunshine-vs-lake-louise-vs-norquay/): Practical differences among Sunshine, Lake Louise and Norquay.
 - [Ski pass calculator](https://banffbound.com/ski-pass-calculator/): Compare user-entered current quotes and confirmed coverage. Contains no live ticket-price feed.
-- [Heli-skiing near Banff](https://banffbound.com/blog/banff-heli-skiing/): Operator bases in British Columbia, prerequisites, transfers and cancellation questions.
+- [Heli-skiing near Banff](https://banffbound.com/blog/banff-heli-skiing/#heli-ski-planner): Compare two BC operator journeys and build questions about transport, overnight stays and equipment. The operator assesses ability and the actual programme.
 - [Spring skiing](https://banffbound.com/blog/banff-spring-skiing/): Published resort season plans, actual spring lessons, ability and complete mountain-day choices.
 - [Helicopter sightseeing near Banff](https://banffbound.com/blog/banff-helicopter-tours/): Separate scenic flights, named landings and ski days, with actual operator bases and direct enquiry routes.
 - [Kananaskis helicopter planning](https://banffbound.com/blog/kananaskis-heli-tours/): Stoney Nakoda departure, current-date enquiries and the complete journey from accommodation.
@@ -29,6 +29,8 @@
 - [Kananaskis](https://banffbound.com/towns/kananaskis/)
 
 ## Wider trip planning
+- [Dining finder](https://banffbound.com/eat-and-drink/#dining-finder): Filter 32 venue entries by area and dining format; use selected operator facts, current-source links and clear notices before making a visit depend on them.
+- [Golden trip planning](https://banffbound.com/blog/golden-bc-day-trip/): Separate town, resort, Nordic and heli-ski journeys, actual seasons and the complete winter return.
 - [Family guide](https://banffbound.com/family-guide/): Filter seasonal ideas by age and outing style; check current operator eligibility and the room layout before booking.
 - [Dog-friendly planning](https://banffbound.com/dog-friendly/): Match pet transport, seasonal restrictions, off-leash areas and allocated pet rooms.
 - [Events](https://banffbound.com/events/): Filter dated Town calendar copies and check official winter festival programmes; failed retrievals are not an empty calendar.

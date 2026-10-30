@@ -6,6 +6,7 @@ import { resolveBlogContent, reviewedBlogBodies, authoredBookingGuideSlugs } fro
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import CabinGuideInteractions from '../../components/CabinGuideInteractions.astro';
 import EveningGuideInteractions from '../../components/EveningGuideInteractions.astro';
+import HeliSkiPlanningInteractions from '../../components/HeliSkiPlanningInteractions.astro';
 import { allBlogPosts } from '../../data/blogPosts';
 import { blogRedirects } from '../../data/redirects.mjs';
 
@@ -44,4 +45,5 @@ const content = resolveBlogContent(post.slug).replace(
   <Fragment set:html={content} />
   {post.slug === 'banff-cabin-rentals' && <CabinGuideInteractions />}
   {post.slug === 'banff-nightlife-guide' && <EveningGuideInteractions />}
+  {post.slug === 'banff-heli-skiing' && <HeliSkiPlanningInteractions />}
 </BlogLayout>

@@ -14,8 +14,9 @@ const data = await build({ stdin: { contents: "export {getArticleBookingContext}
 const { getArticleBookingContext: contextFor, authoredBookingGuideSlugs: authored, resolveBlogContent } = await import(`data:text/javascript;base64,${Buffer.from(data.outputFiles[0].text).toString('base64')}`);
 const jasper = ['jasper-town', 'jasper-national-park', 'jasper-canada', 'jasper-alberta', 'calgary-to-jasper'];
 const bow = ['numtijah-lodge', 'num-ti-jah-lodge'];
-assert.deepEqual([...authored].sort(), [...bow, ...jasper.slice(0, 3), 'new-places-to-eat-in-banff', 'banff-cabin-rentals', 'banff-nightlife-guide', 'banff-live-music', 'drink-deals', 'icefields-parkway-guide', 'banff-to-jasper-drive', 'lake-minnewanka-guide', 'banff-gondola-guide', 'banff-gondola-tickets-guide', 'banff-spring-skiing', 'peyto-lake-guide', 'banff-helicopter-tours', 'kananaskis-heli-tours'].sort());
-assert.equal(new Set(authored).size, 19);
+const golden = 'golden-bc-day-trip';
+assert.deepEqual([...authored].sort(), [...bow, ...jasper.slice(0, 3), 'new-places-to-eat-in-banff', 'banff-cabin-rentals', 'banff-nightlife-guide', 'banff-live-music', 'drink-deals', 'icefields-parkway-guide', 'banff-to-jasper-drive', 'lake-minnewanka-guide', 'banff-gondola-guide', 'banff-gondola-tickets-guide', 'banff-spring-skiing', 'peyto-lake-guide', 'banff-helicopter-tours', 'kananaskis-heli-tours', golden, 'banff-heli-skiing'].sort());
+assert.equal(new Set(authored).size, 21);
 const defaultContext = contextFor(undefined);
 assert.deepEqual(defaultContext, {
   hotelLabel: 'Banff', tourLabel: 'Banff',
@@ -23,24 +24,37 @@ assert.deepEqual(defaultContext, {
   tourHref: 'https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&cmp=banffboundblog',
   suppressAutomaticCTA: false,
 });
-for (const slug of [...jasper, ...bow, 'ordinary-banff-guide']) for (const curated of [false, true]) {
-  const result = contextFor(slug, curated), isJasper = jasper.includes(slug), isBow = bow.includes(slug);
+const goldenContext = {
+  hotelLabel: 'Golden', tourLabel: 'Golden',
+  hotelHref: 'https://www.expedia.ca/Hotel-Search?destination=Golden%2C%20British%20Columbia&camref=1101l3MtWX',
+  tourHref: 'https://www.getyourguide.com/s/?q=Golden%2C%20British%20Columbia&partner_id=QW960HO&cmp=banffboundblog',
+  suppressAutomaticCTA: true,
+};
+function expectedContext(slug, curated) {
+  if (slug === golden) return goldenContext;
+  if (jasper.includes(slug)) return {hotelLabel:'Jasper',tourLabel:'Jasper',hotelHref:'https://www.expedia.ca/Hotel-Search?destination=Jasper%2C%20Alberta&camref=1101l3MtWX',tourHref:'https://www.getyourguide.com/s/?q=Jasper%2C%20Alberta&partner_id=QW960HO&cmp=banffboundblog',suppressAutomaticCTA:true};
+  if (bow.includes(slug)) return {hotelLabel:'Lake Louise area',tourLabel:'Lake Louise',hotelHref:'https://www.expedia.ca/Hotel-Search?destination=Lake%20Louise%2C%20Alberta&camref=1101l3MtWX',tourHref:'https://www.getyourguide.com/s/?q=Lake%20Louise%2C%20Alberta&partner_id=QW960HO&cmp=banffboundblog',suppressAutomaticCTA:true};
+  return {...defaultContext,suppressAutomaticCTA:curated===true};
+}
+for (const slug of [...jasper, ...bow, golden, 'banff-heli-skiing', 'ordinary-banff-guide']) for (const curated of [false, true]) {
+  const result = contextFor(slug, curated), isJasper = jasper.includes(slug), isBow = bow.includes(slug), isGolden = slug === golden;
+  assert.deepEqual(result, expectedContext(slug, curated), 'Independent exact native context: ' + slug);
   const hotel = new URL(result.hotelHref), tour = new URL(result.tourHref);
   assert.equal(hotel.origin, 'https://www.expedia.ca'); assert.equal(hotel.pathname, '/Hotel-Search');
-  assert.equal(hotel.searchParams.get('destination'), isJasper ? 'Jasper, Alberta' : isBow ? 'Lake Louise, Alberta' : 'Banff, Alberta');
+  assert.equal(hotel.searchParams.get('destination'), isJasper ? 'Jasper, Alberta' : isBow ? 'Lake Louise, Alberta' : isGolden ? 'Golden, British Columbia' : 'Banff, Alberta');
   assert.equal(hotel.searchParams.get('camref'), '1101l3MtWX');
   assert.deepEqual([...hotel.searchParams.keys()].sort(), ['camref', 'destination']);
-  assert.equal(result.hotelLabel, isJasper ? 'Jasper' : isBow ? 'Lake Louise area' : 'Banff');
-  assert.equal(result.tourLabel, isJasper ? 'Jasper' : isBow ? 'Lake Louise' : 'Banff');
+  assert.equal(result.hotelLabel, isJasper ? 'Jasper' : isBow ? 'Lake Louise area' : isGolden ? 'Golden' : 'Banff');
+  assert.equal(result.tourLabel, isJasper ? 'Jasper' : isBow ? 'Lake Louise' : isGolden ? 'Golden' : 'Banff');
   assert.equal(tour.origin, 'https://www.getyourguide.com');
   assert.equal(tour.searchParams.get('partner_id'), 'QW960HO'); assert.equal(tour.searchParams.get('cmp'), 'banffboundblog');
-  if (isJasper || isBow) { assert.equal(tour.pathname, '/s/'); assert.equal(tour.searchParams.get('q'), `${result.tourLabel}, Alberta`); }
+  if (isJasper || isBow || isGolden) { assert.equal(tour.pathname, '/s/'); assert.equal(tour.searchParams.get('q'), isGolden ? 'Golden, British Columbia' : `${result.tourLabel}, Alberta`); }
   else assert.equal(tour.pathname, '/banff-l284/');
-  assert.deepEqual([...tour.searchParams.keys()].sort(), isJasper || isBow ? ['cmp', 'partner_id', 'q'] : ['cmp', 'partner_id']);
-  assert.equal(result.suppressAutomaticCTA, curated || isJasper || isBow);
+  assert.deepEqual([...tour.searchParams.keys()].sort(), isJasper || isBow || isGolden ? ['cmp', 'partner_id', 'q'] : ['cmp', 'partner_id']);
+  assert.equal(result.suppressAutomaticCTA, curated || isJasper || isBow || isGolden);
 }
 const poison = { toString() { throw Error('Reader input must not be coerced into a URL'); } };
-for (const slug of [null, undefined, 1, false, Symbol('reader'), poison, [], {}, '__proto__', 'constructor', 'JASPER-TOWN', 'jasper-town?gclid=PRIVATE&email=private@example.test', 'https://evil.example/?destination=Jasper', '<script>PRIVATE</script>']) assert.deepEqual(contextFor(slug), defaultContext);
+for (const slug of [null, undefined, 1, false, Symbol('reader'), poison, [], {}, Object.create(null), '__proto__', 'constructor', 'JASPER-TOWN', 'GOLDEN-BC-DAY-TRIP', 'golden-bc-day-trip ', ' golden-bc-day-trip', 'golden', 'golden-banff', 'golden-bc-day-trip?destination=Golden&gclid=PRIVATE', 'golden-bc-day-trip#book', 'jasper-town?gclid=PRIVATE&email=private@example.test', 'https://evil.example/?destination=Golden', '<script>PRIVATE</script>']) assert.deepEqual(contextFor(slug), defaultContext);
 for (const curated of ['true', 1, poison, null]) assert.equal(contextFor('ordinary-banff-guide', curated).suppressAutomaticCTA, false, 'Only boolean true enables the curated override.');
 assert.equal(contextFor(poison, true).suppressAutomaticCTA, true);
 
@@ -76,15 +90,16 @@ const attr = (node, name) => node.attrs?.find(attribute => attribute.name === na
 const text = node => node.nodeName === '#text' ? node.value : (node.childNodes ?? []).map(text).join('');
 const hasClass = (node, name) => (attr(node, 'class') ?? '').split(/\s+/).includes(name);
 const cases = [...new Set([...jasper, ...bow, ...authored, 'ordinary-banff-guide'])];
+const ssrCases = [...cases.map(slug=>({slug,curated:authored.includes(slug)})),{slug:golden,curated:false},{slug:'banff-heli-skiing',curated:false}];
 const flags = new Map();
-for (const slug of cases) {
-  const curated = authored.includes(slug), expected = contextFor(slug, curated);
+for (const {slug,curated} of ssrCases) {
+  const expected = expectedContext(slug, curated);
   const authoredBody = curated ? resolveBlogContent(slug) : '<h2>First fixture section</h2><p>Original fixture content</p><h2>Second fixture section</h2>';
-  const html = await container.renderToString(Component, { request: new Request(`https://banffbound.com/blog/${slug}/?email=PRIVATE_READER_VALUE&gclid=PRIVATE_CLICK_VALUE`), props: { title: 'Booking fixture', description: 'Native purpose fixture', date: '2026-10-29', category: 'Guides', image: '/fixture.jpg', readTime: '5 min read', slug, curatedBookingLinks: curated }, slots: { default: authoredBody } });
+  const html = await container.renderToString(Component, { request: new Request(`https://banffbound.com/blog/${slug}/?email=PRIVATE_READER_VALUE&gclid=PRIVATE_CLICK_VALUE&destination=PRIVATE_DESTINATION&q=PRIVATE_TOUR&camref=ATTACKER&partner_id=ATTACKER&cmp=ATTACKER`), props: { title: 'Booking fixture', description: 'Native purpose fixture', date: '2026-10-29', category: 'Guides', image: '/fixture.jpg', readTime: '5 min read', slug, curatedBookingLinks: curated }, slots: { default: authoredBody } });
   const tree = parseFragment(html), all = nodes(tree);
   const body = all.find(node => hasClass(node, 'article-body'));
   assert.ok(body); assert.equal(attr(body, 'data-curated-booking'), String(expected.suppressAutomaticCTA));
-  flags.set(slug, attr(body, 'data-curated-booking'));
+  flags.set(slug+'/'+curated, attr(body, 'data-curated-booking'));
   const panels = all.filter(node => hasClass(node, 'affiliate-panel'));
   assert.equal(panels.length, 2);
   for (const [index, panel] of panels.entries()) {
@@ -96,8 +111,11 @@ for (const slug of cases) {
     assert.ok(nodes(panel).some(node => attr(node, 'data-open-consent') !== undefined));
   }
   if (curated) for (const anchor of nodes(parseFragment(authoredBody)).filter(node => node.tagName === 'a' && (attr(node, 'rel') ?? '').includes('sponsored'))) assert.ok(nodes(body).some(node => node.tagName === 'a' && attr(node, 'href') === attr(anchor, 'href')), `${slug}: authored native affiliate href survives the actual slot render`);
-  assert.ok(!html.includes('PRIVATE_READER_VALUE') && !html.includes('PRIVATE_CLICK_VALUE'), 'Request query values are not copied into booking context or rendered links.');
+  for (const privateValue of ['PRIVATE_READER_VALUE','PRIVATE_CLICK_VALUE','PRIVATE_DESTINATION','PRIVATE_TOUR','ATTACKER']) assert.ok(!html.includes(privateValue), 'Hostile request/query values are not copied into rendered native fallbacks.');
 }
+assert.equal(flags.get(golden+'/false'),'true','Golden suppresses automatic CTAs without relying on authored registration.');
+assert.equal(flags.get('banff-heli-skiing/false'),'false','Heli remains a generic two-base article when not curated.');
+assert.equal(flags.get('banff-heli-skiing/true'),'true','The explicit authored flag suppresses automatic CTAs for heli.');
 
 const inline = layout.match(/<script is:inline>([\s\S]*?)<\/script>/)?.[1];
 assert.ok(inline && inline.includes('body.dataset.curatedBooking'));
@@ -136,4 +154,4 @@ for (const [category, heading, firstHref] of [['Guides', 'Plan Your Banff Trip',
 }
 assert.equal(runInline({ missing: true }).created.length, 0);
 assert.equal(runInline({ short: true }).created.length, 0);
-console.log(`Article booking context checks passed: fixed Jasper5/Bow2/default destinations and native IDs, hostile input exclusion, authored19 integration, ${cases.length} actual BlogLayout SSR contexts, preserved authored links, actual-IIFE early suppression/no DOM injections and retained legacy mid/sticky behavior. No network or site build.`);
+console.log(`Article booking context checks passed: fixed Jasper5/Bow2/Golden/default destinations and native IDs, hostile input exclusion, authored21 integration, ${ssrCases.length} actual BlogLayout SSR contexts including uncurated Golden and generic heli, preserved authored links, actual-IIFE early suppression/no DOM injections and retained legacy mid/sticky behavior. No network or site build.`);

@@ -134,7 +134,7 @@
         "phrase",
         "exact"
       ],
-      "launchPermission": "Account-specific affiliate PPC permission not evidenced; confirm before launch."
+      "launchPermission": "User confirmed the non-brand, owned-BanffBound landing-page funnel with optional onward affiliate links. Preserve this final destination and published brand restrictions; no separate written-exception gate for this plan."
     }
   ],
   "negativeIntentSeeds": [
@@ -174,7 +174,7 @@
     "reporting": "Pending bookings and click-out conversions remain provisional. Reconcile cancellations, reversals and consumed validated commissions. Consent coverage and mixed organic/direct traffic limit attribution. Do not call clicks revenue."
   },
   "launchDecisions": [
-    "Account-specific Expedia/GetYourGuide paid-traffic permission and brand restrictions",
+    "Confirm Expedia merchant paid-traffic conditions; preserve the user-confirmed GetYourGuide owned-page funnel and published brand restrictions.",
     "Country, language, currency and actual demand/CPC research",
     "Approved bounded budget, bid and stop rules",
     "Actual commission terms and partner reporting access",
@@ -189,5 +189,15 @@
     "https://help.creator.expediagroup.com/hc/en-us/articles/13163964169495-Payments-101",
     "https://support.google.com/google-ads/answer/7684791?hl=en",
     "https://learn.microsoft.com/en-us/advertising/bulk-service/responsive-search-ad?view=bingads-13"
-  ]
+  ],
+  "getYourGuideTrafficPlan": {
+    "decision": "Proceed with the owned BanffBound landing-page funnel confirmed by the user. A separate written exception is not a planning gate for this setup.",
+    "finalAdDestination": "https://banffbound.com/book/banff-winter-activities/",
+    "onwardJourney": "Reader chooses a disclosed GetYourGuide affiliate booking link from BanffBound.",
+    "directAdToGetYourGuide": false,
+    "getYourGuideBrandBidding": false,
+    "independentlyVerifiedCustomWrittenException": false,
+    "supportEnquiry": "Kept unsent at the user\u2019s instruction.",
+    "scope": "This records the intended funnel and user direction, not campaign-spend authorization or an independently verified special agreement."
+  }
 }
