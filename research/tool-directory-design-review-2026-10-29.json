@@ -1,0 +1,231 @@
+{
+  "reviewDate": "2026-10-29",
+  "status": "Source frozen after offline actual-SSR and actual-client focused checks; visual browser and whole-site release validation remain root-owned",
+  "authority": "research/design-priorities-2026-10-29.json#tools-deliberate-directory-rhythm",
+  "scope": [
+    "src/pages/tools.astro",
+    "src/components/ToolDirectoryInteractions.astro",
+    "scripts/check-tool-directory-design.mjs"
+  ],
+  "baseline": {
+    "sourceHashes": {
+      "src/pages/tools.astro": "1ba875f5dbe8bc03f81466bdb36554f0173dc335b93bc4af804a4b4a93446b98",
+      "src/components/ToolDirectoryInteractions.astro": "b6ac53252142a844cc759a3da322785c34a9f40fb8fede2fd05320c955f154c3"
+    },
+    "linkDefinitions": 45,
+    "uniqueDestinations": 44,
+    "hrefs": [
+      "/winter",
+      "/ski-day-planner",
+      "/learn-to-ski",
+      "/winter-stays",
+      "/blog/banff-heli-skiing/#heli-ski-planner",
+      "/towns",
+      "/trip-cost",
+      "/trip-builder",
+      "/calgary-to-banff",
+      "/canmore-vs-banff",
+      "/monthly-weather",
+      "/park-pass",
+      "/car-free-banff",
+      "/packing-list",
+      "/eat-and-drink/#dining-finder",
+      "/blog/banff-nightlife-guide/#evening-planner",
+      "/trail-map",
+      "/quiet-trails",
+      "/alternatives",
+      "/parking",
+      "/shuttle-reservations",
+      "/accessible-trails",
+      "/larch-season",
+      "/wildlife-tracker",
+      "/wildlife-safety",
+      "/bear-spray",
+      "/solo-hiking",
+      "/emergency-card",
+      "/air-quality",
+      "/altitude-guide",
+      "/wildlife-calendar",
+      "/activities",
+      "/paddling",
+      "/what-to-do-today",
+      "/icefields-parkway-planner",
+      "/photo-spots",
+      "/ski-pass-calculator",
+      "/via-ferrata",
+      "/camping",
+      "/bird-checklist",
+      "/family-guide",
+      "/dog-friendly",
+      "/accessible-trails",
+      "/lake-faq",
+      "/lakes"
+    ]
+  },
+  "intentionalDeduplication": {
+    "href": "/accessible-trails",
+    "before": 2,
+    "after": 1,
+    "crossTopics": [
+      "Trail Tools",
+      "Family & Accessibility"
+    ]
+  },
+  "limits": [
+    "This is a directory presentation and labeling review, not a new source review of every linked guide.",
+    "No browser, whole-site build, Git, account, tracking or provider changes are authorized in this work."
+  ],
+  "completedAtUTC": "2026-10-30T05:43:19.609Z",
+  "structure": {
+    "uniqueRows": 44,
+    "topics": 8,
+    "stages": [
+      {
+        "id": "shape-your-visit",
+        "title": "Shape your visit",
+        "primaryRows": 14,
+        "topics": [
+          "Trip Planning",
+          "Winter Planning"
+        ]
+      },
+      {
+        "id": "choose-an-outing",
+        "title": "Choose one main outing",
+        "primaryRows": 17,
+        "topics": [
+          "Trail Tools",
+          "Activities & Adventures",
+          "Lake & Nature Guides"
+        ]
+      },
+      {
+        "id": "prepare-your-group",
+        "title": "Prepare for the people coming",
+        "primaryRows": 11,
+        "topics": [
+          "Family & Accessibility",
+          "Safety & Wildlife"
+        ]
+      },
+      {
+        "id": "finish-the-day",
+        "title": "Finish the day",
+        "primaryRows": 2,
+        "topics": [
+          "Dining & Evenings"
+        ]
+      }
+    ],
+    "presentation": "Numbered planning stages, topic margins and ruled native link rows; no emoji, shadow cards, raised hover movement or hero image.",
+    "fonts": "Inherited --font-heading and --font-body tokens; root-selected Playfair Display and Source Sans 3 are owned by shared files."
+  },
+  "interface": {
+    "stableIds": [
+      "tool-directory",
+      "tools-find-title",
+      "tools-find",
+      "tools-query",
+      "tools-category",
+      "tools-status",
+      "tools-empty"
+    ],
+    "stableHooks": [
+      ".tool-card[data-tool-search][data-tool-topic]",
+      ".tool-category[data-tool-category]"
+    ],
+    "newHooks": [
+      ".tool-row",
+      "[data-tool-stage]",
+      "[data-tool-topics]"
+    ],
+    "multiTopicValue": "Family & Accessibility|Trail Tools",
+    "primaryAccessibilityTopic": "Family & Accessibility",
+    "topicSemantics": "Exact membership in a pipe-delimited attribute, falling back to the previous primary topic; search AND-matches normalized words. Empty topics and planning stages are hidden. Reset restores all 44 entries.",
+    "schema": "One CollectionPage ItemList with 44 names, descriptions and exact hrefs in visible DOM order, sequential positions 1–44.",
+    "noJavascript": "All 44 native rows and eight topics/four stages visible. Only enhancement form remains hidden; explicit no-JS note and initial count retained."
+  },
+  "directoryCopyAudit": {
+    "scope": "Directory labels only; destination bodies were not rewritten or newly certified.",
+    "reviewedDestinationSources": [
+      "src/pages/ski-day-planner.astro",
+      "src/pages/family-guide.astro",
+      "src/pages/dog-friendly.astro",
+      "src/pages/wildlife-tracker.astro",
+      "src/pages/solo-hiking.astro",
+      "src/pages/emergency-card.astro",
+      "src/pages/air-quality.astro",
+      "src/pages/via-ferrata.astro",
+      "src/pages/camping.astro"
+    ],
+    "changes": [
+      {
+        "href": "/wildlife-tracker",
+        "before": "Wildlife Tracker",
+        "after": "Wildlife Area Planning",
+        "reason": "The destination explicitly has no live sighting feed."
+      },
+      {
+        "href": "/solo-hiking",
+        "before": "Solo Hiker Safety; best trails for solo hikers",
+        "after": "Solo Hiking Preparation; preparation, return-plan questions and contacts",
+        "reason": "The directory does not certify a trail or solo safety."
+      },
+      {
+        "href": "/emergency-card",
+        "before": "Emergency SOS Card; protocols and GPS coordinates",
+        "after": "Emergency Reference Card; printable contacts and outing details",
+        "reason": "A reference card is not an SOS service or verified positioning tool."
+      },
+      {
+        "href": "/air-quality",
+        "before": "Air Quality Tracker; monthly smoke risk",
+        "after": "Air Quality & Smoke; official monitoring links and change-of-plan questions",
+        "reason": "Do not imply a live measurement product or predict smoke in directory copy."
+      },
+      {
+        "href": "/via-ferrata",
+        "before": "Routes, prices, fitness requirements",
+        "after": "Norquay route formats and current operator requirements",
+        "reason": "No undated directory price or suitability claim."
+      },
+      {
+        "href": "/camping",
+        "before": "All 12 campgrounds with fees, facilities, and FCFS strategy",
+        "after": "Campground options with seasonal service and reservation checks",
+        "reason": "Avoid universal inventory and current fee/operation claims."
+      },
+      {
+        "href": "/dog-friendly",
+        "before": "Trails, restaurants, and hotels that welcome your dog",
+        "after": "Permitted outings, carrier rules, supervision and a confirmed pet room",
+        "reason": "Admission and room eligibility are conditional."
+      }
+    ],
+    "otherNarrowing": "Removed personalised/recommendation/completeness promises from ski, base and car-free descriptions; removed bird species count and strengthened the first-lesson search wording."
+  },
+  "validation": {
+    "commands": [
+      "node scripts/check-tool-directory-design.mjs",
+      "node --check scripts/check-tool-directory-design.mjs"
+    ],
+    "result": "passed",
+    "actualAstro": "Actual tools page plus real BaseLayout, Header, Footer and other Astro children compiled/rendered in memory; no site build.",
+    "hrefs": "All 44 original unique destination strings preserved exactly; only the second /accessible-trails definition intentionally removed.",
+    "ssr": "44 visible native rows, four stages, eight topics, implicit no-JS availability, labels, count/live/empty fields, exact ItemList positions/names/descriptions/native URL parity.",
+    "actualClient": "99 query/topic combinations checked through input, change and submit; explicit topic counts, cross-topic discovery, first-lesson and budget search, no-match/reset, delayed DOMContentLoaded, repeated Astro page-load, missing controls/zero rows, no destination changes or URL/storage/network access.",
+    "negativeCases": "10 actual-HTML mutations plus a compiled-client mutation that loses secondary-topic membership must fail.",
+    "css": "Ruled row/stage structure, wrapping/min-width, mobile breakpoint, visible-focus and hidden-state rules checked semantically without generated CSS hashes.",
+    "notClaimed": [
+      "No browser screenshot/390px visual render performed by this author.",
+      "No conversion improvement or private analytics claim.",
+      "No claim every linked legacy guide is fully source-reviewed.",
+      "No account/provider/affiliate/tracking, Git or whole-site build actions."
+    ]
+  },
+  "finalSourceHashes": {
+    "src/pages/tools.astro": "b563f4113294fffc8c55e2f6222855c841a40370548d99f31a3c2e1e1029f924",
+    "src/components/ToolDirectoryInteractions.astro": "817912d55491a2b88b8b23009df279d18bdbe3a03a1c2aa72c0116caf528c30b",
+    "scripts/check-tool-directory-design.mjs": "67062771a7d5cf23db3e946c79a517bdc553086236d5126491bba0e7eb69622e"
+  }
+}

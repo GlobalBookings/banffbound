@@ -1,0 +1,553 @@
+{
+  "checkedAtUTC": "2026-10-30T05:32:25.962Z",
+  "mode": "Bare canonical GETs; no query cache busters or redirect following",
+  "expected": {
+    "sourceRevision": "15775d7120c05ac0f531ec94be0789fea6902d9d",
+    "sourceFingerprint": "6300bd57d321a66dac325fdd78c932d4f1d6fa8ae3dd55c0dd32ed8efe9ae71a"
+  },
+  "buildInfoBefore": {
+    "requestedUrl": "https://banffbound.com/build-info.json",
+    "observedUrl": "https://banffbound.com/build-info.json",
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "date": "Fri, 30 Oct 2026 05:32:28 GMT",
+      "cache-control": "public,max-age=10,s-maxage=86400",
+      "etag": "W/\"0419b3b0dd74e521a767a45235c94a0b\"",
+      "last-modified": "Fri, 30 Oct 2026 05:31:17 GMT",
+      "cf-cache-status": "MISS"
+    },
+    "bytes": 512,
+    "receipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T05:31:13.190Z",
+      "sourceRevision": "15775d7120c05ac0f531ec94be0789fea6902d9d",
+      "sourceFingerprint": "6300bd57d321a66dac325fdd78c932d4f1d6fa8ae3dd55c0dd32ed8efe9ae71a"
+    },
+    "errors": []
+  },
+  "buildInfoAfter": {
+    "requestedUrl": "https://banffbound.com/build-info.json",
+    "observedUrl": "https://banffbound.com/build-info.json",
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "date": "Fri, 30 Oct 2026 05:32:32 GMT",
+      "age": "4",
+      "cache-control": "public,max-age=10,s-maxage=86400",
+      "etag": "W/\"0419b3b0dd74e521a767a45235c94a0b\"",
+      "last-modified": "Fri, 30 Oct 2026 05:31:17 GMT",
+      "cf-cache-status": "HIT"
+    },
+    "bytes": 512,
+    "receipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T05:31:13.190Z",
+      "sourceRevision": "15775d7120c05ac0f531ec94be0789fea6902d9d",
+      "sourceFingerprint": "6300bd57d321a66dac325fdd78c932d4f1d6fa8ae3dd55c0dd32ed8efe9ae71a"
+    },
+    "errors": []
+  },
+  "stableBuildReceipt": true,
+  "sitemap": {
+    "index": {
+      "requestedUrl": "https://banffbound.com/sitemap-index.xml",
+      "observedUrl": "https://banffbound.com/sitemap-index.xml",
+      "status": 200,
+      "headers": {
+        "content-type": "text/xml; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 05:32:28 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "etag": "W/\"fc356e8ff3d1d552a74866a835e13f62\"",
+        "last-modified": "Fri, 30 Oct 2026 05:31:31 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 185
+    },
+    "files": [
+      {
+        "requestedUrl": "https://banffbound.com/sitemap-0.xml",
+        "observedUrl": "https://banffbound.com/sitemap-0.xml",
+        "status": 200,
+        "headers": {
+          "content-type": "text/xml; charset=utf-8",
+          "date": "Fri, 30 Oct 2026 05:32:29 GMT",
+          "cache-control": "public,max-age=10,s-maxage=86400",
+          "etag": "W/\"32fef10b815843bfb4dc983393b61ed5\"",
+          "last-modified": "Fri, 30 Oct 2026 05:31:31 GMT",
+          "cf-cache-status": "MISS"
+        },
+        "bytes": 77604,
+        "urlCount": 517,
+        "errors": []
+      }
+    ],
+    "urlCount": 517,
+    "buildInfoExcluded": true,
+    "errors": []
+  },
+  "checks": [
+    {
+      "path": "/blog/accessible-banff/",
+      "kind": "full-guide-review",
+      "requestedUrl": "https://banffbound.com/blog/accessible-banff/",
+      "observedUrl": "https://banffbound.com/blog/accessible-banff/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 05:32:29 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 05:31:17 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 85483,
+      "expectedTitle": "Accessible Banff Visit: Rooms, Transport, Assistance & Returns | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Accessible Banff Visit: Rooms, Transport, Assistance & Returns | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/blog/accessible-banff/"
+        ],
+        "headings": [
+          "Accessible Banff Visit: Rooms, Transport, Assistance & Returns"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 4,
+          "types": [
+            "Answer",
+            "Article",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": [
+            {
+              "headline": "Accessible Banff Visit: Rooms, Transport, Assistance & Returns",
+              "datePublished": "2026-02-08T00:00:00.000Z",
+              "dateModified": "2026-10-29T00:00:00.000Z"
+            }
+          ]
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-accessible-hikes/",
+      "kind": "full-guide-review",
+      "requestedUrl": "https://banffbound.com/blog/banff-accessible-hikes/",
+      "observedUrl": "https://banffbound.com/blog/banff-accessible-hikes/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 05:32:30 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 05:31:17 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 85675,
+      "expectedTitle": "Banff Outdoor Access: Viewpoints, Walks & the Whole Return | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Outdoor Access: Viewpoints, Walks & the Whole Return | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/blog/banff-accessible-hikes/"
+        ],
+        "headings": [
+          "Banff Outdoor Access: Viewpoints, Walks & the Whole Return"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 4,
+          "types": [
+            "Answer",
+            "Article",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": [
+            {
+              "headline": "Banff Outdoor Access: Viewpoints, Walks & the Whole Return",
+              "datePublished": "2025-09-18T00:00:00.000Z",
+              "dateModified": "2026-10-29T00:00:00.000Z"
+            }
+          ]
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/accessible-trails/",
+      "kind": "accessibility-profile-hub",
+      "requestedUrl": "https://banffbound.com/accessible-trails/",
+      "observedUrl": "https://banffbound.com/accessible-trails/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 05:32:30 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 05:31:17 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 80702,
+      "expectedTitle": "Accessible Banff: Trail Profiles, Transport & Visitor Access | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Accessible Banff: Trail Profiles, Transport & Visitor Access | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/accessible-trails/"
+        ],
+        "headings": [
+          "Accessible Banff: Build Your Outing"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "Answer",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/trip-builder/",
+      "kind": "editable-trip-builder",
+      "requestedUrl": "https://banffbound.com/trip-builder/",
+      "observedUrl": "https://banffbound.com/trip-builder/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 05:32:31 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 05:31:31 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 83161,
+      "expectedTitle": "Banff Trip Builder: Custom Winter & Summer Itineraries | BanffBound",
+      "expectedFaqQuestions": 4,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Trip Builder: Custom Winter & Summer Itineraries | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/trip-builder/"
+        ],
+        "headings": [
+          "Your Banff trip. Make it yours."
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 4,
+          "types": [
+            "Answer",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Offer",
+            "Organization",
+            "Question",
+            "WebApplication",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            4
+          ],
+          "visibleDetailsCount": 4,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/book/banff-hotels/",
+      "kind": "paid-landing",
+      "requestedUrl": "https://banffbound.com/book/banff-hotels/",
+      "observedUrl": "https://banffbound.com/book/banff-hotels/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 05:32:31 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 05:31:17 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 46876,
+      "expectedTitle": "Banff Hotels: Compare 6 Stays & Check Dates | BanffBound",
+      "expectedFaqQuestions": 4,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Hotels: Compare 6 Stays & Check Dates | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/book/banff-hotels/"
+        ],
+        "headings": [
+          "Find the Banff stay that fits your trip."
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "Answer",
+            "CollectionPage",
+            "FAQPage",
+            "ImageObject",
+            "ItemList",
+            "ListItem",
+            "Organization",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            4
+          ],
+          "visibleDetailsCount": 10,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/book/lake-louise-stays/",
+      "kind": "paid-landing",
+      "requestedUrl": "https://banffbound.com/book/lake-louise-stays/",
+      "observedUrl": "https://banffbound.com/book/lake-louise-stays/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 05:32:32 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 05:31:17 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 43060,
+      "expectedTitle": "Lake Louise Stays: Village, Lakeshore & Cabins | BanffBound",
+      "expectedFaqQuestions": 4,
+      "inSitemap": true,
+      "facts": {
+        "title": "Lake Louise Stays: Village, Lakeshore & Cabins | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/book/lake-louise-stays/"
+        ],
+        "headings": [
+          "Find the stay that fits your Lake Louise trip."
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "Answer",
+            "FAQPage",
+            "ImageObject",
+            "ItemList",
+            "ListItem",
+            "Organization",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            4
+          ],
+          "visibleDetailsCount": 9,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/tools/",
+      "kind": "directory",
+      "requestedUrl": "https://banffbound.com/tools/",
+      "observedUrl": "https://banffbound.com/tools/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 05:32:32 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 05:31:31 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 92758,
+      "expectedTitle": "Banff Planning Tools & Guides — Free Trip Planners | BanffBound",
+      "expectedFaqQuestions": null,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Planning Tools & Guides — Free Trip Planners | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/tools/"
+        ],
+        "headings": [
+          "Banff Planning Tools"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "BreadcrumbList",
+            "CollectionPage",
+            "ImageObject",
+            "ItemList",
+            "ListItem",
+            "Organization",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 0,
+          "faqQuestionCounts": [],
+          "visibleDetailsCount": 0,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [
+        {
+          "href": "/park-pass",
+          "expectedLabel": "Park Pass & Admission Planner",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🎫 Park Pass & Admission Planner Check the journey, age bands and existing passes, then compare dated daily and Discovery admission fees."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/trip-cost",
+          "expectedLabel": "Trip Cost Calculator",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "💰 Trip Cost Calculator Build and compare two trip budgets using your own CAD quotes, with explicit cost units, missing items and a reserve."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/altitude-guide",
+          "expectedLabel": "Altitude & Elevation Guide",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "⛰️ Altitude & Elevation Guide Compare named elevation points, five visitor journeys and the questions for an overnight plan."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/larch-season",
+          "expectedLabel": "Larch Season Planner",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🍂 Larch Season Planner Compare five hiking endpoints, seasonal transport and autumn timing with official source links."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/eat-and-drink/#dining-finder",
+          "expectedLabel": "Dining Finder",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🍽️ Dining Finder Filter 32 venue entries by area and meal format, with sourced menus, contacts, booking routes and material notices."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/blog/banff-heli-skiing/#heli-ski-planner",
+          "expectedLabel": "Heli-Ski Trip Questions",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🚁 Heli-Ski Trip Questions Compare two BC base journeys and build the transport, overnight and equipment questions for an operator enquiry."
+          ],
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "finishedAtUTC": "2026-10-30T05:32:32.877Z"
+}

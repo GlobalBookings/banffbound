@@ -1,0 +1,284 @@
+{
+  "recordedAtUTC": "2026-10-30T05:45:19.507Z",
+  "reviewDate": "2026-10-29",
+  "status": "Author files frozen after focused offline validation; root owns full build, browser QA and release",
+  "baseline": {
+    "mainRevision": "15775d7120c05ac0f531ec94be0789fea6902d9d",
+    "evidence": "research/design-priorities-2026-10-29.json",
+    "baselinePageSha256": "15ef0d3e8871fd257a4f359466adbd460e9e06b4bcd4f7ec8110e263e7b05f93",
+    "scopeProof": "Removing only the added room-label map, comparison markup, described-by attribute and comparison CSS recovers the page hash recorded in the reviewed design audit. All original detailed-card markup, client script, page metadata, schema, FAQs and disclosures are byte-identical within that recovered source.",
+    "reconstructionHashMatched": true
+  },
+  "ownedFiles": [
+    "src/pages/book/banff-hotels.astro",
+    "scripts/check-banff-quick-comparison.mjs",
+    "research/banff-quick-comparison-review-2026-10-29.json"
+  ],
+  "changedApplicationPaths": [
+    "src/pages/book/banff-hotels.astro"
+  ],
+  "newRoutes": 0,
+  "modelFilesChanged": [],
+  "sharedLayoutsOrFontsChangedByAuthor": [],
+  "historicalGuardsChanged": [],
+  "gitOrIndexActions": false,
+  "accountOrProviderActions": false,
+  "browserActions": false,
+  "wholeSiteBuild": false,
+  "stagedPriorPr20EvidenceTouched": false,
+  "purpose": "Compare six actual Banff bases, named room categories and cooking qualifications before the tall property cards, then follow a native Expedia link for the actual date/party quote.",
+  "presentation": {
+    "regionId": "hotel-quick-region",
+    "regionRole": "region",
+    "regionLabel": "Compare six Banff stays",
+    "regionTabindex": 0,
+    "descriptionId": "hotel-comparison-note",
+    "tableId": "hotel-quick-comparison",
+    "caption": "Six Banff bases and room categories to compare",
+    "columns": [
+      "Stay and base",
+      "Room and cooking",
+      "Your dates"
+    ],
+    "rows": 6,
+    "rowAttribute": "data-quick-offer",
+    "rowOrder": [
+      "moose-hotel-suites",
+      "mount-royal-hotel",
+      "tunnel-mountain-resort",
+      "canalta-lodge",
+      "juniper-hotel",
+      "fairmont-banff-springs"
+    ],
+    "renderedNativeMerchantAnchors": 12,
+    "newPlacement": "comparison-table",
+    "preservedPlacement": "detail-card",
+    "detailIdPattern": "stay-<existing hotel slug>",
+    "behavior": "Quick table always contains all six stays. Existing filters narrow detailed cards only, stated visibly and referenced by both the table region and form. Filters do not check availability. Full SSR table/cards and native links work without JavaScript.",
+    "design": "Ruled editorial table with inherited pine/gold, warm-paper and type tokens; no new font, ranking, testimonial, price badge or inventory signal."
+  },
+  "factsAndLinks": [
+    {
+      "slug": "moose-hotel-suites",
+      "name": "Moose Hotel and Suites",
+      "base": "central",
+      "address": "345 Banff Avenue, Banff, Alberta",
+      "sourceRoom": "Superior One Bedroom Suite: separate bedroom, living room and gas fireplace. Match king or two-queen beds to your party.",
+      "sourceCooking": "Suite nook with microwave, mini-fridge and sink; no full cooking kitchen.",
+      "materialNoticeRepeatedBeforeQuickCta": null,
+      "expediaUrl": "https://www.expedia.ca/Banff-Hotels-Moose-Hotel-And-Suites.h14703440.Hotel-Information?camref=1101l3MtWX",
+      "propertyId": "14703440",
+      "existingOfficialSources": [
+        {
+          "label": "Suite layout and kitchen equipment",
+          "url": "https://moosehotelandsuites.com/superior-one-bedroom-suite/"
+        },
+        {
+          "label": "Pools and hotel facilities",
+          "url": "https://moosehotelandsuites.com/amenities/"
+        }
+      ],
+      "detailProfile": "/hotel-directory/moose-hotel-suites/",
+      "checkedOn": "2026-10-29"
+    },
+    {
+      "slug": "mount-royal-hotel",
+      "name": "Mount Royal Hotel",
+      "base": "central",
+      "address": "138 Banff Ave, Banff, AB",
+      "sourceRoom": "Compare the provider’s Heritage and Centennial king or two-bed categories with the needs of your party.",
+      "sourceCooking": "Plan restaurant meals; no full kitchen is established for the rooms in this comparison.",
+      "materialNoticeRepeatedBeforeQuickCta": "Checked 29 October 2026: the official hotel page still reports both rooftop hot tubs closed for maintenance. Choose another fit if a soak is essential, or confirm reopening directly.",
+      "expediaUrl": "https://www.expedia.ca/Banff-Hotels-Mount-Royal-Hotel.h688930.Hotel-Information?camref=1101l3MtWX",
+      "propertyId": "688930",
+      "existingOfficialSources": [
+        {
+          "label": "Current hotel facilities and maintenance notice",
+          "url": "https://www.banffjaspercollection.com/hotels/mount-royal-hotel/"
+        }
+      ],
+      "detailProfile": "/hotel-directory/mount-royal-hotel/",
+      "checkedOn": "2026-10-29"
+    },
+    {
+      "slug": "tunnel-mountain-resort",
+      "name": "Tunnel Mountain Resort",
+      "base": "hillside",
+      "address": "502 Tunnel Mountain Road, Banff, Alberta",
+      "sourceRoom": "One Bedroom Condo: queen bedroom and living-room sofa bed. Loft categories offer other bed arrangements and introduce stairs.",
+      "sourceCooking": "Full kitchens in named condos; Superior Suites have kitchenettes. Match the exact category.",
+      "materialNoticeRepeatedBeforeQuickCta": null,
+      "expediaUrl": "https://www.expedia.ca/Banff-Hotels-Tunnel-Mountain-Resort.h16324.Hotel-Information?camref=1101l3MtWX",
+      "propertyId": "16324",
+      "existingOfficialSources": [
+        {
+          "label": "Condo, loft and suite layouts",
+          "url": "https://tunnelmountain.com/rooms/"
+        },
+        {
+          "label": "Pool, barbecues and local transport",
+          "url": "https://tunnelmountain.com/amenities/"
+        }
+      ],
+      "detailProfile": "/hotel-directory/tunnel-mountain-resort/",
+      "checkedOn": "2026-10-29"
+    },
+    {
+      "slug": "canalta-lodge",
+      "name": "Canalta Lodge",
+      "base": "avenue",
+      "address": "545 Banff Avenue, Banff, Alberta T1L 1B5",
+      "sourceRoom": "King with Sofa and Kitchen Loft adds a king bed, pull-out sofa and full-size kitchen. The other King with Sofa Loft lists a fridge and microwave.",
+      "sourceCooking": "Full kitchen only in the named kitchen categories; check loft stairs and the actual layout.",
+      "materialNoticeRepeatedBeforeQuickCta": null,
+      "expediaUrl": "https://www.expedia.ca/Banff-Hotels-Canalta-Lodge.h888459.Hotel-Information?camref=1101l3MtWX",
+      "propertyId": "888459",
+      "existingOfficialSources": [
+        {
+          "label": "Room and kitchen categories",
+          "url": "https://canaltalodge.com/stay/"
+        },
+        {
+          "label": "Kitchen Loft equipment",
+          "url": "https://canaltalodge.com/stay/single-king-sofa-kitchen-loft-room/"
+        },
+        {
+          "label": "Courtyard facilities",
+          "url": "https://canaltalodge.com/courtyard/"
+        }
+      ],
+      "detailProfile": "/hotel-directory/canalta-lodge/",
+      "checkedOn": "2026-10-29"
+    },
+    {
+      "slug": "juniper-hotel",
+      "name": "The Juniper Hotel",
+      "base": "hillside",
+      "address": "1 Juniper Way, Banff, Alberta T1L 1E1",
+      "sourceRoom": "Deluxe King or Two Queen for a mountain-facing outlook. Standard and accessible room categories have different positions and features.",
+      "sourceCooking": "Hotel-room base with bistro dining; no full kitchen is established for these room categories.",
+      "materialNoticeRepeatedBeforeQuickCta": null,
+      "expediaUrl": "https://www.expedia.ca/Banff-Hotels-The-Juniper-Hotel.h1216217.Hotel-Information?camref=1101l3MtWX",
+      "propertyId": "1216217",
+      "existingOfficialSources": [
+        {
+          "label": "Room outlooks and categories",
+          "url": "https://thejuniper.com/all-rooms/"
+        },
+        {
+          "label": "Facilities",
+          "url": "https://thejuniper.com/amenities/"
+        },
+        {
+          "label": "Town shuttle and arrival route",
+          "url": "https://thejuniper.com/transport-location/"
+        }
+      ],
+      "detailProfile": "/hotel-directory/juniper-hotel/",
+      "checkedOn": "2026-10-29"
+    },
+    {
+      "slug": "fairmont-banff-springs",
+      "name": "Fairmont Banff Springs",
+      "base": "spray",
+      "address": "405 Spray Avenue, Banff, Alberta T1L 1J4",
+      "sourceRoom": "Gatehouse Family Room has a king and twin bunks; the separate Family Suite adds a primary bedroom, built-in bunks and two bathrooms.",
+      "sourceCooking": "Hotel and suite categories in this comparison do not establish a full cooking kitchen.",
+      "materialNoticeRepeatedBeforeQuickCta": null,
+      "expediaUrl": "https://www.expedia.ca/Banff-Hotels-Fairmont-Banff-Springs.h13652.Hotel-Information?camref=1101l3MtWX",
+      "propertyId": "13652",
+      "existingOfficialSources": [
+        {
+          "label": "Main-building and Gatehouse rooms",
+          "url": "https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html"
+        },
+        {
+          "label": "Gatehouse family choices",
+          "url": "https://www.banff-springs-hotel.com/stay/gatehouse/"
+        },
+        {
+          "label": "Guest services and transport",
+          "url": "https://www.banff-springs-hotel.com/stay/guest-services/"
+        }
+      ],
+      "detailProfile": "/hotel-directory/fairmont-banff-springs/",
+      "checkedOn": "2026-10-29"
+    }
+  ],
+  "evidenceBoundary": "No fresh operational/provider fact or availability check was performed. This presentation reuses the existing source-reviewed six-offer model and its dated sources without altering them. Short room labels select existing names and qualifications; literal source tokens are asserted by the focused check. Full cooking qualifications and Mount Royal’s full rooftop-maintenance notice are present in quick rows; original room/facility/transport notes remain unchanged in linked detailed cards.",
+  "preservation": {
+    "exactModelMerchantHrefs": true,
+    "camref": "1101l3MtWX",
+    "newMerchantIds": [],
+    "originalOfferOrder": true,
+    "allSixDetailedCards": true,
+    "originalInlineController": true,
+    "fourVisibleAndSchemaFaqs": true,
+    "originalCollectionAndItemList": true,
+    "compactPaidHeaderFooter": true,
+    "affiliateDisclosureBeforeFirstMerchant": true,
+    "consentBoundary": true,
+    "rawQueryOrPersonalDataForwarded": false
+  },
+  "validation": [
+    {
+      "command": "node scripts/check-banff-quick-comparison.mjs",
+      "result": "PASS",
+      "coverage": {
+        "actualPagePaidLandingBaseLayoutSsr": true,
+        "actualCompactHeaderFooter": true,
+        "allRowsAndCards": 6,
+        "qualifiedCookingAndMaintenance": true,
+        "nativeMerchantAnchors": 12,
+        "exactSchemaAndFaqParity": true,
+        "actualClientFilterCombinations": 20,
+        "resetAndEmptyState": true,
+        "queryRestoreAndUnknownValues": true,
+        "focusPreservation": true,
+        "idempotentInitialization": true,
+        "noJsAndFailedInitialization": true,
+        "consentPlacementCases": 8,
+        "materialNegativeFixtures": 11
+      },
+      "limits": "In-memory actual Astro SSR and actual existing inline client program in a DOM fixture; not a browser geometry or assistive-technology test."
+    },
+    {
+      "command": "node scripts/check-paid-landings.mjs",
+      "result": "PASS",
+      "coverage": "Existing shared paid chrome/privacy guards, six Astro transforms, 24 landing/source/consent cases and native referral behavior."
+    },
+    {
+      "command": "node --check scripts/check-banff-quick-comparison.mjs",
+      "result": "PASS"
+    }
+  ],
+  "negativeFixtures": [
+    "Missing comparison row",
+    "Changed affiliate URL/ID",
+    "Unreviewed placement",
+    "Removed cooking limitation",
+    "Hidden material maintenance note",
+    "Missing material maintenance note",
+    "Unsupported step-free room assertion",
+    "Unsafe native-anchor event attribute",
+    "Hidden no-JS table",
+    "Availability claim substituted for filter explanation",
+    "Missing FAQPage schema"
+  ],
+  "remainingRootChecks": [
+    "Final build and existing combined production verifier with six unique offers and twelve validated native anchors; do not inflate ItemList offers.",
+    "Desktop and 390px table overflow, keyboard focus, long room/address wrapping and source-to-quote reading order with the chosen inherited fonts.",
+    "Independent review and final committed-source/release verification."
+  ],
+  "hashes": {
+    "pageSha256": "b62547331d8c645414cd5af55f609ab22531f7d4fd1a41dceb57005109dddafb",
+    "focusedCheckSha256": "420aa1d27bfc5edf3c7792c793e510647941d132b544acadf66316da09003fc2",
+    "modelSha256": "c1ef7965137b1fd39ba8c519b6ff1f58153d45d7feb6a956e3156c5a9a2905cd"
+  },
+  "commercialClaims": {
+    "availabilityChecked": false,
+    "guaranteedSavings": false,
+    "ranking": false,
+    "revenueOrConversionUpliftClaimed": false
+  }
+}

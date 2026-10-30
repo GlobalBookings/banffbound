@@ -6,12 +6,13 @@
     const status=document.getElementById('tools-status'),empty=document.getElementById('tools-empty');
     const cards=[...document.querySelectorAll<HTMLAnchorElement>('[data-tool-search]')];
     const groups=[...document.querySelectorAll<HTMLElement>('[data-tool-category]')];
+    const stages=[...document.querySelectorAll<HTMLElement>('[data-tool-stage]')];
     if(!form||!query||!topic||!status||!empty||!cards.length||form.dataset.ready)return;
     const normal=(text:string)=>text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
     const update=()=>{
       const words=normal(query.value).trim().split(/\s+/).filter(Boolean);let shown=0;
-      for(const card of cards){const matches=(topic.value==='all'||card.dataset.toolTopic===topic.value)&&words.every(word=>normal(card.dataset.toolSearch||'').includes(word));card.hidden=!matches;if(matches)shown++;}
-      for(const group of groups)group.hidden=![...group.querySelectorAll<HTMLElement>('[data-tool-search]')].some(card=>!card.hidden);
+      for(const card of cards){const topics=(card.dataset.toolTopics||card.dataset.toolTopic||'').split('|');const matches=(topic.value==='all'||topics.includes(topic.value))&&words.every(word=>normal(card.dataset.toolSearch||'').includes(word));card.hidden=!matches;if(matches)shown++;}
+      for(const group of [...groups,...stages])group.hidden=![...group.querySelectorAll<HTMLElement>('[data-tool-search]')].some(card=>!card.hidden);
       status.textContent=`${shown} of ${cards.length} guide and tool links shown`;empty.hidden=shown!==0;
     };
     query.addEventListener('input',update);topic.addEventListener('change',update);form.addEventListener('submit',event=>{event.preventDefault();update();});form.addEventListener('reset',event=>{event.preventDefault();query.value='';topic.value='all';update();});

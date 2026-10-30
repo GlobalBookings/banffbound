@@ -1,0 +1,303 @@
+{
+  "recordedAtUTC": "2026-10-30T05:32:45.466Z",
+  "reviewDate": "2026-10-29",
+  "status": "Read-only design priorities for a future focused batch; no app changes or deployment recommendation",
+  "objective": "Make hotel and activity booking journeys easier to choose while preserving BanffBound’s established identity and useful independent planning content.",
+  "reference": {
+    "url": "https://ui-ux-pro-max-skill.com/blog/avoiding-ai-slop/",
+    "role": "User-provided design reference, read in this session. It is a design prompt article rather than evidence of BanffBound visitor behavior.",
+    "appliedPrinciples": [
+      "Keep a specific existing identity rather than replacing it with a generic modern theme.",
+      "Give each screen one dominant task and a deliberate spatial rhythm.",
+      "Delete repetitive card treatment and replace vague promotional language with concrete decisions."
+    ],
+    "doNotCopyMechanically": "The reference mentions avoiding common font defaults. BanffBound already pairs Playfair Display with Inter; this audit does not recommend a sitewide font replacement merely because Inter appears in that reference."
+  },
+  "method": {
+    "reviewedPaths": [
+      "src/pages/index.astro",
+      "src/components/Header.astro",
+      "src/components/Footer.astro",
+      "src/pages/tools.astro",
+      "src/layouts/PaidLandingLayout.astro",
+      "src/components/BookingHeader.astro",
+      "src/components/BookingFooter.astro",
+      "src/pages/book/banff-hotels.astro",
+      "src/pages/book/lake-louise-stays.astro",
+      "src/pages/book/banff-winter-activities.astro",
+      "src/components/WinterStart.astro",
+      "src/styles/global.css"
+    ],
+    "sourceHashes": {
+      "src/pages/index.astro": "b653952adf044e2ddccd30df37d08781ebf551e19eb204fd6c3270ad784736a2",
+      "src/components/Header.astro": "7f6eb52c4ba63877f32c9f91bff7ffc53372fdf7f9e27dc83e03f4cbc8a21807",
+      "src/components/Footer.astro": "29c3b63be1685084edc6b19c33fe009fbe10d145d090644ed13ebcbd74545136",
+      "src/pages/tools.astro": "1ba875f5dbe8bc03f81466bdb36554f0173dc335b93bc4af804a4b4a93446b98",
+      "src/layouts/PaidLandingLayout.astro": "a01b081dbcf9d63aef93be73d0d51144eb5bb6f4c26d364f43ec35b057717e2f",
+      "src/components/BookingHeader.astro": "75ac03ff3105f51ddf55faee6b2e131bf7202218543a8b63ed9ff56d161e0664",
+      "src/components/BookingFooter.astro": "9c0648dca7927339e41e327a88c43bf88292c2524f8d726a6b736a28b87bceb7",
+      "src/pages/book/banff-hotels.astro": "15ef0d3e8871fd257a4f359466adbd460e9e06b4bcd4f7ec8110e263e7b05f93",
+      "src/pages/book/lake-louise-stays.astro": "412c19884c5cfeaae0ba414d58a125b6f8ed201cbabdfd476e6f92e13309593b",
+      "src/pages/book/banff-winter-activities.astro": "4c8173cb42c4c1a7661273ae7823c2f7a3b7233624d9fdbbe6c775477f8a62f8",
+      "src/components/WinterStart.astro": "42670c80812aa6f321e5d71134b0bb4190c3a5b863e887e66cfe2e1d9ba0da83",
+      "src/styles/global.css": "05c02e9765d82cbea325627abba8f90db54af24279a090f163887ac920aa3266"
+    },
+    "basis": "Current Astro/CSS source and actual page data structure. No new build, browser render, visual screenshot, account or Git inspection was performed. Responsive and performance outcomes below are future verification requirements, not observed test passes.",
+    "toolDirectory": {
+      "renderedLinkDefinitions": 45,
+      "uniqueHrefDefinitions": 44,
+      "duplicatedHrefDefinitions": [
+        "/accessible-trails"
+      ]
+    },
+    "writes": [
+      "/tmp/banffbound-next-design-priorities.json"
+    ],
+    "applicationWrites": false,
+    "gitActions": false,
+    "accountActions": false,
+    "skillInstalled": false,
+    "privateAnalyticsRead": false
+  },
+  "preserve": [
+    "Pine #1a3a2a, gold #c8a96e, warm paper backgrounds and Playfair Display headings; keep current body typography for this bounded work.",
+    "Real property identities, source dates, room/transport distinctions, native booking hrefs, affiliate IDs, disclosures and consent-gated measurement.",
+    "The paid pages’ compact BookingHeader/BookingFooter: they retain publisher, editorial and privacy routes without reintroducing the full mega-menu or newsletter.",
+    "Lake Louise’s five-row quick comparison and its village/lakeshore/road-base distinction; winter activity formats and material Johnston Canyon notice.",
+    "Complete no-JavaScript content, keyboard access, visible focus, table overflow access and working reset/filter states."
+  ],
+  "recommendations": [
+    {
+      "priority": 1,
+      "id": "homepage-one-booking-entry",
+      "title": "Give the homepage one clear booking-led starting point.",
+      "paths": [
+        "src/pages/index.astro",
+        "src/components/WinterStart.astro"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/index.astro",
+          "line": 134,
+          "exactSourceText": "Plan your perfect escape to the Canadian Rockies."
+        },
+        {
+          "path": "src/pages/index.astro",
+          "line": 147,
+          "exactSourceText": "<section class=\"stats-bar\">"
+        },
+        {
+          "path": "src/pages/index.astro",
+          "line": 203,
+          "exactSourceText": "<WinterStart />"
+        },
+        {
+          "path": "src/pages/index.astro",
+          "line": 210,
+          "exactSourceText": "<h2>Everything You Need to Know</h2>"
+        },
+        {
+          "path": "src/pages/index.astro",
+          "line": 270,
+          "exactSourceText": "<h2>Book Tours & Find Hotels</h2>"
+        }
+      ],
+      "problem": "The full-height rotating hero leads to two general planning links, then statistics, two conditions strips, four winter cards and six category cards before the later booking block. Multiple equal introductions dilute the clear room-or-experience choice, even though purpose-built /book comparisons already exist.",
+      "proposedBoundedChange": "Make the first screen choose between a stay and a winter experience, using the existing /book/banff-hotels/, /book/lake-louise-stays/ and /book/banff-winter-activities/ destinations. Keep Trip Builder as a visible secondary task. Remove the generic statistics band or move it out of this journey, and turn the remaining seasonal/category choices into fewer ruled editorial rows. Use one verified or clearly illustrative hero image rather than the automatic slideshow; the source currently uses the same photo-1503614472-8c93d56e92ce URL for both Moraine Lake and Lake Louise with conflicting named-location alt text.",
+      "risks": [
+        "Do not imply that browsing a comparison confirms availability or a complete booking.",
+        "Do not remove the conditions fallback/source handoff or make transient feeds the principal content.",
+        "Image identity and usage rights require their own evidence; a URL or scenic appearance is not verification."
+      ],
+      "futureTests": [
+        "At 390px and desktop, the main booking choices must be identifiable before several unrelated sections; retain a visible non-booking planning route.",
+        "No auto-rotation without a deliberate accessible motion policy; test reduced-motion behavior if any motion remains.",
+        "Assert canonical native paths, unchanged affiliate/measurement identifiers downstream, clear disclosure and usable no-JS navigation."
+      ]
+    },
+    {
+      "priority": 2,
+      "id": "plain-credible-publisher-copy",
+      "title": "Replace promotional filler with a specific planning promise.",
+      "paths": [
+        "src/pages/index.astro",
+        "src/components/Footer.astro"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/index.astro",
+          "line": 313,
+          "exactSourceText": "Weekly tips, trail conditions, and deals — straight from someone who lives here."
+        },
+        {
+          "path": "src/pages/index.astro",
+          "line": 66,
+          "exactSourceText": "top-rated local operators"
+        },
+        {
+          "path": "src/pages/index.astro",
+          "line": 334,
+          "exactSourceText": "Purchase yours before you arrive and skip the line at the gate."
+        },
+        {
+          "path": "src/components/Footer.astro",
+          "line": 13,
+          "exactSourceText": "Your ultimate guide to exploring Banff, Alberta."
+        }
+      ],
+      "problem": "Perfect escapes, ultimate guides, top-rated operators and a claimed resident narrator are generic or unsubstantiated authority signals. The pass CTA also promises a queue outcome instead of linking the actual admission decision. The homepage already repeats the newsletter form that also appears in the shared footer.",
+      "proposedBoundedChange": "Use concise copy about comparing real bases, rooms, activity formats and actual quotes. Remove the resident/frequency/deals promise unless independently supported; retain a single deliberate newsletter placement rather than two competing forms on the homepage. Replace the pass sales-style promise with the existing admission planner and authoritative Parks link. Keep the affiliate disclosure plain and visible.",
+      "risks": [
+        "Do not invent local experience, testimonials, subscriber counts, rankings or a newsletter cadence.",
+        "Retain the existing form endpoint and IDs if the placement is kept; do not change account/list configuration.",
+        "Admission copy must retain exceptions and operational boundaries already handled by /park-pass/."
+      ],
+      "futureTests": [
+        "Content regression check for unsupported narrator/ranking/queue guarantees.",
+        "If newsletter placement changes, verify exact existing endpoint/field IDs, labelled email input, keyboard focus, and privacy link without submitting the form.",
+        "Check mobile footer reading order and contrast for the commission and privacy copy."
+      ]
+    },
+    {
+      "priority": 3,
+      "id": "header-wayfinding-honest-labels",
+      "title": "Make the shared header a compact task map instead of another promotional gallery.",
+      "paths": [
+        "src/components/Header.astro",
+        "src/components/Footer.astro"
+      ],
+      "evidence": [
+        {
+          "path": "src/components/Header.astro",
+          "line": 46,
+          "exactSourceText": "subtitle: '80+ trails with GPS routes'"
+        },
+        {
+          "path": "src/components/Header.astro",
+          "line": 153,
+          "exactSourceText": "subtitle: '95 properties with map'"
+        },
+        {
+          "path": "src/components/Header.astro",
+          "line": 154,
+          "exactSourceText": "subtitle: 'Stay by the lake'"
+        },
+        {
+          "path": "src/components/Header.astro",
+          "line": 111,
+          "exactSourceText": "label: 'Altitude Sickness Guide'"
+        },
+        {
+          "path": "src/components/Header.astro",
+          "line": 221,
+          "exactSourceText": "<div class=\"mega-featured\">"
+        }
+      ],
+      "problem": "Every mega-menu combines long text lists with additional image-card promotions. Some featured labels overstate the destination: indicative trail/property points are presented as GPS routes or a universal hotel map, Lake Louise inventory is reduced to lakeshore stays, and the elevation planner is named as a sickness guide. Repetition and imprecise labels weaken both the established editorial character and correct booking expectations.",
+      "proposedBoundedChange": "Keep the existing routes but simplify each open menu to a short, ordered task list with one highlighted comparison link. Remove redundant featured-image cards in the first navigation batch. Correct labels to the actual trail-listing, property-source, Lake Louise area and elevation-planning purposes. In the footer, keep editorial/privacy routes prominent and add at most one concise stay/activity comparison entry rather than another promotional card block.",
+      "risks": [
+        "Navigation changes affect every full-layout page; do not import the large menu into focused paid layouts.",
+        "Do not change or coerce query-based hotel filters or merchant destinations while renaming labels.",
+        "Preserve privacy choices, skip link and utility sources; do not interpret the old counts as verified geographic coverage."
+      ],
+      "futureTests": [
+        "Keyboard Tab/Shift+Tab/Escape, expanded state, focus return and mobile menu open/close across desktop and 390px.",
+        "Native-href inventory before/after must preserve intended destinations and exact filter query strings.",
+        "Check desktop and mobile density without relying on hover, images or JavaScript for essential navigation."
+      ]
+    },
+    {
+      "priority": 4,
+      "id": "tools-deliberate-directory-rhythm",
+      "title": "Turn the tool catalogue into a scannable directory with fewer equal cards.",
+      "paths": [
+        "src/pages/tools.astro",
+        "src/components/ToolDirectoryInteractions.astro"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/tools.astro",
+          "line": 161,
+          "exactSourceText": ".tool-grid { display: grid;"
+        },
+        {
+          "path": "src/pages/tools.astro",
+          "line": 165,
+          "exactSourceText": "box-shadow: var(--shadow);"
+        },
+        {
+          "path": "src/pages/tools.astro",
+          "line": 40,
+          "exactSourceText": "title: 'Accessible Banff', desc: 'Compare physical trail profiles, visitor features and transport arrangements.'"
+        },
+        {
+          "path": "src/pages/tools.astro",
+          "line": 76,
+          "exactSourceText": "title: 'Accessible Banff', desc: 'Trail surfaces, widths and slopes, plus adaptive visitor resources.'"
+        }
+      ],
+      "problem": "The catalogue contains 45 equal emoji/shadow-card links across eight topics, including the accessibility hub twice. The search is useful, but the initial all-links view has little hierarchy between choosing a base, using a budget and reading a specialist reference. Some legacy descriptions make broader promises than the current reviewed tool purpose.",
+      "proposedBoundedChange": "Retain search/topic filters and the complete SSR directory. Make the initial view a few named planning stages with ruled link rows; reserve a stronger treatment for the stay, activity and quote decisions. Give the accessibility hub one canonical directory entry with cross-topic discoverability rather than two identical cards. Audit directory-only labels such as best trails, protocols, prices and all campgrounds against the actual destination scope, without broadening this batch into those guide rewrites.",
+      "risks": [
+        "Removing a duplicate changes link counts and ItemList positions; do not silently break production contracts or filter counts.",
+        "Keep the full directory reachable with no JS and ensure a narrower visual hierarchy is not mistaken for an exhaustive recommended itinerary.",
+        "Do not add behavioural personalization, remote search, private inputs or a suitability score."
+      ],
+      "futureTests": [
+        "Actual-client search/topic combinations, native reset, live count, empty state, keyboard focus and failed-initialization behavior.",
+        "SSR/schema link-count and position parity after deduplication; all retained routes and fragments remain valid.",
+        "At 390px, long titles wrap and the user can scan topic headings without traversing dozens of identical elevated panels."
+      ]
+    },
+    {
+      "priority": 5,
+      "id": "banff-paid-shortlist-before-long-cards",
+      "title": "Bring the Banff hotel decision up to the level of the Lake Louise quick comparison.",
+      "paths": [
+        "src/pages/book/banff-hotels.astro",
+        "src/pages/book/lake-louise-stays.astro",
+        "src/pages/book/banff-winter-activities.astro",
+        "src/layouts/PaidLandingLayout.astro"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/book/banff-hotels.astro",
+          "line": 49,
+          "exactSourceText": "<div class=\"offer-grid\">"
+        },
+        {
+          "path": "src/pages/book/banff-hotels.astro",
+          "line": 56,
+          "exactSourceText": "<dl class=\"room-comparison\">"
+        },
+        {
+          "path": "src/pages/book/lake-louise-stays.astro",
+          "line": 28,
+          "exactSourceText": "<caption>Five different bases for a Lake Louise stay</caption>"
+        },
+        {
+          "path": "src/pages/book/banff-winter-activities.astro",
+          "line": 23,
+          "exactSourceText": "<div class=\"experience-grid\">"
+        }
+      ],
+      "problem": "The Banff page requires reading image-led, tall two-column cards before reaching each quote link, whereas Lake Louise offers a useful five-row decision table before its detail cards. On a phone the six Banff cards stack into a long sequence. Repeating the same large card shell for every offer gives photography and repeated labels more space than the initial location/room/cooking decision.",
+      "proposedBoundedChange": "Add a concise six-row Banff comparison using the existing sourced location, room/cooking facts and exact Expedia links, then keep the richer property cards as optional deeper reading. Do not homogenize all three landing pages: preserve Lake Louise’s location table and winter’s three experience formats. Use the shared paid hero’s type, whitespace and pine/gold tokens consistently, with one primary on-page comparison action; keep explicit provider labels on native booking links.",
+      "risks": [
+        "No new quality ranking, best-price claim, default hotel recommendation or invented availability.",
+        "A quick row must not erase room-category, kitchen or material facility qualifications; retain notices next to the relevant choice.",
+        "Keep every native href, camref/partner ID, data-landing-id, data-offer-id, placement attribution and consent boundary; any additional placement needs a fixed reviewed identifier, not user data."
+      ],
+      "futureTests": [
+        "SSR quick rows and detail cards have the same six offer identities and source-backed facts; FAQ/schema and native href preservation checks.",
+        "Actual-client filters/reset/no-JS list stay coherent; quick table and filtered detail behavior are explained, as on Lake Louise.",
+        "390px and desktop comparison/CTA visibility, table overflow keyboard access, focus and contrast; no claim of conversion uplift without later observed evidence."
+      ]
+    }
+  ],
+  "nonGoals": [
+    "No new theme, font install, fabricated testimonial, ranking badge, countdown, scarcity or price claim.",
+    "No skill installation, app/Git/account changes, campaign action, merchant identifier change or inferred revenue uplift.",
+    "These are prioritized design/content recommendations, not release-blocker findings or a completed browser-accessibility audit."
+  ]
+}

@@ -1,27 +1,27 @@
-<section class="winter-start">
-  <div class="container">
-    <div class="winter-start-heading"><div><span class="eyebrow">Your next chapter in the Rockies</span><h2>Make winter your own</h2><p>Pick your base, find your snow day, and leave room for the unexpected.</p></div><a href="/winter" class="btn btn-outline">Explore the winter guide →</a></div>
-    <div class="winter-start-grid">
-      <a href="/learn-to-ski"><span>01 / First turns</span><h3>Learn to ski</h3><p>Lessons, rentals, and a calm first morning on snow.</p><strong>Get ready →</strong></a>
-      <a href="/ski-day-planner"><span>02 / Make it a day</span><h3>Plan your ski day</h3><p>Your resort, your group, your transport. One useful plan.</p><strong>Build your day →</strong></a>
-      <a href="/towns"><span>03 / Find your place</span><h3>Meet the mountain towns</h3><p>Banff, Canmore, Lake Louise and the places beyond.</p><strong>Explore the bases →</strong></a>
-      <a href="/winter-stays"><span>04 / Settle in</span><h3>Find a winter stay</h3><p>A town hotel, a family suite or a lodge on the mountain.</p><strong>Compare the stays →</strong></a>
+<section class="winter-start" aria-labelledby="winter-start-heading">
+  <div class="container winter-start-layout">
+    <div class="winter-start-heading"><p class="eyebrow">From your base to the snow</p><h2 id="winter-start-heading">Build a winter day.</h2><p>Choose the outing, then join the lesson, equipment, meeting point and return.</p><a href="/winter" class="winter-guide-link">Read the winter guide <span aria-hidden="true">→</span></a></div>
+    <div class="winter-start-rows">
+      <a href="/learn-to-ski"><span class="winter-step">01</span><div><h3>Start with a lesson</h3><p>Compare lesson formats and ask about the group, equipment and meeting point.</p></div><span aria-hidden="true">→</span></a>
+      <a href="/ski-day-planner"><span class="winter-step">02</span><div><h3>Plan the resort day</h3><p>Bring the resort, ability, party and transport into one editable plan.</p></div><span aria-hidden="true">→</span></a>
+      <a href="/towns"><span class="winter-step">03</span><div><h3>Choose a mountain base</h3><p>Compare Banff, Canmore, Lake Louise and the towns beyond.</p></div><span aria-hidden="true">→</span></a>
+      <a href="/winter-stays"><span class="winter-step">04</span><div><h3>Match the stay to the journey</h3><p>Consider the room, meals and journey to the next day’s departure.</p></div><span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 <style>
-  .winter-start { padding: 4rem 0; background: #f0ede6; }
-  .winter-start-heading { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
-  .eyebrow { color: #6b552e; text-transform: uppercase; font-size: .72rem; font-weight: 700; letter-spacing: .1em; }
-  h2 { margin: .5rem 0 .7rem; }
-  .winter-start-heading p { color: var(--color-text-light); }
-  .winter-start-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; }
-  .winter-start-grid a { display: flex; flex-direction: column; padding: 1.5rem; background: white; border: 1px solid #d9ddcf; border-radius: 12px; }
-  .winter-start-grid a:hover { border-color: var(--color-primary); }
-  .winter-start-grid span { color: #6b552e; font-size: .7rem; margin-bottom: 1.3rem; }
-  .winter-start-grid h3 { font-size: 1.35rem; margin-bottom: .7rem; }
-  .winter-start-grid p { color: var(--color-text-light); font-size: .85rem; margin-bottom: 1.4rem; }
-  .winter-start-grid strong { margin-top: auto; font-size: .78rem; color: var(--color-primary); }
-  @media(max-width:900px) { .winter-start-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .winter-start-heading { align-items: flex-start; flex-direction: column; } }
-  @media(max-width:500px) { .winter-start-grid { grid-template-columns: 1fr; } }
+  .winter-start { padding:4rem 0; background:#f0ede6; }
+  .winter-start-layout { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr); gap:8%; align-items:start; }
+  .eyebrow { color:#6b552e; text-transform:uppercase; font-size:.76rem; font-weight:700; letter-spacing:.11em; margin:0 0 1rem; }
+  h2 { margin:0 0 1rem; font-size:clamp(2rem,3.4vw,3rem); line-height:1.15; }
+  .winter-start-heading>p:not(.eyebrow) { color:var(--color-text-light); line-height:1.7; max-width:42ch; }
+  .winter-guide-link { display:inline-block; margin-top:.8rem; font-weight:600; text-decoration:underline; text-underline-offset:.2em; }
+  .winter-start-rows { border-top:1px solid #bec7be; }
+  .winter-start-rows>a { display:grid; grid-template-columns:2rem minmax(0,1fr) auto; gap:1rem; padding:1.4rem 0; border-bottom:1px solid #bec7be; color:inherit; align-items:start; }
+  .winter-step { font-size:.8rem; color:#6b552e; padding-top:.3rem; }
+  h3 { font-size:1.35rem; margin:0 0 .45rem; }
+  .winter-start-rows p { color:var(--color-text-light); line-height:1.6; margin:0; max-width:58ch; }
+  a:focus-visible { outline:3px solid #977000; outline-offset:5px; }
+  @media(max-width:850px) { .winter-start-layout { grid-template-columns:1fr; gap:2rem; } .winter-start { padding:3rem 0; } }
+  @media(max-width:500px) { .winter-start-rows>a { grid-template-columns:1.4rem minmax(0,1fr) auto; gap:.65rem; } }
 </style>

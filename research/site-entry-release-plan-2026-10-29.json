@@ -1,0 +1,82 @@
+{
+  "preparedAtUTC": "2026-10-30T05:59:22.254959+00:00",
+  "baselineRevision": "15775d7120c05ac0f531ec94be0789fea6902d9d",
+  "baselineFingerprint": "6300bd57d321a66dac325fdd78c932d4f1d6fa8ae3dd55c0dd32ed8efe9ae71a",
+  "previousGoalTurnClassification": "progress",
+  "previousProgressEvidence": "PR20 merged and exact production revision/fingerprint,262 HTML/seven photos/seven normal URLs/100 redirects and browser QA verified. Six post-live evidence files are retained in this release.",
+  "status": "App source frozen after local desktop/390px browser QA; verifier and final clean committed build pending.",
+  "goalStatus": "active",
+  "broaderGoalComplete": false,
+  "scope": {
+    "homepage": "One static illustrative hero, three early owned comparisons, secondary Trip Builder, deliberate editorial winter/topic/guide/interest rows. Dated report/calendar fallbacks preserved. Unsupported resident, ranking, queue and newsletter-frequency copy removed.",
+    "directory": "44 unique native destinations in four planning stages, eight preserved topics and overlapping accessibility discovery; one duplicate removed.",
+    "banffPaidComparison": "Six qualified quick rows before six retained cards, comparison-table placement added, exact six Expedia identities preserved. Filters explicitly apply to details only.",
+    "sharedTypography": "Playfair Display headings and deliberate Source Sans 3 body pair; pine/gold and Fonts host/loading/noscript preserved. Public stylesheet returns HTTP200 with both families.",
+    "sharedNavigation": "Existing hrefs preserved; inaccurate labels corrected. Desktop/mobile controls have matching panels and announced state; Escape returns focus to the triggering control.",
+    "footer": "Plain planning promise and two owned comparisons added. Existing newsletter account/action, social/privacy/editorial routes and affiliate disclosure preserved.",
+    "canonicalBodiesByteIdentical": 295,
+    "originalPublicationDatesPreserved": 335,
+    "fullReviewsBefore": 94,
+    "fullReviewsAfter": 94,
+    "newFullReviews": 0,
+    "partialOpeningRepairs": 8,
+    "newPublishedUrls": 0,
+    "newMerchantIdentifiers": 0,
+    "allCanonicalFactsReviewed": false
+  },
+  "designReference": "https://ui-ux-pro-max-skill.com/blog/avoiding-ai-slop/",
+  "verificationTargets": {
+    "workflowChecks": 75,
+    "htmlDocuments": 605,
+    "indexableDocuments": 519,
+    "sitemapUrls": 517,
+    "productionHtmlContractsBefore": 262,
+    "productionHtmlContractsAfter": 263,
+    "newUniqueContracts": 1,
+    "newContract": "Existing homepage now covered; existing tools and Banff paid contracts upgraded in place.",
+    "protectedPhotos": 7,
+    "hostAliasMappings": 40,
+    "redirectChecks": 100,
+    "bareCanonicalUrls": 7,
+    "authoredGuides": 43,
+    "curatedContextPages": 45,
+    "actualBlogLayoutSsrCases": 54
+  },
+  "workingBrowserQa": {
+    "homepageDesktopThreeChoicesBeforeConsentBanner": true,
+    "homepagePhoneThreeChoicesBeforeConsentBanner": true,
+    "phoneWidth": 390,
+    "phoneDocumentWidth": 390,
+    "directoryBothAccessTopicsSearchNoResultReset44": true,
+    "paidFilteredDetails1Then0ThenReset6": true,
+    "paidQuickRowsAlways6": true,
+    "mobileMenuStatesSwitchAndEscapeFocus": true,
+    "desktopKeyboardEnterAndEscapeFocus": true,
+    "consentPreferencesChanged": false,
+    "bookingsSubmitted": false,
+    "representativeSharedPhoneRoutes": [
+      "/blog/banff-first-time-tips/",
+      "/ski-day-planner/",
+      "/book/lake-louise-stays/",
+      "/book/banff-winter-activities/",
+      "/accessible-trails/"
+    ]
+  },
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "ownedGoogleBingToBanffBoundThenOptionalGetYourGuideFunnel": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "customGetYourGuideAgreementClaimed": false,
+    "conversionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "201 canonical articles still lack full reviews;8 have bounded opening repairs.",
+    "Broader property fact/photo and legacy tool review remains incomplete.",
+    "Source/render/UI checks do not prove conversion uplift, commission revenue or future availability.",
+    "Broader site design and source quality work continues; campaign market/budget/bids remain unspecified."
+  ],
+  "independentReview": "No material source concerns: credible copy, route purposes, exact Footer form/account, illustrative image context, source/no-JS fallbacks, font host/loading and disclosure focus behavior."
+}

@@ -4,7 +4,7 @@
   "baselineFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d",
   "previousGoalTurnClassification": "progress",
   "previousProgressEvidence": "PR19 merged; exact production identity,259 HTML,7 photos,7 bare URLs,100 redirects and browser QA verified. Its receipts are retained in this release.",
-  "status": "Committed source passed all72 checks, complete build, strict site audit, offline fixtures,262 built contracts and final desktop/phone hub QA; awaiting PR/main CI and exact production verification.",
+  "status": "Merged, deployed and verified: exact live revision/fingerprint, PR/main CI,262 HTML,7 protected photos,7 normal URLs,100 redirect cases and production browser QA passed.",
   "scope": {
     "newFullReviewSlugs": [
       "accessible-banff",
@@ -120,5 +120,8 @@
     "introHeadingPx": 26.4,
     "consentPreferencesChanged": false,
     "bookingsSubmitted": false
-  }
+  },
+  "mergeRevision": "15775d7120c05ac0f531ec94be0789fea6902d9d",
+  "releaseReceipt": "research/accessibility-release-receipt-2026-10-29.json",
+  "followupDesignAudit": "research/design-priorities-2026-10-29.json"
 }
