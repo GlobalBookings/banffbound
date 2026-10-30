@@ -62,7 +62,7 @@
 - [Build a Banff evening](https://banffbound.com/blog/banff-nightlife-guide/): Compare dinner, bowling, pub music, dated performances and dancing, with group-specific checks and a return plan for your base.
 - [Live music and shows](https://banffbound.com/blog/banff-live-music/): Use dated operator calendars and distinguish table reservations, tickets and event admission requirements.
 - [Drink-offer planning](https://banffbound.com/blog/drink-deals/): Three sourced offer formats with food, admission, holiday and booking conditions; confirm the current operator terms.
-- [Accessible Banff](https://banffbound.com/accessible-trails/): Published physical trail profiles, visitor access features, transport and adaptive activity arrangements.
+- [Accessible Banff](https://banffbound.com/accessible-trails/): Compare published physical trail profiles, then plan visitor access, transport and adaptive activity arrangements.
 - [Activity planning](https://banffbound.com/activities/): Seasonal activity descriptions, preparation questions and current operator sources.
 - [Paddling planning](https://banffbound.com/paddling/): Separate lake, river and guided-trip choices with current watercraft rules.
 - [Trail directory](https://banffbound.com/trails/)
@@ -132,3 +132,8 @@ Dogs, toddlers and short stays:
 - Pet-designated hotel rooms and confirmation questions: https://banffbound.com/blog/banff-pet-friendly-hotels/
 - Flexible toddler outings, rooms and transport: https://banffbound.com/blog/banff-toddler-guide/
 - Three-day winter and summer planning: https://banffbound.com/blog/3-day-banff-itinerary/
+
+Accessibility planning:
+- Arrange the whole visit, rooms and assistance: https://banffbound.com/blog/accessible-banff/
+- Choose an outdoor endpoint and complete return: https://banffbound.com/blog/banff-accessible-hikes/
+- Compare physical trail profiles: https://banffbound.com/accessible-trails/#trail-profiles

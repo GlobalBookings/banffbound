@@ -1,0 +1,778 @@
+{
+  "recordedAtUTC": "2026-10-30T04:55:06.893549+00:00",
+  "status": "Merged, deployed and independently verified on production",
+  "goalStatus": "active",
+  "broaderGoalComplete": false,
+  "previousGoalTurnClassification": "progress",
+  "pullRequest": {
+    "headRefOid": "1641b4a6a861e9ae1dab4d80caf4f82846c29fe4",
+    "mergeCommit": {
+      "oid": "aa619002a224aac62f83ca29290ffa71a4f21042"
+    },
+    "mergedAt": "2026-10-30T04:47:25Z",
+    "number": 19,
+    "state": "MERGED",
+    "url": "https://github.com/GlobalBookings/banffbound/pull/19"
+  },
+  "source": {
+    "applicationCommit": "7a28218984458c0eaff58ba9c163d520a7007fd8",
+    "reviewedHead": "1641b4a6a861e9ae1dab4d80caf4f82846c29fe4",
+    "mergeRevision": "aa619002a224aac62f83ca29290ffa71a4f21042",
+    "sourceFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d"
+  },
+  "scope": {
+    "newFullReviewSlugs": [
+      "3-day-banff-itinerary",
+      "banff-dog-friendly",
+      "banff-pet-friendly-hotels",
+      "banff-toddler-guide"
+    ],
+    "fullReviewsBefore": 88,
+    "fullReviewsAfter": 92,
+    "partialOpeningRepairs": 8,
+    "canonicalBodies": 295,
+    "otherCanonicalBodiesByteIdentical": 291,
+    "originalPublicationDatesPreserved": 335,
+    "newPublishedUrls": 0,
+    "newClientComponents": 0,
+    "authoredBookingGuides": 41,
+    "curatedBookingContextPages": 43,
+    "selectedExistingHotelPolicyClarifications": [
+      "Royal Canadian Lodge: ordinary pets excluded under official FAQ; service-animal arrangements separate."
+    ],
+    "sharedVisualFix": "Article table-header anchors inherit the white header color, retaining native links and underlines."
+  },
+  "continuousIntegration": {
+    "pullRequest": {
+      "conclusion": "success",
+      "createdAt": "2026-10-30T04:44:52Z",
+      "databaseId": 41004597213,
+      "headSha": "1641b4a6a861e9ae1dab4d80caf4f82846c29fe4",
+      "jobs": [
+        {
+          "completedAt": "2026-10-30T04:46:26Z",
+          "conclusion": "success",
+          "databaseId": 123896511294,
+          "name": "build",
+          "startedAt": "2026-10-30T04:44:54Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-30T04:44:55Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-30T04:44:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:45:02Z",
+              "conclusion": "success",
+              "name": "Checkout repository",
+              "number": 2,
+              "startedAt": "2026-10-30T04:44:56Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:45:06Z",
+              "conclusion": "success",
+              "name": "Set up Node.js 20",
+              "number": 3,
+              "startedAt": "2026-10-30T04:45:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:45:13Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 4,
+              "startedAt": "2026-10-30T04:45:06Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:45:54Z",
+              "conclusion": "success",
+              "name": "Check trip-planning behavior",
+              "number": 5,
+              "startedAt": "2026-10-30T04:45:13Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:45:54Z",
+              "conclusion": "success",
+              "name": "Check report source and expiry behavior",
+              "number": 6,
+              "startedAt": "2026-10-30T04:45:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:45:55Z",
+              "conclusion": "success",
+              "name": "Check booking navigation",
+              "number": 7,
+              "startedAt": "2026-10-30T04:45:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:46:17Z",
+              "conclusion": "success",
+              "name": "Build site",
+              "number": 8,
+              "startedAt": "2026-10-30T04:45:55Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:46:24Z",
+              "conclusion": "success",
+              "name": "Audit generated site",
+              "number": 9,
+              "startedAt": "2026-10-30T04:46:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:46:24Z",
+              "conclusion": "success",
+              "name": "Post Set up Node.js 20",
+              "number": 17,
+              "startedAt": "2026-10-30T04:46:24Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:46:24Z",
+              "conclusion": "success",
+              "name": "Post Checkout repository",
+              "number": 18,
+              "startedAt": "2026-10-30T04:46:24Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:46:24Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 19,
+              "startedAt": "2026-10-30T04:46:24Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/GlobalBookings/banffbound/actions/runs/41004597213/job/123896511294"
+        }
+      ],
+      "status": "completed",
+      "updatedAt": "2026-10-30T04:46:27Z",
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/41004597213"
+    },
+    "main": {
+      "conclusion": "success",
+      "createdAt": "2026-10-30T04:47:28Z",
+      "databaseId": 41004840211,
+      "headSha": "aa619002a224aac62f83ca29290ffa71a4f21042",
+      "jobs": [
+        {
+          "completedAt": "2026-10-30T04:48:59Z",
+          "conclusion": "success",
+          "databaseId": 123897276415,
+          "name": "build",
+          "startedAt": "2026-10-30T04:47:30Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-30T04:47:32Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-30T04:47:31Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:47:40Z",
+              "conclusion": "success",
+              "name": "Checkout repository",
+              "number": 2,
+              "startedAt": "2026-10-30T04:47:32Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:47:44Z",
+              "conclusion": "success",
+              "name": "Set up Node.js 20",
+              "number": 3,
+              "startedAt": "2026-10-30T04:47:40Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:47:51Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 4,
+              "startedAt": "2026-10-30T04:47:44Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:48:29Z",
+              "conclusion": "success",
+              "name": "Check trip-planning behavior",
+              "number": 5,
+              "startedAt": "2026-10-30T04:47:51Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:48:29Z",
+              "conclusion": "success",
+              "name": "Check report source and expiry behavior",
+              "number": 6,
+              "startedAt": "2026-10-30T04:48:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:48:29Z",
+              "conclusion": "success",
+              "name": "Check booking navigation",
+              "number": 7,
+              "startedAt": "2026-10-30T04:48:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:48:51Z",
+              "conclusion": "success",
+              "name": "Build site",
+              "number": 8,
+              "startedAt": "2026-10-30T04:48:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:48:57Z",
+              "conclusion": "success",
+              "name": "Audit generated site",
+              "number": 9,
+              "startedAt": "2026-10-30T04:48:51Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:48:57Z",
+              "conclusion": "success",
+              "name": "Post Set up Node.js 20",
+              "number": 17,
+              "startedAt": "2026-10-30T04:48:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:48:57Z",
+              "conclusion": "success",
+              "name": "Post Checkout repository",
+              "number": 18,
+              "startedAt": "2026-10-30T04:48:57Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T04:48:57Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 19,
+              "startedAt": "2026-10-30T04:48:57Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/GlobalBookings/banffbound/actions/runs/41004840211/job/123897276415"
+        }
+      ],
+      "status": "completed",
+      "updatedAt": "2026-10-30T04:49:00Z",
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/41004840211"
+    }
+  },
+  "cleanVerification": {
+    "file": "research/family-pets-clean-verification-2026-10-29.json",
+    "sourceCommit": "7a28218984458c0eaff58ba9c163d520a7007fd8",
+    "workflowChecksPassed": 69,
+    "htmlDocuments": 605,
+    "indexableDocuments": 519,
+    "strictAuditFindings": 0,
+    "builtHtmlPassed": 259,
+    "protectedPhotosPassed": 7,
+    "passed": true
+  },
+  "productionVerification": {
+    "file": "research/family-pets-production-verification-2026-10-29.json",
+    "checkedAt": "2026-10-30T04:50:39.571Z",
+    "buildReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T04:48:39.053Z",
+      "sourceRevision": "aa619002a224aac62f83ca29290ffa71a4f21042",
+      "sourceFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d"
+    },
+    "stableBeforeAfter": true,
+    "htmlPassed": 259,
+    "htmlFailed": 0,
+    "photosPassed": 7,
+    "photosFailed": 0,
+    "failures": 0,
+    "sitemapUrls": 517,
+    "passed": true
+  },
+  "bareCanonicalVerification": {
+    "file": "research/family-pets-bare-url-verification-2026-10-29.json",
+    "checkedAtUTC": "2026-10-30T04:50:13.229Z",
+    "stableBeforeAfter": true,
+    "requestsContainNoQueryCacheBuster": true,
+    "redirectFollowing": false,
+    "canonicalPaths": [
+      "/blog/banff-dog-friendly/",
+      "/blog/banff-pet-friendly-hotels/",
+      "/blog/banff-toddler-guide/",
+      "/blog/3-day-banff-itinerary/",
+      "/trip-builder/",
+      "/book/banff-hotels/",
+      "/tools/"
+    ],
+    "allSevenReturned200AndPassed": true
+  },
+  "redirectVerification": {
+    "file": "research/live-http-redirect-verification-2026-10-29.json",
+    "checkedAt": "2026-10-30T04:50:20.552Z",
+    "existingAliasMappings": 40,
+    "checksPassed": 100,
+    "checksTotal": 100,
+    "hostingOrRoutingMutation": false
+  },
+  "browserQA": {
+    "cleanLocal": {
+      "sourceCommit": "7a28218984458c0eaff58ba9c163d520a7007fd8",
+      "sourceFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d",
+      "mode": "Clean local build; production pending",
+      "startedAtUTC": "2026-10-30T04:34:22.978Z",
+      "guides": [
+        {
+          "dates": [
+            "2026-02-09T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "faqCount": 5,
+          "headerLinkColors": [
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)"
+          ],
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/banff-dog-friendly/",
+          "tableRows": [
+            5,
+            5
+          ],
+          "title": "Banff with a Dog: Transport, Walks, Winter & the Whole Visit",
+          "width": 390
+        },
+        {
+          "dates": [
+            "2025-09-07T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "faqCount": 5,
+          "headerLinkColors": [
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)"
+          ],
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/banff-pet-friendly-hotels/",
+          "tableRows": [
+            7
+          ],
+          "title": "Banff Pet-Friendly Hotels: Confirm the Room, Care & Policy",
+          "width": 390
+        },
+        {
+          "dates": [
+            "2025-11-11T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "faqCount": 5,
+          "headerLinkColors": [
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)"
+          ],
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/banff-toddler-guide/",
+          "tableRows": [
+            4,
+            4
+          ],
+          "title": "Banff with Toddlers: Rooms, Short Outings & Winter Plans",
+          "width": 390
+        },
+        {
+          "dates": [
+            "2026-02-08T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "faqCount": 5,
+          "headerLinkColors": [
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)"
+          ],
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/3-day-banff-itinerary/",
+          "tableRows": [
+            4,
+            3
+          ],
+          "title": "3 Days in Banff: Winter & Summer Plans, Travel Days and Bookings",
+          "width": 390
+        }
+      ],
+      "journeys": [
+        {
+          "name": "winter starter initialized",
+          "activities": [
+            "Find your feet in Banff",
+            "Galleries & a caf\u00e9 stop",
+            "Lake Louise lakeshore time",
+            "A managed rink session",
+            "An unhurried Banff dinner"
+          ],
+          "dayCount": 3,
+          "season": "winter",
+          "template": "winter-nonski-3",
+          "url": "http://127.0.0.1:4356/trip-builder/?template=winter-nonski-3"
+        },
+        {
+          "name": "summer starter initialized",
+          "activities": [
+            "Find your feet in Banff",
+            "Banff Gondola views",
+            "Lake Louise lakeshore time",
+            "Lake Minnewanka cruise",
+            "An unhurried Banff dinner"
+          ],
+          "dayCount": 3,
+          "season": "summer",
+          "template": "first-timer-3",
+          "url": "http://127.0.0.1:4356/trip-builder/?template=first-timer-3"
+        },
+        {
+          "name": "dog filters and carrier boundary",
+          "choices": [
+            {
+              "label": "BaseAny baseBanffLake LouiseEmerald Lake \u00b7 Yoho, BC",
+              "value": "banff"
+            },
+            {
+              "label": "SeasonAny seasonWinter planningSummer planning",
+              "value": "winter"
+            },
+            {
+              "label": "PlanAny planWalking / dog parkLake outing checksPatio mealAn attraction without petsLodge-based stay",
+              "value": "walk"
+            },
+            {
+              "label": "My transport situationStill decidingDriving / rental vehicleDog can travel in a lap-sized animal carrierDog cannot travel in a lap-sized carrier",
+              "value": "large"
+            }
+          ],
+          "hash": "#dog-ideas",
+          "path": "/dog-friendly/",
+          "statuses": [
+            "2 planning cards to explore \u2014 confirm each policy separately.",
+            "If your dog cannot travel in a lap-sized carrier, do not plan on ordinary-pet access to Roam or Parks Canada lake shuttles. Choose local walks or verify a suitable private transport arrangement before booking."
+          ],
+          "visibleHeadings": [
+            "A short Banff town walking plan",
+            "A designated Town off-leash park",
+            "Moose Hotel and Suites",
+            "Tunnel Mountain Resort",
+            "Emerald Lake Lodge"
+          ]
+        },
+        {
+          "name": "toddler to family filters",
+          "path": "/family-guide/",
+          "statuses": [
+            "3 ideas to investigate \u2014 confirm the requirements before booking."
+          ],
+          "visibleHeadings": [
+            "Cave and Basin: exhibits and history",
+            "Elevation Place: choose a swim session",
+            "The Fenlands: a scheduled public skate",
+            "Strollers and transport",
+            "A warm-up option with an opening check",
+            "Choose a walk for the group, not the age label",
+            "Moose Hotel and Suites",
+            "Tunnel Mountain Resort",
+            "Lake Louise Inn"
+          ]
+        },
+        {
+          "name": "Royal exclusion to matching owned profile",
+          "canonical": "https://banffbound.com/hotel-directory/royal-canadian-lodge/",
+          "officialFaqLinks": [
+            "Official ordinary-pet exclusion FAQ \u2197"
+          ],
+          "ordinaryPetExclusion": true,
+          "path": "/hotel-directory/royal-canadian-lodge/",
+          "providerHref": "https://www.expedia.ca/Banff-Hotels-Royal-Canadian-Lodge.h18100.Hotel-Information?camref=1101l3MtWX"
+        }
+      ],
+      "initialContrastIssue": {
+        "documentWidth": 390,
+        "headerBackground": "rgb(26, 58, 42)",
+        "headerColor": "rgb(255, 255, 255)",
+        "linkColor": "rgb(26, 58, 42)",
+        "width": 390
+      },
+      "preFixSourceCommit": "142bcdc5b1467d03ef875ac8f2b5161dd256babe",
+      "finalContrast": {
+        "documentWidth": 1280,
+        "headerBackground": "rgb(26, 58, 42)",
+        "headerColor": "rgb(255, 255, 255)",
+        "headingTop": 124.96875,
+        "linkColor": "rgb(255, 255, 255)",
+        "width": 1280
+      },
+      "dogReset": {
+        "statuses": [
+          "7 planning cards to explore \u2014 confirm each policy separately.",
+          "If your dog cannot travel in a lap-sized carrier, do not plan on ordinary-pet access to Roam or Parks Canada lake shuttles. Choose local walks or verify a suitable private transport arrangement before booking."
+        ]
+      },
+      "familyReset": {
+        "statuses": [
+          "9 ideas to investigate \u2014 confirm the requirements before booking."
+        ]
+      },
+      "phoneComparison": {
+        "documentWidth": 390,
+        "hash": "#short-overview",
+        "headingTop": 2591.6875,
+        "tableRegions": [
+          {
+            "clientWidth": 340,
+            "overflowX": "auto",
+            "scrollWidth": 540
+          },
+          {
+            "clientWidth": 340,
+            "overflowX": "auto",
+            "scrollWidth": 540
+          }
+        ],
+        "width": 390,
+        "scopeNote": "Document and table overflow geometry. Scroll-position reading was captured during native smooth movement, so it is not a completed phone fragment-jump claim."
+      },
+      "restoredDesktop": {
+        "documentWidth": 1280,
+        "height": 720,
+        "width": 1280
+      },
+      "viewportOverrideReset": true,
+      "phoneTabClosed": true,
+      "consentPreferencesChanged": false,
+      "emergencyMerchantPrintClipboardOrEnquiryActionUsed": false,
+      "networkTraceClaimed": false,
+      "finishedAtUTC": "2026-10-30T04:43:18.151Z"
+    },
+    "production": {
+      "sourceRevision": "aa619002a224aac62f83ca29290ffa71a4f21042",
+      "sourceFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d",
+      "checkedAtUTC": "2026-10-30T04:51:07.883Z",
+      "guides": [
+        {
+          "canonical": "https://banffbound.com/blog/banff-dog-friendly/",
+          "dates": [
+            "2026-02-09T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 1280,
+          "faqCount": 5,
+          "headerLinkColors": [
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)"
+          ],
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/banff-dog-friendly/",
+          "title": "Banff with a Dog: Transport, Walks, Winter & the Whole Visit",
+          "width": 1280
+        },
+        {
+          "canonical": "https://banffbound.com/blog/banff-pet-friendly-hotels/",
+          "dates": [
+            "2025-09-07T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 1280,
+          "faqCount": 5,
+          "headerLinkColors": [
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)"
+          ],
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/banff-pet-friendly-hotels/",
+          "title": "Banff Pet-Friendly Hotels: Confirm the Room, Care & Policy",
+          "width": 1280
+        },
+        {
+          "canonical": "https://banffbound.com/blog/banff-toddler-guide/",
+          "dates": [
+            "2025-11-11T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 1280,
+          "faqCount": 5,
+          "headerLinkColors": [
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)"
+          ],
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/banff-toddler-guide/",
+          "title": "Banff with Toddlers: Rooms, Short Outings & Winter Plans",
+          "width": 1280
+        },
+        {
+          "canonical": "https://banffbound.com/blog/3-day-banff-itinerary/",
+          "dates": [
+            "2026-02-08T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 1280,
+          "faqCount": 5,
+          "headerLinkColors": [
+            "rgb(255, 255, 255)",
+            "rgb(255, 255, 255)"
+          ],
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/3-day-banff-itinerary/",
+          "title": "3 Days in Banff: Winter & Summer Plans, Travel Days and Bookings",
+          "width": 1280
+        }
+      ],
+      "summerStarter": {
+        "activities": [
+          "Find your feet in Banff",
+          "Banff Gondola views",
+          "Lake Louise lakeshore time",
+          "Lake Minnewanka cruise",
+          "An unhurried Banff dinner"
+        ],
+        "dayCount": 3,
+        "season": "summer",
+        "template": "first-timer-3",
+        "url": "https://banffbound.com/trip-builder/?template=first-timer-3"
+      },
+      "royalHandoff": {
+        "canonical": "https://banffbound.com/hotel-directory/royal-canadian-lodge/",
+        "officialFaqLinks": [
+          "Official ordinary-pet exclusion FAQ \u2197"
+        ],
+        "ordinaryPetExclusion": true,
+        "path": "/hotel-directory/royal-canadian-lodge/",
+        "providerHref": "https://www.expedia.ca/Banff-Hotels-Royal-Canadian-Lodge.h18100.Hotel-Information?camref=1101l3MtWX"
+      },
+      "finalView": {
+        "documentWidth": 1280,
+        "headerLinks": [
+          {
+            "color": "rgb(255, 255, 255)",
+            "label": "Open the slower winter weekend"
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "label": "Open the first summer weekend"
+          }
+        ],
+        "headingTop": 124.96875,
+        "url": "https://banffbound.com/blog/3-day-banff-itinerary/#short-overview",
+        "width": 1280
+      },
+      "screenshot": "/tmp/banffbound-family-pets-live-2026-10-29.jpg",
+      "consentPreferencesChanged": false,
+      "emergencyMerchantPrintClipboardOrEnquiryActionUsed": false,
+      "networkTraceClaimed": false,
+      "finishedAtUTC": "2026-10-30T04:53:59.952Z"
+    },
+    "scopeNote": "Local 390px layouts, native FAQs, header-link contrast, both template journeys, dog/family filter/reset states and owned hotel handoff cover the exact selected app fingerprint deployed. Production desktop separately confirms all four FAQs/date/canonical/contrast states, the summer template and Royal handoff. DOM absence of provider elements is not a network-trace claim; no completed phone smooth-fragment jump is claimed."
+  },
+  "historicalGuardClarification": {
+    "initialCleanFailure": "Historical hotel file snapshots rejected the explicit Royal policy/source correction.",
+    "scope": "Exact reviewed policy string and one exact FAQ source line are pinned and normalized only for original historical digests. All other hotel source bytes and model fields retain prior checks.",
+    "helper": "research/royal-pet-policy-clarification-2026-10-29.mjs",
+    "hotelModelAssertionsPassed": 861,
+    "applicationSourceChangedAfterInitialCommit": false,
+    "initialFailureEvidenceRetained": true
+  },
+  "offlineVerifier": {
+    "passed": true,
+    "htmlContracts": 259,
+    "preservedPriorContracts": 255,
+    "protectedPhotos": 7,
+    "journeyFaqSourceNativeNegativeFixtures": 771,
+    "retainedFirstVisitComponentNegatives": 15,
+    "retainedFirstVisitEmittedModuleNegatives": 13,
+    "retainedTripBuilderNegatives": 18,
+    "realBlogLayoutSsrCases": 52
+  },
+  "preserved": [
+    "All 255 prior production HTML contracts and seven protected photo hashes",
+    "95 hotel identities and provider URLs; only the exact Royal policy/source clarification is allowed by the historical guards",
+    "All nine Trip Builder templates and default",
+    "Existing shared trail/lake/Parkway data and 40 host alias mappings",
+    "Original canonical routes and publication dates",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "ownedGoogleBingToBanffBoundThenOptionalGetYourGuideFunnel": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "customGetYourGuideAgreementClaimed": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": {
+    "canonicalBodiesWithoutFullReview": 203,
+    "boundedPartialRepairsWithinThatCount": 8,
+    "otherWork": "Broader property fact/photo and legacy-tool reviews remain incomplete. Source checks do not establish actual future availability, individual eligibility, suitable terrain or booking results.",
+    "nextAuditCandidates": [
+      {
+        "slug": "accessible-banff",
+        "scope": "Retained arrival/room/facility planning review; remove broad suitability/equipment guarantees."
+      },
+      {
+        "slug": "banff-accessible-hikes",
+        "scope": "Assess distinct intent versus /accessible-trails/ physical-profile tool before any canonical decision."
+      },
+      {
+        "slug": "banff-mistakes-to-avoid",
+        "scope": "Assess overlap with reviewed first-visit guide using current GSC/backlinks/internal contexts."
+      },
+      {
+        "slug": "banff-packing-list",
+        "scope": "Assess overlap with reviewed /packing-list/ tool; remove unsupported temperature and preparation guarantees if retained."
+      }
+    ],
+    "consolidationGate": "Current Search Console history, backlinks and actual internal-link context must inform any new canonical/redirect decision."
+  },
+  "evidenceRetention": "The production reports and this receipt are staged for the next substantive release; no evidence-only deployment is started."
+}

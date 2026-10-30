@@ -22,3 +22,19 @@ export const accessFaqs = [
   { question:'Can I use an accessible shuttle to Lake Louise or Moraine Lake?', answer:'For its regular reserved service Parks Canada publishes an accessible vehicle on request at the Lake Louise Park and Ride with a purchased ticket. Confirm equipment and party arrangements. The published 2026 season ended October 12; it does not establish a 2027 timetable. The 2026 Alpine Start service had no accessible vehicle. Roam is a separate service.' },
   { question:'Where can I arrange adaptive equipment or a lesson?', answer:'Rocky Mountain Adaptive publishes adapted activities, lessons and equipment rentals. Ask about the specific date, venue, equipment, instructor and support before paying. This guide does not verify free all-terrain chair loans at visitor centres.' },
 ];
+
+/** Compare named profiles only; unknown inputs retain the complete published table. */
+export function buildAccessComparison(first: unknown = null, second: unknown = null): {
+  mode: 'all' | 'pair' | 'single'; visibleIds: string[];
+  firstId: string | null; secondId: string | null; status: string;
+} {
+  const a = accessProfiles.find(profile => profile.id === first);
+  const b = accessProfiles.find(profile => profile.id === second);
+  if (!a || !b) return { mode: 'all', visibleIds: accessProfiles.map(profile => profile.id), firstId: null, secondId: null, status: 'All three published profiles are shown.' };
+  return {
+    mode: a.id === b.id ? 'single' : 'pair',
+    visibleIds: accessProfiles.filter(profile => profile.id === a.id || profile.id === b.id).map(profile => profile.id),
+    firstId: a.id, secondId: b.id,
+    status: a.id === b.id ? `Showing ${a.name}. Select a different second profile to compare.` : `Comparing ${a.name} and ${b.name}.`,
+  };
+}

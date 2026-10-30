@@ -1,0 +1,96 @@
+{
+  "preparedAtUTC": "2026-10-30T05:16:07.449773+00:00",
+  "baselineRevision": "aa619002a224aac62f83ca29290ffa71a4f21042",
+  "baselineFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d",
+  "previousGoalTurnClassification": "progress",
+  "previousProgressEvidence": "PR19 merged; exact production identity,259 HTML,7 photos,7 bare URLs,100 redirects and browser QA verified. Its receipts are retained in this release.",
+  "status": "Prepared for committed-source verification; not yet published.",
+  "scope": {
+    "newFullReviewSlugs": [
+      "accessible-banff",
+      "banff-accessible-hikes"
+    ],
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 92,
+    "fullReviewsAfter": 94,
+    "partialOpeningRepairs": 8,
+    "otherCanonicalBodiesByteIdentical": 293,
+    "originalPublicationDatesPreserved": 335,
+    "newPublishedUrls": 0,
+    "existingHub": "/accessible-trails/",
+    "existingInteractionRefined": "Explicit compare submission, strict named-profile state, same-profile explanation and show-all reset; full table remains in HTML.",
+    "designReference": "https://ui-ux-pro-max-skill.com/blog/avoiding-ai-slop/",
+    "designChoice": "Keep established BanffBound type and palette. Make physical comparison the focal point, reduce intro-heading scale and replace repeated card grids with ruled sections and aligned headings.",
+    "allCanonicalFactsReviewed": false
+  },
+  "verificationTargets": {
+    "workflowChecks": 72,
+    "productionHtmlContractsBefore": 259,
+    "productionHtmlContractsAfter": 262,
+    "newUniqueContracts": 3,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "htmlDocuments": 605,
+    "indexableDocuments": 519,
+    "hostAliasMappings": 40,
+    "redirectChecks": 100,
+    "authoredBookingGuides": 43,
+    "curatedBookingContextPages": 45,
+    "bareCanonicalUrls": 7,
+    "realBlogLayoutSsrCases": 54,
+    "actualBaseLayoutHubSsrCases": 1
+  },
+  "intentDecision": "Retain hub as physical-feature comparison, accessible-banff as whole-visit planning and banff-accessible-hikes as outdoor endpoint planning. No new canonical or redirect decision.",
+  "privateSearchEvidence": "Read-only Search Console evidence retained in ignored research/private. Unreported rows are unknown; no demand, indexing or uplift claim inferred.",
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "ownedGoogleBingToBanffBoundThenOptionalGetYourGuideFunnel": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "customGetYourGuideAgreementClaimed": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "201 canonical bodies still lack a full review;8 have bounded partial opening repairs.",
+    "Broader property fact/photo and legacy tool reviews remain incomplete.",
+    "Source review does not confirm individual equipment fit, assistance, current surface, room availability or future operation.",
+    "Campaign market, budget and bids remain unspecified."
+  ],
+  "goalStatus": "active",
+  "broaderGoalComplete": false,
+  "renderedBodyWords": {
+    "accessible-banff": 2253,
+    "banff-accessible-hikes": 2349
+  },
+  "hubPrimarySourceRefresh": [
+    {
+      "url": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "verified": "All three surface mixes, stated distances, typical/minimum widths and typical/maximum grade and cross-slope pairs match the retained model; Fenland237m and Minnewanka1km obstacle distinctions retained."
+    },
+    {
+      "url": "https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/",
+      "verified": "Four summit-building levels via elevators;31x41inch mobility-device size and320kg total limit;368stairs each way on boardwalk; individual arrangements remain unconfirmed."
+    },
+    {
+      "url": "https://parks.canada.ca/voyage-travel/experiences/accessibilite-accessibility",
+      "verified": "Needed support-person admission/program policy, no documentation requirement, service-animal site limits and5business-day communication requests."
+    },
+    {
+      "url": "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq",
+      "verified": "Pre-purchased regular-shuttle ticket/on-demand accessible vehicle; companions space-permitting; Alpine Start excluded for2026; no accessible parking at Moraine."
+    }
+  ],
+  "independentReview": "Second source/SSR reviewer found no material factual or native-link issues in either authored article.",
+  "publicIntentAudit": "research/accessibility-intent-audit-2026-10-29.json",
+  "workingBrowserEvidence": "Desktop and390px phone checks passed for3pages, native FAQs/checklist, source and merchant links, comparison pair/single/reset. Final frozen archive checks remain pending.",
+  "preserved": [
+    "40 existing alias mappings",
+    "95 hotel identities and provider URLs",
+    "Existing shared trail, lake, Parkway and nine Trip Builder templates",
+    "Affiliate and measurement identifiers",
+    "293 other canonical article bodies and335 original publication values",
+    "Unrelated user work"
+  ]
+}

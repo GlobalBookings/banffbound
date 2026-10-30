@@ -1,0 +1,58 @@
+# Accessible Banff: whole-visit review — 29 October 2026
+
+## Distinct purpose and retained record
+
+This author owns only new `src/data/accessVisitGuideOverrides.ts`, `scripts/check-access-visit-guide.mjs` and this source record. Registry, blog metadata projection, shared access models, pages, CI, verifier, publication and canonical decisions remain root-owned. Current staged PR19 evidence and other user work are untouched.
+
+`accessible-banff` is an existing unreviewed canonical with original publication **2026-02-08**. The old body generalized wheelchair access across trails, viewpoints, hotels and buses; promised free track-chair loans, aquatic equipment without reservation and staff transfers; and confused building/parking access with an entire outdoor route. The full retained-URL replacement owns **arrival, exact room/bathroom, facility, assistance, activity and return planning**. It does not publish another set of trail measurements or build a new scoring/filter tool. Existing `/accessible-trails/#trail-profiles` owns published widths, surface, grade, cross-slope and obstacles; it is linked for those questions. A separate retained hiking article and any future canonical consolidation are outside this scope.
+
+Original external merchant hrefs are retained exactly:
+
+- `https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX`
+- `https://www.getyourguide.com/banff-l284/?partner_id=QW960HO`
+
+They are labelled broad accommodation/activity searches, with commission disclosure and `sponsored noopener`. Neither reserves an accessible room or establishes a tour’s individual access arrangements. No URL is archived, merchant ID added, original publication reset or provider setting changed. Owned `/book/banff-hotels/` and `/book/lake-louise-stays/` comparisons support base/category choices; they do not allocate access equipment or assistance.
+
+## Fresh primary checks and evidence boundaries
+
+Public fact-page GETs only, checked 29 October 2026. No enquiry, booking, account, ad, email, form submission or health-data collection. Sixteen direct pages listed below were readable on this pass; the trail-condition report timed out on the final check and remains a reader handoff, with no current route status asserted. Search returned some non-primary results, but none are used. No photo identity/licence, device fit, available room, working equipment or current operational approval is inferred from a page or image.
+
+| Primary source | Selected facts and bounded use |
+| --- | --- |
+| https://www.yyc.com/en-us/accessibility/at-the-terminal | Airport public-area/curb assistance versus airline gate/public-area assistance have different endpoints. Article joins these stages rather than assigning the airport an entire transfer. No exact door/phone/advance response time copied. |
+| https://www.banffjaspercollection.com/brewster-express/faqs/ | Canonical current FAQ says its motor coaches are **not wheelchair accessible**. A connecting taxi/van or hotel pickup does not establish a workaround. No vehicle or personal transfer advice inferred. Banff Airporter public travel FAQ was also read but did not establish mobility boarding/clearances; no published absence becomes an assertion that its vehicles do or do not fit a device. |
+| https://roamtransit.com/about-us/transportation-policies/ | Ramps, kneeling entrances, priority spaces, boarding turns can exclude some devices; discusses securement help and operators’ physical limitations. No universal device accommodation, available wheelchair space, lifting or personal transfer guarantee. |
+| https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq | Regular purchased-ticket accessible dispatch at Park and Ride, companion space permitting; 2026 Alpine Start had no accessible service. No future timetable, guaranteed response clock or all-vehicle claim copied. |
+| https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise | Published 2026 service ended October 12. A past accessible service does not establish winter Moraine or 2027 schedules. No parking/placard entitlement generalized. |
+| https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html | Actual named **Fairmont Queen Mobility Accessible Rollin Shower**, main building, roll-in shower/grab bars. Exact layout, bed/transfer clearances and allocation remain questions. Not a property-wide access guarantee. |
+| https://moosehotelandsuites.com/accessible-hotel-room/ | Actual **Hotel Room with Accessible Bathroom**, two queens, roll-in shower/grab bars, portable chair on request, approximate 86 cm bathroom door. Patio is **not wheelchair accessible**; aquatic facilities have steps/stairs and **no motorized lift**. Corrects old general rooftop-pool entry claim. Published doorway is not a personal fit test; no category or chair allocation inferred. |
+| https://parks.canada.ca/voyage-travel/experiences/accessibilite-accessibility | Needed support person: free daily admission/program access when visitor depends on support; no documentation/Access 2 Card required. Not a universal visitor fee waiver or commercial operator rule. Communication requests at least five business days ahead, availability varies. Service animals have specific health/safety/operational boundaries. No public diagnosis collection. |
+| https://parks.canada.ca/lhn-nhs/ab/caveandbasin/activ/activites-activities/introduction-basictour | Introductory tour published as indoor/outdoor and accessible; actual portions/surfaces/assistance still checked. No automatic boardwalk access, bathing or staff transfer claim. |
+| https://parks.canada.ca/lhn-nhs/ab/caveandbasin/visit/heures-hours | Current modified October 27, 2026; winter Thursday–Monday, Christmas Day and specific closure blocks. Article links actual days/notices rather than guaranteeing daily access or copying every future date. |
+| https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/ | Cabins off track for boarding; elevators four summit levels; device envelope 31 × 41 inches and 320 kg total limit. Boardwalk 368 shallow stairs each way, not wheelchair accessible. No all-device loading, assistance or outdoor-route promise. |
+| https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs/accessibilite-accessibility | Heritage facility: some devices may not fit elevator; pool-level ramp option, aquatic chairs requested at front desk, personal chairs excluded from spring water. No guaranteed chair or staff personal-transfer assistance. Other detailed measurements are left to provider rather than reconstructed here. |
+| https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs | Direct Parks page now readable; maintenance closure October 13 to early November, checked October 29, 2026. Reopening unconfirmed. No online pool reservation, in-person admission or aquatic equipment availability inferred for a future visit. |
+| https://rockymountainadaptive.com/ | Operator publishes lessons, experiences, programs, rentals and snow-sport choices. Exact fitting, instructor, personal support, venue/transport and confirmation are separate. Homepage does not establish free all-terrain visitor-centre loans or live equipment capacity. No booking button/enquiry followed or submitted. |
+| https://parks.canada.ca/pn-np/ab/banff/activ/marchehiver-winterwalking/banff | Changing winter hazards and current checks even near town. No summer measurement becomes winter clearing, no equipment becomes skills or suitability. |
+| https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions | Official route-report handoff; timed out on the final direct GET. No route’s opening or measured access is republished as a current visit decision. Unavailable is not an open/closed verdict. |
+| https://parks.canada.ca/pn-np/ab/banff/bulletins | Current source for temporary restrictions, including Johnston notices. Article does not infer reopening from a scheduled end or reproduce another route guide. |
+
+## Useful whole-visit planning rather than an access verdict
+
+The authored body joins airport handoffs, actual vehicle and return, room category and bathroom setup, facility versus outdoor experience, support-person/communication arrangements, adaptive programs, season and complete quote. It offers two concrete room categories and a three-service transport comparison, while keeping personal requirements and provider confirmation with the traveller. It links the existing physical-profile, admission, lesson/day, budget, room/base, weather and offline tools for their real purposes. No public suitability score, device-to-route matching, personal-health form, automatic aquatic equipment, free chair loan, universal service-animal document rule or staff-lifting promise is introduced.
+
+Unknowns remain explicit: current room/vehicle/equipment capacity, exact transfer/clearance needs, personal assistance, private-carrier arrangements, future lake season, route clearing, pool reopening and communication availability. Unknown is not absence. Two documented rooms are examples, not an exhaustive hotel audit or ranking.
+
+## Export and validation contract
+
+- `reviewDate='2026-10-29'`; `accessVisitGuideOverrides`, `accessVisitGuideMetadata`, `accessVisitGuideFaqs`, `accessVisitGuideSources` each keyed only `accessible-banff`. Sources are a source-name/URL map under that slug.
+- Original date remains 2026-02-08. Metadata has title/description/lastUpdated/readTime and `imageIsIllustrative:true`/imageNote; no publication override.
+- Five Q/A pairs supply visible details and one FAQPage from one renderer. No duplicate Article/Hotel/Product/Offer/rating schema.
+- Complete SSR narrative, labelled jump navigation, two tables (transport and actual room categories), native source/help/booking-comparison links. No form/input, executable script, storage, user-dependent URL or third-party widget. Only FAQ JSON-LD.
+- Anchors: `access-objective`, `access-airport`, `access-transport`, `access-room`, `access-facilities`, `access-support`, `access-adaptive`, `access-season`, `access-booking`, `access-questions`, `access-sources`.
+
+`node scripts/check-access-visit-guide.mjs` loads the actual module and original publication/merchant hrefs, renders through Astro in memory, then checks real HTML, scope-specific primary/native routes, two complete comparisons, exact referral IDs, original date, illustrative metadata and five visible/schema FAQ pairs. Material negative fixtures cover false coach/device accommodation, room/pool/patio overreach, support-person fee scope and documentation, automatic equipment/personal transfers, past/future lake season, reopening, fabricated prices, FAQ divergence, missing sources, changed merchant IDs and publication replacement. Network is disabled; no full build or generated output.
+
+Final focused check passed: **2,253 rendered words**, one actual Astro-rendered article, **five** matching visible/schema FAQ pairs, **two** complete SSR comparison tables (three transport rows and two room-category rows), **17** primary-source URLs and **two** unchanged inherited merchant URLs. The check rejects material factual overreach, missing rows/source links, FAQ mismatch, altered referral IDs and publication overrides. Targeted strict TypeScript passed with `tsc --noEmit --target ES2022 --module ESNext --moduleResolution bundler --strict --skipLibCheck src/data/accessVisitGuideOverrides.ts`.
+
+No full site build, browser execution, enquiry or deployment was performed. Root owns integration, full build, browser/deployment proof and the separate consolidation decision.
