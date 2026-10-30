@@ -1,0 +1,424 @@
+{
+  "checkedAtUTC": "2026-10-30T00:51:07.872Z",
+  "mode": "Bare canonical GETs; no query cache busters or redirect following",
+  "expected": {
+    "sourceRevision": "6a475709199429f8df246b935188ec23f87d8125",
+    "sourceFingerprint": "8521cf4aa43f33982b45ff8c905b233e4278e5f16cbbf48a185a93d87388b870"
+  },
+  "buildInfoBefore": {
+    "requestedUrl": "https://banffbound.com/build-info.json",
+    "observedUrl": "https://banffbound.com/build-info.json",
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "date": "Fri, 30 Oct 2026 00:51:08 GMT",
+      "cache-control": "public,max-age=10,s-maxage=86400",
+      "etag": "W/\"3ee43f224aa58ff2d310cc298f5d4469\"",
+      "last-modified": "Fri, 30 Oct 2026 00:49:41 GMT",
+      "cf-cache-status": "MISS"
+    },
+    "bytes": 512,
+    "receipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T00:49:37.283Z",
+      "sourceRevision": "6a475709199429f8df246b935188ec23f87d8125",
+      "sourceFingerprint": "8521cf4aa43f33982b45ff8c905b233e4278e5f16cbbf48a185a93d87388b870"
+    },
+    "errors": []
+  },
+  "buildInfoAfter": {
+    "requestedUrl": "https://banffbound.com/build-info.json",
+    "observedUrl": "https://banffbound.com/build-info.json",
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "date": "Fri, 30 Oct 2026 00:51:11 GMT",
+      "age": "2",
+      "cache-control": "public,max-age=10,s-maxage=86400",
+      "etag": "W/\"3ee43f224aa58ff2d310cc298f5d4469\"",
+      "last-modified": "Fri, 30 Oct 2026 00:49:41 GMT",
+      "cf-cache-status": "HIT"
+    },
+    "bytes": 512,
+    "receipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T00:49:37.283Z",
+      "sourceRevision": "6a475709199429f8df246b935188ec23f87d8125",
+      "sourceFingerprint": "8521cf4aa43f33982b45ff8c905b233e4278e5f16cbbf48a185a93d87388b870"
+    },
+    "errors": []
+  },
+  "stableBuildReceipt": true,
+  "sitemap": {
+    "index": {
+      "requestedUrl": "https://banffbound.com/sitemap-index.xml",
+      "observedUrl": "https://banffbound.com/sitemap-index.xml",
+      "status": 200,
+      "headers": {
+        "content-type": "text/xml; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 00:51:08 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "etag": "W/\"fc356e8ff3d1d552a74866a835e13f62\"",
+        "last-modified": "Fri, 30 Oct 2026 00:49:55 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 185
+    },
+    "files": [
+      {
+        "requestedUrl": "https://banffbound.com/sitemap-0.xml",
+        "observedUrl": "https://banffbound.com/sitemap-0.xml",
+        "status": 200,
+        "headers": {
+          "content-type": "text/xml; charset=utf-8",
+          "date": "Fri, 30 Oct 2026 00:51:09 GMT",
+          "cache-control": "public,max-age=10,s-maxage=86400",
+          "etag": "W/\"acbc0da60c6d23d116909f612e251a05\"",
+          "last-modified": "Fri, 30 Oct 2026 00:49:55 GMT",
+          "cf-cache-status": "MISS"
+        },
+        "bytes": 76744,
+        "urlCount": 517,
+        "errors": []
+      }
+    ],
+    "urlCount": 517,
+    "buildInfoExcluded": true,
+    "errors": []
+  },
+  "checks": [
+    {
+      "path": "/trip-cost/",
+      "kind": "trip-budget-planner",
+      "requestedUrl": "https://banffbound.com/trip-cost/",
+      "observedUrl": "https://banffbound.com/trip-cost/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 00:51:09 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 00:49:55 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 95873,
+      "expectedTitle": "Banff Trip Cost Calculator — Build & Compare Your Own Budget | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Trip Cost Calculator — Build & Compare Your Own Budget | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/trip-cost/"
+        ],
+        "headings": [
+          "Trip Cost Calculator"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "Answer",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/altitude-guide/",
+      "kind": "elevation-planner",
+      "requestedUrl": "https://banffbound.com/altitude-guide/",
+      "observedUrl": "https://banffbound.com/altitude-guide/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 00:51:09 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 00:49:41 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 87924,
+      "expectedTitle": "Banff Elevation Guide: Compare Mountain Visits & Overnight Plans | BanffBound",
+      "expectedFaqQuestions": 6,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Elevation Guide: Compare Mountain Visits & Overnight Plans | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/altitude-guide/"
+        ],
+        "headings": [
+          "Elevation in Banff & Lake Louise"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "Answer",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            6
+          ],
+          "visibleDetailsCount": 6,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/larch-season/",
+      "kind": "larch-planner",
+      "requestedUrl": "https://banffbound.com/larch-season/",
+      "observedUrl": "https://banffbound.com/larch-season/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 00:51:10 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 00:49:54 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 77686,
+      "expectedTitle": "Larch Season in Banff — Timing, Trails & Autumn Planner | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Larch Season in Banff — Timing, Trails & Autumn Planner | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/larch-season/"
+        ],
+        "headings": [
+          "Larch Season in Banff"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "Answer",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 10,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/skoki-lodge-guide/",
+      "kind": "full-guide-review",
+      "requestedUrl": "https://banffbound.com/blog/skoki-lodge-guide/",
+      "observedUrl": "https://banffbound.com/blog/skoki-lodge-guide/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 00:51:10 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 00:49:41 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 84063,
+      "expectedTitle": "Skoki Lodge: Winter Ski Access, Summer Hikes & Stay Planning | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Skoki Lodge: Winter Ski Access, Summer Hikes & Stay Planning | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/blog/skoki-lodge-guide/"
+        ],
+        "headings": [
+          "Skoki Lodge: Winter Ski Access, Summer Hikes & Stay Planning"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 4,
+          "types": [
+            "Answer",
+            "Article",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": [
+            {
+              "headline": "Skoki Lodge: Winter Ski Access, Summer Hikes & Stay Planning",
+              "datePublished": "2025-12-27T00:00:00.000Z",
+              "dateModified": "2026-10-29T00:00:00.000Z"
+            }
+          ]
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/tools/",
+      "kind": "directory",
+      "requestedUrl": "https://banffbound.com/tools/",
+      "observedUrl": "https://banffbound.com/tools/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 00:51:11 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 00:49:55 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 92588,
+      "expectedTitle": "Banff Planning Tools & Guides — Free Trip Planners | BanffBound",
+      "expectedFaqQuestions": null,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Planning Tools & Guides — Free Trip Planners | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/tools/"
+        ],
+        "headings": [
+          "Banff Planning Tools"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "BreadcrumbList",
+            "CollectionPage",
+            "ImageObject",
+            "ItemList",
+            "ListItem",
+            "Organization",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 0,
+          "faqQuestionCounts": [],
+          "visibleDetailsCount": 0,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [
+        {
+          "href": "/trip-cost",
+          "expectedLabel": "Trip Cost Calculator",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "💰 Trip Cost Calculator Build and compare two trip budgets using your own CAD quotes, with explicit cost units, missing items and a reserve."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/altitude-guide",
+          "expectedLabel": "Altitude & Elevation Guide",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "⛰️ Altitude & Elevation Guide Compare named elevation points, five visitor journeys and the questions for an overnight plan."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/larch-season",
+          "expectedLabel": "Larch Season Planner",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🍂 Larch Season Planner Compare five hiking endpoints, seasonal transport and autumn timing with official source links."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/eat-and-drink/#dining-finder",
+          "expectedLabel": "Dining Finder",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🍽️ Dining Finder Filter 32 venue entries by area and meal format, with sourced menus, contacts, booking routes and material notices."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/blog/banff-heli-skiing/#heli-ski-planner",
+          "expectedLabel": "Heli-Ski Trip Questions",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🚁 Heli-Ski Trip Questions Compare two BC base journeys and build the transport, overnight and equipment questions for an operator enquiry."
+          ],
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "finishedAtUTC": "2026-10-30T00:51:11.375Z"
+}

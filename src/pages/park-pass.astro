@@ -1,176 +1,40 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import WhatsNext from '../components/WhatsNext.astro';
+import ParkPassPlanningInteractions from '../components/ParkPassPlanningInteractions.astro';
+import {parkPassReviewedAt,parkPassRates,parkPassSources,parkPassOptions,defaultParkPassInputs,calculateParkPassPlan,formatParkPassMoney,parkPassFaqs} from '../data/parkPassPlanning';
+const initial=calculateParkPassPlan();
+const rates=[{label:'Adult · age 18–64',daily:parkPassRates.dailyAdult,annual:parkPassRates.annualAdult},{label:'Senior · age 65+',daily:parkPassRates.dailySenior,annual:parkPassRates.annualSenior},{label:'Youth · age 17 and under',daily:0,annual:null},{label:'Family/group · up to 7 in one vehicle',daily:parkPassRates.dailyGroup,annual:parkPassRates.annualGroup}];
 ---
-
-<BaseLayout title="Banff Park Pass 2026 — Prices, Where to Buy & Best Option" description="Everything about the Banff National Park pass for 2026. Daily and annual prices, where to buy, who needs one, and how to save money with the Discovery Pass.">
-
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Do I need a park pass for Banff National Park?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Everyone entering Banff National Park needs a valid Parks Canada pass. This applies whether you are driving through, hiking, stopping at viewpoints, or just visiting the Town of Banff. The pass covers your vehicle and all passengers. You also need a pass for the Icefields Parkway, Lake Louise, Moraine Lake, and Johnston Canyon — they are all inside the park.' } },
-      { '@type': 'Question', name: 'How much is a Banff National Park pass in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'A Banff daily pass costs $11.00 per adult, $9.50 per senior (65+), $5.50 per youth (6-17), and free for children under 6. A family/group pass is $22.00/day (up to 7 people in one vehicle). The Discovery Pass (annual) costs $75.25 per adult or $151.00 per family/group and covers unlimited entry to all Parks Canada sites for 12 months.' } },
-      { '@type': 'Question', name: 'Where do I buy a Banff park pass?', acceptedAnswer: { '@type': 'Answer', text: 'You can buy a park pass at: (1) The East Gate entrance booth on Highway 1 from Calgary (open 24/7 in summer), (2) Online at parks.canada.ca before your trip, (3) Banff Visitor Centre on Banff Avenue, (4) Lake Louise Visitor Centre. Buying online in advance saves time at the gate — summer lineups can be 30+ minutes.' } },
-      { '@type': 'Question', name: 'Do I need a park pass for the Icefields Parkway?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The entire Icefields Parkway (Highway 93 North) from Lake Louise to Jasper runs through Banff and Jasper National Parks. You need a valid Parks Canada pass for the entire drive. One pass covers both parks on the same day.' } },
-      { '@type': 'Question', name: 'Is the Discovery Pass worth it?', acceptedAnswer: { '@type': 'Answer', text: 'The Discovery Pass ($75.25/adult, $151/family) pays for itself in 7 days of visits. If you are visiting Banff for a week or plan to visit any other Parks Canada site within 12 months (Jasper, Waterton, Pacific Rim, etc.), the Discovery Pass is the better deal. It also covers entry to national historic sites like Cave and Basin.' } },
-      { '@type': 'Question', name: 'Do I need a park pass to drive through Banff?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Even if you are just driving Highway 1 through Banff National Park without stopping, you still need a valid pass. There is no "transit corridor" exemption. The park gates on Highway 1 eastbound (near Canmore) and westbound (near Lake Louise/Golden) check for passes.' } },
-    ],
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Park Pass Guide' }]} />
-  </div>
-
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff National Park entrance" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
-      <span class="badge">2026 Prices</span>
-      <h1>Banff Park Pass Guide</h1>
-      <p>Do you need one? How much? Where to buy? Everything about the Parks Canada pass.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <!-- Quick Answer -->
-      <div class="quick-answer">
-        <h2>Do I Need a Park Pass?</h2>
-        <p class="answer-big">Yes. Everyone entering Banff National Park needs a valid Parks Canada pass — no exceptions.</p>
-        <p>This includes driving through on Highway 1, visiting the Town of Banff, hiking any trail, driving to Lake Louise or Moraine Lake, and driving the Icefields Parkway. One pass covers your vehicle and all passengers.</p>
-      </div>
-
-      <!-- Pricing -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>2026 Prices</h2>
-      </div>
-
-      <div class="price-grid">
-        <div class="price-card">
-          <h3>Daily Pass</h3>
-          <div class="price-table">
-            <div class="price-row"><span>Adult (18-64)</span><strong>$11.00</strong></div>
-            <div class="price-row"><span>Senior (65+)</span><strong>$9.50</strong></div>
-            <div class="price-row"><span>Youth (6-17)</span><strong>$5.50</strong></div>
-            <div class="price-row"><span>Child (under 6)</span><strong>Free</strong></div>
-            <div class="price-row highlight"><span>Family / Group (up to 7 in one vehicle)</span><strong>$22.00</strong></div>
-          </div>
-          <p class="price-note">Valid for the calendar day of purchase until 4:00 PM the following day.</p>
-        </div>
-
-        <div class="price-card price-recommended">
-          <div class="recommended-badge">Best Value</div>
-          <h3>Discovery Pass (Annual)</h3>
-          <div class="price-table">
-            <div class="price-row"><span>Adult</span><strong>$75.25</strong></div>
-            <div class="price-row"><span>Senior</span><strong>$65.25</strong></div>
-            <div class="price-row"><span>Youth</span><strong>Free</strong></div>
-            <div class="price-row highlight"><span>Family / Group</span><strong>$151.00</strong></div>
-          </div>
-          <p class="price-note">Valid for 12 months from purchase. Covers ALL Parks Canada national parks and national historic sites across Canada.</p>
-          <p class="price-math"><strong>Pays for itself in just 7 days</strong> ($11/day × 7 = $77 > $75.25)</p>
-        </div>
-      </div>
-
-      <!-- Where to Buy -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Where to Buy</h2>
-      </div>
-
-      <div class="buy-grid">
-        <div class="buy-card">
-          <span class="buy-icon">💻</span>
-          <h3>Online (Recommended)</h3>
-          <p>Buy at <a href="https://parks.canada.ca/pn-np/ab/banff/visit/pass" target="_blank" rel="noopener">parks.canada.ca</a> before your trip. Print or save to phone. Skip the gate lineup.</p>
-          <span class="buy-tag">Saves 30+ min in summer</span>
-        </div>
-        <div class="buy-card">
-          <span class="buy-icon">🚗</span>
-          <h3>East Gate (Highway 1)</h3>
-          <p>Entrance booth on Highway 1 from Calgary. Open 24/7 in summer, reduced hours in winter. Cash and card accepted.</p>
-          <span class="buy-tag">Expect 15-45 min wait in summer</span>
-        </div>
-        <div class="buy-card">
-          <span class="buy-icon">ℹ️</span>
-          <h3>Visitor Centres</h3>
-          <p>Banff Visitor Centre (224 Banff Ave) or Lake Louise Visitor Centre. Also sell Discovery Passes and backcountry permits.</p>
-        </div>
-      </div>
-
-      <!-- Common Questions -->
-      <div class="section-header" style="margin-top:3rem;">
-        <h2>Common Questions</h2>
-      </div>
-
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>Do I need a pass to ski at Sunshine, Lake Louise, or Norquay?</summary>
-          <p>Yes. All three ski resorts are inside Banff National Park. You need a valid park pass to drive to any of them.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Does my pass cover Jasper too?</summary>
-          <p>A daily pass covers one park. If you drive the Icefields Parkway from Banff to Jasper, one daily pass covers both parks on the same day. The Discovery Pass covers all parks, always.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Can I use the pass at other national parks?</summary>
-          <p>Daily passes are only valid at the park where purchased. The Discovery Pass works at ALL 48 national parks and 171 national historic sites in Canada.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is there a free day?</summary>
-          <p>Parks Canada offers free admission on Canada Day (July 1). Other occasional free days are announced on the Parks Canada website.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Do I need a pass for Canmore?</summary>
-          <p>No. Canmore is outside Banff National Park. You do not need a pass to visit Canmore, Kananaskis, or any town on the east side of the park gates.</p>
-        </details>
-        <details class="faq-item">
-          <summary>How to pronounce "Banff"?</summary>
-          <p>It rhymes with "can't" not "calm." Say it: <strong>BAMF</strong> (like "bam" + "f"). Not "bonf" or "bahnf."</p>
-        </details>
-      </div>
-
-      <WhatsNext heading="You've Got Your Pass — Now Plan Your Trip" steps={[
-        { icon: '📋', title: 'Build Your Itinerary', description: 'Day-by-day planner with templates for 3, 5, or 7 days.', href: '/trip-builder', label: 'Start Planning' },
-        { icon: '🎯', title: "What to Do Today", description: 'Weather-based activity suggestions personalised to current conditions.', href: '/what-to-do-today', label: 'Get Suggestions' },
-        { icon: '🏕️', title: 'Camping Guide', description: 'All 12 campgrounds with fees, reservations, and availability.', href: '/camping', label: 'View Campgrounds' },
-      ]} />
-    </div>
-  </section>
+<BaseLayout title="Banff Park Pass Guide — Admission Fees & Pass Calculator" description="Check Banff admission rules, youth and drive-through exceptions, published daily and Discovery fees, and compare the same party’s pass options in Canadian dollars." lastUpdated={parkPassReviewedAt}>
+  <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:parkPassFaqs.map(faq=>({'@type':'Question',name:faq.question,acceptedAnswer:{'@type':'Answer',text:faq.answer}}))}).replace(/</g,'\\u003c')} />
+  <div class="container"><Breadcrumbs items={[{label:'Park Pass Guide'}]} /></div>
+  <section class="pass-hero"><div class="container"><span class="badge">Start with the actual journey</span><h1>Banff Park Pass Guide</h1><p>Visiting a lake, passing through on the highway and parking in Kananaskis are different plans. Work out the admission you need, compare the same party, and keep transport and activities in the rest of the budget.</p><a class="pass-button" href="#park-pass-planner">Compare your admission options ↓</a><p class="pass-review">Official sources and listed fees reviewed <time datetime={parkPassReviewedAt}>October 29, 2026</time>.</p></div></section>
+  <section class="section"><div class="container">
+    <div class="section-header"><span class="pass-eyebrow">Choose the right starting point</span><h2>What does your day involve?</h2></div>
+    <div class="pass-trip-grid"><article><h3>A visit inside Banff</h3><p>Plan admission for time in the park, including a town stay, lake, trail or ski-resort visit. A ski ticket, hotel or shuttle reservation does not by itself establish your park-admission coverage.</p><a href={parkPassSources.order} target="_blank" rel="noopener noreferrer">Read the current Banff travel order ↗</a></article><article><h3>Non-stop highway transit</h3><p>The order issued September 8, 2026 states an exception for travel without stopping on <strong>Highway 1 and Highway 93 South</strong>. That is a specific route and journey condition.</p><p>The scenic <strong>Icefields Parkway / 93 North and Bow Valley Parkway / 1A</strong> require park admission. Do not treat every numbered road as the transit exception.</p></article><article><h3>A Canmore or Kananaskis outing</h3><p>Canmore townsite is outside the national park. Alberta has a separate vehicle-parking pass for covered Kananaskis and Bow Valley provincial/public-land sites. Check the exact place you will park.</p><a href={parkPassSources.kananaskis} target="_blank" rel="noopener noreferrer">Check Alberta’s pass map and rules ↗</a></article></div>
+    <aside class="pass-notice"><h3>Check dates and any pass you already hold</h3><p>At this review, Parks Canada states that the Canada Strong Pass admission period ended <strong>September 7, 2026</strong>, with regular fees from September 8. A past free period does not establish free admission for your future winter or summer trip.</p><p>Qualifying annual passes received extensions during the 2025 and 2026 free-admission periods. Check the official expiry calculator before buying another pass; other eligibility categories have their own conditions.</p><a href={parkPassSources.admission} target="_blank" rel="noopener noreferrer">Check current free-admission eligibility and expiry extensions ↗</a></aside>
+  </div></section>
+  <section class="section pass-fees"><div class="container">
+    <div class="section-header"><span class="pass-eyebrow">Source-dated admission fees</span><h2>The published Banff fee table</h2><p>Canadian dollars, checked October 29, 2026. Recheck the official table and final purchase terms for your dates.</p></div>
+    <div class="pass-table-scroll"><table class="pass-rate-table"><caption>Published daily and Discovery admission fees — CAD</caption><thead><tr><th scope="col">Category</th><th scope="col">Daily admission</th><th scope="col">Discovery Pass</th></tr></thead><tbody>{rates.map(rate=><tr data-pass-rate={rate.label}><th scope="row">{rate.label}</th><td>{rate.daily===0?'Free admission':formatParkPassMoney(rate.daily)}</td><td>{rate.annual===null?'No paid pass needed for regular youth admission':formatParkPassMoney(rate.annual)}</td></tr>)}</tbody></table></div>
+    <p class="pass-small">Family/group means up to seven people arriving in one vehicle. Commercial tours and larger groups have separate arrangements. The amounts above are published admission fees, not a live checkout quote or a complete trip cost.</p><a href={parkPassSources.fees} target="_blank" rel="noopener noreferrer">Read Parks Canada’s current Banff fees ↗</a>
+  </div></section>
+  <section class="section" id="park-pass-planner" aria-labelledby="park-pass-planner-title"><div class="container">
+    <div class="section-header"><span class="pass-eyebrow">Compare the same trip</span><h2 id="park-pass-planner-title">Work out the next admission step</h2><p>For a private party of up to seven. This comparison uses the published regular fees above. It does not validate a pass, establish personal eligibility or reserve a visit.</p></div>
+    <form id="park-pass-form" hidden novalidate autocomplete="off">
+      <div class="pass-form-grid"><div><label for="pass-purpose">What is the actual journey?</label><select id="pass-purpose">{parkPassOptions.purpose.map(([value,label])=><option value={value}>{label}</option>)}</select></div><div id="pass-coverage-wrap"><label for="pass-coverage">Which admission question comes next?</label><select id="pass-coverage">{parkPassOptions.coverage.map(([value,label])=><option value={value}>{label}</option>)}</select></div></div>
+      <fieldset id="pass-party-fields"><legend>Your private party and chargeable units</legend><div class="pass-form-grid">{[['adults','Adults · age 18–64'],['seniors','Seniors · age 65+'],['youth','Youth · age 17 and under']].map(([key,label])=><div><label for={`pass-${key}`}>{label}</label><input id={`pass-${key}`} type="number" inputmode="numeric" min="0" max="7" step="1" value={defaultParkPassInputs[key as keyof typeof defaultParkPassInputs]} /></div>)}<div><label for="pass-units">Chargeable daily-admission units</label><input id="pass-units" type="number" inputmode="numeric" min="1" max="60" step="1" value={defaultParkPassInputs.units} aria-describedby="pass-units-help" /></div><div class="pass-vehicle"><label for="pass-vehicle">How does everyone arrive?</label><select id="pass-vehicle">{parkPassOptions.vehicle.map(([value,label])=><option value={value}>{label}</option>)}</select></div></div><p id="pass-units-help" class="pass-small">A daily pass is valid until 4 pm the next day. Ask the official seller which admission period covers your actual arrival, stops and final departure. Enter that count; do not automatically use travel days or hotel nights.</p><p class="pass-small">If a commercial tour or package may include admission, check with its operator first. This regular private-party comparison does not price commercial entry or assess other free-admission categories.</p></fieldset>
+      <div class="pass-actions"><button type="submit">Update comparison</button><button type="reset">Reset example</button></div><div id="pass-errors" role="alert" tabindex="-1" hidden></div>
+    </form>
+    <div class="pass-results"><h3>For the stated journey and party</h3><p id="pass-status" role="status" aria-live="polite">{initial.summary}</p><p id="pass-detail">{initial.detail}</p><div class="pass-table-scroll" id="pass-comparison-table"><table><caption>Admission purchase options for the stated party, in CAD</caption><thead><tr><th scope="col">Option</th><th scope="col">Listed admission amount</th><th scope="col">Basis and coverage</th></tr></thead><tbody>{initial.rows.map(row=><tr data-pass-option={row.id}><th scope="row">{row.label}</th><td id={`pass-${row.id}-value`}>{row.amountCents===null?'Not applicable':formatParkPassMoney(row.amountCents)}</td><td id={`pass-${row.id}-detail`}>{row.detail}</td></tr>)}</tbody></table></div></div>
+    <noscript><p class="pass-notice">The shown arithmetic uses two adults, three daily-admission units and arrival together in one vehicle. All fee, eligibility and purchase sources remain readable. For your own comparison, multiply the applicable daily rates by the fee units confirmed for your itinerary and compare the relevant Discovery coverage.</p></noscript>
+  </div></section>
+  <section class="section pass-buy"><div class="container"><h2>Buy the actual product and bring it correctly</h2><div class="pass-trip-grid"><article><h3>Daily admission</h3><p>Parks Canada names Banff &amp; Lake Louise Tourism as an online seller. Its current purchase page requires printing the pass and displaying it on the vehicle dashboard. Follow that seller’s actual instructions for your order.</p><a href={parkPassSources.dailySeller} target="_blank" rel="noopener noreferrer">Read the authorized daily-pass purchase instructions ↗</a></article><article><h3>Discovery and existing passes</h3><p>Check the participating locations, holder rules and actual validity. Discovery Passes must be signed and are not transferable. Use the official expiry calculator for qualifying extensions rather than assuming a new purchase is needed.</p><a href={parkPassSources.admission} target="_blank" rel="noopener noreferrer">Check Discovery coverage and purchase options ↗</a></article><article><h3>In-person advice and fulfilment</h3><p>The official Banff guide lists park gates, visitor centres and authorized partners. Check the actual location and operating hours. An order, delivery estimate or phone image is not a substitute for following the issuer’s display requirements.</p><a href={parkPassSources.guide} target="_blank" rel="noopener noreferrer">Find current pass and visitor-centre information ↗</a></article></div></div></section>
+  <section class="section"><div class="container pass-scope"><h2>Finish the rest of the journey</h2><p>Admission covers entry under the applicable pass conditions. It does not reserve a shuttle, parking space, campsite, hotel, ski day or attraction. The Banff pass guide lists daily-pass entry across eight named mountain national parks; Discovery has its own participating-place coverage. Neither is an all-services ticket or an Alberta provincial pass.</p><p>Keep each actual quote, service, reservation and return arrangement in the budget. Youth’s free national admission does not determine a shuttle, lift or activity ticket’s age bands.</p><div class="pass-next"><a href="/trip-cost/">Build the whole-trip budget →</a><a href="/shuttle-reservations/">Plan the separate lake transport →</a><a href="/ski-day-planner/">Join the resort day and admission →</a><a href="/towns/">Choose the actual mountain base →</a></div><a href={parkPassSources.lakeTransport} target="_blank" rel="noopener noreferrer">Read Parks Canada’s actual lake-shuttle and entry distinction ↗</a></div></section>
+  <section class="section pass-faq"><div class="container"><h2 id="park-pass-faq-title">Park admission questions</h2>{parkPassFaqs.map(faq=><details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}<p class="pass-small">Sources reviewed October 29, 2026. The quoted Banff travel order was issued September 8, 2026. This is a source-dated visitor guide, not a live fee, eligibility or purchase service.</p></div></section>
+  <ParkPassPlanningInteractions />
 </BaseLayout>
-
 <style>
-  .quick-answer { background: var(--color-primary); color: var(--color-white); border-radius: var(--radius); padding: 2.5rem; text-align: center; }
-  .quick-answer h2 { color: var(--color-white); margin-bottom: 1rem; }
-  .answer-big { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
-  .quick-answer p { font-size: 0.95rem; color: var(--color-accent-light); max-width: 700px; margin: 0 auto; line-height: 1.6; }
-
-  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .price-card { background: var(--color-white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); position: relative; }
-  .price-recommended { border: 2px solid var(--color-accent); }
-  .recommended-badge { position: absolute; top: -0.7rem; right: 1.5rem; background: var(--color-accent); color: var(--color-white); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.2rem 0.7rem; border-radius: 4px; }
-  .price-card h3 { font-size: 1.2rem; margin-bottom: 1rem; }
-  .price-table { display: flex; flex-direction: column; gap: 0; }
-  .price-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.9rem; }
-  .price-row.highlight { background: #f0f7f4; margin: 0 -0.5rem; padding: 0.6rem 0.5rem; border-radius: 4px; }
-  .price-row strong { color: var(--color-primary); font-size: 1.05rem; }
-  .price-note { font-size: 0.82rem; color: var(--color-text-light); margin-top: 1rem; line-height: 1.4; }
-  .price-math { font-size: 0.85rem; color: var(--color-accent); margin-top: 0.5rem; }
-
-  .buy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .buy-card { background: var(--color-white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-  .buy-icon { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
-  .buy-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
-  .buy-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.5; }
-  .buy-card a { color: var(--color-accent); font-weight: 600; }
-  .buy-tag { display: inline-block; margin-top: 0.75rem; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--color-primary); background: var(--color-bg-alt); padding: 0.2rem 0.5rem; border-radius: 4px; }
-
-  .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
-  .faq-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-  .faq-item summary { padding: 1.25rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  .faq-item summary::after { content: '+'; font-size: 1.2rem; color: var(--color-accent); font-weight: 700; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-item p { padding: 0 1.25rem 1.25rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6; }
-
-  @media (max-width: 768px) { .price-grid, .buy-grid { grid-template-columns: 1fr; } }
+  .pass-hero{background:var(--color-primary);color:#fff;padding:4rem 0}.pass-hero .container{max-width:950px}.pass-hero h1{color:#fff;font-size:clamp(2.6rem,6vw,4rem);line-height:1.1;margin:1rem 0}.pass-hero p{max-width:780px;line-height:1.9;font-size:1.1rem}.pass-hero .pass-review{font-size:.8rem;margin-top:1.3rem;color:#d8e2d3}.pass-button{display:inline-block;margin-top:1rem;background:var(--color-accent);color:var(--color-primary);padding:.9rem 1.3rem;border-radius:8px;text-decoration:none;font-weight:700}.pass-eyebrow{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-primary)}.pass-trip-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}.pass-trip-grid article{background:var(--color-bg-alt);padding:1.5rem;border-radius:12px}.pass-trip-grid h3{font-size:1.2rem}.pass-trip-grid p,.pass-scope p{line-height:1.85}.pass-trip-grid a{display:inline-block;font-size:.85rem;font-weight:700;margin-top:.5rem}.pass-notice{margin-top:2rem;padding:1.5rem;background:#f3eddf;border-left:4px solid var(--color-accent);border-radius:8px;line-height:1.85}.pass-notice h3{font-size:1.2rem}.pass-fees,.pass-buy,.pass-faq{background:var(--color-bg-alt)}.pass-buy article{background:#fff}.pass-table-scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;background:#fff;font-size:.9rem;line-height:1.7}caption{text-align:left;font-weight:700;padding:.8rem 0}th,td{text-align:left;vertical-align:top;padding:1rem;border-bottom:1px solid #d4dbd0}thead{background:var(--color-primary);color:#fff}.pass-small{font-size:.82rem;line-height:1.8;color:var(--color-text-light)}#park-pass-form{padding:1.5rem;border-radius:12px;background:var(--color-bg-alt)}.pass-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.5rem}input,select{width:100%;padding:.8rem;border-radius:6px;border:1px solid #a8b3a5;background:#fff;color:var(--color-text);font:inherit}fieldset{margin:1.5rem 0 0;border:1px solid #b8c4b3;border-radius:8px;padding:1.25rem;min-width:0}legend{font-weight:700;font-size:.9rem;padding:0 .5rem}.pass-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.2rem}.pass-actions button{padding:.8rem 1.2rem;border:1px solid var(--color-primary);border-radius:7px;background:var(--color-primary);color:#fff;font:inherit;font-weight:700;cursor:pointer}.pass-actions button[type=reset]{background:#fff;color:var(--color-primary)}.pass-results{margin-top:1.5rem;padding:1.5rem;border:1px solid #cad4c4;border-radius:12px}.pass-results h3{font-size:1.4rem}#pass-status{font-weight:700;line-height:1.8}#pass-detail{font-size:.88rem;line-height:1.8;color:var(--color-text-light)}#pass-errors{margin-top:1rem;padding:1rem;border-radius:8px;border:1px solid #a94c32;background:#fff4e9;line-height:1.7}.pass-next{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.5rem 0}.pass-next a{display:block;padding:1.2rem;background:var(--color-bg-alt);border-radius:8px;text-decoration:none;font-weight:700}.pass-faq .container{max-width:950px}.pass-faq details{padding:1.2rem;margin:1rem 0;border:1px solid #ccd6c6;border-radius:9px;background:#fff}.pass-faq summary{cursor:pointer;font-weight:700;line-height:1.7}.pass-faq details p{line-height:1.85}[hidden]{display:none!important}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}@media(max-width:768px){.pass-hero{padding:2.8rem 0}.pass-trip-grid,.pass-form-grid,.pass-next{grid-template-columns:1fr}#park-pass-form,.pass-results{padding:1.1rem}th,td{padding:.65rem;font-size:.8rem}#pass-comparison-table table{min-width:600px}.pass-rate-table{min-width:480px}.pass-vehicle{grid-column:auto}}
 </style>

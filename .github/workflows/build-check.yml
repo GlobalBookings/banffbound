@@ -71,6 +71,10 @@ jobs:
           node scripts/check-trip-cost-planning.mjs
           node scripts/check-altitude-planning.mjs
           node scripts/check-larch-planning.mjs
+          node scripts/check-budget-guide.mjs
+          node scripts/check-fall-season-guides.mjs
+          node scripts/check-larch-hiking-guides.mjs
+          node scripts/check-park-pass-planning.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs
