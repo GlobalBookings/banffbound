@@ -3,7 +3,7 @@
   "baselineRevision": "d32252e115b7a336b9436940da7ded19c196767a",
   "previousGoalTurnClassification": "progress",
   "previousProgressEvidence": "PR18 merged, exact deployed build and 255 HTML / 7 photos / 7 bare URLs / 100 redirect checks verified; receipt retained in this release.",
-  "status": "Authored sources frozen and independently reviewed; resolved comparison passed. Awaiting frozen combined verifier, clean committed build, browser QA, CI and production.",
+  "status": "Final clean committed-source 69 checks, full build, strict audit, 259 built HTML / 7 photos and desktop/phone browser journeys passed; remote CI and production pending.",
   "scope": {
     "newFullReviewSlugs": [
       "banff-dog-friendly",
@@ -105,6 +105,27 @@
     "beforeObservedColor": "rgb(26, 58, 42)",
     "headerBackground": "rgb(26, 58, 42)",
     "fix": "Scoped th anchors inherit the header\u2019s white color; existing underline and native links remain.",
-    "verificationStatus": "New committed-source build and browser recheck pending."
-  }
+    "verificationStatus": "Fixed and rechecked: white header links in final desktop/phone build; document fits390px, tables scroll within their wrappers."
+  },
+  "applicationSourceCommit": "7a28218984458c0eaff58ba9c163d520a7007fd8",
+  "sourceFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d",
+  "cleanVerification": "research/family-pets-clean-verification-2026-10-29.json",
+  "nextAuditCandidates": [
+    {
+      "slug": "accessible-banff",
+      "scope": "Retained arrival/room/facility planning review; remove broad suitability/equipment guarantees."
+    },
+    {
+      "slug": "banff-accessible-hikes",
+      "scope": "Assess distinct intent versus /accessible-trails/ physical-profile tool before any canonical decision."
+    },
+    {
+      "slug": "banff-mistakes-to-avoid",
+      "scope": "Assess overlap with reviewed first-visit guide using current GSC/backlinks/internal contexts."
+    },
+    {
+      "slug": "banff-packing-list",
+      "scope": "Assess overlap with reviewed /packing-list/ tool; remove unsupported temperature and preparation guarantees if retained."
+    }
+  ]
 }
