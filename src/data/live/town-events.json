@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-10-30T04:44:17.912Z",
+  "retrievedAt": "2026-10-30T12:17:32.096Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-10-30T04:44:17.908Z",
+      "retrievedAt": "2026-10-30T12:17:32.093Z",
       "sourceUpdatedAt": null,
-      "sourceUpdatedAtText": "Thu, 29 Oct 2026 22:44:17 -0700",
+      "sourceUpdatedAtText": "Fri, 30 Oct 2026 06:17:31 -0700",
       "sourceTimeIssue": "Source feed clock is later than retrieval; its update time is unverified.",
       "status": "available",
       "rejectedCount": 0,
@@ -78,15 +78,26 @@
           "dates": "November 11, 2026",
           "times": "04:00 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Mountain Writers Intensive Reading",
+          "link": "https://banff.ca/Calendar.aspx?EID=35415",
+          "description": "Celebrate the power of words shaped by mountains at the Mountain Writers Intensive Reading, a free public event in Banff Centre's intimate CLVB '33. This evening showcases new work from writers immersed in a three-week residency dedicated to exploring mountain narratives, adventure, wilderness, and ",
+          "publishedAt": "2026-10-23T21:20:58.000Z",
+          "startDate": "2026-11-13",
+          "endDate": "2026-11-13",
+          "dates": "November 13, 2026",
+          "times": "07:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-10-30T04:44:17.880Z",
+      "retrievedAt": "2026-10-30T12:17:32.049Z",
       "sourceUpdatedAt": null,
-      "sourceUpdatedAtText": "Thu, 29 Oct 2026 22:44:17 -0700",
+      "sourceUpdatedAtText": "Fri, 30 Oct 2026 06:17:31 -0700",
       "sourceTimeIssue": "Source feed clock is later than retrieval; its update time is unverified.",
       "status": "available",
       "rejectedCount": 0,
