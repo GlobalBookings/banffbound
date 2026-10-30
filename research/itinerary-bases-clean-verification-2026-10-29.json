@@ -1,0 +1,437 @@
+{
+  "startedAtUTC": "2026-10-30T02:21:48.321084+00:00",
+  "expectedSourceCommit": "d0e60cfaf5c47cde2f783904c4ba1746f9fece3c",
+  "sourceCommit": "d0e60cfaf5c47cde2f783904c4ba1746f9fece3c",
+  "cleanRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-itinerary-bases-clean-rd759ybq",
+  "workflowCheckCount": 62,
+  "checks": [
+    {
+      "path": "scripts/check-trip-planner.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-day-ideas.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-directory.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-production-redirects.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-activities.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paddling.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paid-landings.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-banff-hotel-landing-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-louise-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-winter-activity-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cycling-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-internal-linker.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-blog-content.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-bow-lake-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-jasper-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cabin-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-article-booking-context.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-nightlife-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-live-music-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-drink-offer-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-evening-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-minnewanka-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-gondola-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-spring-ski-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-peyto-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-scenic-flight-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-golden-day-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-heli-ski-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-restaurant-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-skoki-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trip-cost-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-altitude-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-larch-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-budget-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-fall-season-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-larch-hiking-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-park-pass-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-itinerary-weather-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-local-base-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-car-rental-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lesson-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-stay-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-consent.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-embeds.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-safety.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parking-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-build-provenance.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-rental-planning-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-weather-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-snow-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-source-freshness.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-road-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-events.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-navigation.mjs",
+      "passed": true
+    }
+  ],
+  "audit": {
+    "pages": 605,
+    "indexable_documents": 519,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "builtVerification": {
+    "passed": true,
+    "mode": "read-only-built-directory",
+    "htmlRoutes": 250,
+    "htmlPassed": 250,
+    "photosPassed": 7,
+    "fullReviews": 83,
+    "remainingPartialRepairs": 8,
+    "sitemapUrls": 517,
+    "buildReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T02:22:14.436Z",
+      "sourceRevision": null,
+      "sourceFingerprint": "6f27c5b5080f52f259e0530fc2933082d15d29d2e3f7d460e449505e855cde29"
+    },
+    "buildReceiptStable": true,
+    "productionIdentityVerified": false,
+    "failures": []
+  },
+  "passed": true,
+  "stage": "complete",
+  "archivePath": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-itinerary-bases-clean-rd759ybq.tar",
+  "finishedAtUTC": "2026-10-30T02:22:24.593106+00:00",
+  "recordedAtUTC": "2026-10-30T02:24:45.056403+00:00",
+  "validationScope": "Exact committed-source clean archive; local node_modules reused. Remote CI and production proof pending.",
+  "browserQA": {
+    "sourceCommit": "6046b6d55306a806cabc5df397271b2b206bfd68",
+    "sourceFingerprint": "6f27c5b5080f52f259e0530fc2933082d15d29d2e3f7d460e449505e855cde29",
+    "mode": "Local browser QA; production proof pending",
+    "winterWeek": {
+      "days": 7,
+      "outings": 8,
+      "templates": 9,
+      "removeDepartureShows6Days": true,
+      "undoRestores7Days": true,
+      "canmoreBasePreservesDaysAndShowsReturnChecks": true,
+      "summerChangeRemovesWinterLesson": true
+    },
+    "summerWeek": {
+      "days": 7,
+      "outings": 8,
+      "base": "banff",
+      "template": "summer-week-7",
+      "hikingAndParkwaySeparate": true
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "plannerFits": true,
+      "articles": [
+        {
+          "curated": "true",
+          "dates": [
+            "2026-02-05T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "faqCount": 5,
+          "hotelDestination": "Banff, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "route": "/blog/7-day-banff-itinerary/",
+          "title": "7 Days in Banff: Winter & Summer Itinerary, Bases and Bookings",
+          "width": 390
+        },
+        {
+          "curated": "true",
+          "dates": [
+            "2026-02-18T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "faqCount": 5,
+          "hotelDestination": "Banff, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "route": "/blog/rainy-day-banff/",
+          "title": "Rainy & Snowy Days in Banff: Museums, Bowling and Warm-Up Plans",
+          "width": 390
+        },
+        {
+          "curated": "true",
+          "dates": [
+            "2026-01-05T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "faqCount": 5,
+          "hotelDestination": "Lake Louise, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "route": "/blog/lake-louise-village-guide/",
+          "title": "Lake Louise Village: Stops, Supplies, Winter Days & Where to Stay",
+          "width": 390
+        },
+        {
+          "curated": "true",
+          "dates": [
+            "2026-01-28T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "faqCount": 5,
+          "hotelDestination": "Canmore, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "route": "/blog/canmore-day-trip/",
+          "title": "Canmore Day Trip from Banff: Town, Nordic & Trail Choices",
+          "width": 390
+        },
+        {
+          "curated": "true",
+          "dates": [
+            "2025-09-11T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "faqCount": 5,
+          "hotelDestination": "Banff, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "route": "/blog/banff-car-rental-tips/",
+          "title": "Banff Car Rental: Car-Free Choices, Winter Tires & Returns",
+          "width": 390
+        }
+      ]
+    },
+    "optionalProviderElements": 0,
+    "networkTraceClaimed": false,
+    "merchantPrintClipboardOrEnquiryUsed": false,
+    "finalSourceCommit": "d0e60cfaf5c47cde2f783904c4ba1746f9fece3c",
+    "finalSelectedAppFingerprintMatches": true,
+    "finalPreviewReload": {
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "templates": 9,
+      "days": 7,
+      "winterWeekRestored": true,
+      "nativeWeekGuideOutsideHiddenForm": true
+    },
+    "actualGuideSummerLink": {
+      "path": "/trip-builder/",
+      "hash": "#your-trip",
+      "season": "summer",
+      "template": "summer-week-7",
+      "days": 7,
+      "outings": 8,
+      "width": 1280
+    },
+    "temporaryPhoneTabClosed": true,
+    "viewportOverrideReset": true,
+    "restoredDesktopVerifiedInFreshTab": true,
+    "scopeNote": "Initial6046interactions and390px article tests use the same freshly verified selected application-source fingerprint as finald0e60cf. Final clean preview was reloaded at1280px; the actual guide-to-summer-template link was also clicked and verified."
+  },
+  "independentReview": {
+    "allFiveAuthoredGuides": true,
+    "weekTemplateSourceAndNoJsLink": true,
+    "freshPrimaryLocalVenueAndTransportChecks": true,
+    "rootFederalBCAndRentalBranchSpotChecks": true,
+    "materialFindings": []
+  },
+  "verifierCorrection": {
+    "initialFailureScope": "Shared BlogLayout newsletter, contextual affiliate and author tail were incorrectly counted as authored article markup.",
+    "applicationSourceChanged": false,
+    "actualBlogLayoutFixtures": 5,
+    "sharedTailSpoofRegressionCases": 20,
+    "newGuideNegativeFixtures": 268,
+    "newTripBuilderSSRNegativeFixtures": 18,
+    "finalBuiltOutputPassed": true
+  }
+}
