@@ -1,7 +1,7 @@
 {
   "preparedAtUTC": "2026-10-30T02:05:34.073698+00:00",
   "baselineRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
-  "status": "Final committed-source62checks/fullbuild/strictaudit/250builtHTML/7photo hashes and desktop-phoneQApassed; pending CI and production proof",
+  "status": "Merged and production verified: exact revision/fingerprint; PR/mainCI;250HTMLcontracts,7photos,7bareURLs,100redirectchecks and productionbrowserQA passed",
   "scope": {
     "newFullReviewSlugs": [
       "7-day-banff-itinerary",
@@ -79,5 +79,26 @@
     "realBlogLayoutFixtures": 5,
     "sharedTailScopeRegressions": 20
   },
-  "cleanVerification": "research/itinerary-bases-clean-verification-2026-10-29.json"
+  "cleanVerification": "research/itinerary-bases-clean-verification-2026-10-29.json",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/17",
+  "mergedRevision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
+  "productionVerification": "research/itinerary-bases-production-verification-2026-10-29.json",
+  "releaseReceipt": "research/itinerary-bases-release-receipt-2026-10-29.json",
+  "nextReviewCandidates": {
+    "slugs": [
+      "where-to-stay-in-banff",
+      "banff-hostel-guide",
+      "kananaskis-day-trip",
+      "banff-mobile-connectivity",
+      "banff-first-time-tips"
+    ],
+    "status": "Read-only registry/body audit; full source reviews have not begun.",
+    "possibleConsolidation": [
+      "banff-mistakes-to-avoid",
+      "banff-packing-list",
+      "3-day-banff-itinerary",
+      "5-day-banff-itinerary"
+    ],
+    "consolidationStatus": "Recommendations only; canonical/traffic/redirect scope requires a concrete separate review. No new redirects applied."
+  }
 }

@@ -1,0 +1,95 @@
+{
+  "preparedAtUTC": "2026-10-30T03:18:13.814955+00:00",
+  "baselineRevision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
+  "status": "Final committed-source66checks/build/strictaudit/255builtHTML/7photos and desktop-phoneQA passed; pending CI and production proof",
+  "scope": {
+    "newFullReviewSlugs": [
+      "banff-first-time-tips",
+      "banff-hostel-guide",
+      "banff-mobile-connectivity",
+      "kananaskis-day-trip",
+      "where-to-stay-in-banff"
+    ],
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 83,
+    "fullReviewsAfter": 88,
+    "otherCanonicalBodiesByteIdentical": 290,
+    "partialOpeningRepairs": 8,
+    "originalPublicationDatesPreserved": 335,
+    "newPublishedUrls": 0,
+    "firstVisitChecklistCards": 6,
+    "firstVisitChecklistNativeHelpLinks": 18,
+    "firstVisitModelCombinations": 64,
+    "firstVisitNoJsCardsVisible": true,
+    "firstVisitPersonalDataOrSavedState": false,
+    "firstVisitTravelReadinessScore": false,
+    "newMerchantIdentifiers": 0,
+    "allCanonicalFactsReviewed": false
+  },
+  "verificationTargets": {
+    "workflowChecks": 66,
+    "productionHTMLContractsBefore": 250,
+    "productionHTMLContractsAfter": 255,
+    "newUniqueContracts": 5,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "hostAliasMappings": 40,
+    "redirectChecks": 100,
+    "authoredBookingGuides": 37,
+    "curatedBookingContextPages": 39,
+    "bareCanonicalUrls": 7,
+    "realBlogLayoutSSRCases": 48
+  },
+  "offlineVerifier": {
+    "htmlContracts": 255,
+    "preservedPriorContracts": 250,
+    "protectedPhotos": 7,
+    "journeyFaqSourceNativeNegativeFixtures": 531,
+    "firstVisitComponentNegativeFixtures": 15,
+    "retainedTripBuilderSSRNegatives": 18,
+    "passed": true,
+    "emittedFirstVisitProgramNegativeFixtures": 13,
+    "reviewedFirstVisitProgram": {
+      "characters": 4058,
+      "sha256": "23f8f15ae29817e9d9563e542543218fdc1a63ab382a8148206c69290d1d6c38",
+      "scope": "Exact type-only module markup, unique count and post-component adjacency. No generic inline or src-script exception."
+    }
+  },
+  "renderedBodyWords": {
+    "where-to-stay-in-banff": 2000,
+    "banff-hostel-guide": 1976,
+    "banff-first-time-tips": 1973,
+    "banff-mobile-connectivity": 2202,
+    "kananaskis-day-trip": 2281
+  },
+  "preserved": [
+    "Existing canonical routes, aliases and original publication dates",
+    "All 95 hotel identities and property/provider URLs",
+    "Shared reviewed trail/lake/Parkway data andnine Trip Builder templates",
+    "Affiliate and measurement identifiers",
+    "Useful exact inherited searches labelled by their actual destination and scope",
+    "Unrelated user work"
+  ],
+  "independentReview": {
+    "staysHostelsAndRegionalGuide": "Separate primary-source/body review found no material issue; exact property/hostel policies and operator journeys were checked.",
+    "connectivityAndRegionalSources": "Root read mobile/regional bodies and freshly checked official rescue/cellular/satellite documentation, verified Garmin staff conditions,four summer trail profiles,Highwood  scope and conflicting spa notices. No emergency call, device setup, live availability or checkout assessed.",
+    "firstVisitChecklist": "Separate source/client inspection found no misleading readiness or saved-state claim; browser proof remains pending."
+  },
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "getYourGuideOwnedLandingPageFunnelRetained": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "207 canonical blog bodies lack a full review; eight have bounded opening repairs.",
+    "Broader property fact/photo and remaining legacy-tool reviews are incomplete.",
+    "Source checks do not confirm future opening dates, seats, rooms, personal device service, terrain suitability or emergency connectivity.",
+    "Campaign market, budget and bids are unspecified; no paid-ad launch has occurred."
+  ],
+  "goalStatus": "active",
+  "cleanVerification": "research/stays-first-visit-clean-verification-2026-10-29.json"
+}
