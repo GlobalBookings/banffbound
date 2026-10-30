@@ -4,7 +4,7 @@
   "baselineFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d",
   "previousGoalTurnClassification": "progress",
   "previousProgressEvidence": "PR19 merged; exact production identity,259 HTML,7 photos,7 bare URLs,100 redirects and browser QA verified. Its receipts are retained in this release.",
-  "status": "Prepared for committed-source verification; not yet published.",
+  "status": "Committed source passed all72 checks, complete build, strict site audit, offline fixtures,262 built contracts and final desktop/phone hub QA; awaiting PR/main CI and exact production verification.",
   "scope": {
     "newFullReviewSlugs": [
       "accessible-banff",
@@ -92,5 +92,33 @@
     "Affiliate and measurement identifiers",
     "293 other canonical article bodies and335 original publication values",
     "Unrelated user work"
-  ]
+  ],
+  "applicationSourceCommit": "905920c4557304c074f47ca91aeb03a0f1f9fe53",
+  "sourceFingerprint": "6300bd57d321a66dac325fdd78c932d4f1d6fa8ae3dd55c0dd32ed8efe9ae71a",
+  "cleanVerification": "research/accessibility-clean-verification-2026-10-29.json",
+  "offlineVerifier": {
+    "passed": true,
+    "htmlContracts": 262,
+    "preservedPriorContracts": 259,
+    "protectedPhotos": 7,
+    "journeyFaqSourceNativeNegatives": 903,
+    "actualHubSsrNegatives": 47,
+    "exactHubProgramScopeCases": 8,
+    "retainedFirstVisitComponentNegatives": 15,
+    "retainedFirstVisitProgramNegatives": 13,
+    "retainedTripBuilderNegatives": 18,
+    "actualBlogLayoutSsrCases": 54
+  },
+  "frozenBrowserQa": {
+    "desktopWidth": 1280,
+    "phoneWidth": 390,
+    "documentFitsPhone": true,
+    "explicitPairAndShowAllReset": true,
+    "reviewTimeDatetime": "2026-10-29",
+    "desktopEditorialHeadingBodyColumnsDoNotOverlap": true,
+    "phoneEditorialHeadingsStatic": true,
+    "introHeadingPx": 26.4,
+    "consentPreferencesChanged": false,
+    "bookingsSubmitted": false
+  }
 }
