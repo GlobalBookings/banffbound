@@ -5145,7 +5145,7 @@ export const blogContent3: Record<string, string> = {
 <aside class="editor-note"><strong>🏔️ Local's Note:</strong> Even we book the Parks Canada shuttle well ahead. Morning slots sell out within minutes of release — have a backup plan.</aside>
 
 <h2>Why You Can't Drive to Moraine Lake</h2>
-<p>To manage crowds and protect the area, Parks Canada permanently closed Moraine Lake Road to personal vehicles. You now reach the lake by the Parks Canada shuttle, a commercial shuttle, a guided tour, or public transit. The road (and lake access) is open roughly June 1 to October 12, 2026.</p>
+<p>To manage crowds and protect the area, Parks Canada permanently closed <a href="/blog/moraine-lake-guide">Moraine Lake</a> Road to personal vehicles. You now reach the lake by the Parks Canada shuttle, a commercial shuttle, a guided tour, or public transit. The road (and lake access) is open roughly June 1 to October 12, 2026.</p>
 
 <h2>Option 1: Parks Canada Shuttle (Cheapest)</h2>
 <p>The Parks Canada shuttle runs from the <strong>Lake Louise Park & Ride</strong> and is the most affordable option. 2026 round-trip fares:</p>

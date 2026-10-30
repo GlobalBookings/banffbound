@@ -4938,7 +4938,7 @@ export const blogContent: Record<string, string> = {
 `,
 
   'bow-valley-parkway-guide': `
-<p>The Bow Valley Parkway (Highway 1A) is one of the most beautiful and wildlife-rich roads in the Canadian Rockies. This 51 km route between Banff and Lake Louise winds through dense forest along the Bow River, offering a slower, more intimate alternative to the Trans-Canada Highway. If you see one road in Banff, it might be the Icefields Parkway — but if you want to see wildlife, this is the one.</p>
+<p>The Bow Valley Parkway (Highway 1A) is one of the most beautiful and wildlife-rich roads in the Canadian Rockies. This 51 km route between Banff and Lake Louise winds through dense forest along the Bow River, offering a slower, more intimate alternative to the Trans-Canada Highway. If you see one road in Banff, it might be the <a href="/blog/icefields-parkway-guide">Icefields Parkway</a> — but if you want to see wildlife, this is the one.</p>
 
 <aside class="editor-note"><strong>🏔️ Local's Note:</strong> I drive this route regularly and the pullouts are the real gems. Most tourists blow right past them.</aside>
 
@@ -12004,7 +12004,7 @@ export const blogContent: Record<string, string> = {
 `,
 
   'banff-road-trip-from-calgary': `
-<p>The 130-kilometre drive from Calgary to Banff is one of the most beautiful highway transitions in North America — from prairie flatlands to towering Rocky Mountain peaks in just 90 minutes. But rushing straight to Banff means missing some incredible stops along the way. Here's how to turn the Calgary-to-Banff drive into a proper scenic road trip.</p>
+<p>The 130-kilometre drive from <a href="/blog/calgary-to-banff-guide">Calgary to Banff</a> is one of the most beautiful highway transitions in North America — from prairie flatlands to towering Rocky Mountain peaks in just 90 minutes. But rushing straight to Banff means missing some incredible stops along the way. Here's how to turn the Calgary-to-Banff drive into a proper scenic road trip.</p>
 
 <h2>The Route Overview</h2>
 <p>The main route follows the Trans-Canada Highway (Highway 1) west from Calgary. It's a straightforward drive, but the scenery transforms dramatically:</p>
