@@ -62,11 +62,11 @@ async function moduleData(contents) {
 }
 // Render only these owned planner page bodies in memory. Shared layout/client
 // components are replaced by slot-preserving shells: no app build or resources.
-async function plannerSourceHtml(relative) {
+async function plannerSourceHtml(relative,renderOptions={}) {
   const filename=path.join(ROOT,relative),source=await readFile(filename,'utf8');
   const compiled=await transform(source,{filename,internalURL:'astro/compiler-runtime',resultScopedSlot:true});
   assert.deepEqual(compiled.diagnostics.filter(d=>d.severity===1),[],relative+': planner source compiles');
-  const code=compiled.code.replace(/,\s*createMetadata as \$\$createMetadata/,'').replace(/^export const \$\$metadata = [\s\S]*?(?=^const \$\$\w+ = \$\$createComponent)/m,''),require=createRequire(import.meta.url);
+  const code=compiled.code.replace(/,\s*createMetadata as \$\$createMetadata/,'').replace(/^export const \$\$metadata = [\s\S]*?(?=^const \$\$(?:Astro\b|\w+ = \$\$createComponent))/m,''),require=createRequire(import.meta.url);
   const result=await build({stdin:{contents:code,loader:'ts',resolveDir:path.dirname(filename)},bundle:true,write:false,platform:'node',format:'esm',logLevel:'silent',plugins:[{name:'release-planner-body',setup(b){
     b.onResolve({filter:/^astro\//},a=>({path:pathToFileURL(require.resolve(a.path)).href,external:true}));
     b.onResolve({filter:/\.css$/},a=>({path:a.path,namespace:'release-style'}));
@@ -74,7 +74,7 @@ async function plannerSourceHtml(relative) {
     b.onResolve({filter:/\.astro$/},a=>({path:a.path,namespace:'release-shell'}));b.onLoad({filter:/.*/,namespace:'release-shell'},()=>({contents:"import {createComponent,render,renderSlot} from 'astro/runtime/server/index.js';export default createComponent((r,p,s)=>render`${renderSlot(r,s.default)}`);"}));
   }}]});
   const Page=(await import('data:text/javascript;base64,'+Buffer.from(result.outputFiles[0].text).toString('base64'))).default;
-  const container=await experimental_AstroContainer.create();return container.renderToString(Page,{request:new Request(ORIGIN+'/'+path.basename(relative,'.astro')+'/')});
+  const container=await experimental_AstroContainer.create();return container.renderToString(Page,{request:new Request(ORIGIN+'/'+path.basename(relative,'.astro')+'/'),...renderOptions});
 }
 async function localArray(relative,name) {
   const source = await readFile(path.join(ROOT,relative),'utf8');
@@ -86,6 +86,24 @@ async function localArray(relative,name) {
 const control = (id,tag,attributes={}) => ({id,tag,attributes});
 const commonTownControls = ['where-to-stay','getting-around','winter-day','seasonal-limits','other-seasons','questions','official-sources'].map(id=>control(id,'section'));
 const plainFragment = value => normal(String(value).replace(/<[^>]*>/g,' '));
+function journeyAuthoredScope(html,elements,body,errors){
+  // BlogLayout's .article-body also contains three shared siblings after the
+  // slot. Accept that exact final-tail shape, never an arbitrary first class
+  // name that an authored insertion could use to escape the scoped checks.
+  const children=elements.filter(n=>inside(n,body)),classes=['blog-email-capture','gyg-widget-container','article-footer'];
+  const matches=classes.map(name=>children.filter(n=>hasClass(n,name)));
+  if(matches.some(nodes=>nodes.length!==1)){errors.push('Missing/ambiguous shared BlogLayout tail for authored journey scope');return body;}
+  const [capture,gyg,footer]=matches.map(nodes=>nodes[0]);
+  const direct=n=>!children.some(parent=>parent!==n&&inside(n,parent));
+  const tail=[capture,gyg,footer],directTail=children.filter(n=>n.start>=capture.start&&direct(n));
+  const form=children.filter(n=>n.tag==='form'&&inside(n,capture)),fields=children.filter(n=>n.tag==='input'&&inside(n,capture));
+  let newsletter=false;
+  try{const url=new URL(form[0]?.attributes.action);newsletter=form.length===1&&hasClass(form[0],'blog-email-form')&&url.origin==='https://banffbound.us16.list-manage.com'&&url.pathname==='/subscribe/post'&&form[0].attributes.method==='post'&&form[0].attributes.target==='_blank'&&fields.length===2&&fields.some(n=>n.attributes.name==='EMAIL'&&n.attributes.type==='email')&&fields.some(n=>n.attributes.type==='text'&&n.attributes.name?.startsWith('b_'));}catch{/* An unknown tail is not an exemption from author checks. */}
+  const panel=children.filter(n=>n.attributes['data-affiliate-embed']==='gyg-auto'&&inside(n,gyg));
+  const author=children.filter(n=>hasClass(n,'author-bio-card')&&inside(n,footer));
+  if(tail.some(n=>n.tag!=='div'||!direct(n))||capture.end>gyg.start||gyg.end>footer.start||directTail.length!==3||directTail.some((n,i)=>n!==tail[i])||!newsletter||panel.length!==1||author.length!==1){errors.push('Incorrect shared BlogLayout tail boundary or structure');return body;}
+  return {openEnd:body.openEnd,innerEnd:capture.start};
+}
 const fullMarkers = {
   'num-ti-jah-lodge': {water:'paddling, large inflatables and motorized boating as prohibited',zone:'Water Preservation Zone',connectivity:'no telephones, TVs or Wi-Fi',season:'Chalet accommodation from winter 2027'},
   'numtijah-lodge': {water:'paddling, large inflatables and motorized boating as prohibited',zone:'Water Preservation Zone',history:'1922',cafe:'closed for the season',route:'3.8 kilometres one way'},
@@ -299,6 +317,14 @@ export async function loadGuideInventory() {
     return {path:`/blog/${slug}/`,kind:'legacy-text-repair',name:post.title,noindex:false,publishedDate:date,modifiedDate:repair.correctedAt,affiliateKinds:['expedia-banner','gyg-auto'],markers:{partialCorrection:PARTIAL_LABEL},quality:{type:'partial',description:post.description,published:date,corrected:repair.correctedAt,openingHtml,opening:normal(openingHtml.replace(/<[^>]*>/g,' '))}};
   });
   additions.push(...fullReviewChecks(d));
+  // Exercise the actual BlogLayout slot and its nested newsletter, contextual
+  // affiliate fallback and author footer, rather than a bare article fragment.
+  // Shared outer chrome/components remain slot shells; no build/resources run.
+  for(const check of additions.filter(c=>c.quality.journeyGuide)){
+    const post=d.allBlogPosts.find(p=>p.slug===check.quality.slug);
+    check.quality.ssrHtml=await plannerSourceHtml('src/layouts/BlogLayout.astro',{request:new Request(ORIGIN+check.path+'?email=PRIVATE_FIXTURE&gclid=PRIVATE_CLICK'),props:{...post,curatedBookingLinks:true},slots:{default:check.quality.bodyHtml}});
+    assert.ok(!/PRIVATE_FIXTURE|PRIVATE_CLICK/.test(check.quality.ssrHtml),'Reader query is not forwarded into the article or shared booking fallbacks.');
+  }
   const contextPost=d.allBlogPosts.find(p=>p.slug==='jasper-alberta');assert.ok(contextPost&&!d.blogRedirects[contextPost.slug]);
   additions.push({path:'/blog/jasper-alberta/',kind:'article-booking-context',name:contextPost.title,noindex:false,affiliateKinds:['expedia-banner','gyg-auto'],quality:{type:'context'}});
   assert.equal(d.authoredBookingGuideSlugs.length,32);
@@ -429,9 +455,10 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
     const bodies=elements.filter(n=>hasClass(n,'article-body'));
     if(bodies.length!==1)errors.push('Missing full-review article body');
     else{
-      const anchors=elements.filter(n=>n.tag==='a'&&inside(n,bodies[0]));
+      const authored=q.journeyGuide?journeyAuthoredScope(html,elements,bodies[0],errors):bodies[0];
+      const anchors=elements.filter(n=>n.tag==='a'&&inside(n,authored));
       if(anchors.some(n=>anchors.some(parent=>parent!==n&&inside(n,parent))))errors.push('Nested anchor in full-review body');
-      const bodyText=textInside(html,bodies[0]);
+      const bodyText=textInside(html,authored);
       const bad=/natural skating rink|complimentary wi[ -]?fi|(?:canoe|kayak|paddleboard) rentals? (?:are|is) available|Maligne Canyon trail offers year-round access|Ice climbing opportunities abound in Maligne Canyon|skied the Maligne Lake road multiple times|all six (?:restaurants|venues) (?:are new|opened in 2026)|each cabin has a full kitchen|during my last visit|\$\s*\d|\bCAD\s*\d/i;
       if(bad.test(bodyText))errors.push('Unsupported inherited/current claim in full review');
       // Dated percentages on selected items are legitimate; do not equate a
@@ -472,7 +499,7 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
       if(freshBad?.test(bodyText))errors.push('Unsupported inherited/current claim in full review');
       for(const href of q.nativeReferrals??[]){const links=anchors.filter(n=>!n.hidden&&n.attributes.href===href);if(links.length!==1||links[0].attributes.target!=='_blank'||!['noopener','sponsored'].every(value=>(links[0].attributes.rel??'').split(/\s+/).includes(value)))errors.push('Missing exact authored native search/referral: '+href);}
       if(q.journeyGuide){
-        const body=bodies[0],bodyElements=elements.filter(n=>inside(n,body)),tables=bodyElements.filter(n=>n.tag==='table');
+        const body=authored,bodyElements=elements.filter(n=>inside(n,body)),tables=bodyElements.filter(n=>n.tag==='table');
         const expectedRows={'7-day-banff-itinerary':[8],'rainy-day-banff':[6],'lake-louise-village-guide':[5,5],'canmore-day-trip':[5],'banff-car-rental-tips':[4,4]}[q.slug];
         if(tables.length!==expectedRows.length||tables.some((table,i)=>table.hidden||bodyElements.filter(n=>n.tag==='tr'&&inside(n,table)).length!==expectedRows[i]||bodyElements.filter(n=>n.tag==='caption'&&inside(n,table)).length!==1))errors.push('Missing full journey comparison table rows/captions');
         if(bodyElements.filter(n=>n.tag==='details').length!==5)errors.push('Journey guide must have exactly five visible FAQ details');
@@ -814,11 +841,11 @@ export async function selfTest(){
     if(check.quality.type==='full'){
       assert.ok(analyseGuideHtml(html.replace('"datePublished":"'+isoDate(check.publishedDate)+'"','"datePublished":"2026-10-29T00:00:00.000Z"'),check,sitemap).errors.some(e=>e.includes('publication schema')));
       assert.ok(analyseGuideHtml(html.replace('"@type":"Article"','"@type":"Article","image":"https://example.com/unverified.jpg"'),check,sitemap).errors.some(e=>e.includes('photographic identity')));
-      assert.ok(analyseGuideHtml(html.replace('class="article-image-note"','class="missing-image-note"'),check,sitemap).errors.some(e=>e.includes('illustrative hero scope')));
+      assert.ok(analyseGuideHtml(html.replace(/class="article-image-note(?: [^"]*)?"/,'class="missing-image-note"'),check,sitemap).errors.some(e=>e.includes('illustrative hero scope')));
       assert.ok(analyseGuideHtml(html.replace('</body>',`<p>${PARTIAL_LABEL}</p></body>`),check,sitemap).errors.some(e=>e.includes('incorrectly labelled')));
       assert.ok(analyseGuideHtml(html.replace('"@type":"FAQPage"','"@type":"WebPage"'),check,sitemap).errors.some(e=>e.includes('FAQ schema count')));
       const badClaim=check.quality.slug.startsWith('num')?'The frozen lake becomes a natural skating rink.':check.quality.slug.startsWith('jasper')?'The Maligne Canyon trail offers year-round access.':check.quality.slug==='banff-cabin-rentals'?'Each cabin has a full kitchen.':({'banff-nightlife-guide':'Dancing Sasquatch is the current dance venue.','banff-live-music':'Every Banff Centre performance is suitable for children.','drink-deals':'Sky Bistro includes gondola admission.','icefields-parkway-guide':'Fuel is available at Crossing in winter.','banff-to-jasper-drive':'Maligne Canyon is open for winter.','lake-minnewanka-guide':'Minnewanka is open for ice fishing.','banff-gondola-guide':'The boardwalk is fully accessible.','banff-gondola-tickets-guide':'Sky Bistro reservations include gondola admission.','banff-spring-skiing':'Delirium Dive is suitable for beginners.','peyto-lake-guide':'The upper parking lot is open to all vehicles.','banff-helicopter-tours':'Rockies Heli is based in Kananaskis Village.','kananaskis-heli-tours':'Stoney Nakoda operates all winter 2026/27.','golden-bc-day-trip':'Takakkaw Falls road is open all winter.','banff-heli-skiing':'CMH Purcell includes transport.','skoki-lodge-guide':'The approach is safe for beginners.','banff-trip-cost-budget-guide':'Canmore is always cheaper.','fall-larch-season-banff':'The peak is guaranteed on September 25.','banff-in-fall':'Upper Hot Springs is open throughout October 2026.','larch-valley-hike':'The hike is8.6 km return.','sentinel-pass-hike':'Sentinel is the highest maintained trail in the Rockies.','7-day-banff-itinerary':'Seven days means seven hotel nights.','rainy-day-banff':'Cave and Basin is an indoor swimming pool.','lake-louise-village-guide':'Banff Airporter runs scheduled Lake Louise service.','canmore-day-trip':'Frozen Thunder is suitable for beginners.','banff-car-rental-tips':'AWD is essential.'}[check.quality.slug]??'All six restaurants opened in 2026.');
-      assert.ok(analyseGuideHtml(html.replace(/class="article-body"[^>]*>/,tag=>tag+`<p>${badClaim}</p>`),check,sitemap).errors.some(e=>e.includes('Unsupported inherited/current claim')));
+      assert.ok(analyseGuideHtml(html.replace(/class="article-body(?: [^"]*)?"[^>]*>/,tag=>tag+`<p>${badClaim}</p>`),check,sitemap).errors.some(e=>e.includes('Unsupported inherited/current claim')));
       if(NEW_FULL_SLUGS.includes(check.quality.slug)||Object.hasOwn(newReviewedSections,check.quality.slug)){
         const all=htmlElements(html),body=all.find(n=>hasClass(n,'article-body'));
         for(const section of check.quality.sections){
@@ -839,12 +866,20 @@ export async function selfTest(){
           const extra='<details><summary>Quote notes</summary><p>Keep your own current quote notes.</p></details>';
           const withExtra=html.replace('</div><div data-affiliate-embed',extra+'</div><div data-affiliate-embed');assert.notEqual(withExtra,html);assert.deepEqual(analyseGuideHtml(withExtra,check,sitemap).errors,[],'FAQ arrays remain independent of unrelated non-FAQ details.');
           const legacy='<a href="https://www.getyourguide.com/banff-l284/banff-gondola-admission-ticket-t556595/?partner_id=QW960HO" rel="noopener sponsored">Older route</a>';
-          assert.ok(analyseGuideHtml(html.replace(/class="article-body"[^>]*>/,tag=>tag+legacy),check,sitemap).errors.some(e=>e.includes('legacy budget marketplace')),'Archived unverified product is not a public offer.');
+          assert.ok(analyseGuideHtml(html.replace(/class="article-body(?: [^"]*)?"[^>]*>/,tag=>tag+legacy),check,sitemap).errors.some(e=>e.includes('legacy budget marketplace')),'Archived unverified product is not a public offer.');
         }
       }
       if(check.quality.journeyGuide){
         const all=htmlElements(html),body=all.find(n=>hasClass(n,'article-body'));
         const reject=(changed,label,expected='')=>{assert.notEqual(changed,html,'Real journey HTML mutation: '+label);const errors=analyseGuideHtml(changed,check,sitemap).errors;assert.ok(expected?errors.some(e=>e.includes(expected)):errors.length,label);journeyNegatives++;};
+        const capture=all.find(n=>hasClass(n,'blog-email-capture')&&inside(n,body)),gyg=all.find(n=>hasClass(n,'gyg-widget-container')&&inside(n,body)),footer=all.find(n=>hasClass(n,'article-footer')&&inside(n,body));
+        assert.ok(capture&&gyg&&footer,'Actual BlogLayout shared siblings exist in the positive fixture.');
+        assert.ok(all.some(n=>n.tag==='form'&&inside(n,capture))&&all.some(n=>n.tag==='a'&&inside(n,gyg)&&n.attributes.href===check.quality.bookingContext.tourHref)&&all.some(n=>n.tag==='a'&&inside(n,footer)&&n.attributes.href==='https://linkedin.com/in/jackchittenden'),'Existing newsletter, correct contextual search and author link remain allowed as shared layout markup.');
+        const clonedTail=html.slice(capture.start,footer.end),injected='<input name="licence-number">';
+        reject(html.slice(0,body.openEnd)+clonedTail+injected+html.slice(body.openEnd),'An exact shared-tail clone cannot hide an authored field or the rest of the article','ambiguous shared BlogLayout tail');
+        reject(html.slice(0,body.openEnd)+'<div class="article-footer">'+injected+'</div>'+html.slice(body.openEnd),'An authored footer classname cannot create a scope exemption','ambiguous shared BlogLayout tail');
+        const captureOpen=html.slice(capture.start,capture.openEnd);reject(html.slice(0,capture.start)+captureOpen.replace('blog-email-capture','unknown-email-capture')+html.slice(capture.openEnd),'Missing recognized shared-tail structure fails closed','ambiguous shared BlogLayout tail');
+        const newsletter=all.find(n=>n.tag==='form'&&inside(n,capture)),newsletterOpen=html.slice(newsletter.start,newsletter.openEnd);reject(html.slice(0,newsletter.start)+newsletterOpen.replace(/action=("[^"]*"|'[^']*')/,'action="https://example.invalid/collect"')+html.slice(newsletter.openEnd),'An unknown form is not accepted as the known shared newsletter','shared BlogLayout tail boundary or structure');
         for(const section of check.quality.sections){
           const heading=all.find(n=>n.tag==='h2'&&n.attributes.id===section.id&&inside(n,body)),next=all.find(n=>n.tag==='h2'&&n.start>heading.end&&inside(n,body)),end=next?.start??body.innerEnd,fragment=html.slice(heading.end,end);
           for(const marker of section.markers){assert.ok(fragment.includes(marker),`Scoped source-negative changes authored text: ${check.quality.slug}/${section.id}/${marker}`);reject(html.slice(0,heading.end)+fragment.replaceAll(marker,'Changed source condition')+html.slice(end),'Every separate journey gate survives: '+marker,'reviewed access/season/base requirements');}
@@ -914,7 +949,7 @@ export async function selfTest(){
       if(check.quality.slug==='kananaskis-heli-tours')assert.ok(analyseGuideHtml(html.replaceAll('does not establish whether Stoney Nakoda is operating on a particular','confirms Stoney Nakoda is operating on every'),check,sitemap).errors.some(e=>e.includes('reviewed access/season/base requirements')),'Future date availability must remain unconfirmed.');
       if(check.quality.slug==='golden-bc-day-trip'){
         for(const [from,to]of [['confirms no future opening day','guarantees the next opening day'],['May 7–October 12, 2027','January 7–October 12, 2027'],['expects previous powder experience','accepts every first-time skier'],['new season’s stops and last return','a timeless timetable'],['limited daylight and driver fatigue','unlimited evening time']])assert.ok(analyseGuideHtml(html.replaceAll(from,to),check,sitemap).errors.some(e=>e.includes('reviewed access/season/base requirements')),'Golden seasonal/ability/return boundary: '+from);
-        for(const claim of ['Return to Banff by 7pm.','Book a morning gondola ride and summit hike, then a 1pm rafting trip.','Half-day trips are suitable for beginners and families.','Golden Skybridge is open all winter.','Kicking Horse is a SkiBig3 resort.'])assert.ok(analyseGuideHtml(html.replace(/class="article-body"[^>]*>/,tag=>tag+`<p>${claim}</p>`),check,sitemap).errors.some(e=>e.includes('Unsupported inherited/current claim')),'Golden former forced itinerary/identity claim: '+claim);
+        for(const claim of ['Return to Banff by 7pm.','Book a morning gondola ride and summit hike, then a 1pm rafting trip.','Half-day trips are suitable for beginners and families.','Golden Skybridge is open all winter.','Kicking Horse is a SkiBig3 resort.'])assert.ok(analyseGuideHtml(html.replace(/class="article-body(?: [^"]*)?"[^>]*>/,tag=>tag+`<p>${claim}</p>`),check,sitemap).errors.some(e=>e.includes('Unsupported inherited/current claim')),'Golden former forced itinerary/identity claim: '+claim);
       }
       if(check.quality.heli){
         const heli=check.quality.heli;
@@ -929,12 +964,12 @@ export async function selfTest(){
       }
       if(check.quality.slug==='skoki-lodge-guide'){
         for(const [from,to]of [['11 km from the arranged upper trailhead','11 km from Fish Creek parking'],['not the summer Fish Creek shuttle process','the same process all year'],['transceiver, shovel and probe','a mobile phone'],['warning, not an asserted closure','closure until further notice'],['credit or deferral','automatic cash refunds'],['December 18, 2026–April 5, 2027','December 1, 2026–May 5, 2027']])assert.ok(analyseGuideHtml(html.replaceAll(from,to),check,sitemap).errors.length,'Skoki start/season/ability/notice/terms boundary: '+from);
-        for(const claim of ['A guide is included.','Pack delivery is included.','Weather cancellations are always refundable.','The lodge is an emergency shelter.','Walk across Ptarmigan Lake.'])assert.ok(analyseGuideHtml(html.replace(/class="article-body"[^>]*>/,tag=>tag+`<p>${claim}</p>`),check,sitemap).errors.some(e=>e.includes('Unsupported inherited/current claim')),'No invented Skoki inclusion or winter route: '+claim);
+        for(const claim of ['A guide is included.','Pack delivery is included.','Weather cancellations are always refundable.','The lodge is an emergency shelter.','Walk across Ptarmigan Lake.'])assert.ok(analyseGuideHtml(html.replace(/class="article-body(?: [^"]*)?"[^>]*>/,tag=>tag+`<p>${claim}</p>`),check,sitemap).errors.some(e=>e.includes('Unsupported inherited/current claim')),'No invented Skoki inclusion or winter route: '+claim);
       }
     }
     if(check.quality.bookingContext){
       assert.ok(analyseGuideHtml(html.replace('data-curated-booking="true"','data-curated-booking="false"'),check,sitemap).errors.some(e=>e.includes('curated booking SSR')));
-      const start=html.indexOf('data-affiliate-embed="expedia-banner"'),wrong=html.slice(0,start)+html.slice(start).replace(`href="${esc(check.quality.bookingContext.hotelHref)}"`,'href="https://www.expedia.ca/Hotel-Search?destination=WrongPlace&amp;camref=1101l3MtWX"');
+      const contextElements=htmlElements(html),panel=contextElements.find(n=>n.attributes['data-affiliate-embed']==='expedia-banner'),anchor=contextElements.find(n=>n.tag==='a'&&inside(n,panel)&&n.attributes.href===check.quality.bookingContext.hotelHref),open=html.slice(anchor.start,anchor.openEnd),wrong=html.slice(0,anchor.start)+open.replace(/href=("[^"]*"|'[^']*')/,'href="https://www.expedia.ca/Hotel-Search?destination=WrongPlace&amp;camref=1101l3MtWX"')+html.slice(anchor.openEnd);assert.notEqual(wrong,html);
       assert.ok(analyseGuideHtml(wrong,check,sitemap).errors.some(e=>e.includes('native article booking context')),'Destination mismatch must fail even with the preserved affiliate ID.');
     }
     if(check.quality.cards){const {attribute,items}=check.quality.cards;assert.ok(analyseGuideHtml(html.replace(`${attribute}="${items[0].id}"`,`${attribute}="unknown"`),check,sitemap).errors.some(e=>e.includes('guide card')));const card=htmlElements(html).find(n=>n.attributes[attribute]===items[0].id),wrong=html.slice(0,card.start)+html.slice(card.start,card.end).replace(`href="${esc(items[0].href)}"`,'href="/wrong/"')+html.slice(card.end);assert.ok(analyseGuideHtml(wrong,check,sitemap).errors.some(e=>e.includes(check.quality.type==='dining-hub'?'native deduplicated operator/menu/booking links':'native guide card')));}

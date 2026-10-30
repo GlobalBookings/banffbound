@@ -1,7 +1,7 @@
 {
   "preparedAtUTC": "2026-10-30T02:05:34.073698+00:00",
   "baselineRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
-  "status": "Authored sources and verifier frozen; focused author checks,83-body health,42real-layoutcases,5body/335publicationcomparison, independent content reviews and250-contract offlinefixtures passed; clean committed-source build pending",
+  "status": "Initial clean source passed62checks/build/strictaudit; corrected verifier authorscope using actualBlogLayout and20spoofregressions, existingHTML now250pass; final committed-source clean run pending",
   "scope": {
     "newFullReviewSlugs": [
       "7-day-banff-itinerary",
@@ -73,8 +73,10 @@
     "htmlContracts": 250,
     "preservedPriorContracts": 244,
     "protectedPhotos": 7,
-    "newGuideNegativeFixtures": 248,
+    "newGuideNegativeFixtures": 268,
     "newTripBuilderSSRNegativeFixtures": 18,
-    "passed": true
+    "passed": true,
+    "realBlogLayoutFixtures": 5,
+    "sharedTailScopeRegressions": 20
   }
 }
