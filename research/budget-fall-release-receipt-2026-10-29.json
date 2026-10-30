@@ -1,0 +1,179 @@
+{
+  "checkedAtUTC": "2026-10-30T01:44:57.246413+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/16",
+  "initialCodeCommit": "dace2a3342d2b4a25c8c48580ba3f8e70e75885b",
+  "finalCodeCommit": "7740610521abb5688118a3886dd867f4ae82f3e6",
+  "reviewedHead": "164c80802ad1ed56d10676176539e8e6caca3895",
+  "mergedRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+  "mergedAtUTC": "2026-10-30T01:38:27Z",
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-30T01:39:35.467Z",
+    "sourceRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+    "sourceFingerprint": "9bde04574db8208bd972652853455f9406151f0edf4fb7ae7ecbdc7c60778f1e"
+  },
+  "ci": {
+    "pr": {
+      "run": 40986901580,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40986901580",
+      "revision": "164c80802ad1ed56d10676176539e8e6caca3895",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123839921213,
+      "completedAt": "2026-10-30T01:38:00Z"
+    },
+    "main": {
+      "run": 40987038448,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40987038448",
+      "revision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123840364509,
+      "completedAt": "2026-10-30T01:39:49Z"
+    }
+  },
+  "cleanVerification": "research/budget-fall-clean-verification-2026-10-29.json",
+  "productionVerification": {
+    "report": "research/budget-fall-production-verification-2026-10-29.json",
+    "passed": true,
+    "htmlRoutes": 244,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "stableExactRevisionAndFingerprint": true
+  },
+  "bareUrlVerification": {
+    "report": "research/budget-fall-bare-url-verification-2026-10-29.json",
+    "passed": 7,
+    "paths": [
+      "/blog/banff-in-fall/",
+      "/blog/banff-trip-cost-budget-guide/",
+      "/blog/fall-larch-season-banff/",
+      "/blog/larch-valley-hike/",
+      "/blog/sentinel-pass-hike/",
+      "/park-pass/",
+      "/tools/"
+    ]
+  },
+  "redirectVerification": {
+    "report": "research/live-http-redirect-verification-2026-10-29.json",
+    "mappings": 40,
+    "checksPassed": 100
+  },
+  "browserProduction": {
+    "parkPass": {
+      "url": "https://banffbound.com/park-pass/#park-pass-planner",
+      "formMounted": true,
+      "defaultTotalsCAD": [
+        73.5,
+        73.5,
+        167,
+        167.5
+      ],
+      "twoSeniorsOneYouthSevenUnitsCAD": [
+        150.5,
+        171.5,
+        143,
+        167.5
+      ],
+      "annualDifferenceCAD": 7.5,
+      "carFreeGroupOptionsNotAssumed": true,
+      "oversizedPartyHidesAndClearsPrices": true,
+      "submitErrorFocus": "pass-errors",
+      "transitIgnoresInactiveInvalidCounts": true,
+      "transitHidesCoverageAndDisablesParty": true,
+      "defaultResetRestoresFourRows": true,
+      "correctedNationalParkWording": true,
+      "screenshot": "/tmp/banffbound-park-pass-live-2026-10-29.jpg"
+    },
+    "sentinelPass": {
+      "url": "https://banffbound.com/blog/sentinel-pass-hike/",
+      "originalPublication": "2026-02-20",
+      "reviewDate": "2026-10-29",
+      "curatedFlag": true,
+      "faqCount": 5,
+      "valleyTurnaroundFaqOpens": true,
+      "sharedHotelDestination": "Lake Louise, Alberta",
+      "existingAffiliateId": "1101l3MtWX"
+    },
+    "budget": {
+      "url": "https://banffbound.com/blog/banff-trip-cost-budget-guide/",
+      "originalPublication": "2026-03-01",
+      "reviewDate": "2026-10-29",
+      "curatedFlag": true,
+      "faqCount": 5,
+      "packageComparisonFaqOpens": true,
+      "nativeBudgetPlannerHandoff": true
+    },
+    "tools": {
+      "url": "https://banffbound.com/tools/#tool-directory",
+      "admissionSearchShowsOneParkPassCard": true,
+      "nativeHref": "/park-pass",
+      "resetRestores45Links": true
+    },
+    "viewportWidth": 1280,
+    "documentWidth": 1280,
+    "optionalProviderScriptAndFrameElements": 0,
+    "browserNetworkTraceClaimed": false,
+    "nativeClipboardPrintMerchantBookingOrEnquiryUsed": false,
+    "localPreviewStopped": true,
+    "phoneQA": "See clean verification: 390 by 844 across all six pages, restored and verified at 1280 before production checks."
+  },
+  "scope": {
+    "newFullReviewSlugs": [
+      "banff-trip-cost-budget-guide",
+      "fall-larch-season-banff",
+      "banff-in-fall",
+      "larch-valley-hike",
+      "sentinel-pass-hike"
+    ],
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 73,
+    "fullReviewsAfter": 78,
+    "otherCanonicalBodiesByteIdentical": 290,
+    "partialOpeningRepairs": 8,
+    "originalPublicationDatesPreserved": 335,
+    "parkPassPublishedFeeRows": 4,
+    "parkPassComparisonOptions": 4,
+    "parkPassFaqPairs": 8,
+    "parkPassLiteralRatePartyUnitCases": 1428,
+    "parkPassPublicModeCombinations": 24,
+    "archivalUnverifiedBudgetLinksRemovedFromPublic": 4,
+    "allCanonicalFactsReviewed": false
+  },
+  "preserved": [
+    "Existing routes, aliases and original publication dates",
+    "All 95 hotel identities/provider URLs",
+    "Shared reviewed trail/lake/Parkway records",
+    "Affiliate and measurement identifiers",
+    "Two valid inherited budget destination searches; four unverified routes retained only as source archives",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "getYourGuideOwnedLandingPageFunnelRetained": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "217 canonical blog bodies lack a full review; eight have bounded opening repairs.",
+    "Other legacy budget and season articles remain unreviewed; the three-day fall itinerary was already fully reviewed in lakeJourneyOverrides.",
+    "Broader property fact/photo and remaining legacy-tool reviews are incomplete.",
+    "Campaign market, budget and bids are unspecified; no paid-ad launch has occurred."
+  ],
+  "goalStatus": "active",
+  "nextReviewCandidates": {
+    "slugs": [
+      "7-day-banff-itinerary",
+      "banff-car-rental-tips",
+      "lake-louise-village-guide",
+      "canmore-day-trip",
+      "rainy-day-banff"
+    ],
+    "status": "Read-only priority audit only; full source reviews have not begun."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "preparedAtUTC": "2026-10-30T02:05:34.073698+00:00",
+  "baselineRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+  "status": "Final committed-source62checks/fullbuild/strictaudit/250builtHTML/7photo hashes and desktop-phoneQApassed; pending CI and production proof",
+  "scope": {
+    "newFullReviewSlugs": [
+      "7-day-banff-itinerary",
+      "banff-car-rental-tips",
+      "canmore-day-trip",
+      "lake-louise-village-guide",
+      "rainy-day-banff"
+    ],
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 78,
+    "fullReviewsAfter": 83,
+    "otherCanonicalBodiesByteIdentical": 290,
+    "partialOpeningRepairs": 8,
+    "originalPublicationDatesPreserved": 335,
+    "newEditableWeekTemplates": [
+      "winter-week-7",
+      "summer-week-7"
+    ],
+    "plannerTemplatesBefore": 7,
+    "plannerTemplatesAfter": 9,
+    "legacyTemplatesAndDefaultPreserved": true,
+    "newPublishedUrls": 0,
+    "allCanonicalFactsReviewed": false
+  },
+  "verificationTargets": {
+    "workflowChecks": 62,
+    "productionHTMLContractsBefore": 244,
+    "productionHTMLContractsAfter": 250,
+    "newUniqueContracts": 6,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "hostAliasMappings": 40,
+    "redirectChecks": 100,
+    "authoredBookingGuides": 32,
+    "curatedBookingContextPages": 34,
+    "bareCanonicalUrls": 7,
+    "realBlogLayoutSSRCases": 42
+  },
+  "preserved": [
+    "Existing routes, aliases and original publication dates",
+    "All 95 hotel identities/provider URLs",
+    "Shared reviewed trail/lake/Parkway records",
+    "Affiliate and measurement identifiers",
+    "Useful inherited native affiliate searches, explicitly labelled with their actual destination and scope",
+    "Seven existing planner templates and the original three-day winter default",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "getYourGuideOwnedLandingPageFunnelRetained": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "independentReview": {
+    "localAndRentalBodies": "Fresh primary source checks and source-note/body review found no material issue. Rental law/branch checks by root; local guide checks by separate reviewer. No live availability or checkout assessed.",
+    "weekAndWeatherBodies": "Actual week/weather bodies, exact seasonal template sequences, native deep links, departure scope and no-JS handoff inspected; fresh primary venue checks found no material issue. Browser/build proof remains separate."
+  },
+  "remaining": [
+    "212 canonical blog bodies lack a full review; eight have bounded opening repairs.",
+    "Broader property fact/photo and remaining legacy-tool reviews are incomplete.",
+    "Current source checks do not establish future operating dates, transport seats, room availability or terrain suitability.",
+    "Campaign market, budget and bids are unspecified; no paid-ad launch has occurred."
+  ],
+  "goalStatus": "active",
+  "offlineVerifier": {
+    "htmlContracts": 250,
+    "preservedPriorContracts": 244,
+    "protectedPhotos": 7,
+    "newGuideNegativeFixtures": 268,
+    "newTripBuilderSSRNegativeFixtures": 18,
+    "passed": true,
+    "realBlogLayoutFixtures": 5,
+    "sharedTailScopeRegressions": 20
+  },
+  "cleanVerification": "research/itinerary-bases-clean-verification-2026-10-29.json"
+}

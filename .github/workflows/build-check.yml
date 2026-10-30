@@ -75,6 +75,9 @@ jobs:
           node scripts/check-fall-season-guides.mjs
           node scripts/check-larch-hiking-guides.mjs
           node scripts/check-park-pass-planning.mjs
+          node scripts/check-itinerary-weather-guides.mjs
+          node scripts/check-local-base-guides.mjs
+          node scripts/check-car-rental-guide.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs

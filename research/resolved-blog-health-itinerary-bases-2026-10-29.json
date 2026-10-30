@@ -1,0 +1,2076 @@
+{
+  "checkedAtUTC": "2026-10-30T02:03:59.809Z",
+  "scope": "Canonical resolved article presence, source anchor structure and bounded correction labels; not a factual review of all articles.",
+  "canonicalBodies": 295,
+  "fullBodyReviews": 83,
+  "paragraphCorrections": 8,
+  "missingBodies": 0,
+  "anchorIssues": 0,
+  "records": [
+    {
+      "slug": "eating-out-in-banff",
+      "words": 1037,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-restaraunts",
+      "words": 995,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-live-music",
+      "words": 2038,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-lake-view-point",
+      "words": 1253,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-luxushotel",
+      "words": 1229,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-dinner",
+      "words": 1132,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "eat-banff",
+      "words": 1272,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "mt-norquay-road",
+      "words": 1224,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "golden-banff",
+      "words": 1299,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": true
+    },
+    {
+      "slug": "photography-tips-sunshine-gondola",
+      "words": 1380,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sky-bistro",
+      "words": 1059,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "conde-nast-banff",
+      "words": 1289,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-snowboarding",
+      "words": 810,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-whiskey",
+      "words": 1109,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "club-in-banff",
+      "words": 1090,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "jasper-to-kamloops",
+      "words": 1210,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "jasper-weather",
+      "words": 1009,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "johston-canyon",
+      "words": 1126,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "deals-in-banff",
+      "words": 1157,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": true
+    },
+    {
+      "slug": "johnstons-canyon",
+      "words": 1130,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "johnsons-canyon",
+      "words": 1197,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": true
+    },
+    {
+      "slug": "calgary-to-jasper",
+      "words": 1266,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": true
+    },
+    {
+      "slug": "jasper-town",
+      "words": 1327,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-nightclubs",
+      "words": 1153,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": true
+    },
+    {
+      "slug": "jasper-alberta",
+      "words": 1205,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-clubs",
+      "words": 1134,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": true
+    },
+    {
+      "slug": "jasper-national-park",
+      "words": 1220,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "jasper-canada",
+      "words": 1365,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "how-many-days-do-you-need-for-banff",
+      "words": 1152,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "new-places-to-eat-in-banff",
+      "words": 2142,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "num-ti-jah-lodge-hotel",
+      "words": 1116,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "ink-pots-banff-alberta",
+      "words": 907,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-summit-canada",
+      "words": 1115,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "nightclub-banff",
+      "words": 1148,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": true
+    },
+    {
+      "slug": "banff-lookout-point",
+      "words": 1262,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-outdoor-stores",
+      "words": 1420,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-bars",
+      "words": 1183,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": true
+    },
+    {
+      "slug": "chalets-for-rent-in-banff",
+      "words": 1411,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-summit-trail",
+      "words": 1427,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-view",
+      "words": 742,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "parks-canada-discovery-pass-price-2026",
+      "words": 1167,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "num-ti-jah-lodge-alberta-canada",
+      "words": 1498,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "viewpoint-banff",
+      "words": 1413,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-lake-viewpoint",
+      "words": 1238,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-restaurant-specials",
+      "words": 1419,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "drink-deals",
+      "words": 1864,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-summit",
+      "words": 1703,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-summit-viewpoint",
+      "words": 1285,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-boundary-lodge",
+      "words": 783,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "numtijah-lodge",
+      "words": 1511,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "fancy-hotel-in-banff",
+      "words": 1340,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-glacier-falls",
+      "words": 1548,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "num-ti-jah-lodge",
+      "words": 1586,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "takakkaw-falls-to-banff",
+      "words": 1494,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "kananaskis-heli-tours",
+      "words": 2062,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-bridge",
+      "words": 1295,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-admission",
+      "words": 1140,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-hilton",
+      "words": 807,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-entry-fee",
+      "words": 1225,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-lake",
+      "words": 1331,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sky-bistro-banff",
+      "words": 1159,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "admission-ticket-to-golden-skybridge",
+      "words": 1211,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "best-things-to-do-in-banff-2026",
+      "words": 1565,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-gondola-tickets-guide",
+      "words": 1967,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "best-banff-hiking-trails-guide",
+      "words": 1325,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-weather-best-time-to-visit",
+      "words": 841,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "best-banff-restaurants-where-to-eat",
+      "words": 1268,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-trip-cost-budget-guide",
+      "words": 3015,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sandman-banff",
+      "words": 1203,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sandman-canmore",
+      "words": 1305,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sandman-hotel-canmore",
+      "words": 1444,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "best-time-to-visit-banff",
+      "words": 461,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "how-to-get-to-banff",
+      "words": 428,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "3-day-banff-itinerary",
+      "words": 524,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "7-day-banff-itinerary",
+      "words": 2558,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "best-hikes-in-banff",
+      "words": 678,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "lake-louise-complete-guide",
+      "words": 1004,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "moraine-lake-guide",
+      "words": 1073,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-in-winter",
+      "words": 675,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-in-summer",
+      "words": 373,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-on-a-budget",
+      "words": 336,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "where-to-stay-in-banff",
+      "words": 347,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-food-guide",
+      "words": 467,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "icefields-parkway-guide",
+      "words": 1662,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-wildlife-guide",
+      "words": 387,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-park-pass-guide",
+      "words": 313,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-skiing-guide",
+      "words": 1375,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-with-kids",
+      "words": 359,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-photography-spots",
+      "words": 469,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "romantic-getaway-banff",
+      "words": 1003,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "rainy-day-banff",
+      "words": 2251,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "fall-larch-season-banff",
+      "words": 1894,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-valley-parkway-guide",
+      "words": 766,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-camping-guide",
+      "words": 672,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-craft-beer-guide",
+      "words": 598,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "accessible-banff",
+      "words": 664,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-christmas-guide",
+      "words": 769,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "johnston-canyon-guide",
+      "words": 881,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-gondola-guide",
+      "words": 1911,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "lake-agnes-tea-house",
+      "words": 806,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sunshine-village-guide",
+      "words": 795,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "lake-louise-ski-resort",
+      "words": 837,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-hot-springs-guide",
+      "words": 764,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-gondola-vs-sulphur-mountain",
+      "words": 570,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-to-jasper-drive",
+      "words": 1870,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-dog-friendly",
+      "words": 762,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-nightlife-guide",
+      "words": 2513,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "peyto-lake-guide",
+      "words": 2177,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "cave-and-basin-guide",
+      "words": 682,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-in-spring",
+      "words": 653,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-in-fall",
+      "words": 2019,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-backcountry-guide",
+      "words": 732,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-bear-safety",
+      "words": 840,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-sunrise-spots",
+      "words": 771,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-winter-driving",
+      "words": 689,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-free-activities",
+      "words": 781,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-stargazing-guide",
+      "words": 1005,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-solo-travel",
+      "words": 690,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-honeymoon-guide",
+      "words": 621,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-lgbtq-travel",
+      "words": 510,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-senior-travel",
+      "words": 594,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-group-travel",
+      "words": 561,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "calgary-to-banff-guide",
+      "words": 576,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-packing-list",
+      "words": 573,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-travel-costs",
+      "words": 440,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-shoulder-season",
+      "words": 837,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-new-years-eve",
+      "words": 842,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-valentines-day",
+      "words": 516,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-canada-day",
+      "words": 539,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-thanksgiving",
+      "words": 513,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-snowdays-festival",
+      "words": 783,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-film-festival",
+      "words": 539,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "whyte-museum-guide",
+      "words": 487,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-park-museum",
+      "words": 525,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "fairmont-banff-springs",
+      "words": 587,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "fairmont-chateau-lake-louise",
+      "words": 591,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-hostel-guide",
+      "words": 541,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-cabin-rentals",
+      "words": 2294,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-rv-guide",
+      "words": 616,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "lake-louise-village-guide",
+      "words": 2252,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-town-guide",
+      "words": 662,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bear-street-banff",
+      "words": 627,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "tunnel-mountain-hike",
+      "words": 650,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sentinel-pass-hike",
+      "words": 2207,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "plain-of-six-glaciers",
+      "words": 639,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "lake-minnewanka-guide",
+      "words": 2346,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "two-jack-lake-guide",
+      "words": 915,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-lake-guide",
+      "words": 614,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "emerald-lake-guide",
+      "words": 673,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "vermilion-lakes-guide",
+      "words": 692,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-horseback-riding",
+      "words": 618,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-ice-walk-guide",
+      "words": 682,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-snowshoeing-guide",
+      "words": 673,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-dog-sledding",
+      "words": 728,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-ice-skating",
+      "words": 600,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-northern-lights",
+      "words": 714,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-via-ferrata",
+      "words": 622,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-white-water-rafting",
+      "words": 563,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-fly-fishing",
+      "words": 710,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-golf-guide",
+      "words": 575,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "mt-norquay-guide",
+      "words": 738,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-food-truck-guide",
+      "words": 544,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-brunch-guide",
+      "words": 628,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-apres-ski",
+      "words": 765,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-coffee-guide",
+      "words": 659,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-vegan-guide",
+      "words": 654,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "canmore-day-trip",
+      "words": 2452,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "best-banff-restaurants-2026",
+      "words": 624,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-fine-dining",
+      "words": 598,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-pizza-guide",
+      "words": 387,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-breakfast-spots",
+      "words": 456,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-happy-hour",
+      "words": 438,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-ice-cream-guide",
+      "words": 334,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-distillery-guide",
+      "words": 1463,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-rooftop-patios",
+      "words": 439,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "5-day-banff-itinerary",
+      "words": 555,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "winter-banff-itinerary",
+      "words": 664,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "summer-banff-itinerary",
+      "words": 1120,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "fall-banff-itinerary",
+      "words": 1052,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-wellness-weekend",
+      "words": 791,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-adventure-weekend",
+      "words": 452,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-photo-tour-itinerary",
+      "words": 626,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "things-to-do-lake-louise",
+      "words": 605,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "things-to-do-winter-banff",
+      "words": 716,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "things-to-do-summer-banff",
+      "words": 474,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-luxury-experience",
+      "words": 497,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-hidden-gems",
+      "words": 757,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-first-time-tips",
+      "words": 643,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-mistakes-to-avoid",
+      "words": 696,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-vs-jasper",
+      "words": 796,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-from-toronto",
+      "words": 578,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-from-edmonton",
+      "words": 610,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "cascade-mountain-hike",
+      "words": 466,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "ha-ling-peak",
+      "words": 481,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sunshine-meadows-hike",
+      "words": 479,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "cory-pass-trail",
+      "words": 502,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "boom-lake-hike",
+      "words": 427,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "helen-lake-hike",
+      "words": 523,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "skoki-lodge-guide",
+      "words": 2454,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-legacy-trail",
+      "words": 952,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "spray-river-trail",
+      "words": 1003,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-wildlife-overpass",
+      "words": 498,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-dark-sky",
+      "words": 549,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-waterfalls",
+      "words": 741,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-hot-springs-history",
+      "words": 732,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-indigenous-history",
+      "words": 630,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-railway-history",
+      "words": 642,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-wildflower-guide",
+      "words": 474,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-bird-watching",
+      "words": 582,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-rock-climbing",
+      "words": 488,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-trail-running",
+      "words": 545,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-mountain-biking",
+      "words": 1070,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-geocaching",
+      "words": 429,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-wellness-retreats",
+      "words": 939,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "kananaskis-day-trip",
+      "words": 463,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "golden-bc-day-trip",
+      "words": 2476,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-to-vancouver",
+      "words": 537,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-family-summer",
+      "words": 767,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-family-winter",
+      "words": 772,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-toddler-guide",
+      "words": 728,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-teen-activities",
+      "words": 936,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-cross-country-skiing",
+      "words": 719,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-fat-biking",
+      "words": 729,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-tubing-guide",
+      "words": 634,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-heli-skiing",
+      "words": 2588,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-ski-touring",
+      "words": 714,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-winter-photography",
+      "words": 835,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-summer-wildlife",
+      "words": 739,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-elk-rut",
+      "words": 711,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-grizzly-bears",
+      "words": 786,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-moose-guide",
+      "words": 665,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-mountain-goats",
+      "words": 674,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-canada-150",
+      "words": 778,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-climate-change",
+      "words": 734,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-conservation",
+      "words": 745,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-volunteer-opportunities",
+      "words": 672,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-working-holiday",
+      "words": 719,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-digital-nomad",
+      "words": 796,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-camping-lake-minnewanka",
+      "words": 730,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-camping-tunnel-mountain",
+      "words": 706,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-backcountry-camping",
+      "words": 786,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-glamping",
+      "words": 783,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-sunset-spots",
+      "words": 761,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-picnic-spots",
+      "words": 595,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-swimming-spots",
+      "words": 587,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-proposal-spots",
+      "words": 622,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-elopement-guide",
+      "words": 590,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-road-trip-from-calgary",
+      "words": 604,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-lake-cruise",
+      "words": 542,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-helicopter-tours",
+      "words": 1969,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-caving-guide",
+      "words": 559,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-yoga-guide",
+      "words": 537,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-marathon-guide",
+      "words": 568,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-food-festival",
+      "words": 504,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-farm-to-table",
+      "words": 526,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-steakhouses",
+      "words": 531,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-sushi-guide",
+      "words": 488,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-family-restaurants",
+      "words": 528,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-late-night-eats",
+      "words": 531,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-takeout-guide",
+      "words": 548,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-scenic-drives-fall",
+      "words": 637,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-spring-skiing",
+      "words": 2042,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-aurora-borealis",
+      "words": 666,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-chinook-winds",
+      "words": 698,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "bow-falls-walk",
+      "words": 613,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "fenland-trail-banff",
+      "words": 605,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sundance-canyon-hike",
+      "words": 720,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "parker-ridge-hike",
+      "words": 712,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "sulphur-mountain-hike",
+      "words": 751,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "c-level-cirque",
+      "words": 663,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "ink-pots-hike",
+      "words": 728,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "larch-valley-hike",
+      "words": 2092,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "healy-pass-hike",
+      "words": 1124,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-accessible-hikes",
+      "words": 833,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-winter-hiking",
+      "words": 630,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-scrambling-guide",
+      "words": 744,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-trail-conditions",
+      "words": 696,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-avalanche-safety",
+      "words": 883,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-camping-reservations",
+      "words": 732,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-park-bus",
+      "words": 819,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-car-rental-tips",
+      "words": 2471,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-mobile-connectivity",
+      "words": 745,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-photography-gear",
+      "words": 806,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-drone-rules",
+      "words": 749,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-pet-friendly-hotels",
+      "words": 692,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-luxury-hotels",
+      "words": 1676,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-boutique-hotels",
+      "words": 719,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-airbnb-guide",
+      "words": 706,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-ski-in-ski-out",
+      "words": 588,
+      "anchorIssues": 0,
+      "fullBodyReview": true,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "lake-louise-hotels",
+      "words": 794,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "canmore-hotels",
+      "words": 736,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "banff-summer-crowds",
+      "words": 814,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "lake-minnewanka-cruise-tickets",
+      "words": 559,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "columbia-icefield-adventure-tickets",
+      "words": 514,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    },
+    {
+      "slug": "moraine-lake-shuttle-guide",
+      "words": 578,
+      "anchorIssues": 0,
+      "fullBodyReview": false,
+      "openingTextCorrection": false
+    }
+  ]
+}

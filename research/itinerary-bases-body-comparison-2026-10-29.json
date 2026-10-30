@@ -1,0 +1,73 @@
+{
+  "checkedAtUTC": "2026-10-30T02:03:59.894Z",
+  "passed": true,
+  "referenceBaselineRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+  "sourceBaseline": {
+    "archiveSourceCommit": "7740610521abb5688118a3886dd867f4ae82f3e6",
+    "archiveRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-budget-fall-clean-lmkjdosb",
+    "exactReferenceRevisionCheckout": false,
+    "selectedAppSourceEquivalent": true,
+    "observedArchiveFingerprint": "9bde04574db8208bd972652853455f9406151f0edf4fb7ae7ecbdc7c60778f1e",
+    "savedProductionReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T01:39:35.467Z",
+      "sourceRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+      "sourceFingerprint": "9bde04574db8208bd972652853455f9406151f0edf4fb7ae7ecbdc7c60778f1e"
+    },
+    "evidenceFiles": [
+      "/tmp/banffbound-budget-fall-clean-summary.json",
+      "/tmp/banffbound-budget-fall-live-build-info.json"
+    ],
+    "note": "Compared with the retained Gitless clean archive from 7740610. Its freshly recomputed app-source-v2 fingerprint equals the saved live652ac98 deployment fingerprint; selected source includes the blog data and registry. This is application-source equivalence, not a fresh Git checkout of the merge or a new live deployment check."
+  },
+  "scope": "Resolved canonical article body bytes and all original publication dates. Metadata, generic booking contexts, tools pages and discovery links are separate integration/QA scopes.",
+  "canonical": 295,
+  "replacedBodies": 5,
+  "otherBodiesByteIdentical": 290,
+  "changedSlugs": [
+    "7-day-banff-itinerary",
+    "banff-car-rental-tips",
+    "canmore-day-trip",
+    "lake-louise-village-guide",
+    "rainy-day-banff"
+  ],
+  "changedBodyHashes": [
+    {
+      "slug": "7-day-banff-itinerary",
+      "before": "fd4d97dc76b9987b90ac20ac2051482715d64651fefa7ba8855bf76e3c430d53",
+      "after": "6d99fa3b81ab155006edd702d348046e65a97158a3ef57b060c8241cce2df39c"
+    },
+    {
+      "slug": "banff-car-rental-tips",
+      "before": "4a4797bd544a2b5c0296bf9ee622565bc09458d4fa15c749ff9287aa52d266b5",
+      "after": "ec25097ea96dcd166fc7cfc4d4a0735a7392a990a2c0e06313b8fc0937d3e4b7"
+    },
+    {
+      "slug": "canmore-day-trip",
+      "before": "3784c6b53270abbe650a2606d8162c312555cf530abf5ce071e3799bc0e5f200",
+      "after": "59f868541d80288bcc7ac4c499a6cc44be09cc87d01177ce8ef48b02132c23e4"
+    },
+    {
+      "slug": "lake-louise-village-guide",
+      "before": "09737cbbdd187bb116af9844d7779a8acf8c32434c05967ebab18d2792e54a54",
+      "after": "9741452530988fceb88098dabd2e80643caf12ff74250e3e2d2a924ad0153bf1"
+    },
+    {
+      "slug": "rainy-day-banff",
+      "before": "83868805bf838d0711ca2f7b2701a03d6ee8700d75d6d619e2cfe141d4fac2ed",
+      "after": "e13073fc0431ec8538457a729dac65e53e8c69168b71dc46dd8a4be06c731035"
+    }
+  ],
+  "fullBodyReviews": {
+    "before": 78,
+    "after": 83
+  },
+  "partialCorrections": {
+    "before": 8,
+    "after": 8
+  },
+  "originalPublicationsPreserved": 335,
+  "originalPublicationSha256": "b4415b75aebb304350fc15ed0565a90cff66935f2bf57e00686b06a229f18008"
+}

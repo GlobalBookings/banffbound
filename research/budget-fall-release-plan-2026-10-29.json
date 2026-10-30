@@ -1,7 +1,7 @@
 {
   "preparedAtUTC": "2026-10-30T01:19:37.409402+00:00",
   "baselineRevision": "6a475709199429f8df246b935188ec23f87d8125",
-  "status": "Final committed-source 59 checks, full build, strict audit, 244 built HTML contracts, 7 photo hashes and desktop/phone QA passed; pending CI and production proof",
+  "status": "Merged and production verified: exact revision and fingerprint; PR/main CI; 244 HTML contracts, 7 photo hashes, 7 bare canonical URLs, 100 redirect checks and browser interaction QA passed",
   "scope": {
     "newFullReviewSlugs": [
       "banff-trip-cost-budget-guide",
@@ -55,10 +55,24 @@
   },
   "remaining": [
     "217 canonical blog bodies lack a full review; eight have bounded opening repairs.",
-    "The separate fall itinerary and other legacy budget/season articles remain unreviewed.",
+    "Other legacy budget and season articles remain unreviewed; the three-day fall itinerary was already fully reviewed in lakeJourneyOverrides.",
     "Broader property fact/photo and remaining legacy-tool reviews are incomplete.",
     "Campaign market, budget and bids are unspecified; no paid-ad launch has occurred."
   ],
   "goalStatus": "active",
-  "cleanVerification": "research/budget-fall-clean-verification-2026-10-29.json"
+  "cleanVerification": "research/budget-fall-clean-verification-2026-10-29.json",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/16",
+  "mergedRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+  "productionVerification": "research/budget-fall-production-verification-2026-10-29.json",
+  "releaseReceipt": "research/budget-fall-release-receipt-2026-10-29.json",
+  "nextReviewCandidates": {
+    "slugs": [
+      "7-day-banff-itinerary",
+      "banff-car-rental-tips",
+      "lake-louise-village-guide",
+      "canmore-day-trip",
+      "rainy-day-banff"
+    ],
+    "status": "Read-only priority audit only; full source reviews have not begun."
+  }
 }
