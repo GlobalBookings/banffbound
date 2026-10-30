@@ -43,12 +43,12 @@ const quoteLinks = [
         <div id="budget-errors" class="budget-errors" role="alert" tabindex="-1" hidden></div>
       </form>
       <aside class="budget-results" aria-label="Your budget breakdown" tabindex="0">
-        <div class="results-heading"><span class="eyebrow">Your entered amounts</span><h2>The whole-trip view</h2><p class="help">All displayed money is CAD. A calculated budget is not a booking quote or a promise of availability.</p></div>
+        <div class="results-heading"><span class="eyebrow">Your entered amounts</span><h2>The whole-trip view</h2><p class="help">All displayed money is CAD. A calculated budget is not a booking quote or a promise of availability.</p><p class="budget-comparison" id="budget-comparison" role="status" aria-live="polite">Add Plan B to compare two budgets for the same trip.</p></div>
         {planIds.map(id => <section id={`budget-${id}-result`} class="plan-result" aria-labelledby={`budget-${id}-heading`} hidden={id === 'b'}><h3 id={`budget-${id}-heading`}>Plan {id.toUpperCase()}</h3><p class="budget-total" id={`budget-${id}-total`}>No total yet</p><p class="result-summary" id={`budget-${id}-summary`}>Enter your own amounts. Blank costs stay unknown.</p>
           <table><caption class="sr-only">Plan {id.toUpperCase()} category breakdown in CAD</caption><thead class="sr-only"><tr><th scope="col">Cost</th><th scope="col">Amount and basis</th></tr></thead><tbody>{tripBudgetCategories.map(category => <tr data-budget-row={category.id}><th scope="row">{category.label}</th><td><span data-budget-value>Not entered</span><small data-budget-detail></small></td></tr>)}</tbody></table>
           <dl class="budget-totals"><div><dt>Entered costs</dt><dd id={`budget-${id}-subtotal`}>—</dd></div><div><dt>Your extra reserve</dt><dd id={`budget-${id}-reserve`}>—</dd></div><div><dt>Equal split / person</dt><dd id={`budget-${id}-perperson`}>—</dd></div><div><dt>Equal split / person / travel day</dt><dd id={`budget-${id}-daily`}>—</dd></div></dl>
         </section>)}
-        <p class="budget-comparison" id="budget-comparison" role="status" aria-live="polite">Add Plan B to compare two budgets for the same trip.</p><p class="help">An equal split is a planning average, not each traveller’s bill. Compare room type, transport time, inclusions and cancellation terms alongside the amounts.</p><button type="button" id="budget-print" class="btn btn-outline" hidden>Print budget / worksheet</button>
+        <p class="help">An equal split is a planning average, not each traveller’s bill. Compare room type, transport time, inclusions and cancellation terms alongside the amounts.</p><button type="button" id="budget-print" class="btn btn-outline" hidden>Print budget / worksheet</button>
       </aside>
     </div>
     <noscript><p class="manual-notice">The interactive calculator needs JavaScript. The complete worksheet below works without it and can be printed using your browser.</p></noscript>
