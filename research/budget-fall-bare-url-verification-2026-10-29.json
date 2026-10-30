@@ -1,0 +1,574 @@
+{
+  "checkedAtUTC": "2026-10-30T01:40:52.729Z",
+  "mode": "Bare canonical GETs; no query cache busters or redirect following",
+  "expected": {
+    "sourceRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+    "sourceFingerprint": "9bde04574db8208bd972652853455f9406151f0edf4fb7ae7ecbdc7c60778f1e"
+  },
+  "buildInfoBefore": {
+    "requestedUrl": "https://banffbound.com/build-info.json",
+    "observedUrl": "https://banffbound.com/build-info.json",
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "date": "Fri, 30 Oct 2026 01:40:53 GMT",
+      "cache-control": "public,max-age=10,s-maxage=86400",
+      "etag": "W/\"e6c0cdb80fd81e68c7c54d4e6853ccde\"",
+      "last-modified": "Fri, 30 Oct 2026 01:39:40 GMT",
+      "cf-cache-status": "MISS"
+    },
+    "bytes": 512,
+    "receipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T01:39:35.467Z",
+      "sourceRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+      "sourceFingerprint": "9bde04574db8208bd972652853455f9406151f0edf4fb7ae7ecbdc7c60778f1e"
+    },
+    "errors": []
+  },
+  "buildInfoAfter": {
+    "requestedUrl": "https://banffbound.com/build-info.json",
+    "observedUrl": "https://banffbound.com/build-info.json",
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "date": "Fri, 30 Oct 2026 01:40:58 GMT",
+      "age": "4",
+      "cache-control": "public,max-age=10,s-maxage=86400",
+      "etag": "W/\"e6c0cdb80fd81e68c7c54d4e6853ccde\"",
+      "last-modified": "Fri, 30 Oct 2026 01:39:40 GMT",
+      "cf-cache-status": "HIT"
+    },
+    "bytes": 512,
+    "receipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T01:39:35.467Z",
+      "sourceRevision": "652ac987dab7ef832343a00a6f2873053b14ac8a",
+      "sourceFingerprint": "9bde04574db8208bd972652853455f9406151f0edf4fb7ae7ecbdc7c60778f1e"
+    },
+    "errors": []
+  },
+  "stableBuildReceipt": true,
+  "sitemap": {
+    "index": {
+      "requestedUrl": "https://banffbound.com/sitemap-index.xml",
+      "observedUrl": "https://banffbound.com/sitemap-index.xml",
+      "status": 200,
+      "headers": {
+        "content-type": "text/xml; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 01:40:54 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "etag": "W/\"fc356e8ff3d1d552a74866a835e13f62\"",
+        "last-modified": "Fri, 30 Oct 2026 01:39:54 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 185
+    },
+    "files": [
+      {
+        "requestedUrl": "https://banffbound.com/sitemap-0.xml",
+        "observedUrl": "https://banffbound.com/sitemap-0.xml",
+        "status": 200,
+        "headers": {
+          "content-type": "text/xml; charset=utf-8",
+          "date": "Fri, 30 Oct 2026 01:40:54 GMT",
+          "cache-control": "public,max-age=10,s-maxage=86400",
+          "etag": "W/\"a2afbaecf07855e1d2351c71344b9270\"",
+          "last-modified": "Fri, 30 Oct 2026 01:39:54 GMT",
+          "cf-cache-status": "MISS"
+        },
+        "bytes": 77002,
+        "urlCount": 517,
+        "errors": []
+      }
+    ],
+    "urlCount": 517,
+    "buildInfoExcluded": true,
+    "errors": []
+  },
+  "checks": [
+    {
+      "path": "/blog/banff-in-fall/",
+      "kind": "full-guide-review",
+      "requestedUrl": "https://banffbound.com/blog/banff-in-fall/",
+      "observedUrl": "https://banffbound.com/blog/banff-in-fall/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 01:40:54 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 01:39:40 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 79969,
+      "expectedTitle": "Banff in September & October: Fall Travel and Base Planning | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff in September & October: Fall Travel and Base Planning | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/blog/banff-in-fall/"
+        ],
+        "headings": [
+          "Banff in September & October: Fall Travel and Base Planning"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 4,
+          "types": [
+            "Answer",
+            "Article",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": [
+            {
+              "headline": "Banff in September & October: Fall Travel and Base Planning",
+              "datePublished": "2026-02-14T00:00:00.000Z",
+              "dateModified": "2026-10-29T00:00:00.000Z"
+            }
+          ]
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/banff-trip-cost-budget-guide/",
+      "kind": "full-guide-review",
+      "requestedUrl": "https://banffbound.com/blog/banff-trip-cost-budget-guide/",
+      "observedUrl": "https://banffbound.com/blog/banff-trip-cost-budget-guide/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 01:40:55 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 01:39:40 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 87235,
+      "expectedTitle": "Banff Trip Budget: Winter & Summer Quotes, Bases and Inclusions | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Trip Budget: Winter & Summer Quotes, Bases and Inclusions | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/blog/banff-trip-cost-budget-guide/"
+        ],
+        "headings": [
+          "Banff Trip Budget: Winter & Summer Quotes, Bases and Inclusions"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 4,
+          "types": [
+            "Answer",
+            "Article",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": [
+            {
+              "headline": "Banff Trip Budget: Winter & Summer Quotes, Bases and Inclusions",
+              "datePublished": "2026-03-01T00:00:00.000Z",
+              "dateModified": "2026-10-29T00:00:00.000Z"
+            }
+          ]
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/fall-larch-season-banff/",
+      "kind": "full-guide-review",
+      "requestedUrl": "https://banffbound.com/blog/fall-larch-season-banff/",
+      "observedUrl": "https://banffbound.com/blog/fall-larch-season-banff/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 01:40:55 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 01:39:40 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 78685,
+      "expectedTitle": "Banff Larch Season: Timing, Trail Choices & Trip Preparation | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Larch Season: Timing, Trail Choices & Trip Preparation | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/blog/fall-larch-season-banff/"
+        ],
+        "headings": [
+          "Banff Larch Season: Timing, Trail Choices & Trip Preparation"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 4,
+          "types": [
+            "Answer",
+            "Article",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": [
+            {
+              "headline": "Banff Larch Season: Timing, Trail Choices & Trip Preparation",
+              "datePublished": "2026-02-16T00:00:00.000Z",
+              "dateModified": "2026-10-29T00:00:00.000Z"
+            }
+          ]
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/larch-valley-hike/",
+      "kind": "full-guide-review",
+      "requestedUrl": "https://banffbound.com/blog/larch-valley-hike/",
+      "observedUrl": "https://banffbound.com/blog/larch-valley-hike/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 01:40:56 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 01:39:40 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 79992,
+      "expectedTitle": "Larch Valley Hike: Minnestimma Lakes, Moraine Access & Return | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Larch Valley Hike: Minnestimma Lakes, Moraine Access & Return | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/blog/larch-valley-hike/"
+        ],
+        "headings": [
+          "Larch Valley Hike: Minnestimma Lakes, Moraine Access & Return"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 4,
+          "types": [
+            "Answer",
+            "Article",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": [
+            {
+              "headline": "Larch Valley Hike: Minnestimma Lakes, Moraine Access & Return",
+              "datePublished": "2025-09-20T00:00:00.000Z",
+              "dateModified": "2026-10-29T00:00:00.000Z"
+            }
+          ]
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/blog/sentinel-pass-hike/",
+      "kind": "full-guide-review",
+      "requestedUrl": "https://banffbound.com/blog/sentinel-pass-hike/",
+      "observedUrl": "https://banffbound.com/blog/sentinel-pass-hike/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 01:40:56 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 01:39:40 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 80759,
+      "expectedTitle": "Sentinel Pass via Larch Valley: Trail, Transport & Return Plan | BanffBound",
+      "expectedFaqQuestions": 5,
+      "inSitemap": true,
+      "facts": {
+        "title": "Sentinel Pass via Larch Valley: Trail, Transport & Return Plan | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/blog/sentinel-pass-hike/"
+        ],
+        "headings": [
+          "Sentinel Pass via Larch Valley: Trail, Transport & Return Plan"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 4,
+          "types": [
+            "Answer",
+            "Article",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Person",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            5
+          ],
+          "visibleDetailsCount": 5,
+          "articles": [
+            {
+              "headline": "Sentinel Pass via Larch Valley: Trail, Transport & Return Plan",
+              "datePublished": "2026-02-20T00:00:00.000Z",
+              "dateModified": "2026-10-29T00:00:00.000Z"
+            }
+          ]
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/park-pass/",
+      "kind": "park-admission-planner",
+      "requestedUrl": "https://banffbound.com/park-pass/",
+      "observedUrl": "https://banffbound.com/park-pass/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 01:40:57 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 01:39:54 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 75309,
+      "expectedTitle": "Banff Park Pass Guide — Admission Fees & Pass Calculator | BanffBound",
+      "expectedFaqQuestions": 8,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Park Pass Guide — Admission Fees & Pass Calculator | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/park-pass/"
+        ],
+        "headings": [
+          "Banff Park Pass Guide"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "Answer",
+            "BreadcrumbList",
+            "FAQPage",
+            "ImageObject",
+            "ListItem",
+            "Organization",
+            "Question",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 1,
+          "faqQuestionCounts": [
+            8
+          ],
+          "visibleDetailsCount": 8,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [],
+      "errors": [],
+      "passed": true
+    },
+    {
+      "path": "/tools/",
+      "kind": "directory",
+      "requestedUrl": "https://banffbound.com/tools/",
+      "observedUrl": "https://banffbound.com/tools/",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 30 Oct 2026 01:40:57 GMT",
+        "cache-control": "public,max-age=10,s-maxage=86400",
+        "last-modified": "Fri, 30 Oct 2026 01:39:54 GMT",
+        "cf-cache-status": "MISS"
+      },
+      "bytes": 92758,
+      "expectedTitle": "Banff Planning Tools & Guides — Free Trip Planners | BanffBound",
+      "expectedFaqQuestions": null,
+      "inSitemap": true,
+      "facts": {
+        "title": "Banff Planning Tools & Guides — Free Trip Planners | BanffBound",
+        "titleCount": 1,
+        "canonicals": [
+          "https://banffbound.com/tools/"
+        ],
+        "headings": [
+          "Banff Planning Tools"
+        ],
+        "metaRobots": [],
+        "headerRobots": "",
+        "indexable": true,
+        "schema": {
+          "documentCount": 3,
+          "types": [
+            "BreadcrumbList",
+            "CollectionPage",
+            "ImageObject",
+            "ItemList",
+            "ListItem",
+            "Organization",
+            "WebPage",
+            "WebSite"
+          ],
+          "faqPageCount": 0,
+          "faqQuestionCounts": [],
+          "visibleDetailsCount": 0,
+          "articles": []
+        }
+      },
+      "discoveryLinks": [
+        {
+          "href": "/park-pass",
+          "expectedLabel": "Park Pass & Admission Planner",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🎫 Park Pass & Admission Planner Check the journey, age bands and existing passes, then compare dated daily and Discovery admission fees."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/trip-cost",
+          "expectedLabel": "Trip Cost Calculator",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "💰 Trip Cost Calculator Build and compare two trip budgets using your own CAD quotes, with explicit cost units, missing items and a reserve."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/altitude-guide",
+          "expectedLabel": "Altitude & Elevation Guide",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "⛰️ Altitude & Elevation Guide Compare named elevation points, five visitor journeys and the questions for an overnight plan."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/larch-season",
+          "expectedLabel": "Larch Season Planner",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🍂 Larch Season Planner Compare five hiking endpoints, seasonal transport and autumn timing with official source links."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/eat-and-drink/#dining-finder",
+          "expectedLabel": "Dining Finder",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🍽️ Dining Finder Filter 32 venue entries by area and meal format, with sourced menus, contacts, booking routes and material notices."
+          ],
+          "passed": true
+        },
+        {
+          "href": "/blog/banff-heli-skiing/#heli-ski-planner",
+          "expectedLabel": "Heli-Ski Trip Questions",
+          "source": "src/pages/tools.astro",
+          "count": 1,
+          "observedLabels": [
+            "🚁 Heli-Ski Trip Questions Compare two BC base journeys and build the transport, overnight and equipment questions for an operator enquiry."
+          ],
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "finishedAtUTC": "2026-10-30T01:40:58.050Z"
+}

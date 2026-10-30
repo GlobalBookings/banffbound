@@ -4,17 +4,18 @@ export function getArticleBookingContext(slug: unknown, curatedBookingLinks = fa
   const bowLake = typeof slug === 'string' && ['numtijah-lodge','num-ti-jah-lodge'].includes(slug);
   const skoki = slug === 'skoki-lodge-guide';
   const lakeHike = typeof slug === 'string' && ['larch-valley-hike','sentinel-pass-hike'].includes(slug);
-  const lakeLouise = bowLake || skoki || lakeHike;
+  const lakeLouise = bowLake || skoki || lakeHike || slug === 'lake-louise-village-guide';
+  const canmore = slug === 'canmore-day-trip';
   const golden = slug === 'golden-bc-day-trip';
-  const destination = jasper ? 'Jasper, Alberta' : lakeLouise ? 'Lake Louise, Alberta' : golden ? 'Golden, British Columbia' : 'Banff, Alberta';
-  const hotelLabel = jasper ? 'Jasper' : lakeLouise ? 'Lake Louise area' : golden ? 'Golden' : 'Banff';
-  const tourLabel = jasper ? 'Jasper' : lakeLouise ? 'Lake Louise' : golden ? 'Golden' : 'Banff';
+  const destination = jasper ? 'Jasper, Alberta' : lakeLouise ? 'Lake Louise, Alberta' : canmore ? 'Canmore, Alberta' : golden ? 'Golden, British Columbia' : 'Banff, Alberta';
+  const hotelLabel = jasper ? 'Jasper' : lakeLouise ? 'Lake Louise area' : canmore ? 'Canmore' : golden ? 'Golden' : 'Banff';
+  const tourLabel = jasper ? 'Jasper' : lakeLouise ? 'Lake Louise' : canmore ? 'Canmore' : golden ? 'Golden' : 'Banff';
   return {
     hotelLabel, tourLabel,
     hotelHref: 'https://www.expedia.ca/Hotel-Search?destination=' + encodeURIComponent(destination) + '&camref=1101l3MtWX',
-    tourHref: jasper || lakeLouise || golden
+    tourHref: jasper || lakeLouise || canmore || golden
       ? 'https://www.getyourguide.com/s/?q=' + encodeURIComponent(destination) + '&partner_id=QW960HO&cmp=banffboundblog'
       : 'https://www.getyourguide.com/banff-l284/?partner_id=QW960HO&cmp=banffboundblog',
-    suppressAutomaticCTA: curatedBookingLinks === true || jasper || lakeLouise || golden,
+    suppressAutomaticCTA: curatedBookingLinks === true || jasper || lakeLouise || canmore || golden,
   };
 }

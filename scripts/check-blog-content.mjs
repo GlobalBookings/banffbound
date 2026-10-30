@@ -32,7 +32,7 @@ const records = posts.map(post => {
   return { slug: post.slug, words: html.replace(/<[^>]*>/g, ' ').trim().split(/\s+/).length, anchorIssues: issues.length, fullBodyReview: Object.hasOwn(data.reviewedBlogBodies, post.slug), openingTextCorrection: Object.hasOwn(data.legacyTextCorrections, post.slug) };
 });
 assert.equal(posts.length, 295, 'Changing canonical/alias coverage requires an explicit audit update.');
-assert.equal(Object.keys(data.reviewedBlogBodies).length, 78, 'The bounded paragraph repairs do not create full-body reviews.');
+assert.equal(Object.keys(data.reviewedBlogBodies).length, 83, 'The bounded paragraph repairs do not create full-body reviews.');
 assert.equal(Object.keys(data.legacyTextCorrections).length, 8);
 for (const [slug, correction] of Object.entries(data.legacyTextCorrections)) {
   assert.ok(posts.some(post => post.slug === slug), `Corrected slug is canonical: ${slug}`);
@@ -54,5 +54,5 @@ for (const [filename, source] of [['src/pages/blog/[slug].astro', page], ['src/l
 }
 const args = process.argv.slice(2);
 assert.ok(args.length === 0 || (args.length === 2 && args[0] === '--report'));
-if (args.length) await writeFile(args[1], JSON.stringify({ checkedAtUTC: new Date().toISOString(), scope: 'Canonical resolved article presence, source anchor structure and bounded correction labels; not a factual review of all articles.', canonicalBodies: records.length, fullBodyReviews: 78, paragraphCorrections: 8, missingBodies: 0, anchorIssues: 0, records }, null, 2) + '\n', { flag: 'wx' });
-console.log(`Blog content checks passed: ${records.length} canonical resolved bodies, no placeholders/nested or unbalanced anchors; 78 full-body reviews remain distinct from 8 opening repairs; actual renderer/registry, correction scope, two Astro transforms. No network or site build.`);
+if (args.length) await writeFile(args[1], JSON.stringify({ checkedAtUTC: new Date().toISOString(), scope: 'Canonical resolved article presence, source anchor structure and bounded correction labels; not a factual review of all articles.', canonicalBodies: records.length, fullBodyReviews: 83, paragraphCorrections: 8, missingBodies: 0, anchorIssues: 0, records }, null, 2) + '\n', { flag: 'wx' });
+console.log(`Blog content checks passed: ${records.length} canonical resolved bodies, no placeholders/nested or unbalanced anchors; 83 full-body reviews remain distinct from 8 opening repairs; actual renderer/registry, correction scope, two Astro transforms. No network or site build.`);

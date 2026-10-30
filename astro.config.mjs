@@ -1,3 +1,6 @@
+import { itineraryWeatherGuideMetadata } from './src/data/itineraryWeatherGuideOverrides.ts';
+import { localBaseGuideMetadata } from './src/data/localBaseGuideOverrides.ts';
+import { carRentalGuideMetadata } from './src/data/carRentalGuideOverrides.ts';
 import { budgetGuideMetadata } from './src/data/budgetGuideOverrides.ts';
 import { fallSeasonGuideMetadata } from './src/data/fallSeasonGuideOverrides.ts';
 import { larchHikingGuideMetadata } from './src/data/larchHikingGuideOverrides.ts';
@@ -38,7 +41,7 @@ import { blogRedirects } from './src/data/redirects.mjs';
 import { winterGuideMetadata } from './src/data/winterGuideOverrides.ts';
 import { winterTripMetadata } from './src/data/winterTripOverrides.ts';
 import { winterActivityMetadata } from './src/data/winterActivityOverrides.ts';
-const reviewedBlogMetadata = { ...winterGuideMetadata, ...winterActivityMetadata, ...winterTripMetadata, ...winterResortMetadata, ...winterSeasonMetadata, ...viewGuideMetadata, ...winterWarmUpMetadata, ...winterWellnessLegacyMetadata, ...winterLibraryMetadata, ...visitorDestinationMetadata, ...lakeJourneyMetadata, ...cyclingGuideMetadata, ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata, ...springSkiGuideMetadata, ...peytoGuideMetadata, ...scenicFlightGuideMetadata, ...goldenDayGuideMetadata, ...heliSkiGuideMetadata, ...skokiGuideMetadata, ...budgetGuideMetadata, ...fallSeasonGuideMetadata, ...larchHikingGuideMetadata };
+const reviewedBlogMetadata = { ...winterGuideMetadata, ...winterActivityMetadata, ...winterTripMetadata, ...winterResortMetadata, ...winterSeasonMetadata, ...viewGuideMetadata, ...winterWarmUpMetadata, ...winterWellnessLegacyMetadata, ...winterLibraryMetadata, ...visitorDestinationMetadata, ...lakeJourneyMetadata, ...cyclingGuideMetadata, ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata, ...springSkiGuideMetadata, ...peytoGuideMetadata, ...scenicFlightGuideMetadata, ...goldenDayGuideMetadata, ...heliSkiGuideMetadata, ...skokiGuideMetadata, ...budgetGuideMetadata, ...fallSeasonGuideMetadata, ...larchHikingGuideMetadata, ...itineraryWeatherGuideMetadata, ...localBaseGuideMetadata, ...carRentalGuideMetadata };
 const reviewedBlogDates = new Map(Object.entries(reviewedBlogMetadata).map(([slug, post]) => [slug, post.lastUpdated]));
 
 const excludedTrails = new Set(trails.filter(trail => trail.directoryEligible === false).map(trail => trail.slug));
@@ -72,7 +75,7 @@ export default defineConfig({
         }
         const reviewedDate = path.startsWith('/trails/') ? reviewedTrailDates.get(path.slice('/trails/'.length)) : path.startsWith('/hotel-directory/') ? reviewedHotelDates.get(path.slice('/hotel-directory/'.length)) : undefined;
         if (reviewedDate) item.lastmod = new Date(reviewedDate);
-        if (['/winter', '/trail-map', '/quiet-trails', '/alternatives', '/hotel-directory', '/tools', '/accessible-trails', '/paddling', '/activities', '/things-to-do', '/vacation-rentals', '/lakes', '/lake-faq', '/parking', '/shuttle-reservations', '/wildlife', '/wildlife-tracker', '/wildlife-calendar', '/wildlife-safety', '/bear-spray', '/biking', '/privacy', '/tours', '/icefields-parkway-planner', '/book/banff-hotels', '/book/lake-louise-stays', '/book/banff-winter-activities', '/eat-and-drink', '/trip-cost', '/altitude-guide', '/larch-season', '/park-pass'].includes(path) || path.startsWith('/activities/') || Object.hasOwn(visitorDestinationMetadata, path.replace('/blog/', ''))) item.lastmod = new Date('2026-10-29');
+        if (['/winter', '/trip-builder', '/trail-map', '/quiet-trails', '/alternatives', '/hotel-directory', '/tools', '/accessible-trails', '/paddling', '/activities', '/things-to-do', '/vacation-rentals', '/lakes', '/lake-faq', '/parking', '/shuttle-reservations', '/wildlife', '/wildlife-tracker', '/wildlife-calendar', '/wildlife-safety', '/bear-spray', '/biking', '/privacy', '/tours', '/icefields-parkway-planner', '/book/banff-hotels', '/book/lake-louise-stays', '/book/banff-winter-activities', '/eat-and-drink', '/trip-cost', '/altitude-guide', '/larch-season', '/park-pass'].includes(path) || path.startsWith('/activities/') || Object.hasOwn(visitorDestinationMetadata, path.replace('/blog/', ''))) item.lastmod = new Date('2026-10-29');
         if (Object.hasOwn(visitorHotelLocationCorrections, path.replace('/blog/', ''))) item.lastmod = new Date(visitorHotelCorrectionDate);
         const textCorrection = legacyTextCorrections[path.replace('/blog/', '')];
         if (textCorrection) item.lastmod = new Date(textCorrection.correctedAt);

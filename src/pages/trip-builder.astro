@@ -12,7 +12,7 @@ const faqs = [
   { q:'Where is my plan saved and what does sharing include?', a:'When browser storage is available, your selections save on this device. A shared link contains the season, base, transport and activity selections. It contains no hotel reservation, booking confirmation or personal contact information. If saving or copying is unavailable, use the displayed link or print the plan.' },
 ];
 ---
-<BaseLayout title="Banff Trip Builder: Custom Winter & Summer Itineraries" description="Build a Banff itinerary with editable days, winter and summer activities, transport checks and hotel links. Save your plan, share a link or print it for your trip." lastUpdated="2026-10-28">
+<BaseLayout title="Banff Trip Builder: Custom Winter & Summer Itineraries" description="Build a Banff itinerary with editable days, winter and summer activities, transport checks and hotel links. Save your plan, share a link or print it for your trip." lastUpdated="2026-10-29">
   <div class="container"><Breadcrumbs items={[{ label:'Trip Builder' }]} /></div>
   <section class="trip-hero"><div class="container"><span class="trip-eyebrow">A good trip has room to breathe</span><h1>Your Banff trip.<br /><em>Make it yours.</em></h1><p>Start with an idea, move a day, leave an afternoon open. Build a winter or summer itinerary around the places and pace that suit you.</p><a href="#your-trip" class="btn btn-accent">Start shaping your trip ↓</a></div></section>
   <div class="container trip-content">
@@ -30,6 +30,7 @@ const faqs = [
         <div class="trip-template-row"><label for="trip-template">Start from a suggested itinerary<select id="trip-template">{plannerTemplates.map(template => <option value={template.id}>{template.season === 'winter' ? 'Winter' : 'Summer'} · {template.name}</option>)}</select></label><button type="button" id="load-trip-template" class="btn btn-primary">Load this idea</button></div>
         <p id="trip-template-description" class="trip-small">{plannerTemplates[0].description}</p>
       </form>
+      <p id="trip-week-note" class="trip-small">Planning a week? The two seven-day starts follow our <a href="/blog/7-day-banff-itinerary/">winter and summer week guide</a>. Change the active day for your group, move the slower day when needed and remove the final town placeholder if departure leaves no outing time. These are editable ideas, not booked activities.</p>
       <noscript><p>This is a complete three-day winter example for a Banff base. Enable JavaScript to edit, save and share a plan. The guides, official links and hotel search work without it.</p></noscript>
       <div class="trip-toolbar" id="trip-toolbar" hidden><button type="button" id="trip-add-day">+ Add an open day</button><button type="button" id="trip-undo" disabled>Undo last edit</button><button type="button" id="trip-share">Copy my plan link</button><button type="button" id="trip-print">Print my plan</button><button type="button" id="trip-reset">Start again</button></div>
       <p id="trip-status" role="status" aria-live="polite" class="trip-status"></p>
