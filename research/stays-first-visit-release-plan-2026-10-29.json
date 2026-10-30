@@ -1,7 +1,7 @@
 {
   "preparedAtUTC": "2026-10-30T03:18:13.814955+00:00",
   "baselineRevision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
-  "status": "Authored sources and checklist frozen; focused/shared checks, original-publication/body comparison and independent reviews passed; exact committed-source clean build pending",
+  "status": "Initial committed source passed66checks/build/strictaudit; verifier corrected for the exact reviewed Astro inline checklist program; final exact-source clean run pending",
   "scope": {
     "newFullReviewSlugs": [
       "banff-first-time-tips",
@@ -44,10 +44,16 @@
     "htmlContracts": 255,
     "preservedPriorContracts": 250,
     "protectedPhotos": 7,
-    "journeyFaqSourceNativeNegativeFixtures": 518,
+    "journeyFaqSourceNativeNegativeFixtures": 531,
     "firstVisitComponentNegativeFixtures": 15,
     "retainedTripBuilderSSRNegatives": 18,
-    "passed": true
+    "passed": true,
+    "emittedFirstVisitProgramNegativeFixtures": 13,
+    "reviewedFirstVisitProgram": {
+      "characters": 4058,
+      "sha256": "23f8f15ae29817e9d9563e542543218fdc1a63ab382a8148206c69290d1d6c38",
+      "scope": "Exact type-only module markup, unique count and post-component adjacency. No generic inline or src-script exception."
+    }
   },
   "renderedBodyWords": {
     "where-to-stay-in-banff": 2000,
