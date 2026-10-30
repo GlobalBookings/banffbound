@@ -1,448 +1,136 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { restaurants as allRestaurants, drinkSpots as importedDrinks, getRestaurantsByArea, type Area } from '../data/restaurants';
+import DiningPlanningInteractions from '../components/DiningPlanningInteractions.astro';
+import { buildDiningDirectory, type DiningDirectoryEntry } from '../data/restaurantSourceReviews';
+import { banffDiningSourceReviews } from '../data/banffDiningSourceReviews';
+import { diningFilterOptions, buildDiningPlan, diningPlannerNote } from '../data/diningPlanning';
 
-// Preserve the imported record while superseding its unsupported fixed schedule
-// and promotion claims with the current source-reviewed pub discovery route.
-const drinks=importedDrinks.map(item=>item.slug==='the-rose-and-crown'?{...item,description:'A pub at 202 Banff Avenue with a dated calendar of bands, DJs and other events. Check the actual listing, the service you want and the current menu before reserving; a table and show admission can be different arrangements.'}:item);
-
-const areas: { key: Area; label: string; description: string }[] = [
-  { key: 'Banff', label: 'Banff', description: 'Banff\'s dining scene is a delicious mix of fine dining, creative global kitchens, beloved local institutions, and award-winning casual eateries.' },
-  { key: 'Lake Louise', label: 'Lake Louise', description: 'From refined Chateau dining rooms to cozy village cafes, Lake Louise offers a surprising range of culinary experiences amid some of the world\'s most stunning mountain scenery.' },
-  { key: 'Canmore', label: 'Canmore', description: 'Just outside the park gates, Canmore\'s Main Street is packed with locally owned restaurants, craft breweries, and innovative kitchens that rival any mountain town in North America.' },
-  { key: 'Highway 1A', label: 'Highway 1A & Castle Junction', description: 'Tucked into the forests along the Bow Valley Parkway, these wilderness dining gems offer romantic, candlelit meals in heritage lodges surrounded by towering pines.' },
+const { venues } = buildDiningDirectory(banffDiningSourceReviews);
+const initialPlan = buildDiningPlan();
+const areaGroups = [
+  { area: 'Banff', label: 'Banff', intro: 'Compare Bear Street, Banff Avenue and the separate Juniper Hotel journey.' },
+  { area: 'Lake Louise', label: 'Lake Louise', intro: 'Village, hostel and Chateau dining create different arrival and access questions.' },
+  { area: 'Canmore', label: 'Canmore', intro: 'Use the actual Bow Valley Trail, Railway Avenue, 9th Street or Benchlands Trail address.' },
+  { area: 'Highway 1A', label: 'Parkway & Castle Junction', intro: 'Baker Creek is on the Bow Valley Parkway. Storm Mountain has a separate Highway 93 South approach.' },
+].map(group => ({ ...group, venues: venues.filter(venue => venue.area === group.area) }));
+const checkedCount = venues.filter(venue => venue.sourceReview.status === 'selected-facts').length;
+const pendingCount = venues.length - checkedCount;
+const reviewLabel = (value: string | null) => value ? new Date(value + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }) : 'Review pending';
+const tel = (value: string) => 'tel:' + value.replace(/[^+\d]/g, '');
+function cardActions(venue: DiningDirectoryEntry) {
+  const links: { label: string; url: string }[] = [];
+  if (venue.website) links.push({ label: venue.slug === 'lake-louise-station' ? 'Reopening updates' : venue.website === venue.menuUrl ? 'Menu & venue details' : venue.website === venue.reserveUrl ? 'Venue & booking details' : 'Venue website', url: venue.website });
+  if (venue.menuUrl && !links.some(link => link.url === venue.menuUrl)) links.push({ label: 'Current menu', url: venue.menuUrl });
+  if (venue.reserveUrl && !links.some(link => link.url === venue.reserveUrl)) links.push({ label: 'Booking details', url: venue.reserveUrl });
+  for (const link of venue.enquiryLinks) if (!links.some(existing => existing.url === link.url)) links.push(link);
+  return links;
+}
+const faqs = [
+  { question: 'How should I choose where to eat around Banff?', answer: 'Choose the base you can reach and the kind of meal or café stop you want. Use the area and format filters to narrow this directory, then open the selected venue’s current menu, access and booking details. Plan the return to your stay as well as the outward journey.' },
+  { question: 'Does a checked listing mean the restaurant is open?', answer: 'No. The dated check covers selected publisher details rather than live opening or available tables. Notices identify material limits, including the Station’s reported renovation closure and entries needing clarification. Confirm the actual service date directly with the venue.' },
+  { question: 'Can non-guests use hotel restaurants near Lake Louise?', answer: 'Check the particular hotel and date. A venue can have guest-priority seating or a date-specific hotel-access restriction. Chateau dining is beside the lake, separate from Lake Louise village and the ski resort; confirm access before arranging that journey.' },
+  { question: 'How do I plan dietary or accessibility requirements?', answer: 'Tell the selected venue the exact ingredients, preparation, entrance, seating or assistance arrangements you need. The filters describe geography and dining format; they do not assess allergies, mobility access or suitability for a particular guest.' },
+  { question: 'Is a dinner reservation the same as a show or activity booking?', answer: 'Check the selected product. A table, a High Rollers bowling lane, a distillery tour or admission to a dated performance can require separate arrangements. Build the complete evening and return journey before adding another booking.' },
 ];
-
-const restaurantsByArea = areas.map(a => ({
-  ...a,
-  restaurants: getRestaurantsByArea(a.key),
-}));
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) };
 ---
 
-<BaseLayout title="Dining in Banff, Lake Louise & Canmore — Restaurants & Evening Plans" description="Browse dining ideas in Banff, Lake Louise and Canmore, then plan an evening with restaurant, live-music, offer and return-journey guides.">
+<BaseLayout title="Where to Eat in Banff, Lake Louise & Canmore" description="Choose a dining area and café, restaurant or pub format. Compare sourced venue locations, menus, booking routes, access notices and the return to your stay.">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', name: 'Dining ideas in Banff, Lake Louise & Canmore', url: 'https://banffbound.com/eat-and-drink/', numberOfItems: venues.length, itemListElement: venues.map((venue, index) => ({ '@type': 'ListItem', position: index + 1, name: venue.name, url: `https://banffbound.com/eat-and-drink/#dining-${venue.slug}` })) })} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema).replace(/</g, '\\u003c')} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Eat & Drink' }]} /></div>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Dining ideas in Banff, Lake Louise & Canmore',
-    description: 'Restaurant names and operator links for planning a Bow Valley meal.',
-    url: 'https://banffbound.com/eat-and-drink',
-    numberOfItems: allRestaurants.length,
-    itemListElement: allRestaurants.map((r, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: r.name,
-      ...(r.website ? {url:r.website} : {}),
-    })),
-  })} />
-
-  <div class="container">
-    <Breadcrumbs items={[{ label: 'Eat & Drink' }]} />
-  </div>
-  <section class="page-hero">
-    <img
-      src="https://images.squarespace-cdn.com/content/v1/5c5c616477b903db9a5f3ee2/47e6ae83-11e3-4842-baad-2c7fed7be6e6/BISON-NOV-25.jpg?format=2500w"
-      alt="Dining at The Bison Restaurant in Banff"
-      class="page-hero-bg"
-      loading="eager"
-      fetchpriority="high"
-    />
-    <div class="page-hero-content">
-      <span class="badge">Dine & Sip</span>
-      <h1>Eat & Drink in Banff & Beyond</h1>
-      <p>From elevated Rocky Mountain cuisine to cozy craft breweries, the Banff, Lake Louise, and Canmore dining scene punches well above its weight.</p>
+  <section class="dining-hero">
+    <div class="container dining-hero-inner">
+      <div><span class="dining-eyebrow">At the table</span><h1>Eat & Drink in Banff & Beyond</h1><p>Make it a coffee stop, a mountain meal or the start of an evening. Choose the place you can reach, then find the menu and booking that fit.</p><a class="btn btn-accent" href="#dining-finder">Find your next stop ↓</a></div>
+      <div class="dining-hero-note"><span>Build the whole evening</span><p>A good meal starts with the right address and ends with a way back to your stay.</p><a href="/blog/banff-nightlife-guide/#evening-planner">Build your Banff evening →</a></div>
     </div>
   </section>
 
   <section class="section" aria-labelledby="evening-guides-title">
     <div class="container">
-      <div class="section-header">
-        <span class="badge">After the mountains</span>
-        <h2 id="evening-guides-title">Give your evening a shape</h2>
-        <p>Make dinner the occasion, find a performance, or put a little friendly competition in the plan.</p>
-      </div>
+      <div class="section-header"><span class="badge">After the mountains</span><h2 id="evening-guides-title">Give your evening a shape</h2><p>Make dinner the occasion, find a performance, or put a little friendly competition in the plan.</p></div>
       <div class="grid grid-2 evening-guide-links">
         <a href="/blog/banff-nightlife-guide/#evening-planner"><strong>Build your Banff evening →</strong><span>Compare five formats and connect the outing with the return to your stay.</span></a>
-        <a href="/blog/new-places-to-eat-in-banff/"><strong>Find a dining discovery →</strong><span>Separate dated additions and reopenings from other restaurants worth investigating.</span></a>
+        <a href="/blog/new-places-to-eat-in-banff/"><strong>Find a dining discovery →</strong><span>Separate dated additions and reopenings from other restaurants to investigate.</span></a>
         <a href="/blog/banff-live-music/"><strong>Find music or a show →</strong><span>Choose a dated performance and the right table, ticket or registration.</span></a>
         <a href="/blog/drink-deals/"><strong>Compare current offer formats →</strong><span>Check the meal, admission and booking conditions behind an offer headline.</span></a>
       </div>
     </div>
   </section>
 
-  {restaurantsByArea.map((area, areaIdx) => (
-    <section class="section" id={`restaurants-${area.key.toLowerCase().replace(/\s+/g, '-')}`} style={areaIdx % 2 === 1 ? 'background: var(--color-bg-alt);' : ''}>
-      <div class="container">
-        <div class="section-header">
-          <span class="badge">{area.label} Restaurants</span>
-          <h2>Where to Eat in {area.label}</h2>
-          <p>{area.description}</p>
-        </div>
-        <div class="restaurant-list">
-          {area.restaurants.map(item => (
-            <div class="restaurant-card">
-              <div class="restaurant-image-wrap">
-                {item.image && <img src={item.image} alt={item.name} class="restaurant-image" loading="lazy" />}
-                <div class="restaurant-price">{item.priceRange}</div>
-              </div>
-              <div class="restaurant-body">
-                <div class="card-tags">
-                  <span class="tag">{item.type}</span>
-                  <span class="tag">{item.cuisine}</span>
-                </div>
-                <h3>{item.name}</h3>
-                <p class="restaurant-desc">{item.description}</p>
-                <div class="restaurant-highlights">
-                  {item.highlights.map(h => (
-                    <span class="highlight-chip">{h}</span>
-                  ))}
-                </div>
-                <div class="restaurant-details">
-                  <div class="detail-row">
-                    <span class="detail-icon">&#128205;</span>
-                    <span>{item.address}</span>
-                  </div>
-                  {item.phone && (
-                    <div class="detail-row">
-                      <span class="detail-icon">&#128222;</span>
-                      <span>{item.phone}</span>
-                    </div>
-                  )}
-                  {item.website && (
-                    <div class="detail-row">
-                      <span class="detail-icon">&#128336;</span>
-                      <a href={item.website} target="_blank" rel="noopener noreferrer">Check current hours with the venue ↗</a>
-                    </div>
-                  )}
-                </div>
-                <div class="restaurant-actions">
-                  {item.website && (
-                    <a href={item.website} target="_blank" rel="noopener" class="btn btn-sm">Website</a>
-                  )}
-                  {item.menuUrl && (
-                    <a href={item.menuUrl} target="_blank" rel="noopener" class="btn btn-sm btn-outline">Menu</a>
-                  )}
-                  {item.reserveUrl && (
-                    <a href={item.reserveUrl} target="_blank" rel="noopener" class="btn btn-sm btn-gold">Reserve</a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  ))}
-
-  <section class="section" style="background: var(--color-bg-alt);">
+  <section class="section dining-finder" id="dining-finder" aria-labelledby="dining-title">
     <div class="container">
-      <div class="section-header">
-        <span class="badge">Bars, Breweries & Cafes</span>
-        <h2>Where to Drink</h2>
-        <p>Whether you need a craft cocktail after a day on the slopes, a perfect espresso before a morning hike, or a rooftop pint with mountain views.</p>
-      </div>
-      <div class="drink-list">
-        {drinks.map(item => (
-          <div class="drink-card-full">
-            <div class="drink-image-wrap">
-              <img src={item.image} alt={item.slug==='the-rose-and-crown'?'Illustrative pub image; not verified as Rose & Crown':item.name} aria-describedby={item.slug==='the-rose-and-crown'?'rose-crown-image-note':undefined} class="drink-image" loading="lazy" />
-            </div>
-            <div class="drink-body">
-              {item.slug==='the-rose-and-crown'&&<p id="rose-crown-image-note" class="directory-image-note">Illustrative image; not a verified view of this venue.</p>}
-              <span class="tag">{item.type}</span>
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
-              <div class="restaurant-details">
-                <div class="detail-row">
-                  <span class="detail-icon">&#128205;</span>
-                  <span>{item.address}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-icon">&#128222;</span>
-                  <span>{item.phone}</span>
-                </div>
-                {item.website && <div class="detail-row">
-                  <span class="detail-icon">&#128336;</span>
-                  <a href={item.website} target="_blank" rel="noopener noreferrer">Check current hours with the venue ↗</a>
-                </div>}
-              </div>
-              <div class="restaurant-actions">
-                <a href={item.website} target="_blank" rel="noopener" class="btn btn-sm">Website</a>
-                <a href={item.menuUrl} target="_blank" rel="noopener" class="btn btn-sm btn-outline">Menu</a>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <div class="section-header"><span class="badge">Choose your next stop</span><h2 id="dining-title">Find a meal that fits the journey</h2><p>{checkedCount} entries have selected operator details checked; {pendingCount} still need clarification. Read each notice before making a visit depend on it.</p></div>
+      <form id="dining-form" class="dining-form" hidden>
+        <div><label for="dining-area">Where will you be?</label><select id="dining-area" name="dining_area">{diningFilterOptions.area.map(([value, label]) => <option value={value}>{label}</option>)}</select></div>
+        <div><label for="dining-format">What do you have in mind?</label><select id="dining-format" name="dining_format">{diningFilterOptions.format.map(([value, label]) => <option value={value}>{label}</option>)}</select></div>
+        <button class="btn" type="submit">Show places</button><button class="btn btn-outline" type="reset">Show all</button>
+      </form>
+      <p id="dining-status" class="dining-status" role="status" aria-live="polite">{initialPlan.summary}</p>
+      <p class="dining-scope">{diningPlannerNote}</p>
+      <noscript><p>All places and their source links are listed below. Use the venue’s own current details to plan the visit.</p></noscript>
+      <div id="dining-empty" class="dining-empty" hidden><h3>Try another area or format</h3><p>No directory entries match those choices. Broaden the filters or show all places; an empty result does not mean every local venue is closed.</p></div>
+      {areaGroups.map(group => <section class="dining-area-group" data-dining-group aria-labelledby={`dining-area-${group.area.toLowerCase().replace(/\s+/g, '-')}`}>
+        <div class="dining-area-heading"><h2 id={`dining-area-${group.area.toLowerCase().replace(/\s+/g, '-')}`}>{group.label}</h2><p>{group.intro}</p></div>
+        <div class="dining-card-grid">{group.venues.map(venue => <article id={`dining-${venue.slug}`} data-dining-slug={venue.slug} class:list={['dining-card', { 'dining-card-pending': venue.sourceReview.status !== 'selected-facts' }]} aria-labelledby={`dining-name-${venue.slug}`}>
+          <div class="dining-card-top"><span class="dining-format">{venue.type || 'Details to clarify'}</span><span class="dining-check">{venue.sourceReview.label} · {reviewLabel(venue.sourceReview.checkedOn)}</span></div>
+          <h3 id={`dining-name-${venue.slug}`}>{venue.name}</h3>
+          {venue.cuisine && <p class="dining-cuisine">{venue.cuisine}</p>}
+          <p>{venue.description}</p>
+          {venue.notices.map(notice => <aside class="dining-notice"><strong>{notice.label}</strong><p>{notice.text}</p><a href={notice.url} target="_blank" rel="noopener noreferrer">Check the publisher’s notice ↗</a></aside>)}
+          {venue.address && <p class="dining-address"><span>Location</span>{venue.address}</p>}
+          {venue.phone && <p class="dining-phone"><a href={tel(venue.phone)}>Call {venue.phone}</a></p>}
+          <div class="dining-actions">{cardActions(venue).map(link => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</div>
+          <details class="dining-source-details"><summary>Visit checks & sources</summary><p>{venue.serviceNote}</p><p>{venue.journeyNote}</p><ul>{venue.sourceReview.sources.map(link => <li><a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} ↗</a></li>)}</ul></details>
+        </article>)}</div>
+      </section>)}
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" style="background: var(--color-primary); color: var(--color-white); text-align: center;">
-    <div class="container">
-      <h2 style="color: var(--color-white); margin-bottom: 1rem;">Stay close to your evening plans</h2>
-      <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Compare six Banff hotel bases and their actual locations, then fit your evening around the complete journey back.</p>
-      <a href="/book/banff-hotels/" class="btn btn-accent">Compare Banff hotel bases →</a>
-      <a href="/blog/banff-nightlife-guide/#evening-planner" class="btn btn-accent" style="margin-left: 1rem;">Build your evening →</a>
-    </div>
-  </section>
+  <section class="section dining-faq" aria-labelledby="dining-faq-title"><div class="container"><div class="section-header"><span class="badge">Before you book</span><h2 id="dining-faq-title">Dining questions</h2></div>{faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Tip</span>
-        <h2>Dining Tips for Banff</h2>
-      </div>
-      <div class="grid grid-3">
-        <div class="tip-card">
-          <h3>Reserve Ahead</h3>
-          <p>Banff's best restaurants fill up fast, especially on weekends and during ski season. Book via OpenTable or call ahead for fine dining spots like The Bison, Juniper Bistro, and Park Distillery.</p>
-        </div>
-        <div class="tip-card">
-          <h3>Bear Street is the Heart</h3>
-          <p>Bear Street is Banff's foodie hub. Within two blocks you'll find Wild Flour Bakery, Nourish Bistro, Three Bears Brewery, Bear Street Tavern, and The Bison -- all walkable.</p>
-        </div>
-        <div class="tip-card">
-          <h3>Compare the whole offer</h3>
-          <p>Check the current operator page for the date you want, including food, admission and holiday conditions. Our <a href="/blog/drink-deals/">drink-offer guide</a> explains three formats and the booking questions to resolve before you go.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="section dining-stays"><div class="container"><div class="section-header"><span class="badge">Settle in</span><h2>Stay close to your evening plans</h2><p>Choose the base for the whole trip, then match dinner with the journey back. These stay comparisons contain accommodation affiliate links.</p></div><div class="grid grid-3">
+    <a href="/book/banff-hotels/"><strong>Compare Banff hotel bases →</strong><span>Six researched hotel locations for a Banff-centred stay.</span></a>
+    <a href="/book/lake-louise-stays/"><strong>Compare Lake Louise stays →</strong><span>Keep the village, lakeshore and other room locations separate.</span></a>
+    <a href="/towns/canmore/"><strong>Plan a Canmore stay →</strong><span>Compare actual areas, room examples and the wider journey.</span></a>
+  </div></div></section>
+  <DiningPlanningInteractions />
+</BaseLayout>
 
 <style>
-  .directory-image-note{font-size:.75rem;line-height:1.5;padding:.6rem 1rem;margin:0;background:var(--color-bg-alt);}
-  .evening-guide-links a {display:flex;flex-direction:column;gap:.65rem;padding:1.4rem;border:1px solid var(--color-border,#d4ddce);border-radius:var(--radius);background:var(--color-bg-alt);color:var(--color-primary);text-decoration:none;}
-  .evening-guide-links a:hover {box-shadow:var(--shadow);}
-  .evening-guide-links span {font-size:.95rem;line-height:1.6;color:var(--color-text-light);}
-  .evening-guide-links a:focus-visible {outline:3px solid var(--color-accent);outline-offset:3px;}
-  .card-tags {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .restaurant-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .restaurant-card {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: 2rem;
-    background: var(--color-white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: all var(--transition);
-  }
-
-  .restaurant-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
-  }
-
-  .restaurant-image-wrap {
-    position: relative;
-    height: 100%;
-    min-height: 280px;
-  }
-
-  .restaurant-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .restaurant-price {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: var(--color-primary);
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 2rem;
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
-
-  .restaurant-body {
-    padding: 1.5rem 1.5rem 1.5rem 0;
-  }
-
-  .restaurant-desc {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-
-  .restaurant-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-  }
-
-  .highlight-chip {
-    background: var(--color-bg-alt);
-    color: var(--color-text);
-    padding: 0.2rem 0.6rem;
-    border-radius: 1rem;
-    font-size: 0.8rem;
-    border: 1px solid var(--color-border, #e2e8f0);
-  }
-
-  .restaurant-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-  }
-
-  .detail-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .detail-icon {
-    font-size: 1rem;
-    width: 1.2rem;
-    text-align: center;
-    flex-shrink: 0;
-  }
-
-  .restaurant-actions {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .btn-sm {
-    padding: 0.4rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .btn-outline {
-    background: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-  }
-
-  .btn-outline:hover {
-    background: var(--color-primary);
-    color: white;
-  }
-
-  .btn-gold {
-    background: var(--color-accent);
-    color: var(--color-text);
-  }
-
-  .btn-gold:hover {
-    background: #c8991c;
-    color: white;
-  }
-
-  .drink-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .drink-card-full {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 1.5rem;
-    background: var(--color-white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: all var(--transition);
-  }
-
-  .drink-card-full:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .drink-image-wrap {
-    height: 100%;
-    min-height: 220px;
-  }
-
-  .drink-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .drink-body {
-    padding: 1.5rem 1.5rem 1.5rem 0;
-  }
-
-  .drink-body h3 {
-    margin: 0.75rem 0 0.5rem;
-  }
-
-  .drink-body p {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-
-  .tip-card {
-    background: var(--color-white);
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    border-top: 4px solid var(--color-accent);
-  }
-
-  .tip-card h3 {
-    margin-bottom: 0.75rem;
-  }
-
-  .tip-card p {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 768px) {
-    .restaurant-card {
-      grid-template-columns: 1fr;
-    }
-
-    .restaurant-image-wrap {
-      min-height: 200px;
-      max-height: 220px;
-    }
-
-    .restaurant-body {
-      padding: 1.25rem;
-    }
-
-    .drink-card-full {
-      grid-template-columns: 1fr;
-    }
-
-    .drink-image-wrap {
-      min-height: 180px;
-      max-height: 200px;
-    }
-
-    .drink-body {
-      padding: 1.25rem;
-    }
-  }
+  .dining-hero{background:var(--color-primary);color:white;padding:4rem 0 4.5rem;position:relative;overflow:hidden}
+  .dining-hero::after{content:'';position:absolute;width:28rem;height:28rem;right:-8rem;top:-13rem;border:1px solid #ffffff1c;border-radius:50%;pointer-events:none}
+  .dining-hero-inner{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(16rem,1fr);align-items:center;gap:4rem}
+  .dining-hero h1{font-size:clamp(2.4rem,5vw,4.6rem);line-height:1.08;color:white;max-width:17ch;margin:.65rem 0 1.1rem}
+  .dining-hero p{line-height:1.8;max-width:43rem;color:#f1eee6;margin-bottom:1.8rem}
+  .dining-eyebrow,.dining-hero-note>span{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--color-accent)}
+  .dining-hero-note{padding:2rem;border:1px solid #ffffff40;border-radius:var(--radius);background:#ffffff08}
+  .dining-hero-note p{font-size:1.25rem;line-height:1.6;margin:1rem 0}
+  .dining-hero-note a{color:white;font-weight:700;text-underline-offset:4px}
+  .evening-guide-links a,.dining-stays .grid>a{display:flex;flex-direction:column;gap:.65rem;padding:1.4rem;border:1px solid var(--color-border,#d4ddce);border-radius:var(--radius);background:var(--color-bg-alt);color:var(--color-primary);text-decoration:none}
+  .evening-guide-links span,.dining-stays span{font-size:.95rem;line-height:1.6;color:var(--color-text-light)}
+  .dining-finder{background:#f5f4ee;scroll-margin-top:6rem}
+  .dining-form{display:flex;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1.1rem;background:white;padding:1.4rem;border:1px solid var(--color-border,#d4ddce);border-radius:var(--radius)}
+  .dining-form[hidden],.dining-empty[hidden],[data-dining-slug][hidden],[data-dining-group][hidden]{display:none!important}
+  .dining-form>div{flex:1 1 13rem;min-width:0}.dining-form label{display:block;font-weight:700;margin-bottom:.5rem;font-size:.9rem}
+  .dining-form select{width:100%;min-height:3rem;border:1px solid #a6b1a5;border-radius:6px;padding:.7rem;background:white;color:var(--color-text);font:inherit}
+  .dining-status{font-weight:700;margin-bottom:.5rem}.dining-scope{font-size:.9rem;color:var(--color-text-light);max-width:65rem;line-height:1.7}
+  .dining-empty{padding:1.6rem;background:white;border:1px solid var(--color-border,#d4ddce);border-radius:var(--radius);margin:1.5rem 0}
+  .dining-area-group{margin-top:3rem}.dining-area-heading{margin-bottom:1.3rem}.dining-area-heading h2{font-size:1.8rem;margin-bottom:.4rem}.dining-area-heading p{color:var(--color-text-light);line-height:1.7}
+  .dining-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.3rem;align-items:start}
+  .dining-card{background:white;border:1px solid var(--color-border,#d4ddce);border-top:4px solid var(--color-primary);border-radius:var(--radius);padding:1.5rem;min-width:0;scroll-margin-top:6rem}
+  .dining-card-pending{border-top-color:#9f7b37}.dining-card-top{display:flex;justify-content:space-between;gap:.7rem;align-items:start;flex-wrap:wrap;margin-bottom:.85rem}
+  .dining-format{font-size:.73rem;text-transform:uppercase;font-weight:700;letter-spacing:.06em;color:var(--color-primary)}.dining-check{font-size:.72rem;color:#5d665a;background:#f0f2e9;padding:.25rem .5rem;border-radius:4px}
+  .dining-card h3{font-size:1.55rem;line-height:1.25;margin:0 0 .55rem}.dining-card p{line-height:1.75;font-size:.94rem;margin:0 0 1rem}.dining-card .dining-cuisine{font-size:.8rem;color:var(--color-text-light);margin-bottom:.8rem}
+  .dining-address{padding-top:.8rem;border-top:1px solid #e4e7df}.dining-address span{display:block;font-size:.69rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;color:var(--color-text-light)}
+  .dining-phone a{font-weight:600;color:var(--color-primary)}.dining-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}.dining-actions a{font-size:.8rem;font-weight:700;text-decoration:none;background:var(--color-primary);color:white;padding:.65rem .8rem;border-radius:5px;line-height:1.5;max-width:100%;overflow-wrap:anywhere}
+  .dining-notice{border-left:3px solid #ae7a26;background:#faf4e6;padding:.9rem 1rem;margin:.9rem 0 1.1rem}.dining-notice strong{font-size:.85rem}.dining-notice p{font-size:.85rem;margin:.4rem 0}.dining-notice a{font-size:.82rem;color:var(--color-primary)}
+  .dining-source-details{border-top:1px solid #e4e7df;padding-top:.9rem}.dining-source-details summary{cursor:pointer;font-size:.85rem;font-weight:700}.dining-source-details[open] summary{margin-bottom:.8rem}.dining-source-details p,.dining-source-details li{font-size:.84rem;line-height:1.7}.dining-source-details ul{padding-left:1.2rem}.dining-source-details a{overflow-wrap:anywhere}
+  .dining-faq details{padding:1.15rem 0;border-bottom:1px solid var(--color-border,#d4ddce)}.dining-faq summary{cursor:pointer;font-weight:700}.dining-faq details p{line-height:1.8;max-width:60rem;margin:1rem 0 .2rem}
+  .dining-stays{background:#edece2}.dining-stays .grid>a{background:white}
+  a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}
+  @media(max-width:850px){.dining-hero-inner{grid-template-columns:1fr;gap:2rem}.dining-hero-note{max-width:40rem}.dining-card-grid{grid-template-columns:1fr}}
+  @media(max-width:500px){.dining-hero{padding:2.8rem 0}.dining-hero h1{font-size:2.6rem}.dining-hero-note{padding:1.3rem}.dining-card{padding:1.15rem}.dining-form{padding:1rem}.dining-form .btn{flex:1 1 auto}.dining-check{max-width:100%}}
 </style>
-</BaseLayout>

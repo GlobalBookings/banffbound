@@ -11,7 +11,7 @@ export const winterGuides = [
   { title: 'Your first ski or snowboard lesson', href: '/learn-to-ski', category: 'ski', tag: 'Start here', desc: 'Pick a learning area, understand the bundle, arrange rentals, and arrive ready to learn.' },
   { title: 'Build your ski day', href: '/ski-day-planner', category: 'ski', tag: 'Interactive planner', desc: 'Choose your base, resort, ability and transport for a practical mountain-day plan.' },
   { title: 'Sunshine vs Lake Louise vs Norquay', href: '/sunshine-vs-lake-louise-vs-norquay', category: 'ski', tag: 'Compare the Big 3', desc: 'Match the resort to your group before you buy tickets or book lessons.' },
-  { title: 'Heli-skiing near Banff', href: '/blog/banff-heli-skiing', category: 'ski', tag: 'Experienced skiers', desc: 'BC operators, ability expectations, transfers, weather days, and questions to ask before paying.' },
+  { title: 'Heli-skiing near Banff', href: '/blog/banff-heli-skiing/#heli-ski-planner', category: 'ski', tag: 'Experienced skiers', desc: 'Compare two BC operator journeys and build transport, overnight and equipment questions before booking.' },
   { title: 'Cross-country skiing', href: '/blog/banff-cross-country-skiing', category: 'snow', tag: 'A different pace', desc: 'Nordic Centre versus park trails, classic versus skate equipment, grooming and closures.' },
   { title: 'Snowshoeing & winter walking', href: '/blog/banff-snowshoeing-guide', category: 'snow', tag: 'Check the route', desc: 'Choose a winter-designated route and understand when snowshoes or cleats help.' },
   { title: 'Ice skating', href: '/blog/banff-ice-skating', category: 'family', tag: 'Managed rinks first', desc: 'Lake Louise, town rinks, rentals and why a frozen-looking lake is not an ice report.' },

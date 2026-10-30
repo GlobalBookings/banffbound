@@ -1,0 +1,46 @@
+<script>
+  import {buildDiningPlan,defaultDiningFilters,diningPlanningRecords,readDiningFiltersFromUrl,updateDiningSettingsUrl} from '../data/diningPlanning';
+  function initDiningPlanning(){
+    const form=document.querySelector<HTMLFormElement>('#dining-form');
+    if(!form||form.dataset.ready)return;
+    const area=document.querySelector<HTMLSelectElement>('#dining-area'),format=document.querySelector<HTMLSelectElement>('#dining-format');
+    const status=document.querySelector<HTMLElement>('#dining-status'),empty=document.querySelector<HTMLElement>('#dining-empty');
+    const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-dining-slug]'));
+    const groups=Array.from(document.querySelectorAll<HTMLElement>('[data-dining-group]'));
+    if(!area||!format||!status||!empty||cards.length!==diningPlanningRecords.length||!groups.length)return;
+    const byId=new Map(cards.map(card=>[card.dataset.diningSlug,card]));
+    if(byId.size!==diningPlanningRecords.length||diningPlanningRecords.some(record=>!byId.has(record.slug)))return;
+    const grouped=groups.map(group=>({group,cards:Array.from(group.querySelectorAll<HTMLElement>('[data-dining-slug]'))}));
+    if(grouped.some(group=>!group.cards.length)||cards.some(card=>!grouped.some(group=>group.cards.includes(card))))return;
+    let attached=false;
+    const restore=()=>{
+      if(attached){form.removeEventListener('submit',submit);form.removeEventListener('change',change);form.removeEventListener('reset',reset);attached=false;}
+      form.hidden=true;delete form.dataset.ready;
+      for(const card of cards)card.hidden=false;
+      for(const group of groups)group.hidden=false;
+      empty.hidden=true;
+      try{status.textContent=`All ${diningPlanningRecords.length} venue entries are readable below. Check the venue details for your visit.`;}catch{/* Complete server cards remain readable if a status node fails. */}
+    };
+    const render=()=>{
+      const plan=buildDiningPlan({area:area.value,format:format.value}),visible=new Set(plan.visibleIds);
+      area.value=plan.filters.area;format.value=plan.filters.format;
+      // Keep original nodes/order in place so filtering never reparents a focused control.
+      for(const [slug,card] of byId)card.hidden=!visible.has(slug!);
+      for(const item of grouped)item.group.hidden=!item.cards.some(card=>!card.hidden);
+      empty.hidden=!plan.empty;status.textContent=plan.summary;
+      const next=updateDiningSettingsUrl(window.location.href,plan.filters);
+      if(next)try{window.history.replaceState(null,'',next);}catch{/* Filtering still works when history is unavailable. */}
+    };
+    const safeRender=()=>{try{render();}catch{restore();}};
+    function submit(event:Event){event.preventDefault();safeRender();}
+    function change(){safeRender();}
+    function reset(event:Event){event.preventDefault();area!.value=defaultDiningFilters.area;format!.value=defaultDiningFilters.format;safeRender();}
+    try{
+      const initial=readDiningFiltersFromUrl(window.location.href);area.value=initial.area;format.value=initial.format;
+      render();
+      form.addEventListener('submit',submit);form.addEventListener('change',change);form.addEventListener('reset',reset);attached=true;
+      form.dataset.ready='true';form.hidden=false;
+    }catch{restore();}
+  }
+  initDiningPlanning();document.addEventListener('astro:page-load',initDiningPlanning);
+</script>

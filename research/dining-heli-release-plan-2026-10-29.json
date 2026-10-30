@@ -1,0 +1,65 @@
+{
+  "preparedAtUTC": "2026-10-30T00:00:59.266887+00:00",
+  "baselineRevision": "3d8076de3457078634e0a4fe9551d18595e26bca",
+  "status": "Committed-source build, all51 checks, strict audit,234 built HTML contracts,7 photo hashes and desktop/phone browser QA passed; pending remote CI and production proof",
+  "scope": {
+    "newInteractiveJourneys": [
+      "32-entry area/format dining finder",
+      "2-operator heli-ski logistics chooser"
+    ],
+    "fullGuideRefreshes": [
+      "banff-heli-skiing",
+      "golden-bc-day-trip"
+    ],
+    "newFullReviewRegistryAdditions": 1,
+    "refreshedExistingFullReviews": 1,
+    "fullReviewsBefore": 71,
+    "fullReviewsAfter": 72,
+    "partialOpeningRepairs": 8,
+    "canonicalBodies": 295,
+    "otherCanonicalBodiesByteIdentical": 293,
+    "originalPublicationDatesPreserved": 335,
+    "diningEntries": 32,
+    "selectedFactDiningReviews": 30,
+    "pendingDiningReviews": 2,
+    "allDiningFactsReviewed": false,
+    "allCanonicalBlogFactsReviewed": false
+  },
+  "verificationTargets": {
+    "offlineWorkflowChecks": 51,
+    "releaseHTMLRoutesBefore": 232,
+    "releaseHTMLRoutesAfter": 234,
+    "newUniqueVerificationContracts": 2,
+    "protectedPhotoHashes": 7,
+    "redirectMappings": 40,
+    "actualDiningClientCombinations": 20,
+    "actualHeliClientCombinations": 648,
+    "authoredBookingGuides": 21,
+    "curatedBookingContextPages": 23
+  },
+  "diningLimits": [
+    "Station renovation closure is prominent, with no active menu or reserve link.",
+    "PD3 and Trailhead remain unresolved in explicit scopes.",
+    "Chateau access notices retain their exact October26\u201329 dates.",
+    "Tooloulou renovation notice has no verified year; dates need confirmation.",
+    "Fixed hours/prices, unverified images and coordinates are withheld."
+  ],
+  "preserved": [
+    "All32 dining slugs and raw source arrays",
+    "95hotel identities/provider URLs",
+    "40approved host aliases",
+    "Existing affiliate and measurement identifiers",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "adsLaunched": false,
+    "budgetsOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "getYourGuideFunnel": "User confirmed ads to owned BanffBound pages followed by optional affiliate booking; no separate written-exception planning gate.",
+    "supportEnquirySent": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "goalStatus": "active",
+  "cleanVerification": "research/dining-heli-clean-verification-2026-10-29.json"
+}

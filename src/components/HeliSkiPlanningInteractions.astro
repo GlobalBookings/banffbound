@@ -1,0 +1,45 @@
+<script>
+  import {buildHeliSkiPlan,defaultHeliSkiFilters,heliSkiOperators,heliSkiUrlKeys,readHeliSkiUrlSettings} from '../data/heliSkiPlanning';
+  function initHeliSkiPlanner(){
+    const form=document.querySelector<HTMLFormElement>('#heli-ski-form');if(!form||form.dataset.ready)return;
+    const selects={operator:document.querySelector<HTMLSelectElement>('#heli-ski-operator'),base:document.querySelector<HTMLSelectElement>('#heli-ski-base'),transport:document.querySelector<HTMLSelectElement>('#heli-ski-transport'),overnight:document.querySelector<HTMLSelectElement>('#heli-ski-overnight'),equipment:document.querySelector<HTMLSelectElement>('#heli-ski-equipment')};
+    const status=document.querySelector('#heli-ski-status'),notes=document.querySelector('#heli-ski-notes'),steps=document.querySelector('#heli-ski-steps'),urlNote=document.querySelector<HTMLElement>('#heli-ski-url-note');
+    const copyLink=document.querySelector('#heli-ski-copy-link'),copyBrief=document.querySelector('#heli-ski-copy-brief'),copyStatus=document.querySelector('#heli-ski-copy-status');
+    const fallback=document.querySelector<HTMLElement>('#heli-ski-copy-fallback'),label=document.querySelector('#heli-ski-copy-label'),text=document.querySelector<HTMLTextAreaElement>('#heli-ski-copy-text');
+    const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-heli-operator]'));
+    if(Object.values(selects).some(select=>!select)||!status||!notes||!steps||!urlNote||!copyLink||!copyBrief||!copyStatus||!fallback||!label||!text||cards.length!==heliSkiOperators.length)return;
+    const byId=new Map(cards.map(card=>[card.dataset.heliOperator!,card]));
+    if(byId.size!==heliSkiOperators.length||heliSkiOperators.some(operator=>!byId.has(operator.id)))return;
+    for(const card of cards)for(const key of ['journey','transfer','overnight','equipment'])if(!card.querySelector(`[data-heli-${key}]`))return;
+    const keys=['operator','base','transport','overnight','equipment'] as const;
+    const restored=readHeliSkiUrlSettings(new URL(window.location.href).search);
+    for(const key of keys)selects[key]!.value=restored.filters[key];
+    if(restored.invalidKeys.length){urlNote.hidden=false;urlNote.textContent='Some unknown or repeated choices were reset. Review the public settings below.';}
+    let current=buildHeliSkiPlan(restored.filters);
+    const render=()=>{
+      current=buildHeliSkiPlan(Object.fromEntries(keys.map(key=>[key,selects[key]!.value])));
+      for(const key of keys)selects[key]!.value=current.filters[key];
+      const selected=new Set(current.selectedIds);
+      for(const card of cards){const id=card.dataset.heliOperator!,plan=current.operatorPlans.find(plan=>plan.id===id)!;card.hidden=!selected.has(plan.id);for(const key of ['journey','transfer','overnight','equipment'] as const)card.querySelector(`[data-heli-${key}]`)!.textContent=plan[key];}
+      status.textContent=`${selected.size} ${selected.size===1?'operator':'operators'} to compare; no booking or ability approval`;
+      notes.replaceChildren(...current.notes.map(value=>{const p=document.createElement('p');p.textContent=value;return p;}));
+      steps.replaceChildren(...current.steps.map(value=>{const li=document.createElement('li');li.textContent=value;return li;}));
+      fallback.hidden=true;copyStatus.textContent='';
+      const url=new URL(window.location.href);for(const key of keys){url.searchParams.delete(heliSkiUrlKeys[key]);if(current.filters[key]!==defaultHeliSkiFilters[key])url.searchParams.set(heliSkiUrlKeys[key],current.filters[key]);}
+      try{window.history.replaceState(null,'',url);}catch{/* Public planning still works without browser history. */}
+    };
+    form.addEventListener('change',render);form.addEventListener('submit',event=>{event.preventDefault();render();});
+    form.addEventListener('reset',()=>{for(const key of keys)selects[key]!.value=defaultHeliSkiFilters[key];urlNote.hidden=true;urlNote.textContent='';render();});
+    const copy=async(kind:'link'|'brief')=>{
+      render();const value=kind==='link'?current.shareUrl:current.brief;
+      try{if(!navigator.clipboard?.writeText)throw Error('Clipboard unavailable');await navigator.clipboard.writeText(value);copyStatus.textContent=kind==='link'?'Public settings link copied. No other URL parameters are shared.':'Enquiry outline copied. Review it and contact the operator yourself.';}
+      catch{label.textContent=kind==='link'?'Public settings link':'Public enquiry outline';text.value=value;fallback.hidden=false;text.focus();text.select();copyStatus.textContent='Select and copy the text below. Nothing has been sent to an operator.';}
+    };
+    copyLink.addEventListener('click',()=>copy('link'));copyBrief.addEventListener('click',()=>copy('brief'));
+    form.dataset.ready='true';form.hidden=false;render();
+  }
+  initHeliSkiPlanner();document.addEventListener('astro:page-load',initHeliSkiPlanner);
+</script>
+<style is:global>
+  .heli-ski-planner [hidden]{display:none!important}.heli-ski-planner{scroll-margin-top:110px;margin:2.5rem 0}.heli-ski-planner form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;padding:1.25rem;border:1px solid #d4ddce;border-radius:12px;background:#eef2eb}.heli-ski-planner label{display:block;font-weight:700;font-size:.9rem;margin-bottom:.4rem}.heli-ski-planner select,.heli-ski-planner textarea{width:100%;box-sizing:border-box;min-height:48px;padding:.7rem;border:1px solid #aab9a6;border-radius:6px;background:white;color:#173c29;font:inherit}.heli-ski-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.7rem}.heli-ski-planner button{min-height:48px;padding:.7rem 1rem;border:1px solid #173c29;border-radius:6px;background:white;color:#173c29;cursor:pointer;font:inherit}.heli-ski-planner button.btn-primary{background:#204d35;color:white}.heli-ski-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}.heli-ski-card{min-width:0;padding:1.25rem;border:1px solid #d4ddce;border-radius:12px;background:white}.heli-ski-card h3{margin-top:0!important}.heli-ski-card p,.heli-ski-card dd,.heli-ski-cat p{font-size:.9rem;line-height:1.7}.heli-ski-card dl>div{padding:.65rem 0;border-top:1px solid #e1e6dc}.heli-ski-card dt{font-weight:700}.heli-ski-card dd{margin:0}.heli-ski-action{display:block;padding:.85rem;border-radius:6px;background:#204d35;color:white!important;text-decoration:none!important;font-weight:700}.heli-ski-sources,.heli-ski-review{font-size:.8rem!important}.heli-ski-summary,.heli-ski-cat{background:#eef2eb;border-left:3px solid #9e7d42;padding:1.25rem;margin:1.5rem 0}.heli-ski-planner [role=status]{font-weight:700}.heli-ski-planner a{overflow-wrap:anywhere}.heli-ski-planner :is(a,button,select,textarea,summary):focus-visible{outline:3px solid #a9792e;outline-offset:3px}.heli-ski-faq details{padding:1rem 0;border-bottom:1px solid #d4ddce}.heli-ski-faq summary{min-height:44px;font-weight:700;cursor:pointer}@media(max-width:700px){.heli-ski-planner form,.heli-ski-grid{grid-template-columns:1fr}.heli-ski-card{padding:1rem}.heli-ski-actions{display:grid;grid-template-columns:1fr}.heli-ski-planner textarea{max-width:100%}}
+</style>

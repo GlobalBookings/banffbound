@@ -1,0 +1,305 @@
+{
+  "checkedAtUTC": "2026-10-30T00:02:30.233714+00:00",
+  "sourceCommit": "be823af60e474aca9b2e9f23e72364dca11d75c8",
+  "cleanRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-dining-heli-clean-7k_jqvy0",
+  "checks": [
+    {
+      "path": "scripts/check-trip-planner.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-day-ideas.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-directory.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-production-redirects.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-activities.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paddling.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paid-landings.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-banff-hotel-landing-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-louise-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-winter-activity-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cycling-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-internal-linker.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-blog-content.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-bow-lake-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-jasper-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cabin-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-article-booking-context.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-nightlife-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-live-music-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-drink-offer-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-evening-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-minnewanka-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-gondola-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-spring-ski-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-peyto-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-scenic-flight-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-golden-day-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-heli-ski-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-restaurant-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lesson-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-stay-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-consent.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-embeds.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-safety.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parking-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-build-provenance.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-rental-planning-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-weather-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-snow-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-source-freshness.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-road-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-events.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-navigation.mjs",
+      "passed": true
+    }
+  ],
+  "audit": {
+    "pages": 605,
+    "indexable_documents": 519,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "builtVerification": {
+    "passed": true,
+    "mode": "read-only-built-directory",
+    "htmlRoutes": 234,
+    "htmlPassed": 234,
+    "photosPassed": 7,
+    "fullReviews": 72,
+    "remainingPartialRepairs": 8,
+    "sitemapUrls": 517,
+    "buildReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T00:02:22.084Z",
+      "sourceRevision": null,
+      "sourceFingerprint": "57f6bfbe499ecb9bbb7981ce002fd7fbb9a6bbc2003476ae1dbe105132efa3b6"
+    },
+    "buildReceiptStable": true,
+    "productionIdentityVerified": false,
+    "failures": []
+  },
+  "recordedAtUTC": "2026-10-30T00:08:54.612031+00:00",
+  "validationScope": "Committed source archive; existing node_modules reused locally. Remote CI still pending.",
+  "browserQA": {
+    "source": "Clean built archive served through Astro preview on loopback port 4350; in-app browser",
+    "desktopViewport": {
+      "width": 1280,
+      "horizontalOverflow": false
+    },
+    "phoneViewport": {
+      "width": 390,
+      "height": 844,
+      "pages": [
+        "/eat-and-drink/",
+        "/blog/banff-heli-skiing/",
+        "/blog/golden-bc-day-trip/"
+      ],
+      "horizontalOverflow": false,
+      "viewportResetAndVerifiedWidth": 1280
+    },
+    "dining": {
+      "allCards": 32,
+      "banffCafeSlugs": [
+        "wild-flour-bakery",
+        "whitebark-cafe"
+      ],
+      "canmoreCafeCount": 0,
+      "emptyStateVisible": true,
+      "emptyRegionGroupsHidden": true,
+      "lakeLouiseCafeSlugs": [
+        "bill-peytos-cafe"
+      ],
+      "resetRestoresAll32": true,
+      "sourceDisclosureOpened": true,
+      "faqOpened": true,
+      "mobileSelectionPassed": true
+    },
+    "heli": {
+      "defaultOperators": [
+        "purcell",
+        "rk"
+      ],
+      "rkOnlySelectionPassed": true,
+      "canmoreWithConfirmedTransferRetainsPickupMinimumAndTransportRefundLimits": true,
+      "resetRestoresBothOperators": true,
+      "publicShareDoesNotSendEnquiryFAQOpened": true,
+      "mobilePurcellOnlyPassed": true,
+      "nativeClipboardNotUsed": true
+    },
+    "golden": {
+      "originalPublicationDate": "2025-12-10",
+      "reviewDate": "2026-10-29",
+      "nativeStayDestination": "Golden, British Columbia",
+      "nativeActivityDestination": "Golden, British Columbia",
+      "existingAffiliateIDsPreserved": true,
+      "seasonalFAQOpened": true,
+      "illustrativeImageCaptionVisible": true
+    },
+    "optionalProviderScriptsAndIframesAfterRejection": 0,
+    "merchantBookingsOrOperatorEnquiriesMade": false
+  },
+  "independentReadOnlyReview": {
+    "commit": "be823af60e474aca9b2e9f23e72364dca11d75c8",
+    "result": "No actionable integration or product defects found; private evidence and unrelated user changes excluded."
+  },
+  "productionVerified": false,
+  "goalStatus": "active"
+}

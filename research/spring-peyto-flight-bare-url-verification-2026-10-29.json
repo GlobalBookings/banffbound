@@ -1,0 +1,35 @@
+{
+  "checkedAtUTC": "2026-10-29T23:29:56.858Z",
+  "mode": "Bare canonical GETs with no query cache buster",
+  "mergedRevision": "3d8076de3457078634e0a4fe9551d18595e26bca",
+  "sourceFingerprint": "2483df6f72bf743376a25ca09ad4a518cd510e9520bfced0856faae976dc9c35",
+  "stableBuildReceipt": true,
+  "sitemapUrls": 517,
+  "passed": true,
+  "checks": [
+    {
+      "path": "/blog/banff-spring-skiing/",
+      "status": 200,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "path": "/blog/peyto-lake-guide/",
+      "status": 200,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "path": "/blog/banff-helicopter-tours/",
+      "status": 200,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "path": "/blog/kananaskis-heli-tours/",
+      "status": 200,
+      "passed": true,
+      "errors": []
+    }
+  ]
+}

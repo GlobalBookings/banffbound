@@ -1,0 +1,21 @@
+{
+  "checkedAtUTC": "2026-10-29T23:58:33.631Z",
+  "baselineRevision": "3d8076de3457078634e0a4fe9551d18595e26bca",
+  "scope": "Canonical article body bytes and original publication metadata; metadata, related discovery links and booking-context suppression are separately reviewed.",
+  "canonical": 295,
+  "replacedBodies": 2,
+  "otherBodiesByteIdentical": 293,
+  "changedSlugs": [
+    "banff-heli-skiing",
+    "golden-bc-day-trip"
+  ],
+  "fullBodyReviews": {
+    "before": 71,
+    "after": 72
+  },
+  "partialCorrections": {
+    "before": 8,
+    "after": 8
+  },
+  "originalPublicationsPreserved": 335
+}
