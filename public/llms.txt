@@ -96,3 +96,9 @@
 - [Compare Banff hotels](https://banffbound.com/book/banff-hotels/): Six source-reviewed Banff hotel fits, location and room priorities, with Expedia booking links.
 - [Compare Lake Louise stays](https://banffbound.com/book/lake-louise-stays/): Five village, lakeshore and nearby-road bases with category-specific kitchen and winter choices.
 - [Compare Banff winter activities](https://banffbound.com/book/banff-winter-activities/): Three distinct experience formats and verified GetYourGuide product links. Bookings and current terms are handled by the provider.
+
+Autumn hiking and backcountry lodge planning:
+- Larch season and route planner: https://banffbound.com/larch-season/
+- Skoki Lodge: https://banffbound.com/blog/skoki-lodge-guide/
+- Quote-based trip budget comparison: https://banffbound.com/trip-cost/
+- Elevation and journey planning: https://banffbound.com/altitude-guide/

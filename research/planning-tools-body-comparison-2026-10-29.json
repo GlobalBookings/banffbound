@@ -1,0 +1,49 @@
+{
+  "checkedAtUTC": "2026-10-30T00:31:44.077Z",
+  "passed": true,
+  "referenceBaselineRevision": "8b7bdade48e3b9b561c3a27671ba67ac91719afc",
+  "sourceBaseline": {
+    "archiveSourceCommit": "be823af60e474aca9b2e9f23e72364dca11d75c8",
+    "archiveRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-dining-heli-clean-7k_jqvy0",
+    "exactReferenceRevisionCheckout": false,
+    "selectedAppSourceEquivalent": true,
+    "observedArchiveFingerprint": "57f6bfbe499ecb9bbb7981ce002fd7fbb9a6bbc2003476ae1dbe105132efa3b6",
+    "savedProductionReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T00:12:11.338Z",
+      "sourceRevision": "8b7bdade48e3b9b561c3a27671ba67ac91719afc",
+      "sourceFingerprint": "57f6bfbe499ecb9bbb7981ce002fd7fbb9a6bbc2003476ae1dbe105132efa3b6"
+    },
+    "evidenceFiles": [
+      "/tmp/banffbound-dining-heli-clean-summary.json",
+      "/tmp/banffbound-dining-heli-live-build-info.json"
+    ],
+    "note": "Compared with the retained Gitless clean archive from be823af. Its freshly recomputed app-source-v2 fingerprint equals the saved live8b7bdad deployment fingerprint; selected source includes the blog data and registry. This is application-source equivalence, not a fresh Git checkout of the merge or a new live deployment check."
+  },
+  "scope": "Resolved canonical article body bytes and all original publication dates. Metadata, generic booking contexts, tools pages and discovery links are separate integration/QA scopes.",
+  "canonical": 295,
+  "replacedBodies": 1,
+  "otherBodiesByteIdentical": 294,
+  "changedSlugs": [
+    "skoki-lodge-guide"
+  ],
+  "changedBodyHashes": [
+    {
+      "slug": "skoki-lodge-guide",
+      "before": "301b6ecd8d03f801b2b73f4bfdc7bd021634ec68c140e1177b3852e2a218fd97",
+      "after": "546d6cc86571a79297e786f463a5b6f484525339a665fece1f0e267fadf15d1f"
+    }
+  ],
+  "fullBodyReviews": {
+    "before": 72,
+    "after": 73
+  },
+  "partialCorrections": {
+    "before": 8,
+    "after": 8
+  },
+  "originalPublicationsPreserved": 335,
+  "originalPublicationSha256": "b4415b75aebb304350fc15ed0565a90cff66935f2bf57e00686b06a229f18008"
+}

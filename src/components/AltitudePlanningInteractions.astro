@@ -1,0 +1,22 @@
+<script>
+  import {altitudeJourneys,buildAltitudePlan,defaultAltitudeFilters,readAltitudeSettings,updateAltitudeSettingsUrl} from '../data/altitudePlanning';
+  function initAltitudePlanning(){
+    const form=document.querySelector<HTMLFormElement>('#altitude-form');if(!form||form.dataset.ready)return;
+    const journey=document.querySelector<HTMLSelectElement>('#altitude-journey'),overnight=document.querySelector<HTMLSelectElement>('#altitude-overnight');
+    const status=document.querySelector<HTMLElement>('#altitude-status'),question=document.querySelector<HTMLElement>('#altitude-overnight-question'),urlNote=document.querySelector<HTMLElement>('#altitude-url-note');
+    const copy=document.querySelector<HTMLButtonElement>('#altitude-copy'),copyStatus=document.querySelector<HTMLElement>('#altitude-copy-status'),fallback=document.querySelector<HTMLElement>('#altitude-copy-fallback'),text=document.querySelector<HTMLTextAreaElement>('#altitude-copy-text');
+    const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-altitude-journey]'));
+    if(!journey||!overnight||!status||!question||!urlNote||!copy||!copyStatus||!fallback||!text||cards.length!==altitudeJourneys.length)return;
+    const byId=new Map(cards.map(card=>[card.dataset.altitudeJourney,card]));if(byId.size!==altitudeJourneys.length||altitudeJourneys.some(item=>!byId.has(item.id)))return;
+    let attached=false;
+    const restore=()=>{if(attached){form.removeEventListener('change',change);form.removeEventListener('submit',submit);form.removeEventListener('reset',reset);copy.removeEventListener('click',copySettings);attached=false;}form.hidden=true;delete form.dataset.ready;cards.forEach(card=>card.hidden=false);fallback.hidden=true;try{status.textContent='All five journey comparisons remain readable below.';}catch{/* Complete SSR cards remain available. */}};
+    const render=()=>{const plan=buildAltitudePlan({journey:journey.value,overnight:overnight.value});journey.value=plan.filters.journey;overnight.value=plan.filters.overnight;const visible=new Set<string>(plan.visibleIds);for(const [id,card]of byId)card.hidden=!visible.has(id!);status.textContent=plan.summary;question.textContent=plan.overnightQuestion;fallback.hidden=true;copyStatus.textContent='';const next=updateAltitudeSettingsUrl(window.location.href,plan.filters);if(next)try{window.history.replaceState(null,'',next);}catch{/* Planning works without history. */}return plan;};
+    const safeRender=()=>{try{return render();}catch{restore();return null;}};
+    function change(){safeRender();}
+    function submit(event:Event){event.preventDefault();safeRender();}
+    function reset(event:Event){event.preventDefault();journey!.value=defaultAltitudeFilters.journey;overnight!.value=defaultAltitudeFilters.overnight;urlNote!.hidden=true;urlNote!.textContent='';safeRender();}
+    async function copySettings(){const plan=safeRender();if(!plan)return;try{if(!navigator.clipboard?.writeText)throw Error('Clipboard unavailable');await navigator.clipboard.writeText(plan.shareUrl);copyStatus!.textContent='Public settings link copied. No other URL parameters are shared.';}catch{text!.value=plan.shareUrl;fallback!.hidden=false;text!.focus();text!.select();copyStatus!.textContent='Select and copy the public link below. Nothing has been sent to a provider.';}}
+    try{const initial=readAltitudeSettings(new URL(window.location.href).search);journey.value=initial.filters.journey;overnight.value=initial.filters.overnight;if(initial.invalidKeys.length){urlNote.hidden=false;urlNote.textContent='Unknown or repeated planning choices were reset. Review the selections below.';}render();form.addEventListener('change',change);form.addEventListener('submit',submit);form.addEventListener('reset',reset);copy.addEventListener('click',copySettings);attached=true;form.dataset.ready='true';form.hidden=false;}catch{restore();}
+  }
+  initAltitudePlanning();document.addEventListener('astro:page-load',initAltitudePlanning);
+</script>

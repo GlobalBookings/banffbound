@@ -1,0 +1,338 @@
+{
+  "startedAtUTC": "2026-10-30T00:43:22.703208+00:00",
+  "expectedSourceCommit": "acf20b9f8b33a05a4c31918beb903280dd817b93",
+  "sourceCommit": "acf20b9f8b33a05a4c31918beb903280dd817b93",
+  "cleanRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-planning-tools-clean-64xx7eli",
+  "workflowCheckCount": 55,
+  "checks": [
+    {
+      "path": "scripts/check-trip-planner.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-day-ideas.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-directory.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-production-redirects.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-activities.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paddling.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paid-landings.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-banff-hotel-landing-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-louise-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-winter-activity-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cycling-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-internal-linker.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-blog-content.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-bow-lake-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-jasper-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cabin-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-article-booking-context.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-nightlife-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-live-music-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-drink-offer-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-evening-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-minnewanka-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-gondola-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-spring-ski-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-peyto-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-scenic-flight-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-golden-day-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-heli-ski-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-restaurant-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-skoki-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trip-cost-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-altitude-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-larch-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lesson-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-stay-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-consent.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-embeds.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-safety.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parking-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-build-provenance.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-rental-planning-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-weather-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-snow-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-source-freshness.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-road-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-events.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-navigation.mjs",
+      "passed": true
+    }
+  ],
+  "audit": {
+    "pages": 605,
+    "indexable_documents": 519,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "builtVerification": {
+    "passed": true,
+    "mode": "read-only-built-directory",
+    "htmlRoutes": 238,
+    "htmlPassed": 238,
+    "photosPassed": 7,
+    "fullReviews": 73,
+    "remainingPartialRepairs": 8,
+    "sitemapUrls": 517,
+    "buildReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T00:43:46.891Z",
+      "sourceRevision": null,
+      "sourceFingerprint": "8521cf4aa43f33982b45ff8c905b233e4278e5f16cbbf48a185a93d87388b870"
+    },
+    "buildReceiptStable": true,
+    "productionIdentityVerified": false,
+    "failures": []
+  },
+  "passed": true,
+  "stage": "complete",
+  "archivePath": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-planning-tools-clean-64xx7eli.tar",
+  "finishedAtUTC": "2026-10-30T00:43:55.283740+00:00",
+  "recordedAtUTC": "2026-10-30T00:45:52.453900+00:00",
+  "validationScope": "Exact committed-source clean archive; existing node_modules reused locally. CI npm ci and deployment proof remain pending.",
+  "browserQA": {
+    "source": "Clean Astro preview via loopback4351",
+    "desktopViewportWidth": 1280,
+    "phoneViewport": {
+      "width": 390,
+      "height": 844,
+      "allFivePagesFit": true,
+      "restoredAndVerifiedWidth": 1280
+    },
+    "budget": {
+      "arithmeticExampleIsTestInputNotMarketPrices": true,
+      "exampleA": {
+        "people": 2,
+        "days": 5,
+        "nights": 4,
+        "rooms": 2,
+        "reservePercent": 10,
+        "subtotalCAD": 3100,
+        "totalCAD": 3410
+      },
+      "exampleBTotalCAD": 2970,
+      "confirmedDifferenceCAD": 440,
+      "staleTotalsClearedOnEdit": true,
+      "missingCostRemainsPartial": true,
+      "invalidPeopleZeroShowsAlertAndFocus": true,
+      "resetClearsQuotesAndHidesPlanB": true,
+      "finalComparisonInResultsHeading": true,
+      "finalPhonePartialCAD": 1200,
+      "finalPhoneUnknownCategories": 6,
+      "finalPhonePlanBControlsWork": true
+    },
+    "elevation": {
+      "ninePointsFiveDefaultCards": true,
+      "sunshineSelectionShowsExact500mPointDifference": true,
+      "differentOvernightQuestionShown": true,
+      "resetRestoresFive": true,
+      "phoneLakeLouiseSelectionWorks": true,
+      "nativeClipboardNotUsed": true
+    },
+    "larch": {
+      "defaultFiveCards": true,
+      "moraineUpToFourShowsOnlyValley": true,
+      "snowSelectionKeepsRouteWarning": true,
+      "sunshineUpToFourEmptyState": true,
+      "resetRestoresFive": true,
+      "sourceDetailsOpen": true,
+      "phoneSelectionWorks": true
+    },
+    "directory": {
+      "totalNativeLinks": 45,
+      "altitudeSearchWorks": true,
+      "combinedTopicEmptyStateAndResetWork": true,
+      "budgetSearchWorksFinalDesktopAndPhone": true,
+      "lakesSearchWorksFinalDesktop": true
+    },
+    "skoki": {
+      "originalPublicationDate": "2025-12-27",
+      "reviewDate": "2026-10-29",
+      "curatedBookingFlag": true,
+      "nativeSharedSearchDestination": "Lake Louise, Alberta",
+      "authoredBanffSearchesRetained": true,
+      "phoneTermsFAQOpens": true
+    },
+    "optionalProviderScriptAndFrameElements": 0,
+    "browserNetworkTraceClaimed": false,
+    "merchantBookingsOrEnquiriesMade": false,
+    "printOrNativeClipboardUsed": false,
+    "qaSourceNote": "Full desktop and larch/elevation/Skoki phone checks used f5449e9. Finalbudget layout/directory searches and phone checks used finalacf20b9 archive; only those two source pages differ between these commits."
+  },
+  "independentReadOnlyReview": {
+    "commit": "f5449e91d1dc53e12160a256bf24b4a22ffa303f",
+    "result": "No actionable source, integration or private/unrelated-file issue found. Root subsequently made only two browser-observed UI corrections in budget/tools pages and verified the final archive."
+  },
+  "productionVerified": false,
+  "goalStatus": "active"
+}

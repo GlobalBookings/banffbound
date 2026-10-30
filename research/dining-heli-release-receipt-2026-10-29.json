@@ -1,0 +1,136 @@
+{
+  "checkedAtUTC": "2026-10-30T00:16:49.229075+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/14",
+  "codeCommit": "be823af60e474aca9b2e9f23e72364dca11d75c8",
+  "reviewedHead": "b01b405d33d5469da7c268d691d7380428f406bb",
+  "mergedRevision": "8b7bdade48e3b9b561c3a27671ba67ac91719afc",
+  "mergedAtUTC": "2026-10-30T00:10:59Z",
+  "upstreamAutomatedDataRefreshPreserved": "9be1761f0338647c5cf2720453576da52d5105ae",
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-30T00:12:11.338Z",
+    "sourceRevision": "8b7bdade48e3b9b561c3a27671ba67ac91719afc",
+    "sourceFingerprint": "57f6bfbe499ecb9bbb7981ce002fd7fbb9a6bbc2003476ae1dbe105132efa3b6"
+  },
+  "ci": {
+    "pr": {
+      "run": 40977872959,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40977872959",
+      "revision": "b01b405d33d5469da7c268d691d7380428f406bb",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123810280764,
+      "completedAt": "2026-10-30T00:10:31Z"
+    },
+    "main": {
+      "run": 40978054379,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40978054379",
+      "revision": "8b7bdade48e3b9b561c3a27671ba67ac91719afc",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123810877249,
+      "completedAt": "2026-10-30T00:12:21Z"
+    }
+  },
+  "cleanVerification": "research/dining-heli-clean-verification-2026-10-29.json",
+  "productionVerification": {
+    "report": "research/dining-heli-production-verification-2026-10-29.json",
+    "passed": true,
+    "htmlRoutes": 234,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "stableExactRevisionAndFingerprint": true
+  },
+  "bareUrlVerification": {
+    "report": "research/dining-heli-bare-url-verification-2026-10-29.json",
+    "passed": 5,
+    "paths": [
+      "/eat-and-drink/",
+      "/blog/banff-heli-skiing/",
+      "/blog/golden-bc-day-trip/",
+      "/tools/",
+      "/winter/"
+    ]
+  },
+  "redirectVerification": {
+    "report": "research/live-http-redirect-verification-2026-10-29.json",
+    "mappings": 40,
+    "checksPassed": 100
+  },
+  "browserProduction": {
+    "dining": {
+      "url": "https://banffbound.com/eat-and-drink/#dining-finder",
+      "fullCardCount": 32,
+      "banffCafeCount": 2,
+      "banffCafeSlugs": [
+        "wild-flour-bakery",
+        "whitebark-cafe"
+      ],
+      "controllerMounted": true,
+      "optionalProviderScriptAndFrameElements": 0,
+      "viewportWidth": 1280,
+      "documentWidth": 1280,
+      "screenshot": "/tmp/banffbound-dining-finder-live-2026-10-29.png"
+    },
+    "heli": {
+      "url": "https://banffbound.com/blog/banff-heli-skiing/#heli-ski-planner",
+      "defaultOperators": [
+        "purcell",
+        "rk"
+      ],
+      "selectControls": 5,
+      "rkCanmoreConfirmedTransferTestPassed": true,
+      "minimumPickupAndTransportRefundLimitsRemainVisible": true,
+      "resetRestoresNeutralDefaults": true,
+      "optionalProviderScriptAndFrameElements": 0,
+      "viewportWidth": 1280,
+      "documentWidth": 1280,
+      "screenshot": "/tmp/banffbound-heli-planner-live-2026-10-29.png"
+    },
+    "golden": "Full live HTML contract and bare canonical GET; native Golden destinations, FAQs and phone layout also checked against the clean build.",
+    "browserNetworkTraceClaimed": false,
+    "clipboardOrMerchantBookingUsed": false,
+    "localPreviewStopped": true
+  },
+  "scope": {
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 71,
+    "fullReviewsAfter": 72,
+    "newRegistryFullReviews": 1,
+    "existingFullReviewsRefreshed": 1,
+    "otherCanonicalBodiesByteIdentical": 293,
+    "partialOpeningRepairs": 8,
+    "originalPublicationDatesPreserved": 335,
+    "diningVenues": 32,
+    "selectedFactDiningReviews": 30,
+    "pendingDiningReviews": 2,
+    "allCanonicalFactsReviewed": false,
+    "allDiningFactsReviewed": false
+  },
+  "preserved": {
+    "hotelIdentitiesAndProviderURLs": 95,
+    "hostAliasMappings": 40,
+    "affiliateAndMeasurementIdentifiers": true,
+    "unrelatedUserWork": true
+  },
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "getYourGuidePlan": "Google/Microsoft non-brand ads to owned BanffBound landing pages with optional onward disclosed affiliate links; user confirmed this funnel.",
+    "independentlyVerifiedCustomGetYourGuideException": false,
+    "separateWrittenExceptionPlanningGate": false,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "223 canonical blog bodies still lack a full review; eight have bounded opening repairs.",
+    "PD3 and Trailhead remain explicitly pending in the32-entry dining directory.",
+    "Broader hotel fact/photo and legacy-tool audits remain incomplete.",
+    "Campaign market, budget and bids are unspecified; no paid-ad launch has occurred."
+  ],
+  "goalStatus": "active"
+}

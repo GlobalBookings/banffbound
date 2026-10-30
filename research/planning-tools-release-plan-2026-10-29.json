@@ -1,0 +1,62 @@
+{
+  "preparedAtUTC": "2026-10-30T00:34:16.967568+00:00",
+  "baselineRevision": "8b7bdade48e3b9b561c3a27671ba67ac91719afc",
+  "status": "Final committed-source 55 checks, full build, strict audit,238 built HTML contracts,7 photos and desktop/phone QA passed; pending CI and production proof",
+  "scope": {
+    "quoteBudgetPlans": 2,
+    "budgetCategories": 7,
+    "namedElevationPoints": 9,
+    "elevationJourneys": 5,
+    "elevationPublicChoiceCombinations": 18,
+    "larchSummerRouteProfiles": 5,
+    "larchPublicChoiceCombinations": 45,
+    "toolDirectorySearchAndTopics": true,
+    "newFullReviewSlugs": [
+      "skoki-lodge-guide"
+    ],
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 72,
+    "fullReviewsAfter": 73,
+    "partialOpeningRepairs": 8,
+    "otherCanonicalBodiesByteIdentical": 294,
+    "originalPublicationDatesPreserved": 335,
+    "allCanonicalFactsReviewed": false
+  },
+  "verificationTargets": {
+    "workflowChecks": 55,
+    "productionHTMLContractsBefore": 234,
+    "productionHTMLContractsAfter": 238,
+    "newUniqueContracts": 4,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "hostAliasMappings": 40,
+    "redirectChecks": 100,
+    "authoredBookingGuides": 22,
+    "curatedBookingContextPages": 24
+  },
+  "preserved": [
+    "Existing routes and original publication dates",
+    "All95hotel identities/provider URLs",
+    "Shared reviewed trail/lake/Parkway source data",
+    "All40approved host aliases",
+    "Affiliate and measurement identifiers",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "getYourGuideOwnedLandingPageFunnelRetained": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "revenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "222 canonical blog bodies lack a full review; eight have bounded opening repairs.",
+    "Related legacy larch/fall and budget article bodies still need their own source reviews; these are not made fresh by a tool rewrite.",
+    "Broader hotel fact/photo and remaining legacy-tool audits remain incomplete.",
+    "Market, campaign budget and bids are unspecified; no ad launch performed."
+  ],
+  "goalStatus": "active",
+  "cleanVerification": "research/planning-tools-clean-verification-2026-10-29.json"
+}

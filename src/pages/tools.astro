@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ToolDirectoryInteractions from '../components/ToolDirectoryInteractions.astro';
 
 const toolCategories = [
   { name: 'Winter Planning', tools: [
@@ -14,7 +15,7 @@ const toolCategories = [
   {
     name: 'Trip Planning',
     tools: [
-      { href: '/trip-cost', title: 'Trip Cost Calculator', desc: 'Interactive budget builder with accommodation, food, activities, and transport sliders.', icon: '💰' },
+      { href: '/trip-cost', title: 'Trip Cost Calculator', desc: 'Build and compare two trip budgets using your own CAD quotes, with explicit cost units, missing items and a reserve.', icon: '💰' },
       { href: '/trip-builder', title: 'Itinerary Builder', desc: 'Edit 1-7 winter or summer days, move outings, save a plan and share your itinerary.', icon: '📋' },
       { href: '/calgary-to-banff', title: 'Calgary to Banff Guide', desc: 'Airport arrival timeline, shuttle options, driving tips, and timing.', icon: '✈️' },
       { href: '/canmore-vs-banff', title: 'Canmore vs Banff', desc: 'Interactive decision tool. Pick your priorities, get a recommendation.', icon: '🏘️' },
@@ -37,7 +38,7 @@ const toolCategories = [
       { href: '/parking', title: 'Parking & Transport Planner', desc: 'Match 11 destinations to seasonal access, group needs and the return journey.', icon: '🅿️' },
       { href: '/shuttle-reservations', title: 'Lake Shuttle Planning', desc: 'Compare actual lake services, reservation steps and connections.', icon: '🚐' },
       { href: '/accessible-trails', title: 'Accessible Banff', desc: 'Compare physical trail profiles, visitor features and transport arrangements.', icon: '♿' },
-      { href: '/larch-season', title: 'Larch Season Predictor', desc: 'When do larches turn gold? Historical data and best trails.', icon: '🍂' },
+      { href: '/larch-season', title: 'Larch Season Planner', desc: 'Compare five hiking endpoints, seasonal transport and autumn timing with official source links.', icon: '🍂' },
     ],
   },
   {
@@ -49,7 +50,7 @@ const toolCategories = [
       { href: '/solo-hiking', title: 'Solo Hiker Safety', desc: 'Checklist, best trails for solo hikers, emergency contacts.', icon: '🥾' },
       { href: '/emergency-card', title: 'Emergency SOS Card', desc: 'Printable card with emergency numbers, protocols, and GPS coordinates.', icon: '🆘' },
       { href: '/air-quality', title: 'Air Quality Tracker', desc: 'Wildfire smoke risk, AQI scale, and what to do on smoky days.', icon: '💨' },
-      { href: '/altitude-guide', title: 'Altitude Guide', desc: 'Risk screener, elevation chart, and prevention tips.', icon: '⛰️' },
+      { href: '/altitude-guide', title: 'Altitude & Elevation Guide', desc: 'Compare named elevation points, five visitor journeys and the questions for an overnight plan.', icon: '⛰️' },
       { href: '/wildlife-calendar', title: 'Wildlife Calendar', desc: 'Choose your month for wildlife preparation and seasonal context.', icon: '📅' },
     ],
   },
@@ -60,7 +61,7 @@ const toolCategories = [
       { href: '/paddling', title: 'Paddling Planning', desc: 'Compare lake outings, river options, access and current watercraft rules.', icon: '🛶' },
       { href: '/what-to-do-today', title: 'What to Do Today', desc: 'Choose an outing by season, base, time and interests, then check access.', icon: '☀️' },
       { href: '/icefields-parkway-planner', title: 'Icefields Parkway', desc: 'Build a seasonal stop shortlist, change direction and copy your journey checks.', icon: '🛣️' },
-      { href: '/photo-spots', title: 'Photo Spots', desc: '10 best photography locations with golden hour times.', icon: '📸' },
+      { href: '/photo-spots', title: 'Photo Spots', desc: 'Compare ten photo destinations by season and light, with actual access checks and sun-time resources.', icon: '📸' },
       { href: '/ski-pass-calculator', title: 'Ski Pass Calculator', desc: 'Compare eligible whole ski plans using your current ticket and pass quotes.', icon: '⛷️' },
       { href: '/via-ferrata', title: 'Via Ferrata Guide', desc: 'Routes, prices, fitness requirements for Mt Norquay.', icon: '🧗' },
       { href: '/camping', title: 'Camping Guide', desc: 'All 12 campgrounds with fees, facilities, and FCFS strategy.', icon: '⛺' },
@@ -79,19 +80,19 @@ const toolCategories = [
     name: 'Lake & Nature Guides',
     tools: [
       { href: '/lake-faq', title: 'Lake FAQ & Science', desc: 'Sourced answers about colour, ice, swimming, watercraft and actual access.', icon: '💧' },
-      { href: '/lakes', title: 'Choose a Lake Day', desc: 'Compare 10 lake plans by area, trip season and the kind of outing.', icon: '🏔️' },
+      { href: '/lakes', title: 'Choose a Lake Day', desc: 'Compare 10 lakes by area, trip season and the kind of outing.', icon: '🏔️' },
     ],
   },
 ];
 ---
 
-<BaseLayout title="Banff Planning Tools — 30+ Free Interactive Guides" description="Every tool you need to plan a Banff trip. Trail finders, parking and transport planning, cost calculators, wildlife trackers, safety guides, and more. All free, no signup.">
+<BaseLayout title="Banff Planning Tools & Guides — Free Trip Planners" description="Find Banff trip planners, trail comparisons, quote-based budgets, ski-day tools, dining and transport guides. Search by topic or browse all planning links for free.">
 
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Banff Planning Tools',
-    description: 'Every tool you need to plan a Banff trip. Trail finders, parking and transport planning, cost calculators, wildlife trackers, safety guides, and more. All free, no signup.',
+    description: 'Find Banff trip planners, trail comparisons, quote-based budgets, ski-day tools, dining and transport guides. Search by topic or browse all planning links for free.',
     url: 'https://banffbound.com/tools',
     mainEntity: {
       '@type': 'ItemList',
@@ -116,23 +117,26 @@ const toolCategories = [
     <Breadcrumbs items={[{ label: 'Planning Tools' }]} />
   </div>
 
-  <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Banff National Park tools and planning" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content">
+  <section class="tools-hero">
+    <div class="container">
       <span class="badge">Free Tools</span>
       <h1>Banff Planning Tools</h1>
-      <p>30+ interactive guides and calculators to plan the perfect Banff trip. Free to explore, with no signup required.</p>
+      <p>Give your trip a shape. Find a mountain base, compare the whole ski day, build a budget or choose your next meal. Explore the planners and practical guides below.</p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="tool-directory" aria-labelledby="tools-find-title">
     <div class="container">
+      <h2 id="tools-find-title">Find the next piece of your trip</h2>
+      <form id="tools-find" hidden><label for="tools-query">Search tools and guides<input id="tools-query" type="search" placeholder="Try lessons, budget or lakes" /></label><label for="tools-category">Topic<select id="tools-category"><option value="all">All topics</option>{toolCategories.map(cat=><option value={cat.name}>{cat.name}</option>)}</select></label><button type="reset">Show all</button></form>
+      <p id="tools-status" role="status" aria-live="polite">{toolCategories.reduce((count,cat)=>count+cat.tools.length,0)} guide and tool links</p>
+      <p id="tools-empty" hidden>No links match those choices. Try another search or topic, or show all.</p>
       {toolCategories.map(cat => (
-        <div class="tool-category">
+        <div class="tool-category" data-tool-category={cat.name}>
           <h2>{cat.name}</h2>
           <div class="tool-grid">
             {cat.tools.map(tool => (
-              <a href={tool.href} class="tool-card">
+              <a href={tool.href} class="tool-card" data-tool-search={`${tool.title} ${tool.desc} ${tool.href} ${cat.name}`} data-tool-topic={cat.name}>
                 <span class="tool-icon">{tool.icon}</span>
                 <div class="tool-info">
                   <h3>{tool.title}</h3>
@@ -145,9 +149,12 @@ const toolCategories = [
       ))}
     </div>
   </section>
+  <ToolDirectoryInteractions />
 </BaseLayout>
 
 <style>
+  .tools-hero{background:var(--color-primary);color:#fff;padding:4rem 0}.tools-hero h1{color:#fff;font-size:clamp(2.4rem,5vw,3.8rem);margin:1rem 0}.tools-hero p{max-width:760px;font-size:1.1rem;line-height:1.85}#tools-find{display:flex;gap:1rem;align-items:end;flex-wrap:wrap;padding:1.25rem;background:var(--color-bg-alt);border-radius:12px;margin:1.5rem 0}#tools-find label{flex:1;min-width:210px;font-size:.85rem;font-weight:700}#tools-find input,#tools-find select{display:block;width:100%;margin-top:.6rem;background:#fff;color:var(--color-text);border:1px solid #aab2ab;border-radius:6px;padding:.75rem;font:inherit}#tools-find button{padding:.75rem 1.1rem;border-radius:6px;border:1px solid var(--color-primary);background:#fff;color:var(--color-primary);font:inherit;font-weight:700;cursor:pointer}#tools-status{font-weight:700;margin-bottom:2rem}#tools-empty{padding:1.5rem;border-radius:10px;background:var(--color-bg-alt);line-height:1.8}#tools-find[hidden],#tools-empty[hidden],.tool-card[hidden],.tool-category[hidden]{display:none}#tools-find :focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}
+
   .tool-category { margin-bottom: 3rem; }
   .tool-category h2 { font-size: 1.3rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-bg-alt); }
 
