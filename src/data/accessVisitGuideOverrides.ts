@@ -1,0 +1,108 @@
+/** Whole-visit access review; original publication remains 2026-02-08. */
+export const reviewDate = '2026-10-29';
+export const accessVisitGuideSources: Record<string, Record<string, string>> = {
+  'accessible-banff': {
+    airport: 'https://www.yyc.com/en-us/accessibility/at-the-terminal',
+    express: 'https://www.banffjaspercollection.com/brewster-express/faqs/',
+    roam: 'https://roamtransit.com/about-us/transportation-policies/',
+    shuttle: 'https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq',
+    lakes: 'https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise',
+    fairmont: 'https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html',
+    moose: 'https://moosehotelandsuites.com/accessible-hotel-room/',
+    policy: 'https://parks.canada.ca/voyage-travel/experiences/accessibilite-accessibility',
+    cave: 'https://parks.canada.ca/lhn-nhs/ab/caveandbasin/activ/activites-activities/introduction-basictour',
+    caveHours: 'https://parks.canada.ca/lhn-nhs/ab/caveandbasin/visit/heures-hours',
+    gondola: 'https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/',
+    aquatic: 'https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs/accessibilite-accessibility',
+    springs: 'https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs',
+    adaptive: 'https://rockymountainadaptive.com/',
+    winter: 'https://parks.canada.ca/pn-np/ab/banff/activ/marchehiver-winterwalking/banff',
+    trails: 'https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions',
+    bulletins: 'https://parks.canada.ca/pn-np/ab/banff/bulletins',
+  },
+};
+const s = accessVisitGuideSources['accessible-banff'];
+const banffHotels = 'https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX';
+const banffActivities = 'https://www.getyourguide.com/banff-l284/?partner_id=QW960HO';
+export const accessVisitGuideFaqs: Record<string, { question: string; answer: string }[]> = {
+  'accessible-banff': [
+    { question: 'How do I confirm a room will work for my visit?', answer: 'Ask about the exact room category, bathroom and entrance, using the dimensions and setup relevant to you. Confirm bed and transfer space, shower and toilet arrangements, equipment requests and the route from parking or drop-off. An accessible-room filter or a roll-in-shower label does not reserve every feature or establish access to a pool or patio.' },
+    { question: 'Does Parks Canada give every visitor with a disability free admission?', answer: 'Its policy gives free daily admission and program access to a needed support person travelling with a visitor who depends on that support. No documentation or Access 2 Card is required for that support-person policy. It is not a universal free visitor pass or a rule for every commercial attraction. Confirm the actual admission and program arrangements.' },
+    { question: 'Can I assume every airport or lake shuttle accepts my mobility device?', answer: 'No. Confirm the actual vehicle, boarding, securement and equipment with each operator. Brewster Express says its motor coaches are not wheelchair accessible. Parks published an on-demand accessible option for its regular reserved 2026 lake service, with companion space subject to availability; the 2026 Alpine Start service had no accessible vehicle. That season ended October 12 and does not establish future schedules.' },
+    { question: 'Does access to a summit building establish access to the outdoor trail?', answer: 'No. Banff Gondola publishes elevators between its four summit-building levels, but its outdoor boardwalk has 368 shallow stairs each way and is not wheelchair accessible. Compare the specific building or viewing visit with the onward route, device limits, current conditions and complete return.' },
+    { question: 'Can I rely on free adaptive-chair loans or automatic aquatic equipment?', answer: 'Do not assume equipment, fitting or assistance is waiting at a visitor centre or facility. Confirm the actual item, provider, date and support. Rocky Mountain Adaptive publishes lessons, experiences and equipment rentals. Upper Hot Springs describes aquatic chairs on request, but that is separate from current operation, equipment availability and the assistance you require.' },
+  ],
+};
+const esc = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+function faqs(): string {
+  const entries = accessVisitGuideFaqs['accessible-banff'];
+  return entries.map(faq => `<details><summary>${esc(faq.question)}</summary><p>${esc(faq.answer)}</p></details>`).join('\n') + `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: entries.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) }).replace(/</g, '\\u003c')}</script>`;
+}
+export const accessVisitGuideOverrides: Record<string, string> = {
+  'accessible-banff': `
+<p>A good Banff visit starts with the experience you want, then joins the practical pieces: arrival, room, assistance, the chosen place and the return. A lake view, exhibition, summit building or adaptive lesson can each be the main event. You do not need to complete a long trail or a list of landmarks to make the trip worthwhile.</p>
+<p><strong>Full guide reviewed October 29, 2026.</strong> This is a whole-visit planning guide, not a suitability score or route-measurement catalogue. Use the existing <a href="/accessible-trails/#trail-profiles">physical-profile comparison</a> for published outdoor widths, slopes and surfaces. Here, work through the connections that a route profile cannot answer. No personal health information is requested by this article.</p>
+<nav aria-label="Banff access visit guide sections"><p><a href="#access-objective">Choose the visit</a> · <a href="#access-airport">Airport handoffs</a> · <a href="#access-transport">Local and lake travel</a> · <a href="#access-room">Exact room</a> · <a href="#access-facilities">Buildings and facilities</a> · <a href="#access-support">Support and communication</a> · <a href="#access-adaptive">Adaptive activities</a> · <a href="#access-season">Season and return</a> · <a href="#access-booking">Quotes and confirmations</a> · <a href="#access-questions">Questions</a></p></nav>
+
+<h2 id="access-objective">Choose an endpoint and the parts that matter to you</h2>
+<p>Begin with one main experience and identify the features or assistance that will make it work for you. That might be staying in your own mobility device, a particular bathroom setup, a quieter waiting space, communication support or a place to rest. Tell the relevant provider what you need for the arrangement; you do not need to publish private details in a shared itinerary.</p>
+<p>Separate the place from the journey around it. An elevator in a building does not describe the walk from a stop, a lakeshore or the path beyond a viewing area. Ask about washrooms, rest opportunities, food and the point at which you will turn back. Leave time for those parts instead of building a day around the attraction’s headline duration.</p>
+
+<h2 id="access-airport">Airport assistance and the mountain transfer are separate</h2>
+<p><a href="${s.airport}" target="_blank" rel="noopener">YYC’s terminal access information</a> distinguishes airline assistance between the aircraft/gate and public areas from airport assistance between public areas and the curb. Arrange the appropriate stages with the airline and airport. A wheelchair or guidance service in the terminal does not confirm a lift-equipped transfer to Banff.</p>
+<p>For the ground journey, identify the actual vehicle and whether you remain seated in your device or transfer to a vehicle seat. Discuss boarding, lift or ramp dimensions, securement, equipment storage, companion seats and luggage directly with the carrier. Join that answer to the exact hotel drop-off and entrance, including any connecting van or local leg.</p>
+<p>The <a href="${s.express}" target="_blank" rel="noopener">Brewster Express FAQ explicitly says its motor coaches are not wheelchair accessible</a>. Do not choose that service on the strength of a generic airport-shuttle or hotel-pickup description. If those coaches do not meet your requirements, arrange another specifically confirmed vehicle; an unverified private-transfer label is not enough either.</p>
+<p>Use <a href="/calgary-to-banff/">the airport-journey guide</a> to compare service purposes, then obtain the actual provider’s answer before paying. Keep the arrival contact, meeting point and onward plan available offline. Arrange the return to the airport at the same time, with the required vehicle and assistance rather than assuming the outward arrangement automatically repeats.</p>
+
+<h2 id="access-transport">Resolve each bus, lake transfer and final path</h2>
+<table><caption>Published transport features do not join the whole journey automatically</caption><thead><tr><th scope="col">Service</th><th scope="col">Published arrangement</th><th scope="col">Confirm for the actual trip</th></tr></thead><tbody>
+<tr><th scope="row"><a href="${s.roam}" target="_blank" rel="noopener">Roam Transit</a></th><td>Ramps, kneeling entrances and priority spaces; some devices, especially larger scooters, cannot make the boarding turn.</td><td>The device and securement, chosen stop, space, last return and assistance actually available.</td></tr>
+<tr><th scope="row"><a href="${s.shuttle}" target="_blank" rel="noopener">Parks regular lake shuttle</a></th><td>Accessible dispatch requested at the Park and Ride using the purchased shuttle ticket; companions subject to space.</td><td>The actual season, device, group, check-in and return. The 2026 Alpine Start product had no accessible service.</td></tr>
+<tr><th scope="row">Hotel or commercial activity transfer</th><td>The particular provider and vehicle determine the arrangement.</td><td>Boarding, securement, party seats, equipment, final approach and both directions in the confirmation.</td></tr>
+</tbody></table>
+<p>Roam’s policy discusses guidance and securement assistance, but also notes drivers may have their own physical limitations. Establish who will provide the help you need; do not assume a driver can lift a person or complete a personal transfer. A ramp-equipped vehicle does not establish a suitable path after you leave it.</p>
+<p><a href="${s.lakes}" target="_blank" rel="noopener">Parks’ published 2026 lake-shuttle season ended October 12</a>. The accessible dispatch arrangement does not create winter Moraine Lake service or a 2027 timetable. A parking placard does not reserve a vehicle or a place at the lake. Use <a href="/shuttle-reservations/">lake access planning</a> and <a href="/car-free-banff/">the transport comparison</a> for the broader journey, then confirm your actual requirements.</p>
+
+<h2 id="access-room">Choose a real room category and bathroom setup</h2>
+<p>Ask for the category and layout that will be allocated, rather than accepting an accessibility filter as a room confirmation. Discuss entrance and bathroom doorways, turning and bedside space, bed height, shower threshold, seat, grab bars and toilet transfer arrangement. Ask for the measurements, photographs or explanation relevant to you. A roll-in shower alone cannot answer every one of those questions.</p>
+<table><caption>Two documented Banff room examples, with different questions still to resolve</caption><thead><tr><th scope="col">Published category</th><th scope="col">Selected operator facts</th><th scope="col">What to confirm</th></tr></thead><tbody>
+<tr><th scope="row"><a href="${s.moose}" target="_blank" rel="noopener">Moose: Hotel Room with Accessible Bathroom</a></th><td>Two queens, roll-in shower and grab bars; portable shower chair on request. The page gives an approximate 86 cm bathroom doorway.</td><td>Actual layout and chair availability. Its patio is not wheelchair accessible; aquatic facilities have steps/stairs and no motorized lift.</td></tr>
+<tr><th scope="row"><a href="${s.fairmont}" target="_blank" rel="noopener">Fairmont Queen Mobility Accessible Rollin Shower</a></th><td>Fairmont Banff Springs lists this category in the main building, with roll-in shower and grab bars.</td><td>The particular room, clearances, bed/transfer setup and full journey to the facilities you want.</td></tr>
+</tbody></table>
+<p>These are category examples, not a hotel-wide assessment or available rooms. An approximate published doorway is not a measured route for your device. If cooking, connecting rooms, an assistance animal or another feature is essential, confirm the combination in the actual category; separate filters do not reserve it.</p>
+<p>The <a href="/book/banff-hotels/">Banff hotel comparison</a> helps compare addresses and room formats. For another base, use <a href="/book/lake-louise-stays/">the Lake Louise area comparison</a> and <a href="/towns/">town guides</a>. Match the actual entrance, food plan and transport; a Lake Louise village room, lakeshore stay and ski-resort start are different places. A property profile is useful context, not an individual access confirmation.</p>
+
+<h2 id="access-facilities">A building, outdoor route and pool are different decisions</h2>
+<p><a href="${s.gondola}" target="_blank" rel="noopener">Banff Gondola’s operator</a> describes cabins taken off the track for boarding and elevators between four summit-building levels. It publishes a mobility-device size limit of <strong>31 inches wide by 41 inches long</strong> and <strong>320 kg total weight</strong>. Confirm the actual device and party with the operator. The outdoor boardwalk has <strong>368 shallow stairs each way</strong> and is not wheelchair accessible; summit-building access is not an onward trail promise.</p>
+<p><a href="${s.cave}" target="_blank" rel="noopener">Cave and Basin’s introductory tour</a> is published as an indoor/outdoor heritage visit. Confirm the specific portions, surfaces and assistance for your visit, then check <a href="${s.caveHours}" target="_blank" rel="noopener">the winter opening days and temporary closure blocks</a>. An exhibition building does not establish access to every surrounding boardwalk, and this site is not a bathing facility.</p>
+<p><strong>Upper Hot Springs, checked October 29, 2026:</strong> <a href="${s.springs}" target="_blank" rel="noopener">Parks still publishes maintenance closure from October 13 to early November</a>. That wording does not confirm reopening. Its <a href="${s.aquatic}" target="_blank" rel="noopener">facility access guide</a> describes elevator size limits, a ramp option to pool level and aquatic chairs requested at reception; personal wheelchairs cannot enter the spring water. Confirm current operation, equipment and any transfer assistance before planning a pool visit. Do not assume a chair or staff transfer is automatically available.</p>
+
+<h2 id="access-support">Support people and communication: ask for the actual arrangement</h2>
+<p><a href="${s.policy}" target="_blank" rel="noopener">Parks Canada’s access policy</a> provides free daily admission and program access for a needed support person accompanying a visitor who depends on that support. It requires no documentation or Access 2 Card for that policy. It is not a universal free visitor pass; do not apply it automatically to commercial attractions, hotel facilities or transport. Use <a href="/park-pass/">the admission planner</a> for the rest of the actual party and journey.</p>
+<p>The same Parks page asks for sign-language interpretation or equivalent communication requests <strong>at least five business days ahead</strong>; availability depends on location and timing. Discuss the place, program and communication format with the site. Its service-animal guidance also has site-specific health, safety and operational limits. A policy welcomes planning conversations without confirming every individual arrangement.</p>
+<p>Decide who provides personal assistance during travel, changing, meals and an activity. Ask about the practical tasks you need instead of assuming a staff member can provide them. Share only the information needed with the appropriate provider, using its own channel. This article and the public planning links do not need your diagnosis, medical history or equipment serial number.</p>
+
+<h2 id="access-adaptive">Arrange an adaptive activity rather than assuming equipment</h2>
+<p><a href="${s.adaptive}" target="_blank" rel="noopener">Rocky Mountain Adaptive</a> publishes lessons, experiences, programs and equipment rentals, including snow-sport choices. Those are different formats: equipment hire does not automatically include instruction, transport, fitting or personal assistance. Ask about the actual participant, venue, date, equipment, instructor, companion arrangement and cancellation terms.</p>
+<p>For a snow day, use the <a href="/learn-to-ski/#lesson-fit">lesson planning guide</a> to organise questions, then obtain the adaptive provider’s specific arrangement. The <a href="/ski-day-planner/">ski-day planner</a> can help join check-in, equipment and the return; it does not allocate an adaptive lesson or assess suitability. A booking request or a named piece of equipment is not an accepted lesson.</p>
+<p>This review does not verify free all-terrain chair loans at a visitor centre. Ask the actual equipment provider about the item and support you need. Do not build a remote outing around an assumed loan or treat an adaptive device as permission to enter closed terrain.</p>
+
+<h2 id="access-season">Plan the season, warm-up and complete return</h2>
+<p>Published summer surfaces and measurements are a starting conversation, not a winter clearance report. Use the <a href="/accessible-trails/#trail-profiles">physical-profile tool</a> for its stated widths, gradients and obstacles rather than an easy hiking grade. Choose a specific endpoint before comparing the complete approach and return.</p>
+<p><a href="${s.winter}" target="_blank" rel="noopener">Parks’ winter guidance</a> calls for current checks and preparation even near town. Snow, ice, ploughing and temporary works can change entrances, stops, ramps and routes during the day. Recheck <a href="${s.trails}" target="_blank" rel="noopener">trail reports</a>, <a href="${s.bulletins}" target="_blank" rel="noopener">bulletins</a> and the actual operator. Equipment does not remove those changes or establish safe terrain.</p>
+<p>Keep a different kind of day ready: a confirmed exhibition, meal near the base or suitable booked activity. The <a href="/blog/rainy-day-banff/">weather-change guide</a> separates indoor visits from partly outdoor attractions and bathing. Check the actual venue’s access, not just its indoor label.</p>
+<p>Arrange the final vehicle and assistance, food, washroom and place to wait before setting out. Save the boarding point, provider contact and return instructions offline; the <a href="/blog/banff-mobile-connectivity/">connectivity guide</a> distinguishes saved information from a working connection. On checkout day, include luggage and the room-access deadline rather than using a distant outing to fill the wait.</p>
+
+<h2 id="access-booking">Compare confirmed arrangements and keep the unknowns visible</h2>
+<p>Build a quote from the actual party, room category, nights, transport, support and activity inclusions. In <a href="/trip-cost/">the two-plan budget tool</a>, keep missing amounts unknown and count an inclusion only once. Ask how a change or cancellation affects dependent bookings; do not assume one provider’s terms protect the whole trip.</p>
+<p>The <a href="${banffHotels}" target="_blank" rel="noopener sponsored">Expedia Banff accommodation search</a> is a broad destination search, not a confirmed accessible room. The <a href="${banffActivities}" target="_blank" rel="noopener sponsored">GetYourGuide Banff activity catalogue</a> is not a verified access-approved tour list. Establish the particular provider’s arrangement before booking. These search links are affiliate links; BanffBound may earn a commission if you book.</p>
+<p>Keep the accepted room and transport details, assistance arrangements and a workable alternative together for your own use. The next step is a complete confirmed journey, not a public accessibility score.</p>
+<h2 id="access-questions">Questions about planning the whole visit</h2>
+${faqs()}
+<h2 id="access-sources">Sources and review</h2>
+<p><strong>Full guide reviewed October 29, 2026.</strong> Linked airport, carrier, property, Parks and operator pages support selected facts. They do not verify your device fit, individual assistance, room or equipment availability, current route condition or a future season. The hero is illustrative, not verified as a named property, facility or access route.</p>
+`,
+};
+export const accessVisitGuideMetadata: Record<string, { title: string; description: string; lastUpdated: string; readTime: string; imageIsIllustrative: true; imageNote: string }> = {
+  'accessible-banff': { title: 'Accessible Banff Visit: Rooms, Transport, Assistance & Returns', description: 'Join a Banff visit around actual airport and carrier arrangements, room and bathroom categories, facility access, support people, adaptive activities and the return.', lastUpdated: reviewDate, readTime: '12 min read', imageIsIllustrative: true, imageNote: 'Illustrative image; not verified as a named property, access feature, route, mobility arrangement or current condition.' },
+};

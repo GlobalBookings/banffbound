@@ -1,0 +1,1563 @@
+{
+  "recordedAtUTC": "2026-10-30T05:17:14.575Z",
+  "reviewDate": "2026-10-29",
+  "status": "Completed public local-build contextual-link audit; no URL consolidation or app edits",
+  "scope": {
+    "localBuildOnly": true,
+    "htmlFilesScanned": 605,
+    "targetRouteCount": 7,
+    "requestedTargets": [
+      "/accessible-trails/",
+      "/blog/accessible-banff/",
+      "/blog/banff-accessible-hikes/",
+      "/packing-list/",
+      "/blog/banff-packing-list/",
+      "/blog/banff-mistakes-to-avoid/",
+      "/blog/banff-first-time-tips/"
+    ],
+    "sourceScope": "All emitted HTML native anchors to the seven requested public paths, including relative and absolute same-origin URLs. Query and fragment do not change path membership. Script/config strings are not anchors. Hidden responsive-menu anchors are counted and explicitly classified.",
+    "privateSearchConsoleDataRead": false,
+    "privateMetricsPublished": false,
+    "liveHttpRequestsToBanffBound": false,
+    "gitOrIndexActions": false,
+    "applicationFilesChanged": []
+  },
+  "baseline": {
+    "distPath": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-family-pets-clean-wuqz96m7/dist",
+    "release": "PR19 family/pets release",
+    "knownMergeRevision": "aa619002a224aac62f83ca29290ffa71a4f21042",
+    "revisionEvidence": "Merge revision is recorded in the public prior release receipt; this local archive build-info sourceRevision is null and is not represented as an exact merge checkout.",
+    "releaseReceipt": "research/family-pets-release-receipt-2026-10-29.json",
+    "buildInfo": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T04:38:45.597Z",
+      "sourceRevision": null,
+      "sourceFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d"
+    },
+    "buildInfoSha256": "604da08ec678b641e388a9b8514b38e74fdca3c6b1a55dbff2c004d94c02928b",
+    "snapshotBoundary": "Inbound counts and baseline labels are from the retained PR19 output, before the two new accessibility article drafts and hub refresh are integrated. They are not counts for the next release or production observed during this audit."
+  },
+  "method": {
+    "categoryDefinitions": {
+      "shared-header": "Shared desktop/mobile site navigation, including duplicate responsive menus. Occurrences are not independent editorial recommendations.",
+      "shared-footer": "Shared footer links; repeated across source pages, not authored article recommendations.",
+      "local-navigation": "Navigation or breadcrumbs outside the shared header/footer.",
+      "blog-listing": "Blog-index discovery card; not an authored body recommendation.",
+      "related-content": "Related-content discovery block outside the authored body.",
+      "template-sidebar": "Repeated contextual sidebar from a route/detail template, separated from authored body links.",
+      "article-body": "Inside a rendered /blog/ article-body or guide-content container. Non-blog guide-content, including town guides, stays page-body. Includes authored prose/tables/native handoffs.",
+      "page-body": "Inside page main content outside shared chrome/listing/sidebar; includes non-blog guide content and page-level planning cards/prose. Identical repeated body patterns are also listed separately.",
+      "other": "Any remaining visible or hidden native anchor, kept separate for inspection."
+    },
+    "countsInterpretation": "Occurrence counts are HTML anchors, not visitors, links indexed by a search engine, clicks or independent endorsements. uniqueSourceRoutes is reported separately. Shared header/footer and repeated contextual sidebars are not pooled with authored article-body links.",
+    "fragmentCheck": "Every explicit fragment on a matching native anchor is checked against an actual emitted destination id.",
+    "evidenceLimits": [
+      "No search impressions, positions, revenue, conversions, user counts or private analytics were consulted.",
+      "Sparse search evidence alone is inconclusive for canonical consolidation; this record is public content/link evidence, not a search-performance or cannibalization finding.",
+      "Native links and labels do not prove outdoor suitability, current operation, provider availability or accessibility of a whole visit.",
+      "The old rendered titles/claims are snapshot evidence, not endorsements or the new reviewed-copy contract."
+    ],
+    "repeatedChromeEvidence": "Shared header/footer groups retain exact occurrence and unique-source counts plus six sample source paths to avoid repeating the same 561-path list. Every non-chrome contextual body occurrence remains itemized; contextual template/discovery source routes remain listed."
+  },
+  "targets": {
+    "/accessible-trails/": {
+      "retainedRole": "Main access comparison and planning hub: published physical profiles are the focal point, with concise facility/transport/support handoffs.",
+      "baselinePage": {
+        "canonical": [
+          "https://banffbound.com/accessible-trails/"
+        ],
+        "title": "Accessible Banff: Trail Profiles, Transport & Visitor Access | BanffBound",
+        "h1": [
+          "Accessible Banff: Build Your Outing"
+        ],
+        "robots": [],
+        "htmlSha256": "660f956113851829f739a7aad35616e440be19f3e9dab3b379714fbfd1589040"
+      },
+      "counts": {
+        "totalAnchors": 1143,
+        "uniqueSourceRoutes": 561,
+        "byCategory": {
+          "shared-header": 1122,
+          "shared-footer": 0,
+          "local-navigation": 0,
+          "blog-listing": 0,
+          "related-content": 0,
+          "template-sidebar": 0,
+          "article-body": 3,
+          "page-body": 18,
+          "other": 0
+        },
+        "authoredArticleAnchors": 3,
+        "pageMainAnchors": 18
+      },
+      "repeatedNavigationAndDiscoveryGroups": [
+        {
+          "category": "shared-header",
+          "label": "Accessible Trails",
+          "context": "Accessible Trails",
+          "occurrences": 1122,
+          "hiddenMarkupOccurrences": 0,
+          "uniqueSourceRouteCount": 561,
+          "sourceRouteSample": [
+            "/404",
+            "/about/",
+            "/accessible-trails/",
+            "/accommodation/",
+            "/activities/dog-sledding/",
+            "/activities/ice-skating/"
+          ]
+        }
+      ],
+      "contextualBodyLinks": [
+        {
+          "sourceRoute": "/activities/dog-sledding/",
+          "href": "/accessible-trails",
+          "label": "Plan access requirements",
+          "category": "page-body",
+          "context": "Plan access requirements and ask about the full journey, including the approach, changing areas, transfers and return.",
+          "precedingHeading": "Is this the right outing for your group?",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/ice-skating/",
+          "href": "/accessible-trails",
+          "label": "Plan access requirements",
+          "category": "page-body",
+          "context": "Plan access requirements and ask about the full journey, including the approach, changing areas, transfers and return.",
+          "precedingHeading": "Is this the right outing for your group?",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/ice-walk-johnston-canyon/",
+          "href": "/accessible-trails",
+          "label": "Plan access requirements",
+          "category": "page-body",
+          "context": "Plan access requirements and ask about the full journey, including the approach, changing areas, transfers and return.",
+          "precedingHeading": "Is this the right outing for your group?",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/northern-lights/",
+          "href": "/accessible-trails",
+          "label": "Plan access requirements",
+          "category": "page-body",
+          "context": "Plan access requirements and ask about the full journey, including the approach, changing areas, transfers and return.",
+          "precedingHeading": "Is this the right outing for your group?",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/snowshoeing/",
+          "href": "/accessible-trails",
+          "label": "Plan access requirements",
+          "category": "page-body",
+          "context": "Plan access requirements and ask about the full journey, including the approach, changing areas, transfers and return.",
+          "precedingHeading": "Is this the right outing for your group?",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/via-ferrata/",
+          "href": "/accessible-trails",
+          "label": "Plan access requirements",
+          "category": "page-body",
+          "context": "Plan access requirements and ask about the full journey, including the approach, changing areas, transfers and return.",
+          "precedingHeading": "Is this the right outing for your group?",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/white-water-rafting/",
+          "href": "/accessible-trails",
+          "label": "Plan access requirements",
+          "category": "page-body",
+          "context": "Plan access requirements and ask about the full journey, including the approach, changing areas, transfers and return.",
+          "precedingHeading": "Is this the right outing for your group?",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-gondola-guide/",
+          "href": "/accessible-trails",
+          "label": "the accessibility planning guide",
+          "category": "article-body",
+          "context": "The operator does not recommend strollers because of cabin and summit-space constraints. Discuss the plan for a young child and any required equipment before buying. Cabins may be shared with other guests; a private cabin is not assured. For a broader comparison of measured trail profiles and attraction access, use the accessibility planning guide . None of these descriptions determines suitability for every person or mobility device.",
+          "precedingHeading": "The summit building and boardwalk have different access",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-helicopter-tours/",
+          "href": "/accessible-trails",
+          "label": "accessibility planning guide",
+          "category": "article-body",
+          "context": "Alpine’s sightseeing FAQ describes a transfer from a wheelchair into the aircraft seat with crew assistance, and says its helicopters do not accommodate wheelchairs or mobility devices. Explain the specific transfer, equipment and communication needs before purchasing; the operator must confirm the actual arrangement. A base being reachable is a different question from boarding the aircraft. The accessibility planning guide can help your party compare a ground-based alternative without treating it as equivalent.",
+          "precedingHeading": "Discuss the whole group before purchasing",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-toddler-guide/",
+          "href": "/accessible-trails/",
+          "label": "physical-profile comparison",
+          "category": "article-body",
+          "context": "A short outing can feel complete without reaching a named trail’s end. Choose the section and turnaround from the child, equipment and conditions. The physical-profile comparison explains surfaces, widths and slopes without deciding suitability for your stroller.",
+          "precedingHeading": "Pick an endpoint, not a blanket stroller label",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/lake-faq/",
+          "href": "/accessible-trails",
+          "label": "Physical access features",
+          "category": "page-body",
+          "context": "Physical access features",
+          "precedingHeading": "Turn the answer into a day",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/lakes/",
+          "href": "/accessible-trails",
+          "label": "Compare visitor access features →",
+          "category": "page-body",
+          "context": "Compare visitor access features →",
+          "precedingHeading": "Vermilion Lakes",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/lakes/",
+          "href": "/accessible-trails",
+          "label": "Visitor access features",
+          "category": "page-body",
+          "context": "Parking and arrival planning · Reserved lake journeys · Visitor access features · Packing checklist",
+          "precedingHeading": "Make the outward trip and return work together",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/parking/",
+          "href": "/accessible-trails",
+          "label": "Attraction access planning",
+          "category": "page-body",
+          "context": "Attraction access planning · Sightseeing choices",
+          "precedingHeading": "Direct sources",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/parking/",
+          "href": "/accessible-trails",
+          "label": "Access profiles",
+          "category": "page-body",
+          "context": "Route directory · Access profiles",
+          "precedingHeading": "Direct sources",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/parking/",
+          "href": "/accessible-trails",
+          "label": "Check the whole access chain",
+          "category": "page-body",
+          "context": "Check the whole access chain and transport connections . Keep an alternative near your base .",
+          "precedingHeading": "People and return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/shuttle-reservations/",
+          "href": "/accessible-trails",
+          "label": "Compare access features and questions →",
+          "category": "page-body",
+          "context": "Compare access features and questions →",
+          "precedingHeading": "The final path matters",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/things-to-do/",
+          "href": "/accessible-trails",
+          "label": "access requirements",
+          "category": "page-body",
+          "context": "Check access requirements , weather and current official reports . Describe the actual group to the operator or facility.",
+          "precedingHeading": "People and conditions",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/tools/",
+          "href": "/accessible-trails",
+          "label": "♿ Accessible Banff Compare physical trail profiles, visitor features and transport arrangements.",
+          "category": "page-body",
+          "context": "♿ Accessible Banff Compare physical trail profiles, visitor features and transport arrangements.",
+          "precedingHeading": "Lake Shuttle Planning",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/tools/",
+          "href": "/accessible-trails",
+          "label": "♿ Accessible Banff Trail surfaces, widths and slopes, plus adaptive visitor resources.",
+          "category": "page-body",
+          "context": "♿ Accessible Banff Trail surfaces, widths and slopes, plus adaptive visitor resources.",
+          "precedingHeading": "Dog-Friendly Guide",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/winter/",
+          "href": "/accessible-trails",
+          "label": "Explore accessibility planning →",
+          "category": "page-body",
+          "context": "Explore accessibility planning →",
+          "precedingHeading": "Plan for the least mobile person",
+          "hiddenByMarkup": false,
+          "noscript": false
+        }
+      ],
+      "fragmentValidation": {
+        "invalidCount": 0,
+        "invalid": []
+      },
+      "repeatedPageBodyPatterns": [
+        {
+          "label": "Plan access requirements",
+          "context": "Plan access requirements and ask about the full journey, including the approach, changing areas, transfers and return.",
+          "occurrences": 7,
+          "sourceRoutes": [
+            "/activities/dog-sledding/",
+            "/activities/ice-skating/",
+            "/activities/ice-walk-johnston-canyon/",
+            "/activities/northern-lights/",
+            "/activities/snowshoeing/",
+            "/activities/via-ferrata/",
+            "/activities/white-water-rafting/"
+          ]
+        }
+      ]
+    },
+    "/blog/accessible-banff/": {
+      "retainedRole": "Whole visit: airport and carrier handoffs, exact room/bathroom category, facility access, assistance, adaptive arrangements, season and return.",
+      "baselinePage": {
+        "canonical": [
+          "https://banffbound.com/blog/accessible-banff/"
+        ],
+        "title": "Accessible Banff: A Guide for Visitors with Disabilities | BanffBound",
+        "h1": [
+          "Accessible Banff: A Guide for Visitors with Disabilities"
+        ],
+        "robots": [],
+        "htmlSha256": "311d3ad7ec48d701ccb73b04a3c1ab8e1324772f837c432b872896c561140d8d"
+      },
+      "counts": {
+        "totalAnchors": 1,
+        "uniqueSourceRoutes": 1,
+        "byCategory": {
+          "shared-header": 0,
+          "shared-footer": 0,
+          "local-navigation": 0,
+          "blog-listing": 1,
+          "related-content": 0,
+          "template-sidebar": 0,
+          "article-body": 0,
+          "page-body": 0,
+          "other": 0
+        },
+        "authoredArticleAnchors": 0,
+        "pageMainAnchors": 0
+      },
+      "repeatedNavigationAndDiscoveryGroups": [
+        {
+          "category": "blog-listing",
+          "label": "Planning 9 min read Accessible Banff: A Guide for Visitors with Disabilities Accessibility guide for Banff National Park. Wheelchair-accessible trails, facilities, accommodations, and resources for visitors with disabilities. February 7, 2026",
+          "context": "Planning 9 min read Accessible Banff: A Guide for Visitors with Disabilities Accessibility guide for Banff National Park. Wheelchair-accessible trails, facilities, accommodations, and resources for visitors with disabilities. February 7, 2026",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/blog/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        }
+      ],
+      "contextualBodyLinks": [],
+      "fragmentValidation": {
+        "invalidCount": 0,
+        "invalid": []
+      },
+      "repeatedPageBodyPatterns": []
+    },
+    "/blog/banff-accessible-hikes/": {
+      "retainedRole": "Outdoor endpoint choice: viewing approach versus through-route, reading a physical profile, facilities, current conditions and complete return.",
+      "baselinePage": {
+        "canonical": [
+          "https://banffbound.com/blog/banff-accessible-hikes/"
+        ],
+        "title": "10 Wheelchair-Accessible Trails in Banff | BanffBound",
+        "h1": [
+          "10 Wheelchair-Accessible Trails in Banff"
+        ],
+        "robots": [],
+        "htmlSha256": "c35a879899d66be8d7f72e271ec7944438ff53ccac1105d322954249f29479a0"
+      },
+      "counts": {
+        "totalAnchors": 1,
+        "uniqueSourceRoutes": 1,
+        "byCategory": {
+          "shared-header": 0,
+          "shared-footer": 0,
+          "local-navigation": 0,
+          "blog-listing": 1,
+          "related-content": 0,
+          "template-sidebar": 0,
+          "article-body": 0,
+          "page-body": 0,
+          "other": 0
+        },
+        "authoredArticleAnchors": 0,
+        "pageMainAnchors": 0
+      },
+      "repeatedNavigationAndDiscoveryGroups": [
+        {
+          "category": "blog-listing",
+          "label": "Tips 8 min read 10 Wheelchair-Accessible Trails in Banff The best wheelchair-accessible and barrier-free trails in Banff National Park. Paved paths, boardwalks, and easy routes with stunning mountain scenery for all abilities. September 17, 2025",
+          "context": "Tips 8 min read 10 Wheelchair-Accessible Trails in Banff The best wheelchair-accessible and barrier-free trails in Banff National Park. Paved paths, boardwalks, and easy routes with stunning mountain scenery for all abilities. September 17, 2025",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/blog/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        }
+      ],
+      "contextualBodyLinks": [],
+      "fragmentValidation": {
+        "invalidCount": 0,
+        "invalid": []
+      },
+      "repeatedPageBodyPatterns": []
+    },
+    "/packing-list/": {
+      "retainedRole": "Actionable winter/summer/activity packing checklist with explicit progress and reset behavior.",
+      "baselinePage": {
+        "canonical": [
+          "https://banffbound.com/packing-list/"
+        ],
+        "title": "Banff Packing List: Winter, Summer & Ski-Day Checklist | BanffBound",
+        "h1": [
+          "Your Banff packing checklist."
+        ],
+        "robots": [],
+        "htmlSha256": "375735b18fd12e7b24fc56a70e11fbb01f98d0c4e534cf415ac841e9330f425b"
+      },
+      "counts": {
+        "totalAnchors": 1836,
+        "uniqueSourceRoutes": 562,
+        "byCategory": {
+          "shared-header": 1683,
+          "shared-footer": 0,
+          "local-navigation": 8,
+          "blog-listing": 0,
+          "related-content": 0,
+          "template-sidebar": 81,
+          "article-body": 37,
+          "page-body": 27,
+          "other": 0
+        },
+        "authoredArticleAnchors": 37,
+        "pageMainAnchors": 27
+      },
+      "repeatedNavigationAndDiscoveryGroups": [
+        {
+          "category": "shared-header",
+          "label": "Packing List",
+          "context": "Packing List",
+          "occurrences": 1122,
+          "hiddenMarkupOccurrences": 0,
+          "uniqueSourceRouteCount": 561,
+          "sourceRouteSample": [
+            "/404",
+            "/about/",
+            "/accessible-trails/",
+            "/accommodation/",
+            "/activities/dog-sledding/",
+            "/activities/ice-skating/"
+          ]
+        },
+        {
+          "category": "shared-header",
+          "label": "Packing List Seasonal gear checklist",
+          "context": "Packing List Seasonal gear checklist",
+          "occurrences": 561,
+          "hiddenMarkupOccurrences": 0,
+          "uniqueSourceRouteCount": 561,
+          "sourceRouteSample": [
+            "/404",
+            "/about/",
+            "/accessible-trails/",
+            "/accommodation/",
+            "/activities/dog-sledding/",
+            "/activities/ice-skating/"
+          ]
+        },
+        {
+          "category": "local-navigation",
+          "label": "Packing planner → Add clothing, transport and equipment checks.",
+          "context": "Packing planner → Add clothing, transport and equipment checks.",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/dog-friendly/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        },
+        {
+          "category": "local-navigation",
+          "label": "Packing checklist → Clothing, equipment and booking checks.",
+          "context": "Packing checklist → Clothing, equipment and booking checks.",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/family-guide/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        },
+        {
+          "category": "local-navigation",
+          "label": "Packing checklist →",
+          "context": "Packing checklist →",
+          "occurrences": 3,
+          "sourceRoutes": [
+            "/monthly-weather/",
+            "/weather/",
+            "/what-to-do-today/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        },
+        {
+          "category": "local-navigation",
+          "label": "Build your packing checklist →",
+          "context": "Build your packing checklist →",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/monthly-weather/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        },
+        {
+          "category": "template-sidebar",
+          "label": "Packing checklist →",
+          "context": "Packing checklist →",
+          "occurrences": 81,
+          "sourceRoutes": [
+            "/trails/arnica-lake/",
+            "/trails/aylmer-lookout/",
+            "/trails/aylmer-pass/",
+            "/trails/boom-lake/",
+            "/trails/bourgeau-lake/",
+            "/trails/bow-falls/",
+            "/trails/bow-glacier-falls/",
+            "/trails/bow-river-lake-louise/",
+            "/trails/bow-summit-viewpoint/",
+            "/trails/c-level-cirque/",
+            "/trails/cascade-amphitheatre/",
+            "/trails/cascade-valley-xc-ski/",
+            "/trails/castle-lookout/",
+            "/trails/chephren-lake/",
+            "/trails/cirque-lake/",
+            "/trails/consolation-lakes/",
+            "/trails/cory-pass-loop/",
+            "/trails/deception-pass/",
+            "/trails/dolomite-pass/",
+            "/trails/eiffel-lake/",
+            "/trails/fairview-lookout/",
+            "/trails/fairview-mountain/",
+            "/trails/fenland-trail/",
+            "/trails/glacier-lake/",
+            "/trails/goat-creek-xc-ski/",
+            "/trails/golf-course-loop-xc-ski/",
+            "/trails/harvey-pass/",
+            "/trails/healy-creek-xc-ski/",
+            "/trails/healy-pass/",
+            "/trails/helen-lake/",
+            "/trails/hidden-lake/",
+            "/trails/ink-pots/",
+            "/trails/ink-pots-snowshoe/",
+            "/trails/johnson-lake/",
+            "/trails/johnston-canyon-ice-walk/",
+            "/trails/johnston-canyon-lower-falls/",
+            "/trails/johnston-canyon-upper-falls/",
+            "/trails/lake-agnes/",
+            "/trails/lake-annette/",
+            "/trails/lake-louise-lakeshore/",
+            "/trails/lake-louise-lakeshore-snowshoe/",
+            "/trails/larch-valley-minnestimma-lakes/",
+            "/trails/marble-canyon-snowshoe/",
+            "/trails/marsh-loop/",
+            "/trails/mistaya-canyon/",
+            "/trails/molar-pass/",
+            "/trails/moraine-lake-lakeshore/",
+            "/trails/nigel-pass/",
+            "/trails/north-molar-pass/",
+            "/trails/paradise-valley-giant-steps/",
+            "/trails/parker-ridge/",
+            "/trails/peyto-lake-shore/",
+            "/trails/peyto-lake-viewpoint/",
+            "/trails/plain-of-six-glaciers/",
+            "/trails/rockbound-lake/",
+            "/trails/rockpile/",
+            "/trails/saddleback-pass/",
+            "/trails/sentinel-pass-from-paradise-valley/",
+            "/trails/sentinel-pass-via-larch-valley/",
+            "/trails/sheol-paradise-connector/",
+            "/trails/silverton-falls/",
+            "/trails/spray-river-east/",
+            "/trails/spray-river-loop-xc-ski/",
+            "/trails/spray-river-west/",
+            "/trails/stanley-glacier/",
+            "/trails/stewart-canyon/",
+            "/trails/sulphur-mountain/",
+            "/trails/sundance-canyon/",
+            "/trails/sunset-lookout/",
+            "/trails/sunset-pass/",
+            "/trails/sunshine-meadows/",
+            "/trails/surprise-corner-to-hoodoos/",
+            "/trails/taylor-lake/",
+            "/trails/tramline/",
+            "/trails/tunnel-campground-loop/",
+            "/trails/tunnel-mountain-summit/",
+            "/trails/tunnel-mountain-winter/",
+            "/trails/twin-lakes/",
+            "/trails/upper-stoney/",
+            "/trails/vista-lake/",
+            "/trails/wenkchemna-pass/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        },
+        {
+          "category": "local-navigation",
+          "label": "Build a packing list →",
+          "context": "Build a packing list →",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/weather/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        },
+        {
+          "category": "local-navigation",
+          "label": "Check your packing →",
+          "context": "Check your packing →",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/weather-webcams/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        }
+      ],
+      "contextualBodyLinks": [
+        {
+          "sourceRoute": "/accessible-trails/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "page-body",
+          "context": "Use the packing checklist , town comparison and winter guide to round out the day.",
+          "precedingHeading": "Keep a practical confirmation list",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/dog-sledding/",
+          "href": "/packing-list",
+          "label": "Pack for the actual activity",
+          "category": "page-body",
+          "context": "Compare Banff, Canmore and Lake Louise bases · Plan without a car · Pack for the actual activity",
+          "precedingHeading": "Build the journey and return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/ice-skating/",
+          "href": "/packing-list",
+          "label": "Pack for the actual activity",
+          "category": "page-body",
+          "context": "Compare Banff, Canmore and Lake Louise bases · Plan without a car · Pack for the actual activity",
+          "precedingHeading": "Build the journey and return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/ice-walk-johnston-canyon/",
+          "href": "/packing-list",
+          "label": "Pack for the actual activity",
+          "category": "page-body",
+          "context": "Compare Banff, Canmore and Lake Louise bases · Plan without a car · Pack for the actual activity",
+          "precedingHeading": "Build the journey and return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/northern-lights/",
+          "href": "/packing-list",
+          "label": "Pack for the actual activity",
+          "category": "page-body",
+          "context": "Compare Banff, Canmore and Lake Louise bases · Plan without a car · Pack for the actual activity",
+          "precedingHeading": "Build the journey and return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/snowshoeing/",
+          "href": "/packing-list",
+          "label": "Pack for the actual activity",
+          "category": "page-body",
+          "context": "Compare Banff, Canmore and Lake Louise bases · Plan without a car · Pack for the actual activity",
+          "precedingHeading": "Build the journey and return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/snowshoeing/",
+          "href": "/packing-list",
+          "label": "Packing checklist →",
+          "category": "page-body",
+          "context": "Packing checklist →",
+          "precedingHeading": "Keep planning",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/via-ferrata/",
+          "href": "/packing-list",
+          "label": "Pack for the actual activity",
+          "category": "page-body",
+          "context": "Compare Banff, Canmore and Lake Louise bases · Plan without a car · Pack for the actual activity",
+          "precedingHeading": "Build the journey and return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/via-ferrata/",
+          "href": "/packing-list",
+          "label": "Packing checklist →",
+          "category": "page-body",
+          "context": "Packing checklist →",
+          "precedingHeading": "Keep planning",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/activities/white-water-rafting/",
+          "href": "/packing-list",
+          "label": "Pack for the actual activity",
+          "category": "page-body",
+          "context": "Compare Banff, Canmore and Lake Louise bases · Plan without a car · Pack for the actual activity",
+          "precedingHeading": "Build the journey and return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/alternatives/",
+          "href": "/packing-list",
+          "label": "equipment list",
+          "category": "page-body",
+          "context": "For snow season, use winter planning and avalanche awareness . Check the equipment list for the actual activity. A shorter visit near your base or an operating indoor activity can be a practical change without inventing an equivalent mountain hike.",
+          "precedingHeading": "Change the plan without inheriting assumptions",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/biking/",
+          "href": "/packing-list",
+          "label": "packing guidance",
+          "category": "page-body",
+          "context": "Use town and base comparisons , packing guidance and official conditions links . An Expedia accommodation search and GetYourGuide cycling search are affiliate links; BanffBound may earn a commission. Search results do not confirm a route, product or availability.",
+          "precedingHeading": "Rentals, guides and getting home",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/3-day-banff-itinerary/",
+          "href": "/packing-list/",
+          "label": "activity packing checklist",
+          "category": "article-body",
+          "context": "Use Parks Canada’s designated winter walking guidance and current reports for the actual route. Conditions can make a short town-area walk difficult. Plan for the least experienced person, daylight, clothing, food and the return; a summer grade or traction rental cannot make that decision. The activity packing checklist and offline preparation guide help prepare the chosen outing.",
+          "precedingHeading": "Winter changes the sequence, equipment and alternatives",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-boundary-lodge/",
+          "href": "/packing-list",
+          "label": "packing guide",
+          "category": "article-body",
+          "context": "Use the town comparison , winter base finder and packing guide . An Expedia Harvie Heights accommodation search is an affiliate link; BanffBound may earn a commission. Search results are not confirmation of this property, a particular unit or availability.",
+          "precedingHeading": "Compare the complete stay",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-dog-friendly/",
+          "href": "/packing-list/",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Keep the return close enough to work for the dog, with water, food, waste bags and the dog’s appropriate clothing or paw supplies. Ask your vet about individual health or cold-related needs before travel. The packing checklist helps organise equipment; it does not confer terrain skills or confirm natural ice. Keep meal and care choices usable if outdoor time becomes shorter.",
+          "precedingHeading": "Build a modest winter plan with a real warm return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-first-time-tips/",
+          "href": "/packing-list/",
+          "label": "activity-specific packing checklist",
+          "category": "article-body",
+          "context": "Use the activity-specific packing checklist for the chosen outing. Keep daylight, spare warm layers, food and the return in the plan, and learn how to use any carried equipment. Follow Parks’ safety guidance and wildlife preparation ; being in town or near a road does not make wildlife an attraction to approach.",
+          "precedingHeading": "6. Prepare the offline and weather backup",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-first-time-tips/",
+          "href": "/packing-list/",
+          "label": "Build a packing checklist →",
+          "category": "article-body",
+          "context": "Build a packing checklist →",
+          "precedingHeading": "Prepare the offline and weather backup",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-hostel-guide/",
+          "href": "/packing-list/",
+          "label": "seasonal packing checklist",
+          "category": "article-body",
+          "context": "Book the room format you need, retain the applicable terms and then finish the transport and food plan. Leave space for the social part of hostel travel without requiring every evening to be an event. For equipment and clothing, use the seasonal packing checklist ; a packed bag does not decide terrain suitability or admission.",
+          "precedingHeading": "Compare the whole stay, without invented savings",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-in-fall/",
+          "href": "/packing-list/",
+          "label": "the packing checklist",
+          "category": "article-body",
+          "context": "Pack adjustable warm and weatherproof layers, footwear for the outing, gloves, food and water. Use the packing checklist for the activity, then check the specific conditions. A coat or traction device does not make a snow-covered summer hike suitable. For later-season alternatives, winter planning separates available kinds of outing from current operating or terrain approval.",
+          "precedingHeading": "Use current weather and daylight to shape the day",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-legacy-trail/",
+          "href": "/packing-list",
+          "label": "packing guide",
+          "category": "article-body",
+          "context": "Check the cycling planner , packing guide and official reports . The Town's guidance distinguishes the under-18 helmet rule for pedal bicycles from the all-ages requirement for electric/power-assisted bicycles. A helmet is sensible for every rider.",
+          "precedingHeading": "Season, gates and shared-path preparation",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-mobile-connectivity/",
+          "href": "/packing-list/",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Learn the device’s power-saving and radio settings in advance. A setting used to save battery can also change what the device receives or sends; do not copy a universal airplane-mode instruction while expecting incoming calls or a particular SOS function. Use the packing checklist to keep phone power alongside the outing’s warm clothing, food and other equipment.",
+          "precedingHeading": "Allow for cold, battery and handling",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-mountain-biking/",
+          "href": "/packing-list",
+          "label": "packing guidance",
+          "category": "article-body",
+          "context": "Start with one realistic ride, then leave the rest of the day flexible. Bring water, food, layers, navigation, repair and emergency supplies; carry bear spray and know its use. Use packing guidance , base comparisons and winter planning . An Expedia stay search and GetYourGuide cycling search are affiliate links; we may earn a commission. A search does not confirm a particular product or availability.",
+          "precedingHeading": "Equipment, providers and a workable day",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-pet-friendly-hotels/",
+          "href": "/packing-list/",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Keep the first evening simple enough for an unfamiliar arrival and the final morning clear enough for checkout and the actual airport or onward connection. The packing checklist and dated report hub provide further planning steps; equipment and a hotel booking do not approve terrain or ice.",
+          "precedingHeading": "Work through arrival, walks and winter mornings",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-spring-skiing/",
+          "href": "/packing-list/",
+          "label": "activity packing checklist",
+          "category": "article-body",
+          "context": "Pack warm and weatherproof layers you can adjust, gloves and suitable eye protection for the actual light. Do not treat a warm valley forecast as permission to leave winter clothing behind. Use the activity packing checklist and the rental provider’s fitting instructions; the list does not assess a person’s ability or terrain.",
+          "precedingHeading": "Confirm the school before buying the rest",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-toddler-guide/",
+          "href": "/packing-list/",
+          "label": "activity packing checklist",
+          "category": "article-body",
+          "context": "Keep the day bag ready for the full journey: food, water, changes, weather layers, tickets and the useful return instructions. Save contacts and confirmations offline through the connectivity preparation guide , and adapt the activity packing checklist . Agree what will make you turn back or choose the room instead of adding another stop.",
+          "precedingHeading": "Finish the plan with the return and the actual booking",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-trip-cost-budget-guide/",
+          "href": "/packing-list/",
+          "label": "activity-specific packing checklist",
+          "category": "article-body",
+          "context": "Pick the route for the group and conditions, not for an assumed free activity list. A summer hiking description does not establish a winter route, and natural ice is not an activity surface made safe by a month on the calendar. The activity-specific packing checklist helps list items you may need to budget; possessing equipment does not establish terrain ability.",
+          "precedingHeading": "Plan a day without a paid attraction, and cost the access",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-weather-best-time-to-visit/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Use the packing checklist to adapt the list to your party and luggage. If you need to rent equipment, arrange the pickup before the first activity and understand the return deadline. Buying a particular jacket or adding traction does not make an unsuitable route suitable.",
+          "precedingHeading": "Pack a system you can adjust",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-wellness-retreats/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Pack swimwear, a way to carry wet items and warm clothes for the journey; confirm which towels, robes, footwear and lockers are supplied. Use the packing checklist for the rest of the trip. Keep any outdoor walk optional and suited to current conditions. A summer lakeside or river route description does not establish winter footing or permission to cross ice.",
+          "precedingHeading": "Make the winter logistics restful too",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/canmore-day-trip/",
+          "href": "/packing-list/",
+          "label": "the activity-specific packing checklist",
+          "category": "article-body",
+          "context": "Use the day-choice tool if your main purpose changes, and the activity-specific packing checklist for preparation. A planning match or a kit list does not assess terrain ability or confirm access. A shorter day with a dependable return can be a complete day trip.",
+          "precedingHeading": "Three useful ways to spend the day",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/fall-banff-itinerary/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Pack layers for both activity and unexpected stops, suitable footwear, gloves and wet-weather protection. Check road reports and forecasts before driving, and use the packing checklist for each outing. If the trip has moved into winter conditions, the winter guide is the appropriate starting point rather than trying to complete a summer itinerary.",
+          "precedingHeading": "Base, clothing and travel choices",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/fall-larch-season-banff/",
+          "href": "/packing-list/?season=summer&activities=hiking",
+          "label": "hiking packing checklist",
+          "category": "article-body",
+          "context": "Carry appropriate footwear, warm and weatherproof layers, gloves, a hat, food, water, navigation, a headlamp and emergency supplies for the outing. Resolve bear-spray carriage and use before leaving. The hiking packing checklist can organise equipment; its summer label does not establish summer conditions in autumn.",
+          "precedingHeading": "Prepare the group and the whole day’s kit",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/golden-bc-day-trip/",
+          "href": "/packing-list/",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "For vehicle preparation, British Columbia’s winter-driving guidance requires following the signed winter tire and chain routes: October 1–April 30, with March 31 exceptions on designated lower-snow routes. Check the actual route and vehicle requirements, including a rental’s fitted tires; crossing from Alberta does not remove them. Carry warm clothing and trip supplies and allow the option to postpone. See winter road planning and the packing checklist .",
+          "precedingHeading": "Plan Highway 1 through Yoho, including winter limits",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/ink-pots-banff-alberta/",
+          "href": "/packing-list",
+          "label": "packing list",
+          "category": "article-body",
+          "context": "Carry appropriate food, water, clothing, navigation, first aid and a headlamp; check the packing list for a fuller plan. Allow for exposed stops in the meadow as well as exercise in the forest. Leave your route and return expectations with someone, and shorten the outing if the conditions or group no longer support the original plan.",
+          "precedingHeading": "Prepare for the return, not only the destination",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/jasper-alberta/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Keep food and rubbish secure, respect the recovering landscape and avoid approaching wildlife. Carry appropriate clothing, navigation, food, water and emergency equipment, and leave your plan with someone. Use the packing checklist for the activity and the trip builder to keep travel days and main outings separate.",
+          "precedingHeading": "Winter activities and a suitable base",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/jasper-national-park/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Bring food, water, navigation and clothing for delays as well as the activity; see the packing checklist . Let someone know the intended outing and return. If a closed area was the main reason for travelling, change the itinerary before committing the rest of the day to reaching it.",
+          "precedingHeading": "Protect the arrival and return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/jasper-town/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "For a ski day, start with Marmot Basin's own information , confirm the resort journey and leave time for rental fitting and the lesson meeting point. For skating, ask the particular facility about current operation; do not convert a town stay into an assumption that a lake will be suitable in a particular month. The packing checklist helps organise equipment for the activity you actually choose.",
+          "precedingHeading": "Town is a base, not a reopening guarantee",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/johnston-canyon-guide/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Choose one main endpoint, take food, water, navigation, suitable layers and a headlamp, and leave your plan with someone. Use the packing checklist for the actual outing. Plan the return from conditions, usable daylight and the group rather than a universal crowd-avoidance hour.",
+          "precedingHeading": "A day that still works if access changes",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/lake-louise-complete-guide/",
+          "href": "/packing-list",
+          "label": "packing",
+          "category": "article-body",
+          "context": "A practical winter day has one main activity, suitable clothing for waiting as well as exercise, a confirmed return and a warm alternative. See winter planning , packing and ski-day logistics if the resort is the actual objective.",
+          "precedingHeading": "A winter lakeshore day",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/lake-minnewanka-guide/",
+          "href": "/packing-list/",
+          "label": "season and activity packing checklist",
+          "category": "article-body",
+          "context": "Arrive with the outing already bounded. Choose the day-use area alone or a separately checked walk. Bring the warm layers, food, water and essentials appropriate to the trip; the season and activity packing checklist helps organise them, but equipment does not establish terrain skills or suitable conditions.",
+          "precedingHeading": "A rewarding winter visit, with time back in town",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/larch-valley-hike/",
+          "href": "/packing-list/",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "The packing checklist is a prompt to complete, not a competence assessment. The elevation guide separates named elevations from a personal health conclusion. For a mountain emergency call 911, identify Banff National Park and the exact location; Parks’ hiking page gives 403-762-4506 for a satellite phone. Learn the method before leaving.",
+          "precedingHeading": "Pack for the whole return",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/moraine-lake-guide/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Reviewed October 29, 2026. Primary Parks access, reservation, water-use and route sources plus the lodge's own visitor information are linked above. Use the packing checklist and conditions planning page for the actual day. Lake colour, reflections, larches, weather and the availability of any activity are not guaranteed by a date or photograph.",
+          "precedingHeading": "Sources and review",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/num-ti-jah-lodge/",
+          "href": "/packing-list/",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "For packing and the choice of a winter activity, use the packing checklist and winter planning guide . The operator’s winter page identifies backcountry hazards and a required guest waiver. A stay does not supply the skills, route assessment or guide needed for an independent winter tour.",
+          "precedingHeading": "A comfortable two-night outline",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/peyto-lake-guide/",
+          "href": "/packing-list/",
+          "label": "activity packing checklist",
+          "category": "article-body",
+          "context": "First decide whether Peyto is the main excursion or one stop on a longer drive. For a lookout visit, leave time to enjoy the platform and return without rushing. For Bow Summit or a winter outing, let that activity determine how much else belongs in the day. The day-choice planner and activity packing checklist can help organise a practical alternative and the items to take.",
+          "precedingHeading": "Make the stop work with food, supplies and the next base",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/rainy-day-banff/",
+          "href": "/packing-list/",
+          "label": "activity packing checklist",
+          "category": "article-body",
+          "context": "For any short outdoor portion, read the official winter walking preparation or appropriate summer route report. Choose the whole outing for the least experienced person, including the return. Parks describes highly variable mountain weather ; the town forecast alone does not establish the conditions higher up. Keep dry layers, warm clothing and the appropriate activity packing checklist .",
+          "precedingHeading": "Keep outdoor choices outside the indoor shortlist",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/sentinel-pass-hike/",
+          "href": "/packing-list/",
+          "label": "packing prompts",
+          "category": "article-body",
+          "context": "Use the packing prompts , wildlife guidance and bear-spray guide to prepare. The elevation guide explains why a number is not a personal risk score. For a mountain emergency call 911 and identify Banff National Park and the exact location; Parks’ hiking guidance gives 403-762-4506 for a satellite phone. Cell coverage is unreliable.",
+          "precedingHeading": "Prepare the group, equipment and communication",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/skoki-lodge-guide/",
+          "href": "/packing-list/",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Guests carry their own packs in and out. A made bed reduces camping equipment but does not replace personal clothing, food and water for travel, route-specific equipment or emergency supplies. Pack suitable footwear, warm and weatherproof layers, gloves, eye protection, a headlamp, blister/first-aid supplies, personal medication and indoor shoes. Use the seasonal lodge list and the packing checklist as prompts, then resolve the actual route requirements.",
+          "precedingHeading": "What to bring, and how to finish the trip",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/spray-river-trail/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Use the East hiking profile , West hiking profile and packing checklist . Compare bases and winter stays by the real journey. An Expedia stay search and GetYourGuide activity search are affiliate links; we may earn a commission. They do not confirm a specific route, transfer or departure.",
+          "precedingHeading": "Make a complete river day",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/summer-banff-itinerary/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Keep park admission, parking payments, shuttle tickets, campsite permits and activity bookings distinct. Compare current complete quotes rather than a fixed price in an old itinerary. Carry suitable layers, food, water, navigation, a headlamp and the emergency equipment appropriate to the route; use the packing checklist and leave a return plan with someone.",
+          "precedingHeading": "Bookings, preparation and useful alternatives",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/two-jack-lake-guide/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "article-body",
+          "context": "Choose one main Two Jack activity, resolve its equipment and return, then add another stop only if the journey still fits. Johnson Lake and Minnewanka have their own access, routes and water rules; proximity does not make them interchangeable. Compare a Banff base , the packing checklist and land-based photo planning .",
+          "precedingHeading": "A complete Banff-based day",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/book/banff-winter-activities/",
+          "href": "/packing-list",
+          "label": "winter packing checklist",
+          "category": "page-body",
+          "context": "Bring clothing for outdoor stops as well as time in a vehicle or building. Warm boots, layers and hand protection matter even on a sightseeing day. For a fuller plan, use the winter packing checklist or winter activity guide .",
+          "precedingHeading": "Choose the date and exact option before you pay",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/dog-friendly/",
+          "href": "/packing-list",
+          "label": "packing checklist",
+          "category": "page-body",
+          "context": "Reviewed 28 October 2026 using the linked Parks Canada, Town, carrier and property sources. Confirm current charges, admission rules and any date-specific restriction before committing. For the rest of the party, see the family guide and packing checklist .",
+          "precedingHeading": "Dog trip questions",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/family-guide/",
+          "href": "/packing-list",
+          "label": "packing planner",
+          "category": "page-body",
+          "context": "Use these checks for the selected outing. For a checklist you can save and print, open the packing planner .",
+          "precedingHeading": "Before the family leaves",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/lake-faq/",
+          "href": "/packing-list",
+          "label": "Packing checklist",
+          "category": "page-body",
+          "context": "Packing checklist",
+          "precedingHeading": "Turn the answer into a day",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/lakes/",
+          "href": "/packing-list",
+          "label": "Packing checklist",
+          "category": "page-body",
+          "context": "Parking and arrival planning · Reserved lake journeys · Visitor access features · Packing checklist",
+          "precedingHeading": "Make the outward trip and return work together",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/larch-season/",
+          "href": "/packing-list/?season=summer&activities=hiking",
+          "label": "Prepare your hiking kit → Build a checklist for the outing and the changing weather.",
+          "category": "page-body",
+          "context": "Prepare your hiking kit → Build a checklist for the outing and the changing weather.",
+          "precedingHeading": "Build the rest of your autumn trip",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/learn-to-ski/",
+          "href": "/packing-list/?activities=skiing,lesson",
+          "label": "seasonal packing checklist",
+          "category": "page-body",
+          "context": "Do a clothing check before the trip. Buying or renting suitable outerwear is easier before you are standing at the lesson meeting point. Use the seasonal packing checklist and check mountain conditions separately from the weather in Banff town.",
+          "precedingHeading": "What to wear and bring",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/paddling/",
+          "href": "/packing-list",
+          "label": "packing guide",
+          "category": "page-body",
+          "context": "Build spare time around the outing with the trip builder , and use the packing guide for the rest of the day. For a mixed group, settle the non-participants’ waiting location, facilities and return transport before separating.",
+          "precedingHeading": "Build a complete water day",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/quiet-trails/",
+          "href": "/packing-list",
+          "label": "packing guide",
+          "category": "page-body",
+          "context": "Read the route's official map, current report and Banff bulletins or Kootenay bulletins . Match clothing and equipment to the outing using the packing guide . In snow season use winter planning and the avalanche awareness guide ; a summer grade is not a winter recommendation.",
+          "precedingHeading": "Check the plan before leaving",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/shuttle-reservations/",
+          "href": "/packing-list",
+          "label": "Build a packing checklist →",
+          "category": "page-body",
+          "context": "Build a packing checklist →",
+          "precedingHeading": "Family and equipment check",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/ski-day-planner/",
+          "href": "/packing-list/?activities=skiing",
+          "label": "ski packing checklist",
+          "category": "page-body",
+          "context": "Use the ski packing checklist to check clothing and equipment for your planned day.",
+          "precedingHeading": "Ready to head out?",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/tools/",
+          "href": "/packing-list",
+          "label": "🎒 Packing List Activity-specific checklist with optional saved progress, printing and gear links.",
+          "category": "page-body",
+          "context": "🎒 Packing List Activity-specific checklist with optional saved progress, printing and gear links.",
+          "precedingHeading": "Car-Free Banff",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/towns/kananaskis/",
+          "href": "/packing-list",
+          "label": "Winter essentials →",
+          "category": "page-body",
+          "context": "Winter essentials →",
+          "precedingHeading": "Keep planning",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/vacation-rentals/",
+          "href": "/packing-list",
+          "label": "Packing checklist",
+          "category": "page-body",
+          "context": "Ski day planner First lessons Winter stays Packing checklist Family guide Travelling with a dog",
+          "precedingHeading": "What changes a self-catering stay?",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/winter/",
+          "href": "/packing-list",
+          "label": "28 Save your checklist Packing for a winter trip Build a seasonal packing list for town, snow days and the journey from Calgary. Open guide ↗",
+          "category": "page-body",
+          "context": "28 Save your checklist Packing for a winter trip Build a seasonal packing list for town, snow days and the journey from Calgary. Open guide ↗",
+          "precedingHeading": "Winter hotels, lodges & suites",
+          "hiddenByMarkup": false,
+          "noscript": false
+        }
+      ],
+      "fragmentValidation": {
+        "invalidCount": 0,
+        "invalid": []
+      },
+      "repeatedPageBodyPatterns": [
+        {
+          "label": "Pack for the actual activity",
+          "context": "Compare Banff, Canmore and Lake Louise bases · Plan without a car · Pack for the actual activity",
+          "occurrences": 7,
+          "sourceRoutes": [
+            "/activities/dog-sledding/",
+            "/activities/ice-skating/",
+            "/activities/ice-walk-johnston-canyon/",
+            "/activities/northern-lights/",
+            "/activities/snowshoeing/",
+            "/activities/via-ferrata/",
+            "/activities/white-water-rafting/"
+          ]
+        },
+        {
+          "label": "Packing checklist →",
+          "context": "Packing checklist →",
+          "occurrences": 2,
+          "sourceRoutes": [
+            "/activities/snowshoeing/",
+            "/activities/via-ferrata/"
+          ]
+        }
+      ]
+    },
+    "/blog/banff-packing-list/": {
+      "retainedRole": "Retained explanatory packing article; a future full review should explain season/activity decisions and hand off to the checklist instead of duplicating its controls.",
+      "baselinePage": {
+        "canonical": [
+          "https://banffbound.com/blog/banff-packing-list/"
+        ],
+        "title": "Banff Packing List: What to Bring Every Season | BanffBound",
+        "h1": [
+          "Banff Packing List: What to Bring Every Season"
+        ],
+        "robots": [],
+        "htmlSha256": "af79cdf022c2611f97961639f800ab0e0c1488a70954a76b9b7fba65b5093ca4"
+      },
+      "counts": {
+        "totalAnchors": 1,
+        "uniqueSourceRoutes": 1,
+        "byCategory": {
+          "shared-header": 0,
+          "shared-footer": 0,
+          "local-navigation": 0,
+          "blog-listing": 1,
+          "related-content": 0,
+          "template-sidebar": 0,
+          "article-body": 0,
+          "page-body": 0,
+          "other": 0
+        },
+        "authoredArticleAnchors": 0,
+        "pageMainAnchors": 0
+      },
+      "repeatedNavigationAndDiscoveryGroups": [
+        {
+          "category": "blog-listing",
+          "label": "Planning 8 min read Banff Packing List: What to Bring Every Season The ultimate Banff packing list for summer, winter, fall, and spring. Clothing, gear, and essentials you should not forget. January 20, 2026",
+          "context": "Planning 8 min read Banff Packing List: What to Bring Every Season The ultimate Banff packing list for summer, winter, fall, and spring. Clothing, gear, and essentials you should not forget. January 20, 2026",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/blog/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        }
+      ],
+      "contextualBodyLinks": [],
+      "fragmentValidation": {
+        "invalidCount": 0,
+        "invalid": []
+      },
+      "repeatedPageBodyPatterns": []
+    },
+    "/blog/banff-mistakes-to-avoid/": {
+      "retainedRole": "Retained pitfalls and corrective decisions article; distinguish its mistake-led narrative from the phased first-visit checklist when reviewed.",
+      "baselinePage": {
+        "canonical": [
+          "https://banffbound.com/blog/banff-mistakes-to-avoid/"
+        ],
+        "title": "15 Mistakes to Avoid When Visiting Banff | BanffBound",
+        "h1": [
+          "15 Mistakes to Avoid When Visiting Banff"
+        ],
+        "robots": [],
+        "htmlSha256": "7b4774e637cd5f87ec6e3ff2bc398ff0f64e12c4a12f2e7fa21820dd2c3e6a03"
+      },
+      "counts": {
+        "totalAnchors": 1,
+        "uniqueSourceRoutes": 1,
+        "byCategory": {
+          "shared-header": 0,
+          "shared-footer": 0,
+          "local-navigation": 0,
+          "blog-listing": 1,
+          "related-content": 0,
+          "template-sidebar": 0,
+          "article-body": 0,
+          "page-body": 0,
+          "other": 0
+        },
+        "authoredArticleAnchors": 0,
+        "pageMainAnchors": 0
+      },
+      "repeatedNavigationAndDiscoveryGroups": [
+        {
+          "category": "blog-listing",
+          "label": "Tips 8 min read 15 Mistakes to Avoid When Visiting Banff Avoid these 15 common Banff mistakes. From parking blunders to wildlife encounters, learn what not to do on your Rocky Mountain trip. November 16, 2025",
+          "context": "Tips 8 min read 15 Mistakes to Avoid When Visiting Banff Avoid these 15 common Banff mistakes. From parking blunders to wildlife encounters, learn what not to do on your Rocky Mountain trip. November 16, 2025",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/blog/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        }
+      ],
+      "contextualBodyLinks": [],
+      "fragmentValidation": {
+        "invalidCount": 0,
+        "invalid": []
+      },
+      "repeatedPageBodyPatterns": []
+    },
+    "/blog/banff-first-time-tips/": {
+      "retainedRole": "Phased first-visit journey with six optional planning steps connecting arrival, base, outings, access, quotes and backup.",
+      "baselinePage": {
+        "canonical": [
+          "https://banffbound.com/blog/banff-first-time-tips/"
+        ],
+        "title": "First Time in Banff: Arrival, Bases & a Six-Step Trip Plan | BanffBound",
+        "h1": [
+          "First Time in Banff: Arrival, Bases & a Six-Step Trip Plan"
+        ],
+        "robots": [],
+        "htmlSha256": "eb575585029105af19cf2953acb9a740dc45beba2029b3d5de700fe49995d78d"
+      },
+      "counts": {
+        "totalAnchors": 4,
+        "uniqueSourceRoutes": 4,
+        "byCategory": {
+          "shared-header": 0,
+          "shared-footer": 0,
+          "local-navigation": 0,
+          "blog-listing": 1,
+          "related-content": 0,
+          "template-sidebar": 0,
+          "article-body": 3,
+          "page-body": 0,
+          "other": 0
+        },
+        "authoredArticleAnchors": 3,
+        "pageMainAnchors": 0
+      },
+      "repeatedNavigationAndDiscoveryGroups": [
+        {
+          "category": "blog-listing",
+          "label": "Tips 11 min read First Time in Banff: Arrival, Bases & a Six-Step Trip Plan Plan a first Banff visit in six stages: arrival, room and base, main outings, access and admission, complete quotes, and an offline and weather backup. November 17, 2025",
+          "context": "Tips 11 min read First Time in Banff: Arrival, Bases & a Six-Step Trip Plan Plan a first Banff visit in six stages: arrival, room and base, main outings, access and admission, complete quotes, and an offline and weather backup. November 17, 2025",
+          "occurrences": 1,
+          "sourceRoutes": [
+            "/blog/"
+          ],
+          "hiddenMarkupOccurrences": 0
+        }
+      ],
+      "contextualBodyLinks": [
+        {
+          "sourceRoute": "/blog/3-day-banff-itinerary/",
+          "href": "/blog/banff-first-time-tips/#first-visit-planner",
+          "label": "six-step first-visit checklist",
+          "category": "article-body",
+          "context": "The owned hotel and winter-activity comparisons above provide native affiliate links and explain the choices before checkout. BanffBound may earn a commission if you book through those links. Compare each offer’s final total and cancellation terms rather than a generic three-day price. Use the six-step first-visit checklist to revisit the remaining questions, then enjoy the room you deliberately left in the plan.",
+          "precedingHeading": "Book a connected trip, then leave the spare space spare",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-mobile-connectivity/",
+          "href": "/blog/banff-first-time-tips/",
+          "label": "first-visit planning stages",
+          "category": "article-body",
+          "context": "A routine message to a friend is not an emergency request or a continuously monitored tracking service. Agree what the contact should do and when, rather than leaving them to interpret an absent message. The first-visit planning stages connect these checks with arrival, rooms and booked activities.",
+          "precedingHeading": "A practical before-you-leave routine",
+          "hiddenByMarkup": false,
+          "noscript": false
+        },
+        {
+          "sourceRoute": "/blog/banff-toddler-guide/",
+          "href": "/blog/banff-first-time-tips/#first-visit-planner",
+          "label": "six-step first-visit planning checklist",
+          "category": "article-body",
+          "context": "Use the six-step first-visit planning checklist to join arrival, room, outings, access, quotes and backup. In the quote-based trip-cost planner , include the actual people, nights, room layout, transfers and confirmed inclusions. A child’s age does not by itself establish a free room, cot, seat or activity.",
+          "precedingHeading": "Finish the plan with the return and the actual booking",
+          "hiddenByMarkup": false,
+          "noscript": false
+        }
+      ],
+      "fragmentValidation": {
+        "invalidCount": 0,
+        "invalid": []
+      },
+      "repeatedPageBodyPatterns": []
+    }
+  },
+  "findings": [
+    {
+      "id": "accessibility-hub-existing-job",
+      "finding": "The hub has 3 article-body and 18 page-main anchors, separately from 1122 repeated header anchors. Context labels include physical-profile comparison, visitor features and whole-journey questions.",
+      "implication": "Retain it as the main comparison hub; repeat navigation is not evidence of duplicate article intent."
+    },
+    {
+      "id": "accessibility-articles-sparse-context",
+      "finding": "In the retained baseline each accessibility article is discovered through its blog-index card, with no authored article-body inbound links. The older listing labels are broad accessibility/hike promises.",
+      "implication": "The source-reviewed drafts can establish distinct whole-visit and outdoor-endpoint handoffs. Weak contextual discovery is an editorial linking opportunity, not proof of duplicate content or a reason to consolidate URLs."
+    },
+    {
+      "id": "packing-tool-vs-legacy-article",
+      "finding": "The checklist has 37 authored blog article-body links, 27 page-main links and 81 repeated contextual sidebar anchors. The legacy packing article has only its blog-index discovery card in this baseline.",
+      "implication": "Preserve the practical checklist job; review the explanatory article for season/activity tradeoffs and hand off to the tool instead of duplicating the entire list or controls."
+    },
+    {
+      "id": "first-visit-vs-mistakes",
+      "finding": "The reviewed first-time page receives three authored, task-specific inbound links from the 3-day, mobile-connectivity and toddler guides, in addition to its index card. The legacy mistakes article has only an index card in this baseline.",
+      "implication": "The first-visit page’s six-step planning sequence has a concrete handoff purpose. A future mistakes review should focus on the consequence and correction of specific planning errors."
+    },
+    {
+      "id": "no-broken-requested-fragments",
+      "finding": "All seven target HTML files exist; matching anchors have 0 invalid destination fragments.",
+      "implication": "No path/fragment repair is requested by this bounded scan. Current source and later emitted output remain root’s integration responsibility."
+    },
+    {
+      "id": "repeated-body-vs-prose",
+      "finding": "Seven activity-detail pages repeat the same access-planning sentence linking to the hub; these are useful contextual template handoffs and are itemized as a repeated page-body pattern. The 81 packing links in trail sidebars are a separate repeated contextual template group. None of the seven target paths has a footer anchor in this snapshot.",
+      "implication": "Preserve these helpful task links but do not equate repeated template occurrences with independently authored recommendations or demand."
+    }
+  ],
+  "retainedIntentDecision": {
+    "consolidation": "None. Preserve all seven URLs in this bounded audit; especially retain distinct hub / whole-visit / outdoor-endpoint roles for the accessibility trio.",
+    "accessibility": {
+      "hub": "/accessible-trails/",
+      "wholeVisit": "/blog/accessible-banff/",
+      "outdoorEndpoint": "/blog/banff-accessible-hikes/",
+      "linkingRule": "Use the hub for comparing published physical features; the visit guide for airport/room/assistance arrangements; the outdoor guide for selecting a viewpoint or section and complete return. Cross-link these tasks descriptively without describing any as universally suitable."
+    },
+    "adjacentPairs": {
+      "packing": "Keep the interactive checklist and explanatory article as distinct tasks; the legacy article still needs its own source review before its substantive scope can be relied on.",
+      "firstVisit": "Keep phased planning/checklist and mistake-led decisions distinct. The old mistakes article having no contextual inbound link is not evidence it should be redirected."
+    },
+    "searchEvidenceDecision": "No public conclusion about duplication or consolidation is drawn from sparse search data; private GSC figures are intentionally absent."
+  },
+  "designChoice": {
+    "userReferenceUrl": "https://ui-ux-pro-max-skill.com/blog/avoiding-ai-slop/",
+    "referenceRole": "User-provided design direction, freshly read; not an outdoor/accessibility factual authority.",
+    "concreteChoice": "Retain BanffBound pine/gold identity and existing typography. Make the physical-profile comparison the hub’s principal focal point. Use ruled editorial rows (.access-entry) for the few supporting visit/outdoor/transport choices, with deliberate spacing and plain task labels; avoid another repeated grid of interchangeable feature cards.",
+    "scope": "Design choice is recorded from root’s current integration direction. This audit does not modify or claim browser verification of the forthcoming hub."
+  }
+}

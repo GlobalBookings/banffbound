@@ -3,7 +3,7 @@
   "baselineRevision": "d32252e115b7a336b9436940da7ded19c196767a",
   "previousGoalTurnClassification": "progress",
   "previousProgressEvidence": "PR18 merged, exact deployed build and 255 HTML / 7 photos / 7 bare URLs / 100 redirect checks verified; receipt retained in this release.",
-  "status": "Final clean committed-source 69 checks, full build, strict audit, 259 built HTML / 7 photos and desktop/phone browser journeys passed; remote CI and production pending.",
+  "status": "Merged, deployed and verified: exact live revision/fingerprint, PR/main CI,259 HTML,7 photos,7 bare URLs,100 redirect checks and production browser QA passed.",
   "scope": {
     "newFullReviewSlugs": [
       "banff-dog-friendly",
@@ -127,5 +127,8 @@
       "slug": "banff-packing-list",
       "scope": "Assess overlap with reviewed /packing-list/ tool; remove unsupported temperature and preparation guarantees if retained."
     }
-  ]
+  ],
+  "verifiedAtUTC": "2026-10-30T04:55:06.893549+00:00",
+  "liveRevision": "aa619002a224aac62f83ca29290ffa71a4f21042",
+  "releaseReceipt": "research/family-pets-release-receipt-2026-10-29.json"
 }

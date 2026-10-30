@@ -17,11 +17,171 @@ import { ORIGIN, ROOT, normal, htmlFacts, htmlElements, textInside, schemaNodes,
 // node scripts/verify-guide-quality-release.mjs --revision <40hex> --fingerprint <64hex> --report research/<new-local.json>
 // --built-dir <directory> reads emitted HTML/sitemaps/photos and a stable local
 // build receipt; it does not assert deployed identity, HTTP status or redirects.
-const EXPECTED_ROUTES = 259;
+const EXPECTED_ROUTES = 262;
 // Astro inlined this reviewed processed component in the clean 5f69ca8 build.
 // Pin its exact bytes, not a general inline or same-origin script exception.
 const FIRST_VISIT_PROCESSED_SHA256 = "23f8f15ae29817e9d9563e542543218fdc1a63ab382a8148206c69290d1d6c38";
 const FIRST_VISIT_PROCESSED_MODULE = "const c=[{id:\"arrival\",title:\"Join the arrival and return\",task:\"Work from your actual flight, accommodation entrance and final airport arrival. Join the outward and return legs, including luggage and any local connection.\",links:[{href:\"/calgary-to-banff/\",label:\"Plan the airport journey\"},{href:\"/car-free-banff/\",label:\"Compare car-free connections\"}]},{id:\"base\",title:\"Choose a base and room\",task:\"Compare the overnight location, room layout and facilities you will actually book. Include the journey from that address to each main departure point.\",links:[{href:\"/towns/\",label:\"Compare mountain bases\"},{href:\"/book/banff-hotels/\",label:\"Compare Banff room choices\"},{href:\"/book/lake-louise-stays/\",label:\"Compare Lake Louise stays\"},{href:\"/blog/banff-hostel-guide/\",label:\"Consider a hostel stay\"}]},{id:\"days\",title:\"Give each day a main outing\",task:\"Start with one main objective and room for the whole journey. Choose the actual route, resort or activity that fits your group, and keep a different kind of day available.\",links:[{href:\"/trip-builder/\",label:\"Shape an editable itinerary\"},{href:\"/ski-day-planner/\",label:\"Build a resort day\"},{href:\"/learn-to-ski/\",label:\"Plan a first lesson\"}]},{id:\"access\",title:\"Join access, transport and admission\",task:\"Separate park admission from destination transport, parking and activity tickets. Confirm the actual dates, departure point, check-in and last useful return for the outing you chose.\",links:[{href:\"/park-pass/\",label:\"Work through admission\"},{href:\"/shuttle-reservations/\",label:\"Plan lake access and returns\"},{href:\"/parking/\",label:\"Check destination parking\"}]},{id:\"quotes\",title:\"Compare quotes and confirmations\",task:\"Use the same people, dates, room nights and booking terms. Keep missing costs unknown, count confirmed inclusions once, and keep the cancellation terms with each dependent booking.\",links:[{href:\"/trip-cost/\",label:\"Compare your actual quotes\"},{href:\"/blog/where-to-stay-in-banff/\",label:\"Join the stay and journey\"}]},{id:\"backup\",title:\"Prepare the offline and weather backup\",task:\"Have the maps, tickets, contacts and equipment you need before leaving connectivity. Review current sources and agree on a different outing if weather, access or the group changes the plan.\",links:[{href:\"/blog/banff-mobile-connectivity/\",label:\"Prepare for connectivity gaps\"},{href:\"/packing-list/\",label:\"Build a packing checklist\"},{href:\"/blog/rainy-day-banff/\",label:\"Choose a weather alternative\"},{href:\"/conditions/\",label:\"Find current source reports\"}]}],f=new Set(c.map(a=>a.id));function h(a=[]){const i=new Set(Array.isArray(a)?a.filter(e=>typeof e==\"string\"&&f.has(e)):[]),s=c.filter(e=>i.has(e.id)).map(e=>e.id),o=c.filter(e=>!i.has(e.id)).map(e=>e.id),r=c.find(e=>!i.has(e.id));return{checkedIds:s,remainingIds:o,checkedCount:s.length,total:c.length,nextId:r?.id??null,summary:`${s.length} of ${c.length} planning steps marked`,detail:r?`Next question: ${r.title.toLowerCase()}.`:\"All six steps are marked. Recheck your actual confirmations and the latest sources before departure.\",nextHref:r?`#first-visit-${r.id}`:null}}const n=document.getElementById(\"first-visit-planner\");if(n){const a=[...n.querySelectorAll(\"[data-first-visit-check]\")],i=n.querySelector(\"#first-visit-status\"),s=n.querySelector(\"#first-visit-next\"),o=n.querySelector(\"#first-visit-next-link\"),r=n.querySelector(\"#first-visit-clear\"),e=n.querySelector(\"#first-visit-progress\");if(a.length===6&&i&&s&&o&&r&&e){const d=()=>{const t=h(a.filter(l=>l.checked).map(l=>l.value));i.textContent=t.summary,s.textContent=t.detail,o.hidden=t.nextHref===null,t.nextHref?o.setAttribute(\"href\",t.nextHref):o.removeAttribute(\"href\");for(const l of n.querySelectorAll(\"[data-first-visit-step]\"))l.dataset.marked=String(t.checkedIds.includes(l.dataset.firstVisitStep))};for(const t of a)t.checked=!1,t.addEventListener(\"change\",d);r.addEventListener(\"click\",()=>{for(const t of a)t.checked=!1;d()}),d();for(const t of n.querySelectorAll(\"[data-first-visit-check-wrap]\"))t.hidden=!1;e.hidden=!1}}";
+
+// Reviewed accessibility hub data and emitted program; no generic inline-script exception.
+const ACCESSIBILITY_PROCESSED_SHA256 = "7e0c8d23849a4bfb51c1dd73a82090b896cd0e8a095eba43c50da4a5d84ac7da";
+const ACCESSIBILITY_PROCESSED_MODULE = "const i=[{id:\"fenland\",name:\"Fenland Loop\",distance:\"1.9 km loop\",surface:\"83% hard soil; 15% gravel; 2% decking\",width:\"162 / 62 cm\",grade:\"3 / 26%\",crossSlope:\"3 / 21%\",obstacle:\"Significant roots; first root obstacle 237 m counterclockwise.\",approach:\"Count the journey to the trailhead separately. Decide whether a loop leaves enough energy for the return to your base.\"},{id:\"marsh\",name:\"Marsh Trail\",distance:\"1.5 km one way\",surface:\"61% hard soil; 25% gravel; 13% firm soil; 1% decking\",width:\"287 / 200 cm\",grade:\"3 / 23%\",crossSlope:\"4 / 18%\",obstacle:\"Uneven horse-used trail; mud in wet conditions.\",approach:\"Cave and Basin is the starting area, but access to the historic building does not establish access along this trail.\"},{id:\"minnewanka\",name:\"Minnewanka to Stewart Canyon\",distance:\"1.6 km one way\",surface:\"49% paved; 47% firm soil; 2% gravel; 2% decking\",width:\"274 / 100 cm\",grade:\"5 / 29%\",crossSlope:\"5 / 31%\",obstacle:\"Rough paving at the start; rocks and roots from 1 km, with exposure.\",approach:\"A short day-use-area visit is a different objective from reaching the canyon bridge. Choose the endpoint before arranging the return.\"}];function c(s=null,a=null){const o=i.find(t=>t.id===s),e=i.find(t=>t.id===a);return!o||!e?{mode:\"all\",visibleIds:i.map(t=>t.id),firstId:null,secondId:null,status:\"All three published profiles are shown.\"}:{mode:o.id===e.id?\"single\":\"pair\",visibleIds:i.filter(t=>t.id===o.id||t.id===e.id).map(t=>t.id),firstId:o.id,secondId:e.id,status:o.id===e.id?`Showing ${o.name}. Select a different second profile to compare.`:`Comparing ${o.name} and ${e.name}.`}}const r=document.querySelector(\"#profile-comparison\"),n=document.querySelector(\"#profile-a\"),d=document.querySelector(\"#profile-b\"),l=document.querySelector(\"#profile-status\");if(r&&n&&d&&l){const s=Array.from(document.querySelectorAll(\"#access-table [data-profile]\")),a=e=>{s.forEach(t=>{t.hidden=!e.visibleIds.includes(t.dataset.profile||\"\")}),l.textContent=e.status},o=()=>a(c(n.value,d.value));r.addEventListener(\"submit\",e=>{e.preventDefault(),o()}),[n,d].forEach(e=>e.addEventListener(\"change\",o)),document.querySelector(\"#profile-reset\")?.addEventListener(\"click\",()=>{r.reset(),a(c())}),r.hidden=!1}";
+const ACCESSIBILITY_PROFILES = [
+  {
+    "id": "fenland",
+    "name": "Fenland Loop",
+    "distance": "1.9 km loop",
+    "surface": "83% hard soil; 15% gravel; 2% decking",
+    "width": "162 / 62 cm",
+    "grade": "3 / 26%",
+    "crossSlope": "3 / 21%",
+    "obstacle": "Significant roots; first root obstacle 237 m counterclockwise.",
+    "approach": "Count the journey to the trailhead separately. Decide whether a loop leaves enough energy for the return to your base."
+  },
+  {
+    "id": "marsh",
+    "name": "Marsh Trail",
+    "distance": "1.5 km one way",
+    "surface": "61% hard soil; 25% gravel; 13% firm soil; 1% decking",
+    "width": "287 / 200 cm",
+    "grade": "3 / 23%",
+    "crossSlope": "4 / 18%",
+    "obstacle": "Uneven horse-used trail; mud in wet conditions.",
+    "approach": "Cave and Basin is the starting area, but access to the historic building does not establish access along this trail."
+  },
+  {
+    "id": "minnewanka",
+    "name": "Minnewanka to Stewart Canyon",
+    "distance": "1.6 km one way",
+    "surface": "49% paved; 47% firm soil; 2% gravel; 2% decking",
+    "width": "274 / 100 cm",
+    "grade": "5 / 29%",
+    "crossSlope": "5 / 31%",
+    "obstacle": "Rough paving at the start; rocks and roots from 1 km, with exposure.",
+    "approach": "A short day-use-area visit is a different objective from reaching the canyon bridge. Choose the endpoint before arranging the return."
+  }
+];
+const ACCESSIBILITY_SOURCES = {
+  "trails": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+  "report": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions",
+  "bulletins": "https://parks.canada.ca/pn-np/ab/banff/bulletins",
+  "policy": "https://parks.canada.ca/voyage-travel/experiences/accessibilite-accessibility",
+  "roam": "https://roamtransit.com/about-us/transportation-policies/",
+  "shuttle": "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq",
+  "gondola": "https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/",
+  "springs": "https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs/accessibilite-accessibility"
+};
+const ACCESSIBILITY_SECTIONS = [
+  {
+    "id": "trail-profiles",
+    "markers": [
+      "typical / minimum",
+      "typical / maximum",
+      "not cleared winter paths",
+      "scheduled end of December 11",
+      "not confirmation of reopening"
+    ],
+    "links": [
+      "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions",
+      "https://parks.canada.ca/pn-np/ab/banff/bulletins",
+      "/blog/johnston-canyon-guide"
+    ]
+  },
+  {
+    "id": "places",
+    "markers": [
+      "no bathing",
+      "building features do not establish access on every surrounding boardwalk",
+      "31 inches wide × 41 inches long",
+      "320 kg",
+      "368 shallow stairs each way and is not wheelchair accessible",
+      "October 13 to early November",
+      "Personal wheelchairs cannot enter the spring water",
+      "summer-only Peyto Lake"
+    ],
+    "links": [
+      "https://parks.canada.ca/lhn-nhs/ab/caveandbasin/activ/activites-activities/introduction-basictour",
+      "https://parks.canada.ca/voyage-travel/experiences/sources-springs",
+      "https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/",
+      "https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs",
+      "https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs/accessibilite-accessibility",
+      "https://www.banff.ca/654/Bow-Falls-Trail",
+      "https://www.banfflakelouise.com/accessibility"
+    ]
+  },
+  {
+    "id": "transport",
+    "markers": [
+      "Some scooters do not fit",
+      "Moraine has no accessible parking",
+      "Vehicle, companion and equipment arrangements",
+      "published 2026 season ended October 12",
+      "2026 Alpine Start product had no accessible vehicle",
+      "does not establish access along the final path"
+    ],
+    "links": [
+      "https://roamtransit.com/about-us/transportation-policies/",
+      "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq",
+      "/car-free-banff"
+    ]
+  },
+  {
+    "id": "support",
+    "markers": [
+      "needed support person",
+      "no documentation or Access 2 Card",
+      "not a blanket free visitor pass",
+      "at least five business days ahead",
+      "subject to site rules and health, safety or operational limits",
+      "rather than assuming equipment is waiting at a visitor centre"
+    ],
+    "links": [
+      "https://parks.canada.ca/voyage-travel/experiences/accessibilite-accessibility",
+      "https://rockymountainadaptive.com/",
+      "/learn-to-ski"
+    ]
+  },
+  {
+    "id": "stay",
+    "markers": [
+      "exact room and bathroom",
+      "does not guarantee every feature in every room",
+      "Fairmont Queen Mobility Accessible Roll-in Shower",
+      "general search does not reserve an accessible room",
+      "commission"
+    ],
+    "links": [
+      "https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html",
+      "/hotel-directory/fairmont-banff-springs"
+    ]
+  }
+];
+const ACCESSIBILITY_CHECKS = [
+  "I have chosen an endpoint and a return journey.",
+  "I have checked narrow passages, steep sections and the current surface.",
+  "I have confirmed washrooms, resting places and assistance.",
+  "The operator has confirmed my actual equipment and party.",
+  "I have an alternative and the relevant contact details."
+];
+const ACCESSIBILITY_EXTERNALS = [
+  "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+  "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions",
+  "https://parks.canada.ca/pn-np/ab/banff/bulletins",
+  "https://parks.canada.ca/voyage-travel/experiences/accessibilite-accessibility",
+  "https://roamtransit.com/about-us/transportation-policies/",
+  "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq",
+  "https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/",
+  "https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs/accessibilite-accessibility",
+  "https://parks.canada.ca/lhn-nhs/ab/caveandbasin/activ/activites-activities/introduction-basictour",
+  "https://parks.canada.ca/voyage-travel/experiences/sources-springs",
+  "https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs",
+  "https://www.banff.ca/654/Bow-Falls-Trail",
+  "https://www.banfflakelouise.com/accessibility",
+  "https://rockymountainadaptive.com/",
+  "https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html"
+];
+
 const PARTIAL_LABEL = 'Opening paragraph repaired (full guide review pending):';
 const ORIGINAL_PUBLICATION = {
   'nightclub-banff':'2026-03-31', 'banff-nightclubs':'2026-04-08', 'new-places-to-eat-in-banff':'2026-04-03',
@@ -47,10 +207,11 @@ const FULL_PUBLICATION = {
   'banff-first-time-tips':'2025-11-18', 'banff-mobile-connectivity':'2025-09-10', 'kananaskis-day-trip':'2025-12-11',
   'banff-dog-friendly':'2026-02-09', 'banff-pet-friendly-hotels':'2025-09-07',
   'banff-toddler-guide':'2025-11-11', '3-day-banff-itinerary':'2026-02-08',
+  'accessible-banff':'2026-02-08', 'banff-accessible-hikes':'2025-09-18',
 };
 const PARTIAL_PUBLICATION = Object.fromEntries(Object.entries(ORIGINAL_PUBLICATION).filter(([slug])=>!Object.hasOwn(FULL_PUBLICATION,slug)));
-const NEW_FULL_SLUGS=['banff-dog-friendly','banff-pet-friendly-hotels','banff-toddler-guide','3-day-banff-itinerary'];
-const NEW_RELEASE_PATHS=NEW_FULL_SLUGS.map(slug=>`/blog/${slug}/`);
+const NEW_FULL_SLUGS=['accessible-banff','banff-accessible-hikes'];
+const NEW_RELEASE_PATHS=[...NEW_FULL_SLUGS.map(slug=>`/blog/${slug}/`),'/accessible-trails/'];
 const jasperContextSlugs=['jasper-town','jasper-national-park','jasper-canada','jasper-alberta','calgary-to-jasper'];
 const bowContextSlugs=['numtijah-lodge','num-ti-jah-lodge','skoki-lodge-guide','larch-valley-hike','sentinel-pass-hike','lake-louise-village-guide'];
 function expectedBookingContext(slug,authored=false){
@@ -402,10 +563,312 @@ Object.assign(fullMarkers,{
   'banff-toddler-guide':{source:'Full guide reviewed October 29, 2026',transport:'a separate booked seat for every child or infant',stroller:'368 shallow stairs each way',scope:'not verified toddler-eligible products'},
   '3-day-banff-itinerary':{source:'Full guide reviewed October 29, 2026',time:'Three calendar days are not always three sightseeing days',scope:'replacement main outing',winter:'not to walk or skate on the Bow River'},
 });
+Object.assign(journeyReviewedSections,{
+  "accessible-banff": [
+    {
+      "id": "access-objective",
+      "markers": [
+        "one main experience",
+        "do not need to publish private details",
+        "An elevator in a building does not describe"
+      ],
+      "links": []
+    },
+    {
+      "id": "access-airport",
+      "markers": [
+        "between the aircraft/gate and public areas",
+        "between public areas and the curb",
+        "motor coaches are not wheelchair accessible",
+        "whether you remain seated in your device"
+      ],
+      "links": [
+        "https://www.yyc.com/en-us/accessibility/at-the-terminal",
+        "https://www.banffjaspercollection.com/brewster-express/faqs/",
+        "/calgary-to-banff/"
+      ]
+    },
+    {
+      "id": "access-transport",
+      "markers": [
+        "some devices, especially larger scooters",
+        "companions subject to space",
+        "2026 Alpine Start product had no accessible service",
+        "drivers may have their own physical limitations",
+        "2026 lake-shuttle season ended October 12"
+      ],
+      "links": [
+        "https://roamtransit.com/about-us/transportation-policies/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise",
+        "/shuttle-reservations/",
+        "/car-free-banff/"
+      ]
+    },
+    {
+      "id": "access-room",
+      "markers": [
+        "rather than accepting an accessibility filter as a room confirmation",
+        "approximate 86 cm bathroom doorway",
+        "patio is not wheelchair accessible",
+        "no motorized lift",
+        "Fairmont Queen Mobility Accessible Rollin Shower",
+        "not a hotel-wide assessment or available rooms"
+      ],
+      "links": [
+        "https://moosehotelandsuites.com/accessible-hotel-room/",
+        "https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html",
+        "/book/banff-hotels/",
+        "/book/lake-louise-stays/",
+        "/towns/"
+      ]
+    },
+    {
+      "id": "access-facilities",
+      "markers": [
+        "31 inches wide by 41 inches long",
+        "320 kg total weight",
+        "368 shallow stairs each way",
+        "not wheelchair accessible",
+        "October 13 to early November",
+        "does not confirm reopening",
+        "personal wheelchairs cannot enter the spring water"
+      ],
+      "links": [
+        "https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/",
+        "https://parks.canada.ca/lhn-nhs/ab/caveandbasin/activ/activites-activities/introduction-basictour",
+        "https://parks.canada.ca/lhn-nhs/ab/caveandbasin/visit/heures-hours",
+        "https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs",
+        "https://parks.canada.ca/pn-np/ab/banff/sources-banff-springs/accessibilite-accessibility"
+      ]
+    },
+    {
+      "id": "access-support",
+      "markers": [
+        "needed support person",
+        "no documentation or Access 2 Card",
+        "not a universal free visitor pass",
+        "at least five business days ahead",
+        "site-specific health, safety and operational limits",
+        "do not need your diagnosis, medical history or equipment serial number"
+      ],
+      "links": [
+        "https://parks.canada.ca/voyage-travel/experiences/accessibilite-accessibility",
+        "/park-pass/"
+      ]
+    },
+    {
+      "id": "access-adaptive",
+      "markers": [
+        "equipment hire does not automatically include instruction",
+        "does not allocate an adaptive lesson or assess suitability",
+        "does not verify free all-terrain chair loans"
+      ],
+      "links": [
+        "https://rockymountainadaptive.com/",
+        "/learn-to-ski/#lesson-fit",
+        "/ski-day-planner/"
+      ]
+    },
+    {
+      "id": "access-season",
+      "markers": [
+        "not a winter clearance report",
+        "Equipment does not remove those changes",
+        "room-access deadline"
+      ],
+      "links": [
+        "/accessible-trails/#trail-profiles",
+        "https://parks.canada.ca/pn-np/ab/banff/activ/marchehiver-winterwalking/banff",
+        "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions",
+        "https://parks.canada.ca/pn-np/ab/banff/bulletins",
+        "/blog/rainy-day-banff/",
+        "/blog/banff-mobile-connectivity/"
+      ]
+    },
+    {
+      "id": "access-booking",
+      "markers": [
+        "keep missing amounts unknown",
+        "not a confirmed accessible room",
+        "not a verified access-approved tour list",
+        "not a public accessibility score"
+      ],
+      "links": [
+        "/trip-cost/",
+        "https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX",
+        "https://www.getyourguide.com/banff-l284/?partner_id=QW960HO"
+      ]
+    }
+  ],
+  "banff-accessible-hikes": [
+    {
+      "id": "walk-endpoint",
+      "markers": [
+        "not a list of universally accessible routes",
+        "not rank disabilities or prescribe a distance from a diagnosis",
+        "A shorter visit can leave more space"
+      ],
+      "links": []
+    },
+    {
+      "id": "walk-profile",
+      "markers": [
+        "typical / minimum",
+        "typical / maximum",
+        "1.9 km loop",
+        "162 / 62 cm",
+        "3 / 26%",
+        "3 / 21%",
+        "237 m counterclockwise",
+        "not support calling the whole loop flat, paved or barrier-free"
+      ],
+      "links": [
+        "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+        "/accessible-trails/#trail-profiles"
+      ]
+    },
+    {
+      "id": "walk-town",
+      "markers": [
+        "not a winter opening confirmation",
+        "clifftop section is closed in winter",
+        "not plan the full town-to-falls path as a flat paved loop"
+      ],
+      "links": [
+        "https://www.banff.ca/833/Central-Park",
+        "https://www.banfflakelouise.com/accessibility",
+        "https://www.banff.ca/654/Bow-Falls-Trail",
+        "/towns/banff/",
+        "/eat-and-drink/#dining-finder"
+      ]
+    },
+    {
+      "id": "walk-lakes",
+      "markers": [
+        "2.3 km one way",
+        "does not establish a fully paved route",
+        "village stop does not finish the lakeshore journey",
+        "rough paving followed by natural trail",
+        "day-use area and the route to Stewart Canyon are also different outings"
+      ],
+      "links": [
+        "/blog/lake-louise-village-guide/",
+        "/shuttle-reservations/",
+        "/accessible-trails/#trail-profiles"
+      ]
+    },
+    {
+      "id": "walk-peyto",
+      "markers": [
+        "0.3 km barrier-free trail from the upper parking lot",
+        "restricted to accessible vehicles and buses",
+        "not every path from the main public parking area",
+        "summer-only viewing option",
+        "does not promise a cleared winter path"
+      ],
+      "links": [
+        "https://parks.canada.ca/pn-np/ab/jasper/activ/itineraires-itineraries/promenadedesglaciers-icefieldsparkway",
+        "/blog/peyto-lake-guide/",
+        "/icefields-parkway-planner/"
+      ]
+    },
+    {
+      "id": "walk-journey",
+      "markers": [
+        "a driver may be unable to provide physical help",
+        "companions subject to space",
+        "2026 Alpine Start product had no accessible service",
+        "season ended October 12, 2026",
+        "first-come, first-served and cannot be guaranteed",
+        "Moraine Lake has no accessible parking"
+      ],
+      "links": [
+        "https://roamtransit.com/about-us/transportation-policies/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise/faq",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise",
+        "/parking/",
+        "/car-free-banff/"
+      ]
+    },
+    {
+      "id": "walk-winter",
+      "markers": [
+        "not a promise that it is cleared today",
+        "including P1 parking and washrooms",
+        "scheduled December 11 end",
+        "Reopening is not confirmed here",
+        "not substitute an unfamiliar approach as an accessible workaround"
+      ],
+      "links": [
+        "https://parks.canada.ca/pn-np/ab/banff/activ/marchehiver-winterwalking/banff",
+        "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions",
+        "https://parks.canada.ca/pn-np/ab/banff/bulletins/06d4ef61-a3c9-4b65-8dfc-66d056252d6c",
+        "/conditions/"
+      ]
+    },
+    {
+      "id": "walk-support",
+      "markers": [
+        "no free all-terrain chair loan",
+        "accessible indoor/outdoor heritage experience",
+        "do not establish access along Marsh Trail",
+        "368 shallow stairs each way and is not wheelchair accessible"
+      ],
+      "links": [
+        "https://rockymountainadaptive.com/",
+        "https://parks.canada.ca/lhn-nhs/ab/caveandbasin/activ/activites-activities/introduction-basictour",
+        "https://parks.canada.ca/lhn-nhs/ab/caveandbasin/visit/heures-hours",
+        "https://www.banffjaspercollection.com/attractions/banff-gondola/faqs/"
+      ]
+    },
+    {
+      "id": "walk-booking",
+      "markers": [
+        "actual category and access features before payment",
+        "not verified accessible-room inventory",
+        "individual device approval",
+        "commission"
+      ],
+      "links": [
+        "/blog/accessible-banff/",
+        "/book/banff-hotels/",
+        "/book/lake-louise-stays/",
+        "/packing-list/",
+        "https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX",
+        "https://www.getyourguide.com/banff-l284/?partner_id=QW960HO"
+      ]
+    }
+  ]
+});
+Object.assign(journeyNativeReferrals,{
+  "accessible-banff": [
+    "https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX",
+    "https://www.getyourguide.com/banff-l284/?partner_id=QW960HO"
+  ],
+  "banff-accessible-hikes": [
+    "https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX",
+    "https://www.getyourguide.com/banff-l284/?partner_id=QW960HO"
+  ]
+});
+Object.assign(fullMarkers,{
+  "accessible-banff": {
+    "source": "Full guide reviewed October 29, 2026",
+    "vehicle": "motor coaches are not wheelchair accessible",
+    "scope": "not a universal free visitor pass",
+    "room": "not a confirmed accessible room"
+  },
+  "banff-accessible-hikes": {
+    "source": "Full guide reviewed October 29, 2026",
+    "scope": "not a list of universally accessible routes",
+    "season": "not a promise that it is cleared today",
+    "booking": "not verified accessible-room inventory"
+  }
+});
 function fullReviewChecks(d) {
-  const metadata={...d.bowLakeGuideMetadata,...d.jasperGuideMetadata,...d.diningGuideMetadata,...d.cabinGuideMetadata,...d.nightlifeGuideMetadata,...d.liveMusicGuideMetadata,...d.drinkOfferGuideMetadata,...d.parkwayGuideMetadata,...d.minnewankaGuideMetadata,...d.gondolaGuideMetadata,...d.springSkiGuideMetadata,...d.peytoGuideMetadata,...d.scenicFlightGuideMetadata,...d.goldenDayGuideMetadata,...d.heliSkiGuideMetadata,...d.skokiGuideMetadata,...d.budgetGuideMetadata,...d.fallSeasonGuideMetadata,...d.larchHikingGuideMetadata,...d.itineraryWeatherGuideMetadata,...d.localBaseGuideMetadata,...d.carRentalGuideMetadata,...d.stayDecisionGuideMetadata,...d.firstVisitGuideMetadata,...d.kananaskisDayGuideMetadata,...d.petTravelGuideMetadata,...d.toddlerGuideMetadata,...d.shortStayGuideMetadata};
+  const metadata={...d.bowLakeGuideMetadata,...d.jasperGuideMetadata,...d.diningGuideMetadata,...d.cabinGuideMetadata,...d.nightlifeGuideMetadata,...d.liveMusicGuideMetadata,...d.drinkOfferGuideMetadata,...d.parkwayGuideMetadata,...d.minnewankaGuideMetadata,...d.gondolaGuideMetadata,...d.springSkiGuideMetadata,...d.peytoGuideMetadata,...d.scenicFlightGuideMetadata,...d.goldenDayGuideMetadata,...d.heliSkiGuideMetadata,...d.skokiGuideMetadata,...d.budgetGuideMetadata,...d.fallSeasonGuideMetadata,...d.larchHikingGuideMetadata,...d.itineraryWeatherGuideMetadata,...d.localBaseGuideMetadata,...d.carRentalGuideMetadata,...d.stayDecisionGuideMetadata,...d.firstVisitGuideMetadata,...d.kananaskisDayGuideMetadata,...d.petTravelGuideMetadata,...d.toddlerGuideMetadata,...d.shortStayGuideMetadata,...d.accessVisitGuideMetadata,...d.accessWalkGuideMetadata};
   assert.deepEqual(Object.keys(metadata).sort(),Object.keys(FULL_PUBLICATION).sort());
-  assert.equal(Object.keys(d.reviewedBlogBodies).length,92,'Current registry has 92 full reviews; historical receipts remain versioned.');
+  assert.equal(Object.keys(d.reviewedBlogBodies).length,94,'Current registry has 94 full reviews; historical receipts remain versioned.');
   assert.equal(Object.keys(d.blogRedirects).length,40);assert.equal(d.blogRedirects['norquay-ski-shuttle'],'mt-norquay-guide');
   assert.equal(d.cabinExamples.length,6);assert.equal(d.compareCabinStays({}).selectedIds.length,6);assert.equal(d.compareCabinStays({season:'winter'}).selectedIds.length,4);
   const verifiedIds={'tunnel-mountain-cabin':'16324','baker-family-cabin':'7710611','paradise-wilson-cabin':'7829397'};
@@ -418,14 +881,15 @@ function fullReviewChecks(d) {
     const bodyHtml=d.resolveBlogContent(slug),facts=htmlFacts(`<html><body>${bodyHtml}</body></html>`),schemas=facts.documents.flatMap(doc=>schemaNodes(doc,'FAQPage'));
     assert.equal(schemas.length,1,slug+': source must emit one FAQPage');
     const faqArrays={'banff-cabin-rentals':d.cabinGuideFaqs,'new-places-to-eat-in-banff':d.diningGuideFaqs,'banff-nightlife-guide':d.nightlifeGuideFaqs,'banff-live-music':d.liveMusicGuideFaqs,'drink-deals':d.drinkOfferGuideFaqs,'lake-minnewanka-guide':d.minnewankaGuideFaqs,'banff-spring-skiing':d.springSkiGuideFaqs,'peyto-lake-guide':d.peytoGuideFaqs,'golden-bc-day-trip':d.goldenDayGuideFaqs,'banff-heli-skiing':d.heliSkiPlanningFaqs,'skoki-lodge-guide':d.skokiGuideFaqs,'banff-trip-cost-budget-guide':d.budgetGuideFaqs,'banff-car-rental-tips':d.carRentalGuideFaqs};
-    const fullFaqs=d.jasperGuideFaqs[slug]??d.parkwayGuideFaqs[slug]??d.gondolaGuideFaqs[slug]??d.scenicFlightGuideFaqs[slug]??d.fallSeasonGuideFaqs[slug]??d.larchHikingGuideFaqs[slug]??d.itineraryWeatherGuideFaqs[slug]??d.localBaseGuideFaqs[slug]??d.stayDecisionGuideFaqs[slug]??d.firstVisitGuideFaqs[slug]??(slug==='kananaskis-day-trip'?d.kananaskisDayGuideFaqs:undefined)??d.petTravelGuideFaqs[slug]??d.toddlerGuideFaqs[slug]??d.shortStayGuideFaqs[slug]??faqArrays[slug]??schemas[0].mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text}));
+    const fullFaqs=d.jasperGuideFaqs[slug]??d.parkwayGuideFaqs[slug]??d.gondolaGuideFaqs[slug]??d.scenicFlightGuideFaqs[slug]??d.fallSeasonGuideFaqs[slug]??d.larchHikingGuideFaqs[slug]??d.itineraryWeatherGuideFaqs[slug]??d.localBaseGuideFaqs[slug]??d.stayDecisionGuideFaqs[slug]??d.firstVisitGuideFaqs[slug]??(slug==='kananaskis-day-trip'?d.kananaskisDayGuideFaqs:undefined)??d.petTravelGuideFaqs[slug]??d.toddlerGuideFaqs[slug]??d.shortStayGuideFaqs[slug]??d.accessVisitGuideFaqs[slug]??d.accessWalkGuideFaqs[slug]??faqArrays[slug]??schemas[0].mainEntity.map(q=>({question:q.name,answer:q.acceptedAnswer.text}));
     if(['where-to-stay-in-banff','banff-hostel-guide','banff-first-time-tips','banff-mobile-connectivity','kananaskis-day-trip'].includes(slug))assert.equal(fullFaqs,d.stayDecisionGuideFaqs[slug]??d.firstVisitGuideFaqs[slug]??d.kananaskisDayGuideFaqs,'Prior stay/first-visit/regional FAQ expectations retain their authored arrays.');
-    if(NEW_FULL_SLUGS.includes(slug))assert.equal(fullFaqs,d.petTravelGuideFaqs[slug]??d.toddlerGuideFaqs[slug]??d.shortStayGuideFaqs[slug],'New FAQ expectations come from authored arrays, never reconstructed from the schema under test.');
+    if(['banff-dog-friendly','banff-pet-friendly-hotels','banff-toddler-guide','3-day-banff-itinerary'].includes(slug))assert.equal(fullFaqs,d.petTravelGuideFaqs[slug]??d.toddlerGuideFaqs[slug]??d.shortStayGuideFaqs[slug],'Prior family/pet/short-stay FAQ expectations retain their authored arrays.');
+    if(NEW_FULL_SLUGS.includes(slug))assert.equal(fullFaqs,d.accessVisitGuideFaqs[slug]??d.accessWalkGuideFaqs[slug],'New FAQ expectations come from authored arrays, never reconstructed from the schema under test.');
     assert.equal(fullFaqs.length,['jasper-national-park','jasper-town','jasper-canada'].includes(slug)?3:['numtijah-lodge','banff-live-music'].includes(slug)?4:5);
     const quality={type:'full',slug,bodyHtml,description:meta.description,published:date,corrected:meta.lastUpdated,imageNote:post.imageNote,fullFaqs};
     if(reviewedSections[slug]||newReviewedSections[slug]||journeyReviewedSections[slug])quality.sections=[...(reviewedSections[slug]??[]),...(newReviewedSections[slug]??[]),...(journeyReviewedSections[slug]??[])];
     if(Object.hasOwn(newReviewedSections,slug)){quality.nativeReferrals=slug==='banff-trip-cost-budget-guide'?[d.budgetGuideAffiliateLinks.banffHotels,d.budgetGuideAffiliateLinks.banffActivities]:[...(slug==='larch-valley-hike'||slug==='banff-in-fall'?['https://www.expedia.ca/Hotel-Search?destination=Banff%2C+Alberta&camref=1101l3MtWX']:[]),...(slug!=='banff-in-fall'?['https://www.getyourguide.com/banff-l284/?partner_id=QW960HO']:[])];}
-    if(Object.hasOwn(journeyReviewedSections,slug)){quality.journeyGuide=true;quality.nativeReferrals=journeyNativeReferrals[slug];quality.journeySources=Object.values(slug==='banff-car-rental-tips'?d.carRentalGuideSources:d.localBaseGuideSources[slug]??d.stayDecisionGuideSources[slug]??d.firstVisitGuideSources[slug]??d.petTravelGuideSources[slug]??d.toddlerGuideSources[slug]??d.shortStayGuideSources[slug]??(slug==='kananaskis-day-trip'?d.kananaskisDayGuideSources:d.itineraryWeatherGuideSources));}
+    if(Object.hasOwn(journeyReviewedSections,slug)){quality.journeyGuide=true;quality.nativeReferrals=journeyNativeReferrals[slug];quality.journeySources=Object.values(slug==='banff-car-rental-tips'?d.carRentalGuideSources:d.localBaseGuideSources[slug]??d.stayDecisionGuideSources[slug]??d.firstVisitGuideSources[slug]??d.petTravelGuideSources[slug]??d.toddlerGuideSources[slug]??d.shortStayGuideSources[slug]??d.accessVisitGuideSources[slug]??d.accessWalkGuideSources[slug]??(slug==='kananaskis-day-trip'?d.kananaskisDayGuideSources:d.itineraryWeatherGuideSources));}
     if(slug==='banff-mobile-connectivity')quality.nativeActionLinks=[{href:'tel:911',label:'911'},{href:'tel:+14037624506',label:'+1 403 762 4506'}];
     if(slug==='banff-first-time-tips'){
       assert.equal(d.firstVisitReviewedAt,'2026-10-29');assert.deepEqual(d.firstVisitSteps.map(s=>s.id),['arrival','base','days','access','quotes','backup']);
@@ -470,7 +934,7 @@ export async function loadGuideInventory() {
   const foundation = await loadInventory();
   assert.equal(foundation.checks.length,193);assert.equal(foundation.photos.length,7);
   const tools=foundation.checks.find(c=>c.path==='/tools/');assert.ok(tools);tools.links=[...(tools.links??[]),'/trip-cost','/altitude-guide','/larch-season'];
-  const d = await moduleData("export {allBlogPosts} from './src/data/blogPosts.ts'; export {blogRedirects} from './src/data/redirects.mjs'; export {resolveBlogContent,reviewedBlogBodies,authoredBookingGuideSlugs} from './src/data/blogContentRegistry.ts'; export * from './src/data/legacyTextCorrections.ts'; export * from './src/data/lessonPlanning.ts'; export * from './src/data/skiPlanning.ts'; export {towns} from './src/data/towns.ts'; export * from './src/data/townStayPlanning.ts'; export {bowLakeGuideMetadata} from './src/data/bowLakeGuideOverrides.ts'; export {jasperGuideMetadata,jasperGuideFaqs} from './src/data/jasperGuideOverrides.ts'; export {diningGuideMetadata,diningGuideFaqs} from './src/data/diningGuideOverrides.ts'; export {cabinGuideMetadata,cabinGuideFaqs} from './src/data/cabinGuideOverrides.ts'; export * from './src/data/cabinPlanning.ts'; export {nightlifeGuideMetadata,nightlifeGuideFaqs} from './src/data/nightlifeGuideOverrides.ts'; export {liveMusicGuideMetadata,liveMusicGuideFaqs} from './src/data/liveMusicGuideOverrides.ts'; export {drinkOfferGuideMetadata,drinkOfferGuideFaqs} from './src/data/drinkOfferGuideOverrides.ts'; export * from './src/data/eveningPlanning.ts'; export {parkwayGuideMetadata,parkwayGuideFaqs} from './src/data/parkwayGuideOverrides.ts'; export {minnewankaGuideMetadata,minnewankaGuideFaqs} from './src/data/minnewankaGuideOverrides.ts'; export {gondolaGuideMetadata,gondolaGuideFaqs} from './src/data/gondolaGuideOverrides.ts'; export * from './src/data/parkwayPlanning.ts'; export {winterActivityOffers} from './src/data/winterActivityLanding.ts'; export {springSkiGuideMetadata,springSkiGuideFaqs} from './src/data/springSkiGuideOverrides.ts'; export {peytoGuideMetadata,peytoGuideFaqs} from './src/data/peytoGuideOverrides.ts'; export {scenicFlightGuideMetadata,scenicFlightGuideFaqs} from './src/data/scenicFlightGuideOverrides.ts'; export {getArticleBookingContext} from './src/data/articleBookingContext.ts'; export {goldenDayGuideMetadata,goldenDayGuideFaqs} from './src/data/goldenDayGuideOverrides.ts'; export {heliSkiGuideMetadata} from './src/data/heliSkiGuideOverrides.ts'; export * from './src/data/heliSkiPlanning.ts'; export {buildDiningDirectory} from './src/data/restaurantSourceReviews.ts'; export {banffDiningSourceReviews} from './src/data/banffDiningSourceReviews.ts'; export * from './src/data/diningPlanning.ts'; export {skokiGuideMetadata,skokiGuideFaqs} from './src/data/skokiGuideOverrides.ts'; export * from './src/data/altitudePlanning.ts'; export * from './src/data/tripCostPlanning.ts'; export * from './src/data/larchPlanning.ts'; export {trails} from './src/data/trails.ts'; export {budgetGuideMetadata,budgetGuideFaqs,budgetGuideAffiliateLinks} from './src/data/budgetGuideOverrides.ts'; export {fallSeasonGuideMetadata,fallSeasonGuideFaqs} from './src/data/fallSeasonGuideOverrides.ts'; export {larchHikingGuideMetadata,larchHikingGuideFaqs} from './src/data/larchHikingGuideOverrides.ts'; export * from './src/data/parkPassPlanning.ts'; export {itineraryWeatherGuideMetadata,itineraryWeatherGuideFaqs,itineraryWeatherGuideSources} from './src/data/itineraryWeatherGuideOverrides.ts'; export {localBaseGuideMetadata,localBaseGuideFaqs,localBaseGuideSources} from './src/data/localBaseGuideOverrides.ts'; export {carRentalGuideMetadata,carRentalGuideFaqs,carRentalGuideSources} from './src/data/carRentalGuideOverrides.ts'; export {plannerTemplates,plannerActivities,defaultTripPlan,createTripPlan,activityFitsSeason,encodeTripPlan,decodeTripPlan,tripStayUrl,MAX_TRIP_DAYS,MAX_DAY_ACTIVITIES} from './src/data/tripPlanner.ts'; export {stayDecisionGuideMetadata,stayDecisionGuideFaqs,stayDecisionGuideSources} from './src/data/stayDecisionGuideOverrides.ts'; export {firstVisitGuideMetadata,firstVisitGuideFaqs,firstVisitGuideSources} from './src/data/firstVisitGuideOverrides.ts'; export {kananaskisDayGuideMetadata,kananaskisDayGuideFaqs,kananaskisDayGuideSources} from './src/data/kananaskisDayGuideOverrides.ts'; export {firstVisitSteps,buildFirstVisitChecklist,firstVisitReviewedAt} from './src/data/firstVisitPlanning.ts'; export {petTravelGuideMetadata,petTravelGuideFaqs,petTravelGuideSources} from './src/data/petTravelGuideOverrides.ts'; export {toddlerGuideMetadata,toddlerGuideFaqs,toddlerGuideSources} from './src/data/toddlerGuideOverrides.ts'; export {shortStayGuideMetadata,shortStayGuideFaqs,shortStayGuideSources} from './src/data/shortStayGuideOverrides.ts';");
+  const d = await moduleData("export {allBlogPosts} from './src/data/blogPosts.ts'; export {blogRedirects} from './src/data/redirects.mjs'; export {resolveBlogContent,reviewedBlogBodies,authoredBookingGuideSlugs} from './src/data/blogContentRegistry.ts'; export * from './src/data/legacyTextCorrections.ts'; export * from './src/data/lessonPlanning.ts'; export * from './src/data/skiPlanning.ts'; export {towns} from './src/data/towns.ts'; export * from './src/data/townStayPlanning.ts'; export {bowLakeGuideMetadata} from './src/data/bowLakeGuideOverrides.ts'; export {jasperGuideMetadata,jasperGuideFaqs} from './src/data/jasperGuideOverrides.ts'; export {diningGuideMetadata,diningGuideFaqs} from './src/data/diningGuideOverrides.ts'; export {cabinGuideMetadata,cabinGuideFaqs} from './src/data/cabinGuideOverrides.ts'; export * from './src/data/cabinPlanning.ts'; export {nightlifeGuideMetadata,nightlifeGuideFaqs} from './src/data/nightlifeGuideOverrides.ts'; export {liveMusicGuideMetadata,liveMusicGuideFaqs} from './src/data/liveMusicGuideOverrides.ts'; export {drinkOfferGuideMetadata,drinkOfferGuideFaqs} from './src/data/drinkOfferGuideOverrides.ts'; export * from './src/data/eveningPlanning.ts'; export {parkwayGuideMetadata,parkwayGuideFaqs} from './src/data/parkwayGuideOverrides.ts'; export {minnewankaGuideMetadata,minnewankaGuideFaqs} from './src/data/minnewankaGuideOverrides.ts'; export {gondolaGuideMetadata,gondolaGuideFaqs} from './src/data/gondolaGuideOverrides.ts'; export * from './src/data/parkwayPlanning.ts'; export {winterActivityOffers} from './src/data/winterActivityLanding.ts'; export {springSkiGuideMetadata,springSkiGuideFaqs} from './src/data/springSkiGuideOverrides.ts'; export {peytoGuideMetadata,peytoGuideFaqs} from './src/data/peytoGuideOverrides.ts'; export {scenicFlightGuideMetadata,scenicFlightGuideFaqs} from './src/data/scenicFlightGuideOverrides.ts'; export {getArticleBookingContext} from './src/data/articleBookingContext.ts'; export {goldenDayGuideMetadata,goldenDayGuideFaqs} from './src/data/goldenDayGuideOverrides.ts'; export {heliSkiGuideMetadata} from './src/data/heliSkiGuideOverrides.ts'; export * from './src/data/heliSkiPlanning.ts'; export {buildDiningDirectory} from './src/data/restaurantSourceReviews.ts'; export {banffDiningSourceReviews} from './src/data/banffDiningSourceReviews.ts'; export * from './src/data/diningPlanning.ts'; export {skokiGuideMetadata,skokiGuideFaqs} from './src/data/skokiGuideOverrides.ts'; export * from './src/data/altitudePlanning.ts'; export * from './src/data/tripCostPlanning.ts'; export * from './src/data/larchPlanning.ts'; export {trails} from './src/data/trails.ts'; export {budgetGuideMetadata,budgetGuideFaqs,budgetGuideAffiliateLinks} from './src/data/budgetGuideOverrides.ts'; export {fallSeasonGuideMetadata,fallSeasonGuideFaqs} from './src/data/fallSeasonGuideOverrides.ts'; export {larchHikingGuideMetadata,larchHikingGuideFaqs} from './src/data/larchHikingGuideOverrides.ts'; export * from './src/data/parkPassPlanning.ts'; export {itineraryWeatherGuideMetadata,itineraryWeatherGuideFaqs,itineraryWeatherGuideSources} from './src/data/itineraryWeatherGuideOverrides.ts'; export {localBaseGuideMetadata,localBaseGuideFaqs,localBaseGuideSources} from './src/data/localBaseGuideOverrides.ts'; export {carRentalGuideMetadata,carRentalGuideFaqs,carRentalGuideSources} from './src/data/carRentalGuideOverrides.ts'; export {plannerTemplates,plannerActivities,defaultTripPlan,createTripPlan,activityFitsSeason,encodeTripPlan,decodeTripPlan,tripStayUrl,MAX_TRIP_DAYS,MAX_DAY_ACTIVITIES} from './src/data/tripPlanner.ts'; export {stayDecisionGuideMetadata,stayDecisionGuideFaqs,stayDecisionGuideSources} from './src/data/stayDecisionGuideOverrides.ts'; export {firstVisitGuideMetadata,firstVisitGuideFaqs,firstVisitGuideSources} from './src/data/firstVisitGuideOverrides.ts'; export {kananaskisDayGuideMetadata,kananaskisDayGuideFaqs,kananaskisDayGuideSources} from './src/data/kananaskisDayGuideOverrides.ts'; export {firstVisitSteps,buildFirstVisitChecklist,firstVisitReviewedAt} from './src/data/firstVisitPlanning.ts'; export {petTravelGuideMetadata,petTravelGuideFaqs,petTravelGuideSources} from './src/data/petTravelGuideOverrides.ts'; export {toddlerGuideMetadata,toddlerGuideFaqs,toddlerGuideSources} from './src/data/toddlerGuideOverrides.ts'; export {shortStayGuideMetadata,shortStayGuideFaqs,shortStayGuideSources} from './src/data/shortStayGuideOverrides.ts'; export {accessVisitGuideMetadata,accessVisitGuideFaqs,accessVisitGuideSources} from './src/data/accessVisitGuideOverrides.ts'; export {accessWalkGuideMetadata,accessWalkGuideFaqs,accessWalkGuideSources} from './src/data/accessWalkGuideOverrides.ts'; export {accessProfiles,accessFaqs,accessibilitySources,accessibilityReviewedAt,buildAccessComparison} from './src/data/accessibilityPlanning.ts';");
   assert.deepEqual(Object.keys(d.legacyTextCorrections).sort(),Object.keys(PARTIAL_PUBLICATION).sort());
   assert.equal(d.legacyTextCorrectionDate,'2026-10-29');
   const additions = Object.entries(PARTIAL_PUBLICATION).map(([slug,date])=>{
@@ -494,9 +958,9 @@ export async function loadGuideInventory() {
   }
   const contextPost=d.allBlogPosts.find(p=>p.slug==='jasper-alberta');assert.ok(contextPost&&!d.blogRedirects[contextPost.slug]);
   additions.push({path:'/blog/jasper-alberta/',kind:'article-booking-context',name:contextPost.title,noindex:false,affiliateKinds:['expedia-banner','gyg-auto'],quality:{type:'context'}});
-  assert.equal(d.authoredBookingGuideSlugs.length,41);
+  assert.equal(d.authoredBookingGuideSlugs.length,43);
   for(const check of additions){const slug=check.path.split('/')[2],authored=d.authoredBookingGuideSlugs.includes(slug),expected=expectedBookingContext(slug,authored);assert.deepEqual(d.getArticleBookingContext(slug,authored),expected);if(expected.suppressAutomaticCTA)check.quality.bookingContext=expected;}
-  assert.equal(additions.filter(c=>c.quality.bookingContext).length,43);
+  assert.equal(additions.filter(c=>c.quality.bookingContext).length,45);
   const hubLinks=[{href:'/blog/banff-nightlife-guide/#evening-planner',label:'Build your Banff evening'},{href:'/blog/new-places-to-eat-in-banff/',label:'Find a dining discovery'},{href:'/blog/banff-live-music/',label:'Find music or a show'},{href:'/blog/drink-deals/',label:'Compare current offer formats'}];
   const dining=d.buildDiningDirectory(d.banffDiningSourceReviews).venues,diningInitial=d.buildDiningPlan(),diningFaqs=await localArray('src/pages/eat-and-drink.astro','faqs');
   assert.equal(dining.length,32);assert.equal(d.diningPlanningRecords.length,32);assert.deepEqual(dining.map(v=>v.slug).sort(),d.diningPlanningRecords.map(v=>v.slug).sort());assert.equal(dining.filter(v=>v.sourceReview.status==='selected-facts').length,30);assert.deepEqual(dining.filter(v=>v.sourceReview.status==='pending').map(v=>v.slug).sort(),['pd3-by-blake','trailhead-cafe']);assert.deepEqual(diningInitial.filters,{area:'all',format:'all'});assert.equal(diningInitial.summary,'32 of 32 listed venues shown');assert.equal(diningFaqs.length,5);
@@ -573,12 +1037,83 @@ export async function loadGuideInventory() {
   const tripFaqs=(await localArray('src/pages/trip-builder.astro','faqs')).map(f=>({question:f.q,answer:f.a}));assert.equal(tripFaqs.length,4);
   const tripHtml=await plannerSourceHtml('src/pages/trip-builder.astro');
   additions.push({path:'/trip-builder/',kind:'editable-trip-builder',name:'Your Banff trip. Make it yours.',noindex:false,faqs:tripFaqs,markers:{scope:'One main outing is often enough.',season:'Summer-only boating, Moraine Lake transport and alpine hiking are separated from winter ideas.',privacy:'It contains no hotel reservation, booking confirmation or personal contact information.',default:'3 days · 5 outings · Winter · Banff base'},links:['/blog/7-day-banff-itinerary/','/towns','/ski-day-planner','/winter-stays','/hotel-directory',d.tripStayUrl('banff')],quality:{type:'trip-builder',ssrHtml:tripHtml,controls:[control('your-trip','section'),control('trip-settings','form',{hidden:true}),...['season','base','transport','template','add-to'].map(key=>control('trip-'+key,'select')),control('load-trip-template','button',{type:'button'}),control('trip-week-note','p'),control('trip-toolbar','div',{hidden:true}),...['add-day','undo','share','print','reset'].map(key=>control('trip-'+key,'button',{type:'button',...(key==='undo'?{disabled:true}:{})})),control('trip-status','p',{role:'status','aria-live':'polite'}),control('trip-save-status','p'),control('trip-share-fallback','div',{hidden:true}),control('trip-share-link','input',{type:'text',readonly:true}),control('trip-summary','p'),control('trip-days','div'),control('trip-checks-list','ul'),control('trip-catalogue','section'),control('trip-catalogue-controls','div',{hidden:true}),control('trip-activity-search','input',{type:'search',autocomplete:'off'}),control('trip-catalogue-empty','p',{hidden:true}),control('trip-stay-link','a')],tripBuilder:{initial:tripInitial,templates:d.plannerTemplates,activities:d.plannerActivities,weekDays,stayHref:d.tripStayUrl('banff')}}});
-  assert.equal(additions.length,66);assert.equal(additions.filter(c=>c.kind==='legacy-text-repair').length,8);assert.equal(additions.filter(c=>c.kind==='full-guide-review').length,41);
+  assert.equal(d.accessibilityReviewedAt,'2026-10-29');assert.deepEqual(d.accessProfiles,ACCESSIBILITY_PROFILES,'Independent published accessibility profiles and units');assert.deepEqual(d.accessibilitySources,ACCESSIBILITY_SOURCES,'Independent primary-source destinations');assert.equal(d.accessFaqs.length,5);
+  const accessAll={mode:'all',visibleIds:ACCESSIBILITY_PROFILES.map(p=>p.id),firstId:null,secondId:null,status:'All three published profiles are shown.'};assert.deepEqual(d.buildAccessComparison(),accessAll);
+  for(const a of ACCESSIBILITY_PROFILES)for(const b of ACCESSIBILITY_PROFILES)assert.deepEqual(d.buildAccessComparison(a.id,b.id),{mode:a.id===b.id?'single':'pair',visibleIds:ACCESSIBILITY_PROFILES.filter(p=>p.id===a.id||p.id===b.id).map(p=>p.id),firstId:a.id,secondId:b.id,status:a.id===b.id?'Showing '+a.name+'. Select a different second profile to compare.':'Comparing '+a.name+' and '+b.name+'.'},'Independent exact profile pair, not a suitability score');
+  const accessPoison={toString(){throw Error('Accessibility inputs must not be coerced');}};for(const bad of [null,undefined,false,true,0,NaN,[],{},accessPoison,Symbol('device'),'FENLAND','fenland ',' fenland','fenland?email=PRIVATE','constructor','__proto__'])for(const args of [[bad,'marsh'],['fenland',bad]])assert.deepEqual(d.buildAccessComparison(...args),accessAll,'Unknown accessibility choices retain every published profile');
+  const accessHtml=await plannerSourceHtml('src/pages/accessible-trails.astro');assert.ok(!/PRIVATE_FIXTURE|PRIVATE_CLICK/.test(accessHtml));
+  additions.push({path:'/accessible-trails/',kind:'accessibility-profile-hub',name:'Accessible Banff: Build Your Outing',noindex:false,modifiedDate:d.accessibilityReviewedAt,faqs:d.accessFaqs,markers:{scope:'Published route measurements; not current access reports',winter:'The profiles describe published routes, not cleared winter paths.',booking:'a general search does not reserve an accessible room.'},links:['/blog/accessible-banff/','/blog/banff-accessible-hikes/',...ACCESSIBILITY_EXTERNALS],quality:{type:'accessibility',ssrHtml:accessHtml,controls:[control('profile-comparison','form',{hidden:true}),control('profile-a','select'),control('profile-b','select'),control('profile-compare','button',{type:'submit'}),control('profile-reset','button',{type:'button'}),control('profile-status','p',{role:'status','aria-live':'polite','aria-atomic':'true'}),control('access-table','table')]}});
+  assert.equal(additions.length,69);assert.equal(additions.filter(c=>c.kind==='legacy-text-repair').length,8);assert.equal(additions.filter(c=>c.kind==='full-guide-review').length,43);
   const checks=[...foundation.checks,...additions];assert.equal(checks.length,EXPECTED_ROUTES);assert.equal(new Set(checks.map(c=>c.path)).size,EXPECTED_ROUTES,'Supplements must not replace or double-count foundation routes.');
   for(const base of foundation.checks)assert.equal(checks.find(c=>c.path===base.path),base,'Every foundation check is preserved.');
   const previousSupplementPaths=[...Object.keys(PARTIAL_PUBLICATION).map(slug=>`/blog/${slug}/`),...Object.keys(FULL_PUBLICATION).filter(slug=>!NEW_FULL_SLUGS.includes(slug)).map(slug=>`/blog/${slug}/`),'/blog/jasper-alberta/','/eat-and-drink/','/icefields-parkway-planner/','/learn-to-ski/','/ski-day-planner/','/towns/',...['banff','canmore','lake-louise','field-yoho','golden','kananaskis'].map(slug=>`/towns/${slug}/`),'/larch-season/','/altitude-guide/','/trip-cost/','/park-pass/','/trip-builder/'];
-  assert.equal(previousSupplementPaths.length,62);const prior255=[...foundation.checks.map(c=>c.path),...previousSupplementPaths];assert.equal(new Set(prior255).size,255);for(const pathname of prior255)assert.ok(checks.some(c=>c.path===pathname),'Preserved prior 255 route: '+pathname);for(const pathname of NEW_RELEASE_PATHS)assert.ok(!prior255.includes(pathname),'New contract must not double-count an old contract: '+pathname);assert.deepEqual(checks.filter(c=>!prior255.includes(c.path)).map(c=>c.path).sort(),[...NEW_RELEASE_PATHS].sort());
-  return {...foundation,checks,releaseScope:{legacyOpeningRepairs:8,newFullGuides:41,totalFullReviews:92,baselineHtmlRoutes:255,newVerificationContracts:4,fullReviewRegistryAdditions:4,refreshedExistingFullGuides:0,lessonAndDayPlanners:2,townPages:7,contextOnlyGuides:1,eveningDiningHubs:1,diningVenues:{total:32,selectedFacts:30,pending:2},parkwayPlanners:1,larchPlanners:1,elevationPlanners:1,tripBudgetPlanners:1,parkPassPlanners:1,tripBuilders:1,toolsDiscoveryLinks:3,curatedBookingContextPages:43,canonicalAliases:40},supplementData:{lessonProgrammes:d.lessonProgrammes,defaultPlan,family}};
+  assert.equal(previousSupplementPaths.length,66);const prior259=[...foundation.checks.map(c=>c.path),...previousSupplementPaths];assert.equal(new Set(prior259).size,259);for(const pathname of prior259)assert.ok(checks.some(c=>c.path===pathname),'Preserved prior 259 route: '+pathname);for(const pathname of NEW_RELEASE_PATHS)assert.ok(!prior259.includes(pathname),'New contract must not double-count an old contract: '+pathname);assert.deepEqual(checks.filter(c=>!prior259.includes(c.path)).map(c=>c.path).sort(),[...NEW_RELEASE_PATHS].sort());
+  return {...foundation,checks,releaseScope:{legacyOpeningRepairs:8,newFullGuides:43,totalFullReviews:94,baselineHtmlRoutes:259,newVerificationContracts:3,fullReviewRegistryAdditions:2,refreshedExistingFullGuides:0,lessonAndDayPlanners:2,townPages:7,contextOnlyGuides:1,eveningDiningHubs:1,diningVenues:{total:32,selectedFacts:30,pending:2},parkwayPlanners:1,larchPlanners:1,elevationPlanners:1,tripBudgetPlanners:1,parkPassPlanners:1,tripBuilders:1,toolsDiscoveryLinks:3,curatedBookingContextPages:45,accessibilityHubs:1,canonicalAliases:40},supplementData:{lessonProgrammes:d.lessonProgrammes,defaultPlan,family}};
+}
+
+function accessibilityHubErrors(html,elements,check){
+  const errors=[],q=check.quality;
+  const roots=elements.filter(n=>hasClass(n,'access-page'));
+  if(roots.length!==1||roots[0].hidden)return ['Missing unique visible accessibility hub content'];
+  const root=roots[0],nodes=elements.filter(n=>inside(n,root)),links=nodes.filter(n=>n.tag==='a'&&!n.hidden&&n.attributes.href),text=textInside(html,root);
+  const byId=id=>nodes.filter(n=>n.attributes.id===id);
+  const table=byId('access-table')[0],rows=table?nodes.filter(n=>n.tag==='tr'&&inside(n,table)):[];
+  const cellsFor=row=>nodes.filter(n=>['th','td'].includes(n.tag)&&inside(n,row));
+  const fields=[['Stated distance','distance'],['Surface mix','surface'],['Width: typical / minimum','width'],['Grade: typical / maximum','grade'],['Cross slope: typical / maximum','crossSlope'],['Obstacles to investigate','obstacle']];
+  if(!table||table.hidden||nodes.filter(n=>n.tag==='table').length!==2||rows.length!==7)errors.push('Accessibility full physical comparison shape differs');
+  else{
+    const captions=nodes.filter(n=>n.tag==='caption'&&inside(n,table));
+    if(captions.length!==1||captions[0].hidden||textInside(html,captions[0])!=='Published route measurements; not current access reports')errors.push('Accessibility physical comparison caption differs');
+    const headings=cellsFor(rows[0]);
+    if(headings.length!==4||headings[0].tag!=='th'||headings[0].attributes.scope!=='col'||textInside(html,headings[0])!=='Feature')errors.push('Accessibility physical comparison header differs');
+    for(const [i,p]of ACCESSIBILITY_PROFILES.entries()){
+      const h=headings[i+1];
+      if(!h||h.tag!=='th'||h.hidden||h.attributes.scope!=='col'||h.attributes['data-profile']!==p.id||textInside(html,h)!==p.name)errors.push('Accessibility profile column identity differs: '+p.id);
+    }
+    for(const [i,[label,key]]of fields.entries()){
+      const row=rows[i+1],cells=cellsFor(row);
+      if(row.hidden||cells.length!==4||cells[0].tag!=='th'||cells[0].attributes.scope!=='row'||textInside(html,cells[0])!==label)errors.push('Accessibility physical row label differs: '+key);
+      for(const [j,p]of ACCESSIBILITY_PROFILES.entries()){
+        const cell=cells[j+1];
+        if(!cell||cell.tag!=='td'||cell.hidden||cell.attributes['data-profile']!==p.id||textInside(html,cell)!==normal(p[key]))errors.push('Accessibility published cell or unit differs: '+p.id+'/'+key);
+      }
+    }
+  }
+  const profileCells=nodes.filter(n=>Object.hasOwn(n.attributes,'data-profile'));
+  if(profileCells.length!==21||profileCells.some(n=>n.hidden||!ACCESSIBILITY_PROFILES.some(p=>p.id===n.attributes['data-profile'])))errors.push('Accessibility no-JS table must retain all three complete profiles');
+  for(const p of ACCESSIBILITY_PROFILES){
+    const entry=nodes.find(n=>n.tag==='article'&&nodes.some(h=>h.tag==='h3'&&inside(h,n)&&textInside(html,h)===p.name));
+    if(!entry||entry.hidden||!textInside(html,entry).includes(p.approach)||!links.some(n=>inside(n,entry)&&n.attributes.href===ACCESSIBILITY_SOURCES.report))errors.push('Accessibility endpoint and return note differs: '+p.id);
+  }
+  const regions=nodes.filter(n=>n.attributes.role==='region'&&n.attributes['aria-label']==='Physical trail profile comparison');
+  if(regions.length!==1||regions[0].attributes.tabindex!=='0'||!table||!inside(table,regions[0]))errors.push('Accessibility comparison needs its named keyboard-scroll region');
+  const form=byId('profile-comparison')[0];
+  if(!form||!Object.hasOwn(form.attributes,'hidden')||form.attributes['aria-label']!=='Compare two trail profiles'||nodes.filter(n=>n.tag==='form').length!==1||['action','method','onsubmit'].some(key=>Object.hasOwn(form.attributes,key)))errors.push('Accessibility progressive comparison form or submission scope differs');
+  for(const [id,selectedIndex]of [['profile-a',0],['profile-b',1]]){
+    const select=byId(id)[0],options=select?nodes.filter(n=>n.tag==='option'&&inside(n,select)):[],labels=nodes.filter(n=>n.tag==='label'&&n.attributes.for===id);
+    if(!select||!form||!inside(select,form)||labels.length!==1||!form||!inside(labels[0],form)||!textInside(html,labels[0])||options.length!==3||options.some((o,i)=>o.attributes.value!==ACCESSIBILITY_PROFILES[i].id||textInside(html,o)!==ACCESSIBILITY_PROFILES[i].name)||options.some((o,i)=>Object.hasOwn(o.attributes,'selected')&&i!==selectedIndex)||(selectedIndex===1&&!Object.hasOwn(options[1]?.attributes??{},'selected')))errors.push('Accessibility select label/default/ID whitelist differs: '+id);
+  }
+  const compare=byId('profile-compare')[0],reset=byId('profile-reset')[0],status=byId('profile-status')[0];
+  if(!compare||!form||!inside(compare,form)||compare.attributes.type!=='submit'||textInside(html,compare)!=='Compare selected profiles'||!reset||!inside(reset,form)||reset.attributes.type!=='button'||textInside(html,reset)!=='Show all profiles')errors.push('Accessibility explicit compare and show-all controls differ');
+  if(!status||status.hidden||status.attributes.role!=='status'||status.attributes['aria-live']!=='polite'||status.attributes['aria-atomic']!=='true'||textInside(html,status)!=='All three published profiles are shown.')errors.push('Accessibility initial all-profile live status differs');
+  const lists=nodes.filter(n=>n.tag==='ul'&&nodes.some(i=>i.tag==='input'&&inside(i,n))),list=lists[0],items=list?nodes.filter(n=>n.tag==='li'&&inside(n,list)):[],inputs=nodes.filter(n=>n.tag==='input');
+  if(lists.length!==1||items.length!==5||inputs.length!==5||inputs.some(n=>n.hidden||n.attributes.type!=='checkbox'||Object.hasOwn(n.attributes,'checked')||Object.hasOwn(n.attributes,'name'))||items.some((n,i)=>textInside(html,n)!==ACCESSIBILITY_CHECKS[i]||nodes.filter(l=>l.tag==='label'&&inside(l,n)&&nodes.some(input=>input.tag==='input'&&inside(input,l))).length!==1))errors.push('Accessibility optional native confirmation checklist differs');
+  if(nodes.some(n=>['iframe','object','embed','textarea'].includes(n.tag)||Object.keys(n.attributes).some(key=>/^on/.test(key)))||nodes.some(n=>n.tag==='script'))errors.push('Unexpected active or personal-data accessibility hub markup');
+  if(nodes.filter(n=>n.tag==='select').length!==2||nodes.filter(n=>n.tag==='button').length!==2)errors.push('Accessibility comparison must not gain unrelated controls');
+  if(nodes.filter(n=>n.tag==='details').length!==5)errors.push('Accessibility hub must retain five visible FAQ pairs');
+  for(const section of ACCESSIBILITY_SECTIONS){
+    const h=nodes.find(n=>n.tag==='h2'&&n.attributes.id===section.id),next=h&&nodes.find(n=>n.tag==='h2'&&n.start>h.end),bounds=h?{openEnd:h.end,innerEnd:next?.start??root.innerEnd}:null,bodyText=bounds?normal(html.slice(bounds.openEnd,bounds.innerEnd).replace(/<[^>]*>/g,' ')):'';
+    if(!h||h.hidden||section.markers.some(marker=>!bodyText.includes(normal(marker)))||section.links.some(href=>!links.some(n=>inside(n,bounds)&&n.attributes.href===href)))errors.push('Accessibility source or access scope differs: '+section.id);
+  }
+  for(const href of ['/blog/accessible-banff/','/blog/banff-accessible-hikes/'])if(links.filter(n=>n.attributes.href===href).length!==1)errors.push('Accessibility descriptive owned-guide handoff differs: '+href);
+  const external=links.filter(n=>!n.attributes.href.startsWith('/')&&!n.attributes.href.startsWith('#'));
+  if(external.some(n=>!ACCESSIBILITY_EXTERNALS.includes(n.attributes.href)||n.attributes.target!=='_blank'||!(n.attributes.rel??'').split(/\s+/).includes('noopener')||(n.attributes.rel??'').split(/\s+/).includes('sponsored')))errors.push('Accessibility official-source purpose or destination differs');
+  if(links.some(n=>/javascript:|mailto:|tel:/.test(n.attributes.href)||/camref=|partner_id=/.test(n.attributes.href)))errors.push('Accessibility hub must retain owned booking handoffs without direct new merchant or contact actions');
+  if(/all trails are wheelchair accessible|Fenland is flat and fully paved|the boardwalk is wheelchair accessible|all disabled visitors receive free admission|Alpine Start has an accessible vehicle|free all-terrain chair loans are guaranteed|the whole route is cleared in winter|your accessibility score is|all checkmarks mean you are ready/i.test(text))errors.push('Unsupported universal accessibility or readiness claim');
+  const scripts=elements.filter(n=>n.tag==='script'),matches=scripts.filter(n=>html.slice(n.openEnd,n.innerEnd)===ACCESSIBILITY_PROCESSED_MODULE);
+  const tail=scripts.filter(n=>html.slice(0,n.start).trimEnd().endsWith('</html>')&&html.slice(n.end).trim()==='');
+  if(matches.length!==1||tail.length!==1||matches[0]!==tail[0]||html.slice(tail[0]?.start??0,tail[0]?.openEnd??0)!=='<script type="module">'||createHash('sha256').update(tail.length===1?html.slice(tail[0].openEnd,tail[0].innerEnd):'').digest('hex')!==ACCESSIBILITY_PROCESSED_SHA256)errors.push('Accessibility processed module must retain its exact reviewed bytes, type-only tag, unique count and post-document tail location');
+  return errors;
 }
 
 export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
@@ -586,6 +1121,8 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
   if(!q)return result;
   const elements=htmlElements(html).filter(n=>!n.inert),facts=htmlFacts(html),errors=result.errors;
   const byId=id=>elements.filter(n=>n.attributes.id===id);
+  if(q.type==='accessibility')errors.push(...accessibilityHubErrors(html,elements,check));
+  else if(elements.some(n=>n.tag==='script'&&html.slice(n.openEnd,n.innerEnd)===ACCESSIBILITY_PROCESSED_MODULE))errors.push('Unexpected accessibility processed module outside its owned hub');
   const visibleLinks=elements.filter(n=>n.tag==='a'&&!n.hidden&&!n.noscript&&n.attributes.href);
   if(q.bookingContext){
     const bodies=elements.filter(n=>hasClass(n,'article-body'));
@@ -671,6 +1208,8 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
         'banff-pet-friendly-hotels':/Royal Canadian Lodge accepts pets|all pet-friendly rooms have full kitchens|all hotels allow unattended pets|all Fairmont dining areas allow pets|every room at Lake Louise Inn accepts dogs|pet fees are always included/i,
         'banff-toddler-guide':/chase squirrels for fun|let toddlers wade in Banff lakes|all Banff trails are stroller-accessible|the summit boardwalk is step-free|all hotel rooms include a cot|all transfer vehicles have child seats|Central Park playground is designed for ages 2[–-]5/i,
         '3-day-banff-itinerary':/three days guarantees every major highlight|Johnston Canyon suits every fitness level|Upper Hot Springs is open throughout October 2026|winter tickets include Moraine Lake|the cruise operates year-round|all template activities are reserved|a Discovery Pass pays for itself after three days/i,
+        'accessible-banff':/all airport shuttles are wheelchair accessible|Brewster Express motor coaches are wheelchair accessible|all accessible rooms include roll-in showers|the summit boardwalk is wheelchair accessible|Parks policy gives all disabled visitors free admission|free all-terrain chair loans are available|the 2027 Parks shuttle timetable is confirmed|a booking filter confirms your accessible room/i,
+        'banff-accessible-hikes':/all ten trails are wheelchair accessible|Fenland is flat and fully paved|the Lake Louise Lakeshore trail is entirely paved|the Bow Falls through-route is flat year-round|upper Peyto parking is open to all vehicles|Parks checks natural ice for safety|a summer profile proves winter suitability|the boardwalk is wheelchair accessible/i,
       }[q.slug];
       if(freshBad?.test(bodyText))errors.push('Unsupported inherited/current claim in full review');
       for(const href of q.nativeReferrals??[]){const links=anchors.filter(n=>!n.hidden&&n.attributes.href===href);if(links.length!==1||links[0].attributes.target!=='_blank'||!['noopener','sponsored'].every(value=>(links[0].attributes.rel??'').split(/\s+/).includes(value)))errors.push('Missing exact authored native search/referral: '+href);}
@@ -680,7 +1219,7 @@ export function analyseGuideHtml(html,check,sitemap,headerRobots='') {
         const processedScript=q.firstVisit?firstVisitProcessedScriptScope(html,elements,authored,firstComponent,errors):null;
         if(!q.firstVisit&&byId('first-visit-planner').length)errors.push('Unexpected first-visit component on another guide');
         const guarded=bodyElements.filter(n=>!firstComponent||!inside(n,firstComponent));
-        const expectedRows={'7-day-banff-itinerary':[8],'rainy-day-banff':[6],'lake-louise-village-guide':[5,5],'canmore-day-trip':[5],'banff-car-rental-tips':[4,4],'where-to-stay-in-banff':[7,6],'banff-hostel-guide':[6],'banff-first-time-tips':[4],'banff-mobile-connectivity':[4,5],'kananaskis-day-trip':[6,5],'banff-dog-friendly':[5,5],'banff-pet-friendly-hotels':[7],'banff-toddler-guide':[4,4],'3-day-banff-itinerary':[4,3]}[q.slug];
+        const expectedRows={'7-day-banff-itinerary':[8],'rainy-day-banff':[6],'lake-louise-village-guide':[5,5],'canmore-day-trip':[5],'banff-car-rental-tips':[4,4],'where-to-stay-in-banff':[7,6],'banff-hostel-guide':[6],'banff-first-time-tips':[4],'banff-mobile-connectivity':[4,5],'kananaskis-day-trip':[6,5],'banff-dog-friendly':[5,5],'banff-pet-friendly-hotels':[7],'banff-toddler-guide':[4,4],'3-day-banff-itinerary':[4,3],'accessible-banff':[4,3],'banff-accessible-hikes':[6,7]}[q.slug];
         if(tables.length!==expectedRows.length||tables.some((table,i)=>table.hidden||bodyElements.filter(n=>n.tag==='tr'&&inside(n,table)).length!==expectedRows[i]||bodyElements.filter(n=>n.tag==='caption'&&inside(n,table)).length!==1))errors.push('Missing full journey comparison table rows/captions');
         if(bodyElements.filter(n=>n.tag==='details').length!==5)errors.push('Journey guide must have exactly five visible FAQ details');
         const wordCount=bodyText.split(/\s+/).length;if(wordCount<1400||wordCount>3100)errors.push('Incomplete practical journey guide body');
@@ -970,7 +1509,7 @@ function diningFixture(q){
   return `<section aria-labelledby="evening-guides-title"><h2 id="evening-guides-title">Give your evening a shape</h2>${q.hubLinks.map(l=>`<a href="${esc(l.href)}">${esc(l.label)} →${l.href==='/blog/drink-deals/'?' Check the meal, admission and booking conditions behind an offer headline.':''}</a>`).join('')}</section><section id="dining-finder"><form id="dining-form" hidden>${Object.entries(d.options).map(([key,options])=>`<label for="dining-${key}">${key}</label><select id="dining-${key}">${options.map(([value,label])=>`<option value="${value}">${esc(label)}</option>`).join('')}</select>`).join('')}<button type="submit">Show places</button><button type="reset">Show all</button></form><p id="dining-status" role="status" aria-live="polite">${d.initial.summary}</p><div id="dining-empty" hidden>No entries match those choices.</div>${['Banff','Lake Louise','Canmore','Highway 1A'].map(area=>`<section data-dining-group><h2>${area}</h2>${cards(area)}</section>`).join('')}</section><section class="dining-stays"><p>These stay comparisons contain accommodation affiliate links.</p>${d.stays.map(s=>`<a href="${s.href}">${s.label} →</a>`).join('')}</section>`;
 }
 function fixture(check){
-  const q=check.quality;if(q.ssrHtml)return `<html><head><link rel="canonical" href="${ORIGIN+check.path}"></head><body>${q.ssrHtml}${consentFixture}</body></html>`;let body=`<h1>${esc(check.name)}</h1>`;const schemas=[];
+  const q=check.quality;if(q.type==='accessibility')return `<html><head><link rel="canonical" href="${ORIGIN+check.path}"></head><body>${q.ssrHtml}${consentFixture}</body></html> <script type="module">${ACCESSIBILITY_PROCESSED_MODULE}</script>`;if(q.ssrHtml)return `<html><head><link rel="canonical" href="${ORIGIN+check.path}"></head><body>${q.ssrHtml}${consentFixture}</body></html>`;let body=`<h1>${esc(check.name)}</h1>`;const schemas=[];
   if(q.type!=='full'){
   for(const marker of Object.values(check.markers??{}))body+=`<p>${esc(marker)}</p>`;
   if(q.type==='dining-hub'){
@@ -1008,12 +1547,47 @@ function fixture(check){
 }
 export async function selfTest(){
   await foundationSelfTest();const inventory=await loadGuideInventory();
-  let journeyNegatives=0,tripBuilderNegatives=0,firstVisitNegatives=0,firstVisitScriptNegatives=0;
+  let journeyNegatives=0,tripBuilderNegatives=0,firstVisitNegatives=0,firstVisitScriptNegatives=0,accessibilityNegatives=0,accessibilityProgramNegatives=0;
   assert.equal(FIRST_VISIT_PROCESSED_MODULE.length,4058);assert.equal(createHash('sha256').update(FIRST_VISIT_PROCESSED_MODULE).digest('hex'),FIRST_VISIT_PROCESSED_SHA256,'Emitted fixture retains the reviewed program bytes');
-  const supplements=inventory.checks.filter(c=>c.quality);assert.equal(supplements.length,66);
+  const supplements=inventory.checks.filter(c=>c.quality);assert.equal(supplements.length,69);
   for(const check of supplements){const html=fixture(check),sitemap=new Set([ORIGIN+check.path]);assert.deepEqual(analyseGuideHtml(html,check,sitemap).errors,[],check.path+': complete supplement fixture');
     assert.ok(analyseGuideHtml(html.replace('rel="canonical"','rel="alternate"'),check,sitemap).errors.length,check.path+': canonical negative');
     assert.ok(analyseGuideHtml(html.replace('</body>','<script src="https://widget.getyourguide.com/sdk.js"></script></body>'),check,sitemap).errors.some(e=>e.includes('Active pre-consent')));
+    if(check.quality.type==='accessibility'){
+      const all=htmlElements(html),scope=all.find(n=>hasClass(n,'access-page')),nodes=all.filter(n=>inside(n,scope)),table=nodes.find(n=>n.attributes.id==='access-table');
+      const reject=(changed,label,expected='')=>{assert.notEqual(changed,html,'Real accessibility mutation: '+label);const errors=analyseGuideHtml(changed,check,sitemap).errors;assert.ok(expected?errors.some(e=>e.includes(expected)):errors.length,label);accessibilityNegatives++;};
+      const mutateText=(node,value)=>html.slice(0,node.openEnd)+value+html.slice(node.innerEnd);
+      const mutateTag=(node,from,to)=>html.slice(0,node.start)+html.slice(node.start,node.openEnd).replace(from,to)+html.slice(node.openEnd);
+      for(const cell of nodes.filter(n=>n.tag==='td'&&inside(n,table)))reject(mutateText(cell,'Changed published measurement or unit'),'Every profile measurement, surface and obstacle stays in its own cell','published cell or unit');
+      for(const label of nodes.filter(n=>n.tag==='th'&&n.attributes.scope==='row'&&inside(n,table)))reject(mutateText(label,'Different feature or basis'),'Typical/minimum/maximum row labels cannot be swapped','physical row label');
+      for(const section of ACCESSIBILITY_SECTIONS){
+        const h=nodes.find(n=>n.tag==='h2'&&n.attributes.id===section.id),next=nodes.find(n=>n.tag==='h2'&&n.start>h.end),end=next?.start??scope.innerEnd,fragment=html.slice(h.end,end),marker=section.markers[0];
+        assert.ok(fragment.includes(marker),'Scoped accessibility mutation uses actual body: '+section.id);
+        reject(html.slice(0,h.end)+fragment.replaceAll(marker,'Reversed published source scope')+html.slice(end),'Actual section scope cannot be masked by a FAQ or footer: '+section.id,'source or access scope');
+      }
+      for(const [from,to]of [[ACCESSIBILITY_SOURCES.roam,ACCESSIBILITY_SOURCES.shuttle],[ACCESSIBILITY_SOURCES.policy,ACCESSIBILITY_SOURCES.trails]]){
+        const section=ACCESSIBILITY_SECTIONS.find(s=>s.links.includes(from)),h=nodes.find(n=>n.tag==='h2'&&n.attributes.id===section.id),next=nodes.find(n=>n.tag==='h2'&&n.start>h.end),end=next?.start??scope.innerEnd,fragment=html.slice(h.end,end);reject(html.slice(0,h.end)+fragment.replaceAll(from,to)+html.slice(end),'The official source must remain in its actual purpose section','source or access scope');
+      }
+      const firstFaq=nodes.find(n=>n.tag==='details'),answer=nodes.find(n=>n.tag==='p'&&inside(n,firstFaq));reject(mutateText(answer,'A different visible answer'),'Visible hub answer must match the actual FAQPage','Visible FAQ/schema mismatch');
+      const schema=all.find(n=>n.tag==='script'&&n.attributes.type==='application/ld+json'),doc=JSON.parse(html.slice(schema.openEnd,schema.innerEnd));doc.mainEntity[4].acceptedAnswer.text='A different schema answer';reject(html.slice(0,schema.openEnd)+JSON.stringify(doc)+html.slice(schema.innerEnd),'Last schema answer must match its visible FAQ','FAQ schema differs');
+      const form=nodes.find(n=>n.attributes.id==='profile-comparison'),compare=nodes.find(n=>n.attributes.id==='profile-compare'),option=nodes.find(n=>n.tag==='option'),input=nodes.find(n=>n.tag==='input');
+      reject(mutateTag(form,/\shidden(?:="")?/,''),'No-JS comparison controls remain hidden','control attribute');
+      reject(mutateTag(compare,'type="submit"','type="button"'),'Explicit comparison retains native submit semantics','control attribute');
+      reject(mutateTag(option,'value="fenland"','value="constructor"'),'Profile selectors accept only the three named IDs','ID whitelist');
+      reject(mutateTag(form,'<form','<form action="https://example.invalid/collect"'),'The comparison cannot gain a submission endpoint','submission scope');
+      reject(mutateTag(input,'<input','<input checked'),'Optional confirmations are not prechecked','confirmation checklist');
+      reject(html.slice(0,form.openEnd)+'<input type="text" name="diagnosis">'+html.slice(form.openEnd),'Hub cannot gain a personal-data field','confirmation checklist');
+      const program=all.find(n=>n.tag==='script'&&html.slice(n.openEnd,n.innerEnd)===ACCESSIBILITY_PROCESSED_MODULE),moduleTag=html.slice(program.start,program.end),without=html.slice(0,program.start)+html.slice(program.end);
+      const scriptReject=(changed,label)=>{reject(changed,label,'processed module');accessibilityProgramNegatives++;};
+      scriptReject(without,'The reviewed hub program cannot disappear');
+      scriptReject(html.slice(0,program.innerEnd)+';'+html.slice(program.innerEnd),'The hub program cannot change even one byte');
+      scriptReject(mutateTag(program,'<script type="module">','<script type="module" src="/_astro/unreviewed-access.js">'),'A src program cannot replace the reviewed inline program');
+      scriptReject(mutateTag(program,'<script type="module">','<script type="module" async>'),'The reviewed inline program cannot gain attributes');
+      scriptReject(html+moduleTag,'The hub program cannot execute twice');
+      scriptReject(without.replace('</html>',moduleTag+'</html>'),'The hub program keeps its observed post-document tail location');
+      scriptReject(without.slice(0,scope.openEnd)+moduleTag+without.slice(scope.openEnd),'Known program bytes are not accepted inside arbitrary content');
+      const other=inventory.checks.find(c=>c.path==='/blog/banff-first-time-tips/'),otherHtml=fixture(other)+moduleTag;assert.ok(analyseGuideHtml(otherHtml,other,new Set([ORIGIN+other.path])).errors.some(e=>e.includes('Unexpected accessibility processed module')),'The hub program is not whitelisted on another guide');accessibilityNegatives++;accessibilityProgramNegatives++;
+    }
     if(check.quality.type==='partial'){
       assert.ok(analyseGuideHtml(html.replace(PARTIAL_LABEL,'Full guide reviewed:'),check,sitemap).errors.some(e=>e.includes('partialCorrection')));
       assert.ok(analyseGuideHtml(html.replace('"datePublished":"'+isoDate(check.publishedDate)+'"','"datePublished":"2026-10-29T00:00:00.000Z"'),check,sitemap).errors.some(e=>e.includes('Original publication')));
@@ -1026,7 +1600,7 @@ export async function selfTest(){
       assert.ok(analyseGuideHtml(html.replace(/class="article-image-note(?: [^"]*)?"/,'class="missing-image-note"'),check,sitemap).errors.some(e=>e.includes('illustrative hero scope')));
       assert.ok(analyseGuideHtml(html.replace('</body>',`<p>${PARTIAL_LABEL}</p></body>`),check,sitemap).errors.some(e=>e.includes('incorrectly labelled')));
       assert.ok(analyseGuideHtml(html.replace('"@type":"FAQPage"','"@type":"WebPage"'),check,sitemap).errors.some(e=>e.includes('FAQ schema count')));
-      const badClaim=check.quality.slug.startsWith('num')?'The frozen lake becomes a natural skating rink.':check.quality.slug.startsWith('jasper')?'The Maligne Canyon trail offers year-round access.':check.quality.slug==='banff-cabin-rentals'?'Each cabin has a full kitchen.':({'banff-nightlife-guide':'Dancing Sasquatch is the current dance venue.','banff-live-music':'Every Banff Centre performance is suitable for children.','drink-deals':'Sky Bistro includes gondola admission.','icefields-parkway-guide':'Fuel is available at Crossing in winter.','banff-to-jasper-drive':'Maligne Canyon is open for winter.','lake-minnewanka-guide':'Minnewanka is open for ice fishing.','banff-gondola-guide':'The boardwalk is fully accessible.','banff-gondola-tickets-guide':'Sky Bistro reservations include gondola admission.','banff-spring-skiing':'Delirium Dive is suitable for beginners.','peyto-lake-guide':'The upper parking lot is open to all vehicles.','banff-helicopter-tours':'Rockies Heli is based in Kananaskis Village.','kananaskis-heli-tours':'Stoney Nakoda operates all winter 2026/27.','golden-bc-day-trip':'Takakkaw Falls road is open all winter.','banff-heli-skiing':'CMH Purcell includes transport.','skoki-lodge-guide':'The approach is safe for beginners.','banff-trip-cost-budget-guide':'Canmore is always cheaper.','fall-larch-season-banff':'The peak is guaranteed on September 25.','banff-in-fall':'Upper Hot Springs is open throughout October 2026.','larch-valley-hike':'The hike is8.6 km return.','sentinel-pass-hike':'Sentinel is the highest maintained trail in the Rockies.','7-day-banff-itinerary':'Seven days means seven hotel nights.','rainy-day-banff':'Cave and Basin is an indoor swimming pool.','lake-louise-village-guide':'Banff Airporter runs scheduled Lake Louise service.','canmore-day-trip':'Frozen Thunder is suitable for beginners.','banff-car-rental-tips':'AWD is essential.','where-to-stay-in-banff':'Lake Louise village is ski-in/ski-out.','banff-hostel-guide':'All dorms accept children.','banff-first-time-tips':'All six marks mean you are ready.','banff-mobile-connectivity':'All carriers have full coverage.','kananaskis-day-trip':'A Banff park pass covers Kananaskis parking.','banff-dog-friendly':'Moraine Lake bans all dogs.','banff-pet-friendly-hotels':'Royal Canadian Lodge accepts pets.','banff-toddler-guide':'All Banff trails are stroller-accessible.','3-day-banff-itinerary':'The cruise operates year-round.'}[check.quality.slug]??'All six restaurants opened in 2026.');
+      const badClaim=check.quality.slug.startsWith('num')?'The frozen lake becomes a natural skating rink.':check.quality.slug.startsWith('jasper')?'The Maligne Canyon trail offers year-round access.':check.quality.slug==='banff-cabin-rentals'?'Each cabin has a full kitchen.':({'banff-nightlife-guide':'Dancing Sasquatch is the current dance venue.','banff-live-music':'Every Banff Centre performance is suitable for children.','drink-deals':'Sky Bistro includes gondola admission.','icefields-parkway-guide':'Fuel is available at Crossing in winter.','banff-to-jasper-drive':'Maligne Canyon is open for winter.','lake-minnewanka-guide':'Minnewanka is open for ice fishing.','banff-gondola-guide':'The boardwalk is fully accessible.','banff-gondola-tickets-guide':'Sky Bistro reservations include gondola admission.','banff-spring-skiing':'Delirium Dive is suitable for beginners.','peyto-lake-guide':'The upper parking lot is open to all vehicles.','banff-helicopter-tours':'Rockies Heli is based in Kananaskis Village.','kananaskis-heli-tours':'Stoney Nakoda operates all winter 2026/27.','golden-bc-day-trip':'Takakkaw Falls road is open all winter.','banff-heli-skiing':'CMH Purcell includes transport.','skoki-lodge-guide':'The approach is safe for beginners.','banff-trip-cost-budget-guide':'Canmore is always cheaper.','fall-larch-season-banff':'The peak is guaranteed on September 25.','banff-in-fall':'Upper Hot Springs is open throughout October 2026.','larch-valley-hike':'The hike is8.6 km return.','sentinel-pass-hike':'Sentinel is the highest maintained trail in the Rockies.','7-day-banff-itinerary':'Seven days means seven hotel nights.','rainy-day-banff':'Cave and Basin is an indoor swimming pool.','lake-louise-village-guide':'Banff Airporter runs scheduled Lake Louise service.','canmore-day-trip':'Frozen Thunder is suitable for beginners.','banff-car-rental-tips':'AWD is essential.','where-to-stay-in-banff':'Lake Louise village is ski-in/ski-out.','banff-hostel-guide':'All dorms accept children.','banff-first-time-tips':'All six marks mean you are ready.','banff-mobile-connectivity':'All carriers have full coverage.','kananaskis-day-trip':'A Banff park pass covers Kananaskis parking.','banff-dog-friendly':'Moraine Lake bans all dogs.','banff-pet-friendly-hotels':'Royal Canadian Lodge accepts pets.','banff-toddler-guide':'All Banff trails are stroller-accessible.','3-day-banff-itinerary':'The cruise operates year-round.','accessible-banff':'Brewster Express motor coaches are wheelchair accessible.','banff-accessible-hikes':'Fenland is flat and fully paved.'}[check.quality.slug]??'All six restaurants opened in 2026.');
       assert.ok(analyseGuideHtml(html.replace(/class="article-body(?: [^"]*)?"[^>]*>/,tag=>tag+`<p>${badClaim}</p>`),check,sitemap).errors.some(e=>e.includes('Unsupported inherited/current claim')));
       if(NEW_FULL_SLUGS.includes(check.quality.slug)||Object.hasOwn(newReviewedSections,check.quality.slug)||Object.hasOwn(journeyReviewedSections,check.quality.slug)){
         const all=htmlElements(html),body=all.find(n=>hasClass(n,'article-body'));
@@ -1349,8 +1923,9 @@ export async function selfTest(){
   assert.equal(stdout,'','Import must not run either CLI/self-test');assert.equal(stderr,'');
   assert.throws(()=>builtLocations('<!DOCTYPE x><urlset><url><loc>https://banffbound.com/</loc></url></urlset>','urlset'));
   assert.throws(()=>builtLocations('<urlset><url><loc>https://example.com/</loc></url></urlset>','urlset'));
+  assert.equal(ACCESSIBILITY_PROCESSED_MODULE.length,2222);assert.equal(createHash('sha256').update(ACCESSIBILITY_PROCESSED_MODULE).digest('hex'),ACCESSIBILITY_PROCESSED_SHA256);assert.equal(accessibilityNegatives,47);assert.equal(accessibilityProgramNegatives,8);
   assert.ok(journeyNegatives>=200);assert.equal(tripBuilderNegatives,18);assert.equal(firstVisitNegatives,15);assert.equal(firstVisitScriptNegatives,13);
-  console.log(`Guide-quality offline fixtures passed: all 255 prior contracts preserved plus 4 existing canonical guide contracts = 259 unique HTML routes / 7 photo hashes; 92 full-review registry, 8 partial repairs, 41 authored / 43 curated contexts. Scoped journey / independent FAQ-pair / native-source mutations: ${journeyNegatives} negatives;first-visit actual-component/BlogLayout SSR: ${firstVisitNegatives} component negatives, ${firstVisitScriptNegatives} exact-emitted-module negatives;actual trip-builder SSR/model/default/season/week-template controls: ${tripBuilderNegatives} negatives. Existing planner/photo/alias/source/schema/native-booking/shared-tail spoof checks remain intact.`);
+  console.log(`Guide-quality offline fixtures passed: all 259 prior contracts preserved plus two existing canonical guides and the existing accessibility hub = 262 unique HTML routes / 7 photo hashes; 94 full-review registry, 8 partial repairs, 43 authored / 45 curated contexts. Scoped journey / independent FAQ-pair / native-source mutations: ${journeyNegatives} negatives;first-visit actual-component/BlogLayout SSR: ${firstVisitNegatives} component negatives, ${firstVisitScriptNegatives} exact-emitted-module negatives;actual trip-builder SSR/model/default/season/week-template controls: ${tripBuilderNegatives} negatives. Accessibility actual hub SSR: ${accessibilityNegatives} cell/source/FAQ/form/module negatives, including ${accessibilityProgramNegatives} exact-program scope negatives. Existing planner/photo/alias/source/schema/native-booking/shared-tail spoof checks remain intact.`);
 }
 function builtLocations(xml,kind){
   assert.ok(!/<!DOCTYPE|<!ENTITY/i.test(xml),'Built sitemap cannot declare entities');assert.ok(new RegExp(`<${kind}\\b`).test(xml),'Unexpected built sitemap type');
@@ -1369,7 +1944,7 @@ export async function checkBuiltDirectory(directory){
   for(const check of inventory.checks){try{const html=await readFile(path.resolve(root,'.'+check.path,'index.html'),'utf8'),result=analyseGuideHtml(html,check,sitemap);if(result.errors.length)failures.push({path:check.path,errors:result.errors});else htmlPassed++;}catch(error){failures.push({path:check.path,errors:[String(error.message??error.name)]});}}
   for(const photo of inventory.photos){try{const bytes=await readFile(path.resolve(root,'.'+photo.src)),digest=createHash('sha256').update(bytes).digest('hex');assert.equal(digest,photo.sha256);photosPassed++;}catch(error){failures.push({path:photo.src,errors:['Built photo missing or SHA256 differs']});}}
   assert.equal(await readFile(path.join(root,'build-info.json'),'utf8'),receiptText,'Local build receipt changed during HTML inspection');
-  return {passed:htmlPassed===EXPECTED_ROUTES&&photosPassed===7&&failures.length===0,mode:'read-only-built-directory',htmlRoutes:inventory.checks.length,htmlPassed,photosPassed,fullReviews:92,remainingPartialRepairs:8,sitemapUrls:sitemap.size,buildReceipt,buildReceiptStable:true,productionIdentityVerified:false,failures};
+  return {passed:htmlPassed===EXPECTED_ROUTES&&photosPassed===7&&failures.length===0,mode:'read-only-built-directory',htmlRoutes:inventory.checks.length,htmlPassed,photosPassed,fullReviews:94,remainingPartialRepairs:8,sitemapUrls:sitemap.size,buildReceipt,buildReceiptStable:true,productionIdentityVerified:false,failures};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try{if(process.argv.length===3&&process.argv[2]==='--self-test')await selfTest();else if(process.argv.length===4&&process.argv[2]==='--built-dir'){const result=await checkBuiltDirectory(process.argv[3]);console.log(JSON.stringify(result));if(!result.passed)process.exitCode=1;}else await verify(options(process.argv.slice(2)),{inventoryLoader:loadGuideInventory,htmlAnalyser:analyseGuideHtml,userAgent:'BanffBound-guide-quality-release-verification/1.0'});}
