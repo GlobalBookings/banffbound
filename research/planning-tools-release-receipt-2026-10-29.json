@@ -1,0 +1,149 @@
+{
+  "checkedAtUTC": "2026-10-30T00:53:13.170037+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/15",
+  "initialCodeCommit": "f5449e91d1dc53e12160a256bf24b4a22ffa303f",
+  "finalCodeCommit": "acf20b9f8b33a05a4c31918beb903280dd817b93",
+  "reviewedHead": "ea08f09e917b248e2789aa0b220282c884fcf327",
+  "mergedRevision": "6a475709199429f8df246b935188ec23f87d8125",
+  "mergedAtUTC": "2026-10-30T00:48:34Z",
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-30T00:49:37.283Z",
+    "sourceRevision": "6a475709199429f8df246b935188ec23f87d8125",
+    "sourceFingerprint": "8521cf4aa43f33982b45ff8c905b233e4278e5f16cbbf48a185a93d87388b870"
+  },
+  "ci": {
+    "pr": {
+      "run": 40981795508,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40981795508",
+      "revision": "ea08f09e917b248e2789aa0b220282c884fcf327",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123823352417,
+      "completedAt": "2026-10-30T00:47:43Z"
+    },
+    "main": {
+      "run": 40982004928,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40982004928",
+      "revision": "6a475709199429f8df246b935188ec23f87d8125",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123824037642,
+      "completedAt": "2026-10-30T00:49:47Z"
+    }
+  },
+  "cleanVerification": "research/planning-tools-clean-verification-2026-10-29.json",
+  "productionVerification": {
+    "report": "research/planning-tools-production-verification-2026-10-29.json",
+    "passed": true,
+    "htmlRoutes": 238,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "stableExactRevisionAndFingerprint": true
+  },
+  "bareUrlVerification": {
+    "report": "research/planning-tools-bare-url-verification-2026-10-29.json",
+    "passed": 5,
+    "paths": [
+      "/trip-cost/",
+      "/altitude-guide/",
+      "/larch-season/",
+      "/blog/skoki-lodge-guide/",
+      "/tools/"
+    ]
+  },
+  "redirectVerification": {
+    "report": "research/live-http-redirect-verification-2026-10-29.json",
+    "mappings": 40,
+    "checksPassed": 100
+  },
+  "browserProduction": {
+    "budget": {
+      "url": "https://banffbound.com/trip-cost/#trip-budget-planner",
+      "sevenRows": true,
+      "formMounted": true,
+      "comparisonInResultsHeading": true,
+      "testInputRoomCAD": 300,
+      "testInputFourNightPartialCAD": 1200,
+      "unknownCategories": 6,
+      "quotesResetAfterQA": true,
+      "screenshot": "/tmp/banffbound-trip-budget-live-2026-10-29.png"
+    },
+    "directory": {
+      "url": "https://banffbound.com/tools/#tool-directory",
+      "nativeLinks": 45,
+      "budgetSearchShowsCalculatorOnly": true,
+      "nativeHref": "/trip-cost"
+    },
+    "elevation": {
+      "url": "https://banffbound.com/altitude-guide/#elevation-planner",
+      "banffGondolaSelectionShowsOneCard": true,
+      "lowerReturnNotHealthGuaranteeTextRetained": true
+    },
+    "larch": {
+      "url": "https://banffbound.com/larch-season/#larch-planner",
+      "combinedEmptyState": true,
+      "resetRestoresFive": true,
+      "nativeFAQOpens": true
+    },
+    "skoki": {
+      "url": "https://banffbound.com/blog/skoki-lodge-guide/",
+      "originalPublication": "2025-12-27",
+      "reviewDate": "2026-10-29",
+      "curatedFlag": true,
+      "nativeTermsFAQOpens": true
+    },
+    "viewportWidth": 1280,
+    "documentWidth": 1280,
+    "optionalProviderScriptAndFrameElements": 0,
+    "browserNetworkTraceClaimed": false,
+    "nativeClipboardPrintMerchantBookingOrEnquiryUsed": false,
+    "localPreviewStopped": true
+  },
+  "scope": {
+    "quoteBudgetPlans": 2,
+    "budgetCategories": 7,
+    "namedElevationPoints": 9,
+    "elevationJourneys": 5,
+    "elevationPublicChoiceCombinations": 18,
+    "larchSummerRouteProfiles": 5,
+    "larchPublicChoiceCombinations": 45,
+    "toolDirectorySearchAndTopics": true,
+    "newFullReviewSlugs": [
+      "skoki-lodge-guide"
+    ],
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 72,
+    "fullReviewsAfter": 73,
+    "partialOpeningRepairs": 8,
+    "otherCanonicalBodiesByteIdentical": 294,
+    "originalPublicationDatesPreserved": 335,
+    "allCanonicalFactsReviewed": false
+  },
+  "preserved": [
+    "Existing routes and original publication dates",
+    "All95hotel identities/provider URLs",
+    "Shared reviewed trail/lake/Parkway source data",
+    "All40approved host aliases",
+    "Affiliate and measurement identifiers",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "getYourGuideOwnedLandingPageFunnelRetained": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "revenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "222 canonical blog bodies lack a full review; eight have bounded opening repairs.",
+    "Related legacy larch/fall and budget article bodies still need their own source reviews; these are not made fresh by a tool rewrite.",
+    "Broader hotel fact/photo and remaining legacy-tool audits remain incomplete.",
+    "Market, campaign budget and bids are unspecified; no ad launch performed."
+  ],
+  "goalStatus": "active"
+}

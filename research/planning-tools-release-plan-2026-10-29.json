@@ -1,7 +1,7 @@
 {
   "preparedAtUTC": "2026-10-30T00:34:16.967568+00:00",
   "baselineRevision": "8b7bdade48e3b9b561c3a27671ba67ac91719afc",
-  "status": "Final committed-source 55 checks, full build, strict audit,238 built HTML contracts,7 photos and desktop/phone QA passed; pending CI and production proof",
+  "status": "Merged and live verified: 55 checks, clean build and strict audit; 238 production HTML contracts, 7 photo hashes, 5 bare URLs and 100 redirect checks passed",
   "scope": {
     "quoteBudgetPlans": 2,
     "budgetCategories": 7,
@@ -58,5 +58,6 @@
     "Market, campaign budget and bids are unspecified; no ad launch performed."
   ],
   "goalStatus": "active",
-  "cleanVerification": "research/planning-tools-clean-verification-2026-10-29.json"
+  "cleanVerification": "research/planning-tools-clean-verification-2026-10-29.json",
+  "releaseReceipt": "research/planning-tools-release-receipt-2026-10-29.json"
 }

@@ -1,0 +1,24 @@
+<script>
+  import {calculateParkPassPlan,defaultParkPassInputs,parkPassOptionIds,formatParkPassMoney} from '../data/parkPassPlanning';
+  function mountParkPassPlanner(){
+    const root=document.getElementById('park-pass-planner'),form=document.getElementById('park-pass-form') as HTMLFormElement|null;
+    const fields=Object.fromEntries(Object.keys(defaultParkPassInputs).map(key=>[key,document.getElementById('pass-'+key) as HTMLInputElement|HTMLSelectElement|null]));
+    const status=document.getElementById('pass-status'),detail=document.getElementById('pass-detail'),errors=document.getElementById('pass-errors'),table=document.getElementById('pass-comparison-table'),party=document.getElementById('pass-party-fields') as HTMLFieldSetElement|null,coverage=document.getElementById('pass-coverage-wrap');
+    const cells=parkPassOptionIds.map(id=>({id,value:document.getElementById('pass-'+id+'-value'),detail:document.getElementById('pass-'+id+'-detail')}));
+    if(!root||!form||Object.values(fields).some(field=>!field)||!status||!detail||!errors||!table||!party||!coverage||cells.some(cell=>!cell.value||!cell.detail)||root.dataset.passReady)return;
+    const read=()=>Object.fromEntries(Object.entries(fields).map(([key,field])=>[key,field!.value]));
+    const apply=(focusErrors=false)=>{
+      const result=calculateParkPassPlan(read());status.textContent=result.summary;detail.textContent=result.detail;
+      party.hidden=!result.activePartyFields;party.disabled=!result.activePartyFields;coverage.hidden=!result.showCoverage;
+      table.hidden=result.state!=='compare';errors.textContent=result.errors.map(error=>error.message).join(' ');errors.hidden=!result.errors.length;
+      for(const cell of cells){const row=result.rows.find(row=>row.id===cell.id);cell.value!.textContent=row?.amountCents===null?'Not applicable':row?formatParkPassMoney(row.amountCents!):'—';cell.detail!.textContent=row?.detail||'';}
+      if(focusErrors&&result.errors.length)errors.focus();
+    };
+    form.addEventListener('input',()=>apply());form.addEventListener('change',()=>apply());
+    form.addEventListener('submit',event=>{event.preventDefault();apply(true);});
+    form.addEventListener('reset',event=>{event.preventDefault();for(const [key,value]of Object.entries(defaultParkPassInputs))fields[key]!.value=value;apply();});
+    apply();form.hidden=false;root.dataset.passReady='true';
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountParkPassPlanner,{once:true});else mountParkPassPlanner();
+  document.addEventListener('astro:page-load',mountParkPassPlanner);
+</script>

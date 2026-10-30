@@ -1,0 +1,73 @@
+{
+  "checkedAtUTC": "2026-10-30T01:12:45.311Z",
+  "passed": true,
+  "referenceBaselineRevision": "6a475709199429f8df246b935188ec23f87d8125",
+  "sourceBaseline": {
+    "archiveSourceCommit": "acf20b9f8b33a05a4c31918beb903280dd817b93",
+    "archiveRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-planning-tools-clean-64xx7eli",
+    "exactReferenceRevisionCheckout": false,
+    "selectedAppSourceEquivalent": true,
+    "observedArchiveFingerprint": "8521cf4aa43f33982b45ff8c905b233e4278e5f16cbbf48a185a93d87388b870",
+    "savedProductionReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T00:49:37.283Z",
+      "sourceRevision": "6a475709199429f8df246b935188ec23f87d8125",
+      "sourceFingerprint": "8521cf4aa43f33982b45ff8c905b233e4278e5f16cbbf48a185a93d87388b870"
+    },
+    "evidenceFiles": [
+      "/tmp/banffbound-planning-tools-clean-summary.json",
+      "/tmp/banffbound-planning-tools-live-build-info.json"
+    ],
+    "note": "Compared with the retained Gitless clean archive from acf20b9. Its freshly recomputed app-source-v2 fingerprint equals the saved live6a47570 deployment fingerprint; selected source includes the blog data and registry. This is application-source equivalence, not a fresh Git checkout of the merge or a new live deployment check."
+  },
+  "scope": "Resolved canonical article body bytes and all original publication dates. Metadata, generic booking contexts, tools pages and discovery links are separate integration/QA scopes.",
+  "canonical": 295,
+  "replacedBodies": 5,
+  "otherBodiesByteIdentical": 290,
+  "changedSlugs": [
+    "banff-in-fall",
+    "banff-trip-cost-budget-guide",
+    "fall-larch-season-banff",
+    "larch-valley-hike",
+    "sentinel-pass-hike"
+  ],
+  "changedBodyHashes": [
+    {
+      "slug": "banff-in-fall",
+      "before": "ebcb7efdd33a4b8ca7775eba6bc58c432c990324e4618c7e955f880313e950f1",
+      "after": "847d45a0b9c04eae2a19ee3b986b1a2bb0f72e96c36e70891780c6b5dc6160a0"
+    },
+    {
+      "slug": "banff-trip-cost-budget-guide",
+      "before": "c739fcbe6cf47e22d240c345c03c7e95cd86b5d3650b4ac6c99e5ccf4c2357ba",
+      "after": "302d27c3d9a0d4d1a301bb8078fe0eeef572415910cf53e1fe4f1185b780cc85"
+    },
+    {
+      "slug": "fall-larch-season-banff",
+      "before": "ef2e668db6d0c02a014872884740ff04c553906e62de91998971432b72503cd9",
+      "after": "e91658a5864a9a928ecab675e4b2579784d4accb551b707f8dc2ca73090fddbf"
+    },
+    {
+      "slug": "larch-valley-hike",
+      "before": "87383255cf25463d23a1effcea25cf33277abba51126373fc957fcd45277c2e1",
+      "after": "58762172bbd90c6df78eb1fd4d7fd4aa031b7aef8390c829361ee5c035b20654"
+    },
+    {
+      "slug": "sentinel-pass-hike",
+      "before": "748f583f6f1ff5a5c0ecfdc18ddfa5ffa56c71002cf6732fd603cb7aaba63d40",
+      "after": "86c601ed05de75ed7ee0890f065b5655333439622d2241857a2f02d45410f39a"
+    }
+  ],
+  "fullBodyReviews": {
+    "before": 73,
+    "after": 78
+  },
+  "partialCorrections": {
+    "before": 8,
+    "after": 8
+  },
+  "originalPublicationsPreserved": 335,
+  "originalPublicationSha256": "b4415b75aebb304350fc15ed0565a90cff66935f2bf57e00686b06a229f18008"
+}

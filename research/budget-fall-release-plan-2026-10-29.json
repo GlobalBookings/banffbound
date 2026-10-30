@@ -1,0 +1,64 @@
+{
+  "preparedAtUTC": "2026-10-30T01:19:37.409402+00:00",
+  "baselineRevision": "6a475709199429f8df246b935188ec23f87d8125",
+  "status": "Final committed-source 59 checks, full build, strict audit, 244 built HTML contracts, 7 photo hashes and desktop/phone QA passed; pending CI and production proof",
+  "scope": {
+    "newFullReviewSlugs": [
+      "banff-trip-cost-budget-guide",
+      "fall-larch-season-banff",
+      "banff-in-fall",
+      "larch-valley-hike",
+      "sentinel-pass-hike"
+    ],
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 73,
+    "fullReviewsAfter": 78,
+    "otherCanonicalBodiesByteIdentical": 290,
+    "partialOpeningRepairs": 8,
+    "originalPublicationDatesPreserved": 335,
+    "parkPassPublishedFeeRows": 4,
+    "parkPassComparisonOptions": 4,
+    "parkPassFaqPairs": 8,
+    "parkPassLiteralRatePartyUnitCases": 1428,
+    "parkPassPublicModeCombinations": 24,
+    "archivalUnverifiedBudgetLinksRemovedFromPublic": 4,
+    "allCanonicalFactsReviewed": false
+  },
+  "verificationTargets": {
+    "workflowChecks": 59,
+    "productionHTMLContractsBefore": 238,
+    "productionHTMLContractsAfter": 244,
+    "newUniqueContracts": 6,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "hostAliasMappings": 40,
+    "redirectChecks": 100,
+    "authoredBookingGuides": 27,
+    "curatedBookingContextPages": 29
+  },
+  "preserved": [
+    "Existing routes, aliases and original publication dates",
+    "All 95 hotel identities/provider URLs",
+    "Shared reviewed trail/lake/Parkway records",
+    "Affiliate and measurement identifiers",
+    "Two valid inherited budget destination searches; four unverified routes retained only as source archives",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "getYourGuideOwnedLandingPageFunnelRetained": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "217 canonical blog bodies lack a full review; eight have bounded opening repairs.",
+    "The separate fall itinerary and other legacy budget/season articles remain unreviewed.",
+    "Broader property fact/photo and remaining legacy-tool reviews are incomplete.",
+    "Campaign market, budget and bids are unspecified; no paid-ad launch has occurred."
+  ],
+  "goalStatus": "active",
+  "cleanVerification": "research/budget-fall-clean-verification-2026-10-29.json"
+}

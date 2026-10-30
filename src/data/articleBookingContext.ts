@@ -3,7 +3,8 @@ export function getArticleBookingContext(slug: unknown, curatedBookingLinks = fa
   const jasper = typeof slug === 'string' && ['jasper-town','jasper-national-park','jasper-canada','jasper-alberta','calgary-to-jasper'].includes(slug);
   const bowLake = typeof slug === 'string' && ['numtijah-lodge','num-ti-jah-lodge'].includes(slug);
   const skoki = slug === 'skoki-lodge-guide';
-  const lakeLouise = bowLake || skoki;
+  const lakeHike = typeof slug === 'string' && ['larch-valley-hike','sentinel-pass-hike'].includes(slug);
+  const lakeLouise = bowLake || skoki || lakeHike;
   const golden = slug === 'golden-bc-day-trip';
   const destination = jasper ? 'Jasper, Alberta' : lakeLouise ? 'Lake Louise, Alberta' : golden ? 'Golden, British Columbia' : 'Banff, Alberta';
   const hotelLabel = jasper ? 'Jasper' : lakeLouise ? 'Lake Louise area' : golden ? 'Golden' : 'Banff';
