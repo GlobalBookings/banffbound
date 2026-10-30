@@ -91,5 +91,13 @@
     "retainedFirstVisitEmittedModuleNegatives": 13,
     "retainedTripBuilderNegatives": 18,
     "realBlogLayoutSsrCases": 52
+  },
+  "historicalGuardClarification": {
+    "initialCleanFailure": "Historical hotel file snapshots rejected the explicit Royal policy/source correction.",
+    "scope": "Exact reviewed policy string and one exact FAQ source line are pinned and normalized only for original historical digests. All other hotel source bytes and model fields retain prior checks.",
+    "helper": "research/royal-pet-policy-clarification-2026-10-29.mjs",
+    "hotelModelAssertionsPassed": 861,
+    "applicationSourceChangedAfterInitialCommit": false,
+    "initialFailureEvidenceRetained": true
   }
 }

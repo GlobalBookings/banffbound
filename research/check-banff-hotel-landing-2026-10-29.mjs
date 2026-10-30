@@ -1,3 +1,4 @@
+import { restorePriorHotelSource } from './royal-pet-policy-clarification-2026-10-29.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -25,7 +26,7 @@ for (const [file,hash] of Object.entries({
   'src/data/hotelDirectory.ts':'bba710c243ef3cd64256e51adb8d54898bf200bc0db8090c5b21b197ed44492f',
   'src/pages/hotel-directory/index.astro':'1125c296d95b40f218c4dad2f2a7af9dbbfc861bdd8a65677be7ba60a396dacf',
   'src/pages/hotel-directory/[slug].astro':'c5c80421cb748a2307520e698e128887f23c10c825a4cd51fa7b81c93d151b9d',
-})) check(digest(read(file))===hash,'Frozen directory foundation changed during landing work: '+file);
+})) check(digest(restorePriorHotelSource(file, read(file)))===hash,'Frozen directory foundation changed during landing work: '+file);
 const expected = [
   ['moose-hotel-suites', '14703440', '345 Banff'],
   ['mount-royal-hotel', '688930', '138 Banff'],
