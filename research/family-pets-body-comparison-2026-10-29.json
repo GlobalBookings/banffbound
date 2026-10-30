@@ -1,0 +1,49 @@
+{
+  "checkedAtUTC": "2026-10-30T04:24:31.192Z",
+  "passed": true,
+  "referenceBaselineRevision": "d32252e115b7a336b9436940da7ded19c196767a",
+  "referenceBaselineFingerprint": "f97f43630379b876aa05fbe952364476753ce4aa1cb9407c63a90387c9edf85a",
+  "sourceBaseline": {
+    "capturedAtUTC": "2026-10-30T04:08:44.219Z",
+    "description": "Resolved body and original-publication snapshot captured before registry integration on the unmodified tracked app-source baseline. This is a source comparison, separate from clean build and deployment proof."
+  },
+  "scope": "Only the four intended canonical resolved HTML body strings change; original publications remain independent of review metadata.",
+  "canonical": 295,
+  "replacedBodies": 4,
+  "otherBodiesByteIdentical": 291,
+  "changedSlugs": [
+    "3-day-banff-itinerary",
+    "banff-dog-friendly",
+    "banff-pet-friendly-hotels",
+    "banff-toddler-guide"
+  ],
+  "changedBodyHashes": [
+    {
+      "slug": "3-day-banff-itinerary",
+      "before": "5ce797ac710b05720ad7cf3ab0af734e9c04278378ed091725d946a859dc8b78",
+      "after": "31bf0838690f636095f6e744db4acc586ac8344d179b4d7d19279b1c434f976e"
+    },
+    {
+      "slug": "banff-dog-friendly",
+      "before": "ba7794fb64c4ded2253b8931e1168c68ddcb011b3ee203c4ff8bcfbd906cf052",
+      "after": "1e6353c656815a9cd89423254f6a5dfe8be809efe3cdf8e03fe32166a20da9f4"
+    },
+    {
+      "slug": "banff-pet-friendly-hotels",
+      "before": "4e9446b9d24cb3d5bf290e9389b6f3bec7ef9305bb0369f9ff8433974aac6a35",
+      "after": "1f6d8e88e962eaf5ba5df7f7bca0a00ca1e6b9f82195cdd8e6c37de9886a7879"
+    },
+    {
+      "slug": "banff-toddler-guide",
+      "before": "cd4c9ffc71f78310f41d7d2fac54d8b236828964f451d52fdd5e4038be334ccd",
+      "after": "9aca027153656dc9698dd0e92814b9e6811cf56044a51eb5d2ff18592ee3c679"
+    }
+  ],
+  "fullBodyReviews": {
+    "before": 88,
+    "after": 92
+  },
+  "partialCorrections": 8,
+  "originalPublicationsPreserved": 335,
+  "originalPublicationSha256": "b4415b75aebb304350fc15ed0565a90cff66935f2bf57e00686b06a229f18008"
+}

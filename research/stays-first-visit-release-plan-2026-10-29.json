@@ -1,7 +1,7 @@
 {
   "preparedAtUTC": "2026-10-30T03:18:13.814955+00:00",
   "baselineRevision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
-  "status": "Final committed-source66checks/build/strictaudit/255builtHTML/7photos and desktop-phoneQA passed; pending CI and production proof",
+  "status": "Merged, deployed and verified: PR/main CI, exact live identity, 255 HTML contracts, 7 photos, 7 bare URLs, 100 redirect checks and production browser QA passed.",
   "scope": {
     "newFullReviewSlugs": [
       "banff-first-time-tips",
@@ -65,7 +65,7 @@
   "preserved": [
     "Existing canonical routes, aliases and original publication dates",
     "All 95 hotel identities and property/provider URLs",
-    "Shared reviewed trail/lake/Parkway data andnine Trip Builder templates",
+    "Shared reviewed trail/lake/Parkway data and nine Trip Builder templates",
     "Affiliate and measurement identifiers",
     "Useful exact inherited searches labelled by their actual destination and scope",
     "Unrelated user work"
@@ -73,7 +73,7 @@
   "independentReview": {
     "staysHostelsAndRegionalGuide": "Separate primary-source/body review found no material issue; exact property/hostel policies and operator journeys were checked.",
     "connectivityAndRegionalSources": "Root read mobile/regional bodies and freshly checked official rescue/cellular/satellite documentation, verified Garmin staff conditions,four summer trail profiles,Highwood  scope and conflicting spa notices. No emergency call, device setup, live availability or checkout assessed.",
-    "firstVisitChecklist": "Separate source/client inspection found no misleading readiness or saved-state claim; browser proof remains pending."
+    "firstVisitChecklist": "Separate source/client inspection and local desktop/phone plus production desktop browser proof passed; no readiness or saved-state claim."
   },
   "commercialBoundary": {
     "affiliateBookingsFirst": true,
@@ -91,5 +91,27 @@
     "Campaign market, budget and bids are unspecified; no paid-ad launch has occurred."
   ],
   "goalStatus": "active",
-  "cleanVerification": "research/stays-first-visit-clean-verification-2026-10-29.json"
+  "cleanVerification": "research/stays-first-visit-clean-verification-2026-10-29.json",
+  "verifiedAtUTC": "2026-10-30T04:04:19.122864+00:00",
+  "releaseReceipt": "research/stays-first-visit-release-receipt-2026-10-29.json",
+  "liveRevision": "d32252e115b7a336b9436940da7ded19c196767a",
+  "sourceFingerprint": "f97f43630379b876aa05fbe952364476753ce4aa1cb9407c63a90387c9edf85a",
+  "nextReviewCandidates": [
+    {
+      "slug": "banff-dog-friendly",
+      "purpose": "Plan the complete visit with a dog; verify access, transport, leash and attraction conditions; reuse /dog-friendly/."
+    },
+    {
+      "slug": "banff-pet-friendly-hotels",
+      "purpose": "Compare actual pet-designated rooms and property-specific supervision and common-area rules; preserve exact provider URLs."
+    },
+    {
+      "slug": "banff-toddler-guide",
+      "purpose": "Plan flexible care, short outings, room arrangements and connections; verify stroller, restraint and facility rules; reuse /family-guide/."
+    },
+    {
+      "slug": "3-day-banff-itinerary",
+      "purpose": "Distinguish three calendar days from sightseeing days; reuse winter-nonski-3 and first-timer-3 templates with current access and admission sources."
+    }
+  ]
 }

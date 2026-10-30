@@ -1,3 +1,4 @@
+import { restorePriorHotelSource } from '../research/royal-pet-policy-clarification-2026-10-29.mjs';
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -16,7 +17,7 @@ const frozenFiles = {
   'src/pages/hotel-directory/index.astro': '1125c296d95b40f218c4dad2f2a7af9dbbfc861bdd8a65677be7ba60a396dacf',
   'src/pages/hotel-directory/[slug].astro': 'c5c80421cb748a2307520e698e128887f23c10c825a4cd51fa7b81c93d151b9d',
 };
-for (const [filename, hash] of Object.entries(frozenFiles)) assert.equal(createHash('sha256').update(await readFile(filename)).digest('hex'), hash, `Frozen hotel source unchanged: ${filename}`);
+for (const [filename, hash] of Object.entries(frozenFiles)) assert.equal(createHash('sha256').update(restorePriorHotelSource(filename, await readFile(filename, 'utf8'))).digest('hex'), hash, `Frozen hotel source unchanged: ${filename}`);
 assert.equal(model.hotels.length, 95);
 assert.equal(model.directoryHotels.filter(hotel => hotel.sourceStatus === 'reviewed').length, 49);
 assert.equal(model.directoryHotels.filter(hotel => hotel.sourceStatus === 'location-only').length, 1);

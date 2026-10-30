@@ -19,8 +19,9 @@ const skoki = 'skoki-lodge-guide';
 const lakeContexts = ['larch-valley-hike','sentinel-pass-hike','lake-louise-village-guide'];
 const canmore = 'canmore-day-trip';
 const kananaskis = 'kananaskis-day-trip';
-assert.deepEqual([...authored].sort(), [...bow, ...jasper.slice(0, 3), 'new-places-to-eat-in-banff', 'banff-cabin-rentals', 'banff-nightlife-guide', 'banff-live-music', 'drink-deals', 'icefields-parkway-guide', 'banff-to-jasper-drive', 'lake-minnewanka-guide', 'banff-gondola-guide', 'banff-gondola-tickets-guide', 'banff-spring-skiing', 'peyto-lake-guide', 'banff-helicopter-tours', 'kananaskis-heli-tours', golden, 'banff-heli-skiing', skoki, 'banff-trip-cost-budget-guide', 'fall-larch-season-banff', 'banff-in-fall', ...lakeContexts, '7-day-banff-itinerary', 'rainy-day-banff', 'banff-car-rental-tips', canmore, 'where-to-stay-in-banff', 'banff-hostel-guide', 'banff-first-time-tips', 'banff-mobile-connectivity', kananaskis].sort());
-assert.equal(new Set(authored).size, 37);
+const familyShortStay = ['banff-dog-friendly','banff-pet-friendly-hotels','banff-toddler-guide','3-day-banff-itinerary'];
+assert.deepEqual([...authored].sort(), [...bow, ...jasper.slice(0, 3), 'new-places-to-eat-in-banff', 'banff-cabin-rentals', 'banff-nightlife-guide', 'banff-live-music', 'drink-deals', 'icefields-parkway-guide', 'banff-to-jasper-drive', 'lake-minnewanka-guide', 'banff-gondola-guide', 'banff-gondola-tickets-guide', 'banff-spring-skiing', 'peyto-lake-guide', 'banff-helicopter-tours', 'kananaskis-heli-tours', golden, 'banff-heli-skiing', skoki, 'banff-trip-cost-budget-guide', 'fall-larch-season-banff', 'banff-in-fall', ...lakeContexts, '7-day-banff-itinerary', 'rainy-day-banff', 'banff-car-rental-tips', canmore, 'where-to-stay-in-banff', 'banff-hostel-guide', 'banff-first-time-tips', 'banff-mobile-connectivity', kananaskis, ...familyShortStay].sort());
+assert.equal(new Set(authored).size, 41);
 const defaultContext = contextFor(undefined);
 assert.deepEqual(defaultContext, {
   hotelLabel: 'Banff', tourLabel: 'Banff',
@@ -42,7 +43,7 @@ function expectedContext(slug, curated) {
   if (bow.includes(slug) || slug===skoki || lakeContexts.includes(slug)) return {hotelLabel:'Lake Louise area',tourLabel:'Lake Louise',hotelHref:'https://www.expedia.ca/Hotel-Search?destination=Lake%20Louise%2C%20Alberta&camref=1101l3MtWX',tourHref:'https://www.getyourguide.com/s/?q=Lake%20Louise%2C%20Alberta&partner_id=QW960HO&cmp=banffboundblog',suppressAutomaticCTA:true};
   return {...defaultContext,suppressAutomaticCTA:curated===true};
 }
-for (const slug of [...jasper, ...bow, golden, skoki, ...lakeContexts, canmore, kananaskis, 'banff-heli-skiing', 'ordinary-banff-guide']) for (const curated of [false, true]) {
+for (const slug of [...jasper, ...bow, golden, skoki, ...lakeContexts, canmore, kananaskis, ...familyShortStay, 'banff-heli-skiing', 'ordinary-banff-guide']) for (const curated of [false, true]) {
   const result = contextFor(slug, curated), isJasper = jasper.includes(slug), isBow = bow.includes(slug) || slug===skoki || lakeContexts.includes(slug), isGolden = slug === golden, isCanmore = slug === canmore, isKananaskis = slug === kananaskis;
   assert.deepEqual(result, expectedContext(slug, curated), 'Independent exact native context: ' + slug);
   const hotel = new URL(result.hotelHref), tour = new URL(result.tourHref);

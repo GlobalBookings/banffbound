@@ -82,6 +82,9 @@ jobs:
           node scripts/check-first-visit-guides.mjs
           node scripts/check-kananaskis-day-guide.mjs
           node scripts/check-first-visit-planning.mjs
+          node scripts/check-pet-travel-guides.mjs
+          node scripts/check-toddler-guide.mjs
+          node scripts/check-short-stay-guide.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs

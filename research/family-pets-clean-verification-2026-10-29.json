@@ -1,0 +1,591 @@
+{
+  "startedAtUTC": "2026-10-30T04:38:00.247276+00:00",
+  "expectedSourceCommit": "7a28218984458c0eaff58ba9c163d520a7007fd8",
+  "sourceCommit": "7a28218984458c0eaff58ba9c163d520a7007fd8",
+  "cleanRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-family-pets-clean-wuqz96m7",
+  "workflowCheckCount": 69,
+  "checks": [
+    {
+      "path": "scripts/check-trip-planner.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-day-ideas.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-directory.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-production-redirects.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-activities.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paddling.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paid-landings.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-banff-hotel-landing-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-louise-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-winter-activity-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cycling-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-internal-linker.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-blog-content.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-bow-lake-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-jasper-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cabin-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-article-booking-context.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-nightlife-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-live-music-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-drink-offer-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-evening-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-minnewanka-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-gondola-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-spring-ski-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-peyto-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-scenic-flight-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-golden-day-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-heli-ski-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-restaurant-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-skoki-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trip-cost-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-altitude-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-larch-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-budget-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-fall-season-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-larch-hiking-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-park-pass-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-itinerary-weather-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-local-base-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-car-rental-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-stay-decision-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-first-visit-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-kananaskis-day-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-first-visit-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-pet-travel-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-toddler-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-short-stay-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lesson-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-stay-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-consent.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-embeds.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-safety.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parking-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-build-provenance.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-rental-planning-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-weather-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-snow-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-source-freshness.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-road-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-events.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-navigation.mjs",
+      "passed": true
+    }
+  ],
+  "audit": {
+    "pages": 605,
+    "indexable_documents": 519,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "builtVerification": {
+    "passed": true,
+    "mode": "read-only-built-directory",
+    "htmlRoutes": 259,
+    "htmlPassed": 259,
+    "photosPassed": 7,
+    "fullReviews": 92,
+    "remainingPartialRepairs": 8,
+    "sitemapUrls": 517,
+    "buildReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T04:38:45.597Z",
+      "sourceRevision": null,
+      "sourceFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d"
+    },
+    "buildReceiptStable": true,
+    "productionIdentityVerified": false,
+    "failures": []
+  },
+  "passed": true,
+  "stage": "complete",
+  "archivePath": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-family-pets-clean-wuqz96m7.tar",
+  "finishedAtUTC": "2026-10-30T04:38:58.819747+00:00",
+  "recordedAtUTC": "2026-10-30T04:44:08.309928+00:00",
+  "validationScope": "Exact committed-source clean archive with all 69 workflow checks, full build, strict audit, offline/built verifier and final desktop/phone browser QA. Remote CI and production identity remain pending.",
+  "browserQA": {
+    "sourceCommit": "7a28218984458c0eaff58ba9c163d520a7007fd8",
+    "sourceFingerprint": "f2ffda307d6e91ad8e0afaedbec7150d52168926b3d3305d3e8f59d240153a0d",
+    "mode": "Clean local build; production pending",
+    "startedAtUTC": "2026-10-30T04:34:22.978Z",
+    "guides": [
+      {
+        "dates": [
+          "2026-02-09T00:00:00.000Z",
+          "2026-10-29T00:00:00.000Z"
+        ],
+        "documentWidth": 390,
+        "faqCount": 5,
+        "headerLinkColors": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "openFaqs": 1,
+        "optionalProviderElements": 0,
+        "path": "/blog/banff-dog-friendly/",
+        "tableRows": [
+          5,
+          5
+        ],
+        "title": "Banff with a Dog: Transport, Walks, Winter & the Whole Visit",
+        "width": 390
+      },
+      {
+        "dates": [
+          "2025-09-07T00:00:00.000Z",
+          "2026-10-29T00:00:00.000Z"
+        ],
+        "documentWidth": 390,
+        "faqCount": 5,
+        "headerLinkColors": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "openFaqs": 1,
+        "optionalProviderElements": 0,
+        "path": "/blog/banff-pet-friendly-hotels/",
+        "tableRows": [
+          7
+        ],
+        "title": "Banff Pet-Friendly Hotels: Confirm the Room, Care & Policy",
+        "width": 390
+      },
+      {
+        "dates": [
+          "2025-11-11T00:00:00.000Z",
+          "2026-10-29T00:00:00.000Z"
+        ],
+        "documentWidth": 390,
+        "faqCount": 5,
+        "headerLinkColors": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "openFaqs": 1,
+        "optionalProviderElements": 0,
+        "path": "/blog/banff-toddler-guide/",
+        "tableRows": [
+          4,
+          4
+        ],
+        "title": "Banff with Toddlers: Rooms, Short Outings & Winter Plans",
+        "width": 390
+      },
+      {
+        "dates": [
+          "2026-02-08T00:00:00.000Z",
+          "2026-10-29T00:00:00.000Z"
+        ],
+        "documentWidth": 390,
+        "faqCount": 5,
+        "headerLinkColors": [
+          "rgb(255, 255, 255)",
+          "rgb(255, 255, 255)"
+        ],
+        "openFaqs": 1,
+        "optionalProviderElements": 0,
+        "path": "/blog/3-day-banff-itinerary/",
+        "tableRows": [
+          4,
+          3
+        ],
+        "title": "3 Days in Banff: Winter & Summer Plans, Travel Days and Bookings",
+        "width": 390
+      }
+    ],
+    "journeys": [
+      {
+        "name": "winter starter initialized",
+        "activities": [
+          "Find your feet in Banff",
+          "Galleries & a caf\u00e9 stop",
+          "Lake Louise lakeshore time",
+          "A managed rink session",
+          "An unhurried Banff dinner"
+        ],
+        "dayCount": 3,
+        "season": "winter",
+        "template": "winter-nonski-3",
+        "url": "http://127.0.0.1:4356/trip-builder/?template=winter-nonski-3"
+      },
+      {
+        "name": "summer starter initialized",
+        "activities": [
+          "Find your feet in Banff",
+          "Banff Gondola views",
+          "Lake Louise lakeshore time",
+          "Lake Minnewanka cruise",
+          "An unhurried Banff dinner"
+        ],
+        "dayCount": 3,
+        "season": "summer",
+        "template": "first-timer-3",
+        "url": "http://127.0.0.1:4356/trip-builder/?template=first-timer-3"
+      },
+      {
+        "name": "dog filters and carrier boundary",
+        "choices": [
+          {
+            "label": "BaseAny baseBanffLake LouiseEmerald Lake \u00b7 Yoho, BC",
+            "value": "banff"
+          },
+          {
+            "label": "SeasonAny seasonWinter planningSummer planning",
+            "value": "winter"
+          },
+          {
+            "label": "PlanAny planWalking / dog parkLake outing checksPatio mealAn attraction without petsLodge-based stay",
+            "value": "walk"
+          },
+          {
+            "label": "My transport situationStill decidingDriving / rental vehicleDog can travel in a lap-sized animal carrierDog cannot travel in a lap-sized carrier",
+            "value": "large"
+          }
+        ],
+        "hash": "#dog-ideas",
+        "path": "/dog-friendly/",
+        "statuses": [
+          "2 planning cards to explore \u2014 confirm each policy separately.",
+          "If your dog cannot travel in a lap-sized carrier, do not plan on ordinary-pet access to Roam or Parks Canada lake shuttles. Choose local walks or verify a suitable private transport arrangement before booking."
+        ],
+        "visibleHeadings": [
+          "A short Banff town walking plan",
+          "A designated Town off-leash park",
+          "Moose Hotel and Suites",
+          "Tunnel Mountain Resort",
+          "Emerald Lake Lodge"
+        ]
+      },
+      {
+        "name": "toddler to family filters",
+        "path": "/family-guide/",
+        "statuses": [
+          "3 ideas to investigate \u2014 confirm the requirements before booking."
+        ],
+        "visibleHeadings": [
+          "Cave and Basin: exhibits and history",
+          "Elevation Place: choose a swim session",
+          "The Fenlands: a scheduled public skate",
+          "Strollers and transport",
+          "A warm-up option with an opening check",
+          "Choose a walk for the group, not the age label",
+          "Moose Hotel and Suites",
+          "Tunnel Mountain Resort",
+          "Lake Louise Inn"
+        ]
+      },
+      {
+        "name": "Royal exclusion to matching owned profile",
+        "canonical": "https://banffbound.com/hotel-directory/royal-canadian-lodge/",
+        "officialFaqLinks": [
+          "Official ordinary-pet exclusion FAQ \u2197"
+        ],
+        "ordinaryPetExclusion": true,
+        "path": "/hotel-directory/royal-canadian-lodge/",
+        "providerHref": "https://www.expedia.ca/Banff-Hotels-Royal-Canadian-Lodge.h18100.Hotel-Information?camref=1101l3MtWX"
+      }
+    ],
+    "initialContrastIssue": {
+      "documentWidth": 390,
+      "headerBackground": "rgb(26, 58, 42)",
+      "headerColor": "rgb(255, 255, 255)",
+      "linkColor": "rgb(26, 58, 42)",
+      "width": 390
+    },
+    "preFixSourceCommit": "142bcdc5b1467d03ef875ac8f2b5161dd256babe",
+    "finalContrast": {
+      "documentWidth": 1280,
+      "headerBackground": "rgb(26, 58, 42)",
+      "headerColor": "rgb(255, 255, 255)",
+      "headingTop": 124.96875,
+      "linkColor": "rgb(255, 255, 255)",
+      "width": 1280
+    },
+    "dogReset": {
+      "statuses": [
+        "7 planning cards to explore \u2014 confirm each policy separately.",
+        "If your dog cannot travel in a lap-sized carrier, do not plan on ordinary-pet access to Roam or Parks Canada lake shuttles. Choose local walks or verify a suitable private transport arrangement before booking."
+      ]
+    },
+    "familyReset": {
+      "statuses": [
+        "9 ideas to investigate \u2014 confirm the requirements before booking."
+      ]
+    },
+    "phoneComparison": {
+      "documentWidth": 390,
+      "hash": "#short-overview",
+      "headingTop": 2591.6875,
+      "tableRegions": [
+        {
+          "clientWidth": 340,
+          "overflowX": "auto",
+          "scrollWidth": 540
+        },
+        {
+          "clientWidth": 340,
+          "overflowX": "auto",
+          "scrollWidth": 540
+        }
+      ],
+      "width": 390,
+      "scopeNote": "Document and table overflow geometry. Scroll-position reading was captured during native smooth movement, so it is not a completed phone fragment-jump claim."
+    },
+    "restoredDesktop": {
+      "documentWidth": 1280,
+      "height": 720,
+      "width": 1280
+    },
+    "viewportOverrideReset": true,
+    "phoneTabClosed": true,
+    "consentPreferencesChanged": false,
+    "emergencyMerchantPrintClipboardOrEnquiryActionUsed": false,
+    "networkTraceClaimed": false,
+    "finishedAtUTC": "2026-10-30T04:43:18.151Z"
+  },
+  "historicalGuardClarification": {
+    "initialCleanFailure": "Historical hotel file snapshots rejected the explicit Royal policy/source correction.",
+    "scope": "Exact reviewed policy string and one exact FAQ source line are pinned and normalized only for original historical digests. All other hotel source bytes and model fields retain prior checks.",
+    "helper": "research/royal-pet-policy-clarification-2026-10-29.mjs",
+    "hotelModelAssertionsPassed": 861,
+    "applicationSourceChangedAfterInitialCommit": false,
+    "initialFailureEvidenceRetained": true
+  },
+  "tableLinkContrastCorrection": {
+    "before": {
+      "documentWidth": 390,
+      "headerBackground": "rgb(26, 58, 42)",
+      "headerColor": "rgb(255, 255, 255)",
+      "linkColor": "rgb(26, 58, 42)",
+      "width": 390
+    },
+    "after": {
+      "documentWidth": 1280,
+      "headerBackground": "rgb(26, 58, 42)",
+      "headerColor": "rgb(255, 255, 255)",
+      "headingTop": 124.96875,
+      "linkColor": "rgb(255, 255, 255)",
+      "width": 1280
+    },
+    "finalFourPhoneGuidesHaveWhiteHeaderLinks": true
+  }
+}

@@ -19,6 +19,20 @@ const { directoryHotels, directoryHotel, hotelDirectorySchema, isHotelDirectoryI
 let assertions = 0;
 const check = (condition, message) => { assertions++; if (!condition) throw new Error(message); };
 const digest = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
+// This batch corrects one already reviewed property's ordinary-pet policy from
+// its freshly read official FAQ. Pin the exact new field/source, then restore
+// only those two fields for historical digests; all other records/facts/photos
+// and coordinates remain subject to their original byte-level contracts.
+const royalSlug = 'royal-canadian-lodge';
+const royalOldPolicy = 'Confirm pet eligibility, accessible room requirements and rate terms directly. Ask for the complete quote including the operator’s local experience fee and parking; no fixed fee is quoted here.';
+const royalPolicy = 'Ordinary pets are not permitted under the current official FAQ. Discuss service-animal arrangements and accessible room requirements directly. Ask for the complete quote including the operator’s local experience fee and parking; no fixed fee is quoted here.';
+const royalFaq = { label: 'Official ordinary-pet exclusion FAQ', url: 'https://royalcanadianlodge.com/contact/' };
+check(hotels.find(h => h.slug === royalSlug)?.policies === royalPolicy, 'Royal ordinary-pet correction must match the source-reviewed field exactly');
+const royalPublic = directoryHotels.find(h => h.slug === royalSlug);
+check(royalPublic?.policies === royalPolicy, 'The linked Royal profile must expose the same correction');
+check(royalPublic.sourceLinks.filter(s => s.url === royalFaq.url).length === 1 && royalPublic.sourceLinks.some(s => s.url === royalFaq.url && s.label === royalFaq.label), 'Royal correction requires its exact official FAQ source');
+const priorRawRecord = h => h.slug === royalSlug ? { ...h, policies: royalOldPolicy } : h;
+const priorPublicRecord = h => h.slug === royalSlug ? { ...h, policies: royalOldPolicy, sourceLinks: h.sourceLinks.filter(s => s.url !== royalFaq.url) } : h;
 check(hotels.length === 95 && directoryHotels.length === 95 && new Set(directoryHotels.map(h => h.slug)).size === 95, 'All 95 identities/routes must remain discoverable');
 check(digest(hotels.map(h => [h.slug,h.name,h.expediaUrl])) === '18d4c39bbe88ad1221c66f86cf7c535e4e7fb6e173933e4639d6e8d84dec370d', 'Hotel identity/provider URL changed');
 const previousTwelve = ['moose-hotel-suites','mount-royal-hotel','tunnel-mountain-resort','blackstone-mountain-lodge','lake-louise-inn','fairmont-chateau-lake-louise','sunshine-mountain-lodge','emerald-lake-lodge','hi-lake-louise-alpine-centre','douglas-fir-resort','banff-boundary-lodge','rundle-mountain-lodge'];
@@ -27,9 +41,9 @@ const priorTwentyFour = ["fairmont-banff-springs", "rimrock-banff", "moose-hotel
 check(digest(priorTwentyFour.map(slug => hotels.find(h => h.slug === slug))) === '68906afcb1a9d241704015b32bdb3c41d2668e252d8ea284dac4d8a0f11b2200', 'Prior 24 raw records changed');
 check(digest(priorTwentyFour.map(slug => directoryHotels.find(h => h.slug === slug))) === '079f550fbf26febbab89187adc2ad9c9040c249b88a881266c89fd7f48557b92', 'Prior 24 source scopes/facts/GPS changed');
 const priorThirtyEight = ["fairmont-banff-springs", "rimrock-banff", "moose-hotel-suites", "hotel-canoe-suites", "otter-hotel", "fox-hotel-suites", "banff-caribou-lodge-spa", "banff-park-lodge", "buffalo-mountain-lodge", "tunnel-mountain-resort", "elk-avenue-hotel", "royal-canadian-lodge", "brewster-mountain-lodge", "peaks-hotel-suites", "banff-aspen-lodge", "banff-ptarmigan-inn", "canalta-lodge", "mount-royal-hotel", "charltons-banff", "sunshine-mountain-lodge", "castle-mountain-chalets", "storm-mountain-lodge", "blackstone-mountain-lodge", "fairmont-chateau-lake-louise", "lake-louise-inn", "baker-creek-by-basecamp", "hi-lake-louise-alpine-centre", "emerald-lake-lodge", "douglas-fir-resort", "falcon-crest-lodge", "stoneridge-mountain-resort", "copperstone-resort", "rundle-mountain-lodge", "hi-castle-mountain-hostel", "cathedral-mountain-lodge", "banff-boundary-lodge", "inns-of-banff", "banff-international-hotel"];
-check(digest(priorThirtyEight.map(slug => hotels.find(h => h.slug === slug))) === '885d8b8c476990cfd440bcc0e04acf80967d99624ad0c6f738ff5795471c3ce2', 'Prior 38 raw facts/photos/GPS changed');
-check(digest(priorThirtyEight.map(slug => directoryHotels.find(h => h.slug === slug))) === '745df6e1a194e7f120dc6569f637d09d3e5b3435be3e603dfc0d0a8f7db66b24', 'Prior 38 public scopes/facts/GPS changed');
-check(digest(hotels.filter(h => !regionalHotelReviewSlugs.includes(h.slug))) === 'a54edd75f4c7e14c8f5a483a281d16fd3de41f0b999f1f3e8e80b0c2393822d5', 'A record outside the current 14 changed');
+check(digest(priorThirtyEight.map(slug => priorRawRecord(hotels.find(h => h.slug === slug)))) === '885d8b8c476990cfd440bcc0e04acf80967d99624ad0c6f738ff5795471c3ce2', 'Prior 38 raw facts/photos/GPS changed');
+check(digest(priorThirtyEight.map(slug => priorPublicRecord(directoryHotels.find(h => h.slug === slug)))) === '745df6e1a194e7f120dc6569f637d09d3e5b3435be3e603dfc0d0a8f7db66b24', 'Prior 38 public scopes/facts/GPS changed');
+check(digest(hotels.filter(h => !regionalHotelReviewSlugs.includes(h.slug)).map(priorRawRecord)) === 'a54edd75f4c7e14c8f5a483a281d16fd3de41f0b999f1f3e8e80b0c2393822d5', 'A record outside the current 14 changed');
 const statuses = { reviewed:49, 'location-only':1, 'former-name':2, unreviewed:43 };
 for (const [status,count] of Object.entries(statuses)) check(directoryHotels.filter(h => h.sourceStatus === status).length === count, 'Source status count mismatch: '+status);
 check(unreviewedHotelDirectorySlugs.size === 43 && directoryHotels.filter(h => isHotelDirectoryIndexable(h.slug)).length === 52, 'Indexability coverage mismatch');
