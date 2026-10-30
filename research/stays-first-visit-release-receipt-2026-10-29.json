@@ -1,0 +1,829 @@
+{
+  "recordedAtUTC": "2026-10-30T04:04:19.122864+00:00",
+  "status": "Merged, deployed and independently verified on production",
+  "goalStatus": "active",
+  "broaderGoalComplete": false,
+  "pullRequest": {
+    "headRefOid": "d8489192815c85b1b42a782e2b5574db42562545",
+    "mergeCommit": {
+      "oid": "d32252e115b7a336b9436940da7ded19c196767a"
+    },
+    "mergedAt": "2026-10-30T03:53:55Z",
+    "number": 18,
+    "state": "MERGED",
+    "url": "https://github.com/GlobalBookings/banffbound/pull/18"
+  },
+  "source": {
+    "applicationCommit": "4fabcdaeadd201362a2e9f14c6f5939feeeb4586",
+    "reviewedHead": "d8489192815c85b1b42a782e2b5574db42562545",
+    "mergeRevision": "d32252e115b7a336b9436940da7ded19c196767a",
+    "sourceFingerprint": "f97f43630379b876aa05fbe952364476753ce4aa1cb9407c63a90387c9edf85a"
+  },
+  "scope": {
+    "newFullReviewSlugs": [
+      "banff-first-time-tips",
+      "banff-hostel-guide",
+      "banff-mobile-connectivity",
+      "kananaskis-day-trip",
+      "where-to-stay-in-banff"
+    ],
+    "fullReviewsBefore": 83,
+    "fullReviewsAfter": 88,
+    "partialOpeningRepairs": 8,
+    "canonicalBodies": 295,
+    "otherCanonicalBodiesByteIdentical": 290,
+    "originalPublicationDatesPreserved": 335,
+    "newPublishedUrls": 0,
+    "checklistSteps": 6,
+    "nativeChecklistHelpLinks": 18,
+    "authoredBookingGuides": 37,
+    "curatedBookingContextPages": 39
+  },
+  "continuousIntegration": {
+    "pullRequest": {
+      "conclusion": "success",
+      "databaseId": 40999690151,
+      "headSha": "d8489192815c85b1b42a782e2b5574db42562545",
+      "jobs": [
+        {
+          "completedAt": "2026-10-30T03:52:49Z",
+          "conclusion": "success",
+          "databaseId": 123880930178,
+          "name": "build",
+          "startedAt": "2026-10-30T03:51:37Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-30T03:51:38Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-30T03:51:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:51:47Z",
+              "conclusion": "success",
+              "name": "Checkout repository",
+              "number": 2,
+              "startedAt": "2026-10-30T03:51:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:51:51Z",
+              "conclusion": "success",
+              "name": "Set up Node.js 20",
+              "number": 3,
+              "startedAt": "2026-10-30T03:51:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:51:58Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 4,
+              "startedAt": "2026-10-30T03:51:51Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:52:28Z",
+              "conclusion": "success",
+              "name": "Check trip-planning behavior",
+              "number": 5,
+              "startedAt": "2026-10-30T03:51:58Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:52:29Z",
+              "conclusion": "success",
+              "name": "Check report source and expiry behavior",
+              "number": 6,
+              "startedAt": "2026-10-30T03:52:28Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:52:29Z",
+              "conclusion": "success",
+              "name": "Check booking navigation",
+              "number": 7,
+              "startedAt": "2026-10-30T03:52:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:52:41Z",
+              "conclusion": "success",
+              "name": "Build site",
+              "number": 8,
+              "startedAt": "2026-10-30T03:52:29Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:52:46Z",
+              "conclusion": "success",
+              "name": "Audit generated site",
+              "number": 9,
+              "startedAt": "2026-10-30T03:52:41Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:52:46Z",
+              "conclusion": "success",
+              "name": "Post Set up Node.js 20",
+              "number": 17,
+              "startedAt": "2026-10-30T03:52:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:52:46Z",
+              "conclusion": "success",
+              "name": "Post Checkout repository",
+              "number": 18,
+              "startedAt": "2026-10-30T03:52:46Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:52:46Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 19,
+              "startedAt": "2026-10-30T03:52:46Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40999690151/job/123880930178"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40999690151"
+    },
+    "main": {
+      "conclusion": "success",
+      "createdAt": "2026-10-30T03:53:58Z",
+      "databaseId": 40999893438,
+      "event": "push",
+      "headSha": "d32252e115b7a336b9436940da7ded19c196767a",
+      "jobs": [
+        {
+          "completedAt": "2026-10-30T03:55:24Z",
+          "conclusion": "success",
+          "databaseId": 123881590013,
+          "name": "build",
+          "startedAt": "2026-10-30T03:54:02Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-30T03:54:03Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-30T03:54:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:54:10Z",
+              "conclusion": "success",
+              "name": "Checkout repository",
+              "number": 2,
+              "startedAt": "2026-10-30T03:54:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:54:14Z",
+              "conclusion": "success",
+              "name": "Set up Node.js 20",
+              "number": 3,
+              "startedAt": "2026-10-30T03:54:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:54:22Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 4,
+              "startedAt": "2026-10-30T03:54:14Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:55:01Z",
+              "conclusion": "success",
+              "name": "Check trip-planning behavior",
+              "number": 5,
+              "startedAt": "2026-10-30T03:54:22Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:55:01Z",
+              "conclusion": "success",
+              "name": "Check report source and expiry behavior",
+              "number": 6,
+              "startedAt": "2026-10-30T03:55:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:55:01Z",
+              "conclusion": "success",
+              "name": "Check booking navigation",
+              "number": 7,
+              "startedAt": "2026-10-30T03:55:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:55:15Z",
+              "conclusion": "success",
+              "name": "Build site",
+              "number": 8,
+              "startedAt": "2026-10-30T03:55:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:55:22Z",
+              "conclusion": "success",
+              "name": "Audit generated site",
+              "number": 9,
+              "startedAt": "2026-10-30T03:55:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:55:22Z",
+              "conclusion": "success",
+              "name": "Post Set up Node.js 20",
+              "number": 17,
+              "startedAt": "2026-10-30T03:55:22Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:55:22Z",
+              "conclusion": "success",
+              "name": "Post Checkout repository",
+              "number": 18,
+              "startedAt": "2026-10-30T03:55:22Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-30T03:55:22Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 19,
+              "startedAt": "2026-10-30T03:55:22Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40999893438/job/123881590013"
+        }
+      ],
+      "status": "completed",
+      "updatedAt": "2026-10-30T03:55:25Z",
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40999893438"
+    }
+  },
+  "cleanVerification": {
+    "file": "research/stays-first-visit-clean-verification-2026-10-29.json",
+    "sourceCommit": "4fabcdaeadd201362a2e9f14c6f5939feeeb4586",
+    "workflowChecksPassed": 66,
+    "htmlDocuments": 605,
+    "indexableDocuments": 519,
+    "strictAuditFindings": 0,
+    "builtHtmlPassed": 255,
+    "protectedPhotosPassed": 7,
+    "passed": true
+  },
+  "productionVerification": {
+    "file": "research/stays-first-visit-production-verification-2026-10-29.json",
+    "checkedAt": "2026-10-30T04:01:19.931Z",
+    "buildReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T03:55:08.060Z",
+      "sourceRevision": "d32252e115b7a336b9436940da7ded19c196767a",
+      "sourceFingerprint": "f97f43630379b876aa05fbe952364476753ce4aa1cb9407c63a90387c9edf85a"
+    },
+    "stableBeforeAfter": true,
+    "htmlPassed": 255,
+    "htmlFailed": 0,
+    "photosPassed": 7,
+    "photosFailed": 0,
+    "failures": 0,
+    "sitemapUrls": 517,
+    "passed": true
+  },
+  "bareCanonicalVerification": {
+    "file": "research/stays-first-visit-bare-url-verification-2026-10-29.json",
+    "checkedAtUTC": "2026-10-30T04:00:58.720Z",
+    "stableBeforeAfter": true,
+    "requestsContainNoQueryCacheBuster": true,
+    "redirectFollowing": false,
+    "canonicalPaths": [
+      "/blog/where-to-stay-in-banff/",
+      "/blog/banff-hostel-guide/",
+      "/blog/banff-first-time-tips/",
+      "/blog/banff-mobile-connectivity/",
+      "/blog/kananaskis-day-trip/",
+      "/trip-builder/",
+      "/tools/"
+    ],
+    "allSevenReturned200AndPassed": true
+  },
+  "redirectVerification": {
+    "file": "research/live-http-redirect-verification-2026-10-29.json",
+    "checkedAt": "2026-10-30T04:01:05.039Z",
+    "existingAliasMappings": 40,
+    "checksPassed": 100,
+    "checksTotal": 100,
+    "hostingOrRoutingMutation": false
+  },
+  "browserQA": {
+    "local": {
+      "sourceCommit": "5f69ca82b9b897ec49c4d0bb4aff004186b7e361",
+      "sourceFingerprint": "f97f43630379b876aa05fbe952364476753ce4aa1cb9407c63a90387c9edf85a",
+      "mode": "Local browser QA; production proof pending",
+      "desktop": {
+        "width": 1280,
+        "cards": 6,
+        "initialMarked": 0,
+        "backupAndArrivalMarked": 2,
+        "nextQuestionAfterTwo": "base",
+        "nativeNextLinkChangesFragment": true,
+        "allMarked": 6,
+        "allMarkedDoesNotClaimReadiness": true,
+        "allMarkedHidesAndRemovesNextHref": true,
+        "clearRestoresZero": true,
+        "reloadAfterOneMarkedRestoresZero": true
+      },
+      "phone": {
+        "width": 390,
+        "height": 844,
+        "plannerDocumentWidth": 390,
+        "keyboardSpaceTogglesMarkAndClear": true,
+        "articles": [
+          {
+            "curated": "true",
+            "dates": [
+              "2026-01-10T00:00:00.000Z",
+              "2026-10-29T00:00:00.000Z"
+            ],
+            "documentWidth": 390,
+            "emergencyActions": [],
+            "faqCount": 5,
+            "hotelDestination": "Banff, Alberta",
+            "openFaqs": 1,
+            "optionalProviderElements": 0,
+            "path": "/blog/where-to-stay-in-banff/",
+            "title": "Where to Stay Around Banff: Bases, Rooms & Winter Journeys",
+            "width": 390
+          },
+          {
+            "curated": "true",
+            "dates": [
+              "2026-01-08T00:00:00.000Z",
+              "2026-10-29T00:00:00.000Z"
+            ],
+            "documentWidth": 390,
+            "emergencyActions": [],
+            "faqCount": 5,
+            "hotelDestination": "Banff, Alberta",
+            "openFaqs": 1,
+            "optionalProviderElements": 0,
+            "path": "/blog/banff-hostel-guide/",
+            "title": "Banff Hostels: Dorms, Private Rooms, Arrival & Wilderness Stays",
+            "width": 390
+          },
+          {
+            "curated": "true",
+            "dates": [
+              "2025-11-18T00:00:00.000Z",
+              "2026-10-29T00:00:00.000Z"
+            ],
+            "documentWidth": 390,
+            "emergencyActions": [],
+            "faqCount": 5,
+            "hotelDestination": "Banff, Alberta",
+            "openFaqs": 1,
+            "optionalProviderElements": 0,
+            "path": "/blog/banff-first-time-tips/",
+            "title": "First Time in Banff: Arrival, Bases & a Six-Step Trip Plan",
+            "width": 390
+          },
+          {
+            "curated": "true",
+            "dates": [
+              "2025-09-10T00:00:00.000Z",
+              "2026-10-29T00:00:00.000Z"
+            ],
+            "documentWidth": 390,
+            "emergencyActions": [
+              "tel:911",
+              "tel:+14037624506"
+            ],
+            "faqCount": 5,
+            "hotelDestination": "Banff, Alberta",
+            "openFaqs": 1,
+            "optionalProviderElements": 0,
+            "path": "/blog/banff-mobile-connectivity/",
+            "title": "Banff Cell Service & Offline Planning: Maps, Roaming and SOS",
+            "width": 390
+          },
+          {
+            "curated": "true",
+            "dates": [
+              "2025-12-11T00:00:00.000Z",
+              "2026-10-29T00:00:00.000Z"
+            ],
+            "documentWidth": 390,
+            "emergencyActions": [],
+            "faqCount": 5,
+            "hotelDestination": "Kananaskis, Alberta",
+            "openFaqs": 1,
+            "optionalProviderElements": 0,
+            "path": "/blog/kananaskis-day-trip/",
+            "title": "Kananaskis Day Trip from Banff: Winter, Summer & Spa Plans",
+            "width": 390
+          }
+        ]
+      },
+      "optionalProviderScriptAndFrameElements": 0,
+      "networkTraceClaimed": false,
+      "emergencyCallMerchantPrintClipboardOrEnquiryUsed": false,
+      "consentPreferencesChanged": false,
+      "finalSourceCommit": "4fabcdaeadd201362a2e9f14c6f5939feeeb4586",
+      "finalSelectedAppFingerprintMatches": true,
+      "finalPreviewReload": {
+        "width": 1280,
+        "height": 720,
+        "documentWidth": 1280,
+        "initialMarked": 0,
+        "cards": 6,
+        "checks": 6
+      },
+      "nativeGuideEntry": {
+        "method": "Keyboard Enter on the guide introduction link",
+        "hash": "#first-visit-planner",
+        "completedTargetTop": 95.765625
+      },
+      "checklistToHotelComparison": {
+        "path": "/book/banff-hotels/",
+        "canonical": "https://banffbound.com/book/banff-hotels/",
+        "nativeHotelLinks": 6,
+        "providerBookingClicked": false
+      },
+      "viewportOverrideReset": true,
+      "temporaryPhoneTabClosed": true,
+      "restoredDesktopVerifiedInFreshTab": true,
+      "scopeNote": "Initial 5f69ca8 interaction and 390px article tests match the final 4fabcda selected application fingerprint. Final archive was reloaded at 1280px; native guide entry and the hotel-comparison handoff were verified. Existing consent preferences were retained."
+    },
+    "production": {
+      "checkedAtUTC": "2026-10-30T04:01:29.526Z",
+      "url": "https://banffbound.com/blog/banff-first-time-tips/#first-visit-planner",
+      "observations": [
+        {
+          "label": "initial",
+          "cards": 6,
+          "checks": [
+            {
+              "checked": false,
+              "id": "arrival"
+            },
+            {
+              "checked": false,
+              "id": "base"
+            },
+            {
+              "checked": false,
+              "id": "days"
+            },
+            {
+              "checked": false,
+              "id": "access"
+            },
+            {
+              "checked": false,
+              "id": "quotes"
+            },
+            {
+              "checked": false,
+              "id": "backup"
+            }
+          ],
+          "documentWidth": 1280,
+          "next": "Next question: join the arrival and return.",
+          "nextHidden": false,
+          "nextHref": "#first-visit-arrival",
+          "optionalProviderElements": 0,
+          "status": "0 of 6 planning steps marked",
+          "url": "https://banffbound.com/blog/banff-first-time-tips/#first-visit-planner",
+          "viewportWidth": 1280
+        },
+        {
+          "label": "two steps marked",
+          "cards": 6,
+          "checks": [
+            {
+              "checked": true,
+              "id": "arrival"
+            },
+            {
+              "checked": false,
+              "id": "base"
+            },
+            {
+              "checked": false,
+              "id": "days"
+            },
+            {
+              "checked": false,
+              "id": "access"
+            },
+            {
+              "checked": false,
+              "id": "quotes"
+            },
+            {
+              "checked": true,
+              "id": "backup"
+            }
+          ],
+          "documentWidth": 1280,
+          "next": "Next question: choose a base and room.",
+          "nextHidden": false,
+          "nextHref": "#first-visit-base",
+          "optionalProviderElements": 0,
+          "status": "2 of 6 planning steps marked",
+          "url": "https://banffbound.com/blog/banff-first-time-tips/#first-visit-planner",
+          "viewportWidth": 1280
+        },
+        {
+          "label": "next question anchor",
+          "cards": 6,
+          "checks": [
+            {
+              "checked": true,
+              "id": "arrival"
+            },
+            {
+              "checked": false,
+              "id": "base"
+            },
+            {
+              "checked": false,
+              "id": "days"
+            },
+            {
+              "checked": false,
+              "id": "access"
+            },
+            {
+              "checked": false,
+              "id": "quotes"
+            },
+            {
+              "checked": true,
+              "id": "backup"
+            }
+          ],
+          "documentWidth": 1280,
+          "next": "Next question: choose a base and room.",
+          "nextHidden": false,
+          "nextHref": "#first-visit-base",
+          "optionalProviderElements": 0,
+          "status": "2 of 6 planning steps marked",
+          "url": "https://banffbound.com/blog/banff-first-time-tips/#first-visit-base",
+          "viewportWidth": 1280
+        },
+        {
+          "label": "all six marked",
+          "cards": 6,
+          "checks": [
+            {
+              "checked": true,
+              "id": "arrival"
+            },
+            {
+              "checked": true,
+              "id": "base"
+            },
+            {
+              "checked": true,
+              "id": "days"
+            },
+            {
+              "checked": true,
+              "id": "access"
+            },
+            {
+              "checked": true,
+              "id": "quotes"
+            },
+            {
+              "checked": true,
+              "id": "backup"
+            }
+          ],
+          "documentWidth": 1280,
+          "next": "All six steps are marked. Recheck your actual confirmations and the latest sources before departure.",
+          "nextHidden": true,
+          "nextHref": null,
+          "optionalProviderElements": 0,
+          "status": "6 of 6 planning steps marked",
+          "url": "https://banffbound.com/blog/banff-first-time-tips/#first-visit-base",
+          "viewportWidth": 1280
+        },
+        {
+          "label": "clear restores initial state",
+          "cards": 6,
+          "checks": [
+            {
+              "checked": false,
+              "id": "arrival"
+            },
+            {
+              "checked": false,
+              "id": "base"
+            },
+            {
+              "checked": false,
+              "id": "days"
+            },
+            {
+              "checked": false,
+              "id": "access"
+            },
+            {
+              "checked": false,
+              "id": "quotes"
+            },
+            {
+              "checked": false,
+              "id": "backup"
+            }
+          ],
+          "documentWidth": 1280,
+          "next": "Next question: join the arrival and return.",
+          "nextHidden": false,
+          "nextHref": "#first-visit-arrival",
+          "optionalProviderElements": 0,
+          "status": "0 of 6 planning steps marked",
+          "url": "https://banffbound.com/blog/banff-first-time-tips/#first-visit-base",
+          "viewportWidth": 1280
+        },
+        {
+          "label": "one marked before reload",
+          "cards": 6,
+          "checks": [
+            {
+              "checked": true,
+              "id": "arrival"
+            },
+            {
+              "checked": false,
+              "id": "base"
+            },
+            {
+              "checked": false,
+              "id": "days"
+            },
+            {
+              "checked": false,
+              "id": "access"
+            },
+            {
+              "checked": false,
+              "id": "quotes"
+            },
+            {
+              "checked": false,
+              "id": "backup"
+            }
+          ],
+          "documentWidth": 1280,
+          "next": "Next question: choose a base and room.",
+          "nextHidden": false,
+          "nextHref": "#first-visit-base",
+          "optionalProviderElements": 0,
+          "status": "1 of 6 planning steps marked",
+          "url": "https://banffbound.com/blog/banff-first-time-tips/#first-visit-base",
+          "viewportWidth": 1280
+        },
+        {
+          "label": "reload resets temporary marks",
+          "cards": 6,
+          "checks": [
+            {
+              "checked": false,
+              "id": "arrival"
+            },
+            {
+              "checked": false,
+              "id": "base"
+            },
+            {
+              "checked": false,
+              "id": "days"
+            },
+            {
+              "checked": false,
+              "id": "access"
+            },
+            {
+              "checked": false,
+              "id": "quotes"
+            },
+            {
+              "checked": false,
+              "id": "backup"
+            }
+          ],
+          "documentWidth": 1280,
+          "next": "Next question: join the arrival and return.",
+          "nextHidden": false,
+          "nextHref": "#first-visit-arrival",
+          "optionalProviderElements": 0,
+          "status": "0 of 6 planning steps marked",
+          "url": "https://banffbound.com/blog/banff-first-time-tips/#first-visit-base",
+          "viewportWidth": 1280
+        }
+      ],
+      "regionalGuide": {
+        "affiliateContextLinks": [
+          {
+            "href": "https://www.expedia.ca/Hotel-Search?destination=Kananaskis%2C%20Alberta&camref=1101l3MtWX",
+            "label": "Compare Kananaskis area stays on Expedia \u2014 affiliate link"
+          },
+          {
+            "href": "https://www.getyourguide.com/s/?q=Kananaskis%2C%20Alberta&partner_id=QW960HO&cmp=banffboundblog",
+            "label": "Browse Kananaskis activity results on GetYourGuide \u2014 affiliate link"
+          }
+        ],
+        "canonical": "https://banffbound.com/blog/kananaskis-day-trip/",
+        "documentWidth": 1280,
+        "faqCount": 5,
+        "openFaqs": [
+          "Can I drive the Highwood Pass through-route in winter?Alberta Parks lists the Highway 40 section from Peter Lougheed Provincial Park to Highwood House Junction as closed December 1\u2013June 14. That prevents the seasonal Highwood through-route; it is not a statement that all of Highway 40 or Kananaskis Village closes. Check temporary road restrictions and Alberta 511 as well, and plan the actual return rather than relying on a summer loop."
+        ],
+        "title": "Kananaskis Day Trip from Banff: Winter, Summer & Spa Plans | BanffBound",
+        "url": "https://banffbound.com/blog/kananaskis-day-trip/",
+        "viewportWidth": 1280
+      },
+      "hotelHandoff": {
+        "canonical": "https://banffbound.com/book/banff-hotels/",
+        "documentWidth": 1280,
+        "headings": [
+          "Find the Banff stay that fits your trip."
+        ],
+        "nativeHotelLinks": 6,
+        "title": "Banff Hotels: Compare 6 Stays & Check Dates | BanffBound",
+        "url": "https://banffbound.com/book/banff-hotels/",
+        "viewportWidth": 1280
+      },
+      "sourceRevision": "d32252e115b7a336b9436940da7ded19c196767a",
+      "sourceFingerprint": "f97f43630379b876aa05fbe952364476753ce4aa1cb9407c63a90387c9edf85a",
+      "finishedAtUTC": "2026-10-30T04:02:58.412Z",
+      "screenshot": "/tmp/banffbound-first-visit-live-2026-10-29.jpg",
+      "consentPreferencesChanged": false,
+      "emergencyOrMerchantOrEnquiryActionUsed": false
+    },
+    "scopeNote": "Local 390px checks cover the exact selected app fingerprint deployed to production. Production desktop interaction, FAQ, regional context and owned hotel-comparison handoff were checked directly. DOM absence of optional provider elements is not a network-trace claim."
+  },
+  "preserved": [
+    "All 250 prior production HTML contracts and seven protected photo hashes",
+    "95 hotel records and existing provider identities",
+    "All nine prior Trip Builder templates and default",
+    "Existing 40 host alias mappings",
+    "Original canonical routes and publication dates",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "ownedGoogleBingToBanffBoundThenOptionalGetYourGuideFunnel": true,
+    "customGetYourGuideAgreementClaimed": false,
+    "supportEnquirySent": false,
+    "advertisingLaunched": false,
+    "budgetsOrBidsChanged": false,
+    "hostingSpecEnvironmentOrMerchantSettingsChanged": false,
+    "commissionRevenueProfitOrRankingUpliftMeasured": false
+  },
+  "remaining": {
+    "canonicalBodiesWithoutFullReview": 207,
+    "boundedPartialRepairsWithinThatCount": 8,
+    "otherWork": "Broader property fact/photo and legacy tool reviews remain incomplete. Current source review does not establish future availability, transport seats, room eligibility or terrain conditions.",
+    "nextReviewCandidates": [
+      {
+        "slug": "banff-dog-friendly",
+        "purpose": "Plan the complete visit with a dog; verify access, transport, leash and attraction conditions; reuse /dog-friendly/."
+      },
+      {
+        "slug": "banff-pet-friendly-hotels",
+        "purpose": "Compare actual pet-designated rooms and property-specific supervision and common-area rules; preserve exact provider URLs."
+      },
+      {
+        "slug": "banff-toddler-guide",
+        "purpose": "Plan flexible care, short outings, room arrangements and connections; verify stroller, restraint and facility rules; reuse /family-guide/."
+      },
+      {
+        "slug": "3-day-banff-itinerary",
+        "purpose": "Distinguish three calendar days from sightseeing days; reuse winter-nonski-3 and first-timer-3 templates with current access and admission sources."
+      }
+    ],
+    "consolidationGate": "Review current Search Console history, backlinks and actual internal-link context before recommending any new canonical or redirect change."
+  },
+  "evidenceRetention": "The production reports and this receipt are staged for the next substantive release; no evidence-only deployment is started."
+}

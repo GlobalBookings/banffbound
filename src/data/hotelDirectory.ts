@@ -161,6 +161,7 @@ const additionalSources: Record<string, HotelSourceLink[]> = {
     { label: "Current operator: Banff Collection by InnVest", url: "https://royalcanadianlodge.com/" },
     { label: "Official wellness, parking and dining", url: "https://royalcanadianlodge.com/amenities/" },
     { label: "Official hotel terms", url: "https://royalcanadianlodge.com/hotel-policies/" },
+    { label: "Official ordinary-pet exclusion FAQ", url: "https://royalcanadianlodge.com/contact/" },
   ],
   'brewster-mountain-lodge': [
     { label: "Official room categories", url: "https://brewstermountainlodge.com/banff-hotel-rooms/" },

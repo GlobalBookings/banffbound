@@ -1,3 +1,6 @@
+import { petTravelGuideMetadata } from './petTravelGuideOverrides';
+import { toddlerGuideMetadata } from './toddlerGuideOverrides';
+import { shortStayGuideMetadata } from './shortStayGuideOverrides';
 import { stayDecisionGuideMetadata } from './stayDecisionGuideOverrides';
 import { firstVisitGuideMetadata } from './firstVisitGuideOverrides';
 import { kananaskisDayGuideMetadata } from './kananaskisDayGuideOverrides';
@@ -50,7 +53,7 @@ export interface BlogPost {
   imageNote?: string;
 }
 
-const newlyReviewedMetadata: Record<string, Partial<BlogPost>> = { ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata, ...springSkiGuideMetadata, ...peytoGuideMetadata, ...scenicFlightGuideMetadata, ...goldenDayGuideMetadata, ...heliSkiGuideMetadata, ...skokiGuideMetadata, ...budgetGuideMetadata, ...fallSeasonGuideMetadata, ...larchHikingGuideMetadata, ...itineraryWeatherGuideMetadata, ...localBaseGuideMetadata, ...carRentalGuideMetadata, ...stayDecisionGuideMetadata, ...firstVisitGuideMetadata, ...kananaskisDayGuideMetadata };
+const newlyReviewedMetadata: Record<string, Partial<BlogPost>> = { ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata, ...springSkiGuideMetadata, ...peytoGuideMetadata, ...scenicFlightGuideMetadata, ...goldenDayGuideMetadata, ...heliSkiGuideMetadata, ...skokiGuideMetadata, ...budgetGuideMetadata, ...fallSeasonGuideMetadata, ...larchHikingGuideMetadata, ...itineraryWeatherGuideMetadata, ...localBaseGuideMetadata, ...carRentalGuideMetadata, ...stayDecisionGuideMetadata, ...firstVisitGuideMetadata, ...kananaskisDayGuideMetadata, ...petTravelGuideMetadata, ...toddlerGuideMetadata, ...shortStayGuideMetadata };
 
 const originalBlogPosts: BlogPost[] = [
   {

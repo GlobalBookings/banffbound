@@ -1,0 +1,95 @@
+{
+  "preparedAtUTC": "2026-10-30T04:23:19.829042+00:00",
+  "baselineRevision": "d32252e115b7a336b9436940da7ded19c196767a",
+  "previousGoalTurnClassification": "progress",
+  "previousProgressEvidence": "PR18 merged, exact deployed build and 255 HTML / 7 photos / 7 bare URLs / 100 redirect checks verified; receipt retained in this release.",
+  "status": "Authored sources frozen and independently reviewed; resolved comparison passed. Awaiting frozen combined verifier, clean committed build, browser QA, CI and production.",
+  "scope": {
+    "newFullReviewSlugs": [
+      "banff-dog-friendly",
+      "banff-pet-friendly-hotels",
+      "banff-toddler-guide",
+      "3-day-banff-itinerary"
+    ],
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 88,
+    "fullReviewsAfter": 92,
+    "partialOpeningRepairs": 8,
+    "newPublishedUrls": 0,
+    "newClientComponents": 0,
+    "newMerchantIdentifiers": 0,
+    "allCanonicalFactsReviewed": false,
+    "otherCanonicalBodiesByteIdentical": 291,
+    "originalPublicationDatesPreserved": 335,
+    "selectedExistingHotelPolicyClarifications": [
+      "Royal Canadian Lodge: ordinary pets excluded under official FAQ; service-animal arrangements separate."
+    ]
+  },
+  "interactionJourneys": [
+    "Dog guide to existing dog-friendly filters, pet-room comparison and transport questions",
+    "Pet-room comparison to actual hotel profiles, operator policies and owned booking comparisons",
+    "Toddler guide to existing family filters, room choices and six-step first-visit checklist",
+    "Three-day guide to exact existing winter-nonski-3 and first-timer-3 Trip Builder examples"
+  ],
+  "verificationTargets": {
+    "workflowChecks": 69,
+    "productionHtmlContractsBefore": 255,
+    "productionHtmlContractsAfter": 259,
+    "newUniqueContracts": 4,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "hostAliasMappings": 40,
+    "redirectChecks": 100,
+    "authoredBookingGuides": 41,
+    "curatedBookingContextPages": 43,
+    "bareCanonicalUrls": 7,
+    "realBlogLayoutSsrCases": 52
+  },
+  "preserved": [
+    "All nine Trip Builder templates and default",
+    "95 hotel identities and provider URLs",
+    "Existing shared trail, lake and Parkway data",
+    "Affiliate and measurement identifiers",
+    "Canonical routes, original publication dates and 40 host alias mappings",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "ownedGoogleBingToBanffBoundThenOptionalGetYourGuideFunnel": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "customGetYourGuideAgreementClaimed": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "203 canonical bodies will still lack a full review after this batch; eight contain bounded partial repairs.",
+    "Broader property fact/photo and legacy-tool reviews remain incomplete.",
+    "Current source review does not confirm future rooms, seats, operating dates, party eligibility or route conditions.",
+    "Campaign market, budget and bids remain unspecified; no ad launch has occurred."
+  ],
+  "goalStatus": "active",
+  "renderedBodyWords": {
+    "banff-dog-friendly": 2200,
+    "banff-pet-friendly-hotels": 2183,
+    "banff-toddler-guide": 2327,
+    "3-day-banff-itinerary": 2326
+  },
+  "independentReview": {
+    "shortStay": "Separate primary-source and actual template/controller review found no material issue; itinerary and owned handoffs fit the bounded scope.",
+    "petGuides": "Separate primary-source review verified property exclusions, patio differences, carrier policies and leash jurisdictions; final carrier wording corrected to lap-sized, enclosed pet and held at all times.",
+    "toddler": "Root read the entire body and freshly verified Health Canada sleep scope, Alberta vehicle/restraint guidance and Roam/Airporter policies; added explicit MCI coach seatbelt limitation."
+  },
+  "offlineVerifier": {
+    "passed": true,
+    "htmlContracts": 259,
+    "preservedPriorContracts": 255,
+    "protectedPhotos": 7,
+    "journeyFaqSourceNativeNegativeFixtures": 771,
+    "retainedFirstVisitComponentNegatives": 15,
+    "retainedFirstVisitEmittedModuleNegatives": 13,
+    "retainedTripBuilderNegatives": 18,
+    "realBlogLayoutSsrCases": 52
+  }
+}

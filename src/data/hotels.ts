@@ -369,7 +369,7 @@ const hotelRecords: Omit<Hotel, 'coordinateStatus'>[] = [
     roomFeatures: ["Standard Room: king or two queens", "Premier Room: fireplace or garden-terrace configuration", "Garden-terrace Premier Rooms: two-queen layout", "Deluxe Junior Suite: open layout and seating area", "Executive Suite: separate living area and wet bar"],
     amenities: ["Grotto-inspired pool, hot tub and steam room", "Evergreen Restaurant & Lounge", "Fitness room", "Heated underground parking: first come, first served; charges apply", "Seasonal ski storage"],
     dining: "Evergreen Restaurant & Lounge is on site. Confirm current meal service and whether your selected rate includes any food or drink.",
-    policies: "Confirm pet eligibility, accessible room requirements and rate terms directly. Ask for the complete quote including the operator’s local experience fee and parking; no fixed fee is quoted here.",
+    policies: "Ordinary pets are not permitted under the current official FAQ. Discuss service-animal arrangements and accessible room requirements directly. Ask for the complete quote including the operator’s local experience fee and parking; no fixed fee is quoted here.",
     address: "459 Banff Avenue, Banff, Alberta T1L 1C9",
     officialUrl: "https://royalcanadianlodge.com/rooms/",
     checkedOn: "2026-10-29",
