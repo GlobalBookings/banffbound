@@ -1,0 +1,199 @@
+{
+  "checkedAtUTC": "2026-10-30T02:35:52.261845+00:00",
+  "pullRequest": "https://github.com/GlobalBookings/banffbound/pull/17",
+  "initialCodeCommit": "6046b6d55306a806cabc5df397271b2b206bfd68",
+  "finalCodeCommit": "d0e60cfaf5c47cde2f783904c4ba1746f9fece3c",
+  "reviewedHead": "2bb07d0a43ef3ba0e8252edfa1fa482f0f258d29",
+  "mergedRevision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
+  "mergedAtUTC": "2026-10-30T02:28:13Z",
+  "buildReceipt": {
+    "formatVersion": 1,
+    "scope": "app-source-v2",
+    "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+    "builtAtUTC": "2026-10-30T02:29:31.940Z",
+    "sourceRevision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
+    "sourceFingerprint": "6f27c5b5080f52f259e0530fc2933082d15d29d2e3f7d460e449505e855cde29"
+  },
+  "ci": {
+    "pr": {
+      "run": 40991627424,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40991627424",
+      "revision": "2bb07d0a43ef3ba0e8252edfa1fa482f0f258d29",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123855137699,
+      "completedAt": "2026-10-30T02:27:15Z"
+    },
+    "main": {
+      "run": 40991868196,
+      "url": "https://github.com/GlobalBookings/banffbound/actions/runs/40991868196",
+      "revision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
+      "status": "completed",
+      "conclusion": "success",
+      "job": 123855939549,
+      "completedAt": "2026-10-30T02:29:45Z"
+    }
+  },
+  "cleanVerification": "research/itinerary-bases-clean-verification-2026-10-29.json",
+  "productionVerification": {
+    "report": "research/itinerary-bases-production-verification-2026-10-29.json",
+    "passed": true,
+    "htmlRoutes": 250,
+    "protectedPhotoHashes": 7,
+    "sitemapUrls": 517,
+    "stableExactRevisionAndFingerprint": true
+  },
+  "bareUrlVerification": {
+    "report": "research/itinerary-bases-bare-url-verification-2026-10-29.json",
+    "passed": 7,
+    "paths": [
+      "/blog/7-day-banff-itinerary/",
+      "/blog/rainy-day-banff/",
+      "/blog/lake-louise-village-guide/",
+      "/blog/canmore-day-trip/",
+      "/blog/banff-car-rental-tips/",
+      "/trip-builder/",
+      "/tools/"
+    ]
+  },
+  "redirectVerification": {
+    "report": "research/live-http-redirect-verification-2026-10-29.json",
+    "mappings": 40,
+    "checksPassed": 100
+  },
+  "browserProduction": {
+    "winterWeek": {
+      "url": "https://banffbound.com/trip-builder/?template=winter-week-7#your-trip",
+      "days": 7,
+      "outings": 8,
+      "templates": 9,
+      "removeDepartureShows6Days": true,
+      "undoRestores7Days": true,
+      "canmoreBaseShowsCompleteReturnChecks": true,
+      "banffBaseRestored": true,
+      "weekGuideVisibleOutsideForm": true,
+      "screenshot": "/tmp/banffbound-week-planner-live-2026-10-29.jpg"
+    },
+    "guide": {
+      "url": "https://banffbound.com/blog/7-day-banff-itinerary/",
+      "originalPublication": "2026-02-05",
+      "reviewDate": "2026-10-29",
+      "curated": true,
+      "faqCount": 5,
+      "nativeFirstFaqOpens": true,
+      "winterAndSummerDeepLinks": true
+    },
+    "guideToSummer": {
+      "path": "/trip-builder/",
+      "hash": "#your-trip",
+      "season": "summer",
+      "template": "summer-week-7",
+      "days": 7,
+      "outings": 8
+    },
+    "localGuides": [
+      {
+        "affiliateId": "1101l3MtWX",
+        "curated": "true",
+        "dates": [
+          "2026-01-05T00:00:00.000Z",
+          "2026-10-29T00:00:00.000Z"
+        ],
+        "documentWidth": 1280,
+        "faqCount": 5,
+        "hotelDestination": "Lake Louise, Alberta",
+        "openFaqCount": 1,
+        "path": "/blog/lake-louise-village-guide/",
+        "title": "Lake Louise Village: Stops, Supplies, Winter Days & Where to Stay",
+        "width": 1280
+      },
+      {
+        "affiliateId": "1101l3MtWX",
+        "curated": "true",
+        "dates": [
+          "2026-01-28T00:00:00.000Z",
+          "2026-10-29T00:00:00.000Z"
+        ],
+        "documentWidth": 1280,
+        "faqCount": 5,
+        "hotelDestination": "Canmore, Alberta",
+        "openFaqCount": 1,
+        "path": "/blog/canmore-day-trip/",
+        "title": "Canmore Day Trip from Banff: Town, Nordic & Trail Choices",
+        "width": 1280
+      }
+    ],
+    "viewportWidth": 1280,
+    "documentWidth": 1280,
+    "optionalProviderScriptAndFrameElements": 0,
+    "networkTraceClaimed": false,
+    "merchantPrintClipboardOrEnquiryUsed": false,
+    "localPreviewStopped": true
+  },
+  "scope": {
+    "newFullReviewSlugs": [
+      "7-day-banff-itinerary",
+      "banff-car-rental-tips",
+      "canmore-day-trip",
+      "lake-louise-village-guide",
+      "rainy-day-banff"
+    ],
+    "canonicalBodies": 295,
+    "fullReviewsBefore": 78,
+    "fullReviewsAfter": 83,
+    "otherCanonicalBodiesByteIdentical": 290,
+    "partialOpeningRepairs": 8,
+    "originalPublicationDatesPreserved": 335,
+    "newEditableWeekTemplates": [
+      "winter-week-7",
+      "summer-week-7"
+    ],
+    "plannerTemplatesBefore": 7,
+    "plannerTemplatesAfter": 9,
+    "legacyTemplatesAndDefaultPreserved": true,
+    "newPublishedUrls": 0,
+    "allCanonicalFactsReviewed": false
+  },
+  "preserved": [
+    "Existing routes, aliases and original publication dates",
+    "All 95 hotel identities/provider URLs",
+    "Shared reviewed trail/lake/Parkway records",
+    "Affiliate and measurement identifiers",
+    "Useful inherited native affiliate searches, explicitly labelled with their actual destination and scope",
+    "Seven existing planner templates and the original three-day winter default",
+    "Unrelated user work"
+  ],
+  "commercialBoundary": {
+    "affiliateBookingsFirst": true,
+    "getYourGuideOwnedLandingPageFunnelRetained": true,
+    "supportEnquirySent": false,
+    "adsLaunched": false,
+    "budgetOrBidsChanged": false,
+    "hostingSpecOrEnvironmentChanged": false,
+    "commissionRevenueProfitOrRankUpliftClaimed": false
+  },
+  "remaining": [
+    "212 canonical blog bodies lack a full review; eight have bounded opening repairs.",
+    "Broader property fact/photo and remaining legacy-tool reviews are incomplete.",
+    "Current source checks do not establish future operating dates, transport seats, room availability or terrain suitability.",
+    "Campaign market, budget and bids are unspecified; no paid-ad launch has occurred."
+  ],
+  "nextReviewCandidates": {
+    "slugs": [
+      "where-to-stay-in-banff",
+      "banff-hostel-guide",
+      "kananaskis-day-trip",
+      "banff-mobile-connectivity",
+      "banff-first-time-tips"
+    ],
+    "status": "Read-only registry/body audit; full source reviews have not begun.",
+    "possibleConsolidation": [
+      "banff-mistakes-to-avoid",
+      "banff-packing-list",
+      "3-day-banff-itinerary",
+      "5-day-banff-itinerary"
+    ],
+    "consolidationStatus": "Recommendations only; canonical/traffic/redirect scope requires a concrete separate review. No new redirects applied."
+  },
+  "goalStatus": "active"
+}

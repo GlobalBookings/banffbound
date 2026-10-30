@@ -1,0 +1,55 @@
+---
+import { buildFirstVisitChecklist, firstVisitSteps } from '../data/firstVisitPlanning';
+const initial = buildFirstVisitChecklist();
+---
+<section id="first-visit-planner" class="first-visit-planner" aria-labelledby="first-visit-heading">
+  <p class="first-visit-eyebrow">One piece at a time</p>
+  <h2 id="first-visit-heading">Turn the first-visit guide into your next six questions</h2>
+  <p>Use these steps to organise the journey. Checkmarks are a planning aid on this page; they do not confirm bookings, eligibility or suitable conditions. This tool asks for no personal details and creates no saved copy.</p>
+  <div id="first-visit-progress" class="first-visit-progress" hidden>
+    <p id="first-visit-status" role="status" aria-live="polite">{initial.summary}</p>
+    <p id="first-visit-next">{initial.detail}</p>
+    <div class="first-visit-actions"><a id="first-visit-next-link" href={initial.nextHref!}>Go to the next question ↓</a><button type="button" id="first-visit-clear">Clear checkmarks</button></div>
+  </div>
+  <noscript><p>The six steps and their guide links work without JavaScript. Enable it to mark your own progress and jump to the next question.</p></noscript>
+  <div class="first-visit-grid">
+    {firstVisitSteps.map((step, index) => <article id={`first-visit-${step.id}`} class="first-visit-step" data-first-visit-step={step.id}>
+      <p class="first-visit-number">Step {index + 1}</p>
+      <h3>{step.title}</h3>
+      <p>{step.task}</p>
+      <ul>{step.links.map(link => <li><a href={link.href}>{link.label} →</a></li>)}</ul>
+      <label class="first-visit-check" data-first-visit-check-wrap hidden><input type="checkbox" value={step.id} data-first-visit-check aria-label={`Mark ${step.title.toLowerCase()} as planned`} autocomplete="off" /> I have a plan for this step</label>
+    </article>)}
+  </div>
+</section>
+<script>
+  import { buildFirstVisitChecklist } from '../data/firstVisitPlanning';
+  const section = document.getElementById('first-visit-planner');
+  if (section) {
+    const checks = [...section.querySelectorAll<HTMLInputElement>('[data-first-visit-check]')];
+    const status = section.querySelector<HTMLElement>('#first-visit-status');
+    const detail = section.querySelector<HTMLElement>('#first-visit-next');
+    const nextLink = section.querySelector<HTMLAnchorElement>('#first-visit-next-link');
+    const clear = section.querySelector<HTMLButtonElement>('#first-visit-clear');
+    const progress = section.querySelector<HTMLElement>('#first-visit-progress');
+    if (checks.length === 6 && status && detail && nextLink && clear && progress) {
+      const render = () => {
+        const state = buildFirstVisitChecklist(checks.filter(check => check.checked).map(check => check.value));
+        status.textContent = state.summary;
+        detail.textContent = state.detail;
+        nextLink.hidden = state.nextHref === null;
+        if (state.nextHref) nextLink.setAttribute('href', state.nextHref);
+        else nextLink.removeAttribute('href');
+        for (const card of section.querySelectorAll<HTMLElement>('[data-first-visit-step]')) card.dataset.marked = String(state.checkedIds.includes(card.dataset.firstVisitStep as typeof state.checkedIds[number]));
+      };
+      for (const check of checks) { check.checked = false; check.addEventListener('change', render); }
+      clear.addEventListener('click', () => { for (const check of checks) check.checked = false; render(); });
+      render();
+      for (const wrap of section.querySelectorAll<HTMLElement>('[data-first-visit-check-wrap]')) wrap.hidden = false;
+      progress.hidden = false;
+    }
+  }
+</script>
+<style>
+  .first-visit-planner{margin:3rem 0;padding:1.5rem;background:var(--color-bg-alt);border-radius:16px;scroll-margin-top:6rem}.first-visit-eyebrow,.first-visit-number{text-transform:uppercase;letter-spacing:.09em;font-size:.76rem;font-weight:700;color:var(--color-primary)}.first-visit-progress{padding:1.1rem;background:#fff;border:1px solid #cdd4cd;border-radius:10px;margin:1.5rem 0}.first-visit-progress #first-visit-status{font-weight:700;margin:0 0 .5rem}.first-visit-progress #first-visit-next{margin:0 0 1rem}.first-visit-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}.first-visit-actions button{padding:.65rem .9rem;border:1px solid var(--color-primary);border-radius:7px;background:#fff;color:var(--color-primary);font:inherit;font-weight:700;cursor:pointer}.first-visit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.first-visit-step{padding:1.2rem;background:#fff;border:1px solid #d8ddd7;border-radius:10px;scroll-margin-top:6rem;min-width:0}.first-visit-step[data-marked="true"]{border-color:var(--color-primary);box-shadow:inset 4px 0 var(--color-primary)}.first-visit-step h3{margin:.45rem 0 .75rem}.first-visit-step ul{padding-left:1.2rem}.first-visit-check{display:flex;gap:.65rem;align-items:flex-start;margin-top:1rem;padding-top:1rem;border-top:1px solid #e3e7e1;font-weight:700;font-size:.9rem;cursor:pointer}.first-visit-check input{width:1.15rem;height:1.15rem;flex:none;margin-top:.15rem;accent-color:var(--color-primary)}.first-visit-planner :focus-visible{outline:3px solid var(--color-accent);outline-offset:4px}.first-visit-progress[hidden],.first-visit-check[hidden],#first-visit-next-link[hidden]{display:none}@media(max-width:640px){.first-visit-grid{grid-template-columns:1fr}.first-visit-planner{padding:1rem}.first-visit-actions a,.first-visit-actions button{max-width:100%;overflow-wrap:anywhere}}
+</style>

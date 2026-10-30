@@ -1,3 +1,6 @@
+import { stayDecisionGuideMetadata } from './src/data/stayDecisionGuideOverrides.ts';
+import { firstVisitGuideMetadata } from './src/data/firstVisitGuideOverrides.ts';
+import { kananaskisDayGuideMetadata } from './src/data/kananaskisDayGuideOverrides.ts';
 import { itineraryWeatherGuideMetadata } from './src/data/itineraryWeatherGuideOverrides.ts';
 import { localBaseGuideMetadata } from './src/data/localBaseGuideOverrides.ts';
 import { carRentalGuideMetadata } from './src/data/carRentalGuideOverrides.ts';
@@ -41,7 +44,7 @@ import { blogRedirects } from './src/data/redirects.mjs';
 import { winterGuideMetadata } from './src/data/winterGuideOverrides.ts';
 import { winterTripMetadata } from './src/data/winterTripOverrides.ts';
 import { winterActivityMetadata } from './src/data/winterActivityOverrides.ts';
-const reviewedBlogMetadata = { ...winterGuideMetadata, ...winterActivityMetadata, ...winterTripMetadata, ...winterResortMetadata, ...winterSeasonMetadata, ...viewGuideMetadata, ...winterWarmUpMetadata, ...winterWellnessLegacyMetadata, ...winterLibraryMetadata, ...visitorDestinationMetadata, ...lakeJourneyMetadata, ...cyclingGuideMetadata, ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata, ...springSkiGuideMetadata, ...peytoGuideMetadata, ...scenicFlightGuideMetadata, ...goldenDayGuideMetadata, ...heliSkiGuideMetadata, ...skokiGuideMetadata, ...budgetGuideMetadata, ...fallSeasonGuideMetadata, ...larchHikingGuideMetadata, ...itineraryWeatherGuideMetadata, ...localBaseGuideMetadata, ...carRentalGuideMetadata };
+const reviewedBlogMetadata = { ...winterGuideMetadata, ...winterActivityMetadata, ...winterTripMetadata, ...winterResortMetadata, ...winterSeasonMetadata, ...viewGuideMetadata, ...winterWarmUpMetadata, ...winterWellnessLegacyMetadata, ...winterLibraryMetadata, ...visitorDestinationMetadata, ...lakeJourneyMetadata, ...cyclingGuideMetadata, ...bowLakeGuideMetadata, ...jasperGuideMetadata, ...diningGuideMetadata, ...cabinGuideMetadata, ...nightlifeGuideMetadata, ...liveMusicGuideMetadata, ...drinkOfferGuideMetadata, ...parkwayGuideMetadata, ...minnewankaGuideMetadata, ...gondolaGuideMetadata, ...springSkiGuideMetadata, ...peytoGuideMetadata, ...scenicFlightGuideMetadata, ...goldenDayGuideMetadata, ...heliSkiGuideMetadata, ...skokiGuideMetadata, ...budgetGuideMetadata, ...fallSeasonGuideMetadata, ...larchHikingGuideMetadata, ...itineraryWeatherGuideMetadata, ...localBaseGuideMetadata, ...carRentalGuideMetadata, ...stayDecisionGuideMetadata, ...firstVisitGuideMetadata, ...kananaskisDayGuideMetadata };
 const reviewedBlogDates = new Map(Object.entries(reviewedBlogMetadata).map(([slug, post]) => [slug, post.lastUpdated]));
 
 const excludedTrails = new Set(trails.filter(trail => trail.directoryEligible === false).map(trail => trail.slug));

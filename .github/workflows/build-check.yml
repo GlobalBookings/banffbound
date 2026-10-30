@@ -78,6 +78,10 @@ jobs:
           node scripts/check-itinerary-weather-guides.mjs
           node scripts/check-local-base-guides.mjs
           node scripts/check-car-rental-guide.mjs
+          node scripts/check-stay-decision-guides.mjs
+          node scripts/check-first-visit-guides.mjs
+          node scripts/check-kananaskis-day-guide.mjs
+          node scripts/check-first-visit-planning.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs

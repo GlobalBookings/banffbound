@@ -1,0 +1,73 @@
+{
+  "checkedAtUTC": "2026-10-30T03:14:28.685Z",
+  "passed": true,
+  "referenceBaselineRevision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
+  "sourceBaseline": {
+    "archiveSourceCommit": "d0e60cfaf5c47cde2f783904c4ba1746f9fece3c",
+    "archiveRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-itinerary-bases-clean-rd759ybq",
+    "exactReferenceRevisionCheckout": false,
+    "selectedAppSourceEquivalent": true,
+    "observedArchiveFingerprint": "6f27c5b5080f52f259e0530fc2933082d15d29d2e3f7d460e449505e855cde29",
+    "savedProductionReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T02:29:31.940Z",
+      "sourceRevision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
+      "sourceFingerprint": "6f27c5b5080f52f259e0530fc2933082d15d29d2e3f7d460e449505e855cde29"
+    },
+    "evidenceFiles": [
+      "/tmp/banffbound-itinerary-bases-clean-summary.json",
+      "/tmp/banffbound-itinerary-bases-live-build-info.json"
+    ],
+    "note": "Compared with the retained Gitless clean archive from d0e60cf. Its freshly recomputed app-source-v2 fingerprint equals the saved livebda0bff deployment fingerprint; selected source includes the blog data and registry. This is application-source equivalence, not a fresh Git checkout of the merge or a new live deployment check."
+  },
+  "scope": "Resolved canonical article body bytes and all original publication dates. Metadata, generic booking contexts, tools pages and discovery links are separate integration/QA scopes.",
+  "canonical": 295,
+  "replacedBodies": 5,
+  "otherBodiesByteIdentical": 290,
+  "changedSlugs": [
+    "banff-first-time-tips",
+    "banff-hostel-guide",
+    "banff-mobile-connectivity",
+    "kananaskis-day-trip",
+    "where-to-stay-in-banff"
+  ],
+  "changedBodyHashes": [
+    {
+      "slug": "banff-first-time-tips",
+      "before": "1271b91d2e1e0a833ef5639deac4b39f3536df590ce2b0994fa26d71ea5293d7",
+      "after": "13b466d2cd9f8c5701009d24b638fdcef71ee123f9a7f061c280030ccb4a2909"
+    },
+    {
+      "slug": "banff-hostel-guide",
+      "before": "a6a18a9c7a989c8b12eebaad70076d9dfe4978432175527329165755bd9a7379",
+      "after": "20f382b4f93e8816ba0d3a8db3c3904831193d977094d1ca5522aba4b1e6cd12"
+    },
+    {
+      "slug": "banff-mobile-connectivity",
+      "before": "0b4ffd40e7793bb62f00be2f4bd2231092f7c636d7474470c1fe6915a27147d6",
+      "after": "ec644fae145e3449b5a0369824ae7797e665e60f9b181861ae5b7e374d7aee6a"
+    },
+    {
+      "slug": "kananaskis-day-trip",
+      "before": "6808f1d14ad4c850b24439cd226a2d057300c77c08a2baa947afdf9695e76c03",
+      "after": "25c73674979c57ae19be130b89d2f0814a106b44f0fe68a34efa1ae6d51a053f"
+    },
+    {
+      "slug": "where-to-stay-in-banff",
+      "before": "6f0562b5b4bb18b24f85f422372ad4f47d4622cc5b9387e5d23e4059a5061e1c",
+      "after": "54e40301653be6ce51278021e798909b3bdf37177958b3b5da75ba3aafb02ef1"
+    }
+  ],
+  "fullBodyReviews": {
+    "before": 83,
+    "after": 88
+  },
+  "partialCorrections": {
+    "before": 8,
+    "after": 8
+  },
+  "originalPublicationsPreserved": 335,
+  "originalPublicationSha256": "b4415b75aebb304350fc15ed0565a90cff66935f2bf57e00686b06a229f18008"
+}
