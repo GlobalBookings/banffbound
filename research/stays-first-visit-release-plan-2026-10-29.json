@@ -1,7 +1,7 @@
 {
   "preparedAtUTC": "2026-10-30T03:18:13.814955+00:00",
   "baselineRevision": "bda0bfffbed5a3415a02322f398c93f018f923a4",
-  "status": "Initial committed source passed66checks/build/strictaudit; verifier corrected for the exact reviewed Astro inline checklist program; final exact-source clean run pending",
+  "status": "Final committed-source66checks/build/strictaudit/255builtHTML/7photos and desktop-phoneQA passed; pending CI and production proof",
   "scope": {
     "newFullReviewSlugs": [
       "banff-first-time-tips",
@@ -90,5 +90,6 @@
     "Source checks do not confirm future opening dates, seats, rooms, personal device service, terrain suitability or emergency connectivity.",
     "Campaign market, budget and bids are unspecified; no paid-ad launch has occurred."
   ],
-  "goalStatus": "active"
+  "goalStatus": "active",
+  "cleanVerification": "research/stays-first-visit-clean-verification-2026-10-29.json"
 }

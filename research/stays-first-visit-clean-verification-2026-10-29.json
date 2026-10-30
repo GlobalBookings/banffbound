@@ -1,0 +1,454 @@
+{
+  "startedAtUTC": "2026-10-30T03:29:54.350291+00:00",
+  "expectedSourceCommit": "4fabcdaeadd201362a2e9f14c6f5939feeeb4586",
+  "sourceCommit": "4fabcdaeadd201362a2e9f14c6f5939feeeb4586",
+  "cleanRoot": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-stays-first-visit-clean-lkfmxb0m",
+  "workflowCheckCount": 66,
+  "checks": [
+    {
+      "path": "scripts/check-trip-planner.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-day-ideas.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-directory.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trail-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-production-redirects.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-activities.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paddling.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-paid-landings.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-banff-hotel-landing-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-louise-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-winter-activity-landing.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cycling-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-internal-linker.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-blog-content.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-bow-lake-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-jasper-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-cabin-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-article-booking-context.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-nightlife-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-live-music-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-drink-offer-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-evening-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-minnewanka-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-gondola-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parkway-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-spring-ski-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-peyto-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-scenic-flight-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-golden-day-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-heli-ski-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-restaurant-source-reviews.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-dining-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-skoki-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-trip-cost-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-altitude-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-larch-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-budget-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-fall-season-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-larch-hiking-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-park-pass-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-itinerary-weather-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-local-base-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-car-rental-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-stay-decision-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-first-visit-guides.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-kananaskis-day-guide.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-first-visit-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lesson-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-stay-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-consent.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-embeds.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-wildlife-safety.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-lake-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-parking-planning.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-build-provenance.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-hotel-directory-quality-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "research/check-rental-planning-2026-10-29.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-weather-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-snow-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-source-freshness.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-road-source.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-town-events.mjs",
+      "passed": true
+    },
+    {
+      "path": "scripts/check-affiliate-navigation.mjs",
+      "passed": true
+    }
+  ],
+  "audit": {
+    "pages": 605,
+    "indexable_documents": 519,
+    "counts": {},
+    "winter_counts": {},
+    "findings": []
+  },
+  "builtVerification": {
+    "passed": true,
+    "mode": "read-only-built-directory",
+    "htmlRoutes": 255,
+    "htmlPassed": 255,
+    "photosPassed": 7,
+    "fullReviews": 88,
+    "remainingPartialRepairs": 8,
+    "sitemapUrls": 517,
+    "buildReceipt": {
+      "formatVersion": 1,
+      "scope": "app-source-v2",
+      "scopeNote": "Selected regular .astro/.ts/.mjs/.js/.css/.json app source and explicit build inputs; excludes volatile snapshots, assets, generated outputs, private files and environment data. Revision is null unless the selected source matches local HEAD.",
+      "builtAtUTC": "2026-10-30T03:30:24.429Z",
+      "sourceRevision": null,
+      "sourceFingerprint": "f97f43630379b876aa05fbe952364476753ce4aa1cb9407c63a90387c9edf85a"
+    },
+    "buildReceiptStable": true,
+    "productionIdentityVerified": false,
+    "failures": []
+  },
+  "passed": true,
+  "stage": "complete",
+  "archivePath": "/var/folders/7f/c1llsxyj5v34zrsyysnh_rj80000gn/T/banffbound-stays-first-visit-clean-lkfmxb0m.tar",
+  "finishedAtUTC": "2026-10-30T03:30:35.969173+00:00",
+  "recordedAtUTC": "2026-10-30T03:48:07.861242+00:00",
+  "validationScope": "Exact committed-source clean archive; local node_modules reused. Remote CI and production identity remain pending.",
+  "browserQA": {
+    "sourceCommit": "5f69ca82b9b897ec49c4d0bb4aff004186b7e361",
+    "sourceFingerprint": "f97f43630379b876aa05fbe952364476753ce4aa1cb9407c63a90387c9edf85a",
+    "mode": "Local browser QA; production proof pending",
+    "desktop": {
+      "width": 1280,
+      "cards": 6,
+      "initialMarked": 0,
+      "backupAndArrivalMarked": 2,
+      "nextQuestionAfterTwo": "base",
+      "nativeNextLinkChangesFragment": true,
+      "allMarked": 6,
+      "allMarkedDoesNotClaimReadiness": true,
+      "allMarkedHidesAndRemovesNextHref": true,
+      "clearRestoresZero": true,
+      "reloadAfterOneMarkedRestoresZero": true
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "plannerDocumentWidth": 390,
+      "keyboardSpaceTogglesMarkAndClear": true,
+      "articles": [
+        {
+          "curated": "true",
+          "dates": [
+            "2026-01-10T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "emergencyActions": [],
+          "faqCount": 5,
+          "hotelDestination": "Banff, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/where-to-stay-in-banff/",
+          "title": "Where to Stay Around Banff: Bases, Rooms & Winter Journeys",
+          "width": 390
+        },
+        {
+          "curated": "true",
+          "dates": [
+            "2026-01-08T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "emergencyActions": [],
+          "faqCount": 5,
+          "hotelDestination": "Banff, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/banff-hostel-guide/",
+          "title": "Banff Hostels: Dorms, Private Rooms, Arrival & Wilderness Stays",
+          "width": 390
+        },
+        {
+          "curated": "true",
+          "dates": [
+            "2025-11-18T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "emergencyActions": [],
+          "faqCount": 5,
+          "hotelDestination": "Banff, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/banff-first-time-tips/",
+          "title": "First Time in Banff: Arrival, Bases & a Six-Step Trip Plan",
+          "width": 390
+        },
+        {
+          "curated": "true",
+          "dates": [
+            "2025-09-10T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "emergencyActions": [
+            "tel:911",
+            "tel:+14037624506"
+          ],
+          "faqCount": 5,
+          "hotelDestination": "Banff, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/banff-mobile-connectivity/",
+          "title": "Banff Cell Service & Offline Planning: Maps, Roaming and SOS",
+          "width": 390
+        },
+        {
+          "curated": "true",
+          "dates": [
+            "2025-12-11T00:00:00.000Z",
+            "2026-10-29T00:00:00.000Z"
+          ],
+          "documentWidth": 390,
+          "emergencyActions": [],
+          "faqCount": 5,
+          "hotelDestination": "Kananaskis, Alberta",
+          "openFaqs": 1,
+          "optionalProviderElements": 0,
+          "path": "/blog/kananaskis-day-trip/",
+          "title": "Kananaskis Day Trip from Banff: Winter, Summer & Spa Plans",
+          "width": 390
+        }
+      ]
+    },
+    "optionalProviderScriptAndFrameElements": 0,
+    "networkTraceClaimed": false,
+    "emergencyCallMerchantPrintClipboardOrEnquiryUsed": false,
+    "consentPreferencesChanged": false,
+    "finalSourceCommit": "4fabcdaeadd201362a2e9f14c6f5939feeeb4586",
+    "finalSelectedAppFingerprintMatches": true,
+    "finalPreviewReload": {
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "initialMarked": 0,
+      "cards": 6,
+      "checks": 6
+    },
+    "nativeGuideEntry": {
+      "method": "Keyboard Enter on the guide introduction link",
+      "hash": "#first-visit-planner",
+      "completedTargetTop": 95.765625
+    },
+    "checklistToHotelComparison": {
+      "path": "/book/banff-hotels/",
+      "canonical": "https://banffbound.com/book/banff-hotels/",
+      "nativeHotelLinks": 6,
+      "providerBookingClicked": false
+    },
+    "viewportOverrideReset": true,
+    "temporaryPhoneTabClosed": true,
+    "restoredDesktopVerifiedInFreshTab": true,
+    "scopeNote": "Initial 5f69ca8 interaction and 390px article tests match the final 4fabcda selected application fingerprint. Final archive was reloaded at 1280px; native guide entry and the hotel-comparison handoff were verified. Existing consent preferences were retained."
+  },
+  "verifierCorrection": {
+    "initialFailure": "Astro emitted the reviewed checklist as a small inline module outside the component section.",
+    "applicationSourceChanged": false,
+    "reviewedProgramCharacters": 4058,
+    "reviewedProgramSha256": "23f8f15ae29817e9d9563e542543218fdc1a63ab382a8148206c69290d1d6c38",
+    "emittedProgramNegativeFixtures": 13,
+    "exactMarkupCountAndPositionRequired": true,
+    "finalBuiltVerificationPassed": true
+  }
+}
