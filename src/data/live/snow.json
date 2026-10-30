@@ -2,15 +2,15 @@
   "schemaVersion": 2,
   "provider": "Official resort report pages",
   "experimental": true,
-  "updatedAt": "2026-10-30T19:00:42.409Z",
-  "retrievedAt": "2026-10-30T19:00:42.409Z",
+  "updatedAt": "2026-10-30T23:29:49.802Z",
+  "retrievedAt": "2026-10-30T23:29:49.802Z",
   "resorts": [
     {
       "id": "sunshine",
       "name": "Sunshine Village",
       "website": "https://www.skibanff.com/the-mountain/mountain-report/current-conditions",
       "sourceUrl": "https://www.skibanff.com/the-mountain/mountain-report/current-conditions",
-      "retrievedAt": "2026-10-30T19:00:42.245Z",
+      "retrievedAt": "2026-10-30T23:29:48.406Z",
       "sourceReportedAt": null,
       "sourceReportedAtText": "Friday, October 30th, 2026 7:52 AM",
       "sourceReportDate": "2026-10-30",
@@ -52,13 +52,13 @@
       "name": "Lake Louise Ski Resort",
       "website": "https://www.skilouise.com/snow-conditions/",
       "sourceUrl": "https://www.skilouise.com/snow-conditions/",
-      "retrievedAt": "2026-10-30T19:00:42.405Z",
+      "retrievedAt": "2026-10-30T23:29:49.795Z",
       "sourceReportedAt": null,
-      "sourceReportedAtText": "Friday, October 30, 2026 at 10:20 AM",
+      "sourceReportedAtText": "Friday, October 30, 2026 at 3:16 PM",
       "sourceReportDate": "2026-10-30",
       "sourceTimeZone": null,
       "status": null,
-      "reportSummary": "Winter Opening set for November 6",
+      "reportSummary": "We're Opening Early: Sunday, November 1",
       "baseDepth": null,
       "newSnow24h": null,
       "seasonTotal": null,
@@ -75,54 +75,24 @@
       "name": "Mt. Norquay",
       "website": "https://banffnorquay.com/conditions/",
       "sourceUrl": "https://banffnorquay.com/conditions/",
-      "retrievedAt": "2026-10-30T19:00:42.347Z",
+      "retrievedAt": "2026-10-30T23:29:48.692Z",
       "sourceReportedAt": null,
-      "sourceReportedAtText": "Friday, October 30, 2026",
-      "sourceReportDate": "2026-10-30",
+      "sourceReportedAtText": null,
+      "sourceReportDate": null,
       "sourceTimeZone": null,
       "status": null,
-      "reportSummary": "Winter is on the way and our tentative opening day is November 7th. Think snow!",
-      "baseDepth": "0 cm",
-      "newSnow24h": "5 cm",
-      "seasonTotal": "23 cm",
-      "openRuns": 0,
-      "totalRuns": 80,
+      "reportSummary": null,
+      "baseDepth": null,
+      "newSnow24h": null,
+      "seasonTotal": null,
+      "openRuns": null,
+      "totalRuns": null,
       "openLifts": null,
       "totalLifts": null,
-      "measurements": {
-        "newSnow24h": {
-          "value": 5,
-          "unit": "cm",
-          "label": "Last 24 Hours",
-          "location": null
-        },
-        "baseDepth": {
-          "value": 0,
-          "unit": "cm",
-          "label": "Snow Base",
-          "location": "Upper Mountain"
-        },
-        "seasonTotal": {
-          "value": 23,
-          "unit": "cm",
-          "label": "Year to Date Snowfall",
-          "location": "Upper Mountain"
-        },
-        "openRuns": {
-          "value": 0,
-          "unit": "runs",
-          "label": "Runs Open",
-          "location": null
-        },
-        "totalRuns": {
-          "value": 80,
-          "unit": "runs",
-          "label": "Reported run denominator",
-          "location": null
-        }
-      },
+      "measurements": {},
       "parser": "experimental-html-v1",
-      "availability": "reported-values"
+      "availability": "unavailable",
+      "error": "Official report values could not be verified."
     }
   ]
 }
