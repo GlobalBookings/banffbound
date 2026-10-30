@@ -4,7 +4,7 @@
   "baselineFingerprint": "6300bd57d321a66dac325fdd78c932d4f1d6fa8ae3dd55c0dd32ed8efe9ae71a",
   "previousGoalTurnClassification": "progress",
   "previousProgressEvidence": "PR20 merged and exact production revision/fingerprint,262 HTML/seven photos/seven normal URLs/100 redirects and browser QA verified. Six post-live evidence files are retained in this release.",
-  "status": "App source frozen after local desktop/390px browser QA; verifier and final clean committed build pending.",
+  "status": "Committed source passed75 checks, full build, strict605 HTML/519 indexable audit with zero findings,263 built contracts/seven photos, offline fixtures and final frozen desktop/320px preview. Awaiting PR/main CI and exact production verification.",
   "goalStatus": "active",
   "broaderGoalComplete": false,
   "scope": {
@@ -78,5 +78,31 @@
     "Source/render/UI checks do not prove conversion uplift, commission revenue or future availability.",
     "Broader site design and source quality work continues; campaign market/budget/bids remain unspecified."
   ],
-  "independentReview": "No material source concerns: credible copy, route purposes, exact Footer form/account, illustrative image context, source/no-JS fallbacks, font host/loading and disclosure focus behavior."
+  "independentReview": "No material source concerns: credible copy, route purposes, exact Footer form/account, illustrative image context, source/no-JS fallbacks, font host/loading and disclosure focus behavior.",
+  "applicationSourceCommit": "d1f24435ed464a551f2c6b21f6719fcc964e5943",
+  "sourceFingerprint": "766b9085462213f68714d4888aed151e771c94b0c6df3ce8383d567b308e5c0a",
+  "cleanVerification": "research/site-entry-clean-verification-2026-10-29.json",
+  "offlineVerifier": {
+    "passed": true,
+    "uniqueRoutes": 263,
+    "retainedPriorRoutes": 262,
+    "newHomeNegatives": 15,
+    "newToolNegatives": 10,
+    "newQuickComparisonNegatives": 10,
+    "retainedJourneyNegatives": 903,
+    "retainedFirstVisitComponentNegatives": 15,
+    "retainedFirstVisitModuleNegatives": 13,
+    "retainedTripBuilderNegatives": 18,
+    "retainedAccessibilityNegatives": 47
+  },
+  "frozenBrowserQa": {
+    "desktopWidth": 1280,
+    "documentFitsDesktop": true,
+    "lastHeroChoiceBottom": 612.59375,
+    "narrowPhoneWidth": 320,
+    "narrowPhoneDocumentWidth": 320,
+    "primaryChoiceBottom": 543.65625,
+    "allThreeNativeChoicesPresent": true,
+    "fourDesktopControlledPanelsPresent": true
+  }
 }
