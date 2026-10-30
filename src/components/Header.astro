@@ -15,7 +15,7 @@ const megaMenus = {
           { href: '/winter', label: 'Winter Guide' },
           { href: '/book/banff-winter-activities', label: 'Compare Winter Experiences' },
           { href: '/hiking', label: 'Hiking' },
-          { href: '/trail-map', label: 'Interactive Trail Map' },
+          { href: '/trail-map', label: 'Trail Map & Listings' },
           { href: '/lakes', label: 'Lakes' },
           { href: '/eat-and-drink', label: 'Eat & Drink' },
           { href: '/skiing', label: 'Skiing & Snowboarding' },
@@ -43,7 +43,7 @@ const megaMenus = {
       },
     ],
     featured: [
-      { href: '/trail-map', image: '/images/menu/trail-map.png', title: 'Interactive Trail Map', subtitle: '80+ trails with GPS routes' },
+      { href: '/trail-map', image: '/images/menu/trail-map.png', title: 'Trail Map & Listings', subtitle: 'Trail listings and approximate points' },
       { href: '/lakes', image: '/images/menu/lakes.png', title: 'Iconic Lakes', subtitle: 'Lake Louise, Moraine & more' },
       { href: '/eat-and-drink', image: '/images/menu/eat-and-drink.png', title: 'Eat & Drink', subtitle: 'Restaurants, bars & cafes' },
     ],
@@ -70,7 +70,7 @@ const megaMenus = {
           { href: '/icefields-parkway-planner', label: 'Icefields Parkway' },
           { href: '/ski-day-planner', label: 'Ski Day Planner' },
           { href: '/ski-pass-calculator', label: 'Ski Pass Calculator' },
-          { href: '/tools', label: 'All 30+ Tools', cta: true },
+          { href: '/tools', label: 'Planning Tools & Guides', cta: true },
         ],
       },
       {
@@ -88,7 +88,7 @@ const megaMenus = {
       },
     ],
     featured: [
-      { href: '/tools', image: '/images/menu/planning-tools.png', title: 'Planning Tools', subtitle: '30+ free interactive guides' },
+      { href: '/tools', image: '/images/menu/planning-tools.png', title: 'Planning Tools', subtitle: 'Checklists, maps and comparisons' },
       { href: '/what-to-do-today', image: '/images/menu/what-to-do-today.png', title: 'What To Do Today', subtitle: 'Weather-based suggestions' },
       { href: '/packing-list', image: '/images/menu/packing-list.png', title: 'Packing List', subtitle: 'Seasonal gear checklist' },
     ],
@@ -108,7 +108,7 @@ const megaMenus = {
         heading: 'Trail Safety',
         links: [
           { href: '/solo-hiking', label: 'Solo Hiker Safety' },
-          { href: '/altitude-guide', label: 'Altitude Sickness Guide' },
+          { href: '/altitude-guide', label: 'Altitude & Elevation Planning' },
           { href: '/air-quality', label: 'Air Quality & Smoke' },
           { href: '/emergency-card', label: 'Emergency SOS Card' },
         ],
@@ -150,8 +150,8 @@ const megaMenus = {
       },
     ],
     featured: [
-      { href: '/hotel-directory', image: '/images/menu/hotel-directory.png', title: 'Hotel Directory', subtitle: '95 properties with map' },
-      { href: '/hotel-directory?area=Lake+Louise', image: '/images/menu/lake-louise-hotels.png', title: 'Lake Louise Hotels', subtitle: 'Stay by the lake' },
+      { href: '/hotel-directory', image: '/images/menu/hotel-directory.png', title: 'Hotel Directory', subtitle: 'Profiles, sources and selected map points' },
+      { href: '/hotel-directory?area=Lake+Louise', image: '/images/menu/lake-louise-hotels.png', title: 'Lake Louise Hotels', subtitle: 'Village, lakeshore and road bases' },
       { href: '/hotel-directory?type=Resort', image: '/images/menu/luxury-resorts.png', title: 'Luxury Resorts', subtitle: 'Mountain retreats' },
     ],
   },
@@ -194,13 +194,13 @@ const directLinks = [
     </a>
 
     <nav class="main-nav" id="main-nav">
-      {Object.entries(megaMenus).map(([label, menu]) => (
+      {Object.entries(megaMenus).map(([label, menu], index) => (
         <div class="nav-item has-mega" data-menu={label}>
-          <button class="nav-link mega-trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-link mega-trigger" aria-expanded="false" aria-controls={`mega-section-${index}`}>
             {label}
             <svg class="chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l3 3 3-3"/></svg>
           </button>
-          <div class="mega-panel" role="menu">
+          <div class="mega-panel" id={`mega-section-${index}`}>
             <div class="container mega-inner">
               <div class="mega-columns">
                 {menu.groups.map(group => (
@@ -248,7 +248,7 @@ const directLinks = [
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <kbd class="search-kbd">⌘K</kbd>
       </button>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span>
         <span></span>
         <span></span>
@@ -257,14 +257,14 @@ const directLinks = [
   </div>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu">
-    {Object.entries(megaMenus).map(([label, menu]) => (
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    {Object.entries(megaMenus).map(([label, menu], index) => (
       <div class="mobile-section">
-        <button class="mobile-section-toggle" aria-expanded="false">
+        <button class="mobile-section-toggle" aria-expanded="false" aria-controls={`mobile-section-${index}`}>
           {label}
           <svg class="chevron" width="12" height="12" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l3 3 3-3"/></svg>
         </button>
-        <div class="mobile-section-links">
+        <div class="mobile-section-links" id={`mobile-section-${index}`}>
           {menu.groups.map(group => (
             <div class="mobile-group">
               <span class="mobile-group-heading">{group.heading}</span>
@@ -281,7 +281,7 @@ const directLinks = [
     {directLinks.map(link => (
       <a href={link.href} class="mobile-direct-link">{link.label}</a>
     ))}
-  </div>
+  </nav>
 </header>
 
 <style>
@@ -846,8 +846,12 @@ const directLinks = [
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      const megaTrigger = activeMenu?.contains(document.activeElement) ? activeMenu.querySelector('.mega-trigger') : null;
+      const returnMobileFocus = mobileMenu?.classList.contains('open') && (mobileMenu.contains(document.activeElement) || document.activeElement === toggle);
       closeAllMega();
       closeMobile();
+      if (returnMobileFocus) toggle?.focus();
+      else if (megaTrigger instanceof HTMLElement) megaTrigger.focus();
     }
   });
 
@@ -855,6 +859,7 @@ const directLinks = [
   function closeMobile() {
     mobileMenu?.classList.remove('open');
     toggle?.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
   }
 
   toggle?.addEventListener('click', () => {
@@ -864,6 +869,7 @@ const directLinks = [
     } else {
       mobileMenu?.classList.add('open');
       toggle?.classList.add('open');
+      toggle?.setAttribute('aria-expanded', 'true');
     }
   });
 
@@ -871,8 +877,14 @@ const directLinks = [
     btn.addEventListener('click', () => {
       const section = btn.closest('.mobile-section');
       const wasOpen = section?.classList.contains('open');
-      document.querySelectorAll('.mobile-section').forEach(s => s.classList.remove('open'));
-      if (!wasOpen) section?.classList.add('open');
+      document.querySelectorAll('.mobile-section').forEach(s => {
+        s.classList.remove('open');
+        s.querySelector('.mobile-section-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        section?.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 

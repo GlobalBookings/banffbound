@@ -88,6 +88,9 @@ jobs:
           node scripts/check-access-visit-guide.mjs
           node scripts/check-access-walk-guide.mjs
           node scripts/check-accessibility-planning.mjs
+          node scripts/check-site-entry-design.mjs
+          node scripts/check-tool-directory-design.mjs
+          node scripts/check-banff-quick-comparison.mjs
           node scripts/check-lesson-planning.mjs
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs

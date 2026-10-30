@@ -25,60 +25,10 @@ const featuredPosts = ['banff-heli-skiing', 'banff-snowshoeing-guide', 'banff-wi
 const townCalendar = townFeedView(townSnapshot,'events');
 const upcomingEvents = townCalendar.items.slice(0,3);
 
-const categories = [
-  {
-    title: 'Things to Do',
-    description: 'From scenic gondola rides to serene lake walks, discover unforgettable experiences in the heart of the Rockies.',
-    href: '/things-to-do',
-    icon: '&#128507;',
-    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=75&fm=webp',
-  },
-  {
-    title: 'Eat & Drink',
-    description: 'Savor world-class dining, cozy mountain cafes, craft breweries, and everything in between.',
-    href: '/eat-and-drink',
-    icon: '&#127860;',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=75&fm=webp',
-  },
-  {
-    title: 'Shopping',
-    description: 'Browse unique local boutiques, outdoor gear shops, Indigenous art, and handcrafted souvenirs.',
-    href: '/shopping',
-    icon: '&#128717;',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=75&fm=webp',
-  },
-  {
-    title: 'Activities',
-    description: 'Hit the slopes, paddle pristine lakes, hike alpine trails, and chase wildlife year-round.',
-    href: '/activities',
-    icon: '&#9968;',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=75&fm=webp',
-  },
-  {
-    title: 'Iconic Lakes',
-    description: 'Lake Louise, Moraine Lake, Peyto Lake, and more. Explore the turquoise jewels of the Canadian Rockies.',
-    href: '/lakes',
-    icon: '&#128167;',
-    image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=600&q=75&fm=webp',
-  },
-  {
-    title: 'Tours & Adventures',
-    description: 'Book guided tours, day trips, wildlife safaris, and unique experiences with top-rated local operators.',
-    href: '/tours',
-    icon: '&#127760;',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75&fm=webp',
-  },
-];
-
-const highlights = [
-  { stat: '6,641 km\u00B2', label: 'National Park Area' },
-  { stat: '1,383m', label: 'Town Elevation' },
-  { stat: '3+', label: 'World-Class Ski Resorts' },
-  { stat: '1,600 km', label: 'of Hiking Trails' },
-];
+const homeDescription = "Plan Banff and Lake Louise around a place to stay. Compare room choices, build a ski day, choose winter activities and explore nearby mountain towns.";
 ---
 
-<BaseLayout title="Home" description="BanffBound - Your complete guide to Banff, Alberta. Everything to do, eat, drink, shop, and experience in the Canadian Rockies.">
+<BaseLayout title="Banff Trip Planning: Stays, Winter Days & Mountain Towns" description={homeDescription} lastUpdated="2026-10-29">
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -87,7 +37,7 @@ const highlights = [
         '@id': 'https://banffbound.com/#website',
         url: 'https://banffbound.com',
         name: 'BanffBound',
-        description: 'Your complete guide to Banff, Alberta. Everything to do, eat, drink, shop, and experience in the Canadian Rockies.',
+        description: homeDescription,
         publisher: { '@id': 'https://banffbound.com/#organization' },
         inLanguage: 'en',
       },
@@ -109,54 +59,53 @@ const highlights = [
       },
     ],
   })} />
-  <!-- Hero Slideshow -->
-  <section class="hero" id="hero">
-    <div class="hero-slides">
-      <img
-        src="https://images.unsplash.com/photo-1561134643-668f9057cce4?w=1200&q=75&fm=webp"
-        srcset="https://images.unsplash.com/photo-1561134643-668f9057cce4?w=640&q=75&fm=webp 640w, https://images.unsplash.com/photo-1561134643-668f9057cce4?w=1200&q=75&fm=webp 1200w"
-        sizes="100vw"
-        alt="Mount Rundle reflected in Vermilion Lakes at sunrise"
-        class="hero-slide active"
-        fetchpriority="high"
-        width="1200"
-        height="800"
-      />
-      <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=75&fm=webp" alt="Moraine Lake and the Valley of the Ten Peaks" class="hero-slide" loading="lazy" width="1200" height="800" />
-      <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=75&fm=webp" alt="Lake Louise turquoise waters with Victoria Glacier" class="hero-slide" loading="lazy" width="1200" height="800" />
-      <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1200&q=75&fm=webp" alt="Snow-capped peaks in Banff National Park" class="hero-slide" loading="lazy" width="1200" height="800" />
-      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=75&fm=webp" alt="Peyto Lake aerial turquoise view" class="hero-slide" loading="lazy" width="1200" height="800" />
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Banff, Lake Louise & the Canadian Rockies</p>
-      <h1>Your Guide to<br/><span class="hero-accent">Banff National Park</span></h1>
-      <p class="hero-sub">Plan your perfect escape to the Canadian Rockies. Iconic lakes, world-class skiing, mountain dining, and adventures that stay with you forever.</p>
-      <div class="hero-buttons">
-        <a href="/trip-builder" class="btn btn-accent">Build Your Trip</a>
-        <a href="/things-to-do" class="btn btn-outline" style="border-color: white; color: white;">Explore Banff</a>
+
+  <section class="home-hero" id="home-start" aria-labelledby="home-heading">
+    <div class="container home-hero-grid">
+      <div class="home-lead">
+        <p class="eyebrow">Banff · Lake Louise · The Bow Valley</p>
+        <h1 id="home-heading">Find your place <br />in Banff.</h1>
+        <p class="home-deck">Compare a place to stay, give each day a main outing, and leave room to change the plan. Start with the base you will travel from.</p>
+        <nav id="home-booking-start" aria-label="Start with a stay or winter experience">
+          <a class="btn btn-primary" href="/book/banff-hotels/">Compare Banff hotels <span aria-hidden="true">→</span></a>
+          <a class="home-secondary" href="/book/lake-louise-stays/">Staying near Lake Louise? Compare the area’s bases <span aria-hidden="true">→</span></a>
+          <a class="home-secondary" href="/book/banff-winter-activities/">Choose a winter experience <span aria-hidden="true">→</span></a>
+        </nav>
+        <p class="home-plan-link">Already have a base? <a href="/trip-builder/">Build your days in the Trip Builder <span aria-hidden="true">→</span></a></p>
       </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll to explore</span>
-      <div class="scroll-arrow"></div>
+      <figure class="home-image">
+        <img src="https://images.unsplash.com/photo-1561134643-668f9057cce4?w=1200&q=75&fm=webp" srcset="https://images.unsplash.com/photo-1561134643-668f9057cce4?w=640&q=75&fm=webp 640w, https://images.unsplash.com/photo-1561134643-668f9057cce4?w=1200&q=75&fm=webp 1200w" sizes="(max-width: 850px) 100vw, 45vw" alt="Illustrative mountain photograph; not a verified route or current-condition view" fetchpriority="high" width="1200" height="800" />
+        <figcaption>Illustrative mountain photograph</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- Stats -->
-  <section class="stats-bar">
-    <div class="container">
-      <div class="stats-grid">
-        {highlights.map(h => (
-          <div class="stat-item">
-            <span class="stat-number">{h.stat}</span>
-            <span class="stat-label">{h.label}</span>
-          </div>
-        ))}
+  <WinterStart />
+
+  <section class="section home-topics" aria-labelledby="home-topic-heading">
+    <div class="container home-editorial-grid">
+      <div class="section-intro"><p class="eyebrow">Put the journey together</p><h2 id="home-topic-heading">A few useful next questions.</h2><p>A place to stay is one part of the trip. Work through the day’s transport, access and practical details before making dependent bookings.</p><a href="/tools/" class="row-link">Browse the planning tools <span aria-hidden="true">→</span></a></div>
+      <div class="topic-rows">
+        <a href="/towns"><h3>Which mountain base?</h3><p>Compare Banff, Canmore, Lake Louise and the towns beyond before choosing an address.</p><span aria-hidden="true">→</span></a>
+        <a href="/calgary-to-banff"><h3>How will you get there and back?</h3><p>Join the airport journey, your room and the final return.</p><span aria-hidden="true">→</span></a>
+        <p class="related-row">Local transport: <a href="/car-free-banff">Plan a car-free stay</a></p>
+        <a href="/park-pass"><h3>What needs its own ticket?</h3><p>Work through admission separately from lake access, parking, lessons and activities.</p><span aria-hidden="true">→</span></a>
+        <a href="/trip-cost"><h3>How do the quotes compare?</h3><p>Use the same people, nights and inclusions. Keep amounts you do not know visible.</p><span aria-hidden="true">→</span></a>
+        <a href="/accessible-trails/"><h3>Which access details matter?</h3><p>Compare physical trail features, transport questions and specific visitor arrangements.</p><span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
+  <section class="section home-guides" aria-labelledby="home-guide-heading">
+    <div class="container home-editorial-grid">
+      <div class="section-intro"><p class="eyebrow">Take one idea further</p><h2 id="home-guide-heading">Plan the winter outing.</h2><p>A resort day, a forest walk and a heli-ski trip need different preparation. Use a guide for the activity you intend to book.</p><a href="/blog" class="row-link">View all travel guides <span aria-hidden="true">→</span></a></div>
+      <div class="guide-rows">{featuredPosts.map(post => <a href={`/blog/${post.slug}`}><span class="guide-category">{post.category}</span><h3>{post.title}</h3><span class="guide-reading">{post.readTime} <span aria-hidden="true">→</span></span></a>)}</div>
+    </div>
+  </section>
+
+  <section class="section home-explore" aria-labelledby="home-explore-heading"><div class="container"><div class="explore-heading"><div><p class="eyebrow">Time between the main plans</p><h2 id="home-explore-heading">Explore at your own pace.</h2></div><p>Find a meal, a shorter outing or a different kind of day near your base.</p></div><nav class="explore-links" aria-label="Browse Banff interests"><a href="/things-to-do">Things to do <span aria-hidden="true">→</span></a><a href="/eat-and-drink">Food and drink <span aria-hidden="true">→</span></a><a href="/shopping">Shops and supplies <span aria-hidden="true">→</span></a><a href="/activities">Activity planning <span aria-hidden="true">→</span></a><a href="/lakes">Lakes and access <span aria-hidden="true">→</span></a><a href="/tours">Tours and experiences <span aria-hidden="true">→</span></a><a href="/hotels">Hotel planning <span aria-hidden="true">→</span></a><a href="/packing-list">Packing checklist <span aria-hidden="true">→</span></a></nav></div></section>
+
+  <section class="home-current" aria-labelledby="home-current-heading"><div class="container"><p class="eyebrow">Before you set out</p><h2 id="home-current-heading">Check the day’s reports.</h2><p>Weather, a dated trail report and an operator’s current notice answer different questions. Open the source for the actual outing.</p></div>
   <noscript><style>[data-snapshot-fresh] { display:none !important; } [data-fresh-until] [data-snapshot-unavailable][hidden] { display:block !important; }</style></noscript>
   <!-- Today in Banff -->
   <section class="today-strip">
@@ -200,30 +149,6 @@ const highlights = [
     </div>
   </section>
 
-  <WinterStart />
-
-  <!-- Categories -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Explore Banff</span>
-        <h2>Everything You Need to Know</h2>
-        <p>Whether you're chasing powder, craving mountain cuisine, or looking for the perfect souvenir, we've got you covered.</p>
-      </div>
-      <div class="grid grid-2">
-        {categories.map(cat => (
-          <a href={cat.href} class="category-card card">
-            <img src={cat.image} alt={cat.title} class="card-image" loading="lazy" width="600" height="400" />
-            <div class="card-body">
-              <span class="category-icon" set:html={cat.icon}></span>
-              <h3>{cat.title}</h3>
-              <p>{cat.description}</p>
-              <span class="card-link">Explore &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
   </section>
 
   <!-- Upcoming Events -->
@@ -235,14 +160,14 @@ const highlights = [
           <p>Dated listings from the Town's Events category. Confirm the organiser's details before making the journey.</p>
         </div>
         <p style="font-size:.85rem;color:var(--color-text-light);margin-bottom:1rem">Snapshot retrieved: {mountainTime(townCalendar.retrievedAt)}. {townCalendar.message}</p>
-        {upcomingEvents.length > 0 && <div class="grid grid-3" data-town-results>
+        {upcomingEvents.length > 0 && <div class="event-rows" data-town-results>
           {upcomingEvents.map(event => (
-            <a href={event.link} target="_blank" rel="noopener" class="event-preview card" data-town-event data-start={event.startDate} data-end={event.endDate}>
-              <div class="card-body">
-                <span class="event-dates">&#128197; {event.dates}</span>
+            <a href={event.link} target="_blank" rel="noopener" class="event-preview" data-town-event data-start={event.startDate} data-end={event.endDate}>
+              <div>
+                <span class="event-dates">{event.dates}</span>
                 <h3>{event.title}</h3>
                 <p>{event.description}</p>
-                <span class="card-link">Learn More &rarr;</span>
+                <span class="row-link">Learn More &rarr;</span>
               </div>
             </a>
           ))}
@@ -261,516 +186,70 @@ const highlights = [
     installTownFeedPanels();
   </script>
 
-  <!-- Book Tours CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="tours-cta">
-        <div class="tours-cta-content">
-          <span class="badge">Book Now</span>
-          <h2>Book Tours & Find Hotels</h2>
-          <p>Browse guided adventures from top-rated local operators or find the perfect place to stay in Banff.</p>
-          <div class="hero-buttons" style="justify-content: flex-start;">
-            <a href="/tours" class="btn btn-accent">Browse Tours &rarr;</a>
-            <a href="/hotels" class="btn btn-outline">Find Hotels &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Featured Guides -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Travel Guides</span>
-        <h2>Plan Your Trip</h2>
-        <p>Expert guides and insider tips to help you make the most of your Banff adventure.</p>
-      </div>
-      <div class="grid grid-4">
-        {featuredPosts.map(post => (
-          <a href={`/blog/${post.slug}`} class="guide-card card">
-            <img src={post.image} alt={post.title} class="card-image guide-image" />
-            <div class="card-body">
-              <span class="tag">{post.category}</span>
-              <h3 class="guide-title">{post.title}</h3>
-              <span class="card-link">{post.readTime} &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="/blog" class="btn btn-outline">View All Guides &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter Signup -->
-  <section class="newsletter-section">
-    <div class="container">
-      <div class="newsletter-card">
-        <div class="newsletter-content">
-          <h2>Get the Banff Insider Guide</h2>
-          <p>Weekly tips, trail conditions, and deals — straight from someone who lives here.</p>
-          <form action="https://banffbound.us16.list-manage.com/subscribe/post?u=38050436b38afb17f1b30580a&amp;id=c419fe73a6&amp;f_id=002699e0f0" method="post" class="newsletter-form" target="_blank" novalidate>
-            <div class="newsletter-input-group">
-              <input type="email" name="EMAIL" placeholder="Your email address" required aria-label="Email address" />
-              <button type="submit" class="btn btn-accent">Subscribe</button>
-            </div>
-            <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_38050436b38afb17f1b30580a_c419fe73a6" tabindex="-1" value="" /></div>
-          </form>
-          <p class="newsletter-privacy">No spam. Unsubscribe anytime.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-card">
-        <div class="cta-content">
-          <span class="badge">Plan Ahead</span>
-          <h2>Ready for Your Banff Adventure?</h2>
-          <p>Banff National Park requires a valid Parks Canada pass. Purchase yours before you arrive and skip the line at the gate.</p>
-          <a href="https://www.pc.gc.ca/en/pn-np/ab/banff" target="_blank" rel="noopener" class="btn btn-primary">Get Your Park Pass &rarr;</a>
-        </div>
-        <img
-          src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=600&q=75&fm=webp"
-          alt="Scenic Banff landscape"
-          class="cta-image"
-          loading="lazy"
-          width="600"
-          height="400"
-        />
-      </div>
-    </div>
-  </section>
 </BaseLayout>
-
-<style>
-  /* ── Conditions Strip ──────────────────────────── */
-  .conditions-strip {
-    background: var(--color-primary);
-    padding: 0;
-  }
-  .conditions-strip-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    padding: 0.65rem 1rem;
-    color: rgba(255,255,255,0.9);
-    font-size: 0.88rem;
-    transition: background 0.2s ease;
-    text-align: center;
-    flex-wrap: wrap;
-  }
-  .conditions-strip-inner:hover {
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-  }
-  .conditions-strip-season {
-    font-weight: 600;
-    white-space: nowrap;
-  }
-  .conditions-strip-divider {
-    opacity: 0.35;
-  }
-  .conditions-strip-summary {
-    opacity: 0.85;
-  }
-  .conditions-strip-cta {
-    font-weight: 600;
-    color: var(--color-accent);
-    white-space: nowrap;
-  }
-  .conditions-strip-tools {
-    display: flex; gap: 1.5rem; justify-content: center; margin-top: 0.5rem; padding-bottom: 0.25rem;
-  }
-  .conditions-strip-tools a {
-    color: rgba(255,255,255,0.8); font-size: 0.82rem; font-weight: 500;
-    text-decoration: none; white-space: nowrap; transition: color 0.15s;
-  }
-  .conditions-strip-tools a:hover { color: var(--color-accent); }
-
-  @media (max-width: 600px) {
-    .conditions-strip-inner { font-size: 0.8rem; gap: 0.4rem; }
-    .conditions-strip-divider { display: none; }
-    .conditions-strip-summary { display: none; }
-    .conditions-strip-tools { gap: 0.75rem; font-size: 0.75rem; }
-  }
-
-  .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-white);
-    overflow: hidden;
-  }
-
-  .hero-slides {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero-slide {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    transform: scale(1.05);
-    animation: heroZoom 8s ease-in-out infinite alternate;
-  }
-
-  .hero-slide.active {
-    opacity: 1;
-  }
-
-  @keyframes heroZoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.08); }
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(26,58,42,0.5) 50%, rgba(0,0,0,0.7) 100%);
-    z-index: 1;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 0 1.5rem;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-    opacity: 1 !important;
-  }
-
-  .hero-content h1 {
-    color: var(--color-white);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    margin: 0 0 1.25rem;
-    line-height: 1.1;
-    text-shadow: 0 2px 40px rgba(0,0,0,0.3);
-  }
-
-  .hero-accent {
-    color: var(--color-accent);
-  }
-
-  .hero-sub {
-    font-size: 1.15rem;
-    opacity: 0.9;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-scroll-hint {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .scroll-arrow {
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid rgba(255,255,255,0.5);
-    border-bottom: 2px solid rgba(255,255,255,0.5);
-    transform: rotate(45deg);
-    animation: scrollBounce 2s ease infinite;
-  }
-
-  @keyframes scrollBounce {
-    0%, 100% { transform: rotate(45deg) translateY(0); }
-    50% { transform: rotate(45deg) translateY(6px); }
-  }
-
-  .today-strip {
-    background: #f0f7f4;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  .today-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .today-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--color-primary);
-    padding: 0.4rem 0.75rem;
-    border-radius: 6px;
-    transition: background 0.15s;
-  }
-  .today-item:hover { background: rgba(0,0,0,0.04); }
-  .today-icon { font-size: 1.25rem; }
-  .today-detail { font-weight: 700; font-size: 0.95rem; }
-  .today-label { font-size: 0.8rem; color: var(--color-text-light); }
-  .today-cta .today-label { color: var(--color-accent); font-weight: 600; }
-  @media (max-width: 600px) {
-    .today-grid { gap: 0.75rem; }
-    .today-item { font-size: 0.85rem; }
-  }
-
-  .stats-bar {
-    background: var(--color-primary);
-    color: var(--color-white);
-    padding: 2.5rem 0;
-    margin-top: -2px;
-  }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .stat-number {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-accent);
-  }
-
-  .stat-label {
-    font-size: 0.85rem;
-    opacity: 0.8;
-    margin-top: 0.25rem;
-    display: block;
-  }
-
-  .category-card {
-    display: block;
-  }
-
-  .category-card .card-image {
-    height: 240px;
-  }
-
-  .category-icon {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .card-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: var(--color-primary);
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: gap 0.2s ease;
-  }
-
-  .cta-section {
-    padding: 2rem 0 4rem;
-  }
-
-  .cta-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--color-primary);
-    border-radius: var(--radius);
-    overflow: hidden;
-    color: var(--color-white);
-  }
-
-  .cta-content {
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .cta-content h2 {
-    color: var(--color-white);
-    margin: 0.5rem 0 1rem;
-  }
-
-  .cta-content p {
-    opacity: 0.85;
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-  }
-
-  .cta-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    min-height: 300px;
-  }
-
-  .event-preview {
-    display: block;
-  }
-
-  .event-dates {
-    font-size: 0.85rem;
-    color: var(--color-primary);
-    font-weight: 500;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .guide-card { display: block; }
-  .guide-image { height: 160px; }
-  .guide-title { font-size: 1rem; line-height: 1.4; }
-
-  .tours-cta {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    border-radius: var(--radius);
-    padding: 3rem;
-    color: var(--color-white);
-  }
-
-  .tours-cta h2 {
-    color: var(--color-white);
-    margin: 0.5rem 0 1rem;
-  }
-
-  .tours-cta p {
-    opacity: 0.85;
-    margin-bottom: 1.5rem;
-    max-width: 500px;
-  }
-
-  .newsletter-section {
-    padding: 4rem 0;
-    background: var(--color-primary);
-  }
-
-  .newsletter-card {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .newsletter-content h2 {
-    color: var(--color-white);
-    font-size: clamp(1.8rem, 3vw, 2.2rem);
-    margin-bottom: 0.75rem;
-  }
-
-  .newsletter-content > p:first-of-type {
-    color: rgba(255,255,255,0.85);
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .newsletter-form {
-    margin-bottom: 0.75rem;
-  }
-
-  .newsletter-input-group {
-    display: flex;
-    gap: 0.5rem;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
-  .newsletter-input-group input[type="email"] {
-    flex: 1;
-    padding: 0.85rem 1.25rem;
-    border: 2px solid rgba(255,255,255,0.2);
-    border-radius: var(--radius);
-    background: rgba(255,255,255,0.1);
-    color: var(--color-white);
-    font-size: 1rem;
-    font-family: var(--font-body);
-    outline: none;
-    transition: border-color 0.2s ease;
-  }
-
-  .newsletter-input-group input[type="email"]::placeholder {
-    color: rgba(255,255,255,0.5);
-  }
-
-  .newsletter-input-group input[type="email"]:focus {
-    border-color: var(--color-accent);
-  }
-
-  .newsletter-input-group .btn {
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .newsletter-privacy {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.5);
-    margin-top: 0.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .hero { height: 85vh; min-height: 550px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .cta-card { grid-template-columns: 1fr; }
-    .cta-image { max-height: 250px; }
-    .tours-cta { padding: 2rem; }
-    .hero-scroll-hint { display: none; }
-    .newsletter-input-group { flex-direction: column; }
-    .newsletter-input-group .btn { width: 100%; }
-  }
-</style>
-
-<script>
-  const slides = document.querySelectorAll('.hero-slide');
-  let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 5000);
-</script>
-
 <script>
   import { installSnapshotExpiry } from '../utils/dataFreshness';
   installSnapshotExpiry();
 </script>
 <style>
   [data-fresh-until] [hidden] { display: none !important; }
+  .eyebrow { color:#6b552e; font-size:.76rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; margin:0 0 1rem; }
+  .home-hero { padding:3rem 0 4rem; background:var(--color-bg); }
+  .home-hero-grid { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:5%; align-items:start; }
+  .home-lead { min-width:0; }
+  .home-lead h1 { font-size:clamp(3.5rem,6vw,5.5rem); line-height:1.03; letter-spacing:-.035em; margin:0 0 1.5rem; color:var(--color-primary); }
+  .home-deck { max-width:48ch; font-size:1.12rem; line-height:1.65; margin:0 0 1.5rem; }
+  #home-booking-start { display:flex; align-items:flex-start; flex-direction:column; gap:1rem; }
+  #home-booking-start .btn { gap:1.2rem; text-align:left; }
+  .home-secondary { font-size:1rem; line-height:1.5; text-decoration:underline; text-underline-offset:.22em; }
+  .home-plan-link { margin:1.5rem 0 0; font-size:.94rem; color:var(--color-text-light); }
+  .home-plan-link a { color:var(--color-primary); text-decoration:underline; text-underline-offset:.2em; }
+  .home-image { margin:0; min-width:0; }
+  .home-image img { width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; display:block; }
+  .home-image figcaption { margin-top:.65rem; color:var(--color-text-light); font-size:.75rem; }
+  .home-editorial-grid { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr); gap:8%; align-items:start; }
+  .section-intro h2 { font-size:clamp(2rem,3.4vw,3rem); line-height:1.15; margin:0 0 1rem; }
+  .section-intro p:not(.eyebrow) { line-height:1.7; color:var(--color-text-light); }
+  .row-link { display:inline-block; margin-top:.8rem; font-weight:600; text-decoration:underline; text-underline-offset:.2em; }
+  .topic-rows,.guide-rows { border-top:1px solid #bec7be; }
+  .topic-rows>a { position:relative; display:block; border-bottom:1px solid #bec7be; padding:1.4rem 2rem 1.4rem 0; color:inherit; }
+  .topic-rows h3 { font-size:1.35rem; margin:0 0 .45rem; }
+  .topic-rows p { margin:0; color:var(--color-text-light); line-height:1.6; max-width:58ch; }
+  .topic-rows>a>span { position:absolute; top:1.6rem; right:0; }
+  .topic-rows .related-row { font-size:.9rem; padding:.8rem 0; border-bottom:1px solid #bec7be; }
+  .related-row a { text-decoration:underline; text-underline-offset:.2em; }
+  .home-guides { background:var(--color-bg-alt); }
+  .guide-rows>a { display:grid; grid-template-columns:1fr auto; column-gap:1rem; padding:1.4rem 0; border-bottom:1px solid #bec7be; color:inherit; }
+  .guide-category { color:#6b552e; font-size:.76rem; text-transform:uppercase; letter-spacing:.07em; grid-column:1/-1; margin-bottom:.45rem; }
+  .guide-rows h3 { font-size:1.3rem; line-height:1.35; margin:0; }
+  .guide-reading { font-size:.85rem; color:var(--color-text-light); white-space:nowrap; align-self:center; }
+  .explore-heading { display:flex; justify-content:space-between; align-items:end; gap:3rem; margin-bottom:1.6rem; }
+  .explore-heading h2 { margin:0; font-size:clamp(2rem,3.4vw,3rem); }
+  .explore-heading>p { max-width:40ch; line-height:1.65; color:var(--color-text-light); }
+  .explore-links { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; border-top:1px solid #bec7be; }
+  .explore-links>a { display:flex; justify-content:space-between; gap:1rem; padding:1.2rem 0; border-bottom:1px solid #bec7be; font-size:1.12rem; font-weight:600; }
+  .home-current { padding:3rem 0 0; border-top:1px solid #bec7be; }
+  .home-current h2 { margin:0 0 1rem; font-size:clamp(2rem,3.4vw,3rem); }
+  .home-current>.container>p:not(.eyebrow) { max-width:70ch; line-height:1.65; }
+  .today-strip { padding:1.25rem 0; }
+  .today-grid { display:flex; gap:1rem 2rem; flex-wrap:wrap; }
+  .today-item { display:flex; flex-wrap:wrap; align-items:center; gap:.35rem .6rem; color:var(--color-primary); }
+  .today-icon { font-size:1.1rem; }
+  .today-detail { font-weight:700; }
+  .today-label { color:var(--color-text-light); font-size:.88rem; }
+  .conditions-strip { background:var(--color-primary); padding:1rem 0; }
+  .conditions-strip-inner { display:flex; gap:.8rem; flex-wrap:wrap; align-items:center; color:white; line-height:1.5; }
+  .conditions-strip-season { font-weight:600; }
+  .conditions-strip-cta { color:var(--color-accent); font-weight:600; }
+  .conditions-strip-tools { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; padding-top:.8rem; }
+  .conditions-strip-tools a { color:white; text-decoration:underline; text-underline-offset:.2em; }
+  .event-rows { display:grid; grid-template-columns:1fr; border-top:1px solid #bec7be; }
+  .event-preview { display:block; color:inherit; padding:1.5rem 0; border-bottom:1px solid #bec7be; }
+  .event-preview h3 { font-size:1.3rem; margin:.4rem 0; }
+  .event-preview p { max-width:75ch; line-height:1.65; }
+  .event-dates { font-size:.85rem; color:#6b552e; font-weight:600; }
+  .home-hero a:focus-visible,.home-topics a:focus-visible,.home-guides a:focus-visible,.home-explore a:focus-visible,.home-current a:focus-visible { outline:3px solid #977000; outline-offset:5px; }
+  @media(max-width:850px) { .home-hero-grid,.home-editorial-grid { grid-template-columns:1fr; gap:2.5rem; } .home-hero { padding:2rem 0 3rem; } .home-lead h1 { font-size:clamp(3.3rem,9vw,5rem); } .home-image img { aspect-ratio:16/9; max-height:360px; } .section-intro { max-width:58ch; } .explore-heading { display:block; } }
+  @media(max-width:550px) { .home-hero { padding-top:1.6rem; } .home-lead h1 { font-size:3.45rem; } .home-deck { font-size:1.04rem; } .home-hero-grid { gap:2rem; } .home-plan-link { line-height:1.6; } .guide-rows>a { grid-template-columns:1fr; } .guide-reading { margin-top:.7rem; } .explore-links { grid-template-columns:1fr; } .conditions-strip-divider { display:none; } }
 </style>

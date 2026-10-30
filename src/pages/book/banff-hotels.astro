@@ -8,6 +8,15 @@ import {
 
 const faqSchema = { '@context':'https://schema.org', '@type':'FAQPage', mainEntity:banffHotelLandingFaqs.map(faq=>({'@type':'Question',name:faq.question,acceptedAnswer:{'@type':'Answer',text:faq.answer}})) };
 const hero = offers.find(offer => offer.slug === 'juniper-hotel')!;
+// Short display labels for the room categories already described in each offer.
+const quickRoomLabels: Record<string, string> = {
+  'moose-hotel-suites': 'Superior One Bedroom Suite',
+  'mount-royal-hotel': 'Heritage and Centennial king or two-bed categories',
+  'tunnel-mountain-resort': 'One Bedroom Condo; loft categories introduce stairs',
+  'canalta-lodge': 'King with Sofa and Kitchen Loft; check loft stairs',
+  'juniper-hotel': 'Deluxe King or Two Queen; outlook varies by category',
+  'fairmont-banff-springs': 'Gatehouse Family Room or separate Family Suite',
+};
 ---
 
 <PaidLandingLayout
@@ -38,7 +47,21 @@ const hero = offers.find(offer => offer.slug === 'juniper-hotel')!;
 
       <p class="affiliate-note"><strong>Affiliate links:</strong> We may earn a commission if you book through these Expedia links. Expedia supplies room offers, availability, prices and booking terms.</p>
 
-      <form id="banff-hotel-fit" class="fit-controls" hidden aria-label="Narrow the six hotel choices">
+      <div id="hotel-quick-region" class="quick-comparison-wrap" role="region" aria-label="Compare six Banff stays" aria-describedby="hotel-comparison-note" tabindex="0">
+        <table id="hotel-quick-comparison" class="quick-comparison">
+          <caption>Six Banff bases and room categories to compare</caption>
+          <thead><tr><th scope="col">Stay and base</th><th scope="col">Room and cooking</th><th scope="col">Your dates</th></tr></thead>
+          <tbody>{offers.map(offer => <tr data-quick-offer={offer.slug}>
+            <th scope="row"><a class="quick-name" href={`#stay-${offer.slug}`}>{offer.name}</a><span class="quick-base">{banffHotelBaseOptions.find(option => option.value === offer.base)?.label}</span><span class="quick-address">{offer.address}</span></th>
+            <td><p class="quick-room">{quickRoomLabels[offer.slug]}</p><p>{offer.kitchen}</p></td>
+            <td>{offer.notice && <p class="quick-notice"><strong>Facility note:</strong> {offer.notice}</p>}<a class="quick-booking" href={offer.expediaUrl} target="_blank" rel="sponsored noopener" data-landing-id={banffHotelLandingId} data-offer-id={offer.slug} data-landing-placement="comparison-table" aria-label={`Check dates for ${offer.name} on Expedia (opens in a new tab)`}>Check dates on Expedia <span aria-hidden="true">↗</span></a><a class="quick-detail" href={`#stay-${offer.slug}`}>Room, facilities &amp; journey ↓</a></td>
+          </tr>)}</tbody>
+        </table>
+      </div>
+      <p id="hotel-comparison-note" class="comparison-note">The quick comparison always shows all six stays. Filters below narrow the detailed cards only; they do not check availability. Read the room, facility and journey notes for your shortlist before booking. On a narrow screen, scroll across the table.</p>
+
+      <h3 id="hotel-detail-heading" class="detail-heading">Explore the room and journey</h3>
+      <form id="banff-hotel-fit" class="fit-controls" hidden aria-label="Narrow the six hotel choices" aria-describedby="hotel-comparison-note">
         <div><label for="hotel-base">Where would you like to stay?</label><select id="hotel-base" name="base">{banffHotelBaseOptions.map(option => <option value={option.value}>{option.label}</option>)}</select></div>
         <div><label for="hotel-priority">What would help your stay?</label><select id="hotel-priority" name="priority">{banffHotelPriorityOptions.map(option => <option value={option.value}>{option.label}</option>)}</select></div>
         <button type="reset" class="reset-button">Show all six</button>
@@ -132,6 +155,25 @@ const hero = offers.find(offer => offer.slug === 'juniper-hotel')!;
   h2 { font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.12; margin: .5rem 0 1rem; }
   .comparison-heading > p { color: var(--color-text-light); line-height: 1.7; }
   .affiliate-note { padding: 1rem 1.15rem; border-left: 3px solid var(--color-accent); background: var(--color-bg-alt); font-size: .88rem; line-height: 1.6; margin: 1.5rem 0; }
+  .quick-comparison-wrap { overflow-x: auto; border-top: 2px solid var(--color-primary); border-bottom: 1px solid var(--color-primary); margin-top: 1.5rem; }
+  .quick-comparison { width: 100%; min-width: 760px; border-collapse: collapse; background: var(--color-white); font-size: .87rem; }
+  .quick-comparison caption { padding: .9rem 1rem; text-align: left; font-weight: 700; color: var(--color-primary); background: var(--color-bg-alt); }
+  .quick-comparison th, .quick-comparison td { padding: 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid #dce3dd; }
+  .quick-comparison thead th { background: var(--color-primary); color: var(--color-white); font-family: var(--font-body); font-size: .8rem; }
+  .quick-comparison thead th:first-child { width: 27%; }
+  .quick-comparison thead th:nth-child(2) { width: 43%; }
+  .quick-comparison tbody th { background: var(--color-bg-alt); }
+  .quick-name { display: inline-block; color: var(--color-primary); font-family: var(--font-heading); font-size: 1.15rem; line-height: 1.3; text-decoration: underline; text-underline-offset: .2em; }
+  .quick-base, .quick-address { display: block; font-family: var(--font-body); font-size: .78rem; font-weight: 400; line-height: 1.6; margin-top: .35rem; }
+  .quick-base { font-weight: 700; }
+  .quick-comparison p { margin: 0; line-height: 1.6; }
+  .quick-comparison .quick-room { font-weight: 700; margin-bottom: .45rem; }
+  .quick-comparison .quick-notice { border-left: 2px solid var(--color-accent); padding-left: .65rem; margin-bottom: .5rem; font-size: .78rem; }
+  .quick-booking { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: .45rem 0; color: var(--color-primary); font-weight: 750; text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: .25em; }
+  .quick-detail { display: block; font-size: .75rem; line-height: 1.6; text-decoration: underline; text-underline-offset: .2em; }
+  .comparison-note { margin: 1rem 0 2rem; font-size: .82rem; color: var(--color-text-light); line-height: 1.7; max-width: 80ch; }
+  .detail-heading { margin: 0 0 1rem; font-size: 1.5rem; }
+  .quick-comparison-wrap:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; }
   .fit-controls { display: grid; grid-template-columns: 1fr 1fr auto; gap: 1rem; align-items: end; padding: 1.2rem; background: var(--color-primary); color: white; border-radius: 12px; }
   .fit-controls label { display: block; font-weight: 600; font-size: .84rem; margin-bottom: .45rem; }
   .fit-controls select { width: 100%; min-height: 48px; padding: .7rem 2rem .7rem .8rem; border-radius: 6px; border: 1px solid #c5cfc8; background: white; color: #173e32; font: inherit; }
