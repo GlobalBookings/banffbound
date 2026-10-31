@@ -65,6 +65,7 @@ export default defineConfig({
       filter(page) {
         // Exclude every consolidated/redirected slug plus a few legacy duplicates.
         const pathname = new URL(page).pathname.replace(/\/$/, '');
+        if (pathname === '/book/banff-winter-activities/google-test') return false;
         if (pathname === '/build-info.json' || (pathname.startsWith('/hotel-directory/') && unreviewedHotelDirectorySlugs.has(pathname.slice('/hotel-directory/'.length)))) return false;
         const excludeSlugs = [
           ...Object.keys(blogRedirects),

@@ -1,9 +1,13 @@
 ---
 import PaidLandingLayout from '../../layouts/PaidLandingLayout.astro';
 import ActivityCarousel from '../../components/ActivityCarousel.astro';
-import { winterActivityLandingId, winterActivityReviewedAt, winterActivityOffers, winterActivityFaqs, winterActivityClosureSource } from '../../data/winterActivityLanding';
+import { winterActivityLandingId, winterActivityReviewedAt, winterActivityOffersForTraffic, winterActivityFaqs, winterActivityClosureSource } from '../../data/winterActivityLanding';
 import { winterActivityCatalogue, winterActivityCategories, winterActivityCatalogueReviewedAt } from '../../data/winterActivityCatalogue';
 import winterPhotoCredits from '../../data/winterActivityPhotoCredits.json';
+interface Props { trafficVariant?: 'organic' | 'google-test'; }
+const { trafficVariant = 'organic' } = Astro.props;
+const isGoogleTest = trafficVariant === 'google-test';
+const winterActivityOffers = winterActivityOffersForTraffic(trafficVariant);
 const activityAnchor = (activity: typeof winterActivityCatalogue[number]) => {
   const offer = winterActivityOffers.find(candidate => candidate.id === activity.bookingOfferId);
   return offer ? offer.anchor : activity.id;
@@ -25,6 +29,9 @@ const activityList = {
   intro="Mountain views, snowy adventures and a few cosy favourites. Find the winter day that belongs on your trip."
   primaryCta={{ label: 'Find out more', href: '#experiences' }}
   lastUpdated={winterActivityCatalogueReviewedAt}
+  landingId={winterActivityLandingId}
+  canonicalUrl={isGoogleTest ? '/book/banff-winter-activities/' : undefined}
+  noindex={isGoogleTest}
 >
   <script type="application/ld+json" set:html={JSON.stringify(activityList)} />
   <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: winterActivityFaqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
