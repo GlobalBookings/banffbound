@@ -20,6 +20,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
 import * as Location from "expo-location";
+import * as WebBrowser from "expo-web-browser";
 import {
   places,
   guides,
@@ -91,6 +92,9 @@ import {
   pickTripPack,
 } from "./src/lib/offline";
 import MapSurface from "./src/components/MapSurface";
+import CommerceBrowser, { RelatedCommerceLinks } from "./src/components/CommerceBrowser";
+import type { CommerceSection } from "./src/data/commerce";
+import { isAllowedCommerceUrl } from "./src/lib/commerce";
 import {
   Button,
   Card,
@@ -109,6 +113,14 @@ import {
 } from "./src/components/ui";
 
 type Tab = "Today" | "Explore" | "Map" | "My Trip" | "Essentials";
+type ExploreMode = "places" | CommerceSection;
+const exploreModes: { id: ExploreMode; title: string; icon: keyof typeof Ionicons.glyphMap }[] = [
+  { id: "places", title: "Places", icon: "compass-outline" },
+  { id: "tours", title: "Tours & tickets", icon: "ticket-outline" },
+  { id: "stays", title: "Stays", icon: "bed-outline" },
+  { id: "guides", title: "Guides", icon: "book-outline" },
+  { id: "extras", title: "Trip extras", icon: "bag-outline" },
+];
 type Panel =
   | { type: "activity-detail"; activityId: string }
   | { type: "place"; place: Place }
@@ -167,6 +179,43 @@ function openUrl(url: string) {
     Alert.alert("Unable to open link", "Check your connection and try again."),
   );
 }
+async function openCommerceUrl(url: string) {
+  if (!isAllowedCommerceUrl(url)) {
+    Alert.alert("Link unavailable", "Please choose a booking link from the BanffBound directory.");
+    return;
+  }
+  try {
+    if (Platform.OS === "web") {
+      (globalThis as any).open(url, "_blank", "noopener,noreferrer");
+      return;
+    }
+    // A browser session preserves partner attribution; a universal-link handoff
+    // can open a provider app whose affiliate programme does not support it.
+    let browserPackage: string | undefined;
+    if (Platform.OS === "android") {
+      const available = await WebBrowser.getCustomTabsSupportingBrowsersAsync();
+      const supporting = available.browserPackages.filter(name => available.servicePackages.includes(name));
+      browserPackage = [available.preferredBrowserPackage, available.defaultBrowserPackage, ...supporting]
+        .find(name => !!name && supporting.includes(name)) || undefined;
+      if (!browserPackage) {
+        Alert.alert("Browser needed", "Install or enable a browser that supports secure custom tabs, then try this booking link again.");
+        return;
+      }
+    }
+    const result = await WebBrowser.openBrowserAsync(url, {
+      ...(browserPackage ? { browserPackage } : {}),
+      toolbarColor: colors.pine,
+      controlsColor: colors.pine,
+      showTitle: true,
+      enableBarCollapsing: true,
+    });
+    if (result.type === "locked") {
+      Alert.alert("Browser already open", "Close the current booking page, then try again.");
+    }
+  } catch {
+    Alert.alert("Unable to open booking page", "Check your connection and try again. Bookings open in your browser.");
+  }
+}
 function distance(a: { latitude: number; longitude: number }, p: Place) {
   if (p.latitude === undefined || p.longitude === undefined) return Infinity;
   const r = Math.PI / 180,
@@ -196,6 +245,7 @@ export default function App() {
 function BanffApp() {
   const { state, ready, error, update, reset } = useTripStore();
   const [tab, setTab] = useState<Tab>("Today");
+  const [exploreMode, setExploreMode] = useState<ExploreMode>("places");
   const [panel, setPanel] = useState<Panel | null>(null);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
@@ -270,6 +320,10 @@ function BanffApp() {
   const navigate = (next: Tab) => {
     setTab(next);
     setPanel(null);
+  };
+  const browse = (section: CommerceSection) => {
+    setExploreMode(section);
+    navigate("Explore");
   };
   const dayIndex = tripDayIndex(state);
   const shownDay = dayIndex ?? 0;
@@ -537,6 +591,22 @@ function BanffApp() {
                     </Pressable>
                   ))}
                 </View>
+                <Card style={{ backgroundColor: colors.pale, gap: 13 }}>
+                  <Text style={s.eyebrow}>MAKE MORE OF YOUR MOUNTAIN DAYS</Text>
+                  <Text style={s.h2}>Find the experience. Make it yours.</Text>
+                  <Text style={s.body}>
+                    Browse tours, compare places to stay and find your next good read.
+                    Check dates and book with our travel partners.
+                  </Text>
+                  <View style={s.wrap}>
+                    <Button title="Tours & tickets" icon="ticket-outline" onPress={() => browse("tours")} />
+                    <Button title="Find a stay" icon="bed-outline" variant="secondary" onPress={() => browse("stays")} />
+                    <Button title="All travel guides" icon="book-outline" variant="ghost" onPress={() => browse("guides")} />
+                  </View>
+                  <Text style={[s.body, { fontSize: 11, lineHeight: 17 }]}>
+                    Affiliate booking links may earn BanffBound a commission. The provider handles your booking and payment.
+                  </Text>
+                </Card>
                 <View>
                   <SectionTitle
                     title={
@@ -686,7 +756,18 @@ function BanffApp() {
                 </Card>
               </>
             )}
-            {(tab === "Explore" || tab === "Map") && (
+            {tab === "Explore" && (
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingBottom: 4 }}>
+                {exploreModes.map(mode => (
+                  <Chip key={mode.id} label={mode.title} icon={mode.icon} selected={exploreMode === mode.id}
+                    onPress={() => { setExploreMode(mode.id); scroll.current?.scrollTo({ y: 0, animated: false }); }} />
+                ))}
+              </ScrollView>
+            )}
+            {tab === "Explore" && exploreMode !== "places" && (
+              <CommerceBrowser key={exploreMode} section={exploreMode} onOpenUrl={openCommerceUrl} />
+            )}
+            {((tab === "Explore" && exploreMode === "places") || tab === "Map") && (
               <>
                 <View style={a.searchBox}>
                   <Ionicons
@@ -1222,6 +1303,17 @@ function BanffApp() {
                     </Text>
                   </LinearGradient>
                 </ImageBackground>
+                <Card style={{ backgroundColor: colors.pale, gap: 13 }}>
+                  <Text style={s.h2}>The rest of your trip, in one place.</Text>
+                  <Text style={s.body}>Explore the full BanffBound library and compare tours, hotels, holiday rentals and practical trip extras.</Text>
+                  <View style={s.wrap}>
+                    <Button title="Browse tours" small icon="ticket-outline" onPress={() => browse("tours")} />
+                    <Button title="Hotels & stays" small variant="secondary" icon="bed-outline" onPress={() => browse("stays")} />
+                    <Button title="Online guides" small variant="secondary" icon="book-outline" onPress={() => browse("guides")} />
+                    <Button title="Cars & packing" small variant="ghost" icon="bag-outline" onPress={() => browse("extras")} />
+                  </View>
+                  <Notice>Full guides and partner booking pages need a connection. Your saved field notes and trip stay on this device.</Notice>
+                </Card>
                 <View style={[a.placeGrid, wide && a.twoCols]}>
                   {[
                     {
@@ -1600,6 +1692,7 @@ function BanffApp() {
                             }
                           />
                         )}
+                      <RelatedCommerceLinks placeId={panel.place.id} onOpenUrl={openCommerceUrl} />
                       <Button
                         title="Read the BanffBound guide"
                         icon="open-outline"
@@ -1667,6 +1760,7 @@ function BanffApp() {
                         the activity, plus travel and breaks. Check operations
                         and return arrangements for your date.
                       </Notice>
+                      <RelatedCommerceLinks activityId={panel.activityId} onOpenUrl={openCommerceUrl} />
                       <Button
                         title="Read the BanffBound guide"
                         variant="secondary"
@@ -2731,6 +2825,14 @@ function PrivacyPanel({
         privacy policies. BanffBound hosting receives normal request logs when
         serving the web app and its assets.
       </Text>
+      <Text style={s.h2}>Travel partners and affiliate links</Text>
+      <Text style={s.body}>
+        BanffBound may earn a commission when you book through a partner link.
+        Booking pages open in a browser with our publisher and campaign references.
+        We do not add your trip notes, party details, location or a personal tracking
+        identifier to these links. Each provider handles its own cookies, booking
+        and payment under its privacy policy and terms.
+      </Text>
       <Text style={s.h2}>Downloads and sharing</Text>
       <Text style={s.body}>
         Offline trip files stay on this device. Shared trip summaries omit
@@ -2759,7 +2861,7 @@ function PrivacyPanel({
         onPress={onReset}
       />
       <Text style={[s.body, { fontSize: 11 }]}>
-        Privacy disclosure · 30 October 2026
+        Privacy disclosure · 31 October 2026
       </Text>
     </>
   );

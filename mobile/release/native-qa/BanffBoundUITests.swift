@@ -237,4 +237,154 @@ final class BanffBoundUITests: XCTestCase {
         // OS network state is unchanged. This verifies native saving and bundled
         // reading, not an airplane-mode or external map availability scenario.
     }
+
+    private func visibleID(_ identifier: String, timeout: TimeInterval = 15) -> XCUIElement {
+        let target = app.descendants(matching: .any).matching(identifier: identifier).firstMatch
+        XCTAssertTrue(target.waitForExistence(timeout: timeout), "Missing native identifier: \(identifier)")
+        return target
+    }
+
+    private func tapID(_ identifier: String) {
+        let target = visibleID(identifier)
+        XCTAssertTrue(target.isHittable, "Native control must be tappable: \(identifier)")
+        target.tap()
+    }
+
+    private func commerceMode(_ label: String, searchID: String) {
+        let pill = element(label)
+        if !pill.isHittable {
+            // Explore's mode pills live in a horizontal native ScrollView. Do
+            // not swipe the outer vertical catalogue or invent a direct route.
+            let strips = app.scrollViews.allElementsBoundByIndex.filter {
+                $0.frame.height < 110 && $0.descendants(matching: .any)
+                    .matching(NSPredicate(format: "label == %@ OR identifier == %@", label, label)).firstMatch.exists
+            }
+            XCTAssertEqual(strips.count, 1, "Expected one real Explore mode strip")
+            guard let strip = strips.first else { return }
+            for _ in 0..<4 {
+                if pill.isHittable { break }
+                strip.swipeLeft()
+            }
+        }
+        tap(label)
+        XCTAssertTrue(visibleID(searchID).isHittable, "Mode must open its actual searchable catalogue")
+    }
+
+    private func commerceSearch(_ identifier: String, query: String, heading: String) {
+        scrollTo(identifier)
+        let field = app.textFields.matching(identifier: identifier).firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: 10), "Commerce search must be a native editable text field")
+        field.tap()
+        field.typeText(query + "\n")
+        // A single-line native Return normally ends editing. The visible,
+        // noninteractive heading is the ordinary ScrollView dismissal fallback.
+        if app.keyboards.firstMatch.exists {
+            let title = app.staticTexts.matching(NSPredicate(format: "label == %@", heading)).firstMatch
+            XCTAssertTrue(title.isHittable, "Need the visible catalogue heading to dismiss its search keyboard")
+            title.tap()
+        }
+        let dismissed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.keyboards.firstMatch)
+        XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: 5), .completed, "Search keyboard must dismiss before browsing results")
+        XCTAssertEqual(field.value as? String, query, "The public search query must reach the actual catalogue")
+    }
+
+    private func attachJSON(_ value: [String: Any], name: String) throws {
+        let data = try JSONSerialization.data(withJSONObject: value, options: [.sortedKeys])
+        let attachment = XCTAttachment(string: String(decoding: data, as: UTF8.self))
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+
+    func test06TourSearchDisclosureAndNativeBrowserHandoff() throws {
+        tab("Explore", heading: "Find your kind of Banff.")
+        commerceMode("Tours & tickets", searchID: "commerce-search-tours")
+        XCTAssertTrue(visibleID("commerce-card-gyg-256607").exists)
+        capture("store-05-tours")
+
+        commerceSearch("commerce-search-tours", query: "Banff Gondola admission", heading: "Tours & experiences")
+        scrollTo("commerce-card-gyg-256607")
+        tapID("commerce-card-gyg-256607")
+        XCTAssertTrue(visible("Banff Gondola admission").exists)
+        scrollTo("GetYourGuide")
+        XCTAssertTrue(visible("GetYourGuide").isHittable, "Tour detail must show its actual provider")
+        scrollTo("Affiliate link. BanffBound may earn a commission if you book.")
+        XCTAssertTrue(visible("Affiliate link. BanffBound may earn a commission if you book.").isHittable)
+        scrollTo("commerce-cta-gyg-256607-booking")
+        tapID("commerce-cta-gyg-256607-booking")
+
+        // SFSafariViewController is observed through the host app on many iOS
+        // versions and through Apple's SafariViewService on others. Neither
+        // branch accepts a provider app or launches Safari on the test's behalf.
+        let service = XCUIApplication(bundleIdentifier: "com.apple.SafariViewService")
+        var browser = app!
+        var done = app.buttons.matching(NSPredicate(format: "label == 'Done'")).firstMatch
+        if !done.waitForExistence(timeout: 20) {
+            browser = service
+            done = service.buttons.matching(NSPredicate(format: "label == 'Done'")).firstMatch
+        }
+        XCTAssertTrue(done.waitForExistence(timeout: 15) && done.isHittable, "The real native Safari controller must present its Done control")
+        XCTAssertTrue(browser.webViews.firstMatch.waitForExistence(timeout: 15), "Observe the native browser's actual WebView; successful provider loading is separate")
+
+        // Read only domain/address text that the native address UI actually
+        // exposes. A hidden query string is never treated as attribution proof.
+        let labelledHosts = browser.descendants(matching: .any)
+            .matching(NSPredicate(format: "label CONTAINS[c] 'getyourguide.com'")).allElementsBoundByIndex
+        let addresses = (labelledHosts + browser.textFields.allElementsBoundByIndex)
+            .filter { $0.isHittable && $0.frame.maxY < browser.frame.minY + 180 }
+        let observed = addresses.map { element -> String in
+            let value = element.value as? String ?? ""
+            return String((element.label + " " + value).prefix(800))
+        }.filter { $0.lowercased().contains("getyourguide.com") }.prefix(4)
+        let addressObservations = Array(observed)
+        let exposed = addressObservations.joined(separator: " ")
+        capture("qa-commerce-browser-screen")
+        done.tap()
+        XCTAssertTrue(visibleID("commerce-close-details", timeout: 15).isHittable, "Done must return to the original BanffBound detail")
+        XCTAssertTrue(visibleID("commerce-cta-gyg-256607-booking").exists)
+        try attachJSON([
+            "kind": "native-safari-handoff", "provider": "GetYourGuide", "tourTitle": "Banff Gondola admission",
+            "browserAccessibilityBundle": browser === service ? "com.apple.SafariViewService" : "com.banffbound.app",
+            "doneButtonObserved": true, "browserWebViewObserved": true, "returnToDetailVerified": true,
+            "addressUIObservations": addressObservations,
+            "visibleProviderHost": exposed.lowercased().contains("getyourguide.com") ? "getyourguide.com" : NSNull(),
+            "partnerIdVisibleInAddressUI": exposed.contains("partner_id=QW960HO"),
+            "campaignVisibleInAddressUI": exposed.contains("cmp=banffboundapp"),
+            "networkAvailabilityVerified": false, "purchaseAttempted": false,
+        ], name: "qa-commerce-browser-observation")
+        tapID("commerce-close-details")
+    }
+
+    func test07StayAndNonlegacyOnlineGuideSearch() throws {
+        tab("Explore", heading: "Find your kind of Banff.")
+        commerceMode("Stays", searchID: "commerce-search-stays")
+        XCTAssertTrue(visibleID("commerce-card-hotel-fairmont-banff-springs").exists)
+        capture("store-06-stays")
+        commerceSearch("commerce-search-stays", query: "Fairmont Banff Springs", heading: "Hotels & vacation rentals")
+        scrollTo("commerce-card-hotel-fairmont-banff-springs")
+        tapID("commerce-card-hotel-fairmont-banff-springs")
+        XCTAssertTrue(visible("Fairmont Banff Springs").exists)
+        scrollTo("Expedia")
+        XCTAssertTrue(visible("Expedia").isHittable)
+        scrollTo("Affiliate link. BanffBound may earn a commission if you book.")
+        XCTAssertTrue(visible("Affiliate link. BanffBound may earn a commission if you book.").isHittable)
+        XCTAssertTrue(visible("Check rooms in browser on Expedia").exists, "Hotel listing must expose its provider-specific room action")
+        tapID("commerce-close-details")
+
+        commerceMode("Guides", searchID: "commerce-search-guides")
+        XCTAssertTrue(visible("All website guides").exists)
+        XCTAssertTrue(visibleID("commerce-card-guide-eating-out-in-banff").exists)
+        capture("store-07-guides")
+        commerceSearch("commerce-search-guides", query: "concerts show planning", heading: "All website guides")
+        scrollTo("commerce-card-guide-banff-live-music")
+        tapID("commerce-card-guide-banff-live-music")
+        XCTAssertTrue(visible("Live Music in Banff: Pubs, Concerts & Show Planning").exists,
+                      "The full website index must include this guide outside the original bundled field notes")
+        scrollTo("Read the full guide in browser on BanffBound")
+        XCTAssertTrue(visible("Read the full guide in browser on BanffBound").isHittable)
+        scrollTo("This guide index is available in the app.")
+        XCTAssertTrue(visible("The full website guide opens in your browser and needs a connection.").exists,
+                      "The app must distinguish its local index from online article content")
+        tapID("commerce-close-details")
+    }
 }

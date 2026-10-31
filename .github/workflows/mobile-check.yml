@@ -18,6 +18,12 @@ jobs:
           ref: 4da51e0f64e9af8a14d87fe302a308081777d1a6
           path: .reviewed-mobile-source
           persist-credentials: false
+      - name: Check out published affiliate catalogue sources
+        uses: actions/checkout@v4
+        with:
+          ref: eb55328b608d79cfdffc4cc41298f0f0f23cf996
+          path: .reviewed-commerce-source
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -28,10 +34,13 @@ jobs:
           npm ci
           npm ci --prefix mobile
       - name: Validate app and published content
+        env:
+          BANFFBOUND_COMMERCE_SOURCE_ROOT: ${{ github.workspace }}/.reviewed-commerce-source
         run: |
           npm run typecheck --prefix mobile
           node --test mobile/web/offline-worker.test.mjs
           node .github/scripts/check-mobile-reviewed-content.mjs
+          node mobile/scripts/sync-commerce.mjs --source-root .reviewed-commerce-source --check
           node mobile/scripts/verify-published.mjs
       - name: Bundle iOS and Android
         run: npm run export:native --prefix mobile

@@ -1,0 +1,1196 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "eb55328b608d79cfdffc4cc41298f0f0f23cf996",
+  "dataVersion": "2026-10-31-95cceac20ca7",
+  "total": 706,
+  "bySection": {
+    "tours": 55,
+    "stays": 145,
+    "guides": 463,
+    "extras": 43
+  },
+  "reviewedGygOffers": 15,
+  "heldGygOffers": 4,
+  "hotelRecords": 95,
+  "reviewedHotelRecords": 49,
+  "historicalRentalLeads": 50,
+  "activeBlogGuides": 295,
+  "activeActivityGuides": 15,
+  "standaloneGuideEntriesAdded": 153,
+  "standaloneCanonicalRoutesCovered": 158,
+  "standaloneVisitorPageRoutes": 71,
+  "townGuideRoutes": 6,
+  "trailLakeViewpointGuideRoutes": 81,
+  "canonicalRoutesAlreadyInActivityIndex": 5,
+  "gearWebsiteRoutes": 35,
+  "standaloneGuideCoverage": [
+    {
+      "url": "https://banffbound.com/accessible-trails/",
+      "sourceFile": "src/pages/accessible-trails.astro",
+      "kind": "page",
+      "itemId": "web-guide-accessible-trails",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/accommodation/",
+      "sourceFile": "src/pages/accommodation.astro",
+      "kind": "page",
+      "itemId": "web-guide-accommodation",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/activities/",
+      "sourceFile": "src/pages/activities.astro",
+      "kind": "page",
+      "itemId": "web-guide-activities",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/air-quality/",
+      "sourceFile": "src/pages/air-quality.astro",
+      "kind": "page",
+      "itemId": "web-guide-air-quality",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/alternatives/",
+      "sourceFile": "src/pages/alternatives.astro",
+      "kind": "page",
+      "itemId": "web-guide-alternatives",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/altitude-guide/",
+      "sourceFile": "src/pages/altitude-guide.astro",
+      "kind": "page",
+      "itemId": "web-guide-altitude-guide",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/arts-culture/",
+      "sourceFile": "src/pages/arts-culture.astro",
+      "kind": "page",
+      "itemId": "web-guide-arts-culture",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/banff-national-park/",
+      "sourceFile": "src/pages/banff-national-park.astro",
+      "kind": "page",
+      "itemId": "web-guide-banff-national-park",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/banff-vs-jasper/",
+      "sourceFile": "src/pages/banff-vs-jasper.astro",
+      "kind": "page",
+      "itemId": "web-guide-banff-vs-jasper",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/bear-spray/",
+      "sourceFile": "src/pages/bear-spray.astro",
+      "kind": "page",
+      "itemId": "web-guide-bear-spray",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/biking/",
+      "sourceFile": "src/pages/biking.astro",
+      "kind": "page",
+      "itemId": "activity-guide-mountain-biking",
+      "added": false
+    },
+    {
+      "url": "https://banffbound.com/bird-checklist/",
+      "sourceFile": "src/pages/bird-checklist.astro",
+      "kind": "page",
+      "itemId": "web-guide-bird-checklist",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/book/banff-hotels/",
+      "sourceFile": "src/pages/book/banff-hotels.astro",
+      "kind": "page",
+      "itemId": "web-guide-book-banff-hotels",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/book/banff-winter-activities/",
+      "sourceFile": "src/pages/book/banff-winter-activities.astro",
+      "kind": "page",
+      "itemId": "web-guide-book-banff-winter-activities",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/book/lake-louise-stays/",
+      "sourceFile": "src/pages/book/lake-louise-stays.astro",
+      "kind": "page",
+      "itemId": "web-guide-book-lake-louise-stays",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/calgary-to-banff/",
+      "sourceFile": "src/pages/calgary-to-banff.astro",
+      "kind": "page",
+      "itemId": "web-guide-calgary-to-banff",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/camping/",
+      "sourceFile": "src/pages/camping.astro",
+      "kind": "page",
+      "itemId": "web-guide-camping",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/canmore-vs-banff/",
+      "sourceFile": "src/pages/canmore-vs-banff.astro",
+      "kind": "page",
+      "itemId": "web-guide-canmore-vs-banff",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/car-free-banff/",
+      "sourceFile": "src/pages/car-free-banff.astro",
+      "kind": "page",
+      "itemId": "web-guide-car-free-banff",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/conditions/",
+      "sourceFile": "src/pages/conditions.astro",
+      "kind": "page",
+      "itemId": "web-guide-conditions",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/currency-converter/",
+      "sourceFile": "src/pages/currency-converter.astro",
+      "kind": "page",
+      "itemId": "web-guide-currency-converter",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/dog-friendly/",
+      "sourceFile": "src/pages/dog-friendly.astro",
+      "kind": "page",
+      "itemId": "web-guide-dog-friendly",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/eat-and-drink/",
+      "sourceFile": "src/pages/eat-and-drink.astro",
+      "kind": "page",
+      "itemId": "web-guide-eat-and-drink",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/emergency-card/",
+      "sourceFile": "src/pages/emergency-card.astro",
+      "kind": "page",
+      "itemId": "web-guide-emergency-card",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/events/",
+      "sourceFile": "src/pages/events.astro",
+      "kind": "page",
+      "itemId": "web-guide-events",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/family-guide/",
+      "sourceFile": "src/pages/family-guide.astro",
+      "kind": "page",
+      "itemId": "web-guide-family-guide",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/hiking/",
+      "sourceFile": "src/pages/hiking.astro",
+      "kind": "page",
+      "itemId": "activity-guide-hiking",
+      "added": false
+    },
+    {
+      "url": "https://banffbound.com/hotel-directory/",
+      "sourceFile": "src/pages/hotel-directory/index.astro",
+      "kind": "page",
+      "itemId": "web-guide-hotel-directory",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/hotels/",
+      "sourceFile": "src/pages/hotels.astro",
+      "kind": "page",
+      "itemId": "web-guide-hotels",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/icefields-parkway-planner/",
+      "sourceFile": "src/pages/icefields-parkway-planner.astro",
+      "kind": "page",
+      "itemId": "web-guide-icefields-parkway-planner",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/lake-faq/",
+      "sourceFile": "src/pages/lake-faq.astro",
+      "kind": "page",
+      "itemId": "web-guide-lake-faq",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/lakes/",
+      "sourceFile": "src/pages/lakes.astro",
+      "kind": "page",
+      "itemId": "web-guide-lakes",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/larch-season/",
+      "sourceFile": "src/pages/larch-season.astro",
+      "kind": "page",
+      "itemId": "web-guide-larch-season",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/learn-to-ski/",
+      "sourceFile": "src/pages/learn-to-ski.astro",
+      "kind": "page",
+      "itemId": "web-guide-learn-to-ski",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/locals/",
+      "sourceFile": "src/pages/locals.astro",
+      "kind": "page",
+      "itemId": "web-guide-locals",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/monthly-weather/",
+      "sourceFile": "src/pages/monthly-weather.astro",
+      "kind": "page",
+      "itemId": "web-guide-monthly-weather",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/moraine-lake-vs-lake-louise/",
+      "sourceFile": "src/pages/moraine-lake-vs-lake-louise.astro",
+      "kind": "page",
+      "itemId": "web-guide-moraine-lake-vs-lake-louise",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/packing-list/",
+      "sourceFile": "src/pages/packing-list.astro",
+      "kind": "page",
+      "itemId": "web-guide-packing-list",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/paddling/",
+      "sourceFile": "src/pages/paddling.astro",
+      "kind": "page",
+      "itemId": "activity-guide-canoeing-kayaking",
+      "added": false
+    },
+    {
+      "url": "https://banffbound.com/park-pass/",
+      "sourceFile": "src/pages/park-pass.astro",
+      "kind": "page",
+      "itemId": "web-guide-park-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/parking/",
+      "sourceFile": "src/pages/parking.astro",
+      "kind": "page",
+      "itemId": "web-guide-parking",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/photo-spots/",
+      "sourceFile": "src/pages/photo-spots.astro",
+      "kind": "page",
+      "itemId": "web-guide-photo-spots",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/quiet-trails/",
+      "sourceFile": "src/pages/quiet-trails.astro",
+      "kind": "page",
+      "itemId": "web-guide-quiet-trails",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/scenic-drives/",
+      "sourceFile": "src/pages/scenic-drives.astro",
+      "kind": "page",
+      "itemId": "web-guide-scenic-drives",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/shopping/",
+      "sourceFile": "src/pages/shopping.astro",
+      "kind": "page",
+      "itemId": "web-guide-shopping",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/shuttle-reservations/",
+      "sourceFile": "src/pages/shuttle-reservations.astro",
+      "kind": "page",
+      "itemId": "web-guide-shuttle-reservations",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/ski-day-planner/",
+      "sourceFile": "src/pages/ski-day-planner.astro",
+      "kind": "page",
+      "itemId": "web-guide-ski-day-planner",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/ski-pass-calculator/",
+      "sourceFile": "src/pages/ski-pass-calculator.astro",
+      "kind": "page",
+      "itemId": "web-guide-ski-pass-calculator",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/skiing/",
+      "sourceFile": "src/pages/skiing.astro",
+      "kind": "page",
+      "itemId": "activity-guide-skiing-snowboarding",
+      "added": false
+    },
+    {
+      "url": "https://banffbound.com/solo-hiking/",
+      "sourceFile": "src/pages/solo-hiking.astro",
+      "kind": "page",
+      "itemId": "web-guide-solo-hiking",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/summer/",
+      "sourceFile": "src/pages/summer.astro",
+      "kind": "page",
+      "itemId": "web-guide-summer",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/sunshine-vs-lake-louise-vs-norquay/",
+      "sourceFile": "src/pages/sunshine-vs-lake-louise-vs-norquay.astro",
+      "kind": "page",
+      "itemId": "web-guide-sunshine-vs-lake-louise-vs-norquay",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/things-to-do/",
+      "sourceFile": "src/pages/things-to-do.astro",
+      "kind": "page",
+      "itemId": "web-guide-things-to-do",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/tools/",
+      "sourceFile": "src/pages/tools.astro",
+      "kind": "page",
+      "itemId": "web-guide-tools",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/tours/",
+      "sourceFile": "src/pages/tours.astro",
+      "kind": "page",
+      "itemId": "web-guide-tours",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/towns/",
+      "sourceFile": "src/pages/towns/index.astro",
+      "kind": "page",
+      "itemId": "web-guide-towns",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trail-map/",
+      "sourceFile": "src/pages/trail-map.astro",
+      "kind": "page",
+      "itemId": "web-guide-trail-map",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trip-builder/",
+      "sourceFile": "src/pages/trip-builder.astro",
+      "kind": "page",
+      "itemId": "web-guide-trip-builder",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trip-cost/",
+      "sourceFile": "src/pages/trip-cost.astro",
+      "kind": "page",
+      "itemId": "web-guide-trip-cost",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/vacation-rentals/",
+      "sourceFile": "src/pages/vacation-rentals/index.astro",
+      "kind": "page",
+      "itemId": "web-guide-vacation-rentals",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/via-ferrata/",
+      "sourceFile": "src/pages/via-ferrata.astro",
+      "kind": "page",
+      "itemId": "web-guide-via-ferrata",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/weather-webcams/",
+      "sourceFile": "src/pages/weather-webcams.astro",
+      "kind": "page",
+      "itemId": "web-guide-weather-webcams",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/weather/",
+      "sourceFile": "src/pages/weather.astro",
+      "kind": "page",
+      "itemId": "web-guide-weather",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/wellness/",
+      "sourceFile": "src/pages/wellness.astro",
+      "kind": "page",
+      "itemId": "web-guide-wellness",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/what-to-do-today/",
+      "sourceFile": "src/pages/what-to-do-today.astro",
+      "kind": "page",
+      "itemId": "web-guide-what-to-do-today",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/wildlife-calendar/",
+      "sourceFile": "src/pages/wildlife-calendar.astro",
+      "kind": "page",
+      "itemId": "web-guide-wildlife-calendar",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/wildlife-safety/",
+      "sourceFile": "src/pages/wildlife-safety.astro",
+      "kind": "page",
+      "itemId": "web-guide-wildlife-safety",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/wildlife-tracker/",
+      "sourceFile": "src/pages/wildlife-tracker.astro",
+      "kind": "page",
+      "itemId": "web-guide-wildlife-tracker",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/wildlife/",
+      "sourceFile": "src/pages/wildlife.astro",
+      "kind": "page",
+      "itemId": "activity-guide-wildlife-viewing",
+      "added": false
+    },
+    {
+      "url": "https://banffbound.com/winter-stays/",
+      "sourceFile": "src/pages/winter-stays.astro",
+      "kind": "page",
+      "itemId": "web-guide-winter-stays",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/winter/",
+      "sourceFile": "src/pages/winter.astro",
+      "kind": "page",
+      "itemId": "web-guide-winter",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/towns/banff/",
+      "sourceFile": "src/pages/towns/[slug].astro",
+      "kind": "town",
+      "itemId": "town-guide-banff",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/towns/canmore/",
+      "sourceFile": "src/pages/towns/[slug].astro",
+      "kind": "town",
+      "itemId": "town-guide-canmore",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/towns/lake-louise/",
+      "sourceFile": "src/pages/towns/[slug].astro",
+      "kind": "town",
+      "itemId": "town-guide-lake-louise",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/towns/field-yoho/",
+      "sourceFile": "src/pages/towns/[slug].astro",
+      "kind": "town",
+      "itemId": "town-guide-field-yoho",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/towns/golden/",
+      "sourceFile": "src/pages/towns/[slug].astro",
+      "kind": "town",
+      "itemId": "town-guide-golden",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/towns/kananaskis/",
+      "sourceFile": "src/pages/towns/[slug].astro",
+      "kind": "town",
+      "itemId": "town-guide-kananaskis",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/fenland-trail/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-fenland-trail",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/marsh-loop/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-marsh-loop",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/spray-river-east/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-spray-river-east",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/spray-river-west/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-spray-river-west",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/tunnel-campground-loop/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-tunnel-campground-loop",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/stewart-canyon/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-stewart-canyon",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/johnson-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-johnson-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/sunshine-meadows/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-sunshine-meadows",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/johnston-canyon-lower-falls/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-johnston-canyon-lower-falls",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/johnston-canyon-upper-falls/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-johnston-canyon-upper-falls",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/silverton-falls/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-silverton-falls",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/boom-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-boom-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/vista-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-vista-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/sundance-canyon/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-sundance-canyon",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/ink-pots/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-ink-pots",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/sulphur-mountain/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-sulphur-mountain",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/tunnel-mountain-summit/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-tunnel-mountain-summit",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/surprise-corner-to-hoodoos/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-surprise-corner-to-hoodoos",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/upper-stoney/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-upper-stoney",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/cascade-amphitheatre/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-cascade-amphitheatre",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/c-level-cirque/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-c-level-cirque",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/healy-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-healy-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/bourgeau-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-bourgeau-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/harvey-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-harvey-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/rockbound-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-rockbound-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/arnica-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-arnica-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/twin-lakes/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-twin-lakes",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/aylmer-lookout/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-aylmer-lookout",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/aylmer-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-aylmer-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/cory-pass-loop/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-cory-pass-loop",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/lake-louise-lakeshore/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-lake-louise-lakeshore",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/fairview-lookout/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-fairview-lookout",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/bow-river-lake-louise/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-bow-river-lake-louise",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/rockpile/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-rockpile",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/moraine-lake-lakeshore/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-moraine-lake-lakeshore",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/consolation-lakes/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-consolation-lakes",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/lake-agnes/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-lake-agnes",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/plain-of-six-glaciers/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-plain-of-six-glaciers",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/tramline/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-tramline",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/lake-annette/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-lake-annette",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/eiffel-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-eiffel-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/larch-valley-minnestimma-lakes/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-larch-valley-minnestimma-lakes",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/saddleback-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-saddleback-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/fairview-mountain/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-fairview-mountain",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/sheol-paradise-connector/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-sheol-paradise-connector",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/paradise-valley-giant-steps/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-paradise-valley-giant-steps",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/sentinel-pass-from-paradise-valley/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-sentinel-pass-from-paradise-valley",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/sentinel-pass-via-larch-valley/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-sentinel-pass-via-larch-valley",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/wenkchemna-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-wenkchemna-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/hidden-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-hidden-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/deception-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-deception-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/castle-lookout/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-castle-lookout",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/stanley-glacier/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-stanley-glacier",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/taylor-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-taylor-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/peyto-lake-viewpoint/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-peyto-lake-viewpoint",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/bow-summit-viewpoint/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-bow-summit-viewpoint",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/mistaya-canyon/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-mistaya-canyon",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/bow-glacier-falls/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-bow-glacier-falls",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/helen-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-helen-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/cirque-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-cirque-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/chephren-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-chephren-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/nigel-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-nigel-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/parker-ridge/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-parker-ridge",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/molar-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-molar-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/north-molar-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-north-molar-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/dolomite-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-dolomite-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/peyto-lake-shore/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-peyto-lake-shore",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/glacier-lake/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-glacier-lake",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/sunset-lookout/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-sunset-lookout",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/sunset-pass/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-sunset-pass",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/cascade-valley-xc-ski/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-cascade-valley-xc-ski",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/spray-river-loop-xc-ski/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-spray-river-loop-xc-ski",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/tunnel-mountain-winter/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-tunnel-mountain-winter",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/johnston-canyon-ice-walk/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-johnston-canyon-ice-walk",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/lake-louise-lakeshore-snowshoe/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-lake-louise-lakeshore-snowshoe",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/marble-canyon-snowshoe/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-marble-canyon-snowshoe",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/ink-pots-snowshoe/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-ink-pots-snowshoe",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/goat-creek-xc-ski/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-goat-creek-xc-ski",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/healy-creek-xc-ski/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-healy-creek-xc-ski",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/golf-course-loop-xc-ski/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-golf-course-loop-xc-ski",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/trails/bow-falls/",
+      "sourceFile": "src/pages/trails/[slug].astro",
+      "kind": "trail",
+      "itemId": "trail-guide-bow-falls",
+      "added": true
+    }
+  ],
+  "excludedStandalonePages": [
+    {
+      "sourceFile": "src/pages/404.astro",
+      "reason": "Publisher/legal/home/submission page, not visitor guidance"
+    },
+    {
+      "sourceFile": "src/pages/about.astro",
+      "reason": "Publisher/legal/home/submission page, not visitor guidance"
+    },
+    {
+      "sourceFile": "src/pages/blog/index.astro",
+      "reason": "Publisher/legal/home/submission page, not visitor guidance"
+    },
+    {
+      "sourceFile": "src/pages/book/banff-winter-activities/google-test.astro",
+      "reason": "Private, test, search or widget route"
+    },
+    {
+      "sourceFile": "src/pages/contact.astro",
+      "reason": "Publisher/legal/home/submission page, not visitor guidance"
+    },
+    {
+      "sourceFile": "src/pages/editorial.astro",
+      "reason": "Publisher/legal/home/submission page, not visitor guidance"
+    },
+    {
+      "sourceFile": "src/pages/index.astro",
+      "reason": "Publisher/legal/home/submission page, not visitor guidance"
+    },
+    {
+      "sourceFile": "src/pages/privacy.astro",
+      "reason": "Publisher/legal/home/submission page, not visitor guidance"
+    },
+    {
+      "sourceFile": "src/pages/terms.astro",
+      "reason": "Publisher/legal/home/submission page, not visitor guidance"
+    },
+    {
+      "sourceFile": "src/pages/trails/index.astro",
+      "reason": "Redirect, not a canonical page"
+    },
+    {
+      "sourceFile": "src/pages/trip-reports.astro",
+      "reason": "Publisher/legal/home/submission page, not visitor guidance"
+    }
+  ],
+  "originalCuratedCatalogueUnchanged": true,
+  "providers": [
+    "BanffBound",
+    "Expedia",
+    "GetYourGuide",
+    "Vrbo"
+  ],
+  "heldGygOfferIds": [
+    "gyg-303298",
+    "gyg-303253",
+    "gyg-437912",
+    "gyg-285990"
+  ],
+  "nativeAmazonApprovalEstablished": false,
+  "noDirectAmazonLinks": true,
+  "outputsContainNoPricesOrCoordinates": true
+}
