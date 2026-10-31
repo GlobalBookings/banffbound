@@ -1,20 +1,24 @@
 import assert from 'node:assert/strict';
 import { access, readFile } from 'node:fs/promises';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 import { build } from 'esbuild';
 import { transform } from '@astrojs/compiler';
 
 // Offline source/model and actual-client checks; no site build or live availability request.
 const compiled = await build({ stdin: {
-  contents: "export * from './src/data/activities.ts'; export * from './src/data/activityPlanning.ts'; export { blogPosts } from './src/data/blogPosts.ts'; export { trails } from './src/data/trails.ts';",
+  contents: "export * from './src/data/activities.ts'; export * from './src/data/activityPlanning.ts'; export { blogPosts } from './src/data/blogPosts.ts'; export { trails } from './src/data/trails.ts'; export { towns } from './src/data/towns.ts';",
   resolveDir: process.cwd(),
 }, bundle: true, write: false, format: 'esm', platform: 'node' });
 const model = await import(`data:text/javascript;base64,${Buffer.from(compiled.outputFiles[0].text).toString('base64')}`);
 const { activities, activityContextLabels, activityInterestLabels, activitySearchUrl, activityListSchema } = model;
 const expectedSlugs = ['skiing-snowboarding', 'ice-skating', 'ice-walk-johnston-canyon', 'dog-sledding', 'snowshoeing', 'northern-lights', 'hiking', 'canoeing-kayaking', 'mountain-biking', 'white-water-rafting', 'wildlife-viewing', 'via-ferrata'];
-assert.deepEqual(activities.map(activity => activity.slug), expectedSlugs, 'All twelve original records remain.');
+assert.deepEqual(activities.slice(0, 12).map(activity => activity.slug), expectedSlugs, 'All twelve original records retain their order.');
+assert.equal(createHash('sha256').update(JSON.stringify(activities.slice(0, 12))).digest('hex'), '57b50232423b6608a9f2a213b69104bbf13d24fcc550e6f02db7011278da49a9', 'All original twelve planning records remain unchanged.');
+expectedSlugs.push('ice-climbing', 'yoho-kootenay-winter-tours', 'banff-food-tours');
+assert.deepEqual(activities.map(activity => activity.slug), expectedSlugs, 'Append the three specific commercial guides.');
 assert.equal(new Set(expectedSlugs).size, activities.length);
-assert.deepEqual(activities.filter(activity => !activity.isExternal).map(activity => activity.slug), ['ice-skating', 'ice-walk-johnston-canyon', 'dog-sledding', 'snowshoeing', 'northern-lights', 'white-water-rafting', 'via-ferrata'], 'Preserve the seven existing detail URLs.');
+assert.deepEqual(activities.filter(activity => !activity.isExternal).map(activity => activity.slug), ['ice-skating', 'ice-walk-johnston-canyon', 'dog-sledding', 'snowshoeing', 'northern-lights', 'white-water-rafting', 'via-ferrata', 'ice-climbing', 'yoho-kootenay-winter-tours', 'banff-food-tours'], 'Preserve seven existing detail URLs and add three guides.');
 
 async function assertInternalRoute(href) {
   assert.ok(href.startsWith('/') && !href.startsWith('//'), `Internal guide URL: ${href}`);
@@ -27,6 +31,10 @@ async function assertInternalRoute(href) {
     assert.ok(activities.some(activity => !activity.isExternal && path === activity.link), `Existing activity detail: ${href}`);
     return;
   }
+  if (path.startsWith('/towns/')) {
+    assert.ok(model.towns.some(town => path === `/towns/${town.slug}`), `Town guide route exists: ${href}`);
+    return;
+  }
   if (path.startsWith('/trails/')) {
     assert.ok(model.trails.some(trail => path === `/trails/${trail.slug}`), `Trail route exists: ${href}`);
     return;
@@ -36,7 +44,7 @@ async function assertInternalRoute(href) {
 }
 
 for (const activity of activities) {
-  assert.match(activity.reviewedAt, /^2026-10-29$/);
+  assert.equal(activity.reviewedAt, expectedSlugs.indexOf(activity.slug) < 12 ? '2026-10-29' : '2026-10-30');
   assert.ok(activity.locations.length >= 2 && activity.readiness.length >= 3 && activity.logistics.length >= 2);
   assert.ok(activity.sources.length > 0 && activity.guides.length > 0);
   assert.ok(activity.contexts.every(context => context in activityContextLabels));
@@ -58,7 +66,7 @@ for (const activity of activities) {
 }
 assert.equal(new URL(activitySearchUrl('ski & snow / Banff?')).searchParams.get('q'), 'ski & snow / Banff?');
 const directorySchema = activityListSchema(activities);
-assert.equal(directorySchema.numberOfItems, 12);
+assert.equal(directorySchema.numberOfItems, 15);
 assert.ok(directorySchema.itemListElement.every(item => item.item['@type'] === 'WebPage'));
 assert.ok(!/isAccessibleForFree|publicAccess|GeoCoordinates/.test(JSON.stringify(directorySchema)));
 
@@ -94,21 +102,21 @@ const cards = activities.map(activity => ({ hidden: false, dataset: {
   seasons: activity.contexts.join(' '), interests: activity.interests.join(' '),
   search: `${activity.name} ${activity.description} ${activity.locations.map(location => location.name).join(' ')}`.toLowerCase(),
 }, slug: activity.slug }));
-assert.equal(cards.filter(card => !card.hidden).length, 12, 'No-JS model starts with every activity visible.');
+assert.equal(cards.filter(card => !card.hidden).length, 15, 'No-JS model starts with every activity visible.');
 assert.ok(!pages[0].match(/<article class="card activity-card"[^>]*\bhidden(?:=|\s|>)/), 'No activity card starts hidden in HTML.');
 vm.runInNewContext(client, { document: { getElementById: element, querySelectorAll() { return cards; } }, Array });
 const change = () => element('activity-filters').listeners.change();
 const visible = () => cards.filter(card => !card.hidden).map(card => card.slug);
 assert.equal(element('activity-filters').hidden, false, 'Only JavaScript enables the filters.');
-assert.equal(visible().length, 12);
+assert.equal(visible().length, 15);
 element('activity-season').value = 'winter'; change();
-assert.equal(visible().length, 7, 'Winter context includes wildlife without claiming it operates.');
+assert.equal(visible().length, 10, 'Winter context includes three new guides and wildlife without claiming departure availability.');
 element('activity-interest').value = 'water'; change();
 assert.deepEqual(visible(), []);
 assert.equal(element('activity-empty').hidden, false);
-assert.equal(element('activity-result-count').textContent, '0 of 12 activity guides');
+assert.equal(element('activity-result-count').textContent, '0 of 15 activity guides');
 element('activity-filters').listeners.reset({ preventDefault() {} });
-assert.equal(visible().length, 12);
+assert.equal(visible().length, 15);
 assert.equal(element('activity-empty').hidden, true);
 element('activity-search').value = '  KiNgMiK  '; element('activity-filters').listeners.input();
 assert.deepEqual(visible(), ['dog-sledding'], 'Search is case-insensitive and includes the named operator/location.');
@@ -116,11 +124,11 @@ element('activity-filters').listeners.reset({ preventDefault() {} });
 element('activity-season').value = 'summer'; element('activity-interest').value = 'climbing'; change();
 assert.deepEqual(visible(), ['via-ferrata']);
 element('activity-season').value = 'winter'; change();
-assert.equal(visible().length, 0, 'Season filters must not imply a summer climb runs in winter.');
+assert.deepEqual(visible(), ['ice-climbing'], 'A winter beginner course is separate from the preserved summer via ferrata.');
 element('activity-interest').value = 'wildlife'; change();
 assert.deepEqual(visible(), ['wildlife-viewing']);
 element('activity-filters').listeners.reset({ preventDefault() {} });
 assert.equal(element('activity-search').value, '');
-assert.equal(visible().length, 12);
+assert.equal(visible().length, 15);
 
-console.log('Activity checks passed: 12 records, 7 detail URLs, 9 sights, source/affiliate/schema contracts, three Astro transforms and actual-client filters.');
+console.log('Activity checks passed: 15 records with original 12 hash preserved, 10 detail URLs, 9 sights, source/affiliate/schema contracts, three Astro transforms and actual-client filters.');

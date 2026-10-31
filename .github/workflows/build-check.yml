@@ -41,6 +41,11 @@ jobs:
           node scripts/check-activities.mjs
           node scripts/check-paddling.mjs
           node scripts/check-paid-landings.mjs
+          node scripts/check-paid-cohort-tracking.mjs
+          node scripts/check-analytics-history.mjs
+          node scripts/check-ga4-briefing.mjs
+          node scripts/check-activity-booking-cta.mjs
+          node scripts/check-commercial-activity-guides.mjs
           node research/check-banff-hotel-landing-2026-10-29.mjs
           node scripts/check-lake-louise-landing.mjs
           node scripts/check-winter-activity-landing.mjs

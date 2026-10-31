@@ -1,4 +1,5 @@
 import { google } from 'googleapis';
+import { analyticsSnapshot, archiveAnalyticsSnapshot } from '../core/analytics-history.js';
 import { getOAuth2Client } from '../core/google-auth.js';
 import { createLogger } from '../core/logger.js';
 import { sendSlack, slackHeader, slackSection, slackDivider, slackFields } from '../core/slack.js';
@@ -59,6 +60,7 @@ async function getOverview(analytics) {
   const p = prev.rows?.[0]?.metricValues || [];
 
   return {
+    propertyTimeZone: today.metadata?.timeZone || null,
     sessions: { val: Number(t[0]?.value || 0), prev: Number(p[0]?.value || 0) },
     users: { val: Number(t[1]?.value || 0), prev: Number(p[1]?.value || 0) },
     pageviews: { val: Number(t[2]?.value || 0), prev: Number(p[2]?.value || 0) },
@@ -149,27 +151,21 @@ async function getLandingPages(analytics) {
 
 // ── Affiliate Click Events ────────────────────────────────
 async function getAffiliateClicks(analytics) {
-  const data = await runReport(analytics, {
-    dateRanges: [{ startDate: '1daysAgo', endDate: '1daysAgo' }],
-    dimensions: [{ name: 'eventName' }, { name: 'pagePath' }],
-    metrics: [{ name: 'eventCount' }],
-    dimensionFilter: {
-      filter: {
-        fieldName: 'eventName',
-        inListFilter: {
-          values: ['affiliate_click', 'click', 'outbound_click'],
-        },
-      },
-    },
-    orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
-    limit: 20,
-  });
-
-  return (data.rows || []).map(r => ({
-    event: r.dimensionValues[0].value,
-    page: r.dimensionValues[1].value,
-    count: Number(r.metricValues[0].value),
-  }));
+  const rows = [];
+  let offset = 0;
+  do {
+    const data = await runReport(analytics, {
+      dateRanges: [{ startDate: '1daysAgo', endDate: '1daysAgo' }],
+      dimensions: [{ name: 'eventName' }, { name: 'pagePath' }], metrics: [{ name: 'eventCount' }],
+      dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT', value: 'affiliate_click' } } },
+      orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }], limit: 1000, offset,
+    });
+    const batch = data.rows || [];
+    rows.push(...batch);
+    offset += batch.length;
+    if (!batch.length || offset >= (data.rowCount ?? offset)) break;
+  } while (true);
+  return rows.map(r => ({ event: r.dimensionValues[0].value, page: r.dimensionValues[1].value, count: Number(r.metricValues[0].value) }));
 }
 
 // ── Geo Breakdown ─────────────────────────────────────────
@@ -251,12 +247,15 @@ function buildReport(overview, sources, devices, topPages, landingPages, affilia
   }
 
   // Affiliate Clicks
-  if (affiliateClicks.length > 0) {
+  if (affiliateClicks === null) {
+    blocks.push(slackSection(':warning: *Affiliate Clicks:* Unavailable — the API section failed; this is not zero clicks.'));
+    blocks.push(slackDivider());
+  } else if (affiliateClicks.length > 0) {
     const totalClicks = affiliateClicks.reduce((s, r) => s + r.count, 0);
     const clickLines = affiliateClicks.slice(0, 8).map(c =>
       `• ${c.event} on \`${c.page}\` — ${c.count}x`
     ).join('\n');
-    blocks.push(slackSection(`:moneybag: *Affiliate / Outbound Clicks* (${fmtNum(totalClicks)} total)\n${clickLines}`));
+    blocks.push(slackSection(`:moneybag: *Affiliate Clicks* (${fmtNum(totalClicks)} total)\n${clickLines}`));
     blocks.push(slackDivider());
   } else {
     blocks.push(slackSection(':moneybag: *Affiliate Clicks:* No click events recorded yesterday.'));
@@ -310,9 +309,17 @@ export async function run() {
     safe(getDevices(analytics), [], 'devices'),
     safe(getTopPages(analytics), [], 'topPages'),
     safe(getLandingPages(analytics), [], 'landingPages'),
-    safe(getAffiliateClicks(analytics), [], 'affiliateClicks'),
+    safe(getAffiliateClicks(analytics), null, 'affiliateClicks'),
     safe(getGeo(analytics), [], 'geo'),
   ]);
+
+  // Preserve this report before notification. The default container directory is not
+  // redeploy-safe: configure GA4_HISTORY_DIR on persistent operator storage to retain it.
+  try {
+    archiveAnalyticsSnapshot(analyticsSnapshot({ propertyId: PROPERTY_ID, overview, sources, devices, topPages, landingPages, affiliateClicks, geo, errors }));
+  } catch (error) {
+    log.warn(`GA4 history snapshot could not be saved (${error.code || error.name}); metrics remain in GA4.`);
+  }
 
   // If the core overview call failed the whole report is unreliable (usually an expired/missing
   // GOOGLE_REFRESH_TOKEN or a quota error). Post the real error instead of a misleading all-zeros report.
@@ -337,7 +344,7 @@ export async function run() {
   await sendSlack(report, 'GA4 Daily Briefing');
 
   const totalSessions = overview.sessions.val;
-  const totalClicks = affiliateClicks.reduce((s, r) => s + r.count, 0);
+  const totalClicks = affiliateClicks === null ? null : affiliateClicks.reduce((s, r) => s + r.count, 0);
   log.info(`Briefing sent: ${totalSessions} sessions, ${topPages.length} pages, ${totalClicks} affiliate clicks`);
 
   return { sessions: totalSessions, affiliateClicks: totalClicks };

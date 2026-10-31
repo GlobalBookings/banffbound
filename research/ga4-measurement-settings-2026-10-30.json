@@ -1,0 +1,22 @@
+{
+  "verifiedAtLocalDate": "2026-10-30",
+  "source": "Signed-in Google Analytics property administration UI",
+  "propertyId": "494425433",
+  "streamId": "11396726413",
+  "streamUrl": "https://BanffBound.com",
+  "measurementId": "G-2DP7J42ZW0",
+  "receivingTrafficPast48Hours": true,
+  "eventScopedCustomDimensionsCreatedAndReadBack": ["paid_cohort", "landing_id", "content_id", "content_type", "offer_id", "placement", "affiliate_partner"],
+  "eventRetentionMonthsBefore": 2,
+  "eventRetentionMonthsSaved": 14,
+  "userRetentionMonthsAlreadyConfigured": 14,
+  "userRetentionResetOnNewActivityAlreadyEnabled": true,
+  "googleAdsLinksCompleted": 0,
+  "googleAdsLinksCreated": false,
+  "limitations": [
+    "New custom definitions are prospective and may take up to 48 hours to appear in reports.",
+    "Retention UI says changes take effect after 24 hours; aggregate standard reports are treated separately.",
+    "Affiliate click events are not purchases or earned commissions.",
+    "Manual campaign attribution is implemented; no new Analytics-to-Ads data-sharing link was created."
+  ]
+}

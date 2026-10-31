@@ -10,8 +10,8 @@ import { experimental_AstroContainer } from 'astro/container';
 import { parseFragment } from 'parse5';
 
 // Fixed helper + real layout/IIFE checks. No fetch, vendor SDK, site build or files written.
-const data = await build({ stdin: { contents: "export {getArticleBookingContext} from './src/data/articleBookingContext.ts'; export {authoredBookingGuideSlugs,resolveBlogContent} from './src/data/blogContentRegistry.ts';", resolveDir: process.cwd() }, bundle: true, write: false, platform: 'node', format: 'esm' });
-const { getArticleBookingContext: contextFor, authoredBookingGuideSlugs: authored, resolveBlogContent } = await import(`data:text/javascript;base64,${Buffer.from(data.outputFiles[0].text).toString('base64')}`);
+const data = await build({ stdin: { contents: "export {getArticleBookingContext} from './src/data/articleBookingContext.ts'; export {authoredBookingGuideSlugs,resolveBlogContent} from './src/data/blogContentRegistry.ts'; export {resolveActivityBookingTarget} from './src/data/activityCampaignTargets.ts';", resolveDir: process.cwd() }, bundle: true, write: false, platform: 'node', format: 'esm' });
+const { getArticleBookingContext: contextFor, authoredBookingGuideSlugs: authored, resolveBlogContent, resolveActivityBookingTarget } = await import(`data:text/javascript;base64,${Buffer.from(data.outputFiles[0].text).toString('base64')}`);
 const jasper = ['jasper-town', 'jasper-national-park', 'jasper-canada', 'jasper-alberta', 'calgary-to-jasper'];
 const bow = ['numtijah-lodge', 'num-ti-jah-lodge'];
 const golden = 'golden-bc-day-trip';
@@ -80,7 +80,7 @@ const compiledPage = await transformAstro(page, { filename: 'src/pages/blog/[slu
 assert.deepEqual(compiledPage.diagnostics.filter(item => item.severity === 1), []);
 
 // Render the actual BlogLayout template/frontmatter in Astro's container. Unrelated
-// outer layout/components/styles are slot-only fixtures. Discard unused legacy
+// outer layout/unrelated components/styles are slot-only fixtures; booking children are real. Discard unused legacy
 // compiler metadata (not template/frontmatter) for this installed runtime pair.
 const renderCode = compiled.code.replace(/,\s*createMetadata as \$\$createMetadata/, '').replace(/export const \$\$metadata =[\s\S]*?\nconst \$\$Astro/, () => 'const $$Astro');
 const require = createRequire(import.meta.url);
@@ -88,7 +88,15 @@ const renderBundle = await build({ stdin: { contents: renderCode, loader: 'ts', 
   builder.onResolve({ filter: /^astro\// }, args => ({ path: pathToFileURL(require.resolve(args.path)).href, external: true }));
   builder.onResolve({ filter: /\?astro&type=style/ }, args => ({ path: args.path, namespace: 'fixture-style' }));
   builder.onLoad({ filter: /.*/, namespace: 'fixture-style' }, () => ({ contents: 'export {};' }));
-  builder.onResolve({ filter: /\.astro$/ }, args => ({ path: args.path, namespace: 'fixture-component' }));
+  const actualChildren = new Set(['ActivityBookingCTA.astro', 'HotelStaysBanner.astro']);
+  builder.onResolve({ filter: /\.astro$/ }, args => actualChildren.has(path.basename(args.path))
+    ? { path: path.resolve(args.resolveDir, args.path), namespace: 'actual-booking-component' }
+    : { path: args.path, namespace: 'fixture-component' });
+  builder.onLoad({ filter: /.*/, namespace: 'actual-booking-component' }, async args => {
+    const child = await transformAstro(await readFile(args.path, 'utf8'), { filename: args.path, internalURL: 'astro/compiler-runtime', resultScopedSlot: true });
+    assert.deepEqual(child.diagnostics.filter(item => item.severity === 1), [], args.path);
+    return { contents: child.code.replace(/,\s*createMetadata as \$\$createMetadata/, '').replace(/export const \$\$metadata =[\s\S]*?\nconst \$\$Astro/, () => 'const $$Astro'), loader: 'ts', resolveDir: path.dirname(args.path) };
+  });
   builder.onLoad({ filter: /.*/, namespace: 'fixture-component' }, () => ({ contents: "import {createComponent,render,renderSlot} from 'astro/runtime/server/index.js'; export default createComponent((result,props,slots)=>render`${renderSlot(result,slots.default)}`);" }));
 } }] });
 const { default: Component } = await import(`data:text/javascript;base64,${Buffer.from(renderBundle.outputFiles[0].text).toString('base64')}`);
@@ -114,11 +122,41 @@ for (const {slug,curated} of ssrCases) {
   for (const [index, panel] of panels.entries()) {
     const links = nodes(panel).filter(node => node.tagName === 'a'); assert.equal(links.length, 1);
     assert.equal(attr(links[0], 'href'), index === 0 ? expected.hotelHref : expected.tourHref);
-    assert.ok(text(links[0]).includes(index === 0 ? expected.hotelLabel : expected.tourLabel));
+    if (index === 0) {
+      assert.equal(text(links[0]).trim(), 'Compare hotel stays ↗');
+      assert.ok(attr(links[0], 'aria-label').includes(expected.hotelLabel));
+    } else assert.ok(text(links[0]).includes(expected.tourLabel));
     assert.equal(attr(links[0], 'target'), '_blank'); assert.ok(attr(links[0], 'rel').includes('sponsored'));
     assert.ok(nodes(panel).some(node => attr(node, 'data-affiliate-mount') !== undefined && attr(node, 'hidden') !== undefined));
     assert.ok(nodes(panel).some(node => attr(node, 'data-open-consent') !== undefined));
   }
+  const hotelBanner = all.find(node => attr(node, 'data-hotel-stays-banner') !== undefined);
+  assert.ok(hotelBanner, `${slug}: real HotelStaysBanner rendered`);
+  const hotelLink = nodes(hotelBanner).find(node => hasClass(node, 'hotel-stays-link'));
+  assert.equal(attr(hotelLink, 'href'), expected.hotelHref);
+  assert.equal(attr(hotelLink, 'data-content-id'), slug);
+  assert.equal(attr(hotelLink, 'data-landing-placement'), 'article-hotel-banner');
+  assert.equal(text(hotelLink).trim(), 'Compare hotel stays ↗', 'Prominent hotel comparison keeps the requested visible label.');
+  assert.ok(attr(hotelLink, 'aria-label').includes(expected.hotelLabel));
+  assert.equal(attr(hotelLink, 'data-landing-id'), 'travel-guide');
+  const activity = resolveActivityBookingTarget(slug);
+  const prominent = all.filter(node => ['article-top', 'article-mobile'].includes(attr(node, 'data-landing-placement')));
+  assert.equal(prominent.length, activity ? 2 : 0, `${slug}: correct matched activity CTA presence`);
+  for (const link of prominent) {
+    assert.equal(attr(link, 'href'), activity.bookingUrl);
+    assert.equal(attr(link, 'data-offer-id'), activity.offerId);
+    assert.equal(attr(link, 'data-affiliate-target-path'), new URL(activity.bookingUrl).pathname);
+    assert.equal(attr(link, 'data-paid-affiliate-campaign'), activity.paidCampaignLabel);
+    assert.equal(attr(link, 'target'), '_blank');
+    assert.ok(attr(link, 'rel').includes('sponsored'));
+  }
+  assert.ok(text(body).includes(text(parseFragment(authoredBody))), `${slug}: source body text survives actual child rendering`);
+  const article = all.find(node => hasClass(node, 'blog-article'));
+  assert.equal(attr(article, 'data-affiliate-target-path'), activity ? new URL(activity.bookingUrl).pathname : undefined);
+  const schemas = all.filter(node => node.tagName === 'script' && attr(node, 'type') === 'application/ld+json').map(node => JSON.parse(text(node)));
+  const articleSchema = schemas.find(schema => schema['@type'] === 'Article');
+  assert.equal(articleSchema.datePublished, '2026-10-29T00:00:00.000Z');
+  assert.equal(articleSchema.dateModified, '2026-10-29T00:00:00.000Z');
   if (curated) for (const anchor of nodes(parseFragment(authoredBody)).filter(node => node.tagName === 'a' && (attr(node, 'rel') ?? '').includes('sponsored'))) assert.ok(nodes(body).some(node => node.tagName === 'a' && attr(node, 'href') === attr(anchor, 'href')), `${slug}: authored native affiliate href survives the actual slot render`);
   for (const privateValue of ['PRIVATE_READER_VALUE','PRIVATE_CLICK_VALUE','PRIVATE_DESTINATION','PRIVATE_TOUR','ATTACKER']) assert.ok(!html.includes(privateValue), 'Hostile request/query values are not copied into rendered native fallbacks.');
 }
@@ -166,4 +204,4 @@ for (const [category, heading, firstHref] of [['Guides', 'Plan Your Banff Trip',
 }
 assert.equal(runInline({ missing: true }).created.length, 0);
 assert.equal(runInline({ short: true }).created.length, 0);
-console.log(`Article booking context checks passed: fixed Jasper5/Bow2/Golden/Skoki/Lake-hikes/Lake-Louise-village/Canmore/Kananaskis/default destinations and native IDs, hostile input exclusion, authored${authored.length} integration, ${ssrCases.length} actual BlogLayout SSR contexts including uncurated Golden/Skoki/Lake-hikes/village/Canmore/Kananaskis and generic heli, preserved authored links, actual-IIFE early suppression/no DOM injections and retained legacy mid/sticky behavior. No network or site build.`);
+console.log(`Article booking context checks passed: fixed Jasper5/Bow2/Golden/Skoki/Lake-hikes/Lake-Louise-village/Canmore/Kananaskis/default destinations and native IDs, hostile input exclusion, authored${authored.length} integration, ${ssrCases.length} actual BlogLayout + native CTA/banner child SSR contexts including uncurated Golden/Skoki/Lake-hikes/village/Canmore/Kananaskis and generic heli, preserved authored links, actual-IIFE early suppression/no DOM injections and retained legacy mid/sticky behavior. No network or site build.`);

@@ -1,4 +1,5 @@
 import { landingContext } from './landingAttribution.js';
+import { applyPaidBookingAttribution } from './paidBookingAttribution.js';
 import { hasConsent, sendAnalyticsEvent, reportAffiliateConversion, safeTrackingUrl, subscribeConsent } from './consent.js';
 
 let initialized = false;
@@ -20,8 +21,11 @@ function sectionName(element) {
   return section?.id || section?.querySelector('h2')?.textContent?.trim().slice(0, 50) || 'section';
 }
 export function initTracking() {
-  if (typeof window === 'undefined' || initialized) return;
+  if (typeof window === 'undefined') return;
+  applyPaidBookingAttribution();
+  if (initialized) return;
   initialized = true;
+  document.addEventListener('astro:page-load', () => applyPaidBookingAttribution());
   const path = () => window.location.pathname;
   const send = (name, parameters) => sendAnalyticsEvent(name, parameters);
   const nearest = (event, selector) => event.target?.closest?.(selector) || event.target?.parentElement?.closest?.(selector);

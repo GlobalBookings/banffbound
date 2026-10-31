@@ -1,4 +1,26 @@
 ---
-import WinterActivitiesPage from '../banff-winter-activities.astro';
+// Keep already shared/ad-linked URLs working while the public destination is clean.
+// This legacy page has no analytics or merchant links of its own.
+const destination = '/book/banff-winter-activities/';
 ---
-<WinterActivitiesPage trafficVariant="google-test" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Winter activities in Banff | BanffBound</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={`https://banffbound.com${destination}`} />
+    <script is:inline>
+      // A same-origin move preserves ordinary arrival URL parameters. No
+      // parameter can choose a destination, alter an affiliate or send an event.
+      const next = new URL(window.location.href);
+      next.pathname = '/book/banff-winter-activities/';
+      window.location.replace(next.href);
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0;url=${destination}`} /></noscript>
+  </head>
+  <body>
+    <main><h1>Winter activities in Banff</h1><p>This page has moved. <a href={destination}>Explore Banff winter activities</a>.</p></main>
+  </body>
+</html>

@@ -1,13 +1,9 @@
 ---
 import PaidLandingLayout from '../../layouts/PaidLandingLayout.astro';
 import ActivityCarousel from '../../components/ActivityCarousel.astro';
-import { winterActivityLandingId, winterActivityReviewedAt, winterActivityOffersForTraffic, winterActivityFaqs, winterActivityClosureSource } from '../../data/winterActivityLanding';
+import { winterActivityLandingId, winterActivityReviewedAt, winterActivityOffers, winterActivityFinalOffers, winterActivityPaidCampaign, winterActivityFaqs, winterActivityClosureSource } from '../../data/winterActivityLanding';
 import { winterActivityCatalogue, winterActivityCategories, winterActivityCatalogueReviewedAt } from '../../data/winterActivityCatalogue';
 import winterPhotoCredits from '../../data/winterActivityPhotoCredits.json';
-interface Props { trafficVariant?: 'organic' | 'google-test'; }
-const { trafficVariant = 'organic' } = Astro.props;
-const isGoogleTest = trafficVariant === 'google-test';
-const winterActivityOffers = winterActivityOffersForTraffic(trafficVariant);
 const activityAnchor = (activity: typeof winterActivityCatalogue[number]) => {
   const offer = winterActivityOffers.find(candidate => candidate.id === activity.bookingOfferId);
   return offer ? offer.anchor : activity.id;
@@ -30,8 +26,6 @@ const activityList = {
   primaryCta={{ label: 'Find out more', href: '#experiences' }}
   lastUpdated={winterActivityCatalogueReviewedAt}
   landingId={winterActivityLandingId}
-  canonicalUrl={isGoogleTest ? '/book/banff-winter-activities/' : undefined}
-  noindex={isGoogleTest}
 >
   <script type="application/ld+json" set:html={JSON.stringify(activityList)} />
   <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: winterActivityFaqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
@@ -40,8 +34,8 @@ const activityList = {
     <div class="hero-highlights"><span>20 winter ideas</span><span>Photos to explore</span><span>Your kind of day</span></div>
   </div>
   <section class="landing-section" id="experiences" aria-labelledby="experience-heading">
-    <div class="section-intro"><span class="section-kicker">The winter edit</span><h2 id="experience-heading">20 ways to make it a Banff winter</h2><p>Our editorial picks, ordered for a first winter visit. Choose a favourite, swipe through the photos and make the day your own.</p></div>
-    <div class="shortlist-note"><p><strong>Affiliate disclosure:</strong> booking links open GetYourGuide. BanffBound may earn a commission from qualifying bookings.</p><p>Seasonal activities depend on dates, snow and access. Photos show the named subject or setting; they do not confirm a particular tour, its inclusions or current conditions. <a href="#photo-credits">Photo credits</a>.</p></div>
+    <div class="section-intro"><span class="section-kicker">The winter edit</span><h2 id="experience-heading">20 ways to make it a Banff winter</h2><p>Our editorial shortlist puts fifteen published GetYourGuide experiences first, followed by five other winter plans. Compare the actual destination and format, then check your date with the provider.</p></div>
+    <div class="shortlist-note"><p><strong>Affiliate disclosure:</strong> booking links open GetYourGuide. BanffBound may earn a commission from qualifying bookings.</p><p>Seasonal activities depend on dates, snow and access. Photos show their credited subject or regional setting, which may differ from a tour’s exact stops; they do not show a particular product, inclusions or current conditions. <a href="#photo-credits">Photo credits</a>.</p></div>
     <form id="winter-experience-form" class="experience-filter" hidden aria-describedby="winter-experience-count">
       <div><label for="winter-experience">What’s your kind of winter day?</label><select id="winter-experience" name="category">{winterActivityCategories.map(option => <option value={option.value}>{option.label}</option>)}</select></div>
       <button type="reset">Show all</button>
@@ -59,22 +53,31 @@ const activityList = {
               <h3 id={`activity-title-${activity.id}`}>{activity.name}</h3>
               <p class="fit">{activity.fit}</p><p class="activity-description">{activity.description}</p>
               <p class="practical-note" id={`activity-note-${activity.id}`}>{activity.practicalNote}</p>
-              {offer?.needsCanyonCheck && <p class="card-access"><strong>Johnston Canyon closure — checked October 29, 2026:</strong> Parks lists the trail and day-use area closed from October 13 to a scheduled December 11, 2026. Reopening is not confirmed. Ask the operator to confirm the route for your date before booking. <a href={winterActivityClosureSource} target="_blank" rel="noopener">Current notice</a>.</p>}
+              {offer?.needsCanyonCheck && <p class="card-access"><strong>Johnston Canyon closure — checked October 30, 2026:</strong> Parks lists the trail and day-use area closed from October 13 to a scheduled December 11, 2026. Reopening is not confirmed. Ask the operator to confirm the route for your date before booking. <a href={winterActivityClosureSource} target="_blank" rel="noopener">Current notice</a>.</p>}
               <div class="activity-actions">
-                <a class="more-cta" href={activity.internalHref} aria-label={`Find out more about ${activity.name}`}>Find out more</a>
-                {offer && <a class="booking-cta" href={offer.bookingUrl} target="_blank" rel="noopener sponsored" aria-label={`Book now: ${activity.name}`} aria-describedby={`activity-note-${activity.id}`} data-landing-id={winterActivityLandingId} data-offer-id={offer.id} data-landing-placement="detail-card">Book now</a>}
+                <a class="more-cta" href={activity.internalHref} target={activity.internalHref.startsWith('https://') ? '_blank' : undefined} rel={activity.internalHref.startsWith('https://') ? 'noopener' : undefined} aria-label={`${activity.informationLabel || 'Find out more'}: ${activity.name}`}>{activity.informationLabel || 'Find out more'}</a>
+                {offer && <a class="booking-cta" href={offer.bookingUrl} target="_blank" rel="noopener sponsored" aria-label={`${offer.cta}: ${activity.name}`} aria-describedby={`activity-note-${activity.id}`} data-landing-id={winterActivityLandingId} data-offer-id={offer.id} data-landing-placement="detail-card" data-paid-affiliate-campaign={winterActivityPaidCampaign} data-affiliate-target-path={new URL(offer.bookingUrl).pathname}>{offer.cta}</a>}
               </div>
-              {offer && <details class="booking-details"><summary>Good to know before booking</summary><p><strong>Provider:</strong> {offer.provider}.</p><p>{offer.tradeoff}</p><p>{offer.transport}</p><p>{offer.group}</p><p>{offer.bookingCheck}</p><p><a href={offer.operatorUrl} target="_blank" rel="noopener">Operator information</a></p></details>}
+              {offer && <details class="booking-details"><summary>Good to know before booking</summary><p><strong>Provider:</strong> {offer.provider}.</p><p>{offer.tradeoff}</p><p>{offer.transport}</p><p>{offer.group}</p><p>{offer.bookingCheck}</p><ul>{offer.sourceUrls.map(source => <li><a href={source} target="_blank" rel="noopener">Provider source information</a></li>)}</ul></details>}
             </div>
           </article>
         </li>;
       })}
     </ol>
-    <aside class="access-note"><strong>Johnston Canyon access — checked October 29, 2026:</strong> Parks Canada’s construction notice lists the trail and day-use area closed from October 13 to a scheduled December 11, 2026. This is not confirmation of reopening. For either canyon experience, confirm the route for your date before paying. <a href={winterActivityClosureSource} target="_blank" rel="noopener">Current Parks notice</a>.</aside>
+    <aside class="access-note"><strong>Johnston Canyon access — checked October 30, 2026:</strong> Parks Canada’s construction notice lists the trail and day-use area closed from October 13 to a scheduled December 11, 2026. This is not confirmation of reopening. For either canyon experience, confirm the route for your date before paying. <a href={winterActivityClosureSource} target="_blank" rel="noopener">Current Parks notice</a>.</aside>
   </section>
   <section class="landing-section faq-section" aria-labelledby="faq-heading"><div class="section-intro"><span class="section-kicker">A little planning goes a long way</span><h2 id="faq-heading">Before you book</h2></div>{winterActivityFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
   <section class="landing-section photo-credits" id="photo-credits" aria-label="Photo credits"><details><summary>Photo credits</summary><p>These historical photographs show the credited subject or setting. Images are cropped to fit the layout.</p><ul>{photoCredits.map(photo => <li><a href={photo.sourceUrl} target="_blank" rel="noopener">{photo.title}</a> — {photo.author}. <a href={photo.licenseUrl} target="_blank" rel="noopener">{photo.license}</a>. {photo.changeNote}</li>)}</ul></details></section>
-  <section class="landing-section final-choice" aria-labelledby="final-heading"><span class="section-kicker">Ready for your winter highlight?</span><h2 id="final-heading">Pick a day to remember</h2><p>These three experiences have direct booking links. Check your date, exact option and full terms before paying.</p><div class="final-links">{winterActivityOffers.map(offer => <div class="final-offer"><h3>{offer.name}</h3>{offer.needsCanyonCheck && <p class="final-access">Johnston Canyon is scheduled closed through December 11, 2026; reopening is unconfirmed. Confirm the route for your date.</p>}<a href={offer.bookingUrl} target="_blank" rel="noopener sponsored" aria-label={`Book now: ${offer.name}`} data-landing-id={winterActivityLandingId} data-offer-id={offer.id} data-landing-placement="final-shortlist">Book now</a></div>)}</div><p class="source-note">Editorial shortlist reviewed {winterActivityCatalogueReviewedAt}. Product identities and linked operator information reviewed {winterActivityReviewedAt}. This is a comparison of published experiences, not a live availability feed.</p><p class="source-note"><a href="/editorial/">Editorial approach</a> · <a href="/contact/">Contact BanffBound</a></p></section>
+  <section class="landing-section final-choice" aria-labelledby="final-heading">
+    <span class="section-kicker">Choose your kind of day</span><h2 id="final-heading">A ride, a road day or an evening out?</h2>
+    <p>Start with these three different formats, or return to all fifteen product choices above. Check the actual date, option and terms before paying.</p>
+    <div class="final-links">{winterActivityFinalOffers.map(offer => <div class="final-offer">
+      <h3>{offer.name}</h3><p class="final-access" id={`final-note-${offer.id}`}>{offer.seasonalNotice}</p>
+      <a href={offer.bookingUrl} target="_blank" rel="noopener sponsored" aria-label={`${offer.cta}: ${offer.name}`} aria-describedby={`final-note-${offer.id}`} data-landing-id={winterActivityLandingId} data-offer-id={offer.id} data-landing-placement="final-shortlist" data-paid-affiliate-campaign={winterActivityPaidCampaign} data-affiliate-target-path={new URL(offer.bookingUrl).pathname}>{offer.cta}</a>
+    </div>)}</div>
+    <p class="source-note">Editorial shortlist reviewed {winterActivityCatalogueReviewedAt}. Product identities and linked provider information reviewed {winterActivityReviewedAt}. Published listings are not a live availability feed.</p>
+    <p class="source-note"><a href="/editorial/">Editorial approach</a> · <a href="/contact/">Contact BanffBound</a></p>
+  </section>
 </PaidLandingLayout>
 
 <script>

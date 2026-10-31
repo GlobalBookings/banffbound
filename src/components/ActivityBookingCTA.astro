@@ -1,0 +1,107 @@
+---
+interface ActivityTarget {
+  id: string;
+  offerId: string;
+  title: string;
+  label: string;
+  bookingUrl: string;
+  seasonalNotice?: string | null;
+  campaignLabel?: string;
+  paidCampaignLabel: string;
+  kind: 'product' | 'search';
+  launchState?: string;
+}
+interface Props { target: ActivityTarget; guideId: string; }
+const { target, guideId } = Astro.props;
+const bookingUrl = new URL(target.bookingUrl);
+if (bookingUrl.protocol !== 'https:' || !(bookingUrl.hostname === 'getyourguide.com' || bookingUrl.hostname.endsWith('.getyourguide.com')) || bookingUrl.searchParams.get('partner_id') !== 'QW960HO') throw new Error('Activity CTA needs a reviewed GetYourGuide affiliate target.');
+const key = guideId.replace(/[^a-z0-9-]/g, '-');
+const headingId = `activity-booking-heading-${key}`;
+const noticeId = `activity-booking-notice-${key}`;
+---
+
+<div class="activity-booking" data-activity-booking data-guide-id={guideId} data-content-id={guideId} data-content-type="activity-guide" data-landing-page="activity-guide" data-landing-id="activity-guide">
+  <aside class="activity-booking-panel" aria-labelledby={headingId} data-activity-booking-panel>
+    <div class="activity-booking-intro">
+      <p class="activity-booking-kicker">Make it part of your trip</p>
+      <h2 id={headingId}>{target.title}</h2>
+      <p class="activity-booking-description">{target.kind === 'product' ? 'Choose your date and option, then check the full booking details on GetYourGuide.' : 'Explore matching activity results on GetYourGuide, then confirm the experience and departure you want.'}</p>
+    </div>
+    {target.seasonalNotice && <p class="activity-booking-notice" id={noticeId} role="note">{target.seasonalNotice}</p>}
+    <div class="activity-booking-action">
+      <a class="btn activity-booking-link" href={target.bookingUrl} target="_blank" rel="noopener noreferrer sponsored" aria-describedby={target.seasonalNotice ? noticeId : undefined} data-guide-id={guideId} data-content-id={guideId} data-content-type="activity-guide" data-landing-id="activity-guide" data-paid-affiliate-campaign={target.paidCampaignLabel} data-affiliate-target-path={bookingUrl.pathname} data-offer-id={target.offerId} data-activity-target-id={target.id} data-landing-placement="article-top">{target.label} <span aria-hidden="true">↗</span></a>
+      <p class="activity-booking-provider">Opens GetYourGuide in a new tab</p>
+    </div>
+    <p class="activity-booking-disclosure">Affiliate link. BanffBound may earn from qualifying bookings.</p>
+  </aside>
+  <aside class="activity-booking-mobile" aria-label="Quick activity booking" data-activity-booking-mobile hidden>
+    <a class="btn activity-mobile-link" href={target.bookingUrl} target="_blank" rel="noopener noreferrer sponsored" aria-label={`${target.label}: ${target.title}; opens GetYourGuide in a new tab`} aria-describedby={target.seasonalNotice ? noticeId : undefined} data-guide-id={guideId} data-content-id={guideId} data-content-type="activity-guide" data-landing-id="activity-guide" data-paid-affiliate-campaign={target.paidCampaignLabel} data-affiliate-target-path={bookingUrl.pathname} data-offer-id={target.offerId} data-activity-target-id={target.id} data-landing-placement="article-mobile">{target.label} <span aria-hidden="true">↗</span></a>
+    <button type="button" class="activity-mobile-close" aria-label="Dismiss quick booking" data-activity-booking-dismiss hidden>×</button>
+  </aside>
+</div>
+
+<script>
+  function initActivityBookingBars() {
+    for (const wrapper of document.querySelectorAll<HTMLElement>('[data-activity-booking]')) {
+      if (wrapper.dataset.ready) continue;
+      const panel = wrapper.querySelector<HTMLElement>('[data-activity-booking-panel]');
+      const bar = wrapper.querySelector<HTMLElement>('[data-activity-booking-mobile]');
+      const dismiss = wrapper.querySelector<HTMLButtonElement>('[data-activity-booking-dismiss]');
+      if (!panel || !bar || !dismiss) continue;
+      wrapper.dataset.ready = 'true';
+      let dismissed = false;
+      function measure() {
+        if (bar!.offsetHeight > 0) document.documentElement.style.setProperty('--activity-booking-bar-height', `${bar!.offsetHeight}px`);
+      }
+      function update() {
+        bar!.hidden = dismissed || panel!.getBoundingClientRect().bottom > 0;
+        measure();
+      }
+      dismiss.hidden = false;
+      dismiss.addEventListener('click', () => {
+        dismissed = true;
+        bar.hidden = true;
+        document.getElementById('main-content')?.focus({ preventScroll: true });
+      });
+      if ('IntersectionObserver' in window) new IntersectionObserver(update).observe(panel);
+      else window.addEventListener('scroll', update, { passive: true });
+      if ('ResizeObserver' in window) new ResizeObserver(measure).observe(bar);
+      window.addEventListener('resize', update, { passive: true });
+      update();
+    }
+  }
+  initActivityBookingBars();
+  document.addEventListener('astro:page-load', initActivityBookingBars);
+</script>
+
+<style>
+  .activity-booking{margin:1.75rem auto 0;max-width:800px;text-align:left}
+  .activity-booking-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.58fr);gap:.9rem 1.75rem;padding:2rem;border:1px solid #b9c9b6;border-left:5px solid var(--color-accent);background:#eef3e9}
+  .activity-booking-kicker{margin:0 0 .45rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#53694d}
+  .activity-booking-panel h2{font-size:clamp(1.7rem,3vw,2.35rem);line-height:1.15;color:var(--color-primary);margin:0 0 .65rem}
+  .activity-booking-description{font-size:1rem;line-height:1.55;margin:0;color:#354c3d}
+  .activity-booking-action{grid-column:2;grid-row:1 / 3;align-self:center}
+  .activity-booking-link{display:flex;align-items:center;justify-content:center;gap:.7rem;min-height:64px;padding:1rem 1.15rem;background:#b34d23;color:white!important;border:1px solid #b34d23;border-radius:3px;font-size:1.15rem;font-weight:800;line-height:1.3;white-space:normal;text-align:center;text-decoration:none!important}
+  .activity-booking-link:hover,.activity-mobile-link:hover{background:#923b1b}
+  .activity-booking-link:focus-visible,.activity-mobile-link:focus-visible,.activity-mobile-close:focus-visible{outline:3px solid #a97624;outline-offset:4px}
+  .activity-booking-provider{font-size:.73rem;color:#52624e;text-align:center;margin:.55rem 0 0}
+  .activity-booking-notice{grid-column:1;margin:0;padding:.75rem .8rem;border-left:2px solid #a97624;background:#fff8e7;color:#5b492a;line-height:1.5;font-size:.85rem}
+  .activity-booking-disclosure{grid-column:1 / -1;font-size:.73rem;line-height:1.45;color:#52624e;margin:0}
+  .activity-booking-mobile{display:none}
+  .activity-booking-mobile[hidden],.activity-mobile-close[hidden]{display:none!important}
+  @media(max-width:700px){
+    .activity-booking{margin-top:1.25rem}
+    .activity-booking-panel{grid-template-columns:1fr;padding:1.25rem;gap:1rem;border-left-width:4px}
+    .activity-booking-panel h2{font-size:1.9rem}
+    .activity-booking-action{grid-column:1;grid-row:auto}
+    .activity-booking-link{min-height:56px}
+    .activity-booking-notice{grid-column:1;order:0}
+    .activity-booking-mobile{display:flex;align-items:center;gap:.5rem;position:fixed;z-index:950;inset:auto 0 0;max-height:calc(100dvh - 6.5rem);overflow:auto;padding:.45rem max(1rem,env(safe-area-inset-left)) calc(.5rem + env(safe-area-inset-bottom));background:#fbfcf8;border-top:2px solid #b34d23;box-sizing:border-box;color:var(--color-primary)}
+    .activity-mobile-close{flex:0 0 44px;width:44px;height:44px;border:0;background:transparent;color:var(--color-primary);font:inherit;font-size:1.5rem;cursor:pointer}
+    .activity-mobile-link{display:flex;flex:1;min-width:0;align-items:center;justify-content:center;gap:.65rem;min-height:56px;padding:.8rem 1rem;background:#b34d23;color:white!important;font-size:1.15rem;font-weight:800;line-height:1.3;text-align:center;text-decoration:none!important;white-space:normal;border-radius:3px}
+    :global(body:has([data-activity-booking-mobile]:not([hidden]))){padding-bottom:calc(var(--activity-booking-bar-height,190px) + .75rem)}
+    :global(body:has([data-activity-booking]) #explore-bar),:global(body:has([data-activity-booking]) .sticky-cta-bar){display:none!important}
+    :global(body:has([data-activity-booking-mobile]:not([hidden])) #back-to-top){bottom:calc(var(--activity-booking-bar-height,190px) + .75rem)}
+    :global(body:has(#cookie-banner:not([hidden])) [data-activity-booking-mobile]),:global(body:has(#menu-toggle[aria-expanded="true"]) [data-activity-booking-mobile]){visibility:hidden;pointer-events:none}
+  }
+</style>

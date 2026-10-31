@@ -4,11 +4,17 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import WinterStatusNotice from '../../components/WinterStatusNotice.astro';
 import { activities, activityImageNote } from '../../data/activities';
 import { activitySearchUrl } from '../../data/activityPlanning';
+import ActivityBookingCTA from '../../components/ActivityBookingCTA.astro';
+import { resolveActivityBookingTarget, resolveActivityBookingAlternatives } from '../../data/activityCampaignTargets';
+import photoCredits from '../../data/winterActivityPhotoCredits.json';
 
 export function getStaticPaths() {
   return activities.filter(activity => !activity.isExternal).map(activity => ({ params: { slug: activity.slug }, props: { activity } }));
 }
 const { activity } = Astro.props;
+const bookingTarget = resolveActivityBookingTarget('/activities/' + activity.slug + '/');
+const alternativeTargets = resolveActivityBookingAlternatives('/activities/' + activity.slug + '/');
+const photoCredit = activity.photoCreditId ? photoCredits.find(item => item.id === activity.photoCreditId) : null;
 const related = activities.filter(item => item.slug !== activity.slug && item.contexts.some(context => activity.contexts.includes(context))).slice(0, 3);
 const schema = {
   '@context': 'https://schema.org', '@type': 'Article', headline: `${activity.name}: Banff-Area Planning Guide`,
@@ -23,12 +29,15 @@ const schema = {
   <div class="container"><Breadcrumbs items={[{ label: 'Activities', href: '/activities' }, { label: activity.name }]} /></div>
   <section class="page-hero">
     <img src={activity.image.replace('w=600', 'w=1600')} alt="" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content"><span class="badge">{activity.tagline}</span><h1>{activity.name}</h1><p>{activity.description}</p><p class="image-note">{activityImageNote}</p></div>
+    <div class="page-hero-content"><span class="badge">{activity.tagline}</span><h1>{activity.name}</h1><p>{activity.description}</p><p class="image-note">{activity.imageNote || activityImageNote}</p></div>
   </section>
+  {photoCredit && <p class="container activity-photo-credit"><a href={photoCredit.sourceUrl} target="_blank" rel="noopener">{photoCredit.title}</a> by <a href={photoCredit.authorUrl} target="_blank" rel="noopener">{photoCredit.author}</a> · <a href={photoCredit.licenseUrl} target="_blank" rel="noopener">{photoCredit.license}</a>. {photoCredit.changeNote}</p>}
+  {bookingTarget && <div class="container"><ActivityBookingCTA target={bookingTarget} guideId={activity.slug} /></div>}
   <section class="section"><div class="container activity-detail">
     {activity.category === 'winter' && <WinterStatusNotice />}
     <div class="planning-summary"><h2>What this plan involves</h2><dl><div><dt>Seasonal context</dt><dd>{activity.season}</dd></div><div><dt>Preparation</dt><dd>{activity.difficulty}</dd></div><div><dt>Editorial review</dt><dd><time datetime={activity.reviewedAt}>{activity.reviewedAt}</time>; individual source checks below. This is not a live conditions or availability report.</dd></div></dl><p>Use the <a href="/conditions">official conditions sources</a> and <a href="/weather">weather planning</a> before departing.</p></div>
 
+    {activity.comparison && <div class="activity-table-region" role="region" aria-label={activity.comparison.caption} tabindex="0"><table><caption>{activity.comparison.caption}</caption><thead><tr>{activity.comparison.columns.map(column => <th scope="col">{column}</th>)}</tr></thead><tbody>{activity.comparison.rows.map(row => <tr>{row.map((cell, index) => index === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>)}</tbody></table></div>}
     <h2>Places and formats to compare</h2><p>Choose the actual venue, route or operator format. A broad destination name does not establish where the outing starts.</p>
     <div class="grid grid-2">{activity.locations.map(location => <section class="card"><div class="card-body"><h3>{location.name}</h3><p>{location.description}</p></div></section>)}</div>
 
@@ -36,6 +45,8 @@ const schema = {
     <section class="detail-section"><h2>Build the journey and return</h2><ol>{activity.logistics.map(item => <li>{item}</li>)}</ol><p><a href="/towns">Compare Banff, Canmore and Lake Louise bases</a> · <a href="/car-free-banff">Plan without a car</a> · <a href="/packing-list">Pack for the actual activity</a></p></section>
     <section class="detail-section"><h2>Before you leave</h2><ul>{activity.tips.map(item => <li>{item}</li>)}</ul></section>
 
+    {activity.guideSections?.map(section => <section class="detail-section" aria-labelledby={section.id}><h2 id={section.id}>{section.title}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</section>)}
+    {alternativeTargets.map(target => <section class="detail-section alternative-booking" id="castle-food-experience" data-content-type="activity-guide" data-content-id={activity.slug} data-guide-id={activity.slug} data-landing-page="activity-guide" data-landing-id="activity-guide"><h2>The separate Castle Food Experience</h2><p>Choose this indoor guided food-and-history visit if its setting and actual available date suit your party. It is a different booking from the town tasting walk above.</p><p class="alternative-notice" id="castle-booking-notice" role="note">{target.seasonalNotice}</p><a class="btn btn-primary" href={target.bookingUrl} target="_blank" rel="noopener noreferrer sponsored" aria-describedby="castle-booking-notice" data-guide-id={activity.slug} data-content-id={activity.slug} data-content-type="activity-guide" data-landing-id="activity-guide" data-paid-affiliate-campaign={target.paidCampaignLabel} data-affiliate-target-path={new URL(target.bookingUrl).pathname} data-offer-id={target.offerId} data-activity-target-id={target.id} data-landing-placement="article-alternative">{target.label} <span aria-hidden="true">↗</span></a><p class="activity-photo-credit">Opens GetYourGuide in a new tab. Affiliate link; BanffBound may earn from qualifying bookings.</p></section>)}
     <section class="detail-section source-panel"><h2>Direct sources and operator checks</h2><p>These are direct official or operator information links. Each date records an editorial source check, not current operation or a reservation.</p><ul>{activity.sources.map(item => <li><a href={item.url} target="_blank" rel="noopener">{item.label} ↗</a><br /><span class="source-date">Source checked <time datetime={item.checkedAt}>{item.checkedAt}</time></span></li>)}</ul><p>Providers can change their seasons, requirements and terms. Confirm the selected product directly, especially when a source check is older than your travel date.</p></section>
     <section class="detail-section"><h2>Keep planning</h2><div class="guide-links">{activity.guides.map(guide => <a href={guide.href}>{guide.label} →</a>)}</div><p><a href="/winter">Winter trip guide</a> · <a href="/winter-stays">Winter accommodation planning</a> · <a href="/what-to-do-today">Flexible plans for today</a></p></section>
   </div></section>
@@ -46,7 +57,7 @@ const schema = {
 </BaseLayout>
 
 <style>
-  .activity-detail{max-width:1050px}.activity-detail p,.activity-detail li{line-height:1.75}.image-note{font-size:.76rem!important;line-height:1.5!important;opacity:.9}
+  .activity-photo-credit{font-size:.72rem;line-height:1.5;margin-top:.75rem}.activity-table-region{overflow-x:auto;margin:2rem 0}.activity-table-region:focus-visible{outline:3px solid #a97624;outline-offset:3px}.activity-table-region table{min-width:620px;width:100%;border-collapse:collapse}.activity-table-region caption{text-align:left;font-weight:700;padding:.8rem;background:var(--color-bg-alt)}.activity-table-region th,.activity-table-region td{padding:.85rem;text-align:left;vertical-align:top;border:1px solid #d6ded8;line-height:1.55}.alternative-booking{padding:1.5rem;border:1px solid #b9c9b6;background:#eef3e9}.alternative-notice{padding:.85rem;border-left:2px solid #a97624;background:#fff8e7}.alternative-booking .btn{min-height:56px}.activity-detail{max-width:1050px}.activity-detail p,.activity-detail li{line-height:1.75}.image-note{font-size:.76rem!important;line-height:1.5!important;opacity:.9}
   .planning-summary,.source-panel{padding:1.5rem;background:var(--color-bg-alt);border-left:4px solid var(--color-accent);border-radius:var(--radius);margin:0 0 2rem}
   dl div{margin:.85rem 0}dt{font-weight:700}dd{margin:.2rem 0;line-height:1.65}.detail-section{margin-top:2.5rem}.detail-section li{margin:.7rem 0}.card-body p{line-height:1.7}.source-date{font-size:.8rem;color:var(--color-text-light)}
   .guide-links{display:flex;flex-wrap:wrap;gap:.7rem}.guide-links a{padding:.7rem 1rem;background:var(--color-bg-alt);border-radius:var(--radius);font-weight:700}

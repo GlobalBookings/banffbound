@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import WinterStatusNotice from '../components/WinterStatusNotice.astro';
+import photoCredits from '../data/winterActivityPhotoCredits.json';
 import { activities, activityImageNote } from '../data/activities';
 import { activityContextLabels, activityInterestLabels, activityListSchema, activitySearchUrl } from '../data/activityPlanning';
 
@@ -36,7 +37,7 @@ const faqs = [
     <p id="activity-empty" class="planning-note" hidden>No guides match these filters. Reset filters to see all activities.</p>
     <div class="grid grid-3" id="activity-cards">
       {activities.map(activity => <article class="card activity-card" data-seasons={activity.contexts.join(' ')} data-interests={activity.interests.join(' ')} data-search={`${activity.name} ${activity.description} ${activity.locations.map(location => location.name).join(' ')}`.toLowerCase()}>
-        <figure><img src={activity.image} alt="" class="card-image" loading="lazy" /><figcaption>{activityImageNote}</figcaption></figure>
+        <figure><img src={activity.image} alt="" class="card-image" loading="lazy" /><figcaption>{activity.imageNote || activityImageNote}{activity.photoCreditId && photoCredits.filter(credit => credit.id === activity.photoCreditId).map(credit => <span> <a href={credit.sourceUrl} target="_blank" rel="noopener">Photo</a> by <a href={credit.authorUrl} target="_blank" rel="noopener">{credit.author}</a> · <a href={credit.licenseUrl} target="_blank" rel="noopener">{credit.license}</a>. {credit.changeNote}</span>)}</figcaption></figure>
         <div class="card-body"><p class="activity-context">{activity.contexts.map(context => activityContextLabels[context]).join(' · ')}</p><h2><a href={activity.link}>{activity.name}</a></h2><p>{activity.description}</p><dl><div><dt>Timing</dt><dd>{activity.season}</dd></div><div><dt>Preparation</dt><dd>{activity.difficulty}</dd></div></dl><p><strong>First question:</strong> {activity.readiness[0]}</p><a class="guide-link" href={activity.link}>Read {activity.name.toLowerCase()} planning →</a><p class="review-date">Guide reviewed {activity.reviewedAt}</p></div>
       </article>)}
     </div>

@@ -59,6 +59,10 @@ Existing partner identifiers:
 
 Label commercial links and use `rel="sponsored noopener"` for new affiliate links opening in another tab. Direct operator information links must not imply a commercial relationship. Preserve existing partner IDs; a syntactically correct link does not prove a tracked sale.
 
+## Analytics history
+
+GA4 is the historical site reporting source. See [analytics measurement](docs/analytics-measurement.md) for fixed paid cohorts, consent gates, page/offer/placement labels and the read-only private capture command. Affiliate clicks are diagnostic; merchant completed bookings and commissions must be reconciled separately before calculating profit. Missing report sections remain unavailable, not zero. The updated agent can archive aggregate reports, but its current container specification has no persistent volume; a site deployment alone does not confirm that the separate agent has updated or that its local history survives redeployment. Live GA4 verification registered the seven tracking dimensions and saved 14-month event retention; the property has no Google Ads link. See the [settings receipt](research/ga4-measurement-settings-2026-10-30.json). Manual campaign labels do not supply imported ad costs or merchant revenue.
+
 ## Hosting and release
 
 The existing deployment notes describe DigitalOcean App Platform behind Cloudflare, with `main` triggering a production build. Preserve that hosting setup. The host ignores Cloudflare Pages `_redirects` files. Native segment-prefix301 rules now cover the40 reviewed blog aliases, with both slash variants and query preservation verified against production. The actual app rejects exact path matches despite current documentation; use the public mapping plan and live receipt as evidence. Static Astro redirect stubs remain a fallback. `node scripts/check-production-redirects.mjs` checks the source/host-plan mapping offline; add `--live` only for an explicitly intended public response audit. Never commit full app specs or environment values.
