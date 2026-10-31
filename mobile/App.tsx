@@ -452,7 +452,7 @@ function BanffApp() {
         )}
         <View style={a.main}>
           <View style={a.header}>
-            <View>
+            <View style={a.headerCopy}>
               <Text style={s.eyebrow}>
                 {tab === "Today"
                   ? "YOUR ROCKIES COMPANION"
@@ -2857,6 +2857,7 @@ const a = StyleSheet.create({
     justifyContent: "space-between",
     gap: 12,
   },
+  headerCopy: { flex: 1, minWidth: 0 },
   pageTitle: {
     fontFamily: serif,
     fontSize: 29,
@@ -2867,6 +2868,7 @@ const a = StyleSheet.create({
   profile: {
     height: 44,
     width: 44,
+    flexShrink: 0,
     borderRadius: 23,
     borderWidth: 1,
     borderColor: colors.line,

@@ -12,7 +12,7 @@ const channel = 'bb-map-engine-test';
 const bridge = (message: object) => JSON.stringify({ source: 'banffbound-map', channel, ...message });
 function engineHelpers() {
   const script = [...createMapDocument(channel).matchAll(/<script>([\s\S]*?)<\/script>/g)][1][1];
-  const context = { window: { parent: { postMessage: () => {} } }, clusterPoints: undefined as unknown as (points: { id: string; x: number; y: number }[]) => string[][], shouldFocusSelection: undefined as unknown as (before: string | null, next: string | null, zoom: number, visible: boolean) => boolean };
+  const context = { window: { parent: { postMessage: () => {} } }, viewportPoints: undefined as unknown as (points: { id: string; x: number; y: number }[], size: { x: number; y: number }, overscan?: number) => { id: string; x: number; y: number }[], clusterPoints: undefined as unknown as (points: { id: string; x: number; y: number }[]) => string[][], shouldFocusSelection: undefined as unknown as (before: string | null, next: string | null, zoom: number, visible: boolean) => boolean };
   runInNewContext(script, context);
   return context;
 }
@@ -56,6 +56,79 @@ test('overlapping pins remain selectable as a group without inventing displaced 
   assert.deepEqual(JSON.parse(JSON.stringify(cluster([]))), []);
 });
 
+test('the shipped viewport cull retains interior and overscan edges without mutating feature positions', () => {
+  const cull = engineHelpers().viewportPoints;
+  const points = [
+    { id: 'inside', x: 160, y: 185 }, { id: 'top-left', x: -46, y: -46 },
+    { id: 'bottom-right', x: 366, y: 416 }, { id: 'outside-left', x: -46.001, y: 100 },
+    { id: 'outside-right', x: 366.001, y: 100 }, { id: 'outside-bottom', x: 100, y: 416.001 },
+    { id: 'nonfinite', x: NaN, y: 100 },
+  ];
+  const before = structuredClone(points);
+  assert.deepEqual(JSON.parse(JSON.stringify(cull(points, { x: 320, y: 370 }))).map((point: { id: string }) => point.id), ['inside', 'top-left', 'bottom-right']);
+  assert.deepEqual(points, before);
+  assert.equal(cull(points, { x: 0, y: 370 }).length, 0);
+  assert.equal(cull(points, { x: 320, y: Infinity }).length, 0);
+});
+
+test('actual shipped runtime culls marker DOM, restores points on pan and preserves selection, all counts and Fit results', () => {
+  const messages: string[] = [], draws: any[] = [], fits: number[][][] = [];
+  const events = new Map<string, () => void>();
+  const node = () => ({ hidden: true, className: '', textContent: '', style: {}, attrs: {} as Record<string, string>, children: [] as any[], onclick: undefined as undefined | (() => void), setAttribute(key: string, value: string) { this.attrs[key] = value; }, addEventListener() {}, replaceChildren() { this.children = []; }, appendChild(child: unknown) { this.children.push(child); } });
+  const nodes = new Map<string, ReturnType<typeof node>>();
+  const getNode = (id: string) => { if (!nodes.has(id)) nodes.set(id, node()); return nodes.get(id)!; };
+  let offset = 0, scale = 1, zoom = 14;
+  const xy = (coords: number[]) => ({ x: (coords[1] + 115.6) * 1000 * scale - offset, y: 150 });
+  const map: any = {
+    setView(coords: number[], nextZoom: number) { zoom = nextZoom; offset = (coords[1] + 115.6) * 1000 * scale - 160; return map; },
+    fitBounds(coords: number[][]) { fits.push(JSON.parse(JSON.stringify(coords))); const xs = coords.map(c => (c[1] + 115.6) * 1000); scale = 244 / Math.max(1, Math.max(...xs) - Math.min(...xs)); offset = Math.min(...xs) * scale - 38; return map; },
+    getZoom: () => zoom, getSize: () => ({ x: 320, y: 370 }),
+    getBounds: () => ({ contains: (coords: number[]) => { const p = xy(coords); return p.x >= 0 && p.x <= 320; } }),
+    latLngToContainerPoint: xy,
+    on(names: string, callback: () => void) { names.split(' ').forEach(name => events.set(name, callback)); }, invalidateSize() {},
+  };
+  const layer: any = { addTo: () => layer, clearLayers() { draws.length = 0; }, remove() {} };
+  const tile: any = { on: () => tile, addTo: () => tile };
+  const win: any = { parent: { postMessage(raw: string) { messages.push(raw); } }, addEventListener() {}, L: {
+    map: () => map, control: { zoom: () => ({ addTo() {} }) }, layerGroup: () => layer, tileLayer: () => tile,
+    divIcon: (options: unknown) => options,
+    marker(coords: number[], options: any) { const element = node(), handlers = new Map<string, () => void>(); const pin: any = { coords, options, element, on(name: string, callback: () => void) { handlers.set(name, callback); return pin; }, addTo() { draws.push(pin); return pin; }, getElement: () => element, fire(name: string) { handlers.get(name)?.(); } }; return pin; },
+    latLngBounds: () => ({ getNorthEast: () => ({ equals: () => false }), getSouthWest: () => ({}) }),
+  } };
+  const script = [...createMapDocument(channel).matchAll(/<script>([\s\S]*?)<\/script>/g)][1][1];
+  runInNewContext(script, { window: win, document: { getElementById: getNode, createElement: node, querySelectorAll: () => [] }, setTimeout: () => 0 });
+  const points = Array.from({ length: 982 }, (_, index) => marker('point-' + index, { name: 'Point ' + index, longitude: -115.6 + index * 0.001 }));
+  const before = structuredClone(points);
+  const update = (selectedId: string | null) => win.BanffBoundMap.update({ source: 'banffbound-host', type: 'update', channel, state: { points, selectedId, position: null, area: 'all' } });
+  const renderedMembers = () => draws.reduce((sum, draw) => sum + (/^\d+$/.test(draw.options.icon.html.textContent) ? Number(draw.options.icon.html.textContent) : 1), 0);
+  update(null);
+  assert.equal(getNode('result-count').textContent, '982 mapped places');
+  assert.ok(renderedMembers() > 0 && renderedMembers() < 400, 'offscreen features must be culled before cluster and DOM creation');
+  assert.ok(draws.length < 20, 'initial DOM contains only nearby clustered markers');
+  const initialOffset = offset;
+  scale = 10; offset = 9810 - 160; zoom = 18; events.get('moveend')!();
+  const remoteGroup = draws.find(draw => draw.coords[1] > -114.63 && /^\d+$/.test(draw.options.icon.html.textContent))!;
+  assert.ok(remoteGroup, 'moving the viewport must reintroduce distant features');
+  remoteGroup.fire('click');
+  const choices = getNode('overlap').children.filter(child => /^Point \d+ · Viewpoints$/.test(child.textContent));
+  assert.equal(choices.length, Number(remoteGroup.options.icon.html.textContent), 'each member of the remote group remains available through the full byId');
+  const choice = choices.at(-1)!;
+  const chosenId = 'point-' + choice.textContent.match(/^Point (\d+)/)![1];
+  choice.onclick();
+  assert.ok(messages.some(raw => JSON.parse(raw).type === 'select' && JSON.parse(raw).id === chosenId));
+  update(chosenId);
+  assert.ok(draws.some(draw => draw.element.attrs['aria-current'] === 'location'));
+  scale = 1; offset = initialOffset; events.get('moveend')!();
+  assert.equal(draws.some(draw => draw.element.attrs['aria-current'] === 'location'), false, 'an offscreen selected feature must not keep an invisible DOM marker');
+  scale = 10; offset = 9810 - 160; events.get('zoomend')!();
+  assert.ok(draws.some(draw => draw.element.attrs['aria-current'] === 'location'), 'panning back must restore the same retained selected identity');
+  getNode('fit').onclick!();
+  assert.deepEqual(fits.at(-1), points.map(point => [point.latitude, point.longitude]), 'Fit results uses every filtered point rather than the culled viewport subset');
+  assert.equal(renderedMembers(), 982);
+  assert.equal(getNode('result-count').textContent, '982 mapped places');
+  assert.deepEqual(points, before, 'culling, panning, selecting and fitting must never relocate or remove input features');
+});
+
 test('new selections reveal remote or zoomed-out places while repeated selection and filtering preserve the viewport', () => {
   const focus = engineHelpers().shouldFocusSelection;
   assert.equal(focus(null, 'new-place', 9, true), true);
@@ -69,7 +142,7 @@ test('device location updates draw a local marker without moving the tile viewpo
   const moved: unknown[] = [], drawn: unknown[] = [];
   const element = () => ({ hidden: true, className: '', textContent: '', style: {}, setAttribute() {}, addEventListener() {}, replaceChildren() {}, appendChild() {} });
   const nodes = new Map<string, ReturnType<typeof element>>();
-  const map: any = { setView: (...args: unknown[]) => { moved.push(args); return map; }, fitBounds: (...args: unknown[]) => { moved.push(args); return map; }, getZoom: () => 15, getBounds: () => ({ contains: () => true }), latLngToContainerPoint: () => ({ x: 100, y: 100 }), on() {}, invalidateSize() {} };
+  const map: any = { setView: (...args: unknown[]) => { moved.push(args); return map; }, fitBounds: (...args: unknown[]) => { moved.push(args); return map; }, getZoom: () => 15, getSize: () => ({ x: 402, y: 370 }), getBounds: () => ({ contains: () => true }), latLngToContainerPoint: () => ({ x: 100, y: 100 }), on() {}, invalidateSize() {} };
   const layer: any = { addTo: () => layer, clearLayers() {}, remove() {} };
   const tile: any = { on: () => tile, addTo: () => tile };
   const pin: any = { on: () => pin, addTo: () => pin, getElement: element };

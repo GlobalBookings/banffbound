@@ -509,7 +509,11 @@ final class BanffBoundUITests: XCTestCase {
         XCTAssertEqual(XCTWaiter.wait(for: [restored], timeout: 5), .completed, "Reset must restore nonempty unfiltered results")
         XCTAssertFalse(element("Clear map search").exists, "Reset must clear the invalid search query")
         XCTAssertTrue(app.buttons.matching(NSPredicate(format: "label == 'Everything'")).firstMatch.isSelected, "Reset must restore all categories")
-        XCTAssertTrue(visible("All areas").exists, "Reset must restore all areas")
+        // The collapsed control has its own accessibility label, so verify the
+        // selected area through the real expanded area choices.
+        tapID("map-filter-toggle")
+        let allAreas = app.buttons.matching(NSPredicate(format: "label == 'All areas'")).firstMatch
+        XCTAssertTrue(allAreas.waitForExistence(timeout: 10) && allAreas.isHittable && allAreas.isSelected, "Reset must restore the selected All areas chip")
         try attachJSON([
             "kind": "native-map-filter-facilities", "multipleCategoriesSelected": true,
             "singleCategoryRetainedAfterDeselect": true, "areaObserved": "Lake Louise",
