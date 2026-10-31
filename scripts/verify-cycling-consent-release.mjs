@@ -403,9 +403,9 @@ async function loadInventory() {
     { path:'/book/lake-louise-stays/',kind:'paid-landing',name:'Find the stay that fits your Lake Louise trip.',noindex:false,reviewDate:'29 October 2026',faqs:data.lakeLouiseStayFaqs,
       paidLanding:{id:data.lakeLouiseLandingId,offers:data.lakeLouiseStayChoices.map(stay=>({id:stay.slug,href:stay.expediaUrl,provider:'expedia',productId:new URL(stay.expediaUrl).pathname.match(/\.h(\d+)\.Hotel-Information/)?.[1]})),itemList:{'@type':'ItemList',numberOfItems:data.lakeLouiseStayChoices.length,itemListElement:data.lakeLouiseStayChoices.map((stay,index)=>({'@type':'ListItem',position:index+1,name:stay.name,url:`${ORIGIN}/book/lake-louise-stays/#stay-${stay.slug}`}))}},
       markers:{sourceScope:'Property facts and merchant identity reviewed',identity:'The links below open named property listings;',scope:'They are not a price or guest-rating ranking.'} },
-    { path:'/book/banff-winter-activities/',kind:'paid-landing',name:'Find your winter day in Banff',noindex:false,reviewDate:data.winterActivityReviewedAt,faqs:data.winterActivityFaqs,
+    { path:'/book/banff-winter-activities/',kind:'paid-landing',name:'Top 20 winter activities in Banff',noindex:false,reviewDate:data.winterActivityReviewedAt,faqs:data.winterActivityFaqs,
       paidLanding:{id:data.winterActivityLandingId,offers:data.winterActivityOffers.map(offer=>({id:offer.id,href:offer.bookingUrl,provider:'getyourguide',productId:offer.productId}))},
-      markers:{disclosure:'Affiliate disclosure: booking links open GetYourGuide.',sourceScope:'Product identities and linked operator information reviewed',access:'This is not confirmation of reopening.',format:'A canyon walk, mountain ride or winter road day?'} },
+      markers:{disclosure:'Affiliate disclosure: booking links open GetYourGuide.',sourceScope:'Product identities and linked operator information reviewed',access:'This is not confirmation of reopening.',format:'20 ways to make it a Banff winter'} },
   );
   for (const check of checks.filter(check=>check.paidLanding)) {
     assert.equal(check.paidLanding.offers.length,new Set(check.paidLanding.offers.map(offer=>offer.id)).size);

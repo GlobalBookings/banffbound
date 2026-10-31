@@ -109,7 +109,7 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
 
     <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Privacy choices" aria-describedby="cookie-description" hidden>
       <div class="cookie-banner-inner">
-        <p id="cookie-description" class="cookie-banner-text">Choose whether to load optional analytics, advertising and booking widgets. You can browse and use booking links without them. <a href="/privacy">Privacy details</a></p>
+        <p id="cookie-description" class="cookie-banner-text">Choose whether to allow optional analytics, ads and booking widgets. Booking links work either way. <a href="/privacy">Privacy details</a></p>
         <div class="cookie-banner-actions">
           <button type="button" id="cookie-accept" class="cookie-btn cookie-btn-accept">Accept all</button>
           <button type="button" id="cookie-reject" class="cookie-btn cookie-btn-manage">Reject optional</button>
@@ -147,37 +147,37 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
 
     <style is:global>
       .cookie-banner[hidden], .cookie-preferences[hidden], .cookie-banner button[hidden] { display: none !important; }
-      .cookie-banner-status { max-width: var(--max-width, 1200px); margin: 0 auto; padding: 0 1.5rem .75rem; }
+      .cookie-banner-status { padding: 0 .875rem .65rem; }
       .cookie-banner-status:has(p:empty):has(button[hidden]) { display: none; }
       .cookie-banner-status p { font-size: .83rem; line-height: 1.5; }
-      .cookie-pref-note { font-size: .8rem; line-height: 1.6; margin: .8rem 0; }
+      .cookie-pref-note { font-size: .8rem; line-height: 1.45; margin: .55rem 0; }
       .consent-noscript { padding: 1rem; text-align: center; font-size: .8rem; }
       .cookie-banner {
-        max-height: 90vh; overflow: auto;
+        max-height: 90vh;
+        max-height: calc(100dvh - 2rem);
+        overflow: auto;
         position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        bottom: 1rem;
+        left: 1rem;
+        width: min(640px, calc(100vw - 2rem));
         z-index: 9999;
         background: var(--color-dark, #1a1a1a);
         color: rgba(255,255,255,0.85);
+        border: 1px solid rgba(200,169,110,.5);
         border-top: 2px solid var(--color-accent, #c8a96e);
-        box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.16);
       }
 
       .cookie-banner-inner {
-        max-width: var(--max-width, 1200px);
-        margin: 0 auto;
-        padding: 1rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
+        padding: .75rem .875rem;
+        display: grid;
+        gap: .65rem;
       }
 
       .cookie-banner-text {
-        font-size: 0.88rem;
-        line-height: 1.5;
+        font-size: 0.85rem;
+        line-height: 1.4;
         margin: 0;
       }
 
@@ -187,21 +187,23 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
       }
 
       .cookie-banner-actions {
-        display: flex;
-        gap: 0.5rem;
-        flex-shrink: 0; flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: .45rem;
       }
 
       .cookie-btn {
-        padding: 0.55rem 1.2rem;
+        min-height: 44px;
+        padding: .45rem .65rem;
         border: none;
-        border-radius: 8px;
-        font-size: 0.85rem;
+        border-radius: 6px;
+        font-size: 0.83rem;
+        line-height: 1.15;
         font-weight: 600;
         cursor: pointer;
         font-family: var(--font-body, 'Source Sans 3', sans-serif);
         transition: all 0.2s ease;
-        white-space: nowrap;
+        white-space: normal;
       }
 
       .cookie-btn-accept {
@@ -224,19 +226,18 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
       }
 
       .cookie-preferences {
-        max-width: var(--max-width, 1200px);
-        margin: 0 auto;
-        padding: 0 1.5rem 1rem;
+        padding: 0 .875rem .75rem;
       }
 
       .cookie-pref-row {
-        padding: 0.4rem 0;
+        padding: 0;
         font-size: 0.85rem;
       }
 
       .cookie-pref-row label {
         display: flex;
         align-items: center;
+        min-height: 44px;
         gap: 0.5rem;
         cursor: pointer;
       }
@@ -245,6 +246,7 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
         accent-color: var(--color-accent, #c8a96e);
         width: 16px;
         height: 16px;
+        flex-shrink: 0;
       }
 
       .cookie-preferences .cookie-btn {
@@ -252,16 +254,25 @@ const socialImage = new URL(image, Astro.site || 'https://banffbound.com').href;
       }
 
       @media (max-width: 768px) {
+        .cookie-banner {
+          bottom: .5rem;
+          left: .5rem;
+          width: min(640px, calc(100vw - 1rem));
+          max-height: calc(100dvh - 1rem);
+        }
+
         .cookie-banner-inner {
-          flex-direction: column;
-          align-items: stretch;
-          text-align: center;
-          gap: 0.75rem;
+          padding: .65rem .75rem;
+          gap: .55rem;
         }
 
         .cookie-banner-actions {
-          justify-content: center;
+          gap: .4rem;
         }
+
+        .cookie-btn { padding: .4rem .35rem; font-size: .8rem; }
+        .cookie-preferences { padding: 0 .75rem .65rem; }
+        .cookie-banner-status { padding: 0 .75rem .6rem; }
       }
 
       /* Pagefind UI overrides */

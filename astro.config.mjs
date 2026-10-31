@@ -82,6 +82,7 @@ export default defineConfig({
         const reviewedDate = path.startsWith('/trails/') ? reviewedTrailDates.get(path.slice('/trails/'.length)) : path.startsWith('/hotel-directory/') ? reviewedHotelDates.get(path.slice('/hotel-directory/'.length)) : undefined;
         if (reviewedDate) item.lastmod = new Date(reviewedDate);
         if (['/winter', '/trip-builder', '/trail-map', '/quiet-trails', '/alternatives', '/hotel-directory', '/tools', '/accessible-trails', '/paddling', '/activities', '/things-to-do', '/vacation-rentals', '/lakes', '/lake-faq', '/parking', '/shuttle-reservations', '/wildlife', '/wildlife-tracker', '/wildlife-calendar', '/wildlife-safety', '/bear-spray', '/biking', '/privacy', '/tours', '/icefields-parkway-planner', '/book/banff-hotels', '/book/lake-louise-stays', '/book/banff-winter-activities', '/eat-and-drink', '/trip-cost', '/altitude-guide', '/larch-season', '/park-pass'].includes(path) || path.startsWith('/activities/') || Object.hasOwn(visitorDestinationMetadata, path.replace('/blog/', ''))) item.lastmod = new Date('2026-10-29');
+        if (path === '/book/banff-winter-activities') item.lastmod = new Date('2026-10-30');
         if (Object.hasOwn(visitorHotelLocationCorrections, path.replace('/blog/', ''))) item.lastmod = new Date(visitorHotelCorrectionDate);
         const textCorrection = legacyTextCorrections[path.replace('/blog/', '')];
         if (textCorrection) item.lastmod = new Date(textCorrection.correctedAt);

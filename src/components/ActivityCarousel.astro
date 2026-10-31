@@ -1,0 +1,78 @@
+---
+interface Props {
+  id: string;
+  name: string;
+  images: { src: string; alt: string; caption: string }[];
+}
+const { id, name, images } = Astro.props;
+const trackId = `activity-gallery-${id}`;
+---
+<div class="activity-gallery" data-activity-gallery aria-roledescription="carousel" role="group" aria-label={`${name} photos`}>
+  <div class="gallery-track" id={trackId} data-gallery-track tabindex="0" aria-label={`${name} photos. Use left and right arrow keys or swipe to browse.`}>
+    {images.map((image, index) => <figure class="gallery-slide" role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${images.length}`}>
+      <img src={image.src} alt={image.alt} width="800" height="600" loading="lazy" decoding="async" />
+      <figcaption>{image.caption}</figcaption>
+    </figure>)}
+  </div>
+  {images.length > 1 && <div class="gallery-controls" data-gallery-controls hidden>
+    <button type="button" data-gallery-previous aria-controls={trackId} aria-label={`Previous photo of ${name}`} disabled><span aria-hidden="true">←</span></button>
+    <span class="gallery-position" data-gallery-position aria-live="polite" aria-atomic="true">1 / {images.length}</span>
+    <button type="button" data-gallery-next aria-controls={trackId} aria-label={`Next photo of ${name}`}><span aria-hidden="true">→</span></button>
+  </div>}
+</div>
+
+<script>
+  function initActivityGalleries() {
+    for (const gallery of document.querySelectorAll<HTMLElement>('[data-activity-gallery]')) {
+      if (gallery.dataset.ready) continue;
+      const track = gallery.querySelector<HTMLElement>('[data-gallery-track]');
+      const controls = gallery.querySelector<HTMLElement>('[data-gallery-controls]');
+      const previous = gallery.querySelector<HTMLButtonElement>('[data-gallery-previous]');
+      const next = gallery.querySelector<HTMLButtonElement>('[data-gallery-next]');
+      const position = gallery.querySelector<HTMLElement>('[data-gallery-position]');
+      if (!track || !controls || !previous || !next || !position || track.children.length < 2) continue;
+      gallery.dataset.ready = 'true';
+      const total = track.children.length;
+      let active = 0;
+      function update() {
+        if (track!.clientWidth > 0) active = Math.max(0, Math.min(total - 1, Math.round(track!.scrollLeft / track!.clientWidth)));
+        previous!.disabled = active === 0;
+        next!.disabled = active === total - 1;
+        position!.textContent = `${active + 1} / ${total}`;
+      }
+      function move(step: number) {
+        const target = Math.max(0, Math.min(total - 1, active + step));
+        track!.scrollTo({ left: target * track!.clientWidth, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      }
+      previous.addEventListener('click', () => move(-1));
+      next.addEventListener('click', () => move(1));
+      track.addEventListener('scroll', update, { passive: true });
+      track.addEventListener('keydown', event => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        move(event.key === 'ArrowLeft' ? -1 : 1);
+      });
+      controls.hidden = false;
+      update();
+    }
+  }
+  initActivityGalleries();
+  document.addEventListener('astro:page-load', initActivityGalleries);
+</script>
+
+<style>
+  .activity-gallery{position:relative;min-width:0;background:#e6ece5;border-radius:14px;overflow:hidden}
+  .gallery-track{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#9aa89a #e6ece5;outline-offset:-4px}
+  .gallery-track:focus-visible{outline:3px solid #e8bd75}
+  .gallery-slide{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always;position:relative}
+  .gallery-slide img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#dce5db}
+  .gallery-slide figcaption{position:absolute;bottom:0;left:0;right:0;padding:1.5rem .8rem .65rem;background:linear-gradient(transparent,rgba(13,31,24,.86));color:white;font-size:.7rem;line-height:1.4;pointer-events:none}
+  .gallery-controls{display:flex;justify-content:center;align-items:center;gap:.5rem;padding:.4rem;background:#f0f4ec}
+  .gallery-controls[hidden]{display:none}
+  .gallery-controls button{display:grid;place-items:center;width:44px;height:44px;border:1px solid #b5c2b2;border-radius:50%;background:white;color:#193e2b;font:inherit;font-size:1.2rem;cursor:pointer}
+  .gallery-controls button:hover:not(:disabled){background:#dce7d6}
+  .gallery-controls button:focus-visible{outline:3px solid #1c6d4b;outline-offset:2px}
+  .gallery-controls button:disabled{opacity:.35;cursor:default}
+  .gallery-position{font-variant-numeric:tabular-nums;min-width:3rem;text-align:center;color:#294735;font-size:.78rem;font-weight:700}
+  @media(prefers-reduced-motion:reduce){.gallery-track{scroll-behavior:auto}}
+</style>
