@@ -60,11 +60,8 @@ phase apk-download curl --fail --location --proto '=https' --tlsv1.2 --silent --
 qa_build_tools="$qa_sdk/build-tools/36.0.0"
 [[ -x "$qa_build_tools/aapt" && -x "$qa_build_tools/apksigner" ]] || { echo 'Installed build-tools36.0.0 are required; no SDK licence or extra tool installation.'; exit 1; }
 phase apk-verify python3 release/android-qa/android_smoke.py verify "$QA_ROOT" "$qa_build_tools/aapt" "$qa_build_tools/apksigner"
-phase emulator-libraries ldd "$qa_sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64"
-if grep -q 'not found' "$QA_ROOT/logs/emulator-libraries.log"; then
-  echo 'Official emulator has unresolved host libraries; refusing to boot or infer native success.'
-  exit 1
-fi
+# Use the official launcher, which supplies its own bundled-library paths.
+# Its actual version/acceleration/boot commands fail if host dependencies are absent.
 phase emulator-version "$qa_sdk/emulator/emulator" -version
 phase adb-version "$qa_sdk/platform-tools/adb" version
 

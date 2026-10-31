@@ -16,8 +16,10 @@ image fails the job. A disposable runner-user ACL may enable access to `/dev/kvm
 No Play Services image, Google account, Play Console, Expo login, new plan,
 physical device registration, account-verification workaround or signing key is used.
 The workflow installs only Ubuntu's `libpulse0` host runtime library, required by
-the official emulator even with audio disabled, then requires a clean `ldd`
-dependency check before boot. This does not accept Android SDK licence terms.
+the official emulator even with audio disabled. The official launcher's version,
+acceleration and real headless boot commands validate its runtime dependencies;
+the harness does not override its bundled-library loader. This does not accept
+Android SDK licence terms.
 
 The emulator has a fresh app sandbox. Official `adb` and UI Automator hierarchy
 labels drive the actual installed native UI. Checks must prove:
