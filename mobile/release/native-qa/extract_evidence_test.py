@@ -25,7 +25,7 @@ def png(width, height):
 
 
 class ReceiptTest(unittest.TestCase):
-    def run_fixture(self, *, failed=0, missing_screen=False, bad_dimensions=False, source_changed=False, missing_bundle=False):
+    def run_fixture(self, *, failed=0, missing_screen=False, bad_dimensions=False, source_changed=False, missing_bundle=False, missing_offline=False):
         with tempfile.TemporaryDirectory(prefix='banffbound-extractor-unit-fixture-') as directory:
             root = Path(directory)
             root.joinpath('logs').mkdir()
@@ -42,10 +42,12 @@ class ReceiptTest(unittest.TestCase):
             for device in devices:
                 root.joinpath('results', device['label'] + '.xcresult').mkdir(parents=True)
                 root.joinpath('test-' + device['label'] + '.exit').write_text('1' if failed else '0')
+                if not missing_offline:
+                    root.joinpath('offline-readback-' + device['label'] + '.json').write_text(json.dumps({'passed': True, 'fixtureOnly': True}))
 
             def fake_xcrun(command, **_kwargs):
                 if command[2:5] == ['get', 'test-results', 'summary']:
-                    return subprocess.CompletedProcess(command, 0, json.dumps({'totalTestCount': 3, 'passedTests': 3 - failed, 'failedTests': failed, 'skippedTests': 0}), '')
+                    return subprocess.CompletedProcess(command, 0, json.dumps({'totalTestCount': 5, 'passedTests': 5 - failed, 'failedTests': failed, 'skippedTests': 0}), '')
                 if command[2:4] == ['export', 'attachments']:
                     destination = Path(command[-1])
                     device = next(device for device in devices if device['label'] == destination.name)
@@ -102,6 +104,11 @@ class ReceiptTest(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertFalse(receipt['build']['embeddedBundleVerified'])
         self.assertIsNone(receipt['build']['metroRequired'])
+
+    def test_missing_native_offline_file_readback_cannot_pass(self):
+        code, receipt = self.run_fixture(missing_offline=True)
+        self.assertEqual(code, 1)
+        self.assertTrue(any('offline file readback' in error for error in receipt['errors']))
 
 
 if __name__ == '__main__':

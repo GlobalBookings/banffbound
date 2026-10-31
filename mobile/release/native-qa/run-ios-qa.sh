@@ -112,6 +112,17 @@ while IFS=$'\t' read -r label device; do
     printf '1\n' > "$QA_ROOT/test-$label.exit"
     test_failed=1
   fi
+  # Read the app-created native file from the simulator sandbox, without test
+  # hooks, modifying the app, or uploading its personal export contents.
+  if container="$(xcrun simctl get_app_container "$device" com.banffbound.app data)"; then
+    if ! phase "offline-readback-$label" node --import tsx release/native-qa/verify-native-offline-pack.mjs \
+      "$container/Documents/banffbound/offline-pack.json" "$QA_ROOT/offline-readback-$label.json" "$label"; then
+      test_failed=1
+    fi
+  else
+    printf '{"passed":false,"errors":["Native simulator application container unavailable."]}\n' > "$QA_ROOT/offline-readback-$label.json"
+    test_failed=1
+  fi
   xcrun simctl shutdown "$device" || true
 done < "$QA_ROOT/devices.tsv"
 

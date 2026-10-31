@@ -99,6 +99,9 @@ final class BanffBoundUITests: XCTestCase {
         scrollTo("Park-pass planner")
         XCTAssertTrue(visible("Park-pass planner").isHittable)
         capture("store-04-essentials")
+
+        tab("Map", heading: "Get your bearings.")
+        XCTAssertTrue(app.webViews.firstMatch.waitForExistence(timeout: 25), "Map tab must host the real native WebView; provider availability is a separate check")
     }
 
     func test02SavedPlaceSurvivesRelaunch() throws {
@@ -145,5 +148,70 @@ final class BanffBoundUITests: XCTestCase {
         scrollTo("Adults")
         XCTAssertEqual(adultsField().value as? String, "3", "Edited party size must survive a real process relaunch")
         capture("qa-trip-after-relaunch")
+    }
+
+    private func lakeLouiseVenueRow() -> XCUIElement {
+        // The generic default outing is 'Lake Louise lakeshore time'. Require
+        // the precise selected venue instead of accepting that default text.
+        app.buttons.matching(NSPredicate(format: "label CONTAINS 'Lake Louise' AND NOT (label CONTAINS 'lakeshore time')")).firstMatch
+    }
+
+    func test04SpecificVenueStaysOnChosenDayAfterRelaunch() throws {
+        tab("Explore", heading: "Find your kind of Banff.")
+        tap("View Lake Louise")
+        scrollTo("Day 1")
+        tap("Day 1")
+        XCTAssertTrue(visible("Day 1 · added").isHittable, "The venue must be selected for the specific first day")
+        tap("Close panel")
+        tab("My Trip", heading: "Your trip, your pace.")
+        scrollTo("Lake Louise")
+        XCTAssertTrue(lakeLouiseVenueRow().waitForExistence(timeout: 15), "My Trip must show the actual selected venue")
+        capture("qa-venue-before-relaunch")
+
+        app.terminate()
+        app.launch()
+        XCTAssertTrue(visible("Open trip settings", timeout: 45).exists)
+        tab("My Trip", heading: "Your trip, your pace.")
+        scrollTo("Lake Louise")
+        let venue = lakeLouiseVenueRow()
+        XCTAssertTrue(venue.waitForExistence(timeout: 15), "Precise venue must survive a real process relaunch")
+        XCTAssertTrue(venue.isHittable)
+        venue.tap()
+        scrollTo("Day 1 · added")
+        XCTAssertTrue(visible("Day 1 · added").isHittable, "Reopened venue must still belong to day one")
+        capture("qa-venue-after-relaunch")
+    }
+
+    func test05OfflinePackAndBundledGuideSurviveRelaunch() throws {
+        tab("Essentials", heading: "The useful little things.")
+        scrollTo("Ready for offline")
+        tap("Ready for offline")
+        XCTAssertTrue(visible("A little less signal. A little more freedom.").exists)
+        XCTAssertFalse(element("Last saved").exists, "Fresh simulator has not saved an offline pack before this test")
+        scrollTo("Save trip for offline")
+        tap("Save trip for offline")
+        let saved = visible("Last saved", timeout: 30)
+        let savedLabel = saved.label
+        XCTAssertTrue(savedLabel.contains("Last saved"), "Show saved status only after the native file's write/readback succeeded")
+        capture("qa-offline-saved")
+
+        app.terminate()
+        app.launch()
+        XCTAssertTrue(visible("Open trip settings", timeout: 45).exists)
+        tab("Essentials", heading: "The useful little things.")
+        scrollTo("Ready for offline")
+        tap("Ready for offline")
+        XCTAssertEqual(visible("Last saved").label, savedLabel, "Native offline saved status must survive process relaunch")
+        tap("Close panel")
+        tab("Explore", heading: "Find your kind of Banff.")
+        tap("View Lake Louise")
+        scrollTo("Read the offline guide")
+        tap("Read the offline guide")
+        XCTAssertTrue(visible("THE OFFLINE FIELD NOTES").isHittable)
+        XCTAssertTrue(visible("Lake Louise essentials").isHittable)
+        XCTAssertTrue(visible("Choose the outing").exists, "Bundled guide text must open inside the native app")
+        capture("qa-bundled-guide-after-relaunch")
+        // OS network state is unchanged. This verifies native saving and bundled
+        // reading, not an airplane-mode or external map availability scenario.
     }
 }

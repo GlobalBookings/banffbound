@@ -10,10 +10,19 @@ One build is reused sequentially on iPhone 17 Pro and iPad Pro 13-inch (M5), usi
 the runner's installed iOS 26 simulators and pinned Xcode 26.6. Build and test
 explicitly target arm64; this standard Apple Silicon runner does not need an
 x86_64 build. Each destination
-must execute and pass three real UI tests: navigation/capture of Today, Explore,
+must execute and pass five real UI tests: navigation/capture of Today, Explore,
 My Trip and Essentials; saving Lake Louise and verifying it after process
 relaunch; changing the synthetic adult count to three and verifying it after
-another process relaunch. Initial screen captures precede these mutations.
+another process relaunch; adding the precise Lake Louise venue to day one and
+verifying that association after relaunch; and saving a native offline pack,
+reopening its saved status and reading a bundled guide after relaunch. The map
+tab must host the actual native WebView; external provider availability is not
+claimed. Initial store captures precede these mutations.
+
+After XCTest, the runner reads the actual app-created offline file from each
+simulator sandbox and verifies exact canonical guide/place content plus the
+UI-edited party, saved place and first-day venue. Only its hash/counts/result
+are retained; the personal pack contents are not uploaded.
 
 The artifact contains eight unedited native screen PNGs, a source commit and
 fingerprint comparison, embedded bundle SHA-256, XCTest counts and bounded log
@@ -21,7 +30,7 @@ tails. On a test failure it also retains at most one diagnostic screenshot and
 one bounded accessibility tree per device, plus bounded attachment manifests.
 The extractor requires the four named captures from each device at the
 actual expected dimensions (1206 × 2622 and 2064 × 2752), successful xcodebuild
-exits, at least three passed tests per device, and zero failures/skips. Missing
+exits, at least five passed tests per device, and zero failures/skips. Missing
 evidence fails the job. It records alpha/transparency compatibility separately.
 Only the small evidence folder is uploaded for **one day**; applications, Pods,
 DerivedData, full result bundles, videos and caches are excluded.

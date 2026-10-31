@@ -96,6 +96,12 @@ def main():
         label = device['label']
         result = {'device': device, 'testsPassed': False, 'screenshots': [], 'failureDiagnostics': []}
         results.append(result)
+        readback = read_json(root / f'offline-readback-{label}.json')
+        result['nativeOfflineFileReadback'] = readback
+        if readback is not None:
+            (evidence / f'{label}-offline-file-readback.json').write_text(json.dumps(readback, indent=2) + '\n')
+        if not isinstance(readback, dict) or readback.get('passed') is not True:
+            errors.append(f'{label}: native offline file readback was not verified against complete bundled content and UI-edited state.')
         bundle = root / 'results' / f'{label}.xcresult'
         if not bundle.exists():
             errors.append(f'{label}: no native XCTest result bundle; no success inferred.')
@@ -105,11 +111,11 @@ def main():
             counts = {key: summary.get(key) for key in ('totalTestCount', 'passedTests', 'failedTests', 'skippedTests')}
             result['testCounts'] = counts
             result['testsPassed'] = (read_text(root / f'test-{label}.exit') == '0'
-                                     and isinstance(counts['totalTestCount'], int) and counts['totalTestCount'] >= 3
-                                     and isinstance(counts['passedTests'], int) and counts['passedTests'] >= 3
+                                     and isinstance(counts['totalTestCount'], int) and counts['totalTestCount'] >= 5
+                                     and isinstance(counts['passedTests'], int) and counts['passedTests'] >= 5
                                      and counts['failedTests'] == 0 and counts['skippedTests'] == 0)
         if not result['testsPassed']:
-            errors.append(f'{label}: require all three real UI tests executed and passed, zero failures/skips and successful xcodebuild exit.')
+            errors.append(f'{label}: require all five real UI tests executed and passed, zero failures/skips and successful xcodebuild exit.')
         exported = root / 'attachments' / label
         exported.mkdir(parents=True, exist_ok=True)
         export = subprocess.run(['xcrun', 'xcresulttool', 'export', 'attachments', '--path', str(bundle), '--output-path', str(exported)], capture_output=True, text=True)
@@ -187,6 +193,11 @@ def main():
                     'method': 'XCUIScreen.main.screenshot attached by executed XCTest', 'pixelEditing': False,
                     'clockOverride': False, 'data': 'fresh simulator defaults; later persistence tests use a public saved place and synthetic party size'},
         'devices': results,
+        'requiredFlows': ['Native Today/Explore/My Trip/Essentials capture and Map WebView presence',
+                          'Saved place survives process relaunch', 'Edited numeric party size survives process relaunch',
+                          'Precise venue remains on chosen day after process relaunch',
+                          'Native offline saved status and bundled guide reading after process relaunch',
+                          'Actual simulator app file matches full canonical guide/place bundle and UI-edited trip'],
         'errors': errors,
         'limits': ['Unsigned simulator build; distinct from signed TestFlight build 3.',
                    'No physical-device QA, purchase/booking transaction, location permission, notifications, or real offline-network test.',
