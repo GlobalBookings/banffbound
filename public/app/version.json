@@ -1,10 +1,10 @@
 {
   "app": "BanffBound",
   "appVersion": "1.0.0",
-  "assetFingerprint": "69f9c2d4ef82c9147c37",
-  "sourceFingerprint": "ffe36e9843fc86d7911dc3c89ade4938656c5fe9e9392c0a32722990b6160f01",
+  "assetFingerprint": "961451eadc84692dcfb9",
+  "sourceFingerprint": "7860035a0a1c8edcd416e0ffbbba5088ae45046f3663cd4e201a1e476e446dc3",
   "sourceRevision": null,
   "assetCount": 24,
-  "byteSize": 8044551,
+  "byteSize": 8046532,
   "base": "/app/"
 }

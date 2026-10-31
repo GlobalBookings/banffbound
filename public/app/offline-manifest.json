@@ -1,26 +1,26 @@
 {
-  "version": "69f9c2d4ef82c9147c37",
+  "version": "961451eadc84692dcfb9",
   "base": "/app/",
   "assets": [
     {
-      "url": "/app/_expo/static/js/web/index-01b9e61a3e5b0ee110658eaa6f15236a.js",
-      "size": 3338811,
-      "sha256": "fd2b549e9efd510010236c8fec8ef1fd757063379ba717df103a78fa9cc8678b"
-    },
-    {
-      "url": "/app/_expo/static/js/web/index-c2fb8d2ef1b1500955e007c1b004b64c.js",
-      "size": 2066,
-      "sha256": "323e5e40c40b7595fd88a48e0aef622d844a97017c06ac4fa378be8aafc783e9"
-    },
-    {
-      "url": "/app/_expo/static/js/web/index-ceca340f027d650cdab93acd999b2da6.js",
-      "size": 3072,
-      "sha256": "0feea8fe116c022b991e2b0da8a3a96262c982fa9f8739cab816c08a2a536df4"
-    },
-    {
-      "url": "/app/_expo/static/js/web/index-f8cb8626204fc35c218e05621c4732a3.js",
+      "url": "/app/_expo/static/js/web/index-0307e415e44c165e61b863084118f492.js",
       "size": 23664,
-      "sha256": "f1fb34c1af07e325309fef090be5bfb6bedc80effa9dda377ed4b29b3a92b66a"
+      "sha256": "1285738dbbb02c49b9e7493582e15e7f2406d980fd7662412037796089ecc640"
+    },
+    {
+      "url": "/app/_expo/static/js/web/index-2e4fb1dfdd568b88d299a613f533c321.js",
+      "size": 3340792,
+      "sha256": "b38d01d8fdc97e41e4d796f3fd035ad4250fa7c57c002ec4f75f61a41e29adcf"
+    },
+    {
+      "url": "/app/_expo/static/js/web/index-79dc467665209c71c90ccc3be5dec376.js",
+      "size": 2066,
+      "sha256": "d94f780e1faa0567d9b9bd1b12a15025464d8e87224bd207adda3650b990b36c"
+    },
+    {
+      "url": "/app/_expo/static/js/web/index-dad2a4f8a2f5ce8966b2670102331580.js",
+      "size": 3072,
+      "sha256": "2cca2e31c7fce0fc00a5992d3e0e6c3ac2606acf1df23fc4d7d4820a1c25a141"
     },
     {
       "url": "/app/assets/assets/canmore.8d28ecf7db9304ffc47debad232a1c70.jpg",
@@ -85,7 +85,7 @@
     {
       "url": "/app/index.html",
       "size": 2250,
-      "sha256": "55e6b910205f5f4d5207f190b49d648d7ff4af556ba6a122a220b8fcf1f1fef8"
+      "sha256": "6cf5835d8552aeb5453448ed966b960944e90f1afb560e3cae308d8f2ca49902"
     },
     {
       "url": "/app/manifest.webmanifest",
@@ -125,7 +125,7 @@
     {
       "url": "/app/version.json",
       "size": 276,
-      "sha256": "1b921397ccf1bc44319ffa4ac2d77fcf84bd2d1506f51cda7c42a8b91c946cb8"
+      "sha256": "81020abe3d9b039b9b6cec0820cdad14b4089e3b2acbe415c5846b5505496327"
     }
   ]
 }
