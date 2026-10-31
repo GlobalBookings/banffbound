@@ -6,6 +6,9 @@ dist/
 # dependencies
 node_modules/
 agents/node_modules/
+# Expo's static export keeps its bundled icon font under this asset path.
+!public/app/assets/node_modules/
+!public/app/assets/node_modules/**
 
 # logs
 npm-debug.log*

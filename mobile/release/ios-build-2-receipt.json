@@ -1,0 +1,32 @@
+{
+  "candidateType": "reviewed-release-testflight-candidate",
+  "project": "@spiresdigital/banffbound",
+  "projectId": "bc4566b5-997f-45fa-abca-eabf5b98630c",
+  "platform": "ios",
+  "bundleIdentifier": "com.banffbound.app",
+  "buildId": "7140c800-bc61-4a11-9f43-53768fb1b29e",
+  "buildUrl": "https://expo.dev/accounts/spiresdigital/projects/banffbound/builds/7140c800-bc61-4a11-9f43-53768fb1b29e",
+  "status": "FINISHED",
+  "appVersion": "1.0.0",
+  "buildNumber": "2",
+  "createdAt": "2026-10-31T02:28:37.712Z",
+  "remoteUpdatedAt": "2026-10-31T02:31:44.808Z",
+  "completedAt": "2026-10-31T02:31:44.633Z",
+  "sourceFingerprint": "068be6dcfd988f6f816b67fd4681b9e67354fc2f6ad053a0bac059f96e2bd257",
+  "sourceFileCount": 48,
+  "sourceCommit": "065166e",
+  "easFingerprint": "9a3ad65d3b5847e029228018f3344189a96aee1f",
+  "isolatedSourceRoot": "/tmp/banffbound-native-release-2",
+  "artifactAvailable": true,
+  "superseded": true,
+  "releaseBlocked": true,
+  "releaseBlocker": "Independent review found that selecting a place for a missing activity did not add that activity. Build 3 is required after the atomic add-place fix and browser validation.",
+  "submittedToAppStoreConnect": false,
+  "publiclyReleased": false,
+  "realDeviceVerified": false,
+  "notes": [
+    "Portable snapshot canonical source fingerprint independently checked before submission.",
+    "This build includes the reviewed release source. Initial candidate 1 and its source identity remain recorded separately.",
+    "Submission is on hold by parent instruction; do not upload build 2 to Apple."
+  ]
+}

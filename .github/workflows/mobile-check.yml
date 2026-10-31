@@ -1,0 +1,32 @@
+name: Mobile App Check
+
+on:
+  pull_request:
+    paths: ['mobile/**', 'public/app/**', 'public/sw.js', '.github/workflows/mobile-check.yml']
+  push:
+    branches: [main]
+    paths: ['mobile/**', 'public/app/**', 'public/sw.js', '.github/workflows/mobile-check.yml']
+
+jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+      - name: Install source and app dependencies
+        run: |
+          npm ci
+          npm ci --prefix mobile
+      - name: Validate app and published content
+        run: |
+          npm run typecheck --prefix mobile
+          npm test --prefix mobile
+          node --test mobile/web/offline-worker.test.mjs
+          node mobile/scripts/sync-content.mjs --check
+          node mobile/scripts/verify-published.mjs
+      - name: Bundle iOS and Android
+        run: npm run export:native --prefix mobile

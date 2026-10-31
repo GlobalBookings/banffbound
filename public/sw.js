@@ -1,4 +1,4 @@
-const CACHE_NAME = 'banffbound-v1';
+const CACHE_NAME = 'banffbound-v2';
 const OFFLINE_URL = '/404';
 
 const PRECACHE_URLS = [
@@ -24,13 +24,15 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
+      Promise.all(keys.filter((k) => k.startsWith('banffbound-v') && k !== CACHE_NAME).map((k) => caches.delete(k)))
     )
   );
   self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
+  // The companion app owns its narrower worker and complete offline packs.
+  if (new URL(event.request.url).pathname.startsWith('/app/')) return;
   if (event.request.mode !== 'navigate') return;
   event.respondWith(
     fetch(event.request).catch(() =>
