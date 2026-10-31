@@ -64,6 +64,11 @@ async function inventory() {
   }
   return output;
 }
+// Redistributable map data is separate from the tile service and editorial content.
+await mkdir(path.join(outputDir, 'map-data'), { recursive: true });
+for (const name of ['osm-points.json', 'osm-source.json', 'LICENCE.txt']) {
+  await copyFile(path.join(mobileRoot, 'src', 'data', 'map-sources', name), path.join(outputDir, 'map-data', name));
+}
 const assets = await inventory();
 const source = await sourceFingerprint(mobileRoot);
 const version = sha256(JSON.stringify({ sourceFingerprint: source.fingerprint, assets })).slice(0, 20);

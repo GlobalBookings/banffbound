@@ -41,6 +41,7 @@ jobs:
           node --test mobile/web/offline-worker.test.mjs
           node .github/scripts/check-mobile-reviewed-content.mjs
           node mobile/scripts/sync-commerce.mjs --source-root .reviewed-commerce-source --check
+          node mobile/scripts/sync-map.mjs --check
           node mobile/scripts/verify-published.mjs
       - name: Bundle iOS and Android
         run: npm run export:native --prefix mobile

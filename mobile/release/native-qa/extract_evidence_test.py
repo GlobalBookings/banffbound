@@ -28,8 +28,9 @@ def png(width, height):
 
 class ReceiptTest(unittest.TestCase):
     def run_fixture(self, *, failed=0, missing_screen=None, bad_dimensions=False, source_changed=False, missing_bundle=False, missing_offline=False,
-                    test_count=7, substituted_test=False, missing_browser=False, browser_returned=True, browser_address_visible=False, missing_browser_screen=False,
-                    invented_partner_query=False):
+                    test_count=9, substituted_test=False, missing_browser=False, browser_returned=True, browser_address_visible=False, missing_browser_screen=False,
+                    invented_partner_query=False, missing_map_marker=False, missing_map_filter=False,
+                    map_marker_surface='native-webview-document-button', map_facility_field='Access in map data', map_reset=True):
         with tempfile.TemporaryDirectory(prefix='banffbound-extractor-unit-fixture-') as directory:
             root = Path(directory)
             root.joinpath('logs').mkdir()
@@ -78,6 +79,32 @@ class ReceiptTest(unittest.TestCase):
                         }
                         destination.joinpath('browser-observation.txt').write_text(json.dumps(observation))
                         entries.append({'exportedFileName': 'browser-observation.txt', 'suggestedHumanReadableName': 'qa-commerce-browser-observation.txt'})
+                    observations = {
+                        'qa-map-marker-observation': {
+                            'kind': 'native-map-marker-detail', 'selectionSurface': map_marker_surface,
+                            'webViewObserved': True, 'fitResultsDocumentButtonUsed': True,
+                            'markerLabel': 'The Bison Restaurant · Restaurants', 'restaurantTitle': 'The Bison Restaurant',
+                            'nativeDetailOpened': True, 'reviewedCuisineObserved': 'Seasonal Canadian',
+                            'menuActionObserved': True, 'menuHostObserved': 'www.thebison.ca',
+                            'menuOpened': False, 'basemapAvailabilityVerified': False, 'locationPermissionRequested': False,
+                        },
+                        'qa-map-filter-observation': {
+                            'kind': 'native-map-filter-facilities', 'multipleCategoriesSelected': True,
+                            'singleCategoryRetainedAfterDeselect': True, 'areaObserved': 'Lake Louise',
+                            'searchQuery': 'Public Washrooms', 'facilityTitle': 'Public Washrooms',
+                            'facilityCategoryObserved': 'Toilets', 'facilityFieldObserved': map_facility_field,
+                            'sourceObserved': 'OpenStreetMap contributors · node/1623434017', 'detailClosed': True,
+                            'invalidQueryEmptyStateVerified': True, 'resetRestoredAllFilters': map_reset,
+                            'restoredResultCountLabel': '975 places', 'locationPermissionRequested': False,
+                        },
+                    }
+                    for name, observation in observations.items():
+                        if ((name == 'qa-map-marker-observation' and missing_map_marker)
+                                or (name == 'qa-map-filter-observation' and missing_map_filter)):
+                            continue
+                        filename = name + '.txt'
+                        destination.joinpath(filename).write_text(json.dumps(observation))
+                        entries.append({'exportedFileName': filename, 'suggestedHumanReadableName': filename})
                     if failed:
                         destination.joinpath('failure.png').write_bytes(png(*dimensions))
                         entries.append({'exportedFileName': 'failure.png', 'suggestedHumanReadableName': 'qa-failure-screen.png'})
@@ -86,7 +113,19 @@ class ReceiptTest(unittest.TestCase):
                     identifiers = list(extract.REQUIRED_TESTS)
                     if substituted_test:
                         identifiers[1] = 'testSomeOtherFlow'
-                    groups = [{'testIdentifier': 'BanffBoundUITests/' + name + '()', 'attachments': entries if index == 0 else []}
+                    def attachment_flow(record):
+                        name = record['suggestedHumanReadableName']
+                        if name.startswith(('store-05-', 'qa-commerce-')):
+                            return 5
+                        if name.startswith(('store-06-', 'store-07-')):
+                            return 6
+                        if name.startswith(('store-08-', 'store-09-', 'qa-map-marker-')):
+                            return 7
+                        if name.startswith('qa-map-filter-'):
+                            return 8
+                        return 0
+                    groups = [{'testIdentifier': 'BanffBoundUITests/' + name + '()',
+                               'attachments': [record for record in entries if attachment_flow(record) == index]}
                               for index, name in enumerate(identifiers)]
                     destination.joinpath('manifest.json').write_text(json.dumps(groups))
                     return subprocess.CompletedProcess(command, 0, '', '')
@@ -101,10 +140,12 @@ class ReceiptTest(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertTrue(receipt['passed'])
         self.assertFalse(receipt['storeUploadApproved'])
-        self.assertEqual([len(device['screenshots']) for device in receipt['devices']], [7, 7])
+        self.assertEqual([len(device['screenshots']) for device in receipt['devices']], [9, 9])
         self.assertTrue(receipt['screenshotMediaCompatible'])
-        self.assertTrue(all(device['testCounts']['passedTests'] == 7 for device in receipt['devices']))
-        self.assertTrue(all(len(device['executedTestIdentifiers']) == 7 for device in receipt['devices']))
+        self.assertTrue(all(device['testCounts']['passedTests'] == 9 for device in receipt['devices']))
+        self.assertTrue(all(len(device['executedTestIdentifiers']) == 9 for device in receipt['devices']))
+        self.assertTrue(all(device['nativeMapMarkerDetail']['selectionSurface'] == 'native-webview-document-button' for device in receipt['devices']))
+        self.assertTrue(all(device['nativeMapFiltersFacilities']['resetRestoredAllFilters'] for device in receipt['devices']))
 
     def test_real_test_failure_cannot_become_success(self):
         code, receipt = self.run_fixture(failed=1)
@@ -141,9 +182,14 @@ class ReceiptTest(unittest.TestCase):
     def test_only_original_five_tests_cannot_satisfy_new_suite(self):
         code, receipt = self.run_fixture(test_count=5)
         self.assertEqual(code, 1)
-        self.assertTrue(any('all seven real UI tests' in error for error in receipt['errors']))
+        self.assertTrue(any('all nine real UI tests' in error for error in receipt['errors']))
 
-    def test_seven_different_tests_cannot_replace_original_flow(self):
+    def test_original_seven_without_map_flows_cannot_satisfy_new_suite(self):
+        code, receipt = self.run_fixture(test_count=7)
+        self.assertEqual(code, 1)
+        self.assertTrue(any('all nine real UI tests' in error for error in receipt['errors']))
+
+    def test_nine_different_tests_cannot_replace_original_flow(self):
         code, receipt = self.run_fixture(substituted_test=True)
         self.assertEqual(code, 1)
         self.assertTrue(any('no substituted test' in error for error in receipt['errors']))
@@ -152,6 +198,32 @@ class ReceiptTest(unittest.TestCase):
         code, receipt = self.run_fixture(missing_screen='store-07-guides')
         self.assertEqual(code, 1)
         self.assertTrue(any('store-07-guides' in error for error in receipt['errors']))
+
+    def test_each_map_capture_is_required(self):
+        for screen in ('store-08-map', 'store-09-map-details'):
+            with self.subTest(screen=screen):
+                code, receipt = self.run_fixture(missing_screen=screen)
+                self.assertEqual(code, 1)
+                self.assertTrue(any(screen in error for error in receipt['errors']))
+
+    def test_each_executed_map_observation_is_required(self):
+        for field in ('missing_map_marker', 'missing_map_filter'):
+            with self.subTest(field=field):
+                code, receipt = self.run_fixture(**{field: True})
+                self.assertEqual(code, 1)
+                self.assertTrue(any('Expected one executed qa-map-' in error for error in receipt['errors']))
+
+    def test_native_result_list_cannot_substitute_for_document_marker(self):
+        code, receipt = self.run_fixture(map_marker_surface='native-result-list')
+        self.assertEqual(code, 1)
+        self.assertTrue(any('Executed map marker' in error for error in receipt['errors']))
+
+    def test_unverified_facilities_or_reset_cannot_pass(self):
+        for values in ({'map_facility_field': 'invented facility'}, {'map_reset': False}):
+            with self.subTest(values=values):
+                code, receipt = self.run_fixture(**values)
+                self.assertEqual(code, 1)
+                self.assertTrue(any('Executed map filters' in error for error in receipt['errors']))
 
     def test_missing_browser_ui_observation_cannot_pass(self):
         code, receipt = self.run_fixture(missing_browser=True)

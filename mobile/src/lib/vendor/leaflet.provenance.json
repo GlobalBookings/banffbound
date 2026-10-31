@@ -1,0 +1,20 @@
+{
+  "version": "1.9.4",
+  "license": "BSD-2-Clause",
+  "officialDownload": "https://leafletjs.com/download.html",
+  "verifiedAt": "2026-10-31",
+  "files": {
+    "js": {
+      "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
+      "upstreamSha256": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a",
+      "upstreamIntegrity": "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=",
+      "vendoredSha256": "dc71f8a6880bc3ca1bd9fa8dc5f1af48c702dc510b0a78240a07c5feed7ce935"
+    },
+    "css": {
+      "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",
+      "upstreamSha256": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6",
+      "upstreamIntegrity": "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    }
+  },
+  "modification": "JS sourceMappingURL footer omitted to prevent a runtime source-map request; CSS unchanged. Custom div icons do not use default icon image assets."
+}
