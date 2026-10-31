@@ -64,7 +64,7 @@ function checkActivity(html, t, guideId) {
     assert(ns.indexOf(notice) < ns.indexOf(link));
   }
   const mobile = ns.find(n => at(n, "data-activity-booking-mobile") !== void 0);
-  assert(mobile && at(mobile, "hidden") !== void 0);
+  assert(mobile && at(mobile, "hidden") === void 0, "Native mobile bar is visible in SSR before any JavaScript or scrolling.");
   const mobileNodes = walk(mobile);
   const mobileLink = mobileNodes.find(n => n.tagName === "a");
   const dismiss = mobileNodes.find(n => n.tagName === "button");
@@ -87,7 +87,7 @@ for (const target of m.activityCampaignTargets) {
   fixture = { html, t, guideId };
   cases++;
 }
-for (const mutate of [(h) => h.replace(/data-offer-id="[^"]+"/, 'data-offer-id="wrong"'), (h) => h.replace(/data-paid-affiliate-campaign="[^"]+"/, ""), (h) => h.replace(/data-affiliate-target-path="[^"]+"/, 'data-affiliate-target-path="/s/"'), (h) => h.replace(/href="https:\/\/www\.getyourguide\.com[^"]+"/, 'href="https://evil.test/"'), (h) => h.replace("Affiliate link.", ""), (h) => h.replace("Make it part of your trip", "Hold paid ads"), (h) => h.replace(/(data-activity-booking-mobile[^>]*>)/, "$1<p>Extra mobile copy</p>")]) assert.throws(() => checkActivity(mutate(fixture.html), fixture.t, fixture.guideId));
+for (const mutate of [(h) => h.replace(/data-offer-id="[^"]+"/, 'data-offer-id="wrong"'), (h) => h.replace(/data-paid-affiliate-campaign="[^"]+"/, ""), (h) => h.replace(/data-affiliate-target-path="[^"]+"/, 'data-affiliate-target-path="/s/"'), (h) => h.replace(/href="https:\/\/www\.getyourguide\.com[^"]+"/, 'href="https://evil.test/"'), (h) => h.replace("Affiliate link.", ""), (h) => h.replace("Make it part of your trip", "Hold paid ads"), (h) => h.replace(/(data-activity-booking-mobile[^>]*>)/, "$1<p>Extra mobile copy</p>"), (h) => h.replace("data-activity-booking-mobile", "data-activity-booking-mobile hidden")]) assert.throws(() => checkActivity(mutate(fixture.html), fixture.t, fixture.guideId));
 const Blog = await component("src/layouts/BlogLayout.astro");
 for (const slug of ["banff-gondola-guide", "jasper-town", "ordinary-banff-guide"]) {
   const props = { title: "SSR ownership fixture", description: "Fixture description", date: "2025-04-03", lastUpdated: "2026-10-29", category: "Guides", image: "/fixture.webp", imageIsIllustrative: true, imageNote: "Illustrative fixture", readTime: "5 min", slug, curatedBookingLinks: true };
@@ -104,66 +104,54 @@ for (const slug of ["banff-gondola-guide", "jasper-town", "ordinary-banff-guide"
 }
 const source = await readFile("src/components/ActivityBookingCTA.astro", "utf8");
 const js = (await transformJs(source.match(/<script>([\s\S]*?)<\/script>/)[1], { loader: "ts", format: "iife" })).code;
-function client({ observer = true, missing = false } = {}) {
-  let bottom = 500, focuses = 0;
-  const handlers = {}, scroll = {}, docEvents = {}, sizes = {};
-  const dismiss = { hidden: true, addEventListener: (k, fn) => {
-    handlers[k] = fn;
+function client({ resizeObserver = true, missing = false } = {}) {
+  let focuses = 0, height = 76, measured;
+  const handlers = {}, events = {}, docEvents = {}, sizes = {};
+  const dismiss = { hidden: true, addEventListener: (type, fn) => { handlers[type] = fn; } };
+  const bar = { hidden: false, get offsetHeight() { return this.hidden ? 0 : height; } };
+  const wrapper = { dataset: {}, querySelector: selector => {
+    assert.notEqual(selector, "[data-activity-booking-panel]", "Initial CTA never waits for the article panel.");
+    return selector === "[data-activity-booking-mobile]" ? missing ? null : bar : dismiss;
   } };
-  const bar = { hidden: true, get offsetHeight() {
-    return this.hidden ? 0 : 180;
-  } };
-  const panel = { getBoundingClientRect: () => ({ bottom }) };
-  const wrapper = { dataset: {}, querySelector: (sel) => sel === "[data-activity-booking-panel]" ? panel : sel === "[data-activity-booking-mobile]" ? missing ? null : bar : dismiss };
-  const doc = { querySelectorAll: () => [wrapper], getElementById: () => ({ focus: (opts) => {
-    assert.equal(opts.preventScroll, true);
-    focuses++;
-  } }), documentElement: { style: { setProperty: (k, v) => sizes[k] = v } }, addEventListener: (k, fn) => docEvents[k] = fn };
-  const win = { addEventListener: (k, fn) => scroll[k] = fn };
-  let intersection;
-  class IO {
-    constructor(fn) {
-      intersection = fn;
-    }
-    observe() {
-    }
-  }
-  class RO {
-    constructor(fn) {
-      this.fn = fn;
-    }
-    observe() {
-      this.fn();
-    }
-  }
-  if (observer) win.IntersectionObserver = IO;
-  win.ResizeObserver = RO;
-  vm.runInNewContext(js, { document: doc, window: win, IntersectionObserver: IO, ResizeObserver: RO });
-  if (missing) {
-    assert.equal(wrapper.dataset.ready, void 0);
-    return;
-  }
-  assert(bar.hidden);
+  const doc = {
+    querySelectorAll: () => [wrapper],
+    getElementById: () => ({ focus: options => { assert.equal(options.preventScroll, true); focuses++; } }),
+    documentElement: { style: { setProperty: (key, value) => { sizes[key] = value; } } },
+    addEventListener: (type, fn) => { docEvents[type] = fn; },
+  };
+  const win = { addEventListener: (type, fn) => { events[type] = fn; } };
+  class ForbiddenIntersectionObserver { constructor() { throw Error("No IntersectionObserver is required for an initial CTA."); } }
+  class RO { constructor(fn) { measured = fn; } observe() { measured(); } }
+  if (resizeObserver) win.ResizeObserver = RO;
+  vm.runInNewContext(js, { document: doc, window: win, IntersectionObserver: ForbiddenIntersectionObserver, ResizeObserver: RO });
+  if (missing) { assert.equal(wrapper.dataset.ready, void 0); return; }
+  assert.equal(bar.hidden, false, "CTA starts visible without scrolling or an observer callback.");
   assert.equal(dismiss.hidden, false);
-  bottom = -1;
-  (observer ? intersection : scroll.scroll)();
-  assert.equal(bar.hidden, false);
-  assert.equal(sizes["--activity-booking-bar-height"], "180px");
+  assert.equal(sizes["--activity-booking-bar-height"], "76px", "Initial height is measured immediately.");
+  assert.equal(events.scroll, undefined);
+  height = 104; events.resize();
+  assert.equal(sizes["--activity-booking-bar-height"], "104px", "Resizing updates body/cookie spacing.");
+  if (resizeObserver) { height = 112; measured(); assert.equal(sizes["--activity-booking-bar-height"], "112px"); }
   const click = handlers.click;
   docEvents["astro:page-load"]();
-  assert.equal(handlers.click, click, "One handler after reinitialisation");
+  assert.equal(handlers.click, click, "One dismiss handler after reinitialisation.");
   handlers.click();
-  assert(bar.hidden);
-  assert.equal(focuses, 1);
-  (observer ? intersection : scroll.scroll)();
-  assert(bar.hidden, "Dismiss persists for this page");
+  assert.equal(bar.hidden, true); assert.equal(focuses, 1);
+  events.resize();
+  assert.equal(bar.hidden, true, "Dismissal survives resize.");
+  docEvents["astro:page-load"]();
+  assert.equal(bar.hidden, true, "Reinitialising this document does not undo dismissal.");
 }
 client();
-client({ observer: false });
+client({ resizeObserver: false });
 client({ missing: true });
 assert(source.includes("env(safe-area-inset-bottom)"));
 for (const selector of ["activity-booking-link", "activity-mobile-link"]) assert(new RegExp("\\." + selector + "\\{[^}]*background:#b34d23").test(source), "Both booking buttons retain the requested orange treatment.");
-assert(source.includes("body:has(#cookie-banner:not([hidden]))"));
+assert(/body:has\(\[data-activity-booking-mobile\]:not\(\[hidden\]\)\) #cookie-banner/.test(source));
+assert(source.includes('bottom:calc(var(--activity-booking-bar-height,calc(76px + env(safe-area-inset-bottom))) + .5rem)'), 'Cookie controls sit above the native CTA with a no-JavaScript safe-area fallback.');
+assert(source.includes('max-height:calc(100dvh - var(--activity-booking-bar-height'), 'Cookie choices remain scrollable within the viewport.');
+assert(!source.includes('body:has(#cookie-banner:not([hidden])) [data-activity-booking-mobile]'), 'An undecided cookie choice does not hide the initial native CTA.');
+assert(!/IntersectionObserver|getBoundingClientRect|addEventListener\(["']scroll/.test(js));
 assert(source.includes('body:has(#menu-toggle[aria-expanded="true"])'));
 assert(!/preventDefault\(|window\.open|localStorage|sessionStorage|fetch\(|\.href\s*=/.test(js));
-console.log(`PASS: actual Astro SSR 5hotelcontexts, ${cases}activitytargets\xD72exactCTAs/notices/IDs, 3fullBlogLayoutcontexts;7HTML negative mutations;actual mobile handler(observer+fallback+missing+reset/idempotence/dismiss/focus),safe-area/privacy/menu collision guards;native URLs unchanged by controller.`);
+console.log(`PASS: actual Astro SSR 5hotelcontexts, ${cases}activitytargets\xD72exactCTAs/notices/IDs, 3fullBlogLayoutcontexts;8HTML negative mutations;initial SSR/native mobile visibility;actual mobile handler(immediate height/resize/no-observer/missing/idempotence/dismiss/focus),safe-area/privacy/menu collision guards;native URLs unchanged by controller.`);
