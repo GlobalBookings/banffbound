@@ -58,6 +58,11 @@ export function decodeMapMessage(raw: unknown, channel: string, knownIds: Readon
 // Literal source avoids depending on function.toString() after a native/web minifier transforms closures.
 // Tests execute these exact functions from the shipped document.
 const engineFunctions = String.raw`
+function viewportPoints(points,size,overscan){
+ var margin=overscan===undefined?46:overscan;
+ if(!size||!Number.isFinite(size.x)||!Number.isFinite(size.y)||size.x<=0||size.y<=0)return [];
+ return points.filter(function(point){return Number.isFinite(point.x)&&Number.isFinite(point.y)&&point.x>=-margin&&point.y>=-margin&&point.x<=size.x+margin&&point.y<=size.y+margin;});
+}
 function clusterPoints(points,radius){
  radius=radius===undefined?44:radius;var groups=[];
  points.forEach(function(point){var group=groups.find(function(g){return Math.pow(g.x-point.x,2)+Math.pow(g.y-point.y,2)<radius*radius;});if(group)group.ids.push(point.id);else groups.push({x:point.x,y:point.y,ids:[point.id]});});
@@ -94,7 +99,7 @@ const runtime = String.raw`
    return L.divIcon({html:node,className:'map-pin',iconSize:[44,44],iconAnchor:[22,22]});
  }
  function render(){
-   markers.clearLayers();var projected=state.points.map(function(p){var xy=map.latLngToContainerPoint([p.latitude,p.longitude]);return {id:p.id,x:xy.x,y:xy.y};});
+   markers.clearLayers();var projected=viewportPoints(state.points.map(function(p){var xy=map.latLngToContainerPoint([p.latitude,p.longitude]);return {id:p.id,x:xy.x,y:xy.y};}),map.getSize(),46);
    clusterPoints(projected,46).forEach(function(ids){
      var points=ids.map(function(id){return byId.get(id);}), lat=points.reduce(function(s,p){return s+p.latitude;},0)/points.length, lon=points.reduce(function(s,p){return s+p.longitude;},0)/points.length;
      var title=ids.length===1?points[0].name+' · '+config.categories[points[0].category].label:ids.length+' places. Zoom in or choose a place';
