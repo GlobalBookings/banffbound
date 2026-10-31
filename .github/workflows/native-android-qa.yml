@@ -1,0 +1,40 @@
+name: Native Android APK QA
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/native-android-qa.yml'
+      - 'mobile/release/android-qa/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-android-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  emulator:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      CI: '1'
+    steps:
+      - name: Set disposable evidence directory
+        run: printf 'QA_ROOT=%s/banffbound-android-qa\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify exact APK and exercise its native Android UI
+        working-directory: mobile
+        run: bash release/android-qa/run-android-qa.sh
+      - name: Retain bounded actual evidence for one day
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-android-apk-qa-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/banffbound-android-qa/evidence/
+          retention-days: 1
+          if-no-files-found: error
