@@ -1,26 +1,26 @@
 {
-  "version": "2fc0f44b015b9a28233b",
+  "version": "c1cd13644b44bb8af9e8",
   "base": "/app/",
   "assets": [
     {
-      "url": "/app/_expo/static/js/web/index-19d6c1adfac8de164493383171d1f3fd.js",
+      "url": "/app/_expo/static/js/web/index-65bd76e899dc283c372a02cc6a83e93d.js",
+      "size": 3072,
+      "sha256": "d67eabb1792a873dbfac255f4184bfeeb806886e307317d354f6906cca49f89d"
+    },
+    {
+      "url": "/app/_expo/static/js/web/index-7c8d21e67d48514e9ed0aa40299fb6c8.js",
+      "size": 2338174,
+      "sha256": "159818f813ec2e47c353b20e12de79aaf005087a73593744a41b976902e609c1"
+    },
+    {
+      "url": "/app/_expo/static/js/web/index-bfbbe110c63cc1bbcb51db726f3342d8.js",
       "size": 2066,
-      "sha256": "9d49e30768fa74cd8c1c4ef9689112330b8e1e052d438d5963dd91050379a9b8"
+      "sha256": "db037a94835e5d3e3cd416a5682514d119bfafa723d63874f26c4cfa244b02bf"
     },
     {
-      "url": "/app/_expo/static/js/web/index-403c5d7b61bed49f165c79c5b7a8b596.js",
-      "size": 4053,
-      "sha256": "c207e532bb1e3a6209694f1be4f2404589b1a1ac0fa048d55279896b9ef1e66c"
-    },
-    {
-      "url": "/app/_expo/static/js/web/index-5b4bb4bd1aa22ea4dda20e645cf9b58b.js",
-      "size": 758120,
-      "sha256": "52e73f78d7cac699e75084469f95c5cdef9a9dc90be7adfc72de8dc1d2c254c1"
-    },
-    {
-      "url": "/app/_expo/static/js/web/index-9db43e5cff903d2613d205b6705de960.js",
+      "url": "/app/_expo/static/js/web/index-f021dc33aed57228d4df7d81a97e1ef0.js",
       "size": 23664,
-      "sha256": "7c1d7aae79d57fb4a48676864a652f5030a31714c3fd5aa49e81cc374ae3159a"
+      "sha256": "7625035b38a133230f5959810821c971f0b0bcc778539744ddd5a82bd844767e"
     },
     {
       "url": "/app/assets/assets/canmore.8d28ecf7db9304ffc47debad232a1c70.jpg",
@@ -38,9 +38,9 @@
       "sha256": "3e4060e1aba1829427203ee50f2af10c95b0d347acedb6cfb79b1741e25c5d47"
     },
     {
-      "url": "/app/assets/assets/icon.e6e83418fcec0458efdbc106bca7c2fd.png",
-      "size": 8422,
-      "sha256": "a908fb0b8fabc0f61f9c31eb2ce4e73823385fce1c04cf803e5ac5b7d2435791"
+      "url": "/app/assets/assets/icon.165639c28f2e497bdc6b1834560a0e6e.png",
+      "size": 811414,
+      "sha256": "9c35b869c300c1e1384c73acc52f117131f3e2dfc7e2159085de4044eef21a28"
     },
     {
       "url": "/app/assets/assets/lake.0bf878798691b725329f5982c3acf9d5.jpg",
@@ -70,22 +70,22 @@
     {
       "url": "/app/favicon.ico",
       "size": 14510,
-      "sha256": "4dac0faebf62c07eb2a6198ac1cbd5d023717170312c1ee6ddc11fac4560a57c"
+      "sha256": "17fb0141ead74831f585f844a0dccffcd18be70d0c2c302c8d5e9214cef96cd1"
     },
     {
       "url": "/app/icons/icon-1024.png",
-      "size": 8422,
-      "sha256": "a908fb0b8fabc0f61f9c31eb2ce4e73823385fce1c04cf803e5ac5b7d2435791"
+      "size": 811414,
+      "sha256": "9c35b869c300c1e1384c73acc52f117131f3e2dfc7e2159085de4044eef21a28"
     },
     {
       "url": "/app/icons/icon-256.png",
-      "size": 1686,
-      "sha256": "d47eb5117755891e317bd8222051b2d47d5c522160515bfa43d82fa18054e707"
+      "size": 70440,
+      "sha256": "a6cf2e1b818abedde44762749a00e0aacf9bdc8e2252a6057aadde96589f01f5"
     },
     {
       "url": "/app/index.html",
       "size": 2250,
-      "sha256": "3a366fb38855441d6fce89e39003e9eb12b9c4b9a8cf0a71c82cbcbd49903a53"
+      "sha256": "2be2277b36195e87b46c9b9015047e39c2ecf291575efd4c2087f8ad602a043d"
     },
     {
       "url": "/app/manifest.webmanifest",
@@ -99,8 +99,8 @@
     },
     {
       "url": "/app/privacy/index.html",
-      "size": 4670,
-      "sha256": "906373021e52cd6d1190ea8fe6cc494c0ec9fc845cc57f6cd9b47c2a34dd2f42"
+      "size": 5389,
+      "sha256": "b1f523f6b9c9bf2aebef56a27d0deff873eff30d597f1f4ffb059386a56bee24"
     },
     {
       "url": "/app/support/index.html",
@@ -110,7 +110,7 @@
     {
       "url": "/app/version.json",
       "size": 276,
-      "sha256": "75bbf1ebe9d94a1badc91f1eebfa8fbe0f09361f5773563442827dad8ef71da7"
+      "sha256": "5e9edc7f1c06abee9a069b7d7634b2e74e602e700e916159712d379c50cc2f40"
     }
   ]
 }

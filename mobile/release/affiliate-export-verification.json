@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-31T06:42:49.349Z",
+  "source": {
+    "fingerprint": "df86fe1381793286d88033176dc9feb37affa232aa9d9e7383a94399e7b62413",
+    "fileCount": 55
+  },
+  "sourceUnchanged": true,
+  "webExportPassed": true,
+  "iosAndAndroidJsExportsPassed": true,
+  "nativeBuildOrRuntimeClaimed": false
+}

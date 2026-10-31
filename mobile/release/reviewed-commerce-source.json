@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "repository": "GlobalBookings/banffbound",
+  "commit": "dfa545a7e7130e8494aab6342349fe6ce71a226c",
+  "reviewedAt": "2026-10-31",
+  "scope": "Final cutoff: published experience groups and mapped options, complete visitor guide index, hotel/rental catalogues and existing referrals. Every consumed website input must match this Git commit exactly; later website updates do not silently change this app snapshot.",
+  "originalOfflineCataloguePin": "4da51e0f64e9af8a14d87fe302a308081777d1a6",
+  "providerDecisions": {
+    "GetYourGuide": "Existing publisher links and original editorial descriptions; only cmp is replaced with the approved static banffboundapp value for all visitors. No provider API, widget or provider-app attribution claim.",
+    "Expedia": "Existing tracked property/search links and fixed car-rental referral; provider documentation explicitly supports affiliate links in apps.",
+    "Vrbo": "Existing Expedia Group affiliate wrapper; historical imported leads remain explicitly unverified.",
+    "Amazon": "No approved-mobile-app evidence found. Gear recommendations open the existing BanffBound web guide, never a direct Amazon Special Link in the native app.",
+    "DiscoverCars": "No published integration found; no native links generated."
+  },
+  "termsSources": [
+    "https://partner.getyourguide.support/hc/en-us/articles/13981115983133-How-does-the-cookie-ID-tracking-work",
+    "https://partner.getyourguide.support/hc/en-us/articles/13981133907613-API-integration-and-requirements",
+    "https://help.creator.expediagroup.com/hc/en-us/articles/13164069784727-How-do-I-create-Affiliate-Links",
+    "https://associates.amazon.ca/help/node/topic/GHBY6W8UPTEFD3ZX"
+  ]
+}

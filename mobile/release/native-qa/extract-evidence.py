@@ -10,7 +10,14 @@ import struct
 import subprocess
 import sys
 
-SCREENS = ('store-01-today', 'store-02-explore', 'store-03-my-trip', 'store-04-essentials')
+SCREENS = ('store-01-today', 'store-02-explore', 'store-03-my-trip', 'store-04-essentials',
+           'store-05-tours', 'store-06-stays', 'store-07-guides')
+REQUIRED_TESTS = ('test01CapturePrimaryScreens', 'test02SavedPlaceSurvivesRelaunch',
+                  'test03TripDetailsSurviveRelaunch', 'test04SpecificVenueStaysOnChosenDayAfterRelaunch',
+                  'test05OfflinePackAndBundledGuideSurviveRelaunch',
+                  'test06TourSearchDisclosureAndNativeBrowserHandoff',
+                  'test07StayAndNonlegacyOnlineGuideSearch')
+BROWSER_SCREEN = 'qa-commerce-browser-screen'
 MAX_SCREEN_BYTES = 8 * 1024 * 1024
 MAX_ARTIFACT_BYTES = 48 * 1024 * 1024
 
@@ -50,6 +57,60 @@ def attachment_records(value):
     elif isinstance(value, list):
         for child in value:
             yield from attachment_records(child)
+
+
+def test_identifiers(value):
+    """Use executed-result manifest identities, not inferred screenshot counts."""
+    if isinstance(value, dict):
+        identifier = value.get('testIdentifier')
+        if isinstance(identifier, str):
+            yield identifier.rsplit('/', 1)[-1].removesuffix('()')
+        for child in value.values():
+            yield from test_identifiers(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from test_identifiers(child)
+
+
+def browser_observation(records, exported):
+    matches = [record for record in records if 'qa-commerce-browser-observation' in str(record.get('suggestedHumanReadableName', ''))]
+    if len(matches) != 1:
+        raise ValueError(f'Expected one actual native browser observation, found {len(matches)}')
+    source = (exported / matches[0]['exportedFileName']).resolve()
+    if exported.resolve() not in source.parents or not source.is_file() or source.stat().st_size > 16000:
+        raise ValueError('Invalid or oversized native browser observation attachment')
+    observation = read_json(source)
+    required = ('doneButtonObserved', 'browserWebViewObserved', 'returnToDetailVerified')
+    if not isinstance(observation, dict) or observation.get('kind') != 'native-safari-handoff' or any(observation.get(key) is not True for key in required):
+        raise ValueError('Native Safari presentation and return were not verified by executed UI assertions')
+    if observation.get('provider') != 'GetYourGuide' or observation.get('networkAvailabilityVerified') is not False:
+        raise ValueError('Browser observation must identify the tested provider and preserve the network-availability limit')
+    if observation.get('purchaseAttempted') is not False or observation.get('browserAccessibilityBundle') not in ('com.banffbound.app', 'com.apple.SafariViewService'):
+        raise ValueError('Require a native Safari controller observation without a purchase attempt')
+    addresses = observation.get('addressUIObservations')
+    if not isinstance(addresses, list) or len(addresses) > 4 or any(not isinstance(value, str) or len(value) > 800 for value in addresses):
+        raise ValueError('Browser address observations must be small, explicit visible-UI strings')
+    exposed = ' '.join(addresses)
+    expected_host = 'getyourguide.com' if 'getyourguide.com' in exposed.lower() else None
+    if (observation.get('visibleProviderHost') != expected_host
+            or observation.get('partnerIdVisibleInAddressUI') is not ('partner_id=QW960HO' in exposed)
+            or observation.get('campaignVisibleInAddressUI') is not ('cmp=banffboundapp' in exposed)):
+        raise ValueError('Browser domain/query claims must match the exact exposed address observations')
+    return observation
+
+
+def validated_screenshot(record, exported, evidence, device, screen):
+    source = (exported / record['exportedFileName']).resolve()
+    if exported.resolve() not in source.parents or not source.is_file():
+        raise ValueError('Invalid exported attachment path')
+    details = png_details(source)
+    if details['bytes'] > MAX_SCREEN_BYTES:
+        raise ValueError('Screenshot exceeds bounded artifact limit')
+    if [details['width'], details['height']] != device['expectedPixels']:
+        raise ValueError(f'Unexpected native pixels: {details["width"]}x{details["height"]}')
+    filename = f'{device["label"]}-{screen}-{details["width"]}x{details["height"]}.png'
+    shutil.copy2(source, evidence / filename)
+    return {'file': filename, 'attachmentName': record.get('suggestedHumanReadableName'), **details}
 
 
 def command_json(command, destination):
@@ -108,14 +169,15 @@ def main():
             continue
         summary = command_json(['xcrun', 'xcresulttool', 'get', 'test-results', 'summary', '--path', str(bundle)], evidence / f'{label}-test-summary.json')
         if summary:
-            counts = {key: summary.get(key) for key in ('totalTestCount', 'passedTests', 'failedTests', 'skippedTests')}
+            counts = {key: summary.get(key) for key in ('totalTestCount', 'passedTests', 'failedTests', 'skippedTests', 'expectedFailures')}
             result['testCounts'] = counts
             result['testsPassed'] = (read_text(root / f'test-{label}.exit') == '0'
-                                     and isinstance(counts['totalTestCount'], int) and counts['totalTestCount'] >= 5
-                                     and isinstance(counts['passedTests'], int) and counts['passedTests'] >= 5
-                                     and counts['failedTests'] == 0 and counts['skippedTests'] == 0)
+                                     and counts['totalTestCount'] == len(REQUIRED_TESTS)
+                                     and counts['passedTests'] == len(REQUIRED_TESTS)
+                                     and counts['failedTests'] == 0 and counts['skippedTests'] == 0
+                                     and counts['expectedFailures'] == 0)
         if not result['testsPassed']:
-            errors.append(f'{label}: require all five real UI tests executed and passed, zero failures/skips and successful xcodebuild exit.')
+            errors.append(f'{label}: require all seven real UI tests executed and passed, zero failures/skips/expected failures and successful xcodebuild exit.')
         exported = root / 'attachments' / label
         exported.mkdir(parents=True, exist_ok=True)
         export = subprocess.run(['xcrun', 'xcresulttool', 'export', 'attachments', '--path', str(bundle), '--output-path', str(exported)], capture_output=True, text=True)
@@ -130,6 +192,17 @@ def main():
             (evidence / name).write_bytes(raw_manifest[:128 * 1024])
         manifest = read_json(manifest_path, [])
         records = list(attachment_records(manifest))
+        identities = sorted(set(test_identifiers(manifest)))
+        result['executedTestIdentifiers'] = identities
+        if set(identities) != set(REQUIRED_TESTS):
+            result['testsPassed'] = False
+            errors.append(f'{label}: actual XCTest attachment manifest must identify all seven required UI flows, with no substituted test.')
+        try:
+            observation = browser_observation(records, exported)
+            result['nativeBrowserHandoff'] = observation
+            (evidence / f'{label}-browser-observation.json').write_text(json.dumps(observation, indent=2) + '\n')
+        except (OSError, ValueError) as error:
+            errors.append(f'{label}: {error}')
         # Retain at most one failure image and one bounded accessibility tree per
         # device, even when an assertion fails before store captures are reached.
         if not result['testsPassed']:
@@ -158,23 +231,19 @@ def main():
                 errors.append(f'{label}: expected one named {screen} native screenshot, found {len(matches)}.')
                 continue
             record = matches[0]
-            source = (exported / record['exportedFileName']).resolve()
-            if exported.resolve() not in source.parents or not source.is_file():
-                errors.append(f'{label}/{screen}: invalid exported attachment path.')
-                continue
             try:
-                details = png_details(source)
-                if details['bytes'] > MAX_SCREEN_BYTES:
-                    raise ValueError('Screenshot exceeds bounded artifact limit')
-                if [details['width'], details['height']] != device['expectedPixels']:
-                    raise ValueError(f'Unexpected native pixels: {details["width"]}x{details["height"]}')
-                filename = f'{label}-{screen}-{details["width"]}x{details["height"]}.png'
-                shutil.copy2(source, evidence / filename)
-                result['screenshots'].append({'file': filename, 'attachmentName': record.get('suggestedHumanReadableName'), **details})
+                result['screenshots'].append(validated_screenshot(record, exported, evidence, device, screen))
             except (OSError, ValueError) as error:
                 errors.append(f'{label}/{screen}: {error}')
         if len(result['screenshots']) != len(SCREENS):
-            errors.append(f'{label}: four validated primary-screen captures are required.')
+            errors.append(f'{label}: seven validated primary and commerce screen captures are required.')
+        browser_matches = [record for record in records if BROWSER_SCREEN in str(record.get('suggestedHumanReadableName', ''))]
+        try:
+            if len(browser_matches) != 1:
+                raise ValueError(f'Expected one native browser handoff screenshot, found {len(browser_matches)}')
+            result['browserScreenshot'] = validated_screenshot(browser_matches[0], exported, evidence, device, BROWSER_SCREEN)
+        except (OSError, ValueError) as error:
+            errors.append(f'{label}: {error}')
     receipt = {
         'kind': 'native-ios-simulator-qa',
         'passed': not errors,
@@ -197,19 +266,23 @@ def main():
                           'Saved place survives process relaunch', 'Edited numeric party size survives process relaunch',
                           'Precise venue remains on chosen day after process relaunch',
                           'Native offline saved status and bundled guide reading after process relaunch',
+                          'Tour search, provider disclosure, actual native Safari presentation and return to detail',
+                          'Hotel search and a specific online guide outside the original bundled guide set',
                           'Actual simulator app file matches full canonical guide/place bundle and UI-edited trip'],
         'errors': errors,
-        'limits': ['Unsigned simulator build; distinct from signed TestFlight build 3.',
+        'limits': ['Unsigned simulator build; separate from a signed device binary.',
                    'No physical-device QA, purchase/booking transaction, location permission, notifications, or real offline-network test.',
+                   'Browser presentation and return do not establish provider availability, a booking or affiliate attribution; address observations report only exposed UI text.',
                    'Screenshots require human visual review and any required release approval before App Store upload.'],
         'storeUploadApproved': False,
-        'screenshotMediaCompatible': len(results) == 2 and all(len(result['screenshots']) == 4 and all(not shot['hasAlphaOrTransparency'] for shot in result['screenshots']) for result in results),
+        'screenshotMediaCompatible': len(results) == 2 and all(len(result['screenshots']) == len(SCREENS) and all(not shot['hasAlphaOrTransparency'] for shot in result['screenshots']) for result in results),
         'references': ['https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/',
                        'https://raw.githubusercontent.com/actions/runner-images/main/images/macos/macos-26-arm64-Readme.md'],
     }
     total_bytes = sum(path.stat().st_size for path in evidence.rglob('*') if path.is_file())
     if total_bytes > MAX_ARTIFACT_BYTES:
         receipt['passed'] = False
+        receipt['screenshotMediaCompatible'] = False
         receipt['errors'].append('Evidence exceeds the 48 MiB budget; screenshots omitted rather than storing unbounded artifacts.')
         for path in evidence.glob('*.png'):
             path.unlink()

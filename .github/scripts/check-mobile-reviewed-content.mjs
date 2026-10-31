@@ -2,7 +2,7 @@
 // Reproduce the released mobile catalogue from its reviewed website snapshot.
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { cp, lstat, readFile, realpath, rm, symlink } from 'node:fs/promises';
+import { cp, lstat, mkdir, readFile, realpath, rm, symlink } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -52,6 +52,10 @@ await cp(mobile, path.join(snapshot, 'mobile'), {
   recursive: true,
   filter: file => !excluded.has(path.relative(mobile, file).split(path.sep)[0]),
 });
+// Commerce is a separate published-source snapshot. Its focused provenance test
+// needs this public pin, never the private/local release receipts alongside it.
+await mkdir(path.join(snapshot, 'mobile/release'), { recursive: true });
+await cp(path.join(mobile, 'release/reviewed-commerce-source.json'), path.join(snapshot, 'mobile/release/reviewed-commerce-source.json'));
 assert.deepEqual(await sourceFingerprint(path.join(snapshot, 'mobile')), before, 'Snapshot must contain the exact current canonical mobile tree.');
 await symlink(await realpath(path.join(root, 'node_modules')), path.join(snapshot, 'node_modules'), 'dir');
 await symlink(await realpath(path.join(mobile, 'node_modules')), path.join(snapshot, 'mobile/node_modules'), 'dir');

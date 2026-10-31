@@ -1,0 +1,107 @@
+{
+  "createdAtUtc": "2026-10-31T05:52:10.959609+00:00",
+  "baseCommit": "eb55328b608d79cfdffc4cc41298f0f0f23cf996",
+  "baseSourceFingerprint": "0de2c2838ace87581e0d9ff9676cfefd6f2ec2a5202bb4bb7597bd4784d08828",
+  "baseSourceFileCount": 48,
+  "method": "Built-in image_gen.imagegen; original concept generation followed by a background-extraction edit of the same concept.",
+  "generations": [
+    {
+      "purpose": "Opaque square artwork",
+      "prompt": "generation-prompt.txt",
+      "transparentBackground": false,
+      "toolOutput": "/Users/jackchittenden/.codex/generated_images/01a18fab-6de4-70e0-a277-25da46c259e5/exec-fcf123fc-9832-4c4c-b3ef-d0ae33aa8901.png",
+      "projectMaster": "mobile/assets/brand/icon-master.png"
+    },
+    {
+      "purpose": "Transparent foreground of selected artwork",
+      "prompt": "foreground-prompt.txt",
+      "transparentBackground": true,
+      "reference": "mobile/assets/brand/icon-master.png",
+      "toolOutput": "/Users/jackchittenden/.codex/generated_images/01a18fab-6de4-70e0-a277-25da46c259e5/exec-b8c58a67-3c0f-4ce1-9613-2ce02b2eeb98.png",
+      "projectMaster": "mobile/assets/brand/icon-foreground.png"
+    }
+  ],
+  "technicalExports": {
+    "script": "mobile/scripts/create-assets.py",
+    "operations": [
+      "Lanczos resizing",
+      "Transparent foreground centered on transparent Android canvas at 64% scale"
+    ],
+    "creativePixelEditing": false,
+    "editorialPhotosRegenerated": false
+  },
+  "inspection": {
+    "sizesViewedPx": [
+      60,
+      256,
+      1024
+    ],
+    "imagePropertiesVerified": true,
+    "deviceInstallationTested": false,
+    "nativeBuildCreated": false,
+    "uploadedToAppStore": false
+  },
+  "files": [
+    {
+      "path": "mobile/assets/icon.png",
+      "sha256": "9c35b869c300c1e1384c73acc52f117131f3e2dfc7e2159085de4044eef21a28",
+      "bytes": 811414,
+      "previousSha256": "a908fb0b8fabc0f61f9c31eb2ce4e73823385fce1c04cf803e5ac5b7d2435791",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "mobile/assets/adaptive-icon.png",
+      "sha256": "62352ded01471aa45ecb5458edf5f1f4760f96647ae48549aee76166b3de86e8",
+      "bytes": 251043,
+      "previousSha256": "2dc14c68fde85c00ad9c48db2e220e91cbfc24edc01699905bbb4bcd8b9db656",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "mobile/assets/favicon.png",
+      "sha256": "a6cf2e1b818abedde44762749a00e0aacf9bdc8e2252a6057aadde96589f01f5",
+      "bytes": 70440,
+      "previousSha256": "d47eb5117755891e317bd8222051b2d47d5c522160515bfa43d82fa18054e707",
+      "width": 256,
+      "height": 256,
+      "mode": "RGB"
+    },
+    {
+      "path": "mobile/assets/splash.png",
+      "sha256": "9e11797ddca2f0306e330e48ab8a4a59b1d0c8bf65edc9cad941f0feaf2fe909",
+      "bytes": 157252,
+      "previousSha256": "8dc6a49cf9d2276603abbf8d7333133654f3c2fdfb5e89aa216fa69f99d29a00",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "mobile/assets/brand/icon-master.png",
+      "sha256": "3aca7659e3633d2084a3155ad8d746f9dd3ef2b9706b99f5a0a022ddb4249902",
+      "bytes": 1421070,
+      "previousSha256": null,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB"
+    },
+    {
+      "path": "mobile/assets/brand/icon-foreground.png",
+      "sha256": "6bcd35f63d5b75eef8565a20b8ea7c6525f21decb60255f2dd2db10259bb5c2c",
+      "bytes": 823446,
+      "previousSha256": null,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA"
+    },
+    {
+      "path": "mobile/scripts/create-assets.py",
+      "sha256": "c77a6d878a56b8684d0ce4f0e3b3068c81e509d7638a295e3e80c364680b94fa",
+      "bytes": 3244,
+      "previousSha256": "746de8789df99434b48d04bdf84374080af1f6cb442c5164f2d0b9fc1d706d36"
+    }
+  ],
+  "scope": "Icon artwork, asset export script and design evidence only. Parent owns concurrent app/commerce changes; final aggregate app fingerprint is computed by release owner after integration."
+}

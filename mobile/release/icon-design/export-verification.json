@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "byteIdempotent": true,
+  "dimensionsModesTransparencyVerified": true,
+  "adaptiveForegroundAlpha128RadiusPx": 302.424,
+  "adaptiveSafeCircleRadiusPx": 312.889,
+  "editorialPhotosChanged": false,
+  "nativeOrDeviceTested": false,
+  "exportsSha256": {
+    "icon.png": "9c35b869c300c1e1384c73acc52f117131f3e2dfc7e2159085de4044eef21a28",
+    "adaptive-icon.png": "62352ded01471aa45ecb5458edf5f1f4760f96647ae48549aee76166b3de86e8",
+    "favicon.png": "a6cf2e1b818abedde44762749a00e0aacf9bdc8e2252a6057aadde96589f01f5",
+    "splash.png": "9e11797ddca2f0306e330e48ab8a4a59b1d0c8bf65edc9cad941f0feaf2fe909"
+  }
+}

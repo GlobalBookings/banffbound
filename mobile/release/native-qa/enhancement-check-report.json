@@ -1,0 +1,63 @@
+{
+  "kind": "native-qa-harness-local-checks",
+  "checkedAtUtc": "2026-10-31T06:02:53.001700+00:00",
+  "baseCommit": "eb55328b608d79cfdffc4cc41298f0f0f23cf996",
+  "scope": "mobile/release/native-qa only; concurrent app, commerce, icon and configuration changes belong to other agents",
+  "originalFiveXCTestBodiesByteUnchanged": true,
+  "requiredNativeTestsPerDevice": 7,
+  "nativeTestMethods": [
+    "test01CapturePrimaryScreens",
+    "test02SavedPlaceSurvivesRelaunch",
+    "test03TripDetailsSurviveRelaunch",
+    "test04SpecificVenueStaysOnChosenDayAfterRelaunch",
+    "test05OfflinePackAndBundledGuideSurviveRelaunch",
+    "test06TourSearchDisclosureAndNativeBrowserHandoff",
+    "test07StayAndNonlegacyOnlineGuideSearch"
+  ],
+  "requiredStoreCapturesPerDevice": 7,
+  "requiredAdditionalBrowserCapturesPerDevice": 1,
+  "artifactBudgetMiB": 48,
+  "localChecks": {
+    "extractorUnitTests": {
+      "executed": 17,
+      "passed": 17,
+      "failed": 0
+    },
+    "swiftFrontendParse": true,
+    "bashSyntax": true,
+    "rubySyntax": true,
+    "gitDiffWhitespace": true
+  },
+  "nativeXcodeTypecheckPerformed": false,
+  "nativeSimulatorTestsExecutedForNewSource": false,
+  "newNativeScreenshotsCaptured": false,
+  "notClaimed": [
+    "Provider page availability",
+    "Booking or purchase completion",
+    "Affiliate conversion or attribution",
+    "Physical-device QA",
+    "Real offline-network QA"
+  ],
+  "files": [
+    {
+      "path": "mobile/release/native-qa/BanffBoundUITests.swift",
+      "sha256": "20268bb51ee2faa94c366ae89ed7607486bbd544a038e89927ff004d2bb13a8c"
+    },
+    {
+      "path": "mobile/release/native-qa/extract-evidence.py",
+      "sha256": "fd0f98f2f289f4e5aac0551a86d2e90a98990ee0bc8f1485d5e690132dcb89ee"
+    },
+    {
+      "path": "mobile/release/native-qa/extract_evidence_test.py",
+      "sha256": "a1ba6db14ba6e6e7b6d02d694ddca0c1bfd28129e8592c1d2ae9e2b09ecf4c5e"
+    },
+    {
+      "path": "mobile/release/native-qa/README.md",
+      "sha256": "8d9fc90fbc1ec9d5d7c3f5af88af5987d5e21577f680c1e27a9d0eb73e04bbff"
+    }
+  ],
+  "independentComponentContractReview": {
+    "reviewer": "mobile_state",
+    "result": "No material selector, CTA, provider, disclosure or heading mismatch found against current component. No native execution implied."
+  }
+}
