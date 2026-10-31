@@ -15,8 +15,10 @@ const [home, winter, header, footer, layout, globalCss] = await Promise.all(['sr
 const headerHrefs = value => [...value.split('<script>')[0].matchAll(/href\s*[:=]\s*['"]([^'"]+)['"]/g)].map(match => match[1]);
 const expectedHeaderHash = 'f1035b771d2fd20c5f53028f1370a08860f2404534ad7c6fe5ac77720acb3b29';
 const digestHrefs = hrefs => createHash('sha256').update(JSON.stringify([...hrefs].sort())).digest('hex');
-assert.equal(headerHrefs(header).length, 76);
-assert.equal(digestHrefs(headerHrefs(header)), expectedHeaderHash, 'Header native href/query inventory is label-only');
+const existingHeaderHrefs = value => headerHrefs(value).filter(href => href !== '/experiences/');
+assert.equal(headerHrefs(header).length, 77);
+assert.equal(headerHrefs(header).filter(href => href === '/experiences/').length, 1, 'The tours and activities directory is discoverable in the shared desktop/mobile menu.');
+assert.equal(digestHrefs(existingHeaderHrefs(header)), expectedHeaderHash, 'Every existing native header href and query remains unchanged.');
 assert.ok(!/80\+ trails with GPS routes|95 properties with map|Altitude Sickness Guide|subtitle: 'Stay by the lake'/.test(header));
 assert.match(globalCss, /--font-heading:\s*'Playfair Display'/);
 assert.match(globalCss, /--font-body:\s*'Source Sans 3'/);
@@ -108,6 +110,7 @@ function checkHtml(markup) {
   assert.equal(attr(byId('menu-toggle'), 'aria-controls'), 'mobile-menu');
   assert.equal(byId('mobile-menu').tagName, 'nav');
   assert.equal(attr(byId('mobile-menu'), 'aria-label'), 'Mobile navigation');
+  assert.ok(walk(byId('mobile-menu')).some(node => node.tagName === 'a' && attr(node, 'href') === '/experiences/' && normal(text(node)) === 'Compare Tours & Activities'), 'The experience directory remains a native, named mobile link.');
   const mobileButtons = headerNodes.filter(node => hasClass(node, 'mobile-section-toggle'));
   const desktopButtons = headerNodes.filter(node => hasClass(node, 'mega-trigger'));
   assert.equal(mobileButtons.length, 4); assert.equal(desktopButtons.length, 4);
@@ -151,10 +154,11 @@ const failures = [
   ['stats band returned', value => value.replace('</main>', '<section class="stats-bar">Invented counts</section></main>')],
   ['mobile expanded state lost', value => value.replace(/(<button\b[^>]*id="menu-toggle"[^>]*?) aria-expanded="false"/, '$1')],
   ['mobile panel association lost', value => value.replace('aria-controls="mobile-section-0"', 'aria-controls="missing-mobile-section"')],
+  ['experience directory link lost', value => value.replaceAll('href="/experiences/"', 'href="/activities/"')],
   ['desktop application-menu role returned', value => value.replace(/(<div\b[^>]*class="mega-panel[^"]*"[^>]*>)/, '$1<div role="menu"></div>')],
 ];
 for (const [name, mutate] of failures) { const changed = mutate(html); assert.ok(changed !== html, name + ' fixture must change output'); assert.throws(() => checkHtml(changed), undefined, name); }
-assert.notEqual(digestHrefs(headerHrefs(header.replace('/hotel-directory?area=Lake+Louise', '/hotel-directory?area=Banff'))), expectedHeaderHash, 'Filtered header URL drift is detected');
+assert.notEqual(digestHrefs(existingHeaderHrefs(header.replace('/hotel-directory?area=Lake+Louise', '/hotel-directory?area=Banff'))), expectedHeaderHash, 'Filtered header URL drift is detected');
 
 // Compile and execute both actual home installers and their actual local utilities.
 const scripts = [...home.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(match => match[1]); assert.equal(scripts.length, 2);
@@ -252,4 +256,4 @@ const navigationMutations = [
   ['desktop Escape focus is lost', value => value.replace('else if (megaTrigger instanceof HTMLElement) megaTrigger.focus();', '')],
 ];
 for (const [name, mutate] of navigationMutations) { const changed = mutate(navigationClient); assert.ok(changed !== navigationClient, name + ' fixture must change actual handlers'); const code = await compileNavigation(changed); assert.throws(() => assertNavigation(runNavigation(code)), undefined, name); }
-console.log(`Site-entry design checks passed:actual full-layout home SSR, static illustrative hero/three owned booking routes +Trip Builder before reports;Header76 exact href hash/disclosure semantics and actual mobile/desktop open/switch/close/Escape focus handlers;WinterStart4 native rows;one unchanged newsletter account/fields/footer/social/privacy;Source Sans3 +Playfair loading;dated source/no-JS hooks and both actual expiry installers;${failures.length} material HTML negatives +filtered-URL mutation +${navigationMutations.length} actual-handler mutations. No browser, network or site build.`);
+console.log(`Site-entry design checks passed:actual full-layout home SSR, static illustrative hero/three owned booking routes +Trip Builder before reports;Header77 native hrefs with original76 exact hash plus experience directory/disclosure semantics and actual mobile/desktop open/switch/close/Escape focus handlers;WinterStart4 native rows;one unchanged newsletter account/fields/footer/social/privacy;Source Sans3 +Playfair loading;dated source/no-JS hooks and both actual expiry installers;${failures.length} material HTML negatives +filtered-URL mutation +${navigationMutations.length} actual-handler mutations. No browser, network or site build.`);

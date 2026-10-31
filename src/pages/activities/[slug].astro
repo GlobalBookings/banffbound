@@ -5,7 +5,9 @@ import WinterStatusNotice from '../../components/WinterStatusNotice.astro';
 import { activities, activityImageNote } from '../../data/activities';
 import { activitySearchUrl } from '../../data/activityPlanning';
 import ActivityBookingCTA from '../../components/ActivityBookingCTA.astro';
+import ExperienceOptions from '../../components/ExperienceOptions.astro';
 import { resolveActivityBookingTarget, resolveActivityBookingAlternatives } from '../../data/activityCampaignTargets';
+import { getExperienceGroupForPath } from '../../data/banffExperiences';
 import photoCredits from '../../data/winterActivityPhotoCredits.json';
 
 export function getStaticPaths() {
@@ -14,6 +16,7 @@ export function getStaticPaths() {
 const { activity } = Astro.props;
 const bookingTarget = resolveActivityBookingTarget('/activities/' + activity.slug + '/');
 const alternativeTargets = resolveActivityBookingAlternatives('/activities/' + activity.slug + '/');
+const experienceGroup = getExperienceGroupForPath('/activities/' + activity.slug + '/');
 const photoCredit = activity.photoCreditId ? photoCredits.find(item => item.id === activity.photoCreditId) : null;
 const related = activities.filter(item => item.slug !== activity.slug && item.contexts.some(context => activity.contexts.includes(context))).slice(0, 3);
 const schema = {
@@ -50,9 +53,10 @@ const schema = {
     <section class="detail-section source-panel"><h2>Direct sources and operator checks</h2><p>These are direct official or operator information links. Each date records an editorial source check, not current operation or a reservation.</p><ul>{activity.sources.map(item => <li><a href={item.url} target="_blank" rel="noopener">{item.label} ↗</a><br /><span class="source-date">Source checked <time datetime={item.checkedAt}>{item.checkedAt}</time></span></li>)}</ul><p>Providers can change their seasons, requirements and terms. Confirm the selected product directly, especially when a source check is older than your travel date.</p></section>
     <section class="detail-section"><h2>Keep planning</h2><div class="guide-links">{activity.guides.map(guide => <a href={guide.href}>{guide.label} →</a>)}</div><p><a href="/winter">Winter trip guide</a> · <a href="/winter-stays">Winter accommodation planning</a> · <a href="/what-to-do-today">Flexible plans for today</a></p></section>
   </div></section>
+  {experienceGroup && <div class="container"><ExperienceOptions group={experienceGroup} contentId={activity.slug} /></div>}
 
   <section class="section" style="background:var(--color-bg-alt)"><div class="container activity-detail"><h2>Optional marketplace search</h2><p>{activity.bookingNote}</p><p>We may earn a commission from the following affiliate search links. They do not certify an operator, guarantee availability or confirm that a product matches this guide.</p><a href={activitySearchUrl(activity.gygSearch)} class="btn btn-primary" target="_blank" rel="noopener sponsored">Search {activity.name.toLowerCase()} on GetYourGuide ↗</a><p>Read the actual product’s destination, dates, meeting point, participant rules, inclusions and cancellation terms. Direct source links above are separate from this search.</p><h3>Choose a base after confirming the meeting point</h3><p>A Banff hotel search does not ensure pickup or a workable connection to Lake Louise, Canmore, Kananaskis or a river base.</p><a href="https://www.expedia.com/Banff-Hotels.d602125.Travel-Guide-Hotels?camref=1101l3MtWX" target="_blank" rel="noopener sponsored">Search Banff accommodation on Expedia ↗</a><p><a href="/towns">Compare destination bases first</a>.</p></div></section>
-  {activity.faqs.length > 0 && <section class="section"><div class="container activity-detail"><h2>{activity.name} planning questions</h2>{activity.faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>}
+  {activity.faqs.length > 0 && <section class="section activity-guide-faqs"><div class="container activity-detail"><h2>{activity.name} planning questions</h2>{activity.faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>}
   <section class="section" style="background:var(--color-bg-alt)"><div class="container"><h2>Other activity plans</h2><div class="grid grid-3">{related.map(item => <a href={item.link} class="card"><div class="card-body"><h3>{item.name}</h3><p>{item.description}</p><span>Read planning guide →</span></div></a>)}</div><p><a href="/activities">All activity guides and filters →</a></p></div></section>
 </BaseLayout>
 

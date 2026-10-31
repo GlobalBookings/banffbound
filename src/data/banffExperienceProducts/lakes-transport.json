@@ -1,0 +1,1779 @@
+{
+  "schemaVersion": 1,
+  "products": [
+    {
+      "productId": "858142",
+      "productUrl": "https://www.getyourguide.com/banff-l284/banff-to-calgary-yyc-airport-shared-shuttle-t858142/",
+      "provider": "The Fairy Bus",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/banff-l284/banff-to-calgary-yyc-airport-shared-shuttle-t858142/"
+      ],
+      "slug": "banff-to-yyc-town-centre-shared-transfer",
+      "title": "Banff to YYC: A shared ride from the town-centre stop",
+      "description": "Plan a shared Banff-to-YYC transfer, including the town-centre meeting point, flight buffer and luggage checks.",
+      "category": "transport",
+      "departure": "Banff town-centre commercial bus terminal",
+      "duration": "About 2 hours; conditions affect the journey",
+      "lead": "This Fairy Bus listing is for the journey out of Banff to Calgary International Airport. It suits a traveller who can reach the town-centre pickup and wants a shared transfer, with flight timing planned separately from the advertised drive. The important decision is the complete hotel-to-terminal journey, not simply the time spent on the bus.",
+      "facts": [
+        {
+          "label": "Direction",
+          "value": "Banff to Calgary International Airport (YYC)"
+        },
+        {
+          "label": "Pickup",
+          "value": "Commercial bus terminal parking area beside Mount Royal Hotel"
+        },
+        {
+          "label": "Format",
+          "value": "One-way shared transfer"
+        }
+      ],
+      "sections": [
+        {
+          "id": "reach-the-stop",
+          "title": "Include the journey from your accommodation",
+          "paragraphs": [
+            "The reviewed product names the town-centre bus terminal beside Mount Royal Hotel. Treat that as a meeting-point booking and read the exact confirmation before travelling. A room elsewhere in Banff does not establish collection at its door. Work out how you will reach the stop with everyone in your party and all the luggage you booked.",
+            "A shared departure also has a timetable. Leave space for checking out, collecting stored bags and locating the vehicle, especially if your accommodation is uphill or away from the centre. Ask the operator about child seats, bulky equipment and any mobility support you need; an airport destination does not by itself confirm those arrangements."
+          ]
+        },
+        {
+          "id": "flight-buffer",
+          "title": "Work backwards from your flight",
+          "paragraphs": [
+            "The listing describes an approximately two-hour ride. Use that as a planning indication, not a guaranteed arrival time at your airline desk. Check your airline’s required check-in and bag-drop times, then choose a transfer that leaves a sensible margin for the road, terminal arrival and moving through the airport.",
+            "Keep the booking confirmation and the operator’s contact instructions available. Confirm what to do if you cannot find the stop or your plans change. If the available shared timetable does not fit the flight comfortably, compare another departure or a private transfer before paying for a service that depends on an unrealistically tight connection."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the exact town-centre stop and departure time on your ticket.",
+        "Declare the actual number and size of bags, including sports equipment.",
+        "Check child-seat and access arrangements directly with the operator.",
+        "Read the selected fare’s change, cancellation and missed-departure terms."
+      ],
+      "faqs": [
+        {
+          "question": "Does this listing collect from every Banff hotel?",
+          "answer": "The reviewed page names the commercial bus terminal beside Mount Royal Hotel. Use the meeting instructions for your actual reservation and arrange the journey there. Do not assume hotel collection because the destination is an airport."
+        },
+        {
+          "question": "Is the advertised drive time a flight connection guarantee?",
+          "answer": "No. The approximate journey time is separate from airline check-in, bag drop and terminal movement. Choose a departure with those steps and a road margin in mind."
+        },
+        {
+          "question": "Can I take skis or other large luggage?",
+          "answer": "Check the selected fare’s allowance with the operator before booking. A passenger seat does not establish acceptance of oversized equipment, extra bags or the support required to load them."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Check your confirmed pickup, luggage allowance and flight buffer. The advertised journey time is not a guaranteed airport arrival."
+    },
+    {
+      "productId": "694465",
+      "productUrl": "https://www.getyourguide.com/calgary-l1783/calgary-to-banff-shared-shuttlebus-t694465/",
+      "provider": "ABestX Transport and Tour Services",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/calgary-l1783/calgary-to-banff-shared-shuttlebus-t694465/",
+        "https://abestx.ca/faq/",
+        "https://abestx.ca/locations/"
+      ],
+      "slug": "calgary-canmore-banff-shared-shuttle-options",
+      "title": "Calgary to Banff or Canmore by shared shuttle",
+      "description": "Compare the pickup and destination options on an ABestX shared transfer from Calgary or YYC to the Bow Valley.",
+      "category": "transport",
+      "departure": "Selected Calgary or YYC pickup",
+      "duration": "The listing gives about 1.5 hours; the selected stop and conditions matter",
+      "lead": "This ABestX product sells a shared transfer into the Bow Valley, with options linked to Calgary, the airport, Canmore and Banff. Its value for your trip depends on choosing the correct combination of stops. A Calgary-city pickup and an airport arrival are different starting plans, even when the booking appears under the same destination heading.",
+      "facts": [
+        {
+          "label": "Direction",
+          "value": "Calgary or YYC toward Canmore or Banff, depending on the option"
+        },
+        {
+          "label": "Format",
+          "value": "Shared shuttle or bus transfer"
+        },
+        {
+          "label": "Stop information",
+          "value": "ABestX publishes separate named pickup-location guidance"
+        }
+      ],
+      "sections": [
+        {
+          "id": "select-both-ends",
+          "title": "Choose both ends of the transfer",
+          "paragraphs": [
+            "Read the option name and meeting instructions together. Decide whether you need collection at Calgary airport or at a city stop, then select the actual Canmore or Banff drop-off. The two mountain towns are distinct destinations; a ticket to one should not be treated as transport to accommodation in the other.",
+            "The operator’s locations page is useful for identifying a named stop, while the reservation confirms which one you bought. Plan the final walk, taxi or local connection from that stop to your lodging. Include the luggage you will actually carry rather than assuming a convenient-looking map location completes the whole journey."
+          ]
+        },
+        {
+          "id": "airport-and-luggage",
+          "title": "Allow for arrival formalities and your bags",
+          "paragraphs": [
+            "For an airport pickup, leave time for disembarking, immigration where applicable, baggage collection and reaching the meeting point. Ask how the operator handles a delayed flight and what contact details it needs. A shared shuttle follows an operating plan and is different from a private vehicle waiting only for your party.",
+            "Check luggage, child-seat and access requirements before purchase. ABestX’s FAQ also separates national-park entry from the shared or private transfer, so read the actual product inclusions and arrange any park entry your stay requires. This prevents a transport booking from being mistaken for a complete Banff sightseeing or admission package."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Match Calgary-city versus YYC pickup to your arrival plan.",
+        "Select Canmore or Banff deliberately and check the final lodging connection.",
+        "Give the operator flight details and special luggage requirements where needed.",
+        "Read park-entry, waiting and missed-service terms for the selected option."
+      ],
+      "faqs": [
+        {
+          "question": "Are Calgary and YYC pickup the same thing?",
+          "answer": "No. An airport meeting point and a city departure can require different arrival times and travel arrangements. Choose the option that matches your actual starting location."
+        },
+        {
+          "question": "Will a Canmore ticket take me to my Banff hotel?",
+          "answer": "Do not assume that. Canmore and Banff are separate stops and communities. Select the destination you need and arrange any connection from its drop-off to your accommodation."
+        },
+        {
+          "question": "Does a shared transfer include everything for a Banff stay?",
+          "answer": "It is a transport purchase. Check the product’s actual luggage, pickup and inclusion details, and follow the operator’s guidance about park entry. Accommodation, local travel and activities remain separate decisions."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Choose the exact Calgary or YYC pickup and Canmore or Banff destination. Confirm luggage, flight-delay handling and the last part of your journey."
+    },
+    {
+      "productId": "695211",
+      "productUrl": "https://www.getyourguide.com/calgary-l1783/banffcanmore-to-calgary-yyc-aiport-shared-shuttle-bus-t695211/",
+      "provider": "ABestX Transport and Tour Services",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/calgary-l1783/banffcanmore-to-calgary-yyc-aiport-shared-shuttle-bus-t695211/",
+        "https://abestx.ca/faq/",
+        "https://abestx.ca/locations/"
+      ],
+      "slug": "banff-canmore-to-yyc-shared-shuttle",
+      "title": "From Banff or Canmore to YYC: Plan the right pickup",
+      "description": "Plan the outbound ABestX shared shuttle from Banff or Canmore, with the right stop, luggage allowance and airport margin.",
+      "category": "transport",
+      "departure": "Selected Banff or Canmore stop",
+      "duration": "The listing gives a 1–2 hour range; choose by the actual stop and conditions",
+      "lead": "This ABestX listing covers the outbound airport journey from the Bow Valley. The key choice is which departure stop and service fit your flight, followed by the short but important journey from your accommodation to that stop. A shared airport transfer is useful when its timetable works for the whole party and their luggage.",
+      "facts": [
+        {
+          "label": "Direction",
+          "value": "Banff or Canmore toward Calgary International Airport"
+        },
+        {
+          "label": "Format",
+          "value": "Shared shuttle or bus"
+        },
+        {
+          "label": "Reservation detail",
+          "value": "Pickup depends on the selected departure option"
+        }
+      ],
+      "sections": [
+        {
+          "id": "departure-town",
+          "title": "Start with the correct mountain town",
+          "paragraphs": [
+            "Check whether your reservation starts in Banff or Canmore and follow that option’s meeting instructions. They are separate communities, so using the other town’s service can add an extra connection before the airport trip even begins. Work out the walk, local transfer or taxi you need from your accommodation.",
+            "On a departure day, include time to check out, retrieve bags and assemble the group. Keep the operator’s location guidance and confirmation available. If anyone needs assistance, a child seat or space for large equipment, arrange it directly rather than assuming every shared service has the same vehicle or facilities."
+          ]
+        },
+        {
+          "id": "flight-and-terms",
+          "title": "Choose a service that fits the flight",
+          "paragraphs": [
+            "The product’s one-to-two-hour description is a transport estimate, not an airline guarantee. Add the airport steps required for your flight and a margin for conditions before choosing a departure. The practical question is when the whole group needs to be at the airline’s bag drop or check-in, not when the aircraft leaves.",
+            "Read what happens if you miss the shared departure or need to change the trip. Ask about luggage and oversized items in advance. A private transfer is a different option to compare if the shared timetable cannot accommodate the flight, but its own waiting and change terms still need checking before you commit."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Use the Banff or Canmore stop shown on your confirmed option.",
+        "Work backwards from airline check-in and bag-drop requirements.",
+        "Declare extra bags and sports equipment before reserving.",
+        "Check missed-departure, amendment and cancellation rules."
+      ],
+      "faqs": [
+        {
+          "question": "Can I board at either Banff or Canmore?",
+          "answer": "Use the departure point you reserved. The listing offers different starting options, but a ticket for one location should not be assumed to permit boarding at the other without arranging a change."
+        },
+        {
+          "question": "How much time should I leave before my flight?",
+          "answer": "Build the plan from your airline’s requirements, the actual transfer timetable, the journey to the pickup and a road margin. The product’s journey range alone is not enough to decide a flight connection."
+        },
+        {
+          "question": "Is this the same as hiring a private vehicle?",
+          "answer": "No. This is a shared service with a selected departure. If you need a vehicle arranged only for your party or a different time, compare a private option and its own terms."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Confirm the reserved Banff or Canmore pickup and allow for airline check-in. A shared-transfer duration is not a flight connection guarantee."
+    },
+    {
+      "productId": "437643",
+      "productUrl": "https://www.getyourguide.com/calgary-l1783/calgary-yyc-airport-to-banff-private-transfer-t437643/",
+      "provider": "ABestX Transport and Tour Services",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/calgary-l1783/calgary-yyc-airport-to-banff-private-transfer-t437643/",
+        "https://abestx.ca/calgary-to-banff-private-transfer/",
+        "https://abestx.ca/faq/"
+      ],
+      "slug": "yyc-banff-private-airport-transfer",
+      "title": "YYC to Banff by private airport transfer",
+      "description": "Understand the private YYC-to-Banff transfer, including arrival meet-and-greet, the waiting allowance and your hotel destination.",
+      "category": "transport",
+      "departure": "Calgary International Airport arrivals",
+      "duration": "About 1.5 hours is advertised; road and arrival conditions affect the plan",
+      "lead": "This ABestX product is a private transfer from Calgary International Airport to a hotel in Banff. It is an arrival-day transport option for a party that wants a vehicle arranged for its reservation. The useful comparison with a shared shuttle is the whole arrangement: meeting the driver, waiting for the flight and bags, fitting the luggage and reaching the correct hotel.",
+      "facts": [
+        {
+          "label": "Direction",
+          "value": "YYC airport to a Banff hotel"
+        },
+        {
+          "label": "Format",
+          "value": "Private transfer"
+        },
+        {
+          "label": "Published inclusions",
+          "value": "Arrival meet-and-greet, airport fees and taxes, and a 60-minute waiting allowance"
+        }
+      ],
+      "sections": [
+        {
+          "id": "arrival-meeting",
+          "title": "Arrange the airport meeting carefully",
+          "paragraphs": [
+            "The reviewed listing includes meet-and-greet at the arrivals level. Give the operator the flight and contact details it requests, then read how you will identify the driver and vehicle. An arrival booking is easier to use when the whole party knows the same meeting plan and keeps its confirmation available.",
+            "The published waiting allowance is 60 minutes. Confirm how that period is measured and what happens if baggage, border formalities or a flight delay take longer. Do not assume that private means unlimited waiting, an automatic replacement vehicle or any change without further arrangements."
+          ]
+        },
+        {
+          "id": "vehicle-and-destination",
+          "title": "Match the vehicle to the party and hotel",
+          "paragraphs": [
+            "Tell the operator how many travellers and bags are coming, including skis, mobility equipment or other oversized items. Check child-seat and assistance requirements before purchase. A private reservation provides an exclusive format, but the product label alone does not establish a particular vehicle capacity or every support feature.",
+            "Confirm the actual hotel address in Banff and the selected transfer direction. This listing is an airport arrival journey, not a day tour of the national park. Read its terms and the operator’s park-entry guidance separately, and compare the cost and convenience of the complete hotel arrival rather than only the advertised drive time."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Provide the flight number, arrival details and usable contact information.",
+        "Confirm how the included waiting allowance starts and what follows it.",
+        "Declare the full passenger, luggage, child-seat and access requirements.",
+        "Confirm the Banff hotel address and the reservation’s change terms."
+      ],
+      "faqs": [
+        {
+          "question": "Is this a shared shuttle?",
+          "answer": "The reviewed listing is a private transfer. It should be booked for the actual party and luggage you need to move; check the selected vehicle arrangements with the operator."
+        },
+        {
+          "question": "Does private transfer mean unlimited airport waiting?",
+          "answer": "No. The page publishes a 60-minute allowance. Ask how it is timed and how delays or extra waiting are handled before reserving."
+        },
+        {
+          "question": "Does the airport transfer include a sightseeing itinerary?",
+          "answer": "This product’s purpose is the journey from YYC to your Banff hotel. Do not treat its scenic route or destination name as admission to attractions, a guided day tour or an onward trip to Lake Louise."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Check the arrival meeting instructions, waiting allowance, luggage capacity and exact Banff hotel destination before booking."
+    },
+    {
+      "productId": "695024",
+      "productUrl": "https://www.getyourguide.com/calgary-l1783/from-calgary-yyc-airport-affordable-shared-shuttle-to-banff-t695024/",
+      "provider": "Banff Explorer®",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/calgary-l1783/from-calgary-yyc-airport-affordable-shared-shuttle-to-banff-t695024/"
+      ],
+      "slug": "yyc-banff-explorer-shared-shuttle",
+      "title": "An airport-to-Banff seat on Banff Explorer’s shared shuttle",
+      "description": "Check the airport meeting plan and luggage rules for Banff Explorer’s shared YYC-to-Banff transfer.",
+      "category": "transport",
+      "departure": "Calgary International Airport",
+      "lead": "This Banff Explorer product is another shared arrival transfer to compare alongside the separate ABestX and Fairy Bus listings. Choose it from its own pickup, departure and baggage terms. Similar route names do not make different operators interchangeable, and an airport-to-Banff ticket should fit the needs of the whole group arriving on the flight.",
+      "facts": [
+        {
+          "label": "Direction",
+          "value": "Calgary airport to Banff"
+        },
+        {
+          "label": "Format",
+          "value": "Shared shuttle transfer"
+        },
+        {
+          "label": "Luggage consideration",
+          "value": "The reviewed page warns of extra or oversized-luggage charges"
+        }
+      ],
+      "sections": [
+        {
+          "id": "choose-the-service",
+          "title": "Compare the service you are actually reserving",
+          "paragraphs": [
+            "Use the operator and exact product name when saving your confirmation. An airport search can show several shared services for the same broad route, but their departure points, timetables and booking terms can differ. Follow the meeting instructions supplied for this reservation rather than another company’s sign or online timetable.",
+            "Leave time after landing to collect baggage and reach the meeting point. Ask what flight information the operator needs and what to do if an arrival is delayed. The last step from the Banff drop-off to your accommodation also belongs in the plan; the name of the destination does not establish every hotel as a stop."
+          ]
+        },
+        {
+          "id": "bring-the-right-luggage",
+          "title": "Resolve equipment and baggage before travel",
+          "paragraphs": [
+            "The reviewed listing warns that additional luggage may cost extra and specifically calls out oversized equipment. Describe the bags, skis, snowboards, bicycles or other bulky items you intend to bring, then get the actual allowance and any extra charge confirmed before payment. Avoid relying on the fact that another traveller used a similar shuttle.",
+            "Check child-seat and access requirements directly too. Read the selected fare’s cancellation, amendment and missed-service conditions with your flight plan beside it. If the operating timetable or luggage arrangement does not fit, compare another service or a private transfer before making a booking that leaves a difficult arrival-day connection."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Save this operator’s own airport meeting and departure instructions.",
+        "Provide flight details and ask about delays.",
+        "Confirm the allowance and any charge for every extra or oversized item.",
+        "Check the Banff drop-off and the remaining journey to your accommodation."
+      ],
+      "faqs": [
+        {
+          "question": "Are all Calgary-to-Banff shared shuttles the same service?",
+          "answer": "No. Banff Explorer, ABestX and Fairy Bus are distinct product and operator identities. Use the pickup, timetable and terms of the listing you actually reserve."
+        },
+        {
+          "question": "Can oversized sports equipment travel free?",
+          "answer": "Do not assume that. This reviewed page warns of extra or oversized-luggage charges. Tell the operator what you are bringing and confirm its acceptance and cost."
+        },
+        {
+          "question": "Will this solve the complete airport arrival journey?",
+          "answer": "It covers the transfer you select. You still need time for airport formalities and a plan from the confirmed Banff drop-off to your lodging, plus any child-seat or assistance arrangements."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Confirm the airport meeting plan, actual Banff drop-off and luggage charges. Oversized equipment needs advance checking."
+    },
+    {
+      "productId": "284552",
+      "productUrl": "https://www.getyourguide.com/jasper-l290/columbia-icefield-glacier-adventure-ice-explorer-skywalk-t284552/",
+      "provider": "Pursuit Collection",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/jasper-l290/columbia-icefield-glacier-adventure-ice-explorer-skywalk-t284552/",
+        "https://www.banffjaspercollection.com/attractions/columbia-icefield/",
+        "https://www.banffjaspercollection.com/attractions/columbia-icefield/location-hours/"
+      ],
+      "slug": "columbia-icefield-explorer-skywalk-ticket-planning",
+      "title": "Ice Explorer and Skywalk: Plan the ticket and the journey separately",
+      "description": "Understand the Columbia Icefield admission package, its Discovery Centre meeting point and the separate journey from Banff.",
+      "category": "icefields",
+      "departure": "Columbia Icefield Glacier Discovery Centre",
+      "duration": "About 3.5 hours is advertised for the attraction experience",
+      "season": "Seasonal; the published 2026 operating calendar ends October 12",
+      "lead": "This Pursuit package is an attraction admission at the Columbia Icefield, combining the Ice Explorer experience with the Skywalk. It is a different purchase from a guided vehicle day trip that collects you in Banff or Calgary. Decide how you will reach the Discovery Centre, then choose a genuinely operating date and the access arrangements your party needs.",
+      "facts": [
+        {
+          "label": "Experience",
+          "value": "Ice Explorer and Columbia Icefield Skywalk combination"
+        },
+        {
+          "label": "Meeting place",
+          "value": "Columbia Icefield Glacier Discovery Centre on the Icefields Parkway"
+        },
+        {
+          "label": "Banff connection",
+          "value": "Visitors make their own journey to the Discovery Centre"
+        }
+      ],
+      "sections": [
+        {
+          "id": "ticket-scope",
+          "title": "Know what the attraction package covers",
+          "paragraphs": [
+            "The reviewed ticket combines two parts of the Columbia Icefield visit: the specialised Ice Explorer journey and the glass-floored Skywalk viewpoint. Choose the actual date and option on the provider’s booking page, then read its included transfers within the attraction experience, timing and cancellation rules.",
+            "An attraction ticket does not create a sightseeing itinerary from Banff. If you want a guide and road transport through the Parkway, compare a separately described day tour and check whether this admission is included or charged as an extra. Do not pay twice for overlapping tickets or assume a similar product title provides the same arrangement."
+          ]
+        },
+        {
+          "id": "reach-the-discovery-centre",
+          "title": "Make the road journey and access plan first",
+          "paragraphs": [
+            "The GYG page tells visitors to make their own way to the Discovery Centre. Work out the complete outward and return journey, road conditions, breaks and the arrival time needed for the booked option. A long mountain-road excursion should not depend on an unverified driving-time estimate or an inflexible same-day onward connection.",
+            "The official 2026 calendar ends on October 12, so a published listing is not proof of a current winter departure. Check a future operating date directly. The reviewed product also asks visitors needing accessible arrangements to contact the operator at least 72 hours ahead; describe the actual boarding and assistance needs before choosing the ticket."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Check an operating date against the current official calendar.",
+        "Arrange the full journey to and from the Discovery Centre.",
+        "Confirm whether a separate vehicle tour already includes admission.",
+        "Contact the operator in advance about boarding, equipment and assistance requirements."
+      ],
+      "faqs": [
+        {
+          "question": "Does this ticket include pickup from a Banff hotel?",
+          "answer": "The reviewed listing requires visitors to make their own way to the Discovery Centre. A Banff or Calgary vehicle tour is a separate product unless the selected booking explicitly includes it."
+        },
+        {
+          "question": "Can I book this as a winter attraction?",
+          "answer": "The published 2026 operating calendar ends October 12. Verify a future operating date and the exact package before treating it as available; an indexed product page is not an open-season report."
+        },
+        {
+          "question": "How should I arrange an accessible visit?",
+          "answer": "The reviewed product asks for at least 72 hours’ notice through the operator’s official contact options. Explain the party’s actual boarding, mobility and assistance needs and confirm the resulting arrangement."
+        }
+      ],
+      "launchState": "held",
+      "notice": "This is a seasonal attraction ticket with no Banff pickup. The published 2026 season has ended; check the current calendar and a future operating date."
+    },
+    {
+      "productId": "609684",
+      "productUrl": "https://www.getyourguide.com/banff-l284/banffcanmore-sunrise-at-moraine-lake-lake-louise-add-on-t609684/",
+      "provider": "Explore Banff Tours & Transfers",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/banff-l284/banffcanmore-sunrise-at-moraine-lake-lake-louise-add-on-t609684/",
+        "https://www.explorebanff.com/tours/moraine-lake-sunrise-express",
+        "https://www.explorebanff.com/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "moraine-sunrise-lake-louise-add-on",
+      "title": "Moraine at sunrise, with a separate Lake Louise option",
+      "description": "Compare Moraine-only sunrise with a pre-booked Lake Louise addition, including pickup and seasonal road access.",
+      "category": "lakes",
+      "departure": "Selected Banff, Canmore or Lake Louise pickup",
+      "duration": "About 5–7.5 hours, depending on the booked option",
+      "season": "Moraine Lake road access is seasonal",
+      "lead": "Explore Banff Tours & Transfers offers a sunrise visit centred on Moraine Lake, with Lake Louise available as a separately chosen addition. That option choice matters: a sunrise product is not automatically a two-lake day. Plan the early pickup and return first, then decide whether the extra stop fits the time and energy your group has for the rest of the day.",
+      "facts": [
+        {
+          "label": "Core experience",
+          "value": "Sunrise-timed Moraine Lake visit"
+        },
+        {
+          "label": "Optional extension",
+          "value": "Lake Louise must be chosen and pre-booked"
+        },
+        {
+          "label": "Departure",
+          "value": "Selected pickup options in Banff, Canmore or Lake Louise"
+        }
+      ],
+      "sections": [
+        {
+          "id": "choose-the-lake-combination",
+          "title": "Book the lake combination you want",
+          "paragraphs": [
+            "Read the option before paying. The reviewed page distinguishes Moraine-only from a Lake Louise addition that must be booked in advance. Choose between a focused early visit and the longer combined plan, and check exactly when the vehicle returns to your selected starting area.",
+            "A spare hour in a holiday itinerary does not mean an extra stop can be added on the day. If another activity, meal or transfer follows, use the booked return information to decide whether the combination is practical. Keep canoe rentals, a separate hike and any other activity distinct from the transport and time actually included in this product."
+          ]
+        },
+        {
+          "id": "early-start-and-season",
+          "title": "Prepare for the early start and road season",
+          "paragraphs": [
+            "The operator provides licensed access and a sunrise-timed journey, but the morning still needs preparation. Confirm the pickup location, changing departure time, warm layers, food and the needs of anyone who finds an early start difficult. The sky, cloud and mountains determine the view; paying for sunrise timing does not guarantee a particular colour or clear horizon.",
+            "Moraine Lake’s vehicle season is limited. Parks says licensed road access normally runs from June to mid-October with exact dates dependent on weather, and the current winter service has ended. Check a future operating date rather than assuming the public listing establishes a present-day departure. Lake Louise and Moraine are separate destinations with different access arrangements."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Select Moraine-only or the pre-booked Lake Louise addition.",
+        "Confirm the early pickup and complete return for your chosen location.",
+        "Check road season and a future operating date.",
+        "Read participant, luggage and cancellation rules for the actual option."
+      ],
+      "faqs": [
+        {
+          "question": "Does every option include Lake Louise?",
+          "answer": "No. The reviewed product says the Lake Louise addition must be pre-booked. Choose it deliberately if you want the two-lake format."
+        },
+        {
+          "question": "Can the operator guarantee a visible sunrise?",
+          "answer": "A sunrise-timed departure cannot guarantee cloud, smoke, weather or how the peaks catch the light. Decide whether the early lake visit remains worthwhile for your group if the sky is subdued."
+        },
+        {
+          "question": "Does a published product mean Moraine is open in winter?",
+          "answer": "No. Road access and commercial service are seasonal, and Parks reports the current winter closure. Verify a future operating date and the actual return plan before booking."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Moraine Lake is a seasonal vehicle destination. Confirm a future operating date and select the Lake Louise addition in advance if you want it."
+    },
+    {
+      "productId": "748920",
+      "productUrl": "https://www.getyourguide.com/canmore-l117485/moraine-lake-sunrise-premium-tour-from-canmore-banff-t748920/",
+      "provider": "Via Via Moraine Lake Shuttle",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/canmore-l117485/moraine-lake-sunrise-premium-tour-from-canmore-banff-t748920/",
+        "https://viaviamorainelake.com/moraine-lake-sunrise-shuttle",
+        "https://viaviamorainelake.com/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "via-via-moraine-only-sunrise",
+      "title": "A Moraine-only sunrise morning with hot drinks",
+      "description": "Plan Via Via’s Moraine sunrise format, with hot drinks, blankets and a return chosen separately from two-lake tours.",
+      "category": "lakes",
+      "departure": "Selected Banff or Canmore-region pickup",
+      "season": "The operator says its 2026 season is closed",
+      "lead": "This Via Via listing focuses the early morning on Moraine Lake, with hot drinks and blankets as part of the published experience. It is worth comparing with the same operator’s two-lake sunrise product if Lake Louise is important to your day. Start with the destination combination and return arrangement, then decide whether this early, single-lake format suits your party.",
+      "facts": [
+        {
+          "label": "Focus",
+          "value": "Moraine Lake at sunrise"
+        },
+        {
+          "label": "Published comforts",
+          "value": "Hot drinks and blankets"
+        },
+        {
+          "label": "Separate product",
+          "value": "The Lake Louise combination has its own listing and option details"
+        }
+      ],
+      "sections": [
+        {
+          "id": "single-lake-format",
+          "title": "Choose a focused morning or a two-lake day",
+          "paragraphs": [
+            "A Moraine-only visit and a Moraine-plus-Lake-Louise itinerary are different plans. This listing puts the emphasis on the sunrise destination, while the operator also advertises other lake combinations. Read the exact product and return choice before arranging lunch, a hike or another paid activity afterwards.",
+            "Hot drinks and blankets are useful published details, but they do not replace the clothing, footwear and personal supplies your group needs. Ask about participant ages, seats, equipment and any required assistance using the selected booking. A broad pickup list does not establish that every accommodation or return time is offered on every departure."
+          ]
+        },
+        {
+          "id": "future-season-planning",
+          "title": "Plan for a future operating season",
+          "paragraphs": [
+            "The operator’s current homepage says its 2026 season is closed and advertises June 1, 2027. Treat that as the provider’s published plan, not a guarantee that Parks road permission, weather and a particular departure will all align. Parks describes exact access dates as weather dependent.",
+            "Choose a future date from an actually available option and check how a road or weather change is handled. Sunrise timing also shifts through the season, so use the confirmation’s pickup details rather than an old example timetable. The outing can be booked for its early-morning setting, but a clear sky and dramatic light are never established by a listing photograph."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm that you are reserving the Moraine-only sunrise product.",
+        "Check the selected future season, pickup and return choice.",
+        "Read participant and equipment requirements for your party.",
+        "Check weather, road-change and cancellation terms."
+      ],
+      "faqs": [
+        {
+          "question": "Is Lake Louise included in this sunrise product?",
+          "answer": "Do not transfer inclusions from the operator’s separate two-lake listing. Read the actual option for this Moraine-focused product and choose another combination if Lake Louise is essential."
+        },
+        {
+          "question": "Are drinks and blankets enough for an early visit?",
+          "answer": "They are published comforts, not a substitute for suitable clothing, footwear and personal supplies. Confirm any participant or assistance needs before booking."
+        },
+        {
+          "question": "Can I treat the advertised 2027 start as guaranteed?",
+          "answer": "No. It is the operator’s published plan. Check current Parks access information and the available date on the booking page; road conditions and permission can affect the season."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Via Via says its 2026 season is closed. Confirm a future bookable date, actual road access and whether you want Moraine only or a separate two-lake product."
+    },
+    {
+      "productId": "1004906",
+      "productUrl": "https://www.getyourguide.com/banff-l284/lake-louise-moraine-lake-small-group-half-day-tour-banff-t1004906/",
+      "provider": "Rockies Journey Inc.",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/banff-l284/lake-louise-moraine-lake-small-group-half-day-tour-banff-t1004906/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "banff-half-day-louise-emerald-moraine",
+      "title": "A shorter lake tour from Banff, with a winter Emerald option",
+      "description": "Compare the Banff half-day route: Louise and Moraine in the summer season, or Louise, Emerald and Natural Bridge in winter.",
+      "category": "lakes",
+      "departure": "Banff; use the selected pickup instructions",
+      "season": "The product describes different summer and winter lake routes",
+      "lead": "Rockies Journey’s half-day format is useful when you want a lake outing from Banff without assigning the whole day to a long regional circuit. The destination changes with the season: the reviewed winter plan pairs Lake Louise with Emerald Lake and Natural Bridge, while the summer version visits Lake Louise and Moraine Lake. Buy the actual dated route, not just the familiar lake names in the heading.",
+      "facts": [
+        {
+          "label": "Starting area",
+          "value": "Banff"
+        },
+        {
+          "label": "Summer route described",
+          "value": "Lake Louise and Moraine Lake"
+        },
+        {
+          "label": "Winter route described",
+          "value": "Lake Louise, Emerald Lake and Natural Bridge"
+        }
+      ],
+      "sections": [
+        {
+          "id": "summer-or-winter-lakes",
+          "title": "Choose the route for your date",
+          "paragraphs": [
+            "The reviewed description gives a clear seasonal distinction. From the stated winter period, Moraine is replaced by Emerald Lake and Natural Bridge in Yoho. During the published summer-access period, the two-lake plan is Lake Louise and Moraine. Those are different journeys, so use the actual option and current access information when choosing the day.",
+            "Lake photographs can also show a different season from your visit. Decide whether you want a winter landscape or a summer lakeshore outing, then read which stops are included for that departure. A published calendar description does not guarantee every viewpoint or a particular water colour on the day."
+          ]
+        },
+        {
+          "id": "fit-the-half-day",
+          "title": "Fit the shorter outing into the rest of your trip",
+          "paragraphs": [
+            "This product is advertised from Banff, with Banff Train Station shown in the reviewed return itinerary. Confirm the selected meeting and return instructions before arranging a restaurant booking, airport transfer or another tour. A half-day label should not be treated as permission to make a tight onward connection without checking the actual schedule.",
+            "Keep the physical visit and transport separate in your planning. Ask about the walking involved at each selected stop, the winter footwear expected and assistance needs for the whole party. Food, rentals and activities at the lakes should be checked in the actual inclusions instead of being inferred from the places the vehicle visits."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the Banff pickup and return for the selected option.",
+        "Read the winter or summer destination list for your actual date.",
+        "Check walking, footwear and support needs directly with the operator.",
+        "Leave room between the tour return and another fixed booking."
+      ],
+      "faqs": [
+        {
+          "question": "Will the winter version visit Moraine Lake?",
+          "answer": "The reviewed product describes Lake Louise, Emerald Lake and Natural Bridge during its winter period. Moraine is the seasonal summer component; check the actual dated option."
+        },
+        {
+          "question": "Is this a Calgary departure?",
+          "answer": "The reviewed half-day product is described as starting from Banff. Select a different departure product if you need transport from Calgary, and do not apply the Banff schedule to a city pickup."
+        },
+        {
+          "question": "Can I add canoeing or another lake activity?",
+          "answer": "Check the real stop length, operating season and included activities first. A sightseeing stop does not establish a rental, admission or enough time for an independent activity."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Select the actual dated itinerary. The reviewed winter route visits Lake Louise, Emerald Lake and Natural Bridge instead of Moraine Lake."
+    },
+    {
+      "productId": "1004220",
+      "productUrl": "https://www.getyourguide.com/lake-louise-alberta-l190266/louise-morainebow-emerald-peyto-4-lake-tour-t1004220/",
+      "provider": "Rockies Journey Inc.",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/lake-louise-alberta-l190266/louise-morainebow-emerald-peyto-4-lake-tour-t1004220/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "four-lakes-peyto-emerald-from-banff-calgary",
+      "title": "Four lakes across the Parkway and Yoho, with Bow Lake in winter",
+      "description": "Plan the Rockies Journey lake circuit from a selected Calgary, Canmore or Banff pickup, including its winter Bow Lake substitution.",
+      "category": "lakes",
+      "departure": "Selected Calgary, Canmore or Banff pickup",
+      "season": "The reviewed route substitutes Bow Lake for Moraine in winter",
+      "lead": "This Rockies Journey circuit joins Lake Louise with Emerald Lake and Natural Bridge in Yoho, then includes Peyto Lake on the Parkway route. Its description substitutes Bow Lake for Moraine in winter. It is a broader road day than a short two-lake shuttle, and it needs a departure choice and return plan that fit the starting town you actually use.",
+      "facts": [
+        {
+          "label": "Departure choices",
+          "value": "Selected Calgary, Canmore or Banff pickup"
+        },
+        {
+          "label": "Route focus",
+          "value": "Lake Louise, Emerald Lake, Peyto Lake and a seasonal Moraine or Bow Lake component"
+        },
+        {
+          "label": "Format",
+          "value": "Guided full-day vehicle outing"
+        }
+      ],
+      "sections": [
+        {
+          "id": "understand-the-circuit",
+          "title": "Compare the full circuit with a two-lake visit",
+          "paragraphs": [
+            "The appeal of this format is the variety of destinations in one vehicle day. It connects a Banff-area lake visit, Yoho stops and a Parkway viewpoint. That also means a larger share of the day is spent travelling between places, so compare it with a half-day outing if a longer, unhurried stop at one lake is your main priority.",
+            "The reviewed narrative specifically changes the Moraine component to Bow Lake in winter. Check the actual option rather than reading the product’s familiar four-lake label as a fixed list in every month. Stops and outdoor time still depend on the operating plan and conditions, and a summer image does not promise a turquoise-lake scene on a winter trip."
+          ]
+        },
+        {
+          "id": "pickup-and-outdoor-stops",
+          "title": "Plan the starting town and the outdoor parts",
+          "paragraphs": [
+            "Choose the Calgary, Canmore or Banff pickup you need, then confirm its meeting instructions and return. A route leaving Calgary includes a different approach from one joined in Banff. Keep the whole itinerary beside any dinner, onward travel or other commitment you are considering after the tour.",
+            "The description lists a winter hot drink, but the outing still includes outdoor lake and viewpoint stops. Ask about the walking, footwear, warm clothing and support the party needs. Check which food and activities are extra, and do not treat transport to a national park destination as a separate admission, rental or guaranteed access to every feature."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Select the actual starting town and meeting point.",
+        "Confirm the Moraine-versus-Bow Lake route for the date.",
+        "Check the permitted outdoor stops and walking requirements.",
+        "Read the meal, activity, cancellation and road-change terms."
+      ],
+      "faqs": [
+        {
+          "question": "Does the same four-lake route run in every season?",
+          "answer": "No. The reviewed description substitutes Bow Lake for Moraine in winter. Use the selected date and actual itinerary to identify the destinations."
+        },
+        {
+          "question": "How is this different from a lake shuttle?",
+          "answer": "This is a full-day guided circuit connecting Yoho and Parkway stops as well as Lake Louise. Compare the road time and stop pattern with a shorter shuttle rather than assuming the formats are interchangeable."
+        },
+        {
+          "question": "Can I join from any Banff or Calgary hotel?",
+          "answer": "Use the pickup options offered for the reservation. A starting-town choice does not confirm collection at every hotel, and the return arrangement also needs checking."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Confirm the actual route and pickup. Bow Lake replaces Moraine in the reviewed winter plan; individual Parkway and Yoho stops remain subject to conditions."
+    },
+    {
+      "productId": "988784",
+      "productUrl": "https://www.getyourguide.com/jasper-l290/athabasca-fallsabraham-ice-bubblesunwapta-fallspeyto-lake-t988784/",
+      "provider": "Rockies Journey Inc.",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/jasper-l290/athabasca-fallsabraham-ice-bubblesunwapta-fallspeyto-lake-t988784/"
+      ],
+      "slug": "parkway-falls-or-abraham-winter-tour",
+      "title": "Parkway waterfalls in summer, or an Abraham Lake winter route",
+      "description": "Compare the Rockies Journey seasonal road trip: Jasper-area falls in summer and an Abraham Lake option in the stated winter period.",
+      "category": "icefields",
+      "departure": "Selected Calgary, Canmore or Banff pickup",
+      "season": "The description assigns the Abraham Lake version to December through March",
+      "lead": "This Rockies Journey product changes its main focus with the season. The summer description follows the Parkway toward Athabasca and Sunwapta Falls, while the stated December-to-March version visits Abraham Lake, with Bow and Peyto lake stops also described. Choose it as a condition-dependent road outing, not as an attraction ticket or a guarantee of visible ice bubbles.",
+      "facts": [
+        {
+          "label": "Summer focus described",
+          "value": "Athabasca Glacier area, Athabasca Falls and Sunwapta Falls"
+        },
+        {
+          "label": "Winter focus described",
+          "value": "Abraham Lake during the stated December–March period"
+        },
+        {
+          "label": "Other stops described",
+          "value": "Bow Lake and Peyto Lake, subject to the actual route"
+        }
+      ],
+      "sections": [
+        {
+          "id": "different-season-different-day",
+          "title": "Match the advertised season to the trip you want",
+          "paragraphs": [
+            "A summer waterfall circuit and a winter Abraham Lake outing are different experiences. Read the selected date’s itinerary and ask which route operates during any shoulder-season period. The description’s winter dates do not establish an Abraham Lake departure in every month when Banff has snow.",
+            "The product also mentions the Athabasca Glacier area. Distinguish travelling past glacier scenery from buying the Ice Explorer and Skywalk attraction package. If a particular paid experience is essential, establish its admission, operating season and inclusion separately before choosing the road tour."
+          ]
+        },
+        {
+          "id": "road-and-lake-expectations",
+          "title": "Keep the road and winter expectations flexible",
+          "paragraphs": [
+            "The reviewed itinerary is a long regional day with pickup choices in Calgary, Canmore and Banff. Check the actual meeting point, full return and how the operator handles a changed road or stop. It is a poor fit for a connection that depends on a fixed, unverified return time.",
+            "For the winter version, a lake name or photograph does not establish the ice surface or the visibility of bubbles on your date. Ask about the permitted outdoor activity, footwear, walking and cold-weather arrangements. Treat any alternative route as a decision to confirm with the provider, not as a promise that every advertised seasonal highlight will be available."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the actual summer, winter or shoulder-season route.",
+        "Check whether any glacier attraction admission is included or separate.",
+        "Confirm pickup, return and road-change arrangements.",
+        "Ask about outdoor activity, clothing, footwear and group requirements."
+      ],
+      "faqs": [
+        {
+          "question": "Does this product visit Abraham Lake all winter?",
+          "answer": "The reviewed description assigns that version to December through March. Confirm the selected departure and any shoulder-season alternative instead of extending those dates yourself."
+        },
+        {
+          "question": "Are visible ice bubbles guaranteed?",
+          "answer": "No. Conditions and the actual permitted stop determine what can be seen or done. A winter route description and an advertising photograph do not establish current ice or a particular view."
+        },
+        {
+          "question": "Is this an Ice Explorer admission ticket?",
+          "answer": "It is a vehicle road-tour product. Check any attraction admission independently; seeing or passing a glacier location is different from booking the specialised attraction experience."
+        }
+      ],
+      "launchState": "held",
+      "notice": "The route changes by season. Confirm the actual departure and outdoor activity; Abraham Lake is described for December–March, and ice-bubble views are not guaranteed."
+    },
+    {
+      "productId": "738880",
+      "productUrl": "https://www.getyourguide.com/lake-louise-alberta-l190266/banff-columbia-icefield-skywalk-crowfoot-glacier-lakes-t738880/",
+      "provider": "Banff Tour and Travels Limited",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/lake-louise-alberta-l190266/banff-columbia-icefield-skywalk-crowfoot-glacier-lakes-t738880/",
+        "https://www.banffjaspercollection.com/attractions/columbia-icefield/location-hours/"
+      ],
+      "slug": "columbia-icefield-day-tour-admission-checks",
+      "title": "A Parkway day tour with glacier admission checked separately",
+      "description": "Plan the Banff Tour and Travels Icefield road day, including pickup choices and the extra-cost Ice Explorer described in the listing.",
+      "category": "icefields",
+      "departure": "Selected Calgary, Canmore or Banff pickup",
+      "lead": "This vehicle day tour covers Parkway lake and glacier scenery, with selected starting points in Calgary, Canmore and Banff. Its reviewed description says the specialised Ice Explorer experience is an additional cost. That distinction matters when comparing a road-tour fare with the separate Pursuit attraction package or another operator’s admission-included option.",
+      "facts": [
+        {
+          "label": "Format",
+          "value": "Guided vehicle day tour through Banff and Jasper-area Parkway destinations"
+        },
+        {
+          "label": "Pickup choices",
+          "value": "Selected Calgary, Canmore or Banff meeting points"
+        },
+        {
+          "label": "Admission distinction",
+          "value": "The reviewed narrative describes the Ice Explorer as an additional cost"
+        }
+      ],
+      "sections": [
+        {
+          "id": "road-tour-and-attraction",
+          "title": "Separate the road tour from the glacier ticket",
+          "paragraphs": [
+            "The itinerary describes destinations such as Lake Louise, Bow Lake, Peyto Lake and the Columbia Icefield area. It is the vehicle journey and stop pattern that distinguish this product from an attraction-only ticket. Read the actual option’s admission list before comparing totals with another tour.",
+            "The reviewed narrative explicitly calls the Ice Explorer an extra-cost experience. Confirm whether the Skywalk, a particular attraction time or any package is included in the option you choose. Do not infer that a stop labelled Glacier Adventure in an itinerary diagram means its ticket is already paid for."
+          ]
+        },
+        {
+          "id": "operating-season-and-journey",
+          "title": "Check the attraction season and complete return",
+          "paragraphs": [
+            "The official Columbia Icefield 2026 calendar ends October 12. A road-tour page can remain published when a glacier attraction is out of season, so confirm both the selected vehicle route and the attraction operating date you want. Decide whether the trip is still suitable if the exact attraction or a viewpoint cannot be included.",
+            "Check your starting town, meeting point and complete return before arranging another fixed commitment. The trip also includes outdoor stops, so discuss walking, weather clothing, footwear and support needs with the operator. A vehicle journey does not remove those demands or guarantee access to every site shown in the promotional itinerary."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the actual seasonal vehicle itinerary.",
+        "Read the selected option’s Ice Explorer and Skywalk admission details.",
+        "Check attraction operating dates and any coordinated entry time.",
+        "Confirm pickup, return, meals and road-change terms."
+      ],
+      "faqs": [
+        {
+          "question": "Does the basic tour automatically include the Ice Explorer?",
+          "answer": "The reviewed narrative describes it as an additional cost. Read the current selected option before paying and compare it with admission-included products on that basis."
+        },
+        {
+          "question": "Can the published page establish a winter glacier attraction visit?",
+          "answer": "No. The official 2026 attraction calendar ends October 12. Verify a future operating date and the vehicle tour’s actual seasonal route."
+        },
+        {
+          "question": "How is this different from the attraction-only package?",
+          "answer": "This product is a road-tour arrangement with starting-point choices. The attraction-only package requires visitors to arrange their own journey to the Discovery Centre. Match the transport and admission components you need."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Check the current seasonal route and admission options. The reviewed Ice Explorer experience costs extra, and the published 2026 attraction season has ended."
+    },
+    {
+      "productId": "1360868",
+      "productUrl": "https://www.getyourguide.com/natural-bridge-virginia-l98337/into-the-wild-yoho-national-park-waterfalls-tour-t1360868/",
+      "provider": "Top Choice Tours",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/natural-bridge-virginia-l98337/into-the-wild-yoho-national-park-waterfalls-tour-t1360868/"
+      ],
+      "slug": "yoho-waterfalls-wapta-walk-day-tour",
+      "title": "A Yoho waterfall day with a walk to Wapta Falls",
+      "description": "Compare Top Choice Tours’ Yoho outing, including Takakkaw Falls, Emerald Lake and the walking needed to reach Wapta Falls.",
+      "category": "yoho",
+      "departure": "Calgary pickup described; confirm the selected option",
+      "lead": "This Top Choice Tours product combines Yoho destinations with a forest walk to Wapta Falls. It is a more active outing than a series of roadside lake viewpoints, and the Takakkaw Falls portion has its own road-season constraint. The product title says Into the Wild, but its provider identity is Top Choice Tours; use that actual operator when checking arrangements.",
+      "facts": [
+        {
+          "label": "Destinations described",
+          "value": "Takakkaw Falls, Wapta Falls, Emerald Lake and Natural Bridge"
+        },
+        {
+          "label": "Walking distinction",
+          "value": "The description gives roughly 30–35 minutes each way on forest paths to Wapta Falls"
+        },
+        {
+          "label": "Provider",
+          "value": "Top Choice Tours, despite the wording of the product title"
+        }
+      ],
+      "sections": [
+        {
+          "id": "walking-versus-viewpoints",
+          "title": "Decide whether the Wapta walk fits the party",
+          "paragraphs": [
+            "The Wapta component is not described as a quick roadside photograph. The reviewed narrative calls for a forest walk of about 30–35 minutes each way. Discuss the surface, actual route, pace and assistance needs with the operator, and include the least experienced participant in that decision.",
+            "That walk is part of a wider vehicle day which also describes Emerald Lake, Natural Bridge and Takakkaw Falls. Compare it with a lake-focused trip if shorter outdoor stops would suit your group better. A long list of destinations is useful only when the actual walking and road time are manageable for everyone."
+          ]
+        },
+        {
+          "id": "yoho-season-and-pickup",
+          "title": "Check the road season before the reservation",
+          "paragraphs": [
+            "Takakkaw Falls is reached using a seasonal road, so do not treat a published waterfall-tour page as proof of winter access. Confirm an operating date and ask which route is offered if the advertised stop cannot be reached. A winter Frozen Gems tour is a different product and should be compared on its own actual itinerary.",
+            "The reviewed description starts from Calgary. Verify the pickup offered in your selected option and the full return before arranging transport from a Banff room. Ask about food, footwear, clothing and road-change terms. The operator name in the confirmation is the reliable identity for these questions, not a phrase in the marketing title."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the current seasonal route and access to the Takakkaw component.",
+        "Match the Wapta walking demands to the whole party.",
+        "Use the selected pickup and complete return, especially from Calgary.",
+        "Read the meal, weather-change and cancellation terms."
+      ],
+      "faqs": [
+        {
+          "question": "Is Wapta Falls just a roadside stop?",
+          "answer": "The reviewed description includes a forest walk of about 30–35 minutes each way. Confirm the current route and walking requirements before booking."
+        },
+        {
+          "question": "Who operates this Into the Wild product?",
+          "answer": "The GYG provider is Top Choice Tours. Do not assume the title makes it a product of a different company with a similar name."
+        },
+        {
+          "question": "Can I assume this exact route runs in winter?",
+          "answer": "No. The Takakkaw road is seasonal. Check the operating date and actual alternative, and compare a winter-specific product if that is the trip you need."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Confirm the seasonal Yoho route and actual pickup. The Wapta portion involves a forest walk, and a published listing does not establish winter Takakkaw access."
+    },
+    {
+      "productId": "1204012",
+      "productUrl": "https://www.getyourguide.com/canmore-l117485/lake-louise-moraine-lake-tour-with-canoe-experience-t1204012/",
+      "provider": "Horizon Touring",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/canmore-l117485/lake-louise-moraine-lake-tour-with-canoe-experience-t1204012/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "lake-louise-canoe-option-three-lake-tour",
+      "title": "Three lakes by vehicle, with canoeing as an optional extra",
+      "description": "Understand Horizon Touring’s lake day: Lake Louise canoeing is optional and paid at the boathouse, alongside the vehicle tour.",
+      "category": "lakes",
+      "departure": "Selected Banff or Canmore-area pickup",
+      "lead": "Horizon Touring combines Emerald Lake, Lake Louise and Moraine Lake with an optional Lake Louise canoe arrangement. The reviewed page makes the canoe a separate, on-site payment. Choose this as a guided lake day with the possibility of paddling, not as a standalone canoe-rental ticket or an all-included canoe package.",
+      "facts": [
+        {
+          "label": "Lake route described",
+          "value": "Emerald Lake, Lake Louise and Moraine Lake"
+        },
+        {
+          "label": "Canoe component",
+          "value": "Optional rental paid at the Lake Louise boathouse"
+        },
+        {
+          "label": "Vehicle journey",
+          "value": "Round-trip transport from selected Banff or Canmore pickups"
+        }
+      ],
+      "sections": [
+        {
+          "id": "canoe-is-an-option",
+          "title": "Decide whether the optional canoe is essential",
+          "paragraphs": [
+            "The description says the operator has a boathouse arrangement intended to reduce the public queue, but the rental itself remains optional and is paid on site. Check the actual terms, operating conditions and time available before making paddling the reason for your entire day. A title mentioning canoeing does not establish a prepaid boat or an unconditional departure on the water.",
+            "If canoeing is not suitable or does not operate, decide whether you would still value the guided lake visit. Ask about the alternative use of the stop, participant requirements and how the day is managed for a party with different preferences. Keep the canoe payment and conditions separate from the vehicle-tour reservation."
+          ]
+        },
+        {
+          "id": "three-lakes-and-season",
+          "title": "Match the lake circuit to the season",
+          "paragraphs": [
+            "This is a broader tour than a short Lake Louise visit. The reviewed itinerary describes Emerald Lake first, a village lunch break, Lake Louise and Moraine Lake. The meal is at the guest’s expense, so include food and the actual stop lengths when comparing it with another operator’s package.",
+            "Moraine access and lake canoeing are seasonal. Confirm an operating date, the actual selected route and what happens if either component changes. Use the booked Banff or Canmore pickup and full return information. A lakeside photograph or a queue-related marketing claim does not guarantee the conditions or timing of your own visit."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the canoe is an optional on-site rental rather than an included ticket.",
+        "Check paddling operation, participant rules and the time available.",
+        "Confirm seasonal Moraine access and any route alternative.",
+        "Read the selected pickup, meal costs and complete return."
+      ],
+      "faqs": [
+        {
+          "question": "Is a canoe rental included in the tour price?",
+          "answer": "The reviewed page describes canoeing as optional and paid at the boathouse. Read the current option and the separate rental terms before booking."
+        },
+        {
+          "question": "Is this just a Lake Louise canoe ticket?",
+          "answer": "No. It is a vehicle day tour describing three lake destinations, with an optional canoe arrangement at one stop. Compare a separate rental only if that is all you need."
+        },
+        {
+          "question": "Can this same lake-and-canoe plan be assumed in winter?",
+          "answer": "No. Moraine vehicle access and lake canoeing are seasonal. Confirm the selected future date and the actual alternatives rather than relying on the product title."
+        }
+      ],
+      "launchState": "held",
+      "notice": "The vehicle tour and canoe rental are separate purchases. Confirm the operating season, actual lake route and optional canoe terms before booking."
+    },
+    {
+      "productId": "1282650",
+      "productUrl": "https://www.getyourguide.com/lake-louise-alberta-l190266/calgary-banff-sunrise-and-wildlife-tour-with-pickup-t1282650/",
+      "provider": "Banff Scenic tours Ltd.",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/lake-louise-alberta-l190266/calgary-banff-sunrise-and-wildlife-tour-with-pickup-t1282650/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "lake-louise-first-light-banff-lakes-tour",
+      "title": "Lake Louise at first light, followed by Banff lakes and falls",
+      "description": "Plan a Lake Louise early-morning visit with Banff Scenic tours, followed by town, Bow Falls and lakeside stops.",
+      "category": "lakes",
+      "departure": "Selected pickup; the reviewed narrative describes Banff hotels",
+      "lead": "This early-morning format is centred on Lake Louise, not a Moraine Lake sunrise transfer. The Banff Scenic tours description then returns through the Bow Valley for Banff town, Bow Falls, Lake Minnewanka and Two Jack Lake. Choose it when you want the first-light Lake Louise setting followed by a wider guided day, with pickup and meal arrangements checked for the actual option.",
+      "facts": [
+        {
+          "label": "Morning focus",
+          "value": "Early arrival at Lake Louise"
+        },
+        {
+          "label": "Later route described",
+          "value": "Banff town, Bow Falls, Lake Minnewanka and Two Jack Lake"
+        },
+        {
+          "label": "Meal distinction",
+          "value": "The reviewed town break allows guests to purchase a meal"
+        }
+      ],
+      "sections": [
+        {
+          "id": "lake-louise-not-moraine",
+          "title": "Choose the morning destination deliberately",
+          "paragraphs": [
+            "Several Banff listings use sunrise language, but they do not all visit the same lake. This product’s reviewed narrative starts at Lake Louise. Compare it with a Moraine-specific departure from the destination, season and complete return plan rather than choosing on the word sunrise alone.",
+            "An early arrival can make a different style of lakeshore visit, but cloud and the mountain skyline still determine the light. Check the pickup time for your date, clothing and footwear for the outdoor stops, and the needs of anyone who finds an early start difficult. The plan should still make sense if there is no dramatic sunrise colour."
+          ]
+        },
+        {
+          "id": "the-day-after-first-light",
+          "title": "Include the rest of the guided day",
+          "paragraphs": [
+            "The reviewed description continues past Castle Mountain toward Banff, with time to buy a meal in town before Bow Falls and the Minnewanka and Two Jack lake stops. That makes it more than a simple transfer out and back from Lake Louise. Compare the length and pace with the other activities your group wants to do that day.",
+            "Confirm the actual pickup in the selected option. The narrative describes Banff hotels, while a broad list of starting choices should not be taken as collection from any address. Check the complete return, food arrangements and which outdoor stops remain possible in the conditions. Wildlife is something to observe if encountered, not a promised part of the booking."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm that Lake Louise is the early-morning destination you want.",
+        "Use the actual pickup time and place for the selected option.",
+        "Plan the town meal as a separate purchase unless the booking says otherwise.",
+        "Check the full-day return and condition-dependent stops."
+      ],
+      "faqs": [
+        {
+          "question": "Is this a Moraine Lake sunrise tour?",
+          "answer": "The reviewed narrative is centred on first light at Lake Louise, followed by Banff-area sightseeing. Choose a separate Moraine product if that lake is essential to the trip."
+        },
+        {
+          "question": "Does a sunrise-timed trip guarantee a colourful sky?",
+          "answer": "No. Weather and the surrounding peaks affect the light. Decide whether an early lakeshore visit is worthwhile for your group without a particular sunrise appearance."
+        },
+        {
+          "question": "Is the town meal included?",
+          "answer": "The reviewed description gives a meal break where guests can purchase food. Check the current selected option, and do not transfer meal inclusions from another operator’s tour."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Confirm the actual early pickup, dated route and return. This is a Lake Louise morning itinerary; sunrise light and wildlife sightings are not guaranteed."
+    },
+    {
+      "productId": "1122948",
+      "productUrl": "https://www.getyourguide.com/banff-l284/banff-village-walking-tour-t1122948/",
+      "provider": "Horizon Touring",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/banff-l284/banff-village-walking-tour-t1122948/"
+      ],
+      "slug": "banff-evening-lookouts-wildlife-drive",
+      "title": "An evening drive through Banff’s lake and lookout scenery",
+      "description": "Compare Horizon Touring’s sunset-timed scenic outing, with Banff and Canmore pickup options and wildlife treated as a possibility.",
+      "category": "wildlife",
+      "departure": "Selected Banff or Canmore pickup",
+      "duration": "About 2 hours is advertised",
+      "lead": "This Horizon Touring product is an evening scenic drive, with the route timed around sunset and opportunities to watch for wildlife. It is different from the separate night-sky or northern-lights products. Choose it for the changing evening setting and guided journey, while treating animal encounters and the appearance of the sky as uncertain.",
+      "facts": [
+        {
+          "label": "Timing focus",
+          "value": "The reviewed description starts roughly two hours before sunset"
+        },
+        {
+          "label": "Stops described",
+          "value": "Two Jack Lake, Lake Minnewanka and Vermilion Lakes viewpoints"
+        },
+        {
+          "label": "Pickup choices",
+          "value": "Selected Banff and Canmore locations"
+        }
+      ],
+      "sections": [
+        {
+          "id": "sunset-is-not-stargazing",
+          "title": "Choose an evening landscape outing",
+          "paragraphs": [
+            "The product describes a sequence of viewpoints and lakeshore stops as the evening light changes. That is a different plan from a later stargazing outing or a dedicated northern-lights search. Match the booking to the experience you want and check the actual starting time for the date, because sunset changes through the season.",
+            "A quieter-looking photograph does not establish empty viewpoints or a clear horizon. Decide whether a guided evening drive would still suit your party if cloud, smoke or weather softens the view. Bring what you need for outdoor stops and confirm the walking and support requirements with the operator."
+          ]
+        },
+        {
+          "id": "wildlife-and-return",
+          "title": "Treat wildlife as a possibility and plan the return",
+          "paragraphs": [
+            "The reviewed description says wildlife sightings can be a bonus of the route and are not guaranteed. Let the guide determine any permitted stop and viewing behaviour. Choose the tour for its scenic format instead of expecting a particular animal, proximity or encounter promised by an advertising image.",
+            "Confirm the selected pickup and complete return for Banff or Canmore. An evening outing can affect dinner, a later activity and the final journey to your accommodation, especially if the drop-off differs from your hotel. Read the actual vehicle, participant and cancellation details rather than assuming every small evening tour uses the same arrangements."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Check the actual sunset-based start time for your date.",
+        "Confirm the selected Banff or Canmore pickup and return.",
+        "Discuss walking, clothing and support needs for outdoor stops.",
+        "Read weather-change, participant and cancellation terms."
+      ],
+      "faqs": [
+        {
+          "question": "Is this a northern-lights or stargazing tour?",
+          "answer": "The reviewed product is an evening scenic drive timed around sunset. Compare a separately described night-sky product if that is the experience you want."
+        },
+        {
+          "question": "Will I definitely see bears or other wildlife?",
+          "answer": "No. The operator’s description treats sightings as possible rather than guaranteed. Follow the guide’s instructions and choose the outing for the whole scenic experience."
+        },
+        {
+          "question": "Can I use an old departure time?",
+          "answer": "Use the time in the current dated reservation. The route is tied to sunset, so its start can change through the season and should be checked before arranging dinner or another activity."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Confirm the date’s actual evening pickup and return. This is a scenic sunset outing; neither a particular sky nor wildlife sightings are guaranteed."
+    },
+    {
+      "productId": "1075842",
+      "productUrl": "https://www.getyourguide.com/banff-l284/banff-yoho-kootenay-private-9-stop-national-parks-tour-t1075842/",
+      "provider": "Rocky Mountain Tours & Adventures",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/banff-l284/banff-yoho-kootenay-private-9-stop-national-parks-tour-t1075842/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "private-three-national-parks-choice-tour",
+      "title": "A private three-park day built from a choice of stops",
+      "description": "Understand the private Banff, Yoho and Kootenay format: choose up to nine stops with the guide, with upgrades checked separately.",
+      "category": "private-tours",
+      "departure": "Pickup included; confirm the selected starting location",
+      "lead": "Rocky Mountain Tours & Adventures describes a private outing across Banff, Yoho and Kootenay with a choice of up to nine stops. It is useful to compare when your party wants to influence the route rather than follow a fixed shared-vehicle circuit. The booking still needs a realistic agreed itinerary, the correct vehicle and a starting point that fits your accommodation.",
+      "facts": [
+        {
+          "label": "Format",
+          "value": "Private national-parks outing with up to nine selected stops"
+        },
+        {
+          "label": "Vehicle options described",
+          "value": "Private 14- or 24-seat vehicles; confirm the one reserved"
+        },
+        {
+          "label": "Optional additions",
+          "value": "The description offers upgrades such as a picnic, photography or other extras"
+        }
+      ],
+      "sections": [
+        {
+          "id": "choose-not-everything",
+          "title": "Agree the choices before the day",
+          "paragraphs": [
+            "The description presents a choice of stops, not a promise to visit every attraction across three parks. Some places are alternatives because of distance and time. Tell the operator which destinations matter most and ask how the route changes with the season, road access and the group’s desired pace.",
+            "A private vehicle can make the day more adaptable, but it does not change park closures or admission requirements. If Moraine Lake, a canyon, a particular waterfall or a paid attraction is essential, confirm that exact component rather than relying on the broad three-park title. Keep a workable alternative in the agreed plan."
+          ]
+        },
+        {
+          "id": "private-group-details",
+          "title": "Match the vehicle and upgrades to your group",
+          "paragraphs": [
+            "The product describes private vehicles in two sizes. Confirm the vehicle and capacity actually reserved for your party, including luggage, child seats and assistance needs. Ask which pickup location is included; the Banff heading is not evidence that every city or accommodation is offered in the same option.",
+            "Photography, a picnic or another advertised upgrade should be checked as a selected addition. Establish what the guide will provide, what costs extra and how the complete return is planned. Compare the resulting package with a smaller private lake tour if a focused two-lake day would fit better than a broad national-parks circuit."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Agree the essential stops and realistic alternatives with the operator.",
+        "Confirm the actual pickup, vehicle size and group requirements.",
+        "Check selected upgrades and attraction admission separately.",
+        "Read the complete return, road-change and cancellation terms."
+      ],
+      "faqs": [
+        {
+          "question": "Will the tour visit every attraction mentioned?",
+          "answer": "No. The description offers up to nine choices and notes that some stops are alternatives. Agree the actual route rather than treating the full list as a guaranteed itinerary."
+        },
+        {
+          "question": "Does a private booking override seasonal closures?",
+          "answer": "No. Road and attraction access still need checking for the date. Confirm any essential Moraine, canyon or waterfall component directly."
+        },
+        {
+          "question": "Are all advertised upgrades included?",
+          "answer": "The description presents optional additions. Read the selected option and confirm the picnic, photography or other extra you actually want, along with its terms."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Confirm the selected pickup, private vehicle and agreed stops. Some locations are alternatives, and seasonal road or attraction closures still apply."
+    },
+    {
+      "productId": "1198584",
+      "productUrl": "https://www.getyourguide.com/lake-louise-alberta-l190266/banffcamore-lake-louise-moraine-lake-private-tour-t1198584/",
+      "provider": "The Mountain Explorer Co.",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/lake-louise-alberta-l190266/banffcamore-lake-louise-moraine-lake-private-tour-t1198584/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "private-louise-moraine-guided-lakeshore-tour",
+      "title": "Two lakes with a private vehicle and guided shore walks",
+      "description": "Compare The Mountain Explorer Co.’s private Louise-and-Moraine day, including guided lake visits and selected accommodation pickup.",
+      "category": "private-tours",
+      "departure": "Selected Banff or Canmore accommodation pickup",
+      "season": "Moraine Lake access is seasonal",
+      "lead": "The Mountain Explorer Co. describes a private Lake Louise and Moraine Lake outing with guided walks and free time. Its focus is the two lake visits, rather than a long checklist of regional viewpoints. Compare it when your party wants a vehicle reserved for the group and a guide at the lakes, with the operating season and actual walking plan settled first.",
+      "facts": [
+        {
+          "label": "Format",
+          "value": "Private two-lake visit with guided lakeshore experiences"
+        },
+        {
+          "label": "Vehicle described",
+          "value": "A Mercedes Sprinter reserved for the group, up to the stated 14-person limit"
+        },
+        {
+          "label": "Starting area",
+          "value": "Selected accommodation pickup in Banff or Canmore"
+        }
+      ],
+      "sections": [
+        {
+          "id": "guided-time-and-free-time",
+          "title": "Choose the style of visit at each lake",
+          "paragraphs": [
+            "The reviewed description includes a guided Moraine lakeshore and Rockpile visit, followed by a Lake Louise lakeshore walk and time to explore. Compare that hosted format with a shared shuttle where you mainly follow a return timetable. The right choice depends on how much guidance, independence and walking your group wants.",
+            "Describe any balance, stamina or support needs before booking. A private group format does not establish that every viewpoint or part of the walk is suitable for every person. Ask which routes are permitted on the day and how the visit is adapted if someone needs a shorter or different outdoor experience."
+          ]
+        },
+        {
+          "id": "private-seasonal-journey",
+          "title": "Confirm the private journey and road season",
+          "paragraphs": [
+            "The product describes a Sprinter reserved for your group and selected accommodation pickups in Banff or Canmore. Confirm the address, actual group capacity and luggage or child-seat arrangements. An exclusive vehicle is a different format from purchasing individual seats on a large shared circuit.",
+            "Moraine is a seasonal vehicle destination, so settle a future operating date and the plan if its road is unavailable. Check the complete return and any food or other activity you want during the stops. A private day should be compared from its agreed itinerary and terms, not from an assumption that every lake activity or admission is included."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the selected accommodation pickup and actual vehicle capacity.",
+        "Match the guided shore walks to the whole party.",
+        "Check a future operating date and Moraine access.",
+        "Read food, optional activities, weather-change and cancellation terms."
+      ],
+      "faqs": [
+        {
+          "question": "Is this a shared lake shuttle?",
+          "answer": "The reviewed description reserves the vehicle for your group and includes guided lake visits. Compare it with a shared timed-return shuttle as a different service format."
+        },
+        {
+          "question": "Does everyone have to do the same walk?",
+          "answer": "Discuss the actual group needs with the operator before purchase. The description includes lakeshore and Rockpile walking, but the permitted route and support arrangement need confirmation."
+        },
+        {
+          "question": "Can a private vehicle visit Moraine in any month?",
+          "answer": "No. Moraine road access is seasonal. Confirm a genuinely operating date and any agreed alternative rather than assuming a private booking changes the road season."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Confirm the private-group arrangements and a future Moraine operating date. Guided shore walks and the actual permitted route need to fit the whole party."
+    },
+    {
+      "productId": "1393781",
+      "productUrl": "https://www.getyourguide.com/banff-l284/from-calgarycanmorebanff-private-banff-lakes-suv-tour-t1393781/",
+      "provider": "Banff Scenic tours Ltd.",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/banff-l284/from-calgarycanmorebanff-private-banff-lakes-suv-tour-t1393781/"
+      ],
+      "slug": "private-suv-banff-custom-day",
+      "title": "A private SUV day shaped around your Banff priorities",
+      "description": "Plan a custom Banff SUV outing from a selected Calgary, Canmore or Banff pickup, with attractions and the route agreed in advance.",
+      "category": "private-tours",
+      "departure": "Selected Calgary, Canmore or Banff pickup",
+      "lead": "Banff Scenic tours describes a private full-day SUV outing with a driver-guide and a route shaped around the party. It suits a group that wants to choose between lakes, waterfalls, town time and shorter walks. The useful booking is an agreed day with a realistic return, not the assumption that every place shown in the listing will fit or be open.",
+      "facts": [
+        {
+          "label": "Vehicle format",
+          "value": "Private SUV with driver-guide"
+        },
+        {
+          "label": "Departure choices",
+          "value": "Selected Calgary, Canmore or Banff pickup"
+        },
+        {
+          "label": "Route approach",
+          "value": "Custom choices from Banff-area lakes, canyons, town and viewpoints"
+        }
+      ],
+      "sections": [
+        {
+          "id": "agree-the-priorities",
+          "title": "Turn the flexible route into an actual plan",
+          "paragraphs": [
+            "The description suggests choices such as Lake Louise, Johnston Canyon, Banff town, Bow Falls, Surprise Corner, Minnewanka and Two Jack Lake. Tell the operator which are priorities and ask which combination fits the starting city, season and desired pace. A list of possibilities is not a confirmed schedule for every reservation.",
+            "A full day from Calgary has a different approach and return from a pickup in Banff. Keep the itinerary beside any dinner, airport journey or other fixed commitment. If a particular attraction matters, confirm its opening and admission separately; the ability to customise the drive does not provide access to closed roads or attractions."
+          ]
+        },
+        {
+          "id": "suv-and-party-fit",
+          "title": "Check the vehicle and the party’s needs",
+          "paragraphs": [
+            "Give the operator the actual passenger count, bags, child-seat needs and any assistance or equipment requirements. A private SUV can provide an exclusive format without establishing a particular seating arrangement or luggage capacity from the title alone. Confirm the vehicle reserved rather than comparing only the broad word private.",
+            "Choose how much walking, town time, photography and time outside the vehicle you want. Ask what the driver-guide can adapt and what must be booked as an extra. Meals and paid activities need their own inclusion checks, and the provider’s actual change and cancellation terms remain important even when the route is flexible."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Agree the priorities and realistic route for the starting city.",
+        "Confirm the actual SUV, group capacity and equipment needs.",
+        "Check each essential attraction’s operation and admission.",
+        "Settle the full return, meal arrangements and change terms."
+      ],
+      "faqs": [
+        {
+          "question": "Does custom mean every listed stop is included?",
+          "answer": "No. The description provides possibilities to shape the day around your party. Agree the actual route, timing and alternatives with the operator."
+        },
+        {
+          "question": "Can I choose pickup in Calgary, Canmore or Banff?",
+          "answer": "Those starting areas are described, but use the address and option confirmed for your reservation. The travel needed from each city affects the rest of the day."
+        },
+        {
+          "question": "Are attraction tickets automatically included?",
+          "answer": "Do not assume that from a private vehicle format. Confirm each paid attraction or activity in the selected booking and avoid buying overlapping tickets before the plan is settled."
+        }
+      ],
+      "launchState": "ready",
+      "notice": "Agree the actual route, pickup and private SUV capacity. Seasonal access and attraction tickets remain separate checks."
+    },
+    {
+      "productId": "226519",
+      "productUrl": "https://www.getyourguide.com/banff-l284/banff-national-park-guided-signature-hikes-with-lunch-t226519/",
+      "provider": "Discover Banff Tours",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/banff-l284/banff-national-park-guided-signature-hikes-with-lunch-t226519/",
+        "https://www.banffjaspercollection.com/attractions/columbia-icefield/location-hours/"
+      ],
+      "slug": "guided-banff-hikes-route-and-lunch",
+      "title": "A guided hiking day chosen from four published routes",
+      "description": "Compare Discover Banff Tours’ guided hiking format, with a scheduled route, Banff pickup and a published picnic-lunch inclusion.",
+      "category": "hiking",
+      "departure": "Selected Banff hotel pickup",
+      "duration": "About 7 hours including transport is advertised",
+      "season": "Seasonal hiking routes; current trail and road access must be checked",
+      "lead": "This Discover Banff Tours product offers a guided hiking day, with the route selected from a published calendar rather than a single sightseeing loop. The four described choices are Stanley Glacier, Larch Valley, Consolation Lakes and the Plain of Six Glaciers. Choose the route from its actual walking demands and operating date, then check transport, lunch and the whole group’s readiness.",
+      "facts": [
+        {
+          "label": "Format",
+          "value": "Guided hike with transport from selected Banff hotels"
+        },
+        {
+          "label": "Published routes",
+          "value": "Stanley Glacier, Larch Valley, Consolation Lakes or Plain of Six Glaciers on scheduled days"
+        },
+        {
+          "label": "Food inclusion described",
+          "value": "A picnic lunch is advertised"
+        }
+      ],
+      "sections": [
+        {
+          "id": "select-the-hike",
+          "title": "Choose the route before choosing the date",
+          "paragraphs": [
+            "The reviewed page assigns different routes to selected days. That makes the actual hike a more useful starting point than simply booking whichever date has a seat. Compare the distance, ascent, walking time, surface and support requirements of the proposed route with everyone in your party, then confirm the current schedule with the operator.",
+            "A picnic hike is a different activity from a short vehicle stop or a winter canyon icewalk. Do not transfer the requirements of one product to another. Explain the group’s experience and any health, mobility or stamina concerns directly to the provider, and ask how the route is changed if conditions make the advertised plan unsuitable."
+          ]
+        },
+        {
+          "id": "transport-lunch-and-season",
+          "title": "Check the full guided day and operating season",
+          "paragraphs": [
+            "The listing describes Banff hotel pickup and an approximately seven-hour outing including transport. Confirm the actual meeting and return arrangements before placing another commitment immediately after it. The published picnic inclusion also needs a dietary check; tell the operator about the party’s requirements before the day.",
+            "Several advertised routes depend on seasonal road and mountain-trail access. Parks warns that summer routes cannot simply be treated as winter walks. Choose a currently permitted and operated departure, follow the guide’s actual route decision, and check clothing, footwear, equipment and what you need to carry against the provider’s instructions."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the actual scheduled route and its distance, ascent and walking time.",
+        "Match the route to the least experienced participant.",
+        "Confirm pickup, return, dietary needs and required equipment.",
+        "Check the operating season and the provider’s route-change policy."
+      ],
+      "faqs": [
+        {
+          "question": "Can I choose any of the four hikes on any date?",
+          "answer": "The reviewed product schedules different routes on selected days. Confirm the current calendar and book the hike you actually want rather than assuming all routes are offered together."
+        },
+        {
+          "question": "Is this the same as a short sightseeing walk?",
+          "answer": "No. It is a guided hiking day with transport. Compare the actual route profile and walking demands with your group before booking."
+        },
+        {
+          "question": "Can a listed summer hike be booked as a winter walk?",
+          "answer": "Do not assume that. Mountain-trail and road access are seasonal, and the provider must confirm a permitted operating route, appropriate equipment and the actual requirements."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Confirm the scheduled hike, current season and party requirements. The published summer route list is not a winter access or suitability report."
+    },
+    {
+      "productId": "741850",
+      "productUrl": "https://www.getyourguide.com/banff-l284/lake-louise-banff-gondola-yoho-national-park-2-day-tour-t741850/",
+      "provider": "Banff ToDo",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/banff-l284/lake-louise-banff-gondola-yoho-national-park-2-day-tour-t741850/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "two-day-banff-yoho-options",
+      "title": "Two days of Banff and Yoho, with the attraction choices clarified",
+      "description": "Plan Banff ToDo’s two-day route, including lake and canyon alternatives, optional attractions and separate overnight arrangements.",
+      "category": "multi-day",
+      "departure": "Use the selected meeting option for both days",
+      "duration": "2 days",
+      "lead": "Banff ToDo describes a two-day combination of Banff sightseeing, lake visits and Yoho destinations. Its narrative contains alternative canyon and attraction choices, including different arrangements when a lake road or facility is closed. Before booking, establish the actual route for both dates and whether accommodation, attraction tickets and daily transport are part of the option you select.",
+      "facts": [
+        {
+          "label": "Format",
+          "value": "Two-day sightseeing combination"
+        },
+        {
+          "label": "Areas described",
+          "value": "Banff, Lake Louise and Yoho, with canyon and attraction alternatives"
+        },
+        {
+          "label": "Important distinction",
+          "value": "A two-day title does not establish an overnight hotel package"
+        }
+      ],
+      "sections": [
+        {
+          "id": "two-dated-itineraries",
+          "title": "Read both days as actual dated routes",
+          "paragraphs": [
+            "The reviewed narrative combines Banff town and viewpoint stops with lake and Yoho sightseeing. It also describes choices between the gondola or another attraction and between seasonal canyon or lake visits. Ask the provider which sequence applies to your two dates instead of treating every named place as a guaranteed part of the same booking.",
+            "Johnston Canyon, Moraine Lake and individual attractions need current operation checks. If a particular stop is essential, confirm it and the alternative before payment. A useful two-day plan should still suit your group when it follows the permitted seasonal route rather than the summer photographs."
+          ]
+        },
+        {
+          "id": "overnight-and-inclusions",
+          "title": "Keep overnight arrangements and admission explicit",
+          "paragraphs": [
+            "Check where each day starts and finishes, which pickup you have reserved and whether the booking includes accommodation. A multi-day excursion and a hotel-inclusive package can both be described as two days, so the heading alone is not enough to choose a room or cancel an existing reservation.",
+            "Read attraction admission, meals and any equipment inclusions individually. Coordinate optional tickets with the operator before buying them elsewhere, and confirm the walking involved in the actual canyon or lakeshore stops. The complete arrangement should include the party’s support needs, the daily return plan and the terms if a route or attraction changes."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the actual two dated itineraries and seasonal alternatives.",
+        "Check daily starting and finishing points.",
+        "Establish whether accommodation, meals and attraction admission are included.",
+        "Read walking, equipment, change and cancellation requirements."
+      ],
+      "faqs": [
+        {
+          "question": "Does two days mean hotel accommodation is included?",
+          "answer": "Not by itself. Read the selected booking’s accommodation terms and the daily starting and finishing points before arranging an overnight stay."
+        },
+        {
+          "question": "Will the gondola and hot springs both be included?",
+          "answer": "The reviewed narrative includes attraction choices and closures. Confirm the actual selected activity and its admission rather than transferring every named option into one package."
+        },
+        {
+          "question": "Can I rely on the summer lake itinerary in winter?",
+          "answer": "No. Moraine and canyon access, as well as attraction operation, can change the route. Establish the dated itinerary and permitted alternatives directly with the operator."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Confirm both dated routes, daily pickup and overnight arrangements. Seasonal lake, canyon and attraction closures affect which options operate."
+    },
+    {
+      "productId": "741876",
+      "productUrl": "https://www.getyourguide.com/banff-l284/calgary-3-day-lake-louise-moraine-emerald-yoho-icefield-t741876/",
+      "provider": "Banff ToDo",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/banff-l284/calgary-3-day-lake-louise-moraine-emerald-yoho-icefield-t741876/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise",
+        "https://www.banffjaspercollection.com/attractions/columbia-icefield/location-hours/"
+      ],
+      "slug": "calgary-three-day-lakes-yoho-icefields",
+      "title": "Three sightseeing days linking the lakes, Banff and the Parkway",
+      "description": "Compare Banff ToDo’s three-day combination from Calgary, with daily returns, admission and overnight arrangements checked separately.",
+      "category": "multi-day",
+      "departure": "Calgary booking; confirm the daily starting and finishing options",
+      "duration": "3 days",
+      "lead": "This Banff ToDo combination spreads regional sightseeing over three days: a lakes-and-Yoho route, Banff town and attractions, and an Icefields Parkway day. The reviewed narrative describes returns to Banff, Canmore or Calgary after the first two days. Confirm how the actual daily options fit your accommodation instead of assuming it is a continuous hotel-to-hotel road trip.",
+      "facts": [
+        {
+          "label": "Duration",
+          "value": "Three sightseeing days"
+        },
+        {
+          "label": "Described structure",
+          "value": "Lakes and Yoho; Banff-area sightseeing; Icefields Parkway"
+        },
+        {
+          "label": "Daily logistics",
+          "value": "The narrative describes Banff, Canmore or Calgary finishes after the first two days"
+        }
+      ],
+      "sections": [
+        {
+          "id": "daily-departures",
+          "title": "Build the plan from each day’s starting point",
+          "paragraphs": [
+            "Choose the actual pickup and return for every day in the booking. The described daily finishes make it important to know where you will sleep and how you reach the following departure. A Calgary-based combination is different from relocating between Banff and Jasper hotels, even if both products visit a glacier or national park.",
+            "Keep your luggage and accommodation plan alongside the schedule. Ask whether all three days are consecutive, how route order is set and what happens if a departure changes. Do not cancel separate transport or hotel arrangements until the supplier confirms which parts its selected package actually provides."
+          ]
+        },
+        {
+          "id": "season-and-paid-components",
+          "title": "Check seasonal routes and paid components",
+          "paragraphs": [
+            "The published itinerary mentions Moraine Lake, Johnston Canyon, gondola or hot-springs choices and a Columbia Icefield day. Each has its own access or operating constraints. Confirm the route for all three dates and the alternatives if a seasonal road or attraction is unavailable.",
+            "Compare attraction admissions, meals and any overnight accommodation from the actual inclusion list. Visiting the Icefield area does not necessarily include a specialised attraction ticket, and a gondola mention does not establish a prepaid ride. Ask about walking, clothing and assistance requirements for the actual programme before deciding that the combination suits the whole party."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm each day’s pickup, finish and route order.",
+        "Coordinate accommodation and luggage with the daily schedule.",
+        "Read attraction, meal and hotel inclusions individually.",
+        "Check seasonal alternatives and the change terms for the three-day booking."
+      ],
+      "faqs": [
+        {
+          "question": "Is this automatically a hotel-to-hotel Rockies road trip?",
+          "answer": "No. The reviewed narrative describes daily finishes in Banff, Canmore or Calgary. Confirm the actual selected arrangement and accommodation terms."
+        },
+        {
+          "question": "Does a three-day package include every attraction mentioned?",
+          "answer": "Read the selected inclusion list. Lake visits, attraction stops and paid admission are different components, and optional activities should be coordinated with the operator."
+        },
+        {
+          "question": "Can I assume all three routes are unchanged in winter?",
+          "answer": "No. Moraine, canyon and glacier-attraction operations have seasonal constraints. Confirm the actual route and any alternative for each date."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Confirm all three daily routes, returns and inclusions. The advertised lake, canyon and glacier components do not establish current winter operation."
+    },
+    {
+      "productId": "1132658",
+      "productUrl": "https://www.getyourguide.com/drumheller-l93585/banff-3-day-guided-tour-to-banff-jasper-drumheller-t1132658/",
+      "provider": "Banff Trip Planner Inc. (Planning Your Dream Travel)",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/drumheller-l93585/banff-3-day-guided-tour-to-banff-jasper-drumheller-t1132658/",
+        "https://www.banffjaspercollection.com/attractions/columbia-icefield/location-hours/"
+      ],
+      "slug": "three-day-banff-jasper-drumheller-combination",
+      "title": "A three-day choice that adds Drumheller to the Rockies",
+      "description": "Compare Banff Trip Planner’s Banff, Jasper and Drumheller combination, with the starting city and admission details confirmed.",
+      "category": "multi-day",
+      "departure": "Selected pickup; confirm the starting city for the complete booking",
+      "duration": "3 days",
+      "lead": "Banff Trip Planner’s three-day combination includes Banff sightseeing, a Parkway and Jasper-area day, and a Drumheller component. That badlands-and-museum theme distinguishes it from a three-day package focused on Lake Louise and Yoho. Confirm the starting city, daily finishes, accommodation and actual paid attractions before deciding which regional combination fits your trip.",
+      "facts": [
+        {
+          "label": "Regional combination",
+          "value": "Banff, Jasper-area Parkway destinations and Drumheller"
+        },
+        {
+          "label": "Duration",
+          "value": "Three days"
+        },
+        {
+          "label": "Distinct interest",
+          "value": "The itinerary includes a Royal Tyrrell Museum component"
+        }
+      ],
+      "sections": [
+        {
+          "id": "rockies-and-badlands",
+          "title": "Decide whether Drumheller belongs in your itinerary",
+          "paragraphs": [
+            "This product brings a different landscape and museum interest into the multi-day plan. Its described Banff day includes town, viewpoints and lake scenery, while another day follows the Parkway toward glacier destinations. The Drumheller part should be compared with the extra time at the lakes or Yoho offered by a different package.",
+            "Choose the combination from the group’s interests and the actual daily travel, not from the number of attraction names. Ask how much time is spent at the museum and which stops are possible on your dates. A broad regional circuit is useful only when its pace and the complete starting and finishing arrangements work for everyone."
+          ]
+        },
+        {
+          "id": "check-the-package",
+          "title": "Confirm the actual package components",
+          "paragraphs": [
+            "The reviewed page mentions the gondola, a lake cruise and glacier experiences, but each needs an inclusion and operating-date check. Establish which tickets are in the selected option, which are extra and whether an attraction time must be arranged in advance. Seasonal closure cannot be resolved by the package title alone.",
+            "Confirm the pickup city and where each day finishes before arranging accommodation. Check meals, luggage, walking, participant needs and the rules if a day or attraction changes. A three-day heading does not establish a particular hotel stay, a guaranteed animal encounter or every activity shown in the promotional description."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the starting city and each daily finish.",
+        "Read accommodation, museum, cruise and glacier-ticket inclusions.",
+        "Check the dated itinerary and seasonal alternatives.",
+        "Match walking, luggage and daily travel demands to the whole party."
+      ],
+      "faqs": [
+        {
+          "question": "How does this differ from a lakes-and-Yoho three-day tour?",
+          "answer": "The reviewed combination adds Drumheller and a Royal Tyrrell Museum component to Banff and Parkway/Jasper-area sightseeing. Compare the actual daily travel and time at each destination."
+        },
+        {
+          "question": "Is the starting point established by the word Banff in the title?",
+          "answer": "No. Confirm the selected pickup city and the complete daily route. A place in a tour title or URL is not a meeting-point instruction."
+        },
+        {
+          "question": "Are glacier, gondola and cruise tickets all prepaid?",
+          "answer": "Do not assume that from the list of highlights. Check the selected option’s admission details and current operation for each activity before purchase."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Confirm the starting city, daily route and admission package. Seasonal glacier and lake activities require a genuinely operating date."
+    },
+    {
+      "productId": "1210953",
+      "productUrl": "https://www.getyourguide.com/vancouver-l189/vancouver-canadian-rockies-5-day-private-tour-t1210953/",
+      "provider": "BC Grand Tours",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/vancouver-l189/vancouver-canadian-rockies-5-day-private-tour-t1210953/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "vancouver-private-five-day-rockies-circuit",
+      "title": "From Vancouver: A private five-day Rockies circuit",
+      "description": "Plan the Vancouver departure and return on a five-day private Rockies route, with hotels, admissions and the seasonal itinerary clarified.",
+      "category": "multi-day",
+      "departure": "Vancouver",
+      "duration": "5 days",
+      "lead": "BC Grand Tours describes a five-day private circuit leaving Vancouver and returning there after Banff, Jasper-area destinations and other British Columbia stops. It is a regional road trip, not a tour to join from a Banff hotel. Start by checking the complete daily route, overnight arrangements and attraction choices for the party and season you intend to book.",
+      "facts": [
+        {
+          "label": "Starting and finishing area",
+          "value": "Vancouver"
+        },
+        {
+          "label": "Format",
+          "value": "Five-day private road-trip circuit"
+        },
+        {
+          "label": "Described regions",
+          "value": "British Columbia approach, Jasper-area Parkway destinations, Banff and Yoho"
+        }
+      ],
+      "sections": [
+        {
+          "id": "vancouver-departure",
+          "title": "Allow for the journey into and out of the Rockies",
+          "paragraphs": [
+            "The reviewed route approaches the mountains through British Columbia, describing Clearwater and Jasper-area stops before reaching Banff. Its final day returns toward Vancouver through Yoho. This is different from spending five full days based in Banff or from buying a Calgary airport transfer followed by separate local tours.",
+            "Keep flights and other bookings aligned with the actual beginning and end of the circuit. Check the daily driving, breaks, luggage and support needs for the whole party. The supplier’s suggested timetable is a plan to confirm, not a guarantee that a long road day will finish at an exact time suitable for a tight flight connection."
+          ]
+        },
+        {
+          "id": "overnights-and-attractions",
+          "title": "Clarify hotels and the seasonal attraction choices",
+          "paragraphs": [
+            "The description refers to overnight stops and several paid activities, including glacier and gondola experiences. Establish which hotel arrangements, meals and admissions the selected private package actually includes. If tickets are to be booked separately, coordinate them with the operator rather than buying a time that does not fit the agreed route.",
+            "Moraine Lake, glacier attractions and some Jasper-area destinations have their own access or operating limits. Confirm the current itinerary and alternatives before treating the full advertised circuit as available in every season. A private vehicle provides an exclusive format, but it does not remove park closures or establish that every attraction in the narrative can operate on your dates."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm Vancouver pickup, return and any flight buffer.",
+        "Read each overnight, meal and admission inclusion.",
+        "Agree the actual seasonal route and alternative stops.",
+        "Check luggage, group capacity, support needs and road-change terms."
+      ],
+      "faqs": [
+        {
+          "question": "Can I join this as a day trip from Banff?",
+          "answer": "The reviewed product is a five-day private circuit departing from Vancouver and returning there. A local Banff excursion is a different purchase."
+        },
+        {
+          "question": "Does the title establish all hotels and attraction tickets?",
+          "answer": "No. Confirm the selected package’s hotel, meal and admission arrangements with the operator, including any tickets that must be coordinated separately."
+        },
+        {
+          "question": "Does a private circuit operate the same route all year?",
+          "answer": "Not necessarily. The named parks, seasonal lake road and paid attractions require date-specific checks. Agree the actual route and alternatives before purchase."
+        }
+      ],
+      "launchState": "held",
+      "notice": "This is a Vancouver departure and return. Confirm the overnight and admission package, current route and operating dates for seasonal attractions."
+    },
+    {
+      "productId": "631160",
+      "productUrl": "https://www.getyourguide.com/canmore-l117485/from-canmorebanff-moraine-lake-sunrise-lake-louise-tour-t631160/",
+      "provider": "Into the Wild Tours",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": [
+        "https://www.getyourguide.com/canmore-l117485/from-canmorebanff-moraine-lake-sunrise-lake-louise-tour-t631160/",
+        "https://parks.canada.ca/pn-np/ab/banff/visit/les10-top10/louise"
+      ],
+      "slug": "moraine-louise-sunrise-or-sunset-choice",
+      "title": "Two lakes with a choice of morning or evening light",
+      "description": "Compare Into the Wild’s Moraine-and-Louise outing, choosing the actual sunrise or sunset option and seasonal pickup.",
+      "category": "lakes",
+      "departure": "Selected Banff or Canmore pickup",
+      "season": "Moraine Lake road access is seasonal",
+      "lead": "Into the Wild Tours offers a Moraine Lake and Lake Louise outing with sunrise or sunset formats. Choose the actual timing option as deliberately as the destinations: an early start and an evening return affect the rest of a holiday day differently. Compare the selected route and pickup with a Moraine-only service or a daytime two-lake tour before booking.",
+      "facts": [
+        {
+          "label": "Lake combination",
+          "value": "Moraine Lake and Lake Louise"
+        },
+        {
+          "label": "Timing choices described",
+          "value": "Sunrise or sunset options"
+        },
+        {
+          "label": "Group format described",
+          "value": "A small group with a stated maximum of 13 guests"
+        }
+      ],
+      "sections": [
+        {
+          "id": "morning-or-evening",
+          "title": "Choose the timing that fits your day",
+          "paragraphs": [
+            "A morning and an evening departure should not be treated as interchangeable. Check the booked pickup and full return, then place meals, rest and any other activity around that actual schedule. A familiar product heading is not enough to establish which version is available on the date you want.",
+            "The reviewed description includes time at Lake Louise as well as the Moraine visit. Decide whether that combination is important or whether a single-lake outing would fit better. Ask which stops and outdoor time belong to the option, and keep canoe rentals or separate walks distinct from the vehicle and guiding actually provided."
+          ]
+        },
+        {
+          "id": "season-and-light",
+          "title": "Keep the seasonal and viewing expectations realistic",
+          "paragraphs": [
+            "Moraine’s licensed vehicle access is seasonal, and the current winter service has ended. Choose a future operating date and check the provider’s road-change and cancellation arrangements. The published small-group format still needs participant, seating, luggage and assistance checks for your actual party.",
+            "Sunrise or sunset timing cannot establish a clear sky or a particular appearance of the mountains. Decide whether the lake outing remains worthwhile if the light is subdued, and bring clothing and footwear suited to the outdoor stops. Photographs and descriptive claims do not guarantee crowd levels, weather or the experience of a specific date."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Select the actual sunrise or sunset option.",
+        "Confirm the future operating date and Moraine road access.",
+        "Use the pickup and full return on the selected reservation.",
+        "Check participant needs, included stops and weather-change terms."
+      ],
+      "faqs": [
+        {
+          "question": "Does one booking let me choose sunrise or sunset on the day?",
+          "answer": "Use the timing option reserved for your date. Confirm any change with the operator rather than assuming the two departures are freely interchangeable."
+        },
+        {
+          "question": "Is this a Moraine-only outing?",
+          "answer": "The reviewed product describes a Moraine Lake and Lake Louise combination. Compare the actual option with a single-lake product if a shorter or more focused visit is your priority."
+        },
+        {
+          "question": "Can the tour guarantee the light shown in photographs?",
+          "answer": "No. Weather, the surrounding peaks and seasonal conditions determine the view. Choose the outing for its overall route and timing, not a promised photograph."
+        }
+      ],
+      "launchState": "held",
+      "notice": "Choose the actual sunrise or sunset option and a future Moraine operating date. The booked timing does not guarantee a particular sky or mountain view."
+    }
+  ]
+}

@@ -10,7 +10,7 @@ import { transform } from '@astrojs/compiler';
 import { experimental_AstroContainer } from 'astro/container';
 import { parseFragment } from 'parse5';
 const root = process.cwd(), require2 = createRequire(path.join(root, 'package.json'));
-const compiled = await build({ stdin: { contents: "export * from './src/data/activities.ts';export * from './src/data/activityCampaignTargets.ts';", resolveDir: root }, bundle: true, write: false, platform: 'node', format: 'esm' });
+const compiled = await build({ stdin: { contents: "export * from './src/data/activities.ts';export * from './src/data/activityCampaignTargets.ts';export {getExperienceGroupForPath} from './src/data/banffExperiences.ts';", resolveDir: root }, bundle: true, write: false, platform: 'node', format: 'esm' });
 const m = await import('data:text/javascript;base64,' + Buffer.from(compiled.outputFiles[0].text).toString('base64'));
 const render = await build({ stdin: { contents: "export {default} from './src/pages/activities/[slug].astro';", resolveDir: root }, bundle: true, write: false, platform: 'node', format: 'esm', logLevel: 'silent', plugins: [{ name: 'activity-guide-render', setup(b) {
   b.onResolve({ filter: /^astro\// }, a => ({ path: pathToFileURL(require2.resolve(a.path)).href, external: true }));
@@ -77,7 +77,7 @@ function checkGuide(html, activity, offerId) {
     assert(ns.indexOf(notice) < ns.indexOf(link));
   }
   assert(visible.includes('Affiliate link. BanffBound may earn from qualifying bookings.'));
-  assert(!/Hold paid ads|ad group|missing guide|launchState|PRIVATE|ATTACKER/.test(visible));
+  assert(!/Hold paid ads|ad group|missing guide|launchState|BB_TEST_SECRET_9|BB_TEST_CMP_ATTACK_9/.test(visible));
   const tables = ns.filter(n => n.tagName === 'table');
   assert.equal(tables.length, 1);
   assert(ns.some(n => n.tagName === 'caption' && normalize(text(n)) === activity.comparison.caption));
@@ -95,8 +95,18 @@ function checkGuide(html, activity, offerId) {
   assert(!schemas.some(s => ['Product','Offer','AggregateRating'].includes(s['@type'])));
   const faq = schemas.find(s => s['@type'] === 'FAQPage');
   assert.deepEqual(faq.mainEntity.map(f => [f.name, f.acceptedAnswer.text]), activity.faqs.map(f => [f.question, f.answer]));
-  const visibleFaqs = ns.filter(n => n.tagName === 'details').map(n => [normalize(text(n.childNodes.find(x => x.tagName === 'summary'))), normalize(text(n.childNodes.find(x => x.tagName === 'p')))]);
+  const faqSection = ns.find(n => (attr(n, 'class') || '').split(/\s+/).includes('activity-guide-faqs'));
+  assert(faqSection, 'Original activity FAQs remain distinct from operator planning notes.');
+  const visibleFaqs = walk(faqSection).filter(n => n.tagName === 'details').map(n => [normalize(text(n.childNodes.find(x => x.tagName === 'summary'))), normalize(text(n.childNodes.find(x => x.tagName === 'p')))]);
   assert.deepEqual(visibleFaqs, activity.faqs.map(f => [f.question, f.answer]));
+  const group = m.getExperienceGroupForPath('/activities/' + activity.slug + '/');
+  assert(group, 'Existing commercial detail has its matched comparison group.');
+  const operatorOptions = ns.filter(n => attr(n, 'data-experience-option') !== undefined);
+  assert.equal(operatorOptions.length, group.productIds.length);
+  assert(operatorOptions.every(n => attr(n, 'hidden') === undefined), 'All operator links are native without JavaScript.');
+  for (const section of ns.filter(n => attr(n, 'data-experience-options') !== undefined)) {
+    for (const item of walk(section).filter(n => attr(n, 'data-content-id') !== undefined)) assert.equal(attr(item, 'data-content-id'), activity.slug, 'Primary and comparison links share this detail page’s analytics content ID.');
+  }
   for (const source of activity.sources) assert(ns.some(n => n.tagName === 'a' && attr(n, 'href') === source.url && normalize(text(n)).includes(source.label)));
   assert(ns.some(n => n.tagName === 'time' && attr(n, 'datetime') === '2026-10-30'));
   for (const guide of activity.guides) assert(ns.some(n => n.tagName === 'a' && attr(n, 'href') === guide.href));
@@ -132,7 +142,7 @@ for (const [slug, offerId] of cases) {
   const activity = m.activities.find(a => a.slug === slug);
   assert(activity && !activity.isExternal);
   await access('public' + activity.image);
-  const html = await container.renderToString(Page, { props: { activity }, request: new Request('https://banffbound.com/activities/' + slug + '/?email=PRIVATE&cmp=ATTACKER') });
+  const html = await container.renderToString(Page, { props: { activity }, request: new Request('https://banffbound.com/activities/' + slug + '/?email=BB_TEST_SECRET_9&cmp=BB_TEST_CMP_ATTACK_9') });
   const words = checkGuide(html, activity, offerId);
   results.push({ slug, offerId, renderedVisibleWords: words, faqCount: activity.faqs.length, sourceCount: activity.sources.length });
   if (slug === 'banff-food-tours') fixture = { html, activity, offerId };

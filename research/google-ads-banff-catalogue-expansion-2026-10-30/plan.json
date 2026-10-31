@@ -1,0 +1,4086 @@
+{
+  "schemaVersion": 1,
+  "status": "PREPARED_NOT_UPLOADED",
+  "groups": [
+    {
+      "id": "wagon-rides-cookouts",
+      "title": "A Banff Wagon Ride with a Cowboy Cookout",
+      "category": "Horses & food",
+      "departure": "Banff stable and cookout arrangements",
+      "canonicalPath": "/experiences/banff-wagon-ride-cowboy-cookout/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-wagon-ride-cowboy-cookout/",
+      "primaryProductId": "226543",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Wagon Ride And Cookout",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff wagon ride"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff cowboy cookout"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff wagon dinner"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff wagon lunch"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "horse drawn wagon banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff wagon ride and cookout"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "cowboy cookout in banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff horse drawn wagon"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Wagon Ride And Cookout",
+        "Choose Lunch Or Dinner",
+        "A Horse-Drawn Banff Outing",
+        "Plan Your Cookout Visit",
+        "Read The Wagon Ride Guide",
+        "Check The Meal Options"
+      ],
+      "descriptions": [
+        "Plan a wagon journey and cookout from Banff, with lunch and dinner choices to check.",
+        "Compare the meal, travel time and group requirements before choosing your booking.",
+        "Read how the wagon experience works and confirm the selected meeting point.",
+        "Find out more about this Banff outing, then check dates and current options."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_wagon_rides_cookouts_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "winter-sleigh-rides",
+      "title": "A Horse-Drawn Sleigh Ride in Banff",
+      "category": "Winter outings",
+      "departure": "Published Banff stable meeting points",
+      "canonicalPath": "/experiences/banff-horse-drawn-sleigh-rides/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-horse-drawn-sleigh-rides/",
+      "primaryProductId": "303703",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Horse Drawn Sleigh Rides",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff sleigh ride"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "horse drawn sleigh banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff winter sleigh tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff private sleigh ride"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff shared sleigh ride"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "sleigh rides in banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff horse drawn sleigh"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "winter sleigh ride banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Horse-Drawn Sleigh Rides",
+        "Compare Sleigh Ride Formats",
+        "Plan Your Winter Outing",
+        "Read The Sleigh Ride Guide",
+        "Check Snow And Dates",
+        "Confirm The Stable Meeting"
+      ],
+      "descriptions": [
+        "Compare shared and private sleigh ride formats for a winter outing in Banff.",
+        "Check the snow-dependent programme, participant rules and actual stable meeting.",
+        "Read the selected option’s inclusions and weather-change arrangements.",
+        "Find out more about the ride, then confirm current dates and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_winter_sleigh_rides_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "scenic-river-floats",
+      "title": "A Scenic River Float near Banff and Canmore",
+      "category": "Water adventures",
+      "departure": "Published Bow Valley river meeting points",
+      "canonicalPath": "/experiences/bow-river-scenic-float-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/bow-river-scenic-float-options/",
+      "primaryProductId": "641413",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Canmore Scenic River Float",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "canmore bow river float"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore scenic float tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "bow river float canmore"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore river rafting float"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "guided river float canmore"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "scenic river float canmore"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "bow river scenic float"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "canmore float trip"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Canmore Scenic River Float",
+        "See The Bow From The Water",
+        "Plan Your Canmore Outing",
+        "Compare The Boat Format",
+        "Read The River Float Guide",
+        "Check The Launch Point"
+      ],
+      "descriptions": [
+        "Plan a guided scenic float on the Bow River in Canmore.",
+        "Read about the boat format, interpretation and actual meeting arrangements.",
+        "Compare this scenic river outing with the region’s whitewater rafting trips.",
+        "Find out more, then check your selected date, launch point and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_scenic_river_floats_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "wolfdog-sanctuary",
+      "title": "A Wolfdog Sanctuary Visit on Your Rockies Trip",
+      "category": "Wildlife & night skies",
+      "departure": "Cochrane-area sanctuary and published transfer options",
+      "canonicalPath": "/experiences/wolfdog-sanctuary-tour-from-banff-area/",
+      "guideFinalUrl": "https://banffbound.com/experiences/wolfdog-sanctuary-tour-from-banff-area/",
+      "primaryProductId": "393707",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Cochrane Wolfdog Sanctuary",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "cochrane wolfdog sanctuary"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "wolfdog sanctuary intro tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "wolfdog sanctuary near calgary"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "cochrane wolfdog tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "wolfdog sanctuary introduction"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "cochrane wolfdog sanctuary tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "wolfdog introduction near calgary"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "wolfdog sanctuary visit"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Cochrane Wolfdog Sanctuary",
+        "Plan An Educational Visit",
+        "Read The Sanctuary Tour Guide",
+        "Check The Intro Tour Format",
+        "Plan Travel From Your Base",
+        "Compare Visit Requirements"
+      ],
+      "descriptions": [
+        "Read about a sanctuary introduction near Cochrane with a presentation and walking time.",
+        "The intro format does not include interacting with wolfdogs. Check the actual option.",
+        "Plan the road journey separately from Banff and review the current access rules.",
+        "Find out more about the visit, then confirm your chosen date and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_wolfdog_sanctuary_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "stargazing-night-walks",
+      "title": "Banff After Dark: Stargazing, Lake Walks and Night Tours",
+      "category": "Wildlife & night skies",
+      "departure": "Banff and Canmore meeting options",
+      "canonicalPath": "/blog/banff-northern-lights/",
+      "guideFinalUrl": "https://banffbound.com/blog/banff-northern-lights/",
+      "primaryProductId": "916190",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Banff Stargazing Tour",
+      "existingGroupId": "203151022233",
+      "existingAdId": "830171093204",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff guided stargazing"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "two jack lake night tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake minnewanka night walk"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided dark sky walk"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff dark sky guided tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "stargazing evening banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff lake night walk"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff guided night tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Stargazing Evenings",
+        "Explore The Lakes After Dark",
+        "Compare Night Tour Formats",
+        "Read The Stargazing Guide",
+        "Check The Evening Departure",
+        "Plan For Sky Conditions"
+      ],
+      "descriptions": [
+        "Compare guided Banff stargazing and after-dark lake outings.",
+        "Read the actual route, meeting point and evening format before booking.",
+        "Sky visibility responds to the weather. Check current departure and clothing details.",
+        "Plan an evening that suits your trip, then confirm the selected booking option."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "airport-shared-departures",
+      "title": "Banff and Canmore to YYC: Shared Airport Return Shuttles",
+      "category": "Transport",
+      "departure": "Published Banff or Canmore departure stops toward Calgary YYC",
+      "canonicalPath": "/experiences/banff-canmore-yyc-shared-airport-return/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-canmore-yyc-shared-airport-return/",
+      "primaryProductId": "858142",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Canmore to YYC Shared Shuttles",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff to calgary airport shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore to calgary airport shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff to yyc shared shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore to yyc shared shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "shared transfer banff to yyc"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff to yyc airport transfer"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "canmore to yyc shuttle"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "airport shuttle from banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff And Canmore To YYC",
+        "Compare Shared Airport Rides",
+        "Choose The Right Town Stop",
+        "Plan Your Airport Departure",
+        "Read Luggage And Pickup Rules",
+        "Allow A Flight Check-In Buffer"
+      ],
+      "descriptions": [
+        "Compare shared airport departures from the selected Banff or Canmore town stop.",
+        "Plan the journey from your accommodation to the exact reserved pickup.",
+        "Work backwards from your flight and allow for airline check-in and road conditions.",
+        "Read the luggage allowance, dated service and actual YYC drop-off arrangements."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_airport_shared_departures_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "banff-yoho-lake-day-tours",
+      "title": "Banff and Yoho Lake Day Tours: Routes and Booking Options",
+      "category": "Lakes & road tours",
+      "departure": "Banff, Canmore and Calgary pickup options",
+      "canonicalPath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/lake-louise-moraine-emerald-day-tours/",
+      "primaryProductId": "1004220",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff And Yoho Lake Day Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff lake sightseeing day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise emerald lake day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary banff lake day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore lake day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff yoho lake day trip"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "lake day tour from banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "lake tours from calgary"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff yoho lake tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff And Yoho Lake Day Tours",
+        "Compare The Actual Lake Stops",
+        "Choose Your Starting Town",
+        "Read The Seasonal Route Guide",
+        "Check Private Or Shared Format",
+        "Plan Pickup And Full Return"
+      ],
+      "descriptions": [
+        "Compare lake day tours by starting town, actual stop list and time at each lake.",
+        "Read the selected Banff or Yoho route and its seasonal changes before booking.",
+        "Check the actual private or shared format and what admissions cost extra.",
+        "Plan pickup and the full return from Banff, Canmore or Calgary for your chosen tour."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_banff_yoho_lake_day_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "open-top-sightseeing",
+      "title": "Banff by Vintage Open-Top Touring Car",
+      "category": "Town & creative",
+      "departure": "Published Banff touring pickup arrangements",
+      "canonicalPath": "/experiences/banff-vintage-open-top-touring/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-vintage-open-top-touring/",
+      "primaryProductId": "827226",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Vintage Open Air Sightseeing",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff vintage car sightseeing"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff open air car tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff vintage vehicle tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff open top sightseeing ride"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff scenic vintage car ride"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "vintage sightseeing in banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff open air sightseeing"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff vintage touring car"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Vintage Car Sightseeing",
+        "An Open-Air Touring Format",
+        "Compare The Actual Route",
+        "Plan A Banff Scenic Ride",
+        "Check Season And Weather Plans",
+        "Read The Touring Car Guide"
+      ],
+      "descriptions": [
+        "Compare a vintage open-top Banff outing with enclosed sightseeing and walking tours.",
+        "Read the route, pickup and return arrangements for the selected vehicle format.",
+        "Check seasonal operation, clothing, boarding and weather-change arrangements.",
+        "Plan the ride that suits your group and confirm current dates and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_open_top_sightseeing_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "gondola-hot-springs-day-tours",
+      "title": "Banff Day Tours with Gondola and Hot Springs Choices",
+      "category": "Mountain attractions",
+      "departure": "Banff, Canmore and Calgary options",
+      "canonicalPath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "primaryProductId": "1131138",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Gondola Hot Springs Tours",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff gondola day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff hot springs day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff gondola hot springs tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary banff gondola day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore banff hot springs tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff gondola sightseeing tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "hot springs tour banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "gondola day trip from calgary"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Gondola Day Tour Options",
+        "Compare Hot Springs Road Trips",
+        "Check Attraction Inclusions",
+        "Plan The Actual Stop List",
+        "Read The Day Tour Guide",
+        "Confirm Pickup And Return"
+      ],
+      "descriptions": [
+        "Compare road tours with gondola and hot springs choices from the Banff region.",
+        "Check whether attraction visits and tickets are included, optional or alternatives.",
+        "Read the actual departure, stop list, pickup and return before booking.",
+        "Choose the tour format that suits your day and confirm current attraction operation."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_gondola_hot_springs_day_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "banff-sightseeing-day-tours",
+      "title": "Banff Highlights: Town, Viewpoints and Guided Day Tours",
+      "category": "Lakes & road tours",
+      "departure": "Banff, Canmore and Calgary departure options",
+      "canonicalPath": "/experiences/banff-highlights-guided-sightseeing/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-highlights-guided-sightseeing/",
+      "primaryProductId": "825013",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Guided Sightseeing Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff guided sightseeing tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff highlights day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff town and viewpoints tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary banff sightseeing day trip"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore banff day tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided sightseeing in banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff highlights tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff day trip from calgary"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Guided Sightseeing",
+        "Compare Highlights Day Tours",
+        "Plan The Stops You Want",
+        "Read The Banff Tour Guide",
+        "Check The Actual Pickup",
+        "Choose Your Day Tour Format"
+      ],
+      "descriptions": [
+        "Compare Banff highlights outings by actual route, departure and time at the stops.",
+        "Read the transport, attraction and optional expense details for your chosen tour.",
+        "Check pickup and return from Calgary, Canmore or Banff before arranging your day.",
+        "Find out more about the formats, then confirm the current booking option."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_banff_sightseeing_day_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "photography",
+      "title": "Banff Photography Sessions: Compare Photoshoot Options",
+      "category": "Town & creative",
+      "departure": "Published Banff-area meeting options",
+      "canonicalPath": "/experiences/banff-photography-session-tour-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-photography-session-tour-options/",
+      "primaryProductId": "1509976",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Photography Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff vacation photoshoot"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff photo session"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff private photoshoot"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff portrait photography session"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff photography experience"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "photoshoot in banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff lake photoshoot"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff holiday photo session"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Photography Options",
+        "Portraits Or Lake Photoshoots",
+        "Compare The Actual Format",
+        "Plan Your Banff Photo Outing",
+        "Check Image Delivery Terms",
+        "Read The Photography Guide"
+      ],
+      "descriptions": [
+        "Compare Banff portrait sessions with Lake Louise and Moraine photoshoot options.",
+        "Read the selected format, meeting point and weather arrangements before booking.",
+        "For a session, check the image delivery and usage terms with the actual provider.",
+        "Choose the outing you want, then confirm current dates and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_photography_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "gondola-chairlift-admission",
+      "title": "Banff Summit Rides: Gondola and Scenic Chairlift Options",
+      "category": "Mountain attractions",
+      "departure": "Banff-area attraction bases",
+      "canonicalPath": "/blog/banff-gondola-guide/",
+      "guideFinalUrl": "https://banffbound.com/blog/banff-gondola-guide/",
+      "primaryProductId": "256607",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Banff Gondola Visit",
+      "existingGroupId": "203151021593",
+      "existingAdId": "830171093183",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff gondola summit visit"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "sulphur mountain cable car ride"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff summit sightseeing ride"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff scenic chairlift tickets"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff gondola viewing areas"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff gondola summit guide"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "scenic chairlift banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "sulphur mountain sightseeing ride"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Summit Ride Options",
+        "Gondola And Chairlift Choices",
+        "Plan Your Mountain Visit",
+        "Read The Summit Ride Guide",
+        "Compare The Actual Base",
+        "Check Tickets And Conditions"
+      ],
+      "descriptions": [
+        "Compare Banff gondola and scenic chairlift options by base, format and summit visit.",
+        "Read the actual ticket, transport and arrival arrangements before choosing to book.",
+        "Check current operation and weather-dependent outdoor access for your visit.",
+        "Plan your mountain outing, then confirm the selected date and booking details."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "wildlife-tours",
+      "title": "Banff Wildlife Tours: Morning Drives and Evening Outings",
+      "category": "Wildlife & night skies",
+      "departure": "Banff and selected nearby pickups",
+      "canonicalPath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-wildlife-morning-evening-tours/",
+      "primaryProductId": "1260695",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Morning And Evening Wildlife",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff morning wildlife tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff sunset wildlife tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff wildlife viewing tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff evening wildlife drive"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "guided wildlife drive banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "wildlife tour in banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff evening wildlife tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff morning nature tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Wildlife Tour Options",
+        "Morning Or Evening Outings",
+        "Explore Banff With A Guide",
+        "Read The Wildlife Tour Guide",
+        "Choose Your Meeting Option",
+        "Plan A Guided Nature Drive"
+      ],
+      "descriptions": [
+        "Compare morning wildlife drives and evening scenic outings around Banff.",
+        "Read the actual route format, departure and pickup options before booking.",
+        "Wildlife sightings vary with the season, recent activity and road conditions.",
+        "Plan an outing that suits your day, then check current departures and details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_wildlife_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "ice-climbing",
+      "title": "Beginner Ice Climbing near Banff: Course and Journey Choices",
+      "category": "Climbing & technical",
+      "departure": "Published Bow Valley meeting points and condition-selected venues",
+      "canonicalPath": "/activities/ice-climbing/",
+      "guideFinalUrl": "https://banffbound.com/activities/ice-climbing/",
+      "primaryProductId": "432341",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Beginner Ice Climbing Near Banff",
+      "existingGroupId": "203151022313",
+      "existingAdId": "830171093210",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "beginner ice climbing near banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided ice climbing day"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore beginner ice climbing"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "ice climbing instruction banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "bow valley ice climbing lesson"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "ice climbing lessons banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "beginner guided ice climbing"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff ice climbing experience"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Beginner Ice Climbing Banff",
+        "Try Guided Ice Instruction",
+        "Plan A Technical Winter Day",
+        "Read The Ice Climbing Guide",
+        "Check Equipment And Meeting",
+        "Choose Your Course Format"
+      ],
+      "descriptions": [
+        "Read the beginner ice-climbing guide before choosing a technical winter outing.",
+        "Review the actual meeting point, participant requirements and listed equipment.",
+        "The climbing venue depends on conditions. Plan the complete journey and return.",
+        "Compare the course format and confirm current dates and booking details."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "banff-jasper-transfers",
+      "title": "Between Banff and Jasper: Transfers with Sightseeing Options",
+      "category": "Transport",
+      "departure": "Banff, Lake Louise and Jasper route options",
+      "canonicalPath": "/experiences/banff-jasper-transfer-sightseeing-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-jasper-transfer-sightseeing-options/",
+      "primaryProductId": "190820",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Jasper Parkway Transfer Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff to jasper transfer"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "jasper to banff transfer"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff jasper sightseeing transfer"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise jasper transfer"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff jasper one way transport"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff jasper transfer options"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "parkway sightseeing transfer"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "jasper banff transport guide"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Between Banff And Jasper",
+        "Compare Transfer Route Options",
+        "Read Direction And Drop-Off",
+        "Check Luggage And Stops",
+        "Plan The Parkway Journey",
+        "Choose Transfer Or Return Tour"
+      ],
+      "descriptions": [
+        "Compare transport between overnight bases with a return sightseeing day.",
+        "Read the actual direction, pickup, stops and final drop-off for your booking.",
+        "Check luggage and seasonal road arrangements before planning onward travel.",
+        "A one-way Parkway journey needs a different overnight plan from a return tour."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_banff_jasper_transfers_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "calgary-banff-transfers",
+      "title": "Calgary and Banff by Shuttle: Choose the Right Stops",
+      "category": "Transport",
+      "departure": "Published Calgary, Banff and Canmore stops",
+      "canonicalPath": "/experiences/calgary-banff-city-shuttle-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/calgary-banff-city-shuttle-options/",
+      "primaryProductId": "694465",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Calgary Banff City Shuttle Stops",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "calgary to banff shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary to canmore shared shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary banff city transfer"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary city to banff bus"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "shared shuttle calgary to banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "calgary banff shuttle stops"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "calgary city banff transfer"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "calgary canmore shared shuttle"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Calgary To Banff By Shuttle",
+        "Choose The Actual City Stops",
+        "Check The Travel Direction",
+        "Read The Dated Timetable",
+        "Plan Luggage And Connections",
+        "Compare The Transfer Format"
+      ],
+      "descriptions": [
+        "Compare Calgary-to-Banff and Canmore shuttle arrangements and actual stops.",
+        "Read the direction, meeting instructions and dated schedule before reserving.",
+        "A city shuttle differs from an airport pickup or a sightseeing day tour.",
+        "Check the luggage allowance and leave time for separate onward connections."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_calgary_banff_transfers_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "railway-history-road-tours",
+      "title": "Canadian Pacific Railway History: A Rockies Road Tour",
+      "category": "Town & creative",
+      "departure": "Published Calgary, Canmore or Banff pickups",
+      "canonicalPath": "/experiences/canadian-pacific-railway-history-road-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/canadian-pacific-railway-history-road-tours/",
+      "primaryProductId": "1122716",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Rockies Railway History Road Tour",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "rockies railway history road tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary railway historic sites tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff railway history sightseeing tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "spiral tunnels guided road tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "morants curve railway history tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "railway history road trip banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "historic railway sites from calgary"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "bow valley railway history tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Railway History By Road",
+        "Banff And Yoho Historic Stops",
+        "Visit Railway Sites By Vehicle",
+        "Check Pickup In Your Town",
+        "Read The Historic Road Route",
+        "Plan The Full Day And Return"
+      ],
+      "descriptions": [
+        "Explore railway history by road, with Banff, Bow Valley Parkway and Yoho stops.",
+        "Read the route through Morant’s Curve, Lake Louise railway station and Field.",
+        "Check the selected pickup, meals and actual stop list. Train sightings can vary.",
+        "Plan the vehicle tour and full return from Calgary, Canmore or Banff."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_railway_history_road_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "scenic-helicopter-flights",
+      "title": "Canmore and the Rockies by Helicopter: Flight Options",
+      "category": "Outdoor adventures",
+      "departure": "Canmore, Kananaskis and other published heliport bases",
+      "canonicalPath": "/blog/banff-helicopter-tours/",
+      "guideFinalUrl": "https://banffbound.com/blog/banff-helicopter-tours/",
+      "primaryProductId": "841685",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Canmore Scenic Helicopter Tour",
+      "existingGroupId": "203151021833",
+      "existingAdId": "830171093192",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "three sisters scenic flight"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore helicopter sightseeing"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore helicopter booking"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "rockies scenic helicopter flight"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff area helicopter trip"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "three sisters scenic helicopter"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "canmore helicopter flight"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "scenic helicopter near banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Canmore Helicopter Flights",
+        "Compare Rockies Flight Options",
+        "Plan A Three Sisters Flight",
+        "Read The Helicopter Guide",
+        "Check The Actual Heliport",
+        "Review Weather Arrangements"
+      ],
+      "descriptions": [
+        "Compare Canmore and regional Rockies helicopter flights by route and departure base.",
+        "Check whether the selected ticket is flight-only or includes ground exploration.",
+        "Read arrival, passenger and weather-change arrangements before booking.",
+        "Choose the flight format and confirm current dates and actual heliport instructions."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "bow-river-canoeing",
+      "title": "Canoeing the Bow River: Guided and Big-Canoe Options",
+      "category": "Water adventures",
+      "departure": "Banff river meeting points",
+      "canonicalPath": "/experiences/banff-bow-river-canoe-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-bow-river-canoe-tours/",
+      "primaryProductId": "290110",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Evening Canoe Paddle",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff wildlife canoe tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff big canoe tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "bow river evening canoe"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided canoe paddle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff evening canoe tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "wildlife canoe tour banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff big canoe paddle"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "evening canoeing banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Evening Canoe Tour",
+        "Paddle In A Shared Big Canoe",
+        "Explore Bow River Habitats",
+        "Read The Canoe Trip Guide",
+        "Plan Your Evening Paddle",
+        "Check The Meeting Point"
+      ],
+      "descriptions": [
+        "Plan a guided evening paddle in a shared big canoe on Banff’s Bow River.",
+        "Read about the group format and habitat interpretation before choosing your date.",
+        "Wildlife encounters vary. Check participant rules and actual meeting arrangements.",
+        "Find out more about the paddle, then compare current departures and book."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_bow_river_canoeing_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "canyoning",
+      "title": "Canyoning near Banff: Roped Summer and Winter Outings",
+      "category": "Climbing & technical",
+      "departure": "Published canyon meeting points in the Bow Valley region",
+      "canonicalPath": "/experiences/banff-area-canyoning-summer-winter-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-area-canyoning-summer-winter-options/",
+      "primaryProductId": "1130041",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Area Canyoning Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "canmore winter canyoning"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "heart creek canyoning"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "ghost canyon guided tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "macgillivray canyon tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canyoning near banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "canmore guided canyoning"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "heart creek canyon descent"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "winter canyoneering canmore"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Canyoning Near Banff",
+        "Summer And Winter Trip Options",
+        "Plan A Guided Canyon Descent",
+        "Read The Canyoning Guide",
+        "Check Effort And Equipment",
+        "Choose The Actual Canyon"
+      ],
+      "descriptions": [
+        "Compare guided canyon descents near Banff, including summer and winter formats.",
+        "Read the approach, roped descent and participant requirements for the actual trip.",
+        "Check the canyon meeting point, travel arrangements and current conditions.",
+        "Choose a format that suits your group, then confirm dates and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_canyoning_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "columbia-icefield-admission",
+      "title": "Columbia Icefield Tickets: Ice Explorer and Skywalk Choices",
+      "category": "Mountain attractions",
+      "departure": "Columbia Icefield attraction base; arrange the road journey separately",
+      "canonicalPath": "/experiences/columbia-icefield-ice-explorer-skywalk-tickets/",
+      "guideFinalUrl": "https://banffbound.com/experiences/columbia-icefield-ice-explorer-skywalk-tickets/",
+      "primaryProductId": "284552",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Columbia Icefield Admission",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "columbia icefield ice explorer skywalk ticket"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "columbia icefield admission ticket"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "ice explorer skywalk combo admission"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "columbia glacier discovery centre tickets"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "athabasca glacier ice explorer admission"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "columbia icefield attraction ticket"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "ice explorer and skywalk ticket"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "columbia icefield admission guide"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Columbia Icefield Admission",
+        "Ice Explorer And Skywalk",
+        "Plan The Ticket And Journey",
+        "Travel To The Discovery Centre",
+        "Check The Operating Calendar",
+        "Read The Attraction Details"
+      ],
+      "descriptions": [
+        "Read the combined Ice Explorer and Skywalk admission before planning your visit.",
+        "This ticket starts at the Discovery Centre. Arrange your own journey there.",
+        "The attraction is seasonal. Check the current calendar and an operating date.",
+        "Compare the attraction admission with a separate road tour from Banff."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_columbia_icefield_admission_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "cross-country-skiing",
+      "title": "Cross-Country Skiing at Lake Louise: Lesson and Tour Choices",
+      "category": "Winter outings",
+      "departure": "Lake Louise lesson meeting arrangements",
+      "canonicalPath": "/blog/banff-cross-country-skiing/",
+      "guideFinalUrl": "https://banffbound.com/blog/banff-cross-country-skiing/",
+      "primaryProductId": "292675",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Lake Louise Cross-Country Lesson",
+      "existingGroupId": "203151021993",
+      "existingAdId": "830171093195",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "lake louise cross country instruction"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise guided nordic skiing"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "cross country beginner lesson banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "nordic ski instruction lake louise"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise ski lesson cross country"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "cross country lessons lake louise"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided nordic skiing lake louise"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "learn cross country ski lake louise"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Lake Louise Nordic Skiing",
+        "Learn Cross-Country Technique",
+        "Lesson And Tour Choices",
+        "Read The Nordic Ski Guide",
+        "Check Equipment Arrangements",
+        "Plan The Lesson Meeting"
+      ],
+      "descriptions": [
+        "Compare cross-country lessons and guided skiing at Lake Louise.",
+        "Read the actual teaching format, meeting point and participant requirements.",
+        "Check how skis, boots and poles are arranged before making your booking.",
+        "Choose a date and lesson option, then confirm current snow and departure details."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "self-guided-exploration",
+      "title": "Explore Banff Independently: A Self-Guided Audio Drive",
+      "category": "Town & creative",
+      "departure": "Self-directed driving route and published activation instructions",
+      "canonicalPath": "/experiences/banff-self-guided-audio-driving-tour/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-self-guided-audio-driving-tour/",
+      "primaryProductId": "420428",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Self Guided Audio Drive",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff self guided audio tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff audio driving tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff self drive commentary"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff scenic drive audio guide"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff self guided driving tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff self guided audio drive"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "audio driving tour banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff driving tour app"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Drive Banff At Your Own Pace",
+        "A Self-Guided Audio Drive",
+        "Read The Audio Drive Guide",
+        "Check App And Device Needs",
+        "Plan Your Own Road Route",
+        "Check Activation And Downloads"
+      ],
+      "descriptions": [
+        "Plan a self-guided Banff audio drive with your own vehicle, timing and stops.",
+        "Check device, language, activation and download requirements before buying.",
+        "Read the actual route and current road access, then arrange transport independently.",
+        "Choose the audio format that suits your trip and review the current product terms."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_self_guided_exploration_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "lake-fishing-charters",
+      "title": "Fishing on Lake Minnewanka: Private Charter Choices",
+      "category": "Water adventures",
+      "departure": "Published Lake Minnewanka charter arrangements",
+      "canonicalPath": "/experiences/lake-minnewanka-fishing-charters/",
+      "guideFinalUrl": "https://banffbound.com/experiences/lake-minnewanka-fishing-charters/",
+      "primaryProductId": "687955",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Lake Minnewanka Fishing Charter",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "lake minnewanka fishing charter"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "private fishing charter banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff lake fishing trip"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "guided fishing lake minnewanka"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff private fishing booking"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "private fishing lake minnewanka"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "fishing charter near banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided banff fishing trip"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Lake Minnewanka Fishing",
+        "Private Charter Choices",
+        "Plan Your Banff Fishing Outing",
+        "Read The Charter Details",
+        "Check Gear And Group Rules",
+        "Confirm Meeting And Season"
+      ],
+      "descriptions": [
+        "Compare a private Lake Minnewanka fishing charter and its actual departure format.",
+        "Read the selected charter arrangements, participant rules and equipment details.",
+        "Check the season, meeting point and any separate requirements before booking.",
+        "Plan the complete outing and confirm current dates and booking terms."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_lake_fishing_charters_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "banff-badlands-day-trips",
+      "title": "From Banff and Canmore to Drumheller and the Badlands",
+      "category": "Lakes & road tours",
+      "departure": "Published Banff or Canmore starting arrangements",
+      "canonicalPath": "/experiences/banff-canmore-drumheller-badlands-day-trips/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-canmore-drumheller-badlands-day-trips/",
+      "primaryProductId": "948703",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Badlands Days From Banff Canmore",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "badlands day tour from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "drumheller day trip from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff private badlands tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore badlands day trip"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff to drumheller tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "badlands tour from banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "drumheller day trip from canmore"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff badlands private day"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Badlands Days From Banff",
+        "Drumheller From Banff",
+        "Banff Or Canmore Departure",
+        "Read The Full Road-Day Guide",
+        "Check Stops And Museum Costs",
+        "Plan Your Complete Return"
+      ],
+      "descriptions": [
+        "Compare a Badlands and Drumheller day from an actual Banff or Canmore departure.",
+        "Read the road journey, museum admission and selected stops before booking.",
+        "Check pickup, meals, participant requirements and the current dated itinerary.",
+        "Plan the complete return to your mountain base before arranging onward activities."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_banff_badlands_day_trips_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "edmonton-banff-day-tours",
+      "title": "From Edmonton to Banff: Long Day Tour Options",
+      "category": "Lakes & road tours",
+      "departure": "Published Edmonton departure arrangements",
+      "canonicalPath": "/experiences/edmonton-banff-lake-louise-day-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/edmonton-banff-lake-louise-day-tours/",
+      "primaryProductId": "1451475",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Edmonton Banff And Louise Day Tours",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "edmonton to banff day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff day trip from edmonton"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise day tour from edmonton"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "edmonton banff guided day trip"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "private banff day tour from edmonton"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff lake louise from edmonton"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided day trip from edmonton to banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "edmonton banff day tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Day Trips From Edmonton",
+        "Lake Louise Day Tour Options",
+        "Read The Full Road Journey",
+        "Plan An Edmonton Departure",
+        "Check Stops And Current Dates",
+        "Check Pickup And Full Return"
+      ],
+      "descriptions": [
+        "Compare guided Banff and Lake Louise day trips with an Edmonton starting point.",
+        "Read the actual road time, pickup, stop list and full return before booking.",
+        "Check the seasonal route and whether the chosen ticket is private or shared.",
+        "Plan the complete day and confirm the current date and participant requirements."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_edmonton_banff_day_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "vancouver-rockies-multi-day",
+      "title": "From Vancouver to Banff: Multi-Day Rockies Tour Options",
+      "category": "Private & multi-day",
+      "departure": "Vancouver starting arrangements",
+      "canonicalPath": "/experiences/vancouver-banff-rockies-multi-day-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/vancouver-banff-rockies-multi-day-tours/",
+      "primaryProductId": "1210953",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Vancouver Rockies Multi-Day Tours",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "vancouver five day private rockies tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "private banff tour from vancouver"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "vancouver banff jasper private circuit"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "five day vancouver rockies road tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "vancouver private canadian rockies trip"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "five day private rockies vancouver"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "private vancouver banff circuit"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "vancouver rockies private tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Private Rockies From Vancouver",
+        "A Five-Day Return Circuit",
+        "Banff And Parkway Route Plans",
+        "Compare The Overnight Details",
+        "Read Admission Arrangements",
+        "Plan A Vancouver Departure"
+      ],
+      "descriptions": [
+        "Compare a private five-day Rockies circuit starting and finishing in Vancouver.",
+        "Read the daily route and confirm the overnight and attraction package.",
+        "This journey starts in Vancouver. Check the complete departure and return plan.",
+        "Seasonal routes can change the lake and glacier visits. Confirm your actual dates."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_vancouver_rockies_multi_day_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "winter-lakes-road-tours",
+      "title": "Frozen Lakes and Winter Road Tours from Banff",
+      "category": "Lakes & road tours",
+      "departure": "Banff, Canmore and selected regional pickups",
+      "canonicalPath": "/activities/yoho-kootenay-winter-tours/",
+      "guideFinalUrl": "https://banffbound.com/activities/yoho-kootenay-winter-tours/",
+      "primaryProductId": "1164949",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Yoho & Kootenay Winter Tour",
+      "existingGroupId": "203151022473",
+      "existingAdId": "830171093213",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "winter lake tour from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff frozen lake day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "yoho winter sightseeing day"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "emerald lake winter guided trip"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "kootenay winter road tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "winter lakes trip banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "yoho winter road tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff frozen lakes sightseeing"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Winter Lakes Tours",
+        "Compare Winter Road Days",
+        "Explore Yoho And Kootenay",
+        "Read The Winter Day Tour Guide",
+        "Check Stops And Walking Plans",
+        "Confirm Pickup And Return"
+      ],
+      "descriptions": [
+        "Compare guided winter road tours from Banff into Yoho, Kootenay and nearby lake areas.",
+        "Read the selected stop list, pickup and return before choosing your day.",
+        "Road and walking plans adapt to conditions. Check the actual outdoor requirements.",
+        "Find out more about each format and confirm current dates and booking details."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "skybridge-zipline",
+      "title": "Golden Skybridge and Adventure Stops from a Banff Base",
+      "category": "Outdoor adventures",
+      "departure": "Golden attraction and selected regional tour pickups",
+      "canonicalPath": "/experiences/golden-skybridge-zipline-day-trip-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/golden-skybridge-zipline-day-trip-options/",
+      "primaryProductId": "400138",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Golden Skybridge Adventure Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "golden skybridge tickets"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "golden skybridge day trip"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "golden zipline experience"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "golden adventure park tickets"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "golden skybridge from banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "golden skybridge visit"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "skybridge day trip from banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "golden zipline tickets"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Golden Skybridge Options",
+        "Plan An Adventure Park Visit",
+        "Compare Tickets And Road Tours",
+        "Read The Golden Visit Guide",
+        "Check Season And Activities",
+        "Plan Travel From Your Base"
+      ],
+      "descriptions": [
+        "Compare Golden attraction tickets with road tours that travel there from the region.",
+        "Check the selected bridge, activity and transport inclusions before booking.",
+        "Read the operating season, participant rules and any extra activity costs.",
+        "Plan the actual journey and return, then confirm current dates and ticket choices."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_skybridge_zipline_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "grotto-icewalks",
+      "title": "Grotto Canyon Winter Walks: Choose the Actual Outing",
+      "category": "Winter outings",
+      "departure": "Canmore-area canyon access and selected pickups",
+      "canonicalPath": "/experiences/grotto-canyon-guided-winter-walks/",
+      "guideFinalUrl": "https://banffbound.com/experiences/grotto-canyon-guided-winter-walks/",
+      "primaryProductId": "303298",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Grotto Canyon Winter Walks",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "grotto canyon icewalk"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "grotto canyon guided walk"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "grotto canyon winter tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "grotto canyon ice walking tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore grotto canyon tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "grotto canyon winter walk"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided grotto canyon icewalk"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "grotto canyon tour from banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Grotto Canyon Winter Walks",
+        "Compare The Actual Icewalk",
+        "Read The Grotto Canyon Guide",
+        "Check Current Tour Dates",
+        "Plan The Meeting And Return",
+        "Review Walking Requirements"
+      ],
+      "descriptions": [
+        "Read the Grotto Canyon icewalk guide and check whether the actual dates are offered.",
+        "Compare current meeting arrangements, equipment and walking requirements.",
+        "Check the route and relevant advisories before making a booking depend on the outing.",
+        "Find out more about the selected format, then confirm availability and terms."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_grotto_icewalks_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "guided-hiking",
+      "title": "Guided Day Hikes around Banff and Canmore",
+      "category": "Outdoor adventures",
+      "departure": "Published trail and town meeting points",
+      "canonicalPath": "/experiences/banff-canmore-guided-day-hikes/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-canmore-guided-day-hikes/",
+      "primaryProductId": "226519",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Canmore Guided Day Hikes",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "guided hiking day from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided mountain hike"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore guided day hike"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff scheduled hiking tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided hiking routes"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff guided hiking day"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided hike near canmore"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff hiking tour routes"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Compare Guided Day Hikes",
+        "Banff And Canmore Options",
+        "Choose A Suitable Walking Day",
+        "Read The Actual Trail Plan",
+        "Check Equipment And Season",
+        "Plan Meeting And Return"
+      ],
+      "descriptions": [
+        "Compare guided day hikes by walking effort, terrain and the actual trail.",
+        "Read meeting points, transport and participant requirements for your option.",
+        "Check distance, ascent and equipment against the needs of everyone in the party.",
+        "Seasonal trails can change. Confirm the actual guided route before booking."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_guided_hiking_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "kayaking-paddleboarding",
+      "title": "Guided Kayaking near Banff: Choose the Water and Format",
+      "category": "Water adventures",
+      "departure": "Published lake or river meeting points",
+      "canonicalPath": "/experiences/banff-area-guided-kayak-paddle-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-area-guided-kayak-paddle-options/",
+      "primaryProductId": "1070982",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Early Kayaking",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff early morning kayaking"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "bow river kayaking banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided kayak experience"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "morning kayak tour banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff sunrise kayaking"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "early kayaking banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "bow river kayak tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff morning kayaking"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Early Kayaking In Banff",
+        "A Bow River Morning Paddle",
+        "Check Kayaking Requirements",
+        "Plan Your River Start",
+        "Read The Kayaking Guide",
+        "Compare Kayak Options"
+      ],
+      "descriptions": [
+        "Plan an early Bow River kayaking experience before ordinary rental opening hours.",
+        "Check the previous-experience requirement and any portage before choosing to book.",
+        "Review single and double kayak options and the actual Banff meeting point.",
+        "Read the guide, then confirm your chosen departure and current river conditions."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_kayaking_paddleboarding_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "winter-ice-experiences",
+      "title": "Guided Natural-Ice Walks near Banff",
+      "category": "Winter outings",
+      "departure": "Banff meeting arrangements and condition-selected lakes",
+      "canonicalPath": "/experiences/banff-guided-natural-ice-walks/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-guided-natural-ice-walks/",
+      "primaryProductId": "550465",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Natural Ice Guided Walks",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff wild ice walk"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided lake ice walk"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff natural ice tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff frozen lake walking tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff winter ice walking"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided ice walk banff lakes"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff natural ice walk"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "wild ice walk near banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Natural-Ice Walks",
+        "Plan A Guided Winter Outing",
+        "Read The Lake Ice Walk Guide",
+        "Check The Guide’s Route Choice",
+        "Review Gear And Walking Needs",
+        "Choose A Current Departure"
+      ],
+      "descriptions": [
+        "Read about guided walking on natural lake ice near Banff before choosing a departure.",
+        "Check the guide’s actual location decision, conditions and participant requirements.",
+        "Review supplied traction, clothing needs and the meeting point for the selected trip.",
+        "Compare the walking format and confirm current dates and booking terms."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_winter_ice_experiences_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "banff-town-walks",
+      "title": "Guided Walks Around Banff: Nature, Town and History",
+      "category": "Town & creative",
+      "departure": "Published Banff town meeting points",
+      "canonicalPath": "/experiences/banff-guided-town-history-walks/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-guided-town-history-walks/",
+      "primaryProductId": "410534",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Guided Walks Nature Town History",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff guided walking tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff history walking tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided nature walk"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff ghost walking tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff plant identification walk"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "walking tours in banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff guided nature walk"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff history tour on foot"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Guided Walking Tours",
+        "Nature, Town And History",
+        "Compare The Walking Formats",
+        "Read The Banff Walk Guide",
+        "Check The Route And Pace",
+        "Plan Your Meeting Point"
+      ],
+      "descriptions": [
+        "Compare Banff guided walks by nature, town or history topic and actual meeting point.",
+        "Read the route, pace, outdoor time and participant requirements before booking.",
+        "Check the finish location and allow for the full outing in your Banff plans.",
+        "Choose the subject you want, then confirm the current date and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_banff_town_walks_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "horseback-riding",
+      "title": "Horseback Riding near Banff: Short Rides and Longer Trails",
+      "category": "Outdoor adventures",
+      "departure": "Banff stables and other published riding bases",
+      "canonicalPath": "/experiences/banff-horseback-riding-route-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-horseback-riding-route-options/",
+      "primaryProductId": "227587",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Horseback Riding Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff horseback riding"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff bow river horseback ride"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "sulphur mountain horse ride"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "short horse ride banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided horse riding"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "horseback riding in banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff trail rides"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff horse riding tours"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Horseback Riding",
+        "Compare Short And Longer Rides",
+        "Plan Your Banff Trail Ride",
+        "Check Rider Requirements",
+        "Read The Horse Riding Guide",
+        "Choose Your Riding Format"
+      ],
+      "descriptions": [
+        "Compare short river rides and longer Banff trail rides before choosing your booking.",
+        "Read the route, riding experience and participant requirements for each option.",
+        "Plan your journey to the actual stables and allow time for the full outing.",
+        "Find out more about the riding formats, then check current dates and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_horseback_riding_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "icefields-parkway-tours",
+      "title": "Icefields Parkway Day Tours: Lakes, Glaciers and the Return",
+      "category": "Lakes & road tours",
+      "departure": "Banff, Lake Louise, Calgary and Jasper options",
+      "canonicalPath": "/blog/icefields-parkway-guide/",
+      "guideFinalUrl": "https://banffbound.com/blog/icefields-parkway-guide/",
+      "primaryProductId": "437787",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Icefields Parkway Winter Tour",
+      "existingGroupId": "203151022033",
+      "existingAdId": "830171093198",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "icefields parkway guided day trip"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "icefields parkway tour from calgary"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "bow lake winter tour banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "abraham lake winter day trip"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "icefields parkway sightseeing banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided icefields parkway day"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "abraham lake winter trip"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "icefields parkway day from banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Icefields Parkway Day Tours",
+        "Lake And Glacier Route Choices",
+        "Plan Your Full Return Journey",
+        "Read The Parkway Tour Guide",
+        "Check Seasonal Stop Changes",
+        "Confirm Your Starting Town"
+      ],
+      "descriptions": [
+        "Compare guided Icefields Parkway trips by starting town, seasonal stops and return.",
+        "Read the actual route, walking plans and attraction costs for your chosen tour.",
+        "Winter roads and ice conditions affect stops. Confirm the current operating plan.",
+        "Choose the day-trip format and check your departure and booking details."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "jeep-4x4-tours",
+      "title": "Jeep and 4×4 Outings near Banff: Spray Lakes and Ghost Valley",
+      "category": "Outdoor adventures",
+      "departure": "Published regional pickups and vehicle meeting points",
+      "canonicalPath": "/experiences/banff-area-jeep-4x4-adventures/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-area-jeep-4x4-adventures/",
+      "primaryProductId": "1147135",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Area Jeep And 4x4 Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff 4x4 tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff jeep day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "ghost valley jeep tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "spray lakes jeep tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff private jeep tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "4x4 tour near banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided jeep tour banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "ghost valley 4x4 outing"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Area Jeep And 4x4 Tours",
+        "Compare The Driving Route",
+        "Spray Lakes Or Ghost Valley",
+        "Read The Vehicle Tour Guide",
+        "Check Pickup And Requirements",
+        "Plan The Full Return"
+      ],
+      "descriptions": [
+        "Compare Banff-area Jeep and 4x4 formats by route, departure and actual vehicle.",
+        "Read the selected stops, participant rules and extra costs before booking.",
+        "Check the route and travel time against plans from your chosen starting base.",
+        "Confirm current dates, weather arrangements and the full return for your option."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_jeep_4x4_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "johnston-icewalks",
+      "title": "Johnston Canyon Icewalks: Routes, Transport and Access",
+      "category": "Winter outings",
+      "departure": "Banff and published regional pickups",
+      "canonicalPath": "/blog/banff-ice-walk-guide/",
+      "guideFinalUrl": "https://banffbound.com/blog/banff-ice-walk-guide/",
+      "primaryProductId": "303253",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Johnston Canyon Guided Icewalks",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "johnston canyon icewalk"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "johnston canyon guided winter walk"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "johnston canyon ice walk tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff johnston canyon winter tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "johnston canyon winter walking tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "johnston canyon guided icewalk"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "johnston canyon tour from banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "johnston canyon winter walk"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Johnston Canyon Icewalks",
+        "Explore Canyon With A Guide",
+        "Plan A Winter Canyon Walk",
+        "Read The Icewalk Guide",
+        "Check Transport And Equipment",
+        "Review The Walking Route"
+      ],
+      "descriptions": [
+        "Compare guided Johnston Canyon winter walks, with route and access checks in one guide.",
+        "Read the actual transport, traction and participant requirements before booking.",
+        "Frozen scenery and permitted walking routes depend on the season and conditions.",
+        "Choose your meeting or pickup option, then confirm the current departure details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_johnston_icewalks_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "kicking-horse-rafting",
+      "title": "Kicking Horse Rafting: Plan the Golden Departure",
+      "category": "Water adventures",
+      "departure": "Published Golden and Kicking Horse river bases",
+      "canonicalPath": "/experiences/kicking-horse-golden-whitewater-rafting/",
+      "guideFinalUrl": "https://banffbound.com/experiences/kicking-horse-golden-whitewater-rafting/",
+      "primaryProductId": "382884",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Kicking Horse Rafting Day",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "kicking horse river rafting"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "kicking horse full day rafting"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "golden whitewater rafting"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "kicking horse rafting barbecue"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "kicking horse guided rafting"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "kicking horse rafting day"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "whitewater rafting golden"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "kicking horse river trip"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Kicking Horse River Rafting",
+        "Plan A Longer Rafting Day",
+        "Whitewater Near Golden",
+        "Read The River Route Guide",
+        "Check The Barbecue Option",
+        "Compare Rafting Choices"
+      ],
+      "descriptions": [
+        "Plan a longer Kicking Horse rafting day from the Golden-area base.",
+        "Review the river programme, barbecue arrangements and participant requirements.",
+        "Allow for the drive to the rafting base and the full return after the outing.",
+        "Read the guide and check your chosen departure and current booking options."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_kicking_horse_rafting_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "sunset-lake-tours",
+      "title": "Lake Louise and Moraine at Sunset: Tour Choices",
+      "category": "Lakes & road tours",
+      "departure": "Published Banff and Canmore meeting options",
+      "canonicalPath": "/experiences/lake-louise-moraine-sunset-tour-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/lake-louise-moraine-sunset-tour-options/",
+      "primaryProductId": "631160",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Moraine and Louise Sunset Tour",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "moraine lake lake louise sunset tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "two lake sunset tour banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "moraine louise evening tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise moraine sunset from canmore"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff evening two lake tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "moraine louise sunset tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "two lake evening tour banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "sunset lake tour from canmore"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Two Lakes In Evening Light",
+        "Moraine And Lake Louise",
+        "Compare The Sunset Option",
+        "Plan A Later Lake Outing",
+        "Read Pickup And Return Details",
+        "Check Seasonal Lake Access"
+      ],
+      "descriptions": [
+        "Read the sunset option for a guided Moraine Lake and Lake Louise outing.",
+        "Compare an evening return with the separate sunrise format before booking.",
+        "Choose the actual Banff or Canmore pickup and confirm seasonal road access.",
+        "The timing follows evening light. Clouds and mountain views remain uncertain."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_sunset_lake_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "lake-louise-sunrise",
+      "title": "Lake Louise at First Light: Guided Morning Options",
+      "category": "Lakes & road tours",
+      "departure": "Published Banff-area pickups",
+      "canonicalPath": "/experiences/lake-louise-sunrise-guided-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/lake-louise-sunrise-guided-tours/",
+      "primaryProductId": "1282650",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Lake Louise Morning and Banff Scenic Day",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "lake louise sunrise tour from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise early morning tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff lake louise sunrise sightseeing"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise sunrise banff lakes tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff bow falls lake louise morning tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "lake louise morning from banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff sunrise sightseeing tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "lake louise banff scenic day"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Lake Louise At First Light",
+        "Plan An Early Banff Lake Day",
+        "Bow Falls And Banff Stops",
+        "Compare The Morning Route",
+        "Read The Banff Hotel Pickup",
+        "Check Your Date And Return"
+      ],
+      "descriptions": [
+        "Plan an early Lake Louise visit followed by Banff lakes, town and Bow Falls.",
+        "Read the morning pickup plan and the actual route for your chosen date.",
+        "Compare this Lake Louise-focused day with a Moraine Lake sunrise format.",
+        "The town break allows a meal purchase. Check the option’s actual inclusions."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_lake_louise_sunrise_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "lake-louise-half-day-tours",
+      "title": "Lake Louise in Half a Day: Shorter Tour Options",
+      "category": "Lakes & road tours",
+      "departure": "Banff and Canmore departure options",
+      "canonicalPath": "/experiences/lake-louise-half-day-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/lake-louise-half-day-tours/",
+      "primaryProductId": "1004906",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Lake Louise Half-Day Tours",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff half day winter lake tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise emerald lake winter tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise half day winter excursion"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "half day lake louise moraine lake tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "half day lake louise tour from banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff half day lake tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "lake louise emerald lake tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "winter lakes from banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "A Shorter Lake Tour From Banff",
+        "Lake Louise And Emerald Lake",
+        "Compare The Winter Lake Route",
+        "Plan Your Banff Pickup",
+        "Natural Bridge Route Details",
+        "Read Before Choosing A Date"
+      ],
+      "descriptions": [
+        "Read the winter route from Banff: Lake Louise, Emerald Lake and Natural Bridge.",
+        "Compare this shorter outing with longer lake circuits before planning your day.",
+        "The itinerary changes by season. Check the actual route for your selected date.",
+        "Plan the pickup and return with the published winter destinations in mind."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_lake_louise_half_day_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "lake-cruises",
+      "title": "Lake Minnewanka Cruises: Boat Trips and Ticket Choices",
+      "category": "Water adventures",
+      "departure": "Lake Minnewanka departure area and selected tour pickups",
+      "canonicalPath": "/experiences/lake-minnewanka-cruise-ticket-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/lake-minnewanka-cruise-ticket-options/",
+      "primaryProductId": "283927",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Lake Minnewanka Cruise Choices",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "lake minnewanka cruise"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake minnewanka boat tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "minnewanka cruise tickets"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff lake cruise"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake minnewanka boat booking"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "lake minnewanka cruise tickets"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "boat cruise near banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "minnewanka guided cruise"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Lake Minnewanka Cruise Choices",
+        "Plan Your Time On The Lake",
+        "Compare Tickets And Road Tours",
+        "Read The Dock Arrival Guide",
+        "Check The Operating Season",
+        "Choose A Lake Cruise Date"
+      ],
+      "descriptions": [
+        "Read the Lake Minnewanka cruise guide before choosing a date and departure.",
+        "Compare a cruise ticket with a road tour that may include a boat trip option.",
+        "Check the actual boat, dock access, seasonal operation and arrival arrangements.",
+        "Choose the format you want and confirm current dates and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_lake_cruises_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "rock-climbing",
+      "title": "Learn Rock Climbing near Banff: Guided Course Options",
+      "category": "Climbing & technical",
+      "departure": "Published Bow Valley climbing meeting arrangements",
+      "canonicalPath": "/experiences/banff-beginner-rock-climbing-courses/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-beginner-rock-climbing-courses/",
+      "primaryProductId": "402652",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Banff Intro Rock Climbing",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "beginner rock climbing banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff rock climbing course"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "guided rock climbing banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "outdoor climbing lesson banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "intro rock climbing banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "rock climbing near banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "beginner climbing course banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff outdoor climbing"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Rock Climbing Near Banff",
+        "Try An Introductory Course",
+        "Plan Your Climbing Day",
+        "Check Group Requirements",
+        "Read The Rock Climbing Guide",
+        "Confirm The Climbing Site"
+      ],
+      "descriptions": [
+        "Plan an introductory outdoor rock-climbing programme near Banff.",
+        "Review the selected climbing area, group requirements and own-vehicle journey.",
+        "Compare this course with ice climbing and other mountain activities.",
+        "Read the guide and check current dates, meeting arrangements and booking options."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_rock_climbing_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "moraine-sunrise",
+      "title": "Moraine Lake at Sunrise: Compare the Tour Formats",
+      "category": "Lakes & road tours",
+      "departure": "Banff, Canmore and Calgary pickup options",
+      "canonicalPath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/moraine-lake-sunrise-tour-options/",
+      "primaryProductId": "609684",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Moraine Lake Sunrise Tour Formats",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "moraine lake sunrise tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "moraine sunrise tour from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "moraine sunrise tour from canmore"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "moraine lake sunrise shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "moraine only sunrise tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "moraine sunrise from banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "moraine sunrise from canmore"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "moraine lake early morning tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Moraine Lake At Sunrise",
+        "Compare Early Lake Pickups",
+        "Plan A Moraine-Only Morning",
+        "Banff And Canmore Options",
+        "Check Seasonal Road Access",
+        "Read The Lake Visit Details"
+      ],
+      "descriptions": [
+        "Compare sunrise-focused Moraine Lake options and the actual early pickup.",
+        "Check whether your choice is Moraine-only or has a separately booked addition.",
+        "Moraine road access is seasonal. Confirm a future operating date and return.",
+        "Plan the destination choice first, then compare the comforts and arrangements."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_moraine_sunrise_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "moraine-lake-shuttles",
+      "title": "Moraine Lake Shuttles: Seats, Stops and Seasonal Access",
+      "category": "Transport",
+      "departure": "Banff, Canmore, Lake Louise and published park-and-ride options",
+      "canonicalPath": "/experiences/moraine-lake-lake-louise-shuttle-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/moraine-lake-lake-louise-shuttle-options/",
+      "primaryProductId": "1089708",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Moraine Lake Shuttle Seats and Stops",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "moraine lake shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "moraine lake shuttle from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "moraine lake shuttle from canmore"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise to moraine lake shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "moraine lake return shuttle"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "moraine lake shuttle options"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "moraine seasonal shuttle guide"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "moraine lake transport seats"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Compare Moraine Lake Shuttles",
+        "Choose Actual Starting Stop",
+        "Read Boarding And Return Rules",
+        "Check Seasonal Road Access",
+        "Plan A Shuttle Seat Or Tour",
+        "See Which Lakes Are Included"
+      ],
+      "descriptions": [
+        "Compare Moraine shuttle seats with guided day tours and their starting points.",
+        "Check boarding, return and whether Lake Louise is part of the selected option.",
+        "Read the selected operating date and luggage rules before reserving a seat.",
+        "A shuttle listing still depends on seasonal road access and its own terms."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_moraine_lake_shuttles_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "calgary-rockies-multi-day",
+      "title": "Multi-Day Canadian Rockies Tours Leaving Calgary",
+      "category": "Private & multi-day",
+      "departure": "Calgary and published regional starting points",
+      "canonicalPath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "primaryProductId": "1132658",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Calgary Canadian Rockies Multi-Day Tours",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "multi day banff tour from calgary"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "three day banff tour from calgary"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "two day banff yoho tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff jasper drumheller tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary canadian rockies multi day tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "calgary rockies multi day tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff yoho multi day itinerary"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "calgary banff jasper tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Compare Multi-Day Rockies",
+        "Calgary And Regional Options",
+        "Banff, Lakes And Beyond",
+        "Read Each Day’s Actual Route",
+        "Check Nights And Admissions",
+        "Plan The Start And Final Stop"
+      ],
+      "descriptions": [
+        "Compare multi-day routes, including Banff, Yoho, Parkway and Badlands formats.",
+        "Read each selected itinerary and confirm the starting city and daily finishes.",
+        "Check accommodation, rooms, luggage, meals and admissions as separate items.",
+        "Seasonal roads and attractions can change the route. Confirm the dated package."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_calgary_rockies_multi_day_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "lake-louise-ice-skating",
+      "title": "Natural-Ice Skating at Lake Louise: Guided Tour Choices",
+      "category": "Winter outings",
+      "departure": "Published Lake Louise skating meeting arrangements",
+      "canonicalPath": "/experiences/lake-louise-guided-natural-ice-skating/",
+      "guideFinalUrl": "https://banffbound.com/experiences/lake-louise-guided-natural-ice-skating/",
+      "primaryProductId": "1440632",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Lake Louise Natural Ice Skating",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "lake louise guided ice skating"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise natural ice tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided ice skating"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "lake louise skating tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "guided frozen lake skating banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "lake louise ice skating tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "natural ice skating near banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided lake louise skating"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Lake Louise Ice Skating",
+        "Guided Natural-Ice Options",
+        "Plan A Winter Skating Outing",
+        "Read The Actual Skating Guide",
+        "Check Gear And Current Dates",
+        "Confirm The Guide’s Route"
+      ],
+      "descriptions": [
+        "Compare the Lake Louise skating format and the actual meeting arrangements.",
+        "Read the provider’s current route and ice decisions for the selected departure.",
+        "Check participant, equipment and weather-change requirements before booking.",
+        "Plan the full outing and confirm the current date and return arrangements."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_lake_louise_ice_skating_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "skiing-snowboarding",
+      "title": "Plan a Banff Ski Day: Resort Tours and Transport Options",
+      "category": "Winter outings",
+      "departure": "Banff, Canmore and resort-specific arrangements",
+      "canonicalPath": "/experiences/banff-ski-snowboard-transport-options/",
+      "guideFinalUrl": "https://banffbound.com/experiences/banff-ski-snowboard-transport-options/",
+      "primaryProductId": "1091129",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Rockies Ski Resort Road Day",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff ski resort day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary ski resort day trip"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore ski resort day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff ski resort transport tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "rockies ski resort road tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "ski resort day from calgary"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "ski resort tour from banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided ski resort road day"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Rockies Ski Resort Road Day",
+        "Compare The Resort Programme",
+        "Plan Your Mountain Day",
+        "Read The Resort Tour Guide",
+        "Check Lift Ticket Costs",
+        "Confirm Your Pickup Option"
+      ],
+      "descriptions": [
+        "Compare a ski-resort road day with pickup options in Calgary, Canmore or Banff.",
+        "Review the actual resort programme before booking. Lift tickets are an extra cost.",
+        "Read the pickup and return arrangements and check any optional tubing costs.",
+        "Choose the specific format and confirm current dates and participant requirements."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_skiing_snowboarding_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "private-rockies-day-tours",
+      "title": "Private Rockies Day Tours from Banff, Canmore and Calgary",
+      "category": "Private & multi-day",
+      "departure": "Banff, Canmore and Calgary options",
+      "canonicalPath": "/experiences/private-banff-rockies-day-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/private-banff-rockies-day-tours/",
+      "primaryProductId": "1393781",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Private Banff Rockies Day Tours",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "private banff suv tour from calgary"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff private day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore private banff tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "custom banff sightseeing tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "private canadian rockies day tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "private banff day tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "custom rockies day from calgary"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "private tour from canmore"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Compare Private Rockies Days",
+        "Banff, Canmore Or Calgary",
+        "Choose A Realistic Route",
+        "Read The Private Vehicle Plan",
+        "Agree Stops With Your Guide",
+        "Check Tickets And Access"
+      ],
+      "descriptions": [
+        "Compare private day formats from the starting base and stops your group needs.",
+        "Read the vehicle, pickup and route choices before agreeing the actual itinerary.",
+        "A custom day still needs realistic travel time and current attraction access.",
+        "Check group capacity, walking and paid activities for the selected option."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_private_rockies_day_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "radium-panorama-rafting",
+      "title": "Rafting from Radium and Panorama: Kootenay and Toby Creek",
+      "category": "Water adventures",
+      "departure": "Radium Hot Springs and Panorama river bases",
+      "canonicalPath": "/experiences/radium-panorama-kootenay-toby-creek-rafting/",
+      "guideFinalUrl": "https://banffbound.com/experiences/radium-panorama-kootenay-toby-creek-rafting/",
+      "primaryProductId": "1326575",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Radium And Panorama Rafting",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "toby creek rafting"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "kootenay river rafting"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "radium hot springs rafting"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "panorama river rafting"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "kootenay rafting from radium"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "toby creek rafting panorama"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "rafting from radium hot springs"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "kootenay river rafting tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Radium And Panorama Rafting",
+        "Toby Creek Or Kootenay River",
+        "Compare River Trip Formats",
+        "Read The Rafting Guide",
+        "Plan The Actual Departure",
+        "Check The Return Arrangements"
+      ],
+      "descriptions": [
+        "Compare Kootenay River trips from Radium with Toby Creek rafting from Panorama.",
+        "Read the actual programme, participant rules and meeting point for each option.",
+        "Plan the full road journey from your accommodation to the chosen riverbase.",
+        "Check current dates, option length and return arrangements before booking."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_radium_panorama_rafting_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "guided-cycling",
+      "title": "Ride around Banff: Guided Bike and Electric Fat-Bike Options",
+      "category": "Outdoor adventures",
+      "departure": "Published Banff and Canmore meeting points",
+      "canonicalPath": "/blog/banff-fat-biking/",
+      "guideFinalUrl": "https://banffbound.com/blog/banff-fat-biking/",
+      "primaryProductId": "798459",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Banff Electric Fat-Bike Tour",
+      "existingGroupId": "203151021793",
+      "existingAdId": "830171093189",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff guided electric bike tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff electric fat bike sightseeing"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff bicycle sightseeing tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "canmore guided bike tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff guided cycling experience"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff electric bike sightseeing"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided cycling in banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff fat tire bike tour"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Banff Guided Bike Tours",
+        "Electric Fat-Bike Ride Options",
+        "Plan Your Cycling Outing",
+        "Read The Bike Tour Guide",
+        "Check Surface And Requirements",
+        "Choose The Actual Meeting"
+      ],
+      "descriptions": [
+        "Compare guided cycling and electric fat-bike outings around Banff and Canmore.",
+        "Read the actual bike, route, meeting point and rider requirements before booking.",
+        "Snow and riding surfaces vary. Confirm the selected tour’s current conditions.",
+        "Plan the outing that fits your group and check current dates and booking details."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "golden-snowmobile-tours",
+      "title": "Snowmobiling near Golden: Departures from Banff and Canmore",
+      "category": "Winter outings",
+      "departure": "Published Canmore or Banff meeting arrangements for Golden",
+      "canonicalPath": "/experiences/golden-snowmobile-tours-from-banff-canmore/",
+      "guideFinalUrl": "https://banffbound.com/experiences/golden-snowmobile-tours-from-banff-canmore/",
+      "primaryProductId": "971009",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Golden Snowmobile Tour Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "golden snowmobile tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "snowmobiling from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "snowmobile day trip from canmore"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff golden snowmobile tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "guided snowmobiling golden"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "snowmobile adventure golden"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "golden snowmobile riding"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "snowmobile day from banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Golden Snowmobile Options",
+        "Compare The Actual Winter Trip",
+        "Plan Travel From Your Base",
+        "Check Riding And Driver Rules",
+        "Read The Snowmobile Trip Guide",
+        "Check Dates And Meeting Point"
+      ],
+      "descriptions": [
+        "Compare a Golden snowmobile outing from the actual departure and riding format.",
+        "Read transport, equipment and participant rules for the specific option before booking.",
+        "Check the current season and weather arrangements for your selected date.",
+        "Plan the full journey and return, then confirm your meeting and booking details."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_golden_snowmobile_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "snowshoe-tours",
+      "title": "Snowshoe Tours from Banff: Kootenay and Kananaskis Choices",
+      "category": "Winter outings",
+      "departure": "Banff and Canmore pickup or meeting options",
+      "canonicalPath": "/blog/banff-snowshoeing-guide/",
+      "guideFinalUrl": "https://banffbound.com/blog/banff-snowshoeing-guide/",
+      "primaryProductId": "303208",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Snowshoe Tour from Banff",
+      "existingGroupId": "203151022273",
+      "existingAdId": "830171093207",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "snowshoe tour kootenay from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "kananaskis snowshoe tour from banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff canmore guided snowshoe tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "paint pots guided snowshoeing"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "kananaskis beginner snowshoe tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "paint pots winter snowshoeing"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "snowshoe trip from canmore"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided kananaskis snowshoe day"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Snowshoe Trips From Banff",
+        "Kootenay Or Kananaskis Routes",
+        "Compare Guided Winter Walks",
+        "Read The Snowshoe Tour Guide",
+        "Check Transport And Gear",
+        "Plan Your Snowshoe Meeting"
+      ],
+      "descriptions": [
+        "Compare guided snowshoe outings from Banff and Canmore into Kootenay or Kananaskis.",
+        "Read the actual route, effort, equipment and transport arrangements.",
+        "Check current operation and snow conditions for the selected departure.",
+        "Choose the walking format that fits your group and confirm the booking details."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "food-tours",
+      "title": "Taste Banff: Food Walks and Castle Experiences",
+      "category": "Horses & food",
+      "departure": "Banff town and selected venue meeting points",
+      "canonicalPath": "/activities/banff-food-tours/",
+      "guideFinalUrl": "https://banffbound.com/activities/banff-food-tours/",
+      "primaryProductId": "698951",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "existing-group-keywords-only",
+      "groupName": "Banff Food Tours",
+      "existingGroupId": "203151022513",
+      "existingAdId": "830171093216",
+      "adRowsAdded": 0,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "banff walking food experience"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "guided banff food tastings"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff culinary walking tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff food and history tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff town tasting walk"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "food tasting walk banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff culinary tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff castle food experience"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Taste Banff With A Guide",
+        "Compare Food Walk Formats",
+        "Town Tastings Or Castle Stops",
+        "Read The Banff Food Guide",
+        "Check The Tasting Inclusions",
+        "Plan The Actual Meeting"
+      ],
+      "descriptions": [
+        "Compare Banff town food walks with venue-based food and history experiences.",
+        "Check the actual tastings, drinks and dietary arrangements before choosing to book.",
+        "Read the route, meeting point and time needed for the selected format.",
+        "Choose your food outing and confirm current dates and booking details."
+      ],
+      "finalUrlSuffix": null,
+      "existingStatusPreserved": true
+    },
+    {
+      "id": "banff-sunrise-canyon-tours",
+      "title": "Two Jack Lake at Sunrise with a Johnston Canyon Outing",
+      "category": "Lakes & road tours",
+      "departure": "Published Banff-area departure arrangements",
+      "canonicalPath": "/experiences/two-jack-lake-sunrise-johnston-canyon-tours/",
+      "guideFinalUrl": "https://banffbound.com/experiences/two-jack-lake-sunrise-johnston-canyon-tours/",
+      "primaryProductId": "1447669",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Two Jack Sunrise And Canyon Options",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "two jack lake sunrise tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff sunrise johnston canyon"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "two jack lake and johnston tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "two jack guided morning visit"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "two jack lake early tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "two jack lake sunrise"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "banff sunrise canyon tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "two jack johnston canyon trip"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Two Jack Lake At Sunrise",
+        "Compare Morning Canyon Tours",
+        "Plan An Early Banff Outing",
+        "Read The Actual Day Tour Guide",
+        "Check Johnston Canyon Stops",
+        "Confirm Pickup And Return"
+      ],
+      "descriptions": [
+        "Compare a Two Jack Lake sunrise outing with a Johnston Canyon tour component.",
+        "Read the dated itinerary, walking and actual departure before choosing your booking.",
+        "Morning light and canyon access respond to the season and conditions.",
+        "Plan the pickup, outdoor requirements and full return for your selected option."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_banff_sunrise_canyon_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "whitewater-rafting",
+      "title": "Whitewater Rafting near Banff: Kananaskis and Horseshoe Choices",
+      "category": "Water adventures",
+      "departure": "Published Kananaskis, Nakoda and Bow Valley river bases",
+      "canonicalPath": "/experiences/kananaskis-horseshoe-whitewater-rafting/",
+      "guideFinalUrl": "https://banffbound.com/experiences/kananaskis-horseshoe-whitewater-rafting/",
+      "primaryProductId": "227890",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Kananaskis And Horseshoe Rafting",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "kananaskis river rafting"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "horseshoe canyon rafting"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "family rafting kananaskis"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "horseshoe canyon whitewater"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "kananaskis whitewater rafting"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "kananaskis rafting tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "horseshoe canyon rafting trip"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "whitewater rafting near banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Rafting Near Banff",
+        "Kananaskis Or Horseshoe Canyon",
+        "Compare The River Formats",
+        "Check Participant Requirements",
+        "Read The Whitewater Guide",
+        "Plan Your Riverbase Journey"
+      ],
+      "descriptions": [
+        "Compare Kananaskis and Horseshoe Canyon rafting by river format and group requirements.",
+        "Read the meeting point and full programme before choosing your departure.",
+        "Check minimum ages, swimming rules and equipment for the actual booking option.",
+        "Find out more, then confirm the date and travel plan for your chosen river outing."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_whitewater_rafting_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "yoho-waterfalls-tours",
+      "title": "Yoho Day Trips: Lakes, Waterfalls and Forest Walks",
+      "category": "Lakes & road tours",
+      "departure": "Published Banff and regional departure options",
+      "canonicalPath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "guideFinalUrl": "https://banffbound.com/experiences/yoho-waterfalls-guided-day-trips/",
+      "primaryProductId": "1360868",
+      "launchState": "held",
+      "importedStatus": "Paused",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "Yoho Waterfall and Walking Tours",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "yoho waterfall guided tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "wapta falls guided day tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "yoho waterfall tour from calgary"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "private yoho sightseeing tour"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "yoho forest walk waterfall tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "yoho waterfall day tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "wapta falls walking tour"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "guided yoho sightseeing"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Compare Yoho Waterfall Tours",
+        "Waterfalls And Forest Walks",
+        "Read The Selected Route",
+        "Check Seasonal Road Access",
+        "Match Walking To Your Group",
+        "Plan The Pickup And Return"
+      ],
+      "descriptions": [
+        "Compare Yoho waterfall outings from the actual stops and walking involved.",
+        "A roadside viewpoint and a trail walk need different time and preparation.",
+        "Check which waterfalls belong to the selected route and the operating season.",
+        "Read pickup, vehicle and optional extras before choosing a guided day."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_yoho_waterfalls_tours_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "airport-shared-transfers",
+      "title": "YYC to Banff and Canmore: Shared Airport Arrival Shuttles",
+      "category": "Transport",
+      "departure": "Calgary YYC arrivals toward Banff and Canmore",
+      "canonicalPath": "/experiences/yyc-banff-canmore-shared-shuttles/",
+      "guideFinalUrl": "https://banffbound.com/experiences/yyc-banff-canmore-shared-shuttles/",
+      "primaryProductId": "695024",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "YYC to Banff Shared Airport Arrivals",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "calgary airport to banff shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "yyc to banff shared shuttle"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff airport shuttle from calgary"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary airport to banff bus"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "shared transfer yyc to banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "calgary airport banff transfer"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "yyc banff arrival shuttle"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "airport shuttle to banff"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Calgary Airport To Banff",
+        "YYC To Banff Shared Shuttle",
+        "Plan Your Airport Arrival",
+        "Check The Banff Drop-Off",
+        "Read The Airport Meeting Plan",
+        "Check Luggage Before Booking"
+      ],
+      "descriptions": [
+        "Plan a shared transfer from Calgary airport to the actual Banff drop-off.",
+        "Read the airport meeting instructions and check the dated departure.",
+        "Check luggage and oversized-equipment rules before reserving your airport ride.",
+        "Include the last journey to your accommodation when comparing the arrival plan."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_airport_shared_transfers_rsa",
+      "existingStatusPreserved": false
+    },
+    {
+      "id": "airport-private-transfers",
+      "title": "YYC to Banff by Private Transfer: What to Compare",
+      "category": "Transport",
+      "departure": "Calgary International Airport and selected Banff-area addresses",
+      "canonicalPath": "/experiences/yyc-banff-private-airport-transfers/",
+      "guideFinalUrl": "https://banffbound.com/experiences/yyc-banff-private-airport-transfers/",
+      "primaryProductId": "437643",
+      "launchState": "ready",
+      "importedStatus": "Enabled",
+      "importMode": "new-group-ad-and-keywords",
+      "groupName": "YYC to Banff Private Airport Transfer",
+      "existingGroupId": null,
+      "existingAdId": null,
+      "adRowsAdded": 1,
+      "candidateKeywords": 8,
+      "newKeywords": [
+        {
+          "matchType": "Exact match",
+          "term": "private calgary airport to banff transfer"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "yyc to banff private transfer"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "banff private airport transfer"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "private airport car to banff"
+        },
+        {
+          "matchType": "Exact match",
+          "term": "calgary airport banff hotel transfer"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "private airport transfer to banff"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "yyc banff private car"
+        },
+        {
+          "matchType": "Phrase match",
+          "term": "calgary airport banff private transfer"
+        }
+      ],
+      "alreadyPresentKeywords": [],
+      "headlines": [
+        "Private YYC To Banff Transfer",
+        "Calgary Airport To Banff",
+        "Plan A Private Arrival Ride",
+        "Check The Hotel Drop-Off",
+        "Read The Driver Meeting Plan",
+        "Confirm Your Luggage Space"
+      ],
+      "descriptions": [
+        "Plan a private transfer from Calgary airport arrivals to your Banff hotel.",
+        "Read the meet-and-greet details and the published waiting allowance.",
+        "Confirm the exact hotel, luggage capacity and arrangements for your flight.",
+        "Compare the complete private arrival journey before selecting a transfer."
+      ],
+      "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=experience_airport_private_transfers_rsa",
+      "existingStatusPreserved": false
+    }
+  ]
+}

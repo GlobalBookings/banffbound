@@ -1,0 +1,973 @@
+{
+  "groups": [
+    {
+      "id": "banff-yoho-lake-day-tours",
+      "title": "Banff and Yoho Lake Day Tours: Routes and Booking Options",
+      "primaryProductId": "1004220",
+      "launchState": "ready",
+      "productIds": [
+        "789422",
+        "751175",
+        "950632",
+        "752251",
+        "644038",
+        "1204012",
+        "1230094",
+        "1505445",
+        "1086481",
+        "847636",
+        "541289",
+        "974426",
+        "1247991",
+        "789465",
+        "1282629",
+        "1004112",
+        "1240083",
+        "613567",
+        "1071619",
+        "991124",
+        "1286216",
+        "819591",
+        "1098711",
+        "1105331",
+        "748866",
+        "611748",
+        "855769",
+        "1149891",
+        "1360712",
+        "437793",
+        "394816",
+        "594553",
+        "655936",
+        "915070",
+        "1328275",
+        "1068143",
+        "1370350",
+        "1016698",
+        "825086",
+        "1297421",
+        "561080",
+        "744082",
+        "829261",
+        "758635",
+        "1004220",
+        "1273185",
+        "853877",
+        "1220070",
+        "945203",
+        "1358046",
+        "1000254",
+        "449308",
+        "1352290",
+        "958594",
+        "437443",
+        "546270",
+        "1142329",
+        "802500",
+        "896496",
+        "1001234",
+        "540595",
+        "875061",
+        "693257",
+        "1091156",
+        "1259743",
+        "227155",
+        "824147",
+        "1202403",
+        "1102310",
+        "1281363",
+        "1322247",
+        "634080",
+        "993112",
+        "1238689",
+        "1423819",
+        "992750",
+        "1018718",
+        "1280099",
+        "1348981",
+        "1010195",
+        "1454656",
+        "740995",
+        "1119806",
+        "975235",
+        "1320748",
+        "1361643",
+        "566125",
+        "1514790",
+        "1381137",
+        "842599",
+        "845510",
+        "764427",
+        "945735",
+        "1435219",
+        "1381133",
+        "1475444",
+        "1335968",
+        "1286794",
+        "1288097",
+        "971665",
+        "1362969",
+        "1077670",
+        "1357953",
+        "1494532",
+        "1219802",
+        "1381113",
+        "1381130",
+        "1271559",
+        "1448324",
+        "1271620",
+        "831766",
+        "1524856",
+        "616228",
+        "1514412"
+      ]
+    },
+    {
+      "id": "lake-louise-half-day-tours",
+      "title": "Lake Louise in Half a Day: Shorter Tour Options",
+      "primaryProductId": "1004906",
+      "launchState": "ready",
+      "productIds": [
+        "986067",
+        "1004906",
+        "953127",
+        "971170",
+        "477357",
+        "750075",
+        "1454477",
+        "736304",
+        "1418459",
+        "1446477",
+        "1218982"
+      ]
+    },
+    {
+      "id": "wildlife-tours",
+      "title": "Banff Wildlife Tours: Morning Drives and Evening Outings",
+      "primaryProductId": "1260695",
+      "launchState": "ready",
+      "productIds": [
+        "1122948",
+        "1260695",
+        "437687",
+        "393725",
+        "1433769",
+        "1278783",
+        "1132980",
+        "1173941",
+        "1235186",
+        "948673",
+        "1174906",
+        "301498",
+        "1005859",
+        "832378",
+        "1471091",
+        "1498064",
+        "687071",
+        "1053752",
+        "1359791",
+        "1498044",
+        "1534395"
+      ]
+    },
+    {
+      "id": "gondola-chairlift-admission",
+      "title": "Banff Summit Rides: Gondola and Scenic Chairlift Options",
+      "primaryProductId": "256607",
+      "launchState": "ready",
+      "productIds": [
+        "256607",
+        "291800"
+      ]
+    },
+    {
+      "id": "stargazing-night-walks",
+      "title": "Banff After Dark: Stargazing, Lake Walks and Night Tours",
+      "primaryProductId": "916190",
+      "launchState": "ready",
+      "productIds": [
+        "916190",
+        "407273",
+        "1155938",
+        "1162766",
+        "642134",
+        "948697",
+        "1140913"
+      ]
+    },
+    {
+      "id": "guided-hiking",
+      "title": "Guided Day Hikes around Banff and Canmore",
+      "primaryProductId": "226519",
+      "launchState": "held",
+      "productIds": [
+        "1074469",
+        "226519",
+        "948615",
+        "390708",
+        "1221258",
+        "1461953",
+        "1461674",
+        "1469298",
+        "1388124",
+        "1010968",
+        "1120965",
+        "1301275",
+        "1329129",
+        "1464173",
+        "1304386"
+      ]
+    },
+    {
+      "id": "banff-sightseeing-day-tours",
+      "title": "Banff Highlights: Town, Viewpoints and Guided Day Tours",
+      "primaryProductId": "825013",
+      "launchState": "held",
+      "productIds": [
+        "1260057",
+        "770518",
+        "545578",
+        "1028160",
+        "1273110",
+        "1105056",
+        "1481169",
+        "1341317",
+        "903161",
+        "1016119",
+        "825013",
+        "1488941",
+        "1162976",
+        "879113",
+        "939238",
+        "634622",
+        "1461505",
+        "1502476",
+        "992833",
+        "1049981",
+        "850917",
+        "1167997",
+        "1297480",
+        "1362282",
+        "1445173",
+        "849067",
+        "1094486",
+        "1381139",
+        "1297459",
+        "1019225"
+      ]
+    },
+    {
+      "id": "horseback-riding",
+      "title": "Horseback Riding near Banff: Short Rides and Longer Trails",
+      "primaryProductId": "227587",
+      "launchState": "held",
+      "productIds": [
+        "227587",
+        "393713",
+        "393709",
+        "348736",
+        "227593",
+        "270967"
+      ]
+    },
+    {
+      "id": "winter-lakes-road-tours",
+      "title": "Frozen Lakes and Winter Road Tours from Banff",
+      "primaryProductId": "1164949",
+      "launchState": "ready",
+      "productIds": [
+        "1427707",
+        "1342111",
+        "1474967",
+        "1125262",
+        "1438006",
+        "437912",
+        "1488591",
+        "1502459",
+        "1164949",
+        "901060",
+        "1480213"
+      ]
+    },
+    {
+      "id": "icefields-parkway-tours",
+      "title": "Icefields Parkway Day Tours: Lakes, Glaciers and the Return",
+      "primaryProductId": "437787",
+      "launchState": "ready",
+      "productIds": [
+        "738880",
+        "988784",
+        "1213373",
+        "1049995",
+        "750022",
+        "1071626",
+        "1088268",
+        "1036199",
+        "1121074",
+        "793480",
+        "226492",
+        "992089",
+        "1307125",
+        "437799",
+        "656478",
+        "738667",
+        "609736",
+        "595186",
+        "1460247",
+        "437787",
+        "993125",
+        "826033",
+        "1333825",
+        "1494997",
+        "1358098",
+        "617107",
+        "862062",
+        "1130627",
+        "1360585",
+        "1257565",
+        "1010159",
+        "1166524",
+        "1319586",
+        "1225940",
+        "1093968",
+        "1218092",
+        "1167907",
+        "844630",
+        "786572",
+        "1316603",
+        "992765",
+        "1329702",
+        "851913",
+        "1125002",
+        "1381109",
+        "1361498"
+      ]
+    },
+    {
+      "id": "winter-sleigh-rides",
+      "title": "A Horse-Drawn Sleigh Ride in Banff",
+      "primaryProductId": "303703",
+      "launchState": "held",
+      "productIds": [
+        "303703",
+        "303713"
+      ]
+    },
+    {
+      "id": "bow-river-canoeing",
+      "title": "Canoeing the Bow River: Guided and Big-Canoe Options",
+      "primaryProductId": "290110",
+      "launchState": "held",
+      "productIds": [
+        "290100",
+        "290110"
+      ]
+    },
+    {
+      "id": "wagon-rides-cookouts",
+      "title": "A Banff Wagon Ride with a Cowboy Cookout",
+      "primaryProductId": "226543",
+      "launchState": "held",
+      "productIds": [
+        "226543"
+      ]
+    },
+    {
+      "id": "johnston-icewalks",
+      "title": "Johnston Canyon Icewalks: Routes, Transport and Access",
+      "primaryProductId": "303253",
+      "launchState": "held",
+      "productIds": [
+        "1439668",
+        "303253",
+        "541259",
+        "303283",
+        "434970",
+        "428676"
+      ]
+    },
+    {
+      "id": "edmonton-banff-day-tours",
+      "title": "From Edmonton to Banff: Long Day Tour Options",
+      "primaryProductId": "1451475",
+      "launchState": "held",
+      "productIds": [
+        "1451475",
+        "1409180",
+        "1461490"
+      ]
+    },
+    {
+      "id": "photography",
+      "title": "Banff Photography Sessions: Compare Photoshoot Options",
+      "primaryProductId": "1509976",
+      "launchState": "held",
+      "productIds": [
+        "1509976",
+        "1127972"
+      ]
+    },
+    {
+      "id": "gondola-hot-springs-day-tours",
+      "title": "Banff Day Tours with Gondola and Hot Springs Choices",
+      "primaryProductId": "1131138",
+      "launchState": "held",
+      "productIds": [
+        "1131138",
+        "741082",
+        "1026767",
+        "861161",
+        "670682",
+        "807056",
+        "404589",
+        "602050",
+        "1500940",
+        "750106",
+        "594506",
+        "1103385",
+        "955857",
+        "741802",
+        "1122627",
+        "1221209"
+      ]
+    },
+    {
+      "id": "calgary-rockies-multi-day",
+      "title": "Multi-Day Canadian Rockies Tours Leaving Calgary",
+      "primaryProductId": "1132658",
+      "launchState": "held",
+      "productIds": [
+        "741876",
+        "1102433",
+        "741850",
+        "1323885",
+        "1132658",
+        "1503810",
+        "1253716",
+        "660112",
+        "1305749",
+        "1286764",
+        "1358138",
+        "1348951",
+        "1375570",
+        "1222633",
+        "1507112",
+        "1274051",
+        "1278491"
+      ]
+    },
+    {
+      "id": "scenic-helicopter-flights",
+      "title": "Canmore and the Rockies by Helicopter: Flight Options",
+      "primaryProductId": "841685",
+      "launchState": "ready",
+      "productIds": [
+        "227326",
+        "397639",
+        "300331",
+        "307058",
+        "397552",
+        "841685"
+      ]
+    },
+    {
+      "id": "moraine-sunrise",
+      "title": "Moraine Lake at Sunrise: Compare the Tour Formats",
+      "primaryProductId": "609684",
+      "launchState": "held",
+      "productIds": [
+        "748895",
+        "1356680",
+        "618841",
+        "992143",
+        "609684",
+        "1127196",
+        "748920",
+        "453138",
+        "1302376",
+        "1217968"
+      ]
+    },
+    {
+      "id": "lake-cruises",
+      "title": "Lake Minnewanka Cruises: Boat Trips and Ticket Choices",
+      "primaryProductId": "283927",
+      "launchState": "held",
+      "productIds": [
+        "283927",
+        "1218088",
+        "1160749",
+        "1271593"
+      ]
+    },
+    {
+      "id": "banff-town-walks",
+      "title": "Guided Walks Around Banff: Nature, Town and History",
+      "primaryProductId": "410534",
+      "launchState": "held",
+      "productIds": [
+        "410534",
+        "948679",
+        "948647",
+        "402023",
+        "1080958",
+        "948666",
+        "932009",
+        "1359861",
+        "948659"
+      ]
+    },
+    {
+      "id": "private-rockies-day-tours",
+      "title": "Private Rockies Day Tours from Banff, Canmore and Calgary",
+      "primaryProductId": "1393781",
+      "launchState": "ready",
+      "productIds": [
+        "1341224",
+        "1328260",
+        "1380302",
+        "980490",
+        "425495",
+        "852898",
+        "642198",
+        "1238743",
+        "832954",
+        "1198584",
+        "856021",
+        "437147",
+        "504204",
+        "606063",
+        "833188",
+        "505510",
+        "1087371",
+        "640112",
+        "953192",
+        "766145",
+        "1135106",
+        "1347389",
+        "1052682",
+        "1394053",
+        "1297468",
+        "1159238",
+        "1485594",
+        "1343086",
+        "1280024",
+        "1393781",
+        "797558",
+        "1361480",
+        "524324",
+        "1530419",
+        "1487445"
+      ]
+    },
+    {
+      "id": "grotto-icewalks",
+      "title": "Grotto Canyon Winter Walks: Choose the Actual Outing",
+      "primaryProductId": "303298",
+      "launchState": "held",
+      "productIds": [
+        "1086568",
+        "303298"
+      ]
+    },
+    {
+      "id": "wolfdog-sanctuary",
+      "title": "A Wolfdog Sanctuary Visit on Your Rockies Trip",
+      "primaryProductId": "393707",
+      "launchState": "held",
+      "productIds": [
+        "1000720",
+        "393707"
+      ]
+    },
+    {
+      "id": "kayaking-paddleboarding",
+      "title": "Guided Kayaking near Banff: Choose the Water and Format",
+      "primaryProductId": "1070982",
+      "launchState": "held",
+      "productIds": [
+        "1070982"
+      ]
+    },
+    {
+      "id": "canyoning",
+      "title": "Canyoning near Banff: Roped Summer and Winter Outings",
+      "primaryProductId": "1130041",
+      "launchState": "held",
+      "productIds": [
+        "446969",
+        "454374",
+        "451844",
+        "1130041",
+        "1147166"
+      ]
+    },
+    {
+      "id": "food-tours",
+      "title": "Taste Banff: Food Walks and Castle Experiences",
+      "primaryProductId": "698951",
+      "launchState": "ready",
+      "productIds": [
+        "285990",
+        "698951",
+        "1517400"
+      ]
+    },
+    {
+      "id": "railway-history-road-tours",
+      "title": "Canadian Pacific Railway History: A Rockies Road Tour",
+      "primaryProductId": "1122716",
+      "launchState": "held",
+      "productIds": [
+        "1122716"
+      ]
+    },
+    {
+      "id": "skybridge-zipline",
+      "title": "Golden Skybridge and Adventure Stops from a Banff Base",
+      "primaryProductId": "400138",
+      "launchState": "held",
+      "productIds": [
+        "400138",
+        "1109253",
+        "1109214"
+      ]
+    },
+    {
+      "id": "vancouver-rockies-multi-day",
+      "title": "From Vancouver to Banff: Multi-Day Rockies Tour Options",
+      "primaryProductId": "1210953",
+      "launchState": "held",
+      "productIds": [
+        "647094",
+        "1493475",
+        "1210953"
+      ]
+    },
+    {
+      "id": "sunset-lake-tours",
+      "title": "Lake Louise and Moraine at Sunset: Tour Choices",
+      "primaryProductId": "631160",
+      "launchState": "held",
+      "productIds": [
+        "661061",
+        "631160"
+      ]
+    },
+    {
+      "id": "kicking-horse-rafting",
+      "title": "Kicking Horse Rafting: Plan the Golden Departure",
+      "primaryProductId": "382884",
+      "launchState": "held",
+      "productIds": [
+        "383026",
+        "295345",
+        "1326565",
+        "382884"
+      ]
+    },
+    {
+      "id": "guided-cycling",
+      "title": "Ride around Banff: Guided Bike and Electric Fat-Bike Options",
+      "primaryProductId": "798459",
+      "launchState": "ready",
+      "productIds": [
+        "451139",
+        "399759",
+        "962269",
+        "798459"
+      ]
+    },
+    {
+      "id": "lake-fishing-charters",
+      "title": "Fishing on Lake Minnewanka: Private Charter Choices",
+      "primaryProductId": "687955",
+      "launchState": "held",
+      "productIds": [
+        "687955"
+      ]
+    },
+    {
+      "id": "airport-private-transfers",
+      "title": "YYC to Banff by Private Transfer: What to Compare",
+      "primaryProductId": "437643",
+      "launchState": "ready",
+      "productIds": [
+        "614303",
+        "437643"
+      ]
+    },
+    {
+      "id": "golden-snowmobile-tours",
+      "title": "Snowmobiling near Golden: Departures from Banff and Canmore",
+      "primaryProductId": "971009",
+      "launchState": "held",
+      "productIds": [
+        "971009"
+      ]
+    },
+    {
+      "id": "yoho-waterfalls-tours",
+      "title": "Yoho Day Trips: Lakes, Waterfalls and Forest Walks",
+      "primaryProductId": "1360868",
+      "launchState": "held",
+      "productIds": [
+        "989270",
+        "1310742",
+        "1460199",
+        "1452823",
+        "1125725",
+        "1468423",
+        "1468329",
+        "1456965",
+        "1340639",
+        "1104520",
+        "1075842",
+        "1303375",
+        "1475008",
+        "1360868"
+      ]
+    },
+    {
+      "id": "scenic-river-floats",
+      "title": "A Scenic River Float near Banff and Canmore",
+      "primaryProductId": "641413",
+      "launchState": "held",
+      "productIds": [
+        "641413"
+      ]
+    },
+    {
+      "id": "winter-ice-experiences",
+      "title": "Guided Natural-Ice Walks near Banff",
+      "primaryProductId": "550465",
+      "launchState": "held",
+      "productIds": [
+        "550465"
+      ]
+    },
+    {
+      "id": "skiing-snowboarding",
+      "title": "Plan a Banff Ski Day: Resort Tours and Transport Options",
+      "primaryProductId": "1091129",
+      "launchState": "held",
+      "productIds": [
+        "1091129",
+        "1096502",
+        "1496716",
+        "1081863"
+      ]
+    },
+    {
+      "id": "moraine-lake-shuttles",
+      "title": "Moraine Lake Shuttles: Seats, Stops and Seasonal Access",
+      "primaryProductId": "1089708",
+      "launchState": "held",
+      "productIds": [
+        "1089708",
+        "750003",
+        "758033"
+      ]
+    },
+    {
+      "id": "lake-louise-ice-skating",
+      "title": "Natural-Ice Skating at Lake Louise: Guided Tour Choices",
+      "primaryProductId": "1440632",
+      "launchState": "held",
+      "productIds": [
+        "1440632"
+      ]
+    },
+    {
+      "id": "cross-country-skiing",
+      "title": "Cross-Country Skiing at Lake Louise: Lesson and Tour Choices",
+      "primaryProductId": "292675",
+      "launchState": "ready",
+      "productIds": [
+        "292675"
+      ]
+    },
+    {
+      "id": "snowshoe-tours",
+      "title": "Snowshoe Tours from Banff: Kootenay and Kananaskis Choices",
+      "primaryProductId": "303208",
+      "launchState": "ready",
+      "productIds": [
+        "428674",
+        "303208",
+        "1182128",
+        "1174056"
+      ]
+    },
+    {
+      "id": "banff-jasper-transfers",
+      "title": "Between Banff and Jasper: Transfers with Sightseeing Options",
+      "primaryProductId": "190820",
+      "launchState": "held",
+      "productIds": [
+        "190820",
+        "190841",
+        "944498",
+        "1405758"
+      ]
+    },
+    {
+      "id": "lake-louise-sunrise",
+      "title": "Lake Louise at First Light: Guided Morning Options",
+      "primaryProductId": "1282650",
+      "launchState": "ready",
+      "productIds": [
+        "1282650",
+        "1317603",
+        "1312156",
+        "1270906"
+      ]
+    },
+    {
+      "id": "radium-panorama-rafting",
+      "title": "Rafting from Radium and Panorama: Kootenay and Toby Creek",
+      "primaryProductId": "1326575",
+      "launchState": "held",
+      "productIds": [
+        "1326581",
+        "1326575"
+      ]
+    },
+    {
+      "id": "ice-climbing",
+      "title": "Beginner Ice Climbing near Banff: Course and Journey Choices",
+      "primaryProductId": "432341",
+      "launchState": "ready",
+      "productIds": [
+        "432341"
+      ]
+    },
+    {
+      "id": "whitewater-rafting",
+      "title": "Whitewater Rafting near Banff: Kananaskis and Horseshoe Choices",
+      "primaryProductId": "227890",
+      "launchState": "held",
+      "productIds": [
+        "227890",
+        "280297"
+      ]
+    },
+    {
+      "id": "jeep-4x4-tours",
+      "title": "Jeep and 4\u00d74 Outings near Banff: Spray Lakes and Ghost Valley",
+      "primaryProductId": "1147135",
+      "launchState": "held",
+      "productIds": [
+        "1147135",
+        "1531608"
+      ]
+    },
+    {
+      "id": "banff-badlands-day-trips",
+      "title": "From Banff and Canmore to Drumheller and the Badlands",
+      "primaryProductId": "948703",
+      "launchState": "held",
+      "productIds": [
+        "948703"
+      ]
+    },
+    {
+      "id": "self-guided-exploration",
+      "title": "Explore Banff Independently: A Self-Guided Audio Drive",
+      "primaryProductId": "420428",
+      "launchState": "held",
+      "productIds": [
+        "420428"
+      ]
+    },
+    {
+      "id": "open-top-sightseeing",
+      "title": "Banff by Vintage Open-Top Touring Car",
+      "primaryProductId": "827226",
+      "launchState": "held",
+      "productIds": [
+        "827226"
+      ]
+    },
+    {
+      "id": "banff-sunrise-canyon-tours",
+      "title": "Two Jack Lake at Sunrise with a Johnston Canyon Outing",
+      "primaryProductId": "1447669",
+      "launchState": "held",
+      "productIds": [
+        "1447669"
+      ]
+    },
+    {
+      "id": "airport-shared-departures",
+      "title": "Banff and Canmore to YYC: Shared Airport Return Shuttles",
+      "primaryProductId": "858142",
+      "launchState": "ready",
+      "productIds": [
+        "858142",
+        "695211"
+      ]
+    },
+    {
+      "id": "calgary-banff-transfers",
+      "title": "Calgary and Banff by Shuttle: Choose the Right Stops",
+      "primaryProductId": "694465",
+      "launchState": "ready",
+      "productIds": [
+        "694465"
+      ]
+    },
+    {
+      "id": "airport-shared-transfers",
+      "title": "YYC to Banff and Canmore: Shared Airport Arrival Shuttles",
+      "primaryProductId": "695024",
+      "launchState": "ready",
+      "productIds": [
+        "695024"
+      ]
+    },
+    {
+      "id": "columbia-icefield-admission",
+      "title": "Columbia Icefield Tickets: Ice Explorer and Skywalk Choices",
+      "primaryProductId": "284552",
+      "launchState": "held",
+      "productIds": [
+        "284552"
+      ]
+    },
+    {
+      "id": "rock-climbing",
+      "title": "Learn Rock Climbing near Banff: Guided Course Options",
+      "primaryProductId": "402652",
+      "launchState": "held",
+      "productIds": [
+        "402652"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "productId": "1328480",
+      "reason": "Current full description is a Calgary city drive and Calgary Tower visit; no Banff visit or departure."
+    },
+    {
+      "productId": "1273188",
+      "reason": "Current live description is a Calgary-to-Drumheller day trip; its old Banff/Golden URL slug no longer describes the product."
+    },
+    {
+      "productId": "939302",
+      "reason": "Current listing identifies an eight-day Beijing, Xian and Shanghai tour in China; no Banff activity or departure."
+    },
+    {
+      "productId": "667890",
+      "reason": "Quarantined after live review: current Badlands heading and inclusions contradict retained Banff itinerary paragraphs. Do not promote an unconfirmed route."
+    }
+  ],
+  "counts": {
+    "capturedUnique": 458,
+    "supplementalReviewed": 10,
+    "mapped": 464,
+    "families": 60,
+    "fullyReviewedDescriptions": 66
+  }
+}

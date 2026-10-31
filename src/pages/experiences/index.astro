@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { banffExperiences, experienceCategories, experienceDepartures } from '../../data/banffExperiences';
+import { getExperienceHeroPhoto } from '../../data/banffExperiencePhotos';
+
+const description = 'Find your Banff experience: compare mountain outings, lake tours, transfers and guided adventures by departure and activity.';
+const directoryPhoto = getExperienceHeroPhoto();
+const directoryPhotos = [...new Map([directoryPhoto, ...banffExperiences.map(group => group.photo)].filter(photo => photo.sourceUrl).map(photo => [photo.src, photo])).values()];
+---
+
+<BaseLayout title="Banff Experiences: Tours, Adventures & Booking Guides" description={description} image={directoryPhoto.src}>
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', name: 'Banff experience guides', numberOfItems: banffExperiences.length, itemListElement: banffExperiences.map((group, index) => ({ '@type': 'ListItem', position: index + 1, name: group.title, url: new URL(group.canonicalPath, 'https://banffbound.com').href })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Experiences' }]} /></div>
+  <header class="experience-directory-hero container">
+    <p class="experience-eyebrow">Make it part of your trip</p>
+    <h1>Find your Banff experience</h1>
+    <p class="experience-intro">A mountain ride, a lake day, a guided adventure or the journey that gets you there. Compare the actual experience and departure, then choose the one that fits your trip.</p>
+    <p class="experience-disclosure">Independent BanffBound guides. We may earn a commission from qualifying bookings through affiliate links. Dates, options and final terms are confirmed with the provider.</p>
+  </header>
+  <section class="container experience-directory" aria-labelledby="experience-directory-heading" data-landing-page="activities" data-content-id="banff-experiences" data-content-type="activity-directory">
+    <h2 id="experience-directory-heading">Choose your kind of day</h2>
+    <form class="experience-filters" id="experience-filters" role="search" aria-label="Filter experience guides" hidden>
+      <label>Activity<select name="category" id="experience-category"><option value="all">All activities</option>{experienceCategories.map(category => <option value={category.value}>{category.label} ({category.count})</option>)}</select></label>
+      <label>Departure<select name="departure" id="experience-departure"><option value="all">All departures</option>{experienceDepartures.map(departure => <option value={departure.value}>{departure.label} ({departure.count})</option>)}</select></label>
+      <label>Search<input type="search" id="experience-search" name="search" placeholder="Lake, activity or destination" autocomplete="off" /></label>
+      <button type="reset" class="btn btn-outline">Show all</button>
+    </form>
+    <p id="experience-results" class="experience-results" role="status" aria-live="polite">{banffExperiences.length} experience guides</p>
+    <p id="experience-empty" class="experience-empty" hidden>No guides match these choices. Try another activity or departure, or show all guides.</p>
+    <div class="experience-grid" id="experience-grid">
+      {banffExperiences.map(experience => <article class="experience-card" data-experience-card data-category={experience.categoryId} data-departures={experience.departureIds.join(' ')} data-search={`${experience.title} ${experience.description} ${experience.categoryLabel} ${experience.departure}`.toLowerCase()}>
+        <a class="experience-card-photo" href={experience.canonicalPath} aria-label={`Find out more: ${experience.title}`}><img src={experience.photo.src} alt={experience.photo.alt} width="600" height="400" loading="lazy" decoding="async" /><span>{experience.photo.caption}</span></a>
+        <div class="experience-card-body">
+          <p class="experience-card-category">{experience.categoryLabel}</p>
+          <h3><a href={experience.canonicalPath}>{experience.title}</a></h3>
+          <p>{experience.description}</p>
+          <dl><div><dt>Departure</dt><dd>{experience.departure}</dd></div><div><dt>Options</dt><dd>{experience.options.length} {experience.options.length === 1 ? 'booking option' : 'booking options'}</dd></div></dl>
+          <a class="experience-card-link" href={experience.canonicalPath}>Find out more <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>)}
+    </div>
+    <noscript><p>All guides are shown. Each guide and its booking link work without JavaScript.</p></noscript>
+    {directoryPhotos.length > 0 && <details class="directory-photo-credits"><summary>Photo credits</summary><ul>{directoryPhotos.map(photo => <li><a href={photo.sourceUrl} target="_blank" rel="noopener">{photo.caption}</a>{photo.author && <> · {photo.author}</>}{photo.licenseUrl && <> · <a href={photo.licenseUrl} target="_blank" rel="noopener">{photo.license || 'Licence'}</a></>}{photo.changeNote && <>. {photo.changeNote}</>}</li>)}</ul></details>}
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('#experience-filters');
+  const category = document.querySelector<HTMLSelectElement>('#experience-category');
+  const departure = document.querySelector<HTMLSelectElement>('#experience-departure');
+  const search = document.querySelector<HTMLInputElement>('#experience-search');
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-experience-card]')];
+  const status = document.querySelector<HTMLElement>('#experience-results');
+  const empty = document.querySelector<HTMLElement>('#experience-empty');
+  if (form && category && departure && search && status && empty) {
+    function updateExperiences() {
+      const words = search!.value.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+      let count = 0;
+      for (const card of cards) {
+        const matches = (category!.value === 'all' || card.dataset.category === category!.value)
+          && (departure!.value === 'all' || (card.dataset.departures || '').split(' ').includes(departure!.value))
+          && words.every(word => (card.dataset.search || '').includes(word));
+        card.hidden = !matches;
+        if (matches) count++;
+      }
+      status!.textContent = `${count} ${count === 1 ? 'experience guide' : 'experience guides'}`;
+      empty!.hidden = count !== 0;
+    }
+    form.hidden = false;
+    form.addEventListener('submit', event => { event.preventDefault(); updateExperiences(); });
+    form.addEventListener('input', updateExperiences);
+    form.addEventListener('change', updateExperiences);
+    form.addEventListener('reset', () => requestAnimationFrame(updateExperiences));
+  }
+</script>
+
+<style>
+  .directory-photo-credits{margin-top:2rem;border-top:1px solid #d8e2d2;padding-top:1rem;font-size:.75rem;line-height:1.6;color:#607258}.directory-photo-credits summary{font-weight:700;cursor:pointer;min-height:28px}.directory-photo-credits ul{padding-left:1.2rem}.directory-photo-credits li{margin:.65rem 0}
+  .experience-directory-hero{max-width:1050px;padding-top:3rem;padding-bottom:2.2rem}.experience-eyebrow{text-transform:uppercase;letter-spacing:.14em;font-weight:700;font-size:.72rem;color:#6f6c4c;margin:0 0 .8rem}.experience-directory-hero h1{max-width:850px;font-size:clamp(2.5rem,5vw,4.4rem);line-height:1.08;margin:0 0 1.2rem;color:var(--color-primary)}.experience-intro{max-width:800px;font-size:1.16rem;line-height:1.7;margin:0 0 1rem}.experience-disclosure{max-width:800px;font-size:.8rem;line-height:1.6;color:var(--color-text-light)}.experience-directory{padding-bottom:4rem}.experience-directory h2{font-size:clamp(1.8rem,3vw,2.45rem);margin:0 0 1.3rem}.experience-filters{display:grid;grid-template-columns:1fr 1fr 1.4fr auto;gap:1rem;align-items:end;padding:1.4rem;background:#eef2e8;border:1px solid #d6dfd2}.experience-filters[hidden],.experience-card[hidden],.experience-empty[hidden]{display:none!important}.experience-filters label{display:grid;gap:.4rem;font-size:.8rem;font-weight:700;color:var(--color-primary)}.experience-filters select,.experience-filters input{width:100%;min-width:0;min-height:48px;font:inherit;font-size:.95rem;font-weight:400;color:#263d2e;background:white;border:1px solid #a8b7a3;border-radius:3px;padding:.7rem .8rem}.experience-filters button{min-height:48px;margin:0}.experience-results{font-size:.85rem;color:var(--color-text-light);margin:1.25rem 0}.experience-empty{padding:1.2rem;border-left:3px solid #b34d23;background:#fff5ed}.experience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}.experience-card{display:flex;flex-direction:column;min-width:0;border:1px solid #dce3d8;background:white;border-radius:5px;overflow:hidden}.experience-card-photo{display:block;position:relative;aspect-ratio:3/2;overflow:hidden;background:#dbe3d6}.experience-card-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .2s}.experience-card-photo:hover img{transform:scale(1.025)}.experience-card-photo span{position:absolute;inset:auto .6rem .6rem;max-width:calc(100% - 1.2rem);padding:.25rem .45rem;background:rgba(250,252,247,.94);color:#314631;font-size:.62rem;line-height:1.4}.experience-card-body{display:flex;flex-direction:column;flex:1;padding:1.4rem}.experience-card-category{margin:0 0 .5rem;text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;font-weight:700;color:#647457}.experience-card h3{font-size:1.55rem;line-height:1.2;margin:0 0 .8rem}.experience-card h3 a{color:var(--color-primary);text-decoration:none}.experience-card h3 a:hover{text-decoration:underline}.experience-card-body>p:not(.experience-card-category){font-size:.92rem;line-height:1.6;margin:0 0 1rem}.experience-card dl{display:grid;gap:.6rem;margin:0 0 1.25rem;font-size:.78rem}.experience-card dl div{display:grid;grid-template-columns:5.5rem 1fr;gap:.6rem}.experience-card dt{font-weight:700;color:#54654d}.experience-card dd{margin:0;color:#354931;line-height:1.5}.experience-card-link{align-self:flex-start;margin-top:auto;min-height:44px;display:inline-flex;align-items:center;gap:.6rem;color:#a4431f;font-size:.9rem;font-weight:700;text-decoration:none}.experience-card-link:hover{text-decoration:underline}.experience-card a:focus-visible,.experience-filters :is(input,select,button):focus-visible{outline:3px solid #a97624;outline-offset:3px}@media(max-width:1000px){.experience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.experience-filters{grid-template-columns:1fr 1fr}.experience-filters button{align-self:end}}@media(max-width:600px){.experience-directory-hero{padding-top:2rem;padding-bottom:1.5rem}.experience-intro{font-size:1rem}.experience-grid{grid-template-columns:1fr}.experience-filters{padding:1rem;gap:.8rem}.experience-filters label:nth-of-type(3){grid-column:1/-1}.experience-filters button{grid-column:1/-1}.experience-card-body{padding:1.2rem}.experience-card h3{font-size:1.6rem}}@media(prefers-reduced-motion:reduce){.experience-card-photo img{transition:none}}
+</style>

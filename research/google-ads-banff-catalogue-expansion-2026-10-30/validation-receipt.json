@@ -1,0 +1,21 @@
+{
+  "result": "PASS_LOCAL_ONLY_NOT_UPLOADED",
+  "checkedAtUTC": "2026-10-31T06:15:51.322423+00:00",
+  "manifestSha256": "8deb4e1d1d2575f625e26a44069cf48c68b57545cab6119b024823ce02b48079",
+  "counts": {
+    "guideFamilies": 60,
+    "readyFamilies": 19,
+    "heldFamilies": 41,
+    "newGroups": 50,
+    "newAds": 50,
+    "newGroupKeywords": 400,
+    "additionsToExistingGroups": 80,
+    "exactKeywords": 300,
+    "phraseKeywords": 180,
+    "candidateTermsAlreadyPresent": 0,
+    "reusedExistingGroups": 10
+  },
+  "negativeFixtures": 17,
+  "campaignId": "24416287886",
+  "networkOrAccountOperations": false
+}

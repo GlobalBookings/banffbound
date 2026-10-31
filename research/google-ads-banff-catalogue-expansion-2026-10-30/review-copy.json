@@ -1,0 +1,1805 @@
+{
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "id": "banff-yoho-lake-day-tours",
+      "adGroupName": "Banff And Yoho Lake Day Options",
+      "exactKeywords": [
+        "banff lake sightseeing day tour",
+        "lake louise emerald lake day tour",
+        "calgary banff lake day tour",
+        "canmore lake day tour",
+        "banff yoho lake day trip"
+      ],
+      "phraseKeywords": [
+        "lake day tour from banff",
+        "lake tours from calgary",
+        "banff yoho lake tour"
+      ],
+      "headlines": [
+        "Banff And Yoho Lake Day Tours",
+        "Compare The Actual Lake Stops",
+        "Choose Your Starting Town",
+        "Read The Seasonal Route Guide",
+        "Check Private Or Shared Format",
+        "Plan Pickup And Full Return"
+      ],
+      "descriptions": [
+        "Compare lake day tours by starting town, actual stop list and time at each lake.",
+        "Read the selected Banff or Yoho route and its seasonal changes before booking.",
+        "Check the actual private or shared format and what admissions cost extra.",
+        "Plan pickup and the full return from Banff, Canmore or Calgary for your chosen tour."
+      ]
+    },
+    {
+      "adGroupName": "Lake Louise Half-Day Tours",
+      "exactKeywords": [
+        "banff half day winter lake tour",
+        "lake louise emerald lake winter tour",
+        "lake louise half day winter excursion",
+        "half day lake louise moraine lake tour",
+        "half day lake louise tour from banff"
+      ],
+      "phraseKeywords": [
+        "banff half day lake tour",
+        "lake louise emerald lake tour",
+        "winter lakes from banff"
+      ],
+      "headlines": [
+        "A Shorter Lake Tour From Banff",
+        "Lake Louise And Emerald Lake",
+        "Compare The Winter Lake Route",
+        "Plan Your Banff Pickup",
+        "Natural Bridge Route Details",
+        "Read Before Choosing A Date"
+      ],
+      "descriptions": [
+        "Read the winter route from Banff: Lake Louise, Emerald Lake and Natural Bridge.",
+        "Compare this shorter outing with longer lake circuits before planning your day.",
+        "The itinerary changes by season. Check the actual route for your selected date.",
+        "Plan the pickup and return with the published winter destinations in mind."
+      ],
+      "id": "lake-louise-half-day-tours"
+    },
+    {
+      "adGroupName": "Banff Morning And Evening Wildlife",
+      "exactKeywords": [
+        "banff morning wildlife tour",
+        "banff sunset wildlife tour",
+        "banff wildlife viewing tour",
+        "banff evening wildlife drive",
+        "guided wildlife drive banff"
+      ],
+      "phraseKeywords": [
+        "wildlife tour in banff",
+        "banff evening wildlife tour",
+        "banff morning nature tour"
+      ],
+      "headlines": [
+        "Banff Wildlife Tour Options",
+        "Morning Or Evening Outings",
+        "Explore Banff With A Guide",
+        "Read The Wildlife Tour Guide",
+        "Choose Your Meeting Option",
+        "Plan A Guided Nature Drive"
+      ],
+      "descriptions": [
+        "Compare morning wildlife drives and evening scenic outings around Banff.",
+        "Read the actual route format, departure and pickup options before booking.",
+        "Wildlife sightings vary with the season, recent activity and road conditions.",
+        "Plan an outing that suits your day, then check current departures and details."
+      ],
+      "id": "wildlife-tours"
+    },
+    {
+      "id": "gondola-chairlift-admission",
+      "adGroupName": "Banff Summit Ride Options",
+      "exactKeywords": [
+        "banff gondola summit visit",
+        "sulphur mountain cable car ride",
+        "banff summit sightseeing ride",
+        "banff scenic chairlift tickets",
+        "banff gondola viewing areas"
+      ],
+      "phraseKeywords": [
+        "banff gondola summit guide",
+        "scenic chairlift banff",
+        "sulphur mountain sightseeing ride"
+      ],
+      "headlines": [
+        "Banff Summit Ride Options",
+        "Gondola And Chairlift Choices",
+        "Plan Your Mountain Visit",
+        "Read The Summit Ride Guide",
+        "Compare The Actual Base",
+        "Check Tickets And Conditions"
+      ],
+      "descriptions": [
+        "Compare Banff gondola and scenic chairlift options by base, format and summit visit.",
+        "Read the actual ticket, transport and arrival arrangements before choosing to book.",
+        "Check current operation and weather-dependent outdoor access for your visit.",
+        "Plan your mountain outing, then confirm the selected date and booking details."
+      ]
+    },
+    {
+      "id": "stargazing-night-walks",
+      "adGroupName": "Banff Stargazing And Night Walks",
+      "exactKeywords": [
+        "banff guided stargazing",
+        "two jack lake night tour",
+        "lake minnewanka night walk",
+        "banff guided dark sky walk",
+        "banff dark sky guided tour"
+      ],
+      "phraseKeywords": [
+        "stargazing evening banff",
+        "banff lake night walk",
+        "banff guided night tour"
+      ],
+      "headlines": [
+        "Banff Stargazing Evenings",
+        "Explore The Lakes After Dark",
+        "Compare Night Tour Formats",
+        "Read The Stargazing Guide",
+        "Check The Evening Departure",
+        "Plan For Sky Conditions"
+      ],
+      "descriptions": [
+        "Compare guided Banff stargazing and after-dark lake outings.",
+        "Read the actual route, meeting point and evening format before booking.",
+        "Sky visibility responds to the weather. Check current departure and clothing details.",
+        "Plan an evening that suits your trip, then confirm the selected booking option."
+      ]
+    },
+    {
+      "adGroupName": "Banff Canmore Guided Day Hikes",
+      "exactKeywords": [
+        "guided hiking day from banff",
+        "banff guided mountain hike",
+        "canmore guided day hike",
+        "banff scheduled hiking tour",
+        "banff guided hiking routes"
+      ],
+      "phraseKeywords": [
+        "banff guided hiking day",
+        "guided hike near canmore",
+        "banff hiking tour routes"
+      ],
+      "headlines": [
+        "Compare Guided Day Hikes",
+        "Banff And Canmore Options",
+        "Choose A Suitable Walking Day",
+        "Read The Actual Trail Plan",
+        "Check Equipment And Season",
+        "Plan Meeting And Return"
+      ],
+      "descriptions": [
+        "Compare guided day hikes by walking effort, terrain and the actual trail.",
+        "Read meeting points, transport and participant requirements for your option.",
+        "Check distance, ascent and equipment against the needs of everyone in the party.",
+        "Seasonal trails can change. Confirm the actual guided route before booking."
+      ],
+      "id": "guided-hiking"
+    },
+    {
+      "id": "banff-sightseeing-day-tours",
+      "adGroupName": "Banff Guided Sightseeing Options",
+      "exactKeywords": [
+        "banff guided sightseeing tour",
+        "banff highlights day tour",
+        "banff town and viewpoints tour",
+        "calgary banff sightseeing day trip",
+        "canmore banff day tour"
+      ],
+      "phraseKeywords": [
+        "guided sightseeing in banff",
+        "banff highlights tour",
+        "banff day trip from calgary"
+      ],
+      "headlines": [
+        "Banff Guided Sightseeing",
+        "Compare Highlights Day Tours",
+        "Plan The Stops You Want",
+        "Read The Banff Tour Guide",
+        "Check The Actual Pickup",
+        "Choose Your Day Tour Format"
+      ],
+      "descriptions": [
+        "Compare Banff highlights outings by actual route, departure and time at the stops.",
+        "Read the transport, attraction and optional expense details for your chosen tour.",
+        "Check pickup and return from Calgary, Canmore or Banff before arranging your day.",
+        "Find out more about the formats, then confirm the current booking option."
+      ]
+    },
+    {
+      "adGroupName": "Banff Horseback Riding Options",
+      "exactKeywords": [
+        "banff horseback riding",
+        "banff bow river horseback ride",
+        "sulphur mountain horse ride",
+        "short horse ride banff",
+        "banff guided horse riding"
+      ],
+      "phraseKeywords": [
+        "horseback riding in banff",
+        "banff trail rides",
+        "banff horse riding tours"
+      ],
+      "headlines": [
+        "Banff Horseback Riding",
+        "Compare Short And Longer Rides",
+        "Plan Your Banff Trail Ride",
+        "Check Rider Requirements",
+        "Read The Horse Riding Guide",
+        "Choose Your Riding Format"
+      ],
+      "descriptions": [
+        "Compare short river rides and longer Banff trail rides before choosing your booking.",
+        "Read the route, riding experience and participant requirements for each option.",
+        "Plan your journey to the actual stables and allow time for the full outing.",
+        "Find out more about the riding formats, then check current dates and booking details."
+      ],
+      "id": "horseback-riding"
+    },
+    {
+      "id": "winter-lakes-road-tours",
+      "adGroupName": "Banff Winter Lakes Road Tours",
+      "exactKeywords": [
+        "winter lake tour from banff",
+        "banff frozen lake day tour",
+        "yoho winter sightseeing day",
+        "emerald lake winter guided trip",
+        "kootenay winter road tour"
+      ],
+      "phraseKeywords": [
+        "winter lakes trip banff",
+        "yoho winter road tour",
+        "banff frozen lakes sightseeing"
+      ],
+      "headlines": [
+        "Banff Winter Lakes Tours",
+        "Compare Winter Road Days",
+        "Explore Yoho And Kootenay",
+        "Read The Winter Day Tour Guide",
+        "Check Stops And Walking Plans",
+        "Confirm Pickup And Return"
+      ],
+      "descriptions": [
+        "Compare guided winter road tours from Banff into Yoho, Kootenay and nearby lake areas.",
+        "Read the selected stop list, pickup and return before choosing your day.",
+        "Road and walking plans adapt to conditions. Check the actual outdoor requirements.",
+        "Find out more about each format and confirm current dates and booking details."
+      ]
+    },
+    {
+      "id": "icefields-parkway-tours",
+      "adGroupName": "Icefields Parkway Guided Options",
+      "exactKeywords": [
+        "icefields parkway guided day trip",
+        "icefields parkway tour from calgary",
+        "bow lake winter tour banff",
+        "abraham lake winter day trip",
+        "icefields parkway sightseeing banff"
+      ],
+      "phraseKeywords": [
+        "guided icefields parkway day",
+        "abraham lake winter trip",
+        "icefields parkway day from banff"
+      ],
+      "headlines": [
+        "Icefields Parkway Day Tours",
+        "Lake And Glacier Route Choices",
+        "Plan Your Full Return Journey",
+        "Read The Parkway Tour Guide",
+        "Check Seasonal Stop Changes",
+        "Confirm Your Starting Town"
+      ],
+      "descriptions": [
+        "Compare guided Icefields Parkway trips by starting town, seasonal stops and return.",
+        "Read the actual route, walking plans and attraction costs for your chosen tour.",
+        "Winter roads and ice conditions affect stops. Confirm the current operating plan.",
+        "Choose the day-trip format and check your departure and booking details."
+      ]
+    },
+    {
+      "id": "winter-sleigh-rides",
+      "adGroupName": "Banff Horse Drawn Sleigh Rides",
+      "exactKeywords": [
+        "banff sleigh ride",
+        "horse drawn sleigh banff",
+        "banff winter sleigh tour",
+        "banff private sleigh ride",
+        "banff shared sleigh ride"
+      ],
+      "phraseKeywords": [
+        "sleigh rides in banff",
+        "banff horse drawn sleigh",
+        "winter sleigh ride banff"
+      ],
+      "headlines": [
+        "Banff Horse-Drawn Sleigh Rides",
+        "Compare Sleigh Ride Formats",
+        "Plan Your Winter Outing",
+        "Read The Sleigh Ride Guide",
+        "Check Snow And Dates",
+        "Confirm The Stable Meeting"
+      ],
+      "descriptions": [
+        "Compare shared and private sleigh ride formats for a winter outing in Banff.",
+        "Check the snow-dependent programme, participant rules and actual stable meeting.",
+        "Read the selected option\u2019s inclusions and weather-change arrangements.",
+        "Find out more about the ride, then confirm current dates and booking details."
+      ]
+    },
+    {
+      "adGroupName": "Banff Evening Canoe Paddle",
+      "exactKeywords": [
+        "banff wildlife canoe tour",
+        "banff big canoe tour",
+        "bow river evening canoe",
+        "banff guided canoe paddle",
+        "banff evening canoe tour"
+      ],
+      "phraseKeywords": [
+        "wildlife canoe tour banff",
+        "banff big canoe paddle",
+        "evening canoeing banff"
+      ],
+      "headlines": [
+        "Banff Evening Canoe Tour",
+        "Paddle In A Shared Big Canoe",
+        "Explore Bow River Habitats",
+        "Read The Canoe Trip Guide",
+        "Plan Your Evening Paddle",
+        "Check The Meeting Point"
+      ],
+      "descriptions": [
+        "Plan a guided evening paddle in a shared big canoe on Banff\u2019s Bow River.",
+        "Read about the group format and habitat interpretation before choosing your date.",
+        "Wildlife encounters vary. Check participant rules and actual meeting arrangements.",
+        "Find out more about the paddle, then compare current departures and book."
+      ],
+      "id": "bow-river-canoeing"
+    },
+    {
+      "adGroupName": "Banff Wagon Ride And Cookout",
+      "exactKeywords": [
+        "banff wagon ride",
+        "banff cowboy cookout",
+        "banff wagon dinner",
+        "banff wagon lunch",
+        "horse drawn wagon banff"
+      ],
+      "phraseKeywords": [
+        "banff wagon ride and cookout",
+        "cowboy cookout in banff",
+        "banff horse drawn wagon"
+      ],
+      "headlines": [
+        "Banff Wagon Ride And Cookout",
+        "Choose Lunch Or Dinner",
+        "A Horse-Drawn Banff Outing",
+        "Plan Your Cookout Visit",
+        "Read The Wagon Ride Guide",
+        "Check The Meal Options"
+      ],
+      "descriptions": [
+        "Plan a wagon journey and cookout from Banff, with lunch and dinner choices to check.",
+        "Compare the meal, travel time and group requirements before choosing your booking.",
+        "Read how the wagon experience works and confirm the selected meeting point.",
+        "Find out more about this Banff outing, then check dates and current options."
+      ],
+      "id": "wagon-rides-cookouts"
+    },
+    {
+      "id": "johnston-icewalks",
+      "adGroupName": "Johnston Canyon Guided Icewalks",
+      "exactKeywords": [
+        "johnston canyon icewalk",
+        "johnston canyon guided winter walk",
+        "johnston canyon ice walk tour",
+        "banff johnston canyon winter tour",
+        "johnston canyon winter walking tour"
+      ],
+      "phraseKeywords": [
+        "johnston canyon guided icewalk",
+        "johnston canyon tour from banff",
+        "johnston canyon winter walk"
+      ],
+      "headlines": [
+        "Johnston Canyon Icewalks",
+        "Explore Canyon With A Guide",
+        "Plan A Winter Canyon Walk",
+        "Read The Icewalk Guide",
+        "Check Transport And Equipment",
+        "Review The Walking Route"
+      ],
+      "descriptions": [
+        "Compare guided Johnston Canyon winter walks, with route and access checks in one guide.",
+        "Read the actual transport, traction and participant requirements before booking.",
+        "Frozen scenery and permitted walking routes depend on the season and conditions.",
+        "Choose your meeting or pickup option, then confirm the current departure details."
+      ]
+    },
+    {
+      "id": "edmonton-banff-day-tours",
+      "adGroupName": "Edmonton Banff And Louise Day Tours",
+      "exactKeywords": [
+        "edmonton to banff day tour",
+        "banff day trip from edmonton",
+        "lake louise day tour from edmonton",
+        "edmonton banff guided day trip",
+        "private banff day tour from edmonton"
+      ],
+      "phraseKeywords": [
+        "banff lake louise from edmonton",
+        "guided day trip from edmonton to banff",
+        "edmonton banff day tour"
+      ],
+      "headlines": [
+        "Banff Day Trips From Edmonton",
+        "Lake Louise Day Tour Options",
+        "Read The Full Road Journey",
+        "Plan An Edmonton Departure",
+        "Check Stops And Current Dates",
+        "Check Pickup And Full Return"
+      ],
+      "descriptions": [
+        "Compare guided Banff and Lake Louise day trips with an Edmonton starting point.",
+        "Read the actual road time, pickup, stop list and full return before booking.",
+        "Check the seasonal route and whether the chosen ticket is private or shared.",
+        "Plan the complete day and confirm the current date and participant requirements."
+      ]
+    },
+    {
+      "id": "photography",
+      "adGroupName": "Banff Photography Options",
+      "exactKeywords": [
+        "banff vacation photoshoot",
+        "banff photo session",
+        "banff private photoshoot",
+        "banff portrait photography session",
+        "banff photography experience"
+      ],
+      "phraseKeywords": [
+        "photoshoot in banff",
+        "banff lake photoshoot",
+        "banff holiday photo session"
+      ],
+      "headlines": [
+        "Banff Photography Options",
+        "Portraits Or Lake Photoshoots",
+        "Compare The Actual Format",
+        "Plan Your Banff Photo Outing",
+        "Check Image Delivery Terms",
+        "Read The Photography Guide"
+      ],
+      "descriptions": [
+        "Compare Banff portrait sessions with Lake Louise and Moraine photoshoot options.",
+        "Read the selected format, meeting point and weather arrangements before booking.",
+        "For a session, check the image delivery and usage terms with the actual provider.",
+        "Choose the outing you want, then confirm current dates and booking details."
+      ]
+    },
+    {
+      "id": "gondola-hot-springs-day-tours",
+      "adGroupName": "Banff Gondola Hot Springs Tours",
+      "exactKeywords": [
+        "banff gondola day tour",
+        "banff hot springs day tour",
+        "banff gondola hot springs tour",
+        "calgary banff gondola day tour",
+        "canmore banff hot springs tour"
+      ],
+      "phraseKeywords": [
+        "banff gondola sightseeing tour",
+        "hot springs tour banff",
+        "gondola day trip from calgary"
+      ],
+      "headlines": [
+        "Banff Gondola Day Tour Options",
+        "Compare Hot Springs Road Trips",
+        "Check Attraction Inclusions",
+        "Plan The Actual Stop List",
+        "Read The Day Tour Guide",
+        "Confirm Pickup And Return"
+      ],
+      "descriptions": [
+        "Compare road tours with gondola and hot springs choices from the Banff region.",
+        "Check whether attraction visits and tickets are included, optional or alternatives.",
+        "Read the actual departure, stop list, pickup and return before booking.",
+        "Choose the tour format that suits your day and confirm current attraction operation."
+      ]
+    },
+    {
+      "adGroupName": "Calgary Canadian Rockies Multi-Day Tours",
+      "exactKeywords": [
+        "multi day banff tour from calgary",
+        "three day banff tour from calgary",
+        "two day banff yoho tour",
+        "banff jasper drumheller tour",
+        "calgary canadian rockies multi day tour"
+      ],
+      "phraseKeywords": [
+        "calgary rockies multi day tour",
+        "banff yoho multi day itinerary",
+        "calgary banff jasper tour"
+      ],
+      "headlines": [
+        "Compare Multi-Day Rockies",
+        "Calgary And Regional Options",
+        "Banff, Lakes And Beyond",
+        "Read Each Day\u2019s Actual Route",
+        "Check Nights And Admissions",
+        "Plan The Start And Final Stop"
+      ],
+      "descriptions": [
+        "Compare multi-day routes, including Banff, Yoho, Parkway and Badlands formats.",
+        "Read each selected itinerary and confirm the starting city and daily finishes.",
+        "Check accommodation, rooms, luggage, meals and admissions as separate items.",
+        "Seasonal roads and attractions can change the route. Confirm the dated package."
+      ],
+      "id": "calgary-rockies-multi-day"
+    },
+    {
+      "id": "scenic-helicopter-flights",
+      "adGroupName": "Canmore Rockies Helicopter Options",
+      "exactKeywords": [
+        "three sisters scenic flight",
+        "canmore helicopter sightseeing",
+        "canmore helicopter booking",
+        "rockies scenic helicopter flight",
+        "banff area helicopter trip"
+      ],
+      "phraseKeywords": [
+        "three sisters scenic helicopter",
+        "canmore helicopter flight",
+        "scenic helicopter near banff"
+      ],
+      "headlines": [
+        "Canmore Helicopter Flights",
+        "Compare Rockies Flight Options",
+        "Plan A Three Sisters Flight",
+        "Read The Helicopter Guide",
+        "Check The Actual Heliport",
+        "Review Weather Arrangements"
+      ],
+      "descriptions": [
+        "Compare Canmore and regional Rockies helicopter flights by route and departure base.",
+        "Check whether the selected ticket is flight-only or includes ground exploration.",
+        "Read arrival, passenger and weather-change arrangements before booking.",
+        "Choose the flight format and confirm current dates and actual heliport instructions."
+      ]
+    },
+    {
+      "adGroupName": "Moraine Lake Sunrise Tour Formats",
+      "exactKeywords": [
+        "moraine lake sunrise tour",
+        "moraine sunrise tour from banff",
+        "moraine sunrise tour from canmore",
+        "moraine lake sunrise shuttle",
+        "moraine only sunrise tour"
+      ],
+      "phraseKeywords": [
+        "moraine sunrise from banff",
+        "moraine sunrise from canmore",
+        "moraine lake early morning tour"
+      ],
+      "headlines": [
+        "Moraine Lake At Sunrise",
+        "Compare Early Lake Pickups",
+        "Plan A Moraine-Only Morning",
+        "Banff And Canmore Options",
+        "Check Seasonal Road Access",
+        "Read The Lake Visit Details"
+      ],
+      "descriptions": [
+        "Compare sunrise-focused Moraine Lake options and the actual early pickup.",
+        "Check whether your choice is Moraine-only or has a separately booked addition.",
+        "Moraine road access is seasonal. Confirm a future operating date and return.",
+        "Plan the destination choice first, then compare the comforts and arrangements."
+      ],
+      "id": "moraine-sunrise"
+    },
+    {
+      "id": "lake-cruises",
+      "adGroupName": "Lake Minnewanka Cruise Choices",
+      "exactKeywords": [
+        "lake minnewanka cruise",
+        "lake minnewanka boat tour",
+        "minnewanka cruise tickets",
+        "banff lake cruise",
+        "lake minnewanka boat booking"
+      ],
+      "phraseKeywords": [
+        "lake minnewanka cruise tickets",
+        "boat cruise near banff",
+        "minnewanka guided cruise"
+      ],
+      "headlines": [
+        "Lake Minnewanka Cruise Choices",
+        "Plan Your Time On The Lake",
+        "Compare Tickets And Road Tours",
+        "Read The Dock Arrival Guide",
+        "Check The Operating Season",
+        "Choose A Lake Cruise Date"
+      ],
+      "descriptions": [
+        "Read the Lake Minnewanka cruise guide before choosing a date and departure.",
+        "Compare a cruise ticket with a road tour that may include a boat trip option.",
+        "Check the actual boat, dock access, seasonal operation and arrival arrangements.",
+        "Choose the format you want and confirm current dates and booking details."
+      ]
+    },
+    {
+      "id": "banff-town-walks",
+      "adGroupName": "Banff Guided Walks Nature Town History",
+      "exactKeywords": [
+        "banff guided walking tour",
+        "banff history walking tour",
+        "banff guided nature walk",
+        "banff ghost walking tour",
+        "banff plant identification walk"
+      ],
+      "phraseKeywords": [
+        "walking tours in banff",
+        "banff guided nature walk",
+        "banff history tour on foot"
+      ],
+      "headlines": [
+        "Banff Guided Walking Tours",
+        "Nature, Town And History",
+        "Compare The Walking Formats",
+        "Read The Banff Walk Guide",
+        "Check The Route And Pace",
+        "Plan Your Meeting Point"
+      ],
+      "descriptions": [
+        "Compare Banff guided walks by nature, town or history topic and actual meeting point.",
+        "Read the route, pace, outdoor time and participant requirements before booking.",
+        "Check the finish location and allow for the full outing in your Banff plans.",
+        "Choose the subject you want, then confirm the current date and booking details."
+      ]
+    },
+    {
+      "adGroupName": "Private Banff Rockies Day Tours",
+      "exactKeywords": [
+        "private banff suv tour from calgary",
+        "banff private day tour",
+        "canmore private banff tour",
+        "custom banff sightseeing tour",
+        "private canadian rockies day tour"
+      ],
+      "phraseKeywords": [
+        "private banff day tour",
+        "custom rockies day from calgary",
+        "private tour from canmore"
+      ],
+      "headlines": [
+        "Compare Private Rockies Days",
+        "Banff, Canmore Or Calgary",
+        "Choose A Realistic Route",
+        "Read The Private Vehicle Plan",
+        "Agree Stops With Your Guide",
+        "Check Tickets And Access"
+      ],
+      "descriptions": [
+        "Compare private day formats from the starting base and stops your group needs.",
+        "Read the vehicle, pickup and route choices before agreeing the actual itinerary.",
+        "A custom day still needs realistic travel time and current attraction access.",
+        "Check group capacity, walking and paid activities for the selected option."
+      ],
+      "id": "private-rockies-day-tours"
+    },
+    {
+      "id": "grotto-icewalks",
+      "adGroupName": "Grotto Canyon Winter Walks",
+      "exactKeywords": [
+        "grotto canyon icewalk",
+        "grotto canyon guided walk",
+        "grotto canyon winter tour",
+        "grotto canyon ice walking tour",
+        "canmore grotto canyon tour"
+      ],
+      "phraseKeywords": [
+        "grotto canyon winter walk",
+        "guided grotto canyon icewalk",
+        "grotto canyon tour from banff"
+      ],
+      "headlines": [
+        "Grotto Canyon Winter Walks",
+        "Compare The Actual Icewalk",
+        "Read The Grotto Canyon Guide",
+        "Check Current Tour Dates",
+        "Plan The Meeting And Return",
+        "Review Walking Requirements"
+      ],
+      "descriptions": [
+        "Read the Grotto Canyon icewalk guide and check whether the actual dates are offered.",
+        "Compare current meeting arrangements, equipment and walking requirements.",
+        "Check the route and relevant advisories before making a booking depend on the outing.",
+        "Find out more about the selected format, then confirm availability and terms."
+      ]
+    },
+    {
+      "adGroupName": "Cochrane Wolfdog Sanctuary",
+      "exactKeywords": [
+        "cochrane wolfdog sanctuary",
+        "wolfdog sanctuary intro tour",
+        "wolfdog sanctuary near calgary",
+        "cochrane wolfdog tour",
+        "wolfdog sanctuary introduction"
+      ],
+      "phraseKeywords": [
+        "cochrane wolfdog sanctuary tour",
+        "wolfdog introduction near calgary",
+        "wolfdog sanctuary visit"
+      ],
+      "headlines": [
+        "Cochrane Wolfdog Sanctuary",
+        "Plan An Educational Visit",
+        "Read The Sanctuary Tour Guide",
+        "Check The Intro Tour Format",
+        "Plan Travel From Your Base",
+        "Compare Visit Requirements"
+      ],
+      "descriptions": [
+        "Read about a sanctuary introduction near Cochrane with a presentation and walking time.",
+        "The intro format does not include interacting with wolfdogs. Check the actual option.",
+        "Plan the road journey separately from Banff and review the current access rules.",
+        "Find out more about the visit, then confirm your chosen date and booking details."
+      ],
+      "id": "wolfdog-sanctuary"
+    },
+    {
+      "adGroupName": "Banff Early Kayaking",
+      "exactKeywords": [
+        "banff early morning kayaking",
+        "bow river kayaking banff",
+        "banff guided kayak experience",
+        "morning kayak tour banff",
+        "banff sunrise kayaking"
+      ],
+      "phraseKeywords": [
+        "early kayaking banff",
+        "bow river kayak tour",
+        "banff morning kayaking"
+      ],
+      "headlines": [
+        "Early Kayaking In Banff",
+        "A Bow River Morning Paddle",
+        "Check Kayaking Requirements",
+        "Plan Your River Start",
+        "Read The Kayaking Guide",
+        "Compare Kayak Options"
+      ],
+      "descriptions": [
+        "Plan an early Bow River kayaking experience before ordinary rental opening hours.",
+        "Check the previous-experience requirement and any portage before choosing to book.",
+        "Review single and double kayak options and the actual Banff meeting point.",
+        "Read the guide, then confirm your chosen departure and current river conditions."
+      ],
+      "id": "kayaking-paddleboarding"
+    },
+    {
+      "adGroupName": "Banff Area Canyoning Options",
+      "exactKeywords": [
+        "canmore winter canyoning",
+        "heart creek canyoning",
+        "ghost canyon guided tour",
+        "macgillivray canyon tour",
+        "canyoning near banff"
+      ],
+      "phraseKeywords": [
+        "canmore guided canyoning",
+        "heart creek canyon descent",
+        "winter canyoneering canmore"
+      ],
+      "headlines": [
+        "Canyoning Near Banff",
+        "Summer And Winter Trip Options",
+        "Plan A Guided Canyon Descent",
+        "Read The Canyoning Guide",
+        "Check Effort And Equipment",
+        "Choose The Actual Canyon"
+      ],
+      "descriptions": [
+        "Compare guided canyon descents near Banff, including summer and winter formats.",
+        "Read the approach, roped descent and participant requirements for the actual trip.",
+        "Check the canyon meeting point, travel arrangements and current conditions.",
+        "Choose a format that suits your group, then confirm dates and booking details."
+      ],
+      "id": "canyoning"
+    },
+    {
+      "id": "food-tours",
+      "adGroupName": "Banff Food Walk And Castle Options",
+      "exactKeywords": [
+        "banff walking food experience",
+        "guided banff food tastings",
+        "banff culinary walking tour",
+        "banff food and history tour",
+        "banff town tasting walk"
+      ],
+      "phraseKeywords": [
+        "food tasting walk banff",
+        "banff culinary tour",
+        "banff castle food experience"
+      ],
+      "headlines": [
+        "Taste Banff With A Guide",
+        "Compare Food Walk Formats",
+        "Town Tastings Or Castle Stops",
+        "Read The Banff Food Guide",
+        "Check The Tasting Inclusions",
+        "Plan The Actual Meeting"
+      ],
+      "descriptions": [
+        "Compare Banff town food walks with venue-based food and history experiences.",
+        "Check the actual tastings, drinks and dietary arrangements before choosing to book.",
+        "Read the route, meeting point and time needed for the selected format.",
+        "Choose your food outing and confirm current dates and booking details."
+      ]
+    },
+    {
+      "id": "railway-history-road-tours",
+      "adGroupName": "Rockies Railway History Road Tour",
+      "exactKeywords": [
+        "rockies railway history road tour",
+        "calgary railway historic sites tour",
+        "banff railway history sightseeing tour",
+        "spiral tunnels guided road tour",
+        "morants curve railway history tour"
+      ],
+      "phraseKeywords": [
+        "railway history road trip banff",
+        "historic railway sites from calgary",
+        "bow valley railway history tour"
+      ],
+      "headlines": [
+        "Railway History By Road",
+        "Banff And Yoho Historic Stops",
+        "Visit Railway Sites By Vehicle",
+        "Check Pickup In Your Town",
+        "Read The Historic Road Route",
+        "Plan The Full Day And Return"
+      ],
+      "descriptions": [
+        "Explore railway history by road, with Banff, Bow Valley Parkway and Yoho stops.",
+        "Read the route through Morant\u2019s Curve, Lake Louise railway station and Field.",
+        "Check the selected pickup, meals and actual stop list. Train sightings can vary.",
+        "Plan the vehicle tour and full return from Calgary, Canmore or Banff."
+      ]
+    },
+    {
+      "id": "skybridge-zipline",
+      "adGroupName": "Golden Skybridge Adventure Options",
+      "exactKeywords": [
+        "golden skybridge tickets",
+        "golden skybridge day trip",
+        "golden zipline experience",
+        "golden adventure park tickets",
+        "golden skybridge from banff"
+      ],
+      "phraseKeywords": [
+        "golden skybridge visit",
+        "skybridge day trip from banff",
+        "golden zipline tickets"
+      ],
+      "headlines": [
+        "Golden Skybridge Options",
+        "Plan An Adventure Park Visit",
+        "Compare Tickets And Road Tours",
+        "Read The Golden Visit Guide",
+        "Check Season And Activities",
+        "Plan Travel From Your Base"
+      ],
+      "descriptions": [
+        "Compare Golden attraction tickets with road tours that travel there from the region.",
+        "Check the selected bridge, activity and transport inclusions before booking.",
+        "Read the operating season, participant rules and any extra activity costs.",
+        "Plan the actual journey and return, then confirm current dates and ticket choices."
+      ]
+    },
+    {
+      "adGroupName": "Vancouver Rockies Multi-Day Tours",
+      "exactKeywords": [
+        "vancouver five day private rockies tour",
+        "private banff tour from vancouver",
+        "vancouver banff jasper private circuit",
+        "five day vancouver rockies road tour",
+        "vancouver private canadian rockies trip"
+      ],
+      "phraseKeywords": [
+        "five day private rockies vancouver",
+        "private vancouver banff circuit",
+        "vancouver rockies private tour"
+      ],
+      "headlines": [
+        "Private Rockies From Vancouver",
+        "A Five-Day Return Circuit",
+        "Banff And Parkway Route Plans",
+        "Compare The Overnight Details",
+        "Read Admission Arrangements",
+        "Plan A Vancouver Departure"
+      ],
+      "descriptions": [
+        "Compare a private five-day Rockies circuit starting and finishing in Vancouver.",
+        "Read the daily route and confirm the overnight and attraction package.",
+        "This journey starts in Vancouver. Check the complete departure and return plan.",
+        "Seasonal routes can change the lake and glacier visits. Confirm your actual dates."
+      ],
+      "id": "vancouver-rockies-multi-day"
+    },
+    {
+      "adGroupName": "Moraine and Louise Sunset Tour",
+      "exactKeywords": [
+        "moraine lake lake louise sunset tour",
+        "two lake sunset tour banff",
+        "moraine louise evening tour",
+        "lake louise moraine sunset from canmore",
+        "banff evening two lake tour"
+      ],
+      "phraseKeywords": [
+        "moraine louise sunset tour",
+        "two lake evening tour banff",
+        "sunset lake tour from canmore"
+      ],
+      "headlines": [
+        "Two Lakes In Evening Light",
+        "Moraine And Lake Louise",
+        "Compare The Sunset Option",
+        "Plan A Later Lake Outing",
+        "Read Pickup And Return Details",
+        "Check Seasonal Lake Access"
+      ],
+      "descriptions": [
+        "Read the sunset option for a guided Moraine Lake and Lake Louise outing.",
+        "Compare an evening return with the separate sunrise format before booking.",
+        "Choose the actual Banff or Canmore pickup and confirm seasonal road access.",
+        "The timing follows evening light. Clouds and mountain views remain uncertain."
+      ],
+      "id": "sunset-lake-tours"
+    },
+    {
+      "adGroupName": "Kicking Horse Rafting Day",
+      "exactKeywords": [
+        "kicking horse river rafting",
+        "kicking horse full day rafting",
+        "golden whitewater rafting",
+        "kicking horse rafting barbecue",
+        "kicking horse guided rafting"
+      ],
+      "phraseKeywords": [
+        "kicking horse rafting day",
+        "whitewater rafting golden",
+        "kicking horse river trip"
+      ],
+      "headlines": [
+        "Kicking Horse River Rafting",
+        "Plan A Longer Rafting Day",
+        "Whitewater Near Golden",
+        "Read The River Route Guide",
+        "Check The Barbecue Option",
+        "Compare Rafting Choices"
+      ],
+      "descriptions": [
+        "Plan a longer Kicking Horse rafting day from the Golden-area base.",
+        "Review the river programme, barbecue arrangements and participant requirements.",
+        "Allow for the drive to the rafting base and the full return after the outing.",
+        "Read the guide and check your chosen departure and current booking options."
+      ],
+      "id": "kicking-horse-rafting"
+    },
+    {
+      "id": "guided-cycling",
+      "adGroupName": "Banff Guided Cycling Options",
+      "exactKeywords": [
+        "banff guided electric bike tour",
+        "banff electric fat bike sightseeing",
+        "banff bicycle sightseeing tour",
+        "canmore guided bike tour",
+        "banff guided cycling experience"
+      ],
+      "phraseKeywords": [
+        "banff electric bike sightseeing",
+        "guided cycling in banff",
+        "banff fat tire bike tour"
+      ],
+      "headlines": [
+        "Banff Guided Bike Tours",
+        "Electric Fat-Bike Ride Options",
+        "Plan Your Cycling Outing",
+        "Read The Bike Tour Guide",
+        "Check Surface And Requirements",
+        "Choose The Actual Meeting"
+      ],
+      "descriptions": [
+        "Compare guided cycling and electric fat-bike outings around Banff and Canmore.",
+        "Read the actual bike, route, meeting point and rider requirements before booking.",
+        "Snow and riding surfaces vary. Confirm the selected tour\u2019s current conditions.",
+        "Plan the outing that fits your group and check current dates and booking details."
+      ]
+    },
+    {
+      "adGroupName": "Lake Minnewanka Fishing Charter",
+      "exactKeywords": [
+        "lake minnewanka fishing charter",
+        "private fishing charter banff",
+        "banff lake fishing trip",
+        "guided fishing lake minnewanka",
+        "banff private fishing booking"
+      ],
+      "phraseKeywords": [
+        "private fishing lake minnewanka",
+        "fishing charter near banff",
+        "guided banff fishing trip"
+      ],
+      "headlines": [
+        "Lake Minnewanka Fishing",
+        "Private Charter Choices",
+        "Plan Your Banff Fishing Outing",
+        "Read The Charter Details",
+        "Check Gear And Group Rules",
+        "Confirm Meeting And Season"
+      ],
+      "descriptions": [
+        "Compare a private Lake Minnewanka fishing charter and its actual departure format.",
+        "Read the selected charter arrangements, participant rules and equipment details.",
+        "Check the season, meeting point and any separate requirements before booking.",
+        "Plan the complete outing and confirm current dates and booking terms."
+      ],
+      "id": "lake-fishing-charters"
+    },
+    {
+      "adGroupName": "YYC to Banff Private Airport Transfer",
+      "exactKeywords": [
+        "private calgary airport to banff transfer",
+        "yyc to banff private transfer",
+        "banff private airport transfer",
+        "private airport car to banff",
+        "calgary airport banff hotel transfer"
+      ],
+      "phraseKeywords": [
+        "private airport transfer to banff",
+        "yyc banff private car",
+        "calgary airport banff private transfer"
+      ],
+      "headlines": [
+        "Private YYC To Banff Transfer",
+        "Calgary Airport To Banff",
+        "Plan A Private Arrival Ride",
+        "Check The Hotel Drop-Off",
+        "Read The Driver Meeting Plan",
+        "Confirm Your Luggage Space"
+      ],
+      "descriptions": [
+        "Plan a private transfer from Calgary airport arrivals to your Banff hotel.",
+        "Read the meet-and-greet details and the published waiting allowance.",
+        "Confirm the exact hotel, luggage capacity and arrangements for your flight.",
+        "Compare the complete private arrival journey before selecting a transfer."
+      ],
+      "id": "airport-private-transfers"
+    },
+    {
+      "id": "golden-snowmobile-tours",
+      "adGroupName": "Golden Snowmobile Tour Options",
+      "exactKeywords": [
+        "golden snowmobile tour",
+        "snowmobiling from banff",
+        "snowmobile day trip from canmore",
+        "banff golden snowmobile tour",
+        "guided snowmobiling golden"
+      ],
+      "phraseKeywords": [
+        "snowmobile adventure golden",
+        "golden snowmobile riding",
+        "snowmobile day from banff"
+      ],
+      "headlines": [
+        "Golden Snowmobile Options",
+        "Compare The Actual Winter Trip",
+        "Plan Travel From Your Base",
+        "Check Riding And Driver Rules",
+        "Read The Snowmobile Trip Guide",
+        "Check Dates And Meeting Point"
+      ],
+      "descriptions": [
+        "Compare a Golden snowmobile outing from the actual departure and riding format.",
+        "Read transport, equipment and participant rules for the specific option before booking.",
+        "Check the current season and weather arrangements for your selected date.",
+        "Plan the full journey and return, then confirm your meeting and booking details."
+      ]
+    },
+    {
+      "adGroupName": "Yoho Waterfall and Walking Tours",
+      "exactKeywords": [
+        "yoho waterfall guided tour",
+        "wapta falls guided day tour",
+        "yoho waterfall tour from calgary",
+        "private yoho sightseeing tour",
+        "yoho forest walk waterfall tour"
+      ],
+      "phraseKeywords": [
+        "yoho waterfall day tour",
+        "wapta falls walking tour",
+        "guided yoho sightseeing"
+      ],
+      "headlines": [
+        "Compare Yoho Waterfall Tours",
+        "Waterfalls And Forest Walks",
+        "Read The Selected Route",
+        "Check Seasonal Road Access",
+        "Match Walking To Your Group",
+        "Plan The Pickup And Return"
+      ],
+      "descriptions": [
+        "Compare Yoho waterfall outings from the actual stops and walking involved.",
+        "A roadside viewpoint and a trail walk need different time and preparation.",
+        "Check which waterfalls belong to the selected route and the operating season.",
+        "Read pickup, vehicle and optional extras before choosing a guided day."
+      ],
+      "id": "yoho-waterfalls-tours"
+    },
+    {
+      "adGroupName": "Canmore Scenic River Float",
+      "exactKeywords": [
+        "canmore bow river float",
+        "canmore scenic float tour",
+        "bow river float canmore",
+        "canmore river rafting float",
+        "guided river float canmore"
+      ],
+      "phraseKeywords": [
+        "scenic river float canmore",
+        "bow river scenic float",
+        "canmore float trip"
+      ],
+      "headlines": [
+        "Canmore Scenic River Float",
+        "See The Bow From The Water",
+        "Plan Your Canmore Outing",
+        "Compare The Boat Format",
+        "Read The River Float Guide",
+        "Check The Launch Point"
+      ],
+      "descriptions": [
+        "Plan a guided scenic float on the Bow River in Canmore.",
+        "Read about the boat format, interpretation and actual meeting arrangements.",
+        "Compare this scenic river outing with the region\u2019s whitewater rafting trips.",
+        "Find out more, then check your selected date, launch point and booking details."
+      ],
+      "id": "scenic-river-floats"
+    },
+    {
+      "id": "winter-ice-experiences",
+      "adGroupName": "Banff Natural Ice Guided Walks",
+      "exactKeywords": [
+        "banff wild ice walk",
+        "banff guided lake ice walk",
+        "banff natural ice tour",
+        "banff frozen lake walking tour",
+        "banff winter ice walking"
+      ],
+      "phraseKeywords": [
+        "guided ice walk banff lakes",
+        "banff natural ice walk",
+        "wild ice walk near banff"
+      ],
+      "headlines": [
+        "Banff Natural-Ice Walks",
+        "Plan A Guided Winter Outing",
+        "Read The Lake Ice Walk Guide",
+        "Check The Guide\u2019s Route Choice",
+        "Review Gear And Walking Needs",
+        "Choose A Current Departure"
+      ],
+      "descriptions": [
+        "Read about guided walking on natural lake ice near Banff before choosing a departure.",
+        "Check the guide\u2019s actual location decision, conditions and participant requirements.",
+        "Review supplied traction, clothing needs and the meeting point for the selected trip.",
+        "Compare the walking format and confirm current dates and booking terms."
+      ]
+    },
+    {
+      "adGroupName": "Rockies Ski Resort Road Day",
+      "exactKeywords": [
+        "banff ski resort day tour",
+        "calgary ski resort day trip",
+        "canmore ski resort day tour",
+        "banff ski resort transport tour",
+        "rockies ski resort road tour"
+      ],
+      "phraseKeywords": [
+        "ski resort day from calgary",
+        "ski resort tour from banff",
+        "guided ski resort road day"
+      ],
+      "headlines": [
+        "Rockies Ski Resort Road Day",
+        "Compare The Resort Programme",
+        "Plan Your Mountain Day",
+        "Read The Resort Tour Guide",
+        "Check Lift Ticket Costs",
+        "Confirm Your Pickup Option"
+      ],
+      "descriptions": [
+        "Compare a ski-resort road day with pickup options in Calgary, Canmore or Banff.",
+        "Review the actual resort programme before booking. Lift tickets are an extra cost.",
+        "Read the pickup and return arrangements and check any optional tubing costs.",
+        "Choose the specific format and confirm current dates and participant requirements."
+      ],
+      "id": "skiing-snowboarding"
+    },
+    {
+      "id": "moraine-lake-shuttles",
+      "adGroupName": "Moraine Lake Shuttle Seats and Stops",
+      "exactKeywords": [
+        "moraine lake shuttle",
+        "moraine lake shuttle from banff",
+        "moraine lake shuttle from canmore",
+        "lake louise to moraine lake shuttle",
+        "moraine lake return shuttle"
+      ],
+      "phraseKeywords": [
+        "moraine lake shuttle options",
+        "moraine seasonal shuttle guide",
+        "moraine lake transport seats"
+      ],
+      "headlines": [
+        "Compare Moraine Lake Shuttles",
+        "Choose Actual Starting Stop",
+        "Read Boarding And Return Rules",
+        "Check Seasonal Road Access",
+        "Plan A Shuttle Seat Or Tour",
+        "See Which Lakes Are Included"
+      ],
+      "descriptions": [
+        "Compare Moraine shuttle seats with guided day tours and their starting points.",
+        "Check boarding, return and whether Lake Louise is part of the selected option.",
+        "Read the selected operating date and luggage rules before reserving a seat.",
+        "A shuttle listing still depends on seasonal road access and its own terms."
+      ]
+    },
+    {
+      "adGroupName": "Lake Louise Natural Ice Skating",
+      "exactKeywords": [
+        "lake louise guided ice skating",
+        "lake louise natural ice tour",
+        "banff guided ice skating",
+        "lake louise skating tour",
+        "guided frozen lake skating banff"
+      ],
+      "phraseKeywords": [
+        "lake louise ice skating tour",
+        "natural ice skating near banff",
+        "guided lake louise skating"
+      ],
+      "headlines": [
+        "Lake Louise Ice Skating",
+        "Guided Natural-Ice Options",
+        "Plan A Winter Skating Outing",
+        "Read The Actual Skating Guide",
+        "Check Gear And Current Dates",
+        "Confirm The Guide\u2019s Route"
+      ],
+      "descriptions": [
+        "Compare the Lake Louise skating format and the actual meeting arrangements.",
+        "Read the provider\u2019s current route and ice decisions for the selected departure.",
+        "Check participant, equipment and weather-change requirements before booking.",
+        "Plan the full outing and confirm the current date and return arrangements."
+      ],
+      "id": "lake-louise-ice-skating"
+    },
+    {
+      "id": "cross-country-skiing",
+      "adGroupName": "Lake Louise Cross Country Options",
+      "exactKeywords": [
+        "lake louise cross country instruction",
+        "lake louise guided nordic skiing",
+        "cross country beginner lesson banff",
+        "nordic ski instruction lake louise",
+        "lake louise ski lesson cross country"
+      ],
+      "phraseKeywords": [
+        "cross country lessons lake louise",
+        "guided nordic skiing lake louise",
+        "learn cross country ski lake louise"
+      ],
+      "headlines": [
+        "Lake Louise Nordic Skiing",
+        "Learn Cross-Country Technique",
+        "Lesson And Tour Choices",
+        "Read The Nordic Ski Guide",
+        "Check Equipment Arrangements",
+        "Plan The Lesson Meeting"
+      ],
+      "descriptions": [
+        "Compare cross-country lessons and guided skiing at Lake Louise.",
+        "Read the actual teaching format, meeting point and participant requirements.",
+        "Check how skis, boots and poles are arranged before making your booking.",
+        "Choose a date and lesson option, then confirm current snow and departure details."
+      ]
+    },
+    {
+      "id": "snowshoe-tours",
+      "adGroupName": "Banff Kootenay Kananaskis Snowshoe",
+      "exactKeywords": [
+        "snowshoe tour kootenay from banff",
+        "kananaskis snowshoe tour from banff",
+        "banff canmore guided snowshoe tour",
+        "paint pots guided snowshoeing",
+        "kananaskis beginner snowshoe tour"
+      ],
+      "phraseKeywords": [
+        "paint pots winter snowshoeing",
+        "snowshoe trip from canmore",
+        "guided kananaskis snowshoe day"
+      ],
+      "headlines": [
+        "Snowshoe Trips From Banff",
+        "Kootenay Or Kananaskis Routes",
+        "Compare Guided Winter Walks",
+        "Read The Snowshoe Tour Guide",
+        "Check Transport And Gear",
+        "Plan Your Snowshoe Meeting"
+      ],
+      "descriptions": [
+        "Compare guided snowshoe outings from Banff and Canmore into Kootenay or Kananaskis.",
+        "Read the actual route, effort, equipment and transport arrangements.",
+        "Check current operation and snow conditions for the selected departure.",
+        "Choose the walking format that fits your group and confirm the booking details."
+      ]
+    },
+    {
+      "id": "banff-jasper-transfers",
+      "adGroupName": "Banff Jasper Parkway Transfer Options",
+      "exactKeywords": [
+        "banff to jasper transfer",
+        "jasper to banff transfer",
+        "banff jasper sightseeing transfer",
+        "lake louise jasper transfer",
+        "banff jasper one way transport"
+      ],
+      "phraseKeywords": [
+        "banff jasper transfer options",
+        "parkway sightseeing transfer",
+        "jasper banff transport guide"
+      ],
+      "headlines": [
+        "Between Banff And Jasper",
+        "Compare Transfer Route Options",
+        "Read Direction And Drop-Off",
+        "Check Luggage And Stops",
+        "Plan The Parkway Journey",
+        "Choose Transfer Or Return Tour"
+      ],
+      "descriptions": [
+        "Compare transport between overnight bases with a return sightseeing day.",
+        "Read the actual direction, pickup, stops and final drop-off for your booking.",
+        "Check luggage and seasonal road arrangements before planning onward travel.",
+        "A one-way Parkway journey needs a different overnight plan from a return tour."
+      ]
+    },
+    {
+      "adGroupName": "Lake Louise Morning and Banff Scenic Day",
+      "exactKeywords": [
+        "lake louise sunrise tour from banff",
+        "lake louise early morning tour",
+        "banff lake louise sunrise sightseeing",
+        "lake louise sunrise banff lakes tour",
+        "banff bow falls lake louise morning tour"
+      ],
+      "phraseKeywords": [
+        "lake louise morning from banff",
+        "banff sunrise sightseeing tour",
+        "lake louise banff scenic day"
+      ],
+      "headlines": [
+        "Lake Louise At First Light",
+        "Plan An Early Banff Lake Day",
+        "Bow Falls And Banff Stops",
+        "Compare The Morning Route",
+        "Read The Banff Hotel Pickup",
+        "Check Your Date And Return"
+      ],
+      "descriptions": [
+        "Plan an early Lake Louise visit followed by Banff lakes, town and Bow Falls.",
+        "Read the morning pickup plan and the actual route for your chosen date.",
+        "Compare this Lake Louise-focused day with a Moraine Lake sunrise format.",
+        "The town break allows a meal purchase. Check the option\u2019s actual inclusions."
+      ],
+      "id": "lake-louise-sunrise"
+    },
+    {
+      "adGroupName": "Radium And Panorama Rafting",
+      "exactKeywords": [
+        "toby creek rafting",
+        "kootenay river rafting",
+        "radium hot springs rafting",
+        "panorama river rafting",
+        "kootenay rafting from radium"
+      ],
+      "phraseKeywords": [
+        "toby creek rafting panorama",
+        "rafting from radium hot springs",
+        "kootenay river rafting tour"
+      ],
+      "headlines": [
+        "Radium And Panorama Rafting",
+        "Toby Creek Or Kootenay River",
+        "Compare River Trip Formats",
+        "Read The Rafting Guide",
+        "Plan The Actual Departure",
+        "Check The Return Arrangements"
+      ],
+      "descriptions": [
+        "Compare Kootenay River trips from Radium with Toby Creek rafting from Panorama.",
+        "Read the actual programme, participant rules and meeting point for each option.",
+        "Plan the full road journey from your accommodation to the chosen riverbase.",
+        "Check current dates, option length and return arrangements before booking."
+      ],
+      "id": "radium-panorama-rafting"
+    },
+    {
+      "id": "ice-climbing",
+      "adGroupName": "Banff Beginner Ice Climbing",
+      "exactKeywords": [
+        "beginner ice climbing near banff",
+        "banff guided ice climbing day",
+        "canmore beginner ice climbing",
+        "ice climbing instruction banff",
+        "bow valley ice climbing lesson"
+      ],
+      "phraseKeywords": [
+        "ice climbing lessons banff",
+        "beginner guided ice climbing",
+        "banff ice climbing experience"
+      ],
+      "headlines": [
+        "Beginner Ice Climbing Banff",
+        "Try Guided Ice Instruction",
+        "Plan A Technical Winter Day",
+        "Read The Ice Climbing Guide",
+        "Check Equipment And Meeting",
+        "Choose Your Course Format"
+      ],
+      "descriptions": [
+        "Read the beginner ice-climbing guide before choosing a technical winter outing.",
+        "Review the actual meeting point, participant requirements and listed equipment.",
+        "The climbing venue depends on conditions. Plan the complete journey and return.",
+        "Compare the course format and confirm current dates and booking details."
+      ]
+    },
+    {
+      "adGroupName": "Kananaskis And Horseshoe Rafting",
+      "exactKeywords": [
+        "kananaskis river rafting",
+        "horseshoe canyon rafting",
+        "family rafting kananaskis",
+        "horseshoe canyon whitewater",
+        "kananaskis whitewater rafting"
+      ],
+      "phraseKeywords": [
+        "kananaskis rafting tour",
+        "horseshoe canyon rafting trip",
+        "whitewater rafting near banff"
+      ],
+      "headlines": [
+        "Rafting Near Banff",
+        "Kananaskis Or Horseshoe Canyon",
+        "Compare The River Formats",
+        "Check Participant Requirements",
+        "Read The Whitewater Guide",
+        "Plan Your Riverbase Journey"
+      ],
+      "descriptions": [
+        "Compare Kananaskis and Horseshoe Canyon rafting by river format and group requirements.",
+        "Read the meeting point and full programme before choosing your departure.",
+        "Check minimum ages, swimming rules and equipment for the actual booking option.",
+        "Find out more, then confirm the date and travel plan for your chosen river outing."
+      ],
+      "id": "whitewater-rafting"
+    },
+    {
+      "adGroupName": "Banff Area Jeep And 4x4 Options",
+      "exactKeywords": [
+        "banff 4x4 tour",
+        "banff jeep day tour",
+        "ghost valley jeep tour",
+        "spray lakes jeep tour",
+        "banff private jeep tour"
+      ],
+      "phraseKeywords": [
+        "4x4 tour near banff",
+        "guided jeep tour banff",
+        "ghost valley 4x4 outing"
+      ],
+      "headlines": [
+        "Banff Area Jeep And 4x4 Tours",
+        "Compare The Driving Route",
+        "Spray Lakes Or Ghost Valley",
+        "Read The Vehicle Tour Guide",
+        "Check Pickup And Requirements",
+        "Plan The Full Return"
+      ],
+      "descriptions": [
+        "Compare Banff-area Jeep and 4x4 formats by route, departure and actual vehicle.",
+        "Read the selected stops, participant rules and extra costs before booking.",
+        "Check the route and travel time against plans from your chosen starting base.",
+        "Confirm current dates, weather arrangements and the full return for your option."
+      ],
+      "id": "jeep-4x4-tours"
+    },
+    {
+      "id": "banff-badlands-day-trips",
+      "adGroupName": "Badlands Days From Banff Canmore",
+      "exactKeywords": [
+        "badlands day tour from banff",
+        "drumheller day trip from banff",
+        "banff private badlands tour",
+        "canmore badlands day trip",
+        "banff to drumheller tour"
+      ],
+      "phraseKeywords": [
+        "badlands tour from banff",
+        "drumheller day trip from canmore",
+        "banff badlands private day"
+      ],
+      "headlines": [
+        "Badlands Days From Banff",
+        "Drumheller From Banff",
+        "Banff Or Canmore Departure",
+        "Read The Full Road-Day Guide",
+        "Check Stops And Museum Costs",
+        "Plan Your Complete Return"
+      ],
+      "descriptions": [
+        "Compare a Badlands and Drumheller day from an actual Banff or Canmore departure.",
+        "Read the road journey, museum admission and selected stops before booking.",
+        "Check pickup, meals, participant requirements and the current dated itinerary.",
+        "Plan the complete return to your mountain base before arranging onward activities."
+      ]
+    },
+    {
+      "id": "self-guided-exploration",
+      "adGroupName": "Banff Self Guided Audio Drive",
+      "exactKeywords": [
+        "banff self guided audio tour",
+        "banff audio driving tour",
+        "banff self drive commentary",
+        "banff scenic drive audio guide",
+        "banff self guided driving tour"
+      ],
+      "phraseKeywords": [
+        "banff self guided audio drive",
+        "audio driving tour banff",
+        "banff driving tour app"
+      ],
+      "headlines": [
+        "Drive Banff At Your Own Pace",
+        "A Self-Guided Audio Drive",
+        "Read The Audio Drive Guide",
+        "Check App And Device Needs",
+        "Plan Your Own Road Route",
+        "Check Activation And Downloads"
+      ],
+      "descriptions": [
+        "Plan a self-guided Banff audio drive with your own vehicle, timing and stops.",
+        "Check device, language, activation and download requirements before buying.",
+        "Read the actual route and current road access, then arrange transport independently.",
+        "Choose the audio format that suits your trip and review the current product terms."
+      ]
+    },
+    {
+      "id": "open-top-sightseeing",
+      "adGroupName": "Banff Vintage Open Air Sightseeing",
+      "exactKeywords": [
+        "banff vintage car sightseeing",
+        "banff open air car tour",
+        "banff vintage vehicle tour",
+        "banff open top sightseeing ride",
+        "banff scenic vintage car ride"
+      ],
+      "phraseKeywords": [
+        "vintage sightseeing in banff",
+        "banff open air sightseeing",
+        "banff vintage touring car"
+      ],
+      "headlines": [
+        "Banff Vintage Car Sightseeing",
+        "An Open-Air Touring Format",
+        "Compare The Actual Route",
+        "Plan A Banff Scenic Ride",
+        "Check Season And Weather Plans",
+        "Read The Touring Car Guide"
+      ],
+      "descriptions": [
+        "Compare a vintage open-top Banff outing with enclosed sightseeing and walking tours.",
+        "Read the route, pickup and return arrangements for the selected vehicle format.",
+        "Check seasonal operation, clothing, boarding and weather-change arrangements.",
+        "Plan the ride that suits your group and confirm current dates and booking details."
+      ]
+    },
+    {
+      "adGroupName": "Two Jack Sunrise And Canyon Options",
+      "exactKeywords": [
+        "two jack lake sunrise tour",
+        "banff sunrise johnston canyon",
+        "two jack lake and johnston tour",
+        "two jack guided morning visit",
+        "two jack lake early tour"
+      ],
+      "phraseKeywords": [
+        "two jack lake sunrise",
+        "banff sunrise canyon tour",
+        "two jack johnston canyon trip"
+      ],
+      "headlines": [
+        "Two Jack Lake At Sunrise",
+        "Compare Morning Canyon Tours",
+        "Plan An Early Banff Outing",
+        "Read The Actual Day Tour Guide",
+        "Check Johnston Canyon Stops",
+        "Confirm Pickup And Return"
+      ],
+      "descriptions": [
+        "Compare a Two Jack Lake sunrise outing with a Johnston Canyon tour component.",
+        "Read the dated itinerary, walking and actual departure before choosing your booking.",
+        "Morning light and canyon access respond to the season and conditions.",
+        "Plan the pickup, outdoor requirements and full return for your selected option."
+      ],
+      "id": "banff-sunrise-canyon-tours"
+    },
+    {
+      "id": "airport-shared-departures",
+      "adGroupName": "Banff Canmore to YYC Shared Shuttles",
+      "exactKeywords": [
+        "banff to calgary airport shuttle",
+        "canmore to calgary airport shuttle",
+        "banff to yyc shared shuttle",
+        "canmore to yyc shared shuttle",
+        "shared transfer banff to yyc"
+      ],
+      "phraseKeywords": [
+        "banff to yyc airport transfer",
+        "canmore to yyc shuttle",
+        "airport shuttle from banff"
+      ],
+      "headlines": [
+        "Banff And Canmore To YYC",
+        "Compare Shared Airport Rides",
+        "Choose The Right Town Stop",
+        "Plan Your Airport Departure",
+        "Read Luggage And Pickup Rules",
+        "Allow A Flight Check-In Buffer"
+      ],
+      "descriptions": [
+        "Compare shared airport departures from the selected Banff or Canmore town stop.",
+        "Plan the journey from your accommodation to the exact reserved pickup.",
+        "Work backwards from your flight and allow for airline check-in and road conditions.",
+        "Read the luggage allowance, dated service and actual YYC drop-off arrangements."
+      ]
+    },
+    {
+      "id": "calgary-banff-transfers",
+      "adGroupName": "Calgary Banff City Shuttle Stops",
+      "exactKeywords": [
+        "calgary to banff shuttle",
+        "calgary to canmore shared shuttle",
+        "calgary banff city transfer",
+        "calgary city to banff bus",
+        "shared shuttle calgary to banff"
+      ],
+      "phraseKeywords": [
+        "calgary banff shuttle stops",
+        "calgary city banff transfer",
+        "calgary canmore shared shuttle"
+      ],
+      "headlines": [
+        "Calgary To Banff By Shuttle",
+        "Choose The Actual City Stops",
+        "Check The Travel Direction",
+        "Read The Dated Timetable",
+        "Plan Luggage And Connections",
+        "Compare The Transfer Format"
+      ],
+      "descriptions": [
+        "Compare Calgary-to-Banff and Canmore shuttle arrangements and actual stops.",
+        "Read the direction, meeting instructions and dated schedule before reserving.",
+        "A city shuttle differs from an airport pickup or a sightseeing day tour.",
+        "Check the luggage allowance and leave time for separate onward connections."
+      ]
+    },
+    {
+      "adGroupName": "YYC to Banff Shared Airport Arrivals",
+      "exactKeywords": [
+        "calgary airport to banff shuttle",
+        "yyc to banff shared shuttle",
+        "banff airport shuttle from calgary",
+        "calgary airport to banff bus",
+        "shared transfer yyc to banff"
+      ],
+      "phraseKeywords": [
+        "calgary airport banff transfer",
+        "yyc banff arrival shuttle",
+        "airport shuttle to banff"
+      ],
+      "headlines": [
+        "Calgary Airport To Banff",
+        "YYC To Banff Shared Shuttle",
+        "Plan Your Airport Arrival",
+        "Check The Banff Drop-Off",
+        "Read The Airport Meeting Plan",
+        "Check Luggage Before Booking"
+      ],
+      "descriptions": [
+        "Plan a shared transfer from Calgary airport to the actual Banff drop-off.",
+        "Read the airport meeting instructions and check the dated departure.",
+        "Check luggage and oversized-equipment rules before reserving your airport ride.",
+        "Include the last journey to your accommodation when comparing the arrival plan."
+      ],
+      "id": "airport-shared-transfers"
+    },
+    {
+      "adGroupName": "Columbia Icefield Admission",
+      "exactKeywords": [
+        "columbia icefield ice explorer skywalk ticket",
+        "columbia icefield admission ticket",
+        "ice explorer skywalk combo admission",
+        "columbia glacier discovery centre tickets",
+        "athabasca glacier ice explorer admission"
+      ],
+      "phraseKeywords": [
+        "columbia icefield attraction ticket",
+        "ice explorer and skywalk ticket",
+        "columbia icefield admission guide"
+      ],
+      "headlines": [
+        "Columbia Icefield Admission",
+        "Ice Explorer And Skywalk",
+        "Plan The Ticket And Journey",
+        "Travel To The Discovery Centre",
+        "Check The Operating Calendar",
+        "Read The Attraction Details"
+      ],
+      "descriptions": [
+        "Read the combined Ice Explorer and Skywalk admission before planning your visit.",
+        "This ticket starts at the Discovery Centre. Arrange your own journey there.",
+        "The attraction is seasonal. Check the current calendar and an operating date.",
+        "Compare the attraction admission with a separate road tour from Banff."
+      ],
+      "id": "columbia-icefield-admission"
+    },
+    {
+      "adGroupName": "Banff Intro Rock Climbing",
+      "exactKeywords": [
+        "beginner rock climbing banff",
+        "banff rock climbing course",
+        "guided rock climbing banff",
+        "outdoor climbing lesson banff",
+        "intro rock climbing banff"
+      ],
+      "phraseKeywords": [
+        "rock climbing near banff",
+        "beginner climbing course banff",
+        "banff outdoor climbing"
+      ],
+      "headlines": [
+        "Rock Climbing Near Banff",
+        "Try An Introductory Course",
+        "Plan Your Climbing Day",
+        "Check Group Requirements",
+        "Read The Rock Climbing Guide",
+        "Confirm The Climbing Site"
+      ],
+      "descriptions": [
+        "Plan an introductory outdoor rock-climbing programme near Banff.",
+        "Review the selected climbing area, group requirements and own-vehicle journey.",
+        "Compare this course with ice climbing and other mountain activities.",
+        "Read the guide and check current dates, meeting arrangements and booking options."
+      ],
+      "id": "rock-climbing"
+    }
+  ]
+}

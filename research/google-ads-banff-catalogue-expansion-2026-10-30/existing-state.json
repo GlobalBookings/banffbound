@@ -1,0 +1,780 @@
+{
+  "source": "Previously verified native readbacks; refresh before applying this package.",
+  "sourceReceipt": "ORIGINAL/research/google-ads-activity-expansion-2026-10-30-live/final-verification-receipt.json",
+  "sourceReceiptSha256": "3ea5f42308fb3ae6ca062485692559934000fa8b2a85c71554f9d3a01bd5b967",
+  "sourceKeywordExportSha256": "3fee701f7646e4299dbae28a912083f1764a0d5334f7f95d6de63a7700ebccb1",
+  "savedAds": [
+    {
+      "adId": "830171093210",
+      "groupId": "203151022313",
+      "group": "Beginner Ice Climbing Near Banff",
+      "finalUrl": "https://banffbound.com/activities/ice-climbing/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_beginner_ice_climbing_rsa"
+    },
+    {
+      "adId": "830171093195",
+      "groupId": "203151021993",
+      "group": "Lake Louise Cross-Country Lesson",
+      "finalUrl": "https://banffbound.com/blog/banff-cross-country-skiing/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_cross_country_lesson_rsa"
+    },
+    {
+      "adId": "830171093198",
+      "groupId": "203151022033",
+      "group": "Icefields Parkway Winter Tour",
+      "finalUrl": "https://banffbound.com/blog/icefields-parkway-guide/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_winter_parkway_tour_rsa"
+    },
+    {
+      "adId": "830171093192",
+      "groupId": "203151021833",
+      "group": "Canmore Scenic Helicopter Tour",
+      "finalUrl": "https://banffbound.com/blog/banff-helicopter-tours/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_three_sisters_flight_rsa"
+    },
+    {
+      "adId": "830171093186",
+      "groupId": "203151021753",
+      "group": "Banff Gondola Tickets",
+      "finalUrl": "https://banffbound.com/blog/banff-gondola-tickets-guide/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_gondola_tickets_rsa"
+    },
+    {
+      "adId": "830171093183",
+      "groupId": "203151021593",
+      "group": "Banff Gondola Visit",
+      "finalUrl": "https://banffbound.com/blog/banff-gondola-guide/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_gondola_visit_rsa"
+    },
+    {
+      "adId": "830171093204",
+      "groupId": "203151022233",
+      "group": "Banff Stargazing Tour",
+      "finalUrl": "https://banffbound.com/blog/banff-northern-lights/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_banff_night_sky_rsa"
+    },
+    {
+      "adId": "830171093207",
+      "groupId": "203151022273",
+      "group": "Snowshoe Tour from Banff",
+      "finalUrl": "https://banffbound.com/blog/banff-snowshoeing-guide/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_paint_pots_snowshoe_rsa"
+    },
+    {
+      "adId": "830171093189",
+      "groupId": "203151021793",
+      "group": "Banff Electric Fat-Bike Tour",
+      "finalUrl": "https://banffbound.com/blog/banff-fat-biking/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_electric_fat_bike_rsa"
+    },
+    {
+      "adId": "830171093216",
+      "groupId": "203151022513",
+      "group": "Banff Food Tours",
+      "finalUrl": "https://banffbound.com/activities/banff-food-tours/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_banff_food_tours_rsa"
+    },
+    {
+      "adId": "830171093201",
+      "groupId": "203151022073",
+      "group": "Peyto Lake Winter Tour",
+      "finalUrl": "https://banffbound.com/blog/peyto-lake-guide/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_peyto_winter_tour_rsa"
+    },
+    {
+      "adId": "830082984184",
+      "groupId": "210113641908",
+      "group": "Ad group 1",
+      "finalUrl": "https://banffbound.com/book/banff-winter-activities/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=winter_rsa"
+    },
+    {
+      "adId": "830171093213",
+      "groupId": "203151022473",
+      "group": "Yoho & Kootenay Winter Tour",
+      "finalUrl": "https://banffbound.com/activities/yoho-kootenay-winter-tours/",
+      "suffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_yoho_kootenay_winter_rsa"
+    }
+  ],
+  "savedKeywords": [
+    {
+      "groupId": "203151022313",
+      "groupName": "Beginner Ice Climbing Near Banff",
+      "matchType": "Exact match",
+      "term": "guided ice climbing banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022313",
+      "groupName": "Beginner Ice Climbing Near Banff",
+      "matchType": "Exact match",
+      "term": "banff ice climbing lesson",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022513",
+      "groupName": "Banff Food Tours",
+      "matchType": "Exact match",
+      "term": "food walking tour banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022313",
+      "groupName": "Beginner Ice Climbing Near Banff",
+      "matchType": "Exact match",
+      "term": "banff beginner ice climbing",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022313",
+      "groupName": "Beginner Ice Climbing Near Banff",
+      "matchType": "Exact match",
+      "term": "ice climbing near banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022313",
+      "groupName": "Beginner Ice Climbing Near Banff",
+      "matchType": "Phrase match",
+      "term": "banff beginner ice climbing",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022513",
+      "groupName": "Banff Food Tours",
+      "matchType": "Exact match",
+      "term": "banff foodie walking tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022313",
+      "groupName": "Beginner Ice Climbing Near Banff",
+      "matchType": "Phrase match",
+      "term": "guided ice climbing banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022513",
+      "groupName": "Banff Food Tours",
+      "matchType": "Exact match",
+      "term": "banff guided food tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022513",
+      "groupName": "Banff Food Tours",
+      "matchType": "Phrase match",
+      "term": "banff foodie walking tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022513",
+      "groupName": "Banff Food Tours",
+      "matchType": "Phrase match",
+      "term": "banff tasting tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022513",
+      "groupName": "Banff Food Tours",
+      "matchType": "Phrase match",
+      "term": "banff food tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022513",
+      "groupName": "Banff Food Tours",
+      "matchType": "Exact match",
+      "term": "banff tasting tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022313",
+      "groupName": "Beginner Ice Climbing Near Banff",
+      "matchType": "Exact match",
+      "term": "banff ice climbing course",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022313",
+      "groupName": "Beginner Ice Climbing Near Banff",
+      "matchType": "Phrase match",
+      "term": "banff ice climbing course",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022513",
+      "groupName": "Banff Food Tours",
+      "matchType": "Exact match",
+      "term": "banff food tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022233",
+      "groupName": "Banff Stargazing Tour",
+      "matchType": "Exact match",
+      "term": "lake minnewanka stargazing tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022233",
+      "groupName": "Banff Stargazing Tour",
+      "matchType": "Phrase match",
+      "term": "banff night sky tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022233",
+      "groupName": "Banff Stargazing Tour",
+      "matchType": "Exact match",
+      "term": "banff night sky tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022233",
+      "groupName": "Banff Stargazing Tour",
+      "matchType": "Exact match",
+      "term": "banff evening stargazing",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022233",
+      "groupName": "Banff Stargazing Tour",
+      "matchType": "Phrase match",
+      "term": "banff stargazing tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022233",
+      "groupName": "Banff Stargazing Tour",
+      "matchType": "Phrase match",
+      "term": "banff northern lights tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022233",
+      "groupName": "Banff Stargazing Tour",
+      "matchType": "Exact match",
+      "term": "banff northern lights tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022233",
+      "groupName": "Banff Stargazing Tour",
+      "matchType": "Exact match",
+      "term": "banff stargazing tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021993",
+      "groupName": "Lake Louise Cross-Country Lesson",
+      "matchType": "Phrase match",
+      "term": "lake louise nordic ski lesson",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021993",
+      "groupName": "Lake Louise Cross-Country Lesson",
+      "matchType": "Phrase match",
+      "term": "lake louise cross country tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021993",
+      "groupName": "Lake Louise Cross-Country Lesson",
+      "matchType": "Exact match",
+      "term": "cross country skiing lessons lake louise",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021993",
+      "groupName": "Lake Louise Cross-Country Lesson",
+      "matchType": "Exact match",
+      "term": "lake louise cross country ski lessons",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021993",
+      "groupName": "Lake Louise Cross-Country Lesson",
+      "matchType": "Exact match",
+      "term": "lake louise nordic ski lesson",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021993",
+      "groupName": "Lake Louise Cross-Country Lesson",
+      "matchType": "Phrase match",
+      "term": "lake louise cross country lesson",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021993",
+      "groupName": "Lake Louise Cross-Country Lesson",
+      "matchType": "Exact match",
+      "term": "beginner cross country skiing lake louise",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021993",
+      "groupName": "Lake Louise Cross-Country Lesson",
+      "matchType": "Exact match",
+      "term": "lake louise cross country ski tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021793",
+      "groupName": "Banff Electric Fat-Bike Tour",
+      "matchType": "Exact match",
+      "term": "banff e fat bike tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021793",
+      "groupName": "Banff Electric Fat-Bike Tour",
+      "matchType": "Phrase match",
+      "term": "banff electric fat bike",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021793",
+      "groupName": "Banff Electric Fat-Bike Tour",
+      "matchType": "Phrase match",
+      "term": "guided fat biking banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021793",
+      "groupName": "Banff Electric Fat-Bike Tour",
+      "matchType": "Phrase match",
+      "term": "banff fat bike tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021793",
+      "groupName": "Banff Electric Fat-Bike Tour",
+      "matchType": "Exact match",
+      "term": "banff electric fat bike tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021793",
+      "groupName": "Banff Electric Fat-Bike Tour",
+      "matchType": "Exact match",
+      "term": "banff fat bike tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021793",
+      "groupName": "Banff Electric Fat-Bike Tour",
+      "matchType": "Exact match",
+      "term": "banff winter bike tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021793",
+      "groupName": "Banff Electric Fat-Bike Tour",
+      "matchType": "Exact match",
+      "term": "guided fat biking banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021593",
+      "groupName": "Banff Gondola Visit",
+      "matchType": "Exact match",
+      "term": "banff gondola",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021593",
+      "groupName": "Banff Gondola Visit",
+      "matchType": "Exact match",
+      "term": "sulphur mountain gondola",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021593",
+      "groupName": "Banff Gondola Visit",
+      "matchType": "Exact match",
+      "term": "banff cable car",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021593",
+      "groupName": "Banff Gondola Visit",
+      "matchType": "Phrase match",
+      "term": "banff gondola visit",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021593",
+      "groupName": "Banff Gondola Visit",
+      "matchType": "Exact match",
+      "term": "banff gondola winter",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021593",
+      "groupName": "Banff Gondola Visit",
+      "matchType": "Phrase match",
+      "term": "banff cable car",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021593",
+      "groupName": "Banff Gondola Visit",
+      "matchType": "Phrase match",
+      "term": "sulphur mountain gondola",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021593",
+      "groupName": "Banff Gondola Visit",
+      "matchType": "Exact match",
+      "term": "banff gondola guide",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022273",
+      "groupName": "Snowshoe Tour from Banff",
+      "matchType": "Phrase match",
+      "term": "paint pots snowshoe tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022273",
+      "groupName": "Snowshoe Tour from Banff",
+      "matchType": "Exact match",
+      "term": "banff guided snowshoeing",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022273",
+      "groupName": "Snowshoe Tour from Banff",
+      "matchType": "Exact match",
+      "term": "guided snowshoeing from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022273",
+      "groupName": "Snowshoe Tour from Banff",
+      "matchType": "Phrase match",
+      "term": "banff snowshoe tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022273",
+      "groupName": "Snowshoe Tour from Banff",
+      "matchType": "Exact match",
+      "term": "kootenay snowshoe tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022273",
+      "groupName": "Snowshoe Tour from Banff",
+      "matchType": "Phrase match",
+      "term": "guided snowshoeing from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022273",
+      "groupName": "Snowshoe Tour from Banff",
+      "matchType": "Exact match",
+      "term": "paint pots snowshoe tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022273",
+      "groupName": "Snowshoe Tour from Banff",
+      "matchType": "Exact match",
+      "term": "banff snowshoe tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022473",
+      "groupName": "Yoho & Kootenay Winter Tour",
+      "matchType": "Phrase match",
+      "term": "yoho winter tour from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022473",
+      "groupName": "Yoho & Kootenay Winter Tour",
+      "matchType": "Exact match",
+      "term": "yoho winter tour from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022473",
+      "groupName": "Yoho & Kootenay Winter Tour",
+      "matchType": "Exact match",
+      "term": "banff frozen gems tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022073",
+      "groupName": "Peyto Lake Winter Tour",
+      "matchType": "Exact match",
+      "term": "peyto lake winter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021833",
+      "groupName": "Canmore Scenic Helicopter Tour",
+      "matchType": "Phrase match",
+      "term": "helicopter tours near banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022073",
+      "groupName": "Peyto Lake Winter Tour",
+      "matchType": "Exact match",
+      "term": "peyto lake guided winter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022473",
+      "groupName": "Yoho & Kootenay Winter Tour",
+      "matchType": "Phrase match",
+      "term": "yoho kootenay winter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021833",
+      "groupName": "Canmore Scenic Helicopter Tour",
+      "matchType": "Exact match",
+      "term": "canmore helicopter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022073",
+      "groupName": "Peyto Lake Winter Tour",
+      "matchType": "Phrase match",
+      "term": "peyto lake tour from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022473",
+      "groupName": "Yoho & Kootenay Winter Tour",
+      "matchType": "Exact match",
+      "term": "emerald lake winter tour from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022073",
+      "groupName": "Peyto Lake Winter Tour",
+      "matchType": "Exact match",
+      "term": "peyto lake tour from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021833",
+      "groupName": "Canmore Scenic Helicopter Tour",
+      "matchType": "Exact match",
+      "term": "three sisters helicopter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022473",
+      "groupName": "Yoho & Kootenay Winter Tour",
+      "matchType": "Exact match",
+      "term": "kootenay winter tour from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022073",
+      "groupName": "Peyto Lake Winter Tour",
+      "matchType": "Phrase match",
+      "term": "peyto lake winter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021833",
+      "groupName": "Canmore Scenic Helicopter Tour",
+      "matchType": "Exact match",
+      "term": "canmore scenic flight",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021833",
+      "groupName": "Canmore Scenic Helicopter Tour",
+      "matchType": "Exact match",
+      "term": "helicopter tours near banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022473",
+      "groupName": "Yoho & Kootenay Winter Tour",
+      "matchType": "Exact match",
+      "term": "yoho kootenay winter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021833",
+      "groupName": "Canmore Scenic Helicopter Tour",
+      "matchType": "Phrase match",
+      "term": "three sisters helicopter",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021833",
+      "groupName": "Canmore Scenic Helicopter Tour",
+      "matchType": "Exact match",
+      "term": "banff helicopter tours",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021833",
+      "groupName": "Canmore Scenic Helicopter Tour",
+      "matchType": "Phrase match",
+      "term": "canmore helicopter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022473",
+      "groupName": "Yoho & Kootenay Winter Tour",
+      "matchType": "Phrase match",
+      "term": "kootenay winter tour from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "210113641908",
+      "groupName": "Ad group 1",
+      "matchType": "Exact match",
+      "term": "banff winter tours",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "210113641908",
+      "groupName": "Ad group 1",
+      "matchType": "Phrase match",
+      "term": "banff winter tours",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "210113641908",
+      "groupName": "Ad group 1",
+      "matchType": "Exact match",
+      "term": "banff winter activities",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "210113641908",
+      "groupName": "Ad group 1",
+      "matchType": "Phrase match",
+      "term": "banff winter activities",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022033",
+      "groupName": "Icefields Parkway Winter Tour",
+      "matchType": "Exact match",
+      "term": "banff ice bubbles tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022033",
+      "groupName": "Icefields Parkway Winter Tour",
+      "matchType": "Exact match",
+      "term": "abraham lake tour from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022033",
+      "groupName": "Icefields Parkway Winter Tour",
+      "matchType": "Exact match",
+      "term": "icefields parkway winter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022033",
+      "groupName": "Icefields Parkway Winter Tour",
+      "matchType": "Phrase match",
+      "term": "icefields parkway winter tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022033",
+      "groupName": "Icefields Parkway Winter Tour",
+      "matchType": "Phrase match",
+      "term": "abraham lake tour from banff",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022033",
+      "groupName": "Icefields Parkway Winter Tour",
+      "matchType": "Phrase match",
+      "term": "banff ice bubbles tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022033",
+      "groupName": "Icefields Parkway Winter Tour",
+      "matchType": "Exact match",
+      "term": "abraham lake ice bubbles tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151022033",
+      "groupName": "Icefields Parkway Winter Tour",
+      "matchType": "Exact match",
+      "term": "banff winter icefields tour",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021753",
+      "groupName": "Banff Gondola Tickets",
+      "matchType": "Phrase match",
+      "term": "banff gondola booking",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021753",
+      "groupName": "Banff Gondola Tickets",
+      "matchType": "Exact match",
+      "term": "sulphur mountain gondola tickets",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021753",
+      "groupName": "Banff Gondola Tickets",
+      "matchType": "Phrase match",
+      "term": "banff gondola tickets",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021753",
+      "groupName": "Banff Gondola Tickets",
+      "matchType": "Phrase match",
+      "term": "banff gondola admission",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021753",
+      "groupName": "Banff Gondola Tickets",
+      "matchType": "Exact match",
+      "term": "buy banff gondola tickets",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021753",
+      "groupName": "Banff Gondola Tickets",
+      "matchType": "Exact match",
+      "term": "banff gondola admission",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021753",
+      "groupName": "Banff Gondola Tickets",
+      "matchType": "Exact match",
+      "term": "banff gondola booking",
+      "status": "Enabled"
+    },
+    {
+      "groupId": "203151021753",
+      "groupName": "Banff Gondola Tickets",
+      "matchType": "Exact match",
+      "term": "banff gondola tickets",
+      "status": "Enabled"
+    }
+  ]
+}

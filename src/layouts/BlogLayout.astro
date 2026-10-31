@@ -4,9 +4,11 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import WinterStatusNotice from '../components/WinterStatusNotice.astro';
 import HotelStaysBanner from '../components/HotelStaysBanner.astro';
 import ActivityBookingCTA from '../components/ActivityBookingCTA.astro';
+import ExperienceOptions from '../components/ExperienceOptions.astro';
 import { blogPosts } from '../data/blogPosts';
 import { getArticleBookingContext } from '../data/articleBookingContext';
 import { resolveActivityBookingTarget } from '../data/activityCampaignTargets';
+import { getExperienceGroupForPath } from '../data/banffExperiences';
 
 interface Props {
   title: string;
@@ -27,6 +29,7 @@ interface Props {
 const { title, description, date, lastUpdated, partialCorrectionDate, partialCorrectionLabel = 'Hotel location paragraph corrected:', category, image, imageIsIllustrative = false, imageNote = '', curatedBookingLinks = false, readTime, slug } = Astro.props;
 const bookingContext = getArticleBookingContext(slug, curatedBookingLinks);
 const activityBookingTarget = resolveActivityBookingTarget(slug);
+const experienceGroup = getExperienceGroupForPath(slug);
 
 const relatedPosts = blogPosts
   .filter(p => p.category === category && p.slug !== slug && p.title !== title)
@@ -153,6 +156,7 @@ const articleSchema = {
         <p class="trip-report-cta">Been to Banff? <a href="/trip-reports">Share your trip report</a> and help fellow travellers plan their adventure.</p>
       </div>
     </div>
+    {experienceGroup && <div class="container"><ExperienceOptions group={experienceGroup} contentId={slug} /></div>}
   </article>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script>

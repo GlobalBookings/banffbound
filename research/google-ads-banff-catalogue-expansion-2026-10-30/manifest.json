@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "preparedAtUTC": "2026-10-31T06:14:41.042Z",
+  "status": "LOCAL_VALIDATED_PACKAGE_ONLY_NOT_UPLOADED",
+  "campaign": {
+    "id": "24416287886",
+    "name": "BB | CA | Search | Winter activities | 50GBP test",
+    "accountCurrency": "GBP"
+  },
+  "preservation": {
+    "campaignRows": 0,
+    "budgetRows": 0,
+    "totalBudgetGBPUnchanged": 50,
+    "campaignMaximumCpcGBPUnchanged": 0.07,
+    "intendedNewKeywordAndGroupCpcGBP": 0.07,
+    "bidStrategyUnchanged": "Maximize clicks",
+    "locationUnchanged": "Canada, Presence",
+    "networksUnchanged": "Google Search only",
+    "datesUnchanged": "2026-10-31 through 2026-11-06",
+    "hotelRows": 0,
+    "sharedAccountAssetRows": 0,
+    "existingAdRows": 0,
+    "existingGroupEdits": 0,
+    "existingKeywordEdits": 0
+  },
+  "counts": {
+    "guideFamilies": 60,
+    "readyFamilies": 19,
+    "heldFamilies": 41,
+    "newGroups": 50,
+    "newAds": 50,
+    "newGroupKeywords": 400,
+    "additionsToExistingGroups": 80,
+    "exactKeywords": 300,
+    "phraseKeywords": 180,
+    "candidateTermsAlreadyPresent": 0,
+    "reusedExistingGroups": 10
+  },
+  "files": [
+    {
+      "file": "01-new-ad-groups.csv",
+      "template": "ad_group",
+      "rowType": "Ad group",
+      "rows": 50,
+      "sha256": "319a4673fcae87cf012a71f7d74ea1d3467e84330c3068f9ed6b718f17357320",
+      "uploadWhenNonEmpty": true
+    },
+    {
+      "file": "02-new-responsive-search-ads.csv",
+      "template": "responsive_search_ad",
+      "rowType": "Ad",
+      "rows": 50,
+      "sha256": "d72e55a78ff8015f86d5c9af2dc0f93e07dc84dc777ebf1abe8e70f867d7696c",
+      "uploadWhenNonEmpty": true
+    },
+    {
+      "file": "03-new-group-keywords.csv",
+      "template": "keyword",
+      "rowType": "Keyword",
+      "rows": 400,
+      "sha256": "edeccde4ea33964c187b1c8cd3584a4b7b5e81c728ba40c64735dcadfeb5b016",
+      "uploadWhenNonEmpty": true
+    },
+    {
+      "file": "04-existing-group-keyword-additions.csv",
+      "template": "keyword",
+      "rowType": "Keyword",
+      "rows": 80,
+      "sha256": "eb9ed7b9f9ae07615a488bfe1a3ffad5ed685c64d0a1dd688c5da7f7d4bcb7df",
+      "uploadWhenNonEmpty": true
+    }
+  ],
+  "sourceInputs": [
+    {
+      "file": "research/google-ads-banff-catalogue-expansion-2026-10-30/review-copy.json",
+      "sha256": "29d423df1f207669f5eab46d46068da0e7efff218cf57dc6105372a753dc1f55"
+    },
+    {
+      "file": "src/data/activityCampaignTargets.ts",
+      "sha256": "bc7adf429485249620e74893be4041c68817c77baa5bd14a00778fa9997addf5"
+    },
+    {
+      "file": "src/data/banffExperienceGroups.json",
+      "sha256": "299e323b7a13b7d0fb77963f1e1f85af91a426f9822ec25ef33370b30cbdd3e6"
+    },
+    {
+      "file": "src/data/banffExperienceInventory.json",
+      "sha256": "e831ab9efec869dc945b3f66ee5d4c3306d650e63b22970a2ea428d5e777497a"
+    },
+    {
+      "file": "src/data/banffExperiencePhotoCredits.json",
+      "sha256": "e5308ed9e4c2f7b4644d2f55a07b9658ac7ca9485fe72a7a0f7107254f1c22d6"
+    },
+    {
+      "file": "src/data/banffExperiencePhotos.ts",
+      "sha256": "297f296cf21eba7d6f663a61c2542c3ee1b5437c85200c760a37b170d0403772"
+    },
+    {
+      "file": "src/data/banffExperienceProducts/additional.json",
+      "sha256": "cce6379e582352addfa0fb9089118357955c23e04c87ba6f048016ae03317c8d"
+    },
+    {
+      "file": "src/data/banffExperienceProducts/adventures.json",
+      "sha256": "3208ee45ba69845057a69ed8a83addc32412cb4c52704cbc77a7daa0ea409fba"
+    },
+    {
+      "file": "src/data/banffExperienceProducts/lakes-transport.json",
+      "sha256": "c633a155058d84ca717f48398f7db0ef1304692b2597e13bcd43f1f0ca4272d3"
+    },
+    {
+      "file": "src/data/banffExperienceProducts/miscellaneous.json",
+      "sha256": "2199e64e920b755e7e463a8f9885527413c61bc83b514b3596e6ca360a1ecbb5"
+    },
+    {
+      "file": "src/data/banffExperienceProducts/rail-history.json",
+      "sha256": "d6bb17ceecf69d4465d9f3c3f0053597412f44383bf9c5c4c042e5b68d957b12"
+    },
+    {
+      "file": "src/data/banffExperiences.ts",
+      "sha256": "19cba26d13d9e0fd566dc6b2091fd217dd55c663a94729146a9a98ec32ed9aba"
+    },
+    {
+      "file": "src/data/winterActivityPhotoCredits.json",
+      "sha256": "8e81df09d5c01c3a366d8b2f5dcedc34565f8107bba2df95385bc0a50041e307"
+    }
+  ],
+  "reviewArtifacts": [
+    {
+      "file": "review-copy.json",
+      "sha256": "29d423df1f207669f5eab46d46068da0e7efff218cf57dc6105372a753dc1f55"
+    },
+    {
+      "file": "source-groups.json",
+      "sha256": "25a50641c039a990ecd90fa7cf8cabd53de0468647ffa265051746cc8c8a9fe6"
+    },
+    {
+      "file": "plan.json",
+      "sha256": "3158e2379cbae69bf81a3a317dc0d68a13ed93a32a4ae2e5c700a8cd83601bb2"
+    },
+    {
+      "file": "existing-state.json",
+      "sha256": "d2c608f7acb95968930ede75bc83928fa6c33944cd5c95095a9f7a9c23173cbc"
+    },
+    {
+      "file": "template-provenance.json",
+      "sha256": "6f84dbb7dcae751c48b39d21be47233a9987fda14227b727194c6b29feb5ad8e"
+    },
+    {
+      "file": "generate.mjs",
+      "sha256": "e789b69d98c896303bce20def339404e80c4d6b334d0d167550bb5005f2ed53d"
+    },
+    {
+      "file": "check-upload.py",
+      "sha256": "1033351e7dad9ce52af4fbc9376f179cc3056ae33cc6fccf24024c29cf8d6266"
+    },
+    {
+      "file": "README.md",
+      "sha256": "0815e82d098640faed491a38bfcf6eff70a0773aa36fca76c79ac2854aa635e1"
+    }
+  ],
+  "existingGroups": {
+    "policy": "Only novel Keyword Add rows use the exact saved group ID/name. Existing ads, group names, statuses and terms are not edited. A held family only adds Paused terms; it does not pause an existing live object.",
+    "sourceReadbackMustBeRefreshed": true
+  },
+  "urlContract": {
+    "finalUrls": "Clean actual canonical guide paths from the validated site model.",
+    "source": "google",
+    "medium": "cpc",
+    "cohort": "bb_ca_winter_50_test",
+    "content": "Fixed experience_<family_id>_rsa label for new ads; no raw visitor parameters."
+  },
+  "paidReadinessMeaning": "Ready is a reviewed guide/primary match, not proof of date inventory, policy approval, delivery, bookings or margin.",
+  "importBoundary": {
+    "accountOperationsPerformed": false,
+    "previewPerformed": false,
+    "applyPerformed": false,
+    "liveDestinationsCheckedByWriter": false,
+    "requiredBeforeApply": [
+      "Verify the deployed guide revision and all actual clean destinations.",
+      "Refresh native saved-state exports and remove any newly duplicated terms.",
+      "Preview each non-empty file and check exact destination campaign, counts and zero errors.",
+      "Apply in listed order; do not blindly reapply Add rows.",
+      "Read back native group/ad/keyword statuses, final URLs, 7p campaign cap and £50 total budget."
+    ]
+  },
+  "bidsNote": "Default max. CPC fields request 7p on new group/keyword rows. Under Maximize clicks the campaign-level maximum CPC is the controlling limit and must be verified in native settings."
+}
