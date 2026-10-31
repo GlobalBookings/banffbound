@@ -1,0 +1,51 @@
+{
+  "project": "@spiresdigital/banffbound",
+  "projectId": "bc4566b5-997f-45fa-abca-eabf5b98630c",
+  "platform": "ios",
+  "bundleIdentifier": "com.banffbound.app",
+  "buildId": "110d9298-cef0-491d-850e-59897f19a89d",
+  "buildUrl": "https://expo.dev/accounts/spiresdigital/projects/banffbound/builds/110d9298-cef0-491d-850e-59897f19a89d",
+  "status": "FINISHED",
+  "distribution": "STORE",
+  "buildProfile": "production",
+  "appVersion": "1.0.0",
+  "buildNumber": "1",
+  "createdAt": "2026-10-31T02:19:45.139Z",
+  "remoteUpdatedAt": "2026-10-31T02:23:01.924Z",
+  "completedAt": "2026-10-31T02:23:01.747Z",
+  "sourceFingerprint": "ad9f0fbde16333fd43fef27978c491785154cb170924d2f15b5a57f8667d8ea4",
+  "sourceFileCount": 48,
+  "easFingerprint": "9a3ad65d3b5847e029228018f3344189a96aee1f",
+  "isolatedSourceRoot": "/tmp/banffbound-native-build",
+  "uploadedArchiveApproximateBytes": 1400000,
+  "artifactAvailable": true,
+  "artifactUrl": "https://expo.dev/artifacts/eas/_PWnxeFU7eBWQ1ynH17qAOUwfj0x_LOJ9zOzxZ9iXx8.ipa",
+  "artifactBytes": 13852591,
+  "artifactSha256": "f7401d33939df9fe6798b5f462edaa45b7d9b232f4a3d2c94125cecd981edfc1",
+  "artifactMetadata": {
+    "bundleIdentifier": "com.banffbound.app",
+    "displayName": "BanffBound",
+    "version": "1.0.0",
+    "buildNumber": "1",
+    "minimumIOSVersion": "16.4",
+    "deviceFamilies": [1, 2],
+    "teamIdentifier": "P7A6HRL2B7",
+    "embeddedProvisioningProfilePresent": true,
+    "nonExemptEncryption": false
+  },
+  "localSignatureVerification": {
+    "verified": false,
+    "result": "CSSMERR_TP_NOT_TRUSTED",
+    "note": "The local macOS verifier could not establish certificate trust. The EAS build succeeded and the artifact's bundle/team metadata matched; real-device installation remains unverified."
+  },
+  "submittedToAppStoreConnect": false,
+  "publiclyReleased": false,
+  "realDeviceVerified": false,
+  "notes": [
+    "Isolated portable source and original mobile source fingerprints matched before upload.",
+    "Archive root contained only the mobile app; dependency symlink, build output and signing/environment files were excluded.",
+    "Remote signing credentials had been configured and verified separately before queueing.",
+    "The completed IPA was downloaded and hashed; bundle, team, version and embedded profile metadata were checked.",
+    "Build completion, local certificate trust, real-device testing and store release are separate checks."
+  ]
+}

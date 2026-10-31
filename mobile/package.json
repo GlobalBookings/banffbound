@@ -1,0 +1,52 @@
+{
+  "name": "banffbound-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "web": "expo start --web",
+    "ios": "expo run:ios",
+    "android": "expo run:android",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "sync:content": "node scripts/sync-content.mjs",
+    "export:web": "expo export --platform web --output-dir dist && node scripts/postexport.mjs",
+    "export:native": "expo export --platform ios --platform android --output-dir dist-native",
+    "build:ios": "eas build --platform ios --profile production",
+    "build:android": "eas build --platform android --profile production"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
+    "@react-native-async-storage/async-storage": "3.1.1",
+    "expo": "~57.0.31",
+    "expo-document-picker": "~57.0.3",
+    "expo-file-system": "~57.0.6",
+    "expo-font": "~57.0.3",
+    "expo-linear-gradient": "~57.0.2",
+    "expo-location": "~57.0.17",
+    "expo-notifications": "~57.0.18",
+    "expo-sharing": "~57.0.19",
+    "expo-splash-screen": "~57.0.10",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-web": "^0.21.2",
+    "react-native-webview": "13.16.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "~19.2.2",
+    "tsx": "^4.20.6",
+    "typescript": "~6.0.3"
+  },
+  "expo": {
+    "install": {
+      "exclude": [
+        "@react-native-async-storage/async-storage"
+      ]
+    }
+  }
+}

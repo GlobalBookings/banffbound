@@ -1,0 +1,123 @@
+{
+  "status": "not_run",
+  "purpose": "Record actual physical-device validation of the final signed iOS and Android builds. JavaScript export and browser tests do not fill this report.",
+  "app": "BanffBound",
+  "expectedVersion": "1.0.0",
+  "iosBundleIdentifier": "com.banffbound.app",
+  "androidPackage": "com.banffbound.app",
+  "tester": null,
+  "testedAt": null,
+  "sourceRevision": null,
+  "sourceFingerprint": null,
+  "contentVersion": null,
+  "builds": {
+    "ios": {
+      "easBuildId": null,
+      "binarySha256": null,
+      "buildNumber": null,
+      "distributionTrack": null,
+      "deviceModel": null,
+      "osVersion": null,
+      "installationResult": "not_run"
+    },
+    "android": {
+      "easBuildId": null,
+      "binarySha256": null,
+      "versionCode": null,
+      "distributionTrack": null,
+      "deviceModel": null,
+      "osVersion": null,
+      "installationResult": "not_run"
+    }
+  },
+  "resultValues": ["not_run", "pass", "fail", "blocked", "not_applicable_with_reason"],
+  "checks": [
+    {
+      "id": "signed_install_and_identity",
+      "check": "Install the intended signed build through TestFlight or an approved iOS device track and the intended Android internal/closed track; verify app name, version, build number and release identity.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "offline_first_launch",
+      "check": "Launch a fresh installation with connectivity disabled. Confirm bundled catalogue, guides and a usable local trip render without requiring a network response.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "trip_persistence_after_termination",
+      "check": "Create a synthetic trip, change date/base/transport/party, save a place, reorder an outing and edit packing. Terminate the process, relaunch offline and verify every edit remains.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "itinerary_constraints",
+      "check": "Exercise one-to-seven-day and three-outing limits, full-day conflicts, season changes and car-free/base transfer warnings. Confirm blocked or adjusted actions are explained.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "booking_notes_and_private_sharing",
+      "check": "Add a synthetic booking with Banff date/time and a distinctive private note. Verify marked-booked wording remains a personal checklist, and a shared summary omits that private note. Use a local/private test destination.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "offline_save_and_export",
+      "check": "Complete the native offline-save/export action, verify its file and success state, and test a failed write or unavailable share handler. Confirm a failure does not produce a completed-save claim.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "location_permission_and_maps",
+      "check": "Deny location permission and verify manual browsing works. With tester-authorised location, test Near me, unavailable/approximate coordinates and map source attribution. Verify map/directions network requirements are clear.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "weather_failures_and_network_privacy",
+      "check": "Verify dated fixed-station ECCC weather, expiry, denied/offline network and malformed/unavailable data. Confirm requests do not contain user GPS or trip/booking notes and no failure becomes zero or safe/open status.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "notification_permission_and_delivery",
+      "check": "Deny notification permission and verify core use continues. With tester approval, schedule a near-future synthetic booking reminder; verify real notification delivery and the selected booking destination when opened.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "reminder_edits_deletion_and_timezone",
+      "check": "Verify reminder edits replace the old notification; deletion/turn-off/reset cancel it. Repeat from a device timezone outside Alberta and across America/Edmonton daylight-saving boundaries, including rejected nonexistent wall times.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "calculators_and_input_recovery",
+      "check": "Exercise park-pass and trip-budget tools with adults/children, different durations, blank/invalid/large inputs and restored state. Verify dated rates, separate transport/parking/admission and clear estimates.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "accessibility_and_layout",
+      "check": "Use VoiceOver/TalkBack, large text, reduced motion, keyboard dismissal, screen-edge safe areas and landscape/tablet handling where supported. Verify selected tabs and checked checklist items announce their actual states.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "external_handoffs",
+      "check": "Open official-source, guide, map and booking links, then return to the app without lost state. Verify no test booking, payment or conversion is submitted.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "reset_and_upgrade_recovery",
+      "check": "On a disposable synthetic trip, verify reset removes saved trip data and reminders. Test upgrading a previous test build with valid and corrupted stored data; confirm clear recovery and no silent loss of unrelated device data.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    },
+    {
+      "id": "public_privacy_and_support",
+      "check": "Verify app privacy controls, production /app/privacy/ and /app/support/ URLs, monitored contact, actual SDK/network disclosures and consistency with store privacy/Data safety forms.",
+      "ios": "not_run", "android": "not_run", "evidence": [], "notes": null
+    }
+  ],
+  "screenshots": {
+    "nativeDeviceEvidence": [],
+    "appStoreApprovedAssets": [],
+    "webScreenshotsAreNativeEvidence": false
+  },
+  "releaseDecision": {
+    "deviceQaComplete": false,
+    "readyForStoreSubmission": false,
+    "reviewer": null,
+    "blockingIssues": [],
+    "notes": "All checks are unexecuted. Populate results only from the identified final signed builds on real devices."
+  }
+}

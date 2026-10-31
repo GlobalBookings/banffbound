@@ -1,0 +1,47 @@
+{
+  "status": "draft_not_submitted",
+  "preparedOn": "2026-10-30",
+  "appName": "BanffBound",
+  "publisher": "SPIRES DIGITAL LTD",
+  "expoOwner": "spiresdigital",
+  "expoProjectId": "bc4566b5-997f-45fa-abca-eabf5b98630c",
+  "iosBundleIdentifier": "com.banffbound.app",
+  "androidPackage": "com.banffbound.app",
+  "appleTeamId": "P7A6HRL2B7",
+  "appleProviderId": "129009564",
+  "ownershipEvidence": "Current authenticated Apple CLI session identifies SPIRES DIGITAL LTD and the listed team/provider; app configuration links the spiresdigital Expo project. Earlier cached Individual team wording is stale.",
+  "publicStoreUrls": {
+    "ios": null,
+    "android": null
+  },
+  "locale": "en-US",
+  "ios": {
+    "subtitle": "Your Canadian Rockies trip",
+    "category": "Travel",
+    "keywords": "banff,lake louise,canmore,rockies,itinerary,travel,trip planner,shuttle,packing,park pass"
+  },
+  "android": {
+    "shortDescription": "Plan Banff, Lake Louise and Canmore with itineraries and practical guides.",
+    "category": "Travel & Local"
+  },
+  "description": "Make the most of Banff, Lake Louise and Canmore with a practical trip companion.\n\nBuild and edit your itinerary, discover places to explore, organise booking tasks and keep useful trip details on your device. Find seasonal ideas, transport guidance, packing reminders and practical planning tools in one place.\n\nYour trip, organised\nCreate a plan that fits your base, season and travel style. Save places, organise each day and record your own booking notes.\n\nExplore the area\nBrowse reviewed places and concise guides for lakes, walks, attractions, winter activities, food and practical services. Follow source links when you need the latest official details.\n\nPrepare before you leave\nKeep saved plans and bundled guides available on your device. Online maps, remote images, current information, external links and booking services require connectivity. The app does not include offline turn-by-turn navigation.\n\nPlan the practical details\nUse planning tools and checklists to understand separate admission, transport, parking and activity arrangements. Estimates and editorial guidance are dated; operators set their own availability and prices.\n\nBanffBound is an independent travel guide. Reservations and payments are handled by the relevant provider, and the provider's terms apply.",
+  "website": "https://banffbound.com/",
+  "supportUrl": "https://banffbound.com/app/support/",
+  "supportEmail": "hello@banffbound.com",
+  "appPrivacyPolicyUrl": "https://banffbound.com/app/privacy/",
+  "urlVerification": {
+    "support": "prepared_not_yet_verified_on_production",
+    "appPrivacyPolicy": "prepared_not_yet_verified_on_production"
+  },
+  "screenshots": [],
+  "reviewBeforeSubmission": [
+    "Match the registered Apple and Play app records to the approved owner and identifiers before submission.",
+    "Verify every listed feature on the final signed binaries.",
+    "Publish and verify an app-specific privacy policy based on actual dependency and network behaviour.",
+    "Complete Apple privacy labels and Google Play Data safety from the same audit.",
+    "Confirm monitored support access and content/photography rights for mobile distribution.",
+    "Capture actual device screenshots and verify accessibility and offline claims.",
+    "Confirm applicable Play testing and store review requirements.",
+    "Replace null public listing URLs only after public listings are verified."
+  ]
+}

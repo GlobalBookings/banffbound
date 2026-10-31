@@ -1,0 +1,25 @@
+{
+  "id": "/app/",
+  "name": "BanffBound",
+  "short_name": "BanffBound",
+  "description": "Your Banff trip, organised and ready for the day.",
+  "start_url": "/app/",
+  "scope": "/app/",
+  "display": "standalone",
+  "background_color": "#f8f7f2",
+  "theme_color": "#163b31",
+  "icons": [
+    {
+      "src": "/app/icons/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icons/icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

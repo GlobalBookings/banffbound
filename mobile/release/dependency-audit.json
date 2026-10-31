@@ -1,0 +1,72 @@
+{
+  "reviewedOn": "2026-10-30",
+  "scope": "mobile/package-lock.json and installed Expo SDK 57 dependency tree",
+  "command": "npm audit --json",
+  "observedCounts": {
+    "critical": 0,
+    "high": 2,
+    "moderate": 11,
+    "low": 2,
+    "total": 15
+  },
+  "interpretation": "The reported package count includes parent packages affected through the same four underlying dependencies. The identified dependency paths belong to Expo build, configuration, fingerprint and development-tool code. They are not app feature dependencies. A symbol search did not identify their characteristic code in the initial web export; native runtime behaviour still requires signed-build validation.",
+  "underlyingFindings": [
+    {
+      "package": "zod",
+      "installed": "3.25.76",
+      "via": "expo -> @expo/cli",
+      "severity": "high",
+      "advisory": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+      "patchedFrom": "4.6.6",
+      "currentPatchedCandidate": "4.6.7",
+      "compatibility": "No patched 3.x release was available. A 4.x override crosses an API major. The installed CLI has two JavaScript importers, both dev-tool schema modules using APIs present in 4.x; validate those schemas and CLI exports before adopting.",
+      "recommendedAction": "Consider a scoped @expo/cli zod override only after compatibility checks; do not force an Expo SDK downgrade."
+    },
+    {
+      "package": "glob",
+      "installed": "13.0.6",
+      "via": "Expo CLI/config/plugins/metro/fingerprint",
+      "severity": "moderate",
+      "advisory": "https://github.com/advisories/GHSA-3g3m-2fjr-6pw4",
+      "patchedFrom": "14.0.2",
+      "currentPatchedCandidate": "14.0.3",
+      "compatibility": "Patched release retains Node 18, 20 or >=22 support, but crosses a package major and must be checked with actual Expo exports and configuration.",
+      "recommendedAction": "Test a pinned override to 14.0.3."
+    },
+    {
+      "package": "minimatch",
+      "installed": "10.2.6",
+      "via": "glob and @expo/fingerprint",
+      "severity": "moderate",
+      "advisory": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+      "patchedFrom": "11.0.1",
+      "currentPatchedCandidate": "11.0.3",
+      "recommendedAction": "Test a pinned override to 11.0.3 alongside glob."
+    },
+    {
+      "package": "deepmerge",
+      "installed": "4.3.1",
+      "via": "@expo/config",
+      "severity": "low",
+      "advisory": "https://github.com/advisories/GHSA-gcqx-w48m-w2h4",
+      "patchedFrom": null,
+      "recommendedAction": "No patched registry release was available. Keep configuration inputs trusted and track an upstream patch; do not claim the finding fixed."
+    }
+  ],
+  "unsafeAutomaticSuggestion": "npm audit fix --force proposes an incompatible Expo 51 downgrade; do not apply it to the SDK 57 app.",
+  "proposedOverrides": {
+    "@expo/cli": {
+      "zod": "4.6.7"
+    },
+    "glob": "14.0.3",
+    "minimatch": "11.0.3"
+  },
+  "overrideStatus": "proposed_not_applied_by_reviewer",
+  "validationRequiredAfterChanges": [
+    "Parse valid and invalid fixtures through the installed Expo DevToolsPlugin and MCP extension schemas.",
+    "Run Expo public and prebuild configuration checks.",
+    "Run app typecheck, domain/persistence/content tests and service-worker tests.",
+    "Run actual web, iOS and Android JavaScript exports.",
+    "Rerun npm audit and record remaining findings precisely."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "reviewedOn": "2026-10-30",
+  "environment": "Local Expo web export in an isolated in-app browser tab",
+  "initialUrl": "http://127.0.0.1:8765/app/",
+  "passedJourneys": [
+    "Saved Lake Louise and verified the bookmark persisted after a browser reload.",
+    "Changed first date to 2027-02-14, base to Canmore, transport to car and party to four; verified the displayed itinerary and reload persistence.",
+    "Reordered day-one outings and observed the changed order.",
+    "Checked a packing item and observed the visual checked icon.",
+    "Created a dated booking task with Banff time and a private test note; observed the checklist entry.",
+    "Completed browser Save trip for offline and observed the saved timestamp.",
+    "Stopped a separate localhost origin server, reloaded the app and verified it still rendered with the saved Lake Louise bookmark.",
+    "Navigated to the cached privacy page while the separate origin server remained stopped."
+  ],
+  "offlineVerification": {
+    "origin": "http://127.0.0.1:8766",
+    "method": "Copied the exact initial export to a separate temporary server, completed the app save, stopped only that server and reloaded the controlled browser tab.",
+    "assetFingerprint": "83381e1ee33577861c5b",
+    "result": "App shell, saved bookmark and privacy disclosure reopened with the app origin unavailable.",
+    "boundary": "The computer's general internet connection was not disabled. This verifies origin-offline app caching, not third-party map availability or a native device airplane-mode test."
+  },
+  "issuesForParentReview": [
+    "The accessibility tree reports Value 0 for selected tabs and checked packing items despite changed visuals. Inspect the actual selected/checked accessibility states before release."
+  ],
+  "notClaimed": [
+    "Native iOS or Android device installation",
+    "Phone viewport visual verification",
+    "Actual provider reservation or payment",
+    "Notification permission or delivery",
+    "App Store or Google Play publication"
+  ]
+}
