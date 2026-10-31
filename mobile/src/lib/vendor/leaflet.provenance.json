@@ -16,5 +16,9 @@
       "upstreamIntegrity": "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     }
   },
-  "modification": "JS sourceMappingURL footer omitted to prevent a runtime source-map request; CSS unchanged. Custom div icons do not use default icon image assets."
+  "modification": "JS sourceMappingURL footer omitted to prevent a runtime source-map request; CSS unchanged. Custom div icons do not use default icon image assets.",
+  "licenseDelivery": {
+    "file": "leaflet-license.ts",
+    "text": "Full BSD 2-Clause notice is bundled and available in the Map software licence control; the separate upstream licence text uses LF line endings."
+  }
 }

@@ -3,6 +3,7 @@ import { Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWin
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MapSurface from './MapSurface';
+import { leafletLicense } from '../lib/vendor/leaflet-license';
 import { mapCategories, type MapArea, type MapCategory, type MapPoint } from '../data/map';
 import { mapPoints, mapDataVersion } from '../data/map.generated';
 import { commerceItems } from '../data/commerce';
@@ -20,6 +21,7 @@ export default function MapBrowser({ onOpenUrl, onOpenCommerceUrl, focusPlaceId,
   const [area, setArea] = useState<MapArea | 'all'>('all');
   const [categories, setCategories] = useState<MapCategory[]>([]);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [creditsOpen, setCreditsOpen] = useState(false);
   const [menusOnly, setMenusOnly] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [detailId, setDetailId] = useState<string | null>(null);
@@ -82,6 +84,8 @@ export default function MapBrowser({ onOpenUrl, onOpenCommerceUrl, focusPlaceId,
     <Text style={m.footnote}>Place details are bundled; online map tiles, menus and booking pages need a connection. Map features may mark a building or site centre. Check the entrance, access and signs on arrival.</Text>
     <Pressable accessibilityRole="link" onPress={() => open('https://www.openstreetmap.org/copyright')}><Text style={[s.link, { fontSize: 12 }]}>Map data © OpenStreetMap contributors · ODbL</Text></Pressable>
     <Pressable accessibilityRole="link" onPress={() => open('https://banffbound.com/app/map-data/osm-points.json')}><Text style={[s.link, { fontSize: 12 }]}>Open map-data download and licence</Text></Pressable>
+    <Pressable accessibilityRole="button" accessibilityLabel="Map software licence" accessibilityState={{ expanded: creditsOpen }} onPress={() => setCreditsOpen(!creditsOpen)}><Text style={[s.link, { fontSize: 12 }]}>Map software licence</Text></Pressable>
+    {creditsOpen && <Text style={m.footnote}>{leafletLicense}</Text>}
     <Text style={m.footnote}>Map directory {mapDataVersion}. Public facilities, opening hours and menus can change.</Text>
     <Modal visible={!!selected} transparent animationType="slide" onRequestClose={() => setDetailId(null)}>
       <View style={m.scrim} accessibilityViewIsModal><View style={m.sheet}><SafeAreaView edges={['top', 'bottom']} style={{ flex: 1 }}>
