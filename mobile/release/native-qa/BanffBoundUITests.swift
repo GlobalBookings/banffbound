@@ -270,22 +270,12 @@ final class BanffBoundUITests: XCTestCase {
         XCTAssertTrue(visibleID(searchID).isHittable, "Mode must open its actual searchable catalogue")
     }
 
-    private func commerceSearch(_ identifier: String, query: String, heading: String) {
+    private func commerceSearch(_ identifier: String, query: String, heading: String) throws {
         scrollTo(identifier)
         let field = app.textFields.matching(identifier: identifier).firstMatch
-        XCTAssertTrue(field.waitForExistence(timeout: 10), "Commerce search must be a native editable text field")
-        field.tap()
-        field.typeText(query + "\n")
-        // A single-line native Return normally ends editing. The visible,
-        // noninteractive heading is the ordinary ScrollView dismissal fallback.
-        if app.keyboards.firstMatch.exists {
-            let title = app.staticTexts.matching(NSPredicate(format: "label == %@", heading)).firstMatch
-            XCTAssertTrue(title.isHittable, "Need the visible catalogue heading to dismiss its search keyboard")
-            title.tap()
-        }
-        let dismissed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.keyboards.firstMatch)
-        XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: 5), .completed, "Search keyboard must dismiss before browsing results")
-        XCTAssertEqual(field.value as? String, query, "The public search query must reach the actual catalogue")
+        XCTAssertTrue(field.waitForExistence(timeout: 10) && field.isHittable, "Commerce search must be a real native editable field")
+        let section = identifier.replacingOccurrences(of: "commerce-search-", with: "")
+        try nativeSearch(field, query: query, heading: heading, collection: "commerce", section: section)
     }
 
     private func attachJSON(_ value: [String: Any], name: String) throws {
@@ -302,7 +292,7 @@ final class BanffBoundUITests: XCTestCase {
         XCTAssertTrue(visibleID("commerce-card-gyg-256607").exists)
         capture("store-05-tours")
 
-        commerceSearch("commerce-search-tours", query: "Banff Gondola admission", heading: "Tours & experiences")
+        try commerceSearch("commerce-search-tours", query: "Banff Gondola admission", heading: "Tours & experiences")
         scrollTo("commerce-card-gyg-256607")
         tapID("commerce-card-gyg-256607")
         XCTAssertTrue(visible("Banff Gondola admission").exists)
@@ -360,7 +350,7 @@ final class BanffBoundUITests: XCTestCase {
         commerceMode("Stays", searchID: "commerce-search-stays")
         XCTAssertTrue(visibleID("commerce-card-hotel-fairmont-banff-springs").exists)
         capture("store-06-stays")
-        commerceSearch("commerce-search-stays", query: "Fairmont Banff Springs", heading: "Hotels & vacation rentals")
+        try commerceSearch("commerce-search-stays", query: "Fairmont Banff Springs", heading: "Hotels & vacation rentals")
         scrollTo("commerce-card-hotel-fairmont-banff-springs")
         tapID("commerce-card-hotel-fairmont-banff-springs")
         XCTAssertTrue(visible("Fairmont Banff Springs").exists)
@@ -375,7 +365,7 @@ final class BanffBoundUITests: XCTestCase {
         XCTAssertTrue(visible("All website guides").exists)
         XCTAssertTrue(visibleID("commerce-card-guide-eating-out-in-banff").exists)
         capture("store-07-guides")
-        commerceSearch("commerce-search-guides", query: "concerts show planning", heading: "All website guides")
+        try commerceSearch("commerce-search-guides", query: "concerts show planning", heading: "All website guides")
         scrollTo("commerce-card-guide-banff-live-music")
         tapID("commerce-card-guide-banff-live-music")
         XCTAssertTrue(visible("Live Music in Banff: Pubs, Concerts & Show Planning").exists,
@@ -411,6 +401,12 @@ final class BanffBoundUITests: XCTestCase {
         if element("Clear map search").exists { tap("Clear map search") }
         let field = app.textFields.matching(identifier: "map-search").firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 10) && field.isHittable, "Map search must be a real native editable field")
+        try nativeSearch(field, query: query, heading: "Get your bearings.", collection: "map")
+    }
+
+    // One actual native entry/submit path for map and commerce. No character
+    // throttling or query retries; both native buffer stages remain mandatory.
+    private func nativeSearch(_ field: XCUIElement, query: String, heading: String, collection: String, section: String? = nil) throws {
         field.tap()
         let keyboard = app.keyboards.firstMatch
         let isPhone = app.frame.width < 600
@@ -421,16 +417,19 @@ final class BanffBoundUITests: XCTestCase {
             ? keyboardReady && XCTWaiter.wait(for: [keyReadyBeforeTyping], timeout: 10) == .completed
             : searchKey.exists && searchKey.isHittable
         var observation: [String: Any] = [
-            "kind": "native-map-input-observation", "query": query,
+            "kind": "native-\(collection)-input-observation", "query": query,
+            "fieldIdentifier": field.identifier,
             "deviceClass": isPhone ? "iphone" : "ipad",
             "entryMethod": "bulk-native-text-without-return", "typedWithoutReturn": false,
             "keyboardReadyBeforeTyping": keyboardReady,
             "searchKeyReadyBeforeTyping": searchKeyReadyBeforeTyping,
             "beforeValue": NSNull(), "afterValue": NSNull(),
-            "dismissalMethod": "not-attempted", "headingObserved": false,
+            "dismissalMethod": "not-attempted", "headingObserved": false, "headingLabel": NSNull(),
             "dismissalCompleted": false,
         ]
+        if let section { observation["section"] = section }
         let slug = query.replacingOccurrences(of: "[^A-Za-z0-9-]+", with: "-", options: .regularExpression)
+        let identity = section.map { "\($0)-\(slug)" } ?? slug
         func record(_ phase: String) throws {
             observation["phase"] = phase
             observation["fieldValue"] = (field.value as? String).map { $0 as Any } ?? NSNull()
@@ -438,9 +437,11 @@ final class BanffBoundUITests: XCTestCase {
             observation["searchKeyExists"] = searchKey.exists
             observation["searchKeyHittable"] = searchKey.exists && searchKey.isHittable
             observation["keyboardButtonLabels"] = keyboard.exists ? Array(keyboard.buttons.allElementsBoundByIndex.suffix(12)).map { String($0.label.prefix(80)) } : []
-            let count = app.staticTexts.matching(identifier: "map-result-count").firstMatch
+            let count = collection == "map"
+                ? app.staticTexts.matching(identifier: "map-result-count").firstMatch
+                : app.staticTexts.matching(NSPredicate(format: "label MATCHES '[0-9]+ results?'")).firstMatch
             observation["resultCountLabel"] = count.exists ? count.label : "unavailable"
-            try attachJSON(observation, name: "qa-map-input-observation-\(slug)-\(phase)")
+            try attachJSON(observation, name: "qa-\(collection)-input-observation-\(identity)-\(phase)")
         }
         if isPhone && (!keyboardReady || !searchKeyReadyBeforeTyping) {
             try record("before")
@@ -463,13 +464,14 @@ final class BanffBoundUITests: XCTestCase {
             observation["dismissalMethod"] = "native-search-key"
             searchKey.tap()
         } else if !isPhone {
-            let heading = app.staticTexts.matching(NSPredicate(format: "label == 'Get your bearings.'")).firstMatch
-            let headingReady = heading.exists && heading.isHittable
+            let title = app.staticTexts.matching(NSPredicate(format: "label == %@", heading)).firstMatch
+            let headingReady = title.exists && title.isHittable
             observation["headingObserved"] = headingReady
+            if headingReady { observation["headingLabel"] = title.label }
             if !headingReady { try record("after") }
-            XCTAssertTrue(headingReady, "An iPad fallback must use the actually visible native heading")
+            XCTAssertTrue(headingReady, "An iPad fallback must use the actually visible native catalogue or map heading")
             observation["dismissalMethod"] = "ipad-visible-heading"
-            heading.tap()
+            title.tap()
         } else {
             try record("after")
             XCTAssertTrue(searchReady, "The phone must submit with its actual, hittable native Search key")
@@ -481,7 +483,7 @@ final class BanffBoundUITests: XCTestCase {
         let afterValue = field.value as? String
         observation["afterValue"] = afterValue.map { $0 as Any } ?? NSNull()
         try record("after")
-        XCTAssertEqual(dismissal, .completed, "Map keyboard must dismiss before tapping a document marker")
+        XCTAssertEqual(dismissal, .completed, "The native keyboard must dismiss before browsing results")
         XCTAssertEqual(afterValue, query, "The complete native query must survive the explicit Search or iPad dismissal action")
     }
 
@@ -534,7 +536,12 @@ final class BanffBoundUITests: XCTestCase {
 
     func test09MapCategoriesFacilitiesAndEmptyReset() throws {
         tab("Map", heading: "Get your bearings.")
-        XCTAssertTrue(app.webViews.firstMatch.waitForExistence(timeout: 25))
+        XCTAssertTrue(app.webViews.firstMatch.waitForExistence(timeout: 25), "Map is the default discovery view")
+        tapID("map-view-list")
+        let listView = app.buttons.matching(identifier: "map-view-list").firstMatch
+        XCTAssertTrue(listView.isSelected, "Use the actual selected List view for phone facilities and empty results")
+        let mapHidden = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.webViews.firstMatch)
+        XCTAssertEqual(XCTWaiter.wait(for: [mapHidden], timeout: 5), .completed, "List view must hide the interactive map")
         tapID("map-filter-toggle")
         tap("Lake Louise")
         let restaurants = mapCategoryFilter("Restaurants")
@@ -548,6 +555,14 @@ final class BanffBoundUITests: XCTestCase {
         mapScrollToTop()
         tapID("map-filter-toggle")
         try mapSearch("Public Washrooms")
+        // Switching presentation keeps the exact query and chosen facilities filters.
+        tapID("map-view-map")
+        XCTAssertTrue(app.buttons.matching(identifier: "map-view-map").firstMatch.isSelected)
+        XCTAssertEqual(app.textFields.matching(identifier: "map-search").firstMatch.value as? String, "Public Washrooms")
+        tapID("map-view-list")
+        XCTAssertTrue(listView.isSelected)
+        XCTAssertEqual(app.textFields.matching(identifier: "map-search").firstMatch.value as? String, "Public Washrooms")
+        XCTAssertEqual(visibleID("map-result-count").label, "1 place", "View switching must retain the chosen area, toilet category and query")
         scrollTo("View map details for Public Washrooms")
         tap("View map details for Public Washrooms")
         XCTAssertEqual(visibleID("map-detail-title").label, "Public Washrooms")
@@ -570,6 +585,7 @@ final class BanffBoundUITests: XCTestCase {
         let restored = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label MATCHES '[1-9][0-9]* places'"), object: count)
         XCTAssertEqual(XCTWaiter.wait(for: [restored], timeout: 5), .completed, "Reset must restore nonempty unfiltered results")
         XCTAssertFalse(element("Clear map search").exists, "Reset must clear the invalid search query")
+        XCTAssertTrue(listView.isSelected, "Reset filters must preserve the visitor's selected List view")
         XCTAssertTrue(app.buttons.matching(NSPredicate(format: "label == 'Everything'")).firstMatch.isSelected, "Reset must restore all categories")
         // The collapsed control has its own accessibility label, so verify the
         // selected area through the real expanded area choices.
@@ -578,6 +594,7 @@ final class BanffBoundUITests: XCTestCase {
         XCTAssertTrue(allAreas.waitForExistence(timeout: 10) && allAreas.isHittable && allAreas.isSelected, "Reset must restore the selected All areas chip")
         try attachJSON([
             "kind": "native-map-filter-facilities", "multipleCategoriesSelected": true,
+            "listViewSelected": listView.isSelected, "viewMode": "list", "viewSwitchPreservedQueryAndFilters": true,
             "singleCategoryRetainedAfterDeselect": true, "areaObserved": "Lake Louise",
             "searchQuery": "Public Washrooms", "facilityTitle": "Public Washrooms",
             "facilityCategoryObserved": "Toilets", "facilityFieldObserved": "Access in map data",

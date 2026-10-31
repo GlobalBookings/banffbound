@@ -31,7 +31,9 @@ class ReceiptTest(unittest.TestCase):
                     test_count=9, substituted_test=False, missing_browser=False, browser_returned=True, browser_address_visible=False, missing_browser_screen=False,
                     invented_partner_query=False, missing_map_marker=False, missing_map_filter=False,
                     map_marker_surface='native-webview-document-button', map_facility_field='Access in map data', map_reset=True,
-                    missing_input_stage=False, partial_input=False, phone_heading=False, phone_key_not_ready=False):
+                    missing_input_stage=False, partial_input=False, phone_heading=False, phone_key_not_ready=False,
+                    commerce_inputs='complete', ipad_heading=None, map_list_selected=True, map_view_mode='list',
+                    map_view_switch_preserved=True, inspect_evidence=None):
         with tempfile.TemporaryDirectory(prefix='banffbound-extractor-unit-fixture-') as directory:
             root = Path(directory)
             root.joinpath('logs').mkdir()
@@ -97,6 +99,8 @@ class ReceiptTest(unittest.TestCase):
                             'sourceObserved': 'OpenStreetMap contributors · node/1623434017', 'detailClosed': True,
                             'invalidQueryEmptyStateVerified': True, 'resetRestoredAllFilters': map_reset,
                             'restoredResultCountLabel': '975 places', 'locationPermissionRequested': False,
+                            'listViewSelected': map_list_selected, 'viewMode': map_view_mode,
+                            'viewSwitchPreservedQueryAndFilters': map_view_switch_preserved,
                         },
                     }
                     for name, observation in observations.items():
@@ -106,28 +110,60 @@ class ReceiptTest(unittest.TestCase):
                         filename = name + '.txt'
                         destination.joinpath(filename).write_text(json.dumps(observation))
                         entries.append({'exportedFileName': filename, 'suggestedHumanReadableName': filename})
-                    for index, query in enumerate(extract.MAP_INPUT_QUERIES):
-                        for stage in ('before', 'after'):
-                            if missing_input_stage and index == 0 and stage == 'after':
-                                continue
-                            observation = {
-                                'kind': 'native-map-input-observation', 'query': query, 'phase': stage,
-                                'deviceClass': device['label'], 'entryMethod': 'bulk-native-text-without-return',
-                                'typedWithoutReturn': True, 'keyboardReadyBeforeTyping': True,
-                                'searchKeyReadyBeforeTyping': not (phone_key_not_ready and device['label'] == 'iphone'),
-                                'beforeValue': query, 'afterValue': query if stage == 'after' else None,
-                                'fieldValue': query, 'keyboardVisible': stage == 'before',
-                                'dismissalMethod': 'not-attempted' if stage == 'before' else 'native-search-key',
-                                'searchReadyForDismissal': stage == 'after', 'headingObserved': False,
-                                'dismissalCompleted': stage == 'after', 'resultCountLabel': 'fixture-only',
-                            }
-                            if partial_input and index == 0 and stage == 'before':
-                                observation['beforeValue'] = observation['fieldValue'] = 'B'
-                            if phone_heading and device['label'] == 'iphone' and stage == 'after':
-                                observation.update(dismissalMethod='ipad-visible-heading', headingObserved=True)
-                            filename = f'input-{index}-{stage}.txt'
-                            destination.joinpath(filename).write_text(json.dumps(observation))
-                            entries.append({'exportedFileName': filename, 'suggestedHumanReadableName': 'qa-map-input-observation-' + filename})
+                    collections = [('map', tuple((None, query) for query in extract.MAP_INPUT_QUERIES)),
+                                   ('commerce', extract.COMMERCE_INPUT_QUERIES)]
+                    for collection, queries in collections:
+                        if collection == 'commerce' and commerce_inputs == 'missing':
+                            continue
+                        for index, (section, query) in enumerate(queries):
+                            for stage in ('before', 'after'):
+                                if (index == 0 and stage == 'after'
+                                        and (collection == 'map' and missing_input_stage
+                                             or collection == 'commerce' and commerce_inputs in ('missing-stage', 'failed-partial'))):
+                                    continue
+                                observation = {
+                                    'kind': f'native-{collection}-input-observation', 'query': query, 'phase': stage,
+                                    'deviceClass': device['label'], 'entryMethod': 'bulk-native-text-without-return',
+                                    'typedWithoutReturn': True, 'keyboardReadyBeforeTyping': True,
+                                    'searchKeyReadyBeforeTyping': not (collection == 'map' and phone_key_not_ready and device['label'] == 'iphone'),
+                                    'beforeValue': query, 'afterValue': query if stage == 'after' else None,
+                                    'fieldValue': query, 'keyboardVisible': stage == 'before',
+                                    'dismissalMethod': 'not-attempted' if stage == 'before' else 'native-search-key',
+                                    'searchReadyForDismissal': stage == 'after', 'headingObserved': False,
+                                    'dismissalCompleted': stage == 'after', 'resultCountLabel': 'fixture-only',
+                                }
+                                if section is not None:
+                                    observation['section'] = section
+                                if collection == 'map' and partial_input and index == 0 and stage == 'before':
+                                    observation['beforeValue'] = observation['fieldValue'] = 'B'
+                                if collection == 'map' and phone_heading and device['label'] == 'iphone' and stage == 'after':
+                                    observation.update(dismissalMethod='ipad-visible-heading', headingObserved=True,
+                                                       headingLabel=extract.INPUT_HEADINGS['map'])
+                                if device['label'] == 'ipad' and ipad_heading and stage == 'after':
+                                    heading = extract.INPUT_HEADINGS[section or 'map']
+                                    observation.update(dismissalMethod='ipad-visible-heading', searchReadyForDismissal=False,
+                                                       headingObserved=True, headingLabel=heading if ipad_heading == 'actual' else 'Wrong section heading')
+                                    if ipad_heading == 'missing':
+                                        observation.pop('headingLabel')
+                                if collection == 'commerce' and index == 0:
+                                    if commerce_inputs in ('partial-before', 'failed-partial') and stage == 'before':
+                                        observation['beforeValue'] = observation['fieldValue'] = 'Bion'
+                                    if commerce_inputs == 'partial-after' and stage == 'after':
+                                        observation['afterValue'] = observation['fieldValue'] = 'Bion'
+                                    if commerce_inputs == 'duplicate' and stage == 'after':
+                                        observation['phase'] = 'before'
+                                    if commerce_inputs == 'wrong-section' and stage == 'before':
+                                        observation['section'] = 'stays'
+                                    if commerce_inputs == 'wrong-query' and stage == 'before':
+                                        observation['query'] = 'Car-Free Banff Guide'
+                                    if commerce_inputs == 'phone-heading' and device['label'] == 'iphone' and stage == 'after':
+                                        observation.update(dismissalMethod='ipad-visible-heading', headingObserved=True,
+                                                           headingLabel=extract.INPUT_HEADINGS[section])
+                                    if commerce_inputs == 'phone-key-not-ready' and device['label'] == 'iphone':
+                                        observation['searchKeyReadyBeforeTyping'] = False
+                                filename = f'{collection}-input-{index}-{stage}.txt'
+                                destination.joinpath(filename).write_text(json.dumps(observation))
+                                entries.append({'exportedFileName': filename, 'suggestedHumanReadableName': f'qa-{collection}-input-observation-' + filename})
                     if failed:
                         destination.joinpath('failure.png').write_bytes(png(*dimensions))
                         entries.append({'exportedFileName': 'failure.png', 'suggestedHumanReadableName': 'qa-failure-screen.png'})
@@ -156,6 +192,8 @@ class ReceiptTest(unittest.TestCase):
 
             with patch.object(extract.subprocess, 'run', fake_xcrun), patch('sys.argv', ['extract-evidence.py', str(root)]), contextlib.redirect_stdout(io.StringIO()):
                 code = extract.main()
+            if inspect_evidence:
+                inspect_evidence(root / 'evidence')
             return code, json.loads(root.joinpath('evidence/receipt.json').read_text())
 
     def test_complete_native_evidence_passes_without_upload_approval(self):
@@ -170,6 +208,11 @@ class ReceiptTest(unittest.TestCase):
         self.assertTrue(all(device['nativeMapMarkerDetail']['selectionSurface'] == 'native-webview-document-button' for device in receipt['devices']))
         self.assertTrue(all(device['nativeMapFiltersFacilities']['resetRestoredAllFilters'] for device in receipt['devices']))
         self.assertTrue(all(len(device['nativeMapInputObservations']) == 6 for device in receipt['devices']))
+        self.assertTrue(all(len(device['nativeCommerceInputObservations']) == 6 for device in receipt['devices']))
+        self.assertEqual(sum(len(device[key]) for device in receipt['devices']
+                             for key in ('nativeMapInputObservations', 'nativeCommerceInputObservations')), 24)
+        self.assertTrue(all(device['nativeMapFiltersFacilities']['listViewSelected'] is True
+                            and device['nativeMapFiltersFacilities']['viewMode'] == 'list' for device in receipt['devices']))
 
     def test_missing_input_stage_cannot_pass(self):
         code, receipt = self.run_fixture(missing_input_stage=True)
@@ -196,6 +239,106 @@ class ReceiptTest(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertFalse(receipt['passed'])
         self.assertTrue(all(len(device['nativeMapInputObservations']) == 5 for device in receipt['devices']))
+
+    def test_missing_commerce_collection_cannot_pass(self):
+        code, receipt = self.run_fixture(commerce_inputs='missing')
+        self.assertEqual(code, 1)
+        self.assertTrue(any('Successful native commerce input' in error for error in receipt['errors']))
+        self.assertTrue(all(device['nativeCommerceInputObservations'] == [] for device in receipt['devices']))
+
+    def test_missing_commerce_stage_cannot_pass_or_hide_retained_stages(self):
+        code, receipt = self.run_fixture(commerce_inputs='missing-stage')
+        self.assertEqual(code, 1)
+        self.assertTrue(any('Successful native commerce input' in error for error in receipt['errors']))
+        self.assertTrue(all(len(device['nativeCommerceInputObservations']) == 5 for device in receipt['devices']))
+
+    def test_partial_commerce_input_before_or_after_dismissal_cannot_pass(self):
+        for mutation, stage in [('partial-before', 'before'), ('partial-after', 'after')]:
+            with self.subTest(stage=stage):
+                code, receipt = self.run_fixture(commerce_inputs=mutation)
+                self.assertEqual(code, 1)
+                self.assertTrue(any('Native commerce bulk query must be complete' in error for error in receipt['errors']))
+                for device in receipt['devices']:
+                    observations = device['nativeCommerceInputObservations']
+                    self.assertEqual(len(observations), 6)
+                    observed = next(item for item in observations if item['section'] == 'tours' and item['phase'] == stage)
+                    self.assertEqual(observed['fieldValue'], 'Bion')
+
+    def test_commerce_duplicate_or_wrong_section_and_query_cannot_pass(self):
+        for mutation, message in [('duplicate', 'Duplicate native commerce input query stage'),
+                                  ('wrong-section', 'unexpected native section, query, device or stage'),
+                                  ('wrong-query', 'unexpected native section, query, device or stage')]:
+            with self.subTest(mutation=mutation):
+                code, receipt = self.run_fixture(commerce_inputs=mutation)
+                self.assertEqual(code, 1)
+                self.assertTrue(any(message in error for error in receipt['errors']))
+
+    def test_commerce_phone_requires_ready_native_search_and_cannot_use_heading_fallback(self):
+        for mutation, message in [('phone-heading', 'phone required'),
+                                  ('phone-key-not-ready', 'Native commerce bulk query must be complete')]:
+            with self.subTest(mutation=mutation):
+                code, receipt = self.run_fixture(commerce_inputs=mutation)
+                self.assertEqual(code, 1)
+                self.assertTrue(any(message in error for error in receipt['errors']))
+
+    def test_ipad_fallback_requires_each_exact_observed_surface_heading(self):
+        code, receipt = self.run_fixture(ipad_heading='actual')
+        self.assertEqual(code, 0)
+        ipad = next(device for device in receipt['devices'] if device['device']['label'] == 'ipad')
+        for key in ('nativeMapInputObservations', 'nativeCommerceInputObservations'):
+            for observation in ipad[key]:
+                if observation['phase'] == 'after':
+                    self.assertTrue(observation['headingObserved'])
+                    self.assertEqual(observation['headingLabel'], extract.INPUT_HEADINGS[observation.get('section') or 'map'])
+        for heading in ('wrong', 'missing'):
+            with self.subTest(heading=heading):
+                code, receipt = self.run_fixture(ipad_heading=heading)
+                self.assertEqual(code, 1)
+                self.assertTrue(any('exact observed iPad heading dismissal' in error for error in receipt['errors']))
+
+    def test_failed_run_retains_actual_partial_commerce_without_claiming_completion(self):
+        code, receipt = self.run_fixture(failed=1, commerce_inputs='failed-partial')
+        self.assertEqual(code, 1)
+        self.assertFalse(receipt['passed'])
+        for device in receipt['devices']:
+            self.assertFalse(device['testsPassed'])
+            observations = device['nativeCommerceInputObservations']
+            self.assertEqual(len(observations), 5)
+            self.assertTrue(any(item['fieldValue'] == 'Bion' for item in observations))
+            self.assertFalse(any(item['section'] == 'tours' and item['phase'] == 'after' for item in observations))
+
+    def test_all_24_input_files_preserve_existing_map_names_and_section_bound_commerce_names(self):
+        def inspect(evidence):
+            expected = set()
+            for device in ('iphone', 'ipad'):
+                for query in extract.MAP_INPUT_QUERIES:
+                    slug = query.replace(' ', '-')
+                    for phase in ('before', 'after'):
+                        expected.add(f'{device}-map-input-{slug}-{phase}.json')
+                for section, query in extract.COMMERCE_INPUT_QUERIES:
+                    slug = query.replace(' ', '-')
+                    for phase in ('before', 'after'):
+                        expected.add(f'{device}-commerce-input-{section}-{slug}-{phase}.json')
+            actual = {item.name for item in evidence.glob('*-input-*.json')}
+            self.assertEqual(actual, expected)
+            self.assertEqual(len(actual), 24)
+            guide = json.loads((evidence / 'iphone-commerce-input-guides-concerts-show-planning-before.json').read_text())
+            self.assertEqual((guide['section'], guide['query']), ('guides', 'concerts show planning'))
+        code, _ = self.run_fixture(inspect_evidence=inspect)
+        self.assertEqual(code, 0)
+
+    def test_facilities_flow_requires_the_real_selected_list_view(self):
+        for values in ({'map_list_selected': False}, {'map_view_mode': 'map'}):
+            with self.subTest(values=values):
+                code, receipt = self.run_fixture(**values)
+                self.assertEqual(code, 1)
+                self.assertTrue(any('Executed map filters' in error for error in receipt['errors']))
+
+    def test_map_view_switch_cannot_lose_the_query_or_filters(self):
+        code, receipt = self.run_fixture(map_view_switch_preserved=False)
+        self.assertEqual(code, 1)
+        self.assertFalse(receipt['passed'])
+        self.assertTrue(any('Executed map filters' in error for error in receipt['errors']))
 
     def test_real_test_failure_cannot_become_success(self):
         code, receipt = self.run_fixture(failed=1)
