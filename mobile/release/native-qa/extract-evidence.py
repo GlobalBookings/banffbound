@@ -22,6 +22,7 @@ REQUIRED_TESTS = ('test01CapturePrimaryScreens', 'test02SavedPlaceSurvivesRelaun
 BROWSER_SCREEN = 'qa-commerce-browser-screen'
 MAX_SCREEN_BYTES = 8 * 1024 * 1024
 MAX_ARTIFACT_BYTES = 48 * 1024 * 1024
+MAP_INPUT_QUERIES = ('Bison', 'Public Washrooms', 'zzzz-no-banff-place-qa-9481')
 
 
 def read_json(path, fallback=None):
@@ -139,6 +140,49 @@ def map_observation(records, exported, name):
     return observation
 
 
+def map_input_observations(records, exported, evidence, device, successful):
+    matches = [record for record in records if 'qa-map-input-observation-' in str(record.get('suggestedHumanReadableName', ''))]
+    if len(matches) > 6:
+        raise ValueError('Map input observations exceed the six bounded query stages per device')
+    observations, identities = [], set()
+    for record in matches:
+        source = (exported / record['exportedFileName']).resolve()
+        if exported.resolve() not in source.parents or not source.is_file() or source.stat().st_size > 16000:
+            raise ValueError('Invalid or oversized native map input observation')
+        observation = read_json(source)
+        if (not isinstance(observation, dict) or observation.get('kind') != 'native-map-input-observation'
+                or observation.get('deviceClass') != device or observation.get('query') not in MAP_INPUT_QUERIES
+                or observation.get('phase') not in ('before', 'after')
+                or observation.get('entryMethod') != 'bulk-native-text-without-return'):
+            raise ValueError('Map input observation has an unexpected native query, device or stage')
+        identity = (observation['query'], observation['phase'])
+        if identity in identities:
+            raise ValueError('Duplicate native map input query stage')
+        identities.add(identity)
+        slug = re.sub('[^A-Za-z0-9-]+', '-', observation['query'])
+        filename = f'{device}-map-input-{slug}-{observation["phase"]}.json'
+        (evidence / filename).write_text(json.dumps(observation, indent=2) + '\n')
+        observations.append(observation)
+    if successful:
+        if identities != {(query, phase) for query in MAP_INPUT_QUERIES for phase in ('before', 'after')}:
+            raise ValueError('Successful native map input requires all three exact before/after query pairs')
+        for observation in observations:
+            query = observation['query']
+            if (observation.get('typedWithoutReturn') is not True or observation.get('beforeValue') != query
+                    or observation.get('fieldValue') != query
+                    or (device == 'iphone' and (observation.get('keyboardReadyBeforeTyping') is not True
+                                               or observation.get('searchKeyReadyBeforeTyping') is not True))):
+                raise ValueError('Native map bulk query must be complete before and after dismissal')
+            if observation['phase'] == 'after':
+                method = observation.get('dismissalMethod')
+                valid_method = (method == 'native-search-key' and observation.get('searchReadyForDismissal') is True
+                                or device == 'ipad' and method == 'ipad-visible-heading' and observation.get('headingObserved') is True)
+                if (not valid_method or observation.get('afterValue') != query
+                        or observation.get('dismissalCompleted') is not True or observation.get('keyboardVisible') is not False):
+                    raise ValueError('Native map query must survive actual Search (phone required) or observed iPad dismissal')
+    return observations
+
+
 def validated_screenshot(record, exported, evidence, device, screen):
     source = (exported / record['exportedFileName']).resolve()
     if exported.resolve() not in source.parents or not source.is_file():
@@ -250,6 +294,10 @@ def main():
                 (evidence / f'{label}-{name}.json').write_text(json.dumps(observation, indent=2) + '\n')
             except (OSError, ValueError) as error:
                 errors.append(f'{label}: {error}')
+        try:
+            result['nativeMapInputObservations'] = map_input_observations(records, exported, evidence, label, result['testsPassed'])
+        except (OSError, ValueError) as error:
+            errors.append(f'{label}: {error}')
         # Retain at most one failure image and one bounded accessibility tree per
         # device, even when an assertion fails before store captures are reached.
         if not result['testsPassed']:
