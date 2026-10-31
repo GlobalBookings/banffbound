@@ -1218,7 +1218,7 @@ function BanffApp() {
                     <Text
                       style={[a.heroTitle, { fontSize: 28, lineHeight: 33 }]}
                     >
-                      Know a little more.\nEnjoy a lot more.
+                      {"Know a little more.\nEnjoy a lot more."}
                     </Text>
                   </LinearGradient>
                 </ImageBackground>

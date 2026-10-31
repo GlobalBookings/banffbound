@@ -1,29 +1,18 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-10-30T23:29:48.595Z",
+  "retrievedAt": "2026-10-31T04:28:46.930Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-10-30T23:29:48.591Z",
+      "retrievedAt": "2026-10-31T04:28:46.924Z",
       "sourceUpdatedAt": null,
-      "sourceUpdatedAtText": "Fri, 30 Oct 2026 17:29:48 -0700",
+      "sourceUpdatedAtText": "Fri, 30 Oct 2026 22:28:46 -0700",
       "sourceTimeIssue": "Source feed clock is later than retrieval; its update time is unverified.",
       "status": "available",
       "rejectedCount": 0,
       "items": [
-        {
-          "title": "Banff Halloween: The Great Pumpkin Walk & Community Campfire",
-          "link": "https://banff.ca/Calendar.aspx?EID=33813",
-          "description": "Banff Residents, pick up a free pumpkin and carve it for Banff's glowing autumn tradition, The Great Pumpkin Walk. After sunset, we’ll light up the pumpkins for a beautiful walk from Central Park to the Recreation Grounds, where we'll enjoy live local music, and sip hot chocolate around the fire.",
-          "publishedAt": "2026-10-16T18:31:44.000Z",
-          "startDate": "2026-10-30",
-          "endDate": "2026-10-30",
-          "dates": "October 30, 2026",
-          "times": "05:30 PM - 08:00 PM",
-          "location": "Banff, AB T1L 1A1"
-        },
         {
           "title": "A Brother’s Fountain",
           "link": "https://banff.ca/Calendar.aspx?EID=35412",
@@ -95,9 +84,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-10-30T23:29:48.540Z",
+      "retrievedAt": "2026-10-31T04:28:46.865Z",
       "sourceUpdatedAt": null,
-      "sourceUpdatedAtText": "Fri, 30 Oct 2026 17:29:48 -0700",
+      "sourceUpdatedAtText": "Fri, 30 Oct 2026 22:28:46 -0700",
       "sourceTimeIssue": "Source feed clock is later than retrieval; its update time is unverified.",
       "status": "available",
       "rejectedCount": 0,
