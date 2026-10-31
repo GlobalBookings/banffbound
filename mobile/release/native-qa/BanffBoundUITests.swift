@@ -585,7 +585,15 @@ final class BanffBoundUITests: XCTestCase {
         let count = visibleID("map-result-count")
         let restored = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label MATCHES '[1-9][0-9]* places'"), object: count)
         XCTAssertEqual(XCTWaiter.wait(for: [restored], timeout: 5), .completed, "Reset must restore nonempty unfiltered results")
-        XCTAssertFalse(element("Clear map search").exists, "Reset must clear the invalid search query")
+        XCTAssertEqual(count.label, "982 places", "Reset must restore every bundled map place")
+        let resetField = app.textFields.matching(identifier: "map-search").firstMatch
+        let resetFieldValue = resetField.value as? String
+        let resetFieldPlaceholder = resetField.placeholderValue
+        XCTAssertEqual(resetFieldPlaceholder, "Restaurants, toilets, a favourite lake…", "Observe the actual map field's exact empty placeholder")
+        // UIKit accessibility may expose an empty field as either an empty
+        // string or its placeholder. The Clear control intentionally remains.
+        let resetSearchFieldEmpty = resetFieldValue == "" || (resetFieldValue != nil && resetFieldPlaceholder != nil && resetFieldValue == resetFieldPlaceholder)
+        XCTAssertTrue(resetSearchFieldEmpty, "Reset must clear the actual native search field, independent of Clear button visibility")
         XCTAssertTrue(listView.isSelected, "Reset filters must preserve the visitor's selected List view")
         XCTAssertTrue(app.buttons.matching(NSPredicate(format: "label == 'Everything'")).firstMatch.isSelected, "Reset must restore all categories")
         // The collapsed control has its own accessibility label, so verify the
@@ -601,6 +609,9 @@ final class BanffBoundUITests: XCTestCase {
             "facilityCategoryObserved": "Toilets", "facilityFieldObserved": "Access in map data",
             "sourceObserved": "OpenStreetMap contributors · node/1623434017", "detailClosed": true,
             "invalidQueryEmptyStateVerified": true, "resetRestoredAllFilters": true,
+            "resetSearchFieldEmpty": resetSearchFieldEmpty,
+            "resetFieldValue": resetFieldValue.map { $0 as Any } ?? NSNull(),
+            "resetFieldPlaceholder": resetFieldPlaceholder.map { $0 as Any } ?? NSNull(),
             "restoredResultCountLabel": count.label, "locationPermissionRequested": false,
         ], name: "qa-map-filter-observation")
     }

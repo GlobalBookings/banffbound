@@ -32,7 +32,11 @@ Two further captures show the unfiltered map and the restaurant detail reached
 from its genuine document marker. The toilet flow selects the actual native
 List control and verifies its selected state before using the result list for
 the precise Public Washrooms record in Lake Louise. The marker
-flow cannot fall back to that result list. Neither map flow requests location
+flow cannot fall back to that result list. Reset requires all 982 bundled map
+places and an observed native search value that is either empty or exactly its
+observed placeholder. The receipt retains `resetSearchFieldEmpty`,
+`resetFieldValue` and `resetFieldPlaceholder`; the always-present Clear button is
+not used as a proxy for an empty field. Neither map flow requests location
 permission or opens a menu, makes a booking or claims tile-provider availability.
 
 After XCTest, the runner reads the actual app-created offline file from each

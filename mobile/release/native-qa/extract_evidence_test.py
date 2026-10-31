@@ -33,7 +33,8 @@ class ReceiptTest(unittest.TestCase):
                     map_marker_surface='native-webview-document-button', map_facility_field='Access in map data', map_reset=True,
                     missing_input_stage=False, partial_input=False, phone_heading=False, phone_key_not_ready=False,
                     commerce_inputs='complete', ipad_heading=None, map_list_selected=True, map_view_mode='list',
-                    map_view_switch_preserved=True, inspect_evidence=None):
+                    map_view_switch_preserved=True, map_reset_search_empty=True, map_reset_value='',
+                    map_reset_placeholder=extract.MAP_RESET_PLACEHOLDER, map_reset_count='982 places', inspect_evidence=None):
         with tempfile.TemporaryDirectory(prefix='banffbound-extractor-unit-fixture-') as directory:
             root = Path(directory)
             root.joinpath('logs').mkdir()
@@ -98,7 +99,9 @@ class ReceiptTest(unittest.TestCase):
                             'facilityCategoryObserved': 'Toilets', 'facilityFieldObserved': map_facility_field,
                             'sourceObserved': 'OpenStreetMap contributors · node/1623434017', 'detailClosed': True,
                             'invalidQueryEmptyStateVerified': True, 'resetRestoredAllFilters': map_reset,
-                            'restoredResultCountLabel': '975 places', 'locationPermissionRequested': False,
+                            'restoredResultCountLabel': map_reset_count, 'locationPermissionRequested': False,
+                            'resetSearchFieldEmpty': map_reset_search_empty, 'resetFieldValue': map_reset_value,
+                            'resetFieldPlaceholder': map_reset_placeholder,
                             'listViewSelected': map_list_selected, 'viewMode': map_view_mode,
                             'viewSwitchPreservedQueryAndFilters': map_view_switch_preserved,
                         },
@@ -336,6 +339,30 @@ class ReceiptTest(unittest.TestCase):
 
     def test_map_view_switch_cannot_lose_the_query_or_filters(self):
         code, receipt = self.run_fixture(map_view_switch_preserved=False)
+        self.assertEqual(code, 1)
+        self.assertFalse(receipt['passed'])
+        self.assertTrue(any('Executed map filters' in error for error in receipt['errors']))
+
+    def test_reset_accepts_only_actual_blank_or_its_exact_native_placeholder(self):
+        for value in ('', extract.MAP_RESET_PLACEHOLDER):
+            with self.subTest(value=value):
+                code, receipt = self.run_fixture(map_reset_value=value)
+                self.assertEqual(code, 0)
+                self.assertTrue(receipt['passed'])
+                self.assertTrue(all(device['nativeMapFiltersFacilities']['resetSearchFieldEmpty'] for device in receipt['devices']))
+
+    def test_reset_cannot_claim_empty_with_leftover_text_or_unobserved_field(self):
+        for values in ({'map_reset_value': 'zzzz-no-banff-place-qa-9481'},
+                       {'map_reset_value': None}, {'map_reset_search_empty': False},
+                       {'map_reset_placeholder': 'invented placeholder'}):
+            with self.subTest(values=values):
+                code, receipt = self.run_fixture(**values)
+                self.assertEqual(code, 1)
+                self.assertFalse(receipt['passed'])
+                self.assertTrue(any('actual empty search field' in error for error in receipt['errors']))
+
+    def test_reset_must_restore_all_982_bundled_places(self):
+        code, receipt = self.run_fixture(map_reset_count='975 places')
         self.assertEqual(code, 1)
         self.assertFalse(receipt['passed'])
         self.assertTrue(any('Executed map filters' in error for error in receipt['errors']))
