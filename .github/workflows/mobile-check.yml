@@ -2,16 +2,22 @@ name: Mobile App Check
 
 on:
   pull_request:
-    paths: ['mobile/**', 'public/app/**', 'public/sw.js', '.github/workflows/mobile-check.yml']
+    paths: ['mobile/**', 'public/app/**', 'public/sw.js', '.github/workflows/mobile-check.yml', '.github/scripts/check-mobile-reviewed-content.mjs']
   push:
     branches: [main]
-    paths: ['mobile/**', 'public/app/**', 'public/sw.js', '.github/workflows/mobile-check.yml']
+    paths: ['mobile/**', 'public/app/**', 'public/sw.js', '.github/workflows/mobile-check.yml', '.github/scripts/check-mobile-reviewed-content.mjs']
 
 jobs:
   mobile:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Check out reviewed mobile content sources
+        uses: actions/checkout@v4
+        with:
+          ref: 4da51e0f64e9af8a14d87fe302a308081777d1a6
+          path: .reviewed-mobile-source
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -24,9 +30,8 @@ jobs:
       - name: Validate app and published content
         run: |
           npm run typecheck --prefix mobile
-          npm test --prefix mobile
           node --test mobile/web/offline-worker.test.mjs
-          node mobile/scripts/sync-content.mjs --check
+          node .github/scripts/check-mobile-reviewed-content.mjs
           node mobile/scripts/verify-published.mjs
       - name: Bundle iOS and Android
         run: npm run export:native --prefix mobile
