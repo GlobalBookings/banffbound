@@ -1,5 +1,5 @@
 {
-  "version": "fa8bbbcaedcfcdc1f6af",
+  "version": "c1cd13644b44bb8af9e8",
   "base": "/app/",
   "assets": [
     {
@@ -8,9 +8,9 @@
       "sha256": "d67eabb1792a873dbfac255f4184bfeeb806886e307317d354f6906cca49f89d"
     },
     {
-      "url": "/app/_expo/static/js/web/index-8e7a7d3cdcf63b088721b6ac00c15687.js",
-      "size": 1487321,
-      "sha256": "591b981e2eca6207e87f3029017ab665c539e74adf2be0ed7ef086cbb2b6d3fc"
+      "url": "/app/_expo/static/js/web/index-7c8d21e67d48514e9ed0aa40299fb6c8.js",
+      "size": 2338174,
+      "sha256": "159818f813ec2e47c353b20e12de79aaf005087a73593744a41b976902e609c1"
     },
     {
       "url": "/app/_expo/static/js/web/index-bfbbe110c63cc1bbcb51db726f3342d8.js",
@@ -85,7 +85,7 @@
     {
       "url": "/app/index.html",
       "size": 2250,
-      "sha256": "a36b0bd08f44cd648bf629bf34e3878e0de61e9b3a13702a7e4781669599e6f5"
+      "sha256": "2be2277b36195e87b46c9b9015047e39c2ecf291575efd4c2087f8ad602a043d"
     },
     {
       "url": "/app/manifest.webmanifest",
@@ -110,7 +110,7 @@
     {
       "url": "/app/version.json",
       "size": 276,
-      "sha256": "6b12e2cc965e2dd54db85335de56b9973332d83430c720e8f5d0465e573ad5e5"
+      "sha256": "5e9edc7f1c06abee9a069b7d7634b2e74e602e700e916159712d379c50cc2f40"
     }
   ]
 }

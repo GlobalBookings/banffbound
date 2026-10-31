@@ -1,7 +1,8 @@
 # Published commerce catalogue provenance
 
 The commercial collection is pinned separately to website revision
-`eb55328b608d79cfdffc4cc41298f0f0f23cf996`. It does not regenerate the 42 original
+`dfa545a7e7130e8494aab6342349fe6ce71a226c`. This is the final cutoff; later website
+changes do not automatically regenerate this native release. It does not regenerate the 42 original
 places or 16 bundled guides, which retain their existing `4da51e0` source pin.
 The generated provenance records the SHA-256 of every consumed website input,
 the original GetYourGuide URLs and the app's sole transformation:
@@ -18,10 +19,10 @@ are retained with generic provider/search labels rather than inheriting an
 unverified anchor claim. The old unused `tripActivities.ts` is not treated as
 the current website trip planner.
 
-The online guide index additionally covers 71 published standalone visitor,
+The online guide index additionally covers 72 published standalone visitor,
 planning-tool and comparison pages, six town/base pages and all 81 published
 trail, lake and viewpoint detail routes. Five canonical URLs already appear in
-the activity-guide collection, so 153 additional guide entries are added without
+the activity-guide collection, so 154 additional guide entries are added without
 duplicate canonical URLs. Legal, publisher, contact, home, report-submission,
 test/widget and redirect routes are excluded. Every accepted and excluded
 standalone source page is hash-verified against the same commit; the inventory
@@ -29,8 +30,32 @@ records route-to-item coverage. Static titles and descriptions are extracted
 only from literal quoted layout attributes without executing Astro frontmatter.
 Unverified legacy route records remain clearly marked references.
 
-The 15 central product records also retain the exact listed operator name from
-the reviewed source. GetYourGuide remains the sales channel, not an inferred
+The expanded experience directory preserves 60 published groups with all 464
+mapped numeric product identities exactly once. The source's 496 captured cards
+contain 458 unique captured products; ten supplemental reviewed products bring
+the distinct candidate inventory to 468. Four explicitly excluded candidates
+remain blocked in every collection. The other 28 captured cards are duplicates,
+not 28 additional excluded products. Do not call this a 496-unique-product or
+32-exclusion catalogue.
+
+The 66 individually reviewed mapped products may use only their own description,
+operator, departure, notice and review date. The other 398 listing-only options
+retain their own listing title and URL, with comparison context only: they gain
+no operator, departure, inclusion, duration or eligibility fact from a group
+primary. Every listing-only option says to check its own listing details.
+The website's `experienceOptionTarget` supplies the exact product destination and
+readiness semantics, with the same static app campaign transformation.
+
+All 60 canonical group guide paths are indexed; 49 are newly authored experience
+guides and eleven reuse existing blog/activity URLs without duplicate guide
+cards. The three older published product references 556595, 113074 and 441813
+remain clearly marked reference-only; they are outside the new mapped directory
+and have no new operator or review claim. Thus the tour collection has 467
+distinct product destinations plus its existing search/category links.
+
+The original 15 central records retain their IDs, titles and precise place
+relationships. Other listed operator names come only from the exact individually
+reviewed product. GetYourGuide remains the sales channel, not an inferred
 experience operator. Generic searches and legacy references gain no operator
 claim. User-facing packing copy explains the website handoff; the Amazon
 programme approval limitation remains here and in provenance rather than the

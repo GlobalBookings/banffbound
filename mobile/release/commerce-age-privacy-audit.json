@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 1,
+  "status": "recommendation_only_no_account_changes",
+  "preparedAt": "2026-10-31T06:44:55+00:00",
+  "scope": {
+    "app": "BanffBound",
+    "bundleIdentifier": "com.banffbound.app",
+    "workspace": "/tmp/banffbound-ios-native-qa",
+    "branch": "codex/banffbound-app-affiliates",
+    "gitHead": "55d4c13504915e2cffccfc06ed5432aad7937e54",
+    "reviewedWebsiteCommit": "dfa545a7e7130e8494aab6342349fe6ce71a226c",
+    "commerceDataVersion": "2026-10-31-33353c29842c",
+    "totalItems": 1205,
+    "bySection": {
+      "tours": 504,
+      "stays": 145,
+      "guides": 513,
+      "extras": 43
+    },
+    "affiliateItems": 667,
+    "affiliateLinks": 667,
+    "commerceProvenanceInputCount": 163,
+    "originalBundledCatalogue": "42 places and 16 guides remain separate and unchanged by the directory expansion.",
+    "reviewType": "Targeted age/privacy delta audit of native metadata, resolved owned articles and browser launch flow. Not a new review of all factual claims in all linked pages.",
+    "canonicalMobileSourceFingerprint": "df86fe1381793286d88033176dc9feb37affa232aa9d9e7383a94399e7b62413",
+    "canonicalMobileInputCount": 55
+  },
+  "baseline": {
+    "ageReceipt": {
+      "path": "/Users/jackchittenden/Desktop/DROID/BanffBound/mobile/release/ios-age-rating-draft-receipt.json",
+      "sha256": "be5eabb2b2333daba3bd235c19f1cc809747f9d73e285b6a1302d6d3848f0e4b",
+      "checkedAt": "2026-10-31T03:05:23.581Z",
+      "relevantSavedValues": {
+        "healthOrWellnessTopics": false,
+        "medicalOrTreatmentInformation": "NONE",
+        "advertising": false,
+        "alcoholTobaccoOrDrugUseOrReferences": "INFREQUENT_OR_MILD",
+        "unrestrictedWebAccess": false
+      },
+      "currentAccountStateIndependentlyQueriedByThisAudit": false
+    },
+    "privacyReceipt": {
+      "path": "/Users/jackchittenden/Desktop/DROID/BanffBound/mobile/release/ios-app-privacy-draft-receipt.json",
+      "sha256": "9b57fb87d37723788c97491f89ad7c93977ae48c99fd95174081dc87e812abeb",
+      "checkedAt": "2026-10-31T04:02:18.058372+00:00",
+      "dataTypes": [
+        {
+          "name": "Product Interaction",
+          "purpose": "App Functionality",
+          "linkedToUser": true,
+          "usedForTracking": false
+        },
+        {
+          "name": "Other Diagnostic Data",
+          "purpose": "App Functionality",
+          "linkedToUser": true,
+          "usedForTracking": false
+        }
+      ],
+      "noDataCollectedDeclared": false,
+      "publicationStateIsFromExistingReceiptNotNewReadback": true
+    }
+  },
+  "recommendedQuestionnaireChanges": [
+    {
+      "field": "healthOrWellnessTopics",
+      "baselineValue": false,
+      "recommendedValue": true,
+      "basis": "Expanded curated directory links a yoga article that recommends self-directed practice and wellness articles covering self-care activities. This goes beyond the original bundled amenity descriptions.",
+      "evidenceIds": [
+        "yoga",
+        "wellness"
+      ],
+      "definitionSource": "https://developer.apple.com/help/app-store-connect/reference/app-information/age-ratings-values-and-definitions/",
+      "confidence": "high"
+    },
+    {
+      "field": "medicalOrTreatmentInformation",
+      "baselineValue": "NONE",
+      "recommendedValue": "INFREQUENT_OR_MILD",
+      "basis": "The linked altitude page gives general illness symptoms and stop-ascent, descent and emergency-response guidance. Apple includes condition-management guidance, not only diagnosis. These are ancillary safety topics within a broad travel directory; the app is not focused on medical treatment.",
+      "evidenceIds": [
+        "altitude",
+        "emergency"
+      ],
+      "definitionSource": "https://developer.apple.com/help/app-store-connect/reference/app-information/age-ratings-values-and-definitions/",
+      "confidence": "high"
+    },
+    {
+      "field": "advertising",
+      "baselineValue": false,
+      "recommendedValue": true,
+      "basis": "The native directory presents 667 commission-bearing provider links with booking calls to action and adjacent affiliate disclosures. Treat this as paid/native product promotion for the age capability answer. An advertising SDK is not required by this definition.",
+      "evidenceIds": [
+        "native-commerce"
+      ],
+      "definitionSource": "https://developer.apple.com/help/app-store-connect/reference/app-information/age-ratings-values-and-definitions/",
+      "confidence": "reasoned application of Apple paid/native-promotion definition to commission-bearing recommendations"
+    }
+  ],
+  "recommendedRetainedAnswers": [
+    {
+      "field": "alcoholTobaccoOrDrugUseOrReferences",
+      "recommendedValue": "INFREQUENT_OR_MILD",
+      "basis": "The broad travel catalogue includes craft-beer/distillery/apres-ski references; inspected native metadata has no intense intoxication presentation. Existing mild answer remains supported. This targeted audit does not certify every future remotely edited article."
+    },
+    {
+      "field": "unrestrictedWebAccess",
+      "recommendedValue": false,
+      "basis": "The native app offers curated, validated destination CTAs, local catalogue search, and no arbitrary URL entry or general web search. System-browser address display is read-only on iOS. This is a behaviour-based questionnaire interpretation, not a claim that the initial URL allowlist constrains later website links or external browser navigation.",
+      "limitation": "Do not describe the browser as a domain-locked WebView. Reassess if an arbitrary URL/search feature, user-supplied URL or general-purpose browser is added."
+    },
+    {
+      "field": "horrorOrFearThemes",
+      "recommendedValue": "NONE",
+      "basis": "The new listing-only Paranormal History Walking Ghost Tour card has a neutral title, generic comparison summary and booking checks. No frightening stories, imagery, audio or presentation are in the inspected native metadata. Apple defines a fear-evoking criterion; a supernatural keyword alone does not establish it.",
+      "limitation": "The actual current provider tour description was not established by the web tool; its category/cached result does not prove either frightening content or its absence. Reassess if the app presents ghost stories, frightening imagery or comparable fear-evoking content."
+    },
+    {
+      "field": "gunsOrOtherWeapons",
+      "recommendedValue": "INFREQUENT_OR_MILD",
+      "basis": "Retain the original bear-spray safety-reference answer. New mapped product/group metadata contains no verified firearm or weapons content requiring higher intensity. Technical equipment and ordinary adventure eligibility wording do not establish violent content."
+    }
+  ],
+  "contentClassificationLimits": {
+    "individualDiagnosisProvided": false,
+    "medicationOrDoseInstructionsObserved": false,
+    "healthOrSymptomInputsAddedToNativeApp": false,
+    "healthRiskScoreAdded": false,
+    "regulatedMedicalDeviceClaimEstablished": false,
+    "medicalFrequencyRationale": "A small ancillary subset of a general travel directory offers non-graphic safety-management information. Not a medical app or treatment-focused catalogue.",
+    "actualGeneratedAgeRating": null,
+    "reasonNoRatingPrediction": "Apple generates OS- and region-specific ratings from the full saved questionnaire. No changed questionnaire or resulting rating was saved/read back by this audit."
+  },
+  "privacyDelta": {
+    "recommendation": "No newly evidenced data type, purpose or ATT requirement from the expanded fixed directory; retain the separately evidenced operational-log labels pending contrary actual data-flow evidence.",
+    "retainedDataTypes": [
+      {
+        "name": "Product Interaction",
+        "purpose": "App Functionality",
+        "linkedToUser": true,
+        "usedForTracking": false
+      },
+      {
+        "name": "Other Diagnostic Data",
+        "purpose": "App Functionality",
+        "linkedToUser": true,
+        "usedForTracking": false
+      }
+    ],
+    "healthContentDoesNotMeanHealthCollection": true,
+    "nativeHealthDataCollectionObserved": false,
+    "automaticCommerceRequestsObserved": false,
+    "perUserOrDeviceTrackingParametersAdded": false,
+    "staticReferences": {
+      "GetYourGuide": "Existing partner_id plus the same cmp=banffboundapp for every visitor.",
+      "Expedia": "Existing fixed publisher referral values.",
+      "Vrbo": "Existing fixed affiliate wrapper and editorial property destination.",
+      "BanffBound": "Curated owned-guide routes without user trip or personal query parameters."
+    },
+    "browserFlow": {
+      "ios": "Explicit WebBrowser.openBrowserAsync -> SFSafariViewController in installed expo-web-browser 57.0.3; no custom WKWebView, injected script or bridge.",
+      "android": "Explicit Custom Tabs-capable browser package, fail/retry if unavailable; no universal-link fallback.",
+      "web": "New tab with noopener,noreferrer.",
+      "noTransferredAppState": [
+        "booking notes",
+        "trip dates",
+        "party details",
+        "GPS",
+        "app user ID",
+        "device ID",
+        "per-click identity"
+      ],
+      "noProviderSessionReadback": [
+        "checkout data",
+        "payment data",
+        "provider cookies",
+        "browsing history"
+      ],
+      "noAttributionGuarantee": "A browser referral and fixed campaign parameter do not prove consent, attribution, a completed booking or commission."
+    },
+    "separateConcepts": [
+      "The age Advertising capability describes content/promotion. It does not by itself establish collection of Advertising Data, a privacy advertising purpose, or ATT tracking.",
+      "Showing wellness/medical content is not collection of the user health or fitness data.",
+      "Existing map/weather retained-request labels remain; this is not a No Data Collected finding."
+    ],
+    "applePolicyQualification": "SFSafariViewController alone is not a blanket privacy exemption. Apple requires controlled web-feature collection/tracking to be considered and distinguishes open-web navigation. The conclusion here rests on explicit browser launches with no app-specific personal-data transfer, SDK, session bridge or click endpoint, not solely the API name.",
+    "providerBoundary": "Providers may retain ordinary requests and use browser cookies under their own terms. This audit does not certify provider retention, all later website scripts, or web-to-web cookie attribution practices.",
+    "notEstablishedFromCurrentEvidence": [
+      "new Health or Fitness data collection",
+      "new Advertising Data/impression log collection by the app",
+      "user/device advertising profile linkage from app data",
+      "provider Purchase History or Payment Info sent back to the app"
+    ],
+    "reassessmentTriggers": [
+      "Add an embedded provider SDK/widget or controlled checkout WebView",
+      "Add a user/device/click/session identifier or personalized app-state query parameter",
+      "Read provider session, conversion or payment callbacks into app state",
+      "Send native browsing/search/click events to an analytics/advertising endpoint",
+      "Change actual map/weather retention or purposes"
+    ],
+    "sourceDeltaFromPrior706": {
+      "changedReviewedFiles": [
+        "mobile/src/data/commerce.generated.ts",
+        "mobile/scripts/sync-commerce.mjs",
+        "mobile/release/reviewed-commerce-source.json",
+        "mobile/release/commerce-catalogue-inventory.json"
+      ],
+      "unchangedReviewedSourceFiles": 8,
+      "browserUiConfigurationAndDependencyHashesUnchanged": true,
+      "newRuntimeDataFlowsEstablished": false,
+      "scope": "Only source pin, generator, generated directory and inventory differ among the 12 audited source hashes. Existing App, component, URL guard, browser dependency/config and privacy copy hashes match the prior 706-entry audit."
+    }
+  },
+  "releaseReadiness": {
+    "expandedBuildAgeDeclarationNeedsRefresh": true,
+    "necessaryBeforeRepresentingExpandedBuildAsClassified": [
+      "Refresh the three recommended answers against this 1,205-entry source snapshot; retain other reviewed settings unless actual new content establishes a change.",
+      "Save and independently read back the full questionnaire and Apple-generated regional/OS ratings.",
+      "Bind the receipt to the actual selected expanded native build; do not use an old bundled-guide receipt as its classification evidence."
+    ],
+    "auditHasAppliedChanges": false,
+    "auditHasCancelledExistingReview": false,
+    "auditHasSubmittedOrPublished": false,
+    "newNativeQAOrBinaryPassAsserted": false,
+    "existingReviewScope": "This is evidence for the forthcoming 1,205-entry expanded directory build only; it is not an instruction to alter the already submitted earlier binary."
+  },
+  "evidence": [
+    {
+      "id": "altitude",
+      "itemId": "web-guide-altitude-guide",
+      "url": "https://banffbound.com/altitude-guide/",
+      "localSources": [
+        "src/pages/altitude-guide.astro",
+        "src/data/altitudePlanning.ts"
+      ],
+      "appPresentation": "Title and planning summary, then explicit full-guide browser link. Full article is not bundled offline.",
+      "observedContent": "The live article lists possible altitude-illness symptoms, advises stopping ascent while unwell and seeking assisted descent/medical help for worsening illness, and identifies emergency signs. It expressly avoids individual risk scoring, diagnosis, prescribing and dosing.",
+      "supports": [
+        "medicalOrTreatmentInformation",
+        "healthOrWellnessTopics"
+      ]
+    },
+    {
+      "id": "yoga",
+      "itemId": "guide-banff-yoga-guide",
+      "url": "https://banffbound.com/blog/banff-yoga-guide/",
+      "localSources": [
+        "src/data/blogContent.ts",
+        "src/data/blogContentRegistry.ts"
+      ],
+      "appPresentation": "Guide-index title and summary with explicit browser CTA.",
+      "observedContent": "The resolved published article covers classes and retreats, recommends bringing a mat for self-directed outdoor yoga, and gives general practice preparation advice. This supplies lifestyle/exercise recommendations. Topic review does not verify every venue, price or programme claim.",
+      "supports": [
+        "healthOrWellnessTopics"
+      ]
+    },
+    {
+      "id": "wellness",
+      "itemIds": [
+        "guide-banff-wellness-weekend",
+        "guide-banff-wellness-retreats",
+        "web-guide-wellness"
+      ],
+      "urls": [
+        "https://banffbound.com/wellness/",
+        "https://banffbound.com/blog/banff-wellness-retreats/"
+      ],
+      "localSources": [
+        "src/pages/wellness.astro",
+        "src/data/winterWarmUpOverrides.ts",
+        "src/data/winterWellnessLegacyOverrides.ts"
+      ],
+      "observedContent": "Current resolved pages primarily compare spa/pool/heritage access and require published class/retreat programmes. Amenity references alone are not a diagnosis or treatment claim. Yoga self-care recommendations elsewhere independently establish the health/wellness answer.",
+      "supports": [
+        "healthOrWellnessTopics"
+      ]
+    },
+    {
+      "id": "emergency",
+      "itemId": "web-guide-emergency-card",
+      "url": "https://banffbound.com/emergency-card/",
+      "localSources": [
+        "src/pages/emergency-card.astro"
+      ],
+      "observedContent": "Native metadata explicitly describes hypothermia signs and trail emergency response. This is additional limited safety context; the altitude live article is the primary medical-management evidence. No contact numbers or personal details are reproduced in this audit.",
+      "supports": [
+        "medicalOrTreatmentInformation"
+      ]
+    },
+    {
+      "id": "native-commerce",
+      "localSources": [
+        "mobile/src/components/CommerceBrowser.tsx",
+        "mobile/src/lib/commerce.ts",
+        "mobile/src/data/commerce.generated.ts"
+      ],
+      "observedContent": "Provider-labelled commissioned tours/stays/referrals with adjacent commission notices; 667 affiliate CTAs. Search/filter/detail remain local; no remote provider image/widget/prefetch or click-event endpoint.",
+      "supports": [
+        "advertising"
+      ]
+    }
+  ],
+  "reviewedSourceSha256": {
+    "mobile/App.tsx": "fd844c4e74d47d7a890c69c721c65841e016b65365495f9ec549200df186246f",
+    "mobile/src/components/CommerceBrowser.tsx": "e8eab163c2d85d664a19c71447c6b9a49ad386544ab8948cb6409a8760a3b36e",
+    "mobile/src/lib/commerce.ts": "bc0f09e64e41a206d0f5f2789d57f6b36ef855eefdb5c59f11b7f70177db664c",
+    "mobile/src/data/commerce.ts": "0aabc4ba8b5108df0d4f01806d3e15eaefa5636841ea424e611a2337b958d9d2",
+    "mobile/src/data/commerce.generated.ts": "56bc7ad774a4e320b0f88c26365e1d6b9e30f4674a2d3ef78e1eae26966a8891",
+    "mobile/scripts/sync-commerce.mjs": "281e5cdea4b6aa04139b628a42c58f4b734ef01cfaf44983428ee489f10f1881",
+    "mobile/package.json": "8857c945c26b82dc3027887d62a04bf380fe48c8cc8fbe63d52fab69dcbdcb3b",
+    "mobile/package-lock.json": "83ee294a2e84c98c9b65016460eddbb183bc1a46302620ae90084c8d08598dc4",
+    "mobile/app.config.ts": "bc06d831e0a7336f33e869c2d21cd10ab493089826d2cf3ef1fe98feb13b6e1a",
+    "mobile/web/privacy.html": "13cabe7ecd951991d9f60b1593d7e72403dfceb3dbfb2cc562580660bdfbee86",
+    "mobile/release/reviewed-commerce-source.json": "4fc53f5cfe24743602d8c7bfd25cc612b194a53c508ec24393da4f417417b7e0",
+    "mobile/release/commerce-catalogue-inventory.json": "3775821a0c587bd50b7462d15060e2d2337c9382d5e88bbe8e7cdb45a883a662"
+  },
+  "pinnedWebsiteSourceSha256": [
+    {
+      "path": "src/pages/altitude-guide.astro",
+      "pinnedSha256": "1699dfc4a0683318cd6c6256d1cb6205e56f69866f433ace6c30bd12f5a54999",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/altitudePlanning.ts",
+      "pinnedSha256": "0be3c5f756258fb812f9d6223bdaf1e3d79ba0a1815ef5e8e2b216a913aa6edf",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/pages/wellness.astro",
+      "pinnedSha256": "67e3276c67e46a0693120343b314d819cca76689720b724abcd1da4910ee88ed",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/blogPosts.ts",
+      "pinnedSha256": "09318ce212a5b638001177a89c93535c2f9d0681ac88dc7dedd1c1714bcc4eb6",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/blogContent.ts",
+      "pinnedSha256": "c2aa34b43a519ac9670a4c6fefa2d4f54bc08fe382d95c4a4f1f8cc63931a6ff",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/blogContentRegistry.ts",
+      "pinnedSha256": "3bb2bb8a27a8048b1b0ec212956f71dd8ea045948aa307ec188fc8c28ad5f53f",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/winterWarmUpOverrides.ts",
+      "pinnedSha256": "3eea8059a12dd1e035777540a34731b7e3abfeb52e62c4994d273cb38683d09f",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/winterWellnessLegacyOverrides.ts",
+      "pinnedSha256": "b4ee23767745263ec440c95cf9d1eebaf6bb62a9ce647f9fc6d093e79c11fbb3",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/pages/emergency-card.astro",
+      "pinnedSha256": "c5d49856425615f33c2a45c2bd611fc5aa1f8aaf752ca1e6d1b3c6dc642b21e7",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/pages/air-quality.astro",
+      "pinnedSha256": "ea23082715ac11ccff56b9e4f521726f21f8d01a731739ee868c098bb23b6f09",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/banffExperiences.ts",
+      "pinnedSha256": "19cba26d13d9e0fd566dc6b2091fd217dd55c663a94729146a9a98ec32ed9aba",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/banffExperienceGroups.json",
+      "pinnedSha256": "299e323b7a13b7d0fb77963f1e1f85af91a426f9822ec25ef33370b30cbdd3e6",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/banffExperienceInventory.json",
+      "pinnedSha256": "e831ab9efec869dc945b3f66ee5d4c3306d650e63b22970a2ea428d5e777497a",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/banffExperienceProducts/additional.json",
+      "pinnedSha256": "cce6379e582352addfa0fb9089118357955c23e04c87ba6f048016ae03317c8d",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/banffExperienceProducts/adventures.json",
+      "pinnedSha256": "3208ee45ba69845057a69ed8a83addc32412cb4c52704cbc77a7daa0ea409fba",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/banffExperienceProducts/lakes-transport.json",
+      "pinnedSha256": "c633a155058d84ca717f48398f7db0ef1304692b2597e13bcd43f1f0ca4272d3",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/banffExperienceProducts/miscellaneous.json",
+      "pinnedSha256": "2199e64e920b755e7e463a8f9885527413c61bc83b514b3596e6ca360a1ecbb5",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    },
+    {
+      "path": "src/data/banffExperienceProducts/rail-history.json",
+      "pinnedSha256": "d6bb17ceecf69d4465d9f3c3f0053597412f44383bf9c5c4c042e5b68d957b12",
+      "verification": "Actual committed bytes at reviewed cutoff; current root website checkout need not equal the separate source pin."
+    }
+  ],
+  "installedBrowserSource": {
+    "path": "mobile/node_modules/expo-web-browser/ios/WebBrowserSession.swift",
+    "packageVersion": "57.0.3",
+    "sha256": "7f8cbb71fd93a0c542b557f9dc62bbdd935aa26bb36ceccecd491aa8004c5b8f"
+  },
+  "externalEvidence": [
+    {
+      "url": "https://banffbound.com/altitude-guide/",
+      "finalUrl": "https://banffbound.com/altitude-guide/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:13:10+00:00",
+      "htmlSha256": "4a3c5441e26bc44aa6cf33520518839e5cb5113d473e9d4d1d20c84a6e789bff",
+      "mainTextSha256": "6e2875e69a3e2112499981c4e44921757dee3fb2fd419a2a6e1ae4bbe1d7aad0"
+    },
+    {
+      "url": "https://banffbound.com/wellness/",
+      "finalUrl": "https://banffbound.com/wellness/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:13:10+00:00",
+      "htmlSha256": "cdc71e55096d32ba780039fe3756bd483579db135f6757b5502b29b00081d851",
+      "mainTextSha256": "2c0d9c629ad487eab65e6331de3adc1a52309d587ac1b8fda0d37cfd069cb4c4"
+    },
+    {
+      "url": "https://banffbound.com/blog/banff-yoga-guide/",
+      "finalUrl": "https://banffbound.com/blog/banff-yoga-guide/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:13:10+00:00",
+      "htmlSha256": "2798977de5003d586dbac6b6611a36ae7e30f1070cf8b236d6de226dcd4da07b",
+      "mainTextSha256": "bc3e6929793430218bbdf111148fe1dff0149da39297467a15e10265db1ca0f8"
+    },
+    {
+      "url": "https://banffbound.com/blog/banff-wellness-retreats/",
+      "finalUrl": "https://banffbound.com/blog/banff-wellness-retreats/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:13:10+00:00",
+      "htmlSha256": "a3ea2b010a9b2ebf0e9eef6602e90c6c2ac588a0d73bc5be8f4b494ce358927d",
+      "mainTextSha256": "54967ceed2babdfbe34024ca99b36baab31f3a49a8b0435232e4f471dcccd531"
+    },
+    {
+      "url": "https://developer.apple.com/help/app-store-connect/reference/app-information/age-ratings-values-and-definitions/",
+      "finalUrl": "https://developer.apple.com/help/app-store-connect/reference/app-information/age-ratings-values-and-definitions/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:13:10+00:00",
+      "htmlSha256": "e43e24a7d12c1a9d9c04ba8004996f9840e831f276894fa31e7a44eea160652b",
+      "mainTextSha256": "481fc288d4c0e1f5bb7b4e4c4376951f18ebbacc16d572ded5f6e1df8a6bae7d"
+    },
+    {
+      "id": "apple-age-rating-process",
+      "url": "https://developer.apple.com/help/app-store-connect/manage-app-information/set-an-app-age-rating/",
+      "finalUrl": "https://developer.apple.com/help/app-store-connect/manage-app-information/set-an-app-age-rating/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:17:13+00:00",
+      "htmlSha256": "21e3c22fe4dd6dd13050a5787aff5c6bc6b177670d996576bfb8860221f835bf",
+      "bytes": 375927
+    },
+    {
+      "id": "apple-app-privacy",
+      "url": "https://developer.apple.com/app-store/app-privacy-details/",
+      "finalUrl": "https://developer.apple.com/app-store/app-privacy-details/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:17:13+00:00",
+      "htmlSha256": "e89291a095d08747b9e3d479c0bc1c15b64155c4f2b564a10014f4505729dcbe",
+      "bytes": 134919
+    },
+    {
+      "id": "apple-att",
+      "url": "https://developer.apple.com/app-store/user-privacy-and-data-use/",
+      "finalUrl": "https://developer.apple.com/app-store/user-privacy-and-data-use/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:17:13+00:00",
+      "htmlSha256": "c448671d52948efebdde471d34d84fba66481a52e9ec6a9ff3f8c65c4d480d1f",
+      "bytes": 131474
+    },
+    {
+      "id": "apple-safari-view",
+      "url": "https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller/",
+      "finalUrl": "https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:17:13+00:00",
+      "htmlSha256": "a5fae6f31c61d34596b6069838815c3bfb777234a02784f5d866e66de2069fb2",
+      "bytes": 18665
+    },
+    {
+      "id": "expo-browser",
+      "url": "https://docs.expo.dev/versions/latest/sdk/webbrowser/",
+      "finalUrl": "https://docs.expo.dev/versions/latest/sdk/webbrowser/",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:17:13+00:00",
+      "htmlSha256": "f69528209350178f6f9ab3200e573cb672973fef0f22ff1b922429e760d14b2a",
+      "bytes": 556860
+    },
+    {
+      "id": "android-custom-tabs",
+      "url": "https://developer.chrome.com/docs/android/custom-tabs",
+      "finalUrl": "https://developer.chrome.com/docs/android/custom-tabs",
+      "httpStatus": 200,
+      "fetchedAt": "2026-10-31T06:17:14+00:00",
+      "htmlSha256": "347c6cb051cf966a74c41f3d23e32db2f4f79d28eb56f3f8bc82e23166322d2b",
+      "bytes": 115808
+    },
+    {
+      "id": "gyg-browser-attribution",
+      "url": "https://partner.getyourguide.support/hc/en-us/articles/13981115983133-How-does-the-cookie-ID-tracking-work",
+      "fetchError": "HTTPError"
+    }
+  ],
+  "sourceHandling": {
+    "hashDefinition": "SHA-256 of response bytes for HTML; mainTextSha256 applies the prior main-only extraction. HTML hashes attest fetched bytes, not an immutable policy version. JavaScript-only Apple API HTML may contain a documentation shell; substantive API behaviour was checked against official documentation text and installed framework source.",
+    "noPrivateContactDetailsIncluded": true,
+    "runtimeFilesChangedByAudit": false,
+    "externalAccountActions": false,
+    "receiptIsOutsideRuntimeFingerprint": true
+  },
+  "preservedPriorAudit": {
+    "jsonPath": "mobile/release/commerce-age-privacy-audit.old-706.json",
+    "jsonSha256": "85323c070bd9c0d6cc5f8a0041a52e246d2198ccbd06a026b7d01df40671afc7",
+    "markdownPath": "mobile/release/commerce-age-privacy-audit.old-706.md",
+    "markdownSha256": "762c5106398741a4d83861bafefda091c5599e67183d98b9b9f5a40c0c25022b",
+    "preservedByteForByte": true,
+    "sourceVersion": "2026-10-31-95cceac20ca7",
+    "totalItems": 706,
+    "note": "These verbatim prior artifacts retain their original source scope; the old Markdown relative JSON link is also preserved verbatim. Use the explicitly suffixed JSON for the prior receipt."
+  },
+  "additionalTopicReview": {
+    "method": "Read all mapped option titles and reviewed group/product metadata; scanned new native title/summary/notice fields, then evaluated keyword matches in context against Apple definitions. Independent second reviewer consulted the same official definitions.",
+    "newNativeHorrorCandidate": {
+      "itemId": "gyg-410534",
+      "title": "Paranormal History Walking Ghost Tour",
+      "status": "check-details",
+      "summary": "Compare this listing in our Guided Walks Around Banff: Nature, Town and History guide. Open its own provider page for the actual trip details.",
+      "recommendation": "Retain NONE on verified native presentation; document current provider content as not established rather than invent frightening stories.",
+      "currentProviderPageVerified": false
+    },
+    "nonHorrorTerms": [
+      {
+        "productId": "402023",
+        "context": "GHOST TOWN historical walking tour; term alone does not establish supernatural fear."
+      },
+      {
+        "productId": "451844",
+        "context": "Ghost Canyon geographic adventure name."
+      },
+      {
+        "productId": "1531608",
+        "context": "Ghost Valley geographic adventure name."
+      },
+      {
+        "productId": "1098711",
+        "context": "Ghost Lake appears in geographic URL path; no fear presentation established."
+      }
+    ],
+    "otherUnsupportedEscalations": [
+      "Child/adult participant rules are not mature or sexual content.",
+      "Comfort with heights, technical equipment and outdoor effort are not horror imagery.",
+      "Medical-restriction eligibility checks are not new treatment or prescribing guidance."
+    ],
+    "newVerifiedSexualGamblingOrViolenceTopicDelta": false,
+    "linkedContentScopeLimit": "This is an audit of the curated metadata and selected owned articles, not a certification of all future third-party browser content."
+  },
+  "coverageAudit": {
+    "status": "independent_fixed_cutoff_comparison_passed",
+    "cutoffCommit": "dfa545a7e7130e8494aab6342349fe6ce71a226c",
+    "cutoffPolicy": "No later website changes are included without a newly reviewed source pin.",
+    "publisherCounts": {
+      "capturedExperienceCards": 496,
+      "capturedUniqueExperienceProducts": 458,
+      "supplementalReviewedExperienceProducts": 10,
+      "distinctExperienceCandidates": 468,
+      "publishedExperienceGroups": 60,
+      "publishedMappedExperienceProducts": 464,
+      "fullyReviewedMappedExperienceProducts": 66,
+      "listingOnlyMappedExperienceProducts": 398,
+      "newCanonicalExperienceGuides": 49,
+      "olderPublishedProductReferences": 3,
+      "allTourProductIdentities": 467
+    },
+    "countInterpretation": "496 reported/captured result cards contain duplicates. The source has 458 captured distinct products plus 10 supplemental reviewed products = 468 distinct candidates; 4 explicit exclusions leave 464 mapped options. Do not call the 32-card difference 32 excluded distinct products.",
+    "allMappedProductIdsMatchNative": true,
+    "all60GroupIdentitiesCovered": true,
+    "allFourExcludedProductIdsAbsentFromAllCtas": true,
+    "excludedProductIds": [
+      "1328480",
+      "1273188",
+      "939302",
+      "667890"
+    ],
+    "all398ListingOnlyRecordsIsolateTheirIdentity": true,
+    "listingOnlyRulesVerified": [
+      "Uses its own published option title",
+      "Generic group-context comparison summary",
+      "Departure explicitly unknown",
+      "No operator field",
+      "No reviewedAt field",
+      "check-details status and exact-option checks"
+    ],
+    "reviewedProductRulesInspected": "New reviewed cards read only option.details whose productId equals that exact option; there is no fallback to a group primary product’s facts.",
+    "original15PreservedAgainstCommit": "55d4c13504915e2cffccfc06ed5432aad7937e54",
+    "original15PreservedFields": [
+      "id",
+      "title",
+      "summary",
+      "operator",
+      "relatedPlaceIds",
+      "relatedActivityIds",
+      "status",
+      "notice"
+    ],
+    "canonicalGuideCoverage": "All 60 group identities resolve; 49 new canonical guides, 11 reuse already indexed canonical guides. One new experiences index page brings the prior 463 guides to 513.",
+    "generatedProvenanceInputsVerifiedAgainstImmutableGitBytes": 163,
+    "githubSourceIdentityEvidence": [
+      {
+        "path": "src/data/banffExperienceGroups.json",
+        "ref": "dfa545a7e7130e8494aab6342349fe6ce71a226c",
+        "gitBlobSha1": "1dabbe8b6b94702e19b50fbf6da3e60e24024c8f"
+      },
+      {
+        "path": "src/data/banffExperienceInventory.json",
+        "ref": "dfa545a7e7130e8494aab6342349fe6ce71a226c",
+        "gitBlobSha1": "b2d098d8199ef6a31e404ef8628140ebcb4876bb"
+      }
+    ]
+  }
+}

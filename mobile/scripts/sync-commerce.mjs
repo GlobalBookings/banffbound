@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Deterministic, network-free export of the separately pinned published commerce catalogue. */
-import { readFile, writeFile, readdir } from 'node:fs/promises';
+import { readFile, writeFile, readdir, rename, rm } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { createRequire } from 'node:module';
 import { execFileSync } from 'node:child_process';
@@ -35,6 +35,7 @@ const moduleFiles = {
   hotels: 'src/data/hotelDirectory.ts', rentals: 'src/data/rentals.ts', rentalPlanning: 'src/data/rentalPlanning.ts',
   posts: 'src/data/blogPosts.ts', bodies: 'src/data/blogContentRegistry.ts', articleContext: 'src/data/articleBookingContext.ts',
   towns: 'src/data/towns.ts', trails: 'src/data/trails.ts',
+  experiences: 'src/data/banffExperiences.ts',
 };
 const bundled = await build({ stdin: { contents: Object.entries(moduleFiles).map(([name,file]) => `export * as ${name} from './${file}';`).join('\n'), resolveDir: sourceRoot }, absWorkingDir: sourceRoot, bundle: true, write: false, metafile: true, format: 'esm', platform: 'node', target: 'es2022', logLevel: 'silent' });
 for (const filename of Object.keys(bundled.metafile.inputs).filter(value => value !== '<stdin>').sort()) await verifyInput(filename);
@@ -90,6 +91,16 @@ function identity(url) {
   return u.href;
 }
 const seenReferrals = new Set();
+const experienceCoverage = source.experiences.getExperienceCoverage();
+const mappedExperiences = new Map();
+for (const group of source.experiences.banffExperienceGroups) for (const option of group.options) {
+  invariant(!mappedExperiences.has(option.productId), 'Duplicate published experience option: ' + option.productId);
+  mappedExperiences.set(option.productId,{ group, option, target: source.experiences.experienceOptionTarget(group,option) });
+}
+const excludedExperienceIds = new Set(experienceCoverage.excludedProducts.map(value => value.productId));
+invariant(mappedExperiences.size === 464 && source.experiences.banffExperienceGroups.length === 60 && excludedExperienceIds.size === 4 && experienceCoverage.identityCoverageComplete, 'Published experience coverage changed; review the fixed cutoff explicitly.');
+const capturedExperienceInventory = JSON.parse(await readFile(path.join(sourceRoot,'src/data/banffExperienceInventory.json'),'utf8'));
+const publishedExperienceOptions = [];
 const related = {
   'gyg-256607': { relatedPlaceIds: ['banff-gondola'], relatedActivityIds: ['gondola'] },
   'gyg-303253': { relatedPlaceIds: ['johnston-canyon-lower-falls'] },
@@ -109,12 +120,26 @@ for (const offer of source.activityTargets.activityBookingOffers) {
   const comparison = source.winter.winterActivityOffers.find(value => value.id === offer.id);
   invariant(comparison, 'Missing original editorial product comparison.');
   const target = source.activityTargets.activityCampaignTargets.find(value => value.primaryOfferId === offer.id);
-  const url = source.winter.winterActivityBookingUrl(offer.productUrl);
+  const mapped = mappedExperiences.get(offer.productId);
+  invariant(mapped && !excludedExperienceIds.has(offer.productId), 'A preserved central product must remain a published mapped option.');
+  const url = mapped.target.bookingUrl;
   seenReferrals.add(identity(url));
   invariant(reviewedOfferAreas[offer.id], 'Review the actual outing area rather than inferring it from a marketplace category.');
-  add({ id: offer.id, section: 'tours', title: comparison.name, summary: plain(comparison.fit || comparison.experience), area: reviewedOfferAreas[offer.id], category: comparison.format || 'Guided experience', operator: offer.provider, guideUrl: absolute(target?.guidePath || '/book/banff-winter-activities/'), reviewedAt: source.activityTargets.activityCampaignReviewedAt, status: offer.launchState === 'ready' ? 'ready' : 'check-details', notice: [offer.seasonalNotice, offer.holdReason].filter(Boolean).join(' '), ...related[offer.id], links: [merchantLink(offer.id + '-booking', url, offer.launchState === 'ready' ? 'Check dates on GetYourGuide' : 'Read listing details on GetYourGuide')] });
+  add({ id: offer.id, section: 'tours', title: comparison.name, summary: plain(comparison.fit || comparison.experience), area: reviewedOfferAreas[offer.id], category: comparison.format || 'Guided experience', operator: offer.provider, guideUrl: absolute(target?.guidePath || '/book/banff-winter-activities/'), reviewedAt: source.activityTargets.activityCampaignReviewedAt, status: mapped.target.launchState === 'ready' ? 'ready' : 'check-details', notice: [offer.seasonalNotice, offer.holdReason].filter(Boolean).join(' '), ...related[offer.id], links: [merchantLink(offer.id + '-booking', url, mapped.target.launchState === 'ready' ? 'Check dates on GetYourGuide' : 'Read listing details on GetYourGuide')] });
+}
+for (const [productId,{group,option,target}] of mappedExperiences) {
+  const id = 'gyg-' + productId;
+  const details = option.reviewState === 'reviewed' ? option.details : undefined;
+  invariant(option.reviewState === 'listing-only' || details?.productId === productId, 'Only the exact option can supply reviewed product facts.');
+  publishedExperienceOptions.push({ productId, itemId: id, groupId: group.id, guidePath: group.canonicalPath, reviewState: option.reviewState });
+  if (items.some(item => item.id === id)) continue;
+  const url = target.bookingUrl;
+  seenReferrals.add(identity(url));
+  add({ id, section: 'tours', title: plain(details?.title || option.optionTitle), summary: details ? plain(details.description) : 'Compare this listing in our ' + plain(group.title) + ' guide. Open its own provider page for the actual trip details.', area: details ? plain(details.departure) : 'Check the listing departure', category: details ? plain(details.category).replaceAll('-',' ') : 'Listing option: ' + group.categoryLabel, ...(details ? { operator: plain(details.provider), reviewedAt: details.checkedAt } : {}), guideUrl: absolute(group.canonicalPath), status: target.launchState === 'ready' && details ? 'ready' : 'check-details', notice: details ? target.seasonalNotice : 'Check listing details. This option can differ from the guide’s main example. Confirm its own operator, departure, itinerary, duration, inclusions, participant rules, dates and cancellation terms before booking.', links: [merchantLink(id + '-booking',url,details ? 'Check this GetYourGuide listing' : 'Check listing details on GetYourGuide'), ownLink(id + '-group-guide',group.canonicalPath,'Read the comparison guide')] });
 }
 function additionalReferral(url, title, summary, guideUrl, section = 'tours') {
+  const productId = new URL(url).pathname.match(/-t(\d+)\/$/)?.[1];
+  if (productId && excludedExperienceIds.has(productId)) return;
   const key = identity(url); if (seenReferrals.has(key)) return;
   const link = merchantLink('referral-' + hash(key).slice(0,12), url);
   seenReferrals.add(key);
@@ -212,6 +237,17 @@ await verifyInput('src/pages/towns/[slug].astro');
 await verifyInput('src/pages/trails/[slug].astro');
 for (const town of source.towns.towns) addStandaloneGuide({ id: 'town-guide-' + town.slug, section: 'guides', title: town.name + ': travel and base guide', summary: plain(town.description), area: town.name, category: 'Town & base guides', guideUrl: '/towns/' + town.slug + '/', status: 'reference-only', notice: 'Explore the full town guide online. Compare the actual overnight base, daily journeys and return transport before making plans.' },'src/pages/towns/[slug].astro','town');
 for (const trail of source.trails.trails) addStandaloneGuide({ id: 'trail-guide-' + trail.slug, section: 'guides', title: trail.name + ': route and access guide', summary: 'Plan ' + trail.name + ' in the ' + trail.area + ' area. Compare route information and seasonal context, then check current access and official reports.', area: trail.area, category: trail.type === 'lake' ? 'Lake guides' : trail.type === 'viewpoint' ? 'Viewpoint guides' : 'Trail guides', guideUrl: '/trails/' + trail.slug + '/', ...(trail.routeVerified !== false && trail.reviewedAt ? { reviewedAt: trail.reviewedAt } : {}), status: 'reference-only', notice: trail.routeVerified === false ? 'A retained route reference. Confirm the current route identity, access and directions with official sources before making plans. Historical route descriptions require checking.' : 'Open the full route guide online and check current official access, closures, weather and trail conditions. A listed route or editorial date does not establish that an outing is suitable today.' },'src/pages/trails/[slug].astro','trail');
+await verifyInput('src/pages/experiences/[slug].astro');
+const experienceGuideCoverage = [];
+for (const group of source.experiences.banffExperienceGroups) {
+  const url = canonicalGuideUrl(group.canonicalPath);
+  const existingId = guideByUrl.get(url);
+  const id = existingId || 'experience-guide-' + group.id;
+  experienceGuideCoverage.push({ groupId: group.id, url, itemId: id, added: !existingId });
+  if (existingId) continue;
+  guideByUrl.set(url,id);
+  add({ id, section: 'guides', title: plain(group.title), summary: plain(group.description), area: plain(group.departure), category: 'Experience guides: ' + group.categoryLabel, guideUrl: url, ...(group.checkedAt ? { reviewedAt: group.checkedAt } : {}), status: 'reference-only', notice: 'Compare the options in this online guide. Its main example does not establish every other listing’s operator, route, inclusions or availability; check the product you choose. ' + plain(group.notice), links: [ownLink(id + '-open',url)] });
+}
 // Preserve other fixed referrals authored on published page routes, including
 // destination searches outside the principal directory modules. Never evaluate
 // reader-derived expressions or transfer unrelated unused legacy article blobs.
@@ -258,17 +294,40 @@ const standaloneCounts = {
   trailLakeViewpointGuideRoutes: standaloneGuideCoverage.filter(value => value.kind === 'trail').length,
   canonicalRoutesAlreadyInActivityIndex: standaloneGuideCoverage.filter(value => !value.added).length,
 };
-invariant(standaloneCounts.standaloneVisitorPageRoutes === 71 && standaloneCounts.townGuideRoutes === 6 && standaloneCounts.trailLakeViewpointGuideRoutes === 81 && standaloneCounts.standaloneGuideEntriesAdded === 153, 'Published standalone guide coverage changed; review the route inventory explicitly.');
+invariant(standaloneCounts.standaloneVisitorPageRoutes === 72 && standaloneCounts.townGuideRoutes === 6 && standaloneCounts.trailLakeViewpointGuideRoutes === 81 && standaloneCounts.standaloneGuideEntriesAdded === 154, 'Published standalone guide coverage changed; review the route inventory explicitly.');
 invariant(guideByUrl.size === items.filter(item => item.section === 'guides').length, 'Duplicate canonical guide destination.');
-invariant(items.filter(item => item.id.startsWith('hotel-')).length === 95 && items.filter(item => item.id.startsWith('rental-')).length === 50 && items.filter(item => item.id.startsWith('guide-')).length === 295 && items.filter(item => /^gyg-\d+$/.test(item.id)).length === 15, 'Reviewed catalogue coverage changed; review the pin and expected counts explicitly.');
+invariant(items.filter(item => item.id.startsWith('hotel-')).length === 95 && items.filter(item => item.id.startsWith('rental-')).length === 50 && items.filter(item => item.id.startsWith('guide-')).length === 295 && items.filter(item => /^gyg-\d+$/.test(item.id)).length === 464 && experienceGuideCoverage.filter(value => value.added).length === 49, 'Reviewed catalogue coverage changed; review the pin and expected counts explicitly.');
+const productLinks = items.flatMap(item => item.section === 'tours' ? item.links.filter(link => link.provider === 'GetYourGuide' && link.kind === 'product') : []);
+const linkedProductIds = productLinks.map(link => new URL(link.url).pathname.match(/-t(\d+)\/$/)[1]);
+invariant(linkedProductIds.length === new Set(linkedProductIds).size && [...excludedExperienceIds].every(id => !linkedProductIds.includes(id)), 'Excluded or duplicate numeric product identity in the tour collection.');
+invariant(items.flatMap(item => item.links).every(link => link.provider !== 'GetYourGuide' || !excludedExperienceIds.has(new URL(link.url).pathname.match(/-t(\d+)\/$/)?.[1])), 'An excluded experience must not appear as a CTA in any collection.');
 invariant(items.every(item => item.links.length && item.links.every(link => link.provider !== 'Amazon' && link.provider !== 'DiscoverCars')), 'Unapproved direct provider link generated.');
-const provenance = { schemaVersion: 1, repository: pin.repository, sourceCommit: pin.commit, reviewedAt: pin.reviewedAt, pinSha256: hash(pinBytes), sourceInputs: [...inputs].sort(([a],[b]) => a.localeCompare(b)).map(([file,sha256]) => ({ file, sha256 })), counts: { total: items.length, bySection, reviewedGygOffers: 15, heldGygOffers: 4, hotelRecords: 95, reviewedHotelRecords: source.hotels.directoryHotels.filter(value => value.sourceStatus === 'reviewed').length, historicalRentalLeads: 50, activeBlogGuides: 295, activeActivityGuides: source.activity.activities.length, ...standaloneCounts, gearWebsiteRoutes: 35 }, standaloneGuideCoverage, excludedStandalonePages, standaloneMetadataExtraction: 'Literal quoted layout title/description attributes only; no Astro frontmatter execution. Dynamic town/trail identities come from separately hash-verified published data modules.', affiliateDisclosure: disclosure, gygAppCampaign: 'banffboundapp', sourceUrlTransforms: [...sourceUrlTransforms].sort(([a],[b]) => a.localeCompare(b)).map(([originalUrl,appUrl]) => ({ originalUrl, appUrl, change: 'Set the same static cmp=banffboundapp for every app visitor; preserve publisher and product identity and other source parameters.' })), noLivePricesOrAvailability: true, noProviderImagesOrWidgets: true, noAutomaticProviderRequests: true, amazonDirectLinksEnabled: false, userOrDeviceTrackingParametersAdded: false, originalOfflineCatalogueChanged: false, originalOfflineCataloguePin: pin.originalOfflineCataloguePin, providerDecisions: pin.providerDecisions, termsSources: pin.termsSources };
+const experienceCounts = {
+  capturedExperienceCards: capturedExperienceInventory.capturedCards,
+  capturedUniqueExperienceProducts: capturedExperienceInventory.capturedUniqueProductCount,
+  supplementalReviewedExperienceProducts: capturedExperienceInventory.supplementalReviewedProductCount,
+  distinctExperienceCandidates: experienceCoverage.counts.discoveredProducts,
+  publishedExperienceGroups: source.experiences.banffExperienceGroups.length,
+  publishedMappedExperienceProducts: mappedExperiences.size,
+  excludedExperienceProducts: excludedExperienceIds.size,
+  fullyReviewedMappedExperienceProducts: publishedExperienceOptions.filter(value => value.reviewState === 'reviewed').length,
+  listingOnlyMappedExperienceProducts: publishedExperienceOptions.filter(value => value.reviewState === 'listing-only').length,
+  newCanonicalExperienceGuides: experienceGuideCoverage.filter(value => value.added).length,
+  olderPublishedProductReferences: linkedProductIds.filter(id => !mappedExperiences.has(id)).length,
+  allTourProductIdentities: linkedProductIds.length,
+};
+invariant(experienceCounts.capturedExperienceCards === 496 && experienceCounts.capturedUniqueExperienceProducts === 458 && experienceCounts.supplementalReviewedExperienceProducts === 10 && experienceCounts.distinctExperienceCandidates === 468 && experienceCounts.fullyReviewedMappedExperienceProducts === 66 && experienceCounts.listingOnlyMappedExperienceProducts === 398, 'Experience discovery cards, distinct identities and review scopes must remain separate.');
+const provenance = { schemaVersion: 1, repository: pin.repository, sourceCommit: pin.commit, reviewedAt: pin.reviewedAt, pinSha256: hash(pinBytes), sourceInputs: [...inputs].sort(([a],[b]) => a.localeCompare(b)).map(([file,sha256]) => ({ file, sha256 })), counts: { total: items.length, bySection, reviewedGygOffers: 15, heldGygOffers: 4, hotelRecords: 95, reviewedHotelRecords: source.hotels.directoryHotels.filter(value => value.sourceStatus === 'reviewed').length, historicalRentalLeads: 50, activeBlogGuides: 295, activeActivityGuides: source.activity.activities.length, ...standaloneCounts, ...experienceCounts, gearWebsiteRoutes: 35 }, publishedExperienceOptions, experienceGuideCoverage, excludedExperienceProducts: experienceCoverage.excludedProducts, standaloneGuideCoverage, excludedStandalonePages, standaloneMetadataExtraction: 'Literal quoted layout title/description attributes only; no Astro frontmatter execution. Dynamic town/trail/experience identities come from separately hash-verified published data modules.', affiliateDisclosure: disclosure, gygAppCampaign: 'banffboundapp', sourceUrlTransforms: [...sourceUrlTransforms].sort(([a],[b]) => a.localeCompare(b)).map(([originalUrl,appUrl]) => ({ originalUrl, appUrl, change: 'Set the same static cmp=banffboundapp for every app visitor; preserve publisher and product identity and other source parameters.' })), noLivePricesOrAvailability: true, noProviderImagesOrWidgets: true, noAutomaticProviderRequests: true, amazonDirectLinksEnabled: false, userOrDeviceTrackingParametersAdded: false, originalOfflineCatalogueChanged: false, originalOfflineCataloguePin: pin.originalOfflineCataloguePin, providerDecisions: pin.providerDecisions, termsSources: pin.termsSources };
 const version = pin.reviewedAt + '-' + hash(JSON.stringify({ items, provenance })).slice(0,12);
 const generated = `/* Generated by scripts/sync-commerce.mjs from separately pinned published website data. */\nimport type { CommerceItem, CommerceSectionDescriptor } from './commerce';\n\nexport const commerceItems: CommerceItem[] = ${JSON.stringify(items,null,2)};\n\nexport const commerceSections: CommerceSectionDescriptor[] = ${JSON.stringify(sections,null,2)};\n\nexport const commerceDataVersion = ${JSON.stringify(version)};\nexport const commerceProvenance = ${JSON.stringify(provenance,null,2)};\n`;
-const inventory = JSON.stringify({ schemaVersion: 1, sourceCommit: pin.commit, dataVersion: version, ...provenance.counts, standaloneGuideCoverage, excludedStandalonePages, originalCuratedCatalogueUnchanged: true, providers: [...new Set(items.flatMap(item => item.links.map(link => link.provider)))].sort(), heldGygOfferIds: source.activityTargets.activityBookingOffers.filter(value => value.launchState === 'held').map(value => value.id), nativeAmazonApprovalEstablished: false, noDirectAmazonLinks: true, outputsContainNoPricesOrCoordinates: true },null,2) + '\n';
+const inventory = JSON.stringify({ schemaVersion: 1, sourceCommit: pin.commit, dataVersion: version, ...provenance.counts, publishedExperienceOptions, experienceGuideCoverage, excludedExperienceProducts: experienceCoverage.excludedProducts, standaloneGuideCoverage, excludedStandalonePages, originalCuratedCatalogueUnchanged: true, providers: [...new Set(items.flatMap(item => item.links.map(link => link.provider)))].sort(), heldGygOfferIds: source.activityTargets.activityBookingOffers.filter(value => value.launchState === 'held').map(value => value.id), nativeAmazonApprovalEstablished: false, noDirectAmazonLinks: true, outputsContainNoPricesOrCoordinates: true },null,2) + '\n';
 for (const [relative, bytes] of [['src/data/commerce.generated.ts',generated],['release/commerce-catalogue-inventory.json',inventory]]) {
   const filename = path.join(mobileRoot,relative);
   if (check) invariant(await readFile(filename,'utf8') === bytes, 'Generated commerce output differs: ' + relative);
-  else await writeFile(filename,bytes);
+  else {
+    const pending = filename + '.' + process.pid + '.pending';
+    try { await writeFile(pending,bytes,{ flag: 'wx' }); await rename(pending,filename); }
+    finally { await rm(pending,{ force: true }); }
+  }
 }
 console.log(JSON.stringify({ check, sourceCommit: pin.commit, dataVersion: version, sourceInputs: inputs.size, ...provenance.counts }));

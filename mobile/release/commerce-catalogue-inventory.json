@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "sourceCommit": "eb55328b608d79cfdffc4cc41298f0f0f23cf996",
-  "dataVersion": "2026-10-31-95cceac20ca7",
-  "total": 706,
+  "sourceCommit": "dfa545a7e7130e8494aab6342349fe6ce71a226c",
+  "dataVersion": "2026-10-31-33353c29842c",
+  "total": 1205,
   "bySection": {
-    "tours": 55,
+    "tours": 504,
     "stays": 145,
-    "guides": 463,
+    "guides": 513,
     "extras": 43
   },
   "reviewedGygOffers": 15,
@@ -16,13 +16,3654 @@
   "historicalRentalLeads": 50,
   "activeBlogGuides": 295,
   "activeActivityGuides": 15,
-  "standaloneGuideEntriesAdded": 153,
-  "standaloneCanonicalRoutesCovered": 158,
-  "standaloneVisitorPageRoutes": 71,
+  "standaloneGuideEntriesAdded": 154,
+  "standaloneCanonicalRoutesCovered": 159,
+  "standaloneVisitorPageRoutes": 72,
   "townGuideRoutes": 6,
   "trailLakeViewpointGuideRoutes": 81,
   "canonicalRoutesAlreadyInActivityIndex": 5,
+  "capturedExperienceCards": 496,
+  "capturedUniqueExperienceProducts": 458,
+  "supplementalReviewedExperienceProducts": 10,
+  "distinctExperienceCandidates": 468,
+  "publishedExperienceGroups": 60,
+  "publishedMappedExperienceProducts": 464,
+  "excludedExperienceProducts": [
+    {
+      "productId": "1328480",
+      "reason": "Current full description is a Calgary city drive and Calgary Tower visit; no Banff visit or departure."
+    },
+    {
+      "productId": "1273188",
+      "reason": "Current live description is a Calgary-to-Drumheller day trip; its old Banff/Golden URL slug no longer describes the product."
+    },
+    {
+      "productId": "939302",
+      "reason": "Current listing identifies an eight-day Beijing, Xian and Shanghai tour in China; no Banff activity or departure."
+    },
+    {
+      "productId": "667890",
+      "reason": "Quarantined after live review: current Badlands heading and inclusions contradict retained Banff itinerary paragraphs. Do not promote an unconfirmed route."
+    }
+  ],
+  "fullyReviewedMappedExperienceProducts": 66,
+  "listingOnlyMappedExperienceProducts": 398,
+  "newCanonicalExperienceGuides": 49,
+  "olderPublishedProductReferences": 3,
+  "allTourProductIdentities": 467,
   "gearWebsiteRoutes": 35,
+  "publishedExperienceOptions": [
+    {
+      "productId": "226543",
+      "itemId": "gyg-226543",
+      "groupId": "wagon-rides-cookouts",
+      "guidePath": "/experiences/banff-wagon-ride-cowboy-cookout/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "303703",
+      "itemId": "gyg-303703",
+      "groupId": "winter-sleigh-rides",
+      "guidePath": "/experiences/banff-horse-drawn-sleigh-rides/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "303713",
+      "itemId": "gyg-303713",
+      "groupId": "winter-sleigh-rides",
+      "guidePath": "/experiences/banff-horse-drawn-sleigh-rides/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "641413",
+      "itemId": "gyg-641413",
+      "groupId": "scenic-river-floats",
+      "guidePath": "/experiences/bow-river-scenic-float-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "393707",
+      "itemId": "gyg-393707",
+      "groupId": "wolfdog-sanctuary",
+      "guidePath": "/experiences/wolfdog-sanctuary-tour-from-banff-area/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1000720",
+      "itemId": "gyg-1000720",
+      "groupId": "wolfdog-sanctuary",
+      "guidePath": "/experiences/wolfdog-sanctuary-tour-from-banff-area/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "916190",
+      "itemId": "gyg-916190",
+      "groupId": "stargazing-night-walks",
+      "guidePath": "/blog/banff-northern-lights/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1140913",
+      "itemId": "gyg-1140913",
+      "groupId": "stargazing-night-walks",
+      "guidePath": "/blog/banff-northern-lights/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1155938",
+      "itemId": "gyg-1155938",
+      "groupId": "stargazing-night-walks",
+      "guidePath": "/blog/banff-northern-lights/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1162766",
+      "itemId": "gyg-1162766",
+      "groupId": "stargazing-night-walks",
+      "guidePath": "/blog/banff-northern-lights/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "642134",
+      "itemId": "gyg-642134",
+      "groupId": "stargazing-night-walks",
+      "guidePath": "/blog/banff-northern-lights/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "948697",
+      "itemId": "gyg-948697",
+      "groupId": "stargazing-night-walks",
+      "guidePath": "/blog/banff-northern-lights/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "407273",
+      "itemId": "gyg-407273",
+      "groupId": "stargazing-night-walks",
+      "guidePath": "/blog/banff-northern-lights/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "858142",
+      "itemId": "gyg-858142",
+      "groupId": "airport-shared-departures",
+      "guidePath": "/experiences/banff-canmore-yyc-shared-airport-return/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "695211",
+      "itemId": "gyg-695211",
+      "groupId": "airport-shared-departures",
+      "guidePath": "/experiences/banff-canmore-yyc-shared-airport-return/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1004220",
+      "itemId": "gyg-1004220",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1204012",
+      "itemId": "gyg-1204012",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "437443",
+      "itemId": "gyg-437443",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "829261",
+      "itemId": "gyg-829261",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1352290",
+      "itemId": "gyg-1352290",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1105331",
+      "itemId": "gyg-1105331",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1328275",
+      "itemId": "gyg-1328275",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "847636",
+      "itemId": "gyg-847636",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1362969",
+      "itemId": "gyg-1362969",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1524856",
+      "itemId": "gyg-1524856",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1505445",
+      "itemId": "gyg-1505445",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1286794",
+      "itemId": "gyg-1286794",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1357953",
+      "itemId": "gyg-1357953",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "616228",
+      "itemId": "gyg-616228",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1475444",
+      "itemId": "gyg-1475444",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "819591",
+      "itemId": "gyg-819591",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1281363",
+      "itemId": "gyg-1281363",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1448324",
+      "itemId": "gyg-1448324",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "611748",
+      "itemId": "gyg-611748",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "915070",
+      "itemId": "gyg-915070",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1102310",
+      "itemId": "gyg-1102310",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "842599",
+      "itemId": "gyg-842599",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "744082",
+      "itemId": "gyg-744082",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "449308",
+      "itemId": "gyg-449308",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "958594",
+      "itemId": "gyg-958594",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1423819",
+      "itemId": "gyg-1423819",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1514790",
+      "itemId": "gyg-1514790",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1514412",
+      "itemId": "gyg-1514412",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1077670",
+      "itemId": "gyg-1077670",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "855769",
+      "itemId": "gyg-855769",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "613567",
+      "itemId": "gyg-613567",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1322247",
+      "itemId": "gyg-1322247",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "825086",
+      "itemId": "gyg-825086",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1004112",
+      "itemId": "gyg-1004112",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "853877",
+      "itemId": "gyg-853877",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "991124",
+      "itemId": "gyg-991124",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "751175",
+      "itemId": "gyg-751175",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1240083",
+      "itemId": "gyg-1240083",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1297421",
+      "itemId": "gyg-1297421",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "831766",
+      "itemId": "gyg-831766",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "802500",
+      "itemId": "gyg-802500",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "752251",
+      "itemId": "gyg-752251",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1361643",
+      "itemId": "gyg-1361643",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1381113",
+      "itemId": "gyg-1381113",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1494532",
+      "itemId": "gyg-1494532",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1271559",
+      "itemId": "gyg-1271559",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1370350",
+      "itemId": "gyg-1370350",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1348981",
+      "itemId": "gyg-1348981",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1360712",
+      "itemId": "gyg-1360712",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1001234",
+      "itemId": "gyg-1001234",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1220070",
+      "itemId": "gyg-1220070",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "993112",
+      "itemId": "gyg-993112",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1381130",
+      "itemId": "gyg-1381130",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1381133",
+      "itemId": "gyg-1381133",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1381137",
+      "itemId": "gyg-1381137",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1288097",
+      "itemId": "gyg-1288097",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "945203",
+      "itemId": "gyg-945203",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1098711",
+      "itemId": "gyg-1098711",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1358046",
+      "itemId": "gyg-1358046",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "540595",
+      "itemId": "gyg-540595",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "227155",
+      "itemId": "gyg-227155",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "394816",
+      "itemId": "gyg-394816",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "437793",
+      "itemId": "gyg-437793",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1142329",
+      "itemId": "gyg-1142329",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "541289",
+      "itemId": "gyg-541289",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "875061",
+      "itemId": "gyg-875061",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1335968",
+      "itemId": "gyg-1335968",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1016698",
+      "itemId": "gyg-1016698",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "974426",
+      "itemId": "gyg-974426",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "740995",
+      "itemId": "gyg-740995",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "824147",
+      "itemId": "gyg-824147",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "655936",
+      "itemId": "gyg-655936",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "634080",
+      "itemId": "gyg-634080",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1086481",
+      "itemId": "gyg-1086481",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "561080",
+      "itemId": "gyg-561080",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1071619",
+      "itemId": "gyg-1071619",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1219802",
+      "itemId": "gyg-1219802",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1230094",
+      "itemId": "gyg-1230094",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "845510",
+      "itemId": "gyg-845510",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "594553",
+      "itemId": "gyg-594553",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "896496",
+      "itemId": "gyg-896496",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "950632",
+      "itemId": "gyg-950632",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1202403",
+      "itemId": "gyg-1202403",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "789422",
+      "itemId": "gyg-789422",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "789465",
+      "itemId": "gyg-789465",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "975235",
+      "itemId": "gyg-975235",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1010195",
+      "itemId": "gyg-1010195",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "758635",
+      "itemId": "gyg-758635",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "945735",
+      "itemId": "gyg-945735",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "644038",
+      "itemId": "gyg-644038",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1149891",
+      "itemId": "gyg-1149891",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1435219",
+      "itemId": "gyg-1435219",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1286216",
+      "itemId": "gyg-1286216",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "566125",
+      "itemId": "gyg-566125",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1068143",
+      "itemId": "gyg-1068143",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1238689",
+      "itemId": "gyg-1238689",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "693257",
+      "itemId": "gyg-693257",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1000254",
+      "itemId": "gyg-1000254",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1259743",
+      "itemId": "gyg-1259743",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1271620",
+      "itemId": "gyg-1271620",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1282629",
+      "itemId": "gyg-1282629",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "764427",
+      "itemId": "gyg-764427",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1280099",
+      "itemId": "gyg-1280099",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "748866",
+      "itemId": "gyg-748866",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1091156",
+      "itemId": "gyg-1091156",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "971665",
+      "itemId": "gyg-971665",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1320748",
+      "itemId": "gyg-1320748",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1273185",
+      "itemId": "gyg-1273185",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1018718",
+      "itemId": "gyg-1018718",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1454656",
+      "itemId": "gyg-1454656",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1247991",
+      "itemId": "gyg-1247991",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "992750",
+      "itemId": "gyg-992750",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "546270",
+      "itemId": "gyg-546270",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1119806",
+      "itemId": "gyg-1119806",
+      "groupId": "banff-yoho-lake-day-tours",
+      "guidePath": "/experiences/lake-louise-moraine-emerald-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "827226",
+      "itemId": "gyg-827226",
+      "groupId": "open-top-sightseeing",
+      "guidePath": "/experiences/banff-vintage-open-top-touring/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "955857",
+      "itemId": "gyg-955857",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "602050",
+      "itemId": "gyg-602050",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "750106",
+      "itemId": "gyg-750106",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1026767",
+      "itemId": "gyg-1026767",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "594506",
+      "itemId": "gyg-594506",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1103385",
+      "itemId": "gyg-1103385",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1122627",
+      "itemId": "gyg-1122627",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "861161",
+      "itemId": "gyg-861161",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "670682",
+      "itemId": "gyg-670682",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "741082",
+      "itemId": "gyg-741082",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "404589",
+      "itemId": "gyg-404589",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "741802",
+      "itemId": "gyg-741802",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "807056",
+      "itemId": "gyg-807056",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1131138",
+      "itemId": "gyg-1131138",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1500940",
+      "itemId": "gyg-1500940",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1221209",
+      "itemId": "gyg-1221209",
+      "groupId": "gondola-hot-springs-day-tours",
+      "guidePath": "/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "825013",
+      "itemId": "gyg-825013",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1341317",
+      "itemId": "gyg-1341317",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "770518",
+      "itemId": "gyg-770518",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "903161",
+      "itemId": "gyg-903161",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "634622",
+      "itemId": "gyg-634622",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1028160",
+      "itemId": "gyg-1028160",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1273110",
+      "itemId": "gyg-1273110",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1297480",
+      "itemId": "gyg-1297480",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1297459",
+      "itemId": "gyg-1297459",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "939238",
+      "itemId": "gyg-939238",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "879113",
+      "itemId": "gyg-879113",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "849067",
+      "itemId": "gyg-849067",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1162976",
+      "itemId": "gyg-1162976",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1362282",
+      "itemId": "gyg-1362282",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1488941",
+      "itemId": "gyg-1488941",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1105056",
+      "itemId": "gyg-1105056",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1481169",
+      "itemId": "gyg-1481169",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1094486",
+      "itemId": "gyg-1094486",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1049981",
+      "itemId": "gyg-1049981",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1019225",
+      "itemId": "gyg-1019225",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "545578",
+      "itemId": "gyg-545578",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1445173",
+      "itemId": "gyg-1445173",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1381139",
+      "itemId": "gyg-1381139",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1167997",
+      "itemId": "gyg-1167997",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1502476",
+      "itemId": "gyg-1502476",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1461505",
+      "itemId": "gyg-1461505",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "992833",
+      "itemId": "gyg-992833",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1260057",
+      "itemId": "gyg-1260057",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "850917",
+      "itemId": "gyg-850917",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1016119",
+      "itemId": "gyg-1016119",
+      "groupId": "banff-sightseeing-day-tours",
+      "guidePath": "/experiences/banff-highlights-guided-sightseeing/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1127972",
+      "itemId": "gyg-1127972",
+      "groupId": "photography",
+      "guidePath": "/experiences/banff-photography-session-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1509976",
+      "itemId": "gyg-1509976",
+      "groupId": "photography",
+      "guidePath": "/experiences/banff-photography-session-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "256607",
+      "itemId": "gyg-256607",
+      "groupId": "gondola-chairlift-admission",
+      "guidePath": "/blog/banff-gondola-guide/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "291800",
+      "itemId": "gyg-291800",
+      "groupId": "gondola-chairlift-admission",
+      "guidePath": "/blog/banff-gondola-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1260695",
+      "itemId": "gyg-1260695",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1122948",
+      "itemId": "gyg-1122948",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1132980",
+      "itemId": "gyg-1132980",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "948673",
+      "itemId": "gyg-948673",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "437687",
+      "itemId": "gyg-437687",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1053752",
+      "itemId": "gyg-1053752",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1359791",
+      "itemId": "gyg-1359791",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "687071",
+      "itemId": "gyg-687071",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "832378",
+      "itemId": "gyg-832378",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "393725",
+      "itemId": "gyg-393725",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1471091",
+      "itemId": "gyg-1471091",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1005859",
+      "itemId": "gyg-1005859",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1173941",
+      "itemId": "gyg-1173941",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1534395",
+      "itemId": "gyg-1534395",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1174906",
+      "itemId": "gyg-1174906",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1235186",
+      "itemId": "gyg-1235186",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1278783",
+      "itemId": "gyg-1278783",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1433769",
+      "itemId": "gyg-1433769",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "301498",
+      "itemId": "gyg-301498",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1498044",
+      "itemId": "gyg-1498044",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1498064",
+      "itemId": "gyg-1498064",
+      "groupId": "wildlife-tours",
+      "guidePath": "/experiences/banff-wildlife-morning-evening-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "432341",
+      "itemId": "gyg-432341",
+      "groupId": "ice-climbing",
+      "guidePath": "/activities/ice-climbing/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "944498",
+      "itemId": "gyg-944498",
+      "groupId": "banff-jasper-transfers",
+      "guidePath": "/experiences/banff-jasper-transfer-sightseeing-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "190820",
+      "itemId": "gyg-190820",
+      "groupId": "banff-jasper-transfers",
+      "guidePath": "/experiences/banff-jasper-transfer-sightseeing-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1405758",
+      "itemId": "gyg-1405758",
+      "groupId": "banff-jasper-transfers",
+      "guidePath": "/experiences/banff-jasper-transfer-sightseeing-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "190841",
+      "itemId": "gyg-190841",
+      "groupId": "banff-jasper-transfers",
+      "guidePath": "/experiences/banff-jasper-transfer-sightseeing-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "694465",
+      "itemId": "gyg-694465",
+      "groupId": "calgary-banff-transfers",
+      "guidePath": "/experiences/calgary-banff-city-shuttle-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1122716",
+      "itemId": "gyg-1122716",
+      "groupId": "railway-history-road-tours",
+      "guidePath": "/experiences/canadian-pacific-railway-history-road-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "841685",
+      "itemId": "gyg-841685",
+      "groupId": "scenic-helicopter-flights",
+      "guidePath": "/blog/banff-helicopter-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "397639",
+      "itemId": "gyg-397639",
+      "groupId": "scenic-helicopter-flights",
+      "guidePath": "/blog/banff-helicopter-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "300331",
+      "itemId": "gyg-300331",
+      "groupId": "scenic-helicopter-flights",
+      "guidePath": "/blog/banff-helicopter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "397552",
+      "itemId": "gyg-397552",
+      "groupId": "scenic-helicopter-flights",
+      "guidePath": "/blog/banff-helicopter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "307058",
+      "itemId": "gyg-307058",
+      "groupId": "scenic-helicopter-flights",
+      "guidePath": "/blog/banff-helicopter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "227326",
+      "itemId": "gyg-227326",
+      "groupId": "scenic-helicopter-flights",
+      "guidePath": "/blog/banff-helicopter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "290110",
+      "itemId": "gyg-290110",
+      "groupId": "bow-river-canoeing",
+      "guidePath": "/experiences/banff-bow-river-canoe-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "290100",
+      "itemId": "gyg-290100",
+      "groupId": "bow-river-canoeing",
+      "guidePath": "/experiences/banff-bow-river-canoe-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1130041",
+      "itemId": "gyg-1130041",
+      "groupId": "canyoning",
+      "guidePath": "/experiences/banff-area-canyoning-summer-winter-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "446969",
+      "itemId": "gyg-446969",
+      "groupId": "canyoning",
+      "guidePath": "/experiences/banff-area-canyoning-summer-winter-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "451844",
+      "itemId": "gyg-451844",
+      "groupId": "canyoning",
+      "guidePath": "/experiences/banff-area-canyoning-summer-winter-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1147166",
+      "itemId": "gyg-1147166",
+      "groupId": "canyoning",
+      "guidePath": "/experiences/banff-area-canyoning-summer-winter-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "454374",
+      "itemId": "gyg-454374",
+      "groupId": "canyoning",
+      "guidePath": "/experiences/banff-area-canyoning-summer-winter-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "284552",
+      "itemId": "gyg-284552",
+      "groupId": "columbia-icefield-admission",
+      "guidePath": "/experiences/columbia-icefield-ice-explorer-skywalk-tickets/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "292675",
+      "itemId": "gyg-292675",
+      "groupId": "cross-country-skiing",
+      "guidePath": "/blog/banff-cross-country-skiing/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "420428",
+      "itemId": "gyg-420428",
+      "groupId": "self-guided-exploration",
+      "guidePath": "/experiences/banff-self-guided-audio-driving-tour/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "687955",
+      "itemId": "gyg-687955",
+      "groupId": "lake-fishing-charters",
+      "guidePath": "/experiences/lake-minnewanka-fishing-charters/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "948703",
+      "itemId": "gyg-948703",
+      "groupId": "banff-badlands-day-trips",
+      "guidePath": "/experiences/banff-canmore-drumheller-badlands-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1451475",
+      "itemId": "gyg-1451475",
+      "groupId": "edmonton-banff-day-tours",
+      "guidePath": "/experiences/edmonton-banff-lake-louise-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1461490",
+      "itemId": "gyg-1461490",
+      "groupId": "edmonton-banff-day-tours",
+      "guidePath": "/experiences/edmonton-banff-lake-louise-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1409180",
+      "itemId": "gyg-1409180",
+      "groupId": "edmonton-banff-day-tours",
+      "guidePath": "/experiences/edmonton-banff-lake-louise-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1210953",
+      "itemId": "gyg-1210953",
+      "groupId": "vancouver-rockies-multi-day",
+      "guidePath": "/experiences/vancouver-banff-rockies-multi-day-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "647094",
+      "itemId": "gyg-647094",
+      "groupId": "vancouver-rockies-multi-day",
+      "guidePath": "/experiences/vancouver-banff-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1493475",
+      "itemId": "gyg-1493475",
+      "groupId": "vancouver-rockies-multi-day",
+      "guidePath": "/experiences/vancouver-banff-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1164949",
+      "itemId": "gyg-1164949",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "437912",
+      "itemId": "gyg-437912",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1125262",
+      "itemId": "gyg-1125262",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1474967",
+      "itemId": "gyg-1474967",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "901060",
+      "itemId": "gyg-901060",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1342111",
+      "itemId": "gyg-1342111",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1488591",
+      "itemId": "gyg-1488591",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1502459",
+      "itemId": "gyg-1502459",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1480213",
+      "itemId": "gyg-1480213",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1427707",
+      "itemId": "gyg-1427707",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1438006",
+      "itemId": "gyg-1438006",
+      "groupId": "winter-lakes-road-tours",
+      "guidePath": "/activities/yoho-kootenay-winter-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1109253",
+      "itemId": "gyg-1109253",
+      "groupId": "skybridge-zipline",
+      "guidePath": "/experiences/golden-skybridge-zipline-day-trip-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "400138",
+      "itemId": "gyg-400138",
+      "groupId": "skybridge-zipline",
+      "guidePath": "/experiences/golden-skybridge-zipline-day-trip-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1109214",
+      "itemId": "gyg-1109214",
+      "groupId": "skybridge-zipline",
+      "guidePath": "/experiences/golden-skybridge-zipline-day-trip-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "303298",
+      "itemId": "gyg-303298",
+      "groupId": "grotto-icewalks",
+      "guidePath": "/experiences/grotto-canyon-guided-winter-walks/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1086568",
+      "itemId": "gyg-1086568",
+      "groupId": "grotto-icewalks",
+      "guidePath": "/experiences/grotto-canyon-guided-winter-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "226519",
+      "itemId": "gyg-226519",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "948615",
+      "itemId": "gyg-948615",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1120965",
+      "itemId": "gyg-1120965",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1304386",
+      "itemId": "gyg-1304386",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1329129",
+      "itemId": "gyg-1329129",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1469298",
+      "itemId": "gyg-1469298",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1461953",
+      "itemId": "gyg-1461953",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1464173",
+      "itemId": "gyg-1464173",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1388124",
+      "itemId": "gyg-1388124",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1074469",
+      "itemId": "gyg-1074469",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1461674",
+      "itemId": "gyg-1461674",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1221258",
+      "itemId": "gyg-1221258",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1010968",
+      "itemId": "gyg-1010968",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "390708",
+      "itemId": "gyg-390708",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1301275",
+      "itemId": "gyg-1301275",
+      "groupId": "guided-hiking",
+      "guidePath": "/experiences/banff-canmore-guided-day-hikes/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1070982",
+      "itemId": "gyg-1070982",
+      "groupId": "kayaking-paddleboarding",
+      "guidePath": "/experiences/banff-area-guided-kayak-paddle-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "550465",
+      "itemId": "gyg-550465",
+      "groupId": "winter-ice-experiences",
+      "guidePath": "/experiences/banff-guided-natural-ice-walks/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "402023",
+      "itemId": "gyg-402023",
+      "groupId": "banff-town-walks",
+      "guidePath": "/experiences/banff-guided-town-history-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1359861",
+      "itemId": "gyg-1359861",
+      "groupId": "banff-town-walks",
+      "guidePath": "/experiences/banff-guided-town-history-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "932009",
+      "itemId": "gyg-932009",
+      "groupId": "banff-town-walks",
+      "guidePath": "/experiences/banff-guided-town-history-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "948659",
+      "itemId": "gyg-948659",
+      "groupId": "banff-town-walks",
+      "guidePath": "/experiences/banff-guided-town-history-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "948679",
+      "itemId": "gyg-948679",
+      "groupId": "banff-town-walks",
+      "guidePath": "/experiences/banff-guided-town-history-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1080958",
+      "itemId": "gyg-1080958",
+      "groupId": "banff-town-walks",
+      "guidePath": "/experiences/banff-guided-town-history-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "410534",
+      "itemId": "gyg-410534",
+      "groupId": "banff-town-walks",
+      "guidePath": "/experiences/banff-guided-town-history-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "948666",
+      "itemId": "gyg-948666",
+      "groupId": "banff-town-walks",
+      "guidePath": "/experiences/banff-guided-town-history-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "948647",
+      "itemId": "gyg-948647",
+      "groupId": "banff-town-walks",
+      "guidePath": "/experiences/banff-guided-town-history-walks/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "227587",
+      "itemId": "gyg-227587",
+      "groupId": "horseback-riding",
+      "guidePath": "/experiences/banff-horseback-riding-route-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "348736",
+      "itemId": "gyg-348736",
+      "groupId": "horseback-riding",
+      "guidePath": "/experiences/banff-horseback-riding-route-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "393713",
+      "itemId": "gyg-393713",
+      "groupId": "horseback-riding",
+      "guidePath": "/experiences/banff-horseback-riding-route-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "393709",
+      "itemId": "gyg-393709",
+      "groupId": "horseback-riding",
+      "guidePath": "/experiences/banff-horseback-riding-route-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "227593",
+      "itemId": "gyg-227593",
+      "groupId": "horseback-riding",
+      "guidePath": "/experiences/banff-horseback-riding-route-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "270967",
+      "itemId": "gyg-270967",
+      "groupId": "horseback-riding",
+      "guidePath": "/experiences/banff-horseback-riding-route-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "437787",
+      "itemId": "gyg-437787",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "738880",
+      "itemId": "gyg-738880",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "988784",
+      "itemId": "gyg-988784",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "226492",
+      "itemId": "gyg-226492",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "786572",
+      "itemId": "gyg-786572",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "750022",
+      "itemId": "gyg-750022",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "656478",
+      "itemId": "gyg-656478",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1257565",
+      "itemId": "gyg-1257565",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1494997",
+      "itemId": "gyg-1494997",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1036199",
+      "itemId": "gyg-1036199",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1010159",
+      "itemId": "gyg-1010159",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1329702",
+      "itemId": "gyg-1329702",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1319586",
+      "itemId": "gyg-1319586",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1088268",
+      "itemId": "gyg-1088268",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "738667",
+      "itemId": "gyg-738667",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1213373",
+      "itemId": "gyg-1213373",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1218092",
+      "itemId": "gyg-1218092",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1358098",
+      "itemId": "gyg-1358098",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1167907",
+      "itemId": "gyg-1167907",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "992765",
+      "itemId": "gyg-992765",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1225940",
+      "itemId": "gyg-1225940",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "993125",
+      "itemId": "gyg-993125",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1049995",
+      "itemId": "gyg-1049995",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1333825",
+      "itemId": "gyg-1333825",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "992089",
+      "itemId": "gyg-992089",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1307125",
+      "itemId": "gyg-1307125",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "617107",
+      "itemId": "gyg-617107",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1121074",
+      "itemId": "gyg-1121074",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1316603",
+      "itemId": "gyg-1316603",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1381109",
+      "itemId": "gyg-1381109",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1166524",
+      "itemId": "gyg-1166524",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "851913",
+      "itemId": "gyg-851913",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1093968",
+      "itemId": "gyg-1093968",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1125002",
+      "itemId": "gyg-1125002",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1071626",
+      "itemId": "gyg-1071626",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "862062",
+      "itemId": "gyg-862062",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "609736",
+      "itemId": "gyg-609736",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "595186",
+      "itemId": "gyg-595186",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "793480",
+      "itemId": "gyg-793480",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1361498",
+      "itemId": "gyg-1361498",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "437799",
+      "itemId": "gyg-437799",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1130627",
+      "itemId": "gyg-1130627",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1360585",
+      "itemId": "gyg-1360585",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "826033",
+      "itemId": "gyg-826033",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1460247",
+      "itemId": "gyg-1460247",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "844630",
+      "itemId": "gyg-844630",
+      "groupId": "icefields-parkway-tours",
+      "guidePath": "/blog/icefields-parkway-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1531608",
+      "itemId": "gyg-1531608",
+      "groupId": "jeep-4x4-tours",
+      "guidePath": "/experiences/banff-area-jeep-4x4-adventures/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1147135",
+      "itemId": "gyg-1147135",
+      "groupId": "jeep-4x4-tours",
+      "guidePath": "/experiences/banff-area-jeep-4x4-adventures/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "303253",
+      "itemId": "gyg-303253",
+      "groupId": "johnston-icewalks",
+      "guidePath": "/blog/banff-ice-walk-guide/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "303283",
+      "itemId": "gyg-303283",
+      "groupId": "johnston-icewalks",
+      "guidePath": "/blog/banff-ice-walk-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "434970",
+      "itemId": "gyg-434970",
+      "groupId": "johnston-icewalks",
+      "guidePath": "/blog/banff-ice-walk-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "428676",
+      "itemId": "gyg-428676",
+      "groupId": "johnston-icewalks",
+      "guidePath": "/blog/banff-ice-walk-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1439668",
+      "itemId": "gyg-1439668",
+      "groupId": "johnston-icewalks",
+      "guidePath": "/blog/banff-ice-walk-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "541259",
+      "itemId": "gyg-541259",
+      "groupId": "johnston-icewalks",
+      "guidePath": "/blog/banff-ice-walk-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "382884",
+      "itemId": "gyg-382884",
+      "groupId": "kicking-horse-rafting",
+      "guidePath": "/experiences/kicking-horse-golden-whitewater-rafting/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1326565",
+      "itemId": "gyg-1326565",
+      "groupId": "kicking-horse-rafting",
+      "guidePath": "/experiences/kicking-horse-golden-whitewater-rafting/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "295345",
+      "itemId": "gyg-295345",
+      "groupId": "kicking-horse-rafting",
+      "guidePath": "/experiences/kicking-horse-golden-whitewater-rafting/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "383026",
+      "itemId": "gyg-383026",
+      "groupId": "kicking-horse-rafting",
+      "guidePath": "/experiences/kicking-horse-golden-whitewater-rafting/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "631160",
+      "itemId": "gyg-631160",
+      "groupId": "sunset-lake-tours",
+      "guidePath": "/experiences/lake-louise-moraine-sunset-tour-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "661061",
+      "itemId": "gyg-661061",
+      "groupId": "sunset-lake-tours",
+      "guidePath": "/experiences/lake-louise-moraine-sunset-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1282650",
+      "itemId": "gyg-1282650",
+      "groupId": "lake-louise-sunrise",
+      "guidePath": "/experiences/lake-louise-sunrise-guided-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1317603",
+      "itemId": "gyg-1317603",
+      "groupId": "lake-louise-sunrise",
+      "guidePath": "/experiences/lake-louise-sunrise-guided-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1270906",
+      "itemId": "gyg-1270906",
+      "groupId": "lake-louise-sunrise",
+      "guidePath": "/experiences/lake-louise-sunrise-guided-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1312156",
+      "itemId": "gyg-1312156",
+      "groupId": "lake-louise-sunrise",
+      "guidePath": "/experiences/lake-louise-sunrise-guided-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1004906",
+      "itemId": "gyg-1004906",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "986067",
+      "itemId": "gyg-986067",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1218982",
+      "itemId": "gyg-1218982",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1418459",
+      "itemId": "gyg-1418459",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "971170",
+      "itemId": "gyg-971170",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "953127",
+      "itemId": "gyg-953127",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "477357",
+      "itemId": "gyg-477357",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "750075",
+      "itemId": "gyg-750075",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1446477",
+      "itemId": "gyg-1446477",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1454477",
+      "itemId": "gyg-1454477",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "736304",
+      "itemId": "gyg-736304",
+      "groupId": "lake-louise-half-day-tours",
+      "guidePath": "/experiences/lake-louise-half-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "283927",
+      "itemId": "gyg-283927",
+      "groupId": "lake-cruises",
+      "guidePath": "/experiences/lake-minnewanka-cruise-ticket-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1271593",
+      "itemId": "gyg-1271593",
+      "groupId": "lake-cruises",
+      "guidePath": "/experiences/lake-minnewanka-cruise-ticket-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1160749",
+      "itemId": "gyg-1160749",
+      "groupId": "lake-cruises",
+      "guidePath": "/experiences/lake-minnewanka-cruise-ticket-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1218088",
+      "itemId": "gyg-1218088",
+      "groupId": "lake-cruises",
+      "guidePath": "/experiences/lake-minnewanka-cruise-ticket-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "402652",
+      "itemId": "gyg-402652",
+      "groupId": "rock-climbing",
+      "guidePath": "/experiences/banff-beginner-rock-climbing-courses/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "748920",
+      "itemId": "gyg-748920",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "609684",
+      "itemId": "gyg-609684",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1127196",
+      "itemId": "gyg-1127196",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1356680",
+      "itemId": "gyg-1356680",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1302376",
+      "itemId": "gyg-1302376",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "992143",
+      "itemId": "gyg-992143",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "618841",
+      "itemId": "gyg-618841",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "748895",
+      "itemId": "gyg-748895",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "453138",
+      "itemId": "gyg-453138",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1217968",
+      "itemId": "gyg-1217968",
+      "groupId": "moraine-sunrise",
+      "guidePath": "/experiences/moraine-lake-sunrise-tour-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "750003",
+      "itemId": "gyg-750003",
+      "groupId": "moraine-lake-shuttles",
+      "guidePath": "/experiences/moraine-lake-lake-louise-shuttle-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1089708",
+      "itemId": "gyg-1089708",
+      "groupId": "moraine-lake-shuttles",
+      "guidePath": "/experiences/moraine-lake-lake-louise-shuttle-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "758033",
+      "itemId": "gyg-758033",
+      "groupId": "moraine-lake-shuttles",
+      "guidePath": "/experiences/moraine-lake-lake-louise-shuttle-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1132658",
+      "itemId": "gyg-1132658",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "741876",
+      "itemId": "gyg-741876",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "741850",
+      "itemId": "gyg-741850",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1375570",
+      "itemId": "gyg-1375570",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1503810",
+      "itemId": "gyg-1503810",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1507112",
+      "itemId": "gyg-1507112",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1274051",
+      "itemId": "gyg-1274051",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1222633",
+      "itemId": "gyg-1222633",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1348951",
+      "itemId": "gyg-1348951",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1323885",
+      "itemId": "gyg-1323885",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "660112",
+      "itemId": "gyg-660112",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1358138",
+      "itemId": "gyg-1358138",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1305749",
+      "itemId": "gyg-1305749",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1253716",
+      "itemId": "gyg-1253716",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1278491",
+      "itemId": "gyg-1278491",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1286764",
+      "itemId": "gyg-1286764",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1102433",
+      "itemId": "gyg-1102433",
+      "groupId": "calgary-rockies-multi-day",
+      "guidePath": "/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1440632",
+      "itemId": "gyg-1440632",
+      "groupId": "lake-louise-ice-skating",
+      "guidePath": "/experiences/lake-louise-guided-natural-ice-skating/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1091129",
+      "itemId": "gyg-1091129",
+      "groupId": "skiing-snowboarding",
+      "guidePath": "/experiences/banff-ski-snowboard-transport-options/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1081863",
+      "itemId": "gyg-1081863",
+      "groupId": "skiing-snowboarding",
+      "guidePath": "/experiences/banff-ski-snowboard-transport-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1496716",
+      "itemId": "gyg-1496716",
+      "groupId": "skiing-snowboarding",
+      "guidePath": "/experiences/banff-ski-snowboard-transport-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1096502",
+      "itemId": "gyg-1096502",
+      "groupId": "skiing-snowboarding",
+      "guidePath": "/experiences/banff-ski-snowboard-transport-options/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1393781",
+      "itemId": "gyg-1393781",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1198584",
+      "itemId": "gyg-1198584",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1135106",
+      "itemId": "gyg-1135106",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "640112",
+      "itemId": "gyg-640112",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "437147",
+      "itemId": "gyg-437147",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "852898",
+      "itemId": "gyg-852898",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "425495",
+      "itemId": "gyg-425495",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1343086",
+      "itemId": "gyg-1343086",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1361480",
+      "itemId": "gyg-1361480",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1238743",
+      "itemId": "gyg-1238743",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1380302",
+      "itemId": "gyg-1380302",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1159238",
+      "itemId": "gyg-1159238",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "980490",
+      "itemId": "gyg-980490",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "766145",
+      "itemId": "gyg-766145",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "832954",
+      "itemId": "gyg-832954",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1328260",
+      "itemId": "gyg-1328260",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1485594",
+      "itemId": "gyg-1485594",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "505510",
+      "itemId": "gyg-505510",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1052682",
+      "itemId": "gyg-1052682",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "606063",
+      "itemId": "gyg-606063",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1341224",
+      "itemId": "gyg-1341224",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "833188",
+      "itemId": "gyg-833188",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1297468",
+      "itemId": "gyg-1297468",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "953192",
+      "itemId": "gyg-953192",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1087371",
+      "itemId": "gyg-1087371",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "797558",
+      "itemId": "gyg-797558",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1487445",
+      "itemId": "gyg-1487445",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "504204",
+      "itemId": "gyg-504204",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1530419",
+      "itemId": "gyg-1530419",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1347389",
+      "itemId": "gyg-1347389",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "642198",
+      "itemId": "gyg-642198",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "856021",
+      "itemId": "gyg-856021",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "524324",
+      "itemId": "gyg-524324",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1394053",
+      "itemId": "gyg-1394053",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1280024",
+      "itemId": "gyg-1280024",
+      "groupId": "private-rockies-day-tours",
+      "guidePath": "/experiences/private-banff-rockies-day-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1326575",
+      "itemId": "gyg-1326575",
+      "groupId": "radium-panorama-rafting",
+      "guidePath": "/experiences/radium-panorama-kootenay-toby-creek-rafting/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1326581",
+      "itemId": "gyg-1326581",
+      "groupId": "radium-panorama-rafting",
+      "guidePath": "/experiences/radium-panorama-kootenay-toby-creek-rafting/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "798459",
+      "itemId": "gyg-798459",
+      "groupId": "guided-cycling",
+      "guidePath": "/blog/banff-fat-biking/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "399759",
+      "itemId": "gyg-399759",
+      "groupId": "guided-cycling",
+      "guidePath": "/blog/banff-fat-biking/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "451139",
+      "itemId": "gyg-451139",
+      "groupId": "guided-cycling",
+      "guidePath": "/blog/banff-fat-biking/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "962269",
+      "itemId": "gyg-962269",
+      "groupId": "guided-cycling",
+      "guidePath": "/blog/banff-fat-biking/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "971009",
+      "itemId": "gyg-971009",
+      "groupId": "golden-snowmobile-tours",
+      "guidePath": "/experiences/golden-snowmobile-tours-from-banff-canmore/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1182128",
+      "itemId": "gyg-1182128",
+      "groupId": "snowshoe-tours",
+      "guidePath": "/blog/banff-snowshoeing-guide/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "303208",
+      "itemId": "gyg-303208",
+      "groupId": "snowshoe-tours",
+      "guidePath": "/blog/banff-snowshoeing-guide/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1174056",
+      "itemId": "gyg-1174056",
+      "groupId": "snowshoe-tours",
+      "guidePath": "/blog/banff-snowshoeing-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "428674",
+      "itemId": "gyg-428674",
+      "groupId": "snowshoe-tours",
+      "guidePath": "/blog/banff-snowshoeing-guide/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "698951",
+      "itemId": "gyg-698951",
+      "groupId": "food-tours",
+      "guidePath": "/activities/banff-food-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "285990",
+      "itemId": "gyg-285990",
+      "groupId": "food-tours",
+      "guidePath": "/activities/banff-food-tours/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1517400",
+      "itemId": "gyg-1517400",
+      "groupId": "food-tours",
+      "guidePath": "/activities/banff-food-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1447669",
+      "itemId": "gyg-1447669",
+      "groupId": "banff-sunrise-canyon-tours",
+      "guidePath": "/experiences/two-jack-lake-sunrise-johnston-canyon-tours/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "280297",
+      "itemId": "gyg-280297",
+      "groupId": "whitewater-rafting",
+      "guidePath": "/experiences/kananaskis-horseshoe-whitewater-rafting/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "227890",
+      "itemId": "gyg-227890",
+      "groupId": "whitewater-rafting",
+      "guidePath": "/experiences/kananaskis-horseshoe-whitewater-rafting/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1075842",
+      "itemId": "gyg-1075842",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1360868",
+      "itemId": "gyg-1360868",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "1310742",
+      "itemId": "gyg-1310742",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1468329",
+      "itemId": "gyg-1468329",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1125725",
+      "itemId": "gyg-1125725",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "989270",
+      "itemId": "gyg-989270",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1468423",
+      "itemId": "gyg-1468423",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1104520",
+      "itemId": "gyg-1104520",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1303375",
+      "itemId": "gyg-1303375",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1460199",
+      "itemId": "gyg-1460199",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1340639",
+      "itemId": "gyg-1340639",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1456965",
+      "itemId": "gyg-1456965",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1475008",
+      "itemId": "gyg-1475008",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "1452823",
+      "itemId": "gyg-1452823",
+      "groupId": "yoho-waterfalls-tours",
+      "guidePath": "/experiences/yoho-waterfalls-guided-day-trips/",
+      "reviewState": "listing-only"
+    },
+    {
+      "productId": "695024",
+      "itemId": "gyg-695024",
+      "groupId": "airport-shared-transfers",
+      "guidePath": "/experiences/yyc-banff-canmore-shared-shuttles/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "437643",
+      "itemId": "gyg-437643",
+      "groupId": "airport-private-transfers",
+      "guidePath": "/experiences/yyc-banff-private-airport-transfers/",
+      "reviewState": "reviewed"
+    },
+    {
+      "productId": "614303",
+      "itemId": "gyg-614303",
+      "groupId": "airport-private-transfers",
+      "guidePath": "/experiences/yyc-banff-private-airport-transfers/",
+      "reviewState": "listing-only"
+    }
+  ],
+  "experienceGuideCoverage": [
+    {
+      "groupId": "wagon-rides-cookouts",
+      "url": "https://banffbound.com/experiences/banff-wagon-ride-cowboy-cookout/",
+      "itemId": "experience-guide-wagon-rides-cookouts",
+      "added": true
+    },
+    {
+      "groupId": "winter-sleigh-rides",
+      "url": "https://banffbound.com/experiences/banff-horse-drawn-sleigh-rides/",
+      "itemId": "experience-guide-winter-sleigh-rides",
+      "added": true
+    },
+    {
+      "groupId": "scenic-river-floats",
+      "url": "https://banffbound.com/experiences/bow-river-scenic-float-options/",
+      "itemId": "experience-guide-scenic-river-floats",
+      "added": true
+    },
+    {
+      "groupId": "wolfdog-sanctuary",
+      "url": "https://banffbound.com/experiences/wolfdog-sanctuary-tour-from-banff-area/",
+      "itemId": "experience-guide-wolfdog-sanctuary",
+      "added": true
+    },
+    {
+      "groupId": "stargazing-night-walks",
+      "url": "https://banffbound.com/blog/banff-northern-lights/",
+      "itemId": "guide-banff-northern-lights",
+      "added": false
+    },
+    {
+      "groupId": "airport-shared-departures",
+      "url": "https://banffbound.com/experiences/banff-canmore-yyc-shared-airport-return/",
+      "itemId": "experience-guide-airport-shared-departures",
+      "added": true
+    },
+    {
+      "groupId": "banff-yoho-lake-day-tours",
+      "url": "https://banffbound.com/experiences/lake-louise-moraine-emerald-day-tours/",
+      "itemId": "experience-guide-banff-yoho-lake-day-tours",
+      "added": true
+    },
+    {
+      "groupId": "open-top-sightseeing",
+      "url": "https://banffbound.com/experiences/banff-vintage-open-top-touring/",
+      "itemId": "experience-guide-open-top-sightseeing",
+      "added": true
+    },
+    {
+      "groupId": "gondola-hot-springs-day-tours",
+      "url": "https://banffbound.com/experiences/banff-gondola-hot-springs-day-tour-options/",
+      "itemId": "experience-guide-gondola-hot-springs-day-tours",
+      "added": true
+    },
+    {
+      "groupId": "banff-sightseeing-day-tours",
+      "url": "https://banffbound.com/experiences/banff-highlights-guided-sightseeing/",
+      "itemId": "experience-guide-banff-sightseeing-day-tours",
+      "added": true
+    },
+    {
+      "groupId": "photography",
+      "url": "https://banffbound.com/experiences/banff-photography-session-tour-options/",
+      "itemId": "experience-guide-photography",
+      "added": true
+    },
+    {
+      "groupId": "gondola-chairlift-admission",
+      "url": "https://banffbound.com/blog/banff-gondola-guide/",
+      "itemId": "guide-banff-gondola-guide",
+      "added": false
+    },
+    {
+      "groupId": "wildlife-tours",
+      "url": "https://banffbound.com/experiences/banff-wildlife-morning-evening-tours/",
+      "itemId": "experience-guide-wildlife-tours",
+      "added": true
+    },
+    {
+      "groupId": "ice-climbing",
+      "url": "https://banffbound.com/activities/ice-climbing/",
+      "itemId": "activity-guide-ice-climbing",
+      "added": false
+    },
+    {
+      "groupId": "banff-jasper-transfers",
+      "url": "https://banffbound.com/experiences/banff-jasper-transfer-sightseeing-options/",
+      "itemId": "experience-guide-banff-jasper-transfers",
+      "added": true
+    },
+    {
+      "groupId": "calgary-banff-transfers",
+      "url": "https://banffbound.com/experiences/calgary-banff-city-shuttle-options/",
+      "itemId": "experience-guide-calgary-banff-transfers",
+      "added": true
+    },
+    {
+      "groupId": "railway-history-road-tours",
+      "url": "https://banffbound.com/experiences/canadian-pacific-railway-history-road-tours/",
+      "itemId": "experience-guide-railway-history-road-tours",
+      "added": true
+    },
+    {
+      "groupId": "scenic-helicopter-flights",
+      "url": "https://banffbound.com/blog/banff-helicopter-tours/",
+      "itemId": "guide-banff-helicopter-tours",
+      "added": false
+    },
+    {
+      "groupId": "bow-river-canoeing",
+      "url": "https://banffbound.com/experiences/banff-bow-river-canoe-tours/",
+      "itemId": "experience-guide-bow-river-canoeing",
+      "added": true
+    },
+    {
+      "groupId": "canyoning",
+      "url": "https://banffbound.com/experiences/banff-area-canyoning-summer-winter-options/",
+      "itemId": "experience-guide-canyoning",
+      "added": true
+    },
+    {
+      "groupId": "columbia-icefield-admission",
+      "url": "https://banffbound.com/experiences/columbia-icefield-ice-explorer-skywalk-tickets/",
+      "itemId": "experience-guide-columbia-icefield-admission",
+      "added": true
+    },
+    {
+      "groupId": "cross-country-skiing",
+      "url": "https://banffbound.com/blog/banff-cross-country-skiing/",
+      "itemId": "guide-banff-cross-country-skiing",
+      "added": false
+    },
+    {
+      "groupId": "self-guided-exploration",
+      "url": "https://banffbound.com/experiences/banff-self-guided-audio-driving-tour/",
+      "itemId": "experience-guide-self-guided-exploration",
+      "added": true
+    },
+    {
+      "groupId": "lake-fishing-charters",
+      "url": "https://banffbound.com/experiences/lake-minnewanka-fishing-charters/",
+      "itemId": "experience-guide-lake-fishing-charters",
+      "added": true
+    },
+    {
+      "groupId": "banff-badlands-day-trips",
+      "url": "https://banffbound.com/experiences/banff-canmore-drumheller-badlands-day-trips/",
+      "itemId": "experience-guide-banff-badlands-day-trips",
+      "added": true
+    },
+    {
+      "groupId": "edmonton-banff-day-tours",
+      "url": "https://banffbound.com/experiences/edmonton-banff-lake-louise-day-tours/",
+      "itemId": "experience-guide-edmonton-banff-day-tours",
+      "added": true
+    },
+    {
+      "groupId": "vancouver-rockies-multi-day",
+      "url": "https://banffbound.com/experiences/vancouver-banff-rockies-multi-day-tours/",
+      "itemId": "experience-guide-vancouver-rockies-multi-day",
+      "added": true
+    },
+    {
+      "groupId": "winter-lakes-road-tours",
+      "url": "https://banffbound.com/activities/yoho-kootenay-winter-tours/",
+      "itemId": "activity-guide-yoho-kootenay-winter-tours",
+      "added": false
+    },
+    {
+      "groupId": "skybridge-zipline",
+      "url": "https://banffbound.com/experiences/golden-skybridge-zipline-day-trip-options/",
+      "itemId": "experience-guide-skybridge-zipline",
+      "added": true
+    },
+    {
+      "groupId": "grotto-icewalks",
+      "url": "https://banffbound.com/experiences/grotto-canyon-guided-winter-walks/",
+      "itemId": "experience-guide-grotto-icewalks",
+      "added": true
+    },
+    {
+      "groupId": "guided-hiking",
+      "url": "https://banffbound.com/experiences/banff-canmore-guided-day-hikes/",
+      "itemId": "experience-guide-guided-hiking",
+      "added": true
+    },
+    {
+      "groupId": "kayaking-paddleboarding",
+      "url": "https://banffbound.com/experiences/banff-area-guided-kayak-paddle-options/",
+      "itemId": "experience-guide-kayaking-paddleboarding",
+      "added": true
+    },
+    {
+      "groupId": "winter-ice-experiences",
+      "url": "https://banffbound.com/experiences/banff-guided-natural-ice-walks/",
+      "itemId": "experience-guide-winter-ice-experiences",
+      "added": true
+    },
+    {
+      "groupId": "banff-town-walks",
+      "url": "https://banffbound.com/experiences/banff-guided-town-history-walks/",
+      "itemId": "experience-guide-banff-town-walks",
+      "added": true
+    },
+    {
+      "groupId": "horseback-riding",
+      "url": "https://banffbound.com/experiences/banff-horseback-riding-route-options/",
+      "itemId": "experience-guide-horseback-riding",
+      "added": true
+    },
+    {
+      "groupId": "icefields-parkway-tours",
+      "url": "https://banffbound.com/blog/icefields-parkway-guide/",
+      "itemId": "guide-icefields-parkway-guide",
+      "added": false
+    },
+    {
+      "groupId": "jeep-4x4-tours",
+      "url": "https://banffbound.com/experiences/banff-area-jeep-4x4-adventures/",
+      "itemId": "experience-guide-jeep-4x4-tours",
+      "added": true
+    },
+    {
+      "groupId": "johnston-icewalks",
+      "url": "https://banffbound.com/blog/banff-ice-walk-guide/",
+      "itemId": "guide-banff-ice-walk-guide",
+      "added": false
+    },
+    {
+      "groupId": "kicking-horse-rafting",
+      "url": "https://banffbound.com/experiences/kicking-horse-golden-whitewater-rafting/",
+      "itemId": "experience-guide-kicking-horse-rafting",
+      "added": true
+    },
+    {
+      "groupId": "sunset-lake-tours",
+      "url": "https://banffbound.com/experiences/lake-louise-moraine-sunset-tour-options/",
+      "itemId": "experience-guide-sunset-lake-tours",
+      "added": true
+    },
+    {
+      "groupId": "lake-louise-sunrise",
+      "url": "https://banffbound.com/experiences/lake-louise-sunrise-guided-tours/",
+      "itemId": "experience-guide-lake-louise-sunrise",
+      "added": true
+    },
+    {
+      "groupId": "lake-louise-half-day-tours",
+      "url": "https://banffbound.com/experiences/lake-louise-half-day-tours/",
+      "itemId": "experience-guide-lake-louise-half-day-tours",
+      "added": true
+    },
+    {
+      "groupId": "lake-cruises",
+      "url": "https://banffbound.com/experiences/lake-minnewanka-cruise-ticket-options/",
+      "itemId": "experience-guide-lake-cruises",
+      "added": true
+    },
+    {
+      "groupId": "rock-climbing",
+      "url": "https://banffbound.com/experiences/banff-beginner-rock-climbing-courses/",
+      "itemId": "experience-guide-rock-climbing",
+      "added": true
+    },
+    {
+      "groupId": "moraine-sunrise",
+      "url": "https://banffbound.com/experiences/moraine-lake-sunrise-tour-options/",
+      "itemId": "experience-guide-moraine-sunrise",
+      "added": true
+    },
+    {
+      "groupId": "moraine-lake-shuttles",
+      "url": "https://banffbound.com/experiences/moraine-lake-lake-louise-shuttle-options/",
+      "itemId": "experience-guide-moraine-lake-shuttles",
+      "added": true
+    },
+    {
+      "groupId": "calgary-rockies-multi-day",
+      "url": "https://banffbound.com/experiences/calgary-canadian-rockies-multi-day-tours/",
+      "itemId": "experience-guide-calgary-rockies-multi-day",
+      "added": true
+    },
+    {
+      "groupId": "lake-louise-ice-skating",
+      "url": "https://banffbound.com/experiences/lake-louise-guided-natural-ice-skating/",
+      "itemId": "experience-guide-lake-louise-ice-skating",
+      "added": true
+    },
+    {
+      "groupId": "skiing-snowboarding",
+      "url": "https://banffbound.com/experiences/banff-ski-snowboard-transport-options/",
+      "itemId": "experience-guide-skiing-snowboarding",
+      "added": true
+    },
+    {
+      "groupId": "private-rockies-day-tours",
+      "url": "https://banffbound.com/experiences/private-banff-rockies-day-tours/",
+      "itemId": "experience-guide-private-rockies-day-tours",
+      "added": true
+    },
+    {
+      "groupId": "radium-panorama-rafting",
+      "url": "https://banffbound.com/experiences/radium-panorama-kootenay-toby-creek-rafting/",
+      "itemId": "experience-guide-radium-panorama-rafting",
+      "added": true
+    },
+    {
+      "groupId": "guided-cycling",
+      "url": "https://banffbound.com/blog/banff-fat-biking/",
+      "itemId": "guide-banff-fat-biking",
+      "added": false
+    },
+    {
+      "groupId": "golden-snowmobile-tours",
+      "url": "https://banffbound.com/experiences/golden-snowmobile-tours-from-banff-canmore/",
+      "itemId": "experience-guide-golden-snowmobile-tours",
+      "added": true
+    },
+    {
+      "groupId": "snowshoe-tours",
+      "url": "https://banffbound.com/blog/banff-snowshoeing-guide/",
+      "itemId": "guide-banff-snowshoeing-guide",
+      "added": false
+    },
+    {
+      "groupId": "food-tours",
+      "url": "https://banffbound.com/activities/banff-food-tours/",
+      "itemId": "activity-guide-banff-food-tours",
+      "added": false
+    },
+    {
+      "groupId": "banff-sunrise-canyon-tours",
+      "url": "https://banffbound.com/experiences/two-jack-lake-sunrise-johnston-canyon-tours/",
+      "itemId": "experience-guide-banff-sunrise-canyon-tours",
+      "added": true
+    },
+    {
+      "groupId": "whitewater-rafting",
+      "url": "https://banffbound.com/experiences/kananaskis-horseshoe-whitewater-rafting/",
+      "itemId": "experience-guide-whitewater-rafting",
+      "added": true
+    },
+    {
+      "groupId": "yoho-waterfalls-tours",
+      "url": "https://banffbound.com/experiences/yoho-waterfalls-guided-day-trips/",
+      "itemId": "experience-guide-yoho-waterfalls-tours",
+      "added": true
+    },
+    {
+      "groupId": "airport-shared-transfers",
+      "url": "https://banffbound.com/experiences/yyc-banff-canmore-shared-shuttles/",
+      "itemId": "experience-guide-airport-shared-transfers",
+      "added": true
+    },
+    {
+      "groupId": "airport-private-transfers",
+      "url": "https://banffbound.com/experiences/yyc-banff-private-airport-transfers/",
+      "itemId": "experience-guide-airport-private-transfers",
+      "added": true
+    }
+  ],
   "standaloneGuideCoverage": [
     {
       "url": "https://banffbound.com/accessible-trails/",
@@ -197,6 +3838,13 @@
       "sourceFile": "src/pages/events.astro",
       "kind": "page",
       "itemId": "web-guide-events",
+      "added": true
+    },
+    {
+      "url": "https://banffbound.com/experiences/",
+      "sourceFile": "src/pages/experiences/index.astro",
+      "kind": "page",
+      "itemId": "web-guide-experiences",
       "added": true
     },
     {

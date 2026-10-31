@@ -16,10 +16,10 @@ const reviewedSourceRoot = process.env.BANFFBOUND_COMMERCE_SOURCE_ROOT ? path.re
 const hash = (value: string | Buffer) => createHash('sha256').update(value).digest('hex');
 
 test('commerce covers the complete separately reviewed published collections', () => {
-  assert.equal(commerceProvenance.sourceCommit, 'eb55328b608d79cfdffc4cc41298f0f0f23cf996');
+  assert.equal(commerceProvenance.sourceCommit, 'dfa545a7e7130e8494aab6342349fe6ce71a226c');
   assert.match(commerceDataVersion, /^2026-10-31-[a-f0-9]{12}$/);
   assert.deepEqual(commerceSections.map(section => section.id), ['tours', 'stays', 'guides', 'extras']);
-  assert.equal(commerceItems.filter(item => /^gyg-\d+$/.test(item.id)).length, 15);
+  assert.equal(commerceItems.filter(item => /^gyg-\d+$/.test(item.id)).length, 464);
   assert.equal(commerceItems.filter(item => item.id.startsWith('hotel-')).length, 95);
   assert.equal(commerceItems.filter(item => item.id.startsWith('rental-')).length, 50);
   assert.equal(commerceItems.filter(item => item.id.startsWith('guide-')).length, 295);
@@ -106,12 +106,12 @@ test('all published visitor pages, tools, towns and route directories have canon
   const indexed = commerceItems.filter(item => item.section === 'guides');
   const canonical = indexed.map(item => item.guideUrl!.replace(/\/+$/,'') + '/');
   assert.equal(new Set(canonical).size,canonical.length);
-  assert.equal(indexed.length,463);
-  assert.equal(commerceProvenance.counts.standaloneGuideEntriesAdded,153);
-  assert.equal(commerceProvenance.counts.standaloneVisitorPageRoutes,71);
+  assert.equal(indexed.length,513);
+  assert.equal(commerceProvenance.counts.standaloneGuideEntriesAdded,154);
+  assert.equal(commerceProvenance.counts.standaloneVisitorPageRoutes,72);
   assert.equal(commerceProvenance.counts.townGuideRoutes,6);
   assert.equal(commerceProvenance.counts.trailLakeViewpointGuideRoutes,81);
-  for (const route of ['/car-free-banff/','/camping/','/banff-national-park/','/family-guide/','/calgary-to-banff/','/tools/','/lakes/','/trail-map/','/towns/','/towns/canmore/','/trails/johnston-canyon-lower-falls/']) assert.equal(canonical.filter(url => url === 'https://banffbound.com' + route).length,1,route);
+  for (const route of ['/car-free-banff/','/camping/','/banff-national-park/','/family-guide/','/calgary-to-banff/','/tools/','/lakes/','/trail-map/','/towns/','/towns/canmore/','/trails/johnston-canyon-lower-falls/','/experiences/']) assert.equal(canonical.filter(url => url === 'https://banffbound.com' + route).length,1,route);
   for (const route of ['/privacy/','/terms/','/contact/','/about/','/editorial/','/404/','/trip-reports/','/trails/','/book/banff-winter-activities/google-test/']) assert.equal(canonical.includes('https://banffbound.com' + route),false,route);
   const hashed = new Set(commerceProvenance.sourceInputs.map(input => input.file));
   for (const coverage of commerceProvenance.standaloneGuideCoverage) {
@@ -122,14 +122,77 @@ test('all published visitor pages, tools, towns and route directories have canon
   assert.match(commerceProvenance.standaloneMetadataExtraction,/no Astro frontmatter execution/);
 });
 
-test('listed operators belong only to the exact central products and internal approval wording is absent from visible notices', () => {
-  assert.equal(commerceItems.filter(item => item.operator).length,15);
+test('listed operators belong only to individually reviewed products and internal approval wording is absent from visible notices', () => {
+  assert.equal(commerceItems.filter(item => item.operator).length,66);
   assert.equal(commerceItems.find(item => item.id === 'gyg-256607')?.operator,'Pursuit Collection');
   assert.equal(commerceItems.find(item => item.id === 'gyg-798459')?.operator,'Radventures');
   for (const item of commerceItems) {
     if (item.operator) assert.match(item.id,/^gyg-\d+$/);
     assert.equal(/approved-mobile-app|Preserved published website referral|Editorial review does not confirm current operation/.test(item.notice || ''),false,item.id);
     if (/^gyg-\d+$/.test(item.id)) assert.equal(item.notice?.includes('Affiliate link:'),false,item.id);
+  }
+});
+
+test('all published mapped experience identities appear once and explicit exclusions never become product CTAs', () => {
+  const counts = commerceProvenance.counts;
+  assert.equal(counts.capturedExperienceCards,496);
+  assert.equal(counts.capturedUniqueExperienceProducts,458);
+  assert.equal(counts.supplementalReviewedExperienceProducts,10);
+  assert.equal(counts.distinctExperienceCandidates,468);
+  assert.equal(counts.publishedExperienceGroups,60);
+  assert.equal(counts.publishedMappedExperienceProducts,464);
+  assert.equal(counts.excludedExperienceProducts,4);
+  const mapping = commerceProvenance.publishedExperienceOptions;
+  assert.equal(mapping.length,464);
+  assert.equal(new Set(mapping.map(option => option.productId)).size,464);
+  for (const option of mapping) {
+    const records = commerceItems.filter(item => item.id === option.itemId);
+    assert.equal(records.length,1,option.productId);
+    const productLinks = records[0].links.filter(link => link.provider === 'GetYourGuide' && link.kind === 'product');
+    assert.equal(productLinks.length,1);
+    assert.ok(new URL(productLinks[0].url).pathname.endsWith('-t'+option.productId+'/'));
+  }
+  const allLinks = commerceItems.flatMap(item => item.links);
+  const excluded = commerceProvenance.excludedExperienceProducts.map(value => value.productId).sort();
+  assert.deepEqual(excluded,['1273188','1328480','667890','939302']);
+  for (const id of excluded) assert.equal(allLinks.some(link => link.provider === 'GetYourGuide' && new URL(link.url).pathname.endsWith('-t'+id+'/')),false,id);
+  const tourProducts = commerceItems.filter(item => item.section === 'tours').flatMap(item => item.links.filter(link => link.provider === 'GetYourGuide' && link.kind === 'product'));
+  const numericIds = tourProducts.map(link => new URL(link.url).pathname.match(/-t(\d+)\/$/)![1]);
+  assert.equal(new Set(numericIds).size,numericIds.length);
+  assert.equal(numericIds.length,467);
+  for (const id of ['556595','113074','441813']) {
+    const record = commerceItems.find(item => item.links.some(link => link.provider === 'GetYourGuide' && new URL(link.url).pathname.endsWith('-t'+id+'/')))!;
+    assert.equal(record.status,'reference-only'); assert.equal(record.operator,undefined);
+  }
+});
+
+test('listing-only options do not inherit a group primary operator, departure, description or inclusion', () => {
+  const mapping = commerceProvenance.publishedExperienceOptions;
+  assert.equal(mapping.filter(option => option.reviewState === 'reviewed').length,66);
+  const listingOnly = mapping.filter(option => option.reviewState === 'listing-only');
+  assert.equal(listingOnly.length,398);
+  for (const option of listingOnly) {
+    const item = commerceItems.find(item => item.id === option.itemId)!;
+    assert.equal(item.operator,undefined,item.id);
+    assert.equal(item.reviewedAt,undefined,item.id);
+    assert.equal(item.area,'Check the listing departure',item.id);
+    assert.equal(item.status,'check-details');
+    assert.ok(item.summary.startsWith('Compare this listing in our '));
+    assert.match(item.notice!,/^Check listing details\./);
+    assert.match(item.notice!,/differ from the guide’s main example/);
+    assert.match(item.notice!,/own operator, departure, itinerary, duration, inclusions/);
+  }
+});
+
+test('every canonical experience guide is indexed without duplicating existing blog or activity guides', () => {
+  const coverage = commerceProvenance.experienceGuideCoverage;
+  assert.equal(coverage.length,60);
+  assert.equal(coverage.filter(value => value.added).length,49);
+  assert.equal(new Set(coverage.map(value => value.url)).size,60);
+  for (const group of coverage) {
+    const guide = commerceItems.find(item => item.id === group.itemId)!;
+    assert.equal(guide.section,'guides'); assert.equal(guide.guideUrl!.replace(/\/+$/,'')+'/',group.url);
+    assert.equal(commerceItems.filter(item => item.section === 'guides' && item.guideUrl!.replace(/\/+$/,'')+'/' === group.url).length,1);
   }
 });
 

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "repository": "GlobalBookings/banffbound",
-  "commit": "eb55328b608d79cfdffc4cc41298f0f0f23cf996",
+  "commit": "dfa545a7e7130e8494aab6342349fe6ce71a226c",
   "reviewedAt": "2026-10-31",
-  "scope": "Published commercial catalogue, article index and existing referral URLs. Every consumed website input must match this Git commit exactly.",
+  "scope": "Final cutoff: published experience groups and mapped options, complete visitor guide index, hotel/rental catalogues and existing referrals. Every consumed website input must match this Git commit exactly; later website updates do not silently change this app snapshot.",
   "originalOfflineCataloguePin": "4da51e0f64e9af8a14d87fe302a308081777d1a6",
   "providerDecisions": {
     "GetYourGuide": "Existing publisher links and original editorial descriptions; only cmp is replaced with the approved static banffboundapp value for all visitors. No provider API, widget or provider-app attribution claim.",

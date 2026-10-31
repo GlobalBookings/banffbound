@@ -21,7 +21,7 @@ jobs:
       - name: Check out published affiliate catalogue sources
         uses: actions/checkout@v4
         with:
-          ref: eb55328b608d79cfdffc4cc41298f0f0f23cf996
+          ref: dfa545a7e7130e8494aab6342349fe6ce71a226c
           path: .reviewed-commerce-source
           persist-credentials: false
       - uses: actions/setup-node@v4
