@@ -155,6 +155,11 @@ test('postexport produces stable app metadata, scoped cache hashes and no invent
     assert.equal((html.match(/<title>/g) || []).length, 1);
     assert.equal((html.match(/name="description"/g) || []).length, 1);
     assert.match(html, /register\('\/app\/sw\.js',\{scope:'\/app\/'\}\)/);
+    for (const contactPage of ['privacy', 'support']) {
+      const source = await readFile(path.join(dir, contactPage, 'index.html'), 'utf8');
+      assert.doesNotMatch(source, /mailto:|hello@banffbound\.com|__cf_email__|email-decode\.min\.js/i, 'Static app support/privacy must avoid CDN email rewriting that breaks integrity.');
+      assert.match(source, /href="https:\/\/banffbound\.com\/contact\/">Contact BanffBound<\/a>/);
+    }
     const manifest = JSON.parse(await readFile(path.join(dir, 'offline-manifest.json'), 'utf8'));
     for (const asset of manifest.assets) {
       assert.ok(asset.url.startsWith('/app/'));
