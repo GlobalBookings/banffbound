@@ -43,9 +43,9 @@ function checkGuide(html, activity, offerId) {
   assert.equal(target.offerId, offerId);
   assert.equal(target.launchState, 'ready');
   assert.equal(ns.filter(n => attr(n, 'data-activity-booking') !== undefined).length, 1, 'One primary booking wrapper.');
-  assert.equal(ns.filter(n => attr(n, 'data-activity-booking-mobile') !== undefined).length, 1, 'One mobile bar, initially hidden.');
+  assert.equal(ns.filter(n => attr(n, 'data-activity-booking-mobile') !== undefined).length, 1, 'One native mobile bar, visible on page load.');
   const mobile = ns.find(n => attr(n, 'data-activity-booking-mobile') !== undefined);
-  assert.notEqual(attr(mobile, 'hidden'), undefined);
+  assert.equal(attr(mobile, 'hidden'), undefined, 'Native booking bar is present before JavaScript or scroll.');
   const mobileNodes = walk(mobile);
   const mobileLink = mobileNodes.find(n => n.tagName === 'a');
   const dismiss = mobileNodes.find(n => n.tagName === 'button');
@@ -147,6 +147,7 @@ for (const mutate of [
   h => h.replace('id="castle-booking-notice"', 'id="missing-notice"'),
   h => h.replace('Affiliate link. BanffBound may earn from qualifying bookings.', ''),
   h => h.replace(/(data-activity-booking-mobile[^>]*>)/, '$1<p>Extra mobile copy</p>'),
+  h => h.replace('data-activity-booking-mobile', 'data-activity-booking-mobile hidden'),
 ]) assert.throws(() => checkGuide(mutate(fixture.html), fixture.activity, fixture.offerId));
 for (const slug of ['ice-walk-johnston-canyon','northern-lights','snowshoeing']) {
   const activity = m.activities.find(a => a.slug === slug), target = m.resolveActivityBookingTarget('/activities/' + slug + '/');
@@ -160,4 +161,4 @@ assert.equal(m.activityCampaignTargets.length, 13);
 assert.equal(m.activityCampaignTargets.filter(t => m.resolveActivityBookingTarget(t.guidePath).launchState === 'ready').length, 12);
 assert(m.activityCampaignTargets.every(t => t.maximumCpcGBP === 0.07));
 const exactKeywords = m.activityCampaignTargets.reduce((s,t) => s+t.exactKeywords.length,0), phraseKeywords = m.activityCampaignTargets.reduce((s,t) => s+t.phraseKeywords.length,0);
-console.log(JSON.stringify({ result: 'Commercial activity guide checks passed', renderedPages: 6, newGuideDetails: results, negativeFixtures: 9, products: 15, guideGroups: 13, readyGuideGroups: 12, exactKeywords, phraseKeywords, maximumCpcGBP: 0.07 }, null, 2));
+console.log(JSON.stringify({ result: 'Commercial activity guide checks passed', renderedPages: 6, newGuideDetails: results, negativeFixtures: 10, products: 15, guideGroups: 13, readyGuideGroups: 12, exactKeywords, phraseKeywords, maximumCpcGBP: 0.07 }, null, 2));
