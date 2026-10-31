@@ -1,0 +1,7 @@
+{
+  "websiteRevision": "4da51e0f64e9af8a14d87fe302a308081777d1a6",
+  "reason": "Reproduce the reviewed catalogue shipped in iOS 1.0.0 build 5. Independently published website affiliate catalogue changes do not regenerate a submitted native app.",
+  "photoCreditsFile": "src/data/winterActivityPhotoCredits.json",
+  "photoCreditsSha256": "8e81df09d5c01c3a366d8b2f5dcedc34565f8107bba2df95385bc0a50041e307",
+  "generatedOutputs": ["catalog.generated.ts", "planner.generated.ts", "parkPass.generated.ts", "tripCost.generated.ts", "eccc.generated.mjs"]
+}
