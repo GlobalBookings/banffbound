@@ -47,7 +47,7 @@ assert.deepEqual(literal(currentCatalogue, 'photoCredits', 'array'), JSON.parse(
 // This checkout is disposable. Overlay the actual PR mobile source, rather than
 // accidentally checking the older mobile files that came with the website pin.
 await rm(path.join(snapshot, 'mobile'), { recursive: true });
-const excluded = new Set(['node_modules', '.expo', 'dist', 'dist-native', 'ios', 'android', 'release']);
+const excluded = new Set(['node_modules', '.expo', 'dist', 'dist-native', 'dist-map', 'ios', 'android', 'release']);
 await cp(mobile, path.join(snapshot, 'mobile'), {
   recursive: true,
   filter: file => !excluded.has(path.relative(mobile, file).split(path.sep)[0]),

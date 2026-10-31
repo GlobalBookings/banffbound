@@ -1,0 +1,26 @@
+OpenStreetMap-derived map data
+
+The separate osm-source.json snapshot and osm-points.json export contain information
+from OpenStreetMap, © OpenStreetMap contributors, available under the Open Data
+Commons Open Database License (ODbL) 1.0:
+https://opendatacommons.org/licenses/odbl/1-0/
+https://www.openstreetmap.org/copyright
+
+The dataset attribution and these licence links must accompany redistribution.
+The original snapshot, exact query, capture time, source object URLs and SHA-256
+manifest are supplied so the corresponding OSM-derived database is available.
+When publicly using an adapted OSM database, the ODbL's attribution, share-alike
+and access-to-the-database requirements apply. Individual database contents are
+subject to the Database Contents License:
+https://opendatacommons.org/licenses/dbcl/1-0/
+
+Original BanffBound editorial descriptions, official menu links and independently
+documented publisher hotel locators are stored separately in editorial.json and
+the editorial/publisher portions of map.generated.ts. They are not represented
+as OSM contributions or as OSM-licensed third-party photographs or menu content.
+No provider photographs, menu text, map tiles or live service feeds are included.
+
+Community mapping can be incomplete, outdated or inaccurate. A mapped node or
+feature centre is not a surveyed entrance, accessible route, safe trail, operating
+facility or parking reservation. Opening, fees, water quality, restrictions and
+current services must be checked with the relevant operator or public authority.

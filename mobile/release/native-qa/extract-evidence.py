@@ -11,12 +11,14 @@ import subprocess
 import sys
 
 SCREENS = ('store-01-today', 'store-02-explore', 'store-03-my-trip', 'store-04-essentials',
-           'store-05-tours', 'store-06-stays', 'store-07-guides')
+           'store-05-tours', 'store-06-stays', 'store-07-guides', 'store-08-map', 'store-09-map-details')
 REQUIRED_TESTS = ('test01CapturePrimaryScreens', 'test02SavedPlaceSurvivesRelaunch',
                   'test03TripDetailsSurviveRelaunch', 'test04SpecificVenueStaysOnChosenDayAfterRelaunch',
                   'test05OfflinePackAndBundledGuideSurviveRelaunch',
                   'test06TourSearchDisclosureAndNativeBrowserHandoff',
-                  'test07StayAndNonlegacyOnlineGuideSearch')
+                  'test07StayAndNonlegacyOnlineGuideSearch',
+                  'test08MapDocumentMarkerOpensRestaurantDetail',
+                  'test09MapCategoriesFacilitiesAndEmptyReset')
 BROWSER_SCREEN = 'qa-commerce-browser-screen'
 MAX_SCREEN_BYTES = 8 * 1024 * 1024
 MAX_ARTIFACT_BYTES = 48 * 1024 * 1024
@@ -99,6 +101,44 @@ def browser_observation(records, exported):
     return observation
 
 
+def map_observation(records, exported, name):
+    matches = [record for record in records if name in str(record.get('suggestedHumanReadableName', ''))]
+    if len(matches) != 1:
+        raise ValueError(f'Expected one executed {name} observation, found {len(matches)}')
+    source = (exported / matches[0]['exportedFileName']).resolve()
+    if exported.resolve() not in source.parents or not source.is_file() or source.stat().st_size > 16000:
+        raise ValueError('Invalid or oversized native map observation attachment')
+    observation = read_json(source)
+    if not isinstance(observation, dict) or observation.get('locationPermissionRequested') is not False:
+        raise ValueError('Require actual native map observations without a location permission request')
+    if name == 'qa-map-marker-observation':
+        required = ('webViewObserved', 'fitResultsDocumentButtonUsed', 'nativeDetailOpened', 'menuActionObserved')
+        if (observation.get('kind') != 'native-map-marker-detail'
+                or observation.get('selectionSurface') != 'native-webview-document-button'
+                or any(observation.get(key) is not True for key in required)
+                or observation.get('restaurantTitle') != 'The Bison Restaurant'
+                or observation.get('reviewedCuisineObserved') != 'Seasonal Canadian'
+                or observation.get('menuHostObserved') != 'www.thebison.ca'
+                or observation.get('menuOpened') is not False
+                or observation.get('basemapAvailabilityVerified') is not False):
+            raise ValueError('Executed map marker must open the precise native restaurant detail, cuisine and reviewed menu action')
+        label = observation.get('markerLabel')
+        if not isinstance(label, str) or len(label) > 300 or 'The Bison Restaurant' not in label or 'Restaurants' not in label:
+            raise ValueError('Require the actual named restaurant marker label from the native WebView')
+    else:
+        required = ('multipleCategoriesSelected', 'singleCategoryRetainedAfterDeselect', 'detailClosed',
+                    'invalidQueryEmptyStateVerified', 'resetRestoredAllFilters')
+        expected = {'kind': 'native-map-filter-facilities', 'areaObserved': 'Lake Louise',
+                    'searchQuery': 'Public Washrooms', 'facilityTitle': 'Public Washrooms',
+                    'facilityCategoryObserved': 'Toilets', 'facilityFieldObserved': 'Access in map data',
+                    'sourceObserved': 'OpenStreetMap contributors · node/1623434017'}
+        if (any(observation.get(key) is not True for key in required)
+                or any(observation.get(key) != value for key, value in expected.items())
+                or re.fullmatch(r'[1-9][0-9]* places', str(observation.get('restoredResultCountLabel', ''))) is None):
+            raise ValueError('Executed map filters must select the precise sourced toilet, show facilities, close, reject an empty query and restore all results')
+    return observation
+
+
 def validated_screenshot(record, exported, evidence, device, screen):
     source = (exported / record['exportedFileName']).resolve()
     if exported.resolve() not in source.parents or not source.is_file():
@@ -177,7 +217,7 @@ def main():
                                      and counts['failedTests'] == 0 and counts['skippedTests'] == 0
                                      and counts['expectedFailures'] == 0)
         if not result['testsPassed']:
-            errors.append(f'{label}: require all seven real UI tests executed and passed, zero failures/skips/expected failures and successful xcodebuild exit.')
+            errors.append(f'{label}: require all nine real UI tests executed and passed, zero failures/skips/expected failures and successful xcodebuild exit.')
         exported = root / 'attachments' / label
         exported.mkdir(parents=True, exist_ok=True)
         export = subprocess.run(['xcrun', 'xcresulttool', 'export', 'attachments', '--path', str(bundle), '--output-path', str(exported)], capture_output=True, text=True)
@@ -196,13 +236,20 @@ def main():
         result['executedTestIdentifiers'] = identities
         if set(identities) != set(REQUIRED_TESTS):
             result['testsPassed'] = False
-            errors.append(f'{label}: actual XCTest attachment manifest must identify all seven required UI flows, with no substituted test.')
+            errors.append(f'{label}: actual XCTest attachment manifest must identify all nine required UI flows, with no substituted test.')
         try:
             observation = browser_observation(records, exported)
             result['nativeBrowserHandoff'] = observation
             (evidence / f'{label}-browser-observation.json').write_text(json.dumps(observation, indent=2) + '\n')
         except (OSError, ValueError) as error:
             errors.append(f'{label}: {error}')
+        for name, key in [('qa-map-marker-observation', 'nativeMapMarkerDetail'), ('qa-map-filter-observation', 'nativeMapFiltersFacilities')]:
+            try:
+                observation = map_observation(records, exported, name)
+                result[key] = observation
+                (evidence / f'{label}-{name}.json').write_text(json.dumps(observation, indent=2) + '\n')
+            except (OSError, ValueError) as error:
+                errors.append(f'{label}: {error}')
         # Retain at most one failure image and one bounded accessibility tree per
         # device, even when an assertion fails before store captures are reached.
         if not result['testsPassed']:
@@ -236,7 +283,7 @@ def main():
             except (OSError, ValueError) as error:
                 errors.append(f'{label}/{screen}: {error}')
         if len(result['screenshots']) != len(SCREENS):
-            errors.append(f'{label}: seven validated primary and commerce screen captures are required.')
+            errors.append(f'{label}: nine validated primary, commerce and map screen captures are required.')
         browser_matches = [record for record in records if BROWSER_SCREEN in str(record.get('suggestedHumanReadableName', ''))]
         try:
             if len(browser_matches) != 1:
@@ -268,11 +315,14 @@ def main():
                           'Native offline saved status and bundled guide reading after process relaunch',
                           'Tour search, provider disclosure, actual native Safari presentation and return to detail',
                           'Hotel search and a specific online guide outside the original bundled guide set',
+                          'Actual native WebView marker opens precise restaurant detail, cuisine and reviewed menu action',
+                          'Multiple map categories, area and search select sourced toilet facilities; empty query and reset verified',
                           'Actual simulator app file matches full canonical guide/place bundle and UI-edited trip'],
         'errors': errors,
         'limits': ['Unsigned simulator build; separate from a signed device binary.',
                    'No physical-device QA, purchase/booking transaction, location permission, notifications, or real offline-network test.',
                    'Browser presentation and return do not establish provider availability, a booking or affiliate attribution; address observations report only exposed UI text.',
+                   'Map document marker selection and bundled details do not establish street-tile availability, surveyed entrances, current facilities or menu content; no location permission requested.',
                    'Screenshots require human visual review and any required release approval before App Store upload.'],
         'storeUploadApproved': False,
         'screenshotMediaCompatible': len(results) == 2 and all(len(result['screenshots']) == len(SCREENS) and all(not shot['hasAlphaOrTransparency'] for shot in result['screenshots']) for result in results),

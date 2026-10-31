@@ -387,4 +387,138 @@ final class BanffBoundUITests: XCTestCase {
                       "The app must distinguish its local index from online article content")
         tapID("commerce-close-details")
     }
+
+    // Map tests intentionally use the native WebView's actual DOM buttons for
+    // marker selection. The ordinary RN list is used only by the facilities test.
+    private func mapScrollToTop() {
+        for _ in 0..<10 {
+            let search = app.textFields.matching(identifier: "map-search").firstMatch
+            if search.exists && search.isHittable && element("Get your bearings.").isHittable { return }
+            let candidates = app.scrollViews.allElementsBoundByIndex.filter {
+                $0.frame.height > 200 && $0.descendants(matching: .any).matching(identifier: "map-search").firstMatch.exists
+            }
+            guard let content = candidates.max(by: { $0.frame.height < $1.frame.height }) else {
+                XCTFail("Map search must belong to its actual native content scroll view")
+                return
+            }
+            content.swipeDown()
+        }
+        XCTFail("Could not bring the map search and heading into view")
+    }
+
+    private func mapSearch(_ query: String) {
+        mapScrollToTop()
+        if element("Clear map search").exists { tap("Clear map search") }
+        let field = app.textFields.matching(identifier: "map-search").firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: 10) && field.isHittable, "Map search must be a real native editable field")
+        field.tap()
+        field.typeText(query + "\n")
+        if app.keyboards.firstMatch.exists {
+            let heading = app.staticTexts.matching(NSPredicate(format: "label == 'Get your bearings.'")).firstMatch
+            XCTAssertTrue(heading.isHittable, "Use the visible native map heading to dismiss its search keyboard")
+            heading.tap()
+        }
+        let dismissed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.keyboards.firstMatch)
+        XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: 5), .completed, "Map keyboard must dismiss before tapping a document marker")
+        XCTAssertEqual(field.value as? String, query, "The public map search must reach the native input")
+    }
+
+    private func mapCategoryFilter(_ label: String) -> XCUIElement {
+        let target = app.buttons.matching(NSPredicate(format: "label CONTAINS %@", label + " (")).firstMatch
+        XCTAssertTrue(target.waitForExistence(timeout: 10), "Expected counted category in the expanded map filters: \(label)")
+        scrollTo(target.label)
+        XCTAssertTrue(target.isHittable, "Map category must be tappable: \(label)")
+        return target
+    }
+
+    func test08MapDocumentMarkerOpensRestaurantDetail() throws {
+        tab("Map", heading: "Get your bearings.")
+        let map = app.webViews.firstMatch
+        XCTAssertTrue(map.waitForExistence(timeout: 25), "Map discovery must host the real native WebView")
+        let fit = map.buttons.matching(NSPredicate(format: "label == 'Fit results'")).firstMatch
+        XCTAssertTrue(fit.waitForExistence(timeout: 20), "The real map document must initialize before its overview capture")
+        scrollTo("Fit results")
+        capture("store-08-map")
+
+        mapSearch("Bison")
+        scrollTo("Fit results")
+        XCTAssertTrue(fit.waitForExistence(timeout: 20) && fit.isHittable, "Use the actual document Fit results button")
+        fit.tap()
+        let pin = map.buttons.matching(NSPredicate(format: "label CONTAINS 'The Bison Restaurant' AND label CONTAINS 'Restaurants'")).firstMatch
+        XCTAssertTrue(pin.waitForExistence(timeout: 20) && pin.isHittable, "Require the restaurant's actual WebView marker button, never an RN list fallback")
+        let markerLabel = pin.label
+        pin.tap()
+        let title = visibleID("map-detail-title")
+        XCTAssertEqual(title.label, "The Bison Restaurant", "Document selection must bridge the precise known marker into its native detail")
+        XCTAssertTrue(title.isHittable)
+        scrollTo("Food & drink")
+        XCTAssertTrue(visible("Seasonal Canadian").isHittable, "The restaurant detail must include its reviewed cuisine")
+        scrollTo("View the venue menu")
+        XCTAssertTrue(visible("View the venue menu").isHittable, "The reviewed menu action must be available without attempting a purchase")
+        scrollTo("www.thebison.ca")
+        XCTAssertTrue(visible("www.thebison.ca").isHittable, "Show the actual reviewed menu destination host")
+        capture("store-09-map-details")
+        try attachJSON([
+            "kind": "native-map-marker-detail", "selectionSurface": "native-webview-document-button",
+            "webViewObserved": true, "fitResultsDocumentButtonUsed": true,
+            "markerLabel": markerLabel, "restaurantTitle": title.label,
+            "nativeDetailOpened": true, "reviewedCuisineObserved": "Seasonal Canadian",
+            "menuActionObserved": true, "menuHostObserved": "www.thebison.ca",
+            "menuOpened": false, "basemapAvailabilityVerified": false, "locationPermissionRequested": false,
+        ], name: "qa-map-marker-observation")
+        tapID("map-close-details")
+        XCTAssertFalse(element("map-close-details").waitForExistence(timeout: 1), "Closing the native map detail must return to discovery")
+    }
+
+    func test09MapCategoriesFacilitiesAndEmptyReset() throws {
+        tab("Map", heading: "Get your bearings.")
+        XCTAssertTrue(app.webViews.firstMatch.waitForExistence(timeout: 25))
+        tapID("map-filter-toggle")
+        tap("Lake Louise")
+        let restaurants = mapCategoryFilter("Restaurants")
+        restaurants.tap()
+        let toilets = mapCategoryFilter("Toilets")
+        toilets.tap()
+        XCTAssertTrue(restaurants.isSelected && toilets.isSelected, "Map categories must support two simultaneous selections")
+        restaurants.tap()
+        XCTAssertFalse(restaurants.isSelected)
+        XCTAssertTrue(toilets.isSelected, "Deselecting restaurants must retain the toilet category")
+        mapScrollToTop()
+        tapID("map-filter-toggle")
+        mapSearch("Public Washrooms")
+        scrollTo("View map details for Public Washrooms")
+        tap("View map details for Public Washrooms")
+        XCTAssertEqual(visibleID("map-detail-title").label, "Public Washrooms")
+        XCTAssertTrue(visible("TOILETS · LAKE LOUISE").exists, "The actual result must be a toilet record in the chosen area")
+        scrollTo("Facilities & access")
+        XCTAssertTrue(visible("Facilities & access").isHittable)
+        XCTAssertTrue(visible("Access in map data").isHittable, "Show the selected toilet's actual recorded facility field")
+        scrollTo("Sources & updates")
+        XCTAssertTrue(visible("Sources & updates").isHittable)
+        XCTAssertTrue(visible("OpenStreetMap contributors · node/1623434017").isHittable, "The precise facility record must expose its actual source")
+        tapID("map-close-details")
+        XCTAssertFalse(element("map-close-details").waitForExistence(timeout: 1))
+
+        mapSearch("zzzz-no-banff-place-qa-9481")
+        scrollTo("No places match those filters")
+        XCTAssertTrue(visible("No places match those filters").isHittable, "An invalid public query must produce the genuine empty state")
+        tap("Reset map filters")
+        mapScrollToTop()
+        let count = visibleID("map-result-count")
+        let restored = XCTNSPredicateExpectation(predicate: NSPredicate(format: "label MATCHES '[1-9][0-9]* places'"), object: count)
+        XCTAssertEqual(XCTWaiter.wait(for: [restored], timeout: 5), .completed, "Reset must restore nonempty unfiltered results")
+        XCTAssertFalse(element("Clear map search").exists, "Reset must clear the invalid search query")
+        XCTAssertTrue(app.buttons.matching(NSPredicate(format: "label == 'Everything'")).firstMatch.isSelected, "Reset must restore all categories")
+        XCTAssertTrue(visible("All areas").exists, "Reset must restore all areas")
+        try attachJSON([
+            "kind": "native-map-filter-facilities", "multipleCategoriesSelected": true,
+            "singleCategoryRetainedAfterDeselect": true, "areaObserved": "Lake Louise",
+            "searchQuery": "Public Washrooms", "facilityTitle": "Public Washrooms",
+            "facilityCategoryObserved": "Toilets", "facilityFieldObserved": "Access in map data",
+            "sourceObserved": "OpenStreetMap contributors · node/1623434017", "detailClosed": true,
+            "invalidQueryEmptyStateVerified": true, "resetRestoredAllFilters": true,
+            "restoredResultCountLabel": count.label, "locationPermissionRequested": false,
+        ], name: "qa-map-filter-observation")
+    }
+
 }

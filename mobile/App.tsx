@@ -91,7 +91,8 @@ import {
   shareTripPack,
   pickTripPack,
 } from "./src/lib/offline";
-import MapSurface from "./src/components/MapSurface";
+import MapBrowser from "./src/components/MapBrowser";
+import { mapPoints } from "./src/data/map.generated";
 import CommerceBrowser, { RelatedCommerceLinks } from "./src/components/CommerceBrowser";
 import type { CommerceSection } from "./src/data/commerce";
 import { isAllowedCommerceUrl } from "./src/lib/commerce";
@@ -767,7 +768,8 @@ function BanffApp() {
             {tab === "Explore" && exploreMode !== "places" && (
               <CommerceBrowser key={exploreMode} section={exploreMode} onOpenUrl={openCommerceUrl} />
             )}
-            {((tab === "Explore" && exploreMode === "places") || tab === "Map") && (
+            {tab === "Map" && <MapBrowser onOpenUrl={openUrl} onOpenCommerceUrl={openCommerceUrl} focusPlaceId={selectedPlace?.id} position={position} onLocate={locate} locationMessage={locationMessage} />}
+            {tab === "Explore" && exploreMode === "places" && (
               <>
                 <View style={a.searchBox}>
                   <Ionicons
@@ -838,36 +840,9 @@ function BanffApp() {
                     onPress={() => setSavedOnly(!savedOnly)}
                   />
                 </View>
-                {tab === "Map" && (
-                  <>
-                    <MapSurface
-                      latitude={selectedPlace?.latitude}
-                      longitude={selectedPlace?.longitude}
-                    />
-                    <View style={[s.row, { justifyContent: "space-between" }]}>
-                      <Text style={[s.body, { flex: 1, fontSize: 12 }]}>
-                        © OpenStreetMap contributors · online map
-                      </Text>
-                      <Button
-                        title="Near me"
-                        icon="locate-outline"
-                        small
-                        variant="secondary"
-                        onPress={locate}
-                      />
-                    </View>
-                    {locationMessage && <Notice>{locationMessage}</Notice>}
-                    <Notice>
-                      Only places with reviewed coordinates can be focused on
-                      the map. Saved place details remain available offline.
-                    </Notice>
-                  </>
-                )}
                 <View style={s.sectionTitle}>
                   <Text style={s.h2}>
-                    {tab === "Map"
-                      ? "Places on your radar"
-                      : "A place for every kind of day"}
+                    A place for every kind of day
                   </Text>
                   <Text style={s.body}>{visible.length}</Text>
                 </View>
@@ -891,26 +866,8 @@ function BanffApp() {
                         place={place}
                         saved={state.savedPlaceIds.includes(place.id)}
                         onSave={() => toggleSave(place.id)}
-                        onPress={() =>
-                          tab === "Map" && place.coordinateStatus === "verified"
-                            ? (setSelectedPlace(place),
-                              setPanel({ type: "place", place }))
-                            : setPanel({ type: "place", place })
-                        }
+                        onPress={() => setPanel({ type: "place", place })}
                         wide={wide}
-                        mapAction={
-                          tab === "Map" &&
-                          place.coordinateStatus === "verified" &&
-                          place.latitude !== undefined
-                            ? () => {
-                                setSelectedPlace(place);
-                                scroll.current?.scrollTo({
-                                  y: 0,
-                                  animated: true,
-                                });
-                              }
-                            : undefined
-                        }
                       />
                     ))}
                   </View>
@@ -1705,7 +1662,7 @@ function BanffApp() {
                         variant="ghost"
                         onPress={() => openUrl(panel.place.sourceUrl)}
                       />
-                      {panel.place.coordinateStatus === "verified" && (
+                      {mapPoints.some(point => point.relatedPlaceId === panel.place.id) && (
                         <Button
                           title="Show on map"
                           icon="map-outline"

@@ -1,0 +1,2482 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-31",
+  "sourceCommit": "686a841ad452da0f19d1026d78abd0a9e8e75279",
+  "sourceFiles": [
+    {
+      "path": "src/data/restaurants.ts",
+      "sha256": "b0fca09bd1de188193c40b4b0803b1209a5e33cdbad5243129fb701728371367"
+    },
+    {
+      "path": "src/data/restaurantSourceReviews.ts",
+      "sha256": "d77c586e50f341552d27775c077c888c917b43896ad9025c47eb3ebe7298aa62"
+    },
+    {
+      "path": "src/data/banffDiningSourceReviews.ts",
+      "sha256": "36d921fbebbd3b97bb1c2218bc44ac17333834c559a2a7cf04a11a71e96630fa"
+    },
+    {
+      "path": "src/data/hotels.ts",
+      "sha256": "54885418ca9e7502f7b308b50b1a6c2ffcfc680bd701ad36e4862cf4a3fe7ecc"
+    },
+    {
+      "path": "src/data/hotelDirectory.ts",
+      "sha256": "b4bd72f7e35c117dcdf8ed124e4d495abd539f124d9b86e07d562e2d0107eb0c"
+    },
+    {
+      "path": "mobile/src/data/catalog.generated.ts",
+      "sha256": "7579d43d49681f5195e2d0ee3cc5459dc457c7a6ed144c75aa949a337416e9b4"
+    },
+    {
+      "path": "mobile/src/data/commerce.generated.ts",
+      "sha256": "56bc7ad774a4e320b0f88c26365e1d6b9e30f4674a2d3ef78e1eae26966a8891"
+    }
+  ],
+  "dining": [
+    {
+      "id": "the-bison-restaurant",
+      "name": "The Bison Restaurant",
+      "osmIds": [
+        "node/2128380227"
+      ],
+      "area": "Banff",
+      "description": "Choose a seasonal Canadian dinner on Bear Street, then compare the current menu and the table arrangement for your party.",
+      "address": "213, 211 Bear Street, Banff",
+      "cuisine": "Seasonal Canadian",
+      "highlights": [
+        "Seasonal menu",
+        "Separate group enquiries"
+      ],
+      "menuUrl": "https://www.thebison.ca/menu",
+      "websiteUrl": "https://www.thebison.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The booking page leaves space for walk-ins and directs groups of 15 or more to its separate events enquiry. Check a dated music or menu event on its own terms.",
+      "journeyNote": "Use the operator’s Bear Street suite address when arranging the arrival and return.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator and menu",
+          "url": "https://www.thebison.ca/"
+        },
+        {
+          "label": "Location and contact",
+          "url": "https://www.thebison.ca/contact"
+        },
+        {
+          "label": "Table and group arrangements",
+          "url": "https://www.thebison.ca/book-a-table"
+        }
+      ]
+    },
+    {
+      "id": "park-distillery",
+      "name": "Park Distillery",
+      "osmIds": [
+        "node/4423693589",
+        "way/476718879"
+      ],
+      "area": "Banff",
+      "description": "A Banff Avenue restaurant and working distillery with a food menu and separate distillery experiences.",
+      "address": "219 Banff Avenue, Banff",
+      "cuisine": "Campfire-inspired cooking",
+      "highlights": [
+        "Restaurant and distillery",
+        "Separate tour bookings"
+      ],
+      "menuUrl": "https://parkdistillery.com/pages/menu",
+      "websiteUrl": "https://parkdistillery.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Choose dining, a distillery tour or a private event deliberately; a restaurant table does not include a tour. Check the selected product’s age, booking and service terms.",
+      "journeyNote": "The restaurant and physical store use 219 Banff Avenue; keep a tour meeting instruction separate from the dining reservation.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Restaurant and experiences",
+          "url": "https://parkdistillery.com/"
+        },
+        {
+          "label": "Location and contact",
+          "url": "https://parkdistillery.com/pages/contact"
+        },
+        {
+          "label": "Dining reservations",
+          "url": "https://parkdistillery.com/pages/book-a-table"
+        }
+      ]
+    },
+    {
+      "id": "grizzly-house",
+      "name": "Grizzly House",
+      "osmIds": [
+        "node/926082940"
+      ],
+      "area": "Banff",
+      "description": "Consider fondue and food cooked on hot rocks at the table, with the current menu and reservation details supplied by the restaurant.",
+      "address": "207 Banff Avenue, Banff",
+      "cuisine": "Fondue & hot-rock cooking",
+      "highlights": [
+        "Table-side cooking",
+        "Direct reservation route"
+      ],
+      "menuUrl": "https://banffgrizzlyhouse.com/home/menu/",
+      "websiteUrl": "https://banffgrizzlyhouse.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Discuss the cooking format, ingredients and any dietary or assistance needs directly. A menu description does not establish allergy suitability or a particular table.",
+      "journeyNote": "The official tourism business listing identifies the Banff Avenue address; use the operator’s booking confirmation for the visit.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Current operator site",
+          "url": "https://banffgrizzlyhouse.com/"
+        },
+        {
+          "label": "Menu",
+          "url": "https://banffgrizzlyhouse.com/home/menu/"
+        },
+        {
+          "label": "Official destination listing",
+          "url": "https://www.banfflakelouise.com/business/banff-grizzly-house-restaurant"
+        }
+      ]
+    },
+    {
+      "id": "block-kitchen-bar",
+      "name": "Block Kitchen + Bar",
+      "osmIds": [
+        "node/4306486005"
+      ],
+      "area": "Banff",
+      "description": "A small kitchen and bar offering global dishes, small plates and cocktails near Caribou Street and Banff Avenue.",
+      "address": "Corner of Caribou Street & Banff Avenue, near 201 Town Centre, Banff",
+      "cuisine": "Global dishes & cocktails",
+      "highlights": [
+        "Small plates or a meal",
+        "Small dining room"
+      ],
+      "menuUrl": "https://www.banffblock.com/",
+      "websiteUrl": "https://www.banffblock.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Use the current operator menu and phone for the service, party size and seating arrangement you need; no online reservation is inferred here.",
+      "journeyNote": "The operator describes the corner near 201 Town Centre. Confirm the actual entrance and access rather than treating an approximate map point as a route.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Menu, location and phone",
+          "url": "https://www.banffblock.com/"
+        }
+      ]
+    },
+    {
+      "id": "juniper-bistro",
+      "name": "Juniper Bistro",
+      "osmIds": [
+        "node/11036341760"
+      ],
+      "area": "Banff",
+      "description": "Plan a meal at the Juniper Hotel outside downtown Banff, with seasonal dishes and a separate journey to the property.",
+      "address": "1 Juniper Way, Banff",
+      "cuisine": "Seasonal, plant-rich cooking",
+      "highlights": [
+        "Welcomes non-hotel guests",
+        "Separate patio arrangements"
+      ],
+      "menuUrl": "https://thejuniper.com/bistro/",
+      "websiteUrl": "https://thejuniper.com/bistro/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The bistro welcomes visitors as well as hotel guests. Its patio is seasonal and weather dependent, with first-come seating rather than a reserved patio table.",
+      "journeyNote": "This is the Juniper Hotel location, outside the downtown dining blocks. Arrange the complete arrival, access and return.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Bistro, menus and access FAQ",
+          "url": "https://thejuniper.com/bistro/"
+        },
+        {
+          "label": "Operator-linked table booking",
+          "url": "https://www.opentable.ca/juniper-bistro-the-juniper-hotel"
+        }
+      ]
+    },
+    {
+      "id": "wild-flour-bakery",
+      "name": "Wild Flour Bakery",
+      "osmIds": [
+        "node/341203803"
+      ],
+      "area": "Banff",
+      "description": "A Bear Street bakery and coffee stop with breakfast, sandwiches, soups, salads and pastries on its current operator menu.",
+      "address": "101-211 Bear Street, Banff",
+      "cuisine": "Bread, pastries & café meals",
+      "highlights": [
+        "Bakery and coffee",
+        "Breakfast and lunch menus"
+      ],
+      "menuUrl": "https://www.wildflourbakery.ca/",
+      "websiteUrl": "https://www.wildflourbakery.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Check the current counter selection and menu. Special cake orders use their own advance-order process; ordinary café seating is a separate arrangement.",
+      "journeyNote": "Use suite 101 on Bear Street, distinct from other venues in the same building.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator, menus and location",
+          "url": "https://www.wildflourbakery.ca/"
+        }
+      ]
+    },
+    {
+      "id": "eddie-burger-bar",
+      "name": "Eddie Burger + Bar",
+      "osmIds": [],
+      "area": "Banff",
+      "description": "Choose a burger meal on Banff Avenue and check the operator’s current food, party and booking arrangements.",
+      "address": "#6, 137 Banff Avenue, Banff",
+      "cuisine": "Burgers & bar food",
+      "highlights": [
+        "Burger menu",
+        "Direct table booking"
+      ],
+      "menuUrl": "https://www.eddieburgerbar.ca/menus",
+      "websiteUrl": "https://www.eddieburgerbar.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Read the exact reservation and any dated event or late-night conditions for your party; an offer headline does not describe every service.",
+      "journeyNote": "The operator gives unit 6 at 137 Banff Avenue. The earlier lower-level claim is not repeated without confirmation.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator",
+          "url": "https://www.eddieburgerbar.ca/"
+        },
+        {
+          "label": "Contact and location",
+          "url": "https://www.eddieburgerbar.ca/contact-us"
+        },
+        {
+          "label": "Menus",
+          "url": "https://www.eddieburgerbar.ca/menus"
+        },
+        {
+          "label": "Reservation details",
+          "url": "https://www.eddieburgerbar.ca/reservations"
+        }
+      ]
+    },
+    {
+      "id": "tooloulous",
+      "name": "Tooloulou's",
+      "osmIds": [
+        "node/5618377421"
+      ],
+      "area": "Banff",
+      "description": "Compare the breakfast, lunch and dinner menus at this Caribou Street restaurant with Cajun and Creole influences.",
+      "address": "204 Caribou Street, Banff",
+      "cuisine": "Cajun & Creole-inspired",
+      "highlights": [
+        "Separate meal services",
+        "Dinner reservation enquiries"
+      ],
+      "menuUrl": "https://tooloulous.com/",
+      "websiteUrl": "https://tooloulous.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator says reservations are for dinner only, with groups of seven or more asked to contact it directly. Confirm the actual date and service before planning around it.",
+      "journeyNote": "Plan for the Caribou Street restaurant and the return from that address.",
+      "notices": [
+        {
+          "label": "Confirm renovation dates",
+          "text": "The current site displays an October 31–December 3 renovation closure without a year in that notice, alongside other dated and holiday material. Ask the restaurant which dates apply before relying on a visit.",
+          "url": "https://tooloulous.com/"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Menus, contact and service notices",
+          "url": "https://tooloulous.com/"
+        }
+      ]
+    },
+    {
+      "id": "banff-ave-brewing-co",
+      "name": "Banff Ave Brewing Co.",
+      "osmIds": [
+        "node/1304560479"
+      ],
+      "area": "Banff",
+      "description": "Compare a pub meal and the brewery’s own beers, keeping its upstairs pub and street-level taproom as distinct spaces.",
+      "address": "110 Banff Avenue, 2nd Floor, Clock Tower Village Mall, Banff",
+      "cuisine": "Pub food & craft beer",
+      "highlights": [
+        "Upstairs pub",
+        "Separate street-level taproom"
+      ],
+      "menuUrl": "https://banffavebrewingco.ca/the-pub/menu/",
+      "websiteUrl": "https://banffavebrewingco.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Check which space, menu and booking the party needs. The pub address does not establish an accessible route or a reservation in the other space.",
+      "journeyNote": "The published pub address is on the second floor; confirm the actual entrance and any access assistance.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator and spaces",
+          "url": "https://banffavebrewingco.ca/"
+        },
+        {
+          "label": "Pub menu",
+          "url": "https://banffavebrewingco.ca/the-pub/menu/"
+        },
+        {
+          "label": "Table booking",
+          "url": "https://banffavebrewingco.ca/reserve/"
+        }
+      ]
+    },
+    {
+      "id": "nourish-bistro",
+      "name": "Nourish Bistro",
+      "osmIds": [
+        "node/4770571823"
+      ],
+      "area": "Banff",
+      "description": "A vegetarian and vegan-friendly dining option on Bear Street, with a current operator menu and direct table-booking route.",
+      "address": "110, 211 Bear Street, Banff",
+      "cuisine": "Vegetarian & vegan-friendly",
+      "highlights": [
+        "Vegetarian menu",
+        "Direct table booking"
+      ],
+      "menuUrl": "https://www.nourishbistro.com/menu/",
+      "websiteUrl": "https://www.nourishbistro.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Discuss the particular ingredients, preparation and dietary needs with the restaurant; a cuisine label is not an allergy-suitability guarantee.",
+      "journeyNote": "Use suite 110 on Bear Street, distinct from the other restaurants and bakery at 211 Bear Street.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator and menu",
+          "url": "https://www.nourishbistro.com/"
+        },
+        {
+          "label": "Contact and location",
+          "url": "https://www.nourishbistro.com/contact/"
+        },
+        {
+          "label": "Table-booking route",
+          "url": "https://www.nourishbistro.com/book-a-table"
+        }
+      ]
+    },
+    {
+      "id": "magpie-and-stump",
+      "name": "Magpie & Stump",
+      "osmIds": [
+        "way/476708347"
+      ],
+      "area": "Banff",
+      "description": "Compare a Mexican-inspired meal on Caribou Street with the operator’s separate rooftop dining arrangements.",
+      "address": "203 Caribou Street, Banff",
+      "cuisine": "Mexican-inspired",
+      "highlights": [
+        "Caribou Street dining",
+        "Separate rooftop choice"
+      ],
+      "menuUrl": "https://www.magpieandstump.ca/menu",
+      "websiteUrl": "https://www.magpieandstump.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Choose the actual dining space and reservation. Recheck rooftop operation and the selected offer rather than extending a seasonal patio description to every winter visit.",
+      "journeyNote": "Use the Caribou Street address and the venue’s instructions for the space you book.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator and location",
+          "url": "https://www.magpieandstump.ca/"
+        },
+        {
+          "label": "Menu",
+          "url": "https://www.magpieandstump.ca/menu"
+        },
+        {
+          "label": "Dining and rooftop reservations",
+          "url": "https://www.magpieandstump.ca/reservations"
+        }
+      ]
+    },
+    {
+      "id": "coyotes-southwestern-grill",
+      "name": "Coyotes Southwestern Grill",
+      "osmIds": [
+        "node/773189928"
+      ],
+      "area": "Banff",
+      "description": "Choose among separate breakfast, lunch and dinner menus at this Caribou Street restaurant.",
+      "address": "206 Caribou Street, Banff",
+      "cuisine": "Southwestern-inspired",
+      "highlights": [
+        "Three meal menus",
+        "Direct reservation enquiries"
+      ],
+      "menuUrl": "https://coyotesbanff.com/",
+      "websiteUrl": "https://coyotesbanff.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator directs reservations between 7:30 and 11 in the morning to phone or email. Check the current booking route and meal service for the actual date.",
+      "journeyNote": "This is the Caribou Street restaurant; arrange the journey around the service you select.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator, menus, booking and contact",
+          "url": "https://coyotesbanff.com/"
+        }
+      ]
+    },
+    {
+      "id": "bear-street-tavern",
+      "name": "Bear Street Tavern",
+      "osmIds": [
+        "node/10268515174"
+      ],
+      "area": "Banff",
+      "description": "A Bear Street option for pizza, sandwiches and pub food, with separate indoor and courtyard seating decisions.",
+      "address": "113, 211 Bear Street, Banff",
+      "cuisine": "Pizza & pub food",
+      "highlights": [
+        "Pizza and pub menu",
+        "Courtyard enquiries"
+      ],
+      "menuUrl": "https://www.bearstreettavern.ca/menus",
+      "websiteUrl": "https://www.bearstreettavern.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator describes a dog-friendly courtyard exposed to the weather. Confirm its actual use and any pet arrangements for your date; group events of 17 or more are directed elsewhere.",
+      "journeyNote": "Use suite 113 on Bear Street and confirm the entrance or courtyard arrangement you intend to use.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator",
+          "url": "https://www.bearstreettavern.ca/"
+        },
+        {
+          "label": "Contact and location",
+          "url": "https://www.bearstreettavern.ca/contact"
+        },
+        {
+          "label": "Table and courtyard arrangements",
+          "url": "https://www.bearstreettavern.ca/reserve"
+        },
+        {
+          "label": "Menus",
+          "url": "https://www.bearstreettavern.ca/menus"
+        }
+      ]
+    },
+    {
+      "id": "lake-louise-station",
+      "name": "The Station Restaurant",
+      "osmIds": [
+        "node/2958087898"
+      ],
+      "area": "Lake Louise",
+      "description": "The heritage railway-station restaurant’s own publisher reports an extended renovation closure under new ownership. Keep it as a place to follow for reopening information, rather than an available meal stop.",
+      "address": "200 Sentinel Road, Lake Louise, AB T0L 1E0",
+      "cuisine": null,
+      "highlights": [
+        "Heritage station location",
+        "Operator renovation notice"
+      ],
+      "menuUrl": null,
+      "websiteUrl": "https://www.lakelouisestation.com/contact",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator says the restaurant is closed for an extended period and will update the reopening timeline. No reopening date or active meal service is established.",
+      "journeyNote": "The published address is on Sentinel Road in Lake Louise. Do not make a meal journey dependent on an older menu or opening-hours listing.",
+      "notices": [
+        {
+          "label": "Renovation closure reported by the operator",
+          "text": "Checked October 29, 2026: the operator reports an extended closure for renovations under new ownership. Its promise of a later update does not establish reopening.",
+          "url": "https://www.lakelouisestation.com/contact"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Station Restaurant: current contact and renovation notice",
+          "url": "https://www.lakelouisestation.com/contact"
+        }
+      ]
+    },
+    {
+      "id": "fairview-dining-room",
+      "name": "Fairview Bar & Restaurant",
+      "osmIds": [
+        "node/1623439428"
+      ],
+      "area": "Lake Louise",
+      "description": "A restaurant and bar inside Fairmont Chateau Lake Louise with a contemporary Rocky Mountain menu. Plan a lakeside-hotel dining visit, and confirm hotel access and the intended bar or dinner service.",
+      "address": "111 Lake Louise Drive, Lake Louise, AB T0L 1E0",
+      "cuisine": "Contemporary Rocky Mountain",
+      "highlights": [
+        "Inside Chateau Lake Louise",
+        "Distinct bar and dinner service",
+        "Direct dining contact"
+      ],
+      "menuUrl": "https://www.chateau-lake-louise.com/dine/fairview-bar-restaurant/",
+      "websiteUrl": "https://www.chateau-lake-louise.com/dine/fairview-bar-restaurant/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator prioritises registered hotel guests and provides a direct dining contact for booking. Confirm access and the specific service; a hotel room or a bar visit does not itself establish a dinner table.",
+      "journeyNote": "At Fairmont Chateau Lake Louise beside the lake, separate from Lake Louise village and the ski resort. Confirm hotel access before arranging the journey.",
+      "notices": [
+        {
+          "label": "Dated hotel access notice",
+          "from": "2026-10-26",
+          "through": "2026-10-29",
+          "text": "For October 26–29, 2026, the Chateau publisher reserved hotel access and dining for registered overnight guests. This date-specific notice does not establish access on a later date; confirm with the hotel.",
+          "url": "https://www.chateau-lake-louise.com/dine/fairview-bar-restaurant/"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Chateau: Fairview menu, contact and access",
+          "url": "https://www.chateau-lake-louise.com/dine/fairview-bar-restaurant/"
+        }
+      ]
+    },
+    {
+      "id": "walliser-stube",
+      "name": "Walliser Stube",
+      "osmIds": [
+        "node/1623439435"
+      ],
+      "area": "Lake Louise",
+      "description": "A Chateau Lake Louise dinner venue with European Alpine dishes and fondue on its published menu. It is a hotel dining destination with its own access and booking checks.",
+      "address": "111 Lake Louise Drive, Lake Louise, AB T0L 1E0",
+      "cuisine": "European Alpine",
+      "highlights": [
+        "European Alpine dinner menu",
+        "Inside Chateau Lake Louise",
+        "Direct dining contact"
+      ],
+      "menuUrl": "https://www.chateau-lake-louise.com/dine/walliser-stube/",
+      "websiteUrl": "https://www.chateau-lake-louise.com/dine/walliser-stube/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator prioritises registered hotel guests. Contact dining reservations for the date, admission and dinner arrangement rather than assuming every non-resident visitor can dine.",
+      "journeyNote": "At Fairmont Chateau Lake Louise beside the lake, separate from Lake Louise village and the ski resort. Confirm hotel access before arranging the journey.",
+      "notices": [
+        {
+          "label": "Dated hotel access notice",
+          "from": "2026-10-26",
+          "through": "2026-10-29",
+          "text": "For October 26–29, 2026, the Chateau publisher reserved hotel access and dining for registered overnight guests. This date-specific notice does not establish access on a later date; confirm with the hotel.",
+          "url": "https://www.chateau-lake-louise.com/dine/walliser-stube/"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Chateau: Walliser Stube menu, contact and access",
+          "url": "https://www.chateau-lake-louise.com/dine/walliser-stube/"
+        }
+      ]
+    },
+    {
+      "id": "trailhead-cafe",
+      "name": "Trailhead Cafe",
+      "osmIds": [
+        "node/1623434027"
+      ],
+      "area": "Lake Louise",
+      "description": "Banff & Lake Louise Tourism lists Trailhead Cafe in Samson Mall in the village. Check the current operator information before making it the meal stop your day depends on.",
+      "address": "Samson Mall, Lake Louise, AB",
+      "cuisine": null,
+      "highlights": [
+        "Samson Mall location listed"
+      ],
+      "menuUrl": null,
+      "websiteUrl": null,
+      "checkedAt": "2026-10-29",
+      "status": "pending",
+      "serviceNote": "The tourism publisher links an operator Facebook page that could not be read at review. Current hours, menu, contact and service need checking; no closure is inferred.",
+      "journeyNote": "The checked listing places it in Lake Louise village, separate from the lake’s hotel and the ski resort.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Banff & Lake Louise Tourism: Trailhead listing and operator link",
+          "url": "https://www.banfflakelouise.com/business/trailhead-cafe"
+        }
+      ]
+    },
+    {
+      "id": "bill-peytos-cafe",
+      "name": "Bill Peyto’s Café",
+      "osmIds": [
+        "node/13240063289"
+      ],
+      "area": "Lake Louise",
+      "description": "The café inside HI Lake Louise Alpine Centre is a village meal-and-drink option published by the hostel itself. Use the hostel’s current contact route to check the service that fits your day.",
+      "address": "203 Village Road, Lake Louise, AB",
+      "cuisine": "Home-style meals",
+      "highlights": [
+        "Inside HI Lake Louise Alpine Centre",
+        "Village Road location",
+        "Hostel general enquiry route"
+      ],
+      "menuUrl": null,
+      "websiteUrl": "https://www.hihostels.ca/en/hostels/hi-lake-louise",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The current hostel page confirms on-site café meals and drinks. Ask about the exact meal, current menu and seating arrangement; a hostel room booking is separate from a meal.",
+      "journeyNote": "Inside the hostel at 203 Village Road in Lake Louise village, separate from the lakeshore and ski resort. The published phone is the hostel’s general contact, not a separately verified café line.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "HI Canada: current Lake Louise hostel and on-site café",
+          "url": "https://www.hihostels.ca/en/hostels/hi-lake-louise"
+        }
+      ]
+    },
+    {
+      "id": "the-alpine-social",
+      "name": "Alpine Social",
+      "osmIds": [
+        "node/11246054344"
+      ],
+      "area": "Lake Louise",
+      "description": "A Chateau Lake Louise restaurant and bar offering comfort food and drinks in the lakeside hotel. Choose it as a hotel dining visit, with access and seating checked before the journey.",
+      "address": "111 Lake Louise Drive, Lake Louise, AB T0L 1E0",
+      "cuisine": "Comfort food",
+      "highlights": [
+        "Inside Chateau Lake Louise",
+        "Comfort-food menu",
+        "Hotel access check"
+      ],
+      "menuUrl": "https://www.chateau-lake-louise.com/dine/alpine-social/",
+      "websiteUrl": "https://www.chateau-lake-louise.com/dine/alpine-social/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator describes summer walk-in seating with priority for in-house guests. Check the actual season, food service and hotel access with dining reservations; a bar closing time is not the kitchen closing time.",
+      "journeyNote": "At Fairmont Chateau Lake Louise beside the lake, separate from Lake Louise village and the ski resort. Confirm hotel access before arranging the journey.",
+      "notices": [
+        {
+          "label": "Dated hotel access notice",
+          "from": "2026-10-26",
+          "through": "2026-10-29",
+          "text": "For October 26–29, 2026, the Chateau publisher reserved hotel access and dining for registered overnight guests. This date-specific notice does not establish access on a later date; confirm with the hotel.",
+          "url": "https://www.chateau-lake-louise.com/dine/alpine-social/"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Chateau: Alpine Social menu, location and access",
+          "url": "https://www.chateau-lake-louise.com/dine/alpine-social/"
+        }
+      ]
+    },
+    {
+      "id": "the-iron-goat",
+      "name": "The Iron Goat Pub & Grill",
+      "osmIds": [
+        "node/5586370422",
+        "way/360369802"
+      ],
+      "area": "Canmore",
+      "description": "A pub and grill at the Benchlands Trail address, with a published food-and-drink menu and an online reservation route. It is a separate meal journey from Canmore’s Main Street.",
+      "address": "703 Benchlands Trail, Canmore, AB T1W 3G9",
+      "cuisine": "Pub and grill menu",
+      "highlights": [
+        "Benchlands Trail address",
+        "Published menu",
+        "Separate group-dining enquiries"
+      ],
+      "menuUrl": "https://www.irongoat.ca/",
+      "websiteUrl": "https://www.irongoat.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator links online reservations and asks guests needing immediate assistance to call. Group dining has separate arrangements. Check the current service and confirmation rather than assuming a table or patio.",
+      "journeyNote": "Use 703 Benchlands Trail for the meal journey, not the imported Main Street address. Arrange the complete return to your accommodation separately.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Iron Goat menus, contact and reservations",
+          "url": "https://www.irongoat.ca/"
+        }
+      ]
+    },
+    {
+      "id": "tavern-1883",
+      "name": "Tavern 1883",
+      "osmIds": [
+        "way/361785860"
+      ],
+      "area": "Canmore",
+      "description": "A Canmore restaurant and bar on 9th Street with published dine-in, pickup and catering routes. Use its actual street address and choose the dining service before fitting it into an evening.",
+      "address": "709 9th Street, Canmore, AB T1W 2V7",
+      "cuisine": "Pub menu",
+      "highlights": [
+        "9th Street address",
+        "Dine-in and pickup menu",
+        "Separate catering enquiries"
+      ],
+      "menuUrl": "https://tavern1883.com/menu/",
+      "websiteUrl": "https://tavern1883.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator says larger-party reservations are sometimes available on request, depending on the day, and publishes a separate kitchen cutoff. It currently welcomes minors until 10 pm; confirm the actual party and event rather than assuming late admission.",
+      "journeyNote": "The operator gives 709 9th Street, rather than the older Main Street address. Plan the return from this venue to the actual accommodation.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Tavern1883: current location, party and admission guidance",
+          "url": "https://tavern1883.com/"
+        },
+        {
+          "label": "Tavern1883: dine-in/pickup menu",
+          "url": "https://tavern1883.com/menu/"
+        }
+      ]
+    },
+    {
+      "id": "crazyweed-kitchen",
+      "name": "Crazyweed",
+      "osmIds": [
+        "way/206189242"
+      ],
+      "area": "Canmore",
+      "description": "A Railway Avenue restaurant with globally influenced dishes, small plates, main courses and pizza on its published menu. Choose between a dining-room reservation and the operator’s separate walk-in seating arrangements.",
+      "address": "1600 Railway Avenue, Canmore, AB T1W 1P6",
+      "cuisine": "Globally influenced",
+      "highlights": [
+        "Railway Avenue location",
+        "Published food and drinks menu",
+        "Dining-room reservations"
+      ],
+      "menuUrl": "https://www.crazyweed.ca/menu",
+      "websiteUrl": "https://www.crazyweed.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator accepts dining-room reservations; patio and bar seating are first come, first served. It asks groups of seven or more to enquire by email. Confirm current service and discuss dietary needs directly rather than inferring suitability from a menu label.",
+      "journeyNote": "Use 1600 Railway Avenue in Canmore for the complete meal journey and return.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Crazyweed contact, reservations and party guidance",
+          "url": "https://www.crazyweed.ca/contact"
+        },
+        {
+          "label": "Crazyweed current menu",
+          "url": "https://www.crazyweed.ca/menu"
+        }
+      ]
+    },
+    {
+      "id": "the-drake-canmore",
+      "name": "The Drake Screaming Retriever Restaurant & Brewery",
+      "osmIds": [
+        "node/7811434213"
+      ],
+      "area": "Canmore",
+      "description": "The Drake’s current restaurant-and-brewery identity is at 909 Railway Avenue, with its own food menu, restaurant contact and dated event listings. A meal, late event and nearby inn stay are separate arrangements.",
+      "address": "909 Railway Avenue, Canmore, AB T1W 1P3",
+      "cuisine": "Pub menu",
+      "highlights": [
+        "Current restaurant-and-brewery identity",
+        "Railway Avenue address",
+        "Date-specific events"
+      ],
+      "menuUrl": "https://www.drakecanmore.ca/menus",
+      "websiteUrl": "https://www.drakecanmore.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The restaurant links reservations and welcomes walk-ins. Check the actual event, age rules and kitchen service separately; differing opening-hour wording on its pages is not repeated as a fixed timetable or a late-food promise.",
+      "journeyNote": "Use the restaurant’s 403-675-2206 contact and 909 Railway Avenue address. The neighbouring inn’s contact and accommodation booking are different.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Drake current restaurant identity and events",
+          "url": "https://www.drakecanmore.ca/"
+        },
+        {
+          "label": "Drake restaurant contact and reservation route",
+          "url": "https://www.drakecanmore.ca/contact"
+        },
+        {
+          "label": "Drake current food and drinks menus",
+          "url": "https://www.drakecanmore.ca/menus"
+        }
+      ]
+    },
+    {
+      "id": "blake-brewpub",
+      "name": "BLAKE Brewhouse & Distillery",
+      "osmIds": [
+        "way/362080654"
+      ],
+      "area": "Canmore",
+      "description": "A restaurant, brewhouse and distillery on Bow Valley Trail, with an international-fusion menu and house-produced drinks. Plan the actual Bow Valley Trail address rather than a Main Street pub stop.",
+      "address": "810 Bow Valley Trail, Canmore, AB T1W 1N6",
+      "cuisine": "International fusion",
+      "highlights": [
+        "Bow Valley Trail address",
+        "Restaurant, brewhouse and distillery",
+        "Main, drinks and kids menus"
+      ],
+      "menuUrl": "https://www.blakecanmore.com/blake-menu",
+      "websiteUrl": "https://www.blakecanmore.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The contact page says ordinary restaurant seating is first come, first served. Private functions have a separate enquiry route. Confirm current kitchen service; a late-night menu link does not settle a conflicting hours display.",
+      "journeyNote": "This is the Bow Valley Trail venue. Do not substitute an old Main Street address or assume these contact and seating rules establish a separate PD3 venue.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "BLAKE contact and seating",
+          "url": "https://www.blakecanmore.com/contact"
+        },
+        {
+          "label": "BLAKE current menu routes",
+          "url": "https://www.blakecanmore.com/blake-menu"
+        },
+        {
+          "label": "BLAKE current venue identity",
+          "url": "https://www.blakecanmore.com/"
+        }
+      ]
+    },
+    {
+      "id": "pd3-by-blake",
+      "name": "PD3 by Blake",
+      "osmIds": [
+        "way/1215469340",
+        "way/1215469341"
+      ],
+      "area": "Canmore",
+      "description": "Keep PD3 on the list of places to ask about, but confirm its current identity and location before planning a meal. The checked BLAKE pages did not establish the separate pizzeria, address or menu described in the older entry.",
+      "address": null,
+      "cuisine": null,
+      "highlights": [],
+      "menuUrl": null,
+      "websiteUrl": null,
+      "checkedAt": "2026-10-29",
+      "status": "pending",
+      "serviceNote": "Current PD3 service, opening dates, menu and booking arrangements need checking. This is not a closure notice.",
+      "journeyNote": "The older Canmore location has not been verified. A BLAKE enquiry does not make its Bow Valley Trail address the PD3 meeting point.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Related BLAKE publisher checked",
+          "url": "https://www.blakecanmore.com/"
+        },
+        {
+          "label": "Related BLAKE menu checked",
+          "url": "https://www.blakecanmore.com/blake-menu"
+        }
+      ]
+    },
+    {
+      "id": "baker-creek-bistro",
+      "name": "Creekside Café at Baker Creek",
+      "osmIds": [],
+      "area": "Highway 1A",
+      "description": "The current Baker Creek publisher describes a front-office café with grab-and-go breakfast, lunch and snacks. Plan a café stop or supplies enquiry, rather than a fine-dining dinner based on the old bistro name.",
+      "address": "Baker Creek, Bow Valley Parkway, Lake Louise, AB T0L 1E0",
+      "cuisine": "Breakfast, lunch and snacks",
+      "highlights": [
+        "Creekside Café service",
+        "Grab-and-go breakfast and lunch",
+        "Bow Valley Parkway property"
+      ],
+      "menuUrl": null,
+      "websiteUrl": "https://basecampresorts.com/bakercreek/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Confirm café hours, the food available and access for your visit directly with the property. Its published café offer does not establish a dinner restaurant, a table reservation or admission for every visitor.",
+      "journeyNote": "At the Baker Creek property on the Bow Valley Parkway, outside Lake Louise village. Confirm the complete road journey and any separately arranged transfer.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Baker Creek: current Creekside Café and property location",
+          "url": "https://basecampresorts.com/bakercreek/"
+        },
+        {
+          "label": "Baker Creek arrival information and front-office café",
+          "url": "https://basecampresorts.com/bakercreek/arrival-essentials/"
+        }
+      ]
+    },
+    {
+      "id": "storm-mountain-lodge",
+      "name": "Storm Mountain Lodge Dining Room",
+      "osmIds": [],
+      "area": "Highway 1A",
+      "description": "A dinner dining room at the lodge on Highway 93 South above Castle Junction, with reservations required. It is a distinct road destination, separate from Banff town and the Bow Valley Parkway itself.",
+      "address": "Highway 93 South, Banff National Park, AB",
+      "cuisine": "Canadian",
+      "highlights": [
+        "Highway 93 South location",
+        "Dinner reservations required",
+        "Separate seasonal deli service"
+      ],
+      "menuUrl": "https://stormmountainlodge.com/cuisine/",
+      "websiteUrl": "https://stormmountainlodge.com/cuisine/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator requires restaurant reservations and asks parties over four to contact the front desk. Cuisine and contact pages show conflicting seasonal weekdays: confirm the actual dinner, takeout or lounge service directly before travelling.",
+      "journeyNote": "The regional directory group is Highway 1A / Castle Junction; the lodge’s actual approach is Highway 93 South. The publisher warns of a steep winter driveway. Arrange the road journey and complete return separately.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "StormMountain cuisine and dinner reservations",
+          "url": "https://stormmountainlodge.com/cuisine/"
+        },
+        {
+          "label": "StormMountain physical location and seasonal-operation guidance",
+          "url": "https://stormmountainlodge.com/contact/"
+        }
+      ]
+    },
+    {
+      "id": "high-rollers-bowling-pizza",
+      "name": "High Rollers Bowling & Pizza",
+      "osmIds": [],
+      "area": "Banff",
+      "description": "Build an evening around pizza, a table or a bowling lane, with a separate booking choice for each format.",
+      "address": "110 Banff Avenue, Banff",
+      "cuisine": "Pizza & bar food",
+      "highlights": [
+        "Dining and bowling",
+        "Separate lane booking"
+      ],
+      "menuUrl": "https://www.highrollersbanff.com/menu",
+      "websiteUrl": "https://www.highrollersbanff.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "A dining reservation and a bowling-lane booking use different routes. Confirm the actual product, group, duration and any age or admission conditions.",
+      "journeyNote": "Use the venue’s Banff Avenue meeting instructions, including any lane check-in required before play.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator, format and location",
+          "url": "https://www.highrollersbanff.com/"
+        },
+        {
+          "label": "Dining reservations",
+          "url": "https://www.highrollersbanff.com/reserve"
+        },
+        {
+          "label": "Bowling reservations",
+          "url": "https://www.highrollersbanff.com/reserve/bowling"
+        }
+      ]
+    },
+    {
+      "id": "the-rose-and-crown",
+      "name": "Rose & Crown",
+      "osmIds": [
+        "node/613569247"
+      ],
+      "area": "Banff",
+      "description": "A Banff Avenue pub with food and a dated events calendar for planning music, shows and other evenings.",
+      "address": "202 Banff Avenue, Banff",
+      "cuisine": "Pub food",
+      "highlights": [
+        "Pub food",
+        "Dated events calendar"
+      ],
+      "menuUrl": "https://roseandcrown.ca/menu/food-menu/",
+      "websiteUrl": "https://roseandcrown.ca/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Choose a dated event and check whether its ticket, admission or seating is separate from an ordinary table. A calendar does not establish music every night.",
+      "journeyNote": "The operator places the pub at Caribou Corner on Banff Avenue. Match the event finish with the return to your stay.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator and events",
+          "url": "https://roseandcrown.ca/"
+        },
+        {
+          "label": "Contact and location",
+          "url": "https://roseandcrown.ca/contact/"
+        },
+        {
+          "label": "Food menu",
+          "url": "https://roseandcrown.ca/menu/food-menu/"
+        }
+      ]
+    },
+    {
+      "id": "whitebark-cafe",
+      "name": "Whitebark Bar & Cafe",
+      "osmIds": [
+        "node/5712713721"
+      ],
+      "area": "Banff",
+      "description": "A specialty coffee and café-food stop at Banff Aspen Lodge on Banff Avenue.",
+      "address": "401 Banff Avenue, Banff",
+      "cuisine": "Coffee, drinks & café food",
+      "highlights": [
+        "Coffee and café food",
+        "At Banff Aspen Lodge"
+      ],
+      "menuUrl": "https://whitebarkcafe.com/food",
+      "websiteUrl": "https://whitebarkcafe.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "Use the current food and drinks pages for the service you want. No reserved table or lodging inclusion is established by this café listing.",
+      "journeyNote": "The café is at 401 Banff Avenue, part of Banff Aspen Lodge; a café visit is separate from a room booking.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator, location and phone",
+          "url": "https://whitebarkcafe.com/"
+        },
+        {
+          "label": "Food",
+          "url": "https://whitebarkcafe.com/food"
+        }
+      ]
+    },
+    {
+      "id": "three-bears-brewery",
+      "name": "Three Bears Brewery & Restaurant",
+      "osmIds": [
+        "node/10268515176"
+      ],
+      "area": "Banff",
+      "description": "Compare a meal and beers brewed at the Bear Street restaurant, with the operator’s current menu and booking routes.",
+      "address": "205 Bear Street, Banff",
+      "cuisine": "Beer & restaurant food",
+      "highlights": [
+        "Working brewery",
+        "Separate food-service hours"
+      ],
+      "menuUrl": "https://threebearsbanff.com/menu",
+      "websiteUrl": "https://threebearsbanff.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator recommends reservations and keeps space for walk-ins. Food-service hours can differ from the venue’s opening hours; check a specific music or group booking separately.",
+      "journeyNote": "Use the 205 Bear Street address and the actual table or group confirmation.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator and location",
+          "url": "https://threebearsbanff.com/"
+        },
+        {
+          "label": "Restaurant",
+          "url": "https://threebearsbanff.com/restaurant"
+        },
+        {
+          "label": "Menus",
+          "url": "https://threebearsbanff.com/menu"
+        },
+        {
+          "label": "Reservations",
+          "url": "https://threebearsbanff.com/reserve"
+        }
+      ]
+    },
+    {
+      "id": "elk-and-oarsman",
+      "name": "Elk & Oarsman",
+      "osmIds": [
+        "node/2126939910"
+      ],
+      "area": "Banff",
+      "description": "A Banff Avenue restaurant and sports pub, with indoor dining and a separate seasonal rooftop choice.",
+      "address": "119 Banff Avenue, Banff",
+      "cuisine": "Pub food",
+      "highlights": [
+        "Sports pub",
+        "Seasonal rooftop"
+      ],
+      "menuUrl": "https://elkandoarsman.com/sports-bar-menu/",
+      "websiteUrl": "https://elkandoarsman.com/",
+      "checkedAt": "2026-10-29",
+      "status": "selected-facts",
+      "serviceNote": "The operator describes the rooftop as a warm-season, walk-in space rather than a reserved patio table. The menu currently carries a Summer 2026 label, so confirm the actual service menu.",
+      "journeyNote": "Use the Banff Avenue address and confirm the entrance, seating and access for your chosen space.",
+      "notices": [],
+      "sources": [
+        {
+          "label": "Operator, contact and patio rules",
+          "url": "https://elkandoarsman.com/"
+        },
+        {
+          "label": "Menu with season label",
+          "url": "https://elkandoarsman.com/sports-bar-menu/"
+        },
+        {
+          "label": "Operator-linked reservation route",
+          "url": "https://tables.toasttab.com/restaurants/b4c17270-847a-46f1-af18-81f3a61f38b4/findTime"
+        }
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "id": "fairmont-banff-springs",
+      "name": "Fairmont Banff Springs",
+      "osmIds": [
+        "way/24823886"
+      ],
+      "area": "Spray Avenue",
+      "description": "A resort on Spray Avenue, separate from the Banff Avenue town centre. Fairmont currently lists 724 rooms and suites, with main-building and Gatehouse categories. Compare a Fairmont room, a Gatehouse Family Room with bunk beds, or an accessible category before selecting the exact layout.",
+      "address": "405 Spray Avenue, Banff, Alberta T1L 1J4",
+      "latitude": 51.164332,
+      "longitude": -115.56183,
+      "coordinateSource": "https://all.accor.com/hotel/A550/index.en.shtml",
+      "coordinateCheckedOn": "2026-10-29",
+      "coordinateNote": "Publisher GPS under Hotel location names Fairmont Banff Springs at 405 Spray Avenue. This is a property locator, not entrance or parking directions; confirm arrival arrangements directly.",
+      "guideUrl": "https://banffbound.com/hotels/fairmont-banff-springs/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "sourceLinks": [
+        {
+          "label": "Current official room inventory",
+          "url": "https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html"
+        },
+        {
+          "label": "Official Gatehouse family layouts",
+          "url": "https://www.banff-springs-hotel.com/stay/gatehouse/"
+        },
+        {
+          "label": "Official services, accessibility and transport",
+          "url": "https://www.banff-springs-hotel.com/stay/guest-services/"
+        },
+        {
+          "label": "Publisher address and GPS locator",
+          "url": "https://all.accor.com/hotel/A550/index.en.shtml"
+        }
+      ]
+    },
+    {
+      "id": "rimrock-banff",
+      "name": "Rimrock Banff, Emblems Collection",
+      "osmIds": [
+        "node/2446133707",
+        "way/24823866"
+      ],
+      "area": "Sulphur Mountain",
+      "description": "A Sulphur Mountain hotel above Banff town centre at 300 Mountain Avenue. Accor announced its opening as Rimrock Banff, Emblems Collection in October 2026 following a transformation. Current room categories distinguish hotel, forest and peak views; the Classic Room does not promise a mountain panorama.",
+      "address": "300 Mountain Avenue, Banff, Alberta T1L 1J2",
+      "latitude": 51.151834,
+      "longitude": -115.559831,
+      "coordinateSource": "https://all.accor.com/hotel/C1W0/index.en.shtml",
+      "coordinateCheckedOn": "2026-10-29",
+      "coordinateNote": "Publisher GPS under Hotel location names Rimrock Banff, Emblems Collection at 300 Mountain Avenue. This is a property locator, not entrance or parking directions; confirm arrival arrangements directly.",
+      "guideUrl": "https://banffbound.com/hotels/rimrock-banff/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "sourceLinks": [
+        {
+          "label": "Current operator and room categories",
+          "url": "https://www.emblemscollection.com/rimrock-banff/"
+        },
+        {
+          "label": "Accor opening announcement: October 2026",
+          "url": "https://press.accor.com/emblems-collection-announces-the-opening-of-rimrock-banff/?lang=eng"
+        },
+        {
+          "label": "Official Classic Room details",
+          "url": "https://www.emblemscollection.com/rimrock-banff/rooms-suites/classic-room/"
+        },
+        {
+          "label": "Official Wellness Studio category",
+          "url": "https://www.emblemscollection.com/rimrock-banff/rooms-suites/wellness-studio-peak-view-private-terrace/"
+        },
+        {
+          "label": "Official Bathhouse facilities",
+          "url": "https://www.emblemscollection.com/rimrock-banff/wellness/the-bathhouse/"
+        },
+        {
+          "label": "Official address and transport",
+          "url": "https://www.emblemscollection.com/rimrock-banff/contact-directions/"
+        },
+        {
+          "label": "Publisher address and GPS locator",
+          "url": "https://all.accor.com/hotel/C1W0/index.en.shtml"
+        }
+      ]
+    },
+    {
+      "id": "banff-park-lodge",
+      "name": "Banff Park Lodge",
+      "osmIds": [
+        "way/54355864"
+      ],
+      "area": "Downtown Banff",
+      "description": "A Lynx Street hotel near central Banff with Standard and Superior rooms, plus several distinct suite categories. Standard Rooms are advertised with no view; selected Superior Rooms have roll-in showers. The operator currently reports ongoing lobby and public-space renovations.",
+      "address": "201 Lynx Street, Banff, Alberta T1L 1K5",
+      "latitude": 51.17793,
+      "longitude": -115.57362,
+      "coordinateSource": "https://www.banffparklodge.com/contact-us/",
+      "coordinateCheckedOn": "2026-10-29",
+      "coordinateNote": "Named Banff Park Lodge Point feature published in the operator contact-page map. Current page text uses 201 Lynx Street while its older map description uses 222; this point is a property locator, not an entrance or parking instruction. Confirm arrival during renovations.",
+      "guideUrl": "https://banffbound.com/hotels/banff-park-lodge/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "operationNote": "Dated notice, checked 29 October 2026: the operator reports ongoing lobby/public renovations and lists La Terrazza closed for renovations. Confirm the actual entrance and available dining/services.",
+      "sourceLinks": [
+        {
+          "label": "Official rooms and access categories",
+          "url": "https://www.banffparklodge.com/rooms/"
+        },
+        {
+          "label": "Official amenities and transport",
+          "url": "https://www.banffparklodge.com/amenities/"
+        },
+        {
+          "label": "Current guest directory and renovation closures",
+          "url": "https://www.banffparklodge.com/faq/"
+        },
+        {
+          "label": "Official home: ongoing public renovations",
+          "url": "https://www.banffparklodge.com/"
+        },
+        {
+          "label": "Current address and publisher map",
+          "url": "https://www.banffparklodge.com/contact-us/"
+        }
+      ]
+    },
+    {
+      "id": "hi-banff-alpine-centre",
+      "name": "HI Banff Alpine Centre",
+      "osmIds": [
+        "node/263426674"
+      ],
+      "area": "Tunnel Mountain",
+      "description": "A hostel at 801 Hidden Ridge Way on Tunnel Mountain, with shared four-to-six-bed rooms and several private categories. A shared kitchen, Cougar Pete’s restaurant and local bus passes offer different meal and transport choices. Select the actual bathroom arrangement: an ensuite WC is not the same description as a private ensuite room.",
+      "address": "801 Hidden Ridge Way, Banff, Alberta",
+      "latitude": 51.185046057137775,
+      "longitude": -115.54806232452393,
+      "coordinateSource": "https://hihostels.ca/en/hostels/hi-banff",
+      "coordinateCheckedOn": "2026-10-29",
+      "coordinateNote": "HI Banff Alpine Centre Hostel structured data, naming 801 Hidden Ridge Way. This is the publisher’s named property locator, not entrance, accessible-route or parking directions; confirm arrival directly.",
+      "guideUrl": "https://banffbound.com/hotels/hi-banff-alpine-centre/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "sourceLinks": [
+        {
+          "label": "HI: actual room categories, kitchen, dining, local bus passes and publisher locator",
+          "url": "https://hihostels.ca/en/hostels/hi-banff"
+        }
+      ]
+    },
+    {
+      "id": "malcolm-hotel",
+      "name": "The Malcolm Hotel",
+      "osmIds": [
+        "way/654018261"
+      ],
+      "area": "Canmore",
+      "description": "A hotel at 321 Spring Creek Drive in Canmore, with a rooftop outdoor pool and hot tubs. Room categories differ in outlook, balcony, bathing fixtures and pet eligibility. The Premium Double Queen has a wet bar and mini-fridge, not a full kitchen; compare it with a condo-style stay when cooking is a priority.",
+      "address": "321 Spring Creek Drive, Canmore, Alberta T1W 0H9",
+      "latitude": 51.08664,
+      "longitude": -115.35123,
+      "coordinateSource": "https://www.malcolmhotel.ca/",
+      "coordinateCheckedOn": "2026-10-29",
+      "coordinateNote": "Malcolm Hotel Hotel structured data, naming 321 Spring Creek Drive. This is the publisher’s named property locator, not entrance, accessible-route or parking directions; confirm arrival directly.",
+      "guideUrl": "https://banffbound.com/hotels/malcolm-hotel/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "operationNote": "Dated notice, checked 29 October 2026: the hotel reports construction of the future Alexander Boutique Hotel & Spa nearby. Ask about impacts for your dates. Outdoor pool/hot-tub operation can change with weather and maintenance.",
+      "sourceLinks": [
+        {
+          "label": "Official address and current construction notice",
+          "url": "https://www.malcolmhotel.ca/"
+        },
+        {
+          "label": "Premium Double Queen: balcony, equipment and no-pets restriction",
+          "url": "https://www.malcolmhotel.ca/Stay/rooms/malcolm-premium-double-queen"
+        },
+        {
+          "label": "Official rooftop facilities and weather restrictions",
+          "url": "https://www.malcolmhotel.ca/Stay/amenities"
+        }
+      ]
+    },
+    {
+      "id": "coast-canmore-hotel",
+      "name": "Coast Canmore Hotel & Conference Centre",
+      "osmIds": [
+        "way/362080645"
+      ],
+      "area": "Canmore",
+      "description": "A Bow Valley Trail hotel at 511 Bow Valley Trail in Canmore, with an indoor pool, hot tub and Table Food + Drink. Standard, patio, accessible and Premium King Suite categories have different equipment. Parking is currently paid and first come, first served, so include it when comparing this base with downtown or condo options.",
+      "address": "511 Bow Valley Trail, Canmore, Alberta T1W 1N7",
+      "latitude": 51.08741,
+      "longitude": -115.34541,
+      "coordinateSource": "https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre",
+      "coordinateCheckedOn": "2026-10-29",
+      "coordinateNote": "Coast Canmore Hotel structured data, naming 511 Bow Valley Trail. This is the publisher’s named property locator, not entrance, accessible-route or parking directions; confirm arrival directly.",
+      "guideUrl": "https://banffbound.com/hotels/coast-canmore-hotel/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "sourceLinks": [
+        {
+          "label": "Official property and publisher locator",
+          "url": "https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre"
+        },
+        {
+          "label": "Official room categories and accessible features",
+          "url": "https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre/stay/rooms"
+        },
+        {
+          "label": "Premium King Suite: fireplace, soaker tub and steam shower",
+          "url": "https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre/stay/rooms/coast-premium-king-suite-with-soaker-tub"
+        },
+        {
+          "label": "Official pool, dining and paid parking",
+          "url": "https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre/services/amenities"
+        },
+        {
+          "label": "Official address and arrival options",
+          "url": "https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre/contact"
+        }
+      ]
+    },
+    {
+      "id": "fairmont-chateau-lake-louise",
+      "name": "Fairmont Chateau Lake Louise",
+      "osmIds": [
+        "relation/18238906"
+      ],
+      "area": "Lake Louise",
+      "description": "A hotel at the Lake Louise lakeshore in Banff National Park, with standard, lakeview and Fairmont Gold room categories. It is separate from the village and Lake Louise Ski Resort. Choose the specific room view and check the terms for wellness and seasonal activities.",
+      "address": "111 Lake Louise Drive, Lake Louise, AB T0L 1E0",
+      "latitude": 51.416787,
+      "longitude": -116.212386,
+      "coordinateSource": "https://www.fairmont.com/en/hotels/lake-louise/fairmont-chateau-lake-louise/location-contact.html",
+      "coordinateCheckedOn": "2026-10-28",
+      "coordinateNote": "Property locator from the map linked by Fairmont. Confirm the actual arrival entrance and parking arrangements with the hotel.",
+      "guideUrl": "https://banffbound.com/hotels/fairmont-chateau-lake-louise/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "sourceLinks": [
+        {
+          "label": "Official property information",
+          "url": "https://www.fairmont.com/en/hotels/lake-louise/fairmont-chateau-lake-louise/guest-services.html"
+        }
+      ]
+    },
+    {
+      "id": "lake-louise-inn",
+      "name": "Lake Louise Inn",
+      "osmIds": [
+        "relation/18224883"
+      ],
+      "area": "Lake Louise",
+      "description": "A Lake Louise village property with hotel rooms and condo-style accommodation across several buildings. Some categories have kitchens. The official site lists an indoor pool, whirlpools, three dining venues and a winter shuttle connection to Lake Louise Ski Resort.",
+      "address": "210 Village Road, Lake Louise, AB T0L 1E0",
+      "latitude": 51.4286653,
+      "longitude": -116.1848642,
+      "coordinateSource": "https://www.lakelouiseinn.com/contact/",
+      "coordinateCheckedOn": "2026-10-28",
+      "coordinateNote": "Property locator published on the official hotel contact page. Confirm the actual arrival entrance and your accommodation building.",
+      "guideUrl": "https://banffbound.com/hotels/lake-louise-inn/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "sourceLinks": [
+        {
+          "label": "Official property information",
+          "url": "https://www.lakelouiseinn.com/at-a-glance/"
+        }
+      ]
+    },
+    {
+      "id": "mountaineer-lodge",
+      "name": "Mountaineer Lodge",
+      "osmIds": [
+        "way/261439550"
+      ],
+      "area": "Lake Louise",
+      "description": "A Lake Louise village base at 101 Village Road, separate from the lakeshore and ski resort. Main Lodge rooms have interior access; Timber rooms have exterior entrances. The property lists an indoor hot tub and steam room, while larger suites add sleeping space rather than a verified full kitchen. Breakfast is available for purchase.",
+      "address": "101 Village Road, Lake Louise, Alberta T0L 1E0",
+      "latitude": 51.425179,
+      "longitude": -116.1787895,
+      "coordinateSource": "https://mountaineerlodge.com/",
+      "coordinateCheckedOn": "2026-10-29",
+      "coordinateNote": "Mountaineer Lodge Hotel structured data, naming 101 Village Road. This is the publisher’s named property locator, not entrance, accessible-route or parking directions; confirm arrival directly.",
+      "guideUrl": "https://banffbound.com/hotels/mountaineer-lodge/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "sourceLinks": [
+        {
+          "label": "Official room inventory",
+          "url": "https://mountaineerlodge.com/rooms"
+        },
+        {
+          "label": "King Explorer: appliances, beds and stairs",
+          "url": "https://mountaineerlodge.com/rooms/king-explorer-suite"
+        },
+        {
+          "label": "Mountaineer Suite: appliances, beds and stairs",
+          "url": "https://mountaineerlodge.com/rooms/mountaineer-suite"
+        },
+        {
+          "label": "Official buildings, indoor hot tub, breakfast and transfer information",
+          "url": "https://mountaineerlodge.com/the-hotel/"
+        },
+        {
+          "label": "Official pet and booking policies",
+          "url": "https://mountaineerlodge.com/the-hotel/hotel-policies"
+        }
+      ]
+    },
+    {
+      "id": "post-hotel-spa",
+      "name": "Post Hotel & Spa",
+      "osmIds": [
+        "way/260945638"
+      ],
+      "area": "Lake Louise",
+      "description": "A hotel at 200 Pipestone Road in Lake Louise village, separate from the lakeshore. Post and Premier rooms, family suites and lofts offer different sleeping arrangements; some categories face the railway side. An indoor saltwater pool, whirlpool and spa support a hotel-based stay, with ski-area and lakeshore shuttles arranged separately from airport travel.",
+      "address": "200 Pipestone Road, Lake Louise, Alberta T0L 1E0",
+      "latitude": 51.4264491,
+      "longitude": -116.1812834,
+      "coordinateSource": "https://posthotel.com/",
+      "coordinateCheckedOn": "2026-10-29",
+      "coordinateNote": "Post Hotel Hotel structured data, naming 200 Pipestone Road. This is the publisher’s named property locator, not entrance, accessible-route or parking directions; confirm arrival directly.",
+      "guideUrl": "https://banffbound.com/hotels/post-hotel-spa/",
+      "sourceScope": "Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.",
+      "sourceLinks": [
+        {
+          "label": "Official rooms and railway-side distinction",
+          "url": "https://posthotel.com/stay/rooms"
+        },
+        {
+          "label": "Official Family Suite and Family Loft layouts",
+          "url": "https://posthotel.com/stay/family-suites"
+        },
+        {
+          "label": "Official pool, spa and facilities",
+          "url": "https://posthotel.com/amenities"
+        },
+        {
+          "label": "Official dog-room policy and transfer FAQ",
+          "url": "https://posthotel.com/faqs"
+        }
+      ]
+    },
+    {
+      "id": "banff-boundary-lodge",
+      "name": "Banff Boundary Lodge",
+      "osmIds": [],
+      "area": "Bow Valley",
+      "description": "Condominium lodging at 1000 Harvie Heights Road in Harvie Heights, a separate community near Canmore and the eastern entrance to Banff National Park. This is outside Banff town. Confirm the exact unit, booking manager and arrival instructions before reserving.",
+      "address": "1000 Harvie Heights Road, Harvie Heights, Alberta",
+      "latitude": 51.125783,
+      "longitude": -115.3874,
+      "coordinateSource": "https://mdbighorn.ca/AgendaCenter/ViewFile/Agenda/_08182025-921",
+      "coordinateCheckedOn": "2026-10-28",
+      "coordinateNote": "Official municipal locator for the lodge parking lot at 1000 Harvie Heights Road. This is a property locator, not a unit entrance or visitor arrival instruction.",
+      "guideUrl": "https://banffbound.com/hotels/banff-boundary-lodge/",
+      "sourceScope": "The condominium location is sourced. Current unit facilities, operator and booking policies require confirmation; this is not a verified property-wide hotel offer.",
+      "sourceLinks": [
+        {
+          "label": "Condominium-management source",
+          "url": "https://peka.ab.ca/client-portal-condo/boundary"
+        }
+      ]
+    }
+  ],
+  "placeFacts": [
+    {
+      "id": "lake-louise",
+      "name": "Lake Louise",
+      "description": "Make the lakeshore the main destination, with time for the view before deciding how far to continue.",
+      "guideUrl": "https://banffbound.com/blog/lake-louise-complete-guide",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "The designated lakeshore trail is 2.3 km one way. A short lakeshore visit, the whole trail and a teahouse hike are three different plans.",
+        "Roam 8X serves the village and lakeshore year-round. A reserved seasonal Parks shuttle starts separately at the ski-resort Park and Ride. Check winter resort transport separately from these lakeshore services.",
+        "Use the designated winter lakeshore description. Stay away from the Louise Falls falling-ice area and posted avalanche terrain; a shore route does not require crossing lake ice."
+      ],
+      "plannerActivityId": "lake"
+    },
+    {
+      "id": "moraine-lake",
+      "name": "Moraine Lake",
+      "description": "Choose between the Rockpile view, a shoreline outing and an on-site canoe rental, then book a journey that leaves time for that choice.",
+      "guideUrl": "https://banffbound.com/blog/moraine-lake-guide",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "The Rockpile is a 0.7 km loop with climbing; the lakeshore route is 1.3 km one way. Mountain hikes beyond these are separate commitments.",
+        "Moraine Lake Road is closed to personal vehicles year-round, with specific authorised exceptions. Compare reserved Parks transport, permitted commercial services and eligible lodge-guest arrangements.",
+        "Ordinary visitor transport is seasonal. The designated winter Moraine Road route ends before large avalanche paths and does not take an ordinary lake visitor to Moraine Lake."
+      ],
+      "plannerActivityId": "moraine"
+    },
+    {
+      "id": "minnewanka",
+      "name": "Lake Minnewanka",
+      "description": "A day-use-area view can be the outing, or the start of a separately planned shoreline route.",
+      "guideUrl": "https://banffbound.com/trails/stewart-canyon",
+      "sourceUrl": "https://roamtransit.com/schedules-routes/lake-minnewanka-route-6/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Reaching Stewart Canyon is different from staying near the day-use area. Its approach includes rough paving, roots and rocks; check the full route profile.",
+        "Check seasonal Roam Route 6 or arrange the road journey. A cruise product has its own dates, boarding and return requirements.",
+        "Use the permitted road approach and current reports. The western Minnewanka Loop section has a seasonal vehicle closure; do not plan a complete driving loop or infer lake-ice access."
+      ]
+    },
+    {
+      "id": "two-jack",
+      "name": "Two Jack Lake",
+      "description": "Build a Banff-based lake pause around the day-use area, with a picnic or a small amount of walking rather than a packed multi-lake circuit.",
+      "guideUrl": "https://banffbound.com/blog/two-jack-lake-guide",
+      "sourceUrl": "https://roamtransit.com/schedules-routes/lake-minnewanka-route-6/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Choose the actual day-use approach. Campground access and an overnight campsite are separate arrangements from a day visit.",
+        "Roam Route 6 is seasonal, including day-use and campground stops. Resolve the actual stop and return; winter requires a different transport plan.",
+        "Check the road and shoreline approach. A frozen-looking surface and someone else’s tracks do not establish ice conditions."
+      ]
+    },
+    {
+      "id": "johnson",
+      "name": "Johnson Lake",
+      "description": "Choose a short lakefront pause or investigate the full circuit, leaving enough time for the same journey back to your base.",
+      "guideUrl": "https://banffbound.com/trails/johnson-lake",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Parks lists a 2.9 km loop with roots, rocks, step bridges and narrow sections. An easy hiking grade does not establish stroller or wheelchair access.",
+        "Check the seasonal Route 6 Johnson Lake stop and final return, or arrange road transport. Bring what the outing needs rather than assuming a lakeside rental or shop.",
+        "The summer circuit description does not establish winter footing or ice access. Ask about the actual designated route and current conditions."
+      ]
+    },
+    {
+      "id": "vermilion",
+      "name": "Vermilion Lakes",
+      "description": "A town-based viewing plan can leave more time to look and pause, with the return to Banff planned before adding another stop.",
+      "guideUrl": "https://banffbound.com/accessible-trails",
+      "sourceUrl": "https://www.banfflakelouise.com/accessibility",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Choose a specific public roadside viewing location. Protect wetland vegetation, keep away from wildlife and distinguish a road outing from an informal shoreline path.",
+        "Plan the walk, cycle or road journey from your actual starting point. A town-area location does not establish a step-free approach or a reserved parking space.",
+        "Check footing and the road approach. Do not use a frozen-water shortcut between viewpoints."
+      ]
+    },
+    {
+      "id": "peyto",
+      "name": "Peyto Lake",
+      "description": "The viewpoint is a distinct objective from reaching the lake shore. Pick the viewpoint plan for a Parkway stop rather than casually extending downhill.",
+      "guideUrl": "https://banffbound.com/trails/peyto-lake-viewpoint",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/raquette-snowshoeing/lakelouise",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Use the Bow Summit / Peyto viewpoint approach. Parks also lists a separate difficult shore route; it is not the ordinary viewpoint outing.",
+        "Arrange the Parkway road journey or the actual tour product, its stop and return. Do not assume that a Lake Louise or Moraine shuttle serves this stop.",
+        "Parks publishes a designated winter viewpoint route. Check its map, current snow conditions and the Highway 93N journey; a summer path or parking assumption is insufficient."
+      ]
+    },
+    {
+      "id": "bow-lake",
+      "name": "Bow Lake",
+      "description": "A lakeside stop and a longer Bow Glacier Falls hike require different time and preparation. Decide which is the objective before leaving your base.",
+      "guideUrl": "https://banffbound.com/conditions",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/nautiques-sports",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Stay with the chosen designated outing. A lodge or roadside stop does not imply a canoe-rental operation or permission to paddle.",
+        "Use Highway 93N conditions and actual tour-stop information. Confirm property access, food and washrooms rather than assuming year-round public services.",
+        "Choose a road-access and land-view plan using current reports. Do not extend a summer shoreline description onto lake ice or into avalanche terrain."
+      ]
+    },
+    {
+      "id": "herbert",
+      "name": "Herbert Lake",
+      "description": "Treat a smaller Parkway lake as a chosen stop, with time to park legally and return to the main journey.",
+      "guideUrl": "https://banffbound.com/conditions",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/nautiques-sports",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Check the day-use access and current report. Smaller scale does not establish easier water conditions or a cleared path.",
+        "Arrange the Highway 93N road journey or a product that actually includes this stop. There is no assumed spare space, departure or service in this guide.",
+        "Confirm the road and day-use approach before making this the main winter objective. Choose a different stop if the approach or facilities do not fit the group."
+      ]
+    },
+    {
+      "id": "fenland-trail",
+      "name": "Fenland Trail",
+      "description": "A short natural-surface forest loop beside wetland on the edge of Banff townsite.",
+      "guideUrl": "https://banffbound.com/trails/fenland-trail",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "1.9 km loop; About 40 min loop estimate. This is the reviewed summer route profile.",
+        "Use the designated trailhead and current official route map. Check the trail report, road access and park bulletins before travelling; a published hiking profile does not confirm that the route or parking is available today.",
+        "This review covers the summer hiking route. Snow, ice and avalanche terrain require a separate winter route assessment; the summer grade and estimated time are not winter advice."
+      ],
+      "plannerActivityId": "hike"
+    },
+    {
+      "id": "tunnel-mountain-summit",
+      "name": "Tunnel Mountain Summit",
+      "description": "A town-area summit hike with switchbacks, roots and rock, distinct from the campground loop.",
+      "guideUrl": "https://banffbound.com/trails/tunnel-mountain-summit",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "2.3 km one way (published summit profile); About 2 hr estimated return. This is the reviewed summer route profile.",
+        "Use the designated trailhead and current official route map. Check the trail report, road access and park bulletins before travelling; a published hiking profile does not confirm that the route or parking is available today.",
+        "This review covers the summer hiking route. Snow, ice and avalanche terrain require a separate winter route assessment; the summer grade and estimated time are not winter advice."
+      ],
+      "plannerActivityId": "hike"
+    },
+    {
+      "id": "stewart-canyon",
+      "name": "Stewart Canyon (Lake Minnewanka)",
+      "description": "A lakeside approach to Stewart Canyon that ends well before the long Aylmer routes.",
+      "guideUrl": "https://banffbound.com/trails/stewart-canyon",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "1.6 km one way to Stewart Canyon; About 1 hr estimated return. This is the reviewed summer route profile.",
+        "Use the designated trailhead and current official route map. Check the trail report, road access and park bulletins before travelling; a published hiking profile does not confirm that the route or parking is available today.",
+        "This review covers the summer hiking route. Snow, ice and avalanche terrain require a separate winter route assessment; the summer grade and estimated time are not winter advice."
+      ],
+      "plannerActivityId": "hike"
+    },
+    {
+      "id": "johnston-canyon-lower-falls",
+      "name": "Johnston Canyon Lower Falls",
+      "description": "A narrow paved canyon path and catwalks to the Lower Falls viewpoint, subject to current access restrictions.",
+      "guideUrl": "https://banffbound.com/trails/johnston-canyon-lower-falls",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "reviewedAt": "2026-10-28",
+      "tips": [
+        "1.1 km one way (2.2 km return); About 1 hr return. This is the reviewed summer route profile.",
+        "Use the Johnston Canyon Day-use Area on the Bow Valley Parkway. Verify the approach road, parking and Route 9 operation for your date; published summer service does not establish winter transport.",
+        "Snow and ice can affect paths and catwalks. A traction aid does not override a closure or establish safe access."
+      ],
+      "plannerActivityId": "hike"
+    },
+    {
+      "id": "lake-agnes",
+      "name": "Lake Agnes",
+      "description": "A summer mountain hike from Lake Louise to Lake Agnes and a seasonal tea house.",
+      "guideUrl": "https://banffbound.com/trails/lake-agnes",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "reviewedAt": "2026-10-28",
+      "tips": [
+        "3.9 km one way (7.8 km return); About 2.5–3 hrs return. This is the reviewed summer route profile.",
+        "The trailhead is at Lake Louise lakeshore, separate from the village. Check Roam Route 8X for your date and the seasonal Parks Canada shuttle reservation rules. A bus or parking space does not establish trail access.",
+        "Parks Canada identifies avalanche exposure on the Lake Agnes/Mirror Lake and Plain of Six Glaciers summer routes from November to June. These are not ordinary winter walks. Check the official winter route information and avalanche guidance; a summer grade or distance is not a winter recommendation."
+      ],
+      "plannerActivityId": "agnes"
+    },
+    {
+      "id": "bow-river-lake-louise",
+      "name": "Bow River (Lake Louise)",
+      "description": "A village-area riverside route with a choice of sections and a seasonal west-bank restriction.",
+      "guideUrl": "https://banffbound.com/trails/bow-river-lake-louise",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Up to 5.7 km one way; choose a section; About 2 hr published return estimate; varies with section. This is the reviewed summer route profile.",
+        "The west-bank section has a May 15–October 15 seasonal closure. Select a permitted section from the current route map; no complete river loop or winter surface is assumed.",
+        "This review covers the summer hiking route. Snow, ice and avalanche terrain require a separate winter route assessment; the summer grade and estimated time are not winter advice."
+      ],
+      "plannerActivityId": "hike"
+    },
+    {
+      "id": "sunshine-meadows",
+      "name": "Sunshine Meadows",
+      "description": "An alpine trail network reached through Sunshine’s seasonal sightseeing operation, with routes crossing the park boundary.",
+      "guideUrl": "https://banffbound.com/trails/sunshine-meadows",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "10.3 km of trails (network, not one loop); 4–5 hr network overview estimate. This is the reviewed summer route profile.",
+        "The 10.3 km and 580 m figures belong to the Parks Canada network profile. They do not measure a selected lift-assisted loop or the walk from the base parking area. Use the operator’s map and current operating notice.",
+        "This review covers the summer hiking route. Snow, ice and avalanche terrain require a separate winter route assessment; the summer grade and estimated time are not winter advice."
+      ],
+      "plannerActivityId": "hike"
+    },
+    {
+      "id": "surprise-corner-to-hoodoos",
+      "name": "Surprise Corner to Hoodoos",
+      "description": "A natural trail between two separate viewpoints, with ups and downs below the cliffs.",
+      "guideUrl": "https://banffbound.com/trails/surprise-corner-to-hoodoos",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "4.4 km one way; About 3 hr estimated return. This is the reviewed summer route profile.",
+        "Use the designated trailhead and current official route map. Check the trail report, road access and park bulletins before travelling; a published hiking profile does not confirm that the route or parking is available today.",
+        "This review covers the summer hiking route. Snow, ice and avalanche terrain require a separate winter route assessment; the summer grade and estimated time are not winter advice."
+      ],
+      "plannerActivityId": "hike"
+    },
+    {
+      "id": "banff-gondola",
+      "name": "Banff Gondola",
+      "description": "Take the Sulphur Mountain gondola to the summit building and permitted viewing areas.",
+      "guideUrl": "https://banffbound.com/blog/banff-gondola-guide/",
+      "sourceUrl": "https://www.banffjaspercollection.com/attractions/banff-gondola/",
+      "reviewedAt": "2026-10-30",
+      "tips": [
+        "A single mountain attraction with time inside as well as outdoors.",
+        "Check visibility, operation and the Mountain Avenue return. Building access differs from the stair-filled outdoor boardwalk."
+      ],
+      "plannerActivityId": "gondola"
+    },
+    {
+      "id": "first-ski-lesson",
+      "name": "Ski or Snowboard Lessons",
+      "description": "Choose instruction for the actual age, discipline and experience before buying overlapping rental or lift products.",
+      "guideUrl": "https://banffbound.com/learn-to-ski/#lesson-fit",
+      "sourceUrl": "https://www.skibig3.com/ski/lessons/",
+      "reviewedAt": "2026-10-30",
+      "tips": [
+        "A first snow-sport day or a group whose members need different instruction.",
+        "Match the school’s meeting point, equipment fitting, supervision and return. Lesson, lift and transport inclusions vary by product."
+      ],
+      "plannerActivityId": "lesson"
+    },
+    {
+      "id": "norquay-tubing",
+      "name": "Snow Tubing at Norquay",
+      "description": "Plan a snow-tube-park visit around the resort’s actual ticket session and participant requirements.",
+      "guideUrl": "https://banffbound.com/blog/banff-tubing-guide/",
+      "sourceUrl": "https://banffnorquay.com/tubing/",
+      "reviewedAt": "2026-10-30",
+      "tips": [
+        "A separate snow activity for a group that is not booking a full ski day.",
+        "Check the current age and height rules, footwear, session calendar and return shuttle. A ski ticket does not automatically include tubing."
+      ],
+      "plannerActivityId": "tube"
+    },
+    {
+      "id": "managed-ice-skating",
+      "name": "Ice Skating",
+      "description": "Choose a managed indoor or prepared outdoor skating area, with equipment and session information from its operator.",
+      "guideUrl": "https://banffbound.com/activities/ice-skating/",
+      "sourceUrl": "https://banff.ca/110/Outdoor-Ice-Skating",
+      "reviewedAt": "2026-10-30",
+      "tips": [
+        "A short active outing with a planned warm-up and return.",
+        "Check the actual rink and rental status. Parks does not monitor natural ice for safety; preparation of one area does not assess a whole lake."
+      ],
+      "plannerActivityId": "skate"
+    },
+    {
+      "id": "cross-country-skiing",
+      "name": "Cross-country Skiing",
+      "description": "Compare designated Nordic routes and classic or skate equipment, with instruction where needed.",
+      "guideUrl": "https://banffbound.com/blog/banff-cross-country-skiing/",
+      "sourceUrl": "https://www.albertaparks.ca/parks/kananaskis/canmore-nordic-centre-pp/",
+      "reviewedAt": "2026-10-30",
+      "tips": [
+        "A ski-track day that is different from riding resort lifts.",
+        "Check grooming, route demands and trail/facility fees. Canmore Nordic Centre needs a separate journey; do not assume a winter local bus reaches it."
+      ],
+      "plannerActivityId": "nordic"
+    },
+    {
+      "id": "cave-and-basin",
+      "name": "Cave and Basin",
+      "description": "Visit exhibitions and permitted thermal-spring viewing areas at the national historic site.",
+      "guideUrl": "https://banffbound.com/blog/cave-and-basin-guide/",
+      "sourceUrl": "https://parks.canada.ca/lhn-nhs/ab/caveandbasin",
+      "reviewedAt": "2026-10-30",
+      "tips": [
+        "A heritage-focused change of pace from a snow-sport day.",
+        "There is no bathing here. Winter hours have closed weekdays and temporary closure blocks; check the actual programme and approach."
+      ],
+      "plannerActivityId": "cave"
+    },
+    {
+      "id": "whyte-museum",
+      "name": "The Whyte Museum",
+      "description": "Make art, exhibitions and mountain heritage the main indoor visit at 111 Bear Street.",
+      "guideUrl": "https://banffbound.com/blog/rainy-day-banff/#weather-whyte",
+      "sourceUrl": "https://www.whyte.org/",
+      "reviewedAt": "2026-10-30",
+      "tips": [
+        "A cultural town day or an alternative when a mountain outing changes.",
+        "Check current exhibitions, admission versus tour tickets and holiday closures. A town-centre address does not settle every access requirement."
+      ],
+      "plannerActivityId": "culture"
+    },
+    {
+      "id": "the-bison-restaurant",
+      "name": "The Bison Restaurant",
+      "description": "Choose a seasonal Canadian dinner on Bear Street, then compare the current menu and the table arrangement for your party.",
+      "guideUrl": "https://banffbound.com/eat-and-drink",
+      "sourceUrl": "https://www.thebison.ca/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "The booking page leaves space for walk-ins and directs groups of 15 or more to its separate events enquiry. Check a dated music or menu event on its own terms.",
+        "Use the operator’s Bear Street suite address when arranging the arrival and return."
+      ],
+      "plannerActivityId": "dinner"
+    },
+    {
+      "id": "park-distillery",
+      "name": "Park Distillery",
+      "description": "A Banff Avenue restaurant and working distillery with a food menu and separate distillery experiences.",
+      "guideUrl": "https://banffbound.com/eat-and-drink",
+      "sourceUrl": "https://parkdistillery.com/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Choose dining, a distillery tour or a private event deliberately; a restaurant table does not include a tour. Check the selected product’s age, booking and service terms.",
+        "The restaurant and physical store use 219 Banff Avenue; keep a tour meeting instruction separate from the dining reservation."
+      ],
+      "plannerActivityId": "dinner"
+    },
+    {
+      "id": "wild-flour-bakery",
+      "name": "Wild Flour Bakery",
+      "description": "A Bear Street bakery and coffee stop with breakfast, sandwiches, soups, salads and pastries on its current operator menu.",
+      "guideUrl": "https://banffbound.com/eat-and-drink",
+      "sourceUrl": "https://www.wildflourbakery.ca/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Check the current counter selection and menu. Special cake orders use their own advance-order process; ordinary café seating is a separate arrangement.",
+        "Use suite 101 on Bear Street, distinct from other venues in the same building."
+      ],
+      "plannerActivityId": "dinner"
+    },
+    {
+      "id": "nourish-bistro",
+      "name": "Nourish Bistro",
+      "description": "A vegetarian and vegan-friendly dining option on Bear Street, with a current operator menu and direct table-booking route.",
+      "guideUrl": "https://banffbound.com/eat-and-drink",
+      "sourceUrl": "https://www.nourishbistro.com/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Discuss the particular ingredients, preparation and dietary needs with the restaurant; a cuisine label is not an allergy-suitability guarantee.",
+        "Use suite 110 on Bear Street, distinct from the other restaurants and bakery at 211 Bear Street."
+      ],
+      "plannerActivityId": "dinner"
+    },
+    {
+      "id": "bear-street-tavern",
+      "name": "Bear Street Tavern",
+      "description": "A Bear Street option for pizza, sandwiches and pub food, with separate indoor and courtyard seating decisions.",
+      "guideUrl": "https://banffbound.com/eat-and-drink",
+      "sourceUrl": "https://www.bearstreettavern.ca/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "The operator describes a dog-friendly courtyard exposed to the weather. Confirm its actual use and any pet arrangements for your date; group events of 17 or more are directed elsewhere.",
+        "Use suite 113 on Bear Street and confirm the entrance or courtyard arrangement you intend to use."
+      ],
+      "plannerActivityId": "dinner"
+    },
+    {
+      "id": "blake-brewpub",
+      "name": "BLAKE Brewhouse & Distillery",
+      "description": "A restaurant, brewhouse and distillery on Bow Valley Trail, with an international-fusion menu and house-produced drinks. Plan the actual Bow Valley Trail address rather than a Main Street pub stop.",
+      "guideUrl": "https://banffbound.com/eat-and-drink",
+      "sourceUrl": "https://www.blakecanmore.com/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "The contact page says ordinary restaurant seating is first come, first served. Private functions have a separate enquiry route. Confirm current kitchen service; a late-night menu link does not settle a conflicting hours display.",
+        "This is the Bow Valley Trail venue. Do not substitute an old Main Street address or assume these contact and seating rules establish a separate PD3 venue."
+      ]
+    },
+    {
+      "id": "the-iron-goat",
+      "name": "The Iron Goat Pub & Grill",
+      "description": "A pub and grill at the Benchlands Trail address, with a published food-and-drink menu and an online reservation route. It is a separate meal journey from Canmore’s Main Street.",
+      "guideUrl": "https://banffbound.com/eat-and-drink",
+      "sourceUrl": "https://www.irongoat.ca/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "The operator links online reservations and asks guests needing immediate assistance to call. Group dining has separate arrangements. Check the current service and confirmation rather than assuming a table or patio.",
+        "Use 703 Benchlands Trail for the meal journey, not the imported Main Street address. Arrange the complete return to your accommodation separately."
+      ]
+    },
+    {
+      "id": "fairview-dining-room",
+      "name": "Fairview Bar & Restaurant",
+      "description": "A restaurant and bar inside Fairmont Chateau Lake Louise with a contemporary Rocky Mountain menu. Plan a lakeside-hotel dining visit, and confirm hotel access and the intended bar or dinner service.",
+      "guideUrl": "https://banffbound.com/eat-and-drink",
+      "sourceUrl": "https://www.chateau-lake-louise.com/dine/fairview-bar-restaurant/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "The operator prioritises registered hotel guests and provides a direct dining contact for booking. Confirm access and the specific service; a hotel room or a bar visit does not itself establish a dinner table.",
+        "At Fairmont Chateau Lake Louise beside the lake, separate from Lake Louise village and the ski resort. Confirm hotel access before arranging the journey."
+      ]
+    },
+    {
+      "id": "fairmont-banff-springs",
+      "name": "Fairmont Banff Springs",
+      "description": "A resort on Spray Avenue, separate from the Banff Avenue town centre. Fairmont currently lists 724 rooms and suites, with main-building and Gatehouse categories. Compare a Fairmont room, a Gatehouse Family Room with bunk beds, or an accessible category before selecting the exact layout.",
+      "guideUrl": "https://banffbound.com/hotel-directory/fairmont-banff-springs",
+      "sourceUrl": "https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Room location, bunk layout and mobility features vary by category. Local transit passes do not establish ski-shuttle coverage. Confirm current pool/spa access, room facilities and any additional charges for the actual stay.",
+        "Confirm the exact room, total price, access requirements and cancellation conditions directly before booking."
+      ]
+    },
+    {
+      "id": "moose-hotel-suites",
+      "name": "Moose Hotel and Suites",
+      "description": "A Banff Avenue hotel with hotel rooms and one- or two-bedroom suites. Suites have a kitchen nook rather than a full cooking kitchen. The property lists two rooftop hot pools, an indoor pool, Meadow Spa and Pacini Italian Restaurant.",
+      "guideUrl": "https://banffbound.com/hotel-directory/moose-hotel-suites",
+      "sourceUrl": "https://moosehotelandsuites.com/",
+      "reviewedAt": "2026-10-28",
+      "tips": [
+        "The official site lists kitchen nooks in suites, not full kitchens. Local Roam guest passes cover Banff local services; the hotel FAQ says Lake Louise and Johnston Canyon services cost extra. Check your specific winter transfer separately.",
+        "Confirm the exact room, total price, access requirements and cancellation conditions directly before booking."
+      ]
+    },
+    {
+      "id": "banff-park-lodge",
+      "name": "Banff Park Lodge",
+      "description": "A Lynx Street hotel near central Banff with Standard and Superior rooms, plus several distinct suite categories. Standard Rooms are advertised with no view; selected Superior Rooms have roll-in showers. The operator currently reports ongoing lobby and public-space renovations.",
+      "guideUrl": "https://banffbound.com/hotel-directory/banff-park-lodge",
+      "sourceUrl": "https://www.banffparklodge.com/rooms/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Checked 29 October 2026: the home page reports ongoing lobby/public renovations and the guest directory lists La Terrazza closed. Pool, restaurant and access arrangements should be reconfirmed. Parking is not guaranteed; ask about the actual ski-shuttle stop and airport transfer.",
+        "Confirm the exact room, total price, access requirements and cancellation conditions directly before booking."
+      ]
+    },
+    {
+      "id": "hi-banff-alpine-centre",
+      "name": "HI Banff Alpine Centre",
+      "description": "A hostel at 801 Hidden Ridge Way on Tunnel Mountain, with shared four-to-six-bed rooms and several private categories. A shared kitchen, Cougar Pete’s restaurant and local bus passes offer different meal and transport choices. Select the actual bathroom arrangement: an ensuite WC is not the same description as a private ensuite room.",
+      "guideUrl": "https://banffbound.com/hotel-directory/hi-banff-alpine-centre",
+      "sourceUrl": "https://hihostels.ca/en/hostels/hi-banff",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "HI’s local bus pass is a town-transport benefit, not evidence of an airport or ski-resort transfer. Confirm the stop, evening service and the exact room’s bathroom before booking.",
+        "Confirm the exact room, total price, access requirements and cancellation conditions directly before booking."
+      ]
+    },
+    {
+      "id": "fairmont-chateau-lake-louise",
+      "name": "Fairmont Chateau Lake Louise",
+      "description": "A hotel at the Lake Louise lakeshore in Banff National Park, with standard, lakeview and Fairmont Gold room categories. It is separate from the village and Lake Louise Ski Resort. Choose the specific room view and check the terms for wellness and seasonal activities.",
+      "guideUrl": "https://banffbound.com/hotel-directory/fairmont-chateau-lake-louise",
+      "sourceUrl": "https://www.fairmont.com/en/hotels/lake-louise/fairmont-chateau-lake-louise/guest-services.html",
+      "reviewedAt": "2026-10-28",
+      "tips": [
+        "The dining page restricts the hotel and food-and-beverage outlets to registered overnight guests on 26–29 October 2026. This is a dated notice. The rental shop page was awaiting the 2026/27 reopening at review. Confirm current access, skating and rental operation rather than assuming a room includes every activity.",
+        "Confirm the exact room, total price, access requirements and cancellation conditions directly before booking."
+      ]
+    },
+    {
+      "id": "lake-louise-inn",
+      "name": "Lake Louise Inn",
+      "description": "A Lake Louise village property with hotel rooms and condo-style accommodation across several buildings. Some categories have kitchens. The official site lists an indoor pool, whirlpools, three dining venues and a winter shuttle connection to Lake Louise Ski Resort.",
+      "guideUrl": "https://banffbound.com/hotel-directory/lake-louise-inn",
+      "sourceUrl": "https://www.lakelouiseinn.com/at-a-glance/",
+      "reviewedAt": "2026-10-28",
+      "tips": [
+        "Some accommodation is in walk-up buildings; do not assume all rooms have elevator access. The hotel advertises a complimentary winter ski shuttle, but the resort had not yet posted the coming winter’s pickup details at review. Confirm the actual outbound and return before booking lessons.",
+        "Confirm the exact room, total price, access requirements and cancellation conditions directly before booking."
+      ]
+    },
+    {
+      "id": "malcolm-hotel",
+      "name": "The Malcolm Hotel",
+      "description": "A hotel at 321 Spring Creek Drive in Canmore, with a rooftop outdoor pool and hot tubs. Room categories differ in outlook, balcony, bathing fixtures and pet eligibility. The Premium Double Queen has a wet bar and mini-fridge, not a full kitchen; compare it with a condo-style stay when cooking is a priority.",
+      "guideUrl": "https://banffbound.com/hotel-directory/malcolm-hotel",
+      "sourceUrl": "https://www.malcolmhotel.ca/",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Checked 29 October 2026: the hotel publishes nearby construction of the future Alexander Boutique Hotel & Spa and asks guests to discuss impacts. Outdoor pool/hot-tub operation is weather-dependent; do not infer availability from the amenity listing.",
+        "Confirm the exact room, total price, access requirements and cancellation conditions directly before booking."
+      ]
+    },
+    {
+      "id": "coast-canmore-hotel",
+      "name": "Coast Canmore Hotel & Conference Centre",
+      "description": "A Bow Valley Trail hotel at 511 Bow Valley Trail in Canmore, with an indoor pool, hot tub and Table Food + Drink. Standard, patio, accessible and Premium King Suite categories have different equipment. Parking is currently paid and first come, first served, so include it when comparing this base with downtown or condo options.",
+      "guideUrl": "https://banffbound.com/hotel-directory/coast-canmore-hotel",
+      "sourceUrl": "https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Official services list paid parking; the old free-parking claim is removed. The published airporter option requires its own booking and does not establish ski-resort or lake transport.",
+        "Confirm the exact room, total price, access requirements and cancellation conditions directly before booking."
+      ]
+    },
+    {
+      "id": "banff-visitor-centre",
+      "name": "Banff Visitor Centre",
+      "description": "Start with official visitor information for routes, park rules and current planning questions.",
+      "guideUrl": "https://banffbound.com/towns/banff/",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/visit/installations-facilities",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Check the official location, opening details and available service before travelling."
+      ]
+    },
+    {
+      "id": "lake-louise-visitor-centre",
+      "name": "Lake Louise Visitor Centre",
+      "description": "Ask about the actual Lake Louise outing, current reports and the journey between village, lakeshore and resort.",
+      "guideUrl": "https://banffbound.com/towns/lake-louise/",
+      "sourceUrl": "https://parks.canada.ca/pn-np/ab/banff/visit/installations-facilities",
+      "reviewedAt": "2026-10-29",
+      "tips": [
+        "Check the official location, opening details and available service before travelling."
+      ]
+    }
+  ],
+  "identityMatches": {
+    "node/263388342": "cave-and-basin",
+    "way/202755721": "whyte-museum",
+    "node/10809307066": "banff-gondola",
+    "way/764291471": "banff-gondola",
+    "way/430454020": "banff-visitor-centre",
+    "node/1907734438": "lake-louise-visitor-centre",
+    "way/229826661": "lake-louise-visitor-centre",
+    "way/48295302": "two-jack",
+    "way/356877446": "moraine-lake",
+    "relation/2048785": "minnewanka",
+    "relation/18099392": "peyto"
+  },
+  "commerceIdentities": [
+    {
+      "id": "gyg-256607",
+      "relatedPlaceIds": [
+        "banff-gondola"
+      ]
+    },
+    {
+      "id": "gyg-292675",
+      "relatedPlaceIds": [
+        "lake-louise"
+      ]
+    },
+    {
+      "id": "gyg-303253",
+      "relatedPlaceIds": [
+        "johnston-canyon-lower-falls"
+      ]
+    },
+    {
+      "id": "gyg-437912",
+      "relatedPlaceIds": [
+        "lake-louise",
+        "johnston-canyon-lower-falls"
+      ]
+    },
+    {
+      "id": "hotel-fairmont-banff-springs",
+      "relatedPlaceIds": [
+        "fairmont-banff-springs"
+      ]
+    },
+    {
+      "id": "hotel-rimrock-banff",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-moose-hotel-suites",
+      "relatedPlaceIds": [
+        "moose-hotel-suites"
+      ]
+    },
+    {
+      "id": "hotel-hotel-canoe-suites",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-otter-hotel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-fox-hotel-suites",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-caribou-lodge-spa",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-park-lodge",
+      "relatedPlaceIds": [
+        "banff-park-lodge"
+      ]
+    },
+    {
+      "id": "hotel-buffalo-mountain-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-rocky-mountain-resort",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-tunnel-mountain-resort",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-elk-avenue-hotel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-royal-canadian-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-brewster-mountain-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-peaks-hotel-suites",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-rundlestone-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-aspen-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-ptarmigan-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-canalta-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-mount-royal-hotel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-juniper-hotel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-charltons-banff",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-hi-banff-alpine-centre",
+      "relatedPlaceIds": [
+        "hi-banff-alpine-centre"
+      ]
+    },
+    {
+      "id": "hotel-sunshine-mountain-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-castle-mountain-chalets",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-storm-mountain-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-blackstone-mountain-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-malcolm-hotel",
+      "relatedPlaceIds": [
+        "malcolm-hotel"
+      ]
+    },
+    {
+      "id": "hotel-coast-canmore-hotel",
+      "relatedPlaceIds": [
+        "coast-canmore-hotel"
+      ]
+    },
+    {
+      "id": "hotel-basecamp-lodge-canmore",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-lamphouse-canmore",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-fairmont-chateau-lake-louise",
+      "relatedPlaceIds": [
+        "fairmont-chateau-lake-louise"
+      ]
+    },
+    {
+      "id": "hotel-lake-louise-inn",
+      "relatedPlaceIds": [
+        "lake-louise-inn"
+      ]
+    },
+    {
+      "id": "hotel-mountaineer-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-post-hotel-spa",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-baker-creek-by-basecamp",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-paradise-lodge-bungalows",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-hi-lake-louise-alpine-centre",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-emerald-lake-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-hidden-ridge-resort",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-douglas-fir-resort",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-falcon-crest-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-pocaterra-inn-waterslide",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-stoneridge-mountain-resort",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-copperstone-resort",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-canmore-inn-suites",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-rundle-mountain-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-hi-castle-mountain-hostel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-cathedral-mountain-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-boundary-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-inns-of-banff",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-international-hotel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-best-western-banff",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-dorothy-motel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-bow-view-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-red-carpet-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-irwins-mountain-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-kenrick-hotel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-moxy-banff",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-king-edward-hotel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-johnston-canyon-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-everwild-canmore",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-mount-engadine-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-mystic-springs-chalets",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-deer-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-num-ti-jah-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-centre-hotel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-boutique-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-beaver-cabins",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-basecamp-suites-banff",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-elkhorn-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-samesun-banff-hostel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-international-hostel",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-rundle-chalets",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-rocky-mountain-ski-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-canmore-rocky-mountain-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-northwinds-hotel-canmore",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-chateau-canmore",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-silver-creek-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-grande-rockies-resort",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-super-8-canmore",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-georgetown-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-drake-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-sunset-resorts-canmore",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-lady-macdonald-country-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-windtower-lodge-suites",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-summit-grande-rockies",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-solara-resort",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-days-inn-canmore",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-bear-bison-inn",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-banff-gate-mountain-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-crossing-resort",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-kicking-horse-mountain-lodge",
+      "relatedPlaceIds": []
+    },
+    {
+      "id": "hotel-painted-warriors-ranch",
+      "relatedPlaceIds": []
+    }
+  ],
+  "excluded": [
+    {
+      "osmId": "node/2958087898",
+      "reason": "Operator reports an extended renovation closure; no current meal service established.",
+      "sourceUrl": "https://www.lakelouisestation.com/contact",
+      "checkedAt": "2026-10-29"
+    },
+    {
+      "osmId": "way/1211716532",
+      "reason": "Historical downtown permanent washroom at 907 7 Avenue; Town says replacement construction began 2026-08-31. No exact temporary-toilet location is substituted.",
+      "sourceUrl": "https://www.canmore.ca/your-government/projects/construction",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "osmId": "way/1384774801",
+      "reason": "Duplicate historical downtown permanent washroom at 907 7 Avenue; replacement construction. No exact temporary-toilet location is substituted.",
+      "sourceUrl": "https://www.canmore.ca/your-government/projects/construction",
+      "checkedAt": "2026-10-31"
+    }
+  ]
+}

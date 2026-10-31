@@ -1,0 +1,7944 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-10-31-4469f7a698e7",
+  "sourceCommit": "686a841ad452da0f19d1026d78abd0a9e8e75279",
+  "sourceSnapshotAt": "2026-10-31T19:04:04Z",
+  "queriedAt": "2026-10-31T19:06:10.172168+00:00",
+  "inputHashes": {
+    "osm-source.json": "2f53efb1cdf98a6784393e56784197e575426c3622b173a9729264754a5b5b78",
+    "editorial.json": "257fb2973fbb76edf1651ddddee0ae4578c7ab3ec32b552adb32c2e701a79cb4",
+    "sync-map.mjs": "715d4fac41d7da2ae34a022ac83ae010a07fe243646c464ee7c04721326cf54c"
+  },
+  "editorialSourceFiles": [
+    {
+      "path": "src/data/restaurants.ts",
+      "sha256": "b0fca09bd1de188193c40b4b0803b1209a5e33cdbad5243129fb701728371367"
+    },
+    {
+      "path": "src/data/restaurantSourceReviews.ts",
+      "sha256": "d77c586e50f341552d27775c077c888c917b43896ad9025c47eb3ebe7298aa62"
+    },
+    {
+      "path": "src/data/banffDiningSourceReviews.ts",
+      "sha256": "36d921fbebbd3b97bb1c2218bc44ac17333834c559a2a7cf04a11a71e96630fa"
+    },
+    {
+      "path": "src/data/hotels.ts",
+      "sha256": "54885418ca9e7502f7b308b50b1a6c2ffcfc680bd701ad36e4862cf4a3fe7ecc"
+    },
+    {
+      "path": "src/data/hotelDirectory.ts",
+      "sha256": "b4bd72f7e35c117dcdf8ed124e4d495abd539f124d9b86e07d562e2d0107eb0c"
+    },
+    {
+      "path": "mobile/src/data/catalog.generated.ts",
+      "sha256": "7579d43d49681f5195e2d0ee3cc5459dc457c7a6ed144c75aa949a337416e9b4"
+    },
+    {
+      "path": "mobile/src/data/commerce.generated.ts",
+      "sha256": "56bc7ad774a4e320b0f88c26365e1d6b9e30f4674a2d3ef78e1eae26966a8891"
+    }
+  ],
+  "licence": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "© OpenStreetMap contributors",
+  "downloadablePath": "/app/map-data/osm-points.json",
+  "rawSnapshotPath": "/app/map-data/osm-source.json",
+  "licencePath": "/app/map-data/LICENCE.txt",
+  "downloadableSha256": "d332c3af6dd882de4e09df4a6c20ddedae2f2ad528fbe1a5d69fcf606a657f18",
+  "counts": {
+    "total": 982,
+    "osmPoints": 971,
+    "documentedPublisherLocators": 11,
+    "rawOsmFeatures": 1441,
+    "duplicateGroups": 41,
+    "rejectedFeatures": 415,
+    "restaurants": 145,
+    "cafes": 82,
+    "activities": 36,
+    "toilets": 132,
+    "parking": 70,
+    "transit": 253,
+    "viewpoints": 68,
+    "stays": 88,
+    "water": 16,
+    "fuel": 22,
+    "services": 18,
+    "walks": 34,
+    "lakes": 18
+  },
+  "duplicates": [
+    {
+      "retainedId": "osm-node-10179894165",
+      "osmIds": [
+        "node/10179894165",
+        "way/1126010032"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10179894166",
+      "osmIds": [
+        "node/10179894166",
+        "way/1126010031"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10179894167",
+      "osmIds": [
+        "node/10179894167",
+        "way/1126010030"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10179894171",
+      "osmIds": [
+        "node/10179894171",
+        "way/1126010026"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10179894172",
+      "osmIds": [
+        "node/10179894172",
+        "way/1126010025"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10179894173",
+      "osmIds": [
+        "node/10179894173",
+        "way/1126010024"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10179919896",
+      "osmIds": [
+        "node/10179919896",
+        "way/764431735"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10207300289",
+      "osmIds": [
+        "node/10207300289",
+        "way/1379233462"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10809307066",
+      "osmIds": [
+        "node/10809307066",
+        "way/764291471"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10908385273",
+      "osmIds": [
+        "node/10908385273",
+        "node/10913396313",
+        "node/10913396315"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10916000012",
+      "osmIds": [
+        "node/10916000012",
+        "node/6652324811"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10916588799",
+      "osmIds": [
+        "node/10916588799",
+        "way/224681421"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10920739555",
+      "osmIds": [
+        "node/10920739555",
+        "node/10920739557"
+      ]
+    },
+    {
+      "retainedId": "osm-node-10927030882",
+      "osmIds": [
+        "node/10927030882",
+        "node/10927030883",
+        "node/10927030884"
+      ]
+    },
+    {
+      "retainedId": "osm-node-11260204409",
+      "osmIds": [
+        "node/11260204409",
+        "way/1215373031"
+      ]
+    },
+    {
+      "retainedId": "osm-node-12079058083",
+      "osmIds": [
+        "node/12079058083",
+        "node/12079065782"
+      ]
+    },
+    {
+      "retainedId": "osm-node-13241328087",
+      "osmIds": [
+        "node/13241328087",
+        "node/13241328141"
+      ]
+    },
+    {
+      "retainedId": "osm-node-14312712701",
+      "osmIds": [
+        "node/14312712701",
+        "node/1907720762"
+      ]
+    },
+    {
+      "retainedId": "osm-node-1840046604",
+      "osmIds": [
+        "node/1840046604",
+        "way/1328646203"
+      ]
+    },
+    {
+      "retainedId": "osm-node-1898626832",
+      "osmIds": [
+        "node/1898626832",
+        "node/1898626836"
+      ]
+    },
+    {
+      "retainedId": "osm-node-1907734438",
+      "osmIds": [
+        "node/1907734438",
+        "way/229826661"
+      ]
+    },
+    {
+      "retainedId": "osm-node-2128371758",
+      "osmIds": [
+        "node/2128371758",
+        "way/521561445"
+      ]
+    },
+    {
+      "retainedId": "osm-node-2446524292",
+      "osmIds": [
+        "node/2446524292",
+        "way/1384774812"
+      ]
+    },
+    {
+      "retainedId": "osm-node-251714502",
+      "osmIds": [
+        "node/251714502",
+        "node/251714504",
+        "relation/20162998"
+      ]
+    },
+    {
+      "retainedId": "osm-node-251714507",
+      "osmIds": [
+        "node/251714507",
+        "node/7840662762"
+      ]
+    },
+    {
+      "retainedId": "osm-node-251714508",
+      "osmIds": [
+        "node/251714508",
+        "node/251714729"
+      ]
+    },
+    {
+      "retainedId": "osm-node-348002838",
+      "osmIds": [
+        "node/348002838",
+        "node/348002839"
+      ]
+    },
+    {
+      "retainedId": "osm-node-4341498300",
+      "osmIds": [
+        "node/4341498300",
+        "node/4341498302"
+      ]
+    },
+    {
+      "retainedId": "osm-node-4423693589",
+      "osmIds": [
+        "node/4423693589",
+        "way/476718879"
+      ]
+    },
+    {
+      "retainedId": "osm-node-4700312530",
+      "osmIds": [
+        "node/4700312530",
+        "way/1359414937"
+      ]
+    },
+    {
+      "retainedId": "osm-node-5586370422",
+      "osmIds": [
+        "node/5586370422",
+        "way/360369802"
+      ]
+    },
+    {
+      "retainedId": "osm-node-678180329",
+      "osmIds": [
+        "node/678180329",
+        "relation/18153956"
+      ]
+    },
+    {
+      "retainedId": "osm-node-730190647",
+      "osmIds": [
+        "node/730190647",
+        "node/730190833"
+      ]
+    },
+    {
+      "retainedId": "osm-node-7816337000",
+      "osmIds": [
+        "node/7816337000",
+        "way/362080655"
+      ]
+    },
+    {
+      "retainedId": "osm-node-926082953",
+      "osmIds": [
+        "node/926082953",
+        "way/476718866"
+      ]
+    },
+    {
+      "retainedId": "osm-node-9995457488",
+      "osmIds": [
+        "node/9995457488",
+        "node/9995457489"
+      ]
+    },
+    {
+      "retainedId": "osm-relation-15950148",
+      "osmIds": [
+        "relation/15950148",
+        "way/1177119068"
+      ]
+    },
+    {
+      "retainedId": "osm-way-1215469340",
+      "osmIds": [
+        "way/1215469340",
+        "way/1215469341"
+      ]
+    },
+    {
+      "retainedId": "osm-way-436635665",
+      "osmIds": [
+        "way/436635665",
+        "way/584130520"
+      ]
+    },
+    {
+      "retainedId": "osm-way-436976098",
+      "osmIds": [
+        "way/436976098",
+        "way/436976100"
+      ]
+    },
+    {
+      "retainedId": "osm-way-436976101",
+      "osmIds": [
+        "way/436976101",
+        "way/436976102"
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "node/613546724",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/1623439438",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "node/2446133775",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/2446524301",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/2956258971",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "node/2958087898",
+      "reason": "Operator reports an extended renovation closure; no current meal service established."
+    },
+    {
+      "id": "node/3611242495",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/3766502061",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/3774354381",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4110489740",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "node/4110492355",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "node/4110492356",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "node/4325989368",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4335933376",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4335933378",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341460194",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341460260",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341460277",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341460278",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341460279",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341460280",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341460281",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341530169",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341530170",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341530171",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341530174",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341533298",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4341533299",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4345129767",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4345129768",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4345129769",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4345129779",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4345129782",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/4912510226",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/5018989638",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/5113350299",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/5166673525",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "node/5826257721",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/8805470520",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/8805470562",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/9590310937",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "node/9886223028",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/9993082747",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/10268515177",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/10908572683",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/10926477671",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "node/10967222099",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/10982852535",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/10982852536",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11246022407",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11246022417",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11246022427",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11246022433",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11253808835",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11261591369",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261591370",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261591371",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261591372",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261591373",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261591374",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261591375",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261591376",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261591377",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604717",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604719",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604720",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604721",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604722",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604929",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604930",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604931",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604932",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604982",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604983",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604984",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604985",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604986",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604987",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604988",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604989",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604990",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261604991",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11261605034",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11363228367",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11410739053",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11453997731",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11453997732",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11911390184",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11927007234",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "node/11927007280",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11927007456",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11929512964",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11929512965",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11931225984",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11931226003",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11933844562",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11933877606",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11933924472",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11933927335",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11933929523",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11933929795",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11933942817",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11933969859",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11938058208",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11938072619",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11938089927",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/11938098664",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "node/11938148739",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "node/12166810181",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/12241961789",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "node/12241978670",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "node/12248732694",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "node/12660442794",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/12660442795",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/12660442796",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/13201951845",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/13241328142",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/13242211052",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "node/13325040633",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/14167092202",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/14167195902",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/14167197901",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "node/14167198001",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/24308820",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/29122044",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/29122070",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/29122086",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/29143685",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/29147320",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/29147339",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/29276441",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/48384613",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/48386011",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/53722321",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/56117032",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/56117033",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/206186530",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/206263381",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/206263405",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/206377853",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/206378199",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/206378223",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/208141667",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/212199276",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/229826697",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/261437214",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/261437821",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/262311607",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/262311608",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/262311611",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/291781956",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/301608536",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/304141355",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/355542150",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/361963445",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/361963446",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/366275983",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/378206851",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/409177367",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/433879129",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/433879131",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/436272889",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/436280092",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/476704588",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/476704590",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/476704592",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/476704594",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/476706779",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/476706780",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/532857294",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/583770629",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/583770631",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/583770646",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/584130428",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/584130466",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/584166735",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/584374823",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/585734453",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/604440352",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/604440355",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/604440360",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/675739803",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/711887700",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/711887703",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/711887704",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/722059631",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/728795966",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/728795967",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/728797889",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/764291429",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/764540163",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/764540187",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/764540260",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/836852780",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/836972999",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/836973004",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/836973006",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/837470093",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/837470095",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/837470096",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/922943969",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/951309096",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/951309097",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/951309099",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/951936094",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/951944254",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/951944255",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/955864842",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/962539926",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1106718120",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1112636500",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1112636501",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1112636502",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1112636505",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1125076105",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1125510335",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1125511250",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1125709118",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1125719155",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1125728880",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1125731685",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1125794097",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1125798450",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1125803335",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1125946011",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1127447392",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1128064812",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1128064813",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1128064814",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1137129180",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1137129181",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1160783852",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1160783853",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1165521583",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1165521858",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1173729914",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1174549200",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1174549207",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1174549208",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1179065066",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1181044567",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1181044568",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1181355990",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1182155669",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1182582503",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1183794893",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1183794901",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1188572897",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1188779179",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1189008802",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1190871807",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1194057746",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1195289782",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1205110547",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1205110548",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1211716532",
+      "reason": "Historical downtown permanent washroom at 907 7 Avenue; Town says replacement construction began 2026-08-31. No exact temporary-toilet location is substituted."
+    },
+    {
+      "id": "way/1211716534",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1214639989",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/1214640007",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1215469330",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "way/1215469347",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1215469355",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1215469382",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/1215469417",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "way/1215469434",
+      "reason": "School transport is not a reviewed visitor stop"
+    },
+    {
+      "id": "way/1215469435",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1230398510",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1230398511",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1230398512",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1230398513",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1230398514",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1230398515",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1232838577",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1238761307",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1238761308",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1238761739",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1238761740",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1238761741",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1253333999",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1257573245",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1263884370",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1263884371",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "way/1285779760",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779761",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779763",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779764",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779766",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779767",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779768",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779769",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779777",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779839",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779843",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779844",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1285779875",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1286119851",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1287207055",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1287207058",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1311844967",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1311844970",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1314503056",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1314533948",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1318906044",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1318906046",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1321543473",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/1321543474",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/1321543475",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1321543476",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/1321543479",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1322713290",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322713291",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322713292",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322713293",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322713294",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322713295",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322713296",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322713297",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322713298",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322719449",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322750184",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322750185",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322750186",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322750187",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322942977",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322942978",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322942979",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322942980",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322942981",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322942982",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322942983",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322942984",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322942985",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322972677",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1322972678",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1322972693",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1322972698",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322976923",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1322984932",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322984933",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1322984934",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1323028215",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1323028216",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1323028217",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1323028218",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1323029400",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1323029401",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1323029402",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1323302524",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/1323302525",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/1323302526",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/1323302527",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/1323504994",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1323521739",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1323521740",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1323521741",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1323521742",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1323522328",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1323669337",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "way/1328815892",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1328845207",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329189003",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329189004",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329189005",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329189006",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329189007",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329189008",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329189009",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329189013",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329189017",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1329646792",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1329671625",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1359414963",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1359414965",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1379232327",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1379232329",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1384387891",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1384774801",
+      "reason": "Duplicate historical downtown permanent washroom at 907 7 Avenue; replacement construction. No exact temporary-toilet location is substituted."
+    },
+    {
+      "id": "way/1433941483",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1443129901",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1467693077",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1467693090",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1473520941",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "way/1502359883",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1502359884",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1502360737",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "way/1568081659",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "relation/447472",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "relation/6683672",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "relation/8271012",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "relation/15047933",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/15057042",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/15884860",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/15907313",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/15909915",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/15951556",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/15953831",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/15953832",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "relation/15964440",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "relation/16001760",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/16001761",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/16005911",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/17644182",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "relation/18134596",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "relation/18134598",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "relation/18135275",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "relation/18148261",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "relation/18154222",
+      "reason": "Unidentified venue"
+    },
+    {
+      "id": "relation/18205698",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/18213510",
+      "reason": "Unnamed parking without documented visitor access"
+    },
+    {
+      "id": "relation/18220776",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/18220777",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/18225179",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/18238905",
+      "reason": "Restricted access tag"
+    },
+    {
+      "id": "relation/19728243",
+      "reason": "Outside selected visitor categories"
+    },
+    {
+      "id": "relation/20572584",
+      "reason": "Unnamed parking without documented visitor access"
+    }
+  ],
+  "coordinateSources": {
+    "osm-node-10052443789": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10052443789"
+      ]
+    },
+    "osm-node-10052443797": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10052443797"
+      ]
+    },
+    "osm-node-10179894165": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179894165",
+        "way/1126010032"
+      ]
+    },
+    "osm-node-10179894166": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179894166",
+        "way/1126010031"
+      ]
+    },
+    "osm-node-10179894167": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179894167",
+        "way/1126010030"
+      ]
+    },
+    "osm-node-10179894169": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179894169"
+      ]
+    },
+    "osm-node-10179894170": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179894170"
+      ]
+    },
+    "osm-node-10179894171": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179894171",
+        "way/1126010026"
+      ]
+    },
+    "osm-node-10179894172": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179894172",
+        "way/1126010025"
+      ]
+    },
+    "osm-node-10179894173": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179894173",
+        "way/1126010024"
+      ]
+    },
+    "osm-node-10179919896": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179919896",
+        "way/764431735"
+      ]
+    },
+    "osm-node-10179919901": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179919901"
+      ]
+    },
+    "osm-node-10179919903": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10179919903"
+      ]
+    },
+    "osm-node-10207300272": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10207300272"
+      ]
+    },
+    "osm-node-10207300273": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10207300273"
+      ]
+    },
+    "osm-node-10207300288": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10207300288"
+      ]
+    },
+    "osm-node-10207300289": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10207300289",
+        "way/1379233462"
+      ]
+    },
+    "osm-node-10207300290": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10207300290"
+      ]
+    },
+    "osm-node-10268515174": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10268515174"
+      ]
+    },
+    "osm-node-10268515176": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10268515176"
+      ]
+    },
+    "osm-node-10311352318": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10311352318"
+      ]
+    },
+    "osm-node-10311352319": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10311352319"
+      ]
+    },
+    "osm-node-10312720179": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10312720179"
+      ]
+    },
+    "osm-node-10689248174": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248174"
+      ]
+    },
+    "osm-node-10689248175": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248175"
+      ]
+    },
+    "osm-node-10689248176": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248176"
+      ]
+    },
+    "osm-node-10689248177": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248177"
+      ]
+    },
+    "osm-node-10689248178": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248178"
+      ]
+    },
+    "osm-node-10689248179": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248179"
+      ]
+    },
+    "osm-node-10689248180": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248180"
+      ]
+    },
+    "osm-node-10689248181": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248181"
+      ]
+    },
+    "osm-node-10689248182": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248182"
+      ]
+    },
+    "osm-node-10689248187": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248187"
+      ]
+    },
+    "osm-node-10689248188": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248188"
+      ]
+    },
+    "osm-node-10689248197": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248197"
+      ]
+    },
+    "osm-node-10689248198": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10689248198"
+      ]
+    },
+    "osm-node-10809307066": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10809307066",
+        "way/764291471"
+      ]
+    },
+    "osm-node-10809317547": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10809317547"
+      ]
+    },
+    "osm-node-10905579926": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10905579926"
+      ]
+    },
+    "osm-node-10908385267": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10908385267"
+      ]
+    },
+    "osm-node-10908385271": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10908385271"
+      ]
+    },
+    "osm-node-10908385273": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10908385273",
+        "node/10913396313",
+        "node/10913396315"
+      ]
+    },
+    "osm-node-10908617813": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10908617813"
+      ]
+    },
+    "osm-node-10914191110": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10914191110"
+      ]
+    },
+    "osm-node-10914191118": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10914191118"
+      ]
+    },
+    "osm-node-10914191122": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10914191122"
+      ]
+    },
+    "osm-node-10914191128": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10914191128"
+      ]
+    },
+    "osm-node-10916000012": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916000012",
+        "node/6652324811"
+      ]
+    },
+    "osm-node-10916000014": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916000014"
+      ]
+    },
+    "osm-node-10916000016": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916000016"
+      ]
+    },
+    "osm-node-10916000020": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916000020"
+      ]
+    },
+    "osm-node-10916000038": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916000038"
+      ]
+    },
+    "osm-node-10916588799": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916588799",
+        "way/224681421"
+      ]
+    },
+    "osm-node-10916987295": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916987295"
+      ]
+    },
+    "osm-node-10916987303": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916987303"
+      ]
+    },
+    "osm-node-10916987547": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916987547"
+      ]
+    },
+    "osm-node-10916987550": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10916987550"
+      ]
+    },
+    "osm-node-10917004313": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10917004313"
+      ]
+    },
+    "osm-node-10917575602": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10917575602"
+      ]
+    },
+    "osm-node-10917598017": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10917598017"
+      ]
+    },
+    "osm-node-10917598022": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10917598022"
+      ]
+    },
+    "osm-node-10920739555": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10920739555",
+        "node/10920739557"
+      ]
+    },
+    "osm-node-10922654364": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10922654364"
+      ]
+    },
+    "osm-node-10927030882": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10927030882",
+        "node/10927030883",
+        "node/10927030884"
+      ]
+    },
+    "osm-node-10930938357": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10930938357"
+      ]
+    },
+    "osm-node-10932505968": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932505968"
+      ]
+    },
+    "osm-node-10932505970": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932505970"
+      ]
+    },
+    "osm-node-10932505987": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932505987"
+      ]
+    },
+    "osm-node-10932520146": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932520146"
+      ]
+    },
+    "osm-node-10932520147": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932520147"
+      ]
+    },
+    "osm-node-10932520148": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932520148"
+      ]
+    },
+    "osm-node-10932520150": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932520150"
+      ]
+    },
+    "osm-node-10932520151": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932520151"
+      ]
+    },
+    "osm-node-10932520154": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932520154"
+      ]
+    },
+    "osm-node-10932520175": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10932520175"
+      ]
+    },
+    "osm-node-10935435547": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10935435547"
+      ]
+    },
+    "osm-node-10935435561": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10935435561"
+      ]
+    },
+    "osm-node-10935435566": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10935435566"
+      ]
+    },
+    "osm-node-10935435567": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10935435567"
+      ]
+    },
+    "osm-node-10935435568": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10935435568"
+      ]
+    },
+    "osm-node-10935435569": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10935435569"
+      ]
+    },
+    "osm-node-10935435570": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10935435570"
+      ]
+    },
+    "osm-node-10935435589": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10935435589"
+      ]
+    },
+    "osm-node-10948354947": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10948354947"
+      ]
+    },
+    "osm-node-10949239401": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10949239401"
+      ]
+    },
+    "osm-node-10951904725": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10951904725"
+      ]
+    },
+    "osm-node-10958808436": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10958808436"
+      ]
+    },
+    "osm-node-10967309762": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10967309762"
+      ]
+    },
+    "osm-node-10968396090": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/10968396090"
+      ]
+    },
+    "osm-node-11036341760": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11036341760"
+      ]
+    },
+    "osm-node-11094506041": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11094506041"
+      ]
+    },
+    "osm-node-11154326905": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11154326905"
+      ]
+    },
+    "osm-node-11167799190": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11167799190"
+      ]
+    },
+    "osm-node-11206398468": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11206398468"
+      ]
+    },
+    "osm-node-11218674398": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11218674398"
+      ]
+    },
+    "osm-node-11218674416": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11218674416"
+      ]
+    },
+    "osm-node-11226086762": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11226086762"
+      ]
+    },
+    "osm-node-11228919005": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11228919005"
+      ]
+    },
+    "osm-node-11228919016": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11228919016"
+      ]
+    },
+    "osm-node-11231060001": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11231060001"
+      ]
+    },
+    "osm-node-11235954228": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11235954228"
+      ]
+    },
+    "osm-node-11236470692": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11236470692"
+      ]
+    },
+    "osm-node-11246022428": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11246022428"
+      ]
+    },
+    "osm-node-11246054344": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11246054344"
+      ]
+    },
+    "osm-node-11253808515": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11253808515"
+      ]
+    },
+    "osm-node-11253808516": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11253808516"
+      ]
+    },
+    "osm-node-11253808518": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11253808518"
+      ]
+    },
+    "osm-node-11253808830": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11253808830"
+      ]
+    },
+    "osm-node-11253808831": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11253808831"
+      ]
+    },
+    "osm-node-11260204409": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204409",
+        "way/1215373031"
+      ]
+    },
+    "osm-node-11260204565": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204565"
+      ]
+    },
+    "osm-node-11260204566": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204566"
+      ]
+    },
+    "osm-node-11260204571": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204571"
+      ]
+    },
+    "osm-node-11260204572": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204572"
+      ]
+    },
+    "osm-node-11260204586": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204586"
+      ]
+    },
+    "osm-node-11260204617": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204617"
+      ]
+    },
+    "osm-node-11260204618": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204618"
+      ]
+    },
+    "osm-node-11260204619": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204619"
+      ]
+    },
+    "osm-node-11260204620": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204620"
+      ]
+    },
+    "osm-node-11260204621": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204621"
+      ]
+    },
+    "osm-node-11260204622": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11260204622"
+      ]
+    },
+    "osm-node-11261604668": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11261604668"
+      ]
+    },
+    "osm-node-11261604680": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11261604680"
+      ]
+    },
+    "osm-node-11261604681": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11261604681"
+      ]
+    },
+    "osm-node-11261604712": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11261604712"
+      ]
+    },
+    "osm-node-11261604949": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11261604949"
+      ]
+    },
+    "osm-node-11261605053": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11261605053"
+      ]
+    },
+    "osm-node-11261605055": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11261605055"
+      ]
+    },
+    "osm-node-11261605056": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11261605056"
+      ]
+    },
+    "osm-node-11261605058": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11261605058"
+      ]
+    },
+    "osm-node-11282529877": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11282529877"
+      ]
+    },
+    "osm-node-11282529878": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11282529878"
+      ]
+    },
+    "osm-node-11282529879": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11282529879"
+      ]
+    },
+    "osm-node-11361299231": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11361299231"
+      ]
+    },
+    "osm-node-11361299232": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11361299232"
+      ]
+    },
+    "osm-node-11362502528": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11362502528"
+      ]
+    },
+    "osm-node-11362502529": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11362502529"
+      ]
+    },
+    "osm-node-11362549393": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11362549393"
+      ]
+    },
+    "osm-node-11362549394": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11362549394"
+      ]
+    },
+    "osm-node-11363255577": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11363255577"
+      ]
+    },
+    "osm-node-11363255578": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11363255578"
+      ]
+    },
+    "osm-node-11363255579": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11363255579"
+      ]
+    },
+    "osm-node-11517889333": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11517889333"
+      ]
+    },
+    "osm-node-11565396243": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11565396243"
+      ]
+    },
+    "osm-node-11565396244": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11565396244"
+      ]
+    },
+    "osm-node-11738002089": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11738002089"
+      ]
+    },
+    "osm-node-11738002153": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11738002153"
+      ]
+    },
+    "osm-node-11738002154": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11738002154"
+      ]
+    },
+    "osm-node-11738012469": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11738012469"
+      ]
+    },
+    "osm-node-11742427776": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11742427776"
+      ]
+    },
+    "osm-node-11746112952": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11746112952"
+      ]
+    },
+    "osm-node-11756812055": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11756812055"
+      ]
+    },
+    "osm-node-11910807316": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11910807316"
+      ]
+    },
+    "osm-node-11910807352": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11910807352"
+      ]
+    },
+    "osm-node-11911390185": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11911390185"
+      ]
+    },
+    "osm-node-11911390186": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11911390186"
+      ]
+    },
+    "osm-node-11911390191": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11911390191"
+      ]
+    },
+    "osm-node-11911390192": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11911390192"
+      ]
+    },
+    "osm-node-11927007154": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007154"
+      ]
+    },
+    "osm-node-11927007155": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007155"
+      ]
+    },
+    "osm-node-11927007231": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007231"
+      ]
+    },
+    "osm-node-11927007232": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007232"
+      ]
+    },
+    "osm-node-11927007233": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007233"
+      ]
+    },
+    "osm-node-11927007267": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007267"
+      ]
+    },
+    "osm-node-11927007268": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007268"
+      ]
+    },
+    "osm-node-11927007269": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007269"
+      ]
+    },
+    "osm-node-11927007481": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007481"
+      ]
+    },
+    "osm-node-11927007483": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007483"
+      ]
+    },
+    "osm-node-11927007512": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007512"
+      ]
+    },
+    "osm-node-11927007513": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007513"
+      ]
+    },
+    "osm-node-11927007517": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007517"
+      ]
+    },
+    "osm-node-11927007520": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007520"
+      ]
+    },
+    "osm-node-11927007523": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007523"
+      ]
+    },
+    "osm-node-11927007531": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11927007531"
+      ]
+    },
+    "osm-node-11929512555": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512555"
+      ]
+    },
+    "osm-node-11929512556": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512556"
+      ]
+    },
+    "osm-node-11929512557": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512557"
+      ]
+    },
+    "osm-node-11929512558": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512558"
+      ]
+    },
+    "osm-node-11929512741": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512741"
+      ]
+    },
+    "osm-node-11929512772": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512772"
+      ]
+    },
+    "osm-node-11929512773": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512773"
+      ]
+    },
+    "osm-node-11929512851": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512851"
+      ]
+    },
+    "osm-node-11929512852": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512852"
+      ]
+    },
+    "osm-node-11929512857": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11929512857"
+      ]
+    },
+    "osm-node-11931215948": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931215948"
+      ]
+    },
+    "osm-node-11931225584": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931225584"
+      ]
+    },
+    "osm-node-11931225586": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931225586"
+      ]
+    },
+    "osm-node-11931225630": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931225630"
+      ]
+    },
+    "osm-node-11931225652": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931225652"
+      ]
+    },
+    "osm-node-11931225653": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931225653"
+      ]
+    },
+    "osm-node-11931225654": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931225654"
+      ]
+    },
+    "osm-node-11931225655": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931225655"
+      ]
+    },
+    "osm-node-11931225656": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931225656"
+      ]
+    },
+    "osm-node-11931226039": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931226039"
+      ]
+    },
+    "osm-node-11931226040": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11931226040"
+      ]
+    },
+    "osm-node-11938239471": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/11938239471"
+      ]
+    },
+    "osm-node-12018395159": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12018395159"
+      ]
+    },
+    "osm-node-12018395161": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12018395161"
+      ]
+    },
+    "osm-node-12018395162": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12018395162"
+      ]
+    },
+    "osm-node-12018395163": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12018395163"
+      ]
+    },
+    "osm-node-12059635169": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12059635169"
+      ]
+    },
+    "osm-node-12060192467": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12060192467"
+      ]
+    },
+    "osm-node-12060351370": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12060351370"
+      ]
+    },
+    "osm-node-12060378869": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12060378869"
+      ]
+    },
+    "osm-node-12078701745": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12078701745"
+      ]
+    },
+    "osm-node-12079058083": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12079058083",
+        "node/12079065782"
+      ]
+    },
+    "osm-node-12107051501": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12107051501"
+      ]
+    },
+    "osm-node-12109432601": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12109432601"
+      ]
+    },
+    "osm-node-12109605601": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12109605601"
+      ]
+    },
+    "osm-node-12138583711": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12138583711"
+      ]
+    },
+    "osm-node-12142738127": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12142738127"
+      ]
+    },
+    "osm-node-12142738167": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12142738167"
+      ]
+    },
+    "osm-node-12164390310": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12164390310"
+      ]
+    },
+    "osm-node-12164398901": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12164398901"
+      ]
+    },
+    "osm-node-12164756005": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12164756005"
+      ]
+    },
+    "osm-node-12164756006": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12164756006"
+      ]
+    },
+    "osm-node-12165718021": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12165718021"
+      ]
+    },
+    "osm-node-12166088791": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12166088791"
+      ]
+    },
+    "osm-node-12167162348": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12167162348"
+      ]
+    },
+    "osm-node-12167167386": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12167167386"
+      ]
+    },
+    "osm-node-12167167387": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12167167387"
+      ]
+    },
+    "osm-node-12167167389": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12167167389"
+      ]
+    },
+    "osm-node-12167167390": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12167167390"
+      ]
+    },
+    "osm-node-12167167450": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12167167450"
+      ]
+    },
+    "osm-node-12167167451": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12167167451"
+      ]
+    },
+    "osm-node-12231684913": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12231684913"
+      ]
+    },
+    "osm-node-12242534344": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12242534344"
+      ]
+    },
+    "osm-node-12244853923": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12244853923"
+      ]
+    },
+    "osm-node-12244853924": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12244853924"
+      ]
+    },
+    "osm-node-12244853925": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12244853925"
+      ]
+    },
+    "osm-node-12244853926": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12244853926"
+      ]
+    },
+    "osm-node-12244877840": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12244877840"
+      ]
+    },
+    "osm-node-12247306229": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12247306229"
+      ]
+    },
+    "osm-node-12404579237": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12404579237"
+      ]
+    },
+    "osm-node-12404588576": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12404588576"
+      ]
+    },
+    "osm-node-12494933327": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12494933327"
+      ]
+    },
+    "osm-node-12494939233": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12494939233"
+      ]
+    },
+    "osm-node-12495121945": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495121945"
+      ]
+    },
+    "osm-node-12495139538": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495139538"
+      ]
+    },
+    "osm-node-12495151729": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495151729"
+      ]
+    },
+    "osm-node-12495157196": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495157196"
+      ]
+    },
+    "osm-node-12495325926": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495325926"
+      ]
+    },
+    "osm-node-12495327371": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495327371"
+      ]
+    },
+    "osm-node-12495328029": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495328029"
+      ]
+    },
+    "osm-node-12495330703": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495330703"
+      ]
+    },
+    "osm-node-12495338035": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495338035"
+      ]
+    },
+    "osm-node-12495338036": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495338036"
+      ]
+    },
+    "osm-node-12495338108": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495338108"
+      ]
+    },
+    "osm-node-12495338501": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495338501"
+      ]
+    },
+    "osm-node-12495347391": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12495347391"
+      ]
+    },
+    "osm-node-12583188600": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12583188600"
+      ]
+    },
+    "osm-node-12660442797": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12660442797"
+      ]
+    },
+    "osm-node-12771536257": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12771536257"
+      ]
+    },
+    "osm-node-12778901121": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12778901121"
+      ]
+    },
+    "osm-node-12817472374": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12817472374"
+      ]
+    },
+    "osm-node-12817472375": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12817472375"
+      ]
+    },
+    "osm-node-12817472376": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12817472376"
+      ]
+    },
+    "osm-node-12817472385": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12817472385"
+      ]
+    },
+    "osm-node-12817472554": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12817472554"
+      ]
+    },
+    "osm-node-12817472555": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12817472555"
+      ]
+    },
+    "osm-node-12821010826": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821010826"
+      ]
+    },
+    "osm-node-12821010827": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821010827"
+      ]
+    },
+    "osm-node-12821010828": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821010828"
+      ]
+    },
+    "osm-node-12821010829": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821010829"
+      ]
+    },
+    "osm-node-12821010831": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821010831"
+      ]
+    },
+    "osm-node-12821010855": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821010855"
+      ]
+    },
+    "osm-node-12821010856": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821010856"
+      ]
+    },
+    "osm-node-12821010863": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821010863"
+      ]
+    },
+    "osm-node-12821011035": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821011035"
+      ]
+    },
+    "osm-node-12821011161": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821011161"
+      ]
+    },
+    "osm-node-12821011167": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821011167"
+      ]
+    },
+    "osm-node-12821011168": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12821011168"
+      ]
+    },
+    "osm-node-12840768983": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12840768983"
+      ]
+    },
+    "osm-node-12908255801": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12908255801"
+      ]
+    },
+    "osm-node-12957777801": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12957777801"
+      ]
+    },
+    "osm-node-12957844301": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/12957844301"
+      ]
+    },
+    "osm-node-13043390026": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13043390026"
+      ]
+    },
+    "osm-node-13043390027": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13043390027"
+      ]
+    },
+    "osm-node-13043390028": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13043390028"
+      ]
+    },
+    "osm-node-13043390029": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13043390029"
+      ]
+    },
+    "osm-node-13043390030": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13043390030"
+      ]
+    },
+    "osm-node-13043390031": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13043390031"
+      ]
+    },
+    "osm-node-1304519227": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1304519227"
+      ]
+    },
+    "osm-node-1304519229": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1304519229"
+      ]
+    },
+    "osm-node-1304560464": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1304560464"
+      ]
+    },
+    "osm-node-1304560479": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1304560479"
+      ]
+    },
+    "osm-node-1304560482": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1304560482"
+      ]
+    },
+    "osm-node-13061061803": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13061061803"
+      ]
+    },
+    "osm-node-13085620301": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13085620301"
+      ]
+    },
+    "osm-node-13240062778": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13240062778"
+      ]
+    },
+    "osm-node-13240063286": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13240063286"
+      ]
+    },
+    "osm-node-13240063289": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13240063289"
+      ]
+    },
+    "osm-node-13241327969": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241327969"
+      ]
+    },
+    "osm-node-13241327970": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241327970"
+      ]
+    },
+    "osm-node-13241327971": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241327971"
+      ]
+    },
+    "osm-node-13241327972": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241327972"
+      ]
+    },
+    "osm-node-13241327973": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241327973"
+      ]
+    },
+    "osm-node-13241327976": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241327976"
+      ]
+    },
+    "osm-node-13241327986": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241327986"
+      ]
+    },
+    "osm-node-13241328017": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328017"
+      ]
+    },
+    "osm-node-13241328045": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328045"
+      ]
+    },
+    "osm-node-13241328083": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328083"
+      ]
+    },
+    "osm-node-13241328084": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328084"
+      ]
+    },
+    "osm-node-13241328085": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328085"
+      ]
+    },
+    "osm-node-13241328087": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328087",
+        "node/13241328141"
+      ]
+    },
+    "osm-node-13241328088": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328088"
+      ]
+    },
+    "osm-node-13241328089": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328089"
+      ]
+    },
+    "osm-node-13241328090": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328090"
+      ]
+    },
+    "osm-node-13241328121": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328121"
+      ]
+    },
+    "osm-node-13241328147": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328147"
+      ]
+    },
+    "osm-node-13241328148": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13241328148"
+      ]
+    },
+    "osm-node-13328857057": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857057"
+      ]
+    },
+    "osm-node-13328857058": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857058"
+      ]
+    },
+    "osm-node-13328857059": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857059"
+      ]
+    },
+    "osm-node-13328857060": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857060"
+      ]
+    },
+    "osm-node-13328857061": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857061"
+      ]
+    },
+    "osm-node-13328857062": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857062"
+      ]
+    },
+    "osm-node-13328857063": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857063"
+      ]
+    },
+    "osm-node-13328857064": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857064"
+      ]
+    },
+    "osm-node-13328857069": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857069"
+      ]
+    },
+    "osm-node-13328857070": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857070"
+      ]
+    },
+    "osm-node-13328857071": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13328857071"
+      ]
+    },
+    "osm-node-13454338673": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13454338673"
+      ]
+    },
+    "osm-node-13454338675": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13454338675"
+      ]
+    },
+    "osm-node-13454364602": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13454364602"
+      ]
+    },
+    "osm-node-13454364603": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13454364603"
+      ]
+    },
+    "osm-node-13454364604": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13454364604"
+      ]
+    },
+    "osm-node-13454364605": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13454364605"
+      ]
+    },
+    "osm-node-13454364606": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13454364606"
+      ]
+    },
+    "osm-node-13461323810": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323810"
+      ]
+    },
+    "osm-node-13461323811": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323811"
+      ]
+    },
+    "osm-node-13461323812": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323812"
+      ]
+    },
+    "osm-node-13461323813": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323813"
+      ]
+    },
+    "osm-node-13461323814": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323814"
+      ]
+    },
+    "osm-node-13461323815": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323815"
+      ]
+    },
+    "osm-node-13461323850": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323850"
+      ]
+    },
+    "osm-node-13461323851": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323851"
+      ]
+    },
+    "osm-node-13461323862": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323862"
+      ]
+    },
+    "osm-node-13461323863": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323863"
+      ]
+    },
+    "osm-node-13461323867": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323867"
+      ]
+    },
+    "osm-node-13461323868": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461323868"
+      ]
+    },
+    "osm-node-13461324090": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461324090"
+      ]
+    },
+    "osm-node-13461324094": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461324094"
+      ]
+    },
+    "osm-node-13461324096": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461324096"
+      ]
+    },
+    "osm-node-13461324098": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461324098"
+      ]
+    },
+    "osm-node-13461324103": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461324103"
+      ]
+    },
+    "osm-node-13461324120": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13461324120"
+      ]
+    },
+    "osm-node-13469675537": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13469675537"
+      ]
+    },
+    "osm-node-13469675544": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13469675544"
+      ]
+    },
+    "osm-node-13469675546": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13469675546"
+      ]
+    },
+    "osm-node-13518360127": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360127"
+      ]
+    },
+    "osm-node-13518360128": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360128"
+      ]
+    },
+    "osm-node-13518360129": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360129"
+      ]
+    },
+    "osm-node-13518360130": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360130"
+      ]
+    },
+    "osm-node-13518360140": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360140"
+      ]
+    },
+    "osm-node-13518360153": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360153"
+      ]
+    },
+    "osm-node-13518360554": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360554"
+      ]
+    },
+    "osm-node-13518360556": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360556"
+      ]
+    },
+    "osm-node-13518360663": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360663"
+      ]
+    },
+    "osm-node-13518360678": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518360678"
+      ]
+    },
+    "osm-node-13518704024": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518704024"
+      ]
+    },
+    "osm-node-13518704025": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518704025"
+      ]
+    },
+    "osm-node-13518704026": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518704026"
+      ]
+    },
+    "osm-node-13518704035": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518704035"
+      ]
+    },
+    "osm-node-13518704036": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518704036"
+      ]
+    },
+    "osm-node-13518704037": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518704037"
+      ]
+    },
+    "osm-node-13518704042": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13518704042"
+      ]
+    },
+    "osm-node-13738957336": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13738957336"
+      ]
+    },
+    "osm-node-13929643201": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13929643201"
+      ]
+    },
+    "osm-node-13929952785": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13929952785"
+      ]
+    },
+    "osm-node-13932148101": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13932148101"
+      ]
+    },
+    "osm-node-13932651501": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/13932651501"
+      ]
+    },
+    "osm-node-14049566901": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/14049566901"
+      ]
+    },
+    "osm-node-14073725102": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/14073725102"
+      ]
+    },
+    "osm-node-14148803339": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/14148803339"
+      ]
+    },
+    "osm-node-14166828501": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/14166828501"
+      ]
+    },
+    "osm-node-14166828601": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/14166828601"
+      ]
+    },
+    "osm-node-14278474088": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/14278474088"
+      ]
+    },
+    "osm-node-14312712701": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/14312712701",
+        "node/1907720762"
+      ]
+    },
+    "osm-node-1623423044": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1623423044"
+      ]
+    },
+    "osm-node-1623434016": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1623434016"
+      ]
+    },
+    "osm-node-1623434017": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1623434017"
+      ]
+    },
+    "osm-node-1623434027": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1623434027"
+      ]
+    },
+    "osm-node-1623439427": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1623439427"
+      ]
+    },
+    "osm-node-1623439428": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1623439428"
+      ]
+    },
+    "osm-node-1623439435": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1623439435"
+      ]
+    },
+    "osm-node-1647469449": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1647469449"
+      ]
+    },
+    "osm-node-1710875491": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1710875491"
+      ]
+    },
+    "osm-node-1780021166": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1780021166"
+      ]
+    },
+    "osm-node-1840046604": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1840046604",
+        "way/1328646203"
+      ]
+    },
+    "osm-node-1886398365": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1886398365"
+      ]
+    },
+    "osm-node-1898626832": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1898626832",
+        "node/1898626836"
+      ]
+    },
+    "osm-node-1907734423": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1907734423"
+      ]
+    },
+    "osm-node-1907734438": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1907734438",
+        "way/229826661"
+      ]
+    },
+    "osm-node-1907735686": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1907735686"
+      ]
+    },
+    "osm-node-1909048485": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1909048485"
+      ]
+    },
+    "osm-node-1928909125": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/1928909125"
+      ]
+    },
+    "osm-node-2125873449": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2125873449"
+      ]
+    },
+    "osm-node-2125873583": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2125873583"
+      ]
+    },
+    "osm-node-2126854601": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2126854601"
+      ]
+    },
+    "osm-node-2126939910": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2126939910"
+      ]
+    },
+    "osm-node-2126966387": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2126966387"
+      ]
+    },
+    "osm-node-2127004351": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2127004351"
+      ]
+    },
+    "osm-node-2127007823": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2127007823"
+      ]
+    },
+    "osm-node-2128371758": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2128371758",
+        "way/521561445"
+      ]
+    },
+    "osm-node-2128375286": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2128375286"
+      ]
+    },
+    "osm-node-2128380227": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2128380227"
+      ]
+    },
+    "osm-node-2128381753": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2128381753"
+      ]
+    },
+    "osm-node-2161969578": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2161969578"
+      ]
+    },
+    "osm-node-2163837927": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2163837927"
+      ]
+    },
+    "osm-node-2163837930": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2163837930"
+      ]
+    },
+    "osm-node-2338829853": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2338829853"
+      ]
+    },
+    "osm-node-2446133703": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133703"
+      ]
+    },
+    "osm-node-2446133708": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133708"
+      ]
+    },
+    "osm-node-2446133709": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133709"
+      ]
+    },
+    "osm-node-2446133711": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133711"
+      ]
+    },
+    "osm-node-2446133715": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133715"
+      ]
+    },
+    "osm-node-2446133718": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133718"
+      ]
+    },
+    "osm-node-2446133722": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133722"
+      ]
+    },
+    "osm-node-2446133725": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133725"
+      ]
+    },
+    "osm-node-2446133728": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133728"
+      ]
+    },
+    "osm-node-2446133731": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133731"
+      ]
+    },
+    "osm-node-2446133734": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133734"
+      ]
+    },
+    "osm-node-2446133737": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133737"
+      ]
+    },
+    "osm-node-2446133740": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133740"
+      ]
+    },
+    "osm-node-2446133743": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133743"
+      ]
+    },
+    "osm-node-2446133748": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133748"
+      ]
+    },
+    "osm-node-2446133753": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133753"
+      ]
+    },
+    "osm-node-2446133762": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133762"
+      ]
+    },
+    "osm-node-2446133770": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133770"
+      ]
+    },
+    "osm-node-2446133781": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446133781"
+      ]
+    },
+    "osm-node-2446175228": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446175228"
+      ]
+    },
+    "osm-node-2446175231": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446175231"
+      ]
+    },
+    "osm-node-2446175308": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446175308"
+      ]
+    },
+    "osm-node-2446175314": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446175314"
+      ]
+    },
+    "osm-node-2446175370": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446175370"
+      ]
+    },
+    "osm-node-2446175376": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446175376"
+      ]
+    },
+    "osm-node-2446175382": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446175382"
+      ]
+    },
+    "osm-node-2446175387": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446175387"
+      ]
+    },
+    "osm-node-2446175391": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446175391"
+      ]
+    },
+    "osm-node-2446524292": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446524292",
+        "way/1384774812"
+      ]
+    },
+    "osm-node-2446524293": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446524293"
+      ]
+    },
+    "osm-node-2446524300": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446524300"
+      ]
+    },
+    "osm-node-2446524302": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446524302"
+      ]
+    },
+    "osm-node-2446539807": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446539807"
+      ]
+    },
+    "osm-node-2446539810": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446539810"
+      ]
+    },
+    "osm-node-2446539830": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2446539830"
+      ]
+    },
+    "osm-node-251714502": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/251714502",
+        "node/251714504",
+        "relation/20162998"
+      ]
+    },
+    "osm-node-251714507": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/251714507",
+        "node/7840662762"
+      ]
+    },
+    "osm-node-251714508": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/251714508",
+        "node/251714729"
+      ]
+    },
+    "osm-node-251714728": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/251714728"
+      ]
+    },
+    "osm-node-251714731": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/251714731"
+      ]
+    },
+    "osm-node-263378769": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/263378769"
+      ]
+    },
+    "osm-node-263388342": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/263388342"
+      ]
+    },
+    "osm-node-263399270": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/263399270"
+      ]
+    },
+    "osm-node-2635797060": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2635797060"
+      ]
+    },
+    "osm-node-269826379": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/269826379"
+      ]
+    },
+    "osm-node-295230317": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/295230317"
+      ]
+    },
+    "osm-node-2956258930": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2956258930"
+      ]
+    },
+    "osm-node-2956258972": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2956258972"
+      ]
+    },
+    "osm-node-2956591978": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2956591978"
+      ]
+    },
+    "osm-node-2956595835": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2956595835"
+      ]
+    },
+    "osm-node-2958087775": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2958087775"
+      ]
+    },
+    "osm-node-2958087913": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2958087913"
+      ]
+    },
+    "osm-node-2958088084": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/2958088084"
+      ]
+    },
+    "osm-node-3028311143": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3028311143"
+      ]
+    },
+    "osm-node-3028311147": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3028311147"
+      ]
+    },
+    "osm-node-3028699694": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3028699694"
+      ]
+    },
+    "osm-node-3028699699": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3028699699"
+      ]
+    },
+    "osm-node-3028699706": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3028699706"
+      ]
+    },
+    "osm-node-3033150065": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3033150065"
+      ]
+    },
+    "osm-node-3033150066": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3033150066"
+      ]
+    },
+    "osm-node-3119311236": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3119311236"
+      ]
+    },
+    "osm-node-3119311237": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3119311237"
+      ]
+    },
+    "osm-node-3312054044": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3312054044"
+      ]
+    },
+    "osm-node-3358736031": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3358736031"
+      ]
+    },
+    "osm-node-341202582": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/341202582"
+      ]
+    },
+    "osm-node-341203803": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/341203803"
+      ]
+    },
+    "osm-node-341211830": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/341211830"
+      ]
+    },
+    "osm-node-348002836": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/348002836"
+      ]
+    },
+    "osm-node-348002838": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/348002838",
+        "node/348002839"
+      ]
+    },
+    "osm-node-3497804450": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3497804450"
+      ]
+    },
+    "osm-node-3645169388": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3645169388"
+      ]
+    },
+    "osm-node-3645175303": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3645175303"
+      ]
+    },
+    "osm-node-3664589828": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3664589828"
+      ]
+    },
+    "osm-node-3680774230": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3680774230"
+      ]
+    },
+    "osm-node-3756374927": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3756374927"
+      ]
+    },
+    "osm-node-3756374928": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3756374928"
+      ]
+    },
+    "osm-node-3968317572": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/3968317572"
+      ]
+    },
+    "osm-node-4110275069": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4110275069"
+      ]
+    },
+    "osm-node-4110686120": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4110686120"
+      ]
+    },
+    "osm-node-4198745630": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4198745630"
+      ]
+    },
+    "osm-node-4198745631": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4198745631"
+      ]
+    },
+    "osm-node-4198745634": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4198745634"
+      ]
+    },
+    "osm-node-4198745635": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4198745635"
+      ]
+    },
+    "osm-node-4198745636": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4198745636"
+      ]
+    },
+    "osm-node-4198745639": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4198745639"
+      ]
+    },
+    "osm-node-4218161190": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4218161190"
+      ]
+    },
+    "osm-node-4221098311": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4221098311"
+      ]
+    },
+    "osm-node-4283195198": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4283195198"
+      ]
+    },
+    "osm-node-4283389294": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4283389294"
+      ]
+    },
+    "osm-node-4286780199": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4286780199"
+      ]
+    },
+    "osm-node-4306486005": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4306486005"
+      ]
+    },
+    "osm-node-4320323389": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4320323389"
+      ]
+    },
+    "osm-node-4341498300": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4341498300",
+        "node/4341498302"
+      ]
+    },
+    "osm-node-4346791266": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4346791266"
+      ]
+    },
+    "osm-node-4346791271": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4346791271"
+      ]
+    },
+    "osm-node-4360578790": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4360578790"
+      ]
+    },
+    "osm-node-4369869322": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4369869322"
+      ]
+    },
+    "osm-node-4371151969": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4371151969"
+      ]
+    },
+    "osm-node-4415896089": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4415896089"
+      ]
+    },
+    "osm-node-4423693589": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4423693589",
+        "way/476718879"
+      ]
+    },
+    "osm-node-4425687869": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4425687869"
+      ]
+    },
+    "osm-node-4425687871": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4425687871"
+      ]
+    },
+    "osm-node-4579809746": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4579809746"
+      ]
+    },
+    "osm-node-4580056600": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4580056600"
+      ]
+    },
+    "osm-node-4700312530": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4700312530",
+        "way/1359414937"
+      ]
+    },
+    "osm-node-4700324059": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4700324059"
+      ]
+    },
+    "osm-node-4700327793": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4700327793"
+      ]
+    },
+    "osm-node-4700328234": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4700328234"
+      ]
+    },
+    "osm-node-4712635059": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4712635059"
+      ]
+    },
+    "osm-node-4754031024": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4754031024"
+      ]
+    },
+    "osm-node-4770571823": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4770571823"
+      ]
+    },
+    "osm-node-4782016009": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4782016009"
+      ]
+    },
+    "osm-node-4860815021": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4860815021"
+      ]
+    },
+    "osm-node-4913912321": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4913912321"
+      ]
+    },
+    "osm-node-4932630921": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4932630921"
+      ]
+    },
+    "osm-node-4934524222": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4934524222"
+      ]
+    },
+    "osm-node-4934524321": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4934524321"
+      ]
+    },
+    "osm-node-4987288822": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/4987288822"
+      ]
+    },
+    "osm-node-5033360022": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5033360022"
+      ]
+    },
+    "osm-node-5078962345": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5078962345"
+      ]
+    },
+    "osm-node-510118698": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/510118698"
+      ]
+    },
+    "osm-node-5109473123": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5109473123"
+      ]
+    },
+    "osm-node-5111932321": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5111932321"
+      ]
+    },
+    "osm-node-5111932621": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5111932621"
+      ]
+    },
+    "osm-node-5120652406": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5120652406"
+      ]
+    },
+    "osm-node-5122306427": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5122306427"
+      ]
+    },
+    "osm-node-5128339721": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5128339721"
+      ]
+    },
+    "osm-node-5160023921": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5160023921"
+      ]
+    },
+    "osm-node-5163876623": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5163876623"
+      ]
+    },
+    "osm-node-5163894323": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5163894323"
+      ]
+    },
+    "osm-node-5163898321": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5163898321"
+      ]
+    },
+    "osm-node-5164268825": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5164268825"
+      ]
+    },
+    "osm-node-5164280421": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5164280421"
+      ]
+    },
+    "osm-node-5164280721": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5164280721"
+      ]
+    },
+    "osm-node-5166456325": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5166456325"
+      ]
+    },
+    "osm-node-5166458428": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5166458428"
+      ]
+    },
+    "osm-node-5166458429": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5166458429"
+      ]
+    },
+    "osm-node-5168326922": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5168326922"
+      ]
+    },
+    "osm-node-5168327021": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5168327021"
+      ]
+    },
+    "osm-node-5168327022": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5168327022"
+      ]
+    },
+    "osm-node-5586370422": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5586370422",
+        "way/360369802"
+      ]
+    },
+    "osm-node-5618377421": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5618377421"
+      ]
+    },
+    "osm-node-5658589293": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5658589293"
+      ]
+    },
+    "osm-node-5676300888": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5676300888"
+      ]
+    },
+    "osm-node-5712713721": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5712713721"
+      ]
+    },
+    "osm-node-5718369823": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5718369823"
+      ]
+    },
+    "osm-node-573052706": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/573052706"
+      ]
+    },
+    "osm-node-5754658117": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5754658117"
+      ]
+    },
+    "osm-node-5768945453": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5768945453"
+      ]
+    },
+    "osm-node-579055392": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/579055392"
+      ]
+    },
+    "osm-node-5847750685": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5847750685"
+      ]
+    },
+    "osm-node-5847750786": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5847750786"
+      ]
+    },
+    "osm-node-5866688285": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5866688285"
+      ]
+    },
+    "osm-node-5872595186": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5872595186"
+      ]
+    },
+    "osm-node-5939962011": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/5939962011"
+      ]
+    },
+    "osm-node-613568544": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/613568544"
+      ]
+    },
+    "osm-node-613569247": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/613569247"
+      ]
+    },
+    "osm-node-613775985": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/613775985"
+      ]
+    },
+    "osm-node-614436602": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/614436602"
+      ]
+    },
+    "osm-node-614438811": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/614438811"
+      ]
+    },
+    "osm-node-614531539": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/614531539"
+      ]
+    },
+    "osm-node-616963574": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/616963574"
+      ]
+    },
+    "osm-node-616963583": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/616963583"
+      ]
+    },
+    "osm-node-6463472085": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6463472085"
+      ]
+    },
+    "osm-node-6463515086": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6463515086"
+      ]
+    },
+    "osm-node-6463515087": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6463515087"
+      ]
+    },
+    "osm-node-6463517385": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6463517385"
+      ]
+    },
+    "osm-node-6463563787": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6463563787"
+      ]
+    },
+    "osm-node-6463563790": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6463563790"
+      ]
+    },
+    "osm-node-6463585286": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6463585286"
+      ]
+    },
+    "osm-node-6463585287": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6463585287"
+      ]
+    },
+    "osm-node-6463585785": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6463585785"
+      ]
+    },
+    "osm-node-6465972386": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6465972386"
+      ]
+    },
+    "osm-node-6466057086": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6466057086"
+      ]
+    },
+    "osm-node-6466062885": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6466062885"
+      ]
+    },
+    "osm-node-6466513085": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6466513085"
+      ]
+    },
+    "osm-node-6467331285": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6467331285"
+      ]
+    },
+    "osm-node-6467331286": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6467331286"
+      ]
+    },
+    "osm-node-6467331885": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6467331885"
+      ]
+    },
+    "osm-node-6467353585": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6467353585"
+      ]
+    },
+    "osm-node-6472383086": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6472383086"
+      ]
+    },
+    "osm-node-6472399686": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6472399686"
+      ]
+    },
+    "osm-node-6472399785": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6472399785"
+      ]
+    },
+    "osm-node-6534562486": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6534562486"
+      ]
+    },
+    "osm-node-6538388987": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6538388987"
+      ]
+    },
+    "osm-node-6568269405": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6568269405"
+      ]
+    },
+    "osm-node-661745584": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/661745584"
+      ]
+    },
+    "osm-node-6634677990": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6634677990"
+      ]
+    },
+    "osm-node-6734079286": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6734079286"
+      ]
+    },
+    "osm-node-6741251688": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6741251688"
+      ]
+    },
+    "osm-node-6747212698": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6747212698"
+      ]
+    },
+    "osm-node-6753883187": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6753883187"
+      ]
+    },
+    "osm-node-6773214765": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6773214765"
+      ]
+    },
+    "osm-node-678180329": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678180329",
+        "relation/18153956"
+      ]
+    },
+    "osm-node-678181564": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678181564"
+      ]
+    },
+    "osm-node-678185323": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678185323"
+      ]
+    },
+    "osm-node-678186631": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678186631"
+      ]
+    },
+    "osm-node-678187048": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678187048"
+      ]
+    },
+    "osm-node-678240636": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678240636"
+      ]
+    },
+    "osm-node-678241304": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678241304"
+      ]
+    },
+    "osm-node-6783676568": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6783676568"
+      ]
+    },
+    "osm-node-6783712313": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6783712313"
+      ]
+    },
+    "osm-node-678937141": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678937141"
+      ]
+    },
+    "osm-node-678977633": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678977633"
+      ]
+    },
+    "osm-node-678980567": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678980567"
+      ]
+    },
+    "osm-node-678981146": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678981146"
+      ]
+    },
+    "osm-node-678981409": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678981409"
+      ]
+    },
+    "osm-node-678981448": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/678981448"
+      ]
+    },
+    "osm-node-6800206707": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6800206707"
+      ]
+    },
+    "osm-node-6800868585": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6800868585"
+      ]
+    },
+    "osm-node-6848890886": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6848890886"
+      ]
+    },
+    "osm-node-6873509385": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6873509385"
+      ]
+    },
+    "osm-node-6928883743": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6928883743"
+      ]
+    },
+    "osm-node-6928883744": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6928883744"
+      ]
+    },
+    "osm-node-6928917300": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6928917300"
+      ]
+    },
+    "osm-node-6928917301": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/6928917301"
+      ]
+    },
+    "osm-node-702052647": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/702052647"
+      ]
+    },
+    "osm-node-702052654": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/702052654"
+      ]
+    },
+    "osm-node-7129721966": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7129721966"
+      ]
+    },
+    "osm-node-7129721967": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7129721967"
+      ]
+    },
+    "osm-node-730190647": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/730190647",
+        "node/730190833"
+      ]
+    },
+    "osm-node-730190648": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/730190648"
+      ]
+    },
+    "osm-node-773189928": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/773189928"
+      ]
+    },
+    "osm-node-7810430605": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7810430605"
+      ]
+    },
+    "osm-node-7810430664": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7810430664"
+      ]
+    },
+    "osm-node-7811434213": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7811434213"
+      ]
+    },
+    "osm-node-7811434231": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7811434231"
+      ]
+    },
+    "osm-node-7816336990": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7816336990"
+      ]
+    },
+    "osm-node-7816337000": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7816337000",
+        "way/362080655"
+      ]
+    },
+    "osm-node-7816337002": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7816337002"
+      ]
+    },
+    "osm-node-7816337003": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7816337003"
+      ]
+    },
+    "osm-node-7816337009": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7816337009"
+      ]
+    },
+    "osm-node-7816337014": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7816337014"
+      ]
+    },
+    "osm-node-7816337054": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7816337054"
+      ]
+    },
+    "osm-node-7816337055": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7816337055"
+      ]
+    },
+    "osm-node-7816337056": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/7816337056"
+      ]
+    },
+    "osm-node-802380518": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/802380518"
+      ]
+    },
+    "osm-node-8228676017": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/8228676017"
+      ]
+    },
+    "osm-node-8282254080": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/8282254080"
+      ]
+    },
+    "osm-node-8893512632": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/8893512632"
+      ]
+    },
+    "osm-node-9247432002": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/9247432002"
+      ]
+    },
+    "osm-node-9248601429": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/9248601429"
+      ]
+    },
+    "osm-node-926052153": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/926052153"
+      ]
+    },
+    "osm-node-926052157": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/926052157"
+      ]
+    },
+    "osm-node-926082940": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/926082940"
+      ]
+    },
+    "osm-node-926082953": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/926082953",
+        "way/476718866"
+      ]
+    },
+    "osm-node-936688935": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/936688935"
+      ]
+    },
+    "osm-node-9763300509": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/9763300509"
+      ]
+    },
+    "osm-node-9763335393": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/9763335393"
+      ]
+    },
+    "osm-node-9900601298": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/9900601298"
+      ]
+    },
+    "osm-node-9922467799": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/9922467799"
+      ]
+    },
+    "osm-node-9934675763": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/9934675763"
+      ]
+    },
+    "osm-node-9995457488": {
+      "kind": "mapped-node",
+      "osmIds": [
+        "node/9995457488",
+        "node/9995457489"
+      ]
+    },
+    "osm-relation-13434699": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/13434699"
+      ]
+    },
+    "osm-relation-15061801": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15061801"
+      ]
+    },
+    "osm-relation-15062030": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15062030"
+      ]
+    },
+    "osm-relation-15062268": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15062268"
+      ]
+    },
+    "osm-relation-15063628": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15063628"
+      ]
+    },
+    "osm-relation-15094469": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15094469"
+      ]
+    },
+    "osm-relation-15094510": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15094510"
+      ]
+    },
+    "osm-relation-15870971": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15870971"
+      ]
+    },
+    "osm-relation-15879088": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15879088"
+      ]
+    },
+    "osm-relation-15950148": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15950148",
+        "way/1177119068"
+      ]
+    },
+    "osm-relation-15954204": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15954204"
+      ]
+    },
+    "osm-relation-15956484": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/15956484"
+      ]
+    },
+    "osm-relation-16502437": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/16502437"
+      ]
+    },
+    "osm-relation-16812065": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/16812065"
+      ]
+    },
+    "osm-relation-17305732": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/17305732"
+      ]
+    },
+    "osm-relation-17305733": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/17305733"
+      ]
+    },
+    "osm-relation-17626143": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/17626143"
+      ]
+    },
+    "osm-relation-18099392": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/18099392"
+      ]
+    },
+    "osm-relation-18135276": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/18135276"
+      ]
+    },
+    "osm-relation-18197373": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/18197373"
+      ]
+    },
+    "osm-relation-18219513": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/18219513"
+      ]
+    },
+    "osm-relation-18220779": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/18220779"
+      ]
+    },
+    "osm-relation-18238475": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/18238475"
+      ]
+    },
+    "osm-relation-18238904": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/18238904"
+      ]
+    },
+    "osm-relation-18335545": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/18335545"
+      ]
+    },
+    "osm-relation-20162995": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/20162995"
+      ]
+    },
+    "osm-relation-20162996": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/20162996"
+      ]
+    },
+    "osm-relation-20162997": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/20162997"
+      ]
+    },
+    "osm-relation-20162999": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/20162999"
+      ]
+    },
+    "osm-relation-2048785": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/2048785"
+      ]
+    },
+    "osm-relation-20572576": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/20572576"
+      ]
+    },
+    "osm-relation-2670922": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/2670922"
+      ]
+    },
+    "osm-relation-385115": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/385115"
+      ]
+    },
+    "osm-relation-6364530": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/6364530"
+      ]
+    },
+    "osm-relation-6364669": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/6364669"
+      ]
+    },
+    "osm-relation-6364810": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/6364810"
+      ]
+    },
+    "osm-relation-6365995": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/6365995"
+      ]
+    },
+    "osm-relation-6403766": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/6403766"
+      ]
+    },
+    "osm-relation-6989305": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "relation/6989305"
+      ]
+    },
+    "osm-way-1056682582": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1056682582"
+      ]
+    },
+    "osm-way-1056702293": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1056702293"
+      ]
+    },
+    "osm-way-1115997891": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1115997891"
+      ]
+    },
+    "osm-way-1125680978": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1125680978"
+      ]
+    },
+    "osm-way-1125699790": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1125699790"
+      ]
+    },
+    "osm-way-1126010029": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1126010029"
+      ]
+    },
+    "osm-way-1127745474": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1127745474"
+      ]
+    },
+    "osm-way-1127827292": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1127827292"
+      ]
+    },
+    "osm-way-1136004765": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1136004765"
+      ]
+    },
+    "osm-way-1149003772": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1149003772"
+      ]
+    },
+    "osm-way-1165521585": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1165521585"
+      ]
+    },
+    "osm-way-1174431630": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1174431630"
+      ]
+    },
+    "osm-way-1178803876": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1178803876"
+      ]
+    },
+    "osm-way-1181044564": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1181044564"
+      ]
+    },
+    "osm-way-1184091588": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1184091588"
+      ]
+    },
+    "osm-way-1184324138": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1184324138"
+      ]
+    },
+    "osm-way-1190085720": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1190085720"
+      ]
+    },
+    "osm-way-1190871809": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1190871809"
+      ]
+    },
+    "osm-way-1191529496": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1191529496"
+      ]
+    },
+    "osm-way-1192240896": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1192240896"
+      ]
+    },
+    "osm-way-1192240900": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1192240900"
+      ]
+    },
+    "osm-way-1192240901": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1192240901"
+      ]
+    },
+    "osm-way-1193667976": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1193667976"
+      ]
+    },
+    "osm-way-1193790765": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1193790765"
+      ]
+    },
+    "osm-way-1208174812": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1208174812"
+      ]
+    },
+    "osm-way-1210851376": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1210851376"
+      ]
+    },
+    "osm-way-1211716525": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1211716525"
+      ]
+    },
+    "osm-way-1211716529": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1211716529"
+      ]
+    },
+    "osm-way-1211716530": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1211716530"
+      ]
+    },
+    "osm-way-1211716533": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1211716533"
+      ]
+    },
+    "osm-way-1214639984": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1214639984"
+      ]
+    },
+    "osm-way-1215469340": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1215469340",
+        "way/1215469341"
+      ]
+    },
+    "osm-way-1217659512": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1217659512"
+      ]
+    },
+    "osm-way-1219588476": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1219588476"
+      ]
+    },
+    "osm-way-1230422889": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1230422889"
+      ]
+    },
+    "osm-way-1230422913": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1230422913"
+      ]
+    },
+    "osm-way-1259779790": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1259779790"
+      ]
+    },
+    "osm-way-1263550995": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1263550995"
+      ]
+    },
+    "osm-way-1263557754": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1263557754"
+      ]
+    },
+    "osm-way-1263557755": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1263557755"
+      ]
+    },
+    "osm-way-1263872774": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1263872774"
+      ]
+    },
+    "osm-way-1263872775": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1263872775"
+      ]
+    },
+    "osm-way-128099231": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/128099231"
+      ]
+    },
+    "osm-way-128099286": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/128099286"
+      ]
+    },
+    "osm-way-1283751329": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1283751329"
+      ]
+    },
+    "osm-way-1283751358": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1283751358"
+      ]
+    },
+    "osm-way-1283819521": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1283819521"
+      ]
+    },
+    "osm-way-1285779744": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1285779744"
+      ]
+    },
+    "osm-way-1285779783": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1285779783"
+      ]
+    },
+    "osm-way-1285779832": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1285779832"
+      ]
+    },
+    "osm-way-1285779835": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1285779835"
+      ]
+    },
+    "osm-way-1285779857": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1285779857"
+      ]
+    },
+    "osm-way-1286119882": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1286119882"
+      ]
+    },
+    "osm-way-1286344017": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1286344017"
+      ]
+    },
+    "osm-way-1286344018": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1286344018"
+      ]
+    },
+    "osm-way-1286344022": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1286344022"
+      ]
+    },
+    "osm-way-1304306877": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1304306877"
+      ]
+    },
+    "osm-way-1304306879": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1304306879"
+      ]
+    },
+    "osm-way-1304306880": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1304306880"
+      ]
+    },
+    "osm-way-1311844975": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1311844975"
+      ]
+    },
+    "osm-way-1318906043": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1318906043"
+      ]
+    },
+    "osm-way-1319915136": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1319915136"
+      ]
+    },
+    "osm-way-1321543471": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1321543471"
+      ]
+    },
+    "osm-way-1321878420": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1321878420"
+      ]
+    },
+    "osm-way-1322749335": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1322749335"
+      ]
+    },
+    "osm-way-1322987310": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1322987310"
+      ]
+    },
+    "osm-way-1359414954": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1359414954"
+      ]
+    },
+    "osm-way-1384387906": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1384387906"
+      ]
+    },
+    "osm-way-1384387941": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1384387941"
+      ]
+    },
+    "osm-way-1384387942": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1384387942"
+      ]
+    },
+    "osm-way-1384387957": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1384387957"
+      ]
+    },
+    "osm-way-1384774727": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1384774727"
+      ]
+    },
+    "osm-way-1384774788": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1384774788"
+      ]
+    },
+    "osm-way-1384774790": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1384774790"
+      ]
+    },
+    "osm-way-1443063936": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1443063936"
+      ]
+    },
+    "osm-way-1443063960": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1443063960"
+      ]
+    },
+    "osm-way-1467693027": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693027"
+      ]
+    },
+    "osm-way-1467693056": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693056"
+      ]
+    },
+    "osm-way-1467693068": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693068"
+      ]
+    },
+    "osm-way-1467693069": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693069"
+      ]
+    },
+    "osm-way-1467693070": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693070"
+      ]
+    },
+    "osm-way-1467693071": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693071"
+      ]
+    },
+    "osm-way-1467693073": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693073"
+      ]
+    },
+    "osm-way-1467693084": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693084"
+      ]
+    },
+    "osm-way-1467693100": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693100"
+      ]
+    },
+    "osm-way-1467693101": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693101"
+      ]
+    },
+    "osm-way-1467693104": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693104"
+      ]
+    },
+    "osm-way-1467693105": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1467693105"
+      ]
+    },
+    "osm-way-1473479984": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1473479984"
+      ]
+    },
+    "osm-way-1473480024": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1473480024"
+      ]
+    },
+    "osm-way-1473480025": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1473480025"
+      ]
+    },
+    "osm-way-1473480043": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1473480043"
+      ]
+    },
+    "osm-way-1473480077": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1473480077"
+      ]
+    },
+    "osm-way-1473480078": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1473480078"
+      ]
+    },
+    "osm-way-1491963778": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/1491963778"
+      ]
+    },
+    "osm-way-156123298": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/156123298"
+      ]
+    },
+    "osm-way-164774816": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/164774816"
+      ]
+    },
+    "osm-way-167123033": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/167123033"
+      ]
+    },
+    "osm-way-167999572": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/167999572"
+      ]
+    },
+    "osm-way-179683440": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/179683440"
+      ]
+    },
+    "osm-way-185113417": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/185113417"
+      ]
+    },
+    "osm-way-202233108": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202233108"
+      ]
+    },
+    "osm-way-202233113": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202233113"
+      ]
+    },
+    "osm-way-202233166": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202233166"
+      ]
+    },
+    "osm-way-202233167": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202233167"
+      ]
+    },
+    "osm-way-202739088": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202739088"
+      ]
+    },
+    "osm-way-202755721": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202755721"
+      ]
+    },
+    "osm-way-202758979": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202758979"
+      ]
+    },
+    "osm-way-202758980": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202758980"
+      ]
+    },
+    "osm-way-202758981": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202758981"
+      ]
+    },
+    "osm-way-202758982": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202758982"
+      ]
+    },
+    "osm-way-202758983": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202758983"
+      ]
+    },
+    "osm-way-202758984": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202758984"
+      ]
+    },
+    "osm-way-202760591": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202760591"
+      ]
+    },
+    "osm-way-202864187": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/202864187"
+      ]
+    },
+    "osm-way-206186545": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/206186545"
+      ]
+    },
+    "osm-way-206189134": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/206189134"
+      ]
+    },
+    "osm-way-206189242": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/206189242"
+      ]
+    },
+    "osm-way-206189597": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/206189597"
+      ]
+    },
+    "osm-way-206263147": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/206263147"
+      ]
+    },
+    "osm-way-206263232": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/206263232"
+      ]
+    },
+    "osm-way-206263562": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/206263562"
+      ]
+    },
+    "osm-way-206378005": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/206378005"
+      ]
+    },
+    "osm-way-206378598": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/206378598"
+      ]
+    },
+    "osm-way-207576269": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/207576269"
+      ]
+    },
+    "osm-way-208141586": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/208141586"
+      ]
+    },
+    "osm-way-212197451": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/212197451"
+      ]
+    },
+    "osm-way-213934456": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/213934456"
+      ]
+    },
+    "osm-way-222234048": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/222234048"
+      ]
+    },
+    "osm-way-222238380": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/222238380"
+      ]
+    },
+    "osm-way-222238381": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/222238381"
+      ]
+    },
+    "osm-way-222343389": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/222343389"
+      ]
+    },
+    "osm-way-222343441": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/222343441"
+      ]
+    },
+    "osm-way-222343587": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/222343587"
+      ]
+    },
+    "osm-way-222343598": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/222343598"
+      ]
+    },
+    "osm-way-222343606": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/222343606"
+      ]
+    },
+    "osm-way-224667671": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/224667671"
+      ]
+    },
+    "osm-way-226594257": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/226594257"
+      ]
+    },
+    "osm-way-229826698": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/229826698"
+      ]
+    },
+    "osm-way-23302423": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/23302423"
+      ]
+    },
+    "osm-way-24306324": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/24306324"
+      ]
+    },
+    "osm-way-24306334": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/24306334"
+      ]
+    },
+    "osm-way-24308823": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/24308823"
+      ]
+    },
+    "osm-way-24823530": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/24823530"
+      ]
+    },
+    "osm-way-24823536": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/24823536"
+      ]
+    },
+    "osm-way-24823567": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/24823567"
+      ]
+    },
+    "osm-way-24823568": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/24823568"
+      ]
+    },
+    "osm-way-24823574": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/24823574"
+      ]
+    },
+    "osm-way-24823809": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/24823809"
+      ]
+    },
+    "osm-way-261437212": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/261437212"
+      ]
+    },
+    "osm-way-261437219": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/261437219"
+      ]
+    },
+    "osm-way-261437228": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/261437228"
+      ]
+    },
+    "osm-way-262311606": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/262311606"
+      ]
+    },
+    "osm-way-262311609": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/262311609"
+      ]
+    },
+    "osm-way-26752321": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/26752321"
+      ]
+    },
+    "osm-way-286145795": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/286145795"
+      ]
+    },
+    "osm-way-29113986": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/29113986"
+      ]
+    },
+    "osm-way-29123387": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/29123387"
+      ]
+    },
+    "osm-way-291933632": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/291933632"
+      ]
+    },
+    "osm-way-29234142": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/29234142"
+      ]
+    },
+    "osm-way-32878815": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/32878815"
+      ]
+    },
+    "osm-way-355556355": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/355556355"
+      ]
+    },
+    "osm-way-356877446": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/356877446"
+      ]
+    },
+    "osm-way-357009017": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/357009017"
+      ]
+    },
+    "osm-way-360348041": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/360348041"
+      ]
+    },
+    "osm-way-360369804": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/360369804"
+      ]
+    },
+    "osm-way-360376438": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/360376438"
+      ]
+    },
+    "osm-way-360549318": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/360549318"
+      ]
+    },
+    "osm-way-360554453": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/360554453"
+      ]
+    },
+    "osm-way-360559357": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/360559357"
+      ]
+    },
+    "osm-way-360559427": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/360559427"
+      ]
+    },
+    "osm-way-360767105": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/360767105"
+      ]
+    },
+    "osm-way-361785855": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/361785855"
+      ]
+    },
+    "osm-way-361785857": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/361785857"
+      ]
+    },
+    "osm-way-361785860": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/361785860"
+      ]
+    },
+    "osm-way-361926110": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/361926110"
+      ]
+    },
+    "osm-way-362080616": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080616"
+      ]
+    },
+    "osm-way-362080624": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080624"
+      ]
+    },
+    "osm-way-362080625": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080625"
+      ]
+    },
+    "osm-way-362080632": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080632"
+      ]
+    },
+    "osm-way-362080637": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080637"
+      ]
+    },
+    "osm-way-362080640": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080640"
+      ]
+    },
+    "osm-way-362080641": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080641"
+      ]
+    },
+    "osm-way-362080649": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080649"
+      ]
+    },
+    "osm-way-362080654": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080654"
+      ]
+    },
+    "osm-way-362080667": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362080667"
+      ]
+    },
+    "osm-way-362088452": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362088452"
+      ]
+    },
+    "osm-way-362088457": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362088457"
+      ]
+    },
+    "osm-way-362088458": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362088458"
+      ]
+    },
+    "osm-way-362088459": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362088459"
+      ]
+    },
+    "osm-way-362088460": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362088460"
+      ]
+    },
+    "osm-way-362088472": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362088472"
+      ]
+    },
+    "osm-way-362089410": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362089410"
+      ]
+    },
+    "osm-way-362089413": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362089413"
+      ]
+    },
+    "osm-way-362089421": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362089421"
+      ]
+    },
+    "osm-way-362089428": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362089428"
+      ]
+    },
+    "osm-way-362089431": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362089431"
+      ]
+    },
+    "osm-way-362089433": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362089433"
+      ]
+    },
+    "osm-way-362089446": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362089446"
+      ]
+    },
+    "osm-way-362089465": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/362089465"
+      ]
+    },
+    "osm-way-363970991": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/363970991"
+      ]
+    },
+    "osm-way-37011624": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/37011624"
+      ]
+    },
+    "osm-way-37017985": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/37017985"
+      ]
+    },
+    "osm-way-40017165": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/40017165"
+      ]
+    },
+    "osm-way-409177338": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/409177338"
+      ]
+    },
+    "osm-way-409177344": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/409177344"
+      ]
+    },
+    "osm-way-416506131": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/416506131"
+      ]
+    },
+    "osm-way-416506132": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/416506132"
+      ]
+    },
+    "osm-way-416506148": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/416506148"
+      ]
+    },
+    "osm-way-430454020": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/430454020"
+      ]
+    },
+    "osm-way-433879158": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/433879158"
+      ]
+    },
+    "osm-way-436272890": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/436272890"
+      ]
+    },
+    "osm-way-436635665": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/436635665",
+        "way/584130520"
+      ]
+    },
+    "osm-way-436976098": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/436976098",
+        "way/436976100"
+      ]
+    },
+    "osm-way-436976101": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/436976101",
+        "way/436976102"
+      ]
+    },
+    "osm-way-469702778": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/469702778"
+      ]
+    },
+    "osm-way-469702787": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/469702787"
+      ]
+    },
+    "osm-way-469702794": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/469702794"
+      ]
+    },
+    "osm-way-476428301": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/476428301"
+      ]
+    },
+    "osm-way-476708347": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/476708347"
+      ]
+    },
+    "osm-way-476718998": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/476718998"
+      ]
+    },
+    "osm-way-476721234": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/476721234"
+      ]
+    },
+    "osm-way-476762501": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/476762501"
+      ]
+    },
+    "osm-way-476764452": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/476764452"
+      ]
+    },
+    "osm-way-48289197": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/48289197"
+      ]
+    },
+    "osm-way-48295302": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/48295302"
+      ]
+    },
+    "osm-way-48295612": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/48295612"
+      ]
+    },
+    "osm-way-48303777": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/48303777"
+      ]
+    },
+    "osm-way-48363748": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/48363748"
+      ]
+    },
+    "osm-way-498407968": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/498407968"
+      ]
+    },
+    "osm-way-498407971": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/498407971"
+      ]
+    },
+    "osm-way-513435991": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/513435991"
+      ]
+    },
+    "osm-way-526595235": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/526595235"
+      ]
+    },
+    "osm-way-53720439": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/53720439"
+      ]
+    },
+    "osm-way-53720441": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/53720441"
+      ]
+    },
+    "osm-way-53720731": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/53720731"
+      ]
+    },
+    "osm-way-53720778": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/53720778"
+      ]
+    },
+    "osm-way-53785277": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/53785277"
+      ]
+    },
+    "osm-way-53785278": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/53785278"
+      ]
+    },
+    "osm-way-53786389": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/53786389"
+      ]
+    },
+    "osm-way-543619258": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/543619258"
+      ]
+    },
+    "osm-way-56117045": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/56117045"
+      ]
+    },
+    "osm-way-56117046": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/56117046"
+      ]
+    },
+    "osm-way-584130515": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/584130515"
+      ]
+    },
+    "osm-way-584166723": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/584166723"
+      ]
+    },
+    "osm-way-584374838": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/584374838"
+      ]
+    },
+    "osm-way-613315976": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/613315976"
+      ]
+    },
+    "osm-way-613315979": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/613315979"
+      ]
+    },
+    "osm-way-620123917": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/620123917"
+      ]
+    },
+    "osm-way-711887699": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/711887699"
+      ]
+    },
+    "osm-way-764291428": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/764291428"
+      ]
+    },
+    "osm-way-764291434": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/764291434"
+      ]
+    },
+    "osm-way-764291439": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/764291439"
+      ]
+    },
+    "osm-way-764431732": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/764431732"
+      ]
+    },
+    "osm-way-764431742": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/764431742"
+      ]
+    },
+    "osm-way-764431753": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/764431753"
+      ]
+    },
+    "osm-way-764431759": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/764431759"
+      ]
+    },
+    "osm-way-764540300": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/764540300"
+      ]
+    },
+    "osm-way-764674174": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/764674174"
+      ]
+    },
+    "osm-way-836973000": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/836973000"
+      ]
+    },
+    "osm-way-837614822": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/837614822"
+      ]
+    },
+    "osm-way-860241437": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/860241437"
+      ]
+    },
+    "osm-way-955903919": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/955903919"
+      ]
+    },
+    "osm-way-96520057": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/96520057"
+      ]
+    },
+    "osm-way-971007533": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/971007533"
+      ]
+    },
+    "osm-way-971467527": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/971467527"
+      ]
+    },
+    "osm-way-994072666": {
+      "kind": "bounding-box-center",
+      "osmIds": [
+        "way/994072666"
+      ]
+    },
+    "property-fairmont-banff-springs": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://all.accor.com/hotel/A550/index.en.shtml"
+    },
+    "property-rimrock-banff": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://all.accor.com/hotel/C1W0/index.en.shtml"
+    },
+    "property-banff-park-lodge": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://www.banffparklodge.com/contact-us/"
+    },
+    "property-hi-banff-alpine-centre": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://hihostels.ca/en/hostels/hi-banff"
+    },
+    "property-malcolm-hotel": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://www.malcolmhotel.ca/"
+    },
+    "property-coast-canmore-hotel": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://www.coasthotels.com/coast-canmore-hotel-and-conference-centre"
+    },
+    "property-fairmont-chateau-lake-louise": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://www.fairmont.com/en/hotels/lake-louise/fairmont-chateau-lake-louise/location-contact.html"
+    },
+    "property-lake-louise-inn": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://www.lakelouiseinn.com/contact/"
+    },
+    "property-mountaineer-lodge": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://mountaineerlodge.com/"
+    },
+    "property-post-hotel-spa": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://posthotel.com/"
+    },
+    "property-banff-boundary-lodge": {
+      "kind": "publisher-locator",
+      "sourceUrl": "https://mdbighorn.ca/AgendaCenter/ViewFile/Agenda/_08182025-921"
+    }
+  },
+  "limits": [
+    "Community mapping and dated publisher locators; not surveyed entrances or navigation.",
+    "No live opening, occupancy, operation, accessibility, drinking-water quality or availability inference.",
+    "Menus are official reviewed links only; no copied menu items, prices or automatic vendor requests."
+  ]
+}
