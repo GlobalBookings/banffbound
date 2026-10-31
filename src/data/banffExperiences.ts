@@ -3,6 +3,9 @@ import lakesTransport from './banffExperienceProducts/lakes-transport.json';
 import additional from './banffExperienceProducts/additional.json';
 import miscellaneous from './banffExperienceProducts/miscellaneous.json';
 import railHistory from './banffExperienceProducts/rail-history.json';
+import specialistA from './banffExperienceProducts/specialist-a.json';
+import specialistB from './banffExperienceProducts/specialist-b.json';
+import specialistC from './banffExperienceProducts/specialist-c.json';
 import inventory from './banffExperienceInventory.json';
 import groups from './banffExperienceGroups.json';
 import { getExperiencePhoto } from './banffExperiencePhotos';
@@ -111,7 +114,7 @@ function partition(value: unknown): ExperiencePartition {
   if (result.schemaVersion !== undefined && result.schemaVersion !== 1) throw new Error('Unsupported experience schema.');
   return result;
 }
-const partitions = [adventures, lakesTransport, additional, miscellaneous, railHistory].map(partition);
+const partitions = [adventures, lakesTransport, additional, miscellaneous, railHistory, specialistA, specialistB, specialistC].map(partition);
 const inventoryObject = inventory as unknown as { products: (ExperienceIdentity & { title?: string })[]; excluded?: { productId: string; reason: string }[] };
 if (!inventoryObject || !Array.isArray(inventoryObject.products)) throw new Error('Experience inventory needs a product identity array.');
 const identityMap = new Map<string, ExperienceIdentity>();
@@ -174,6 +177,7 @@ export const banffExperienceGroups: BanffExperienceGroup[] = (rawGroups as Exper
     .sort((a, b) => optionRank(a) - optionRank(b) || (a.details?.title || a.optionTitle).localeCompare(b.details?.title || b.optionTitle));
   const primary = optionMap.get(productId(raw.primaryProductId));
   if (!primary || !ids.includes(primary.productId)) throw new Error(`Group ${id} must name one of its own options as primary.`);
+  if (!primary.details) throw new Error(`Group ${id} needs a full-description review for its primary booking option.`);
   if (!['ready', 'held'].includes(raw.launchState)) throw new Error(`Group ${id} needs an explicit paid-readiness state.`);
   const previous = activityBookingOffers.find(offer => offer.productId === primary.productId);
   if (raw.launchState === 'ready' && (!primary.details || primary.details.launchState !== 'ready' || previous?.launchState === 'held')) throw new Error(`Group ${id} cannot launch without a fully reviewed, ready exact primary.`);
@@ -198,7 +202,7 @@ export const banffExperienceGroups: BanffExperienceGroup[] = (rawGroups as Exper
   };
 }).sort((a, b) => a.title.localeCompare(b.title, 'en'));
 /** Directory entries are substantive groups, never individual listing pages. */
-export const banffExperiences = banffExperienceGroups;
+export const banffExperiences = [...banffExperienceGroups].sort((a, b) => Number(b.launchState === 'ready') - Number(a.launchState === 'ready') || a.title.localeCompare(b.title, 'en'));
 export const newExperienceGuides = banffExperienceGroups.filter(group => !group.existingGuidePath);
 export const experienceCategories = [...new Map(banffExperienceGroups.map(group => [group.categoryId, { value: group.categoryId, label: group.categoryLabel }])).values()]
   .sort((a, b) => a.label.localeCompare(b.label)).map(option => ({ ...option, count: banffExperienceGroups.filter(group => group.categoryId === option.value).length }));

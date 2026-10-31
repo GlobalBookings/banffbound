@@ -223,7 +223,7 @@
       "canonicalPath": "/experiences/banff-vintage-open-top-touring/",
       "aliases": [],
       "category": "Town & creative",
-      "departure": "Published Banff touring pickup arrangements",
+      "departure": "100 Gopher Street, Banff",
       "primaryProductId": "827226",
       "launchState": "held",
       "productIds": [
@@ -306,7 +306,7 @@
       "canonicalPath": "/experiences/banff-photography-session-tour-options/",
       "aliases": [],
       "category": "Town & creative",
-      "departure": "Published Banff-area meeting options",
+      "departure": "Published Calgary pickup and other Banff-area meeting options",
       "primaryProductId": "1509976",
       "launchState": "held",
       "productIds": [
@@ -499,7 +499,7 @@
       "canonicalPath": "/experiences/banff-self-guided-audio-driving-tour/",
       "aliases": [],
       "category": "Town & creative",
-      "departure": "Self-directed driving route and published activation instructions",
+      "departure": "Self-directed driving; download instructions supplied after booking",
       "primaryProductId": "420428",
       "launchState": "held",
       "productIds": [
@@ -512,7 +512,7 @@
       "canonicalPath": "/experiences/lake-minnewanka-fishing-charters/",
       "aliases": [],
       "category": "Water adventures",
-      "departure": "Published Lake Minnewanka charter arrangements",
+      "departure": "Lake Minnewanka meeting location; confirm the exact dock and check-in",
       "primaryProductId": "687955",
       "launchState": "held",
       "productIds": [
@@ -525,7 +525,7 @@
       "canonicalPath": "/experiences/banff-canmore-drumheller-badlands-day-trips/",
       "aliases": [],
       "category": "Lakes & road tours",
-      "departure": "Published Banff or Canmore starting arrangements",
+      "departure": "Selected Banff or Canmore pickup",
       "primaryProductId": "948703",
       "launchState": "held",
       "productIds": [
@@ -970,7 +970,7 @@
       "canonicalPath": "/experiences/lake-louise-guided-natural-ice-skating/",
       "aliases": [],
       "category": "Winter outings",
-      "departure": "Published Lake Louise skating meeting arrangements",
+      "departure": "Designated Banff or Canmore pickup points",
       "primaryProductId": "1440632",
       "launchState": "held",
       "productIds": [
@@ -1076,7 +1076,7 @@
       "canonicalPath": "/experiences/golden-snowmobile-tours-from-banff-canmore/",
       "aliases": [],
       "category": "Winter outings",
-      "departure": "Published Canmore or Banff meeting arrangements for Golden",
+      "departure": "Designated Canmore, Banff or Lake Louise pickup points",
       "primaryProductId": "971009",
       "launchState": "held",
       "productIds": [
@@ -1122,7 +1122,7 @@
       "canonicalPath": "/experiences/two-jack-lake-sunrise-johnston-canyon-tours/",
       "aliases": [],
       "category": "Lakes & road tours",
-      "departure": "Published Banff-area departure arrangements",
+      "departure": "Selected Banff or Canmore pickup and return",
       "primaryProductId": "1447669",
       "launchState": "held",
       "productIds": [
