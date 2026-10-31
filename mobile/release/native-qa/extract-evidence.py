@@ -22,6 +22,7 @@ REQUIRED_TESTS = ('test01CapturePrimaryScreens', 'test02SavedPlaceSurvivesRelaun
 BROWSER_SCREEN = 'qa-commerce-browser-screen'
 MAX_SCREEN_BYTES = 8 * 1024 * 1024
 MAX_ARTIFACT_BYTES = 48 * 1024 * 1024
+MAP_RESET_PLACEHOLDER = 'Restaurants, toilets, a favourite lake…'
 MAP_INPUT_QUERIES = ('Bison', 'Public Washrooms', 'zzzz-no-banff-place-qa-9481')
 COMMERCE_INPUT_QUERIES = (('tours', 'Banff Gondola admission'),
                           ('stays', 'Fairmont Banff Springs'),
@@ -142,8 +143,12 @@ def map_observation(records, exported, name):
                     'viewSwitchPreservedQueryAndFilters': True}
         if (any(observation.get(key) is not True for key in required)
                 or any(observation.get(key) != value for key, value in expected.items())
-                or re.fullmatch(r'[1-9][0-9]* places', str(observation.get('restoredResultCountLabel', ''))) is None):
+                or observation.get('restoredResultCountLabel') != '982 places'):
             raise ValueError('Executed map filters must select the precise sourced toilet, show facilities, close, reject an empty query and restore all results')
+        reset_value, reset_placeholder = observation.get('resetFieldValue'), observation.get('resetFieldPlaceholder')
+        if (observation.get('resetSearchFieldEmpty') is not True or reset_placeholder != MAP_RESET_PLACEHOLDER
+                or not isinstance(reset_value, str) or reset_value not in ('', reset_placeholder)):
+            raise ValueError('Native map reset must record the actual empty search field or its exact placeholder, independent of Clear button visibility')
     return observation
 
 
