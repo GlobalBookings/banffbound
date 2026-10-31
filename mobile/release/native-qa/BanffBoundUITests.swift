@@ -52,10 +52,19 @@ final class BanffBoundUITests: XCTestCase {
 
     private func scrollTo(_ label: String, attempts: Int = 12) {
         for _ in 0..<attempts {
-            if element(label).exists && element(label).isHittable { return }
-            // Main content / centered modal, outside the iPad navigation sidebar.
-            app.coordinate(withNormalizedOffset: CGVector(dx: 0.70, dy: 0.76))
-                .press(forDuration: 0.05, thenDragTo: app.coordinate(withNormalizedOffset: CGVector(dx: 0.70, dy: 0.30)))
+            let target = element(label)
+            let keyboard = app.keyboards.firstMatch
+            let keyboardTop = keyboard.exists ? keyboard.frame.minY : app.frame.maxY
+            if target.exists && target.isHittable && target.frame.maxY < keyboardTop { return }
+            // Drag the actual scroll content above the native keyboard, never its
+            // keys. This also works for centered iPad modals beside the sidebar.
+            let bottom = min(app.frame.minY + app.frame.height * 0.76, keyboardTop - 20)
+            let top = max(app.frame.minY + 140, bottom - 240)
+            XCTAssertGreaterThan(bottom - top, 40, "Need visible content above the keyboard to scroll")
+            let origin = app.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+            let x = app.frame.width * 0.70
+            origin.withOffset(CGVector(dx: x, dy: bottom - app.frame.minY))
+                .press(forDuration: 0.05, thenDragTo: origin.withOffset(CGVector(dx: x, dy: top - app.frame.minY)))
         }
         XCTFail("Could not scroll to \(label)")
     }
@@ -122,15 +131,8 @@ final class BanffBoundUITests: XCTestCase {
         adults.tap()
         let current = adults.value as? String ?? ""
         adults.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count) + "3")
-        if app.keyboards.firstMatch.exists {
-            // Numeric keyboards have no Done key. An unhandled label tap in the
-            // modal ScrollView dismisses it before any scrolling or save action.
-            let label = app.staticTexts.matching(NSPredicate(format: "label == 'Adults'")).firstMatch
-            XCTAssertTrue(label.isHittable, "Adults label must be visible to dismiss the keyboard")
-            label.tap()
-            let dismissed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.keyboards.firstMatch)
-            XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: 5), .completed, "Dismiss the native keyboard before scrolling")
-        }
+        // The form handles button taps while the numeric keyboard is open.
+        // Reach its actual Save control using the visible content above it.
         scrollTo("Save trip details")
         tap("Save trip details")
         XCTAssertFalse(element("Close panel").waitForExistence(timeout: 1), "Saving details must close the panel")
