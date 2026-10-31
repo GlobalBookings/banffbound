@@ -2,6 +2,8 @@
 export const winterActivityLandingId = 'banff-winter-activities';
 export const winterActivityReviewedAt = '2026-10-29';
 export const winterActivityCampaign = 'banffboundwinteractivities';
+export const winterActivityPaidCampaign = 'bb_ca_winter_50_test';
+export type WinterActivityTrafficVariant = 'organic' | 'google-test';
 export const winterActivityPartnerId = 'QW960HO';
 export const winterActivityClosureSource = 'https://parks.canada.ca/pn-np/ab/banff/bulletins/06d4ef61-a3c9-4b65-8dfc-66d056252d6c';
 
@@ -56,6 +58,16 @@ export const winterActivityOffers = [
     cta: 'Book now',
   },
 ].map(offer => ({ ...offer, bookingUrl: winterActivityBookingUrl(offer.productUrl) }));
+
+/** Build-time page variants only. No incoming query, identifier or client rewrite. */
+export function winterActivityOffersForTraffic(trafficVariant: WinterActivityTrafficVariant = 'organic') {
+  if (trafficVariant !== 'organic' && trafficVariant !== 'google-test') throw new Error('Unknown winter activity traffic variant.');
+  return winterActivityOffers.map(offer => {
+    const url = new URL(offer.bookingUrl);
+    if (trafficVariant === 'google-test') url.searchParams.set('cmp', winterActivityPaidCampaign);
+    return { ...offer, bookingUrl: url.href };
+  });
+}
 
 export const winterActivityFaqs = [
   { question: 'Which experience should I choose for a non-ski day?', answer: 'For a non-ski day, start with the gondola, a guided canyon walk or a Lake Louise outing. The wider shortlist includes snowshoeing, town sights and indoor alternatives. Match the walking, transport and weather exposure to everyone in your group; seasonal access and opening dates vary.' },

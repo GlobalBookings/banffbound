@@ -13,6 +13,8 @@ import { consentHarness, validConsent } from './lib/consent-harness.mjs';
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const ORIGIN = 'https://banffbound.com';
 const PAGE = 'src/pages/book/banff-winter-activities.astro';
+const PAID_PAGE = 'src/pages/book/banff-winter-activities/google-test.astro';
+const PAID_PATH = '/book/banff-winter-activities/google-test/';
 const CAROUSEL = 'src/components/ActivityCarousel.astro';
 const read = name => readFile(path.join(ROOT, name), 'utf8');
 globalThis.fetch = () => { throw Error('Winter landing checks are offline'); };
@@ -39,6 +41,22 @@ assert.equal(d.winterActivityReviewedAt, '2026-10-29');
 assert.equal(d.winterActivityCatalogueReviewedAt, '2026-10-30');
 assert.deepEqual(offers.map(o => [o.id,o.productId,o.provider,o.anchor,o.productUrl]), merchants);
 assert.equal(new Set(offers.map(o => o.format)).size, 3);
+assert.equal(d.winterActivityPaidCampaign,'bb_ca_winter_50_test');
+const originalOffers=JSON.stringify(offers);
+const paidOffers=d.winterActivityOffersForTraffic('google-test');
+const organicClones=d.winterActivityOffersForTraffic();
+assert.deepEqual(organicClones,offers,'Default helper preserves organic product fields and native hrefs');
+assert.notEqual(organicClones,offers);assert.notEqual(organicClones[0],offers[0]);
+assert.equal(paidOffers.length,3);
+for(const [index,offer]of paidOffers.entries()){
+  const paidUrl=new URL(offer.bookingUrl),organicUrl=new URL(offers[index].bookingUrl);
+  assert.deepEqual([...paidUrl.searchParams],[['partner_id','QW960HO'],['cmp','bb_ca_winter_50_test']]);
+  assert.equal(paidUrl.origin+paidUrl.pathname,organicUrl.origin+organicUrl.pathname);
+  assert.deepEqual({...offer,bookingUrl:offers[index].bookingUrl},offers[index],'Only the fixed paid campaign value differs');
+}
+for(const value of ['wrong','GOOGLE-TEST','bb_ca_winter_50_test','<script>',null,{},['google-test'],0,true])assert.throws(()=>d.winterActivityOffersForTraffic(value),'No arbitrary traffic variant/campaign value');
+const mutatedClone=d.winterActivityOffersForTraffic('google-test');mutatedClone[0].bookingUrl='https://example.test/changed';
+assert.equal(JSON.stringify(offers),originalOffers,'Returned variants cannot mutate the exported organic array');
 for (const offer of offers) {
   const url = new URL(offer.bookingUrl);
   assert.equal(url.origin, 'https://www.getyourguide.com');
@@ -138,7 +156,11 @@ for (const offer of offers) assert.ok(sourceNote.includes(offer.productUrl) && s
 for (const clause of ['3.1.8','3.1.10','5.3']) assert.ok(sourceNote.includes(clause));
 
 const page = await read(PAGE), carousel = await read(CAROUSEL);
-for (const [filename,source] of [[PAGE,page],[CAROUSEL,carousel]]) {
+const paidWrapper=await read(PAID_PAGE);
+assert.match(paidWrapper,/trafficVariant="google-test"/);
+const pageFrontmatter=page.split('---')[1];
+assert.ok(pageFrontmatter.includes('Astro.props')&&!/Astro\.url\.(?:search|searchParams)|Astro\.request|URLSearchParams|new URL/.test(pageFrontmatter),'Only an internal prop selects the statically generated variant');
+for (const [filename,source] of [[PAGE,page],[PAID_PAGE,paidWrapper],[CAROUSEL,carousel]]) {
   const compiled = await transform(source, {filename});
   assert.deepEqual(compiled.diagnostics.filter(diag => diag.severity === 1), []);
 }
@@ -154,9 +176,9 @@ const galleryClient = carousel.match(/<script>([\s\S]*?)<\/script>/)?.[1];
 assert.ok(client && galleryClient);
 assert.ok(!/\.booking-cta|a\[href|closest\([^)]*['"]a|window\.open|location\.(assign|replace)\(|\.href\s*=/.test(client), 'The category selector never intercepts or changes merchant links');
 
-async function renderActualPage() {
+async function renderActualPage({entry=PAGE,route='/book/banff-winter-activities/',query='email=PRIVATE_WINTER_READER&gclid=PRIVATE_WINTER_CLICK',props={}}={}) {
   const require = createRequire(import.meta.url);
-  const result = await build({stdin:{contents:"export {default} from './" + PAGE + "';",resolveDir:ROOT},absWorkingDir:ROOT,bundle:true,write:false,platform:'node',format:'esm',logLevel:'silent',plugins:[{name:'actual-winter-astro',setup(b){
+  const result = await build({stdin:{contents:"export {default} from './" + entry + "';",resolveDir:ROOT},absWorkingDir:ROOT,bundle:true,write:false,platform:'node',format:'esm',logLevel:'silent',plugins:[{name:'actual-winter-astro',setup(b){
     b.onResolve({filter:/^astro\//},a=>({path:pathToFileURL(require.resolve(a.path)).href,external:true}));
     b.onResolve({filter:/(?:\?astro&type=style|\.css$)/},a=>({path:a.path,namespace:'winter-style'}));
     b.onLoad({filter:/.*/,namespace:'winter-style'},()=>({contents:'export {};'}));
@@ -169,7 +191,7 @@ async function renderActualPage() {
   }}]});
   const Page=(await import('data:text/javascript;base64,'+Buffer.from(result.outputFiles[0].text).toString('base64'))).default;
   const container=await experimental_AstroContainer.create();
-  return container.renderToString(Page,{request:new Request(ORIGIN+'/book/banff-winter-activities/?email=PRIVATE_WINTER_READER&gclid=PRIVATE_WINTER_CLICK')});
+  return container.renderToString(Page,{request:new Request(ORIGIN+route+'?'+query),props});
 }
 function walk(node) { return [node,...(node.childNodes ?? []).flatMap(walk),...(node.content ? walk(node.content) : [])]; }
 const attr = (node,name) => node?.attrs?.find(item=>item.name===name)?.value;
@@ -181,13 +203,17 @@ const txt = node => normal(text(node));
 function ctaLabel(node) { if(attr(node,'aria-hidden')==='true')return '';return node?.nodeName==='#text'?node.value:(node?.childNodes??[]).map(ctaLabel).join(''); }
 const label = node => normal(ctaLabel(node));
 const anchorFor = activity => offers.find(o=>o.id===activity.bookingOfferId)?.anchor ?? activity.id;
-function inspect(markup, scriptingEnabled=true) {
+function inspect(markup, scriptingEnabled=true,trafficVariant='organic') {
+  const activeOffers=trafficVariant==='google-test'?paidOffers:offers;
   const nodes=walk(parse(markup,{scriptingEnabled,sourceCodeLocationInfo:true}));
   const byId=id=>{const hits=nodes.filter(n=>attr(n,'id')===id);assert.equal(hits.length,1,'Unique #'+id);return hits[0];};
   const links=nodes.filter(n=>n.tagName==='a');
   assert.equal(nodes.filter(n=>n.tagName==='h1').length,1);
   assert.equal(txt(nodes.find(n=>n.tagName==='h1')),'Top 20 winter activities in Banff');
   assert.equal(attr(nodes.find(n=>n.tagName==='link'&&attr(n,'rel')==='canonical'),'href'),ORIGIN+'/book/banff-winter-activities/');
+  const robots=nodes.filter(n=>n.tagName==='meta'&&attr(n,'name')==='robots');
+  if(trafficVariant==='google-test'){assert.equal(robots.length,1);assert.equal(attr(robots[0],'content'),'noindex, follow');assert.equal(attr(nodes.find(n=>n.tagName==='body'),'data-pagefind-ignore'),'all');}
+  else{assert.ok(!robots.some(n=>/noindex/i.test(attr(n,'content')??'')));assert.equal(attr(nodes.find(n=>n.tagName==='body'),'data-pagefind-ignore'),undefined);}
   assert.equal(nodes.filter(n=>n.tagName==='body'&&attr(n,'data-paid-landing')==='true').length,1);
   assert.equal(nodes.filter(n=>attr(n,'data-landing-page')==='banff-winter-activities').length,1);
   assert.equal(nodes.filter(n=>n.tagName==='header').length,1);
@@ -219,7 +245,7 @@ function inspect(markup, scriptingEnabled=true) {
     const books=descendants.filter(n=>n.tagName==='a'&&has(n,'data-offer-id'));
     assert.equal(books.length,activity.bookingOfferId ? 1 : 0,'Only three reviewed products have native booking links');
     if(activity.bookingOfferId) {
-      const offer=offers.find(o=>o.id===activity.bookingOfferId);
+      const offer=activeOffers.find(o=>o.id===activity.bookingOfferId);
       assert.equal(attr(books[0],'href'),offer.bookingUrl);assert.equal(attr(books[0],'data-offer-id'),offer.id);assert.equal(attr(books[0],'data-landing-placement'),'detail-card');
       assert.ok(txt(article).includes(offer.provider),'Actual provider identity remains visible in booking details');assert.ok(descendants.some(n=>n.tagName==='a'&&attr(n,'href')===offer.operatorUrl),'Actual operator source remains native');
       assert.equal(txt(books[0]),'Book now');assert.equal(attr(books[0],'aria-label'),'Book now: '+activity.name);assert.equal(attr(books[0],'aria-describedby'),'activity-note-'+activity.id);
@@ -243,7 +269,7 @@ function inspect(markup, scriptingEnabled=true) {
     assert.equal(has(previous,'disabled'),true);assert.equal(has(next,'disabled'),false);
   }
   const sponsored=links.filter(n=>has(n,'data-offer-id'));assert.equal(sponsored.length,6,'Exactly six reviewed product CTA placements');
-  assert.deepEqual(sponsored.map(n=>[attr(n,'data-offer-id'),attr(n,'href')]).sort(),offers.flatMap(o=>[[o.id,o.bookingUrl],[o.id,o.bookingUrl]]).sort());
+  assert.deepEqual(sponsored.map(n=>[attr(n,'data-offer-id'),attr(n,'href')]).sort(),activeOffers.flatMap(o=>[[o.id,o.bookingUrl],[o.id,o.bookingUrl]]).sort());
   for(const link of sponsored) {assert.equal(txt(link),'Book now');assert.equal(attr(link,'target'),'_blank');assert.ok(attr(link,'rel').split(/\s+/).includes('sponsored'));assert.ok(attr(link,'rel').split(/\s+/).includes('noopener'));assert.equal(attr(link,'data-landing-id'),'banff-winter-activities');}
   assert.equal(links.filter(n=>label(n)==='Find out more').length,21);
   assert.equal(links.filter(n=>label(n)==='Book now').length,6);
@@ -267,6 +293,32 @@ function inspect(markup, scriptingEnabled=true) {
   return {nodes,cards,sponsored};
 }
 const html=await renderActualPage();const actual=inspect(html);inspect(html,false);
+const paidHtml=await renderActualPage({entry:PAID_PAGE,route:PAID_PATH});
+const paidActual=inspect(paidHtml,true,'google-test');inspect(paidHtml,false,'google-test');
+const forgedOrganic=await renderActualPage({query:'trafficVariant=google-test&cmp=FORGED_PAID_CAMPAIGN&utm_source=google&utm_medium=cpc&gclid=PRIVATE_WINTER_CLICK'});
+inspect(forgedOrganic);
+assert.ok(!forgedOrganic.includes('bb_ca_winter_50_test')&&!forgedOrganic.includes('FORGED_PAID_CAMPAIGN'),'Incoming query cannot select or echo the paid label on the organic page');
+const forgedPaid=await renderActualPage({entry:PAID_PAGE,route:PAID_PATH,query:'trafficVariant=organic&cmp=FORGED_PAID_CAMPAIGN&gclid=PRIVATE_WINTER_CLICK'});
+inspect(forgedPaid,true,'google-test');assert.ok(!forgedPaid.includes('FORGED_PAID_CAMPAIGN'),'Incoming query cannot replace a fixed native paid campaign');
+const normalizedPaid=paidHtml.replace(/<meta name="robots" content="noindex, follow"\s*\/?\s*>/,'').replace(' data-pagefind-ignore="all"','').replaceAll('cmp=bb_ca_winter_50_test','cmp=banffboundwinteractivities');
+assert.ok(normalizedPaid.trim()===html.trim(),'Paid and organic documents differ only in noindex/search exclusion and the six fixed native campaign values');
+assert.equal(JSON.stringify(offers),originalOffers,'All rendering leaves the exported organic merchant records untouched');
+const sitemapConfig=await read('astro.config.mjs');
+const filterBody=sitemapConfig.match(/filter\(page\) \{([\s\S]*?)\n      \},/)?.[1];
+assert.ok(filterBody,'Read the actual sitemap filter');
+const runFilter=new Function('page','blogRedirects','excludedTrails','unreviewedHotelDirectorySlugs',filterBody);
+const filterRoute=route=>runFilter(ORIGIN+route,d.blogRedirects,new Set(['excluded-test-trail']),new Set(['unreviewed-test-hotel']));
+for(const route of [PAID_PATH,PAID_PATH.replace(/\/$/,''),PAID_PATH+'?source=ignored'])assert.equal(filterRoute(route),false,'The exact paid route is excluded from sitemap');
+for(const route of ['/book/banff-winter-activities/','/book/banff-hotels/','/book/lake-louise-stays/','/book/banff-winter-activities/google-test-more/'])assert.equal(filterRoute(route),true,'Unrelated canonical/lookalike routes remain eligible');
+assert.equal(filterRoute('/trails/excluded-test-trail/'),false);assert.equal(filterRoute('/hotel-directory/unreviewed-test-hotel/'),false);
+assert.equal(filterRoute('/blog/'+Object.keys(d.blogRedirects)[0]+'/'),false,'Existing alias exclusion remains active');
+let paidNegatives=0;
+function rejectPaid(markup,label){assert.notEqual(markup,paidHtml,label+' mutation changes actual paid HTML');assert.throws(()=>inspect(markup,true,'google-test'),undefined,label);paidNegatives++;}
+rejectPaid(paidHtml.replace(/<meta name="robots" content="noindex, follow"\s*\/?\s*>/,''),'The paid variant cannot become indexable');
+rejectPaid(paidHtml.replace('href="'+ORIGIN+'/book/banff-winter-activities/"','href="'+ORIGIN+PAID_PATH+'"'),'Paid canonical must remain the shared organic comparison');
+rejectPaid(paidHtml.replace('cmp=bb_ca_winter_50_test','cmp=banffboundwinteractivities'),'A paid placement cannot silently reuse the organic campaign');
+rejectPaid(paidHtml.replace('cmp=bb_ca_winter_50_test','cmp=unreviewed_user_value'),'A paid placement cannot use an arbitrary campaign value');
+rejectPaid(paidHtml.replace('data-landing-page="banff-winter-activities"','data-landing-page="google-test"'),'Paid path retains the known consent/tracking landing identity');
 let htmlNegatives=0;
 function reject(mutated,label){assert.notEqual(mutated,html,label+' mutation changed actual SSR');assert.throws(()=>inspect(mutated),undefined,label);htmlNegatives++;}
 const remove=node=>html.slice(0,node.sourceCodeLocation.startOffset)+html.slice(node.sourceCodeLocation.endOffset);
@@ -372,9 +424,9 @@ const wrongMotion=galleryClient.replace(/\.matches \? '(?:auto|instant)' : 'smoo
 assert.notEqual(wrongMotion,galleryClient);const motion=galleryHarness({reducedMotion:true,code:await compileClient(wrongMotion,path.join(ROOT,'src/components'))});motion.fire(0,'[data-gallery-next]','click');assert.ok(!['auto','instant'].includes(motion.moves.at(-1).behavior),'Actual reduced-motion mutation fails the non-animated scroll contract');
 
 let consentCases=0;
-for(const link of actual.sponsored) for(const source of ['google','bing']) for(const analytics of [false,true]) for(const advertising of [false,true]) {
+for(const variant of [{links:actual.sponsored,route:'/book/banff-winter-activities/'},{links:paidActual.sponsored,route:PAID_PATH}]) for(const link of variant.links) for(const source of ['google','bing']) for(const analytics of [false,true]) for(const advertising of [false,true]) {
   const href=attr(link,'href'),offerId=attr(link,'data-offer-id'),placement=attr(link,'data-landing-placement');
-  const h=consentHarness({stored:validConsent({analytics,advertising}),initTracking:true,paidLanding:true,landingId:'banff-winter-activities',pageHref:ORIGIN+'/book/banff-winter-activities/?utm_source='+source+'&utm_medium=cpc&gclid=PRIVATE_GOOGLE&msclkid=PRIVATE_BING&email=PRIVATE_EMAIL#experiences'});
+  const h=consentHarness({stored:validConsent({analytics,advertising}),initTracking:true,paidLanding:true,landingId:'banff-winter-activities',pageHref:ORIGIN+variant.route+'?utm_source='+source+'&utm_medium=cpc&gclid=PRIVATE_GOOGLE&msclkid=PRIVATE_BING&email=PRIVATE_EMAIL#experiences'});
   const click=h.linkClick(href,{landingId:'banff-winter-activities',offerId,placement,cta:true});
   assert.equal(click.prevented,0);assert.equal(click.link.href,href);assert.equal(h.opened,0);assert.equal(h.providerScripts.some(s=>s.src.includes('googlesyndication')),false);
   const event=h.commands.find(c=>c[1]==='affiliate_click');assert.equal(Boolean(event),analytics);
@@ -383,4 +435,4 @@ for(const link of actual.sponsored) for(const source of ['google','bing']) for(c
   assert.ok(!/PRIVATE_GOOGLE|PRIVATE_BING|PRIVATE_EMAIL|gclid=|msclkid=|utm_source=/.test(JSON.stringify(h.commands)));
   consentCases++;
 }
-console.log('Winter activity landing checks passed:20 literal editorial identities/ranks and canonical guide handoffs;three unchanged exact merchant identities/six native Book now placements;21 Find out more links;actual full-layout SSR/no-JS galleries and20photo source/licence attributions;four FAQ/schema pairs and20ItemList entries;'+htmlNegatives+' actual-HTML negatives;'+filterCases+' actual category/client cases plus duplicate-query mutation;'+galleryCases+' gallery control/keyboard/motion/independence/failure cases plus actual idempotence/motion mutations;'+consentCases+' actual-CTA consent/source cases. No network, browser, site build, account or output writes.');
+console.log('Winter activity landing checks passed:20 literal editorial identities/ranks and canonical guide handoffs;three unchanged exact merchant identities/six native Book now placements;21 Find out more links;actual full-layout SSR/no-JS galleries and20photo source/licence attributions;four FAQ/schema pairs and20ItemList entries;'+htmlNegatives+' actual-HTML negatives;'+filterCases+' actual category/client cases plus duplicate-query mutation;'+galleryCases+' gallery control/keyboard/motion/independence/failure cases plus actual idempotence/motion mutations;'+consentCases+' organic/paid actual-CTA consent/source cases;static paid wrapper, query-forgery/noindex/canonical/exact-sitemap/organic-identity checks and '+paidNegatives+' paid-HTML negatives. No network, browser, site build, account or output writes.');

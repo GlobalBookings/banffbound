@@ -1,10 +1,10 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-interface Props { title:string;description:string;eyebrow:string;heading:string;intro:string;primaryCta:{label:string;href:string};heroImage?:string;heroAlt?:string;lastUpdated?:string; }
-const {title,description,eyebrow,heading,intro,primaryCta,heroImage,heroAlt='Illustrative travel photograph',lastUpdated='2026-10-29'}=Astro.props;
-const landingId=Astro.url.pathname.split('/').filter(Boolean).at(-1) || '';
+interface Props { title:string;description:string;eyebrow:string;heading:string;intro:string;primaryCta:{label:string;href:string};heroImage?:string;heroAlt?:string;lastUpdated?:string;noindex?:boolean;canonicalUrl?:string;landingId?:string; }
+const {title,description,eyebrow,heading,intro,primaryCta,heroImage,heroAlt='Illustrative travel photograph',lastUpdated='2026-10-29',noindex=false,canonicalUrl,landingId:landingIdOverride}=Astro.props;
+const landingId=landingIdOverride ?? (Astro.url.pathname.split('/').filter(Boolean).at(-1) || '');
 ---
-<BaseLayout title={title} description={description} image={heroImage} lastUpdated={lastUpdated} focusedLanding>
+<BaseLayout title={title} description={description} image={heroImage} lastUpdated={lastUpdated} noindex={noindex} canonicalUrl={canonicalUrl} focusedLanding>
   <div data-landing-page={landingId} class="booking-landing">
     <section class="booking-hero"><div class="booking-hero-inner"><div class="booking-hero-copy"><p class="booking-eyebrow">{eyebrow}</p><h1>{heading}</h1><p class="booking-intro">{intro}</p><a class="btn booking-primary" href={primaryCta.href} data-landing-id={landingId} data-landing-placement="hero">{primaryCta.label}<span aria-hidden="true">→</span></a><p class="booking-disclosure">Independent BanffBound guide. We may earn a commission from qualifying bookings through affiliate links.</p></div><div class="booking-hero-detail">{heroImage&&<img src={heroImage} alt={heroAlt} class="booking-hero-image" loading="eager" fetchpriority="high" />}{Astro.slots.has('hero-detail')?<slot name="hero-detail" />:<div class="booking-steps"><span class="booking-small-title">A clearer way to choose</span><ol><li><span>1</span><div><strong>Find your fit</strong><p>Compare the location, layout or experience that matters to your trip.</p></div></li><li><span>2</span><div><strong>Check current options</strong><p>Follow your chosen provider link for dates, the full price and booking terms.</p></div></li><li><span>3</span><div><strong>Book with the provider</strong><p>Complete the reservation on your chosen provider’s website.</p></div></li></ol></div>}</div></div></section>
     <div class="booking-body"><slot /></div>
