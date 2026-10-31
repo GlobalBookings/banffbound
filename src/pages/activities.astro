@@ -13,7 +13,7 @@ const faqs = [
 ];
 ---
 
-<BaseLayout title="Banff Activities: Winter & Summer Planning Guides" description="Compare 12 Banff-area activity plans with direct sources, seasonal context, readiness questions and transport checks. Choose lessons, rinks, walks and guided outings." lastUpdated="2026-10-29">
+<BaseLayout title="Banff Activities: Winter & Summer Planning Guides" description="Compare Banff-area activity plans with direct sources, seasonal context, readiness questions and transport checks. Choose lessons, rinks, walks and guided outings." lastUpdated="2026-10-29">
   <script type="application/ld+json" set:html={JSON.stringify(activityListSchema(activities))} />
   <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
   <div class="container"><Breadcrumbs items={[{ label: 'Activities' }]} /></div>
@@ -23,6 +23,7 @@ const faqs = [
   </section>
   <section class="section"><div class="container">
     <WinterStatusNotice />
+    <aside class="experience-directory-link"><div><h2>Find a tour for your trip</h2><p>Compare guided outings, attraction tickets and transfers by activity and departure.</p></div><a href="/experiences/" class="btn">Find out more <span aria-hidden="true">↗</span></a></aside>
     <div class="planning-note"><h2>Start with four decisions</h2><ol><li><strong>People:</strong> ages, experience, equipment fit and access or support needs.</li><li><strong>Place:</strong> the actual resort, rink, river base or trailhead, rather than a broad “Banff” search label.</li><li><strong>Journey:</strong> pickup, preparation time, return transport and equipment-return deadline.</li><li><strong>Change of plan:</strong> current access, weather terms, cancellation and a shorter or warmer alternative.</li></ol><p>Sources reviewed <time datetime="2026-10-29">29 October 2026</time>, with individual source dates in each guide. These are planning records, not current operation reports. <a href="/what-to-do-today">Plan around today’s conditions</a>.</p></div>
 
     <form id="activity-filters" class="activity-filters" hidden aria-label="Filter activity planning guides">
@@ -85,6 +86,7 @@ const faqs = [
 </script>
 
 <style>
+  .experience-directory-link{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin:1.5rem 0;padding:1.5rem 1.7rem;border:1px solid #cdd9c7;background:#eef3e8;border-radius:4px}.experience-directory-link h2{font-size:1.8rem;line-height:1.2;margin:0 0 .6rem;color:var(--color-primary)}.experience-directory-link p{font-size:.95rem;line-height:1.6;margin:0}.experience-directory-link .btn{flex-shrink:0;min-height:48px;padding:.8rem 1.2rem;background:#b34d23;color:white;font-weight:700}.experience-directory-link .btn:hover{background:#923b1b}@media(max-width:650px){.experience-directory-link{flex-direction:column;align-items:stretch;padding:1.2rem}.experience-directory-link .btn{text-align:center}}
   .image-note,.review-date {font-size:.78rem;line-height:1.5;opacity:.9}
   .planning-note {padding:1.4rem;background:var(--color-bg-alt);border-left:4px solid var(--color-accent);border-radius:var(--radius);margin:1.5rem 0}
   .planning-note li {margin:.65rem 0;line-height:1.6}

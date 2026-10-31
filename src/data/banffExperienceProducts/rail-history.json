@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "products": [
+    {
+      "productId": "1122716",
+      "productUrl": "https://www.getyourguide.com/calgary-l1783/calgary-follow-the-historical-canadian-pacific-railway-t1122716/",
+      "provider": "Banff Bear Travel Inc.",
+      "checkedAt": "2026-10-30",
+      "sourceUrls": ["https://www.getyourguide.com/calgary-l1783/calgary-follow-the-historical-canadian-pacific-railway-t1122716/"],
+      "slug": "rockies-railway-history-by-road",
+      "title": "Railway History by Road: Banff, Morant’s Curve and Field",
+      "description": "Compare a driver-guided day visiting Rockies railway landmarks, with designated pickups and a separate lunch purchase. No train ride is included.",
+      "category": "railway-history",
+      "departure": "Designated Calgary, Canmore or Banff pickup locations",
+      "duration": "10 hours advertised; confirm the total for your pickup",
+      "lead": "This Banff Bear Travel outing follows railway history in a vehicle, with stops around Banff, the Bow Valley Parkway and Yoho. It suits someone who wants the places and stories associated with the Canadian Pacific Railway without booking a rail journey. The published ten-hour duration needs to be read alongside the actual pickup and return for your starting town.",
+      "facts": [
+        { "label": "Format", "value": "Driver-guided sightseeing by road; no train journey" },
+        { "label": "Pickup", "value": "Designated Calgary, Canmore and Banff locations" },
+        { "label": "Railway stops", "value": "Morant’s Curve, Lake Louise Railway Station, Spiral Tunnels and Field are described" },
+        { "label": "Meals", "value": "Separate expense; confirm the planned restaurant stop" }
+      ],
+      "sections": [
+        {
+          "id": "railway-sites-not-a-train-ride",
+          "title": "Choose the railway places rather than a train ticket",
+          "paragraphs": [
+            "The reviewed route starts with Banff viewpoints and the Hoodoos, then continues to Morant’s Curve, the Lake Louise Railway Station and Restaurant, the Spiral Tunnels and Field. Those are places visited from the road. The listing explicitly excludes rail travel and train tickets, so compare this with sightseeing days rather than treating it as an alternative seat on the Rocky Mountaineer.",
+            "Train movements are an opportunity rather than a timed attraction in this programme. The operator says stop lengths and the itinerary can change while looking for a passing train. Choose the outing for the interpretation and landmarks you would enjoy even if the railway is quiet. A photograph of a train does not establish that one will pass during your stop."
+          ]
+        },
+        {
+          "id": "pickup-lunch-and-the-return",
+          "title": "Fit the complete road day into your trip",
+          "paragraphs": [
+            "The live page offers designated starting locations in Calgary, Canmore and Banff. Use the location and time on the selected booking, then plan the journey there from your accommodation. A pickup in the same town is different from collection at every hotel. Confirm the final drop-off and allow room after the return before arranging another fixed departure.",
+            "The itinerary describes a lunch stop at the former Lake Louise railway station, but meals are listed as a separate cost. Check the current restaurant arrangement and dietary needs before relying on that stop. The reviewed page lists a driver-guide, vehicle and national-park entry; read the dated option for the complete inclusions. Discuss walking and mobility needs directly, because roadside sightseeing still involves boarding and time outside the vehicle."
+          ]
+        }
+      ],
+      "bookingChecks": [
+        "Confirm the designated pickup, return point and total day for your starting town.",
+        "Choose this for sightseeing by road; no train ride or rail ticket is supplied.",
+        "Check the restaurant stop, meal costs and dietary arrangements.",
+        "Read current route changes, participant requirements and cancellation terms."
+      ],
+      "faqs": [
+        { "question": "Will we ride a train?", "answer": "No. The reviewed product explicitly describes a road tour and excludes train tickets. Its railway interest comes from the landmarks, interpretation and possible passing trains." },
+        { "question": "Is a passing train guaranteed?", "answer": "No. The operator says train schedules are not guaranteed and may adjust stop lengths. Choose the landmarks and guiding for their own interest." },
+        { "question": "Does the station lunch come with the tour?", "answer": "Meals are listed separately. Confirm the actual restaurant stop and budget for your food unless the selected booking states otherwise." }
+      ],
+      "launchState": "held",
+      "notice": "A road sightseeing tour, not a rail journey. Confirm an operating date, designated pickup, restaurant arrangement and actual return; passing trains are not guaranteed."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ActivityBookingCTA from '../../components/ActivityBookingCTA.astro';
+import ExperienceOptions from '../../components/ExperienceOptions.astro';
+import { banffExperienceGroups, newExperienceGuides, experienceBookingTarget, type BanffExperienceGroup } from '../../data/banffExperiences';
+import { getExperienceHeroPhoto } from '../../data/banffExperiencePhotos';
+
+export function getStaticPaths() {
+  return newExperienceGuides.map(group => ({ params: { slug: group.slug }, props: { group } }));
+}
+const { group } = Astro.props as { group: BanffExperienceGroup };
+const target = experienceBookingTarget(group);
+const scopePrimaryExample = group.options.length > 1 && Boolean(group.primary.details);
+const heroPhoto = getExperienceHeroPhoto();
+const related = banffExperienceGroups.filter(item => item.id !== group.id && (item.categoryId === group.categoryId || item.departureIds.some(id => group.departureIds.includes(id)))).slice(0, 3);
+const url = new URL(group.canonicalPath, 'https://banffbound.com').href;
+const sourceLabel = (source: string): string => {
+  const value = new URL(source);
+  const option = group.options.find(item => value.pathname.endsWith(`-t${item.productId}/`));
+  return option ? `Product information: ${option.details?.title || option.optionTitle}` : value.hostname.replace(/^www\./, '');
+};
+const article = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: group.title,
+  description: group.description, url, ...(group.checkedAt ? { dateModified: group.checkedAt } : {}),
+  author: { '@type': 'Organization', name: 'BanffBound', url: 'https://banffbound.com' },
+};
+---
+
+<BaseLayout title={group.title} description={group.description} image={heroPhoto.src} canonicalUrl={group.canonicalPath} lastUpdated={group.checkedAt}>
+  <script type="application/ld+json" set:html={JSON.stringify(article)} />
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: group.faqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
+  <div class="container"><Breadcrumbs items={[{ label: 'Experiences', href: '/experiences/' }, { label: group.title }]} /></div>
+  <article class="experience-guide" data-landing-page="activity-guide" data-landing-id="activity-guide" data-content-id={group.contentId} data-content-type="activity-guide" data-paid-affiliate-campaign={target.paidCampaignLabel} data-affiliate-target-path={new URL(target.bookingUrl).pathname} data-offer-id={target.offerId}>
+    <header class="experience-hero">
+      <img src={heroPhoto.src} alt={heroPhoto.alt} width="1600" height="1000" loading="eager" fetchpriority="high" />
+      <div class="experience-hero-shade"></div>
+      <div class="experience-hero-copy container"><p>{group.categoryLabel}</p><h1>{group.title}</h1><div class="experience-hero-meta">{group.departure}</div></div>
+    </header>
+    <div class="container experience-photo-caption"><p>{heroPhoto.caption}{heroPhoto.sourceUrl && <> · <a href={heroPhoto.sourceUrl} target="_blank" rel="noopener">{heroPhoto.author || 'Photo source'}</a></>}{heroPhoto.licenseUrl && <> · <a href={heroPhoto.licenseUrl} target="_blank" rel="noopener">{heroPhoto.license || 'Photo licence'}</a></>}{heroPhoto.changeNote && <>. {heroPhoto.changeNote}</>}</p></div>
+    <div class="container experience-reading">
+      <p class="experience-lead">{group.lead}</p>
+      <p class="experience-affiliate">Independent BanffBound guide. We may earn a commission from qualifying bookings through affiliate links.</p>
+      <ActivityBookingCTA target={target} guideId={group.contentId} />
+      <figure class="experience-activity-photo"><img src={group.photo.src} alt={group.photo.alt} width="1200" height="800" loading="lazy" decoding="async" /><figcaption>{group.photo.caption}{group.photo.sourceUrl && <> · <a href={group.photo.sourceUrl} target="_blank" rel="noopener">{group.photo.author || 'Photo source'}</a></>}{group.photo.licenseUrl && <> · <a href={group.photo.licenseUrl} target="_blank" rel="noopener">{group.photo.license || 'Photo licence'}</a></>}{group.photo.changeNote && <>. {group.photo.changeNote}</>}</figcaption></figure>
+      <nav class="experience-jump-links" aria-label="Guide sections"><a href={`#experience-options-${group.id}`}>Booking options</a>{group.sections.map(section => <a href={`#${section.id}`}>{section.title}</a>)}<a href="#experience-questions">Questions</a></nav>
+      <div class="experience-editorial">
+        {group.sections.map(section => <section aria-labelledby={section.id}><h2 id={section.id}>{section.title}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</section>)}
+        <section aria-labelledby="experience-booking-checks" data-experience-booking-checks><h2 id="experience-booking-checks">{scopePrimaryExample ? 'Checks for this booking option' : 'Before you book'}</h2>{scopePrimaryExample && <p>{target.title}</p>}<ul>{group.bookingChecks.map(check => <li>{check}</li>)}</ul></section>
+      </div>
+      <ExperienceOptions group={group} />
+      <section class="experience-faqs" aria-labelledby="experience-questions"><h2 id="experience-questions">Questions about this experience</h2>{group.faqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
+      {group.sourceUrls.length > 0 && <details class="experience-source-panel"><summary>Sources and further reading</summary><p>Use the provider's actual date, itinerary and selected option before booking.</p><ul>{group.sourceUrls.map(source => <li><a href={source} target="_blank" rel="noopener">{sourceLabel(source)} ↗</a></li>)}</ul></details>}
+      <p class="experience-return"><a href="/experiences/">Find another Banff experience →</a></p>
+    </div>
+  </article>
+  {related.length > 0 && <section class="experience-related section"><div class="container"><h2>Keep exploring</h2><div class="experience-related-grid">{related.map(item => <a href={item.canonicalPath}><span>{item.categoryLabel}</span><h3>{item.title}</h3><p>{item.description}</p><strong>Find out more ↗</strong></a>)}</div></div></section>}
+</BaseLayout>
+
+<style>
+  .experience-activity-photo{margin:2rem 0;max-width:900px}.experience-activity-photo img{display:block;width:100%;height:auto;max-height:550px;object-fit:cover;border-radius:4px}.experience-activity-photo figcaption{font-size:.72rem;line-height:1.6;color:#63735b;margin-top:.65rem}.experience-activity-photo figcaption a{color:inherit}
+  .experience-hero{position:relative;min-height:430px;display:flex;align-items:flex-end;background:#2c4935;overflow:hidden}.experience-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.experience-hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,31,20,.06) 10%,rgba(13,31,20,.78) 100%)}.experience-hero-copy{position:relative;color:#fff;padding-top:4rem;padding-bottom:2.5rem}.experience-hero-copy>p{text-transform:uppercase;letter-spacing:.15em;font-size:.7rem;font-weight:700;margin:0 0 1rem}.experience-hero h1{max-width:1000px;font-size:clamp(2.25rem,5vw,4rem);line-height:1.08;color:#fff;margin:0 0 1rem}.experience-hero-meta{font-size:.93rem;line-height:1.5;max-width:800px}.experience-photo-caption{max-width:1100px}.experience-photo-caption p{font-size:.7rem;line-height:1.6;color:#65705e;margin:.75rem 0 0}.experience-photo-caption a{color:inherit}.experience-reading{max-width:1100px;padding-top:2rem;padding-bottom:3rem}.experience-lead{max-width:900px;font-size:1.15rem;line-height:1.8;margin:0 0 1rem}.experience-affiliate{font-size:.75rem;line-height:1.6;color:#64735b;margin:0 0 1.25rem}.experience-jump-links{display:flex;flex-wrap:wrap;gap:.6rem 1.1rem;border-bottom:1px solid #dce4d7;padding:1.5rem 0;font-size:.85rem;font-weight:700}.experience-jump-links a{color:#385538;text-decoration:underline;text-underline-offset:3px}.experience-editorial{max-width:900px}.experience-editorial section{margin-top:2.25rem}.experience-editorial h2,.experience-faqs h2{font-size:clamp(1.8rem,3vw,2.45rem);line-height:1.2;color:var(--color-primary);margin:0 0 1rem;scroll-margin-top:120px}.experience-editorial p,.experience-editorial li{font-size:1rem;line-height:1.8}.experience-editorial li{margin:.6rem 0}.experience-faqs{max-width:900px;margin:2.75rem 0 1.5rem}.experience-faqs details{border-bottom:1px solid #d7e0d1;padding:1rem 0}.experience-faqs summary{font-weight:700;font-size:1rem;line-height:1.6;cursor:pointer;min-height:28px}.experience-faqs p{font-size:.97rem;line-height:1.8;margin:.85rem 0 0}.experience-source-panel{max-width:900px;margin:2rem 0;padding:1rem 1.2rem;border:1px solid #d4decf;background:#f3f6ee;font-size:.82rem;line-height:1.7}.experience-source-panel summary{font-weight:700;cursor:pointer;min-height:26px}.experience-source-panel ul{padding-left:1.2rem;overflow-wrap:anywhere}.experience-source-panel li{margin:.5rem 0}.experience-return{margin-top:2rem;font-weight:700}.experience-related{background:#eef2e8}.experience-related h2{font-size:2.2rem;line-height:1.2;color:var(--color-primary);margin:0 0 1.4rem}.experience-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}.experience-related-grid>a{display:block;color:#314b34;background:white;border:1px solid #d4decf;border-radius:4px;text-decoration:none;padding:1.4rem}.experience-related-grid span{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700}.experience-related-grid h3{font-size:1.5rem;line-height:1.2;margin:.7rem 0}.experience-related-grid p{font-size:.9rem;line-height:1.6;margin:0 0 1rem}.experience-related-grid strong{font-size:.84rem;color:#a4431f}.experience-guide a:focus-visible,.experience-related a:focus-visible,.experience-faqs summary:focus-visible,.experience-source-panel summary:focus-visible{outline:3px solid #a97624;outline-offset:4px}@media(max-width:700px){.experience-hero{min-height:480px}.experience-hero-copy{padding-bottom:2rem}.experience-hero h1{font-size:2.6rem}.experience-reading{padding-top:1.3rem}.experience-lead{font-size:1rem}.experience-related-grid{grid-template-columns:1fr}.experience-jump-links{font-size:.8rem;gap:.6rem 1rem}}@media(max-width:380px){.experience-hero h1{font-size:2.25rem}}
+</style>

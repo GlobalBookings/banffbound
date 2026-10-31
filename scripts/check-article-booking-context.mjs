@@ -10,8 +10,8 @@ import { experimental_AstroContainer } from 'astro/container';
 import { parseFragment } from 'parse5';
 
 // Fixed helper + real layout/IIFE checks. No fetch, vendor SDK, site build or files written.
-const data = await build({ stdin: { contents: "export {getArticleBookingContext} from './src/data/articleBookingContext.ts'; export {authoredBookingGuideSlugs,resolveBlogContent} from './src/data/blogContentRegistry.ts'; export {resolveActivityBookingTarget} from './src/data/activityCampaignTargets.ts';", resolveDir: process.cwd() }, bundle: true, write: false, platform: 'node', format: 'esm' });
-const { getArticleBookingContext: contextFor, authoredBookingGuideSlugs: authored, resolveBlogContent, resolveActivityBookingTarget } = await import(`data:text/javascript;base64,${Buffer.from(data.outputFiles[0].text).toString('base64')}`);
+const data = await build({ stdin: { contents: "export {getArticleBookingContext} from './src/data/articleBookingContext.ts'; export {authoredBookingGuideSlugs,resolveBlogContent} from './src/data/blogContentRegistry.ts'; export {resolveActivityBookingTarget} from './src/data/activityCampaignTargets.ts';export {getExperienceGroupForPath} from './src/data/banffExperiences.ts';", resolveDir: process.cwd() }, bundle: true, write: false, platform: 'node', format: 'esm' });
+const { getArticleBookingContext: contextFor, authoredBookingGuideSlugs: authored, resolveBlogContent, resolveActivityBookingTarget, getExperienceGroupForPath } = await import(`data:text/javascript;base64,${Buffer.from(data.outputFiles[0].text).toString('base64')}`);
 const jasper = ['jasper-town', 'jasper-national-park', 'jasper-canada', 'jasper-alberta', 'calgary-to-jasper'];
 const bow = ['numtijah-lodge', 'num-ti-jah-lodge'];
 const golden = 'golden-bc-day-trip';
@@ -88,7 +88,7 @@ const renderBundle = await build({ stdin: { contents: renderCode, loader: 'ts', 
   builder.onResolve({ filter: /^astro\// }, args => ({ path: pathToFileURL(require.resolve(args.path)).href, external: true }));
   builder.onResolve({ filter: /\?astro&type=style/ }, args => ({ path: args.path, namespace: 'fixture-style' }));
   builder.onLoad({ filter: /.*/, namespace: 'fixture-style' }, () => ({ contents: 'export {};' }));
-  const actualChildren = new Set(['ActivityBookingCTA.astro', 'HotelStaysBanner.astro']);
+  const actualChildren = new Set(['ActivityBookingCTA.astro', 'HotelStaysBanner.astro', 'ExperienceOptions.astro']);
   builder.onResolve({ filter: /\.astro$/ }, args => actualChildren.has(path.basename(args.path))
     ? { path: path.resolve(args.resolveDir, args.path), namespace: 'actual-booking-component' }
     : { path: args.path, namespace: 'fixture-component' });
@@ -140,6 +140,15 @@ for (const {slug,curated} of ssrCases) {
   assert.ok(attr(hotelLink, 'aria-label').includes(expected.hotelLabel));
   assert.equal(attr(hotelLink, 'data-landing-id'), 'travel-guide');
   const activity = resolveActivityBookingTarget(slug);
+  const experienceGroup = getExperienceGroupForPath(slug);
+  const options = all.filter(node => attr(node, 'data-experience-option') !== undefined);
+  assert.equal(options.length, experienceGroup?.productIds.length || 0, `${slug}: all matched operator options render below the authored guide.`);
+  assert.equal(nodes(body).filter(node => attr(node, 'data-experience-option') !== undefined).length, 0, 'Comparison options never alter the original article body.');
+  assert(options.every(option => attr(option, 'hidden') === undefined), 'All native operator links work without JavaScript.');
+  for (const section of all.filter(node => attr(node, 'data-experience-options') !== undefined)) {
+    for (const item of nodes(section).filter(node => attr(node, 'data-content-id') !== undefined)) assert.equal(attr(item, 'data-content-id'), slug, 'Comparison options share this legacy page’s analytics content ID.');
+  }
+  assert.equal(all.filter(node => attr(node, 'data-activity-booking-mobile') !== undefined).length, activity ? 1 : 0, 'Adding options does not duplicate the original floating CTA.');
   const prominent = all.filter(node => ['article-top', 'article-mobile'].includes(attr(node, 'data-landing-placement')));
   assert.equal(prominent.length, activity ? 2 : 0, `${slug}: correct matched activity CTA presence`);
   for (const link of prominent) {
