@@ -104,6 +104,7 @@ const negative = [
   x => { x.inventory.products.push(x.inventory.products[0]); },
   x => { x.groups[1].productIds.push('999999999'); },
   x => { x.groups[1].primaryProductId = listingOnly.productId; x.groups[1].launchState = 'ready'; },
+  x => { x.groups[1].primaryProductId = listingOnly.productId; x.groups[1].launchState = 'held'; },
   x => { x.groups[0].existingGuidePath = '/blog/banff-fat-biking/'; },
   x => { x.groups[1].slug = x.groups[0].slug; },
   x => { x.groups[1].sections = []; },
@@ -207,6 +208,7 @@ if (!process.argv.includes('--fixtures-only')) {
   assert.deepEqual(actualPaths.map(item => item.params.slug).sort(), actual.data.newExperienceGuides.map(item => item.slug).sort());
   let actualCards = 0, newPageCount = 0;
   for (const group of actual.data.banffExperienceGroups) {
+    assert(group.primary.details, group.id + ': every guide has a full-description review for its main option.');
     assertPrimaryDetailScope(group);
     assert.equal(actual.data.experienceBookingTarget(group).title, group.primary.details?.title || group.primary.optionTitle);
     const opts = await container.renderToString(actual.Options, { props: { group }, request: new Request('https://banffbound.com' + group.canonicalPath + '?email=BB_TEST_SECRET_9&cmp=BB_TEST_CMP_ATTACK_9') });

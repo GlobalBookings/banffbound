@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "preparedAtUTC": "2026-10-31T06:14:41.042Z",
+  "preparedAtUTC": "2026-10-31T06:39:42.239Z",
   "status": "LOCAL_VALIDATED_PACKAGE_ONLY_NOT_UPLOADED",
   "campaign": {
     "id": "24416287886",
@@ -81,7 +81,7 @@
     },
     {
       "file": "src/data/banffExperienceGroups.json",
-      "sha256": "299e323b7a13b7d0fb77963f1e1f85af91a426f9822ec25ef33370b30cbdd3e6"
+      "sha256": "3189157a1f2370c8f0e42f16cb59b65c94d8f007dc1e26d4ae5770ee8bd637c3"
     },
     {
       "file": "src/data/banffExperienceInventory.json",
@@ -116,8 +116,20 @@
       "sha256": "d6bb17ceecf69d4465d9f3c3f0053597412f44383bf9c5c4c042e5b68d957b12"
     },
     {
+      "file": "src/data/banffExperienceProducts/specialist-a.json",
+      "sha256": "ca4d51d8f56a40783af3e0994c72606148e924ec7e7710140afbe3ce4b668c3f"
+    },
+    {
+      "file": "src/data/banffExperienceProducts/specialist-b.json",
+      "sha256": "51c332e1ab6051536527316903099e301fd36155ff32f8df9a18213330865e22"
+    },
+    {
+      "file": "src/data/banffExperienceProducts/specialist-c.json",
+      "sha256": "23f4763f2f9a9d88caadf61db3188e541d967af60a5caea5042bfddaaf1d318c"
+    },
+    {
       "file": "src/data/banffExperiences.ts",
-      "sha256": "19cba26d13d9e0fd566dc6b2091fd217dd55c663a94729146a9a98ec32ed9aba"
+      "sha256": "e7b55a319267d5fce55eb3d528db69e439477c9febefc7ed9c49f1bd90312055"
     },
     {
       "file": "src/data/winterActivityPhotoCredits.json",
@@ -131,11 +143,11 @@
     },
     {
       "file": "source-groups.json",
-      "sha256": "25a50641c039a990ecd90fa7cf8cabd53de0468647ffa265051746cc8c8a9fe6"
+      "sha256": "4697664b3c9574252a82fe59bcc9dfe4f85572b9205d5bc1bdf065222fdf1243"
     },
     {
       "file": "plan.json",
-      "sha256": "3158e2379cbae69bf81a3a317dc0d68a13ed93a32a4ae2e5c700a8cd83601bb2"
+      "sha256": "c1a268310716c67afca47b84b520daf9824e76f963162dd0a98fb6d728b1fa38"
     },
     {
       "file": "existing-state.json",

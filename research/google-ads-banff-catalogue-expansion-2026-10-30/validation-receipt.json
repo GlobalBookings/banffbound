@@ -1,7 +1,7 @@
 {
   "result": "PASS_LOCAL_ONLY_NOT_UPLOADED",
-  "checkedAtUTC": "2026-10-31T06:15:51.322423+00:00",
-  "manifestSha256": "8deb4e1d1d2575f625e26a44069cf48c68b57545cab6119b024823ce02b48079",
+  "checkedAtUTC": "2026-10-31T06:39:42.451090+00:00",
+  "manifestSha256": "ea40e2402df45ef6b68c6a6f5623577e5963bc65bec5b8a49afdb0eb2396eccc",
   "counts": {
     "guideFamilies": 60,
     "readyFamilies": 19,
