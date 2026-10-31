@@ -76,6 +76,18 @@ final class BanffBoundUITests: XCTestCase {
         add(attachment)
     }
 
+    private func scrollModalUpTo(_ label: String) {
+        for _ in 0..<6 {
+            if element(label).exists && element(label).isHittable { return }
+            guard let modal = app.scrollViews.allElementsBoundByIndex.last else {
+                XCTFail("Missing native modal scroll view")
+                return
+            }
+            modal.swipeDown()
+        }
+        XCTFail("Could not scroll the modal back to \(label)")
+    }
+
     private func adultsField() -> XCUIElement {
         let field = app.textFields.matching(NSPredicate(format: "label == 'Adults' OR identifier == 'Adults'")).firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 15), "Adults must be an editable native text field")
@@ -134,8 +146,16 @@ final class BanffBoundUITests: XCTestCase {
         adults.tap()
         let current = adults.value as? String ?? ""
         adults.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count) + "3")
-        // The form handles button taps while the numeric keyboard is open.
-        // Reach its actual Save control using the visible content above it.
+        if app.keyboards.firstMatch.exists {
+            // Failure captures establish this paragraph is above the keyboard
+            // on both devices. An unhandled in-form tap dismisses the keyboard
+            // under the app's keyboardShouldPersistTaps='handled' behavior.
+            let paragraph = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'Everything stays on this device.'")).firstMatch
+            XCTAssertTrue(paragraph.isHittable, "Use the visible settings paragraph to dismiss the native keyboard")
+            paragraph.tap()
+            let dismissed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.keyboards.firstMatch)
+            XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: 5), .completed, "Native keyboard must dismiss before Save")
+        }
         scrollTo("Save trip details")
         tap("Save trip details")
         XCTAssertFalse(element("Close panel").waitForExistence(timeout: 1), "Saving details must close the panel")
@@ -207,6 +227,9 @@ final class BanffBoundUITests: XCTestCase {
         tap("View Lake Louise")
         scrollTo("Read the offline guide")
         tap("Read the offline guide")
+        // The existing modal can retain its previous content offset. Read the
+        // new guide from its beginning with an ordinary native scroll gesture.
+        scrollModalUpTo("THE OFFLINE FIELD NOTES")
         XCTAssertTrue(visible("THE OFFLINE FIELD NOTES").isHittable)
         XCTAssertTrue(visible("Lake Louise essentials").isHittable)
         XCTAssertTrue(visible("Choose the outing").exists, "Bundled guide text must open inside the native app")
