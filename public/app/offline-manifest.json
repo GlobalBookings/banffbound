@@ -1,5 +1,5 @@
 {
-  "version": "e3bcc61353c981e0e6ec",
+  "version": "06499c6958454d59db50",
   "base": "/app/",
   "assets": [
     {
@@ -99,18 +99,18 @@
     },
     {
       "url": "/app/privacy/index.html",
-      "size": 4711,
-      "sha256": "63d6ddc3d7bf96fa5d917e19bdb84795f7bf6f691d443d59c4910e01ee326af8"
+      "size": 4670,
+      "sha256": "906373021e52cd6d1190ea8fe6cc494c0ec9fc845cc57f6cd9b47c2a34dd2f42"
     },
     {
       "url": "/app/support/index.html",
-      "size": 3129,
-      "sha256": "e7479b3f354562fa86b0438ee8569af4459e1fd5d20e4c83bcc71094028e359a"
+      "size": 3088,
+      "sha256": "d98d996c7e5d45407a91369d97b0e7a17a5ec0298dcdd5c7979b6b738f7d7784"
     },
     {
       "url": "/app/version.json",
       "size": 276,
-      "sha256": "695e8895dbaa52c9573f7f45ac88744b94c2df7e9a5eb337de308c1c047ce2ea"
+      "sha256": "d6c234aea92e23352605bec8c8c764bc4e2f63451392792078bad895cf75d47b"
     }
   ]
 }
