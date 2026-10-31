@@ -10,7 +10,7 @@ export function planBookingReminders(bookings: Booking[], options: { now?: Date;
     if (!departure) return [];
     const at = new Date(departure.getTime() - leadMinutes * 60_000);
     if (at.getTime() <= now.getTime()) return [];
-    const body = `${booking.time} Mountain Time · ${booking.markedBooked ? 'Marked booked by you' : 'Check your arrangements'}. Check your meeting point and return journey.`;
+    const body = `${booking.time} Banff time · ${booking.markedBooked ? 'Marked booked by you' : 'Check your arrangements'}. Check your meeting point and return journey.`;
     return [{ bookingId: booking.id, title: booking.title, body, at, fingerprint: JSON.stringify([booking.title, body, at.toISOString()]) }];
   });
 }

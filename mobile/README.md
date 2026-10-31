@@ -47,6 +47,6 @@ Keep credentials, Apple profiles, private keys, service-account JSON and persona
 
 ## Data and privacy
 
-Trips and notes stay on the device. Shared backups omit private booking notes by default. Importing a backup never imports notification permission or another device's offline-ready status. Budget blanks remain unknown; an entered zero remains zero. Weather validates provider identity and source time and expires after three hours. The app does not infer trail safety, live availability or provider-confirmed bookings.
+Trips and notes stay on the device. Shared backups omit private booking notes by default. Importing a backup never imports notification permission or another device's offline-ready status. Budget blanks remain unknown; an entered zero remains zero. Weather validates provider identity and source time and expires after three hours. Banff dates and reminders follow Alberta’s permanent UTC−6 policy from 1 November 2026, even on devices with older timezone data. The app does not infer trail safety, live availability or provider-confirmed bookings.
 
 Web and native storage, notification delivery and operating-system file pickers have different behaviour. Unit tests and successful bundles do not replace signed real-device testing. See `release/browser-qa.json` for the exact browser checks performed.

@@ -54,6 +54,7 @@ import {
 import { useTripStore } from "./src/lib/useTripStore";
 import {
   addActivity,
+  addPlaceToDay,
   addCalendarDays,
   addDay,
   applyTemplate,
@@ -72,6 +73,8 @@ import {
   selectDayPlace,
   tripDayIndex,
   warningsForTrip,
+  formatBanffDateTime,
+  BANFF_TIME_POLICY,
   type AppState,
   type Booking,
   type Budget,
@@ -1558,12 +1561,7 @@ function BanffApp() {
                                       return;
                                     }
                                     update((prev) =>
-                                      selectDayPlace(
-                                        prev,
-                                        i,
-                                        panel.place.plannerActivityId!,
-                                        panel.place.id,
-                                      ),
+                                      addPlaceToDay(prev, i, panel.place.id),
                                     );
                                     setToast(
                                       `${panel.place.name} selected for day ${i + 1}.`,
@@ -1888,7 +1886,7 @@ function BanffApp() {
                         }
                       />
                       <Button
-                        title="Export trip backup (JSON)"
+                        title="Export trip JSON (notes excluded)"
                         variant="ghost"
                         icon="document-text-outline"
                         onPress={() =>
@@ -2099,7 +2097,7 @@ function WeatherCard({ area }: { area: WeatherArea }) {
           </Text>
           <Text style={[s.body, { fontSize: 12, marginTop: 6 }]}>
             {current
-              ? `${weather.station} · observed ${new Intl.DateTimeFormat("en-CA", { timeZone: "America/Edmonton", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(new Date(weather.observedAt!))} Banff time`
+              ? `${weather.station} · observed ${formatBanffDateTime(new Date(weather.observedAt!), { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })} Banff time`
               : "An observation is unavailable here. Open the official report for the latest information."}
           </Text>
         </View>
@@ -2616,6 +2614,8 @@ function BookingPanel({
         onChangeText={setTime}
         placeholder="09:30"
       />
+      <Notice>Booking times use Banff local time. From 1 November 2026, Alberta stays on UTC−6 year round.</Notice>
+      <Button title="Alberta local-time information" variant="ghost" small icon="open-outline" onPress={()=>openUrl(BANFF_TIME_POLICY.sourceUrl)}/>
       <Field
         label="Private notes (optional)"
         value={notes}

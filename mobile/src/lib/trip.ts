@@ -51,6 +51,15 @@ export const MAX_STATE_BYTES = 256_000;
 export const MAX_BOOKINGS = 80;
 export const MAX_SAVED_PLACES = 200;
 export const BANFF_TIMEZONE = 'America/Edmonton';
+/** Verified government policy; override stale device tzdata after Alberta's final 2026 clock change. */
+export const BANFF_TIME_POLICY = {
+  effectiveDate: '2026-11-01',
+  effectiveInstant: '2026-11-01T06:00:00Z',
+  utcOffsetMinutes: -360,
+  sourceUrl: 'https://www.alberta.ca/albertas-new-time-system-abt',
+  reviewedAt: '2026-10-30',
+} as const;
+const PERMANENT_ALBERTA_TIME_START = Date.parse(BANFF_TIME_POLICY.effectiveInstant);
 const BUDGET_KEYS = ['accommodation', 'arrival', 'admission', 'transport', 'activities', 'food', 'other'] as const;
 const safeId = /^[a-z0-9][a-z0-9_-]{0,79}$/i;
 const placeById = new Map(places.map(place => [place.id, place]));
@@ -86,9 +95,18 @@ export function isValidTime(value: unknown): value is string {
 }
 
 export function banffDate(now = new Date()): string {
-  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: BANFF_TIMEZONE, year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
+  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: banffTimeZoneForInstant(now), year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(now);
   const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
   return `${values.year}-${values.month}-${values.day}`;
+}
+
+export function banffTimeZoneForInstant(now: Date): string {
+  // IANA Etc/GMT signs are reversed: GMT+6 denotes UTC-6, including on older ICU versions.
+  return now.getTime() >= PERMANENT_ALBERTA_TIME_START ? 'Etc/GMT+6' : BANFF_TIMEZONE;
+}
+
+export function formatBanffDateTime(now: Date, options: Omit<Intl.DateTimeFormatOptions, 'timeZone'> = {}): string {
+  return new Intl.DateTimeFormat('en-CA', { ...options, timeZone: banffTimeZoneForInstant(now) }).format(now);
 }
 
 /** Calendar arithmetic deliberately avoids the device timezone and DST day lengths. */
@@ -248,6 +266,18 @@ export function selectDayPlace(state: AppState, dayIndex: number, activityId: st
   return { ...state, dayPlaces: { ...state.dayPlaces, [`${dayIndex}:${activityId}`]: placeId } };
 }
 
+/** Add the place's planner stop if needed, then retain the precise venue selected by the traveller. */
+export function addPlaceToDay(state: AppState, dayIndex: number, placeId: string): AppState {
+  const place = placeById.get(placeId);
+  const activityId = place?.plannerActivityId;
+  if (!Number.isInteger(dayIndex) || dayIndex < 0 || dayIndex >= state.trip.days.length || !place || !activityId || !Object.hasOwn(activityById, activityId)
+    || !activityFitsSeason(activityById[activityId], state.trip.season) || place.season !== 'all' && place.season !== state.trip.season) return state;
+  const existing = state.trip.days[dayIndex].includes(activityId);
+  const trip = existing ? state.trip : addActivity(state.trip, dayIndex, activityId);
+  if (!existing && trip === state.trip) return state;
+  return selectDayPlace({ ...state, trip }, dayIndex, activityId, placeId);
+}
+
 /** Planning checks follow the actual selected venue, while generic stops keep the original rules. */
 export function warningsForTrip(state: AppState, catalogue: readonly Place[] = places): string[] {
   const selectedById = catalogue === places ? placeById : new Map(catalogue.map(place => [place.id, place]));
@@ -343,7 +373,7 @@ export function tripToText(state: AppState, options: { includePrivateNotes?: boo
   if (state.bookings.length) {
     lines.push('Booking checklist — status recorded by the traveller');
     state.bookings.forEach(booking => {
-      lines.push(`• ${booking.title}${booking.date ? ` · ${booking.date}` : ''}${booking.time ? ` ${booking.time} Mountain Time` : ''} · ${booking.markedBooked ? 'Marked booked by me' : 'To arrange'}`);
+      lines.push(`• ${booking.title}${booking.date ? ` · ${booking.date}` : ''}${booking.time ? ` ${booking.time} Banff time` : ''} · ${booking.markedBooked ? 'Marked booked by me' : 'To arrange'}`);
       if (options.includePrivateNotes && booking.notes) lines.push(`  ${booking.notes}`);
     });
     lines.push('');
@@ -352,14 +382,15 @@ export function tripToText(state: AppState, options: { includePrivateNotes?: boo
   return lines.join('\n');
 }
 
-/** Resolve a Banff wall-clock booking time. Nonexistent and ambiguous DST times require clarification. */
+/** Resolve Banff wall time using verified Alberta Time policy, preserving historical DST validation. */
 export function banffDateTime(date: string, time: string): Date | null {
   if (!isValidDate(date) || !isValidTime(time)) return null;
   const expected = `${date} ${time}`;
   const nominal = Date.parse(`${date}T${time}:00Z`);
+  if (date >= BANFF_TIME_POLICY.effectiveDate) return new Date(nominal - BANFF_TIME_POLICY.utcOffsetMinutes * 60_000);
   const formatter = new Intl.DateTimeFormat('en-CA', { timeZone: BANFF_TIMEZONE, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
   const matches: Date[] = [];
-  // Edmonton uses UTC-6 or UTC-7. Compare the resulting wall time rather than the device offset.
+  // Before the policy change Edmonton used UTC-6 or UTC-7; reject historical gaps and folds.
   for (const offset of [6, 7]) {
     const candidate = new Date(nominal + offset * 3_600_000);
     const fields = Object.fromEntries(formatter.formatToParts(candidate).map(part => [part.type, part.value]));

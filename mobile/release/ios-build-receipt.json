@@ -38,7 +38,11 @@
     "result": "CSSMERR_TP_NOT_TRUSTED",
     "note": "The local macOS verifier could not establish certificate trust. The EAS build succeeded and the artifact's bundle/team metadata matched; real-device installation remains unverified."
   },
-  "submittedToAppStoreConnect": false,
+  "submittedToAppStoreConnect": true,
+  "testFlightSubmissionReceipt": "ios-testflight-submission-receipt.json",
+  "superseded": true,
+  "releaseBlocked": true,
+  "releaseBlocker": "Selecting a place for a missing activity did not add that activity. Build 1 must remain internal and must not be promoted to external testing or public review.",
   "publiclyReleased": false,
   "realDeviceVerified": false,
   "notes": [

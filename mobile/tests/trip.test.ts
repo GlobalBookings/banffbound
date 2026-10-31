@@ -4,7 +4,8 @@ import {
   addActivity, addCalendarDays, addDay, applyTemplate, banffDate, banffDateTime,
   budgetTotal, changeSeason, createDefaultState, decodeState, exportTripPack,
   importTripPack, isValidDate, moveActivity, removeDay, sanitizeState,
-  tripDayIndex, tripToText, removeTripDay, selectDayPlace, removeActivity, warningsForTrip,
+  tripDayIndex, tripToText, removeTripDay, selectDayPlace, removeActivity, warningsForTrip, addPlaceToDay,
+  banffTimeZoneForInstant, formatBanffDateTime,
 } from '../src/lib/trip.ts';
 import { planBookingReminders } from '../src/lib/reminders.ts';
 import { places, type Place } from '../src/data/catalog.ts';
@@ -78,12 +79,28 @@ test('calendar arithmetic and current day use Banff dates across DST and device 
   assert.equal(tripDayIndex(state, new Date('2026-11-05T01:00:00Z')), null);
 });
 
-test('Banff wall-clock reminders use seasonal UTC offsets and reject ambiguous or missing DST times', () => {
+test('historical Banff times preserve seasonal offsets and reject historical DST gaps and folds', () => {
   assert.equal(banffDateTime('2026-06-05', '09:00')?.toISOString(), '2026-06-05T15:00:00.000Z');
-  assert.equal(banffDateTime('2026-12-05', '09:00')?.toISOString(), '2026-12-05T16:00:00.000Z');
+  assert.equal(banffDateTime('2025-12-05', '09:00')?.toISOString(), '2025-12-05T16:00:00.000Z');
   assert.equal(banffDateTime('2026-03-08', '02:30'), null);
-  assert.equal(banffDateTime('2026-11-01', '01:30'), null);
+  assert.equal(banffDateTime('2025-03-09', '02:30'), null);
+  assert.equal(banffDateTime('2025-11-02', '01:30'), null);
   assert.equal(banffDateTime('2026-01-01', '24:00'), null);
+});
+
+test('Alberta Time stays UTC minus six from November 2026 even when device timezone data is outdated', () => {
+  assert.equal(banffDateTime('2026-12-05', '09:00')?.toISOString(), '2026-12-05T15:00:00.000Z');
+  assert.equal(banffDateTime('2026-11-01', '01:30')?.toISOString(), '2026-11-01T07:30:00.000Z');
+  assert.equal(banffDateTime('2027-03-14', '02:30')?.toISOString(), '2027-03-14T08:30:00.000Z');
+  assert.equal(banffDateTime('2027-12-05', '09:00')?.toISOString(), '2027-12-05T15:00:00.000Z');
+  assert.equal(banffDate(new Date('2026-11-01T05:59:00Z')), '2026-10-31');
+  assert.equal(banffDate(new Date('2026-11-01T06:00:00Z')), '2026-11-01');
+  assert.equal(banffDate(new Date('2026-12-05T06:15:00Z')), '2026-12-05');
+  assert.equal(banffTimeZoneForInstant(new Date('2026-12-05T15:00:00Z')), 'Etc/GMT+6');
+  assert.equal(formatBanffDateTime(new Date('2026-12-05T15:00:00Z'), { hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }), '09:00');
+  const state = createDefaultState();
+  state.startDate = '2026-12-05';
+  assert.equal(tripDayIndex(state, new Date('2026-12-05T06:15:00Z')), 0);
 });
 
 test('trip export omits private booking notes by default and import validates its envelope', () => {
@@ -175,6 +192,44 @@ test('a selected restaurant remains the actual venue in storage, shared text and
   assert.equal(selectDayPlace(state, 7, 'dinner', 'nourish-bistro'), state);
 });
 
+test('adding a restaurant creates the missing outing on an empty or nonfull day', () => {
+  const state = createDefaultState();
+  state.trip.days = [[], ['town']];
+  const first = addPlaceToDay(state, 0, 'nourish-bistro');
+  assert.deepEqual(first.trip.days[0], ['dinner']);
+  assert.equal(first.dayPlaces['0:dinner'], 'nourish-bistro');
+  const second = addPlaceToDay(first, 1, 'the-bison-restaurant');
+  assert.deepEqual(second.trip.days[1], ['town', 'dinner']);
+  assert.equal(second.dayPlaces['1:dinner'], 'the-bison-restaurant');
+  assert.deepEqual(state.trip.days, [[], ['town']]);
+  assert.deepEqual(state.dayPlaces, {});
+});
+
+test('choosing another restaurant replaces the dinner venue without duplicating the outing', () => {
+  const state = createDefaultState();
+  state.trip.days = [['town', 'culture', 'dinner']];
+  const original = addPlaceToDay(state, 0, 'nourish-bistro');
+  const replaced = addPlaceToDay(original, 0, 'the-bison-restaurant');
+  assert.deepEqual(replaced.trip.days[0], ['town', 'culture', 'dinner']);
+  assert.equal(replaced.dayPlaces['0:dinner'], 'the-bison-restaurant');
+  assert.equal(original.dayPlaces['0:dinner'], 'nourish-bistro');
+});
+
+test('place addition rejects a full unrelated day, incompatible season and unknown place without partial changes', () => {
+  const state = createDefaultState();
+  state.trip.days = [['town', 'culture', 'cave']];
+  assert.equal(addPlaceToDay(state, 0, 'nourish-bistro'), state);
+  assert.equal(addPlaceToDay(state, 0, 'unknown-place'), state);
+  assert.equal(addPlaceToDay(state, -1, 'nourish-bistro'), state);
+  assert.equal(addPlaceToDay(state, 4, 'nourish-bistro'), state);
+  const seasonal = places.find(place => place.season === 'summer' && place.plannerActivityId);
+  assert.ok(seasonal);
+  state.trip.days = [[]];
+  assert.equal(addPlaceToDay(state, 0, seasonal.id), state);
+  assert.deepEqual(state.trip.days, [[]]);
+  assert.deepEqual(state.dayPlaces, {});
+});
+
 test('removing a day shifts later selected venues and removing a stop prunes its orphaned venue', () => {
   const state = createDefaultState();
   state.trip.days = [['dinner'], ['town'], ['dinner']];
@@ -238,9 +293,9 @@ test('reminder plan excludes private notes and expired or ambiguous times', () =
   state.bookings = [booking];
   const reminders = planBookingReminders(state.bookings, { now: new Date('2026-12-01T00:00Z') });
   assert.equal(reminders.length, 1);
-  assert.equal(reminders[0].at.toISOString(), '2026-12-05T15:30:00.000Z');
+  assert.equal(reminders[0].at.toISOString(), '2026-12-05T14:30:00.000Z');
   assert.equal(reminders[0].body.includes('private'), false);
   assert.equal(reminders[0].body.includes('Marked booked by you'), true);
   assert.equal(planBookingReminders(state.bookings, { now: new Date('2026-12-06T00:00Z') }).length, 0);
-  assert.equal(planBookingReminders([{ ...booking, date: '2026-11-01', time: '01:30' }], { now: new Date('2026-10-01T00:00Z') }).length, 0);
+  assert.equal(planBookingReminders([{ ...booking, date: '2025-11-02', time: '01:30' }], { now: new Date('2025-10-01T00:00Z') }).length, 0);
 });
