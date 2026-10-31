@@ -4,6 +4,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import struct
 import subprocess
@@ -70,7 +71,7 @@ def main():
     evidence = root / 'evidence'
     evidence.mkdir(parents=True, exist_ok=True)
     errors = []
-    for name in ('source-before.json', 'source-after.json', 'source-final.json', 'project.json', 'selected-devices.json', 'embedded-bundle.sha256'):
+    for name in ('source-before.json', 'source-after.json', 'source-final.json', 'project.json', 'selected-devices.json', 'embedded-bundle.sha256', 'bundle-identifier.txt'):
         source = root / name
         if source.is_file():
             shutil.copy2(source, evidence / name)
@@ -83,6 +84,10 @@ def main():
     unchanged = before is not None and before == after == final
     if not unchanged:
         errors.append('Canonical source/config/lock/asset fingerprint was not verified unchanged before and after native QA.')
+    bundle_hash = read_text(root / 'embedded-bundle.sha256') or ''
+    embedded_verified = re.match(r'^[0-9a-f]{64}\s+.+main\.jsbundle$', bundle_hash) is not None and read_text(root / 'bundle-identifier.txt') == 'com.banffbound.app'
+    if not embedded_verified:
+        errors.append('Embedded Release JavaScript bundle hash and expected native bundle identifier were not verified.')
     devices = read_json(root / 'selected-devices.json', [])
     if {device.get('label') for device in devices} != {'iphone', 'ipad'}:
         errors.append('Both required simulator destinations were not selected.')
@@ -147,8 +152,9 @@ def main():
         'finishedAtUTC': read_text(root / 'finished-at.txt'),
         'lastPhase': read_text(root / 'current-phase.txt'),
         'githubRun': {'repository': os.getenv('GITHUB_REPOSITORY'), 'runId': os.getenv('GITHUB_RUN_ID'), 'attempt': os.getenv('GITHUB_RUN_ATTEMPT')},
-        'build': {'configuration': 'Release', 'signing': False, 'xcode': '26.6', 'metroRequired': False,
-                  'embeddedBundleHashRecorded': (root / 'embedded-bundle.sha256').is_file()},
+        'build': {'requestedConfiguration': 'Release', 'signing': False, 'requestedXcode': '26.6',
+                  'metroRequired': False if embedded_verified else None, 'embeddedBundleVerified': embedded_verified,
+                  'embeddedBundleSha256': bundle_hash.split()[0] if embedded_verified else None},
         'capture': {'renderer': 'native React Native iOS simulator', 'locale': 'en_US', 'orientation': 'portrait',
                     'method': 'XCUIScreen.main.screenshot attached by executed XCTest', 'pixelEditing': False,
                     'clockOverride': False, 'data': 'fresh simulator defaults; later persistence tests use a public saved place and synthetic party size'},

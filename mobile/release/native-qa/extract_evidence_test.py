@@ -25,7 +25,7 @@ def png(width, height):
 
 
 class ReceiptTest(unittest.TestCase):
-    def run_fixture(self, *, failed=0, missing_screen=False, bad_dimensions=False, source_changed=False):
+    def run_fixture(self, *, failed=0, missing_screen=False, bad_dimensions=False, source_changed=False, missing_bundle=False):
         with tempfile.TemporaryDirectory(prefix='banffbound-extractor-unit-fixture-') as directory:
             root = Path(directory)
             root.joinpath('logs').mkdir()
@@ -34,7 +34,9 @@ class ReceiptTest(unittest.TestCase):
                 if source_changed and name == 'source-final.json':
                     value['fingerprint'] = 'mutated-fixture'
                 root.joinpath(name).write_text(json.dumps(value))
-            root.joinpath('embedded-bundle.sha256').write_text('fixture-only')
+            if not missing_bundle:
+                root.joinpath('embedded-bundle.sha256').write_text('a' * 64 + '  /fixture-only/main.jsbundle')
+                root.joinpath('bundle-identifier.txt').write_text('com.banffbound.app')
             devices = [{'label': 'iphone', 'expectedPixels': [1206, 2622]}, {'label': 'ipad', 'expectedPixels': [2064, 2752]}]
             root.joinpath('selected-devices.json').write_text(json.dumps(devices))
             for device in devices:
@@ -88,6 +90,12 @@ class ReceiptTest(unittest.TestCase):
         code, receipt = self.run_fixture(source_changed=True)
         self.assertEqual(code, 1)
         self.assertFalse(receipt['sourceUnchanged'])
+
+    def test_unverified_bundle_cannot_claim_metro_independence_or_success(self):
+        code, receipt = self.run_fixture(missing_bundle=True)
+        self.assertEqual(code, 1)
+        self.assertFalse(receipt['build']['embeddedBundleVerified'])
+        self.assertIsNone(receipt['build']['metroRequired'])
 
 
 if __name__ == '__main__':
