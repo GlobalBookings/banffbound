@@ -1,4 +1,4 @@
-import { landingContext, cleanLandingContext } from './landingAttribution.js';
+import { landingContext, cleanLandingContext, manualCampaignContext } from './landingAttribution.js';
 // Optional services use explicit choices. Importing this module never loads a provider.
 export const CONSENT_KEY = 'bb-cookie-consent';
 export const CONSENT_VERSION = 2;
@@ -114,7 +114,7 @@ function applyGoogle(next) {
   if (!googleStarted) { queueGoogle('js', new Date()); googleStarted = true; }
   const page = { page_location: safeTrackingUrl(window.location.href), page_referrer: safeTrackingUrl(document.referrer || '') };
   if (next.analytics && !configured.has(GOOGLE_IDS.analytics)) {
-    queueGoogle('config', GOOGLE_IDS.analytics, { ...page, send_page_view: false, allow_google_signals: next.advertising, allow_ad_personalization_signals: next.advertising });
+    queueGoogle('config', GOOGLE_IDS.analytics, { ...page, ...manualCampaignContext(window.location.href, landingContext().content_id), send_page_view: false, allow_google_signals: next.advertising, allow_ad_personalization_signals: next.advertising });
     configured.add(GOOGLE_IDS.analytics);
     queueGoogle('event', 'page_view', { ...page, send_to: GOOGLE_IDS.analytics, page_title: document.title, ...landingContext() });
   }
@@ -128,7 +128,7 @@ function applyGoogle(next) {
 }
 export function sendAnalyticsEvent(name, parameters = {}) {
   if (!hasConsent('analytics') || typeof window.gtag !== 'function') return false;
-  queueGoogle('event', name, { ...parameters, send_to: GOOGLE_IDS.analytics });
+  queueGoogle('event', name, { ...landingContext(), ...parameters, send_to: GOOGLE_IDS.analytics });
   return true;
 }
 export function reportAffiliateConversion(context = {}) {

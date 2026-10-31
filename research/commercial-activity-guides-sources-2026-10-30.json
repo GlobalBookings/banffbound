@@ -1,0 +1,155 @@
+{
+  "reviewedAt": "2026-10-30",
+  "scope": "Three specific commercial activity planning guides. Sources were reviewed editorially; no selected date, inventory, reservation, live price or future departure was tested. Source-product-ready means a reviewed matching guide and product identity, not confirmed availability.",
+  "originalTwelveRecords": {
+    "count": 12,
+    "serializedSha256": "57b50232423b6608a9f2a213b69104bbf13d24fcc550e6f02db7011278da49a9",
+    "preservation": "Original 12 serialized records and order are pinned unchanged by scripts/check-activities.mjs."
+  },
+  "guides": [
+    {
+      "path": "/activities/ice-climbing/",
+      "primaryProductId": "432341",
+      "sources": [
+        {
+          "label": "Alpine Air beginner course — direct",
+          "url": "https://alpineairadventures.com/product/ice-climbing-course-beginner/",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "label": "Exact marketplace course — product 432341",
+          "url": "https://www.getyourguide.com/banff-l284/banff-ice-climbing-adventure-beginner-t432341/",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "label": "Parks Canada current Johnston Canyon closure",
+          "url": "https://parks.canada.ca/pn-np/ab/banff/bulletins/06d4ef61-a3c9-4b65-8dfc-66d056252d6c",
+          "checkedAt": "2026-10-30"
+        }
+      ],
+      "reviewedAt": "2026-10-30",
+      "renderedVisibleWords": 1777,
+      "faqCount": 4,
+      "planningSectionCount": 3,
+      "photoCreditId": "snowshoe-banff-landscape",
+      "photoNote": "Banff winter landscape, photographed in 2018. A setting photograph, not an ice-climbing venue, course or current-conditions report.",
+      "transportAndParticipantChecks": [
+        "Start with the operator confirmation: course date, meeting address, latest joining instructions, transport to the field site and return arrangements. Keep both the Banff meeting and the venue distinct in your itinerary.",
+        "Work backwards from that meeting when choosing accommodation and travel. A hotel room, resort shuttle or ski pass does not reserve transport to an ice-climbing site. Leave a separate plan for people who are not taking the course.",
+        "The listing requires a minimum of four bookings. Ask how a change of venue, an unmet departure minimum or unsuitable conditions is handled, and read the terms for your particular seller.",
+        "Is everyone at least 14, comfortable with the course’s physical participation and willing to spend the day outside? Ask the guide about the actual approach as well as time climbing.",
+        "Which footwear, technical equipment and sizes will be supplied or rented for the selected booking? Describe the people who need to use them instead of assuming that a general equipment list establishes fit.",
+        "Does anyone need a different pace, communication arrangement or support? Discuss this directly before payment; the beginner label describes the lesson level, not an individual assessment."
+      ],
+      "specificValue": "Compares a supervised beginner course with icewalk/private advanced formats; explains 14+, 7-hour whole day, minimum group and separate self-transport to the actual site without teaching climbing technique. Johnston access remains subject to the existing closure."
+    },
+    {
+      "path": "/activities/yoho-kootenay-winter-tours/",
+      "primaryProductId": "1164949",
+      "sources": [
+        {
+          "label": "Radventures winter tours — direct",
+          "url": "https://www.radventurescanada.com/winter-tours/",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "label": "Exact Frozen Gems marketplace product 1164949",
+          "url": "https://www.getyourguide.com/banff-l284/banff-small-group-tour-of-frozen-gems-of-yoho-and-kootenay-t1164949/",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "label": "Yoho official bulletins",
+          "url": "https://parks.canada.ca/pn-np/bc/yoho/bulletins",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "label": "Kootenay official bulletins",
+          "url": "https://parks.canada.ca/pn-np/bc/kootenay/bulletins",
+          "checkedAt": "2026-10-30"
+        }
+      ],
+      "reviewedAt": "2026-10-30",
+      "renderedVisibleWords": 1761,
+      "faqCount": 5,
+      "planningSectionCount": 3,
+      "photoCreditId": "lake-louise-frozen",
+      "photoNote": "Lake Louise winter setting, photographed in 2018. This is not a photograph of the Yoho/Kootenay tour, its stops or current conditions.",
+      "transportAndParticipantChecks": [
+        "Choose the departure and pickup first, then join it to your room and final return. The road tour and travel to the pickup are separate parts of the day.",
+        "Use the seller’s current itinerary and joining instructions. Do not turn an advertised eight-hour duration into a promised hotel return or connect it tightly to a flight or onward bus.",
+        "Confirm the lunch arrangement, clothing, water and any required equipment. The product describes a premium picnic-lunch upgrade; read the actual option before assuming a meal is included.",
+        "Does the group want a day with road travel between several winter stops, rather than one long active walk or a single attraction visit?",
+        "Which actual walks, steps, vehicle boarding and cold-weather pauses need discussion with the operator? A small group does not establish a specific access arrangement.",
+        "The operator recommends a minimum age of 12 and says children five and under cannot join its small-group tours. Confirm the selected listing’s age rules and the actual arrangements for anyone between those ages."
+      ],
+      "specificValue": "Compares guided winter road-and-walk routing with independent transport; explains optional walks, selected pickup, age guidance, premium lunch distinction and flexible Yoho/Kootenay stops without guaranteeing road access."
+    },
+    {
+      "path": "/activities/banff-food-tours/",
+      "primaryProductId": "698951",
+      "sources": [
+        {
+          "label": "Nibble Taste of Banff — direct year-round programme",
+          "url": "https://www.nibbletours.com/service-page/taste-of-banff-food-tour",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "label": "Exact Nibble marketplace product 698951",
+          "url": "https://www.getyourguide.com/banff-l284/banff-guided-foodie-walking-tour-with-samples-t698951/",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "label": "Alberta Food Tours Eat the Castle — direct",
+          "url": "https://albertafoodtours.ca/tours/eat-the-castle-at-fairmont-banff-springs-hotel/",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "label": "Exact Castle marketplace product 285990",
+          "url": "https://www.getyourguide.com/banff-l284/banff-castle-food-experience-at-banff-springs-hotel-t285990/",
+          "checkedAt": "2026-10-30"
+        }
+      ],
+      "reviewedAt": "2026-10-30",
+      "renderedVisibleWords": 1910,
+      "faqCount": 5,
+      "planningSectionCount": 3,
+      "photoCreditId": "banff-winter-town",
+      "photoNote": "Cascade Mountain from Banff, photographed in 2012. A town setting, not a photograph of the food, tasting venues or either tour.",
+      "transportAndParticipantChecks": [
+        "Save the chosen tour name and meeting instructions together. Give yourself time to reach the Visitor Centre or the hotel lobby, and plan the return separately from the tasting programme.",
+        "Dress for the walking portion of the tour you buy. A winter food walk still includes time moving between stops; an indoor Castle visit has a different travel and clothing plan.",
+        "Allow the tasting tour to be the meal experience you actually want. Read what is included before adding a second large meal, and leave time for any separate dinner booking afterwards.",
+        "Describe allergies, dietary needs and anyone who needs changes to the menu before booking. Nibble asks vegans, vegetarians, dairy-free guests and people with coeliac requirements to contact it first; the Castle tour says it is not ideal for vegans.",
+        "Can everyone manage the actual outdoor walking or indoor venue route? Ask about surfaces, stops, seating, washrooms, wheelchairs, strollers or assistance rather than inferring arrangements from a general listing.",
+        "Which people want the standard tasting option and which want a premium drinks version? Check age requirements and inclusions for the actual option; alcohol is not a universal inclusion."
+      ],
+      "specificValue": "Compares the year-round town tasting walk with the separate indoor Castle experience, distinct meeting points and drinks options; sends dietary/access questions to the provider. Castle remains held for ads because its listing says usually unavailable."
+    }
+  ],
+  "checks": {
+    "modelAndActualFilters": "node scripts/check-activities.mjs",
+    "actualTemplateSSR": "node scripts/check-commercial-activity-guides.mjs",
+    "ssrScope": "Actual detail template, booking CTA, notices and breadcrumbs; only the outer global layout is replaced by an inert slot fixture. Rendered word counts include template planning, sources, FAQ and related-guide text. This is not a full-site build.",
+    "renderedPages": 6,
+    "negativeFixtures": 8,
+    "totalActivityRecords": 15,
+    "detailRoutes": 10,
+    "reviewedProducts": 15,
+    "guideGroups": 13,
+    "readyGuideGroups": 12,
+    "heldGuideGroups": 1,
+    "exactKeywords": 62,
+    "phraseKeywords": 37,
+    "maximumCpcGBP": 0.07
+  },
+  "publication": "Local source only; no account writes, Git action, full build or deployment by this task.",
+  "secondaryCastle": {
+    "anchor": "/activities/banff-food-tours/#castle-food-experience",
+    "productId": "285990",
+    "launchState": "held",
+    "publicAction": "Find out more",
+    "editorialCampaignLabel": "banffbound_banff_food_tours_castle",
+    "paidCampaignLabel": "bb_ca_activities_banff_food_tours_castle",
+    "trackingRequirement": "The bounded paid installer must explicitly allowlist this secondary identity/path before rewriting its editorial cmp for the existing Google+cpc cohort."
+  }
+}

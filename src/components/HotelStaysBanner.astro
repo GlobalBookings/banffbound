@@ -1,0 +1,69 @@
+---
+import photoCredits from '../data/winterActivityPhotoCredits.json';
+
+interface Props {
+  href: string;
+  destination: string;
+  guideId?: string;
+}
+const { href, destination, guideId = '' } = Astro.props;
+const hasContextPhoto = destination === 'Banff' || destination.includes('Lake Louise') || destination === 'Canmore';
+const photoId = destination.includes('Lake Louise') ? 'lake-louise-frozen'
+  : destination === 'Canmore' ? 'canmore-nordic-winter' : 'banff-winter-town';
+const photo = photoCredits.find(item => item.id === photoId);
+if (!photo) throw new Error('The hotel banner photograph needs its source credit.');
+const photoPlace = photoId === 'lake-louise-frozen' ? 'Lake Louise' : photoId === 'canmore-nordic-winter' ? 'Canmore Nordic Centre' : 'Banff';
+---
+
+<section class="hotel-stays-banner" aria-label={`${destination} hotel search`} data-hotel-stays-banner>
+  <div class="affiliate-panel hotel-stays-panel" data-affiliate-embed="expedia-banner">
+    <div class:list={['hotel-stays-main', { 'without-photo': !hasContextPhoto }]}>
+      {hasContextPhoto && <figure class="hotel-stays-photo">
+        <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" />
+        <figcaption>{photoPlace}</figcaption>
+      </figure>}
+      <div class="hotel-stays-copy">
+        <p class="hotel-stays-kicker">Find your base</p>
+        <h2>Compare hotel stays</h2>
+        <p class="hotel-stays-description">Explore {destination} stays, then choose your dates, room and booking terms on Expedia.</p>
+        <a class="btn hotel-stays-link" href={href} target="_blank" rel="noopener noreferrer sponsored" aria-label={`Compare hotel stays in ${destination}; affiliate link opens in a new tab`} data-guide-id={guideId} data-content-id={guideId} data-content-type="travel-guide" data-landing-id="travel-guide" data-offer-id="expedia-destination-search" data-landing-placement="article-hotel-banner">Compare hotel stays <span aria-hidden="true">↗</span></a>
+        <p class="hotel-stays-disclosure">Affiliate link. BanffBound may earn from qualifying bookings.</p>
+      </div>
+    </div>
+    <details class="hotel-stays-options">
+      <summary>Optional booking widget &amp; privacy choices</summary>
+      <p class="affiliate-embed-status" data-affiliate-status role="status" aria-live="polite">Optional partner content is off. You can use the direct link without enabling it.</p>
+      <button type="button" data-open-consent class="affiliate-preferences">Privacy choices</button>
+      <div data-affiliate-mount hidden></div>
+    </details>
+  </div>
+  {hasContextPhoto && <p class="hotel-stays-photo-credit">Photo: {photoPlace} · <a href={photo.sourceUrl} target="_blank" rel="noopener">{photo.author}</a> · <a href={photo.licenseUrl} target="_blank" rel="noopener">{photo.license}</a></p>}
+</section>
+
+<style>
+  .hotel-stays-banner{margin:1.75rem auto 0;text-align:left}
+  .hotel-stays-panel{border:1px solid #d5ddd4;background:#f5f5ee;overflow:hidden}
+  .hotel-stays-main{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+  .hotel-stays-main.without-photo{grid-template-columns:1fr}
+  .hotel-stays-photo{position:relative;margin:0;min-height:255px;background:#dbe4da}
+  .hotel-stays-photo img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hotel-stays-photo figcaption{position:absolute;inset:auto .65rem .65rem;background:rgba(255,255,255,.94);padding:.25rem .45rem;color:#2c4536;font-size:.64rem;line-height:1.4}
+  .hotel-stays-photo figcaption a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+  .hotel-stays-photo-credit{font-size:.67rem;line-height:1.5;color:#61705c;margin:.45rem 0 0}
+  .hotel-stays-photo-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+  .hotel-stays-copy{padding:1.7rem 1.8rem}
+  .hotel-stays-kicker{margin:0 0 .4rem;text-transform:uppercase;font-size:.68rem;font-weight:700;letter-spacing:.14em;color:#52644e}
+  .hotel-stays-copy h2{font-size:clamp(1.75rem,3vw,2.35rem);line-height:1.13;margin:0 0 .65rem;color:var(--color-primary)}
+  .hotel-stays-description{margin:0 0 1.15rem;font-size:1rem;line-height:1.5;color:#354a3c}
+  .hotel-stays-link{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:48px;padding:.75rem 1.05rem;background:var(--color-primary);color:white!important;font-size:.95rem;font-weight:700;text-decoration:none!important;border:1px solid var(--color-primary);border-radius:3px;white-space:normal}
+  .hotel-stays-link:hover{background:#284c37}
+  .hotel-stays-link:focus-visible{outline:3px solid #a97624;outline-offset:4px}
+  .hotel-stays-disclosure{margin:.65rem 0 0;font-size:.72rem;line-height:1.45;color:#536052}
+  .hotel-stays-options{border-top:1px solid #d5ddd4;padding:.65rem 1rem;font-size:.8rem;color:#4c5c4d}
+  .hotel-stays-options summary{cursor:pointer;min-height:24px;line-height:1.5}
+  .affiliate-embed-status{font-size:.8rem;line-height:1.5;margin:.75rem 0}
+  .affiliate-preferences{font:inherit;border:1px solid #758573;background:transparent;color:var(--color-primary);min-height:44px;padding:.45rem .8rem;cursor:pointer}
+  [data-affiliate-mount][hidden]{display:none!important}
+  [data-affiliate-mount]{margin-top:1rem}
+  @media(max-width:600px){.hotel-stays-banner{margin-top:1.2rem}.hotel-stays-main{grid-template-columns:1fr}.hotel-stays-photo{min-height:0;aspect-ratio:16/7}.hotel-stays-copy{padding:1.2rem}.hotel-stays-copy h2{font-size:1.9rem}.hotel-stays-link{width:100%}.hotel-stays-description{font-size:.95rem}}
+</style>

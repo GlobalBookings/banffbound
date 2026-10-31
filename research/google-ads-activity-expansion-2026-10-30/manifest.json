@@ -1,0 +1,101 @@
+{
+  "preparedAtUTC": "2026-10-31T04:35:34.360Z",
+  "status": "LOCAL_VALIDATED_PACKAGE_ONLY_NOT_UPLOADED",
+  "campaign": {
+    "id": "24416287886",
+    "name": "BB | CA | Search | Winter activities | 50GBP test",
+    "sourceReceipt": "ORIGINAL/research/google-ads-activity-launch-receipt-2026-10-30.json",
+    "sourceReceiptSha256": "acbaa2835cb2288f3218fcded6ea7e7e4140d6b6ad111b808c8f1243e476c70b",
+    "accountCurrency": "GBP"
+  },
+  "authorityAndPreservation": {
+    "scope": "Add relevant specific activity-guide ad groups, RSAs and exact/phrase keywords to the existing activity campaign. No account operation by artifact writer.",
+    "campaignRows": 0,
+    "budgetRows": 0,
+    "campaignTotalBudgetGBPUnchanged": 50,
+    "campaignMaximumCpcGBPUnchanged": 0.07,
+    "adGroupAndKeywordMaximumCpcGBP": 0.07,
+    "countryUnchanged": "Canada",
+    "locationModeUnchanged": "Presence",
+    "networkUnchanged": "Google Search only",
+    "campaignDatesUnchanged": {
+      "start": "2026-10-31",
+      "end": "2026-11-06",
+      "accountTimeZone": "GMT+00:00"
+    },
+    "existingCampaignAdGroupAdKeywordRowsModified": 0,
+    "hotelRows": 0,
+    "sharedAccountAssetRows": 0
+  },
+  "counts": {
+    "adGroups": 12,
+    "responsiveSearchAds": 12,
+    "exactKeywords": 58,
+    "phraseKeywords": 35,
+    "keywords": 93,
+    "headlines": 72,
+    "descriptions": 48,
+    "heldGuideGroupsOmitted": 1
+  },
+  "uploadOrder": [
+    "01-ad-groups.csv",
+    "02-responsive-search-ads.csv",
+    "03-keywords.csv"
+  ],
+  "files": [
+    {
+      "file": "01-ad-groups.csv",
+      "template": "ad_group",
+      "rows": 12,
+      "sha256": "322fd3d4e256e55b6637e5aa3ccd31835f1b6848530545e9e91dcc9c22a6b809",
+      "rowType": "Ad group",
+      "status": "Enabled",
+      "action": "Add"
+    },
+    {
+      "file": "02-responsive-search-ads.csv",
+      "template": "responsive_search_ad",
+      "rows": 12,
+      "sha256": "2818e753dd88f666f2cd202d1fe90fa3ad2ef9e5cd8939acb4e8c5ee291f457c",
+      "rowType": "Ad",
+      "status": "Enabled",
+      "action": "Add"
+    },
+    {
+      "file": "03-keywords.csv",
+      "template": "keyword",
+      "rows": 93,
+      "sha256": "d9dabb9624d38ee8038d5780ea631c6370a7c2a2d55f1861657039133d356cda",
+      "rowType": "Keyword",
+      "status": "Enabled",
+      "action": "Add"
+    }
+  ],
+  "sourceMapping": {
+    "path": "src/data/activityCampaignTargets.ts",
+    "sha256": "bc7adf429485249620e74893be4041c68817c77baa5bd14a00778fa9997addf5",
+    "readyMeaning": "Reviewed guide/product match only; selected-date availability, policy eligibility, paid delivery, conversion and profitability are untested.",
+    "heldGuideGroupIdsOmitted": [
+      "johnston-icewalk"
+    ]
+  },
+  "urlContract": {
+    "finalUrl": "Clean existing guide paths, without paid-only routes or query strings.",
+    "finalUrlSuffix": "utm_source=google&utm_medium=cpc&utm_campaign=bb_ca_winter_50_test&utm_content=activity_<fixed_target_id_underscores>_rsa",
+    "affiliate": "Native page links remain editorial in SSR. Exact Google/cpc/campaign traffic is handled by the separately reviewed fixed allowlist installer; this package does not alter partner links."
+  },
+  "importBoundary": {
+    "providerPreviewPerformed": false,
+    "providerImportPerformed": false,
+    "providerApplyPerformed": false,
+    "liveUrlsCheckedByPackageWriter": false,
+    "liveStateVerified": false,
+    "prerequisites": [
+      "Root verifies deployment and each new final URL returns the expected public guide before uploading/applying.",
+      "Root previews each file in native web uploader, verifies destination campaign, Add counts and zero errors.",
+      "Root applies only the reviewed rows, then reopens saved groups, RSAs, keywords, bid limit, total budget, targeting, network and dates.",
+      "Do not reapply Add CSVs blindly; first inspect saved objects to avoid duplicates."
+    ],
+    "noPrediction": "An Enabled row is an intended imported status. Local validation is not proof of an enabled, approved or serving provider object."
+  }
+}

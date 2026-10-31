@@ -1,0 +1,54 @@
+{
+  "result": "PASS",
+  "scope": "Local CSV, fixed source snapshot and native-template checks only. No provider preview, import, apply, live URL request, serving or conversion verification.",
+  "campaignId": "24416287886",
+  "counts": {
+    "adGroups": 12,
+    "responsiveSearchAds": 12,
+    "exactKeywords": 58,
+    "phraseKeywords": 35,
+    "keywords": 93,
+    "headlines": 72,
+    "descriptions": 48,
+    "heldGuideGroupsOmitted": 1
+  },
+  "checks": [
+    "Native web-template exact header order and SHA256 receipts",
+    "Existing campaign ID and name only; Add only; no object IDs",
+    "12 ready groups; held Johnston and held products omitted",
+    "7p group and keyword bids; zero Campaign/budget/hotel/shared-asset rows",
+    "12 clean corresponding guide destinations and exact fixed-cohort suffixes",
+    "RSA asset limits and source-copy equality",
+    "58 exact and35 phrase keywords; no broad match; no duplicate group/type/term triples"
+  ],
+  "negativeFixtures": 7,
+  "files": [
+    {
+      "file": "01-ad-groups.csv",
+      "template": "ad_group",
+      "rows": 12,
+      "sha256": "322fd3d4e256e55b6637e5aa3ccd31835f1b6848530545e9e91dcc9c22a6b809",
+      "rowType": "Ad group",
+      "status": "Enabled",
+      "action": "Add"
+    },
+    {
+      "file": "02-responsive-search-ads.csv",
+      "template": "responsive_search_ad",
+      "rows": 12,
+      "sha256": "2818e753dd88f666f2cd202d1fe90fa3ad2ef9e5cd8939acb4e8c5ee291f457c",
+      "rowType": "Ad",
+      "status": "Enabled",
+      "action": "Add"
+    },
+    {
+      "file": "03-keywords.csv",
+      "template": "keyword",
+      "rows": 93,
+      "sha256": "d9dabb9624d38ee8038d5780ea631c6370a7c2a2d55f1861657039133d356cda",
+      "rowType": "Keyword",
+      "status": "Enabled",
+      "action": "Add"
+    }
+  ]
+}
