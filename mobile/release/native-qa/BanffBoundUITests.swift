@@ -579,6 +579,7 @@ final class BanffBoundUITests: XCTestCase {
         try mapSearch("zzzz-no-banff-place-qa-9481")
         scrollTo("No places match those filters")
         XCTAssertTrue(visible("No places match those filters").isHittable, "An invalid public query must produce the genuine empty state")
+        scrollTo("Reset map filters")
         tap("Reset map filters")
         mapScrollToTop()
         let count = visibleID("map-result-count")
