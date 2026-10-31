@@ -25,7 +25,7 @@ export const winterActivityOffers = [
     transport: 'Confirm the actual Banff pickup or meeting point shown for the selected departure. Staying in Canmore, Lake Louise or Calgary does not establish pickup there.',
     group: 'Before paying, check the chosen product’s age and mobility requirements, winter footwear, equipment inclusions and everyone’s comfort with snowy paths and heights.',
     bookingCheck: 'Check the current canyon closure and ask how the operator handles your date or a route change. A published departure calendar does not override Parks restrictions.',
-    cta: 'Choose an icewalk date on GetYourGuide',
+    cta: 'Book now',
   },
   {
     id: 'gyg-256607', productId: '256607', experienceType: 'summit', anchor: 'banff-gondola',
@@ -39,7 +39,7 @@ export const winterActivityOffers = [
     transport: 'Plan how to reach the Mountain Avenue base and return afterwards. Check current Route 1 and operator transport information; a summer free-shuttle promotion does not establish winter inclusion.',
     group: 'For mobility needs, clarify cabin access, the indoor visit and any outdoor boardwalk or steps separately. A general accessibility label does not establish that every summit feature suits everyone.',
     bookingCheck: 'Select the ticket and arrival time, then read its actual cancellation terms. Check operating hours and visibility expectations before committing; there is no promised clear view.',
-    cta: 'Choose gondola tickets on GetYourGuide',
+    cta: 'Book now',
   },
   {
     id: 'gyg-437912', productId: '437912', experienceType: 'road-day', anchor: 'winter-wonderland',
@@ -53,12 +53,12 @@ export const winterActivityOffers = [
     transport: 'Use the meeting or pickup instructions for the GetYourGuide option you select. Confirm any hotel request with the operator; its direct-booking pickup list is not proof that every reseller option includes the same collection.',
     group: 'Discuss the walking, cold-weather stops, ages, mobility needs and any requested skate equipment before paying. Ask about food and equipment in the selected listing rather than transferring inclusions from another sales channel.',
     bookingCheck: 'Confirm the current route around canyon construction and which Lake Louise activities are intended for your date. Do not book on an assumption of accessible natural lake ice or guaranteed wildlife.',
-    cta: 'Choose winter-tour dates on GetYourGuide',
+    cta: 'Book now',
   },
 ].map(offer => ({ ...offer, bookingUrl: winterActivityBookingUrl(offer.productUrl) }));
 
 export const winterActivityFaqs = [
-  { question: 'Which experience should I choose for a non-ski day?', answer: 'Choose the icewalk for a guided outdoor walk, the gondola for a ride-based mountain attraction, or the Radventures outing for a guided road day with outdoor stops. Compare the walking, weather exposure and transport with everyone in the group before choosing a date.' },
+  { question: 'Which experience should I choose for a non-ski day?', answer: 'For a non-ski day, start with the gondola, a guided canyon walk or a Lake Louise outing. The wider shortlist includes snowshoeing, town sights and indoor alternatives. Match the walking, transport and weather exposure to everyone in your group; seasonal access and opening dates vary.' },
   { question: 'Does a tour include pickup from my hotel?', answer: 'Use the pickup or meeting point on the specific option you select. Banff, Canmore, Lake Louise and Calgary are different starting locations. Confirm a hotel request and the return with the provider instead of assuming door-to-door collection.' },
   { question: 'Are the canyon and lake activities available on every winter date?', answer: 'No. Closures, snow, ice and weather can change the route or activity. Check the dated Johnston Canyon notice and ask the operator about your departure. A listed product does not establish safe natural ice, an open route or a confirmed place on a specific date.' },
   { question: 'Where do I see the final price and cancellation policy?', answer: 'On GetYourGuide, select the date, participants and exact option, then read the total, inclusions, pickup instructions and terms before paying. These products can have different cancellation rules. BanffBound does not take your booking or payment.' },
