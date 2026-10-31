@@ -64,6 +64,18 @@ The existing public contact is `hello@banffbound.com`, with the website contact 
 
 ## Evidence to retain
 
+Mobile CI reproduces the submitted catalogue against the exact reviewed website
+snapshot recorded in `reviewed-content-source.json` (commit `4da51e0`). A second
+ephemeral checkout receives the actual current mobile tree and runs the unchanged
+generator with `--check` and all current mobile tests in that same source context.
+The check verifies all 12 `contentProvenance` input
+hashes, photo credits, byte-exact generated output and unchanged mobile inputs.
+Independent website affiliate updates therefore do not silently replace the
+content of a submitted app. To publish newly reviewed app content, explicitly
+review a new website revision, regenerate the catalogue and update the pin,
+photo-credit hash and matching workflow checkout together. A provenance or output
+mismatch fails CI; it is never skipped or automatically accepted.
+
 Create a release receipt containing the source revision, dependency lock hash, test results, content version, export/binary hashes, feed availability, known limitations, web verification and store submission/publication status. Never include tokens, account credentials, private booking notes or full hosting environment specifications.
 
 Primary references: [Expo store builds](https://docs.expo.dev/deploy/build-project/), [Apple review guidelines](https://developer.apple.com/app-store/review/guidelines/), [Google Play account testing](https://support.google.com/googleplay/android-developer/answer/14151465).
