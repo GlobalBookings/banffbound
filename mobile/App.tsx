@@ -92,6 +92,7 @@ import {
   pickTripPack,
 } from "./src/lib/offline";
 import MapBrowser from "./src/components/MapBrowser";
+import SearchInput, { type SearchInputHandle } from "./src/components/SearchInput";
 import { mapPoints } from "./src/data/map.generated";
 import CommerceBrowser, { RelatedCommerceLinks } from "./src/components/CommerceBrowser";
 import type { CommerceSection } from "./src/data/commerce";
@@ -249,6 +250,7 @@ function BanffApp() {
   const [exploreMode, setExploreMode] = useState<ExploreMode>("places");
   const [panel, setPanel] = useState<Panel | null>(null);
   const [search, setSearch] = useState("");
+  const placeSearchInput = useRef<SearchInputHandle>(null);
   const [category, setCategory] = useState("all");
   const [area, setArea] = useState("all");
   const [savedOnly, setSavedOnly] = useState(false);
@@ -771,33 +773,9 @@ function BanffApp() {
             {tab === "Map" && <MapBrowser onOpenUrl={openUrl} onOpenCommerceUrl={openCommerceUrl} focusPlaceId={selectedPlace?.id} position={position} onLocate={locate} locationMessage={locationMessage} />}
             {tab === "Explore" && exploreMode === "places" && (
               <>
-                <View style={a.searchBox}>
-                  <Ionicons
-                    name="search-outline"
-                    size={20}
-                    color={colors.muted}
-                  />
-                  <TextInput
-                    accessibilityLabel="Search places"
-                    value={search}
-                    onChangeText={setSearch}
-                    placeholder="Lakes, little cafés, your next adventure…"
-                    placeholderTextColor={colors.muted}
-                    style={a.searchInput}
-                  />
-                  {search && (
-                    <Pressable
-                      accessibilityLabel="Clear search"
-                      onPress={() => setSearch("")}
-                    >
-                      <Ionicons
-                        name="close-circle"
-                        size={19}
-                        color={colors.muted}
-                      />
-                    </Pressable>
-                  )}
-                </View>
+                <SearchInput ref={placeSearchInput} initialQuery={search} onSearch={setSearch}
+                  accessibilityLabel="Search places" testID="places-search"
+                  placeholder="Lakes, little cafés, your next adventure…" />
                 <ScrollView
                   horizontal
                   showsHorizontalScrollIndicator={false}
@@ -852,6 +830,7 @@ function BanffApp() {
                     body="Try a different area or category, or clear your search."
                     action="Reset filters"
                     onPress={() => {
+                      placeSearchInput.current?.clear();
                       setSearch("");
                       setArea("all");
                       setCategory("all");

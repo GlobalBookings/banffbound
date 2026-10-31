@@ -1,9 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View, useWindowDimensions } from 'react-native';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { commerceItems, commerceSections, type CommerceItem, type CommerceLink, type CommerceSection } from '../data/commerce';
 import { COMMERCE_PAGE_SIZE, commerceFacets, commerceLinkTitle, filterCommerceItems, isAllowedCommerceUrl, relatedCommerceItems, safeCommerceUrl } from '../lib/commerce';
 import { Button, Card, Chip, Empty, Notice, colors, s } from './ui';
+import SearchInput, { type SearchInputHandle } from './SearchInput';
 
 type OpenUrl = (url: string) => void;
 const icons: Record<CommerceSection, keyof typeof Ionicons.glyphMap> = { tours: 'ticket-outline', stays: 'bed-outline', guides: 'book-outline', extras: 'sparkles-outline' };
@@ -73,6 +74,7 @@ function CommerceDetail({ item, onClose, onOpenUrl }: { item: CommerceItem | nul
 
 export default function CommerceBrowser({ section, onOpenUrl }: { section: CommerceSection; onOpenUrl: OpenUrl }) {
   const [query, setQuery] = useState('');
+  const searchInput = useRef<SearchInputHandle>(null);
   const [area, setArea] = useState('all');
   const [category, setCategory] = useState('all');
   const [shown, setShown] = useState(COMMERCE_PAGE_SIZE);
@@ -82,19 +84,15 @@ export default function CommerceBrowser({ section, onOpenUrl }: { section: Comme
   const heading = commerceSections.find(item => item.id === section);
   const facets = useMemo(() => commerceFacets(commerceItems, section), [section]);
   const results = useMemo(() => filterCommerceItems(commerceItems, { section, query, area, category }), [section, query, area, category]);
-  useEffect(() => { setQuery(''); setArea('all'); setCategory('all'); setSelected(null); setFiltersOpen(false); }, [section]);
+  useEffect(() => { searchInput.current?.clear(); setQuery(''); setArea('all'); setCategory('all'); setSelected(null); setFiltersOpen(false); }, [section]);
   useEffect(() => setShown(COMMERCE_PAGE_SIZE), [section, query, area, category]);
-  const resetFilters = () => { setQuery(''); setArea('all'); setCategory('all'); };
+  const resetFilters = () => { searchInput.current?.clear(); setQuery(''); setArea('all'); setCategory('all'); };
   return <View style={c.browser}>
     <View style={c.headingRow}>
       <View style={{ flex: 1, gap: 5 }}><Text style={s.h2}>{heading?.title || 'Explore more'}</Text><Text style={s.body}>{heading?.summary}</Text></View>
       <View style={c.headingIcon}><Ionicons name={icons[section]} size={23} color={colors.green} /></View>
     </View>
-    <View style={c.search}>
-      <Ionicons name="search-outline" size={20} color={colors.muted} />
-      <TextInput testID={`commerce-search-${section}`} accessibilityLabel={`Search ${heading?.title || section}`} value={query} onChangeText={setQuery} maxLength={180} autoCorrect={false} placeholder={`Search ${section === 'extras' ? 'transport, rentals and more' : section}…`} placeholderTextColor={colors.muted} style={c.searchInput} />
-      {!!query && <Pressable accessibilityRole="button" accessibilityLabel="Clear search" onPress={() => setQuery('')} hitSlop={9}><Ionicons name="close-circle" size={20} color={colors.muted} /></Pressable>}
-    </View>
+    <SearchInput ref={searchInput} testID={`commerce-search-${section}`} accessibilityLabel={`Search ${heading?.title || section}`} onSearch={setQuery} placeholder={`Search ${section === 'extras' ? 'transport, rentals and more' : section}…`} />
     <View style={c.filterBar}>
       <Pressable accessibilityRole="button" accessibilityLabel="Filter by area and topic" accessibilityState={{ expanded: filtersOpen }} onPress={() => setFiltersOpen(!filtersOpen)} style={c.filterToggle}><Ionicons name="options-outline" size={18} color={colors.green} /><Text style={s.link}>Filters{area !== 'all' || category !== 'all' ? ' · active' : ''}</Text><Ionicons name={filtersOpen ? 'chevron-up' : 'chevron-down'} size={15} color={colors.green} /></Pressable>
       <Text accessibilityLiveRegion="polite" style={c.resultCount}>{results.length} {results.length === 1 ? 'result' : 'results'}</Text>
@@ -135,8 +133,6 @@ export function RelatedCommerceLinks({ placeId, activityId, onOpenUrl }: { place
 const c = StyleSheet.create({
   browser: { gap: 16 }, headingRow: { flexDirection: 'row', alignItems: 'center', gap: 14 },
   headingIcon: { width: 48, height: 48, borderRadius: 16, backgroundColor: colors.pale, alignItems: 'center', justifyContent: 'center' },
-  search: { flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.line, borderRadius: 16, paddingHorizontal: 14, minHeight: 54 },
-  searchInput: { flex: 1, color: colors.ink, fontSize: 15, paddingVertical: 14, minWidth: 0 },
   filterBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
   filterToggle: { flexDirection: 'row', alignItems: 'center', gap: 8, minHeight: 42, paddingHorizontal: 4 }, resultCount: { fontSize: 13, color: colors.muted }, chips: { gap: 8, paddingVertical: 3 },
   cards: { gap: 14 }, wideCards: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'stretch' },
