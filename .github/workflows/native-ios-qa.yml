@@ -24,7 +24,6 @@ jobs:
       CI: '1'
       EXPO_NO_TELEMETRY: '1'
       DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
-      QA_ROOT: ${{ runner.temp }}/banffbound-native-qa
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,6 +31,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22.23.4'
+      - name: Select temporary QA workspace
+        run: echo "QA_ROOT=$RUNNER_TEMP/banffbound-native-qa" >> "$GITHUB_ENV"
       - name: Build once and test actual native iPhone and iPad UI
         working-directory: mobile
         run: bash release/native-qa/run-ios-qa.sh
