@@ -30,7 +30,8 @@ class ReceiptTest(unittest.TestCase):
     def run_fixture(self, *, failed=0, missing_screen=None, bad_dimensions=False, source_changed=False, missing_bundle=False, missing_offline=False,
                     test_count=9, substituted_test=False, missing_browser=False, browser_returned=True, browser_address_visible=False, missing_browser_screen=False,
                     invented_partner_query=False, missing_map_marker=False, missing_map_filter=False,
-                    map_marker_surface='native-webview-document-button', map_facility_field='Access in map data', map_reset=True):
+                    map_marker_surface='native-webview-document-button', map_facility_field='Access in map data', map_reset=True,
+                    missing_input_stage=False, partial_input=False, phone_heading=False, phone_key_not_ready=False):
         with tempfile.TemporaryDirectory(prefix='banffbound-extractor-unit-fixture-') as directory:
             root = Path(directory)
             root.joinpath('logs').mkdir()
@@ -105,6 +106,28 @@ class ReceiptTest(unittest.TestCase):
                         filename = name + '.txt'
                         destination.joinpath(filename).write_text(json.dumps(observation))
                         entries.append({'exportedFileName': filename, 'suggestedHumanReadableName': filename})
+                    for index, query in enumerate(extract.MAP_INPUT_QUERIES):
+                        for stage in ('before', 'after'):
+                            if missing_input_stage and index == 0 and stage == 'after':
+                                continue
+                            observation = {
+                                'kind': 'native-map-input-observation', 'query': query, 'phase': stage,
+                                'deviceClass': device['label'], 'entryMethod': 'bulk-native-text-without-return',
+                                'typedWithoutReturn': True, 'keyboardReadyBeforeTyping': True,
+                                'searchKeyReadyBeforeTyping': not (phone_key_not_ready and device['label'] == 'iphone'),
+                                'beforeValue': query, 'afterValue': query if stage == 'after' else None,
+                                'fieldValue': query, 'keyboardVisible': stage == 'before',
+                                'dismissalMethod': 'not-attempted' if stage == 'before' else 'native-search-key',
+                                'searchReadyForDismissal': stage == 'after', 'headingObserved': False,
+                                'dismissalCompleted': stage == 'after', 'resultCountLabel': 'fixture-only',
+                            }
+                            if partial_input and index == 0 and stage == 'before':
+                                observation['beforeValue'] = observation['fieldValue'] = 'B'
+                            if phone_heading and device['label'] == 'iphone' and stage == 'after':
+                                observation.update(dismissalMethod='ipad-visible-heading', headingObserved=True)
+                            filename = f'input-{index}-{stage}.txt'
+                            destination.joinpath(filename).write_text(json.dumps(observation))
+                            entries.append({'exportedFileName': filename, 'suggestedHumanReadableName': 'qa-map-input-observation-' + filename})
                     if failed:
                         destination.joinpath('failure.png').write_bytes(png(*dimensions))
                         entries.append({'exportedFileName': 'failure.png', 'suggestedHumanReadableName': 'qa-failure-screen.png'})
@@ -146,6 +169,33 @@ class ReceiptTest(unittest.TestCase):
         self.assertTrue(all(len(device['executedTestIdentifiers']) == 9 for device in receipt['devices']))
         self.assertTrue(all(device['nativeMapMarkerDetail']['selectionSurface'] == 'native-webview-document-button' for device in receipt['devices']))
         self.assertTrue(all(device['nativeMapFiltersFacilities']['resetRestoredAllFilters'] for device in receipt['devices']))
+        self.assertTrue(all(len(device['nativeMapInputObservations']) == 6 for device in receipt['devices']))
+
+    def test_missing_input_stage_cannot_pass(self):
+        code, receipt = self.run_fixture(missing_input_stage=True)
+        self.assertEqual(code, 1)
+        self.assertTrue(any('before/after query pairs' in error for error in receipt['errors']))
+
+    def test_partial_native_input_cannot_pass(self):
+        code, receipt = self.run_fixture(partial_input=True)
+        self.assertEqual(code, 1)
+        self.assertTrue(any('bulk query must be complete' in error for error in receipt['errors']))
+
+    def test_phone_heading_cannot_substitute_for_actual_search_key(self):
+        code, receipt = self.run_fixture(phone_heading=True)
+        self.assertEqual(code, 1)
+        self.assertTrue(any('phone required' in error for error in receipt['errors']))
+
+    def test_phone_keyboard_container_cannot_substitute_for_ready_search_key(self):
+        code, receipt = self.run_fixture(phone_key_not_ready=True)
+        self.assertEqual(code, 1)
+        self.assertTrue(any('bulk query must be complete' in error for error in receipt['errors']))
+
+    def test_failed_run_retains_partial_input_stages_without_claiming_success(self):
+        code, receipt = self.run_fixture(failed=1, missing_input_stage=True, partial_input=True)
+        self.assertEqual(code, 1)
+        self.assertFalse(receipt['passed'])
+        self.assertTrue(all(len(device['nativeMapInputObservations']) == 5 for device in receipt['devices']))
 
     def test_real_test_failure_cannot_become_success(self):
         code, receipt = self.run_fixture(failed=1)

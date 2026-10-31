@@ -406,21 +406,83 @@ final class BanffBoundUITests: XCTestCase {
         XCTFail("Could not bring the map search and heading into view")
     }
 
-    private func mapSearch(_ query: String) {
+    private func mapSearch(_ query: String) throws {
         mapScrollToTop()
         if element("Clear map search").exists { tap("Clear map search") }
         let field = app.textFields.matching(identifier: "map-search").firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 10) && field.isHittable, "Map search must be a real native editable field")
         field.tap()
-        field.typeText(query + "\n")
-        if app.keyboards.firstMatch.exists {
-            let heading = app.staticTexts.matching(NSPredicate(format: "label == 'Get your bearings.'")).firstMatch
-            XCTAssertTrue(heading.isHittable, "Use the visible native map heading to dismiss its search keyboard")
-            heading.tap()
+        let keyboard = app.keyboards.firstMatch
+        let isPhone = app.frame.width < 600
+        let keyboardReady = keyboard.waitForExistence(timeout: 10)
+        let searchKey = keyboard.buttons.matching(NSPredicate(format: "label ==[c] 'search' OR identifier ==[c] 'search'")).firstMatch
+        let keyReadyBeforeTyping = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == true AND hittable == true"), object: searchKey)
+        let searchKeyReadyBeforeTyping = isPhone
+            ? keyboardReady && XCTWaiter.wait(for: [keyReadyBeforeTyping], timeout: 10) == .completed
+            : searchKey.exists && searchKey.isHittable
+        var observation: [String: Any] = [
+            "kind": "native-map-input-observation", "query": query,
+            "deviceClass": isPhone ? "iphone" : "ipad",
+            "entryMethod": "bulk-native-text-without-return", "typedWithoutReturn": false,
+            "keyboardReadyBeforeTyping": keyboardReady,
+            "searchKeyReadyBeforeTyping": searchKeyReadyBeforeTyping,
+            "beforeValue": NSNull(), "afterValue": NSNull(),
+            "dismissalMethod": "not-attempted", "headingObserved": false,
+            "dismissalCompleted": false,
+        ]
+        let slug = query.replacingOccurrences(of: "[^A-Za-z0-9-]+", with: "-", options: .regularExpression)
+        func record(_ phase: String) throws {
+            observation["phase"] = phase
+            observation["fieldValue"] = (field.value as? String).map { $0 as Any } ?? NSNull()
+            observation["keyboardVisible"] = keyboard.exists
+            observation["searchKeyExists"] = searchKey.exists
+            observation["searchKeyHittable"] = searchKey.exists && searchKey.isHittable
+            observation["keyboardButtonLabels"] = keyboard.exists ? Array(keyboard.buttons.allElementsBoundByIndex.suffix(12)).map { String($0.label.prefix(80)) } : []
+            let count = app.staticTexts.matching(identifier: "map-result-count").firstMatch
+            observation["resultCountLabel"] = count.exists ? count.label : "unavailable"
+            try attachJSON(observation, name: "qa-map-input-observation-\(slug)-\(phase)")
         }
-        let dismissed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.keyboards.firstMatch)
-        XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: 5), .completed, "Map keyboard must dismiss before tapping a document marker")
-        XCTAssertEqual(field.value as? String, query, "The public map search must reach the native input")
+        if isPhone && (!keyboardReady || !searchKeyReadyBeforeTyping) {
+            try record("before")
+            XCTAssertTrue(keyboardReady, "The phone must expose its actual native keyboard before bulk typing")
+            XCTAssertTrue(searchKeyReadyBeforeTyping, "The phone's actual Search key must be present and hittable before bulk typing")
+            return
+        }
+        // One uninterrupted bulk entry. Submit is a separate, actual native key
+        // action so a before/after discrepancy identifies the failing phase.
+        field.typeText(query)
+        observation["typedWithoutReturn"] = true
+        let beforeValue = field.value as? String
+        observation["beforeValue"] = beforeValue.map { $0 as Any } ?? NSNull()
+        try record("before") // Retain evidence before an assertion can abort this test.
+        XCTAssertEqual(beforeValue, query, "The complete bulk query must be visible before any Search or blur action")
+        let keyReadyForDismissal = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == true AND hittable == true"), object: searchKey)
+        let searchReady = keyboard.exists && XCTWaiter.wait(for: [keyReadyForDismissal], timeout: 10) == .completed
+        observation["searchReadyForDismissal"] = searchReady
+        if searchReady {
+            observation["dismissalMethod"] = "native-search-key"
+            searchKey.tap()
+        } else if !isPhone {
+            let heading = app.staticTexts.matching(NSPredicate(format: "label == 'Get your bearings.'")).firstMatch
+            let headingReady = heading.exists && heading.isHittable
+            observation["headingObserved"] = headingReady
+            if !headingReady { try record("after") }
+            XCTAssertTrue(headingReady, "An iPad fallback must use the actually visible native heading")
+            observation["dismissalMethod"] = "ipad-visible-heading"
+            heading.tap()
+        } else {
+            try record("after")
+            XCTAssertTrue(searchReady, "The phone must submit with its actual, hittable native Search key")
+            return
+        }
+        let dismissed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: keyboard)
+        let dismissal = XCTWaiter.wait(for: [dismissed], timeout: 5)
+        observation["dismissalCompleted"] = dismissal == .completed
+        let afterValue = field.value as? String
+        observation["afterValue"] = afterValue.map { $0 as Any } ?? NSNull()
+        try record("after")
+        XCTAssertEqual(dismissal, .completed, "Map keyboard must dismiss before tapping a document marker")
+        XCTAssertEqual(afterValue, query, "The complete native query must survive the explicit Search or iPad dismissal action")
     }
 
     private func mapCategoryFilter(_ label: String) -> XCUIElement {
@@ -440,7 +502,7 @@ final class BanffBoundUITests: XCTestCase {
         scrollTo("Fit results")
         capture("store-08-map")
 
-        mapSearch("Bison")
+        try mapSearch("Bison")
         scrollTo("Fit results")
         XCTAssertTrue(fit.waitForExistence(timeout: 20) && fit.isHittable, "Use the actual document Fit results button")
         fit.tap()
@@ -485,7 +547,7 @@ final class BanffBoundUITests: XCTestCase {
         XCTAssertTrue(toilets.isSelected, "Deselecting restaurants must retain the toilet category")
         mapScrollToTop()
         tapID("map-filter-toggle")
-        mapSearch("Public Washrooms")
+        try mapSearch("Public Washrooms")
         scrollTo("View map details for Public Washrooms")
         tap("View map details for Public Washrooms")
         XCTAssertEqual(visibleID("map-detail-title").label, "Public Washrooms")
@@ -499,7 +561,7 @@ final class BanffBoundUITests: XCTestCase {
         tapID("map-close-details")
         XCTAssertFalse(element("map-close-details").waitForExistence(timeout: 1))
 
-        mapSearch("zzzz-no-banff-place-qa-9481")
+        try mapSearch("zzzz-no-banff-place-qa-9481")
         scrollTo("No places match those filters")
         XCTAssertTrue(visible("No places match those filters").isHittable, "An invalid public query must produce the genuine empty state")
         tap("Reset map filters")
