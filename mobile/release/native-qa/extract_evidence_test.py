@@ -56,6 +56,11 @@ class ReceiptTest(unittest.TestCase):
                         filename = f'{index}.png'
                         destination.joinpath(filename).write_bytes(png(*dimensions))
                         entries.append({'exportedFileName': filename, 'suggestedHumanReadableName': screen + '.png'})
+                    if failed:
+                        destination.joinpath('failure.png').write_bytes(png(*dimensions))
+                        entries.append({'exportedFileName': 'failure.png', 'suggestedHumanReadableName': 'qa-failure-screen.png'})
+                        destination.joinpath('tree.txt').write_text('Fixture accessibility tree\n' * 2000)
+                        entries.append({'exportedFileName': 'tree.txt', 'suggestedHumanReadableName': 'qa-failure-tree.txt'})
                     destination.joinpath('manifest.json').write_text(json.dumps([{'attachments': entries}]))
                     return subprocess.CompletedProcess(command, 0, '', '')
                 raise AssertionError(command)
@@ -75,6 +80,7 @@ class ReceiptTest(unittest.TestCase):
         code, receipt = self.run_fixture(failed=1)
         self.assertEqual(code, 1)
         self.assertFalse(receipt['passed'])
+        self.assertEqual([len(device['failureDiagnostics']) for device in receipt['devices']], [2, 2])
 
     def test_missing_named_screenshot_cannot_become_success(self):
         code, receipt = self.run_fixture(missing_screen=True)

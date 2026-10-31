@@ -94,7 +94,7 @@ def main():
     results = []
     for device in devices:
         label = device['label']
-        result = {'device': device, 'testsPassed': False, 'screenshots': []}
+        result = {'device': device, 'testsPassed': False, 'screenshots': [], 'failureDiagnostics': []}
         results.append(result)
         bundle = root / 'results' / f'{label}.xcresult'
         if not bundle.exists():
@@ -117,8 +117,35 @@ def main():
             (evidence / f'{label}-attachment-export.error.txt').write_text((export.stderr or export.stdout)[-16000:])
             errors.append(f'{label}: screenshot attachment export failed.')
             continue
-        manifest = read_json(exported / 'manifest.json', [])
+        manifest_path = exported / 'manifest.json'
+        if manifest_path.is_file():
+            raw_manifest = manifest_path.read_bytes()
+            name = f'{label}-attachment-manifest.json' if len(raw_manifest) <= 128 * 1024 else f'{label}-attachment-manifest.truncated.txt'
+            (evidence / name).write_bytes(raw_manifest[:128 * 1024])
+        manifest = read_json(manifest_path, [])
         records = list(attachment_records(manifest))
+        # Retain at most one failure image and one bounded accessibility tree per
+        # device, even when an assertion fails before store captures are reached.
+        if not result['testsPassed']:
+            diagnostic_candidates = sorted(records, key=lambda record: not str(record.get('suggestedHumanReadableName', '')).startswith('qa-failure-'))
+            for record in diagnostic_candidates:
+                name = str(record.get('suggestedHumanReadableName', ''))
+                source = (exported / record['exportedFileName']).resolve()
+                if exported.resolve() not in source.parents or not source.is_file():
+                    continue
+                if 'qa-failure-tree' in name and not any(item['kind'] == 'accessibility-tree' for item in result['failureDiagnostics']):
+                    filename = f'{label}-failure-accessibility-tree.txt'
+                    (evidence / filename).write_bytes(source.read_bytes()[:24000])
+                    result['failureDiagnostics'].append({'kind': 'accessibility-tree', 'file': filename})
+                elif ('qa-failure-screen' in name or record.get('isAssociatedWithFailure')) and not any(item['kind'] == 'screenshot' for item in result['failureDiagnostics']):
+                    try:
+                        details = png_details(source)
+                        if details['bytes'] <= MAX_SCREEN_BYTES:
+                            filename = f'{label}-failure-screen.png'
+                            shutil.copy2(source, evidence / filename)
+                            result['failureDiagnostics'].append({'kind': 'screenshot', 'file': filename, **details})
+                    except (OSError, ValueError):
+                        pass
         for screen in SCREENS:
             matches = [record for record in records if screen in str(record.get('suggestedHumanReadableName', '')) or screen in record['exportedFileName']]
             if len(matches) != 1:
@@ -153,6 +180,7 @@ def main():
         'lastPhase': read_text(root / 'current-phase.txt'),
         'githubRun': {'repository': os.getenv('GITHUB_REPOSITORY'), 'runId': os.getenv('GITHUB_RUN_ID'), 'attempt': os.getenv('GITHUB_RUN_ATTEMPT')},
         'build': {'requestedConfiguration': 'Release', 'signing': False, 'requestedXcode': '26.6',
+                  'requestedArchitectures': ['arm64'], 'onlyActiveArchitecture': True,
                   'metroRequired': False if embedded_verified else None, 'embeddedBundleVerified': embedded_verified,
                   'embeddedBundleSha256': bundle_hash.split()[0] if embedded_verified else None},
         'capture': {'renderer': 'native React Native iOS simulator', 'locale': 'en_US', 'orientation': 'portrait',

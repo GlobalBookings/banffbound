@@ -7,7 +7,9 @@ it does not edit or commit app source, native runtime configuration or EAS setti
 No Apple/Expo credentials, paid runners, external device service or new plan is used.
 
 One build is reused sequentially on iPhone 17 Pro and iPad Pro 13-inch (M5), using
-the runner's installed iOS 26 simulators and pinned Xcode 26.6. Each destination
+the runner's installed iOS 26 simulators and pinned Xcode 26.6. Build and test
+explicitly target arm64; this standard Apple Silicon runner does not need an
+x86_64 build. Each destination
 must execute and pass three real UI tests: navigation/capture of Today, Explore,
 My Trip and Essentials; saving Lake Louise and verifying it after process
 relaunch; changing the synthetic adult count to three and verifying it after
@@ -15,7 +17,9 @@ another process relaunch. Initial screen captures precede these mutations.
 
 The artifact contains eight unedited native screen PNGs, a source commit and
 fingerprint comparison, embedded bundle SHA-256, XCTest counts and bounded log
-tails. The extractor requires the four named captures from each device at the
+tails. On a test failure it also retains at most one diagnostic screenshot and
+one bounded accessibility tree per device, plus bounded attachment manifests.
+The extractor requires the four named captures from each device at the
 actual expected dimensions (1206 × 2622 and 2064 × 2752), successful xcodebuild
 exits, at least three passed tests per device, and zero failures/skips. Missing
 evidence fails the job. It records alpha/transparency compatibility separately.

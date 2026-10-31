@@ -80,6 +80,7 @@ phase build xcodebuild build-for-testing \
   -workspace "$workspace" -scheme "$scheme" -configuration Release \
   -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
   -derivedDataPath "$derived" -jobs 2 \
+  ARCHS=arm64 ONLY_ACTIVE_ARCH=YES \
   CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
 
 app_path="$(find "$derived/Build/Products/Release-iphonesimulator" -maxdepth 1 -name 'BanffBound.app' -type d -print)"
@@ -104,6 +105,7 @@ while IFS=$'\t' read -r label device; do
     -parallel-testing-enabled NO -maximum-concurrent-test-simulator-destinations 1 \
     -test-timeouts-enabled YES -default-test-execution-time-allowance 150 \
     -maximum-test-execution-time-allowance 240 \
+    ARCHS=arm64 ONLY_ACTIVE_ARCH=YES \
     CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO; then
     printf '0\n' > "$QA_ROOT/test-$label.exit"
   else

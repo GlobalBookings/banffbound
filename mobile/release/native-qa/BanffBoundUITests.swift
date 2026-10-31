@@ -16,6 +16,13 @@ final class BanffBoundUITests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        if (testRun?.failureCount ?? 0) > 0 {
+            capture("qa-failure-screen")
+            let tree = XCTAttachment(string: String(app.debugDescription.prefix(24000)))
+            tree.name = "qa-failure-tree"
+            tree.lifetime = .keepAlways
+            add(tree)
+        }
         if let app, app.state == .runningForeground { app.terminate() }
     }
 
