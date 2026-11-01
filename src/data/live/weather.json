@@ -1,42 +1,36 @@
 {
   "provider": "Environment and Climate Change Canada",
   "licenceUrl": "https://eccc-msc.github.io/open-data/licence/readme_en/",
-  "updatedAt": "2026-10-31T21:06:48.891Z",
+  "updatedAt": "2026-11-01T00:45:37.194Z",
   "banff": {
     "sourceUrl": "https://weather.gc.ca/en/location/index.html?coords=51.18,-115.57",
     "current": {
-      "temp": 6,
+      "temp": 3.1,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 49,
-      "wind": "SW 13 km/h, gusts 32 km/h",
-      "observedAt": "2026-10-31T21:00:00.000Z",
+      "humidity": 62,
+      "wind": "SW 9 km/h, gusts 32 km/h",
+      "observedAt": "2026-11-01T00:00:00.000Z",
       "station": "Banff"
     },
-    "forecastIssuedAt": "2026-10-31T17:00:00.000Z",
+    "forecastIssuedAt": "2026-10-31T22:00:00.000Z",
     "forecast": [
-      {
-        "day": "Saturday",
-        "high": 6,
-        "low": null,
-        "condition": "Mainly sunny"
-      },
       {
         "day": "Saturday night",
         "high": null,
-        "low": -8,
+        "low": -9,
         "condition": "Partly cloudy"
       },
       {
         "day": "Sunday",
-        "high": 6,
+        "high": 5,
         "low": null,
         "condition": "Mainly sunny"
       },
       {
         "day": "Sunday night",
         "high": null,
-        "low": -9,
+        "low": -8,
         "condition": "Clear"
       },
       {
@@ -53,19 +47,19 @@
       },
       {
         "day": "Tuesday",
-        "high": 3,
+        "high": 4,
         "low": null,
-        "condition": "Cloudy"
+        "condition": "A mix of sun and cloud"
       },
       {
         "day": "Tuesday night",
         "high": null,
-        "low": -5,
+        "low": -4,
         "condition": "Cloudy periods"
       },
       {
         "day": "Wednesday",
-        "high": 6,
+        "high": 7,
         "low": null,
         "condition": "Sunny"
       },
@@ -84,7 +78,7 @@
       {
         "day": "Thursday night",
         "high": null,
-        "low": -6,
+        "low": -7,
         "condition": "Cloudy periods"
       },
       {
@@ -98,38 +92,32 @@
   "lakeLouise": {
     "sourceUrl": "https://weather.gc.ca/en/location/index.html?coords=51.425,-116.181",
     "current": {
-      "temp": 0.9,
+      "temp": -1.5,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 71,
-      "wind": "SW 19 km/h",
-      "observedAt": "2026-10-31T20:00:00.000Z",
+      "humidity": 89,
+      "wind": "SW 17 km/h",
+      "observedAt": "2026-11-01T00:00:00.000Z",
       "station": "Yoho National Park"
     },
-    "forecastIssuedAt": "2026-10-31T17:00:00.000Z",
+    "forecastIssuedAt": "2026-10-31T22:00:00.000Z",
     "forecast": [
-      {
-        "day": "Today (Sat, 31 Oct)",
-        "high": 6,
-        "low": null,
-        "condition": "Mainly sunny"
-      },
       {
         "day": "Tonight (Sat, 31 Oct)",
         "high": null,
-        "low": -8,
+        "low": -9,
         "condition": "Partly cloudy"
       },
       {
         "day": "Sun, 1 Nov",
-        "high": 6,
+        "high": 5,
         "low": null,
         "condition": "Mainly sunny"
       },
       {
         "day": "Night (Sun, 1 Nov)",
         "high": null,
-        "low": -9,
+        "low": -8,
         "condition": "Clear"
       },
       {
@@ -146,19 +134,19 @@
       },
       {
         "day": "Tue, 3 Nov",
-        "high": 3,
+        "high": 4,
         "low": null,
-        "condition": "Cloudy"
+        "condition": "A mix of sun and cloud"
       },
       {
         "day": "Night (Tue, 3 Nov)",
         "high": null,
-        "low": -5,
+        "low": -4,
         "condition": "Cloudy periods"
       },
       {
         "day": "Wed, 4 Nov",
-        "high": 6,
+        "high": 7,
         "low": null,
         "condition": "Sunny"
       },
@@ -177,7 +165,7 @@
       {
         "day": "Night (Thu, 5 Nov)",
         "high": null,
-        "low": -6,
+        "low": -7,
         "condition": "Cloudy periods"
       },
       {
