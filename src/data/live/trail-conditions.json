@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T16:36:56.414Z",
+  "updatedAt": "2026-11-01T21:47:15.958Z",
   "fireDanger": "low",
   "summary": {
     "total": 55,
@@ -215,7 +215,7 @@
           "difficulty": "Easy",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; Dogs on leash permitted",
           "lastUpdated": "2026-11-01"
         },
         {
@@ -223,7 +223,7 @@
           "difficulty": "Easy",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; No dogs allowed",
           "lastUpdated": "2026-11-01"
         },
         {
@@ -231,7 +231,7 @@
           "difficulty": "Easy",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "comment": "Studded tires recommended; Icy sections; Biking including pedal-assist e-bikes is allowed; Dogs on leash permitted",
           "lastUpdated": "2026-11-01"
         },
         {
@@ -239,7 +239,7 @@
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "comment": "Studded tires recommended; Icy sections; Biking including pedal-assist e-bikes is allowed; Dogs on leash permitted",
           "lastUpdated": "2026-11-01"
         },
         {
@@ -247,7 +247,7 @@
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "comment": "Studded tires recommended; Icy sections; Biking including pedal-assist e-bikes is allowed; Dogs on leash permitted",
           "lastUpdated": "2026-11-01"
         },
         {
@@ -255,7 +255,7 @@
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; Dogs on leash permitted",
           "lastUpdated": "2026-11-01"
         }
       ]
@@ -697,7 +697,7 @@
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; Dogs on leash permitted",
       "lastUpdated": "2026-11-01",
       "area": "Banff Area Fat Biking Trails"
     },
@@ -706,7 +706,7 @@
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; No dogs allowed",
       "lastUpdated": "2026-11-01",
       "area": "Banff Area Fat Biking Trails"
     },
@@ -715,7 +715,7 @@
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "comment": "Studded tires recommended; Icy sections; Biking including pedal-assist e-bikes is allowed; Dogs on leash permitted",
       "lastUpdated": "2026-11-01",
       "area": "Banff Area Fat Biking Trails"
     },
@@ -724,7 +724,7 @@
       "difficulty": "Moderate",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "comment": "Studded tires recommended; Icy sections; Biking including pedal-assist e-bikes is allowed; Dogs on leash permitted",
       "lastUpdated": "2026-11-01",
       "area": "Banff Area Fat Biking Trails"
     },
@@ -733,7 +733,7 @@
       "difficulty": "Moderate",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "comment": "Studded tires recommended; Icy sections; Biking including pedal-assist e-bikes is allowed; Dogs on leash permitted",
       "lastUpdated": "2026-11-01",
       "area": "Banff Area Fat Biking Trails"
     },
@@ -742,7 +742,7 @@
       "difficulty": "Moderate",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; Dogs on leash permitted",
       "lastUpdated": "2026-11-01",
       "area": "Banff Area Fat Biking Trails"
     },
