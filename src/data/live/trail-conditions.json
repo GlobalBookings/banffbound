@@ -1,808 +1,484 @@
 {
-  "updatedAt": "2026-11-01T08:50:32.980Z",
+  "updatedAt": "2026-11-01T16:36:56.414Z",
   "fireDanger": "low",
   "summary": {
-    "total": 98,
+    "total": 55,
     "open": 32,
-    "caution": 54,
-    "closed": 12
+    "caution": 22,
+    "closed": 1
   },
   "areas": [
     {
-      "area": "Banff Area",
+      "area": "Banff Area Winter Walking Trails",
       "trails": [
         {
-          "name": "Fenland Loop",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Marsh Trail",
-          "difficulty": "Easy",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Silverton Falls Trail",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Johnson Lake Loop",
+          "name": "Fenland Winter Trail",
           "difficulty": "Easy",
           "status": "caution",
           "condition": "Variable conditions.",
           "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
+          "lastUpdated": "2026-11-01"
         },
         {
-          "name": "Cascade Ponds-Bankhead Trail",
+          "name": "Marsh Winter Loop",
           "difficulty": "Easy",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+          "lastUpdated": "2026-11-01"
         },
         {
-          "name": "Vermilion Lakes Drive",
-          "difficulty": "Easy",
-          "status": "open",
-          "condition": "Caution.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Use caution; Slippery sections; Wet; Fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Tunnel Campground Loop",
+          "name": "Spray Winter Connector",
           "difficulty": "Easy",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+          "lastUpdated": "2026-11-01"
         },
         {
-          "name": "Sundance Trail",
+          "name": "Stewart Canyon Winter Trail",
           "difficulty": "Easy",
-          "status": "open",
-          "condition": "Caution.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+          "lastUpdated": "2026-11-01"
         },
         {
-          "name": "Golf Course Road",
-          "difficulty": "Easy",
-          "status": "open",
-          "condition": "Caution.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Use caution; Slippery sections; Wet",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Johnston Canyon Trail",
+          "name": "Johnston Canyon Winter Trail",
           "difficulty": "Easy",
           "status": "closed",
-          "condition": "Closed.",
+          "condition": "Closed for maintenance.",
           "comment": "Check the important bulletins for more information",
-          "lastUpdated": "2026-10-31"
+          "lastUpdated": "2026-11-01"
         },
         {
-          "name": "Boom Lake Trail",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Water Tower Trail",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Spray River East Trail",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Spray River West Trail",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Healy Creek Trail",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Sunshine Meadows / Rock Isle Lake Trail",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Gondola closed; Snowbound",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Banff Legacy Trail: Banff–Banff East Gate",
-          "difficulty": "Easy",
-          "status": "open",
-          "condition": "Not Maintained",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Construction work in progress; Respect all posted notices and signs; Not recommended; Snow covered with variable conditions: ice/snow crust/slush/fres",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Banff Legacy Trail: Vermilion Lakes–Bow Valley Parkway",
-          "difficulty": "Easy",
-          "status": "open",
-          "condition": "Caution.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Use caution; Slippery sections; Wet; Fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Cascade Valley Trail",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Upper Stoney Trail",
+          "name": "Sulphur Mountain Winter Trail",
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+          "lastUpdated": "2026-11-01"
         },
         {
-          "name": "Tunnel Mountain Summit Trail",
+          "name": "Sundance Canyon Winter Trail",
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Stay on designated trails and viewpoints; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+          "lastUpdated": "2026-11-01"
         },
         {
-          "name": "Banff Avenue Trail",
+          "name": "Tunnel Mountain Summit Winter Trail",
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Surprise Corner to Hoodoos Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Sundance Canyon Loop",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "C-Level Cirque Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Numerous trees down on trail; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Avalanche terrain",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Tunnel Bench Loop",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Lake Minnewanka Road",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Construction work in progress; Narrow paved road shoulder; Biking including pedal-assist e-bikes is allowed; Slippery sections; Wet",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Sulphur Mountain Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Stay on trail; Icy sections; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Ink Pots Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Stay on trail; Access through Moose Meadows parking lot / Johnston Creek trailhead only; Icy sections; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Brewster Creek Trail",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Caution.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Bourgeau Lake Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Healy Pass Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Redearth Creek Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Cascade Amphitheatre Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Numerous trees down on trail; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Avalanche terrain",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Rockbound Lake Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Arnica Lake Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Harvey Pass Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Not recommended.",
-          "comment": "Snow covered; Avalanche terrain",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Goat Creek Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Bow Valley Parkway",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Caution.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Use caution; Slippery sections; Wet; Fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Tunnel Technical Trails: Return of the Jedi Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Tunnel Technical Trails: Star Wars Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Tunnel Technical Trails: Topp Notch Trail",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Rundle Riverside Trail",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "The Toe",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Cory Pass Loop",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Numerous trees down on trail; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Avalanche terrain",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Aylmer Lookout Trail",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-          "lastUpdated": "2026-10-31"
-        },
-        {
-          "name": "Aylmer Pass Trail",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Numerous trees down on trail; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Avalanche terrain",
-          "lastUpdated": "2026-10-31"
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+          "lastUpdated": "2026-11-01"
         }
       ]
     },
     {
-      "area": "Lake Louise Area",
+      "area": "Banff Area Snowshoeing Trails",
       "trails": [
         {
-          "name": "Bow River Trail",
+          "name": "Johnson Lake Winter Trail",
+          "difficulty": "Easy",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Surprise Corner to Hoodoos Winter Trail",
+          "difficulty": "Moderate",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Upper Stoney Winter Loop",
+          "difficulty": "Moderate",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Sulphur Mountain Westside Winter Trail",
+          "difficulty": "Moderate",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Ink Pots Winter Trail",
+          "difficulty": "Moderate",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended; Access through Moose Meadows parking lot / Johnston Creek",
+          "lastUpdated": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "area": "Banff Area Cross-Country Ski Trails",
+      "trails": [
+        {
+          "name": "Spray River Winter: West Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Wet and muddy sections",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Spray River Winter: East Trail",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Sundance Winter Trail",
+          "difficulty": "Easy",
+          "status": "caution",
+          "condition": "Not recommended.",
+          "comment": "Check the important bulletins for more information; Adhere to all posted warnings and closures along trails; Freeze / thaw cycle; Compact snow; Icy sections",
+          "lastUpdated": "2026-05-01"
+        },
+        {
+          "name": "Tunnel Mountain Winter Trails",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Healy Creek Winter Trail",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Cascade Valley Winter Trail: Lake Minnewanka parking lot to Upper Bankhead",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "No snow.",
+          "comment": "Tracksetting has not yet begun",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Cascade Valley Winter Trail: Lake Minnewanka parking lot to Cascade River bridge",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "No snow.",
+          "comment": "Tracksetting has not yet begun",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Cascade Valley Winter Trail: Cascade River bridge to Stoney Creek",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Goat Creek Winter Trail",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Brewster Creek Winter Trail",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+          "lastUpdated": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "area": "Banff Area Fat Biking Trails",
+      "trails": [
+        {
+          "name": "Tunnel Mountain Multi-use Winter Trails",
+          "difficulty": "Easy",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Spray River East Winter Trail",
+          "difficulty": "Easy",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Sundance Winter Trail",
+          "difficulty": "Easy",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Banff Avenue Winter Trail",
+          "difficulty": "Moderate",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Tunnel Bench Winter Loop",
+          "difficulty": "Moderate",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Lake Minnewanka Winter Trail",
+          "difficulty": "Moderate",
+          "status": "caution",
+          "condition": "Variable conditions.",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+          "lastUpdated": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "area": "Bow Valley Parkway Cross-Country Ski Trails",
+      "trails": [
+        {
+          "name": "Castle Junction Cross-country Ski Trails: Trail #1 - Castle Junction to Castle Lookout trailhead",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
           "lastUpdated": "2026-10-25"
         },
         {
-          "name": "Consolation Lakes Trail",
+          "name": "Castle Junction Cross-country Ski Trails: Trail #2",
           "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Fresh snow; Slippery sections",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Castle Junction Cross-country Ski Trails: Trail #3",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Protection Mountain Campground to Castle Mountain Lookout",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Baker Creek to Protection Mountain Campground",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+          "lastUpdated": "2026-10-25"
+        }
+      ]
+    },
+    {
+      "area": "Lake Louise Area Snowshoeing and Winter Hiking Trails",
+      "trails": [
+        {
+          "name": "Lake Louise Lakeshore Trail",
+          "difficulty": "Easy",
+          "status": "caution",
+          "condition": "Snow covered with icy sections.",
+          "comment": "Caution; Slippery sections; Dogs on leash permitted",
           "lastUpdated": "2026-10-25"
         },
         {
           "name": "Fairview Lookout Trail",
           "difficulty": "Easy",
+          "status": "caution",
+          "condition": "Snow covered with icy sections.",
+          "comment": "Caution; Slippery sections; Dogs on leash permitted",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Louise Creek Trail",
+          "difficulty": "Easy",
+          "status": "caution",
+          "condition": "Snow covered with icy sections.",
+          "comment": "Caution; Slippery sections; Dogs on leash permitted",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Laggan&#39;s Loop",
+          "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended",
+          "condition": "Thin snow cover.",
+          "comment": "Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Taylor Lake Trail",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Dogs on leash permitted; Deadfall on trail; Thin snow cover; Slippery sections",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Loop C (#27)",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
+          "lastUpdated": "2026-10-25"
+        }
+      ]
+    },
+    {
+      "area": "Lake Louise Area Cross-Country Ski Trails",
+      "trails": [
+        {
+          "name": "Moraine Lake Road",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Avalanche hazard: Beyond the viewpoint, the road crosses large avalanche paths. Travel beyond this point requires avalanche training and equipment; Not yet maintained; No dogs allowed; Insufficient sn",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Fairview Loop",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Lower Tramline",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Not yet maintained; No dogs allowed",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Upper Tramline",
+          "difficulty": "Moderate",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
+          "lastUpdated": "2026-10-25"
+        },
+        {
+          "name": "Lake Louise Loop",
+          "difficulty": "Easy",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained; Lake surface is not yet frozen; Dogs on leash permitted",
+          "lastUpdated": "2026-11-01"
+        },
+        {
+          "name": "Upper Telemark",
+          "difficulty": "Difficult",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
           "lastUpdated": "2026-10-25"
         },
         {
           "name": "Great Divide Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
           "lastUpdated": "2026-10-25"
         },
         {
-          "name": "Lake Louise Lakeshore Trail",
+          "name": "Peyto Trail",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Slippery sections; Icy sections",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
           "lastUpdated": "2026-10-25"
         },
         {
-          "name": "Moraine Lake Lakeshore Trail",
-          "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Rockpile Loop",
-          "difficulty": "Easy",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Fragile alpine vegetation, stay on the trail; Stay on designated trails and viewpoints; Cleats recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Louise Creek Trail",
+          "name": "Lower Telemark",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Slippery sections; Cleats recommended; Wet and muddy sections",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
           "lastUpdated": "2026-10-25"
         },
         {
-          "name": "Big Beehive Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Slippery sections; Icy sections; Steep switchback section - use caution; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Big Beehive to Plain of Six Glaciers Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Castle Lookout Trail",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Eiffel Lake Trail",
-          "difficulty": "Moderate",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Lake Agnes Trail",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Lake Annette Trail",
-          "difficulty": "Moderate",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Larch Valley/Minnestimma Lakes Trail",
-          "difficulty": "Moderate",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Paradise Connector Trail",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Cleats recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Little Beehive Trail",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Mirror Lake Highline Trail",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Pipestone",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Good.",
-          "comment": "Biking excluding e-bikes is allowed; Fire guard debris for ~200m; Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Wet and muddy sections; Slippery sections",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Plain of Six Glaciers Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Taylor Lake Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Snow covered with wet, muddy and slippery sections.",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Tramline Trail",
-          "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Slippery sections",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Fairview Mountain Trail",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Moraine Lake Highline Trail",
-          "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Hidden Lake Trail",
-          "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Bear warning : Hike in a group and make noise.",
-          "comment": "Aggressive bear in the area; Check the important bulletins for more information; Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking pol",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Deception Pass Trail",
-          "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Bear warning : Hike in a group and make noise.",
-          "comment": "Aggressive bear in the area; Check the important bulletins for more information; Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking pol",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Paradise Valley and Giant Steps Trail",
-          "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Deadfall on trail; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Sentinel Pass from Paradise Valley Trail",
-          "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Difficult route finding ; Recommended for experienced hikers only; Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Saddleback Pass Trail",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Sentinel Pass via Larch Valley Trail",
-          "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Sheol / Paradise Connector Trail",
-          "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Wenkchemna Pass Trail",
-          "difficulty": "Difficult",
-          "status": "closed",
-          "condition": "Road access closed",
-          "comment": "Fresh snow; Route finding may be necessary; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended; Recommended for experienced hikers only",
-          "lastUpdated": "2026-10-25"
-        }
-      ]
-    },
-    {
-      "area": "Icefields Parkway Area",
-      "trails": [
-        {
-          "name": "Bow Summit Viewpoint Trail",
-          "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Slippery sections; Cleats recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Mistaya Canyon Trail",
+          "name": "Campground Loop",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Wet and muddy sections; Slippery sections",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
           "lastUpdated": "2026-10-25"
         },
         {
-          "name": "Peyto Lake Lookout Trail",
+          "name": "Bow River Loop",
           "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Icy",
-          "comment": "Icy sections; Slippery sections; Fresh snow; Cleats recommended; Stay on designated trails and viewpoints",
+          "status": "open",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
           "lastUpdated": "2026-10-25"
         },
         {
-          "name": "Chephren Lake Trail",
+          "name": "Pipestone Loop",
           "difficulty": "Moderate",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Slippery sections; Wet and muddy sections",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
           "lastUpdated": "2026-10-25"
         },
         {
-          "name": "Bow Glacier Falls Trail",
-          "difficulty": "Moderate",
+          "name": "Drummond",
+          "difficulty": "Easy",
           "status": "open",
-          "condition": "Caution.",
-          "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
           "lastUpdated": "2026-10-25"
         },
         {
-          "name": "Cirque Lake Trail",
-          "difficulty": "Moderate",
+          "name": "Hector",
+          "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Slippery sections; Wet and muddy sections",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
           "lastUpdated": "2026-10-25"
         },
         {
-          "name": "Helen Lake Trail",
-          "difficulty": "Moderate",
+          "name": "Merlin",
+          "difficulty": "Easy",
           "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Slippery sections; Cleats recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Parker Ridge Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Nigel Pass Trail",
-          "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Dolomite Pass Trail",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Glacier Lake Trail",
-          "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Good.",
-          "comment": "Wet and muddy sections",
-          "lastUpdated": "2026-10-22"
-        },
-        {
-          "name": "Molar Pass Trail",
-          "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Caution.",
-          "comment": "Fresh snow; Bridge(s) out; Snowbound at higher elevation; Snowshoes or ice cleats recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "North Molar Pass Trail",
-          "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Caution.",
-          "comment": "Fresh snow; Bridge(s) out; Snowbound at higher elevation; Snowshoes or ice cleats recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Sunset Pass Trail",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Sarbach Lookout Trail",
-          "difficulty": "Difficult",
-          "status": "open",
-          "condition": "Fair.",
-          "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
-          "lastUpdated": "2026-10-25"
-        },
-        {
-          "name": "Sunset Lookout Trail",
-          "difficulty": "Difficult",
-          "status": "caution",
-          "condition": "Snow covered with icy sections.",
-          "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
+          "condition": "Thin snow cover.",
+          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
           "lastUpdated": "2026-10-25"
         }
       ]
@@ -810,886 +486,499 @@
   ],
   "trails": [
     {
-      "name": "Fenland Loop",
-      "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Marsh Trail",
-      "difficulty": "Easy",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Heavy horse use; Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Silverton Falls Trail",
-      "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Johnson Lake Loop",
+      "name": "Fenland Winter Trail",
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Variable conditions.",
       "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Winter Walking Trails"
     },
     {
-      "name": "Cascade Ponds-Bankhead Trail",
+      "name": "Marsh Winter Loop",
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Winter Walking Trails"
     },
     {
-      "name": "Vermilion Lakes Drive",
-      "difficulty": "Easy",
-      "status": "open",
-      "condition": "Caution.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Use caution; Slippery sections; Wet; Fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Tunnel Campground Loop",
+      "name": "Spray Winter Connector",
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Winter Walking Trails"
     },
     {
-      "name": "Sundance Trail",
+      "name": "Stewart Canyon Winter Trail",
       "difficulty": "Easy",
-      "status": "open",
-      "condition": "Caution.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "status": "caution",
+      "condition": "Variable conditions.",
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Winter Walking Trails"
     },
     {
-      "name": "Golf Course Road",
-      "difficulty": "Easy",
-      "status": "open",
-      "condition": "Caution.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Use caution; Slippery sections; Wet",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Johnston Canyon Trail",
+      "name": "Johnston Canyon Winter Trail",
       "difficulty": "Easy",
       "status": "closed",
-      "condition": "Closed.",
+      "condition": "Closed for maintenance.",
       "comment": "Check the important bulletins for more information",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Winter Walking Trails"
     },
     {
-      "name": "Boom Lake Trail",
+      "name": "Sulphur Mountain Winter Trail",
+      "difficulty": "Moderate",
+      "status": "caution",
+      "condition": "Variable conditions.",
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Winter Walking Trails"
+    },
+    {
+      "name": "Sundance Canyon Winter Trail",
+      "difficulty": "Moderate",
+      "status": "caution",
+      "condition": "Variable conditions.",
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Winter Walking Trails"
+    },
+    {
+      "name": "Tunnel Mountain Summit Winter Trail",
+      "difficulty": "Moderate",
+      "status": "caution",
+      "condition": "Variable conditions.",
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Winter Walking Trails"
+    },
+    {
+      "name": "Johnson Lake Winter Trail",
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Snowshoeing Trails"
     },
     {
-      "name": "Water Tower Trail",
-      "difficulty": "Easy",
+      "name": "Surprise Corner to Hoodoos Winter Trail",
+      "difficulty": "Moderate",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Snowshoeing Trails"
     },
     {
-      "name": "Spray River East Trail",
-      "difficulty": "Easy",
+      "name": "Upper Stoney Winter Loop",
+      "difficulty": "Moderate",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Snowshoeing Trails"
     },
     {
-      "name": "Spray River West Trail",
-      "difficulty": "Easy",
+      "name": "Sulphur Mountain Westside Winter Trail",
+      "difficulty": "Moderate",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Snowshoeing Trails"
     },
     {
-      "name": "Healy Creek Trail",
-      "difficulty": "Easy",
+      "name": "Ink Pots Winter Trail",
+      "difficulty": "Moderate",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended; Access through Moose Meadows parking lot / Johnston Creek",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Snowshoeing Trails"
     },
     {
-      "name": "Sunshine Meadows / Rock Isle Lake Trail",
+      "name": "Spray River Winter: West Trail",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Spray River Winter: East Trail",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Sundance Winter Trail",
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Not recommended.",
-      "comment": "Gondola closed; Snowbound",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "comment": "Check the important bulletins for more information; Adhere to all posted warnings and closures along trails; Freeze / thaw cycle; Compact snow; Icy sections",
+      "lastUpdated": "2026-05-01",
+      "area": "Banff Area Cross-Country Ski Trails"
     },
     {
-      "name": "Banff Legacy Trail: Banff–Banff East Gate",
+      "name": "Tunnel Mountain Winter Trails",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Not Maintained",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Construction work in progress; Respect all posted notices and signs; Not recommended; Snow covered with variable conditions: ice/snow crust/slush/fres",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Cross-Country Ski Trails"
     },
     {
-      "name": "Banff Legacy Trail: Vermilion Lakes–Bow Valley Parkway",
+      "name": "Healy Creek Winter Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Caution.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Use caution; Slippery sections; Wet; Fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Cross-Country Ski Trails"
     },
     {
-      "name": "Cascade Valley Trail",
+      "name": "Cascade Valley Winter Trail: Lake Minnewanka parking lot to Upper Bankhead",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "No snow.",
+      "comment": "Tracksetting has not yet begun",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Cascade Valley Winter Trail: Lake Minnewanka parking lot to Cascade River bridge",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "No snow.",
+      "comment": "Tracksetting has not yet begun",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Cascade Valley Winter Trail: Cascade River bridge to Stoney Creek",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Goat Creek Winter Trail",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Brewster Creek Winter Trail",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Tunnel Mountain Multi-use Winter Trails",
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Fat Biking Trails"
     },
     {
-      "name": "Upper Stoney Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Tunnel Mountain Summit Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Stay on designated trails and viewpoints; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Banff Avenue Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Surprise Corner to Hoodoos Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Sundance Canyon Loop",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "C-Level Cirque Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Numerous trees down on trail; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Avalanche terrain",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Tunnel Bench Loop",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Lake Minnewanka Road",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Construction work in progress; Narrow paved road shoulder; Biking including pedal-assist e-bikes is allowed; Slippery sections; Wet",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Sulphur Mountain Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Stay on trail; Icy sections; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Ink Pots Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Stay on trail; Access through Moose Meadows parking lot / Johnston Creek trailhead only; Icy sections; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Brewster Creek Trail",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Caution.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Heavy horse use; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Bourgeau Lake Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Healy Pass Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Redearth Creek Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Cascade Amphitheatre Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Numerous trees down on trail; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Avalanche terrain",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Rockbound Lake Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Arnica Lake Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Harvey Pass Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Not recommended.",
-      "comment": "Snow covered; Avalanche terrain",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Goat Creek Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Bow Valley Parkway",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Caution.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Use caution; Slippery sections; Wet; Fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Lake Minnewanka Trail: Trailhead–Stewart Canyon",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Lake Minnewanka Trail: Stewart Canyon–Aylmer Pass Junction",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Lake Minnewanka Trail: Aylmer Pass Junction–Devil&#39;s Gap",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Tunnel Technical Trails: Return of the Jedi Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Tunnel Technical Trails: Star Wars Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Tunnel Technical Trails: Topp Notch Trail",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Rundle Riverside Trail",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "The Toe",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Cory Pass Loop",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Numerous trees down on trail; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Avalanche terrain",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Aylmer Lookout Trail",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Icy sections; Cleats recommended",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Aylmer Pass Trail",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Numerous trees down on trail; Cleats recommended; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Avalanche terrain",
-      "lastUpdated": "2026-10-31",
-      "area": "Banff Area"
-    },
-    {
-      "name": "Bow River Trail",
+      "name": "Spray River East Winter Trail",
       "difficulty": "Easy",
+      "status": "caution",
+      "condition": "Variable conditions.",
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Fat Biking Trails"
+    },
+    {
+      "name": "Sundance Winter Trail",
+      "difficulty": "Easy",
+      "status": "caution",
+      "condition": "Variable conditions.",
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Fat Biking Trails"
+    },
+    {
+      "name": "Banff Avenue Winter Trail",
+      "difficulty": "Moderate",
+      "status": "caution",
+      "condition": "Variable conditions.",
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Fat Biking Trails"
+    },
+    {
+      "name": "Tunnel Bench Winter Loop",
+      "difficulty": "Moderate",
+      "status": "caution",
+      "condition": "Variable conditions.",
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Fat Biking Trails"
+    },
+    {
+      "name": "Lake Minnewanka Winter Trail",
+      "difficulty": "Moderate",
+      "status": "caution",
+      "condition": "Variable conditions.",
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Compact snow; Icy sections",
+      "lastUpdated": "2026-11-01",
+      "area": "Banff Area Fat Biking Trails"
+    },
+    {
+      "name": "Castle Junction Cross-country Ski Trails: Trail #1 - Castle Junction to Castle Lookout trailhead",
+      "difficulty": "Moderate",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Wet and muddy sections",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
       "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
+      "area": "Bow Valley Parkway Cross-Country Ski Trails"
     },
     {
-      "name": "Consolation Lakes Trail",
+      "name": "Castle Junction Cross-country Ski Trails: Trail #2",
       "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Fresh snow; Slippery sections",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
       "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
+      "area": "Bow Valley Parkway Cross-Country Ski Trails"
+    },
+    {
+      "name": "Castle Junction Cross-country Ski Trails: Trail #3",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+      "lastUpdated": "2026-10-25",
+      "area": "Bow Valley Parkway Cross-Country Ski Trails"
+    },
+    {
+      "name": "Protection Mountain Campground to Castle Mountain Lookout",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+      "lastUpdated": "2026-10-25",
+      "area": "Bow Valley Parkway Cross-Country Ski Trails"
+    },
+    {
+      "name": "Baker Creek to Protection Mountain Campground",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Dogs on leash permitted",
+      "lastUpdated": "2026-10-25",
+      "area": "Bow Valley Parkway Cross-Country Ski Trails"
+    },
+    {
+      "name": "Lake Louise Lakeshore Trail",
+      "difficulty": "Easy",
+      "status": "caution",
+      "condition": "Snow covered with icy sections.",
+      "comment": "Caution; Slippery sections; Dogs on leash permitted",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Snowshoeing and Winter Hiking Trails"
     },
     {
       "name": "Fairview Lookout Trail",
       "difficulty": "Easy",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended",
+      "status": "caution",
+      "condition": "Snow covered with icy sections.",
+      "comment": "Caution; Slippery sections; Dogs on leash permitted",
       "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
+      "area": "Lake Louise Area Snowshoeing and Winter Hiking Trails"
+    },
+    {
+      "name": "Louise Creek Trail",
+      "difficulty": "Easy",
+      "status": "caution",
+      "condition": "Snow covered with icy sections.",
+      "comment": "Caution; Slippery sections; Dogs on leash permitted",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Snowshoeing and Winter Hiking Trails"
+    },
+    {
+      "name": "Laggan&#39;s Loop",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Snowshoeing and Winter Hiking Trails"
+    },
+    {
+      "name": "Taylor Lake Trail",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Dogs on leash permitted; Deadfall on trail; Thin snow cover; Slippery sections",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Snowshoeing and Winter Hiking Trails"
+    },
+    {
+      "name": "Loop C (#27)",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Snowshoeing and Winter Hiking Trails"
+    },
+    {
+      "name": "Moraine Lake Road",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Avalanche hazard: Beyond the viewpoint, the road crosses large avalanche paths. Travel beyond this point requires avalanche training and equipment; Not yet maintained; No dogs allowed; Insufficient sn",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Fairview Loop",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Lower Tramline",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Not yet maintained; No dogs allowed",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Upper Tramline",
+      "difficulty": "Moderate",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Lake Louise Loop",
+      "difficulty": "Easy",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained; Lake surface is not yet frozen; Dogs on leash permitted",
+      "lastUpdated": "2026-11-01",
+      "area": "Lake Louise Area Cross-Country Ski Trails"
+    },
+    {
+      "name": "Upper Telemark",
+      "difficulty": "Difficult",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
+      "lastUpdated": "2026-10-25",
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
       "name": "Great Divide Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
       "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
-      "name": "Lake Louise Lakeshore Trail",
+      "name": "Peyto Trail",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Slippery sections; Icy sections",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
       "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
-      "name": "Moraine Lake Lakeshore Trail",
-      "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Rockpile Loop",
-      "difficulty": "Easy",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Fragile alpine vegetation, stay on the trail; Stay on designated trails and viewpoints; Cleats recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Louise Creek Trail",
+      "name": "Lower Telemark",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Slippery sections; Cleats recommended; Wet and muddy sections",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
       "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
-      "name": "Big Beehive Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Slippery sections; Icy sections; Steep switchback section - use caution; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Big Beehive to Plain of Six Glaciers Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Castle Lookout Trail",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Eiffel Lake Trail",
-      "difficulty": "Moderate",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Lake Agnes Trail",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Lake Annette Trail",
-      "difficulty": "Moderate",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Larch Valley/Minnestimma Lakes Trail",
-      "difficulty": "Moderate",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Paradise Connector Trail",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Cleats recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Little Beehive Trail",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Mirror Lake Highline Trail",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Pipestone",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Good.",
-      "comment": "Biking excluding e-bikes is allowed; Fire guard debris for ~200m; Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Wet and muddy sections; Slippery sections",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Plain of Six Glaciers Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Taylor Lake Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Snow covered with wet, muddy and slippery sections.",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Tramline Trail",
-      "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Slippery sections",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Fairview Mountain Trail",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Moraine Lake Highline Trail",
-      "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Hidden Lake Trail",
-      "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Bear warning : Hike in a group and make noise.",
-      "comment": "Aggressive bear in the area; Check the important bulletins for more information; Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking pol",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Deception Pass Trail",
-      "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Bear warning : Hike in a group and make noise.",
-      "comment": "Aggressive bear in the area; Check the important bulletins for more information; Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking pol",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Paradise Valley and Giant Steps Trail",
-      "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Deadfall on trail; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Sentinel Pass from Paradise Valley Trail",
-      "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Difficult route finding ; Recommended for experienced hikers only; Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Saddleback Pass Trail",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Sentinel Pass via Larch Valley Trail",
-      "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Sheol / Paradise Connector Trail",
-      "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Wenkchemna Pass Trail",
-      "difficulty": "Difficult",
-      "status": "closed",
-      "condition": "Road access closed",
-      "comment": "Fresh snow; Route finding may be necessary; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended; Recommended for experienced hikers only",
-      "lastUpdated": "2026-10-25",
-      "area": "Lake Louise Area"
-    },
-    {
-      "name": "Bow Summit Viewpoint Trail",
-      "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Slippery sections; Cleats recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Mistaya Canyon Trail",
+      "name": "Campground Loop",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Wet and muddy sections; Slippery sections",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
       "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
-      "name": "Peyto Lake Lookout Trail",
+      "name": "Bow River Loop",
       "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Icy",
-      "comment": "Icy sections; Slippery sections; Fresh snow; Cleats recommended; Stay on designated trails and viewpoints",
+      "status": "open",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
       "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
-      "name": "Chephren Lake Trail",
+      "name": "Pipestone Loop",
       "difficulty": "Moderate",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Slippery sections; Wet and muddy sections",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
       "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
-      "name": "Bow Glacier Falls Trail",
-      "difficulty": "Moderate",
+      "name": "Drummond",
+      "difficulty": "Easy",
       "status": "open",
-      "condition": "Caution.",
-      "comment": "Caution: Rockfall hazard. Rockfall risk is highest near the falls and rockwall, with possible rockfall runout below. Avoid hiking in this area to reduce your exposure.; Adhere to all posted warnings a",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
       "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
-      "name": "Cirque Lake Trail",
-      "difficulty": "Moderate",
+      "name": "Hector",
+      "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Slippery sections; Wet and muddy sections",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
       "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
-      "name": "Helen Lake Trail",
-      "difficulty": "Moderate",
+      "name": "Merlin",
+      "difficulty": "Easy",
       "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Slippery sections; Cleats recommended",
+      "condition": "Thin snow cover.",
+      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Dogs on leash permitted",
       "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Parker Ridge Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Icy sections; Slippery sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Nigel Pass Trail",
-      "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Dolomite Pass Trail",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Glacier Lake Trail",
-      "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Good.",
-      "comment": "Wet and muddy sections",
-      "lastUpdated": "2026-10-22",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Molar Pass Trail",
-      "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Caution.",
-      "comment": "Fresh snow; Bridge(s) out; Snowbound at higher elevation; Snowshoes or ice cleats recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "North Molar Pass Trail",
-      "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Caution.",
-      "comment": "Fresh snow; Bridge(s) out; Snowbound at higher elevation; Snowshoes or ice cleats recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Sunset Pass Trail",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Sarbach Lookout Trail",
-      "difficulty": "Difficult",
-      "status": "open",
-      "condition": "Fair.",
-      "comment": "Fresh snow; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
-    },
-    {
-      "name": "Sunset Lookout Trail",
-      "difficulty": "Difficult",
-      "status": "caution",
-      "condition": "Snow covered with icy sections.",
-      "comment": "Fresh snow; Slippery sections; Icy sections; Cleats recommended; Sturdy hiking boots and hiking poles recommended",
-      "lastUpdated": "2026-10-25",
-      "area": "Icefields Parkway Area"
+      "area": "Lake Louise Area Cross-Country Ski Trails"
     }
   ],
   "advisories": [
