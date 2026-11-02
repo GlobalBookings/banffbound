@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-02T01:19:38.347Z",
+  "retrievedAt": "2026-11-02T08:58:03.116Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-02T01:19:38.344Z",
-      "sourceUpdatedAt": "2026-11-02T01:19:37.000Z",
-      "sourceUpdatedAtText": "Sun, 01 Nov 2026 18:19:37 -0700",
+      "retrievedAt": "2026-11-02T08:58:03.050Z",
+      "sourceUpdatedAt": "2026-11-02T08:58:02.000Z",
+      "sourceUpdatedAtText": "Mon, 02 Nov 2026 01:58:02 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -78,15 +78,26 @@
           "dates": "November 13, 2026",
           "times": "07:00 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Reel Time: The Christophers",
+          "link": "https://banff.ca/Calendar.aspx?EID=35416",
+          "description": "Reel Time features some of the best films from the Toronto International Film Festival. Organized by Banff Centre, Reel Time has brought alternative cinema to the Bow Valley for over fifteen years.",
+          "publishedAt": "2026-10-23T21:25:22.000Z",
+          "startDate": "2026-11-16",
+          "endDate": "2026-11-16",
+          "dates": "November 16, 2026",
+          "times": "07:00 PM - 11:59 PM",
+          "location": "229 Bear StreetBanff, AB"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-02T01:19:38.185Z",
-      "sourceUpdatedAt": "2026-11-02T01:19:37.000Z",
-      "sourceUpdatedAtText": "Sun, 01 Nov 2026 18:19:37 -0700",
+      "retrievedAt": "2026-11-02T08:58:03.114Z",
+      "sourceUpdatedAt": "2026-11-02T08:58:02.000Z",
+      "sourceUpdatedAtText": "Mon, 02 Nov 2026 01:58:02 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
