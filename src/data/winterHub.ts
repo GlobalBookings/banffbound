@@ -1,4 +1,6 @@
 export const winterGuides = [
+  { title: 'Banff Gondola: plan the summit visit', href: '/blog/banff-gondola-guide/', category: 'snow', tag: 'Sightseeing without skis', desc: 'Compare the indoor summit, the optional boardwalk and the Route 1 journey before choosing a ticket.' },
+  { title: 'Banff Gondola tickets and dining', href: '/blog/banff-gondola-tickets-guide/', category: 'slow', tag: 'Admission and packages', desc: 'Check round-trip admission, Sky Bistro reservations and dining packages for your dates.' },
   { title: 'Avalanche awareness for visitors', href: '/blog/banff-avalanche-safety', category: 'practical', tag: 'Terrain and training', desc: 'Understand what forecasts, rescue equipment and a summer route label can establish before planning a snow outing.' },
   { title: 'New Year’s Eve in Banff', href: '/blog/banff-new-years-eve', category: 'slow', tag: 'Confirm the actual programme', desc: 'Plan tickets, a meal, transport and the return using current Town information and direct venue confirmations.' },
   { title: 'Plan a family visit', href: '/family-guide', category: 'family', tag: 'Match ages and interests', desc: 'Filter seasonal outings, check participation limits and choose a room layout for your group.' },
@@ -22,7 +24,7 @@ export const winterGuides = [
   { title: 'Northern lights & dark skies', href: '/blog/banff-northern-lights', category: 'slow', tag: 'A bonus, never a promise', desc: 'Plan a warm, flexible evening; cloud cover and solar activity decide the show.' },
   { title: 'Après-ski in Banff', href: '/blog/banff-apres-ski', category: 'slow', tag: 'After the lifts', desc: 'Turn a ski day into an easy evening in town with food, a warm drink and a ride home.' },
   { title: 'Family winter days', href: '/blog/banff-family-winter', category: 'family', tag: 'Short outings win', desc: 'Build around warm-up breaks, children’s energy, and one main outdoor activity.' },
-  { title: 'Christmas in Banff', href: '/blog/banff-christmas-guide', category: 'slow', tag: 'Holiday planning', desc: 'Festive trip ideas; verify this season’s event dates and book holiday meals ahead.' },
+  { title: 'Christmas in Banff', href: '/blog/banff-christmas-guide/', category: 'slow', tag: 'Holiday planning', desc: 'Compare Christmas Market dates, Christmas Spirit reservations and Mountaintop Christmas before choosing your stay.' },
   { title: 'SnowDays & Ice Magic', href: '/blog/banff-snowdays-festival', category: 'family', tag: 'Winter festival planning', desc: 'Current festival dates, access restrictions, shuttle arrangements and a relaxed event day.' },
   { title: 'Winter photography', href: '/blog/banff-winter-photography', category: 'slow', tag: 'Keep batteries warm', desc: 'Snow, short daylight, accessible viewpoints, and protecting your equipment in the cold.' },
   { title: 'Winter driving & road checks', href: '/blog/banff-winter-driving', category: 'practical', tag: 'Before every journey', desc: 'Route-specific tire rules, Alberta and BC road reports, closures and a car-free alternative.' },

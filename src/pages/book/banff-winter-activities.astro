@@ -66,6 +66,10 @@ const activityList = {
     </ol>
     <aside class="access-note"><strong>Johnston Canyon access — checked October 30, 2026:</strong> Parks Canada’s construction notice lists the trail and day-use area closed from October 13 to a scheduled December 11, 2026. This is not confirmation of reopening. For either canyon experience, confirm the route for your date before paying. <a href={winterActivityClosureSource} target="_blank" rel="noopener">Current Parks notice</a>.</aside>
   </section>
+  <section class="landing-section" aria-labelledby="winter-planning-heading">
+    <h2 id="winter-planning-heading">Plan the rest of your winter visit</h2>
+    <p>Use the <a href="/winter/">Banff winter guide</a> for a flexible itinerary or check <a href="/blog/banff-christmas-guide/">Christmas dates and ticket requirements</a> if your trip falls over the holidays. For Sulphur Mountain, compare the <a href="/blog/banff-gondola-guide/">summit visit and journey</a> and the <a href="/blog/banff-gondola-tickets-guide/">admission and dining options</a>.</p>
+  </section>
   <section class="landing-section faq-section" aria-labelledby="faq-heading"><div class="section-intro"><span class="section-kicker">A little planning goes a long way</span><h2 id="faq-heading">Before you book</h2></div>{winterActivityFaqs.map(faq => <details><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
   <section class="landing-section photo-credits" id="photo-credits" aria-label="Photo credits"><details><summary>Photo credits</summary><p>These historical photographs show the credited subject or setting. Images are cropped to fit the layout.</p><ul>{photoCredits.map(photo => <li><a href={photo.sourceUrl} target="_blank" rel="noopener">{photo.title}</a> — {photo.author}. <a href={photo.licenseUrl} target="_blank" rel="noopener">{photo.license}</a>. {photo.changeNote}</li>)}</ul></details></section>
   <section class="landing-section final-choice" aria-labelledby="final-heading">

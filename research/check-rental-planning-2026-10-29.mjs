@@ -92,5 +92,12 @@ check(compiled.diagnostics.length === 0, 'Astro diagnostics: ' + JSON.stringify(
 check(page.includes('<noscript>') && page.includes('rentals.map(rental =>') && page.includes('rentalBaseGuides.map(base =>') && page.includes('options.map(option =>'), 'Complete no-JS source content missing');
 check(!page.includes('rentalData') && !page.includes('leaflet') && !page.includes('priceFrom') && !page.includes('premierHost') && !page.includes('reviewCount'), 'Legacy generated claim path remains');
 check(page.includes('rel="noopener sponsored"') && page.indexOf('Vrbo links are affiliate links') < page.indexOf('Compare the listing on Vrbo'), 'Affiliate disclosure/relationship missing before first CTA');
-for (const href of [...page.matchAll(/href="(\/[^"?#]*)/g)].map(m => m[1])) check(fs.existsSync(path.join(root,'src/pages',href+'.astro')) || fs.existsSync(path.join(root,'src/pages',href,'index.astro')), 'Broken internal page: '+href);
+for (const href of [...page.matchAll(/href="(\/[^"?#]*)/g)].map(m => m[1])) {
+  const route = href.replace(/\/$/, '');
+  const blogSlug = /^\/blog\/([a-z0-9-]+)$/.exec(route)?.[1];
+  const blogPage = blogSlug && fs.existsSync(path.join(root, 'src/pages/blog/[slug].astro'))
+    && read('src/data/blogPosts.ts').includes("slug: '" + blogSlug + "'");
+  check(blogPage || fs.existsSync(path.join(root, 'src/pages', route + '.astro'))
+    || fs.existsSync(path.join(root, 'src/pages', route, 'index.astro')), 'Broken internal page: ' + href);
+}
 console.log(JSON.stringify({assertions,records:rentals.length,identityHash,sourceReviewedOptions:planning.reviewedRentalOptions.length,baseGuides:planning.rentalBaseGuides.length,syntheticPoints:0,compilerDiagnostics:compiled.diagnostics.length},null,2));

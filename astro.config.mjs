@@ -90,6 +90,7 @@ export default defineConfig({
         if (['/learn-to-ski', '/ski-day-planner'].includes(path) || townStayUpdatedSlugs.some(slug => path === `/towns/${slug}`)) item.lastmod = new Date(townStayPlanningReviewedAt);
         const blogDate = reviewedBlogDates.get(path.replace('/blog/', ''));
         if (blogDate) item.lastmod = new Date(blogDate);
+        if (['/', '/winter', '/trip-cost', '/ski-pass-calculator', '/vacation-rentals', '/events', '/book/banff-winter-activities'].includes(path)) item.lastmod = new Date('2026-11-02');
         // Boost priority for high-value pages
         if (item.url === 'https://banffbound.com/') {
           item.priority = 1.0;

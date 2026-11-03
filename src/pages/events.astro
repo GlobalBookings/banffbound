@@ -46,7 +46,7 @@ const faqs = [
     </section>
     <section id="winter-festivals" aria-labelledby="winter-heading">
       <span class="eyebrow">Published 2026/27 programme · reviewed October 28, 2026</span><h2 id="winter-heading">Choose a winter anchor for the trip</h2>
-      <p>These organiser announcements are separate from the Town feed. They are dates for the stated season, not forecasts for another winter. Individual activities, tickets and weather updates still need checking.</p>
+      <p>These organiser announcements are separate from the Town feed. They are dates for the stated season, not forecasts for another winter. Individual activities, tickets and weather updates still need checking. Use the <a href="/winter/">Banff winter guide</a> to plan the rest of the trip around your event.</p>
       <div class="event-grid">{festivals.map(event=><article class="festival-card"><h3>{event.title}</h3><p class="event-date">{event.dates}</p><p>{event.description}</p><a href={event.guide}>{event.guideLabel} →</a><a href={event.source} target="_blank" rel="noopener">{event.sourceLabel} ↗</a></article>)}</div>
     </section>
     <section id="town-news" data-town-panel data-town-kind="news" data-town-expires={news.expiresAt} data-town-retrieved={news.retrievedAt} aria-labelledby="news-heading">

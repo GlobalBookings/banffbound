@@ -2,6 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 const resorts = [{ id: 'sunshine', name: 'Sunshine Village' }, { id: 'louise', name: 'Lake Louise' }, { id: 'norquay', name: 'Mt. Norquay' }];
+const priceReferences = [
+  { resort: 'Banff Sunshine Village', price: 'Check your date with Sunshine', detail: 'Compare the adult full-day ticket and the mobile option. Opening-week prices depend on available terrain.', href: 'https://www.skibanff.com/tickets-passes/lift-tickets/lift-tickets' },
+  { resort: 'Lake Louise Ski Resort', price: '$160–$185', detail: 'Published adult (18–64) full-day range for 2026/27 advance sales. Early-season pricing is offered separately.', href: 'https://www.skilouise.com/tickets-passes/winter-tickets/single-day-lift-tickets/' },
+  { resort: 'Mt. Norquay', price: '$149 regular window rate', detail: 'Published adult (18+) full-day reference. Its booking calendar shows separate prices for advance purchase and limited early-season terrain.', href: 'https://shop.banffnorquay.com/en/catalogue/adult-18-full-day-lift-ticket_1730/' },
+];
 const faqs = [
   { question: 'Does an Ikon Pass give unlimited skiing at SkiBig3?', answer: 'No. For 2026/27, SkiBig3 lists up to 7 combined days with the full Ikon Pass, up to 5 combined days with Ikon Base, and 2, 3 or 4 total days with Ikon Session. These are shared allowances, not a separate allowance at each resort. Check your exact product, remaining days and blackout dates.' },
   { question: 'Why are there no default ticket prices?', answer: 'Quotes vary by date, age, product, purchase time and conditions. Enter current totals for the same adult and dates, in Canadian dollars with taxes and required fees included. This calculator compares your complete eligible quotes, not every offer on the market.' },
@@ -9,7 +14,7 @@ const faqs = [
   { question: 'What is excluded from the calculation?', answer: 'Accommodation, lessons, equipment, transport, park admission and the original purchase cost of a pass you already own are excluded. The result compares additional lift-access spending for one adult.' },
 ];
 ---
-<BaseLayout title="Banff Ski Pass Calculator — Compare Your Current Ticket Quotes" description="Compare current adult lift-ticket quotes for Sunshine, Lake Louise and Norquay. Check multi-day coverage and your owned pass's shared days before comparing costs." lastUpdated="2026-10-28">
+<BaseLayout title="Banff Ski Pass Calculator & 2026/27 Lift Ticket Prices" description="Compare published lift ticket prices and booking options at Sunshine, Lake Louise and Norquay. Calculate single-resort, SkiBig3 and existing pass costs." lastUpdated="2026-11-02">
   <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) })} />
   <div class="container"><Breadcrumbs items={[{ label: 'Skiing', href: '/skiing' }, { label: 'Ski Pass Calculator' }]} /></div>
   <section class="page-hero">
@@ -17,6 +22,18 @@ const faqs = [
     <div class="page-hero-content"><span class="badge">Your quotes. Your ski days.</span><h1>Banff Ski Pass Calculator</h1><p>Compare the lift access you can actually use, using current quotes for your dates.</p></div>
   </section>
   <section class="section"><div class="container calculator">
+    <section class="pass-notes" aria-labelledby="lift-price-heading">
+      <h2 id="lift-price-heading">2026/27 Banff lift ticket prices and where to check</h2>
+      <p>Adult single-resort references in CAD, checked <time datetime="2026-11-02">2 November 2026</time>. Use the seller’s final quote for your exact date, including taxes and fees, in the calculator.</p>
+      <div style="overflow-x: auto" role="region" aria-label="Adult lift ticket comparison" tabindex="0">
+        <table>
+          <caption>Compare adult full-day lift ticket options</caption>
+          <thead><tr><th scope="col">Resort</th><th scope="col">Price reference</th><th scope="col">What to check</th></tr></thead>
+          <tbody>{priceReferences.map(row => <tr><th scope="row"><a href={row.href}>{row.resort}</a></th><td>{row.price}</td><td>{row.detail}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p>Skiing across resorts? Check the <a href="https://www.skibig3.com/ski/lift-tickets/">SkiBig3 ticket calendar</a> for the same dates. Compare the whole trip’s lift cost and check coverage, grace days and any existing pass days. <a href="/park-pass/">National park admission</a> is separate.</p>
+    </section>
     <div class="intro"><h2>What will your ski days cost?</h2><p>Plan one resort per ski day. Enter <strong>totals for one adult, in CAD including taxes and required fees</strong>. Blank prices stay unknown. Repeat separately for people with different ages, dates or pass access.</p></div>
     <div class="calc-layout">
       <form id="ski-quote-form" novalidate hidden>
