@@ -324,6 +324,7 @@ def main():
             (evidence / name).write_bytes(raw_manifest[:128 * 1024])
         manifest = read_json(manifest_path, [])
         records = list(attachment_records(manifest))
+        input_size_class = label
         if duo:
             landscape = [record for record in records if 'qa-duo-landscape' in str(record.get('suggestedHumanReadableName', ''))]
             try:
@@ -333,6 +334,9 @@ def main():
                 if shot['width'] <= shot['height']:
                     raise ValueError('Duo landscape capture must be wider than tall')
                 result['landscapeScreenshot'] = shot
+                # The existing input observations label the test window width bucket,
+                # not the physical device. The booted display stays the same on rotate.
+                input_size_class = 'ipad' if shot['duoDisplayByPixelSize'] == 'inner' else 'iphone'
             except (OSError, ValueError) as error:
                 errors.append(f'{label}: {error}')
         identities = sorted(set(test_identifiers(manifest)))
@@ -357,7 +361,7 @@ def main():
                             ('nativeCommerceInputObservations', commerce_input_observations)]:
             result[key] = []
             try:
-                result[key] = reader(records, exported, evidence, label, result['testsPassed'])
+                result[key] = reader(records, exported, evidence, input_size_class, result['testsPassed'])
             except InputObservationError as error:
                 result[key] = error.observations
                 errors.append(f'{label}: {error}')

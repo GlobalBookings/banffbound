@@ -41,7 +41,7 @@ NODE
 fingerprint "$QA_ROOT/source-before.json"
 git rev-parse HEAD > "$QA_ROOT/source-commit.txt"
 date -u '+%Y-%m-%dT%H:%M:%SZ' > "$QA_ROOT/started-at.txt"
-phase receipt-unit-tests python3 -m unittest discover -s release/native-qa -p '*_test.py'
+phase receipt-unit-tests env QA_TARGET=standard python3 -m unittest discover -s release/native-qa -p '*_test.py'
 phase toolchain bash -c 'xcodebuild -version; node --version; pod --version'
 "$qa_ruby" --version | tee -a "$QA_ROOT/logs/toolchain.log"
 "$qa_ruby" -r xcodeproj -e 'puts "xcodeproj #{Xcodeproj::VERSION}"' | tee -a "$QA_ROOT/logs/toolchain.log"
