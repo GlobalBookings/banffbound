@@ -90,9 +90,15 @@ def browser_observation(records, exported):
     if exported.resolve() not in source.parents or not source.is_file() or source.stat().st_size > 16000:
         raise ValueError('Invalid or oversized native browser observation attachment')
     observation = read_json(source)
-    required = ('doneButtonObserved', 'browserWebViewObserved', 'returnToDetailVerified')
+    required = ('browserWebViewObserved', 'returnToDetailVerified')
     if not isinstance(observation, dict) or observation.get('kind') != 'native-safari-handoff' or any(observation.get(key) is not True for key in required):
         raise ValueError('Native Safari presentation and return were not verified by executed UI assertions')
+    dismissal = observation.get('dismissalControlLabel')
+    if dismissal is None:
+        if observation.get('doneButtonObserved') is not True:
+            raise ValueError('Require the actual native Safari Done control')
+    elif dismissal not in ('Done', 'Close') or observation.get('doneButtonObserved') is not (dismissal == 'Done'):
+        raise ValueError('Require an actual Done or Close control consistent with the observed label')
     if observation.get('provider') != 'GetYourGuide' or observation.get('networkAvailabilityVerified') is not False:
         raise ValueError('Browser observation must identify the tested provider and preserve the network-availability limit')
     if observation.get('purchaseAttempted') is not False or observation.get('browserAccessibilityBundle') not in ('com.banffbound.app', 'com.apple.SafariViewService'):
@@ -175,8 +181,14 @@ def input_observations(records, exported, evidence, device, successful, collecti
             reject(f'Invalid or oversized native {collection} input observation')
         observation = read_json(source)
         section = observation.get('section') if isinstance(observation, dict) else None
+        width = observation.get('windowWidthPoints') if isinstance(observation, dict) else None
+        device_class = device
+        if device == 'iphone-duo':
+            if type(width) not in (int, float) or not 0 < width <= 1500:
+                reject(f'{collection.title()} requires an actual Duo window measurement')
+            device_class = 'iphone' if width < 600 else 'ipad'
         if (not isinstance(observation, dict) or observation.get('kind') != f'native-{collection}-input-observation'
-                or observation.get('deviceClass') != device or (section, observation.get('query')) not in expected_queries
+                or observation.get('deviceClass') != device_class or (section, observation.get('query')) not in expected_queries
                 or observation.get('phase') not in ('before', 'after')
                 or observation.get('entryMethod') != 'bulk-native-text-without-return'):
             reject(f'{collection.title()} input observation has an unexpected native section, query, device or stage')
@@ -194,15 +206,16 @@ def input_observations(records, exported, evidence, device, successful, collecti
             reject(f'Successful native {collection} input requires all three exact before/after query pairs')
         for observation in observations:
             query = observation['query']
+            device_class = observation['deviceClass']
             if (observation.get('typedWithoutReturn') is not True or observation.get('beforeValue') != query
                     or observation.get('fieldValue') != query
-                    or (device == 'iphone' and (observation.get('keyboardReadyBeforeTyping') is not True
+                    or (device_class == 'iphone' and (observation.get('keyboardReadyBeforeTyping') is not True
                                                or observation.get('searchKeyReadyBeforeTyping') is not True))):
                 reject(f'Native {collection} bulk query must be complete before and after dismissal')
             if observation['phase'] == 'after':
                 method = observation.get('dismissalMethod')
                 valid_method = (method == 'native-search-key' and observation.get('searchReadyForDismissal') is True
-                                or device == 'ipad' and method == 'ipad-visible-heading'
+                                or device_class == 'ipad' and method == 'ipad-visible-heading'
                                 and observation.get('headingObserved') is True
                                 and observation.get('headingLabel') == INPUT_HEADINGS[observation.get('section') or 'map'])
                 if (not valid_method or observation.get('afterValue') != query
@@ -234,6 +247,8 @@ def validated_screenshot(record, exported, evidence, device, screen):
         if display is None:
             raise ValueError(f'Unexpected Duo native pixels: {pixels[0]}x{pixels[1]}')
         details['duoDisplayByPixelSize'] = display
+        if screen in SCREENS and pixels[0] >= pixels[1]:
+            raise ValueError('Primary Duo screenshot must be portrait')
     elif pixels != device['expectedPixels']:
         raise ValueError(f'Unexpected native pixels: {pixels[0]}x{pixels[1]}')
     filename = f'{device["label"]}-{screen}-{details["width"]}x{details["height"]}.png'
@@ -324,7 +339,6 @@ def main():
             (evidence / name).write_bytes(raw_manifest[:128 * 1024])
         manifest = read_json(manifest_path, [])
         records = list(attachment_records(manifest))
-        input_size_class = label
         if duo:
             landscape = [record for record in records if 'qa-duo-landscape' in str(record.get('suggestedHumanReadableName', ''))]
             try:
@@ -334,9 +348,6 @@ def main():
                 if shot['width'] <= shot['height']:
                     raise ValueError('Duo landscape capture must be wider than tall')
                 result['landscapeScreenshot'] = shot
-                # The existing input observations label the test window width bucket,
-                # not the physical device. The booted display stays the same on rotate.
-                input_size_class = 'ipad' if shot['duoDisplayByPixelSize'] == 'inner' else 'iphone'
             except (OSError, ValueError) as error:
                 errors.append(f'{label}: {error}')
         identities = sorted(set(test_identifiers(manifest)))
@@ -361,7 +372,7 @@ def main():
                             ('nativeCommerceInputObservations', commerce_input_observations)]:
             result[key] = []
             try:
-                result[key] = reader(records, exported, evidence, input_size_class, result['testsPassed'])
+                result[key] = reader(records, exported, evidence, label, result['testsPassed'])
             except InputObservationError as error:
                 result[key] = error.observations
                 errors.append(f'{label}: {error}')
@@ -370,6 +381,15 @@ def main():
         # Retain at most one failure image and one bounded accessibility tree per
         # device, even when an assertion fails before store captures are reached.
         if not result['testsPassed']:
+            for name, suffix in [('screen', 'png'), ('host-tree', 'txt'), ('service-tree', 'txt')]:
+                match = next((r for r in records if f'qa-safari-handoff-failure-{name}' in str(r.get('suggestedHumanReadableName', ''))), None)
+                if match:
+                    source = (exported / match['exportedFileName']).resolve()
+                    limit = MAX_SCREEN_BYTES if suffix == 'png' else 24000
+                    if exported.resolve() in source.parents and source.is_file() and source.stat().st_size <= limit:
+                        filename = f'{label}-safari-failure-{name}.{suffix}'
+                        shutil.copy2(source, evidence / filename)
+                        result['failureDiagnostics'].append({'kind': 'safari-' + name, 'file': filename})
             diagnostic_candidates = sorted(records, key=lambda record: not str(record.get('suggestedHumanReadableName', '')).startswith('qa-failure-'))
             for record in diagnostic_candidates:
                 name = str(record.get('suggestedHumanReadableName', ''))

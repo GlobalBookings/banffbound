@@ -26,7 +26,18 @@ phase() {
   local name="$1"
   shift
   printf '%s\n' "$name" > "$QA_ROOT/current-phase.txt"
-  "$@" 2>&1 | tee "$QA_ROOT/logs/$name.log"
+  if [[ "$QA_TARGET" == 'iphone-duo' && "$name" == 'build' ]]; then
+    echo 'Compiling BanffBound with Xcode 27.1.'
+    if "$@" > "$QA_ROOT/logs/$name.log" 2>&1; then
+      echo 'Xcode built the native test app successfully.'
+    else
+      local result=$?
+      tail -100 "$QA_ROOT/logs/$name.log"
+      return "$result"
+    fi
+  else
+    "$@" 2>&1 | tee "$QA_ROOT/logs/$name.log"
+  fi
 }
 
 fingerprint() {

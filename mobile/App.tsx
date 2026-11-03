@@ -3,6 +3,7 @@ import {
   Alert,
   Image,
   ImageBackground,
+  Keyboard,
   KeyboardAvoidingView,
   Linking,
   Modal,
@@ -769,7 +770,7 @@ function BanffApp() {
               </>
             )}
             {tab === "Explore" && (
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingBottom: 4 }}>
+              <ScrollView testID="explore-mode-strip" horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingBottom: 4 }}>
                 {exploreModes.map(mode => (
                   <Chip key={mode.id} label={mode.title} icon={mode.icon} selected={exploreMode === mode.id}
                     onPress={() => { setExploreMode(mode.id); scroll.current?.scrollTo({ y: 0, animated: false }); }} />
@@ -1506,6 +1507,15 @@ function BanffApp() {
               >
                 <View style={a.modalHeader}>
                   <Text style={[s.eyebrow, s.sectionTitleText]}>BANFFBOUND · MADE FOR YOUR TRIP</Text>
+                  {panel.type === "settings" && Platform.OS === "ios" && (
+                    <Pressable
+                      accessibilityRole="button"
+                      onPress={Keyboard.dismiss}
+                      style={a.hideKeyboard}
+                    >
+                      <Text style={s.link}>Hide keyboard</Text>
+                    </Pressable>
+                  )}
                   <Pressable
                     accessibilityRole="button"
                     accessibilityLabel="Close panel"
@@ -3058,6 +3068,11 @@ const a = StyleSheet.create({
     borderRadius: 22,
     backgroundColor: colors.pale,
     alignItems: "center",
+    justifyContent: "center",
+  },
+  hideKeyboard: {
+    minHeight: 44,
+    maxWidth: "42%",
     justifyContent: "center",
   },
   modalContent: { padding: 24, paddingBottom: 40, gap: 22 },
