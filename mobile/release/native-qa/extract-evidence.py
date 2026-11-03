@@ -97,8 +97,10 @@ def browser_observation(records, exported):
     if dismissal is None:
         if observation.get('doneButtonObserved') is not True:
             raise ValueError('Require the actual native Safari Done control')
-    elif dismissal not in ('Done', 'Close') or observation.get('doneButtonObserved') is not (dismissal == 'Done'):
-        raise ValueError('Require an actual Done or Close control consistent with the observed label')
+    elif (dismissal not in ('Done', 'Close', 'Cancel')
+          or observation.get('doneButtonObserved') is not (dismissal == 'Done')
+          or (dismissal == 'Cancel' and observation.get('dismissalControlIdentifier') != 'CancelBarItemButton')):
+        raise ValueError('Require an actual Safari dismissal control consistent with the observed label and identifier')
     if observation.get('provider') != 'GetYourGuide' or observation.get('networkAvailabilityVerified') is not False:
         raise ValueError('Browser observation must identify the tested provider and preserve the network-availability limit')
     if observation.get('purchaseAttempted') is not False or observation.get('browserAccessibilityBundle') not in ('com.banffbound.app', 'com.apple.SafariViewService'):

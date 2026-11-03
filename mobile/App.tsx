@@ -1526,6 +1526,8 @@ function BanffApp() {
                   </Pressable>
                 </View>
                 <ScrollView
+                  key={panel.type}
+                  testID="trip-panel-content"
                   keyboardShouldPersistTaps="handled"
                   contentContainerStyle={a.modalContent}
                 >

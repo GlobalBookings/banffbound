@@ -50,7 +50,7 @@ final class BanffBoundUITests: XCTestCase {
         XCTAssertTrue(visible(heading).isHittable, "Navigation must display \(heading)")
     }
 
-    private func scrollTo(_ label: String, attempts: Int = 12) {
+    private func scrollTo(_ label: String, attempts: Int = 12, towardTop: Bool = false) {
         for _ in 0..<attempts {
             let target = element(label)
             let keyboard = app.keyboards.firstMatch
@@ -63,8 +63,10 @@ final class BanffBoundUITests: XCTestCase {
             XCTAssertGreaterThan(bottom - top, 40, "Need visible content above the keyboard to scroll")
             let origin = app.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
             let x = app.frame.width * 0.70
-            origin.withOffset(CGVector(dx: x, dy: bottom - app.frame.minY))
-                .press(forDuration: 0.05, thenDragTo: origin.withOffset(CGVector(dx: x, dy: top - app.frame.minY)))
+            let startY = towardTop ? top : bottom
+            let endY = towardTop ? bottom : top
+            origin.withOffset(CGVector(dx: x, dy: startY - app.frame.minY))
+                .press(forDuration: 0.05, thenDragTo: origin.withOffset(CGVector(dx: x, dy: endY - app.frame.minY)))
         }
         XCTFail("Could not scroll to \(label)")
     }
@@ -79,7 +81,8 @@ final class BanffBoundUITests: XCTestCase {
     private func scrollModalUpTo(_ label: String) {
         for _ in 0..<6 {
             if element(label).exists && element(label).isHittable { return }
-            guard let modal = app.scrollViews.allElementsBoundByIndex.last else {
+            let modal = app.scrollViews.matching(identifier: "trip-panel-content").firstMatch
+            guard modal.exists && modal.isHittable else {
                 XCTFail("Missing native modal scroll view")
                 return
             }
@@ -269,7 +272,7 @@ final class BanffBoundUITests: XCTestCase {
         let pill = element(label)
         if !pill.isHittable {
             let strip = visibleID("explore-mode-strip")
-            if !strip.isHittable { scrollTo("explore-mode-strip") }
+            if !strip.isHittable { scrollTo("explore-mode-strip", towardTop: true) }
             for _ in 0..<4 {
                 if pill.isHittable { break }
                 strip.swipeLeft()
@@ -317,7 +320,8 @@ final class BanffBoundUITests: XCTestCase {
         // branch accepts a provider app or launches Safari on the test's behalf.
         let service = XCUIApplication(bundleIdentifier: "com.apple.SafariViewService")
         var browser = app!
-        let dismissLabel = NSPredicate(format: "label == %@ OR label == %@", "Done", "Close")
+        let dismissLabel = NSPredicate(format: "label == %@ OR label == %@ OR (identifier == %@ AND label == %@)",
+                                       "Done", "Close", "CancelBarItemButton", "Cancel")
         var dismiss = app.buttons.matching(dismissLabel).firstMatch
         if !dismiss.waitForExistence(timeout: 20) {
             browser = service
@@ -331,7 +335,7 @@ final class BanffBoundUITests: XCTestCase {
                 tree.lifetime = .keepAlways
                 add(tree)
             }
-            XCTFail("The actual native Safari controller must expose a hittable Done or Close control")
+            XCTFail("The actual native Safari controller must expose its hittable dismissal control")
             return
         }
         XCTAssertTrue(browser.webViews.firstMatch.waitForExistence(timeout: 15), "Observe the native browser's actual WebView; successful provider loading is separate")
@@ -350,6 +354,7 @@ final class BanffBoundUITests: XCTestCase {
         let exposed = addressObservations.joined(separator: " ")
         capture("qa-commerce-browser-screen")
         let actualDismissalLabel = dismiss.label
+        let actualDismissalIdentifier = dismiss.identifier
         dismiss.tap()
         XCTAssertTrue(visibleID("commerce-close-details", timeout: 15).isHittable, "Closing Safari must return to the original BanffBound detail")
         XCTAssertTrue(visibleID("commerce-cta-gyg-256607-booking").exists)
@@ -357,6 +362,7 @@ final class BanffBoundUITests: XCTestCase {
             "kind": "native-safari-handoff", "provider": "GetYourGuide", "tourTitle": "Banff Gondola admission",
             "browserAccessibilityBundle": browser === service ? "com.apple.SafariViewService" : "com.banffbound.app",
             "doneButtonObserved": actualDismissalLabel == "Done", "dismissalControlLabel": actualDismissalLabel,
+            "dismissalControlIdentifier": actualDismissalIdentifier,
             "browserWebViewObserved": true, "returnToDetailVerified": true,
             "addressUIObservations": addressObservations,
             "visibleProviderHost": exposed.lowercased().contains("getyourguide.com") ? "getyourguide.com" : NSNull(),
@@ -420,9 +426,11 @@ final class BanffBoundUITests: XCTestCase {
 
     private func mapSearch(_ query: String) throws {
         mapScrollToTop()
-        if element("Clear map search").exists { tap("Clear map search") }
         let field = app.textFields.matching(identifier: "map-search").firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 10) && field.isHittable, "Map search must be a real native editable field")
+        if let value = field.value as? String, !value.isEmpty && value != field.placeholderValue {
+            tap("Clear map search")
+        }
         try nativeSearch(field, query: query, heading: "Get your bearings.", collection: "map")
     }
 
