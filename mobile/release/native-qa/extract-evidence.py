@@ -20,6 +20,7 @@ REQUIRED_TESTS = ('test01CapturePrimaryScreens', 'test02SavedPlaceSurvivesRelaun
                   'test08MapDocumentMarkerOpensRestaurantDetail',
                   'test09MapCategoriesFacilitiesAndEmptyReset')
 BROWSER_SCREEN = 'qa-commerce-browser-screen'
+DUO_DISPLAY_PIXELS = {(1398, 2034): 'outer', (2007, 2853): 'inner', (1878, 2670): 'inner'}
 MAX_SCREEN_BYTES = 8 * 1024 * 1024
 MAX_ARTIFACT_BYTES = 48 * 1024 * 1024
 MAP_RESET_PLACEHOLDER = 'Restaurants, toilets, a favourite lake…'
@@ -227,8 +228,14 @@ def validated_screenshot(record, exported, evidence, device, screen):
     details = png_details(source)
     if details['bytes'] > MAX_SCREEN_BYTES:
         raise ValueError('Screenshot exceeds bounded artifact limit')
-    if [details['width'], details['height']] != device['expectedPixels']:
-        raise ValueError(f'Unexpected native pixels: {details["width"]}x{details["height"]}')
+    pixels = [details['width'], details['height']]
+    if device['label'] == 'iphone-duo':
+        display = DUO_DISPLAY_PIXELS.get(tuple(sorted(pixels)))
+        if display is None:
+            raise ValueError(f'Unexpected Duo native pixels: {pixels[0]}x{pixels[1]}')
+        details['duoDisplayByPixelSize'] = display
+    elif pixels != device['expectedPixels']:
+        raise ValueError(f'Unexpected native pixels: {pixels[0]}x{pixels[1]}')
     filename = f'{device["label"]}-{screen}-{details["width"]}x{details["height"]}.png'
     shutil.copy2(source, evidence / filename)
     return {'file': filename, 'attachmentName': record.get('suggestedHumanReadableName'), **details}
@@ -253,7 +260,8 @@ def main():
     evidence = root / 'evidence'
     evidence.mkdir(parents=True, exist_ok=True)
     errors = []
-    for name in ('source-before.json', 'source-after.json', 'source-final.json', 'project.json', 'selected-devices.json', 'embedded-bundle.sha256', 'bundle-identifier.txt'):
+    duo = os.getenv('QA_TARGET') == 'iphone-duo'
+    for name in ('source-before.json', 'source-after.json', 'source-final.json', 'project.json', 'selected-devices.json', 'embedded-bundle.sha256', 'bundle-identifier.txt', 'duo-build-sdk.txt', 'duo-scene-manifest.txt'):
         source = root / name
         if source.is_file():
             shutil.copy2(source, evidence / name)
@@ -271,8 +279,11 @@ def main():
     if not embedded_verified:
         errors.append('Embedded Release JavaScript bundle hash and expected native bundle identifier were not verified.')
     devices = read_json(root / 'selected-devices.json', [])
-    if {device.get('label') for device in devices} != {'iphone', 'ipad'}:
-        errors.append('Both required simulator destinations were not selected.')
+    if {device.get('label') for device in devices} != ({'iphone-duo'} if duo else {'iphone', 'ipad'}):
+        errors.append('The required simulator destinations were not selected.')
+    if duo and (read_text(root / 'duo-build-sdk.txt') != 'iphonesimulator27.1'
+                or not read_text(root / 'duo-scene-manifest.txt')):
+        errors.append('The built iPhone Duo simulator app must use the iOS 27.1 SDK and a UIKit scene manifest.')
     results = []
     for device in devices:
         label = device['label']
@@ -313,6 +324,17 @@ def main():
             (evidence / name).write_bytes(raw_manifest[:128 * 1024])
         manifest = read_json(manifest_path, [])
         records = list(attachment_records(manifest))
+        if duo:
+            landscape = [record for record in records if 'qa-duo-landscape' in str(record.get('suggestedHumanReadableName', ''))]
+            try:
+                if len(landscape) != 1:
+                    raise ValueError('Expected one real Duo landscape capture after rotation')
+                shot = validated_screenshot(landscape[0], exported, evidence, device, 'qa-duo-landscape')
+                if shot['width'] <= shot['height']:
+                    raise ValueError('Duo landscape capture must be wider than tall')
+                result['landscapeScreenshot'] = shot
+            except (OSError, ValueError) as error:
+                errors.append(f'{label}: {error}')
         identities = sorted(set(test_identifiers(manifest)))
         result['executedTestIdentifiers'] = identities
         if set(identities) != set(REQUIRED_TESTS):
@@ -392,7 +414,7 @@ def main():
         'finishedAtUTC': read_text(root / 'finished-at.txt'),
         'lastPhase': read_text(root / 'current-phase.txt'),
         'githubRun': {'repository': os.getenv('GITHUB_REPOSITORY'), 'runId': os.getenv('GITHUB_RUN_ID'), 'attempt': os.getenv('GITHUB_RUN_ATTEMPT')},
-        'build': {'requestedConfiguration': 'Release', 'signing': False, 'requestedXcode': '26.6',
+        'build': {'requestedConfiguration': 'Release', 'signing': False, 'requestedXcode': '27.1' if duo else '26.6',
                   'requestedArchitectures': ['arm64'], 'onlyActiveArchitecture': True,
                   'metroRequired': False if embedded_verified else None, 'embeddedBundleVerified': embedded_verified,
                   'embeddedBundleSha256': bundle_hash.split()[0] if embedded_verified else None},
@@ -416,10 +438,12 @@ def main():
                    'Map document marker selection and bundled details do not establish street-tile availability, surveyed entrances, current facilities or menu content; no location permission requested.',
                    'Screenshots require human visual review and any required release approval before App Store upload.'],
         'storeUploadApproved': False,
-        'screenshotMediaCompatible': len(results) == 2 and all(len(result['screenshots']) == len(SCREENS) and all(not shot['hasAlphaOrTransparency'] for shot in result['screenshots']) for result in results),
+        'screenshotMediaCompatible': not duo and len(results) == 2 and all(len(result['screenshots']) == len(SCREENS) and all(not shot['hasAlphaOrTransparency'] for shot in result['screenshots']) for result in results),
         'references': ['https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/',
                        'https://raw.githubusercontent.com/actions/runner-images/main/images/macos/macos-26-arm64-Readme.md'],
     }
+    if duo:
+        receipt['limits'].append('Duo CI covers its booted display in portrait and landscape. Open/close transitions, alternate display and partial fold poses require separate Device Hub QA.')
     total_bytes = sum(path.stat().st_size for path in evidence.rglob('*') if path.is_file())
     if total_bytes > MAX_ARTIFACT_BYTES:
         receipt['passed'] = False

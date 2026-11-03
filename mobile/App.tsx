@@ -3,6 +3,7 @@ import {
   Alert,
   Image,
   ImageBackground,
+  KeyboardAvoidingView,
   Linking,
   Modal,
   Platform,
@@ -13,9 +14,8 @@ import {
   Text,
   TextInput,
   View,
-  useWindowDimensions,
 } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
@@ -97,6 +97,7 @@ import { mapPoints } from "./src/data/map.generated";
 import CommerceBrowser, { RelatedCommerceLinks } from "./src/components/CommerceBrowser";
 import type { CommerceSection } from "./src/data/commerce";
 import { isAllowedCommerceUrl } from "./src/lib/commerce";
+import { appLayout } from "./src/lib/appLayout";
 import {
   Button,
   Card,
@@ -264,8 +265,10 @@ function BanffApp() {
   const [busy, setBusy] = useState(false);
   const [online, setOnline] = useState(true);
   const scroll = useRef<ScrollView>(null);
-  const { width } = useWindowDimensions();
-  const wide = width >= 900;
+  const [{ width, height }, setShellSize] = useState({ width: 0, height: 0 });
+  const { bottom } = useSafeAreaInsets();
+  const { sidebarWidth, contentPadding, twoColumns, mapHeight } = appLayout(width, height, bottom);
+  const hasSidebar = sidebarWidth > 0;
   useEffect(() => {
     if (ready)
       void syncBookingReminders(state.bookings, state.remindersEnabled).catch(
@@ -407,9 +410,16 @@ function BanffApp() {
   return (
     <SafeAreaView style={a.safe} edges={["top", "left", "right"]}>
       <StatusBar style="dark" />
-      <View style={[a.shell, wide && a.wideShell]}>
-        {wide && (
-          <View style={a.sidebar}>
+      <View
+        style={[a.shell, hasSidebar && a.wideShell]}
+        onLayout={({ nativeEvent: { layout } }) => {
+          setShellSize(previous => previous.width === layout.width && previous.height === layout.height
+            ? previous : { width: layout.width, height: layout.height });
+        }}
+      >
+        {hasSidebar && (
+          <SafeAreaView edges={["bottom"]} style={[a.sidebar, { width: sidebarWidth }]}>
+          <ScrollView contentContainerStyle={a.sidebarContent}>
             <View style={a.brandRow}>
               <Image source={require("./assets/icon.png")} style={a.logo} />
               <Text style={a.wordmark}>BanffBound</Text>
@@ -421,6 +431,7 @@ function BanffApp() {
               <Pressable
                 key={name}
                 accessibilityRole="tab"
+                accessibilityLabel={name}
                 aria-selected={tab === name}
                 accessibilityState={{ selected: tab === name }}
                 onPress={() => navigate(name)}
@@ -450,7 +461,8 @@ function BanffApp() {
             >
               <Text style={s.link}>Privacy & your data</Text>
             </Pressable>
-          </View>
+          </ScrollView>
+          </SafeAreaView>
         )}
         <View style={a.main}>
           <View style={a.header}>
@@ -486,10 +498,7 @@ function BanffApp() {
           <ScrollView
             ref={scroll}
             style={{ flex: 1 }}
-            contentContainerStyle={[
-              a.content,
-              wide && { paddingHorizontal: 36 },
-            ]}
+            contentContainerStyle={[a.content, { paddingHorizontal: contentPadding }]}
             keyboardShouldPersistTaps="handled"
           >
             {error && <Notice icon="warning-outline">{error}</Notice>}
@@ -507,7 +516,7 @@ function BanffApp() {
                       ? pictures.winter
                       : pictures.lake
                   }
-                  style={[a.hero, wide && { height: 330 }]}
+                  style={[a.hero, twoColumns && { minHeight: 330 }]}
                   imageStyle={{ borderRadius: 23 }}
                 >
                   <LinearGradient
@@ -561,7 +570,7 @@ function BanffApp() {
                     </View>
                   </LinearGradient>
                 </ImageBackground>
-                <View style={[a.quickRow, wide && { gap: 14 }]}>
+                <View style={[a.quickRow, twoColumns && { gap: 14 }]}>
                   {[
                     {
                       icon: "calendar-outline" as const,
@@ -678,7 +687,7 @@ function BanffApp() {
                     action="Explore all"
                     onPress={() => navigate("Explore")}
                   />
-                  <View style={[a.placeGrid, wide && a.twoCols]}>
+                  <View style={[a.placeGrid, twoColumns && a.twoCols]}>
                     {featured.map((place) => (
                       <PlaceCard
                         key={place.id}
@@ -686,7 +695,7 @@ function BanffApp() {
                         saved={state.savedPlaceIds.includes(place.id)}
                         onSave={() => toggleSave(place.id)}
                         onPress={() => setPanel({ type: "place", place })}
-                        wide={wide}
+                        wide={twoColumns}
                       />
                     ))}
                   </View>
@@ -768,9 +777,9 @@ function BanffApp() {
               </ScrollView>
             )}
             {tab === "Explore" && exploreMode !== "places" && (
-              <CommerceBrowser key={exploreMode} section={exploreMode} onOpenUrl={openCommerceUrl} />
+              <CommerceBrowser key={exploreMode} section={exploreMode} onOpenUrl={openCommerceUrl} twoColumns={twoColumns} />
             )}
-            {tab === "Map" && <MapBrowser onOpenUrl={openUrl} onOpenCommerceUrl={openCommerceUrl} focusPlaceId={selectedPlace?.id} position={position} onLocate={locate} locationMessage={locationMessage} />}
+            {tab === "Map" && <MapBrowser onOpenUrl={openUrl} onOpenCommerceUrl={openCommerceUrl} focusPlaceId={selectedPlace?.id} position={position} onLocate={locate} locationMessage={locationMessage} twoColumns={twoColumns} mapHeight={mapHeight} />}
             {tab === "Explore" && exploreMode === "places" && (
               <>
                 <SearchInput ref={placeSearchInput} initialQuery={search} onSearch={setSearch}
@@ -819,10 +828,10 @@ function BanffApp() {
                   />
                 </View>
                 <View style={s.sectionTitle}>
-                  <Text style={s.h2}>
+                  <Text style={[s.h2, s.sectionTitleText]}>
                     A place for every kind of day
                   </Text>
-                  <Text style={s.body}>{visible.length}</Text>
+                  <Text style={[s.body, s.sectionTitleAction]}>{visible.length}</Text>
                 </View>
                 {!visible.length ? (
                   <Empty
@@ -838,7 +847,7 @@ function BanffApp() {
                     }}
                   />
                 ) : (
-                  <View style={[a.placeGrid, wide && a.twoCols]}>
+                  <View style={[a.placeGrid, twoColumns && a.twoCols]}>
                     {visible.map((place) => (
                       <PlaceCard
                         key={place.id}
@@ -846,7 +855,7 @@ function BanffApp() {
                         saved={state.savedPlaceIds.includes(place.id)}
                         onSave={() => toggleSave(place.id)}
                         onPress={() => setPanel({ type: "place", place })}
-                        wide={wide}
+                        wide={twoColumns}
                       />
                     ))}
                   </View>
@@ -1250,7 +1259,7 @@ function BanffApp() {
                   </View>
                   <Notice>Full guides and partner booking pages need a connection. Your saved field notes and trip stay on this device.</Notice>
                 </Card>
-                <View style={[a.placeGrid, wide && a.twoCols]}>
+                <View style={[a.placeGrid, twoColumns && a.twoCols]}>
                   {[
                     {
                       title: "Park-pass planner",
@@ -1281,9 +1290,9 @@ function BanffApp() {
                       key={item.title}
                       accessibilityRole="button"
                       onPress={() => setPanel({ type: item.type })}
-                      style={{ width: wide ? "48.8%" : "100%" }}
+                      style={{ width: twoColumns ? "48%" : "100%" }}
                     >
-                      <Card style={{ height: 135, gap: 8 }}>
+                      <Card style={{ minHeight: 135, gap: 8 }}>
                         <Ionicons
                           name={item.icon}
                           size={23}
@@ -1425,7 +1434,7 @@ function BanffApp() {
             )}
             <View style={{ height: 20 }} />
           </ScrollView>
-          {!wide && (
+          {!hasSidebar && (
             <SafeAreaView edges={["bottom"]} style={a.bottomBar}>
               <View style={{ flexDirection: "row" }}>
                 {(Object.keys(tabIcons) as Tab[]).map((name) => (
@@ -1483,16 +1492,20 @@ function BanffApp() {
           visible
           transparent
           animationType="slide"
+          supportedOrientations={["portrait", "landscape"]}
           onRequestClose={() => setPanel(null)}
         >
-          <View style={a.modalBackdrop}>
-            <View style={[a.modal, wide && { maxWidth: 650 }]}>
+          <SafeAreaProvider>
+            <KeyboardAvoidingView
+              accessibilityViewIsModal
+              behavior={Platform.OS === "ios" ? "padding" : undefined}
+              style={a.modalBackdrop}
+            >
               <SafeAreaView
-                edges={["top", "bottom"]}
-                style={{ maxHeight: "100%" }}
+                style={a.modal}
               >
                 <View style={a.modalHeader}>
-                  <Text style={s.eyebrow}>BANFFBOUND · MADE FOR YOUR TRIP</Text>
+                  <Text style={[s.eyebrow, s.sectionTitleText]}>BANFFBOUND · MADE FOR YOUR TRIP</Text>
                   <Pressable
                     accessibilityRole="button"
                     accessibilityLabel="Close panel"
@@ -2060,8 +2073,8 @@ function BanffApp() {
                   )}
                 </ScrollView>
               </SafeAreaView>
-            </View>
-          </View>
+            </KeyboardAvoidingView>
+          </SafeAreaProvider>
         </Modal>
       )}
     </SafeAreaView>
@@ -2215,7 +2228,7 @@ function PlaceCard({
   mapAction?: () => void;
 }) {
   return (
-    <View style={[a.placeCard, wide && { width: "48.8%" }]}>
+    <View style={[a.placeCard, wide && { width: "48%" }]}>
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={`View ${place.name}`}
@@ -2808,16 +2821,14 @@ const a = StyleSheet.create({
   shell: { flex: 1, width: "100%", maxWidth: 1500, alignSelf: "center" },
   wideShell: { flexDirection: "row" },
   sidebar: {
-    width: 255,
     borderRightWidth: 1,
     borderRightColor: colors.line,
-    padding: 26,
-    paddingTop: 37,
     backgroundColor: colors.white,
   },
+  sidebarContent: { flexGrow: 1, padding: 20, paddingTop: 30 },
   brandRow: { flexDirection: "row", alignItems: "center", gap: 10 },
   logo: { width: 35, height: 35, borderRadius: 9 },
-  wordmark: { fontFamily: serif, fontSize: 23, color: colors.pine },
+  wordmark: { flexShrink: 1, fontFamily: serif, fontSize: 23, color: colors.pine },
   sideItem: {
     flexDirection: "row",
     alignItems: "center",
@@ -2855,8 +2866,8 @@ const a = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: colors.white,
   },
-  content: { paddingHorizontal: 22, paddingBottom: 22, gap: 27 },
-  hero: { height: 350, overflow: "hidden", borderRadius: 23 },
+  content: { paddingBottom: 22, gap: 27 },
+  hero: { minHeight: 350, overflow: "hidden", borderRadius: 23 },
   heroShade: {
     flex: 1,
     padding: 24,
@@ -3020,13 +3031,13 @@ const a = StyleSheet.create({
     backgroundColor: "rgba(9,27,21,.5)",
     justifyContent: "flex-end",
     alignItems: "center",
-    paddingTop: 45,
   },
   modal: {
     backgroundColor: colors.cream,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     width: "100%",
+    maxWidth: 650,
     maxHeight: "96%",
     overflow: "hidden",
   },
@@ -3034,15 +3045,17 @@ const a = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    gap: 12,
     paddingHorizontal: 24,
     paddingVertical: 14,
     borderBottomWidth: 1,
     borderBottomColor: colors.line,
   },
   closeButton: {
-    height: 38,
-    width: 38,
-    borderRadius: 20,
+    height: 44,
+    width: 44,
+    flexShrink: 0,
+    borderRadius: 22,
     backgroundColor: colors.pale,
     alignItems: "center",
     justifyContent: "center",

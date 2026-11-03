@@ -13,6 +13,13 @@ const config: ExpoConfig = {
     bundleIdentifier: "com.banffbound.app",
     supportsTablet: true,
     infoPlist: {
+      // Keep the Expo portrait setting for Android while allowing iOS rotation.
+      UISupportedInterfaceOrientations: [
+        "UIInterfaceOrientationPortrait",
+        "UIInterfaceOrientationPortraitUpsideDown",
+        "UIInterfaceOrientationLandscapeLeft",
+        "UIInterfaceOrientationLandscapeRight",
+      ],
       ITSAppUsesNonExemptEncryption: false,
       NSLocationWhenInUseUsageDescription:
         "Show your location when you choose to find nearby Banff places.",
@@ -42,6 +49,7 @@ const config: ExpoConfig = {
     favicon: "./assets/favicon.png",
   },
   plugins: [
+    ["expo-build-properties", { ios: { enableSceneSupport: true } }],
     "expo-web-browser",
     [
       "expo-splash-screen",

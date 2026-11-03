@@ -114,6 +114,18 @@ final class BanffBoundUITests: XCTestCase {
 
         tab("Map", heading: "Get your bearings.")
         XCTAssertTrue(app.webViews.firstMatch.waitForExistence(timeout: 25), "Map tab must host the real native WebView; provider availability is a separate check")
+
+        if #available(iOS 27.1, *) {
+            defer { XCUIDevice.shared.orientation = .portrait }
+            XCUIDevice.shared.orientation = .landscapeLeft
+            let resized = NSPredicate { _, _ in self.app.frame.width > self.app.frame.height }
+            let expectation = XCTNSPredicateExpectation(predicate: resized, object: nil)
+            XCTAssertEqual(XCTWaiter.wait(for: [expectation], timeout: 15), .completed,
+                           "App should follow the rotated window")
+            XCTAssertTrue(visible("Get your bearings.").isHittable, "Rotation should keep Map selected")
+            XCTAssertTrue(app.webViews.firstMatch.exists, "Map WebView should remain available after resize")
+            capture("qa-duo-landscape")
+        }
     }
 
     func test02SavedPlaceSurvivesRelaunch() throws {

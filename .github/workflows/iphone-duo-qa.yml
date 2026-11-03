@@ -1,0 +1,50 @@
+name: iPhone Duo Simulator QA
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/iphone-duo-qa.yml'
+      - 'mobile/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: iphone-duo-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  duo:
+    # Public runner preview. Only explicit dispatches and the Duo candidate use it.
+    if: github.event.repository.private == false && (github.event_name == 'workflow_dispatch' || github.head_ref == 'codex/banffbound-iphone-duo')
+    runs-on: xcode-27
+    timeout-minutes: 60
+    env:
+      CI: '1'
+      EXPO_NO_TELEMETRY: '1'
+      QA_TARGET: iphone-duo
+      DEVELOPER_DIR: /Applications/Xcode_27.1.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Set temporary QA workspace
+        run: echo "QA_ROOT=$RUNNER_TEMP/banffbound-duo-qa" >> "$GITHUB_ENV"
+      - name: Build and exercise the actual iPhone Duo simulator
+        working-directory: mobile
+        run: bash release/native-qa/run-ios-qa.sh
+      - name: Extract test evidence and native captures
+        if: always()
+        working-directory: mobile
+        run: python3 release/native-qa/extract-evidence.py "$QA_ROOT"
+      - name: Retain bounded Duo QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iphone-duo-simulator-qa-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/banffbound-duo-qa/evidence/
+          retention-days: 1
