@@ -5,7 +5,7 @@ import WinterStatusNotice from '../components/WinterStatusNotice.astro';
 import { winterGuides as guides, winterMonths as months, winterFaqs as faqs } from '../data/winterHub';
 const categories = [ ['all', 'Everything'], ['ski', 'Ski & ride'], ['snow', 'Beyond the lifts'], ['family', 'Family fun'], ['slow', 'Slow days'], ['practical', 'Trip essentials'] ];
 ---
-<BaseLayout title="Banff Winter Guide: Ski Days, Snow Adventures & Places to Stay" description="Plan winter in Banff, Canmore and Lake Louise. Find ski lessons, a ski day planner, heli-skiing advice, family snow days, winter hotels and practical travel guides." lastUpdated="2026-11-02">
+<BaseLayout title="Banff Winter Guide: Ski Days, Snow Adventures & Places to Stay" description="Plan winter in Banff, Canmore and Lake Louise. Find ski lessons, a ski day planner, heli-skiing advice, family snow days, winter hotels and practical travel guides." lastUpdated="2026-11-03">
   <div class="container"><Breadcrumbs items={[{ label: 'Winter in Banff' }]} /></div>
   <section class="winter-hero">
     <div class="container hero-grid">
@@ -14,13 +14,16 @@ const categories = [ ['all', 'Everything'], ['ski', 'Ski & ride'], ['snow', 'Bey
         <h1>Winter in Banff.<br /><em>Your way.</em></h1>
         <p>First turns, a snowy trail, or a very good hot chocolate. Find your way into winter in the Canadian Rockies, one well-planned day at a time.</p>
         <div class="hero-actions"><a class="btn btn-accent" href="#find-your-winter">Find your winter day ↓</a><a class="hero-link" href="/ski-day-planner">Plan a ski day →</a><a class="hero-link" href="/blog/banff-christmas-guide/">Christmas dates and tickets →</a></div>
-        <p class="editorial-date">Winter planning guide · Updated 2 November 2026</p>
+        <p class="editorial-date">Winter planning guide · Updated 3 November 2026</p>
       </div>
       <div class="winter-cover"><img src="/images/blog/banff-in-winter.webp" alt="Winter landscape in the Canadian Rockies" width="800" height="650" fetchpriority="high" /><div class="cover-note"><span>Less rushing. More Rockies.</span><a href="/towns">Find your mountain base →</a></div></div>
     </div>
   </section>
   <nav class="winter-jumps container" aria-label="On this page"><a href="#find-your-winter">Explore the guides</a><a href="#when-to-go">Choose a month</a><a href="#winter-itinerary">A flexible 4-day trip</a><a href="#winter-essentials">The essentials</a><a href="#winter-faq">Winter questions</a></nav>
-  <div class="container notice-wrap"><WinterStatusNotice /></div>
+  <div class="container notice-wrap">
+    <p>Visiting in November or December? Check <a href="/blog/banff-skiing-guide/#season">ski resort opening dates</a>, <a href="/blog/banff-christmas-guide/#tickets">Christmas ticket releases</a> and <a href="/blog/banff-gondola-guide/">how to plan a Banff Gondola summit visit</a> before choosing your days.</p>
+    <WinterStatusNotice />
+  </div>
   <section class="section" id="find-your-winter">
     <div class="container">
       <div class="section-heading"><span class="eyebrow">Pick a mood. Make a plan.</span><h2>Find your winter day</h2><p>From your first lesson to a quieter day off the slopes. All guides are available without signing up.</p></div>
@@ -54,7 +57,7 @@ const categories = [ ['all', 'Everything'], ['ski', 'Ski & ride'], ['snow', 'Bey
     <article><h3>Keep one easy alternative</h3><p>A museum, gallery, café or relaxed meal can save a cold or low-visibility day. Check opening hours and pick an option near your accommodation before heading out.</p><a href="/arts-culture">Find a quieter day in town →</a></article>
   </div></div></section>
   <section class="section faq-section" id="winter-faq"><div class="container faq-inner"><div class="section-heading"><span class="eyebrow">Good questions before you book</span><h2>Winter in Banff, explained</h2></div>{faqs.map(f => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}<p class="source-note">Editorial review: 28 October 2026. For trip-day decisions use <a href="https://parks.canada.ca/pn-np/ab/banff/bulletins">Parks Canada bulletins</a>, <a href="https://511.alberta.ca/">Alberta 511</a>, <a href="https://www.drivebc.ca/">DriveBC</a>, and your operator’s current information.</p></div></section>
-  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Banff Winter Guide', url: 'https://banffbound.com/winter/', dateModified: '2026-11-02', mainEntity: { '@type': 'ItemList', itemListElement: guides.map((g,i) => ({ '@type': 'ListItem', position: i+1, name: g.title, url: `https://banffbound.com${g.href}` })) } })} />
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Banff Winter Guide', url: 'https://banffbound.com/winter/', dateModified: '2026-11-03', mainEntity: { '@type': 'ItemList', itemListElement: guides.map((g,i) => ({ '@type': 'ListItem', position: i+1, name: g.title, url: `https://banffbound.com${g.href}` })) } })} />
   <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) })} />
 </BaseLayout>
 <script>

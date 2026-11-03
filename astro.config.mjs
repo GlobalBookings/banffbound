@@ -65,7 +65,7 @@ export default defineConfig({
       filter(page) {
         // Exclude every consolidated/redirected slug plus a few legacy duplicates.
         const pathname = new URL(page).pathname.replace(/\/$/, '');
-        if (pathname === '/book/banff-winter-activities/google-test') return false;
+        if (['/trails', '/book/banff-winter-activities/google-test', '/sitemap-winter-planning.xml'].includes(pathname)) return false;
         if (pathname === '/build-info.json' || (pathname.startsWith('/hotel-directory/') && unreviewedHotelDirectorySlugs.has(pathname.slice('/hotel-directory/'.length)))) return false;
         const excludeSlugs = [
           ...Object.keys(blogRedirects),
@@ -91,6 +91,7 @@ export default defineConfig({
         const blogDate = reviewedBlogDates.get(path.replace('/blog/', ''));
         if (blogDate) item.lastmod = new Date(blogDate);
         if (['/', '/winter', '/trip-cost', '/ski-pass-calculator', '/vacation-rentals', '/events', '/book/banff-winter-activities'].includes(path)) item.lastmod = new Date('2026-11-02');
+        if (['/events', '/skiing', '/winter', '/larch-season'].includes(path)) item.lastmod = new Date('2026-11-03');
         // Boost priority for high-value pages
         if (item.url === 'https://banffbound.com/') {
           item.priority = 1.0;
