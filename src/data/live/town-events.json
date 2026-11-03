@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-03T11:40:52.513Z",
+  "retrievedAt": "2026-11-03T19:12:35.975Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-03T11:40:52.508Z",
-      "sourceUpdatedAt": "2026-11-03T11:40:52.000Z",
-      "sourceUpdatedAtText": "Tue, 03 Nov 2026 04:40:52 -0700",
+      "retrievedAt": "2026-11-03T19:12:35.961Z",
+      "sourceUpdatedAt": "2026-11-03T19:12:35.000Z",
+      "sourceUpdatedAtText": "Tue, 03 Nov 2026 12:12:35 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -58,6 +58,17 @@
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         },
         {
+          "title": "Remembrance Day Parade and Ceremony",
+          "link": "https://banff.ca/Calendar.aspx?EID=35494",
+          "description": "The Banff Legion hosts the Remembrance Day Parade starting at the Legion at 10:30 a.m., marching south on Banff Avenue and to the Banff Elementary School, where there is a memorial service. Following the service, the parade returns to the Legion, where there will be a wreath ceremony.",
+          "publishedAt": "2026-11-03T16:07:49.000Z",
+          "startDate": "2026-11-11",
+          "endDate": "2026-11-11",
+          "dates": "November 11, 2026",
+          "times": "10:30 AM - 11:59 PM",
+          "location": "Banff, AB T1L 1A1"
+        },
+        {
           "title": "Visual Arts Open Lecture Series: Tarah Hogue",
           "link": "https://banff.ca/Calendar.aspx?EID=35417",
           "description": "Join Banff Centre for an afternoon Visual Arts lecture with writer and curator Tarah Hogue, based in Treaty 6 and 7 territories and the Métis homeland.",
@@ -95,13 +106,31 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-03T11:40:52.410Z",
-      "sourceUpdatedAt": "2026-11-03T11:40:52.000Z",
-      "sourceUpdatedAtText": "Tue, 03 Nov 2026 04:40:52 -0700",
+      "retrievedAt": "2026-11-03T19:12:35.973Z",
+      "sourceUpdatedAt": "2026-11-03T19:12:35.000Z",
+      "sourceUpdatedAtText": "Tue, 03 Nov 2026 12:12:35 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
+        {
+          "title": "Road Closures: Wednesday, November 11 — Remembrance Day Parade",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1932",
+          "description": "The Banff Remembrance Day Parade, memorial service and wreath laying ceremony on Tuesday, November 11, will involve road closures on Banff Avenue and Elk Street.",
+          "publishedAt": "2026-11-03T17:48:00.000Z"
+        },
+        {
+          "title": "Remembrance Day Parade and Ceremony — November 11",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1933",
+          "description": "The Banff Legion hosts the Remembrance Day Parade on November 11.",
+          "publishedAt": "2026-11-03T16:24:05.000Z"
+        },
+        {
+          "title": "Road Closures: Saturday, November 7 — WinterStart Race",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1929",
+          "description": "On Saturday, November 7, 2026, Banff hosts the Winterstart Night Run. Traffic will experience detours from 6 p.m. – 9:30 p.m.",
+          "publishedAt": "2026-11-03T16:05:00.000Z"
+        },
         {
           "title": "Banff residents can now recycle more",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1931",
@@ -119,12 +148,6 @@
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1930",
           "description": "On Saturday, November 7, lace up. Switch on your headlamp. Run beneath the Rockies.",
           "publishedAt": "2026-10-22T22:07:00.000Z"
-        },
-        {
-          "title": "WinterStart Race Traffic Info and Road Closures — Nov. 7",
-          "link": "https://banff.ca/CivicAlerts.aspx?aid=1929",
-          "description": "On Saturday, November 7, 2026, Banff hosts the Winterstart Night Run. Traffic will experience detours from 6 p.m. – 9:30 p.m.",
-          "publishedAt": "2026-10-22T21:47:53.000Z"
         },
         {
           "title": "Final week to join Banff decision-makers",
