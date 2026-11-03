@@ -2,6 +2,7 @@ import { winterActivityOffers } from './winterActivityLanding';
 
 /** Full reviews of two distinct canonical guides; no live price or operating feed. */
 export const reviewDate = '2026-10-29';
+const planningUpdatedAt = '2026-11-02';
 
 type Faq = { question: string; answer: string };
 export const gondolaGuideFaqs: Record<string, Faq[]> = {
@@ -41,6 +42,9 @@ export const gondolaGuideOverrides: Record<string, string> = {
 <p><strong>Full guide reviewed October 29, 2026.</strong> This is a summit, access and transport guide. For sales channels, dining inclusions and cancellation decisions, use the separate <a href="/blog/banff-gondola-tickets-guide/">Banff Gondola ticket comparison</a>. Published facilities are not a live report of operations or visibility.</p>
 <nav aria-label="Banff Gondola visit guide sections"><p><a href="#summit-choices">Choose your summit visit</a> · <a href="#gondola-access">Access and stairs</a> · <a href="#gondola-transport">Getting there and back</a> · <a href="#gondola-winter">Winter planning</a> · <a href="#sulphur-hike">The separate hiking route</a> · <a href="#gondola-questions">Questions</a></p></nav>
 
+<h2 id="gondola-at-a-glance">Plan your Banff Gondola visit in three steps</h2>
+<ol><li><strong>Get to the Mountain Avenue base.</strong> Compare the <a href="#gondola-transport">Route 1 bus journey and parking plan</a>, including the return to your hotel.</li><li><strong>Choose the summit experience.</strong> Use the building and viewing decks for a shorter visit. Add the separate <a href="#gondola-access">boardwalk and stairs</a> only if the route works for everyone.</li><li><strong>Work back from the last ride down.</strong> Check the <a href="https://www.banffjaspercollection.com/attractions/banff-gondola/hours-location/" target="_blank" rel="noopener">dated hours</a>, then leave enough time for the boardwalk, any meal and your connection back.</li></ol>
+<p>Visiting over the holidays? The <a href="/blog/banff-christmas-guide/#dates">Banff Christmas calendar</a> lists the published Mountaintop Christmas dates.</p>
 <h2 id="summit-choices">Choose the visit before the time slot</h2>
 <p>The operator’s <a href="https://www.banffjaspercollection.com/attractions/banff-gondola/experience/" target="_blank" rel="noopener">summit experience page</a> describes interpretation, a theatre, dining and outdoor observation areas. The ride gets you to the complex; the boardwalk is an additional physical choice. A cloudier day may still leave an indoor attraction visit worth considering, but decide whether that experience justifies the ticket for your group.</p>
 <table><caption>Three different physical plans on Sulphur Mountain</caption><thead><tr><th scope="col">Plan</th><th scope="col">Why choose it</th><th scope="col">Resolve before going</th></tr></thead><tbody>
@@ -95,6 +99,9 @@ ${renderFaqs('banff-gondola-guide')}
 </tbody></table>
 <p>Start with the simplest version of the day. If the goal is interpretation and sightseeing, compare standalone admission first. If a particular meal is the reason for going, compare the complete meal-and-ride options. A pass adds value only when its other visits are realistic for your season and route.</p>
 
+<h2 id="gondola-ticket-prices">How much are Banff Gondola tickets?</h2>
+<p>Open the <a href="https://www.banffjaspercollection.com/attractions/banff-gondola/tickets/" target="_blank" rel="noopener">operator’s ticket selector</a> for your date and party. Its ticket page, checked 2 November 2026, says prices can change and lists a per-guest Eco-Fee. Compare final totals in the same currency. For an ordinary Sky Bistro table, price the ride and the meal separately. For a named dining package, check whether the price already includes admission.</p>
+<p>The operator also states that online tickets are non-transferable and asks online purchasers to present the card used for the purchase, including bookings through authorised resellers. Check those instructions before buying for someone else.</p>
 <h2 id="admission-channels">Direct admission and the verified marketplace listing</h2>
 <h3 id="direct-admission">Book directly with the operator</h3>
 <p>The <a href="https://www.banffjaspercollection.com/attractions/banff-gondola/tickets/" target="_blank" rel="noopener">operator’s tickets page — direct booking route</a> leads to its current date and product selection. Use that route for the operator’s own admission, package and pass information. Read the actual product description; a broad attraction page is not a promise that every restaurant, event or outdoor area is included or operating.</p>
@@ -129,15 +136,15 @@ ${renderFaqs('banff-gondola-tickets-guide')}
 type GuideMetadata = { title: string; description: string; lastUpdated: string; readTime: string; imageIsIllustrative: boolean; imageNote: string };
 export const gondolaGuideMetadata: Record<string, GuideMetadata> = {
   'banff-gondola-guide': {
-    title: 'Banff Gondola Guide: Summit, Stairs & Getting There',
+    title: 'Banff Gondola Visit Guide: Getting There, Summit & Stairs',
     description: 'Plan the Banff Gondola summit visit, building access, separate boardwalk stairs, winter conditions, Roam journey and the Sulphur Mountain hiking distinction.',
-    lastUpdated: reviewDate, readTime: '9 min read', imageIsIllustrative: true,
+    lastUpdated: planningUpdatedAt, readTime: '9 min read', imageIsIllustrative: true,
     imageNote: 'Illustrative photograph; not a verified view of the Banff Gondola, its summit access or current conditions.',
   },
   'banff-gondola-tickets-guide': {
-    title: 'Banff Gondola Tickets: Admission, Dining & Booking Choices',
+    title: 'Banff Gondola Tickets: Prices, Admission & Sky Bistro',
     description: 'Compare Banff Gondola admission, separate Sky Bistro reservations, dining packages and passes, with verified booking links and cancellation checks.',
-    lastUpdated: reviewDate, readTime: '9 min read', imageIsIllustrative: true,
+    lastUpdated: planningUpdatedAt, readTime: '9 min read', imageIsIllustrative: true,
     imageNote: 'Illustrative photograph; not a verified image of a Banff Gondola ticket, dining package or current event.',
   },
 };

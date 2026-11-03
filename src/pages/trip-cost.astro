@@ -4,6 +4,16 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TripCostInteractions from '../components/TripCostInteractions.astro';
 import { defaultTripBudget, tripBudgetCategories, tripBudgetFaqs, tripBudgetModes, tripBudgetReviewedAt } from '../data/tripCostPlanning';
 const planIds = ['a', 'b'] as const;
+const examplesCheckedOn = '2026-11-02';
+const exampleCosts = [
+  { item: 'Room for two, two nights', basis: 'Example inputs: $180 or $260 per night', simple: 360, activity: 520 },
+  { item: 'Meals for two, three days', basis: 'Example inputs: $45 or $65 per person per day', simple: 270, activity: 390 },
+  { item: 'Banff local bus', basis: 'Two adult 3-day Roam local passes at $12 each', simple: 24, activity: 24 },
+  { item: 'National park admission', basis: 'Two adults, budgeting for three daily admissions at $12.25 each', simple: 73.50, activity: 73.50 },
+  { item: 'Paid outing', basis: 'Example input: $80 each in the activity plan', simple: 0, activity: 160 },
+];
+const exampleTotal = (plan: 'simple' | 'activity') => exampleCosts.reduce((total, row) => total + row[plan], 0);
+const cad = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', currencyDisplay: 'narrowSymbol' });
 const quoteLinks = [
   { href: '/book/banff-hotels/', title: 'Banff hotel quotes', text: 'Compare actual room and location choices, then check your dates with the provider.' },
   { href: '/book/lake-louise-stays/', title: 'Lake Louise stay choices', text: 'Distinguish the lakeshore, village and ski area before comparing a room quote.' },
@@ -11,14 +21,33 @@ const quoteLinks = [
   { href: '/eat-and-drink/', title: 'Meals & menus', text: 'Use current operator menus and add the meals, drinks, taxes and tips you intend to budget.' },
 ];
 ---
-<BaseLayout title="Banff Trip Cost Calculator — Build & Compare Your Own Budget" description="Build a Banff trip budget from your own current quotes. Separate people, days, nights and rooms, see a full breakdown and compare two plans in Canadian dollars." lastUpdated={tripBudgetReviewedAt}>
+<BaseLayout title="How Much Does a Banff Trip Cost? Budgets & Calculator" description="See two worked three-day Banff budgets in CAD, including rooms, meals, transit and park admission. Enter your own quotes to compare the full cost." lastUpdated={examplesCheckedOn}>
   <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: tripBudgetFaqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) })} />
   <div class="container"><Breadcrumbs items={[{ label: 'Trip Cost Calculator' }]} /></div>
   <section class="page-hero">
     <img src="https://images.unsplash.com/photo-1609198092458-38a293c7ac4b?w=1600&q=80" alt="Illustrative mountain landscape; not verified as Banff or current conditions" class="page-hero-bg" loading="eager" fetchpriority="high" />
-    <div class="page-hero-content"><span class="badge">Your quotes. A clearer trip.</span><h1>Trip Cost Calculator</h1><p>Put the whole Banff trip on one page. Compare a package, a different base, or two ways to travel using the amounts you actually have.</p></div>
+    <div class="page-hero-content"><span class="badge">Your quotes. A clearer trip.</span><h1>How much does a trip to Banff cost?</h1><p>Compare two worked budgets, then use the trip cost calculator with your own room, travel and activity quotes.</p></div>
   </section>
   <p class="budget-image-note">Illustrative landscape; not a verified Banff location or view of current conditions.</p>
+  <section class="section" id="example-budgets" aria-labelledby="example-budgets-heading">
+    <div class="container budget-container">
+      <div class="budget-intro">
+        <h2 id="example-budgets-heading">Two example budgets for three days in Banff</h2>
+        <p>For two adults sharing one room over two nights, these worked examples total <strong>{cad.format(exampleTotal('simple'))}</strong> for a town stay or <strong>{cad.format(exampleTotal('activity'))}</strong> with a higher room and food allowance and one paid outing. All figures are CAD for the pair.</p>
+        <p>Room, meal and outing amounts are sample inputs. The totals start in Banff and exclude getting to town, regional buses, insurance and any other bookings. Replace the sample inputs with quotes including taxes and required fees.</p>
+      </div>
+      <div class="table-scroll" role="region" aria-label="Worked Banff budgets" tabindex="0">
+        <table class="manual-table">
+          <caption>Example costs for two adults in Canadian dollars</caption>
+          <thead><tr><th scope="col">Cost</th><th scope="col">Basis</th><th scope="col">Town stay</th><th scope="col">Stay with a paid outing</th></tr></thead>
+          <tbody>{exampleCosts.map(row => <tr><th scope="row">{row.item}</th><td>{row.basis}</td><td>{cad.format(row.simple)}</td><td>{cad.format(row.activity)}</td></tr>)}</tbody>
+          <tfoot><tr><th scope="row" colspan="2">Total for two</th><td>{cad.format(exampleTotal('simple'))}</td><td>{cad.format(exampleTotal('activity'))}</td></tr></tfoot>
+        </table>
+      </div>
+      <p class="help">Published fares checked <time datetime={examplesCheckedOn}>2 November 2026</time>. See <a href="https://roamtransit.com/fares/">Roam local fares</a> and <a href="https://www.parks.canada.ca/pn-np/ab/banff/visit/tarifs-fees">Parks Canada admission fees</a>. Check the <a href="/park-pass/">park pass guide</a> for your actual admission days and pass coverage.</p>
+      <p><a href="#trip-budget-planner">Use your own numbers in the calculator ↓</a></p>
+    </div>
+  </section>
   <section class="section" id="trip-budget-planner"><div class="container budget-container">
     <div class="budget-intro"><span class="eyebrow">Count the stay. Count the journey.</span><h2>What is in your Banff budget?</h2><p>Enter <strong>Canadian dollars (CAD), including taxes and required fees</strong>. There are no default market prices. A blank stays unknown; a cost you leave out makes the result a partial budget.</p><p>Use the same party and dates in both plans. Include costs already paid if you want a total trip budget. For a package, enter its total once and mark covered rows as counted elsewhere.</p><p class="help">This calculator does not save entries or put them into booking links. Use Clear & start again to remove the current entries. It does not convert currencies; use your own conversion and allow for expected payment fees.</p></div>
     <div class="budget-layout">

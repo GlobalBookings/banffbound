@@ -50,7 +50,7 @@ const html = data.cabinGuideOverrides[slug];
 assert.deepEqual(Object.keys(data.cabinGuideOverrides), [slug]);
 assert.deepEqual(Object.keys(data.cabinGuideMetadata), [slug]);
 const metadata = data.cabinGuideMetadata[slug];
-assert.equal(metadata.lastUpdated, data.cabinReviewedAt);
+assert.ok(metadata.lastUpdated >= data.cabinReviewedAt, 'Page updates preserve the dated cabin-source review.');
 assert.equal(metadata.imageIsIllustrative, true); assert.match(metadata.imageNote, /not a verified view/);
 assert.equal(metadata.date, undefined, 'Do not replace original publication with a source-review date.');
 assert.ok(!/price|cheap|guaranteed/i.test(metadata.title));

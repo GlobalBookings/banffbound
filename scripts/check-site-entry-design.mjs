@@ -128,7 +128,7 @@ function checkHtml(markup) {
   for (const href of ['https://fonts.googleapis.com', 'https://fonts.gstatic.com']) assert.ok(nodes.some(node => node.tagName === 'link' && attr(node, 'href') === href && attr(node, 'rel') === 'preconnect'));
   assert.equal(attr(nodes.find(node => node.tagName === 'link' && attr(node, 'rel') === 'canonical'), 'href'), 'https://banffbound.com/');
   assert.equal(normal(text(nodes.find(node => node.tagName === 'title'))), 'Banff Trip Planning: Stays, Winter Days & Mountain Towns | BanffBound');
-  assert.equal(attr(nodes.find(node => node.tagName === 'meta' && attr(node, 'property') === 'article:modified_time'), 'content'), '2026-10-29');
+  assert.equal(attr(nodes.find(node => node.tagName === 'meta' && attr(node, 'property') === 'article:modified_time'), 'content'), '2026-11-02');
   const description = attr(nodes.find(node => node.tagName === 'meta' && attr(node, 'name') === 'description'), 'content'); assert.ok(description.includes('Compare room choices'));
   for (const id of ['cookie-accept', 'cookie-reject', 'cookie-manage', 'cookie-save', 'pref-analytics', 'pref-advertising', 'pref-affiliate']) byId(id);
   for (const node of nodes.filter(node => ['script', 'iframe'].includes(node.tagName))) assert.ok(!/^https?:/.test(attr(node, 'src') ?? ''), 'No executable external optional provider at initial SSR');

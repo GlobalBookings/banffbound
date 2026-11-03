@@ -45,7 +45,7 @@ for (const slug of slugs) {
   assert.equal(data.allBlogPosts.find(post => post.slug === slug)?.date, originals[slug], 'Preserve exact original publication: ' + slug);
   const metadata = data.gondolaGuideMetadata[slug];
   assert.equal(metadata.date, undefined);
-  assert.equal(metadata.lastUpdated, data.reviewDate);
+  assert.ok(metadata.lastUpdated >= data.reviewDate, 'Page updates preserve the dated source review.');
   assert.equal(metadata.imageIsIllustrative, true);
   assert.match(metadata.imageNote, /^Illustrative photograph; not a verified/);
   assert.ok(metadata.title.length < 75 && metadata.description.length > 100);

@@ -70,7 +70,7 @@ const nodes = root => [root, ...(root.childNodes ?? []).flatMap(nodes)], attr = 
 const text = node => node.nodeName === '#text' ? node.value : (node.childNodes ?? []).map(text).join('');
 const content = node => text(node).replace(/\s+/g, ' ').trim(), has = (node, key) => attr(node, key) !== undefined;
 const tree = parseFragment(html), all = nodes(tree), byId = id => all.find(node => attr(node, 'id') === id);
-assert.equal(all.filter(node => node.tagName === 'h1').length, 1); assert.equal(content(all.find(node => node.tagName === 'h1')), 'Trip Cost Calculator');
+assert.equal(all.filter(node => node.tagName === 'h1').length, 1); assert.equal(content(all.find(node => node.tagName === 'h1')), 'How much does a trip to Banff cost?');
 const ids = all.map(node => attr(node, 'id')).filter(Boolean); assert.equal(new Set(ids).size, ids.length, 'All control/result IDs unique.');
 assert.ok(has(byId('trip-budget-form'), 'hidden')); assert.ok(has(byId('budget-errors'), 'hidden')); assert.ok(has(byId('budget-print'), 'hidden'));
 assert.ok(has(byId('budget-b-fields'), 'hidden') && has(byId('budget-b-fields'), 'disabled') && has(byId('budget-b-result'), 'hidden'));

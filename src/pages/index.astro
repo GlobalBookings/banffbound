@@ -28,7 +28,7 @@ const upcomingEvents = townCalendar.items.slice(0,3);
 const homeDescription = "Plan Banff and Lake Louise around a place to stay. Compare room choices, build a ski day, choose winter activities and explore nearby mountain towns.";
 ---
 
-<BaseLayout title="Banff Trip Planning: Stays, Winter Days & Mountain Towns" description={homeDescription} lastUpdated="2026-10-29">
+<BaseLayout title="Banff Trip Planning: Stays, Winter Days & Mountain Towns" description={homeDescription} lastUpdated="2026-11-02">
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -71,6 +71,7 @@ const homeDescription = "Plan Banff and Lake Louise around a place to stay. Comp
           <a class="home-secondary" href="/book/lake-louise-stays/">Staying near Lake Louise? Compare the area’s bases <span aria-hidden="true">→</span></a>
           <a class="home-secondary" href="/book/banff-winter-activities/">Choose a winter experience <span aria-hidden="true">→</span></a>
         </nav>
+        <p class="home-plan-link">Planning for snow? <a href="/winter/">Read the Banff winter guide</a> or <a href="/blog/banff-christmas-guide/">check Christmas dates and tickets</a>.</p>
         <p class="home-plan-link">Already have a base? <a href="/trip-builder/">Build your days in the Trip Builder <span aria-hidden="true">→</span></a></p>
       </div>
       <figure class="home-image">
