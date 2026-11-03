@@ -33,6 +33,7 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://banffbound.com/sitemap-index.xml
+Sitemap: https://banffbound.com/sitemap-winter-planning.xml
 
 # AI context files
 # LLMs.txt: https://banffbound.com/llms.txt
