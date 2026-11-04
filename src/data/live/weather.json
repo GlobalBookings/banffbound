@@ -1,54 +1,48 @@
 {
   "provider": "Environment and Climate Change Canada",
   "licenceUrl": "https://eccc-msc.github.io/open-data/licence/readme_en/",
-  "updatedAt": "2026-11-04T17:48:41.736Z",
+  "updatedAt": "2026-11-04T23:18:19.038Z",
   "banff": {
     "sourceUrl": "https://weather.gc.ca/en/location/index.html?coords=51.18,-115.57",
     "current": {
-      "temp": -3.7,
+      "temp": 6.6,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 70,
-      "wind": "SSW 10 km/h, gusts 30 km/h",
-      "observedAt": "2026-11-04T17:00:00.000Z",
+      "humidity": 31,
+      "wind": "SW 14 km/h, gusts 30 km/h",
+      "observedAt": "2026-11-04T23:00:00.000Z",
       "station": "Banff"
     },
-    "forecastIssuedAt": "2026-11-04T17:00:00.000Z",
+    "forecastIssuedAt": "2026-11-04T22:00:00.000Z",
     "forecast": [
-      {
-        "day": "Wednesday",
-        "high": 7,
-        "low": null,
-        "condition": "Sunny"
-      },
       {
         "day": "Wednesday night",
         "high": null,
-        "low": -4,
+        "low": -3,
         "condition": "A few clouds"
       },
       {
         "day": "Thursday",
-        "high": 5,
+        "high": 6,
         "low": null,
-        "condition": "A mix of sun and cloud"
+        "condition": "Mainly cloudy"
       },
       {
         "day": "Thursday night",
         "high": null,
-        "low": 0,
-        "condition": "Clear"
+        "low": -1,
+        "condition": "A few clouds"
       },
       {
         "day": "Friday",
-        "high": 7,
+        "high": 6,
         "low": null,
-        "condition": "Chance of showers"
+        "condition": "A mix of sun and cloud"
       },
       {
         "day": "Friday night",
         "high": null,
-        "low": 3,
+        "low": 2,
         "condition": "Chance of showers"
       },
       {
@@ -60,20 +54,20 @@
       {
         "day": "Saturday night",
         "high": null,
-        "low": 5,
+        "low": 4,
         "condition": "Cloudy periods"
       },
       {
         "day": "Sunday",
-        "high": 9,
+        "high": 8,
         "low": null,
-        "condition": "Chance of showers"
+        "condition": "Showers"
       },
       {
         "day": "Sunday night",
         "high": null,
-        "low": -4,
-        "condition": "Clear"
+        "low": -3,
+        "condition": "Cloudy periods"
       },
       {
         "day": "Monday",
@@ -89,7 +83,7 @@
       },
       {
         "day": "Tuesday",
-        "high": 5,
+        "high": 6,
         "low": null,
         "condition": "A mix of sun and cloud"
       }
@@ -98,50 +92,44 @@
   "lakeLouise": {
     "sourceUrl": "https://weather.gc.ca/en/location/index.html?coords=51.425,-116.181",
     "current": {
-      "temp": -9.6,
+      "temp": -2.3,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 92,
-      "wind": "E 2 km/h",
-      "observedAt": "2026-11-04T15:00:00.000Z",
+      "humidity": 80,
+      "wind": "S 6 km/h",
+      "observedAt": "2026-11-04T22:00:00.000Z",
       "station": "Yoho National Park"
     },
-    "forecastIssuedAt": "2026-11-04T17:00:00.000Z",
+    "forecastIssuedAt": "2026-11-04T22:00:00.000Z",
     "forecast": [
-      {
-        "day": "Today (Wed, 4 Nov)",
-        "high": 7,
-        "low": null,
-        "condition": "Sunny"
-      },
       {
         "day": "Tonight (Wed, 4 Nov)",
         "high": null,
-        "low": -4,
+        "low": -3,
         "condition": "A few clouds"
       },
       {
         "day": "Thu, 5 Nov",
-        "high": 5,
+        "high": 6,
         "low": null,
-        "condition": "A mix of sun and cloud"
+        "condition": "Mainly cloudy"
       },
       {
         "day": "Night (Thu, 5 Nov)",
         "high": null,
-        "low": 0,
-        "condition": "Clear"
+        "low": -1,
+        "condition": "A few clouds"
       },
       {
         "day": "Fri, 6 Nov",
-        "high": 7,
+        "high": 6,
         "low": null,
-        "condition": "Chance of showers"
+        "condition": "A mix of sun and cloud"
       },
       {
         "day": "Night (Fri, 6 Nov)",
         "high": null,
-        "low": 3,
+        "low": 2,
         "condition": "Chance of showers"
       },
       {
@@ -153,20 +141,20 @@
       {
         "day": "Night (Sat, 7 Nov)",
         "high": null,
-        "low": 5,
+        "low": 4,
         "condition": "Cloudy periods"
       },
       {
         "day": "Sun, 8 Nov",
-        "high": 9,
+        "high": 8,
         "low": null,
-        "condition": "Chance of showers"
+        "condition": "Showers"
       },
       {
         "day": "Night (Sun, 8 Nov)",
         "high": null,
-        "low": -4,
-        "condition": "Clear"
+        "low": -3,
+        "condition": "Cloudy periods"
       },
       {
         "day": "Mon, 9 Nov",
@@ -182,7 +170,7 @@
       },
       {
         "day": "Tue, 10 Nov",
-        "high": 5,
+        "high": 6,
         "low": null,
         "condition": "A mix of sun and cloud"
       }
