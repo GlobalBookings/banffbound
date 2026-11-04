@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-03T19:12:35.975Z",
+  "retrievedAt": "2026-11-04T00:26:00.573Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-03T19:12:35.961Z",
-      "sourceUpdatedAt": "2026-11-03T19:12:35.000Z",
-      "sourceUpdatedAtText": "Tue, 03 Nov 2026 12:12:35 -0700",
+      "retrievedAt": "2026-11-04T00:26:00.531Z",
+      "sourceUpdatedAt": "2026-11-04T00:26:00.000Z",
+      "sourceUpdatedAtText": "Tue, 03 Nov 2026 17:26:00 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -106,13 +106,19 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-03T19:12:35.973Z",
-      "sourceUpdatedAt": "2026-11-03T19:12:35.000Z",
-      "sourceUpdatedAtText": "Tue, 03 Nov 2026 12:12:35 -0700",
+      "retrievedAt": "2026-11-04T00:26:00.571Z",
+      "sourceUpdatedAt": "2026-11-04T00:26:00.000Z",
+      "sourceUpdatedAtText": "Tue, 03 Nov 2026 17:26:00 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
+        {
+          "title": "Winter Solstice Community Lantern Skate — December 21",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1934",
+          "description": "Banff and Bow Valley residents, create your own beautiful lantern! We will all light up our lanterns for an evening skate, where we will enjoy some live local music and stay warm sipping hot tea by the fire.",
+          "publishedAt": "2026-11-03T19:39:00.000Z"
+        },
         {
           "title": "Road Closures: Wednesday, November 11 — Remembrance Day Parade",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1932",
@@ -148,12 +154,6 @@
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1930",
           "description": "On Saturday, November 7, lace up. Switch on your headlamp. Run beneath the Rockies.",
           "publishedAt": "2026-10-22T22:07:00.000Z"
-        },
-        {
-          "title": "Final week to join Banff decision-makers",
-          "link": "https://banff.ca/CivicAlerts.aspx?aid=1925",
-          "description": "The Town is seeking Banff residents for roles on boards, commissions and committees that make decisions about the future of the community on key topics such as affordable housing, commercial/residential development, policing, public art, community grants",
-          "publishedAt": "2026-10-04T20:57:30.000Z"
         }
       ]
     }
