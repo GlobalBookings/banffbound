@@ -1,6 +1,9 @@
 import React from "react";
 import {
   ActivityIndicator,
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
   Pressable,
   StyleSheet,
   Text,
@@ -9,6 +12,7 @@ import {
   type StyleProp,
   type ViewStyle,
 } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export const colors = {
@@ -52,6 +56,43 @@ export const categoryIcons: Record<string, keyof typeof Ionicons.glyphMap> = {
   essentials: "information-circle-outline",
 };
 type Icon = keyof typeof Ionicons.glyphMap;
+
+export function Sheet({
+  visible,
+  onClose,
+  maxWidth,
+  fill = false,
+  children,
+}: React.PropsWithChildren<{
+  visible: boolean;
+  onClose: () => void;
+  maxWidth: number;
+  fill?: boolean;
+}>) {
+  return (
+    <Modal
+      visible={visible}
+      transparent
+      animationType="slide"
+      supportedOrientations={["portrait", "landscape"]}
+      onRequestClose={onClose}
+    >
+      <SafeAreaProvider>
+        <KeyboardAvoidingView
+          accessibilityViewIsModal
+          behavior={Platform.OS === "ios" ? "padding" : undefined}
+          style={s.sheetBackdrop}
+        >
+          <SafeAreaView style={s.sheetPosition}>
+            <View style={[s.sheet, { maxWidth }, fill && s.sheetFill]}>
+              {children}
+            </View>
+          </SafeAreaView>
+        </KeyboardAvoidingView>
+      </SafeAreaProvider>
+    </Modal>
+  );
+}
 
 export function Button({
   title,
@@ -152,9 +193,9 @@ export function SectionTitle({
 }) {
   return (
     <View style={s.sectionTitle}>
-      <Text style={s.h2}>{title}</Text>
+      <Text style={[s.h2, s.sectionTitleText]}>{title}</Text>
       {action && (
-        <Pressable accessibilityRole="button" onPress={onPress} hitSlop={10}>
+        <Pressable accessibilityRole="button" onPress={onPress} hitSlop={10} style={s.sectionTitleAction}>
           <Text style={s.link}>{action} →</Text>
         </Pressable>
       )}
@@ -288,6 +329,19 @@ export const s = StyleSheet.create({
     gap: 12,
     marginBottom: 16,
   },
+  sectionTitleText: { flex: 1, minWidth: 0 },
+  sectionTitleAction: { maxWidth: "45%" },
+  sheetBackdrop: { flex: 1, backgroundColor: "rgba(12,32,25,0.48)" },
+  sheetPosition: { flex: 1, justifyContent: "flex-end", alignItems: "center" },
+  sheet: {
+    width: "100%",
+    maxHeight: "96%",
+    backgroundColor: colors.cream,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    overflow: "hidden",
+  },
+  sheetFill: { height: "92%" },
   card: {
     padding: 20,
     borderRadius: 20,

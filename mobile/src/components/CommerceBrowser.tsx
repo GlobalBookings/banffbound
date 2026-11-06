@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { commerceItems, commerceSections, type CommerceItem, type CommerceLink, type CommerceSection } from '../data/commerce';
 import { COMMERCE_PAGE_SIZE, commerceFacets, commerceLinkTitle, filterCommerceItems, isAllowedCommerceUrl, relatedCommerceItems, safeCommerceUrl } from '../lib/commerce';
-import { Button, Card, Chip, Empty, Notice, colors, s } from './ui';
+import { Button, Card, Chip, Empty, Notice, Sheet, colors, s } from './ui';
 import SearchInput, { type SearchInputHandle } from './SearchInput';
 
 type OpenUrl = (url: string) => void;
@@ -46,11 +46,9 @@ function StatusNote({ item }: { item: CommerceItem }) {
 }
 
 function CommerceDetail({ item, onClose, onOpenUrl }: { item: CommerceItem | null; onClose: () => void; onOpenUrl: OpenUrl }) {
-  return <Modal visible={item !== null} transparent animationType="slide" onRequestClose={onClose}>
-    <View style={c.scrim} accessibilityViewIsModal>
-      <View style={c.sheet}>
+  return <Sheet visible={item !== null} maxWidth={820} fill onClose={onClose}>
         <View style={c.sheetHeader}>
-          <Text style={s.eyebrow}>{item ? commerceSections.find(section => section.id === item.section)?.title : 'EXPLORE'}</Text>
+          <Text style={[s.eyebrow, s.sectionTitleText]}>{item ? commerceSections.find(section => section.id === item.section)?.title : 'EXPLORE'}</Text>
           <Pressable testID="commerce-close-details" accessibilityRole="button" accessibilityLabel="Close details" onPress={onClose} hitSlop={10} style={c.close}><Ionicons name="close" size={23} color={colors.pine} /></Pressable>
         </View>
         <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={c.detailBody}>
@@ -67,12 +65,10 @@ function CommerceDetail({ item, onClose, onOpenUrl }: { item: CommerceItem | nul
             {!!item.reviewedAt && <Text style={c.footnote}>Source review: {item.reviewedAt}. A source review does not establish current availability.</Text>}
           </>}
         </ScrollView>
-      </View>
-    </View>
-  </Modal>;
+  </Sheet>;
 }
 
-export default function CommerceBrowser({ section, onOpenUrl }: { section: CommerceSection; onOpenUrl: OpenUrl }) {
+export default function CommerceBrowser({ section, onOpenUrl, twoColumns }: { section: CommerceSection; onOpenUrl: OpenUrl; twoColumns: boolean }) {
   const [query, setQuery] = useState('');
   const searchInput = useRef<SearchInputHandle>(null);
   const [area, setArea] = useState('all');
@@ -80,7 +76,6 @@ export default function CommerceBrowser({ section, onOpenUrl }: { section: Comme
   const [shown, setShown] = useState(COMMERCE_PAGE_SIZE);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [selected, setSelected] = useState<CommerceItem | null>(null);
-  const wide = useWindowDimensions().width >= 900;
   const heading = commerceSections.find(item => item.id === section);
   const facets = useMemo(() => commerceFacets(commerceItems, section), [section]);
   const results = useMemo(() => filterCommerceItems(commerceItems, { section, query, area, category }), [section, query, area, category]);
@@ -105,8 +100,8 @@ export default function CommerceBrowser({ section, onOpenUrl }: { section: Comme
       {(area !== 'all' || category !== 'all') && <Button title="Clear filters" variant="ghost" small onPress={() => { setArea('all'); setCategory('all'); }} />}
     </Card>}
     {!results.length ? <Empty title="A different kind of adventure?" body="Try a different place, topic or search term." action="Reset search and filters" onPress={resetFilters} /> : <>
-      <View style={[c.cards, wide && c.wideCards]}>
-        {results.slice(0, shown).map(item => <Pressable key={item.id} testID={`commerce-card-${item.id}`} accessibilityRole="button" accessibilityLabel={`${item.title}. ${item.area}. ${item.category}. View details.`} onPress={() => setSelected(item)} style={({ pressed }) => [c.resultCard, wide && c.wideCard, pressed && { opacity: 0.8 }]}>
+      <View style={[c.cards, twoColumns && c.wideCards]}>
+        {results.slice(0, shown).map(item => <Pressable key={item.id} testID={`commerce-card-${item.id}`} accessibilityRole="button" accessibilityLabel={`${item.title}. ${item.area}. ${item.category}. View details.`} onPress={() => setSelected(item)} style={({ pressed }) => [c.resultCard, twoColumns && c.wideCard, pressed && { opacity: 0.8 }]}>
           <View style={c.cardTop}><View style={c.cardIcon}><Ionicons name={icons[item.section]} size={23} color={colors.green} /></View><Ionicons name="arrow-forward" size={21} color={colors.green} /></View>
           <Text style={c.location}>{item.area} · {item.category}</Text>
           <Text style={c.cardTitle}>{item.title}</Text>
@@ -135,8 +130,8 @@ const c = StyleSheet.create({
   headingIcon: { width: 48, height: 48, borderRadius: 16, backgroundColor: colors.pale, alignItems: 'center', justifyContent: 'center' },
   filterBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 },
   filterToggle: { flexDirection: 'row', alignItems: 'center', gap: 8, minHeight: 42, paddingHorizontal: 4 }, resultCount: { fontSize: 13, color: colors.muted }, chips: { gap: 8, paddingVertical: 3 },
-  cards: { gap: 14 }, wideCards: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'stretch' },
-  resultCard: { padding: 19, borderWidth: 1, borderColor: colors.line, borderRadius: 20, backgroundColor: colors.white, gap: 12 }, wideCard: { width: '48.5%', flexGrow: 1, maxWidth: '50%' },
+  cards: { gap: 14 }, wideCards: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'stretch' },
+  resultCard: { padding: 19, borderWidth: 1, borderColor: colors.line, borderRadius: 20, backgroundColor: colors.white, gap: 12 }, wideCard: { width: '48%' },
   cardTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }, cardIcon: { width: 44, height: 44, borderRadius: 14, backgroundColor: colors.pale, justifyContent: 'center', alignItems: 'center' },
   location: { color: colors.green, fontSize: 11, lineHeight: 17, fontWeight: '600' }, cardTitle: { color: colors.ink, fontSize: 19, lineHeight: 25, fontWeight: '600' },
   cardFooter: { marginTop: 'auto', borderTopWidth: 1, borderTopColor: colors.line, paddingTop: 12, gap: 5 }, cardKind: { color: colors.green, fontSize: 12, fontWeight: '600' }, providerSmall: { color: colors.muted, fontSize: 11, lineHeight: 16 },
@@ -144,7 +139,6 @@ const c = StyleSheet.create({
   cta: { backgroundColor: colors.pine, borderRadius: 13, minHeight: 48, paddingHorizontal: 16, paddingVertical: 13, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12 }, guideCta: { backgroundColor: colors.pale }, ctaText: { color: colors.white, fontWeight: '600', fontSize: 14, flex: 1 },
   disclosure: { fontSize: 11, lineHeight: 17, color: colors.muted }, footnote: { fontSize: 12, lineHeight: 19, color: colors.muted },
   linkLabel: { color: colors.ink, fontSize: 13, lineHeight: 19 },
-  scrim: { flex: 1, backgroundColor: 'rgba(12,32,25,0.48)', justifyContent: 'flex-end', alignItems: 'center' }, sheet: { backgroundColor: colors.cream, width: '100%', maxWidth: 820, height: '91%', borderTopLeftRadius: 25, borderTopRightRadius: 25, overflow: 'hidden' },
-  sheetHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 22, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: colors.line }, close: { minHeight: 40, minWidth: 40, alignItems: 'center', justifyContent: 'center' },
+  sheetHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, paddingHorizontal: 22, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: colors.line }, close: { minHeight: 44, minWidth: 44, flexShrink: 0, alignItems: 'center', justifyContent: 'center' },
   detailBody: { padding: 24, paddingBottom: 44, gap: 20 }, detailIcon: { width: 62, height: 62, borderRadius: 20, backgroundColor: colors.pale, alignItems: 'center', justifyContent: 'center' }, related: { gap: 14 },
 });
