@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-06T02:00:43.383Z",
+  "retrievedAt": "2026-11-06T11:52:32.507Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-06T02:00:43.377Z",
-      "sourceUpdatedAt": "2026-11-06T02:00:42.000Z",
-      "sourceUpdatedAtText": "Thu, 05 Nov 2026 19:00:42 -0700",
+      "retrievedAt": "2026-11-06T11:52:32.452Z",
+      "sourceUpdatedAt": "2026-11-06T11:52:32.000Z",
+      "sourceUpdatedAtText": "Fri, 06 Nov 2026 04:52:32 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -111,15 +111,26 @@
           "dates": "November 18, 2026",
           "times": "07:00 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "William Prince | On Rolls The Wheel Tour",
+          "link": "https://banff.ca/Calendar.aspx?EID=35401",
+          "description": "JUNO Award-winning singer-songwriter William Prince brings his On Rolls The Wheel Tour to Banff Centre on November 20 for an intimate acoustic performance.",
+          "publishedAt": "2026-10-08T21:31:47.000Z",
+          "startDate": "2026-11-20",
+          "endDate": "2026-11-20",
+          "dates": "November 20, 2026",
+          "times": "08:30 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-06T02:00:43.163Z",
-      "sourceUpdatedAt": "2026-11-06T02:00:42.000Z",
-      "sourceUpdatedAtText": "Thu, 05 Nov 2026 19:00:42 -0700",
+      "retrievedAt": "2026-11-06T11:52:32.506Z",
+      "sourceUpdatedAt": "2026-11-06T11:52:32.000Z",
+      "sourceUpdatedAtText": "Fri, 06 Nov 2026 04:52:32 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
