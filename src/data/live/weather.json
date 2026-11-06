@@ -1,16 +1,16 @@
 {
   "provider": "Environment and Climate Change Canada",
   "licenceUrl": "https://eccc-msc.github.io/open-data/licence/readme_en/",
-  "updatedAt": "2026-11-05T21:47:58.733Z",
+  "updatedAt": "2026-11-06T02:00:42.620Z",
   "banff": {
     "sourceUrl": "https://weather.gc.ca/en/location/index.html?coords=51.18,-115.57",
     "current": {
-      "temp": 3.1,
+      "temp": 1.7,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 62,
-      "wind": "SW 14 km/h, gusts 28 km/h",
-      "observedAt": "2026-11-05T21:00:00.000Z",
+      "humidity": 71,
+      "wind": "SW 11 km/h, gusts 28 km/h",
+      "observedAt": "2026-11-06T01:00:00.000Z",
       "station": "Banff"
     },
     "forecastIssuedAt": "2026-11-05T22:00:00.000Z",
@@ -95,9 +95,9 @@
       "temp": -2.6,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 95,
-      "wind": "WSW 32 km/h",
-      "observedAt": "2026-11-05T21:00:00.000Z",
+      "humidity": 100,
+      "wind": "W 23 km/h, gusts 33 km/h",
+      "observedAt": "2026-11-06T01:00:00.000Z",
       "station": "Yoho National Park"
     },
     "forecastIssuedAt": "2026-11-05T22:00:00.000Z",
