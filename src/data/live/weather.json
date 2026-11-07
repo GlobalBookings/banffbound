@@ -1,25 +1,25 @@
 {
   "provider": "Environment and Climate Change Canada",
   "licenceUrl": "https://eccc-msc.github.io/open-data/licence/readme_en/",
-  "updatedAt": "2026-11-07T12:36:04.184Z",
+  "updatedAt": "2026-11-07T18:29:52.309Z",
   "banff": {
     "sourceUrl": "https://weather.gc.ca/en/location/index.html?coords=51.18,-115.57",
     "current": {
-      "temp": 6.7,
+      "temp": 9.1,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 46,
-      "wind": "W 10 km/h, gusts 27 km/h",
-      "observedAt": "2026-11-07T12:00:00.000Z",
+      "humidity": 35,
+      "wind": "WSW 11 km/h, gusts 33 km/h",
+      "observedAt": "2026-11-07T18:00:00.000Z",
       "station": "Banff"
     },
-    "forecastIssuedAt": "2026-11-07T11:00:00.000Z",
+    "forecastIssuedAt": "2026-11-07T17:00:00.000Z",
     "forecast": [
       {
         "day": "Saturday",
         "high": 9,
         "low": null,
-        "condition": "Clearing"
+        "condition": "Mainly sunny"
       },
       {
         "day": "Saturday night",
@@ -98,21 +98,21 @@
   "lakeLouise": {
     "sourceUrl": "https://weather.gc.ca/en/location/index.html?coords=51.425,-116.181",
     "current": {
-      "temp": 0.4,
+      "temp": 3.9,
       "condition": "Not observed",
       "icon": "🌡️",
-      "humidity": 100,
-      "wind": "WNW 19 km/h, gusts 29 km/h",
-      "observedAt": "2026-11-07T12:00:00.000Z",
+      "humidity": 96,
+      "wind": "WSW 23 km/h",
+      "observedAt": "2026-11-07T18:00:00.000Z",
       "station": "Yoho National Park"
     },
-    "forecastIssuedAt": "2026-11-07T11:00:00.000Z",
+    "forecastIssuedAt": "2026-11-07T17:00:00.000Z",
     "forecast": [
       {
         "day": "Today (Sat, 7 Nov)",
         "high": 9,
         "low": null,
-        "condition": "Clearing"
+        "condition": "Mainly sunny"
       },
       {
         "day": "Tonight (Sat, 7 Nov)",
