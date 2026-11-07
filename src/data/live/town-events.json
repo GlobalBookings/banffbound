@@ -1,29 +1,18 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-07T05:46:06.864Z",
+  "retrievedAt": "2026-11-07T12:36:04.569Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-07T05:46:06.849Z",
-      "sourceUpdatedAt": "2026-11-07T05:46:06.000Z",
-      "sourceUpdatedAtText": "Fri, 06 Nov 2026 22:46:06 -0700",
+      "retrievedAt": "2026-11-07T12:36:04.562Z",
+      "sourceUpdatedAt": "2026-11-07T12:36:04.000Z",
+      "sourceUpdatedAtText": "Sat, 07 Nov 2026 05:36:04 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
-        {
-          "title": "A Brother’s Fountain",
-          "link": "https://banff.ca/Calendar.aspx?EID=35412",
-          "description": "After the Banff Centre Mountain Film Festival's keynote event Sarah Hueniken, Ines Papert – and Films, on November 6 at 7:30 p.m., keep the party going in CLVB ’33 with a special guest performance from Colorado's favourite \"campfire folk\" group A Brother’s Fountain.",
-          "publishedAt": "2026-10-23T21:11:32.000Z",
-          "startDate": "2026-11-06",
-          "endDate": "2026-11-06",
-          "dates": "November 6, 2026",
-          "times": "10:45 PM - 11:59 PM",
-          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
-        },
         {
           "title": "Banff Winterstart Night Race",
           "link": "https://banff.ca/Calendar.aspx?EID=35410",
@@ -128,9 +117,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-07T05:46:06.863Z",
-      "sourceUpdatedAt": "2026-11-07T05:46:06.000Z",
-      "sourceUpdatedAtText": "Fri, 06 Nov 2026 22:46:06 -0700",
+      "retrievedAt": "2026-11-07T12:36:04.502Z",
+      "sourceUpdatedAt": "2026-11-07T12:36:04.000Z",
+      "sourceUpdatedAtText": "Sat, 07 Nov 2026 05:36:04 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
