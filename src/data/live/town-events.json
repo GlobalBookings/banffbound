@@ -1,31 +1,149 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-08T04:52:37.019Z",
+  "retrievedAt": "2026-11-08T12:53:29.033Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-08T04:52:37.019Z",
-      "sourceUpdatedAt": null,
-      "sourceUpdatedAtText": null,
+      "retrievedAt": "2026-11-08T12:53:29.028Z",
+      "sourceUpdatedAt": "2026-11-08T12:53:28.000Z",
+      "sourceUpdatedAtText": "Sun, 08 Nov 2026 05:53:28 -0700",
       "sourceTimeIssue": null,
-      "status": "unavailable",
+      "status": "available",
       "rejectedCount": 0,
-      "items": [],
-      "error": "The official feed could not be retrieved or validated."
+      "items": [
+        {
+          "title": "Visual Arts Open Lecture Series: Deanna Bowen",
+          "link": "https://banff.ca/Calendar.aspx?EID=35413",
+          "description": "Join us for an afternoon Visual Arts lecture with Deanna Bowen, a Montreal-based interdisciplinary artist whose practice includes films, video installations, performances, drawing, sculpture and photography.",
+          "publishedAt": "2026-10-23T21:14:05.000Z",
+          "startDate": "2026-11-09",
+          "endDate": "2026-11-09",
+          "dates": "November 9, 2026",
+          "times": "04:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Visual Arts Open Lecture Series: Tania Willard",
+          "link": "https://banff.ca/Calendar.aspx?EID=35414",
+          "description": "Join us for an afternoon Visual Arts lecture with Tania Willard, a mixed Secwépemc and settler artist whose research intersects with land-based art practices.",
+          "publishedAt": "2026-10-23T21:17:25.000Z",
+          "startDate": "2026-11-10",
+          "endDate": "2026-11-10",
+          "dates": "November 10, 2026",
+          "times": "04:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Remembrance Day Parade and Ceremony",
+          "link": "https://banff.ca/Calendar.aspx?EID=35494",
+          "description": "The Banff Legion hosts the Remembrance Day Parade starting at the Legion at 10:30 a.m., marching south on Banff Avenue and to the Banff Elementary School, where there is a memorial service. Following the service, the parade returns to the Legion, where there will be a wreath ceremony.",
+          "publishedAt": "2026-11-03T16:07:49.000Z",
+          "startDate": "2026-11-11",
+          "endDate": "2026-11-11",
+          "dates": "November 11, 2026",
+          "times": "10:30 AM - 11:59 PM",
+          "location": "Banff, AB T1L 1A1"
+        },
+        {
+          "title": "Visual Arts Open Lecture Series: Tarah Hogue",
+          "link": "https://banff.ca/Calendar.aspx?EID=35417",
+          "description": "Join Banff Centre for an afternoon Visual Arts lecture with writer and curator Tarah Hogue, based in Treaty 6 and 7 territories and the Métis homeland.",
+          "publishedAt": "2026-10-23T21:28:40.000Z",
+          "startDate": "2026-11-11",
+          "endDate": "2026-11-11",
+          "dates": "November 11, 2026",
+          "times": "04:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Mountain Writers Intensive Reading",
+          "link": "https://banff.ca/Calendar.aspx?EID=35415",
+          "description": "Celebrate the power of words shaped by mountains at the Mountain Writers Intensive Reading, a free public event in Banff Centre's intimate CLVB '33. This evening showcases new work from writers immersed in a three-week residency dedicated to exploring mountain narratives, adventure, wilderness, and ",
+          "publishedAt": "2026-10-23T21:20:58.000Z",
+          "startDate": "2026-11-13",
+          "endDate": "2026-11-13",
+          "dates": "November 13, 2026",
+          "times": "07:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Reel Time: The Christophers",
+          "link": "https://banff.ca/Calendar.aspx?EID=35416",
+          "description": "Reel Time features some of the best films from the Toronto International Film Festival. Organized by Banff Centre, Reel Time has brought alternative cinema to the Bow Valley for over fifteen years.",
+          "publishedAt": "2026-10-23T21:25:22.000Z",
+          "startDate": "2026-11-16",
+          "endDate": "2026-11-16",
+          "dates": "November 16, 2026",
+          "times": "07:00 PM - 11:59 PM",
+          "location": "229 Bear StreetBanff, AB"
+        },
+        {
+          "title": "Decolonizing the Narrative Conversation Series with Leelay Gilday",
+          "link": "https://banff.ca/Calendar.aspx?EID=35418",
+          "description": "Join us for a conversation with singer/songwriter Leelay Gilday, Banff Centre alumna, former program faculty, and featured artist. Throughout her career she has integrated her Dene language into her music to challenge the norms of mainstream music trends and styles. Even as her music has reached acc",
+          "publishedAt": "2026-10-23T21:34:44.000Z",
+          "startDate": "2026-11-18",
+          "endDate": "2026-11-18",
+          "dates": "November 18, 2026",
+          "times": "07:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "William Prince | On Rolls The Wheel Tour",
+          "link": "https://banff.ca/Calendar.aspx?EID=35401",
+          "description": "JUNO Award-winning singer-songwriter William Prince brings his On Rolls The Wheel Tour to Banff Centre on November 20 for an intimate acoustic performance.",
+          "publishedAt": "2026-10-08T21:31:47.000Z",
+          "startDate": "2026-11-20",
+          "endDate": "2026-11-20",
+          "dates": "November 20, 2026",
+          "times": "08:30 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        }
+      ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-08T04:52:37.019Z",
-      "sourceUpdatedAt": null,
-      "sourceUpdatedAtText": null,
+      "retrievedAt": "2026-11-08T12:53:28.969Z",
+      "sourceUpdatedAt": "2026-11-08T12:53:28.000Z",
+      "sourceUpdatedAtText": "Sun, 08 Nov 2026 05:53:28 -0700",
       "sourceTimeIssue": null,
-      "status": "unavailable",
+      "status": "available",
       "rejectedCount": 0,
-      "items": [],
-      "error": "The official feed could not be retrieved or validated."
+      "items": [
+        {
+          "title": "Winter Solstice Community Lantern Skate — December 21",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1934",
+          "description": "Banff and Bow Valley residents, create your own beautiful lantern! We will all light up our lanterns for an evening skate, where we will enjoy some live local music and stay warm sipping hot tea by the fire.",
+          "publishedAt": "2026-11-03T19:39:00.000Z"
+        },
+        {
+          "title": "Road Closures: Wednesday, November 11 — Remembrance Day Parade",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1932",
+          "description": "The Banff Remembrance Day Parade, memorial service and wreath laying ceremony on Tuesday, November 11, will involve road closures on Banff Avenue and Elk Street.",
+          "publishedAt": "2026-11-03T17:48:00.000Z"
+        },
+        {
+          "title": "Remembrance Day Parade and Ceremony — November 11",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1933",
+          "description": "The Banff Legion hosts the Remembrance Day Parade on November 11.",
+          "publishedAt": "2026-11-03T16:24:05.000Z"
+        },
+        {
+          "title": "Banff residents can now recycle more",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1931",
+          "description": "Plastic bags, styrofoam, candy wrappers, coffee cups among materials that can now be diverted from landfill!",
+          "publishedAt": "2026-10-29T17:02:00.000Z"
+        },
+        {
+          "title": "New drop-in recreation sessions offer more ways to use your Pauw Pass",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1926",
+          "description": "From badminton to roller disco, and soccer to pickleball, there is something for everyone in the Town of Banff’s updated drop-in recreation schedule.",
+          "publishedAt": "2026-10-28T22:36:00.000Z"
+        }
+      ]
     }
   }
 }
