@@ -1,0 +1,30 @@
+---
+import { banffAudioWalkStoreLink } from '../data/banffAudioWalk';
+
+interface Props {
+  source: 'downtown' | 'bow-falls' | 'itinerary';
+}
+
+const { source } = Astro.props;
+const copy = {
+  downtown: 'Start at Banff Avenue Square and listen as you walk toward the Bow River.',
+  'bow-falls': 'The Railway to the Falls tour adds audio stories on the walk from the station toward the falls.',
+  itinerary: 'Set aside about 30 minutes for the free downtown audio walk, with time for coffee on Bear Street.',
+}[source];
+---
+
+<aside class="audio-callout" aria-label="Banff Audio Walk">
+  <strong>Explore with Banff Audio Walk</strong>
+  <p>{copy}</p>
+  <div class="audio-links">
+    <a href={`/banff-audio-walk/?from=${source}`}>Hear a sample and see the tours</a>
+    <a href={banffAudioWalkStoreLink(source)}>Download for iPhone</a>
+  </div>
+</aside>
+
+<style>
+  .audio-callout { padding: 1rem 1.25rem; margin: 1.25rem 0 1.75rem; background: #eef3ed; border-left: 4px solid #356650; border-radius: .65rem; }
+  .audio-callout p { margin: .25rem 0 .45rem; }
+  .audio-links { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
+  .audio-callout a { text-decoration: underline; text-underline-offset: .17em; }
+</style>

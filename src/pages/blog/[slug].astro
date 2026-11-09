@@ -8,6 +8,7 @@ import CabinGuideInteractions from '../../components/CabinGuideInteractions.astr
 import EveningGuideInteractions from '../../components/EveningGuideInteractions.astro';
 import HeliSkiPlanningInteractions from '../../components/HeliSkiPlanningInteractions.astro';
 import FirstVisitPlanningInteractions from '../../components/FirstVisitPlanningInteractions.astro';
+import BanffAudioWalkCallout from '../../components/BanffAudioWalkCallout.astro';
 import { allBlogPosts } from '../../data/blogPosts';
 import { blogRedirects } from '../../data/redirects.mjs';
 
@@ -43,6 +44,8 @@ const content = resolveBlogContent(post.slug).replace(
   curatedBookingLinks={authoredBookingGuideSlugs.includes(post.slug)}
   readTime={post.readTime}
 >
+  {post.slug === 'bow-falls-walk' && <BanffAudioWalkCallout source="bow-falls" />}
+  {post.slug === '3-day-banff-itinerary' && <BanffAudioWalkCallout source="itinerary" />}
   <Fragment set:html={content} />
   {post.slug === 'banff-cabin-rentals' && <CabinGuideInteractions />}
   {post.slug === 'banff-nightlife-guide' && <EveningGuideInteractions />}
