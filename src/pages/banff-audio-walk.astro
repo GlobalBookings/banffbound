@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { banffAudioWalkStoreLink } from '../data/banffAudioWalk';
+
+const store = banffAudioWalkStoreLink('landing');
+const sample = 'https://audio.banffbound.com/downtown-loop/3/marin/b43ab7db7ee71952c1bd645c06faa01446aff50e9517e88243bb62ee5881e06c/loop-square-story.m4a';
+const title = 'Banff Audio Walk: Self-guided iPhone tours';
+const description = 'Take a free 30-minute audio walk through downtown Banff. Listen to a sample, compare the walking and driving tours, and find Banff Audio Walk on the App Store.';
+const tours = [
+  {
+    name: 'Free downtown walk',
+    detail: '6 stops · About 30 minutes',
+    description: 'Start at Banff Avenue Square, make time for coffee on Bear Street, and follow the stories to the Bow River.',
+  },
+  {
+    name: 'Walk',
+    detail: 'Two longer walks · One-time purchase',
+    description: 'Walk from the railway station to Bow Falls and the Fairmont, or take the 30-stop Grand Banff Walk in four sections. Includes the walking story library.',
+  },
+  {
+    name: 'Walk + Drive',
+    detail: 'All walks and the scenic drive · One-time purchase',
+    description: 'Add Cabin Radio, with 96 GPS audio points around Banff, Vermilion Lakes, Mount Norquay and Lake Minnewanka. Walk owners can add the drive separately.',
+  },
+];
+---
+
+<BaseLayout {title} {description} canonicalUrl="https://banffbound.com/banff-audio-walk/" image="/images/blog/bow-falls-walk.webp">
+  <div class="audio-page">
+    <section class="audio-hero" aria-labelledby="audio-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">A self-guided tour for iPhone</p>
+          <h1 id="audio-title">Banff Audio Walk</h1>
+          <p class="hero-copy">Hear the stories behind Banff Avenue, the Bow River and the mountains around town. Start with a free downtown walk and take it at your own pace.</p>
+          <div class="hero-actions">
+            <a class="btn store-link" href={store}>Download on the App Store</a>
+            <a class="sample-link" href="#listen">Listen to a sample</a>
+          </div>
+          <p class="store-note">Free download · Optional one-time purchases · iOS 18 or later</p>
+        </div>
+        <figure class="hero-photo">
+          <img src="/images/blog/bow-falls-walk.webp" alt="" width="1408" height="768" fetchpriority="high" />
+          <figcaption>Explore from downtown Banff to Bow Falls.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container sample-section" id="listen" aria-labelledby="sample-title">
+      <div>
+        <p class="eyebrow">Listen before you go</p>
+        <h2 id="sample-title">Banff Avenue Square</h2>
+        <p>Marin reads the first story from the free downtown walk.</p>
+        <audio controls preload="none" aria-label="Banff Avenue Square, read by Marin">
+          <source src={sample} type="audio/mp4" />
+          <a href={sample}>Open the audio sample</a>
+        </audio>
+      </div>
+      <details>
+        <summary>Read the sample transcript</summary>
+        <p>Start by looking along Banff Avenue. The buildings make a frame around Cascade Mountain, and that same view will look different when we get to the river. First we’ll cut over to Bear Street, where there’s time for coffee. After that we’ll visit The Whyte and follow the Bow back toward the bridge. Take it at your own pace. This is a walk through the town, with the mountains along for company.</p>
+      </details>
+    </section>
+
+    <section class="container tour-section" aria-labelledby="tour-options">
+      <p class="eyebrow">Choose your tour</p>
+      <h2 id="tour-options">A short walk or a longer day out</h2>
+      <div class="tour-grid">
+        {tours.map((tour) => (
+          <article>
+            <h3>{tour.name}</h3>
+            <p class="tour-detail">{tour.detail}</p>
+            <p>{tour.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="container ready-section" aria-labelledby="ready-title">
+      <h2 id="ready-title">Get ready before you leave</h2>
+      <p>Choose Marin or Cedar and download the narration for the tour while you’re online. Use the offline town map to find listening stops, coffee and washrooms, or read the full English walking transcripts. Guided walk narration is in English.</p>
+      <p>Check <a href="/conditions/">current conditions</a> before heading out and follow posted signs and closures. Park passes and attraction tickets are separate.</p>
+      <a class="btn store-link" href={store}>Get Banff Audio Walk</a>
+      <p class="help-links"><a href="/banff-audio-walk/support.html">App support</a><a href="/banff-audio-walk/privacy.html">App privacy</a></p>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  import { banffAudioWalkStoreLink } from '../data/banffAudioWalk';
+
+  const source = new URLSearchParams(location.search).get('from');
+  if (source === 'downtown' || source === 'bow-falls' || source === 'itinerary') {
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('.store-link')) {
+      link.href = banffAudioWalkStoreLink(source);
+    }
+  }
+</script>
+
+<style>
+  .audio-page { background: #f7f5eb; color: #142f27; }
+  .audio-hero { background: #12342b; color: #fffdf2; padding: clamp(2.5rem, 7vw, 5.5rem) 0; }
+  .hero-grid, .sample-section { display: grid; gap: clamp(1.5rem, 4vw, 3rem); grid-template-columns: 1.1fr 1fr; align-items: center; }
+  .audio-hero h1 { color: inherit; font-size: clamp(2.6rem, 6vw, 4.5rem); line-height: 1; margin: .45rem 0 1rem; }
+  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin: 0; }
+  .audio-hero .eyebrow { color: #f2ca80; }
+  .hero-copy { font-size: clamp(1.1rem, 2vw, 1.32rem); max-width: 36ch; }
+  .hero-actions, .help-links { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 1.25rem; }
+  .store-link { background: #174434; color: white; }
+  .audio-hero .store-link { background: #f2ca80; color: #142f27; }
+  .sample-link { color: #fffdf2; text-decoration: underline; }
+  .store-note { font-size: .9rem; margin-top: .75rem; }
+  .hero-photo { margin: 0; }
+  .hero-photo img { display: block; width: 100%; height: auto; border-radius: 1rem; }
+  .hero-photo figcaption { margin-top: .4rem; font-size: .9rem; }
+  .sample-section, .tour-section, .ready-section { padding-top: 2.75rem; padding-bottom: 2.75rem; }
+  .sample-section { border-bottom: 1px solid #cbd7cc; }
+  .sample-section audio { display: block; width: 100%; max-width: 32rem; }
+  details, .tour-grid article { background: #fffdf6; border: 1px solid #cbd7cc; border-radius: 1rem; padding: 1.25rem; }
+  summary { cursor: pointer; font-weight: 700; }
+  details p { margin: .7rem 0 0; }
+  .tour-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1.2rem; }
+  .tour-grid article:first-child { border-top: 4px solid #356650; }
+  .tour-detail { font-weight: 700; }
+  .ready-section { border-top: 1px solid #cbd7cc; }
+  .ready-section > p { max-width: 68ch; }
+  @media (max-width: 730px) {
+    .hero-grid, .sample-section, .tour-grid { grid-template-columns: 1fr; }
+  }
+</style>
