@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-09T05:00:01.704Z",
+  "updatedAt": "2026-11-09T15:26:58.091Z",
   "fireDanger": "low",
   "summary": {
     "total": 55,
-    "open": 38,
-    "caution": 16,
-    "closed": 1
+    "open": 37,
+    "caution": 14,
+    "closed": 4
   },
   "areas": [
     {
@@ -30,10 +30,10 @@
         {
           "name": "Spray Winter Connector",
           "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Wet and muddy; Icy sections; Thin snow cover",
-          "lastUpdated": "2026-11-08"
+          "status": "closed",
+          "condition": "Partially Closed",
+          "comment": "Wet and muddy; Icy sections; Thin snow cover; Check the important bulletins for more information",
+          "lastUpdated": "2026-11-09"
         },
         {
           "name": "Stewart Canyon Winter Trail",
@@ -136,10 +136,10 @@
         {
           "name": "Spray River Winter: East Trail",
           "difficulty": "Easy",
-          "status": "open",
-          "condition": "Thin snow cover.",
+          "status": "closed",
+          "condition": "Partially Closed",
           "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
-          "lastUpdated": "2026-11-08"
+          "lastUpdated": "2026-11-09"
         },
         {
           "name": "Sundance Winter Trail",
@@ -221,10 +221,10 @@
         {
           "name": "Spray River East Winter Trail",
           "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; No dogs allowed",
-          "lastUpdated": "2026-11-08"
+          "status": "closed",
+          "condition": "Partially Closed",
+          "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; No dogs allowed; Check the important bulletins for more information",
+          "lastUpdated": "2026-11-09"
         },
         {
           "name": "Sundance Winter Trail",
@@ -506,10 +506,10 @@
     {
       "name": "Spray Winter Connector",
       "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Wet and muddy; Icy sections; Thin snow cover",
-      "lastUpdated": "2026-11-08",
+      "status": "closed",
+      "condition": "Partially Closed",
+      "comment": "Wet and muddy; Icy sections; Thin snow cover; Check the important bulletins for more information",
+      "lastUpdated": "2026-11-09",
       "area": "Banff Area Winter Walking Trails"
     },
     {
@@ -614,10 +614,10 @@
     {
       "name": "Spray River Winter: East Trail",
       "difficulty": "Easy",
-      "status": "open",
-      "condition": "Thin snow cover.",
+      "status": "closed",
+      "condition": "Partially Closed",
       "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; No dogs allowed; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; Icy section",
-      "lastUpdated": "2026-11-08",
+      "lastUpdated": "2026-11-09",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
@@ -704,10 +704,10 @@
     {
       "name": "Spray River East Winter Trail",
       "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; No dogs allowed",
-      "lastUpdated": "2026-11-08",
+      "status": "closed",
+      "condition": "Partially Closed",
+      "comment": "Biking excluding e-bikes is allowed; Studded tires recommended; Icy sections; No dogs allowed; Check the important bulletins for more information",
+      "lastUpdated": "2026-11-09",
       "area": "Banff Area Fat Biking Trails"
     },
     {
@@ -982,6 +982,12 @@
     }
   ],
   "advisories": [
+    {
+      "title": "Trail Closure: Spray Quarry Trail and Spray River East Trail",
+      "type": "Trail Closure",
+      "issued": "",
+      "ends": ""
+    },
     {
       "title": "Area Closure: s for Avalanche Control",
       "type": "Area Closure",
