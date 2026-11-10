@@ -1,29 +1,18 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-09T23:58:50.437Z",
+  "retrievedAt": "2026-11-10T07:02:51.751Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-09T23:58:50.430Z",
-      "sourceUpdatedAt": "2026-11-09T23:58:50.000Z",
-      "sourceUpdatedAtText": "Mon, 09 Nov 2026 16:58:50 -0700",
+      "retrievedAt": "2026-11-10T07:02:51.523Z",
+      "sourceUpdatedAt": "2026-11-10T07:02:51.000Z",
+      "sourceUpdatedAtText": "Tue, 10 Nov 2026 00:02:51 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
-        {
-          "title": "Visual Arts Open Lecture Series: Deanna Bowen",
-          "link": "https://banff.ca/Calendar.aspx?EID=35413",
-          "description": "Join us for an afternoon Visual Arts lecture with Deanna Bowen, a Montreal-based interdisciplinary artist whose practice includes films, video installations, performances, drawing, sculpture and photography.",
-          "publishedAt": "2026-10-23T21:14:05.000Z",
-          "startDate": "2026-11-09",
-          "endDate": "2026-11-09",
-          "dates": "November 9, 2026",
-          "times": "04:00 PM - 11:59 PM",
-          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
-        },
         {
           "title": "Visual Arts Open Lecture Series: Tania Willard",
           "link": "https://banff.ca/Calendar.aspx?EID=35414",
@@ -106,9 +95,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-09T23:58:50.375Z",
-      "sourceUpdatedAt": "2026-11-09T23:58:50.000Z",
-      "sourceUpdatedAtText": "Mon, 09 Nov 2026 16:58:50 -0700",
+      "retrievedAt": "2026-11-10T07:02:51.748Z",
+      "sourceUpdatedAt": "2026-11-10T07:02:51.000Z",
+      "sourceUpdatedAtText": "Tue, 10 Nov 2026 00:02:51 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
