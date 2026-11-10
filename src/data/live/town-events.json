@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-10T07:02:51.751Z",
+  "retrievedAt": "2026-11-10T16:10:39.823Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-10T07:02:51.523Z",
-      "sourceUpdatedAt": "2026-11-10T07:02:51.000Z",
-      "sourceUpdatedAtText": "Tue, 10 Nov 2026 00:02:51 -0700",
+      "retrievedAt": "2026-11-10T16:10:39.816Z",
+      "sourceUpdatedAt": "2026-11-10T16:10:39.000Z",
+      "sourceUpdatedAtText": "Tue, 10 Nov 2026 09:10:39 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -95,13 +95,19 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-10T07:02:51.748Z",
-      "sourceUpdatedAt": "2026-11-10T07:02:51.000Z",
-      "sourceUpdatedAtText": "Tue, 10 Nov 2026 00:02:51 -0700",
+      "retrievedAt": "2026-11-10T16:10:39.806Z",
+      "sourceUpdatedAt": "2026-11-10T16:10:39.000Z",
+      "sourceUpdatedAtText": "Tue, 10 Nov 2026 09:10:39 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
+        {
+          "title": "Road Closures: Wednesday, November 11 — Remembrance Day Parade",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1932",
+          "description": "The Banff Remembrance Day Parade, memorial service and wreath laying ceremony on Tuesday, November 11, will involve road closures on Banff Avenue and Elk Street.",
+          "publishedAt": "2026-11-10T16:04:00.000Z"
+        },
         {
           "title": "Remembrance Day Parade and Ceremony — November 11",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1933",
@@ -113,12 +119,6 @@
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1934",
           "description": "Banff and Bow Valley residents, create your own beautiful lantern! We will all light up our lanterns for an evening skate, where we will enjoy some live local music and stay warm sipping hot tea by the fire.",
           "publishedAt": "2026-11-03T19:39:00.000Z"
-        },
-        {
-          "title": "Road Closures: Wednesday, November 11 — Remembrance Day Parade",
-          "link": "https://banff.ca/CivicAlerts.aspx?aid=1932",
-          "description": "The Banff Remembrance Day Parade, memorial service and wreath laying ceremony on Tuesday, November 11, will involve road closures on Banff Avenue and Elk Street.",
-          "publishedAt": "2026-11-03T17:48:00.000Z"
         },
         {
           "title": "Banff residents can now recycle more",
