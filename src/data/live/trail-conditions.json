@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T16:10:48.919Z",
+  "updatedAt": "2026-11-10T22:55:15.400Z",
   "fireDanger": "low",
   "summary": {
     "total": 55,
@@ -366,8 +366,8 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Thin snow cover.",
-          "comment": "Avalanche hazard: Beyond the viewpoint, the road crosses large avalanche paths. Travel beyond this point requires avalanche training and equipment; Not yet maintained; No dogs allowed; Insufficient sn",
-          "lastUpdated": "2026-10-25"
+          "comment": "Avalanche hazard: Beyond the viewpoint, the road crosses large avalanche paths. Travel beyond this point requires avalanche training and equipment; No dogs allowed; Flat packed",
+          "lastUpdated": "2026-11-09"
         },
         {
           "name": "Fairview Loop",
@@ -850,8 +850,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Thin snow cover.",
-      "comment": "Avalanche hazard: Beyond the viewpoint, the road crosses large avalanche paths. Travel beyond this point requires avalanche training and equipment; Not yet maintained; No dogs allowed; Insufficient sn",
-      "lastUpdated": "2026-10-25",
+      "comment": "Avalanche hazard: Beyond the viewpoint, the road crosses large avalanche paths. Travel beyond this point requires avalanche training and equipment; No dogs allowed; Flat packed",
+      "lastUpdated": "2026-11-09",
       "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {

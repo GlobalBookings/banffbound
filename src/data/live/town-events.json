@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-10T16:10:39.823Z",
+  "retrievedAt": "2026-11-10T22:55:15.977Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-10T16:10:39.816Z",
-      "sourceUpdatedAt": "2026-11-10T16:10:39.000Z",
-      "sourceUpdatedAtText": "Tue, 10 Nov 2026 09:10:39 -0700",
+      "retrievedAt": "2026-11-10T22:55:15.955Z",
+      "sourceUpdatedAt": "2026-11-10T22:55:15.000Z",
+      "sourceUpdatedAtText": "Tue, 10 Nov 2026 15:55:15 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -95,13 +95,19 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-10T16:10:39.806Z",
-      "sourceUpdatedAt": "2026-11-10T16:10:39.000Z",
-      "sourceUpdatedAtText": "Tue, 10 Nov 2026 09:10:39 -0700",
+      "retrievedAt": "2026-11-10T22:55:15.972Z",
+      "sourceUpdatedAt": "2026-11-10T22:55:15.000Z",
+      "sourceUpdatedAtText": "Tue, 10 Nov 2026 15:55:15 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
+        {
+          "title": "Mo Valley Mile & 5K — November 29",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1935",
+          "description": "The Mo Valley Mile & 5K is back for a third year in Banff! To promote physical and mental well-being during Movember, you can choose between a quick mile or a bit of a longer distance with a 5K.",
+          "publishedAt": "2026-11-10T21:37:00.000Z"
+        },
         {
           "title": "Road Closures: Wednesday, November 11 — Remembrance Day Parade",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1932",
