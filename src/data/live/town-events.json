@@ -1,29 +1,18 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-11T05:02:05.870Z",
+  "retrievedAt": "2026-11-11T13:42:17.557Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-11T05:02:05.858Z",
-      "sourceUpdatedAt": "2026-11-11T05:02:04.000Z",
-      "sourceUpdatedAtText": "Tue, 10 Nov 2026 22:02:04 -0700",
+      "retrievedAt": "2026-11-11T13:42:17.536Z",
+      "sourceUpdatedAt": "2026-11-11T13:42:17.000Z",
+      "sourceUpdatedAtText": "Wed, 11 Nov 2026 06:42:17 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
-        {
-          "title": "Visual Arts Open Lecture Series: Tania Willard",
-          "link": "https://banff.ca/Calendar.aspx?EID=35414",
-          "description": "Join us for an afternoon Visual Arts lecture with Tania Willard, a mixed Secwépemc and settler artist whose research intersects with land-based art practices.",
-          "publishedAt": "2026-10-23T21:17:25.000Z",
-          "startDate": "2026-11-10",
-          "endDate": "2026-11-10",
-          "dates": "November 10, 2026",
-          "times": "04:00 PM - 11:59 PM",
-          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
-        },
         {
           "title": "Remembrance Day Parade and Ceremony",
           "link": "https://banff.ca/Calendar.aspx?EID=35494",
@@ -95,9 +84,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-11T05:02:05.866Z",
-      "sourceUpdatedAt": "2026-11-11T05:02:04.000Z",
-      "sourceUpdatedAtText": "Tue, 10 Nov 2026 22:02:04 -0700",
+      "retrievedAt": "2026-11-11T13:42:17.552Z",
+      "sourceUpdatedAt": "2026-11-11T13:42:17.000Z",
+      "sourceUpdatedAtText": "Wed, 11 Nov 2026 06:42:17 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
