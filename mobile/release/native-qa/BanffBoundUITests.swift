@@ -50,7 +50,7 @@ final class BanffBoundUITests: XCTestCase {
         XCTAssertTrue(visible(heading).isHittable, "Navigation must display \(heading)")
     }
 
-    private func scrollTo(_ label: String, attempts: Int = 12) {
+    private func scrollTo(_ label: String, attempts: Int = 12, towardTop: Bool = false) {
         for _ in 0..<attempts {
             let target = element(label)
             let keyboard = app.keyboards.firstMatch
@@ -63,8 +63,10 @@ final class BanffBoundUITests: XCTestCase {
             XCTAssertGreaterThan(bottom - top, 40, "Need visible content above the keyboard to scroll")
             let origin = app.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
             let x = app.frame.width * 0.70
-            origin.withOffset(CGVector(dx: x, dy: bottom - app.frame.minY))
-                .press(forDuration: 0.05, thenDragTo: origin.withOffset(CGVector(dx: x, dy: top - app.frame.minY)))
+            let startY = towardTop ? top : bottom
+            let endY = towardTop ? bottom : top
+            origin.withOffset(CGVector(dx: x, dy: startY - app.frame.minY))
+                .press(forDuration: 0.05, thenDragTo: origin.withOffset(CGVector(dx: x, dy: endY - app.frame.minY)))
         }
         XCTFail("Could not scroll to \(label)")
     }
@@ -79,7 +81,8 @@ final class BanffBoundUITests: XCTestCase {
     private func scrollModalUpTo(_ label: String) {
         for _ in 0..<6 {
             if element(label).exists && element(label).isHittable { return }
-            guard let modal = app.scrollViews.allElementsBoundByIndex.last else {
+            let modal = app.scrollViews.matching(identifier: "trip-panel-content").firstMatch
+            guard modal.exists && modal.isHittable else {
                 XCTFail("Missing native modal scroll view")
                 return
             }
@@ -100,10 +103,12 @@ final class BanffBoundUITests: XCTestCase {
 
         tab("Explore", heading: "Find your kind of Banff.")
         XCTAssertTrue(visible("Search places").isHittable)
+        scrollTo("View Lake Louise")
         XCTAssertTrue(visible("View Lake Louise").isHittable)
         capture("store-02-explore")
 
         tab("My Trip", heading: "Your trip, your pace.")
+        scrollTo("Edit trip details")
         XCTAssertTrue(visible("Edit trip details").isHittable)
         capture("store-03-my-trip")
 
@@ -114,12 +119,28 @@ final class BanffBoundUITests: XCTestCase {
 
         tab("Map", heading: "Get your bearings.")
         XCTAssertTrue(app.webViews.firstMatch.waitForExistence(timeout: 25), "Map tab must host the real native WebView; provider availability is a separate check")
+
+        if #available(iOS 27.1, *) {
+            defer { XCUIDevice.shared.orientation = .portrait }
+            XCUIDevice.shared.orientation = .landscapeLeft
+            let resized = NSPredicate { _, _ in self.app.frame.width > self.app.frame.height }
+            let expectation = XCTNSPredicateExpectation(predicate: resized, object: nil)
+            XCTAssertEqual(XCTWaiter.wait(for: [expectation], timeout: 15), .completed,
+                           "App should follow the rotated window")
+            XCTAssertTrue(visible("Get your bearings.").isHittable, "Rotation should keep Map selected")
+            XCTAssertTrue(app.webViews.firstMatch.exists, "Map WebView should remain available after resize")
+            capture("qa-duo-landscape")
+        }
     }
 
     func test02SavedPlaceSurvivesRelaunch() throws {
         tab("Explore", heading: "Find your kind of Banff.")
+        scrollTo("View Lake Louise")
         tap("View Lake Louise")
-        if element("Save this place").exists { tap("Save this place") }
+        if element("Save this place").exists {
+            scrollTo("Save this place")
+            tap("Save this place")
+        }
         XCTAssertTrue(visible("Saved to your places").isHittable)
         tap("Close panel")
         XCTAssertTrue(visible("Unsave Lake Louise").exists)
@@ -147,12 +168,7 @@ final class BanffBoundUITests: XCTestCase {
         let current = adults.value as? String ?? ""
         adults.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count) + "3")
         if app.keyboards.firstMatch.exists {
-            // Failure captures establish this paragraph is above the keyboard
-            // on both devices. An unhandled in-form tap dismisses the keyboard
-            // under the app's keyboardShouldPersistTaps='handled' behavior.
-            let paragraph = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'Everything stays on this device.'")).firstMatch
-            XCTAssertTrue(paragraph.isHittable, "Use the visible settings paragraph to dismiss the native keyboard")
-            paragraph.tap()
+            tap("Hide keyboard")
             let dismissed = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.keyboards.firstMatch)
             XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: 5), .completed, "Native keyboard must dismiss before Save")
         }
@@ -178,6 +194,7 @@ final class BanffBoundUITests: XCTestCase {
 
     func test04SpecificVenueStaysOnChosenDayAfterRelaunch() throws {
         tab("Explore", heading: "Find your kind of Banff.")
+        scrollTo("View Lake Louise")
         tap("View Lake Louise")
         scrollTo("Day 1")
         tap("Day 1")
@@ -224,6 +241,7 @@ final class BanffBoundUITests: XCTestCase {
         XCTAssertEqual(visible("Last saved").label, savedLabel, "Native offline saved status must survive process relaunch")
         tap("Close panel")
         tab("Explore", heading: "Find your kind of Banff.")
+        scrollTo("View Lake Louise")
         tap("View Lake Louise")
         scrollTo("Read the offline guide")
         tap("Read the offline guide")
@@ -253,14 +271,8 @@ final class BanffBoundUITests: XCTestCase {
     private func commerceMode(_ label: String, searchID: String) {
         let pill = element(label)
         if !pill.isHittable {
-            // Explore's mode pills live in a horizontal native ScrollView. Do
-            // not swipe the outer vertical catalogue or invent a direct route.
-            let strips = app.scrollViews.allElementsBoundByIndex.filter {
-                $0.frame.height < 110 && $0.descendants(matching: .any)
-                    .matching(NSPredicate(format: "label == %@ OR identifier == %@", label, label)).firstMatch.exists
-            }
-            XCTAssertEqual(strips.count, 1, "Expected one real Explore mode strip")
-            guard let strip = strips.first else { return }
+            let strip = visibleID("explore-mode-strip")
+            if !strip.isHittable { scrollTo("explore-mode-strip", towardTop: true) }
             for _ in 0..<4 {
                 if pill.isHittable { break }
                 strip.swipeLeft()
@@ -308,12 +320,24 @@ final class BanffBoundUITests: XCTestCase {
         // branch accepts a provider app or launches Safari on the test's behalf.
         let service = XCUIApplication(bundleIdentifier: "com.apple.SafariViewService")
         var browser = app!
-        var done = app.buttons.matching(NSPredicate(format: "label == 'Done'")).firstMatch
-        if !done.waitForExistence(timeout: 20) {
+        let dismissLabel = NSPredicate(format: "label == %@ OR label == %@ OR (identifier == %@ AND label == %@)",
+                                       "Done", "Close", "CancelBarItemButton", "Cancel")
+        var dismiss = app.buttons.matching(dismissLabel).firstMatch
+        if !dismiss.waitForExistence(timeout: 20) {
             browser = service
-            done = service.buttons.matching(NSPredicate(format: "label == 'Done'")).firstMatch
+            dismiss = service.buttons.matching(dismissLabel).firstMatch
         }
-        XCTAssertTrue(done.waitForExistence(timeout: 15) && done.isHittable, "The real native Safari controller must present its Done control")
+        if !dismiss.waitForExistence(timeout: 15) || !dismiss.isHittable {
+            capture("qa-safari-handoff-failure-screen")
+            for (name, application) in [("host", app!), ("service", service)] {
+                let tree = XCTAttachment(string: String(application.debugDescription.prefix(24000)))
+                tree.name = "qa-safari-handoff-failure-\(name)-tree"
+                tree.lifetime = .keepAlways
+                add(tree)
+            }
+            XCTFail("The actual native Safari controller must expose its hittable dismissal control")
+            return
+        }
         XCTAssertTrue(browser.webViews.firstMatch.waitForExistence(timeout: 15), "Observe the native browser's actual WebView; successful provider loading is separate")
 
         // Read only domain/address text that the native address UI actually
@@ -329,13 +353,17 @@ final class BanffBoundUITests: XCTestCase {
         let addressObservations = Array(observed)
         let exposed = addressObservations.joined(separator: " ")
         capture("qa-commerce-browser-screen")
-        done.tap()
-        XCTAssertTrue(visibleID("commerce-close-details", timeout: 15).isHittable, "Done must return to the original BanffBound detail")
+        let actualDismissalLabel = dismiss.label
+        let actualDismissalIdentifier = dismiss.identifier
+        dismiss.tap()
+        XCTAssertTrue(visibleID("commerce-close-details", timeout: 15).isHittable, "Closing Safari must return to the original BanffBound detail")
         XCTAssertTrue(visibleID("commerce-cta-gyg-256607-booking").exists)
         try attachJSON([
             "kind": "native-safari-handoff", "provider": "GetYourGuide", "tourTitle": "Banff Gondola admission",
             "browserAccessibilityBundle": browser === service ? "com.apple.SafariViewService" : "com.banffbound.app",
-            "doneButtonObserved": true, "browserWebViewObserved": true, "returnToDetailVerified": true,
+            "doneButtonObserved": actualDismissalLabel == "Done", "dismissalControlLabel": actualDismissalLabel,
+            "dismissalControlIdentifier": actualDismissalIdentifier,
+            "browserWebViewObserved": true, "returnToDetailVerified": true,
             "addressUIObservations": addressObservations,
             "visibleProviderHost": exposed.lowercased().contains("getyourguide.com") ? "getyourguide.com" : NSNull(),
             "partnerIdVisibleInAddressUI": exposed.contains("partner_id=QW960HO"),
@@ -398,9 +426,11 @@ final class BanffBoundUITests: XCTestCase {
 
     private func mapSearch(_ query: String) throws {
         mapScrollToTop()
-        if element("Clear map search").exists { tap("Clear map search") }
         let field = app.textFields.matching(identifier: "map-search").firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 10) && field.isHittable, "Map search must be a real native editable field")
+        if let value = field.value as? String, !value.isEmpty && value != field.placeholderValue {
+            tap("Clear map search")
+        }
         try nativeSearch(field, query: query, heading: "Get your bearings.", collection: "map")
     }
 
@@ -409,7 +439,8 @@ final class BanffBoundUITests: XCTestCase {
     private func nativeSearch(_ field: XCUIElement, query: String, heading: String, collection: String, section: String? = nil) throws {
         field.tap()
         let keyboard = app.keyboards.firstMatch
-        let isPhone = app.frame.width < 600
+        let windowWidth = app.frame.width
+        let isPhone = windowWidth < 600
         let keyboardReady = keyboard.waitForExistence(timeout: 10)
         let searchKey = keyboard.buttons.matching(NSPredicate(format: "label ==[c] 'search' OR identifier ==[c] 'search'")).firstMatch
         let keyReadyBeforeTyping = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == true AND hittable == true"), object: searchKey)
@@ -420,6 +451,7 @@ final class BanffBoundUITests: XCTestCase {
             "kind": "native-\(collection)-input-observation", "query": query,
             "fieldIdentifier": field.identifier,
             "deviceClass": isPhone ? "iphone" : "ipad",
+            "windowWidthPoints": windowWidth,
             "entryMethod": "bulk-native-text-without-return", "typedWithoutReturn": false,
             "keyboardReadyBeforeTyping": keyboardReady,
             "searchKeyReadyBeforeTyping": searchKeyReadyBeforeTyping,

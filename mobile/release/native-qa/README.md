@@ -113,6 +113,33 @@ bash -n mobile/release/native-qa/run-ios-qa.sh
 ruby -c mobile/release/native-qa/prepare-ios-ui-tests.rb
 ```
 
+## iPhone Duo
+
+The separate `iPhone Duo Simulator QA` workflow selects Xcode 27.1 and the
+actual iPhone Duo simulator on the public `xcode-27` runner. It checks the
+compiled SDK and scene manifest, runs the nine native flows on the booted
+display, and rotates Map to landscape while checking that its WebView and
+selected tab survive. The receipt records actual capture dimensions and the
+display they match. This run covers one display in two orientations.
+
+For a store candidate, also test the following in Xcode 27.1 Device Hub on a
+fresh simulator sandbox. Build the same reviewed source with the iOS 27.1 SDK.
+
+1. Start on the outer display in portrait. Open Explore, enter a search and
+   unfold. Confirm the query, focus and selected tab carry onto the inner display.
+2. Open a restaurant detail from Map and close the device. Check that the sheet
+   stays visible and its close control and menu link fit the safe area.
+3. Rotate both displays. Check both sides of the reserved camera/status area,
+   the keyboard and map controls. On the inner display, try partial folding and
+   Split View while editing a trip. Reopen the trip and verify the edit persisted.
+4. Capture real app screens from both displays once the flows pass. Apple lists
+   portrait artwork at 1398 × 2034 for the outer display and 2007 × 2853 for the
+   inner display, with dimensions reversed in landscape. Use the display's own
+   capture as the source for each scenic composition.
+
+[Apple Device Hub guidance](https://developer.apple.com/videos/play/tech-talks/111461/)
+· [Apple screenshot sizes](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/)
+
 Official references checked 2026-10-30:
 
 - [Apple screenshot sizes and no-alpha requirement](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/)

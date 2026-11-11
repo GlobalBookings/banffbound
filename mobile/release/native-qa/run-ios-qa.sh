@@ -5,6 +5,12 @@ cd "$(dirname "$0")/../.."
 : "${QA_ROOT:?QA_ROOT must point outside the source tree}"
 mkdir -p "$QA_ROOT/logs" "$QA_ROOT/results" "$QA_ROOT/evidence"
 export CI=1 EXPO_NO_TELEMETRY=1
+export QA_TARGET="${QA_TARGET:-standard}"
+case "$QA_TARGET" in
+  standard) expected_xcode='26.6' ;;
+  iphone-duo) expected_xcode='27.1' ;;
+  *) echo "Unsupported QA target: $QA_TARGET"; exit 1 ;;
+esac
 
 # Homebrew CocoaPods isolates xcodeproj in its libexec gems. Reuse that installed
 # runtime when necessary; do not install tools or change a developer machine.
@@ -20,7 +26,18 @@ phase() {
   local name="$1"
   shift
   printf '%s\n' "$name" > "$QA_ROOT/current-phase.txt"
-  "$@" 2>&1 | tee "$QA_ROOT/logs/$name.log"
+  if [[ "$QA_TARGET" == 'iphone-duo' && "$name" == 'build' ]]; then
+    echo 'Compiling BanffBound with Xcode 27.1.'
+    if "$@" > "$QA_ROOT/logs/$name.log" 2>&1; then
+      echo 'Xcode built the native test app successfully.'
+    else
+      local result=$?
+      tail -100 "$QA_ROOT/logs/$name.log"
+      return "$result"
+    fi
+  else
+    "$@" 2>&1 | tee "$QA_ROOT/logs/$name.log"
+  fi
 }
 
 fingerprint() {
@@ -35,11 +52,11 @@ NODE
 fingerprint "$QA_ROOT/source-before.json"
 git rev-parse HEAD > "$QA_ROOT/source-commit.txt"
 date -u '+%Y-%m-%dT%H:%M:%SZ' > "$QA_ROOT/started-at.txt"
-phase receipt-unit-tests python3 -m unittest discover -s release/native-qa -p '*_test.py'
+phase receipt-unit-tests env QA_TARGET=standard python3 -m unittest discover -s release/native-qa -p '*_test.py'
 phase toolchain bash -c 'xcodebuild -version; node --version; pod --version'
 "$qa_ruby" --version | tee -a "$QA_ROOT/logs/toolchain.log"
 "$qa_ruby" -r xcodeproj -e 'puts "xcodeproj #{Xcodeproj::VERSION}"' | tee -a "$QA_ROOT/logs/toolchain.log"
-[[ "$(xcodebuild -version | head -n 1)" == 'Xcode 26.6' ]] || { echo 'Expected pinned Xcode 26.6, refusing incompatible defaults.'; exit 1; }
+[[ "$(xcodebuild -version | head -n 1)" == "Xcode $expected_xcode" ]] || { echo "Expected pinned Xcode $expected_xcode."; exit 1; }
 phase npm-ci npm ci --no-audit --no-fund
 phase prebuild npx --no-install expo prebuild --platform ios --no-install
 phase pods bash -c 'cd ios && pod install'
@@ -52,21 +69,25 @@ git diff --exit-code -- . ':!release/native-qa' > "$QA_ROOT/logs/source-diff.log
 
 xcrun simctl list devices available --json > "$QA_ROOT/available-devices.json"
 python3 - "$QA_ROOT" <<'PY'
-import json, pathlib, re, sys
+import json, os, pathlib, re, sys
 root = pathlib.Path(sys.argv[1])
 available = json.loads((root / 'available-devices.json').read_text())['devices']
+duo = os.environ['QA_TARGET'] == 'iphone-duo'
+targets = [('iphone-duo', 'iPhone Duo', None)] if duo else [
+    ('iphone', 'iPhone 17 Pro', [1206, 2622]), ('ipad', 'iPad Pro 13-inch (M5)', [2064, 2752])]
+runtime_pattern = r'\.iOS-(27-1(?:-\d+)*)$' if duo else r'\.iOS-(26(?:-\d+)+)$'
 chosen = []
-for label, name, dimensions in [('iphone', 'iPhone 17 Pro', [1206, 2622]), ('ipad', 'iPad Pro 13-inch (M5)', [2064, 2752])]:
+for label, name, dimensions in targets:
     matches = []
     for runtime, devices in available.items():
-        version = re.search(r'\.iOS-(26(?:-\d+)+)$', runtime)
+        version = re.search(runtime_pattern, runtime)
         if not version:
             continue
         for device in devices:
             if device.get('isAvailable') and device['name'] == name:
                 matches.append((tuple(map(int, version[1].split('-'))), runtime, device))
     if not matches:
-        raise SystemExit(f'No installed compatible iOS26 {name}; never substitute a different screenshot size silently')
+        raise SystemExit(f'No installed compatible simulator for {name} ({runtime_pattern}); no device substitution')
     _, runtime, device = max(matches, key=lambda item: item[0])
     chosen.append({'label': label, 'name': name, 'udid': device['udid'], 'runtime': runtime, 'expectedPixels': dimensions})
 (root / 'selected-devices.json').write_text(json.dumps(chosen, indent=2) + '\n')
@@ -88,6 +109,11 @@ app_path="$(find "$derived/Build/Products/Release-iphonesimulator" -maxdepth 1 -
 shasum -a 256 "$app_path/main.jsbundle" > "$QA_ROOT/embedded-bundle.sha256"
 /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$app_path/Info.plist" > "$QA_ROOT/bundle-identifier.txt"
 [[ "$(cat "$QA_ROOT/bundle-identifier.txt")" == 'com.banffbound.app' ]]
+if [[ "$QA_TARGET" == 'iphone-duo' ]]; then
+  /usr/libexec/PlistBuddy -c 'Print :DTSDKName' "$app_path/Info.plist" > "$QA_ROOT/duo-build-sdk.txt"
+  [[ "$(cat "$QA_ROOT/duo-build-sdk.txt")" == 'iphonesimulator27.1' ]]
+  /usr/libexec/PlistBuddy -c 'Print :UIApplicationSceneManifest' "$app_path/Info.plist" > "$QA_ROOT/duo-scene-manifest.txt"
+fi
 
 test_failed=0
 while IFS=$'\t' read -r label device; do
