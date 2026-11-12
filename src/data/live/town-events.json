@@ -1,40 +1,18 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-12T02:44:05.244Z",
+  "retrievedAt": "2026-11-12T12:16:15.155Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-12T02:44:05.239Z",
-      "sourceUpdatedAt": "2026-11-12T02:44:04.000Z",
-      "sourceUpdatedAtText": "Wed, 11 Nov 2026 19:44:04 -0700",
+      "retrievedAt": "2026-11-12T12:16:15.126Z",
+      "sourceUpdatedAt": "2026-11-12T12:16:14.000Z",
+      "sourceUpdatedAtText": "Thu, 12 Nov 2026 05:16:14 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
-        {
-          "title": "Remembrance Day Parade and Ceremony",
-          "link": "https://banff.ca/Calendar.aspx?EID=35494",
-          "description": "The Banff Legion hosts the Remembrance Day Parade starting at the Legion at 10:30 a.m., marching south on Banff Avenue and to the Banff Elementary School, where there is a memorial service. Following the service, the parade returns to the Legion, where there will be a wreath ceremony.",
-          "publishedAt": "2026-11-03T16:07:49.000Z",
-          "startDate": "2026-11-11",
-          "endDate": "2026-11-11",
-          "dates": "November 11, 2026",
-          "times": "10:30 AM - 11:59 PM",
-          "location": "Banff, AB T1L 1A1"
-        },
-        {
-          "title": "Visual Arts Open Lecture Series: Tarah Hogue",
-          "link": "https://banff.ca/Calendar.aspx?EID=35417",
-          "description": "Join Banff Centre for an afternoon Visual Arts lecture with writer and curator Tarah Hogue, based in Treaty 6 and 7 territories and the Métis homeland.",
-          "publishedAt": "2026-10-23T21:28:40.000Z",
-          "startDate": "2026-11-11",
-          "endDate": "2026-11-11",
-          "dates": "November 11, 2026",
-          "times": "04:00 PM - 11:59 PM",
-          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
-        },
         {
           "title": "Mountain Writers Intensive Reading",
           "link": "https://banff.ca/Calendar.aspx?EID=35415",
@@ -78,15 +56,26 @@
           "dates": "November 20, 2026",
           "times": "08:30 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Literary Cabaret: Early Career Writers of Poetry - Stanza 1",
+          "link": "https://banff.ca/Calendar.aspx?EID=35419",
+          "description": "As part of Banff Centre's Literary Cabaret series, featuring the Early Career Writers of Poetry's Residency at Banff Centre, join us for an evening celebrating the next generation of storytellers, bards and troubadours.",
+          "publishedAt": "2026-10-23T21:40:40.000Z",
+          "startDate": "2026-11-26",
+          "endDate": "2026-11-26",
+          "dates": "November 26, 2026",
+          "times": "07:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-12T02:44:05.158Z",
-      "sourceUpdatedAt": "2026-11-12T02:44:04.000Z",
-      "sourceUpdatedAtText": "Wed, 11 Nov 2026 19:44:04 -0700",
+      "retrievedAt": "2026-11-12T12:16:15.153Z",
+      "sourceUpdatedAt": "2026-11-12T12:16:14.000Z",
+      "sourceUpdatedAtText": "Thu, 12 Nov 2026 05:16:14 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -96,18 +85,6 @@
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1935",
           "description": "The Mo Valley Mile & 5K is back for a third year in Banff! To promote physical and mental well-being during Movember, you can choose between a quick mile or a bit of a longer distance with a 5K.",
           "publishedAt": "2026-11-10T21:37:00.000Z"
-        },
-        {
-          "title": "Road Closures: Wednesday, November 11 — Remembrance Day Parade",
-          "link": "https://banff.ca/CivicAlerts.aspx?aid=1932",
-          "description": "The Banff Remembrance Day Parade, memorial service and wreath laying ceremony on Tuesday, November 11, will involve road closures on Banff Avenue and Elk Street.",
-          "publishedAt": "2026-11-10T16:04:00.000Z"
-        },
-        {
-          "title": "Remembrance Day Parade and Ceremony — November 11",
-          "link": "https://banff.ca/CivicAlerts.aspx?aid=1933",
-          "description": "The Banff Legion hosts the Remembrance Day Parade on November 11.",
-          "publishedAt": "2026-11-09T21:13:00.000Z"
         },
         {
           "title": "Winter Solstice Community Lantern Skate — December 21",
