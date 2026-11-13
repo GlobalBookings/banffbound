@@ -1,18 +1,117 @@
 ---
-import PaidLandingLayout from '../../layouts/PaidLandingLayout.astro';
-import GatewayHotelComparison from '../../components/GatewayHotelComparison.astro';
-import { gatewayHotelLinks } from '../../data/gatewayHotelLinks';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getExperiencePhoto } from '../../data/banffExperiencePhotos';
-const heroPhoto = getExperiencePhoto('airport', 'Calgary');
-const stays = [
-  { id:'yyc-airport', name:'Calgary Airport Marriott In-Terminal Hotel', area:'YYC terminal', room:'An airport overnight for a late arrival or early flight.', journey:'Check the walk from your arrivals area and the mountain shuttle meeting point on your ticket. The terminal hotel does not include a transfer to Banff.', source:'https://www.visitcalgary.com/plan-and-stay/where-to-stay', booking:gatewayHotelLinks['yyc-airport'] },
-  { id:'calgary-downtown', name:'Coast Calgary Downtown Hotel & Suites by APA', area:'Downtown Calgary', address:'610 4 Avenue SW', room:'A downtown suite base for a city stay or a tour that lists this hotel as a pickup.', journey:'Tour pickup hotels vary. Check the exact operator, street address and return before choosing where to sleep.', source:'https://www.coasthotels.com/coast-calgary-downtown-hotel-and-suites-by-apa', booking:gatewayHotelLinks['calgary-downtown'] },
-  { id:'calgary-west', name:'Four Points by Sheraton Hotel & Suites Calgary West', area:'West Calgary', room:'A west-side example for a road trip with a car.', journey:'Compare parking, the drive to your first park stop and the return. A west Calgary address does not establish downtown tour pickup.', source:'https://www.marriott.com/en-us/hotels/yycfp-four-points-hotel-and-suites-calgary-west/overview/', booking:gatewayHotelLinks['calgary-west'] },
-];
+import { calgaryHotels, calgaryHotelAreas, calgaryHotelSearch, calgaryHotelsReviewedOn } from '../../data/calgaryHotels';
+
+const title = '12 Calgary Hotels for a Banff Trip: YYC, Downtown & West Calgary';
+const description = 'Compare 12 Calgary hotels with photos, Expedia guest ratings, room details and Banff travel advice. Find airport stays, downtown tour pickups and west-side road-trip hotels.';
+const hero = getExperiencePhoto('airport', 'Calgary');
+const landingId = 'calgary-hotels';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Calgary hotels for a Banff trip',
+  itemListElement: calgaryHotels.map((hotel, index) => ({
+    '@type': 'ListItem', position: index + 1, name: hotel.name,
+    url: new URL(hotel.path, 'https://banffbound.com').href,
+  })),
+};
 ---
-<PaidLandingLayout title="Calgary Hotels for a Banff Trip: Airport, Downtown or West Calgary" description="Compare Calgary hotel areas for your Banff trip: a YYC overnight, a downtown tour pickup or a west-side base for driving. Search current rates on Expedia." heading="Where to stay in Calgary for Banff" eyebrow="Calgary hotel comparison" intro="Choose an airport overnight for a flight, a downtown base for a city pickup, or a west-side hotel if you are driving. Match the hotel to the journey you will actually make." primaryCta={{label:'Compare the three areas',href:'#compare-stays'}} heroImage={heroPhoto.src} heroAlt={heroPhoto.alt} lastUpdated="2026-11-12">
-  <p slot="hero-detail" class="photo-credit"><a href={heroPhoto.sourceUrl}>{heroPhoto.caption}</a> · {heroPhoto.author} · <a href={heroPhoto.licenseUrl}>{heroPhoto.license}</a>. {heroPhoto.changeNote}</p>
-  <GatewayHotelComparison stays={stays} place="Calgary" landingId="calgary-hotels" searchUrl={gatewayHotelLinks.calgarySearch} />
-  <nav class="container gateway-next" aria-label="Plan the Rockies journey"><a href="/calgary-to-banff/">Compare Calgary-to-Banff transfers →</a><a href="/book/banff-tours-from-calgary/">Find Banff day tours from Calgary →</a><a href="/book/banff-hotels/">Compare Banff hotels →</a><a href="/book/canmore-hotels/">Compare Canmore hotels →</a></nav>
-</PaidLandingLayout>
-<style>.gateway-next{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;padding-bottom:3rem}.gateway-next a{color:var(--color-primary);font-weight:650}.photo-credit,.photo-credit a{color:#e4ece2;font-size:.75rem}</style>
+<BaseLayout title={title} description={description} image={hero.src} lastUpdated={calgaryHotelsReviewedOn} focusedLanding>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <div data-landing-page={landingId} data-content-id={landingId} data-content-type="booking-comparison">
+    <header class="calgary-hero">
+      <div class="container hero-layout">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/hotels/">Hotels</a><span aria-hidden="true">/</span><span aria-current="page">Calgary</span></nav>
+          <h1>Where to stay in Calgary for Banff</h1>
+          <p>Compare 12 hotels for a night at YYC, a downtown tour pickup, or a drive west to the Rockies.</p>
+          <a class="hero-cta" href="#compare-stays">Compare the 12 hotels <span aria-hidden="true">↓</span></a>
+        </div>
+        <figure>
+          <img src={hero.src} alt={hero.alt} width="1200" height="900" loading="eager" fetchpriority="high" />
+          <figcaption><a href={hero.sourceUrl}>{hero.caption}</a> · {hero.author} · <a href={hero.licenseUrl}>{hero.license}</a></figcaption>
+        </figure>
+      </div>
+    </header>
+    <div class="container guide" id="compare-stays">
+      <nav class="area-links" aria-label="Compare by Calgary area">
+        {calgaryHotelAreas.map(area => <a href={`#${area.id}`}>{area.label} <span aria-hidden="true">↓</span></a>)}
+      </nav>
+      <p class="comparison-note">We shortlisted hotels using Expedia guest reviews and how well each address works for a flight, tour or road trip. Guest scores were checked on 13 November 2026 and can change. We may earn a commission from qualifying Expedia bookings.</p>
+      {calgaryHotelAreas.map(area => <section class="area" id={area.id} aria-labelledby={`heading-${area.id}`}>
+        <h2 id={`heading-${area.id}`}>{area.label}</h2>
+        <p>{area.description}</p>
+        <div class="property-grid">
+          {calgaryHotels.filter(hotel => hotel.area === area.id).map(hotel => <article class="hotel" id={hotel.oldAnchor || hotel.slug}>
+            <a class="photo-link" href={hotel.booking} target="_blank" rel="noopener sponsored" aria-label={`Check dates for ${hotel.name} on Expedia`} data-offer-id={hotel.offerId} data-landing-placement="property-photo">
+              <img src={hotel.photos[0].src} alt={hotel.photos[0].alt} width="1250" height="833" loading="lazy" decoding="async" />
+            </a>
+            <div class="hotel-copy">
+              <p class="hotel-fit">{hotel.bestFor}</p>
+              <h3><a href={hotel.path}>{hotel.name}</a></h3>
+              <p class="address">{hotel.address}</p>
+              <p class="rating"><strong>{hotel.rating.toFixed(1)}/10</strong> Expedia guest score</p>
+              <p>{hotel.overview}</p>
+              <div class="hotel-actions">
+                <a class="booking-link" href={hotel.booking} target="_blank" rel="noopener sponsored" aria-label={`Check dates for ${hotel.name} on Expedia`} data-offer-id={hotel.offerId} data-landing-placement="detail-card">Check dates ↗</a>
+                <a class="detail-link" href={hotel.path}>Hotel details →</a>
+              </div>
+            </div>
+          </article>)}
+        </div>
+      </section>)}
+      <section class="more-stays" aria-labelledby="more-heading">
+        <h2 id="more-heading">See more Calgary stays</h2>
+        <p>Enter your dates and party size to compare the full price, including parking and cancellation terms.</p>
+        <a class="booking-link" href={calgaryHotelSearch} target="_blank" rel="noopener sponsored" data-offer-id="calgary-hotels-search" data-landing-placement="comparison-search">Search Calgary on Expedia ↗</a>
+      </section>
+      <nav class="related" aria-label="Plan the Rockies journey">
+        <a href="/calgary-to-banff/">Calgary-to-Banff transfers →</a>
+        <a href="/book/banff-tours-from-calgary/">Banff day tours from Calgary →</a>
+        <a href="/book/banff-hotels/">Banff hotel comparison →</a>
+        <a href="/book/canmore-hotels/">Canmore hotel comparison →</a>
+      </nav>
+    </div>
+  </div>
+</BaseLayout>
+<style>
+  .calgary-hero { background:#173d2c; color:#e8efe8; padding:clamp(2rem,5vw,4rem) 0; }
+  .hero-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(1.2rem,4vw,4rem); align-items:center; }
+  .breadcrumb { display:flex; gap:.6rem; font-size:.9rem; margin-bottom:1rem; }
+  .breadcrumb a,.calgary-hero figcaption a { color:inherit; }
+  h1 { color:#fff; font-size:clamp(2.4rem,6vw,4.4rem); line-height:1.05; margin:0 0 1rem; }
+  .calgary-hero p { max-width:34rem; margin:0 0 1.25rem; font-size:1.13rem; }
+  .hero-cta,.booking-link { display:inline-flex; align-items:center; min-height:46px; border-radius:6px; padding:.58rem .95rem; font-weight:750; text-decoration:none; }
+  .hero-cta { gap:.6rem; color:#173d2c; background:#f1d3a0; }
+  .calgary-hero figure { margin:0; }
+  .calgary-hero img { width:100%; height:auto; aspect-ratio:1.7; object-fit:cover; border-radius:12px; display:block; }
+  .calgary-hero figcaption { font-size:.75rem; padding-top:.4rem; }
+  .guide { padding-top:1.6rem; padding-bottom:3rem; }
+  #compare-stays,.area { scroll-margin-top:88px; }
+  .area-links,.related { display:flex; flex-wrap:wrap; gap:.55rem 1rem; }
+  .area-links a { border:1px solid #c6d5c8; border-radius:6px; padding:.45rem .75rem; text-decoration:none; display:inline-flex; align-items:center; gap:.4rem; min-height:44px; }
+  .comparison-note { max-width:72ch; color:#4a6054; margin:1rem 0 2rem; font-size:.94rem; }
+  .area { margin:2.2rem 0 2.8rem; }
+  .area h2,.more-stays h2 { margin-bottom:.3rem; font-size:clamp(1.7rem,4vw,2.45rem); }
+  .area > p { margin-bottom:1rem; }
+  .property-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.2rem; }
+  .hotel { border:1px solid #d6dfd5; background:white; border-radius:10px; overflow:hidden; display:flex; flex-direction:column; min-width:0; scroll-margin-top:88px; }
+  .photo-link { display:block; background:#e4ebe3; }
+  .photo-link img { width:100%; display:block; height:auto; aspect-ratio:1.62; object-fit:cover; }
+  .hotel-copy { padding:1rem 1.15rem 1.2rem; flex:1; display:flex; flex-direction:column; }
+  .hotel-copy p { margin:0 0 .7rem; }
+  .hotel-fit { color:#526347; font-size:.86rem; font-weight:750; }
+  .hotel h3 { margin:0 0 .35rem; font-size:1.35rem; line-height:1.2; }
+  .hotel h3 a { text-decoration:none; }
+  .address,.rating { font-size:.87rem; color:#46594d; }
+  .rating strong { padding:.14rem .4rem; margin-right:.25rem; border-radius:4px; background:#e9f1e7; color:#214932; }
+  .hotel-actions { margin-top:auto; padding-top:.4rem; display:flex; flex-wrap:wrap; align-items:center; gap:.45rem .85rem; }
+  .booking-link { color:#fff; background:#a7431c; }
+  .booking-link:hover { color:white; background:#863414; }
+  .detail-link,.related a { display:inline-flex; align-items:center; min-height:44px; font-weight:700; }
+  .more-stays { background:#edf3ea; padding:1.5rem; border-radius:8px; margin-bottom:1.25rem; }
+  .more-stays p { margin:.35rem 0 .85rem; }
+  @media (max-width:900px) { .property-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:620px) { .property-grid,.hero-layout { grid-template-columns:1fr; } }
+</style>

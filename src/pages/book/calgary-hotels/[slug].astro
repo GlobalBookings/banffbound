@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { calgaryHotels, calgaryHotelAreas, calgaryHotelsPath, calgaryHotelsReviewedOn } from '../../../data/calgaryHotels';
+import type { CalgaryHotelProfile } from '../../../data/calgaryHotels';
+
+export function getStaticPaths() {
+  return calgaryHotels.map(hotel => ({ params: { slug: hotel.slug }, props: { hotel } }));
+}
+
+interface Props { hotel: CalgaryHotelProfile; }
+const { hotel } = Astro.props;
+const area = calgaryHotelAreas.find(item => item.id === hotel.area)!;
+const related = calgaryHotels.filter(item => item.area === hotel.area && item.slug !== hotel.slug).slice(0, 3);
+const description = `${hotel.name} in Calgary. ${hotel.bestFor}. Compare rooms, see property photos, plan your onward journey and check Expedia rates.`;
+const schema = {
+  '@context': 'https://schema.org', '@type': 'Hotel', name: hotel.name,
+  url: new URL(hotel.path, 'https://banffbound.com').href,
+  address: { '@type': 'PostalAddress', streetAddress: hotel.address.replace(', Calgary', ''), addressLocality: 'Calgary', addressRegion: 'AB', addressCountry: 'CA' },
+  description: hotel.overview,
+};
+---
+<BaseLayout title={`${hotel.name} | Calgary Hotel Guide`} description={description} lastUpdated={calgaryHotelsReviewedOn} focusedLanding>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <div class="container property" data-landing-page="calgary-hotels" data-content-id={hotel.offerId} data-content-type="hotel-guide">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href={calgaryHotelsPath}>Calgary hotels</a><span aria-hidden="true">/</span><a href={`${calgaryHotelsPath}#${hotel.area}`}>{area.label}</a>
+    </nav>
+    <header class="property-heading">
+      <div>
+        <h1>{hotel.name}</h1>
+        <p class="address">{hotel.address}</p>
+        <p class="rating"><strong>{hotel.rating.toFixed(1)}/10</strong> Expedia guest score, checked 13 November 2026</p>
+      </div>
+      <div class="heading-book">
+        <a class="booking-link" href={hotel.booking} target="_blank" rel="noopener sponsored" data-offer-id={hotel.offerId} data-landing-placement="hero">Check dates on Expedia ↗</a>
+        <small>We may earn a commission from qualifying bookings.</small>
+      </div>
+    </header>
+    <div class="gallery" aria-label="Hotel photos">
+      {hotel.photos.map((photo, index) => <a href={hotel.booking} target="_blank" rel="noopener sponsored" aria-label={`Check dates for ${hotel.name} on Expedia`} data-offer-id={hotel.offerId} data-landing-placement="property-photo">
+        <img src={photo.src} alt={photo.alt} width="1250" height="833" loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} decoding="async" />
+      </a>)}
+    </div>
+    <p class="photo-credit">Property photos from Expedia. Check the pictures for the room category you select.</p>
+    <div class="profile-body">
+      <div>
+        <section><h2>Why stay here</h2><p>{hotel.overview}</p></section>
+        <section><h2>Rooms and what to book</h2><p>{hotel.rooms}</p></section>
+        <section><h2>Getting to Banff</h2><p>{hotel.banff}</p>
+          <p><a href="/calgary-to-banff/">Compare transfer and driving options</a> · <a href="/book/banff-tours-from-calgary/">See tours from Calgary</a></p>
+        </section>
+      </div>
+      <aside aria-labelledby="check-heading">
+        <h2 id="check-heading">Before you book</h2>
+        <ul>{hotel.checks.map(check => <li>{check}</li>)}</ul>
+        <a class="booking-link" href={hotel.booking} target="_blank" rel="noopener sponsored" data-offer-id={hotel.offerId} data-landing-placement="detail-card">Check dates on Expedia ↗</a>
+        <p class="official"><a href={hotel.official} target="_blank" rel="noopener">Official hotel information ↗</a></p>
+        {hotel.pickupSource && <p class="official"><a href={hotel.pickupSource} target="_blank" rel="noopener">Example of a tour listing this pickup ↗</a></p>}
+      </aside>
+    </div>
+    <nav class="compare-more" aria-label="Other Calgary hotels">
+      <h2>Compare nearby options</h2>
+      <ul>{related.map(item => <li><a href={item.path}>{item.name}</a></li>)}</ul>
+      <a href={calgaryHotelsPath}>See all 12 Calgary hotels →</a>
+    </nav>
+  </div>
+</BaseLayout>
+<style>
+  .property { padding-top:1.65rem; padding-bottom:3.5rem; max-width:1130px; }
+  .breadcrumb { display:flex; flex-wrap:wrap; gap:.6rem; font-size:.91rem; margin-bottom:1rem; }
+  .property-heading { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:1rem; align-items:end; margin-bottom:1.25rem; }
+  h1 { margin:0 0 .6rem; font-size:clamp(2rem,5vw,3.5rem); line-height:1.12; }
+  .address,.rating { margin:0 0 .45rem; color:#42584b; }
+  .rating strong { padding:.14rem .4rem; background:#e9f1e7; color:#214932; border-radius:4px; margin-right:.25rem; }
+  .heading-book small { display:block; margin-top:.4rem; color:#465a4d; }
+  .booking-link { display:inline-flex; align-items:center; min-height:47px; padding:.55rem .9rem; border-radius:6px; background:#a7431c; color:#fff; font-weight:750; text-decoration:none; }
+  .booking-link:hover { color:white; background:#863414; }
+  .gallery { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:.55rem; }
+  .gallery a { display:block; background:#e4ebe3; overflow:hidden; border-radius:8px; }
+  .gallery img { display:block; width:100%; height:100%; max-height:350px; aspect-ratio:1.6; object-fit:cover; }
+  .photo-credit { color:#526557; margin:.5rem 0 1.25rem; font-size:.84rem; }
+  .profile-body { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr); gap:clamp(1.2rem,4vw,3rem); align-items:start; }
+  .profile-body section { margin:0 0 1.3rem; }
+  .profile-body h2,.compare-more h2 { font-size:1.55rem; margin:0 0 .55rem; }
+  .profile-body aside { padding:1.2rem; border:1px solid #d6dfd5; border-radius:8px; background:#edf3ea; }
+  aside ul,.compare-more ul { padding-left:1.2rem; }
+  aside li,.compare-more li { margin-bottom:.45rem; }
+  .official { margin:.65rem 0 0; }
+  .compare-more { margin-top:1.7rem; border-top:1px solid #d6dfd5; padding-top:1.3rem; }
+  @media (max-width:700px) {
+    .property-heading,.profile-body { grid-template-columns:1fr; }
+    .gallery { grid-template-columns:1fr 1fr; }
+    .gallery img { aspect-ratio:1.1; }
+  }
+</style>
