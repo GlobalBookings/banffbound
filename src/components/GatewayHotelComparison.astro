@@ -1,0 +1,22 @@
+---
+interface Stay { name: string; area: string; address?: string; room: string; journey: string; guide?: string; source?: string; image?: string; booking?: string; id: string; }
+interface Props { stays: Stay[]; landingId: string; searchUrl: string; place: string; }
+const { stays, landingId, searchUrl, place } = Astro.props;
+---
+<section class="gateway-stays container" id="compare-stays" data-content-id={landingId} data-content-type="booking-comparison">
+  <div class="intro"><p class="eyebrow">Choose an address, then a room</p><h2>Compare {place} stays</h2><p>Compare the room and the journey together. Use the same dates, party size and room type, then check taxes, fees, parking and cancellation.</p>
+  <a class="btn quote" href={searchUrl} target="_blank" rel="noopener sponsored" data-landing-id={landingId} data-offer-id={`${landingId}-search`} data-landing-placement="comparison-search">Search all {place} stays on Expedia ↗</a></div>
+  <div class="cards">{stays.map(stay => <article id={stay.id}>
+    {stay.image && <img src={stay.image} alt={stay.name} width="640" height="400" loading="lazy" decoding="async" />}
+    <div class="card-copy"><p class="eyebrow">{stay.area}</p><h3>{stay.name}</h3>{stay.address && <p class="address">{stay.address}</p>}
+      <p>{stay.room}</p><p><strong>Getting around:</strong> {stay.journey}</p>
+      {stay.booking && <a class="btn quote" href={stay.booking} target="_blank" rel="noopener sponsored" data-landing-id={landingId} data-offer-id={stay.id} data-landing-placement="detail-card" aria-label={`Check dates for ${stay.name} on Expedia`}>Check dates ↗</a>}
+      {stay.guide && <a class="text-link" href={stay.guide}>Property guide →</a>}
+      {stay.source && <a class="text-link" href={stay.source} target="_blank" rel="noopener">Official details ↗</a>}
+    </div>
+  </article>)}</div>
+  <p class="note">Expedia shows live rates and availability for your dates. The examples here compare the type of stay and its location.</p>
+</section>
+<style>
+  .gateway-stays{padding-block:3rem}.intro{max-width:700px;margin-bottom:1.6rem}.intro h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:.35rem 0 .65rem}.intro p:not(.eyebrow){margin-bottom:1rem}.eyebrow{font-size:.73rem;color:#5c6646;letter-spacing:.1em;text-transform:uppercase;font-weight:750}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.cards article{min-width:0;border:1px solid #d5dfd3;background:#fff;border-radius:10px;overflow:hidden}.cards img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}.card-copy{padding:1.25rem}.card-copy h3{margin:.4rem 0 .55rem}.card-copy p{margin:0 0 .65rem}.address,.note{color:#485b4b;font-size:.85rem}.note{margin-top:1rem}.quote{min-height:46px;display:inline-flex;align-items:center;background:#a7431c;color:#fff!important;border:0;text-decoration:none}.quote:hover{background:#863414}.text-link{display:inline-flex;align-items:center;min-height:44px;margin:0 .6rem;color:var(--color-primary)}@media(max-width:920px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:580px){.cards{grid-template-columns:1fr}.gateway-stays{padding-block:2rem}}
+</style>

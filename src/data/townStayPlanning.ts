@@ -3,6 +3,7 @@ export const townStayUpdatedSlugs = ['banff', 'canmore', 'lake-louise', 'field-y
 
 export const townBookingJourneys: Record<string, { label: string; href: string; text: string }> = {
   banff: { label: 'Compare six Banff hotel stays', href: '/book/banff-hotels/', text: 'Compare central rooms, kitchen categories, hillside bases and a Spray Avenue resort, then check dates on the named Expedia property pages.' },
+  canmore: { label: 'Compare Canmore hotels and suites', href: '/book/canmore-hotels/', text: 'Compare downtown hotels, full-kitchen suites and a separate Bow Valley road base, then check your dates.' },
   'lake-louise': { label: 'Compare five Lake Louise area stays', href: '/book/lake-louise-stays/', text: 'Compare village, lakeshore and road-base accommodation, with exact room decisions and named Expedia property links.' },
 };
 

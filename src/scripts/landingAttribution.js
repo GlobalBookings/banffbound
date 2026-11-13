@@ -1,6 +1,6 @@
 // Custom labels come from fixed page markup and explicitly known ad cohorts.
 // Raw query values, search terms, click IDs and booking details never enter events.
-export const LANDING_IDS = ['banff-hotels', 'lake-louise-stays', 'banff-winter-activities', 'activity-guide', 'activities', 'travel-guide'];
+export const LANDING_IDS = ['banff-hotels', 'lake-louise-stays', 'canmore-hotels', 'calgary-hotels', 'banff-tours-from-calgary', 'banff-winter-activities', 'activity-guide', 'activities', 'travel-guide'];
 export const PAID_COHORTS = {
   bb_ca_winter_50_test: { source: 'google', medium: 'cpc', campaignId: '24416287886' },
   bb_ca_hotels_7_day_test: { source: 'google', medium: 'cpc', campaignId: '24411162375' },

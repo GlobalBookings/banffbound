@@ -1,0 +1,37 @@
+---
+import PaidLandingLayout from '../../layouts/PaidLandingLayout.astro';
+import ActivityBookingCTA from '../../components/ActivityBookingCTA.astro';
+import { calgaryTripSections, calgaryTripCount, calgaryCatalogueGroups } from '../../data/calgaryBanffTrips';
+const landingId = 'banff-tours-from-calgary';
+const primary = calgaryTripSections.find(section => section.id === 'banff-day-trips')!.options[0];
+const target = {
+  id: 'calgary-banff-day-trip', offerId: `gyg-${primary.id}`, title: primary.title, label: 'Book now',
+  bookingUrl: primary.booking, paidCampaignLabel: `bb_ca_activities_experience_${primary.id}`, kind: 'product' as const,
+};
+const liveSearch = 'https://www.getyourguide.com/s/?q=Banff+tours+from+Calgary&partner_id=QW960HO&cmp=banffbound_calgary_tours_search';
+---
+<PaidLandingLayout title="Banff Tours from Calgary: Day Trips, Shuttles & Rockies Tours" description="Compare Banff day trips from Calgary, airport and downtown shuttles, private transfers, Lake Louise and Icefields Parkway tours, and multi-day Rockies trips." eyebrow="Start in Calgary" heading="Banff tours and transfers from Calgary" intro="Choose a ride to your hotel, a Banff day trip with a return to Calgary, or a longer Rockies tour. Check the actual pickup before you book." primaryCta={{label:'Compare trips and shuttles',href:'#trip-options'}} heroImage="/images/blog/banff-road-trip-from-calgary.webp" heroAlt="Mountain road on a trip from Calgary toward Banff" lastUpdated="2026-11-12">
+  <div class="container trip-page" data-content-id={landingId} data-content-type="activity-directory">
+    <section id="trip-options" class="trip-intro"><h2>Choose how you want to travel</h2><p>See {calgaryTripCount} options across downtown Calgary, YYC, guided days and longer trips. Read the date-specific listing for the pickup, return, seasonal changes and tickets.</p>
+      <nav class="jump" aria-label="Trip types">{calgaryTripSections.map(section => <a href={`#${section.id}`}>{section.title}</a>)}</nav>
+      <ActivityBookingCTA target={target} guideId={landingId} />
+    </section>
+    {calgaryTripSections.map(section => <section class="trip-section" id={section.id}>
+      <h2>{section.title}</h2><p>{section.intro}</p><div class="trip-grid">{section.options.map(offer => <article>
+        <h3>{offer.title}</h3><p>{offer.note}</p><div class="actions">
+          <a class="btn trip-book" href={offer.booking} target="_blank" rel="noopener sponsored" data-landing-id={landingId} data-offer-id={`gyg-${offer.id}`} data-affiliate-target-path={new URL(offer.booking).pathname} data-paid-affiliate-campaign={`bb_ca_activities_experience_${offer.id}`} data-landing-placement="detail-card" aria-label={`Book now: ${offer.title}`}>Book now ↗</a>
+          <a href={offer.guide}>Find out more →</a>
+        </div>
+      </article>)}</div>
+    </section>)}
+    <section class="more-trips" id="more-trips"><h2>Explore more operator options</h2>
+      <p>These guides include other operators and departure towns. Open the selected option and confirm that Calgary pickup is available on your date.</p>
+      <ul>{calgaryCatalogueGroups.map(group => <li><a href={group.canonicalPath}>{group.title}</a></li>)}</ul>
+      <p><a class="btn trip-book" href={liveSearch} target="_blank" rel="noopener sponsored" data-landing-id={landingId} data-offer-id="calgary-tours-search" data-affiliate-target-path="/s/" data-landing-placement="comparison-search">Search more on GetYourGuide ↗</a></p>
+    </section>
+    <nav class="jump next" aria-label="Plan your stay"><a href="/calgary-to-banff/">Calgary-to-Banff journey guide</a><a href="/book/calgary-hotels/">Compare Calgary hotels</a><a href="/book/canmore-hotels/">Compare Canmore hotels</a><a href="/book/banff-hotels/">Compare Banff hotels</a></nav>
+  </div>
+</PaidLandingLayout>
+<style>
+  .trip-page{padding-block:2.5rem 4rem}.trip-intro,.trip-section,.more-trips{margin-bottom:2.7rem}.trip-intro>p,.trip-section>p,.more-trips>p{max-width:720px;margin:.65rem 0 1.2rem}.jump{display:flex;flex-wrap:wrap;gap:.6rem}.jump a{padding:.45rem .7rem;border:1px solid #c6d5c4;border-radius:4px;min-height:44px;display:inline-flex;align-items:center;color:var(--color-primary)}.trip-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.trip-grid article{display:flex;flex-direction:column;padding:1.15rem;background:white;border:1px solid #d4ded3;border-radius:8px}.trip-grid h3{margin:0 0 .6rem;font-size:1.3rem}.trip-grid p{margin:0 0 .85rem}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;margin-top:auto}.actions a:not(.trip-book),.more-trips li a{color:var(--color-primary);font-weight:650}.trip-book{display:inline-flex;align-items:center;min-height:44px;background:#a7431c;color:white!important;border:0;text-decoration:none}.trip-book:hover{background:#863414}.more-trips ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem 1.5rem;padding-left:1.2rem}.next{margin-top:1.5rem}@media(max-width:900px){.trip-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.trip-grid,.more-trips ul{grid-template-columns:1fr}.trip-page{padding-top:1.5rem}}
+</style>
