@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-12T21:20:41.759Z",
+  "retrievedAt": "2026-11-13T02:27:01.765Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-12T21:20:41.755Z",
-      "sourceUpdatedAt": "2026-11-12T21:20:41.000Z",
-      "sourceUpdatedAtText": "Thu, 12 Nov 2026 14:20:41 -0700",
+      "retrievedAt": "2026-11-13T02:27:01.762Z",
+      "sourceUpdatedAt": "2026-11-13T02:27:01.000Z",
+      "sourceUpdatedAtText": "Thu, 12 Nov 2026 19:27:01 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -73,13 +73,19 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-12T21:20:41.693Z",
-      "sourceUpdatedAt": "2026-11-12T21:20:41.000Z",
-      "sourceUpdatedAtText": "Thu, 12 Nov 2026 14:20:41 -0700",
+      "retrievedAt": "2026-11-13T02:27:01.750Z",
+      "sourceUpdatedAt": "2026-11-13T02:27:01.000Z",
+      "sourceUpdatedAtText": "Thu, 12 Nov 2026 19:27:01 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
+        {
+          "title": "Blackfoot Confederacy and Town of Banff enter new phase of cooperation",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1936",
+          "description": "Blackfoot Confederacy and the Town of Banff have formally signed a Memorandum of Understanding on communication and cooperation, establishing a framework for continued engagement, stronger working relationships and collaboration.",
+          "publishedAt": "2026-11-12T21:37:00.000Z"
+        },
         {
           "title": "Mo Valley Mile & 5K — November 29",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1935",
