@@ -2812,10 +2812,41 @@
       "productUrl": "https://www.getyourguide.com/banff-l284/banff-rock-climbing-adventure-beginner-t402652/",
       "optionTitle": "An Introductory Outdoor Rock-Climbing Day near Banff",
       "discovery": "supplemental-reviewed-product"
+    },
+    {
+      "productId": "860485",
+      "productUrl": "https://www.getyourguide.com/calgary-l1783/calgary-yyc-airport-shared-shuttle-to-banff-t860485/",
+      "optionTitle": "Fairy Bus shared shuttle from YYC to Banff",
+      "discovery": "supplemental-calgary-transfer-results"
+    },
+    {
+      "productId": "830673",
+      "productUrl": "https://www.getyourguide.com/calgary-l1783/calgary-private-transfer-to-banff-t830673/",
+      "optionTitle": "Private transfer from Calgary or YYC to Banff",
+      "discovery": "supplemental-calgary-transfer-results"
+    },
+    {
+      "productId": "430459",
+      "productUrl": "https://www.getyourguide.com/british-columbia-l113/calgary-airport-transfer-tofrom-canmore-banff-lake-louise-t430459/",
+      "optionTitle": "Calgary Airport transfer with Banff and Lake Louise options",
+      "discovery": "supplemental-calgary-transfer-results"
+    },
+    {
+      "productId": "461535",
+      "productUrl": "https://www.getyourguide.com/calgary-l1783/calgary-to-canmorebanff-830-t461535/",
+      "optionTitle": "Vivo Green airport shuttle to Canmore or Banff",
+      "discovery": "supplemental-calgary-transfer-results"
+    },
+    {
+      "productId": "848456",
+      "productUrl": "https://www.getyourguide.com/lake-louise-alberta-l190266/calgary-private-transfer-to-lake-louise-t848456/",
+      "optionTitle": "Private Calgary to Lake Louise transfer",
+      "discovery": "supplemental-calgary-transfer-results"
     }
   ],
   "capturedUniqueProductCount": 458,
   "supplementalReviewedProductCount": 10,
+  "supplementalCalgaryTransferProductCount": 5,
   "excluded": [
     {
       "productId": "1328480",

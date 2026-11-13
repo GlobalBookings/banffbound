@@ -1,0 +1,18 @@
+---
+import PaidLandingLayout from '../../layouts/PaidLandingLayout.astro';
+import GatewayHotelComparison from '../../components/GatewayHotelComparison.astro';
+import { gatewayHotelLinks } from '../../data/gatewayHotelLinks';
+import { getExperiencePhoto } from '../../data/banffExperiencePhotos';
+const heroPhoto = getExperiencePhoto('airport', 'Calgary');
+const stays = [
+  { id:'yyc-airport', name:'Calgary Airport Marriott In-Terminal Hotel', area:'YYC terminal', room:'An airport overnight for a late arrival or early flight.', journey:'Check the walk from your arrivals area and the mountain shuttle meeting point on your ticket. The terminal hotel does not include a transfer to Banff.', source:'https://www.visitcalgary.com/plan-and-stay/where-to-stay', booking:gatewayHotelLinks['yyc-airport'] },
+  { id:'calgary-downtown', name:'Coast Calgary Downtown Hotel & Suites by APA', area:'Downtown Calgary', address:'610 4 Avenue SW', room:'A downtown suite base for a city stay or a tour that lists this hotel as a pickup.', journey:'Tour pickup hotels vary. Check the exact operator, street address and return before choosing where to sleep.', source:'https://www.coasthotels.com/coast-calgary-downtown-hotel-and-suites-by-apa', booking:gatewayHotelLinks['calgary-downtown'] },
+  { id:'calgary-west', name:'Four Points by Sheraton Hotel & Suites Calgary West', area:'West Calgary', room:'A west-side example for a road trip with a car.', journey:'Compare parking, the drive to your first park stop and the return. A west Calgary address does not establish downtown tour pickup.', source:'https://www.marriott.com/en-us/hotels/yycfp-four-points-hotel-and-suites-calgary-west/overview/', booking:gatewayHotelLinks['calgary-west'] },
+];
+---
+<PaidLandingLayout title="Calgary Hotels for a Banff Trip: Airport, Downtown or West Calgary" description="Compare Calgary hotel areas for your Banff trip: a YYC overnight, a downtown tour pickup or a west-side base for driving. Search current rates on Expedia." heading="Where to stay in Calgary for Banff" eyebrow="Calgary hotel comparison" intro="Choose an airport overnight for a flight, a downtown base for a city pickup, or a west-side hotel if you are driving. Match the hotel to the journey you will actually make." primaryCta={{label:'Compare the three areas',href:'#compare-stays'}} heroImage={heroPhoto.src} heroAlt={heroPhoto.alt} lastUpdated="2026-11-12">
+  <p slot="hero-detail" class="photo-credit"><a href={heroPhoto.sourceUrl}>{heroPhoto.caption}</a> · {heroPhoto.author} · <a href={heroPhoto.licenseUrl}>{heroPhoto.license}</a>. {heroPhoto.changeNote}</p>
+  <GatewayHotelComparison stays={stays} place="Calgary" landingId="calgary-hotels" searchUrl={gatewayHotelLinks.calgarySearch} />
+  <nav class="container gateway-next" aria-label="Plan the Rockies journey"><a href="/calgary-to-banff/">Compare Calgary-to-Banff transfers →</a><a href="/book/banff-tours-from-calgary/">Find Banff day tours from Calgary →</a><a href="/book/banff-hotels/">Compare Banff hotels →</a><a href="/book/canmore-hotels/">Compare Canmore hotels →</a></nav>
+</PaidLandingLayout>
+<style>.gateway-next{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;padding-bottom:3rem}.gateway-next a{color:var(--color-primary);font-weight:650}.photo-credit,.photo-credit a{color:#e4ece2;font-size:.75rem}</style>
