@@ -5,7 +5,8 @@ import { calgaryHotels, calgaryHotelAreas, calgaryHotelSearch, calgaryHotelsRevi
 
 const title = '12 Calgary Hotels for a Banff Trip: YYC, Downtown & West Calgary';
 const description = 'Compare 12 Calgary hotels with photos, Expedia guest ratings, room details and Banff travel advice. Find airport stays, downtown tour pickups and west-side road-trip hotels.';
-const hero = getExperiencePhoto('airport', 'Calgary');
+const socialPhoto = getExperiencePhoto('airport', 'Calgary');
+const featuredHotel = calgaryHotels.find(hotel => hotel.slug === 'residence-inn-beltline')!;
 const landingId = 'calgary-hotels';
 const schema = {
   '@context': 'https://schema.org',
@@ -17,7 +18,7 @@ const schema = {
   })),
 };
 ---
-<BaseLayout title={title} description={description} image={hero.src} lastUpdated={calgaryHotelsReviewedOn} focusedLanding>
+<BaseLayout title={title} description={description} image={socialPhoto.src} lastUpdated={calgaryHotelsReviewedOn} focusedLanding>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
   <div data-landing-page={landingId} data-content-id={landingId} data-content-type="booking-comparison">
     <header class="calgary-hero">
@@ -29,8 +30,10 @@ const schema = {
           <a class="hero-cta" href="#compare-stays">Compare the 12 hotels <span aria-hidden="true">↓</span></a>
         </div>
         <figure>
-          <img src={hero.src} alt={hero.alt} width="1200" height="900" loading="eager" fetchpriority="high" />
-          <figcaption><a href={hero.sourceUrl}>{hero.caption}</a> · {hero.author} · <a href={hero.licenseUrl}>{hero.license}</a></figcaption>
+          <a href={featuredHotel.booking} target="_blank" rel="noopener sponsored" aria-label={`Check dates for ${featuredHotel.name} on Expedia`} data-offer-id={featuredHotel.offerId} data-landing-placement="hero-photo">
+            <img src={featuredHotel.photos[0].src} alt={featuredHotel.photos[0].alt} width="1250" height="833" loading="eager" fetchpriority="high" />
+          </a>
+          <figcaption>Residence Inn Calgary Downtown/Beltline District · Photo from Expedia</figcaption>
         </figure>
       </div>
     </header>
