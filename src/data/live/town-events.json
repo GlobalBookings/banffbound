@@ -1,29 +1,18 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-14T00:43:57.660Z",
+  "retrievedAt": "2026-11-14T08:42:13.044Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-14T00:43:57.627Z",
-      "sourceUpdatedAt": "2026-11-14T00:43:57.000Z",
-      "sourceUpdatedAtText": "Fri, 13 Nov 2026 17:43:57 -0700",
+      "retrievedAt": "2026-11-14T08:42:12.998Z",
+      "sourceUpdatedAt": "2026-11-14T08:42:12.000Z",
+      "sourceUpdatedAtText": "Sat, 14 Nov 2026 01:42:12 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
-        {
-          "title": "Mountain Writers Intensive Reading",
-          "link": "https://banff.ca/Calendar.aspx?EID=35415",
-          "description": "Celebrate the power of words shaped by mountains at the Mountain Writers Intensive Reading, a free public event in Banff Centre's intimate CLVB '33. This evening showcases new work from writers immersed in a three-week residency dedicated to exploring mountain narratives, adventure, wilderness, and ",
-          "publishedAt": "2026-10-23T21:20:58.000Z",
-          "startDate": "2026-11-13",
-          "endDate": "2026-11-13",
-          "dates": "November 13, 2026",
-          "times": "07:00 PM - 11:59 PM",
-          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
-        },
         {
           "title": "Reel Time: The Christophers",
           "link": "https://banff.ca/Calendar.aspx?EID=35416",
@@ -78,15 +67,26 @@
           "dates": "November 27, 2026",
           "times": "07:30 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "BIRDY | Hung Dance",
+          "link": "https://banff.ca/Calendar.aspx?EID=35402",
+          "description": "On November 28, Banff Centre Presents brings bold contemporary dance to the mountains with BIRDY, an electrifying work from Taiwan’s acclaimed Hung Dance.",
+          "publishedAt": "2026-10-08T21:38:14.000Z",
+          "startDate": "2026-11-28",
+          "endDate": "2026-11-28",
+          "dates": "November 28, 2026",
+          "times": "08:30 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-14T00:43:57.657Z",
-      "sourceUpdatedAt": "2026-11-14T00:43:57.000Z",
-      "sourceUpdatedAtText": "Fri, 13 Nov 2026 17:43:57 -0700",
+      "retrievedAt": "2026-11-14T08:42:13.042Z",
+      "sourceUpdatedAt": "2026-11-14T08:42:12.000Z",
+      "sourceUpdatedAtText": "Sat, 14 Nov 2026 01:42:12 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
