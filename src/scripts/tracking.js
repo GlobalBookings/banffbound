@@ -1,3 +1,4 @@
+import { banffAppStoreClick } from '../data/banffAppStore';
 import { landingContext } from './landingAttribution.js';
 import { applyPaidBookingAttribution } from './paidBookingAttribution.js';
 import { hasConsent, sendAnalyticsEvent, reportAffiliateConversion, safeTrackingUrl, subscribeConsent } from './consent.js';
@@ -29,6 +30,17 @@ export function initTracking() {
   const path = () => window.location.pathname;
   const send = (name, parameters) => sendAnalyticsEvent(name, parameters);
   const nearest = (event, selector) => event.target?.closest?.(selector) || event.target?.parentElement?.closest?.(selector);
+  function trackAppStoreClick(link, url) {
+    const app = banffAppStoreClick(url);
+    if (app) send('app_store_click', { ...app, link_url: safeTrackingUrl(link.href), link_text: (link.textContent || '').trim().slice(0, 100), page_path: path(), page_title: document.title, ...landingContext(link) });
+  }
+  document.addEventListener('auxclick', event => {
+    if (event.defaultPrevented || event.button !== 1) return;
+    const link = nearest(event, 'a[href]');
+    if (link) {
+      try { trackAppStoreClick(link, new URL(link.href)); } catch { /* Leave malformed links to the browser. */ }
+    }
+  });
   document.addEventListener('click', event => {
     const link = nearest(event, 'a[href]');
     const partner = link ? affiliatePartner(link.href) : null;
@@ -38,6 +50,7 @@ export function initTracking() {
     } else if (link) {
       try {
         const url = new URL(link.href);
+        if (!event.defaultPrevented) trackAppStoreClick(link, url);
         if (['https:', 'http:'].includes(url.protocol) && url.hostname !== window.location.hostname) send('external_link_click', { link_url: safeTrackingUrl(link.href), link_text: (link.textContent || '').trim().slice(0, 100), link_domain: url.hostname, page_path: path() });
       } catch { /* An unusual link is still handled by the browser. */ }
     }

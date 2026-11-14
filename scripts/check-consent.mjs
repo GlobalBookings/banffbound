@@ -27,6 +27,34 @@ for(const state of [off,{analytics:true,advertising:false,affiliate:false},{anal
  assert.equal(h.commands.filter(c=>c[0]==='config'&&c[1]==='AW-17246982814').length,state.advertising?1:0);
  const count=h.providerScripts.length;h.api.initConsent();h.api.initTracking();h.fire('window','pageshow');assert.equal(h.providerScripts.length,count,'Repeated initialization must not duplicate providers.');
 }
+const appHomeUrl = 'https://apps.apple.com/app/apple-store/id6829106184?pt=129009564&ct=banffbound-home&mt=8';
+const audioGuideUrl = 'https://apps.apple.com/ca/app/banff-audio-walk/id6831413559?pt=129009564&ct=banffbound-audio-apps-guide&mt=8';
+const appEvents = harness => harness.commands.filter(command => command[1] === 'app_store_click');
+const appPage = 'https://banffbound.com/banff-mobile-apps/?private=never-send';
+fresh.linkClick(appHomeUrl);
+assert.equal(appEvents(fresh).length, 0, 'No App Store event without analytics consent.');
+const appHarness = consentHarness({ stored: validConsent({analytics:true, advertising:true}), pageHref: appPage, initTracking:true });
+appHarness.linkClick('https://apps.apple.com/app/google-maps/id585027354');
+appHarness.linkClick('https://apps.apple.com.example.test/app/apple-store/id6829106184');
+appHarness.linkClick(appHomeUrl, {defaultPrevented:true});
+assert.equal(appEvents(appHarness).length, 0, 'Unrelated stores and cancelled clicks do not count.');
+const {link: appLink, prevented: appNavigationPrevented} = appHarness.linkClick(appHomeUrl + '&private=never-send');
+assert.equal(appNavigationPrevented, 0, 'App Store navigation is native.');
+appHarness.linkClick(audioGuideUrl, {metaKey:true});
+assert.deepEqual(plain(appEvents(appHarness).map(([, , data]) => [
+  data.app_store_app, data.app_store_campaign, data.page_path, data.link_url, data.send_to,
+])), [
+  ['BanffBound', 'banffbound-home', '/banff-mobile-apps/', 'https://apps.apple.com/app/apple-store/id6829106184', 'G-2DP7J42ZW0'],
+  ['Banff Audio Walk', 'banffbound-audio-apps-guide', '/banff-mobile-apps/', 'https://apps.apple.com/ca/app/banff-audio-walk/id6831413559', 'G-2DP7J42ZW0'],
+]);
+appHarness.fire('document', 'auxclick', {target: appLink, button: 2});
+assert.equal(appEvents(appHarness).length, 2);
+appHarness.fire('document', 'auxclick', {target: appLink, button: 1});
+assert.equal(appEvents(appHarness).length, 3);
+appHarness.linkClick(audioGuideUrl.replace('banffbound-audio-apps-guide', 'arbitrary'));
+assert.equal(appEvents(appHarness).at(-1)[2].app_store_campaign, undefined);
+assert.ok(!appHarness.commands.some(command => command[1] === 'affiliate_click' || command[1] === 'conversion'));
+
 const paid=consentHarness({stored:validConsent({advertising:true,analytics:true}),paidLanding:true});assert.equal(paid.providerScripts.some(s=>s.src.includes('googletagmanager')),true);assert.equal(paid.providerScripts.some(s=>s.src.includes('googlesyndication')),false,'Paid booking pages keep display ads off while preserving chosen conversion measurement.');
 const selected=consentHarness();selected.click('cookie-manage');assert.equal(selected.nodes.get('cookie-preferences').hidden,false);assert.ok(['analytics','advertising','affiliate'].every(k=>!selected.nodes.get('pref-'+k).checked));selected.nodes.get('pref-analytics').checked=true;selected.click('cookie-save');assert.equal(selected.api.hasConsent('analytics'),true);assert.equal(selected.api.hasConsent('advertising'),false);assert.equal(selected.providerScripts.length,1);
 const returning=consentHarness({stored:selected.storage.get('bb-cookie-consent')});assert.equal(returning.api.hasConsent('analytics'),true);assert.equal(returning.nodes.get('cookie-banner').hidden,true);
