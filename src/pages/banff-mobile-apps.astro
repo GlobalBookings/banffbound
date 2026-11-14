@@ -1,4 +1,5 @@
 ---
+import { banffAppStoreLink } from '../data/banffAppStore';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { banffBoundApps, banffMobileAppsReviewedOn } from '../data/banffMobileApps';
@@ -13,7 +14,7 @@ const apps = [
     summary: 'Browse places on an interactive map, save stops and build days around Banff, Lake Louise or Canmore. Keep your itinerary, checklist and notes on your device.',
     tip: 'Save your hotel, a few meal options and stops for your first day before you leave.',
     owned: true,
-    primary: { label: 'App Store', href: banffBound.store },
+    primary: { label: 'App Store', href: banffAppStoreLink(banffBound.id, 'apps-guide') },
     secondary: banffBound.more,
   },
   {
@@ -22,7 +23,7 @@ const apps = [
     summary: 'Take a free six-stop walk from Banff Avenue Square to the Bow River. Optional one-time purchases add longer walks and a scenic driving tour.',
     tip: 'The free Marin narration and town map are included. Download other narration while you have a connection.',
     owned: true,
-    primary: { label: 'App Store', href: audioWalk.store },
+    primary: { label: 'App Store', href: banffAppStoreLink(audioWalk.id, 'apps-guide') },
     secondary: audioWalk.more,
   },
   {
