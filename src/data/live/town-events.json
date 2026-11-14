@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-14T08:42:13.044Z",
+  "retrievedAt": "2026-11-14T16:24:53.698Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-14T08:42:12.998Z",
-      "sourceUpdatedAt": "2026-11-14T08:42:12.000Z",
-      "sourceUpdatedAtText": "Sat, 14 Nov 2026 01:42:12 -0700",
+      "retrievedAt": "2026-11-14T16:24:53.696Z",
+      "sourceUpdatedAt": "2026-11-14T16:24:52.000Z",
+      "sourceUpdatedAtText": "Sat, 14 Nov 2026 09:24:52 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -84,9 +84,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-14T08:42:13.042Z",
-      "sourceUpdatedAt": "2026-11-14T08:42:12.000Z",
-      "sourceUpdatedAtText": "Sat, 14 Nov 2026 01:42:12 -0700",
+      "retrievedAt": "2026-11-14T16:24:53.665Z",
+      "sourceUpdatedAt": "2026-11-14T16:24:52.000Z",
+      "sourceUpdatedAtText": "Sat, 14 Nov 2026 09:24:52 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
