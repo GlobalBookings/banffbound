@@ -1,0 +1,43 @@
+---
+import { banffBoundApps, banffMobileAppsPath } from '../data/banffMobileApps';
+---
+<section class="mobile-apps" aria-labelledby="mobile-apps-heading">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="mobile-apps-heading">Take Banff with you</h2>
+      <a href={banffMobileAppsPath}>Top 10 apps for Banff <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="app-grid">
+      {banffBoundApps.map(app => <article class="app-card">
+        <img src={app.icon} alt="" width="64" height="64" decoding="async" />
+        <div>
+          <h3>{app.name}</h3>
+          <p>{app.description}</p>
+          <div class="app-links">
+            <a class="btn store-link" href={app.store} aria-label={`Download ${app.name} on the App Store`}>Download on the App Store <span aria-hidden="true">↗</span></a>
+            <a class="more-link" href={app.more.href}>{app.more.label} <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .mobile-apps { background:#e9efe5; padding:clamp(1.75rem,4vw,3rem) 0; }
+  .section-heading { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:.35rem 1rem; margin-bottom:1rem; }
+  .section-heading h2 { margin:0; font-size:clamp(1.75rem,4vw,2.5rem); }
+  .section-heading a,.more-link { color:var(--color-primary); font-weight:700; }
+  .section-heading a { display:inline-flex; align-items:center; gap:.4rem; min-height:44px; }
+  .app-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+  .app-card { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; gap:1rem; padding:1.25rem; border:1px solid #cedbd0; border-radius:12px; background:var(--color-bg); }
+  .app-card img { border-radius:14px; }
+  .app-card h3 { margin:0 0 .4rem; font-size:1.4rem; }
+  .app-card p { margin:0 0 .7rem; max-width:41ch; }
+  .app-links { display:flex; flex-wrap:wrap; align-items:center; gap:.4rem .85rem; }
+  .store-link { gap:.45rem; min-height:44px; padding:.52rem .75rem; font-size:.88rem; background:#193e2d; color:white; }
+  .store-link:hover { background:#28563f; color:white; }
+  .more-link { display:inline-flex; align-items:center; gap:.35rem; min-height:44px; font-size:.92rem; }
+  @media (max-width:700px) { .app-grid { grid-template-columns:1fr; } }
+  @media (max-width:390px) { .app-card { gap:.65rem; padding:1rem; } .app-card img { width:50px; height:50px; border-radius:11px; } }
+</style>
