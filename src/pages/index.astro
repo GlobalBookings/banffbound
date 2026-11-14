@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WinterStart from '../components/WinterStart.astro';
+import BanffMobileAppCards from '../components/BanffMobileAppCards.astro';
 import townSnapshot from '../data/live/town-events.json';
 import { TOWN_FEEDS,townFeedView,mountainTime } from '../data/townFeedModel.mjs';
 import { blogPosts } from '../data/blogPosts';
@@ -28,7 +29,7 @@ const upcomingEvents = townCalendar.items.slice(0,3);
 const homeDescription = "Plan Banff and Lake Louise around a place to stay. Compare room choices, build a ski day, choose winter activities and explore nearby mountain towns.";
 ---
 
-<BaseLayout title="Banff Trip Planning: Stays, Winter Days & Mountain Towns" description={homeDescription} lastUpdated="2026-11-02">
+<BaseLayout title="Banff Trip Planning: Stays, Winter Days & Mountain Towns" description={homeDescription} lastUpdated="2026-11-13">
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -80,6 +81,8 @@ const homeDescription = "Plan Banff and Lake Louise around a place to stay. Comp
       </figure>
     </div>
   </section>
+
+  <BanffMobileAppCards />
 
   <WinterStart />
 

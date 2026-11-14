@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { banffAudioWalkStoreLink } from '../data/banffAudioWalk';
+import { banffMobileAppsPath } from '../data/banffMobileApps';
 
 const store = banffAudioWalkStoreLink('landing');
 const sample = 'https://audio.banffbound.com/downtown-loop/3/marin/b43ab7db7ee71952c1bd645c06faa01446aff50e9517e88243bb62ee5881e06c/loop-square-story.m4a';
@@ -81,13 +82,14 @@ const tours = [
       <p>Choose Marin or Cedar and download the narration for the tour while you’re online. Use the offline town map to find listening stops, coffee and washrooms, or read the full English walking transcripts. Guided walk narration is in English.</p>
       <p>Check <a href="/conditions/">current conditions</a> before heading out and follow posted signs and closures. Park passes and attraction tickets are separate.</p>
       <a class="btn store-link" href={store}>Get Banff Audio Walk</a>
-      <p class="help-links"><a href="/banff-audio-walk/support.html">App support</a><a href="/banff-audio-walk/privacy.html">App privacy</a></p>
+      <p class="help-links"><a href="/banff-audio-walk/support.html">App support</a><a href="/banff-audio-walk/privacy.html">App privacy</a><a href={banffMobileAppsPath}>Top 10 apps for Banff</a></p>
     </section>
   </div>
 </BaseLayout>
 
 <script>
   import { banffAudioWalkStoreLink } from '../data/banffAudioWalk';
+import { banffMobileAppsPath } from '../data/banffMobileApps';
 
   const source = new URLSearchParams(location.search).get('from');
   if (source === 'downtown' || source === 'bow-falls' || source === 'itinerary') {

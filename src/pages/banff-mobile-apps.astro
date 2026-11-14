@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { banffBoundApps, banffMobileAppsReviewedOn } from '../data/banffMobileApps';
+
+const title = 'Top 10 Mobile Apps for Banff National Park';
+const description = 'Find the best Banff apps for trip planning, audio tours, Roam buses, hiking, offline maps, road conditions, weather and skiing.';
+const [banffBound, audioWalk] = banffBoundApps;
+const apps = [
+  {
+    ...banffBound,
+    use: 'Best for planning a Banff trip',
+    summary: 'Browse places on an interactive map, save stops and build days around Banff, Lake Louise or Canmore. Keep your itinerary, checklist and notes on your device.',
+    tip: 'Save your hotel, a few meal options and stops for your first day before you leave.',
+    owned: true,
+    primary: { label: 'App Store', href: banffBound.store },
+    secondary: banffBound.more,
+  },
+  {
+    ...audioWalk,
+    use: 'Best for hearing the stories behind downtown Banff',
+    summary: 'Take a free six-stop walk from Banff Avenue Square to the Bow River. Optional one-time purchases add longer walks and a scenic driving tour.',
+    tip: 'The free Marin narration and town map are included. Download other narration while you have a connection.',
+    owned: true,
+    primary: { label: 'App Store', href: audioWalk.store },
+    secondary: audioWalk.more,
+  },
+  {
+    id: 'parks-canada',
+    name: 'Parks Canada',
+    use: 'Best for official park visitor information',
+    summary: 'Find park information, save places and explore self-guided tours. Use its offline features to keep useful details handy when coverage drops.',
+    tip: 'Before you hike, read the current Parks Canada trail report and any closure notices for your route.',
+    platform: 'iOS and Android',
+    primary: { label: 'Parks Canada app', href: 'https://parks.canada.ca/voyage-travel/app' },
+    secondary: { label: 'Banff trail conditions', href: 'https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/etat-sentiers-trail-conditions' },
+  },
+  {
+    id: 'transit',
+    name: 'Transit',
+    use: 'Best for Roam buses',
+    summary: 'Roam recommends Transit for bus locations, schedules and fare purchases around Banff, Canmore and Lake Louise.',
+    tip: 'Look up the last bus back before you leave. Check any separate reservation requirement for the service you plan to take.',
+    platform: 'iOS and Android',
+    primary: { label: 'Get Transit', href: 'https://transitapp.com/en/region/banff' },
+    secondary: { label: 'Roam live bus information', href: 'https://roamtransit.com/live-bus-locations/' },
+  },
+  {
+    id: 'google-maps',
+    name: 'Google Maps',
+    use: 'Best for driving directions offline',
+    summary: 'Download the area covering your drive, then save your accommodation and stops. The entire route needs to fit inside your downloaded map.',
+    tip: 'Offline directions are for driving. Check bus timetables, traffic and road closures while connected.',
+    platform: 'iOS and Android',
+    primary: { label: 'App Store', href: 'https://apps.apple.com/app/google-maps/id585027354' },
+    secondary: { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.google.android.apps.maps' },
+    source: { label: 'Google Maps offline instructions', href: 'https://support.google.com/maps/answer/6291838?co=GENIE.Platform%3DiOS&hl=en' },
+  },
+  {
+    id: 'alltrails',
+    name: 'AllTrails',
+    use: 'Best for comparing hikes',
+    summary: 'Compare Banff hikes by distance and elevation, then read recent trail reports. AllTrails offers offline map downloads on its Plus and Peak plans.',
+    tip: 'Use the Parks Canada trail report and posted signs to check current access.',
+    platform: 'iOS and Android',
+    primary: { label: 'AllTrails for Banff', href: 'https://www.alltrails.com/parks/canada/alberta/banff-national-park' },
+    secondary: { label: 'Offline map options', href: 'https://support.alltrails.com/hc/en-us/articles/37213318235028-How-to-download-maps-to-your-phone-for-offline-use' },
+  },
+  {
+    id: 'alberta-511',
+    name: '511 Alberta',
+    use: 'Best for highway conditions',
+    summary: 'Check official reports on closures, construction and road conditions before driving towards Banff or Lake Louise.',
+    tip: 'Check again before starting a longer leg, especially if you are travelling the Icefields Parkway.',
+    platform: 'iOS and Android',
+    primary: { label: 'Get 511 Alberta', href: 'https://511.alberta.ca/about/mobileapp' },
+    secondary: { label: 'Banff road and trail reports', href: '/conditions/' },
+  },
+  {
+    id: 'weathercan',
+    name: 'WeatherCAN',
+    use: 'Best for Canadian weather alerts',
+    summary: 'Save Banff and Lake Louise for local forecasts, radar and alerts from Environment and Climate Change Canada.',
+    tip: 'Check the forecast for your actual destination and elevation when heading into the mountains.',
+    platform: 'iOS and Android',
+    primary: { label: 'Get WeatherCAN', href: 'https://www.canada.ca/en/mobile/weathercan.html' },
+  },
+  {
+    id: 'skibig3',
+    name: 'SkiBig3',
+    use: 'Best for a resort ski day',
+    summary: 'Compare snow reports, webcams, resort maps and ski shuttle schedules for Sunshine Village, Lake Louise and Mount Norquay.',
+    tip: 'Check the first and last shuttle for your resort and date.',
+    platform: 'iOS and Android',
+    primary: { label: 'Get SkiBig3', href: 'https://www.skibig3.com/skibig3-app/' },
+    secondary: { label: 'Plan a Banff ski day', href: '/ski-day-planner/' },
+  },
+  {
+    id: 'avalanche-canada',
+    name: 'Avalanche Canada',
+    use: 'Best for checking avalanche forecasts',
+    summary: 'Find the current avalanche forecast and recent field observations for the region you plan to visit.',
+    tip: 'For avalanche terrain, use the forecast alongside appropriate training, gear and a trip plan.',
+    platform: 'iOS and Android',
+    primary: { label: 'Get Avalanche Canada', href: 'https://avalanche.ca/app' },
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: title,
+  numberOfItems: apps.length,
+  itemListElement: apps.map((app, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: app.name,
+    url: `https://banffbound.com/banff-mobile-apps/#${app.id}`,
+  })),
+};
+---
+
+<BaseLayout {title} {description} lastUpdated={banffMobileAppsReviewedOn} image="/images/blog/bow-falls-walk.webp">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <div class="container apps-guide">
+    <Breadcrumbs items={[{ label: 'Banff mobile apps' }]} />
+    <header>
+      <h1>{title}</h1>
+      <p class="lead">Download the apps that match your trip. Start with a planner, add Transit if you’re relying on Roam, and save a driving map before you leave Wi-Fi.</p>
+      <p class="review-note">BanffBound and Banff Audio Walk are our apps. We chose the other eight for specific jobs travellers need in the park. Listings and features checked <time datetime={banffMobileAppsReviewedOn}>13 November 2026</time>.</p>
+    </header>
+    <nav class="jump-links" aria-label="Jump to an app">
+      {apps.map(app => <a href={`#${app.id}`}>{app.name}</a>)}
+    </nav>
+    <ol class="app-list">
+      {apps.map((app, index) => <li id={app.id}>
+        <div class="app-title">
+          {'icon' in app && <img src={app.icon} alt="" width="56" height="56" decoding="async" />}
+          <div>
+            <h2><span class="number">{index + 1}.</span> {app.name}</h2>
+            <p class="use">{app.use}</p>
+          </div>
+        </div>
+        <p>{app.summary}</p>
+        <p class="trip-tip">{app.tip}</p>
+        <p class="platform">{app.platform}{'owned' in app && ' · Made by us'}</p>
+        <div class="app-links">
+          <a class="app-button" href={app.primary.href} aria-label={`${app.primary.label} for ${app.name}`}>{app.primary.label} <span aria-hidden="true">↗</span></a>
+          {'secondary' in app && app.secondary && <a href={app.secondary.href}>{app.secondary.label} <span aria-hidden="true">{app.secondary.href.startsWith('/') ? '→' : '↗'}</span></a>}
+          {'source' in app && app.source && <a href={app.source.href}>{app.source.label} <span aria-hidden="true">↗</span></a>}
+        </div>
+      </li>)}
+    </ol>
+    <aside class="offline">
+      <h2>Before you lose signal</h2>
+      <p>Download your maps and any audio you want to use. Save your booking confirmations, pickup points and return times, then check the downloads in airplane mode.</p>
+      <a href="/packing-list/">Open the Banff packing checklist →</a>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .apps-guide { max-width:960px; padding-top:1.4rem; padding-bottom:3.5rem; }
+  header { max-width:760px; margin-bottom:1.5rem; }
+  h1 { max-width:15ch; margin:0 0 .8rem; font-size:clamp(2.5rem,6vw,4.3rem); line-height:1.04; }
+  .lead { font-size:1.12rem; line-height:1.65; }
+  .review-note,.platform { color:#40584a; font-size:.9rem; }
+  .jump-links { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.4rem; }
+  .jump-links a { display:inline-flex; align-items:center; min-height:44px; border:1px solid #c8d5cb; border-radius:5px; padding:.45rem .65rem; font-size:.88rem; text-decoration:none; color:var(--color-primary); }
+  .jump-links a:hover { background:#e9efe5; }
+  .app-list { list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; padding:0; margin:0; }
+  .app-list li { display:flex; flex-direction:column; min-width:0; padding:1.2rem; border:1px solid #d2ded3; border-radius:10px; background:white; scroll-margin-top:118px; }
+  .app-list li:target { outline:2px solid #65826a; outline-offset:3px; }
+  .app-title { display:flex; align-items:flex-start; gap:.75rem; margin-bottom:.65rem; }
+  .app-title img { border-radius:12px; flex:none; }
+  .app-title h2 { margin:0 0 .25rem; font-size:1.55rem; line-height:1.17; }
+  .number { font-variant-numeric:tabular-nums; color:#54715c; }
+  .app-list p { margin:0 0 .65rem; }
+  .app-list .use { margin:0; color:#40584a; font-size:.9rem; font-weight:750; }
+  .trip-tip { background:#eff3ed; border-radius:5px; padding:.55rem .65rem; font-size:.93rem; }
+  .platform { padding-top:.1rem; }
+  .app-links { display:flex; flex-wrap:wrap; align-items:center; gap:.35rem .75rem; margin-top:auto; }
+  .app-links a { display:inline-flex; gap:.35rem; align-items:center; min-height:44px; font-size:.9rem; font-weight:700; }
+  .app-button { background:#193e2d; color:white; padding:.35rem .75rem; border-radius:5px; text-decoration:none; }
+  .app-button:hover { background:#28563f; color:white; }
+  .offline { margin-top:1.6rem; background:#e9efe5; border-radius:10px; padding:1.2rem; }
+  .offline h2 { margin:0 0 .35rem; font-size:1.65rem; }
+  @media (max-width:640px) { .app-list { grid-template-columns:1fr; } }
+</style>
