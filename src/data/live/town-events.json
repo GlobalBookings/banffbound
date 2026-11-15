@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-15T05:14:37.982Z",
+  "retrievedAt": "2026-11-15T13:34:29.388Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-15T05:14:37.979Z",
-      "sourceUpdatedAt": "2026-11-15T05:14:37.000Z",
-      "sourceUpdatedAtText": "Sat, 14 Nov 2026 22:14:37 -0700",
+      "retrievedAt": "2026-11-15T13:34:29.346Z",
+      "sourceUpdatedAt": "2026-11-15T13:34:29.000Z",
+      "sourceUpdatedAtText": "Sun, 15 Nov 2026 06:34:29 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -78,15 +78,26 @@
           "dates": "November 28, 2026",
           "times": "08:30 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Mo Valley Mile & 5K",
+          "link": "https://banff.ca/Calendar.aspx?EID=35527",
+          "description": "The Mo Valley Mile & 5K is back for a third year in Banff! To promote physical and mental well-being during Movember, you can choose between a quick mile or a bit of a longer distance with a 5K.",
+          "publishedAt": "2026-11-10T21:35:12.000Z",
+          "startDate": "2026-11-29",
+          "endDate": "2026-11-29",
+          "dates": "November 29, 2026",
+          "times": "12:00 AM - 11:59 PM",
+          "location": "Banff, AB T1L 1A1"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-15T05:14:37.928Z",
-      "sourceUpdatedAt": "2026-11-15T05:14:37.000Z",
-      "sourceUpdatedAtText": "Sat, 14 Nov 2026 22:14:37 -0700",
+      "retrievedAt": "2026-11-15T13:34:29.386Z",
+      "sourceUpdatedAt": "2026-11-15T13:34:29.000Z",
+      "sourceUpdatedAtText": "Sun, 15 Nov 2026 06:34:29 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
