@@ -1,29 +1,18 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-17T00:00:13.030Z",
+  "retrievedAt": "2026-11-17T07:44:34.611Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-17T00:00:13.012Z",
-      "sourceUpdatedAt": "2026-11-17T00:00:12.000Z",
-      "sourceUpdatedAtText": "Mon, 16 Nov 2026 17:00:12 -0700",
+      "retrievedAt": "2026-11-17T07:44:34.608Z",
+      "sourceUpdatedAt": "2026-11-17T07:44:34.000Z",
+      "sourceUpdatedAtText": "Tue, 17 Nov 2026 00:44:34 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
-        {
-          "title": "Reel Time: The Christophers",
-          "link": "https://banff.ca/Calendar.aspx?EID=35416",
-          "description": "Reel Time features some of the best films from the Toronto International Film Festival. Organized by Banff Centre, Reel Time has brought alternative cinema to the Bow Valley for over fifteen years.",
-          "publishedAt": "2026-10-23T21:25:22.000Z",
-          "startDate": "2026-11-16",
-          "endDate": "2026-11-16",
-          "dates": "November 16, 2026",
-          "times": "07:00 PM - 11:59 PM",
-          "location": "229 Bear StreetBanff, AB"
-        },
         {
           "title": "Decolonizing the Narrative Conversation Series with Leelay Gilday",
           "link": "https://banff.ca/Calendar.aspx?EID=35418",
@@ -89,15 +78,26 @@
           "dates": "November 29, 2026",
           "times": "12:00 AM - 11:59 PM",
           "location": "Banff, AB T1L 1A1"
+        },
+        {
+          "title": "Literary Cabaret: Early Career Writers of Poetry - Stanza 2",
+          "link": "https://banff.ca/Calendar.aspx?EID=35421",
+          "description": "You are invited to an evening celebrating the next generation of storytellers, bards and troubadours as part of our Literary Cabaret series, featuring the Early Career Writers of Poetry's Residency at Banff Centre.",
+          "publishedAt": "2026-10-23T22:11:24.000Z",
+          "startDate": "2026-12-01",
+          "endDate": "2026-12-01",
+          "dates": "December 1, 2026",
+          "times": "07:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-17T00:00:13.028Z",
-      "sourceUpdatedAt": "2026-11-17T00:00:12.000Z",
-      "sourceUpdatedAtText": "Mon, 16 Nov 2026 17:00:12 -0700",
+      "retrievedAt": "2026-11-17T07:44:34.602Z",
+      "sourceUpdatedAt": "2026-11-17T07:44:34.000Z",
+      "sourceUpdatedAtText": "Tue, 17 Nov 2026 00:44:34 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
