@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-18T00:39:31.490Z",
+  "retrievedAt": "2026-11-18T09:49:08.035Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-18T00:39:31.339Z",
-      "sourceUpdatedAt": "2026-11-18T00:39:30.000Z",
-      "sourceUpdatedAtText": "Tue, 17 Nov 2026 17:39:30 -0700",
+      "retrievedAt": "2026-11-18T09:49:08.032Z",
+      "sourceUpdatedAt": "2026-11-18T09:49:07.000Z",
+      "sourceUpdatedAtText": "Wed, 18 Nov 2026 02:49:07 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -100,15 +100,37 @@
           "dates": "December 1, 2026",
           "times": "07:00 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "On Other Archives Open Studios",
+          "link": "https://banff.ca/Calendar.aspx?EID=35422",
+          "description": "Visit the studios of this fall’s thematic Visual Arts residency at Banff Centre, On Other Archives, which invited artists to think critically about the archive as a method or 'technology' for re-storying social and cultural narratives.",
+          "publishedAt": "2026-10-23T22:14:53.000Z",
+          "startDate": "2026-12-02",
+          "endDate": "2026-12-02",
+          "dates": "December 2, 2026",
+          "times": "04:00 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Laila Biali | Wintersongs",
+          "link": "https://banff.ca/Calendar.aspx?EID=35403",
+          "description": "Grammy-nominated and JUNO Award-winning singer-songwriter and pianist Laila Biali returns to Banff Centre on December 2 with Wintersongs, a captivating musical celebration of the season inspired by the snowy Rocky Mountains. Reserve your seats now to enjoy a very merry holiday show.",
+          "publishedAt": "2026-10-08T21:42:21.000Z",
+          "startDate": "2026-12-02",
+          "endDate": "2026-12-02",
+          "dates": "December 2, 2026",
+          "times": "07:30 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-18T00:39:31.488Z",
-      "sourceUpdatedAt": "2026-11-18T00:39:30.000Z",
-      "sourceUpdatedAtText": "Tue, 17 Nov 2026 17:39:30 -0700",
+      "retrievedAt": "2026-11-18T09:49:08.026Z",
+      "sourceUpdatedAt": "2026-11-18T09:49:07.000Z",
+      "sourceUpdatedAtText": "Wed, 18 Nov 2026 02:49:07 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
