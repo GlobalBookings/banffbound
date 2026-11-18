@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T17:26:09.213Z",
+  "updatedAt": "2026-11-18T00:39:31.114Z",
   "fireDanger": "low",
   "summary": {
     "total": 56,
@@ -414,8 +414,8 @@
           "difficulty": "Easy",
           "status": "open",
           "condition": "Thin snow cover.",
-          "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
-          "lastUpdated": "2026-10-25"
+          "comment": "Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed; Trail groomed; Insufficient snow for tracksetting for cross-country skiing",
+          "lastUpdated": "2026-11-17"
         },
         {
           "name": "Peyto Trail",
@@ -917,8 +917,8 @@
       "difficulty": "Easy",
       "status": "open",
       "condition": "Thin snow cover.",
-      "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed",
-      "lastUpdated": "2026-10-25",
+      "comment": "Thin snow cover over uneven surface. More snow is needed to cover rocks, roots and creeks; No dogs allowed; Trail groomed; Insufficient snow for tracksetting for cross-country skiing",
+      "lastUpdated": "2026-11-17",
       "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {

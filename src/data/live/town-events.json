@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-17T17:26:09.236Z",
+  "retrievedAt": "2026-11-18T00:39:31.490Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-17T17:26:09.195Z",
-      "sourceUpdatedAt": "2026-11-17T17:26:08.000Z",
-      "sourceUpdatedAtText": "Tue, 17 Nov 2026 10:26:08 -0700",
+      "retrievedAt": "2026-11-18T00:39:31.339Z",
+      "sourceUpdatedAt": "2026-11-18T00:39:30.000Z",
+      "sourceUpdatedAtText": "Tue, 17 Nov 2026 17:39:30 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -34,6 +34,17 @@
           "dates": "November 20, 2026",
           "times": "08:30 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Live from the Rockies: Duo Solista & Nan Hughes",
+          "link": "https://banff.ca/Calendar.aspx?EID=35558",
+          "description": "Live from the Rockies presents a heartfelt afternoon of chamber music, featuring DUO SOLISTA — the husband-and-wife pairing of pianist Dmitry Nesterov and violinist Olga Kotova — alongside acclaimed Banff-based mezzo-soprano NAN HUGHES.",
+          "publishedAt": "2026-11-17T17:59:10.000Z",
+          "startDate": "2026-11-22",
+          "endDate": "2026-11-22",
+          "dates": "November 22, 2026",
+          "times": "02:00 PM - 11:59 PM",
+          "location": "Banff, AB T1L 1A1"
         },
         {
           "title": "Literary Cabaret: Early Career Writers of Poetry - Stanza 1",
@@ -95,9 +106,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-17T17:26:09.233Z",
-      "sourceUpdatedAt": "2026-11-17T17:26:08.000Z",
-      "sourceUpdatedAtText": "Tue, 17 Nov 2026 10:26:08 -0700",
+      "retrievedAt": "2026-11-18T00:39:31.488Z",
+      "sourceUpdatedAt": "2026-11-18T00:39:30.000Z",
+      "sourceUpdatedAtText": "Tue, 17 Nov 2026 17:39:30 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
