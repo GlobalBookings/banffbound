@@ -1,29 +1,18 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-19T01:45:27.552Z",
+  "retrievedAt": "2026-11-19T09:58:02.966Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-19T01:45:27.546Z",
-      "sourceUpdatedAt": "2026-11-19T01:45:27.000Z",
-      "sourceUpdatedAtText": "Wed, 18 Nov 2026 18:45:27 -0700",
+      "retrievedAt": "2026-11-19T09:58:02.664Z",
+      "sourceUpdatedAt": "2026-11-19T09:58:01.000Z",
+      "sourceUpdatedAtText": "Thu, 19 Nov 2026 02:58:01 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
-        {
-          "title": "Decolonizing the Narrative Conversation Series with Leelay Gilday",
-          "link": "https://banff.ca/Calendar.aspx?EID=35418",
-          "description": "Join us for a conversation with singer/songwriter Leelay Gilday, Banff Centre alumna, former program faculty, and featured artist. Throughout her career she has integrated her Dene language into her music to challenge the norms of mainstream music trends and styles. Even as her music has reached acc",
-          "publishedAt": "2026-10-23T21:34:44.000Z",
-          "startDate": "2026-11-18",
-          "endDate": "2026-11-18",
-          "dates": "November 18, 2026",
-          "times": "07:00 PM - 11:59 PM",
-          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
-        },
         {
           "title": "Banff Christmas Market",
           "link": "https://banff.ca/Calendar.aspx?EID=35563",
@@ -133,15 +122,26 @@
           "dates": "December 2, 2026",
           "times": "07:30 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Literary Cabaret: Early Career Writers of Poetry - Stanza 3",
+          "link": "https://banff.ca/Calendar.aspx?EID=35423",
+          "description": "Join Banff Centre for an evening celebrating the next generation of storytellers, bards and troubadours as part of our Literary Cabaret series, featuring the Early Career Writers of Poetry's Residency at Banff Centre.",
+          "publishedAt": "2026-10-23T22:18:18.000Z",
+          "startDate": "2026-12-03",
+          "endDate": "2026-12-03",
+          "dates": "December 3, 2026",
+          "times": "07:00 PM - 11:59 PM",
+          "location": "Banff, AB T1L 1A1"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-19T01:45:27.535Z",
-      "sourceUpdatedAt": "2026-11-19T01:45:27.000Z",
-      "sourceUpdatedAtText": "Wed, 18 Nov 2026 18:45:27 -0700",
+      "retrievedAt": "2026-11-19T09:58:02.964Z",
+      "sourceUpdatedAt": "2026-11-19T09:58:01.000Z",
+      "sourceUpdatedAtText": "Thu, 19 Nov 2026 02:58:01 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
