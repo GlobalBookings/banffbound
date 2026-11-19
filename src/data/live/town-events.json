@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-19T09:58:02.966Z",
+  "retrievedAt": "2026-11-19T18:56:54.602Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-19T09:58:02.664Z",
-      "sourceUpdatedAt": "2026-11-19T09:58:01.000Z",
-      "sourceUpdatedAtText": "Thu, 19 Nov 2026 02:58:01 -0700",
+      "retrievedAt": "2026-11-19T18:56:54.597Z",
+      "sourceUpdatedAt": "2026-11-19T18:56:54.000Z",
+      "sourceUpdatedAtText": "Thu, 19 Nov 2026 11:56:54 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -139,13 +139,19 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-19T09:58:02.964Z",
-      "sourceUpdatedAt": "2026-11-19T09:58:01.000Z",
-      "sourceUpdatedAtText": "Thu, 19 Nov 2026 02:58:01 -0700",
+      "retrievedAt": "2026-11-19T18:56:54.436Z",
+      "sourceUpdatedAt": "2026-11-19T18:56:54.000Z",
+      "sourceUpdatedAtText": "Thu, 19 Nov 2026 11:56:54 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
+        {
+          "title": "Town of Banff brings more power to the people (in EVs)",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1938",
+          "description": "The Town of Banff has installed six new electric vehicle (EV) charging stalls in the downtown Bear Street Parkade to help residents and visitors charge while working, shopping, accessing services and enjoying downtown Banff.",
+          "publishedAt": "2026-11-19T16:59:26.000Z"
+        },
         {
           "title": "Banff Christmas Market — Nov. 19–Dec. 13",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1937",
