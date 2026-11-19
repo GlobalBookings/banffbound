@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-18T18:41:09.273Z",
+  "retrievedAt": "2026-11-19T01:45:27.552Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-18T18:41:09.076Z",
-      "sourceUpdatedAt": "2026-11-18T18:41:08.000Z",
-      "sourceUpdatedAtText": "Wed, 18 Nov 2026 11:41:08 -0700",
+      "retrievedAt": "2026-11-19T01:45:27.546Z",
+      "sourceUpdatedAt": "2026-11-19T01:45:27.000Z",
+      "sourceUpdatedAtText": "Wed, 18 Nov 2026 18:45:27 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -23,6 +23,17 @@
           "dates": "November 18, 2026",
           "times": "07:00 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Banff Christmas Market",
+          "link": "https://banff.ca/Calendar.aspx?EID=35563",
+          "description": "The 2026 Banff Christmas Market is a magical holiday experience that blends the charm of a traditional European market with the breathtaking beauty of the Canadian Rocky Mountains. With more than 200 artisan vendors, 15 days of holiday magic, live music, an outdoor fire lounge, Santa’s House and Wor",
+          "publishedAt": "2026-11-18T22:31:22.000Z",
+          "startDate": "2026-11-19",
+          "endDate": "2026-12-13",
+          "dates": "November 19, 2026 - December 13, 2026",
+          "times": "12:00 AM - 11:59 PM",
+          "location": "Banff, AB T1L 1A1"
         },
         {
           "title": "William Prince | On Rolls The Wheel Tour",
@@ -128,13 +139,19 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-18T18:41:09.272Z",
-      "sourceUpdatedAt": "2026-11-18T18:41:08.000Z",
-      "sourceUpdatedAtText": "Wed, 18 Nov 2026 11:41:08 -0700",
+      "retrievedAt": "2026-11-19T01:45:27.535Z",
+      "sourceUpdatedAt": "2026-11-19T01:45:27.000Z",
+      "sourceUpdatedAtText": "Wed, 18 Nov 2026 18:45:27 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
+        {
+          "title": "Banff Christmas Market — Nov. 19–Dec. 13",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1937",
+          "description": "The 20256Banff Christmas Market is a magical holiday experience that blends the charm of a traditional Eropean market with the breathtaking beauty of the Canadian Rocky Mountains.",
+          "publishedAt": "2026-11-18T22:34:00.000Z"
+        },
         {
           "title": "Blackfoot Confederacy and Town of Banff enter new phase of cooperation",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1936",

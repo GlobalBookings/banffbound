@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-18T18:41:18.545Z",
+  "updatedAt": "2026-11-19T01:45:27.365Z",
   "fireDanger": "low",
   "summary": {
     "total": 56,
-    "open": 34,
-    "caution": 18,
+    "open": 37,
+    "caution": 15,
     "closed": 4
   },
   "areas": [
@@ -17,7 +17,7 @@
           "status": "caution",
           "condition": "Variable conditions.",
           "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Marsh Winter Loop",
@@ -25,7 +25,7 @@
           "status": "caution",
           "condition": "Variable conditions.",
           "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Spray Winter Connector",
@@ -33,7 +33,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Check the important bulletins for more information; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Stewart Canyon Winter Trail",
@@ -41,7 +41,7 @@
           "status": "caution",
           "condition": "Variable conditions.",
           "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Johnston Canyon Winter Trail",
@@ -49,31 +49,31 @@
           "status": "closed",
           "condition": "Closed for maintenance.",
           "comment": "Check the important bulletins for more information",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Sulphur Mountain Winter Trail",
           "difficulty": "Moderate",
           "status": "caution",
-          "condition": "Variable conditions.",
+          "condition": "Snow covered.",
           "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Sundance Canyon Winter Trail",
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-11-17"
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Tunnel Mountain Summit Winter Trail",
           "difficulty": "Moderate",
           "status": "caution",
-          "condition": "Variable conditions.",
+          "condition": "Snow covered.",
           "comment": "Stay on designated trails and viewpoints; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         }
       ]
     },
@@ -84,41 +84,41 @@
           "name": "Johnson Lake Winter Trail",
           "difficulty": "Easy",
           "status": "caution",
-          "condition": "Variable conditions.",
-          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-11-17"
+          "condition": "Snow covered.",
+          "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Surprise Corner to Hoodoos Winter Trail",
           "difficulty": "Moderate",
           "status": "caution",
           "condition": "Variable conditions.",
-          "comment": "Stay on trail; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-          "lastUpdated": "2026-11-17"
+          "comment": "Stay on trail; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Upper Stoney Winter Loop",
           "difficulty": "Moderate",
           "status": "caution",
-          "condition": "Variable conditions.",
+          "condition": "Snow covered.",
           "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Sulphur Mountain Westside Winter Trail",
           "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Thin snow cover.",
+          "status": "caution",
+          "condition": "Snow covered.",
           "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Ink Pots Winter Trail",
           "difficulty": "Moderate",
-          "status": "open",
-          "condition": "Thin snow cover.",
+          "status": "caution",
+          "condition": "Snow covered.",
           "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended; Access through Moose Meadows parking lot / Johnston Creek",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         }
       ]
     },
@@ -131,7 +131,7 @@
           "status": "open",
           "condition": "Thin snow cover.",
           "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Spray River Winter: East Trail",
@@ -139,7 +139,7 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Check the important bulletins for more information",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Sundance Winter Trail",
@@ -147,7 +147,7 @@
           "status": "open",
           "condition": "Thin snow cover.",
           "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Tunnel Mountain Winter Trails",
@@ -155,7 +155,7 @@
           "status": "open",
           "condition": "Thin snow cover.",
           "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Healy Creek Winter Trail",
@@ -163,23 +163,23 @@
           "status": "open",
           "condition": "Thin snow cover.",
           "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Cascade Valley Winter Trail: Lake Minnewanka parking lot to Upper Bankhead",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "No snow.",
+          "condition": "Thin snow cover.",
           "comment": "Tracksetting has not yet begun",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Cascade Valley Winter Trail: Lake Minnewanka parking lot to Cascade River bridge",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "No snow.",
+          "condition": "Thin snow cover.",
           "comment": "Tracksetting has not yet begun",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Cascade Valley Winter Trail: Cascade River bridge to Stoney Creek",
@@ -187,7 +187,7 @@
           "status": "open",
           "condition": "Thin snow cover.",
           "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Goat Creek Winter Trail",
@@ -195,7 +195,7 @@
           "status": "open",
           "condition": "Thin snow cover.",
           "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Check the important bulletins for more information",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Brewster Creek Winter Trail",
@@ -203,7 +203,7 @@
           "status": "open",
           "condition": "Thin snow cover.",
           "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         }
       ]
     },
@@ -213,10 +213,10 @@
         {
           "name": "Tunnel Mountain Multi-use Winter Trails",
           "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
+          "status": "open",
+          "condition": "Thin snow cover.",
           "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Spray River East Winter Trail",
@@ -224,39 +224,39 @@
           "status": "closed",
           "condition": "Partially Closed",
           "comment": "Biking excluding e-bikes is allowed; Check the important bulletins for more information; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Sundance Winter Trail",
           "difficulty": "Easy",
-          "status": "caution",
-          "condition": "Variable conditions.",
+          "status": "open",
+          "condition": "Thin snow cover.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Banff Avenue Winter Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
+          "status": "open",
+          "condition": "Thin snow cover.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Tunnel Bench Winter Loop",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
+          "status": "open",
+          "condition": "Thin snow cover.",
           "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         },
         {
           "name": "Lake Minnewanka Winter Trail",
           "difficulty": "Moderate",
-          "status": "caution",
-          "condition": "Variable conditions.",
+          "status": "open",
+          "condition": "Thin snow cover.",
           "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-          "lastUpdated": "2026-11-17"
+          "lastUpdated": "2026-11-18"
         }
       ]
     },
@@ -504,7 +504,7 @@
       "status": "caution",
       "condition": "Variable conditions.",
       "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Winter Walking Trails"
     },
     {
@@ -513,7 +513,7 @@
       "status": "caution",
       "condition": "Variable conditions.",
       "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Winter Walking Trails"
     },
     {
@@ -522,7 +522,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Check the important bulletins for more information; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Winter Walking Trails"
     },
     {
@@ -531,7 +531,7 @@
       "status": "caution",
       "condition": "Variable conditions.",
       "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Winter Walking Trails"
     },
     {
@@ -540,16 +540,16 @@
       "status": "closed",
       "condition": "Closed for maintenance.",
       "comment": "Check the important bulletins for more information",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Winter Walking Trails"
     },
     {
       "name": "Sulphur Mountain Winter Trail",
       "difficulty": "Moderate",
       "status": "caution",
-      "condition": "Variable conditions.",
+      "condition": "Snow covered.",
       "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Winter Walking Trails"
     },
     {
@@ -557,26 +557,26 @@
       "difficulty": "Moderate",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-11-17",
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Winter Walking Trails"
     },
     {
       "name": "Tunnel Mountain Summit Winter Trail",
       "difficulty": "Moderate",
       "status": "caution",
-      "condition": "Variable conditions.",
+      "condition": "Snow covered.",
       "comment": "Stay on designated trails and viewpoints; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Winter Walking Trails"
     },
     {
       "name": "Johnson Lake Winter Trail",
       "difficulty": "Easy",
       "status": "caution",
-      "condition": "Variable conditions.",
-      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-11-17",
+      "condition": "Snow covered.",
+      "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Snowshoeing Trails"
     },
     {
@@ -584,35 +584,35 @@
       "difficulty": "Moderate",
       "status": "caution",
       "condition": "Variable conditions.",
-      "comment": "Stay on trail; Snow covered with variable conditions: ice/snow crust/slush/fresh snow",
-      "lastUpdated": "2026-11-17",
+      "comment": "Stay on trail; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Snowshoeing Trails"
     },
     {
       "name": "Upper Stoney Winter Loop",
       "difficulty": "Moderate",
       "status": "caution",
-      "condition": "Variable conditions.",
+      "condition": "Snow covered.",
       "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Cleats recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Snowshoeing Trails"
     },
     {
       "name": "Sulphur Mountain Westside Winter Trail",
       "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Thin snow cover.",
+      "status": "caution",
+      "condition": "Snow covered.",
       "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Snowshoeing Trails"
     },
     {
       "name": "Ink Pots Winter Trail",
       "difficulty": "Moderate",
-      "status": "open",
-      "condition": "Thin snow cover.",
+      "status": "caution",
+      "condition": "Snow covered.",
       "comment": "Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Sturdy hiking boots and hiking poles recommended; Cleats recommended; Access through Moose Meadows parking lot / Johnston Creek",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Snowshoeing Trails"
     },
     {
@@ -621,7 +621,7 @@
       "status": "open",
       "condition": "Thin snow cover.",
       "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
@@ -630,7 +630,7 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Check the important bulletins for more information",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
@@ -639,7 +639,7 @@
       "status": "open",
       "condition": "Thin snow cover.",
       "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
@@ -648,7 +648,7 @@
       "status": "open",
       "condition": "Thin snow cover.",
       "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
@@ -657,25 +657,25 @@
       "status": "open",
       "condition": "Thin snow cover.",
       "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
       "name": "Cascade Valley Winter Trail: Lake Minnewanka parking lot to Upper Bankhead",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "No snow.",
+      "condition": "Thin snow cover.",
       "comment": "Tracksetting has not yet begun",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
       "name": "Cascade Valley Winter Trail: Lake Minnewanka parking lot to Cascade River bridge",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "No snow.",
+      "condition": "Thin snow cover.",
       "comment": "Tracksetting has not yet begun",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
@@ -684,7 +684,7 @@
       "status": "open",
       "condition": "Thin snow cover.",
       "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
@@ -693,7 +693,7 @@
       "status": "open",
       "condition": "Thin snow cover.",
       "comment": "Not yet maintained; Insufficient snow for tracksetting for cross-country skiing; Check the important bulletins for more information",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
@@ -702,16 +702,16 @@
       "status": "open",
       "condition": "Thin snow cover.",
       "comment": "Insufficient snow for tracksetting for cross-country skiing; Not yet maintained",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Cross-Country Ski Trails"
     },
     {
       "name": "Tunnel Mountain Multi-use Winter Trails",
       "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Variable conditions.",
+      "status": "open",
+      "condition": "Thin snow cover.",
       "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Fat Biking Trails"
     },
     {
@@ -720,43 +720,43 @@
       "status": "closed",
       "condition": "Partially Closed",
       "comment": "Biking excluding e-bikes is allowed; Check the important bulletins for more information; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Fat Biking Trails"
     },
     {
       "name": "Sundance Winter Trail",
       "difficulty": "Easy",
-      "status": "caution",
-      "condition": "Variable conditions.",
+      "status": "open",
+      "condition": "Thin snow cover.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Fat Biking Trails"
     },
     {
       "name": "Banff Avenue Winter Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
+      "status": "open",
+      "condition": "Thin snow cover.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Fat Biking Trails"
     },
     {
       "name": "Tunnel Bench Winter Loop",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
+      "status": "open",
+      "condition": "Thin snow cover.",
       "comment": "Biking including pedal-assist e-bikes is allowed; Numerous trees down on trail; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Fat Biking Trails"
     },
     {
       "name": "Lake Minnewanka Winter Trail",
       "difficulty": "Moderate",
-      "status": "caution",
-      "condition": "Variable conditions.",
+      "status": "open",
+      "condition": "Thin snow cover.",
       "comment": "Biking excluding e-bikes is allowed; Snow covered with variable conditions: ice/snow crust/slush/fresh snow ; Studded tires recommended",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "area": "Banff Area Fat Biking Trails"
     },
     {
