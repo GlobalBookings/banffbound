@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-20T01:41:15.461Z",
+  "retrievedAt": "2026-11-20T09:45:54.029Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-20T01:41:15.281Z",
-      "sourceUpdatedAt": "2026-11-20T01:41:13.000Z",
-      "sourceUpdatedAtText": "Thu, 19 Nov 2026 18:41:13 -0700",
+      "retrievedAt": "2026-11-20T09:45:53.971Z",
+      "sourceUpdatedAt": "2026-11-20T09:45:53.000Z",
+      "sourceUpdatedAtText": "Fri, 20 Nov 2026 02:45:53 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -133,15 +133,26 @@
           "dates": "December 3, 2026",
           "times": "07:00 PM - 11:59 PM",
           "location": "Banff, AB T1L 1A1"
+        },
+        {
+          "title": "Mâwacihitowinihk Nikamowak: A Gathering of Indigenous Musicians",
+          "link": "https://banff.ca/Calendar.aspx?EID=35424",
+          "description": "Mâwacihitowinihk Nikamowak is Plains Cree for \"they sing at the gathering (place),\" referring to Sacred Guardian Buffalo Mountain, where Banff Centre campus resides. Over three weeks, the participants in Mâwacihitowinihk Nikamowak: Indigenous Music Residency have been creating new songs in their fin",
+          "publishedAt": "2026-10-23T22:21:59.000Z",
+          "startDate": "2026-12-04",
+          "endDate": "2026-12-04",
+          "dates": "December 4, 2026",
+          "times": "07:30 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-20T01:41:15.460Z",
-      "sourceUpdatedAt": "2026-11-20T01:41:13.000Z",
-      "sourceUpdatedAtText": "Thu, 19 Nov 2026 18:41:13 -0700",
+      "retrievedAt": "2026-11-20T09:45:54.028Z",
+      "sourceUpdatedAt": "2026-11-20T09:45:53.000Z",
+      "sourceUpdatedAtText": "Fri, 20 Nov 2026 02:45:53 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
