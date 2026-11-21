@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-21T01:08:18.534Z",
+  "retrievedAt": "2026-11-21T09:17:38.539Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-21T01:08:18.492Z",
-      "sourceUpdatedAt": "2026-11-21T01:08:18.000Z",
-      "sourceUpdatedAtText": "Fri, 20 Nov 2026 18:08:18 -0700",
+      "retrievedAt": "2026-11-21T09:17:38.503Z",
+      "sourceUpdatedAt": "2026-11-21T09:17:38.000Z",
+      "sourceUpdatedAtText": "Sat, 21 Nov 2026 02:17:38 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -23,17 +23,6 @@
           "dates": "November 19, 2026 - December 13, 2026",
           "times": "12:00 AM - 11:59 PM",
           "location": "Banff, AB T1L 1A1"
-        },
-        {
-          "title": "William Prince | On Rolls The Wheel Tour",
-          "link": "https://banff.ca/Calendar.aspx?EID=35401",
-          "description": "JUNO Award-winning singer-songwriter William Prince brings his On Rolls The Wheel Tour to Banff Centre on November 20 for an intimate acoustic performance.",
-          "publishedAt": "2026-10-08T21:31:47.000Z",
-          "startDate": "2026-11-20",
-          "endDate": "2026-11-20",
-          "dates": "November 20, 2026",
-          "times": "08:30 PM - 11:59 PM",
-          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         },
         {
           "title": "Live from the Rockies: Duo Solista & Nan Hughes",
@@ -150,9 +139,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-21T01:08:18.533Z",
-      "sourceUpdatedAt": "2026-11-21T01:08:18.000Z",
-      "sourceUpdatedAtText": "Fri, 20 Nov 2026 18:08:18 -0700",
+      "retrievedAt": "2026-11-21T09:17:38.535Z",
+      "sourceUpdatedAt": "2026-11-21T09:17:38.000Z",
+      "sourceUpdatedAtText": "Sat, 21 Nov 2026 02:17:38 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
