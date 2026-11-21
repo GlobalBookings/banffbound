@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-20T18:23:04.404Z",
+  "retrievedAt": "2026-11-21T01:08:18.534Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-20T18:23:04.401Z",
-      "sourceUpdatedAt": "2026-11-20T18:23:04.000Z",
-      "sourceUpdatedAtText": "Fri, 20 Nov 2026 11:23:04 -0700",
+      "retrievedAt": "2026-11-21T01:08:18.492Z",
+      "sourceUpdatedAt": "2026-11-21T01:08:18.000Z",
+      "sourceUpdatedAtText": "Fri, 20 Nov 2026 18:08:18 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -150,13 +150,19 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-20T18:23:04.390Z",
-      "sourceUpdatedAt": "2026-11-20T18:23:04.000Z",
-      "sourceUpdatedAtText": "Fri, 20 Nov 2026 11:23:04 -0700",
+      "retrievedAt": "2026-11-21T01:08:18.533Z",
+      "sourceUpdatedAt": "2026-11-21T01:08:18.000Z",
+      "sourceUpdatedAtText": "Fri, 20 Nov 2026 18:08:18 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
+        {
+          "title": "CPKC Holiday Train — December 15",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1939",
+          "description": "?Celebrate the holiday season as the CPKC Holiday Train rolls into Banff.",
+          "publishedAt": "2026-11-20T19:53:56.000Z"
+        },
         {
           "title": "Town of Banff brings more power to the people (in EVs)",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1938",
