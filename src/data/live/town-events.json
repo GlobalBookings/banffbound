@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-23T02:20:29.959Z",
+  "retrievedAt": "2026-11-23T14:06:24.056Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-23T02:20:29.942Z",
-      "sourceUpdatedAt": "2026-11-23T02:20:29.000Z",
-      "sourceUpdatedAtText": "Sun, 22 Nov 2026 19:20:29 -0700",
+      "retrievedAt": "2026-11-23T14:06:24.053Z",
+      "sourceUpdatedAt": "2026-11-23T14:06:23.000Z",
+      "sourceUpdatedAtText": "Mon, 23 Nov 2026 07:06:23 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -22,17 +22,6 @@
           "endDate": "2026-12-13",
           "dates": "November 19, 2026 - December 13, 2026",
           "times": "12:00 AM - 11:59 PM",
-          "location": "Banff, AB T1L 1A1"
-        },
-        {
-          "title": "Live from the Rockies: Duo Solista & Nan Hughes",
-          "link": "https://banff.ca/Calendar.aspx?EID=35558",
-          "description": "Live from the Rockies presents a heartfelt afternoon of chamber music, featuring DUO SOLISTA — the husband-and-wife pairing of pianist Dmitry Nesterov and violinist Olga Kotova — alongside acclaimed Banff-based mezzo-soprano NAN HUGHES.",
-          "publishedAt": "2026-11-17T17:59:10.000Z",
-          "startDate": "2026-11-22",
-          "endDate": "2026-11-22",
-          "dates": "November 22, 2026",
-          "times": "02:00 PM - 11:59 PM",
           "location": "Banff, AB T1L 1A1"
         },
         {
@@ -139,9 +128,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-23T02:20:29.958Z",
-      "sourceUpdatedAt": "2026-11-23T02:20:29.000Z",
-      "sourceUpdatedAtText": "Sun, 22 Nov 2026 19:20:29 -0700",
+      "retrievedAt": "2026-11-23T14:06:24.012Z",
+      "sourceUpdatedAt": "2026-11-23T14:06:23.000Z",
+      "sourceUpdatedAtText": "Mon, 23 Nov 2026 07:06:23 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
