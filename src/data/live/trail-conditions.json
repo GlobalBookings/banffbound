@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T21:35:37.367Z",
+  "updatedAt": "2026-11-23T02:20:29.975Z",
   "fireDanger": "low",
   "summary": {
     "total": 56,
@@ -313,8 +313,8 @@
           "difficulty": "Easy",
           "status": "caution",
           "condition": "Snow covered with icy sections.",
-          "comment": "Caution; Slippery sections; Dogs on leash permitted",
-          "lastUpdated": "2026-11-20"
+          "comment": "Caution; Slippery sections; Cleats recommended; Dogs on leash permitted",
+          "lastUpdated": "2026-11-22"
         },
         {
           "name": "Fairview Lookout Trail",
@@ -809,8 +809,8 @@
       "difficulty": "Easy",
       "status": "caution",
       "condition": "Snow covered with icy sections.",
-      "comment": "Caution; Slippery sections; Dogs on leash permitted",
-      "lastUpdated": "2026-11-20",
+      "comment": "Caution; Slippery sections; Cleats recommended; Dogs on leash permitted",
+      "lastUpdated": "2026-11-22",
       "area": "Lake Louise Area Snowshoeing and Winter Hiking Trails"
     },
     {
