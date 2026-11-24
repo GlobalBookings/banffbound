@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T02:46:54.254Z",
+  "updatedAt": "2026-11-24T14:37:42.841Z",
   "fireDanger": "low",
   "summary": {
     "total": 56,
@@ -1025,12 +1025,6 @@
     {
       "title": "Area Closure: Ceremonial Bison Harvest",
       "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Warning: Skoki trails",
-      "type": "Warning",
       "issued": "",
       "ends": ""
     },
