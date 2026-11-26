@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-26T13:44:25.911Z",
+  "retrievedAt": "2026-11-26T22:50:47.294Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-26T13:44:25.842Z",
-      "sourceUpdatedAt": "2026-11-26T13:44:25.000Z",
-      "sourceUpdatedAtText": "Thu, 26 Nov 2026 06:44:25 -0700",
+      "retrievedAt": "2026-11-26T22:50:47.161Z",
+      "sourceUpdatedAt": "2026-11-26T22:50:46.000Z",
+      "sourceUpdatedAtText": "Thu, 26 Nov 2026 15:50:46 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -139,13 +139,25 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-26T13:44:25.910Z",
-      "sourceUpdatedAt": "2026-11-26T13:44:25.000Z",
-      "sourceUpdatedAtText": "Thu, 26 Nov 2026 06:44:25 -0700",
+      "retrievedAt": "2026-11-26T22:50:47.293Z",
+      "sourceUpdatedAt": "2026-11-26T22:50:46.000Z",
+      "sourceUpdatedAtText": "Thu, 26 Nov 2026 15:50:46 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
       "items": [
+        {
+          "title": "Banff's draft budget prioritizes resident needs and sustainability",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1941",
+          "description": "Residents are invited to participate in seven days of service review for budget deliberations about the services, programs and infrastructure investments that residents use and rely on every day.",
+          "publishedAt": "2026-11-26T22:00:00.000Z"
+        },
+        {
+          "title": "Banff’s infrastructure investments build benefits for residents",
+          "link": "https://banff.ca/CivicAlerts.aspx?aid=1940",
+          "description": "2026 construction season wraps up $77 million worth of investment in 47 projects - 98% on time and 98% on or below budget - providing the roadways, sewer and water systems, facilities and housing that Banffites need today and into the future.",
+          "publishedAt": "2026-11-26T14:57:00.000Z"
+        },
         {
           "title": "CPKC Holiday Train — December 15",
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1939",
