@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-26T03:58:33.042Z",
+  "retrievedAt": "2026-11-26T13:44:25.911Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-26T03:58:33.039Z",
-      "sourceUpdatedAt": "2026-11-26T03:58:32.000Z",
-      "sourceUpdatedAtText": "Wed, 25 Nov 2026 20:58:32 -0700",
+      "retrievedAt": "2026-11-26T13:44:25.842Z",
+      "sourceUpdatedAt": "2026-11-26T13:44:25.000Z",
+      "sourceUpdatedAtText": "Thu, 26 Nov 2026 06:44:25 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -122,15 +122,26 @@
           "dates": "December 4, 2026",
           "times": "07:30 PM - 11:59 PM",
           "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
+        },
+        {
+          "title": "Community Helpers Wellness Program",
+          "link": "https://banff.ca/Calendar.aspx?EID=35526",
+          "description": "This workshop is a mental health awareness and suicide prevention program funded by Alberta Health Services. The one-day program teaches you how to help someone in your life experiencing a mental health issue and introduces you to free resources in the Bow Valley so you can refer them to the appropr",
+          "publishedAt": "2026-11-06T22:36:12.000Z",
+          "startDate": "2026-12-10",
+          "endDate": "2026-12-10",
+          "dates": "December 10, 2026",
+          "times": "09:00 AM - 04:30 PM",
+          "location": "Banff, AB T1L 1A1"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-26T03:58:33.032Z",
-      "sourceUpdatedAt": "2026-11-26T03:58:32.000Z",
-      "sourceUpdatedAtText": "Wed, 25 Nov 2026 20:58:32 -0700",
+      "retrievedAt": "2026-11-26T13:44:25.910Z",
+      "sourceUpdatedAt": "2026-11-26T13:44:25.000Z",
+      "sourceUpdatedAtText": "Thu, 26 Nov 2026 06:44:25 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
