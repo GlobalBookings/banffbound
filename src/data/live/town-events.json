@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-26T22:50:47.294Z",
+  "retrievedAt": "2026-11-27T07:07:51.721Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-26T22:50:47.161Z",
-      "sourceUpdatedAt": "2026-11-26T22:50:46.000Z",
-      "sourceUpdatedAtText": "Thu, 26 Nov 2026 15:50:46 -0700",
+      "retrievedAt": "2026-11-27T07:07:51.718Z",
+      "sourceUpdatedAt": "2026-11-27T07:07:51.000Z",
+      "sourceUpdatedAtText": "Fri, 27 Nov 2026 00:07:51 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -23,17 +23,6 @@
           "dates": "November 19, 2026 - December 13, 2026",
           "times": "12:00 AM - 11:59 PM",
           "location": "Banff, AB T1L 1A1"
-        },
-        {
-          "title": "Literary Cabaret: Early Career Writers of Poetry - Stanza 1",
-          "link": "https://banff.ca/Calendar.aspx?EID=35419",
-          "description": "As part of Banff Centre's Literary Cabaret series, featuring the Early Career Writers of Poetry's Residency at Banff Centre, join us for an evening celebrating the next generation of storytellers, bards and troubadours.",
-          "publishedAt": "2026-10-23T21:40:40.000Z",
-          "startDate": "2026-11-26",
-          "endDate": "2026-11-26",
-          "dates": "November 26, 2026",
-          "times": "07:00 PM - 11:59 PM",
-          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         },
         {
           "title": "Mâwacihitowinihk Nikamowak: A Gathering of Indigenous Musicians",
@@ -139,9 +128,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-26T22:50:47.293Z",
-      "sourceUpdatedAt": "2026-11-26T22:50:46.000Z",
-      "sourceUpdatedAtText": "Thu, 26 Nov 2026 15:50:46 -0700",
+      "retrievedAt": "2026-11-27T07:07:51.711Z",
+      "sourceUpdatedAt": "2026-11-27T07:07:51.000Z",
+      "sourceUpdatedAtText": "Fri, 27 Nov 2026 00:07:51 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,

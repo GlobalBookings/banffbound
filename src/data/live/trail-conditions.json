@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T22:50:46.718Z",
+  "updatedAt": "2026-11-27T07:08:01.088Z",
   "fireDanger": "low",
   "summary": {
     "total": 56,
@@ -1018,12 +1018,6 @@
     },
     {
       "title": "Area Closure: Johnston Canyon Trail and Day Use Area",
-      "type": "Area Closure",
-      "issued": "",
-      "ends": ""
-    },
-    {
-      "title": "Area Closure: Ceremonial Bison Harvest",
       "type": "Area Closure",
       "issued": "",
       "ends": ""
