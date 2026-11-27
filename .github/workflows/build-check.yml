@@ -101,6 +101,7 @@ jobs:
           node scripts/check-town-stay-planning.mjs
           node scripts/check-consent.mjs
           node scripts/check-affiliate-embeds.mjs
+          node scripts/check-hotel-conversions.mjs
           node scripts/check-wildlife-planning.mjs
           node scripts/check-wildlife-safety.mjs
           node scripts/check-lake-planning.mjs
@@ -126,4 +127,6 @@ jobs:
 
       # Catch broken routes, assets and metadata in the winter planning cluster.
       - name: Audit generated site
-        run: npm run audit:site
+        run: |
+          npm run audit:site
+          node scripts/check-hotel-conversions.mjs --built

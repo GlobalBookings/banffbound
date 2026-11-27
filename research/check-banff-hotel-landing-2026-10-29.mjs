@@ -15,17 +15,17 @@ function evaluate(source, args = {}) {
   return module.exports;
 }
 const { hotels } = evaluate(read('src/data/hotels.ts'));
-const { directoryHotels } = evaluate(read('src/data/hotelDirectory.ts').replace(/^import[^\n]+\n/, ''), { hotels });
+const { directoryHotels } = evaluate(read('src/data/hotelDirectory.ts').replace(/^import[^\n]+\n/gm, ''), { hotels, hotelConversionReviews: JSON.parse(read('src/data/hotelConversionReviews.json')) });
 const model = evaluate(read('src/data/banffHotelLanding.ts').replace(/^import[^\n]+\n/, ''), { directoryHotels });
 const { banffHotelLandingOffers: offers, banffHotelBaseOptions: bases, banffHotelPriorityOptions: priorities, banffHotelLandingSchema: schema } = model;
 let assertions = 0;
 const check = (condition, message) => { assertions++; if (!condition) throw new Error(message); };
 const digest = data => createHash('sha256').update(data).digest('hex');
 for (const [file,hash] of Object.entries({
-  'src/data/hotels.ts':'2fff1117432d359cfdfea771c5e36153dbf37107e9609e7d5430a7bd9eb34e48',
-  'src/data/hotelDirectory.ts':'bba710c243ef3cd64256e51adb8d54898bf200bc0db8090c5b21b197ed44492f',
+  'src/data/hotels.ts':'23d0fa31a7bfbe8ff33183eaa382e84cb7a61273e7f4ba24161dbde3bc862c07',
+  'src/data/hotelDirectory.ts':'64f85e3b92d2458e9aba8d50ef0c21d64f0a96501464f4ee1852aeaf6a49cfc1',
   'src/pages/hotel-directory/index.astro':'1125c296d95b40f218c4dad2f2a7af9dbbfc861bdd8a65677be7ba60a396dacf',
-  'src/pages/hotel-directory/[slug].astro':'c5c80421cb748a2307520e698e128887f23c10c825a4cd51fa7b81c93d151b9d',
+  'src/pages/hotel-directory/[slug].astro':'5e38792e77083f2c7ff16c6f9fd9bd93b32295882a3945df0c7cf323d6a316ed',
 })) check(digest(restorePriorHotelSource(file, read(file)))===hash,'Frozen directory foundation changed during landing work: '+file);
 const expected = [
   ['moose-hotel-suites', '14703440', '345 Banff'],

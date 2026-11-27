@@ -54,11 +54,11 @@ const quickRoomLabels: Record<string, string> = {
           <tbody>{offers.map(offer => <tr data-quick-offer={offer.slug}>
             <th scope="row"><a class="quick-name" href={`#stay-${offer.slug}`}>{offer.name}</a><span class="quick-base">{banffHotelBaseOptions.find(option => option.value === offer.base)?.label}</span><span class="quick-address">{offer.address}</span></th>
             <td><p class="quick-room">{quickRoomLabels[offer.slug]}</p><p>{offer.kitchen}</p></td>
-            <td>{offer.notice && <p class="quick-notice"><strong>Facility note:</strong> {offer.notice}</p>}<a class="quick-booking" href={offer.expediaUrl} target="_blank" rel="sponsored noopener" data-landing-id={banffHotelLandingId} data-offer-id={offer.slug} data-landing-placement="comparison-table" aria-label={`Check dates for ${offer.name} on Expedia (opens in a new tab)`}>Check dates on Expedia <span aria-hidden="true">↗</span></a><a class="quick-detail" href={`#stay-${offer.slug}`}>Room, facilities &amp; journey ↓</a></td>
+            <td>{offer.notice && <p class="quick-notice"><strong>Facility note:</strong> {offer.notice}</p>}<a class="quick-booking" href={offer.expediaUrl} target="_blank" rel="sponsored noopener" data-landing-id={banffHotelLandingId} data-offer-id={offer.slug} data-landing-placement="comparison-table" aria-label={`Check dates for ${offer.name} on Expedia (opens in a new tab)`}>Book now <span aria-hidden="true">↗</span></a><a class="quick-detail" href={`#stay-${offer.slug}`}>Room, facilities &amp; journey ↓</a></td>
           </tr>)}</tbody>
         </table>
       </div>
-      <p id="hotel-comparison-note" class="comparison-note">The quick comparison always shows all six stays. Filters below narrow the detailed cards only; they do not check availability. Read the room, facility and journey notes for your shortlist before booking. On a narrow screen, scroll across the table.</p>
+      <p id="hotel-comparison-note" class="comparison-note">The quick comparison always shows all six stays. Filters below narrow the detailed cards only; they do not check availability. Read the room, facility and journey notes for your shortlist before booking. On mobile, each stay has its own booking button below the room details.</p>
 
       <h3 id="hotel-detail-heading" class="detail-heading">Explore the room and journey</h3>
       <form id="banff-hotel-fit" class="fit-controls" hidden aria-label="Narrow the six hotel choices" aria-describedby="hotel-comparison-note">
@@ -83,7 +83,7 @@ const quickRoomLabels: Record<string, string> = {
             </dl>
             <p class="base-tradeoff"><strong>The base choice:</strong> {offer.tradeoff}</p>
             {offer.notice && <p class="operation-note"><strong>Current facility note:</strong> {offer.notice}</p>}
-            <a class="booking-cta" href={offer.expediaUrl} target="_blank" rel="sponsored noopener" data-landing-id={banffHotelLandingId} data-offer-id={offer.slug} data-landing-placement="detail-card" aria-label={`Check dates for ${offer.name} on Expedia (opens in a new tab)`}>Check dates on Expedia <span aria-hidden="true">↗</span></a>
+            <a class="booking-cta" href={offer.expediaUrl} target="_blank" rel="sponsored noopener" data-landing-id={banffHotelLandingId} data-offer-id={offer.slug} data-landing-placement="detail-card" aria-label={`Check dates for ${offer.name} on Expedia (opens in a new tab)`}>Book now <span aria-hidden="true">↗</span></a>
             <p class="quote-note">Enter your dates and party to compare the room and full total.</p>
             <details class="property-sources"><summary>Property details &amp; sources</summary><p>Selected facts and the Expedia property name/address checked <time datetime={offer.checkedOn}>29 October 2026</time>. Facilities and offers can change.</p><ul>{offer.officialSources.map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.label} <span aria-hidden="true">↗</span></a></li>)}</ul><a href={offer.profileUrl}>Read the full property notes →</a></details>
           </div>
@@ -221,4 +221,15 @@ const quickRoomLabels: Record<string, string> = {
   :is(a, button, select, summary):focus-visible { outline: 3px solid #a77621; outline-offset: 4px; }
   @media (max-width: 800px) { .fit-controls { grid-template-columns: 1fr 1fr; }.fit-controls .reset-button { grid-column: 1/-1; }.offer-grid { gap: 1rem; }.offer-body { padding: 1.1rem; }.offer-photo figcaption { padding: .6rem 1.1rem; }.faq-wrap { grid-template-columns: 1fr; gap: 1rem; }.quote-checks { gap: 1rem; } }
   @media (max-width: 600px) { .comparison-section, .quote-section, .faq-section { padding: 2.5rem 0; }.fit-controls { grid-template-columns: 1fr; padding: 1rem; }.offer-grid, .quote-checks { grid-template-columns: 1fr; }.offer-body { padding: 1.2rem; }.quote-checks { gap: 1.5rem; } }
+  @media (max-width: 700px) {
+    .quick-comparison-wrap { overflow: visible; border: 0; }
+    .quick-comparison { min-width: 0; display: block; background: transparent; }
+    .quick-comparison caption { display: block; padding: .9rem 0; background: transparent; }
+    .quick-comparison thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .quick-comparison tbody { display: grid; gap: 1rem; }
+    .quick-comparison tr { display: block; border: 1px solid #cbd7cd; border-radius: 6px; overflow: hidden; background: #fff; }
+    .quick-comparison tbody th, .quick-comparison td { display: block; width: auto; padding: 1rem; }
+    .quick-comparison td:last-child { border: 0; }
+    .quick-booking { display: flex; width: 100%; box-sizing: border-box; min-height: 54px; align-items: center; justify-content: center; background: #b34d23; color: #fff; }
+  }
 </style>

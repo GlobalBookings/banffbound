@@ -164,7 +164,7 @@ const firstLink=rendered.merchantLinks[0]; let consentCases=0;
 for(const paidSource of ['google','bing'])for(const analytics of [false,true])for(const advertising of [false,true]){
   const h=consentHarness({stored:validConsent({analytics,advertising}),initTracking:true,paidLanding:true,landingId:'banff-hotels',pageHref:`https://banffbound.com/book/banff-hotels/?utm_source=${paidSource}&utm_medium=cpc&gclid=PRIVATE_CLICK&email=PRIVATE_EMAIL`});
   const click=h.linkClick(attr(firstLink,'href'),{landingId:attr(firstLink,'data-landing-id'),offerId:attr(firstLink,'data-offer-id'),placement:attr(firstLink,'data-landing-placement')});
-  assert.equal(click.prevented,0); assert.equal(click.link.href,attr(firstLink,'href')); assert.equal(h.opened,0);
+  assert.equal(click.prevented,0); assert.equal(click.link.href,JSON.parse(await readFile('src/data/expediaAffiliateLinks.json','utf8'))['hotel:14703440']); assert.equal(h.opened,0);
   const event=h.commands.find(command=>command[1]==='affiliate_click');assert.equal(Boolean(event),analytics);if(event){assert.equal(event[2].placement,'comparison-table');assert.equal(event[2].offer_id,ids[0]);assert.equal(event[2].paid_source,paidSource);}
   const conversion=h.commands.find(command=>command[1]==='conversion');assert.equal(Boolean(conversion),advertising);if(conversion)assert.equal(conversion[2].value,undefined);
   assert.ok(!/PRIVATE_CLICK|PRIVATE_EMAIL|gclid=|email=/.test(JSON.stringify(h.commands)));consentCases++;

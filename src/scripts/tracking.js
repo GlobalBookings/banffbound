@@ -1,3 +1,4 @@
+import { applyExpediaAffiliateLinks, expediaAffiliateHref, expediaDestination } from '../lib/expediaLinks';
 import { banffAppStoreClick } from '../data/banffAppStore';
 import { landingContext } from './landingAttribution.js';
 import { applyPaidBookingAttribution } from './paidBookingAttribution.js';
@@ -23,10 +24,16 @@ function sectionName(element) {
 }
 export function initTracking() {
   if (typeof window === 'undefined') return;
+  applyExpediaAffiliateLinks();
   applyPaidBookingAttribution();
   if (initialized) return;
   initialized = true;
-  document.addEventListener('astro:page-load', () => applyPaidBookingAttribution());
+  document.addEventListener('astro:page-load', () => { applyExpediaAffiliateLinks(); applyPaidBookingAttribution(); });
+  // Dynamic trip-builder links retain native navigation, including middle clicks.
+  for (const type of ['click', 'auxclick']) document.addEventListener(type, event => {
+    const link = event.target?.closest?.('a[href]') || event.target?.parentElement?.closest?.('a[href]');
+    if (link) link.href = expediaAffiliateHref(link.href);
+  }, true);
   const path = () => window.location.pathname;
   const send = (name, parameters) => sendAnalyticsEvent(name, parameters);
   const nearest = (event, selector) => event.target?.closest?.(selector) || event.target?.parentElement?.closest?.(selector);
@@ -45,7 +52,7 @@ export function initTracking() {
     const link = nearest(event, 'a[href]');
     const partner = link ? affiliatePartner(link.href) : null;
     if (partner) {
-      send('affiliate_click', { affiliate_partner: partner, link_url: safeTrackingUrl(link.href), link_text: (link.textContent || '').trim().slice(0, 100), page_path: path(), page_title: document.title, ...landingContext(link) });
+      send('affiliate_click', { affiliate_partner: partner, link_url: safeTrackingUrl(partner === 'expedia' ? expediaDestination(link.href)?.href || link.href : link.href), link_text: (link.textContent || '').trim().slice(0, 100), page_path: path(), page_title: document.title, ...landingContext(link) });
       reportAffiliateConversion(landingContext(link));
     } else if (link) {
       try {

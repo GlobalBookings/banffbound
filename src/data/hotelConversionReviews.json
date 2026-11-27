@@ -1,0 +1,323 @@
+{
+  "irwins-mountain-inn": {
+    "facts": {
+      "area": "Banff Avenue hotel strip",
+      "address": "429 Banff Avenue, Banff, Alberta",
+      "description": "A practical Banff Avenue base with king and two-queen rooms, plus larger kitchenette categories. Compare the exact layout before choosing a room.",
+      "overview": "Irwin\u2019s Mountain Inn suits travellers who want a conventional hotel room on Banff Avenue. Standard rooms offer king or two-queen layouts; Superior and Deluxe categories add different amounts of space and cooking equipment. A kitchenette is category-specific. The hotel lists a hot tub, dry sauna and fitness room, useful after a day outside. Compare the selected room\u2019s beds, kitchen equipment and full booking total.",
+      "highlights": [
+        "King and two-queen rooms",
+        "Selected kitchenette categories",
+        "Hot tub and dry sauna"
+      ],
+      "roomFeatures": [
+        "Standard king or two-queen layouts",
+        "Superior two-bedroom options",
+        "Kitchenettes in selected categories",
+        "Air conditioning"
+      ],
+      "amenities": [
+        "Wi-Fi",
+        "Guest parking",
+        "Hot tub and dry sauna",
+        "Fitness room"
+      ],
+      "policies": "Check the selected room\u2019s pet eligibility, parking arrangements and cancellation terms.",
+      "image": "https://irwinsmountaininn.com/wp-content/uploads/2026/07/Standard-room-2queen.jpg",
+      "images": [
+        "https://irwinsmountaininn.com/wp-content/uploads/2026/07/Standard-room-2queen.jpg"
+      ],
+      "checkedOn": "2026-11-27",
+      "nearbyAttractions": []
+    },
+    "sources": [
+      {
+        "label": "Official rooms and layouts",
+        "url": "https://irwinsmountaininn.com/rooms/"
+      },
+      {
+        "label": "Official hotel facilities",
+        "url": "https://irwinsmountaininn.com/amenities/"
+      },
+      {
+        "label": "Official arrival and booking FAQ",
+        "url": "https://irwinsmountaininn.com/faq/"
+      }
+    ]
+  },
+  "bow-view-lodge": {
+    "facts": {
+      "address": "228 Bow Avenue, Banff, Alberta",
+      "description": "A riverside Banff base with conventional rooms and family layouts. Guest access to the pool and fitness facilities is at neighbouring Banff Park Lodge.",
+      "overview": "Bow View Lodge puts the Bow River close to your room while keeping the town centre within reach. Compare a standard room, a family layout or a named river-facing category. Refrigerators and coffee makers help with simple snacks; this is not a promise of a full kitchen. The pool, hot tub, steam room and gym are at Banff Park Lodge across the parking area, so factor that short outdoor journey into your choice.",
+      "highlights": [
+        "Bow River setting",
+        "Family room options",
+        "Neighbouring hotel pool access"
+      ],
+      "roomFeatures": [
+        "Standard and river-facing categories",
+        "Family layouts available",
+        "In-room refrigerator",
+        "Coffee maker"
+      ],
+      "amenities": [
+        "Wi-Fi",
+        "Guest parking: check current terms",
+        "Pool and gym at neighbouring Banff Park Lodge"
+      ],
+      "facilityNote": "Pool, hot tub, steam room and gym are at Banff Park Lodge across the parking area. Confirm access and current facility operation for your dates.",
+      "policies": "Check room category, cooling and access needs directly; river views are category-specific.",
+      "image": "https://images.squarespace-cdn.com/content/v1/6046ceeca0a3ed5aaf76a467/1621994577217-MSRWBPTPFIO2K5VVFELH/1.png",
+      "images": [
+        "https://images.squarespace-cdn.com/content/v1/6046ceeca0a3ed5aaf76a467/1621994577217-MSRWBPTPFIO2K5VVFELH/1.png"
+      ],
+      "checkedOn": "2026-11-27",
+      "nearbyAttractions": []
+    },
+    "sources": [
+      {
+        "label": "Official rooms and suites",
+        "url": "https://bowview.com/rooms-and-suites/"
+      },
+      {
+        "label": "Official facilities and arrival FAQ",
+        "url": "https://bowview.com/faq/"
+      },
+      {
+        "label": "Official hotel location",
+        "url": "https://bowview.com/about-us/"
+      }
+    ]
+  },
+  "mount-engadine-lodge": {
+    "facts": {
+      "area": "Spray Valley, Kananaskis",
+      "address": "Mount Shark Road, Spray Valley, Kananaskis, Alberta",
+      "description": "A remote Kananaskis retreat with lodge rooms, cabins, glamping tents and a yurt. Plan the mountain-road journey and compare meal inclusions for your stay.",
+      "overview": "Mount Engadine is a remote Spray Valley stay rather than a hotel in Canmore town. Choose between the main lodge, separate cabins, glamping tents and a yurt, each with a different space and bathroom arrangement. The operator\u2019s stay offer includes meals; confirm the inclusions shown by your booking provider. Plan the drive via Smith-Dorrien/Spray Trail and download arrival directions. Connectivity is limited, making this better suited to a mountain retreat than a connected town base.",
+      "highlights": [
+        "Remote mountain setting",
+        "Lodge, cabin and glamping choices",
+        "Meal-inclusive operator stays"
+      ],
+      "roomFeatures": [
+        "Main-lodge rooms and suites",
+        "Separate cabins",
+        "Glamping tents",
+        "Yurt option: confirm facilities"
+      ],
+      "amenities": [
+        "Lodge dining",
+        "Mountain setting",
+        "Limited Wi-Fi"
+      ],
+      "facilityNote": "Remote mountain-road access and limited connectivity. Confirm meals, seasonal road conditions and arrival arrangements before travelling.",
+      "policies": "Pet eligibility is category-specific. Compare the exact accommodation and meal inclusions in your selected rate.",
+      "image": "https://mountengadine.com/wp-content/uploads/2023/06/Mount-Engadine_Winter-Cabin-Valley-View.jpg",
+      "images": [
+        "https://mountengadine.com/wp-content/uploads/2023/06/Mount-Engadine_Winter-Cabin-Valley-View.jpg"
+      ],
+      "checkedOn": "2026-11-27",
+      "nearbyAttractions": []
+    },
+    "sources": [
+      {
+        "label": "Official accommodation categories",
+        "url": "https://mountengadine.com/accommodations/"
+      },
+      {
+        "label": "Official facilities, meals and arrival FAQ",
+        "url": "https://mountengadine.com/faqs/"
+      },
+      {
+        "label": "Official lodge location and setting",
+        "url": "https://mountengadine.com/our-lodge/"
+      }
+    ]
+  },
+  "solara-resort": {
+    "facts": {
+      "name": "Bellstar Suites at Solara Resort",
+      "address": "187 Kananaskis Way, Canmore, Alberta",
+      "description": "Independently managed one-, two- and three-bedroom vacation suites at Solara Resort, with kitchens and laundry. Expect self check-in rather than an on-site hotel front desk.",
+      "overview": "These Bellstar-managed suites combine a Canmore vacation rental with access to shared resort facilities. Compare one-, two- and three-bedroom layouts, with full kitchens, living areas and in-suite laundry. Bellstar uses online self check-in and has no on-site front desk; daily housekeeping is not included. Compare the exact operator, unit, cleaning charges and arrival instructions on the selected listing. A generic Solara apartment can be managed by a different host.",
+      "highlights": [
+        "One-, two- and three-bedroom suites",
+        "Full kitchens and in-suite laundry",
+        "Self check-in"
+      ],
+      "roomFeatures": [
+        "Separate bedroom layouts",
+        "Full kitchen",
+        "Washer and dryer",
+        "Living area and balcony"
+      ],
+      "amenities": [
+        "Shared pool access",
+        "Shared hot tub access",
+        "Shared gym access",
+        "Self check-in guest app"
+      ],
+      "facilityNote": "Bellstar reports phased corridor renovations from September 2026; ask about noise and access for your dates. There is no on-site Bellstar front desk or daily housekeeping.",
+      "policies": "Confirm the named operator, exact suite, cleaning charges, pet eligibility and arrival instructions.",
+      "image": "https://images.squarespace-cdn.com/content/v1/5495db14e4b08142c223fd25/1570215563931-WTIZSGXEMD9RHZ43ZYX7/Bedroom---web.jpg",
+      "images": [
+        "https://images.squarespace-cdn.com/content/v1/5495db14e4b08142c223fd25/1570215563931-WTIZSGXEMD9RHZ43ZYX7/Bedroom---web.jpg"
+      ],
+      "checkedOn": "2026-11-27",
+      "nearbyAttractions": []
+    },
+    "sources": [
+      {
+        "label": "Current operator suites and self check-in",
+        "url": "https://www.bellstarcanmoreresorts.com/suites"
+      },
+      {
+        "label": "Current operator resort and renovation notices",
+        "url": "https://www.bellstarcanmoreresorts.com/bellstar-suites-at-solara-resort"
+      },
+      {
+        "label": "Official address",
+        "url": "https://www.bellstarcanmoreresorts.com/contact"
+      }
+    ]
+  },
+  "samesun-banff-hostel": {
+    "facts": {
+      "area": "Banff Avenue hotel strip",
+      "address": "433 Banff Avenue, Banff, Alberta",
+      "description": "A social Banff Avenue hostel with shared dorms, a guest kitchen and the Beaver Bar. Compare the dorm type and booking conditions rather than expecting a private hotel room.",
+      "overview": "Samesun Banff is a hostel for travellers comfortable sharing a dorm and communal spaces. The operator lists six- and eight-bed dorms, including female-only options, with lockers for belongings. The shared kitchen is useful for self-catering, while the Beaver Bar makes this a social base. Choose the correct dorm and check age rules, breakfast inclusions and arrival hours on your rate. Parking is very limited and should be arranged directly rather than assumed.",
+      "highlights": [
+        "Shared dorm accommodation",
+        "Guest kitchen",
+        "Beaver Bar"
+      ],
+      "roomFeatures": [
+        "Six- and eight-bed dorm options",
+        "Female-only options",
+        "Lockers",
+        "Shared facilities"
+      ],
+      "amenities": [
+        "Guest kitchen",
+        "Laundry facilities",
+        "Wi-Fi",
+        "On-site bar"
+      ],
+      "policies": "Confirm minimum age, dorm category, arrival hours and any parking directly. A dorm bed is not a private room.",
+      "image": "https://samesun.com/wp-content/uploads/2025/04/jpeg-optimizer_Samesun_Banff_2024_021-scaled.jpg",
+      "images": [
+        "https://samesun.com/wp-content/uploads/2025/04/jpeg-optimizer_Samesun_Banff_2024_021-scaled.jpg"
+      ],
+      "checkedOn": "2026-11-27",
+      "nearbyAttractions": []
+    },
+    "sources": [
+      {
+        "label": "Official Banff hostel rooms and facilities",
+        "url": "https://samesun.com/banff-hostel/"
+      },
+      {
+        "label": "Expedia property and booking restrictions",
+        "url": "https://www.expedia.ca/Banff-Hotels-Samesun-Banff.h6596428.Hotel-Information"
+      }
+    ]
+  },
+  "super-8-canmore": {
+    "facts": {
+      "name": "Super 8 by Wyndham Canmore",
+      "address": "1506 Bow Valley Trail, Canmore, Alberta",
+      "description": "A Canmore hotel with king and two-queen rooms plus selected Efficiency kitchenettes. Compare room equipment, breakfast inclusions and the final total for your dates.",
+      "overview": "Super 8 by Wyndham Canmore offers a straightforward town base on Bow Valley Trail. Standard rooms include king and two-queen options, while the named Efficiency categories add kitchenettes. The operator also lists an accessible king category; confirm the precise features you need before booking. A hot tub and fitness room add an indoor option after a day out. Check the breakfast inclusion and choose the actual room category, especially if cooking facilities matter to your stay.",
+      "highlights": [
+        "King and two-queen rooms",
+        "Selected Efficiency kitchenettes",
+        "Canmore town base"
+      ],
+      "roomFeatures": [
+        "King rooms",
+        "Two-queen rooms",
+        "Efficiency categories with kitchenettes",
+        "Accessible king category: confirm features"
+      ],
+      "amenities": [
+        "Hot tub",
+        "Fitness room",
+        "Wi-Fi",
+        "Breakfast: check the selected rate"
+      ],
+      "policies": "Confirm parking, accessible features, breakfast inclusions and cancellation terms in the selected rate.",
+      "image": "https://super8canmore.com/storage/app/uploads/public/5b5/2f4/bd0/5b52f4bd0669a805577780.jpg",
+      "images": [
+        "https://super8canmore.com/storage/app/uploads/public/5b5/2f4/bd0/5b52f4bd0669a805577780.jpg"
+      ],
+      "checkedOn": "2026-11-27",
+      "nearbyAttractions": []
+    },
+    "sources": [
+      {
+        "label": "Official room categories and address",
+        "url": "https://super8canmore.com/"
+      },
+      {
+        "label": "Official amenities",
+        "url": "https://super8canmore.com/amenities"
+      },
+      {
+        "label": "Expedia property identity",
+        "url": "https://www.expedia.ca/Canmore-Hotels-Super-8-By-Wyndham-Canmore.h21990224.Hotel-Information"
+      }
+    ]
+  },
+  "moxy-banff": {
+    "facts": {
+      "area": "Banff Avenue hotel strip",
+      "address": "555 Banff Avenue, Banff, Alberta T1L 1B5",
+      "description": "A social hotel at 555 Banff Avenue, created from the former Voyager Inn. Bar Moxy, a courtyard pool and compact rooms give it a different feel from a traditional mountain lodge.",
+      "overview": "Moxy Banff combines a renovated motor-hotel setting with a lively bar and courtyard. Check-in is at Bar Moxy, and the operator lists an outdoor pool, whirlpool, fitness room and on-site dining. The rooms are designed around compact space and storage, so compare the bed configuration and size shown for your category. This is the current Moxy property at 555 Banff Avenue; the Expedia URL still contains its former Voyager Inn name.",
+      "highlights": [
+        "Bar Moxy and social courtyard",
+        "Outdoor pool and whirlpool",
+        "555 Banff Avenue"
+      ],
+      "roomFeatures": [
+        "Compact room design",
+        "Category-specific bed configurations",
+        "Storage features",
+        "Confirm the selected room\u2019s layout"
+      ],
+      "amenities": [
+        "Outdoor pool",
+        "Whirlpool",
+        "Fitness room",
+        "On-site dining and bar",
+        "Guest laundry"
+      ],
+      "checkIn": "From 4:00 PM",
+      "checkOut": "By 11:00 AM",
+      "policies": "On-site parking and pets have separate terms and charges. Check current pool operation and the complete booking total.",
+      "image": "https://marriott.scene7.com/is/image/marriotts7prod/ox-yycbm-exterior-2-25658:Feature-Hor?wid=1920&fit=constrain",
+      "images": [
+        "https://marriott.scene7.com/is/image/marriotts7prod/ox-yycbm-exterior-2-25658:Feature-Hor?wid=1920&fit=constrain"
+      ],
+      "checkedOn": "2026-11-27",
+      "nearbyAttractions": []
+    },
+    "sources": [
+      {
+        "label": "Official Moxy identity, rooms, facilities and address",
+        "url": "https://www.marriott.com/en-us/hotels/yycbm-moxy-banff/overview/"
+      },
+      {
+        "label": "Official room categories",
+        "url": "https://www.marriott.com/en-us/hotels/yycbm-moxy-banff/rooms/"
+      },
+      {
+        "label": "Expedia current Moxy listing under the former Voyager URL",
+        "url": "https://www.expedia.ca/Banff-Hotels-Banff-Voyager-Inn.h891386.Hotel-Information"
+      }
+    ]
+  }
+}
