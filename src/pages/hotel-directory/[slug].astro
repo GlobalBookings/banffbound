@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { hotelBookingDestinations } from '../../data/hotelBookingDestinations';
 import { directoryHotels as hotels, hotelDirectorySchema, hotelDirectoryPlanningChecks, isHotelDirectoryIndexable } from '../../data/hotelDirectory';
 
 export function getStaticPaths() {
@@ -10,7 +11,8 @@ export function getStaticPaths() {
   }));
 }
 
-const { hotel } = Astro.props;
+const { hotel: storedHotel } = Astro.props;
+const hotel = { ...storedHotel, expediaUrl: hotelBookingDestinations[storedHotel.slug] || storedHotel.expediaUrl };
 const otherHotels = hotels.filter(h => h.slug !== hotel.slug && h.area === hotel.area && h.sourceStatus === 'reviewed').slice(0, 4);
 const GYG = 'QW960HO';
 const galleryImages = [...new Set([hotel.image, ...(hotel.images || [])].filter((image: unknown): image is string => typeof image === 'string' && image.trim().length > 0))];
@@ -18,7 +20,7 @@ const primaryImage = galleryImages[0];
 const hasCoordinates = Number.isFinite(hotel.lat) && Number.isFinite(hotel.lng) && Math.abs(hotel.lat) <= 90 && Math.abs(hotel.lng) <= 180;
 const hasSourcedCoordinates = hasCoordinates && hotel.coordinateStatus === 'source-verified' && typeof hotel.coordinateSource === 'string' && hotel.coordinateSource.startsWith('https://');
 const isDestinationSearch = /\/Hotel-Search(?:[/?#]|$)/i.test(hotel.expediaUrl);
-const bookingLabel = isDestinationSearch ? 'Search the area on Expedia' : ['unreviewed', 'former-name'].includes(hotel.sourceStatus) ? 'Open the retained provider listing' : 'Check room options on Expedia';
+const bookingLabel = isDestinationSearch ? 'Search stays' : hotel.sourceStatus === 'reviewed' ? 'Book now' : 'Find out more';
 const bookingNote = isDestinationSearch
   ? 'This opens destination search results, which can include other properties. Confirm the exact property, address and unit, then compare the selected room and final total.'
   : 'Confirm the property address, selected room, final total and booking terms with the provider. Read current guest reviews there before choosing.';
@@ -123,12 +125,12 @@ const hotelSchema = hotelDirectorySchema(hotel);
   <div class="container"><p class="photo-caption">{hotel.photoNote}</p></div>
 
   <!-- Quick booking bar -->
-  <div class="booking-strip">
+  <div class="booking-strip" data-landing-page="banff-hotels" data-content-id={hotel.slug} data-content-type="hotel-guide">
     <div class="container booking-strip-inner">
       <div class="booking-strip-price">
         <span class="strip-label">{isDestinationSearch ? 'Destination search: confirm the exact property or unit' : 'Check your dates for a current total quote'}</span>
       </div>
-      <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent">
+      <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn hotel-booking-cta" data-landing-id="banff-hotels" data-offer-id={hotel.slug} data-content-id={hotel.slug} data-content-type="hotel-guide" data-landing-placement="property-top">
         {bookingLabel} →
       </a>
     </div>
@@ -141,15 +143,10 @@ const hotelSchema = hotelDirectorySchema(hotel);
         <div class="hotel-main">
 
           <aside class="facility-confirmation">
-            <h2>{hotel.sourceStatusLabel}</h2>
-            <p>{hotel.sourceScope}</p>
-            {hotel.operationNote && <p><strong>Operation and identity:</strong> {hotel.operationNote}</p>}
-            <p><a href="/winter-stays">Compare winter stays and transport tradeoffs &rarr;</a></p>
-            {hotel.facilityNote && <p><strong>Facility notice:</strong> {hotel.facilityNote}</p>}
-            {hotel.sourceLinks.length > 0 && <ul>{hotel.sourceLinks.map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.label} &nearr;</a></li>)}</ul>}
-            {hotel.checkedOn && <p>Source scope checked <time datetime={hotel.checkedOn}>{hotel.checkedOn}</time>.</p>}
-            <p>The provider link is retained separately from the operator sources. Confirm the property identity, address and selected room returned by that link before paying.</p>
-            {isDestinationSearch && <p><strong>Provider destination search:</strong> {hotel.providerDestination || 'Check the destination on the provider page'}. This is not a property or unit reservation; confirm its actual address separately.</p>}
+            {hotel.operationNote && <p><strong>Before you book:</strong> {hotel.operationNote}</p>}
+            {hotel.facilityNote && <p>{hotel.facilityNote}</p>}
+            {isDestinationSearch && <p>This link searches {hotel.providerDestination || 'the area'}. Check the exact property or unit before booking.</p>}
+            <details><summary>Property details &amp; sources{hotel.checkedOn ? ` · checked ${hotel.checkedOn}` : ''}</summary><p>{hotel.sourceScope}</p>{hotel.sourceLinks.length > 0 && <ul>{hotel.sourceLinks.map(source => <li><a href={source.url} target="_blank" rel="noopener">{source.label} &nearr;</a></li>)}</ul>}</details>
           </aside>
 
           <!-- Overview -->
@@ -262,7 +259,7 @@ const hotelSchema = hotelDirectorySchema(hotel);
         <div class="hotel-sidebar">
           <div class="booking-card">
             <div class="booking-price">{isDestinationSearch ? 'Search stays in the area' : ['unreviewed', 'former-name'].includes(hotel.sourceStatus) ? 'Check the provider identity' : 'Get a quote for your dates'}</div>
-            <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent booking-btn">
+            <a href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" class="btn hotel-booking-cta booking-btn" data-landing-id="banff-hotels" data-offer-id={hotel.slug} data-content-id={hotel.slug} data-content-type="hotel-guide" data-landing-placement="property-sidebar">
               {bookingLabel} →
             </a>
             <p class="booking-note">{bookingNote} Affiliate link: BanffBound may earn a commission if you book.</p>
@@ -338,6 +335,10 @@ const hotelSchema = hotelDirectorySchema(hotel);
       </div>
     </section>
   )}
+  {!isDestinationSearch && hotel.sourceStatus === 'reviewed' && <aside class="hotel-mobile-booking" aria-label="Quick hotel booking">
+    <a class="hotel-booking-cta" href={hotel.expediaUrl} target="_blank" rel="noopener sponsored" aria-label={`Book ${hotel.name} on Expedia (opens in a new tab)`} data-landing-id="banff-hotels" data-offer-id={hotel.slug} data-content-id={hotel.slug} data-content-type="hotel-guide" data-landing-placement="property-mobile">Book now <span aria-hidden="true">↗</span></a>
+  </aside>}
+
 </BaseLayout>
 
 <style>
@@ -653,7 +654,21 @@ const hotelSchema = hotelDirectorySchema(hotel);
 
   .mini-stars { font-size: 0.78rem; color: var(--color-accent); }
 
+  .hotel-booking-cta { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 56px; padding: .85rem 1.4rem; border: 0; border-radius: 4px; background: #b34d23; color: #fff !important; font-size: 1.1rem; font-weight: 800; text-decoration: none; text-align: center; }
+  .hotel-booking-cta:hover { background: #923b1b; }
+  .hotel-booking-cta:focus-visible { outline: 3px solid #e8b659; outline-offset: 4px; }
+  .hotel-mobile-booking { display: none; }
+  .facility-confirmation details { font-size: .85rem; }
+  .facility-confirmation summary { cursor: pointer; font-weight: 600; }
   @media (max-width: 768px) {
+    .hotel-mobile-booking { display: flex; position: fixed; inset: auto 0 0; z-index: 950; padding: .5rem max(1rem, env(safe-area-inset-left)) calc(.5rem + env(safe-area-inset-bottom)); background: #fff; border-top: 2px solid #b34d23; }
+    .hotel-mobile-booking a { width: 100%; }
+    :global(body:has(.hotel-mobile-booking)) { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
+    :global(body:has(.hotel-mobile-booking) #explore-bar), :global(body:has(.hotel-mobile-booking) .sticky-cta-bar) { display: none !important; }
+    :global(body:has(.hotel-mobile-booking) #cookie-banner), :global(body:has(.hotel-mobile-booking) #back-to-top) { bottom: calc(80px + env(safe-area-inset-bottom)); }
+    :global(body:has(.hotel-mobile-booking) #cookie-banner) { max-height: calc(100dvh - 100px - env(safe-area-inset-bottom)); }
+    :global(body:has(#menu-toggle[aria-expanded="true"]) .hotel-mobile-booking) { visibility: hidden; pointer-events: none; }
+
     .hero-gallery { grid-template-columns: 1fr; }
     .hero-side-imgs { display: none; }
     .hero-gallery.single-image { grid-template-columns: 1fr; }

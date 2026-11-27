@@ -7,7 +7,7 @@ for(const tracker of ['available','absent','throws'])for(const analytics of [fal
  const baseline=h.commands.filter(c=>c[0]==='event').length;
  if(tracker==='absent')h.window.gtag=undefined;
  if(tracker==='throws')h.window.gtag=()=>{throw Error('Tracker blocked');};
- const result=h.linkClick(href,{cta:true});assert.equal(result.prevented,0,'Native provider navigation never waits for tracking.');assert.equal(h.opened,0,'No callback popup or duplicate target.');assert.equal(result.link.target,'_blank');assert.equal(result.link.href,href,'All original affiliate parameters remain on the native link.');
+ const result=h.linkClick(href,{cta:true});assert.equal(result.prevented,0,'Native provider navigation never waits for tracking.');assert.equal(h.opened,0,'No callback popup or duplicate target.');assert.equal(result.link.target,'_blank');assert.equal(result.link.href,href === 'https://www.expedia.ca/Cars?camref=KB6G4xt' ? 'https://expedia.com/affiliate?siteid=1&landingPage=https%3A%2F%2Fwww.expedia.ca%2FCars&camref=1101l3MtWX&creativeref=1011l87781&adref=PZ3CDo8nkC' : href,'Native link uses the portal referral for known Expedia destinations; other providers retain their parameters.');
  const sent=h.commands.slice().filter(c=>c[0]==='event').slice(baseline);
  assert.equal(sent.some(c=>c[1]==='affiliate_click'),tracker==='available'&&analytics);
  assert.equal(sent.some(c=>c[1]==='conversion'),tracker==='available'&&advertising);

@@ -14,7 +14,7 @@ function evaluate(source, args = {}) {
   return module.exports;
 }
 const { hotels } = evaluate(read('src/data/hotels.ts'));
-const model = evaluate(read('src/data/hotelDirectory.ts').replace(/^import[^\n]+\n/, ''), { hotels });
+const model = evaluate(read('src/data/hotelDirectory.ts').replace(/^import[^\n]+\n/gm, ''), { hotels, hotelConversionReviews: JSON.parse(read('src/data/hotelConversionReviews.json')) });
 const { directoryHotels, directoryHotel, hotelDirectorySchema, isHotelDirectoryIndexable, unreviewedHotelDirectorySlugs, banffTownHotelReviewSlugs, regionalHotelReviewSlugs } = model;
 let assertions = 0;
 const check = (condition, message) => { assertions++; if (!condition) throw new Error(message); };
@@ -44,15 +44,15 @@ const priorThirtyEight = ["fairmont-banff-springs", "rimrock-banff", "moose-hote
 check(digest(priorThirtyEight.map(slug => priorRawRecord(hotels.find(h => h.slug === slug)))) === '885d8b8c476990cfd440bcc0e04acf80967d99624ad0c6f738ff5795471c3ce2', 'Prior 38 raw facts/photos/GPS changed');
 check(digest(priorThirtyEight.map(slug => priorPublicRecord(directoryHotels.find(h => h.slug === slug)))) === '745df6e1a194e7f120dc6569f637d09d3e5b3435be3e603dfc0d0a8f7db66b24', 'Prior 38 public scopes/facts/GPS changed');
 check(digest(hotels.filter(h => !regionalHotelReviewSlugs.includes(h.slug)).map(priorRawRecord)) === 'a54edd75f4c7e14c8f5a483a281d16fd3de41f0b999f1f3e8e80b0c2393822d5', 'A record outside the current 14 changed');
-const statuses = { reviewed:49, 'location-only':1, 'former-name':2, unreviewed:43 };
+const statuses = { reviewed:56, 'location-only':1, 'former-name':2, unreviewed:36 };
 for (const [status,count] of Object.entries(statuses)) check(directoryHotels.filter(h => h.sourceStatus === status).length === count, 'Source status count mismatch: '+status);
-check(unreviewedHotelDirectorySlugs.size === 43 && directoryHotels.filter(h => isHotelDirectoryIndexable(h.slug)).length === 52, 'Indexability coverage mismatch');
+check(unreviewedHotelDirectorySlugs.size === 36 && directoryHotels.filter(h => isHotelDirectoryIndexable(h.slug)).length === 59, 'Indexability coverage mismatch');
 check(!isHotelDirectoryIndexable('made-up-property') && !isHotelDirectoryIndexable('banff-boundary-lodge?query=1'), 'Unknown slug became indexable');
-check(directoryHotels.filter(h => h.image).length === 48, 'Unexpected public property-image coverage');
+check(directoryHotels.filter(h => h.image).length === 55, 'Unexpected public property-image coverage');
 let precisePoints = 0;
 for (const hotel of directoryHotels) {
   const raw = hotels.find(h => h.slug === hotel.slug);
-  check(hotel.name === raw.name && hotel.expediaUrl === raw.expediaUrl, 'Projection changed identity or provider target');
+  check(hotel.name === (JSON.parse(read('src/data/hotelConversionReviews.json'))[hotel.slug]?.facts.name || raw.name) && hotel.expediaUrl === raw.expediaUrl, 'Projection changed identity or provider target');
   check(new URL(hotel.expediaUrl).searchParams.get('camref') === '1101l3MtWX', 'Affiliate ID changed');
   check(hotel.reviewScore === undefined && hotel.reviewCount === undefined && hotel.guestLoves === undefined && !/\$\s*\d/.test(hotel.avgPrice), 'Unverified review/rate field exposed');
   const schema = hotelDirectorySchema(hotel), json = JSON.stringify(schema);
@@ -161,20 +161,20 @@ function setup(query='') {
   return{ids,cards,markers,visible,map,scripts:head.children,timers,shown:()=>cards.filter(c=>c.style.display!=='none'),choose(id,value){ids[id].value=value;ids[id].fire(id==='search-input'?'input':'change');},load(){window.L=leaflet;head.children.at(-1).onload();}};
 }
 const ui=setup();check(ui.shown().length===95&&!ui.ids.filters.hidden,'Complete default discovery grid/controls missing');
-ui.choose('source-filter','reviewed');check(ui.shown().length===49,'Reviewed source filter wrong');
-ui.choose('area-filter','Canmore');check(ui.shown().length===10,'Combined reviewed/Canmore filter wrong');
+ui.choose('source-filter','reviewed');check(ui.shown().length===56,'Reviewed source filter wrong');
+ui.choose('area-filter','Canmore');check(ui.shown().length===12,'Combined reviewed/Canmore filter wrong');
 ui.ids['clear-filters'].fire('click');check(ui.shown().length===95&&ui.ids['source-filter'].value==='all','Reset incomplete');
 ui.choose('source-filter','location-only');ui.ids['map-view-btn'].fire('click');ui.ids['map-view-btn'].fire('click');check(ui.scripts.length===1,'Duplicate map load request');ui.load();
 check(ui.markers.length===11&&ui.visible.size===1&&ui.map.fitted.length===1,'Map source/filter contract wrong');
 const boundary=[...ui.visible][0];check(boundary.popup.children.every(c=>c.tagName!=='img')&&boundary.popup.children.some(c=>c.textContent==='Property photo unavailable'),'Boundary popup uses false photo');
-ui.choose('source-filter','unreviewed');check(ui.shown().length===43&&ui.visible.size===0,'Legacy source filter exposes pins or loses discovery records');
+ui.choose('source-filter','unreviewed');check(ui.shown().length===36&&ui.visible.size===0,'Legacy source filter exposes pins or loses discovery records');
 ui.choose('source-filter','former-name');check(ui.shown().length===2&&ui.visible.size===0,'Former-name filter wrong');
 ui.ids['clear-filters'].fire('click');ui.choose('search-input','Copperstone');check(ui.shown().length===1&&ui.visible.size===0,'Copperstone query has wrong point/results');
 ui.ids['clear-filters'].fire('click');ui.choose('area-filter','Spray Avenue');check(ui.shown().length===1&&ui.visible.size===1,'Spray Avenue area filter/pin mismatch');
 ui.choose('area-filter','Sulphur Mountain');check(ui.shown().length===1&&ui.visible.size===1,'Sulphur Mountain area filter/pin mismatch');
 ui.ids['grid-view-btn'].fire('click');ui.ids['map-view-btn'].fire('click');check(ui.scripts.length===1&&ui.ids['map-view-btn'].attributes['aria-pressed']==='true','Map toggles reload or lose accessibility state');
-const valid=setup('?source=reviewed&area=Canmore');check(valid.shown().length===10,'Source/area URL filters broken');
-const strip=setup('?source=reviewed&area=Banff%20Avenue%20hotel%20strip');check(strip.shown().length===9,'Banff Avenue strip source/area filter broken');
+const valid=setup('?source=reviewed&area=Canmore');check(valid.shown().length===12,'Source/area URL filters broken');
+const strip=setup('?source=reviewed&area=Banff%20Avenue%20hotel%20strip');check(strip.shown().length===12,'Banff Avenue strip source/area filter broken');
 const invalid=setup('?source=unknown&area=nowhere&price=free&type=Boat');check(invalid.shown().length===95,'Invalid URL filters alter results');
 const failure=setup();failure.ids['map-view-btn'].fire('click');const obsolete=failure.scripts[0];obsolete.onerror();check(failure.ids['hotel-grid'].style.display===''&&failure.ids['map-status'].textContent.includes('could not load'),'Map failure hides grid');
 failure.ids['map-view-btn'].fire('click');failure.load();obsolete.onload();check(failure.markers.length===11,'Late failed load duplicates markers');
@@ -186,4 +186,4 @@ check(detail.includes('noindex={!isHotelDirectoryIndexable(hotel.slug)}'),'Unrev
 check(index.includes('<noscript>')&&index.includes('hotels.map(hotel =>')&&index.includes('hidden>'),'Complete no-JS discovery content missing');
 check(index.includes('data-source={hotel.sourceStatus}')&&index.includes('source-filter'),'Source-status controls missing');
 check(detail.includes('hotelDirectorySchema(hotel)')&&detail.includes('sourceLinks.map'),'Shared safe schema/source contract bypassed');
-console.log(JSON.stringify({assertions,discoveryRecords:95,indexableDetails:52,noindexDetails:43,reviewedFacts:49,locationOnly:1,formerNameHistories:2,newPropertyReviewsThisPhase:14,sourceMapPoints:11,propertyPhotoProfiles:48,protectedPriorScopes:38,identityHash:digest(hotels.map(h=>[h.slug,h.name,h.expediaUrl])),compilerDiagnostics:0},null,2));
+console.log(JSON.stringify({assertions,discoveryRecords:95,indexableDetails:59,noindexDetails:36,reviewedFacts:56,locationOnly:1,formerNameHistories:2,newPropertyReviewsThisPhase:14,sourceMapPoints:11,propertyPhotoProfiles:55,protectedPriorScopes:38,identityHash:digest(hotels.map(h=>[h.slug,h.name,h.expediaUrl])),compilerDiagnostics:0},null,2));

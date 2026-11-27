@@ -4,7 +4,7 @@ export interface Hotel {
   slug: string;
   name: string;
   stars?: number;
-  area: 'Downtown Banff' | 'Tunnel Mountain' | 'Lake Louise' | 'Canmore' | 'Bow Valley' | 'Castle Junction' | 'Yoho National Park' | 'Spray Avenue' | 'Sulphur Mountain' | 'Banff Avenue hotel strip' | 'Mount Norquay Road';
+  area: 'Downtown Banff' | 'Tunnel Mountain' | 'Lake Louise' | 'Canmore' | 'Bow Valley' | 'Castle Junction' | 'Yoho National Park' | 'Spray Avenue' | 'Sulphur Mountain' | 'Banff Avenue hotel strip' | 'Mount Norquay Road' | 'Spray Valley, Kananaskis';
   type: 'Hotel' | 'Lodge' | 'Resort' | 'Hostel' | 'B&B' | 'Inn' | 'Motel' | 'Chalets';
   priceRange: '$' | '$$' | '$$$' | '$$$$';
   avgPrice: string;

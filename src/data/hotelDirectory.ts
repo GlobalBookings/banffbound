@@ -1,4 +1,5 @@
 import { hotels, type Hotel } from './hotels';
+import hotelConversionReviews from './hotelConversionReviews.json';
 
 export type HotelSourceStatus = 'reviewed' | 'location-only' | 'former-name' | 'unreviewed';
 export interface HotelSourceLink { label: string; url: string }
@@ -35,6 +36,7 @@ export const reviewedHotelDirectorySlugs = [
   'fairmont-banff-springs', 'rimrock-banff',
   ...banffTownHotelReviewSlugs,
   ...regionalHotelReviewSlugs,
+  ...Object.keys(hotelConversionReviews),
 ] as const;
 const reviewed = new Set<string>(reviewedHotelDirectorySlugs);
 
@@ -292,11 +294,22 @@ export const hotelDirectoryPlanningChecks = [
 ];
 
 export function directoryHotel(hotel: Hotel): DirectoryHotel {
+  const conversionReview = (hotelConversionReviews as Record<string, { facts: Partial<Hotel>; sources: HotelSourceLink[] }>)[hotel.slug];
+  // New reviews replace all legacy facility/room/photo claims in their scope.
+  if (conversionReview) hotel = {
+    ...hotel, overview: undefined, roomFeatures: [], amenities: [], highlights: [],
+    nearbyAttractions: [], dining: undefined, policies: undefined, address: undefined,
+    totalRooms: undefined, yearBuilt: undefined, lastRenovated: undefined,
+    checkIn: undefined, checkOut: undefined, facilityNote: undefined,
+    lat: null, lng: null, coordinateStatus: 'unavailable', coordinateSource: undefined,
+    coordinateCheckedOn: undefined, coordinateNote: undefined,
+    ...conversionReview.facts,
+  };
   const status: HotelSourceStatus = formerNames[hotel.slug] ? 'former-name' : hotel.slug === 'banff-boundary-lodge' ? 'location-only' : reviewed.has(hotel.slug) ? 'reviewed' : 'unreviewed';
   const factual = status === 'reviewed';
   const locationOnly = status === 'location-only';
   const former = formerNames[hotel.slug];
-  const sourceLinks = additionalSources[hotel.slug] || former?.sources || (hotel.officialUrl ? [{ label: locationOnly ? 'Condominium-management source' : 'Official property information', url: hotel.officialUrl }] : []);
+  const sourceLinks = conversionReview?.sources || additionalSources[hotel.slug] || former?.sources || (hotel.officialUrl ? [{ label: locationOnly ? 'Condominium-management source' : 'Official property information', url: hotel.officialUrl }] : []);
   const sourceStatusLabel = { reviewed: 'Selected facts reviewed', 'location-only': 'Location reviewed', 'former-name': 'Former-name record', unreviewed: 'Legacy lead: not source-reviewed' }[status];
   const scope = factual ? 'Selected location, room, facility and policy information was checked against the linked sources. This is a dated source review, not live availability or an access guarantee.'
     : locationOnly ? 'The condominium location is sourced. Current unit facilities, operator and booking policies require confirmation; this is not a verified property-wide hotel offer.'

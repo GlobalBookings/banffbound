@@ -11,15 +11,16 @@ const bundle = await build({ stdin: { contents: "export * from './src/data/townS
 const model = await import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`);
 const { canmoreStayExamples: examples, normaliseCanmoreStayFilters: normalise, buildCanmoreStayPlan: plan } = model;
 const ids = ['lamphouse-canmore', 'malcolm-hotel', 'basecamp-lodge-canmore', 'blackstone-mountain-lodge', 'stoneridge-mountain-resort', 'copperstone-resort'];
+// Hotel conversion scope re-reviewed 27 November 2026; see check-hotel-conversions.mjs.
 const frozenFiles = {
-  'src/data/hotels.ts': '2fff1117432d359cfdfea771c5e36153dbf37107e9609e7d5430a7bd9eb34e48',
-  'src/data/hotelDirectory.ts': 'bba710c243ef3cd64256e51adb8d54898bf200bc0db8090c5b21b197ed44492f',
+  'src/data/hotels.ts': '23d0fa31a7bfbe8ff33183eaa382e84cb7a61273e7f4ba24161dbde3bc862c07',
+  'src/data/hotelDirectory.ts': '64f85e3b92d2458e9aba8d50ef0c21d64f0a96501464f4ee1852aeaf6a49cfc1',
   'src/pages/hotel-directory/index.astro': '1125c296d95b40f218c4dad2f2a7af9dbbfc861bdd8a65677be7ba60a396dacf',
-  'src/pages/hotel-directory/[slug].astro': 'c5c80421cb748a2307520e698e128887f23c10c825a4cd51fa7b81c93d151b9d',
+  'src/pages/hotel-directory/[slug].astro': '5e38792e77083f2c7ff16c6f9fd9bd93b32295882a3945df0c7cf323d6a316ed',
 };
 for (const [filename, hash] of Object.entries(frozenFiles)) assert.equal(createHash('sha256').update(restorePriorHotelSource(filename, await readFile(filename, 'utf8'))).digest('hex'), hash, `Frozen hotel source unchanged: ${filename}`);
 assert.equal(model.hotels.length, 95);
-assert.equal(model.directoryHotels.filter(hotel => hotel.sourceStatus === 'reviewed').length, 49);
+assert.equal(model.directoryHotels.filter(hotel => hotel.sourceStatus === 'reviewed').length, 56);
 assert.equal(model.directoryHotels.filter(hotel => hotel.sourceStatus === 'location-only').length, 1);
 assert.equal(model.directoryHotels.filter(hotel => hotel.sourceStatus === 'former-name').length, 2);
 assert.equal(model.townStayPlanningReviewedAt, '2026-10-29');
