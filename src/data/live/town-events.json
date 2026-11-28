@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-28T01:13:37.226Z",
+  "retrievedAt": "2026-11-28T09:53:06.205Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-28T01:13:37.222Z",
-      "sourceUpdatedAt": "2026-11-28T01:13:36.000Z",
-      "sourceUpdatedAtText": "Fri, 27 Nov 2026 18:13:36 -0700",
+      "retrievedAt": "2026-11-28T09:53:06.173Z",
+      "sourceUpdatedAt": "2026-11-28T09:53:05.000Z",
+      "sourceUpdatedAtText": "Sat, 28 Nov 2026 02:53:05 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -23,17 +23,6 @@
           "dates": "November 19, 2026 - December 13, 2026",
           "times": "12:00 AM - 11:59 PM",
           "location": "Banff, AB T1L 1A1"
-        },
-        {
-          "title": "Mâwacihitowinihk Nikamowak: A Gathering of Indigenous Musicians",
-          "link": "https://banff.ca/Calendar.aspx?EID=35420",
-          "description": "Mâwacihitowinihk Nikamowak is Plains Cree for \"they sing at the gathering (place),\" referring to Sacred Guardian Buffalo Mountain, where Banff Centre campus resides. Over three weeks, the participants in Mâwacihitowinihk Nikamowak: Indigenous Music Residency have been creating new songs in their fin",
-          "publishedAt": "2026-10-23T22:08:13.000Z",
-          "startDate": "2026-11-27",
-          "endDate": "2026-11-27",
-          "dates": "November 27, 2026",
-          "times": "07:30 PM - 11:59 PM",
-          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         },
         {
           "title": "BIRDY | Hung Dance",
@@ -122,15 +111,26 @@
           "dates": "December 10, 2026",
           "times": "09:00 AM - 04:30 PM",
           "location": "Banff, AB T1L 1A1"
+        },
+        {
+          "title": "BOOM X | Rick Miller",
+          "link": "https://banff.ca/Calendar.aspx?EID=35404",
+          "description": "Banff Centre for Arts and Creativity presents BOOM X on December 12, an explosive solo multimedia performance written, directed, and performed by acclaimed Canadian artist Rick Miller. Developed with assistance from Banff Centre, the show blends theatre, storytelling, music, and technology as Miller",
+          "publishedAt": "2026-10-08T21:47:34.000Z",
+          "startDate": "2026-12-12",
+          "endDate": "2026-12-12",
+          "dates": "December 12, 2026",
+          "times": "08:30 PM - 11:59 PM",
+          "location": "107 Tunnel Mountain DriveBanff, AB T1L 1H5"
         }
       ]
     },
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-28T01:13:37.117Z",
-      "sourceUpdatedAt": "2026-11-28T01:13:36.000Z",
-      "sourceUpdatedAtText": "Fri, 27 Nov 2026 18:13:36 -0700",
+      "retrievedAt": "2026-11-28T09:53:06.204Z",
+      "sourceUpdatedAt": "2026-11-28T09:53:05.000Z",
+      "sourceUpdatedAtText": "Sat, 28 Nov 2026 02:53:05 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
