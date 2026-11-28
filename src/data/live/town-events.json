@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "provider": "Town of Banff RSS",
-  "retrievedAt": "2026-11-27T17:53:55.966Z",
+  "retrievedAt": "2026-11-28T01:13:37.226Z",
   "feeds": {
     "events": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=58&CID=Events-25",
       "pageUrl": "https://banff.ca/Calendar.aspx",
-      "retrievedAt": "2026-11-27T17:53:55.951Z",
-      "sourceUpdatedAt": "2026-11-27T17:53:55.000Z",
-      "sourceUpdatedAtText": "Fri, 27 Nov 2026 10:53:55 -0700",
+      "retrievedAt": "2026-11-28T01:13:37.222Z",
+      "sourceUpdatedAt": "2026-11-28T01:13:36.000Z",
+      "sourceUpdatedAtText": "Fri, 27 Nov 2026 18:13:36 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -128,9 +128,9 @@
     "news": {
       "sourceUrl": "https://www.banff.ca/RSSFeed.aspx?ModID=1&CID=All-newsflash.xml",
       "pageUrl": "https://banff.ca/CivicAlerts.aspx",
-      "retrievedAt": "2026-11-27T17:53:55.963Z",
-      "sourceUpdatedAt": "2026-11-27T17:53:55.000Z",
-      "sourceUpdatedAtText": "Fri, 27 Nov 2026 10:53:55 -0700",
+      "retrievedAt": "2026-11-28T01:13:37.117Z",
+      "sourceUpdatedAt": "2026-11-28T01:13:36.000Z",
+      "sourceUpdatedAtText": "Fri, 27 Nov 2026 18:13:36 -0700",
       "sourceTimeIssue": null,
       "status": "available",
       "rejectedCount": 0,
@@ -188,12 +188,6 @@
           "link": "https://banff.ca/CivicAlerts.aspx?aid=1931",
           "description": "Plastic bags, styrofoam, candy wrappers, coffee cups among materials that can now be diverted from landfill!",
           "publishedAt": "2026-10-29T17:02:00.000Z"
-        },
-        {
-          "title": "New drop-in recreation sessions offer more ways to use your Pauw Pass",
-          "link": "https://banff.ca/CivicAlerts.aspx?aid=1926",
-          "description": "From badminton to roller disco, and soccer to pickleball, there is something for everyone in the Town of Banff’s updated drop-in recreation schedule.",
-          "publishedAt": "2026-10-28T22:36:00.000Z"
         }
       ]
     }

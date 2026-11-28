@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T17:54:04.866Z",
+  "updatedAt": "2026-11-28T01:13:36.883Z",
   "fireDanger": "low",
   "summary": {
     "total": 56,
@@ -365,9 +365,9 @@
           "name": "Moraine Lake Road",
           "difficulty": "Easy",
           "status": "open",
-          "condition": "Thin snow cover.",
+          "condition": "Good.",
           "comment": "Avalanche hazard: Beyond the viewpoint, the road crosses large avalanche paths. Travel beyond this point requires avalanche training and equipment; Double trackset and skate-skiing lane; No dogs allow",
-          "lastUpdated": "2026-11-21"
+          "lastUpdated": "2026-11-27"
         },
         {
           "name": "Fairview Loop",
@@ -862,9 +862,9 @@
       "name": "Moraine Lake Road",
       "difficulty": "Easy",
       "status": "open",
-      "condition": "Thin snow cover.",
+      "condition": "Good.",
       "comment": "Avalanche hazard: Beyond the viewpoint, the road crosses large avalanche paths. Travel beyond this point requires avalanche training and equipment; Double trackset and skate-skiing lane; No dogs allow",
-      "lastUpdated": "2026-11-21",
+      "lastUpdated": "2026-11-27",
       "area": "Lake Louise Area Cross-Country Ski Trails"
     },
     {
